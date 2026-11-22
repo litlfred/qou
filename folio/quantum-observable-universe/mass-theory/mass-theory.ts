@@ -299,6 +299,7 @@ export default chapter({
             "bond-order-eq-jet-degree-proof",
             "delta-lambda-dt-index-unification",
             "cyclotomic-boundary-at-keystone",
+            "bring-curve-weyl-e8-prior-art",
             "brunnian-binding-channel",
             "jet-filtration-binding-extensive",
             "tower-geometric-lower-bound",
