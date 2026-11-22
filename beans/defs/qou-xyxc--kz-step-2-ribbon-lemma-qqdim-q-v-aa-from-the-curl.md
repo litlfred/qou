@@ -1,11 +1,11 @@
 ---
 # qou-xyxc
 title: 'KZ Step 2: ribbon lemma (q−q⁻¹)·dim_q V = a−a⁻¹ from the curl identities, instantiated to dim_q V = [2]_q'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-11-17T11:53:03Z
+updated_at: 2026-11-22T21:18:34Z
 parent: qou-59vq
 ---
 
@@ -33,3 +33,8 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - Formalized in `folio/quantum-observable-universe/lean/QOU/Foundations/CumulativeSwapCentralityTabloidTransitionCellProductFactorialCurlTrace.lean` (Lean 4.24.0, `0` `sorry`, `0` `axiom`, `0` warnings, `0` directory-mode static vacuity & borrowed-name advisories).
 - 80-dps `mpmath` numerical witness stamped in `computations/probes/cumulative-swap-centrality-tabloid-transition-cell-product-factorial-curl-trace.witness.json` (`scriptHash = 9e4c62bb8c28`, `scriptCommitSha = 4331c3d6858037c7a16d08f2202e77af0fee8a52`, `HEAD = 69f8f329d2048eae2ceddcc8d14985dd544d587f`).
 - PR: https://github.com/litlfred/qou/pull/8331 (`ready: 69f8f329d2048eae2ceddcc8d14985dd544d587f`).
+
+
+## 2026-11-22 — completed (wave-2 drain)
+
+The ribbon lemma is on main: `QOU.MathlibExt.ribbon_hecke_dimension`, `ribbon_hecke_qDim_eq_qint_two` (`MathlibExt/RibbonHeckeDimension.lean`). The open item this bean named, a nondegenerate instance, is supplied by `qou-zoyv`: `QOU.KZ.Drinfeld.ribbon` and `qDim_V_eq_qint_two` (`KZ/Drinfeld/RibbonDH.lean`, via the scaled form `ribbon_hecke_dimension_scaled`). All verified this session with lean-direct on `main` 3c4c98fcc, axioms [propext, Classical.choice, Quot.sound].

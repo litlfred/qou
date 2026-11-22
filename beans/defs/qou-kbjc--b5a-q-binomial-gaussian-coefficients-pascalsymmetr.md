@@ -1,13 +1,13 @@
 ---
 # qou-kbjc
 title: 'B5a: q-binomial (Gaussian) coefficients + Pascal/symmetry identities over a field. [track5]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-24T16:34:38Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:18:49Z
 parent: qou-1oif
 ---
 
@@ -20,3 +20,8 @@ parent: qou-1oif
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8323, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-22 — residue proved, on branch claude/hecke-sw-bean-drain-2026-11-22 (wave-2 drain)
+
+Most of this bean was already on main: `HabiroTailStar.gaussBinom` (generic CommRing) with both Pascal rules, vanishing for k>n and [n,n]=1, and `MathlibExt.GaussianBinomial.prod_mul_gaussG` (the product formula). Added on that definition, not a new copy: `GaussBinomSymm.gaussBinom_symm` ([a+b,a] = [a+b,b]), `gaussBinom_symm'`, `gaussBinom_one` ([n,k]_1 = choose). lean-direct exit 0, axioms [propext, Quot.sound]. Commit 1391de67e. Close when merged.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T02:59:25Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:18:49Z
 parent: qou-1oif
 ---
 
@@ -56,3 +56,8 @@ adjacency.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8356, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-22 — not changed; the docstring is right in its context (wave-2 drain)
+
+The enumeration above is of abstract 3-cell configurations. In Orbit3Braid the three cells are those holding k, k+1, k+2 in a standard tableau, and there two comparable cells cannot be far apart: every cell strictly between them in their row (or column) needs an entry strictly between theirs, and only one value is available. With one cell between, that cell is the third one, a chain of size 1. So in a size-3 orbit the two comparable cells are adjacent, and the file's scalar sc ∈ {q, −q⁻¹} uses exactly that (axial distance ±1). The size-2 hook and the 'comparability' wording are worth a sentence in the docstring if the file is touched; the reason 'adjacent' is not wrong. Recommend scrap or reduce to that one sentence.

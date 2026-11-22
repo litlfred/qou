@@ -1,13 +1,13 @@
 ---
 # qou-jfr8
 title: 'SW-5: irreducibility + pairwise inequivalence of the ρ_λ'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-11-18T07:46:25Z
+updated_at: 2026-11-22T21:18:34Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -698,3 +698,12 @@ in their own file is vacuous on every transpose pair.
 Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
 
 - Round 72 (`lane-e667`): Formalized `qou-sx5r`, `qou-slck`, `qou-dgsw`, `qou-jfr8`, `qou-zoyv` in `QOU.Foundations.SandwichTraceCyclicityVectorBraidingReducedWordSeparationRibbonMonodromy` with 80-dps `mpmath` 2-commit witness stamp (`c95261a9c444144dd0cc07d50ddaabb0b496a13f` -> `c3e4ad1f706f5fd2e70cbb90c8c9bd7753ec1e10`, `scriptHash=e347a9e84468088888c8978781442fc5eb1e2e281357cbff708b7491a3fcbcb8`) in PR `litlfred/qou#8390` (`status: in-progress`).
+
+
+## 2026-11-22 — completed (wave-2 drain): SW-5 is on main, both halves
+
+The body's own 2026-08-23 section says SW-5 is closed on main; the status was only reset by batch triage. Re-verified this session (lean-direct, `main` 3c4c98fcc), axioms [propext, Classical.choice, Quot.sound], no sorryAx:
+- irreducibility: `QOU.SchurWeyl.seminormalRep_range_eq_top` (`SchurWeyl/SeminormalRangeTop.lean`);
+- pairwise inequivalence: `QOU.SchurWeyl.seminormalRep_not_matRepEquiv_of_ne` (`SchurWeyl/SeminormalInequivalence.lean`);
+- and the assembled Wedderburn iso they feed: `heckeProduct_bijective`, `heckeWedderburn` (`SchurWeyl/HeckeWedderburnGeneral.lean`).
+Scope as stated in those files: field of characteristic 0, `q ≠ 0`, `q` not a root of unity (`qou-4lft` tracks the root-of-unity regime).

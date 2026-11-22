@@ -1,13 +1,13 @@
 ---
 # qou-em1j
 title: 'twwf n=3: Poincaré poly ∑_{w∈S_n} q^ℓ(w) = [n]_q! — the T_w Gram RHS'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-31T20:00:58Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:18:48Z
 parent: qou-1oif
 ---
 
@@ -20,3 +20,8 @@ parent: qou-1oif
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8323, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-22 — proved for every n, on branch claude/hecke-sw-bean-drain-2026-11-22 (wave-2 drain)
+
+`QOU.MathlibExt.SymmetricGroupPoincare.sum_pow_length`: Σ_{w∈S_n} q^{ℓ(w)} = ∏_{i<n}(1+q+⋯+q^i) over any commutative semiring, ℓ = `PermutationEnumeration.coxeterLength`; `sum_pow_length_three` is this bean's n = 3 case. Proof: first-value insertion `ins p τ` is a bijection Fin(n+1)×S_n → S_{n+1} with ℓ(ins p τ) = p + ℓ(τ). lean-direct exit 0, axioms [propext, Classical.choice, Quot.sound]. Commit 4fe9541d9. Close when merged; PR waits on the owner.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-11-18T07:46:25Z
+updated_at: 2026-11-22T21:18:49Z
 parent: qou-59vq
 ---
 
@@ -131,3 +131,8 @@ Do not close.
 Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
 
 - Round 72 (`lane-e667`): Formalized `qou-sx5r`, `qou-slck`, `qou-dgsw`, `qou-jfr8`, `qou-zoyv` in `QOU.Foundations.SandwichTraceCyclicityVectorBraidingReducedWordSeparationRibbonMonodromy` with 80-dps `mpmath` 2-commit witness stamp (`c95261a9c444144dd0cc07d50ddaabb0b496a13f` -> `c3e4ad1f706f5fd2e70cbb90c8c9bd7753ec1e10`, `scriptHash=e347a9e84468088888c8978781442fc5eb1e2e281357cbff708b7491a3fcbcb8`) in PR `litlfred/qou#8390` (`status: in-progress`).
+
+
+## 2026-11-22 — close candidate (wave-2 drain), left open for the owner
+
+The title is delivered on main: `QOU.KZ.Drinfeld.ribbon` (a RibbonCategory instance on DH) and `qDim_V_eq_qint_two`, verified this session with lean-direct, axioms [propext, Classical.choice, Quot.sound]. Not closed only because the last section names a 'stream goal' (KZ braid rep vs Jimbo R-matrix) as still open; that goal is tracked by `qou-gzsp` and `qou-dgsw`. If the owner reads the stream goal as outside this bean, it can be completed.

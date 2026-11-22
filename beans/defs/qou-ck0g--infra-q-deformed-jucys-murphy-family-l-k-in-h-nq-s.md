@@ -1,13 +1,13 @@
 ---
 # qou-ck0g
 title: 'INFRA: q-deformed Jucys-Murphy family L_k in H_n(q) + seminormal eigenvalues'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T19:02:23Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:18:34Z
 parent: qou-1oif
 ---
 
@@ -148,3 +148,13 @@ Was in-progress with no bean update since 2026-08-16 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8323, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-22 — completed: all four items are on main (wave-2 drain, thread "Build Hecke and Schur–Weyl in Lean")
+
+Verified this session with lean-direct against the restored cache (`main` 3c4c98fcc), `#print axioms` = [propext, Classical.choice, Quot.sound] or smaller, no sorryAx:
+1. Family `L_k`: `QOU.SchurWeyl.qJM` / `qJMInv` (`SchurWeyl/QJucysMurphy.lean`).
+2. Seminormal eigenvalue `q^{2c}`: `QOU.SchurWeyl.SeminormalRep.seminormalRep_qJM`, `seminormalRep_qJMInv` (`SchurWeyl/QJucysMurphyEigen.lean`).
+3. Commutativity and centrality: `qJM_commute` ([propext, Quot.sound]), `qJM_sum_comm_sigma'`, `qJMInv_sum_comm_sigma`.
+4. Bar-symmetrised sum and its block eigenvalue: `barSymJMSum`, `seminormalRep_barSymJMSum`, `barSymJMSum_block_eigenvalue_of_pos`; cosh identity `cosh_eq_sq_bracket_add_two`.
+The 2026-11-20 reset concerned the lane-e667 batch claim (#8323), not this work. Downstream `qou-8vt2` can cite these.

@@ -1,13 +1,13 @@
 ---
 # qou-t1kv
 title: 'GAP: HeckeGenerators is H_infinity — Schur cascade (PROVED, #5766) blocks stdRep3; dim>1 IsJMWeight witness needs a bounded-index class variant'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:18:35Z
 parent: qou-59vq
 ---
 
@@ -370,3 +370,8 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8402, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-25: "beans(qou-t1kv): COMPLETED -- every item proved and merged"). The work may be partly or fully done. Read the bean before you close it.
+
+
+## 2026-11-22 — completed (wave-2 drain): the "close on merge" condition is met
+
+The body says "THIS BEAN IS COMPLETE pending the merge of #5791" (JM commutativity). That work is on main: `QOU.BraidKnot.Hecke.jmRaw_comm` (`BraidKnot/HeckeTranspositionExpansion.lean`) and the dim>1 witness `stdTwoBelow3_isJMWeight` (`BraidKnot/HeckeBoundedSeminormalWeight.lean`), both verified this session with lean-direct on `main` 3c4c98fcc, axioms [propext, Classical.choice, Quot.sound]. The navigation note's correction (the cascade contradicts irreducibility, not dimension) stands and is not an open item. Successors named in the body: `qou-0o6j`, `qou-ayyi`.

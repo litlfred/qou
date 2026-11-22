@@ -1,14 +1,14 @@
 ---
 # qou-w0zn
 title: 'GAP: hup off-diagonal (DU-UD=I) on the Young lattice — the last brick of the RSK-free SW-3 route'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - close-candidate
 created_at: 2026-08-21T19:57:29Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:18:35Z
 parent: qou-1oif
 ---
 
@@ -196,3 +196,8 @@ fourth instance of this class in one session and the second one I authored.
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8323, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-08: "beans(qou-7dzg closed, qou-w0zn advanced): batch 7 -- and route 2 landed unconditionally"). The work may be partly or fully done. Read the bean before you close it.
+
+
+## 2026-11-22 — scrapped as superseded (wave-2 drain)
+
+The bean's own instruction was to check route 2 first and verify rather than re-derive. Route 2 landed unconditionally: `QOU.BraidKnot.WedderburnUnconditional.sum_numSYT_sq_eq_factorial` (no instance binder), verified this session with lean-direct on `main` 3c4c98fcc, axioms [propext, Classical.choice, Quot.sound]. The combinatorial DU − UD = I brick was not built; it would only be an independent confirmation. Reopen if that confirmation is wanted for its own sake.
