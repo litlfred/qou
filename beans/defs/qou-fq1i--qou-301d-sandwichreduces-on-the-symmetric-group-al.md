@@ -1,13 +1,13 @@
 ---
 # qou-fq1i
 title: 'qou-301d: SandwichReduces on the symmetric-group algebra tower — a growing filtration with a NON-multiplicative trace'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:06:40Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-22T21:19:32Z
 parent: qou-k4oq
 ---
 
@@ -45,3 +45,8 @@ Was in-progress with no bean update since 2026-09-07 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8402, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-22 — completed (wave-2 drain): the body's 2026-09-07 CLOSED entry stands
+
+The task as titled (SandwichReduces on the symmetric-group algebra tower, with a non-multiplicative trace, zero sorry) is on main: `QOU.MathlibExt.SymmetricGroupTowerWitness.sandwichReduces_sym` and `disjointBlock_sym`, verified this session with lean-direct on `main` 3c4c98fcc, axioms [propext, Classical.choice, Quot.sound]. Status had only been reset by batch triage. The body's scope limit is unchanged and must travel with any citation: this is the q = 1, z = 0, h = 0 shadow, not a Hecke tower; SandwichReduces for a Hecke tower at q ≠ 1 stays open (qou-301d / qou-ss88).
