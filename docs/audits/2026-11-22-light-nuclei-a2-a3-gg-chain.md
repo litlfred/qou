@@ -258,10 +258,36 @@ Lean status:
   the proof uses a merging evaluator `ME` that collects like basis terms after each letter;
   `ME_eq_P` proves it equals the plain expansion, and `tail_eq_trWord` writes that as a sum of
   `trWord` over subwords. `bond_into_proton_vanishes` and `bond_into_neutron_vanishes` give the
-  zero at z² − hz − 1 = 0. The full file takes about 9 minutes with lean-direct.
-- **Not in Lean:** the step from the A = 2 word to the four-strand tail (`towerTr_disjoint`
-  applied by hand), the leading coefficients read off the identities, and additivity over
-  several bonds at A ≥ 3 (§7), which is still a conjecture.
+  zero at z² − hz − 1 = 0. The full file takes about 10 minutes with lean-direct.
+- **Proved in Lean, sorry-free (same block):** the step from the full A = 2 word to the
+  four-strand tail. `a2_reduce` shows that for any first nucleon N₀ ∈ H₃ the γγ chain
+  `ggChain N₀ [N]` and the free product `freeTail [N₀, N]` have traces tr N₀ · tail(N↑¹ V³)
+  and tr N₀ · tail(N↑¹). `a2_bond_into_proton` and `a2_bond_into_neutron` then state the two
+  identities on the full A = 2 words, times tr N₀. Axioms: propext, Classical.choice,
+  Quot.sound.
+- **Not in Lean:** the leading coefficients read off the identities, and additivity over
+  several bonds at A ≥ 3 (§7, §9), which is checked exactly but not proved.
+
+## 9. A = 3 with z free: additivity holds for every z (exploratory, not proved)
+
+Probe `a3_bonds_generic_z_probe.py`, witness `a3-bonds-generic-z.witness.json`. The
+prediction was written in the probe's docstring before it was run, from the A = 2 identities
+of §8: bonds add at leading order in h, so
+
+- ratio − 1 = n_into_p · (1 − z²)/2 · h⁴ + O(h⁵) when at least one bond goes into a proton;
+- ratio − 1 = n_bonds · (1 − z²)/z · h⁵ + O(h⁶) otherwise.
+
+It is tested as an identity in z, exact over ℚ[h, z]: all 8 orders, four bond sets
+({01, 12}, {01, 12, 02}, {02, 12}, {02}), over and under transport. **64 of 64 cells match**,
+and the free trace at h = 0 is z² in every cell. So Rule B of §7 is not a property of z_D:
+the per-bond coefficients and their sum hold for every Markov parameter. One A = 4 cell
+(order p n p n, chain bonds) was also checked as a timing test and agrees (0.26 s), but the
+A = 4 cells have not been swept.
+
+What this does not show: it is a check on finitely many words, not a proof of additivity,
+and it says nothing about the orders beyond the leading one. For chain bonds the exact
+product form already follows from `towerTr_ggChain`; the non-chain cells (bond 02) are the
+new evidence.
 
 ## Reproduce
 
@@ -271,6 +297,7 @@ python3 -u computations/probes/light_nuclei_a2_a3/light_nuclei_a3_all_pairs_prob
 python3 -u computations/probes/light_nuclei_a2_a3/he4_all_pairs_exact_probe.py  # about 6 min, needs python-flint
 python3 -u computations/probes/light_nuclei_a2_a3/bond_leading_order_probe.py  # about 70 s
 python3 -u computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py  # about 1 s
+python3 -u computations/probes/light_nuclei_a2_a3/a3_bonds_generic_z_probe.py  # about 1 s, needs python-flint
 lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-endomorphism/light-nuclei-a2-bond-tail.lean  # about 9 min; needs the reducer olean on LEAN_PATH
 scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Mass/LightNucleiGGChainSign.lean
 ```
