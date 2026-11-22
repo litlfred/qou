@@ -36,6 +36,21 @@ An insertion fixed by `X ↦ D⁻¹ θ(X) D` has equal responses on the proton p
 neutron pair `(0, 0)` (`readout_eq_of_fixed`). That is the structural reason the `R`-compatible
 `U_q` pair Casimir and the KZ monodromy give `pp = nn`.
 
+**The bar symmetry, for any number of strands.** A second symmetry needs no hypothesis on how
+the weight sits on a sector. `ψ = transpose ∘ Ad F ∘ bar` (`F` flips `u ↔ d` on every strand,
+`bar : q ↦ q⁻¹`) reverses products, sends `σ_i` to `σ_i⁻¹`, fixes `K^{⊗N}`, and sends the core to
+`E C E⁻¹` with `E = Δ_A Δ_B` (`readout_barSymm`). In charges it acts by
+`(Q_A, Q_B) ↦ (1 − Q_A, 1 − Q_B)` together with `q ↦ q⁻¹`, and sends the pair term with
+parameters `(α, β)` to the one with `(1 − σα, 1 − σβ)` (`pairTerm_bar_flip`). So if every
+reachable pair term with `κ ≠ 0` has the same `α₀`, then `α₀ + σ α₀ = 1`
+(`alpha_add_bar_eq_one_of_pinned_alpha`), and the Coulomb form, which has `α = 0`, is not
+reachable (`not_coulomb_of_pinned_alpha`). This covers spectator strands between the blocks,
+where `β` is free and the sector involution fails. With both symmetries and a unique ray,
+`β₀ = σ α₀`, i.e. `β(q) = α(q⁻¹)` (`beta_eq_bar_alpha_of_unique_ray`). The local relations
+behind `ψ` are checked over `ℚ(q)` by `np_pair_term_bar_symmetry_check.py`; that `α` is pinned
+is the computer-algebra result of `np_more_strands_symbolic_probe.py` over `ℚ(q)` for
+`N = 6, 7, 8` and is a hypothesis here (`_of_pinned_alpha`).
+
 **Scope.** The abstract readout symmetry is proved here for any ring with a trace, an
 automorphism preserving it, and the stated relations; the 64 × 64 Jimbo instances of those
 relations (`J Ř_i J = Ř_{4−i}`, `J C J = C⁻¹`, `D C D⁻¹ = C⁻¹`) are verified exactly over
@@ -199,5 +214,105 @@ theorem not_coulomb_of_unique_ray (Reach : Set (K → K → K))
   norm_num at hsum
 
 end PairTerm
+
+/-! ### The bar symmetry: `q ↦ q⁻¹` together with `Q ↦ 1 − Q` in both blocks -/
+
+section Bar
+
+variable {A K ι : Type*} [Ring A]
+
+/-- **Readout under an anti-automorphism.** Let `ψ` reverse products and act on the trace by a
+map `σ` of the scalars (for the Jimbo representation, `ψ = transpose ∘ Ad F ∘ bar`, with `F`
+the flip `u ↔ d` on every strand and `bar : q ↦ q⁻¹`, and `σ = bar`). Suppose `ψ` sends the
+sector projectors to projectors, the core commutes with the projectors, and `ψ(C) = E C E⁻¹`
+with `E` a unit commuting with the projectors. Then the response of `X` at `s`, after `σ`, is
+the response of `E⁻¹ ψ(X) E` at `τ s`. No hypothesis is put on how a weight sits on a sector:
+a weight `K` with `ψ(K) = K` is absorbed into `tr`. -/
+theorem readout_barSymm (tr : A → K) (htr : ∀ x y, tr (x * y) = tr (y * x))
+    (σ : K → K) (ψ : A → A) (hψ : ∀ x y, ψ (x * y) = ψ y * ψ x)
+    (hψtr : ∀ x, tr (ψ x) = σ (tr x)) (P : ι → A) (τ : ι → ι)
+    (hP : ∀ s, ψ (P s) = P (τ s)) (C : A) (hCP : ∀ s, C * P s = P s * C) (E : Aˣ)
+    (hC : ψ C = E * C * ↑E⁻¹) (hE : ∀ s, (E : A) * P s = P s * E) (X : A) (s : ι) :
+    σ (readout tr P C X s) = readout tr P C (↑E⁻¹ * ψ X * E) (τ s) := by
+  unfold readout
+  have hEi : (↑E⁻¹ : A) * P (τ s) = P (τ s) * ↑E⁻¹ := by
+    calc (↑E⁻¹ : A) * P (τ s) = ↑E⁻¹ * (P (τ s) * ↑E) * ↑E⁻¹ := by
+          simp [mul_assoc]
+      _ = ↑E⁻¹ * (↑E * P (τ s)) * ↑E⁻¹ := by rw [hE]
+      _ = P (τ s) * ↑E⁻¹ := by rw [← mul_assoc, Units.inv_mul, one_mul]
+  rw [← hψtr, hψ, hψ, hP, hC]
+  calc tr (ψ X * (↑E * C * ↑E⁻¹ * P (τ s)))
+      = tr ((ψ X * ↑E * C) * (↑E⁻¹ * P (τ s))) := by noncomm_ring
+    _ = tr ((↑E⁻¹ * P (τ s)) * (ψ X * ↑E * C)) := htr _ _
+    _ = tr (C * (P (τ s) * (↑E⁻¹ * ψ X * ↑E))) := by
+          rw [hEi, show P (τ s) * ↑E⁻¹ * (ψ X * ↑E * C) = (P (τ s) * ↑E⁻¹ * ψ X * ↑E) * C by
+            noncomm_ring, htr]
+          congr 1; noncomm_ring
+    _ = tr (P (τ s) * C * (↑E⁻¹ * ψ X * ↑E)) := by
+          rw [← mul_assoc, hCP]
+
+end Bar
+
+section BarPairTerm
+
+variable {K : Type*} [Field K]
+
+/-- The bar flip of a pair term: applying `σ` to its values at `(1 − σx, 1 − σy)` gives the pair
+term with `σ` applied to `c, κ` and parameters `(1 − σα, 1 − σβ)`. -/
+theorem pairTerm_bar_flip (σ : K ≃+* K) (hσ : ∀ x, σ (σ x) = x) (c κ α β x y : K) :
+    σ (pairTerm c κ α β (1 - σ x) (1 - σ y)) = pairTerm (σ c) (σ κ) (1 - σ α) (1 - σ β) x y := by
+  unfold pairTerm
+  simp only [map_add, map_mul, map_sub, map_one, hσ]
+  ring
+
+/-- **A pinned `α` satisfies `α + σ α = 1`.** Let `Reach` be closed under the bar flip, and
+suppose every reachable pair term with `κ ≠ 0` has the same `α₀` (only `α` is pinned; `β` may be
+free, as with spectator strands between the blocks). If some pair term with `κ ≠ 0` is reachable,
+then `α₀ + σ α₀ = 1`. -/
+theorem alpha_add_bar_eq_one_of_pinned_alpha (Reach : Set (K → K → K)) (σ : K ≃+* K)
+    (hσ : ∀ x, σ (σ x) = x)
+    (hbar : ∀ f ∈ Reach, (fun x y => σ (f (1 - σ x) (1 - σ y))) ∈ Reach) (α₀ : K)
+    (hpin : ∀ c κ α β, κ ≠ 0 → pairTerm c κ α β ∈ Reach → α = α₀)
+    (c κ α β : K) (hκ : κ ≠ 0) (hf : pairTerm c κ α β ∈ Reach) :
+    α₀ + σ α₀ = 1 := by
+  have hα := hpin c κ α β hκ hf
+  have hg : pairTerm (σ c) (σ κ) (1 - σ α) (1 - σ β) ∈ Reach := by
+    have := hbar _ hf
+    simpa [pairTerm_bar_flip σ hσ] using this
+  have hκ' : σ κ ≠ 0 := by
+    intro h; exact hκ (by simpa using congrArg σ.symm h)
+  have hα' := hpin (σ c) (σ κ) (1 - σ α) (1 - σ β) hκ' hg
+  rw [hα] at hα'
+  linear_combination -hα'
+
+/-- **No Coulomb pair term, from a pinned `α` and the bar flip.** The Coulomb form has `α = 0`,
+and `0 + σ 0 ≠ 1`. This needs neither the sector involution nor a unique ray, so it applies with
+spectator strands between the blocks. -/
+theorem not_coulomb_of_pinned_alpha (Reach : Set (K → K → K)) (σ : K ≃+* K)
+    (hσ : ∀ x, σ (σ x) = x)
+    (hbar : ∀ f ∈ Reach, (fun x y => σ (f (1 - σ x) (1 - σ y))) ∈ Reach) (α₀ : K)
+    (hpin : ∀ c κ α β, κ ≠ 0 → pairTerm c κ α β ∈ Reach → α = α₀)
+    (c κ β : K) (hκ : κ ≠ 0) : pairTerm c κ 0 β ∉ Reach := by
+  intro hf
+  have hsum := alpha_add_bar_eq_one_of_pinned_alpha Reach σ hσ hbar α₀ hpin c κ 0 β hκ hf
+  have h0 := hpin c κ 0 β hκ hf
+  rw [← h0] at hsum
+  simp at hsum
+
+/-- **`β(q) = α(q⁻¹)`.** With both the sector involution and the bar flip, a unique ray
+`(α₀, β₀)` satisfies `β₀ = σ α₀`. -/
+theorem beta_eq_bar_alpha_of_unique_ray (Reach : Set (K → K → K)) (σ : K ≃+* K)
+    (hσ : ∀ x, σ (σ x) = x)
+    (hswap : ∀ f ∈ Reach, (fun x y => f (1 - y) (1 - x)) ∈ Reach)
+    (hbar : ∀ f ∈ Reach, (fun x y => σ (f (1 - σ x) (1 - σ y))) ∈ Reach) (α₀ β₀ : K)
+    (hray : ∀ c κ α β, κ ≠ 0 → pairTerm c κ α β ∈ Reach → α = α₀ ∧ β = β₀)
+    (c κ α β : K) (hκ : κ ≠ 0) (hf : pairTerm c κ α β ∈ Reach) :
+    β₀ = σ α₀ := by
+  have h1 := alpha_add_beta_eq_one_of_unique_ray Reach hswap α₀ β₀ hray c κ α β hκ hf
+  have h2 := alpha_add_bar_eq_one_of_pinned_alpha Reach σ hσ hbar α₀
+    (fun c κ α β hκ h => (hray c κ α β hκ h).1) c κ α β hκ hf
+  linear_combination h1 - h2
+
+end BarPairTerm
 
 end QOU.QBeta.PairTermSectorSymmetry
