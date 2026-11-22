@@ -584,6 +584,7 @@ export default chapter({
         "reeb-bundle-complement-equals-volume",
         "torus-knot-zero-volume-via-reeb",
         "hyperbolic-knot-positive-volume-via-reeb",
+        "hyperbolic-volume-degeneracy-prior-art",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",
         "crossing-graded-mass-expansion-table-data",
