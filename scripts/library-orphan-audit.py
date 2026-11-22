@@ -63,9 +63,16 @@ def audit(lib: str, index_md: str | None = None) -> dict:
         return {"error": f"no such directory: {lib}"}
     dirs = sorted(d for d in os.listdir(lib) if os.path.isdir(os.path.join(lib, d)))
 
-    orphans, duplicates, containers, ingested = [], [], [], []
+    orphans, duplicates, containers, datasets, ingested = [], [], [], [], []
     for d in dirs:
         p = os.path.join(lib, d)
+        # A reference DATASET (e.g. codata-2022) is a constants table ingested by the
+        # reference-dataset-ingestion route: it carries values.json and no PDF, so it
+        # has no sections/ or ocr/ by design and gets no INDEX row. Not an orphan.
+        if os.path.isfile(os.path.join(p, "values.json")) and not any(
+                f.lower().endswith(".pdf") for f in os.listdir(p)):
+            datasets.append(d)
+            continue
         has_sec = os.path.isdir(os.path.join(p, "sections"))
         has_ocr = os.path.isdir(os.path.join(p, "ocr"))
         if not has_sec and not has_ocr:
@@ -96,7 +103,7 @@ def audit(lib: str, index_md: str | None = None) -> dict:
             rows = sum(1 for line in fh if line.startswith("| ["))
 
     gap = len(dirs) - rows
-    accounted = len(duplicates) + len(containers) + len(orphans)
+    accounted = len(duplicates) + len(containers) + len(datasets) + len(orphans)
     return {
         "dirs": len(dirs),
         "index_rows": rows,
@@ -104,6 +111,7 @@ def audit(lib: str, index_md: str | None = None) -> dict:
         "orphans": orphans,
         "duplicates": len(duplicates),
         "containers": len(containers),
+        "datasets": datasets,
         "ingested": len(ingested),
         "accounted": accounted,
         "residual": gap - accounted,
@@ -119,6 +127,7 @@ def report(r: dict) -> int:
     print(f"gap                 {r['gap']}")
     print(f"  duplicates        {r['duplicates']}")
     print(f"  containers        {r['containers']}")
+    print(f"  datasets          {len(r['datasets'])}")
     print(f"  ORPHANS           {len(r['orphans'])}")
     print(f"  residual          {r['residual']}")
     ok = True
@@ -139,7 +148,7 @@ def report(r: dict) -> int:
         ok = False
         print()
         print(f"FAIL: residual {r['residual']} — dirs - rows is not explained by")
-        print("      duplicates + containers + orphans. A document is unaccounted for.")
+        print("      duplicates + containers + datasets + orphans. A document is unaccounted for.")
     if ok:
         print()
         print("OK: no orphans; index arithmetic closes with zero residual.")
@@ -167,6 +176,23 @@ def selftest() -> int:
         os.makedirs(bare)
         with open(os.path.join(bare, "0705.2975v1.pdf"), "wb") as fh:
             fh.write(b"%PDF-1.4\n")
+        # a reference dataset (values.json, no PDF) is NOT an orphan
+        ds = os.path.join(lib, "codata-test")
+        os.makedirs(ds)
+        with open(os.path.join(ds, "values.json"), "w") as fh:
+            fh.write("{}")
+        withds = audit(lib)
+        if "codata-test" in withds["orphans"] or withds["residual"] != 0 or "codata-test" not in withds["datasets"]:
+            print(f"SELFTEST FAIL: dataset entry misclassified: {withds}")
+            return 1
+        # but a values.json beside a bare PDF is still an orphan
+        with open(os.path.join(ds, "x.pdf"), "wb") as fh:
+            fh.write(b"%PDF-1.4\n")
+        if "codata-test" not in audit(lib)["orphans"]:
+            print("SELFTEST FAIL: PDF beside values.json not detected as orphan")
+            return 1
+        shutil.rmtree(ds)
+
         dirty = audit(lib)
         if "arxiv-0705.2975v1" not in dirty["orphans"]:
             print(f"SELFTEST FAIL: planted orphan NOT detected: {dirty}")
