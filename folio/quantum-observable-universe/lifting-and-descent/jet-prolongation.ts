@@ -10,6 +10,21 @@ export default proposition({
   proofs: ["prf:jet-prolongation"],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-22",
+      body:
+        "The Frobenius form on $T(A)$ cannot be a Haar integral in characteristic zero. Proved (scope b, " +
+        "invariant: a left integral kills every derivative): on the coordinate algebra $k[X]$ of the additive " +
+        "group, $\\Delta X = X \\otimes 1 + 1 \\otimes X$, a left integral satisfies $\\lambda(p') = 0$ for every " +
+        "$p$, hence $\\lambda = 0$ over a characteristic-zero domain (`QOU.LiftingDescent.additive_no_integral`, " +
+        "`QOU/LiftingDescent/TangentNoIntegral.lean`, sorry-free). Cited, not formalised: $TG = G \\ltimes " +
+        "\\mathrm{Lie}(G)$ contains the vector group $\\mathrm{Lie}(G)$, and a commutative Hopf algebra over a " +
+        "field of characteristic zero has a nonzero integral exactly when its group is linearly reductive " +
+        "(Sweedler 1969; Sullivan 1971). So $\\mathcal{O}(TG)$ has no nonzero integral, and a Frobenius form on " +
+        "$T(A)$, if any, is not the Haar integral. Not excluded: a non-invariant Frobenius form, a " +
+        "graded or super variant, and the non-commutative or $q \\neq 1$ settings.",
+    },
+    {
       kind: "refined-framing",
       date: "2026-11-22",
       body:
