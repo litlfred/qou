@@ -101,8 +101,10 @@ only. "Closure of `β_Bor` is not the unlink" also needs a link invariant
   closed three-braids), and more at length 12. What singles out `β_Bor` is
   *minimal crossing number* among them; that cost is the same crossing-count cost the
   γγ route uses (`QOU.Mass.GammaGammaSelectionAllK`) and the U(1)-neutral cut uses
-  (`QOU/PhotonU1NeutralCut.lean`, PR #8835, owner ruling of 2026-11-21 on whole-word U(1) neutrality), and it is an input,
-  not derived.
+  (`QOU/PhotonU1NeutralCut.lean`, PR #8835, owner ruling of 2026-11-21 on whole-word U(1) neutrality). It is an input, not
+  derived; the owner ruled on 2026-11-22 that minimising crossing energy is an acceptable
+  selection rule (`docs/coordination/owner-rulings.md`), and on this family that energy
+  is the crossing count (`borromean_minimises_energy`).
 
 Nothing here reads CODATA, AME or PDG.
 -/
