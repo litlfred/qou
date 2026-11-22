@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-22T12:08:27Z
+updated_at: 2026-11-22T15:14:48Z
 parent: qou-wxhi
 ---
 
@@ -36,3 +36,11 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
 
 
 2026-11-22 (PR #9013): is E₀'s weight w = ℏ_q/q² a convention-D Markov trace? None of the six preregistered candidates equals w. All six are certified ≠ w in Lean (QOU/QBeta/E0WeightCandidates.lean, sorry-free). The general obstruction is not in Lean: at q=1 every braid-word trace is 2^{c−n} > 0, while w(1) = 0, so no single braid word's trace can be w. Combinations and tower sums were deliberately not searched (that would be fitting). Scope (a). Audit §34; Lean coverage ledger §35.
+
+
+2026-11-22 (PR #9023): two follow-ups on whether E₀'s weight w = ℏ_q/q² is a trace.
+- All words, now in Lean: no braid word on any number of strands has convention-D state-sum trace w (QOU/QBeta/E0WeightAllWords.lean, traceD_ne_weight; sorry-free). The reason: at q=1 the trace is trClassical = 2^{c−n} > 0 and it is continuous there, while w(1) = 0.
+- Tower-level, prereg Addendum 1. Candidates were checked by order of vanishing at q = 1.
+  - Brane tower: order ≥ 2. Markov stabilisation tower and Σq⁻ᵏ: order 0. Both excluded in Lean.
+  - Skein difference h·τ(β): order 1. It matches w to first order when the closure has n−1 components, but is never equal to w (hand argument, pole at q = −1).
+- Conclusion: w ≈ h/2 to first order, where h = σ−σ⁻¹. The weight is still not derived. Free-coefficient combinations were not searched, because that would be fitting.
