@@ -1175,6 +1175,7 @@ import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringZeroModeClausenWitness
 import QOU.Archimedean.ArchimedeanLimitDomain
 import QOU.Archimedean.ArchimedeanLimitNegative
+import QOU.Archimedean.ArchimedeanLimitEndpoints
 import QOU.Archimedean.BlochSuslinComplex
 import QOU.Archimedean.BlochWignerFiveTermInstance
 import QOU.Archimedean.BlochRigidity.Algebra
