@@ -11,11 +11,15 @@
     "arxiv": "math/0401084v3"
   },
   "type": "article",
-  "title": "Some limits of the colored Jones polynomials of the figure-eight knot",
+  "title": "The colored Jones polynomials of the figure-eight knot and its Dehn surgery spaces",
   "author": [
     {
       "family": "Murakami",
       "given": "Hitoshi"
+    },
+    {
+      "family": "Yokota",
+      "given": "Yoshiyuki"
     }
   ],
   "issued": {
@@ -26,5 +30,5 @@
     ]
   },
   "URL": "https://arxiv.org/abs/math/0401084",
-  "note": "arXiv:math/0401084. Title recorded from the arXiv listing; the corpus cites it for the deformed volume-conjecture normalisation q_eval = exp((u + 2*pi*i)/N). NOT independently verified against the published text - arxiv.org is egress-blocked from the agent sandbox, so a reader should confirm before relying on the exact wording."
+  "note": "arXiv:math/0401084. Title and authors read from the held v3 (library/arxiv-math-0401084v3, dated 9 Mar 2006); v1 was titled 'Some limits of the colored Jones polynomials of the figure-eight knot', single author. The corpus cites it for the deformed volume-conjecture normalisation q_eval = exp((u + 2*pi*i)/N), confirmed verbatim in Thm 2.2 of v3 (with Cor. 2.4 for the Dehn-surgery volume and Chern-Simons)."
 }

@@ -43,7 +43,7 @@ so the corpus's constant `A_ω = 3` needs no substrate correction; and the
 raw-entry reading is separately excluded by
 `QOU.QBeta.ThetaRealityBound.thetaSq_nonneg_iff` (`A ≥ 2.054`).
 
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (symmetry eq 65, eq 60)
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 (symmetry eq 65, eq 60)
 -- Ref: [leitner2026] docs/audits/2026-08-01-3bp8-entirety-and-channel-correctness.md
 -/
 
