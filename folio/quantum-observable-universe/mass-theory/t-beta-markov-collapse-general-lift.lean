@@ -285,8 +285,8 @@ statements below replace `τ(X · X)` by `τ(X · X†)` for an `R`-linear
 map `† : A → A` with `1† = 1` and `τ(X†) = τ(X)`. Nothing else about
 `†` is used, so `† = id` is allowed and recovers the untwisted
 statements above as a special case. For `H_n(R, q)`, `†` is the
-anti-involution fixing each `σ_i`, and positivity of `τ_M(Y Y†)` is
-Wenzl's theorem (`Σ_λ y_λ ‖Y_λ‖²_F` with every `y_λ ≥ 0`). -/
+anti-involution fixing each `σ_i`. Positivity of `τ_M(Y Y†)` at `z_D`, `q > 1`, is proved in
+`QOU.SchurWeyl.SeminormalRep.wtrace_mul_dag_nonneg` (instance at the end of this file). -/
 
 /-- An `R`-linear map `†` on `A` that fixes `1` and preserves `τ`. -/
 structure TraceTwist (R : Type u) [CommRing R] (A : Type v) [Ring A] [Algebra R A]
