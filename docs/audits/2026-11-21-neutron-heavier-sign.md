@@ -215,3 +215,48 @@ ordering:
 
 Still open: a γγ-derived electron placement on the six-strand neutral sector, which would fix the
 capture's side. That belongs to the photon-norm and m_n threads.
+
+## The ruled flavour split on the siblings' four-strand hydrogen element (2026-11-22, owner: "use their work")
+
+Pre-registered: `np_hydrogen_flavour_split_preregistration.md`, commit bb861be97f2, with an honesty
+clause. The probe is `np_hydrogen_flavour_split_probe.py`, and its output is in `.out.txt`. It is
+exact over Q(q).
+
+**The coincidence that prompted this, recorded and not adopted.** E₀^full·(ε(V³) + |S_B1|) =
+0.78189 MeV, against CODATA Q_β 0.78233 (−0.057 %). That sum adds two different functionals: the
+ruled K-weighted quantum trace and the sibling's T³-weighted B1. It also needs the placement whose
+sign makes them add. It is selection against the target.
+
+**What the single ruled functional gives.** E_c(W) = Tr(K^{⊗4}Π_c W)/[2]⁴, ε = E_p − E_n.
+
+| element | ε at q₀ | E₀^full·\|ε\| (MeV) | t_n/t_p | ε − ε(V³) |
+|---|---|---|---|---|
+| W0 = V³ (electron spectator) | 0.0769805 | 0.32543 | q⁻² | 0 (H1 holds) |
+| W_L, cabled capture | 0.0584529 | 0.24711 | q⁻² | −0.018528, O(h²) |
+| W_R, cabled capture | 0.0457499 | 0.19341 | not q⁻² | −0.031231, O(h²) |
+| W_adj,L | 0.0704847 | 0.29797 | q⁻² | −0.006496, O(h²) |
+| W_adj,R | 0.0651658 | 0.27549 | not q⁻² | −0.011815, O(h²) |
+
+Exact forms are in the output. For example, ε(W_L) = −h·N₁₆(q)/(q⁷(q²+1)⁴) with
+N₁₆ = q¹⁶ − 3q¹⁴ + 3q¹² − 7q¹⁰ + 6q⁸ − 7q⁶ + 3q⁴ − 3q² + 1.
+
+**Implications.**
+1. **The 0.782 coincidence does not survive one functional.** On the ruled functional, the electron
+   capture is a negative O(h²) correction. It moves the scored Q_β away from CODATA, to −68 % to
+   −75 % depending on the arm, against −58.4 % for bare V³.
+2. **Sign unchanged.** ε > 0 in every arm, so under "mass ∝ trace" the neutron is still lighter.
+   The capture does not flip it.
+3. **H3 is half refuted.** Proton-left placements keep t_n/t_p = q⁻² exactly. Proton-right
+   placements break it. Under this functional the two placements are not mirror images, unlike the
+   sibling's S, which is exactly antisymmetric. The reason is that K and u = e₁ are not
+   mirror-invariant.
+4. **Owner rule 2026-11-21 (keep derivable small corrections).** The capture term ε(W) − ε(V³) is
+   exact and derivable once the element is fixed. It is a correction to keep. But the element is
+   not fixed:
+   - the cabling (cabled vs adjacent) is the sibling's labelled choice;
+   - the placement (left vs right) is not derived;
+   - the gluon (step 4) is owner-unresolved.
+   So no single correction can be scored yet. If Q_β is ever scored on the hydrogen element instead
+   of bare V³, it moves from 0.3254 MeV to 0.193–0.298 MeV.
+5. Not formalised in Lean. The left-placement q⁻² ratio would follow from a K-weighted version of the
+   sibling's intertwiner (`HydrogenCaptureWeightSpace.lean`). That is the natural next lemma.
