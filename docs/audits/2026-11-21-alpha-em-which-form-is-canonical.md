@@ -498,3 +498,62 @@ and the genus-4 match is topological only.
 on the Milnor fibre. It does not rule out a different reason for the genus-4 member, for
 example a topological embedding of the fibre surface into `Σ₄`, or an `S₅`-equivariance
 argument. The saturation rule stays adopted, not derived.
+
+## 20. The topological route: no S₅-equivariant embedding of a genus-4 fibre surface (2026-11-22)
+
+**Question (pre-registered before any proof was attempted).** §19 left open whether the
+genus-4 members `T(3,5)` and `T(2,9)` could be tied to Bring's surface `Σ₄` topologically
+rather than as curves. Two readings were tested, and the outcome of each was written down
+as "embeds", "does not embed" or "undecided" before starting:
+
+1. *Subsurface reading.* The fibre surface `F` (genus 4, one boundary circle) sits in `Σ₄`
+   as an `S₅`-invariant subsurface.
+2. *Mapping-class reading.* The monodromy `h` of the fibration (order 15 for `T(3,5)`,
+   order 18 for `T(2,9)`, after capping the boundary) lies in a finite group of mapping
+   classes of the closed genus-4 surface together with an `S₅`, for example commuting with
+   it or normalising it.
+
+**Result: neither reading holds. Both are scope-(b) exclusions with named invariants.**
+
+*Reading 1.* A genus-4 one-boundary subsurface `F ⊂ Σ₄` has complement a closed disk `D`.
+If `S₅` preserved `F` it would preserve `D`. The `S₅` action is holomorphic, so it is
+faithful on `D` (an automorphism that is the identity on an open set is the identity). A
+finite group of homeomorphisms of a closed disk is conjugate to a subgroup of `O(2)`
+(Kerékjártó; Eilenberg), so it fixes a point `p`. The stabiliser of `p` in a holomorphic
+action acts faithfully on the tangent line, hence is cyclic. That would make `S₅` cyclic,
+and `perm5_not_isCyclic` proves it is not. The argument uses only the genus and the single
+boundary circle, so it excludes `T(3,5)` and `T(2,9)` alike.
+
+*Reading 2.* By Nielsen realisation (Kerckhoff 1983, cited as [Ker] in the held source
+`library/bn/`), a finite group of mapping classes of the closed genus-4 surface acts by
+conformal automorphisms of some complex structure. The largest conformal automorphism group
+in genus 4 has order 120 and belongs to Bring's surface (`library/210811825v1/`, appendix
+E; `def:brings-surface`). If `h` normalises or commutes with an `S₅`, the group they
+generate is finite (a finite-order element normalising a finite group), contains `S₅`, and
+has order at most 120. `no_overgroup_of_perm5` proves such a group has no element of order
+15 or 18. So `h` cannot be there.
+
+**Lean.** Appended to `QOU/AlphaEM/SaturationNotBringFibre.lean`, lean-direct exit 0,
+`#print axioms` free of `sorryAx`:
+
+| Declaration | Statement |
+|---|---|
+| `perm5_not_isCyclic` | `S₅` is not cyclic |
+| `perm5_no_order_18` | `S₅` has no element of order 18 |
+| `no_overgroup_of_perm5` | a finite group of order ≤ 120 containing `S₅` has no element of order 15 or 18 |
+
+The topological inputs (disk actions are linear, cyclic point stabilisers, Nielsen
+realisation, the genus-4 bound 120) are cited, not formalised.
+
+**What this does and does not say.** Every route tried so far fails to tie the genus-4
+member to `Σ₄` beyond the number 4: not as a curve (§19), not as an invariant subsurface,
+not through its monodromy. So the selection of exactly one full twist (`T(3,5)`, genus 4)
+rests on the Bring bound `g ≤ 4` plus the adopted saturation rule, and saturation is still
+not derived. This does not touch the bound `g ≤ 4` itself, which only needs a topological
+embedding without equivariance, and that always exists for `g ≤ 4`.
+
+**A discrepancy with the corpus, flagged and not changed.** `prop:s5-equivariant-torus-knots`
+and audit `2026-06-02-lepton-t2n-torus-tower.md` §2 call `T(2,n)` `S₅`-equivariant when
+`ℤ_n ↪ S₅`. The monodromy of `T(2,n)` has order `2n`, not `n`. Under a monodromy-order
+criterion the verdicts change: `T(2,3)` (order 6) passes, `T(2,5)` (order 10) fails. Which
+cyclic group the corpus criterion means is an owner question. Nothing here edits that block.
