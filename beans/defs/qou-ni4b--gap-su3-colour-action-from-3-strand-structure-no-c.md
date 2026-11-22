@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-11-22T18:29:38Z
+updated_at: 2026-11-22T18:33:57Z
 parent: qou-8lxd
 ---
 
@@ -75,3 +75,16 @@ Prereg 3f7b5b43e13; probe 3b45170517a; out 055432050b4; RESULT 2556e7c3247. 27/2
 - R3: each of {1,2}, {2,3} and {1,3} leaves a rank-1 U_q(gl2)xU(1); on {1,3} this is the root-(a1+a2) q-sl2. The pre-registered prediction 'Cartan only' FAILED. All three give the same H_n trace, so the choice is a selection that no Hecke observable sees.
 - R4: the -2 ratio comes from tracelessness alone; the mixing family is 1/(12 s^2+1). No Weinberg angle is forced.
 Verdict: a colour-breaking stabiliser, not electroweak. This is a reading argument, not an invariant. Bean stays open.
+
+
+
+2026-11-22 (Lean): QOU/Braiding/ColourTwistMarkov.lean, commit 84123d764ed on claude/qcd-heat-kernel-beta0-sign-2026-11-22 (PR #9059). Sorry-free over a generic [Field R]. Proved:
+- Jimbo gl3 Hecke relation (jimboR_hecke).
+- Markov step for all n (twisted_trace_markov): P K = s K implies tr_{n+1} = s tr_n, so z = s/tr K.
+- The rank of K fixes z: rank 1 gives q, rank 2 (all supports) gives q^3/(q^2+1), rank 3 gives q^5/(q^4+q^2+1) with K forced to k2*(q^-4,q^-2,1).
+- rank_two_twist_conventionD: z(q+q^-1) = q^2; composed with ocneanuWeight_conventionD_eq_zero_of_three_rows.
+- An E1,E2-invariant diagonal twist is m2*(q^-4,q^-2,1): invertible, never rank 2, never z_D.
+
+NOT proved: the braid relation for Ř; the trace property on the image of H_n; Ocneanu uniqueness. So the D identification holds at the parameter level only.
+
+Verification: lean-direct exit 0; #print axioms shows no sorryAx.
