@@ -1992,6 +1992,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_with_state, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_cached, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_batch, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_suffixes, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_word_lq_cache_stats, m)?)?;
     m.add_function(wrap_pyfunction!(atomic_reduce_cache_clear, m)?)?;
     m.add_function(wrap_pyfunction!(atomic_reduce_cache_size, m)?)?;
@@ -2279,6 +2280,33 @@ fn tr_m_atomic_mpfr_batch(
     py.allow_threads(|| {
         rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr_batch(
             &signed_words, n_strands, &q_str, dps, parallel,
+        )
+    })
+    .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
+/// **`tr_M(word_i · s_j)` for every word and every positive suffix.**
+///
+/// Returns `out[i][j]`. Each word is reduced once (shared prefixes once) and
+/// each suffix is applied by trace linearity, `tr(X·T_s) = Σ_u c_u tr(T_u T_s)`,
+/// instead of by reducing `X·T_s`. `suffixes` are 0-based generator indices,
+/// positive letters only. Exact up to the final MPFR substitution; the empty
+/// suffix is byte-identical to `tr_m_atomic_mpfr`, other suffixes agree with it
+/// to `dps` (see hecke-engine's `suffixes_match_per_word`). GIL released.
+#[pyfunction]
+#[pyo3(signature = (signed_words, suffixes, n_strands, q_str, dps=50, parallel=true))]
+fn tr_m_atomic_mpfr_suffixes(
+    py: Python<'_>,
+    signed_words: Vec<Vec<(i8, i32)>>,
+    suffixes: Vec<Vec<u32>>,
+    n_strands: usize,
+    q_str: String,
+    dps: u32,
+    parallel: bool,
+) -> PyResult<Vec<Vec<String>>> {
+    py.allow_threads(|| {
+        rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr_suffixes(
+            &signed_words, &suffixes, n_strands, &q_str, dps, parallel,
         )
     })
     .map_err(pyo3::exceptions::PyRuntimeError::new_err)
