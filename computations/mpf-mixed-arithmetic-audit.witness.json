@@ -3,19 +3,45 @@
   "name": "mpf-mixed-arithmetic-audit",
   "description": "Static detection of arithmetic mixing an mpmath value with a float64-sourced one. Sits between the value-level padding ratchet (blind once a float64 is multiplied by anything exact) and the construction-level mpf(<float>) gate (blind because no mpf() call is involved). Advisory: high-recall candidates for agent verdict.",
   "data": {
-    "candidates": 0,
-    "marked": 13,
-    "files": 0,
+    "candidates": 2,
+    "marked": 12,
+    "files": 2,
     "baseline": 3,
-    "by_file": {},
-    "rows": []
+    "by_file": {
+      "computations/d_density_derivation.py": 1,
+      "computations/probes/single_level_binding_gg/single_level_binding_gg_probe.py": 1
+    },
+    "rows": [
+      {
+        "file": "computations/d_density_derivation.py",
+        "line": 258,
+        "kind": "serialized",
+        "detail": "fmt(<float64-tainted>)",
+        "source": "\"ratio_alt_over_sym\": fmt(ratio_alt_over_sym),",
+        "taint_name": "ratio_alt_over_sym",
+        "taint_origin_line": 186,
+        "taint_origin_source": "ratio_alt_over_sym = (abs(contrib_alt) / abs(contrib_sym)",
+        "class": "CANDIDATE"
+      },
+      {
+        "file": "computations/probes/single_level_binding_gg/single_level_binding_gg_probe.py",
+        "line": 369,
+        "kind": "printed",
+        "detail": "nstr(<float64-tainted>, 25)",
+        "source": "f\"kernel {mp.nstr(c2k, 25)}, mpmath {mp.nstr(c2p, 25)}, closed form {mp.nstr(cf, 25)}\")",
+        "taint_name": "c2p",
+        "taint_origin_line": 367,
+        "taint_origin_source": "c2p = mp.fsum(np.diag(apply_word(identity(2), (2, 1), V(0) * 3)))",
+        "class": "CANDIDATE"
+      }
+    ]
   },
   "scriptFile": "mpf_mixed_arithmetic_audit.py",
   "scriptHash": "d7e9d09508b5",
-  "scriptCommitSha": "4368f190768ffff142d30a9a01fc47befb68ba1c",
-  "commitSha": "e78fcf72cf2a10d34f0c07635a9affb64e504bc8",
+  "scriptCommitSha": "48f446490cc833b25914ad7c198fcdd1a26a6e5c",
+  "commitSha": "1d70f8f89e5afa582b96f88a7927efa096c31bc4",
   "engine": "python",
-  "computedAt": "2026-11-21T04:44:43.466283+00:00",
+  "computedAt": "2026-11-22T19:22:36.012689+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
