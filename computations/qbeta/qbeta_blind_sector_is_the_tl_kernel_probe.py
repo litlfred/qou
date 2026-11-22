@@ -180,19 +180,18 @@ def main() -> int:
     print(f"    {'n':>3s} {'parts':>6s} {'<=2row':>7s} {'n!':>8s} {'C_n':>7s} "
           f"{'max|w| l>2':>12s} {'min|w| l<=2':>12s} {'exact?':>8s}")
     rows, all_exact = [], True
-    # float64-ok: omega classifies blocks at a 1e-9 threshold against values
-    # that are ~1e-16 or ~1e-1 -- seven orders of margin, and the Catalan
-    # arithmetic confirms the split independently.
-    qf, zf = float(Q0), float(Z_D0)   # float64-ok: classification only
+    # omega is mpf since 2026-11-22 (branch-cache P9): the inversion is solved
+    # at the exact q0, so the >2-row weights are zero to ~1e-70, not ~1e-16.
+    # z is fixed by convention D inside the solver.
     for n in range(3, 9):
         parts = list(partitions_of(n))
-        om = omega_lambda_via_inversion(n, q_val=qf, z_val=zf)
+        om = omega_lambda_via_inversion(n, q_val=Q0)
         tot = le2 = n_le2 = 0
         hi, lo = mp.mpf(0), None
         for sh in parts:
             _, d, _ = build_seminormal_matrices_mp(sh, Q0)
             tot += d * d
-            w = mp.fabs(mp.mpf(str(om.get(sh, 0.0))))
+            w = mp.fabs(om.get(sh, mp.mpf(0)))
             if len(sh) <= 2:
                 le2 += d * d
                 n_le2 += 1

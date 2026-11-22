@@ -198,11 +198,105 @@ def main() -> int:
             continue
         prepared[name] = (n, ta, tf)
 
+    # ── Trace table: every (term word, suffix) evaluated ONCE ──────────
+    # Performance only (owner request 2026-11-21, PR #8940); see
+    # /mnt/project-files/derived-w-2026-11-21/bottleneck-analysis.md.
+    #  * dedup: the candidates use four distinct suffixes ([], sigma_1, T1T1,
+    #    the interface word); P+ and P- reuse the first two.
+    #  * the reduction of the expanded signed word was >99 % of the wall.
+    #    `tr_m_atomic_mpfr_suffixes` reduces each term once, sharing prefixes
+    #    across terms, and applies each (positive) suffix by trace linearity,
+    #    tr(X.T_s) = sum_u c_u tr(T_u T_s), instead of reducing X.T_s. Exact up
+    #    to the final MPFR substitution; the empty suffix is byte-identical to
+    #    tr_m_atomic_mpfr and the others agree with it to the working dps
+    #    (hecke-engine test `suffixes_match_per_word`).
+    #  * cache: computations/trace_cache.py stores each value keyed on the
+    #    engine source tree, q0 string, dps, n, word and suffix, journals after
+    #    every chunk and seeds the `trace-cache` branch family, so an
+    #    interrupted run resumes.
+    from trace_cache import TraceCache
+    T_START = time.monotonic_ns()
+
+    def _secs(ns):
+        return f"{ns // 10**8 / 10}s"
+
+    if not hasattr(ph, "tr_m_atomic_mpfr_suffixes"):
+        raise RuntimeError("pyhecke_native is older than tr_m_atomic_mpfr_suffixes; "
+                           "rebuild it (scripts/build-pyhecke-native.sh)")
+
+    def _one(n, word, sfx):
+        return ph.tr_m_atomic_mpfr_suffixes([list(word)], [list(sfx)], n, Q0S, DPS)[0][0]
+
+    cache = TraceCache("tr-m-atomic-mpfr-suffixes", Q0S, DPS)
+    try:
+        cache.verify(_one)
+    except RuntimeError as exc:        # cache refused itself; compute everything
+        print(f"  🛑 {exc}", flush=True)
+    table, failed = {}, {}
+    chunk = int(os.environ.get("QOU_TRACE_CHUNK", "128"))
+    for name, (n, ta, tf) in prepared.items():
+        sufs = {(): None}
+        for combo in candidates(n).values():
+            for (_c, word) in combo:
+                sufs.setdefault(tuple(word), None)
+        sufs = list(sufs)
+        if any(sg != 1 for suf in sufs for (sg, _g) in suf):
+            raise RuntimeError("a candidate suffix has an inverse letter; the "
+                               "linearity route needs positive suffixes")
+        pos_sufs = [[g for (_sg, g) in suf] for suf in sufs]
+        terms = list(dict.fromkeys(tuple(word) for tl in (tf, ta) for (_w, word) in tl))
+        pairs = [(t, ps) for t in terms for ps in pos_sufs]
+        found, missing = cache.lookup(n, pairs)
+        for i, v in found.items():
+            t, _ = pairs[i]
+            table[(n, t, sufs[i % len(sufs)])] = v
+        todo = sorted({pairs[i][0] for i in missing})
+        print(f"  [{_secs(time.monotonic_ns() - T_START)}] {name} n={n}: "
+              f"{len(terms)} distinct terms x {len(sufs)} suffixes = {len(pairs)} traces, "
+              f"{len(found)} cached, {len(todo)} terms to compute", flush=True)
+        t_atom = time.monotonic_ns()
+        for k in range(0, len(todo), chunk):
+            part = todo[k:k + chunk]
+            t_c = time.monotonic_ns()
+            try:
+                vals = ph.tr_m_atomic_mpfr_suffixes([list(t) for t in part], pos_sufs,
+                                                     n, Q0S, DPS)
+                ok_part = list(zip(part, vals))
+            except RuntimeError:
+                ok_part = []
+                for t in part:
+                    try:
+                        ok_part.append((t, ph.tr_m_atomic_mpfr_suffixes(
+                            [list(t)], pos_sufs, n, Q0S, DPS)[0]))
+                    except RuntimeError as exc:
+                        for suf in sufs:
+                            failed[(n, t, suf)] = str(exc)
+            for t, row in ok_part:
+                for suf, v in zip(sufs, row):
+                    table[(n, t, suf)] = v
+            cache.store(n, [(t, ps) for t, _ in ok_part for ps in pos_sufs],
+                        [v for _, row in ok_part for v in row])
+            cache.maybe_publish()
+            done = k + len(part)
+            el = time.monotonic_ns() - t_atom
+            eta = el * (len(todo) - done) // done
+            print(f"  [{_secs(time.monotonic_ns() - T_START)}] {name}: {done}/{len(todo)} "
+                  f"terms, chunk {_secs(time.monotonic_ns() - t_c)}, atom {_secs(el)}, "
+                  f"ETA {_secs(eta)}", flush=True)
+        print(f"  [{_secs(time.monotonic_ns() - T_START)}] {name}: trace table done in "
+              f"{_secs(time.monotonic_ns() - t_atom)}; {cache.stats()}", flush=True)
+    cache.publish()
+    h, m_, c_, sz = ph.tr_m_word_lq_cache_stats()
+    print(f"  tr_m_word_lq recursion cache: {h} hits / {m_} misses, "
+          f"{c_} wholesale clears at the 100k cap, {sz} entries", flush=True)
+
     def trM(terms, n, suffix):
         tot = mp.mpf(0)
         for (w, word) in terms:
-            tot += w * mp.mpf(ph.tr_m_atomic_mpfr(
-                list(word) + list(suffix), n, Q0S, DPS))
+            key = (n, tuple(word), tuple(suffix))
+            if key in failed:
+                raise RuntimeError(failed[key])
+            tot += w * mp.mpf(table[key])
         return tot
 
     def S(terms_f, terms_a, n, combo):

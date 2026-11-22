@@ -1,0 +1,16 @@
+{
+  "$schema": "folio-graph-typology/v1",
+  "kind": "xbot-relaxation-ckpt",
+  "title": "Bottom-edge relaxation probe checkpoints",
+  "perInstance": true,
+  "renderable": false,
+  "holds": "derived",
+  "validatorNotApplicable": "a member branch holds `manifest.json` (`xbot-relaxation-ckpt-member/v1`: probe path, the computations/ source key and tree, and a list of shards with sha256) and content-addressed JSONL shards of record name -> the probe's own stage or call record, not graph nodes. `scripts/branch-cache.sh shard-restore` checks every shard's sha256 against the manifest and the manifest's member against the key it asked for, and the probe only restores a stage record whose embedded key equals the hash it recomputes from its own source and inputs, so a bad member is a miss or a refusal, never a served value.",
+  "summary": "Resumable checkpoints of one long bottom-edge relaxation probe run, one branch per tree of computations/, so a run killed by the harness ceiling continues in the next session instead of restarting.",
+  "avatar": {
+    "glyph": "M4 12h4l3-7 3 14 3-7h3",
+    "tone": 40,
+    "reads": "a trace that pauses and resumes: a long run kept in checkpoints"
+  },
+  "rationale": "Owner approval 2026-11-22 (issue #8996, \"I'm saying to do as you recommended before\"): migrate the probe's checkpoints from ~/.cache/qou/xbot-relaxation-ckpt onto the common branch-cache layer, keyed on a hash of computations/ as a whole plus the probe's inputs. Modelled on `mn-chi-cache` and `trace-cache`. `derived`: every record is recomputable from the source tree it is keyed on, and is never edited."
+}
