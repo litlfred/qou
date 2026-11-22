@@ -115,4 +115,114 @@ theorem cone_stable {u₁ u₂ w : E} (hseg : ∀ θ ∈ Icc (0 : ℝ) 1, (1 - �
         nlinarith
   linarith
 
+open Pointwise
+
+/-- The cone over `B`: the nonnegative multiples of points of `B`. -/
+def rayHull (B : Set E) : Set E := {y | ∃ l : ℝ, 0 ≤ l ∧ ∃ q ∈ B, y = l • q}
+
+lemma convex_rayHull {B : Set E} (hB : Convex ℝ B) : Convex ℝ (rayHull B) := by
+  rintro _ ⟨l, hl, q, hq, rfl⟩ _ ⟨l', hl', q', hq', rfl⟩ s t hs ht hst
+  by_cases hL : s * l + t * l' = 0
+  · have e1 : s * l = 0 := by nlinarith [mul_nonneg hs hl, mul_nonneg ht hl']
+    have e2 : t * l' = 0 := by nlinarith [mul_nonneg hs hl, mul_nonneg ht hl']
+    exact ⟨0, le_rfl, q, hq, by rw [smul_smul, smul_smul, e1, e2]; simp⟩
+  · have hLpos : 0 < s * l + t * l' :=
+      lt_of_le_of_ne (add_nonneg (mul_nonneg hs hl) (mul_nonneg ht hl')) (Ne.symm hL)
+    refine ⟨s * l + t * l', hLpos.le,
+      (s * l / (s * l + t * l')) • q + (t * l' / (s * l + t * l')) • q',
+      hB hq hq' (div_nonneg (mul_nonneg hs hl) hLpos.le)
+        (div_nonneg (mul_nonneg ht hl') hLpos.le) (by rw [← add_div, div_self hL]), ?_⟩
+    have h1 : (s * l + t * l') * (s * l / (s * l + t * l')) = s * l := by field_simp
+    have h2 : (s * l + t * l') * (t * l' / (s * l + t * l')) = t * l' := by field_simp
+    simp only [smul_add, smul_smul, h1, h2]
+
+lemma zero_mem_rayHull {B : Set E} {q : E} (hq : q ∈ B) : (0 : E) ∈ rayHull B :=
+  ⟨0, le_rfl, q, hq, by simp⟩
+
+/-- **The body around the Δ-triangle**: the convex hull of `a`, `b`, and the closed `ρ`-balls
+around the midpoint `m` of `[a, b]` and around `c`. -/
+def deltaBody (a b c : E) (ρ : ℝ) : Set E :=
+  convexHull ℝ (({a, b} ∪ closedBall (midpoint ℝ a b) ρ) ∪ closedBall c ρ)
+
+variable {a b c : E} {ρ : ℝ}
+
+lemma deltaBody_comm : deltaBody a b c ρ = deltaBody b a c ρ := by
+  unfold deltaBody
+  rw [pair_comm, midpoint_comm]
+
+lemma deltaBody_mono {ρ' : ℝ} (h : ρ ≤ ρ') : deltaBody a b c ρ ⊆ deltaBody a b c ρ' :=
+  convexHull_mono (union_subset_union (union_subset_union_right _ (closedBall_subset_closedBall h))
+    (closedBall_subset_closedBall h))
+
+/-- **Seen from the apex `a`**, the body lies in the cone over the two balls. -/
+lemma deltaBody_apex (hρ : 0 ≤ ρ) {x : E} (hx : x ∈ deltaBody a b c ρ) :
+    x - a ∈ rayHull (closedBall (midpoint ℝ a b - a) ρ) + rayHull (closedBall (c - a) ρ) := by
+  set C := rayHull (closedBall (midpoint ℝ a b - a) ρ) + rayHull (closedBall (c - a) ρ)
+  have hC : Convex ℝ C :=
+    (convex_rayHull (convex_closedBall _ _)).add (convex_rayHull (convex_closedBall _ _))
+  have h01 := zero_mem_rayHull (mem_closedBall_self hρ : midpoint ℝ a b - a ∈ _)
+  have h02 := zero_mem_rayHull (mem_closedBall_self hρ : c - a ∈ closedBall (c - a) ρ)
+  have hsub : (({a, b} ∪ closedBall (midpoint ℝ a b) ρ) ∪ closedBall c ρ) ⊆
+      (fun x => -a + x) ⁻¹' C := by
+    intro y hy
+    simp only [mem_preimage, neg_add_eq_sub]
+    rcases hy with (hy | hy) | hy
+    · rcases hy with rfl | hy
+      · exact ⟨0, h01, 0, h02, by simp⟩
+      · rw [mem_singleton_iff] at hy
+        subst hy
+        refine ⟨(2 : ℝ) • (midpoint ℝ a y - a), ⟨2, by norm_num, _, mem_closedBall_self hρ, rfl⟩,
+          0, h02, ?_⟩
+        show (2 : ℝ) • (midpoint ℝ a y - a) + 0 = y - a
+        rw [add_zero, midpoint_sub_left, smul_smul]
+        norm_num
+    · refine ⟨y - a, ⟨1, zero_le_one, y - a, ?_, (one_smul _ _).symm⟩, 0, h02, add_zero _⟩
+      rw [mem_closedBall, dist_sub_right]; exact hy
+    · refine ⟨0, h01, y - a, ⟨1, zero_le_one, y - a, ?_, (one_smul _ _).symm⟩, zero_add _⟩
+      rw [mem_closedBall, dist_sub_right]; exact hy
+  have := convexHull_min hsub (hC.translate_preimage_right (-a)) hx
+  simpa [neg_add_eq_sub] using this
+
+/-- **Points outside the perturbed cone at `a` are outside the body.** -/
+lemma not_mem_deltaBody_of_cone (hρ : 0 ≤ ρ) {w : E}
+    (hcone : ∀ l₁ l₂ : ℝ, 0 ≤ l₁ → 0 ≤ l₂ → ∀ q₁ ∈ closedBall (midpoint ℝ a b - a) ρ,
+      ∀ q₂ ∈ closedBall (c - a) ρ, w ≠ l₁ • q₁ + l₂ • q₂) {t : ℝ} (ht : 0 < t) :
+    a + t • w ∉ deltaBody a b c ρ := by
+  intro h
+  obtain ⟨y₁, ⟨l₁, hl₁, q₁, hq₁, rfl⟩, y₂, ⟨l₂, hl₂, q₂, hq₂, rfl⟩, he⟩ :=
+    Set.mem_add.mp (deltaBody_apex hρ h)
+  apply hcone (l₁ / t) (l₂ / t) (div_nonneg hl₁ ht.le) (div_nonneg hl₂ ht.le) q₁ hq₁ q₂ hq₂
+  have htw : t • w = l₁ • q₁ + l₂ • q₂ := by rw [he]; abel
+  calc w = t⁻¹ • (t • w) := by rw [smul_smul, inv_mul_cancel₀ ht.ne', one_smul]
+    _ = _ := by rw [htw, smul_add, smul_smul, smul_smul, div_eq_inv_mul, div_eq_inv_mul]
+
+/-- **The body lies within `ρ` of the triangle.** -/
+lemma deltaBody_subset_cthickening :
+    deltaBody a b c ρ ⊆ cthickening ρ (convexHull ℝ {a, b, c}) := by
+  refine convexHull_min ?_ ((convex_convexHull ℝ _).cthickening ρ)
+  have ha : a ∈ convexHull ℝ {a, b, c} := subset_convexHull ℝ _ (by simp)
+  have hb : b ∈ convexHull ℝ {a, b, c} := subset_convexHull ℝ _ (by simp)
+  have hc : c ∈ convexHull ℝ {a, b, c} := subset_convexHull ℝ _ (by simp)
+  have hm : midpoint ℝ a b ∈ convexHull ℝ {a, b, c} :=
+    segment_subset_convexHull (by simp) (by simp) (midpoint_mem_segment a b)
+  rintro y ((hy | hy) | hy)
+  · rcases hy with rfl | hy
+    · exact self_subset_cthickening _ ha
+    · rw [mem_singleton_iff] at hy; subst hy; exact self_subset_cthickening _ hb
+  · exact closedBall_subset_cthickening hm ρ hy
+  · exact closedBall_subset_cthickening hc ρ hy
+
+lemma convex_deltaBody : Convex ℝ (deltaBody a b c ρ) := convex_convexHull ℝ _
+
+lemma midpoint_mem_interior_deltaBody (hρ : 0 < ρ) :
+    midpoint ℝ a b ∈ interior (deltaBody a b c ρ) :=
+  mem_interior.mpr ⟨ball (midpoint ℝ a b) ρ, fun _ hy => subset_convexHull ℝ _
+    (Or.inl (Or.inr (ball_subset_closedBall hy))), isOpen_ball, mem_ball_self hρ⟩
+
+lemma mem_interior_deltaBody (hρ : 0 < ρ) : c ∈ interior (deltaBody a b c ρ) :=
+  mem_interior.mpr ⟨ball c ρ, fun _ hy => subset_convexHull ℝ _
+    (Or.inr (ball_subset_closedBall hy)), isOpen_ball, mem_ball_self hρ⟩
+
+lemma left_mem_deltaBody : a ∈ deltaBody a b c ρ := subset_convexHull ℝ _ (by simp)
+
 end QOU.MathlibExt.PL
