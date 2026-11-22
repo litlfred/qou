@@ -89,6 +89,7 @@ import QOU.MathlibExt.ImplicitScalar
 import QOU.Archimedean.ConstantOffOnePoint
 import QOU.Archimedean.ClausenDoubleAngleSeries
 import QOU.Archimedean.Cl2PentagonFromBlochWigner
+import QOU.Archimedean.BlochGroupComplex
 import QOU.Archimedean.BranchIntegerPinning
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
