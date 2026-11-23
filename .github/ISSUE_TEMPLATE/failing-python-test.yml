@@ -1,0 +1,22 @@
+name: Failing Python test
+description: A wrong number, precision loss or broken producer, shown by a failing test.
+labels: ["evidence:python"]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Script, witness or block
+      description: Path under computations/ (or the block label) the test exercises.
+    validations: { required: true }
+  - type: textarea
+    id: test
+    attributes:
+      label: Test
+      description: Minimal script or pytest test, runnable from the repo root on main. Use mpmath, not float64, for numerical claims.
+      render: python
+    validations: { required: true }
+  - type: textarea
+    id: output
+    attributes:
+      label: Command and failing output
+    validations: { required: true }

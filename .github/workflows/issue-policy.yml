@@ -1,0 +1,37 @@
+# Closes issues that carry none of the three kinds of evidence required by
+# CONTRIBUTING.md §"Contribution policy". The owner (litlfred) is exempt.
+# Issues opened from the forms carry an `evidence:*` label and pass; an issue
+# opened through the API without one is checked for a ```lean or ```python
+# block, or a citation with a theorem/page locator.
+name: issue-policy
+on:
+  issues:
+    types: [opened, reopened]
+  workflow_dispatch:
+permissions:
+  issues: write
+jobs:
+  check:
+    if: github.event_name == 'issues' && github.event.issue.user.login != 'litlfred'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const labels = (issue.labels || []).map(l => l.name);
+            if (labels.some(l => l.startsWith('evidence:'))) return;
+            const body = issue.body || '';
+            const hasLean = /```lean[\s\S]+?```/.test(body);
+            const hasPy = /```python[\s\S]+?```/.test(body);
+            const hasCite = /(theorem|thm\.?|lemma|lem\.?|proposition|prop\.?|equation|eq\.?)\s*[\d(]/i.test(body)
+                         && /\b(p\.|pp\.|page)\s*\d+/i.test(body);
+            if (hasLean || hasPy || hasCite) return;
+            await github.rest.issues.createComment({
+              ...context.repo, issue_number: issue.number,
+              body: 'Closing automatically: this issue carries none of the evidence the [contribution policy](https://github.com/litlfred/qou/blob/main/CONTRIBUTING.md#contribution-policy-applies-to-everyone-except-the-owner-litlfred) requires (a Lean counterexample, a failing Python test, or a pinpoint citation with theorem number and page). Please reopen with one of the issue forms.'
+            });
+            await github.rest.issues.update({
+              ...context.repo, issue_number: issue.number,
+              state: 'closed', state_reason: 'not_planned'
+            });
