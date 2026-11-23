@@ -1,6 +1,3 @@
-> *Je pense, donc je suis.*
-> — René Descartes, *Discours de la méthode* (1637)
-
 The starting point is a collection of observations about how an
 observer interacts with the world. Colours are seen, and three of them
 mix to produce white. An observer moves around, rotates, and looks
