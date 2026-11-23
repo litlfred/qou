@@ -249,3 +249,9 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
   - The base ring is R = ℤ[q, q⁻¹, (q²+1)⁻¹]. The convention-D Ocneanu trace is proved to take values in R.
   - The instance sits on the Hecke colimit, with shadow ε : H_∞ → ℤ[1/2] sending each generator to 1. The shadow ring is nonzero.
   - Scope: this models the Step-2 conjecture. It does **not** show that the substrate connection's monodromy is this tower; that is still W7's `StokesToBraiding`.
+- **2026-11-23 00:53Z, W5: draft PR #9168, β-decay Gröbner–Shirshov reduction.** Audit `docs/audits/2026-11-23-qbeta-gg-pair-gb-reduction.md`. The predictions were committed before any computation, and all of them held.
+  - **Unreduced and reduced words are the same braid.** V0V1V2V0V3 and σ0²σ1⁻¹σ4⁻¹ are related by free cancellation and far commutation only. They are therefore equal in every braid representation, including H_n(q) at every q (sorry-free). So choosing between them chooses nothing.
+  - **The 2E0·ln q cell is unassigned.** It goes to neither Q_β nor m_n − m_p. These words have no nucleon strand. The word that couples the pair to a nucleon is an owner input.
+  - **The missing ×2.04 in Q_β cannot come from the reduced/unreduced choice.** This is a scope-(b) exclusion; the invariant is the braid identity. The search for a q = 1 term stays with W1 (§36) and W2.
+  - **The only q-independent leftover is the cancellation count.** The shortest word has 4 letters, and any reduction cancels exactly 3 pairs.
+  - **No MeV figures**, so the electron-unit split (R ≈ 70) does not apply.
