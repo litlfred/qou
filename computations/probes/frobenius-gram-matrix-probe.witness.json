@@ -1,52 +1,70 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:28:07.537627+00:00",
-  "commitSha": "f827bd67d6ef392f264c6d201ecfe7ef72aa0b2e",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T18:36:24.512378+00:00",
+  "commitSha": "dc8919ec7a3550b60e10696a4017b40f468731ea",
   "assertions": [
     {
       "name": "single_element_traces_match_closed_forms",
-      "computed": "4.653311810663103397142358223736127462973526113918285643458425808340554e-41",
-      "expected": 0.0,
+      "computed": "6.358347472094455163871028513264640374177132138432065064201051446622550390645464e-76",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-30",
-      "unit": "max over {𝟙, σ_0, σ_1, L_+, L_-, e^-} of |tr_M(b) − closed_form(b)|",
+      "tolerance": "1.0e-55",
+      "unit": "max over {1, sigma_0, sigma_1, L_+, L_-, e^-} of |tr_M(b) - closed_form(b)|",
       "source": "Ocneanu-Wenzl recursion + Hecke quadratic + Markov axiom."
     },
     {
       "name": "gram_matrix_symmetric",
       "computed": "0.0",
-      "expected": 0.0,
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-30",
-      "unit": "max over (i,j) of |G_{ij} − G_{ji}|",
+      "tolerance": "1.0e-55",
+      "unit": "max over (i,j) of |G_{ij} - G_{ji}|",
       "source": "Cyclicity of the Markov trace tr_M(ab) = tr_M(ba)."
     },
     {
       "name": "gram_matrix_nondegenerate",
-      "computed": 1.0,
-      "expected": 0.0,
+      "computed": "1.0",
+      "expected": "0.0",
       "passed": false,
-      "tolerance": 0.0,
+      "tolerance": "0.0",
       "unit": "boolean (0 = non-degenerate, 1 = degenerate)",
-      "source": "Frobenius self-duality A ≅ A^∨ implies the Markov-trace pairing is non-degenerate at generic q."
+      "source": "Intentional negative witness on 6D H_3(q): under Convention D (z = q^3/(q^2 + 1)), y_{(1^3)} = 0 gives a 1D radical so det G = 0 (non-degenerate only on 5D quotient TL_3(q))."
     },
     {
       "name": "gram_matrix_indefinite_signature",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": 0.0,
-      "unit": "boolean (0 = has both positive AND negative eigvals, 1 = same-sign)",
-      "source": "Proposition states G has indefinite signature, NOT positive definite — confirmed empirically."
+      "tolerance": "0.0",
+      "unit": "boolean (0 = bilinear G has both positive and negative eigvals, 1 = same-sign)",
+      "source": "Bilinear no-star pairing G_{ij} = tr_M(b_i b_j) has signature (4+, 1-, 1 zero)."
+    },
+    {
+      "name": "star_gram_psd_5_0_1",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0.0",
+      "unit": "boolean (0 = Hecke *-Gram S has PSD signature (5+, 0-, 1 zero), 1 = otherwise)",
+      "source": "Hecke *-involution T_w^* = T_{w^-1} swaps L_+ <-> L_- and gives PSD (5+, 0-, 1 zero)."
+    },
+    {
+      "name": "radical_annihilated_by_both_pairings",
+      "computed": "4.2814685885408968979042072465766261920394715588468292736635441446573390394226028e-75",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-55",
+      "unit": "max(||G @ rad||_inf, ||S @ rad||_inf)",
+      "source": "3-strand q-antisymmetriser (-q^-1)^len(w) spans the 1D Convention-D radical."
     }
   ],
   "allPassed": false,
-  "durationMs": 649,
+  "durationMs": 562,
   "computation": "frobenius-gram-matrix-probe",
   "scriptFile": "frobenius_gram_matrix_probe.py",
-  "scriptHash": "613791bae468",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "9fd5c4d884cc",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,14 +72,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -69,18 +87,26 @@
     ],
     "reproduce": "python3 -u computations/probes/frobenius_gram_matrix_probe.py"
   },
-  "description": "I1 probe for prop:frobenius-gram-matrix.  Verifies the 6×6 Markov-trace Gram matrix G_{ij} = tr_M(b_i · b_j) over the NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} of H_3(R, q): (1) the six single-element traces match the corrected closed forms (1, z, z, z², z², hz² + z) at q_0; (2) G is symmetric to ~1e-40; (3) det G ≠ 0 (non-degenerate); (4) signature is indefinite (G has both positive and negative eigenvalues).  Reproduces the corrected Gram-matrix structure after the Markov-bug fix in audit 2026-05-19-trm5-markov-bug (stale `tr_M(e^-) = z³` replaced by `hz² + z`).",
+  "description": "I1 probe for prop:frobenius-gram-matrix (80-dps mpmath, zero float64). Verifies on H_3(R, q) at Convention D (z_D = q^3/(q^2 + 1)): (1) single-element traces match (1, z, z, z^2, z^2, h z^2 + z); (2) G is symmetric; (3) det G = 0 identically on 6D H_3(q) with 1D radical (-q^-1)^len(w) (non-degenerate on 5D TL_3(q)); (4) bilinear G_{ij} = tr_M(b_i b_j) has signature (4+, 1-, 1 zero) with radical at argmin(|w|) = 1 (w[0] = -0.75270211... on (L_+ - L_-)/sqrt(2)), whereas Hecke *-Gram S_{ij} = tr_M(b_i b_j^*) has PSD signature (5+, 0-, 1 zero).",
   "contentBlock": "prop:frobenius-gram-matrix",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
-    "z_at_q0": 0.6126880371464652,
-    "h_at_q0": 0.2090602987956393,
-    "max_single_trace_residue": 4.653311810663103e-41,
-    "symmetry_residue": 0.0,
-    "det_G_at_q0": 2.9430936683045635e-41,
+    "z_at_q0": "0.612688037146465251595829863945899248026308391545064759724287",
+    "h_at_q0": "0.209060298795639315430846213129674943859757495263024555381696",
+    "max_single_trace_residue": "6.35834747209445516387102851326464037417713213843206506420105e-76",
+    "symmetry_residue": "0.0",
+    "det_G_at_q0": "4.95955887948645719452351994626114311701982230820843857329989e-75",
+    "det_S_star_at_q0": "-4.95955887948645719452351994626114311701982230820843857329989e-75",
     "num_positive_eigenvalues": 4,
     "num_negative_eigenvalues": 1,
     "num_zero_eigenvalues": 1,
+    "idx_null_bilinear_argmin_abs": 1,
+    "idx_null_star_argmin_abs": 0,
+    "star_gram_signature": [
+      5,
+      0,
+      1
+    ],
     "is_indefinite": true,
     "is_nondegenerate": false
   },
@@ -89,56 +115,70 @@
       {
         "basis_element": "γ = 𝟙",
         "expected_closed_form": "1",
-        "expected_at_q0": 1.0,
-        "computed_at_q0": 1.0,
-        "residue": 0.0
+        "expected_at_q0": "1.00000000000000000000000000000000000000000000000000000000000",
+        "computed_at_q0": "1.00000000000000000000000000000000000000000000000000000000000",
+        "residue": "0.0"
       },
       {
         "basis_element": "σ_0",
         "expected_closed_form": "q**3/(q**2 + 1)",
-        "expected_at_q0": 0.6126880371464652,
-        "computed_at_q0": 0.6126880371464652,
-        "residue": 0.0
+        "expected_at_q0": "0.612688037146465251595829863945899248026308391545064759724287",
+        "computed_at_q0": "0.612688037146465251595829863945899248026308391545064759724287",
+        "residue": "0.0"
       },
       {
         "basis_element": "σ_1",
         "expected_closed_form": "q**3/(q**2 + 1)",
-        "expected_at_q0": 0.6126880371464652,
-        "computed_at_q0": 0.6126880371464652,
-        "residue": 0.0
+        "expected_at_q0": "0.612688037146465251595829863945899248026308391545064759724287",
+        "computed_at_q0": "0.612688037146465251595829863945899248026308391545064759724287",
+        "residue": "0.0"
       },
       {
         "basis_element": "L_+ = σ_0 σ_1",
         "expected_closed_form": "q**6/(q**4 + 2*q**2 + 1)",
-        "expected_at_q0": 0.3753866308623884,
-        "computed_at_q0": 0.3753866308623884,
-        "residue": 3.062918244623176e-42
+        "expected_at_q0": "0.375386630862388383999372303379009911453307219880304084310170",
+        "computed_at_q0": "0.375386630862388383999372303379009911453307219880304084310170",
+        "residue": "6.35834747209445516387102851326464037417713213843206506420105e-76"
       },
       {
         "basis_element": "L_- = σ_1 σ_0",
         "expected_closed_form": "q**6/(q**4 + 2*q**2 + 1)",
-        "expected_at_q0": 0.3753866308623884,
-        "computed_at_q0": 0.3753866308623884,
-        "residue": 3.062918244623176e-42
+        "expected_at_q0": "0.375386630862388383999372303379009911453307219880304084310170",
+        "computed_at_q0": "0.375386630862388383999372303379009911453307219880304084310170",
+        "residue": "6.35834747209445516387102851326464037417713213843206506420105e-76"
       },
       {
         "basis_element": "e^- = σ_0 σ_1 σ_0",
         "expected_closed_form": "(q**7 + q**3)/(q**4 + 2*q**2 + 1)",
-        "expected_at_q0": 0.6911664783584446,
-        "computed_at_q0": 0.6911664783584446,
-        "residue": 4.653311810663103e-41
+        "expected_at_q0": "0.691166478358444526147719530979046206614241118678099534769693",
+        "computed_at_q0": "0.691166478358444526147719530979046206614241118678099534769693",
+        "residue": "1.57553148261580169587889439196230434070225372859497345335912e-76"
       }
     ],
     "gram_matrix_eigenvalues": [
-      -0.7527021132519655,
-      4.230339225030225,
-      -2.167386424266832e-41,
-      0.7527021132519655,
-      0.7527021132519655,
-      0.7527021132519655
+      "-0.752702113251965401593779351620236137830175598874904681326028",
+      "-3.65237368928265006699223964124841098139569553457450320979849e-75",
+      "0.752702113251965401593779351620236137830175598874904681326028",
+      "0.752702113251965401593779351620236137830175598874904681326028",
+      "0.752702113251965401593779351620236137830175598874904681326028",
+      "4.23033922503022573486228705243309214823165904931616666225196"
     ],
+    "star_gram_matrix_eigenvalues": [
+      "-3.65237348494874294131212297668578603288279202286218561407100e-75",
+      "0.752702113251965401593779351620236137830175598874904681326028",
+      "0.752702113251965401593779351620236137830175598874904681326028",
+      "0.752702113251965401593779351620236137830175598874904681326028",
+      "0.752702113251965401593779351620236137830175598874904681326028",
+      "4.23033922503022573486228705243309214823165904931616666225196"
+    ],
+    "radical_annihilation": {
+      "radical_formula": "(-q^-1)^len(w) over NF_BASIS_WORDS",
+      "max_abs_G_mul_rad": "4.28146858854089689790420724657662619203947155884682927366354e-75",
+      "max_abs_S_mul_rad": "4.28146858854089689790420724657662619203947155884682927366354e-75"
+    },
     "notes": {
-      "errata_fix_propagated": "tr_M(e^-) corrected from stale z³ to canonical hz² + z",
+      "errata_fix_propagated": "tr_M(e^-) corrected from stale z^3 to canonical h z^2 + z",
+      "pairing_distinction": "bilinear tr_M(b_i b_j) is (4+, 1-, 1 zero); Hecke *-Gram tr_M(b_i b_j^*) is PSD (5+, 0-, 1 zero)",
       "audit_reference": "docs/audits/2026-05-19-trm5-markov-bug.md"
     }
   },

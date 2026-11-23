@@ -84,6 +84,10 @@ if HAS_MPMATH:
         tr_conn_borromean_p_at,
         tr_conn_borromean_n_at,
         tr_conn_borromean_diff_at,
+        qtrace_borromean_v3_diff_at,
+        qtrace_conn_borromean_p_at,
+        qtrace_conn_borromean_n_at,
+        qtrace_conn_borromean_diff_at,
         q_two_term_borromean_at,
     )
 
@@ -123,7 +127,11 @@ __all__ = [
     "Q_50_DIGIT_STR", "MASS_RATIO_MU_E_STR", "HAS_MPMATH",
     "tr_borromean_v3_at", "tr_e21_borromean_v3_at",
     "tr_conn_borromean_p_at", "tr_conn_borromean_n_at",
-    "tr_conn_borromean_diff_at", "q_two_term_borromean_at",
+    "tr_conn_borromean_diff_at",
+    "qtrace_borromean_v3_diff_at",
+    "qtrace_conn_borromean_p_at", "qtrace_conn_borromean_n_at",
+    "qtrace_conn_borromean_diff_at",
+    "q_two_term_borromean_at",
     # precision
     "set_compute_dps", "fmt",
     "COMPUTE_DPS", "OUTPUT_DPS", "PRECISION_GUARD",

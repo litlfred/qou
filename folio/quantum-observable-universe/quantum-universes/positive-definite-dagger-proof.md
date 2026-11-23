@@ -32,4 +32,4 @@ non-degenerate form can have isotropic vectors. On $R^2$ the form
 $\langle x, y\rangle = x_1 y_2 + x_2 y_1$ is non-degenerate and
 $\langle e_1, e_1\rangle = 0$. The positivity of $h$ is therefore an input,
 as in the GNS construction, where it is the positivity of the state
-(\cite{kock2004}, Ch. 2, for the Frobenius side).
+(\cite{kock2004}, Ch. 2, for the Frobenius side); over $\mathbb{C}$ and on non-involutive Hopf $\ast$-algebras where $S^2 \neq \mathrm{id}_A$, the same proof applies verbatim with $S$ replaced by the conjugate-linear $\ast$-involution $x \mapsto x^*$ in $h_*(a, b) = \int_A a^* b$, using $(x^*)^* = x$ in place of $S^2 = \mathrm{id}_A$ and $r^* \cdot 1_A$ on scalars.

@@ -24,12 +24,14 @@ namespace QOU.QuantumObservableUniverse
     `exists_axiom_1_frobenius` below, so the claim is stated, not
     self-assumed. -/
 class ExistsAxiom1FrobeniusContext where
+  /-- Base scalar type `R`. -/
+  R : Type
   /-- Hopf algebra carrier `A`. -/
   A : Type
   /-- Dual object `A^∨`. -/
   A_dual : Type
-  /-- Haar state `h : A → ℝ`. -/
-  h : A → ℝ
+  /-- Haar state `h : A → R`. -/
+  h : A → R
   /-- Frobenius pairing `(a, b) ↦ h(a · b)` induced map `A → A^∨`. -/
   pairing_map : A → A_dual
 
@@ -38,8 +40,10 @@ not asserted).
 
 **Lemma statement** (from manuscript): the Haar state
 $h = \int_{A}$ on $A = \mathcal{O}_{q}(G)$ is faithful; equivalently,
-the pairing $(a, b) \mapsto h(ab)$ is non-degenerate and induces an
-isomorphism $A \xrightarrow{\sim} A^{\vee}$, verifying axiom~(1) of
+the pairing $(a, b) \mapsto h(ab)$ is non-degenerate and induces a
+linear bijection $A \xrightarrow{\sim} A^{\vee}$ (which as an
+$A$-bimodule map is Nakayama-twisted, $A^{\vee} \cong {}_{1}A_{\nu}$
+with $h(ab) = h(b\,\nu(a))$ at $q \neq \pm 1$), verifying axiom~(1) of
 [quantum observable universe](#def:quantum-observable-universe).
 
 We **name** non-degeneracy as the bijectivity of the induced pairing

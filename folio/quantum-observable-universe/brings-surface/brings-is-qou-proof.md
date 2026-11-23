@@ -2,8 +2,10 @@
 The quantised coordinate ring $A = \mathcal{O}_q(\mathrm{SU}(2))$ is a
 Hopf algebra over $R[q, q^{-1}]$ with antipode $S$, counit $\varepsilon$,
 and the Haar state $h_q \colon A \to R$ furnishing a non-degenerate
-Frobenius form $\int_A = h_q$ (non-degeneracy follows from the
-faithfulness of the Haar state for compact quantum groups).  The category
+Nakayama-twisted Frobenius form $\int_A = h_q$ with $h_q(ab) = h_q(b\,\nu(a))$
+and bimodule self-duality $A^{\vee} \cong {}_1 A_\nu$ (non-degeneracy follows
+from the faithfulness of the Haar state for compact quantum groups, while
+categorical traces on representations remain untwisted via the ribbon element).  The category
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ is $R$-linear, rigid
 monoidal (duals given by contragredient representations), and the forgetful
 functor $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ is exact,
@@ -23,8 +25,10 @@ summand).  Therefore $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ by
 the quantum Schur lemma.
 
 *Item (3).*
-By [jet prolongation](#prop:jet-prolongation), $J^1(A)$ is Frobenius--Hopf, so
-the brane tower $\{A_n\}$ is well-defined.  Each transition
+By [jet prolongation](#prop:jet-prolongation), each first-order jet space
+$J^1(A_n)$ is a split infinitesimal algebra extension of $A_n$ inside the
+tangent prolongation $T(A_n)$ (rather than a Frobenius--Hopf bialgebra),
+generating the brane tower $\{A_n\}$.  Each transition
 $A_n \hookrightarrow A_{n+1}$ gives a central extension of gerbes banded by
 the centre $\mathcal{B} = Z(\mathrm{Aut}(A_n))$.  The obstruction class
 $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ exists by the standard gerbe

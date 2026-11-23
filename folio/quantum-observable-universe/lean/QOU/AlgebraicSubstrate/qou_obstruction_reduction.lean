@@ -17,15 +17,18 @@ resolves to this declaration in the `qou` Lake package.
 `QouObstructionReductionContext` carries the two *genuine mathematical
 inputs* of the obstruction reduction as hypothesis fields —
 
-* `vdb_duality` : **Van den Bergh / Calabi–Yau duality** of dimension 3
-  for `U_q(su₂)`, `HH^i(U_q,Ad) ≅ HH_{3-i}(U_q,Ad)` (equal dimensions);
-* `drinfeld_rigidity` : **Drinfeld rigidity** of the quasi-triangular
-  deformation, `dim HH_1(U_q,Ad) = 1`;
+* `vdb_duality` : **Brown–Zhang Nakayama-twisted Poincaré / Calabi–Yau duality**
+  of dimension 3 for `U_q(su₂)`, `HH^i(U_q, Ad) ≅ HH_{3-i}(U_q, {}_ν Ad)`
+  (equal dimensions, where `ν` is the Nakayama automorphism; untwisted duality
+  fails at `q ≠ 1`);
+* `drinfeld_rigidity` : **Twisted Drinfeld rigidity** of the quasi-triangular
+  deformation, `dim HH_1(U_q, {}_ν Ad) = 1`;
 
 — together with the raw dimension data, `χ(A)`, the primitive Kummer
 obstruction integer `κ₀`, and the *definitional* Kummer-vanishing field.
-Conclusion (a), `dim HH²(U_q,Ad) = 1`, is **derived** below by composing
-the two inputs (`HH² ≅ HH_{3-2} = HH_1 = 1`); it is NOT a class field.
+Conclusion (a), `dim HH²(U_q, Ad) = 1`, is **derived** below by composing
+the two inputs (`HH²(U_q, Ad) ≅ HH_{3-2}(U_q, {}_ν Ad) = HH_1(U_q, {}_ν Ad) = 1`);
+it is NOT a class field.
 The `χ(A)`-identification of the generator (conclusions (b),(c)) rests on
 the single honest domain gap `obstruction_trace_gap` (the explicit
 Euler/trace pairing).
@@ -68,17 +71,16 @@ function satisfying CY-3 duality and `dim HH₁ = 1`". -/
 class QouObstructionReductionContext where
   /-- `dim_k HH^i(U_q, Ad)`, the Hochschild cohomology dimensions. -/
   hhCohDim : ℕ → ℕ
-  /-- `dim_k HH_i(U_q, Ad)`, the Hochschild homology dimensions. -/
-  hhHomDim : ℕ → ℕ
-  /-- INPUT — **Van den Bergh / Calabi–Yau duality of dimension 3** for
-      `U_q(su₂)`: `HH^i(U_q,Ad) ≅ HH_{3-i}(U_q,Ad)`, hence equal
-      dimension.  (A literature theorem; the class instance is the
-      §3b-cond conditional hypothesis.) -/
-  vdb_duality : ∀ i : ℕ, i ≤ 3 → hhCohDim i = hhHomDim (3 - i)
-  /-- INPUT — **Drinfeld rigidity** of the quasi-triangular deformation:
-      the degree-1 Hochschild homology (the deformation module) is
-      one-dimensional. -/
-  drinfeld_rigidity : hhHomDim 1 = 1
+  /-- `dim_k HH_i(U_q, {}_ν Ad)`, the Brown–Zhang Nakayama-twisted Hochschild
+      homology dimensions (untwisted homology drops in top degree at `q ≠ 1`). -/
+  hhTwistedHomDim : ℕ → ℕ
+  /-- INPUT — **Brown–Zhang Nakayama-twisted Poincaré / Calabi–Yau duality of
+      dimension 3** for `U_q(su₂)` ([brown-zhang-2008]):
+      `HH^i(U_q, Ad) ≅ HH_{3-i}(U_q, {}_ν Ad)`, hence equal dimension. -/
+  vdb_duality : ∀ i : ℕ, i ≤ 3 → hhCohDim i = hhTwistedHomDim (3 - i)
+  /-- INPUT — **Twisted Drinfeld rigidity**: the degree-1 Nakayama-twisted
+      Hochschild homology `HH_1(U_q, {}_ν Ad)` is one-dimensional. -/
+  drinfeld_rigidity : hhTwistedHomDim 1 = 1
   /-- Euler characteristic `χ(A)`. -/
   chi_A : ℤ
   /-- Trace image of the `HH²` generator (observation-frame value). -/
@@ -176,17 +178,30 @@ theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
   obtain ⟨_, hphi⟩ := obstruction_trace_gap
   exact ⟨ha, hphi, fun n _ => kappa_vanishes_iff_chi n⟩
 
-/-- Concrete `U_q(su₂)` Calabi–Yau dimension-3 model of
+/-- Backward-compatible alias for `hhTwistedHomDim`. -/
+abbrev QouObstructionReductionContext.hhHomDim
+    (ctx : QouObstructionReductionContext) : ℕ → ℕ :=
+  ctx.hhTwistedHomDim
+
+/-- Under Brown–Zhang twisted duality, QOU observability (`HH^0(U_q, Ad) = 0`)
+    forces `HH_3(U_q, {}_ν Ad) = 0`. -/
+theorem hhTwistedHomDim_three_eq_zero_of_observability
+    [ctx : QouObstructionReductionContext] (h0 : ctx.hhCohDim 0 = 0) :
+    ctx.hhTwistedHomDim 3 = 0 := by
+  simpa [h0] using (ctx.vdb_duality 0 (by decide)).symm
+
+/-- Concrete `U_q(su₂)` Nakayama-twisted Calabi–Yau dimension-3 model of
     `QouObstructionReductionContext` for any Euler characteristic `χ₀ : ℤ`:
-    `dim HH^i(U_q, Ad) = dim HH_i(U_q, Ad) = 1` for `0 ≤ i ≤ 3` (and `0` for `i > 3`),
-    satisfying Van den Bergh CY-3 duality (`hhCohDim i = hhHomDim (3 - i)` for `i ≤ 3`),
-    Drinfeld rigidity (`hhHomDim 1 = 1`), and Hattori–Stallings trace casting. -/
+    `HH^0(U_q, Ad) = 0` (observability kills degree-0 invariants, `Ad^G = 0`),
+    `dim HH^i(U_q, Ad) = dim HH_i(U_q, {}_ν Ad) = 1` for `i ∈ {1, 2}`, and `0`
+    for `i = 0` and `i ≥ 3`, satisfying Brown–Zhang twisted CY-3 duality
+    (`hhCohDim i = hhTwistedHomDim (3 - i)` for `i ≤ 3`), twisted rigidity
+    (`hhTwistedHomDim 1 = 1`), and Hattori–Stallings trace casting. -/
 def su2QouObstructionReductionContext (χ₀ : ℤ) : QouObstructionReductionContext where
-  hhCohDim := fun i => if i ≤ 3 then 1 else 0
-  hhHomDim := fun i => if i ≤ 3 then 1 else 0
+  hhCohDim := fun i => if i = 1 ∨ i = 2 then 1 else 0
+  hhTwistedHomDim := fun i => if i = 1 ∨ i = 2 then 1 else 0
   vdb_duality := fun i hi => by
-    have h3 : 3 - i ≤ 3 := Nat.sub_le 3 i
-    simp [hi, h3]
+    interval_cases i <;> decide
   drinfeld_rigidity := by decide
   chi_A := χ₀
   phi_1_image := (χ₀ : ℝ)
@@ -197,6 +212,10 @@ def su2QouObstructionReductionContext (χ₀ : ℤ) : QouObstructionReductionCon
   hattori_stallings := rfl
   trace_pairing_cast := fun _ => rfl
   chern_character := rfl
+
+/-- Observability (`HH^0(U_q, Ad) = 0`) holds on `su2QouObstructionReductionContext`. -/
+theorem su2_hhCohDim_zero_eq_zero (χ₀ : ℤ) :
+    (su2QouObstructionReductionContext χ₀).hhCohDim 0 = 0 := rfl
 
 /-- `QouObstructionReductionContext` is non-vacuously inhabitable. -/
 theorem nonempty_qouObstructionReductionContext :

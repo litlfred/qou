@@ -13,4 +13,4 @@ and the form $h(f, g) = \int_A \mu(S(f) \otimes g)$, so that $f^{\dagger} \circ 
 3. on $\mathrm{End}(\mathbf{1}) \cong R$ the dagger is $S$, which is the identity there;
 4. $f^{\dagger} \circ f > 0$ for every non-zero $f \colon \mathbf{1} \to A$.
 
-Item 4 is the positivity hypothesis on $h$ read through $f^{\dagger} \circ f = h(f, f)$.
+Item 4 is the positivity hypothesis on $h$ read through $f^{\dagger} \circ f = h(f, f)$. Requiring $S$ to be $R$-linear and involutive restricts this formulation to formally real ordered scalar fields at the involutive point: over $\mathbb{C}$, $R$-linearity would give $h(if, if) = -h(f, f) < 0$, and on the coordinate algebra of $\mathrm{SU}(2)$ and its non-involutive quantum deformations ($S^2 \neq \mathrm{id}_A$) one already has $\int_{\mathrm{SU}(2)} S(\beta)\beta = 0$. Over $\mathbb{C}$ and for non-involutive Hopf $\ast$-algebras, the positive GNS dagger replaces $S$ with a conjugate-linear $\ast$-involution $a \mapsto a^*$ (satisfying $(S \circ *)^2 = \mathrm{id}_A$) and sesquilinear form $h_*(f, g) = \int_A f^* g$.

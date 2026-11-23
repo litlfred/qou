@@ -58,7 +58,11 @@ universe u v
     - Degree 1 ↔ standard representation `V₂` (dim 2, spin ½)
     - Top degree ↔ alternating representation (dim 1, spin equivalent)
 
-    LaTeX: new definition supporting `\label{def:graded-frobenius-hopf}` -/
+    LaTeX: new definition supporting `\label{def:graded-frobenius-hopf}`
+
+    **Scope (`TN-1`):** `GradedFrobeniusHopf` extends the classical involutive
+    `FrobeniusHopfData` (`S² = id`); for pivotal / Nakayama-twisted `q ≠ 1`
+    substrates (`O_q(SU(2))`, `H_4`), use `TwistedGradedFrobeniusHopf` below. -/
 -- Ref: [mathas1999]
 structure GradedFrobeniusHopf (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] extends FrobeniusHopfData C where
@@ -172,5 +176,36 @@ theorem graded_pieces_exhaust_h3 :
 -- Ref: [mathas1999]
 theorem degree_geq1_dim_five :
     2 * 2 + 1 = (5 : ℕ) := by omega
+
+/-- **Pivotal / Nakayama-twisted graded Frobenius–Hopf object** (`TN-1`),
+    extending `TwistedPivotalFrobeniusHopfData` for `q ≠ 1` substrates where
+    `S² = pivotalAut ≠ id`. -/
+structure TwistedGradedFrobeniusHopf (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+    extends TwistedPivotalFrobeniusHopfData C where
+  symComponent : C
+  highComponent : C
+  symProjection : obj ⟶ symComponent
+  highProjection : obj ⟶ highComponent
+  symInclusion : symComponent ⟶ obj
+  highInclusion : highComponent ⟶ obj
+  sym_retraction : symInclusion ≫ symProjection = 𝟙 symComponent
+  high_retraction : highInclusion ≫ highProjection = 𝟙 highComponent
+  sym_idempotent : symProjection ≫ symInclusion ≫ symProjection = symProjection
+
+/-- Every `GradedFrobeniusHopf` embeds canonically into `TwistedGradedFrobeniusHopf`. -/
+def GradedFrobeniusHopf.toTwisted {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+    (G : GradedFrobeniusHopf C) : TwistedGradedFrobeniusHopf C :=
+  { G.toFrobeniusHopfData.toTwistedPivotal with
+    symComponent := G.symComponent
+    highComponent := G.highComponent
+    symProjection := G.symProjection
+    highProjection := G.highProjection
+    symInclusion := G.symInclusion
+    highInclusion := G.highInclusion
+    sym_retraction := G.sym_retraction
+    high_retraction := G.high_retraction
+    sym_idempotent := G.sym_idempotent }
 
 end QOU
