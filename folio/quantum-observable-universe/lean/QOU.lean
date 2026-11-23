@@ -821,6 +821,7 @@ import QOU.Kashaev
 import QOU.PhiQJSJ
 import QOU.Infra
 import QOU.Observations.AlgebraicGnsEmbedding
+import QOU.Observations.InhomogeneousLeptonLoopResolvent
 import QOU.Observations.QCltNonCommutative
 import QOU.Observations.TraceLocalityMeetsGsNonLocality
 import QOU.MathlibExt.RootsOfUnityProduct
