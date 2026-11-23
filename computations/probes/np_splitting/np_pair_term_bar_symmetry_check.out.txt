@@ -1,0 +1,7 @@
+PASS  (b1) psi(R) = R^-1
+PASS  (b1) psi(R^-1) = R
+PASS  (b2) psi(k) = k
+PASS  (b3) psi(V) = sigma_b sigma_a^-1
+PASS  (b3) psi(V) = Delta V Delta^-1
+PASS  (b3) psi(V^3) = Delta V^3 Delta^-1
+ALL PASS

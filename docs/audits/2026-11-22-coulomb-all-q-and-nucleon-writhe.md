@@ -157,8 +157,74 @@ spectator (L7s, L7e, L8s) the plain trace reaches all 16 sectors, and the Coulom
 reachable. The readout of §26 is the K-weighted (quantum) trace. So the exclusion with spectators
 rests on that weighting, not on the braid alone.
 
-**Scope.** Two values of q and N ≤ 8 with two blocks. Not an identity in q, and not a statement
-about three or more blocks.
+**Scope.** Two values of q and N ≤ 8 with two blocks; §4 lifts the K-weighted rows to identities
+in q. Not a statement about three or more blocks.
+
+## 4. Identities in q, and the bar symmetry (issue #9124)
+
+Probe and output: `np_more_strands_symbolic_probe.py`, `.out.txt`. Every entry is a polynomial in q
+(python-flint `fmpz_poly`, after scaling by powers of q), the span is computed over Q(q) by
+fraction-free elimination, and α, β are rational functions of q. The words are the fully
+commutative elements of S_N (132, 429, 1430 for N = 6, 7, 8), whose Hecke images span the
+Temperley–Lieb quotient that the words generate on V^{⊗N} (Fan; Graham). That reduction is checked,
+not assumed, at N = 6 and N = 7, where the probe also runs all of S_N and gets the same span.
+
+Over Q(q), every row of the §3 table holds as stated, with
+
+    α₆(q) = q²(q⁶ − q⁵ − q⁴ − q³ + q² − 1)(q⁶ + q⁵ − q⁴ + q³ + q² − 1)
+            / ((q² + 1)(q¹² − 3q¹⁰ + 2q⁸ − 4q⁶ + 2q⁴ − 3q² + 1)),
+
+β₆(q) = 1 − α₆(q) = α₆(q⁻¹). In L7s and L8s the relation pins α = α₆(q) exactly and leaves β free.
+The Coulomb form is not reachable in any layout, as an identity in q.
+
+**The bar symmetry.** `ψ = transpose ∘ Ad F ∘ bar` (F flips u ↔ d on every strand, bar : q ↦ q⁻¹)
+reverses products, sends σ_i to σ_i⁻¹ and fixes K^{⊗N}
+(`np_pair_term_bar_symmetry_check.py`, ALL PASS). It sends V = σ_a σ_b⁻¹ to σ_b σ_a⁻¹, which the
+half twist conjugates back to V, so ψ(C) = E C E⁻¹ with E = Δ_A Δ_B. Unlike the sector involution
+of §1, this needs nothing about how K sits on a sector, so it holds with spectators. On pair
+terms it acts by (Q_A, Q_B) ↦ (1 − Q_A, 1 − Q_B) and q ↦ q⁻¹, sending (α, β) to
+(1 − ᾱ, 1 − β̄). The probe confirms the reachable span is closed under it in all four layouts.
+
+Lean (`QOU.QBeta.PairTermSectorSymmetry`, sorry-free, axioms propext and Quot.sound):
+`readout_barSymm` is the abstract readout statement; `alpha_add_bar_eq_one_of_pinned_alpha` gives
+α₀(q) + α₀(q⁻¹) = 1 whenever α is pinned; `not_coulomb_of_pinned_alpha` excludes Coulomb from that
+alone; `beta_eq_bar_alpha_of_unique_ray` gives β(q) = α(q⁻¹) when the ray is unique. So with
+spectators the exclusion of Coulomb reduces to one computed fact, that α is pinned. That fact is
+established for N ≤ 10 (§5); it is not proved for general N.
+
+## 5. Which side the spectators sit on (issue #9124, generic n)
+
+Same symbolic probe, more layouts, all exact over Q(q):
+
+| layout | N | spectators | ΔE span | rank | reachable | Coulomb |
+|---|---|---|---|---|---|---|
+| L8e | 8 | two after B | 10 / 16 | 2 | the L6 ray | no |
+| L9e | 9 | three after B | 10 / 16 | 2 | the L6 ray | no |
+| L7b | 7 | one before A | 16 / 16 | 0 | everything | **yes** |
+| L8o | 8 | one before A, one after B | 16 / 16 | 0 | everything | **yes** |
+| L9s | 9 | three between | 14 / 16 | 1 | α = α₆(q), β free | no |
+| L9m | 9 | one between, two after | 14 / 16 | 1 | α = α₆(q), β free | no |
+| L10s | 10 | four between | 14 / 16 | 1 | α = α₆(q), β free | no |
+
+**Spectators after the pair change nothing, for every N.** The weighted partial trace E over
+strands to the right of both blocks satisfies tr_N(j(y)·X) = tr_6(y·E(X)) by definition, and
+E(y ⊗ 1) = (q + q⁻¹)^m · y. Lean `readout_partialTrace` and `span_shift_eq` (sorry-free, axioms
+propext, Classical.choice, Quot.sound) turn that into equality of the reachable spans, given one
+hypothesis: E maps the N-strand Hecke image into the six-strand one. That is the right partial
+quantum trace being a U_q(sl₂)-module map, which preserves commutants, and the commutants are the
+Hecke images by Jimbo's Schur–Weyl duality [jimbo1986]. That hypothesis is cited, not formalised.
+The rows L7e, L8e, L9e are the computed instances.
+
+**A spectator before the pair breaks the exclusion.** With one strand to the left of block A the
+span is all 16 sectors and the Coulomb form is reachable, as an identity in q. The left partial
+trace with the same weight K is not a module map, so it does not stay in the commutant. So the
+statement "Coulomb is excluded" depends on where the other strands sit relative to the pair, not
+only on how many there are. With the readout of §26 the pair must have no strands to its left.
+
+**Why α is pinned and β free with strands between.** The pattern in the table is consistent with
+a block rule: strands to the right of a block are harmless to it, strands to its left free its
+parameter. Between the blocks, strands are right of A and left of B, and one parameter frees;
+before A, they are left of both, and both free. This is a reading of seven layouts, not a proof.
 
 ## Scope
 

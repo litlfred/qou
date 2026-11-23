@@ -1,0 +1,74 @@
+[    4.8s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[    4.8s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[    4.8s]   span closed under the sector involution: True
+[    4.8s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[    4.8s]   beta(q) = alpha(1/q): True
+[    8.8s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[    8.8s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[    8.8s]   span closed under the sector involution: True
+[    8.8s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[    8.9s]   beta(q) = alpha(1/q): True
+[    8.9s]   L6: fully commutative span agrees with the all-words span: True
+[    9.8s]   rank 0; relation on (kappa, kappa alpha, kappa beta): []
+[    9.8s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: True
+[    9.8s]   span closed under the sector involution: True
+[    9.8s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   22.2s]   rank 0; relation on (kappa, kappa alpha, kappa beta): []
+[   22.2s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: True
+[   22.2s]   span closed under the sector involution: True
+[   22.2s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   22.2s]   L7b: fully commutative span agrees with the all-words span: True
+[   29.4s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   29.4s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   29.4s]   span closed under the sector involution: True
+[   29.4s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   29.5s]   beta(q) = alpha(1/q): True
+[   33.1s]   rank 0; relation on (kappa, kappa alpha, kappa beta): []
+[   33.1s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: True
+[   33.1s]   span closed under the sector involution: True
+[   33.1s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   56.0s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   56.0s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   56.0s]   span closed under the sector involution: True
+[   56.0s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   56.0s]   beta(q) = alpha(1/q): True
+[   56.0s] summary:
+[   56.0s]   L6: dim 10, rank 2, closed True, bar-closed True, Coulomb False, alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   56.0s]   L7b: dim 16, rank 0, closed True, bar-closed True, Coulomb True, relation []
+[   56.0s]   L8e: dim 10, rank 2, closed True, bar-closed True, Coulomb False, alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   56.0s]   L8o: dim 16, rank 0, closed True, bar-closed True, Coulomb True, relation []
+[   56.0s]   L9e: dim 10, rank 2, closed True, bar-closed True, Coulomb False, alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   56.0s] done
+
+[    4.5s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[    4.5s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[    4.5s]   span closed under the sector involution: True
+[    4.5s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[    4.5s]   beta(q) = alpha(1/q): True
+[    8.6s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[    8.6s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[    8.6s]   span closed under the sector involution: True
+[    8.6s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[    8.6s]   beta(q) = alpha(1/q): True
+[    8.6s]   L6: fully commutative span agrees with the all-words span: True
+[   29.3s]   rank 1; relation on (kappa, kappa alpha, kappa beta): [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]
+[   29.3s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   29.3s]   span closed under the sector involution: False
+[   29.3s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   29.3s]   pinned alpha satisfies alpha(q) + alpha(1/q) = 1: True
+[   48.3s]   rank 1; relation on (kappa, kappa alpha, kappa beta): [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]
+[   48.3s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   48.3s]   span closed under the sector involution: False
+[   48.3s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   48.3s]   pinned alpha satisfies alpha(q) + alpha(1/q) = 1: True
+[  182.6s]   rank 1; relation on (kappa, kappa alpha, kappa beta): [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]
+[  182.6s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[  182.6s]   span closed under the sector involution: False
+[  182.7s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[  182.7s]   pinned alpha satisfies alpha(q) + alpha(1/q) = 1: True
+[  182.7s] summary:
+[  182.7s]   L6: dim 10, rank 2, closed True, bar-closed True, Coulomb False, alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[  182.7s]   L9s: dim 14, rank 1, closed False, bar-closed True, Coulomb False, relation [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]; forces alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), equal to the L6 alpha: True
+[  182.7s]   L9m: dim 14, rank 1, closed False, bar-closed True, Coulomb False, relation [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]; forces alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), equal to the L6 alpha: True
+[  182.8s]   L10s: dim 14, rank 1, closed False, bar-closed True, Coulomb False, relation [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]; forces alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), equal to the L6 alpha: True
+[  182.8s] done
