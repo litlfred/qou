@@ -1963,3 +1963,4 @@ import QOU.Observations.DeBroglieBoostedReebPhase
 import QOU.QBeta.ChargedCurrentChiralitySelection
 import QOU.StandardModel.TorusLinkElectroweakSchurRatio
 import QOU.AtomicMass.ComptonHarmonicOscillatorSlaterRatios
+import QOU.StandardModel.BringGenerationSplitAndCKMTexture
