@@ -1,0 +1,37 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "kangleeleeoh2002",
+  "type": "article-journal",
+  "title": "Hecke algebras, Specht modules and Gröbner–Shirshov bases",
+  "author": [
+    {
+      "family": "Kang",
+      "given": "Seok-Jin"
+    },
+    {
+      "family": "Lee",
+      "given": "In-Sok"
+    },
+    {
+      "family": "Lee",
+      "given": "Kyu-Hwan"
+    },
+    {
+      "family": "Oh",
+      "given": "Hyekyung"
+    }
+  ],
+  "container-title": "Journal of Algebra",
+  "volume": "252",
+  "page": "258-292",
+  "issued": {
+    "date-parts": [
+      [
+        2002
+      ]
+    ]
+  },
+  "DOI": "10.1016/S0021-8693(02)00071-6",
+  "URL": "https://www2.math.uconn.edu/~khlee/Papers/GS-Hecke.pdf",
+  "note": "Read 2026-11-23 (author's copy, uploaded by the owner). §4, Prop. 4.3 (pp. 275–276): a Gröbner–Shirshov basis of the Iwahori–Hecke algebra H_n(q) of type A_{n-1}, for both deg-lex and deg-rlex orders: the quadratic relation, far commutation, and the family T_{i+1,j}T_{i+1} − T_i T_{i+1,j} (i ≥ j). This is the q-deformation of the [bokut2001] completion family; standard monomials T_{1,j_1}⋯T_{n-1,j_{n-1}}, n! of them. Their relation is T² = (q−1)T + q; the folio's convention D σ² = (Q−Q⁻¹)σ + 1 matches it under q = Q², T = Qσ (check: T² = Q²σ² = (Q²−1)T + Q²)."
+}
