@@ -37,10 +37,13 @@ duals (bulk) as objects with a comparison map, compatibility of the twists
 `ν (n+1) ∘ ι n = ι n ∘ ν n`, and any analogue at real `q₀` on `Sym(Ω¹)`.
 
 ## References
-- Kadison, *New examples of Frobenius extensions*, AMS University Lecture Series 14 (1999). Not yet in the bibliography.
+- [kadison1999] Kadison, *New Examples of Frobenius Extensions*, AMS University Lecture Series 14 (1999).
 - [lorenz2011] Nakayama automorphism of a Frobenius algebra.
 - [leitner2026] §1 Categorical foundations.
 -/
+-- Ref: [kadison1999] Kadison, New Examples of Frobenius Extensions, AMS ULECT 14 (1999)
+-- Ref: [lorenz2011] Lorenz, Someoko/Nakayama automorphism of a Frobenius algebra (2011)
+-- Ref: [leitner2026] §1 Categorical foundations
 
 namespace QOU.QuantumObservableUniverse.Tower
 

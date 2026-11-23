@@ -86,13 +86,19 @@ for `⋆_q` on `Ω²`; and the pairwise exclusions.
   need rewriting but the arithmetic below would be untouched.
 * which resolution the author wants.  Both readings cost real content and the
   choice is not a measurement.
-* anything about Woronowicz's classification.  That `𝒪_q(SU(2))` also admits
-  **4-dimensional bicovariant** calculi is standard and cited, not formalised —
-  `library/` holds no source on it, and the corpus declares only the 3D
-  left-covariant one.
+* anything about the bicovariant classification.  That `𝒪_q(SU(2))` admits
+  **4-dimensional bicovariant** calculi (`4D_±` in Woronowicz `[woronowicz1989]`,
+  classified on `S_μ U(2)` by Stachura `[stachura1992]` and on standard quantum
+  groups by Schmüdgen–Schüler `[schmudgen-schuler1995]`) while the corpus
+  declares the 3-dimensional left-covariant calculus (`[woronowicz1987-twisted-su2]`)
+  is standard and cited, not formalised.
 
 Base ring: none — integer arithmetic (§7c: no `ℝ`, no ring at all).
 -/
+-- Ref: [woronowicz1987-twisted-su2] Woronowicz, Twisted SU(2) group: 3D non-commutative differential calculus, Publ. RIMS 23 (1987) 117–181
+-- Ref: [woronowicz1989] Woronowicz, Differential calculus on compact matrix pseudogroups (quantum groups), Commun. Math. Phys. 122 (1989) 125–170
+-- Ref: [stachura1992] Stachura, Bicovariant differential calculi on S_mu U(2), Lett. Math. Phys. 25 (1992) 175–188
+-- Ref: [schmudgen-schuler1995] Schmüdgen & Schüler, Classification of bicovariant differential calculi on quantum groups, Commun. Math. Phys. 170 (1995) 315–335
 
 namespace QOU.QuantumObservableUniverse.SelfDualityDegree
 

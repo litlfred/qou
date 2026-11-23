@@ -36,9 +36,26 @@ Niemi found stable knotted solitons in a classical field theory
 rings in water and watched them evolve \cite{kleckner2013}, and Kedia,
 Bialynicki-Birula, Peralta-Salas and Irvine constructed knotted
 solutions of Maxwell's equations \cite{arxiv-1302.0342v1}. Closest to
-this chapter, Avrin modelled the elementary fermions by twisted bands
-whose boundaries are the unknot and the trefoil, an independent
-knot-to-particle dictionary \cite{avrin-2012}.
+this chapter, Joel Avrin modelled the elementary fermions by twisted
+bands whose boundaries are the unknot and the trefoil, an independent
+knot-to-particle dictionary \cite{avrin-2012}. Two algebraic programmes
+also assign elementary particles to quantum knots or three-strand
+braids: Robert J. Finkelstein mapped fermions and electroweak states
+directly to irreducible $\mathrm{SU}_q(2)$ matrix elements $D^j_{mm'}$
+labelled by knot crossing number, writhe, and diagram rotation
+\cite{finkelstein2007,finkelstein2008}, while Sundance Bilson-Thompson
+\cite{bilson-thompson2005}, Sundance Bilson-Thompson, Fotini
+Markopoulou, and Lee Smolin \cite{bilsonthompson2007}, and Sundance
+Bilson-Thompson, Jonathan Hackett, and Louis H. Kauffman
+\cite{bilson-thompson-hackett-kauffman2009} represented first-generation
+fermions and gauge bosons as framed ribbons in $B_3$ whose electric
+charges are read off $\pm 2\pi$ ribbon twists in units of $e/3$. The
+construction in this chapter differs from both: instead of indexing
+single-particle states by $D^j_{mm'}$ matrix entries or reading electric
+charge from external ribbon twists, it works in the finite-dimensional
+quotient $H_3(q)$ generated from the $\mathcal{O}_q(\mathrm{SU}(2))$
+braiding on $B_3$ and evaluates observables through the convention-D
+Markov trace.
 
 This chapter keeps the combinatorial half of that lineage and drops the
 mechanical half. The vortex atom tried to derive the stability of matter

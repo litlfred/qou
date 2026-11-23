@@ -15,7 +15,14 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["rem:hecke-algebra-from-braiding"],
-  cites: ["bokut2001", "kimlee2018"],
+  cites: [
+    "bokut2001",
+    "kimlee2018",
+    "bergman1978",
+    "hermann1926",
+    "shirshov1962",
+    "dipper-james1986",
+  ],
   tags: [
     "hecke-algebra",
     "normal-form",

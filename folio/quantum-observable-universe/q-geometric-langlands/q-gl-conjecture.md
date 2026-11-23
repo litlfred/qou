@@ -69,4 +69,7 @@ This equivalence is parametrised by the non-torsion locus $q \in \mathbb{G}_m^{\
    persists at all Kummer levels $n \nmid \chi(A)$.
 
 5. **Classical limit**: as $q \to 1$, $\mathbb{L}_q$ recovers the
-   classical Geometric Langlands equivalence.
+   classical Geometric Langlands equivalence \cite{frenkel2007}.
+
+**Relation to the quantum $q$-Langlands correspondence of Aganagic, Frenkel, and Okounkov.**
+Mina Aganagic, Edward Frenkel, and Andrei Okounkov \cite{aganagic2018} establish a *quantum $q$-Langlands correspondence* on genus-zero curves ($\mathbb{P}^1$ and $\mathbb{C}^\times$ with tame ramification), relating conformal blocks of the quantum affine algebra $U_\hbar(\widehat{{}^L\mathfrak{g}})$ to deformed $\mathcal{W}_{q,t}(\mathfrak{g})$-algebra blocks across a **two-parameter** deformation $(q, t)$ whose $q \to 1$ limit (at fixed level parameter $\beta$ with $t = q^\beta$) recovers the quantum geometric Langlands correspondence. The conjecture stated above is a different single-parameter formulation rather than a special case of that theorem: it is posed on a compact higher-genus brane curve $X$ (principally Bring's curve of genus $g = 4$, which admits no global multiplicative shift $z \mapsto qz$), deforms the differential along the contact-Reeb splitting $d_q$ via the single substrate parameter $q \in \mathbb{G}_m^{\mathrm{nt}}$, and specializes directly at $q \to 1$ to the classical (non-quantum) geometric Langlands equivalence.

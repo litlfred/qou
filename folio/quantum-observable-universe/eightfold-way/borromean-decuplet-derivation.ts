@@ -18,6 +18,7 @@ export default proposition({
     "prop:schur-weyl-eightfold",
     "def:borromean-baryon",
   ],
+  cites: ["greenberg1964", "han-nambu1965"],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , whose weight\ndiagram and its degeneracy are treated in\n[the octet proposition](#prop:baryon-octet-decomposition)" },
     {

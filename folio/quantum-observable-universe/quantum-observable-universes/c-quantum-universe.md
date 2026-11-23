@@ -2,7 +2,7 @@ Let $K$ be an archimedean field. A quantum universe over $K$ is realised by the 
 
 Specifically:
 1. $M$ is a CR manifold of hypersurface type with non-degenerate Levi form of signature $(r,s)$.
-2. $\varTheta$ is a pseudo-Hermitian structure on $M$, determining the Levi distribution $H = \ker\varTheta$, the Reeb vector field $\xi$, the Tanaka–Webster metric $g_\varTheta$, and the Levi form $L_\varTheta$.
+2. $\varTheta$ is a pseudo-Hermitian structure on $M$, determining the Levi distribution $H = \ker\varTheta$, the Reeb vector field $\xi$, the Tanaka–Webster metric $g_\varTheta$ of Noboru Tanaka \cite{tanaka1974,tanaka1975} and Sidney M. Webster \cite{webster1978}, and the Levi form $L_\varTheta$.
 3. $G = \mathrm{SU}(2)$.
 4. $\mathcal{S} = P \times_G \mathbb{P}^1(\mathbb{C}) \to M$ is the associated state bundle, where $P \to M$ is the principal $G$-bundle.
 
