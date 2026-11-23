@@ -23,8 +23,10 @@ scaling `q → 1`, `n(1-q) → ∞` implies the same for `q²`, and
 
 The endpoint `x = -1` cannot go through duplication, since `x² = 1` is where the class
 fails as stated. It is proved directly in `ArchimedeanLimitEndpoints.lean`
-(`archimedeanLimit_neg_one`), which also refutes the stated class at `x = 1`. The
-restatement for `x > 1` that the bean records stays open.
+(`archimedeanLimit_neg_one`), which also refutes the stated class at `x = 1` and proves
+the classical shifted-index (`k ≥ 1`, `(q; q)_n`) Faddeev limit at `x = 1`
+(`archimedeanLimit_shifted_one`). The restatement for `x > 1` that the bean records
+stays open.
 
 -- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -/
