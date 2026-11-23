@@ -688,6 +688,7 @@ import QOU.Archimedean.BlochWignerPositive
 import QOU.Archimedean.HyperbolicVolumeMeasure
 import QOU.Archimedean.HyperbolicVolumeInversion
 import QOU.Archimedean.HyperbolicQuotient
+import QOU.Archimedean.HopfLinkComplexVolume
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
 import QOU.Archimedean.OrthoschemePolarReduction
@@ -1465,6 +1466,7 @@ import QOU.Knot.GeneratedCertifiedHigh
 -- also orphaned, so registering it here is a fix to pre-existing state rather than
 -- to this arc's additions.
 import QOU.AppendixSurreals.BirthdayFaithful
+import QOU.AppendixSurreals.DyadicBirthdayHyperreal
 import QOU.AppendixSurreals.DiophantineBirthday
 import QOU.AppendixSurreals.DiophantineBirthdayScope
 import QOU.AppendixSurreals.DiophantineBirthdayTrajectory
@@ -1894,3 +1896,8 @@ import QOU.MathlibExt.WenzlSchurElementInstances
 import QOU.QBeta.BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge
 import QOU.QBeta.RationalStateIntegralCuspTorsionBringHomologyGoldenDilogCostinTransseriesBridge
 import QOU.SchurWeyl.R2TwistTower
+import QOU.QFTMath.CliffordTraces
+import QOU.QFTMath.SpinorMinkowski
+import QOU.QFTMath.Su3StructureConstants
+import QOU.QFTMath.SpinFlavourAxialCharge
+import QOU.QFTMath.InfinitesimalPureBraid

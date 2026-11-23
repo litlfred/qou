@@ -35,7 +35,7 @@ It does **not** settle surjectivity of `rskPair`. That needs `CornersAlong P is`
 standard pair `(P, Q)`, where `is` is read off `Q` rather than off an insertion history. The
 argument there is different — the cell carrying the largest remaining entry of a standard tableau
 is a corner, because a cell below it would carry a larger one — and it is a later brick of epic
-`qou-nrex`. Nothing here claims it, and `RSKBurnsideHolds` for general `n` stays open.
+`qou-nrex`. Nothing here claims it, and at the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean.
 

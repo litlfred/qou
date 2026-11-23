@@ -20,8 +20,7 @@ has to be built by hand.
 
 One of the two gaps the epic bean records between brick 35 and `rskPair` surjectivity; the other is
 threading brick 35's `Σ`-equality through `rskPair`'s definition. `rskPair` bijectivity is not
-claimed here, and `RSKBurnsideHolds` for general `n` remains open — still proved only for `n ≤ 12`,
-by a route with no RSK correspondence in it.
+claimed here, and at the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 
