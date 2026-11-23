@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-23T00:57:18Z
+updated_at: 2026-11-23T05:55:40Z
 parent: qou-wxhi
 ---
 
@@ -56,3 +56,6 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
 
 
 2026-11-23 (W6, PR #9165, commit 05c92c799): derived the 70x unit split. tau_e = q^3 y_(3) (electron word trace 0 in (2,1)); y_(3) = 1/2 + h^2/(2[2]^2), bar-invariant; R = tau_e/hbar^2 = q^3/(2hbar^2) + q^5(q+1)^2/(2(q^2+1)^2) = 69.6509 + 0.7528 at proton q0. Mass chart cannot produce the electron (Vol(Hopf)=0, product_weight_ne): its electron weight hbar^2 is CAL-1 by hand. Trace chart: (s0 s1^-1)^2 / tau_e = 0.4054, 510x short of Vol(4_1)/hbar^2. Canonical chart still OPEN - neither derives both electron and muon. Lean QOU/Observations/ElectronUnitSplit.lean, audit section 8.
+
+
+2026-11-23 (W6, ec0980bb1): owner chose 'search for one object for both'. q-volume derives the muon shape but gives the electron 0; trace+c*volume: carrier forces c = T_e(1) = 1/2 (Lean sum_family_forces_c), giving 150.33 at q0 (-27.3 %), scope-(a) negative. No single derived object yet. Audit section 9.
