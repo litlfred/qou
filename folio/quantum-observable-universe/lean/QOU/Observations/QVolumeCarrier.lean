@@ -39,24 +39,27 @@ theorem one_sub_inv_pow_eq {R : Type*} [Field R] (q : R) (n : ℕ) :
   have := geom_sum_mul q⁻¹ n
   linear_combination this
 
-/-- **Leading carrier of the sum family `W = T + c·G`.** Suppose the electron has no tetrahedra
-(`G_e = 0`), both traces have finite limits at `q = 1`, `ℏ_q → 0`, and `ℏ_q² G_μ → V`. Then
+/-- **Leading carrier of the sum family `W = T + c·G`.** Over any topological field `R` and
+filter `l` (such as `𝓝[>] (1 : ℝ)`), suppose the electron has no tetrahedra (`G_e = 0`), both
+traces have finite limits along `l`, `ℏ_q → 0`, and `ℏ_q² G_μ → V`. Then
 `ℏ_q² W_μ / W_e → c·V / T_e(1)`. -/
-theorem sum_family_leading (h Te Tmu Gmu : ℝ → ℝ) (te tmu V c : ℝ)
-    (hh : Tendsto h (𝓝[>] 1) (𝓝 0))
-    (hTe : Tendsto Te (𝓝[>] 1) (𝓝 te)) (hte : te ≠ 0)
-    (hTmu : Tendsto Tmu (𝓝[>] 1) (𝓝 tmu))
-    (hG : Tendsto (fun q => h q ^ 2 * Gmu q) (𝓝[>] 1) (𝓝 V)) :
+theorem sum_family_leading {α R : Type*} [Field R] [TopologicalSpace R]
+    [IsTopologicalRing R] [ContinuousInv₀ R] {l : Filter α}
+    (h Te Tmu Gmu : α → R) (te tmu V c : R)
+    (hh : Tendsto h l (𝓝 0))
+    (hTe : Tendsto Te l (𝓝 te)) (hte : te ≠ 0)
+    (hTmu : Tendsto Tmu l (𝓝 tmu))
+    (hG : Tendsto (fun q => h q ^ 2 * Gmu q) l (𝓝 V)) :
     Tendsto (fun q => h q ^ 2 * (Tmu q + c * Gmu q) / (Te q + c * 0))
-      (𝓝[>] 1) (𝓝 (c * V / te)) := by
-  have h2 : Tendsto (fun q => h q ^ 2 * Tmu q) (𝓝[>] 1) (𝓝 (0 ^ 2 * tmu)) :=
+      l (𝓝 (c * V / te)) := by
+  have h2 : Tendsto (fun q => h q ^ 2 * Tmu q) l (𝓝 (0 ^ 2 * tmu)) :=
     (hh.pow 2).mul hTmu
-  have hnum : Tendsto (fun q => h q ^ 2 * (Tmu q + c * Gmu q)) (𝓝[>] 1)
+  have hnum : Tendsto (fun q => h q ^ 2 * (Tmu q + c * Gmu q)) l
       (𝓝 (0 ^ 2 * tmu + c * V)) := by
     have := h2.add (hG.const_mul c)
     refine this.congr (fun q => ?_)
     ring
-  have hden : Tendsto (fun q => Te q + c * 0) (𝓝[>] 1) (𝓝 te) := by
+  have hden : Tendsto (fun q => Te q + c * 0) l (𝓝 te) := by
     simpa using hTe
   have := hnum.div hden hte
   simpa using this
@@ -64,13 +67,15 @@ theorem sum_family_leading (h Te Tmu Gmu : ℝ → ℝ) (te tmu V c : ℝ)
 /-- **The carrier forces `c = T_e(1)`.** If the sum family's leading carrier is `V`
 (that is, `m_μ/m_e ~ V/ℏ_q²`) and `V ≠ 0`, the coefficient of the volume term must be the
 electron's classical trace. A necessary condition only. -/
-theorem sum_family_forces_c (h Te Tmu Gmu : ℝ → ℝ) (te tmu V c : ℝ)
-    (hh : Tendsto h (𝓝[>] 1) (𝓝 0))
-    (hTe : Tendsto Te (𝓝[>] 1) (𝓝 te)) (hte : te ≠ 0)
-    (hTmu : Tendsto Tmu (𝓝[>] 1) (𝓝 tmu))
-    (hG : Tendsto (fun q => h q ^ 2 * Gmu q) (𝓝[>] 1) (𝓝 V)) (hV : V ≠ 0)
+theorem sum_family_forces_c {α R : Type*} [Field R] [TopologicalSpace R]
+    [IsTopologicalRing R] [ContinuousInv₀ R] [T2Space R] {l : Filter α} [l.NeBot]
+    (h Te Tmu Gmu : α → R) (te tmu V c : R)
+    (hh : Tendsto h l (𝓝 0))
+    (hTe : Tendsto Te l (𝓝 te)) (hte : te ≠ 0)
+    (hTmu : Tendsto Tmu l (𝓝 tmu))
+    (hG : Tendsto (fun q => h q ^ 2 * Gmu q) l (𝓝 V)) (hV : V ≠ 0)
     (hcar : Tendsto (fun q => h q ^ 2 * (Tmu q + c * Gmu q) / (Te q + c * 0))
-      (𝓝[>] 1) (𝓝 V)) :
+      l (𝓝 V)) :
     c = te := by
   have hlead := sum_family_leading h Te Tmu Gmu te tmu V c hh hTe hte hTmu hG
   have heq : c * V / te = V := tendsto_nhds_unique hlead hcar
