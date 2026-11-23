@@ -7,8 +7,8 @@ priority: high
 tags:
     - needs-owner-ok
 created_at: 2026-11-23T21:31:08Z
-updated_at: 2026-11-23T21:31:08Z
+updated_at: 2026-11-23T22:17:16Z
 parent: qou-hksc
 ---
 
-Claimed by claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18). Related beans: qou-99qc, qou-awxv, qou-37y0, qou-mjo7. Queued for active execution per owner pick (qou-awxv item 1 + qou-99qc): test self-consistent size L_cal Route 1 via Delta_EM = alpha * m_model * f with ZERO m_pi unit and ZERO empirical inputs in Lean proofs. STRICT PREREGISTRATION: pre-register dimensionless geometric shape factor f from pure Borromean 6_3^2 / 3-strand geometry BEFORE evaluating Delta_EM against p-n / u-d splitting; report honestly even if f misses ~0.1. Ask owner before merging math PR.
+Ready PR #9219 opened (Closes #9218, head 23ab7c141ec): 24 sorry-free theorems in ContinuumECatIntraNucleonEM.lean + 11/11 80-dps checks. Pre-registered Route-1 (Delta_EM = alpha_q * m_model * f, zero m_pi): f = 1/9 gives 0.7608 MeV (matching Cottingham 0.76 MeV), f = 1/(3[3]_q0) gives 0.7499 MeV, f = 1/6 gives 1.1412 MeV (+0.88 sigma vs BMW 1.00(16) MeV); honest misses recorded for 1/Vol(B_3) (0.311 MeV) and connected trace (0.003 MeV).

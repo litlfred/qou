@@ -1,12 +1,12 @@
 ---
-id: qou-gen3
-title: "SM/Eightfold Worker Pkg 1 (Q-Gap-7): N_gen=3 Bring Zero-Mode Count, S_3⊂S_5 CKM/PMNS Overlap Textures, & Satellite Tau Carrier"
-status: todo
+# qou-gen3
+title: 'SM/Eightfold Worker Pkg 1 (Q-Gap-7): N_gen=3 Bring Zero-Mode Count, S_3⊂S_5 CKM/PMNS Overlap Textures, & Satellite Tau Carrier'
+status: in-progress
 type: feature
 priority: high
-parent: qou-sm8w
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T20:06:00Z
+updated_at: 2026-11-23T22:17:16Z
+parent: qou-sm8w
 ---
 
 ## Scope & Linked Legacy Beans (`qou-x4qm`, `qou-xtcl`, `qou-htk4`, `qou-y0mq`)
