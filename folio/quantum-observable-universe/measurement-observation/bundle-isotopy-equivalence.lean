@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Logic.Function.Basic
 
 
 /-!
@@ -27,5 +28,25 @@ structure BundleIsotopyEquiv where
   perm : Fin numPoints → Fin numPoints
   /-- The permutation is bijective. -/
   perm_bijective : Function.Bijective perm
+
+/-- Reflexive (identity) bundle isotopy equivalence on `n` localized knots. -/
+def BundleIsotopyEquiv.refl (n : ℕ) : BundleIsotopyEquiv where
+  numPoints := n
+  perm := id
+  perm_bijective := Function.bijective_id
+
+/-- Transitive composition of two bijective index permutations on `n` localized knots. -/
+def BundleIsotopyEquiv.ofComp (n : ℕ)
+    (perm₁ perm₂ : Fin n → Fin n)
+    (h₁ : Function.Bijective perm₁) (h₂ : Function.Bijective perm₂) :
+    BundleIsotopyEquiv where
+  numPoints := n
+  perm := perm₂ ∘ perm₁
+  perm_bijective := Function.Bijective.comp h₂ h₁
+
+/-- The identity bundle isotopy equivalence fixes every particle index. -/
+theorem BundleIsotopyEquiv.refl_apply (n : ℕ) (i : Fin n) :
+    (BundleIsotopyEquiv.refl n).perm i = i :=
+  rfl
 
 end QOU
