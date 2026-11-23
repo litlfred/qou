@@ -876,6 +876,12 @@ limits on reading more into it:
 So: possible in form, not established, and its size waits on `t`, i.e. on α_EM (open). Scope-(a).
 No empirical input, no fitting.
 
+**Units.** §36, §37 and the ΔE figures of §35 contain no MeV values. Everything is a dimensionless
+ratio of traces in the block readout, and κ = 2 log t is dimensionless. The corpus has two electron
+units: τ_e, the trace of σ₀σ₁σ₀ with Hopf closure, and ℏ_q² from the mass formula. They differ by a
+factor of R = τ_e/ℏ_q² ≈ 70.40 at the proton pin (W6, draft PR #9165). Any conversion of these terms to
+MeV must name which unit it uses. Which unit is canonical is open and is the owner's call.
+
 ## §37 A unitary line braiding gives no real pair energy (2026-11-22)
 
 `QOU/QBeta/UnitaryLineNoEnergy.lean` (sorry-free, lean-direct exit 0): if the hadron-line coupling
