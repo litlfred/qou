@@ -5,7 +5,7 @@ The entropy $S_q(U)$ integrates strictly over the surface $\partial U$, guided b
 
 First, the non-abelian Stokes theorem converts the bulk curvature integral to a boundary holonomy. The flatness conditions render this integral independent of the bounding surface choice. Entropy constitutes pure boundary datum.
 
-Second, the Frobenius pairing is non-degenerate. Internal degrees of freedom are fully determined by boundary data via the categorical trace. The boundary $\partial U$ controls the number of distinguishable states in $U$, encoding the content-object holographic principle. Temperature, as the energy derivative of entropy, strictly inherits this boundary character.
+Second, the Frobenius pairing is non-degenerate, so the categorical trace detects every nonzero endomorphism of $U$. Non-degeneracy alone does not bound the number of distinguishable states in $U$ by data on $\partial U$; no such bound is proved here, and the reading of $\partial U$ as controlling the state count is a heuristic, not a holographic theorem. Temperature, as the energy derivative of entropy, inherits whatever boundary character the entropy has from the first principle.
 
 **Classical limit.**
 As $q \to 1$, $T_q \to 0$ and $\beta_q \to \infty$, sending $S_q(U) \to S_{\mathrm{classical}}(U)$. The non-abelian Stokes integral degenerates to the classical Gauss law. The Frobenius trace becomes the ordinary matrix trace. The Boltzmann constant emerges as $k_B = \hbar_q / T_{\mathrm{phys}}$ in the correspondence limit, where physical temperature $T_{\mathrm{phys}}$ is measured in SI units.
