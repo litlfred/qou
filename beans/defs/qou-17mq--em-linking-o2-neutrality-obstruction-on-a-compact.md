@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-11-23T21:15:00Z
+updated_at: 2026-11-23T22:14:15Z
 parent: qou-10v9
 ---
 
@@ -585,3 +585,5 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 - **Round 56 Progress (`2026-11-16T21:20:58Z`)**: Opened [`litlfred/qou#8207`](https://github.com/litlfred/qou/pull/8207) (`cfc03c4131df1ea758c17554768f2274e708f38b`, Commit 1 `0a9d3f269d6c23f614dc40aac55d5f0a7b2baafd`). Keeping bean at `status: in-progress` pending owner review.
 
 Claimed by claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18, 2026-11-23)
+
+EOS 2026-11-23 (PR #9219, HEAD 23ab7c141ec): Proved intranucleon_em_cancels_in_nuclear_binding and o2_neutralized_h3_green_positivity_window (0 < h3GreenO2 u c_0 <-> u < (c_0+1)/(c_0-1) for 1 < u, 1 < c_0) in QOU/QBeta/ContinuumECatIntraNucleonEM.lean (0 sorry), and verified positivity at Vol(B_3)=8G (c_0(B_3)=1.5699369) across u in {q_0^2, q_0^4, exp(R_{B3})} at 80 dps.

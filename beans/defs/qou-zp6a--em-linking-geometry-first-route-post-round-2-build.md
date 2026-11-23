@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-11-23T21:43:54Z
+updated_at: 2026-11-23T22:14:15Z
 parent: qou-3l2l
 ---
 
@@ -19,3 +19,5 @@ parent: qou-3l2l
 - **50-dps Saturation Probe + Witness:** `computations/probes/h3_green_coth_saturation_probe.py` and `.witness.json` (11/11 assertions passed), verifying `α coth(α) → 1` at `α = 10⁻²⁵`, unsubtracted saturation `coth(40) → 1` vs O2-subtracted exponential decay `coth(40) - 1 ≈ 3.6097 × 10⁻³⁵`, and smooth monotone decrease `κ(A) : 3.2 → 2.2` across `A ∈ {3, 4, 12, 16, 40, 56}` (`α ∈ [0.3235, 0.4904]` unsubtracted, `α ∈ [0.2428, 0.3233]` O2-subtracted).
 
 Claimed by claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18, 2026-11-23); pre-registration committed (68df40f7a41).
+
+EOS 2026-11-23 (PR #9219, HEAD 23ab7c141ec): Formalized o2_neutralized_h3_green_positivity_window over generic strict ordered fields in ContinuumECatIntraNucleonEM.lean (0 sorry) and evaluated 80-dps Borromean O2-subtracted Green's potentials both under self-consistent Route 1 (f_R1_2a = 0.04584 -> 0.31385 MeV) and secondary CAL-3 m_pi diagnostics (alpha=2 ln q_0 -> 1.11743 MeV, m_d-m_u=2.41077 MeV; alpha=ln q_0 -> 2.73257 MeV).

@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-mass
 created_at: 2026-08-08T08:11:57Z
-updated_at: 2026-11-23T21:15:00Z
+updated_at: 2026-11-23T22:14:15Z
 parent: qou-8lxd
 ---
 
@@ -105,3 +105,5 @@ precision target.
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
 
 Claimed by claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18, 2026-11-23)
+
+EOS 2026-11-23 (PR #9219, HEAD 23ab7c141ec): Proved proton_pair_charge_sum_eq_zero (0), neutron_pair_charge_sum_eq_neg_third (-1/3), pn_pair_charge_diff_eq_third (+1/3), pn_self_charge_diff_eq_third (+1/3), odd_milnor_functional_vanishes, even_milnor_sq_distinguishes_borromean_from_unlink, strong_md_sub_mu_decomposition, and route1_self_consistent_em_pos in Lean (0 sorry). Evaluated derived Form-B alpha_q(q_0) (zero new EM coupling input) across 11 pre-registered Route-1 (no m_pi) shapes f in Delta_EM = alpha_q(q_0)*m_model(q_0)*f: constituent Compton f=1/9 gives 0.76077 MeV (m_d-m_u=2.0541 MeV), coherent f=1/6 gives 1.14116 MeV (m_d-m_u=2.4345 MeV vs PDG 2.52(17) MeV), Compton-HO gives 0.386-0.580 MeV, while O(hbar_q^4) connected braid trace gives 0.00295 MeV; spatial kernel selection remains open.

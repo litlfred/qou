@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-23T21:14:34Z
-updated_at: 2026-11-23T21:43:54Z
+updated_at: 2026-11-23T22:14:16Z
 ---
 
 Thread: CFT/holography review (owner ofri, 2026-11-23). Branch claude/project-thread-p6bqaz, PR #9180, issue #9179. Head ae490aa67e (main merged). NOT merged: owner's explicit go required.
@@ -36,3 +36,5 @@ Open / next:
 2026-11-23 21:16Z: PR #9180 MERGED (rebase) at head 832835c9f5 by owner's prepare-merge-auto; the rebase note above is obsolete. Open items 1-6 remain.
 
 Item 1 (L_cal Route 1: Delta_EM = alpha * m_model * f, no m_pi unit) pre-registered prior to numerical evaluation in 68df40f7a41 on claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18, 2026-11-23).
+
+EOS 2026-11-23 (PR #9219, HEAD 23ab7c141ec): Executed item 1 (L_cal Route 1: Delta_EM = alpha_q(q_0) * m_model(q_0) * f, NO m_pi unit, pre-registered in 68df40f7a41 prior to evaluation; alpha_q*m_model = 6.846931 MeV, empirical target f_emp ~ 0.111-0.146). Full 80-dps results across all 11 pre-registered shapes f: f_R1_1a=1/9=0.11111 (0.76077 MeV, matches Cottingham 0.76 MeV), f_R1_1b=1/(3[3]_q)=0.10952 (0.74985 MeV), f_R1_1c=1/6=0.16667 (1.14116 MeV, +0.88 sigma vs BMW 1.00(16) MeV), f_R1_2c=Vol(4_1)/(24G)=0.09234 (0.63223 MeV), Compton-HO f_R1_3a..c=0.05644-0.08465 (0.38641-0.57962 MeV), pure Borromean O2/volume f_R1_2a,2b=0.04549-0.04584 (0.31146-0.31385 MeV), Planck-defect hbar_q/3=0.03303 (0.22614 MeV), and O(hbar_q^4) connected Hecke trace f_R1_3d=0.000431 (0.00295 MeV, 250x miss).

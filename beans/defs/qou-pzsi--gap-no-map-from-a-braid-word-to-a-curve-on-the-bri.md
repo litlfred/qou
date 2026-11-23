@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T16:50:05Z
-updated_at: 2026-11-23T21:15:00Z
+updated_at: 2026-11-23T22:14:15Z
 parent: qou-v2om
 ---
 
@@ -409,3 +409,5 @@ The line "Route-1 sign-erasure fix is on PR #7603 / #7893 (open)" was wrong on t
 So route 1's seen-candidate results stand withdrawn, per the 2026-10-11 correction. Redoing them on the signed nucleon runs into the same B4 problem: the signed nucleon is a sum of four braids, and nothing defines an energy for a sum. Nothing changed.
 
 Claimed by claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18, 2026-11-23)
+
+EOS 2026-11-23 (PR #9219, HEAD 23ab7c141ec): Proved regInvDistSq_lipschitz, regPairKernel_lipschitz, subdivision_riemann_error_bound, subdivision_dyadic_step_bound, regPairKernel_dyadic_step_bound, and ecat_regular_block_decomposition in QOU/QBeta/ContinuumECatIntraNucleonEM.lean (0 sorry, 0 custom axioms). Verified N=16..256 Richardson/Shanks convergence < 10^-12 at 80 dps, plus primitive Bring cusp-torus O'Hara geodesics (0,1) -> 0 and (2,3) -> 122.1997 (and recorded that non-primitive (0,3)=3*(0,1) is a 3-fold self-covering curve with infinite O'Hara energy).
