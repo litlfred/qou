@@ -1,13 +1,13 @@
 ---
 # qou-wp3h
 title: Step-9a chosen joints (m_p/m_e chain)
-status: todo
+status: in-progress
 type: epic
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:09:58Z
-updated_at: 2026-11-22T21:54:31Z
+updated_at: 2026-11-23T21:03:56Z
 parent: qou-10v9
 ---
 
@@ -34,3 +34,5 @@ Sub-epic P1.9A of PROGRAM: L2 at 1 ppQ (mass and binding accuracy) (work-plan re
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+Claimed by claude/w7-chen-mult-integral-masstrace-20261123 (Worker 17, 2026-11-23)
