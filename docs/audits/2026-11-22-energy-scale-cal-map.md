@@ -140,7 +140,7 @@ Lean: `QOU/Observations/ElectronUnitSplit.lean`. It is stated over a generic fie
    the factor is the classical Hopf value 1/2 divided by ℏ_q². The two pipelines disagree
    because the trace pipeline gives the electron a weight that is finite at q = 1, while the
    mass formula gives it ℏ_q², which vanishes there. The order-two quantum part of the trace is
-   the same size as ℏ_q² (ratio 1/2 at q = 1, 0.753·q⁻³ at q₀), but it is not what the trace
+   the same size as ℏ_q² (ratio 1/2 at q = 1, 0.7528 at q₀), but it is not what the trace
    pipeline uses as the electron's weight.
 
 ### The gap on the mass-formula side
