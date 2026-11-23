@@ -99,6 +99,7 @@ section({
         "hausdorff-dimension-classical-comparison",
         "information-causality",
         "information-causality-table-data",
+        "spacetime-length-distance-layers",
       ],
     }),
     section({
