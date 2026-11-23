@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Analysis.Real.Hyperreal
 import QOU.AppendixSurreals.Basic
 
 /-!
@@ -56,13 +57,56 @@ theorem surreal_squeeze_of_pow_lt
   have hε_inv : 0 < ε⁻¹ := inv_pos.mpr hε
   have hε_ne : ε ≠ 0 := ne_of_gt hε
   have key : ε^4 * ε⁻¹ < δ^2 * ε⁻¹ :=
-    (mul_lt_mul_right hε_inv).mpr hsq
+    (mul_lt_mul_iff_left₀ hε_inv).mpr hsq
   -- Reduce ε^4 * ε⁻¹ = ε^3 by `pow_succ` + `mul_inv_cancel`.
   have h_pow : ε^4 * ε⁻¹ = ε^3 := by
     rw [show (4 : ℕ) = 3 + 1 from rfl, pow_succ, mul_assoc,
         mul_inv_cancel₀ hε_ne, mul_one]
   rw [h_pow] at key
   exact key
+
+/-- **Non-Archimedean ordered-field squeeze**: given any strictly monotone ring
+    embedding `ι : ℝ →+* F` into a linearly ordered field `F` and an infinitesimal
+    `ε > 0` (`∀ r : ℝ, 0 < r → ε < ι r`), both `ε < 1` and `ε < (ι δ)²` (and hence
+    `ε⁴ < (ι δ)²`) are **derived** from infinitesimality for every standard `δ > 0`,
+    yielding `ε³ < (ι δ)² · ε⁻¹`. -/
+theorem surreal_squeeze_nonarchimedean
+    {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
+    (ι : ℝ →+* F) (hι : StrictMono ι) {ε : F}
+    (hε : 0 < ε) (hε_inf : ∀ r : ℝ, 0 < r → ε < ι r)
+    (δ : ℝ) (hδ : 0 < δ) :
+    ε ^ 3 < (ι δ) ^ 2 * ε⁻¹ := by
+  have hι_pos : 0 < ι δ := by simpa only [map_zero] using hι hδ
+  have _ : 0 < (ι δ) ^ 2 := sq_pos_of_pos hι_pos
+  have hε1 : ε < 1 := by simpa only [map_one] using hε_inf 1 zero_lt_one
+  have hεδ : ε < (ι δ) ^ 2 := by
+    have h := hε_inf (δ ^ 2) (sq_pos_of_pos hδ)
+    rwa [map_pow] at h
+  have hε4_le : ε ^ 4 ≤ ε := by
+    calc ε ^ 4 ≤ ε ^ 1 := pow_le_pow_of_le_one hε.le hε1.le (by decide)
+      _ = ε := pow_one ε
+  exact surreal_squeeze_of_pow_lt ε (ι δ) hε (lt_of_le_of_lt hε4_le hεδ)
+
+/-- Canonical ordered-field embedding `ℝ →+* ℝ*` into Mathlib's hyperreals
+    for `SurrealSqueeze`. -/
+noncomputable def hyperrealSqueezeHom : ℝ →+* ℝ* where
+  toFun r := (r : ℝ*)
+  map_one' := Hyperreal.coe_one
+  map_mul' := Hyperreal.coe_mul
+  map_zero' := Hyperreal.coe_zero
+  map_add' := Hyperreal.coe_add
+
+theorem hyperrealSqueezeHom_strictMono : StrictMono hyperrealSqueezeHom := by
+  intro a b hab
+  exact Hyperreal.coe_lt_coe.mpr hab
+
+/-- Concrete Hyperreal instantiation of `surreal_squeeze_nonarchimedean` with
+    `ε = Hyperreal.epsilon`. -/
+theorem surreal_squeeze_hyperreal (δ : ℝ) (hδ : 0 < δ) :
+    Hyperreal.epsilon ^ 3 < (hyperrealSqueezeHom δ) ^ 2 * Hyperreal.epsilon⁻¹ :=
+  surreal_squeeze_nonarchimedean hyperrealSqueezeHom
+    hyperrealSqueezeHom_strictMono Hyperreal.epsilon_pos
+    (fun r hr => Hyperreal.epsilon_lt_pos r hr) δ hδ
 
 /-- **surreal_squeeze**: in any `SurrealField K`, for every strictly
     positive infinitesimal `ε ∈ K` and every strictly positive standard
@@ -128,5 +172,11 @@ theorem surreal_squeeze
   -- Apply the abstract pure-algebra form.
   exact surreal_squeeze_of_pow_lt ε
     (QOU.AppendixSurreals.SurrealField.ofReal δ) hε hsq
+
+/-- Archimedean `(F := ℝ)` specialisation of `surreal_squeeze_of_pow_lt` (§7c `_real` pair). -/
+theorem surreal_squeeze_of_pow_lt_real
+    (ε δ : ℝ) (hε : 0 < ε) (hsq : ε ^ 4 < δ ^ 2) :
+    ε ^ 3 < δ ^ 2 * ε⁻¹ :=
+  surreal_squeeze_of_pow_lt ε δ hε hsq
 
 end QOU.AlgebraicSubstrate

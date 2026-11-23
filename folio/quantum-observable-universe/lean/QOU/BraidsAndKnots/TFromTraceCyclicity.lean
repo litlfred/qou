@@ -1,4 +1,5 @@
 import QOU.MathlibExt.MarkovTrace
+import QOU.Machinery.HeckeH3AlgebraInstance
 
 /-!
 # QOU.BraidsAndKnots.TFromTraceCyclicity — time reversal as word reversal
@@ -117,5 +118,137 @@ theorem markovTrace_eq_timeReversal [TFromTraceCyclicity n d]
   (markovTrace_timeReversal_eq ρ w).symm
 
 end TFromTraceCyclicity
+
+/-! ## Unconditional Anti-Involution Word Reversal & Markov-Trace Invariance on `H_3(R, h)` -/
+
+section H3WordReversalTraceInvariance
+
+open QOU.Machinery.H3
+
+/-- Generic word-reversal anti-homomorphism law `(u ++ v).reverse = v.reverse ++ u.reverse`. -/
+theorem reverse_append_anti {α : Type*} (u v : List α) :
+    (u ++ v).reverse = v.reverse ++ u.reverse :=
+  List.reverse_append
+
+/-- Word-reversal linear map on the 6-dimensional normal-form coordinates
+    `[1, σ₀, σ₁, L₊, L₋, e⁻]` of `H_3(R, h)`: fixes `1, σ₀, σ₁, e⁻ = σ₀σ₁σ₀` and
+    swaps `L₊ = σ₁σ₀ ↔ L₋ = σ₀σ₁`. -/
+def revNF {R : Type*} (v : Fin 6 → R) : Fin 6 → R :=
+  ![v 0, v 1, v 2, v 4, v 3, v 5]
+
+/-- Word-reversal operator `rev` on `H3A R h` over any `[CommRing R]`. -/
+def revH3 {R : Type*} [CommRing R] {h : R} (x : H3A R h) : H3A R h :=
+  ⟨revNF x.v⟩
+
+@[simp]
+theorem revNF_involutive {R : Type*} (v : Fin 6 → R) :
+    revNF (revNF v) = v := by
+  funext i
+  fin_cases i <;> simp [revNF]
+
+/-- **`revH3` is an involution** (`rev² = id`) on `H3A R h`. -/
+@[simp]
+theorem revH3_involutive {R : Type*} [CommRing R] {h : R} (x : H3A R h) :
+    revH3 (revH3 x) = x :=
+  H3A.ext (revNF_involutive x.v)
+
+@[simp]
+theorem revH3_one {R : Type*} [CommRing R] {h : R} :
+    revH3 (1 : H3A R h) = 1 := by
+  apply H3A.ext
+  funext i
+  fin_cases i <;> simp [revH3, revNF, unitNF]
+
+theorem revH3_add {R : Type*} [CommRing R] {h : R} (x y : H3A R h) :
+    revH3 (x + y) = revH3 x + revH3 y := by
+  apply H3A.ext
+  funext i
+  fin_cases i <;> simp [revH3, revNF, Pi.add_apply]
+
+theorem revH3_smul {R : Type*} [CommRing R] {h : R} (c : R) (x : H3A R h) :
+    revH3 (c • x) = c • revH3 x := by
+  apply H3A.ext
+  funext i
+  fin_cases i <;> simp [revH3, revNF, Pi.smul_apply]
+
+/-- Explicit action of `revH3` on the 6 GB normal-form basis vectors:
+    fixes `1`, `σ₀`, `σ₁`, `e⁻` and swaps `L₊ ↔ L₋`. -/
+theorem revH3_basis_action {R : Type*} [CommRing R] {h : R} :
+    revH3 (1 : H3A R h) = 1 ∧
+    revH3 (⟨![0, 1, 0, 0, 0, 0]⟩ : H3A R h) = ⟨![0, 1, 0, 0, 0, 0]⟩ ∧
+    revH3 (⟨![0, 0, 1, 0, 0, 0]⟩ : H3A R h) = ⟨![0, 0, 1, 0, 0, 0]⟩ ∧
+    revH3 (⟨![0, 0, 0, 1, 0, 0]⟩ : H3A R h) = ⟨![0, 0, 0, 0, 1, 0]⟩ ∧
+    revH3 (⟨![0, 0, 0, 0, 1, 0]⟩ : H3A R h) = ⟨![0, 0, 0, 1, 0, 0]⟩ ∧
+    revH3 (⟨![0, 0, 0, 0, 0, 1]⟩ : H3A R h) = ⟨![0, 0, 0, 0, 0, 1]⟩ := by
+  refine ⟨revH3_one, ?_, ?_, ?_, ?_, ?_⟩ <;>
+    apply H3A.ext <;> funext i <;> fin_cases i <;> simp [revH3, revNF]
+
+/-- **Anti-automorphism law on `H_3(R, h)`** over any `[CommRing R]`:
+    `revH3 (x * y) = revH3 y * revH3 x`. -/
+theorem revH3_mul {R : Type*} [CommRing R] {h : R} (x y : H3A R h) :
+    revH3 (x * y) = revH3 y * revH3 x := by
+  apply H3A.ext
+  funext i
+  fin_cases i <;> simp [revH3, revNF, mulNF, mulσ₀, mulσ₁] <;> ring
+
+/-- **Unconditional Markov-trace invariance under word reversal on `H_3(R, h)`**
+    over any `[CommRing R]`: `tr_M (rev x) = tr_M x`, because `rev` fixes `1, σ₀, σ₁, e⁻`
+    and swaps `L₊ ↔ L₋`, both of which have Markov trace `z²`! -/
+theorem trM_revNF {R : Type*} [CommRing R] (z h : R) (v : Fin 6 → R) :
+    trM z h (revNF v) = trM z h v := by
+  simp only [trM, TRM, revNF, Fin.sum_univ_six, Matrix.cons_val_zero, Matrix.cons_val_one,
+    Matrix.cons_val]
+  ring
+
+theorem trace_revH3 {R : Type*} [CommRing R] (z h : R) (x : H3A R h) :
+    H3A.trace z (revH3 x) = H3A.trace z x :=
+  trM_revNF z h x.v
+
+/-- Evaluation of a single 3-strand signed crossing `(i, b)` in `H3A R h`
+    (`σ_i` for `b = true`, `σ_i⁻¹ = σ_i - h • 1` for `b = false`). -/
+def evalH3Letter {R : Type*} [CommRing R] (h : R) (p : Fin 2 × Bool) : H3A R h :=
+  let gen : H3A R h := if p.1.val = 0 then ⟨![0, 1, 0, 0, 0, 0]⟩ else ⟨![0, 0, 1, 0, 0, 0]⟩
+  if p.2 then gen else gen - h • (1 : H3A R h)
+
+theorem revH3_evalH3Letter {R : Type*} [CommRing R] (h : R) (p : Fin 2 × Bool) :
+    revH3 (evalH3Letter h p) = evalH3Letter h p := by
+  obtain ⟨i, b⟩ := p
+  fin_cases i <;> cases b <;>
+    apply H3A.ext <;> funext k <;> fin_cases k <;>
+    simp [evalH3Letter, sub_eq_add_neg, revH3, revNF, unitNF]
+
+/-- Evaluation of any 3-strand signed braid word `w : Archimedean.BraidWord 3` in `H3A R h`. -/
+def evalH3Word {R : Type*} [CommRing R] (h : R) : Archimedean.BraidWord 3 → H3A R h
+  | [] => 1
+  | p :: rest => evalH3Letter h p * evalH3Word h rest
+
+theorem evalH3Word_append {R : Type*} [CommRing R] (h : R)
+    (u v : Archimedean.BraidWord 3) :
+    evalH3Word h (u ++ v) = evalH3Word h u * evalH3Word h v := by
+  induction u with
+  | nil => simp [evalH3Word]
+  | cons p tl ih => simp [evalH3Word, ih, mul_assoc]
+
+/-- Word reversal on `Archimedean.BraidWord 3` intertwines directly with `revH3` on `H3A R h`. -/
+theorem evalH3Word_timeReversal {R : Type*} [CommRing R] (h : R)
+    (w : Archimedean.BraidWord 3) :
+    evalH3Word h (timeReversal w) = revH3 (evalH3Word h w) := by
+  induction w with
+  | nil => simp [timeReversal, evalH3Word]
+  | cons p tl ih =>
+    have hrev : timeReversal (p :: tl) = timeReversal tl ++ [p] := List.reverse_cons
+    rw [hrev, evalH3Word_append, ih]
+    have hsingle : evalH3Word h [p] = evalH3Letter h p := by simp [evalH3Word]
+    rw [hsingle, ← revH3_evalH3Letter h p, ← revH3_mul]
+    rfl
+
+/-- **Unconditional Markov-trace invariance under `timeReversal`** for every 3-strand
+    signed braid word `w : Archimedean.BraidWord 3` over any `[CommRing R]`. -/
+theorem trace_evalH3Word_timeReversal {R : Type*} [CommRing R] (z h : R)
+    (w : Archimedean.BraidWord 3) :
+    H3A.trace z (evalH3Word h (timeReversal w)) = H3A.trace z (evalH3Word h w) := by
+  rw [evalH3Word_timeReversal, trace_revH3]
+
+end H3WordReversalTraceInvariance
 
 end QOU.BraidsAndKnots
