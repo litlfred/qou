@@ -14,5 +14,4 @@ lift is the classical route by which such a structure could carry a Lorentzian
 metric. No such lift is constructed here. In particular the $q$-exterior
 derivative does not select a deformed CR structure: on functions it rescales
 the horizontal differential by $q^{-1}$ and leaves both the contact distribution
-and its complex structure unchanged
-(`QOU.QuantumObservableUniverse.QExteriorCR.dq_cr_iff`).
+and its complex structure unchanged.
