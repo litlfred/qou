@@ -1462,6 +1462,11 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Geck & Pfeiffer 2000 ──────────────────────────────────────
   { id: "geckpfeiffer2000" },
+  { id: "lorenz2011" },
+  { id: "larson-sweedler1969" },
+  { id: "taft1971" },
+  { id: "kazhdan-lusztig1993-tensor-i" },
+  { id: "higman1955" },
 
   // ── Ariki 1996 ────────────────────────────────────────────────
   { id: "ariki1996" },
