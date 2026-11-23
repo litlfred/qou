@@ -1,8 +1,9 @@
-| Knot | Notation | Classical name | Crossings | Jones polynomial $J_K(q)$ |
+| Knot / link | Notation | Classical name | Crossings | Jones polynomial $J_K(q)$ |
 |------|----------|---------------|:---------:|--------------------------|
 | Unknot | $T_{1,0}$ | $0_1$ | $0$ | $1$ |
-| Left trefoil | $T_{2,3}$ | $3_1$ | $3$ | $-q^{-4} + q^{-3} + q^{-1}$ |
-| Right trefoil | $T_{2,3}^{\sigma}$ | $3_1^{\sigma}$ | $3$ | $-q^{4} + q^{3} + q$ |
+| Positive Hopf link ($e^-$ closure) | $T(2,2)$ | $L2a1$ | $3$ (in $B_3$) | $-q^{-5/2} - q^{-1/2}$ |
+| Left trefoil (alt. $e^-$; gen.-1 partner) | $T_{2,3}$ | $3_1$ | $3$ | $-q^{-4} + q^{-3} + q^{-1}$ |
+| Right trefoil (alt. $e^+$; gen.-1 partner) | $T_{2,3}^{\sigma}$ | $3_1^{\sigma}$ | $3$ | $-q^{4} + q^{3} + q$ |
 | Figure-eight | $4_1$ | $4_1$ | $4$ | $q^2 - q + 1 - q^{-1} + q^{-2}$ |
 | Cinquefoil | $T_{2,5}$ | $5_1$ | $5$ | $-q^{-10} + q^{-9} - q^{-8} + q^{-7} + q^{-5}$ |
 | Septafoil | $T_{2,7}$ | $7_1$ | $7$ | $-q^{-18} + q^{-17} - q^{-16} + q^{-15} - q^{-14} + q^{-13} + q^{-11}$ |

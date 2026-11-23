@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:ns-obstruction-computation",
   lean: { ref: "qou:QOU.FluidDynamics.ns_obstruction_computation", validation: "not_checked" },
   title:
-    "Computation of the NS obstruction for the Descartes universe",
+    "Conditional decomposition of local Euler-index and jet-divergence terms at a collision locus",
   // rem:body-asymptotics-catalog dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
   // not cited in the statement or proof. A remark carries no premise; the edge only put this block
   // downstream of a conjecture.

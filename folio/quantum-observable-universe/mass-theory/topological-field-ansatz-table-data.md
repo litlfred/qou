@@ -2,7 +2,7 @@
 |---|---|---|
 | Photon | The Point (Empty Knot) | Background flux on the exceptional divisor |
 | Neutrino | Unknot ($\mathcal{O}$) | Baseline vacuum drag; trivial braiding |
-| Electron | Trefoil ($T_{2,3}$) | Simplest stable vortex; gen. 1 ($\deg\alpha_V = 1$) |
+| Electron | Positive Hopf link $T(2,2)$ from $\sigma_0\sigma_1\sigma_0 \in B_3$ (alt. trefoil $T_{2,3}$) | Three-crossing gen. 1 lepton (alt. $T_{2,3}$ has $\deg\alpha_V = 1$) |
 | Higgs field | Figure-Eight ($4_1$) | Mass mechanism; amphichiral ($4_1 = 4_1^{-1}$) |
 | Muon | Cinquefoil ($T_{2,5}$) | Gen. 2 lepton on Reeb divisor ($\deg\alpha_V = 2$) |
 | Tau | Septafoil ($T_{2,7}$) | Gen. 3 lepton on Reeb divisor ($\deg\alpha_V = 3$) |

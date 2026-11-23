@@ -1,21 +1,28 @@
-One computes the [quantum characteristic classes](#def:quantum-characteristic-classes) for $G = \mathrm{SU}(2)$ from the [brane tower for SU(2)](#ex:recursive-brane-tower-su2).
+One computes the [quantum characteristic classes](#def:quantum-characteristic-classes) for $G = \mathrm{SU}(2)$ from the [brane tower for SU(2)](#ex:recursive-brane-tower-su2), separating the holomorphic/smooth unit band $\mathcal{O}^{\times}_{\mathbb{CP}^1}$ from the discrete and Kummer bands $\mathbb{Z}$ and $\mu_n$.
 
-**Setup.** The brane tower $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$ produces central extensions of gerbes on $\mathcal{S} = \mathbb{CP}^1 \cong \mathrm{SU}(2)/\mathrm{U}(1)$, banded by $\mathcal{B} = \mathcal{O}^{\times}_{\mathbb{CP}^1}$. The quantum characteristic classes are the obstruction classes $\kappa_n \in H^2(\mathbb{CP}^1, \mathcal{O}^{\times})$ for each transition $A_n \hookrightarrow A_{n+1}$.
+**1. Unit-sheaf band $\mathcal{B} = \mathcal{O}^{\times}_{\mathbb{CP}^1}$.** When the level transitions $A_n \hookrightarrow A_{n+1}$ of the brane tower on $\mathcal{S} = \mathbb{CP}^1 \cong \mathrm{SU}(2)/\mathrm{U}(1)$ are banded by $\mathcal{O}^{\times}_{\mathbb{CP}^1}$, the obstruction classes lie in $H^2(\mathbb{CP}^1, \mathcal{O}^{\times})$. Because $\mathbb{CP}^1$ has complex dimension $1$ and real dimension $2$, both $H^2(\mathbb{CP}^1, \mathcal{O}) = 0$ and $H^3(\mathbb{CP}^1, \mathbb{Z}) = 0$ in the exponential sequence, giving
 
-**First obstruction.** The Hopf bundle $\pi \colon \mathrm{SU}(2) \to \mathbb{CP}^1$ is a principal $\mathrm{U}(1)$-bundle. Its first Chern class is:
 $$
-  \kappa_0 =  c_1(\text{Hopf}) =  1
+  H^2(\mathbb{CP}^1, \mathcal{O}^{\times}) = 0.
+$$
+
+Consequently every $\mathcal{O}^{\times}$-banded gerbe obstruction $\kappa_n \in H^2(\mathbb{CP}^1, \mathcal{O}^{\times})$ vanishes identically for all $n \geq 0$. The non-trivial first Chern class $c_1(\text{Hopf}) = 1$ of the principal $\mathrm{U}(1)$-bundle $\pi \colon \mathrm{SU}(2) \to \mathbb{CP}^1$ sits one cohomological degree lower, in $\mathrm{Pic}(\mathbb{CP}^1) = H^1(\mathbb{CP}^1, \mathcal{O}^{\times}) \cong H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \mathbb{Z}$, and does not obstruct $\mathcal{O}^{\times}$-gerbe lifts.
+
+**2. Discrete band $\mathbb{Z}$ (Reeb bundle Euler class).** Lifting the Reeb unit tangent $\mathrm{U}(1)$-bundle $\xi$ of $\mathbb{CP}^1 \cong S^2$ (total space $\mathrm{SO}(3) \cong \mathbb{RP}^3$) along the central extension $0 \to \underline{\mathbb{Z}} \to \underline{\mathbb{R}} \to \underline{\mathrm{U}(1)} \to 0$ yields the non-torsion Euler class
+
+$$
+  \kappa_0 = c_1(\xi) = e(\xi) = \chi(\mathbb{CP}^1) = 2
    \in  H^2(\mathbb{CP}^1, \mathbb{Z})  \cong  \mathbb{Z}.
 $$
-Under the trace map $H^2(\mathcal{S}, \mathcal{B}) \to R$, the obstruction maps to the Euler characteristic: $\kappa_0 \mapsto \mathrm{tr}(\mathrm{id}_A) = \chi(\mathbb{CP}^1) = 2$.
 
-**Non-torsion property.** The group $H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \mathbb{Z}$ is torsion-free. One has $\kappa_0 = 1 \neq 0$. The class $\kappa_0$ is non-torsion.
+Meanwhile, the jet-correction group $H^2(\mathbb{CP}^1, \mathcal{O}) = 0$ vanishes on the curve, so no additive higher-jet classes arise in $H^2(\mathbb{CP}^1, \mathcal{O})$.
 
-**Higher obstructions.** At level $n$, the jet prolongation $A_n \hookrightarrow A_{n+1} = J^1(A_n)$ produces an obstruction:
+**3. Kummer bands $\mu_n$ ($n$-th root persistence).** Reducing $\kappa_0 = 2$ modulo $n$ along $1 \to \mu_n \to \mathrm{U}(1) \xrightarrow{(\cdot)^n} \mathrm{U}(1) \to 1$ gives the Kummer obstruction
+
 $$
-  \kappa_n =  \kappa_0 + \delta_n
-   \in  H^2(\mathbb{CP}^1, \mathbb{Z}),
+  \kappa_0 \bmod n \;=\; 2 \bmod n \;\in\; H^2(\mathbb{CP}^1, \mu_n) \;\cong\; \mathbb{Z}/n.
 $$
-where $\delta_n \in H^2(\mathbb{CP}^1, \mathbb{Z})$ is the correction from the jet structure at level $n$. One has $\kappa_0 = 1$, which generates $H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \mathbb{Z}$. Because $\delta_n \in \mathbb{Z}$ and each prolongation adds non-negative curvature ($\delta_n \geq 0$), one finds $\kappa_n = 1 + \delta_n \geq 1 > 0$ for all $n$.
 
-**Conclusion.** The quantum characteristic classes for $\mathrm{SU}(2)$ never vanish: $\kappa_n \neq 0$ for all $n \geq 0$. The Hopf bundle is non-trivial. The gerbe tower is obstructed at every level.
+This class vanishes for $n \mid 2$ ($n \in \{1, 2\}$, where the Hopf bundle $\mathrm{SU}(2) \to \mathbb{CP}^1$ with $c_1 = \pm 1$ supplies the spin square root of $\xi$) and is non-zero for every $n \geq 3$.
+
+**Conclusion.** For $\mathrm{SU}(2)$ over $\mathcal{S} = \mathbb{CP}^1$, the $\mathcal{O}^{\times}$-banded gerbe tower has $\kappa_n = 0$ at every level, whereas the Reeb $\mathrm{U}(1)$-bundle carries Euler class $\chi(\mathbb{CP}^1) = 2 \in H^2(\mathbb{CP}^1, \mathbb{Z})$ whose Kummer $n$-th-root obstruction vanishes at $n \in \{1, 2\}$ and persists for all $n \geq 3$.

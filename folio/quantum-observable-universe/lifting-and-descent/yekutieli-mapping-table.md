@@ -16,13 +16,13 @@ Recursive Brane Tower $\{\mathcal{S}_n\}$
   & Central extension of gerbes
     $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$
   & \cite[Thm.~3.13, \S6]{yekutieli2010} \\[6pt]
-Quantum Characteristic Classes $\kappa_n \in H^2(M, \mathcal{O}_M^{\times})$
+Quantum Characteristic Classes $\kappa_n \in H^2(M, \mathcal{B})$
   (Def.~\ref{def:quantum-characteristic-classes})
-  & Obstruction classes for lifting objects in central extensions
+  & Obstruction classes for lifting in central extensions ($= 0$ for $\mathcal{B} = \mathcal{O}_M^{\times}$ on curves)
   & \cite[\S4, Def.~4.15]{yekutieli2010} \\[6pt]
-Fermionic sectors ($\kappa_n \neq 0$)
-  (Rem.~\ref{rem:fermionic-twisted-sectors})
-  & Twisted sectors where the lift is obstructed
+Kummer / discrete-band sectors ($\chi(\mathcal{S}) \bmod n \neq 0$)
+  (Thm.~\ref{thm:qu-to-qou}, Rem.~\ref{rem:fermionic-twisted-sectors})
+  & Non-trivial $n$-th-root obstructions in $H^2(\mathcal{S}, \mu_n)$ when $n \nmid \chi(\mathcal{S})$
   & \cite[Thm.~4.17]{yekutieli2010} \\[6pt]
 Direct Limit Algebra $\mathcal{A}_\infty$
   (Def.~\ref{def:direct-limit-algebra})
@@ -51,8 +51,8 @@ Descartes condition $\chi(\mathcal{S}) = -6$
   (\hyperref[def:archimedean-condition]{Def.~\ref*{def:archimedean-condition}};
   authoritative statement and proof in
   \hyperref[chap:brings-surface]{Chapter~\ref*{chap:brings-surface}})
-  & Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe)
-  & \cite{yekutieli2010}; Ex.~\ref{ex:archimedean-yekutieli} \\[6pt]
+  & Reeb Euler class $e(\xi) = -6 \in H^2(\mathcal{S}, \mathbb{Z})$; Kummer persistence $-6 \bmod n \neq 0$ for $n \nmid 6$ ($H^2(\mathcal{S}, \mathcal{O}^\times) = 0$)
+  & \cite{yekutieli2010}; Thm.~\ref{thm:qu-to-qou} \\[6pt]
 Cosimplicial crossed groupoid
   (Prop.~\ref{prop:cosimplicial-crossed-groupoid})
   & Cosimplicial object in crossed groupoids; \v{C}ech nerve of a gerbe

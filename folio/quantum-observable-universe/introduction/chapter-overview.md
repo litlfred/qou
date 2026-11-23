@@ -34,11 +34,13 @@ Here $R_{\int}$ denotes the **Frobenius–Ricci endomorphism**, $F_\nabla$ denot
 $$
   E_\times = q + q^{-1} = [2]_q.
 $$
-Specific knots map to particle identities: the unknot $0_1$ acts as the neutrino, the trefoil $3_1$ acts as the electron, and higher torus knots act as the muon and tau. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$. Two-photon products generate the massive spectrum. The figure-eight knot volume enters the muon-to-electron mass ratio through
+Specific braids and link closures map to particle identities: the unknot $0_1$ models the neutrino, the three-strand braid $\sigma_0\sigma_1\sigma_0 \in B_3$ closing to the positive Hopf link $T(2,2)$ models the electron (with the two-strand left trefoil $T_{2,3} = 3_1$ retained as the single-component alternative model), and higher $(2,n)$ torus knots model the heavier leptons. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$. Two-photon products generate the massive spectrum. In the topological volume model, the figure-eight knot volume enters the muon-to-electron mass ratio through
+
 $$
-  \frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = 1 - q^{-1}.
+  \frac{\mathfrak{m}_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = 1 - q^{-1}.
 $$
-The relation is used in reverse: it is inverted for $q_0$, so it is the CAL-2 calibration rather than a prediction of the ratio.
+
+Because the three admissible calibrations fix the mass scale ($m_e$), the weak-sector substrate modulus ($q_0 \approx 1.10998$, pinned numerically on the most precisely measured ratio $m_{\mathfrak{p}}/m_e$), and the orthogonal meson class ($m_\pi$), evaluating $\mathrm{Vol}(4_1)/\hbar_{q_0}^{2}$ against the measured $m_\mu/m_e$ is a model comparison rather than the anchor defining $q_0$.
 
 [*Bring's Surface*](#chap:brings-surface) develops the geometry of the genus-four curve $\Sigma_4$ with $\chi_{\mathrm{eu}} = -6$, first Betti number $b_1 = 8$, hyperbolic Gauss–Bonnet area $12\pi$ under its $(2,4,5)$ tiling, and maximal automorphism group $S_5$. Its colour tubes provide coordinates for spacetime and electromagnetic fields, while embeddable torus knots span the homology basis and saturate at genus four.
 

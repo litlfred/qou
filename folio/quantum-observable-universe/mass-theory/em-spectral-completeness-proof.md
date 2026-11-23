@@ -13,12 +13,14 @@ minimal polynomial splits over $R$ and Bezout produces orthogonal
 idempotents
 
 $$
-  e_- \;=\; \frac{q^{1/2} \cdot \mathrm{id} - c_{A,A}}{q^{1/2} + q^{-1/2}},
+  e_- \;=\; \frac{q^{1/2} \cdot \mathrm{id} - c_{A,A}}{q^{1/2} + q^{-1/2}}
+      \;=\; \frac{q \cdot \mathrm{id} - \sigma}{q + q^{-1}},
   \qquad
-  e_+ \;=\; \mathrm{id} - e_-.
+  e_+ \;=\; \mathrm{id} - e_-
+      \;=\; \frac{\sigma + q^{-1} \cdot \mathrm{id}}{q + q^{-1}},
 $$
 
-These are central in $E$ since $c_{A,A}$ generates the centraliser of
+where $\sigma := q^{1/2}\,c_{A,A}$ satisfies the integer-power Hecke quadratic $(\sigma - q)(\sigma + q^{-1}) = 0$, i.e. $\sigma^2 = (q - q^{-1})\sigma + 1$, over the subring $\mathbb{Z}[q^{\pm 1}, (q + q^{-1})^{-1}] \subset R$.  These idempotents are central in $E$ since $c_{A,A}$ (or $\sigma$) generates the centraliser of
 the diagonal $R$-action by Schur--Weyl-Hecke duality.  Statement (2)
 follows from $H_2(R, q) \cong E$ being free of rank $2$ over $R$: $E$
 has at most two simple summands, and $e_\pm$ realise them.  The

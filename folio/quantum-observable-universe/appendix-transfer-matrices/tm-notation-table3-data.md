@@ -1,14 +1,16 @@
-This table assigns each lepton a torus knot $T_{p,q}$ and lists the
-conjugate knot carried by its antiparticle. A quark is an unknot strand
+This table assigns each lepton its primary knot or link closure (with the
+single-component trefoil alternative noted for $e^{\mp}$) and lists the
+mirror closure carried by its antiparticle. A quark is an unknot strand
 of the Borromean braid $\mathcal{B}_3$
-([up quark](#def:up-quark)); its rows give the torus knot of its lepton
-partner ([knot–particle dictionary](#rem:knot-particle-dictionary)), not
+([up quark](#def:up-quark)); its rows record the $(2,n)$ torus-knot
+generation label of its lepton partner
+([knot--particle dictionary](#rem:knot-particle-dictionary)), not
 the quark's own knot type.
 
-| Particle | Knot | Antiparticle | Knot |
+| Particle | Knot / link | Antiparticle | Knot / link |
 |----------|------|-------------|------|
 | Neutrino $\nu$ | $T_{1,0}$ | $\nu^{\sigma}$ | $T_{1,0}^{\sigma} = T_{1,0}$ |
-| Electron $e^-$ | $T_{2,3}$ | Positron $e^+$ | $T_{2,3}^{\sigma}$ |
+| Electron $e^-$ | $T(2,2)$ ($\sigma_0\sigma_1\sigma_0 \in B_3$; alt. $T_{2,3}$) | Positron $e^+$ | $T(2,2)^{\sigma}$ (alt. $T_{2,3}^{\sigma}$) |
 | Up quark $\mathfrak{u}$ (partner) | $T_{2,3}$ | $\mathfrak{u}^{\sigma}$ | $T_{2,3}^{\sigma}$ |
 | Down quark $\mathfrak{d}$ (partner) | $T_{2,3}^{\sigma}$ | $\mathfrak{d}^{\sigma}$ | $T_{2,3}$ |
 | Charm quark $\mathfrak{c}$ (partner) | $T_{2,5}$ | $\mathfrak{c}^{\sigma}$ | $T_{2,5}^{\sigma}$ |

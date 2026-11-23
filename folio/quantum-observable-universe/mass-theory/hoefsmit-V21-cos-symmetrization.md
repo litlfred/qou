@@ -16,22 +16,22 @@ $$
 
 Both matrices satisfy the matrix-level Hecke quadratic $M^2 = (q - q^{-1}) \cdot M + I$. The trace equals $q - q^{-1}$ and the determinant equals $-1$. Cayley-Hamilton on $\mathbb{R}^{2 \times 2}$ verifies the off-diagonal identity.
 
-For a typed braid $\beta$ on $V_{(2,1)}$, the Markov-traced character symmetrizes over the two eigenphases of $\rho_{(2,1)}$. At leading order, the single-wrap eigenphase is
+For a typed braid $\beta$ on $V_{(2,1)}$, the posited Markov-traced character symmetrizes over two conjugate eigenphases $\{e^{+i\alpha}, e^{-i\alpha}\}$ of the single-wrap transfer operator:
 
 $$
-  \alpha \;=\; \frac{(z - 1) \, h}{2}, \qquad z = \tfrac{1}{\sqrt q + 1/\sqrt q}, \quad h = q - q^{-1}.
+  \alpha \;=\; \frac{(z - 1) \, h}{2}, \qquad z = z_D = \frac{q^3}{q^2 + 1}, \quad h = q - q^{-1}.
 $$
 
-The symmetrized character evaluates to $\chi^{(2,1),\mathrm{symm}}_q = \mathrm{tr}\,\rho_{(2,1)}(\beta) \cdot \cos\alpha$. This cos-resummation arises from the cyclic constraint $\mathrm{tr}_M(xy) = \mathrm{tr}_M(yx)$ combined with the bar involution.
+Under this eigenphase ansatz, the symmetrized character evaluates to $\chi^{(2,1),\mathrm{symm}}_q = \mathrm{tr}\,\rho_{(2,1)}(\beta) \cdot \cos\alpha$. (In the superseded Convention-C formulation $z_C = 1/(\sqrt{q} + 1/\sqrt{q})$, bar-invariance $z_C(q^{-1}) = z_C(q)$ mapped $\alpha \mapsto -\alpha$ under $q \mapsto q^{-1}$; under Convention D, $z_D(q^{-1}) = \bigl(q(q^2 + 1)\bigr)^{-1} \neq z_D(q)$, so the cosine factor enters as a conditional ansatz rather than a consequence of bar symmetry alone.)
 
-At single wrap, for any $\beta \in B_n$ with writhe $w$ and averaged-count $m$, the full Markov trace decomposes as:
+At single wrap, for any $\beta \in B_n$ with writhe $w$ and averaged-count $m$, the full Markov trace decomposes under this ansatz as:
 
 $$
 \boxed{
-  \mathrm{tr}_M(\beta) \;=\; y_{(n)} \cdot \chi^{(n)}_q(\beta) \;+\; \sum_{\substack{\lambda \vdash n \\ \dim V_\lambda \geq 2}} y_\lambda \cdot \chi^{\lambda,\mathrm{symm}}_q(\beta) \;+\; y_{(1^n)} \cdot \chi^{(1^n)}_q(\beta).
+  \mathrm{tr}_M(\beta) \;=\; y_{(n)} \cdot \chi^{(n)}_q(\beta) \;+\; \sum_{\substack{\lambda \vdash n \\ \dim V_\lambda \geq 2}} y_\lambda \cdot \chi^{\lambda,\mathrm{symm}}_q(\beta) \;+\; y_{(1^n)} \cdot \chi^{(1^n)}_q(\beta),
 }
 $$
 
-For $H_3$, $V_{(2,1)}$ is the only 2-d irrep. For $H_5$ and beyond, additional irreps appear, each requiring its Hoefsmit matrix and Markov-symmetrized cos analog.
+with $y_{(1^3)} = 0$ identically at $n = 3$ under Convention D. For $H_3$, $V_{(2,1)}$ is the unique $2$-dimensional irreducible representation; for $H_5$ and beyond, higher-rank Hook and two-row modules enter analogously.
 
-At $q_0$, the Hoefsmit $V_{(2,1)}$ matrix entries yield $\Delta \chi^{(2,1)}_q = +0.1068144700$. The symmetrized contribution combines with the 1-d forms to give $\mathfrak{Q}_\beta = \mathfrak{Q}_\beta^A \cdot \cos((z-1)h/2)$, matching CODATA to 305 ppm at the cos-resummation level.
+At $q_0$, the Hoefsmit $V_{(2,1)}$ matrix entries yield $\Delta \chi^{(2,1)}_q = +0.1068144700$. Because $|\cos\alpha| \leq 1$, dressing the Convention-D free-neutron base ($\mathfrak{Q}_\beta^{z_D} \approx 0.4491\;\text{MeV}$) by $\cos\alpha$ acts as a contraction and does not close the residual against CODATA ($0.7823\;\text{MeV}$); the historical $305\;\text{ppm}$ match combined the superseded $z = 1$ Form-A base with the Convention-C phase $z_C = 1/(\sqrt{q} + 1/\sqrt{q})$ and is not a Convention-D prediction.
