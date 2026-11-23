@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T15:55:10Z
-updated_at: 2026-11-23T20:59:24Z
+updated_at: 2026-11-23T22:17:28Z
 parent: qou-10v9
 ---
 
@@ -244,3 +244,11 @@ In-progress only through an untouched batch PR / no live branch (applicability r
 Claimed by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, 2026-11-23)
 
 Claimed 2026-11-23 by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, session ): formalizing ColourReconnectionStokesAssembly.lean + 80-dps probe w4_colour_reconn_stokes_aomega.
+
+
+## W4 Progress 2026-11-23 (Worker 16 — PR litlfred/qou#9221, Issue litlfred/qou#9220, head cc9bf82aa8b)
+- Formalized the inter-nucleon hidden-colour / colour-reconnection carrier in `QOU/Nuclear/ColourReconnectionStokesAssembly.lean` (`0 sorry`, `0 custom axioms`):
+  - Exact $\mathrm{SU}(3)_c$-singlet subspace dimensions $\dim S^{[A,A,A]} = 1, 5, 42, 462$ (yielding $0, 4, 41, 461$ hidden-colour reconnection channels beyond $|\mathbf{1}^A\rangle$, `su3SingletDim_light_nuclei`).
+  - Exact $6q$ $\mathcal{U}_q(\mathfrak{sl}_3)$ braiding overlap $q^3/[3]_q$, hidden-colour norm-squared $v_q^2 = [2]_q[4]_q/[3]_q^2$, attractive $q$-Fierz eigenvalue $-[4]_q/(2[3]_q)$ (`sixQuark_R23_overlap`, `qFierz_charPoly_roots`), and strict multi-channel / $O(v^4)$ Schur-complement binding bounds (`multiChannel_schur_rayleigh_lt`, `colourReconnection_lowers_ground_energy`).
+- Pre-registered 80-dps evaluation in `computations/probes/w4_colour_reconn_stokes_aomega/w4_colour_reconn_stokes_aomega_probe.witness.json` (`q0Anchor = "proton"`):
+  - Directly tests `OPEN Q` on $A=4$ scaling without degenerate arc-count fits: nearest-neighbour chain Fierz coupling (`V1`) scales strictly as $(A-1) = 1 : 2.003 : 3.006$, whereas complete-graph $K_A$ colour-exchange (`V2`) exhibits genuine multi-pair hidden-colour coherence in the $462\mathrm{D}$ $12q$ singlet space, reaching $1 : 2.564 : 7.293$ (`G1`) and $1 : 2.254 : 6.397$ (`G2`), exceeding naive pairwise $\binom{A}{2} = 1 : 3 : 6$ at $A=4$ (`7.293 > 6`, `6.397 > 6`) while still falling $\sim 1.75\text{–}1.99\times$ short of the empirical $12.72\times$ ${}^4\mathrm{He}/{}^2\mathrm{H}$ jump without $\mathrm{SU}(4)$ spin-isospin Wigner $[4]$ symmetry weighting.

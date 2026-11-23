@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T06:49:42Z
-updated_at: 2026-11-23T20:59:24Z
+updated_at: 2026-11-23T22:17:28Z
 parent: qou-10v9
 ---
 
@@ -328,3 +328,9 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8345, closed o
 Claimed by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, 2026-11-23)
 
 Claimed 2026-11-23 by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, session ): formalizing ColourReconnectionStokesAssembly.lean + 80-dps probe w4_colour_reconn_stokes_aomega.
+
+
+## W4 Progress 2026-11-23 (Worker 16 — PR litlfred/qou#9221, Issue litlfred/qou#9220, head cc9bf82aa8b)
+- Built the quark-to-nuclear $3A$-quark $\mathcal{U}_q(\mathfrak{sl}_3)$-singlet basis level ($A \in \{1,2,3,4\}$, $\dim S^{[A,A,A]} = 1, 5, 42, 462$) in Lean (`QOU/Nuclear/ColourReconnectionStokesAssembly.lean`, `0 sorry`, `0 custom axioms`) and at 80 dps (`computations/probes/w4_colour_reconn_stokes_aomega/w4_colour_reconn_stokes_aomega_probe.witness.json`, Hoefsmit $H_{3A}(q_0)$ matrices certified to $\le 2.02 \times 10^{-80}$).
+- Demonstrates algebraically (`sixQuark_R23_overlap`: $\langle \varepsilon_q^{\otimes 2} \mid \check{R}_{2,3}(q) \mid \varepsilon_q^{\otimes 2} \rangle / \|\varepsilon_q\|^4 = q^3/[3]_q$, hidden-colour leakage $v_q^2 = [2]_q[4]_q/[3]_q^2 > 0$) and numerically why factorized nucleon-level character products fail (wrong-sign $\gamma\gamma$-chain unbinding when projected onto $|\mathbf{1}^A\rangle$ alone) while retaining the $(4, 41, 461)$ inter-nucleon hidden-colour channels in $S^{[A,A,A]}(q_0)$ strictly lowers the ground state ($E_- < 0$ across all 6 pre-registered Hamiltonians).
+- Remaining open: coupling $S^{[A,A,A]}_{\mathrm{col}}$ to the nuclear-jet / $\mathrm{SU}(4)$ spin-isospin Wigner supermultiplet character sector and W6 absolute energy scale.

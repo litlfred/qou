@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-26T03:37:39Z
-updated_at: 2026-11-23T20:59:23Z
+updated_at: 2026-11-23T22:17:28Z
 parent: qou-10v9
 ---
 
@@ -75,3 +75,9 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 Claimed by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, 2026-11-23)
 
 Claimed 2026-11-23 by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, session ): formalizing ColourReconnectionStokesAssembly.lean + 80-dps probe w4_colour_reconn_stokes_aomega.
+
+
+## W4 Progress 2026-11-23 (Worker 16 — PR litlfred/qou#9221, Issue litlfred/qou#9220, head cc9bf82aa8b)
+- Formalized `QOU/Nuclear/ColourReconnectionStokesAssembly.lean` (`0 sorry`, `0 custom axioms`, §7c generic): proved general-$A$ $\mathrm{SU}(3)_c$-singlet multiplicities $(1, 5, 42, 462)$ (`su3SingletDim_light_nuclei`), exact $6q$ $\mathcal{U}_q(\mathfrak{sl}_3)$ $\check{R}_{2,3}(q)$ overlap $q^3/[3]_q$ & $q$-Fierz eigenvalues $+[2]_q/(2[3]_q), -[4]_q/(2[3]_q)$ (`sixQuark_R23_overlap`, `qFierz_charPoly_roots`), and strict multi-channel Rayleigh–Ritz / 2-state $O(v^4)$ Bloch–Horowitz Schur-complement ground-energy lowering (`multiChannel_schur_rayleigh_lt`, `colourReconnection_lowers_ground_energy`).
+- Pre-registered 80-dps probe `computations/probes/w4_colour_reconn_stokes_aomega/w4_colour_reconn_stokes_aomega_probe.witness.json` (`q0Anchor = "proton"`, `6/6` assertions): coupling $|\mathbf{1}^A\rangle$ to the $(4, 41, 461)$ hidden-colour reconnection channels in Hoefsmit $S^{[A,A,A]}(q_0)$ reverses the factorized $\gamma\gamma$-chain unbinding ($E_- < 0$ across all 6 models), and complete-graph $K_A$ pair exchange (`V2`) boosts $A=2:3:4$ scaling from chain $1:2.003:3.006$ to $1:2.564:7.293$ (`G1`) and $1:2.254:6.397$ (`G2`; in $E_{\mathrm{osc}}(q_0)=42.2478\;\mathrm{MeV}$, `G2__V2` gives $2.2648\;\mathrm{MeV}$ at ${}^2\mathrm{H}$, $5.1059\;\mathrm{MeV}$ at $A=3$, $14.4877\;\mathrm{MeV}$ at ${}^4\mathrm{He}$).
+- Remaining open for this epic: combining $S^{[A,A,A]}_{\mathrm{col}}$ with $\mathrm{SU}(4)$ spin-isospin Wigner $[4]$ space-exchange weighting (for the remaining $\sim 1.75\text{–}1.99\times$ $\alpha$-cluster jump to $12.72\times$) and W6 absolute scale normalization.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T23:41:01Z
-updated_at: 2026-11-23T20:59:24Z
+updated_at: 2026-11-23T22:17:28Z
 parent: qou-v2om
 ---
 
@@ -77,3 +77,12 @@ Was in-progress with no bean update since 2026-08-21 and no main commit naming i
 - Advanced in PR `litlfred/qou#8337` (branch `feat/round76-torusmass-pinchoct-gramsig-motivic-spectrahedral-43c1`, head `df1ab810bdd422f72dc74878dc341f5f55564271`).
 
 Claimed 2026-11-23 by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, session ): formalizing ColourReconnectionStokesAssembly.lean + 80-dps probe w4_colour_reconn_stokes_aomega.
+
+
+## W4 Progress 2026-11-23 (Worker 16 — PR litlfred/qou#9221, Issue litlfred/qou#9220, head cc9bf82aa8b)
+- Formalized the figure-eight ($4_1$) algebraic origin of the Stokes constant $A_\omega = 3$ and Neumann–Zagier cusp-modulus jet in `QOU/Nuclear/ColourReconnectionStokesAssembly.lean` (`0 sorry`, `0 custom axioms`, §7c generic):
+  - `eisenstein_minimal_poly`, `two_tetrahedra_gluing_variety_degree`, `three_flat_connections_card` (exact rank-3 flat-connection saddle multiplicity), `aPolyFourOne_degree_and_meridian_one` (degree-3 $L$-span of CCGLS & GK $A$-polynomials), and `aPoly_nz_cusp_jet` ($\delta_Y = -3\delta_X - \delta_X^2 \implies \tau^2 = -3$ and $3v_3 = \tau$).
+  - `ggm_stokes_symmetry_three` & `ggm_discharges_symmetryConstant_and_imV41`: proves over `[CommRing R]` that GGM's cusp Wronskian sandwich $\tilde{S}(W) = A_{\mathrm{GGM}} W B_{\mathrm{GGM}} W^T C_{\mathrm{GGM}}$ satisfies $\tilde{S}_{01}(W) + \tilde{S}_{10}(W) = 3 \tilde{S}_{00}(W)$ for **every** $2\times 2$ matrix $W$ and evaluates at $W_{-1}(0) = \begin{pmatrix}0&-2\\1&1\end{pmatrix}$ to $2\begin{pmatrix}1&3\\0&1\end{pmatrix}$.
+- Pre-registered 80-dps witness `computations/probes/w4_colour_reconn_stokes_aomega/w4_colour_reconn_stokes_aomega_probe.witness.json` (`q0Anchor = "proton"`):
+  - Certifies GGM Stokes series through $q^{40}$ and at substrate $q_{\mathrm{sub}} = q_0^{-1} \approx 0.900918$ (`ORD_SUB = 1600`): $R_1 = S^+_{12} \approx 1.58516$, $R_2 = S^+_{12}/S^+_{11} \approx 3.70673$, $R_3 = (S^+_{12}+S^+_{21})/S^+_{11} = 3$ to $8.82 \times 10^{-74}$; at $A_\omega = 3$ the T5 pure-boost cap lifts to $0.014143 > S_\mu = 0.009683$ (while $\vartheta_K$ in `qou-qnnq` and the per-block $\ell^1$ ceiling remain open).
+  - Records both legacy Convention-C `C_knot(D) = 5.85` and canonical Convention-D `C_knot = 6.0679 / 6.7061 / 4.9054 / 290.007` alongside $\kappa = 0.2911 / 0.4137 / 0.2944 / 0.007955$, and evaluates the additive $6q/9q/12q$ Schur-complement colour-reconnection carrier (`G2__V2` in $E_{\mathrm{osc}}(q_0)$ chart gives $2.2648\;\mathrm{MeV}$ at ${}^2\mathrm{H}$ vs CODATA $2.2246\;\mathrm{MeV}$, $+1.81\%$; in $E_0(q_0)$ chart $0.2244\;\mathrm{MeV}$).
