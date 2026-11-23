@@ -87,6 +87,24 @@ a **quantum observable universe** (QOU)
 thesis is that the observations *determine* the ingredients; nothing
 else is added by hand.
 
+This relational starting point fulfills the programme Gottfried Wilhelm
+Leibniz set out in his 1715--1716 correspondence with Samuel Clarke
+\cite{leibniz-clarke1717}, where time is the chronological order of
+successions, space is the order of coexistences, and the Principle of
+the Identity of Indiscernibles equates states that agree on every
+observable relation. In a braided monoidal category equipped with a
+trace, sequential composition ($\circ$) encodes the order of
+successions, the monoidal product and braiding ($\otimes, \sigma$)
+encode the order of coexistences, and passing from the Iwahori--Hecke
+algebra to its Temperley--Lieb quotient modulo the trace radical
+($H_n(q)/\mathrm{rad} \cong TL_n(q)$) enforces indiscernibility in the
+algebraic sense of Israel M. Gelfand, Mark A. Naimark, and Irving E.
+Segal \cite{gelfand-naimark1943,segal1947}: combinations annihilated by
+every closed trace pairing coalesce into one observable class. Because
+relational order and trace quotienting state the axioms in full, a
+quantum observable universe posits no background manifold at the outset
+and recovers differential, contact, and metric geometry downstream.
+
 The categorical language then recovers, as internal pieces of the
 structure, the concepts that describe a universe's mechanics. The
 Lagrangian is a trace and the action is an integral
