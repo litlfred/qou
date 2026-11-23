@@ -244,3 +244,8 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
   - **Cross-cutting hazard:** any workstream that converts a trace-pipeline weight to MeV with the mass-formula unit, or the other way round, is off by about 70×. This touches W1 (Q_β, E_C), W4 (binding) and W5.
   - Which unit is canonical is open. CAL-1/2/3 cannot decide it, so it is an owner question.
 - **2026-11-23 00:50Z, W1 unit check (PR #9161):** §35–§37 contain no MeV figures. Every value is a dimensionless trace ratio, and κ = 2 log t is dimensionless too. §36 now carries a units note naming τ_e, ℏ_q² and R ≈ 70.40.
+- **2026-11-23 00:52Z, W8: a non-vacuous HeckeMonodromy instance** (branch claude/laurent-hecke-monodromy-2026-11-23, commits 2c64d0c20 and 8c2fc7450, stacked on #9166; no PR yet; owner card pending).
+  - Files: `QOU/SchurWeyl/MarkovTraceDescent.lean` and `QOU/Mass/LaurentHeckeMonodromy.lean`. Standard axioms only.
+  - The base ring is R = ℤ[q, q⁻¹, (q²+1)⁻¹]. The convention-D Ocneanu trace is proved to take values in R.
+  - The instance sits on the Hecke colimit, with shadow ε : H_∞ → ℤ[1/2] sending each generator to 1. The shadow ring is nonzero.
+  - Scope: this models the Step-2 conjecture. It does **not** show that the substrate connection's monodromy is this tower; that is still W7's `StokesToBraiding`.
