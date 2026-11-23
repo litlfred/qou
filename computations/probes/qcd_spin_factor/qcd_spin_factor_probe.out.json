@@ -1,0 +1,3835 @@
+{
+ "checks": [
+  {
+   "name": "P1 seminormal H_3 irreps satisfy Hecke + braid (symbolic t)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P1 N=2: no transported member braids at generic q (all 2x4 param cases)",
+   "pass": true,
+   "detail": "+--+[p=r=1] GB=['(q - 1)**2*(q + 1)**2*(q**2 + 1)']; +--+[p=1, r sym] GB=['(q**2 + 1)*(r - 1)**2*(r + 1)**2', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; +--+[p sym, r=1] GB=['(p - 1)**2*(p + 1)**2*(q**2 + 1)', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; +--+[p, r sym] GB=['(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)', 'p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', '-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)', 'r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', 'q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)']; -++-[p=r=1] GB=['(q - 1)**2*(q + 1)**2*(q**2 + 1)']; -++-[p=1, r sym] GB=['(q**2 + 1)*(r - 1)**2*(r + 1)**2', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; -++-[p sym, r=1] GB=['(p - 1)**2*(p + 1)**2*(q**2 + 1)', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; -++-[p, r sym] GB=['(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)', 'p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', '-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)', 'r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', 'q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)']",
+   "posthoc": false
+  },
+  {
+   "name": "P1 N=2: every member braiding at generic q (p, r free) is colour-fixed, spin-fixed or scalar [pre-registered prediction]",
+   "pass": false,
+   "detail": "26 (assignment, param) cases; mixed: [('+++-', 'mixed', 'p sym, r=1'), ('+++-', 'mixed', 'p, r sym'), ('+++-', 'mixed', 'p=1, r sym'), ('++-+', 'mixed', 'p, r sym'), ('+-++', 'mixed', 'p, r sym'), ('-+--', 'mixed', 'p, r sym'), ('--+-', 'mixed', 'p, r sym'), ('---+', 'mixed', 'p sym, r=1'), ('---+', 'mixed', 'p, r sym'), ('---+', 'mixed', 'p=1, r sym')]",
+   "posthoc": false
+  },
+  {
+   "name": "P1 N=2: with (p,r) tied to q in {+-1, +-q, +-1/q}: transported and mixed members braid for NO tie; colour-fixed, spin-fixed and scalar members braid for some tie",
+   "pass": true,
+   "detail": "[('+++-', []), ('++-+', []), ('++--', ['(p,r)=(q,1)', '(p,r)=(q,-1)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,1)', '(p,r)=(-q,-1)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,1)', '(p,r)=(1/q,-1)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,1)', '(p,r)=(-1/q,-1)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('+-++', []), ('+-+-', ['(p,r)=(1,q)', '(p,r)=(1,-q)', '(p,r)=(1,1/q)', '(p,r)=(1,-1/q)', '(p,r)=(-1,q)', '(p,r)=(-1,-q)', '(p,r)=(-1,1/q)', '(p,r)=(-1,-1/q)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('+--+', []), ('+---', []), ('-+++', []), ('-++-', []), ('-+-+', ['(p,r)=(1,q)', '(p,r)=(1,-q)', '(p,r)=(1,1/q)', '(p,r)=(1,-1/q)', '(p,r)=(-1,q)', '(p,r)=(-1,-q)', '(p,r)=(-1,1/q)', '(p,r)=(-1,-1/q)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('-+--', []), ('--++', ['(p,r)=(q,1)', '(p,r)=(q,-1)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,1)', '(p,r)=(-q,-1)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,1)', '(p,r)=(1/q,-1)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,1)', '(p,r)=(-1/q,-1)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('--+-', []), ('---+', [])]",
+   "posthoc": true
+  },
+  {
+   "name": "P1 N=3: no transported member braids at generic q (all 2x4 param cases)",
+   "pass": true,
+   "detail": "+--+[p=r=1] GB=['(q - 1)**2*(q + 1)**2*(q**2 + 1)']; +--+[p=1, r sym] GB=['(q**2 + 1)*(r - 1)**2*(r + 1)**2', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; +--+[p sym, r=1] GB=['(p - 1)**2*(p + 1)**2*(q**2 + 1)', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; +--+[p, r sym] GB=['(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)', 'p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', '-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)', 'r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', 'q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)']; -++-[p=r=1] GB=['(q - 1)**2*(q + 1)**2*(q**2 + 1)']; -++-[p=1, r sym] GB=['(q**2 + 1)*(r - 1)**2*(r + 1)**2', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; -++-[p sym, r=1] GB=['(p - 1)**2*(p + 1)**2*(q**2 + 1)', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; -++-[p, r sym] GB=['(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)', 'p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', '-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)', 'r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', 'q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)']",
+   "posthoc": false
+  },
+  {
+   "name": "P1 N=3: every member braiding at generic q (p, r free) is colour-fixed, spin-fixed or scalar [pre-registered prediction]",
+   "pass": false,
+   "detail": "20 (assignment, param) cases; mixed: [('+++-', 'mixed', 'p, r sym'), ('+-++', 'mixed', 'p, r sym'), ('-+--', 'mixed', 'p, r sym'), ('---+', 'mixed', 'p, r sym')]",
+   "posthoc": false
+  },
+  {
+   "name": "P1 N=3: with (p,r) tied to q in {+-1, +-q, +-1/q}: transported and mixed members braid for NO tie; colour-fixed, spin-fixed and scalar members braid for some tie",
+   "pass": true,
+   "detail": "[('+++-', []), ('++-+', []), ('++--', ['(p,r)=(q,1)', '(p,r)=(q,-1)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,1)', '(p,r)=(-q,-1)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,1)', '(p,r)=(1/q,-1)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,1)', '(p,r)=(-1/q,-1)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('+-++', []), ('+-+-', ['(p,r)=(1,q)', '(p,r)=(1,-q)', '(p,r)=(1,1/q)', '(p,r)=(1,-1/q)', '(p,r)=(-1,q)', '(p,r)=(-1,-q)', '(p,r)=(-1,1/q)', '(p,r)=(-1,-1/q)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('+--+', []), ('+---', []), ('-+++', []), ('-++-', []), ('-+-+', ['(p,r)=(1,q)', '(p,r)=(1,-q)', '(p,r)=(1,1/q)', '(p,r)=(1,-1/q)', '(p,r)=(-1,q)', '(p,r)=(-1,-q)', '(p,r)=(-1,1/q)', '(p,r)=(-1,-1/q)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('-+--', []), ('--++', ['(p,r)=(q,1)', '(p,r)=(q,-1)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,1)', '(p,r)=(-q,-1)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,1)', '(p,r)=(1/q,-1)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,1)', '(p,r)=(-1/q,-1)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('--+-', []), ('---+', [])]",
+   "posthoc": true
+  },
+  {
+   "name": "P1 N=4: no transported member braids at generic q (all 2x4 param cases)",
+   "pass": true,
+   "detail": "+--+[p=r=1] GB=['(q - 1)**2*(q + 1)**2*(q**2 + 1)']; +--+[p=1, r sym] GB=['(q**2 + 1)*(r - 1)**2*(r + 1)**2', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; +--+[p sym, r=1] GB=['(p - 1)**2*(p + 1)**2*(q**2 + 1)', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; +--+[p, r sym] GB=['(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)', 'p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', '-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)', 'r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', 'q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)']; -++-[p=r=1] GB=['(q - 1)**2*(q + 1)**2*(q**2 + 1)']; -++-[p=1, r sym] GB=['(q**2 + 1)*(r - 1)**2*(r + 1)**2', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; -++-[p sym, r=1] GB=['(p - 1)**2*(p + 1)**2*(q**2 + 1)', '(q - 1)**2*(q + 1)**2*(q**2 + 1)']; -++-[p, r sym] GB=['(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)', 'p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', '-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)', 'r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)', 'q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)']",
+   "posthoc": false
+  },
+  {
+   "name": "P1 N=4: every member braiding at generic q (p, r free) is colour-fixed, spin-fixed or scalar [pre-registered prediction]",
+   "pass": false,
+   "detail": "20 (assignment, param) cases; mixed: [('+++-', 'mixed', 'p, r sym'), ('+-++', 'mixed', 'p, r sym'), ('-+--', 'mixed', 'p, r sym'), ('---+', 'mixed', 'p, r sym')]",
+   "posthoc": false
+  },
+  {
+   "name": "P1 N=4: with (p,r) tied to q in {+-1, +-q, +-1/q}: transported and mixed members braid for NO tie; colour-fixed, spin-fixed and scalar members braid for some tie",
+   "pass": true,
+   "detail": "[('+++-', []), ('++-+', []), ('++--', ['(p,r)=(q,1)', '(p,r)=(q,-1)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,1)', '(p,r)=(-q,-1)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,1)', '(p,r)=(1/q,-1)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,1)', '(p,r)=(-1/q,-1)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('+-++', []), ('+-+-', ['(p,r)=(1,q)', '(p,r)=(1,-q)', '(p,r)=(1,1/q)', '(p,r)=(1,-1/q)', '(p,r)=(-1,q)', '(p,r)=(-1,-q)', '(p,r)=(-1,1/q)', '(p,r)=(-1,-1/q)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('+--+', []), ('+---', []), ('-+++', []), ('-++-', []), ('-+-+', ['(p,r)=(1,q)', '(p,r)=(1,-q)', '(p,r)=(1,1/q)', '(p,r)=(1,-1/q)', '(p,r)=(-1,q)', '(p,r)=(-1,-q)', '(p,r)=(-1,1/q)', '(p,r)=(-1,-1/q)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('-+--', []), ('--++', ['(p,r)=(q,1)', '(p,r)=(q,-1)', '(p,r)=(q,q)', '(p,r)=(q,-q)', '(p,r)=(q,1/q)', '(p,r)=(q,-1/q)', '(p,r)=(-q,1)', '(p,r)=(-q,-1)', '(p,r)=(-q,q)', '(p,r)=(-q,-q)', '(p,r)=(-q,1/q)', '(p,r)=(-q,-1/q)', '(p,r)=(1/q,1)', '(p,r)=(1/q,-1)', '(p,r)=(1/q,q)', '(p,r)=(1/q,-q)', '(p,r)=(1/q,1/q)', '(p,r)=(1/q,-1/q)', '(p,r)=(-1/q,1)', '(p,r)=(-1/q,-1)', '(p,r)=(-1/q,q)', '(p,r)=(-1/q,-q)', '(p,r)=(-1/q,1/q)', '(p,r)=(-1/q,-1/q)']), ('--+-', []), ('---+', [])]",
+   "posthoc": true
+  },
+  {
+   "name": "P1 N=3 and N=4 give identical Groebner bases (same irreps occur)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P1 explicit 216-dim Fraction residual agrees with irrep result (3 members x 3 points)",
+   "pass": true,
+   "detail": "transported ++ (q,-q^-1,-q^-1,q) @(p,r,q)=(2,3,5): explicit max|res|=10058256/390625, irrep zero=False | transported ++ (q,-q^-1,-q^-1,q) @(p,r,q)=(1,1,1): explicit max|res|=0, irrep zero=True | transported ++ (q,-q^-1,-q^-1,q) @(p,r,q)=(3/2,3/2,3/2): explicit max|res|=225/676, irrep zero=False | colour-fixed (q,-q^-1,q,-q^-1) @(p,r,q)=(2,3,5): explicit max|res|=104832/15625, irrep zero=False | colour-fixed (q,-q^-1,q,-q^-1) @(p,r,q)=(1,1,1): explicit max|res|=0, irrep zero=True | colour-fixed (q,-q^-1,q,-q^-1) @(p,r,q)=(3/2,3/2,3/2): explicit max|res|=0, irrep zero=True | mixed (q,q,q,-q^-1) @(p,r,q)=(2,3,5): explicit max|res|=1384812/390625, irrep zero=False | mixed (q,q,q,-q^-1) @(p,r,q)=(1,1,1): explicit max|res|=3/8, irrep zero=False | mixed (q,q,q,-q^-1) @(p,r,q)=(3/2,3/2,3/2): explicit max|res|=3591/4394, irrep zero=False",
+   "posthoc": false
+  },
+  {
+   "name": "P2 D, F, Y all satisfy the braid relation on 3 strands",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 D (Deligne, isospin transported classically) is NOT Hecke; satisfies (T^2-q^2)(T^2-q^-2)=0",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 F (K0-type) is Hecke",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 Y (symmetric) is NOT Hecke",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 D (Deligne R_s(q) x P_I): full twist = Delta2_s (x) 1_I at n=3,4 (theta_I = 1 derived)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 F (K0-type R_s(q) x 1_I): full twist = Delta2_s (x) 1_I at n=3,4 (theta_I = 1 derived)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 Y (symmetric R_s(q) x R_I(q)): full twist = Delta2_s (x) Delta2_I, not Delta2_s (x) 1_I (n=3,4)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 Delta2_s on (C^2)^{(x)n}, n=2..6: min poly prod_lambda (Delta2 - q^{2c(lambda)}) = 0",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 weight-space traces of Delta2_s match sum f^lambda q^{2c(lambda)} (n=2..6)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 content sums c(4,2)=5, c(3,3)=3 (agrees with Lean contentSum_four_two/_three_three)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 split factor s*i' - s'*i: D, F give q^10 - q^6; Y gives 0",
+   "pass": true,
+   "detail": "{'D': q**6*(q - 1)*(q + 1)*(q**2 + 1), 'F': q**6*(q - 1)*(q + 1)*(q**2 + 1), 'Y': 0}",
+   "posthoc": false
+  },
+  {
+   "name": "P2 n=6 isotypic traces: Tr(K P_lambda) = f^lambda [2S+1]_q, Tr P_lambda = f^lambda (2S+1)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P2 untwisted split (q-trace spin, classical-trace isospin) = 45 (q - q^-1)^2",
+   "pass": true,
+   "detail": "45*(q - 1)**2*(q + 1)**2/q**2",
+   "posthoc": false
+  },
+  {
+   "name": "P3(i) charge background commutes with every member (all param cases)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P3(i) zeeman background commutes with every member (all param cases)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P3(i) p=r=1: chromomagnetic covariance <=> l_SS = l_AA and l_SA = l_AS (R in span{1,P})",
+   "pass": true,
+   "detail": "[{'l_SA': 'l_AS', 'l_SS': 'l_AA'}]",
+   "posthoc": false
+  },
+  {
+   "name": "P3(i) p, r sym: chromomagnetic covariance forces R = l*1 (all l_ab equal)",
+   "pass": true,
+   "detail": "[{'l_AS': 'l_AA', 'l_SA': 'l_AA', 'l_SS': 'l_AA'}]",
+   "posthoc": false
+  },
+  {
+   "name": "P3(i) p=1, r sym: chromomagnetic covariance forces R = l*1 (all l_ab equal)",
+   "pass": true,
+   "detail": "[{'l_AS': 'l_AA', 'l_SA': 'l_AA', 'l_SS': 'l_AA'}]",
+   "posthoc": false
+  },
+  {
+   "name": "P3(i) p sym, r=1: chromomagnetic covariance forces R = l*1 (all l_ab equal)",
+   "pass": true,
+   "detail": "[{'l_AS': 'l_AA', 'l_SA': 'l_AA', 'l_SS': 'l_AA'}]",
+   "posthoc": false
+  },
+  {
+   "name": "P3(ii) susceptibilities independent of the Cartan direction (N=3,4)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P3(ii) n=1: kappa = 0 for every N (factorisation)",
+   "pass": true,
+   "detail": "",
+   "posthoc": false
+  },
+  {
+   "name": "P3 acceptance clause (2): no channel has an N-independent kappa in the pre-listed set (prediction MISS)",
+   "pass": true,
+   "detail": "[]",
+   "posthoc": false
+  },
+  {
+   "name": "P3 STRONG: no N-independent kappa = -1/3",
+   "pass": true,
+   "detail": "[]",
+   "posthoc": false
+  },
+  {
+   "name": "P3(ii) chi_chromo = chi_charge = chi_zeeman in every S_n channel at q=1, so kappa = 1 - chi_zeeman",
+   "pass": true,
+   "detail": "",
+   "posthoc": true
+  },
+  {
+   "name": "P3(ii) n=2 closed forms kappa(Sym^2W) = -(2N+3)/(2N+1), kappa(Lambda^2W) = -(2N-3)/(2N-1); the -1/3 of Lambda^2W at N=2 is N-dependent",
+   "pass": true,
+   "detail": "",
+   "posthoc": true
+  }
+ ],
+ "P1": {
+  "rows": [
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p=r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(q**2 - 4*q + 1)*(q**2 + 4*q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q**2 + 1)*(q**2*r - 2*q*r**2 - 2*q + r)*(q**2*r + 2*q*r**2 + 2*q + r)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(q**2 + 1)*(2*p**2*q - p*q**2 - p + 2*q)*(2*p**2*q + p*q**2 + p + 2*q)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2*q*r**2 + p**2*q - p*q**2*r - p*r + q*r**2 + q)*(p**2*q*r**2 + p**2*q + p*q**2*r + p*r + q*r**2 + q)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(r**2 - r + 1)*(r**2 + r + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**2 + 2)",
+     "p**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**2 + 2)*(r**2 - r + 1)*(r**2 + r + 1)",
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)",
+     "p**2*(q**2 + 1)**3*(r**2 - r + 1)*(r**2 + r + 1)",
+     "q**2*(q**2 + 1)**3*(r**2 - r + 1)*(r**2 + r + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(r - 1)**2*(r + 1)**2",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - 1)**2*(p + 1)**2*(q**2 + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)",
+     "p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)",
+     "r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(r - 1)**2*(r + 1)**2",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - 1)**2*(p + 1)**2*(q**2 + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)",
+     "p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)",
+     "r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(r**2 - r + 1)*(r**2 + r + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**2 + 2)",
+     "p**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**2 + 2)*(r**2 - r + 1)*(r**2 + r + 1)",
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)",
+     "p**2*(q**2 + 1)**3*(r**2 - r + 1)*(r**2 + r + 1)",
+     "q**2*(q**2 + 1)**3*(r**2 - r + 1)*(r**2 + r + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(q**2 - 4*q + 1)*(q**2 + 4*q + 1)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q**2 + 1)*(q**2*r - 2*q*r**2 - 2*q + r)*(q**2*r + 2*q*r**2 + 2*q + r)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(q**2 + 1)*(2*p**2*q - p*q**2 - p + 2*q)*(2*p**2*q + p*q**2 + p + 2*q)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2*q*r**2 + p**2*q - p*q**2*r - p*r + q*r**2 + q)*(p**2*q*r**2 + p**2*q + p*q**2*r + p*r + q*r**2 + q)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p=r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p=r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(r - 1)**2*(r + 1)**2",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - 1)**2*(p + 1)**2*(q**2 + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)",
+     "p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)",
+     "r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(r - 1)**2*(r + 1)**2",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - 1)**2*(p + 1)**2*(q**2 + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)",
+     "p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)",
+     "r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p=r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p=r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(r - 1)**2*(r + 1)**2",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - 1)**2*(p + 1)**2*(q**2 + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)",
+     "p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)",
+     "r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(r - 1)**2*(r + 1)**2",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - 1)**2*(p + 1)**2*(q**2 + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**10 + q**8 - q**6 - 2*q**4 - q**2 + 1)",
+     "p*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**10 + q**8 - q**6 - 2*q**4 - q**2 + r**2 + 1)",
+     "r*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q - 1)**2*(q + 1)**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p*q - 1)*(p*q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(p - q)*(p + q)*(q**2 + 1)*(p**2 + q**6 + 3*q**4 + 4*q**2 + 3)",
+     "p**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**6 + 3*q**4 + 4*q**2 + r**2 + 3)",
+     "r**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)",
+     "q**2*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p=r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "q**2 + 1"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p=1, r sym",
+    "braid_generic": false,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3",
+     "q**2*(q**2 + 1)**3"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p sym, r=1",
+    "braid_generic": false,
+    "groebner_lex": [
+     "(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)",
+     "(q - 1)**2*(q + 1)**2*(q**2 + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "-(q - r)*(q + r)*(q**2 + 1)*(p**2 - p + 1)*(p**2 + p + 1)*(q**2 + r**2 + 2)",
+     "r**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "q**2*(q**2 + 1)**3*(p**2 - p + 1)*(p**2 + p + 1)",
+     "-(q - r)*(q + r)*(q**2 + 1)*(q*r - 1)*(q*r + 1)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p=r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p=1, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p sym, r=1",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "params": "p, r sym",
+    "braid_generic": true,
+    "groebner_lex": [
+     "0"
+    ]
+   }
+  ],
+  "tie_test": [
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,1)",
+     "(p,r)=(1,-1)",
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,1)",
+     "(p,r)=(-1,-1)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 2,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,1)",
+     "(p,r)=(1,-1)",
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,1)",
+     "(p,r)=(-1,-1)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,1)",
+     "(p,r)=(1,-1)",
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,1)",
+     "(p,r)=(-1,-1)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 3,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,1)",
+     "(p,r)=(1,-1)",
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,1)",
+     "(p,r)=(-1,-1)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++++",
+    "kind": "scalar",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,1)",
+     "(p,r)=(1,-1)",
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,1)",
+     "(p,r)=(-1,-1)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+++-",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++-+",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "++--",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-++",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+-+-",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+--+",
+    "kind": "transported",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "+---",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+++",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-++-",
+    "kind": "transported",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+-+",
+    "kind": "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "-+--",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--++",
+    "kind": "spin-fixed (R = X_c (x) 1_s)",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "--+-",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "---+",
+    "kind": "mixed",
+    "ties_braiding_identically_in_q": []
+   },
+   {
+    "N": 4,
+    "lambda_SS,SA,AS,AA": "----",
+    "kind": "scalar",
+    "ties_braiding_identically_in_q": [
+     "(p,r)=(1,1)",
+     "(p,r)=(1,-1)",
+     "(p,r)=(1,q)",
+     "(p,r)=(1,-q)",
+     "(p,r)=(1,1/q)",
+     "(p,r)=(1,-1/q)",
+     "(p,r)=(-1,1)",
+     "(p,r)=(-1,-1)",
+     "(p,r)=(-1,q)",
+     "(p,r)=(-1,-q)",
+     "(p,r)=(-1,1/q)",
+     "(p,r)=(-1,-1/q)",
+     "(p,r)=(q,1)",
+     "(p,r)=(q,-1)",
+     "(p,r)=(q,q)",
+     "(p,r)=(q,-q)",
+     "(p,r)=(q,1/q)",
+     "(p,r)=(q,-1/q)",
+     "(p,r)=(-q,1)",
+     "(p,r)=(-q,-1)",
+     "(p,r)=(-q,q)",
+     "(p,r)=(-q,-q)",
+     "(p,r)=(-q,1/q)",
+     "(p,r)=(-q,-1/q)",
+     "(p,r)=(1/q,1)",
+     "(p,r)=(1/q,-1)",
+     "(p,r)=(1/q,q)",
+     "(p,r)=(1/q,-q)",
+     "(p,r)=(1/q,1/q)",
+     "(p,r)=(1/q,-1/q)",
+     "(p,r)=(-1/q,1)",
+     "(p,r)=(-1/q,-1)",
+     "(p,r)=(-1/q,q)",
+     "(p,r)=(-1/q,-q)",
+     "(p,r)=(-1/q,1/q)",
+     "(p,r)=(-1/q,-1/q)"
+    ]
+   }
+  ],
+  "generic_braiders_N2": [
+   [
+    "++++",
+    "scalar",
+    "p sym, r=1"
+   ],
+   [
+    "++++",
+    "scalar",
+    "p, r sym"
+   ],
+   [
+    "++++",
+    "scalar",
+    "p=1, r sym"
+   ],
+   [
+    "++++",
+    "scalar",
+    "p=r=1"
+   ],
+   [
+    "+++-",
+    "mixed",
+    "p sym, r=1"
+   ],
+   [
+    "+++-",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "+++-",
+    "mixed",
+    "p=1, r sym"
+   ],
+   [
+    "++-+",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "++--",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p sym, r=1"
+   ],
+   [
+    "++--",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p, r sym"
+   ],
+   [
+    "+-++",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "+-+-",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p, r sym"
+   ],
+   [
+    "+-+-",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p=1, r sym"
+   ],
+   [
+    "-+-+",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p, r sym"
+   ],
+   [
+    "-+-+",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p=1, r sym"
+   ],
+   [
+    "-+--",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "--++",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p sym, r=1"
+   ],
+   [
+    "--++",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p, r sym"
+   ],
+   [
+    "--+-",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "---+",
+    "mixed",
+    "p sym, r=1"
+   ],
+   [
+    "---+",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "---+",
+    "mixed",
+    "p=1, r sym"
+   ],
+   [
+    "----",
+    "scalar",
+    "p sym, r=1"
+   ],
+   [
+    "----",
+    "scalar",
+    "p, r sym"
+   ],
+   [
+    "----",
+    "scalar",
+    "p=1, r sym"
+   ],
+   [
+    "----",
+    "scalar",
+    "p=r=1"
+   ]
+  ],
+  "generic_braiders_N3": [
+   [
+    "++++",
+    "scalar",
+    "p sym, r=1"
+   ],
+   [
+    "++++",
+    "scalar",
+    "p, r sym"
+   ],
+   [
+    "++++",
+    "scalar",
+    "p=1, r sym"
+   ],
+   [
+    "++++",
+    "scalar",
+    "p=r=1"
+   ],
+   [
+    "+++-",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "++--",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p sym, r=1"
+   ],
+   [
+    "++--",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p, r sym"
+   ],
+   [
+    "+-++",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "+-+-",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p, r sym"
+   ],
+   [
+    "+-+-",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p=1, r sym"
+   ],
+   [
+    "-+-+",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p, r sym"
+   ],
+   [
+    "-+-+",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p=1, r sym"
+   ],
+   [
+    "-+--",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "--++",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p sym, r=1"
+   ],
+   [
+    "--++",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p, r sym"
+   ],
+   [
+    "---+",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "----",
+    "scalar",
+    "p sym, r=1"
+   ],
+   [
+    "----",
+    "scalar",
+    "p, r sym"
+   ],
+   [
+    "----",
+    "scalar",
+    "p=1, r sym"
+   ],
+   [
+    "----",
+    "scalar",
+    "p=r=1"
+   ]
+  ],
+  "generic_braiders_N4": [
+   [
+    "++++",
+    "scalar",
+    "p sym, r=1"
+   ],
+   [
+    "++++",
+    "scalar",
+    "p, r sym"
+   ],
+   [
+    "++++",
+    "scalar",
+    "p=1, r sym"
+   ],
+   [
+    "++++",
+    "scalar",
+    "p=r=1"
+   ],
+   [
+    "+++-",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "++--",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p sym, r=1"
+   ],
+   [
+    "++--",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p, r sym"
+   ],
+   [
+    "+-++",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "+-+-",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p, r sym"
+   ],
+   [
+    "+-+-",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p=1, r sym"
+   ],
+   [
+    "-+-+",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p, r sym"
+   ],
+   [
+    "-+-+",
+    "colour-fixed (K0-type: R = 1_c (x) X_s)",
+    "p=1, r sym"
+   ],
+   [
+    "-+--",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "--++",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p sym, r=1"
+   ],
+   [
+    "--++",
+    "spin-fixed (R = X_c (x) 1_s)",
+    "p, r sym"
+   ],
+   [
+    "---+",
+    "mixed",
+    "p, r sym"
+   ],
+   [
+    "----",
+    "scalar",
+    "p sym, r=1"
+   ],
+   [
+    "----",
+    "scalar",
+    "p, r sym"
+   ],
+   [
+    "----",
+    "scalar",
+    "p=1, r sym"
+   ],
+   [
+    "----",
+    "scalar",
+    "p=r=1"
+   ]
+  ],
+  "explicit_crosscheck": [
+   "transported ++ (q,-q^-1,-q^-1,q) @(p,r,q)=(2,3,5): explicit max|res|=10058256/390625, irrep zero=False",
+   "transported ++ (q,-q^-1,-q^-1,q) @(p,r,q)=(1,1,1): explicit max|res|=0, irrep zero=True",
+   "transported ++ (q,-q^-1,-q^-1,q) @(p,r,q)=(3/2,3/2,3/2): explicit max|res|=225/676, irrep zero=False",
+   "colour-fixed (q,-q^-1,q,-q^-1) @(p,r,q)=(2,3,5): explicit max|res|=104832/15625, irrep zero=False",
+   "colour-fixed (q,-q^-1,q,-q^-1) @(p,r,q)=(1,1,1): explicit max|res|=0, irrep zero=True",
+   "colour-fixed (q,-q^-1,q,-q^-1) @(p,r,q)=(3/2,3/2,3/2): explicit max|res|=0, irrep zero=True",
+   "mixed (q,q,q,-q^-1) @(p,r,q)=(2,3,5): explicit max|res|=1384812/390625, irrep zero=False",
+   "mixed (q,q,q,-q^-1) @(p,r,q)=(1,1,1): explicit max|res|=3/8, irrep zero=False",
+   "mixed (q,q,q,-q^-1) @(p,r,q)=(3/2,3/2,3/2): explicit max|res|=3591/4394, irrep zero=False"
+  ]
+ },
+ "P2": {
+  "constructions": {
+   "D (Deligne R_s(q) x P_I)": {
+    "braid": true,
+    "hecke_q": false,
+    "quartic (T^2-q^2)(T^2-q^-2)=0": true,
+    "full_twist": {
+     "3": {
+      "Delta2 = Delta2_s (x) 1_I": true,
+      "Delta2 = Delta2_s (x) Delta2_I": false
+     },
+     "4": {
+      "Delta2 = Delta2_s (x) 1_I": true,
+      "Delta2 = Delta2_s (x) Delta2_I": false
+     }
+    }
+   },
+   "F (K0-type R_s(q) x 1_I)": {
+    "braid": true,
+    "hecke_q": true,
+    "quartic (T^2-q^2)(T^2-q^-2)=0": true,
+    "full_twist": {
+     "3": {
+      "Delta2 = Delta2_s (x) 1_I": true,
+      "Delta2 = Delta2_s (x) Delta2_I": false
+     },
+     "4": {
+      "Delta2 = Delta2_s (x) 1_I": true,
+      "Delta2 = Delta2_s (x) Delta2_I": false
+     }
+    }
+   },
+   "Y (symmetric R_s(q) x R_I(q))": {
+    "braid": true,
+    "hecke_q": false,
+    "quartic (T^2-q^2)(T^2-q^-2)=0": false,
+    "full_twist": {
+     "3": {
+      "Delta2 = Delta2_s (x) 1_I": false,
+      "Delta2 = Delta2_s (x) Delta2_I": true
+     },
+     "4": {
+      "Delta2 = Delta2_s (x) 1_I": false,
+      "Delta2 = Delta2_s (x) Delta2_I": true
+     }
+    }
+   }
+  },
+  "Delta2_spin_spectrum": {
+   "2": {
+    "(2,)": "q^2",
+    "(1, 1)": "q^-2"
+   },
+   "3": {
+    "(3,)": "q^6",
+    "(2, 1)": "q^0"
+   },
+   "4": {
+    "(4,)": "q^12",
+    "(3, 1)": "q^4",
+    "(2, 2)": "q^0"
+   },
+   "5": {
+    "(5,)": "q^20",
+    "(4, 1)": "q^10",
+    "(3, 2)": "q^4"
+   },
+   "6": {
+    "(6,)": "q^30",
+    "(5, 1)": "q^18",
+    "(4, 2)": "q^10",
+    "(3, 3)": "q^6"
+   }
+  },
+  "deuteron_minus_singlet_twist_factor": {
+   "D": "q**6*(q - 1)*(q + 1)*(q**2 + 1)",
+   "F": "q**6*(q - 1)*(q + 1)*(q**2 + 1)",
+   "Y": "0"
+  },
+  "isotypic_traces_n6": {
+   "(6,)": {
+    "q_trace": "(q**6 - q**5 + q**4 - q**3 + q**2 - q + 1)*(q**6 + q**5 + q**4 + q**3 + q**2 + q + 1)/q**6",
+    "trace": "7"
+   },
+   "(5, 1)": {
+    "q_trace": "5*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/q**4",
+    "trace": "25"
+   },
+   "(4, 2)": {
+    "q_trace": "9*(q**2 - q + 1)*(q**2 + q + 1)/q**2",
+    "trace": "27"
+   },
+   "(3, 3)": {
+    "q_trace": "5",
+    "trace": "5"
+   }
+  },
+  "untwisted_trace_split_qtrace_spin_classical_iso": "45*(q - 1)**2*(q + 1)**2/q**2"
+ },
+ "P3": {
+  "covariance": {
+   "p=r=1": {
+    "chromo": {
+     "n_equations": 2,
+     "solution": [
+      {
+       "l_SA": "l_AS",
+       "l_SS": "l_AA"
+      }
+     ]
+    },
+    "charge": {
+     "n_equations": 0,
+     "solution": [
+      {}
+     ]
+    },
+    "zeeman": {
+     "n_equations": 0,
+     "solution": [
+      {}
+     ]
+    }
+   },
+   "p, r sym": {
+    "chromo": {
+     "n_equations": 4,
+     "solution": [
+      {
+       "l_AS": "l_AA",
+       "l_SA": "l_AA",
+       "l_SS": "l_AA"
+      }
+     ]
+    },
+    "charge": {
+     "n_equations": 0,
+     "solution": [
+      {}
+     ]
+    },
+    "zeeman": {
+     "n_equations": 0,
+     "solution": [
+      {}
+     ]
+    }
+   },
+   "p=1, r sym": {
+    "chromo": {
+     "n_equations": 3,
+     "solution": [
+      {
+       "l_AS": "l_AA",
+       "l_SA": "l_AA",
+       "l_SS": "l_AA"
+      }
+     ]
+    },
+    "charge": {
+     "n_equations": 0,
+     "solution": [
+      {}
+     ]
+    },
+    "zeeman": {
+     "n_equations": 0,
+     "solution": [
+      {}
+     ]
+    }
+   },
+   "p sym, r=1": {
+    "chromo": {
+     "n_equations": 3,
+     "solution": [
+      {
+       "l_AS": "l_AA",
+       "l_SA": "l_AA",
+       "l_SS": "l_AA"
+      }
+     ]
+    },
+    "charge": {
+     "n_equations": 0,
+     "solution": [
+      {}
+     ]
+    },
+    "zeeman": {
+     "n_equations": 0,
+     "solution": [
+      {}
+     ]
+    }
+   }
+  },
+  "susceptibility_q1": {
+   "N=2, n=1": {
+    "Sym^n W": {
+     "dim": "4",
+     "chi_chromo": "1",
+     "chi_charge": "1",
+     "chi_zeeman": "1",
+     "kappa": "0"
+    }
+   },
+   "N=2, n=2": {
+    "Sym^n W": {
+     "dim": "10",
+     "chi_chromo": "12/5",
+     "chi_charge": "12/5",
+     "chi_zeeman": "12/5",
+     "kappa": "-7/5"
+    },
+    "Lambda^n W": {
+     "dim": "6",
+     "chi_chromo": "4/3",
+     "chi_charge": "4/3",
+     "chi_zeeman": "4/3",
+     "kappa": "-1/3"
+    }
+   },
+   "N=2, n=3": {
+    "Sym^n W": {
+     "dim": "20",
+     "chi_chromo": "21/5",
+     "chi_charge": "21/5",
+     "chi_zeeman": "21/5",
+     "kappa": "-16/5"
+    },
+    "Lambda^n W": {
+     "dim": "4",
+     "chi_chromo": "1",
+     "chi_charge": "1",
+     "chi_zeeman": "1",
+     "kappa": "0"
+    },
+    "(2,1)-isotypic": {
+     "dim": "40",
+     "chi_chromo": "13/5",
+     "chi_charge": "13/5",
+     "chi_zeeman": "13/5",
+     "kappa": "-8/5"
+    }
+   },
+   "N=3, n=1": {
+    "Sym^n W": {
+     "dim": "6",
+     "chi_chromo": "1",
+     "chi_charge": "1",
+     "chi_zeeman": "1",
+     "kappa": "0"
+    }
+   },
+   "N=3, n=2": {
+    "Sym^n W": {
+     "dim": "21",
+     "chi_chromo": "16/7",
+     "chi_charge": "16/7",
+     "chi_zeeman": "16/7",
+     "kappa": "-9/7"
+    },
+    "Lambda^n W": {
+     "dim": "15",
+     "chi_chromo": "8/5",
+     "chi_charge": "8/5",
+     "chi_zeeman": "8/5",
+     "kappa": "-3/5"
+    }
+   },
+   "N=3, n=3": {
+    "Sym^n W": {
+     "dim": "56",
+     "chi_chromo": "27/7",
+     "chi_charge": "27/7",
+     "chi_zeeman": "27/7",
+     "kappa": "-20/7"
+    },
+    "Lambda^n W": {
+     "dim": "20",
+     "chi_chromo": "9/5",
+     "chi_charge": "9/5",
+     "chi_zeeman": "9/5",
+     "kappa": "-4/5"
+    },
+    "(2,1)-isotypic": {
+     "dim": "140",
+     "chi_chromo": "99/35",
+     "chi_charge": "99/35",
+     "chi_zeeman": "99/35",
+     "kappa": "-64/35"
+    }
+   },
+   "N=4, n=1": {
+    "Sym^n W": {
+     "dim": "8",
+     "chi_chromo": "1",
+     "chi_charge": "1",
+     "chi_zeeman": "1",
+     "kappa": "0"
+    }
+   },
+   "N=4, n=2": {
+    "Sym^n W": {
+     "dim": "36",
+     "chi_chromo": "20/9",
+     "chi_charge": "20/9",
+     "chi_zeeman": "20/9",
+     "kappa": "-11/9"
+    },
+    "Lambda^n W": {
+     "dim": "28",
+     "chi_chromo": "12/7",
+     "chi_charge": "12/7",
+     "chi_zeeman": "12/7",
+     "kappa": "-5/7"
+    }
+   },
+   "N=4, n=3": {
+    "Sym^n W": {
+     "dim": "120",
+     "chi_chromo": "11/3",
+     "chi_charge": "11/3",
+     "chi_zeeman": "11/3",
+     "kappa": "-8/3"
+    },
+    "Lambda^n W": {
+     "dim": "56",
+     "chi_chromo": "15/7",
+     "chi_charge": "15/7",
+     "chi_zeeman": "15/7",
+     "kappa": "-8/7"
+    },
+    "(2,1)-isotypic": {
+     "dim": "336",
+     "chi_chromo": "61/21",
+     "chi_charge": "61/21",
+     "chi_zeeman": "61/21",
+     "kappa": "-40/21"
+    }
+   }
+  },
+  "kappa_by_channel": {
+   "n=1 Sym^n W": {
+    "2": "0",
+    "3": "0",
+    "4": "0"
+   },
+   "n=2 Sym^n W": {
+    "2": "-7/5",
+    "3": "-9/7",
+    "4": "-11/9"
+   },
+   "n=2 Lambda^n W": {
+    "2": "-1/3",
+    "3": "-3/5",
+    "4": "-5/7"
+   },
+   "n=3 Sym^n W": {
+    "2": "-16/5",
+    "3": "-20/7",
+    "4": "-8/3"
+   },
+   "n=3 Lambda^n W": {
+    "2": "0",
+    "3": "-4/5",
+    "4": "-8/7"
+   },
+   "n=3 (2,1)-isotypic": {
+    "2": "-8/5",
+    "3": "-64/35",
+    "4": "-40/21"
+   }
+  },
+  "acceptance_clause2_candidates": []
+ },
+ "summary": "34/37 checks pass"
+}

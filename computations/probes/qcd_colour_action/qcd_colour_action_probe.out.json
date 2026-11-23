@@ -1,0 +1,477 @@
+{
+ "checks": [
+  {
+   "name": "K0 (a) su3 brackets hold and 8 operators independent",
+   "pass": true,
+   "detail": "rank=8"
+  },
+  {
+   "name": "K0 (b) colour commutes with sigma1, sigma2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "K0 (c) Hecke and braid",
+   "pass": true,
+   "detail": "None"
+  },
+  {
+   "name": "K0 (d) singlet sector = flavour model; z = z_D",
+   "pass": true,
+   "detail": "q**3/(q**2 + 1)"
+  },
+  {
+   "name": "K0 (e) colour invariants of (C^3)^3 one-dimensional",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "K0 (f) transport: q->1 limit is +-P on C^6(x)C^6 (predicted FAIL)",
+   "pass": false,
+   "detail": "neither"
+  },
+  {
+   "name": "K1 convention: a U_q(gl3) coproduct commuting with the Jimbo R exists",
+   "pass": true,
+   "detail": "coproduct A"
+  },
+  {
+   "name": "K1 (a) U_q(sl3) Chevalley-Serre relations on (C^3)^3, generators nonzero",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "K1 (b) commutes with sigma1, sigma2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "K1 (c) Hecke and braid",
+   "pass": true,
+   "detail": "None"
+  },
+  {
+   "name": "K1 (d) z equals z_D (predicted FAIL; no flavour in K1)",
+   "pass": false,
+   "detail": "Markov scalar=True, z3=q**5/((q**2 - q + 1)*(q**2 + q + 1))"
+  },
+  {
+   "name": "K1 z3 = q^3/[3]_q",
+   "pass": true,
+   "detail": "q**5/((q**2 - q + 1)*(q**2 + q + 1))"
+  },
+  {
+   "name": "K1 (e) U_q(sl3) invariants of (C^3)^3 one-dimensional",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "K2[isospin-major] (c) Hecke and braid",
+   "pass": true,
+   "detail": "None"
+  },
+  {
+   "name": "K2[isospin-major] (i) classical colour commutes with sigma (predicted FAIL)",
+   "pass": false,
+   "detail": "2-site witness ((0, 1), ((0, 2), (0, 0), 1 - q))"
+  },
+  {
+   "name": "K2[isospin-major] (ii) summed q-Chevalley colour satisfies [e,f]=[k] (predicted FAIL)",
+   "pass": false,
+   "detail": "relation holds=False"
+  },
+  {
+   "name": "K2[isospin-major] Markov z6 = q^6/[6]_q (reported)",
+   "pass": true,
+   "detail": "q**11/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1))"
+  },
+  {
+   "name": "K2[colour-major] (c) Hecke and braid",
+   "pass": true,
+   "detail": "None"
+  },
+  {
+   "name": "K2[colour-major] (i) classical colour commutes with sigma (predicted FAIL)",
+   "pass": false,
+   "detail": "2-site witness ((0, 1), ((0, 2), (0, 0), 1 - q))"
+  },
+  {
+   "name": "K2[colour-major] (ii) summed q-Chevalley colour satisfies [e,f]=[k] (predicted FAIL)",
+   "pass": false,
+   "detail": "(f=1,c=1)->(c+1) is not a simple root in colour-major"
+  },
+  {
+   "name": "K2[colour-major] Markov z6 = q^6/[6]_q (reported)",
+   "pass": true,
+   "detail": "q**11/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1))"
+  },
+  {
+   "name": "K3 (c) Hecke relation (predicted FAIL)",
+   "pass": false,
+   "detail": "distinct eigenvalues [-1/q, -q, 1/q, q]; braid=True"
+  },
+  {
+   "name": "K3' (c) Hecke relation (predicted FAIL)",
+   "pass": false,
+   "detail": "distinct eigenvalues [-1, q**(-2), q**2]; braid=True"
+  },
+  {
+   "name": "K4 transported members (q->1 limit +-P) are exactly X=Rf,Y=-Rf^-1 and X=-Rf^-1,Y=Rf",
+   "pass": true,
+   "detail": "['K4[p=1; X=Rf, Y=-Rf^-1]', 'K4[p=1; X=-Rf^-1, Y=Rf]', 'K4[p=q; X=Rf, Y=-Rf^-1]', 'K4[p=q; X=-Rf^-1, Y=Rf]']"
+  },
+  {
+   "name": "K4 every transported member fails the braid relation at q != 1 (predicted)",
+   "pass": true,
+   "detail": "[('K4[p=1; X=Rf, Y=-Rf^-1]', False), ('K4[p=1; X=-Rf^-1, Y=Rf]', False), ('K4[p=q; X=Rf, Y=-Rf^-1]', False), ('K4[p=q; X=-Rf^-1, Y=Rf]', False)]"
+  },
+  {
+   "name": "K4 members satisfying Hecke+braid (reported)",
+   "pass": true,
+   "detail": "['K4[p=1; X=q, Y=q]', 'K4[p=1; X=-1/q, Y=-1/q]', 'K4[p=1; X=Rf, Y=Rf]', 'K4[p=1; X=-Rf^-1, Y=-Rf^-1]', 'K4[p=q; X=q, Y=q]', 'K4[p=q; X=q, Y=-1/q]', 'K4[p=q; X=-1/q, Y=q]', 'K4[p=q; X=-1/q, Y=-1/q]', 'K4[p=q; X=Rf, Y=Rf]', 'K4[p=q; X=-Rf^-1, Y=-Rf^-1]']"
+  },
+  {
+   "name": "K4 symbolic p, X=Rf, Y=-Rf^-1: braid holds iff p^2 = 1 and q^2 = 1 (Groebner basis)",
+   "pass": true,
+   "detail": "basis = [(p - 1)**2*(p + 1)**2, (q - 1)**2*(q + 1)**2]"
+  },
+  {
+   "name": "K4 symbolic p, X=-Rf^-1, Y=Rf: braid holds iff p^2 = 1 and q^2 = 1 (Groebner basis)",
+   "pass": true,
+   "detail": "basis = [(p - 1)**2*(p + 1)**2, (q - 1)**2*(q + 1)**2]"
+  }
+ ],
+ "constructions": {
+  "K0": {
+   "a": true,
+   "b": true,
+   "c": true,
+   "d": true,
+   "e": true,
+   "f": "neither",
+   "eigenvalues": [
+    "-1/q",
+    "q"
+   ]
+  },
+  "K1": {
+   "a": true,
+   "b": true,
+   "c": true,
+   "d": false,
+   "e": true,
+   "f": "+P",
+   "z3": "q**5/((q**2 - q + 1)*(q**2 + q + 1))",
+   "coproduct": "A"
+  },
+  "K2[isospin-major]": {
+   "c": true,
+   "b_classical": false,
+   "a_qsum": false,
+   "viable_qsum": true,
+   "reason": "",
+   "z6": "q**11/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1))"
+  },
+  "K2[colour-major]": {
+   "c": true,
+   "b_classical": false,
+   "a_qsum": "None",
+   "viable_qsum": false,
+   "reason": "(f=1,c=1)->(c+1) is not a simple root in colour-major",
+   "z6": "q**11/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1))"
+  },
+  "K3": {
+   "c": false,
+   "braid": true,
+   "eigenvalues": [
+    "-1/q",
+    "-q",
+    "1/q",
+    "q"
+   ]
+  },
+  "K3'": {
+   "c": false,
+   "braid": true,
+   "eigenvalues": [
+    "-1",
+    "q**(-2)",
+    "q**2"
+   ]
+  }
+ },
+ "K4": {
+  "K4[p=1; X=q, Y=q]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": false,
+   "f": "neither",
+   "braid_witness": null
+  },
+  "K4[p=1; X=q, Y=-1/q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 2), (0, 0, 2), (q - 1)**2*(q + 1)**2*(q**2 + 1)/(8*q**3))"
+  },
+  "K4[p=1; X=q, Y=Rf]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), -3*q/8)"
+  },
+  "K4[p=1; X=q, Y=-Rf^-1]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 2), (0, 0, 2), (q - 1)**2*(q + 1)**2*(q**2 + 1)/(8*q**3))"
+  },
+  "K4[p=1; X=-1/q, Y=q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 2), (0, 0, 2), -(q - 1)**2*(q + 1)**2*(q**2 + 1)/(8*q**3))"
+  },
+  "K4[p=1; X=-1/q, Y=-1/q]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": false,
+   "f": "neither",
+   "braid_witness": null
+  },
+  "K4[p=1; X=-1/q, Y=Rf]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 2), (0, 0, 2), -(q - 1)**2*(q + 1)**2*(q**2 + 1)/(8*q**3))"
+  },
+  "K4[p=1; X=-1/q, Y=-Rf^-1]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), 3*q/8)"
+  },
+  "K4[p=1; X=Rf, Y=q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), -q/8)"
+  },
+  "K4[p=1; X=Rf, Y=-1/q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 2), (0, 0, 2), (q - 1)**2*(q + 1)**2*(q**2 + 1)/(8*q**3))"
+  },
+  "K4[p=1; X=Rf, Y=Rf]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": true,
+   "f": "neither",
+   "braid_witness": null
+  },
+  "K4[p=1; X=Rf, Y=-Rf^-1]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "+P",
+   "braid_witness": "((0, 0, 2), (0, 0, 2), (q - 1)**2*(q + 1)**2*(q**2 + 1)/(8*q**3))"
+  },
+  "K4[p=1; X=-Rf^-1, Y=q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 2), (0, 0, 2), -(q - 1)**2*(q + 1)**2*(q**2 + 1)/(8*q**3))"
+  },
+  "K4[p=1; X=-Rf^-1, Y=-1/q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), q/8)"
+  },
+  "K4[p=1; X=-Rf^-1, Y=Rf]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "-P",
+   "braid_witness": "((0, 0, 2), (0, 0, 2), -(q - 1)**2*(q + 1)**2*(q**2 + 1)/(8*q**3))"
+  },
+  "K4[p=1; X=-Rf^-1, Y=-Rf^-1]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": false,
+   "f": "neither",
+   "braid_witness": null
+  },
+  "K4[p=q; X=q, Y=q]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": false,
+   "f": "neither",
+   "braid_witness": null
+  },
+  "K4[p=q; X=q, Y=-1/q]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": false,
+   "f": "neither",
+   "braid_witness": null
+  },
+  "K4[p=q; X=q, Y=Rf]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), -q**3*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=q, Y=-Rf^-1]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), -q**5/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=-1/q, Y=q]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": false,
+   "f": "neither",
+   "braid_witness": null
+  },
+  "K4[p=q; X=-1/q, Y=-1/q]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": false,
+   "f": "neither",
+   "braid_witness": null
+  },
+  "K4[p=q; X=-1/q, Y=Rf]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), q**5/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=-1/q, Y=-Rf^-1]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), q**3*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=Rf, Y=q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), -q**5/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=Rf, Y=-1/q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), -q**3*(q**4 + 3*q**2 + 1)/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=Rf, Y=Rf]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": true,
+   "f": "neither",
+   "braid_witness": null
+  },
+  "K4[p=q; X=Rf, Y=-Rf^-1]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "+P",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), 2*q**3*(q - 1)**2*(q + 1)**2/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=-Rf^-1, Y=q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), q**3*(q**4 + 3*q**2 + 1)/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=-Rf^-1, Y=-1/q]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "neither",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), q**5/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=-Rf^-1, Y=Rf]": {
+   "c_hecke": true,
+   "c_braid": false,
+   "b": null,
+   "d": null,
+   "f": "-P",
+   "braid_witness": "((0, 0, 3), (0, 0, 3), -2*q**3*(q - 1)**2*(q + 1)**2/(q**2 + 1)**3)"
+  },
+  "K4[p=q; X=-Rf^-1, Y=-Rf^-1]": {
+   "c_hecke": true,
+   "c_braid": true,
+   "b": true,
+   "d": false,
+   "f": "neither",
+   "braid_witness": null
+  }
+ },
+ "K4_symbolic_p": {
+  "X=Rf,Y=-Rf^-1": {
+   "groebner_basis": [
+    "(p - 1)**2*(p + 1)**2",
+    "(q - 1)**2*(q + 1)**2"
+   ],
+   "n_distinct": 164
+  },
+  "X=-Rf^-1,Y=Rf": {
+   "groebner_basis": [
+    "(p - 1)**2*(p + 1)**2",
+    "(q - 1)**2*(q + 1)**2"
+   ],
+   "n_distinct": 164
+  }
+ }
+}
