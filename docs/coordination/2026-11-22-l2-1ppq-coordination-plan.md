@@ -232,3 +232,9 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
 - **2026-11-23 00:32Z, W7: draft PR #9163 opened** (issue #9162, bean qou-x09k), carrying `BridgeAStokesNBody.lean`.
   - Named assumptions still open: `StokesToBraiding`, `ColourTubeBraided` (qou-et5f), P1–P3 for n ≥ 4, and Deligne full faithfulness.
   - The substrate HeckeMonodromy instance stays with W8.
+- **2026-11-23 00:40Z, W8 draft PR #9166:**
+  - **Hecke models:** proved to be one algebra (plan obligation 4 closed, pending merge).
+  - **Positivity:** 0 ≤ tr_M(X·X†) at z_D for q > 1, with the instance proved. The form is degenerate, since rows ≥ 3 have weight 0.
+  - **TraceTwist:** now requires † to be anti-multiplicative.
+  - **Legacy axioms:** the eight owner-approved axioms are deleted, including the false `proton_mass_from_substrate_axiom`, which is replaced by proved bounds.
+  - **Next:** the HeckeMonodromy instance on the Laurent family. This is unblocked by W7's 2b13465d3, and W8 has been told.
