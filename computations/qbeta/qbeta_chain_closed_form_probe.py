@@ -133,8 +133,20 @@ R_NUM = (_q**22 + _q**20 + 2*_q**18 + 2*_q**16 + 3*_q**14 + 2*_q**12
          + _q**10 - _q**8 - _q**4 - _q**2 - 1)
 R_DEN = 4*_q**6*(_q**6 + 3*_q**4 + 3*_q**2 + 1)
 
-T_P = mp.mpf("1.1457596924573008697")
-T_N = mp.mpf("0.98774368811580957163")
+def _load_grouped_nucleon_traces() -> tuple[mp.mpf, mp.mpf]:
+    """Read grouped-frame H_3 proton and neutron Markov traces from
+    `cross-check-trM-wenzl-lr-1ppb.witness.json` (hoefsmit_vs_markov_peel)."""
+    w = json.loads((ROOT / "computations" / "cross-check-trM-wenzl-lr-1ppb.witness.json").read_text())
+    by_atom = {
+        r["atom"]: r["value_a"]
+        for r in w["rows"]
+        if r.get("pair") == "hoefsmit_vs_markov_peel"
+    }
+    with mp.workdps(DPS):
+        return mp.mpf(by_atom["proton"]), mp.mpf(by_atom["neutron"])
+
+
+T_P, T_N = _load_grouped_nucleon_traces()
 # measured on pure-proton chains, n = 3, 6, 9
 # A = 1 and A = 2 are what r(q) was DERIVED from; A = 3 and A = 4 are
 # out-of-sample predictions. A = 4 cost 1958.9 s (33 min) by the matrix route.

@@ -1,4 +1,6 @@
 {
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact polynomial arithmetic in Q[h, z] with h and the Markov parameter z left free; q0 is never read",
  "description": "a3_bonds_generic_z_probe.py: Rule B at A = 3 with the Markov parameter z left FREE\n(exploratory; follows bond_generic_z_probe, not preregistered).\n\nPrediction, written before this probe was run, from the A = 2 identities\n(prop:light-nuclei-a2-bond-tail): bonds add to leading order in h, a bond into a proton\ncontributing (1 - z^2)/2 at order h^4 and a bond into a neutron (1 - z^2)/z at order h^5. So\n\n    ratio - 1 = n_into_p (1 - z^2)/2 h^4 + O(h^5)   if n_into_p > 0,\n              = n_bonds  (1 - z^2)/z h^5 + O(h^6)   otherwise.\n\nAt z = 1/2 this is Rule B of bond_leading_order_probe (3/8 and 3/2). Here it is tested as a\npolynomial identity in z, on every A = 3 order and four bond sets, over and under transport.\n\nExact: letter coefficients in Q[h], basis traces in Z[h, z] (hecke_flint.trT), so the trace\nis a polynomial in Q[h, z]. Block 0 factors out (towerTr_disjoint), so the tail suffices.",
  "engine": "python-flint exact Q[h, z]",
  "exploratory": true,

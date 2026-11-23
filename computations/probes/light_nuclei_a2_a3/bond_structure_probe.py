@@ -142,5 +142,7 @@ assert loc_ok == loc_n
 print("(d)", out["d_single_bond_equals_A2"], out["d_product_rule_deviation"], flush=True)
 
 with open(os.path.join(HERE, "bond-structure.witness.json"), "w") as fh:
-    json.dump({"description": __doc__.strip(), "engine": "python-flint exact Q[h, z]",
+    json.dump({"q0Anchor": "independent",
+               "q0AnchorReason": "exact polynomial arithmetic in Q[h, z] with h and the Markov parameter z left free; q0 is never read",
+               "description": __doc__.strip(), "engine": "python-flint exact Q[h, z]",
                "exploratory": True, **out}, fh, indent=1)

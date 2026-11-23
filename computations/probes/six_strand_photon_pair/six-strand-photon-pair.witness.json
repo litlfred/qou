@@ -1,8 +1,8 @@
 {
   "engine": "fractions+sympy+mpmath",
-  "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-22T17:37:04.938646+00:00",
-  "commitSha": "e20bd5243d200b9e2a954e8b16b282baf2a46190",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T16:13:22.201708+00:00",
+  "commitSha": "db9fa991e53997566f30fcd71693103fd4a7c842",
   "assertions": [
     {
       "name": "P1_parity",
@@ -118,11 +118,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 102,
   "computation": "six-strand-photon-pair",
   "scriptFile": "six_strand_pair_probe.py",
-  "scriptHash": "62d9fec0b447",
-  "scriptCommitSha": "a36f3a978118e9a0b20ff2ce79be26408702ea50",
+  "scriptHash": "95e1c5b2da0a",
+  "scriptCommitSha": "feb94867ebdee76d04c2cd7ba57622c863445168",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -130,11 +130,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "cvxpy": "absent"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -142,6 +145,9 @@
     ],
     "reproduce": "python3 -u computations/probes/six_strand_photon_pair/six_strand_pair_probe.py"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+  "q0AnchorReason": "Parts 1-2 are exact over Q(q) and at rational q = 2, 3, 11/10; Part 3 evaluates the comparison trace |tr_D| * E0 at the proton pin q_at(70)",
   "description": "Gamma-gamma lepton pair e- + nu-bar + loop on six strands with the sliding photon (owner card 2026-11-22): which vertex words close to it, and how many photons each needs.",
   "photon": "gamma_i(a,b,c) = 1 + a s_i + b s_{i+1} + c s_i s_{i+1}^-1, i = 0..3",
   "matches_smallest": [

@@ -428,6 +428,10 @@ def main() -> int:
         wb.add_assertion(nm, computed="PASS" if o else "FAIL", expected="PASS",
                          tolerance="exact", source=det)
     wb.save({
+        "q0Anchor": "proton",
+        "q0Value": str(q0),
+        "q0AnchorReason": "Parts 1-2 are exact over Q(q) and at rational q = 2, 3, 11/10; "
+                          "Part 3 evaluates the comparison trace |tr_D| * E0 at the proton pin q_at(70)",
         "description": "Gamma-gamma lepton pair e- + nu-bar + loop on six strands with the "
                        "sliding photon (owner card 2026-11-22): which vertex words close to it, "
                        "and how many photons each needs.",

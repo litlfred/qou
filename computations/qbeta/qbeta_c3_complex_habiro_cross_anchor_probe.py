@@ -94,8 +94,9 @@ _Q_MUON_VALIDATION   = mp.mpf("1.10997859555")
 # production pipeline (falsify commit 569bedda1), included only as
 # comparison targets for the candidate complex-Habiro forms tested below.
 # Not a substrate input.
+from qbeta.qbeta_utils import c3_extracted_at_q  # noqa: E402
 _C3_PROTON_EMP_VALIDATION = mp.mpf("-2.0693")
-_C3_MUON_EMP_VALIDATION   = mp.mpf("-2.02021628175615")
+_C3_MUON_EMP_VALIDATION   = c3_extracted_at_q("1.10997859555")
 
 
 def candidate_A(q, q_pole):

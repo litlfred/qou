@@ -117,8 +117,20 @@ Z_MARKOV = Q0**3 / (Q0**2 + 1)                     # convention D
 # parameters"). Whether these should move to the canonical values, or the atom
 # witnesses should be read in the grouped frame instead, is a call for whoever
 # owns that derivation. Flagged rather than changed.
-T_P = mp.mpf("1.1457596924573008697")
-T_N = mp.mpf("0.98774368811580957163")
+def _load_grouped_nucleon_traces() -> tuple[mp.mpf, mp.mpf]:
+    """Read grouped-frame H_3 proton and neutron Markov traces from
+    `cross-check-trM-wenzl-lr-1ppb.witness.json` (hoefsmit_vs_markov_peel)."""
+    w = json.loads((ROOT / "computations" / "cross-check-trM-wenzl-lr-1ppb.witness.json").read_text())
+    by_atom = {
+        r["atom"]: r["value_a"]
+        for r in w["rows"]
+        if r.get("pair") == "hoefsmit_vs_markov_peel"
+    }
+    with mp.workdps(DPS):
+        return mp.mpf(by_atom["proton"]), mp.mpf(by_atom["neutron"])
+
+
+T_P, T_N = _load_grouped_nucleon_traces()
 R_HOMOG = mp.mpf("0.7019932570132013577923154")    # derived symbolically earlier
 
 PURE_P = {2: "0.804315578262543954", 3: "0.56462411245097933",

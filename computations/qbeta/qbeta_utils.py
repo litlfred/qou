@@ -524,6 +524,53 @@ def c3_proton_extracted(dps: int | None = None) -> mpf:
         return +c3
 
 
+def _qbeta_ame2020_and_me(d: int) -> tuple[mpf, mpf]:
+    """Load the AME-2020 Q_beta string from `cal-3-q-beta.witness.json` (the
+    dataset `qbeta-ck-cache.witness.json`'s `c_3 = -2.0693425771...` was
+    extracted against) and `M_E_MEV` at working precision `d`."""
+    import json
+    import sys
+    from pathlib import Path
+
+    _comp = Path(__file__).resolve().parents[1]
+    if str(_comp) not in sys.path:
+        sys.path.insert(0, str(_comp))
+    import _path_bridge  # noqa: F401
+    from codata_constants import M_E_MEV
+
+    cal3 = json.loads((_comp / "cal-3-q-beta.witness.json").read_text())
+    qb_str = cal3["data"]["Q_beta_n_MeV_ame2020"]
+    return mpf(qb_str), mpf(str(M_E_MEV))
+
+
+def c3_muon_extracted(dps: int | None = None) -> mpf:
+    """Recompute empirical `c_3` at the CODATA-2022 muon pin `q_muon_at()` in
+    the same convention-C / AME-2020 `Q_beta` extraction frame as the
+    `qbeta-ck-cache.witness.json` proton `c_3` row (bean `qou-kt8o`, #8895)."""
+    from mpmath import mp
+    from q_parameter import q_muon_at
+
+    d = mp.dps if dps is None else dps
+    with mp.workdps(d + 15):
+        qb, me = _qbeta_ame2020_and_me(d + 15)
+        c3 = c3_target_at(q_muon_at(d + 15), qb, me, convention="C")
+    with mp.workdps(d):
+        return +c3
+
+
+def c3_extracted_at_q(q_str: str, dps: int | None = None) -> mpf:
+    """Recompute empirical `c_3` at an explicit decimal `q` pin string in the
+    same convention-C / AME-2020 `Q_beta` extraction frame (bean `qou-kt8o`)."""
+    from mpmath import mp
+
+    d = mp.dps if dps is None else dps
+    with mp.workdps(d + 15):
+        qb, me = _qbeta_ame2020_and_me(d + 15)
+        c3 = c3_target_at(mpf(q_str), qb, me, convention="C")
+    with mp.workdps(d):
+        return +c3
+
+
 # ── Route 1 Two-Term Connected Borromean V³ QED & Ladder Helpers ──
 # Canonical source: `QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean` (§6–§9),
 # theorems `trace_QAdjp_borromeanV3`, `trace_QAdjn_borromeanV3_connected`,

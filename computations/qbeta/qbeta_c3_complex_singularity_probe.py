@@ -62,10 +62,11 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 # Published anchor data (falsification doc, PR-merged 2026-06-04).
+from qbeta.qbeta_utils import c3_extracted_at_q  # noqa: E402
 Q_PROTON = mp.mpf("1.10997858275138080759166909561")
 Q_MUON_FALSIF = mp.mpf("1.10997859555")     # the falsification-doc muon anchor
 C3_PROTON = mp.mpf("-2.0693")
-C3_MUON = mp.mpf("-2.02021628175615")
+C3_MUON = c3_extracted_at_q("1.10997859555")
 
 
 def main() -> int:

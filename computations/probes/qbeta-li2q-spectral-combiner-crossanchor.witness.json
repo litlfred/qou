@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-15T17:05:04.252266+00:00",
-  "commitSha": "5d77048be19c17d5c01d7912c401a07df057e66d",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T15:27:04.083701+00:00",
+  "commitSha": "db9fa991e53997566f30fcd71693103fd4a7c842",
   "assertions": [
     {
       "name": "spectral_measure_normalised_at_both_anchors",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 61,
+  "durationMs": 135,
   "computation": "qbeta-li2q-spectral-combiner-crossanchor",
   "scriptFile": "qbeta_li2q_spectral_combiner_crossanchor_probe.py",
-  "scriptHash": "ae01be88d136",
-  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
+  "scriptHash": "af4acde1fbea",
+  "scriptCommitSha": "db9fa991e53997566f30fcd71693103fd4a7c842",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,12 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "cvxpy": "absent"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -93,15 +95,15 @@
         "(1,1,1)": "0.3204482618513663962588332577849084040502813396694373333291912326593379"
       },
       "c3_candidate": "-1.797484591078785698031075940207843222851412142153080089881687319541802",
-      "c3_empirical": "-2.01986031187401",
-      "err_pct": 11.009460381391717
+      "c3_empirical": "-2.019860311874005463493219955876460297473775918340773730564233437721816",
+      "err_pct": 11.009460381391516
     },
     "cross_anchor_analysis": {
       "candidate_swing_abs": "-0.0000000001400630013043713624264169782409248307106771449070315760788704464032485",
       "candidate_swing_pct": -7.792167008752861e-09,
-      "empirical_swing_abs": "-0.04943968812598999999999999999999999999999999999999999999999999999999999",
-      "empirical_swing_pct": -2.3891986723041607,
-      "swing_ratio_candidate_to_empirical": 3.2614144227855436e-09,
+      "empirical_swing_abs": "-0.04943968812599453650678004412353970252622408165922626943576656227818363",
+      "empirical_swing_pct": -2.38919867230438,
+      "swing_ratio_candidate_to_empirical": 3.261414422785244e-09,
       "interpretation_pre_stated": "If swing_ratio << 1: candidate q-independent ⟹ structural refutation strong (13% mismatch is real). If swing_ratio ≈ 1: anchor-precision-limited (extraction noise). If swing_ratio >> 1: candidate has wrong q-dependence direction.",
       "verdict": "STRUCTURAL REFUTATION CONFIRMED — candidate is essentially q-independent (swing 7.79e-09% << empirical -2.3892%). The 13% miss at q_proton reflects a TRUE structural mismatch, not extraction noise. Refutation stands strong."
     },

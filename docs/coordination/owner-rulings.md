@@ -66,9 +66,6 @@ carrier), then try to prove and derive it.
 
 | date | instruction |
 |---|---|
-| 2026-11-22 | **Long runs (full suites, builds, producer re-runs over 10 min) go in the cloud now.** Owner card choice "In the cloud now" on "Where should long runs in this project go?" (project thread "Fix red precision gates on main"). Re-ask after 30 days (2026-12-22). |
-| 2026-11-22 | **Clearing unlabelled q0 witnesses: re-run, never hand-label; repair broken producers rather than retire them.** Owner card choice "As recommended, but fix group 3": long re-runs go ahead; re-runs whose numbers moved are committed with failing checks left visible; producers broken by upstream changes are repaired and re-run; witnesses no producer writes (hand-transcribed) are retired to `computations/_deprecated/`. Issue #9104, PR #9105. |
-| 2026-11-22 | **A witness computed at a retired pin whose producer cannot be re-run is retired, not re-pinned by hand.** Owner card choice "Retire it as a deprecated record" (project thread "Fix red precision gates on main"): `hadron-knot-table.witness.json` moved byte-for-byte to `computations/_deprecated/`; its block keeps status failed and points at the retired path. Issue #9104, PR #9105. |
 | 2026-11-20 | **No phone / push notifications.** Leave push off when creating scheduled tasks or sessions. |
 | 2026-11-20 | **Propagate every owner correction or ruling** to all sibling agents/sessions and to this ledger (and `AGENTS.md` where it is a standing rule), so none repeat the mistake. |
 | 2026-11-20 | **Rulings are conjectures until derived**: formalize first (Lean conjecture), then attempt proof and derivation. |

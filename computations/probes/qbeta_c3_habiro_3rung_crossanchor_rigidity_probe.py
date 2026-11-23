@@ -70,8 +70,9 @@ except ImportError:
 # FIRST: at import time mp.dps is still mpmath's default 15 (~binary64),
 # and a literal rounded there cannot be recovered by raising dps later.
 set_compute_dps()
+from qbeta.qbeta_utils import c3_muon_extracted  # noqa: E402
 EMPIRICAL_C3_PROTON = mpf("-2.0693")
-EMPIRICAL_C3_MUON = mpf("-2.01986031187401")
+EMPIRICAL_C3_MUON = c3_muon_extracted()
 
 # "Tracks" criteria — a genuine fibre element must (a) swing by a comparable
 # magnitude to empirical c_3 (swing ratio within ~2× of 1.0) AND (b) land on

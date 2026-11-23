@@ -116,5 +116,7 @@ if __name__ == "__main__":
     checks = {"rule_B_generic_z_A4": f"{ok}/{total}"}
     print(checks)
     with open(os.path.join(HERE, "a4-bonds-generic-z.witness.json"), "w") as fh:
-        json.dump({"description": __doc__.strip(), "engine": "python-flint exact Q[h, z]",
+        json.dump({"q0Anchor": "independent",
+                   "q0AnchorReason": "exact polynomial arithmetic in Q[h, z] with h and the Markov parameter z left free; q0 is never read",
+                   "description": __doc__.strip(), "engine": "python-flint exact Q[h, z]",
                    "exploratory": True, "checks": checks, "rows": rows}, fh, indent=1)

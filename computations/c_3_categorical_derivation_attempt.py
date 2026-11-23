@@ -367,8 +367,9 @@ def main() -> int:
     c3_mp_emp_mult = mpf(C3_MP_EMPIRICAL_MULT_STR)
     # additive extraction (smaller magnitude):
     c3_mp_emp_add = mpf(C3_MP_EMPIRICAL_ADD_STR)
-    # muon-pin: -2.0097 from the truncation-order audit Part D
-    c3_muon_emp = mpf("-2.02020023502")
+    # muon-pin: recomputed live at Q0_MUON_PIN_STR via qbeta_utils (bean qou-kt8o)
+    from qbeta.qbeta_utils import c3_extracted_at_q
+    c3_muon_emp = c3_extracted_at_q(Q0_MUON_PIN_STR)
 
     print("  REFERENCE empirical c_3 values:")
     print(f"    muon-pin q₀ = {float(q0_muon):.16f}: c_3_emp = {float(c3_muon_emp):+.6f}")
