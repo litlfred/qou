@@ -1,8 +1,8 @@
 {
   "engine": "mpmath (80 dps)",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-23T21:03:41.228678+00:00",
-  "commitSha": "6dc2293c9a65943b956870d053974b1c11c66346",
+  "computedAt": "2026-11-23T21:10:44.806050+00:00",
+  "commitSha": "9987cd1b81b2104791674b3ae91bb413b9235c37",
   "assertions": [
     {
       "name": "q0_at_80_matches_Q_MP",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 451,
+  "durationMs": 436,
   "computation": "w6-inhomogeneous-lepton-resolvent",
   "scriptFile": "w6_inhomogeneous_lepton_resolvent_probe.py",
   "scriptHash": "a3d2436e22ac",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "9987cd1b81b2104791674b3ae91bb413b9235c37",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
