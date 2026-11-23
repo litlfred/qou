@@ -243,3 +243,4 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
   - Their ratio is R = τ_e/ℏ_q² = 70.4037232641 at the proton pin (70.4037110138 at the muon pin). R is neither c_q² nor E₀/m_e.
   - **Cross-cutting hazard:** any workstream that converts a trace-pipeline weight to MeV with the mass-formula unit, or the other way round, is off by about 70×. This touches W1 (Q_β, E_C), W4 (binding) and W5.
   - Which unit is canonical is open. CAL-1/2/3 cannot decide it, so it is an owner question.
+- **2026-11-23 00:50Z, W1 unit check (PR #9161):** §35–§37 contain no MeV figures. Every value is a dimensionless trace ratio, and κ = 2 log t is dimensionless too. §36 now carries a units note naming τ_e, ℏ_q² and R ≈ 70.40.
