@@ -3,8 +3,9 @@
 title: 'PR #9180: CFT/holography review — Frobenius tower, Jones index, charge Cartan; next L_cal route 1'
 status: todo
 type: task
+priority: normal
 created_at: 2026-11-23T21:14:34Z
-updated_at: 2026-11-23T21:14:34Z
+updated_at: 2026-11-23T21:15:08Z
 ---
 
 Thread: CFT/holography review (owner ofri, 2026-11-23). Branch claude/project-thread-p6bqaz, PR #9180, issue #9179. Head ae490aa67e (main merged). NOT merged: owner's explicit go required.
@@ -27,3 +28,6 @@ Open / next:
 4. Lean: n-strand K^n commutes with every R_i; test Y = writhe for the p and n words; existence of the adjoint E.
 5. Kadison and Jones 1983 are cited without bib keys; add them.
 6. FrobeniusHopfData conflates the Frobenius Delta with the Hopf Delta and assumes S^2 = id. Flagged, not changed.
+
+
+2026-11-23 21:15Z: since ae490aa67e, main took #9184 (gravity-spacetime.ts, where this PR also adds a block), #9199 and #9187 (folio/schema/references.ts, references.bib, QOU.lean). Expect conflicts in gravity-spacetime.ts and references.ts ORDER. Merge origin/main (do not force-push), keep both sides' blocks and refs, then re-run lean-library-sweep.
