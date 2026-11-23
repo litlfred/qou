@@ -70,7 +70,7 @@ variable {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
 
 /-- `H.carrier` is nonempty: it carries a `Ring` (the `ring` field), hence
     has `0`.  Registered so `opaque`/placeholder constants valued in
-    `H.carrier` (`jucysMurphy`, `centralIdempotent`) elaborate (an `opaque`
+    `H.carrier` (`jucysMurphy`) elaborate (an `opaque`
     constant of type `T` requires `Nonempty T`). -/
 instance instNonemptyCarrier (H : IwahoriHeckeAlgebra n R q h_unit) :
     Nonempty H.carrier :=
@@ -259,7 +259,10 @@ def wedderburn_decomposition_generic
 
 /-! ## Central primitive idempotents and JM elements -/
 
-/-! ### 🛑 `jucysMurphy` and `centralIdempotent` must stay `opaque`
+/-! ### 🛑 `jucysMurphy` must stay `opaque`
+
+(History: `centralIdempotent` had the same defect and was later deleted,
+2026-11-23; see the note after `partitionTranspose`.)
 
 Both were `noncomputable def … := Classical.ofNonempty` with their index
 argument named `_k` / `_lam`, i.e. **discarded**.  A `def` that discards its
@@ -294,58 +297,6 @@ Bean `qou-i6cn`. -/
 noncomputable opaque jucysMurphy
     (H : IwahoriHeckeAlgebra n R q h_unit) (k : Fin n) : H.carrier
 
-/-- The **central primitive idempotent** `e_λ` for partition
-    `λ ⊢ n`. Constructed via Lagrange interpolation in JM elements
-    per `prop:explicit-central-idempotent`.  Opaque, not a placeholder
-    `def` — see the note above. -/
-noncomputable opaque centralIdempotent
-    (H : IwahoriHeckeAlgebra n R q h_unit) (lam : List ℕ) : H.carrier
-
-/-- **External axiom (Murphy 1981; Dipper–James 1986):**
-
-    Central idempotents are central via the Lagrange-interpolation
-    construction in commuting JM elements.  Recorded as an axiom
-    (§3b-cond pattern) since concrete proof requires constructing
-    JM elements + interpolation polynomial, both of which depend on
-    a full IwahoriHeckeAlgebra implementation. -/
--- Ref: [murphy1981] Murphy, "A new construction of Young's seminormal representation of the symmetric groups," J. Algebra 69 (1981)
--- Ref: [dipper-james1986] Hecke-algebra extension.
-axiom centralIdempotent_central_axiom :
-    ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
-      (H : IwahoriHeckeAlgebra n R q h_unit) (lam : List ℕ)
-      (x : H.carrier),
-        letI : Ring H.carrier := H.ring
-        centralIdempotent H lam * x = x * centralIdempotent H lam
-
-/-- Central idempotents are central: `e_λ · x = x · e_λ` for all
-    `x ∈ H_n(q)`. -/
-theorem central_idempotent_central
-    (H : IwahoriHeckeAlgebra n R q h_unit) (lam : List ℕ)
-    (x : H.carrier) :
-    letI : Ring H.carrier := H.ring
-    centralIdempotent H lam * x = x * centralIdempotent H lam :=
-  centralIdempotent_central_axiom H lam x
-
-/-- **External axiom**: orthogonality of central idempotents follows
-    from Lagrange interpolation in commuting variables (the JM
-    elements pairwise commute by [murphy1981]). -/
--- Ref: [murphy1981] Murphy, "A new construction of Young's seminormal representation of the symmetric groups," J. Algebra 69 (1981)
-axiom centralIdempotent_orthogonal_axiom :
-    ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
-      (H : IwahoriHeckeAlgebra n R q h_unit) (lam mu : List ℕ),
-        letI : Ring H.carrier := H.ring
-        centralIdempotent H lam * centralIdempotent H mu =
-          if lam = mu then centralIdempotent H lam else 0
-
-/-- Central idempotents are orthogonal idempotents:
-    `e_λ · e_μ = δ_{λμ} · e_λ`. -/
-theorem central_idempotent_orthogonal
-    (H : IwahoriHeckeAlgebra n R q h_unit) (lam mu : List ℕ) :
-    letI : Ring H.carrier := H.ring
-    centralIdempotent H lam * centralIdempotent H mu =
-      if lam = mu then centralIdempotent H lam else 0 :=
-  centralIdempotent_orthogonal_axiom H lam mu
-
 /-- Transpose of a partition (Young-diagram conjugate).  For each
     column index `j` (0-indexed up to the row length of the first
     row), the transposed partition's `j`-th entry is the number of
@@ -365,29 +316,15 @@ def partitionTranspose : List ℕ → List ℕ
     (List.range h).map fun j =>
       ((h :: t).filter (· > j)).length
 
-/-- **External axiom** (manuscript §prop:explicit-central-idempotent
-    "Cross-checks" §3-4): the bar involution `q ↦ q⁻¹` acts on
-    central idempotents by partition transpose. -/
--- Ref: [murphy1981] Murphy, "A new construction of Young's seminormal representation of the symmetric groups," J. Algebra 69 (1981)
-axiom bar_centralIdempotent_transpose_axiom :
-    ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
-      (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeBar H]
-      (lam : List ℕ),
-        letI : Ring H.carrier := H.ring
-        letI : StarRing H.carrier := H.star_ring
-        star (centralIdempotent H lam) =
-          centralIdempotent H (partitionTranspose lam)
+/-! ### Central idempotents: deleted placeholder (2026-11-23)
 
-/-- Bar involution acts on central idempotents by partition
-    transpose: `star (e_λ) = e_{λ'}`. -/
-theorem bar_central_idempotent_transpose
-    (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeBar H]
-    (lam : List ℕ) :
-    letI : Ring H.carrier := H.ring
-    letI : StarRing H.carrier := H.star_ring
-    star (centralIdempotent H lam) =
-      centralIdempotent H (partitionTranspose lam) :=
-  bar_centralIdempotent_transpose_axiom H lam
+`opaque centralIdempotent` and its three axioms (centrality, orthogonality,
+`star e_λ = e_{λ'}`) were deleted on owner approval, 2026-11-23, with their
+three wrapper theorems. Nothing consumed them, and the axioms did not pin the
+opaque down: `e_λ = 0` for every `λ` satisfies all three. For central
+idempotents with the relations proved on the real Iwahori–Hecke algebra, see
+`QOU.BraidKnot.ExplicitCentralIdempotentGeneral` (`centralIdem_idem`,
+`centralIdem_orth`, `centralIdem_central`, `sum_centralIdem`). -/
 
 /-! ## Failure locus characterisation -/
 
