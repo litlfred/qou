@@ -317,4 +317,9 @@
 # KNOWN BREAK carried forward: .github/workflows/publish.yml is still absent at this
 # sha, so build.yml's `uses:` below names a file that does not exist (see 82b389982).
 #
+# FIXED 2026-11-23 (owner: "fix render workflow"): build.yml no longer calls the
+# deleted publish.yml. It calls folio-staging.yml at this same sha, with
+# build_command `bash scripts/build-site.sh`; folio-pin-coupling-check.sh reads
+# either filename. The TeX PDF build publish.yml carried has no replacement yet.
+#
 42bd8d605d8c4416656611be69def69e6e855367
