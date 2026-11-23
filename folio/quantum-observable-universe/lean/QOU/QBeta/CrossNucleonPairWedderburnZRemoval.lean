@@ -884,6 +884,15 @@ end ZChannelRemovalAlgebraic
 
 section YukawaZDecouplingArchimedean
 
+/-- Archimedean `ℝ` specialisation of `exch_residuals_exact` (prescribed `§7c` `_real` bridge). -/
+theorem exch_residuals_exact_real (g2 gp2 lam : ℝ) (hs : g2 + gp2 ≠ 0) :
+    let e2 := g2 * gp2 / (g2 + gp2)
+    exch g2 gp2 lam (-1 / 2) (-1 / 2) = lam * (g2 + gp2) / 4 ∧
+    exch g2 gp2 lam (1 / 2) (-1 / 2) = -lam * (g2 - gp2) / 4 ∧
+    exch g2 gp2 lam (-1 / 2) (1 / 2) = -lam * (g2 - gp2) / 4 ∧
+    exch g2 gp2 lam (1 / 2) (1 / 2) - e2 = lam * (g2 - gp2) ^ 2 / (4 * (g2 + gp2)) :=
+  exch_residuals_exact (K := ℝ) g2 gp2 lam hs (by norm_num)
+
 /-- Massive-`Z` Yukawa suppression factor `λ(x) = exp(-x)` at dimensionless Compton separation
 `x = M_Z r / (ℏ c)`. -/
 noncomputable def yukawaZ (x : ℝ) : ℝ := Real.exp (-x)
