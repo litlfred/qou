@@ -2085,6 +2085,15 @@ const ORDER: Array<FileSlot | Reference> = [
   // library/arxiv-0910.0096v1/0910.0096v1.pdf. Cited for the scope of [bokut2001].
   { id: "chenliu2009" },
 
+  // ── Kang & Lee — GS bases for representation theory ──────────
+  // Added 2026-11-23. Framework (GS pairs) used by [kangleeleeoh2002].
+  { id: "kanglee2000" },
+
+  // ── Kang, Lee, Lee & Oh — Hecke algebras and GS bases ─────────
+  // Added 2026-11-23 from the owner's upload (GS-Hecke.pdf). Prop. 4.3 is the
+  // q-deformed Hecke GS basis the folio credits to [bokut2001] at q = 1.
+  { id: "kangleeleeoh2002" },
+
   // ── Bokut & Chen — GS bases and PBW theorems (survey) ─────────
   // Added 2026-08-09 from relevance triage (verdict: supporting);
   // library/arxiv-1502.06472v1/1502.06472v1.pdf. Distinct from bokut2005 and bokutchen2014

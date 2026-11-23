@@ -4,7 +4,7 @@
 % Key convention:  <firstauthorlastname><year>  (all lower-case)
 % Source of truth: references/ or schema/references.ts (CSL-JSON)
 % Generator:       pipeline/export-bibtex.ts
-% Generated:       2026-11-22T20:48:16.305Z
+% Generated:       2026-11-23T05:55:04.190Z
 @article{garoufalidis2004,
   author     = {Garoufalidis, Stavros},
   title      = {{On the characteristic and deformation varieties of a knot}},
@@ -6187,7 +6187,7 @@
   year    = {2001},
   volume  = {29},
   pages   = {4305--4319},
-  note    = {NOT READ — metadata only, reconciled from three agreeing bibliographies (see comment above). TWO SCOPE CAVEATS, both established from other documents rather than from this one. (1) COXETER GROUPS, NOT H_n(q): every document that cites it describes it as constructing GS bases for Coxeter groups W = sgp⟨Σ | (ss′)^m = 1⟩ at q = 1; none mentions the Iwahori–Hecke deformation. The q-deformed type-A statement appears to be Kang–Lee–Lee–Oh, J. Algebra 252 (2002) 258-292 §6 (not yet held; bean qou-qspu). (2) NOT GENERAL COXETER: [chenliu2009] Example 3.2 refutes the Bokut–Shiao conjecture that a GS basis of an arbitrary Coxeter group follows from S = {(1),(2),(3′)} with commuting relations; the positive results are for finite Coxeter groups, which does cover type A_{n-1}. It is cited in this folio for the COMPLETION family $\sigma_i\sigma_{i-1}\cdots\sigma_j\sigma_i \to \sigma_{i-1}\sigma_i\sigma_{i-1}\cdots\sigma_j$ that HeckeGS.lean §4e names as missing from `heckeRewritingSystem`; the axiom `hecke_is_gs_basis` that formerly cited 'Bokut \& Shiao 2001, Thm 3.5' was deleted as FALSE for the uncompleted system (NotAGSBasis.hecke_not_gs_basis_four).},
+  note    = {NOT READ — metadata only, reconciled from three agreeing bibliographies (see comment above). TWO SCOPE CAVEATS, both established from other documents rather than from this one. (1) COXETER GROUPS, NOT H_n(q): every document that cites it describes it as constructing GS bases for Coxeter groups W = sgp⟨Σ | (ss′)^m = 1⟩ at q = 1; none mentions the Iwahori–Hecke deformation. The q-deformed type-A statement is [kangleeleeoh2002] §4, Prop. 4.3 (pp. 275–276), held and read 2026-11-23. (2) NOT GENERAL COXETER: [chenliu2009] Example 3.2 refutes the Bokut–Shiao conjecture that a GS basis of an arbitrary Coxeter group follows from S = {(1),(2),(3′)} with commuting relations; the positive results are for finite Coxeter groups, which does cover type A_{n-1}. It is cited in this folio for the COMPLETION family $\sigma_i\sigma_{i-1}\cdots\sigma_j\sigma_i \to \sigma_{i-1}\sigma_i\sigma_{i-1}\cdots\sigma_j$ that HeckeGS.lean §4e names as missing from `heckeRewritingSystem`; the axiom `hecke_is_gs_basis` that formerly cited 'Bokut \& Shiao 2001, Thm 3.5' was deleted as FALSE for the uncompleted system (NotAGSBasis.hecke_not_gs_basis_four).},
 }
 
 @article{chenliu2009,
@@ -6198,6 +6198,30 @@
   url        = {https://arxiv.org/abs/0910.0096},
   note       = {arXiv:0910.0096v1 [math.GR], 21 pp. No journal venue or DOI is printed on the preprint and none was sought; the title's 'I' promises a sequel that was not located. Read 2026-08-09. Example 3.2 (pp. 4-5) refutes by explicit counterexample — Σ = {s₁<s₂<s₃<s₄}, m₁₂ = m₂₃ = m₂₄ = ∞, m₁₃ = 3, m₁₄ = 2, m₃₄ = 5 — the Bokut–Shiao conjecture that a GS basis of an ARBITRARY Coxeter group is obtainable from S = {(1),(2),(3′)} using only the commuting relations, and exhibits the corrected basis. Its introduction restricts the known positive results to FINITE Coxeter groups, which is why the folio's type A_{n-1} case is unaffected. Thm 3.19 with Example 3.20 give three sufficient families, of which (i) all m_ij ≥ 3 covers the rank-2 case m₁₂ = 3 (W = S₃) but not n ≥ 4. Like [bokut2001] it works with the Coxeter GROUP and never mentions H_n(q).},
   annotation = {[unreviewed]},
+}
+
+@article{kanglee2000,
+  author  = {Kang, Seok-Jin and Lee, Kyu-Hwan},
+  title   = {{Gr{\"o}bner–Shirshov bases for representation theory}},
+  journal = {Journal of the Korean Mathematical Society},
+  year    = {2000},
+  volume  = {37},
+  number  = {1},
+  pages   = {55--72},
+  url     = {https://koreascience.or.kr/article/JAKO200011921111015.page},
+  note    = {Metadata verified 2026-11-23 against the KoreaScience landing page and against [kangleeleeoh2002] ref. [8] (no DOI is registered; free PDF at https://koreascience.or.kr/article/JAKO200011921111015.pdf). Develops Gr{\"o}bner–Shirshov PAIRS for representations of associative algebras; its worked example is sl_3. [kangleeleeoh2002] Lemma 1.10 quotes its main result (the composition lemma for pairs). It is NOT the source of the Hecke-algebra GS basis — cite [kangleeleeoh2002] Prop. 4.3 for that. Not to be confused with Kang \& Lee, J. Algebra 232 (2000) 1–20 (irreducible sl_{n+1}-modules), [kangleeleeoh2002] ref. [9], which is not in this bibliography. Body not read (the PDF host refuses automated fetches).},
+}
+
+@article{kangleeleeoh2002,
+  author  = {Kang, Seok-Jin and Lee, In-Sok and Lee, Kyu-Hwan and Oh, Hyekyung},
+  title   = {{Hecke algebras, Specht modules and Gr{\"o}bner–Shirshov bases}},
+  journal = {Journal of Algebra},
+  year    = {2002},
+  volume  = {252},
+  pages   = {258--292},
+  doi     = {10.1016/S0021-8693(02)00071-6},
+  url     = {https://www2.math.uconn.edu/~khlee/Papers/GS-Hecke.pdf},
+  note    = {Read 2026-11-23 (author's copy, uploaded by the owner). §4, Prop. 4.3 (pp. 275–276): a Gr{\"o}bner–Shirshov basis of the Iwahori–Hecke algebra H_n(q) of type A_{n-1}, for both deg-lex and deg-rlex orders: the quadratic relation, far commutation, and the family T_{i+1,j}T_{i+1} − T_i T_{i+1,j} (i ≥ j). This is the q-deformation of the [bokut2001] completion family; standard monomials T_{1,j_1}⋯T_{n-1,j_{n-1}}, n! of them. Their relation is T² = (q−1)T + q; the folio's convention D σ² = (Q−Q⁻¹)σ + 1 matches it under q = Q², T = Qσ (check: T² = Q²σ² = (Q²−1)T + Q²).},
 }
 
 @article{bokutchen2015pbw,
