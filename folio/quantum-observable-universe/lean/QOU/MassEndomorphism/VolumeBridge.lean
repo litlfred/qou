@@ -15,7 +15,9 @@ Per [`mass-endomorphism-conjecture.md` §"Established results"]:
 
 - **Step 1 (proved, `prop:categorical-mass-markov`).** The single-level
   categorical mass is the descended Markov trace `|tr_M(ρ(β))|`
-  (Nakayama `S² = id`).
+  (via the counit law for the Frobenius mass integrand `Ψ = id` when `∫_A = ε`,
+  `QOU.Torsion.MassTraceIdentity.density_eq_unit_of_frobeniusForm_eq_counit`,
+  restricted to the Cartan weight centralizer `[K^{⊗n}, ρ(β)] = 0`; not `S² = id`).
 - **Step 2 (proved, `conj:topological-mass-formula`).** The full brane tower
   sums to `Vol(K_β)/ℏ_q²`.
 - **Step 3 (OPEN — the Volume Conjecture).** The Jones–Markov trace

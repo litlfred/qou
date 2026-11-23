@@ -1,17 +1,29 @@
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Algebra.Bilinear
+import Mathlib.Algebra.Star.Module
 
 /-!
 # QOU.frobenius_dagger_positive_definite — the Frobenius dagger
 
 **Proposition** ([`prop:positive-definite-dagger`](../../../quantum-observable-universe/quantum-universes/positive-definite-dagger.md)).
 
-Model. `A` is an `R`-algebra with Frobenius form `ε : A → R` and an antipode
-`S` that is `R`-linear, involutive (`S² = id`), an anti-homomorphism and
-unital. A morphism `f : 𝟙 → A` is an element `f ∈ A`, and its dagger is the
-functional `f† = ε(S(f) · −)`. The form is `h(f, g) = ε(S(f) g)`, so
-`f† ∘ f = h(f, f)` by definition (`frobeniusDagger_comp_self`).
+## Two regimes: real `R`-linear involutive `S` vs. complex/quantum `*-`algebra GNS (`TN-3`)
+
+1. **Formally real `R`-linear involutive regime (`FrobeniusAntipodeData`, `q = 1` real scalars):**
+   `A` is an `R`-algebra over an ordered field `R` with Frobenius form `ε : A → R`
+   and an `R`-linear involutive anti-homomorphism `S` (`S² = id`). This model
+   cannot carry a positive-definite form over `ℂ` (`h(i a, i a) = -h(a, a) < 0`)
+   nor on `O_q(SU(2))` (`S(β) = -q⁻¹ β ≠ β^* = -q γ`, `∫ S(β)β = 0` even at `q = 1`,
+   and `S² ≠ id` for `q ≠ ±1`).
+2. **Complex & `q ≠ 1` `*-`algebra GNS regime (`StarFrobeniusPositiveData`):**
+   `A` carries a conjugate-linear `*-`involution (`[StarRing R] [StarRing A] [StarModule R A]`,
+   on Hopf `*-`algebras satisfying `(S ∘ star)² = id` even when `S² ≠ id`) and
+   GNS sesquilinear form `h_*(a, b) = ε(star a * b)`. `star_frobenius_dagger_positive_definite`
+   proves adjoint uniqueness, involutivity (`star (star x) = x`), contravariance
+   (`star (x * y) = star y * star x`), conjugate-linearity on scalars
+   (`star (algebraMap R A r) = algebraMap R A (star r)`), and strict positivity
+   over any partially ordered `*-`ring `R` (covering both `ℝ` and `ℂ` at all `q`).
 
 Proved here, sorry-free:
 * **adjoint formula** — left multiplication by `x` has adjoint left
@@ -134,5 +146,106 @@ theorem frobenius_dagger_positive_definite {R : Type*} [Field R] [LinearOrder R]
     simpa [F.S_anti, mul_assoc] using this
   · intro r
     exact ⟨fun a b => frobeniusHerm_mul_left _ a b, antipode_algebraMap r⟩
+
+/-! ## Conjugate-linear `*-`Frobenius GNS dagger (`TN-3`, valid over `ℂ` and at all `q`) -/
+
+/-- `*-`algebra Frobenius GNS data on `A` over a `*-`ring `R` (valid at all `q`,
+    including `O_q(SU(2))` where `S² ≠ id` while `(S ∘ star)² = id` and `star² = id`). -/
+class StarFrobeniusPositiveData (R : Type*) [CommRing R] [StarRing R]
+    (A : Type*) [Ring A] [StarRing A] [Algebra R A] [StarModule R A] where
+  /-- The faithful Haar / Frobenius state `∫_A : A →ₗ[R] R`. -/
+  ε : A →ₗ[R] R
+
+section StarFrobenius
+
+variable {R : Type*} [CommRing R] [StarRing R]
+  {A : Type*} [Ring A] [StarRing A] [Algebra R A] [StarModule R A]
+
+/-- The GNS sesquilinear form `h_*(a, b) = ε(a^* b)`. -/
+def starFrobeniusHerm [F : StarFrobeniusPositiveData R A] (a b : A) : R :=
+  F.ε (star a * b)
+
+/-- The `*-`Frobenius dagger functional `f† = ε(f^* · −) : A →ₗ[R] R`. -/
+def starFrobeniusDagger [F : StarFrobeniusPositiveData R A] (f : A) : A →ₗ[R] R :=
+  F.ε ∘ₗ LinearMap.mulLeft R (star f)
+
+@[simp]
+theorem starFrobeniusDagger_comp_self [F : StarFrobeniusPositiveData R A] (f : A) :
+    starFrobeniusDagger (R := R) f f = starFrobeniusHerm f f := rfl
+
+/-- **GNS adjoint formula:** `h_*(x a, b) = h_*(a, x^* b)`. -/
+theorem starFrobeniusHerm_mul_left [F : StarFrobeniusPositiveData R A] (x a b : A) :
+    starFrobeniusHerm (R := R) (x * a) b = starFrobeniusHerm a (star x * b) := by
+  simp [starFrobeniusHerm, star_mul, mul_assoc]
+
+/-- **Hermitian symmetry:** when `ε` preserves `star`, `h_*(b, a) = star (h_*(a, b))`. -/
+theorem starFrobeniusHerm_symm [F : StarFrobeniusPositiveData R A]
+    (hε : ∀ x : A, F.ε (star x) = star (F.ε x)) (a b : A) :
+    starFrobeniusHerm (R := R) b a = star (starFrobeniusHerm a b) := by
+  unfold starFrobeniusHerm
+  rw [← hε]
+  simp [star_mul, star_star]
+
+/-- **Conjugate-linearity on scalars `End(𝟙) ≅ R`:** `star (r · 1_A) = (star r) · 1_A`. -/
+theorem star_algebraMap_eq (r : R) :
+    star (algebraMap R A r) = algebraMap R A (star r) := by
+  rw [Algebra.algebraMap_eq_smul_one, star_smul, star_one, Algebra.algebraMap_eq_smul_one]
+
+theorem starFrobeniusHerm_sub_right [F : StarFrobeniusPositiveData R A] (a u v : A) :
+    starFrobeniusHerm (R := R) a (u - v) = starFrobeniusHerm a u - starFrobeniusHerm a v := by
+  simp [starFrobeniusHerm, mul_sub, map_sub]
+
+/-- `U` is a GNS adjoint of `T` for `h_*`: `h_*(T a, b) = h_*(a, U b)`. -/
+def IsStarFrobeniusAdjoint [F : StarFrobeniusPositiveData R A] (T U : A → A) : Prop :=
+  ∀ a b, starFrobeniusHerm (R := R) (T a) b = starFrobeniusHerm a (U b)
+
+/-- Strict positivity `f† ∘ f > 0` for `f ≠ 0` over any partially ordered `*-`ring `R`. -/
+theorem starFrobeniusDagger_pos {K : Type*} [CommRing K] [PartialOrder K] [StarRing K]
+    {B : Type*} [Ring B] [StarRing B] [Algebra K B] [StarModule K B]
+    [StarFrobeniusPositiveData K B]
+    (hpos : ∀ a : B, a ≠ 0 → 0 < starFrobeniusHerm (R := K) a a) (f : B) (hf : f ≠ 0) :
+    0 < starFrobeniusDagger (R := K) f f := by
+  rw [starFrobeniusDagger_comp_self]; exact hpos f hf
+
+/-- **`*-`Frobenius GNS dagger is positive-definite at all `q` (`TN-3`).**
+    Over any partially ordered commutative `*-`ring `R` (including `ℝ` and `ℂ`),
+    with `h_*(a, b) = ε(a^* b)` positive definite:
+    1. `L(x^*)` is the unique `R`-linear adjoint of `L(x)`;
+    2. `L(x) ↦ L(x^*)` is involutive (`(x^*)^* = x`, needing no `S² = id` assumption);
+    3. it is contravariant (`(x y)^* = y^* x^*`);
+    4. on scalars `End(𝟙) ≅ R` it acts as `r ↦ star r` (`r̄` over `ℂ`). -/
+theorem star_frobenius_dagger_positive_definite
+    {K : Type*} [CommRing K] [PartialOrder K] [StarRing K]
+    {B : Type*} [Ring B] [StarRing B] [Algebra K B] [StarModule K B]
+    [F : StarFrobeniusPositiveData K B]
+    (hpos : ∀ a : B, a ≠ 0 → 0 < starFrobeniusHerm (R := K) a a) :
+    (∀ x : B, IsStarFrobeniusAdjoint (R := K) (x * ·) (star x * ·) ∧
+      ∀ U : B →ₗ[K] B, IsStarFrobeniusAdjoint (R := K) (x * ·) U → ∀ b, U b = star x * b) ∧
+    (∀ x : B, IsStarFrobeniusAdjoint (R := K) (star x * ·) (x * ·)) ∧
+    (∀ x y : B, IsStarFrobeniusAdjoint (R := K) (x * y * ·) (fun b => star y * (star x * b))) ∧
+    (∀ r : K, IsStarFrobeniusAdjoint (R := K) (algebraMap K B r * ·)
+        (star (algebraMap K B r) * ·) ∧
+        star (algebraMap K B r) = algebraMap K B (star r)) := by
+  refine ⟨fun x => ⟨fun a b => starFrobeniusHerm_mul_left x a b, ?_⟩, ?_, ?_, ?_⟩
+  · intro U hU b
+    by_contra hne
+    set c := U b - star x * b with hcdef
+    have hc : c ≠ 0 := sub_ne_zero.mpr hne
+    have h1 := hU c b
+    rw [starFrobeniusHerm_mul_left] at h1
+    have h0 : starFrobeniusHerm (R := K) c c = 0 := by
+      conv_lhs => rw [hcdef]
+      rw [starFrobeniusHerm_sub_right, h1, sub_self]
+    exact lt_irrefl _ (h0 ▸ hpos c hc)
+  · intro x a b
+    have := starFrobeniusHerm_mul_left (R := K) (star x) a b
+    rwa [star_star] at this
+  · intro x y a b
+    have := starFrobeniusHerm_mul_left (R := K) (x * y) a b
+    simpa [star_mul, mul_assoc] using this
+  · intro r
+    exact ⟨fun a b => starFrobeniusHerm_mul_left _ a b, star_algebraMap_eq r⟩
+
+end StarFrobenius
 
 end QOU

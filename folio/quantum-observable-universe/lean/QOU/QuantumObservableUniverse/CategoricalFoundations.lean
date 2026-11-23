@@ -158,16 +158,29 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
   antipode_unit : unit ≫ antipode = unit
   /-- **Antipode axiom 4 — `S` preserves the counit.**  `S ≫ ε = ε`. -/
   antipode_counit : antipode ≫ counit = counit
-  /-- **Antipode axiom 5 — `S` is involutive.**  `S ≫ S = 𝟙_A`.
+  /-- **Antipode axiom 5 — `S` is involutive (unimodular / `q = 1` specialization).**
+      `S ≫ S = 𝟙_A`.
 
       On its own this pins nothing: `S = 𝟙_A` satisfies it, measured on
       `S₃` and `D₄` as well as on every abelian group tested
       (`computations/probes/frobenius_hopf_intermediate_axioms_probe.py`).
       It earns its place only alongside `antipode_anti_mul`, which `𝟙_A`
-      fails whenever `A` is non-commutative. -/
+      fails whenever `A` is non-commutative.
+
+      **Scope (`TN-1`):** `S² = id` holds at the classical unimodular point
+      (`k[G]`, `O(SU(2))` at `q = 1`), whereas on `O_q(SU(2))` at `q ≠ ±1`
+      one has `S²(β) = q⁻² β ≠ β` (`S² = Ad_K`), and on Taft `H_4` one has
+      `S²(X) = -X`. For general `q ≠ 1` pivotal / non-unimodular substrates,
+      use `TwistedPivotalFrobeniusHopfData` below. -/
   antipode_involutive : antipode ≫ antipode = 𝟙 obj
-  /-- **Antipode axiom 6 — `S` preserves the Frobenius form.**
-      `S ≫ λ = λ`, so the pairing `⟨a, b⟩ = λ(ab)` is `S`-invariant. -/
+  /-- **Antipode axiom 6 — `S` preserves the Frobenius form (unimodular specialization).**
+      `S ≫ λ = λ`, so the pairing `⟨a, b⟩ = λ(ab)` is `S`-invariant.
+
+      **Scope (`TN-1`):** holds when the Radford distinguished grouplike modulus
+      is trivial (`g = 1`, e.g. `k[G]` and compact `O_q(G)` Haar states where
+      `h_q ∘ S = h_q`), and fails on non-unimodular Hopf algebras such as `H_4`
+      (`λ(GX) = 1 ≠ 0 = λ(S(GX))`), which satisfy the modular-shifted law in
+      `TwistedPivotalFrobeniusHopfData`. -/
   antipode_frobeniusForm : antipode ≫ frobeniusForm = frobeniusForm
 
 namespace FrobeniusHopfData
@@ -274,15 +287,17 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
       `Type`.  Recorded rather than silently implied — the gap is real and
       separate from the `R`-linearity of `C` now carried above. -/
   fibreFunctor : @CategoryTheory.Functor C catInst (Type*) inferInstance
-  /-- **Symmetric Frobenius** (axiom 3).  A closed loop has one amplitude:
-      closing a worldline on the left and closing it on the right compute the
-      same endomorphism of the unit.  Equivalently, the Frobenius form `∫_A`
-      is symmetric and the Nakayama automorphism is trivial.
+  /-- **Symmetric Frobenius** (axiom 3 — untwisted `ν = id` / centralizer specialization).
+      Closing a loop on the left and closing it on the right compute the same
+      endomorphism of the unit: equivalently, the Frobenius form `∫_A` is
+      symmetric and the Nakayama automorphism is trivial (`ν = id`).
 
-      This is a genuine restriction, not a consequence of axiom 2: a Frobenius
-      algebra whose form is non-symmetric has `leftTrace ≠ rightTrace`, and
-      then "the trace of a process" — hence any mass read off a trace — would
-      depend on a drawing convention. -/
+      **Scope (`TN-2`):** holds at `q = 1` (`O(G)`) and on the Cartan weight
+      centralizer `[K^{⊗n}, -] = 0` (`QOU.IwahoriHecke.QTraceCyclic`, hence on
+      `H_n(q)` and ribbon traces in `Rep(SU_q(2))`). On full `O_q(SU(2))` at
+      `q ≠ ±1`, Woronowicz's Haar state `h_q` has non-trivial modular Nakayama
+      automorphism `ν` (`h_q(ab) = h_q(b ν(a))`, `h_q([α, δ]) = (q² - 1)/(q² + 1) ≠ 0`),
+      which is captured by `TwistedQuantumUniverse` below. -/
   frobenius_symmetric : ∀ f : frobHopf.obj ⟶ frobHopf.obj,
     frobHopf.leftTrace f = frobHopf.rightTrace f
   /-- **The ground ring is `End(𝟙_C)`.**  The block data below lands in `R`
@@ -572,5 +587,175 @@ noncomputable def QuantumUniverse.gaugeGroup {R : Type*} [CommRing R]
   -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
   letI := QU.catInst
   QU.fibreFunctor ≅ QU.fibreFunctor
+
+/-! ### Nakayama-twisted & pivotal Frobenius–Hopf generalizations (`TN-1`, `TN-2`)
+
+Away from `q = 1`, quantum coordinate rings (`O_q(SU(2))`) and finite-dimensional
+non-semisimple Hopf algebras (Taft `H_4`) have `S² = pivotalAut ≠ id`, modular
+shift `S ≫ λ = modulusShift ≫ λ`, and non-trivial Nakayama automorphism `ν`
+intertwining `leftTrace` and `rightTrace`. The structures below formalize this
+general `q ≠ 1` regime and embed the classical `FrobeniusHopfData` /
+`QuantumUniverse` via `Iso.refl`. -/
+
+/-- **Pivotal & Nakayama-twisted Frobenius–Hopf data** (`TN-1`), valid at general `q`
+    (including `O_q(SU(2))` where `S² = Ad_K ≠ id` and Taft `H_4` where `S²(X) = -X`
+    and `λ ∘ S ≠ λ`). -/
+-- Ref: [woronowicz1987-twisted-su2], [brown-zhang-2008]
+structure TwistedPivotalFrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
+  obj : C
+  mul : (obj ⊗ obj) ⟶ obj
+  unit : (𝟙_ C) ⟶ obj
+  comul : obj ⟶ (obj ⊗ obj)
+  counit : obj ⟶ (𝟙_ C)
+  antipode : obj ⟶ obj
+  frobeniusForm : obj ⟶ (𝟙_ C)
+  coevaluation : (𝟙_ C) ⟶ (obj ⊗ obj)
+  /-- Pivotal inner/modular automorphism `γ_A : A ≅ A` with `S² = γ_A`. -/
+  pivotalAut : obj ≅ obj
+  /-- Radford modular shift `μ_mod : A ⟶ A` satisfying `S ≫ λ = μ_mod ≫ λ`. -/
+  modulusShift : obj ⟶ obj
+  /-- Nakayama automorphism `ν : A ≅ A` governing twisted trace symmetry. -/
+  nakayama : obj ≅ obj
+  pairing_snake_left :
+    (ρ_ obj).inv ≫ (obj ◁ coevaluation) ≫ (α_ obj obj obj).inv ≫
+      ((mul ≫ frobeniusForm) ▷ obj) ≫ (λ_ obj).hom = 𝟙 obj
+  pairing_snake_right :
+    (λ_ obj).inv ≫ (coevaluation ▷ obj) ≫ (α_ obj obj obj).hom ≫
+      (obj ◁ (mul ≫ frobeniusForm)) ≫ (ρ_ obj).hom = 𝟙 obj
+  frobenius_relation :
+    mul ≫ comul = (comul ▷ obj) ≫ (α_ obj obj obj).hom ≫ (obj ◁ mul)
+  one_mul : unit ▷ obj ≫ mul = (λ_ obj).hom
+  mul_one : obj ◁ unit ≫ mul = (ρ_ obj).hom
+  mul_assoc : (mul ▷ obj) ≫ mul = (α_ obj obj obj).hom ≫ (obj ◁ mul) ≫ mul
+  counit_comul : comul ≫ counit ▷ obj = (λ_ obj).inv
+  comul_counit : comul ≫ obj ◁ counit = (ρ_ obj).inv
+  comul_assoc :
+    comul ≫ obj ◁ comul = comul ≫ (comul ▷ obj) ≫ (α_ obj obj obj).hom
+  antipode_anti_mul :
+    mul ≫ antipode =
+      (antipode ⊗ₘ antipode) ≫ (CategoryTheory.BraidedCategory.braiding obj obj).hom ≫ mul
+  antipode_anti_comul :
+    antipode ≫ comul =
+      comul ≫ (CategoryTheory.BraidedCategory.braiding obj obj).hom ≫ (antipode ⊗ₘ antipode)
+  antipode_unit : unit ≫ antipode = unit
+  antipode_counit : antipode ≫ counit = counit
+  /-- Pivotal square law `S ≫ S = pivotalAut.hom` (replaces `S² = id`). -/
+  antipode_sq_eq_pivotal : antipode ≫ antipode = pivotalAut.hom
+  /-- Modular Frobenius-form law `S ≫ λ = modulusShift ≫ λ` (replaces `S ≫ λ = λ`). -/
+  antipode_frobeniusForm_twisted : antipode ≫ frobeniusForm = modulusShift ≫ frobeniusForm
+
+namespace TwistedPivotalFrobeniusHopfData
+
+variable {C : Type u} [CategoryTheory.Category.{v} C]
+  [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+  (F : TwistedPivotalFrobeniusHopfData C)
+
+/-- Evaluation `ev = μ ≫ λ : A ⊗ A → 𝟙`. -/
+def ev : (F.obj ⊗ F.obj) ⟶ (𝟙_ C) := F.mul ≫ F.frobeniusForm
+
+/-- Left categorical trace of `f : A → A`. -/
+def leftTrace (f : F.obj ⟶ F.obj) : (𝟙_ C) ⟶ (𝟙_ C) :=
+  F.coevaluation ≫ (f ▷ F.obj) ≫ F.ev
+
+/-- Right categorical trace of `f : A → A`. -/
+def rightTrace (f : F.obj ⟶ F.obj) : (𝟙_ C) ⟶ (𝟙_ C) :=
+  F.coevaluation ≫ (F.obj ◁ f) ≫ F.ev
+
+end TwistedPivotalFrobeniusHopfData
+
+/-- Every classical involutive unimodular `FrobeniusHopfData` embeds into
+    `TwistedPivotalFrobeniusHopfData` with trivial pivotal, modular, and
+    Nakayama twists (`pivotalAut = Iso.refl`, `modulusShift = 𝟙`, `nakayama = Iso.refl`). -/
+def FrobeniusHopfData.toTwistedPivotal {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+    (F : FrobeniusHopfData C) : TwistedPivotalFrobeniusHopfData C where
+  obj := F.obj
+  mul := F.mul
+  unit := F.unit
+  comul := F.comul
+  counit := F.counit
+  antipode := F.antipode
+  frobeniusForm := F.frobeniusForm
+  coevaluation := F.coevaluation
+  pivotalAut := CategoryTheory.Iso.refl F.obj
+  modulusShift := 𝟙 F.obj
+  nakayama := CategoryTheory.Iso.refl F.obj
+  pairing_snake_left := F.pairing_snake_left
+  pairing_snake_right := F.pairing_snake_right
+  frobenius_relation := F.frobenius_relation
+  one_mul := F.one_mul
+  mul_one := F.mul_one
+  mul_assoc := F.mul_assoc
+  counit_comul := F.counit_comul
+  comul_counit := F.comul_counit
+  comul_assoc := F.comul_assoc
+  antipode_anti_mul := F.antipode_anti_mul
+  antipode_anti_comul := F.antipode_anti_comul
+  antipode_unit := F.antipode_unit
+  antipode_counit := F.antipode_counit
+  antipode_sq_eq_pivotal := F.antipode_involutive
+  antipode_frobeniusForm_twisted := by simp [F.antipode_frobeniusForm]
+
+/-- **Nakayama-twisted Quantum Universe** (`TN-2`), replacing untwisted
+    `leftTrace f = rightTrace f` with the KMS / Nakayama law
+    `leftTrace f = rightTrace (ν ≫ f)` that holds on `O_q(SU(2))` at general `q`. -/
+structure TwistedQuantumUniverse (R : Type*) [CommRing R] where
+  C : Type u
+  [catInst : CategoryTheory.Category.{v} C]
+  [monInst : CategoryTheory.MonoidalCategory C]
+  [preInst : @CategoryTheory.Preadditive C catInst]
+  [linInst : @CategoryTheory.Linear R _ C catInst preInst]
+  [braidedInst : @CategoryTheory.BraidedCategory C catInst monInst]
+  [balancedInst : @QOU.BraidKnot.Balanced.BalancedCategory C catInst monInst braidedInst]
+  frobHopf : @TwistedPivotalFrobeniusHopfData C catInst monInst braidedInst
+  fibreFunctor : @CategoryTheory.Functor C catInst (Type*) inferInstance
+  /-- **Nakayama-twisted Frobenius trace law:** `leftTrace f = rightTrace (ν ≫ f)`. -/
+  frobenius_nakayama_twisted : ∀ f : frobHopf.obj ⟶ frobHopf.obj,
+    frobHopf.leftTrace f = frobHopf.rightTrace (frobHopf.nakayama.hom ≫ f)
+  unitEndEquiv : R ≃+* CategoryTheory.End (𝟙_ C)
+  blocks : Type v
+  [blocksFintype : Fintype blocks]
+  centralIdem : blocks → (frobHopf.obj ⟶ frobHopf.obj)
+  centralIdem_idem : ∀ b, centralIdem b ≫ centralIdem b = centralIdem b
+  centralIdem_orthogonal : ∀ b b', b ≠ b' → centralIdem b ≫ centralIdem b' = 0
+  centralIdem_complete : ∑ b, centralIdem b = 𝟙 frobHopf.obj
+  frobWeight : blocks → R
+  frobWeight_isUnit : ∀ b, IsUnit (frobWeight b)
+  dimQ : blocks → R
+  dimQ_isUnit : ∀ b, IsUnit (dimQ b)
+  differentialForms : CategoryTheory.Limits.KernelFork frobHopf.mul
+  differentialForms_isLimit : CategoryTheory.Limits.IsLimit differentialForms
+
+/-- Every symmetric `QuantumUniverse` (`ν = id`) canonically embeds into
+    `TwistedQuantumUniverse`. -/
+def QuantumUniverse.toTwisted {R : Type*} [CommRing R]
+    (QU : QuantumUniverse.{u, v} R) : TwistedQuantumUniverse.{u, v} R :=
+  letI := QU.catInst
+  letI := QU.monInst
+  letI := QU.preInst
+  letI := QU.linInst
+  letI := QU.braidedInst
+  letI := QU.balancedInst
+  { C := QU.C
+    frobHopf := QU.frobHopf.toTwistedPivotal
+    fibreFunctor := QU.fibreFunctor
+    frobenius_nakayama_twisted := fun f => by
+      change QU.frobHopf.leftTrace f = QU.frobHopf.rightTrace (𝟙 QU.frobHopf.obj ≫ f)
+      rw [CategoryTheory.Category.id_comp]
+      exact QU.frobenius_symmetric f
+    unitEndEquiv := QU.unitEndEquiv
+    blocks := QU.blocks
+    blocksFintype := QU.blocksFintype
+    centralIdem := QU.centralIdem
+    centralIdem_idem := QU.centralIdem_idem
+    centralIdem_orthogonal := QU.centralIdem_orthogonal
+    centralIdem_complete := QU.centralIdem_complete
+    frobWeight := QU.frobWeight
+    frobWeight_isUnit := QU.frobWeight_isUnit
+    dimQ := QU.dimQ
+    dimQ_isUnit := QU.dimQ_isUnit
+    differentialForms := QU.differentialForms
+    differentialForms_isLimit := QU.differentialForms_isLimit }
 
 end QOU

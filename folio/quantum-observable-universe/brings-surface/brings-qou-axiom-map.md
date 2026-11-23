@@ -1,7 +1,7 @@
 Each axiom of a quantum observable universe ([quantum observable universe](#def:quantum-observable-universe)) is realised on Bring's surface as follows.
 
 **(i) Non-degeneracy.**
-The Frobenius form $\int_A = h_q$ is the Haar state on $A = \mathcal{O}_q(\mathrm{SU}(2))$. Faithfulness of $h_q$ for compact quantum groups supplies the isomorphism $A \xrightarrow{ \sim } A^{\vee}$. The antipode $S$ and $h_q$ define the dagger $f^{\dagger} = h_q \circ \mu(S(f) \otimes -)$. This dagger is positive-definite ([positive definite dagger](#prop:positive-definite-dagger)) because the Haar state satisfies $h_q(a^* a) > 0$ for $a \neq 0$.
+The Frobenius form $\int_A = h_q$ is the Haar state on $A = \mathcal{O}_q(\mathrm{SU}(2))$. Faithfulness of $h_q$ for compact quantum groups supplies the linear self-duality $A \xrightarrow{ \sim } A^{\vee}$ ($A^{\vee} \cong {}_1 A_\nu$ as $A$-bimodules under the modular Nakayama automorphism $\nu$). The Hopf $\ast$-involution $a \mapsto a^*$ (satisfying $(S \circ *)^2 = \mathrm{id}_A$) and $h_q$ define the conjugate-linear GNS dagger $f^{\dagger} = h_q \circ \mu(f^* \otimes -)$, which is positive-definite ([positive definite dagger](#prop:positive-definite-dagger)) because the Haar state satisfies $h_q(a^* a) > 0$ for $a \neq 0$.
 
 **(ii) Observability.**
 The adjoint representation decomposes as $\mathrm{Ad}(A) \cong V_1 \oplus V_2 \oplus \cdots$ with no spin-$0$ summand. Thus $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ by the quantum Schur lemma. Geometrically, Bring's surface has no global holomorphic vector field (it has genus $g = 4 > 1$).

@@ -202,15 +202,13 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
   /-- **Monoidality**: `ω(X ⊗ Y) ≅ ω(X) × ω(Y)` and `ω(𝟙) ≅ PUnit`.
       Encoded as: the image of the unit is inhabited. -/
   fibreFunctor_unit_inhabited : Nonempty (fibreFunctor.obj (𝟙_ C))
-  /-- **Symmetric Frobenius** (axiom 3).  A closed loop has one amplitude:
-      closing a worldline on the left and closing it on the right compute the
-      same endomorphism of the unit.  Equivalently, the Frobenius form `∫_A`
-      is symmetric and the Nakayama automorphism is trivial.
-
-      This is a genuine restriction, not a consequence of axiom 2: a Frobenius
-      algebra whose form is non-symmetric has `leftTrace ≠ rightTrace`, and
-      then "the trace of a process" — hence any mass read off a trace — would
-      depend on a drawing convention. -/
+  /-- **Symmetric Frobenius** (axiom 3 — untwisted `ν = id` / centralizer specialization).
+      Closing a worldline on the left and closing it on the right compute the
+      same endomorphism of the unit (`ν = id`). Holds on `O(G)` at `q = 1` and
+      on the Cartan weight centralizer `[K^{⊗n}, -] = 0`; on full `O_q(SU(2))`
+      at `q ≠ ±1`, the Haar state satisfies `h_q(ab) = h_q(b ν(a))` with
+      non-trivial modular Nakayama automorphism `ν` (`TwistedQuantumUniverse` in
+      `QOU.QuantumObservableUniverse.CategoricalFoundations`). -/
   frobenius_symmetric : ∀ f : frobHopf.obj ⟶ frobHopf.obj,
     frobHopf.leftTrace f = frobHopf.rightTrace f
   /-- **The ground ring is `End(𝟙_C)`.**  The block data below lands in `R`

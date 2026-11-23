@@ -702,12 +702,26 @@ try:
             _mp.mp.dps = prev
 
     def tr_conn_borromean_p_at(q=None, dps: int = _DPS_DEFAULT):
-        """Per-strand connected 4th-order Borromean charge trace on the proton W_p:
+        """DEPRECATED unweighted (1/3) connected Borromean charge trace on W_p.
+
+        WARNING (TN-10 / bean qou-v4iw): omits the canonical U_q(sl₂) pivotal /
+        Nakayama quantum-trace factor K^{⊗3}/[2]_q³ (which acts as q/[2]_q³ on
+        W_p, shifting the connected n−p difference by 2.607x at q₀). Prefer
+        ``qtrace_conn_borromean_p_at`` for physical Convention-D traces; retain
+        this helper only for ``weighting='plain'`` historical comparisons:
             tr_bar_conn(p, V³) = (1/3) tr((Q₁₂^(p) + Q₂₃^(p)) V_p³)
                                = -2(q² - 1)⁴(q⁴ + q² + 1) / (27 q⁶).
 
         Lean 4: (1/3) * `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3`.
         """
+        import warnings as _warnings
+        _warnings.warn(
+            "tr_conn_borromean_p_at computes the unweighted (1/3) matrix trace "
+            "without the pivotal K^{⊗3}/[2]_q³ factor (2.607x off Convention D); "
+            "use qtrace_conn_borromean_p_at instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         prev = _mp.mp.dps
         try:
             _mp.mp.dps = max(prev, dps + 15)
@@ -720,13 +734,26 @@ try:
             _mp.mp.dps = prev
 
     def tr_conn_borromean_n_at(q=None, dps: int = _DPS_DEFAULT):
-        """Per-strand connected 4th-order Borromean charge trace on the neutron W_n
-        (after subtracting the static (-2/9) I₃ background per `QAdjn_eq_static_add_half_QAdjp`):
+        """DEPRECATED unweighted (1/3) connected Borromean charge trace on W_n.
+
+        WARNING (TN-10 / bean qou-v4iw): omits the canonical U_q(sl₂) pivotal /
+        Nakayama quantum-trace factor K^{⊗3}/[2]_q³ (which acts as q⁻¹/[2]_q³
+        on W_n, shifting the connected n−p difference by 2.607x at q₀). Prefer
+        ``qtrace_conn_borromean_n_at`` for physical Convention-D traces; retain
+        this helper only for ``weighting='plain'`` historical comparisons:
             tr_bar_conn(n, V³) = (1/3) (tr((Q₁₂^(n) + Q₂₃^(n)) V_n³) + (2/9) tr(V_n³))
                                = +(q² - 1)⁴(2q⁴ - q² + 2) / (27 q⁶).
 
         Lean 4: (1/3) * `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjn_borromeanV3_connected`.
         """
+        import warnings as _warnings
+        _warnings.warn(
+            "tr_conn_borromean_n_at computes the unweighted (1/3) matrix trace "
+            "without the pivotal K^{⊗3}/[2]_q³ factor (2.607x off Convention D); "
+            "use qtrace_conn_borromean_n_at instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         prev = _mp.mp.dps
         try:
             _mp.mp.dps = max(prev, dps + 15)
@@ -739,18 +766,112 @@ try:
             _mp.mp.dps = prev
 
     def tr_conn_borromean_diff_at(q=None, dps: int = _DPS_DEFAULT):
-        """Connected 4th-order Borromean charge trace difference (neutron minus proton):
+        """DEPRECATED unweighted (1/3) connected Borromean charge trace difference (n − p).
+
+        WARNING (TN-10 / bean qou-v4iw): omits K^{⊗3}/[2]_q³, yielding
+        +6.491089e-4 instead of canonical +2.489702e-4 at q₀ (a 2.607175x error).
+        Prefer ``qtrace_conn_borromean_diff_at`` for physical Convention-D traces:
             Δtr_bar_conn(V³) = tr_bar_conn(n, V³) - tr_bar_conn(p, V³)
                              = +(q² - 1)⁴(4q⁴ + q² + 4) / (27 q⁶).
 
         Lean 4: (1/3) * `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3`.
         """
+        import warnings as _warnings
+        _warnings.warn(
+            "tr_conn_borromean_diff_at computes the unweighted (1/3) matrix trace "
+            "difference (+6.491e-4 vs canonical +2.490e-4, 2.607x off Convention D); "
+            "use qtrace_conn_borromean_diff_at instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         prev = _mp.mp.dps
         try:
             _mp.mp.dps = max(prev, dps + 15)
             qq = q_at(dps + 15) if q is None else _mp.mpf(q)
             q2 = qq ** 2
             val = ((q2 - 1) ** 4) * (4 * (q2 ** 2) + q2 + 4) / (27 * (q2 ** 3))
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def qtrace_borromean_v3_diff_at(q=None, dps: int = _DPS_DEFAULT):
+        """Canonical U_q(sl₂) pivotal quantum-trace difference (W_n minus W_p) on pure V³:
+            (q⁻¹ - q) · tr(V³) / [2]_q³
+            = -(q² - 1) (-q¹² + 3q¹⁰ - 3q⁸ + 5q⁶ - 3q⁴ + 3q² - 1) / (q⁴ (q² + 1)³).
+
+        Unlike the unweighted (1/3) trace (which gives 0 because tr_{W_n}(V³) =
+        tr_{W_p}(V³)), the pivotal K^{⊗3}/[2]_q³ weight distinguishes W_n (q⁻¹)
+        from W_p (q), giving -0.07698053... at q₀.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            qq = q_at(dps + 15) if q is None else _mp.mpf(q)
+            q2 = qq ** 2
+            num_v3 = (
+                -(q2 ** 6) + 3 * (q2 ** 5) - 3 * (q2 ** 4)
+                + 5 * (q2 ** 3) - 3 * (q2 ** 2) + 3 * q2 - 1
+            )
+            val = -(q2 - 1) * num_v3 / ((q2 ** 2) * ((q2 + 1) ** 3))
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def qtrace_conn_borromean_p_at(q=None, dps: int = _DPS_DEFAULT):
+        """Canonical Convention-D quantum-trace connected Borromean charge trace on W_p:
+            t_conn(W_p) = q · tr((Q₁₂^(p) + Q₂₃^(p)) V_p³) / [2]_q³
+                        = -2(q² - 1)⁴(q⁴ + q² + 1) / (9 q² (q² + 1)³).
+
+        Lean 4: `QOU.BraidsAndKnots.NucleonWeightSpaceQTrace` (`Kp = q`, `[2]_q³ = (q + q⁻¹)³`).
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            qq = q_at(dps + 15) if q is None else _mp.mpf(q)
+            q2 = qq ** 2
+            val = -2 * ((q2 - 1) ** 4) * (q2 ** 2 + q2 + 1) / (9 * q2 * ((q2 + 1) ** 3))
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def qtrace_conn_borromean_n_at(q=None, dps: int = _DPS_DEFAULT):
+        """Canonical Convention-D quantum-trace connected Borromean charge trace on W_n:
+            t_conn(W_n) = q⁻¹ · (tr((Q₁₂^(n) + Q₂₃^(n)) V_n³) + (2/9) tr(V_n³)) / [2]_q³
+                        = +(q² - 1)⁴(2q⁴ - q² + 2) / (9 q⁴ (q² + 1)³).
+
+        Lean 4: `QOU.BraidsAndKnots.NucleonWeightSpaceQTrace` (`Kn = q⁻¹`, `[2]_q³ = (q + q⁻¹)³`).
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            qq = q_at(dps + 15) if q is None else _mp.mpf(q)
+            q2 = qq ** 2
+            val = ((q2 - 1) ** 4) * (2 * (q2 ** 2) - q2 + 2) / (9 * (q2 ** 2) * ((q2 + 1) ** 3))
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def qtrace_conn_borromean_diff_at(q=None, dps: int = _DPS_DEFAULT):
+        """Canonical Convention-D quantum-trace connected Borromean difference (W_n minus W_p):
+            Δt_conn(V³) = t_conn(W_n) - t_conn(W_p)
+                        = +(q - 1)⁴(q + 1)⁴(q² + 2)(2q⁴ + 1) / (9 q⁴ (q² + 1)³).
+
+        Lean 4: `QOU.BraidsAndKnots.NucleonWeightSpaceQTrace.deltaT_adjacent_connected_eq`.
+        Evaluates to +2.489702e-4 at q₀ (versus +6.491089e-4 unweighted, a 2.607175x factor).
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            qq = q_at(dps + 15) if q is None else _mp.mpf(q)
+            q2 = qq ** 2
+            val = (
+                ((q2 - 1) ** 4) * (q2 + 2) * (2 * (q2 ** 2) + 1)
+                / (9 * (q2 ** 2) * ((q2 + 1) ** 3))
+            )
             _mp.mp.dps = max(prev, dps)
             return +val
         finally:
@@ -887,6 +1008,18 @@ except ImportError:
 
     def tr_conn_borromean_diff_at(q=None, dps: int = _DPS_DEFAULT):
         raise RuntimeError("tr_conn_borromean_diff_at requires mpmath; install it with `pip install mpmath`")
+
+    def qtrace_borromean_v3_diff_at(q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("qtrace_borromean_v3_diff_at requires mpmath; install it with `pip install mpmath`")
+
+    def qtrace_conn_borromean_p_at(q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("qtrace_conn_borromean_p_at requires mpmath; install it with `pip install mpmath`")
+
+    def qtrace_conn_borromean_n_at(q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("qtrace_conn_borromean_n_at requires mpmath; install it with `pip install mpmath`")
+
+    def qtrace_conn_borromean_diff_at(q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("qtrace_conn_borromean_diff_at requires mpmath; install it with `pip install mpmath`")
 
     def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, weighting: str = "derived",
                                 insertion=None):

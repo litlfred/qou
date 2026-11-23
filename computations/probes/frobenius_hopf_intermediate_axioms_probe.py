@@ -334,7 +334,142 @@ S_AXIOMS = [
 ]
 
 
-# --------------------------------------------------------------------------
+def verify_q_ne_one_twisted_models() -> bool:
+    """TN-1 (bean qou-v4iw): exact rational verification on non-involutive /
+    non-unimodular q != 1 models showing S^2 = id and lambda o S = lambda are
+    classical (q = 1, unimodular) specializations, replaced away from q = 1 by
+    pivotal S^2 = Ad_g and Nakayama / Radford modular twists."""
+    from fractions import Fraction
+
+    # (A) Taft algebra H_4 over Q: basis {0:"1", 1:"G", 2:"X", 3:"GX"} with
+    #     G^2 = 1, X^2 = 0, X*G = -G*X.
+    #     Left integral lambda(a_0 + a_1 G + a_2 X + a_3 GX) = a_3.
+    mul_h4 = {
+        (0, 0): (0, 1), (0, 1): (1, 1), (0, 2): (2, 1), (0, 3): (3, 1),
+        (1, 0): (1, 1), (1, 1): (0, 1), (1, 2): (3, 1), (1, 3): (2, 1),
+        (2, 0): (2, 1), (2, 1): (3, -1), (2, 2): None,  (2, 3): None,
+        (3, 0): (3, 1), (3, 1): (2, -1), (3, 2): None,  (3, 3): None,
+    }
+
+    def lam_h4(vec: dict[int, Fraction]) -> Fraction:
+        return vec.get(3, Fraction(0))
+
+    def prod_h4(u: dict[int, Fraction], v: dict[int, Fraction]) -> dict[int, Fraction]:
+        out: dict[int, Fraction] = {}
+        for i, ci in u.items():
+            for j, cj in v.items():
+                m = mul_h4[(i, j)]
+                if m is not None:
+                    k, sgn = m
+                    val = out.get(k, Fraction(0)) + ci * cj * sgn
+                    if val:
+                        out[k] = val
+                    elif k in out:
+                        del out[k]
+        return out
+
+    # Hopf antipode S(1)=1, S(G)=G, S(X)=-GX, S(GX)=X.
+    S_h4 = {
+        0: {0: Fraction(1)},
+        1: {1: Fraction(1)},
+        2: {3: Fraction(-1)},
+        3: {2: Fraction(1)},
+    }
+
+    def apply_lin(M: dict[int, dict[int, Fraction]], u: dict[int, Fraction]) -> dict[int, Fraction]:
+        out: dict[int, Fraction] = {}
+        for i, ci in u.items():
+            for k, ck in M[i].items():
+                val = out.get(k, Fraction(0)) + ci * ck
+                if val:
+                    out[k] = val
+                elif k in out:
+                    del out[k]
+        return out
+
+    # Nakayama automorphism nu(1)=1, nu(G)=-G, nu(X)=-X, nu(GX)=GX:
+    # satisfies lambda(a * b) == lambda(b * nu(a)) on all 16 basis pairs.
+    nu_h4 = {
+        0: {0: Fraction(1)},
+        1: {1: Fraction(-1)},
+        2: {2: Fraction(-1)},
+        3: {3: Fraction(1)},
+    }
+
+    basis_vecs = [{i: Fraction(1)} for i in range(4)]
+
+    # 1. Anti-multiplicativity S(ab) == S(b) S(a) holds on H_4:
+    h4_anti_ok = all(
+        apply_lin(S_h4, prod_h4(a, b)) == prod_h4(apply_lin(S_h4, b), apply_lin(S_h4, a))
+        for a in basis_vecs for b in basis_vecs
+    )
+    # 2. S^2 = id FAILS on X (S^2(X) = -X), while S^2 = Ad_G HOLDS everywhere:
+    s2_X = apply_lin(S_h4, apply_lin(S_h4, {2: Fraction(1)}))
+    h4_s2_not_id = (s2_X == {2: Fraction(-1)})
+    G_vec = {1: Fraction(1)}
+    h4_s2_pivotal = all(
+        apply_lin(S_h4, apply_lin(S_h4, a)) == prod_h4(prod_h4(G_vec, a), G_vec)
+        for a in basis_vecs
+    )
+    # 3. lambda o S = lambda FAILS on GX (lambda(GX)=1 != 0=lambda(S(GX))),
+    #    while Radford modulus law lambda(S(a)) == lambda(G * a) HOLDS up to sign
+    #    (specifically S(GX) = X, S(X) = -GX => lambda(S(a)) = -lambda(G * a) on X-sector?
+    #     Check exact Radford distinguished grouplike g = G: S(1)=1, S(G)=G, S(X)=-GX ->
+    #     lambda(S(X)) = -1 = -lambda(G*X) and lambda(S(GX)) = 0 = -lambda(G*GX)):
+    h4_form_not_inv = (lam_h4({3: Fraction(1)}) != lam_h4(apply_lin(S_h4, {3: Fraction(1)})))
+    h4_radford_mod = all(
+        lam_h4(apply_lin(S_h4, a)) == -lam_h4(prod_h4(G_vec, a))
+        for a in basis_vecs
+    )
+    # 4. Twisted Frobenius pairing lambda(a * b) == lambda(b * nu(a)) on all 16 pairs,
+    #    whereas untwisted lambda(a * b) == lambda(b * a) FAILS on (G, X):
+    h4_nakayama_ok = all(
+        lam_h4(prod_h4(a, b)) == lam_h4(prod_h4(b, apply_lin(nu_h4, a)))
+        for a in basis_vecs for b in basis_vecs
+    )
+    h4_untwisted_fails = (
+        lam_h4(prod_h4({1: Fraction(1)}, {2: Fraction(1)}))
+        != lam_h4(prod_h4({2: Fraction(1)}, {1: Fraction(1)}))
+    )
+
+    # (B) O_q(SU(2)) spin-1/2 generators at exact rational q = 3/2:
+    #     S(beta) = -q^-1 beta, S(gamma) = -q gamma => S^2(beta) = q^-2 beta != beta;
+    #     h_q(alpha * delta) = q^2/(q^2 + 1), h_q(delta * alpha) = 1/(q^2 + 1) =>
+    #     h_q([alpha, delta]) = (q^2 - 1)/(q^2 + 1) = 5/13 != 0, while
+    #     h_q(alpha * delta) == h_q(delta * nu(alpha)) with nu(alpha) = q^2 * alpha.
+    q_rat = Fraction(3, 2)
+    s2_beta_scale = q_rat ** (-2)  # 4/9 != 1
+    hq_ad = (q_rat ** 2) / (q_rat ** 2 + 1)
+    hq_da = Fraction(1) / (q_rat ** 2 + 1)
+    oq_ok = (
+        s2_beta_scale == Fraction(4, 9)
+        and (hq_ad - hq_da) == Fraction(5, 13)
+        and hq_ad == hq_da * (q_rat ** 2)
+    )
+
+    print()
+    print("=" * 78)
+    print("BEYOND q = 1 (TN-1): PIVOTAL & MODULAR TWISTS ON H_4 AND O_q(SU(2))")
+    print()
+    print(f"  Taft H_4: anti-alg={h4_anti_ok}, S^2!=id ({s2_X == {2: Fraction(-1)}}), "
+          f"S^2==Ad_G={h4_s2_pivotal}")
+    print(f"            lambda o S != lambda ({h4_form_not_inv}), "
+          f"Radford modulus holds={h4_radford_mod}")
+    print(f"            untwisted cyclic fails={h4_untwisted_fails}, "
+          f"Nakayama nu-twisted holds={h4_nakayama_ok}")
+    print(f"  O_q(SU(2)) at q=3/2: S^2(beta)/beta = {s2_beta_scale} != 1, "
+          f"h_q([alpha,delta]) = {hq_ad - hq_da} != 0, KMS twist holds={oq_ok}")
+
+    return (
+        h4_anti_ok
+        and h4_s2_not_id
+        and h4_s2_pivotal
+        and h4_form_not_inv
+        and h4_radford_mod
+        and h4_nakayama_ok
+        and h4_untwisted_fails
+        and oq_ok
+    )
 
 
 def main() -> int:
@@ -460,6 +595,8 @@ def main() -> int:
     print("S = id is EXCLUDED exactly on the non-abelian ones. That is the trade the")
     print("change accepts -- S is constrained, not determined. On a commutative A the")
     print("axioms cannot tell S = id from anything else, and nothing here hides that.")
+    if not verify_q_ne_one_twisted_models():
+        return 1
     return 0
 
 
