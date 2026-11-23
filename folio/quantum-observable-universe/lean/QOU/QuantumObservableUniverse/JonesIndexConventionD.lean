@@ -33,9 +33,11 @@ order bound; no `ℝ` import.
 No `sorry`.
 
 ## References
-- Jones, *Index for subfactors*, Invent. Math. 72 (1983). Not yet in the bibliography.
+- [jones1983] Jones, *Index for subfactors*, Invent. Math. 72 (1983), 1–25.
 - [leitner2026] §1 Categorical foundations.
 -/
+-- Ref: [jones1983] Jones, Index for subfactors, Invent. Math. 72 (1983) 1–25
+-- Ref: [leitner2026] §1 Categorical foundations
 
 namespace QOU.QuantumObservableUniverse.JonesIndex
 

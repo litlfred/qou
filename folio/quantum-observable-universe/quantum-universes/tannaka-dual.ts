@@ -5,7 +5,7 @@ export default definition({
   title: "Tannaka dual (emergent gauge group)",
   lean: { ref: "qou:QOU.TannakaDual", validation: "not_checked" },
   uses: ["def:quantum-universe"],
-  cites: ["deligne1990"],
+  cites: ["saavedra-rivano1972", "deligne1990"],
   tags: [
     "category-theory",
     "tannaka-krein",

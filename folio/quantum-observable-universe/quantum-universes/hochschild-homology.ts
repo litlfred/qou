@@ -7,7 +7,7 @@ export default definition({
   uses: ["def:quantum-universe"],
   defines: ["hochschild-homology"],
   foreshadows: ["def:chern-character", "rem:hkr-theorem", "rem:trace-ledger"],
-  cites: ["loday-1998", "weibel1994"],
+  cites: ["loday-1998", "weibel1994", "witherspoon2019"],
   tags: ["hochschild-homology", "homological-algebra", "trace", "cocenter"],
   authorNotes: [
     {

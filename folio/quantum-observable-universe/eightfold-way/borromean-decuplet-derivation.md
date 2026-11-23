@@ -54,7 +54,10 @@ topology.
 **Missing ingredient: spin and colour.**
 The physical decuplet is spin-$3/2$, and what forces the *flavour*-symmetric
 channel for it is the requirement that the total wavefunction be
-antisymmetric once colour is included: with colour antisymmetric and
+antisymmetric once three-colour degrees of freedom are included, as
+originally proposed via parastatistics by O. W. Greenberg \cite{greenberg1964}
+and via explicit three-triplet $\mathrm{SU}(3)_{\mathrm{c}}$ symmetry by
+M. Y. Han and Y. Nambu \cite{han-nambu1965}: with colour antisymmetric and
 spin symmetric, flavour must be symmetric.  This chapter derives neither
 the spin factor nor the colour antisymmetry, so the identification
 $\lambda = (3) \leftrightarrow$ decuplet is at present a *matching of
