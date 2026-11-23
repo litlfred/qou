@@ -284,6 +284,7 @@ export default chapter({
         "sdp-regime-switch",
         "sdp-regime-switch-table-data",
         "sdp-regime-switch-interpretation",
+        "alpha-decay-gamow-tunneling",
       ],
     }),
 
