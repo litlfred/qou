@@ -86,10 +86,10 @@ Both fits close the $1.6\%$ energy gap by construction, so closing it is not evi
 
 #### Four-term extension
 
-Activating $\varphi_{01} \neq 0$ recovers the full photon. The product of two photons spans all six normal-form words. Its $e^-$ (trefoil) coefficient is
+Activating $\varphi_{01} \neq 0$ recovers the full photon. The product of two photons spans all six normal-form words. Its $e^-$ (electron-word) coefficient is
 
 $$
   \varphi_{01}\psi_0 + \varphi_1\psi_{01},
 $$
 
-so the trefoil channel needs the vertex term of one photon and a single-crossing term of the other. For the eigenvalue-pair weights $\gamma(0, 0, qh)\,\gamma(0, 0, -q^{-1}h) = (\sigma_0\sigma_1^{-1})^3$ ([Borromean two-photon factorisation](#prop:borromean-two-photon-factorisation)) that coefficient is zero. The 6-term normal form is in [the $\gamma\gamma$ generation proposition](#prop:gamma-gamma-generates-particles). The coefficients are recomputed exactly over $\mathbb{Q}(q)$.
+so the $e^-$ channel needs the vertex term of one photon and a single-crossing term of the other. For the eigenvalue-pair weights $\gamma(0, 0, qh)\,\gamma(0, 0, -q^{-1}h) = (\sigma_0\sigma_1^{-1})^3$ ([Borromean two-photon factorisation](#prop:borromean-two-photon-factorisation)) that coefficient is zero. The 6-term normal form is in [the $\gamma\gamma$ generation proposition](#prop:gamma-gamma-generates-particles). The coefficients are recomputed exactly over $\mathbb{Q}(q)$.

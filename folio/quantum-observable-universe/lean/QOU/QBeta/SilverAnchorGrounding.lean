@@ -13,7 +13,8 @@ but never derived:
 1. **The silver locus is the Q_A decay-prefactor zero.** The substrate-branch
    `Q_A` numerator factor `2q + 1 − q²` equals `−(q² − 2q − 1)`, so it vanishes
    exactly on the silver locus. The *true* `Q_β = |Δ(net)|·E₀` uses the
-   GB-reduced trefoil coefficient, and `Δ(net)(1+√2) = 82216 + 58136·√2 ≠ 0`
+   GB-reduced `e⁻ = σ₀σ₁σ₀` coefficient (the electron word; closure the Hopf link,
+   not the trefoil — owner ruling 2026-11-21), and `Δ(net)(1+√2) = 82216 + 58136·√2 ≠ 0`
    (`(q²−2q−1) ∤ Δ(net)`; verified in
    `computations/qbeta/qbeta_silver_pole_subdominant_probe.py`), so the `Q_A`
    zero is *not* cancelled and `F = Q_β / [Q_A · cos α_eff]` has a **genuine

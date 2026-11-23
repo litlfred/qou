@@ -29,11 +29,11 @@ In the model, the Hecke relation reduces the word to a dressed photon plus the v
 $$
   \sigma_0 \cdot \sigma_1 = L_+ \quad (\text{intermediate}).
 $$
-The product is the normal-form basis element $L_+$, a two-strand entangled state. Applying a substrate Reeb insertion completes the trefoil:
+The product is the normal-form basis element $L_+$, a two-strand entangled state. Applying a substrate Reeb insertion completes the electron word (whose closure on three strands is the Hopf link):
 $$
   L_+ \cdot \sigma_0 = \sigma_0\sigma_1\sigma_0 = e^-.
 $$
-The positron $e^+$ is supplied by the mirror process $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$. The complete vertex pairs orthogonal photons to produce the chiral trefoil channels.
+The positron $e^+$ is supplied by the mirror process $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$. The complete vertex pairs orthogonal photons to produce the chiral $e^\pm$ channels.
 
 ## Polarisation selection rule (model statement)
 
@@ -43,6 +43,6 @@ $$
   \langle v_{e^-e^+}, \sigma_i\sigma_i \rangle_F = 0, \qquad \langle v_{e^-e^+}, \sigma_0\sigma_1 \rangle_F \neq 0.
 $$
 
-Within the model, a repeated generator applies the Hecke relation and returns lower-energy states, and only the product of the two distinct generators produces the Hopf-link intermediate that the substrate completes into the $e^-e^+$ trefoil pair.
+Within the model, a repeated generator applies the Hecke relation and returns lower-energy states, and only the product of the two distinct generators produces the $L_+$ intermediate that the substrate completes into the $e^-e^+$ pair.
 
 **Comparison with QED.** This rule is a statement about Hecke words. It does not hold for physical photons read as linear polarisations. Tree-level QED gives nonzero $\gamma\gamma \to e^-e^+$ for parallel linear polarisations. For example, with $e = m_e = 1$, photon energy $5/4$ in the centre-of-mass frame and the electron along the beam axis, the exact spin-summed squared amplitude is $9/2$ for parallel and $25/2$ for perpendicular polarisations. The ratio $9/25$ equals $\beta^2$ at that point. The perpendicular channel dominates near threshold, where the pair forms in the pseudoscalar ${}^1S_0$ state, and that dominance is the only part of the rule that agrees with QED.
