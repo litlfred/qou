@@ -166,3 +166,69 @@ mass chart builds it in through its unit, and the trace chart cannot reach it wi
 
 - Which chart is canonical. The mass chart derives the muon and not the electron; the trace chart derives the electron and not the muon. Neither derives both.
 - One candidate for joining them: take the electron's mass-chart weight to be the order-two part of its trace, q³·ℏ_q²·q²(q+1)²/(2(q²+1)²). That would replace ℏ_q² by ℏ_q² times a factor that is 1/2 at q = 1. This is an identification, not a derivation. It would also move q₀, because CAL-2 is defined in the mass chart, so it is not adopted here.
+
+## 9. One object for both electron and muon (owner choice 2026-11-23)
+
+The owner chose to look for one derived weight that gives the electron a finite value and the muon
+Vol(4₁)/ℏ_q². Lean: `QOU/Observations/QVolumeCarrier.lean`, sorry-free under
+`lean -DautoImplicit=false`, axioms `propext`, `Classical.choice` and `Quot.sound` only. Probe:
+`computations/probes/q_volume_carrier_probe.py`, mpmath 70 dps, 6/6 checks, proton pin
+default and muon pin as a comparison arm. Precision gates: none of the red ratchets names the
+probe, and they are the same reds as on main.
+
+### A q-volume derives the muon's Vol/ℏ_q² shape
+
+Take G(z; q) = Σ_{n≥1} zⁿ/(1 − q⁻ⁿ)², summed over the ideal tetrahedra of the knot complement.
+The denominator factors exactly as 1 − q⁻ⁿ = ℏ_q·[n]′, with [n]′ = Σ_{k<n} q⁻ᵏ
+(`one_sub_inv_pow_eq`). So ℏ_q²·G → Li₂(z) as q → 1. The figure-eight is two regular
+tetrahedra of shape e^{iπ/3}, and it gives
+
+  W_μ = 2 Im G(e^{iπ/3}; q) ~ Vol(4₁)/ℏ_q².
+
+This gives a reason why the carrier uses ℏ_q = 1 − q⁻¹ rather than log q or (q − q⁻¹)/2: ℏ_q is the
+factor of 1 − q⁻ⁿ. At |z| = 1 the n-series does not converge at finite q. The probe uses the
+exact rearrangement Σ_{m≥0}(m+1)·z q⁻ᵐ/(1 − z q⁻ᵐ), which converges absolutely. It checks the
+rearrangement against the direct series at |z| < 1, and it checks the q₀ value by direct summation
+to 10⁻⁵⁵.
+
+| at the proton pin | value |
+|---|---|
+| V_q = ℏ_q²·W_μ | 2.034559016 (Vol(4₁) = 2.029883213, +0.230 %) |
+| same with log q in place of ℏ_q | +11.15 % |
+| same with (q − q⁻¹)/2 | +11.56 % |
+| W_μ = 2 Im G | 207.2446139 |
+| Vol(4₁)/ℏ_q² (the carrier) | 206.7683264 |
+| W_μ against CODATA m_μ/m_e | +0.2304 % |
+
+The approach to Vol is linear in ℏ_q: the relative gap is 3.07e-4 at q = 1.01 and 3.17e-5 at
+q = 1.001.
+
+So this object gives the carrier's shape exactly as q → 1 and a definite correction at q₀. At q₀ the
+correction is +0.23 %, which is the kind of correction bean `qou-6gf9` asks for. It is not a fit:
+nothing in G was chosen against m_μ/m_e. It is still not adopted. CAL-2 defines q₀ through the
+carrier, so using W_μ in its place would re-solve q₀, and that is an owner decision.
+
+### But it gives the electron 0
+
+The ruled electron closes to the Hopf link, which has no ideal tetrahedra, so its q-volume is the
+empty sum 0. This is the same gap as the mass formula (§8).
+
+### The sum family does not close it
+
+The obvious joint object is W = T + c·G: trace plus q-volume. Its leading carrier is
+c·Vol/(T_e(1)·ℏ_q²) (`sum_family_leading`), so the carrier forces c = T_e(1) = 1/2
+(`sum_family_forces_c`). That is a necessary condition; neither family produces c. With
+c = 1/2 the full ratio at q₀ is
+
+  (τ(4₁) + G_μ/2)/τ_e = (0.2802 + 103.62)/0.6912 = 150.33,
+
+which is −27.3 % from 206.77. The miss is not small, and its source is visible: c is fixed at
+q = 1, where τ_e = 1/2, while τ_e(q₀) = 0.6912. This is a scope-(a) negative. The simplest sum,
+with the only coefficient the leading order allows, does not reproduce the carrier at q₀. It does
+not exclude a sum with a derived q-dependent coefficient.
+
+### What is still open
+
+No single derived object gives both particles. The q-volume gives the muon and misses the electron;
+the trace gives the electron and misses the muon. A joint object needs a derived reason for the
+relative weight of its trace part and its volume part. Here that weight is forced only at q = 1.
