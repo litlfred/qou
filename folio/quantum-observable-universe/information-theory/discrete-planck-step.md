@@ -42,7 +42,7 @@ $$
   =  1.
 $$
 
-This is the **normalised total** --- one full Reeb circuit, an angular displacement carrying no length scale --- and it evaluates to $1$ over any field precisely because $\hbar_q$ is its per-step share (see [share versus total](#rem:planck-length-share-vs-total)). It is not the same object as the local $\ell_P^{\mathrm{step}} \sim \hbar_q$ of [the Planck information unit](#sec:planck-info-unit). The angular velocity $\hbar_q$ changes with $q$. At the Big Bang, the fiber is traversed at maximum speed ($\hbar_q = 1$). Near heat death, the rotation halts.
+This is the **normalised total** --- one full Reeb circuit, an angular displacement carrying no length scale --- and it evaluates to $1$ over any field precisely because $\hbar_q = 1 - q^{-1}$ is its per-step share (see [share versus total](#rem:planck-length-share-vs-total)). It represents the full circuit, whereas [the Planck information unit](#sec:planck-info-unit) scales with the per-step share $\hbar_q$. The angular velocity $\hbar_q$ changes with $q$. At the Big Bang, the fiber is traversed at maximum speed ($\hbar_q = 1$). Near heat death, the rotation halts.
 
 **Discrete time at the Big Bang.**
 The Big Bang initial state is a formal sum $\mathcal{S}_0 = \sum_i (p_i, H_i)$. It specifies fiber data without horizontal transport. The **first Planck step** $\phi_1^q$ applies horizontal transport for the first time. It connects neighboring fibers, initiates the $q$-connection, and begins information propagation across the brane.

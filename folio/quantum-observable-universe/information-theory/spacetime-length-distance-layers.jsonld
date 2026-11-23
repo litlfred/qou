@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-spacetime-length-distance-layers",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:spacetime-length-distance-layers",
+  "kind": "remark",
+  "title": "Three stratified layers of substrate grain, metric moduli, and empirical unit bridges",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-coefficient-is-hbar-q",
+    "papers/quantum-observable-universe/blocks/rem-planck-length-share-vs-total",
+    "papers/quantum-observable-universe/blocks/rem-connes-distance-not-reeb-step-count",
+    "papers/quantum-observable-universe/blocks/rem-discrete-planck-step",
+    "papers/quantum-observable-universe/blocks/def-gravitational-constant",
+    "papers/quantum-observable-universe/blocks/prop-gram-degeneracy-blocks-connes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-reeb-coefficient-is-hbar-q",
+  "cites": [
+    "references/kantorovich1942",
+    "references/rubinstein1957",
+    "references/connes1989",
+    "references/rieffel1999",
+    "references/rieffel2004",
+    "references/dandrea-martinetti2010"
+  ],
+  "tags": [
+    "planck-length",
+    "hbar-q",
+    "reeb-flow",
+    "connes-distance",
+    "base-ring-wall",
+    "calibration-discipline"
+  ],
+  "leanRef": "qou:QOU.InformationTheory.UnifiedClockScaleLayers.hbarQ_mul_planckTick",
+  "text": "spacetime-length-distance-layers.md",
+  "provenance": "authored"
+}
