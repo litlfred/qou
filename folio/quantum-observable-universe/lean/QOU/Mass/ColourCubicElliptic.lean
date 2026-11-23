@@ -32,10 +32,13 @@ quartic to infinity and a Weierstrass change of variables.
   scalar: the three 2×2 minors of the pair (inverse ∘ forward, identity) are multiples of `h₃`.
 
 **What this does and does not establish.** Over a field in which `5 ≠ 0` (in particular over `ℚ`)
-the two curves are birationally equivalent; since both are smooth projective curves, they are then
-isomorphic. That last step (birational ⇒ isomorphic for smooth projective curves) is standard and
-is *not* formalised here. Nor is the Cremona label: that `E` is 50a1 is a fact about the Cremona /
-LMFDB tables, checked outside Lean by comparing `c₄ = 25`, `c₆ = 1475`, `Δ = −1250`.
+the two curves are birationally equivalent. They are in fact isomorphic, by a *linear* map:
+`QOU.Mass.ColourCubicProjectiveIso` proves `E(M·v) = 25·h₃(v)` for an explicit 3×3 matrix `M`
+with `det M = −25` (correction 2026-11-22: this file previously said the isomorphism was not
+formalised). That file also gives `E` as a Mathlib `WeierstrassCurve` with `c₄ = 25`,
+`c₆ = 1475`, `Δ = −1250`, `j = −25/2`, and a bijection between the points of `h₃ = 0` and
+Mathlib's group of points of `E`. The Cremona label itself is a database fact; what is proved is
+that `E` has the invariants the label records.
 
 The corpus places the elliptic factor of the Jacobian of Bring's curve in the `ℚ`-isogeny class
 50a (`docs/audits/2026-07-18-bring-s4-elliptic-factor-genus-and-period-block.md`). This file shows

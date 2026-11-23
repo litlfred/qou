@@ -4,6 +4,8 @@ The Bethe–Weizsäcker semi-empirical mass formula (SEMF) requires five fitted 
 
 See [Table 1](#tbl:feynman-qou-comparison-table1-data).
 
+The table pairs each SEMF term with a channel of the Wedderburn formula term by term. The Coulomb row is such a pairing, not a derivation: the determinant channel $\Phi_2$ is not shown to be a Coulomb pair term, and on two nucleon blocks no braid insertion or invariant pair coupling gives one at $n = 6$ (see [the Coulomb-charge definition](#def:coulomb-charge)).
+
 ## Comparison
 
 See [Table 2](#tbl:feynman-qou-comparison-table2-data).

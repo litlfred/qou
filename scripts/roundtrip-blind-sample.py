@@ -59,6 +59,25 @@ def strip_lean_comments(s: str) -> str:
         out.append(s[i]); i += 1
     return re.sub(r'\n\s*\n+', '\n', "".join(out))
 
+def blank_lean_comments(s: str) -> str:
+    """`s` with every comment character replaced by a space (newlines kept),
+    so offsets into the result are offsets into `s`."""
+    out, i, depth = list(s), 0, 0
+    while i < len(s):
+        if s.startswith("/-", i):
+            depth += 1; out[i] = out[i+1] = " "; i += 2; continue
+        if depth and s.startswith("-/", i):
+            depth -= 1; out[i] = out[i+1] = " "; i += 2; continue
+        if depth:
+            if s[i] != "\n": out[i] = " "
+            i += 1; continue
+        if s.startswith("--", i):
+            j = s.find("\n", i); j = len(s) if j < 0 else j
+            for k in range(i, j): out[k] = " "
+            i = j; continue
+        i += 1
+    return "".join(out)
+
 TOP = re.compile(r'^(?:@\[[^\]]*\]\s*)?(?:private |protected |noncomputable )*'
                  r'(theorem|lemma|def|abbrev|structure|class|instance|example|namespace|end|section|variable|open|noncomputable)\b', re.M)
 
@@ -85,7 +104,11 @@ def locate(ref: str, kinds: str = r'(theorem|lemma)'):
     pat = re.compile(r'^(?:@\[[^\]]*\]\s*)?(?:private |protected |noncomputable )*'
                      + kinds + r'\s+(?:' + alts + r')(?![\w.\'])', re.M)
     for f, txt in _lean_files():
-        m = pat.search(txt)
+        # Search comment-blanked text, so a docstring line that happens to
+        # start with `theorem <name>` is not taken for a declaration
+        # (pass 3, 2026-11-22: `QOU.CategoricalQConnection.exists` resolved
+        # to the prose "theorem exists in this file" in Wedderburn.lean).
+        m = pat.search(blank_lean_comments(txt))
         if m: return f, txt, m
     return None
 
@@ -139,10 +162,21 @@ def main():
         if k != "proof": continue
         um = USES_RE.search(t)
         if not um: continue
-        for u in re.findall(r'"([^"]+)"', um.group(1)):
-            md = ts.with_suffix(".md")
-            if md.exists() and md.read_text().strip():
-                proofs.setdefault(u, (lab, md))
+        # A proof proves ONE block: the `uses` entry whose label suffix equals
+        # the proof's own (`prf:X` -> `*:X`, hyphens ignored). Every other
+        # entry is a lemma the proof cites, and a proof with no such entry is
+        # left unpaired rather than guessed (6 of 415 on 2026-11-22).
+        # Pass 3 found the old rule, "every entry", pairing blocks with proofs
+        # that only cite them: `prop:self-dual-higgs-real-volume` (no proof
+        # block) got `prf:ew-triplet-charge-spin-from-involution`, and
+        # `lem:brings-riemann-hurwitz` got `prf:brings-is-qou`.
+        used = re.findall(r'"([^"]+)"', um.group(1))
+        key = lambda x: x.split(":", 1)[-1].replace("-", "")
+        target = next((u for u in used if key(u) == key(lab)), None)
+        if target is None: continue
+        md = ts.with_suffix(".md")
+        if md.exists() and md.read_text().strip():
+            proofs.setdefault(target, (lab, md))
     elig = []
     for lab, (k, ts, t) in blocks.items():
         if k == "proof" or lab not in proofs: continue

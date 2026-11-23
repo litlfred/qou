@@ -10,10 +10,10 @@
   3-manifold, in different namespaces, with no theorem relating them:
 
   1. `QOU.Encounter.MostowRigidity.volume : ℝ` — one real per type-marker, supplied
-     by an *instance*.  `figureEight` sets it to the decimal literal
-     `2.02988321281930`, kept in sync with `hyperbolic-volumes.witness.json` by
-     `codemod-leanval.ts`.  So `volumeInvariant FigureEight = 2.0298…` holds by
-     `rfl`: the number is ENTERED, not computed.  Nothing in that module mentions a
+     by an *instance*.  `figureEight` sets it to the exact constant
+     `VOL_4_1 = 2·Cl₂(π/3)` (until 2026-08-30 the decimal literal
+     `2.02988321281930`; bean `qou-f8lit`).  So `volumeInvariant FigureEight =
+     VOL_4_1` holds by `rfl`: the number is ENTERED, not computed from a manifold.  Nothing in that module mentions a
      triangulation.
 
   2. `QOU.MathlibExt.IdealTriangulation.volume = Σᵢ D(zᵢ)` — genuinely computed from

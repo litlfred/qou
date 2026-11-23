@@ -14,7 +14,7 @@ export default remark({
     "binding-energy",
     "comparison",
   ],
-  uses: ["rem:atom-mass-full-hecke"],
+  uses: ["rem:atom-mass-full-hecke", "def:coulomb-charge"],
   cites: [
     "hammer2019",
     "jones1985",

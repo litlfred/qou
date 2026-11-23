@@ -8,7 +8,7 @@ H='''import QOU.MassTheory.PhotonPairReachability
 
 Instances of `QOU.MassTheory.PhotonPairReachability.not_photonPair_eq_smul` for the γγ words of
 the six-strand pair test (`computations/probes/six_strand_photon_pair/`, PR #9050). Each word is a
-product of vertices `Vₖ = σₖσₖ₊₁⁻¹` (3 or 5 vertices, the 88 words matching a lepton pair's link).
+product of vertices `Vₖ = σₖσₖ₊₁⁻¹` (3 or 5 vertices, the 88 words matching a lepton pair's link, including the 20 five-vertex words with an idle strand).
 For each word and each pair of photon positions `(i, j)` (`γᵢ` on strands `i, i+1, i+2`), the
 statement is: there are no weights `a, b, c, a', b', c'` and no `μ ≠ 0` with
 `γᵢ(a,b,c) γⱼ(a',b',c') = μ · w` on the one-marked-strand sector.
@@ -17,12 +17,15 @@ Each theorem names a matrix entry `(s → r)` of the word outside the reach of `
 a monomial `±q^A`, `±qi^B`, or that times `h = q − qi`, so it is nonzero for **every** `q` with
 `q·qi = 1` and `q − qi ≠ 0`, i.e. every `q ≠ 0, ±1` — not only generic `q`.
 
-Coverage: 1370 of the 1395 non-factorising (word, i, j) cells. Not covered here:
-* the 13 cells that DO factorise (`PhotonCrossingMonomials`, probe check
-  `P2_two_photon_factorisations_reported`);
-* 25 cells where the one-marked-strand sector does not obstruct; the probe excludes them by a
-  Gröbner computation over `ℚ(q)` in the full representation (`P2_generic_q_two_photon`), which is
-  computer algebra, not Lean.
+Coverage: 1370 of the 1408 (word, i, j) cells. The other 38:
+* 19 cells that ARE two-photon products: the 13 in `PhotonCrossingMonomials` (probe check
+  `P2_two_photon_factorisations_reported`) and 6 in `PhotonPairIdleFactor`, among the idle-strand
+  words that the probe's two-photon search did not include;
+* 19 cells where no single entry is blocked; `PhotonPairNoFactorSector` proves them with
+  Nullstellensatz certificates on the same sector.
+
+(Corrected 2026-11-22: this note used to say 25 cells were left to the probe's Gröbner check over
+`ℚ(q)`. That check never covered them, and 6 of them factorise.)
 
 The sector maps are a representation of the Hecke algebra (`PhotonPairReachability`'s
 `sig_sigInv`, `sigInv_sig`, `sig_quadratic`, `sig_braid`, `sig_comm`), so an equation

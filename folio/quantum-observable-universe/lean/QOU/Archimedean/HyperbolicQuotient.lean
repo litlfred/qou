@@ -49,8 +49,9 @@
   **Mostow rigidity and Thurston hyperbolisation are untouched**, and nothing here is
   a step toward either.  A horizontal-translation quotient is a genuine hyperbolic
   3-manifold but a very special one.  It is **not** a knot complement, and nothing here
-  makes `Vol(4₁)` computable or verifies the literal `2.02988321281930` that
-  `figureEight` carries.
+  makes `Vol(4₁)` the volume of a manifold: the exact `VOL_4_1 = 2·Cl₂(π/3)` that
+  `figureEight` carries (since 2026-08-30; bean `qou-f8lit`) stays an entered value
+  on the manifold side.
 
   Two limits stated precisely, because the loose version of each would overclaim:
 

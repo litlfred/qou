@@ -216,12 +216,11 @@ instance unknot : MostowRigidity Unknot where
     `Vol(4_1) = 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.02988...`
 
     where `Cl₂` is the Clausen function and `Λ` the Lobachevsky
-    function, `Λ(θ) = Cl₂(2θ)/2`.  The class field
-    stores the 15-significant-digit truncation
-    `2.02988321281930` (kept in lock-step with the canonical
-    50-dps witness via `:leanval[Vol_4_1]{precision=15}`); the
-    direction of the truncation does not affect the class
-    invariants.
+    function, `Λ(θ) = Cl₂(2θ)/2`.  The class field is the
+    exact constant `QOU.Knot.FigureEightVolume.VOL_4_1 =
+    2 · Cl₂(π/3)` (exactified 2026-08-30, bean `qou-f8lit`; it
+    was the 15-significant-digit truncation `2.02988321281930`
+    before that, see the comment on the field).
 
     The Mostow gap is bounded below by `0.5`, a conservative
     under-approximation of the next-smallest gap
