@@ -1,12 +1,12 @@
 ---
-id: qou-8fw2
-title: "SM/Eightfold Worker Pkg 2 (Q-Gap-8): W_3*-Framed Hypercharge Y, Ordered Content-to-Braid Map, Lambda-Sigma Split & 2nd-Order GMO"
-status: todo
+# qou-8fw2
+title: 'SM/Eightfold Worker Pkg 2 (Q-Gap-8): W_3*-Framed Hypercharge Y, Ordered Content-to-Braid Map, Lambda-Sigma Split & 2nd-Order GMO'
+status: in-progress
 type: feature
 priority: high
-parent: qou-sm8w
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T20:06:00Z
+updated_at: 2026-11-23T21:43:01Z
+parent: qou-sm8w
 ---
 
 ## Scope & Linked Legacy Beans (`qou-20sx`, `qou-3oi0`, `qou-wyy9`, `qou-yw3v`, `qou-ywsk`, `qou-c9uj`)
