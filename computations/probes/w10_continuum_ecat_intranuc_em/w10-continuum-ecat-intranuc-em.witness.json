@@ -1,8 +1,8 @@
 {
   "engine": "mpmath (80 dps)",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-23T22:12:37.885799+00:00",
-  "commitSha": "406133dcc7c3a9dd29fcaf9167a1bace782807d6",
+  "computedAt": "2026-11-23T22:13:33.933069+00:00",
+  "commitSha": "2768aad4ac783a1b7495c75bd846606426db4cb7",
   "assertions": [
     {
       "name": "q0_at_80_matches_Q_MP",
@@ -94,11 +94,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2099,
+  "durationMs": 1973,
   "computation": "w10-continuum-ecat-intranuc-em",
   "scriptFile": "w10_continuum_ecat_intranuc_em_probe.py",
   "scriptHash": "96133fe0364e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "2768aad4ac783a1b7495c75bd846606426db4cb7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
