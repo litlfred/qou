@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-10-04T15:18:58Z
+updated_at: 2026-11-23T21:46:57Z
 parent: qou-5vkl
 ---
 
@@ -358,3 +358,5 @@ Measured on this branch (main `8ddfeaf1`):
 - **Items 6, 7** — unchanged (research-gated `.ts` TODOs; §8 owners).
 
 - **Round 97 (`litlfred/qou#8432`)**: Advanced in `feat/round97-monotone-multbound-ncpart-nonuniform-onebody-43c1` (Commit 1 `e883e42fdde30a6d22e385b72041c6f52899312f`, Commit 2 `56d66b28962228fdc58ad152218bdd3754f7c059`, probe sha256 `e41a92695f7287bc24947a7f23e2cb1aff6e02fcb3b0e34fb76f50f0c076b259`).
+
+## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123 (under parent package qou-8fw2).

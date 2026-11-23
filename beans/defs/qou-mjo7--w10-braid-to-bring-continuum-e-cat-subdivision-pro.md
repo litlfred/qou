@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:54:28Z
-updated_at: 2026-11-23T21:14:59Z
+updated_at: 2026-11-23T21:59:50Z
 parent: qou-qzvs
 blocked_by:
     - qou-pzsi
@@ -19,3 +19,5 @@ L2 `1-ppQ` Workstream Package `Q-Gap-6` under `qou-qzvs` (also cross-linked with
 - **Scope:** Construct the braid-to-Bring curve map and continuum `E_cat` subdivision, derive the structural integers `(k = -3, 2, 12)` in the proton identity, and evaluate intra-nucleon `ΔE_EM(p - n)` via even `μ̄₁₂₃² = 1` and neutralized `H³` Green's function to extract `m_d - m_u` (`0` fits, ≥80 dps `mpmath`).
 
 Claimed by claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18, 2026-11-23)
+
+Lean formalization QOU/QBeta/ContinuumECatIntraNucleonEM.lean compiled sorry-free and custom-axiom-free (24 theorems, 0 vacuity advisories) in 406133dcc7c.

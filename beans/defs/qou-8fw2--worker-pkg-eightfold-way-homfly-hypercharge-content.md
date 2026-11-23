@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: high
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T21:43:01Z
+updated_at: 2026-11-23T21:46:57Z
 parent: qou-sm8w
 ---
 
@@ -19,3 +19,5 @@ parent: qou-sm8w
 - Wire the **51 existing sorry-free `lean/QOU/Eightfold/*.lean` modules** (`GellMannOkuboIdentity`, `DecupletEqualSpacing`, `ColemanGlashowIdentity`, `OctetWeightDegeneracy`, `NonetMixingUnconstrained`, `FlavourColourDiscriminator`, `Sym2GateMultiplicity`, `FibreFunctorDimensionNotCategorical`) to `eightfold-way/*.ts` (`qou-8fl1`).
 - Test the **3-strand hyperbolic meson clasp** (`(n_1, n_2) in {3,5,7}^2` + gluon clasp `sigma_0 sigma_1^{-1}`, `qou-3ttt`, `qou-qpj9`, bypassing `Vol=0` 2-strand torus knots while separating `K^0=(+3,-5)` from `bar{D}^0=(-5,+3)`).
 - Resolve the `Lambda-Sigma^0` 77 MeV degeneracy via `I=0` vs `I=1` sub-projector inside `S^{(2,1)}` (`qou-pwz4`) and vector vs pseudoscalar nonet mixing (`NonetMixingUnconstrained.lean`).
+
+## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123: Starting Eightfold Way & SM Package 2 (Lean wiring, F = V_2 + W_3* sync, HyperbolicMesonClaspAndDiquarkSplit.lean, 80-dps pre-registered probe).

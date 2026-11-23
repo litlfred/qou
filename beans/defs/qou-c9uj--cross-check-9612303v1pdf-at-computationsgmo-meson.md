@@ -1,14 +1,13 @@
 ---
 # qou-c9uj
 title: Cross-check 9612303v1.pdf at computations/gmo_meson_crosscheck.py
-status: todo
-pr: 8355
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:55Z
-updated_at: 2026-11-21T15:15:34Z
+updated_at: 2026-11-23T21:46:58Z
 parent: qou-8hur
 ---
 
@@ -39,3 +38,5 @@ The comparison was not run, because there is no current framework machinery to r
 - Owner ruling 2026-11-16 (re-confirmed 2026-11-21): virtual photons do not exist in QOU. The textbook pi+/pi0 splitting is an EM self-energy (virtual-photon exchange), so any framework route must first be recast as prior entangled photons or unseen intermediary emitters. No such route exists yet.
 - What the source gives the corpus now: [kleinkreisler1996] shows that a single q of U_q(sl2) on the isospin doublet cannot fit the charged-neutral pion splitting. The corpus also has one substrate q0, so any future route that puts this splitting into a U_q(sl2) isospin deformation at q0 alone meets the same negative. That is a constraint on routes, not a test of a prediction.
 - Unblocks when: a derived isospin-splitting term exists for the meson sector, consistent with the no-virtual-photon ruling.
+
+## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123 (under parent package qou-8fw2).

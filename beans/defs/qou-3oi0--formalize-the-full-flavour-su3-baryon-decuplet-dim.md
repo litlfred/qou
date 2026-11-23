@@ -1,7 +1,7 @@
 ---
 # qou-3oi0
 title: Formalize the FULL flavour-SU(3) baryon decuplet (dim Sym^3 = 10, needs N = 3) -- blocked by qou-j3w6 (split from nmib)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - split-from-nmib
 created_at: 2026-10-10T08:27:45Z
-updated_at: 2026-11-22T21:54:33Z
+updated_at: 2026-11-23T21:46:59Z
 parent: qou-8lxd
 blocked_by:
     - qou-j3w6
@@ -80,3 +80,5 @@ parked.** That is the safe no-op.
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123 (under parent package qou-8fw2).

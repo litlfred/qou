@@ -1,15 +1,14 @@
 ---
 # qou-qpj9
 title: 'GAP: define canonical meson flux-tube threading braid (J/ψ underived)'
-status: todo
-pr: 8196
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-qcd
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-23T21:46:59Z
 parent: qou-8lxd
 ---
 
@@ -266,3 +265,5 @@ closures have Vol = 0. Nothing above touches that.
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8196, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-25: "audit(qou-qpj9): the closed-3-braid volume tool is in the library, and it bounds the heavy end"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123 (under parent package qou-8fw2).
