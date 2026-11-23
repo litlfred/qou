@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - split-from-nmib
 created_at: 2026-10-10T08:27:45Z
-updated_at: 2026-11-23T21:46:59Z
+updated_at: 2026-11-23T23:06:44Z
 parent: qou-8lxd
 blocked_by:
     - qou-j3w6
@@ -82,3 +82,12 @@ parked.** That is the safe no-op.
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
 
 ## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123 (under parent package qou-8fw2).
+
+
+
+---
+**Worker 20 () Delivery — 2026-11-23 (, Issue #9222, PR #9223):**
+- Commits: `3c6d1b9dc71` (pre-registration), `39a4158b03b` (`HyperbolicMesonClaspAndDiquarkSplit.lean`, `QOU.lean` 22-module wiring, Ch. 10 content sync, 80-dps probe), `e28c1294e44` (witness stamp `allPassed: True`, `stale: False`, `q0Anchor: proton`).
+- Lean 4 (`QOU/Eightfold/HyperbolicMesonClaspAndDiquarkSplit.lean`): 0 errors, 0 warnings, 0 placeholders, standard axioms `[propext, Classical.choice, Quot.sound]` only.
+- 80-dps Probe & Witness (`computations/probes/sm8w_eightfold_clasp_diquark_gmo/`): passed `probe-float64-guard --diff`, `witness_raw_float64_audit --strict`, `mpf_context_dps_audit --strict`, and `lean-orphan-audit --diff`.
+- Wired `QOU.EightfoldWay.SymmetricChannelDimension` (`decuplet_dim = 10 != 4 = quadruplet_dim`) into `QOU.lean` and proved `quantum_cube_3x3x3_and_decuplet_10` (`(q^2 + q^{-2})[5]_q + 2[2]_q[4]_q + 1 = [3]_q^3` and rank-3 Ocneanu weight normalization at `z_3 = q^3/[3]_q`). Kept `in-progress` solely on the upstream `qou-j3w6` gate (constructing `W_3` categorically inside the multi-fibre groupoid).

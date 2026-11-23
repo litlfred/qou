@@ -1,13 +1,13 @@
 ---
 # qou-8fl1
 title: 'Eightfold chapter: Lean + QA coverage gap after the honesty pass'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-11-23T21:46:57Z
+updated_at: 2026-11-23T23:06:43Z
 parent: qou-5vkl
 ---
 
@@ -360,3 +360,12 @@ Measured on this branch (main `8ddfeaf1`):
 - **Round 97 (`litlfred/qou#8432`)**: Advanced in `feat/round97-monotone-multbound-ncpart-nonuniform-onebody-43c1` (Commit 1 `e883e42fdde30a6d22e385b72041c6f52899312f`, Commit 2 `56d66b28962228fdc58ad152218bdd3754f7c059`, probe sha256 `e41a92695f7287bc24947a7f23e2cb1aff6e02fcb3b0e34fb76f50f0c076b259`).
 
 ## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123 (under parent package qou-8fw2).
+
+
+
+---
+**Worker 20 () Delivery — 2026-11-23 (, Issue #9222, PR #9223):**
+- Commits: `3c6d1b9dc71` (pre-registration), `39a4158b03b` (`HyperbolicMesonClaspAndDiquarkSplit.lean`, `QOU.lean` 22-module wiring, Ch. 10 content sync, 80-dps probe), `e28c1294e44` (witness stamp `allPassed: True`, `stale: False`, `q0Anchor: proton`).
+- Lean 4 (`QOU/Eightfold/HyperbolicMesonClaspAndDiquarkSplit.lean`): 0 errors, 0 warnings, 0 placeholders, standard axioms `[propext, Classical.choice, Quot.sound]` only.
+- 80-dps Probe & Witness (`computations/probes/sm8w_eightfold_clasp_diquark_gmo/`): passed `probe-float64-guard --diff`, `witness_raw_float64_audit --strict`, `mpf_context_dps_audit --strict`, and `lean-orphan-audit --diff`.
+- Wired all 21 previously orphaned sorry-free `QOU/Eightfold/*.lean` and `QOU/EightfoldWay/*.lean` modules plus `HyperbolicMesonClaspAndDiquarkSplit` into `QOU.lean`, wired `rem:flavor-charge-assignments`, `rem:dictionary-flavor-layer`, and `rem:eightfold-open-problems`, and verified `lean-orphan-audit --diff`, `block-manifest-audit --diff`, `check-citation-keys --strict`, `check-computation-status --strict`, and zero Ch. 10 voice leaks.

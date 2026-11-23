@@ -1,11 +1,11 @@
 ---
 # qou-8fw2
 title: 'SM/Eightfold Worker Pkg 2 (Q-Gap-8): W_3*-Framed Hypercharge Y, Ordered Content-to-Braid Map, Lambda-Sigma Split & 2nd-Order GMO'
-status: in-progress
+status: completed
 type: feature
 priority: high
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T21:46:57Z
+updated_at: 2026-11-23T23:06:43Z
 parent: qou-sm8w
 ---
 
@@ -21,3 +21,12 @@ parent: qou-sm8w
 - Resolve the `Lambda-Sigma^0` 77 MeV degeneracy via `I=0` vs `I=1` sub-projector inside `S^{(2,1)}` (`qou-pwz4`) and vector vs pseudoscalar nonet mixing (`NonetMixingUnconstrained.lean`).
 
 ## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123: Starting Eightfold Way & SM Package 2 (Lean wiring, F = V_2 + W_3* sync, HyperbolicMesonClaspAndDiquarkSplit.lean, 80-dps pre-registered probe).
+
+
+
+---
+**Worker 20 () Delivery — 2026-11-23 (, Issue #9222, PR #9223):**
+- Commits: `3c6d1b9dc71` (pre-registration), `39a4158b03b` (`HyperbolicMesonClaspAndDiquarkSplit.lean`, `QOU.lean` 22-module wiring, Ch. 10 content sync, 80-dps probe), `e28c1294e44` (witness stamp `allPassed: True`, `stale: False`, `q0Anchor: proton`).
+- Lean 4 (`QOU/Eightfold/HyperbolicMesonClaspAndDiquarkSplit.lean`): 0 errors, 0 warnings, 0 placeholders, standard axioms `[propext, Classical.choice, Quot.sound]` only.
+- 80-dps Probe & Witness (`computations/probes/sm8w_eightfold_clasp_diquark_gmo/`): passed `probe-float64-guard --diff`, `witness_raw_float64_audit --strict`, `mpf_context_dps_audit --strict`, and `lean-orphan-audit --diff`.
+- Completed Package 2 deliverables: wired 22 sorry-free `Eightfold`/`EightfoldWay` modules into `QOU.lean` and Ch. 10 remarks; synced `eightfold-open-problems.md` with `F = V_2 ⊕ W_3^*` (`z_3 = q^3/[3]_q`) and `dim Sym^3(W_3^*) = 10` / `[3]_q^3 = dim_q(10) + 2 dim_q(8) + dim_q(1)`; proved the 3-strand hyperbolic gluon-clasp map separating `Dbar^0 = (5,3)` from `K^0 = (3,5)`; proved the `H_3(q)` `S^{(2,1)}` diquark projector split (`+0.02826481` on `V^3`, honest `31.535 MeV` / `-59.0%` vs PDG `76.959 MeV`); and proved the 2nd-order quantum Casimir GMO ratio `-((q-1)/(q+1))^2 = -0.00271682` (both octet signs matched; `1.21%` of meson / `0.82%` of baryon GMO deviation).

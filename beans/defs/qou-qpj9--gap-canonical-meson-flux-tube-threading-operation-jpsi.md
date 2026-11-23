@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-qcd
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-11-23T21:46:59Z
+updated_at: 2026-11-23T23:06:44Z
 parent: qou-8lxd
 ---
 
@@ -267,3 +267,12 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8196, closed o
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-25: "audit(qou-qpj9): the closed-3-braid volume tool is in the library, and it bounds the heavy end"). The work may be partly or fully done. Read the bean before you close it.
 
 ## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123 (under parent package qou-8fw2).
+
+
+
+---
+**Worker 20 () Delivery — 2026-11-23 (, Issue #9222, PR #9223):**
+- Commits: `3c6d1b9dc71` (pre-registration), `39a4158b03b` (`HyperbolicMesonClaspAndDiquarkSplit.lean`, `QOU.lean` 22-module wiring, Ch. 10 content sync, 80-dps probe), `e28c1294e44` (witness stamp `allPassed: True`, `stale: False`, `q0Anchor: proton`).
+- Lean 4 (`QOU/Eightfold/HyperbolicMesonClaspAndDiquarkSplit.lean`): 0 errors, 0 warnings, 0 placeholders, standard axioms `[propext, Classical.choice, Quot.sound]` only.
+- 80-dps Probe & Witness (`computations/probes/sm8w_eightfold_clasp_diquark_gmo/`): passed `probe-float64-guard --diff`, `witness_raw_float64_audit --strict`, `mpf_context_dps_audit --strict`, and `lean-orphan-audit --diff`.
+- Delivered the canonical parameter-free 3-strand gluon-clasp braid `beta_clasp(n_1, n_2) = sigma_1^{n_1} sigma_2^{-n_2} sigma_1 sigma_2^{-1} in B_3` (`tr_{SL_2(Z)} = 2 n_1 n_2 + n_1 + n_2 + 3 in {27,41,55,63,85,115} > 2`) separating `Dbar^0` from `K^0`. Kept `in-progress` for downstream `J/psi` absolute mass/volume closure.

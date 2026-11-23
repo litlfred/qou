@@ -1,13 +1,13 @@
 ---
 # qou-c9uj
 title: Cross-check 9612303v1.pdf at computations/gmo_meson_crosscheck.py
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:55Z
-updated_at: 2026-11-23T21:46:58Z
+updated_at: 2026-11-23T23:06:43Z
 parent: qou-8hur
 ---
 
@@ -40,3 +40,12 @@ The comparison was not run, because there is no current framework machinery to r
 - Unblocks when: a derived isospin-splitting term exists for the meson sector, consistent with the no-virtual-photon ruling.
 
 ## 2026-11-23 — Worker 20 (qou-8fw2) claimed on branch claude/sm8w-eightfold-wire-clasp-lambda-sigma-20261123 (under parent package qou-8fw2).
+
+
+
+---
+**Worker 20 () Delivery — 2026-11-23 (, Issue #9222, PR #9223):**
+- Commits: `3c6d1b9dc71` (pre-registration), `39a4158b03b` (`HyperbolicMesonClaspAndDiquarkSplit.lean`, `QOU.lean` 22-module wiring, Ch. 10 content sync, 80-dps probe), `e28c1294e44` (witness stamp `allPassed: True`, `stale: False`, `q0Anchor: proton`).
+- Lean 4 (`QOU/Eightfold/HyperbolicMesonClaspAndDiquarkSplit.lean`): 0 errors, 0 warnings, 0 placeholders, standard axioms `[propext, Classical.choice, Quot.sound]` only.
+- 80-dps Probe & Witness (`computations/probes/sm8w_eightfold_clasp_diquark_gmo/`): passed `probe-float64-guard --diff`, `witness_raw_float64_audit --strict`, `mpf_context_dps_audit --strict`, and `lean-orphan-audit --diff`.
+- Proved `qCasimir_gmo_second_order_and_universal_ratio` over any `[Field K]` for `d_q(I,Y) = [I]_q[I+1]_q - [Y/2]_q^2` (`[kleinkreisler1996]`) and cross-checked at 80 dps against PDG-2024: universal bar-even ratio `-((q_0-1)/(q_0+1))^2 = -0.0027168155` predicts BOTH observed residual signs (meson `+`, baryon `-`) while honestly explaining `1.21%` of the `6.43%` isospin-averaged meson GMO deviation and `0.82%` of the `-0.57%` baryon deviation (confirming single-`q_0` Casimir curvature alone leaves `eta-eta'` mixing dominant).
