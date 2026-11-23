@@ -1,4 +1,5 @@
 import QOU.BraidKnot.SubstrateEWHypotheses
+import QOU.Knot.CatalanValueBounds
 
 /-!
 # QOU.BraidKnot.HiggsCategoricalMassFormula — Lean encoding of the constructed Higgs mass formula
@@ -66,34 +67,32 @@ noncomputable def tracePolynomial (m : ℕ) (h : ℝ) : ℝ :=
   (Finset.range (m + 1)).sum fun j =>
     (Nat.choose (m + j) (2 * j) : ℝ) / 2 * h ^ (2 * j)
 
-/-- Catalan's constant G — referenced via the existing framework
-    convention (Vol(B_3) = 8G; Adams 1985). Real-valued, transcendental.
+/-- Catalan's constant `G = Cl₂(π/2)` — exact analytic Clausen Fourier series
+    (`QOU.Archimedean.Catalan_constant`, zero decimal/rational truncation).
 
-    Implementation note: encoded as a Real here for use in the mass
-    formula; in production, this connects to mpmath G ≈ 0.91596.
+    **Remediated (`qou-ewsb` / `qou-3nva`):** Previously carried a 52-digit
+    rational decimal literal; now unified definitionally with
+    `QOU.Archimedean.Catalan_constant = Cl_2 (Real.pi / 2)` so that
+    `volBorromean` equals `QOU.Archimedean.Vol_Borromean` (`8 · Cl_2 (π/2)`) by
+    `rfl`, and rational interval bounds follow directly from
+    `QOU.Knot.abs_Catalan_sub_le` without any empirical or decimal literal. -/
+noncomputable def catalanG : ℝ := QOU.Archimedean.Catalan_constant
 
-    ⚠ **NAME COLLISION + truncated-literal trap (flagged 2026-08-19).**
+/-- Generic field-level Borromean volume linear form `8 · G` over any commutative ring `R`,
+    treating Catalan's constant as an abstract parameter `G : R` (§7c). -/
+def volBorromeanParam {R : Type*} [CommRing R] (G : R) : R := 8 * G
 
-    1. This is a **decimal literal**, i.e. a rational — so the docstring's
-       "transcendental" describes the intended constant, not this definition.
-       Nothing in this file is false as a result: the only consequence drawn
-       from it, `volBorromean / 4 = 2 * catalanG`, is a `ring` identity that
-       holds for any value. But it is a live trap. The moment anyone asserts
-       `volBorromean = Vol(𝓑₃)`, or links it to
-       `QOU.Knot.BorromeanVolume`'s `8·Cl₂(π/2)`, that statement becomes
-       **false** — by ~1e-52 — in exactly the way `VOL_4_1` was before bean
-       `qou-yf47` replaced its truncated decimal with `2·Cl₂(π/3)`.
-    2. A **second, different `catalanG`** exists in this corpus:
-       `QOU.Knot.WhiteheadVC.catalanG := ∑' n, (-1)^n/(2n+1)^2` — the exact
-       series. Two objects under one name is what the AGENTS.md notation
-       register forbids.
+/-- Generic ring-level `h⁴` structural correction `1 - h⁴ · (2 · G)` with abstract parameter `G`. -/
+def h4StructuralCorrectionParam {R : Type*} [CommRing R] (G h : R) : R :=
+  1 - h ^ 4 * (2 * G)
 
-    The exact form is already available: `QOU.Knot.clausen (π/2)`, with
-    certified rational bounds in `QOU/Knot/CatalanValueBounds.lean`. Switching
-    to it is the `qou-yf47` repair applied here; left to this file's owner
-    because it may move numerics downstream.
-    Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`. -/
-noncomputable def catalanG : ℝ := 0.9159655941772190150546035149323841107741493742816721
+/-- Generic field-level scalar-to-gauge ratio `(6 / 5) · (1 - h⁴ · 2 G)` with abstract `G : K`. -/
+def scalarOverGaugeRatioParam {K : Type*} [Field K] (G h : K) : K :=
+  (6 : K) / 5 * h4StructuralCorrectionParam G h
+
+/-- Generic field-level Higgs mass formula `m_W · (P₄ / P₂) · (6 / 5) · (1 - h⁴ · 2 G)`. -/
+def higgsMassFormulaParam {K : Type*} [Field K] (G m_W P2 P4 h : K) : K :=
+  m_W * (P4 / P2) * scalarOverGaugeRatioParam G h
 
 /-- Hyperbolic volume of the Borromean rings complement, Vol(𝓑_3) = 8G.
     Adams 1985 (cited via existing framework's `prop:vol-b3-eq-8g`).
@@ -142,6 +141,35 @@ theorem six_fifths_eq_S3_over_partitions4 :
 theorem vol_borromean_over_four_eq_two_catalan :
     volBorromean / 4 = 2 * catalanG := by
   unfold volBorromean
+  ring
+
+/-- `catalanG` is definitionally `Cl_2 (π / 2)` (no decimal truncation). -/
+theorem catalanG_eq_cl2_pi_div_two :
+    catalanG = QOU.Archimedean.Cl_2 (Real.pi / 2) := rfl
+
+/-- `volBorromean` agrees definitionally with `QOU.Archimedean.Vol_Borromean = 8 · Cl_2 (π / 2)`. -/
+theorem volBorromean_eq_Vol_Borromean :
+    volBorromean = QOU.Archimedean.Vol_Borromean := rfl
+
+/-- **Certified rational bracket on `catalanG` (zero decimal literals):**
+    `|catalanG - 102476291858462752 / 111983464450883025| ≤ 1 / 24`. -/
+theorem catalanG_certified_rational_bracket :
+    |catalanG - (102476291858462752 / 111983464450883025 : ℝ)| ≤ 1 / 24 :=
+  QOU.Knot.abs_Catalan_sub_le
+
+/-- **Certified open rational interval `87 / 100 < catalanG < 96 / 100`**, derived purely from the
+    24-term Clausen Fourier partial sum and telescoping tail bound. -/
+theorem catalanG_in_open_rational_interval :
+    (87 / 100 : ℝ) < catalanG ∧ catalanG < (96 / 100 : ℝ) := by
+  have h := abs_le.mp catalanG_certified_rational_bracket
+  constructor <;> linarith [h.1, h.2]
+
+/-- Specialization of the generic abstract-parameter formula `higgsMassFormulaParam` at `G = catalanG`. -/
+theorem higgsMassFormula_eq_param (m_W h : ℝ) :
+    higgsMassFormula m_W h =
+      higgsMassFormulaParam catalanG m_W (tracePolynomial 2 h) (tracePolynomial 4 h) h := by
+  unfold higgsMassFormula higgsMassFormulaParam scalarOverGaugeRatio scalarOverGaugeRatioParam
+    h4StructuralCorrection h4StructuralCorrectionParam volBorromean
   ring
 
 /-- Trivial identity: at h = 0 (classical limit), the correction
