@@ -37,7 +37,7 @@ duals (bulk) as objects with a comparison map, compatibility of the twists
 `ν (n+1) ∘ ι n = ι n ∘ ν n`, and any analogue at real `q₀` on `Sym(Ω¹)`.
 
 ## References
-- [kadison1999] Frobenius extensions and conditional expectations.
+- Kadison, *New examples of Frobenius extensions*, AMS University Lecture Series 14 (1999). Not yet in the bibliography.
 - [lorenz2011] Nakayama automorphism of a Frobenius algebra.
 - [leitner2026] §1 Categorical foundations.
 -/
