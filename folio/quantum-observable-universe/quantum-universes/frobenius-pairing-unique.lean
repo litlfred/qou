@@ -27,11 +27,11 @@ This file replaces that false `Subsingleton` axiom with the honest
 **conditional** statement: on a *simple* common object the Frobenius
 form is unique up to an invertible scalar.  That sharpened claim is
 the genuine categorical content (Schur 1-dimensionality of
-`Hom(A, 𝟙)` for simple `A`, [kock2004] Ch 2).  It is retained as a
-single named axiom — `frobeniusForm_unique_axiom` — pending a Mathlib
-argument deriving 1-dimensionality from `Simple`; this is the §3b-cond
-conditional pattern (one named, cited categorical input), not a false
-`Subsingleton`.  `FrobeniusHopfData` is imported here from the `QOU`
+`Hom(A, 𝟙)` for simple `A`, [kock2004] Ch 2).  It is proved here as
+`frobeniusForm_unique_of_schur`, under the Schur hypotheses it needs
+(preadditive with kernels, monoidal-preadditive, simple unit). A former
+named axiom stating it without those hypotheses had no Lean consumer
+and was deleted on owner approval, 2026-11-23.  `FrobeniusHopfData` is imported here from the `QOU`
 library.
 
 ## References
@@ -68,9 +68,9 @@ theorem FrobeniusHopfData.frobeniusForm_ne_zero
     `A ⟶ 𝟙` is nonzero, hence an isomorphism by Schur's lemma, and
     `c := (e ≫ λ₂)⁻¹ ≫ λ₁` is the required invertible scalar.
 
-    This is the axiom below with its missing hypotheses made explicit. The
-    axiom itself carries no linear structure and no simplicity of `𝟙`; whether
-    it holds without them is open (bean `qou-n2un`). -/
+    Whether the statement holds without these hypotheses (no linear
+    structure, no simplicity of `𝟙`) is open (bean `qou-n2un`); the former
+    axiom asserting that was deleted on owner approval, 2026-11-23. -/
 -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 theorem FrobeniusHopfData.frobeniusForm_unique_of_schur
     {C : Type u} [Category.{v} C] [Preadditive C] [Limits.HasKernels C]
@@ -88,43 +88,5 @@ theorem FrobeniusHopfData.frobeniusForm_unique_of_schur
   haveI h₂ : IsIso fh₂.frobeniusForm := isIso_of_hom_simple fh₂.frobeniusForm_ne_zero
   refine ⟨inv (eqToHom hobj ≫ fh₂.frobeniusForm) ≫ fh₁.frobeniusForm, inferInstance, ?_⟩
   simp
-
-/-- **Frobenius form unique up to invertible scalar (conditional,
-    named categorical input).**
-
-    On a *simple* common object, two `FrobeniusHopfData` Frobenius
-    forms differ by an invertible scalar `c : End(𝟙_ C)` (post-
-    composed, after transporting along the object equality).  The
-    simplicity hypothesis is essential — it drops to multi-block in a
-    semisimple but non-simple category.  This is the §3b-cond
-    conditional content (Schur 1-dimensionality of `Hom(A, 𝟙)`,
-    [kock2004]); it replaces a false `Subsingleton (FrobeniusHopfData
-    C)` axiom. -/
--- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
-axiom FrobeniusHopfData.frobeniusForm_unique_axiom
-    {C : Type u} [Category.{v} C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
-    [Limits.HasZeroMorphisms C]
-    (fh₁ fh₂ : FrobeniusHopfData C)
-    (hobj : fh₁.obj = fh₂.obj)
-    (_hsimple : Simple fh₁.obj) :
-    ∃ c : End (𝟙_ C), IsIso c ∧
-      fh₁.frobeniusForm = (eqToHom hobj ≫ fh₂.frobeniusForm) ≫ c
-
-/-- **Uniqueness of the Frobenius pairing up to scalar (conditional).**
-
-    Wrapper over `frobeniusForm_unique_axiom`: on a simple common
-    object the Frobenius form is determined up to an invertible scalar
-    in `End(𝟙)`.  Replaces the false `Subsingleton (FrobeniusHopfData
-    C)` claim originally written here. -/
--- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
-theorem FrobeniusHopfData.frobeniusForm_unique
-    {C : Type u} [Category.{v} C] [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
-    [Limits.HasZeroMorphisms C]
-    (fh₁ fh₂ : FrobeniusHopfData C)
-    (hobj : fh₁.obj = fh₂.obj)
-    (hsimple : Simple fh₁.obj) :
-    ∃ c : End (𝟙_ C), IsIso c ∧
-      fh₁.frobeniusForm = (eqToHom hobj ≫ fh₂.frobeniusForm) ≫ c :=
-  FrobeniusHopfData.frobeniusForm_unique_axiom fh₁ fh₂ hobj hsimple
 
 end QOU

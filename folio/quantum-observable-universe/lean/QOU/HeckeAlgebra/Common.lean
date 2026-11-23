@@ -127,10 +127,12 @@ opaque markovTraceWeight : (n : ℕ) → HeckeElement n
     reads `0 = 0` under it. That was already true of the previous `opaque`
     presentation and is unchanged here — but it is worth stating where a reader
     will see it, because a sharper version of the same degeneracy was a live
-    defect: bean `qou-ck1f` found `MarkovTrace_markov_axiom` binding its Markov
-    parameter with `∀ (z : ℝ)`, which PROVED `tr_M ≡ 0`. Removing that binder
+    defect: bean `qou-ck1f` found the former `MarkovTrace_markov_axiom` (deleted
+    2026-11-23) binding its Markov parameter with `∀ (z : ℝ)`, which PROVED
+    `tr_M ≡ 0`. Removing that binder
     removed the proof of degeneracy; it did not add anything excluding it.
-    Nothing in this layer forces `tr_M ≠ 0`. -/
+    Nothing in this layer forces `tr_M ≠ 0`. For a concrete, non-zero Markov
+    trace with the Markov property proved, see `QOU.SchurWeyl.ocneanuMarkovTrace`. -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (Markov trace H_n(q) → ℝ)
 noncomputable def markovTrace (n : ℕ) (x : HeckeElement n) : ℝ :=
   frobeniusInner (markovTraceWeight n) x
