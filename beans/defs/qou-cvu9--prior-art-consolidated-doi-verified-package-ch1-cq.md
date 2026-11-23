@@ -1,13 +1,13 @@
 ---
 # qou-cvu9
 title: 'Prior-Art Consolidated DOI-Verified Package: Ch.1 CQM/DHR, Ch.2 O_q(SU(2)) Geometry, & Remaining qou-tt2u Bibs (Owner OK Before PR)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - needs-owner-ok
 created_at: 2026-11-23T21:31:07Z
-updated_at: 2026-11-23T21:31:07Z
+updated_at: 2026-11-23T22:57:11Z
 parent: qou-hksc
 ---
 

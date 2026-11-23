@@ -5,8 +5,8 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T21:29:52Z
-updated_at: 2026-11-23T22:08:56Z
+updated_at: 2026-11-23T22:57:11Z
 parent: qou-hksc
 ---
 
-Sync litlfred/folio-assistant-sci PR #215 (claude/project-thread-bgava4, closes #214; currently 1 ahead / 0 behind main). Generate missing BPMN checklist and SVG alongside processes/content/formalized-publication-authoring.bpmn using bun run cat bpmn:checklist and render:bpmn from the index checkout (/Users/litlfred/space_cats/folio-assistant), verify XML/layout and docs/index.md links, comment on PR #215 on push, and hold rebase-merge for explicit owner OK. Note: qou #9180 and #9196 are already merged on main; qou #9194 is held per owner directive 'dont work public release'.
+Completed & pushed 1ea54e5 onto litlfred/folio-assistant-sci PR #215 (held unmerged for owner OK): added 1340x876 0-crossing BPMN DI layout, fixed role-carries-activity-skill & gateway-mixed, generated .checklist.md, .svg, & 5 locale .pot files; bpmn:detangle (0 findings), kg-audit (33/33 pass), folio:render:check (0 errors).
