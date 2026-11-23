@@ -1,13 +1,31 @@
 # Quantum Observable Universe
 
-[![Lean CI](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml)
-[![Build & Publish](https://github.com/litlfred/qou/actions/workflows/publish.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/publish.yml)
-[![Blueprint](https://github.com/litlfred/qou/actions/workflows/blueprint.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/blueprint.yml)
+[![Build site](https://github.com/litlfred/qou/actions/workflows/build.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/build.yml)
 
 A formal mathematics paper exploring the Quantum Observable Universe (QOU)
 with machine-checked **Lean 4** formalization, **content-object architecture**
 (TypeScript + Markdown + Lean triples), and an interactive **Folio Assistant**
 platform for browsing, reviewing, and exploring the work.
+
+> **This is a work in progress.** Meaningful contributions are welcome.
+> Start with the [Authors' Note](folio/quantum-observable-universe/authors-note/authors-note-status.md),
+> which says where the open problems are and how the model's numbers compare
+> with experiment, then read [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Read the work
+
+| | |
+|---|---|
+| **Web view** | [litlfred.github.io/qou](https://litlfred.github.io/qou/) |
+| **PDF** | [Full paper](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/quantum-observable-universe.pdf) (per-chapter PDFs in [Contents](#contents)) |
+| **Lean library** | [Rendered declarations and source](https://litlfred.github.io/qou/lean/) |
+| **QA reports** | [`qa-reports` branch](https://github.com/litlfred/qou/tree/cat/cat-harness/qa-reports), one report per commit |
+| **Status and accuracy** | [Authors' Note: a work in progress](folio/quantum-observable-universe/authors-note/authors-note-status.md) |
+| **How to contribute** | [CONTRIBUTING.md](CONTRIBUTING.md) · [Contributors](CONTRIBUTORS.md) |
+| **License** | [CC BY 4.0](LICENSE) |
+
+The published site and PDF currently lag the source: they were last built in
+July 2026, and a rebuild is pending. The source in this repository is current.
 
 ## Content-Object Architecture
 
