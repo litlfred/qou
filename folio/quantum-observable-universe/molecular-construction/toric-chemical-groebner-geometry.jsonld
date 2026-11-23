@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-toric-chemical-groebner-geometry",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:toric-chemical-groebner-geometry",
+  "kind": "remark",
+  "title": "Gröbner test sets, Sturmfels–Thomas enthalpy normal forms, and Birch mass-action toric equilibria",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-h2-molecular-braid",
+    "papers/quantum-observable-universe/blocks/def-co-molecular-braid",
+    "papers/quantum-observable-universe/blocks/def-co2-molecular-braid",
+    "papers/quantum-observable-universe/blocks/def-ch4-molecular-braid",
+    "papers/quantum-observable-universe/blocks/def-h2o-molecular-braid",
+    "papers/quantum-observable-universe/blocks/def-iterated-confinement-layer",
+    "papers/quantum-observable-universe/blocks/thm-toric-diophantine-stoichiometry"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-toric-diophantine-stoichiometry",
+  "cites": [
+    "references/deloera-hemmecke-koeppe2013",
+    "references/hemmecke-koeppe-weismantel2014",
+    "references/sturmfels-thomas1997",
+    "references/birch1963",
+    "references/horn-jackson1972",
+    "references/feinberg1972",
+    "references/gatermann-huber2002",
+    "references/craciun-dickenstein-shiu-sturmfels2009"
+  ],
+  "tags": [
+    "stoichiometry",
+    "groebner-basis",
+    "graver-basis",
+    "toric-geometry",
+    "mass-action",
+    "birch-theorem"
+  ],
+  "leanRef": "qou:QOU.MathlibInfra.ConfinementLayerTower.toric_hom_vanishes_on_binomial_of_kernel",
+  "text": "toric-chemical-groebner-geometry.md",
+  "provenance": "authored"
+}

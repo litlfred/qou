@@ -1,0 +1,1437 @@
+{
+  "engine": "sympy exact Z/Q + mpmath (80 dps)",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T20:36:37.360203+00:00",
+  "commitSha": "e800e93bde6640a98941cf24dcaf1836207e9198",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP_to_65dps",
+      "computed": "7.7371835785001558254693266916894429350432517045353158698039047552322722685262247e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants.q_at(80) vs Q_MP"
+    },
+    {
+      "name": "m_e_CAL1_matches_substrate_str",
+      "computed": "2.7296404146547896671913968017449690848875691762721274465503326496435902766293486e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "codata_constants.M_E_MEV vs qou_substrate.constants.M_E_MEV_STR"
+    },
+    {
+      "name": "mp_qou_matches_codata_proton_anchor",
+      "computed": "0.0000000000028517875211288858512709942541554941966446339590975591703741293205610028839712607",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0.000000001",
+      "source": "Proton anchor identity m_p(q0) vs CODATA-2022 m_p"
+    },
+    {
+      "name": "all_ambient_adiabatic_ratios_strictly_below_unity",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "hierarchical_confinement_of_adiabatic_ratio_lt_one across L_0..L_4"
+    },
+    {
+      "name": "neutron_star_capture_flip_sign_change_exact",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "neutron_star_electron_capture_threshold at E_{F,e}^* = m_n - m_p"
+    },
+    {
+      "name": "noble_gas_magic_closures_match_2_10_18_36_54_86",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "ConfinementLayerTower.noble_gas_magic_closures_eq"
+    },
+    {
+      "name": "layer3_shadow_price_identities_and_pplb_convexity",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "parr_pearson_hardness_eq_shadow_jump & two_mul_mulliken_eq_neg_shadow_sum"
+    },
+    {
+      "name": "four_canonical_1d_chemical_circuits_exact_and_primitive",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "ConfinementLayerTower.{ker_A_H2O_iff, ker_A_CH4_iff, ker_A_NH3_iff, ker_A_gluc_iff}"
+    },
+    {
+      "name": "pottier_graver_basis_matches_exhaustive_box_scan",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "Pottier Algorithm 3.2.2 vs exhaustive Z^4 kernel box scan"
+    },
+    {
+      "name": "toric_hierarchy_circuits_subset_ugb_subset_graver",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "Sturmfels (1996) Prop. 4.11: C(A) subseteq UGB(I_A) subseteq G(A)"
+    },
+    {
+      "name": "sturmfels_thomas_normal_form_reaches_exact_ip_global_optimum",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "Sturmfels-Thomas test-set optimality & reduced_cost_fiber_invariance"
+    },
+    {
+      "name": "birch_toric_equilibrium_fiber_conservation_70dps",
+      "computed": "8.4337583545844185794788592410160152061679691058948060400622104200865154327758077e-80",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "Birch's theorem: A_CHO x^* = b on positive orthant"
+    },
+    {
+      "name": "birch_toric_equilibrium_satisfies_all_graver_binomials_70dps",
+      "computed": "8.4741541118632258787358873935636477397766609447865017305667790176234149158726026e-80",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "Detailed-balance toric ideal x^{nu_+} = K_eq x^{nu_-} across all G(A_CHO)"
+    },
+    {
+      "name": "birch_hessian_strictly_positive_definite",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "Strict convexity of Legendre potential Phi(y) => global uniqueness of x^*"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 58002,
+  "computation": "confinement-layer-tower-chem",
+  "scriptFile": "confinement_layer_tower_chem_probe.py",
+  "scriptHash": "09d00860466c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/confinement_layer_tower_chem/confinement_layer_tower_chem_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/confinement_layer_tower_chem/confinement_layer_tower_chem_probe.py"
+  },
+  "description": "Pre-registered 80-dps & exact symbolic verification of the 5-Layer Iterated Confinement Tower (L_0..L_4), adiabatic gap ratios eta_k = ||V_{k+1}|| / Delta_k, neutron-star electron-capture flip threshold, Layer-3 Mulliken/Parr-Pearson shadow prices, and Layer-4 Diophantine/Graver/Universal-Gröbner/Birch toric chemistry (Bean qou-5lct / Q-Gap-0).",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "m_e_MeV_CAL1": "0.51099895069000000000000000000000000000000000000000"
+  },
+  "data": {
+    "five_layer_adiabatic_tower": {
+      "L0_to_L1_eta0_QED_over_hadron": "0.0072973525643000000000000000000000000000000000000000",
+      "L1_to_L2_eta1_4He_per_A_over_mp": "0.0075393008911919940112607346890493326055625459575435",
+      "L1_to_L2_eta1_12C_per_A_over_mp": "0.0081854130444054747230538728387054704107884913552092",
+      "L1_to_L2_eta1_56Fe_per_A_over_mp": "0.0093686643768389262470770884114751583804734878236223",
+      "L2_to_L3_eta2_Ry_over_12C_per_A": "0.0000017715412705636955681511234745045099801896959075484",
+      "L2_to_L3_eta2_Ry_over_4He_per_A": "0.0000019233609633110275550615535951049585607156523043617",
+      "L2_to_L3_eta2_Ry_over_delta_np": "0.000010519872513524697120448772247014072197102661557622",
+      "L3_to_L4_eta3_cov_over_C1s_core": "0.010259567046270647378680619677849594747101672309429",
+      "L3_to_L4_eta3_kT298_over_cov": "0.0056651092059478087513801674641578451646152642106213",
+      "L3_to_L4_eta3_Hbond_over_Ry": "0.014699728870474938939317333171242272245640998812465",
+      "mp_QOU_MeV": "938.27208942732424736394000000000000000000000000000",
+      "Rydberg_eV": "13.605693122796905473779782936649050000000000000000",
+      "neutron_star_flip_E_Fe_star_CODATA_MeV": "1.2933325100000000000000000000000000000000000000000",
+      "neutron_star_flip_T_Fe_star_CODATA_MeV": "0.78233355931000000000000000000000000000000000000000",
+      "neutron_star_flip_p_Fe_star_MeV_c": "1.1881031326516309832012449663890705072291975547704",
+      "neutron_star_flip_n_e_star_cm3": "7371943737410067358992816726384.3994019569282415224",
+      "neutron_star_flip_rho_Ye1_g_cm3": "12330474.732065822720693104049684620602931748699845",
+      "neutron_star_flip_E_Fe_star_QOU_MeV": "1.2946447780646212130749397513413968905257364410303",
+      "neutron_star_flip_n_e_star_QOU_fm3": "0.0000000073985637981579107406365502437532572326269992773603"
+    },
+    "layer3_shadow_prices": {
+      "pauli_shell_capacities_1_to_4": [
+        2,
+        8,
+        18,
+        32
+      ],
+      "noble_gas_closures": [
+        2,
+        10,
+        18,
+        36,
+        54,
+        86
+      ],
+      "comparison_elements": [
+        {
+          "element": "H",
+          "Z": 1,
+          "I_eV_NIST_comparison": "13.59844",
+          "A_ea_eV_NIST_comparison": "0.754195",
+          "mu_minus_eV": "-13.59844",
+          "mu_plus_eV": "-0.754195",
+          "chi_Mulliken_eV": "7.1763175",
+          "eta_ParrPearson_jump_eV": "12.844245",
+          "noble_closure": false
+        },
+        {
+          "element": "He",
+          "Z": 2,
+          "I_eV_NIST_comparison": "24.58739",
+          "A_ea_eV_NIST_comparison": "-0.5",
+          "mu_minus_eV": "-24.58739",
+          "mu_plus_eV": "0.5",
+          "chi_Mulliken_eV": "12.043695",
+          "eta_ParrPearson_jump_eV": "25.08739",
+          "noble_closure": true
+        },
+        {
+          "element": "Li",
+          "Z": 3,
+          "I_eV_NIST_comparison": "5.39172",
+          "A_ea_eV_NIST_comparison": "0.618049",
+          "mu_minus_eV": "-5.39172",
+          "mu_plus_eV": "-0.618049",
+          "chi_Mulliken_eV": "3.0048845",
+          "eta_ParrPearson_jump_eV": "4.773671",
+          "noble_closure": false
+        },
+        {
+          "element": "C",
+          "Z": 6,
+          "I_eV_NIST_comparison": "11.2603",
+          "A_ea_eV_NIST_comparison": "1.262118",
+          "mu_minus_eV": "-11.2603",
+          "mu_plus_eV": "-1.262118",
+          "chi_Mulliken_eV": "6.261209",
+          "eta_ParrPearson_jump_eV": "9.998182",
+          "noble_closure": false
+        },
+        {
+          "element": "N",
+          "Z": 7,
+          "I_eV_NIST_comparison": "14.53414",
+          "A_ea_eV_NIST_comparison": "-0.07",
+          "mu_minus_eV": "-14.53414",
+          "mu_plus_eV": "0.07",
+          "chi_Mulliken_eV": "7.23207",
+          "eta_ParrPearson_jump_eV": "14.60414",
+          "noble_closure": false
+        },
+        {
+          "element": "O",
+          "Z": 8,
+          "I_eV_NIST_comparison": "13.61806",
+          "A_ea_eV_NIST_comparison": "1.461112",
+          "mu_minus_eV": "-13.61806",
+          "mu_plus_eV": "-1.461112",
+          "chi_Mulliken_eV": "7.539586",
+          "eta_ParrPearson_jump_eV": "12.156948",
+          "noble_closure": false
+        },
+        {
+          "element": "F",
+          "Z": 9,
+          "I_eV_NIST_comparison": "17.42282",
+          "A_ea_eV_NIST_comparison": "3.40119",
+          "mu_minus_eV": "-17.42282",
+          "mu_plus_eV": "-3.40119",
+          "chi_Mulliken_eV": "10.412005",
+          "eta_ParrPearson_jump_eV": "14.02163",
+          "noble_closure": false
+        },
+        {
+          "element": "Ne",
+          "Z": 10,
+          "I_eV_NIST_comparison": "21.56454",
+          "A_ea_eV_NIST_comparison": "-1.2",
+          "mu_minus_eV": "-21.56454",
+          "mu_plus_eV": "1.2",
+          "chi_Mulliken_eV": "10.18227",
+          "eta_ParrPearson_jump_eV": "22.76454",
+          "noble_closure": true
+        },
+        {
+          "element": "Na",
+          "Z": 11,
+          "I_eV_NIST_comparison": "5.13908",
+          "A_ea_eV_NIST_comparison": "0.547926",
+          "mu_minus_eV": "-5.13908",
+          "mu_plus_eV": "-0.547926",
+          "chi_Mulliken_eV": "2.843503",
+          "eta_ParrPearson_jump_eV": "4.591154",
+          "noble_closure": false
+        },
+        {
+          "element": "Cl",
+          "Z": 17,
+          "I_eV_NIST_comparison": "12.96764",
+          "A_ea_eV_NIST_comparison": "3.612724",
+          "mu_minus_eV": "-12.96764",
+          "mu_plus_eV": "-3.612724",
+          "chi_Mulliken_eV": "8.290182",
+          "eta_ParrPearson_jump_eV": "9.354916",
+          "noble_closure": false
+        },
+        {
+          "element": "Ar",
+          "Z": 18,
+          "I_eV_NIST_comparison": "15.75962",
+          "A_ea_eV_NIST_comparison": "-1.0",
+          "mu_minus_eV": "-15.75962",
+          "mu_plus_eV": "1.0",
+          "chi_Mulliken_eV": "7.37981",
+          "eta_ParrPearson_jump_eV": "16.75962",
+          "noble_closure": true
+        }
+      ]
+    },
+    "canonical_1d_stoichiometry": [
+      {
+        "system": "water_synthesis",
+        "species": [
+          "H2",
+          "O2",
+          "H2O"
+        ],
+        "rank": 2,
+        "kernel_dim": 1,
+        "smith_invariant_factors": [
+          1,
+          2
+        ],
+        "hermite_normal_form": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "primitive_circuit": [
+          -2,
+          -1,
+          2
+        ],
+        "gcd": 1
+      },
+      {
+        "system": "methane_combustion",
+        "species": [
+          "CH4",
+          "O2",
+          "CO2",
+          "H2O"
+        ],
+        "rank": 3,
+        "kernel_dim": 1,
+        "smith_invariant_factors": [
+          1,
+          1,
+          4
+        ],
+        "hermite_normal_form": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            2
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "primitive_circuit": [
+          -1,
+          -2,
+          1,
+          2
+        ],
+        "gcd": 1
+      },
+      {
+        "system": "haber_bosch_ammonia",
+        "species": [
+          "N2",
+          "H2",
+          "NH3"
+        ],
+        "rank": 2,
+        "kernel_dim": 1,
+        "smith_invariant_factors": [
+          1,
+          2
+        ],
+        "hermite_normal_form": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "primitive_circuit": [
+          -1,
+          -3,
+          2
+        ],
+        "gcd": 1
+      },
+      {
+        "system": "glucose_respiration",
+        "species": [
+          "C6H12O6",
+          "O2",
+          "CO2",
+          "H2O"
+        ],
+        "rank": 3,
+        "kernel_dim": 1,
+        "smith_invariant_factors": [
+          1,
+          1,
+          4
+        ],
+        "hermite_normal_form": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            2
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "primitive_circuit": [
+          -1,
+          -6,
+          6,
+          6
+        ],
+        "gcd": 1
+      }
+    ],
+    "cho_multi_reaction_network": {
+      "species": [
+        "C",
+        "H2",
+        "O2",
+        "CO",
+        "CO2",
+        "H2O",
+        "CH4"
+      ],
+      "rank": 3,
+      "kernel_dim": 4,
+      "smith_invariant_factors": [
+        1,
+        1,
+        2
+      ],
+      "hermite_normal_form_col": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "row_hermite_normal_form": [
+        [
+          4,
+          -2,
+          4,
+          6,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ]
+      ],
+      "num_elementary_circuits_unoriented": 20,
+      "num_universal_groebner_binomials_unoriented": 32,
+      "num_graver_elements_unoriented": 33,
+      "num_graver_elements_oriented": 66,
+      "elementary_circuits": [
+        [
+          0,
+          0,
+          0,
+          4,
+          -3,
+          2,
+          -1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          -2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          -1,
+          -2,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          -2,
+          0,
+          -4,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          -1,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          2,
+          -1,
+          0,
+          1,
+          0,
+          -1
+        ],
+        [
+          0,
+          2,
+          0,
+          2,
+          -1,
+          0,
+          -1
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          0,
+          4,
+          -1,
+          2,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          4,
+          0,
+          0,
+          1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          0,
+          0,
+          -1,
+          2,
+          0
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          -1,
+          0,
+          0,
+          2,
+          -1
+        ],
+        [
+          1,
+          0,
+          0,
+          -2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          -1,
+          2,
+          -1
+        ],
+        [
+          2,
+          0,
+          1,
+          -2,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          -2,
+          0,
+          2,
+          -1
+        ]
+      ],
+      "universal_groebner_basis": [
+        [
+          0,
+          0,
+          0,
+          4,
+          -3,
+          2,
+          -1
+        ],
+        [
+          0,
+          0,
+          1,
+          -2,
+          1,
+          -2,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          -2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          -1,
+          -2,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          -2,
+          0,
+          -4,
+          2
+        ],
+        [
+          0,
+          1,
+          -2,
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -1,
+          1,
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          0,
+          -1,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          3,
+          -2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          -1,
+          0,
+          -3,
+          1
+        ],
+        [
+          0,
+          2,
+          -1,
+          0,
+          1,
+          0,
+          -1
+        ],
+        [
+          0,
+          2,
+          0,
+          2,
+          -1,
+          0,
+          -1
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          0,
+          4,
+          -1,
+          2,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          4,
+          0,
+          0,
+          1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          0,
+          0,
+          -1,
+          2,
+          0
+        ],
+        [
+          1,
+          -2,
+          1,
+          -2,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          -1,
+          0,
+          0,
+          2,
+          -1
+        ],
+        [
+          1,
+          0,
+          0,
+          -2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          -2,
+          2,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          -2,
+          0,
+          -2,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          -1,
+          2,
+          -1
+        ],
+        [
+          2,
+          0,
+          1,
+          -2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          -1,
+          0,
+          1,
+          -1
+        ],
+        [
+          3,
+          0,
+          0,
+          -2,
+          0,
+          2,
+          -1
+        ]
+      ],
+      "graver_basis_unoriented": [
+        [
+          0,
+          0,
+          0,
+          4,
+          -3,
+          2,
+          -1
+        ],
+        [
+          0,
+          0,
+          1,
+          -2,
+          1,
+          -2,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          -2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          -1,
+          -2,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          -2,
+          0,
+          -4,
+          2
+        ],
+        [
+          0,
+          1,
+          -2,
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -1,
+          1,
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          0,
+          -1,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          3,
+          -2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          -1,
+          0,
+          -3,
+          1
+        ],
+        [
+          0,
+          2,
+          -1,
+          0,
+          1,
+          0,
+          -1
+        ],
+        [
+          0,
+          2,
+          0,
+          2,
+          -1,
+          0,
+          -1
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        [
+          0,
+          4,
+          -1,
+          2,
+          0,
+          0,
+          -2
+        ],
+        [
+          0,
+          4,
+          0,
+          0,
+          1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          0,
+          0,
+          -1,
+          2,
+          0
+        ],
+        [
+          1,
+          -2,
+          1,
+          -2,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          -1,
+          0,
+          0,
+          2,
+          -1
+        ],
+        [
+          1,
+          0,
+          0,
+          -2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          -2,
+          2,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          -2,
+          0,
+          -2,
+          1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          -1,
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          -1,
+          2,
+          -1
+        ],
+        [
+          2,
+          0,
+          1,
+          -2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          -1,
+          0,
+          1,
+          -1
+        ],
+        [
+          3,
+          0,
+          0,
+          -2,
+          0,
+          2,
+          -1
+        ]
+      ],
+      "zero_T_inventory_b": [
+        2,
+        8,
+        4
+      ],
+      "zero_T_fiber_cardinality": 17,
+      "zero_T_initial_syngas": [
+        0,
+        4,
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "zero_T_normal_form_optimum": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      "zero_T_optimum_enthalpy_kJ": "-967.28",
+      "zero_T_reduction_steps": [
+        {
+          "move": [
+            0,
+            -3,
+            0,
+            -1,
+            0,
+            1,
+            1
+          ],
+          "from": [
+            0,
+            4,
+            1,
+            2,
+            0,
+            0,
+            0
+          ],
+          "to": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "delta_H_kJ": "-206.16"
+        },
+        {
+          "move": [
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            0
+          ],
+          "from": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "to": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            1
+          ],
+          "delta_H_kJ": "-524.8"
+        },
+        {
+          "move": [
+            2,
+            0,
+            0,
+            0,
+            -1,
+            2,
+            -1
+          ],
+          "from": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            1
+          ],
+          "to": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          "delta_H_kJ": "-15.26"
+        }
+      ],
+      "birch_T1000K_dual_potentials_y_star": [
+        "-1.0778008914208364219185439723467918369884837127723",
+        "0.36032780743861608125674092500330758619950245900272",
+        "-23.377911513119949839818183463054833825200501392233"
+      ],
+      "birch_T1000K_equilibrium_moles_x_star": {
+        "C": "0.34034315483641557296250776325779349750696112265527",
+        "H2": "2.0557805692469769294967264980421713133742441997529",
+        "O2": "4.9454300436144609689765031373728676146072591439969e-21",
+        "CO": "0.71482865773282140319414452787867866675092259103834",
+        "CO2": "0.80765207159392039349484663195082984904240029376314",
+        "H2O": "1.6698671990793378098062713481324327132263238151606",
+        "CH4": "0.13717611583684263034850107691269798669971599254325"
+      },
+      "birch_fiber_infinity_residual": "8.4337583545844185794788592410160152061679691058948e-80",
+      "birch_max_relative_graver_binomial_residual": "8.4741541118632258787358873935636477397766609447865e-80",
+      "birch_hessian_leading_minors": [
+        "2.0000000000000000000000000000000000000000000000000",
+        "33.893741265292156205648296661371196209404426269473",
+        "83.725372998193438681538583106439725431764843221778"
+      ]
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

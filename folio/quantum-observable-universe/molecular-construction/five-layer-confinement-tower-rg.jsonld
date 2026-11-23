@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-five-layer-confinement-tower-rg",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:five-layer-confinement-tower-rg",
+  "kind": "remark",
+  "title": "The five-layer iterated confinement tower as zero-counterterm algebraic renormalization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-iterated-confinement-layer",
+    "papers/quantum-observable-universe/blocks/thm-adiabatic-confinement-gap-stability",
+    "papers/quantum-observable-universe/blocks/rem-shell-filling-electronegativity-ilp"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-adiabatic-confinement-gap-stability",
+  "cites": [
+    "references/wilson1971",
+    "references/weinberg1990",
+    "references/aubert-emc1983",
+    "references/vidal2007",
+    "references/squier1987",
+    "references/lafont2003",
+    "references/guiraud-malbos2012",
+    "references/guiraud-malbos2018"
+  ],
+  "tags": [
+    "confinement-tower",
+    "renormalization-group",
+    "adiabatic-ratio",
+    "EMC-effect",
+    "neutron-star",
+    "polygraphs"
+  ],
+  "leanRef": "qou:QOU.MathlibInfra.ConfinementLayerTower.neutron_star_electron_capture_threshold",
+  "text": "five-layer-confinement-tower-rg.md",
+  "provenance": "authored"
+}
