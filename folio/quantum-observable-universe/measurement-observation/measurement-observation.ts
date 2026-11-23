@@ -35,6 +35,13 @@ export default chapter({
         "quarks-borromean-picture",
         "bundle-initial-conditions",
         "observation-braid",
+      ],
+    }),
+    section({
+      title: "Intention and the Energetic Cost of Observation",
+      label: "sec:observation-intention",
+      blocks: [
+        "observation-intention-intro",
         "observation-intent-energy",
         "observation-braid-not-predetermined",
         "sorting-color-energy",
