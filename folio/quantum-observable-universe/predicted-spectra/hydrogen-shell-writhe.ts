@@ -8,7 +8,7 @@ export default conjecture({
   lean: { ref: "qou:QOU.BringsSurface.hydrogen_shell_writhe_ruled",
     validation: "not_checked",
   },
-  uses: ["def:electron-knot"],
+  uses: ["def:electron-knot", "conj:orbital-space-normal-bundle"],
   authorNotes: [
     {
       kind: "note",

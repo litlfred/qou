@@ -16,6 +16,7 @@ export default conjecture({
   ],
   uses: [
     "conj:p-vs-np-boundary",
+    "conj:wigner-axiom",
     "ex:chi-minus-six-derivation",
     "prf:qou-obstruction-reduction",
   ],

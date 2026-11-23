@@ -26,3 +26,5 @@ The fiber adjoint involution acts on the normal bundle by exchanging the two ori
 | $\ell$ | Fourier mode on $S^1$ | $\mathrm{SO}(3)$ irreducible $V_\ell$ |
 | $m$ | Weight in $V_\ell$ (Reeb projection) | Spherical harmonic $Y_\ell^m$ |
 | $s$ | Fiber adjoint involution eigenvalue | Spin $\pm 1/2$ |
+
+**Scope relative to the two-component electron closure.** As in [the normal-bundle orbital space](#conj:orbital-space-normal-bundle), this Fourier parametrisation uses a single-circle embedding $\varrho \colon S^1 \hookrightarrow \Sigma_4$ corresponding to the alternative trefoil model $T_{2,3}$. For the primary three-strand electron braid $\sigma_0\sigma_1\sigma_0 \in B_3$, whose closure is the two-component positive Hopf link $T(2,2)$, a coupled two-component Fourier decomposition reproducing the $(n, \ell, m, s)$ shell multiplicities remains open.

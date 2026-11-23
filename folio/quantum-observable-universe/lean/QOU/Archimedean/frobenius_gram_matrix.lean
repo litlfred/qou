@@ -11,22 +11,23 @@ import Mathlib.LinearAlgebra.Matrix.Notation
 
 ```
 G =
-  ⎛ 1    z    z    z²    z²    z³ ⎞
-  ⎜ z   hz+1  z²  hz²+z  z³   g₁₅ ⎟
-  ⎜ z   z²  hz+1  z³   hz²+z  g₁₅ ⎟
-  ⎜ z² hz²+z  z³  g₁₅   g₃₄   g₃₅ ⎟
-  ⎜ z²  z³  hz²+z g₃₄   g₁₅   g₃₅ ⎟
-  ⎝ z³ g₁₅  g₁₅  g₃₅   g₃₅   g₅₅ ⎠
+  ⎛   1       z       z      z²      z²    hz²+z ⎞
+  ⎜   z     hz+1     z²    hz²+z   hz²+z   g₁₅   ⎟
+  ⎜   z      z²     hz+1   hz²+z   hz²+z   g₁₅   ⎟
+  ⎜  z²    hz²+z   hz²+z   g₁₅     g₃₄     g₃₅   ⎟
+  ⎜  z²    hz²+z   hz²+z   g₃₄     g₁₅     g₃₅   ⎟
+  ⎝ hz²+z   g₁₅     g₁₅    g₃₅     g₃₅     g₅₅   ⎠
 ```
 
-*where (using `h = q − q⁻¹` for the Hecke parameter and `z` for the
-Markov parameter `z = 1/(q^{1/2} + q^{−1/2})`)*
+*where (using `h = q − q⁻¹` for the Hecke parameter, `z` for the
+Markov parameter `z_D = q³/(q² + 1)`, and `e = h·z² + z` for
+`tr_M(σ₀σ₁σ₀)`)*
 
 ```
-g₁₅ = h·z³ + z²
-g₃₄ = h·z³ + h·z + 1
-g₃₅ = h²·z³ + 2h·z² + z
-g₅₅ = (h³ + h)·z³ + 2h²·z² + 2h·z + 1
+g₁₅ = h·e + z² = (h² + 1)·z² + h·z
+g₃₄ = h·e + h·z + 1 = (h·z + 1)²
+g₃₅ = h²·e + 2h·z² + z = (h³ + 2h)·z² + (h² + 1)·z
+g₅₅ = (h³ + h)·e + 2h²·z² + 2h·z + 1 = (h⁴ + 3h²)·z² + (h³ + 3h)·z + 1
 ```
 
 The Lean side records the matrix as an explicit
@@ -53,23 +54,26 @@ variable {R : Type*} [CommRing R] (h z : R)
 
 /-- The Markov–Frobenius `6 × 6` Gram matrix on the NF basis
     `{γ, σ₀, σ₁, L₊, L₋, e⁻}` of `H₃(q)`, parameterised by
-    `h = q − q⁻¹` (Hecke parameter) and `z = 1 / (q^{1/2} + q^{−1/2})`
-    (Markov parameter).  Entries are polynomial in `h` and `z`.
+    `h = q − q⁻¹` (Hecke parameter) and `z` (Markov parameter; under
+    Convention D, `z = q³ / (q² + 1)`), with `e = h * z ^ 2 + z` for
+    `tr_M(σ₀σ₁σ₀)`.  Entries are polynomial in `h` and `z`.
 
     See [`prop:frobenius-gram-matrix`] for the categorical
     derivation; entries are read off the Skein decomposition of
-    each product `b_i · b_j` plus the Markov-trace evaluation. -/
+    each product `b_i · b_j` plus the Ocneanu–Wenzl Markov evaluation
+    `tr_M(σ₀σ₁σ₀) = h·z² + z`. -/
 noncomputable def frobeniusGramMatrix : Matrix (Fin 6) (Fin 6) R :=
-  let g15 := h * z ^ 3 + z ^ 2
-  let g34 := h * z ^ 3 + h * z + 1
-  let g35 := h ^ 2 * z ^ 3 + 2 * h * z ^ 2 + z
-  let g55 := (h ^ 3 + h) * z ^ 3 + 2 * h ^ 2 * z ^ 2 + 2 * h * z + 1
-  !![ 1,           z,           z,           z ^ 2,       z ^ 2,       z ^ 3 ;
-      z,           h * z + 1,   z ^ 2,       h * z ^ 2 + z, z ^ 3,     g15   ;
-      z,           z ^ 2,       h * z + 1,   z ^ 3,       h * z ^ 2 + z, g15 ;
-      z ^ 2,       h * z ^ 2 + z, z ^ 3,     g15,         g34,         g35   ;
-      z ^ 2,       z ^ 3,       h * z ^ 2 + z, g34,       g15,         g35   ;
-      z ^ 3,       g15,         g15,         g35,         g35,         g55   ]
+  let e := h * z ^ 2 + z
+  let g15 := h * e + z ^ 2
+  let g34 := h * e + h * z + 1
+  let g35 := h ^ 2 * e + 2 * h * z ^ 2 + z
+  let g55 := (h ^ 3 + h) * e + 2 * h ^ 2 * z ^ 2 + 2 * h * z + 1
+  !![ 1,     z,         z,         z ^ 2, z ^ 2, e   ;
+      z,     h * z + 1, z ^ 2,     e,     e,     g15 ;
+      z,     z ^ 2,     h * z + 1, e,     e,     g15 ;
+      z ^ 2, e,         e,         g15,   g34,   g35 ;
+      z ^ 2, e,         e,         g34,   g15,   g35 ;
+      e,     g15,       g15,       g35,   g35,   g55 ]
 
 /-- **Top-left entry**: `G[0,0] = tr_M(γ · γ) = tr_M(1) = 1`.
 

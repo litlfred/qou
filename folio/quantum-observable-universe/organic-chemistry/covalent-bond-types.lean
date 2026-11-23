@@ -5,9 +5,11 @@ import Mathlib.Algebra.Order.Ring.Defs
 /-!
 # QOU.Organic.CovalentBond — Covalent bond as shared Hopf links
 
-A covalent bond of order k between two atoms is k shared trefoils
-Hopf-linked to both atoms' residual sub-links.  The crossing energy
-is k · E_cross(T(2,2)) plus inter-link interaction terms.
+A covalent bond of order k between two atoms is k shared valence electrons
+(`σ₀σ₁σ₀ ∈ B₃`, closing to the positive Hopf link `T(2,2)`, with `T_{2,3}`
+as the single-component alternative) Hopf-linked to both atoms' residual
+sub-links.  The crossing energy is k · E_cross(T(2,2)) plus inter-link
+interaction terms.
 
 ## References
 

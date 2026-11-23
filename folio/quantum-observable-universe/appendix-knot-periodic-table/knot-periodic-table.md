@@ -9,7 +9,7 @@ $$
 $$
 
 where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the
-proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the neutron, $e^-$ is the electron, the closure of the word $\sigma_0\sigma_1\sigma_0 \in B_3$ (the Hopf link; the trefoil $T_{2,3}$ is the backup reading), and $\oplus$ denotes Hopf linking.
+proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the neutron, $e^-$ is the electron, the closure of the word $\sigma_0\sigma_1\sigma_0 \in B_3$ (the positive Hopf link $T(2,2)$; the trefoil $T_{2,3}$ is the single-component alternative model), and $\oplus$ denotes Hopf linking.
 Here $Z$ is the atomic number (proton count) and $N$ is the
 neutron count, with $A = Z + N$ the mass number.
 Throughout, fraktur letters name particles ($\mathfrak{p}$ the
@@ -81,9 +81,9 @@ $\lambda_+ = 1.1073$ governs shell energy scaling via the
 Chebyshev recurrence
 $\hat{V}(n+1, q) = (q - q^{-1}) \hat{V}(n, q) + \hat{V}(n-1, q)$,
 reproducing the Rydberg formula $\mathfrak{E}_{\mathrm{bind}} \propto \lambda_+^{-n} \approx 1/n^2$ for low shells.  Sub-shell
-structure ($s, p, d, f$ with capacities $2, 6, 10, 14$) emerges
-from tensor product eigenvalue degeneracies of multi-electron
-atoms.
+structure ($s, p, d, f$ with capacities $2, 6, 10, 14$) is formulated on the single-component $T_{2,3}$ normal-bundle model
+([normal-bundle orbital space](#conj:orbital-space-normal-bundle)); on the primary two-component $T(2,2)$ closure of the stabilised electron braids $e_n \in B_{n+2}$
+([shell--writhe correspondence](#conj:hydrogen-shell-writhe)), the corresponding two-component orbital multiplicity and $1/n^2$ energy derivations remain open.
 
 **Beta decay universality.**
 
@@ -111,11 +111,12 @@ with anomalously high $B/A$.
 **Stability pairs**: $2, 8, 20, 28, 50, 82$ (protons);
 $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 
-**Input parameters** (one free parameter):
-$q = q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps), $\hbar_q = 1 - q_0^{-1} \approx 0.09908$,
+**Input parameters** (legacy atlas evaluation):
+The monograph's primary substrate anchor is the proton-pinned $q_0 = 1.109978582751381\ldots$ (from $m_{\mathfrak{p}}/m_e$); the legacy element rows below were evaluated at the muon-pinned $q_0^{(\mu)} = 1.109978595642739\ldots$ (16 dps) and inject empirical CODATA nucleon masses and AME2020 $B/A$ values into the constituent-sum mass formula above:
+$\hbar_q = 1 - q_0^{-1} \approx 0.09908$,
 $\mathfrak{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10453$,
-$m_{\mathfrak{p}} \approx {{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV,
-$m_{\mathfrak{n}} \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV}$ MeV,
+$m_{\mathfrak{p}} \approx {{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$,
+$m_{\mathfrak{n}} \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV}$,
 $m_e \approx 0.51100$ MeV.
 
 **Fundamental constants from $q_0$ (approximate).**
@@ -130,11 +131,11 @@ $m_e \approx 0.51100$ MeV.
 **Knot-particle identification.** The torus-family constituents are
 classified by the fermion--boson decomposition
 ([fermions are knots, bosons are links](#prop:fermion-boson-knot-link)).
-Proton and neutron quarks are Borromean-linked trefoils
+Proton and neutron quarks are Borromean-linked unknot strands
 ([Borromean baryon](#def:borromean-baryon)), and nuclear binding comes from Hopf link
-crossings. The electron is the word $\sigma_0\sigma_1\sigma_0$, whose closure is the Hopf
-link; that decomposition covers the $T(2,n)$ family only, so it does not decide the
-electron's statistics, which remain open. The trefoil $T_{2,3}$ is the backup electron reading.  The full building-block catalogue with Jones polynomials
+crossings. The electron is the three-strand word $\sigma_0\sigma_1\sigma_0 \in B_3$, whose closure is the positive Hopf
+link $T(2,2)$; that decomposition covers the two-strand $T(2,n)$ family only, so it does not decide the
+electron's statistics, which remain open. The trefoil $T_{2,3}$ is the single-component alternative model of the electron.  The full building-block catalogue with Jones polynomials
 and volumes is in
 ([building-block knots](#rem:building-block-knots)).
 

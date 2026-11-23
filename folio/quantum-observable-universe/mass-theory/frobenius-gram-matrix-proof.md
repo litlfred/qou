@@ -9,6 +9,6 @@ Equivalently, this is the Hopf relation
 QU-2d): $\mu(S \otimes \mathrm{id})\Delta = \eta\varepsilon$,
 where $S(\sigma_i) = \sigma_i^{-1}$ is the antipode.  The identity
 $e^- \cdot e^+ = \gamma$ is the Hopf relation evaluated on
-the trefoil.
+the electron word $e^- = \sigma_0\sigma_1\sigma_0$ (whose closure is the positive Hopf link $T(2,2)$).
 
 **Witness**: the Gram-matrix dual computation.

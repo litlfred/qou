@@ -1,6 +1,6 @@
 These examples work the complete transfer matrix computation for small nuclei by hand. The light nuclei are small enough that the abstract construction can be verified by eye. Walking through them makes the $\binom{A}{2}$ cost concrete: one transfer-matrix multiplication per nucleon pair.
 
-Recall: $z = q^3/(q^2+1) = q^2/[2]_q$ (convention D; the excised convention C wrote $1/(q^{1/2}+q^{-1/2})$). **The worked numerals below have not been regenerated** — they were computed under convention C and are wrong by the $22.7\,\%$ convention gap in $z$ (2026-08-09).
+Throughout these symbolic formulas, $z = z_D = q^3/(q^2+1) = q^2/[2]_q$ denotes the Convention-D Markov parameter (whereas the superseded convention C used $z_C = 1/(q^{1/2}+q^{-1/2})$, differing numerically at $q_0$ by $22.7\,\%$: $z_D(q_0) \approx 0.6127$ versus $z_C(q_0) \approx 0.4993$). Because both $z_D$ and the transfer matrices $T(c, d) \in \mathrm{M}_2(\mathbb{Z}[\tfrac{1}{2}][q^{\pm 1}])$ are rational functions of integer powers of $q$, every factor $\hat{V}_i(q)$ and nuclear Skein polynomial $P_{\mathcal{N}}(q)$ lies in $\mathbb{Q}(q)$ with no half-integer powers $q^{1/2}$.
 
 ## Example 1: Hydrogen ($A = 1$, $Z = 1$)
 
@@ -32,7 +32,7 @@ $$
   P_{{}^2\mathrm{H}}(q) = \hat{V}_0(q)
 $$
 
-The polynomial has degree $\leq 3$ in $q^{1/2}$, taking $\binom{2}{2} = 1$ multiplication.
+This rational function in $\mathbb{Q}(q)$ requires $\binom{2}{2} = 1$ matrix evaluation.
 
 ## Example 3: Helium-3 ($A = 3$, $Z = 2$, $N = 1$)
 

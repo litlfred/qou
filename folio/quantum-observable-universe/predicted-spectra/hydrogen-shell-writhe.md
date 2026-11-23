@@ -8,12 +8,10 @@ $$
 
 obtained from $e^-$ by $n - 1$ strand-adding curls. Let $w$ be the writhe (exponent sum) of $e_n$.
 
-1. **Shell--writhe correspondence.** Each curl appends the next generator, which is a Markov stabilisation, so the closure of $e_n$ is still the Hopf link. The writhe of $e_n$ is $w = n + 2$, so the level is $n = w - 2$. The ground state has $w = 3$ ($n = 1$).
-2. **Orbital counting.** Not re-derived for the ruled electron. The count $\sum_{\ell=0}^{n-1}(2\ell + 1) = n^2$ was built on the resonance modes of a trefoil in its normal bundle (the backup reading below). The closure of $e_n$ has two components, and no counterpart of that normal-bundle construction is on record for it.
-3. **Energy scaling.** Not re-derived for the ruled electron. The scaling $E_n = -E_{\mathrm{ion}}/n^2$ rested on the Seifert-surface-area argument of the backup reading.
+1. **Shell--writhe correspondence.** Each curl appends the next generator, which is a Markov stabilisation, so the closure of $e_n$ remains the positive Hopf link $T(2,2)$. The writhe of $e_n$ is $w = n + 2$, so the shell level is $n = w - 2$, with ground state $w = 3$ ($n = 1$).
+2. **Orbital counting (open on the two-component closure).** The count $\sum_{\ell=0}^{n-1}(2\ell + 1) = n^2$ of [the normal-bundle orbital space](#conj:orbital-space-normal-bundle) is formulated for the resonance modes of a single-component trefoil $T_{2,3}$ in its normal bundle. Because the closure of $e_n$ has two components ($T(2,2)$), a corresponding two-component normal-bundle construction remains open.
+3. **Energy scaling (open on the two-component closure).** Likewise, the Seifert-surface-area derivation of $E_n = -E_{\mathrm{ion}}/n^2$ in the single-component trefoil model has not yet been extended to the two-component Hopf-link closure of $e_n$.
 
-Item 1 is proved in Lean (`writhe_levelWord` and `shell_eq_writhe_sub_two` in `QOU.BraidKnot.ElectronLevelWord`); Markov's theorem, which keeps the closure the Hopf link, is quoted rather than formalised.
-
-**Backup reading.** If the electron is the trefoil $\sigma_0^{2n+1} \in B_2$, the level is $n = (w - 1)/2$ with $w = 2n + 1$. The two readings agree at the ground state $w = 3$, $n = 1$ and differ from $n = 2$ on.
+**Single-component trefoil model.** In the alternative model where the shell-$n$ electron is the two-strand word $\sigma_0^{2n+1} \in B_2$ (closing to $T_{2,2n+1}$, with ground state $T_{2,3}$), the shell number is $n = (w - 1)/2$ with $w = 2n + 1$. The two models agree at the ground state $w = 3$, $n = 1$ and diverge for $n \geq 2$.
 
 **Archimedean specialisation.** What follows evaluates generic $q$-deformation identities at the real-valued substrate parameter $q_0$. The categorical identities remain valid over any abstract coefficient ring.

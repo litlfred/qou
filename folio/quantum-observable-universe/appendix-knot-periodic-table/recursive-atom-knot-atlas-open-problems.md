@@ -2,7 +2,7 @@
 
 - **Principled derivation for ${}^{6}$Li, ${}^{7}$Li (and any new atom)**: the
  Gröbner–Shirshov filtration grade and the jet-order events are computed
- exactly in symbolic $q$ on the test braids $\sigma_1^3$ (electron) and
+ exactly in symbolic $q$ on the test braids $\sigma_0\sigma_1\sigma_0 \in B_3$ (primary electron, closing to $T(2,2)$; $\sigma_1^3 \in B_2$ in the single-component $T_{2,3}$ alternative) and
  $(\sigma_1 \sigma_2^{-1})^3$ (proton/neutron body). The difficulty is that
  this filtration and jet ordering must remain consistent across all
  confinement levels $\ell$ at once, which forces a **joint SDP on the full

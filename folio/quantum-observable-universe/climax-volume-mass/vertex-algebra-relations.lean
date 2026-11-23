@@ -163,8 +163,10 @@ axiom markov_conjugation {n : ℕ} (hp : HeckeParams) (i : Fin n)
     MarkovTrace hp (AlgElement.leftMulGen ⟨i⟩ f)
     = MarkovTrace hp (AlgElement.rightMulGen f ⟨i⟩)
 
-/-- QU-3b: Markov stabilisation —
-    tr_M(f · σ_n) = δ⁻¹ · tr_M(f) where δ = -(q + q⁻¹). -/
+/-- QU-3b: Markov stabilisation (Convention D) —
+    `tr_M(f · σ_n) = z_D · tr_M(f)` where `z_D = q³ / (q² + 1)`
+    (and by `trace_sub_trace_inv`, `tr_M(f · σ_n⁻¹) = z_- · tr_M(f)` with
+    `z_- = (q(q² + 1))⁻¹`). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -173,16 +175,18 @@ axiom markov_stabilisation {n : ℕ} (hp : HeckeParams)
     (f : AlgElement (HeckeGen n) ℝ) :
     MarkovTrace hp (AlgElement.leftMulGen ⟨⟨n, by omega⟩⟩
       (AlgElement.embed_succ f))
-    = MarkovTrace hp f / (-(hp.q + hp.q⁻¹))
+    = MarkovTrace hp f * (hp.q ^ 3 / (hp.q ^ 2 + 1))
 
-/-- QU-3c: Non-degeneracy —
-    the Markov trace pairing (f, g) ↦ tr_M(f · g) is non-degenerate
-    on GS normal forms. -/
+/-- QU-3c / QUO-1: Non-degeneracy on the radical-free range `n ≤ 2` —
+    under Convention D (`z_D = q³/(q² + 1)`), the `(1³)` block lies in the
+    trace radical so `det G = 0` on `H_n` for `n ≥ 3` while the induced
+    pairing is non-degenerate on the Temperley–Lieb quotient `TL_n(q)` of
+    dimension `C_n` (and on `H_n` itself when `n ≤ 2`, i.e. `n < 2` generators). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-axiom markov_nondegenerate {n : ℕ} (hp : HeckeParams)
+axiom markov_nondegenerate {n : ℕ} (hn : n < 2) (hp : HeckeParams)
     (f : AlgElement (HeckeGen n) ℝ) :
     (∀ g : AlgElement (HeckeGen n) ℝ,
       MarkovTrace hp (AlgElement.mul f g) = 0) →
