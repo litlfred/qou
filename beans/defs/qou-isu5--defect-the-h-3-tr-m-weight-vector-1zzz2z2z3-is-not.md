@@ -1,13 +1,13 @@
 ---
 # qou-isu5
 title: 'DEFECT: the H_3 TR_M weight vector [1,z,z,z2,z2,z3] is NOT A TRACE — not cyclic'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-11-22T21:55:54Z
+updated_at: 2026-11-23T00:30:18Z
 parent: qou-59vq
 ---
 
@@ -284,3 +284,6 @@ I wrote 'still live in 5 producers' from the probe's docstring, which describes 
 - atom-mass-derived.witness.json was computed 2026-09-04, after the fix. Its producer currently crashes on an mpf format string (line 396), unrelated to the weight.
 - The other affected scripts are print-only and write no witness.
 So nothing would move. Not closed here; waiting on the owner's card.
+
+## 2026-11-23: closed completed on the owner's card (option A, 'Close as already done')
+Evidence in the 2026-11-22 correction above. Deprecated copies under fsh-guts/deprecated/ left unchanged.
