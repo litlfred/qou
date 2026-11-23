@@ -1467,6 +1467,13 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "taft1971" },
   { id: "kazhdan-lusztig1993-tensor-i" },
   { id: "higman1955" },
+  { id: "doplicher-haag-roberts1971" },
+  { id: "doplicher-roberts1989" },
+  { id: "fredenhagen-rehren-schroer1989" },
+  { id: "frohlich-gabbiani1990" },
+  { id: "coecke-pavlovic-vicary2013" },
+  { id: "lewandowski-nurowski-tafel1990" },
+  { id: "nurowski-trautman2002" },
 
   // ── Ariki 1996 ────────────────────────────────────────────────
   { id: "ariki1996" },

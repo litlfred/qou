@@ -37,6 +37,22 @@ their crossings, and not the ether or its mechanics; the chapter on
 knots and particles gives a fuller account
 ([Knots, Particles, and Confinement](#chap:knots-particles-confinement)).
 
+Two later programmes share the categorical setting without the knots.
+In algebraic quantum field theory in four spacetime dimensions the
+superselection sectors form a symmetric tensor category, so the braid
+group acts through the symmetric group, and Doplicher and Roberts
+reconstruct a compact gauge group from it
+\cite{doplicher-haag-roberts1971,doplicher-roberts1989}; only in two or
+three dimensions are the statistics braided
+\cite{fredenhagen-rehren-schroer1989,frohlich-gabbiani1990}. In
+categorical quantum mechanics the commutative special
+$\dagger$-Frobenius algebras in finite-dimensional Hilbert spaces are
+exactly the orthonormal bases \cite{coecke-pavlovic-vicary2013}. Both
+programmes take masses as external data. The present construction
+differs in using a braided category with $\sigma_i^2 \neq 1$ and in
+asking whether mass ratios can be read off closed braids; how far that
+succeeds is the subject of the comparison chapters.
+
 The algebra that describes how such strands cross is the
 Iwahori–Hecke algebra $H_n(q)$. Its generator $\sigma_i$ crosses
 strand $i$ over strand $i+1$, and the only rule beyond the braid
