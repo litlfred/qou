@@ -1,14 +1,14 @@
 ---
 # qou-37y0
 title: 'GAP: m_d - m_u extraction claimed ''no new inputs'' — needs the underived EM coupling k, and does not cite the existing substrate split'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-mass
 created_at: 2026-08-08T08:11:57Z
-updated_at: 2026-11-22T21:54:35Z
+updated_at: 2026-11-23T21:15:00Z
 parent: qou-8lxd
 ---
 
@@ -103,3 +103,5 @@ precision target.
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+Claimed by claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18, 2026-11-23)

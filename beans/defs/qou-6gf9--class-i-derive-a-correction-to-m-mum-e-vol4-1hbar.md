@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-23T20:54:30Z
+updated_at: 2026-11-23T21:14:59Z
 parent: qou-2002
 ---
 
@@ -359,3 +359,5 @@ reverted #8554 to the one-term default pin (two-term kept as a named comparison)
 
 
 Claimed by claude/w6-joint-lepton-resolvent-20261123 (2026-11-23)
+
+PR #9213 opened on claude/w6-joint-lepton-resolvent-20261123 (01ca9a6e9a9; Murakami real-q deformation excluded on sign, 29 theorems in InhomogeneousLeptonLoopResolvent.lean)

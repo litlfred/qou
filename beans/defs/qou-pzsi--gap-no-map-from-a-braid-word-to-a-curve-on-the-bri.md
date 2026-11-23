@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T16:50:05Z
-updated_at: 2026-11-17T23:08:21Z
+updated_at: 2026-11-23T21:15:00Z
 parent: qou-v2om
 ---
 
@@ -407,3 +407,5 @@ The line "Route-1 sign-erasure fix is on PR #7603 / #7893 (open)" was wrong on t
 - **#7893 is merged, not open** (2026-11-15). It ported #7603's Lean to main, where the file now lives. #7603 itself is still open and fully superseded.
 - **No route-1 sign-erasure fix exists anywhere.** On main 313af682e, `computations/probes/ohara_link_energy/braid_topology.py` still takes "positive letters, verbatim" from `qbeta_candidate_closures_are_links_probe.py`. Only route 2 was redone on signed candidates (`bring_route2/signed_candidates_probe.py`, PR #7695).
 So route 1's seen-candidate results stand withdrawn, per the 2026-10-11 correction. Redoing them on the signed nucleon runs into the same B4 problem: the signed nucleon is a sum of four braids, and nothing defines an energy for a sum. Nothing changed.
+
+Claimed by claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18, 2026-11-23)

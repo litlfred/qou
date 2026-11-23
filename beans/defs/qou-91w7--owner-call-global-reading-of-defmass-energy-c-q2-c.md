@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-23T20:54:30Z
+updated_at: 2026-11-23T21:14:59Z
 parent: qou-wxhi
 ---
 
@@ -62,3 +62,5 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
 
 
 Claimed by claude/w6-joint-lepton-resolvent-20261123 (2026-11-23)
+
+PR #9213 opened on claude/w6-joint-lepton-resolvent-20261123 (01ca9a6e9a9; Murakami real-q deformation excluded on sign, 29 theorems in InhomogeneousLeptonLoopResolvent.lean)
