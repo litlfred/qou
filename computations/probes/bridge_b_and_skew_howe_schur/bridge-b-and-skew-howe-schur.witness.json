@@ -1,0 +1,161 @@
+{
+  "engine": "sympy + mpmath (80 dps)",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T18:40:37.735108+00:00",
+  "commitSha": "b2c0639b3ccb7f0f76410f075b1a52426e9f2ecd",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "additive_connection_mixed_residue_and_commutator_zero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "AdditiveConnectionMixedResidueZero.mixedResidueProj_additive_eq_zero"
+    },
+    {
+      "name": "hecke_discriminant_eq_qd2_sq",
+      "computed": "8.4337583545844185794788592410160152061679691058948060400622104200865154327758077e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "AdditiveConnectionMixedResidueZero.heckeDiscriminant_eq_qd2_sq"
+    },
+    {
+      "name": "tensor_square_outer_discriminant_eq_h_sq_mul_hecke",
+      "computed": "1.0015088046068997063131145348706518057324463313250082172573874873852737076421272e-80",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "AdditiveConnectionMixedResidueZero.tensorSquare_discriminant_eq_h_sq_mul_hecke"
+    },
+    {
+      "name": "pivotal_trace_diff_equals_epsFlavourV3",
+      "computed": "3.9533242287114462091307152692262571278912355183881903312791611344155541091136598e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-74",
+      "source": "FlavourWeightSplitPivotalSkewHowe.pivotal_trace_diff_eq_epsFlavourV3"
+    },
+    {
+      "name": "skew_howe_mirror_neg_inv_antisymmetric",
+      "computed": "1.3177747429038154030435717564087523759637451727960634437597203781385180363712199e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-74",
+      "source": "FlavourWeightSplitPivotalSkewHowe.epsFlavourV3_skewHowe_mirror"
+    },
+    {
+      "name": "skew_howe_mirror_leaves_scored_Q_beta_invariant",
+      "computed": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-74",
+      "source": "FlavourWeightSplitPivotalSkewHowe.abs_epsFlavourV3_skewHowe_invariant"
+    },
+    {
+      "name": "skew_howe_symmetric_schur_product_cancels_q3",
+      "computed": "6.7470066836675348635830873928128121649343752847158448320497683360692123462206461e-80",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-73",
+      "source": "SkewHoweProtonSchurNorm.tensorSchurSingletSym_eq_sq"
+    },
+    {
+      "name": "skew_howe_symmetric_schur_product_bar_invariant",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-73",
+      "source": "SkewHoweProtonSchurNorm.tensorSchurSingletSym_bar_invariant"
+    },
+    {
+      "name": "convention_d_markov_weights_bar_symmetric_and_partition_unity",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-74",
+      "source": "SkewHoweProtonSchurNorm.markovWeight_partition_of_unity"
+    },
+    {
+      "name": "asymmetric_colour_schur_times_flavour_markov_gives_fBor",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-73",
+      "source": "SkewHoweProtonSchurNorm.colourSchur_flavourMarkov_dichotomy"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 36,
+  "computation": "bridge-b-and-skew-howe-schur",
+  "scriptFile": "bridge_b_and_skew_howe_schur_probe.py",
+  "scriptHash": "dd48da2f7193",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bridge_b_and_skew_howe_schur/bridge_b_and_skew_howe_schur_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bridge_b_and_skew_howe_schur/bridge_b_and_skew_howe_schur_probe.py"
+  },
+  "description": "80-dps verification of AdditiveConnectionMixedResidueZero, Bridge B rank-4 tensor-square Stokes discriminant, FlavourWeightSplitPivotalSkewHowe, and SkewHoweProtonSchurNorm (qou-pdio / NF-P2, qou-2eg2 / NF-P4).",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "bridge_b_stokes": {
+      "hecke_discriminant_q0": "4.0437062085325219894020193356773883097682139607135",
+      "tensor_square_outer_discriminant_q0": "0.17673506679437625555841391731651314146423434150964",
+      "tensor_square_eigenvalues_q0": [
+        "1.2320524541667639312698045135356361848496814229170",
+        "-1",
+        "-1",
+        "0.81165375436575805813221482214175212491853253779651"
+      ]
+    },
+    "pivotal_skew_howe": {
+      "epsFlavourV3_q0": "-0.076980534601364172432262695812444751363707592135473",
+      "epsFlavourV3_neg_inv_q0": "0.076980534601364172432262695812444751363707592135473",
+      "Q_beta_scored_MeV": "0.32543392873469170729096564389970043230872396757454"
+    },
+    "h3_schur_vs_markov_q0": {
+      "schur_triv_c_3": "8.3702094347193277556331602765220295630394186725043",
+      "schur_refl_c_21": "3.0437062085325219894020193356773883097682139607135",
+      "schur_sign_c_111": "4.4755738777400674460286906063644311344243994918186",
+      "qfact3_balanced": "6.1205792779150634615130607671881930592535688270705",
+      "symmetric_product_c111_c3": "37.461490697243279649190794731583816839001570611623",
+      "markov_y_3": "0.50540422650393080318755870324047227566035119774981",
+      "markov_y_21": "0.24729788674803459840622064837976386216982440112510",
+      "markov_y_111": "0",
+      "tr_M_Borromean": "0.99856216383678726595121313514665020209402588005941",
+      "F_Bor_q0": "4.4691387357675225293890751308525111279919740974865",
+      "mirror_ratio_q0_pow_6": "1.8701980267491080179993308838982099140984948076440"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
