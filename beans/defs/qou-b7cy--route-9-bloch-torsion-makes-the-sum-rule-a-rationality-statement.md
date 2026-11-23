@@ -12,7 +12,7 @@ tags:
     - reduction
     - reorg-2026-10-04
 created_at: 2026-08-07T17:05:00Z
-updated_at: 2026-11-22T21:33:05Z
+updated_at: 2026-11-23T17:32:55Z
 parent: qou-n4nr
 ---
 
@@ -225,3 +225,8 @@ Bloch-torsion side belongs to the sibling thread "Work dilogarithm and Bloch bea
 ## 2026-11-22 — port of the #8193 Lean (dilog/Bloch thread)
 
 The `FiveTwoCyclotomicBloch.lean` additions of #8193 (unit inverses, Vieta norms, Route 8 identities) are ported verbatim to branch `claude/archimedean-limit-endpoints-2026-11-22` and check with lean-direct on current main. #8193's `Hecke/Staircase.lean` part still fails and belongs with the Hecke work; the probe and witness were not ported. Still open: the three level-7 ladder numerators (17, 5, −1). Bean stays open.
+
+
+
+## 2026-11-23 — WS4 Consolidation Update (PR #9189)
+- Consolidated `#9151` (`QOU/QBeta/FiveTwoCyclotomicBloch.lean`, 14 theorems, 0 `sorryAx`) into Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`).

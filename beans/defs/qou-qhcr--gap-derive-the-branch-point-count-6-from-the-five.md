@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-23T17:32:53Z
 parent: qou-6qbv
 ---
 
@@ -553,3 +553,8 @@ The M2 chart step is now hypothesis-free for the stabiliser statement: branch `c
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. No ruling touches the branch-point count. Changed since: PR #8750 (ChartStep) and #9133 (IdentityTheorem.isCyclic_stabilizer, cyclic stabilisers with no chart hypothesis) close the M2 chart step; they do not supply the 6. Open conjecture; stays open (13a).
+
+
+
+## 2026-11-23 — WS4 Consolidation Update (PR #9189)
+- Consolidated Riemann-surface chart step + identity theorem (`QOU/RiemannSurface/ChartStep.lean`, `IdentityTheorem.lean`, discharging `hloc` via `isCyclic_stabilizer_of_faithful`; `#8750` + `#9133`) into Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`). Branch-point count 6 derivation remains open.

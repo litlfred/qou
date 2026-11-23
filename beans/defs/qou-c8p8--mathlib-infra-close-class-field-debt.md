@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-11-21T06:44:08Z
+updated_at: 2026-11-23T17:32:56Z
 parent: qou-rtxm
 ---
 
@@ -229,3 +229,10 @@ Uninhabited Prop class fields in Mathlib-shaped dirs: 14 / 21 -> 13 / 20 (HasArg
 - `JonesWenzlProjector`: generators + p ≠ 0 + strand-killing (sign from corpus `jonesIdempotent`).
 - `KLRSpectralSequenceAtE2`: deleted (field was `True`).
 - Still open, need owner decision: `SchurElementCriterion` (free `semisimple` predicate; needs general H_n(q)), `MarkovStabilization` (free parameters).
+
+
+
+## 2026-11-23 — WS4 Consolidation Update (PRs #9189, #9191, #9200)
+- **PR #9189** (`b5d39499b04`, https://github.com/litlfred/qou/pull/9189): Consolidated `#8748` defective-class fixes (`JonesBasicConstruction` 3-level in `HeckeTowerBasicConstruction*.lean`, `JonesWenzlProjector` strand-killing in `MarkovTraceOnHecke*.lean`, removed vacuous `KLRSpectralSequenceAtE2` in `SpectralSequenceBasic*.lean`, keeping `main` `TransferLemmas`).
+- **PR #9191** (`b2871d936cd`, https://github.com/litlfred/qou/pull/9191): Rebased Group 8 batch (`#8761` + `#8531`, 20 Lean modules, 273 theorems, preserving newer `main` derivations).
+- **PR #9200** (`fed262388bc`, https://github.com/litlfred/qou/pull/9200): Rebased `#9072` Part-A PL knot topology (9 `PL*.lean` modules) and added Stage-2 general-position single-corner perturbation / elementary `Δ`-equivalence `QOU/MathlibExt/PLDeltaEquiv.lean` (`#9114` / `#8902`, 139 theorems total).

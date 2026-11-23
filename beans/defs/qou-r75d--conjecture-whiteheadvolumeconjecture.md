@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-04T01:49:55Z
-updated_at: 2026-11-22T21:33:08Z
+updated_at: 2026-11-23T17:32:57Z
 parent: qou-n4nr
 ---
 
@@ -69,3 +69,8 @@ No status change; the conjecture for `J_N(W)` itself is open. On `main`: inner-s
 ## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
 
 **Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.
+
+
+
+## 2026-11-23 — WS4 Consolidation Update (PR #9200)
+- Consolidated PL knot topology Part A (`#9072`) + Stage-2 general-position corner perturbation / `Δ`-equivalence (`QOU/MathlibExt/PLDeltaEquiv.lean`, `#9114` / `#8902`, 139 theorems, 0 `sorryAx`) in Ready PR https://github.com/litlfred/qou/pull/9200 (`fed262388bc`). Conjecture remains open.

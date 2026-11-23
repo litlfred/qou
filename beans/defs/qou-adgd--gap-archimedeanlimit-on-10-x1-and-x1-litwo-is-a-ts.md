@@ -2,10 +2,10 @@
 # qou-adgd
 title: 'GAP: ArchimedeanLimit on [-1,0), x=1 and x>1 (LiTwo is a tsum, so the class needs Re Li2 there)'
 status: in-progress
-pr: 8212
 type: task
+priority: normal
 created_at: 2026-11-15T18:12:20Z
-updated_at: 2026-11-22T22:50:00Z
+updated_at: 2026-11-23T17:32:54Z
 parent: qou-r9ih
 ---
 
@@ -37,3 +37,8 @@ Still open on this bean: the endpoint `x = -1` (the same route needs the limit a
 - **x = -1: proved**, `archimedeanLimit_neg_one` (ArchimedeanLimitEndpoints.lean). Direct Lipschitz-in-endpoint bound |F(-1) - F(y)| ≤ 1 + y, plus continuity of LiTwo on [-1,1]. No duplication needed.
 - **x = 1: the class is FALSE as stated**, `not_archimedeanLimit_one`. The k = 0 factor 1 - q⁰ of denomPolyLocal vanishes at x = 1, so the rescaled log is 0 while LiTwo 1 ≥ 1. Scope (b), invariant = that vanishing factor. The classical statement at x = 1 uses (q;q)_n from k = 1; restating is an owner decision.
 - **x > 1: still open** (needs Re Li₂ target; the tsum is 0 there). Bean stays open.
+
+
+
+## 2026-11-23 — WS4 Consolidation Update (PR #9189, Owner Default B1)
+- Consolidated `#9151` (`ArchimedeanLimitNegative.lean`, `ArchimedeanLimitEndpoints.lean`, 21 theorems, 0 `sorryAx`) and added Owner Default B1 shifted-index `k ≥ 1` classical `(q;q)_n` Faddeev limit theorems at `x = 1` (`qPochhammerShiftedOne`, `archimedeanLimit_shifted_one`, `archimedeanLimit_shifted_one_pi_sq_div_six`) while preserving `denomPolyLocal` and `not_archimedeanLimit_one` in Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`).

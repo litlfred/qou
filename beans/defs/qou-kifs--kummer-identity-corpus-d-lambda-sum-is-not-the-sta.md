@@ -2,13 +2,12 @@
 # qou-kifs
 title: 'Kummer identity: corpus D := Lambda-sum is NOT the standard Bloch-Wigner (Im Li_2 + log|z|arg(1-z))'
 status: in-progress
-pr: 8212
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T19:20:00Z
-updated_at: 2026-11-22T22:50:00Z
+updated_at: 2026-11-23T17:32:55Z
 parent: qou-r9ih
 ---
 
@@ -108,3 +107,8 @@ Status left unchanged: resetting the claim and closing the PR are the owner's ca
 ## 2026-11-22 — lower half plane (dilog/Bloch thread)
 
 `blochD_eq_neg_lob_conj` and `blochD_eq_lob_signed` (new `QOU/Archimedean/BlochWignerLobachevskyLowerHalf.lean`, branch `claude/archimedean-limit-endpoints-2026-11-22`, sorry-free, standard axioms): for Im z < 0, D(z) = −BlochWigner_lob(z̄), so the Λ-sum gives D on all of ℂ∖ℝ up to sign and conjugation. This closes the documentation half of the RESCOPE. Not done: renaming `BlochWigner_lob` (a rename tranche needs the owner) and the geometric H4 factor. Bean left open for the owner to close.
+
+
+
+## 2026-11-23 — WS4 Consolidation Update (PR #9189)
+- Consolidated `#9151` (`QOU/MathlibExt/BlochWignerLobachevskyLowerHalf.lean`: `blochWigner_eq_lobachevskySum` for all `z.im ≠ 0`, 2 theorems, 0 `sorryAx`) into Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`).

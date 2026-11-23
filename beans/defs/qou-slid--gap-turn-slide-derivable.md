@@ -7,7 +7,7 @@ priority: normal
 tags:
     - pl-knots
 created_at: 2026-11-21T22:45:00Z
-updated_at: 2026-11-22T21:59:12Z
+updated_at: 2026-11-23T17:32:56Z
 parent: qou-rtxm
 ---
 
@@ -104,3 +104,8 @@ at a and at b, i.e. "push a kink through a crossing with r3".
 ## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
 
 Parent set to `qou-rtxm`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.
+
+
+
+## 2026-11-23 — WS4 Consolidation Update (PR #9200)
+- Rebased `#9072` Part-A PL knot topology (9 `PL*.lean` modules, merging planar time-slice and hyperplane-slice declarations in `PLSlice.lean`) and added sorry-free Stage-2 single-corner perturbation / elementary `Δ`-equivalence `QOU/MathlibExt/PLDeltaEquiv.lean` (`#9114` / `#8902`, 139 theorems across 10 modules, 0 `sorryAx`) in Ready PR https://github.com/litlfred/qou/pull/9200 (`fed262388bc`). `Move.slide` derivability remains open.

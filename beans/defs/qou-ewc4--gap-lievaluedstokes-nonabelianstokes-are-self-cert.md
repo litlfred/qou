@@ -2,13 +2,12 @@
 # qou-ewc4
 title: 'GAP: LieValuedStokes + NonAbelianStokes are self-certifying carriers (Prop field + its own witness)'
 status: in-progress
-pr: 8218
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T17:00:30Z
-updated_at: 2026-11-21T03:18:24Z
+updated_at: 2026-11-23T17:32:56Z
 parent: qou-6qbv
 ---
 
@@ -107,3 +106,8 @@ Lie-algebra-valued 1-forms on a normed space).
 ## 2026-11-21 — partial (PR #8700)
 
 `NonAbelianStokes` boundary + curvature are now definitions, not class fields; the integrals, slicing and Stokes identity remain a §3b-cond class whose only models are degenerate (`punitInstance`, all 1). `LieValuedStokes` with additive real integrals likely has ONLY the zero model: `∫_{∂σ} α = ∫_σ (dβ + [α∧β])` is not classical Stokes. Stays open.
+
+
+
+## 2026-11-23 — WS4 Consolidation Update (PR #9191)
+- Rebased Group 8 (`#8761`: `non_abelian_stokes.lean`, `stokes_holonomy_surface_ordering.lean`) onto `main` in Ready PR https://github.com/litlfred/qou/pull/9191 (`b2871d936cd`).
