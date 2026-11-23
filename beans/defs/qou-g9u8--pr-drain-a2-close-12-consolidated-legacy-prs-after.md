@@ -1,11 +1,11 @@
 ---
 # qou-g9u8
 title: 'PR-Drain-A2: Close 12 Consolidated Legacy PRs After Parent Queue PRs (#9189, #9191, #9200) Merge (Preserve Branches)'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:55:53Z
-updated_at: 2026-11-23T20:55:53Z
+updated_at: 2026-11-23T21:13:07Z
 parent: qou-xip2
 ---
 
@@ -26,3 +26,5 @@ parent: qou-xip2
 - **`#8274`** (`feat/round66-young-alien-lp-dt-spectral-43c1`) -> Parent **`#9191`** [CLOSED (parent MERGED)]: feat(lean,probes): even hook-power moment ratio, 2-slope isoformal dim, zero-residual LP duality gap, even-shift DT family, and spectral residue isolation (qou-2fdj, qou-dk8a, qou-fr4d, qou-nmpr, qou-rdg8) — Lean modules consolidated via Group 8 (#8761 -> #9191).
 - **`#8193`** (`feat/round53-wpdb-staircase-route89-stargram-43c1`) -> Parent **`#9189`** [CLOSED (parent MERGED)]: feat(lean,qbeta,hecke): formalize wpdb, qou-4qno, qou-8v3k, qou-b7cy, qou-018h + 80-dps witness — Route 8/9 FiveTwoCyclotomicBloch identities consolidated via #9151 -> #9189.
 - **`#8153`** (`claude/round47-xbl8-depth1`) -> Parent **`#9191`** [CLOSED (parent MERGED)]: feat(lean,computations): derive Xbot tail-lemma per-row bracket bound and D1/D3/D4/D5 depth-1 hook classification (qou-xbl8, qou-ckyw, qou-x3u6, qou-q621, qou-amf8, qou-g937) — Lean modules consolidated via Group 8 (#8761 -> #9191).
+
+All 12 (A2) superseded PRs closed after #9189, #9191, and #9200 merged onto main (2026-11-23); all branches preserved.
