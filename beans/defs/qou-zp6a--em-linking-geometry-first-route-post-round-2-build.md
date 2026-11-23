@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-11-16T19:01:00Z
+updated_at: 2026-11-23T21:43:54Z
 parent: qou-3l2l
 ---
 
@@ -17,3 +17,5 @@ parent: qou-3l2l
   - `h3_coth_unsubtracted_gt_one`: for every `u > 1` (`α > 0`), `u + 1 > u - 1 > 0`, so unsubtracted `coth(α) > 1` is bounded below by `+1` and saturates to `-1/(4π) ≠ 0` at `α → ∞`.
   - `h3_coth_strict_antitone`: for `1 < u₁ < u₂`, `(u₂ + 1)(u₁ - 1) - (u₁ + 1)(u₂ - 1) = -2(u₂ - u₁) < 0` and `2(u₁ - 1) < 2(u₂ - 1)`, proving strict monotone decrease of `κ(A)` with hyperbolic separation `α`.
 - **50-dps Saturation Probe + Witness:** `computations/probes/h3_green_coth_saturation_probe.py` and `.witness.json` (11/11 assertions passed), verifying `α coth(α) → 1` at `α = 10⁻²⁵`, unsubtracted saturation `coth(40) → 1` vs O2-subtracted exponential decay `coth(40) - 1 ≈ 3.6097 × 10⁻³⁵`, and smooth monotone decrease `κ(A) : 3.2 → 2.2` across `A ∈ {3, 4, 12, 16, 40, 56}` (`α ∈ [0.3235, 0.4904]` unsubtracted, `α ∈ [0.2428, 0.3233]` O2-subtracted).
+
+Claimed by claude/w10-continuum-ecat-intranuc-em-20261123 (Worker 18, 2026-11-23); pre-registration committed (68df40f7a41).
