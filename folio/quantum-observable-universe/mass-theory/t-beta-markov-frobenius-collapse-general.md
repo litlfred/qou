@@ -1,10 +1,10 @@
-*Let $R$ be a strict-ordered field. Let $A$ be a unital $R$-algebra. Let $\tau : A \to R$ be an $R$-linear normalised trace ($\tau(1) = 1$, $\tau(xy) = \tau(yx)$). Let $X \mapsto X^\dagger$ be an $R$-linear map on $A$ with $1^\dagger = 1$ and $\tau(X^\dagger) = \tau(X)$. Assume the twisted form is positive-semi-definite: $0 \le \tau(Y \cdot Y^\dagger)$ for all $Y \in A$. For any $S \in R$ and $X \in A$ satisfying $\tau(X) = S$:*
+*Let $R$ be a strict-ordered field. Let $A$ be a unital $R$-algebra. Let $\tau : A \to R$ be an $R$-linear normalised trace ($\tau(1) = 1$, $\tau(xy) = \tau(yx)$). Let $X \mapsto X^\dagger$ be an $R$-linear anti-multiplicative map on $A$ ($(XY)^\dagger = Y^\dagger X^\dagger$) with $1^\dagger = 1$ and $\tau(X^\dagger) = \tau(X)$. Assume the twisted form is positive-semi-definite: $0 \le \tau(Y \cdot Y^\dagger)$ for all $Y \in A$. For any $S \in R$ and $X \in A$ satisfying $\tau(X) = S$:*
 $$
 S^2 \;\le\; \tau(X \cdot X^\dagger).
 $$
 *If the twisted form is non-degenerate ($\tau(Y \cdot Y^\dagger) = 0 \implies Y = 0$), the lower bound is attained if and only if $X = S \cdot 1_A$.*
 
-Taking $X^\dagger = X$ recovers the untwisted statement $S^2 \le \tau(X \cdot X)$ under positivity of $\tau$ on squares.
+When $A$ is commutative, taking $X^\dagger = X$ recovers the untwisted statement $S^2 \le \tau(X \cdot X)$ under positivity of $\tau$ on squares.
 
 ## Relation to the substrate-model version
 
