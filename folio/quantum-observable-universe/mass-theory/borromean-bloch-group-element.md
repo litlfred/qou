@@ -176,5 +176,5 @@ also closes the loop:
   [Binding energy scale $\alpha = m_e \times 8G$](#conj:binding-scale-catalan)
 - The archimedean dilog limit:
   [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit)
-- The Kashaev volume conjecture (upstream):
-  [Kashaev volume conjecture](kashaev-volume-conjecture.md)
+- The Kashaev–Murakami–Murakami volume conjecture (upstream):
+  [Kashaev–Murakami–Murakami volume conjecture](kashaev-volume-conjecture.md)

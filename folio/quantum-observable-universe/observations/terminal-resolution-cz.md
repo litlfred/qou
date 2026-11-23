@@ -21,4 +21,4 @@ Evaluating over $\mathbb{C}[z]$ at $z = q_0$ gives the dimensionless lepton mass
 
 Neither row is a prediction. The electron row is the unit, and the muon row is the relation that fixes $q_0$ through the calibration CAL-2 ([three-calibration discipline](#def:three-calibration-discipline)), so it holds by construction. The proton and neutron are not listed: under the pair Skein formula their masses are an invertible function of two dressed quark masses ([nucleon masses under the pair Skein formula](#prop:terminal-resolution)), so tabulating them against CODATA would test nothing.
 
-The fibre functor $\tau$ maps the categorical Frobenius form to the Webster inner product. Specializing $z \mapsto q_0$ recovers the numerical values while preserving the algebraic structure.
+The fibre functor $\tau$ maps the categorical Frobenius form to the Tanaka–Webster inner product. Specializing $z \mapsto q_0$ recovers the numerical values while preserving the algebraic structure.

@@ -34,5 +34,5 @@ $$
 $$
 
 This saddle computation is the concrete $4_1$ instance of the
-[Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
+[Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)
 asymptotics.

@@ -9,4 +9,4 @@ $$
   \mathrm{Ric}_{g_\varTheta} =  T^{(q)}.
 $$
 
-Here $\mathrm{Ric}_{g_\varTheta}$ denotes the Webster Ricci curvature and $T^{(q)}$ denotes a $q$-weighted stress-energy $2$-tensor on $H$. Both are coordinate-free objects.
+Here $\mathrm{Ric}_{g_\varTheta}$ denotes the Tanaka–Webster Ricci curvature and $T^{(q)}$ denotes a $q$-weighted stress-energy $2$-tensor on $H$. Both are coordinate-free objects.

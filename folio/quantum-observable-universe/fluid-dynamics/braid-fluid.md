@@ -6,7 +6,7 @@ Arnold demonstrated that the Euler equation on $(M, g)$ behaves exactly as the g
 **$q$-deformed diffeomorphisms.**
 The [state bundle](#ex:c-quantum-observable-universe) promotes the classical $\mathrm{SDiff}(M)$ group to $\mathrm{SDiff}_q(\mathcal{S})$. This imposes two structural shifts:
 
-1. The $L^2$ metric upgrades to the [Webster inner product](#sec:webster-inner-product). The resulting geodesics solve the [quantum Euler equation](#rem:madelung-fluid) subject to pressure $Q_q$.
+1. The $L^2$ metric upgrades to the [Tanaka–Webster inner product](#sec:webster-inner-product). The resulting geodesics solve the [quantum Euler equation](#rem:madelung-fluid) subject to pressure $Q_q$.
 2. Confining the state space to flows exhibiting concentrated vorticity across $n$ filaments forces a strict topological quotient onto $B_n$. The fundamental group of the configuration space $\mathrm{Conf}_n(M)/S_n$ resolves uniquely to $B_n$.
 
 **Braid generators as vortex exchanges.**

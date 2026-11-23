@@ -564,7 +564,7 @@
 | [prop:knot-operator-energy-exists](#prop:knot-operator-energy-exists) | Existence of the knot operator energy | Ch 10 |
 | [prop:assembly-projector-exists](#prop:assembly-projector-exists) | Existence of the symmetric-block assembly projector | Ch 16 |
 | [prop:qbeta-canonical-markov-weights-explicit-instance](#prop:qbeta-canonical-markov-weights-explicit-instance) | Explicit $\sqrt q$-bearing instance of $\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable) | Ch 9 |
-| [prop:explicit-central-idempotent](#prop:explicit-central-idempotent) | Explicit central primitive idempotents $e_\lambda$ via Murphy elements | Ch 9 |
+| [prop:explicit-central-idempotent](#prop:explicit-central-idempotent) | Explicit central primitive idempotents $e_\lambda$ via Jucys–Murphy elements | Ch 9 |
 | [prop:braiding-eigenvalue-extraction](#prop:braiding-eigenvalue-extraction) | Extraction of $q$ from the braiding eigenvalues | Ch 2 |
 | [prop:cs-evaluation-faithfulness](#prop:cs-evaluation-faithfulness) | Faithfulness of the Chern--Simons evaluation on the brane tower | Ch 14 |
 | [prop:algebraic-filter-classification](#prop:algebraic-filter-classification) | Fermion--boson classification by commutator with curvature | Ch 4 |
@@ -1141,8 +1141,8 @@
 | [conj:joint-galois-braid-action](#conj:joint-galois-braid-action) | Joint motivic-Galois $\times$ braid-group action on the bi-filtration $\mathcal{H}_q^{(n, K)}$ | Ch 11 |
 | [conj:jsj-decomposition-linearity](#conj:jsj-decomposition-linearity) | JSJ additivity of nucleon braids | Ch 7 |
 | [conj:kashaev-density-equals-sdp-multiplicity](#conj:kashaev-density-equals-sdp-multiplicity) | Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\rho_F = \nu_{\mathrm{SDP}}$) | Ch 11 |
-| [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev volume conjecture | Ch 11 |
-| [conj:kashaev-surreal](#conj:kashaev-surreal) | Kashaev volume conjecture as a surreal standard-part identity | Ch 25 |
+| [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev–Murakami–Murakami volume conjecture | Ch 11 |
+| [conj:kashaev-surreal](#conj:kashaev-surreal) | Kashaev–Murakami–Murakami volume conjecture as a surreal standard-part identity | Ch 25 |
 | [conj:klein-bring-icosahedral-bridge](#conj:klein-bring-icosahedral-bridge) | Klein icosahedral–quintic bridge: the $(2,3,5)$ force symmetries assemble the Bring ED into the icosahedral $\mathbb{P}^1$ with quotient $S^2(2,3,5)$ | Ch 6 |
 | [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio | Ch 11 |
 | [conj:q-gl-kummer-filtration](#conj:q-gl-kummer-filtration) | Kummer filtration on $q$-local systems | Ch 22 |

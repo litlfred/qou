@@ -46,8 +46,8 @@ derivation of the integer $3$ from the QOU categorical drivers (Hecke $H_3$ /
 Bring / Wedderburn), rather than importing it from Garoufalidis--Gu--Mariño,
 remains open.
 
-The bridge here is the **closed** / state-integral BPS sector. The **open**-HOMFLY
-Gukov--Stošić bridge gives the $4_1$ count $\det(4_1) = 5$ (five HOMFLY-homology
+The bridge here is the **closed** / state-integral BPS sector. The **open**-HOMFLY-PT
+Gukov--Stošić bridge gives the $4_1$ count $\det(4_1) = 5$ (five HOMFLY-PT-homology
 generators / five quiver nodes) and does *not* reproduce the $4_1$ Stokes integer
 $3$ — see the
 non-degeneracy discussion in

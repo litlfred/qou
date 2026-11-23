@@ -73,7 +73,7 @@ This appendix does **not**:
 - claim a physical interpretation of non-archimedean values (the
   work is purely mathematical);
 - replace any main-text proof (this paper's results stand on their own over $\mathbb{R}$);
-- solve the Kashaev volume conjecture;
+- solve the Kashaev–Murakami–Murakami volume conjecture;
 - construct a canonical Lebesgue-like measure on $\mathbf{No}$
   (it has none; the appendix sidesteps this rather than
   solving it).

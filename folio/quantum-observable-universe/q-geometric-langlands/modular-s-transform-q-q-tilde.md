@@ -35,7 +35,7 @@ bar.
 
 ## Connection to TQFT / Volume Conjecture
 
-The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
+The [Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)
 asymptotics are governed by the limit $q \to e^{2\pi i / k}$ as
 $k \to \infty$.  The $S$-transform realises this limit as the
 modular image of the substrate: writing the bar image
@@ -112,7 +112,7 @@ parameter manifold:
 
 - The complex-$q$ lift: [The pre-Archimedean substrate is polymorphic in its base ring](#prop:q-zero-complex-extension) +
   [Lusztig bar vs Hermitian-$\ast$ on the complex Hecke algebra](#prop:lusztig-vs-hermitian-bar)
-- Volume Conjecture: [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
+- Volume Conjecture: [Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)
 - The Bloch-group route: [Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](../mass-theory/borromean-bloch-group-element.md)
 
 **Archimedean specialisation.** Modular convergence is an archimedean statement: the estimates use $\mathrm{Im}\,\tau$ and $\exp$ over $\mathbb{R}$, so it sits on the archimedean side of the substrate wall.

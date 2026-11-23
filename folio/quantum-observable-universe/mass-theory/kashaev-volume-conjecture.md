@@ -4,7 +4,7 @@
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
 > graded expansion [graded expansion of $\rho_K$](rho-k-graded-expansion.md).
 
-The **Kashaev volume conjecture (KVC)** asserts that, for every
+The **Kashaev–Murakami–Murakami volume conjecture (KVC)** asserts that, for every
 hyperbolic knot $K \subseteq S^3$, the Kashaev limit of the colored
 Jones polynomial computes the hyperbolic volume of the complement,
 

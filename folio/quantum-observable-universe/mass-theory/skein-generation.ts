@@ -14,7 +14,7 @@ export default proposition({
         "**Corrected 2026-11-16 (QA finding: da-non-sequitur).** The proof said the " +
         "volume-zero knots are exactly the torus knots; $3_1 \\# 3_1$ is a counterexample, so " +
         "'fundamental' is now defined as torus. The proof also now records that its skein " +
-        "relation is the HOMFLY relation at the $\\mathfrak{gl}_1$ point $a = q$, where every " +
+        "relation is the HOMFLY-PT relation at the $\\mathfrak{gl}_1$ point $a = q$, where every " +
         "link equals the unknot in $\\mathrm{Sk}_q(S^3)$ (Hopf link included). **Mass-derivation " +
         "flag:** `lem:skein-mass-from-linking` reads $Q(q)$ off this resolution, and in this " +
         "skein theory that coefficient carries no linking information. That lemma is not " +
