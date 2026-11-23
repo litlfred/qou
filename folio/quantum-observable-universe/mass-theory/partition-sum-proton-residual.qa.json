@@ -1009,6 +1009,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "partition-sum-proton-residual.lean:114-117 `∃ (ε : ℝ), abs ε ≤ electronMass * (4 / 1000) ∧ protonTowerResidualMeV = electronMass * frobeniusCoCasimirTraceN3 + ε` with :56 `protonTowerResidualMeV : ℝ := 1.2779`, :69 `qSubstrate := 1.10998` — numeric near-match, not the exact identity of .md:4-13; C_Frob, tr_M unencoded (:37 `invDimPartitionSum _ := 0`); .md:16 'within 0.1%' vs measured 0.14%",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "05f7791c86ae",
+          "ts": "66d12781eb12",
+          "lean": "2a457d580b22",
+          "lean_statement": "57dece4e31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:31.715Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Conjecture block: statement-to-Lean equivalence is not applicable; the Lean carrier is a conjecture class, not a proof."
       }
     ],
     "proof-no-axiom-growth": [
@@ -2326,6 +2343,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:31.982Z",
+  "updated_at": "2026-11-16T07:13:31.715Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

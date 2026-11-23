@@ -1,1 +1,0 @@
-Therefore, the maximal point $\alpha$ must be on the interior of $\mathcal A(\tau_{p})$, and, by the Casson-Rivin Theorem (\ref{sec:CR} and \cite[Theorem 1.2]{AngledtoHyperbolic}), $\alpha$ corresponds to the complete hyperbolic structure on~$X_{p}$.

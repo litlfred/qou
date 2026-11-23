@@ -1,0 +1,1 @@
+For any δ > 0 there is a constant C(δ) such that for large b ∥(Yba 0 )∗l∥u < C(δ)δ|l| ∀l with |l| > 1 (2.41) (∥∥u is taken on the interval [0, 1 + ǫ]). Without loss of generality, assume that l1 > 1. Using the notation (2.29),

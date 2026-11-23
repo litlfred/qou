@@ -146,11 +146,11 @@ def main() -> int:
     print(f"       matrix to inspect.")
 
     # [3] measure the weight of (3,2,1) directly
-    qf, zf = float(Q0), float(Z_D0)   # float64-ok: classification only
-    om = omega_lambda_via_inversion(6, q_val=qf, z_val=zf)
+    # omega is mpf since 2026-11-22 (branch-cache P9), solved at the exact q0.
+    om = omega_lambda_via_inversion(6, q_val=Q0)
     parts6 = list(partitions_of(6))
-    w321 = mp.fabs(mp.mpf(str(om.get((3, 2, 1), 0.0))))
-    w_vis = min(mp.fabs(mp.mpf(str(om.get(s, 0.0)))) for s in parts6 if len(s) <= 2)
+    w321 = mp.fabs(om.get((3, 2, 1), mp.mpf(0)))
+    w_vis = min(mp.fabs(om.get(s, mp.mpf(0))) for s in parts6 if len(s) <= 2)
     tot = sum(build_seminormal_matrices_mp(s, Q0)[1] ** 2 for s in parts6)
     vis = sum(build_seminormal_matrices_mp(s, Q0)[1] ** 2
               for s in parts6 if len(s) <= 2)

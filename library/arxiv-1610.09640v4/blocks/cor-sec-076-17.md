@@ -1,0 +1,1 @@
+Let M be an abelian category with enough projectives, and let M ∈C(M) be a complex with bounded above cohomology. Then M has a K- projective resolution P →M, such that sup(P) = sup(H(M)), and every P i is an projective object of M.

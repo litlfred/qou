@@ -1,1 +1,0 @@
-As the number operator $\hat{N}$ is conserved by virtue of Eq.[\[\[N,H\]\]](#[N,H]){reference-type="ref" reference="[N,H]"}, if we start from the one-particle subspace of the Fock space, we shall remain in this subspace during all the evolution.

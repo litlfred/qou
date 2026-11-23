@@ -1,0 +1,1 @@
+Yamada made the list of isomorphism classes of quandles (and racks) of order < 7 by computer search. The list of connected quandles of order < 7 in Table 4 follows from it. S. Nelson [308] classifies the Alexander quandles of order < 15; connected ones among them are listed in Table 4.

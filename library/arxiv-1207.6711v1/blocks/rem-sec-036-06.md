@@ -1,0 +1,1 @@
+Theorem 10.14 implies that for a generic PGL(n, C)/B-decoration on (M, T ), the restriction of the natural cocycle to ∂M has a canonical lift to a cocycle with values in B ⊂GL(n, C) (not just in PGL(n, C)).

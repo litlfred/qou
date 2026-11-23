@@ -1,0 +1,1 @@
+It is easy to generalize this analysis to the case when ~w takes values in a positive definite inner product space V, and M : V — V is a skewsymmetric operator, since such a situation is a direct sum of the situations considered above.

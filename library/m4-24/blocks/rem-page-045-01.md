@@ -1,0 +1,1 @@
+surgery on a Y graph in the definition of loop finite type invariants lifts to a surgery of the infinite cyclic cover of the knot complement, which does not change its homology. Hence, it is shown, topologically, that all coefficients of the Alexander polynomial are finite type invariants of loop-degree 0.

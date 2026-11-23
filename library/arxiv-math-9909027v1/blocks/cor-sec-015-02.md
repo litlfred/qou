@@ -1,0 +1,1 @@
+If (P, Φ) is as before, the Poincar´e series P∞ n=0 dim(Pn)zn has radius of convergence ≥ δ2 . This result could be proved without the full strength of Theorem 4.3.1 (as pointed out by D.Bisch), using the principal graph and the trace. The Poincar´e series of planar subfactors enjoy many special properties as we shall explore in future papers.

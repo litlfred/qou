@@ -1,0 +1,1 @@
+One of the advantages of the basis-focused formulation above is that Def- inition 2.2 works, mutatis mutandis, for relative cellular algebras as in [14] or (strictly object-adapted) cellular categories [15,67]. D. Tubbenhauer and P. Vaz We also define:

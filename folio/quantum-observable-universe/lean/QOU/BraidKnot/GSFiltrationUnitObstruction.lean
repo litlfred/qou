@@ -333,7 +333,7 @@ end NonVacuity
 
 /-! ### 6. An independent route: the anti-diagonal "Poincaré duality of strata"
 
-`prf:quantum-dilogarithm-stratified` Step 1 states, of the centre,
+`rem:quantum-dilogarithm-stratified-partial-argument` Step 1 states, of the centre,
 
     ⟨Z^(k)(A), Z^(ℓ)(A)⟩ = 0   whenever k + ℓ ≠ N,
 
@@ -403,7 +403,7 @@ theorem antidiagonal_pairing_forces_constant_grading
 /-- **The anti-diagonal strata pairing is unavailable at `n = 4`.**
 
 Instantiating §6 against `gbDepth_ne_on_H4`. This refutes
-`prf:quantum-dilogarithm-stratified` Step 1 **without using the word filtration
+`rem:quantum-dilogarithm-stratified-partial-argument` Step 1 **without using the word filtration
 at all** — so, unlike the six sites' shared defect, it is not repaired by
 supplying the missing word/partition bridge. -/
 theorem antidiagonal_pairing_excluded_at_four

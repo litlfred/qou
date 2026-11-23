@@ -1,0 +1,1 @@
+Let ¯n ∈Γ(U, Hi(N)), and let V ′ ρ′ / / τ  U ′ σ  V ρ / / U be a commutative diagram in M, in which the horizontal arrows are coverings. Suppose V admits a connecting triple for ¯n. Then V ′ admits a connecting triple for ¯n′ := σ∗(¯n) ∈Γ(U ′, Hi(N)), and there is equality δV ′(¯n′) = τ ∗(δV (¯n)) in Γ(V ′, Hi+1(L)).

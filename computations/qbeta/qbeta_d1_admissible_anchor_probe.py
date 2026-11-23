@@ -44,6 +44,7 @@ SCOPE-(a).  No c_k is proposed, no element is adjudicated, nothing is wired.
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors", Invent. Math. 92 (1988) 349-383.
 """
 from __future__ import annotations
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import os
 import sys
 
@@ -147,7 +148,7 @@ def main() -> int:
 
     # ---- 4. calibration against committed corpus numbers --------------------
     me = mp.mpf("0.51099895069"); Qexp = mp.mpf("0.7823334093099085")
-    qn = num(q); E0 = me / (qn * (qn - 1))
+    qn = num(q); E0 = _qbeta_e0.order_zero_scaled(me, qn)
     errs = {}
     for nm, tr in (("S", TR_S), ("L", TR_L)):
         for zl, zv in (("1", sp.Integer(1)), ("q", q), ("zD", zD)):

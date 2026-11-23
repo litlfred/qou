@@ -1,4 +1,4 @@
-*Proof.*
+*Proof sketch.*
 By Schur–Weyl duality at level $n = 3$ in three dimensions ([Schur–Weyl mass decomposition](#prop:schur-weyl-mass-decomposition)), the $\mathrm{S}_3$-module
 
 $$
@@ -13,7 +13,7 @@ $$
   \;=\; \mathrm{Sym}^3 \;\oplus\; \mathrm{Alt}^3 \;\oplus\; \mathrm{Std}^{\oplus 2}.
 $$
 
-The dimensions are $\dim_R V_{(3)} = 1$, $\dim_R V_{(1,1,1)} = 1$, $\dim_R V_{(2,1)} = 2$, summing to $4$. However, since $V$ is the rank-$3$ permutation representation of $\mathrm{S}_3$, we have $V \cong V_{(3)} \oplus V_{(2,1)}$. The rank-$1$ alternating piece sits inside the exterior cube $\Lambda^3 V$. The relevant isotype is therefore the top exterior power.
+The dimensions are $\dim_R V_{(3)} = 1$, $\dim_R V_{(1,1,1)} = 1$, $\dim_R V_{(2,1)} = 2$, summing to $4$. However, since $V$ is the rank-$3$ permutation representation of $\mathrm{S}_3$, $V \cong V_{(3)} \oplus V_{(2,1)}$. The rank-$1$ alternating piece sits inside the exterior cube $\Lambda^3 V$. The relevant isotype is therefore the top exterior power.
 
 By the Frobenius character formula ([Frobenius universal](#thm:frobenius-codim-universal)) applied to $\mathrm{S}_3$, the projector onto the sign isotype of any $\mathrm{S}_3$-module $W$ is
 
@@ -38,27 +38,20 @@ $$
     \bigotimes_{k=1}^{3} dc_{\sigma(k)}/dz.
 $$
 
-Under the canonical isomorphism $\Lambda^3 V \cong R$, the antisymmetrised tensor maps to the wedge product
+Write $v_k := dc_k/dz$. Under the canonical isomorphism $\Lambda^3 V \cong R$, the antisymmetrised tensor maps to $v_1 \wedge v_2 \wedge v_3$. On the diagonal frame $\bigl(v_k\, e_k\bigr)_{k=1}^{3}$ this is $\bigl(\prod_k v_k\bigr)\, e_1 \wedge e_2 \wedge e_3$. The sign change under sheet exchange is carried by $e_1 \wedge e_2 \wedge e_3$, not by the coefficient: after the identification $e_1 \wedge e_2 \wedge e_3 \mapsto 1$, which is not $\mathrm{S}_3$-equivariant, the scalar $\prod_k v_k$ is symmetric. So the product is not a sign-isotypic scalar.
+
+The sign-isotypic scalars are the antisymmetric polynomials in $v_1, v_2, v_3$. Applying $\pi_{\mathrm{Alt}}$ to the monomial $v_1^0 v_2^1 v_3^2$ gives $\tfrac{1}{6}\sum_{\sigma} \mathrm{sgn}(\sigma)\, v_{\sigma(2)}\, v_{\sigma(3)}^2$, which is $\tfrac{1}{6}$ times the $3 \times 3$ Vandermonde determinant. Its cofactor expansion factors as
 
 $$
-  (dc_1/dz) \wedge (dc_2/dz) \wedge (dc_3/dz).
-$$
-
-Evaluated on the diagonal vector $\bigl((dc_k/dz)\,e_k\bigr)_{k=1}^{3}$ with $R$-basis $\{e_1, e_2, e_3\}$, this yields
-
-$$
-  \bigl((dc_1/dz)\,e_1\bigr) \wedge \bigl((dc_2/dz)\,e_2\bigr)
-    \wedge \bigl((dc_3/dz)\,e_3\bigr)
+  (v_2 v_3^2 - v_3 v_2^2) - v_1 (v_3^2 - v_2^2) + v_1^2 (v_3 - v_2)
   \;=\;
-  \Bigl(\prod_{k=1}^{3} \frac{dc_k}{dz}\Bigr)\,
-  e_1 \wedge e_2 \wedge e_3
-  \;\longmapsto\;
-  \prod_{k=1}^{3} \frac{dc_k}{dz}
+  (v_2 - v_1)(v_3 - v_1)(v_3 - v_2)
+  \;=\; \lambda_{\mathrm{baryon}},
 $$
 
-under the identification $e_1 \wedge e_2 \wedge e_3 \mapsto 1$. This product structure arises solely from multilinearity of $\wedge$.
+an identity in any commutative ring. Every antisymmetric polynomial is divisible by each $v_j - v_i$, hence by $\lambda_{\mathrm{baryon}}$, with symmetric quotient; so $\lambda_{\mathrm{baryon}}$ spans the lowest-degree part of the sign isotype.
 
-The squared Vandermonde of the colour-tube roots equals the cubic's discriminant ([color-tube cubic](#rem:color-tube-cubic)):
+**$R$-rationality.** By implicit differentiation $v_k = -(\partial F/\partial z)/(\partial F/\partial c)$ at $(z, c_k)$, a rational function of $c_k$ over $R(z)$. The ratio $\lambda_{\mathrm{baryon}} / V_3(c_1, c_2, c_3)$ is symmetric in the roots, hence lies in $R(z)$, and the squared Vandermonde of the roots is the discriminant of the cubic ([color-tube cubic](#rem:color-tube-cubic)):
 
 $$
   V_3(c_1, c_2, c_3)^2
@@ -69,31 +62,9 @@ $$
   \;\in\; R[z].
 $$
 
-Using implicit differentiation $dc_k/dz = -(\partial F/\partial z)|_{(z, c_k)} \big/ (\partial F/\partial c)|_{(z, c_k)}$ and the resultant identity $J(z) := \prod_{k=1}^{3} (\partial F/\partial c)|_{(z, c_k)} = \pm\, \Delta(z)$, the Alt-isotype representative satisfies
+So $\lambda_{\mathrm{baryon}}^2 \in R(z)$, and $\lambda_{\mathrm{baryon}}$ itself lies in $R(z)\bigl(\sqrt{\Delta(z)}\bigr)$. $\square$
 
-$$
-  \prod_{k=1}^{3} \frac{dc_k}{dz}
-  \;=\;
-  (-1)^{3}\,
-  \frac{V_3(c_1, c_2, c_3)}{J(z)}
-  \;=\;
-  \pm\,\frac{V_3(c_1, c_2, c_3)}{\Delta(z)}.
-$$
-
-Thus we obtain
-
-$$
-  \Bigl(\prod_{k=1}^{3} \frac{dc_k}{dz}\Bigr)^{2}
-  \;=\;
-  \frac{V_3(c_1, c_2, c_3)^2}{\Delta(z)^2}
-  \;=\;
-  \frac{1}{\Delta(z)}
-  \;\in\; R(z),
-$$
-
-which is manifestly $R$-rational. $\square$
-
-The sum $\sum_k dc_k/dz$ projects onto the trivial isotype $V_{(3)}$ as the integrand for a symmetric trion. The baryon sits in the antisymmetric colour singlet $\mathrm{Alt}^3$, selecting the wedge product. This algebraic selection requires no input from the Picard–Lefschetz machinery. Both the Vandermonde and $\pi_{\mathrm{Alt}}$ are defined over $R$; the baryon integrand evaluation remains $R$-rational until we apply the archimedean fibre functor $\tau$.
+The sum $\sum_k dc_k/dz$ spans the degree-one part of the trivial isotype $V_{(3)}$, the integrand for a symmetric trion. The baryon sits in the antisymmetric colour singlet $\mathrm{Alt}^3$, selecting the velocity Vandermonde. This algebraic selection requires no input from the Picard–Lefschetz machinery. Both the Vandermonde and $\pi_{\mathrm{Alt}}$ are defined over $R$; the baryon integrand evaluation remains $R$-rational until the archimedean fibre functor $\tau$ is applied.
 
 This algebraic choice of the sign block, combined with the scalar weight $w_\lambda$ from the Markov trace ([categorical mass as Markov trace](#prop:categorical-mass-markov)), fully determines the baryon integrand $\lambda_{\mathrm{baryon}}$.
 

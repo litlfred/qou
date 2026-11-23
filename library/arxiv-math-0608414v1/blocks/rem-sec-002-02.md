@@ -1,0 +1,1 @@
+There is a constant K > 0 (independent of p and l) such that for all p ∈C and all l ≥0 |Gl(p)|∧< Kµ|l|eµ|p| (2.1) for µ > max{ξ−1 0 , y−1 0 } (cf. (1.21)) (|f|∧:= max1..n{|f1|, .., |fn|} is an Eu- clidean norm; for the deﬁnition of G see (1.23), (1.21) and (1.1)).

@@ -1,0 +1,1 @@
+3. Let h : G1 →G0 be a homomorphism of reductive super groups over Λ which induces an epimorphism f : G1 ↠G0 on the underlying classical groups. If the super center Z(G0) contains a classical torus T0, then also Z(G1) contains a classical torus T1 such that the epimorphism f restricts to an isogeny p : T1 →T0.

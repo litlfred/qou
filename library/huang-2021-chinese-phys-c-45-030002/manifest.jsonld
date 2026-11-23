@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/huang-2021-chinese-phys-c-45-030002",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/huang-2021-chinese-phys-c-45-030002/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -365,8 +365,8 @@
     "pages": 343,
     "arxiv": null,
     "doi": "10.1088/1674-1137/abddb0",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

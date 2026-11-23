@@ -1,1 +1,0 @@
-These formulas generally follow from an application of the Laplace method to an integral representation of the distance, but we shall also use Theorem 2.3 in order to get rid of certain non dominant terms in the asymptotics.

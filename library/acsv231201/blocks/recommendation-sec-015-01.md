@@ -1,1 +1,0 @@
-Suppose now that f(z) is analytic on a closed disk D = {z € C: |z| < S} for some S > 0, except at a nonempty collection {p1,...,;} of poles of orders K1,...,k; Which lie in the interior of D (by our running assumption that a, grows exponentially, the p; must be non-zero).

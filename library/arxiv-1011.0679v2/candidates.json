@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1011.0679v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6fa4bbcf4e908373559c4ee603c5ee3f929a25d722feb3c9ad3774cc344a5363",
   "file": "1011.0679v2.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To relate these to $EP_{\\mc H}$ one must compare $EP_{\\mc H}$ and $EP_{\\mc W^e}$, which is done in \\cite[Section 5.6]{Ree} (for affine Hecke algebras with equal parameters) and in \\cite[Chapter 3]{OpSo1}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To relate these to EPH one must compare EPH and EPWe, which is done in [Ree, Section 5.6] (for a\ufb03ne Hecke algebras with equal parameters) and in [OpSo1, Chapter 3].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-11-affine-hecke-algebras.md",
-   "section_title": "Affine Hecke algebras",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In other words, we must describe $\\pi (u,\\sigma)$ as a representation of \\[ \\big( C^\\infty (U) \\otimes \\mr{End}_\\C (V) \\big)^G / I \\cong \\big( \\bigoplus\\nolimits_{g \\in G / G_u} \\mr{End}_\\C (\\C [G]) \\big)^G \\cong \\mr{End}_{G_u} (\\C [G]) . \\] As a $G_u$-representation $V = \\C [G] \\cong \\C [G_u] \\otimes \\C^{[G:G_u]}$, so \\[ \\mr{End}_{G_u} (\\C [G]) \\cong \\mr{End}_{G_u} (\\C [G_u]) \\otimes \\mr{End}_\\C (\\C^{[G:G_u]}) \\cong \\C [G_u] \\otimes M_{[G:G_u]} (\\C) . \\] Unter these identifications $\\pi (u,\\sigma)$ corresponds to the representation $\\sigma \\otimes \\C^{[G:G_u]}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-4-algebras-of-invariants.md",
-   "section_title": "Algebras of invariants",
-   "pages": "17-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

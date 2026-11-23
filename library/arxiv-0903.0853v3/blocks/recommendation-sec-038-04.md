@@ -1,1 +1,0 @@
-We shall say that a $\Sigma$-invariant subset $K$ of $U$ is a *stable strict subset* if there exists a compact subset $K'$ of $U$ such that $K = \Sigma (K')$; then $K \cup \{ 0\}$ is compact in ${\mathbf C}$.

@@ -23,24 +23,6 @@ $\mathcal{A} = \{i : y_i^* > 0\}$ identifies the **active demand
 channels** -- the channels that the optimal operator $\Phi^*$ exactly
 saturates.
 
-## Confinement as the special case $n = 3$, $d = 6$
-
-Setting $n = 3$ and $d = 6$ recovers the
-[confinement LP](#prop:confinement-lp) exactly:
-
-| General LP | Confinement LP ($n = 3$) |
-|:---|:---|
-| Basis $\{b_1, \ldots, b_d\}$ | $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ |
-| Gram matrix $G \in \mathbb{R}^{d \times d}$ | $6 \times 6$ Gram matrix of $H_3(q)$ |
-| Target $n_{\mathrm{target}}$ | $\approx 1.000$ (proton), $\approx 0.811$ (neutron) |
-| Optimal $x^*$ | not determined by the program — the minimisers form a face at objective $0$. $\mathrm{NF}(\mathcal{B}_3) \approx (+0.998, -0.010, +0.009, +0.046, -0.044, 0)$ is **feasible but not optimal** ($\mathrm{tr}_M \approx 0.9986$). |
-| Active set $\mathcal{A}$ | $\{\sigma_0, L_-\}$ (two active demand channels) |
-
-The confinement LP is the $n = 3$ instantiation: three strands
-encoding three quark colors, six NF basis elements spanning the
-operator space, and the Borromean link $\mathcal{B}_3$ as the unique
-LP vertex.
-
 ## Higher-strand generalizations
 
 For $n > 3$, the LP dimensions grow as $d = n!$:
@@ -57,7 +39,7 @@ non-degenerate — for $q \neq 0, 1$ — **on the quotient
 $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, not on $H_n$ itself**, so
 that is where the LP is well-posed.
 
-> **The LP dimension is Catalan, not $n!$ (convention D).** Corrected 2026-08-09.
+> **The LP dimension is the Catalan number $C_n$, not $n!$ (Convention D).**
 > Posed on all of $H_n$ with $d = n!$ the statement above is false: under the
 > production convention D the weights $y_\lambda$ vanish for every $\lambda$ with
 > $\ell(\lambda) \geq 3$, so $G \in \mathbb{R}^{n! \times n!}$ is **singular** and
@@ -75,9 +57,7 @@ that is where the LP is well-posed.
 > one, and the tetraquark row is $14$, not $24$. The optimal vertex $x^*$ and the
 > active set $\mathcal{A}$ are well defined on the quotient; on $H_n$ the LP has
 > a $\mathrm{corank} G$-dimensional space of optima differing by radical
-> directions the trace cannot see. Proved in
-> [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)
-> (`gram_det_eq_zero_of_radical_combination`, `RankAccounting`).
+> directions the trace cannot see.
 
   The optimal vertex $x^*$ identifies the minimum-action
 operator, and the active set $\mathcal{A}$ identifies the saturated
@@ -85,8 +65,6 @@ demand channels.
 
 ## Relation to the spectral decomposition
 
-The LP formulation is dual to the spectral decomposition of
-[knot operator selection](#prop:knot-operator-selection), part (i).
 The spectral decomposition writes $\Phi = \sum_\lambda d_\lambda(q)
 \cdot \Phi_\lambda$ in the irrep basis; the LP writes
 $\Phi = \sum_i x_i b_i$ in the NF basis.  The two are related by

@@ -1,1 +1,0 @@
-Specifically, the shape parameters at that edge of all tet‐ rahedra that are incident with it must clearly have arguments that add up to (because otherwise the metric would not be smooth along that edge), but in fact the shape parameters themselves have product by an easy argument.

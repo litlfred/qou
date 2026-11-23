@@ -1,1 +1,1 @@
-We have for λ, µ ∈ Λ+(q0),
+We have for λ, µ ∈ Λ+(q0), a) for T ∈ Uq0 (g) invertible, R∆(T) 1/2 = ∆op(T)1/2R, b) v 1/2 acts on Vλ(q0) as a scalar in T, given by wλ := q0 − ⟨λ,λ+2ρ⟩ 2 , c) ((R21R) −1 ) 1/2 acts on Vλ(q0) ⊗ Vµ(q0) as ∆(v)1/2w −1 λ ⊗ w −1 µ , d) the operator Rλ,µ = R((R21R) −1 ) 1/2 is invertible selfadjoint on Vλ(q0)⊗Vµ(q0) w.r.t. the product of Wenzl inner products and satisfies (Rµ,λ)21Rλ,µ = 1.

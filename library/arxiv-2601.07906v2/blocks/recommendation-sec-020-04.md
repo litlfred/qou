@@ -1,1 +1,0 @@
-\paragraph{Missing conditions.} The fact that pure AdS$_3$ quantum gravity represents such a non-minimal solution to the constraints imposed by the statistical bootstrap immediately raises a question: what further assumptions must be incorporated such that the \emph{full} sum over all hyperbolic 3-manifolds represents the minimal solution to the resulting constraints?

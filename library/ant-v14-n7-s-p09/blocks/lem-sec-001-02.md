@@ -1,0 +1,1 @@
+Let G be a finite group and let p be a prime. Suppose that B is a block of G with normal defect group D. Let b be a root of B with canonical character 0. Write A = (0) < Gal(Q(é\g))/Q). Ifa is a linear character of D, then let Gga = {g € G | (0,)8 = (0,)% for some a € A}. With this definition

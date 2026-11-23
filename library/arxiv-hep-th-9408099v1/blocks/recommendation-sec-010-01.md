@@ -1,1 +1,0 @@
-The speciﬁc form of the ﬁrst row in (6.3) means that m is monodromy- invariant; intuitively this reﬂects the fact that m is a “constant,” not a “ﬁeld.” Since the central charge in (5.3) must be monodromy-invariant, one can deduce at once how the charges transform.

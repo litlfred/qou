@@ -1,0 +1,1 @@
+Let π : eGuni →Guni be as in Section 3, and consider the constant sheaf ¯Ql on eGuni. Then π∗¯Ql[dim Guni] is a semisimple perverse sheaf on Guni, equipped with W-action, and is decomposed as π∗¯Ql[dim Guni] ≃ M (O,E )∈NG V(O,E ) ⊗IC(O, E )[dim O], where V(O,E ) is an irreducible W-module if it is non-zero.

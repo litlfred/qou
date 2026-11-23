@@ -79,4 +79,9 @@ theorem sinh_zeta4_rotation (z : ℂ) :
       one_mul]
   rw [h0, h1]; ring
 
+/-- Subtracting the rotated hyperbolic sine term from the shifted hyperbolic cosine cancels to zero (`qou-f8rr`). -/
+theorem cosh_zeta4_rotation_sub_eq_zero (z : ℂ) :
+    Complex.cosh (z + (↑(Real.pi / 2) : ℂ) * Complex.I) - Complex.I * Complex.sinh z = 0 := by
+  rw [cosh_zeta4_rotation z, sub_self]
+
 end QOU.Mass.Zeta4ComplexVolumeModerator

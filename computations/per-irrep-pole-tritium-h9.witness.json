@@ -1,0 +1,793 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-11-21T02:38:05.662705+00:00",
+  "commitSha": "4e795bb7926d15857986aeb18b56b2764adbba30",
+  "assertions": [
+    {
+      "name": "tritium_full_tr_M_u_pole_eq_shift_NF",
+      "computed": 66,
+      "expected": 61,
+      "passed": false
+    },
+    {
+      "name": "tritium_per_term_max_unique",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 274,
+  "computation": "per-irrep-pole-tritium-h9",
+  "scriptFile": "per_irrep_pole_atom.py",
+  "scriptHash": "0e7b8f60d9a2",
+  "scriptCommitSha": "928351a9f34d7ebe2dde64b891c5a7e8857259ad",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/per_irrep_pole_atom.py",
+      "tritium"
+    ],
+    "reproduce": "python3 -u computations/per_irrep_pole_atom.py tritium"
+  },
+  "description": "Path A: per-term symbolic u-pole-order analysis of the tritium's tr_M = Σ_λ y_λ(q) · χ^λ_q(β_{1,2}) at q = u² (per the D(u) convention).  Loads cached symbolic y_λ from y-lambda-wenzl-bridge-symbolic-witness.json and cached chi_λ from chi-tritium-h9.witness.json (auto-emit on first run, multiprocessing).  Per-term ord_{u=0}(y_λ · χ^λ) avoids the sp.together bottleneck.  Verifies shift_NF(β_tritium) = 61 = 18·1 + 21·2 + 1, matching prop:per-nucleon-shift-additive-linearity.",
+  "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+  "data": {
+    "per_term_u_pole_orders": [
+      {
+        "partition": [
+          6,
+          3
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 66
+      },
+      {
+        "partition": [
+          5,
+          4
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 62
+      },
+      {
+        "partition": [
+          7,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 50
+      },
+      {
+        "partition": [
+          8,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 34
+      },
+      {
+        "partition": [
+          9
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 14
+      },
+      {
+        "partition": [
+          7,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          6,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          3,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          2,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          2,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          5,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          4,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          3,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          3,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          2,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          3
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      }
+    ],
+    "max_term_lambda": {
+      "partition": [
+        6,
+        3
+      ],
+      "ord_u_eq_0": 66,
+      "unique_max": true,
+      "next_highest": 62
+    },
+    "full_tr_M_u_pole_inferred": {
+      "value": 66,
+      "rigorous": true,
+      "expected": 61,
+      "Z": 1,
+      "N": 2,
+      "formula": "shift_NF(β_tritium) = 18·1 + 21·2 + 1 = 61"
+    },
+    "per_generator_crossings": {
+      "atom": "tritium",
+      "Z": 1,
+      "N": 2,
+      "n_strands": 9,
+      "total_crossings": 35,
+      "by_generator": [
+        {
+          "gen_idx": 0,
+          "sigma": 6,
+          "sigma_inv": 0,
+          "averaged": 1,
+          "averaged_weighted": 0,
+          "total": 7
+        },
+        {
+          "gen_idx": 1,
+          "sigma": 0,
+          "sigma_inv": 3,
+          "averaged": 1,
+          "averaged_weighted": 0,
+          "total": 4
+        },
+        {
+          "gen_idx": 2,
+          "sigma": 0,
+          "sigma_inv": 0,
+          "averaged": 0,
+          "averaged_weighted": 1,
+          "total": 1
+        },
+        {
+          "gen_idx": 3,
+          "sigma": 5,
+          "sigma_inv": 0,
+          "averaged": 2,
+          "averaged_weighted": 0,
+          "total": 7
+        },
+        {
+          "gen_idx": 4,
+          "sigma": 0,
+          "sigma_inv": 4,
+          "averaged": 0,
+          "averaged_weighted": 0,
+          "total": 4
+        },
+        {
+          "gen_idx": 5,
+          "sigma": 0,
+          "sigma_inv": 1,
+          "averaged": 0,
+          "averaged_weighted": 0,
+          "total": 1
+        },
+        {
+          "gen_idx": 6,
+          "sigma": 5,
+          "sigma_inv": 0,
+          "averaged": 2,
+          "averaged_weighted": 0,
+          "total": 7
+        },
+        {
+          "gen_idx": 7,
+          "sigma": 0,
+          "sigma_inv": 4,
+          "averaged": 0,
+          "averaged_weighted": 0,
+          "total": 4
+        }
+      ],
+      "klr_canonical_class_by_generator": [
+        {
+          "gen_idx": 0,
+          "net_signed_power": 6,
+          "averaged_count": 1,
+          "averaged_blind_count": 1,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_0^6",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 1,
+          "net_signed_power": -3,
+          "averaged_count": 1,
+          "averaged_blind_count": 1,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_1^-3",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 2,
+          "net_signed_power": 0,
+          "averaged_count": 1,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 1,
+          "cemetery_class_signed_power_projection": "identity",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 3,
+          "net_signed_power": 5,
+          "averaged_count": 2,
+          "averaged_blind_count": 2,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_3^5",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 4,
+          "net_signed_power": -4,
+          "averaged_count": 0,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_4^-4",
+          "is_pure_power_in_cemetery": true
+        },
+        {
+          "gen_idx": 5,
+          "net_signed_power": -1,
+          "averaged_count": 0,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_5^-1",
+          "is_pure_power_in_cemetery": true
+        },
+        {
+          "gen_idx": 6,
+          "net_signed_power": 5,
+          "averaged_count": 2,
+          "averaged_blind_count": 2,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_6^5",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 7,
+          "net_signed_power": -4,
+          "averaged_count": 0,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 0,
+          "cemetery_class_signed_power_projection": "σ_7^-4",
+          "is_pure_power_in_cemetery": true
+        }
+      ],
+      "note": "Canonical crossings from atom_canonical_crossings(Z, N), aggregated per generator index.  Provides structural baseline for GAP-C-1 (q-integer counting per generator) in derivation-audit-report.md.  KLR-canonical-class enrichment per AGENTS.md §7b (and PR #608 KLR cemetery infra): each per-generator sub-word σ_g^k (pure power) is a cemetery class trivially; the full atom's canonical class is the per-partition χ-fingerprint at q_0 (emitted as `atom_chi_fingerprint` below)."
+    },
+    "atom_chi_fingerprint": {
+      "q0": "1.1099785827513808075916690956107688798744991218736",
+      "precision": 8,
+      "n_partitions": 30,
+      "fingerprint": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-0.68427261"
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-0.45686918"
+        ],
+        [
+          [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "1.12003758"
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-0.28089173"
+        ],
+        [
+          [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-1.68259812"
+        ],
+        [
+          [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "1.39762365"
+        ],
+        [
+          [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "-2.30884534"
+        ],
+        [
+          [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "-1.49945004"
+        ],
+        [
+          [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "0.27180981"
+        ],
+        [
+          [
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "1.02644410"
+        ],
+        [
+          [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "0.06932255"
+        ],
+        [
+          [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "0.44405489"
+        ],
+        [
+          [
+            6,
+            1,
+            1,
+            1
+          ],
+          "2.81164538"
+        ],
+        [
+          [
+            5,
+            2,
+            1,
+            1
+          ],
+          "-0.46402032"
+        ],
+        [
+          [
+            4,
+            3,
+            1,
+            1
+          ],
+          "0.35659596"
+        ],
+        [
+          [
+            4,
+            2,
+            2,
+            1
+          ],
+          "-0.07755557"
+        ],
+        [
+          [
+            3,
+            3,
+            2,
+            1
+          ],
+          "-2.15581746"
+        ],
+        [
+          [
+            3,
+            2,
+            2,
+            2
+          ],
+          "1.28499052"
+        ],
+        [
+          [
+            7,
+            1,
+            1
+          ],
+          "-0.77785195"
+        ],
+        [
+          [
+            6,
+            2,
+            1
+          ],
+          "-0.75809914"
+        ],
+        [
+          [
+            5,
+            3,
+            1
+          ],
+          "0.08553760"
+        ],
+        [
+          [
+            5,
+            2,
+            2
+          ],
+          "-1.06133808"
+        ],
+        [
+          [
+            4,
+            4,
+            1
+          ],
+          "-1.20258655"
+        ],
+        [
+          [
+            4,
+            3,
+            2
+          ],
+          "2.38446887"
+        ],
+        [
+          [
+            3,
+            3,
+            3
+          ],
+          "-1.16067912"
+        ],
+        [
+          [
+            8,
+            1
+          ],
+          "-1.05233029"
+        ],
+        [
+          [
+            7,
+            2
+          ],
+          "0.26505255"
+        ],
+        [
+          [
+            6,
+            3
+          ],
+          "1.81688473"
+        ],
+        [
+          [
+            5,
+            4
+          ],
+          "-1.40873811"
+        ],
+        [
+          [
+            9
+          ],
+          "1.57691420"
+        ]
+      ],
+      "note": "Per-partition χ^λ(β_atom; q_0) tuple — heuristic comparison hash for braid/Markov-equivalence at q_0.  It is a NECESSARY but NOT SUFFICIENT condition for canonical-basis (KL) equivalence: identical fingerprints are evidence of equivalence, but two distinct canonical-basis classes can collide at the rounded-trace level (no iff guarantee).  Trace-only form because per-block matrices are not currently materialised at H_n>3 in Path A — full equivalence requires the per-block matrix entries (cf. r5_full_canonical_knot_solver.chi_fingerprint at H_3). Per Copilot review #r3213426336."
+    },
+    "lean_uniqueness_ref": {
+      "nucleus": "per-nucleus (H_6 deuteron / per-atom)",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

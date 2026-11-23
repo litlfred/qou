@@ -1,0 +1,77 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0102098v1",
+ "source_sha256": "f4bc5ca0ba1e47aa",
+ "brief": "Skein theory and the Murphy operators — The Murphy operators in the Hecke algebra Hn of type A are ex- plicit commuting elements whose sum generates the centre.",
+ "extended": "**Skein theory and the Murphy operators**\n\n*HUGH R. MORTON*\n\n22 pp, 11 sections.\n\n**Abstract.** The Murphy operators in the Hecke algebra Hn of type A are ex- plicit commuting elements whose sum generates the centre. They can be represented by simple tangles in the Homﬂy skein theory version of Hn. In this paper I present a single tangle which represents their sum, and which is obviously central. As a consequence it is possible to identify a natural basis for the Homﬂy skein of the annulus, C. Symmetric functions of the Murphy operators are also central in Hn. I deﬁne geometrically a homomorphism from C to the centre of each algebra Hn, and ﬁnd an element in C, independent of n, whose image is the mth power sum of the Murphy operators. Generating function techniques are used to describe images of other elements of C in terms of the Murphy operators, and to demonstrate relations among other natural skein elements.\n\n**Outline.** Front matter; 1 The skein models.; 1.1 Variants of the Hecke algebras.; 2 Geometric views of the Murphy operators.; 3 The skein of the annulus.; 3.1 Symmetric functions and the skein of the a; 3.2 Symmetric functions of the Murphy operator; 4 The annulus with two boundary points.; 4.1 Algebraic properties of A.; 4.2 Skein interaction between Hn, A and C.; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: The Murphy operator M(j) can be represented in Hn by a single braid T(j), up to linear combination with the identity.\n- Theorem 2.2: The sum M of the Murphy operators can be rep- resented in Hn by a single tangle T (n), again up to linear combination with the identity.\n- Theorem 3.1: The eigenvalues of ϕ|Cn are all distinct.\n- Theorem 3.6: Write A(t) = 1 + z P∞ m=1 Amtm, with z = s −s−1. Then A(t) = H(st) H(s−1t) = H(st)E(−s−1t).\n- Theorem 3.9: For any n we have ψn(Pm) −ψ0(Pm) = (sm −s−m)v−m n X j=1 T(j)m.\n- Theorem 4.1: The algebra A is commutative.",
+ "tokens": {
+  "brief": 40,
+  "extended": 482
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-000-1-the-skein-models",
+   "title": "The skein models.",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-001-11-variants-of-the-hecke-algebras",
+   "title": "Variants of the Hecke algebras.",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-002-2-geometric-views-of-the-murphy-operators",
+   "title": "Geometric views of the Murphy operators.",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-003-3-the-skein-of-the-annulus",
+   "title": "The skein of the annulus.",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-004-31-symmetric-functions-and-the-skein-of-the-annu",
+   "title": "Symmetric functions and the skein of the annulus.",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-005-32-symmetric-functions-of-the-murphy-operators",
+   "title": "Symmetric functions of the Murphy operators.",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-006-4-the-annulus-with-two-boundary-points",
+   "title": "The annulus with two boundary points.",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-007-41-algebraic-properties-of-a",
+   "title": "Algebraic properties of A.",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-008-42-skein-interaction-between-hn-a-and-c",
+   "title": "Skein interaction between Hn, A and C.",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "21-22"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

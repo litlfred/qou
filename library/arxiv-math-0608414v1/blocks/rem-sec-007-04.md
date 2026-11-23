@@ -1,0 +1,1 @@
+If Sβ = 0 then Yk are analytic in W1 ∪N. Indeed, this follows from (2.87) (2.86) and Lemma 36, i) On the other hand, if Sβ̸ = 0, then all Yk are analytic continuations of the Borel transform of y0 (cf. (2.92)). This is an instance of the so-called resurgence. Moreover, we can now calculate Yba 0 . By deﬁnition, (see the discussion before

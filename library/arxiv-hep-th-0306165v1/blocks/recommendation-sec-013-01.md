@@ -1,1 +1,0 @@
-General arguments suggest that the result should be in the form Z ≃ X α p T(Aα) eiI(A(α)) ×  1 + ∞ X m,n=1 bm,n(α) kmσn  (3.39) where the coeﬃcients bm,n(α) are expected to be related to some perturbative invariants of a (decorated) knot K, analogous to the Vassiliev invariants, cf. [4,68].

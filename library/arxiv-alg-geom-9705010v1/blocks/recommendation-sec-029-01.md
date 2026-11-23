@@ -1,1 +1,0 @@
-From a purely mathematical point of view, it should be interesting to understand the relations between the SW-type systems, whose basic input is an elliptic curve; the Mukai system on a K3 surface, SEIBERG-WITTEN INTEGRABLE SYSTEMS 39 which degenerates to Hitchin’s on a curve ([DEL], [DM1]); and the Calabi-Yau systems constructed in [DM2].

@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1604.01247v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5a402405aadf5d54e235ff25aad1c10e6aecfa04b6cc7be348b5b8c8bfa5c3b9",
   "file": "1604.01247v2.pdf"
  },
  "provenance": {
-  "title": "EXCEPTIONAL QUANTUM GEOMETRY",
+  "title": "Exceptional quantum geometry and particle physics",
   "authors": "AND PARTICLE PHYSICS",
   "arxiv": {
    "id": "1604.01247",
@@ -16,151 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 9
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Furthermore since the exceptional Albert algebra is involved, one cannot use directly the technics of noncommutative geometry (i.e. of associative algebra) and some care must be taken to handle such theory.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Some other structural inputs come almost directly from the experimental observation.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 3-6)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-000-1-introduction.md",
    "section_title": "Introduction",
    "pages": "3-6",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the mass scales of the 3 generations are very di\ufb00erent this latter factor SU(3) must be strongly broken, however there could remain some unbroken \ufb01nite subgroup of this SU(3) which should then play a role in this approach for the see-saw mechanism and the structure of the fermion mass matrices.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-013-42-j83-modules-and-su3su3-action.md",
-   "section_title": "J83-modules and SU(3)SU(3)-action",
-   "pages": "20-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Either one can solve the problem by \u03b35-combinatorics or one should work with a product of four factors Ju L, Ju R, Jd L, Jd R.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-44-problem-of-the-u1su2-symmetry.md",
-   "section_title": "Problem of the U(1)SU(2)-symmetry",
-   "pages": "22-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the following we shall be concerned with the category of real unital Jordan algebras so, if $J$ is such a unital Jordan algebra, a $J$-bimodule is a unital $J$-module which will be simply refered to as a $J$-module when no confusion arises.\\ Let $J$ be a unital Jordan algebra and let us define *its center* $Z(J)$ by $$Z(J)=\\{z\\in J \\vert [x,y,z]=[x,z,y]=0, \\forall x,y\\in J\\} \\label{center}$$ where $[x,y,z]=(xy)z-x(yz)$ denotes the associator of $x,y,z\\in J$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-018-51-first-order-differential-calculi.md",
-   "section_title": "First order differential calculi",
-   "pages": "24-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall refer to $\\nabla$ as the *covariant differential* while $\\nabla_X$ for $X\\in {\\mbox{Der}}(J)$ will be refered to as the covariant *derivative along* $X$.\\ From the axioms ([\\[covdiff\\]](#covdiff){reference-type=\"ref\" reference=\"covdiff\"}), it follows that one has $$\\nabla^2(\\omega\\Phi)=\\omega\\nabla^2(\\Phi) \\label{covcurv}$$ for any $\\omega\\in \\Omega_{\\mbox{\\tiny Der}}(J)$ and $\\Phi\\in\\Omega_{\\mbox{\\tiny Der}}(M)$ furthermore $$\\nabla^2(m)(X,Y)=R_{X,Y}(m)$$ for $m\\in M$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-025-62-derivation-based-connections-second-definitio.md",
-   "section_title": "Derivation-based connections. Second definition",
-   "pages": "30-32",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "From a physical point of view, it is clear that what is described in these notes is quite incomplete : One should write some dynamics.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-027-7-tentative-conclusion.md",
-   "section_title": "Tentative conclusion",
-   "pages": "32-37",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Before that, one must develop several points.\\ Firstly one must understand the formulation of the $U(1)\\times SU(2)$-symmetry in this frame.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-027-7-tentative-conclusion.md",
-   "section_title": "Tentative conclusion",
-   "pages": "32-37",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In contrast, the definition of first-order operator between Jordan (bi)modules is not straightforward in spite of the fact that one can write explicitely what it is for modules over the exceptional algebra $J^8_3$.\\ It seems that one should make some progress on these two points before tentative formulations of the dynamics.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-027-7-tentative-conclusion.md",
-   "section_title": "Tentative conclusion",
-   "pages": "32-37",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then there are two natural ways to take and I think that both should be pushed.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-027-7-tentative-conclusion.md",
-   "section_title": "Tentative conclusion",
-   "pages": "32-37",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 3-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-1604.01247v2/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-1604.01247v2#prop-sec-000-01"
   }
  ]
 }

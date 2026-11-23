@@ -1,0 +1,1 @@
+Our analysis is not aﬀected by this ambiguity, be- cause we calculate the subtraction function in the re- gion Q2 < 3.5 on the basis of the experimental infor- mation about the structure function ¯F and rely on the theoretical information about the asymptotics only at higher energies.

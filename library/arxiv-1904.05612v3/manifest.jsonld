@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1904.05612v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1904.05612v3",
+  "contains": [
+    "library/arxiv-1904.05612v3/sections/sec-front-matter",
+    "library/arxiv-1904.05612v3/sections/sec-000",
+    "library/arxiv-1904.05612v3/sections/sec-001",
+    "library/arxiv-1904.05612v3/sections/sec-002",
+    "library/arxiv-1904.05612v3/sections/sec-003",
+    "library/arxiv-1904.05612v3/sections/sec-004",
+    "library/arxiv-1904.05612v3/sections/sec-005",
+    "library/arxiv-1904.05612v3/sections/sec-006",
+    "library/arxiv-1904.05612v3/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1904.05612v3",
+    "title_source": "slug",
+    "source_file": "1904.05612v3.pdf",
+    "source_sha256": "49de771ab5b79489a1ad2a6dec647bf257c3305864c7c6c9457a467b85ce0103",
+    "pages": 15,
+    "arxiv": {
+      "id": "1904.05612",
+      "version": "3",
+      "primary_class": "math.OA",
+      "stamp_date": "27 Jul 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -253,4 +253,19 @@ theorem diagonal_gram_kills_every_cost_on_its_diagonal
   calc g j * u j * v j = u j * (g j * v j) := by ring
     _ = 0 := by rw [hrad j, mul_zero]
 
+/-- Against a diagonal Gram with radical vector `v`, any cost `t j = g j * u j`
+built from the diagonal is orthogonal to `v` and therefore forces the dual
+shadow price `y₀ = 0`. -/
+theorem dual_price_zero_of_diagonal_gram_cost
+    (g u one v Gy t : ι → R) (y₀ : R)
+    (hdual : ∀ j, y₀ * one j + Gy j = t j)
+    (hGy : ∑ i, Gy i * v i = 0)
+    (hone : ∑ i, one i * v i ≠ 0)
+    (hrad : ∀ j, g j * v j = 0)
+    (ht : ∀ j, t j = g j * u j) :
+    y₀ = 0 := by
+  have horth : ∑ i, t i * v i = 0 :=
+    diagonal_gram_kills_every_cost_on_its_diagonal g u v t hrad ht
+  exact dual_price_zero_of_cost_orthogonal_to_radical t one v Gy y₀ hdual hGy hone horth
+
 end QOU.QBeta.ECatLPDualRadical

@@ -1,0 +1,1 @@
+Let LZ be a link diagram of a framed link whose framing is given by the blackboard framing. The one-row colored sl; Jones polynomial of n boxes Fis (9) is defined by sls 41 (L™) = JiK,(q)0 € W(0; D) = Q(q**).

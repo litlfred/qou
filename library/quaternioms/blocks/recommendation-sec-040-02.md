@@ -1,1 +1,0 @@
-Therefore, the conﬁnement condition means that for a gate U to act on a state |ψ⟩= o1|0⟩+ o2|1⟩, the generators of U and the octonionic amplitudes o1 and o2 must all be elements of the same chosen H ⊂O.

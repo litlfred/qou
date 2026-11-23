@@ -1,1 +1,0 @@
-Such knots must be either torus knots or satellite knots \cite[Corollary~2.5]{thurston-kleinian}, so it will also be helpful to compute $\frac{1}{2}\Delta''_K(1)$ for satellite knots $K$ in terms of the pattern and companion knots.

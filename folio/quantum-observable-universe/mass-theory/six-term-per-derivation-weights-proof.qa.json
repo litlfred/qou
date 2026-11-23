@@ -253,6 +253,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "proof.md:14-15 `E_{0,β} = 0.7823 MeV the free-neutron β-decay Q`; :22-24 `α = m_e·8G` (rests on prop:binding-scale-catalan, itself failing); :33-35 `Empirically the bound–free differential vanishes`; :83-84 T6 returns 0 for A≥5; :61-69 0.184% vs data, '76× improves'. The per-term weights are read off, not derived, yet .md:1 claims `derives directly ... zero empirical parameter fits`",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "f8d5b4989320",
+          "ts": "594e137be307"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.420Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "severity": "major",
+        "evidence": "Relies on CODATA free-particle masses, E_0=0.7823 MeV, and alpha=m_e*8G from binding-scale-catalan (whose proof does not establish the identification). Empirical constants inside a formal proof; the per-term 'physical scale' reading is not derived."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1722,6 +1738,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:32.465Z",
+  "updated_at": "2026-11-16T07:13:24.420Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

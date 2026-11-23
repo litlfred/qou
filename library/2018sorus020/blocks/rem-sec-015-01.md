@@ -1,0 +1,1 @@
+When the context will be clear, a curve X being given, we will often denote by v a point in the smooth projective model ˆX. Deﬁnition 1.3.9. Let v ∈ˆX be a point in the projective model of X. We will call it an ideal point if ν is not deﬁned at v, equivalently the function ring k[X] is not a subring of Ov. Otherwise we will call v a ﬁnite point.

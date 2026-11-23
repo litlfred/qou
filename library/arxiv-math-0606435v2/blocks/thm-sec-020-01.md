@@ -1,0 +1,1 @@
+MWF(β) = 1 if an only if [β]i = 1 for i = 1,...,n −1. Now for MWF = 3 it sufﬁces to ensure that (either we can reduce the braids) or can ﬁnd words, whose non-maximal subwords do not give an unknot. For the rest of the section we assume that β′ gives the unknot.

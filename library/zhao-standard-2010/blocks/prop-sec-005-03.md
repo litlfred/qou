@@ -1,0 +1,1 @@
+(cf. [22, Thm. 2.1]) The polynomial algebra A1 ∗is a commu- tative graded Q-algebra. Now one can deﬁne the subalgebra A0 ∗similar to A0x by replacing the shuﬄe product by the stuﬄe product. Then by induction on the lengths and using the series deﬁnition one can quickly check that for any ω1, ω2 ∈A0 ∗ Z(ω1)Z(ω2) = Z(ω1 ∗ω2). This implies that

@@ -1,19 +1,4 @@
-*Proof sketch.*
-Over a field $R$ for which $H_n(R, q)$ is split semisimple (e.g. $q$
-not a root of unity in characteristic $0$), the Wedderburn–Artin
-decomposition $H_n(R, q) \cong \bigoplus_{\lambda \vdash n}
-M_{d_\lambda}(R)$ identifies $Z(H_n(q))$ with the diagonal scalars in
-each block.  Over a general commutative ring this decomposition does
-not hold.
-The mass endomorphism $\mathfrak{m} = \sum_i \ln |M_i|$ decomposes
-under restriction to each block.  The descended component collects
-terms that factor through the block's Casimir eigenvalue; the
-transient component collects terms that depend on the specific
-embedding of generators (i.e., the choice of crossing sites), which
-is the data localised at exceptional divisors.
-$\square$
+*Argument (not a proof).*
+Over a field $R$ for which $H_n(R,q)$ is split semisimple (e.g. $q$ not a root of unity in characteristic $0$), the Wedderburn–Artin decomposition $H_n(R,q)\cong\bigoplus_{\lambda\vdash n}M_{d_\lambda}(R)$ identifies $Z(H_n(q))$ with the block scalars. Over a general commutative ring this decomposition does not hold. In the split semisimple case the algebra has a centre–cocentre splitting, and the central part of an element $x$ is $\sum_\lambda\frac{\chi^\lambda(x)}{d_\lambda}e_\lambda$ ([Centre–cocentre splitting](#thm:centre-cocentre-descent), item 6).
 
-This sketch establishes only that a split into a central part and a
-remainder exists, which is true by definition of the two parts. It
-does not establish the matches with liquid-drop terms in the
-statement.
+The earlier version of this argument applied the split to $\mathfrak m=\sum_i\ln|M_i|$. That sum is a number, not an element of $H_n(q)$, so the split does not apply to it; defining its descended part as "terms that factor through the block's Casimir eigenvalue" is a definition, not a result. This argument establishes nothing beyond the theorem cited. It does not establish the matches with liquid-drop terms in the statement.

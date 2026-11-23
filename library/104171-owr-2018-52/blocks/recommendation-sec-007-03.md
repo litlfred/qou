@@ -1,1 +1,0 @@
-For a set F of edges in Hx,y, we denote by F ⋄the smallest set of edges which contains F and such that whenever we have a 4-cycle D in Hx,y, if two adjacent edges of D are in F ⋄then also the other two edges must be in F ⋄.

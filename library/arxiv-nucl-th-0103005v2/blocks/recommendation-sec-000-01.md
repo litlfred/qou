@@ -1,1 +1,0 @@
-A new method, whose accuracy lies between that of the VMC and GFMC methods, is auxiliary-field diffusion Monte Carlo (AFDMC); it has been implemented for large pure neutron systems [@SF99] and with further development should be capable of handling nuclei above $A=12$.

@@ -1,0 +1,569 @@
+{
+  "engine": "mpmath (chi_general_word)",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T23:07:28.929091+00:00",
+  "commitSha": "726b0fc96e67af07890e0f6776feaf09de26c1d5",
+  "assertions": [
+    {
+      "name": "production_word_reproduces_tr_m_atom_zn",
+      "computed": "0.0",
+      "expected": 0,
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "control 1 of the pre-registration"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "he4-all-pairs-formation",
+  "scriptFile": "he4_all_pairs_formation_probe.py",
+  "scriptHash": "e6148d45f6b9",
+  "scriptCommitSha": "726b0fc96e67af07890e0f6776feaf09de26c1d5",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "db052d35b0334597"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/he4_all_pairs_formation/he4_all_pairs_formation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/he4_all_pairs_formation/he4_all_pairs_formation_probe.py"
+  },
+  "description": "PROBE, adopts nothing (issue #8960). Light nuclei with every nucleon pair bonded: non-neighbouring pairs use the production pair letter conjugated by a strand-transport braid (over/under), bond order fixed by formation route (D+D two pairings, 3H+p, 3He+n). Pre-registered in preregistration.md. B_log is the posited log form B_sym uses; B_diff is E0 x trace difference. AME is comparison only; no route, pairing or variant is selected.",
+  "data": {
+    "E0_MeV": "4.227483355629030550268056026587211153615",
+    "controls": {
+      "3H": {
+        "free_vs_tr_m_atom_zn": "0.0",
+        "production_atom_vs_tr_m_atom_zn": "0.0",
+        "arrangement_over": "7.2926e-63",
+        "arrangement_under": "4.8617e-63"
+      },
+      "3He": {
+        "free_vs_tr_m_atom_zn": "0.0",
+        "production_atom_vs_tr_m_atom_zn": "0.0",
+        "arrangement_over": "9.7235e-63",
+        "arrangement_under": "0.0"
+      },
+      "4He": {
+        "free_vs_tr_m_atom_zn": "0.0",
+        "production_atom_vs_tr_m_atom_zn": "0.0"
+      }
+    },
+    "rows": [
+      {
+        "atom": "3H",
+        "route": "production (interleaved chain)",
+        "variant": "-",
+        "bonds": [],
+        "n_bonds": 0,
+        "tr_free": "0.1420720567973047974704986042550558562069",
+        "tr_atom": "0.02914404236097206535725421879186984406584",
+        "B_log_MeV": "6.69668814327554628718743166309",
+        "B_diff_MeV": "0.477401301413831503311979967897",
+        "AME_over_B_log_comparison": "1.266565804"
+      },
+      {
+        "atom": "3H",
+        "route": "chain, bonds after blocks",
+        "variant": "-",
+        "bonds": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "n_bonds": 2,
+        "tr_free": "0.1420720567973047974704986042550558562069",
+        "tr_atom": "0.02914404236097206535725421879186984406584",
+        "B_log_MeV": "6.69668814327554628718743166309",
+        "B_diff_MeV": "0.477401301413831503311979967897",
+        "AME_over_B_log_comparison": "1.266565804"
+      },
+      {
+        "atom": "3H",
+        "route": "all pairs",
+        "variant": "over",
+        "bonds": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "n_bonds": 3,
+        "tr_free": "0.1420720567973047974704986042550558562069",
+        "tr_atom": "0.01610156569745901409812289242447014051778",
+        "B_log_MeV": "9.20499774270985048809262572068",
+        "B_diff_MeV": "0.532538154425012979607727335911",
+        "AME_over_B_log_comparison": "0.9214338164"
+      },
+      {
+        "atom": "3H",
+        "route": "all pairs",
+        "variant": "under",
+        "bonds": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "n_bonds": 3,
+        "tr_free": "0.1420720567973047974704986042550558562069",
+        "tr_atom": "0.01888794508750936652628807056344644531167",
+        "B_log_MeV": "8.53026021318079984618849773668",
+        "B_diff_MeV": "0.520758781931107344344796268635",
+        "AME_over_B_log_comparison": "0.9943185774"
+      },
+      {
+        "atom": "3He",
+        "route": "production (interleaved chain)",
+        "variant": "-",
+        "bonds": [],
+        "n_bonds": 0,
+        "tr_free": "0.1881786429994887792634790371458668999207",
+        "tr_atom": "0.05859625365443638021895671545213025683088",
+        "B_log_MeV": "4.93229350941509620466277568792",
+        "B_diff_MeV": "0.54780739413884965023830380964",
+        "AME_over_B_log_comparison": "1.564797656"
+      },
+      {
+        "atom": "3He",
+        "route": "chain, bonds after blocks",
+        "variant": "-",
+        "bonds": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "n_bonds": 2,
+        "tr_free": "0.1881786429994887792634790371458668999207",
+        "tr_atom": "0.05859625365443638021895671545213025683088",
+        "B_log_MeV": "4.93229350941509620466277568792",
+        "B_diff_MeV": "0.54780739413884965023830380964",
+        "AME_over_B_log_comparison": "1.564797656"
+      },
+      {
+        "atom": "3He",
+        "route": "all pairs",
+        "variant": "over",
+        "bonds": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "n_bonds": 3,
+        "tr_free": "0.1881786429994887792634790371458668999207",
+        "tr_atom": "0.03623728014956025671269247310131804845957",
+        "B_log_MeV": "6.96394733768236815445791553844",
+        "B_diff_MeV": "0.642329582479663951105161245657",
+        "AME_over_B_log_comparison": "1.108285423"
+      },
+      {
+        "atom": "3He",
+        "route": "all pairs",
+        "variant": "under",
+        "bonds": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "n_bonds": 3,
+        "tr_free": "0.1881786429994887792634790371458668999207",
+        "tr_atom": "0.03772643124138080041696984102146961234038",
+        "B_log_MeV": "6.79369594896773146780266080408",
+        "B_diff_MeV": "0.636034221024975804417558477439",
+        "AME_over_B_log_comparison": "1.136059279"
+      },
+      {
+        "atom": "4He",
+        "route": "production (interleaved chain)",
+        "variant": "-",
+        "bonds": [],
+        "n_bonds": 0,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.01123741765976742156419954937441060726966",
+        "B_log_MeV": "8.76772963614703962404301013242",
+        "B_diff_MeV": "0.330473208282109260866811160588",
+        "AME_over_B_log_comparison": "3.227250791"
+      },
+      {
+        "atom": "4He",
+        "route": "chain, bonds after blocks",
+        "variant": "-",
+        "bonds": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "n_bonds": 3,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.01123741765976742156419954937441060726966",
+        "B_log_MeV": "8.76772963614703962404301013242",
+        "B_diff_MeV": "0.330473208282109260866811160588",
+        "AME_over_B_log_comparison": "3.227250791"
+      },
+      {
+        "atom": "4He",
+        "route": "D+D pairing a",
+        "variant": "over",
+        "bonds": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "n_bonds": 6,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.00756676106134024812287533022208039007213",
+        "B_log_MeV": "10.4396315016066459096949296777",
+        "B_diff_MeV": "0.34599084795619001090966108188",
+        "AME_over_B_log_comparison": "2.710408159"
+      },
+      {
+        "atom": "4He",
+        "route": "D+D pairing a",
+        "variant": "under",
+        "bonds": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "n_bonds": 6,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.004719882294076680298857533963969039388653",
+        "B_log_MeV": "12.4349243768427577816352212448",
+        "B_diff_MeV": "0.358025980560290436501128131859",
+        "AME_over_B_log_comparison": "2.275499355"
+      },
+      {
+        "atom": "4He",
+        "route": "D+D pairing b",
+        "variant": "over",
+        "bonds": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "n_bonds": 6,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.00756676106134024812287533022208039007213",
+        "B_log_MeV": "10.4396315016066459096949296777",
+        "B_diff_MeV": "0.34599084795619001090966108188",
+        "AME_over_B_log_comparison": "2.710408159"
+      },
+      {
+        "atom": "4He",
+        "route": "D+D pairing b",
+        "variant": "under",
+        "bonds": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "n_bonds": 6,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.004719882294076680298857533963969039388653",
+        "B_log_MeV": "12.4349243768427577816352212448",
+        "B_diff_MeV": "0.358025980560290436501128131859",
+        "AME_over_B_log_comparison": "2.275499355"
+      },
+      {
+        "atom": "4He",
+        "route": "3H+p",
+        "variant": "over",
+        "bonds": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "n_bonds": 6,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.004423657201273832389169939942796078806642",
+        "B_log_MeV": "12.7089375312780301240291502498",
+        "B_diff_MeV": "0.359278267209634140969057960217",
+        "AME_over_B_log_comparison": "2.226438074"
+      },
+      {
+        "atom": "4He",
+        "route": "3H+p",
+        "variant": "under",
+        "bonds": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "n_bonds": 6,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.007503879930804673723807976614413972832445",
+        "B_log_MeV": "10.4749094271433699113912808055",
+        "B_diff_MeV": "0.346256676888912288069224716606",
+        "AME_over_B_log_comparison": "2.701279911"
+      },
+      {
+        "atom": "4He",
+        "route": "3He+n",
+        "variant": "over",
+        "bonds": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "n_bonds": 6,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.00756676106134024812287533022208039007213",
+        "B_log_MeV": "10.4396315016066459096949296777",
+        "B_diff_MeV": "0.34599084795619001090966108188",
+        "AME_over_B_log_comparison": "2.710408159"
+      },
+      {
+        "atom": "4He",
+        "route": "3He+n",
+        "variant": "under",
+        "bonds": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "n_bonds": 6,
+        "tr_free": "0.08940998050193060038204756581988565704824",
+        "tr_atom": "0.004719882294076680298857533963969039388653",
+        "B_log_MeV": "12.4349243768427577816352212448",
+        "B_diff_MeV": "0.358025980560290436501128131859",
+        "AME_over_B_log_comparison": "2.275499355"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

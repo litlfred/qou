@@ -1,0 +1,1 @@
+Let ω = (σi(ω))i∈Zd be a spin conﬁguration distributed according to µβ,h, where (β, h) ∈ R(β1, β2, h1). Let G be the complete weighted graph with vertex set Zd, such that every edge e = {i, j} has weight we = ε(d) ∥i−j∥1 , where ε(d) comes from Theorem 1.1. Then G is a C-weighted dependency graph for the family {σi : i ∈Zd}, for some sequence C = (Cr)r≥1, depending only on d.

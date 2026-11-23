@@ -1,0 +1,1 @@
+Helicity of a divergence-free vector ﬁeld ξ on a simply connected manifold M with a volume element µ is equal to the average pairwise linking of tra- jectories of this ﬁeld, i. e., to the asymptotic linking number λξ(x1, x2) of trajectory pairs integrated over M × M: H(ξ) = Z M Z M λξ(x1, x2) µ1µ2.

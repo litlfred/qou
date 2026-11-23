@@ -1,1 +1,0 @@
-This latter condition implies that the first entry of $v$ must be non-zero, so we may use the $B=B_0$ action to fix $v$ as in equation [\[eqn:triple matrices\]](#eqn:triple matrices){reference-type="eqref" reference="eqn:triple matrices"}.

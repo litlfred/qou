@@ -1,0 +1,1 @@
+Let M be a ﬁnite dimensional von Neumann algebra on the Hilbert space H. Then M is abstractly isomorphic to ⊕k i=1Mni(C) for some positive integers k, n1, n2, ..., nk. (Mn(C) is the von Neumann algebra of all n × n matrices on n-dimensional Hilbert space.) Moreover there are Hilbert spaces Ki and a unitary u : ⊕iℓ2(Xi, Ki) →H (with |Xi| = ni) with u∗Mu = ⊕iB(ℓ2(Xi)) ⊗1.

@@ -1,1 +1,0 @@
-By looking at the left-hand side of Figure [2](#fig:oct5){reference-type="ref" reference="fig:oct5"}, we should immediately identify the description of $T_{{\rm oct},\Pi_\times}$ using five chirals as arising from a five-tetrahedron triangulation of the octahedron.

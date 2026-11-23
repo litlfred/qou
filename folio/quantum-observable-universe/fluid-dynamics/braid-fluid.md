@@ -27,4 +27,4 @@ $$
 relies entirely on the substrate parameter. This ratio establishes the fluid-dynamical source mechanism for the [skein crossing asymmetry](#rem:skein-crossing-asymmetry).
 
 **Helicity as Markov trace.**
-The [Jones polynomial](#thm:jones-markov-trace) $J_L(q)$ operates as the **topological helicity** governing the vortex tangle. This categorical metric refines classical helicity $H = \int v \cdot \omega \, dV$, distinguishing topological states invisible to $H$ (separating the trefoil from the unknot).
+The [Jones polynomial](#thm:jones-markov-trace) $J_L(q)$ operates as the **topological helicity** governing the vortex tangle. This categorical metric refines classical helicity $H = \int v \cdot \omega \, dV$, distinguishing topological states invisible to $H$ (separating the trefoil from the unknot). It is evaluated on the **closed** tangle: each vortex strand is closed by a return arc that adds no crossing, and the closure is a trace on the braid algebra, so it cannot see conjugation ([closure](#prop:closure-unseen-subword)).

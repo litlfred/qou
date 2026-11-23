@@ -1,0 +1,1 @@
+We shall see in Cor. 35.1 Remark 38.16, that the braided symmetry and ribbon structure of Rep(A(Vgk)) of Theorem 33.11 arising from quantum groups coincides with the corresponding structure induced on the Zhu algebra by the opposite braiding of Rep(Vgk) in the setting of vertex operator algebras

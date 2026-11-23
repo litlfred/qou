@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/topologicalinvariance3dindex/blocks/rem-sec-006-04",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 9,
+  "pageEnd": 16,
+  "text": "rem-sec-006-04.md",
+  "derivedFrom": "library/topologicalinvariance3dindex/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.5",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-006-3-index-structures-and-1--efficiency.md (p. 9-16)",
+    "claim_id": "topologicalinvariance3dindex#remark:3.5"
+  }
+}

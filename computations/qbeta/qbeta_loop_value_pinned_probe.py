@@ -75,6 +75,7 @@ letters, and it is stated that way.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import subprocess
 import time
@@ -91,7 +92,7 @@ mp.mp.dps = DPS
 Q0_STR = "1.1099785827513808075916690956107688798744991218736"
 Q0 = mp.mpf(Q0_STR)
 M_E = mp.mpf("0.51099895069")
-E0 = M_E / (Q0 * (Q0 - 1))
+E0 = _qbeta_e0.order_zero_scaled(M_E, Q0)
 STRANDS_PER_NUCLEON = 3
 PEAK_B_OVER_A = mp.mpf("8.794555")          # measured, A = 62; see qbeta_strand_multiplicity
 

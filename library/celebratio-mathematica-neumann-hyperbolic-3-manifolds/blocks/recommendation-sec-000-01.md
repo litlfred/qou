@@ -1,1 +1,0 @@
-The starting point of the paper [1] was Thurston’s amazing insight in the 1980’s that all 3-dimensional manifolds should be canonically divisible into pieces having a well-defined geometric structure of one of eight types, the most important of which is the hyperbolic one.

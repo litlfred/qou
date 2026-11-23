@@ -1,1 +1,0 @@
-In order to see both shifts by $i\pi$ and $\hbar/2$ in the geometric description of phase spaces such as $\mathcal{P}_{\partial\Delta_i}$ and $\mathcal{P}_{\partial M}$, one must include a few $\hbar$ corrections in the relations among classical coordinates, as in [\[Phbar\]](#Phbar){reference-type="eqref" reference="Phbar"}.

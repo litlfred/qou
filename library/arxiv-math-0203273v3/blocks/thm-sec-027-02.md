@@ -1,0 +1,1 @@
+3. Let H be an afﬁne k-group and let k′ be an extension of k. Then the canonical morphism p Red(Hk′) →p Red(H)k′ is an isomorphism if and only if either k′ is algebraic over k or the prounipotent radical of H is of dimension ≤1.

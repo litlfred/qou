@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.02592v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "An Introduction to Geometric Topology Bruno Martelli",
+  "title": "An Introduction to Geometric Topology",
   "contains": [
     "library/arxiv-1610.02592v3/sections/sec-front-matter",
     "library/arxiv-1610.02592v3/sections/sec-000",
@@ -122,8 +122,8 @@
       "stamp_date": "5 Apr 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

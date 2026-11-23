@@ -103,7 +103,8 @@ def atomKnotAtlas : List AtlasEntry := [
     rho_factor := 3,
     binding_link := "trefoil",
     vol_hyp := 0,                -- torus knot, hyperbolic volume 0
-    m_pred_MeV := 938.7228,       -- proton-mass-50dps witness
+    m_pred_MeV := 938.7228,       -- archived literal, no live producer (issue #8118);
+                                  -- the live convention-D tower is ≈ 944.404 MeV
     m_AME_MeV := 938.27208943,    -- CODATA 2022
     err_pct := 0.048,             -- 0.05% — tower mass slightly above CODATA
     err_ppb := 480_000,

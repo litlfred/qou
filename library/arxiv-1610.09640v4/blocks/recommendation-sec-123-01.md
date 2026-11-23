@@ -1,1 +1,0 @@
-In property (ii) the Aen-module Exti Aen(A, Aen) should be viewed as a special case of Exti B(M, N) ∈M(Cop) for M ∈M(B) and N ∈M(B ⊗Cop), where we take B, C := Aen, M := A and N := Aen, and we use the isomorphism (18.1.5) to switch from a right Aen-module to a left Aen-module.

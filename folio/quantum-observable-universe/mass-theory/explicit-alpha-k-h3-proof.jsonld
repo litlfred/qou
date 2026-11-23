@@ -2,20 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-explicit-alpha-k-h3",
+  "@id": "papers/quantum-observable-universe/blocks/rem-explicit-alpha-k-h3-proof-sketch",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:explicit-alpha-k-h3",
-  "kind": "proof",
-  "title": "Proof of explicit alpha k h3",
+  "label": "rem:explicit-alpha-k-h3-proof-sketch",
+  "kind": "remark",
+  "title": "Proof sketch: explicit alpha k h3",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-explicit-alpha-k-h3"
+    "papers/quantum-observable-universe/blocks/conj-explicit-alpha-k-h3"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-explicit-alpha-k-h3",
   "text": "explicit-alpha-k-h3-proof.md",
   "provenance": "authored"
 }

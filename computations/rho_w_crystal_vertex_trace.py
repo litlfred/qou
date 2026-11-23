@@ -61,6 +61,8 @@ from canonical_braid_crossings import (  # noqa: E402
     atom_canonical_crossings, d_for_ctype,
 )
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 
 # ----------------------------------------------------------------------------
@@ -82,7 +84,7 @@ Q0_STR_FALLBACK = "1.1099785827513808075916690956107688798744991218736"
 # CODATA electron mass (MeV); matches docs/audits gating residual −4.353.
 M_E_MEV_STR = "0.51099895069"
 # B_D AME (MeV) — used ONLY to report the honest residual, never to fit.
-B_D_AME_MEV_STR = "2.224566"
+B_D_AME_MEV_STR = _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)
 
 
 # ----------------------------------------------------------------------------

@@ -1,0 +1,1 @@
+Let ∆be a partially truncated tetrahedron without ideal vertices. Then the geometric realizations of ∆are parameterized by the lengths of the internal edges. In fact, the map that associates to the dihedral angles of a geometric realization of ∆ the lengths of its internal edges is a diffeomorphism between open subsets of R6.

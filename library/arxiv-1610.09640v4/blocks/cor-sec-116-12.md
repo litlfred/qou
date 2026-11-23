@@ -1,0 +1,1 @@
+Under Setup 17.2.1, assume A satisﬁes the χ condition and has ﬁnite local cohomological dimension. Then there is an isomorphism γ : ADCm ≃ −→ADCmop of triangulated functors Db (cof,cof)(Aen, gr) →D(Aen, gr).

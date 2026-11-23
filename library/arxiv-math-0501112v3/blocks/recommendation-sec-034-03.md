@@ -1,1 +1,0 @@
-In order to obtain all partitions $\sigma$ which contribute to [\[eq:kumulantyklas\]](#eq:kumulantyklas){reference-type="eqref" reference="eq:kumulantyklas"} we should restrict our attention only to $\sigma$ such that the graph $G_{\sigma}$ is connected.

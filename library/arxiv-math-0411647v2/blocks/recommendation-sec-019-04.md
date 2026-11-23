@@ -1,1 +1,0 @@
-In Section [\[subsec:explicit\]](#subsec:explicit){reference-type="ref" reference="subsec:explicit"} we shall compute $\Phi^{\mathop{\mathrm{ps}}}_{\widetilde{{{S}}_{A}}}$ and $\Phi^{\mathop{\mathrm{ps}}}_{\mathop{\mathrm{as}}}$ more explicitly.

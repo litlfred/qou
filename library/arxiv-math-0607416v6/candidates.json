@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0607416v6",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0705075947ce4a3d33138b0eec4cc4654ab937324801b4c67f8a2bc5b4dfaa07",
   "file": "0607416v6.pdf"
@@ -16,166 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
-  "by_kind": {
-   "recommendation": 10
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Among the most noticeable progress in this direction we should mention Theorem 17 of \\cite[Chap.~IX]{Le}, where Levin describes a certain class of ``regular\" linear operators acting on the closure of the set of polynomials in one variable which have all zeros in the closed upper half-plane.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Finally, we should mention that to the best of our knowledge Problems~\\ref{pb1}--\\ref{pb2} have so far been widely open in cases (ii)--(v).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that if $f \\ll g$ and $g \\ll f$ then $f$ and $g$ must be constant multiples of each other, that is, $W[f,g]\\equiv 0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-hyperbolic-and-stable-polynomials.md",
-   "section_title": "Hyperbolic and Stable Polynomials",
-   "pages": "9-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "{\\em Claim.} If the above conditions are satisfied then the kernel of $T$ must contain a strictly hyperbolic polynomial of degree at least $n-1$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-hyperbolic-and-stable-polynomials.md",
-   "section_title": "Hyperbolic and Stable Polynomials",
-   "pages": "9-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Hence all non-zero polynomials in the image of $T$ are hyperbolic, which by Lemma \\ref{spaces} gives that $\\dim T(\\RR_n[z]) \\leq 2$ and thus $T$ must be of the form~\\eqref{form2}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-hyperbolic-and-stable-polynomials.md",
-   "section_title": "Hyperbolic and Stable Polynomials",
-   "pages": "9-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that $T$ restricts to a linear operator $T' : \\pi_{n-1}(\\RR) \\rightarrow \\pi(\\RR)$ and that by induction $T'$ must be of the form (a) or (b) above.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-hyperbolic-and-stable-polynomials.md",
-   "section_title": "Hyperbolic and Stable Polynomials",
-   "pages": "9-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This contradiction means that $T$ must be as in (b) above with $P=f_n$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-hyperbolic-and-stable-polynomials.md",
-   "section_title": "Hyperbolic and Stable Polynomials",
-   "pages": "9-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, the latter polynomial should be a complex constant multiple of a hyperbolic polynomial and this can happen only if $\\alpha(z^M)e^{-i\\theta} \\in \\RR$, which contradicts the above assumption.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-hyperbolic-and-stable-polynomials.md",
-   "section_title": "Hyperbolic and Stable Polynomials",
-   "pages": "9-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This means that $T$ must be as in (a). \\end{proof}",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-hyperbolic-and-stable-polynomials.md",
-   "section_title": "Hyperbolic and Stable Polynomials",
-   "pages": "9-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, by the minimality assumption on $m$ and the fact that $\\phi_n$ is invertible we must have $\\deg(T(\\phi_n(p_k)))=m$ for some $k$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-33-closed-circular-domains-and-their-boundaries.md",
-   "section_title": "Closed Circular Domains and Their Boundaries",
-   "pages": "17-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

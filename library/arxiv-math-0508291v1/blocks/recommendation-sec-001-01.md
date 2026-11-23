@@ -1,1 +1,0 @@
-To apply Theorem \ref{steinbound}, one needs the exchangeable pair arising from $K$ to satisfy $\ee(W'|W) = (1-a)W$, and also one must obtain useful bounds on $Var(\ee[(W'-W)^2|W])$ and $\ee|W-W'|^3$.

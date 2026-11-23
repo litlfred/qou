@@ -1,0 +1,1 @@
+Let A be a ring that admits a central ﬁltration of ﬁnite type G. Then A admits a noetherian con- nected ﬁltration F, such that the noetherian connected graded ring GrF (A) is a commutative ﬁnitely generated K-ring. As explained in Example 17.3.17, the ring GrF (A) has a balanced dualizing complex. Therefore, using Theorems 18.5.8 and 18.5.4, we conclude that:

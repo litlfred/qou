@@ -1,0 +1,1 @@
+Li = - & Im (uiVi) Li = Qi(Eqi)+ $1 O($&) (36) where Qi is as described in the introduction. In particular length (yi) is the restriction of the analytic function L,(u) = - L Im(Ui&) dt$ined in a whole neighborhood of0~ Ch (rather than 2n just at the Dehn surgery points).

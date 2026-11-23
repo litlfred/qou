@@ -334,6 +334,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "garoufalidis-le-2005" },
 
   // ── Lê 2006 — AJ conjecture proved for a large class of 2-bridge knots ──
+  { id: "le2000" },
   { id: "le2006" },
 
   // ── Garoufalidis–Lê 2011 — asymptotics; Borromean VC via Habiro expansion ──
@@ -410,6 +411,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Fred 2005 (dissertation) ──────────────────────────────────
   { id: "fred2005" },
+  { id: "leitner2006" },
+  { id: "luweinstein1990" },
 
   // ── Schrijver 1986 ────────────────────────────────────────────
   { id: "schrijver1986theory" },
@@ -440,6 +443,7 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Lusztig 1993 ──────────────────────────────────────────────
   { id: "lusztig1993" },
+  { id: "lusztig2003" },
 
   // ── Atiyah 1988 ───────────────────────────────────────────────
   { id: "atiyah1988" },
@@ -645,6 +649,11 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "necas-ruzicka-sverak1996" },
 
   { id: "tsai1998" },
+  { id: "leray1934" },
+  { id: "seregin2012" },
+  { id: "chae2013adss" },
+  { id: "chae-wolf2016dss" },
+  { id: "bradshaw-tsai2018survey" },
 
   { id: "leitner-2018" },
 
@@ -1168,6 +1177,9 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Mathas 1999 (Iwahori–Hecke Algebras and Schur Algebras) ──
   { id: "mathas1999" },
 
+  // ── q-Schur generation (G3.4 Dipper–James route, stream 16) ──
+  { id: "doty2006" },
+
   // ── Mathas 2004 (Mackey filtration for cyclotomic Hecke) ────
   { id: "mathas2004mackey" },
 
@@ -1196,6 +1208,9 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Gödel 1931: incompleteness theorems ──────────────────────
   { id: "goedel1931" },
+
+  // ── Gödel 1949: rotating cosmological solution ──────────────
+  { id: "goedel1949" },
 
   // ── Turing 1936: computable numbers ────────────────────────
   { id: "turing1936" },
@@ -1583,6 +1598,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "horn-johnson-2013" },
 
   { id: "kassel2008" },
+  { id: "polyak2010" },
 
   { id: "murphy1981" },
 
@@ -1596,6 +1612,7 @@ const ORDER: Array<FileSlot | Reference> = [
   // separately. The 5 baryon-product-from-alt.lean Ref lines need to be
   // re-keyed to `fulton-harris1991` in a follow-up cleanup.
   { id: "fulton-harris1991" },
+  { id: "farkas-kra1992" },
 
   { id: "wald1984" },
 
@@ -1732,6 +1749,10 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Lickorish 1997 (knot theory textbook) ─────────────────────
   { id: "lickorish1997" },
+
+  // ── Moise 1952 / Bing 1954 — TOP vs PL comparison for tame links (#8902) ──
+  { id: "moise1952" },
+  { id: "bing1954" },
 
   // ── Washington (1997) — Introduction to Cyclotomic Fields ─────
   { id: "washington1997" },
@@ -2248,6 +2269,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   { id: "reshetikhin-turaev1990" },
 
+  { id: "turaev1988" },
+
   { id: "faddeev-kashaev-volkov2000" },
 
   { id: "andersen-mistegard2020" },
@@ -2256,6 +2279,28 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Borodin–Okounkov–Olshanski 2000 (descent DPP / discrete Bessel kernel) ──
   { id: "borodin-okounkov-olshanski2000" },
+  { id: "brundan2017" },
+  { id: "tonini2014" },
+  { id: "tonini2020" },
+  { id: "chattopadhyay-dutta-mukherjee-neetu2019" },
+  { id: "dutta-mukherjee-neetu-parihar2021" },
+  { id: "aishwarya-rotem2023" },
+  { id: "vanderveen2008cabling" },
+  { id: "black2010" },
+  { id: "parkinson2011" },
+  { id: "garoufalidis-thurston-zickert2011" },
+  { id: "lasy2012" },
+  { id: "marin-wagner2014" },
+  { id: "giambrone2014" },
+  { id: "bettin-drappeau2019" },
+  { id: "gresnigt-marciano-zappala2021" },
+  { id: "lentner-mombelli2023" },
+  { id: "zhao2024markov" },
+  { id: "jing-liu2025" },
+  { id: "tolmachov-zhylinskyi2025" },
+  { id: "hikami-kirillov2003" },
+  { id: "murakami2000yokota" },
+  { id: "etingof-nikshych-ostrik2002" },
 
   // ── Johansson 2001 (discrete OPE ensembles / Plancherel edge + Bessel bounds) ──
   { id: "johansson2001" },
@@ -2782,6 +2827,8 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "fukuda2012" },
   { id: "melnikov2025" },
   { id: "tarabunga2025" },
+  // 2026-11-15: Proctor 1988, from the GDZ scan of Invent. Math. 92, ingested as library/proctor1988/.
+  { id: "proctor1988" },
   // 2026-11-15: held library document registered (bean qou-mzv5).
   { id: "murakami2008-acta-vietnam" },
   // 2026-11-15: owner uploads (commit 947381c) ingested into library/ (epic qou-s4ws).
@@ -2810,6 +2857,47 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "pati2017" },
   { id: "rosso1988" },
   { id: "milnor1950" },
+  // 2026-11-18: owner uploads Batch A ingested into library/ (commit 521b87dca7, epic qou-s4ws).
+  { id: "morton-2001-skein-murphy" },
+  { id: "morton-lukac-2001" },
+  { id: "lukac-2001" },
+  { id: "hadji-morton-2009" },
+  { id: "kauffman-lomonaco-2007" },
+  { id: "geer-patureau-mirand-turaev-2013" },
+  { id: "tubbenhauer-vaz-2023" },
+  { id: "dudek-edwards-thomas-2012" },
+  { id: "horsley-et-al-2012-octet-baryon" },
+  { id: "walker-loud-carlson-miller-2012" },
+  { id: "borsanyi-et-al-2015" },
+  { id: "gasser-hoferichter-leutwyler-rusetsky-2020" },
+  { id: "horsley-et-al-2016-qcd-qed" },
+  { id: "giusti-et-al-2017" },
+  { id: "bakshi-gupta-2020" },
+  // 2026-11-18: owner uploads Batch B (commit 521b87dca7) ingested into library/ (epic qou-s4ws).
+  { id: "walker-loud-2019" },
+  { id: "gasser-leutwyler-rusetsky-2020-epjc" },
+  { id: "gasser-leutwyler-rusetsky-2021" },
+  { id: "sutton-tubbenhauer-wedrich-zhu-2023" },
+  { id: "romiti-2022" },
+  { id: "can-qcdsf-2025" },
+  { id: "aiston-morton-1997" },
+  { id: "pimsner-popa-1986" },
+  { id: "kauffman-tlcat" },
+  { id: "geer-patureau-mirand-turaev-2009" },
+  { id: "lickorish1993skeins" },
+  { id: "jones2015vonneumann" },
+  { id: "arnold1969" },
+  { id: "deligne1970" },
+  { id: "zagier1991" },
+  { id: "mcphail-snyder-2025" },
+  { id: "helmholtz1858" },
+  { id: "thomson1867vortexatoms" },
+  { id: "tait1877knots" },
+  { id: "maxwell1873treatise2" },
+  { id: "kragh2002vortexatom" },
+  { id: "silver2006knotorigins" },
+  { id: "przytycki2007knothistory" },
+  { id: "faddeevniemi1997" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

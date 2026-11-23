@@ -1,0 +1,1 @@
+The matrix Jm(q) is a fundamental solution to the linear q-difference equation Jm+1(q) = Jm(q)A(qm, q), A(qm, q) =   −1 2 −qm+1  , (13) has det(Jm(q)) = −1 and satisfies the analytic extension Jm(q−1) =   −1  J−m−1(q)    . (14)

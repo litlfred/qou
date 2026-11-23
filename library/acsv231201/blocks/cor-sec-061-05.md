@@ -1,0 +1,1 @@
+The creation rates {ar,s,t} deﬁned by the power series expan- sion of F(x, y, z) in (11.43) satisfy ar,s,t ∼1 π " rs + rt + st −1 2(r2 + s2 + t2) #−1/2 as (r, s, t) →∞within a closed subcone in the interior of L. □

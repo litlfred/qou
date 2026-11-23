@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "crmath-2011-349-19-20-1037-0",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "fd5bd0558dfe892ff754e9644533d840342740970953c355d70ae60f7afa6a30",
   "file": "CRMATH_2011__349_19-20_1037_0.pdf"
@@ -9,11 +12,9 @@
   "title": "Classification analytique et th\u00e9orie de Galois locales des modules aux q-diff\u00e9rences \u00e0 pentes non enti\u00e8res",
   "authors": "C. R. Acad. Sci. Paris, Ser. I",
   "arxiv": null,
-  "doi": "10.1016/j.crma.201"
+  "doi": "10.1016/j.crma.2011.09.002"
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 0,
   "by_kind": {},

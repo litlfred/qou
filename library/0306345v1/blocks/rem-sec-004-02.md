@@ -1,0 +1,1 @@
+The coefficient C,, was computed by a different method in [A, Prop. 4.4]. Knowing this coefficient would be enough to obtain Habiro’s formula (7) for w (see Remark 4.4 below). Unfortunately, the method of [A] does not give the coefficients C,,, for k # n, which we will need to obtain a formula for w?.

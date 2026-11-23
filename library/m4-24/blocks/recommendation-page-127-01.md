@@ -1,1 +1,0 @@
-In item (3) the “lift” must depend on p since the dimensions of the vector spaces do, and must also involve further quotients that arise since the irreducible TQFT’s over Z do not match the required dimensions either, but they become reducible when reduced to F,,.

@@ -1,0 +1,1 @@
+The 2-variable q-Legendre polynomials Rn,q(x, y) satisfy the following operational identities: Rn,q(x, y) = C0,q  x ∂q ∂qD−1 q,y  {yn}, (55) or, equivalently, Rn,q(x, y) = eq  −D−1 q,x ∂q ∂qD−1 q,y  {yn} (56) and Eq  D−1 q,x ∂q ∂qD−1 q,y  Rn,q(x, y) = yn, (57) respectively.

@@ -1,1 +1,0 @@
-In fact, the relation (5.10) suggests that, in order to compare with the volume and the Chern-Simons invariant computed from the A-polynomial, the parameter a must be treated as a continuous complex variable.

@@ -1,1 +1,0 @@
-The subarc arc OL\ of A ; is inside B z, with its 2 endpoint in the F + part and its 3 endpoint in the F~ part of dBt, and since a\ c 9 H ^ there must be a component μ2s(Φo) of FF, Π(FuΩ) which joins 2 to 3.

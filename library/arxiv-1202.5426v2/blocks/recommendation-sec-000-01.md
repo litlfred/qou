@@ -1,1 +1,0 @@
-Let us conclude this introduction by remarking that, in contrast to stationary points of E(α,1), for p > 1 we do not expect stationary points of E(α,p) to be C∞-smooth: The resulting Euler- Lagrange equation should be in some sense a nonlocal degenerate elliptic equation.

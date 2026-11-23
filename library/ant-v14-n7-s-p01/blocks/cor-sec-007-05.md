@@ -1,0 +1,1 @@
+7. (i) If k + 1 −n + j is odd, then c′( j, n) Z ∞ Z 1 gn, j(x, y)yr+s dx dy = 0, where gn, j is as deﬁned in Proposition A.3. (ii) For ℓodd in the sum in Proposition A.3, only the a( j, ℓ, n) terms contribute to I j F(s). For ℓeven, only the b( j, ℓ, n) terms contribute. p-adic Asai L-functions of Bianchi modular forms

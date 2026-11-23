@@ -60,6 +60,8 @@ paper-ingestion skills (`local/paper-importer`, `local/document-intake`), with t
 | `bujack-et-al-2022` | non-Riemannian perceptual colour space | check | none (colour/perception) |
 | `bach2013` (+`-import-meta.json`) | double-slit (has `bach2013-double-slit` content dir) | check | possible (double-slit content) |
 | `centsim`, `HDR`, `6gtx-j455`, `9911033`, `1210.6243`, `2104.06067`, `2605.22763`, `2605.28781` | **UNVERIFIED — identify on ingestion** | ? | ? |
+
+> **Update 2026-11-22 (bean `qou-gbvs`).** `centsim` is Geck–Rouquier, *Centers and Simple Modules for Iwahori-Hecke Algebras* (`[geck-rouquier-centsim]`). It is an image-only scan (22 pages, CCITTFax): `pdftotext`, `pypdf` and `pdfminer` all return 0 characters, so it must be read via the vision path. `6gtx-j455` is Liu–Quintin–Afshordi, PRL 136, 111501 (2026) (`[liu-quintin-afshordi]`), not Wald 1984. Both identifications are recorded in `test/attestations/bib-verification/`.
 | `mass_1.mas20.txt` | AME mass table (data, not a paper) | data-pin, not a citation | n/a |
 
 ## Skill + workflow updates (part of this backlog)

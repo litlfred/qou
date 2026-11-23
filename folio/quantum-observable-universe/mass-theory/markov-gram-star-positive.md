@@ -44,8 +44,7 @@ sends the basis element of a word to the basis element of its inverse, which on 
 normal-form basis swaps $L_+ \leftrightarrow L_-$ and fixes the remaining four
 vectors. That single swap flips the sign of the one antisymmetric direction in the
 mixed-symmetry block, and the sign it flips is the whole difference between the two
-pairings. The contrast is drawn in
-[two pairings, two signatures](#rem:markov-gram-bilinear-vs-star), and no signature
+pairings. No signature
 claim about the Markov--Gram form is meaningful until the pairing is named.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the

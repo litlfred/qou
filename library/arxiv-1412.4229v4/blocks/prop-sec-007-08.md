@@ -1,0 +1,1 @@
+We are given homomorphisms of commutative DG rings A → B2 v2 −→B1 v1 −→B0, DG modules Mk ∈D(Bk), and morphisms θk : Mk−1 →Mk in D(Bk). Then Sqv2/idA(θ2) ◦Sqv1/idA(θ1) = Sq(v1◦v2)/idA(θ2 ◦θ1), as morphisms SqB0/A(M0) →SqB2/A(M2) in D(B2).

@@ -1,0 +1,1 @@
+Let X be a connect rigid analytic space X. (1) The space X is simply connected if and only if every locally constant sheaf of sets, with respect to the Grothendieck topology, is constant. (2) If there exists an admissible covering {Xi}i∈N of X such that (a) every Xi is simply connected, and (b) Xi ⊆Xi+1 for all i, then X is simply connected.

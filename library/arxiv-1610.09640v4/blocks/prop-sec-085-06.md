@@ -1,0 +1,1 @@
+Suppose A u−→B v−→C are homomorphisms of DG rings, L ∈D(A), M ∈D(B) and N ∈D(C) are DG modules, θ : M →L is a nonde- generate backward morphism in D(A) over u, and ζ : N →M is a nondegenerate backward morphism in D(B) over v. Then θ ◦ζ : N →L is a nondegenerate backward morphism in D(A) over v ◦u.

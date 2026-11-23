@@ -1,1 +1,0 @@
-In order for the (2 - 3)"" singularity to be possible, the "3" side of μi4 and the "2" side of μπ must be accessible to opposite sides of the same digon, and this dictates that the six pierce-points are located as shown, relative to the evolving link projection.

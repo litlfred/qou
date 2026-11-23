@@ -1,0 +1,1 @@
+For any x, y ∈W(+) we have χx χy = X z∈W mx z χzy = X z∈W ∩Gx y mx zy−1 χz . (4.4) The formula (4.4) is the analog of the sl(3) geometric algorithm for the decomposi- tion of the product, namely one takes the generalized ‘weight diagram’ Gx and ‘translates’ it by y.

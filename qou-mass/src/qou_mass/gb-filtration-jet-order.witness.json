@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-30T14:09:07.973597+00:00",
-  "commitSha": "f0a56b14fea235927b31a5cad30fee56390704dd",
+  "computedAt": "2026-11-16T19:59:53.506014+00:00",
+  "commitSha": "6465362ef2e7902778c4f8796f81286e3aeb81bc",
   "assertions": [
     {
       "name": "gb_filtration_shape_matches_declared_expected_count",
@@ -10,14 +10,21 @@
       "expected": "4",
       "passed": true,
       "source": "per-case `actual_filtration == expected_filtration` over the exact symbolic GB normal form in Q(q); expected is the number of cases declaring an expected shape"
+    },
+    {
+      "name": "gb_filtration_knot_named_rows_have_single_component",
+      "computed": "3",
+      "expected": "3",
+      "passed": true,
+      "source": "exact S_n permutation cycle count of each prime-knot test case (electron 3_1 in H_2, figure-8 4_1 in H_3, deuteron 6_2 in H_3) equals 1 component (bean qou-k3te)"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "gb-filtration-jet-order",
   "scriptFile": "gb_filtration_jet_tracker.py",
-  "scriptHash": "b761a4c57be2",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "34abaf436d7d",
+  "scriptCommitSha": "6465362ef2e7902778c4f8796f81286e3aeb81bc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +32,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -100,6 +107,7 @@
         1,
         1
       ],
+      "closure_components": 1,
       "expected_filtration": {
         "0": 1,
         "1": 1
@@ -209,6 +217,7 @@
         1,
         -2
       ],
+      "closure_components": 3,
       "expected_filtration": null,
       "expected_pass": null,
       "filtration_certificate": {
@@ -565,6 +574,7 @@
         1,
         -2
       ],
+      "closure_components": 1,
       "expected_filtration": null,
       "expected_pass": null,
       "filtration_certificate": {
@@ -760,15 +770,17 @@
       "n_hecke_relations_fired": 2
     },
     {
-      "name": "deuteron 6_2 σ_1^{-1} σ_2 σ_1^{-1} σ_2^2 in H_3",
+      "name": "deuteron 6_2 σ_1^{-1} σ_2 σ_1^{-1} σ_2^3 in H_3",
       "n": 3,
       "word": [
         -1,
         2,
         -1,
         2,
+        2,
         2
       ],
+      "closure_components": 1,
       "expected_filtration": null,
       "expected_pass": null,
       "filtration_certificate": {
@@ -784,10 +796,22 @@
               2,
               1
             ],
-            "coefficient_in_q": "1"
+            "coefficient_in_q": "q - 1/q"
           }
         ],
         "2": [
+          {
+            "perm": [
+              3,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "1"
+          },
           {
             "perm": [
               2,
@@ -798,7 +822,7 @@
               1,
               2
             ],
-            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
+            "coefficient_in_q": "-q**4 + 2*q**2 - 2 + 2/q**2 - 1/q**4"
           }
         ],
         "1": [
@@ -811,7 +835,7 @@
             "canonical_word": [
               1
             ],
-            "coefficient_in_q": "-q**2 + 2 - 1/q**2"
+            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
           },
           {
             "perm": [
@@ -822,7 +846,7 @@
             "canonical_word": [
               2
             ],
-            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
+            "coefficient_in_q": "q**5 - 3*q**3 + 4*q - 4/q + 3/q**3 - 1/q**5"
           }
         ],
         "0": [
@@ -833,13 +857,13 @@
               3
             ],
             "canonical_word": [],
-            "coefficient_in_q": "q**3 - 3*q + 3/q - 1/q**3"
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
           }
         ]
       },
       "filtration_shape": {
         "3": 1,
-        "2": 1,
+        "2": 2,
         "1": 2,
         "0": 1
       },
@@ -1081,13 +1105,98 @@
           "filtration_before": 0,
           "filtration_after": 1,
           "relation": "ascending"
+        },
+        {
+          "step": 15,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 16,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 17,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 18,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 19,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
         }
       ],
-      "n_steps": 14,
-      "n_hecke_relations_fired": 5
+      "n_steps": 19,
+      "n_hecke_relations_fired": 8
     },
     {
-      "name": "tritium 8_11 σ_1^{-1} σ_2 σ_1^{-2} σ_2^3 in H_3",
+      "name": "tritium-candidate 2-component link (not 8_11 knot) σ_1^{-1} σ_2 σ_1^{-2} σ_2^3 in H_3",
       "n": 3,
       "word": [
         -1,
@@ -1098,6 +1207,7 @@
         2,
         2
       ],
+      "closure_components": 2,
       "expected_filtration": null,
       "expected_pass": null,
       "filtration_certificate": {
@@ -1588,6 +1698,7 @@
         1,
         1
       ],
+      "closure_components": 3,
       "expected_filtration": {
         "1": 1,
         "0": 1
@@ -1717,6 +1828,7 @@
         2,
         1
       ],
+      "closure_components": 2,
       "expected_filtration": null,
       "expected_pass": null,
       "filtration_certificate": {
@@ -1874,6 +1986,7 @@
         -2,
         3
       ],
+      "closure_components": 3,
       "expected_filtration": null,
       "expected_pass": null,
       "filtration_certificate": {
@@ -2368,6 +2481,7 @@
         3,
         4
       ],
+      "closure_components": 1,
       "expected_filtration": {
         "4": 1
       },
@@ -2498,6 +2612,7 @@
         4,
         5
       ],
+      "closure_components": 3,
       "expected_filtration": null,
       "expected_pass": null,
       "filtration_certificate": {
@@ -3325,6 +3440,7 @@
         2,
         1
       ],
+      "closure_components": 2,
       "expected_filtration": {
         "3": 1
       },

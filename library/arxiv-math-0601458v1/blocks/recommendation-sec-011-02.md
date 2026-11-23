@@ -1,1 +1,0 @@
-One difficulty is that we do not have additive inverses, and another is that we lack an inner product (which any Hilbert space must have, and which we need to calculate probabilities in a quantum system).

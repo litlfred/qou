@@ -1,0 +1,1 @@
+If we substitute t = ζn = e2πi/n into Example 2.20 above, the denominator vanishes, implying that the numerator must vanish too. In particular, we must have n X i=1 (−1)iχµi(α) = 0 at t = ζn. If we apply the KZ functor to the exact sequence proven due to the BGG resolution in [7], we expect an exact sequence of ζn-Specht modules on hook-shape partitions.

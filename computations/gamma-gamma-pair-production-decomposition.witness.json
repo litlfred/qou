@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:48:41.631873+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-11-20T15:41:48.822312+00:00",
+  "commitSha": "07d241745d799572396e6f32be1e598708a56003",
   "assertions": [
     {
       "name": "family_a_disagrees_jones_at_h2_corrected",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 11,
   "computation": "gamma-gamma-pair-production-decomposition",
   "scriptFile": "gamma_gamma_pair_production_decomposition.py",
-  "scriptHash": "1ffa7dac1b3b",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "2aaccf41d9c3",
+  "scriptCommitSha": "0218c9ba9ad273ba5984b06c405cefcf6d2da644",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,12 +50,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gamma_gamma_pair_production_decomposition.py"
+    ],
+    "reproduce": "python3 -u computations/gamma_gamma_pair_production_decomposition.py"
   },
   "description": "γγ̄ pair-production decomposition of β_Bor = (σ₀σ₁⁻¹)³ at each Gröbner-Shirshov filtration order (h-power).  Compares PROVED Family A linking_weight (which terminates at h²) against the Markov-trace-via-Jones-polynomial route (all orders in h) and against the CODATA-anchor target.  Localises whether the 2.89% VolDensity(𝓑₃) gap enters at h² (Reading-A hypothesis: +3/4 h² should be −G h²) or at h⁴⁺ (q-dilog tower hypothesis: Family A truncates higher-order corrections). Audit-only — no CODATA value flows into a prediction; the anchor inversion is for target reconstruction only.",
   "auditOnly": "docs/audits/2026-05-25-non-abelian-stokes-reading-a-exploration.md",
@@ -64,6 +73,7 @@
     "h0": "0.20906029879563937022",
     "borromean_braid_word": "(σ₀·σ₁⁻¹)³",
     "gamma_gamma_bar_factors": 3,
+    "four_term_photons_in_beta_Bor": 2,
     "max_h_order": 8
   },
   "data": {

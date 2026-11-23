@@ -2,17 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:knot-eigenbasis-complete",
   "kind": "proposition",
-  "title": "Completeness of the knot-type eigenbasis",
+  "title": "Complete decomposition of the tensor tower",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-braid-action-tensor"
   ],

@@ -1,1 +1,0 @@
-However, in a star as metal-poor as CS 31082-001 , it is expected that the s-process contribution should be negligible, both from a theoretical point of view (the main s-process takes place in AGBs, where the contribution depends on metallicity via the abundances of both seed nuclei and neutron sources, e.g.

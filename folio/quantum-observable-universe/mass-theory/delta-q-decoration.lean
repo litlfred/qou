@@ -19,7 +19,7 @@ representation V_λ for λ ⊢ n.
 
 This refines the Markov trace by preserving the per-irrep structure that
 the Markov trace collapses by summing.  Required for the analysis in
-`prop:force-carrier-intertwining-correspondence`, which identifies how
+`conj:force-carrier-intertwining-correspondence`, which identifies how
 α_EM projects through specific Wedderburn components of the bound-state
 operator.
 

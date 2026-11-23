@@ -975,6 +975,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "(S↔P column of prop:shell-closure-normal-form row) Ref resolves only in sibling `.lean:119`: `∃ nf, IsNormalForm (nf.map Prod.fst)`, discharged by applying the unconditional axiom `division_terminates_unique` (:89) to `[]`; the conclusion never mentions 𝒩(p,n) and is witnessed by the empty support (vacuous). (ii)-(iv) are encoded only as hard-coded decimal tables (`hecke_energy_step`, `dominant_coeff`) and two `rfl` palindrome checks (A=4,6), not ∀ p=n. Under open PR #7915: it turns both axioms into theorems proved by `[]`/`∅` and documents the vacuity, but does not encode the claim. Proof: (i) argued (any division remainder is reduced; trivial). (ii) is false as worded: md:14 identifies the histogram with \"the Poincaré polynomials of S₄, S₆\", but S₄'s is 1,3,5,6,5,3,1 (sum 24) while the A=4 histogram is 1,3,4,3,1 (sum 12); the sibling's own comment (:171-184) says so. (ii) for all p=n, \"p≠n is not a palindrome\", (iii) and (iv) are finite computations with decimals inside the proposition, never proved. Empirical: \"boundary N≥Z−1 matches the nuclear valley of stability\" (prf:86)"
+      },
+      {
+        "field_hash": {
+          "md": "6dadb1017f7e",
+          "ts": "2e6c40650707"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:10:14.822Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice changes, label references replaced by titles, and witness/Lean file names removed from the prose. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: (S↔P column of prop:shell-closure-normal-form row) Ref resolves only in sibling `.lean:119`: `∃ nf, IsNormalForm (nf.map Prod.fst)`, discharged by applying the unconditional axiom `division_terminates_unique` (:89) to `[]`; the conclusion never mentions 𝒩(p,n) and is witnessed by the empty support (vacuous). (ii)-(iv) are encoded only as hard-coded decimal tables (`hecke_energy_step`, `dominant_coeff`) and two `rfl` palindrome checks (A=4,6), not ∀ p=n. Under open PR #7915: it turns both axioms into theorems proved by `[]`/`∅` and documents the vacuity, but does not encode the claim. Proof: (i) argued (any division remainder is reduced; trivial). (ii) is false as worded: md:14 identifies the histogram with \"the Poincaré polynomials of S₄, S₆\", but S₄'s is 1,3,5,6,5,3,1 (sum 24) while the A=4 histogram is 1,3,4,3,1 (sum 12); the sibling's own comment (:171-184) says so. (ii) for all p=n, \"p≠n is not a palindrome\", (iii) and (iv) are finite computations with decimals inside the proposition, never proved. Empirical: \"boundary N≥Z−1 matches the nuclear valley of stability\" (prf:86)"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1545,6 +1561,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:03.850Z",
+  "updated_at": "2026-11-21T08:10:14.822Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

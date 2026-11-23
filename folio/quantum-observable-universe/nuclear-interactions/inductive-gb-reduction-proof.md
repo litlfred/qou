@@ -1,6 +1,6 @@
 **Proof.**
 
-> **Scope note (2026-11-15).** The typed-crossing squares were corrected on this date: earlier text gave $C_{nn}^2 = h_{\mathrm{A}}C_{nn} + \mathbf{1}$ and $C_{pn}^2 = h_{\mathrm{A}}C_{pn} + \mathbf{1} - \tfrac14 h_{\mathrm{A}}^2$, and both are wrong for $C_{nn} = \sigma_i^{-1}$ and $C_{pn} = \tfrac12(\sigma_i + \sigma_i^{-1})$. The per-step product bound $|\mathcal{N}_{\leq k}| \times 2 \times 6$ is a bound before reduction. The tabulated normal-form sizes ($\leq 2, 8, 32, 128$) and the binomial bound in the statement are not derived here: nothing in this argument shows that reduction collapses the product to that size. Treat them as an open bound.
+> **Scope of the inductive bound.** The per-step product count $|\mathcal{N}_{\leq k}| \times 2 \times 6$ bounds the unreduced product before applying the Hecke quadratic relations; proving that Gröbner–Shirshov reduction collapses the support to the tabulated normal-form sizes ($\leq 2, 8, 32, 128$) and the binomial bound remains an open combinatorial step.
 
 At each inductive step, the product $\mathcal{N}_{\leq k} \cdot C \cdot \mathfrak{N}_{k+1}$ contains at most $|\mathcal{N}_{\leq k}| \times 2 \times 6$ terms. (The crossing $C$ contains at most 2 terms; the nucleon normal form contains 6 terms.) Gröbner–Shirshov reduction eliminates all $\sigma_i^2$ factors via the Hecke relation and sorts words via Yang–Baxter. This yields a normal form of strictly bounded size.
 

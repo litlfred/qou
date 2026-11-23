@@ -1,28 +1,14 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:three-calibration-inputs",
+export default conjecture({
+  label: "conj:three-calibration-inputs",
   title:
-    "Exactly three calibration inputs ($m_e$, $m_\\mu/m_e$, $\\mathfrak{Q}_\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$",
+    "Exactly three calibration inputs: every observable factors through $m_e$, $m_\\pi$ and $q_0$",
   lean: {
-    ref: "qou:QOU.BraidKnot.three_calibration_inputs",
+    ref: "qou:QOU.BraidKnot.ThreeCalibrationFactorisation",
     validation: "not_checked",
   },
   cites: ["codata2022"],
-  computation: {
-    engine: "python",
-    script: "computations/codata_masses.py",
-    // Second witness produced by computations/build_cal_3_q_beta_witness.py
-    // (CAL-3 Q_beta(n) source-of-truth JSON).
-    witness: [
-      "computations/codata-masses.witness.json",
-      "computations/cal-3-q-beta.witness.json",
-    ],
-    consumers: [
-      "computations/sweeps/paper_six_term_isotope_sweep.py",
-    ],
-    status: "verified",
-  },
   tags: [
     "calibration",
     "three-parameters",
@@ -35,6 +21,12 @@ export default proposition({
     "predictive-content",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): of the\n[three-calibration discipline](#def:three-calibration-discipline)" },
+    {
+      kind: "status",
+      date: "2026-11-20",
+      body: "**Demoted from `prop:three-calibration-inputs` (owner choice, 2026-11-20; bean qou-tm3c).** The statement is a universal claim about every canonical observable, and it is realised only case by case. Its former Lean, `three_calibration_inputs`, was `∃ f, obs = f q₀ m_e Q_β`, which every `obs` satisfies by taking `f` constant; it also listed $\\mathfrak{Q}_\\beta$ instead of $m_\\pi$. The carrier is now the class `QOU.BraidKnot.ThreeCalibrationFactorisation`, with the claim as its one open field and no instance. The definitional part (the three inputs, $q_0$ as a root) is [def:three-calibration-discipline](#def:three-calibration-discipline), which now also carries the CODATA calibration witnesses that used to hang on this block. The two older notes below describe the block before the change.",
+    },
     {
       kind: "caveat",
       date: "2026-05-25",

@@ -1,0 +1,1 @@
+Let N ⊆D be the full subcategory of all objects which become isomorphic to zero in the quotient category D. If Λ is algebraically closed, then N satisﬁes the stability axiom (N1), the acyclicity axiom (N3) and the Euler axiom (N4), and an object K ∈D lies in the subcategory N iff all simple constituents of all pHn(K) have Euler characteristic zero.

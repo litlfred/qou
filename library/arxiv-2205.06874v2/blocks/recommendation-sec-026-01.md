@@ -1,1 +1,0 @@
-The moves for tetrahedra that also involve defect lines and defect vertices are analogous, but with the additional conditions that defect vertices must not lie on faces and defect edges must not intersect edges of the tetrahedra.

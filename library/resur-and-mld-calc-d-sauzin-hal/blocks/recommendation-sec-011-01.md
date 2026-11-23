@@ -1,1 +1,0 @@
-Suﬃce it to say that eR is an algebra containing monomials like eIσ := z−σ or eJσ := −z−σ log z, to be viewed as inverse Borel transforms of the singularities represented by ∨Iσ := g(σ)ζσ−1, ∨Jσ := g(σ)ζσ−1 log ζ + g′(σ)ζσ−1, (51) where g(σ) := 1 2πieiπσΓ(1 −σ) for σ ∈C −Z>0 (the case σ ∈Z>0 must be treated separately), as well as z−σ(log z)m for any m ∈Z>0.

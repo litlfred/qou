@@ -102,7 +102,7 @@ if [ -f "$_w" ] && git diff --quiet -- "$_w" 2>/dev/null \
   cp "$_w" "$_snap"
 fi
 
-out="$(timeout 120 python3 "$audit" --strict 2>&1)"; rc=$?
+out="$(timeout 120 python3 "$audit" --strict --no-write 2>&1)"; rc=$?
 
 if [ -n "$_snap" ]; then
   cp "$_snap" "$_w"

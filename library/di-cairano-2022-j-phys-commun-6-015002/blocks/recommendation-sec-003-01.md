@@ -1,1 +1,0 @@
-This feature must hold also in case of a GLE, that is, we expect that, in the Zwanzig’s derivation, all the microscopic information contained in the potential function are condensed within the friction matrix L.

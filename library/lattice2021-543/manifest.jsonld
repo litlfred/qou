@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lattice2021-543/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The neutron-proton mass difference",
+  "contains": [
+    "library/lattice2021-543/sections/sec-front-matter",
+    "library/lattice2021-543/sections/sec-000",
+    "library/lattice2021-543/sections/sec-001",
+    "library/lattice2021-543/sections/sec-002",
+    "library/lattice2021-543/sections/sec-003",
+    "library/lattice2021-543/sections/sec-004",
+    "library/lattice2021-543/sections/sec-005",
+    "library/lattice2021-543/sections/sec-006",
+    "library/lattice2021-543/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "lattice2021-543",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "The neutron-proton mass difference",
+      "basis": "Printed title on page 1 (S. Romiti, PoS(LATTICE2021)543); the extracted title used the ff ligature",
+      "extracted_title": "The neutron-proton mass diﬀerence",
+      "corrected_on": "2026-11-18",
+      "extracted": "The neutron-proton mass difference"
+    },
+    "source_file": "LATTICE2021_543.pdf",
+    "source_sha256": "3a255daa50ebd5a41f13f9c517e5e15fafc67cb210b8bc3cfb849bbfda540b0e",
+    "pages": 12,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

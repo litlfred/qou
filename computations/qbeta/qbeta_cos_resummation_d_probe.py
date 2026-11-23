@@ -84,7 +84,8 @@ def main() -> int:
     alpha_D = (z_D - 1) * h / 2
     cos_D = mp.cos(alpha_D)
 
-    E0 = m_e / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(m_e, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     Q_ruled = abs(h**2 / 2 - h * z_D) * E0
     Q_formA = m_e * abs(q**2 - 2 * q - 1) * (q + 1) / (2 * q**3)
 

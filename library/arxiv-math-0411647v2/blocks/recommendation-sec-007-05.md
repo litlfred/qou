@@ -1,1 +1,0 @@
-We define moments of the Jucys--Murphy element by $$M^{\mathop{\mathrm{JM}}}_k={\mathbb{E}}(J^k)= \sum_{a_1,\dots,a_k\in A } {\mathbb{E}}[ (a_1 \ast) \cdots (a_k \ast) ] \in {\mathbb{C}}({{S}}_{A}). \label{eq:wielkasuma}$$ In Section [\[subsec:momentmap\]](#subsec:momentmap){reference-type="ref" reference="subsec:momentmap"} of we shall consider an extension of this concept.

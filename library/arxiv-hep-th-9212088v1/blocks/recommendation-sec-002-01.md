@@ -1,1 +1,0 @@
-The order parameter in the study of chiral symmetry breaking is the quark condensate < ¯qfqf > deﬁned by < ¯qfqf >= lim mf →0 lim N→∞−1 N d dmf log Z(θ), (2.4) where the order of the limits should be taken as indicated in the formula.

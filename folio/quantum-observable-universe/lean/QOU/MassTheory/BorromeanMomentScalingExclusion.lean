@@ -95,4 +95,16 @@ theorem clusterOrd_tendsto_zero {r κ : ℝ} (hr0 : 0 ≤ r) (hr1 : r < 1) :
   have := h.const_mul κ
   simpa [clusterOrd, mul_comm] using this
 
+/-- **Strict positivity of the Brunnian cluster magnitude at every level `k` (`bean qou-f1wk`).** -/
+theorem clusterOrd_pos {r κ : ℝ} (hr0 : 0 < r) (hκ : 0 < κ) (k : ℕ) :
+    0 < clusterOrd r κ k := by
+  have hk : (0 : ℝ) < r ^ k := pow_pos hr0 k
+  exact mul_pos hκ hk
+
+/-- **Pointwise strict decrease of the Brunnian cluster magnitude (`bean qou-f1wk`).** -/
+theorem clusterOrd_lt_of_lt {r κ : ℝ} (hr0 : 0 < r) (hr1 : r < 1) (hκ : 0 < κ)
+    {a b : ℕ} (hab : a < b) :
+    clusterOrd r κ b < clusterOrd r κ a :=
+  clusterOrd_strictAnti hr0 hr1 hκ hab
+
 end QOU.MassTheory.BorromeanMomentScaling

@@ -1,1 +1,0 @@
-Finally, from the expression \eqref{eq:a0-41},\eqref{eq:b0-41} of the leading order coefficients $\alpha_0^{(m)}(q)$, $\beta_0^{(m)}(q)$ of $A_m(\re^u;q)$, $B_m(\re^u;q)$ in the expansion of $u$, one concludes that the recursion relation \eqref{41qdiff} should be the $u=0$ limit of the recursion relation \eqref{rec41m} in $m$, and one can easily check it is indeed the case.

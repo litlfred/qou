@@ -1,1 +1,0 @@
-We should note that this description of $\mathbbm{C}$ in terms of $\mathbbm{R}^+ \otimes U(1)$ explicitly separates complex numbers into a magnitude and a phase, and while it has a multiplication resembling that for $\mathbbm{C}$, but it fails to capture the addition, which is formal.

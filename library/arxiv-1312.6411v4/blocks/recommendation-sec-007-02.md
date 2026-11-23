@@ -1,1 +1,0 @@
-We should mention that Theorem \ref{thm:51} can be made a bit stronger, by replacing the condition that $A$ is tractable with the weaker condition that there is a cohomologically essentially finite type homomorphism $\K \to A$, where $\K$ is a noetherian ring with a dualizing complex.

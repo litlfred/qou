@@ -1,0 +1,4987 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "lattice2021-543",
+  "pages": [
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 161,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: EMC corrections for the 퐾+ and Ω−obtained from the 1st of the 2 simulated values of 푎푚푠, for the A40.XX ensembles. The blue points are the EMC corrections in lattice units at ﬁnite volume. The green points are the values after the correction of the universal QED FVEs. The green band is a ﬁt of the latter with an ansatz of the form 퐴+ 퐵\u0000 푎"
+      ],
+      "labels": [
+        {
+          "text": "Simone Romiti",
+          "bbox": [
+            445.94,
+            51.24,
+            511.94,
+            62.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "푀푛−푀푝in Lattice QCD+QED at LO in IB",
+          "bbox": [
+            83.84,
+            52.39,
+            260.87,
+            64.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Italic",
+            "txsys"
+          ],
+          "sizes": [
+            7.27,
+            9.96
+          ]
+        },
+        {
+          "text": "FVEs on QED mass correction",
+          "bbox": [
+            155.49,
+            100.0,
+            263.71,
+            108.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR17"
+          ],
+          "sizes": [
+            8.72
+          ]
+        },
+        {
+          "text": "FVEs on QED mass correction",
+          "bbox": [
+            368.23,
+            100.0,
+            476.45,
+            108.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR17"
+          ],
+          "sizes": [
+            8.72
+          ]
+        },
+        {
+          "text": "0.0012",
+          "bbox": [
+            320.67,
+            110.07,
+            340.42,
+            117.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.0018",
+          "bbox": [
+            107.93,
+            115.37,
+            127.67,
+            122.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "(L)",
+          "bbox": [
+            96.27,
+            137.04,
+            103.54,
+            147.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "(L)",
+          "bbox": [
+            309.02,
+            137.04,
+            316.29,
+            147.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.0010",
+          "bbox": [
+            320.67,
+            138.55,
+            340.42,
+            145.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.0016",
+          "bbox": [
+            107.93,
+            139.76,
+            127.67,
+            147.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "Residual ∼(1/L3) dependence ﬁt",
+          "bbox": [
+            196.09,
+            146.45,
+            282.88,
+            157.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR9",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.24,
+            6.05
+          ]
+        },
+        {
+          "text": "Residual ∼(1/L3) dependence ﬁt",
+          "bbox": [
+            408.83,
+            146.45,
+            495.62,
+            157.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR9",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.24,
+            6.05
+          ]
+        },
+        {
+          "text": "a∆M(EMC)",
+          "bbox": [
+            94.13,
+            147.65,
+            103.54,
+            180.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR10",
+            "CMR12"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "a∆M(EMC)",
+          "bbox": [
+            306.88,
+            147.65,
+            316.29,
+            180.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR10",
+            "CMR12"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "Points at ﬁnite L",
+          "bbox": [
+            196.09,
+            156.34,
+            240.72,
+            162.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.05
+          ]
+        },
+        {
+          "text": "Points at ﬁnite L",
+          "bbox": [
+            408.83,
+            156.34,
+            453.47,
+            162.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.05
+          ]
+        },
+        {
+          "text": "K+",
+          "bbox": [
+            99.85,
+            156.46,
+            105.98,
+            164.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            3.63,
+            5.09
+          ]
+        },
+        {
+          "text": "Ω−",
+          "bbox": [
+            312.49,
+            157.47,
+            318.79,
+            164.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            3.63,
+            5.09
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            103.38,
+            157.9,
+            107.02,
+            159.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            3.63
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            316.13,
+            158.54,
+            319.76,
+            160.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            3.63
+          ]
+        },
+        {
+          "text": "0.0014",
+          "bbox": [
+            107.93,
+            164.15,
+            127.67,
+            171.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "Universal QED FVEs removed",
+          "bbox": [
+            196.09,
+            165.11,
+            275.57,
+            171.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            6.05
+          ]
+        },
+        {
+          "text": "Universal QED FVEs removed",
+          "bbox": [
+            408.83,
+            165.11,
+            488.31,
+            171.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            6.05
+          ]
+        },
+        {
+          "text": "0.0008",
+          "bbox": [
+            320.67,
+            167.03,
+            340.42,
+            174.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.0012",
+          "bbox": [
+            107.93,
+            188.54,
+            127.67,
+            195.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.0006",
+          "bbox": [
+            320.67,
+            195.5,
+            340.42,
+            202.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00000",
+          "bbox": [
+            127.23,
+            211.37,
+            148.84,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00002",
+          "bbox": [
+            150.14,
+            211.37,
+            171.76,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00004",
+          "bbox": [
+            173.05,
+            211.37,
+            194.67,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00006",
+          "bbox": [
+            195.96,
+            211.37,
+            217.58,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00008",
+          "bbox": [
+            218.87,
+            211.37,
+            240.49,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00010",
+          "bbox": [
+            241.79,
+            211.37,
+            263.4,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00012",
+          "bbox": [
+            264.7,
+            211.37,
+            286.31,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00000",
+          "bbox": [
+            339.97,
+            211.37,
+            361.59,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00002",
+          "bbox": [
+            362.88,
+            211.37,
+            384.5,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00004",
+          "bbox": [
+            385.8,
+            211.37,
+            407.41,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00006",
+          "bbox": [
+            408.71,
+            211.37,
+            430.32,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00008",
+          "bbox": [
+            431.62,
+            211.37,
+            453.23,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00010",
+          "bbox": [
+            454.53,
+            211.37,
+            476.14,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00012",
+          "bbox": [
+            477.44,
+            211.37,
+            499.05,
+            232.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "PoS(LATTICE2021)543",
+          "bbox": [
+            540.6,
+            221.97,
+            578.06,
+            563.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            30.0
+          ]
+        },
+        {
+          "text": "(a/L)3",
+          "bbox": [
+            199.54,
+            233.98,
+            219.74,
+            242.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR10",
+            "CMR12"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "(a/L)3",
+          "bbox": [
+            412.28,
+            233.98,
+            432.49,
+            242.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR10",
+            "CMR12"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "Figure 1: EMC corrections for the 퐾+ and Ω−obtained from the 1st of the 2 simulated values of 푎푚푠, for",
+          "bbox": [
+            83.34,
+            267.66,
+            511.94,
+            283.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Bold",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.27,
+            9.96
+          ]
+        },
+        {
+          "text": "the A40.XX ensembles. The blue points are the EMC corrections in lattice units at ﬁnite volume. The green",
+          "bbox": [
+            83.34,
+            284.43,
+            511.94,
+            294.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "points are the values after the correction of the universal QED FVEs. The green band is a ﬁt of the latter",
+          "bbox": [
+            83.34,
+            297.58,
+            511.94,
+            307.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with an ansatz of the form 퐴+ 퐵\u0000 푎",
+          "bbox": [
+            83.34,
+            305.98,
+            225.14,
+            322.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txexs",
+            "txsys"
+          ],
+          "sizes": [
+            7.27,
+            9.96
+          ]
+        },
+        {
+          "text": "\u00013, with 퐴and 퐵free parameters of the ﬁt.",
+          "bbox": [
+            227.02,
+            308.08,
+            395.98,
+            322.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txexs"
+          ],
+          "sizes": [
+            7.27,
+            9.96
+          ]
+        },
+        {
+          "text": "퐿",
+          "bbox": [
+            220.76,
+            317.01,
+            225.3,
+            324.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7"
+          ],
+          "sizes": [
+            7.27
+          ]
+        },
+        {
+          "text": "These equations give the counterterms at the isoQCD physical point of 푎푚푠and 푎푚ℓ(or equivalently",
+          "bbox": [
+            83.34,
+            345.16,
+            511.93,
+            357.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of 푟푠and 푟ℓ). In the analysis however the 푎Δ푚푓are found at ﬁxed simulated light quark mass, after",
+          "bbox": [
+            83.34,
+            360.06,
+            511.93,
+            373.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the interpolation of the slopes among the 2 values of 푎푚푠to the physical point of 푟푠. These 푎Δ푚푓",
+          "bbox": [
+            83.34,
+            374.97,
+            508.82,
+            388.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "are used to evaluate the other observables, which are then extrapolated to 퐿→∞, 푎→0 and",
+          "bbox": [
+            83.34,
+            389.87,
+            511.94,
+            402.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "푟ℓ= 푟(exp)",
+          "bbox": [
+            83.16,
+            402.14,
+            128.84,
+            417.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "over all the ensembles. For each observable 푂this is just an extrapolation in separate",
+          "bbox": [
+            133.18,
+            404.78,
+            511.93,
+            415.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ℓ",
+          "bbox": [
+            110.85,
+            411.85,
+            114.53,
+            419.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "steps, done on the slice 푟푠= 푟(exp)",
+          "bbox": [
+            83.34,
+            418.38,
+            230.76,
+            434.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of the hyper-surface 푂(푟푠, 푟ℓ, 퐿, 푎).",
+          "bbox": [
+            234.62,
+            421.02,
+            389.46,
+            433.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푠",
+          "bbox": [
+            212.96,
+            426.17,
+            216.5,
+            434.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "We remark that, after the subtraction of the universal 1/퐿and 1/퐿2 corrections of eq. (4),",
+          "bbox": [
+            103.66,
+            432.14,
+            511.94,
+            448.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "these Δ푚푓contain residual 푂(훼EM/퐿3) FVEs from QED. These have been removed before the",
+          "bbox": [
+            83.34,
+            449.99,
+            511.94,
+            464.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "tuning from the EMC corrections. Fig. (1) shows the behavior of 2 of our EMC corrections using",
+          "bbox": [
+            83.34,
+            465.91,
+            511.93,
+            476.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the A40.XX ensembles, which diﬀer only for the volume.",
+          "bbox": [
+            83.34,
+            480.82,
+            333.75,
+            491.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We can now provide a prescription for the separation of strong IB (QCD) and QED. Here we",
+          "bbox": [
+            103.66,
+            495.9,
+            511.93,
+            506.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "implement the separation as in [6], namely we write:",
+          "bbox": [
+            83.34,
+            510.81,
+            312.92,
+            521.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(푞2",
+          "bbox": [
+            310.89,
+            533.98,
+            324.99,
+            547.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푑−푞2",
+          "bbox": [
+            321.25,
+            533.98,
+            348.52,
+            549.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= Δ ˆ푚푢푑",
+          "bbox": [
+            260.6,
+            536.56,
+            296.43,
+            557.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Δ푚푢푑= 푚푑−푚푢",
+          "bbox": [
+            88.79,
+            536.78,
+            167.3,
+            557.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푢)",
+          "bbox": [
+            344.53,
+            536.94,
+            353.55,
+            548.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "[6 log (푎휇) −22.595] 푚(0)",
+          "bbox": [
+            357.77,
+            541.47,
+            473.18,
+            556.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= Δ푚QCD",
+          "bbox": [
+            172.34,
+            541.61,
+            214.08,
+            557.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txmiaX"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "+ Δ푚QED",
+          "bbox": [
+            216.85,
+            541.61,
+            257.07,
+            557.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ". (18)",
+          "bbox": [
+            485.4,
+            543.95,
+            511.94,
+            555.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            300.72,
+            545.88,
+            306.88,
+            556.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txsys"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "푢푑",
+          "bbox": [
+            197.24,
+            551.02,
+            206.97,
+            558.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "푢푑",
+          "bbox": [
+            240.67,
+            551.02,
+            250.4,
+            558.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "ℓ",
+          "bbox": [
+            462.79,
+            551.02,
+            466.48,
+            558.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            145.57,
+            551.43,
+            151.03,
+            562.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "32휋2",
+          "bbox": [
+            321.34,
+            551.6,
+            342.6,
+            562.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푍(0)",
+          "bbox": [
+            275.27,
+            551.86,
+            292.57,
+            565.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푃",
+          "bbox": [
+            282.09,
+            561.24,
+            287.59,
+            569.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "With the notation of sec. (2.1), the contributions to the mass diﬀerence 푀푛−푀푝then read:",
+          "bbox": [
+            83.34,
+            578.01,
+            484.1,
+            590.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(푀푛−푀푝)QCD = −2Δ푚QCD",
+          "bbox": [
+            185.48,
+            602.37,
+            310.62,
+            617.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푢푑[NM",
+          "bbox": [
+            293.77,
+            603.14,
+            332.89,
+            619.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1 −NM",
+          "bbox": [
+            324.21,
+            603.14,
+            362.34,
+            620.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2 −NM",
+          "bbox": [
+            353.66,
+            603.14,
+            391.79,
+            620.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(19)",
+          "bbox": [
+            493.76,
+            604.42,
+            511.94,
+            615.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            407.49,
+            604.93,
+            410.22,
+            615.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3 ]",
+          "bbox": [
+            383.11,
+            606.64,
+            395.93,
+            620.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(푀푛−푀푝)QED = −2Δ푚QED",
+          "bbox": [
+            128.63,
+            630.94,
+            252.87,
+            646.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3 ] + 2Δ푚(푐푟)",
+          "bbox": [
+            325.35,
+            630.96,
+            385.9,
+            649.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푢푑[NM",
+          "bbox": [
+            236.47,
+            631.71,
+            275.14,
+            648.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1 −NM",
+          "bbox": [
+            266.46,
+            631.71,
+            304.59,
+            649.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2 −NM",
+          "bbox": [
+            295.9,
+            631.71,
+            334.04,
+            649.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푢푑[NC",
+          "bbox": [
+            370.69,
+            631.71,
+            407.05,
+            648.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1 −NC",
+          "bbox": [
+            400.13,
+            631.71,
+            434.73,
+            649.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2 −NC",
+          "bbox": [
+            427.81,
+            631.71,
+            462.41,
+            649.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3 ]",
+          "bbox": [
+            455.49,
+            635.2,
+            466.54,
+            649.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "+ (푞2",
+          "bbox": [
+            198.57,
+            649.6,
+            221.8,
+            664.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푢−푞2",
+          "bbox": [
+            217.82,
+            649.6,
+            245.03,
+            664.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "푑)[Nself",
+          "bbox": [
+            241.29,
+            649.6,
+            277.11,
+            665.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−Nself",
+          "bbox": [
+            280.04,
+            649.6,
+            310.99,
+            664.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−Nself",
+          "bbox": [
+            313.91,
+            649.6,
+            344.86,
+            664.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−Nexch",
+          "bbox": [
+            347.78,
+            649.6,
+            381.6,
+            664.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "23 ]",
+          "bbox": [
+            365.62,
+            653.1,
+            385.73,
+            667.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            264.0,
+            657.49,
+            267.99,
+            665.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            297.87,
+            657.49,
+            301.86,
+            665.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            331.75,
+            657.49,
+            335.73,
+            665.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "(20)",
+          "bbox": [
+            493.76,
+            657.95,
+            511.94,
+            668.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Nloop",
+          "bbox": [
+            304.62,
+            669.65,
+            328.87,
+            685.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−Nloop",
+          "bbox": [
+            331.8,
+            669.65,
+            365.41,
+            685.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−Nloop",
+          "bbox": [
+            368.33,
+            669.65,
+            401.95,
+            685.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            300.66,
+            670.23,
+            304.41,
+            681.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txexs"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            402.66,
+            670.23,
+            406.4,
+            681.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txexs"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Õ",
+          "bbox": [
+            215.93,
+            671.12,
+            230.36,
+            682.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txexs"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "푞푓(푞푢−푞푑)",
+          "bbox": [
+            241.12,
+            672.51,
+            297.32,
+            685.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            420.29,
+            672.51,
+            423.02,
+            683.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            198.57,
+            674.22,
+            204.73,
+            685.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txsys"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1 푓",
+          "bbox": [
+            313.1,
+            679.2,
+            321.06,
+            687.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2 푓",
+          "bbox": [
+            349.64,
+            679.2,
+            357.6,
+            687.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "3 푓",
+          "bbox": [
+            386.17,
+            679.2,
+            394.13,
+            687.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "푓∈(푠푒푎)",
+          "bbox": [
+            208.67,
+            688.4,
+            238.51,
+            697.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7",
+            "txsys"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "The physical interpretation is that the neutron tends to be heavier because 푚푑> 푚푢. The 푢",
+          "bbox": [
+            103.66,
+            703.73,
+            511.57,
+            716.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "however has a bigger electric charge, giving an higher electromagnetic self energy to the proton. In",
+          "bbox": [
+            83.34,
+            718.63,
+            511.93,
+            729.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            294.91,
+            752.3,
+            300.36,
+            763.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 658,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: Extrapolation of (푀푛+ 푀푝)/2 (left panel) and 푀푛−푀푝(right panel). Grey points are the values at ﬁnite volume. The colored points and lines correspond to the limit 퐿→∞. The red curves are the continuum and inﬁnite volume limits. The ﬁnal predictions at 푟ℓ= 푟(phys)"
+      ],
+      "labels": [
+        {
+          "text": "Simone Romiti",
+          "bbox": [
+            445.94,
+            51.24,
+            511.94,
+            62.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "푀푛−푀푝in Lattice QCD+QED at LO in IB",
+          "bbox": [
+            83.84,
+            52.39,
+            260.87,
+            64.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Italic",
+            "txsys"
+          ],
+          "sizes": [
+            7.27,
+            9.96
+          ]
+        },
+        {
+          "text": "(L, rℓ, a) extrapolation : χ2",
+          "bbox": [
+            128.26,
+            99.84,
+            224.78,
+            110.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR17"
+          ],
+          "sizes": [
+            6.1,
+            8.72
+          ]
+        },
+        {
+          "text": "(L, rℓ, a) extrapolation : χ2",
+          "bbox": [
+            338.24,
+            99.84,
+            434.76,
+            110.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR17"
+          ],
+          "sizes": [
+            6.1,
+            8.72
+          ]
+        },
+        {
+          "text": "d.o.f. = 0.89(37)",
+          "bbox": [
+            221.8,
+            101.04,
+            275.88,
+            112.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            6.1,
+            8.72
+          ]
+        },
+        {
+          "text": "d.o.f. = 0.74(51)",
+          "bbox": [
+            431.77,
+            101.04,
+            485.85,
+            112.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            6.1,
+            8.72
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            316.23,
+            109.38,
+            319.78,
+            116.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "β = 1.90 , L = ∞",
+          "bbox": [
+            134.49,
+            115.69,
+            173.25,
+            124.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "β = 1.90 , L = ∞",
+          "bbox": [
+            341.7,
+            115.69,
+            380.46,
+            124.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "1.3",
+          "bbox": [
+            103.48,
+            117.71,
+            112.57,
+            124.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "β = 1.95 , L = ∞",
+          "bbox": [
+            134.49,
+            123.07,
+            173.25,
+            131.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "β = 1.95 , L = ∞",
+          "bbox": [
+            341.7,
+            123.07,
+            380.46,
+            131.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            316.23,
+            129.76,
+            319.78,
+            137.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "β = 2.10 , L = ∞",
+          "bbox": [
+            134.49,
+            130.45,
+            173.25,
+            139.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "β = 2.10 , L = ∞",
+          "bbox": [
+            341.7,
+            130.45,
+            380.46,
+            139.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "(Mn + Mp)/2 (GeV)",
+          "bbox": [
+            94.13,
+            134.53,
+            102.5,
+            197.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "(Mn −Mp) (MeV)",
+          "bbox": [
+            306.69,
+            137.56,
+            320.39,
+            194.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "experiment",
+          "bbox": [
+            134.49,
+            137.96,
+            158.98,
+            143.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "experiment",
+          "bbox": [
+            341.7,
+            137.96,
+            366.19,
+            143.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "1.2",
+          "bbox": [
+            103.48,
+            144.12,
+            112.57,
+            151.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "L < ∞",
+          "bbox": [
+            134.49,
+            145.21,
+            149.68,
+            153.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "L < ∞",
+          "bbox": [
+            341.7,
+            145.21,
+            356.89,
+            153.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            316.23,
+            150.13,
+            319.78,
+            157.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            316.23,
+            170.51,
+            319.78,
+            177.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "1.1",
+          "bbox": [
+            103.48,
+            170.54,
+            112.57,
+            177.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            316.23,
+            190.88,
+            319.78,
+            198.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "1.0",
+          "bbox": [
+            103.48,
+            196.95,
+            112.57,
+            204.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            316.23,
+            211.25,
+            319.78,
+            218.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "PoS(LATTICE2021)543",
+          "bbox": [
+            540.6,
+            221.97,
+            578.06,
+            563.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            30.0
+          ]
+        },
+        {
+          "text": "0.00",
+          "bbox": [
+            117.29,
+            223.78,
+            129.93,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.01",
+          "bbox": [
+            146.0,
+            223.78,
+            158.63,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.02",
+          "bbox": [
+            174.7,
+            223.78,
+            187.34,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.03",
+          "bbox": [
+            203.41,
+            223.78,
+            216.05,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.04",
+          "bbox": [
+            232.12,
+            223.78,
+            244.76,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.05",
+          "bbox": [
+            260.83,
+            223.78,
+            273.47,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00",
+          "bbox": [
+            324.75,
+            223.78,
+            337.39,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.01",
+          "bbox": [
+            354.38,
+            223.78,
+            367.02,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.02",
+          "bbox": [
+            384.01,
+            223.78,
+            396.64,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.03",
+          "bbox": [
+            413.64,
+            223.78,
+            426.27,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.04",
+          "bbox": [
+            443.26,
+            223.78,
+            455.9,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.05",
+          "bbox": [
+            472.89,
+            223.78,
+            485.53,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "rℓ−r(exp)",
+          "bbox": [
+            187.3,
+            232.47,
+            216.84,
+            247.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI12",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "rℓ−r(exp)",
+          "bbox": [
+            397.28,
+            232.47,
+            426.82,
+            247.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI12",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "ℓ",
+          "bbox": [
+            204.94,
+            238.43,
+            207.05,
+            243.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            5.09
+          ]
+        },
+        {
+          "text": "ℓ",
+          "bbox": [
+            414.91,
+            238.43,
+            417.03,
+            243.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            5.09
+          ]
+        },
+        {
+          "text": "Figure 2: Extrapolation of (푀푛+ 푀푝)/2 (left panel) and 푀푛−푀푝(right panel). Grey points are the",
+          "bbox": [
+            83.34,
+            271.28,
+            511.93,
+            283.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Bold",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.27,
+            9.96
+          ]
+        },
+        {
+          "text": "values at ﬁnite volume. The colored points and lines correspond to the limit 퐿→∞. The red curves are",
+          "bbox": [
+            83.34,
+            284.43,
+            511.93,
+            296.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the continuum and inﬁnite volume limits. The ﬁnal predictions at 푟ℓ= 푟(phys)",
+          "bbox": [
+            83.34,
+            295.18,
+            396.07,
+            309.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.27,
+            9.96
+          ]
+        },
+        {
+          "text": "are marked on the left. The",
+          "bbox": [
+            400.08,
+            297.58,
+            511.94,
+            307.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ℓ",
+          "bbox": [
+            376.57,
+            304.04,
+            379.93,
+            311.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI7"
+          ],
+          "sizes": [
+            7.27
+          ]
+        },
+        {
+          "text": "horizontal black lines are the experimental values.",
+          "bbox": [
+            83.34,
+            310.73,
+            282.98,
+            320.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[26]:",
+          "bbox": [
+            83.34,
+            345.1,
+            104.55,
+            356.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "푀푛= 0.961(20) GeV",
+          "bbox": [
+            177.47,
+            371.45,
+            270.38,
+            384.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "[0.9395654133(58) GeV]exp",
+          "bbox": [
+            281.94,
+            371.45,
+            405.04,
+            384.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(24)",
+          "bbox": [
+            493.76,
+            371.45,
+            511.94,
+            382.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            416.44,
+            371.67,
+            419.17,
+            382.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "푀푝= 0.959(20) GeV",
+          "bbox": [
+            176.53,
+            389.34,
+            270.38,
+            402.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "[0.9382720813(58) GeV]exp",
+          "bbox": [
+            281.94,
+            389.34,
+            405.04,
+            402.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(25)",
+          "bbox": [
+            493.76,
+            389.34,
+            511.94,
+            400.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            416.44,
+            389.56,
+            419.17,
+            400.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            83.34,
+            415.69,
+            99.09,
+            426.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "푀푛−푀푝= 1.73(69) MeV",
+          "bbox": [
+            170.37,
+            431.08,
+            287.2,
+            444.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "[1.29333205(51)MeV]exp",
+          "bbox": [
+            298.77,
+            431.08,
+            410.96,
+            443.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(26)",
+          "bbox": [
+            493.76,
+            431.08,
+            511.94,
+            441.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            422.54,
+            431.3,
+            425.27,
+            442.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Finally, we extrapolate the two contributions (푀푛−푀푝)QCD and (푀푛−푀푝)QED of eqs. (19)",
+          "bbox": [
+            103.66,
+            449.23,
+            511.94,
+            466.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and (20), using the same functional form of eq. (23). We ﬁnd:",
+          "bbox": [
+            83.34,
+            468.09,
+            354.43,
+            479.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(푀푛−푀푝)QCD = 3.10(59) MeV",
+          "bbox": [
+            216.19,
+            492.19,
+            359.14,
+            507.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(27)",
+          "bbox": [
+            493.76,
+            494.44,
+            511.94,
+            505.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            370.05,
+            494.66,
+            372.78,
+            505.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(푀푛−푀푝)QED = −1.16(25) MeV",
+          "bbox": [
+            216.19,
+            510.08,
+            365.63,
+            525.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(28)",
+          "bbox": [
+            493.76,
+            512.33,
+            511.94,
+            523.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            376.72,
+            512.55,
+            379.44,
+            523.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In ﬁg. (3) are shown the plots of the extrapolations for these two quantities.",
+          "bbox": [
+            83.34,
+            538.68,
+            411.6,
+            549.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "6.",
+          "bbox": [
+            83.34,
+            574.09,
+            92.3,
+            586.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Summary and outlook",
+          "bbox": [
+            102.13,
+            574.09,
+            216.39,
+            586.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In this work we’ve discussed the inclusion of LIBEs eﬀects in the nucleons spectrum, ﬁnding",
+          "bbox": [
+            103.66,
+            599.08,
+            511.93,
+            609.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "their masses and the diﬀerence 푀푛−푀푝.",
+          "bbox": [
+            83.34,
+            613.98,
+            265.58,
+            626.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The 푂(훼EM) and 푂( ˆ푚푑−ˆ푚푢",
+          "bbox": [
+            103.66,
+            626.88,
+            228.49,
+            641.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI5",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            6.08,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ΛQCD ) corrections have been taken into account using the RM123",
+          "bbox": [
+            205.75,
+            629.05,
+            511.94,
+            646.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            6.08,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "method. Critical masses were ﬁxed by the PCAC Ward Identity in order to preserve the maximal",
+          "bbox": [
+            83.34,
+            643.95,
+            511.93,
+            654.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "twist condition at LO. The physical masses are tuned using an hadronic scheme and the lattice",
+          "bbox": [
+            83.34,
+            658.86,
+            511.93,
+            669.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "spacing is ﬁxed through 푀Ω−.",
+          "bbox": [
+            83.34,
+            673.76,
+            213.38,
+            687.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular",
+            "txmiaX",
+            "txsys"
+          ],
+          "sizes": [
+            6.08,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We worked in the electroquenched approximation and neglected QCD disconnected diagrams.",
+          "bbox": [
+            103.66,
+            688.83,
+            511.93,
+            699.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "At our level of precision these are expected to be suppressed, giving a negligible contribution.",
+          "bbox": [
+            83.34,
+            703.73,
+            511.93,
+            714.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This assumption is conﬁrmed by the consistency of our results with the experimental values. For",
+          "bbox": [
+            83.34,
+            718.63,
+            511.93,
+            729.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            294.91,
+            752.3,
+            300.37,
+            763.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 649,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: The same as ﬁg. (2) but for (푀푛−푀푝)QCD and (푀푛−푀푝)QED."
+      ],
+      "labels": [
+        {
+          "text": "Simone Romiti",
+          "bbox": [
+            445.94,
+            51.24,
+            511.94,
+            62.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "푀푛−푀푝in Lattice QCD+QED at LO in IB",
+          "bbox": [
+            83.84,
+            52.39,
+            260.87,
+            64.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Italic",
+            "txsys"
+          ],
+          "sizes": [
+            7.27,
+            9.96
+          ]
+        },
+        {
+          "text": "(L, rℓ, a) extrapolation : χ2",
+          "bbox": [
+            123.08,
+            99.84,
+            219.59,
+            110.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR17"
+          ],
+          "sizes": [
+            6.1,
+            8.72
+          ]
+        },
+        {
+          "text": "(L, rℓ, a) extrapolation : χ2",
+          "bbox": [
+            341.41,
+            99.84,
+            437.93,
+            110.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR17"
+          ],
+          "sizes": [
+            6.1,
+            8.72
+          ]
+        },
+        {
+          "text": "d.o.f. = 1.12(55)",
+          "bbox": [
+            216.61,
+            101.04,
+            270.69,
+            112.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            6.1,
+            8.72
+          ]
+        },
+        {
+          "text": "d.o.f. = 1.08(56)",
+          "bbox": [
+            434.94,
+            101.04,
+            489.02,
+            112.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            6.1,
+            8.72
+          ]
+        },
+        {
+          "text": "β = 1.90 , L = ∞",
+          "bbox": [
+            127.04,
+            115.69,
+            165.8,
+            124.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "−0.5",
+          "bbox": [
+            314.31,
+            120.71,
+            329.04,
+            133.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "β = 1.95 , L = ∞",
+          "bbox": [
+            127.04,
+            123.07,
+            165.8,
+            131.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            101.57,
+            124.78,
+            105.12,
+            132.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "(Mn −Mp)(QCD) (MeV)",
+          "bbox": [
+            89.58,
+            129.7,
+            105.73,
+            202.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI12",
+            "CMR10",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "(Mn −Mp)(QED) (MeV)",
+          "bbox": [
+            302.32,
+            129.81,
+            318.47,
+            202.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI12",
+            "CMR10",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "β = 2.10 , L = ∞",
+          "bbox": [
+            127.04,
+            130.45,
+            165.8,
+            139.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "L < ∞",
+          "bbox": [
+            127.04,
+            137.83,
+            142.23,
+            146.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "−1.0",
+          "bbox": [
+            314.31,
+            142.13,
+            329.04,
+            154.74
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            101.57,
+            147.06,
+            105.12,
+            154.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "−1.5",
+          "bbox": [
+            314.31,
+            163.56,
+            329.04,
+            176.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            101.57,
+            169.34,
+            105.12,
+            176.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "−2.0",
+          "bbox": [
+            314.31,
+            184.99,
+            329.04,
+            197.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "β = 1.90 , L = ∞",
+          "bbox": [
+            350.96,
+            189.41,
+            389.72,
+            198.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            101.57,
+            191.62,
+            105.12,
+            198.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "β = 1.95 , L = ∞",
+          "bbox": [
+            350.96,
+            196.79,
+            389.72,
+            205.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "β = 2.10 , L = ∞",
+          "bbox": [
+            350.96,
+            204.17,
+            389.72,
+            212.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "−2.5",
+          "bbox": [
+            314.31,
+            206.42,
+            329.04,
+            219.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "L < ∞",
+          "bbox": [
+            350.96,
+            211.55,
+            366.16,
+            220.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.04
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            101.57,
+            213.89,
+            105.12,
+            221.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "PoS(LATTICE2021)543",
+          "bbox": [
+            540.6,
+            221.97,
+            578.06,
+            563.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            30.0
+          ]
+        },
+        {
+          "text": "0.00",
+          "bbox": [
+            110.04,
+            223.78,
+            122.68,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.01",
+          "bbox": [
+            139.5,
+            223.78,
+            152.14,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.02",
+          "bbox": [
+            168.97,
+            223.78,
+            181.6,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.03",
+          "bbox": [
+            198.43,
+            223.78,
+            211.07,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.04",
+          "bbox": [
+            227.89,
+            223.78,
+            240.53,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.05",
+          "bbox": [
+            257.35,
+            223.78,
+            269.99,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.00",
+          "bbox": [
+            333.46,
+            223.78,
+            346.1,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.01",
+          "bbox": [
+            361.06,
+            223.78,
+            373.7,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.02",
+          "bbox": [
+            388.67,
+            223.78,
+            401.3,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.03",
+          "bbox": [
+            416.27,
+            223.78,
+            428.91,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.04",
+          "bbox": [
+            443.87,
+            223.78,
+            456.51,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "0.05",
+          "bbox": [
+            471.47,
+            223.78,
+            484.11,
+            231.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.26
+          ]
+        },
+        {
+          "text": "rℓ−r(exp)",
+          "bbox": [
+            182.12,
+            232.47,
+            211.66,
+            247.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI12",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "rℓ−r(exp)",
+          "bbox": [
+            400.45,
+            232.47,
+            429.99,
+            247.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI12",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.09,
+            7.26
+          ]
+        },
+        {
+          "text": "ℓ",
+          "bbox": [
+            199.75,
+            238.43,
+            201.87,
+            243.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            5.09
+          ]
+        },
+        {
+          "text": "ℓ",
+          "bbox": [
+            418.09,
+            238.43,
+            420.2,
+            243.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            5.09
+          ]
+        },
+        {
+          "text": "Figure 3: The same as ﬁg. (2) but for (푀푛−푀푝)QCD and (푀푛−푀푝)QED.",
+          "bbox": [
+            147.29,
+            255.71,
+            447.99,
+            271.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Bold",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.27,
+            9.96
+          ]
+        },
+        {
+          "text": "a sequent work we aim at including these diagrams, whose eﬀects can be known only by direct",
+          "bbox": [
+            83.34,
+            294.28,
+            511.93,
+            305.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "evaluation, and provide an estimate of the various sources of systematic errors.",
+          "bbox": [
+            83.34,
+            309.19,
+            426.51,
+            320.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In the future we also aim at applying the RM123 method to neutron 훽decay, which has phase",
+          "bbox": [
+            103.66,
+            324.45,
+            511.94,
+            335.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "space size given by 푀푛−푀푝. A good prediction of this quantity is the preliminary step to face up",
+          "bbox": [
+            83.34,
+            339.35,
+            511.94,
+            352.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular",
+            "txsys"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "to the radiative corrections in the decay width, from which one could improve the determination of",
+          "bbox": [
+            83.34,
+            354.26,
+            511.93,
+            365.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "radiative corrections in the CKM matrix element 푉푢푑.",
+          "bbox": [
+            83.34,
+            369.16,
+            318.07,
+            381.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NewTXMI",
+            "NewTXMI7",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "7.",
+          "bbox": [
+            83.34,
+            406.03,
+            92.3,
+            417.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Acknowledgements",
+          "bbox": [
+            102.13,
+            406.03,
+            199.53,
+            417.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The numerical simulations were carried out on the CINECA Tier-0 supercomputer MARCONI.",
+          "bbox": [
+            103.66,
+            431.6,
+            511.93,
+            442.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "I gratefully acknowledge the CPU time provided by PRACE under the project Pra10-2693 “QED",
+          "bbox": [
+            83.34,
+            446.5,
+            511.93,
+            457.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "corrections to meson decay rates in Lattice QCD” and by CINECA under the speciﬁc initiative",
+          "bbox": [
+            83.34,
+            461.41,
+            511.93,
+            472.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "INFN-LQCD123. I am also grateful to V. Lubicz, S. Simula, F. Sanﬁlippo, G. Martinelli and C.",
+          "bbox": [
+            83.34,
+            476.31,
+            511.93,
+            487.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Tarantino for their support and fruitful discussions during the evolution of this project.",
+          "bbox": [
+            83.34,
+            491.22,
+            459.99,
+            502.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "References",
+          "bbox": [
+            83.34,
+            528.08,
+            138.38,
+            540.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[1] G. Colangelo, S. Dürr, A. Jüttner, L. Lellouch, H. Leutwyler, V. Lubicz et al., Review of",
+          "bbox": [
+            88.79,
+            553.3,
+            489.2,
+            566.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Italic",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "lattice results concerning low-energy particle physics, The European Physical Journal C 71",
+          "bbox": [
+            106.97,
+            568.2,
+            508.62,
+            581.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Bold",
+            "TeXGyreTermes-Italic",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(2011) 1.",
+          "bbox": [
+            106.97,
+            583.11,
+            146.96,
+            594.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "[2] A. Duncan, E. Eichten and H. Thacker, Electromagnetic splittings and light quark masses in",
+          "bbox": [
+            88.79,
+            608.41,
+            508.81,
+            621.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Italic",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "lattice qcd, Physical review letters 76 (1996) 3894.",
+          "bbox": [
+            106.97,
+            623.31,
+            329.08,
+            636.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Bold",
+            "TeXGyreTermes-Italic",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "[3] S. Borsanyi, S. Durr, Z. Fodor, C. Hoelbling, S. Katz, S. Krieg et al., Ab initio calculation of",
+          "bbox": [
+            88.79,
+            648.62,
+            509.67,
+            662.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Italic",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the neutron-proton mass diﬀerence, Science 347 (2015) 1452.",
+          "bbox": [
+            106.97,
+            663.52,
+            376.03,
+            676.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Bold",
+            "TeXGyreTermes-Italic",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "[4] G. De Divitiis, P. Dimopoulos, R. Frezzotti, V. Lubicz, G. Martinelli, R. Petronzio et al.,",
+          "bbox": [
+            88.79,
+            688.83,
+            492.24,
+            699.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Isospin breaking eﬀects due to the up-down mass diﬀerence in lattice qcd, Journal of High",
+          "bbox": [
+            106.97,
+            703.73,
+            501.46,
+            717.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Italic",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Energy Physics 2012 (2012) 1.",
+          "bbox": [
+            106.97,
+            718.63,
+            241.36,
+            732.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Bold",
+            "TeXGyreTermes-Italic",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            292.18,
+            752.3,
+            303.09,
+            763.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,0 @@
-The conclusion from their analysis is that one should rather consider three-flavor processes such as $\eta\to\pi^+\pi^-\gamma$ or $K\gamma\to K\pi$ to test the expected $N_c$ dependence in a low-energy reaction.

@@ -6,12 +6,15 @@
 
       modules matching *hyperbol*            0
       modules matching *clausen* / *lobachev* 0
-      `UpperHalfPlane`                        Analysis/Complex only
 
-  and that one hit is the **2-dimensional modular-forms** upper half plane -- a
-  complex domain with an `SL₂` action, carrying no Riemannian metric, no volume
-  form, no geodesics.  It neither is, nor generalises to, a hyperbolic-geometry
-  library.  So `qou-idvt` T2 ("the ideal tetrahedron's volume IS the Λ-sum")
+  The one near hit is the **2-dimensional modular-forms** upper half plane
+  `UpperHalfPlane`.  It carries the hyperbolic **metric**
+  (`Mathlib/Analysis/Complex/UpperHalfPlane/Metric.lean`: `Dist ℍ`, `dist_eq`,
+  `isometry_real_vadd` / `isometry_pos_mul`, and `ModularGroup.S` acting by
+  isometries) and a `ChartedSpace ℂ` / `IsManifold` structure, but **no volume
+  measure and no geodesics**, and it is in dimension **two**.  That dimension is
+  what makes it not a route to `H³`.  (Corrected 2026-11-22, bean `qou-6eik`: this
+  paragraph used to say ℍ carries "no Riemannian metric", which is false.)  So `qou-idvt` T2 ("the ideal tetrahedron's volume IS the Λ-sum")
   cannot even be STATED against current Mathlib.  Bean `qou-5gai` tiers the fill
   H1-H5; this file is H1, the measure itself.
 
@@ -50,7 +53,12 @@
     translation** (`hypVolume_add_left`), where the `v 2 = 0` hypothesis is
     essential rather than technical, since a *vertical* translation genuinely
     is not an isometry.  Together these are the boundary's similarity group.
-    **Still missing:** the rest of the isometry group of `H³`, i.e. the Möbius
+    **Update (2026-11-20, bean `qou-h2mb`):** inversion in the unit sphere and
+    height-fixing linear maps with `|det| = 1` (vertical-axis rotations) are now
+    proved in `QOU.Archimedean.HyperbolicVolumeInversion`
+    (`hypVolume_inversion_image`, `hypVolume_linear_image`).  The paragraph
+    below is the state before that file.
+    **Still missing (before 2026-11-20):** the rest of the isometry group of `H³`, i.e. the Möbius
     action of `PSL₂(ℂ)` -- in particular inversion, which is the generator that
     makes the group act transitively and is not reachable from these two.  So
     the measure is **not** yet known invariant under all hyperbolic isometries.

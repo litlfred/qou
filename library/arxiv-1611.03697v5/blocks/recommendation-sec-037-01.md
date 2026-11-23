@@ -1,1 +1,0 @@
-\item[(ii)] We view the doubled structures defined here as an approximation to the correct BPS structures, which should also incorporate BPS invariants corresponding to objects of the full derived category $\D^b\Coh(X)$ supported in all dimensions.

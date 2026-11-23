@@ -1,0 +1,1 @@
+Let X = JC be the Jacobian variety of a smooth non-hyperelliptic complex projective curve C of genus g = 4. (a) The above semisimple perverse sheaves δ+ and δ−each contain the negligible constituent δX precisely once. (b) After shrinking the open dense subset U ⊂X in lemma 5.10 there exists an isomorphism V+ ∼= d2∗(CC2×C2)|U.

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s00209-021-02825-4/blocks/cor-sec-023-03",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 25,
+  "pageEnd": 27,
+  "text": "cor-sec-023-03.md",
+  "derivedFrom": "library/s00209-021-02825-4/sections/sec-023",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.13",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-023-63-deriving-the-complex-borceabrändén-characteri.md (p. 25-27)",
+    "claim_id": "s00209-021-02825-4#corollary:6.13",
+    "lean_status": "unformalized"
+  }
+}

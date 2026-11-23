@@ -1,0 +1,1 @@
+7.2. — The complex F P (Ψ) −→F (in degrees 0 and 1) thus has cohomology Hom(M, N), Ext1(M, N). This is clearly functorial in N. On the other hand, there is a part of arbitrariness in the choice of P, but, after [12] §6.1, the homotopy class of the complex depends on M alone.

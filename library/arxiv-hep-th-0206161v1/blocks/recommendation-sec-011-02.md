@@ -1,1 +1,0 @@
-As explained in [6] the poles at φIJ = ǫ1, ǫ2 should be avoided by shifting ǫ1,2 →ǫ1,2 + i0, those at φI = al similarly by al →al + i0 (this case was not considered in [6] but actually was considered (implicitly) in [7]).

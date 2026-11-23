@@ -1,1 +1,0 @@
-We will use the same method on $T_k$, taking advantage of the Fourier transform which has been defined in Section [\[Sec:Fourier_continuous\]](#Sec:Fourier_continuous){reference-type="ref" reference="Sec:Fourier_continuous"} (the reader should refer to this section for the notation used in this paragraph).

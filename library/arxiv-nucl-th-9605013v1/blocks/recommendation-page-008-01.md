@@ -1,1 +1,0 @@
-It should be em- phasized that in the framework of the quantum algebra SUq(2) as well as in the case of the standard Lie algebra SU(2)25, one is able to provide a consistent de- scription of the physical characteristics of only one given rotational band.

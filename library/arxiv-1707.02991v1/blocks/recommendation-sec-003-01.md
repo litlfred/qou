@@ -1,1 +1,0 @@
-Moreover, as predicted in [@Kontsevich:2010px], the Cohomological Hall Algebra associated to a quiver should be identified as the algebra of BPS states [@Harvey:1996gc], which deserves further studies in the context of brane realization of knot invariants.

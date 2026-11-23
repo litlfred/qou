@@ -1,0 +1,61 @@
+{
+  "round": 86,
+  "beans": [
+    "qou-b5ly",
+    "qou-cjkt",
+    "qou-d2s7",
+    "qou-dh8d",
+    "qou-dmar"
+  ],
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/QBeta/BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge.lean",
+  "scriptPath": "computations/probes/round86_riemannhurwitz_rozansky_triplelinking_seifertborel_transseries_probe.py",
+  "scriptCommitSha": "67ce5bc9b3b6c66f539406972e66cd8688837af9",
+  "scriptHash": "eed88d29ffdf1ee51d449b813d63cca5fdf75afe9fcf9ce3fed667f462c8193d",
+  "scriptSha256": "eed88d29ffdf1ee51d449b813d63cca5fdf75afe9fcf9ce3fed667f462c8193d",
+  "dps": 80,
+  "mpmathDps": 80,
+  "allPassed": true,
+  "results": [
+    {
+      "beanId": "qou-b5ly",
+      "sourceGenus": 4,
+      "coveringDegree": 4,
+      "totalRamification": 14,
+      "riemannHurwitzDefect": 0,
+      "hyperbolicArea": "37.69911184307751886155172",
+      "gaussBonnetTilingResidual": "6.747006683667534863583087e-79",
+      "passed": true
+    },
+    {
+      "beanId": "qou-cjkt",
+      "s1RelativeSigma235": "-6.0",
+      "seifertColoredJonesK17Beta3": "6.323135325282497945391747",
+      "sineProductFactorizationResidual": "8.433758354584418579478859e-81",
+      "passed": true
+    },
+    {
+      "beanId": "qou-d2s7",
+      "tripleLinkingMu": 1,
+      "pontryaginHopfInvariant": 2,
+      "halfHopfResidual": "0.0",
+      "orientationAntisymmetryResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-dh8d",
+      "seifertCSDenominator": 120,
+      "csIrrep1": "-0.008333333333333333333333333",
+      "csIrrep2": "-0.4083333333333333333333333",
+      "borelPoleRatioResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-dmar",
+      "vol41InstantonAction": "2.029883212819307250042405",
+      "partialSeriesFactorizationResidual": "3.294436857259538507608929e-83",
+      "partialSeriesRatioIndependenceResidual": "3.953324228711446209130715e-82",
+      "commonRadiusR": 1,
+      "passed": true
+    }
+  ]
+}

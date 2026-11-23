@@ -1,0 +1,1 @@
+Let Γ be a non-cocompact Kleinian group of ﬁnite covolume. Then: (a) Γ is arithmetic if and only if k(Γ) = Q( √ −d) for some square-free d ∈N and tr Γ consists of algebraic integers. (b) Γ is derived from a quaternion algebra if and only if tr Γ ⊂Od for some d.

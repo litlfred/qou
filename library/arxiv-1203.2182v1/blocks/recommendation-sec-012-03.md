@@ -1,1 +1,0 @@
-Then, as we already pointed out in the discussion below [\[superwrong\]](#superwrong){reference-type="eqref" reference="superwrong"}, the $sl(1)$ homology ${\cal H }^{sl(1), S^r}_{i,j} (K)$ should be trivial (*i.e.* one-dimensional) for every knot $K$.

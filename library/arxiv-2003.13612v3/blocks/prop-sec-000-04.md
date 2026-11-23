@@ -1,0 +1,1 @@
+For a long time, it was taken for granted that the symmetry is broken only by the e.m. interaction – the Cottingham formula [2] did explain the size of the observed mass diﬀerences with ∆I = 2, mπ+ −mπ0 for instance.

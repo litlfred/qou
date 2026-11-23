@@ -58,11 +58,13 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 import q_parameter as qp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 HE4 = HERE / "chi-helium-4-h12-at-q0-50dps.witness.json"
 VOL_L6A4 = "7.327724753417752"
 # doubly-magic light nuclei (name, Z, N, A, B_AME MeV)
-DOUBLY_MAGIC = [("4He", 2, 2, 4, "28.295674"),
+DOUBLY_MAGIC = [("4He", 2, 2, 4, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)),
                 ("16O", 8, 8, 16, "127.619336"),
                 ("40Ca", 20, 20, 40, "342.052000")]
 

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/gt-v10-n3-p07-p/blocks/lem-sec-003-02",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "Eliashberg’s isotopy extension lemma [8]",
+  "pageStart": 8,
+  "pageEnd": 13,
+  "text": "lem-sec-003-02.md",
+  "derivedFrom": "library/gt-v10-n3-p07-p/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gt-v10-n3-p07-p/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "External attribution (Eliashberg’s isotopy extension lemma [8]) [[8]]",
+    "claim_id": "gt-v10-n3-p07-p#lemma:2",
+    "lean_status": "unformalized"
+  }
+}

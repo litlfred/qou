@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s10052-020-08615-2/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Subtraction function at low Q ^2",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "contains": [
+    "library/s10052-020-08615-2/blocks/prose-sec-018",
+    "library/s10052-020-08615-2/blocks/prop-sec-018-01",
+    "library/s10052-020-08615-2/blocks/figure-img-p014-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10052-020-08615-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10052-020-08615-2/manifest.jsonld",
+  "provenance": "ingested"
+}

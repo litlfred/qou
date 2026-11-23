@@ -1,1 +1,0 @@
-Similarly, the discussion at the end of Example \ref{exmpl:inf_sym} suggests that $\overline H{}^\bullet (\mathscr E, \mathscr V)$ should be interpreted as ``vector fields on the space of solutions of $\mathscr E_0$''.

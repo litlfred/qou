@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1110.6212v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "1923b6a0bfdc810f27d6c2ecf533c3b52ad94c321e9e7004fe962c82ad34c52b",
+  "file": "1110.6212v2.pdf"
+ },
+ "provenance": {
+  "title": "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson \u2217",
+  "authors": "November 28, 2013",
+  "arxiv": {
+   "id": "1110.6212",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "26 May 2014"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

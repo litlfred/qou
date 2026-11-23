@@ -15,8 +15,23 @@
         },
         "reviewed_at": "2026-11-15T21:56:04.000Z",
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf"
+      },
+      {
+        "field_hash": {
+          "md": "0aea8b71d742",
+          "ts": "b2f5f4b6d482"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:10:15.123Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: two sentences listing Lean declaration names removed. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: "
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:04.000Z"
+  "updated_at": "2026-11-21T08:10:15.123Z"
 }

@@ -1,1 +1,0 @@
-We must show that, given $\Gamma\in\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$, the composition $p\colon\mathop{\mathrm{\textup{Spec}}}\alA\arr\stX_{A}\arr\mathop{\mathrm{\textup{Spec}}}A$ is an isomorphism.

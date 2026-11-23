@@ -1,1 +1,1 @@
-LetA andB be noetherian connected graded k-algebras. Assume
+LetA andB be noetherian connected graded k-algebras. Assume A has a balanced dualizing complex and is graded Auslander (resp. and graded Kdim(or GKdim)-Macaulay), and B has enough normal elements. Then A ⊗B is a noetherian connected graded k-algebra with a balanced dualizing complex, and it is graded Auslander (resp. and graded Kdim(or GKdim)-Macaulay).

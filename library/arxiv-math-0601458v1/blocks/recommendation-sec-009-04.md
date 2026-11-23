@@ -1,1 +1,0 @@
-We should think of this as an illustration of the above where $F$ is the structure type, in which we had the stuff type "being a finite set" composed with the type $Z_0 \times Z$ - $Z_0$-coloured one-element sets, but we can generalize this to any stuff types $F$ and $G$, to obtain stuff types $F \circ G = F ( G )$ and in such a way that $|F \circ G| = |F| \circ |G|$.

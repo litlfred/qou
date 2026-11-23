@@ -1,1 +1,0 @@
-For this purpose $\Lambda$ and thus $X_0$ should scale in such a way, that both quantites $\displaystyle{\gamma^2\left( 1 + \frac{N}{X_0^2}\right)}$ and $\displaystyle{\frac{N\gamma^3}{X_0^3}}$ remain finite.

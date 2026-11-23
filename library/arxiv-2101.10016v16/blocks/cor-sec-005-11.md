@@ -1,1 +1,1 @@
-Let A be a weak quasi-Hopf algebra and (S, α, β) an antipode. Then
+Let A be a weak quasi-Hopf algebra and (S, α, β) an antipode. Then a) A admits a strong antipode if and only if α and β are invertible and β = α −1 . In particular a strong antipode is unique and given by ad(α −1 )S.

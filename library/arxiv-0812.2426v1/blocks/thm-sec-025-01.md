@@ -1,0 +1,1 @@
+Ω: T ZT →ZT T is a bijective comonoidal distributive law5. The distributive law Ωis called the canonical distributive law of T over ZT . Since Ωis a comonoidal distributive law, we get that DT = ZT ◦ΩT is a Hopf monad on C (whose underlying endofunctor is ZT ◦T ). We call DT the double of T , as justiﬁed by the following theorem:

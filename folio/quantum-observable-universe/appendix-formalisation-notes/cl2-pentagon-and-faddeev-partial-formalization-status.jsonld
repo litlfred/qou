@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-cl2-pentagon-and-faddeev-partial-formalization-status",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cl2-pentagon-and-faddeev-partial-formalization-status",
+  "kind": "remark",
+  "title": "Formalization status of the $\\mathrm{Cl}_2$ pentagon and Faddeev-Kashaev boundary closures",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cl2-pentagon-and-faddeev-partial"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-cl2-pentagon-and-faddeev-partial",
+  "tags": [
+    "mathlib-filler",
+    "formalization-status",
+    "partial-closure"
+  ],
+  "text": "cl2-pentagon-and-faddeev-partial-formalization-status.md",
+  "provenance": "authored"
+}

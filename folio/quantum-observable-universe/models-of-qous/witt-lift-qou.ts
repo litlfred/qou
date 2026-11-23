@@ -7,7 +7,6 @@ export default remark({
   uses: [
     "prop:skew-poisson-integration",
     "prop:jet-prolongation",
-    "ex:finite-field-realisation",
     "sec:enveloping-algebras-models",
     "ex:p-adic-realisation",
   ],

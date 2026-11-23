@@ -1,0 +1,1 @@
+Let ˜ M, ˜N ∈Db (f,..)( ˜Aen, gr). Then: (1) The complexes ˜ M and ˜ M ⊗˜N satisfy ˜ M ∈Db dwf( ˜Aen, gr) and ˜ M ⊗˜N ∈ Db dwf( ˜Afour, gr). (2) The canonical morphism θ : ˜ M ∗⊗˜N ∗→( ˜ M ⊗˜N)∗in Db dwf( ˜Afour, gr) is an isomorphism. Derived Categories | Amnon Yekutieli |

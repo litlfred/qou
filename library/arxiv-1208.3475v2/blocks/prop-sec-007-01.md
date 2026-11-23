@@ -1,0 +1,1 @@
+Even if the quality of our data does not allow a proper continuum extrapolation it can be safely concluded that the localization length measured in physical units does not increase in the continuum limit and it is not larger than a few tenth of a Fermi at this temperature.

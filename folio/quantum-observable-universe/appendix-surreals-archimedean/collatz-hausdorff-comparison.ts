@@ -4,7 +4,7 @@ export default remark({
   label: "rem:collatz-hausdorff-comparison",
   title:
     "The Lyapunov function $\\Phi = \\log_q |P|$ and the Hausdorff phase transition",
-  interprets: "prop:collatz-contact-boundary",
+  interprets: "conj:collatz-contact-boundary",
   uses: [
     "prop:collatz-no-cycles",
     "rem:hausdorff-dimension-recurrence",

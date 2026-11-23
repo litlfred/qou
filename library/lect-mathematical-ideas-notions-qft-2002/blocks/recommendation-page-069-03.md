@@ -1,1 +1,0 @@
-Let us, for instance, define the quantum theory for a free scalar valued fermion, i.e one described by the Lagrangian £ = 4 According to the yoga we used in the bosonic case, the two point function of this theory < 7(t1)q(t2) > should be the function G(t, —t2), where G is the solution of the differential equation —i42 = 6(t).

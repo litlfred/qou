@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The invariant F' of closed ribbon graphs",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "contains": [
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-002",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-002-01",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-002-02",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/thm-sec-002-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "provenance": "ingested"
+}

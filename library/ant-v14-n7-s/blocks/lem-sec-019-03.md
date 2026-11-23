@@ -1,1 +1,1 @@
-Suppose that a ∈OF is a generator of OF/(pOF + Z). Then:
+Suppose that a ∈OF is a generator of OF/(pOF + Z). Then: (i) The map αpm,n,a is injective. (ii) The diagram YQ(pm, mN)  αpm,n,a /  Y ∗ F(m(p), mn) π1  YQ(m, mN)  ιm,n,a / Y ∗ F(m, mn) is Cartesian, where the left vertical arrow is the natural projection.

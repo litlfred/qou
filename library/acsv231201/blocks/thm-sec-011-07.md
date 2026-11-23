@@ -1,0 +1,1 @@
+Any elementary diagonal of a D-ﬁnite series in d variables is a D-ﬁnite series in d −1 variables. In particular, the main diagonal of a D-ﬁnite series is a univariate D-ﬁnite function. □ 2.4 D-ﬁnite generating functions and diagonals Because many other operations on power series can be phrased as diagonals,

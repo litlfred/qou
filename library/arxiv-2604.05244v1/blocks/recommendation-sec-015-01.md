@@ -1,1 +1,0 @@
-To produce a cusp---where three saddle points coalesce simultaneously---one must fine-tune an additional external parameter (such as adding a deterministic source to the random matrix [@BleherKuijlaars2007]).

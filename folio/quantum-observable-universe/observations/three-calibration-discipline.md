@@ -1,18 +1,19 @@
-*The QOU framework admits exactly three external calibration inputs. These are the three real degrees of freedom of the first cohomology of Bring's curve, $H^1 = 2W$:*
+*The QOU framework takes exactly three external calibration inputs:*
 
-| DOF of $H^1(\text{Bring}) = 2W$ | Canonical observable | What it fixes | Numerical proxy (source) |
+| Calibration | Canonical observable | What it fixes | Numerical proxy (source) |
 | ------------------------------- | -------------- | ------------- | ------ |
-| $W$-plane **scale** ($h^0$)     | $m_e$ (leptonic mass scale) | the dimensional unit (scale) | $m_e$, CODATA (electron mass) |
-| $W$-plane **modulus** ($h^2$)   | $P_{\mathrm{skew}}^{\beta}$ (neutron $\beta$-sector bar-skew channel) | $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$; modulus pinned most precisely by $m_\mu/m_e$ (CODATA muon mass) |
-| **orthogonal class** (meson sector, $h^3$) | $P_{\mathrm{avg}}^{\pi}$ (pion-sector bar-even channel) | the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale (independent of $m_e, q_0$) | $m_\pi$, PDG (charged-pion mass) |
+| CAL-1 | $m_e$ (leptonic mass scale) | the dimensional unit (scale) | $m_e$, CODATA (electron mass) |
+| CAL-2 | $P_{\mathrm{skew}}^{\beta}$ (neutron $\beta$-sector bar-skew channel) | $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$; modulus pinned most precisely by $m_\mu/m_e$ (CODATA muon mass) |
+| CAL-3 | $P_{\mathrm{avg}}^{\pi}$ (pion-sector bar-even channel) | the meson scale, independent of $m_e$ and $q_0$ ([meson scale independence](#prop:meson-scale-independence)) | $m_\pi$, PDG (charged-pion mass) |
 
-*For every confined hadronic state $X$, the mass functional defined by the algebraic-side chain ([categorical action](#def:categorical-action), [Frobenius pairing](#def:frobenius-pairing), [mass identity](#def:mass-identity), [mass-endomorphism tower](#prop:mass-endomorphism-tower), [Jones–Markov trace](#thm:jones-markov-trace)) factors as*
+**Definition (calibrated substrate parameter).** Let $r = \mathrm{Vol}(4_1)/(m_\mu/m_e)$, where $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ is the hyperbolic volume of the figure-eight knot. Since $0 < r < 1$, the equation
 
 $$
-  \mathfrak{m}(X) \;=\;
-  m_e^{\,a(X)}\;m_\pi^{\,c(X)}\;Q_X(q_0),
-  \qquad
-  Q_X(q) \in \mathbb{Q}(q),
+  \bigl(1 - q^{-1}\bigr)^{2} = r
 $$
 
-*with non-negative integer exponents $a(X), c(X)$ determined by the (co)homological grading of the observable $X$. Concretely: $a$ counts mass-scale insertions ($H^0$ — the $W$-plane scale), $c$ counts meson-sector insertions (the orthogonal $m_\pi$ class; $c = 0$ in the baryon sector), and $q_0$ is fixed by the lepton ratio $m_\mu/m_e$ (the $H^1$ $W$-plane modulus, CAL-2 = $P_{\mathrm{skew}}^{\beta}$). The parameter $\mathfrak{Q}_\beta$ is the CAL-2 proxy. It represents the experimental face of the modulus that CAL-2 pins. It is not a separate dimensional mass-formula factor.*
+has exactly one root $q > 1$, namely $q = 1/(1 - \sqrt{r})$. The **calibrated substrate parameter** $q_0$ is this root. In terms of the [quantum Planck constant](#def:quantum-planck-constant) $\hbar_q = 1 - q^{-1}$, the defining equation reads $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_{q_0}^{2}$.
+
+This is the definition of $q_0$ in the ideal layer. In the Physical-Observations layer, $q_0$ may instead be pinned to the proton ratio $m_p/m_e$, which is measured more precisely. That is a substitution of the anchor, not a fourth calibration.
+
+The definition makes no claim about how masses depend on the three inputs. The claim that every hadronic mass factors as $m_e^{a}\,m_\pi^{c}\,Q_X(q_0)$ with $Q_X \in \mathbb{Q}(q)$ is the conjecture [Exactly three calibration inputs](#conj:three-calibration-inputs). The claim that the three inputs are the three real moduli of the polarised Hodge structure on $H^1(\text{Bring}) = 2W$ is the conjecture [The three calibrations are the three cohomological data of H¹(Bring)](#conj:calibration-cohomology-alignment).

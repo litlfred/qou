@@ -1,1 +1,0 @@
-coincides with the one defined by $\psi_*$, thus at a first stage $\EuFrak{F}_*$ does not seem to preserve informations on the potential $A$; but, in the following lines, we shall show that this is not the case.

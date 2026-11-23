@@ -3,6 +3,8 @@
  "bean": "qou-g0jn",
  "arithmetic": "exact (sympy over Q(q)); no floats",
  "q0_anchor": "none (symbolic in q)",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact sympy arithmetic over Q(q) with q a free symbol; no substrate q0 is read or substituted",
  "rows": [
   {
    "word": "V^3 = (s1 s2^-1)^3",

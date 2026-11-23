@@ -3,8 +3,7 @@
 Steps 1 and 2 are proved statements about generating functions. Steps 3 and 4 explain what the finite window of coefficients does and does not show.
 
 Write $c_k$ for the pinned ladder coefficients at the substrate
-anchor (canonical SDP extraction,
-`qbeta-decay-sdp-extended-ck.witness.json`),
+anchor (canonical SDP extraction),
 $g(u) := \sum_{k \ge 2} c_k u^k$ for the log-correction generating
 function, and $u_0 := u_{\text{substrate}} \approx 0.00852$.
 
@@ -78,7 +77,7 @@ The operational threshold
 $|\tilde u_0 - u_0|/u_0 > 10^{-6}$ is a chosen value. It sits about
 $5\times$ above the measured proton–muon shift of $u_0$, so anchor
 choice alone does not trip the test, and it is much sharper than the
-few-percent band used by the $\S 4(d)$
+one-decade window used by the $\S 4(d)$
 [direction-sanity gate](q-beta-direction-sanity-gate.md). A candidate
 that fails it is inconsistent with this conjecture, which is a
 scope-limited negative, not a structural refutation.

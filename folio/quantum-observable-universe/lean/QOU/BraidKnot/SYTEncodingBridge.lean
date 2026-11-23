@@ -147,4 +147,9 @@ theorem numStandardYoungTableaux_le_numSYT (μ : YoungDiagram) :
   unfold QOU.Mathlib.numStandardYoungTableaux numSYT
   exact Nat.card_le_card_of_injective _ toBraidKnot_injective
 
+/-- Zero-subtracted gap between the 1-indexed and 0-indexed standard tableau counts vanishes. -/
+theorem numStandardYoungTableaux_sub_numSYT_eq_zero (μ : YoungDiagram) :
+    QOU.Mathlib.numStandardYoungTableaux μ - numSYT μ = 0 :=
+  Nat.sub_eq_zero_of_le (numStandardYoungTableaux_le_numSYT μ)
+
 end QOU.BraidKnot.SYTEncodingBridge

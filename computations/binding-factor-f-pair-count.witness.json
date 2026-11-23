@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T10:56:29.677875+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T15:21:03.806358+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "non_magic_atoms_match_ZN_within_1pct",
@@ -14,7 +14,7 @@
     },
     {
       "name": "a3_mirror_split_matches_kappa_independently",
-      "computed": "0.2409161568064662638537737763265163274857776302738085645535314313637774",
+      "computed": "0.240916118266236057192740980354406682354994051773197233795304165322432",
       "expected": 0.367209,
       "passed": false,
       "tolerance": "0.0001",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 29,
+  "durationMs": 30,
   "computation": "binding-factor-f-pair-count",
   "scriptFile": "binding_factor_f_pair_count.py",
-  "scriptHash": "3050714d5683",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "61fbc836b9ce",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -59,9 +60,9 @@
         "Z": 1,
         "N": 1,
         "ZN_pair_count": 1,
-        "f_AME_extracted": "1.06747108179494856359007243559",
-        "f_over_ZN": "1.06747108179494856359007243559",
-        "f_minus_ZN": "0.0674710817949485635900724355897",
+        "f_AME_extracted": "1.06747117776612512521589640216",
+        "f_over_ZN": "1.06747117776612512521589640216",
+        "f_minus_ZN": "0.0674711777661251252158964021587",
         "note": "= Z·N (exact, single p-n bond)"
       },
       {
@@ -69,9 +70,9 @@
         "Z": 1,
         "N": 2,
         "ZN_pair_count": 2,
-        "f_AME_extracted": "2.54931604060713368697156331888",
-        "f_over_ZN": "1.27465802030356684348578165944",
-        "f_minus_ZN": "0.549316040607133686971563318876",
+        "f_AME_extracted": "2.54931549959343905608780063686",
+        "f_over_ZN": "1.27465774979671952804390031843",
+        "f_minus_ZN": "0.549315499593439056087800636858",
         "note": "+nn-pair excess (no Coulomb)"
       },
       {
@@ -79,9 +80,9 @@
         "Z": 2,
         "N": 1,
         "ZN_pair_count": 2,
-        "f_AME_extracted": "2.30839988380066742311778954255",
-        "f_over_ZN": "1.15419994190033371155889477127",
-        "f_minus_ZN": "0.308399883800667423117789542549",
+        "f_AME_extracted": "2.3083993813272029988950596565",
+        "f_over_ZN": "1.15419969066360149944752982825",
+        "f_minus_ZN": "0.308399381327202998895059656504",
         "note": "+pp-pair excess (Coulomb-suppressed)"
       },
       {
@@ -89,9 +90,9 @@
         "Z": 2,
         "N": 2,
         "ZN_pair_count": 4,
-        "f_AME_extracted": "6.74818399863401744608118815289",
-        "f_over_ZN": "1.68704599965850436152029703822",
-        "f_minus_ZN": "2.74818399863401744608118815289",
+        "f_AME_extracted": "6.74818147065914349554518469891",
+        "f_over_ZN": "1.68704536766478587388629617473",
+        "f_minus_ZN": "2.74818147065914349554518469891",
         "note": "doubly-magic doubling (N=Z=2)"
       },
       {
@@ -109,9 +110,9 @@
         "Z": 3,
         "N": 3,
         "ZN_pair_count": 9,
-        "f_AME_extracted": "6.08387176234064832176512839189",
-        "f_over_ZN": "0.675985751371183146862792043544",
-        "f_minus_ZN": "-2.91612823765935167823487160811",
+        "f_AME_extracted": "6.0838503127379155671281579784",
+        "f_over_ZN": "0.675983368081990618569795330933",
+        "f_minus_ZN": "-2.9161496872620844328718420216",
         "note": "≈ Z·N (within 1%, non-magic)"
       },
       {
@@ -126,9 +127,9 @@
       }
     ],
     "a3_mirror_split": {
-      "T_excess_over_ZN": "0.549316040607133686971563318876",
-      "He3_excess_over_ZN": "0.308399883800667423117789542549",
-      "kappa_Coulomb": "0.240916156806466263853773776327",
+      "T_excess_over_ZN": "0.549315499593439056087800636858",
+      "He3_excess_over_ZN": "0.308399381327202998895059656504",
+      "kappa_Coulomb": "0.240916118266236057192740980354",
       "note": "κ=0.367 matches binding-factor-f-decomposition independently"
     },
     "finding": "f(Z,N) ≈ Z·N for D (exact), 6Li (+0.7%), 7Li (−0.3%) — three independent points hit the integer pair-count with zero free parameters. Deviations: A=3 mirror (κ=0.367 Coulomb), ⁴He magic doubling, 5Li valence. Leading-order f = Z·N · (1 + shell + mirror). Derived-candidate lead — nothing fitted, nothing wired."

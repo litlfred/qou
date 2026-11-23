@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0503227v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "4e83adfdef82710343324fc2e1ddd94b3ec5a1b2165a96ddd0a5848abc192f59",
   "file": "0503227v2.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We recommend [@Sa] as an introduction to representation theory of the symmetric group.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It is a discrete analog of eigenvalue ensembles from random matrix theory and like Jack polynomials [@GHJ], should also be relevant to the moduli space of curves.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-central-limit-theorem-for-jack-measure.md",
-   "section_title": "Central limit theorem for Jack measure",
-   "pages": "9-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Also note that $C_{\\alpha}$ must depend on $\\alpha$, since by Corollary 5.3 of [@F2], the random variable $T_{n,\\alpha}$ has mean 0, variance 1, and third moment $\\frac{\\alpha-1}{\\sqrt{\\alpha {n \\choose 2}}}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-central-limit-theorem-for-jack-measure.md",
-   "section_title": "Central limit theorem for Jack measure",
-   "pages": "9-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,0 +1,1 @@
+Recall for comparison that if A is purely even then det (A) := det(Ai1 — A12A551 Aor) det (Ave). The Berezinian has the following simpler description. Any matrix A as above admits a unique factorization A = A,ApA_, where A;, Ao, A~ are as above, and

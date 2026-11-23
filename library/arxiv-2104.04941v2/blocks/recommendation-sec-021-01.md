@@ -1,1 +1,0 @@
-As in \cref{def:gluing-configurations}, only two copies of $\Conf_3^{\ast}(G/K)$ are necessary to define an element in $\Conf_4^{\ast}(G/K)$, so any two copies of $Q$ should determine all the coordinates of the tetrahedron.

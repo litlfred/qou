@@ -1,1 +1,0 @@
-For given permutations $\sigma_1,\sigma_2\in S_l$ we shall consider colorings $h$ of the cycles of $\sigma_1$ (where each cycle is colored by the number of some column of $\lambda$) and of the cycles of $\sigma_2$ (where each cycle is colored by the number of some row of $\lambda$).

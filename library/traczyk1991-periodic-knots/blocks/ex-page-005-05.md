@@ -1,0 +1,1 @@
+p=5, k=3, s=2. A direct computation shows that Ty =2/8—21'° $222, 7, = — P84 PO B22 P4422, T= 148 — 94 15? +4 — 1°, and there- fore Lo=217'?—2171°+21-8, H,=21-*°—21° 4. The considered equality takes the form

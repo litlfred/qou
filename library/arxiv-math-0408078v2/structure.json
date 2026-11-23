@@ -1,0 +1,631 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0408078v2",
+ "source": {
+  "file": "0408078v2.pdf",
+  "sha256": "b632eb5e9b7a17536782162bf41857730899bd6386b22588bc8c7da0117ab740",
+  "bytes": 258930,
+  "pages": 27,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0408078",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "3 Apr 2009"
+  },
+  "doi": null,
+  "title": "A basis for the full Homfly skein of the annulus",
+  "authors_raw": "RICHARD J. HADJI 1 and HUGH R. MORTON",
+  "title_lines": [
+   "A basis for the full Homfly skein of the",
+   "annulus"
+  ],
+  "abstract": "A basis, denoted {Qλ,µ}, for the full Homﬂy skein of the annulus C was introduced in [18], where λ and µ are partitions of integers n and p into k and k∗parts respectively. The basis consists of eigenvectors of the two meridian maps on C; these maps are the linear endomorphisms of C induced by the insertion of a meridian loop with either orientation around a diagram in the annulus. In this paper we give an explicit expression for each Qλ,µ as the determinant of a (k∗+ k) × (k∗+ k) matrix whose entries are simple elements hn, h∗ n in the skein C. In the case p = 0 (µ = φ) the deter- minant gives the Jacobi-Trudy formula for the Schur function sλ of N variables as a polynomial in the complete symmetric functions hn of the variables, [12]. The Jacobi-Trudy determinants have previously been used by Kawagoe [6] and Lukac [10] in discussing the elements in the skein of the annulus represented by closed braids in which all strings are oriented in the same direction. Our results and techniques here form a natural extension of the work of Lukac.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220322150049-04'00'"
+  },
+  "title_raw": "A basis for the full Homfly skein of the annulus",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "A basis for the full Homﬂy skein of the annulus Introduction",
+   "outline": "The skein models",
+   "text": "A basis for the full Homfly skein of the annulus",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "A basis for the full Homfly skein of the annulus",
+   "basis": "Printed title on page 1 (R. J. Hadji and H. R. Morton); the extracted title used the fl ligature and included the first section heading",
+   "extracted_title": "A basis for the full Homﬂy skein of the annulus Introduction",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "The skein models",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The plane",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The Hecke algebras and extended variants",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The annulus",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The annulus with two boundary points",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Skein involutions",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Some basic elements in the annulus",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The meridian maps of the skein C",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Relations between C and A",
+   "page": 10,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Matrix-based calculations",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Notation",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Calculations",
+   "page": 13,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Eigenvectors of the meridian maps",
+   "page": 16,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Construction of Q,",
+   "page": 19,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Properties of the basis elements Q,",
+   "page": 23,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "(1,1)-tangle invariants",
+   "page": 25,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4862,
+   "n_words": 819,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-the-skein-models",
+   "number": null,
+   "title": "The skein models",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1108,
+   "n_words": 202,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-the-plane",
+   "number": null,
+   "title": "The plane",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 477,
+   "n_words": 91,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-the-hecke-algebras-and-extended-variants",
+   "number": null,
+   "title": "The Hecke algebras and extended variants",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1498,
+   "n_words": 279,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-the-annulus",
+   "number": null,
+   "title": "The annulus",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 1881,
+   "n_words": 358,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-the-annulus-with-two-boundary-points",
+   "number": null,
+   "title": "The annulus with two boundary points",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1075,
+   "n_words": 198,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-skein-involutions",
+   "number": null,
+   "title": "Skein involutions",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 984,
+   "n_words": 188,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-some-basic-elements-in-the-annulus",
+   "number": null,
+   "title": "Some basic elements in the annulus",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2612,
+   "n_words": 491,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-the-meridian-maps-of-the-skein-c",
+   "number": null,
+   "title": "The meridian maps of the skein C",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1759,
+   "n_words": 347,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-relations-between-c-and-a",
+   "number": null,
+   "title": "Relations between C and A",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2295,
+   "n_words": 476,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-matrix-based-calculations",
+   "number": null,
+   "title": "Matrix-based calculations",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 236,
+   "n_words": 40,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-notation",
+   "number": null,
+   "title": "Notation",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2237,
+   "n_words": 521,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-calculations",
+   "number": null,
+   "title": "Calculations",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 3407,
+   "n_words": 867,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-eigenvectors-of-the-meridian-maps",
+   "number": null,
+   "title": "Eigenvectors of the meridian maps",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 2482,
+   "n_words": 568,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-construction-of-q",
+   "number": null,
+   "title": "Construction of Q,",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 6403,
+   "n_words": 1404,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-properties-of-the-basis-elements-q",
+   "number": null,
+   "title": "Properties of the basis elements Q,",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 5037,
+   "n_words": 965,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-11-tangle-invariants",
+   "number": null,
+   "title": "(1,1)-tangle invariants",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 4178,
+   "n_words": 644,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 42531,
+  "furniture_lines_stripped": 0
+ }
+}

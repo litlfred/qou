@@ -1,1 +1,0 @@
-Typically, this is referred to as ``fine tuning'' because the existence of this scale---at odds with the perfectly natural assumption that pion exchange should set the lowest energy scale---implies that different contributions from quarks and gluons have to combine in just the right way to produce this scenario (see Sec.~\ref{subsec:qcdconn}).

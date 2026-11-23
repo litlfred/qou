@@ -1,1 +1,0 @@
-Generally a set of the saddle point equations (hyperbolicity consistency conditions) has several algebraic solutions, and we are not sure which solutions among them we should choose as dominant in a definition of the invariant $\Tilde{\tau}_1(K)$.

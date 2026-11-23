@@ -1,1 +1,0 @@
-Denote by $\T_{\lambda}$ for $\lambda\in\mathcal A_0$ the $\lambda$ \textit{block of} $\T$: all indecomposable summands of objects of $\T_{\lambda}$ should be of the form $\Tn i$ for $i\in W_l.\lambda$.

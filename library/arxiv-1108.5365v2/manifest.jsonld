@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.5365v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL +",
+  "title": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)",
   "contains": [
     "library/arxiv-1108.5365v2/sections/sec-front-matter",
     "library/arxiv-1108.5365v2/sections/sec-000",
@@ -78,8 +78,8 @@
       "stamp_date": "6 Sep 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,0 @@
-The categorification of this picture, then, should be a monoidal category, for which the monoidal product cannot be upgraded to a symmetric monoidal product, except on fixed subcategories indexed by the slope $\upmu$, for which we should define a symmetric monoidal product.

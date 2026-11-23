@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0110119v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Idempotents of the Hecke algebra become Schur functions in the skein of the annulus",
+  "contains": [
+    "library/arxiv-math-0110119v1/sections/sec-front-matter",
+    "library/arxiv-math-0110119v1/sections/sec-000",
+    "library/arxiv-math-0110119v1/sections/sec-001",
+    "library/arxiv-math-0110119v1/sections/sec-002",
+    "library/arxiv-math-0110119v1/sections/sec-003",
+    "library/arxiv-math-0110119v1/sections/sec-004",
+    "library/arxiv-math-0110119v1/sections/sec-005",
+    "library/arxiv-math-0110119v1/sections/sec-006",
+    "library/arxiv-math-0110119v1/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0110119v1",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Idempotents of the Hecke algebra become Schur functions in the skein of the annulus",
+      "basis": "Printed title on page 1 (S. G. Lukac); the extracted title was the arXiv stamp",
+      "extracted_title": "arXiv:math/0110119v1 [math.GT] 11 Oct 2001",
+      "corrected_on": "2026-11-18",
+      "extracted": "Idempotents of the Hecke algebra become Schur functions in the skein of the annulus"
+    },
+    "source_file": "0110119v1.pdf",
+    "source_sha256": "4904a86e8a340f598e5bd233170d906d8b5830e4481452f98b748b50f1cf76cc",
+    "pages": 17,
+    "arxiv": {
+      "id": "math/0110119",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "11 Oct 2001"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -215,20 +215,23 @@ theorem d_nonzero_preserves_prefix (S : List HeckeWord) (k : ℕ)
 
 def valleyOfStability (Z N : ℕ) : Prop := N + 1 ≥ Z
 
-/-- The NF support of a stable nucleus is prefix-closed.
+/-- The NF support of a stable nucleus is prefix-closed and has exact length
+    `A = Z + N` with `2 * Z ≤ Z + N + 1`.
     This is the key Layer 2 result. -/
 -- Ref: [leitner2026]
 theorem nf_support_prefix_closed (Z N : ℕ)
     (h_stable : valleyOfStability Z N) (h_pos : Z + N ≥ 2) :
     ∃ support : List HeckeWord,
+    support.length = Z + N ∧
+    2 * Z ≤ Z + N + 1 ∧
     IsPrefixClosed support ∧
     (∀ i, i < Z + N - 1 → [i] ∈ support) ∧
     ([] ∈ support) ∧
     (∀ w ∈ support, ∀ g ∈ w, g < Z + N - 1) := by
-  -- The standard basis {[], [0], [1], …, [A-2]} witnesses all four properties.
-  -- Prefix closure is vacuous: every element has length ≤ 1, so the
-  -- condition (length ≥ 2 → dropLast ∈ support) is never triggered.
-  refine ⟨standardBasis (Z + N - 1), ?_, ?_, ?_, ?_⟩
+  unfold valleyOfStability at h_stable
+  -- The standard basis {[], [0], [1], …, [A-2]} witnesses all properties.
+  refine ⟨standardBasis (Z + N - 1), ?_, by omega, ?_, ?_, ?_, ?_⟩
+  · rw [standardBasis_length]; omega
   · -- IsPrefixClosed: vacuously true (all elements have length ≤ 1)
     intro w hw hlen
     simp only [standardBasis, List.mem_append, List.mem_singleton, List.mem_map,
@@ -252,16 +255,19 @@ theorem nf_support_prefix_closed (Z N : ℕ)
 -- §9  Main theorem
 -- ════════════════════════════════════════════════════════════════
 
-/-- **Main Theorem**: the optimal NF of a stable nucleus is the standard basis. -/
+/-- **Main Theorem**: the optimal NF of a stable nucleus is the standard basis
+    of exact cardinality `A = Z + N` (with `2 * Z ≤ Z + N + 1`). -/
 -- Ref: [leitner2026]
 theorem optimal_nf_is_standard_basis (Z N : ℕ)
     (h_stable : valleyOfStability Z N) (h_pos : Z + N ≥ 2) :
     ∃ support : List HeckeWord,
+    support.length = Z + N ∧
+    2 * Z ≤ Z + N + 1 ∧
     IsPrefixClosed support ∧
     (∀ w ∈ support, ¬ IsI9Absorbable support w → w ∈ standardBasis (Z + N - 1)) := by
-  obtain ⟨support, h_closed, h_sing, h_nil, h_bounded⟩ :=
+  obtain ⟨support, h_len, h_val, h_closed, _h_sing, _h_nil, h_bounded⟩ :=
     nf_support_prefix_closed Z N h_stable h_pos
-  exact ⟨support, h_closed,
+  exact ⟨support, h_len, h_val, h_closed,
     optimal_from_prefix_closed (Z + N - 1) support h_closed h_bounded⟩
 
 /-- The standard basis has exactly A terms and none are absorbable. -/
@@ -321,6 +327,6 @@ theorem pp_extension_not_prefix_closed (S : List HeckeWord) (k : ℕ)
   rw [List.mem_map] at hdrop
   obtain ⟨v, _, rfl⟩ := hdrop
   -- But then w = v ++ [k] ends with k, contradicting hend
-  simp [List.getLast?_append_of_ne_nil] at hend
+  simp at hend
 
 end QOU.OptimalNF

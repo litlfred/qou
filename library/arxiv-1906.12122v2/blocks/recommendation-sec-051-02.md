@@ -1,1 +1,0 @@
-Although the chiral Lagrangian formally reduces to the pionless form~\eqref{eq:L-NN} when terms with pions and Deltas are omitted from { Eq.~\eqref{chiLag}}, one should keep in mind that the remaining LECs depend on what degrees of freedom appear in the EFT.

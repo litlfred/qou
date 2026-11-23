@@ -1,0 +1,1 @@
+There are several names in the literature for the translation functor T : twist, shift and suspension. There are also several notations: T(M) = M[1] = ΣM. In the later part of this book we shall use the notation M[k] := Tk(M) for the k-th translation.

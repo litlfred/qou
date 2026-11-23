@@ -1,0 +1,1 @@
+Assume A is a noetherian k-algebra with an Auslander dualizing complex. Then there is a step duality between the category ModfA of ﬁnitely gener- ated left A-modules and the category ModfA◦ of ﬁnitely generated right A-modules. Actually we prove a more general result involving two algebras – see T heorem

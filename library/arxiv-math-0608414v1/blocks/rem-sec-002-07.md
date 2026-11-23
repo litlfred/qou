@@ -1,0 +1,1 @@
+By (2.1), for any b > µ, and ΦD ⊂C, D ≤∞ ∥Gl∥b ≤Kµ|l| Z ∞ |dp|e|p|(µ−b) = K µ|l| b −µ (2.10) where, to avoid cumbersome notations, we write f ∈L1 b(ΦD) iﬀ∥|f|∧∥b ∈L1 b(ΦD) (2.11) (and similarly for other norms of vector functions).

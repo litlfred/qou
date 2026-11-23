@@ -1,1 +1,0 @@
-For 3-braids it is true, but from 5-braids on the non-faithfulness of the Burau representation should (in principle, modulo the evaluability of an- other invariant) make it possible to construct inﬁnite families of links with the same (for example, trivial) polynomial.

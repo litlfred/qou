@@ -1,0 +1,1 @@
+For k ≥1,deﬁne ∞  n=0 ν(n, k)qn := (1 −q)(1 −q2)(1 −q3) ∞  j=0 (−1)jq(3j2+6jk+j)/2(1 −q2j+2k+1). Then ν(n, k) is positive for all nonnegative integers n and positive integers k with (n, k) ̸= (11, 1). In particular, ν(11, 1) = 0. From Theorem 1.3, we obtain the following corollary.

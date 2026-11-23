@@ -1,1 +1,0 @@
-We should stress right away, however, that the refined calculation is *not* done in a topological 3d gauge theory or, at least, such a 3d gauge theory interpretation of the formal steps that we are going to take is not known at present.

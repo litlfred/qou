@@ -1,1 +1,0 @@
-ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES 1157 The reason why this formalism is convenient is that, for all the examples that we shall look at in this section, the limiting residue ψ(ξ) = ∞ X k=0 ek(A) (eiξ −1)k, corresponds to a formal alphabet A which is explicit and which expresses in terms of “natural” parameters of the random model.

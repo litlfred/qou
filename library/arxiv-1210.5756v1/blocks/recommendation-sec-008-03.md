@@ -1,1 +1,0 @@
-Hence, $f\leq 2(9) - 4 = 14$, and by our indirect assumption there are at least $12$ regular triangles (of side length $\frac{\pi}{3}$) in $\mathcal{D}_{X}$ and at most two irregular ones whose union then must be a quadrilateral (of side length $\frac{\pi}{3}$).

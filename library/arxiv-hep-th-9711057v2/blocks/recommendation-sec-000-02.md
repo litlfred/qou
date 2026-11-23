@@ -1,1 +1,0 @@
-Based on an analysis of sum rules derived by Leutwyler and Smilga \cite{Leut92} for the inverse powers of the Dirac eigenvalues in a finite volume, Shuryak and Verbaarschot conjectured that the microscopic spectral density should be a universal quantity which depends only on global symmetries, the number of flavors $N_f$, and the topological charge $\nu$.

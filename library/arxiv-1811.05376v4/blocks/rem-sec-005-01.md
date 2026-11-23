@@ -1,0 +1,1 @@
+The invariance of (49) under Neumann moves is proved by Gukov and Manulescu in [28]. We recall that the principal value v.p. is deﬁned such that for every suﬃciently small ϵ > 0 we have v.p. I |z|=1 = 1 I |z|=1+ϵ + I |z|=1−ϵ ! .

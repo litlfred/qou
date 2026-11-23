@@ -1,1 +1,0 @@
-These interactions {do not necessarily involve derivatives, but must be} proportional to powers of the small parameters $\bar m/\MQCD$, $\varepsilon$ and $e$, as well as the coefficients of higher-dimensional operators (including violations of parity, time-reversal, and possibly baryon-number and Lorentz invariance{)}.

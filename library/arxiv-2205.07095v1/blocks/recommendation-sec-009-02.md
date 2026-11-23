@@ -1,1 +1,0 @@
-If the vertex did not have edges, then operation $\int (dy)^l K(x_1;\{y\}_1^l)$ does not ensure that it belongs to the set $\mathcal{D}(\eta; \gamma)$, and such a diagram should be reduced.This is ensured by the presence of a similar contribution in the second line of the formula [\[final2\]](#final2){reference-type="eqref" reference="final2"}.

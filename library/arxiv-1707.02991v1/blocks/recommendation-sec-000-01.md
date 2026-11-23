@@ -1,1 +1,0 @@
-By standard arguments [4, 14, 15], BPS states in brane systems – in particular those describing knots – should have a description in terms of supersymmetric quantum mechanics on their world-volume, which however has not been identiﬁed to date.

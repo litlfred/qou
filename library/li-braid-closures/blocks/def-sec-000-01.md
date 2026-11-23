@@ -1,0 +1,1 @@
+A splitting of a link L is a manifold B ⊂S3\L such that B is homeomorphic to S2 and L intersects both connected components of S3 \ B. Informally, this occurs exactly when L can be separated into two rigid components that can be moved arbitrarily far away from each other without disturbing isotopy classes.

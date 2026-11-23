@@ -3,7 +3,7 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:qou-obstruction-reduction",
   title:
-    "Conditional on the Wigner axiom: the obstruction is the Euler characteristic of the base",
+    "Conditional on the Wigner-axiom inputs: the obstruction is a single integer $\\chi_A$",
   lean: { ref: "qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction",
     validation: "not_checked",
   },
@@ -24,6 +24,11 @@ export default theorem({
   ],
   cites: ["yekutieli2010", "brown-zhang-2008", "feng-tsygan-1991", "hadfield-krahmer-2005", "weibel1994"],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-22",
+      body: "**Statement restated 2026-11-22 to what the Lean proves (owner ruling, round-trip pass 3).** The four hypotheses (duality, rigidity, Kummer vanishing, trace) are now listed explicitly: they are the fields of `QouObstructionReductionContext`, and the conclusions follow from them in one step each, so the theorem is a repackaging of its hypotheses rather than a derivation of them. The former part (a) identification of the integer with χ_eu(M_0) = 2 − 2g(M_0) is no longer claimed in the statement; the Lean proves nothing about M_0. Found by the blind round-trip audit (docs/audits/2026-11-22-roundtrip-blind-audit-pass3.md, block P07).",
+    },
     {
       kind: "status",
       date: "2026-09-15",

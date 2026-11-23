@@ -1,0 +1,1 @@
+The torsion of the long exact sequence in homology associated to the pair (EL, ∂EL), in which homology groups are endowed with the distinguished bases given in Equation (39), is equal to (−1)b(b−1)/2.

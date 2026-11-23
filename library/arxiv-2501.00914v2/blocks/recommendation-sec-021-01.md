@@ -1,1 +1,0 @@
-However, we can combine Proposition~\ref{prop:casson-t2n} with work of Baker--Motegi \cite{baker-motegi-twist} on L-space satellites to show that any other knot whose knot Floer homology agrees with that of $T_{2,2g+1}$ must be hyperbolic.

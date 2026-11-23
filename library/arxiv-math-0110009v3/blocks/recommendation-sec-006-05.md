@@ -1,1 +1,0 @@
-Alternatively, after rotational symmetrization f and f must vanish on these spheres, and the inequalities on their values then imply that they must have vanished before symmetrization (the average of nonnegative values vanishes if and only if the values all do).

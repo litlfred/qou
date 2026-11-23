@@ -1,1 +1,0 @@
-Conclusions and outlook The NUBASE2020 evaluated nuclear data library contains the recommended values for the basic nuclear physics prop- erties for all known nuclei, such as mass excess, excitation 030001-13 Chinese Physics C Vol.

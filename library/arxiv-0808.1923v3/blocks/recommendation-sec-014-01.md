@@ -1,1 +1,0 @@
-That we do not achieve a bijection or an equivalence of 2-categories is due to the fact that the category of bibundles with twisted connections -- as defined in \cite{aschieri} -- oversees a class of morphisms, which in principle should be allowed and arise naturally from the theory of transport functors.

@@ -1,1 +1,0 @@
-Analogous to the case of the vector multiplet one should begin with off shell hypermultiplets $(H^s_i, \psi^s, F_i^s)$ which break up into the $Z_2$ parity even multiplets $(H^1_1, \psi_R^1, F_1^1)$, $(H_2^2, \psi_L^2, F_2^2)$ and the $Z_2$ parity odd multiplets $(H_2^1, \psi_L^1, F_2^1)$, $(H^2_1, \psi_R^2, F^2_1)$.

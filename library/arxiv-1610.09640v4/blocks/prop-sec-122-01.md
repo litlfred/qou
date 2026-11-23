@@ -1,0 +1,1 @@
+Assume the ring A admits a noetherian connected ﬁltration F. Then: (1) The Rees ring ˜A := ReesF (A) is a noetherian connected graded ring, and ˜A is a derived graded-pseudo-ﬁnite complex over ˜Aen. (2) The ring A is noetherian, and A is a derived pseudo-ﬁnite complex over Aen.

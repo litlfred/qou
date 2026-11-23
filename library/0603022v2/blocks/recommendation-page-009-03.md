@@ -1,1 +1,0 @@
-To see the advantage of this approach we should con- sider that for one of these models of quantum gravity to have a good low energy limit it must be the case that the emergent symmetries that act on the space of noiseless subsystems includes an approximate transla- tion invariance in space and time.

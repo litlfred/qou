@@ -1,1 +1,0 @@
-Now, in order to return back to the original left-handed Weyl spinor, in the usual matrix-and-column-vector formalism, we must again $(1)$ complex conjugate the spinor's components, but this time, $(2)'$ multiply by the new matrix $-\epsilon$,

@@ -13,9 +13,9 @@ $q \notin \mu_\infty$
 ([existence of substrate parameter](#thm:substrate-parameter-exists),
 Step 3) keeps each $[n]_q! \ne 0$, and the resulting series converges
 to the analytic $q$-exponential
-([Taylor series of $\exp_q$](#prop:q-exponential-taylor)).  Over
+(the Taylor series of $\exp_q$, derived in the information-theory chapter).  Over
 $\mathbb{F}_p$ the hypothesis fails
-([finite-field obstruction](#rem:q-exp-finite-field-obstruction));
+(the finite-field obstruction, remarked below);
 a truncated existence result holds modulo $x^p = 0$.  Over
 $\mathbb{Q}_p$ and $\mathbb{C}_p$ existence follows from the
-Witt-vector lift ([$p$-adic $\exp_q$](#rem:q-exp-p-adic)).
+Witt-vector lift (the $p$-adic $\exp_q$, remarked below).

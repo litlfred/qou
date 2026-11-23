@@ -1,0 +1,527 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/crossing-application-chains",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/crossing-application-chains"
+  },
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:48:42.566Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:48:44.905Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:48:47.532Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:48:50.399Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:48:54.068Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:48:57.302Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:01.474Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:04.762Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:08.657Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:13.254Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:17.150Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "crossing-application-chains.md:1-9 is statement only; line 9 is a scope note; the Gödel reading lives in rem:no-goedel-closed-chains."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:20.590Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Placed in sec:qou-definition directly after prop:braiding-induced-ordering and its proof; no sibling carries (b)/(c)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:24.012Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Statement is over an arbitrary monoid G and a hom to Z; no archimedean construct, numeric q or order hypothesis."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:28.180Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "The .md has no **Proof.** body; the Lean proofs (NoClosedCausalChains.lean) are purely algebraic (omega, induction).",
+        "notes": "The lemma has no narrative proof and no prf: block; lean.ref names only not_closedChainAt_tick, i.e. part (b). Consider a short proof or a ref covering (a) and (c) (word_no_closedChainAt, closedChainAt_of_pow_eq_one)."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:31.532Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "uses[] = prop:braiding-induced-ordering, which defines the ordering in (a); B_n, writhe, S_n, H_n(q) are standard and named inline."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:34.885Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "crossing-application-chains.md:3 'This holds for every braiding.' Words carry no braiding; the clause is unexplained.",
+        "notes": "Not 16/16. (1) line 3: say why the braiding is irrelevant (ticks on words append letters; c enters only through the states). (2) line 7: introduce k ('for some k >= 0'). (3) line 1: 'closed chain' should be a non-empty chain. (4) line 9: H_n(q) is an algebra, not a monoid of states as defined in line 1; say 'the multiplicative monoid generated by the T_i in H_n(q)'. (5) no proof is given for a lemma."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:37.391Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No content repeated within the block; (a)-(c) and the coverage remark are distinct."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:39.887Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read crossing-application-chains.md:1-9 in full; no instance of this pattern."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:43.475Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read crossing-application-chains.md:1-9 in full; no instance of this pattern."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:46.893Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read crossing-application-chains.md:1-9 in full; no instance of this pattern."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:50.712Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read crossing-application-chains.md:1-9 in full; no instance of this pattern."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:54.520Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read crossing-application-chains.md:1-9 in full; no instance of this pattern."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:57.846Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read crossing-application-chains.md:1-9 in full; no instance of this pattern."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:01.388Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read crossing-application-chains.md:1-9 in full; no instance of this pattern."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:05.218Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read crossing-application-chains.md:1-9 in full; no instance of this pattern."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:08.695Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read crossing-application-chains.md:1-9 in full; no instance of this pattern."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "836113c7c8f6",
+          "ts": "9f1537c94334",
+          "lean": "11bfd6c4ef65",
+          "lean_statement": "73d639cdce62"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:12.280Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "(a)(b)(c) is a substantive case split (words / degree / finite order), not reflex cadence."
+      }
+    ]
+  }
+}

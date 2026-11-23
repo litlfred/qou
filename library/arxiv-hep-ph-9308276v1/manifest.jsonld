@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9308276v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9308276v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-9308276v1",
+  "title": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
   "contains": [
     "library/arxiv-hep-ph-9308276v1/sections/sec-front-matter",
     "library/arxiv-hep-ph-9308276v1/sections/sec-000",
@@ -34,7 +34,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-9308276v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9308276v1.pdf",
     "source_sha256": "498931b15afb3f650b39794aa3624328e154dd4ae3ee83e68564ee4b11000aff",
     "pages": 24,
@@ -45,8 +47,8 @@
       "stamp_date": "14 Aug 1993"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

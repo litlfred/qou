@@ -1,0 +1,1 @@
+A corresponding update of the results obtained on the basis of the Cottingham formula would be of high interest, also in view of the progress made in calculating electromagnetic self-energies on the lattice, but this goes beyond the scope of the present paper.

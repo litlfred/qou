@@ -1,1 +1,0 @@
-More interestingly, it must send thin homotopy classes of paths in $M$ to elements of $G$: \[ \hol \maps \xymatrix{ \bullet & \bullet \ar@/_0.5pc/[l]_{\gamma} } \quad \mapsto \quad \hol(\gamma) \in G \] It must preserve composition: \[ \hol(\gamma \delta) = \hol(\gamma) \, \hol(\delta) \] and identities: \[ \hol(1_x) = 1 \in G. \]

@@ -1,0 +1,1 @@
+For any disc u touching crit (πm), the parameterized vertically constrained moduli space of discs with point constraint preserving the level structure of the critical points is regularly cut out, i.e. eDvc u is a surjective map.

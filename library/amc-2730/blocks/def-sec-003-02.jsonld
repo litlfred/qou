@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/amc-2730/blocks/def-sec-003-02",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "kind": "definition",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "text": "def-sec-003-02.md",
+  "derivedFrom": "library/amc-2730/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/amc-2730/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.2",
+    "source_kind": "definition",
+    "claim_domain": "math",
+    "evidence_kind": "axiomatic-definition",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Definition citing [5, Theorem 2.3] in sections/sec-003-representing-knots-as-braids.md",
+    "claim_id": "amc-2730#definition:4.2",
+    "lean_status": "unformalized"
+  }
+}

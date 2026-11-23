@@ -1,1 +1,0 @@
-The fastest, if not most elegant, route to this inner product is to remember that, given an orthonormal basis $e_1, \ldots, e_n$ for ${\mathbb C}^n$, the induced basis, consisting of elements of the form $e_{i_1} \wedge \cdots \wedge e_{i_p}$, should be orthonormal in $\Lambda{\mathbb C}^n$.

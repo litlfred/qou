@@ -1,0 +1,1 @@
+□ Exercise 5.11. The simplest case of Theorem 5.3 occurs when p = 0, d = 1, and k = 0. Take φ(z) = −z2, so e−λφ(z) = eλz2, and let M be the 1-chain consisting of the imaginary axis. Which sign in the equality Z M eλz2dz = ±i r 2π λ is correct when parametrizing M by z = it for t ∈R, and which sign is correct when parametrizing M by z = −it?

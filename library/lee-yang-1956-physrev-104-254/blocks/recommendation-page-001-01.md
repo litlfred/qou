@@ -1,1 +1,0 @@
-It supplies rather an incentive for an examination of the question of parity conservation. ) To decide unequivocally whether parity is conserved in weak interactions, one must perform an experiment to deter- mine whether weak interactions differentiate the right from the left.

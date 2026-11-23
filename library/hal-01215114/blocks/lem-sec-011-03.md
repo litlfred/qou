@@ -1,0 +1,1 @@
+Let λ be a partition of n, let T be a bijective ﬁlling of 2λ and let S1 be a pair-partition matching elements of the 2j −1-th column of T with elements in its 2j-th column. If τ = (i j) with i and j in the same column of T, and S = S(T) then (−1)(S,τ(S1)) = (−1)(S,S1)+1.

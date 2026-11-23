@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "resur-and-mld-calc-d-sauzin-hal",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b33f24cc76102f330b4a4584b109dd290564aab1ceb7cd619b6ebcdfb5bd3e6e",
   "file": "Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf"
@@ -11,76 +14,77 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
+  "candidates": 2,
   "by_kind": {
-   "recommendation": 4
+   "theorem": 2
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall sometimes use the notations \u2018\u03c91\u2019 for a generator of \u2126and \u03c9k := k \u03c91, k \u2208Z (2) for the elements of \u2126.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-simple--resurgent-series.md",
-   "section_title": "Simple -resurgent series",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": "[\u00b4Eca81]",
+   "statement": "Let \u2206\u03c9 := \u2206\u03c9r \u00b7 \u00b7 \u00b7 \u2206\u03c91 for any \u03c9 = \u03c91 \u00b7 \u00b7 \u00b7 \u03c9r \u2208\u2126\u2032, (15) with the convention \u2206\u2205:= Id. Consider, for any \ufb01nitely-supported family \u03a6 = (\u03a6\u03c9)\u03c9\u2208\u2126\u2032 of elements of eRs \u2126, the operator \u03a6\u2206 / := X \u03c9\u2208\u2126\u2032 \u03a6\u03c9\u2206\u03c9 \u2208EndC( eRs \u2126). (16) Then \u03a6\u2206 / is nonzero, unless all coe\ufb03cients \u03a6\u03c9 are zero. For instance, \u2206\u03c91\u2206\u03c92 is a non-trivial operator for any \u03c91, \u03c92 \u2208\u2126\u2032, and \u2206\u03c91\u2206\u03c92\u2212\u2206\u03c92\u2206\u03c91 is a non-trivial derivation if \u03c91\u0338 = \u03c92. In a formula like (16), the family \u03a6 = (\u03a6\u03c9)\u03c9\u2208\u2126\u2032 is called an eRs \u2126-valued mould, and the right-hand side is called a mould expansion. Here, the \ufb01nite sup- port condition is needed to make sense of the summa- tion, but later, in the section on Mould ",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-005-freeness-of-the-alien-derivations-and-first-hint.md (p. 5-6)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-005-freeness-of-the-alien-derivations-and-first-hint.md",
+   "section_title": "Freeness of the alien derivations and first hint of mould calculus",
+   "pages": "5-6",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-005-freeness-of-the-alien-derivations-and-first-hint.md (p. 5-6)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-005-01",
+   "block_iri": "library/resur-and-mld-calc-d-sauzin-hal/blocks/thm-sec-005-01",
+   "claim_id": "resur-and-mld-calc-d-sauzin-hal#theorem:4",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "1), one must have cont\u03b3 b\u03d5(\u03c9 + \u03be) = a0 2\u03c0i \u03be + b\u03c7(\u03be)log \u03be 2\u03c0i + F(\u03be), (4) where a0 is a complex number and both functions b\u03c7 and F extend analytically through \u03be = 0.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-simple--resurgent-series.md",
-   "section_title": "Simple -resurgent series",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, for \u03b3 and \u03c9 as above, we can use the formula A \u03b3 \u03c9 e\u03d5 := B\u22121(a0 \u03b4 + b\u03c7) (9) to de\ufb01ne a C-linear operator A \u03b3 \u03c9 , which clearly maps eRs \u2126to itself (because \u2126is an additive group and b\u03c7, being the di\ufb00erence of two branches of b\u03d5 translated by \u03c9, must belong to bRs \u2126).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-alien-operators-alien-derivations.md",
-   "section_title": "Alien operators. Alien derivations",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Su\ufb03ce it to say that eR is an algebra containing monomials like eI\u03c3 := z\u2212\u03c3 or eJ\u03c3 := \u2212z\u2212\u03c3 log z, to be viewed as inverse Borel transforms of the singularities represented by \u2228I\u03c3 := g(\u03c3)\u03b6\u03c3\u22121, \u2228J\u03c3 := g(\u03c3)\u03b6\u03c3\u22121 log \u03b6 + g\u2032(\u03c3)\u03b6\u03c3\u22121, (51) where g(\u03c3) := 1 2\u03c0iei\u03c0\u03c3\u0393(1 \u2212\u03c3) for \u03c3 \u2208C \u2212Z>0 (the case \u03c3 \u2208Z>0 must be treated separately), as well as z\u2212\u03c3(log z)m for any m \u2208Z>0.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-relaxing-the-constraint-on-the-nature-of-singula.md",
-   "section_title": "Relaxing the constraint on the nature of singularities.",
-   "pages": "9-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "11",
+   "name": "[\u00b4Eca81]",
+   "statement": "Let A := eR (resp. eRs, resp. eRs \u2126) and N := eC (resp. C\u2217, resp. \u2126\u2032). There ex- ists a symmetral A-valued mould (U \u03c9)\u03c9\u2208N such that, for every \u03c90 \u2208N and \u03c9 = \u03c91 \u00b7 \u00b7 \u00b7 \u03c9r \u2208N, \u2206\u03c90U \u03c91\u00b7\u00b7\u00b7\u03c9r = ( U \u03c92\u00b7\u00b7\u00b7\u03c9r if r \u22651 and \u03c90 = \u03c91 otherwise. (63) Sketch of proof with A = eRs and N = C\u2217. Pick an entire function ba\u03c9 such that ba\u03c9(\u03c9)\u0338 = 0 for each \u03c9 \u2208N. The equations V \u2205(z) := 1 and, for \u03c9\u0338 = \u2205, \u0000 d dz +\u2225\u03c9\u2225 \u0001 V \u03c9(z) = \u2212V \u03c91\u00b7\u00b7\u00b7\u03c9r\u22121(z)(B\u22121ba\u03c9r)(z) (64) inductively de\ufb01ne V \u03c9(z) \u2208z\u22121C[[z\u22121]], with Borel transforms b V \u03c91(\u03b6) = ba\u03c91(\u03b6) \u03b6 \u2212\u03c91 , b V \u03c9(\u03b6) = b V \u03c91\u00b7\u00b7\u00b7\u03c9r\u22121 \u2217ba\u03c9r \u03b6 \u2212\u2225\u03c9\u2225 . (65) The resulting mould V is A-valued and symmetral. Elementary manipulations s",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-014-the-hyperlogarithmic-mould.md (p. 12-13)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-014-the-hyperlogarithmic-mould.md",
+   "section_title": "The hyperlogarithmic mould.",
+   "pages": "12-13",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-014-the-hyperlogarithmic-mould.md (p. 12-13)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-014-01",
+   "block_iri": "library/resur-and-mld-calc-d-sauzin-hal/blocks/thm-sec-014-01",
+   "claim_id": "resur-and-mld-calc-d-sauzin-hal#theorem:11",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

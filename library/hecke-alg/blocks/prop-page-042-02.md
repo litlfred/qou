@@ -1,0 +1,1 @@
+Hence, any w in the double coset G,dG, is uniquely expressible in the form vdu for some v € G, and u € Ayan, Moreover, by Proposition 3.3 again, ((w) = &(v) +£(du) since du € Y,; thus, &(w) = &(v) +4(d) + £(u), proving (i).

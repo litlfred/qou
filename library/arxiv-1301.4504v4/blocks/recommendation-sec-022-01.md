@@ -1,1 +1,0 @@
-From the AMPS argument however we know that to have a smooth horizon it must be that there are some operators just outside the horizon, which act on what we've been calling $B$, measurements of which need to be close to perfectly correlated measurements of some of the behind-the-horizon $A_n$'s.

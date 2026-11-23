@@ -1,1 +1,0 @@
-Be- cause of the fermionic nature of the field y(t), it is natural to impose the requirement that G(—t) = —G(t), i.e that the correlation functions are antisymmetric; this sin- gles out the solution G(t) = —3sign(t) (we also see from this condition that we should set G(0) = 0).

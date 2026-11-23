@@ -1,0 +1,1 @@
+The three LECs were fitted to the deuteron, triton and alpha ground-state energies, and the binding energy of the excited state, extrapolated in both UV and IR regulators, was found to be within 10\% of the experimental value.

@@ -1,0 +1,1 @@
+Let M be an abelian category and let A be a DG ring. (1) The assignments M 7→T(M) and φ 7→T(φ) are a DG functor T : C(A, M) →C(A, M). (2) The collection t := {tM}M∈C(A,M) is a degree −1 isomorphism t : Id →T of DG functors from C(A, M) to itself.

@@ -1,0 +1,1 @@
+Nuclear EFT enables us to incorporate the effects of weak and beyond-the-Standard-Model interactions in the description of low-energy hadronic and nuclear processes. {Input from Lattice QCD is particularly desirable in this context~\cite{Cirigliano:2019jig}.}

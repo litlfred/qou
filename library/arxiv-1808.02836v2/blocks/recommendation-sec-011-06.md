@@ -1,1 +1,0 @@
-It thus follows that this edge must be in the neighbourhood of the respective torus boundary components of $M^c,$ see Figure [3](#fig:obstruction1_2){reference-type="ref" reference="fig:obstruction1_2"}.

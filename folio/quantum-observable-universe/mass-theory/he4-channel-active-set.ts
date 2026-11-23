@@ -94,6 +94,7 @@ export default proposition({
     "verified-empirically",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): We load the empirical anchors from [`magic-shell-empirical-instantiation.witness.json`](computations/magic-shell-empirical-instantiation.witness.json).\n\n**(Conditional on [`he4-sdp-compositional-canonical evaluation.witness.json`](computations/he4-sdp-compositional-canonical evaluation.witness.json).)**\n\n We make this connection explicit in `rem:he4-magic-shell-fingerprint`." },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",

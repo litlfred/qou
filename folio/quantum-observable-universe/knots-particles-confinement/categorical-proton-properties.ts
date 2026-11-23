@@ -91,5 +91,7 @@ export default remark({
         "cites a computation for its choice. Bean `qou-vtlj`; adjudication " +
         "belongs to `qou-bg3w`.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([gluon ledger](#rem:gluon-stabiliser-ledger))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([gluon ledger](#rem:gluon-stabiliser-ledger))" },
   ],
 });

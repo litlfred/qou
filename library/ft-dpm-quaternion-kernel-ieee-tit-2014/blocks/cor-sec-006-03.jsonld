@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/cor-sec-006-03",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "title": "Reproducing Property",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "cor-sec-006-03.md",
+  "derivedFrom": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-006-a-riesz-representation-theorem.md (p. 3-4)",
+    "claim_id": "ft-dpm-quaternion-kernel-ieee-tit-2014#corollary:1",
+    "lean_status": "unformalized"
+  }
+}

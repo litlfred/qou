@@ -1,1 +1,0 @@
-The boson zero modes, which could carry an arbitrary charge, are S-invariant.) This means that a phenomenon ﬁrst considered in two dimensions by Cecotti et. al. [24] must be operative: as we circle around the singularity, the monopole crosses a point of neutral stability where it can decay to two other states.

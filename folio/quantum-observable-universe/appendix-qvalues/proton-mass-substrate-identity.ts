@@ -1,4 +1,4 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
 /**
  * Archimedean substrate evaluation of the proton-mass identity at
@@ -15,7 +15,7 @@ import { proposition } from "../../schema/builders";
  * specialisation: at q = q_0, with m_e and m_μ in MeV from CAL-1 /
  * CAL-2.
  *
- * Combined with prop:flavor-split-substrate (canonically-derived
+ * Combined with conj:flavor-split-substrate-mass (canonically-derived
  * Hecke-skein flavor split), this gives a full m_p + m_n derivation
  * from only (m_e, m_μ, q_0) — CAL-3 ($\\mathfrak{Q}$_β) becomes a DERIVED quantity,
  * not an input.
@@ -26,14 +26,14 @@ import { proposition } from "../../schema/builders";
  * block keeps only the archimedean substrate evaluation (per q-usage
  * audit Policy C/1 split, docs/audits/2026-06-01-q-usage-dispensation-plan.md).
  */
-export default proposition({
-  label: "prop:proton-mass-substrate-identity",
+export default conjecture({
+  label: "conj:proton-mass-substrate-identity",
   title:
     "Substrate evaluation: $m_p = 2 \\cdot m_\\mu \\cdot F_{\\mathrm{Bor}}(q_0) - 12 \\cdot m_e$ to $0.24\\,\\mathrm{ppm}$ at $q = q_0$",
   uses: [
     "conj:proton-borromean-assembly",
     "def:f-bor-borromean-observable",
-    "prop:flavor-split-substrate",
+    "conj:flavor-split-substrate-mass",
   ],
   lean: {
     // §3b-cond conditional: the theorem takes the [ProtonBorromeanAssembly]
@@ -64,5 +64,9 @@ export default proposition({
     "bernoulli-12",
     "0.24ppm",
     "two-calibration-baryon",
+  ],
+  authorNotes: [
+    { kind: "status", date: "2026-11-21", body: "Demoted from `conj:proton-mass-substrate-identity` (owner, #8526, 2026-11-21; bean qou-tm3c). The block is `conj:proton-borromean-assembly` with $2 \\cdot 6 = 12$ substituted, plus a numerical comparison. The Lean class field `assembly` is the conclusion (AGENTS.md §3b-cond item 5)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Verification script: [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)." },
   ],
 });

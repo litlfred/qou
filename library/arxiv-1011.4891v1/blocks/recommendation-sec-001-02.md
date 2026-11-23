@@ -1,1 +1,0 @@
-Note that in the idealized versions the ratio s := d/L must be very small but positive, and the normal forms depend (up to homothety) on that ratio, so that for idealized mechanical knots we should speak of mechanical s-normal forms.

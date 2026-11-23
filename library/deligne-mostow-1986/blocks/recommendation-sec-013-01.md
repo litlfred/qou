@@ -1,1 +1,0 @@
-The criterion (12.2.8) will be applied to test the arithmeticity of I\ in PU(V, ^)- (12.3) We shall need more explicit information about monodromy than given in (9.2) in order to compute %[Trr^ where 1^ is as in (12. i .2).

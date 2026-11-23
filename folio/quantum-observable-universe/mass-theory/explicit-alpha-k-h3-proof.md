@@ -1,9 +1,9 @@
-## Proof
+## Proof sketch
 
 By [spectral sequence collapse](#prop:spectral-sequence-collapse),
 $\mathrm{HH}^k(H_3(R, q)) = 0$ for $k \geq 1$ at generic $q$, so only
 $\mathrm{HH}^0 = Z(H_3) = \bigoplus_\lambda R \cdot e_\lambda$ survives.
-Per [explicit $H_3$ pages](#prop:spectral-sequence-h3-explicit), the
+Per [explicit $H_3$ pages](#conj:spectral-sequence-h3-explicit), the
 four surviving $E_\infty^{p, *}$ classes are:
 
 | $p$ | $E_\infty^{p, *}$ representative |
@@ -66,15 +66,12 @@ $$
   \alpha_3 \;=\; z\,(1 + hz) \;=\; \frac{q^3}{q^2+1}\Bigl(1 + \frac{q^2(q^2-1)}{q^2+1}\Bigr).
 $$
 
-(The form $z(1 + q^{1/2} - q^{-1/2})$ that stood here until 2026-10-10 holds
-only for the excised convention-C weight $z = \sqrt q/(q+1)$.)
+(By contrast, the special factorization $z(1 + q^{1/2} - q^{-1/2})$ holds only for the Convention-C weight $z_C = \sqrt q/(q+1)$.)
 
 $\square$
 
 canonical evaluation at $q_0 \approx 1.110$ matches the symbolic
-forms above to $\sim 10^{-16}$; values are tabulated in the witness
-file
-([`alpha-k-jones-markov-h3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/alpha/alpha-k-jones-markov-h3.witness.json)).
+forms above to $\sim 10^{-16}$.
 
 ## Alternative derivation via Wenzl-bridge
 

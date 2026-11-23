@@ -12,7 +12,7 @@ the Markov trace occupies the partition function slot and $E_0$ occupies the tem
 
 The normalized channel measure $\hat y_\lambda \chi^\lambda$ over Wedderburn blocks supplies the information-theoretic reading of that cost. It is a reading, not a second definition of the functional, and the two are not interchangeable. For the linear-chain braid word the trace ratio factorises across the inter-nucleon bonds, so the free-energy difference above becomes a sum of one logarithm per bond, and is therefore extensive in the nucleon number. The Shannon entropy of the channel measure is instead bounded by the logarithm of the number of accessible blocks; under the level-2 Wenzl restriction only the at-most-two-row partitions of $3A$ carry nonzero weight, so that bound grows like $\log A$. A quantity bounded by $\log A$ cannot be an extensive binding energy: at $^{56}\mathrm{Fe}$ the bound sits a factor of $26$ below the measured binding, and the deficit widens without limit. The functional is the trace ratio; the channel entropy describes what the reweighting costs, not how much.
 
-Two limiting statements render the information reading exact. A trace concentrated on a single one-dimensional channel has zero channel entropy and contributes zero free-energy difference. A configuration that does not oscillate between channels carries no information and no binding-scale energy. At the opposite end, the per-crossing information rate is bounded by the operational entropy $\eta_q$ of the [fibre channel capacity](#rem:fibre-channel-capacity). Thus, a braid's information content (and the free energy available to channel reweighting) grows at most linearly in its crossing number.
+Two limiting statements render the information reading exact. A trace concentrated on a single one-dimensional channel has zero channel entropy and contributes zero free-energy difference. A configuration that does not oscillate between channels carries no information and no binding-scale energy.
 
 ## The other prerequisite: the partition-function slot needs positive summands
 
@@ -41,8 +41,7 @@ without appeal to the $\log A$ entropy bound: the channel-entropy argument shows
 the information reading cannot *size* the binding, and this shows the free-energy
 reading cannot *derive* it.
 
-`QOU.Mass.FreeEnergyReadingIsSigned`;
-`the_free_energy_reading_has_no_energy_spectrum_probe.py`. The identification
+The identification
 $\mathfrak{E}_{\mathrm{bind}} = E_0 \ln(\mathrm{tr}_{\text{free}}/\mathrm{tr}_{\text{atom}})$
 is unaffected as a *definition*; what it does not have is a thermodynamic
-derivation. See [the free-energy reading](#rem:bond-log-ratio-is-a-free-energy).
+derivation.

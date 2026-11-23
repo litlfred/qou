@@ -1,0 +1,1 @@
+We let TLg;n.c/, the handlebody Temperley–Lieb algebra (in n strands and of genus g), be the algebra whose underlying free K-module is the K-linear span of all crossingless matchings of 2n points of genus g, and with multiplication given by Fg-colored concatenation of diagrams modulo circle evaluation.

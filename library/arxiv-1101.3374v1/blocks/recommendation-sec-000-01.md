@@ -1,1 +1,0 @@
-\end{center} \label{fig:borromean} \end{wrapfigure} Three-component links in the $3$-sphere $S^3$ were classified up to {\itb link homotopy} -- a deformation during which each component may cross itself but distinct components must remain disjoint -- by John Milnor in his senior thesis, published in 1954.

@@ -17,6 +17,7 @@ export default proposition({
   ],
   uses: ["prop:fivetwo-dt-spectrum-split"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Original wording: heading \"Why these are Lean-provable\"; \"are checked numerically in the sandwich compute and are not formalised here.\"" },
     {
       kind: "status",
       date: "2026-08-19",

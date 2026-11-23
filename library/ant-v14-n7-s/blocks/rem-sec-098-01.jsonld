@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s/blocks/rem-sec-098-01",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 139,
+  "pageEnd": 143,
+  "text": "rem-sec-098-01.md",
+  "derivedFrom": "library/ant-v14-n7-s/sections/sec-098",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.3",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [1] in sections/sec-098-2a-preliminaries.md",
+    "claim_id": "ant-v14-n7-s#remark:2.3"
+  }
+}

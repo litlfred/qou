@@ -1,0 +1,1 @@
+Let D = b  σ k1,1 σ k1,2 ...σ k1,n1 σ−1 σ k2,1 ...σ k2,n2 σ−1 ... σ kl,1 l ...σ kl,nl σ−1  (39) where ni ≥1 odd and ki,j ≥2 when 1 < j < ni and ki,j ≥1 when j = 1 or ni. Then mindega Λ(D) ≥−2 when l ≤2 and mindega Λ(D) = −l when l ≥3.

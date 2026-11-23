@@ -1,1 +1,0 @@
-Then there is a homomorphism of DG Lie algebras \[ f^* \otimes \phi : \Omega_{\mrm{pws}}(Y) \otimes \mfrak{g} \to \Omega_{\mrm{pws}}(X) \otimes \mfrak{h} . \] In case $\h = \g$ and $\phi$ is the identity map, we shall often write $f^*$ instead of $f^* \otimes \phi$.

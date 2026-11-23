@@ -1,7 +1,7 @@
 **Proposition (bond-count multiplicity).**
 *The canonical atomic braid is a **linear chain** of $A$ nucleon blocks
 (consecutive blocks joined by a single inter-nucleon crossing). Consequently, in
-the body-order (jet-filtration) binding [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration),*
+the body-order (jet-filtration) binding [Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$](#conj:binding-manybody-eq-jet-filtration),*
 
 - *the number of consecutive $n$-nucleon sub-clusters is $A-n+1$, and*
 - *each $n$-nucleon sub-chain carries exactly $n-1$ inter-nucleon bonds,*
@@ -26,7 +26,7 @@ the hyperbolic volume of the $n$-body sub-link (the isospin carrier).
 **Scope.** Only the *combinatorial multiplicity* is asserted here. The binding
 *magnitude* $B(K) = \mathfrak{m}_e \sum_{n} M_n\,\mathrm{Vol}_n(K)$ — which
 reproduces the tritium binding to $\approx 0.16\%$ with no fit
-(`theta_mn_bondcount_linearchain.py`) — is an *empirical* consequence that also
+ — is an *empirical* consequence that also
 multiplies in the topological link volumes and the electron scale $\mathfrak{m}_e$;
 it is **not** part of this proposition, and it carries a $\sim 3\%$ mirror-pair
 residual plus a deuteron ($\mathrm{Vol}=0$ Hopf) exception.

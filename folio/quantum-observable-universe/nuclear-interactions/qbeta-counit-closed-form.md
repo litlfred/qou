@@ -26,7 +26,7 @@ The two therefore coincide exactly on elements whose $e^-$ coordinate vanishes, 
 
 **This statement is a construction in a non-canonical frame.** Three separate points, each measured; none of them moves a number above.
 
-**It is not a counit.** A unital algebra map into a commutative ring is automatically cyclic, hence a class function. The functional here is the coordinate sum $\sigma \mapsto 1$, which is not multiplicative: pushing the Hecke relation $\sigma^2 = h\sigma + 1$ through such a map forces $h = 0$. Formalized as `QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one`. The multiplicative functional the name suggests is the augmentation $\sigma \mapsto q$, which is a different map and gives a different value on the same vector.
+**It is not a counit.** A unital algebra map into a commutative ring is automatically cyclic, hence a class function. The functional here is the coordinate sum $\sigma \mapsto 1$, which is not multiplicative: pushing the Hecke relation $\sigma^2 = h\sigma + 1$ through such a map forces $h = 0$. The multiplicative functional the name suggests is the augmentation $\sigma \mapsto q$, which is a different map and gives a different value on the same vector.
 
 **It does not descend to the algebra the canonical convention places the theory in.** Under convention D the trace ideal is the Temperley–Lieb radical, and the GNS space is $H_\infty(q)/\mathcal{N} \cong \mathrm{TL}_\infty(q)$, not $H_\infty(q)$. A functional descends to a quotient exactly when it annihilates the ideal. The augmentation annihilates $J_{(1^3)}$; the coordinate sum does not. Since $\Delta$ has a non-zero $(1^3)$ component, $\varepsilon$ assigns different values to two representatives of the same class.
 

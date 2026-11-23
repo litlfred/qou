@@ -1,1 +1,1 @@
-Assume that A is discrete.
+Assume that A is discrete. a) The functor F : Reph(A) → Rep′ h (A) acting identically on objects and morphisms with identity natural transformation Fρ,σ is a tensor ∗-functor and an equivalence. There is no unitary tensor ∗-functor between these categories unless y = w ′w−1 is a 1-cocycle. b) If A is a unitary coboundary weak quasi-Hopf algebra with respect to w and Ωw′ is positive with respect to some other w ′ satisfying c) in Def. 28.1 then Ωw = Ωw′ and Rw = Rw′.

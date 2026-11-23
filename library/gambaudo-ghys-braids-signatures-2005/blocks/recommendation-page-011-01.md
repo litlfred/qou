@@ -1,1 +1,0 @@
-In the next subsection, we shall prove the following proposition which gives a topological interpretation of the Burau representation Bt evaluated at t = −1 (which is seen as a representation B−1 from Bn in GL(n −1, R)).

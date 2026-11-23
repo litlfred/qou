@@ -1,1 +1,0 @@
-Note that vector-like quarks could also solve the tension between the diﬀerent determinations of Vus while vector like leptons have the potential to improve the global EW ﬁt. q¯q →e+e−: As CMS analyzes “non-resonant” electrons, meaning that they do not originate from the on-shell production of a new particle, NP must be heavier than the LHC energy scale.

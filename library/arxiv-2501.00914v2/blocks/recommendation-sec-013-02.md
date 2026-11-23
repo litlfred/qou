@@ -1,1 +1,0 @@
-Theorem~\ref{thm:trace-large-surgery} says that if $K$ is an L-space knot then $\hfhat_\godd(S^3_0(K),\spinc_{g-1}) \neq 0$ must be spanned by $z_{0,g-1}=F_{X^\circ_0,\spint_{0,g-1}}({\bf 1})$; but then $\hfhat_\godd(S^3_0(K),\spinc_{g-1}) \cong \F$, and fiberedness follows.

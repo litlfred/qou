@@ -1,0 +1,1 @@
+With blobs, the situation is trickier because we need to be careful with relation (4.15). Without blobs, we do not have this problem and we can treat these perfect matchings as topological objects. Forgetting isotopy, each perfect matching as above defines an element of the algebra BMWg;n.c; q; a/ by lifting crossings. Note however that we have an ambiguity coming from

@@ -79,6 +79,7 @@ from `codata_constants`.  No float64: no `float(` outside display, no
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import pathlib as _pl
 import sys as _sys
 
@@ -150,7 +151,7 @@ def main() -> int:
     n2 = 1 - u ** 2                      # the c_2 = -1 rung, structural
 
     # ---- the four bases the corpus carries --------------------------------
-    E0 = m_e / (q * (q - 1))             # order-zero E_0, as in PR #7326
+    E0 = _qbeta_e0.order_zero_scaled(m_e, q)             # order-zero E_0, as in PR #7326
     z_D = q ** 3 / (q ** 2 + 1)
     base_z1 = m_e * abs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     base_zD = abs(h ** 2 / 2 - h * z_D) * E0

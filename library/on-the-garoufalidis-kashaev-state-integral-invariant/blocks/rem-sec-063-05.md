@@ -1,0 +1,1 @@
+The balancing condition requires that the angle sum around each internal edge equals (2, 1) ∈C. This enforces a discrete flatness condition—zero holonomy around internal edges—which is essential for gluing consistency. It parallels the kernel constraints in Andersen–Kashaev [1], where vanishing holonomy ensures the state- integral is a well-defined distribution.

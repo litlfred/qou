@@ -1,0 +1,24 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "hecidem",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "60476fdc66d9e2a76a29783d1afb9745dce04b2a02d5b636b16f75f470e6dc9f",
+  "file": "hecidem.pdf"
+ },
+ "provenance": {
+  "title": "Idempotents of Hecke algebras of type A",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

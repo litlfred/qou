@@ -1,1 +1,0 @@
-While both 6Li and 10B are small nuclei, and so should in principle be modeled similarly to He or Ne / O, in this first work we model them with a Woods-Saxon distribution as only the one- and two-nucleon distributions from these more sophisti- cated nucleon configurations are available.

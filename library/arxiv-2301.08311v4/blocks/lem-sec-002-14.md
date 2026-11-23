@@ -1,0 +1,1 @@
+Given E0, ϵ > 0 there exists constants σ, c > 0 such that for every R > c and for every J holomorphic function F = (a, f) : [−R, R] × [0, 1] → (R × Z, R × Λ) satisfying the inequalities, EHor(F) ≤σ and E(F) ≤E0, we have f(s, t) ∈Bϵ(f(0, t)) for all s ∈[−R + c, R −c], t ∈[0, 1].

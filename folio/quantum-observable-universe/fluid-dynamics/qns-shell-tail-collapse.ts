@@ -16,6 +16,7 @@ export default proposition({
     "millennium-problem",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The six Lean declarations, in `QOU.FluidDynamics.PhysicalLayerLeray`: `rung_equilibrium_forced` (1), `trajectory_ladder_bounds` (2), `trajectory_tail_collapse` (3), and `rung_equilibrium_two_source`, `two_source_ladder_collapse`, `trajectory_two_source_bounds`, `multi_source_ladder_uniform` (4)." },
     {
       kind: "status",
       date: "2026-08-15",

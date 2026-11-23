@@ -1,0 +1,1 @@
+Let A, B and C be non-unital A∞-categories and suppose there is an A∞-functor Φ : A →nu-fun(B, C). To each idempotent up to homotopy ℘for Y ∈A one can canonically associate an element of nu-fun(B, ΠC).

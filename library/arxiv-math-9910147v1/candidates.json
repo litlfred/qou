@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-9910147v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1feefdb019e76ea7b036b9c89ffb7869d7c933b90dda19c30515e3d177c11522",
   "file": "9910147v1.pdf"
@@ -16,61 +19,111 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
+  "candidates": 4,
   "by_kind": {
-   "recommendation": 3
+   "remark": 4
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "explanatory": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "remark",
+   "source_kind": "remark",
    "number": null,
    "name": null,
-   "statement": "One should generalize our work to obtain explicit expressions for intertwiners of two representations in the set of principal and complementary series.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-6-conclusion.md",
-   "section_title": "Conclusion",
-   "pages": "26-26",
+   "statement": "A very important point is that $\\GPhin{X_0X_1}{Y_0Y_1}{Z_0Z_1}$ maps the algebraic tensor product of the two domains $V(X_0X_1)\\otimes V(Y_0Y_1)$ to $V(Z_0Z_1).$ As a result the sum $(\\ref{defreducedelement})$ is finite. It can be seen that there are no non zero intertwiner from $V(Z_0Z_1)$ to the algebraic tensor product $V(X_0X_1)\\otimes V(Y_0Y_1).$",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-005-3-intertwiners-associated-to-unitary-representat.md (p. 13-17)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-005-3-intertwiners-associated-to-unitary-representat.md",
+   "section_title": "Intertwiners associated to unitary representations of the quantum Lorentz group",
+   "pages": "13-17",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-005-01",
+   "block_iri": "library/arxiv-math-9910147v1/blocks/rem-sec-005-01",
+   "claim_id": "arxiv-math-9910147v1#rem-sec-005-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "remark",
+   "source_kind": "remark",
    "number": null,
    "name": null,
-   "statement": "This should as well gives non trivial relations on orthogonal polynomials.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-6-conclusion.md",
-   "section_title": "Conclusion",
-   "pages": "26-26",
+   "statement": "We will need in the next section the following identity, which can be easily proved using $(\\ref{Mformula})$. ${\\cal M}_{\\;\\;{}_{(Z_0Z_1)}}^{{}_{(X_0X_1)}{}_{(Y_0Y_1)}},$ can also be written as: $$\\begin{aligned} &&\\hskip -0.6cm {\\cal M}_{\\;\\;{}_{(Z_0Z_1)}}^{{}_{(X_0X_1)}{}_{(Y_0Y_1)}}= \\psi_1\\times \\frac{q^{Z_0-3 Z_1+Y_0-3 Y_1+X_0-3 X_1-3}(1)_{\\infty}^2(1-q^2)}{\\nu_1(2X_0\\!+\\!1)\\nu_1(-2X_1\\!-\\!1)\\nu_1(2Y_0\\!+\\!1) \\nu_1(-2Y_1\\!-\\!1)\\nu_1(2Z_0\\!+\\!1)\\nu_1(-2Z_1\\!-\\!1)}\\times\\nonumber\\\\ &&\\times \\frac{\\xi(2X_1\\!+\\!1,2Y_1\\!+\\!1,2Z_1\\!+\\!1)}{\\xi(Y_1\\!+\\!X_1\\!-\\!Z_1\\!+\\!1,X_1\\!+\\!Z_1\\!-\\!Y_1\\!+\\!1,Y_1\\!+\\!Z_1\\!-\\!X_1\\!+\\!1,X_1\\!+\\!Y_1\\!+\\!Z_1\\!+\\!",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-006-4-alternative-construction-of-intertwiners-in-te.md (p. 17-22)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-006-4-alternative-construction-of-intertwiners-in-te.md",
+   "section_title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
+   "pages": "17-22",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-006-01",
+   "block_iri": "library/arxiv-math-9910147v1/blocks/rem-sec-006-01",
+   "claim_id": "arxiv-math-9910147v1#rem-sec-006-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "remark",
+   "source_kind": "remark",
    "number": null,
    "name": null,
-   "statement": "In the sequel we shall frequently use the following notations:",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-71-formulae-on-basic-hypergeometric-functions.md",
-   "section_title": "Formulae on Basic Hypergeometric Functions.",
-   "pages": "26-28",
+   "statement": "This situation is in sharp contrast with the case of $SU_{q}(1,1)$ for $q$ real. The structure of Hopf algebra on $\\mathfrak{U}_{q}(su(1,1))$ is the same as $\\mathfrak{U}_{q}(su(2)),$ the only difference is in the definition of the star structure: $J_z^{\\star}=J_z, J_+^{\\star}=-J_-,J_-^{\\star}=-J_+.$ It is easy to classify the irreducible unitary representations, the principal unitary representation of $\\mathfrak{U}(su(1,1))$ being now easily quantized as follows: $$\\begin{aligned} &&\\hskip -1cmJ_z.e_m=m e_m\\;\\;\\;\\;\\;\\;J_+.e_m=[m-\\tau+\\epsilon]e_{m+1}\\;\\;\\;\\;\\;\\;J_-.e_m=-[m+\\tau+\\epsilon]e_{m+1}\\nonumber \\end{aligned}$$ where as usual $\\epsil",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-008-52-r-matrix-in-the-tensor-product-of-infinite-di.md (p. 24-25)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-008-52-r-matrix-in-the-tensor-product-of-infinite-di.md",
+   "section_title": "R-matrix in the Tensor Product of Infinite dimensional Representations",
+   "pages": "24-25",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-008-01",
+   "block_iri": "library/arxiv-math-9910147v1/blocks/rem-sec-008-01",
+   "claim_id": "arxiv-math-9910147v1#rem-sec-008-01"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "From the system of constraints satisfied by the coefficients $\\Lambda^{BC}_{AD}$, it is easy to show that $(\\Lambda^{BC}_{AD})^2$ is a Laurent polynomials in both variables $q^{2X_0+1}, q^{2X_1+1}.$",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-014-73-formulae-on-coefficients-lambdabc-adx-0x-1.md (p. 29-34)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-014-73-formulae-on-coefficients-lambdabc-adx-0x-1.md",
+   "section_title": "Formulae on coefficients $\\Lambda^{BC}_{AD}(X_0X_1)$",
+   "pages": "29-34",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-014-01",
+   "block_iri": "library/arxiv-math-9910147v1/blocks/rem-sec-014-01",
+   "claim_id": "arxiv-math-9910147v1#rem-sec-014-01"
   }
  ]
 }

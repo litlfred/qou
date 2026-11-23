@@ -1,0 +1,1 @@
+We have the following. (a) Every simple A-module L has a unique apex  2 ƒ. (b) If K is a field, then the simple modules L.; K/ from Lemma 2.13 have apex . (c) A simple A-module L of apex  is a simple J-module. Conversely, every simple J-module L is a simple A-module L with apex , by inflation.

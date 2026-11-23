@@ -1,1 +1,0 @@
-For our current pur- poses this argument implies that one should try to express equation (2.37) in matrix indices γδ is reversed at the r.h.s. as compared to the l.h.s., i.e. derivatives are in fact w.r.to transponed matrix L: f(X)etrLX = f( ∂ ∂Ltr )etrLX (at least for any function f(x), which can be represented as a formal seria in integer powers of X).

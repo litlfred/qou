@@ -1,1 +1,0 @@
-It should be stressed that `CPLEX` can detect if the symmetry group of an integer linear program contains the full symmetric group acting on the standard basis of ${\mathbb{R}}^n$, and this is exploited in its algorithms.

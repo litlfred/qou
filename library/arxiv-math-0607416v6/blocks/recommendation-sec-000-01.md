@@ -1,1 +1,0 @@
-Among the most noticeable progress in this direction we should mention Theorem 17 of \cite[Chap.~IX]{Le}, where Levin describes a certain class of ``regular" linear operators acting on the closure of the set of polynomials in one variable which have all zeros in the closed upper half-plane.

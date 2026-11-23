@@ -1,0 +1,1 @@
+— Let N be a pure module with slope λ < 0 and solution space V (N). Then coker(Φ −1, N) can be identiﬁed with the C-linear sub- space of (coker(φ −1, K[{e(c)}, ℓ]e(z−λ)) ⊗C V (N), consisting of the elements invariant under Γ and ∆.

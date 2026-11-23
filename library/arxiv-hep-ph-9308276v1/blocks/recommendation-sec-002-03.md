@@ -1,1 +1,0 @@
-The large $\mh$ values must be bounded in practice to the range m$^2$, p$^2 \ll \mh^2 \lsim 1$ TeV$^2$ where p$^2$ represent the available external momenta and m$^2$ the light (renormalized) particle masses (m = M$_{\rm W}$ or M$_{\rm Z}$).

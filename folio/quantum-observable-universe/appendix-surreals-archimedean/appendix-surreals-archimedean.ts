@@ -24,10 +24,10 @@ export default chapter({
       label: "sec:surreals-archimedean-algebraic",
       blocks: [
         "algebraic-core-survives",
+        "ecalle-borel-resummation",
         "analytic-obstructions",
         "analytic-obstructions-table1-data",
         "analytic-obstructions-table2-data",
-        "ecalle-borel-resummation",
         "ecalle-borel-resurgence-vocabulary",
         "habiro-tail-archimedean-action",
         "standard-part-functor",

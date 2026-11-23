@@ -1,1 +1,0 @@
-The reduction of the uncertainties of rp and rd compared to the uncertainties of these radii in the 2018 adjustment has contributed to the reduction in the uncertainty of the 2022 recommended value of R∞(Sec.

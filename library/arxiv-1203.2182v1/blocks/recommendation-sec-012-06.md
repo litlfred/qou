@@ -1,1 +1,0 @@
-Therefore, if $d_1$ and $d_{-r}$ are canceling differentials in ${\cal H }^{S^r}_{i,j,k} (K)$, then $d_{-1}$ and $d_r$ must be canceling differentials in the $\Lambda^r$-colored HOMFLY homology ${\cal H }^{\Lambda^r}_{i,j,k} (K)$.

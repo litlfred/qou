@@ -1,1 +1,0 @@
-A \emph{decoration} (on $K$) of $\rho$ is a $\rho$-equivariant assignment of a left $H$-coset to each vertex of $L$, i.e.~if $\alpha\in\pi_1(M)$ and the coset $g_eH$ is assigned to $e$, the coset assigned to $\alpha e$ must be $\rho(\alpha)g_eH$. \end{definition}

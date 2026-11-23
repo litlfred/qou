@@ -1,0 +1,1 @@
+Let πX: X × Y →X be the projection, and (abusing nota- tion) denote by πX,∗: X × Y →X and π∗ X: X →X × Y the kernels represented in D(X × X × Y) by the structure sheaf of the graph of πX. Then πX,∗and π∗ X are reﬂexively polite.

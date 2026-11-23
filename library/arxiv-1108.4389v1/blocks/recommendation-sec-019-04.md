@@ -1,1 +1,0 @@
-Similarly, the space $\mathcal{M}_{\rm SUSY}^{(\rm param)}(T_{M,\Pi})$ should not depend on the polarization $\Pi$ (or boundary triangulation, etc.) used in previous sections to define a theory $T_{M,\Pi}$.

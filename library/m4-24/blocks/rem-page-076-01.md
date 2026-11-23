@@ -1,0 +1,1 @@
+$3,.(F x J) is known to be a free module. The case of F being a torus was solved by Hoste, Kidwell and Turaev. It is calculated in [260] for a surface F with boundary. $3,.0($! x $) is calculated in [412]. A connected sum formula is given in [411].

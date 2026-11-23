@@ -1,0 +1,1 @@
+A point w € C4 is a singularity of f if f can be analytically continued to an open set O c C4 with w on its boundary but cannot be analyti- cally continued to w. The set of all singularities of f forms its singular variety Vv.

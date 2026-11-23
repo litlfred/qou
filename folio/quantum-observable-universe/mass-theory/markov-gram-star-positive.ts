@@ -12,6 +12,9 @@ export default proposition({
     "prop:frobenius-gram-matrix",
     "prop:h3-markov-wenzl-weights",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The contrast is drawn in\n[two pairings, two signatures](#rem:markov-gram-bilinear-vs-star), and n" },
+  ],
   tags: [
     "markov-trace",
     "gram-matrix",

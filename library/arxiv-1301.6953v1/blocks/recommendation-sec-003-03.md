@@ -1,1 +1,0 @@
-This effective Lagrangian should be thought of as a Lagrangian in hadron fields but all possible orders of the momenta included: possibly an infinite number of terms If symmetries are present, the Lagrangian should respect them.

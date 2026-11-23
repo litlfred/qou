@@ -1,1 +1,0 @@
-So to distinguish number system annotations in a predicate we use the prefix $?$.}: \begin{itemize} \itemsep0em \item $P'_1\coloneqq\text{?msd\_2 } a=4\mathbin{\&}b=5$ \item $P'_2\coloneqq\text{?msd\_fib } a=b+c$ \end{itemize} From the annotated predicate $P'_1$ we understand that $a,b,4,5$ should all be interpreted in $\MSD[2]$ and $=$ should be interpreted as $=_{\MSD[2]}$.

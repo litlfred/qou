@@ -1,1 +1,0 @@
-Because $\sigma_c(\phi)=\phi$ for any $c\in \mathbb{C}^*$, $\phi$ must be constant.\ $2.$ For any $f(X) \in C_K[X]$, put $\phi(f) = f(z)$, viewed as a meromorphic function of the variable $z \in \mathbb{C}^*$.

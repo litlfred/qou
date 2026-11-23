@@ -1,1 +1,1 @@
-(Prop. 2.1 in [170]) The initial term Tϕ of a primary field
+(Prop. 2.1 in [170]) The initial term Tϕ of a primary field ϕ : Vh[t, t−1] ⊗ Hfin i → Hfinj of fixed charge Vh acting between fixed irreducible representations uniquely determines ϕ. Thus the linear map ϕ → Tϕ ∈ HomG(Vh ⊗ Hi[0], Hj[0]) is faithful.

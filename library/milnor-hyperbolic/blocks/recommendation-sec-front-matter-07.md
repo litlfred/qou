@@ -1,1 +1,0 @@
-It is easy to check that Z © Z cannot be embedded as a discrete subgroup of the group of diagonal matrices, which is isomorphic to the multiplicative group C\ Hence a, and similarly /?, must map to unipotent elements of PSL2C, with eigenvalue 1.

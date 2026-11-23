@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/silver2006-knot-theory-odd-origins/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Tait’s Program",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/silver2006-knot-theory-odd-origins/blocks/prose-sec-003",
+    "library/silver2006-knot-theory-odd-origins/blocks/table-002"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/silver2006-knot-theory-odd-origins",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/silver2006-knot-theory-odd-origins",
+  "provenance": "ingested"
+}

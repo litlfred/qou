@@ -1,0 +1,1 @@
+As n →∞, the random variables eλ converge, in joint distribution, to the Airy ensemble. This is done in Section 4 using methods described in the next subsection. The result stated in Theorem 4 was independently obtained by K. Johansson in [17]. See, for example, [13] for an application of Theorem 4.

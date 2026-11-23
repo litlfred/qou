@@ -1,0 +1,1 @@
+For qn̸ = 1, the representation ρq : Bn →U(H1(X)q) is dual to the reduced Burau representation specialized to t = q. (When qn = 1, the reduced Burau representation has an extra trivial sum- mand of dimension one.)

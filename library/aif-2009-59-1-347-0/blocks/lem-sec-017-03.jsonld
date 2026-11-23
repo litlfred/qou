@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/aif-2009-59-1-347-0/blocks/lem-sec-017-03",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 31,
+  "pageEnd": 34,
+  "text": "lem-sec-017-03.md",
+  "derivedFrom": "library/aif-2009-59-1-347-0/sections/sec-017",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.8",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-017-32-q-integral-and-continuous-integral.md (p. 31-34)",
+    "claim_id": "aif-2009-59-1-347-0#lemma:3.8",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

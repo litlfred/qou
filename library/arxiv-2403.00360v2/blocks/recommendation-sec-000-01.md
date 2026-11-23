@@ -1,1 +1,0 @@
-Studying these connections further should, on the one hand, provide a dynamical framework for division algebraic descriptions of the standard model and, on the other hand, give restrictions for possible matter models which can be realized as causal fermion systems.

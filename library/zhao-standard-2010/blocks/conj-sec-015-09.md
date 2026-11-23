@@ -1,0 +1,1 @@
+(a) For all prime p ≥5 kernel βp3 has dimension k(p3) = p2(p −1)(p −2)(p −3)(p −4) . As a consequence, the upper bound of d(2, p3) produced by the standard relations is d(2, p3) ≤5p6 −2p5 −29p4 + 74p3 −48p2 + 24 . (b) The standard relations produce all the linear relations and the upper bound in (a) is sharp.

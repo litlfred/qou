@@ -1,0 +1,1 @@
+Suppose that R is a field and that d >n. Let be a partition ofn. Then, as right #-modules, (i) W orem = S>; (ii) DAgpeqe = D>. Furthermore, if js is an e-restricted partition of n then [W> : L#] = [S* : D*].

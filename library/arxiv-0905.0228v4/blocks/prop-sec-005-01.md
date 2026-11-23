@@ -1,0 +1,1 @@
+The continuous q-Hermite polynomials ˜Hn(x, s|q) deﬁned by (1.9), i.e., ˜Hn+1(x, s|q) = x ˜Hn(x, s|q) −s[n]q ˜Hn−1(x, s|q), (5.8) are the moments of the measure of the orthogonal polynomials pn(z) := Pn(z; x, −s, 0) deﬁned by the recurrence pn+1(z) = (z −xqn)pn(z) + sqn−1[n]qpn−1(z). (5.9)

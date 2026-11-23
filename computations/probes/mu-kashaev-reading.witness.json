@@ -1,0 +1,184 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T14:36:54.600226+00:00",
+  "commitSha": "29b2e0799d28ba1ca125c0d8ed5d478ee884d678",
+  "assertions": [
+    {
+      "name": "leading_term_equals_carrier",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-60",
+      "unit": "absolute",
+      "source": "N_eff*Vol/(2pi) with N_eff = 2pi/hbar_q^2 is Vol/hbar_q^2 (Lean leading_term_eq)."
+    },
+    {
+      "name": "series_matches_exact_kashaev_at_N_eff",
+      "computed": "0.00000000000000999995789326967284454826274972945191269284166341862494010911",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-12",
+      "unit": "absolute",
+      "source": "|log J_N exact - series through kappa_5| at N = floor/ceil N_eff; the gap is the kappa_6/N^6 scale (~1e-14)."
+    },
+    {
+      "name": "one_loop_term_positive_and_gt_two_thirds",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean two_thirds_lt_one_loop_4_1."
+    },
+    {
+      "name": "every_derived_term_has_wrong_sign",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "All non-constant terms and their sum are positive; the needed shift is negative."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "mu-kashaev-reading",
+  "scriptFile": "mu_kashaev_reading_probe.py",
+  "scriptHash": "fc7b8417546f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mu_kashaev_reading_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mu_kashaev_reading_probe.py"
+  },
+  "description": "Bean qou-6gf9. Reads CAL-2 m_mu/m_e = Vol(4_1)/hbar_q^2 literally as the leading term of the Andersen-Hansen/Ohtsuki log-series of the 4_1 Kashaev invariant [murakami-h2011]; leading-term matching forces N_eff = 2 pi/hbar_q^2 ~ 640.02. Every derived correction term is evaluated at the proton pin with NO adjustment. The one-loop term (3/2)log N - (1/4)log 3 = +9.42 moves m_mu UP by ~4.6e7 ppb; all five identified Ohtsuki rungs are positive and also move it UP. The measured residual needs the carrier DOWN by 211 ppb. Exact log J_N at N=640,641 matches the series to the kappa_6 scale, so the expansion is the right one at this N. Scope (b) for the class 'finite truncation of the 4_1 Kashaev log-series with non-negative rungs' (Lean kashaev_reading_excluded); CAL-2 unchanged.",
+  "parameters": {
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "m_mu_over_m_e_codata2022": "206.7682827",
+    "m_mu_over_m_e_sigma": "0.0000046",
+    "dps": "70"
+  },
+  "data": {
+    "datum": {
+      "hbar_q": "0.0990817160442585078391771175189060639852583733894630782552147",
+      "Vol_4_1": "2.02988321281930725004240510854904057188337861506059958403498",
+      "carrier_Vol_over_hbar_sq": "206.768326370673890289609586409902675938458204550957952543837",
+      "residual_ppb": "211.205864458677005718585013309386344313585373471517625026141",
+      "residual_sigma_on_ratio": "9.49362475875861077965432666868227352272846912011822536726905",
+      "needed_absolute_shift": "-0.0000436706738902896095864099026759384582045509579525438366894376"
+    },
+    "kashaev_reading": {
+      "N_eff_2pi_over_hbar_q_sq": "640.018943965708041667011774478537846375724902884744664328690",
+      "leading_term_minus_carrier": "0.0",
+      "terms": {
+        "one_loop_three_halves_logN": {
+          "absolute_shift_of_ratio": "9.69224666379309987925131062748581265401416850217811941052105",
+          "ppb_on_m_mu": "46874909.8757891703326828635168662025250738056192835187325254",
+          "cumulative_ppb_on_m_mu": "46874909.8757891703326828635168662025250738056192835187325254",
+          "over_needed_abs": "221939.480213705126275041108771477949073805810646295846097449"
+        },
+        "one_loop_const_minus_quarter_log3": {
+          "absolute_shift_of_ratio": "-0.274653072167027422848811309230631426161872639455687362933674",
+          "ppb_on_m_mu": "-1328313.07864172797174995692663280264305097866879010309664298",
+          "cumulative_ppb_on_m_mu": "45546596.7971474423609329065902333998820228269504934156358824",
+          "over_needed_abs": "-6289.18786224862658635679012009110673755144274923982095586427"
+        },
+        "kappa_1_over_N^1": {
+          "absolute_shift_of_ratio": "0.000865937606425903848107283016634947930552254314081864969780003",
+          "ppb_on_m_mu": "4187.96061091840631373350353135686149441964560529183781904434",
+          "cumulative_ppb_on_m_mu": "45550784.7577583607672466400937647567435172465960987074737014",
+          "over_needed_abs": "19.8288125482407396371457167746511825524712611961768336406158"
+        },
+        "kappa_2_over_N^2": {
+          "absolute_shift_of_ratio": "0.00000178476203477781473870394603612593036524657435891935332032808",
+          "ppb_on_m_mu": "8.63169938116280512556799172967397117714781613268996939935710",
+          "cumulative_ppb_on_m_mu": "45550793.3894577419300517656617564864174884237439148401636708",
+          "over_needed_abs": "0.0408686625551401304983211475378711587323774151050161662600877"
+        },
+        "kappa_3_over_N^3": {
+          "absolute_shift_of_ratio": "0.0000000101253179524520491781380371211230174810549355585323183205715",
+          "ppb_on_m_mu": "0.0489693858347548667859145402899183598852875507606859665929264",
+          "cumulative_ppb_on_m_mu": "45550793.4384271277648066324476710267074067836292023909243568",
+          "over_needed_abs": "0.000231856233267411605548615547784924832941735828166810607397237"
+        },
+        "kappa_4_over_N^4": {
+          "absolute_shift_of_ratio": "0.0000000000780417002592140168779196256216099472534288638275218577446842",
+          "ppb_on_m_mu": "0.000377435469102306042814720600184307047279499847800430740930603",
+          "cumulative_ppb_on_m_mu": "45550793.4388045632339089384904857473075910906764818907721572",
+          "over_needed_abs": "0.00000178705051484371472146802115121543983682083266225925736175791"
+        },
+        "kappa_5_over_N^5": {
+          "absolute_shift_of_ratio": "0.000000000000788174939337422890177384554090719399079723770836086215667541",
+          "ppb_on_m_mu": "0.00000381187463849980817965495089601815110715454478480350827234597",
+          "cumulative_ppb_on_m_mu": "45550793.4388083751085474382986654022584871088275890453169420",
+          "over_needed_abs": "0.0000000180481515196557909695291350586914853763935675141370180131177"
+        }
+      },
+      "truncation_through_kappa5_ratio": "216.186787694872571255325532333026662371470136062276269521878",
+      "truncation_through_kappa5_ppb_vs_codata": "45551014.2652675388077086947389279756854610470790366994805913"
+    },
+    "exact_kashaev_at_bracketing_integers": {
+      "640": {
+        "log_J_N_exact": "216.180623171122770964715087468430231752168970072346739065726",
+        "series_through_kappa5": "216.180623171122760964757194198757387203906220342894826372884",
+        "exact_minus_series": "0.00000000000000999995789326967284454826274972945191269284166341862494010911",
+        "exact_minus_leading": "9.41841695067444194478772060519413954593419197277104874197032"
+      },
+      "641": {
+        "log_J_N_exact": "216.506029682623483672080116202766033102294592447338907375047",
+        "series_through_kappa5": "216.506029682623473765595737595486390617740866462396531629314",
+        "exact_minus_series": "0.00000000000000990648437860727964248455372598494237574573228572988615775453",
+        "exact_minus_leading": "9.42075751495570413805911282880613450198757250698263003515994"
+      }
+    },
+    "muon_pin_effect_if_cal2_were_the_truncation": {
+      "q0_bare_muon_pin": "1.10997859564273904668179512938000175270006556102901155697405",
+      "q0_bare_minus_proton_ppb": "11.6140603426197857880046924671026890867500052098933258832092",
+      "q0_corrected_muon_pin": "1.11284303577041474693399702568128929209931928725180840873115",
+      "pin_shift_ppb": "2580626.45434800557130783058123639380094647868365407902915257",
+      "note": "Reported only; CAL-2 is NOT changed (owner 2026-11-20)."
+    },
+    "multiplicative_reading_not_derived": {
+      "rows": {
+        "kappa_tilde_1": {
+          "coefficient": "0.0882062911261928251333421747989101668350502675551582727250642",
+          "relative_with_hbarK_eq_hbar_q_sq_ppb": "865937.606425903848107283016634947930552254314081864969780003"
+        },
+        "kappa_tilde_2": {
+          "coefficient": "0.0185185185185185185185185185185185185185185185185185185185185",
+          "relative_with_hbarK_eq_hbar_q_sq_ppb": "1784.76203477781473870394603612593036524657435891935332032808"
+        },
+        "kappa_tilde_3": {
+          "coefficient": "0.0107015713476334953949655320940091908359920694979939498109758",
+          "relative_with_hbarK_eq_hbar_q_sq_ppb": "10.1253179524520491781380371211230174810549355585323183205715"
+        },
+        "kappa_tilde_4": {
+          "coefficient": "0.00840192043895747599451303155006858710562414266117969821673525",
+          "relative_with_hbarK_eq_hbar_q_sq_ppb": "0.0780417002592140168779196256216099472534288638275218577446842"
+        },
+        "kappa_tilde_5": {
+          "coefficient": "0.00864345598229526204348966382680678599370309353144363987383272",
+          "relative_with_hbarK_eq_hbar_q_sq_ppb": "0.000788174939337422890177384554090719399079723770836086215667541"
+        }
+      },
+      "note": "No corpus artifact derives an amplitude-multiplicative reading; shown so the reader can see it is excluded anyway (kappa_tilde_1*hbar_q^2 ~ +8.7e5 ppb, positive, i.e. the order-window k=2 case of MuPCarrierOrderWindow)."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "evaluates at the proton pin per the 2026-08-07 directive; the muon pin is only re-solved as a reported comparison"
+}

@@ -1,1 +1,0 @@
-If the matrices $U$ in the ensembles carry a weight $e^{-\beta\,{\mathrm{tr}}\,Q(U)}$, then the energy in the corresponding Coulomb gas must be replaced by $$H_n(\theta_0,\dots,\theta_{n-1})=-\sum_{0\le j<k\le n-1}\log | e^{i\theta_j}-e^{i\theta_k} |+\sum_{j=0}^{n-1}Q(e^{i\theta_j})$$ where $Q$ now plays the role of an external force acting on the charges.

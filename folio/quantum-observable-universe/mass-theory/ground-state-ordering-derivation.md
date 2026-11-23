@@ -47,7 +47,7 @@ $Z = 1$ it is the strict worst of all five arrangements on both
 readouts, while the sorted arrangement — which the rule reserves for
 $A \leq 3$ — is the minimiser.  The excess neutrons of the minimising
 arrangement head-pack rather than tail-pack.  Full tallies and the
-Lean-proved counterexample are in
+proved counterexample are in
 [the proposition](#prop:ground-state-ordering).
 
 ## Why the heuristic failed
@@ -73,7 +73,7 @@ in disguise: $\lambda_+(T_{pp}) = q$ and $\lambda_+(T_{nn}) = q^{-1}$
 are the braiding eigenvalues from the Hecke relation
 $(T - q)(T + q^{-1}) = 0$.  That identification is unaffected by the
 refutation; only the claim that a particular arrangement extremises
-$\Phi_q$ has been withdrawn.
+$\Phi_q$ does not apply.
 
 ## Scalability
 

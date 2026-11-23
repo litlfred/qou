@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2412.04241v2/blocks/def-sec-005-03",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "kind": "definition",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "text": "def-sec-005-03.md",
+  "derivedFrom": "library/arxiv-2412.04241v2/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.04241v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.4",
+    "source_kind": "definition",
+    "claim_domain": "math",
+    "evidence_kind": "axiomatic-definition",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper definition in sections/sec-005-15-modules-over-the-habiro-ring-of-k-indexed-by.md",
+    "claim_id": "arxiv-2412.04241v2#definition:1.4",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

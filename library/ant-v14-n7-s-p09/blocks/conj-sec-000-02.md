@@ -1,0 +1,1 @@
+Let p ∈{2, 3}. Let G be a ﬁnite group and let B be a p-block of G with nontrivial defect group D. Then |Irr0(B)σ1| = p if, and only if, D is cyclic, where Irr0(B)σ1 is the set of height zero irreducible characters in the block B that are ﬁxed under the action of σ1. We prove that Conjecture B follows from the Alperin–McKay–Navarro conjecture. In this sense,

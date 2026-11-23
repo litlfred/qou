@@ -29,7 +29,8 @@ def labelled(labels):
         lab[i-1], lab[i] = b, a
     assert lab == list(labels), "labels must close up"
     return T(M), nud
-q0 = mpf('1.1099785827513808')
+from qou_substrate.constants import Q_50_DIGIT_STR  # proton pin, 50 digits
+q0 = mpf(Q_50_DIGIT_STR)
 me = mpf('0.51099895069')
 alpha = me * 8 * catalan
 E0 = me / (q0*(q0-1))

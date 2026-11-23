@@ -1,1 +1,0 @@
-The main motivation for this chapter was the Tjon band, which states that 4He binding energy should be automatically reproduced once the remaining 3N parameter is ﬁxed by the physical 3H binding energy.

@@ -1,0 +1,1 @@
+We have τ CS(T , t) = τ CS(T , 1/t) ∈F[t±1]/(±tZ). (27) We end our discussion on the twisted 1-loop invariant with a remark which suggests that the t-deformation variable is independent from the variable m which is an eigenvalue of the meridian of an SL2(C)-representation of π1(M).

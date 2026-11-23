@@ -1,0 +1,1 @@
+We will also use a similar construction as presented in this section for cyclotomic handlebody Brauer and BMW algebras later on, so we decided to spell it out here despite Lemma 4.38. However, while the topological handlebody blob algebra is the same as the topological handlebody Temperley–Lieb algebra, this phenomena is no longer true for handlebody Brauer and BMW algebras.

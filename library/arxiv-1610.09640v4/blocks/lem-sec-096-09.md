@@ -1,0 +1,1 @@
+Let L be a compact object of D(A), let M be a DG A-module, and let {Fj(M)}j≥−1 be a ﬁltration of M in Cstr(A) such that S j Fj(M) = M. Given a morphism φ : L →M in D(A), there is an index j1 ∈N, and a morphism φj1 : L →Fj1(M) in D(A), such that φ = Q(γj1) ◦φj1, where γj1 : Fj1(M) →M is the inclusion.

@@ -1,1 +1,0 @@
-- for any injective module $I$, there should exist an exact sequence $0 \to T_m \to \dots \to T_0 \to I \to 0$, with all $T_j$ in $\operatorname{add}T$.

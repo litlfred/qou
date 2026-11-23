@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:chain-ring-comparison",
+  interprets: "conj:chain-ring-comparison",
   label: "rem:chain-ring-open-problems",
   title: "Open problems: molecular-scale $q$, Hückel's rule, heteroatoms",
   tags: [
@@ -13,7 +13,7 @@ export default remark({
     "alexander-polynomial",
   ],
   uses: [
-    "prop:chain-ring-comparison",
+    "conj:chain-ring-comparison",
     "def:substrate-parameter",
     "def:threading-link",
   ],

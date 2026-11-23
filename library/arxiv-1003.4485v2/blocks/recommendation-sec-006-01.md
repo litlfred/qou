@@ -1,1 +1,0 @@
-One should also compare the closely related work of Mackaay, Martins, and Picken \cite{MackaayPicken, MartinsPicken:2007}, and the work of Pfeiffer and Girelli \cite{Pfeiffer:2003, GirelliPfeiffer:2004}.

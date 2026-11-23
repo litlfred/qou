@@ -1,0 +1,1 @@
+The matrix of Θ acting on M(λ) in a PBW basis is q– holonomic with respect to all the coordinates of the entry and λ. Proof It’s enough to prove the statement for each Θr. The result for Θr follows from the fact that the actions of ek r, f k r on M(λ), as well as ck, are q–holonomic in k and so are all the coordinates of the matrix entries, by Propo- sition 7.4 . 7.3.2

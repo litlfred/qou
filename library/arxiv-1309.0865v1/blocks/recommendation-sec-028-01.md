@@ -1,1 +1,0 @@
-In order for this map to be well-defined, not just for crossingless matchings but also for diagrams with embedded circles, one must specialize $\ZM[x,y]$ to $\Bbbk$ under the map sending $x \mapsto a_{st}$ and $y \mapsto a_{ts}$.

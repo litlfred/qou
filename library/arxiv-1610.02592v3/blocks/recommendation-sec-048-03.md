@@ -1,1 +1,0 @@
-\begin{figure} \begin{center} \includegraphics[width = 8 cm] {\iftoggle{BW}{prime-BW}{prime}} \nota{If $S\subset M$ is non-separating, there is a simple closed curve $\alpha$ intersecting $S$ transversely in one point: here $S$ is drawn as a disc whose boundary should be collapsed to a point, and $\alpha$ is a line whose endpoints should be identified (left).

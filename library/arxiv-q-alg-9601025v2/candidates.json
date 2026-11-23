@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-q-alg-9601025v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "369b0a1a92ce67a8bfcaf6dd1ece5eb550a42562e92cad218a0a6de7a36d062f",
   "file": "9601025v2.pdf"
  },
  "provenance": {
-  "title": "arXiv:q-alg/9601025v2 25 Mar 1996",
+  "title": "The hyperbolic volume of knots from the quantum dilogarithm",
   "authors": "R.M. Kashaev\u2217",
   "arxiv": {
    "id": "q-alg/9601025",
@@ -16,31 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In principle, there should exist a quantum generalization of this invariant for the following reason.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

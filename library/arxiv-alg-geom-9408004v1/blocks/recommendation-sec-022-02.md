@@ -1,1 +1,0 @@
-This of course depends on the discrete choice of a Lagrangian basis for H3(X, Z); we do not see how to avoid this choice, so it must either be built into the axioms, or be deducible somehow from knowing the collection of all normal functions (and in particular, their monodromy).

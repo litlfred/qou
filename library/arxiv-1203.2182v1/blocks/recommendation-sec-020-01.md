@@ -1,1 +1,0 @@
-[^1]: To be more precise, there can be subtleties in the treatments of the analytic continuation [@Wit-anal], and the convergence and non-perturbative contributions like ${\cal O}(e^{\hbar})$ of the contour integrals should be discussed more carefully.

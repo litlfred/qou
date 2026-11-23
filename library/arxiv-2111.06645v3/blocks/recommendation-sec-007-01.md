@@ -1,1 +1,0 @@
-This suggests that we should look also at the constant terms of the other series as well, i.e., that we should study the functions (*generalized Kashaev invariants*) $$\begin{gathered} \label{cherries} J^{(K,\sigma)}\colon\ \mathbb Q/\mathbb Z\to \overline{\mathbb Q},\qquad J^{(K,\sigma)}(\alpha) := \Phi_\alpha^{(K,\sigma)}(0) \end{gathered}$$ for all $\sigma\in\mathcal P_K$.

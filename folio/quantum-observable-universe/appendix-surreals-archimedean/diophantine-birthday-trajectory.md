@@ -27,7 +27,7 @@ Approximability to order $p$ is invariant under a rational shift *and* takes bot
 
 ## ⚠ Two things the conjecture's framing gets wrong
 
-**One direction is already a theorem.** Liouville's theorem — a real approximable to every order is transcendental — is fully formalised, with $\sum 2^{-n!}$ as a concrete witness. Presenting the separation as wholly open overstates what is open.
+**One direction is already a theorem.** Liouville's theorem — a real approximable to every order is transcendental — is a classical theorem, with $\sum 2^{-n!}$ as a concrete example. Presenting the separation as wholly open overstates what is open.
 
 **Roth does not help, though the motivation cites it.** Roth sharpens the direction that is *already closed*: an algebraic irrational has approximation exponent exactly $2$, so approximability to any order $p>2$ already forces transcendence, improving Liouville's degree-dependent bound. It says nothing about reals that approximate *slowly*. The naive converse — that slow approximation implies algebraicity — is **false at every $p$**, since almost every real is transcendental with exponent exactly $2$.
 
@@ -75,7 +75,7 @@ $$
 
 The second conjunct is unconditional; the first is exactly Roth.
 
-**So this should not be recorded as an open conjecture.** Roth proved it in 1955. What is missing is a *formalisation*, not a proof — and the distinction matters here, because this conjecture has already carried three separate epistemic mislabelings: an "honest open state" that encoded nothing, a separation impossible as stated, and a direction already proved elsewhere.
+**So this should not be recorded as an open conjecture.** Roth proved it in 1955; it is a theorem, not an open problem — and the distinction matters here, because this conjecture has already carried three separate epistemic mislabelings: an "honest open state" that encoded nothing, a separation impossible as stated, and a direction already proved elsewhere.
 
 ⚠ A name collision makes the opposite error easy too. Searching a formal library for "Roth's theorem" *succeeds* — and returns the **additive-combinatorics** result on three-term arithmetic progressions, an unrelated theorem sharing the name. Thue–Siegel–Roth is absent, and a search by name says otherwise.
 

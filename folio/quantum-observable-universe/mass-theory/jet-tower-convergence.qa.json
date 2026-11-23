@@ -66,6 +66,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "jet-tower-convergence.lean:96 `(hr1 : r < 1)` absent from md:25-38; :157 `∃ N : ℕ, …` vs md:45 explicit ⌈…⌉",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "04883a5daa7d",
+          "ts": "cfcfb9e00dfb",
+          "lean": "c832db66dc8c",
+          "lean_statement": "188dba392379"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:08:08.073Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "evidence": "jet_tower_tail_bound proves summability and the tail bound Dmax r^(N+1)/(1-r) for 0<=r<1, |Delta n|<=Dmax; with r = hbar_q^2 this is the md bound. Hypothesis q>1/2, q!=1 gives 0<hbar^2<1 (checked)."
       }
     ],
     "proof-statement-integrity": [
@@ -2123,6 +2140,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:35.309Z",
+  "updated_at": "2026-11-16T07:08:08.073Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -2,7 +2,7 @@ The categorical action $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$ evaluated o
 
 **Observables determined by $q$ alone.**
 
-These derive from the Iwahori--Hecke algebra $H_A(q)$ evaluated at the substrate $q$, subject to the Descartes condition $\chi(A) = -6$:
+These derive from the Iwahori--Hecke algebra $H_A(q)$ evaluated at the substrate $q$, subject to the Descartes condition $\chi_{\mathrm{eu}}(M_0) = -6$:
 
 See [Table](#tbl:topology-geometry-boundary-table-data).
 

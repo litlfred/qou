@@ -1,1 +1,0 @@
-One should think of $M$ as obtained from $D$ by identifying these facets in pairs: we can picture an observer -- say, a spaceship -- floating and traveling inside $M$ by visualising it in $D$, and jumping from $f$ to $f'$ every time it crosses the interior of a facet $f$, like in the 1979 video game \emph{Asteroids}.

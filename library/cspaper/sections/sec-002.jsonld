@@ -14,11 +14,10 @@
   "pageEnd": 15,
   "contains": [
     "library/cspaper/blocks/prose-sec-002",
-    "library/cspaper/blocks/recommendation-sec-002-01",
-    "library/cspaper/blocks/recommendation-sec-002-02",
-    "library/cspaper/blocks/recommendation-sec-002-03"
+    "library/cspaper/blocks/lem-sec-002-01",
+    "library/cspaper/blocks/rem-sec-002-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cspaper",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cspaper",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cspaper/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cspaper/manifest.jsonld",
   "provenance": "ingested"
 }

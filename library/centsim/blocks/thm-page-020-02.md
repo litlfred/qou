@@ -1,0 +1,1 @@
+Assume that £ and ®.¢- do not divide Qw forr > 0. Then, the number of simple kH-modules is equal to the number of simple k’H- modules. More precisely, the map 1, @ doy :k @ Ro(k'H) = k® Ro(kH) is an isomorphism.

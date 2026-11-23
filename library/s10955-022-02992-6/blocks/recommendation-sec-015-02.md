@@ -1,1 +1,0 @@
-But — by our assumptions on the shape S—every Y ∈X has the same ﬁxed, strictly positive Lebesgue measure, thus their disjoint union must have inﬁnite Lebesgue measure, which is a contradiction to its boundedness.

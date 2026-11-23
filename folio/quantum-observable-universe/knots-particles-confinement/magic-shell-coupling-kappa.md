@@ -34,7 +34,7 @@ That single diagnosis accounts for the two independent negatives found before it
 
 The following hold independently of any physical reading, and are unaffected by the withdrawal.
 
-The bracket is the canonical balanced q-integer: $[n]_q$ as written here equals `QOU.QInteger.qIntBal`, unconditionally and including on the degenerate locus, so this definition introduces no competing q-integer convention.
+The bracket is the canonical balanced q-integer: $[n]_q$ as written here coincides with it unconditionally and including on the degenerate locus, so this definition introduces no competing q-integer convention.
 
 The denominator is a q-factorial. $[2]_q \cdot [3]_q = [3]_q!$, hence
 

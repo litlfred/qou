@@ -1,1 +1,0 @@
-Because of the $SU(2)^4$ flavor symmetry, the operators must really be part of a set of $16$ marginal operators in the tensor product of the four doublet representations of the four $SU(2)$ flavor groups.

@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0309426v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "f2aa01164d9f243c7c05ddb693e87b7dbbebfcd6830e0b527b58c07dab245b7b",
   "file": "0309426v2.pdf"
  },
  "provenance": {
-  "title": "arXiv:math/0309426v2 [math.RT] 1 Jul 2004",
+  "title": "ELEMENTARY DIVISORS OF SPECHT MODULES",
   "authors": "MATTHIAS K\u00dcNZER AND ANDREW MATHAS",
   "arxiv": {
    "id": "math/0309426",
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore, if $B$ is diagonalizable over $\\Z[q,q^{-1}]$ then one of these diagonal entries must be a unit in $\\Q[q,q^{-1}]$; that is, of the form $aq^b$ with $a,b\\in\\Z$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-diagonalizability-and-elementary-divisors.md",
-   "section_title": "Diagonalizability and elementary divisors",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In proving that certain Gram matrices $G(\\lambda)$ are divisibly diagonalizable over $\\Z[q,q^{-1}]$, we shall make use of the following simple lemma.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-diagonalizability-and-elementary-divisors.md",
-   "section_title": "Diagonalizability and elementary divisors",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then, considered as an element of $\\Z_{(2)}[q,q^{-1}]$, any resulting diagonal entry must contain the factor $(q+1)$ with exponent $2$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-7-some-counterexamples.md",
-   "section_title": "Some counterexamples",
-   "pages": "17-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -32,7 +32,10 @@ import re
 import sys
 from collections import Counter
 
-COMP = pathlib.Path(__file__).resolve().parent.parent
+HERE = pathlib.Path(__file__).resolve().parent
+COMP = HERE.parent
+sys.path.insert(0, str(HERE))
+from _source_normalise import code_only  # noqa: E402
 
 # The THREE muon-family values, to enough digits to separate them.
 #
@@ -198,16 +201,34 @@ _LOAD_WITH_PIN_PATH = re.compile(
 def _uses_muon_via_helper(text: str) -> bool:
     """True if the producer asks `load_q_50dps` for the ideal/muon pin.
 
-    Comment and docstring lines are excluded: a `# Was: load_q_50dps()`
+    Comment and docstring lines are excluded via `code_only`: a `# Was: load_q_50dps()`
     marker left by an earlier fix records the trap, it is not an instance.
     """
-    for line in text.splitlines():
-        stripped = line.strip()
-        if stripped.startswith("#") or '"""' in stripped:
-            continue
-        if _MUON_ANCHOR_ARG.search(line):
-            return True
-    return False
+    return bool(_MUON_ANCHOR_ARG.search(code_only(text)))
+
+
+def _is_direct_pinner_source(text: str) -> bool:
+    """True if `text` binds q₀ straight out of the muon-anchored pin witness without routing via `q_parameter`.
+
+    Evaluated on `code_only(text)` so a docstring explaining that the module
+    computes at the muon pin *regardless of* `q_parameter` (e.g. `derived_masses.py`)
+    does not falsely exempt the module under `ROUTES_ANCHOR`, and a comment
+    describing `d["derived_50_digit"]["q"]` in an audit does not falsely indict
+    that audit (bean qou-5li4).
+    """
+    code = code_only(text)
+    direct = (
+        PIN_WITNESS in code
+        and bool(READS_JSON.search(code))
+        and bool(re.search(r'derived_50_digit["\']\]', code))
+        and bool(re.search(r'\[\s*["\']q["\']\s*\]', code))
+    )
+    via_helper = _uses_muon_via_helper(code)
+    if not (direct or via_helper):
+        return False
+    if ROUTES_ANCHOR.search(code):
+        return False  # resolves its anchor properly in code
+    return True
 
 
 def direct_pinners() -> list[tuple[str, str]]:
@@ -228,20 +249,12 @@ def direct_pinners() -> list[tuple[str, str]]:
         if ("_deprecated" in path.parts or "fsh-guts" in path.parts):
             continue
         text = path.read_text(errors="replace")
-        direct = (
-            PIN_WITNESS in text
-            and READS_JSON.search(text)
-            and re.search(r'derived_50_digit"\]', text)
-            and re.search(r'\[\s*"q"\s*\]', text)
-        )
-        via_helper = _uses_muon_via_helper(text)
-        if not (direct or via_helper):
+        if not _is_direct_pinner_source(text):
             continue
-        if ROUTES_ANCHOR.search(text):
-            continue  # resolves its anchor properly
+        code = code_only(text)
         rel = str(path.relative_to(COMP))
         out.append((rel, bucket.get(path.stem, "UNDECLARED"), classify_intent(text),
-                    co_read_fields(text)))
+                    co_read_fields(code)))
     return out
 
 
@@ -312,8 +325,55 @@ def co_read_fields(text: str) -> list[str]:
     return found
 
 
+def _selftest() -> int:
+    """Verify docstring mentions of q_parameter do not exempt direct pinners."""
+    fails: list[str] = []
+
+    # 1. Synthetic: docstring mentioning Q_50_DIGIT_STR / q_parameter must NOT exempt a direct pinner
+    doc_denial = (
+        '"""Computes at the muon pin regardless of what q_parameter or Q_50_DIGIT_STR resolves."""\n'
+        'import json\n'
+        'd = json.load(open("q-pinning-50-digit.witness.json"))\n'
+        'q = d["derived_50_digit"]["q"]\n'
+    )
+    if not _is_direct_pinner_source(doc_denial):
+        fails.append("docstring mention of q_parameter falsely exempted a direct pinner")
+
+    # 2. Synthetic: real q_parameter import DOES exempt
+    real_routed = (
+        'from q_parameter import Q_50_DIGIT_STR\n'
+        'import json\n'
+        'd = json.load(open("q-pinning-50-digit.witness.json"))\n'
+        'q = d["derived_50_digit"]["q"]\n'
+    )
+    if _is_direct_pinner_source(real_routed):
+        fails.append("real q_parameter import was not exempted")
+
+    # 3. Synthetic: comment quoting d["derived_50_digit"]["q"] must NOT count as a direct pinner
+    comment_only = (
+        '# Always subscripts d["derived_50_digit"]["q"] from q-pinning-50-digit.witness.json\n'
+        'import json\n'
+        'x = json.load(open("other.json"))\n'
+    )
+    if _is_direct_pinner_source(comment_only):
+        fails.append("comment-only mention of derived_50_digit was counted as a direct pinner")
+
+    # 4. Live tree: derived_masses.py must be present in direct_pinners()
+    dm_path = COMP / "derived_masses.py"
+    if dm_path.exists() and not _is_direct_pinner_source(dm_path.read_text(errors="replace")):
+        fails.append("live derived_masses.py was silently exempted by its docstring")
+
+    for f in fails:
+        print(f"  FAIL  {f}")
+    print("self-test:", "PASS" if not fails else f"FAIL ({len(fails)})")
+    return 1 if fails else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--self-test", "--selftest", dest="selftest",
+                    action="store_true",
+                    help="verify prose/code separation on direct_pinners")
     ap.add_argument("--list-contradictions", action="store_true",
                     help="list only the producers declared proton that pin muon")
     ap.add_argument("--list", action="store_true",
@@ -326,6 +386,9 @@ def main() -> int:
     ap.add_argument("--json", action="store_true",
                     help="with --list, emit JSON instead of a table")
     args = ap.parse_args()
+
+    if args.selftest:
+        return _selftest()
 
     if args.list:
         wanted = {"A": "current", "B": "old", "C": "codata2022",

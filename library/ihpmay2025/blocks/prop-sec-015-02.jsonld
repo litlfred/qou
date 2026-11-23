@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ihpmay2025/blocks/prop-sec-015-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 21,
+  "pageEnd": 22,
+  "text": "prop-sec-015-02.md",
+  "derivedFrom": "library/ihpmay2025/sections/sec-015",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.2",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-015-31-quasiconformal-maps-and-beltrami-differential.md (p. 21-22)",
+    "claim_id": "ihpmay2025#proposition:3.2",
+    "lean_status": "unformalized"
+  }
+}

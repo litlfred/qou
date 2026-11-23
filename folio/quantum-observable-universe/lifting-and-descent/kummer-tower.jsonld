@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-kummer-tower",
@@ -12,7 +13,7 @@
   ],
   "label": "rem:kummer-tower",
   "kind": "remark",
-  "title": "The Kummer tower and perpetual obstruction",
+  "title": "The Kummer tower and persistence of the obstruction",
   "uses": [
     "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
   ],
@@ -21,8 +22,7 @@
     "kummer",
     "filtration",
     "obstruction",
-    "euler-characteristic",
-    "complementary-subgroup"
+    "euler-characteristic"
   ],
   "text": "kummer-tower.md",
   "provenance": "authored"

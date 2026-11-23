@@ -1,1 +1,0 @@
-It should be noted that earlier authors, [8], [13], [14], were quite close to these results, but required a second ladder system in order to build Q (and incidentally also all of the isospin down type states).

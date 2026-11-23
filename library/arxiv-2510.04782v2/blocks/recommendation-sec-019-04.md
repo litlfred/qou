@@ -1,1 +1,0 @@
-By definition, $\fil_\Nn^n\W\deRham_{\ov R_\infty/\IF_p}$ is the fibre of $$\W\deRham_{\ov R_\infty/\IF_p}\overset{\phi}{\longrightarrow}\W\deRham_{\ov R_\infty/\IF_p}\longrightarrow \W\deRham_{\ov R_\infty/\IF_p}/p^n\,,$$ so this composition must be surjective for all $n$.

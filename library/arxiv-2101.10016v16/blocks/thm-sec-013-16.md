@@ -1,0 +1,1 @@
+Let A be an unitary discrete weak Hopf algebra. Then for every C ∗ - representation ρ, the invertible operator Fρ := ρ(Kω∗) is positive. Therefore ρc becomes a conjugate of ρ in Rep+(A) with inner product (ξ, η) = (η, Fρξ).

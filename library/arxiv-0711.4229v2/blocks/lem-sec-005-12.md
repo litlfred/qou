@@ -1,0 +1,1 @@
+Let Vλ be a typical module and let Vλ′ be any simple weight module with highest weight λ′. We have S′(Vλ, Vλ′) = q(λ+1−N)(λ′+1−N) {N(λ′ + 1 −N)} {λ′ + 1 −N} , where {N(λ′+1−N)} {λ′+1−N} is a Laurent polynomial in qλ′.

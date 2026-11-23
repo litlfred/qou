@@ -1,1 +1,0 @@
-To construct $T_M$, we must choose an oriented 3-manifold $M$, an ideal triangulation $M = \bigcup_{i=1}^N\Delta_i$ of $M$ (which doesn't matter in the end), and a polarization $\Pi$ for the symplectic space $\mathcal{P}_{\partial M}$ of flat connections on the boundary $\partial M$ (which does matter).

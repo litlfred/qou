@@ -1,0 +1,1 @@
+Suppose F, G : K →L are triangulated functors between trian- gulated categories, and η : F →G is a morphism of triangulated functors. Let L α−→M β−→N γ−→T(L) be a distinguished triangle in K. If ηL and ηM are isomor- phisms, then ηN is an isomorphism.

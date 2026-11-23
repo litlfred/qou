@@ -1,1 +1,0 @@
-∙ In R3 , conditions (1) and (2) characterize the Green's operator, because the difference Gr1(f) — Gr2(f) between two candidates for the Green's operator is a harmonic function which goes to zero at infinity, and hence must be identically zero.

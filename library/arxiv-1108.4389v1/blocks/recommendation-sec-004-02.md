@@ -1,1 +1,0 @@
-corresponding to the internal, vertical edge of the bipyramid; it should be used as a symplectic moment map to reduce $\mathcal{P}_{\{\partial\Delta_i\}}$ to the 4-dimensional phase space $\mathcal{P}_{\partial M}=\mathcal{P}_\mathcal{C}$.

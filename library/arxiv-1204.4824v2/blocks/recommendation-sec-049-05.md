@@ -1,1 +1,0 @@
-Informally speaking, the $\gamma^{n}_\wnet$ should be the charges of finite webs which can appear inside of $\wnet$ when $\wnet$ degenerates; said otherwise, the $\gamma^{n}_\wnet$ label faces of the boundary of the cell in $X$ containing $\wnet$.

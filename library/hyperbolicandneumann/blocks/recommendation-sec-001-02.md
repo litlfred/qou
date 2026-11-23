@@ -1,1 +1,0 @@
-We should mention that u and v can be deﬁned invariantly, without using any triangulation, as follows: the deformed hyperbolic structure on M corresponds to a homomorphism ρ : Γ →PSL2(C) near to the inclusion map, and then u and v are simply the logarithms of the ratios of the eigenvalues of the images under ρ of the meridians and longitudes, respectively.

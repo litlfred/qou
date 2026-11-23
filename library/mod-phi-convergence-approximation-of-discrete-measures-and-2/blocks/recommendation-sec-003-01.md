@@ -1,1 +1,0 @@
-The precise hypotheses on the convergence ψn →ψ will be made explicit when needed; typically, we shall assume it to occur in some space C r(Td) endowed with the norm ∥f∥C r = sup |α|⩽r sup ξ∈Td |(∂αf)(ξ)|.

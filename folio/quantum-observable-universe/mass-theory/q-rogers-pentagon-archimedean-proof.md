@@ -21,8 +21,8 @@ $\log_q(x) = \sum_n (-1)^{n+1}(x-1)^n / [n]_q$ generalises the
 classical $\log$. The proposed identity (R) is the natural
 q-deformation: $\log \to \log_q$.
 
-**Numerical evidence** at $q_0 \approx 1.110$ (witness:
-[`pentagon-reduction-li2q.witness.json`](https://github.com/litlfred/qou/blob/main/computations/pentagon-reduction-li2q.witness.json)):
+**Numerical evidence** at $q_0 \approx 1.110$ (recorded in the
+[pentagon-reduction computation](https://github.com/litlfred/qou/blob/main/computations/pentagon-reduction-li2q.witness.json)):
 
 | $(u, v)$ | bare LHS−RHS of (P) | classical $\log^2$ err | q-$\log_q^2$ err | improvement |
 |---|---:|---:|---:|---:|

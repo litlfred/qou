@@ -1,1 +1,0 @@
-Note that, for t = i = x, the value 49 of a single circle in the homfly skein is 2. b c c a c d Figure 2.8.3 Smoothing all the 3-boxes leads to a single negatively oriented circle so we must divide the ﬁnal partition function by 2.

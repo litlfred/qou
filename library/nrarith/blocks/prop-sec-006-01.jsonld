@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/nrarith/blocks/prop-sec-006-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 29,
+  "pageEnd": 30,
+  "text": "prop-sec-006-01.md",
+  "derivedFrom": "library/nrarith/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7.1",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-006-7-arithmeticity-of-chain-links.md (p. 29-30)",
+    "claim_id": "nrarith#proposition:7.1",
+    "lean_status": "unformalized"
+  }
+}

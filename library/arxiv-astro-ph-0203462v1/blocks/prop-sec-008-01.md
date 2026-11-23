@@ -1,0 +1,1 @@
+In contrast, the only other metal-poor stars (4 halo stars with $-2.15\leq$\[Fe/H\]$\leq -1.3$ dex) in which it was observed so far (Crawford et al. [@crawford98]) demonstrated a mild \[Ag/Fe\] enhancement, in agreement with the mild enhancement of the second r-process peak elements in these stars.

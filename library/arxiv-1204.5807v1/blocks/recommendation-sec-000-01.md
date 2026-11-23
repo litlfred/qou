@@ -1,1 +1,0 @@
-One should also mention that the Verlinde categories can be also constructed from vertex operator algebras related to affine Kac-moody algebras, see [@BK; @Hu; @HuL; @KaLu] and references therein; the comparison of these two approaches is highly non-trivial.

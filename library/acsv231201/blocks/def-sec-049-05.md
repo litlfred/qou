@@ -1,0 +1,1 @@
+Suppose o = (xo, yo) is a critical point where O,(o) # 0, so that we can parametrize y = y(x) in a neighborhood of o in V. The degree of degeneracy of Q at a is the integer k such that there is a series expansion

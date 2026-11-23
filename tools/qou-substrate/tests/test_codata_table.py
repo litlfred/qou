@@ -110,3 +110,15 @@ def test_production_q_is_unchanged_by_the_correction():
     regeneration and that must be a deliberate, announced act.
     """
     assert repr(constants.Q) == "1.1099785827513808"
+
+
+def test_two_term_proton_pin_is_a_comparison_not_the_default():
+    """Owner ruling 2026-11-20 ("Revert to 1-term default", PR #8554): the
+    default proton pin stays the ONE-TERM identity; the two-term pin
+    (m_p^QCD + M_p^QED) is exposed only as a named comparison. Both strings
+    are asserted so neither the default nor the comparison can drift, and the
+    derived pins must satisfy their own identities."""
+    assert constants.Q_50_DIGIT_STR.startswith("1.10997858275138080759166909561076")
+    assert constants.Q_PROTON_TWO_TERM_50_DIGIT_STR.startswith(
+        "1.10997859515088599908756520359868")
+    constants.check_proton_pin_self_consistency(40)

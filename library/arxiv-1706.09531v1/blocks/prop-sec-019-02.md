@@ -1,0 +1,1 @@
+Observation of a large branching ratio of the (µ+K◦)-mode (compared to the (νK+)-mode) of (30–50)% (say) would be a clear signal for the relevance of the neutrino-mass related new d = 5 operators for proton decay, in the context of a SUSY SO(10) or string-G(2, 2, 4) model in 4D.

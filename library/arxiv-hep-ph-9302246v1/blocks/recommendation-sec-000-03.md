@@ -1,1 +1,0 @@
-As an application, we shall then predict the decay rates for the transitions $V \to \pi \gamma$, $V \to \pi \pi \pi$, $V \to \pi \pi \gamma$, $V \to V' \gamma$, $V \to V' \pi$, $A \to \pi \pi \pi$, $A \to \pi \gamma$, $A \to V \pi$ and $A \to V \gamma$.

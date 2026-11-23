@@ -1,0 +1,1 @@
+tells us that every injective A-module I can be written as a direct sum (13.2.16) I ∼= M p∈Spec(A) J(p)⊕µp for a collection of cardinal numbers {µp}p∈Spec(A), called the Bass numbers. General counting tricks can show that the multiplicity µp is an invariant of I. But we can be more precise:

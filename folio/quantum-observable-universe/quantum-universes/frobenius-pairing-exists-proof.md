@@ -21,4 +21,4 @@ The pairing is therefore non-degenerate **because the
 Frobenius–Hopf data says so**, and the self-duality $A \cong A^\vee$ is a
 conclusion about $A$ rather than an instance of a duality every object
 enjoys. Rigidity is imposed one level up, on a
-[quantum observable universe](#def:quantum-observable-universe).
+quantum observable universe (Chapter 2).

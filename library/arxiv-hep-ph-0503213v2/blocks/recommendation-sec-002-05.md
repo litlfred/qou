@@ -1,1 +1,0 @@
-We can now introduce our last assumption.\ **5) Charge equality:***When two or more braids are stacked, they must combine to produce the same total charge on all three super-strands*.\ It is obvious that leptons trivially fulfill this criterion, and will therefore not partake of the colour interaction.

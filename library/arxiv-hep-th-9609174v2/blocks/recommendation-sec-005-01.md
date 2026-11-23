@@ -1,1 +1,0 @@
-Asymptotics of orthogonal polynomials We shall prove the following theorem‡ on the asymptotic behavior of these orthogonal polynomi- als: Theorem 2: Let {P (α) n (λ)}n=0,1,··· be the set of polynomials orthogonal with respect to the measure dλ λ2α e−NV (λ2), V (λ2) = X k≥1 gk 2k λ2k, α = 0, 1, · · · over the range (−∞, ∞), whose moments are all ﬁnite.

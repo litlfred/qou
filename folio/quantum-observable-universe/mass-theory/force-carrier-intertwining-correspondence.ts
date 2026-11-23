@@ -1,4 +1,4 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
 /**
  * The force-carrier intertwining correspondence: a torus-knot force
@@ -24,8 +24,8 @@ import { proposition } from "../../schema/builders";
  * (after the user-supplied "intertwining" insight reframed round-17's
  * apparent falsification as a confirmation on the correct partitions).
  */
-export default proposition({
-  label: "prop:force-carrier-intertwining-correspondence",
+export default conjecture({
+  label: "conj:force-carrier-intertwining-correspondence",
   lean: { ref: "qou:QOU.BraidKnot.force_carrier_intertwining_correspondence" },
   title:
     "Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\\lambda = (p, 1^{n-p})$",
@@ -39,5 +39,8 @@ export default proposition({
     "torus-knot",
     "bound-state",
     "alpha-em",
+  ],
+  authorNotes: [
+    { kind: "status", date: "2026-11-21", body: "Demoted from `conj:force-carrier-intertwining-correspondence` (owner, #8526, 2026-11-21; bean qou-tm3c). The claim that a torus-knot carrier $T_{p,q}$ puts the dominant non-trivial Wedderburn weight of an $n$-strand braid on $(p, 1^{n-p})$ rests on the $n = 4$ computation only, and 'dominant' is not made precise. The Lean proves only that the parts of $(p, 1^{n-p})$ sum to $n$." },
   ],
 });

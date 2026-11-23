@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2509.04267v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9843b9dd71d1ec7453c4c83a98a954871870e6ba7425e9cc155b09298751596e",
   "file": "2509.04267v3.pdf"
@@ -16,31 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We note that the above two coefficients should yield $1$ when multiplied, and indeed we find $$\\begin{aligned} w_+ \\cdot w_- &=& [ - A^{3} - \\hbar B A^{-2} (A^{4} + 2 ) ] [ - A^{-3} + \\hbar B (A^{-4} + 2 ) ] \\\\ &=& 1 - \\hbar B ( A^3 ( (A^{-4} + 2 ) - A^{-3} A^{-2} (A^{4} + 2 ) ) \\\\ &=& 1 - \\hbar B [ 2 A^{-5} ( A^8 - 1 ) ] , \\end{aligned}$$ modulo $\\hbar^2$, and $2 ( A^8 - 1 ) B$ is divisible by $2(A^4 -1)B$, one of the equalities in Lemma [\\[prop:allrelations\\]](#prop:allrelations){reference-type=\"ref\" reference=\"prop:allrelations\"}, as expected.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-7-examples-via-maximaminima.md",
-   "section_title": "Examples via maxima/minima",
-   "pages": "21-26",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

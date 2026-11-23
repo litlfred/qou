@@ -1,0 +1,1 @@
+The components of the non-abelian part of the SL(2; C)-character variety are indexed by k and l with 1 ⩽k ⩽a−1, 1 ⩽l ⩽b−1 and k ≡l (mod 2). Moreover a representation ρk,l in the component indexed by (k, l) satisﬁes tr (ρk,l(g)) = 2 cos kπ a  and tr (ρk,l(h)) = 2 cos lπ b  . (See also [34, Theorem 1]).

@@ -1,1 +1,0 @@
-In contrast, the definition of first-order operator between Jordan (bi)modules is not straightforward in spite of the fact that one can write explicitely what it is for modules over the exceptional algebra $J^8_3$.\ It seems that one should make some progress on these two points before tentative formulations of the dynamics.

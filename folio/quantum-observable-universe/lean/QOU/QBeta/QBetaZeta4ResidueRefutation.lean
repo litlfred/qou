@@ -170,17 +170,17 @@ theorem cubicC_rrt_candidates_all_nonzero :
 
 Where does the cubic field come from? The bar-odd part of the net decay-width
 carrier `Δ_net = Δ(neutron) − Δ(proton)` on the H₃ normal-form basis
-`{𝟏, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀}` (knots unknot / virtual / Hopf / trefoil)
+`{𝟏, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀}` (unknot / virtual / L± / electron word)
 decomposes **exactly** by knot sector (reproducible exact Laurent arithmetic,
 probe `qbeta_odd_carrier_sector_decomposition.py`, from
 `free-neutron-decay.witness.json`):
 
-- **virtual (σ₀, σ₁; 1 crossing) → 0** and **trefoil (σ₀σ₁σ₀; 3 crossings) → 0**:
+- **virtual (σ₀, σ₁; 1 crossing) → 0** and **electron word (σ₀σ₁σ₀; 3 crossings) → 0**:
   the odd-crossing sectors are bar-EVEN, contributing nothing to the bar-odd
   carrier.
 - **unknot (𝟏; identity) → a quadratic** `C_unknot(y) = 2y² − 7y + 4`
   (disc `17`, field `ℚ(√17)`), in `y = q²+q⁻²`.
-- **Hopf (σ₀σ₁+σ₁σ₀; 2 crossings) → the cubic** `C_Hopf(y) = y³ − 6y² + 10y − 6`
+- **L± (σ₀σ₁+σ₁σ₀; 2 crossings) → the cubic** `C_Hopf(y) = y³ − 6y² + 10y − 6`
   (irreducible over `ℚ`, disc `−76 = −2²·19`).
 
 with `C = C_Hopf + C_unknot`. So the **degree-3 field of the odd channel is

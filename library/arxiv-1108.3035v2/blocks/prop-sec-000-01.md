@@ -1,0 +1,1 @@
+Most of the RMT predictions have been checked using Lattice QCD, ranging from checks of the topology dependence of algorithms with good chiral properties on small Lattices [18], up to fully unquenched two-ﬂavour simulations leading to realistic values of Σ and F [19], to where we refer as well as to [3] for more references.

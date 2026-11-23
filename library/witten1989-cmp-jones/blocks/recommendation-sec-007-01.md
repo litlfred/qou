@@ -1,0 +1,1 @@
+A little mental gymnastics, comparing the argument we gave in connection with (a) to that in (b), shows that to make S 3 we must glue together T and T' after making the modular transformation S on the boundary of Γ.

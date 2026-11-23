@@ -1,0 +1,1 @@
+For time-independent H ∈O, the usual identity d dt⟨ψ(t), Hψ(t)⟩= 0 need not hold when adjoints/inner products cannot be deﬁned associatively on the full space. Proof idea: Appendix B. Signiﬁcance: Even basic conservation proofs rely on associativity. The culmination is a failure of canonical multipartite composition, which contrasts sharply with Theorem 1.

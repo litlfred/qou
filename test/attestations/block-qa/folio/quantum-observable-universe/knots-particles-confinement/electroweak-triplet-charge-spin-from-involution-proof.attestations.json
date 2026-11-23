@@ -1,0 +1,557 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof",
+    "path": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.399Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'Its neutrality is not bar-even membership but the Weinberg mixing' — the two mechanisms are technically distinct.",
+        "notes": "pass-with-note: substantive mathematical contrast class."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.083Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md: ', not derived' (:14) and 'not merely' phrasing are the content of the claims, not appositive denials."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.434Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no setup-then-reframe pivot."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.108Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.469Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; em-dash use absent or true parenthetical/range only, low density."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.136Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.504Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'bar-even / self-dual / real-volume carrier' — three genuine equivalent characterizations of the Higgs slot.",
+        "notes": "pass-with-note: substantive enumeration."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.168Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.541Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; final line is factual/technical, not quotable closer."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.193Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.578Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no narrated emphasis (no 'we emphasize'/'note the framing')."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.222Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.612Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no block-final restatement of established content."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.259Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.646Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; institutional register throughout, no personal warmth."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.308Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.678Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no unqualified maximum-strength claims."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.333Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.715Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; prose parses aloud; no stalling noun chains."
+      },
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.358Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md in full; no instance of this pattern."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.697Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of thm:ew-triplet-charge-spin-from-involution row) Class `EWSectorSelection` carries the T₃ values as fields, and `ew_charge_spin_forced` returns them; spin is *defined* from the sector. So the conclusion is a field or a definition, not derived. The statement says charge \"follows\" from the postulate, but T₃ *is* the postulate. Proof: \"neutrality is forced by bar-parity\" is contradicted by its own Z case (bar-odd yet neutral). §3 uses the measured spins of H and B as \"independent physical inputs\" (empirical content in a proof)"
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.261Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.288Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.311Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.334Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.359Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.385Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.409Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.432Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.456Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:48.480Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.028Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md:30-36 section 'The σ5^8 bar-grading is derived from spin' proves a claim (H∈A+, B∈A- in one slot) that is not part of thm:ew-triplet-charge-spin-from-involution; that material belongs in the slot remark or its own block. The rest is the theorem's proof."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "4ed11b32641c",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:41.054Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md:32 leans on 'The Weinberg-angle block' (conj:weinberg-angle-categorical) and :10-16 on the P_skew skew functional (prop:vdw-pskew-isolation) without listing either in uses[] (thm, def:spin-involution, prop:self-dual-higgs-real-volume only) and without links."
+      }
+    ]
+  }
+}

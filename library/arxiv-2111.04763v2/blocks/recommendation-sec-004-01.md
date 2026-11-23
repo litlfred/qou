@@ -1,1 +1,0 @@
-We should point out that the definition of the top row of the $3 \times 3$ matrices for the $\mathbf{4}_1$ knot, and the $6 \times 6$ matrix for the $\mathbf{5}_2$ knot, as well as an extension of the above results to the case of closed hyperbolic 3-manifolds have been taken from the forthcoming thesis of the last author.

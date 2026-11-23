@@ -1,1 +1,0 @@
-We shall also need the following basic fact. \begin{lema} For any pair $V,W\in \ca$ the evaluation of $V\ot W$ is given by \begin{equation}\label{evaluation-tensor-prod} \ev_{V\ot W} = \ev_V(\id_V\ot \ev_W\ot \id_{{}^*V})(\id_{V\ot W} \ot (\phi^l_{V,W})^{-1}).\qed \end{equation} \end{lema}

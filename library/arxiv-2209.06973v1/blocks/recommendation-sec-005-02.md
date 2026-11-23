@@ -1,1 +1,0 @@
-\(d\) It should have become clear by now that the arc graph is just an equivalent representation of exactly the data necessary to be taken from the part arc-graph necessary to define either of the two state-sums.

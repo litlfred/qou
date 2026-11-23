@@ -1,4 +1,4 @@
-**Proposition (conditional on [`def:q-reeb-flow-on-color-coords`](#def:q-reeb-flow-on-color-coords)).**
+**Proposition (conditional on [The $q$-Reeb flow in color-sector coordinates](#def:q-reeb-flow-on-color-coords)).**
 *Let $\mathcal{R}_p$ be the Reeb bundle over the exceptional divisor at brane point $p$. For each of the six elements $w \in S_3$, the corresponding braid word $\beta_w \in B_3$ generates a unique trajectory across $\mathcal{R}_p$. Its boundary footprint realises $w$ as a Galois permutation of the colour tubes.*
 
 The trajectory-by-trajectory construction of the six boundary

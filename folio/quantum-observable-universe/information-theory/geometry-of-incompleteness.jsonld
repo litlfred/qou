@@ -2,19 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/thm-geometry-of-incompleteness",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "label": "thm:geometry-of-incompleteness",
   "kind": "theorem",
   "title": "The geometry of incompleteness: a Turing-complete QOU has a nonempty horizon",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-p-vs-np-boundary"
+    "papers/quantum-observable-universe/blocks/def-computational-boundary",
+    "papers/quantum-observable-universe/blocks/prop-p-bandwidth-bound"
   ],
   "tags": [
     "incompleteness",

@@ -1,0 +1,1 @@
+The following hold: (1) if dimC(J) = 0, then dimC(V ) = 0 for all V ∈A(J) and F(L) = 0 for all L in LA; (2) if dimC(J)̸ = 0, then F ′ is proportional to F. The following two propositions show that F ′ has behavior similar to the functor F.

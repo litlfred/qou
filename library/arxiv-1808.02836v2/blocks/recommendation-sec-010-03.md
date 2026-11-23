@@ -1,1 +1,0 @@
-Since $\mathcal{S}$ has three boundary components meeting $T_0$ along the boundary of a neighbourhood of $t \cap T_0,$ the complement of the embedding of the $\Theta$--graph into $T_0$ must have three boundary components.

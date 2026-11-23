@@ -60,4 +60,60 @@ theorem qcollatz_period4_EOOO {R : Type*} [CommRing R] (q P0 P1 P2 P3 : R)
   linear_combination -((q + 1) ^ 3 * h1 + (q ^ 2 + q + 1) ^ 2 * h2
     + (q + 1) * (q ^ 2 + q + 1) * h3 + (q + 1) ^ 2 * h4)
 
+/-- **Census → Lean bridge (`qcz16`), word `EEEO`.** Over `ℤ`, for any `1 ≤ q`
+    and positive `1 ≤ P3`, no `EEEO` 4-cycle exists (`q(q³+4q²+5q+3)P₃ ≥ 13 > 1`). -/
+theorem no_positive_period4_EEEO (q P0 P1 P2 P3 : ℤ)
+    (hq : 1 ≤ q) (hP3 : 1 ≤ P3)
+    (h1 : P1 * (q + 1) = P0) (h2 : P2 * (q + 1) = P1) (h3 : P3 * (q + 1) = P2)
+    (h4 : P0 * (q + 1) = (q ^ 2 + q + 1) * P3 + 1) : False := by
+  have heq := qcollatz_period4_EEEO q P0 P1 P2 P3 h1 h2 h3 h4
+  have hq2 : 0 ≤ q ^ 2 := sq_nonneg q
+  have hq3 : 1 ≤ q ^ 3 := by nlinarith
+  have hpoly : 13 ≤ q * (q ^ 3 + 4 * q ^ 2 + 5 * q + 3) := by nlinarith
+  nlinarith
+
+/-- **Census → Lean bridge (`qcz16`), word `EEOO`.** Over `ℤ`, for any `1 ≤ q`
+    and positive `1 ≤ P2`, no `EEOO` 4-cycle exists. -/
+theorem no_positive_period4_EEOO (q P0 P1 P2 P3 : ℤ)
+    (hq : 1 ≤ q) (hP2 : 1 ≤ P2)
+    (h1 : P1 * (q + 1) = P0) (h2 : P2 * (q + 1) = P1)
+    (h3 : P3 * (q + 1) = (q ^ 2 + q + 1) * P2 + 1)
+    (h4 : P0 * (q + 1) = (q ^ 2 + q + 1) * P3 + 1) : False := by
+  have heq := qcollatz_period4_EEOO q P0 P1 P2 P3 h1 h2 h3 h4
+  have hq2 : 1 ≤ q ^ 2 := by nlinarith
+  have hpoly : 0 < 2 * q ^ 2 + 3 * q + 2 := by nlinarith
+  have hle : q * (2 * q ^ 2 + 3 * q + 2) * 1 ≤ q * (2 * q ^ 2 + 3 * q + 2) * P2 := by nlinarith
+  nlinarith
+
+/-- **Census → Lean bridge (`qcz16`), word `EOOO`.** Over `ℤ`, for any `1 ≤ q`
+    and positive `1 ≤ P1`, no `EOOO` 4-cycle exists (LHS > 0 while RHS < 0). -/
+theorem no_positive_period4_EOOO (q P0 P1 P2 P3 : ℤ)
+    (hq : 1 ≤ q) (hP1 : 1 ≤ P1)
+    (h1 : P1 * (q + 1) = P0) (h2 : P2 * (q + 1) = (q ^ 2 + q + 1) * P1 + 1)
+    (h3 : P3 * (q + 1) = (q ^ 2 + q + 1) * P2 + 1)
+    (h4 : P0 * (q + 1) = (q ^ 2 + q + 1) * P3 + 1) : False := by
+  have heq := qcollatz_period4_EOOO q P0 P1 P2 P3 h1 h2 h3 h4
+  have hq2 : 1 ≤ q ^ 2 := by nlinarith
+  have hq3 : 1 ≤ q ^ 3 := by nlinarith
+  have hq4 : 1 ≤ q ^ 4 := by nlinarith
+  have hq5 : 1 ≤ q ^ 5 := by nlinarith
+  have hcoef : 11 ≤ q * (q ^ 5 + 3 * q ^ 4 + 5 * q ^ 3 + 3 * q ^ 2 - 1) := by nlinarith
+  nlinarith
+
+/-- **Census → Lean bridge (`qcz16`), word `EOEO`.** Over `ℤ`, for any `1 ≤ q`,
+    an `EOEO` 4-cycle forces the fundamental 2-cycle equation `q * P1 = 1`. -/
+theorem period4_EOEO_forces_fundamental (q P0 P1 P2 P3 : ℤ)
+    (hq : 1 ≤ q)
+    (h1 : P1 * (q + 1) = P0) (h2 : P2 * (q + 1) = (q ^ 2 + q + 1) * P1 + 1)
+    (h3 : P3 * (q + 1) = P2)
+    (h4 : P0 * (q + 1) = (q ^ 2 + q + 1) * P3 + 1) :
+    q * P1 = 1 := by
+  have heq := qcollatz_period4_EOEO q P0 P1 P2 P3 h1 h2 h3 h4
+  have hq2 : 1 ≤ q ^ 2 := by nlinarith
+  have hpos : 0 < 2 * q ^ 2 + 3 * q + 2 := by nlinarith
+  have hfac : (2 * q ^ 2 + 3 * q + 2) * (q * P1 - 1) = 0 := by linear_combination heq
+  rcases mul_eq_zero.mp hfac with h0 | h1'
+  · linarith
+  · linarith
+
 end QOU.AppendixSurreals

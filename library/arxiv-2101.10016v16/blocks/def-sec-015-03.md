@@ -1,1 +1,1 @@
-A dimension function on Gr(C) satisfying the equivalent properties of
+A dimension function on Gr(C) satisfying the equivalent properties of Prop. 16.2 is called amenable. The category C is called amenable if the intrinsic dimension function on Gr(C) is amenable. The following result extends to weak dimension functions the uniqueness result known for an amenable dimension function, see Prop. 2.7.7 in [141].

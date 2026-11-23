@@ -1,1 +1,0 @@
-As the name of the field implies it should pursue the following two main goals: search for physical systems in which suitable topological phases and quantum operations can be realized and design of protocols and algorithms for given systems and sets of operations (gates).

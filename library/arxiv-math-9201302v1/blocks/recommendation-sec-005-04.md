@@ -1,1 +1,0 @@
-As before, the rules given in the theorem suﬃce as an recursive deﬁnition because any trivalent planar graph must have a face with at most 5 sides, except the situation is simpler because all faces of an A2 freeway must have an even number of sides.

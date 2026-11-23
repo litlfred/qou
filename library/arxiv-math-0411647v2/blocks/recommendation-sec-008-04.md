@@ -1,1 +1,0 @@
-We shall also consider the inverse of the Kreweras complementation map: for $\pi, \rho\in\mathop{\mathrm{NC}}(1,2,\dots,n)$ we have $\pi_{{\mathop{\mathrm{comp}}^{-1}}}=\rho$ if and only if $\pi=\rho_{\mathop{\mathrm{comp}}}$.

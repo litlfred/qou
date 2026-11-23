@@ -1,0 +1,1 @@
+Our result (47) implies Mπ+ −Mπ0 = 4.21 (23)stat+fit (13)syst MeV , = 4.21 (26) MeV , (48) which agrees with the experimental determination [Mπ+ −Mπ0]exp = 4.5936 (5) MeV (49) within ≈1.5 standard deviations.

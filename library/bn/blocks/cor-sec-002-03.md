@@ -1,0 +1,1 @@
+The eigenspace H1(X)q has dimension n −2 if qn = 1, and dimension n −1 otherwise. Genus zero quotients. We note that the Riemann surfaces X/⟨R⟩, X/⟨T⟩ and X/⟨RT⟩all have genus zero. This provides another explanation for the vanishing of eigenspaces — any R, T or RT-invariant cohomology class descends to the sphere, and H1(bC) = 0.

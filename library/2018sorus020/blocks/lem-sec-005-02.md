@@ -1,0 +1,1 @@
+Let k ⊂K be a ﬁeld extension (we take K to be either k, either a transcendental extension of k). A representation ρ : Γ →SL2(K) is absolutely irreducible (irreducible in an algebraic closure) iﬀthere exists α, β ∈Γ such that Tr(ρ(αβα−1β−1))̸ = 2. δ γ γ δ = − − γ δ γ δ = − −Yγδ −YγYδ Yγδ−1 YγYδ Yγδ−1 Yγδ γ γ δ δ − Figure 1.2 –

@@ -1,0 +1,1 @@
+Let M be a K-linear abelian category. (1) Let 0 →M ′ φ−→M ψ−→M ′′ be an exact sequence in M. Then for every L ∈M the sequence 0 →HomM(L, M ′) Hom(id,φ) −−−−−−→HomM(L, M) Hom(id,ψ) −−−−−−−→HomM(L, M ′′) in Mod K is exact. Derived Categories | Amnon Yekutieli |

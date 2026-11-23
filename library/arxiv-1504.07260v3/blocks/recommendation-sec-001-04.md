@@ -1,1 +1,0 @@
-For this to hold the lattices must be $N$*-modular*, i.e. satisfy $$\begin{aligned} {} && \Lambda_e\cong \Lambda_e^{*}(1/N), \nonumber \\ {} && \Lambda_m\cong \Lambda_m^{*}(N). \end{aligned}$$ Here, $\Lambda^{*}_{e}$ and $\Lambda^{*}_{m}$ denote the dual lattices and the parentheses $(n)$ indicates that the quadratic form of the lattice is rescaled by $n$.

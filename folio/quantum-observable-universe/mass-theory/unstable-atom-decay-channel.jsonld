@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-unstable-atom-decay-channel",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:unstable-atom-decay-channel",
+  "kind": "proposition",
+  "title": "Unstable atom has a uniquely-determined decay channel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-unstable-atom"
+  ],
+  "tags": [
+    "decay",
+    "instability",
+    "ilp",
+    "phase-boundary"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.UnstableAtom.decay_channel",
+  "text": "unstable-atom-decay-channel.md",
+  "leanSource": "unstable-atom-decay-channel.lean",
+  "provenance": "authored"
+}

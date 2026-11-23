@@ -1,0 +1,1 @@
+It is entirely possible that the venerable conjecture (that the twist number is a topological invariant for reduced alternating diagrams) is true. This would generalize 3.1 except for the case of twist number zero. In this case, 3.1 demands B = W for achirality. More may be true. We make the following conjecture. Fig. 7.

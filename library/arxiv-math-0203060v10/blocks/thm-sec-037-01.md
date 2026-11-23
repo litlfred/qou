@@ -1,0 +1,1 @@
+A regular semisimple ﬁnite dimensional weak Hopf algebra does not admit nontrivial deformations in the class of regular weak Hopf algebras. In particular, there are ﬁnitely many such weak Hopf algebras in each dimension.

@@ -1,0 +1,1 @@
+B.3. As in [Jarossay 2015], the computation which leads to the above result remains true for the generalization of cyclotomic multiple harmonic sums obtained by replacing the factors 1/mni i , 1 ⩽i ⩽d in (0-2) by, more generally, factors χi(mi) where χi are locally analytic group endomorphisms of the multiplicative group K ∗, which are analytic on disks of radius p−α.

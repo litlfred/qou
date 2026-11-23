@@ -1,0 +1,1 @@
+The orbit decomposition of odd theta characteristics on Bring’s curve is 120 = 20 + 20 + 20 + 60. (20) Proof The characteristics coming from the tritangent planes are T (1) α jk =  i=1 i̸= j,k Wi jk, T (2) i jk = Wi jk + O+ i jk + O− i jk.

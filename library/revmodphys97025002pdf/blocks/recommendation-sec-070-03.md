@@ -1,1 +1,0 @@
-However, since Mð12CÞ ¼ 12Mu, the above expressions 2 for μ0 and 10 for Mu imply that the consistency of the recommended values of μ0 and Mð12CÞ with their previous exact values will likely change from one adjustment to the next because of their dependence on α.

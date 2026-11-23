@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2105.09342v1/blocks/prop-sec-002-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 7,
+  "pageEnd": 10,
+  "text": "prop-sec-002-01.md",
+  "derivedFrom": "library/arxiv-2105.09342v1/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2105.09342v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "empirical-claim",
+    "claim_domain": "science",
+    "evidence_kind": "empirical-measurement",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper empirical measurement in sections/sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher.md (p. 7-10)",
+    "claim_id": "arxiv-2105.09342v1#prop-sec-002-01"
+  }
+}

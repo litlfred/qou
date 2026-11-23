@@ -1,0 +1,1 @@
+In the next sections we shall show how representations of the Artin braid group, rich enough to provide a dense set of transformations in the unitary groups, arise in relation to fermions and Majorana fermions.

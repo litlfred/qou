@@ -1,0 +1,1 @@
+Let (W′, S′) be a parabolic subgroup of W. Assume that x, y ∈H(W′, S′) ⊂H(W, S), and assume that z ∈spanA⟨tw, w ∈W\W′⟩(resp. z ∈spanA⟨t−1 w , w ∈W\W′⟩). Then ⟨xz, y⟩= ⟨zx, y⟩= 0 (resp. ⟨x, yz⟩= ⟨x, zy⟩= 0).

@@ -16,7 +16,7 @@ The Lean here mirrors the Frobenius-paired truncation identity at the
 level of finite sums over a graded R-module, with the depth-grading
 and orthogonality packaged as a typeclass-style record.
 
--- Ref: [leitner2026] prop:quantum-dilogarithm-stratified
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified
 -- Ref: [leitner2026] prop:curvature-rank-gb-stratification
 -- Ref: [leitner2026] prop:spectral-sequence-collapse
 -/
@@ -41,17 +41,17 @@ structure DepthGradedFrobeniusModule (R : Type*) [CommRing R] where
 
 /-- The truncated brane-tower Frobenius pairing:
     Σ_{k ≤ N} pairing k. -/
--- Ref: [leitner2026] prop:quantum-dilogarithm-stratified
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified
 def truncatedPairing {R : Type*} [CommRing R]
     (M : DepthGradedFrobeniusModule R) (N : ℕ) : R :=
   Finset.sum (Finset.range (N + 1)) M.pairing
 
 /-- **Frobenius truncation theorem.** For any N ≥ k★(T_w), the
     truncated pairing equals the k★(T_w)-truncated pairing. This is
-    the Lean-formalised corollary of `prop:quantum-dilogarithm-stratified`:
+    the Lean-formalised corollary of `conj:quantum-dilogarithm-stratified`:
     replacing Φ_q(z_i) by its k★(T_w)-truncation in the Frobenius
     pairing with T_w gives the same result. -/
--- Ref: [leitner2026] prop:quantum-dilogarithm-stratified
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified
 theorem phi_q_frobenius_truncation {R : Type*} [CommRing R]
     (M : DepthGradedFrobeniusModule R)
     (N : ℕ) (h : N ≥ M.k_star) :
@@ -77,7 +77,7 @@ theorem phi_q_frobenius_truncation {R : Type*} [CommRing R]
     M N. The key statement of the stratified proposition is that this
     partial product captures exactly the depth-≤N strata of the
     Frobenius-dual decomposition. -/
--- Ref: [leitner2026] prop:quantum-dilogarithm-stratified, Step 3
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified, Step 3
 def partialProductPairing {R : Type*} [CommRing R]
     (M : DepthGradedFrobeniusModule R) (N : ℕ) : R :=
   truncatedPairing M N
@@ -86,7 +86,7 @@ def partialProductPairing {R : Type*} [CommRing R]
     above k★(T_w) all give the same value (the analytic Φ_q evaluation
     truncates to the categorical k★ truncation under Frobenius
     pairing with T_w). -/
--- Ref: [leitner2026] prop:quantum-dilogarithm-stratified, Step 4
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified, Step 4
 theorem partial_product_truncation {R : Type*} [CommRing R]
     (M : DepthGradedFrobeniusModule R)
     (N : ℕ) (h : N ≥ M.k_star) :

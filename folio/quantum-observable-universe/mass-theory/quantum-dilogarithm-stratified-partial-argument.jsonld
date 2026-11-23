@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-dilogarithm-stratified-partial-argument",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-dilogarithm-stratified-partial-argument",
+  "kind": "remark",
+  "title": "Partial argument for the stratified quantum dilogarithm",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-quantum-dilogarithm-stratified",
+    "papers/quantum-observable-universe/blocks/cor-quantum-dilogarithm",
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-quantum-dilogarithm-stratified",
+  "tags": [
+    "quantum-dilogarithm",
+    "brane-tower",
+    "centre-stratification"
+  ],
+  "text": "quantum-dilogarithm-stratified-partial-argument.md",
+  "provenance": "authored"
+}

@@ -1,4 +1,4 @@
-We predict the $\beta^-$ decay $(Z, N) \to (Z+1, N-1)$ Q-value strictly from the substrate parameter $q$, using zero fitting parameters. The calculation operates within the $2 \times 2$ standard irreducible representation of $H_3(q)$. While the regular representation is $6 \times 6$, the traced-volume computation strictly isolates the $2 \times 2$ standard block. 
+The $\beta^-$ decay $(Z, N) \to (Z+1, N-1)$ Q-value is predicted strictly from the substrate parameter $q$, using zero fitting parameters. The calculation operates within the $2 \times 2$ standard irreducible representation of $H_3(q)$. While the regular representation is $6 \times 6$, the traced-volume computation strictly isolates the $2 \times 2$ standard block. 
 **MAE $\approx 4.4\%$ across six NNDC benchmarks, zero fitting.**
 
 The derivation chain is:

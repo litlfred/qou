@@ -13,9 +13,14 @@
   "pageStart": 29,
   "pageEnd": 32,
   "contains": [
-    "library/arxiv-math-0508291v1/blocks/prose-sec-012"
+    "library/arxiv-math-0508291v1/blocks/prose-sec-012",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-012-01",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-012-02",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-012-03",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-012-04",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-012-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508291v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508291v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508291v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508291v1/manifest.jsonld",
   "provenance": "ingested"
 }

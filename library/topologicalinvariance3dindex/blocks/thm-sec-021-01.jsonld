@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/topologicalinvariance3dindex/blocks/thm-sec-021-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 40,
+  "pageEnd": 43,
+  "text": "thm-sec-021-01.md",
+  "derivedFrom": "library/topologicalinvariance3dindex/sections/sec-021",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.32",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-021-64-moving-paths-in-the-1--skeleton-of-the-associ.md (p. 40-43)",
+    "claim_id": "topologicalinvariance3dindex#theorem:6.32",
+    "lean_status": "unformalized"
+  }
+}

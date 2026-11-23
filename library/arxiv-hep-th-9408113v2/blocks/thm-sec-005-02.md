@@ -1,0 +1,1 @@
+Let r be an odd positive integer and j be an integer such that 0 ≤2j + (−1)j+1 ≤r. Then N(r −j, r) = N(j, r) + j(−1)j−1 r + (−1)j+1 . To obtain an additional information about the numbers N(j, r) let us introduce a function bj(r) := j2(r −1) −j3 −j  r j + 1  −N(j, r), where [x] is the integer part of a real number x.

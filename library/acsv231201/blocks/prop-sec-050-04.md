@@ -1,0 +1,1 @@
+Let P be the tangent plane to V at p and let v be a unit normal vector. Suppose that V is the graph of a smooth function h over P, meaning V = {p + u + h(u)v : u ∈U ⊆P} . If η is the quadratic part of h, so that h(u) = η(u)+O(|u|3), then the curvature of V at p is K = ||η||. □

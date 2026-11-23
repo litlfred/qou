@@ -1134,6 +1134,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "(S↔P column of prop:fermion-boson-knot-link row) Dangling ref: `QOU.Braiding.fermion_boson_knot_link` is declared nowhere. The sibling has no namespace and proves only gcd(2,n)=1 ↔ n odd. α_V and fermion/boson are not encoded. Proof: the even-n case asserts that the two components have \"opposite vertical winding ±1\". That is unargued, and for the standard torus-link orientation both components are parallel (n/2,1) curves. \"T(2,n) on Bring's surface\" is not defined (torus links live on a torus). The proof file carries a spin-statistics physics section after □"
+      },
+      {
+        "field_hash": {
+          "md": "1a04f2294b00",
+          "ts": "5df4f60e5589"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:43:54.229Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the paragraph 'Quarks in this framework' was deleted; the even-n 'opposite vertical winding' step and the T(2,n)-on-Bring's-surface wording are unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: (S↔P column of prop:fermion-boson-knot-link row) Dangling ref: `QOU.Braiding.fermion_boson_knot_link` is declared nowhere. The sibling has no namespace and proves only gcd(2,n)=1 ↔ n odd. α_V and fermion/boson are not encoded. Proof: the even-n case asserts that the two components have \"opposite vertical winding ±1\". That is unargued, and for the standard torus-link orientation both components are parallel (n/2,1) curves. \"T(2,n) on Bring's surface\" is not defined (torus links live on a torus). The proof file carries a spin-statistics physics section after □"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1959,6 +1975,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:04.847Z",
+  "updated_at": "2026-11-21T07:43:54.229Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

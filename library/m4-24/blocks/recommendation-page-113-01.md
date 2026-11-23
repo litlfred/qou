@@ -1,1 +1,0 @@
-Kashaev proposed in [195] a conjectural purely topological in- variant Ky(W,L) which should have been expressed by a state sum of this kind (although in his proposal there were no flat bundles and no notion of D-triangulation); in fact, Kj(W,L) appears as a special case of Ky (W, L, p) when p is the trivial flat B-bundle on W.

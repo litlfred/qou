@@ -1,0 +1,78 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "030e59923832",
+          "ts": "305bfe9983a8",
+          "lean": "1594d82782fe",
+          "lean_statement": "c60ec3360a12"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.897Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "severity": "minor",
+        "evidence": "Lean screen_mul carries a 0 <= lam hypothesis that item 1's product rule omits. The rule appears true without it, but the Lean proves the weaker form."
+      },
+      {
+        "field_hash": {
+          "md": "030e59923832",
+          "ts": "305bfe9983a8",
+          "lean": "1594d82782fe",
+          "lean_statement": "c60ec3360a12"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:11:33.001Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-graded 2026-11-17 (was warn). Lean screen_mul requires 0 <= lam; item 1's product rule states it without that hypothesis. Fix: add the hypothesis to the statement or prove the rule without it."
+      },
+      {
+        "field_hash": {
+          "md": "030e59923832",
+          "ts": "305bfe9983a8",
+          "lean": "c5385df43e0e",
+          "lean_statement": "4dad5eced8c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-17",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-18T04:05:49.957Z",
+        "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
+        "evidence": "screen_mul no longer assumes 0 <= lam, matching item 1. lean-direct -DautoImplicit=false exit 0."
+      },
+      {
+        "field_hash": {
+          "md": "f70717052a24",
+          "ts": "bca47a045370",
+          "lean": "c5385df43e0e",
+          "lean_statement": "4dad5eced8c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:25.014Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-18 review: removed a sentence pointing to the screening-rule remark (lambda = 10, measured target), which was outside the statement. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: screen_mul no longer assumes 0 <= lam, matching item 1. lean-direct -DautoImplicit=false exit 0."
+      }
+    ]
+  },
+  "updated_at": "2026-11-21T08:18:25.014Z"
+}

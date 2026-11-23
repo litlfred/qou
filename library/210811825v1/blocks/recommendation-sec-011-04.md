@@ -1,1 +1,0 @@
-Hence the trivial representation does not appear in the ﬁrst eigenspace. □ The ﬁnal thing we must show is that χ8 only appears once in the ﬁrst eigenspace, that is, we know that the dimension of the ﬁrst eigenspace is a multiple of 3, but it remains to prove that it is exactly 3.

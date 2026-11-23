@@ -1,1 +1,0 @@
-This should be contrasted with the properties of the $\hat g'$ symmetry, which breaks half of the spacetime supersymmetries in both the left- and the right-moving sector; therefore, type IIA on $\frac{T^4\times {S'}^1}{\langle\hat g' \rangle}\times \tilde {S'}^1$ is of $(2,2)$ type.

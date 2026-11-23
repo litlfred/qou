@@ -1,0 +1,1 @@
+Let Y be a UMD lattice. Then it has the σ-Levi property: any increasing and norm-bounded sequence (xn)n in Y has a supremum in Y . It also has the Fatou-property and hence the σ-Fatou property. Note that if 1 < p < ∞and (Ω, µ) is a σ-ﬁnite measure space, then Lp(Ω, Y ) is again a UMD lattice, so has the above σ-Levi and σ-Fatou properties.

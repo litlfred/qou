@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-hep-lat-0003021v3/blocks/prop-sec-004-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "text": "prop-sec-004-01.md",
+  "derivedFrom": "library/arxiv-hep-lat-0003021v3/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-lat-0003021v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "empirical-claim",
+    "claim_domain": "science",
+    "evidence_kind": "empirical-measurement",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper empirical measurement in sections/sec-004-5-conclusions.md (p. 19-21)",
+    "claim_id": "arxiv-hep-lat-0003021v3#prop-sec-004-01"
+  }
+}

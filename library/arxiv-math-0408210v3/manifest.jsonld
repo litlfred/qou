@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0408210v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0408210v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0408210v3",
+  "title": "A simple algebraic proof of the algebraic index theorem",
   "contains": [
     "library/arxiv-math-0408210v3/sections/sec-front-matter",
     "library/arxiv-math-0408210v3/sections/sec-000",
@@ -37,7 +37,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0408210v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0408210v3.pdf",
     "source_sha256": "16d5ccb83a86954f958e4277a6a5c5f65b3db17b30d21da2f71a77b979c8e318",
     "pages": 17,
@@ -48,8 +50,8 @@
       "stamp_date": "7 May 2005"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

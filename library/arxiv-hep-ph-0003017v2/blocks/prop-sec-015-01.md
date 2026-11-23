@@ -1,0 +1,1 @@
+Another example, more closely related to disordered condensed matter systems, is the random-flux model [@simons-altland], which is in essence quenched lattice QCD with Kogut-Susskind fermions but without the phase factors due to the $\gamma$-matrices.

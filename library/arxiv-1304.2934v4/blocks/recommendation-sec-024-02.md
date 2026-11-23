@@ -1,1 +1,0 @@
-\begin{remark} In \cite{Multidim}, we shall prove similar estimates of $\proba[\mathbf{X}_n \in t_n B]$ in the setting of sequences of random \emph{vectors} that converge in the multi-dimensional mod-Gaussian sense. \end{remark} \bigskip

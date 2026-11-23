@@ -6,7 +6,7 @@ length filtration** on the NF basis.
 
 ## Statement
 
-**Proposition (conditional on [`conj:mass-endomorphism`](#conj:mass-endomorphism)).**
+**Proposition (conditional on [Mass endomorphism conjecture](#conj:mass-endomorphism)).**
 *For any particle with braid representative $\beta$ in
 $H_3(R, q)$, the Hecke mass element has the NF decomposition:*
 

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:binding-scale-catalan",
+export default conjecture({
+  label: "conj:binding-scale-catalan",
   title: "Binding energy scale $\\alpha = m_e \\times 8G$",
   lean: { ref: "qou:QOU.BindingScale.bindingScale_value",
     validation: "not_checked",

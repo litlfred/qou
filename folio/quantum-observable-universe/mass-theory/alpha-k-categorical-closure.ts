@@ -26,7 +26,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:alpha-k-derivation-procedure",
+    "conj:alpha-k-derivation-procedure",
     "rem:beta-decay-energy-scale",
   ],
   cites: [

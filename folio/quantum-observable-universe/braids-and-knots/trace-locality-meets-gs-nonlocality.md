@@ -5,5 +5,3 @@ $$
   z_{-} = z - (q - q^{-1}).
 $$
 A single newly-added crossing contributes a scalar — depending only on the crossing sign — independent of the upstream history.
-
-The contrast with the Gröbner–Shirshov reduction to normal form is described in [rem:trace-locality-gs-non-locality](#rem:trace-locality-gs-non-locality).

@@ -1,1 +1,0 @@
-The (1 - 6)"* singularity produces digon crossing arcs of name 16 in a digon which lies between the 3rd and 1st braid strands, Sublemma 6.1.1 says there must be a non-empty block Q = b^ after the (1 - 6)""* singularity.

@@ -1,0 +1,1 @@
+The same strategy works, mutatis mutandis, for the oriented (or walled) Brauer algebra, other diagram algebras in the same spirit, e.g. partition algebras, and the quantum versions of these diagram algebras such as the Birman–Murakami–Wenzl alge- bra (we will treat this case for higher genus in Section 5 below). We leave the details to the interested reader.

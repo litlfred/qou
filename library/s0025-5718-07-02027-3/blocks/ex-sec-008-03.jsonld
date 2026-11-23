@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/s0025-5718-07-02027-3/blocks/ex-sec-008-03",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 24,
+  "pageEnd": 29,
+  "text": "ex-sec-008-03.md",
+  "derivedFrom": "library/s0025-5718-07-02027-3/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0025-5718-07-02027-3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "8.4",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-008-8-concluding-remarks.md (p. 24-29)",
+    "claim_id": "s0025-5718-07-02027-3#example:8.4"
+  }
+}

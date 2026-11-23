@@ -1,1 +1,0 @@
-The full problem of matrix quantum mechanics can and should be considered as a multi-matrix (in fact, infinite-matrix) generalization of GKM (\ref{GKoM}), which incorporates all the $(p,q)$ LGG models. } Dimension $d_R$ of representation can be also expressed in terms of $m$-variables: $d_R = \Delta(m)$.

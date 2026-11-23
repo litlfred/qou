@@ -1,1 +1,0 @@
-Thus we must exhibit isomorphisms $d^F_{X,Y}: F(X)\otimes F(Y)\rightarrow F(X\otimes Y)$ satisfying the conditions of Definition [\[d-mon-func\]](#d-mon-func){reference-type="ref" reference="d-mon-func"}.

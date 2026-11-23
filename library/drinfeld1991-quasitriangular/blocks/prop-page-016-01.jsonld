@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/drinfeld1991-quasitriangular/blocks/prop-page-016-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "Deligne-Ihara [13]",
+  "pageStart": 16,
+  "pageEnd": 16,
+  "text": "prop-page-016-01.md",
+  "derivedFrom": "library/drinfeld1991-quasitriangular/sections/page-016",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/drinfeld1991-quasitriangular/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.2",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "External attribution (Deligne-Ihara [13]) [[13]",
+    "claim_id": "drinfeld1991-quasitriangular#proposition:6.2",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

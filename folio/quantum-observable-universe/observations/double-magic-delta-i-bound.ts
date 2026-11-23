@@ -33,4 +33,7 @@ export default conjecture({
     "open-problem",
     "axiom-class",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The conjecture is axiomatised as a Lean class. The algebraic-primality verifier ([`sdp-primality-verifier-spec.md`](../../../computations/sdp-primality-verifier-spec.md)). Empirical tests on small-$n$ pairs via `optimised_magic_verifier.py` measure an approximate $16\\times$ speedup." },
+  ],
 });

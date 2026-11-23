@@ -1,1 +1,0 @@
-To accomplish this, we must show that for each p, q and r, the associated characteristic map hLpqr is homotopic to the base map fpqr : T 3 →S2 used in Section 3 to convert the relative Pontryagin ν-invariant to an absolute ν-invariant.

@@ -1,4 +1,4 @@
-*The binding energy $B(Z, N)$ switches evaluation regimes by mass number $A$. For $A \leq 4$ the selected regime agrees with AME data to within $5\%$; this agreement is obtained by choosing the regime per $A$ (Table 2) and is an empirical comparison, not a derived bound:*
+*There is a single evaluation of the binding energy $B(Z,N)$ that does not branch on $A$, whose dominant contribution changes character exactly at the boundaries of the pair-graph regimes $r(A)$ of [Pair-graph regimes of $A$](#prop:pair-graph-regime-trichotomy): regime I ($A=2$), regime II ($A\in\{3,4\}$) and regime III ($A\ge5$). The piecewise evaluation*
 
 $$
   B(Z, N)
@@ -9,10 +9,16 @@ $$
     B_{\mathrm{BW}+\chi}(Z, N)
       & \text{if } 3 \leq A \leq 4, \\[4pt]
     B_{\mathrm{BW}}(Z, N) + B_{\mathrm{shell}}(A)
-      & \text{if } A \geq 5.
+      & \text{if } A \geq 5
   \end{cases}
 $$
 
-The Schur-Weyl evaluation applies directly to the light satellite topology of the deuteron. For the Borromean topologies at $A \ge 3$, collective Wedderburn states dominate the mass formula. The regime is fixed per mass number $A$ by agreement with AME data (Table 2). This is a per-case selection against the measured target, not a derivation; no unified mass functional whose convergent limits these regimes are has been established.
+*is then a description of that change, not a definition of $B$.*
+
+What is proved is only where the boundaries fall: by [Pair-graph regimes of $A$](#prop:pair-graph-regime-trichotomy), $2\bigl(\binom A2-(3A-6)\bigr)=(A-3)(A-4)$, so the cut-offs $2\mid3$ and $4\mid5$ depend on $A$ alone. That criterion was identified after the cut-offs below had been selected. No result derives which evaluation belongs to which regime, and no $A$-uniform evaluation with this property has been established.
+
+The earlier description of the regimes as "non-additive", because the Schur–Weyl and Bethe–Weizsäcker evaluations would count overlapping Wedderburn content, is not a well-posed statement: $B_{\mathrm{BW}+\chi}$ is a polynomial in $A$ and $Z$ with $q$-integer coefficients, not a sum over Wedderburn blocks, so there is no common index set on which an overlap could be shown or refuted.
+
+**Comparison (selection against the measured target; not a prediction).** Table 2 lists, per isotope, the error of each evaluation against AME. The column marked regime-selected is chosen per isotope by the smaller AME deviation. This is selection against the target, one free choice per branch, and AGENTS.md counts it as fitting. The statement that the selected regime agrees with AME to within $5\%$ for $A\le4$ uses a tolerance sized to its own largest miss ($^4$He, $-4.07\%$). The chirality factors in $B_{\mathrm{BW}+\chi}$ are assigned per isotope by hand. The readings "the Schur–Weyl evaluation applies to the light satellite topology of the deuteron" and "collective Wedderburn states dominate for the Borromean topologies at $A\ge3$" are physical glosses without a definition of "dominate".
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

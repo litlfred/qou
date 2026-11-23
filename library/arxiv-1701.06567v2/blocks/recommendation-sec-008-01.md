@@ -1,1 +1,0 @@
-In order to give a mathematical formulation of the homological invariants that can be useful for practical calculations on an arbitrary 3-manifold, the starting point must be a construction of the 3-manifold itself.

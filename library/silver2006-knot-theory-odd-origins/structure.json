@@ -1,0 +1,417 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "silver2006-knot-theory-odd-origins",
+ "source": {
+  "file": "silver2006-knot-theory-odd-origins.pdf",
+  "sha256": "fe12eed25824e8e97746f8a5a5e5eb32f6e6a137af674494cf5a42c1e3bf5f07",
+  "bytes": 567464,
+  "pages": 8,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-22T19:30:56Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "ake a length of rope, loop and weave it around itself and connect its ends. The re- sult, of course, is a knot",
+  "authors_raw": "Creating a knot seems simple, yet knot theory",
+  "title_lines": [
+   "ake a length of rope, loop and weave it",
+   "around itself and connect its ends. The re-",
+   "sult, of course, is a knot"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "2006-03Silver.indd",
+   "Producer": "Adobe PDF Library 6.0",
+   "Creator": "Adobe InDesign CS (3.0.1)",
+   "CreationDate": "D:20060119114023Z"
+  },
+  "title_raw": "ake a length of rope, loop and weave it around itself and connect its ends. The re- sult, of course, is a knot",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "2006-03Silver.indd",
+   "heading": "Knot Theory\u2019s Odd Origins",
+   "text": "ake a length of rope, loop and weave it around itself and connect its ends. The re- sult, of course, is a knot",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "G. Tait",
+   "page": 2,
+   "source": "inferred",
+   "number": "P",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "159"
+  },
+  {
+   "level": 1,
+   "title": "Smoke-ring Science",
+   "page": 3,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "160"
+  },
+  {
+   "level": 1,
+   "title": "The Unseen Universe",
+   "page": 6,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "163"
+  },
+  {
+   "level": 1,
+   "title": "Tait\u2019s Program",
+   "page": 7,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "164"
+  },
+  {
+   "level": 1,
+   "title": "The Meaning of Knots",
+   "page": 8,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "165"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgment",
+   "page": 8,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.8,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "165"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 8,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.8,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "165"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A smoke ring rises above Mount Etna, an active volcano on the island of Sicily. Rings such as this one are caused by small emissions of smoke from narrow vents on the volcano; they can reach more than 600 feet in diameter and remain stable for more than 10 minutes. In 1867, Scottish physicist Peter",
+   "page": 2,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "159"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "In 1867, Peter Guthrie Tait constructed a box to study smoke rings. He placed a towel on one end, carved a circular hole on the other end and placed ammonia and sulfuric acid inside the box. Striking the towel would cause smoke rings to emerge through the hole. As smoke reached the opening, it would",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "161"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "William Thomson\u2019s vortex-atom theory arose out of his observations of Tait\u2019s experiments with smoke rings. The arrows around the smoke ring at left indicate the direction of the vortex motion. Air pushes against the greater surface area of the outer part of the ring, moving the ring in the direction",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "161"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "In a paper published in 1858, Hermann von Helmholtz described the motion of vortex rings in a perfect fluid. He concluded that if two rings (here, one blue and one green) moved in the same direction on the same plane, the first ring would enlarge and slow down, and the second ring would shrink and p",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "162"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "James Clerk Maxwell, a friend of Thomson and Tait, became interested in their work on vortices and used this zoetrope to examine the interactions of three rings. As the zoetrope spun, it would appear to viewers watching through the openings on the outside that the rings drawn on the interior band we",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "163"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "In The Unseen Universe, authors Tait and Balfour Stewart hypothesized about the nature of the universe. They postulated that just as a smoke ring is composed of ordinary molecules, so too those molecules might be vortex rings of \u201csomething much finer and more subtle than themselves.\u201d In this sketch,",
+   "page": 7,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "164"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "In an effort to develop a table of elements based on the vortex-atom theory, Tait began to classify knots according to the number of crossings. The seven simplest knots, above, extend through six crossings. Tait eventually built tables through ten-crossing knots. Current tables extend through 16 cro",
+   "page": 7,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "164"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "158",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "159",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "160",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "161",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "162",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "163",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "164",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "165",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 6567,
+   "n_words": 1036,
+   "label_start": "158",
+   "label_end": "159"
+  },
+  {
+   "id": "sec-000-p-g-tait",
+   "number": "P",
+   "title": "G. Tait",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2086,
+   "n_words": 351,
+   "label_start": "159",
+   "label_end": "160"
+  },
+  {
+   "id": "sec-001-smoke-ring-science",
+   "number": null,
+   "title": "Smoke-ring Science",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 11728,
+   "n_words": 1938,
+   "label_start": "160",
+   "label_end": "163"
+  },
+  {
+   "id": "sec-002-the-unseen-universe",
+   "number": null,
+   "title": "The Unseen Universe",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 5411,
+   "n_words": 858,
+   "label_start": "163",
+   "label_end": "164"
+  },
+  {
+   "id": "sec-003-taits-program",
+   "number": null,
+   "title": "Tait\u2019s Program",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2904,
+   "n_words": 469,
+   "label_start": "164",
+   "label_end": "165"
+  },
+  {
+   "id": "sec-004-the-meaning-of-knots",
+   "number": null,
+   "title": "The Meaning of Knots",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2191,
+   "n_words": 360,
+   "label_start": "165",
+   "label_end": "165"
+  },
+  {
+   "id": "sec-005-acknowledgment",
+   "number": null,
+   "title": "Acknowledgment",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 102,
+   "n_words": 18,
+   "label_start": "165",
+   "label_end": "165"
+  },
+  {
+   "id": "sec-006-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1896,
+   "n_words": 279,
+   "label_start": "165",
+   "label_end": "165"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.757,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 32885,
+  "furniture_lines_stripped": 30
+ }
+}

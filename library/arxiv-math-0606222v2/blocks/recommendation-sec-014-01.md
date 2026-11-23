@@ -1,1 +1,0 @@
-Similarly as for the Koornwinder polynomials and the multivariable little $q$-Jacobi polynomials, the multivariable big $q$-Jacobi polynomials can be characterized by a second-order difference equation they should satisfy, or in terms of suitable orthogonality properties, see [@S0].

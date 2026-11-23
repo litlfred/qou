@@ -1,0 +1,1 @@
+Let A be a noetherian connected graded ring, and let R and R′ be graded NC dualizing complexes over A. Then there is an isomorphism R′ ∼= R ⊗A A(φ, i)[j] in D(Aen, gr), for a unique automorphism φ and unique integers i, j. For the proof we shall need a few lemmas. Recall that a module N ∈M(A, gr) is called bounded below if Ni = 0 for i ≪0.

@@ -95,6 +95,30 @@ def coxeter_length(perm: tuple) -> int:
     return sum(1 for a in range(n) for b in range(a + 1, n) if perm[a] > perm[b])
 
 
+def closure_component_count(n: int, word: list[int]) -> int:
+    """Exact number of link components of the braid closure of `word` in B_n.
+
+    A permutation invariant of the image in S_n (independent of crossing signs):
+    each generator ±i transposes strands (i, i+1), and the number of disjoint
+    cycles of the resulting permutation in S_n is the number of components of
+    the closure (bean qou-k3te). A knot must have closure_component_count == 1.
+    """
+    perm = tuple(range(1, n + 1))
+    for gen in word:
+        perm = perm_apply_s(perm, abs(gen))
+    seen: set[int] = set()
+    cycles = 0
+    for start in range(1, n + 1):
+        if start in seen:
+            continue
+        cycles += 1
+        cur = start
+        while cur not in seen:
+            seen.add(cur)
+            cur = perm[cur - 1]
+    return cycles
+
+
 def all_perms(n: int) -> list:
     return list(permutations(range(1, n + 1)))
 
@@ -289,6 +313,7 @@ def reduce_braid(name: str, n: int, word: list, expected: Optional[dict] = None)
         "name": name,
         "n": n,
         "word": list(word),
+        "closure_components": closure_component_count(n, word),
         "expected_filtration": expected,
         "expected_pass": expected_pass,
         "filtration_certificate": {
@@ -350,20 +375,23 @@ def main():
     ))
 
     # Test 2b: DEUTERON 6_2 in H_3 via the Birman-Hilden 3-braid form.
-    # Standard: σ_1^{-1} σ_2 σ_1^{-1} σ_2^2 — bridge number 2.
-    # NF reduction fires the Hecke relation on σ_2² and the
-    # σ_1^{-1} = σ_1 - (q - q^{-1}) inverse rule twice.
+    # Standard 3-braid word for the 1-component knot 6_2 (det 11):
+    # σ_1^{-1} σ_2 σ_1^{-1} σ_2^3 (bean qou-k3te; the earlier σ_2^2 typo
+    # closed to a 2-component link of det 8 rather than the knot 6_2).
     cases.append(reduce_braid(
-        name="deuteron 6_2 σ_1^{-1} σ_2 σ_1^{-1} σ_2^2 in H_3",
-        n=3, word=[-1, 2, -1, 2, 2],
+        name="deuteron 6_2 σ_1^{-1} σ_2 σ_1^{-1} σ_2^3 in H_3",
+        n=3, word=[-1, 2, -1, 2, 2, 2],  # word-source: standard 3-braid closure of knot 6_2 (bean qou-k3te)
         expected=None,
     ))
 
-    # Test 2c: TRITIUM 8_11 in H_3 via the Birman-Hilden 3-braid form.
-    # Standard: σ_1^{-1} σ_2 σ_1^{-2} σ_2^3 — bridge number 2.
+    # Test 2c: TRITIUM-CANDIDATE 2-component link in H_3:
+    # σ_1^{-1} σ_2 σ_1^{-2} σ_2^3 has permutation (1)(2 3) in S_3, so its
+    # closure has 2 components and cannot be the 1-component knot 8_11
+    # (bean qou-k3te). Retained for GB-filtration shape continuity with an
+    # honest 2-component link label rather than mislabelling it as 8_11.
     cases.append(reduce_braid(
-        name="tritium 8_11 σ_1^{-1} σ_2 σ_1^{-2} σ_2^3 in H_3",
-        n=3, word=[-1, 2, -1, -1, 2, 2, 2],
+        name="tritium-candidate 2-component link (not 8_11 knot) σ_1^{-1} σ_2 σ_1^{-2} σ_2^3 in H_3",
+        n=3, word=[-1, 2, -1, -1, 2, 2, 2],  # word-source: 2-component 3-braid test word (bean qou-k3te)
         expected=None,
     ))
 
@@ -537,6 +565,13 @@ def main():
     # recording an author's judgement about downstream readiness rather than
     # anything this script computes.
     _n_with_expected = witness["summary"]["n_cases_with_expected"]
+    # Every test case naming a prime knot in H_2/H_3 (4_1, 6_2, or electron in H_2)
+    # must have closure_components == 1 (bean qou-k3te).
+    _knot_cases = [
+        c for c in cases
+        if ("4_1" in c["name"] or "6_2" in c["name"] or c["name"] == "electron σ_1^3 in H_2")
+    ]
+    _knot_single_comp = sum(1 for c in _knot_cases if c["closure_components"] == 1)
     saved_path = (
         WitnessBuilder.wrap_legacy(
             "gb-filtration-jet-order", witness,
@@ -549,6 +584,14 @@ def main():
             source="per-case `actual_filtration == expected_filtration` over "
                    "the exact symbolic GB normal form in Q(q); expected is the "
                    "number of cases declaring an expected shape",
+        )
+        .add_assertion(
+            "gb_filtration_knot_named_rows_have_single_component",
+            computed=str(_knot_single_comp),
+            expected=str(len(_knot_cases)),
+            source="exact S_n permutation cycle count of each prime-knot test "
+                   "case (electron 3_1 in H_2, figure-8 4_1 in H_3, deuteron 6_2 "
+                   "in H_3) equals 1 component (bean qou-k3te)",
         )
         .save()
     )
@@ -565,5 +608,17 @@ def main():
         sys.exit(1)
 
 
+def _selftest() -> int:
+    assert closure_component_count(3, [1, -2, 1, -2]) == 1, "4_1 must have 1 component"  # word-source: 4_1 self-test
+    assert closure_component_count(3, [-1, 2, -1, 2, 2]) == 2, "old 6_2 typo has 2 components"  # word-source: qou-k3te regression test
+    assert closure_component_count(3, [-1, 2, -1, 2, 2, 2]) == 1, "6_2 has 1 component"  # word-source: 6_2 self-test
+    assert closure_component_count(3, [-1, 2, -1, -1, 2, 2, 2]) == 2, "2-component link"  # word-source: qou-k3te regression test
+    assert closure_component_count(3, [1, -2, 1, -2, 1, -2]) == 3, "Borromean rings have 3 components"  # word-source: B_3 self-test
+    print("self-test: ok (closure_component_count verifies 4_1=1, 6_2=1, Borromean=3, qou-k3te typos=2)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:] or "--selftest" in sys.argv[1:]:
+        sys.exit(_selftest())
     main()

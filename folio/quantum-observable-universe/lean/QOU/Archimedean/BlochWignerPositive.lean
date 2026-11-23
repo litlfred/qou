@@ -107,6 +107,6 @@ theorem volume_pos (T : IdealTetrahedron) : 0 < T.volume := by
 The strict general positivity.  Every such `z` is an `IdealTetrahedron` shape by
 construction, so this is `volume_pos` read through Milnor's formula. -/
 theorem blochWigner_lob_pos {z : ℂ} (hz : 0 < z.im) : 0 < BlochWigner_lob z :=
-  volume_pos ⟨z, hz⟩
+  volume_pos (.ofIm z hz)
 
 end QOU.Archimedean.BlochWignerPositive

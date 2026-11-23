@@ -19,7 +19,10 @@ export default remark({
     "def:up-quark",
     "def:down-quark",
     "def:categorical-meson",
-    "prop:four-term-pair-nucleon",
+    "conj:four-term-pair-nucleon",
     "prop:confinement-operator-selection",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([photon](#def:photon))" },
   ],
 });

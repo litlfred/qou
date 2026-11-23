@@ -227,4 +227,10 @@ theorem selected_lam_floor :
     (3.2092 : ℝ) < 3.27708095409687544 - 26 * (0.010434072 / 4) := by
   norm_num
 
+/-- Subtracting the threshold zero-point-one-zero-nine-six from the required curvature parameter yields a non-negative difference. -/
+theorem budget_needed_for_cut_32_sub_nonneg (lam : ℝ)
+    (h : 3.27708095409687544 - 26 * (lam / 4) ≤ 2.5643604628939807681) :
+    0 ≤ lam - (0.1096 : ℝ) :=
+  sub_nonneg.mpr (budget_needed_for_cut_32 lam h)
+
 end QOU.BraidKnot.PenaltyFamilyCeiling

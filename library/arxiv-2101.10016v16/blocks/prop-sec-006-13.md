@@ -1,0 +1,1 @@
+Let C and C ′ be semisimple tensor categories, G : C → C ′ a tensor equivalence and F : C → C ′ a linear equivalence. If F and G induce the same isomorphism between the corresponding Grothendieck rings then F can be made into a tensor equivalence.

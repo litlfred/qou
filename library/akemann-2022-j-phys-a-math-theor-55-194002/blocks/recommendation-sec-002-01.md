@@ -1,1 +1,0 @@
-In the present case of the χGUE also called complex Wishart–Laguerre ensemble, deviations should show up at the hard edge because there the k-point correlation functions differ from the ones in the bulk of the spectrum.

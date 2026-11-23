@@ -1,0 +1,1 @@
+Let S be the automorphism of PJ = ⨁ a∈Z Zǫa given by S(ǫa) = ǫa+N . We deﬁne the bilinear form B on PJ by B(x,y ) =− ∑ k>0 (Skx,y ) for x,y∈PJ .(4.5.6) Then we have ca(x) = B(x,ǫa−ǫa+N )−B(ǫa−ǫa+N,x ) for any x∈ QJ .

@@ -1,0 +1,1 @@
+Under Assumption 9.2 the connected components of X≥c are diﬀeomorphic to disjoint open disks with their origins removed, corresponding to the branches y(x) ∼Cxα of Q(x, y) = 0 as x →0 with −ˆr/ˆs < α ≤0.

@@ -1,0 +1,1 @@
+Let i be an integer with 1 <i <n and suppose that h € M# where jt is the composition of n such that m, = (1+T;). Suppose that h = Yo rsemst, where rs, € Rand ms, € M. Then rs, = 0 whenever i and i+1 belong to the same column of 8.

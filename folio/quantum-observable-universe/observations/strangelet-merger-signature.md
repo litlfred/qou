@@ -1,7 +1,7 @@
 Strangelets cannot radiate from a neutron star surface. The strangelet core resides at $\rho \gtrsim 2\rho_0$. Strange quark matter decompressing below this density converts back to ordinary hadrons. The Fermi energy no longer covers the Skein polynomial cost. An isolated neutron star keeps its strangelet core locked away.
 
 **Mergers.**
-When two neutron stars collide, tidal forces decompress the strangelet cores. As density drops below the hyperon threshold, each strange quark ($T_{2,5}^{\sigma}$, $|J| = 1.176$) must convert to a down quark ($T_{2,3}^{\sigma}$, $|J| = 0.960$). The Skein polynomial cost formerly paid by compression releases as conversion energy:
+When two neutron stars collide, tidal forces decompress the strangelet cores. As density drops below the hyperon threshold, each strange quark (lepton partner $T_{2,5}^{\sigma}$, $|J| = 1.176$) must convert to a down quark (lepton partner $T_{2,3}^{\sigma}$, $|J| = 0.960$); the Jones values are those of the partners. The Skein polynomial cost formerly paid by compression releases as conversion energy:
 
 $$
   \delta E_{\mathrm{conv}}

@@ -5,7 +5,7 @@
   types. Each type determines the geometric invariant (Vol or CS) that
   sets the binding scale.
 
-  Ref: [leitner2026] §5.8, prop:nuclear-knot-classification
+  Ref: [leitner2026] §5.8, conj:nuclear-knot-classification
 -/
 
 import QOU.Torsion.HeckeMassElement

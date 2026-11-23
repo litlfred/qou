@@ -1,1 +1,0 @@
-Then we may draw a circle which is inside this face except at one point: If we draw a circle for each such face, then at least one of the circles must be innermost, i.e. it must bound a region containing no such faces.

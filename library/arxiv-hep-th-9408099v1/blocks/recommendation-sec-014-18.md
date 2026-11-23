@@ -1,1 +1,0 @@
-(By contrast, if a fourth order zero splits to two double zeroes, the formula for the locations of the two double roots can contain a square root branch cut.) Therefore, for small m the discriminant of the curve with three equal masses should have a zero at u ∼m.

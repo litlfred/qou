@@ -1,1 +1,0 @@
-A supporting hyperplane to a convex set C at y ∈C is a hyperplane through y such that all elements of C lie on one side of the hyperplane; a normal v to such a supporting hyperplane is an inward-facing normal if (x−y)·v ≥0 for all x ∈C and an outward-facing normal if (x −y) · v ≤0 for all x ∈C (one of these conditions must be true).

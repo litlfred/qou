@@ -1,1 +1,1 @@
-A.2. For all z ∈K such that |z|p < 1, we have, for the N3,D-topology,
+A.2. For all z ∈K such that |z|p < 1, we have, for the N3,D-topology, τ(q−˜α) Li† q,˜α(z) ˜α→∞ −−−→LiKZ q (z)(e0, (eξ)ξ), τ(q−˜α) Li† q,−˜α(z) ˜α→∞ −−−→LiKZ q (z)(e0, (Ad8(ξ) q,−∞(eξ))ξ). Moreover, these convergences are uniform on all the closed disks of center 0 and radius ρ < 1.

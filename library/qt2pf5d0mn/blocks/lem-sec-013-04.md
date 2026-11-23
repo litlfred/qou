@@ -1,0 +1,1 @@
+For any colored 3-simplex σ, and ˜s, ˜s′ ∈F3 such that p4(˜s) = p4(˜s′) = s ∈S4, the following diagram commutes: V ±(σ) V ±sgn(s)(˜s(σ)) V ±sgn(s)(˜s′(σ)) V (˜s) V (˜s′) can (4.17) where sgn(s) = ± is the sign the s and we use the convention that ++ = −−= +, +−= −+ = −.

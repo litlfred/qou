@@ -1,1 +1,0 @@
-274Rg 144610# 210# 20 ms11 05 15Mo25 TD 2004 α≈100 ∗ ∗274Bh T : symmetrized from 17Og01=44(+34-13) (recommended), based on ∗∗ ∗274Bh T : 14Kh04=30(+54-12) 13Og04=54(+65-19) ∗∗ ∗274Mt T : symmetrized from 17Og01=440(+810-170)ms, based on data from 07Og02 ∗∗ ∗274Rg T : symmetrized from τ=18(+24-7) in 15Mo25 ∗∗ 275Bh 135780# 600# 1# m 5/2−# SF ?

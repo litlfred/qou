@@ -1,1 +1,0 @@
-Finally, in order to prove part (2) we shall use the existence of a family eF = (eπ : eC → B; s1, s2, s3) of 3-pointed smooth curves of genus g ≥1 having an element of inﬁnite order in the image of the monodromy representation on the conformal block V† l,⃗λ( eF) with⃗λ = (0, 1, 1).

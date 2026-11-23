@@ -1,0 +1,1 @@
+Let A be a noetherian commutative ring with connected spec- trum, and let R and R′ be dualizing complexes over A. Then there is a rank 1 projective A-module L and an integer d, such that R′ ∼= R ⊗A L[d] in D(A). We need some lemmas before proving the theorem.

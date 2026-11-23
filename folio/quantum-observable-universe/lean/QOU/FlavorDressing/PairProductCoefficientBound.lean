@@ -9,7 +9,7 @@ import Mathlib.Tactic.Positivity
 # QOU.FlavorDressing.PairProductCoefficientBound — the ½ ceiling on a positive-weight pair product
 
 The proton–neutron flavor split is `Δm_pn/M_N = leading·(1 + α·leading)`, where
-`leading = (q−1)²(1−q⁻⁴)/3` is proved (`prop:flavor-split-substrate`) and the **second-order
+`leading = (q−1)²(1−q⁻⁴)/3` is conjectured (`conj:flavor-split-substrate-mass`) and the **second-order
 normalization** `α ≈ 0.929254` is the single open coefficient (see
 `docs/audits/2026-06-29-flavor-split-partial-derivation.md`). One candidate mechanism is a
 **multiplicative pair product** `1 + split = ∏_k (1 + s_k)` with `Σ_k s_k = leading`, whose cross-term

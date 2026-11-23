@@ -1,1 +1,0 @@
-In fact, for any $\gamma\in X_i(2)$ and $\gamma'\in X_j(2)$ ($i\neq j$), we have $\{\gamma,\gamma'\}\in E(EAG_n)$ if and only if $\gamma'\gamma^{-1}\in T_2$ (i.e., $\gamma'\gamma^{-1}$ is a $3$-cycle moving $1$), which is the case if and only $\gamma'\gamma^{-1}\in T_1(\subseteq T_2)$ because $\gamma'\gamma^{-1}$ must move $2$ due to $i\neq j$.

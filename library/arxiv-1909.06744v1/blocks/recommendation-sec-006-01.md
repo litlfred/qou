@@ -1,1 +1,0 @@
-9 We shall deﬁne an analogue of the dominance order on Pn,2 as follows; for λ = (λ′, λ′′) ∈Pn,2, write it as λ′ = (λ′ 1, . . . , λ′ m), λ′′ = (λ′′ 1, . . . , λ′′ m) with common m, and deﬁne c(λ) ∈Z2m ≥0 by (7.1) c(λ) = (λ′ 1, λ′′ 1, λ′ 2, λ′′ 2, . . . , λ′ m, λ′′ m).

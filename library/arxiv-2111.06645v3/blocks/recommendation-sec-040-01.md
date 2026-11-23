@@ -1,1 +1,0 @@
-We should mention, however, that this extrapolation method requires either exact numbers or else very high precision (often several hundred or even thousand decimal digits in the calculations we did.) Step 4: Recognizing the coefficients exactly.

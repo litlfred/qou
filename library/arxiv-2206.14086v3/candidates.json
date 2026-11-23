@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2206.14086v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b6c27f820f9630793309e2afa2b53067a2f3d5c142b3f7c3952aa91617686604",
   "file": "2206.14086v3.pdf"
@@ -16,106 +19,140 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 4,
   "by_kind": {
-   "recommendation": 6
+   "theorem": 4
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "elsewhere": 4
+  },
+  "by_lean_status": {
+   "unformalized": 4
+  },
+  "needs_lean_proof": 4
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, it remained unknown, even on a conjectural level, what the limit should be.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If we do not set $x=0$, then we should consider $\\mathbf{h}(xT+ \\gamma T^{2/3}, \\tau T)- \\bar{\\mathbf{h}}(x,\\tau)T$ in the numerator.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-24-hydrodynamic-limit-and-kpz-limit.md",
-   "section_title": "Hydrodynamic limit and KPZ limit",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This result shows that the one-point marginal of the KPZ \ufb01xed point (for the narrow wedge initial condition) must be distributed as the Tracy-Widom distribution.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": " [6]",
+   "statement": "For every x \u2208R, lim t\u2192\u221eP \u0012L(t, t) \u22122t t1/3 \u2264x \u0013 = FTW(x) where FTW is the Tracy-Widom distribution. The 1/3-power in t1/3 is consistent with the height scale of the KPZ universality: see (2.1). This result shows that the one-point marginal of the KPZ \ufb01xed point (for the narrow wedge initial condition) must be distributed as the Tracy-Widom distribution. The Tracy-Widom distribution is the limiting distribution of the largest eigenvalue of random Hermitian matrices such as Gaussian unitary ensemble matrices [86]. The connection of the KPZ \ufb01xed point and random matrix theory was surprising and unexpected. See Section 9.3 for more on this connec",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution ( [6]) [[6]]",
+   "external_refs": [
+    " [6]",
+    "[6]",
+    "[86]"
+   ],
+   "proof_excerpt": null,
    "section_file": "sections/sec-007-3-one-point-distribution.md",
    "section_title": "One-point distribution",
    "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution ( [6]) [[6]]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-007-01",
+   "block_iri": "library/arxiv-2206.14086v3/blocks/thm-sec-007-01",
+   "claim_id": "arxiv-2206.14086v3#theorem:3.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The function $F^{\\mathrm{pKPZ}}_m$ should be the $m$-point distribution of this conjectured periodic KPZ fixed point with the (periodic) narrow wedge initial condition.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-013-6-ring-domain.md",
-   "section_title": "Ring domain",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.2",
+   "name": " [53]",
+   "statement": "Assume the step initial condition for the TASEP. Then, for every (\u03c4, \u03b3, h) \u2208R+ \u00d7 R \u00d7 R, lim T \u2192\u221eP \u0012h(\u03b3T 2/3, 2\u03c4T) \u2212\u03c4T \u2212T 1/3 \u2264h \u0013 = FTW \u0012 h \u03c4 1/3 + \u03b32 4\u03c4 4/3 \u0013 . Note from either side of the equation that the limit remains unchanged if we rescale (h, \u03b3, \u03c4) 7\u2192(\u03b1h, \u03b12\u03b3, \u03b13\u03c4) (3.1) for any \u03b1 > 0.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution ( [53]) [[53]",
+   "external_refs": [
+    " [53]",
+    "[53]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-009-33-exponential-dlpp.md",
+   "section_title": "Exponential DLPP",
+   "pages": "6-6",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution ( [53]) [[53]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-009-01",
+   "block_iri": "library/arxiv-2206.14086v3/blocks/thm-sec-009-01",
+   "claim_id": "arxiv-2206.14086v3#theorem:3.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, the transition probability should remain the same if we replace $(x_1, \\cdots, x_N)$ and $(y_1, \\cdots, y_N)$ by $(x_2, \\cdots, x_N, x_1+L)$ and $(y_2, \\cdots, y_N, y_1+L)$, respectively.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-017-73-transition-probabilities.md",
-   "section_title": "Transition probabilities",
-   "pages": "10-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "8.1",
+   "name": " [12,13]",
+   "statement": "Let K = K\u03b6 be the operator in either (7.1) or (7.3). If det(1 \u2212K)\u0338 = 0, which holds for all but at most countably many parameters, then \u22022 x log det(1 \u2212K) = \u2212rT p for complex-valued m \u00d7 1 vector functions p(t, y, x) and r(t, y, x) which satisfy the equations \u2202yp = 1 2\u22022 x p \u2212prT p, \u2202yr = \u22121 2\u22022 x r + rpT r (8.1) and \u2202tp + \u22023 x p \u22123(\u2202xp)rT p \u22123prT (\u2202xp) = 0, \u2202tr + \u22023 x r \u22123(\u2202xr)pT r \u22123rpT (\u2202xr) = 0. (8.2) Equation (8.2) is a coupled system of vector-valued modi\ufb01ed Korteweg-De Vries (mKdV) equations. The scalar mKdV equation is \u2202tf +\u22023 x f \u22126(\u2202xf)f 2 = 0. On the other hand, equation (8.1) forms a coupled system (n, k) t1n t2n n",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution ( [12,13]) [[12]",
+   "external_refs": [
+    " [12,13]",
+    "[12,13]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-018-8-integrable-differential-equations.md",
+   "section_title": "Integrable differential equations",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution ( [12,13]) [[12]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-018-01",
+   "block_iri": "library/arxiv-2206.14086v3/blocks/thm-sec-018-01",
+   "claim_id": "arxiv-2206.14086v3#theorem:8.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "9.1 Thin DLPP The universality should hold for the last passage time L(n, k) as n, k \u2192\u221e.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "9.1",
+   "name": " [16,21]",
+   "statement": "Suppose that ws is an arbitrary random variable which has all moments. Assume that the mean is zero and the variance is one. Then, for every x, lim n,k\u2192\u221eP \u0010L(n, k) \u22122 \u221a nk n 2 k\u22121 \u2264x \u0011 = FTW(x) for k = [na] with any 0 < a < 3/7. The restriction a < 3/7 is technical. If we assume only \ufb01nite p moments for p > 2, then the result holds for thinner rectangles satisfying 0 < a < 3(p\u22122) 7p . For the case of \ufb01xed k and large n, a directed path looks like the one in Figure 13. Since the sum of ws on each row converges to a Brownian motion, Donsker\u2019s theorem implies that L(n, k) \u221an \u21d2Dk where Dk = sup 0=t0\u2264t1\u2264\u00b7\u00b7\u00b7\u2264tk=1 k X i=1 (Bi(ti) \u2212Bi(ti\u22121)) and Bi(t",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution ( [16,21]) [[16]",
+   "external_refs": [
+    " [16,21]",
+    "[16,21]"
+   ],
+   "proof_excerpt": null,
    "section_file": "sections/sec-020-9-comments-on-universality.md",
    "section_title": "Comments on universality",
    "pages": "12-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution ( [16,21]) [[16]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-020-01",
+   "block_iri": "library/arxiv-2206.14086v3/blocks/thm-sec-020-01",
+   "claim_id": "arxiv-2206.14086v3#theorem:9.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

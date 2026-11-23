@@ -1,1 +1,0 @@
-If we chose a refined, "easy" triangulation --- so that it properly defines a theory $T_M$ --- there must be a chiral operator $\mathcal{O}_I$ associated to every internal edge, and charged under the edge coordinate's $U(1)$ symmetry.

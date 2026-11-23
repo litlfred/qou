@@ -1,1 +1,0 @@
-While this result may be considered less relevant that its analoga for $\Dl$ and $V$, its proof displays the largest variety of tools necessary to apply, and shows how the various approaches to link invariants (skein relations, state models and representation theory), which are often considered in isolation, can usefully complement each other.

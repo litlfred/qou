@@ -1,0 +1,1 @@
+The top level series of the product of primary fields has been studied analytically in [170] in the setting of affine Lie algebras for g = sl2 (called vertex operators in their work). They are an important tool to study products. They have been extended by Huang and Lepowsky in the setting of vertex operator algebras in greater generality, see

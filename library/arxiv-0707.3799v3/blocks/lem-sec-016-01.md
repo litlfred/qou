@@ -1,0 +1,1 @@
+For V ∈Rep( ˇG), the O(ˇt∗/WL × ˇt∗/W × A1)-module (πL, Id, Id)∗ϕ(V ) carries a canonical filtration F • L such that the associated graded is equipped with a canonical isomorphism algΞL : gr(πL, Id, Id)∗ϕ(V ) ∼ −→(Id, πL, Id)∗ϕL(V |ˇL).

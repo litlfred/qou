@@ -1,0 +1,1 @@
+Let M be a linear category. (1) The opposite category Mop has a canonical structure of a linear category. (2) If M is additive, then Mop is also additive. (3) If M is abelian, then Mop is also abelian.

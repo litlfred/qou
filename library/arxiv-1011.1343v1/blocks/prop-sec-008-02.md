@@ -1,0 +1,1 @@
+It is important to stress that the approximate Wigner SU(4) symmetry of the nuclear interactions strongly suppresses the sign oscillations and thus makes such nuclear lattice simulations easier to handle than lattice QCD calculations.

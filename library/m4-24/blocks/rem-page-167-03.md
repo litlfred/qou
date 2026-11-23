@@ -1,0 +1,1 @@
+Let © be a closed oriented surface of genus g, and let C(X) be its set of multicurves (isotopy classes of collections of disjoint simple closed curves). Let T() be its Teichmiiller space; that is, the space of hyperbolic structures, considered up to diffeomorphisms isotopic to the identity. Topologically, T(©) is an open ball of dimension 6g — 6.

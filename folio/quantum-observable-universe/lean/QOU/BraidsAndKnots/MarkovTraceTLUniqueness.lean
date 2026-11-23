@@ -178,4 +178,40 @@ theorem threeRow_ne_zero_of_ocneanu_ne
   hz (markovWeights_eq_jones_of_threeRow_eq_zero q qi z y₃ y₂₁ y₁₃ hqi hnorm
     hsigma hsigmasigma hTL hfaith).2.2
 
+/-- **Converse direction (`D ⟹ TL`): convention D's Ocneanu parameter forces
+`y₁₃ = 0` (`bean qou-6moa`).**
+
+`markovWeights_eq_jones_of_threeRow_eq_zero` proves `TL + faithful ⟹ D`
+(`y₁₃ = 0 ∧ y₂₁ ≠ 0 ⟹ z · [2]_q = q²`); citing it as proof of `y₁₃ = 0` would
+cite a theorem for its own hypothesis. The converse implication `D ⟹ TL`
+(`z · [2]_q = q² ⟹ y₁₃ = 0` when `[2]_q ≠ 0` and `[3]_q = [2]_q² − 1 ≠ 0`)
+holds unconditionally without any faithfulness assumption on `y₂₁` (and is also
+proved as `FibreDimensionForcesTL.threeRow_eq_zero_of_jones_ocneanu`). -/
+theorem threeRow_eq_zero_of_conventionD
+    (q qi z y₃ y₂₁ y₁₃ : R)
+    (hqi : q * qi = 1)
+    (hnorm : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (hsigma : q * y₃ + (q - qi) * y₂₁ + (-qi) * y₁₃ = z)
+    (hsigmasigma : q ^ 2 * y₃ + (-1) * y₂₁ + qi ^ 2 * y₁₃ = z ^ 2)
+    (hzD : z * (q + qi) = q ^ 2)
+    (hb2ne : q + qi ≠ 0)
+    (h3ne : (q + qi) ^ 2 - 1 ≠ 0) :
+    y₁₃ = 0 := by
+  have hA : (q + qi) * (y₂₁ + y₁₃) = q - z := by
+    linear_combination q * hnorm - hsigma
+  have hA' : (q + qi) ^ 2 * (y₂₁ + y₁₃) = 1 := by
+    linear_combination (q + qi) * hA - hzD + hqi
+  have hB : (2 * q ^ 2 + 1) * y₂₁ + (q ^ 2 - qi ^ 2) * y₁₃ = q ^ 2 - z ^ 2 := by
+    linear_combination q ^ 2 * hnorm - hsigmasigma
+  have hB' : (2 * q ^ 2 + 1) * ((q + qi) ^ 2 * y₂₁)
+      + (q ^ 2 - qi ^ 2) * ((q + qi) ^ 2 * y₁₃) = 2 * q ^ 2 + 1 := by
+    linear_combination (q + qi) ^ 2 * hB - (z * (q + qi) + q ^ 2) * hzD
+      + (2 * q ^ 2 + q * qi + 1) * hqi
+  have hkill : ((q + qi) ^ 2 * ((q + qi) ^ 2 - 1)) * y₁₃ = 0 := by
+    linear_combination -hB' + (2 * q ^ 2 + 1) * hA'
+      + 2 * (q + qi) ^ 2 * y₁₃ * hqi
+  rcases mul_eq_zero.mp hkill with h | h
+  · exact absurd h (mul_ne_zero (pow_ne_zero 2 hb2ne) h3ne)
+  · exact h
+
 end QOU.BraidsAndKnots

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/deligne-mostow-1986/blocks/cor-sec-016-02",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "title": "13.1.2",
+  "pageStart": 76,
+  "pageEnd": 78,
+  "text": "cor-sec-016-02.md",
+  "derivedFrom": "library/deligne-mostow-1986/sections/sec-016",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-016-13-elliptic-and-euclidean-cases.md (p. 76-78)",
+    "claim_id": "deligne-mostow-1986#cor-sec-016-02",
+    "lean_status": "unformalized"
+  }
+}

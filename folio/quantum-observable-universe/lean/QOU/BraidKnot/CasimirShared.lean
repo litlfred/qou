@@ -88,6 +88,16 @@ theorem qInt_two (qs : QuantumSu2) : qs.qInt 2 = qs.q + 1 := by
   have h : qs.q - 1 ≠ 0 := sub_ne_zero.mpr qs.q_ne_one
   field_simp; ring
 
+/-- **Step recurrence for classical q-integers (`xbz0`).** For any `qs : QuantumSu2`
+and `n : ℕ`, `[n + 1]_q = q · [n]_q + 1`. -/
+theorem qInt_succ (qs : QuantumSu2) (n : ℕ) :
+    qs.qInt (n + 1) = qs.q * qs.qInt n + 1 := by
+  dsimp [QuantumSu2.qInt]
+  have h : qs.q - 1 ≠ 0 := sub_ne_zero.mpr qs.q_ne_one
+  rw [pow_add, pow_one]
+  field_simp
+  ring
+
 /-! ## Casimir cluster — the parameter bundle and the q-Casimir element -/
 
 /-- Parameter bundle for constructing the q-Casimir element.

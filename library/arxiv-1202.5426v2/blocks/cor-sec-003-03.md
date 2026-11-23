@@ -1,0 +1,1 @@
+Let γ, β0, β,p and q be as in Lemma 4.3 and p′ be such that 1/p + 1/p′ = 1. Then • for all α ≥2 there is a constant C such that |T α s1,s2,τ1,τ2(h)| ≤C∥h∥H1−β,p′ for all s1, s2, τ1, τ2 ∈[0, 1] and h ∈C∞, • the operator T(γ, ·) = T1(γ, ·) + T2(γ, ·) ∈  H3/2(R/Z, Rn) ∗can be extended to a bounded operator on H1−β,p′.

@@ -380,7 +380,8 @@ def main() -> int:
 
     # ── §4  Level→rung diagnostics at both anchors (NOT wired) ───────
     print("  §4 level→rung diagnostics c_ℓ^cand = m_e·E₀·L_ℓ/(Q_A·cos α_eff·u^ℓ)")
-    E0 = 1 / (q_sym * (q_sym - 1))   # form-A E₀ (qbeta_delta_tr_vs_formA)
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(1, q_sym)   # form-A E₀ (qbeta_delta_tr_vs_formA)
     diag = {}
     for label, anchor in (("proton", Q_PROTON), ("muon", Q_MUON)):
         sub = substrate_ladder_quantities(anchor, convention="C")

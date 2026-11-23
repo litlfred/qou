@@ -1247,6 +1247,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a5387305518c",
+          "ts": "c77555e28ff0",
+          "lean": "6184dc509852",
+          "lean_statement": "898dcf309e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:05:16.696Z",
+        "reviewed_sha": "d452093fabf877690aeba624197ad015c6b9aa74",
+        "severity": "major",
+        "evidence": "Lean rewrites fields of a scalar structure; a tautology, not the diagram. Commutativity of the functor square is not encoded."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2463,6 +2481,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:26:10.452Z",
+  "updated_at": "2026-11-16T07:05:16.696Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

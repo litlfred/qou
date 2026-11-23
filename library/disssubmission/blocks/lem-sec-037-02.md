@@ -1,0 +1,1 @@
+Let X = JC be the Jacobian variety of a non-hyperelliptic smooth projective curve of even genus g = 2n. Then over some Zariski-open dense subset U ⊂X there exists an irreducible local system LU of complex vector spaces such that dn∗(CCn×Cn)|U ∼= CU ⊕LU.

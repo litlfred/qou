@@ -1,0 +1,44 @@
+control: N = 2 must reproduce H18
+N = 2, n = 4: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) True
+  basis vectors in J-stable weight spaces: 6 of 16
+  orbit (1, 3), word [1, 3], L = 2: passing (L', sign) = [(2, 1)]; weight forced to L: True
+     p_0..p_3 = ['4', '49/4', '769/16', '12289/64']
+  orbit (2,), word [2], L = 1: passing (L', sign) = [(1, -1)]; weight forced to L: True
+     p_0..p_3 = ['4', '3', '17/2', '63/4']
+N = 2, n = 6: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) True
+  basis vectors in J-stable weight spaces: 20 of 64
+  orbit (1, 5), word [1, 5], L = 2: passing (L', sign) = [(2, 1)]; weight forced to L: True
+     p_0..p_3 = ['8', '49/2', '769/8', '12289/32']
+  orbit (2, 4), word [2, 4], L = 2: passing (L', sign) = [(2, 1)]; weight forced to L: True
+     p_0..p_3 = ['8', '49/2', '769/8', '12289/32']
+  orbit (3,), word [3], L = 1: passing (L', sign) = [(1, -1)]; weight forced to L: True
+     p_0..p_3 = ['8', '6', '17', '63/2']
+test: N = 3
+N = 3, n = 4: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) True
+  basis vectors in J-stable weight spaces: 19 of 81
+  orbit (1, 3), word [1, 3], L = 2: passing (L', sign) = [(2, 1)]; weight forced to L: True
+     p_0..p_3 = ['9', '99/4', '1539/16', '24579/64']
+  orbit (2,), word [2], L = 1: passing (L', sign) = [(1, -1)]; weight forced to L: True
+     p_0..p_3 = ['9', '21/2', '99/4', '381/8']
+N = 3, n = 5: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) True
+  basis vectors in J-stable weight spaces: 51 of 243
+  orbit (1, 4), word [1, 4], L = 2: passing (L', sign) = [(2, 1)]; weight forced to L: True
+     p_0..p_3 = ['9', '99/4', '1539/16', '24579/64']
+  orbit (2, 3), word [2, 3, 2], L = 3: passing (L', sign) = [(3, -1)]; weight forced to L: True
+     p_0..p_3 = ['9', '381/8', '24579/64', '1572861/512']
+N = 3, n = 6: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) True
+  basis vectors in J-stable weight spaces: 141 of 729
+  orbit (1, 5), word [1, 5], L = 2: passing (L', sign) = [(2, 1)]; weight forced to L: True
+     p_0..p_3 = ['27', '297/4', '4617/16', '73737/64']
+  orbit (2, 4), word [2, 4], L = 2: passing (L', sign) = [(2, 1)]; weight forced to L: True
+     p_0..p_3 = ['27', '297/4', '4617/16', '73737/64']
+  orbit (3,), word [3], L = 1: passing (L', sign) = [(1, -1)]; weight forced to L: True
+     p_0..p_3 = ['27', '63/2', '297/4', '1143/8']
+N = 3, n = 7: J^2 = 1 True; J rho(T_i) J = rho(T_(n-i)) True
+  basis vectors in J-stable weight spaces: 393 of 2187
+  orbit (1, 6), word [1, 6], L = 2: passing (L', sign) = [(2, 1)]; weight forced to L: True
+     p_0..p_3 = ['27', '297/4', '4617/16', '73737/64']
+  orbit (2, 5), word [2, 5], L = 2: passing (L', sign) = [(2, 1)]; weight forced to L: True
+     p_0..p_3 = ['27', '297/4', '4617/16', '73737/64']
+  orbit (3, 4), word [3, 4, 3], L = 3: passing (L', sign) = [(3, -1)]; weight forced to L: True
+     p_0..p_3 = ['27', '1143/8', '73737/64', '4718583/512']

@@ -1,1 +1,0 @@
-Since $F_A$, $F_B$, and $F_C$ are dual to a tetrahedron of the canonical triangulation, when $\beta= \alpha$, $C(\alpha)$ and $F_A$ must overlap enough that the interiors of the regions bounded by these circles and by $F_B$ intersect nontrivially.

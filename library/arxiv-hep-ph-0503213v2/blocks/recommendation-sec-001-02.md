@@ -1,1 +1,0 @@
-We shall refer to such pairs of tweedles as *helons* (evoking their helical structure) and denote the three types of helons by $H_+$, $H_-$, and $H_0$.\ **2) Helons bind into triplets:** *Helons are bound into triplets by a mechanism which we represent as the tops of each strand being connected to each other, and the bottoms of each strand being similarly connected*.

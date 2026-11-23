@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-0006111v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "e024febd3d0886a3c757f96ade67e6a3449e5279d573ce577145f23670bc3fc2",
   "file": "0006111v2.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Of course, as one further additional check, the sequential summing-up of the in- dividual eigenvalue distributions should simply build up the full microscopic eigenvalue densities, which are now known in closed analytical form.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-001.md",
-   "section_title": "Page 1",
-   "pages": "1-1",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(6) To get the probability distributions of the Dirac operator eigenvalues we must change the picture back to chiral Gaussian ensembles, and take the microscopic limit xi \u21920 m2 j \u21920 , N \u2192\u221e, with the rescaled variables \u03b6i = \u03c0\u03c1(0)\u221axi = \u221a8N xi \u00b5j = \u03c0\u03c1(0)mj = \u221a 8Nmj kept \ufb01xed.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(Indeed, it can alternatively be viewed as a partition function in a sector of topological charge \u03bd = 0 and 3 additional massless fermions.) This expression entirely in terms of the e\ufb00ective \ufb01eld theory partition functions strongly suggests that it should be possible to derive these analytical expressions starting directly from the e\ufb00ective \ufb01eld theory, perhaps partially quenched as in Ref. [8].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall here for convenience provide the precise detailed expressions for all these known cases.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-004.md",
-   "section_title": "Page 4",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

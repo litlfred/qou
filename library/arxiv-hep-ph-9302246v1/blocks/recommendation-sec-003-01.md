@@ -1,1 +1,0 @@
-Thus, in order to compare both models, we shall require that the linear combination of six invariants which is a solution of the anomaly in the HGS model does not introduce couplings between Goldstone bosons and external sources apart from those in the WZ action.

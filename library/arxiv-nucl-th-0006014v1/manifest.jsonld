@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0006014v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0006014v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-nucl-th-0006014v1",
+  "title": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
   "contains": [
     "library/arxiv-nucl-th-0006014v1/sections/sec-front-matter",
     "library/arxiv-nucl-th-0006014v1/sections/sec-000",
@@ -79,7 +79,9 @@
   },
   "meta": {
     "doc_id": "arxiv-nucl-th-0006014v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0006014v1.pdf",
     "source_sha256": "208c7a6aaf628b3060d594ca7bbb5551bb90e867892358cac24c40bbce9298de",
     "pages": 69,
@@ -90,8 +92,8 @@
       "stamp_date": "9 Jun 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

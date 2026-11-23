@@ -23,7 +23,11 @@ class CurvatureRankGbStratificationContext extends QOU.Shared.MarkovTraceContext
   quotient_subset_rank : ∀ r : ℕ, quotient_set r ⊆ {T_w : A | rank_T_w T_w = r}
   /-- The reverse inclusion of the stratification. -/
   rank_subset_quotient : ∀ r : ℕ, {T_w : A | rank_T_w T_w = r} ⊆ quotient_set r
-/-- **Proposition statement** (from manuscript):
+/-- **Conjecture statement** (`conj:curvature-rank-gb-stratification`; demoted from
+`prop:` 2026-11-20 because its proof does not go through, bean `qou-6qbv`). The
+class above carries the two inclusions as fields and has no instance.
+
+From the manuscript:
 
 The curvature-rank stratifies the GB filtration:*
 

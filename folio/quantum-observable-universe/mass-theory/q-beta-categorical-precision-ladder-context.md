@@ -62,9 +62,9 @@ $$
 
 **Coefficient tier (read with the truncation order).** The $c_k$ carry a
 provenance tier: $c_2 = -1$ is **structural** — the exact $u^2$ coefficient
-of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, hence trivially
-q$_0$-independent. It is not **proved**: the Lean re-reads the $N{=}2$ factor
-rather than deriving it. And it is Taylor-exact *for that series* — the
+of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, and therefore
+$q_0$-independent by definition. It is not **proved**: the $N{=}2$ factor is re-read in the ansatz form
+rather than derived. And it is Taylor-exact *for that series* — the
 normalised series (cosine factor inside) has $\tilde c_2 = c_2 - 1/8 = -9/8$; $c_k$ for $k \geq 3$ are at present **structural
 near-matches** — their empirical value swings with the $q_0$ anchor
 (e.g. $c_3$: $-2.010$ at the muon-pin $q_0$, $-2.069$ at the $m_p$-pin
@@ -72,9 +72,7 @@ $q_0$), so they are not yet Taylor-exact derivations. A near-match that
 beats the experimental target is a genuine result *and* not a
 derivation. The permanent
 upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
-coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
-next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
-([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)).
+coefficients *are* the $c_k$.
 
 ## canonical precision ladder
 
@@ -163,12 +161,11 @@ canonical basis or a Khovanov–Rozansky spectral sequence.
 
 ## Provenance of the tables
 
-Tables 2 and 3 above are computed by
-[`qbeta_precision_ladder_n5.py`](../../../computations/qbeta/qbeta_precision_ladder_n5.py)
+Tables 2 and 3 above are computed
 at the muon-pin (CAL-2) $q_0$, in convention C, with $c_4 = c_3 b^4$ and
 $c_5 = -(b^2 + 1/2)$. That producer is the first in the corpus to evaluate the
-boxed five-rung product itself: the block's previously declared producer,
-`probe_q_beta_operator_valued_N3.py`, stops at $N=3$, carries no $c_5$, and is
+boxed five-rung product itself: the block's previously declared producer
+stops at $N=3$, carries no $c_5$, and is
 not the generator of these tables at all — its own witness records
 $\varepsilon_{N=1} = 674.83$ ppm against the $+73.80$ ppm of the $N=1$ row,
 because its first rung is $\cos(\alpha_{N=1})$ rather than the boxed
@@ -177,7 +174,7 @@ $\cos(\alpha - b\hbar_q^2/2)$.
 **As previously published, for the record.** The $\varepsilon_Q$ column read
 $+1677.5$, $+73.79$, $+1.24$ ppm, then $+6.02$, $-0.57$ ppb and, at $N=5$,
 $\sim 0$ ppb in table 2 and $+0.04$ ppb in table 3; the headline residual was
-quoted as $-0.0066$ ppm. Three defects are corrected above.
+quoted as $-0.0066$ ppm.
 
 *The sign.* The published headline was negative. It cannot be: $\mathfrak{Q}_\beta^A$
 sits 1677 ppm above CODATA and every live rung factor is below 1, so the ladder

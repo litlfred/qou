@@ -1,1 +1,0 @@
-Going back to the x −y plane, we must note that the diﬀerential form dx/y picks up a factor of u1/2 from the change of variables in (11.15); hence its periods daD/du and da/du pick up a factor of u1/2.

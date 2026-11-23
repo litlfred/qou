@@ -14,9 +14,12 @@ export default remark({
     "binding-energy",
     "comparison",
   ],
-  uses: ["rem:atom-mass-full-hecke"],
+  uses: ["rem:atom-mass-full-hecke", "def:coulomb-charge"],
   cites: [
     "hammer2019",
     "jones1985",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Witness**: `feynman-qou-comparison.witness.json`." },
   ],
 });

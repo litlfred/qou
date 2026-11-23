@@ -1,0 +1,1 @@
+The vecor 1 is called the ground, or vacuum state, since it has lowest energy, and physicists often shift the Hamiltonian by a constant, so that the energy of this state is zero (i.e. there is no matter).

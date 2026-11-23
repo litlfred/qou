@@ -1,1 +1,0 @@
-Clearing denominators, and looking already at the extremal $q$-degrees, we see that for $|m|\ge 6$ among the 7 terms $c_i\dl_i^m$ the one for $i=2$ has the lowest minimal or highest maximal degree (as a unique term, except for $m=6$, where we must use also that the leading coefficient of $c_6\dl_6^m$ has the same sign).

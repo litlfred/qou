@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s00209-021-02825-4/blocks/lem-sec-030-04",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 34,
+  "pageEnd": 41,
+  "text": "lem-sec-030-04.md",
+  "derivedFrom": "library/s00209-021-02825-4/sections/sec-030",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "A",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-030-a1-decomposition-of-vn-tensor-vm.md (p. 34-41)",
+    "claim_id": "s00209-021-02825-4#lemma:A",
+    "lean_status": "unformalized"
+  }
+}

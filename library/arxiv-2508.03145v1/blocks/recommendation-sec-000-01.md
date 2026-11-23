@@ -1,1 +1,0 @@
-As $v$ is an equivalence, these are equivalences in $T_1$ and $T_2$, and as $f_*$ and $g_*$ are conservative, $a$ and $b$ must be equivalences to.\ We finish this first section by noticing that $\infty\text{-}\mathbf{Cat}^\mu$ receives a natural $(2,\infty)$-functor from the $(2,\infty)$-category of presentable symmetric monoidal $\infty$-categories.

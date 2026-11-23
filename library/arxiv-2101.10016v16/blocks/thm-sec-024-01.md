@@ -1,0 +1,1 @@
+Let C and C ′ be modular fusion categories with positive categorical dimensions and with Grothendieck rings isomorphic to the Verlinde fusion ring RN,ℓ via an isomorphism compatible with the corresponding T-matrices. Then C and C ′ are equivalent as ribbon tensor categories.

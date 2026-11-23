@@ -1,0 +1,1 @@
+We have dim H1(X)jk = dim H1,0(X)jk = 1 if 0 < j/n < k/d < 1, and dim H1(X)jk = dim H0,1(X)jk = 1 if 0 < k/d < j/n < 1. The remaining eigenspaces are zero. The case of a degree d = 6 covering branched over n = 9 points (and inﬁnity) is shown in Figure 6.

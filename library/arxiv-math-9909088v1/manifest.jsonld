@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9909088v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9909088v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9909088v1",
+  "title": "The Gauss Map and a Noncompact Riemann-Roch Formula for Constructible Sheaves on Semiabelian Varieties",
   "contains": [
     "library/arxiv-math-9909088v1/sections/page-001",
     "library/arxiv-math-9909088v1/sections/page-002",
@@ -32,7 +32,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9909088v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9909088v1.pdf",
     "source_sha256": "52cfb568951f195f96ca14a0048063be4fbe3af24a99164b053a7d5883010f2e",
     "pages": 9,
@@ -43,8 +45,8 @@
       "stamp_date": "15 Sep 1999"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

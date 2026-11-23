@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2608.25107v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6dca8b99a1f32db4eda7f780e3e31f5ad403be23d6ea268df5472513dcf21c04",
   "file": "2608.25107v1.pdf"
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Because accelerator neutrino beams are broad-band, the energy of each interacting neutrino is not known a priori and must be inferred from the observed final state.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A realistic prediction must therefore combine the initial nuclear state, the relevant interaction mechanisms, the transport of produced hadrons through the nucleus, and the de-excitation of the remnant, while providing a consistent description across kinematic regimes and target nuclei.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Conventional generators do not provide this information directly as derivatives, so analyses must obtain it through additional parameter-response machinery [@Stowell:2016jfr; @Chakrani:2022tey; @GENIE:2024ufm; @Abe:2025yaa; @T2K:2026cqe].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "MIGRAD without supplied derivatives must estimate the gradient numerically, so a central finite-difference estimate requires approximately $2n$ evaluations of the objective.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-computational-cost.md",
-   "section_title": "Computational cost",
-   "pages": "14-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This is the setting of a cross-section measurement: experiments observe event distributions in reconstructed kinematics, from which the corresponding signal rates in true kinematics must be inferred after accounting for detector effects and backgrounds, before normalisation by the integrated flux and number of targets.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-unfolding.md",
-   "section_title": "Unfolding",
-   "pages": "15-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

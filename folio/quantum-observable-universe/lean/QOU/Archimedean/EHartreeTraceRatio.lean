@@ -200,7 +200,7 @@ LEG 2 — that the dressed `(2,2)` block *is* the EM exchange (so it costs this
 `cplx`), and that the covalent pair contributes `cplx²` — is the conjecture's
 own `(2,2)=EM` identification plus the covalent Pauli-2 count; it is **not**
 formalised here as discharged (and cannot be, without circularity, since
-`prop:force-carrier-intertwining-correspondence` is itself conditional on
+`conj:force-carrier-intertwining-correspondence` is itself conditional on
 `conj:e-hartree`). -/
 theorem forceCarrier_complexity_unique
     (K₁ K₂ : TorusKnot) (h₁ : K₁.genus = 4) (h₂ : K₂.genus = 4)
@@ -235,7 +235,7 @@ channel and `(1,1,1,1)` the decoupled channel.
 
 This *grounds* the `(2,2)=EM` identification in the covalent-pair structure; it
 does **not** close the conjecture — the `sgn ⊠ sgn` physical input and the
-round-20 `α²` algebra remain (and `prop:force-carrier-intertwining-correspondence`
+round-20 `α²` algebra remain (and `conj:force-carrier-intertwining-correspondence`
 is e-hartree-conditional, so the `(2,1,1)` coincidence is corroboration only). -/
 theorem em_channel_forced_to_two_two :
     ([[2, 2], [2, 1, 1], [1, 1, 1, 1]] : List (List ℕ)).filter

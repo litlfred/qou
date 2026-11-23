@@ -1,1 +1,0 @@
-If we knew what the $H_3$ relation \eqref{H3} should be, then checking it would require calculating the 10-valent vertex (which is easy), and then computation of a pair of $2^{15} \times 2^{15}$ matrices (which is quite time-consuming).

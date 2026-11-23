@@ -1,1 +1,0 @@
-If the induced foliation of R′ i contains a positive vertex v then this sub-foliation must also contain a singular leaf that has its endpoint on γi + ∪α and is adjacent to a (possibly different) positive vertex v′.

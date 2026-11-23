@@ -246,4 +246,15 @@ theorem twoDimFibre_pins_h3_weights [IsDomain R]
     linear_combination q * hnorm - hsigma
   linear_combination (q + qi) * hA - hzD + hqi - (q + qi) ^ 2 * hTL
 
+/-- Scaling the normalization equation `y₃ + 2 * y₂₁ + y₁₃ = 1` by `(q + qi)^2`
+under `y₁₃ = 0` and `(q + qi)^2 * y₂₁ = 1` pins the trivial-block weight via
+`(q + qi)^2 * y₃ = (q + qi)^2 - 2`. -/
+theorem twoDimFibre_pins_y3_scaled
+    (q qi y₃ y₂₁ y₁₃ : R)
+    (hnorm : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (h13 : y₁₃ = 0)
+    (h21 : (q + qi) ^ 2 * y₂₁ = 1) :
+    (q + qi) ^ 2 * y₃ = (q + qi) ^ 2 - 2 := by
+  linear_combination (q + qi) ^ 2 * hnorm - 2 * h21 - (q + qi) ^ 2 * h13
+
 end QOU.BraidsAndKnots

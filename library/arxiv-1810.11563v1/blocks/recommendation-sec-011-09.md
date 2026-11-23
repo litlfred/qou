@@ -1,1 +1,0 @@
-Now we know that any loop which passes through the central node must be very big, namely of length $\sim 4^K.$ But because the space $\suk$ is a group space, every point on the graph is the same as every other point.

@@ -1,1 +1,1 @@
-Let C be a fusion category endowed with a weak tensor functor to Vec.
+Let C be a fusion category endowed with a weak tensor functor to Vec. Under Tannaka-Krein correspondence, full fusion subcategories D ⊂ C endowed with the restricted functor correspond to quotient weak Hopf algebras of A = Nat0(F). The class of weak Hopf is not invariant under general twists, but we next see that it is so under a suitable subclass of twists, that play the role of 2-cocycles in our framework.

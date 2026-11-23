@@ -1,1 +1,0 @@
-If the three-ball bound by $S $ contains only the incoming or the outgoing ball, then $S$ must be one of the boundary components of $S^2\times I$, the other being the boundary of the incoming/outgoing ball.

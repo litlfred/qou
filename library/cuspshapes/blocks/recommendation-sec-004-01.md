@@ -1,1 +1,0 @@
-To ﬁnd such a structure on C(1; 2), a choice of three appropriate curves on ∂+C(1; 2) must be pinched, which amounts to ﬁnding values of ρ(α), ρ(β) and ρ(γ1) for which certain products of generators have trace ±2, namely those products that represent the boundary curves.

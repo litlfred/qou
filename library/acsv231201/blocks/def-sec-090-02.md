@@ -1,0 +1,1 @@
+26 (Morse function). A smooth function h : X — R is called a Morse function if the critical points of h are nondegenerate. If h is a proper map (meaning the inverse image of any closed and bounded interval is com- pact) then we call h a proper Morse function. If the critical values of h are distinct, then h is a Morse function with distinct critical values.

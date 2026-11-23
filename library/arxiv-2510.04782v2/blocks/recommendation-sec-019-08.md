@@ -1,1 +1,0 @@
-So for the $q$-Hodge filtration to be a $q$-deformation of the Hodge filtration, it must be possible to modify $\gamma_q(x^\alpha)$ by elements from $(q-1)\q D_\alpha$ to get an element in $\fil_{\qHodge}^p\q D_\alpha$.

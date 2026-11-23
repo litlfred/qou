@@ -1,0 +1,1 @@
+B.1. For all ˜α0, ˜α ∈N∗such that ˜α0 | ˜α, we have 8q,α = iter ∫1,0 ˜α/ ˜α0,q ˜α0(8q, ˜α0) and 8q,˜α = 8q,−˜α −1∫1,0. More generally, for all α ∈N∗, we have 8p,−α = 8p,−1 ◦∫1,0 τ(λ)σ(8p,−1) · · ·◦∫1,0 τ(λα−1)σ α−1(8p,−1) and 8p,−α = 8 −1∫1,0 p,α .

@@ -1,1 +1,0 @@
-On the other hand, a transformation that preserves $H^2$ must preserve $\partial H^2 = \matR\cup \infty$ and it is easy to see that since the images of $0,1,\infty$ are real all the coefficients $a,b,c,d$ can be taken in $\matR$. \end{proof}

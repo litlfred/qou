@@ -1,1 +1,0 @@
-For instance, unlike in the Regge case, where the partition function sums over all admissible spin labelings of tetrahedra edges, a spin network also includes quantum degrees of freedom at the nodes (the intertwiners), which must also be considered.

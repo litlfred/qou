@@ -1,1 +1,0 @@
-In the generic case where $[\omega]$ has order greater than $1$, this condition forces a refinement of the equivariance structure, typically implemented by a $2$-cocycle on the map itself, leading to the notion of *twisted equivariance* that we shall explore in subsequent sections.

@@ -102,7 +102,7 @@ theorem not_descent_of_not_halts (C : S → Prop) (P : S) (hC : C P)
 
 `halts_of_len_descent` is the corpus's route to q-Collatz: exhibit a filtration
 that strictly drops off the normal form, and halting follows. The open core is
-routinely described as *the descent measure* (`prop:collatz-contact-boundary`,
+routinely described as *the descent measure* (`conj:collatz-contact-boundary`,
 `PNeqNpWallUnification`, `collatz_obstruction_link`), with `v_[2]` refuted
 scope-(a) in `collatz_vtwo_obstruction`.
 

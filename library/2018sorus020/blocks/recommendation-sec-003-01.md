@@ -1,1 +1,0 @@
-It should be clear from this example that the computation of the algebra of invariants is in general somewhat diﬃcult, on the other hand it provides a motivation to pay attention on a particular kind of functions, namely trace functions, which will play a key role in the next paragraph, and in the rest of this thesis.

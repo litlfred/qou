@@ -1,1 +1,0 @@
-I should also mention that the e+π0-mode is predicted to be the dominant mode in the ﬂipped SU(5) × U(1)-model [129], and also as it turns out in certain higher- dimensional orbifold GUT-models, discussed in Sec.

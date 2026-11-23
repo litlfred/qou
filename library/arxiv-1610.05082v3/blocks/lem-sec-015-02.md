@@ -1,0 +1,1 @@
+[6, Lemma V.7.1] The limit v2 := lim n→∞ v2 n |Λn| exists as an extended real valued number and v2 = X i∈Zd ⟨σ0; σi⟩β,h. But by Theorem 1.1, in the regimes we consider, the cumulants (so in particular the covariance) are exponentially small, so the sum is absolutely convergent and we actually have the stronger statement:

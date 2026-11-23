@@ -1,1 +1,0 @@
-One should note that the ex- perimental data from the Washington group played an important role in mass determination for H and D in Ame2016, meaning there exists strong conﬂict between the ones from Liontrap and those from Washington.

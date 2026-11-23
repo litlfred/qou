@@ -62,4 +62,11 @@ offset vanishes: the saddle configuration is centred. -/
 theorem hbarQ_one {K : Type*} [Field K] : hbarQ (1 : K) = 0 := by
   unfold hbarQ; simp
 
+
+/-- **Vanishing of the offset at `q = 1` (`qou-8hw1`).**
+At the symmetric point `q = 1`, `w / (1 : K) - w = -(hbarQ (1 : K)) * w`. -/
+theorem saddle_offset_at_one {K : Type*} [Field K] (w : K) :
+    w / (1 : K) - w = -(hbarQ (1 : K)) * w :=
+  saddle_offset_eq (1 : K) w one_ne_zero
+
 end QOU.Mass

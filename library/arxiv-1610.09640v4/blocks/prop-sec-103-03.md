@@ -1,0 +1,1 @@
+Let A be a graded ring, and let P ∈M(A, gr). (1) If P is a graded-free A-module, then Ungr(P) is a free Ungr(A)-module. (2) P is a graded-projective A-module if and only if it is a direct summand, in M(A, gr), of a graded-free A-module. (3) If P is a graded-projective A-module, then Ungr(P) is a projective Ungr(A)- module. Exercise 15.2.7. Prove Proposition 15.2.6.

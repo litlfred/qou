@@ -1,1 +1,0 @@
-The characteristic trinucleon momen- tum scale γT ∼80 MeV ≫αmN suggests that Coulomb eﬀects should be a perturbative correction to the 3He binding energy (compared to the triton as its isospin mirror state).

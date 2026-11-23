@@ -1,1 +1,1 @@
-We define geometric and topological terminology used throughout this paper.
+This section defines the geometric and topological terminology used throughout this paper.

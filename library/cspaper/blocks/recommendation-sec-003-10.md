@@ -1,1 +1,0 @@
-We must ﬁrst deﬁne these maps. γ′: H3(J) →H1(∂K0; Z) is just the Poincar´e dual of the map γ of the previous section, that is γ′ = PD ◦γ, where PD: H1(∂K0) →H1(∂K0) is the Poincar´e duality isomorphism.

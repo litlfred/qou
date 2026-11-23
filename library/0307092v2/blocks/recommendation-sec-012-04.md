@@ -1,1 +1,0 @@
-In each of these three simplices the adjusted angle ⟨z, τ(v)z⟩equals the adjusted angle at the opposite edge and is hence small, so the sum of these adjusted angles must be 0 (since it is a multiple of π) so the ﬂattening condition holds also at the edge ⟨z, τ(v)z⟩.

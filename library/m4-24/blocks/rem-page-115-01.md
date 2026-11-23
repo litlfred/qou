@@ -1,0 +1,1 @@
+first step should be to determine the right notion of D-shadow together with a geometric interpretation. In this direction, F. Costantino is completing his PhD thesis at Pisa, where he shows in particular that ‘branched shadows’ do encode Spin® structures.

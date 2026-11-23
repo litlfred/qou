@@ -211,4 +211,11 @@ theorem length_sortPerm_mul_eq_add {c c' : Composition (n + 1)} (m : BlockMatch 
   rw [index_apply_of_mem hw, index_apply_of_mem hw]
   exact hblock.symm
 
+/-- Subtracting the sum of individual Coxeter lengths from the product Coxeter length cancels to zero (`qou-iqjk`). -/
+theorem length_sortPerm_mul_sub_add_eq_zero {c c' : Composition (n + 1)} (m : BlockMatch c c')
+    {w : Perm (Fin (n + 1))} (hw : w ∈ youngOfComp c') :
+    (permCoxeterSystem n).length (sortPerm m * w)
+      - ((permCoxeterSystem n).length (sortPerm m) + (permCoxeterSystem n).length w) = 0 := by
+  rw [length_sortPerm_mul_eq_add m hw, Nat.sub_self]
+
 end QOU.BraidKnot.CompositionMinimal

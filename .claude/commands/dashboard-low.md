@@ -11,29 +11,31 @@ python3 computations/mass_binding_dashboard.py --group low
 Render the script's markdown tables directly to the user — they are already
 GitHub-flavoured markdown. Then, if useful, add a one-line reading.
 
-## 🛑 Read before presenting any number
+## 🛑 Read before presenting any number (updated 2026-11-20)
 
-**The producer computes in float64.** `_scalars()` (line 314) returns
-`float(mex), float(q0x), float(e0x)`, so m_e, q₀ and α are downcast and every
-binding number below is float64 with `math.log` / `math.exp`. Consequences when
-presenting:
+**α is the TOWER-SUMMED E₀ by default** — `m_e/(q₀(q₀−1))/(1−ℏ_q²)` =
+4.2275 MeV, canonical by the 2026-09-03 full-tower ruling (`qbeta_e0.canonical`,
+series open, bean `qou-y3bm`). Until 2026-11-20 the dashboard used the
+order-zero 4.1860 MeV; every α-proportional binding column moved +0.991 %
+(e.g. ²H B_sym 2.83 → 2.86, ⁴He 8.68 → 8.77). `--e0 order0` reproduces the
+historical figures. `m_can` (Borromean brane tower) does not use α and is
+unchanged.
 
-- **No digit past ~1e-16 relative is meaningful.** The proton row's
-  `err m_can` has roughly four good figures, not seven.
-- **Do not repeat the printed `Δ vs exact trace` figure or its
-  `max|Δ| = 8.9e-16 MeV` footnote as an identity.** On an ~8.7 MeV quantity
-  that is 1.0e-16 relative — exactly float64 ε, the floor of the arithmetic
-  rather than a measurement. Redone in exact arithmetic (mpf end to end,
-  `tr_m_atom_zn` at 50 dps) the agreement is **4.28e-50 MeV**, at the 50-dps
-  serialisation floor — 34 orders better than printed. Honest phrasing:
-  *"agrees to 4.3e-50 MeV at 50-dps compute precision."*
+**The log-path float64 collapse is drained.** The closed-form chain matches the
+exact p(3A) trace to ~1e-49 MeV at 50 dps (measured 2026-11-20: 6.9e-50 at ²H,
+8.6e-50 at ⁷Li). The old `_scalars()` and the `8.9e-16 MeV` footnote are gone.
+**Not drained:** `q0 = float(_Q50)` in `_row` still feeds `W_lambda_float`
+(the B_gate / B_vol columns, which overflow at ⁴⁰Ca/⁵⁶Fe) and `main()` casts
+the CODATA m_p/m_n to float for display — open PR #8082, bean `qou-4ohh`.
 
-This is a NO-FLOAT64 violation under the 2026-08-18 directive and is invisible
-to every gate: the ratchets scan witnesses and this script emits none, the
-source-level gates key on `mpf(<float>)` / `mp.dps` / module-consts, and
-`mpf_mixed_arithmetic_audit` looks for mpmath↔f64 *mixing*, which this evades by
-collapsing to pure float before any arithmetic. Tracked as bean `qou-4ohh`;
-**the drain is not done.**
+**The n row's +501 ppb is the RETIRED mixed-base Q_β** (`derived_masses.
+q_beta_kashiwara_n2_mev`, published z = 1 functional, convention-C ladder). It
+is NOT the L2 scorecard's m_n (+1.389e5 ppb on the ruled z_D base). The
+dashboard prints this stamp; quote both or neither.
+
+**The Lean-build line is a stale file** (`build-logs/lean-build-status.json`,
+2026-06-07). The dashboard now labels it STALE past 30 days; it is not evidence
+about the current tree.
 
 ## Context to surface when presenting
 

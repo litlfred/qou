@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Physics Reports The Magnus expansion and some of its applications",
+  "title": "The Magnus expansion and some of its applications",
   "contains": [
     "library/phys-rep09/sections/sec-front-matter",
     "library/phys-rep09/sections/sec-000",
@@ -107,8 +107,8 @@
     "pages": 88,
     "arxiv": null,
     "doi": "10.1016/j.physrep.2008.11.001",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

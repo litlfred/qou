@@ -1,0 +1,1 @@
+For ﬁxed Q ∈(0, 1) and q = e−ε →1 with qn = Qq−ν with n →∞, ν = o(n), we have log  1 (q)n  ∼ π2 6 −Li2(Q)  ε−1 −  (ν −1 2) log  1 −Q  + 1 2 log 2π ε  −  1 24 + 1  ν2 −ν + 1 6) Q 1 −Q  ε − ∞  r=3 Br(ν) Li2−r(Q) εr−1 r! as ε →0, where Br(ν) denotes the rth Bernoulli polynomial and Li−j(Q) is the negative-index polylogarithm Li−j(Q) = ∞

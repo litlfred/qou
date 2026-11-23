@@ -1,0 +1,1 @@
+There is a unique solution of (1.25) in Lray(D) (cf. (1.11)) namely Y0 = B˜y0. This solution is analytic in D, Laplace transformable along any ray Φ contained in D and LφY0 is a solution of (1.1). For the proof we need a few more results.

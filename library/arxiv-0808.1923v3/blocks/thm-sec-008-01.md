@@ -1,0 +1,1 @@
+Let M be a smooth manifold, and let i : Gr / T be a full and faithful 2-functor. Then, the equivalence of Theorem 2.2.3 restricts to an equivalence Trans2 Gr(M, T ) ∼= Des2(i)∞ M between transport 2-functors and their smooth descent data.

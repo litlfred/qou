@@ -1,0 +1,1 @@
+It is the author’s experimental result and the author’s stated uncertainty, except in a few cases for which comments are given and for some α-reactions: if the α-decay does not clearly feed the ground state, then an extra 50 keV is added quadratically to the original uncertainty.

@@ -1,1 +1,0 @@
-We prove that the existence of the horizontal functors in (1.23) is equivalent to the computation of Trn(FT⊗k n ) for all integers k (see 3.9 below), together with certain compatibility conditions that must be checked.

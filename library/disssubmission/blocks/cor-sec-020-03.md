@@ -1,0 +1,1 @@
+For every P ∈P there exists an afﬁne algebraic group G = G(P) over Λ and an equivalence ω : ⟨P⟩ ∼ −→RepΛ(G) with the rigid symmetric monoidal Λ-linear abelian category RepΛ(G) of ﬁnite-dimensional algebraic representations of G.

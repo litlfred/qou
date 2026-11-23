@@ -105,6 +105,26 @@ half the pair total: `w(i) + w(−i) = 2·w(i)` — reusing the merged sorry-fre
 theorem doubled_total [h : PeriodMapWeight w] : w I + w (neg I) = 2 * w I :=
   channel_share_is_half w h.selfAdjoint
 
+/-- **Derived (vanishing pair asymmetry).** Under `PeriodMapWeight w`, the
+asymmetry between the `H^{1,0}` and `H^{0,1}` channels vanishes identically:
+`w(i) - w(−i) = 0`. -/
+theorem pair_diff_eq_zero [h : PeriodMapWeight w] : w I - w (neg I) = 0 := by
+  have heq : w (neg I) = w I := equal_split
+  omega
+
+/-- **Additive closure of `PeriodMapWeight`.** The sum of any two ρ-symmetric
+period-map weights is again ρ-symmetric. -/
+theorem add_closed {w₁ w₂ : GInt → Int}
+    [h₁ : PeriodMapWeight w₁] [h₂ : PeriodMapWeight w₂] :
+    PeriodMapWeight (fun z => w₁ z + w₂ z) :=
+  ⟨fun z => by rw [h₁.selfAdjoint z, h₂.selfAdjoint z]⟩
+
+/-- **Scalar-multiple closure of `PeriodMapWeight`.** Any integer multiple of a
+ρ-symmetric period-map weight is again ρ-symmetric. -/
+theorem smul_closed (c : Int) {w : GInt → Int} [h : PeriodMapWeight w] :
+    PeriodMapWeight (fun z => c * w z) :=
+  ⟨fun z => by rw [h.selfAdjoint z]⟩
+
 end PeriodMapWeight
 
 /-- **Automatic — NOT a field: the involution match `ρ ↔ Hodge conjugation`.**

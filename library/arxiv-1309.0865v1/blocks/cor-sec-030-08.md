@@ -1,0 +1,1 @@
+Std is full. SOERGEL CALCULUS

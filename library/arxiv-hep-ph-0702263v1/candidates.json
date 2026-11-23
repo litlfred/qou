@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-ph-0702263v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "8ae381b4eba60286de841a313e8653030f43c6f6a0c157fcc8043b46b41eb644",
   "file": "0702263v1.pdf"
@@ -16,31 +19,89 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
+  "candidates": 3,
   "by_kind": {
-   "recommendation": 1
+   "proposition": 3
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 3
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "The example of elastic meson meson scattering raises the legitimate question why one should bother at all with resonance Lagrangians?",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "\\begin{dinglist}{88} \\item Large-$N_c$ methods match CHPT with QCD by bridging the gap $M_K \\lsim E \\lsim 1.5$ GeV with resonance exchange. \\item Lattice QCD. \\end{dinglist} \\end{dinglist}",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-introduction.md (p. 2-3)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-introduction.md (p. 2-3)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-hep-ph-0702263v1/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-hep-ph-0702263v1#prop-sec-000-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Lattice QCD has come a long way to determine some of the constants directly from QCD.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-strong-interactions.md (p. 3-7)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-001-strong-interactions.md",
    "section_title": "Strong interactions",
    "pages": "3-7",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-strong-interactions.md (p. 3-7)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/arxiv-hep-ph-0702263v1/blocks/prop-sec-001-01",
+   "claim_id": "arxiv-hep-ph-0702263v1#prop-sec-001-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Since 1993, when Eurodaphne got started, substantial progress has been made in the understanding of low-energy constants, both from phenomenology and from theory (lattice QCD and large-$N_c$ approaches).",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-005-outlook.md (p. 9-12)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-005-outlook.md",
+   "section_title": "Outlook",
+   "pages": "9-12",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-005-outlook.md (p. 9-12)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-005-01",
+   "block_iri": "library/arxiv-hep-ph-0702263v1/blocks/prop-sec-005-01",
+   "claim_id": "arxiv-hep-ph-0702263v1#prop-sec-005-01"
   }
  ]
 }

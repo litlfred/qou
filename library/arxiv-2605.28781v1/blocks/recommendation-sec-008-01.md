@@ -1,1 +1,0 @@
-Furthermore, since $N(\alpha)=\prod_{i=1}^d \sigma_i(\alpha)$, we deduce $$1\leq \lvert N(x-y)\rvert\leq \prod_{i=1}^d\lvert \sigma_i(x-y)\rvert,$$ so there must exist $1\leq i\leq d$ such that $\lvert \sigma_i(x)-\sigma_i(y)\rvert\geq 1$.

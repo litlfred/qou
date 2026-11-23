@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-mass-tower-deeper-fillers",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:mass-tower-deeper-fillers",
+  "kind": "remark",
+  "title": "Deeper conditional-class fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-type-b-folded-crystal-combinatorics",
+    "papers/quantum-observable-universe/blocks/rem-bloch-wigner-mathlib-filler"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-crystal-basis-resolves-mass-tower-open-problems",
+  "cites": [
+    "references/borel1974",
+    "references/bloch2000",
+    "references/suslin1991",
+    "references/kashiwara1991",
+    "references/khovanovlauda2009",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "mathlib-filler",
+    "deeper-scaffolding",
+    "height-6-partition",
+    "demazure-sub-crystal",
+    "kazhdan-lusztig",
+    "bloch-group",
+    "pentagon-identity",
+    "lean-infrastructure"
+  ],
+  "text": "mass-tower-deeper-fillers.md",
+  "leanSource": "mass-tower-deeper-fillers.lean",
+  "provenance": "authored"
+}

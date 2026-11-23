@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-ph-0702179v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "4d78ee89f0e67fbbb91bede3a42d648208e57b62e38425b1d56b0b50a2440bd2",
   "file": "0702179v1.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The scale that specifies the chiral expansion, $\\Lambda_{\\chi} \\sim M_V$ (being $M_V$ the mass of the $\\rho(770)$, the lightest hadron not included in the theory), indicates that LECs in $\\chi PT$ should receive contributions from the energy regime at or above that scale [@Georgi:1991ch].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This hypothesis indicates that it should match both regions and it satisfies, by construction, the chiral constraints.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-the-role-of-resonance-chiral-theory.md",
-   "section_title": "The role of Resonance Chiral Theory",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

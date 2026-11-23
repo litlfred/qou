@@ -1,0 +1,1 @@
+Given recil numhurs 2 > 0 and a 2 i. - 2. Then fhrre e.\-is! only finitely many ornhicnr isotopy classes of embeddings (knor types) which cun he represenrrd by un tw~hrddiny/ojcfuss C*/rom S’ info R3 such that l/‘(f)1 = I fir all I ES’ and that E,,(f) 5 LX.

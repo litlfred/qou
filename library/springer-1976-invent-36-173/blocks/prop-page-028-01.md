@@ -1,0 +1,1 @@
+(p=0 or p large). If V4 g+0 then dy ,=@(1)~' dim Vy 4 is the degree of an irreducible representation of W. If A runs through a set of representa- tions of the nilpotent G-orbits in g, then each such degree occurs exactly once as ad, 4.

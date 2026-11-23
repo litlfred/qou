@@ -1,1 +1,0 @@
-In the $(0,2)$ case, $m^\vee$ has two outgoing boundaries, so $S$ must be the incoming boundary of $m^\vee$ and the outgoing boundary of $p^{\times \times} $, giving $m^\vee \circ p^{\times \times} $.

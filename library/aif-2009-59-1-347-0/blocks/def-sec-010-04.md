@@ -1,0 +1,1 @@
+4. — Let us ﬁx a q-orbit qZα ⊂C and suppose that for any x ∈qZα the integral F(x) = R x 0 f(t)dqt is well-deﬁned. Then we set Z qZα f(t)dqt = lim |x|→∞ x∈qZα Z x f(t)dqt. ANNALES DE L’INSTITUT FOURIER ON q-SUMMATION AND CONFLUENCE

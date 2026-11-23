@@ -1,1 +1,0 @@
-However, in these examples we are about to show that the torus knots in question cannot have the same Seifert genus, so Theorem~\ref{thm:lspace-detection-main} will tell us that the corresponding traces must be different.

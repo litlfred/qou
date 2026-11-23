@@ -39,6 +39,8 @@ This file does **not** re-prove RSZ and claims no Stokes multiplier. It fixes th
 Sorry-free.
 
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3, Thm 3.3.5)
+-- Ref: [sauloy2004] https://arxiv.org/abs/math/0409393 (Prop 4.1, Thm 3.18)
+-- Ref: [bugeaud2011] https://doi.org/10.1016/j.crma.2011.09.002 (§2, non-integral slopes)
 -- Ref: [leitner2026] docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
@@ -75,7 +77,9 @@ def rszIsoformalDim (k : ℕ) (r : Fin k → ℤ) (μ : Fin k → ℤ) : ℤ :=
 
 /-- **The fact that decides the C1 question.** With a single slope there are no
 pairs `i < j`, so the isoformal space is a point: dimension `0`. A pure isoclinic
-module has no isoformal moduli, hence no Stokes data to extract. -/
+module has no isoformal moduli, hence no Stokes data to extract. The algebraic
+form of the same fact is [sauloy2004] Prop 4.1: the Stokes sheaf is built from
+`End^{>0}(M₀) = ⊕_{μᵢ > μⱼ} Hom(Pⱼ, Pᵢ)`, an empty sum when there is one slope. -/
 @[simp] theorem rszIsoformalDim_one (r μ : Fin 1 → ℤ) :
     rszIsoformalDim 1 r μ = 0 := by
   simp [rszIsoformalDim]
@@ -98,7 +102,7 @@ class IntegralSlopeSetting (k : ℕ) (μ : Fin k → ℤ) : Prop where
   strictly_increasing : ∀ i j : Fin k, i < j → μ i < μ j
   -- NOTE: §3.3's *integral*-slope hypothesis needs no field: it is carried by
   -- the type `μ : Fin k → ℤ`. A non-integral slope (C1's `½`) simply cannot be
-  -- supplied. The ramified/non-integral setting is Bugeaud [14], not this class.
+  -- supplied. The ramified/non-integral setting is [bugeaud2011], not this class.
 
 /-- **A single slope cannot satisfy §3.3's hypotheses** — mechanically. This is
 the C1 situation: one edge in the Newton polygon at `∞`, hence `k = 1`. -/
@@ -155,5 +159,44 @@ alone. -/
 theorem isoformalDim_eq_zero_of_pure (r μ : Fin 1 → ℤ) :
     rszIsoformalDim 1 r μ = 0 :=
   rszIsoformalDim_one r μ
+
+/-- Under `IntegralSlopeSetting k μ`, every pair `i < j` has strictly positive
+    RSZ level `0 < rszLevel (μ i) (μ j)`. -/
+theorem rszLevel_pos_of_integralSlopeSetting {k : ℕ} {μ : Fin k → ℤ}
+    [hμ : IntegralSlopeSetting k μ] {i j : Fin k} (hij : i < j) :
+    0 < rszLevel (μ i) (μ j) :=
+  rszLevel_pos (hμ.strictly_increasing i j hij)
+
+/-- In the two-slope integral setting (`k = 2`) with positive ranks `1 ≤ r 0`
+    and `1 ≤ r 1`, the isoformal space has strictly positive dimension
+    `0 < rszIsoformalDim 2 r μ`. -/
+theorem rszIsoformalDim_two_pos (r μ : Fin 2 → ℤ)
+    [hμ : IntegralSlopeSetting 2 μ] (hr0 : 1 ≤ r 0) (hr1 : 1 ≤ r 1) :
+    0 < rszIsoformalDim 2 r μ := by
+  rw [rszIsoformalDim_two]
+  have h01 : (0 : Fin 2) < 1 := by decide
+  have hlev : 0 < rszLevel (μ 0) (μ 1) := rszLevel_pos_of_integralSlopeSetting h01
+  have hr0' : 0 < r 0 := by omega
+  have hr1' : 0 < r 1 := by omega
+  exact mul_pos (mul_pos hr0' hr1') hlev
+
+/-- **Tier B (§3b conditional class): RSZ Theorem 3.3.5 isoformal classification.**
+    Carries the standing hypotheses of §3.3 (`2 ≤ k`, integral slopes `μ : Fin k → ℤ`,
+    and strict slope ordering `μ₁ < ⋯ < μ_k`) together with positive slope-piece ranks
+    `1 ≤ r i` and the affine-moduli dimension `moduliDim = rszIsoformalDim k r μ`.
+    Any downstream consumer taking `[RSZIsoformalClassification k r μ]` inherits the
+    integral-slope and `2 ≤ k` hypotheses in its type, making single-slope or
+    non-integral misuse a type error. -/
+class RSZIsoformalClassification (k : ℕ) (r μ : Fin k → ℤ) : Prop
+    extends IntegralSlopeSetting k μ where
+  /-- Each isoclinic summand `P_i` has positive rank `1 ≤ r_i`. -/
+  ranks_pos : ∀ i : Fin k, 1 ≤ r i
+
+/-- Under `[RSZIsoformalClassification 2 r μ]`, the two-slope isoformal space has
+    strictly positive dimension `0 < rszIsoformalDim 2 r μ`. -/
+theorem rszIsoformalDim_pos_of_classification_two (r μ : Fin 2 → ℤ)
+    [hcls : RSZIsoformalClassification 2 r μ] :
+    0 < rszIsoformalDim 2 r μ :=
+  rszIsoformalDim_two_pos r μ (hcls.ranks_pos 0) (hcls.ranks_pos 1)
 
 end QOU.MathlibExt.RSZ

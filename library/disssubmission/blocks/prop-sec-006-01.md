@@ -1,0 +1,1 @@
+Let P ∈Perv(X,C) be a simple perverse sheaf. (a) One has χ(P) = 0 iff there exists an abelian subvariety A ,→X of positive dimension with quotient morphism q : X ↠B = X/A such that P ∼= Lϕ ⊗q∗(Q)[dim(A)] for some Q ∈Perv(B,C) and some character ϕ ∈Π(X). (b) One has χ(P) = 1 iff P is a skyscraper sheaf on X of rank one. Chapter 1 – Vanishing theorems on abelian varieties

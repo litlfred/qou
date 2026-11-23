@@ -1,1 +1,0 @@
-For one thing even if the "true" $\alpha$ could be decreased by algorithms, our discussion below equation [\[entguess\]](#entguess){reference-type="eqref" reference="entguess"} suggests that, because of coarse-graining, $\alpha$ should be *increased* by some order one factor.

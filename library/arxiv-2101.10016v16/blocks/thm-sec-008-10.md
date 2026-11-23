@@ -1,1 +1,1 @@
-Let C be a semisimple (rigid) tensor category with finite dimensional
+Let C be a semisimple (rigid) tensor category with finite dimensional morphism spaces and F : C → Vec a faithful weak quasi-tensor functor (taking an object and a dual to spaces with the same dimension). Then A = Nat0(F) is a weak bialgebra (weak Hopf algebra) if and only if F is a weak tensor functor.

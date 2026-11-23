@@ -1,4 +1,4 @@
-By [`prop:prolonged-periods-fixed-depth`](#prop:prolonged-periods-fixed-depth)
+By [A fixed-depth recurrence for the prolonged periods exists (Cayley–Hamilton)](#prop:prolonged-periods-fixed-depth)
 the prolongation acts through a $2\times 2$ operator $B$ on the $W$-Hodge plane,
 and Cayley--Hamilton gives $B^2 = \mathrm{tr}(B)\,B - \det(B)\,\mathbf 1$.
 
@@ -16,9 +16,8 @@ $B^n$ and using $B^{n}\!\cdot B^2 = B^{n+2}$, $B^{n}\!\cdot B = B^{n+1}$,
 $$
 B^{\,n+2} = B^n(\tau B - \mathbf 1) = \tau\,B^{\,n+1} - B^{\,n},
 $$
-which is the Lean theorem
-[`QOU.Mass.sl2_prolongation_recurrence`](#prop:sl2-prolongation-recurrence)
-(`rw [pow_add, hCH, mul_sub, mul_one, mul_smul_comm, ← pow_succ]`). Applying the
+which is the
+[one-parameter prolongation recurrence](#prop:sl2-prolongation-recurrence). Applying the
 period functional $\varphi(\,\cdot\,v_0)$ gives
 $a_D^{(n+2)} = \tau\,a_D^{(n+1)} - a_D^{(n)}$, leaving the single unknown
 $\tau$, recoverable from any three consecutive periods as

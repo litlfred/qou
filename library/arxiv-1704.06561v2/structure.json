@@ -1,0 +1,1114 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1704.06561v2",
+ "source": {
+  "file": "1704.06561v2.pdf",
+  "sha256": "e1d800fa0b122dbb518c5c42af493017233010e87e390ef6007d4dced91a1b9f",
+  "bytes": 1727634,
+  "pages": 47,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1704.06561",
+   "version": "2",
+   "primary_class": "hep-lat",
+   "stamp_date": "11 Jun 2017"
+  },
+  "doi": null,
+  "title": "Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions",
+  "authors_raw": "D. Giusti, V. Lubicz, and C. Tarantino",
+  "title_lines": [
+   "Leading isospin-breaking corrections to pion, kaon",
+   "and charmed-meson masses with Twisted-Mass fermions"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.17",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20170613011446Z"
+  },
+  "title_raw": "Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions D. Giusti, V. Lubicz, and C. Tarantino G. Martinelli F. San\ufb01lippo and S. Simula N. Tantalo (RM123 collaboration)",
+   "outline": "I Introduction",
+   "text": "Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "I Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "II Simulation details",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "III Evaluation of the IB corrections",
+   "page": 8,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "A Determination of mfcrit",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "B Extraction of the e.m. and strong IB corrections",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 1,
+   "title": "IV Analysis of the pion mass splitting M+ - M0",
+   "page": 13,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
+  },
+  {
+   "level": 1,
+   "title": "V Determination of 0",
+   "page": 19,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 1,
+   "title": "VI Analysis of and determination of md - mu",
+   "page": 22,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
+  },
+  {
+   "level": 1,
+   "title": "VII Determination of K0",
+   "page": 29,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
+  },
+  {
+   "level": 1,
+   "title": "VIII QED and strong IB corrections in charmed mesons",
+   "page": 31,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
+  },
+  {
+   "level": 2,
+   "title": "A Electromagnetic and strong IB corrections to MD+ - MD0",
+   "page": 31,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
+  },
+  {
+   "level": 2,
+   "title": "B Electromagnetic corrections to MD+ + MD0",
+   "page": 36,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
+  },
+  {
+   "level": 2,
+   "title": "C Electromagnetic corrections to the Ds+-meson mass",
+   "page": 39,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
+  },
+  {
+   "level": 1,
+   "title": "IX Conclusions",
+   "page": 40,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 42,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
+  },
+  {
+   "level": 1,
+   "title": "A Numerical evaluation of the diagrams ??(a) - ??(e)",
+   "page": 42,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 46,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Fermionic connected diagrams contributing at O(e2) and O(md\u2212mu) to the IB corrections to meson masses: exchange (a), self energy (b), tadpole (c), pseudoscalar insertion (d) and scalar insertion (e)",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Results of the r.h.s of Eq. (38) in lattice units calculated for the ETMC gauge ensembles B25.32 (left panel) and D15.48 (right panel). The solid lines represent the value of \u03b4mcrit",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Values of the e.m. shift of the critical mass \u03b4mcrit",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Ratios \u03b4CJ(t)/C(t) (left panel) and \u03b4CS\u2113(t)/C(t) (right panel) in the case of the charged kaon for the gauge ensemble B35.32. The solid lines represent the \ufb01t (30) applied in the time interval where the ground-state is dominant (see Table III)",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Ratios \u03b4CT (t)/C(t) and P",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Results for the pion mass splitting M 2",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Results for the pion mass splitting M 2",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Results for the pion mass splitting M 2",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Results for the quantity",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Results for the kaon mass splitting",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Results for the kaon mass splitting",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Results for the IB slope",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Results for the quantity",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Results for the D-meson mass splitting",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "32"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Results for the D-meson mass splitting",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Results for the QCD contribution",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "35"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Results for the e.m. correction to the charge-averaged D-meson mass \u03b4MD+ + \u03b4MD0 versus the renormalized light-quark mass m\u2113, obtained using Eq. (87) in the quenched QED approximation. Brown full points correspond to the data without any correction for FSEs, while open markers represent the lattice d",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "37"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Results for the e.m. correction to the charge-averaged D-meson mass \u03b4MD+ + \u03b4MD0 versus the renormalized light-quark mass m\u2113. The empty markers correspond to the data after the subtraction of the universal FSEs, while the \ufb01lled markers represent the lattice data corrected also by the SD FSEs obtained",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Results for the e.m. correction \u03b4MD+",
+   "page": 40,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "40"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "Results for the e.m. correction \u03b4MD+",
+   "page": 41,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "41"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1813,
+   "n_words": 284,
+   "label_start": null,
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-i-introduction",
+   "number": null,
+   "title": "I Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5712,
+   "n_words": 1001,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-001-ii-simulation-details",
+   "number": null,
+   "title": "II Simulation details",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 7271,
+   "n_words": 1246,
+   "label_start": "4",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-002-iii-evaluation-of-the-ib-corrections",
+   "number": null,
+   "title": "III Evaluation of the IB corrections",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 6051,
+   "n_words": 1124,
+   "label_start": "8",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-003-a-determination-of-mfcrit",
+   "number": null,
+   "title": "A Determination of mfcrit",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1654,
+   "n_words": 355,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-004-b-extraction-of-the-em-and-strong-ib-corrections",
+   "number": null,
+   "title": "B Extraction of the e.m. and strong IB corrections",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1576,
+   "n_words": 311,
+   "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-005-iv-analysis-of-the-pion-mass-splitting-m---m0",
+   "number": null,
+   "title": "IV Analysis of the pion mass splitting M+ - M0",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 19,
+   "n_chars": 10082,
+   "n_words": 1893,
+   "label_start": "13",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-006-v-determination-of-0",
+   "number": null,
+   "title": "V Determination of 0",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 3437,
+   "n_words": 644,
+   "label_start": "19",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-007-vi-analysis-of-and-determination-of-md---mu",
+   "number": null,
+   "title": "VI Analysis of and determination of md - mu",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 29,
+   "n_chars": 12029,
+   "n_words": 2325,
+   "label_start": "22",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-008-vii-determination-of-k0",
+   "number": null,
+   "title": "VII Determination of K0",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3240,
+   "n_words": 607,
+   "label_start": "29",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-009-viii-qed-and-strong-ib-corrections-in-charmed-me",
+   "number": null,
+   "title": "VIII QED and strong IB corrections in charmed mesons",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 590,
+   "n_words": 104,
+   "label_start": "31",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-010-a-electromagnetic-and-strong-ib-corrections-to-m",
+   "number": null,
+   "title": "A Electromagnetic and strong IB corrections to MD+ - MD0",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 36,
+   "n_chars": 6216,
+   "n_words": 1175,
+   "label_start": "31",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-011-b-electromagnetic-corrections-to-md-md0",
+   "number": null,
+   "title": "B Electromagnetic corrections to MD+ + MD0",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 39,
+   "n_chars": 3356,
+   "n_words": 626,
+   "label_start": "36",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-012-c-electromagnetic-corrections-to-the-ds-meson-ma",
+   "number": null,
+   "title": "C Electromagnetic corrections to the Ds+-meson mass",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 42,
+   "n_chars": 5096,
+   "n_words": 885,
+   "label_start": "39",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-013-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 622,
+   "n_words": 98,
+   "label_start": "42",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-014-a-numerical-evaluation-of-the-diagrams-a---e",
+   "number": null,
+   "title": "A Numerical evaluation of the diagrams ??(a) - ??(e)",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 47,
+   "n_chars": 9990,
+   "n_words": 1827,
+   "label_start": "42",
+   "label_end": "47"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "toc_inferred_entries": 0,
+  "figure_entries": 20,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 78735,
+  "furniture_lines_stripped": 46
+ }
+}

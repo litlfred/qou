@@ -1,0 +1,69 @@
+---
+doc_id: turaev1988
+doc_title: "The Yang-Baxter equation and invariants of links"
+section_id: page-008
+section_title: "Page 8"
+pages: 8-8
+pdf_page: 8
+source_pdf: turaev1988.pdf
+source_sha256: 3ccc9e1ee4f95480
+text_source: ocr
+granularity: page
+doc_brief: "Turaev, The Yang–Baxter equation and invariants of links (Invent. Math. 92, 527–553, 1988) — enhanced Yang–Baxter operators give link invariants via braid closure; the HOMFLY (P) and Kauffman (F) polynomials arise this way, with state models."
+---
+534 V.G. Turaey
+
+been explicitly described for the fundamental representations of the Lie algebras
+of series A}, B1, C1, Di, A? and D? (see [4]; here the upper index denotes
+the order of the automorphism of the Dynkin diagram: 1 corresponds to the
+identity and 2 corresponds to the non-trivial involution). The YB-operators
+which correspond to series A‘, B1, C', D' and A? can be enhanced to EYB-
+operators, see Sect. 4.2 and 4.3. The case of D? has remained unclear. (In this
+case one definitely can not enhance the YB-operator in the diagonal way with
+respect to the natural basis).
+
+Up to the end of §4, K is the Laurent polynomial ring Z[q,q~‘]; V is
+the free K-module with a fixed basis v,, ...,v,. The symbol E;, denotes the
+homomorphism V-V which transforms v; in v, and transforms v,, with r+i,
+into 0. The homomorphism E,,,® Ej: V®?+V®? clearly transforms v,@»;
+into v,@ v, and transforms other basis vectors of type v, @ v, into 0.
+
+4.2. The series A’. The fundamental vector representation of the simple Lie
+algebra A}_, gives rise to the following YB-operator V®? > V®? (see [4] and
+references therein):
+
+R= 40 E,:@ Est YX E,,;@E,i:+(q7'—4) Y E;,,® E,,;.
+
+i+j i<j
+
+(Here i, j=1, 2, ..., m.) Note that our notation differ from that of [4]; in particu-
+lar, our operator R corresponds to (ké)~1 R(0) in [4]. The equality (1) for R
+can be rather easily checked directly. From [4] one can also extract a formula
+for R™!:
+R'=—q YE, @E,i+ Y £,j;@ Ei +(—d') YE, @ E;;-
+i i+j i>j
+
+It is clear that
+
+R—R7!=(q"'—q) Id??. (5)
+
+4.2.1. Theorem. Put p;=q7'~™~! for i=1, ...,m. Put «= —q”™, B=1. Then S=(R.
+p=diag(u,, .-.5 Hm), %, B) is a EYB-operator such that for any triple of links (L+,
+L_, Lo) as in Fig. 3
+
+q” Ts(Ls)—4"™ Ts(L_-)=(q—4" *) Ts(Lo) (6)
+
+and T;(0)=(q"—q""(q—q"*).
+
+Proof. The matrix of R with respect to the basis {v;@ v,|i,j=1, ..., m} in ye?
+looks as follows:
+
+—q if
+1 if
+Rei =) -1 :
+q*-4@ if
+0 otherwise
+
+In particular, if Rf}+0 then the non-ordered pairs i, j and k, | coincide. The
+same property holds for the matrix of R~!. Thus, the condition (i)’ of Theorem
+2.3.1 is satisfied and the condition (ii)' is equivalent to the equalities

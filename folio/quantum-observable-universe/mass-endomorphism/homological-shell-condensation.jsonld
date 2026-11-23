@@ -2,17 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-homological-shell-condensation",
+  "@id": "papers/quantum-observable-universe/blocks/conj-homological-shell-condensation",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:homological-shell-condensation",
-  "kind": "proposition",
-  "title": "Proposition (homological shell condensation): BB-stratified $E_\\infty^{p,>0}(n) = 0$ at magic $n$",
+  "label": "conj:homological-shell-condensation",
+  "kind": "conjecture",
+  "title": "Homological shell condensation: BB-stratified $E_\\infty^{p,>0}(n) = 0$ at magic $n$",
   "uses": [
     "papers/quantum-observable-universe/blocks/ex-brane-tower-levels",
     "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",

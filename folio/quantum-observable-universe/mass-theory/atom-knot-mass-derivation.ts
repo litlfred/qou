@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:atom-knot-mass-derivation",
+export default conjecture({
+  label: "conj:atom-knot-mass-derivation",
   title:
     "End-to-end derivation of atomic binding energies $B = \\nu_{\\mathrm{SDP}} \\cdot m_e \\cdot \\mathrm{Vol}_{\\mathrm{hyp}}(\\widehat{T_w})$ from the categorical action",
   lean: {
@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:alpha-k-derivation-procedure",
+    "conj:alpha-k-derivation-procedure",
     "prop:recursive-atom-knot-atlas",
   ],
   tags: [
@@ -38,6 +38,18 @@ export default proposition({
     status: "not_run",
   },
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-20",
+      body: "Owner ruling 2026-11-20 (bean `qou-w8cg`): `MassIdentity` required $|B_{\\mathrm{pred}} - B_{\\mathrm{AME}}| \\le B_{\\mathrm{AME}}/4$; the largest recorded miss is 19.5 % (⁴⁰Ca), so the bound was sized to the data and is dropped as a fit. `MassIdentity` is now $B_{\\mathrm{pred}} \\ge 0$, derived in the conjecture class from $B = m_e \\cdot M(\\mathfrak{h})$ with $m_e, M \\ge 0$; the AME comparison is kept as recorded data (`ameRelativeResidual`), with no bound.",
+    },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Two hypotheses that appear in the Lean statement are shown there to be free rather than load-bearing: the $E_2$-collapse condition unfolds to $2 = 2$ and is discharged by reflexivity, and the Yekutieli condition is inhabitation of the braid-element type, which the mass identity does not mention." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean sibling carries one condition the display above leaves implicit: that the certificate under discussion is one the pipeline actually emitted. A `MassDerivationCertificate` is a tuple of numbers, and its type records no provenance — a tuple with a negative $B_{\\mathrm{pred}}$ is well-typed. Stated for *every* certificate, the mass identity is false, so the conditional class carries an `IsPipelineDerived` predicate and the theorem takes it as a hypothesis. The ten AME-validated atoms below are proved to satisfy the identity directly, without the class." },
+    {
+      kind: "status",
+      date: "2026-11-20",
+      body: "**Demoted to `conjecture` (owner, 2026-11-20, bean `qou-6qbv`; W8, full cascade).** `terms-2-6-higher-operations` and `spectral-sequence-h3-explicit` (formerly `prop:`) state open research claims (the Term 2/6 Wedderburn/residue identifications; the explicit $d_1, d_2$ on $H_3$) whose Lean siblings carried them on context-class fields any instance could satisfy. Both were demoted, and by the conjectural-propagation rule (AGENTS.md §3b) so was every provable block whose `uses[]` cone reaches them. The owner chose the full cascade over dropping citational edges. Label prefix changed to `conj:`. Nothing in the mathematics or the Lean of this block changed.",
+    },
     {
       kind: "note",
       body: "**Notation.** The prefactor previously written $\\rho$ in this block is the **SDP-solution multiplicity** in the Wedderburn decomposition, an integer $\\in \\mathbb{Z}_{>0}$. To disambiguate from the distinct **categorical density** $\\rho_K \\in \\mathbb{R}_{>0}$ used in `prop:atomic-mass-gb-nf` (CODATA-fit scalar, e.g. $\\rho_K^{\\mathfrak{p}} \\approx 1723.6$), this block uses **$\\nu_{\\mathrm{SDP}} \\in \\mathbb{Z}_{>0}$** throughout. The old symbol $\\rho$ is reserved (i) for the Hoefsmit irrep representation $\\rho_\\lambda \\colon H_n(q) \\to \\mathrm{GL}_{d_\\lambda}$ and (ii) for $\\rho_K$ in `prop:atomic-mass-gb-nf`. See `docs/audits/-rho-notation-fix-recommendation.md` for the full notation audit.",

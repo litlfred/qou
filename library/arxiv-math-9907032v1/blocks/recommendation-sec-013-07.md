@@ -1,1 +1,0 @@
-Keeping in mind Remark [\[rmkkk\]](#rmkkk){reference-type="ref" reference="rmkkk"}, this implies that every non-boundary-parallel normal surface must have strictly negative Euler characteristic, thus proving the second part of Theorem [\[hext\]](#hext){reference-type="ref" reference="hext"} ◻ :::

@@ -45,4 +45,13 @@ theorem cube_lever_gate_form {f u : ℝ → ℝ} (f' u' q : ℝ) (hu0 : u q ≠ 
       = f' - 3 * (u' / u q) * f q := by
   field_simp
 
+/-- **Static derivative recovery from the cube-lever slope (`thb7`).**
+Adding the logarithmic-derivative correction `3 * (u' / u q) * f q` to the
+rescaled cube-lever slope `u q ^ 3 * (f' / u q ^ 3 - 3 * (u' / u q) * (f q / u q ^ 3))`
+recovers the bare numerator derivative `f'` whenever `u q ≠ 0`. -/
+theorem cube_lever_static_recovery {f u : ℝ → ℝ} (f' u' q : ℝ) (hu0 : u q ≠ 0) :
+    u q ^ 3 * (f' / u q ^ 3 - 3 * (u' / u q) * (f q / u q ^ 3)) + 3 * (u' / u q) * f q
+      = f' := by
+  rw [cube_lever_gate_form f' u' q hu0, sub_add_cancel]
+
 end QOU.QBeta.LeverLogDerivative

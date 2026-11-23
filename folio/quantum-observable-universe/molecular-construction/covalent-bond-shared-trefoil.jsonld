@@ -2,23 +2,23 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/def-covalent-bond-shared-trefoil",
   "@type": [
-    "folio-assistant-core:Definition",
+    "folio-assistant-sci:Definition",
     "doco:Section"
   ],
   "label": "def:covalent-bond-shared-trefoil",
   "kind": "definition",
-  "title": "Covalent bond as shared electron trefoil",
+  "title": "Covalent bond as shared electrons",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-molecular-braid"
   ],
   "tags": [
     "covalent-bond",
-    "trefoil",
     "hopf-link",
     "electron-sharing"
   ],

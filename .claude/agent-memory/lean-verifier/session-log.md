@@ -420,3 +420,34 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
 - BASELINE: toolchain already at ~/.elan/toolchains/leanprover--lean4---v4.24.0 (no ~/.elan/bin); release.lean-lang.org 403, GitHub zip 200 (730 MB, 24 s) — not needed.
 - BASELINE: streamed restore of cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ a792c46d01b: fetch 1m36s, root .lake 3758 / per-paper 2703 oleans; disk 16G -> 8.8G free.
 - STABLE: cone rebuild into a `cp -al` shadow of the per-paper lib dir (7 modules, HeckeAlgebra 64 s, rest ≤6 s), LEAN_PATH = shadow + root .lake/packages/*; works with no union mirror.
+
+## 2026-11-15 — 4-PR merge verification (#7991/#7990/#7987/#7982), fresh container, no elan
+- STABLE: toolchain with no elan and no `zstd`: `curl -sSfL …/releases/download/v4.24.0/lean-4.24.0-linux.zip` (730 MB, ~30 s) + `python3 zipfile.extractall` + `chmod +x bin/*` → working `lean`. The `.tar.zst` downloads too but nothing here can decompress it.
+- STABLE: restore to a SEPARATE base dir (not the repo): stream `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` (head a792c46d01b, 1m49s fetch, 50 s extract, 6492 oleans) into `tar xzf - -C $BASE --transform 's,^content/,folio/,'`. Per PR: `cp -al` each package lib dir into `$SHADOW/<QOU|UGB|Fred2005>`, put the shadow roots first on LEAN_PATH, rebuild the Lake-hash dirty closure there (unlink before `lean -o`, and `mkdir -p` the parent — new module dirs like `QOU/KZ/` are absent from the cache). Each PR worktree costs ~2.5 G.
+- TRAP: `QOU.Mass.KohnoWeightedClass` cone (KZHolonomy) needs `Mathlib.Analysis.Calculus.Deriv.Pi` and `Mathlib.Analysis.ODE.PicardLindelof`, absent from BOTH the main cache and the `-mathlib-gap-modules` addon (95 entries). Unverifiable without a Mathlib-source gap build.
+- TRAP (authoring, v4.24): `refine ⟨…⟩ <;> · unfold A B C` fails with "failed to unfold `B`" on any goal where B does not occur; `norm_num [A, B, C]` closes the same goals (#7991).
+- CORRECTION 2026-11-21: the KohnoWeightedClass TRAP above is stale. `Mathlib.Analysis.Calculus.Deriv.Pi` and `Mathlib.Analysis.ODE.PicardLindelof` are in the main restore of `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` (traced) and also in the `-mathlib-gap-modules` addon as of fe9ce69 (288 entries). Verify with `ls .lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/ODE/PicardLindelof.olean`.
+
+## 2026-11-22 — fresh container, toolchain + restore from zero (BASELINE, re-measure)
+- Repo at `/home/claude/qou` (not `/home/user/qou`); HOME=/root; no `~/.elan`, no zstd.
+- Toolchain: GitHub asset `lean-4.24.0-linux.tar.zst` (460 MB, 17 s) + `apt-get install zstd`,
+  extracted to `/root/.elan/toolchains/leanprover--lean4---v4.24.0` (2.3 G, real dir, NOT a /tmp symlink).
+- Cache: branch `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` head `7c61a1ba876`, 24 parts;
+  throwaway-repo fetch 2m10s + streamed extract 59 s with `--transform 's,^content/,folio/,'`.
+  Result: root mathlib 3697 oleans, paper QOU build 3466; trace check cleared the marker. Disk 55G→45G free.
+- `scripts/lean-direct-env.sh` works as-is; NucleonWeightSpaceTraces.lean exit 0 in 4.2 s.
+
+## 2026-11-22 — fresh container, hooks never ran, UGB HeckeCompletion cone (main 3c4c98fccf3)
+
+- **STABLE** repo at `/home/claude/qou` (not `/home/user/qou`). `./scripts/setup-lean-toolchain.sh`
+  alone did the whole job: elan bootstrap from GitHub, toolchain zip, then `lean-cache-restore.sh`.
+  **4m52s wall**, exit 0. Cache branch is now `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`
+  (the script resolves it via `lib/lake-cache-family.sh`; the old `lake-cache/qou-v4-24-0` name in
+  MEMORY.md is stale). Paper trees landed under `folio/` directly; ONE mathlib root (3697 oleans),
+  no per-paper packages tree, so no union mirror needed. UGB tree: 35 oleans.
+- **TRAP (measured)** restored UGB oleans are STALE: Lake-hash check (MEMORY §STABLE source hash)
+  on the 8-module cone of `UGB.GrobnerShirshov.HeckeCompletion`: Elem, CompositionLemma, AlgOps
+  fresh; Basic, DiamondLemma, NormalForms, HeckeGS, HeckeCompletion CHANGED. Rebuilt the 7 from
+  Basic down in place (`rm -f` then `lean -DautoImplicit=false -o … -i …`, cwd = UGB package root):
+  1.5–4.2 s each; HeckeCompletion **1m29s wall / 4m20s user**, exit 0, zero output.
+- **BASELINE** autoImplicit control reproduced (bare exit 0, `-DautoImplicit=false` exit 1).

@@ -1,1 +1,0 @@
-Therefore, the notations for q- Bessel functions, q-cosines and q-sines in §§3 and 5 should be considered as ad hoc notations, which are only used locally in this paper for clarifying the analogy of the functions with the q = 1 case.

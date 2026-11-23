@@ -1,1 +1,0 @@
-If indeed symmetry arguments alone should determine the microscopic spectral density of QCD from this matrix ensemble, then any reasonable choice of $V(\lambda)$ should give the same result for $\rho_{\rm S}(\lambda)$.

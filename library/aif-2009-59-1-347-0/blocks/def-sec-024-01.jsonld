@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/aif-2009-59-1-347-0/blocks/def-sec-024-01",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "kind": "definition",
+  "pageStart": 42,
+  "pageEnd": 45,
+  "text": "def-sec-024-01.md",
+  "derivedFrom": "library/aif-2009-59-1-347-0/sections/sec-024",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.17",
+    "source_kind": "definition",
+    "claim_domain": "math",
+    "evidence_kind": "axiomatic-definition",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Definition citing [12, 1.4.3, where s = 1)], [Ram92] in sections/sec-024-44-the-functional-space-h-in-the-borel-plane.md",
+    "claim_id": "aif-2009-59-1-347-0#definition:4.17",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

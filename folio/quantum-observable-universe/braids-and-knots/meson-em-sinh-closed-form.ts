@@ -8,6 +8,9 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.meson_EM_closed_form",
   },
   uses: [],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The meson mass ratio this identity was once read into, and its comparison with measurement, are in [the meson ratio remark](#rem:meson-em-sinh-ratio-reading)." },
+  ],
   computation: {
     engine: "mpmath",
     script: "computations/meson_em_sinh_closed_form.py",

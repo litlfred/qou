@@ -1,0 +1,1 @@
+Note that we actually have W ∈M(A ⊗B(H)). Moreover, in the next section, we will see that the hat operators are precisely the dual space elements, hence indeed W ∈M(A ⊗ˆ A). Furthermore, the multiplicative unitary will be invariant under the exchange b −→b−1 and Aq −→Aeq.

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2311.02632v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0da5ba097b79340da4dd5da53cb90327f46bbea249bcaf9945d25cb048edcd68",
   "file": "2311.02632v2.pdf"
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Whenever there is a non-empty intersection of $I(\\gamma_i)$ and $I(\\gamma_j)$ within the unit disk, it must consist of just one point.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-33-fundamental-domain-for.md",
-   "section_title": "Fundamental domain for",
-   "pages": "12-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If two such isometric circles intersect at multiple points, then they must be identical as they are also geodesics in $\\disk$. \u25fb :::",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-33-fundamental-domain-for.md",
-   "section_title": "Fundamental domain for",
-   "pages": "12-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "- Now, one should substitute the letter $R$ with the expression $a^{-1}b$ and the letter $L$ with $b$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-34-length-spectrum-of-the-fricke-macbeath-surfac.md",
-   "section_title": "Length spectrum of the Fricke-Macbeath surface",
-   "pages": "19-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Finally, note that the multiplicity of a geodesic listed in Vogeler's table should be doubled when we are counting the number of corresponding conjugacy classes.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-34-length-spectrum-of-the-fricke-macbeath-surfac.md",
-   "section_title": "Length spectrum of the Fricke-Macbeath surface",
-   "pages": "19-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Because its multiplicity must be at least 7 (Lemma [\\[prop:mult7\\]](#prop:mult7){reference-type=\"ref\" reference=\"prop:mult7\"}), $h(i\\nu)=\\frac{\\left(e^{\\nu }-e^{-\\nu }\\right)^4}{16 \\nu ^4}\\geq 1$ for $0\\leq \\nu \\leq 1/2$, and $h(r)>0$ for all $r\\in \\R$, we have $$\\calS-h(r_0) = \\sum_{n=1}^{\\infty} h(r_n) \\geq 7.$$ This contradicts the bound [\\[upper_bound_I\\]](#upper_bound_I){reference-type=\"eqref\" reference=\"upper_bound_I\"} for $\\calS$. \u25fb :::",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-41-overview-of-the-proof.md",
-   "section_title": "Overview of the proof",
-   "pages": "21-29",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "By Lemma [\\[prop:mult7\\]](#prop:mult7){reference-type=\"ref\" reference=\"prop:mult7\"}, it must be 7, which proves the proposition. \u25fb :::",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-45-proof-of-1123-126-and-determination-of-its-mu.md",
-   "section_title": "Proof of 1[1.23, 1.26] and determination of its multiplicity",
-   "pages": "29-32",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

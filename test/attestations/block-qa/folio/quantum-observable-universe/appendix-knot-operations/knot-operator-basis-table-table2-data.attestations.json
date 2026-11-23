@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table-table2-data",
+    "path": "folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table-table2-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.483Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.525Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.567Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.609Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.650Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.690Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.731Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.771Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.813Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "67b91e36defa",
+          "ts": "125498f342d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.854Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table2-data (legend, 6-row table, closing note on the elided entries). No constructions from the ten categories; the closing paragraph is a cross-reference to the witness and parent remark.",
+        "notes": "NOT A TRAP, reported separately and confirmed twice: the final row e- e- e- gives the sigma_0 and sigma_1 coefficients as h^4+h^2. Both my independent sympy computation and the block's OWN cited witness computations/photon-operator-table.witness.json give h^4+2h^2 (witness matrix[5][5] = 0.08932265 at h = 0.20906029879563937; h^4+h^2 would be 0.04561644). The gamma entry h^3+h is correct, as are the elided L+/L-/e- values (h^5+3h^3+h and h^6+4h^4+3h^2+1). Hand-derivable from this block's sibling Table L.1: the h^2 L- . e- and h^2 L+ . e- terms each contribute a second h^2 that the printed value drops."
+      }
+    ]
+  }
+}

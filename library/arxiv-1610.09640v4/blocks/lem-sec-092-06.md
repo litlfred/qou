@@ -1,0 +1,1 @@
+Assume A is local, with maximal ideal m. Let R be a dualizing complex over A, and let d := dimR(m). Then for every i̸ = −d the local cohomology Hi m(R) vanishes. See Remark 13.3.24 for more about H−d m (R).

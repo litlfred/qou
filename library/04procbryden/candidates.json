@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "04procbryden",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "8baffbc6542c34a52724236a5986f58cc30248251dd7d4257f88533feea456c0",
   "file": "04procbryden.pdf"
@@ -11,76 +14,11 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since \u03bbm \u2208Z, these polynomials must have rational coe\ufb03cients, in fact 22m((2m)!!)2\u03bbm(S, T) \u2208Z[S, T] where n!! \u2261\u0005n r=1 r!.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-a-two-parameter-family-of-manifolds.md",
-   "section_title": "A two-parameter family of manifolds",
-   "pages": "4-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Again assuming this conjecture, we can theoretically determine what its form should be.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-results-and-conjectures.md",
-   "section_title": "Results and conjectures",
-   "pages": "11-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Hence for general (odd) S and even T, the quadratic giving the slope must still have coe\ufb03cient 4 \u03c02 for T 2.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-results-and-conjectures.md",
-   "section_title": "Results and conjectures",
-   "pages": "11-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It may be noted that the computer program may be used to compute the Ohtsuki series for surgery around an arbitrary knot, though the complexity of the calculation is likely to be prohibitively high for more general manifolds.",
-   "strength": "may",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-conclusions.md",
-   "section_title": "Conclusions",
-   "pages": "16-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

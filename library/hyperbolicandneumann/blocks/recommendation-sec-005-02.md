@@ -1,1 +1,0 @@
-The results of [19] and [18] suggest that there should be a Habiro ring HF associated to any number ﬁeld F in which the generalized Kashaev invariants take their values and which is graded by the Bloch group of F.

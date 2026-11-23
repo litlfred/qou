@@ -1,1 +1,0 @@
-It is important to stress, however, that, by itself, it does *not* explain how to construct the space ${\cal H}$ (it is not an honest quantization), and can not capture the fact that $\hbar^{-1}$ should ever be discretized.\ A third option, *brane quantization* [@gukov-2008], is a marriage of geometric and deformation quantizations in a physical context.

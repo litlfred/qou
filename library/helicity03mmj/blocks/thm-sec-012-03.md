@@ -1,0 +1,1 @@
+(i) The mutual linking number of a triple is well-deﬁned, i. e., it does not depend on the choices of ∂−1B and ∂−1C. (ii) In R4 this linking number coincides with the degree of the Gauss map: lk(A; B, C) = deg ρ.

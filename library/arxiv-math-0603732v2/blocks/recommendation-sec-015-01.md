@@ -1,1 +1,0 @@
-When one or the other of $\sigma, \tau$ is the identity map we shall simply omit it, writing for example $^\sigma M$ for $^\sigma M^1.$ If $\phi$ is another automorphism of $A$, then the map $x\mapsto \phi(x)$ for all $x\in A$ defines an isomorphism of $A$-bimodules ${^\sigma A^\tau}\to {^{\phi\sigma}A^{\phi\tau}}$.

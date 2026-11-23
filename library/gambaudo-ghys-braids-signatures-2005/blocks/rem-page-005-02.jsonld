@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/rem-page-005-02",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "text": "rem-page-005-02.md",
+  "derivedFrom": "library/gambaudo-ghys-braids-signatures-2005/sections/page-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [11] in sections/page-005.md",
+    "claim_id": "gambaudo-ghys-braids-signatures-2005#remark:3"
+  }
+}

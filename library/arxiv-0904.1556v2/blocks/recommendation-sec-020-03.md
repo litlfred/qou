@@ -1,1 +1,0 @@
-This group is connected, so it must lie entirely in the connected component of the identity, and we get the inclusions: $${\rm S}({\rm U}(2) \times {\rm U}(3)) \hookrightarrow{\rm SO}(4) \times {\rm SO}(6) \hookrightarrow{\rm SO}(10).$$ These maps form the left and bottom sides of our square.

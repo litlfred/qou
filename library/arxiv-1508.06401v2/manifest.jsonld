@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.06401v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED",
+  "contains": [
+    "library/arxiv-1508.06401v2/sections/sec-front-matter",
+    "library/arxiv-1508.06401v2/sections/sec-000",
+    "library/arxiv-1508.06401v2/sections/sec-001",
+    "library/arxiv-1508.06401v2/sections/sec-002",
+    "library/arxiv-1508.06401v2/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1508.06401v2",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED",
+      "basis": "Printed title on page 1 (Horsley et al.); the extracted title used the fl ligature",
+      "extracted_title": "Isospin splittings of meson and baryon masses from three-ﬂavor lattice QCD + QED",
+      "corrected_on": "2026-11-18",
+      "extracted": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED"
+    },
+    "source_file": "1508.06401v2.pdf",
+    "source_sha256": "354f6e4ea835af6d6159171af066ffe804ca6278f193527f049d59ac2c749f09",
+    "pages": 14,
+    "arxiv": {
+      "id": "1508.06401",
+      "version": "2",
+      "primary_class": "hep-lat",
+      "stamp_date": "15 Jul 2016"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,1 +1,0 @@
-In this sense, the Schur-Weyl duality results of our section \ref{Schur-Weyl duality} may be considered as a complimentary approach to some of the results for $ \mathcal{MP}_k(n) $, developed in \cite{NaPaulSriva}, \cite{OrellanaZabrocki2} and \cite{Wilson}.

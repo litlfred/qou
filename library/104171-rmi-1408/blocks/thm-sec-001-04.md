@@ -1,0 +1,1 @@
+Let WA ˝ B ! C be a homomorphism in Rep C3. Pick splittings of A, B, and C as in (2.1), and refinements as in (2.9). Define a homomorphism mW A ˝ B ! C in sVec by means of Recipe 2.5. Then, with A, B and C as in (2.10), the diagram (2.7) is commutative.

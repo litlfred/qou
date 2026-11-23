@@ -319,17 +319,20 @@ def li2_q_sym(z: mp.mpf, max_n: int = 300) -> mp.mpf:
     """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
 
     Identity: ∫_0^V (ln_q(1+t)/t) dt = -Li_2^q(-V).
+
+    Delegates to the corpus implementation ``_li_2_q_util.li_2_q`` (bean
+    qou-cw27). The power series has radius |z| < q, but the FUNCTION is
+    analytic on the whole negative axis:
+        -Li_2^q(-V) = (q - q^{-1}) · Σ_{k≥0} log(1 + V·q^{-(2k+1)}),
+    finite and positive for every V > 0. This module previously summed the
+    series to a fixed 300 terms with no radius check, so for |V| > q it
+    returned a truncated DIVERGENT partial sum: -2.43e15 at the proton's
+    convention-D volume V = 1.2824 (and a different value at 301 terms).
+    That number was never a pole of the formula. ``max_n`` is kept only for
+    call-site compatibility and is ignored.
     """
-    total = mp.mpf(0)
-    for n in range(1, max_n + 1):
-        nq = _q_int(n)
-        if abs(nq) < mp.mpf("1e-300"):
-            continue
-        term = z ** n / (n * nq)
-        total += term
-        if abs(term) < mp.mpf("1e-50"):
-            break
-    return total
+    from _li_2_q_util import li_2_q
+    return li_2_q(mp.mpf(z), Q_MP, Q_INV_MP)
 
 
 # ── Canonical Term 6 from Habiro residue witness ────────────────────
@@ -373,31 +376,51 @@ def term1_descended(vols):
     return p
 
 
+def _phi_q_or_divergent(arg):
+    """Φ_q(arg), or ``mp.inf`` when ``arg`` is at or past the pole.
+
+    Φ_q(x) = ∏_{k≥1} (1 − q^{-k} x)^{-1} has its first pole at x = q₀. Under
+    the convention-D volumes (owner ruling 2026-11-18) the proton and neutron
+    generator volumes are 1.2824 and 1.1337, past it (bean qou-2tuv).
+    """
+    phi = Phi_q(arg)
+    if mp.isinf(phi) or mp.isnan(phi):
+        return mp.inf
+    return mp.mpf(phi)
+
+
 def term2_single_gen_tower(vols):
-    """Term 2: Σ_i Φ_q(|V̂_i|)."""
+    """Term 2: Σ_i Φ_q(|V̂_i|).
+
+    Returns ``mp.inf`` if any generator volume is at or past the Φ_q pole.
+    It used to skip such generators silently (and, through a swallowed
+    TypeError, every generator); a divergence is now reported as what it is
+    (owner, 2026-11-20).
+    """
     total = mp.mpf(0)
     for v in vols:
-        try:
-            phi = Phi_q(v)
-            if not mp.isinf(phi) and not mp.isnan(phi):
-                total += phi
-        except Exception:
-            pass
+        # |V̂_i| per the docstring. The old body passed the raw volume, which
+        # is a dict ({"full", "sym", ...}); Phi_q raised TypeError on it and the
+        # blanket `except: pass` swallowed that, so this term was 0 for EVERY
+        # isotope in every convention, not only past the pole.
+        phi = _phi_q_or_divergent(abs_mpf(v))
+        if mp.isinf(phi):
+            return mp.inf
+        total += phi
     return total
 
 
 def term3_pair_gen_tower(vols):
-    """Term 3: z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)."""
+    """Term 3: z² Σ_{i<j} Φ_q(|V̂_i V̂_j|). ``mp.inf`` on any divergent pair
+    (previously skipped silently, as in Term 2)."""
     total = mp.mpf(0)
     n = len(vols)
     for (i, j) in combinations(range(n), 2):
         arg = abs_mpf(vols[i]) * abs_mpf(vols[j])
-        try:
-            phi = Phi_q(arg)
-            if not mp.isinf(phi) and not mp.isnan(phi):
-                total += Z_MARK ** 2 * phi
-        except Exception:
-            pass
+        phi = _phi_q_or_divergent(arg)
+        if mp.isinf(phi):
+            return mp.inf
+        total += Z_MARK ** 2 * phi
     return total
 
 
@@ -573,7 +596,22 @@ def paper_six_term_mass(Z, N, include_inter=True,
             "produces ~10⁵× isospin pathologies — it has been "
             "removed."
         )
-    t1 = canonical_t1(isotope_label)
+    # T1 FREE vs BOUND (2026-11-21, issue #8960). `canonical_t1(label)` is
+    # keyed on the isotope label alone, so it returned the BOUND atom trace
+    # for both the `include_inter=True` and `include_inter=False` calls, and
+    # `assemble_per_derivation_weights`' binding_T1 = E0·(T1_free − T1_atom)
+    # was identically 0 for every isotope. Its ⁴He entry was also a stale
+    # inline literal (0.0553483…, pre-2026-09-05 ordering) where the live
+    # trace is 0.0112374…. The corpus fixes both values: `tr_m_atom_zn`
+    # (manifest `physical_proton`) returns (tr_atom, tr_free) from the same
+    # canonical word, and reproduces the witness entries for p, n, D, T, ³He
+    # bit-for-bit. Use it for A >= 2; A = 1 keeps the witness (free = atom).
+    if Z + N >= 2:
+        from tr_m_atom_via_transfer import tr_m_atom_zn
+        _tr_atom, _tr_free = tr_m_atom_zn(Z, N)[:2]
+        t1 = abs(mp.mpf(_tr_atom if include_inter else _tr_free))
+    else:
+        t1 = canonical_t1(isotope_label)
 
     # T2, T3 evaluation per `tower_mode`:
     if tower_mode in ("brane-legacy", "brane"):
@@ -640,11 +678,13 @@ def paper_six_term_mass(Z, N, include_inter=True,
             term2_canonical, term3_canonical,
         )
         from mass_at_3A_proper import atom_braid_word_3A
-        word = atom_braid_word_3A(Z, N, include_inter=include_inter)
+        word = atom_braid_word_3A(Z, N, include_inter=include_inter, q=Q_MP)
         n_strands_canonical = 3 * (Z + N)
         n_gens_canonical = n_strands_canonical - 1
-        t2 = term2_canonical(word, n_gens_canonical, float(Q0_FLOAT))
-        t3 = term3_canonical(word, n_gens_canonical, float(Q0_FLOAT))
+        # Q_MP, not float(Q0_FLOAT): the brane tower is mpf end to end now
+        # and refuses a float q (2026-11-21).
+        t2 = term2_canonical(word, n_gens_canonical, Q_MP)
+        t3 = term3_canonical(word, n_gens_canonical, Q_MP)
     elif tower_mode == "li2q":
         # CORRECTED Kashaev limit per `prop:mass-endomorphism-tower`
         # (proof: a43d7f1fa).  T2 = -Σ Li_2^q(-|V_i|),
@@ -1524,7 +1564,7 @@ if __name__ == "__main__":
             "prop:y-lambda-closed-form-wenzl-bridge",
             "prop:y-lambda-recipe-from-partition",
             # Fix #4 (S1) — CAL-3 calibration inputs (Q_β, CODATA masses).
-            "prop:three-calibration-inputs",
+            "def:three-calibration-discipline",
             # Fix #6 (S2) — per-nucleon shift additive linearity threaded
             # into the multi-isotope sweep's per-nucleon term assembly.
             "prop:per-nucleon-shift-additive-linearity",
@@ -1540,7 +1580,7 @@ if __name__ == "__main__":
             "upstream_witness_hashes": _upstream_hashes,
         },
         # The Phase-3 substrate-Δm benchmark (PR #696 D3 lift) lives
-        # entirely in the sibling probe `probe_flavor_dressed_mass_split.py`
+        # entirely in the sibling probe `probe_flavor_dressed_mass_from_substrate_split.py`
         # / `flavor-dressed-mass-from-substrate-split.witness.json`.
         # This sweep does NOT consume the substrate-Δm witness — it is
         # an independent end-to-end test — so the substrate-Δm blocks

@@ -1,1 +1,0 @@
-(2.53) We shall discuss direct connection between these two matrix integrals (2.1) and (2.47) in the next section, after some more details will be presented about the structure of ”eigenvalue” matrix models.

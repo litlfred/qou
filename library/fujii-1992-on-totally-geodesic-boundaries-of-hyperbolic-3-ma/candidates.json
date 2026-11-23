@@ -1,56 +1,151 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "d3d3bf68955ad7758d80d069b510192d95ca7e5a05882a2a03ebff5d25f90694",
   "file": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf"
  },
  "provenance": {
-  "title": "M. FUJJI",
+  "title": "On totally geodesic boundaries of hyperbolic 3-manifolds",
   "authors": "KODAI MATH. J",
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
+  "candidates": 4,
   "by_kind": {
-   "recommendation": 2
+   "proposition": 1,
+   "theorem": 2,
+   "corollary": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 2,
+   "elsewhere": 1,
+   "both": 1
+  },
+  "by_lean_status": {
+   "unformalized": 4
+  },
+  "needs_lean_proof": 4
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.1",
    "name": null,
-   "statement": "The three numbers z, z' :=(z-l)/z and z\" : = l/(l-z) give the same tetrahedron: to specify z uniquely, we must pick an edge of 5 (the dihedral angle at this edge will be arg(z)).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-an-ideal-tetrahedral-decomposition-of-a-hyperb.md",
-   "section_title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with two torus cusps.",
-   "pages": "2-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It is homotopic 256 MICHIHIKO FUJ\u03a0 to the closed surface invariant by K and must be totally geodesic.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "// (p2, q2) is close to oa %n R 2\\j{\u00b0o} and not equal to oo, then the value of \u03c4 at this point (p2) q2) is not the same as the value of \u03c4 at the original solution z\u00b0. There is the following theorem which has a close relation to the above proposition:",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-001-f-udc.md (p. 10-14)",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/sec-001-f-udc.md",
    "section_title": "UdC",
    "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-001-f-udc.md (p. 10-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/prop-sec-001-01",
+   "claim_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma#proposition:3.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": "M. Kapovich [4], [5]",
+   "statement": "Let \u0393 be a discrete subgroup of PSL (2, C) and N\u2014H 3/\u0393 a hyperbolic 3-manifold of finite volume. Suppose that n^2 and N has n cusp ends, corresponding to the maximal parabolic subgroups \u0394i, \u2022\u2022\u2022, An<\u0393. Suppose that the group \u0393 is a congruence subgroup of some Bianchi group with at least two cusps. Then the restriction homomorphisms rx : H\\\u0393, s/(2, C)) \u2014> H\\AX, s/(2, C)) (x=l, \u2022\u2022\u2022, n) are onto, where we consider sl{2, C) as a \u0393-module with respect to the adjoint representation. From this we can assert the following: for any hyperbolic 3-manifold Af= TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS H z/\u0393 with two torus cusps, where \u0393 is a c",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution (M. Kapovich [4], [5]) [[4]]",
+   "external_refs": [
+    "M. Kapovich [4], [5]",
+    "[4]",
+    "[5]",
+    "[6]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-f-udc.md",
+   "section_title": "UdC",
+   "pages": "10-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution (M. Kapovich [4], [5]) [[4]]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-001-02",
+   "block_iri": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/thm-sec-001-02",
+   "claim_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma#thm-sec-001-02",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "Let M be the 3-man\u03b9fold which has the complete hyperbolic structure with one torus cusp and connected totally geodesic boundary \u03a3 of genus 2 as constructed in % 1. Let M(p, q) be the topological 3-man\u03b9fold obtained by performing the Dehn surgery of type (p, q) on the framed toral end of M. If (p,q)is a coprime pair of integers and \\p\\-\\-\\q\\ is sufficiently large, then M(p,q) has a hyperbolic structure with connected totally geodesic boundary \u03a3(p, q), and Z\u03a3(p, q)~\\ is not equal to [2 1].",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-001-f-udc.md (p. 10-14) citing [9]",
+   "external_refs": [
+    "[9]"
+   ],
+   "proof_excerpt": "By Theorem 5.8.2 in chapter 5.8 of Thurston [9], if (pt,qt) 0 = 1,2) are coprime pairs of integers and |/>t| + |#J are sufficiently large, then DM {piy Qi p2f Q2) has a complete hyperbolic structure with finite volume. Now con- sider the case of (plf q1)=z(\u03c12f q2). We then abbrev",
+   "section_file": "sections/sec-001-f-udc.md",
+   "section_title": "UdC",
+   "pages": "10-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-001-f-udc.md (p. 10-14) citing [9]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-001-03",
+   "block_iri": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/thm-sec-001-03",
+   "claim_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma#theorem:4.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.2",
+   "name": null,
+   "statement": "With the same hypotheses as in Theorem 4.1, the modulus of \u03a3(p, q) is different from that of \u03a3 and there are infinitely many (p, q) }s such that \u03a3(p, q)'s are mutually different in M2. When (p, q) is near &o, \u03a3(p, q) is developed to a hyperplane in H 3 which is very close to the original one on which \u03a3 is developed. Then the fundamental domains of \u03a3 and \u03a3(p, q) are very close to each other. Thus this corollary is induced by Theorem 4.1, since the modular group acts on the Teichm\u03cdller space properly discontinuously. Acknowledgements. The author would like to express his sincere gratitude to Professor Shigeyuki Morita and Professor Sadayoshi Ko",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-001-f-udc.md (p. 10-14)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-f-udc.md",
+   "section_title": "UdC",
+   "pages": "10-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-001-f-udc.md (p. 10-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-001-04",
+   "block_iri": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/cor-sec-001-04",
+   "claim_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma#corollary:4.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

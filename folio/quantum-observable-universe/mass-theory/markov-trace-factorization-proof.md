@@ -2,8 +2,7 @@
 
 By hypothesis the nuclear braid word is $X_0 X_1 \cdots X_{A-2}$,
 where $X_i$ collects the crossing factors at the single generator
-$\sigma_i$.  Using $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$
-([Gröbner--Shirshov energy](#thm:groebner-shirshov-energy)),
+$\sigma_i$.  Using $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$,
 each $X_i$ reduces to $a_i \sigma_i + b_i$.  This step needs the
 grouping: Hecke reduction does not regroup an interleaved word, since
 adjacent generators do not commute.

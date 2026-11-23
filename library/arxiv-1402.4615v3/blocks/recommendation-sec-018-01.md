@@ -1,1 +1,0 @@
-This is possible because, for a given $\mu$, the number of partitions $\rho$ we shall consider is finite: indeed, $a^\mu_\rho=0$ as soon as $|\rho| \geq |\mu|+\ell(\mu)$ [@Lassalle2009 Proposition 9.2 (ii)].

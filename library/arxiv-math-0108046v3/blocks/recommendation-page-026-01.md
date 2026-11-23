@@ -1,1 +1,0 @@
-In case λj > 0 after multiplying through in the above expression and applying Proposition 7.4(c) we see that the ﬁrst summand must be zero, so the above equality in that case simpliﬁes to Xα1λ = vλj−1K−1 j 1λ+αXα.

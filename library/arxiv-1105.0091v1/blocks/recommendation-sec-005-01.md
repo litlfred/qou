@@ -1,1 +1,0 @@
-To treat the case of equal parameters, we shall use O'Connell's theory ([@OC03]) that relates the Robinson-Schensted algorithm to an operation on multidimensional paths, and therefore random tableaux coming from $\omega$-shuffles to random walks conditioned to stay in a Weyl chamber.

@@ -1,0 +1,1 @@
+— If S^ = 2, ^r^ i^ M^ to a constant/actor one and only one non zero form co e r^P.j^Q^L)) wA<w valuation at s e S ^ ^ — (JL,. 0^ Aaj ^(<*>) == — ^s and (o i^ invertible on P — S. For P = P1, oo ^ S, and e a multivalued horizontal section of L, one has (up to a factor) G) = II (^ — s^^.e.dz. If oo e S, one has o = {z — s^^.e.dz, se s sgs— oo

@@ -8,7 +8,7 @@ export default proposition({
     ref: "qou:QOU.Observations.gravity_spectral_prefactor",
     validation: "not_checked",
   },
-  uses: ["prop:confinement-categorical"],
+  uses: ["prop:confinement-categorical", "conj:binding-scale-catalan"],
   tags: [
     "catalan-constant",
     "borromean-volume",
@@ -18,6 +18,20 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-21",
+      body:
+        "Made conditional. The statement asserted the prefactor $\\alpha = m_e \\cdot 8G$ " +
+        "outright while that formula is the content of " +
+        "`conj:binding-scale-catalan`, which was not in `uses[]` (a conjectural-" +
+        "propagation gap found in the sidecar review). The conjecture is now in " +
+        "`uses[]` and the identification $G_q = G$ is stated as following from it. " +
+        "The Lean already carries the hypothesis explicitly: " +
+        "`tailSpectralRatio_eq_of_borromean` takes `h : α = m_e · 8 · c` as an " +
+        "argument, and `gravity_spectral_prefactor` is unconditional. No class " +
+        "axiomatisation of the conjecture was added.",
+    },
+    {
       kind: "deprecated",
       date: "2026-09-14",
       body:
@@ -25,7 +39,7 @@ export default proposition({
         "$G$ to be Newton's gravitational constant in Planck units " +
         "($G_{\\mathrm{Planck}} = 1$), asserting the same formula " +
         "$\\alpha = m_e \\cdot 8G$ that " +
-        "[`prop:binding-scale-catalan`](../mass-theory/binding-scale-catalan.md) " +
+        "[`conj:binding-scale-catalan`](../mass-theory/binding-scale-catalan.md) " +
         "states with $G$ = Catalan's constant. The two readings give " +
         "$3.744459659941610$ MeV and $4.087991605520000$ MeV; the corpus's own " +
         "quoted value is $3.7445$ MeV, so the Catalan reading is the one " +
@@ -33,7 +47,7 @@ export default proposition({
         "collision rather than a second result. Newton's constant does not " +
         "appear anywhere in this repository: there is no witness, no producer, " +
         "and no CODATA comparison.",
-      see: "prop:binding-scale-catalan",
+      see: "conj:binding-scale-catalan",
     },
     {
       kind: "note",

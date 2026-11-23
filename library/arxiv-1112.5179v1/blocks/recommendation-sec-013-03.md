@@ -1,1 +1,0 @@
-In particular, the 2-3 invariance must work for any boundary polarization of the bipyramid (it is trivial to show this), and seems to commute with the operation of gluing the bipyramid into a larger 3-manifold --- as long as the larger triangulation has no univalent edges.

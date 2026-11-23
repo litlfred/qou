@@ -1,1 +1,0 @@
-Namely, as alternative to the sophisticated procedure, involving explicit switch to Kazakov variables and the study of limits of Ward-identites (loop equations), we shall just use the equivalence of the discrete 1-matrix model and Gaussian Kontsevich model, proved in the section 3.8 above in order to take the continuum limit just of this simplest Kontsevich model.

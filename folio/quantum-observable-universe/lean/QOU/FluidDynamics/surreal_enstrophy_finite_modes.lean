@@ -378,7 +378,7 @@ substrate point `q = 1 − ε` of the surreal bridge lies in this band
     `q_gold < q < 1` (`q_gold = s²`, `s` the positive root of `s² + s = 1`,
     i.e. `s = 1/φ`): the elliptic fiber is smooth and the confinement window's
     hypotheses apply at the infinitesimally-perturbed substrate. -/
--- Ref: [leitner2026] observations/golden-ratio-degeneration, deconfinement-golden-threshold
+-- Ref: [leitner2026] predicted-spectra/golden-ratio-degeneration, observations/deconfinement-golden-threshold
 theorem golden_window_mem {ε s : K} (hε : Infinitesimal ε) (hε0 : 0 < ε)
     (hs0 : 0 < s) (hgold : s ^ 2 + s = 1) :
     s ^ 2 < 1 - ε ∧ 1 - ε < 1 := by
@@ -541,7 +541,7 @@ theorem enstrophyN_le_classical {ε : K} (h0 : 0 ≤ ε) (h1 : ε ≤ 1)
     approach** `q = 1 + ε` (`[k]_{1+ε} ≥ k`), where the tail question is
     genuine. -/
 -- Ref: [leitner2026] fluid-dynamics/regularity-breakdown, q-ns-wellposedness;
--- Ref: [leitner2026] observations/golden-ratio-degeneration
+-- Ref: [leitner2026] predicted-spectra/golden-ratio-degeneration
 theorem surreal_finite_of_classical_bounded_subclassical {ε : K}
     (h0 : 0 ≤ ε) (h1 : ε ≤ 1)
     (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k)

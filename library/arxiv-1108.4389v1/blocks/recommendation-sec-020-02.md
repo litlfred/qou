@@ -1,1 +1,0 @@
-From the general $Sp(2N,{\mathbb Z})$ action on theories $T_{M,\Pi}$ [\[Sp2T\]](#Sp2T){reference-type="eqref" reference="Sp2T"}--[\[Sp2GL\]](#Sp2GL){reference-type="eqref" reference="Sp2GL"}, it is easy to see how the twisted superpotentials $\widetilde\mathcal{W}_{\rm eff}$ on ${\mathbb R}^2\times S^1$ should transform.

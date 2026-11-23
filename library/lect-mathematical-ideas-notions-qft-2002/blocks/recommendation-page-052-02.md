@@ -1,1 +1,0 @@
-The main difference from the line-valued case is that since q(t) is circle valued, we should consider not the usual correlators < q(t1)...q(tn) >, but rather correlation functions exponentials < eipia(ts)/r, eipnalts)/" > where p; are integers.

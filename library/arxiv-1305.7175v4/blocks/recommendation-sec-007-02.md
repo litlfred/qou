@@ -1,1 +1,0 @@
-In the quasicoherent case, the general formalism of this paper should provide an $S^1$-equivariant equivalence $\dim(\cQ(X)\module)=\cQ(\cL X)$, identifying the class $[\cQ(X)]$ of the structure stack with the structure sheaf $\cO(\cL X)$.

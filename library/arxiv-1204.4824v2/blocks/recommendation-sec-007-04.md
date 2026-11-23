@@ -1,1 +1,0 @@
-Two choices $a$, $a'$ differ by a winding number $w(a,a')$; the corresponding $\mu$ should obey \begin{equation} \label{eq:mu-sign-rule} \mu(a) / \mu(a') = (-1)^{w(a,a')}. \end{equation} (Of course, knowing $\abs{\mu(a)}$ for all $a$ and knowing \eqref{eq:mu-sign-rule} is still not enough by itself to determine $\mu$.

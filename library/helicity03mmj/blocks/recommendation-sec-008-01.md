@@ -1,1 +1,0 @@
-It should be mentioned however, that they do not seem to be related to higher-dimensional physical problems, similar, e. g. to the helicity-energy interaction in the MHD theory in two and three dimensions.

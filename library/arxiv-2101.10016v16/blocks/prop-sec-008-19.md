@@ -1,1 +1,1 @@
-Let E ∈ A ⊗ A be an idempotent satisfying
+Let E ∈ A ⊗ A be an idempotent satisfying ε ⊗ 1(E) = 1 ⊗ ε(E) = I, EP2E = E, P2EP2 = P2. Then F = EP2 defines a trivial twist with D(F) = P2, R(F) = E and F −1 = P2E. It is a 2-cocycle if and only if the following additional relations hold, Q31 ⊗ ∆(E)I ⊗ EE ⊗ 1∆ ⊗ 1(E)P3 = Q3P3, P3∆ ⊗ I(E)E ⊗ II ⊗ E1 ⊗ ∆(E)Q3 = P3Q3. We omit the proof as it follows from a simple computation.

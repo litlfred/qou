@@ -1252,6 +1252,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "phi-q-categorical-truncation.lean:63 field `vanishing : ∀ j, j > k_star → mass_at_depth j = 0` carries the claim; k_star (:57) unconstrained; :79-85 is sum splitting; Φ_q equality (.md:4) and α_k unencoded",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "a62c637327c5",
+          "ts": "eb05adb086c8",
+          "lean": "4ce3ab8f612e",
+          "lean_statement": "4ab0fe1ead15"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:31.743Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Conjecture block: statement-to-Lean equivalence is not applicable; the Lean carrier is a conjecture class, not a proof."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2465,6 +2482,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:32.014Z",
+  "updated_at": "2026-11-16T07:13:31.743Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

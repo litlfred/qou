@@ -1,0 +1,1 @@
+Let G be a ﬁnite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let ℓ> 2 be a prime for which Sylow ℓ-subgroups of G are non-cyclic. Then the ℓ-modular projective cover of the trivial character of G has at least three ordinary constituents. In particular c11 ≥3.

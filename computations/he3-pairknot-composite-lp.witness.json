@@ -1,7 +1,7 @@
 {
   "engine": "scipy+mpmath",
-  "engineVersion": "mpmath 1.4.1; numpy 2.4.6",
-  "computedAt": "2026-09-07T10:36:18.587587+00:00",
+  "engineVersion": "mpmath 1.4.1; numpy 2.5.3",
+  "computedAt": "2026-11-20T20:01:36.361342+00:00",
   "computation": "he3-pairknot-composite-lp",
   "scriptFile": "he3_pairknot_composite_lp_probe.py",
   "scriptHash": "74c126e5c31c",
@@ -82,7 +82,7 @@
     },
     "coulomb_ratio_tanh_ln_q0": "0.103963710052410145676652858536",
     "coulomb_ratio_q_rational": "0.103963710052410145676652858536",
-    "coulomb_ratio_residual": "3.34096e-52",
+    "coulomb_ratio_residual": "2.26392e-72",
     "pp_pairknot": {
       "Q_pp": 1,
       "B_pp_strong_MeV": "2.12836094576",
@@ -142,8 +142,8 @@
     "charge-coulomb-tn3he-derived.witness.json (31%, B_pp — cited)",
     "he3-tower-charge-asymmetry.witness.json (spurious Δtower)"
   ],
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
-  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
+  "scriptCommitSha": "e81e6204c34f35c49818a444ba147161b6444687",
+  "commitSha": "928351a9f34d7ebe2dde64b891c5a7e8857259ad",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -1,1 +1,0 @@
-Furthermore, although conventional quantum ﬁeld theory in an evaporating black hole background seems to lead to a description in which a single state vector describes the interior and exterior of the black hole, this description must be wrong if our postulates are correct.

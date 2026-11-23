@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T13:49:28.292602+00:00",
-  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T05:40:55.785262+00:00",
+  "commitSha": "625fcc8d470be9eab0df30355369a57d55ac6e2e",
   "assertions": [
     {
       "name": "gmor_lo_reproduces_squared_ratio_within_chpt_lo",
-      "computed": "0.118294613254495649",
+      "computed": "0.118294613254495627",
       "expected": "0",
       "passed": true,
       "tolerance": "0.15",
@@ -32,11 +32,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "meson-gmor-derivation-probe",
   "scriptFile": "meson_gmor_derivation_probe.py",
-  "scriptHash": "53b7f41560d0",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "bfa33a10244b",
+  "scriptCommitSha": "df8ff7016e903cde9bce8e0f9ad63e8ccfac5d8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,14 +44,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "9916510690677ea8"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -62,15 +62,15 @@
   "description": "Tests derived routes for m_K/m_π via GMOR (squared ratio) and pure q-integer forms. Best m_K²/m_π² candidate: [4]_q·[3]_q at 0.02% miss. GMOR reframes the target as the squared ratio (m_u+m_s)/(m_u+m_d), correcting the 71% linear-ratio artifact.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
   "data": {
-    "m_K_over_m_pi": 3.537118438946828,
-    "m_K2_over_m_pi2": 12.511206851137647,
+    "m_K_over_m_pi": "3.53711843894682819185358728309063261913934610342494826340302",
+    "m_K2_over_m_pi2": "12.5112068511376467549435335758131380124312539808803247906682",
     "best_pure_q_candidate": "[4]_q·[3]_q",
-    "best_pure_q_value": 12.508665870090516,
-    "best_pure_q_miss_pct": 0.020309639808250447,
-    "gmor_lo_pdg": 13.991215226939971,
+    "best_pure_q_value": "12.5086658700905155463763159458381157798694720794789350483990",
+    "best_pure_q_miss_pct": "0.0203096398082504455515284577546344195357582334534370187016758",
+    "gmor_lo_pdg": "13.9912152269399707174231332357247437774524158125915080527086",
     "derived_candidate_found": true,
     "fusion_identity": "[3]_q·[4]_q = [2]_q+[4]_q+[6]_q (spin-1⊗spin-3/2)",
-    "mK2_mpi2_eq_3q4q_miss_ppm": 203.13765460847037,
+    "mK2_mpi2_eq_3q4q_miss_ppm": "203.137654608470363708031552464600167426890048983089690325230",
     "gmor_lo_vs_squared_ratio_rel_gap": "0.118294613254",
     "gmor_lo_vs_linear_ratio_rel_gap": "2.95554049672"
   },

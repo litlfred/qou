@@ -14,11 +14,14 @@
   "pageEnd": 64,
   "contains": [
     "library/arxiv-1610.09640v4/blocks/prose-sec-029",
-    "library/arxiv-1610.09640v4/blocks/recommendation-sec-029-01",
-    "library/arxiv-1610.09640v4/blocks/recommendation-sec-029-02",
-    "library/arxiv-1610.09640v4/blocks/recommendation-sec-029-03"
+    "library/arxiv-1610.09640v4/blocks/lem-sec-029-01",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-029-02",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-029-03",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-029-04",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-029-05",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-029-06"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "provenance": "ingested"
 }

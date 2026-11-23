@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0108011v1/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Hopf link decorated with columns and rows",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-math-0108011v1/blocks/prose-sec-009",
+    "library/arxiv-math-0108011v1/blocks/lem-sec-009-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108011v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108011v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-physics-0203048v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-physics-0203048v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-physics-0203048v1",
+  "title": "Towards a third-order topological invariant for magnetic fields",
   "contains": [
     "library/arxiv-physics-0203048v1/sections/sec-front-matter",
     "library/arxiv-physics-0203048v1/sections/sec-000",
@@ -36,7 +36,9 @@
   },
   "meta": {
     "doc_id": "arxiv-physics-0203048v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0203048v1.pdf",
     "source_sha256": "47204f32280e91a36b4822807acf6d0bd7ccac42b400750746366c3e4782951b",
     "pages": 14,
@@ -47,8 +49,8 @@
       "stamp_date": "15 Mar 2002"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

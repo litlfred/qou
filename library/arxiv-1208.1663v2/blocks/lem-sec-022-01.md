@@ -1,0 +1,1 @@
+1. For |q| < 1 we have: (x)∞ = X n xn (q)n |x| < 1 (xq)∞ = X n (−1)nq 2 n(n+1)xn (q)n (xy)∞ (x)∞ = X n (y)nxn (q)n |x| < 1 (xy)∞ (x)∞(y)∞ = X r,s qrsxrys (q)r(q)s |x| < 1, |y| < 1 (xq)∞(yq)∞ (xyq)∞ = X r,s (−1)r+sq 2 (r−s)2+ 1 2 (r+s)xrys (q)r(q)s |xyq| < 1

@@ -1,1 +1,1 @@
-A.1. We have, for any d ∈N∗, positive integers ni (1 ⩽i ⩽d), and N-th roots of unity ξi
+A.1. We have, for any d ∈N∗, positive integers ni (1 ⩽i ⩽d), and N-th roots of unity ξi (1 ⩽i ⩽d + 1), harq ˜α((ni)d; (ξi)d+1) = X (li)d∈Nd (vi)d,(ui)d,(ri)d∈Nd×Nd×{1,...,q ˜α0−1} ui⩽q ˜α0(vi+1−vi −1)(q ˜α0ui+1+ri+1)−1 if vi<vi+1 ui⩽ui+1 if vi=vi+1 and ri<ri+1 ui⩽ui+1−1 if vi=vi+1 and ri⩾ri+1 q ˜α0(vi −vi+1−1)(q ˜α0ui+ri)⩽ui+1 if vi>vi+1 (q ˜α) Pd i=1 ni  1 ξd+1 q ˜α dY j=1 ξ j+1 ξ j u j+r j−n j l j (q ˜α0u j)l j r l j+n j j  . (3-1) David Jarossay

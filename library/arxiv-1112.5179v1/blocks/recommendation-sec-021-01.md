@@ -1,1 +1,0 @@
-Thus we can predict, up to a prefactor, how the Schur index for a hypermultiplet should look in the presence of such a magnetic charge: $$\mathcal{I}_{hyper}(m; q,\zeta) \;= \; \frac{1}{\prod_{n>0} ( 1 - \zeta q^{n+1/2+|m|/2})( 1 - \zeta^{-1} q^{n+1/2+|m|/2})} \,. \label{eq:maghyper}$$

@@ -1,0 +1,1 @@
+AssumeA has a balanced dualizing complex R. Let M ∈ D(GrModAe) have ﬁnitely generated cohomology modules on both sides. Then there is a functorial isomorphism RΓ mM ∼= RΓ mAeM ∼= RΓ m◦M. We obtain the following interesting result:

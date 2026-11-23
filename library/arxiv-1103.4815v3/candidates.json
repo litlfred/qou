@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1103.4815v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "28647b02ea1441e38e2dd7192885b9b64840b290b7f43aafeb1c48e27206ed23",
   "file": "1103.4815v3.pdf"
@@ -16,106 +19,102 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 3,
   "by_kind": {
-   "recommendation": 6
+   "definition": 3
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 3,
+  "by_domain": {
+   "math": 3
+  },
+  "by_evidence_kind": {
+   "axiomatic-definition": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  },
+  "by_lean_status": {
+   "unformalized": 3
+  },
+  "needs_lean_proof": 3
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "definition",
+   "source_kind": "axiom",
    "number": null,
-   "name": null,
-   "statement": "Then, $\\alpha((f,g)\\circ \\gamma) = s(\\gamma)$ as it should be.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-71-from-principal-2-bundles-to-bundle-gerbes.md",
-   "section_title": "From Principal 2-Bundles to Bundle Gerbes",
-   "pages": "39-48",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Now we look at the bijection that the smooth functor $\\tau'$ induces on Hom-sets: \\begin{equation*} \\tau': \\hom{(p',h_1^{-1})}{(p',h_2^{-1})} \\to \\hom{(p',R(p',h_1^{-1}))}{(p',R(p',h_2^{-1}))}\\text{.} \\end{equation*} On the right hand side, we have the element $(\\id_{p'},\\tilde\\rho_2^{-1} \\circ \\rho \\circ \\tilde\\rho_1)$, and the corresponding unique element on the left hand side must be of the form $(\\id_{p'},\\gamma)$, for some $\\gamma \\in \\Gamma_1$ with $R(\\id_{p'},\\gamma) = \\tilde\\rho_2^{-1} \\circ \\rho \\circ \\tilde\\rho_1$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-71-from-principal-2-bundles-to-bundle-gerbes.md",
-   "section_title": "From Principal 2-Bundles to Bundle Gerbes",
-   "pages": "39-48",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It fits into the pullback diagram \\begin{equation*} \\alxydim{@R=1.3cm}{P \\lli{\\pi_1 \\circ \\chi}\\times_{\\pi_1 \\circ \\chi} P \\ar@{^(->}[r] \\ar[d]_{\\chi \\times \\chi} & P \\times P \\ar[d]^{\\chi \\times \\chi} \\\\ Y^{[2]} \\lli{\\pi_1}\\times_{\\pi_1} Y^{[2]} \\ar[d]_{\\pi_2 \\times \\pi_2} \\ar@{^(->}[r] & Y^{[2]} \\times Y^{[2]} \\ar[d]^{\\pi_2 \\times \\pi_2} \\\\ Y^{[2]} \\ar@{^(->}[r] & Y \\times Y} \\end{equation*} which has a surjective submersion on the right hand side; hence, also the map on the left hand side must be a surjective submersion. \\end{proof}",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-017-72-from-bundle-gerbes-to-principal-2-bundles.md",
-   "section_title": "From Bundle Gerbes to Principal 2-Bundles",
-   "pages": "48-57",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall define a transformation \\begin{equation*} \\lambda_{\\rho}: F \\circ R_1 \\Rightarrow R_2 \\circ (F \\times \\id)\\text{.} \\end{equation*} First of all, the composite \\begin{equation*} \\alxydim{}{\\mathcal{X} \\times \\Gamma \\ar[r]^-{R_1} & \\mathcal{X} \\ar[r]^{F} & \\mathcal{Y}} \\end{equation*} is given by the total space $(\\mathcal{X}_0 \\times \\Gamma_0) \\lli{R_1} \\times_{\\alpha_l} F$, left and right anchors send an element $(x,g,f)$ to $(x,g)$ and $\\alpha_r(f)$, respectively, and the actions are \\begin{equation*} (\\chi,\\gamma) \\circ (x,g,f) = (t(\\chi),t(\\gamma),R_1(\\chi,\\gamma) \\circ f) \\quand (x,g,f) \\circ \\eta = (x,g,f\\circ \\eta)\\text{.} \\end{equation*} On the other hand, the composite \\begin{equation*} \\alxydim{}{\\mathcal{X} \\times \\Gamma \\ar[r]^{F \\times \\id} & \\mathcal{Y} \\times \\Gamma \\ar[r]^-{R_2} & \\mathcal{Y}} \\end{equation*} is given by the total space $((F \\times \\Gamma_1) \\lli{R_2 \\circ (\\alpha_r \\times s)} \\times_{t} \\mathcal{Y}_1) / \\sim$ with the equivalence relation \\begin{equation*} (f \\circ \\eta',\\gamma \\circ \\gamma',\\eta) \\sim (f,\\gamma,R_2(\\eta',\\gamma') \\circ \\eta)\\text{.} \\end{equation*} The left and right anchors send an element $(f,\\gamma,\\eta)$ to $(\\alpha_l(",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-018-a-equivariant-anafunctors-and-group-actions.md",
-   "section_title": "A Equivariant Anafunctors and Group Actions",
-   "pages": "57-59",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\item for all objects $X_1,X_2\\in \\mathcal{C}$ and all 1-morphisms $g:F(X_1) \\to F(X_2)$, a 1-morphism $G_g: X_1 \\to X_2$ in $\\mathcal{C}$ together with a 2-isomorphism $\\eta_g: g \\Rightarrow F(G_g)$. \\footnote{More accurately we should write $G_{X_1,X_2,g}$ and $\\eta_{X_1,X_2,g}$, but we will suppress $X_1$ and $X_2$ in the notation.} \\end{enumerate} Then, there is a 2-functor $G:\\mathcal{D} \\to \\mathcal{C}$ and pseudonatural equivalences \\begin{equation*} a: \\id_{\\mathcal{D}} \\Rightarrow F \\circ G \\quand b:G \\circ F \\Rightarrow \\id_{\\mathcal{C}}\\text{.} \\end{equation*} In particular, $F$ is an equivalence of bicategories. \\end{lemma}",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "name": "F2",
+   "statement": "describes the compatibility between the compositors and the horizontal composition. Its image under $F$ is the commutativity of the outer shape of the following diagram composed of commutative subdiagrams. \\begin{equation*} \\footnotesize \\alxydim{@C=0.7cm@R=1.4cm}{F(G(g) \\circ G(f)) \\ar@{=>}[dr]_-{c^{-1}_{G(f),G(g)}} \\ar@{=>}[dddd]_{F(c_{f,g})} \\ar@{=>}[rrr]^-{F(G(\\psi) \\circ G(\\varphi))}=\"1\" &&& F(G(g') \\circ G(f')) \\ar@{=>}[dl]^{c^{-1}_{G(f'),G(g')}} \\ar@{=>}[dddd]^{F(c_{f',g'})} \\\\ & F(G(g)) \\circ F(G(f)) \\ar@{}[dddl]|*+{\\text{Def. of $c$}} \\ar@{=>}[r]^-{F(G(\\psi)) \\circ F(G(\\varphi))}=\"2\" \\ar@{}\"1\";\"2\"|*+{\\text{(F2) for $F$}} \\ar@{=>}[d]_",
+   "claim_domain": "math",
+   "evidence_kind": "axiomatic-definition",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper definition in sections/sec-019-b-constructing-equivalences-between-2-stacks.md",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/sec-019-b-constructing-equivalences-between-2-stacks.md",
    "section_title": "B Constructing Equivalences between 2-Stacks",
    "pages": "59-62",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper definition in sections/sec-019-b-constructing-equivalences-between-2-stacks.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "def-sec-019-01",
+   "block_iri": "library/arxiv-1103.4815v3/blocks/def-sec-019-01",
+   "claim_id": "arxiv-1103.4815v3#def-sec-019-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "definition",
+   "source_kind": "axiom",
    "number": null,
-   "name": null,
-   "statement": "For simplicity, we shall suppress occurrences of associators, unifiers, compositors and unitors in the following.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "name": "F3",
+   "statement": "describes the compatibility of the compositors with the associators of the bicategories $\\mathcal{C}$ and $\\mathcal{D}$, the diagram is moved to Figure \\ref{figf}.",
+   "claim_domain": "math",
+   "evidence_kind": "axiomatic-definition",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper definition in sections/sec-019-b-constructing-equivalences-between-2-stacks.md",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/sec-019-b-constructing-equivalences-between-2-stacks.md",
    "section_title": "B Constructing Equivalences between 2-Stacks",
    "pages": "59-62",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper definition in sections/sec-019-b-constructing-equivalences-between-2-stacks.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "def-sec-019-02",
+   "block_iri": "library/arxiv-1103.4815v3/blocks/def-sec-019-02",
+   "claim_id": "arxiv-1103.4815v3#def-sec-019-02",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "definition",
+   "source_kind": "axiom",
+   "number": null,
+   "name": "F4",
+   "statement": "describes the compatibility of the compositors with the unitors and is proved in Figure \\ref{figff}. \\begin{sidewayscommentfigure} \\begin{equation*} \\tiny \\alxydim{@C=0.7cm@R=1.5cm}{F(G(g) \\circ G(\\id_Y)) \\ar@{}[drrrr]|{\\text{Def. of $c$}} \\ar@{=>}[rrrrr]^{F(c_{\\id_Y,G(g)})} \\ar@{=>}[dr]^{c^{-1}_{G(\\id_Y),G(g)}} \\ar@{=>}[ddddd]_{F(\\id_{G(g)} \\circ u_Y)} &&&&& F(G(g \\circ \\id_Y)) \\ar@{=>}[ddddd]^{F(G(l_g))} \\\\ & F(G(g)) \\ar@{}[ldddd]|{\\text{(F2) for $F$}} \\circ F(G(\\id_Y)) \\ar@{=>}[r]^{\\eta^{-1}_{\\tilde g} \\circ \\eta^{-1}_{\\widetilde{\\id_Y}}} \\ar@{=>}[ddd]|{F(G(g)) \\circ F(\\id_{G(Y)})} & ((\\xi \\circ g) \\circ \\bar\\xi) \\circ ((\\xi \\circ \\id_Y) \\",
+   "claim_domain": "math",
+   "evidence_kind": "axiomatic-definition",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper definition in sections/sec-019-b-constructing-equivalences-between-2-stacks.md",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-019-b-constructing-equivalences-between-2-stacks.md",
+   "section_title": "B Constructing Equivalences between 2-Stacks",
+   "pages": "59-62",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper definition in sections/sec-019-b-constructing-equivalences-between-2-stacks.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "def-sec-019-03",
+   "block_iri": "library/arxiv-1103.4815v3/blocks/def-sec-019-03",
+   "claim_id": "arxiv-1103.4815v3#def-sec-019-03",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

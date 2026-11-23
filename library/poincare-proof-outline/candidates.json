@@ -1,101 +1,24 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "poincare-proof-outline",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "8ac25ddb38d360b4f314e6b1496f58b46e26f5a0bc13f3a00a90bb13f1e9df4f",
   "file": "POINCARE-proof-outline.pdf"
  },
  "provenance": {
-  "title": "Poincar\u00e9 Disc Model",
-  "authors": "Danijela Simi\u00e9 Filip Mari\u00e9 Pierre Boutry",
+  "title": "Formalization of the Poincare disc model of hyperbolic geometry",
+  "authors": "Danijela Simi\u0107",
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To prove the equivalence between the h-distance definition and the distance formula, we shall employ the without loss of generality principle.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-024-distance-explicit-formula.md",
-   "section_title": "Distance explicit formula",
-   "pages": "48-54",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore, we must show that the distance formula is preserved by h-isometries.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-024-distance-explicit-formula.md",
-   "section_title": "Distance explicit formula",
-   "pages": "48-54",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For three h-collinear points at least one of the three possible h-betweeness relations must hold.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-036-h-betweenness-and-h-collinearity.md",
-   "section_title": "H-betweenness and h-collinearity",
-   "pages": "86-87",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The intersection point of the h-line determined by points u and v and the x-axis is between u and v, then u and v are in the opposite half-planes (one must be in the upper, and the other one in the lower half-plane).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-041-betweeness-of-x-axis-intersection.md",
-   "section_title": "Betweeness of x-axis intersection",
-   "pages": "96-97",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This branch must work only for formal reasons.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-052-h-lines.md",
-   "section_title": "H-lines",
-   "pages": "124-125",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,1 +1,0 @@
-All roots in $S_1(x)$ arising from the $a$th row of $D(P)$ will be of form $\alpha_p+\alpha_{p+1}+\cdots +\alpha_l$, for $l\geq p\geq i+1$, so only if $p=i+1$ will they contribute to an ${\bf x}_j$; in this case we shall get a corresponding ${\bf x}_j$ of form $(0,1)$.

@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-ph-9511320v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "4336112cecabdfdf835e5e26f22ab66d867fe2620f16d1bcbd11a53b53848aaa",
   "file": "9511320v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:hep-ph/9511320v1 15 Nov 1995",
+  "title": "Chiral Lagrangians for Baryons Coupled to Massive Spin-1 Fields",
   "authors": "B. Borasoy a 1 , Ulf-G. Mei\u00dfner a 2",
   "arxiv": {
    "id": "hep-ph/9511320",
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In general, these LECs should be determined from phenomenology.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This should be compared with the result in the vector field formulation, $$\\begin{aligned} \\frac{i 2 \\sqrt{2} g_V}{F^2_\\pi (M_V^2-t)} \\, t",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-4-vector-meson-contribution-to-pion--nucleon-sca.md",
-   "section_title": "Vector Meson Contribution to Pion--Nucleon Scattering",
-   "pages": "15-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,1 +1,0 @@
-2 Content of NUBASE2020 The NUBASE2020 evaluation contains recommended properties for the ground state of 3340 nuclides and for 1938 excited isomeric (T1/2≥100 ns) states, derived from all avail- able experimental data.

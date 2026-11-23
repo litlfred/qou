@@ -1,0 +1,1 @@
+If there is an achiral knot of determinant n, then n is the odd sum of two squares [170]. The converse is also true, and the achiral knot of determinant n can be chosen to be alternating or prime, but not always both. For n = 1, 9, and 49, there is no prime alternating achiral knot of determinant n. If there is another such n, then n > 2000 and n is not a square. See [374].

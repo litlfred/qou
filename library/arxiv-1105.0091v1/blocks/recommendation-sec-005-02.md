@@ -1,1 +1,0 @@
-We shall prove this progressively, starting from the toy model of $2$-shuffles, then introducing **Pitman operators** in order to treat the case of $d$-shuffles, and finally studying the general case.

@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:jet-prefix-gb-filtration",
+    "conj:jet-prefix-gb-filtration",
     "prop:chirality-from-frobenius-self-pairing",
   ],
   tags: [

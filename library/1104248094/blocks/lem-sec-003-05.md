@@ -1,0 +1,1 @@
+* The Lie bracket o/g*^a c©n c, [,]:Λ 2g*->g* induces a map δ:g-+ Λ 2g of the following form: adx(R), Vxeg, (3.12) and R = * Σ E α Λ E _ α . (3.13) ^α>0 The proof is left to the reader. We write down the map δ here: ) = £_ βΛfί β— - Σ Nβι1E_βΛE_Γ (3.14) 2/?,y>0,0 + y = α where α > 0.

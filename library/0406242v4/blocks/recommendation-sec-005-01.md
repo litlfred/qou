@@ -1,1 +1,0 @@
-If v arises as a vertex of triangles visited by the oriented line D, one of the following two things must happen right after D enters the fan: either D makes a Right, then a number of Lefts (possibly 0), then a Right and leaves the fan; or the same is true, exchanging Right and Left.

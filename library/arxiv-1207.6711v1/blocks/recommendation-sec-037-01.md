@@ -1,1 +1,0 @@
-We have \begin{equation} -z_s^{1100}z_{t-1010}^{1010}z^{0110}_{t-0110}=X_t=X'_t=-z_s'^{1100}z_{t-1010}'^{1010}z'^{0110}_{t-0110}. \end{equation} By induction, $z_{t-1010}^{1010}=z_{t-1010}'^{1010}$ and $z_{t-0110}^{0110}=z_{t-0110}'^{0110}$, so we must also have $z_s^{1100}=z_s'^{1100}$.

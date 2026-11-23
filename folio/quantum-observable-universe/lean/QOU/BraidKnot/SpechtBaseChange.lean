@@ -147,4 +147,14 @@ theorem spechtSubmodule_eq_span_of_rat {k : Type} [Field k] [CharZero k]
     rw [mapRing_polytabloid] at h
     simpa only [mapRing_polytabloid] using h
 
+/-- Every element of `SpechtSubmodule μ` over a characteristic-zero field `k` lies in the `k`-span of a polytabloid subfamily that spans over `ℚ`. -/
+theorem mem_span_of_rat_spechtSubmodule {k : Type} [Field k] [CharZero k]
+    {ι : Type} [Fintype ι] (w : ι → Tableau μ)
+    (hQ : ∀ t : Tableau μ, polytabloid (k := ℚ) t ∈
+      Submodule.span ℚ (Set.range (fun i => polytabloid (k := ℚ) (w i))))
+    {x : Mtab (k := k) μ} (hx : x ∈ SpechtSubmodule (k := k) μ) :
+    x ∈ Submodule.span k (Set.range (fun i => polytabloid (k := k) (w i))) := by
+  rw [spechtSubmodule_eq_span_of_rat w hQ]
+  exact hx
+
 end QOU.BraidKnot.SpechtBaseChange

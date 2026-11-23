@@ -1,1 +1,0 @@
-The intersection point of the h-line determined by points u and v and the x-axis is between u and v, then u and v are in the opposite half-planes (one must be in the upper, and the other one in the lower half-plane).

@@ -1,0 +1,1 @@
+Formula (2.3) is a limit case of Heine’s transformation formula (2.5) 2φ1 a, b c ; q, z  = (b, az; q)∞ (c, z; q)∞ 2φ1 c/b, z az ; q, b  (cf. [6, (1.4.1)]). Indeed, ﬁrst let b →0, then replace z by z/a and let a →∞. At least formally, by termwise limits, we obtain (2.3).

@@ -93,10 +93,11 @@ import sys
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 E0_STR = "4.1859813632944758969"
 NATURE_T1 = -0.07      # 1S0 virtual state, MeV (Machleidt CD-Bonn a<0 channels)
-NATURE_T0 = +2.2245662  # deuteron, MeV
+NATURE_T0 = +float(AME_B_DEUTERON_MEV_VALIDATION)  # deuteron, MeV
 
 
 def main() -> int:

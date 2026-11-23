@@ -1,1 +1,0 @@
-In other words we must show that $r(\omega\otimes\iota )(1\otimes 1)=(\omega\otimes\iota\otimes\iota )(\overline{V}\times V)r$ or $\omega (1)r(1)=(\omega\otimes\iota\otimes\iota )(\overline{V}\times V)r(1)$ for all $\omega\in\hat{A}$.

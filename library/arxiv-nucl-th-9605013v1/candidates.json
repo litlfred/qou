@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-nucl-th-9605013v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "cdeab7717dcb9567a3b7ee10a7afe9dc583fabb9fdfa8cbd2639a493242162e8",
   "file": "9605013v1.pdf"
  },
  "provenance": {
-  "title": "NUCLEAR \u03b2- AND \u03b3- COLLECTIVE BANDS IN THE SUq(2) ROTATOR MODEL",
+  "title": "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model",
   "authors": "N. MINKOV, S. B. DRENSKA, P. P. RAYCHEV, R. P. ROUSSEV",
   "arxiv": {
    "id": "nucl-th/9605013",
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "SUq(2) symmetry in exited collective bands In the case of excited bands one needs an appropriately formulated q-rotator de\ufb01nition which should take into account the circumstance that the rotational en- ergy levels are built on a given excited vibrational state16.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Taking into account this nonadiabatic perturbation we suppose that in the excited bands the q-deformations of the SU(2) symmetry should be generally larger in magnitude than the corresponding ones obtained in the gsb\u2019s.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the case of SUq(2) one should use the q-generalized angular momentum theory22,23,24, in which the irreducible tensor op- erators for the quantum algebra SUq(2)23 as well as the q-generalized version of the Wigner-Eckart theorem24 are available.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-006.md",
-   "section_title": "Page 6",
-   "pages": "6-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be em- phasized that in the framework of the quantum algebra SUq(2) as well as in the case of the standard Lie algebra SU(2)25, one is able to provide a consistent de- scription of the physical characteristics of only one given rotational band.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-008.md",
-   "section_title": "Page 8",
-   "pages": "8-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "should understand the SUq(2)-rotator as a one-band model based on the particular intrinsic state or vibrational mode.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-009.md",
-   "section_title": "Page 9",
-   "pages": "9-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

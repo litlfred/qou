@@ -60,7 +60,9 @@ if str(HERE) not in sys.path:
 
 from lr_coefficients import partitions_of  # noqa: E402
 import a_operator_categorical as aoa  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
 
+set_compute_dps()
 EXACT_TOL = mp.mpf("1e-25")
 
 

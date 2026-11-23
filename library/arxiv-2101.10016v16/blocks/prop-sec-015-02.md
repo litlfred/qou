@@ -1,1 +1,1 @@
-Let D be a weak dimension function on Gr(C). Then the following
+Let D be a weak dimension function on Gr(C). Then the following properties are equivalent. (a) 1 ∈ Spλµ for every probability measure µ, (b) ∥λµ∥ = 1 for every probability measure µ, (c) (ˇµ ∗ µ) n (ι) 1/n → 1 for every probability measure µ, with µˇ(ρ) = µ(ρ), (d) there is a net ξα ∈ ℓ (Irr(C)) of positive unit vectors such that ∥Λρξα−D(ρ)ξα∥ → 0 for all ρ ∈ Irr(C). If they hold then D is a dimension function.

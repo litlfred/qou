@@ -1,1 +1,0 @@
-From now on we assume that both knots are nontrivial, and we observe that since $T_{p,q}$ is an L-space knot, Theorem~\ref{thm:lspace-detection-main} says that $K$ must also be an L-space knot -- in particular, it is fibered \cite{ghiggini,ni-hfk} -- and that $g(K) = g(T_{p,q})$.

@@ -1,0 +1,3 @@
+Under convention D the proton--proton bond factor in the flavour generator is $z_D = q^3/(q^2+1)$. In the raw generators it becomes $-q^{-1} z_D = -q^2/(q^2+1)$, which is negative for real $q > 0$ (`raw_pp_factor`), so a bond law of the form $\log(1/f)$ is stated in the rescaled generators $b = -qX$. With that choice every Markov trace value of a hadron word on the colour-singlet sector, and every per-bond factor, is the flavour value.
+
+The $\mathfrak{gl}_6$ coideal route gives the singlet generator $-b^{-1}$, the image of $b$ under the Hecke involution $\sigma \mapsto -\sigma^{-1}$; it satisfies $(-b^{-1})(-q^{-1} b) = q^{-1}$ (`coideal_mul_tensor`), so the two routes agree on the singlet sector up to that involution.

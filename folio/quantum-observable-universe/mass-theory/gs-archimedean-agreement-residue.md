@@ -9,6 +9,4 @@ $$
 
 **Categorical statement.** This specializes the generic archimedean agreement to the proton, unifying the Habiro polynomial evaluation with the spectral-sequence descended trace and cyclotomic residues.
 
-**Lean encoding.** Sits as the `sorry` in the `protonExample` instance of `HabiroResidueSumEquivalence`.
-
-**Conjectural status.** Closing the Lean proof requires brute-force evaluation of the explicit polynomial via `native_decide` or applying the generic archimedean agreement conjecture. The canonical agreement is certified to machine precision.
+**Conjectural status.** A proof requires either exact evaluation of the explicit polynomial or the generic archimedean agreement conjecture. The canonical agreement is certified to machine precision.

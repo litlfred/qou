@@ -1,1 +1,0 @@
-In fact this system of equations overdetermines the UV couplings and in order to prove its solvability one must exploit the so-called consistency conditions which reduce the number of independent equations [3].

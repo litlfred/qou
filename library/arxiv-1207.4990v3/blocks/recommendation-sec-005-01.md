@@ -1,1 +1,0 @@
-One must analyze lower order terms, in fact go "beyond all orders" in the language of Kruskal, to capture the exponential decay in Wu's result [\[eq64\]](#eq64){reference-type="eqref" reference="eq64"} (see Remark [\[degen\]](#degen){reference-type="ref" reference="degen"} below).

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/lattice2021-543/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "contains": [
+    "library/lattice2021-543/blocks/prose-sec-001",
+    "library/lattice2021-543/blocks/prop-sec-001-01",
+    "library/lattice2021-543/blocks/prop-sec-001-02",
+    "library/lattice2021-543/blocks/prop-sec-001-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lattice2021-543/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lattice2021-543/manifest.jsonld",
+  "provenance": "ingested"
+}

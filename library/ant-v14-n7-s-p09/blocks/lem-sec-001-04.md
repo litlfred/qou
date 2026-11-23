@@ -1,0 +1,1 @@
+Let G be a ﬁnite group and let B be a block of G with cyclic defect group D. Then 1 ≤|Irr0(B)σ1| ≤p. The set Irr0(B)σ1 has minimal size 1 if, and only if, D is trivial. Furthermore, if p ∈{2, 3} and D is nontrivial, then |Irr0(B)σ1| = p. Noelia Rizo, A. A. Schaeﬀer Fry and Carolina Vallejo

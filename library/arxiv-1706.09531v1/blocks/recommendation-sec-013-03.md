@@ -1,1 +1,0 @@
-The VEVs of {(1, 2, 4)H + (1, 2, 4)H} of GUT-scale are in fact needed to break the gauge symmetry G(2, 2, 4) to the SM, while preserving supersymmetry; and the corresponding L-R conjugate multiplets {(2, 1, 4)H + (2, 1, 4)H} should be present, if L-R discrete symmetry survives compactiﬁcation, which we assume.

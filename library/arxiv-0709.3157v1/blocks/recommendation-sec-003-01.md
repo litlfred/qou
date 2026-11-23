@@ -1,1 +1,0 @@
-So all of the building blocks must be endowed with a power counting, determined by the number of derivatives and masses : $\ell_\mu$ and $r_\mu$ appear as covariant derivatives and this fixes its counting; masses count as two power of derivatives, and this dictates the counting of $s$ and $p$.

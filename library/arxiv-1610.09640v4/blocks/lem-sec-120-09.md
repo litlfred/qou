@@ -1,0 +1,1 @@
+(1) The ring homomorphism g := f˜c ◦inc : Deg0( ˜A˜c) = ( ˜A˜c)0 →A is an isomorphism. (2) The ring isomorphism g extends to a graded ring isomorphism ˜g : ˜A˜c ≃ −→ A[t, t−1] that sends ˜c 7→t. The situation is shown in this commutative diagram of rings: ˜A f $ $ / ˜A˜c f˜c / / A ( ˜A˜c)0 O inc O ; g ; ;

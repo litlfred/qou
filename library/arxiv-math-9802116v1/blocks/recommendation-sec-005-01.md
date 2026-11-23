@@ -1,1 +1,0 @@
-In the remainder of this section we suppose that the quasialgebra kF G is admits a diagonal involution σ(x) = s(x)x in the basis G and we shall denote by k ¯F ¯G the generalized Cayley- Dickson extension with respect to this (with general α̸ = 0).

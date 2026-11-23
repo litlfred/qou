@@ -432,8 +432,8 @@ def main() -> int:
 
     print("  Per-particle predictions vs CODATA:")
     print(f"    {'particle':<10} {'V_3term':>22} {'pred [MeV]':>14} {'CODATA [MeV]':>14} {'err [%]':>10} {'err [ppb]':>14}")
-    print(f"    {'proton':<10} {float(mp_v):>+22.10e} {mp_pred_MeV:>14.6f} {M_P_MEV:>14.6f} {err_p_pct:>+10.4f} {err_p_ppb:>+14.4e}")
-    print(f"    {'neutron':<10} {float(mn_v):>+22.10e} {mn_pred_MeV:>14.6f} {M_N_MEV:>14.6f} {err_neutron_pct:>+10.4f} {err_neutron_ppb:>+14.4e}")
+    print(f"    {'proton':<10} {float(mp_v):>+22.10e} {float(mp_pred_MeV):>14.6f} {float(M_P_MEV):>14.6f} {float(err_p_pct):>+10.4f} {float(err_p_ppb):>+14.4e}")
+    print(f"    {'neutron':<10} {float(mn_v):>+22.10e} {float(mn_pred_MeV):>14.6f} {float(M_N_MEV):>14.6f} {float(err_neutron_pct):>+10.4f} {float(err_neutron_ppb):>+14.4e}")
     print()
 
     print("  Sanity checks (canonical-only enforcement):")

@@ -378,4 +378,161 @@ theorem level_eq_two_of_conventionD {q z : R} {r : ℕ} (hq0 : q ≠ 0)
   field_simp
   ring
 
+/-! ### Conjugate-pair survival at level 2: `n = 2` vs `n = 6` (`qou-8zjc`)
+
+At `n = 2`, the two partitions `(2)` and `(1,1)` are conjugate to each other and
+both have at most `2` rows, so both carry non-zero Wenzl level-2 weight.
+
+At `n ≥ 5` (and specifically `n = 6` in the two-nucleon `H₆(q)` trace), any
+two-row partition `r₀ + r₁ = n` with `r₁ ≤ r₀` satisfies `r₀ ≥ 3` by pigeonhole,
+so its transpose has `colLen 0 = r₀ ≥ 3` rows and is annihilated at Wenzl level
+`r = 2`. Thus **no conjugate pair survives at `n = 6`**: the four two-row
+survivors `(6)`, `(5,1)`, `(4,2)`, `(3,3)` all have vanishing conjugate weights
+`y_{(1⁶)} = y_{(2,1⁴)} = y_{(2,2,1,1)} = y_{(2,2,2)} = 0`. -/
+
+/-- `(2)` — one row — has `colLen 0 = 1`. -/
+theorem colLen_ofRowLens_two :
+    (YoungDiagram.ofRowLens [2] (by decide)).colLen 0 = 1 := by
+  rw [← YoungDiagram.length_rowLens,
+    YoungDiagram.rowLens_ofRowLens_eq_self (by decide)]
+  rfl
+
+/-- `(1,1)` — two rows — has `colLen 0 = 2`. -/
+theorem colLen_ofRowLens_one_one :
+    (YoungDiagram.ofRowLens [1, 1] (by decide)).colLen 0 = 2 := by
+  rw [← YoungDiagram.length_rowLens,
+    YoungDiagram.rowLens_ofRowLens_eq_self (by decide)]
+  rfl
+
+/-- **At `n = 2`, both members of the conjugate pair `(2)` and `(1,1)` survive
+Wenzl level 2 (`qou-8zjc`).** -/
+theorem conjugate_pair_survives_at_n_two :
+    schurPrincipal 2 (2 : ℚ) (YoungDiagram.ofRowLens [2] (by decide)) / 1 ≠ 0
+      ∧ schurPrincipal 2 (2 : ℚ) (YoungDiagram.ofRowLens [1, 1] (by decide)) / 1 ≠ 0 := by
+  have hQ : ∀ k : ℤ, k ≠ 0 → (2 : ℚ) ^ k ≠ 1 :=
+    not_root_of_unity_of_pos_ne_one (by norm_num) (by norm_num)
+  constructor
+  · rw [Ne, conventionD_weight_eq_zero_iff (by norm_num) hQ one_ne_zero,
+      colLen_ofRowLens_two]
+    norm_num
+  · rw [Ne, conventionD_weight_eq_zero_iff (by norm_num) hQ one_ne_zero,
+      colLen_ofRowLens_one_one]
+    norm_num
+
+/-- **Pigeonhole on two-row partitions for `n ≥ 5` (`qou-8zjc`).**
+Every two-row partition `r₀ + r₁ = n` (`r₁ ≤ r₀`) of `n ≥ 5` has first row
+`r₀ ≥ 3`, so its conjugate has at least `3` rows. -/
+theorem three_le_first_row_of_two_rows_of_five_le {r₀ r₁ n : ℕ}
+    (hsum : r₀ + r₁ = n) (hord : r₁ ≤ r₀) (hn : 5 ≤ n) : 3 ≤ r₀ := by
+  omega
+
+/-- **General conjugate-annihilation lemma at level 2 (`qou-8zjc`).**
+Whenever `μ.transpose` has at least `3` rows (`2 < μ.transpose.colLen 0`), its
+convention-D weight vanishes, so `(μ, μ.transpose)` cannot survive as a live
+conjugate pair. -/
+theorem conjugate_weight_eq_zero_of_two_lt_colLen_transpose
+    {Q Z : R} (hQ0 : Q ≠ 0) (hQ : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (hZ : Z ≠ 0)
+    (μ : YoungDiagram) (ht : 2 < μ.transpose.colLen 0) :
+    schurPrincipal 2 Q μ.transpose / Z = 0 :=
+  (conventionD_weight_eq_zero_iff hQ0 hQ hZ μ.transpose).mpr ht
+
+/-- `(3,3)` — the minimal-width two-row diagram at `n = 6` — has `colLen 0 = 2`. -/
+theorem colLen_ofRowLens_three_three :
+    (YoungDiagram.ofRowLens [3, 3] (by decide)).colLen 0 = 2 := by
+  rw [← YoungDiagram.length_rowLens,
+    YoungDiagram.rowLens_ofRowLens_eq_self (by decide)]
+  rfl
+
+/-- `(2,2,2)` — the conjugate of `(3,3)` at `n = 6` — has `colLen 0 = 3`. -/
+theorem colLen_ofRowLens_two_two_two :
+    (YoungDiagram.ofRowLens [2, 2, 2] (by decide)).colLen 0 = 3 := by
+  rw [← YoungDiagram.length_rowLens,
+    YoungDiagram.rowLens_ofRowLens_eq_self (by decide)]
+  rfl
+
+/-- **At `n = 6`, the rectangular two-row survivor `(3,3)` carries non-zero
+weight while its conjugate `(2,2,2)` is annihilated (`qou-8zjc`).** -/
+theorem n_six_three_three_survives_but_conjugate_dies :
+    schurPrincipal 2 (2 : ℚ) (YoungDiagram.ofRowLens [3, 3] (by decide)) / 1 ≠ 0
+      ∧ schurPrincipal 2 (2 : ℚ) (YoungDiagram.ofRowLens [2, 2, 2] (by decide)) / 1 = 0 := by
+  have hQ : ∀ k : ℤ, k ≠ 0 → (2 : ℚ) ^ k ≠ 1 :=
+    not_root_of_unity_of_pos_ne_one (by norm_num) (by norm_num)
+  constructor
+  · rw [Ne, conventionD_weight_eq_zero_iff (by norm_num) hQ one_ne_zero,
+      colLen_ofRowLens_three_three]
+    norm_num
+  · rw [conventionD_weight_eq_zero_iff (by norm_num) hQ one_ne_zero,
+      colLen_ofRowLens_two_two_two]
+    norm_num
+
+/-! ### The third live `z` spelling `1/[2]_q = q/(q²+1)` sits at no Wenzl level (`qou-niah`)
+
+In Hecke-shifted Wenzl coordinates (`Q = q²`, `z_W = q · z`), the spelling
+`z = q/(q²+1)` becomes `z_W = q²/(q²+1) = Q/(Q+1)`. Substituting `z_W(Q+1) = Q`
+into Wenzl's parameter relation `z_W(1 − Q^r) = Q^r(1 − Q)` forces the golden
+polynomial constraint `Q^r(1 + Q − Q²) = Q`. That relation fails at `r = 1` and
+`r = 2` for every generic `Q`, and fails for **every** `r : ℕ` whenever
+`1 + Q < Q²` (e.g. `Q = 2`), certifying that `q/(q²+1)` sits at no integer
+Wenzl level in `ℚ(q)`. -/
+
+/-- **Golden constraint forced by `z_W = Q/(Q+1)` (`qou-niah`).**
+If `z * (Q + 1) = Q` and `z` satisfies Wenzl's level-`r` relation
+`z * (1 - Q^r) = Q^r * (1 - Q)`, then `Q^r * (1 + Q - Q^2) = Q`. -/
+theorem pow_level_mul_golden_of_inv_two_bracket {Q z : R} {r : ℕ}
+    (hz : z * (Q + 1) = Q)
+    (h : z * (1 - Q ^ r) = Q ^ r * (1 - Q)) :
+    Q ^ r * (1 + Q - Q ^ 2) = Q := by
+  have hstep : Q ^ r * (1 + Q - Q ^ 2) - Q =
+      (Q + 1) * (Q ^ r * (1 - Q) - z * (1 - Q ^ r))
+        + (1 - Q ^ r) * (z * (Q + 1) - Q) := by ring
+  have h1 : Q ^ r * (1 - Q) - z * (1 - Q ^ r) = 0 := by linear_combination -h
+  have h2 : z * (Q + 1) - Q = 0 := by linear_combination hz
+  linear_combination hstep + (Q + 1) * h1 + (1 - Q ^ r) * h2
+
+/-- **The `1/[2]_q` spelling is not at Wenzl level `r = 1` (`qou-niah`).** -/
+theorem inv_two_bracket_not_wenzl_level_one {Q z : R}
+    (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hz : z * (Q + 1) = Q) :
+    z * (1 - Q ^ 1) ≠ Q ^ 1 * (1 - Q) := by
+  intro h
+  have hgold := pow_level_mul_golden_of_inv_two_bracket hz h
+  have hfac : Q * (Q - 1) * Q = 0 := by
+    calc Q * (Q - 1) * Q = Q - Q ^ 1 * (1 + Q - Q ^ 2) := by ring
+      _ = 0 := by linear_combination -hgold
+  rcases mul_eq_zero.mp hfac with h12 | h3
+  · rcases mul_eq_zero.mp h12 with h1 | h2
+    · exact hQ0 h1
+    · exact hQ1 (sub_eq_zero.mp h2)
+  · exact hQ0 h3
+
+/-- **The `1/[2]_q` spelling is not at Wenzl level `r = 2` (`qou-niah`).** -/
+theorem inv_two_bracket_not_wenzl_level_two {Q z : R}
+    (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q + 1 ≠ 0) (hz : z * (Q + 1) = Q) :
+    z * (1 - Q ^ 2) ≠ Q ^ 2 * (1 - Q) := by
+  intro h
+  have hgold := pow_level_mul_golden_of_inv_two_bracket hz h
+  have hfac : Q * (Q - 1) ^ 2 * (Q + 1) = 0 := by
+    calc Q * (Q - 1) ^ 2 * (Q + 1) = Q - Q ^ 2 * (1 + Q - Q ^ 2) := by ring
+      _ = 0 := by linear_combination -hgold
+  rcases mul_eq_zero.mp hfac with h12 | h3
+  · rcases mul_eq_zero.mp h12 with h1 | h2
+    · exact hQ0 h1
+    · exact hQ1 (sub_eq_zero.mp (pow_eq_zero h2))
+  · exact hQm1 h3
+
+/-- **All-`r` exclusion of `1/[2]_q` from the Wenzl level family (`qou-niah`).**
+In any strict ordered field, whenever `0 < Q` and `1 + Q < Q²` (e.g. `Q = 2`),
+`Q^r (1 + Q - Q²) ≤ 0 < Q` for every `r : ℕ`, so `z_W = Q/(Q+1)` satisfies
+Wenzl's parameter relation at **no** integer level `r`. -/
+theorem inv_two_bracket_no_wenzl_level_of_sq_gt_add_one
+    {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    {Q z : K} (hQpos : 0 < Q) (hgt : 1 + Q < Q ^ 2) (hz : z * (Q + 1) = Q)
+    (r : ℕ) :
+    z * (1 - Q ^ r) ≠ Q ^ r * (1 - Q) := by
+  intro h
+  have hgold := pow_level_mul_golden_of_inv_two_bracket hz h
+  have hpow : 0 < Q ^ r := pow_pos hQpos r
+  have hneg : 1 + Q - Q ^ 2 < 0 := sub_neg.mpr hgt
+  have hlhs : Q ^ r * (1 + Q - Q ^ 2) < 0 := mul_neg_of_pos_of_neg hpow hneg
+  linarith
+
 end QOU.QBeta.WenzlWeight

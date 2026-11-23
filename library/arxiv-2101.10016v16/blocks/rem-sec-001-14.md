@@ -1,0 +1,1 @@
+Theorem 23.10 gives a unitarizability result for RepHL(Vgk). The proof is based on our approach to KLF Theorem 2.11 for Huang-Lepowsky ribbon braided tensor structure, proved in later sections. This unitarizability result is further specified by

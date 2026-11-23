@@ -1,1 +1,0 @@
-The Hulek--Craig curve will be described in detail in Section [\[section3\]](#section3){reference-type="ref" reference="section3"} while in Section [\[section4\]](#section4){reference-type="ref" reference="section4"} we shall recall the Riera--Rodríguez hyperbolic model of Bring's curve.

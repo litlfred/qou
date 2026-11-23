@@ -1,0 +1,1 @@
+eaiebjeci = cos(b)ei(a+c) +sin(b)ei(a−c)j. Hence any element of SU(2) can be written in the form eaiebjeci. for appropriate choices of angles a, b, c. In fact, if u and v are linearly independent unit vectors in R3, then any element of SU(2) can be written in the form eauebvecu for appropriate choices of the real numbers a, b, c.

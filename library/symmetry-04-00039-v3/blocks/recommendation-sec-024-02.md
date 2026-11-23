@@ -1,1 +1,0 @@
-(9-2) In formulating the fusion process, we should like to combine states in a multiplicative fashion in line with the lexicographic way the fusion process has heretofore been characterized, while at the same time allowing twist and charge information to be handled additively thus mirroring actual FMS combinatorics.

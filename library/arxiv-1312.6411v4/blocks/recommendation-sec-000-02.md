@@ -1,1 +1,0 @@
-But for the new approach to Grothendieck Duality in algebraic geometry, that should apply also to the arithmetic setup, we are interested in commutative rings over a base commutative ring $\K$ that is {\em not a field}.

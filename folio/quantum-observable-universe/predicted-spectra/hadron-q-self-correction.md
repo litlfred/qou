@@ -6,7 +6,7 @@ $$
   q_0 +  \delta q(p, n),
 $$
 
-with background value $q_0$ ([local substrate $q$](#prop:local-substrate-q)) and hadron self-deformation $\delta q(p, n)$.
+with background value $q_0$ and hadron self-deformation $\delta q(p, n)$.
 
 **Proposition.**
 Let $\mathcal{N}(Z, N) = Z\mathfrak{p} \oplus N\mathfrak{n}$ be a nucleus ([stable nucleus](#def:stable-nucleus)). The signed crossing excess—the imbalance between positive ($\mathfrak{p}$--$\mathfrak{p}$) and negative ($\mathfrak{n}$--$\mathfrak{n}$) Hopf crossings—determines the self-deformation of the substrate parameter:

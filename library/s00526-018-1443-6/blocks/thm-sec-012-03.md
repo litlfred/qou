@@ -1,0 +1,1 @@
+Let l ∈N0 and f = ( ˙γ , ¨γ , ¨γ , ¨γ ) as in Lemma 7.2. Then there are posi- tive constants CQ, CR1, CR2,r, s < ∞which are independent of l and the same universal polynomial p(4n) l as in Lemma 7.2 such that ∥∂l PT ˙γ Qγ ∥H1 ≤CQ l k1=0 k1

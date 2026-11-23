@@ -128,4 +128,16 @@ theorem radical_pairing_ne_zero_of_sign_rep
     (hpair : pairing = signRepValue q β) : pairing ≠ 0 := by
   rw [hpair]; exact signRepValue_ne_zero q hq β
 
+
+/-- **Braid-word inverse cancellation in the sign representation (`qou-egqr`).**
+For any nonzero `q : F` and braid word `β`, concatenating `β` with `inv β` in either order
+yields unit sign-representation pairing `1`. -/
+theorem signRepValue_inv_mul_and_mul_inv (q : F) (hq : q ≠ 0) (β : BraidWord) :
+    signRepValue q (β ++ inv β) = 1 ∧ signRepValue q (inv β ++ β) = 1 := by
+  refine ⟨?_, ?_⟩
+  · rw [signRepValue_append q hq β (inv β), signRepValue_inv,
+        mul_inv_cancel₀ (signRepValue_ne_zero q hq β)]
+  · rw [signRepValue_append q hq (inv β) β, signRepValue_inv,
+        inv_mul_cancel₀ (signRepValue_ne_zero q hq β)]
+
 end QOU.QBeta

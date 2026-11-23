@@ -1,7 +1,11 @@
 import QOU.Archimedean.GroundRing
 
 /-!
-# The e⁻ (trefoil) NF coefficient of B₃ is exactly zero
+# The e⁻ (σ₀σ₁σ₀) NF coefficient of B₃ is exactly zero
+
+Declaration names here say `trefoil` for the `e⁻ = σ₀σ₁σ₀` coordinate; since the
+owner ruling of 2026-11-21 its closure is read as the Hopf link (the trefoil
+braid `σ₀³ ∈ B₂` is the documented backup). The names are kept pending a rename.
 
 Proved by direct Hecke algebra computation over ℤ[q, q⁻¹].
 
@@ -62,7 +66,7 @@ theorem unit_nf_no_trefoil : unit_nf 5 = 0 := by rfl
 
     NF(B₃) = c_γ·γ + c_σ₀·σ₀ + c_σ₁·σ₁ + c_L₊·L₊ + c_L₋·L₋
 
-    where c_e⁻ = 0 EXACTLY (the trefoil vanishing result). -/
+    where c_e⁻ = 0 EXACTLY (the e⁻-vanishing result). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the

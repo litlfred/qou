@@ -1,0 +1,1 @@
+i) If Φ is a ray in D, then the equation (1.25) has a unique solution in L1 loc(Φ), namely Y0 = B˜y0. ii) For any ray in W1, the system (1.25), (1.27) has the general solution solution CkYk = CkB˜yk, k ≥0. The more interesting case Φ = R+ is dealt with in the following theorem:

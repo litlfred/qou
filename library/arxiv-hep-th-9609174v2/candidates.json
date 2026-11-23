@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-9609174v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "87885f4d03661f26747d265ab45a37952535091439d3affc200cc844565c95e8",
   "file": "9609174v2.pdf"
@@ -16,241 +19,52 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 15,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 15
+   "theorem": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
    "name": null,
-   "statement": "Their central assertion is that the spectral density of the Dirac operator very close to the origin $\\lambda = 0$ should be {\\em universal}, depending only on the symmetries in question.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It follows that the average spacing between eigenvalues becomes roughly constant near $\\lambda = 0$ \\cite{LS}, \\begin{equation} \\Delta \\lambda \\sim \\frac{\\pi}{V_{4}\\langle\\bar{\\psi}\\psi\\rangle} ~. \\end{equation} Magnifying $\\rho(\\lambda)$ near $\\lambda = 0$ according to the prescription given above thus entails the introduction of an associated {\\em microscopic} spectral density $\\rho_{\\rm S}(\\lambda)$, which is defined by \\cite{V93} \\begin{equation} \\rho_{\\rm S}(\\lambda) ~=~ \\lim_{V_{4}\\rightarrow\\infty} \\frac{1}{V_4} \\rho\\left(\\frac{\\lambda} {V_4}\\right) ~. \\end{equation} The precise statement is that this microscopic spectral density should be a universal function.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If indeed symmetry arguments alone should determine the microscopic spectral density of QCD from this matrix ensemble, then any reasonable choice of $V(\\lambda)$ should give the same result for $\\rho_{\\rm S}(\\lambda)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "But we shall show, within the context of large-$N$ matrix models, under what conditions the microscopic spectral density and higher correlation functions are universal.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Here we shall only deal with $\\alpha$ to be a nonnegative integer, which is motivated physically from the above.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-chiral-unitary-ensembles.md",
-   "section_title": "Chiral unitary ensembles",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, for the present purposes we will employ a different normalization by demanding $P_n^{(\\alpha)}(0) = 1$: \\begin{equation} P_n^{(\\alpha)}(\\lambda) = 1+ \\cdots + p^{(\\alpha)}_n \\lambda^n. \\label{normal} \\end{equation} This is because we shall seek a smooth limiting behavior near $\\lambda = 0$ as $n$ gets as large as $N$ (which is taken to infinity), and $N^2 \\lambda$ is kept fixed at the same time (the microscopic limit).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-chiral-unitary-ensembles.md",
-   "section_title": "Chiral unitary ensembles",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We thus start by the assumption that $P_n^{(\\alpha)}(0) \\neq 0$, and normalize the polynomials accordingly.\\footnote{ We avoid a proliferation of new symbols by employing the same $P^{(\\alpha)}_n(\\lambda)$ and $h^{(\\alpha)}_n$ in both conventions.} As we shall see shortly, this assumption is equivalent to having the origin included in the support of the spectral density.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-chiral-unitary-ensembles.md",
-   "section_title": "Chiral unitary ensembles",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall prove the following theorem on the asymptotic behavior of these orthogonal polynomials: \\begin{quote} {\\bf Theorem 1}:\\ {\\it Let $\\{P^{(\\alpha)}_n(\\lambda)\\}_{n=0,1,\\cdots}$ be the set of polynomials orthogonal with respect to the measure} \\[ \\d \\lambda\\, \\lambda^\\alpha\\,\\e^{-N\\,V(\\lambda)},\\ \\ \\ V(\\lambda)=\\sum_{k\\geq 1} \\frac{g_k}{k}\\,\\lambda^k,\\ \\ \\ \\alpha=0,1,\\cdots \\] {\\it over the range $[0,\\infty)$, whose moments are all finite.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-21-asymptotics-of-orthogonal-polynomials.md",
-   "section_title": "Asymptotics of orthogonal polynomials",
-   "pages": "5-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, for simplicity we shall here show the proof by induction.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-21-asymptotics-of-orthogonal-polynomials.md",
-   "section_title": "Asymptotics of orthogonal polynomials",
-   "pages": "5-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\vspace{12pt}\\noindent In the following we need to know the asymptotic behavior of $r_n$ and $h_n$ for \\begin{equation} n,\\ N\\rightarrow \\infty\\ \\ ~~~ \\mbox{while}~~\\ \\ \\frac{n}{N}=t\\ ~~ \\mbox{is kept fixed}. \\label{lim} \\end{equation} Eqs.~(\\ref{3t-recII}), (\\ref{vnn}) and (\\ref{vnn-1}) tell us that they should behave as \\begin{equation} r_n=r\\left(\\frac{n}{N}\\right) + \\mbox{~~higher orders in ~}\\frac{1}{N} ~,~~~ \\ \\ \\ h_n=\\frac{1}{N}\\, h\\left(\\frac{n}{N}\\right) + \\mbox{~~higher orders in ~}\\frac{1}{N}. \\end{equation} Then the leading behavior of the matrix $\\hat{\\lambda}$ and its powers is \\begin{eqnarray} &&\\hat{\\lambda}_{nm}= r(\\frac{n}{N}) \\left( -\\delta_{n\\,m-1}+2\\delta_{n m}-\\delta_{n\\,m+1} \\right), \\nonumber\\\\ &&(\\hat{\\lambda}^k)_{nm}= r(\\frac{n}{N})^k \\sum_{\\ell=-k}^k (-)^\\ell \\left( {2k \\atop k+\\ell} \\right) \\delta_{n\\,m+\\ell} \\end{eqnarray} so that eqs.~(\\ref{vnn}) and (\\ref{vnn-1}) read \\begin{eqnarray} \\sum_{k} g_k \\left({2k-2\\atop k-1}\\right) r(t)^{k-1} &=& \\frac{1}{h(t)} , \\label{vNN}\\\\ \\frac12 \\sum_{k} g_k \\left({2k \\atop k}\\right) r(t)^{k} &=&t. \\label{qn} \\end{eqnarray} Note that eqs.~(\\ref{vNN}) and (\\ref{qn}) imply a universal relationship among total derivative",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-21-asymptotics-of-orthogonal-polynomials.md",
-   "section_title": "Asymptotics of orthogonal polynomials",
-   "pages": "5-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall consider the spectral density $\\rho(\\lambda)$, and higher order correlators, in the same microscopic limit as above.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-22-universal-correlations.md",
-   "section_title": "Universal correlations",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As we shall show now, even this dependence is of a highly universal form.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-22-universal-correlations.md",
-   "section_title": "Universal correlations",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Asymptotics of orthogonal polynomials We shall prove the following theorem\u2021 on the asymptotic behavior of these orthogonal polynomi- als: Theorem 2: Let {P (\u03b1) n (\u03bb)}n=0,1,\u00b7\u00b7\u00b7 be the set of polynomials orthogonal with respect to the measure d\u03bb \u03bb2\u03b1 e\u2212NV (\u03bb2), V (\u03bb2) = X k\u22651 gk 2k \u03bb2k, \u03b1 = 0, 1, \u00b7 \u00b7 \u00b7 over the range (\u2212\u221e, \u221e), whose moments are all \ufb01nite.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Let {P (\u03b1) n (\u03bb)}n=0,1,\u00b7\u00b7\u00b7 be the set of polynomials orthogonal with respect to the measure d\u03bb \u03bb2\u03b1 e\u2212NV (\u03bb2), V (\u03bb2) = X k\u22651 gk 2k \u03bb2k, \u03b1 = 0, 1, \u00b7 \u00b7 \u00b7 over the range (\u2212\u221e, \u221e), whose moments are all \ufb01nite. If the polynomials can be normalized according to P (\u03b1) 2n (0) = P (\u03b1) 2n+1 \u2032(0) = 1, then, for \ufb01xed x = N \u03bb and t = 2n/N, the following limiting relations hold: lim N\u2192\u221eP (\u03b1) 2n ( x N )",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-005-31-asymptotics-of-orthogonal-polynomials.md (p. 11-14)",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/sec-005-31-asymptotics-of-orthogonal-polynomials.md",
    "section_title": "Asymptotics of orthogonal polynomials",
    "pages": "11-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "10 The proof of this theorem for \u03b1 = 0 was sketched in ref. [14], and below we shall elaborate it in a rigorous form.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-asymptotics-of-orthogonal-polynomials.md",
-   "section_title": "Asymptotics of orthogonal polynomials",
-   "pages": "11-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "But from a particle physics perspective the real focus should be on the application of these theorems to the Dirac operator spectrum \\cite{V93}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-4-conclusion-and-speculation.md",
-   "section_title": "Conclusion and speculation",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-005-31-asymptotics-of-orthogonal-polynomials.md (p. 11-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-005-01",
+   "block_iri": "library/arxiv-hep-th-9609174v2/blocks/thm-sec-005-01",
+   "claim_id": "arxiv-hep-th-9609174v2#theorem:2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

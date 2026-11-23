@@ -1,1 +1,0 @@
-Based on our current understanding of masses and mixings of all fermions including neutrinos in the context of such uniﬁcation symmetries, the neutrinoless double beta decay should occur at some level and could quite plausibly lie within the realm of observation in several ongoing or next-generation experiments[73].

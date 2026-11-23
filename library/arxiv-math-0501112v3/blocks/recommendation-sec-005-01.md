@@ -1,1 +1,0 @@
-Every finite-dimensional representation $\rho_q$ of the symmetric group $S_q$ defines a canonical probability measure on the Young diagrams contributing to $\rho_q$ given as follows: probability of a Young diagram $\lambda$ should be proportional to the total dimension of all irreducible components of type $[\lambda]$.

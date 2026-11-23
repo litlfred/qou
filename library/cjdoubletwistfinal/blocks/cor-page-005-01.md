@@ -1,0 +1,1 @@
+If ζN is any Nth root of unity, then we have Fm,p(ζN) = Um,p(−1; ζ−1 N ). (1.23) Next we turn our attention to (1.12) and (1.2). Motivated by these expressions, we deﬁne Fm,p(q) and Um,p(x; q) by Fm,p(q) = X n2mp≥···≥n1≥0 (q)n2mp(−1)n2mpq−( n2mp+1 ) Y 1≤i<j≤2mp m∤i q∆i,j,mninj × 2p−1 Y i=1 (−1)nmiq(nmi+1 ) 2mp−1 Y i=1 qβi,mni  ni+1 ni  (1.24)

@@ -1,1 +1,1 @@
-Let κ = Fq, q prime. The result of Theorem A holds if we replace the hypothesis that
+Let κ = Fq, q prime. The result of Theorem A holds if we replace the hypothesis that for each 1 ≤i ≤2r, the form Fi is di-th power-free and TFi is ﬁnite, by the weaker hypothesis that for each 1 ≤i ≤2r, the reduction modulo q of the form Fi is (di, q)-admissible, and for each 1 ≤i ≤2r, deg Fi < q.

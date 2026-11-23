@@ -1,1 +1,0 @@
-\begin{figure} \begin{center} \includegraphics[width = 9 cm] {\iftoggle{BW}{normal3-BW}{normal3}} \nota{If the boundary of a (\iftoggle{BW}{light grey}{yellow}) disc $D$ intersects an edge $e$ of $\partial \Delta$ twice, we pick two innermost intersections, that must be in opposite directions.

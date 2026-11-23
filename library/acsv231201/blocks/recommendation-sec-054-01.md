@@ -1,1 +1,0 @@
-Starting with any fraction F(x, y) = g(x, y)/ℓ1(x, y)aℓ2(x, y)bℓ3(x, y)c, this rela- tion may be used in Algorithm 4 to reduce factors ℓ1ℓ2ℓ3 in the denominator until there are none remaining, resulting in a sum F(x, y) = X a+b≥j≥0 e j(x, y) ℓ1(x, y) jℓ3(x, y)a+b+c−j + X a+b≥j≥0 fj(x, y) ℓ2(x, y)jℓ3(x, y)a+b+c−j .

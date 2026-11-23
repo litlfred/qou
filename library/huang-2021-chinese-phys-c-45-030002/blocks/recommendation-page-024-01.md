@@ -1,1 +1,0 @@
-3 (2021) 030002 5.2 Estimates for unknown masses Estimates for unknown masses are also made with use of trends from the mass surface, by demanding that all graphs should be as smooth as possible, except where they are expected to show the eﬀects of shell closures or nuclear deformations eﬀects.

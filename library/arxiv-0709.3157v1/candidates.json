@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0709.3157v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "22a0d9a93c9dcb8d0677f1ff4e0cc10b6c519fbe5b3c667be77dc9879375db59",
   "file": "0709.3157v1.pdf"
@@ -16,166 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
-  "by_kind": {
-   "recommendation": 10
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We cannot impose local invariance on ${\\cal{L}}_{ext}$ and ${\\cal{L}}^0_{QCD}$ separately : it must be done on ${\\cal{L}}_{ext}+{\\cal{L}}^0_{QCD}$, being the $\\ell_\\mu=v_\\mu+a_\\mu$ and $r_\\mu=v_\\mu-a_\\mu$ the analogs of gauge fields.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-qcd-in-the-presence-of-external-sources.md",
-   "section_title": "QCD in the presence of external sources",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "So all of the building blocks must be endowed with a power counting, determined by the number of derivatives and masses : $\\ell_\\mu$ and $r_\\mu$ appear as covariant derivatives and this fixes its counting; masses count as two power of derivatives, and this dictates the counting of $s$ and $p$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-the-chiral-lagrangian.md",
-   "section_title": "The chiral Lagrangian",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The steps one must follow for the reduction of the number of operators were given in Ref. [@Bij] and we briefly review them now :",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-the-chiral-lagrangian.md",
-   "section_title": "The chiral Lagrangian",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Terms connected by partial integration leave the action invariant, and should be considered only once.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-the-chiral-lagrangian.md",
-   "section_title": "The chiral Lagrangian",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The lowest order equation of motion must be used to reduce the basis (it is equivalent to a field redefinition [@Bij]).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-the-chiral-lagrangian.md",
-   "section_title": "The chiral Lagrangian",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the tensor current is not conserved it must be defined at a certain scale in QCD (much as happens with scalar and pseudoscalar currents).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-two-comments-on-tensor-sources.md",
-   "section_title": "Two comments on tensor sources",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the QCD action is by construction scale invariant, LEC's accompanying tensor sources must compensate its scale dependence to make the product invariant.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-two-comments-on-tensor-sources.md",
-   "section_title": "Two comments on tensor sources",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As a result, one should keep in mind that, besides the chirally renormalized low-energy couplings, each operator with $n$ tensor sources bears a non-vanishing anomalous dimension, namely $n\\,\\gamma_T$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-two-comments-on-tensor-sources.md",
-   "section_title": "Two comments on tensor sources",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It is well known that if one wishes to extend the energy domain of $\\chi$PT resonances must be include as active degrees of freedom.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-tensor-sources-in-the-resonance-chiral-theory-an.md",
-   "section_title": "Tensor sources in the Resonance chiral theory and the radiative pion decay",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The following results are quoted $$\\frac{f_{V\\,1}^{\\perp}}{f_{V\\,1}}\\left(1\\,\\mbox{GeV}\\right)\\,=\\,0.75\\pm0.14\\,,\\quad \\lim_{n\\to\\infty}\\left| \\frac{f_{V\\,n}^{\\perp}}{f_{V\\,n}}\\right| \\sim \\frac{1}{\\sqrt{2}}\\,.$$ An intriguing result found in Ref. [@CMinprogress] is that, when including in the matching the $\\left\\langle\\, VT\\right\\rangle$ Green function, the above quotient must necessarily alternate its sign when moving from one multiplet to the next one.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-tensor-sources-in-the-resonance-chiral-theory-an.md",
-   "section_title": "Tensor sources in the Resonance chiral theory and the radiative pion decay",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

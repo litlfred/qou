@@ -1,0 +1,1 @@
+From a lattice QCD and/ or continuum EFT point of view it would be interesting as well to see whether one could decouple the lattice spacing from the cutoﬀ, i.e. a ﬁxed cutoﬀregulator for the eﬀective potentials can be used thereby the lattice spacing can be sent to zero, such that its limit depends only on computational limits but not on physical ones [38].

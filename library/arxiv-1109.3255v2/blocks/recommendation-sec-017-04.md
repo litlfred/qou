@@ -1,1 +1,0 @@
-Then we can see that the nonzero $\delta$'s must alternate sign, since having two consecutive $\delta$'s equal to $1$ yields $\alpha^{r_1}\beta\alpha^{r_2}\beta$, which has an isolated beta, while having two consecutive $\delta$'s equal to $-1$ would yield an isolated $\beta^{-1}$.

@@ -1,1 +1,0 @@
-The original conjecture of Montonen and Olive [MO] was that the low en- ergy theory should be invariant under a duality exchanging electric and magnetic charges, and also exchanging the coupling constant g with its inverse.

@@ -1,1 +1,0 @@
-Also here there is no physical justification for using it in connection with the Dirac operator spectrum at finite temperature, but it is an interesting model that depends on just one deterministic external parameter, and we shall therefore return to it below.

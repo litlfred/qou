@@ -1,1 +1,0 @@
-(In the SL(2) case, this C(%) is just the set of multicurves, as it should be.) What might replace the ge- ometric intersection number, and lead to some notion of “measured lamination” for higher-rank groups, is unclear.

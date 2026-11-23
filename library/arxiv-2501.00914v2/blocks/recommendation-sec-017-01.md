@@ -1,1 +1,0 @@
-In this subsection we show that if $K$ is a satellite L-space knot of the same genus as $T_{p,q}$, and if $S^3_r(K) \cong S^3_r(T_{p,q})$, then $r$ must be large enough so that their common $r$-surgery is an L-space.

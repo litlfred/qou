@@ -1,1 +1,0 @@
-\para The further requirement that elementary particles should not form black holes \cite{weakest} suggests that there are new magnetic (and possibly electric) particles to be found whose charges depend on $\Gamma$.

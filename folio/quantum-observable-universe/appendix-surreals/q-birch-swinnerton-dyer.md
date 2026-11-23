@@ -1,5 +1,5 @@
 **Conjecture ($q$-BSD).**
-Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with substrate parameter $q$ and Descartes elliptic curve $\mathcal{E}_q$. Let $\mathcal{E}_q(\mathbf{1}) = \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, E_q)$ be the categorical Mordell--Weil group with rank $r_q = \mathrm{rank}\,\mathcal{E}_q(\mathbf{1})$. Let $L(\mathcal{E}_q, s)$ be the $q$-deformed $L$-function, and $\mathrm{Sha}_q(\mathcal{E}_q)$ the $q$-Tate--Shafarevich group ([categorical Mordell--Weil](#def:categorical-mordell-weil)). We conjecture two parts, mirroring classical BSD:
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with substrate parameter $q$ and Descartes elliptic curve $\mathcal{E}_q$. Let $\mathcal{E}_q(\mathbf{1}) = \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, E_q)$ be the categorical Mordell--Weil group with rank $r_q = \mathrm{rank}\,\mathcal{E}_q(\mathbf{1})$. Let $L(\mathcal{E}_q, s)$ be the $q$-deformed $L$-function, and $\mathrm{Sha}_q(\mathcal{E}_q)$ the $q$-Tate--Shafarevich group ([categorical Mordell--Weil](#def:categorical-mordell-weil)). The conjecture has two parts, mirroring classical BSD:
 
 **(Weak $q$-BSD).**
 The order of vanishing of $L(\mathcal{E}_q, s)$ at $s = 1$ equals the categorical rank:

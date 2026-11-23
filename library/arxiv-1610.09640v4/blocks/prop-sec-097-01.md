@@ -1,0 +1,1 @@
+The bifunctor (14.2.9) has a triangulated left derived bi- functor (−⊗L B −) : D(A ⊗Bop) × D(B) →D(A). If P ∈D(B) is a K-ﬂat DG module, then for every M ∈D(A⊗Bop) the morphism ηL M,P : M ⊗L B P →M ⊗B P in D(A) is an isomorphism.

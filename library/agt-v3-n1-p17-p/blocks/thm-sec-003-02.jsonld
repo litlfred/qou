@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/agt-v3-n1-p17-p/blocks/thm-sec-003-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 9,
+  "pageEnd": 12,
+  "text": "thm-sec-003-02.md",
+  "derivedFrom": "library/agt-v3-n1-p17-p/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v3-n1-p17-p/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.2",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-003-3-graphical-calculus-and-a-formula-for-ωp.md (p. 9-12)",
+    "claim_id": "agt-v3-n1-p17-p#theorem:3.2",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

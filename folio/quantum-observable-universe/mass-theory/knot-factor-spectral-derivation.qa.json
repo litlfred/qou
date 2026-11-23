@@ -66,6 +66,40 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e2922ac7a395",
+          "ts": "8b47a2391276"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:08:35.892Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "major",
+        "evidence": "knot_factor_spectral_form is rfl: knotFactor is defined as the right-hand sum over data carried by HeckeExpansion, which has no algebra (the Lean docstring says so). The md identity tau(pi(b) b*) = sum w_l chi chi / d_l^2 is not encoded. I checked it by hand from tau(e_l x) = y_l chi_l(x); it is correct."
+      },
+      {
+        "field_hash": {
+          "md": "e2922ac7a395",
+          "ts": "8b47a2391276",
+          "lean": "5ff51c614383",
+          "lean_statement": "d96e7677c27f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:12:41.729Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-read 2026-11-17. knot_factor_spectral_form is rfl: knotFactor is defined as the right-hand sum over HeckeExpansion data, which carries no algebra. The md identity tau(pi(b) b*) = sum w_l chi(b) chi(b*)/d_l^2 is not encoded. Checked by hand from tau(e_l x) = y_l chi_l(x): the identity is correct, so this is a formalisation gap, not a false claim."
       }
     ],
     "proof-statement-integrity": [
@@ -2349,6 +2383,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-03T04:54:52.994Z",
+  "updated_at": "2026-11-17T18:12:41.729Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,1 +1,0 @@
-Thus, since $\mbox{ht}(\beta_1)=1+\mbox{ht}(\beta_2)$ (ht denotes height), for this case to occur, we must be in the situation where we have two components $Y$ and $Z$ of $P$, where $Z$ immediately follows $Y$, and $Y$ has precisely one directed edge.

@@ -1,1 +1,0 @@
-Factoring out this dependence, one can see that the limit on the NP eﬀect in ae is so stringent [55–57] that the NP eﬀect in aℓcannot be ﬂavour blind, and must therefore break LFU, if one aims at explaining aµ3.

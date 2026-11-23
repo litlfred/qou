@@ -2,19 +2,23 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/conj-weak-spectral-completeness",
+  "@id": "papers/quantum-observable-universe/blocks/prop-weak-spectral-completeness",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
-  "label": "conj:weak-spectral-completeness",
-  "kind": "conjecture",
-  "title": "Plancherel completeness for the EW/Higgs $\\{T(2,4), T(2,6), T(2,8)\\}$ idempotent decomposition",
+  "label": "prop:weak-spectral-completeness",
+  "kind": "proposition",
+  "title": "Spectral completeness and exhaustion for the EW/Higgs $\\{T(2,4), T(2,6), T(2,8)\\}$ idempotent decomposition",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness"
+    "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness",
+    "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content",
+    "papers/quantum-observable-universe/blocks/prop-torus-embeddable-complete",
+    "papers/quantum-observable-universe/blocks/prop-bar-t-duality-substrate"
   ],
   "tags": [
     "tier:S",
@@ -24,10 +28,9 @@
     "weak-coupling",
     "force-carrier",
     "nv-1",
-    "open-problem"
+    "provable"
   ],
-  "leanRef": "qou:QOU.BraidKnot.WeakSpectralCompleteness",
+  "leanRef": "qou:QOU.Conjectures.weak_spectral_completeness",
   "text": "weak-spectral-completeness.md",
-  "leanSource": "weak-spectral-completeness.lean",
   "provenance": "authored"
 }

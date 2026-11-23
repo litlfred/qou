@@ -1,23 +1,25 @@
 import QOU.QuantumObservableUniverse
 import QOU.Torsion
+import QOU.MathlibExt.ManifoldVolumePositive
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
 /-!
-# Proposition: Archimedean Topological Mass Formula
+# Conjecture: Archimedean Topological Mass Formula
 
-Formalizes Proposition `prop:topological-mass-formula`: in the archimedean
+Formalizes Proposition `conj:topological-mass-formula`: in the archimedean
 (ℂ) realisation, the general topological mass decomposition
-(Theorem `thm:topological-mass`) specialises to the closed-form
+(`conj:topological-mass`, open since 2026-11-20) specialises to the closed-form
 mass formula `m(K) = Vol(K) / ℏ_q²`.
 
 ## Logical structure
 
 The proposition derives the closed form from the categorical decomposition
-via two evaluation identities on top of the proved
-`TopologicalMassDecomposition`:
+via two evaluation identities on top of `TopologicalMassDecomposition`,
+whose `decomposition` field carries the equality of `conj:topological-mass`
+as a hypothesis:
 
 1. **Baseline = Volume**: the holonomy term evaluates to `Vol(K)`
    via the Chern–Simons/volume correspondence.
@@ -40,7 +42,7 @@ namespace QOU.Torsion
 
 /-! ## The Archimedean Mass Formula -/
 
-/-- **Proposition (Topological Mass Formula — Archimedean).**
+/-- **Conjecture carrier (Topological Mass Formula — Archimedean).**
 
     In the ℂ-quantum observable universe, the mass of a particle
     associated with a hyperbolic knot K satisfies `m(K) = Vol(K) / ℏ_q²`,
@@ -52,7 +54,7 @@ namespace QOU.Torsion
     Briggs–Klein dilogarithm evaluation) that specialise the general
     decomposition to the archimedean closed form.
 
-    LaTeX: `\label{prop:topological-mass-formula}` -/
+    LaTeX: `\label{conj:topological-mass-formula}` -/
 structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecomposition M where
   /-- The substrate parameter `q > 1` at the evaluation point. -/
   q : ℝ
@@ -64,10 +66,24 @@ structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecompositio
       This constraint ensures `h_q` cannot be overridden to an
       inconsistent value. -/
   h_q_def : h_q = 1 - 1 / q := by rfl
+  /-- The type of 3-manifolds (knot complements) carrying the
+      triangulation-to-volume bridge.  Bean `qou-dx7g`: until 2026-11-20
+      `knotVolume` was a free real, so "`Vol(K)`" referred to no knot and
+      `knotVolume = baselineHolonomy = 1` satisfied the structure. -/
+  KnotSpace : Type
+  /-- The hyperbolic-volume bridge on `KnotSpace` (Thurston's theorem, carried
+      as a hypothesis; `QOU.MathlibExt.HyperbolicVolumeBridge`). -/
+  volBridge : QOU.MathlibExt.HyperbolicVolumeBridge KnotSpace
+  /-- The knot complement `S³ \ K`. -/
+  knot : KnotSpace
+  /-- `K` is hyperbolic: some ideal triangulation realises its complement. -/
+  knot_hyperbolic : ∃ (n : ℕ) (T : QOU.MathlibExt.IdealTriangulation n),
+    volBridge.Realises T knot
   /-- The hyperbolic volume of the knot `K`. -/
   knotVolume : ℝ
-  /-- The knot volume is positive. -/
-  knotVolume_pos : 0 < knotVolume
+  /-- **`Vol(K)` is the volume of the knot**, not a free real: it is the bridge
+      volume of the realised complement. -/
+  knotVolume_eq_vol : knotVolume = volBridge.vol knot
   /-- **Hypothesis 1 (Chern–Simons/Volume correspondence).**
       The baseline holonomy of the QOU connection evaluates to the
       hyperbolic volume of the knot complement. -/
@@ -78,6 +94,17 @@ structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecompositio
       `Vol(K) · (1/ℏ_q² − 1)`. -/
   exceptional_sum_eq : (Finset.univ.sum fun i => exceptionalContribution i) =
     knotVolume * (1 / h_q ^ 2 - 1)
+
+/-- **The knot volume is positive** — derived (bean `qou-dx7g`), no longer a
+    field: the complement is realised by a triangulation, which the bridge
+    requires to be nonempty, and nonempty ideal triangulations have positive
+    volume (`ManifoldVolumePositive.vol_pos_of_realises'`). -/
+theorem ArchimedeanMassFormula.knotVolume_pos {M : Type*}
+    (amf : ArchimedeanMassFormula M) : 0 < amf.knotVolume := by
+  obtain ⟨n, T, hT⟩ := amf.knot_hyperbolic
+  rw [amf.knotVolume_eq_vol]
+  exact @QOU.MathlibExt.ManifoldVolumePositive.vol_pos_of_realises' _ amf.volBridge n T
+    amf.knot hT
 
 /-- The quantum Planck constant is non-zero when `q > 1`. -/
 theorem ArchimedeanMassFormula.h_q_ne_zero {M : Type*}

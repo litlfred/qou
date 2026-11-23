@@ -1,1 +1,0 @@
-1Here and below we will use the notation M for both a cusped hyperbolic 3-manifold and the corresponding compact manifold with boundary ∂M consisting of a disjoint union of tori; the intended meaning should be clear from the context.

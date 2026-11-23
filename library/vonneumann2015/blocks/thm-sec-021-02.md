@@ -1,0 +1,1 @@
+The trace class operators on H form a self-adjoint ideal of compact operators, I1, in B(H). The function |a|1 deﬁned by |a|1 = Trace(|a|) deﬁnes a norm on I1 for which it is complete. Moreover ||a|| ≤ |a|1.

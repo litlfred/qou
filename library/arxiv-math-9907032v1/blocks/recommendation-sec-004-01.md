@@ -1,1 +1,0 @@
-Furthermore, if $u_i^{(1)} = 0$ for all $i$, then the objective is non-positive, and is equal to zero only if all of $v_j^{(1)}$ are equal to zero as well -- this is so, since all of the $v_j$ must be non-positive, and all of their coefficients are positive, by Observation [\[dihpos\]](#dihpos){reference-type="ref" reference="dihpos"}.

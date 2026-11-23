@@ -1,1 +1,0 @@
-Morally speaking, this number should be a virtual count of holomorphic disks corresponding to $v$, and it should possible to extract this from the "structure" on the affine base in the sense of [@gs-affine-complex].

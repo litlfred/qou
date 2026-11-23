@@ -19,7 +19,7 @@ export default remark({
     "def:z-habiro-ring",
     "conj:mass-endomorphism",
     "conj:brane-tower-z-habiro",
-    "prop:quantum-dilogarithm-stratified",
+    "conj:quantum-dilogarithm-stratified",
     "def:motivic-substrate",
   ],
 });

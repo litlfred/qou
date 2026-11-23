@@ -7,14 +7,14 @@ create backward edges elsewhere. What was missing was a way to find them.
 ## What is derived
 
 Three items, corpus-wide. Everything else on this surface is standard
-representation theory, a machine-checked negative, a precise identification
+representation theory, a proved negative, a precise identification
 without a derivation, or open.
 
 | Result | Where | Status |
 |---|---|---|
 | Coulomb charge $Q = w/2$, and $I_3$ on the nucleon doublet | [Coulomb charge](#def:coulomb-charge), [gauge truncation](#conj:sm-gauge-truncation) | derived; the per-crossing coupling $c = 1/2$ is structurally fixed, not fitted |
-| Weak isospin $T_3 = \mathrm{sign}(\kappa)/2$ as a grading orthogonal to the generation winding | `QOU/ParticleInteractions/WeakIsospinT3Grading.lean` | derived from an oriented crossing already in the corpus; closes Gell-Mann–Nishijima |
-| $\alpha_{\mathrm{EM}}$ to $0.313$ parts per billion under the proton pin | `QOU/AlphaEM/FormLadderAnchorDominance.lean`, `alpha-em-form-ladder.witness.json` | partial: three unproved classes remain, and the anchor choice constitutes the residual |
+| Weak isospin $T_3 = \mathrm{sign}(\kappa)/2$ as a grading orthogonal to the generation winding | not yet stated in a chapter | derived from an oriented crossing already in the corpus; closes Gell-Mann–Nishijima |
+| $\alpha_{\mathrm{EM}}$ to $0.313$ parts per billion under the proton pin | not yet stated in a chapter | partial: three unproved classes remain, and the anchor choice constitutes the residual |
 
 Scope on the first of these: the $I_3$ identification is a two-point
 sign-and-ratio match on the proton–neutron doublet. It matches sign and ratio,
@@ -23,7 +23,7 @@ scale-free; it does not make $I_3$ an output for general states.
 ## Where the rest is
 
 Eleven blocks outside this appendix carry Standard-Model or flavour content,
-across five chapters, together with Lean and compute that no chapter surfaces.
+across five chapters, together with results that no chapter yet states.
 
 | Chapter | Carries |
 |---|---|
@@ -33,15 +33,14 @@ across five chapters, together with Lean and compute that no chapter surfaces.
 | `observations` | the CP-violation survey |
 | `eightfold-way` | the multiplet classification and its null results |
 
-Unsurfaced elsewhere: `WeakIsospinT3Grading.lean`,
-`MesonOperatorSelectionT3.lean`, `FormLadderAnchorDominance.lean`, the
-$\alpha_{\mathrm{EM}}$ form ladder, and the stage-1 quark-mass extraction
-scoping.
+Not yet stated in any chapter: the weak-isospin grading $T_3$, the
+$T_3$ selection of meson operators, the $\alpha_{\mathrm{EM}}$ form ladder and
+its anchor dominance, and the stage-1 quark-mass extraction scoping.
 
 ## The dominant mode of contribution is deletion
 
 A reader asking what these derivations give should be told this first. The
-surface carries five self-withdrawals and several machine-checked negatives
+surface carries five self-withdrawals and several proved negatives
 against one derived entry, and the negatives are worth more. Gell-Mann–Okubo,
 the decuplet equal-spacing rule behind the $\Omega^-$ prediction, and the
 Coleman–Glashow relation are each proved to hold *identically* for any

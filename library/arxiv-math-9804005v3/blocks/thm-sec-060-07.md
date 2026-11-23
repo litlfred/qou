@@ -1,1 +1,1 @@
-Let A → B be a ﬁnite centralizing homomorphism. Suppose A
+Let A → B be a ﬁnite centralizing homomorphism. Suppose A has a noetherian connected ﬁltration F and grFA has a balanced dualizing complex. ThenA andB have rigid dualizing complexes RA andRB respectively, and the trace morphism TrB/A :RB →RA of Deﬁnition 3.7 exists.

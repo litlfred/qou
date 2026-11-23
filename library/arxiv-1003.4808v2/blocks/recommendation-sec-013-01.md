@@ -1,1 +1,0 @@
-It is fairly clear from the above discussion of quantization that there should be a relation between the partition function for Chern-Simons theory with compact gauge group $G$ and the partition function for Chern-Simons theory with complex gauge group $G_{\mathbb{C}}$.

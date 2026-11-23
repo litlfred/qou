@@ -1,1 +1,1 @@
-SupposeA has a noetherian connected ﬁltration F , and ¯A := grFA
+SupposeA has a noetherian connected ﬁltration F , and ¯A := grFA satisﬁes either of the following: (i) ¯A is a PI algebra. (ii) ¯A is graded-FBN. (iii) ¯A has enough normal elements. Then A has an Auslander, GKdim-Macaulay, rigid dualizing complex.

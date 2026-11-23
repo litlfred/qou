@@ -1,1 +1,0 @@
-In order to reduce the product wavefunction Z×(Z1, ..., ZN) of (C.7) to the ﬁnal wavefunction ZM(u) of the glued manifold M, we must transform the wavefunction to a representation (or “polarization”) in which the operators ˆXI act diago- nally (by multiplication).

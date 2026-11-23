@@ -1,1 +1,0 @@
-We leave it to the reader to extend it to the full picture, using the following considerations: In order for the (2-3)"" event to be possible, the "2" side and the "3" side of the arc which joins 2 to 3 in Figure 6.4 must be on opposite sides of the same digon.

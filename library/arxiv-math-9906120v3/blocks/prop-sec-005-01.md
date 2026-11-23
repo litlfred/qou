@@ -1,0 +1,1 @@
+Let L(W) be deﬁned by (5.3) with W an M ×N 0−1- matrix with independent Bernoulli elements w(i, j), the probability of 1 being p. Then, (5.5) P[L(W) ≤n] = PKr,N,N+M−1,p  max 1≤j≤N hj ≤n + N −1  . ENSEMBLES AND THE PLANCHEREL MEASURE

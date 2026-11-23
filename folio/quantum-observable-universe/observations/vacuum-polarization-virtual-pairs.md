@@ -9,4 +9,4 @@ This describes vacuum polarization. The photon temporarily resolves into a virtu
 In the [Reidemeister mass invariance](#conj:reidemeister-mass-invariance) framework, an R-II move models a virtual pair. The Skein resolution of this pair produces $(q - q^{-1}) \cdot L_0$. This perturbatively corrects the crossing energy without modifying knot type.
 
 **Summary.**
-We summarize QOU realizations of QFT concepts in [Table: QFT concepts and their QOU brane-tower realizations](#tbl:vacuum-polarization-virtual-pairs-table-data). Virtual particles are invisible brane-tower excitations confined to the exceptional divisor.
+QOU realizations of QFT concepts are summarized in [Table: QFT concepts and their QOU brane-tower realizations](#tbl:vacuum-polarization-virtual-pairs-table-data). Virtual particles are invisible brane-tower excitations confined to the exceptional divisor.

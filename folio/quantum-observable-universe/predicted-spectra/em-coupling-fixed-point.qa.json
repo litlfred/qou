@@ -44,6 +44,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "Sibling `.lean:174` (ref resolves only there). The cubic conjunct is honestly derived (`fixedPoint_iff_cubic`; I re-derived 1/α = T + αH(1−h²α) ⇔ −h²Hα³ + Hα² + Tα − 1 = 0 for α ≠ 0), but the hypothesis field `b3_normalization` *is* the fixed-point equation, so the \"B₃(ℂ) normalization\" content is nowhere in Lean. The second conjunct \\ | 1/α − 137.035999177\\ | < 10⁻³ is the class field `codata_consistent` returned verbatim (self-assuming), and it is an empirical CODATA comparison inside the theorem statement (md:29, Lean :158, `codataInvAlpha` :122). For the record (mpmath 50 dps, q₀ = 1.109978595642739): the positive small root gives α⁻¹ = 137.036010147, 1.1×10⁻⁵ above CODATA 2022, so the class is not obviously empty at q₀"
+      },
+      {
+        "field_hash": {
+          "md": "165fe4740c55",
+          "ts": "cc799ad1e217",
+          "lean": "fa17502120c2",
+          "lean_statement": "a71c5014fc2a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:10:15.359Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice changes, label references and Lean or class names replaced by prose, and convention-D wording tidied. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Sibling `.lean:174` (ref resolves only there). The cubic conjunct is honestly derived (`fixedPoint_iff_cubic`; I re-derived 1/α = T + αH(1−h²α) ⇔ −h²Hα³ + Hα² + Tα − 1 = 0 for α ≠ 0), but the hypothesis field `b3_normalization` *is* the fixed-point equation, so the \"B₃(ℂ) normalization\" content is nowhere in Lean. The second conjunct \\ | 1/α − 137.035999177\\ | < 10⁻³ is the class field `codata_consistent` returned verbatim (self-assuming), and it is an empirical CODATA comparison inside the theorem statement (md:29, Lean :158, `codataInvAlpha` :122). For the record (mpmath 50 dps, q₀ = 1.109978595642739): the positive small root gives α⁻¹ = 137.036010147, 1.1×10⁻⁵ above CODATA 2022, so the class is not obviously empty at q₀"
       }
     ],
     "milnor-amalgamated-flow": [],
@@ -1964,6 +1982,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:00.077Z",
+  "updated_at": "2026-11-21T08:10:15.359Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

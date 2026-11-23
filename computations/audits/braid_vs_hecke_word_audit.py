@@ -91,13 +91,17 @@ VERIFIED_CORRECT = {
         "that symbol collision is real and is PR #6821's to adjudicate, so it "
         "is deliberately NOT renamed here. Listed as correct on the strength of "
         "the scoping note, not the symbol.",
+    "notation/notation-collisions.md":
+        "the A vs B_K register entry: states B_K in H_{3A}(q) and quotes the "
+        "superseded 'B_K in B_{3A+Z}' only as history (adjudicated 2026-11-21)",
+    "notation/notation-collisions.ts":
+        "relocated history note for the same register entry (2026-11-21)",
 }
 
-# Owned by sibling PR #6821 — do not touch here.
-SIBLING_OWNED = {
-    "mass-endomorphism/atomic-mass-gb-nf.md":
-        "PR #6821 (three strand counts on one name); its decision governs",
-}
+# Owned by sibling PR #6821 until it merged (2026-10-10, owner choice B1:
+# B_K on 3A strands). No site is sibling-owned now; atomic-mass-gb-nf.md is
+# scanned like any other block.
+SIBLING_OWNED: dict[str, str] = {}
 
 # The atomic object is named EITHER in words OR by its symbol. Keying on the
 # word "atom" alone was a false-negative blind spot of this audit's first
@@ -116,7 +120,7 @@ BRAID_GROUP = re.compile(r"\\in\s*B_")
 def scan() -> tuple[list, list, list]:
     out = subprocess.run(
         ["grep", "-rn", "-E", r"\\in\s*B_", "--include=*.md", "--include=*.lean",
-         "--include=*.ts", "content/"],
+         "--include=*.ts", "folio/"],
         cwd=ROOT, capture_output=True, text=True)
     defects, correct, sibling = [], [], []
     for line in out.stdout.splitlines():
@@ -166,8 +170,9 @@ def main() -> int:
         ("correct_uses_exist_and_are_adjudicated", len(correct) > 0,
          f"{len(seen)} files assert `in B_n` correctly (explicit sigma-words, "
          "or correctly distinguishing braid from Hecke) and are left alone"),
-        ("sibling_owned_sites_excluded", len(sibling) > 0,
-         "atomic-mass-gb-nf is PR #6821's; flagged, not touched"),
+        ("sibling_owned_sites_excluded", len(sibling) == len(SIBLING_OWNED),
+         "every sibling-owned site is flagged, not touched (none since "
+         "PR #6821 merged)"),
     ]
     print()
     ok = 0

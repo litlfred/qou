@@ -1,1 +1,0 @@
-For this we recall that for a power se- ries f(z) =  i bizi converging on the closed unit disc, we have that max |bi| = max|z|=1 |f(z)|, where z must be considered in the algebraic closure of the ﬁeld of coeﬃcients (see [10, Example 3.3.2]), which will be Qp in our case.

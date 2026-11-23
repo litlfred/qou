@@ -1,0 +1,1 @@
+— There exists a C-linear functor N →(v(N), ∇N) from the category of the diﬀerence modules N over K with integer slopes to the category of the connections on Eq with at most a pole at the point 1 ∈Eq. This functor extends the one of Theorem 6.3, is faithful and commutes with tensor products.

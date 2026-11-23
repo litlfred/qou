@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s0894-0347-08-00618-8/blocks/thm-sec-014-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 21,
+  "pageEnd": 24,
+  "text": "thm-sec-014-01.md",
+  "derivedFrom": "library/s0894-0347-08-00618-8/sections/sec-014",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.2",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-014-41-symmetric-homogenization-via-gårding-hyperbol.md (p. 21-24)",
+    "claim_id": "s0894-0347-08-00618-8#theorem:4.2",
+    "lean_status": "unformalized"
+  }
+}

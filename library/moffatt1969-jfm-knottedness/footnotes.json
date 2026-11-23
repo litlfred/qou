@@ -1,0 +1,35 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "moffatt1969-jfm-knottedness",
+ "status": "determined",
+ "body_size": 11.0,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "0",
+   "text": "outside S. is entirely confhed within some closed surface S of finite extent, i.e. w",
+   "block": "library/moffatt1969-jfm-knottedness/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "4",
+   "text": "One of the knotted vortex lines of the spherical vortex represented by the stream function (54) and the circulation (52).",
+   "block": "library/moffatt1969-jfm-knottedness/blocks/prose-sec-003"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "@ = $(z, r, t ) ,"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "$ = R2 sin2"
+  }
+ ]
+}

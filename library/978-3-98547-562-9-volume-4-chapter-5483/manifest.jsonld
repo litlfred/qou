@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/978-3-98547-562-9-volume-4-chapter-5483",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/978-3-98547-562-9-volume-4-chapter-5483/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -33,8 +33,8 @@
     "pages": 22,
     "arxiv": null,
     "doi": "10.4171/ICM2022/13",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

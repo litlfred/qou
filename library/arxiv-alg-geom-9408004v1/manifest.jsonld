@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-alg-geom-9408004v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9408004v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-alg-geom-9408004v1",
+  "title": "Cubics, Integrable Systems, and Calabi-Yau Threefolds",
   "contains": [
     "library/arxiv-alg-geom-9408004v1/sections/sec-000",
     "library/arxiv-alg-geom-9408004v1/sections/sec-001",
@@ -51,7 +51,9 @@
   },
   "meta": {
     "doc_id": "arxiv-alg-geom-9408004v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9408004v1.pdf",
     "source_sha256": "d3bc00265294aa022d04eeb71dd63d3b7e866ed63f8428ecc88053e7b174e8a8",
     "pages": 28,
@@ -62,8 +64,8 @@
       "stamp_date": "9 Aug 1994"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

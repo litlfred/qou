@@ -1,1 +1,0 @@
-In the case when $X(n)$ can be represented as $X(n)=X'(n)\cup X''(n)$ and the distance between $X'(n)$ and $X''(n)$ goes to $\infty$ as $n\to\infty$ we shall say that the sequence *splits*; otherwise, we call it *nonsplit*.

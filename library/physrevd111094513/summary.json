@@ -1,0 +1,100 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "physrevd111094513",
+ "source_sha256": "c05dfaef1f1c2f98",
+ "brief": "Lattice QCD calculation of the Compton amplitude subtraction function — 16 sections: Lattice QCD calculation of the Com; I. INTRODUCTION; II. BACKGROUND",
+ "extended": "**Lattice QCD calculation of the Compton amplitude subtraction function**\n\n*H. Stüben,5 R. D. Young ,1 and J. M. Zanotti*\n\n14 pp, 16 sections.\n\n**Outline.** Lattice QCD calculation of the Compton amplitu; I. INTRODUCTION; II. BACKGROUND; III. FEYNMAN-HELLMANN METHOD; A. Lattice determination; B. Subtraction function results; IV. DISCRETIZATION ARTIFACTS; A. Free fermion; V. PROTON SUBTRACTION FUNCTION; A. Evaluation of the discretization artifact; B. Improved subtraction function; VI. SUMMARY AND CONCLUSIONS; ACKNOWLEDGMENTS; DATA AVAILABILITY; APPENDIX A: DETAILS OF LATTICE OPERATOR PRODUC; APPENDIX B: TABULATED SUBTRACTION FUNCTION RES",
+ "tokens": {
+  "brief": 38,
+  "extended": 161
+ },
+ "sections": [
+  {
+   "id": "sec-000-lattice-qcd-calculation-of-the-compton-amplitude",
+   "title": "Lattice QCD calculation of the Compton amplitude subtraction function",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-i-introduction",
+   "title": "I. INTRODUCTION",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-ii-background",
+   "title": "II. BACKGROUND",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-iii-feynman-hellmann-method",
+   "title": "III. FEYNMAN-HELLMANN METHOD",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-a-lattice-determination",
+   "title": "A. Lattice determination",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-b-subtraction-function-results",
+   "title": "B. Subtraction function results",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-iv-discretization-artifacts",
+   "title": "IV. DISCRETIZATION ARTIFACTS",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-a-free-fermion",
+   "title": "A. Free fermion",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-008-v-proton-subtraction-function",
+   "title": "V. PROTON SUBTRACTION FUNCTION",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-009-a-evaluation-of-the-discretization-artifact",
+   "title": "A. Evaluation of the discretization artifact",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-010-b-improved-subtraction-function",
+   "title": "B. Improved subtraction function",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-011-vi-summary-and-conclusions",
+   "title": "VI. SUMMARY AND CONCLUSIONS",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-012-acknowledgments",
+   "title": "ACKNOWLEDGMENTS",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-013-data-availability",
+   "title": "DATA AVAILABILITY",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-014-appendix-a-details-of-lattice-operator-product-e",
+   "title": "APPENDIX A: DETAILS OF LATTICE OPERATOR PRODUCT EXPANSION",
+   "pages": "9-13"
+  },
+  {
+   "id": "sec-015-appendix-b-tabulated-subtraction-function-result",
+   "title": "APPENDIX B: TABULATED SUBTRACTION FUNCTION RESULTS",
+   "pages": "13-14"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

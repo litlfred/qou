@@ -236,7 +236,7 @@
       },
       {
         "file": "computations/witness_float64_padding_audit.py",
-        "line": 140,
+        "line": 143,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "if abs(x - mpf(float(x))) / abs(x) >= F64_GAP:",
@@ -309,11 +309,11 @@
     ]
   },
   "scriptFile": "mpf_float_source_audit.py",
-  "scriptHash": "f7049acdce0a",
-  "scriptCommitSha": "16ca52cc51c47489866e36bc4172cbfb0b2a93f3",
-  "commitSha": "cdc7aa505599d464f7c53a592dab9c5c365c7cf1",
+  "scriptHash": "b2ced3d887e7",
+  "scriptCommitSha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
+  "commitSha": "d498864a7f516542a13ea66b24fee64e03a89c09",
   "engine": "python",
-  "computedAt": "2026-10-10T12:47:42.197671+00:00",
+  "computedAt": "2026-11-21T19:44:42.914983+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

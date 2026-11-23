@@ -1,1 +1,0 @@
-The new mass diﬀerence of H2−D obtained in this experiment diﬀers from the recommended values in Ame2016 by 1.9σ, and the new mass diﬀerence of H3−3He agrees with the recommended one in Ame2016 within 1σ.

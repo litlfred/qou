@@ -1,0 +1,121 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T08:05:55.125632+00:00",
+  "commitSha": "cc31b7f6c1ce9f8ec86fdfe1726ea4fbd7075d3f",
+  "assertions": [
+    {
+      "name": "every_trefoil_word_fails_reading3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "level characters, levels 1..n"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "trefoil-reading3",
+  "scriptFile": "trefoil_reading3_probe.py",
+  "scriptHash": "eeaf6035914e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_twist_reading3/trefoil_reading3_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_twist_reading3/trefoil_reading3_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q0 via cf.Q (proton pin)",
+  "description": "Trefoil braids (both handednesses) and trefoil composites under reading 3, convention D.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "results": {
+    "s0^3 (2 strands)": {
+      "min_level_char": "-0.73123370754943367404",
+      "negative": {
+        "2:(1, 1)": "-0.731233707549"
+      }
+    },
+    "s0^-3 (2 strands)": {
+      "min_level_char": "-1.367551836951385188",
+      "negative": {
+        "2:(1, 1)": "-1.36755183695"
+      }
+    },
+    "s0^3 s1": {
+      "min_level_char": "-1.0",
+      "negative": {
+        "2:(1, 1)": "-0.448018144974",
+        "3:(2, 1)": "-1.0"
+      }
+    },
+    "s0^-3 s1^-1": {
+      "min_level_char": "-1.0",
+      "negative": {
+        "2:(1, 1)": "-0.551981855026",
+        "3:(2, 1)": "-1.0"
+      }
+    },
+    "(s0 s1)^2": {
+      "min_level_char": "-1.0",
+      "negative": {
+        "2:(1, 1)": "-0.448018144974",
+        "3:(2, 1)": "-1.0"
+      }
+    },
+    "(s0^-1 s1^-1)^2": {
+      "min_level_char": "-1.0",
+      "negative": {
+        "2:(1, 1)": "-0.551981855026",
+        "3:(2, 1)": "-1.0"
+      }
+    },
+    "square s0^3 s1^-3": {
+      "min_level_char": "-1.315578112076266435",
+      "negative": {
+        "2:(1, 1)": "-0.155173991891",
+        "3:(2, 1)": "-1.31557811208"
+      }
+    },
+    "granny s0^3 s1^3": {
+      "min_level_char": "-0.91067735027066772325",
+      "negative": {
+        "2:(1, 1)": "-0.620471256834",
+        "3:(2, 1)": "-0.910677350271"
+      }
+    },
+    "s0^3 s1 s0 (2 components)": {
+      "min_level_char": "-0.20906029879563931543",
+      "negative": {
+        "3:(2, 1)": "-0.209060298796"
+      }
+    },
+    "s0^3 s2^-3 (trefoil + mirror, 4 strands)": {
+      "min_level_char": "-1.4049007618055987117",
+      "negative": {
+        "2:(1, 1)": "-0.155173991891",
+        "4:(3, 1)": "-1.40490076181"
+      }
+    },
+    "s0^3 s2^-3 s1 (4 strands)": {
+      "min_level_char": "-1.3797911200286216256",
+      "negative": {
+        "2:(1, 1)": "-0.0950732485076",
+        "3:(2, 1)": "-0.212208477657",
+        "4:(3, 1)": "-1.37979112003"
+      }
+    }
+  }
+}

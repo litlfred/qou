@@ -51,4 +51,10 @@ theorem su4_supermultiplet_present {A : ℕ} (hA : A ≤ 4) :
     0 < Nat.choose 4 A :=
   Nat.choose_pos hA
 
+/-- Explicit boundary check at the α-particle shell closure `A = 4` and first
+excluded shell `A = 5`: `C(4, 4) = 1` (unique singlet) and `C(4, 5) = 0`. -/
+theorem su4_supermultiplet_at_four_and_five :
+    Nat.choose 4 4 = 1 ∧ Nat.choose 4 5 = 0 :=
+  ⟨by decide, by decide⟩
+
 end QOU.MassTheory

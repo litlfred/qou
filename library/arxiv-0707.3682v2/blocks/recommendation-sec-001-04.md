@@ -1,1 +1,0 @@
-Remark 2.13 suggests that the role of ζk(n) in a p-adic analogue of Theorem 2.2 should be played by Lp(n, ω1−n p , k)/Eulp(n, k) where ζk(s) = Q l Eull(s, k)−1 for Re(s) > 1, so we can hope that Lp(n, ω1−n p , k)D1/2,p k = qp(n, k) Eulp(n, k)Rn,p(k) for some qp(n, k) in Q∗.

@@ -1,1 +1,0 @@
-It is not hard to imagine that an operator O acting on a specific vector in the same vector space should be something of the following kind: O : v = M Σ −→ Σ Σ Σ _ = O · v (65) This has an apparent analogy with tensor networks and classical and quantum circuits, where application of an operator (gate) is expressed by a diagram O : ψ −→ O ψ .

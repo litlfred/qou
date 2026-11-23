@@ -1,1 +1,0 @@
-We shall present the calculation for only one of those terms, the term in which αr > 0 for all r: C(2)(4; 3; 2; 1) = g2 Z x+ 3 x+ 4 dx′+ Z x+ 2 x+ 1 dx′′+ ⟨0|Φa(4)Φa(3)V1acc(x′+)V1aac(x′′+)Φc(1)Φc(2)|0⟩.

@@ -1,1 +1,0 @@
-These parameterize (encode) the unknown high- energy (short-distance) physics and must be determined by a ﬁt to data (or can be directly calculated if the cor- responding high-energy theory is known/can be solved).

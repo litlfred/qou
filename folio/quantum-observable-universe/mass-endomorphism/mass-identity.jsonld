@@ -2,17 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/def-mass-identity",
   "@type": [
-    "folio-assistant-core:Definition",
+    "folio-assistant-sci:Definition",
     "doco:Section"
   ],
   "label": "def:mass-identity",
   "kind": "definition",
-  "title": "Mass (categorical trace)",
+  "title": "Mass (Frobenius form of the mass integrand)",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-frobenius-pairing",
     "papers/quantum-observable-universe/blocks/def-recursive-brane-tower"
@@ -25,7 +26,7 @@
     "categorical-trace",
     "frobenius-hopf"
   ],
-  "leanRef": "qou:QOU.Torsion.MassIdentity",
+  "leanRef": "qou:QOU.Torsion.MassTraceIdentity.massIntegrand",
   "text": "mass-identity.md",
   "leanSource": "mass-identity.lean",
   "provenance": "authored"

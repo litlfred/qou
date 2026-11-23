@@ -1,1 +1,0 @@
-(An efficient quantum algorithm corresponds to a small circuit that can itself be laid out efficiently, a further requirement that should arguably be relaxed in discussions of the AMPS paradox.) It is known that determining whether a function is 1-to-1 or 2-to-1 requires exponentially many calls to the function, even for a quantum computer [@aaronson2002quantum].

@@ -8,6 +8,9 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:markov-gram-star-positive"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The consequence is packaged as\n[finite distance forces a trivial kernel](#cor:finite-connes-forces-trivial-kernel),\nand the quotient is shown to cost nothing by\n[the branching identity](#prop:branching-identity-isospin-weights)." },
+  ],
   tags: [
     "connes-distance",
     "spectral-triple",

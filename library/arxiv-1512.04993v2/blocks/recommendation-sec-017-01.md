@@ -1,1 +1,0 @@
-While the rate satisfied the $2M$ bound of Eq.~\ref{C-bound}, it violated the tighter $2(M - \mu Q) - 2(M - \mu Q)_\textrm{gs}$ bound of Eq.~\ref{CQ-bound} that we conjectured should be satisfied by systems with conserved charge.

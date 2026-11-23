@@ -1,4 +1,4 @@
-*Proof.* We decompose $\Delta_q$ into its three components:
+*Proof.* One decomposes $\Delta_q$ into its three components:
 
 $$
   \Delta_q \;=\; q^{-2} \Delta
@@ -44,5 +44,3 @@ $$
 $$
 
 is a strict density with variance $\sigma^2 \approx 0.81\,t$. This is narrower than the classical Gaussian by a factor of $q_0^{-2} \approx 0.81$. No convergence obstruction appears in the archimedean realisation of the $q$-heat kernel at $q_0 > 1$.
-
-**Non-Reeb-invariant extensions.** For a general initial datum with non-trivial Reeb-fibre dependence, the fundamental solution includes additional modes from $\Delta_\xi$. These modes form the Peter--Weyl decomposition ([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl)). The Reeb-invariant sector corresponds to the zeroth Peter--Weyl component $j = 0$, where $\lambda_0(q) = 0$.

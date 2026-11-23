@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "19781611972443fm",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "3f958da310c0deb5ee25a521e67da0aaba01817917100509382c6197df13fd7e",
   "file": "1.9781611972443.fm.pdf"
@@ -11,121 +14,11 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
-  "by_kind": {
-   "recommendation": 7
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Besides being of high scientific quality, books in the series must advance the understanding and practice of optimization.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "They must also be written clearly and at an appropriate level for the intended audience.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Trademarked names may be used in this book without the inclusion of a trademark symbol.",
-   "strength": "may",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-004.md",
-   "section_title": "Page 4",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Most of what is contained in Part I is a short summary of tools that students in optimization normally encounter in a course based on the excellent books [50, 145, 206, 259, 296] and probably should be skipped by such readers.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-015.md",
-   "section_title": "Page 15",
-   "pages": "15-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "They should go directly to the new exciting techniques in Parts II, III, IV, and V.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-015.md",
-   "section_title": "Page 15",
-   "pages": "15-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A course based on these lectures should be suitable for advanced undergraduates with a solid math- ematical background (i.e., very comfortable with proofs in linear algebra and real analysis) or for graduate students who have already taken an introductory linear programming class.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-015.md",
-   "section_title": "Page 15",
-   "pages": "15-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We must stress that IMA (Institute for Mathematics and its Applications) at the University of Minnesota, the Rocky Mountains Mathematics Consortium, Banff International Research Station, MSRI (Mathematical Sciences Research Institute) at UC Berkeley, IPAM (Institute for Pure and Applied Mathematics) at UCLA, AIM (American Institute of Mathematics) at Palo Alto, MAA (Mathematical Association of America), and St.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-016.md",
-   "section_title": "Page 16",
-   "pages": "16-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

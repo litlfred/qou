@@ -1,1 +1,0 @@
-For the former we recall that a closed arc-length parametrized $C^2$-curve must have positive curvature $\abs{\g''}$ at some point $u_{0}$ and by continuity there are $c,\delta>0$ with $\abs{\g''}\ge c>0$ on $[u_{0}-\delta,u_{0}+\delta]$.

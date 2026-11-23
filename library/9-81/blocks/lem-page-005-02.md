@@ -1,0 +1,1 @@
+V is convex on fð; ; Þ 2 R3j > 0;  > 0; > 0;  þ  þ ¼ g. Deﬁnition. A volume V ðA Þ of a locally Euclidean structure A 2 AðS; wÞ is the sum of the volumes of the ideal simplices of which dihedral angles are equal to the angles of the 2-faces which are assigned from A .

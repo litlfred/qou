@@ -1,0 +1,122 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2105.07724v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "bc649dfaa1e76ec4682ea6882578517d48dd1d307336c855fec8337cf3253623",
+  "file": "2105.07724v2.pdf"
+ },
+ "provenance": {
+  "title": "SL2 tilting modules in the mixed case",
+  "authors": "LOUISE SUTTON, DANIEL TUBBENHAUER, PAUL WEDRICH, AND JIERUZHU",
+  "arxiv": {
+   "id": "2105.07724",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "7 Sep 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "definition": 3,
+   "theorem": 1
+  },
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "axiomatic-definition": 3,
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 3,
+   "elsewhere": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "2.18",
+   "name": null,
+   "statement": "we presented a version of the light ladders strategy that favors left-aligned families of projectors and when discussing fusion rules for morphisms this will play an important role.",
+   "claim_domain": "math",
+   "evidence_kind": "axiomatic-definition",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper definition in sections/sec-001-2-preliminaries.md",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "4-11",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper definition in sections/sec-001-2-preliminaries.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.8",
+   "name": null,
+   "statement": "we will decompose the idempotent Ev\u22121 \u2297id1 into a sum of orthogonal, primitive idempotents factoring through Ev as well as the other Ev\u22122p(i) predicted by Proposition 4.4. Conversely, such a decomposition can also be read as a recursive description of the mixed JW projector Ev in terms of mixed JW projectors of lower order. For the following definition, we use scalars determined by evaluating the functions gq and fq on digits. On all digits, except for the zeroth one, we use (3-10). For the zeroth digit, we instead use: fx(a) = ( (\u22121)a+1 \u00b7 \u22122 [a]x if 1 \u2a7da \u2a7d\u2113\u22122, if a = 0 or a = \u2113\u22121, gx(a) = ( \u2212[a+1]x [a]x if 1 \u2a7da \u2a7d\u2113\u22121, \u2212[2]x if a = 0. (4-4) Ar",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [2] in sections/sec-003-4-monoidal-structure.md",
+   "external_refs": [
+    "[2]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-003-4-monoidal-structure.md",
+   "section_title": "Monoidal structure",
+   "pages": "22-29",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [2] in sections/sec-003-4-monoidal-structure.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "4.7",
+   "name": null,
+   "statement": "satisfy the absorption property and are indeed idempotents whenever they appear in (4-5). Finally, we also check that Ai v and (Ai v)\u2032 are orthogonal. Absorption. Let us first check that all of the candidate idempotents appearing in Theorem 4.8 absorb Ev\u22121 \u2297id1. For Ev, B0 v, A0 v, and (A0 v)\u2032, this follows immediately from the absorption properties of the p\u2113JW projectors \u2013 see Proposition 3.19.(a). For the cases with i > 0 we use the shortening property from Proposition 3.19.(b).",
+   "claim_domain": "math",
+   "evidence_kind": "axiomatic-definition",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper definition in sections/sec-003-4-monoidal-structure.md",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-003-4-monoidal-structure.md",
+   "section_title": "Monoidal structure",
+   "pages": "22-29",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper definition in sections/sec-003-4-monoidal-structure.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "4.7",
+   "name": null,
+   "statement": "satisfy the absorption property and are indeed idempotents whenever they appear in (4-5). Finally, we also check that Ai v and (Ai v)\u2032 are orthogonal. Absorption. Let us first check that all of the candidate idempotents appearing in Theorem 4.8 absorb Ev\u22121 \u2297id1. For Ev, B0 v, A0 v, and (A0 v)\u2032, this follows immediately from the absorption properties of the p\u2113JW projectors \u2013 see Proposition 3.19.(a). For the cases with i > 0 we use the shortening property from Proposition 3.19.(b), e.g. for terms of the form Bi v it suffices to observe v\u22121 v\u2212w w \u22121 v\u22122w+1 = v\u22121 w \u22121 v\u22122w+1 = v\u2212w w \u22121 v\u22122w+1 = v\u2212w w . Absorption for the remaining cases, namely ",
+   "claim_domain": "math",
+   "evidence_kind": "axiomatic-definition",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper definition in sections/sec-006-appendix-c-some-additional-comments-and-details.md",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-006-appendix-c-some-additional-comments-and-details.md",
+   "section_title": "Appendix C. Some additional comments and details",
+   "pages": "42-51",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper definition in sections/sec-006-appendix-c-some-additional-comments-and-details.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

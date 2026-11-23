@@ -1,1 +1,0 @@
-So, we shall use $\mathrm{X}=\mathbb{C}$ and ${\mathrm d}\mu(z)= \mathrm e^{-mQ(z)}{\mathrm d}A(z)$, for a positive weight function $Q$ satisfying some mild regularity and growth conditions; $m$ is a positive real parameter, and ${\mathrm d}A(z)=\pi^{-1}{\mathrm d}x {\mathrm d}y$ is the normalized area measure.

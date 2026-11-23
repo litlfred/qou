@@ -1,1 +1,0 @@
-Since we want to think of $X$ as a category, rather than look at functions from the objects of $X$ into $\mathbb{C}$, we should look at functors from $X$ into some category which plays the role of $\mathbb{C}$.

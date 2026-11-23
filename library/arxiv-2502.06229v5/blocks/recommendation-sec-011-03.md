@@ -1,1 +1,0 @@
-We shall come back to this, but let us anticipate similarities and differences with the original Drinfeld-Kohno theorem, useful for the proof of (b), (c), that will also useful to clarify how we were led to uncover the key role of duality of the fundamental representation V , for the proof of the last step (d).

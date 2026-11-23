@@ -1,1 +1,0 @@
-Any two j0, j1 can be connected by a family jµ, 0 ≤µ ≤1, which remains constant on the ends; correspondingly, for J0 ∈Jreg(E, π, Q, j0, {Je}), J1 ∈Jreg(E, π, Q, j1, {Je}) one can ﬁnd a family Jµ joining them, which is regular in the parametrized sense (this is not the same as saying that each Jµ should itself be regular, which would be impossible to achieve in general).

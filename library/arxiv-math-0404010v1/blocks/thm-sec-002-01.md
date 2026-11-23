@@ -1,0 +1,1 @@
+Let S be an enhanced YB operator. If two braids b1 and b2 have isotopic closures, then their Markov traces TS(b1) and TS(b2) are equal. So, there is an isotopy invariant XS of oriented links deﬁned by XS  bb  = TS(b).

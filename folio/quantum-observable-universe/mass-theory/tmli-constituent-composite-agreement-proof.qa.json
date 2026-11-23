@@ -938,6 +938,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "S↔P: the prf is circular. It asserts the conclusion as its reason: \"These are equal because the Markov trace product formula is an **exact algebraic identity** … evaluate the same element of H_N(q)\" (prf:17-20). It never defines V̂_i^const, nor proves that grouping crossings \"by generator index\" (prf:8-10) preserves the trace. The cited thm:markov-trace-product carries the whole claim. Under the natural reading of \"group by generator index and trace each group\", the identity fails. Exact sympy in H_3 under convention D: tr_M(σ₁σ₂σ₁σ₂) = q²(q⁶+q²−1)/(q²+1)², while (tr_M(σ₁²))² = (q⁴+1)²/(q²+1)². The difference is −(q⁴+q²+1)/(q²+1)² ≠ 0. The statement's further \"= P_{K_𝔥}(q)\" (md:13), identifying the raw trace with a knot polynomial, is unproved. markov-pair-z2.ts:39 notes a raw Markov-trace value is not a link invariant.",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "732c143345b6",
+          "ts": "4bdb69b429f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.594Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Counterexample checked: z^2-hz-1 = -(q^4+q^2+1)/(q^2+1)^2 at z=q^3/(q^2+1)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1564,6 +1579,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:28.059Z",
+  "updated_at": "2026-11-16T07:13:24.594Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,1 +1,0 @@
-By contrast, when $p_1,p_2,p_3 \neq 1$, this group is no longer free and thus $M$ is not a handlebody.\footnote{This should be intuitively obvious, but can also be rigorously proved from Whitehead's algorithm described in appendix~\ref{subapp:fundamental group}.

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2312.00624v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "bda867f7b84f69c35e3171477939743ca4a9b1a8426106b168e40cbc91dc9767",
   "file": "2312.00624v1.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For the theory to be unitary, $s$ must be real or purely imaginary, although we will not need this in our discussion.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-classical-and-quantum-a-polynomials.md",
-   "section_title": "Classical and quantum A-polynomials",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the holomorphic block must reproduce the perturbative expansion of the wave function, it can be identified with the resummed WKB series in Eq. [\\[WKB-conj\\]](#WKB-conj){reference-type=\"eqref\" reference=\"WKB-conj\"}, that is,",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-general-conjectures.md",
-   "section_title": "General conjectures",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, we stress that, for such a solution to be consistent with the original choice of a classical branch labeled by $\\alpha$, we must impose that, taking $P=Q=1$, we find $$\\label{branch} \\upsilon_0= \\Pi \\upsilon= P^{(\\alpha)} \\, ,$$ where $P^{(\\alpha)}$ is the selected non-abelian solution of the classical $A$-polynomial at fixed $X$ after taking into account the corrections due to the exponential prefactor in Eq. [\\[chi-matrix-2\\]](#chi-matrix-2){reference-type=\"eqref\" reference=\"chi-matrix-2\"}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-solving-a-second-order-q-difference-equation.md",
-   "section_title": "Solving a second-order q-difference equation",
-   "pages": "17-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

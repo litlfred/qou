@@ -1,1 +1,1 @@
-Z : (Rep(V ), ⊠P(z), αHL) → (Rep(A(V )), ⊠P(z), Z(αHL)) becomes an
+The associativity equation (37.28) in turn becomes FW1,W2⊠P (z2)W3 ◦ 1W1 ⊗ FW2,W3 = αHL ◦ FW1⊠P (z1−z2)W2,W3 ◦ FW1,W2 ⊗ 1W3 , (37.42) where αHL is the extension of αHL to the algebraic completion, FW1,W2 , FW2,W3 are the universal P(z1 − z2)- and P(z2)- intertwining maps defined in (37.35) and (37.29) respectively and FW1⊠P (z1−z2)W2,W3 and FW1,W2⊠P (z2)W3 are the universal P(z2)-, P(z1)- intertwining maps FW1⊠P (z1−z2)W2,W3: (W1 ⊠P(z1−z2) W2) ⊗ W3 → (W1 ⊠P(z1−z2) W2) ⊠P(z2) W3, (37.43)

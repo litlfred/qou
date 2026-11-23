@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9909027v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9909027v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9909027v1",
+  "title": "Planar Algebras, I",
   "contains": [
     "library/arxiv-math-9909027v1/sections/sec-front-matter",
     "library/arxiv-math-9909027v1/sections/sec-000",
@@ -41,7 +41,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9909027v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9909027v1.pdf",
     "source_sha256": "e6cd544cdc141d3b7307b26452bc7b7ebe56768300982208f377fca04b6062e8",
     "pages": 122,
@@ -52,8 +54,8 @@
       "stamp_date": "4 Sep 1999"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,0 @@
-This is of course a consequence of the degeneracy, or of the gauge invariance, of the Lagrangian: a non-degenerate Lagrangian should correspond to a unique vacuum, and an ordinary degeneracy is obtained when two eigenvalues happen to coincide, so there are two (or more) independent vacua.

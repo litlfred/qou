@@ -1,0 +1,62 @@
+---
+doc_id: turaev1988
+doc_title: "The Yang-Baxter equation and invariants of links"
+section_id: page-017
+section_title: "Page 17"
+pages: 17-17
+pdf_page: 17
+source_pdf: turaev1988.pdf
+source_sha256: 3ccc9e1ee4f95480
+text_source: ocr
+granularity: page
+doc_brief: "Turaev, The Yang–Baxter equation and invariants of links (Invent. Math. 92, 527–553, 1988) — enhanced Yang–Baxter operators give link invariants via braid closure; the HOMFLY (P) and Kauffman (F) polynomials arise this way, with state models."
+---
+The Yang-Baxter equation and invariants of links 543
+
+=(A,(Lf])). It is clear that the integral { f is preserved by ambient isotopies
+of D in R?. >
+
+5.3.3. Remarks. 1. It is convenient to calculate f f as follows. Let peS' be
+D
+
+a generic value of the mapping 4: [’>S'. Then 4~'(p) is a finite set of non-
+vertex points of I in which the tangent vector is parallel (and equally directed)
+to the unit vector p. For xe4~*(p) denote by a(x) the (oriented) edge of [°°
+containing x. Put e(x)=1 if when one goes along a(x) through x the tangent
+vector rotates in the clockwise direction and put (x)= —1 in the opposite case.
+
+Then
+Sf= TL ee. (16)
+
+D xeA~1(p)
+
+2. If D is the closure of a braid diagram then the definitions of f f given
+D
+
+in Sections 5.2, 5.3 are equivalent. The easiest way to see this is to apply the
+preceding remark to the vector p directed downwards in the plane of Fig. 1.
+
+5.4. Theorem. Let S=(R, p=diag(;, ..., Hm), % B) be a EYB-operator which sat-
+isfies Conditions 5.3.1, 5.3.2 and the following condition:
+
+54.1. For any i,j,k, le {1, 2, ..., m}
+DY (Ro YEE ay wy * = 54 Oj. (17)
+
+1<x,ySm
+Then for any diagram D of an oriented link L
+Ts(L)=a-¥ prverP, YAP) S f- (18)
+
+feCSt(D) D
+
+Condition 5.4.1 looks rather unpleasant. However, it is necessary for the
+tight-hand side of (18) to be preserved by the Reidemeister move 22b (see
+Fig. 9). Anyway, it is easy to check up that the operator S constructed in Theorem
+
+-p [=P I-44
+If 0 - x
+
+iN
+
+Fig. 9
+
+23

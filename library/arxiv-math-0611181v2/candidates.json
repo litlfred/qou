@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0611181v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6931e3ebca584de90bfb4efe82875c3f342a15db7e492c2956c70b53a7141b60",
   "file": "0611181v2.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The factor $t^{(N^2-1)/2}$ in the formula for $\\mathrm{C}(n,t)$ is a correction due to framing that should be included only if both strands in the clasp belong to the same component.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-proof-of-the-main-theorem.md",
-   "section_title": "Proof of the main theorem",
-   "pages": "3-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For Whitehead chains this means that it should be included only when $c+d = 1$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-proof-of-the-main-theorem.md",
-   "section_title": "Proof of the main theorem",
-   "pages": "3-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

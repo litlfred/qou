@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0707.2340v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "bf0f91277a5874ffca7c63af3dbfb4a97dde8c977aa4c061cefbca8fddedb301",
   "file": "0707.2340v2.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\begin{itemize} \\item[(i)] {\\em Products.} If $\\mu_1\\in\\fP_{n_1}$ has generating polynomial $g_{\\mu_1}(z_1,\\ldots,z_{n_1})\\in\\PP_{n_1}$ and $\\mu_2\\in\\fP_{n_2}$ has generating polynomial $g_{\\mu_2}(z_1,\\ldots,z_{n_2})\\in\\PP_{n_2}$ then the product $\\mu_1\\times \\mu_2$ is the measure $\\mu\\in\\fP_{[n_1+n_2]}$ with generating polynomial $g_\\mu(z_1,\\ldots,z_{n_1+n_2}) =g_{\\mu_1}(z_1,\\ldots,z_{n_1})g_{\\mu_2}(z_{n_1+1},\\ldots,z_{n_1+n_2}) \\in\\PP_{n_1+n_2}$. \\item[(ii)] {\\em Projections.} Given $S\\subseteq [n]$ and $\\mu\\in\\fP_n$ the projection of $\\mu$ onto $2^S$ is the measure $\\mu'\\in\\fP_{|S|}$ with generating polynomial $$g_\\mu(z_1,\\ldots,z_n)\\big|_{z_i=1,\\,i\\in [n]\\setminus S}\\in\\PP_{|S|}.$$ Note that in order for this definition to make sense we should also relabel the variables using indices in $[|S|]$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-21-negative-dependence-concepts.md",
-   "section_title": "Negative Dependence Concepts",
-   "pages": "4-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore, $f(z(t))$ is a polynomial in $t$ that is a constant multiple of the characteristic polynomial of a Hermitian matrix and so it must have all real zeros.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-31-real-stable-polynomials-and-transcendental-en.md",
-   "section_title": "Real Stable Polynomials and Transcendental Entire Functions",
-   "pages": "13-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In order for a solution to Problem~\\ref{p-see} to be useful in settling Conjecture~\\ref{con-lig}, the negative dependence property should be satisfied by non-random/deterministic distributions and should imply NA.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-35-interacting-particle-systems-and-exclusion-ev.md",
-   "section_title": "Interacting Particle Systems and Exclusion Evolutions",
-   "pages": "20-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "First, note that the effect of $w_{n+1}$ is to replace $a_k$ by a constant multiple of $a_k$, so since we have introduced a general positive $\\lambda$ in assumption (i), we may assume that $w_{n+1}=1.$ The analog of \\eqref{cna2} that we must check is \\begin{multline}\\label{cna5} \\sum_{i<j}\\sum_{k,\\ell}(f_j-f_i)c_ic_jd_kd_\\ell \\bigg[(h_k-h_\\ell)a_ {k+i}a_{\\ell+j}\\\\+ (g_k-g_\\ell)b_{k+i}b_{\\ell+j}+(h_k-g_\\ell)a_{k+i}b_{\\ell+j} +(g_k-h_\\ell)a_{\\ell+j}b_{k +i}\\bigg]\\geq 0, \\end{multline} where now the $f_k$'s, $g_k$'s and $h_k$'s are obtained by symmetrizing $F$ and $G$ with respect to the field on the set of coordinates $\\{X_1,\\ldots,X_m\\}$ in the case of $F$ and $\\{X_{m+1},\\ldots,X_n\\}$ in the case of $G$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-019-6-almost-exchangeable-measures.md",
-   "section_title": "Almost Exchangeable Measures",
-   "pages": "33-41",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

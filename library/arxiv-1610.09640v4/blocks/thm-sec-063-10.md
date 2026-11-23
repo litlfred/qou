@@ -1,0 +1,1 @@
+In the situation of Deﬁnition 8.4.21, assume there is a full triangulated subcategory P ⊆K with these two properties: (a) Every object M ∈K admits a morphism ρ : P →M in S with source P ∈P. (b) If ψ is a morphism in P ∩S, then F(ψ) is an isomorphism in E. Derived Categories | Amnon Yekutieli |

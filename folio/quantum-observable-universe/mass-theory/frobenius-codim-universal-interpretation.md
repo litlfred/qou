@@ -7,7 +7,7 @@ $$
   m_e \cdot \tau\bigl(C_{\dim_q}^{(A)}\bigr).
 $$
 
-*This trace provides the universal derivation of the $(5/2) m_e$ proton residual.*
+*Whether a proton tower residual equals this quantity is the comparison recorded in [proton tower residual vs $m_e\sum_\lambda 1/\dim_q\lambda$](#conj:partition-sum-proton-residual); no derivation of the residual is claimed. The quantity is not the Markov trace of the Frobenius Casimir of $H_3(q)$ ([Frobenius Casimir of $H_3(q)$](#prop:h3-frobenius-casimir-markov-trace)).*
 
 **What the theorem does and does not supply.**
 The identity is a consequence of semisimplicity, not an independent constraint. The element $C_{\dim_q}$ is constructed so that its trace is $\sum_\lambda 1/\dim_q(\lambda)$; once the central idempotents $p_\lambda$ exist with $\tau(p_\lambda)$ and $\dim_q(\lambda)$ invertible, linearity of $\tau$ over that basis gives the identity with nothing further to check. The word *universal* in the title records that the argument uses no property of $A$ beyond being a semisimple Frobenius algebra with a trace — it does not record a discovery about $A$.

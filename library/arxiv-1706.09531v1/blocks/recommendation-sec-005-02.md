@@ -1,1 +1,0 @@
-In the course of our attempt at a higher uniﬁcation [6,7], it thus followed that the eﬀective gauge symmetry describing electroweak and strong interactions at low energies (below a TeV) must minimally be given by the combined gauge symmetry6 G(2, 1, 3) = SU(2)L × U(1)Y × SU(3)c.

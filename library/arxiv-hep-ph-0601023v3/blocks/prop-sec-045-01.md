@@ -1,0 +1,1 @@
+The same coefficient then can be utilized to compute the decay branching ratio of $\tau\to p\pi^0$ and one finds~\cite{Hou:2005iu} \beqn B(\tau\to p\pi^0)\leq 5.9\times 10^{-39} \label{bnvtaudecay} \eeqn Similar considerations also apply to a variety of other decay modes such as $\tau \to \bar p K^0$, $\tau \to \bar p \gamma$.

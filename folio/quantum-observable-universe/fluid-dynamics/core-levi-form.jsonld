@@ -2,30 +2,33 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-core-levi-form",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:core-levi-form",
   "kind": "proposition",
-  "title": "Core aspect ratio equals Levi form condition number on the normal plane",
+  "title": "The Levi datum of the vorticity plane field is the single scalar $\\xi\\cdot\\mathrm{curl}\\,\\xi$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-vorticity-lower-bound",
-    "papers/quantum-observable-universe/blocks/rem-c-substrate-via-levi"
+    "papers/quantum-observable-universe/blocks/def-levi-form-defect"
+  ],
+  "cites": [
+    "references/constantin1993",
+    "references/beiraodaveiga2002"
   ],
   "tags": [
     "levi-form",
-    "condition-number",
     "contact-structure",
+    "vorticity-direction",
     "integrability",
-    "core-shape",
     "millennium-problem"
   ],
-  "leanRef": "qou:QOU.FluidDynamics.core_levi_form",
+  "leanRef": "qou:QOU.FluidDynamics.CoreLevi.core_levi_form",
   "text": "core-levi-form.md",
   "leanSource": "core-levi-form.lean",
   "provenance": "authored"

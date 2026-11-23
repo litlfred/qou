@@ -1,0 +1,1 @@
+If {aα} is a net of self-adjoint operators with aα ≤aβ for α ≤β and ||aα|| ≤K for some K ∈R, then there is a self-adjoint a with a = limαaα, convergence being in the strong topology. Furthermore a = lub(aα) for the poset of self-adjoint operators.

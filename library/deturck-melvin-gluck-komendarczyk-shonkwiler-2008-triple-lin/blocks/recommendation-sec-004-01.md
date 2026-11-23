@@ -1,1 +1,0 @@
-Our job is to find the preimage L′ in S1 × S1 × S1 of the regular value i of the map egL′, which means we must find the points where the vector from the green ℘1(zx−1) to the red ℘1(yx−1) points straight up.

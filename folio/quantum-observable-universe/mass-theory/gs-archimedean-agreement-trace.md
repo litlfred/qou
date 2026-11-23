@@ -9,8 +9,6 @@ $$
 
 **Categorical statement.** The archimedean fibre functor intertwines the Habiro polynomial evaluation and the spectral-sequence residue sum.
 
-**Lean encoding.** Encoded as the class field axiom `archimedean_agreement`. Instances supply it as a substrate axiom.
-
-**Conjectural status.** A Lean proof requires the spectral decomposition existence, the `tail_in_ideal` axiom for the Habiro completion, and the analytic identification of the residues.
+**Conjectural status.** A proof requires the existence of the spectral decomposition, the tail-in-ideal hypothesis for the Habiro completion, and the analytic identification of the residues.
 
 **Empirical witness.** Validation records exact agreement to machine precision.

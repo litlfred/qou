@@ -6,7 +6,7 @@ export default conjecture({
   lean: { ref: "qou:QOU.WedderburnMass.phi_q_categorical_truncation",
     validation: "not_checked",
   },
-  uses: ["cor:habiro-expansion-atomic"],
+  uses: ["cor:habiro-expansion-atomic", "prop:cell-depth-truncation"],
   tags: [
     "brane-tower",
     "spectral-sequence",
@@ -15,6 +15,7 @@ export default conjecture({
     "centre-stratification",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-16", body: "2026-11-16: GB-depth fixed as Lusztig's a-function (owner choice). Centre-projection part is prop:cell-depth-truncation items 1-3 (Lean-checked); it is vacuous on T_w (k_star = binom(n,2)). The level-wise Phi_q identity jointly with stabilisation is false (item 5). The k=2 cut-off is marked as an empirical comparison. No production number moves: compute evaluates the full product cut off by tolerance." },
     { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:phi-q-categorical-truncation -> conj:phi-q-categorical-truncation." },
     {
       kind: "caveat",

@@ -1,0 +1,1 @@
+1 Let H be a ﬁnite dimensional Hopf algebra H over the ﬁeld k and let D(H) be the quantum double. The following are equivalent: (i) H is semisimple and cosemisimple. (ii) The antipode of H is involutive and char k ∤dim H. (iii) D(H) is semisimple. (iv) D(H) is cosemisimple.

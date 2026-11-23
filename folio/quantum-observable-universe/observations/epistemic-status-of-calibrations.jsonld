@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-epistemic-status-of-calibrations",
@@ -14,7 +15,7 @@
   "kind": "remark",
   "title": "Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-three-calibration-inputs",
+    "papers/quantum-observable-universe/blocks/conj-three-calibration-inputs",
     "papers/quantum-observable-universe/blocks/def-three-calibration-discipline",
     "papers/quantum-observable-universe/blocks/prop-self-dual-higgs-real-volume",
     "papers/quantum-observable-universe/blocks/rem-qstar-decay-sector-q0"

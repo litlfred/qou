@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-figure-eight-reeb-rotation-reeb-reading",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:figure-eight-reeb-rotation-reeb-reading",
+  "kind": "remark",
+  "title": "The figure-eight phase as a q-Reeb rotation between the two lepton channels",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-figure-eight-reeb-rotation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-figure-eight-reeb-rotation",
+  "tags": [
+    "figure-eight",
+    "reeb-flow",
+    "interpretation"
+  ],
+  "text": "figure-eight-reeb-rotation-reeb-reading.md",
+  "provenance": "authored"
+}

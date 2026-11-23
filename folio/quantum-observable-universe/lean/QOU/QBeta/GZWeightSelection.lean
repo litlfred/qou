@@ -31,6 +31,10 @@ their algebraic consequences. Verified `lean`-direct (exit 0).
 
 -- Ref: [garoufalidis-zagier-2024] https://arxiv.org/abs/2111.06645 (SIGMA 20 (2024) 055, eq. 3.7)
 -- Ref: [garoufalidis-gu-marino2021] https://doi.org/10.1007/s00220-021-04076-0 (Conj. 2, Stokes = rotated 3d-index)
+-- Ref: [garoufalidis-hodgson-rubinstein-segerman2015] https://doi.org/10.2140/gt.2015.19.2619
+--      (§1.2–1.3, Thm 1.8: the 3D index is well-defined on the canonical 1-efficient
+--      triangulations X^EP_M, related by index-preserving moves, so it is a topological
+--      invariant of the cusped hyperbolic manifold; licenses "the 3d index of 4₁")
 -/
 
 namespace QOU.QBeta.GZWeightSelection

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-9610193v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "e879864ec3a68fafb2f4cd8574de0b1f712ed07255a3de0dd9e7e1d4e86f2835",
   "file": "9610193v1.pdf"
@@ -16,151 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "recommendation": 9
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For a \ufb01nite energy its length must be \ufb01nite which is possible if its core forms a knot.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Here we shall report on our work to construct knotlike vortices in the model intro- duced in [13].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Our results suggest that in fact all torus knots should appear as vortex solitons in the model proposed in [13].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In order that\u20d7n(\u20d7x) describes a localized stationary knot, it must go to a constant vector\u20d7n(\u20d7x) \u2192\u20d7n0 at large distances.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In terms of the U(\u20d7x) and V (\u20d7x) variables this means that on each cross sectional plane the Hamiltonian (5) must be invariant under the inversion Z(\u20d7x) = U(\u20d7x) + iV (\u20d7x) \u2192Z\u22121(\u20d7x).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This implies in particular, that the energy density H(\u20d7x) must be concentrated in a relatively narrow tubular neighborhood around the core of the vortex.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We de\ufb01ne this time dependence by demanding that at each value of t the virial theorem (3) must be obeyed.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In particular, since the order parameter in nematic liquid crystal and 3He super\ufb02uid involves a unit three vector, an experimental investigation of vortices in these materials should reveal the existence of stable knotlike structures.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-006.md",
-   "section_title": "Page 6",
-   "pages": "6-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "to spontaneously broken Yang-Mills-Higgs theories where stable knotlike vortices can not be excluded by scaling arguments, should have interesting physical implications in particular to early universe cosmology.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-007.md",
-   "section_title": "Page 7",
-   "pages": "7-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

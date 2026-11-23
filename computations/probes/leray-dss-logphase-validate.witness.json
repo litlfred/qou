@@ -1,0 +1,86 @@
+{
+ "description": "Leray DSS search in a log-phase trial basis (arbitrary precision; numerical exploration, NOT a proof).",
+ "dps": 60,
+ "radial_rule": {
+  "QN": 24,
+  "phase_per_panel": "12.00"
+ },
+ "trial_tail": "(1+rho)^-(p + i theta m w); theta=1: mode m decays like |y|^(-1-2imw)",
+ "mode": "validate",
+ "phase1_steady_residuals": [
+  {
+   "L": 2,
+   "N": 2,
+   "coeff_norm": "68.51945416114560104",
+   "max_abs_residual": "4.4264e-46"
+  },
+  {
+   "L": 2,
+   "N": 2,
+   "coeff_norm": "616.6087869437610796",
+   "max_abs_residual": "8.2952e-45"
+  },
+  {
+   "L": 2,
+   "N": 2,
+   "coeff_norm": "71.37935131993828335",
+   "max_abs_residual": "4.8884e-46"
+  },
+  {
+   "L": 2,
+   "N": 3,
+   "coeff_norm": "97.51269333607134666",
+   "max_abs_residual": "2.7737e-45"
+  },
+  {
+   "L": 2,
+   "N": 3,
+   "coeff_norm": "94.57305007044788194",
+   "max_abs_residual": "2.3745e-45"
+  }
+ ],
+ "quadrature_check": [
+  {
+   "nodes": [
+    1728,
+    3852
+   ],
+   "L_maxabs_change": "1.4714e-46",
+   "S_maxabs_change": "1.3398e-47",
+   "L_maxabs": "2199.7",
+   "S_maxabs": "8.6991e+5",
+   "L": 2,
+   "N": 2,
+   "K": 4,
+   "S": "0.47"
+  },
+  {
+   "nodes": [
+    792,
+    1728
+   ],
+   "L_maxabs_change": "1.0146e-44",
+   "S_maxabs_change": "2.9276e-46",
+   "L_maxabs": "1.7307e+4",
+   "S_maxabs": "1.5723e+6",
+   "L": 2,
+   "N": 3,
+   "K": 3,
+   "S": "0.8"
+  },
+  {
+   "nodes": [
+    624,
+    1404
+   ],
+   "L_maxabs_change": "8.4951e-42",
+   "S_maxabs_change": "2.8632e-43",
+   "L_maxabs": "3.3665e+4",
+   "S_maxabs": "6.6923e+5",
+   "L": 3,
+   "N": 2,
+   "K": 3,
+   "S": "1.0"
+  }
+ ]
+}

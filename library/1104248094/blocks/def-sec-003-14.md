@@ -1,0 +1,1 @@
+Let C{(G) be the h-adic completion of A f h(G)®C[[h]]C((h)) and Ch[G] the h-adic completion o/^[G]®C[[fj]]C((/0). See [31, 29, 35] for more discussion of Cft[G]. It is called quantum coordinate algebra there. For the purpose of this paper we do not need an explicit construction ofCΛ[G].

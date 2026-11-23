@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9905032v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9905032v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9905032v2",
+  "title": "Asymptotics of Plancherel measures for symmetric groups",
   "contains": [
     "library/arxiv-math-9905032v2/sections/sec-000",
     "library/arxiv-math-9905032v2/sections/sec-001",
@@ -46,7 +46,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9905032v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9905032v2.pdf",
     "source_sha256": "ba933d4cb484964be01f8563c6ac5b3c060b9c8eed62ae17b7728f418748e506",
     "pages": 43,
@@ -57,8 +59,8 @@
       "stamp_date": "11 Sep 1999"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

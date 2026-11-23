@@ -265,6 +265,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "minor",
         "evidence": "The closed form (q^4+1)/(q^2+1) = q[2]_{q^2}/[2]_q was checked by hand. The statement's Q_beta paragraph (c_n coefficients and the claim that they do not match the trace coefficients) is not covered by the proof."
+      },
+      {
+        "field_hash": {
+          "md": "1096eb92d5e9",
+          "ts": "48a01f41a5b1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:53:40.809Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the convention-C contrast paragraph was reworded (C gives 1 + (q-1)/q^(1/2) via half-powers; D stays in Q(q)), and label references were replaced by titles; the derivation under D is unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: The closed form (q^4+1)/(q^2+1) = q[2]_{q^2}/[2]_q was checked by hand. The statement's Q_beta paragraph (c_n coefficients and the claim that they do not match the trace coefficients) is not covered by the proof."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1719,6 +1735,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:27:35.110Z",
+  "updated_at": "2026-11-21T07:53:40.809Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

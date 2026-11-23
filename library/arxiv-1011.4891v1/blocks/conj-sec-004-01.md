@@ -1,0 +1,1 @@
+For any n0 > 0, there exists a suﬃciently small s > 0 such that the unknot has an s-mechanical normal form with n > n0 crossing points. Recall that for M¨obius energy, the unknot has only one normal form (energy minimum), namely the round circle [3].

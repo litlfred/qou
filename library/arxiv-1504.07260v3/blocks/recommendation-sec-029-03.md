@@ -1,1 +1,0 @@
-(A.51) We conclude that, upon imposing string-string duality, T-duality and S-duality, the level mismatch in the g-twisted sector in the heterotic and type IIA frames must be related gcd(Eg, λ) = 1 ⇔ gcd(E′ g, λ) = 1 .

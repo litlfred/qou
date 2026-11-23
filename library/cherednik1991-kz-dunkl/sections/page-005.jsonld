@@ -13,9 +13,11 @@
   "pageStart": 5,
   "pageEnd": 5,
   "contains": [
-    "library/cherednik1991-kz-dunkl/blocks/prose-page-005"
+    "library/cherednik1991-kz-dunkl/blocks/prose-page-005",
+    "library/cherednik1991-kz-dunkl/blocks/prop-page-005-01",
+    "library/cherednik1991-kz-dunkl/blocks/lem-page-005-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cherednik1991-kz-dunkl",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cherednik1991-kz-dunkl",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
   "provenance": "ingested"
 }

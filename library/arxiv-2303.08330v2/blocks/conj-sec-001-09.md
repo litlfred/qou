@@ -1,0 +1,1 @@
+For the family of the cable knots Kw = C(2w+1,2)(41) in ZHS 3 for w > 3, all of their coeﬃcient functions f ± m(q)∈ Z[q± 1] of FKw (x, q ) can be expressed as linear combinations of the coeﬃcient functions {hs(q)} of F41(x, q ) following the pattern in Conjecture 2.1. We next verify Conjecture 2.1 and 2.4 for some examples.

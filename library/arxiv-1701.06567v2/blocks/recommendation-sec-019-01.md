@@ -1,1 +1,0 @@
-(3.54) In the IR, such theory should be eﬀectively described by gauge-invariant combinations of Fermi-ﬁelds, corresponding precisely to generators of G-invariant part of the exterior algebra (Λg)G, which, in turn, can be understood as generators of the cohomology of the Lie group.

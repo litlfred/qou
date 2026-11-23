@@ -1,6 +1,6 @@
 # Per-Wedderburn-block leading-order pattern: dimension-scaled Hopf-Jones absorption
 
-Expanding the per-block character closed forms (from [`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms)) around $q = 1$ in $\varepsilon = q - 1$ exposes a structural pattern in the $\varepsilon^1$ leading-order coefficients.
+Expanding the per-block character closed forms (from [All three $V_\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**](#rem:chi-per-irrep-cyclotomic-closed-forms)) around $q = 1$ in $\varepsilon = q - 1$ exposes a structural pattern in the $\varepsilon^1$ leading-order coefficients.
 
 | Irrep $\lambda$ | $\chi_\lambda(\mathcal{B}_n - \mathcal{B}_p)$ closed form | LO $\varepsilon^1$ coeff | Hopf-Jones absorption |
 |:---:|:---:|:---:|:---|
@@ -20,7 +20,7 @@ $$
 \end{aligned}
 $$
 
-We extract the leading-order $\varepsilon^1 = 2\hbar_q\big|_{q=1}$ coefficients by setting $q = 1$ in the cyclotomic factor:
+One extracts the leading-order $\varepsilon^1 = 2\hbar_q\big|_{q=1}$ coefficients by setting $q = 1$ in the cyclotomic factor:
 
 - $V_{(3)}$: $-\tfrac{1}{4}(2)^2 \cdot 2 = -2 = J_{\text{Hopf}}(q{=}1)$.
 - $V_{(2,1)}$: $-\tfrac{1}{4}(2) \cdot 2 = -1 = J_{\text{Hopf}}(q{=}1)/2$.
@@ -29,8 +29,6 @@ We extract the leading-order $\varepsilon^1 = 2\hbar_q\big|_{q=1}$ coefficients 
 The one-dimensional representations ($V_{(3)}$ trivial, $V_{(1,1,1)}$ sign) absorb the full Hopf-Jones value $-2$. The two-dimensional standard representation $V_{(2,1)}$ absorbs half, $-1$. The character-formula scaling by $\dim(V_\lambda)$ accounts for this halving.
 
 ## Connection to $c_3 = -2$
-
-The global precision-ladder coefficient $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ emerges via the two-strand sub-braid argument ([`prop:q-beta-c3-hopf-three-fold-markov`](#prop:q-beta-c3-hopf-three-fold-markov)). The per-block decomposition shows that this Hopf-Jones value arises structurally per Wedderburn block. 
 
 Both one-dimensional representations absorb $-2$ in full. The two-dimensional representation absorbs $-1$, but carries a character-formula multiplicity $\dim V_{(2,1)} = 2$ in the Wedderburn sum. The dimension-weighted sum reproduces the global $c_3$ before Wenzl-bridge re-weighting via $y_\lambda$:
 

@@ -1,1 +1,0 @@
-In order to find the reduced polynomial, one should divide the unreduced polynomial by: \[ \frac{(\a -\a^{-1}) (\a q -\a^{-1}q^{-1}) }{(q-q^{-1})(q^2-q^{-2})} \,. \] The results from \cite{LMV} enable us to compute the reduced $\tableau2$-colored HOMFLY polynomial for the knots $3_1$, $4_1$, $5_1$ and $6_1$.

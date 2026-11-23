@@ -1,1 +1,0 @@
-We shall see that this variety parametrizes decorations of type $E$, and that the representation corresponding to an element in $P(\mathcal T,E)$ can be recovered explicitly via the corresponding Bruhat cocycle.

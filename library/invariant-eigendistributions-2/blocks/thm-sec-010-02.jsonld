@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/invariant-eigendistributions-2/blocks/thm-sec-010-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 16,
+  "pageEnd": 21,
+  "text": "thm-sec-010-02.md",
+  "derivedFrom": "library/invariant-eigendistributions-2/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "8.2",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-010-8-harmonic-polynomials.md (p. 16-21)",
+    "claim_id": "invariant-eigendistributions-2#theorem:8.2",
+    "lean_status": "unformalized"
+  }
+}

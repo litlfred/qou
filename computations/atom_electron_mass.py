@@ -73,7 +73,8 @@ ME = +M_E_MEV                      # CAL-1 (already mpf in the registry)
 MP_MEV = +M_P_MEV_VALIDATION       # CLASS-A validation anchor
 MN_MEV = +M_N_MEV_VALIDATION       # CLASS-A validation anchor
 Q0 = mpf(Q_50_DIGIT_STR)           # proton pin (q_parameter resolves anchor)
-E0 = ME / (Q0 * (Q0 - 1))          # α = E₀, mp
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0 = _qbeta_e0.order_zero_scaled(ME, Q0)          # α = E₀, mp
 ALPHA = E0
 U_MEV = +_U_MEV_REGISTRY if not isinstance(_U_MEV_REGISTRY, float) else mpf(str(_U_MEV_REGISTRY))
 

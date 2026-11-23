@@ -1,11 +1,13 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-14T19:54:14.636893+00:00",
+  "computedAt": "2026-11-21T17:43:25.431287+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py"
   },
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_e_infinity_g1_bottom_edge_cap_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "G1 -- Xbot(s) <= Xblock(s), the last conditionality on e_inf -- has one recorded observation in its favour: the corpus states the two edge tables are EQUAL for s <= 12 and the top is higher by 0.01982 at s = 13.  That figure is an ENUMERATION ARTIFACT.  The bottom class is capped at BMAX = 9 rows while its maximisers are flat and long (entries 1-3, one row per unit of s) where the top's are steep and short, so the bottom exhausts its row budget first; from there Xbot understates its own supremum.  Varying the cap moves the break point -- BMAX 8/9/10/11 give agreement through s = 11/12/14/17 -- and at EVERY setting the winning profile at the break uses exactly BMAX rows.  At BMAX >= 10 the tables are exactly equal at s = 13 and the 0.01982 does not exist.  BUMAX is not the constraint: raising it 3 -> 6 while dropping BMAX 9 -> 8 made the agreement SHORTER.  A prediction of the agent's -- break = BMAX + 4, fitted to the first two settings -- was REFUTED by the other two (15 and 18, not 14 and 15); saturating the cap is necessary but not sufficient to lose the maximum.  RAISING ONLY BMAX IS THE SAME MISTAKE ONE LEVEL UP: at BMAX = 12 against the committed TMAX = 8 the BOTTOM overtakes the top at s = 16,17,18 by 0.050/0.069/0.060, which reads as a refutation of G1 and is an artifact of the TOP cap (the top winner saturates TMAX = 8 from s = 15 on).  The symmetric comparison is the one G1 asks for: with both classes at 12 rows the tables are EXACTLY equal for s = 1..16, the top is strictly higher from s = 17, and the bottom exceeds the top at NO s.  An equal cap is still not a fair one -- at every s where both winners are strictly inside the cap the bottom uses more rows than the top (s = 14: ten against seven) -- which is how BMAX 9 vs TMAX 8 came to look balanced.  G1 is NOT closed and is not weakened: EVERY table here is a capped maximum, hence a LOWER bound on its own supremum, and a lower bound can only refute the inequality, never prove it.  What changed is the evidence -- the one observation pointing toward G1 is withdrawn, the two edges agree exactly for s = 1..16 at matched caps in exact integer arithmetic across two different evaluators and two unrelated maximiser shapes, and there is no exceedance anywhere.  Past s = 16 the bottom winner is cap-saturated, so s >= 17 is undetermined rather than settled in the top's favour.",
   "constants": {
@@ -452,7 +454,7 @@
       ],
       "diff_at_break": "0.0935446451924306989159327334020026078439",
       "recorded_s_equal": false,
-      "seconds": 452
+      "seconds": 426
     },
     {
       "BMAX": 9,
@@ -501,7 +503,7 @@
       ],
       "diff_at_break": "0.0841999049019077445279590676594701095394",
       "recorded_s_equal": true,
-      "seconds": 28
+      "seconds": 26
     },
     {
       "BMAX": 11,
@@ -527,7 +529,7 @@
       ],
       "diff_at_break": "0.0432736153354366196775547179137111586393",
       "recorded_s_equal": true,
-      "seconds": 82
+      "seconds": 78
     }
   ],
   "maximiser_shapes": [

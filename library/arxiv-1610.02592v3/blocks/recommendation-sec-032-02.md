@@ -1,1 +1,0 @@
-This corollary is one of the many instances of the following nice phenomenon: a hyperbolic metric on $S_g$ may be used as an auxiliary structure to define objects or to prove statements which turn out \emph{a posteriori} not to depend on the chosen metric.

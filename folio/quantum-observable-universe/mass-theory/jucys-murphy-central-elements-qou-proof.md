@@ -93,12 +93,10 @@ $$
 
 a finite combinatorial sum over height-6 partitions of $3A$.
 This is the **simplest closed-form ansatz** consistent with the
-LP-dual characterisation of
-`prop:mass-formula-iterative-lp-dual`;
+iterative LP-dual characterisation of the mass formula;
 it is *conjectural*, not implied by the central-element theorem.
 
-**Empirical status.** The companion witness
-[`alpha-5-jucys-murphy-central.witness.json`](../../../computations/alpha/alpha-5-jucys-murphy-central.witness.json)
+**Empirical status.** The companion numerical computation
 **refutes** this ansatz at $\ell = 5$: the relative spread of
 the normalised quantity across $A \in \{2, 3, 4\}$ is
 $\approx 482\%$ at $q_0$, and the spread is uniformly bad

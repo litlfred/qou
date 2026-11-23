@@ -1,1 +1,0 @@
-We would then expect the sum not only to converge, but to do so "uniformly": in order to compute $\mathcal{I}_M(m,e)$ at fixed external charges $(m,e)$ to $n^{\rm th}$ order in $q$, we should need to sum only from about $-ne_I$ to $ne_I$ in each direction.

@@ -82,8 +82,9 @@ DOC_OPEN = re.compile(
     r"proof\s+sketch|sketch\s+of\s+(?:the\s+)?proof|"
     r"(?:we|this)\s+do(?:es)?\s+not\s+prove|"
     r"not\s+(?:formali[sz]ed|formally\s+prove)", re.I)
-SIMP_ARGS = re.compile(r"\b(?:simp|simp only|unfold|rw|delta)\s*\[?([^\]\n]*)\]?")
+SIMP_ARGS = re.compile(r"\b(?:simp|simp only|unfold|rw|delta|dsimp)\s*\[?([^\]\n]*)\]?")
 TRIVIAL_TAIL = re.compile(r"^\s*(?::=\s*rfl|:=\s*by\s+rfl|:=\s*by\s*$)")
+SUB_ZERO_GOAL = re.compile(r":\s*([^:=\n]+?)\s*-\s*\(.*\)\s*=\s*0\s*$", re.S)
 
 
 def parse_file(path: str):
@@ -99,6 +100,7 @@ def parse_file(path: str):
     lines = raw.split("\n")
 
     local_defs = local_def_names(src)
+    has_import = bool(re.search(r"^\s*import\s+\S+", src, re.M))
 
     findings = []
     for kind, name, line_no, chunk in decl_spans(src):
@@ -113,6 +115,7 @@ def parse_file(path: str):
         # --- signal A: COLLAPSED -----------------------------------------
         collapsed, why = False, ""
         stripped = after.strip()
+        sub_zero_laundered = False
         if stripped in ("rfl", "by rfl"):
             collapsed, why = True, "proof is `rfl`"
         elif re.fullmatch(r"(?s)by\s+intro[^\n]*\s*rfl\s*", stripped):
@@ -128,6 +131,10 @@ def parse_file(path: str):
             if hits and len(stripped.split("\n")) <= 3:
                 collapsed = True
                 why = "proof is `simp`/`unfold` over local def(s): " + ", ".join(hits[:4])
+            elif hits and SUB_ZERO_GOAL.search(stmt.strip()) and re.search(r"\b(?:omega|ring|linarith|rfl)\b\s*$", stripped):
+                collapsed = True
+                sub_zero_laundered = True
+                why = "subtraction-zero tautology `f x - (<body of f x>) = 0` over local def(s): " + ", ".join(hits[:4])
 
         if not collapsed:
             continue
@@ -135,7 +142,7 @@ def parse_file(path: str):
         # --- exclusion: genuine conditional derivation --------------------
         # The goal is discharged from a STATED assumption (a field of an
         # instance/structure binder), not by unfolding a local definition.
-        if discharges_via_binder_field(after, assumption_binders(stmt)):
+        if not sub_zero_laundered and discharges_via_binder_field(after, assumption_binders(stmt)):
             continue
 
         # --- signal B: OPEN-CLAIM -----------------------------------------
@@ -146,7 +153,7 @@ def parse_file(path: str):
         # "Full proof requires Wedderburn-Artin over R_q".  Both halves are
         # authored prose about the same declaration and only one was read.
         doc_claim = bool(DOC_OPEN.search(docstring))
-        open_claim = bool(DOC_OPEN.search(cone))
+        open_claim = bool(DOC_OPEN.search(cone)) or sub_zero_laundered or (not has_import and bool(hits if 'hits' in locals() else False))
         excerpt = docstring if doc_claim else cone
         findings.append({
             "file": path, "line": line_no, "kind": kind, "name": name,

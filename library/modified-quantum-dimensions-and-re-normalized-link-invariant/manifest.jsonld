@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Modified quantum dimensions and re-normalized link invariants",
+  "contains": [
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-front-matter",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-000",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-001",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-002",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-003",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-004",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-005",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "modified-quantum-dimensions-and-re-normalized-link-invariant",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "modified-quantum-dimensions-and-re-normalized-link-invariants.pdf",
+    "source_sha256": "5447f6d5f5d6c8d707d99cc7748d53dc97306f7b7a2eb3119b0107ea401e7171",
+    "pages": 18,
+    "arxiv": null,
+    "doi": "10.1112/S0010437X08003795",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

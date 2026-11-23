@@ -1,1 +1,0 @@
-Note that there might exist be-tile which has no singular point or two singular points, but from construction of be-tile, be-tile with zero singularity and be-tile with two singularity must occur in pairs in each neighbor of vertex, so the notion of vertex and valance defined in section 3 coincide with the usual meaning of vertex and valance in this cellular decomposition.

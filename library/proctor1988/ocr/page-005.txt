@@ -1,0 +1,49 @@
+Odd symplectic groups 311
+
+This identity can be proved for general n with high school algebra; it exists
+independently of Lie theory.
+
+The four infinite families of identities of types B,C, D, and BC can be nicely
+organized with an infinite ladder shaped diagram. (See Figs. 1a and b.) Place
+the pair of identities corresponding to the same Weyl group on the same level.
+Let one side of the ladder consist of the identities for root systems B,, D2,
+B,, D3, ... and let the other side consist of the identities for root systems C,,
+BC,, C,, BC,,.... Then the largest exponent in a left hand side increases by
+} at each level on each side of the ladder, and various other patterns become
+apparent. There are the same number of factors in the two right hand sides
+which lie on the same level. It is well known that the systems B, and C,, have
+the same number of positive roots; now note that this is also true for D, and
+BC, -1:n? —n=(n—1)?+n—1.
+
+So we have argued as naively as possible that these four infinite families
+of identities group together naturally, and that their interrelationships can be
+described by the ladder diagram. Now note that either side of the identity for
+case D,, B,, or C,, is the denominator of the Wey! character formula for represen-
+tations of the simply connected Lie group SOons SOan4 1, OF Sp2,, respectively.
+Hence one side of the ladder corresponds to $0;, S0,, 86;, S6,, 80, 5505
+whereas the other side corresponds to Sp,,?, Spy, ?, Spe, .... In this paper
+we show that the “odd symplectic group” Sp,,,_, has a character formula whose
+denominator is either side of the BC, _ , identity given above. Thus the previously
+~ unaccounted — for root system BC,-, now corresponds to a classical Lie
+group. And there are now two classical Lie groups associated to the Weyl
+group W(D,), just as there have been two classical Lie groups associated to
+the Weyl group W(BC,).
+
+1. Introduction
+
+In this paper we modify the usual definition of symplectic group as follows:
+
+Definition. A symplectic group Sp(V, B) on a vector space V is a subgroup
+of GL(V) which preserves a non-degenerate skew symmetric bilinear form B
+of maximal possible rank.
+
+Now symplectic groups exist on odd dimensional vector spaces; i.e. it is
+no longer a necessary consequence of the definition that the vector space V
+must be even dimensional. In particular, let V=€?"*! (column vectors), and
+choose
+
+01
+—-1 0
+
+0 1
+-1 0

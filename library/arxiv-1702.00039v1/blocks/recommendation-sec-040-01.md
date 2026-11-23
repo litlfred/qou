@@ -1,1 +1,0 @@
-[^1]: Strictly speaking, the map in Figure [3](#fbc3){reference-type="ref" reference="fbc3"} should be called birdcagecagecage, but it seems to us a bit impractical this name, so we stick with birdcagecage.

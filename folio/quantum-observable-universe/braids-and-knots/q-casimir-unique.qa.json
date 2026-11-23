@@ -1224,6 +1224,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f89025425cb9",
+          "ts": "153d61698c13",
+          "lean": "038e7aa279ad",
+          "lean_statement": "e4cee72fff68"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:05:10.936Z",
+        "reviewed_sha": "d452093fabf877690aeba624197ad015c6b9aa74",
+        "severity": "major",
+        "evidence": "lean.ref is not_unique_up_to_scalar_unconstrained, a refutation. The constrained uniqueness the md asserts (form FE+phi(K), eigenvalue normalisation) is not stated anywhere in Lean."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2447,6 +2465,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-16T07:05:10.936Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

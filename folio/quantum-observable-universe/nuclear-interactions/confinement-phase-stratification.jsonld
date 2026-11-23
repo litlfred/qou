@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-confinement-phase-stratification",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:confinement-phase-stratification",
+  "kind": "proposition",
+  "title": "The confinement locus is open, and the active support is constant on a strictly complementary phase",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-confined-particle",
+    "papers/quantum-observable-universe/blocks/prop-confinement-sdp"
+  ],
+  "tags": [
+    "phase",
+    "phase-boundary",
+    "stratification",
+    "open-set",
+    "regime-switch",
+    "deconfinement",
+    "sdp-feasibility",
+    "local-constancy"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ConfinementPhaseStratification",
+  "text": "confinement-phase-stratification.md",
+  "leanSource": "confinement-phase-stratification.lean",
+  "provenance": "authored"
+}

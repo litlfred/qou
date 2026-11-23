@@ -1,0 +1,70 @@
+---
+doc_id: wenzl1988
+doc_title: "Hecke algebras of type A_n and subfactors"
+section_id: page-034
+section_title: "Page 34"
+pages: 34-34
+pdf_page: 34
+source_pdf: wenzl1988.pdf
+source_sha256: 5e62357250683cd6
+text_source: ocr
+granularity: page
+doc_brief: "Wenzl, Hecke algebras of type A_n and subfactors (Invent. Math. 92, 349–383, 1988) — semisimple quotients of H_n(q) at q = e^{2πi/l} labelled by (k,l) Young diagrams, and the subfactors with trivial relative commutant they give."
+---
+382 H. Wenzl
+
+(iii) it is enough to show for every Ae A” that
+1—q chs sin? ((A,—4,+s—r) x/l)
+2 ——_ +} = passa ce ac
+sta0(gu-nmrmg) ~, HI , snttoe a oY
+As usual we prove this by induction on m. If m=0, we have A=B and therefore
+[B: A]=1, while on the other hand s,o),,(q)=1.
+Let us denote the right hand side of (*) by ind(A). Assume that the formula
+holds for all (k,l) diagrams with m—1 boxes. Let w be the diagram obtained
+from A by removing the box (i, 4;). Then
+
+ind(@) _ sin?((;—4,+i—j) n/D) i sin? (A,—4,+i—j) x/))
+ind(u) sin?(A;—A;+i—j+ 1) a/) j2;4, sin? (Aj;—A,+i-j—) a/I)
+
+j=
+
+Now observe that if AX =A3,.,=...=A%, we have
+
+t—gh) ght
+
+r
+Urea 1—gtan *
+
+Moreover note that the hooklength for the box (i, j) of 4 is equal to h(i,j)=
+A:— Aj + Af —i+1. With these observations and with (3.6) it is now easy to
+check ‘that
+
+ind) six(l—a'?
+
+ind(y) sZ4(q\(1—a)?
+From this follows our claim by induction onm.
+
+Remarks. 1. If m=1, A’ B is trivial and [B:A]=sin?(k /l)/sin?(n/l). These
+values converge to k? if 1 oo. If k=2, sin?(22/l)/sin?(x/l)=4 cos?(n/l), which
+are the values obtained by Jones in [J-1]. In fact it is not hard to show that
+the C* algebras obtained from the (2, 1) representations coincide with the
+AF algebras in [J-1].
+
+2. Observe that if a diagram J is a (k,l) diagram as well as a (k’,/) diagram
+with kk’, we usually obtain different index values for 2 depending on whether
+A is viewed as a (k,J) or a (k’,)) diagram. For example if 4=[1] is viewed
+as a (k,J) diagram for k=1,2,..., the corresponding index values are
+sin? (kn/D/sin?(x/l.
+
+3. The formulas for the indices show a remarkable similarity with Wey!’s
+dimension formulas for the characters of SU(k). Indeed, if | 00 (or equivalently
+if q—1), the value of the index corresponding to the diagram A converges (0
+the square of the dimension of the character of SU(k) belonging to 4. In fact,
+theorem (3.7), (c) can also be stated in terms of characters of SU(k) in the
+following way:
+
+For any character 1 of SU(k) with weights 2,,...4,-, such that 2, </~k
+there exists a subfactor of R with trivial relative commutant and index
+
+sin?((A,—A,+s—r) n/l)
+1<r<s<k sin? ((s—r) 2/1) ,

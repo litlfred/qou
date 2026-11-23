@@ -1,0 +1,1 @@
+Assume that the base ﬁeld k is of characteristic 0. Let M and N be simple modules. We assume that one of them is real. Write [M ◦N] = n X k=1 qck[Sk] with self-dual simple modules Sk and ck ∈Z. Then we have max {ck | 1 ≤k ≤n} −min {ck | 1 ≤k ≤n} = d(M, N).

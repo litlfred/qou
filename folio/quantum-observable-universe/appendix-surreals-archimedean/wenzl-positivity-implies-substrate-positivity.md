@@ -1,4 +1,4 @@
-The companion conjecture [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb) reduces the Wightman-axiom portion of the Yang–Mills millennium statement to a single substrate axiom: $C^*$-Frobenius positivity of the QOU Frobenius–Hopf substrate at $q = q_0$. This conjecture takes the natural next step. The axiom should be **derivable** from Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$, as a consequence of existing unitarity.
+The companion conjecture [Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$](#conj:os-reflection-positivity-from-reeb) reduces the Wightman-axiom portion of the Yang–Mills millennium statement to a single substrate axiom: $C^*$-Frobenius positivity of the QOU Frobenius–Hopf substrate at $q = q_0$. This conjecture takes the natural next step. The axiom should be **derivable** from Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$, as a consequence of existing unitarity.
 
 **Conjecture (Wenzl positivity at $q_0$ implies substrate
 $C^*$-Frobenius positivity).** *Wenzl's positivity criterion for the
@@ -6,7 +6,7 @@ representation category $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at
 $q = q_0 \in \mathbb{R}_{>1}$ — the criterion that picks out unitary
 fusion categories among the q-deformed semisimple ones — implies the
 substrate $C^*$-Frobenius positivity axiom of*
-[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb).
+[Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$](#conj:os-reflection-positivity-from-reeb).
 *Equivalently, the Müger $C^*$-norm on the
 [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)
 $A$ at $q_0$, induced by the categorical trace of $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$,
@@ -15,12 +15,12 @@ makes the antipode-twisted Frobenius pairing $\langle\theta(\cdot),
 
 Here $\theta$ is the Reeb reflection (the antipodal
 $\mathbb{Z}_2 \subset U(1)$ of
-[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb))
+[Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$](#conj:os-reflection-positivity-from-reeb))
 and $\langle\cdot,\cdot\rangle_F$ the Frobenius form of $A$.
 
 ## The natural follow-up
 
-The OS-reflection-positivity conjecture [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb) leaves the substrate $C^*$-Frobenius positivity axiom as the sole genuinely new input. That axiom has three free parameters:
+The OS-reflection-positivity conjecture [Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$](#conj:os-reflection-positivity-from-reeb) leaves the substrate $C^*$-Frobenius positivity axiom as the sole genuinely new input. That axiom has three free parameters:
 
 1. **Choice of $C^*$-norm** on $A$ at $q_0$. The substrate algebra
    $A$ at $q_0 \in \mathbb{R}_{>1}$ admits several candidate
@@ -64,7 +64,7 @@ $\mathrm{Rep}(U_{q_0}(\mathfrak{sl}_2))$ is unitary. By the standard
 Müger / BKLR theory, *every* Frobenius algebra in a unitary
 $C^*$-tensor category is automatically a positive Frobenius algebra
 (in the sense of the substrate axiom of
-[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb)).
+[Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$](#conj:os-reflection-positivity-from-reeb)).
 
 ## The conjecture's actual claim
 
@@ -76,7 +76,7 @@ positivity notions:
 (b) Substrate $C^*$-Frobenius positivity of $(A, \mu, \eta, \Delta,
     \varepsilon)$ as a Frobenius algebra in
     $\mathrm{Rep}(U_{q_0}(\mathfrak{sl}_2))$ — needed by
-    [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb).
+    [Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$](#conj:os-reflection-positivity-from-reeb).
 
 (a) is a theorem; (b) is the substrate axiom, so the conjecture is
 exactly the claim that (a) implies (b) via the categorical
@@ -86,9 +86,9 @@ Frobenius–algebra theory of Müger / BKLR.
 If this conjecture is proved, the entire Yang–Mills millennium
 statement reduces in the QOU framework to:
 
-- [`thm:quantum-gap-collapse`](#thm:quantum-gap-collapse) — surreal
+- [Collapse of the quantum gap](#thm:quantum-gap-collapse) — surreal
   mass gap (established);
-- [`prop:reeb-u1-chart-swap`](#prop:reeb-u1-chart-swap) — chart-swap
+- [Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\mathrm{Aut}(\mathbb{P}(V))$](#prop:reeb-u1-chart-swap) — chart-swap
   $U(1)$ is the Reeb $U(1)$ (proved);
 - Wenzl positivity at $q_0 \in \mathbb{R}_{>1}$ (theorem
   \cite{wenzl1988});

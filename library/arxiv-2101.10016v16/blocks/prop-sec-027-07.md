@@ -1,1 +1,1 @@
-Let A be a weak Hopf algebra with a ∗-involution making it into a
+Let A be a weak Hopf algebra with a ∗-involution making it into a ∗ -algebra, strong antipode S such that ∆op(a) ∗ = ∆op(I)∗∆(a∗ )∆op(I) ∗ for all a ∈ A. Then S commutes with ∗(thus is of Kac type) if and only if P i aiS(b ∗ i ) ∗ = I, where ∆(I) = P i ai ⊗ bi. This is always the case when ∆op(I) ∗ = ∆(I), that is when A is a Hermitian coboundary weak Hopf algebra with compatible ∗-involution in the sense of Sect. 30.

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0802.1072v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6f4d93f0b7ba5cd72c25ce3f0f068d6c4baa1173c29794007b654ddfc9963b1b",
   "file": "0802.1072v2.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Rewriting our word in syllable form $X = \\delta^qa_{\\tau_1}^{s_1}\\dots a_{\\tau_t}^{s_t}$, we see that the subscripts must be strictly increasing.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-the-word-problem.md",
-   "section_title": "The word problem:",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Even more, it must be finite, for the following reasons.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-conjugacy-problem-for-3-braids.md",
-   "section_title": "The conjugacy problem for 3-braids",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As for the summit set, it must be finite because the letter length of the tail of a word in SS$(W)$ is finite and is an invariant.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-conjugacy-problem-for-3-braids.md",
-   "section_title": "The conjugacy problem for 3-braids",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In every case it turned out that there were two distinct conjugacy classes in $B_3$, as must be the case, by Theorem~\\ref{T:topological}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-using-theorems-12-and-3.md",
-   "section_title": "Using Theorems 1,2, and 3",
-   "pages": "6-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

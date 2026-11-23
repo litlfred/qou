@@ -117,7 +117,8 @@ set_compute_dps()
 HERE = Path(__file__).resolve().parent
 M_E = mpf(str(M_E_MEV))
 q0 = mpf(str(Q0))
-E0 = M_E / (q0 * (q0 - 1))   # 𝔈₀ ≈ 4.186 MeV (calibration-fixed)
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0 = _qbeta_e0.order_zero_scaled(M_E, q0)   # 𝔈₀ ≈ 4.186 MeV (calibration-fixed)
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,

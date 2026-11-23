@@ -1,0 +1,1 @@
+- Suppose M^=(MU{e^}y is a ^-extension of M by N. For any xeM^ there exists a unique meM such that xe^=me^.

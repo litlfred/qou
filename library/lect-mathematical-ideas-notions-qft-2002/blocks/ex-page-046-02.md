@@ -1,0 +1,1 @@
+Let us compute the connected 4-point function in the theory associated to quartic potential U as above, modulo g?. This means, we should compute the contribution of connected Feynman diagrams with one internal vertex and 4 external edges. Such diagram T is unique —it is the cross (with one internal vertex), Fig.25. This diagram no nontrivial automorphisms. Thus,

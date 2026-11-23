@@ -1,1 +1,0 @@
-Suppose we deform the knot continuously to lie entirely in the (a, y) plane except at crossing points (the knot being viewed in projection) where we must allow indentations into z>0 or z<0 (figure 4).

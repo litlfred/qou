@@ -1,0 +1,1 @@
+Assume Setup 17.4.2. (1) There is a canonical morphism Rest ◦RΓn →RΓm ◦Rest of triangulated functors D(B ⊗Dop, gr) →D(A ⊗Cop, gr). (2) Let N ∈D(B ⊗Dop, gr), and assume either that N ∈D+(B ⊗Dop, gr) or that the functor Γm has ﬁnite right cohomological dimension. Then the canonical morphism RΓn(N) →RΓm(N) in D(A ⊗Cop, gr) is an isomor- phism. For the proof we need a few lemmas.

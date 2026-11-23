@@ -1,1 +1,0 @@
-By Lemma [\[lemma:determinant\]](#lemma:determinant){reference-type="ref" reference="lemma:determinant"}, any generic braid $w\sim C^k a$ representing $K$, must be conjugate to $C^k \sigma_1^2 \sigma_2^{-2}$, as all the other possibilities in the lemma have two components.

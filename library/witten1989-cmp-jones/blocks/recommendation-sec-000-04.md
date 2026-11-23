@@ -1,0 +1,1 @@
+Likewise, (1.6) depends on the orientations of the Ct , since these enter in defining the Wilson lines (in computing the holonomy around Ch one must decide in which direction to integrate around Ct ).

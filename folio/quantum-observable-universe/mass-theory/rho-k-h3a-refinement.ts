@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "conj:hoefsmit-scattering-pipeline",
+    // conj:hoefsmit-scattering-pipeline removed (qou-tm3c): the statement supposes the refinement balance and divides by |tr_M|; the Hoefsmit pipeline is not used.
     "prop:y-lambda-closed-form-wenzl-bridge",
   ],
   cites: ["wenzl1988", "hoefsmit1974", "kassel1995"],
@@ -24,6 +24,7 @@ export default proposition({
     "derivation",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean sibling records that refutation as `not_rhoKH3ARefinementNaive`." },
     {
       kind: "note",
       date: "2026-09-04",

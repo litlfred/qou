@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1501.01574v3/blocks/conj-sec-001-01",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "title": "Slope Conjecture",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "conj-sec-001-01.md",
+  "derivedFrom": "library/arxiv-1501.01574v3/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1501.01574v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.1",
+    "source_kind": "conjecture",
+    "claim_domain": "math",
+    "evidence_kind": "conjectural",
+    "evidence_location": "none",
+    "evidence_locator": "Open conjecture stated in sections/sec-001-1-introduction.md",
+    "claim_id": "arxiv-1501.01574v3#conjecture:1.1"
+  }
+}

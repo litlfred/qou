@@ -1,1 +1,0 @@
-To show that commutative Frobenius relations are sufficient, one must show that there exists a sequence $(f_0, \dots , f_i, \dots , f_1)$ such that $f_{i-1}$ and $f_i$ induces decompositions that are identical except related by a diffeomorphism of a certain kind, which in turn induces compositions that are identical except related by a commutative Frobenius relation.

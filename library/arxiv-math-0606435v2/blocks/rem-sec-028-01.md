@@ -1,0 +1,1 @@
+Squier uses a different convention for ψi from Jones. He transposes and changes sign in matrix entries with odd row-column sum (i.e., conjugates by diag(1,−1,1,−1,...)). This, however, does not affect our arguments. The key point in arguments below is Squier’s result. We write M∗for the conjugate transposed of a matrix M. (That is, M∗ i,j = M j,i.)

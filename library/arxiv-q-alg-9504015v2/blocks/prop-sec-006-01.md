@@ -1,0 +1,1 @@
+Let M be a rational homology sphere (RHS ) constructed by (pj, 1) surg- eries on the components of an N-component link L in S3. Then the loop corrections to the trivial connection contribution (1.18) to Witten’s invariant of M are given by the formula: exp " ∞ X n=1 (Sn(M) −Sn(S3)) iπ K n# (1.27) = exp  3 4πi  2 K −1  N X j=1 sign (pj)  exp  −iπ 2K N X j=1

@@ -1,0 +1,1 @@
+we obtain (4.3) L(M, N, λ) = N! M−1 Y j=1 j!  VM(λ)2WM(λ). Inserting the formula (4.3) into (4.1) yields the desired result (1.21). The formulas (1.22) and (1.23) are immediate consequences. The proposition is proved. Next, we give the KURT JOHANSSON

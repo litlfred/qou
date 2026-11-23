@@ -18,7 +18,7 @@ The interface between two nucleons contributes to the Markov trace through a
 single element $a\,\sigma + b\,\mathbf{1}$ of the two-dimensional subalgebra
 that $\sigma$ generates, and the trace sees it only through the scalar
 $\mu = a\,z + b$. That collapse is not unconditional. It rests on Markov
-stabilisation, which the formalisation carries as a hypothesis standing in for
+stabilisation, which enters here as a hypothesis standing in for
 Jones' theorem rather than as something proved in place.
 
 The proposition settles when that hypothesis may be invoked. Taking the word to

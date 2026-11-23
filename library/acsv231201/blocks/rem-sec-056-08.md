@@ -1,0 +1,1 @@
+Theorem 5.3 allows us to localize as long as we don’t put a boundary somewhere that the height is maximized while simultaneously cre- ating a critical point somewhere in a stratum of this boundary. This allows us to go beyond the standing hypothesis of strict minimality in Theorem 10.59 and Lemma 10.60, however the analysis of maximal height critical points in

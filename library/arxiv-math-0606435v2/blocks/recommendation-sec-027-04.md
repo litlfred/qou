@@ -1,1 +1,0 @@
-This better ought to be so, because in that case $\hat\gm_{a}$ are just a 2-cable of the unknot and $!5_1$, resp., and the coefficients for $m=0,1$ in \eqref{yy} must be $0$, which we checked once more separately.

@@ -1,0 +1,1 @@
+— There exists a functor N →(v(N), ∇N) from the cat- egory of the split diﬀerence modules over K to the category of the con- nections on Eq with at most a regular singularity at 1 ∈Eq. This func- tor extends the one deﬁned in Theorem 6.1. Moreover, the functor N → (v(N), ∇N) commutes with tensor products and is faithful.

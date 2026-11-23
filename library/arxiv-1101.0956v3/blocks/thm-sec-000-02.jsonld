@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1101.0956v3/blocks/thm-sec-000-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "thm-sec-000-02.md",
+  "derivedFrom": "library/arxiv-1101.0956v3/sections/sec-000",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1101.0956v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.1.1",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-000-31-the-pull-back-lie-algebroid-of-a-generalized.md (p. 7-8)",
+    "claim_id": "arxiv-1101.0956v3#theorem:3.1.1",
+    "lean_status": "unformalized"
+  }
+}

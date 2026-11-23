@@ -1,0 +1,1 @@
+This phenomenon was observed first in~\cite{GZ:kashaev} in a related matrix-valued Kashaev invariant of the knot as well as in~\cite{GZ:qseries} in a matrix of $q$-series associated to the three simplest hyperbolic knots, and replaces the modular group $\SL(2,\BZ)$ by its congruence subgroup $\SL(2,N)$.

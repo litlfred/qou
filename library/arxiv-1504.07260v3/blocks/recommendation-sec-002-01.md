@@ -1,1 +1,0 @@
-In this paper we shall focus on 1/2 BPS-states which in the heterotic picture correspond to Dabholkar-Harvey states [@Dabholkar:1990yf], i.e. with zero excitations in the right-moving sector but arbitrary excitations in the left-moving sector.

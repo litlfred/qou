@@ -1,1 +1,0 @@
-ASYMPTOTICS OF PLANCHEREL MEASURES 485 In the case when X(n) can be represented as X(n) = X′(n) ∪X′′(n) and the distance between X′(n) and X′′(n) goes to ∞as n →∞we shall say that the sequence splits; otherwise, we call it nonsplit.

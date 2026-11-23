@@ -1,5 +1,5 @@
 **Purpose.**
-This appendix bridges the categorical derivation chain to the executable compute layer that generates every numerical prediction. For each step of the substrate-to-observable chain, we detail the algorithm, its justifying propositions, the canonical Python API entry point, and the corresponding witness-JSON record.
+This appendix bridges the categorical derivation chain to the executable compute layer that generates every numerical prediction. For each step of the substrate-to-observable chain, this appendix details the algorithm, its justifying propositions, the canonical Python API entry point, and the corresponding witness-JSON record.
 
 **Layered compute stack.**
 The Python API provides a facade over a layered stack:

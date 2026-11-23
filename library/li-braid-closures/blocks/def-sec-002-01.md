@@ -1,0 +1,1 @@
+Given a braid α ∈Bn, the braid closure ˆα is the oriented link obtained by identifying each endpoint on the top row with the endpoint directly below it on the bottom row. The orientation of the link points away from the top row and towards the bottom row.

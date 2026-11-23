@@ -1,1 +1,0 @@
-In principle we should make sure the drift force is a constant during the time step (however this condition is actually violated, and that is why there is a linear term of time-step error in the extrapolation function).

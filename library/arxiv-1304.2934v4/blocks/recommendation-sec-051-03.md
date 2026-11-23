@@ -1,1 +1,0 @@
-As $\kappa$ is invariant by simultaneous conjugacy of its arguments, the summand in Equation \eqref{eq:listequality} depends only on the graph $G=G_{\AA}$ associated to the collection $\AA=(A^1,\dots,A^r)$, and we shall denote it $\kappa(G)$.

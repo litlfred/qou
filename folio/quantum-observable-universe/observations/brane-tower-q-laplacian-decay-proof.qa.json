@@ -1012,6 +1012,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] The boxed bound needs C·q² ≤ q⁻² (\"additional constant absorption … valid in the substrate window\"), where C = ħ_q/((q−q⁻¹)²L_q²) depends on the unspecified length L_q. So neither that inequality nor the window q < q* ≈ 1.2 is established; q* is not computed anywhere. Step 1 bounds λ_k ≤ Cq^{2k}, which grows with k, and only k = 1 is summed. So \"high-wavenumber Reeb modes suffer exponential damping\" is the opposite of what the bound shows. \"Mechanism: ħ_q^{2n} ∼ (q−q⁻¹)^{−2n}\" is wrong: ħ_q = (q−1)/q is small, so ħ_q^{2n} ∼ (q−1)^{2n}. \"Three jet levels suffice for sub-ppm precision, justifying truncations elsewhere\" is a claim about other derivations that this proof does not check."
+      },
+      {
+        "field_hash": {
+          "md": "8eb5b8aa44bd",
+          "ts": "38d7f966e4a8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:47:59.417Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "severity": "major",
+        "evidence": "[full review 2026-11-21] Fixed since the last review: the direct eigenvalue bound no longer absorbs the constant C, and the check 1/(1-hbar^2) <= q^-2/(1-q^-2) is correct (it reduces to f(x)=2x^3-x^4+x^2-1 > 0 on [1/1.2, 1], which holds). Still open: (1) Step 5 bounds a general state rho using only the leading-mode eigenvalue lambda_1, but the higher eigenvalues lambda_k <= C q^(2k) grow, so the bound does not follow for a general rho. (2) The decay is still called 'exponential damping' although what is derived is a geometric bound in the level index. (3) The q* used in Step 4 is never computed. (4) The claim that three jet levels suffice for sub-ppm accuracy is not checked anywhere."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1717,6 +1733,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:14.053Z",
+  "updated_at": "2026-11-21T07:47:59.417Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

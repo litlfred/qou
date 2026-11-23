@@ -1,1 +1,0 @@
-Comparing (11) and (12) leads to the curious integral formula  Bν w eωλ = 1 pO(x)  y∈W (−1)l(w)−l(y)Euy(Sw)⟨λ, y · x⟩e (12) for any x ∈h with pO(x)̸ = 0 The polynomials cΓ have some positiviy and integrality properties which should be mentioned.

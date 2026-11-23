@@ -1,1 +1,0 @@
-\bprop The functor $F$ is full. \label{fullf}\eprop \prf We must show that every morphism in $\Hom_\2B(F(X,e_X),F(Y,e_Y))$, where $(X,e_X),$ $(Y,e_Y)\in\2Z_1(\2C)$, is of the form $F(s)$ with $s\in\Hom_{\2Z_1(\2C)}((X,e_X),(Y,e_Y))$.

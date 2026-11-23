@@ -3,9 +3,9 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:geometric-invariant-piecewise",
   title: "Piecewise geometric invariant $\\mathrm{Geom}(K)$",
-  interprets: "prop:topological-mass-formula",
+  interprets: "conj:topological-mass-formula",
   uses: [
-    "prop:nuclear-knot-classification",
+    "conj:nuclear-knot-classification",
     "rem:em-coupling-chern-simons",
   ],
   tags: [

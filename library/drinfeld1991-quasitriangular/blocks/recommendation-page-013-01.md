@@ -1,1 +1,0 @@
-The same argument goes through in the Lie case (for .V,, we must take the space of all Lie polynomials in m variables, linear in each variable); but now f(x) is a Lie polynomial in x,ie, f(x) =cx, cek.

@@ -1,10 +1,10 @@
-% Bibliography for Quantum Observable Universe
-% AUTO-GENERATED from folio/schema/references.ts — do not edit manually.
+% Bibliography
+% AUTO-GENERATED from folio bibliography — do not edit manually.
 %
 % Key convention:  <firstauthorlastname><year>  (all lower-case)
-% Source of truth: folio/schema/references.ts (CSL-JSON)
+% Source of truth: references/ or schema/references.ts (CSL-JSON)
 % Generator:       pipeline/export-bibtex.ts
-% Generated:       2026-10-15T11:48:40.875Z
+% Generated:       2026-11-22T20:48:16.305Z
 @article{garoufalidis2004,
   author     = {Garoufalidis, Stavros},
   title      = {{On the characteristic and deformation varieties of a knot}},
@@ -124,6 +124,18 @@
   annotation = {[unreviewed]},
 }
 
+@article{le2000,
+  author  = {L{\^{e}}, Thang T. Q.},
+  title   = {{Integrality and symmetry of quantum link invariants}},
+  journal = {Duke Mathematical Journal},
+  year    = {2000},
+  volume  = {102},
+  number  = {2},
+  pages   = {273--306},
+  doi     = {10.1215/S0012-7094-00-10224-4},
+  note    = {Integrality of the normalised coloured Jones polynomial of links. Added 2026-11-21 for QOU/Knot/WhiteheadJonesLaurent.lean.},
+}
+
 @article{le2006,
   author  = {L{\^{e}}, Thang T. Q.},
   title   = {{The colored Jones polynomial and the A-polynomial of knots}},
@@ -152,7 +164,7 @@
   title      = {{Analytic dilogarithm identities}},
   year       = {2025},
   url        = {https://arxiv.org/abs/2506.10206},
-  note       = {arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta\_fourone\_habiro\_tail\_action). PDF read in-sandbox 2026-07-18 (library/arxiv-2506.10206v2/2506.10206v2.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.},
+  note       = {arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Recalls (§1.1) the duplication, Euler reflection and Landen equations used to reduce the 4₁ real-q Habiro-tail action A₀ = π²/5 to Li₂(φ⁻²); it does NOT state the value Li₂(φ⁻²) = π²/15 − ln²φ itself (that is zagier-dilogarithm §1). Its own golden-ratio result is π²/100 = Re Li₂(r₀), r₀ a root of r⁴ − 3r³ + 4r² − 2r + 1 (§6). Corrected 2026-11-21, bean qou-hrq0. PDF read in-sandbox 2026-07-18 (library/arxiv-2506.10206v2/2506.10206v2.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.},
   annotation = {[unreviewed]},
 }
 
@@ -207,7 +219,7 @@
   pages      = {39--115},
   doi        = {10.3390/sym4010039},
   url        = {https://doi.org/10.3390/sym4010039},
-  note       = {Independent prior art for the QOU torus-knot particle skeleton: $(2,n)$ torus knots model fermions and bosons, leptons and hadrons, with spin/isospin/charge/CPT, and — notably — the conjecture that the knot HYPERBOLIC-VOLUME hierarchy controls the physical mass hierarchy (the QOU Higgs$=4_1$ / $\mathrm{Vol}(4_1)$ mass mechanism). QOU's Hecke / Markov-trace + complex-volume ($\mathfrak{V}$) + Askey-scheme formalization is the novel content; the torus-knot generational skeleton has precedent here.},
+  note       = {Independent prior art for a knot-to-particle dictionary. Avrin models the four basic fermions as flattened Moebius strips whose boundaries are the unknot (half-twist n = -1, +1: neutron or neutrino, and proton) and the trefoil (n = -3: electron; n = +3: a charge +2e partner required by symmetry). Charge is read off the corners ('quirks', +2e/3 and -e/3) and is linear in twist; bosons are fermion-antifermion composites (W- = electron + antineutrino); three generations come from an icosahedral SU(3) scaffold. The paper uses no quarks, gluons or Higgs and does not use hyperbolic volume. QOU's Hecke / Markov-trace and volume content is not taken from it.},
   annotation = {[unreviewed]},
 }
 
@@ -428,8 +440,27 @@
   year       = {2005},
   school     = {University of Arizona},
   url        = {https://repository.arizona.edu/handle/10150/193802},
-  note       = {Proves that skewed-Poisson structures on commutative formal groups integrate to non-commutative formal groups via Gr{\"o}bner-Shirshov deformations of distribution algebras; introduces the strong multiplicativity condition ensuring comultiplication is preserved under lifting from characteristic p to characteristic 0},
+  note       = {The owner identifies this thesis with arXiv:math/0602138 (leitner2006, held at library/arxiv-math-0602138v1/), uploaded 2026-11-21 as the thesis; cite leitner2006 for theorem numbers. Over a field of characteristic p, strongly filtered, strongly multiplicative Poisson structures on the splay of distribution algebras of commutative formal groups integrate to non-commutative formal groups. Until 2026-11-21 this note said strong multiplicativity preserves the comultiplication under lifting from characteristic p to characteristic 0; arXiv:math/0602138 contains no such lift. The thesis PDF itself is not held, so its text was not compared.},
   annotation = {[Partial] 1 fix by agent (claude-opus-4-7) 2026-05-19},
+}
+
+@article{leitner2006,
+  author = {Leitner, Frederick},
+  title  = {{Non-Commutative Formal Groups in Positive Characteristic}},
+  year   = {2006},
+  url    = {https://arxiv.org/abs/math/0602138},
+  note   = {arXiv:math/0602138v1 [math.RA], 7 Feb 2006. Preprint, no journal record. Uploaded by the owner 2026-11-21 as the thesis fred2005; the chapter folio/fred2005-formal-groups cites this paper's numbering. Works over a field of characteristic p > 0 throughout: splays with Poisson structures (Def. 1.1), PBW (Thm. 1.9), strong multiplicativity (Def. 1.11, Prop. 1.13), Gr{\"o}bner presentation of Dist(G) (Prop. 2.4), integration of geometric formal groups (Thm. 3.7). Metadata read from page 1 of the PDF.},
+}
+
+@article{luweinstein1990,
+  author  = {Lu, Jiang-Hua and Weinstein, Alan},
+  title   = {{Poisson Lie groups, dressing transformations, and Bruhat decompositions}},
+  journal = {Journal of Differential Geometry},
+  year    = {1990},
+  volume  = {31},
+  number  = {2},
+  pages   = {501--526},
+  note    = {Reference [13] of arXiv:math/0602138 (leitner2006), cited there in Remark 1.12 for the multiplicativity condition. Not held in library/; metadata from the citation in leitner2006 plus the journal issue number.},
 }
 
 @book{schrijver1986theory,
@@ -536,6 +567,16 @@
   number     = {110},
   doi        = {10.1007/978-0-8176-4717-9},
   annotation = {[Partial] 17 fixes by agent (claude-opus-4-7) 2026-05-19},
+}
+
+@book{lusztig2003,
+  author    = {Lusztig, George},
+  title     = {{Hecke Algebras with Unequal Parameters}},
+  year      = {2003},
+  publisher = {American Mathematical Society},
+  series    = {CRM Monograph Series},
+  number    = {18},
+  url       = {https://arxiv.org/abs/math/0208154},
 }
 
 @article{atiyah1988,
@@ -1459,6 +1500,51 @@
   url     = {https://doi.org/10.1007/s002050050099},
 }
 
+@article{leray1934,
+  author  = {Leray, Jean},
+  title   = {{Sur le mouvement d'un liquide visqueux emplissant l'espace}},
+  journal = {Acta Mathematica},
+  year    = {1934},
+  volume  = {63},
+  pages   = {193--248},
+  doi     = {10.1007/BF02547354},
+  url     = {https://doi.org/10.1007/BF02547354},
+  note    = {Added 2026-11-21 for the regularity-breakdown restatement (issue #8864).},
+}
+
+@article{seregin2012,
+  author  = {Seregin, Gregory},
+  title   = {{A certain necessary condition of potential blow up for Navier-Stokes equations}},
+  journal = {Communications in Mathematical Physics},
+  year    = {2012},
+  url     = {https://arxiv.org/abs/1101.1869},
+  note    = {arXiv:1101.1869 (v1, 2011-01-10, titled 'Necessary conditions of potential blow up for Navier-Stokes equations'). The published title and the year 2012 (Springer, (c) 2011) were checked against the Oxford repository record on 2026-11-21. The journal name, volume, pages and DOI are not verified: neither the arXiv record nor the Oxford record states them. Added 2026-11-21 for the regularity-breakdown restatement (issue #8864).},
+}
+
+@article{chae2013adss,
+  author = {Chae, Dongho},
+  title  = {{Remarks on the asymptotically discretely self-similar solutions of the Navier-Stokes and the Euler equations}},
+  year   = {2013},
+  url    = {https://arxiv.org/abs/1306.0305},
+  note   = {arXiv:1306.0305 (year of the preprint). Journal version not verified. Added 2026-11-21 for the regularity-breakdown restatement (issue #8864).},
+}
+
+@article{chae-wolf2016dss,
+  author = {Chae, Dongho and Wolf, J{\"o}rg},
+  title  = {{Removing discretely self-similar singularities for the 3D Navier-Stokes equations}},
+  year   = {2016},
+  url    = {https://arxiv.org/abs/1610.09464},
+  note   = {arXiv:1610.09464 (year of the preprint). Journal version not verified. Added 2026-11-21 for the regularity-breakdown restatement (issue #8864).},
+}
+
+@article{bradshaw-tsai2018survey,
+  author = {Bradshaw, Zachary and Tsai, Tai-Peng},
+  title  = {{Self-similar solutions to the Navier-Stokes equations: a survey of recent results}},
+  year   = {2018},
+  url    = {https://arxiv.org/abs/1802.00038},
+  note   = {arXiv:1802.00038. Added 2026-11-21 for the regularity-breakdown restatement (issue #8864).},
+}
+
 @article{leitner-2018,
   author  = {Leitner, Felipe},
   title   = {{The first eigenvalue of the Kohn-Dirac operator on CR manifolds}},
@@ -1959,6 +2045,27 @@
   doi        = {10.1073/pnas.1407232111},
   url        = {https://arxiv.org/abs/1404.6513},
   annotation = {[Verified] by agent (claude-opus-4-7) 2026-05-19},
+}
+
+@article{enciso2017,
+  author  = {Enciso, Alberto and Luc{\`{a}}, Renato and Peralta-Salas, Daniel},
+  title   = {{Vortex reconnection in the three dimensional Navier–Stokes equations}},
+  journal = {Advances in Mathematics},
+  year    = {2017},
+  volume  = {309},
+  pages   = {452--486},
+  doi     = {10.1016/j.aim.2017.01.025},
+  url     = {https://arxiv.org/abs/1606.06176},
+}
+
+@article{ebin-marsden1970,
+  author  = {Ebin, David G. and Marsden, Jerrold E.},
+  title   = {{Groups of diffeomorphisms and the motion of an incompressible fluid}},
+  journal = {Annals of Mathematics},
+  year    = {1970},
+  volume  = {92},
+  number  = {1},
+  pages   = {102--163},
 }
 
 @article{christenson1964,
@@ -3124,6 +3231,14 @@
   annotation = {[Partial] 3 fixes by agent (claude-opus-4-7) 2026-05-19},
 }
 
+@article{doty2006,
+  author = {Doty, Stephen},
+  title  = {{Schur-Weyl duality in positive characteristic}},
+  year   = {2006},
+  url    = {https://arxiv.org/abs/math/0610591v3},
+  note   = {arXiv:math/0610591v3. Held: library/arxiv-math-0610591v3. Journal fields deliberately omitted — the arXiv record carries no journal_ref (read 2026-11-15) and none is entered from recall.},
+}
+
 @article{mathas2004mackey,
   author  = {Mathas, Andrew},
   title   = {{Filtrations on the Mackey decomposition for cyclotomic Hecke algebras}},
@@ -3229,6 +3344,18 @@
   doi        = {10.1007/BF01700692},
   url        = {https://doi.org/10.1007/BF01700692},
   annotation = {[Partial] 1 fix by agent (claude-opus-4-7) 2026-05-19},
+}
+
+@article{goedel1949,
+  author  = {G{\"o}del, Kurt},
+  title   = {{An Example of a New Type of Cosmological Solutions of Einstein's Field Equations of Gravitation}},
+  journal = {Reviews of Modern Physics},
+  year    = {1949},
+  volume  = {21},
+  number  = {3},
+  pages   = {447--450},
+  doi     = {10.1103/RevModPhys.21.447},
+  url     = {https://doi.org/10.1103/RevModPhys.21.447},
 }
 
 @article{turing1936,
@@ -3456,11 +3583,11 @@
 }
 
 @article{murakami2004,
-  author     = {Murakami, Hitoshi},
-  title      = {{Some limits of the colored Jones polynomials of the figure-eight knot}},
+  author     = {Murakami, Hitoshi and Yokota, Yoshiyuki},
+  title      = {{The colored Jones polynomials of the figure-eight knot and its Dehn surgery spaces}},
   year       = {2004},
   url        = {https://arxiv.org/abs/math/0401084},
-  note       = {arXiv:math/0401084. Title recorded from the arXiv listing; the corpus cites it for the deformed volume-conjecture normalisation q_eval = exp((u + 2*pi*i)/N). NOT independently verified against the published text - arxiv.org is egress-blocked from the agent sandbox, so a reader should confirm before relying on the exact wording.},
+  note       = {arXiv:math/0401084. Title and authors read from the held v3 (library/arxiv-math-0401084v3, dated 9 Mar 2006); v1 was titled 'Some limits of the colored Jones polynomials of the figure-eight knot', single author. The corpus cites it for the deformed volume-conjecture normalisation q_eval = exp((u + 2*pi*i)/N), confirmed verbatim in Thm 2.2 of v3 (with Cor. 2.4 for the Dehn-surgery volume and Chern-Simons).},
   annotation = {[unreviewed]},
 }
 
@@ -4119,6 +4246,26 @@
   url     = {https://doi.org/10.3934/dcds.2019187},
 }
 
+@article{constantin1993,
+  author  = {Constantin, Peter and Fefferman, Charles},
+  title   = {{Direction of vorticity and the problem of global regularity for the Navier-Stokes equations}},
+  journal = {Indiana University Mathematics Journal},
+  year    = {1993},
+  volume  = {42},
+  number  = {3},
+  pages   = {775--789},
+}
+
+@article{beiraodaveiga2002,
+  author  = {Beirão da Veiga, Hugo and Berselli, Luigi C.},
+  title   = {{On the regularizing effect of the vorticity direction in incompressible viscous flows}},
+  journal = {Differential and Integral Equations},
+  year    = {2002},
+  volume  = {15},
+  number  = {3},
+  pages   = {345--356},
+}
+
 @article{townsend1951,
   author     = {Townsend, A. A.},
   title      = {{On the fine-scale structure of turbulence}},
@@ -4328,6 +4475,17 @@
   isbn      = {9780387338415},
 }
 
+@article{polyak2010,
+  author  = {Polyak, Michael},
+  title   = {{Minimal generating sets of Reidemeister moves}},
+  journal = {Quantum Topology},
+  year    = {2010},
+  volume  = {1},
+  number  = {4},
+  pages   = {399--411},
+  doi     = {10.4171/QT/10},
+}
+
 @article{murphy1981,
   author     = {Murphy, G. E.},
   title      = {{A new construction of Young's seminormal representation of the symmetric groups}},
@@ -4350,6 +4508,18 @@
   doi        = {10.1007/978-1-4612-0979-9},
   isbn       = {9780387974958},
   annotation = {[Verified] 5 fixes by agent (claude-opus-4-7) 2026-05-19},
+}
+
+@book{farkas-kra1992,
+  author    = {Farkas, Hershel M. and Kra, Irwin},
+  title     = {{Riemann Surfaces}},
+  year      = {1992},
+  publisher = {Springer},
+  series    = {Graduate Texts in Mathematics},
+  number    = {71},
+  edition   = {2nd},
+  doi       = {10.1007/978-1-4612-2034-3},
+  isbn      = {9780387977034},
 }
 
 @book{wald1984,
@@ -4797,6 +4967,24 @@
   isbn      = {978-0-387-98254-0},
 }
 
+@article{moise1952,
+  author  = {Moise, Edwin E.},
+  title   = {{Affine structures in 3-manifolds. V. The triangulation theorem and Hauptvermutung}},
+  journal = {Annals of Mathematics},
+  year    = {1952},
+  volume  = {56},
+  pages   = {96--114},
+}
+
+@article{bing1954,
+  author  = {Bing, R. H.},
+  title   = {{Locally tame sets are tame}},
+  journal = {Annals of Mathematics},
+  year    = {1954},
+  volume  = {59},
+  pages   = {145--158},
+}
+
 @book{washington1997,
   author    = {Washington, Lawrence C.},
   title     = {{Introduction to Cyclotomic Fields}},
@@ -5164,7 +5352,8 @@
   volume  = {31},
   number  = {10},
   pages   = {4831--4851},
-  note    = {Classifies the fibre functors of $\mathrm{Rep}(\mathrm{SL}_q(2))$: for $E \in \mathrm{GL}_n(k)$, $n \ge 2$, with $\mathrm{tr}(E^{-1}E^{t}) = -q - q^{-1}$, the comodule category of the bilinear-form quantum group $B(E)$ is monoidally equivalent to that of $\mathcal{O}_q(\mathrm{SL}_2)$, the fundamental going to an $n$-dimensional comodule. Consumed by the eightfold front-2 result that a fibre functor changes dimensions but not fusion rules (FibreFunctorDimensionNotCategorical.lean; fibre_functor_dimension_not_categorical_probe.py). Added 2026-09-03. NO DOI RECORDED and volume/issue/pages NOT verified against the publisher record: doi.org and arxiv.org are blocked by the sandbox egress proxy in this session; the arXiv preprint is math/0207256. Verify before citing in print.},
+  url     = {https://arxiv.org/abs/math/0111114},
+  note    = {Classifies the fibre functors of $\mathrm{Rep}(\mathrm{SL}_q(2))$: for $E \in \mathrm{GL}_n(k)$, $n \ge 2$, with $\mathrm{tr}(E^{-1}E^{t}) = -q - q^{-1}$, the comodule category of the bilinear-form quantum group $B(E)$ is monoidally equivalent to that of $\mathcal{O}_q(\mathrm{SL}_2)$, the fundamental going to an $n$-dimensional comodule. Consumed by the eightfold front-2 result that a fibre functor changes dimensions but not fusion rules (FibreFunctorDimensionNotCategorical.lean; fibre_functor_dimension_not_categorical_probe.py). Added 2026-09-03. Checked 2026-11-22: journal, volume 31, issue 10, year 2003 and pages 4831-4851 match the citation in Aubriot, arXiv:math/0606147 (bibliography entry [Bi1]); not read off the publisher record. The arXiv preprint is math/0111114 (v1, 2001-11-09); the earlier note gave math/0207256, which is wrong. No DOI recorded: none was found in any source read.},
 }
 
 @article{etingof-ostrik2004,
@@ -5175,7 +5364,9 @@
   volume  = {11},
   number  = {1},
   pages   = {103--114},
-  note    = {Classifies indecomposable semisimple module categories over $\mathrm{Rep}(\mathrm{SL}_q(2))$ at generic $q$ by graphs; the rank-one module categories are the fibre functors, matching Bichon's $B(E)$ classification. Cited alongside bichon2003 for the same eightfold front-2 result. Added 2026-09-03. NO DOI RECORDED and bibliographic data NOT verified against the publisher record (sandbox egress to doi.org / arxiv.org blocked); the arXiv preprint is math/0302130. Verify before citing in print.},
+  doi     = {10.4310/MRL.2004.v11.n1.a10},
+  url     = {https://arxiv.org/abs/math/0302130},
+  note    = {Classifies indecomposable semisimple module categories over $\mathrm{Rep}(\mathrm{SL}_q(2))$ at generic $q$ by graphs; the rank-one module categories are the fibre functors, matching Bichon's $B(E)$ classification. Cited alongside bichon2003 for the same eightfold front-2 result. Added 2026-09-03. Checked 2026-11-22: the DOI, journal, volume 11, issue 1 and year 2004 are from the MaRDI record (zbMATH 1053.17010), whose DOI encodes v11.n1. Pages 103-114 are still NOT confirmed by any source read. arXiv preprint math/0302130 (v1, 2003-02-11).},
 }
 
 @book{murasugi1996,
@@ -5788,10 +5979,13 @@
 @article{braden-disney-hogg-2022,
   author     = {Braden, Harry W. and Disney-Hogg, Linden},
   title      = {{Bring's curve: old and new}},
-  journal    = {arXiv preprint (European Journal of Mathematics, 2023)},
-  year       = {2022},
+  journal    = {European Journal of Mathematics},
+  year       = {2024},
+  volume     = {10},
+  pages      = {3},
+  doi        = {10.1007/s40879-023-00706-0},
   url        = {https://arxiv.org/abs/2208.13692},
-  note       = {arXiv:2208.13692. Computes the genus-4 Bring period matrix, identifies a new elliptic quotient = the modular curve X₀(50), and gives the S₅-invariant theta-characteristic (divisor of the Szegő kernel). Source of the published j(τ₀) = −5·29³/2⁵ used in docs/coordination/alpha-em.md and QOU/Archimedean/BringEllipticFactor.lean. Registered 2026-07-18 to close the dangling -- Ref: [braden-disney-hogg-2022] in that Lean file (the key was previously unregistered); journal DOI omitted pending verification — arXiv URL is authoritative.},
+  note       = {arXiv:2208.13692. Computes the genus-4 Bring period matrix, identifies a new elliptic quotient = the modular curve X₀(50), and gives the S₅-invariant theta-characteristic (divisor of the Szegő kernel). Source of the published j(τ₀) = −5·29³/2⁵ used in docs/coordination/alpha-em.md and QOU/Archimedean/BringEllipticFactor.lean. Registered 2026-07-18 to close the dangling -- Ref: [braden-disney-hogg-2022] in that Lean file (the key was previously unregistered); journal DOI verified 2026-11-21 from the held published copy (library/s40879-023-00706-0: Eur. J. Math. (2024) 10:3, accepted 16 Oct 2023), bean qou-kg76; the arXiv URL is kept as the preprint.},
   annotation = {[unreviewed]},
 }
 
@@ -5920,7 +6114,7 @@
   year       = {2008},
   volume     = {49},
   url        = {https://arxiv.org/abs/math/0406276},
-  note       = {arXiv:math/0406276 (published under the title 'Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space', J. Math. Phys. 49, 023504). Supplies the H³ Gauss linking integral (Thm 1(3), kernel csch α), the H³ Biot--Savart operator (Thm 2(3)), and — the object the EM-linking attack needs — the H³ Laplacian Green's function φ₀(α) = −coth(α)/4π, the exact hyperbolic analogue of 1/r. Read in full 2026-08-01; findings and the two structural obstructions in docs/audits/2026-08-01-em-linking-reads-round1.md. Note there is NO interaction-energy formula, no compact-quotient theory, and no H³ Green's operator on vector fields (Thm 3 is S³-only). Uploaded library/0406276v1/},
+  note       = {arXiv:math/0406276 (published under the title 'Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space', J. Math. Phys. 49, 023504). Supplies the H³ Gauss linking integral (Thm 1(3), kernel csch α), the H³ Biot--Savart operator (Thm 2(3)), and — the object the EM-linking attack needs — a fundamental solution of the H³ Laplacian, φ₀(α) = −coth(α)/4π (this preprint, §7 'Proof scheme for Theorem 2, formula (3)': (cosh α)φ(α) = φ₀(α), Δφ₀ = δ). The 108-page electrodynamics paper [deturck-gluck-electrodynamics2008] (library/0510388v1, §§2.5, 4.4, 4.6) normalises it as φ₀(α) = −(coth α − 1)/4π, which differs by the constant 1/4π and tends to 0 as α → ∞; that is the exact hyperbolic analogue of 1/r. Corrected 2026-11-21, bean qou-tk1r. Read in full 2026-08-01; findings and the two structural obstructions in docs/audits/2026-08-01-em-linking-reads-round1.md. Note there is NO interaction-energy formula, no compact-quotient theory, and no H³ Green's operator on vector fields (Thm 3 is S³-only). Uploaded library/0406276v1/},
   annotation = {[unreviewed]},
 }
 
@@ -6771,6 +6965,18 @@
   note    = {PDF library/reshetikhin-turaev/ - The ribbon-graph construction the RT invariants are built from.},
 }
 
+@article{turaev1988,
+  author  = {Turaev, V. G.},
+  title   = {{The Yang-Baxter equation and invariants of links}},
+  journal = {Inventiones Mathematicae},
+  year    = {1988},
+  volume  = {92},
+  number  = {3},
+  pages   = {527--553},
+  doi     = {10.1007/BF01393746},
+  note    = {Link invariants from an enhanced Yang-Baxter operator: the weighted trace is invariant under the Markov moves. Cited by QuantumSl2MarkovTrace and the OrientedSkein closure files. Held in full: library/turaev1988/ (ingested 2026-11-15 from the GDZ scan of Invent. Math. 92).},
+}
+
 @article{faddeev-kashaev-volkov2000,
   author     = {Faddeev, L. D. and Kashaev, R. M.},
   title      = {{Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality}},
@@ -6809,6 +7015,182 @@
   doi     = {10.1090/S0894-0347-00-00337-4},
   url     = {https://arxiv.org/abs/math/9905032},
   note    = {The descent set D(λ)={λ_i−i} is a determinantal point process with the discrete Bessel kernel (Thm 1/eq 1.8-1.9); Thm 3 gives the bulk discrete-sine-kernel limit (rate-free); Remark 1.6 identifies the Toeplitz-determinant structure (Widom). Published twin s0894-0347-00-00337-4. PDF library/arxiv-math-9905032v2/.},
+}
+
+@article{brundan2017,
+  author = {Brundan, Jonathan},
+  title  = {{Representations of the oriented skein category}},
+  year   = {2017},
+  url    = {https://arxiv.org/abs/1712.08953},
+  note   = {arXiv:1712.08953 [math.RT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1712.08953v1/. Cited by key [brundan2017] in 13 QOU/OrientedSkein Lean docstrings, which had no reference entry until now. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{tonini2014,
+  author = {Tonini, Fabio},
+  title  = {{Sheafification functors and Tannaka's reconstruction}},
+  year   = {2014},
+  url    = {https://arxiv.org/abs/1409.4073},
+  note   = {arXiv:1409.4073 [math.AG]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1409.4073v1/. Cited by arXiv id in QOU/Eightfold/HeckeBraidingNonSymmetric.lean. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{tonini2020,
+  author = {Tonini, Fabio},
+  title  = {{Stacks of fiber functors and Tannaka's reconstruction}},
+  year   = {2020},
+  url    = {https://arxiv.org/abs/2010.12445},
+  note   = {arXiv:2010.12445 [math.AG]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-2010.12445v1/. Cited by arXiv id in QOU/Eightfold/HeckeBraidingNonSymmetric.lean. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{chattopadhyay-dutta-mukherjee-neetu2019,
+  author = {Chattopadhyay, Arghya and Dutta, Suvankar and Mukherjee, Debangshu and Neetu},
+  title  = {{Quantum Mechanics of Plancherel Growth}},
+  year   = {2019},
+  url    = {https://arxiv.org/abs/1909.06797},
+  note   = {arXiv:1909.06797 [hep-th]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1909.06797v5/. Cited by library path in QOU/BraidKnot/M1EdgeCalculus.lean. Year is the v1 year; the held copy is v5 (14 Apr 2021). Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{dutta-mukherjee-neetu-parihar2021,
+  author = {Dutta, Suvankar and Mukherjee, Debangshu and Neetu and Parihar, Sanhita},
+  title  = {{A Unitary Matrix Model for q-deformed Plancherel Growth}},
+  year   = {2021},
+  url    = {https://arxiv.org/abs/2105.09342},
+  note   = {arXiv:2105.09342 [hep-th]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-2105.09342v1/. Cited by library path in QOU/BraidKnot/M1EdgeCalculus.lean. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{aishwarya-rotem2023,
+  author = {Aishwarya, Gautam and Rotem, Liran},
+  title  = {{New Brunn-Minkowski and functional inequalities via convexity of entropy}},
+  year   = {2023},
+  url    = {https://arxiv.org/abs/2311.05446},
+  note   = {arXiv:2311.05446 [math.MG]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-2311.05446v3/. Cited by arXiv id in QOU/MassTheory/B3AggSecantCharacterisation.lean. Year is the v1 year; the held copy is v3 (20 Mar 2026). Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{vanderveen2008cabling,
+  author = {van der Veen, Roland},
+  title  = {{A cabling formula for the colored Jones polynomial}},
+  year   = {2008},
+  url    = {https://arxiv.org/abs/0807.2679},
+  note   = {arXiv:0807.2679 [math.GT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-0807.2679v1/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{black2010,
+  author = {Black, Samson},
+  title  = {{A state-sum formula for the Alexander polynomial}},
+  year   = {2010},
+  url    = {https://arxiv.org/abs/1002.4860},
+  note   = {arXiv:1002.4860 [math.GT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1002.4860v2/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{parkinson2011,
+  author = {Parkinson, James},
+  title  = {{On calibrated representations and the Plancherel theorem for affine Hecke algebras}},
+  year   = {2011},
+  url    = {https://arxiv.org/abs/1110.6212},
+  note   = {arXiv:1110.6212 [math.RT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1110.6212v2/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{garoufalidis-thurston-zickert2011,
+  author = {Garoufalidis, Stavros and Thurston, Dylan P. and Zickert, Christian K.},
+  title  = {{The complex volume of SL(n,C)-representations of 3-manifolds}},
+  year   = {2011},
+  url    = {https://arxiv.org/abs/1111.2828},
+  note   = {arXiv:1111.2828 [math.GT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1111.2828v2/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{lasy2012,
+  author = {Lasy, Trafim},
+  title  = {{Markov property and Khovanov-Rozansky homology: Coxeter case}},
+  year   = {2012},
+  url    = {https://arxiv.org/abs/1202.5547},
+  note   = {arXiv:1202.5547 [math.RT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1202.5547v1/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{marin-wagner2014,
+  author = {Marin, Ivan and Wagner, Emmanuel},
+  title  = {{Markov traces on the Birman-Wenzl-Murakami algebras}},
+  year   = {2014},
+  url    = {https://arxiv.org/abs/1403.4021},
+  note   = {arXiv:1403.4021 [math.GT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1403.4021v2/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{giambrone2014,
+  author = {Giambrone, Adam},
+  title  = {{Semi-adequate closed braids and volume}},
+  year   = {2014},
+  url    = {https://arxiv.org/abs/1406.7337},
+  note   = {arXiv:1406.7337 [math.GT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1406.7337v4/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{bettin-drappeau2019,
+  author = {Bettin, S. and Drappeau, S.},
+  title  = {{Modularity and value distribution of quantum invariants of hyperbolic knots}},
+  year   = {2019},
+  url    = {https://arxiv.org/abs/1905.02045},
+  note   = {arXiv:1905.02045 [math.NT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-1905.02045v3/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{gresnigt-marciano-zappala2021,
+  author = {Gresnigt, Niels and Marcianò, Antonino and Zappala, Emanuele},
+  title  = {{Braided matter interactions in quantum gravity via 1-handle attachment}},
+  year   = {2021},
+  url    = {https://arxiv.org/abs/2106.01332},
+  note   = {arXiv:2106.01332 [gr-qc]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-2106.01332v4/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{lentner-mombelli2023,
+  author = {Lentner, Simon and Mombelli, Martín},
+  title  = {{Fibre functors and reconstruction of Hopf algebras}},
+  year   = {2023},
+  url    = {https://arxiv.org/abs/2311.14221},
+  note   = {arXiv:2311.14221 [math.QA]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-2311.14221v2/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{zhao2024markov,
+  author = {Zhao, Deke},
+  title  = {{Markov traces on degenerate cyclotomic Hecke algebras}},
+  year   = {2024},
+  url    = {https://arxiv.org/abs/2409.09372},
+  note   = {arXiv:2409.09372 [math.RT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-2409.09372v4/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{jing-liu2025,
+  author = {Jing, Naihuan and Liu, Ning},
+  title  = {{Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications}},
+  year   = {2025},
+  url    = {https://arxiv.org/abs/2504.18825},
+  note   = {arXiv:2504.18825 [math.RT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-2504.18825v2/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{tolmachov-zhylinskyi2025,
+  author = {Tolmachov, Kostiantyn and Zhylinskyi, Heorhii},
+  title  = {{Generalized Markov traces and Jucys-Murphy elements}},
+  year   = {2025},
+  url    = {https://arxiv.org/abs/2507.19896},
+  note   = {arXiv:2507.19896 [math.RT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-2507.19896v1/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{hikami-kirillov2003,
+  author = {Hikami, Kazuhiro and Kirillov, Anatol N.},
+  title  = {{Torus knot and minimal model}},
+  year   = {2003},
+  url    = {https://arxiv.org/abs/hep-th/0308152},
+  note   = {arXiv:hep-th/0308152 [hep-th]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-hep-th-0308152v1/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{murakami2000yokota,
+  author = {Murakami, Hitoshi},
+  title  = {{Kashaev's invariant and the volume of a hyperbolic knot after Y. Yokota}},
+  year   = {2000},
+  url    = {https://arxiv.org/abs/math/0008027},
+  note   = {arXiv:math/0008027 [math.GT]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-math-0008027v1/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory.},
+}
+
+@article{etingof-nikshych-ostrik2002,
+  author = {Etingof, Pavel and Nikshych, Dmitri and Ostrik, Viktor},
+  title  = {{On fusion categories}},
+  year   = {2002},
+  url    = {https://arxiv.org/abs/math/0203060},
+  note   = {arXiv:math/0203060 [math.QA]. Preprint; no journal reference or DOI added (not verified). Held in full at library/arxiv-math-0203060v11/. Rated core in the 2026-11-22 relevance triage of uncited library papers. Title and authors read from page 1 of the held PDF on 2026-11-22 (bean qou-jl8h); nothing added from memory. The library also holds v10 at library/arxiv-math-0203060v10/, marked duplicate_of this v11 copy.},
 }
 
 @article{johansson2001,
@@ -6923,11 +7305,11 @@
 }
 
 @article{hammer2019,
-  author     = {Hammer, H.-W.},
+  author     = {Hammer, H.-W. and K{\"o}nig, Sebastian and van Kolck, U.},
   title      = {{Nuclear effective field theory: status and perspectives}},
   year       = {2019},
   url        = {https://arxiv.org/abs/1906.12122},
-  note       = {PDF library/arxiv-1906.12122v2/ - Author list truncated to the first author.},
+  note       = {PDF library/arxiv-1906.12122v2/ Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7204,25 +7586,29 @@
 }
 
 @article{arxiv-1301.4504v4,
+  author     = {Harlow, Daniel and Hayden, Patrick},
   title      = {{Quantum Computation vs. Firewalls}},
+  year       = {2013},
   url        = {https://arxiv.org/abs/1301.4504},
-  note       = {PDF library/arxiv-1301.4504v4/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-1301.4504v4/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
 @article{arxiv-1302.0342v1,
   author     = {Kedia, Hridesh and Bialynicki-Birula, Iwo and Peralta-Salas, Daniel and Irvine, William T. M.},
   title      = {{Tying knots in light fields}},
+  year       = {2013},
   url        = {https://arxiv.org/abs/1302.0342},
-  note       = {PDF library/arxiv-1302.0342v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-1302.0342v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
 @article{garoufalidis2013,
   author     = {Garoufalidis, Stavros and Kashaev, Rinat},
   title      = {{FROM STATE INTEGRALS TO q-SERIES}},
+  year       = {2013},
   url        = {https://arxiv.org/abs/1304.2705},
-  note       = {PDF library/arxiv-1304.2705v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-1304.2705v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7291,8 +7677,9 @@
 @article{bridgeland2016,
   author     = {BRIDGELAND, TOM},
   title      = {{RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY}},
+  year       = {2016},
   url        = {https://arxiv.org/abs/1611.03697},
-  note       = {PDF library/arxiv-1611.03697v5/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-1611.03697v5/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7314,16 +7701,18 @@
 @article{arxiv-1803.04009v2,
   author     = {Gang, Dongmin and Yonekura, Kazuya},
   title      = {{Symmetry enhancement and closing of knots in 3d/3d correspondence}},
+  year       = {2018},
   url        = {https://arxiv.org/abs/1803.04009},
-  note       = {PDF library/arxiv-1803.04009v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-1803.04009v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
 @article{todorov2018,
   author     = {Todorov, Ivan and Dubois-Violette, Michel},
   title      = {{Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra}},
+  year       = {2018},
   url        = {https://arxiv.org/abs/1806.09450},
-  note       = {PDF library/arxiv-1806.09450v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-1806.09450v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7354,16 +7743,18 @@
 @article{shoji2019,
   author     = {Shoji, Toshiaki},
   title      = {{Springer correspondence for symmetric spaces}},
+  year       = {2019},
   url        = {https://arxiv.org/abs/1909.06744},
-  note       = {PDF library/arxiv-1909.06744v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-1909.06744v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
 @article{arxiv-1910.09966v1,
   author     = {Asselmeyer-Maluga, T.},
   title      = {{Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics}},
+  year       = {2019},
   url        = {https://arxiv.org/abs/1910.09966},
-  note       = {PDF library/arxiv-1910.09966v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-1910.09966v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7429,10 +7820,11 @@
 }
 
 @article{reyescarocca2022,
-  author     = {REYES-CAROCCA, SEBASTI ÁN and SPEZIALI, PIETRO},
+  author     = {Reyes-Carocca, Sebasti{\'{a}}n and Speziali, Pietro},
   title      = {{INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS}},
+  year       = {2022},
   url        = {https://arxiv.org/abs/2211.08164},
-  note       = {PDF library/arxiv-2211.08164v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-2211.08164v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7447,8 +7839,9 @@
 @article{pugliese2023,
   author     = {Pugliese, Fabrizio and Sparano, Giovanni and Vitagliano, Luca},
   title      = {{Vinogradov's Cohomological Geometry of Partial Differential Equations}},
+  year       = {2023},
   url        = {https://arxiv.org/abs/2301.02038},
-  note       = {PDF library/arxiv-2301.02038v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-2301.02038v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7476,17 +7869,20 @@
 }
 
 @article{crew2023,
-  author     = {CREW, SAMUEL and FANTINI, VERONICA and AMI, ANKUSH GOSW and OSBURN, ROBERT},
+  author     = {Crew, Samuel and Fantini, Veronica and Goswami, Ankush and Osburn, Robert and Wheeler, Campbell},
   title      = {{RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES}},
+  year       = {2023},
   url        = {https://arxiv.org/abs/2304.07001},
-  note       = {PDF library/arxiv-2304.07001v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-2304.07001v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
 @article{arxiv-2304.12545v1,
+  author     = {Garoufalidis, Stavros and Zagier, Don},
   title      = {{HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN}},
+  year       = {2023},
   url        = {https://arxiv.org/abs/2304.12545},
-  note       = {PDF library/arxiv-2304.12545v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-2304.12545v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7533,8 +7929,9 @@
 @article{kattan2024,
   author     = {Kattan, Doha and Singerman, David},
   title      = {{Hecke–Farey coordinates for Bring’s surface}},
+  year       = {2024},
   url        = {https://arxiv.org/abs/2402.08782},
-  note       = {PDF library/arxiv-2402.08782v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-2402.08782v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7627,8 +8024,9 @@
 @article{arxiv-hep-th-9506138v1,
   author     = {Lowe, David A. and Polchinski, Joseph and Susskind, Leonard},
   title      = {{Black Hole Complementarity vs. Locality}},
+  year       = {1995},
   url        = {https://arxiv.org/abs/hep-th/9506138},
-  note       = {PDF library/arxiv-hep-th-9506138v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-hep-th-9506138v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -7766,8 +8164,9 @@
 @article{donagi1997,
   author     = {Donagi, Ron Y.},
   title      = {{Seiberg-Witten Integrable Systems}},
+  year       = {1997},
   url        = {https://arxiv.org/abs/alg-geom/9705010},
-  note       = {PDF library/arxiv-alg-geom-9705010v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.},
+  note       = {PDF library/arxiv-alg-geom-9705010v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Verified 2026-11-15 against page 1 of the held PDF (authors, arXiv v1 year).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 
@@ -9159,6 +9558,17 @@
   note   = {arXiv:2507.13840v2; the PDF is the Quantum journal version (file q-2026-08-19-2194, footer 'Accepted in Quantum 2026-08-11'). No DOI recorded: none was read from the PDF and none is guessed. PDF library/arxiv-2507.13840v2/ — registered from library intake; metadata read from page 1 of the PDF, not verified against the publisher record.},
 }
 
+@article{proctor1988,
+  author  = {Proctor, Robert A.},
+  title   = {{Odd symplectic groups}},
+  journal = {Inventiones Mathematicae},
+  year    = {1988},
+  volume  = {92},
+  number  = {2},
+  pages   = {307--332},
+  note    = {Journal, volume, pages and year as printed on page 1 of the GDZ scan of Invent. Math. 92 (index: Fasc. 2 = pp. 217-440). Held in full: library/proctor1988/. No DOI recorded: none is printed and Crossref was unreachable from the ingest session, so none is guessed. HUMAN-REVIEW: unreviewed.},
+}
+
 @article{murakami2008-acta-vietnam,
   author  = {Murakami, Hitoshi},
   title   = {{An introduction to the volume conjecture and its generalizations}},
@@ -9167,7 +9577,7 @@
   volume  = {33},
   number  = {3},
   pages   = {219--253},
-  note    = {Registered 2026-11-15 (bean qou-mzv5): held as library/0803219/ but had no key. Metadata from page 1 of the PDF; not verified against the publisher record. Distinct from murakami-h2010 (arXiv:1002.0126).},
+  note    = {Registered 2026-11-15 (bean qou-mzv5): held as library/0803219/ but had no key. Metadata from page 1 of the PDF (journal header and printed title); not verified against the publisher record. Distinct from murakami-h2010 (arXiv:1002.0126, a different survey).},
 }
 
 @techreport{grimus1993lr,
@@ -9175,7 +9585,6 @@
   title  = {{Introduction to Left-Right Symmetric Models}},
   year   = {1993},
   url    = {https://arxiv.org/abs/hep-ph/9305356},
-  number = {UWThPh-1993-10},
   note   = {arXiv:hep-ph/9305356. Lecture given at the 4th Hellenic School on Elementary Particle Physics, Corfu, 2-20 September 1992 (per page 1). Library directory is 9305356/. Ingested 2026-11-15 as library/9305356/ from the owner upload (commit 947381c, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
 }
 
@@ -9196,7 +9605,7 @@
 }
 
 @article{fileviezperez-ohmer-2017,
-  author = {Fileviez Pérez, Pavel and Ohmer, Sebastian},
+  author = {Fileviez P{\'{e}}rez, Pavel and Ohmer, Sebastian},
   title  = {{Unification and Local Baryon Number}},
   year   = {2017},
   url    = {https://arxiv.org/abs/1612.07165},
@@ -9343,14 +9752,15 @@
 }
 
 @article{zhao-tang-wan-2021,
-  author = {Zhao, Qian and Tang, Liang and Wan, Feng and others},
+  author = {Zhao, Qian and Tang, Liang and Wan, Feng and et al.},
   title  = {{Signatures of linear Breit-Wheeler pair production in polarized $\gamma\gamma$ collisions}},
+  year   = {2021},
   url    = {https://arxiv.org/abs/2111.13842},
   note   = {arXiv:2111.13842. Ingested 2026-11-15 as library/arxiv-2111.13842v1/ (session for epic qou-s4ws). Title/authors/journal ref from the arXiv API record. HUMAN-REVIEW: unreviewed.},
 }
 
 @article{zhao-wu-ababekri-2023,
-  author  = {Zhao, Qian and Wu, Yan-Xi and Ababekri, Mamutjan and others},
+  author  = {Zhao, Qian and Wu, Yan-Xi and Ababekri, Mamutjan and et al.},
   title   = {{Angle-dependent pair production in the polarized two-photon Breit-Wheeler process}},
   journal = {Physical Review D},
   year    = {2023},
@@ -9364,6 +9774,7 @@
 @article{senjanovic2011,
   author = {Senjanović, Goran},
   title  = {{Probing the Origin of Neutrino Mass: from GUT to LHC}},
+  year   = {2011},
   url    = {https://arxiv.org/abs/1107.5322},
   note   = {arXiv:1107.5322v1. Ingested 2026-11-15 as library/arxiv-1107.5322v1/ from the owner upload (epic qou-s4ws). Metadata from the arXiv API record; no journal ref or DOI on record. HUMAN-REVIEW: unreviewed.},
 }
@@ -9399,4 +9810,377 @@
   doi     = {10.2307/1969467},
   url     = {https://doi.org/10.2307/1969467},
   note    = {The F{\'{a}}ry–Milnor theorem: a knotted curve has total curvature greater than 4 pi. Cited by canonical-closure-torus-chain (in its prose), torus-chain-pages-on-bring and frenet-framing-is-not-an-invariant. Restored 2026-11-15 from the hand-written references.bib entry that 4309235307 (#7528) dropped when it regenerated the .bib from references.ts, where this key had never been registered; metadata copied verbatim from that entry, not re-typed.},
+}
+
+@article{morton-2001-skein-murphy,
+  author = {Morton, Hugh R.},
+  title  = {{Skein theory and the Murphy operators}},
+  year   = {2001},
+  url    = {https://arxiv.org/abs/math/0102098},
+  note   = {arXiv:math/0102098v1 [math.GT] (13 Feb 2001). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-math-0102098v1/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{morton-lukac-2001,
+  author = {Morton, Hugh R. and Lukac, Sascha G.},
+  title  = {{The Homfly polynomial of the decorated Hopf link}},
+  year   = {2001},
+  url    = {https://arxiv.org/abs/math/0108011},
+  note   = {arXiv:math/0108011v1 [math.GT] (2 Aug 2001). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-math-0108011v1/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{lukac-2001,
+  author = {Lukac, Sascha G.},
+  title  = {{Idempotents of the Hecke algebra become Schur functions in the skein of the annulus}},
+  year   = {2001},
+  url    = {https://arxiv.org/abs/math/0110119},
+  note   = {arXiv:math/0110119v1 [math.GT] (11 Oct 2001). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-math-0110119v1/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{hadji-morton-2009,
+  author = {Hadji, Richard J. and Morton, Hugh R.},
+  title  = {{A basis for the full Homfly skein of the annulus}},
+  year   = {2009},
+  url    = {https://arxiv.org/abs/math/0408078},
+  note   = {arXiv:math/0408078v2 [math.GT] (3 Apr 2009). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-math-0408078v2/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{kauffman-lomonaco-2007,
+  author = {Kauffman, Louis H. and Lomonaco, Samuel J., Jr.},
+  title  = {{q - Deformed Spin Networks, Knot Polynomials and Anyonic Topological Quantum Computation}},
+  year   = {2007},
+  url    = {https://arxiv.org/abs/quant-ph/0606114},
+  note   = {arXiv:quant-ph/0606114v3 (9 Feb 2007). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-quant-ph-0606114v3/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{geer-patureau-mirand-turaev-2013,
+  author = {Geer, Nathan and Patureau-Mirand, Bertrand and Turaev, Vladimir},
+  title  = {{Modified quantum dimensions and re-normalized link invariants}},
+  year   = {2013},
+  url    = {https://arxiv.org/abs/0711.4229},
+  note   = {arXiv:0711.4229v2 [math.QA] (25 Sep 2013). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-0711.4229v2/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{tubbenhauer-vaz-2023,
+  author  = {Tubbenhauer, Daniel and Vaz, Pedro},
+  title   = {{Handlebody diagram algebras}},
+  journal = {Revista Matem{\'{a}}tica Iberoamericana},
+  year    = {2023},
+  volume  = {39},
+  number  = {3},
+  pages   = {845--896},
+  doi     = {10.4171/RMI/1356},
+  note    = {Upload 10.4171-rmi-1356.pdf; Rev. Mat. Iberoam. 39 (2023), no. 3, 845-896, DOI 10.4171/RMI/1356. Ingested 2026-11-18 as library/104171-rmi-1356/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{dudek-edwards-thomas-2012,
+  author = {Dudek, Jozef J. and Edwards, Robert G. and Thomas, Christopher E.},
+  title  = {{S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD}},
+  year   = {2012},
+  url    = {https://arxiv.org/abs/1203.6041},
+  note   = {arXiv:1203.6041v2 [hep-ph] (19 Sep 2012); report numbers JLAB-THY-12-1504, TCDMATH 12-03 (for the Hadron Spectrum Collaboration). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-1203.6041v2/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{horsley-et-al-2012-octet-baryon,
+  author = {Horsley, R. and Najjar, J. and Nakamura, Y. and Pleiter, D. and Rakow, P. E. L. and Schierholz, G. and Zanotti, J. M.},
+  title  = {{Isospin breaking in octet baryon mass splittings}},
+  year   = {2012},
+  url    = {https://arxiv.org/abs/1206.3156},
+  note   = {arXiv:1206.3156v2 [hep-lat] (21 Dec 2012); report numbers ADP-12-26/T793, DESY 12-094, Edinburgh 2012/07, Liverpool LTH 946 (QCDSF-UKQCD Collaboration). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-1206.3156v2/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{walker-loud-carlson-miller-2012,
+  author = {Walker-Loud, Andr{\'{e}} and Carlson, Carl E. and Miller, Gerald A.},
+  title  = {{Cottingham formula for the electromagnetic self-energy contribution to Mp − Mn}},
+  year   = {2012},
+  url    = {https://arxiv.org/abs/1210.7777},
+  note   = {arXiv:1210.7777v1 [hep-lat] (29 Oct 2012); The 30 International Symposium on Lattice Field Theory - Lattice 2012, June 24-29, 2012, Cairns, Australia. Ingested 2026-11-18 as library/arxiv-1210.7777v1/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{borsanyi-et-al-2015,
+  author = {Borsanyi, Sz. and Durr, S. and Fodor, Z. and Hoelbling, C. and Katz, S. D. and Krieg, S. and Lellouch, L. and Lippert, T. and Portelli, A. and Szabo, K. K. and Toth, B. C.},
+  title  = {{Ab initio calculation of the neutron-proton mass difference}},
+  year   = {2015},
+  url    = {https://arxiv.org/abs/1406.4088},
+  note   = {arXiv:1406.4088v2 [hep-lat] (7 Apr 2015). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-1406.4088v2/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{gasser-hoferichter-leutwyler-rusetsky-2020,
+  author = {Gasser, J. and Hoferichter, M. and Leutwyler, H. and Rusetsky, A.},
+  title  = {{Cottingham formula and nucleon polarizabilities}},
+  year   = {2020},
+  url    = {https://arxiv.org/abs/1506.06747},
+  note   = {arXiv:1506.06747v3 [hep-ph] (30 Mar 2020); report number INT-PUB-15-027. Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-1506.06747v3/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{horsley-et-al-2016-qcd-qed,
+  author = {Horsley, R. and Nakamura, Y. and Perlt, H. and Pleiter, D. and Rakow, P. E. L. and Schierholz, G. and Schiller, A. and Stokes, R. and St{\"u}ben, H. and Young, R. D. and Zanotti, J. M.},
+  title  = {{Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED}},
+  year   = {2016},
+  url    = {https://arxiv.org/abs/1508.06401},
+  note   = {arXiv:1508.06401v2 [hep-lat] (15 Jul 2016). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-1508.06401v2/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{giusti-et-al-2017,
+  author = {Giusti, D. and Lubicz, V. and Tarantino, C. and Martinelli, G. and Sanfilippo, F. and Simula, S. and Tantalo, N.},
+  title  = {{Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions}},
+  year   = {2017},
+  url    = {https://arxiv.org/abs/1704.06561},
+  note   = {arXiv:1704.06561v2 [hep-lat] (11 Jun 2017); RM123 collaboration. Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-1704.06561v2/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{bakshi-gupta-2020,
+  author = {Bakshi, Keshab Chandra and Gupta, Ved Prakash},
+  title  = {{On orthogonal systems, two-sided bases and regular subfactors}},
+  year   = {2020},
+  url    = {https://arxiv.org/abs/1904.05612},
+  note   = {arXiv:1904.05612v3 [math.OA] (27 Jul 2020). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-1904.05612v3/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@inproceedings{walker-loud-2019,
+  author    = {Walker-Loud, Andr{\'{e}}},
+  title     = {{On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting}},
+  booktitle = {Proceedings of Science},
+  year      = {2019},
+  volume    = {CD2018},
+  pages     = {045},
+  url       = {https://arxiv.org/abs/1907.05459},
+  note      = {The 9th International workshop on Chiral Dynamics, 17-21 September 2018, Durham, NC, USA. Both the arXiv preprint (arXiv:1907.05459v1 [nucl-th], 11 Jul 2019, held at library/arxiv-1907.05459v1/ from upload 1907.05459v1.pdf) and the PoS(CD2018)045 proceedings copy (held at library/cd2018-045/ from upload CD2018_045.pdf) are ingested 2026-11-18 from the owner uploads (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDFs; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{gasser-leutwyler-rusetsky-2020-epjc,
+  author  = {Gasser, J. and Leutwyler, H. and Rusetsky, A.},
+  title   = {{Sum rule for the Compton amplitude and implications for the proton–neutron mass difference}},
+  journal = {European Physical Journal C},
+  year    = {2020},
+  volume  = {80},
+  pages   = {1121},
+  doi     = {10.1140/epjc/s10052-020-08615-2},
+  url     = {https://arxiv.org/abs/2008.05806},
+  note    = {Both the published Eur. Phys. J. C (2020) 80:1121 version (held at library/s10052-020-08615-2/ from upload s10052-020-08615-2.pdf) and the arXiv preprint arXiv:2008.05806v2 [hep-ph] (9 Dec 2020, held at library/arxiv-2008.05806v2/ from upload 2008.05806v2.pdf) are ingested 2026-11-18 from the owner uploads (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDFs; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{gasser-leutwyler-rusetsky-2021,
+  author = {Gasser, J. and Leutwyler, H. and Rusetsky, A.},
+  title  = {{On the mass difference between proton and neutron}},
+  year   = {2021},
+  url    = {https://arxiv.org/abs/2003.13612},
+  note   = {arXiv:2003.13612v3 [hep-ph] (22 Jan 2021). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-2003.13612v3/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{sutton-tubbenhauer-wedrich-zhu-2023,
+  author = {Sutton, Louise and Tubbenhauer, Daniel and Wedrich, Paul and Zhu, Jieru},
+  title  = {{SL2 tilting modules in the mixed case}},
+  year   = {2023},
+  url    = {https://arxiv.org/abs/2105.07724},
+  note   = {arXiv:2105.07724v2 [math.RT] (7 Sep 2023). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-2105.07724v2/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@inproceedings{romiti-2022,
+  author    = {Romiti, Simone},
+  title     = {{The neutron-proton mass difference}},
+  booktitle = {Proceedings of Science},
+  year      = {2022},
+  volume    = {LATTICE2021},
+  pages     = {543},
+  url       = {https://arxiv.org/abs/2202.01613},
+  note      = {The 38th International Symposium on Lattice Field Theory, LATTICE2021, 26th-30th July 2021. Both the arXiv preprint (arXiv:2202.01613v1 [hep-lat], 3 Feb 2022, held at library/arxiv-2202.01613v1/ from upload 2202.01613v1.pdf) and the PoS(LATTICE2021)543 proceedings copy (held at library/lattice2021-543/ from upload LATTICE2021_543.pdf) are ingested 2026-11-18 from the owner uploads (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDFs; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{can-qcdsf-2025,
+  author  = {Can, K. U. and Hannaford-Gunn, A. and Horsley, R. and Rakow, P. E. L. and Schar, T. and Schierholz, G. and St{\"u}ben, H. and Young, R. D. and Zanotti, J. M.},
+  title   = {{Lattice QCD calculation of the Compton amplitude subtraction function}},
+  journal = {Physical Review D},
+  year    = {2025},
+  volume  = {111},
+  pages   = {094513},
+  doi     = {10.1103/PhysRevD.111.094513},
+  url     = {https://arxiv.org/abs/2501.08619},
+  note    = {QCDSF Collaboration. Both the published Physical Review D 111, 094513 (2025) version (held at library/physrevd111094513/ from upload PhysRevD.111.094513.pdf) and the arXiv preprint arXiv:2501.08619v2 [hep-lat] (21 May 2025, report numbers ADP-24-23/T1262, DESY-24-221, Liverpool LTH 1390, held at library/arxiv-2501.08619v2/ from upload 2501.08619v2.pdf) are ingested 2026-11-18 from the owner uploads (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDFs; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{aiston-morton-1997,
+  author = {Aiston, A. K. and Morton, H. R.},
+  title  = {{Idempotents of Hecke algebras of type A}},
+  year   = {1997},
+  url    = {https://arxiv.org/abs/q-alg/9702017},
+  note   = {Both the 1997 Version 1.5 preprint (dated January 10, 1997, held at library/hecidem/ from upload hecidem.pdf) and the 2019 Version 1.6 arXiv revision (arXiv:q-alg/9702017v2, 7 Feb 2019, held at library/arxiv-q-alg-9702017v2/ from upload 9702017v2.pdf) are ingested 2026-11-18 from the owner uploads (commit 521b87dca7, epic qou-s4ws). Journal reference not on page 1 and not added. Metadata read from page 1 of the PDFs; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{pimsner-popa-1986,
+  author  = {Pimsner, Mihai and Popa, Sorin},
+  title   = {{Entropy and index for subfactors}},
+  journal = {Annales scientifiques de l'{\'{E}}cole Normale Sup{\'{e}}rieure},
+  year    = {1986},
+  volume  = {19},
+  number  = {1},
+  pages   = {57--106},
+  url     = {http://www.numdam.org/item?id=ASENS_1986_4_19_1_57_0},
+  note    = {4e s{\'{e}}rie, tome 19, no. 1 (1986), pp. 57-106. Upload ASENS_1986_4_19_1_57_0.pdf. Ingested 2026-11-18 as library/asens-1986-4-19-1-57-0/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@unpublished{kauffman-tlcat,
+  author = {Kauffman, Louis H.},
+  title  = {{The Temperley-Lieb Category}},
+  note   = {Upload TLCat.pdf: 6-page handwritten manuscript; undated on the manuscript itself (cites Kauffman 2002 on page 6). Ingested 2026-11-18 as library/tlcat/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{geer-patureau-mirand-turaev-2009,
+  author  = {Geer, Nathan and Patureau-Mirand, Bertrand and Turaev, Vladimir},
+  title   = {{Modified quantum dimensions and re-normalized link invariants}},
+  journal = {Compositio Mathematica},
+  year    = {2009},
+  volume  = {145},
+  pages   = {196--212},
+  doi     = {10.1112/S0010437X08003795},
+  note    = {Upload modified-quantum-dimensions-and-re-normalized-link-invariants.pdf. Ingested 2026-11-18 as library/modified-quantum-dimensions-and-re-normalized-link-invariant/ from the owner upload (commit 521b87dca7, epic qou-s4ws); the arXiv preprint is arXiv:0711.4229v2 (upload 0711.4229v2.pdf in Batch A). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{lickorish1993skeins,
+  author  = {Lickorish, W. B. Raymond},
+  title   = {{Skeins and handlebodies}},
+  journal = {Pacific Journal of Mathematics},
+  year    = {1993},
+  volume  = {159},
+  number  = {2},
+  pages   = {337--349},
+  note    = {Upload pjm-v159-n2-p06-s.pdf. Ingested 2026-11-18 as library/pjm-v159-n2-p06-s/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from the cover and pages 337-349 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@unpublished{jones2015vonneumann,
+  author = {Jones, Vaughan F. R.},
+  title  = {{Von Neumann Algebras}},
+  year   = {2015},
+  note   = {Upload vonNeumann2015.pdf: lecture notes dated November 13, 2015 (161 pp.). Ingested 2026-11-18 as library/vonneumann2015/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed.},
+}
+
+@article{arnold1969,
+  author  = {Arnol'd, V. I.},
+  title   = {{The cohomology ring of the colored braid group}},
+  journal = {Mathematical Notes of the Academy of Sciences of the USSR},
+  year    = {1969},
+  volume  = {5},
+  number  = {2},
+  pages   = {138--140},
+  doi     = {10.1007/BF01098313},
+  note    = {English translation of Matematicheskie Zametki 5(2):227-231 (1969). Metadata checked against the Springer landing page 2026-11-22.},
+}
+
+@book{deligne1970,
+  author    = {Deligne, Pierre},
+  title     = {{{\'{E}}quations diff{\'{e}}rentielles {\`{a}} points singuliers r{\'{e}}guliers}},
+  year      = {1970},
+  volume    = {163},
+  publisher = {Springer},
+  series    = {Lecture Notes in Mathematics},
+  doi       = {10.1007/BFb0061194},
+}
+
+@incollection{zagier1991,
+  author    = {Zagier, Don},
+  editor    = {van der Geer, G. and Oort, F. and Steenbrink, J.},
+  title     = {{Polylogarithms, Dedekind zeta functions, and the algebraic K-theory of fields}},
+  booktitle = {Arithmetic Algebraic Geometry},
+  year      = {1991},
+  volume    = {89},
+  pages     = {391--430},
+  publisher = {Birkh{\"a}user},
+  series    = {Progress in Mathematics},
+  doi       = {10.1007/978-1-4612-0457-2_19},
+  note      = {Metadata checked against the Springer landing page 2026-11-22.},
+}
+
+@article{mcphail-snyder-2025,
+  author    = {McPhail-Snyder, Calvin},
+  title     = {{A quantization of the SL₂(ℂ) Chern-Simons invariant of tangle exteriors}},
+  year      = {2025},
+  publisher = {arXiv},
+  url       = {https://arxiv.org/abs/2509.02365},
+}
+
+@article{helmholtz1858,
+  author  = {Helmholtz, Hermann},
+  title   = {{{\"U}ber Integrale der hydrodynamischen Gleichungen, welche den Wirbelbewegungen entsprechen}},
+  journal = {Journal f{\"u}r die reine und angewandte Mathematik},
+  year    = {1858},
+  volume  = {55},
+  pages   = {25--55},
+  doi     = {10.1515/crll.1858.55.25},
+  url     = {https://zenodo.org/records/1448878},
+  note    = {Helmholtz's vortex theorems: vortex lines move with the fluid and the strength of a vortex tube is conserved in an ideal fluid. Bibliographic data verified 2026-11-22 against EuDML doc 147720 and the Zenodo record; free PDF at https://zenodo.org/records/1448878/files/article.pdf. Cited for history only (vortex-atom lineage).},
+}
+
+@article{thomson1867vortexatoms,
+  author  = {Thomson, William},
+  title   = {{On Vortex Atoms}},
+  journal = {Proceedings of the Royal Society of Edinburgh},
+  year    = {1869},
+  volume  = {6},
+  pages   = {94--105},
+  doi     = {10.1017/S0370164600045430},
+  url     = {https://zenodo.org/records/2101269},
+  note    = {Lord Kelvin's vortex-atom proposal: atoms as knotted or linked vortex rings in the ether, with chemical species distinguished by knot type. Read 18 February 1867; the Proceedings volume carries the date 1869 (Cambridge Core record). Bibliographic data verified 2026-11-22; free PDF at https://zenodo.org/records/2101269/files/article.pdf. Cited for history only.},
+}
+
+@article{tait1877knots,
+  author  = {Tait, Peter Guthrie},
+  title   = {{On Knots}},
+  journal = {Transactions of the Royal Society of Edinburgh},
+  year    = {1877},
+  volume  = {28},
+  number  = {1},
+  pages   = {145--190},
+  doi     = {10.1017/S0080456800090633},
+  url     = {https://zenodo.org/records/1844250},
+  note    = {Part I of Tait's knot tables, begun to give Kelvin's vortex atoms a periodic table; source of the Tait conjectures (crossing number, writhe, flyping), settled a century later via the Jones polynomial. Parts II (1884) and III (1885) appeared in vol. 32. Bibliographic data verified 2026-11-22 against Cambridge Core and Zenodo; free PDF at https://zenodo.org/records/1844250/files/article.pdf.},
+}
+
+@book{maxwell1873treatise2,
+  author    = {Maxwell, James Clerk},
+  title     = {{A Treatise on Electricity and Magnetism, Vol. II}},
+  year      = {1873},
+  publisher = {Clarendon Press},
+  url       = {https://archive.org/details/electricandmag02maxwrich},
+  note      = {Art. 421 gives Gauss's double integral for the number of times one closed curve links another, the first appearance of the linking number in physics. Open scan on the Internet Archive (item electricandmag02maxwrich) and Wikisource. Cited for history only.},
+}
+
+@article{kragh2002vortexatom,
+  author  = {Kragh, Helge},
+  title   = {{The Vortex Atom: A Victorian Theory of Everything}},
+  journal = {Centaurus},
+  year    = {2002},
+  volume  = {44},
+  pages   = {32--114},
+  note    = {The standard historical account of the vortex-atom programme (Helmholtz, Kelvin, Tait, Maxwell, J. J. Thomson and others), 1867 to about 1900. Volume and pages verified 2026-11-22 from the article's first page; DOI not verified here, so omitted.},
+}
+
+@article{silver2006knotorigins,
+  author  = {Silver, Daniel S.},
+  title   = {{Knot Theory's Odd Origins}},
+  journal = {American Scientist},
+  year    = {2006},
+  volume  = {94},
+  number  = {2},
+  pages   = {158--165},
+  doi     = {10.1511/2006.58.158},
+  note    = {Short history of how Kelvin's vortex atoms led Tait, Kirkman and Little to tabulate knots. DOI verified 2026-11-22 on americanscientist.org; volume/issue/pages from the standard citation.},
+}
+
+@article{przytycki2007knothistory,
+  author = {Przytycki, Józef H.},
+  title  = {{History of Knot Theory}},
+  year   = {2007},
+  url    = {https://arxiv.org/abs/math/0703096},
+  note   = {arXiv:math/0703096. Open-access survey from Gauss and Listing through Kelvin, Tait, Kirkman and Little to the twentieth century.},
+}
+
+@article{faddeevniemi1997,
+  author  = {Faddeev, Ludvig and Niemi, Antti J.},
+  title   = {{Stable knot-like structures in classical field theory}},
+  journal = {Nature},
+  year    = {1997},
+  volume  = {387},
+  pages   = {58--61},
+  doi     = {10.1038/387058a0},
+  url     = {https://arxiv.org/abs/hep-th/9610193},
+  note    = {arXiv:hep-th/9610193. Knotted solitons in a classical field theory: the modern field-theoretic return of the knotted-particle idea. The arXiv preprint (titled 'Knots and Particles') is held in the library at library/arxiv-hep-th-9610193v1/.},
 }

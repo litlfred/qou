@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1107.5322v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6438edaa3a65c31fc8e6c46ea4454d44b6ce6d1da57100d04ce324cfc629a6ca",
   "file": "1107.5322v1.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The singlet mass is not determined, and the rest must be at the GUT scale.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-22-su5.md",
-   "section_title": "SU(5)",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The new physics source of the neutrinoless double beta decay, may not be just an amusing possibility but even a must.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-31-left-right-symmetry.md",
-   "section_title": "Left-Right Symmetry",
-   "pages": "5-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Moreover, if neutrinoless double beta decay were to be established, and neutrino masses were to be pushed down by cosmology, the TeV L-R scale could be a must.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-4-summary-and-outlook.md",
-   "section_title": "Summary and Outlook",
-   "pages": "7-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A weak fermionic triplet must lie in the TeV range, with good chances for discovery at LHC.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-4-summary-and-outlook.md",
-   "section_title": "Summary and Outlook",
-   "pages": "7-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

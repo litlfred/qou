@@ -1,0 +1,491 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1607.01632v2",
+ "source": {
+  "file": "arxiv-1607.01632v2.pdf",
+  "sha256": "bbfdc5c00d97adff74e26adec34d9479dfcad093d9b851baf27d7afdddd8f495",
+  "bytes": 205460,
+  "pages": 14,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-22T19:30:56Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1607.01632",
+   "version": "2",
+   "primary_class": "hep-ph",
+   "stamp_date": "19 Sep 2016"
+  },
+  "doi": null,
+  "title": "Charge speci\ufb01c baryon mass relations with deformed SU q (3) \ufb02avor symmetry",
+  "authors_raw": "Niels G. Gresnigt",
+  "title_lines": [
+   "Charge specific baryon mass relations with",
+   "deformed SUq(3) flavor symmetry"
+  ],
+  "abstract": "The quantum group SUq(3) = Uq(su(3)) is taken as a baryon \ufb02a- vor symmetry. Accounting for electromagnetic contributions to baryons masses to zeroth order, new charge speci\ufb01c q-deformed octet and decuplet baryon mass formulas are obtained. These new mass relations have errors of only 0.02% and 0.08% respectively; a factor of 20 reduction compared to the standard Gell-Mann-Okubo mass formulas. A new relation between the octet and decuplet baryon masses that is accurate to 1.2% is derived. An explicit formula for the Cabibbo angle, taken to be \u03c0 14, in terms of the deformation parameter q and spin parity JP of the baryons is obtained.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220515123009-04'00'"
+  },
+  "title_raw": "Charge specific baryon mass relations with deformed SUq(3) flavor symmetry",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Charge speci\ufb01c baryon mass relations with deformed SU q (3) \ufb02avor symmetry",
+   "outline": "1 Introduction",
+   "text": "Charge specific baryon mass relations with deformed SUq(3) flavor symmetry",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "q-Deformed baryon mass relations",
+   "page": 3,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Quantum groups and algebras",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Quantum groups as flavor symmetries",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Octet baryons",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Decuplet baryons",
+   "page": 5,
+   "source": "outline",
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Electromagnetic contributions",
+   "page": 6,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Charge specific q-deformed baryon mass relations",
+   "page": 7,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "New octet baryon mass relation",
+   "page": 7,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "New decuplet baryon mass relation",
+   "page": 8,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Octet-decuplet mass relation",
+   "page": 9,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The Cabibbo angle as a function of q and JP",
+   "page": 10,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Discussion and conclusion",
+   "page": 10,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "",
+   "page": 8,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Table comparing the accuracy of the standard Okubo decuplet mass relation with several generalization including the charge speci\ufb01c decuplet generalization that takes into account the electromagnetic mass splitting within isoplets, the q-deformed decuplet mass relation, and the new decuplet formula p",
+   "page": 9,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 948,
+   "n_words": 143,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3690,
+   "n_words": 602,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-2-q-deformed-baryon-mass-relations",
+   "number": "2",
+   "title": "q-Deformed baryon mass relations",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 925,
+   "n_words": 149,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-21-quantum-groups-and-algebras",
+   "number": "2.1",
+   "title": "Quantum groups and algebras",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2139,
+   "n_words": 406,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-22-quantum-groups-as-flavor-symmetries",
+   "number": "2.2",
+   "title": "Quantum groups as flavor symmetries",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1560,
+   "n_words": 248,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-23-octet-baryons",
+   "number": "2.3",
+   "title": "Octet baryons",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 968,
+   "n_words": 187,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-24-decuplet-baryons",
+   "number": "2.4",
+   "title": "Decuplet baryons",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1297,
+   "n_words": 245,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-3-electromagnetic-contributions",
+   "number": "3",
+   "title": "Electromagnetic contributions",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1568,
+   "n_words": 287,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-4-charge-specific-q-deformed-baryon-mass-relatio",
+   "number": "4",
+   "title": "Charge specific q-deformed baryon mass relations",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 621,
+   "n_words": 102,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-41-new-octet-baryon-mass-relation",
+   "number": "4.1",
+   "title": "New octet baryon mass relation",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2261,
+   "n_words": 409,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-42-new-decuplet-baryon-mass-relation",
+   "number": "4.2",
+   "title": "New decuplet baryon mass relation",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1673,
+   "n_words": 277,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-43-octet-decuplet-mass-relation",
+   "number": "4.3",
+   "title": "Octet-decuplet mass relation",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 938,
+   "n_words": 189,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-5-the-cabibbo-angle-as-a-function-of-q-and-jp",
+   "number": "5",
+   "title": "The Cabibbo angle as a function of q and JP",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1125,
+   "n_words": 223,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-6-discussion-and-conclusion",
+   "number": "6",
+   "title": "Discussion and conclusion",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 8721,
+   "n_words": 1279,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 28434,
+  "furniture_lines_stripped": 0
+ }
+}

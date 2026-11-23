@@ -1,0 +1,56 @@
+Odd symplectic groups 347
+
+Let N=2n and let x,,x,...,Xy be the eigenvalues of geSp,, listed in any
+order. If (A) <n let sp,(x,, ..., X,) denote the character of the Ath representation
+of Sp2,- It is well known [Weyl] that
+
+SP, (X1, +5 Xp) = Sha, — 140) thy, -1- 54200 «ne
+
+Let s,(ty, ..., t,) be the Ath Schur function [Mcd2] in n variables t;. The following
+series identity can be inferred from page 219 of [Weyl] and page 240 of [Litt].
+Modern explicit references are [KoT1] and [Pre2].
+
+Il (1—t,t))
+1Si<jsn
+
+aan = ¥ spas,
+T] T1G-xit) ase
+j=li=t
+
+Nowadays [KoT1] it is recognized that it is useful to consider this series in
+two infinite sets of variables x,,x2,... and t,,f2,...: Drop the /(A)Sn require-
+ment and let the products become infinite. Suppose a summand has /(A)=r.
+Then the identity is still true, if one uses an rxr version of the determinant
+to define the formal character sp,(x,, Xz, ...). If N=2n and I(A) Sn, then specia-
+
+lizing xy 4,=Xy+2=...=0 and letting x,, ..., xy be eigenvalues of geSp,., yields
+an actual Sp,, character. This also holds true for N=2n—1: Let x1, x2, ..., Xn
+be the eigenvalues of geSp,,,_, listed in any order. If 1(A)<n let sp,(x;, ..., Xy)
+
+denote the character of the Ath trace free tensor representation of Sp,,-,. Again
+all proofs are deferred to Section 8.
+
+Proposition 3.1. The determinant and series identities above for sp,(x,X2, .-.; Xn)
+also hold true when N=2n—1, i.e. for indecomposable trace free tensor characters
+of Span-1-
+
+The quantities sp,(x,,X2, -.-,X2,-1) appear in [Kng2] in a formal sense;
+see the last paragraph of Section 7 below. The complete symmetry of the eigen-
+values in these formulas is rather remarkable in light of the asymmetric structure
+of the torus T. If i<j is replaced by i<j in the numerator then the analogous
+series for O,, and O2,,4, (versus Sp2, and Sp,,4,) are obtained [Prc2]. The
+“row-wise” or “Jacobi-Trudi” determinant formula of Proposition 3.1 can be
+teadily extended to trace free characters of general Sp,,,,, provided that /(A)Sn
++1. Since [(A) is always <n+1 for trace free representations of Sp,,+,, this
+Provides an example of the special status of Sp,,,, amongst all Sp,,,,- The
+“column-wise” or “Giambelli” determinant formula works in the same cases
+(Proposition 8.1 of [Prc1]). Determinantal expressions of a different nature for
+any Sp,,, , indecomposable trace free character can be obtained from [GsVi],
+which is a purely combinatorial paper on plane partitions.
+
+Given a shape A, let 2’ denote the transpose of A; then i is the jth column
+length of 4. The first part of the following proposition states that Equation
+3.27 of [Kng2] immediately extends from Sp,, to Sp,4 1; the proof is immediate
+and will be omitted. I am indebted to Richard Stanley for the orthogonal-
+Symplectic duality observation, which can be confirmed by looking up Q,(N)
+In [Kng2].

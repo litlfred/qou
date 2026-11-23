@@ -119,20 +119,74 @@ theorem not_energy_path_independent :
   simp [totalEnergyChange, heckeEnergyChange] at this
   norm_num at this
 
-/-- The beta-decay energy difference is always negative:
-    the daughter has lower energy than the parent.
-    (Computationally verified for all A ≤ 6.)
+/-! ## β-decay sign, short typed-crossing model (replaces a vacuous theorem, 2026-11-21)
 
-    **Was an axiom; now proved (2026-11-15).** As stated, the two reals
-    are existentially quantified and not tied to any parent or daughter,
-    so `1` and `0` witness it. The intended content (the energies of the
-    actual parent and daughter normal forms) is open in Lean, bean
-    `qou-n2un`. -/
--- Ref: [leitner2026] §6/groebner-shirshov-energy
-theorem beta_decay_energy_negative (_q : ℝ) (_hq : 1 < _q)
-    (_p _n : ℕ) (_hn : 0 < _n) :
-    ∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par :=
-  ⟨1, 0, one_pos⟩
+The declaration `beta_decay_energy_negative` stood here until 2026-11-21 with
+the statement `∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par`. Both reals were
+existentially quantified and tied to no parent, daughter, normal form or
+energy, and every hypothesis (`_q`, `_hq`, `_p`, `_n`, `_hn`) was unused, so
+`⟨1, 0, one_pos⟩` proved it. It asserted nothing about β decay. Its docstring
+also said "computationally verified for all A ≤ 6"; no producer or witness
+for that claim was found in `computations/`, `docs/audits/` or the beans.
+
+There is no model-free statement to put in its place. PR #8682 (bean
+`qou-99qc`, P3) measured the nucleon-only change of `E(ξ) = Σ_w |c_w| ℓ(w)`
+at the proton `q₀` in the three corpus nucleon models: daughter lower in the
+short typed-crossing model (`−0.20906`), daughter higher in the 11-letter
+typed model (`+0.06389`), equal on the γγ base `V³`. That is a scope-(a)
+measurement on named models, not a structural exclusion.
+
+What is true, and proved below for every real `h`, is the short-model case.
+In the `H₃(q)` basis `T_w`, ordered `e, s₁, s₂, s₁s₂, s₂s₁, s₁s₂s₁`, the
+short-model nucleon normal forms are
+`p = σ₁σ₂ − (h/2)σ₁` and `n = σ₁σ₂ − hσ₁ − (h/2)σ₂ + h²/2`, with
+`n − p = Δ_S` (`computations/qbeta/qbeta_delta_element_fork_pricing_probe.py`;
+the same vectors are `nucP` / `nucN` in PR #8682's
+`QOU/QBeta/NormalFormLengthInvariants.lean`). Then
+`E(p) − E(n) = −|h|`, so for `q > 1` the daughter proton has the lower energy. -/
+
+/-- Bruhat length on `S₃`, basis order `e, s₁, s₂, s₁s₂, s₂s₁, s₁s₂s₁`. -/
+def s3Len : Fin 6 → ℕ := ![0, 1, 1, 2, 2, 3]
+
+/-- `E(ξ) = Σ_w |c_w| ℓ(w)` on an `H₃(q)` normal form given by its coefficient
+    vector in the basis `T_w`, `w ∈ S₃`. -/
+noncomputable def s3Energy (v : Fin 6 → ℝ) : ℝ := ∑ k, |v k| * (s3Len k : ℝ)
+
+/-- Short-model proton normal form `σ₁σ₂ − (h/2)σ₁`. -/
+noncomputable def shortProton (h : ℝ) : Fin 6 → ℝ := ![0, -h / 2, 0, 1, 0, 0]
+
+/-- Short-model neutron normal form `σ₁σ₂ − hσ₁ − (h/2)σ₂ + h²/2`. -/
+noncomputable def shortNeutron (h : ℝ) : Fin 6 → ℝ := ![h ^ 2 / 2, -h, -h / 2, 1, 0, 0]
+
+/-- **β-decay energy change, short typed-crossing model, nucleon only:**
+    `E(p) − E(n) = −|h|`, for every real `h`. The `h²/2` term of the neutron
+    sits on the identity (`ℓ = 0`) and does not contribute. -/
+theorem beta_decay_energy_sub_shortModel (h : ℝ) :
+    s3Energy (shortProton h) - s3Energy (shortNeutron h) = -|h| := by
+  simp only [s3Energy, Fin.sum_univ_six, s3Len, shortProton, shortNeutron]
+  simp [abs_neg, abs_div]
+
+/-- **In the short typed-crossing model the daughter proton has lower energy
+    than the parent neutron**, for every `q > 1` with `h = q − q⁻¹`.
+    Scope: this model only. PR #8682 measures the opposite sign in the
+    11-letter typed model and equality on `V³`. -/
+theorem beta_decay_energy_negative_shortModel (q : ℝ) (hq : 1 < q) :
+    s3Energy (shortProton (q - q⁻¹)) < s3Energy (shortNeutron (q - q⁻¹)) := by
+  have hpos : 0 < q - q⁻¹ := by
+    have h0 : (0 : ℝ) < q := by linarith
+    have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
+    linarith
+  have := beta_decay_energy_sub_shortModel (q - q⁻¹)
+  rw [abs_of_pos hpos] at this
+  linarith
+
+/-- The sign is fixed by `h ≠ 0` alone; at `h = 0` (`q = 1`) the two
+    energies are equal, so the strict inequality needs `q ≠ 1`. -/
+theorem beta_decay_energy_eq_shortModel_at_h_zero :
+    s3Energy (shortProton 0) = s3Energy (shortNeutron 0) := by
+  have := beta_decay_energy_sub_shortModel 0
+  simp at this
+  linarith
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [leitner2026] §6/groebner-shirshov-energy

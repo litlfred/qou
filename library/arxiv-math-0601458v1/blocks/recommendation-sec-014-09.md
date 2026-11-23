@@ -1,1 +1,0 @@
-We also note that this definition is similar to that for a $Z_0$-coloured set for a groupoid $Z_0$ - in fact, the image one should have of an $M$-coloured set is just the same as figure [\[fig:colouredset\]](#fig:colouredset){reference-type="ref" reference="fig:colouredset"}.

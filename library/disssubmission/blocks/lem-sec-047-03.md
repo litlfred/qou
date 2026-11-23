@@ -1,0 +1,1 @@
+3. Let W be a ﬁnite-dimensional complex vector space, G an irreducible subgroup of Gl(W) whose group G/G0 of components is abelian, and H ,→G a subgroup of ﬁnite index such that the restriction W|H is isotypic. Then in fact W|H is irreducible.

@@ -61,7 +61,9 @@ evicted. Library sweep is 122 s on a 74-module closure; the content sweep is
 verification gate's evidence and the distinction it turns on:
 
 - *"`lean-library-sweep.py`: N/N dirty modules rebuilt from source, exit 0"* —
-  source-verified.
+  source-verified.  Quote its `VERDICT:` line.  Exit **8** (`INCOMPLETE`) means
+  no RED but some module TIMEOUT / UNVERIFIED / BLOCKED: that is **not** a
+  green, so do not write "exit 0" for it (bean `qou-tpdg`).
 - *"`lean`-direct against the restored cache, exit 0"* — snapshot-conditional.
   Say so, and say why the sweep was not run.
 
@@ -85,7 +87,14 @@ way (`qou-tqr9`). The script is additive and skips any entry whose
 
 ### Phase 1b: Wait for reviews + status briefing
 
-**Wait for the Copilot review to land** before proceeding.
+> **🟧 OWNER RULING 2026-11-22: Copilot review is no longer required; audit checks
+> replace it.** Verbatim: *"co-pilot review is no longer required. We are using audit
+> checks."* Do not request Copilot or wait for it. Phase 1b is now: run the audit checks
+> (lean-direct on changed `.lean`, `scripts/precision-gates.sh --changed`,
+> `scripts/check-sidecars.sh`, run-validate, producer re-runs) and record what ran in
+> the PR. The text below is history.
+
+~~Wait for the Copilot review to land before proceeding.~~
 Do NOT skip ahead — the review is the input to Phase 2.
 
 > **Gemini is sunset — never wait on it (2026-08-07).** The consumer

@@ -1,0 +1,1 @@
+If W ⊂V is a generic hyperplane, then deg(f) is equal to the number of x ∈M such that f(x) ∈G(k, W) ⊂G(k, V ). For any such x the map f is locally (in the analytic or etale cohomology) an embedding near x and the intersection of f(M) and G(k, W) is transversal at x. When k = n −1, we have f M = M and deg(f) is the degree of f in the usual sense.

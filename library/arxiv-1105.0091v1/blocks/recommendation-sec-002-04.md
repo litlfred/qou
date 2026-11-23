@@ -1,1 +1,0 @@
-The reader should also notice that the degree of a term $\varSigma_{\rho(M,\mu,\nu)}$ corresponding to a partial matching $M$ is $|\mu|+|\nu|-|M|$, where $|M|$ is the size of the partial matching, that is to say the number of pairs $(a \in I_{A},b \in I_{B})$ in $M$.

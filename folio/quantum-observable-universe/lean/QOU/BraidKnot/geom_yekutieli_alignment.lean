@@ -110,7 +110,7 @@ and
 [`rem:baryon-period-ratio`](#rem:baryon-period-ratio)).**
 *The piecewise geometric invariant
 $\mathrm{Geom}(K)$
-([topological mass formula](#prop:topological-mass-formula))
+([topological mass formula](#conj:topological-mass-formula))
 is the evaluation of the Yekutieli rigid dualizing complex
 $\omega_A^\bullet$ on the algebraic stratification of the braid
 $\beta$ with closure $K = \widehat\beta$ (per
@@ -142,7 +142,7 @@ The argument has three parts.
 **Part 1: the rigid dualizing complex mediates duality.**
 The Frobenius--Hopf algebra $A$ at the substrate parameter $q$
 carries a rigid dualizing complex $\omega_A^\bullet$
-(Yekutieli \cite{yekutieli2015}), which satisfies the rigidifying
+(Van den Bergh's definition, as in \cite[Def.~3.1]{yekutieli-zhang1999-auslander-dualizing}), which satisfies the rigidifying
 isomorphism
 
 $$

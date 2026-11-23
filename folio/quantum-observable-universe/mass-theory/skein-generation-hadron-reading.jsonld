@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-generation-hadron-reading",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-generation-hadron-reading",
+  "kind": "remark",
+  "title": "Fundamental knots, the Hopf link and the hadron reading of skein generation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-generation",
+    "papers/quantum-observable-universe/blocks/lem-skein-mass-from-linking"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-skein-generation",
+  "tags": [
+    "skein",
+    "hadron",
+    "torus-knot",
+    "interpretation"
+  ],
+  "text": "skein-generation-hadron-reading.md",
+  "provenance": "authored"
+}

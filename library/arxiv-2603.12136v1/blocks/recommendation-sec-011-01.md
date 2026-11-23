@@ -1,1 +1,0 @@
-If $\ell_w = -\infty$ and $u_w = \infty$ hold, then the choice of $\delta_w$ does not affect the transformed variable bounds and bipolarity may be detected in any case.\ Second, recall that we assumed that the symmetric equitable partitions must be bound-respecting.

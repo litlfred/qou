@@ -1,1 +1,0 @@
-To give the correct versions of \eqref{assoc2} and \eqref{twocoloridemp}, one should label the $2m$-valent vertices in such a way that both sides preserve the 1-tensor. \begin{equation} \ig{1}{twocolorassocalternate} \end{equation} \begin{equation} \ig{1}{twocoloridempalternate} \end{equation} There are additional, color-switched versions of each of these relations.

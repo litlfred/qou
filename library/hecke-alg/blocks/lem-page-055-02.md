@@ -1,0 +1,1 @@
+This proves (i). When T is not semistandard the argument is a little bit ugly. First consider the case where # = #2. Because T is not semistandard there exists an integer 7 such that s; € G, and i and i+ 1 are in the same column of t. As a result, by

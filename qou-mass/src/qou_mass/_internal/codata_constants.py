@@ -344,16 +344,20 @@ M_C12_ATOMIC_MEV_VALIDATION = _ame_atomic_mev(6, 12)   # ¹²C atom
 # ── Internal consistency check (Q_β derived vs CODATA m_n − m_p − m_e) ─
 # Q_β is derived from CAL-1 + CAL-2; this check verifies it agrees
 # with (m_n − m_p − m_e) within combined CODATA σ.
-_q_beta_from_codata_check = (
-    M_N_MEV_VALIDATION - M_P_MEV_VALIDATION - M_E_MEV
-)
-_q_beta_residual = abs(Q_BETA_MEV - _q_beta_from_codata_check)
-_q_beta_combined_err = mp.sqrt(
-    M_N_MEV_VALIDATION_ERR ** 2
-    + M_P_MEV_VALIDATION_ERR ** 2
-    + M_E_MEV_ERR ** 2
-    + Q_BETA_MEV_ERR ** 2
-)
+# Computed at >=50 dps (exemption 1, 2026-11-20): at import time mp.dps is
+# the default 15, and m_n - m_p - m_e is a cancellation from ~939.57 to
+# ~0.78, so the residual below read 7.4e-17 -- binary53 rounding, not data.
+with mp.workdps(max(50, mp.mp.dps)):
+    _q_beta_from_codata_check = +(
+        M_N_MEV_VALIDATION - M_P_MEV_VALIDATION - M_E_MEV
+    )
+    _q_beta_residual = abs(Q_BETA_MEV - _q_beta_from_codata_check)
+    _q_beta_combined_err = mp.sqrt(
+        M_N_MEV_VALIDATION_ERR ** 2
+        + M_P_MEV_VALIDATION_ERR ** 2
+        + M_E_MEV_ERR ** 2
+        + Q_BETA_MEV_ERR ** 2
+    )
 if _q_beta_residual > 5 * _q_beta_combined_err:
     warnings.warn(
         f"Q_β consistency check failed: |Q_β - (m_n - m_p - m_e)| = "

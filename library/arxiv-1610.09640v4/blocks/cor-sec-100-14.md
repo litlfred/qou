@@ -1,0 +1,1 @@
+Let A and B be rings, and assume that A is commutative ring with connected spectrum. If there is an equivalence of triangulated categories D(A) →D(B), then there is an equivalence of abelian categories M(A) →M(B). In other words, A and B are Morita equivalent.

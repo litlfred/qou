@@ -1,1 +1,0 @@
-The following fact will be used countless times: If $M$ is $(f_1,\dotsc,f_r)$-complete, and the homology of $M/(f_1,\dotsc,f_r)$ vanishes in some degree $d$, then also the homology of $M$ must vanish in degree $d$.

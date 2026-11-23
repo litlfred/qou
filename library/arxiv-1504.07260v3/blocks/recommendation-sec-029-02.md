@@ -1,1 +1,0 @@
-(A.47) This transformation must be accompanied by an automorphism of the electric magnetic lattice such that the mass formula is invariant: v →                Eg 1−E2 g λ 0 0 −y 0 0 0 λ −Eg 0 0 0 0 y 0 0 0 0 1 EgE′ g 0 −E′ g(1−E2 g ) λ 0 0 0 1 0 E′ g 0 0 0 0 0 0 0 −Eg 0 1−E2 g λ 0 0 0 0 0 0 0 0 1 0 0 0 0 λ 0 Eg 0 0 0 0 0 0 1 0 0                v .

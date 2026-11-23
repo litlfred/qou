@@ -1,0 +1,1 @@
+Assume that D is a connected A-adequate diagram. Then V0V1 = χ(G(A))−1 and V0V2 = 2 −χ(G(A))  +χ(IG(A))−△(A(D)). Here χ is the Euler characteristic (number of vertices minus number of edges); V0 = ±1 by [LT]. Analogous formulas hold for B-adequate diagrams.

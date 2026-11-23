@@ -1,1 +1,0 @@
-Points of $Z'$ represent fusion categories over $k$, all of which are nondegenerate Indeed, the global dimension is a regular (in fact, locally constant) function on $Z$, and it is nonzero on ${\mathcal C}_1/I$, so it must be nonzero for all points of $Z'$.

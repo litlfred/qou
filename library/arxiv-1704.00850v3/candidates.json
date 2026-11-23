@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1704.00850v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "09dd9c99453ba251bf59236fd6af5f5061182c60f2bd752e82688dbd04680b31",
   "file": "1704.00850v3.pdf"
@@ -16,76 +19,52 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 4
+   "theorem": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
    "name": null,
-   "statement": "Since $\\Phi$ is Harris ergodic, $\\lambda_1$ must be strictly less than $1$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-markov-operators.md",
-   "section_title": "Markov operators",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, under suitable conditions, for almost any $u \\in S_U$, $$\\begin{aligned} \\lim\\limits_{k \\to \\infty} s_k(u) &:= \\lim\\limits_{k \\to \\infty} \\int_{S_V} \\int_{S_U} \\frac{\\pi_{U|V}^2(u|v)}{\\psi(u)} \\pi_{V|U}(v|u') p^{(k)}(u,u') \\, \\mu(du') \\, \\nu(dv) \\\\ &= \\int_{S_V} \\int_{S_U} \\frac{\\pi_{U|V}^2(u|v)}{\\psi(u)} \\pi_{U,V}(u',v) \\, \\mu(du') \\, \\nu(dv) \\\\ &= \\frac{p(u,u) \\pi_U(u)}{\\psi(u)}. \\end{aligned}$$ As $k \\to \\infty$, we expect $$D'^2 = \\int_{S_U} s_k(u) \\, \\mu(du) - s_k^2 \\to \\int_{S_U} \\frac{p(u,u) \\pi_U(u)}{\\psi(u)} \\, \\mu(du) - 1.$$ Suppose that $\\psi(u) \\approx \\pi_U(u)$, then heuristically, $$\\int_{S_U} \\frac{p(u,u) \\pi_U(u)}{\\psi(u)} \\, \\mu(du) - 1 \\approx \\int_{S_U} p(u,u) \\mu(du) - 1 = s_1 - 1.$$ Thus, if the sum of $P$'s eigenvalues, $s_1$, is relatively small, we recommend picking $\\psi(\\cdot)$s that resemble $\\pi_U(\\cdot)$, with possibly heavier tails (to ensure that the moment condition [\\[momentconddual\\]](#momentconddual){reference-type=\"eqref\" reference=\"momentconddual\"} holds).",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-efficiency-of-the-algorithm.md",
-   "section_title": "Efficiency of the algorithm",
-   "pages": "15-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We do not recommend increasing $k$ indefinitely.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-efficiency-of-the-algorithm.md",
-   "section_title": "Efficiency of the algorithm",
-   "pages": "15-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As $\\lambda$ increases, so does $s_k$ for any given $k$, and thus one must increase $k$ in order to find a useful upper bound.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-71-gaussian-chain.md",
-   "section_title": "Gaussian chain",
-   "pages": "17-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "The DA operator P is trace-class if and only if Z SU p(u, u) \u00b5(du) < \u221e. (4) If (4) holds, then for any positive integer k, sk := \u03ba X i=0 \u03bbk i = Z SU p(k)(u, u) \u00b5(du) < \u221e. (5)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-010-a-proof-of-theorem-2.md (p. 26-30)",
+   "external_refs": [],
+   "proof_excerpt": "Note that P is self-adjoint and non-negative. Let {gi}\u221e i=0 be an orthonormal basis of L2(\u03c0U). The operator P is de\ufb01ned to be trace-class if (see e.g. Conway, 2000) \u221e X i=0 \u27e8Pgi, gi\u27e9\u03c0U < \u221e. (24) This condition is equivalent to P being compact with summable eigenvalues. To show th",
+   "section_file": "sections/sec-010-a-proof-of-theorem-2.md",
+   "section_title": "A Proof of Theorem 2",
+   "pages": "26-30",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-010-a-proof-of-theorem-2.md (p. 26-30)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-010-01",
+   "block_iri": "library/arxiv-1704.00850v3/blocks/thm-sec-010-01",
+   "claim_id": "arxiv-1704.00850v3#theorem:2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

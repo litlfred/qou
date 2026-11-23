@@ -117,3 +117,8 @@ theorem h2_curvature_trace :
     Both sides are −12 (as a real integer, imaginary part 0). -/
 theorem crossed_module_euler_characteristic :
     m2_trace h2Sum = ((dim_V * euler_bring : ℤ), (0 : ℤ)) := by decide
+
+/-- The first component of the curvature trace minus the product of dimension and genus-four Euler characteristic vanishes (`qou-j9yk`). -/
+theorem h2_curvature_trace_fst_sub_eq_zero :
+    (m2_trace h2Sum).1 - dim_V * euler_bring = 0 := by
+  rw [crossed_module_euler_characteristic, sub_self]

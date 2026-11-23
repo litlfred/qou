@@ -1,1 +1,0 @@
-The used approach to the satellite polynomials is a good example of tangle calculus [40, 41], which one day should become a truly working formalism for 3d TQFTs far beyond knot and Chern-Simons theories.

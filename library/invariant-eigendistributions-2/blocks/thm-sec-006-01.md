@@ -1,0 +1,1 @@
+The map H2n(S, Z) →CH(go, Z), Γ →θΓ , given by the Integral Formula is a W −isomorphism. More precisely, the homology classes w·S1, w∈W/Wo, form a basis for H2n(S, Z). They correspond to the basis (−1)noϕw, w ∈W/Wo, of CH(go, Z) under the bijection Γ →θΓ .

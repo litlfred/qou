@@ -1,1 +1,0 @@
-With the results by Balsam and Kirillov \cite{BK,Kr} on the relation between Turaev-Viro-Barrett-Westbury state sums, Levin-Wen models \cite{LW} and Kitaev's quantum double models \cite{Kit}, it should also be possible to apply our state sums with defects to those models and to make contact with the work \cite{KK} by Kitaev and Kong.

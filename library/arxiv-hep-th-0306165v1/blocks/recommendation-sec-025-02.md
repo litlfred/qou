@@ -1,1 +1,0 @@
-Hence, as in the case of the trivial ﬂat connection, we can consider the Melvin-Morton expansion of eVN(K, q), eVN(K, q) = X m,n≥0 eDm,nN mhn (6.29) The perturbative expansion (6.15) of the Chern-Simons path integral implies that the coeﬃcients eDm,n should vanish unless m ≤n.

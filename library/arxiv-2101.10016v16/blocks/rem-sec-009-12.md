@@ -1,0 +1,1 @@
+It is shown in [154, 144] that when A is a quasi-triangular Hopf algebra then v → ω = uv−1is a bijective correspondence between ribbon elements and invertible elements ω ∈ A satisfying a) S (a) = ωaω−1, b) S(ω) = ω −1 , and c) S(u) = ω −1uω−1 and d) ∆(ω) = ω ⊗ ω (ω is group-like). Such elements ω are called charmed.

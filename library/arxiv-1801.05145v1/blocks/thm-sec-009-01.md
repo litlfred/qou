@@ -1,0 +1,1 @@
+Assume that the base ﬁeld k is of characteristic 0. Assume that M ∈R-gmod has a head qcH with a self-dual simple module H and c ∈Z. Then we have the equality in the Grothendieck group K(R-gmod) [M] = qc[H] + X k qck[Sk] with self-dual simple modules Sk and ck > c. By duality, we obtain the following corollary.

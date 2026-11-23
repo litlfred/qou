@@ -1,1 +1,0 @@
-For reasons to be explained shortly, it is more convenient to work with Theorem 3.2 instead of Theorem 3.1, so we shall do so; we can convert everything to the framework of Theorem 3.1 by rescaling the variables.

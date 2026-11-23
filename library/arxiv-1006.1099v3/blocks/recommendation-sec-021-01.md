@@ -1,1 +1,0 @@
-This comes down to the fact that the group HomR⊗R(R ⊗R, R) of bimodule homomorphisms has rank 2 in the ﬁrst case, comprising the elements 1⊗1 7→α1+βx, but only rank 1 in the second, since for a Z2-graded map one must have 1 ⊗1 7→α1.

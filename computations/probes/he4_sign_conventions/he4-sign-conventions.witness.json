@@ -1,0 +1,70 @@
+{
+ "q0Anchor": "proton",
+ "q0AnchorReason": "exact Fractions at the proton 50-digit pin",
+ "issue": 8960,
+ "mu_minus_1": {
+  "ruled_left_p": "0.00105775254516",
+  "ruled_left_n": "0.000611191406881",
+  "ruled_right_p": "-0.0133002662166",
+  "ruled_right_n": "-0.0163925262226",
+  "iota_left_p": "-0.00346339010772",
+  "iota_left_n": "-0.00310093708328",
+  "iota_right_p": "0.0131772998964",
+  "iota_right_n": "0.0169871264258"
+ },
+ "rows": [
+  {
+   "chirality": "ruled",
+   "side": "left",
+   "order": "ppnn",
+   "B_chain_keV": "-0.862473813232"
+  },
+  {
+   "chirality": "ruled",
+   "side": "left",
+   "order": "nnpp",
+   "B_chain_keV": "-1.03154644854"
+  },
+  {
+   "chirality": "ruled",
+   "side": "right",
+   "order": "ppnn",
+   "B_chain_keV": "16.0198969437"
+  },
+  {
+   "chirality": "ruled",
+   "side": "right",
+   "order": "nnpp",
+   "B_chain_keV": "17.1542565183"
+  },
+  {
+   "chirality": "iota",
+   "side": "left",
+   "order": "ppnn",
+   "B_chain_keV": "3.64152810417"
+  },
+  {
+   "chirality": "iota",
+   "side": "left",
+   "order": "nnpp",
+   "B_chain_keV": "3.77762997043"
+  },
+  {
+   "chirality": "iota",
+   "side": "right",
+   "order": "ppnn",
+   "B_chain_keV": "-16.6182359819"
+  },
+  {
+   "chirality": "iota",
+   "side": "right",
+   "order": "nnpp",
+   "B_chain_keV": "-18.1020313619"
+  }
+ ],
+ "checks": {
+  "reflection_invariance": true,
+  "right_entry_chain_law_2nucleon": true
+ },
+ "note": "Production placement is ruled chirality, left entry: B = -0.862 keV."
+}

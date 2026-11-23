@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0006051v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006051v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0006051v1",
+  "title": "Finite and p-adic polylogarithms",
   "contains": [
     "library/arxiv-math-0006051v1/sections/sec-front-matter",
     "library/arxiv-math-0006051v1/sections/sec-000",
@@ -27,7 +27,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0006051v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0006051v1.pdf",
     "source_sha256": "10483e75bd3655eaef5e621e7c4090525ffd11939c2e0f0fd711740e72419769",
     "pages": 8,
@@ -38,8 +40,8 @@
       "stamp_date": "7 Jun 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

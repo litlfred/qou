@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/022201-1-online/blocks/lem-sec-008-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "restatement",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "lem-sec-008-01.md",
+  "derivedFrom": "library/022201-1-online/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/022201-1-online/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-008-appendix-a-proof-of-lemma-2.md (p. 5-6)",
+    "claim_id": "022201-1-online#lemma:2",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,1 @@
+// (p2, q2) is close to oa %n R 2\j{°o} and not equal to oo, then the value of τ at this point (p2) q2) is not the same as the value of τ at the original solution z°. There is the following theorem which has a close relation to the above proposition:

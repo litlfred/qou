@@ -1,1 +1,0 @@
-With respect to nonlinear Stratonovich stochastic differential equations, it should be remarked that the use of Lie algebraic techniques, as well as the design of Lie group methods for obtaining strong approximations when the solution evolves on a smooth manifold, has received considerable attention in the recent literature [201-203].

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2007.15570v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6e46f4346a29fd83bf48e3ce2e5f10c6a3af97a0d3638c95a5f1acb58cb4fce5",
   "file": "2007.15570v1.pdf"
@@ -16,46 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 2
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "Final state particles do not propagate and are essentially the input that should be given to a detector simulation.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-e-exiting-the-nucleus.md",
-   "section_title": "E Exiting the nucleus",
-   "pages": "6-6",
+   "statement": "In our Monte Carlo simulation, the nuclear transparency has been obtained via the following procedure.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-011-c-nuclear-transparency.md (p. 8-9)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-011-c-nuclear-transparency.md",
+   "section_title": "C Nuclear transparency",
+   "pages": "8-9",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Nevertheless, we do not expect such effects to change our results significantly, and thus $\\sigma_{\\rm MC}$ should be a good approximation of the reaction cross section.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-b-proton-carbon-scattering-data.md",
-   "section_title": "B Proton-carbon Scattering Data",
-   "pages": "7-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-011-c-nuclear-transparency.md (p. 8-9)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-011-01",
+   "block_iri": "library/arxiv-2007.15570v1/blocks/prop-sec-011-01",
+   "claim_id": "arxiv-2007.15570v1#prop-sec-011-01"
   }
  ]
 }

@@ -1,1 +1,0 @@
-The only way for this to happen is that two of the singularities with a massless 3 and 1 of SU(3) must combine into a singular- ity with a massless 4 of SU(4) while the third singularity goes elsewhere3.

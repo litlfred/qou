@@ -1,0 +1,1 @@
+The system (70) has a (formal) fundamental solution as follows. Around the origin, there exists a convergent fundamental solution of (70): F (0) (z; Enn, An−1) = H(0) (z; Enn, An−1) · zAn, (71) where An = diag Ä λ(n) , ..., λ(n) n ä and H(0) (z) is an n × n matrix, with (i, j)-th entry H(0)(z)ij given by H(0) (z)ij = a(n−1) i λ(n) j −λ(n−1) i · n−1Fn−1

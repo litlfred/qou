@@ -1,1 +1,0 @@
-The category $hmf_w$ of matrix factorizations up to chain homotopies has the same objects as $mf_w$ and the $\Q$-vector space of morphisms from $M$ to $N$ is the quotient of the space of morphisms in $mf_w$ by null-homotopic morphisms (the homotopy maps must have bidegree $(-1,-1)$).

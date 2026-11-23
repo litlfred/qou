@@ -9,7 +9,7 @@ binding_assembly` whose body was that claim field: the self-assuming
 projection of AGENTS.md §3b-cond item 5.  Both are removed (2026-09-03).
 
 **It was also unreachable.**  The block
-[`prop:six-term-per-derivation-weights`](../../../../mass-theory/six-term-per-derivation-weights.md)
+[`conj:six-term-per-derivation-weights`](../../../../mass-theory/six-term-per-derivation-weights.md)
 refs `qou:QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly`, and
 `resolveCanonicalLean` — the resolver the QA sweep uses — takes the direct
 module path first when that file declares the named decl.

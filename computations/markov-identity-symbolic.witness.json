@@ -19,13 +19,13 @@
       "convention": "averaged-crossings",
       "peel": {
         "float_atoms": 0,
-        "elapsed_sec": "0.07",
+        "elapsed_sec": "0.09",
         "rational_in_q": true
       },
       "bridge": {
         "float_atoms": 0,
         "chi_float_atoms_total": 0,
-        "elapsed_sec": "0.26"
+        "elapsed_sec": "0.28"
       },
       "identically_zero": true,
       "zero_test_method": "normalised-numerator",
@@ -34,31 +34,31 @@
         "proton_q0": {
           "q": "1.1099785827513808075916690956",
           "residual": "0",
-          "peel": "1.1457596924573008697",
+          "peel": "0.62932840220292191817",
           "relative": "0.0"
         },
-        "muon_q0": {
+        "muon_q0_RETIRED_PIN": {
           "q": "1.109978595557334719899763",
           "residual": "0",
-          "peel": "1.1457597822878355047",
+          "peel": "0.6293284241672176384",
           "relative": "0.0"
         },
         "q_1_3": {
           "q": "1.3",
           "residual": "0",
-          "peel": "3.3688168001572002037",
+          "peel": "1.277736943233662226",
           "relative": "0.0"
         },
         "q_0_7": {
           "q": "0.7",
           "residual": "0",
-          "peel": "-4.7449410256554617359",
+          "peel": "-0.3531913855255301353",
           "relative": "0.0"
         },
         "q_2": {
           "q": "2",
           "residual": "0",
-          "peel": "116.33458984375",
+          "peel": "51.77927734375",
           "relative": "0.0"
         }
       }
@@ -78,13 +78,13 @@
       "convention": "colour-weighted-averaged-crossing",
       "peel": {
         "float_atoms": 0,
-        "elapsed_sec": "2.62",
+        "elapsed_sec": "9.06",
         "rational_in_q": true
       },
       "bridge": {
         "float_atoms": 0,
         "chi_float_atoms_total": 0,
-        "elapsed_sec": "225.10"
+        "elapsed_sec": "370.97"
       },
       "identically_zero": true,
       "zero_test_method": "normalised-numerator",
@@ -93,31 +93,31 @@
         "proton_q0": {
           "q": "1.1099785827513808075916690956",
           "residual": "0",
-          "peel": "0.57517224391777187083",
+          "peel": "0.15196833920423160759",
           "relative": "0.0"
         },
-        "muon_q0": {
+        "muon_q0_RETIRED_PIN": {
           "q": "1.109978595557334719899763",
           "residual": "0",
-          "peel": "0.57517233101788385192",
+          "peel": "0.15196834571750453269",
           "relative": "0.0"
         },
         "q_1_3": {
           "q": "1.3",
           "residual": "0",
-          "peel": "5.1997359934092963686",
+          "peel": "0.56449394438262787032",
           "relative": "0.0"
         },
         "q_0_7": {
           "q": "0.7",
           "residual": "0",
-          "peel": "12.822898971650286083",
+          "peel": "0.090470223603728094628",
           "relative": "0.0"
         },
         "q_2": {
           "q": "2",
           "residual": "0",
-          "peel": "12343.670951367542148",
+          "peel": "3090.769385799691081",
           "relative": "0.0"
         }
       }
@@ -130,11 +130,11 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "5418ad603947",
-  "scriptCommitSha": "90b1419778f06b3c3539c1c62769f1056ee082b1",
-  "commitSha": "03d1c95465daea084a6ce28fbb7986843e8d328b",
+  "scriptHash": "a7b83e6e9437",
+  "scriptCommitSha": "e81e6204c34f35c49818a444ba147161b6444687",
+  "commitSha": "928351a9f34d7ebe2dde64b891c5a7e8857259ad",
   "engine": "sympy",
-  "computedAt": "2026-08-19T15:45:36.916707+00:00",
+  "computedAt": "2026-11-20T20:01:15.262505+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0"
 }

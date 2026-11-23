@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2210.09583v1/blocks/thm-sec-003-03",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "thm-sec-003-03.md",
+  "derivedFrom": "library/arxiv-2210.09583v1/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2210.09583v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.13",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-003-2-osp12-braid-invariant.md (p. 3-6)",
+    "claim_id": "arxiv-2210.09583v1#theorem:2.13",
+    "lean_status": "unformalized"
+  }
+}

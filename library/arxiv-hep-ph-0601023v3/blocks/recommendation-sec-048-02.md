@@ -1,1 +1,0 @@
-Search for proton decay should continue as one of the prime experimental efforts as it probes the nature of particle interactions at extremely short distances which the accelerators can never hope to reach.

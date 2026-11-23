@@ -1,0 +1,1 @@
+Let α, γ, δ ∈C \ N and let f(z) = (1 −z)α z log 1 −z !γ 1 z log z log 1 −z !!δ . Then the power series coeﬃcients {an} of f satisfy an ∼n−α−1 Γ(−α)(log n)γ(log log n)δ . Proof See [FO90, Theorem 3B]. □

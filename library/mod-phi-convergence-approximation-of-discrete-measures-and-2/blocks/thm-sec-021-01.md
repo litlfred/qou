@@ -1,0 +1,1 @@
+— Fix ε ∈(0, 1) such that γ(ε) ⩽mini∈[[1,d]] σ2 i 2 . There exist some positive constants C1(d, c, φ) and C2(d, c, φ), that depend only on d, the cut function c and the reference distribution φ, such that ∥bµ −bν∥A ⩽C1(d, c, φ)  1 + C2(d, c, φ) √ λ  ×

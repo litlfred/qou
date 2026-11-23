@@ -1,1 +1,0 @@
-{} From now on we shall usually write $i|_V$ instead of $\mrm{rest}^{\gerbe{G}}_{V / U}(i)$, for a local object $i \in \opn{Ob} \gerbe{G}(U)$; and $g|_{V_1}$ instead $\mrm{rest}^{\gerbe{G}}(i,j)_{V_1 / V_0}(g)$, for a local morphism $g \in \gerbe{G}(i,j)(V_0)$.

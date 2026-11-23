@@ -1,1 +1,0 @@
-Although the validity of these “physical” beta functions is still a matter of active debate [51–54], in this Letter we shall argue that this formulation [in particular, the emergence of a maximum for ξðμÞ] would allow for a successful inflationary scenario.

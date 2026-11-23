@@ -1,0 +1,1 @@
+Let Q be a plane in H3 which intersects both P−and P+. Then, there exists t0, such that Q intersects P, and the cosine of the angle α of intersection satisﬁes | cos(α)| < 3e−t, as long as t > t0. The number t0 can be picked independently of Q.

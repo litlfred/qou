@@ -1,0 +1,1 @@
+The following conditions are equivalent for I ∈M: (i) I is injective. (ii) The additive functor HomM(−, I) : Mop →Ab is exact. (iii) Every short exact sequence (2.6.1) with M ′ = I is split. Exercise 2.7.3. Prove Proposition 2.7.2. Derived Categories | Amnon Yekutieli |

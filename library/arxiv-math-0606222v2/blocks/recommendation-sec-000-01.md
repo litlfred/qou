@@ -1,1 +1,0 @@
-In each case there is a natural explicit labeling of the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations $V_\lambda^{\mathbb{F}}$ by partitions $\lambda\in\Lambda_n$ which we shall describe in detail.

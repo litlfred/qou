@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9302246v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9302246v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-9302246v1",
+  "title": "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu-Jona-Lasinio Model of QCD",
   "contains": [
     "library/arxiv-hep-ph-9302246v1/sections/sec-front-matter",
     "library/arxiv-hep-ph-9302246v1/sections/sec-000",
@@ -33,7 +33,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-9302246v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9302246v1.pdf",
     "source_sha256": "2d352297255be8de72594e79b5c2e828ec8636b3517794b4dcfc197715425401",
     "pages": 44,
@@ -44,8 +46,8 @@
       "stamp_date": "11 Feb 1993"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

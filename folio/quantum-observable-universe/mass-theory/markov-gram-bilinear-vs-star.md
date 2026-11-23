@@ -31,12 +31,11 @@ one such direction, so $G$ is indefinite for every $q$ and for every convention 
 $y_{(2,1)} > 0$. The indefiniteness is a property of the *pairing*, not of the
 substrate.
 
-## The star pairing, and what is withdrawn
+## The star pairing versus the bilinear trace form
 
 An earlier reading took the single negative eigenvalue of $G$ as a physical
 signature: the trace pairing was said to be a spacetime form, and the framework's
-natural object a causal structure rather than a metric space. **That reading is
-withdrawn.** A metric is built from the $*$-structure, and the Hecke $*$-structure is
+natural object a causal structure rather than a metric space. That causal-signature interpretation does not apply: a metric is built from the $*$-structure, and the Hecke $*$-structure is
 $T_w^{*} = T_{w^{-1}}$. Pairing against it replaces the bilinear $\mathrm{tr}(AB)$ by
 the sesquilinear $\mathrm{tr}(AB^{*})$, which on $M_d$ is a sum of $d^{2}$ squares:
 signature $(d^{2},0)$, no negative direction anywhere. The eigenvalue magnitudes are

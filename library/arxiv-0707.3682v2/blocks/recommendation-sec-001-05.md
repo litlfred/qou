@@ -1,1 +1,0 @@
-(More results along these lines are described in Remark 3.20(3).) (3) Parts (1) and (2) of Conjecture 2.17 hold when k is a totally real Abelian number ﬁeld, and in fact the corresponding parts of a much stronger conjecture that we shall describe in Section 3 hold for cyclotomic ﬁelds (see Proposition 4.17).

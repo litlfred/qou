@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1707.02991v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "f4f539f74403dd24e5641276bbf7b131e32820662ea471f296e6fd3515cd36fe",
   "file": "1707.02991v1.pdf"
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "By standard arguments [4, 14, 15], BPS states in brane systems \u2013 in particular those describing knots \u2013 should have a description in terms of supersymmetric quantum mechanics on their world-volume, which however has not been identi\ufb01ed to date.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-bps-states-knots-and-quivers.md",
-   "section_title": "BPS states, knots and quivers",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In this letter we argue that BPS states enumerated by motivic Donaldson-Thomas invariants of quiver mod- uli spaces should be identi\ufb01ed with those arising in the supersymmetric quiver quantum mechanics description of brane systems encoding knots.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-bps-states-knots-and-quivers.md",
-   "section_title": "BPS states, knots and quivers",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Moreover, as predicted in [@Kontsevich:2010px], the Cohomological Hall Algebra associated to a quiver should be identified as the algebra of BPS states [@Harvey:1996gc], which deserves further studies in the context of brane realization of knot invariants.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-knot-invariants-from-quiver-representation-theor.md",
-   "section_title": "Knot invariants from quiver representation theory",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It is natural to expect that various properties, well known on one side of the duality, should have their counterparts on the other side.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-summary.md",
-   "section_title": "Summary",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We expect that analogous objects should exist for quivers, presumably generalizing observations in [@COM:8276935].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-summary.md",
-   "section_title": "Summary",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "On the other hand, various properties of quivers, their moduli spaces, and other related objects -- in particular Cohomological Hall Algebra -- should shed new light on properties of knot invariants, in particular knot homologies.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-summary.md",
-   "section_title": "Summary",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

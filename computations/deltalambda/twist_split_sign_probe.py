@@ -93,7 +93,8 @@ def main() -> int:
     print(f"\n  block traces at z_D: w(4,2) = {mp.nstr(w42, 20)}, w(3,3) = {mp.nstr(w33, 20)}"
           f"  (both > 0: {traces_pos})")
     me = mp.mpf(str(M_E_MEV))            # CODATA decimal, round-trips exactly
-    alpha = me / (q0 * (q0 - 1))         # E0, the alpha of the working log forms
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    alpha = _qbeta_e0.order_zero_scaled(me, q0)         # E0, the alpha of the working log forms
     lnq = mp.log(q0)
     tol = mp.mpf(10) ** -50
 

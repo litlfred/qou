@@ -1,1 +1,0 @@
-There is only one line $s$ with endpoint $P_3$ and orthogonal to $r$ (exercise): the isometry $\varphi$ must also fix $s$ and hence fixes the point $r\cap s$. \end{proof} Isometries of type (1), (2), and (3) are called respectively \emph{elliptic}, \emph{parabolic}, and \emph{hyperbolic}.

@@ -3,6 +3,7 @@
  "doc_id": "arxiv-2411.03801v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a7f1f6fa74cb0949e8e9b3aa8a175a534182b79d37dabdfb0bf024fd744b9444",
   "file": "2411.03801v2.pdf"
@@ -20,15 +21,28 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 20,
+  "candidates": 3,
   "by_kind": {
-   "theorem": 2,
-   "definition": 2,
-   "remark": 5,
-   "example": 5,
-   "lemma": 6
+   "theorem": 1,
+   "lemma": 1,
+   "remark": 1
   },
-  "formalization_candidates": 10
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 3
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2,
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  },
+  "by_lean_status": {
+   "proved-here": 1,
+   "doc-cited-in-lean-unlinked-claim": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
@@ -36,260 +50,77 @@
    "source_kind": "theorem",
    "number": "1.1",
    "name": null,
-   "statement": "The 1-loop equals torsion conjecture holds for hyperbolic 2-bridge knots.",
+   "statement": "The 1-loop equals torsion conjecture holds for hyperbolic 2-bridge knots. Let us comment on this conjecture and our proof for hyperbolic 2-bridge knots. Both the 1-loop invariant and the adjoint Reidemeister torsion are given (up to normalization factors) by the determinant of a matrix with coefficients in the trace field. For the 1-loop, the size of the matrix is the number of tetrahedra of an essential ideal triangulation, and the matrix is obtained by the Neumann\u2013Zagier matrices of the ideal triangulation and their shapes. Alternatively, as was shown by the second author, the 1-loop is essentially the Jacobian of Ptolemy equations of an es",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-001-21-the-1-loop-invariant.md (p. 2-3)",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/sec-001-21-the-1-loop-invariant.md",
    "section_title": "The 1-loop invariant",
    "pages": "2-3",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "definition",
-   "source_kind": "definition",
-   "number": "2.1",
-   "name": "[DG13]",
-   "statement": "The 1-loop invariant of an essential triangulationT is defined as",
-   "section_file": "sections/sec-002-2-two-invariants-from-the-asymptotics-of-the-kas.md",
-   "section_title": "Two invariants from the asymptotics of the Kashaev invariant",
-   "pages": "3-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2.2",
-   "name": null,
-   "statement": "The above definition is a symmetric version of the original one given in [DG13]",
-   "section_file": "sections/sec-002-2-two-invariants-from-the-asymptotics-of-the-kas.md",
-   "section_title": "Two invariants from the asymptotics of the Kashaev invariant",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "2.3",
-   "name": null,
-   "statement": "SnapPy\u2019s default triangulationT of the knot 61 consists of 4 tetrahedra with",
-   "section_file": "sections/sec-002-2-two-invariants-from-the-asymptotics-of-the-kas.md",
-   "section_title": "Two invariants from the asymptotics of the Kashaev invariant",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "2.4",
-   "name": null,
-   "statement": "An essential open diagram for the 6 1 knot, along with an assignment of",
-   "section_file": "sections/sec-003-22-essential-open-diagrams-and-their-potential.md",
-   "section_title": "Essential open diagrams and their potential",
-   "pages": "5-7",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "2.4",
-   "name": null,
-   "statement": "continued. The diagram in Figure 2 has 8 essential corners marked by red",
-   "section_file": "sections/sec-003-22-essential-open-diagrams-and-their-potential.md",
-   "section_title": "Essential open diagrams and their potential",
-   "pages": "5-7",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "definition",
-   "source_kind": "definition",
-   "number": "2.5",
-   "name": "[OT15]",
-   "statement": "The Ohtsuki\u2013Takata invariant of an essential open diagram \u02daD is",
-   "section_file": "sections/sec-004-23-the-ohtsukitakata-invariant.md",
-   "section_title": "The Ohtsuki\u2013Takata invariant",
-   "pages": "7-9",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "2.4",
-   "name": null,
-   "statement": "continued. The normalizing functions \u2126 1 and \u2126 2 of the essential open",
-   "section_file": "sections/sec-004-23-the-ohtsukitakata-invariant.md",
-   "section_title": "The Ohtsuki\u2013Takata invariant",
-   "pages": "7-9",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "2.4",
-   "name": null,
-   "statement": "continued. For the open diagram \u02daD of Figure 2, its closureD is shown on the",
-   "section_file": "sections/sec-007-32-collapsing-the-octahedral-decomposition-to-an.md",
-   "section_title": "Collapsing the octahedral decomposition to an ideal triangulation",
-   "pages": "11-13",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4.1",
-   "name": null,
-   "statement": "For \u02daD as above, \u03c4(T\u02daD) =\u00b1\u03c9(\u02daD).",
-   "section_file": "sections/sec-008-4-proof-of-the-main-theorem.md",
-   "section_title": "Proof of the main theorem",
-   "pages": "13-14",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-001-21-the-1-loop-invariant.md (p. 2-3)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-001-01",
+   "block_iri": "library/arxiv-2411.03801v2/blocks/thm-sec-001-01",
+   "claim_id": "arxiv-2411.03801v2#theorem:1.1",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/FiveTwoOhtsukiBridge.lean:cubic_ne_zero"
+   ],
+   "needs_lean_proof": false
   },
   {
    "kind": "lemma",
    "source_kind": "lemma",
-   "number": "4.2",
+   "number": "B",
    "name": null,
-   "statement": "We have\u27e8f,e\u27e9 = 2 for all C-edges e.",
-   "section_file": "sections/sec-009-41-flattening-of-the-collapsed-triangulation.md",
-   "section_title": "Flattening of the collapsed triangulation",
-   "pages": "14-17",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4.3",
-   "name": null,
-   "statement": "We have\u27e8f,e\u27e9 = 2 for all R-edges e.",
-   "section_file": "sections/sec-009-41-flattening-of-the-collapsed-triangulation.md",
-   "section_title": "Flattening of the collapsed triangulation",
-   "pages": "14-17",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4.4",
-   "name": null,
-   "statement": "For an O or U-edge e, we have",
-   "section_file": "sections/sec-009-41-flattening-of-the-collapsed-triangulation.md",
-   "section_title": "Flattening of the collapsed triangulation",
-   "pages": "14-17",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4.5",
-   "name": null,
-   "statement": "Let ei and ej be two edges of T\u02daD that correspond to consecutive under or",
-   "section_file": "sections/sec-009-41-flattening-of-the-collapsed-triangulation.md",
-   "section_title": "Flattening of the collapsed triangulation",
-   "pages": "14-17",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.6",
-   "name": null,
-   "statement": "In the proof of Lemma 4.5, we used two tetrahedra that are below the arcs a1",
-   "section_file": "sections/sec-009-41-flattening-of-the-collapsed-triangulation.md",
-   "section_title": "Flattening of the collapsed triangulation",
-   "pages": "14-17",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4.7",
-   "name": null,
-   "statement": "Let f1,...,f k be functions in variables x1,...,x k and fix a solution to",
-   "section_file": "sections/sec-010-42-variable-reduction.md",
-   "section_title": "Variable reduction",
-   "pages": "17-20",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.10",
-   "name": null,
-   "statement": "We expect that a similar lemma to the one above holds for all essential",
-   "section_file": "sections/sec-010-42-variable-reduction.md",
-   "section_title": "Variable reduction",
-   "pages": "17-20",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": null,
-   "name": null,
-   "statement": "B.1. Let ei and ej be two edges of T\u02daD that correspond to adjacent regions. Then",
+   "statement": "1. Let ei and ej be two edges of T\u02daD that correspond to adjacent regions. Then there is a triple h = (h,h\u2032,h\u2032\u2032) of vectors such that hj +h\u2032 j +h\u2032\u2032 j = 0 and \u27e8f +h,e\u27e9\u2212\u27e8 f,e\u27e9 = \uf8f1 \uf8f4\uf8f2 \uf8f4\uf8f3 \u22121 if e =ei 1 if e =ej 0 otherwise In addition, such h can be chosen independently of f.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-012-appendix-b-braid-closures.md (p. 21-23)",
+   "external_refs": [],
+   "proof_excerpt": "Let ri and rj be the regions corresponding to the edges ei and ej, respectively. As they are adjacent, we can find two adjacent corners, with one lying in ri and the other in rj. If these corner are separated by an underpass, then we define h by assigning integer triples to the c",
    "section_file": "sections/sec-012-appendix-b-braid-closures.md",
    "section_title": "Appendix B. Braid closures",
    "pages": "21-23",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-012-appendix-b-braid-closures.md (p. 21-23)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-012-01",
+   "block_iri": "library/arxiv-2411.03801v2/blocks/lem-sec-012-01",
+   "claim_id": "arxiv-2411.03801v2#lemma:B",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/QBeta/BorromeanThreeCuspNZHessian.lean:scaledZ1_normSq_eq_two",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/FiveTwoOhtsukiBridge.lean:cubic_ne_zero"
+   ],
+   "needs_lean_proof": true
   },
   {
    "kind": "remark",
    "source_kind": "remark",
-   "number": null,
+   "number": "B",
    "name": null,
-   "statement": "B.2. Adjacent regions have a segment in common, and the proof of Lemma B.1",
+   "statement": "2. Adjacent regions have a segment in common, and the proof of Lemma B.1 works for any pair of corners at one end of the segment. In particular, a choice of h may 1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS 23 ri rj ri rj (1, 0,\u22121)(\u22121, 1, 0) (1,\u22121, 0)(\u22121, 0, 1) Figure 19. A choice of h. not be not unique. However, regardless of a choice of h, the product \u03b6h is invariant (see",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-012-appendix-b-braid-closures.md (p. 21-23)",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/sec-012-appendix-b-braid-closures.md",
    "section_title": "Appendix B. Braid closures",
    "pages": "21-23",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.6",
-   "name": null,
-   "statement": "). Moreover,\u03b6h for Figure 19 agrees with the inverse of what Ohtsuki and Takata",
-   "section_file": "sections/sec-012-appendix-b-braid-closures.md",
-   "section_title": "Appendix B. Braid closures",
-   "pages": "21-23",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "rem-sec-012-02",
+   "block_iri": "library/arxiv-2411.03801v2/blocks/rem-sec-012-02",
+   "claim_id": "arxiv-2411.03801v2#remark:B"
   }
  ]
 }

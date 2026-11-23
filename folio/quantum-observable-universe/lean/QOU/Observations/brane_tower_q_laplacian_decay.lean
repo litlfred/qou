@@ -1,4 +1,5 @@
 import Mathlib.Analysis.SpecificLimits.Basic
+import QOU.Shared.ArchimedeanEval
 
 /-!
 # QOU.Observations.brane_tower_q_laplacian_decay
@@ -43,23 +44,25 @@ namespace QOU.Observations
 /-- Dual-feasibility / decay **inputs** for the brane-tower bound. Every
     field is a genuine hypothesis supplied by the q-Laplacian spectrum;
     the manuscript's closed-form remainder bound is **derived** in
-    `brane_tower_q_laplacian_decay`, not carried here. -/
-class BraneTowerQLaplacianDecayContext where
+    `brane_tower_q_laplacian_decay`, not carried here.
+
+    Extends `QOU.Shared.ArchimedeanEval` (beans `qou-mt7r`, `qreal`) so
+    `q_real := eval q` is derived from the inherited substrate parameter
+    `q : R` via the assumed evaluation `eval : R →+* ℝ` rather than posited
+    as an unrelated free real field. -/
+class BraneTowerQLaplacianDecayContext extends QOU.Shared.ArchimedeanEval where
   /-- Substrate q-Planck constant `ℏ_q = (q − 1)/q`. -/
   hbar_q : ℝ
   /-- L² norm of the Reeb-bundle density `ρ`. -/
   rho_L2 : ℝ
-  /-- Substrate parameter `q` (archimedean, over `ℝ`: the bound is a
-      real-valued norm inequality, §7c). -/
-  q_real : ℝ
   /-- The brane-tower sum `T(ρ) = ∑_{n ≥ 1} ℏ_q^{2n} Δ⁽ⁿ⁾(ρ)`. -/
   T_rho : ℝ
   /-- The single-jet (n = 1) local Laplacian contribution `Δ⁽¹⁾(ρ)`. -/
   delta1_rho : ℝ
   /-- The geometric ratio of the tail decay, `r = q⁻²`. -/
   r : ℝ
-  /-- The ratio is the substrate `q⁻²`. -/
-  ratio_eq : r = q_real ^ (-2 : ℤ)
+  /-- The ratio is the substrate `q⁻²` (`q_real := toArchimedeanEval.q_real`). -/
+  ratio_eq : r = toArchimedeanEval.q_real ^ (-2 : ℤ)
   /-- Positivity: `0 ≤ r`. -/
   r_nonneg : 0 ≤ r
   /-- Contraction: `r < 1` (i.e. `q > 1`). -/

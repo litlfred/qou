@@ -1,1 +1,0 @@
-Similarly, we shall say that $\Bc$ is a monoidal right $\vc$-module category, with action $\triangleleft:\Bc\times \vc\to \Bc, $ such that $$\uno\triangleleft \uno\simeq \uno,$$ and there are natural isomorphisms $l_{B,X}: B \triangleleft X\to B\ot (\uno \triangleleft X),$ such that for any $X, Y\in \vc$, $B\in \Bc$

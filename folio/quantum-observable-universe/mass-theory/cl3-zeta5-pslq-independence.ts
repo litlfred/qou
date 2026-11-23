@@ -5,7 +5,7 @@ export default proposition({
   title:
     "PSLQ certifies Cl$_3$(2$\\pi$/5) $-$ Cl$_3$(4$\\pi$/5) is independent of standard depth-3 periods up to coefficient norm 10$^8$",
   lean: {
-    ref: "qou:QOU.BraidKnot.Cl3Zeta5PslqIndependence.pslq_independence",
+    ref: "qou:QOU.BraidKnot.Cl3Zeta5PslqIndependence.cl3_diff_eq_sqrt5_L3_chi5",
     validation: "not_checked",
   },
   computation: {
@@ -15,7 +15,10 @@ export default proposition({
       "computations/cl3-zeta5-pslq-search.witness.json",
     status: "verified",
   },
-  uses: ["rem:b1-current-status"],
+  // rem:b1-current-status dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: [],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "pslq",

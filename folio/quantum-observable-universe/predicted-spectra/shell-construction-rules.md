@@ -12,7 +12,7 @@ The $Q$-value for any $\beta^-$ decay $\mathcal{N}(Z, N) \to \mathcal{N}(Z\!+\!1
 
 **(P5)** The finiteness bound $[n_s - 1]_q! > [2]_q^{n_s - 1}$ crosses at $n_s = 5$.
 
-**(P6)** We have $T_{2,9} \cdot T_{2,9}^{-1} = \mathbf{1}$ (verified). Conjugation by $T_{2,9}$ preserves chirality. All same-sign crossings commute with the crossing reversal involution.
+**(P6)** $T_{2,9} \cdot T_{2,9}^{-1} = \mathbf{1}$ (verified). Conjugation by $T_{2,9}$ preserves chirality. All same-sign crossings commute with the crossing reversal involution.
 
 ## Conjectured (used but not yet proven)
 
@@ -187,6 +187,6 @@ $$
   \approx 0.513 \text{ MeV}
 $$
 
-We have $\mathcal{Q}_{\mathrm{exp}} \approx 0.318 \pm 0.0001$ MeV. The error is $+61\%$.
+Then $\mathcal{Q}_{\mathrm{exp}} \approx 0.318 \pm 0.0001$ MeV. The error is $+61\%$.
 
 **Coverage.** The algorithm produces a definite answer for any $(Z, N)$ from $q$ alone. The $+61\%$ error for ${}^{60}$Co indicates the shell correction (Step 4) is not yet capturing the full structure. The conjectures (C1)–(C3) require verification. The magic number derivation (C1) from $q$ remains the key open problem.

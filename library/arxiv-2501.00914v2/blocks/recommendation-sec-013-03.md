@@ -1,1 +1,0 @@
-Then $F_{X^\circ_0,\spint_{0,g-1}}({\bf 1}) \neq 0$ ultimately implies (via the Heegaard Floer contact invariant) that the open book for $S^3$ with binding $K$ supports the tight contact structure on $S^3$, and so $K$ must be strongly quasipositive. \end{remark}

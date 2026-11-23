@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2607.29018v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "789faa122dd322901b603935e0158e20c01b4f975eea8cf4923174f013385947",
   "file": "2607.29018v1.pdf"
@@ -16,106 +19,57 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 6
+   "lemma": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "both": 1
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore, exactly one of the following three cases must occur.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.1",
+   "name": "cf. [27, Proposition 2.3]",
+   "statement": "There exists a positive integer N0 such that for every n \u2265N0 and any \u03b3 \u22a2n with |fix(\u03b3)| \u22652, we have max \u03b6\u22a2n \u03b6 /\u2208{(n),(1n)} \u02dc\u03c7\u03b6(\u03b3) = \u02dc\u03c7(n\u22121,1)(\u03b3).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-004-3-proof-of-theorem.md (p. 8-11) citing cf. [27, Proposition 2.3], [27, Proposition 2.3]",
+   "external_refs": [
+    "cf. [27, Proposition 2.3]",
+    "[27, Proposition 2.3]"
+   ],
+   "proof_excerpt": "2 Proof of Theorem 1.2. Let n \u22655, and let S be a nonempty normal set in Sn with S\u0338 = Sn\\{e}. Assume first that either S or Sc is equal to An \\ {e}. Without loss of generality, we may assume that S = An \\ {e}. Then Cay(Sn, S) \u223c= 2Kn!/2 has spectrum \u001a\u0010 n! 2 \u22121 \u00112 , (\u22121)n!\u22122 \u001b . The",
    "section_file": "sections/sec-004-3-proof-of-theorem.md",
    "section_title": "Proof of Theorem",
    "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We now show that for an arbitrary permutation $\\sigma \\in S_n$ with $|\\mathrm{supp}(\\sigma)|=k$ we must have $\\sigma \\in S$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-51-normal-cayley-graphs-on-s-n-that-are-line-gra.md",
-   "section_title": "Normal Cayley graphs on $S_n$ that are line graphs",
-   "pages": "12-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since $\\mathrm{Cay}(S_n,S)$ does not contain an induced subgraph isomorphic to $H_1$, we must have $e\\sim\\sigma$ and therefore $\\sigma\\in S$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-51-normal-cayley-graphs-on-s-n-that-are-line-gra.md",
-   "section_title": "Normal Cayley graphs on $S_n$ that are line graphs",
-   "pages": "12-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since $\\mathrm{Cay}(S_n,S)$ does not contain an induced subgraph isomorphic to $H_1$, we must have $e\\sim\\sigma$ and hence $\\sigma\\in S$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-51-normal-cayley-graphs-on-s-n-that-are-line-gra.md",
-   "section_title": "Normal Cayley graphs on $S_n$ that are line graphs",
-   "pages": "12-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, we must have $e \\sim \\sigma$, that is, $\\sigma\\in S$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-51-normal-cayley-graphs-on-s-n-that-are-line-gra.md",
-   "section_title": "Normal Cayley graphs on $S_n$ that are line graphs",
-   "pages": "12-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Hence $\\mathrm{Cay}(A_n,S^*)$ must be a line graph.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-52-normal-cayley-graphs-on-s-n-with-strictly-sec.md",
-   "section_title": "Normal Cayley graphs on $S_n$ with strictly second largest eigenvalue at most $1$",
-   "pages": "17-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-004-3-proof-of-theorem.md (p. 8-11) citing cf. [27, Proposition 2.3], [27, Proposition 2.3]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-004-01",
+   "block_iri": "library/arxiv-2607.29018v1/blocks/lem-sec-004-01",
+   "claim_id": "arxiv-2607.29018v1#lemma:2.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Mass/CubeMomentLowerBound.lean:sum_sq_pow_three_le"
+   ],
+   "needs_lean_proof": true
   }
  ]
 }

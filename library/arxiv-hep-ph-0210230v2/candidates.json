@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-ph-0210230v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "22ef0025652cf016e253a7e22b2f924ab2bba5a582471177aa4975c47fcfb91d",
   "file": "0210230v2.pdf"
  },
  "provenance": {
-  "title": "arXiv:hep-ph/0210230v2 3 Jan 2003",
+  "title": "The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay",
   "authors": "M. Czakona, J. Gluzab, J. Hejczykc",
   "arxiv": {
    "id": "hep-ph/0210230",
@@ -16,61 +19,112 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
+  "candidates": 4,
   "by_kind": {
-   "recommendation": 3
+   "proposition": 4
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 3,
+  "by_domain": {
+   "science": 4
+  },
+  "by_evidence_kind": {
+   "analytic-derivation": 3,
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
    "number": null,
    "name": null,
-   "statement": "As a consequence, care must be taken in \ufb01tting procedures of models beyond the SM, where usually, only tree-level couplings modi\ufb01ed by the SM radiative corrections are considered.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "It is shown that constraints on the heavy sector of the model parameters are di\ufb00erent when going beyond tree-level physics.",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper analytic derivation in sections/page-001.md (p. 1-1)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/page-001.md",
    "section_title": "Page 1",
    "pages": "1-1",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: in-paper \u2014 In-paper analytic derivation in sections/page-001.md (p. 1-1)). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-001-01",
+   "block_iri": "library/arxiv-hep-ph-0210230v2/blocks/prop-page-001-01",
+   "claim_id": "arxiv-hep-ph-0210230v2#prop-page-001-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
    "number": null,
    "name": null,
-   "statement": "If this is not done, parameters which depend strongly on quantum e\ufb00ects should be left free in \ufb01ts, though essential physics is lost in this way.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "In fact, in our case, the only useful constraints on the model can be obtained from the one-loop level calculation.",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper analytic derivation in sections/page-001.md (p. 1-1)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: in-paper \u2014 In-paper analytic derivation in sections/page-001.md (p. 1-1)). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-001-02",
+   "block_iri": "library/arxiv-hep-ph-0210230v2/blocks/prop-page-001-02",
+   "claim_id": "arxiv-hep-ph-0210230v2#prop-page-001-02"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Though we have restricted ourselves to the case of the minimal LR model, the results already show that \ufb01ne-tuning of the heavy sector parameters must be done to recover experimental data.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
+   "statement": "90 % C.L. region for the allowed \u03b2\u03be2 and \u2206r parameters.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-003.md (p. 3-3)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-003.md (p. 3-3)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-003-01",
+   "block_iri": "library/arxiv-hep-ph-0210230v2/blocks/prop-page-003-01",
+   "claim_id": "arxiv-hep-ph-0210230v2#prop-page-003-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "This enables us to \ufb01nd (anal- ogous to the SM) the counterterm of the sine squared of the Weinberg angle as function of masses and their counterterms1 \u03b4(s2 W )LR = 2c2 W (\u03b4M 2 Z2 + \u03b4M 2 Z1) \u27e8S\u27e9 \u2212 2c2 W (\u03b4M 2 W2 + \u03b4M 2 W1) \u27e8S\u27e9 1For versions of the LR model with more free parameters (e.g. gL\u0338 = gR) the situation would be quite di\ufb00erent: s2 W would not be predictable in terms of gauge boson masses and their counter terms), but would have to be tuned to experimental data).",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper analytic derivation in sections/page-003.md (p. 3-3)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: in-paper \u2014 In-paper analytic derivation in sections/page-003.md (p. 3-3)). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-003-02",
+   "block_iri": "library/arxiv-hep-ph-0210230v2/blocks/prop-page-003-02",
+   "claim_id": "arxiv-hep-ph-0210230v2#prop-page-003-02"
   }
  ]
 }

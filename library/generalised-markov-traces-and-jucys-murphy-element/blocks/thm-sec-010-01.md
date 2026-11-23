@@ -1,0 +1,1 @@
+The conditions on trD 1 , trD 2 imply that y2 = trD 2 (U1U2) = trD 2 (t1′t−1 1 ) = trD 2 (t1t1′) −αtrD 2 (t1′) = α2 −α2(1 + a) = −α2a. It is easy to see that geometric Markov traces trB n, trD n take values in A[a]. Let trX,k n : H(Xn) →A be the coeﬃcient of trX n at ak. We summarise the above discussion in the following

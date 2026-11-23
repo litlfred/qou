@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1210.7777v1",
+ "source_sha256": "5643300d6b571a0a",
+ "brief": "Cottingham formula for the electromagnetic self-energy contribution to Mp − Mn — 5 sections: Front matter; Introduction; The Cottingham Formula",
+ "extended": "**Cottingham formula for the electromagnetic self-energy contribution to Mp − Mn**\n\n*André Walker-Loud∗*\n\n7 pp, 5 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 The Cottingham Formula; 4 Concluding Remarks; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition: At LO, lattice QCD can be used to reliably compute the contribution from md −mu.\n- Proposition: (1.3) Calculating δMγ with lattice QCD and QED is much more challenging, due to the disparate length scales relevant for the two theories.\n- Proposition: (1.4) If we instead subtract the lattice QCD determination from experiment, we arrive at δMp−n −δMmd−mu LQCD = 1.24(40) MeV.\n- Proposition: We report on an effort to improve the electromagnetic self-energy contribution using the Cottingham Formula [1].\n- Proposition: The Cottingham Formula The Cottingham Formula intuitively relates the electromagnetic self-energy to forward Comp- ton Scattering (see Fig.\n- Proposition: 2 Cottingham Formula André Walker-Loud µ ν p p q q (a) (b) Figure 1: The Cottingham Formula intuitively relates the forward Compton Scattering (a) to the O(αf.s.) electromagnetic",
+ "tokens": {
+  "brief": 35,
+  "extended": 285
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-2-the-cottingham-formula",
+   "title": "The Cottingham Formula",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-002-4-concluding-remarks",
+   "title": "Concluding Remarks",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "7-7"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

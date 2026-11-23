@@ -1,0 +1,1 @@
+Let U, V, W ∈Ob(C) be such that W ∼= U ⊗V . Let L be a C-colored link, such that a component of L is colored by W. Let L∥be the link obtained from L by replacing this component of L by two parallel copies colored by U and V . If L∥is an element of LA(J), then F ′(L) = F ′(L∥).

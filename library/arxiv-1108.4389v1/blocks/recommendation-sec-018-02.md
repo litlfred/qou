@@ -1,1 +1,0 @@
-Now, if we change to a different polarization $\Pi_\times$, as in the center of Figure [2](#fig:oct5){reference-type="ref" reference="fig:oct5"}, we must perform an $Sp(6,{\mathbb Z})$ transformation on the theory $T_{{\rm oct},\Pi_{\rm eq}}$.

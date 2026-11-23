@@ -70,6 +70,7 @@ from codata_constants import (
     AME_B_TRITIUM_MEV_VALIDATION,
     M_E_MEV as m_e,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION  # noqa: E402  (AME registry)
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 G = mp.catalan
 
@@ -103,10 +104,10 @@ ISOTOPES = [
     # label, Z, N, B_AME, leading_formula, leading_value (MeV)
     ("D",   1, 1,  AME_B_DEUTERON_MEV_VALIDATION, "1·m_e·Vol(6_2)",         m_e * VOLS["6_2"]),
     ("T",   1, 2,  AME_B_TRITIUM_MEV_VALIDATION,   "2·m_e·Vol(8_11)",        2 * m_e * VOLS["8_11"]),
-    ("³He", 2, 1,  7.718058,   "2·m_e·Vol(L6a4)",        2 * m_e * VOLS["L6a4"]),
+    ("³He", 2, 1,  float(AME_B_HE3_MEV_VALIDATION),   "2·m_e·Vol(L6a4)",        2 * m_e * VOLS["L6a4"]),
     ("⁴He", 2, 2, AME_B_HE4_MEV_VALIDATION,    "2·m_e·4·Vol(L6a4)",      2 * m_e * 4 * VOLS["L6a4"]),
     # ⁶Li, ⁷Li — try various ansätze
-    ("⁶Li", 3, 3, 31.99405,    "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
+    ("⁶Li", 3, 3, float(AME_B_LI6_MEV_VALIDATION),    "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
     ("⁷Li", 3, 4, 39.24452,    "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
 ]
 

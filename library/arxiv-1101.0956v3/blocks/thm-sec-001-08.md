@@ -1,0 +1,1 @@
+The exterior diﬀerentiation operator dF given by the previous theorem has the following properties: 1. For any ω ∈Λq (F, ν, N) and θ ∈Λr (F, ν, N) we obtain (4.5) dF (ω ∧θ) = dF ω ∧θ + (−1)q ω ∧dF θ. 2. For any z ∈Γ (F, ν, N) we obtain Lz ◦dF = dF ◦Lz. 3. dF ◦dF = 0.

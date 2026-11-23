@@ -25,27 +25,15 @@
   prior refactor that migrates the content-block sibling into the
   Lake tree — tracked as a separate follow-up.
 
-  **Phase-3 closure (deferred, research-grade).**  Replacing the
-  declaration body with the actual Clausen-function definition (or
-  the Mathlib `Real.polylog`-based equivalent) is the open math.
-  The sibling filler at
-  `folio/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler.lean`
-  carries the candidate concrete definition `BlochWigner_unit_circle
-  (θ : ℝ) : ℝ := Cl_2 θ`; integrating that requires either a Mathlib
-  `Real.Clausen` import that does not currently exist or a manual
-  Cl_2 definition in this Lake tree.
-
-  For now, the signature is exposed via `noncomputable opaque`,
-  which is semantically cleaner than the previous `axiom`: it
-  declares the function exists with the named signature without
-  adding a global hypothesis to Lean's kernel.  Sealed against
-  unfolding; downstream proofs depend only on the signature, not
-  on a specific body — matching what `BringZeroModeBlochClass.bring_zero_mode_realised`
-  needs (a real-angle witness for the substrate identity).
+  **Phase-3 closure (completed, bean `qou-tc8y`).**  `BlochWigner_unit_circle`
+  carries its concrete Clausen-function body `Cl_2 θ` (from
+  `ClausenFunctionMathlibFiller.lean`), and `BlochWignerMathlibFiller.lean`
+  imports this module instead of redeclaring a duplicate `BlochWigner_unit_circle`
+  in `namespace QOU.Archimedean`.
 
   Ref: [leitner2026] prop:em-coupling-bring-zero-mode
   Ref: [leitner2026] prop:archimedean-functor-uniqueness
-  Ref: filler at content/.../predicted-spectra/bloch-wigner-mathlib-filler.lean
+  Ref: lemmas in QOU/Archimedean/BlochWignerMathlibFiller.lean (block appendix-formalisation-notes/bloch-wigner-mathlib-filler.md)
   Ref: [suslin1991], [bloch2000] for the Bloch-Suslin K-theory framework
 -/
 import QOU.Archimedean.ClausenFunctionMathlibFiller

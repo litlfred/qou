@@ -1,1 +1,0 @@
-\begin{property}\label{property:2} If $\alpha$ is maximal, then the angles assigned by $\alpha$ belong to $[0,\pi]$; sum to~$\pi$ within a tetrahedron; and are determined by the angles assigned to $w_1, w_2, \dots, w_p$ and $s$, which must satisfy Equations~\eqref{eq:deg4p+4}--\eqref{eq:diagonals}. \end{property}

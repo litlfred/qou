@@ -1,0 +1,41 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2003.13612v3",
+ "source_sha256": "98a3287428a46e57",
+ "brief": "On the mass difference between proton and neutron — The Cottingham formula expresses the electromagnetic part of the mass of a particle in terms of the virtual Compton scattering amplitude.",
+ "extended": "**On the mass difference between proton and neutron**\n\n*J. Gasser, H. Leutwyler*\n\n11 pp, 4 sections.\n\n**Abstract.** The Cottingham formula expresses the electromagnetic part of the mass of a particle in terms of the virtual Compton scattering amplitude. At large photon momenta, this amplitude is dominated by short distance singularities associated with operators of spin 0 and spin 2. In the diﬀerence between proton and neutron, chiral symmetry suppresses the spin 0 term. Although the angular integration removes the spin 2 singularities altogether, the various pieces occurring in the standard decomposition of the Cottingham formula do pick up such contributions. These approach asymp- totics extremely slowly because the relevant Wilson coeﬃcients only fall oﬀlogarithmically. We rewrite the formula in such a way that the leading spin 2 contributions are avoided ab initio. Using a sum rule that follows from Reggeon dominance, the numerical evaluation of the e.m.\n\n**Outline.** Front matter; Abstract; References; Acknowledgements",
+ "tokens": {
+  "brief": 47,
+  "extended": 259
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-10"
+  },
+  {
+   "id": "sec-001-references",
+   "title": "References",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-002-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "10-11"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

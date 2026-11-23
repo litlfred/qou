@@ -1,0 +1,1 @@
+10. Let M 3 be a hyperbolic manifold with one cusp and let k1 ≠k2 ∈ N be such that k1 or k2 is odd. Then the set {χρ ∈X0(M 3) ∣dim H0(T 2;ρk1,k2) = 0} is a non-empty Zariski open subset of the curve X0(M 3).

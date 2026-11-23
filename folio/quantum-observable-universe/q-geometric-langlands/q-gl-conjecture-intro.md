@@ -7,7 +7,7 @@ obstruction or works within that locus. The construction is abstract,
 but the next section makes it concrete by instantiating the
 correspondence as $q$-opers.
 
-We open with the Definition: $q$-Langlands dual group, the deformation
+The section opens with the Definition: $q$-Langlands dual group, the deformation
 of the classical dual that carries the substrate parameter on the
 spectral side. The Conjecture: $q$-Geometric Langlands correspondence
 then states the equivalence itself — between $q$-$\mathcal{D}$-modules

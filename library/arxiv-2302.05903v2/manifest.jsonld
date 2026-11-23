@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.05903v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2302.05903v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction",
+  "title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials",
   "contains": [
     "library/arxiv-2302.05903v2/sections/sec-front-matter",
     "library/arxiv-2302.05903v2/sections/sec-000",
@@ -51,8 +51,8 @@
       "stamp_date": "30 Jun 2023"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

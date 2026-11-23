@@ -1,3 +1,3 @@
-We now identify the knot factors and enumerate the Wedderburn channels. This closes the mass-tower arc.
+Equipped with the Plancherel measure and the ribbon writhe derivation, the per-link knot factor $K(\beta)$ can be evaluated in closed form across the principal topological families of the particle and nuclear spectrum.
 
-We previously established the Plancherel-alpha spectral foundations. We now apply those tools to specific knot classes. We evaluate the knot factor for amphicheiral knots, Borromean composites, and shell-closed configurations. Finally, we formulate the Pauli factor via Wedderburn decomposition and stratify the mass-tower coefficients.
+This section derives the spectral knot factor for amphicheiral knots (such as the figure-eight $4_1$), three-component Borromean composites, and shell-closed torus configurations. It formulates the Pauli exclusion factor via Wedderburn projection onto antisymmetric column hooks, stratifies the mass-tower expansion coefficients by cellular depth, and connects the flavor-dressing functor and the staircase electroweak residual ($\sin^2\theta_W$) to the $S_4 \downarrow S_3$ half-symmetric branching projection.

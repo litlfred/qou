@@ -1,1 +1,0 @@
-It is not completely clear why we should pass to the Hilbert scheme of $\mathbb C^2$, but our construction in [@hausel2022p], in fact first produces an algebra of Hamiltonian fields on $\mathbb C^*\times\mathbb C$, and only then it is degenerated to the algebra for $\mathbb C^2$.

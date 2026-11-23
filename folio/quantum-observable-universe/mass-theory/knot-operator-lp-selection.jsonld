@@ -2,20 +2,26 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-knot-operator-lp-selection",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:knot-operator-lp-selection",
   "kind": "proposition",
-  "title": "Knot operators are selected per confinement by the Frobenius Gram-inverse LP/SDP dual basis",
+  "title": "Knot operators are selected per confinement by the LP/SDP dual basis of the Frobenius Gram pseudo-inverse",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-gram-matrix-spectral-connection",
-    "papers/quantum-observable-universe/blocks/conj-weak-spectral-completeness"
+    "papers/quantum-observable-universe/blocks/prop-weak-spectral-completeness",
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
+    "papers/quantum-observable-universe/blocks/prop-frobenius-gram-matrix",
+    "papers/quantum-observable-universe/blocks/def-demand-profile",
+    "papers/quantum-observable-universe/blocks/prop-torus-embeddable-complete",
+    "papers/quantum-observable-universe/blocks/def-crossing-energy"
   ],
   "tags": [
     "lp-dual",

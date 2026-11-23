@@ -1,1 +1,0 @@
-Passing to Lie algebras, we have a homomorphism $$d\rho_{\rm{odd}}\colon{\mathfrak{so}}(6) \to {\mathfrak{u}}(\Lambda^{\rm odd}{\mathbb C}^3) \cong{\mathfrak{u}}(4) \cong{\mathfrak{u}}(1) \oplus {\mathfrak{su}}(4).$$ Homomorphic images of semisimple Lie algebras are semisimple, so the image of ${\mathfrak{so}}(6)$ must lie entirely in ${\mathfrak{su}}(4)$.

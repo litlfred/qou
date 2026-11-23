@@ -1,0 +1,1 @@
+Every morphism in Kar(DQ) is a linear combination of graphs for which: • The only dots appearing are boundary dots. • There is a single polynomial in the leftmost region, and no other connected compo- nents without boundary. • There are no trivalent vertices. • There are no solid 2m-valent vertices, only dashed 2m-valent vertices.

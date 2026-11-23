@@ -1,1 +1,0 @@
-As in the group case, any trace on $\mathscr{H}(\mathfrak{S}_{n})$ is a $\mathbb{C}(q)$-linear combination of the irreducible characters $\zeta^{\lambda}(q)$ of the modules $V^{\lambda}(q)$ of $\mathscr{H}(\mathfrak{S}_{n})$; we shall also denote by $\chi^{\lambda}(q)$ the normalized irreducible character of $V^{\lambda}(q)$.

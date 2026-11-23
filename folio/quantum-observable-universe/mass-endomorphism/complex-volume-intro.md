@@ -1,8 +1,8 @@
-The mass endomorphism $\mathcal{M}$ carries more information than its real trace. Over $\mathbb{C}$, the projection defect $\mathrm{tr}_M\bigl((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M}\bigr)$ defines a single complex observable, the complex volume $\mathfrak{V}(K)$. Here, $\Pi_{\text{free}}$ is the factorized projector onto unlinked constituents. We define $\mathfrak{V}(K) = E_0\,\mathrm{tr}_M\bigl((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M}\bigr)$. This acts as the QOU analogue to the Neumann–Zagier complex volume $\mathbb{V}(K) = \mathrm{Vol}(K) + i\,\mathrm{CS}(K)$.
+The mass endomorphism $\mathcal{M}$ carries more information than its real trace. Over $\mathbb{C}$, the projection defect $\mathrm{tr}_M\bigl((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M}\bigr)$ defines a single complex observable, the complex volume $\mathfrak{V}(K)$. Here, $\Pi_{\text{free}}$ is the factorized projector onto unlinked constituents. One defines $\mathfrak{V}(K) = E_0\,\mathrm{tr}_M\bigl((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M}\bigr)$. This acts as the QOU analogue to the Neumann–Zagier complex volume $\mathbb{V}(K) = \mathrm{Vol}(K) + i\,\mathrm{CS}(K)$.
 
 The framework's two nuclear observables serve as the two real shadows of $\mathfrak{V}$. Binding energy forms the real part ($\mathfrak{E}_{\mathrm{bind}} = \mathrm{Re}\mathfrak{V}$). This is the bar-even, $\cosh$, strong channel representing stable binding. The $\beta$-decay $Q$-value forms the imaginary part ($\mathfrak{Q}_\beta = \mathrm{Im}\mathfrak{V}$). This is the bar-odd, $\sinh$, weak channel representing unstable decay.
 
-The unified reconstruction $\mathfrak{E}_{\mathrm{bind}} + i\,\mathfrak{Q}_\beta = \mathfrak{V}$ is formalized in Lean without `sorry`. The physical conjecture asserts that the measured binding and $Q$-value precisely equal these real and imaginary components under a shared normalization.
+The unified reconstruction $\mathfrak{E}_{\mathrm{bind}} + i\,\mathfrak{Q}_\beta = \mathfrak{V}$ is proved. The physical conjecture asserts that the measured binding and $Q$-value precisely equal these real and imaginary components under a shared normalization.
 
 ## Fibre-level caveat
 
@@ -10,7 +10,7 @@ At the archimedean, observable level, $\mathrm{Im}(q_0) = 0$. Binding and $\math
 
 ## Real shadow correspondence
 
-This unified complex volume reframes the mass and $\beta$-decay narrative. We compute $\mathfrak{V}(K)$ once. Its real part supplies all binding energies; its imaginary part supplies all $Q$-values. They align aspect-by-aspect:
+This unified complex volume reframes the mass and $\beta$-decay narrative. One computes $\mathfrak{V}(K)$ once. Its real part supplies all binding energies; its imaginary part supplies all $Q$-values. They align aspect-by-aspect:
 
 | aspect | real part $\mathrm{Re}\mathfrak{V}$ | imaginary part $\mathrm{Im}\mathfrak{V}$ |
 |---|---|---|

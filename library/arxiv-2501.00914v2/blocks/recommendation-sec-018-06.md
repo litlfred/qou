@@ -1,1 +1,0 @@
-Now by \cite[Theorem~5.3]{gabai-oertel} this suspension gives rise to an essential lamination on $S^3_{4g}(K)$ as long as $\Delta(d,4g) \geq 2$, so we must have $\Delta(d,4g) \leq 1$, hence $d = \frac{1}{0}$.

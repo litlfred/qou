@@ -1,1 +1,0 @@
-The conclusion that we shall derive is the following: There exists a linear q-dlfference system (54) with the matrix solutions 70 (x), 7^ (x) either possessing prescribed characteristic constants p{, a?, c^, a^l,3\. . .,a^,3) or else constants pj, Cj + lj, ci;-, a^l,3\. . ., a?%,3\ where lh...,ln are Integers.

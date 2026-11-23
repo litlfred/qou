@@ -1,1 +1,0 @@
-The two vertices v′ and v′′ are actually equal; otherwise, one would get a contradiction from the limit of the convex triangle Tn in P Proj n whose vertices are the vertices of P Proj n corresponding to v, v′ and v′′, using the fact that by Lemma 3 each edge of Tn must meet H3.

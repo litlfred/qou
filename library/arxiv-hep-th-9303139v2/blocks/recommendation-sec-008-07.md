@@ -1,1 +1,0 @@
-Hopefully the problems with the unitary-matrix integrals are temporal and this restricted class of multimatrix models will be unlarged, this should be especially easy to do in the part of the theory dealing with constraint algebras, but this subject is beyond the scope of the present notes.

@@ -15,7 +15,7 @@ Markov trace on the normal-form basis of `H₃(q)`,
 
     G_ij = tr_M(b_i · b_j),   b ∈ {γ, σ₀, σ₁, L₊, L₋, e⁻},
 
-`γ` the identity and `e⁻ = σ₀σ₁σ₀` the trefoil. A Gram matrix of a trace pairing
+`γ` the identity and `e⁻ = σ₀σ₁σ₀` the electron word (closure: Hopf link). A Gram matrix of a trace pairing
 is the natural candidate for a *derived* metric on the framework's state space —
 the object bean `qou-5uj7` needs in order to build a Rieffel Lip-norm and hence
 a Connes/Wasserstein distance. Measured at `q₀ = 1.10997858275138…`:

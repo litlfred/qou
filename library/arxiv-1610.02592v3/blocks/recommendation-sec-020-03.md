@@ -1,1 +1,0 @@
-The term ``isometries'' should be interpreted in the strongest sense: the transition maps send singular points to singular points, and outside of the singular points these are isometries of Riemannian manifolds.

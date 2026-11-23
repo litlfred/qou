@@ -241,7 +241,7 @@ def main():
         "2.0 ppm residual decomposes as 0.24 ppm (F_Bor) + 1.76 ppm (X), "
         "and Q_β's 2113 ppm is dominated by X."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
 
     w.add_data("X_h_expansion", {str(k): str(v) for k, v in X_coeffs.items() if v != 0})
     w.add_data("R_h_expansion", {str(k): str(v) for k, v in R_coeffs.items() if v != 0})

@@ -1,0 +1,1 @@
+Let K be a triangulated category, and let L α / φ  M β / ψ  N γ / χ  T(L) T(φ)  L′ α′ / M ′ β′ / N ′ γ′ / T(L′) . be a morphism of distinguished triangles. If φ and ψ are isomorphisms, then χ is also an isomorphism.

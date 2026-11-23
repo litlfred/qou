@@ -1,1 +1,1 @@
-It was clear from [ 11] that a NZ-datum Ξ = ( A,B,ν,z,f,f ′′) depends on
+It was clear from [ 11] that a NZ-datum Ξ = ( A,B,ν,z,f,f ′′) depends on two square matrices A and B such that ABt is symmetric that may or may not come from topology, and that the series Φ Ξ (ℏ) is deﬁned under the assumption that det( B) ⁄= 0 and det(Λ) ⁄= 0. Doing so, the proof of Theorem 1.1 shows that the series Φ Ξ (ℏ) is invariant under the moves that appear in [ 21, Sec.6]; see also Section 4.

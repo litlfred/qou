@@ -1,0 +1,1 @@
+Suppose that N satisﬁes the stability axiom (N1) and the Euler axiom (N4), that D satisﬁes all axioms (D1) – (D5) and that P ∈P is not an N-multiplier. Then for some r ∈N the convolution power (P∗P∨)∗r = (P∗P∨)∗···∗(P∗P∨) admits a direct summand of the form 1[2i](i) with an integer i̸ = 0.

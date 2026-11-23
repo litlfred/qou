@@ -1,1 +1,0 @@
-[^1]: It is interesting to remark that in the context of four-dimensional ${\cal N}=2$ gauge theory, wall-crossing considerations lead to the conjecture that $(-1)^{R + 2 j_3}$ should always be equal to a quadratic refinement of the charge lattice when acting on BPS states [@GMNIII].

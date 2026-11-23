@@ -11,7 +11,7 @@ $$
 *with each term derived (no fitting):*
 
 - *$\alpha = m_e \cdot 8G$ (Borromean prefactor;
- [binding scale](#prop:binding-scale-catalan));*
+ [binding scale](#conj:binding-scale-catalan));*
 - *$\Phi_1, \Phi_2, \Phi_3$ extracted from per-generator transfer-matrix
  chains using only the inter-nucleon generators (positions $3k+2$ for
  $k = 0, \ldots, A{-}2$);*

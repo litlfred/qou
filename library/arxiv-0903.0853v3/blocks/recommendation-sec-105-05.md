@@ -1,1 +1,0 @@
-If (M, u) denotes the pair made up of the above k-ﬁltered object and of a ﬁxed isomorphism from grM to P1 ⊕· · ·⊕Pk, we shall write (C′ ⊗C M, 1⊗C u) the corresponding pair deduced from the proposition.

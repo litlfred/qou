@@ -1,1 +1,0 @@
-(2) AG NET I Z IN G CURRENT They have pointed out that parity nonconservation implies a polarization of the spin of the muon emitted from stopped pions in (1) along the direction of motion and that furthermore, the angular distribution of electrons in (2) should serve a,s an analyzer for the muon polarization.

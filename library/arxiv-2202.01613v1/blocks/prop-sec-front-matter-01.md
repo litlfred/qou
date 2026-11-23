@@ -1,0 +1,1 @@
+The neutron-proton mass diﬀerence Simone Romiti𝑎,𝑏,∗ 𝑎Dipartimento di Matematica e Fisica, Università degli Studi Roma Tre, Rome, Italy 𝑏Istituto Nazionale di Fisica Nucleare, Sezione di Roma Tre, Rome, Italy E-mail: simone.romiti@uniroma3.it We present a lattice calculation of the mass diﬀerence between neutron and proton, for which we ﬁnd 𝑀𝑛−𝑀𝑝= 1.73(69) MeV .

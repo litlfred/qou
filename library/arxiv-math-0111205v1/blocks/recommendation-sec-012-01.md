@@ -1,1 +1,0 @@
-\brem The choice of square root of $d(X)$ is immaterial, but it must be the same in the equations defining $q_i^\alpha$ and ${q'}_i^\alpha$. \erem \prf In view of the preceding lemma all that remains to be verified is the normalization.

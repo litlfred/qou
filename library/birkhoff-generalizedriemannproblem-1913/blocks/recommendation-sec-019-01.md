@@ -1,1 +1,0 @@
-The elements of Z(x) must in the first place be single-valued and analytic outside of C\,. . ., Cm, since U(x) undergoes the same trans formation as that prescribed for Y(x) about the points a\,.. .,am, and Furthermore within Ciy the elements of Y(x) are to be analytic ex cept at a-i where they may become infinite to finite order.

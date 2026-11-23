@@ -1,1 +1,0 @@
-(Ideally the cells should even be contractible, but this might require extending our definition of spectral network to allow more non-generic phenomena which occur in codimension greater than 1, e.g. allowing several joints to coalesce.) Moving around in a single cell corresponds to varying $\wnet$ by equivalences in the sense of \S\ref{subsubsec:EqivalentGSN}.
