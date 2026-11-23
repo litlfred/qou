@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-22T22:06:01Z
+updated_at: 2026-11-23T00:57:18Z
 parent: qou-2002
 ---
 
@@ -350,3 +350,6 @@ reverted #8554 to the one-term default pin (two-term kept as a named comparison)
 - GAP of this bean unchanged: no derived correction of size -211 ppb and the right sign exists in any class examined. Bean stays in-progress (open conjecture).
 
 2026-11-22 (W6, commit 5438997b7): the carrier m_μ=m_e·Vol(4₁)/ℏ_q² is CAL-2 itself (massFormula_carrier holds by definition; cal2_identity_pinned restates it). Proved necessary conditions for a derivation (QOU/Observations/EnergyScaleMap.lean): the electron-side weight must vanish at q=1 (electron_weight_vanishes); no pair of framed braid-word traces carries it (muon_carrier_not_trace_ratio); rational weights over K force Vol∈K (carrier_const_mem_of_rational), so Vol(4₁) needs an analytic input. Scope (b) on those classes, (a) otherwise. Audit docs/audits/2026-11-22-energy-scale-cal-map.md.
+
+
+2026-11-23 (W6, PR #9165): in the trace chart the standard 3-braid of 4_1 gives tau(4_1)/tau_e = 0.4054 at proton q0 (1/2 at q=1), 510x short of the carrier; in the mass chart the carrier is built into the unit. Still open. Audit section 8.
