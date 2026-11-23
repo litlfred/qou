@@ -102,5 +102,22 @@ item 1. Item 2 covers them when they are rational.
 - No content block was changed. The Lean is a library file; it has no `.qa.json` sidecar.
 - `check-sidecars.sh` reports the authors-note Lean-coverage stats as stale. That is a drift on
   main unrelated to this change, and was not refreshed here.
-- No number was computed. The value of 𝔈_e(q₀)/ℏ_{q₀}² (the ratio of the two units) is a
-  straightforward probe and is the natural next measurement.
+- The calibrations cannot say which electron unit is canonical; that is still open (§3 item 4).
+
+## 7. How far apart the two units are
+
+Measured by `computations/probes/energy_scale_unit_ratio_probe.py` (mpmath, 70 dps,
+witness `energy-scale-unit-ratio.witness.json`, 5/5 checks). The ratio of the mass-formula
+unit m_e/ℏ_q² to the trace-pipeline unit m_e/τ_e is R = τ_e/ℏ_q², with
+τ_e = q³(q⁴+1)/(q²+1)².
+
+| pin | τ_e | ℏ_q² | R = τ_e/ℏ_q² |
+|---|---|---|---|
+| proton (default) | 0.691166478358 | 0.00981718645428 | **70.4037232641** |
+| muon, CODATA 2022 (comparison) | 0.691166504074 | 0.00981718852772 | 70.4037110138 |
+
+The pin moves R by 1.7e-7 relative. So a weight read in one pipeline and converted with the
+other pipeline's unit is off by a factor of about 70. That is the size of the gap a
+derivation of w_e has to close. It is not c_q² (82.68) and not E₀/m_e (8.19), so neither of
+the two scales already in the corpus is this factor. No measured value enters R except
+through q₀.
