@@ -21,22 +21,9 @@ in `computations/hecke/hecke_characters.py` (function
 - `seminormalDim λ` — the dimension `dim V_λ` of the irrep
   `V_λ` indexed by partition `λ`, equal to the number of standard
   Young tableaux of shape `λ`.
-- `HoefsmitMatrix λ q i` — the Hoefsmit seminormal matrix for
-  the **T-form generator** `T_i` in the irrep `V_λ` at parameter
-  `q`.  Currently axiomatised; concrete construction is the
-  open Lean port.
-
-## Convention: T-form throughout
-
-Per Copilot review consistency note: this file uses **T-form**
-generators `T_i` consistently — both in the type signature
-`HoefsmitMatrix λ q i` (representing `T_i ∈ End(V_λ)`) and in
-the Hecke relation axiom (`T_i² = (q − 1) T_i + q · 1`).
-
-The σ-form alternative (`σ_i = q^{−1/2} T_i`) is mathematically
-equivalent but introduces `q^{1/2}` denominators that lose F_p
-compatibility (per user direction "we want as many stmts to
-hold in F_p" — see `QOU.HeckeAlgebra.Formal`).
+- The seminormal matrices themselves are no longer here: see
+  `QOU.SchurWeyl.SeminormalRep.genMat` (deleted placeholder note at
+  the end of this file).
 
 ## Categorical content
 
@@ -51,18 +38,11 @@ Off-diagonal entries between `T_w` and `s_i T_w` (the standard
 tableau obtained by swapping `i, i+1`) involve the same content
 differences.
 
-## Open Lean port
+## Lean port: done elsewhere
 
-The full Hoefsmit machinery would require:
-- Mathlib's `Nat.Partition`, `YoungDiagram`, `StandardYoungTableau`
-  (these exist as of Mathlib 2024)
-- A `Hoefsmit` namespace constructing the seminormal matrices
-  per generator, satisfying the Hecke relations
-  `σ_i² = (q - q^{-1}) σ_i + 1` and braid `σ_i σ_{i+1} σ_i =
-  σ_{i+1} σ_i σ_{i+1}`.
-
-This module captures the type-level interface; the construction
-+ relation proofs are deferred to a follow-up.
+The seminormal construction and both relation proofs now live in
+`QOU.SchurWeyl.SeminormalRep` (σ-form, generic field, `q` not a root of
+unity). This module keeps only `seminormalDim` and its positivity.
 
 ## References
 
@@ -108,60 +88,15 @@ theorem seminormalDim_pos {n : ℕ} (lam : Nat.Partition n) (_hn : 0 < n) :
 theorem seminormalDim_pos' {n : ℕ} (lam : Nat.Partition n) : 0 < seminormalDim lam :=
   QOU.Mathlib.dimSYT_pos lam
 
-/-- **Hoefsmit seminormal matrix** for generator `σ_i` of
-    `H_n(q)` acting on the irrep `V_λ` at parameter `q`.
+/-! ## Seminormal matrices: deleted placeholder (2026-11-23)
 
-    Axiomatised at the type level pending the Mathlib port of
-    Hoefsmit (1974); the concrete construction is in
-    `computations/hecke/hecke_characters.py`
-    (function `build_seminormal_matrices`). -/
-opaque HoefsmitMatrix : ∀ {n : ℕ} (lam : Nat.Partition n) (_q : ℝ) (_i : Fin (n - 1)),
-    Matrix (Fin (seminormalDim lam)) (Fin (seminormalDim lam)) ℝ
-
-/-- **Hecke relation in T-form** (the F_p-friendly form, per
-    user direction "we want as many stmts to hold in F_p"):
-
-        `T_i² = (q − 1) · T_i + q · 1`
-
-    INTEGER coefficients in q ⟹ holds uniformly across all F_p
-    when `q : ZMod p`.  The σ-form alternative
-    `σ_i² = (q^{1/2} − q^{−1/2}) σ_i + 1` requires `q^{1/2}` and
-    therefore lives over `ℚ(q^{1/2})` — losing F_p compatibility
-    at primes where `q^{1/2}` doesn't exist.
-
-    Conversion: `T_i = q^{1/2} σ_i` (in σ-form), so the two
-    formulations are related by a `q^{1/2}` rescaling that we
-    avoid by working in T-form throughout.
-
-    NOTE: previous draft (post-Gemini-review) used σ-form.
-    Reverted to T-form because:
-    1. F_p compatibility (per user direction).
-    2. The Mathlib-port aligns naturally with `ℤ[q, q⁻¹]`.
-    3. The σ-form's `q^{1/2}` necessitates `ℚ(q^{1/2})` which
-       has poor F_p reduction properties.
-
-    For the q-integer convention, the T-form analogue is
-    `[k]_q := (q^k − 1) / (q − 1)` (a polynomial in q, integer
-    coefficients).  See `QOU.HeckeAlgebra.JonesMarkovWenzl`. -/
--- Ref: [hoefsmit1974] Hoefsmit, PhD thesis, UBC (1974) — seminormal Hecke relation T_i² = (q−1)T_i + q
-axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ)
-    (i : Fin (n - 1)),
-    (HoefsmitMatrix lam q i) * (HoefsmitMatrix lam q i) =
-      (q - 1) • (HoefsmitMatrix lam q i) + q • 1
-
-/-- **Braid relation** (axiomatised): `T_i T_{i+1} T_i = T_{i+1}
-    T_i T_{i+1}` whenever both `i` and `i+1` index valid
-    generators (`i+1 < n - 1`).
-
-    This is the T-form braid relation matching the T-form Hecke
-    relation `T_i^2 = (q − 1) T_i + q` above.  The braid relation
-    has the same shape as the σ-form (it does not depend on the
-    quadratic relation), but we phrase it in T's to keep this
-    file uniformly in the T-form / `ℤ[q, q⁻¹]`-friendly setup. -/
--- Ref: [hoefsmit1974] Hoefsmit, PhD thesis, UBC (1974) — seminormal braid relation T_i T_{i+1} T_i = T_{i+1} T_i T_{i+1}
-axiom HoefsmitMatrix_braid_relation : ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ)
-    (i j : Fin (n - 1)) (_h_adj : j.val = i.val + 1),
-    (HoefsmitMatrix lam q i) * (HoefsmitMatrix lam q j) * (HoefsmitMatrix lam q i) =
-      (HoefsmitMatrix lam q j) * (HoefsmitMatrix lam q i) * (HoefsmitMatrix lam q j)
+This file used to declare `opaque HoefsmitMatrix` with two axioms, the T-form
+Hecke relation and the braid relation. Both axioms were vacuous (the opaque
+could be the sign representation), and nothing consumed them. They were deleted
+on owner approval, 2026-11-23. The concrete seminormal representation, with
+both relations PROVED, is `QOU.SchurWeyl.SeminormalRep.genMat`:
+`genMat_quadratic` (σ-form quadratic relation) and `genMat_braid_generic`
+(braid relation). The T-form and σ-form Hecke algebras are identified in
+`QOU.Hecke.ModelsBridge.iwahoriEquivSigma`. -/
 
 end QOU.HeckeAlgebra.Hoefsmit

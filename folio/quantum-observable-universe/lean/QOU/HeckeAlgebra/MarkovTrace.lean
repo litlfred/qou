@@ -215,33 +215,15 @@ an unconditional statement about a specific algebra does not.
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (stabilisation by generator σ_n)
 opaque heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
 
-/-- **Markov axiom** for the Markov trace: stabilisation scales
-    the trace by *the* Markov parameter
-    `z = 1 / (q_0^{1/2} + q_0^{-1/2})` — the single constant
-    `QSubstrate.markovParameter`, not an arbitrary real:
+/-! ## The Markov property: deleted axiom (2026-11-23)
 
-    `tr_M(stab_n x) = z · tr_M(x)`.
-
-    **The `z` used to be a `∀`-bound variable, which made this axiom
-    collapse the Markov trace to zero.**  With `∀ (z : ℝ)` in front,
-    instantiating at `z = 0` and `z = 1` gives
-
-        markovTrace (n+1) (heckeStab x) = 0        (z := 0)
-        markovTrace (n+1) (heckeStab x) = markovTrace n x   (z := 1)
-
-    hence `markovTrace n x = 0` for *every* `n` and *every* `x`.  The
-    corpus stayed consistent — the zero map satisfies
-    `markovTrace_linear`, the only other constraint on `markovTrace` —
-    but `tr_M`, the central object of the mass chain
-    `M = ρ · m_e · |tr_M(T_w)|`, was pinned to the zero function, so
-    every downstream statement about it was vacuously about `0`.
-    The docstring already said "z := QSubstrate.markovParameter"; only
-    the binder was wrong.  Bean `qou-ck1f`. -/
--- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2 (Markov axiom: tr(stab x) = z·tr(x))
-axiom MarkovTrace_markov_axiom :
-    ∀ {n : ℕ} (x : HeckeElement n),
-    markovTrace (n + 1) (heckeStab x) =
-      QSubstrate.markovParameter * markovTrace n x
+`MarkovTrace_markov_axiom` asserted `tr_M(stab_n x) = z · tr_M(x)` with
+`z = QSubstrate.markovParameter`, i.e. at the calibrated `q₀` and in convention
+C. It had no consumer outside this file and was deleted on owner approval,
+2026-11-23 (together with its regression witness `markovTrace_stab_pos`). The
+Markov property is now a theorem, not an axiom, for the concrete Ocneanu trace:
+`QOU.SchurWeyl.wtrace_markov` and `ocneanuMarkovTrace` in
+`QOU.SchurWeyl.MarkovTraceInstance`, at generic `q` and convention D. -/
 
 /-! ## The degeneracy is not excluded — checked, not asserted
 
@@ -271,8 +253,8 @@ theorem markovTrace_eq_zero_of_weight_zero {n : ℕ}
     axiom here** — it was removed as a zero-consumer assumption (see the
     §Cyclicity note above), so the first conjunct is now an ordinary statement
     this lemma shows is satisfiable rather than one the module assumes.
-    `MarkovTrace_markov_axiom` is still an axiom, and the second conjunct is
-    still about it.
+    The second conjunct is the Markov property, which is no longer an axiom
+    either (the former `MarkovTrace_markov_axiom` was deleted 2026-11-23).
 
     This is the sharp form of the warning in `markovTrace`'s docstring, and it is
     the residue of bean `qou-ck1f`: that bean removed a `∀ (z : ℝ)` binder which
@@ -313,8 +295,8 @@ noncomputable def markovTraceOnWedderburn {n : ℕ} (x : WedderburnDecomposition
     implements in `wedderburn_jones_markov.py`.
 
     **The `q` is `QSubstrate.q_0`, not a `∀`-bound variable.**  It used
-    to be universally quantified, which is the same defect as in
-    `MarkovTrace_markov_axiom` above and equally corrosive here:
+    to be universally quantified, which is the same defect the former
+    `MarkovTrace_markov_axiom` had (bean `qou-ck1f`) and equally corrosive here:
     `markovTraceOnWedderburn x` does not mention `q`, so a `∀ q` on the
     right makes the weighted block-sum *provably independent of `q`*
     (`wenzlBridge_q_independent_defect` below, which no longer
@@ -368,10 +350,9 @@ theorem markovTrace_zero : ∀ (n : ℕ),
 
 /-! ### Regression witnesses for the two binder fixes
 
-Both theorems below are **vacuous** against the pre-fix axioms — under
-`∀ (z : ℝ)`, `markovTrace n x = 0` for every `x`, so the hypothesis of
-`markovTrace_stab_pos` is unsatisfiable and its conclusion is `0 < 0`.
-They therefore fail loudly if either binder is ever re-universalised. -/
+The second witness, `markovTrace_stab_pos`, consumed the Markov axiom and was
+deleted with it on 2026-11-23. `markovParameter_pos` is kept as a plain fact
+about the convention-C constant. -/
 
 /-- The Markov parameter `z = 1 / (q_0^{1/2} + q_0^{-1/2})` is strictly
     positive: `q_0 > 1 > 0`, so both `rpow` terms are positive. -/
@@ -380,18 +361,5 @@ theorem markovParameter_pos : 0 < QSubstrate.markovParameter := by
   have h0 : (0 : ℝ) < QSubstrate.q_0 :=
     lt_trans one_pos QSubstrate.q_0_gt_one
   positivity
-
-/-- **Stabilisation preserves the sign of the Markov trace.**  Scaling
-    by the strictly positive Markov parameter cannot flip or kill a
-    positive trace.
-
-    This is the content the `∀ (z : ℝ)` binder destroyed: with `z`
-    universally quantified the trace was identically zero, so no `x`
-    satisfied the hypothesis and the statement said nothing. -/
-theorem markovTrace_stab_pos {n : ℕ} (x : HeckeElement n)
-    (hx : 0 < markovTrace n x) :
-    0 < markovTrace (n + 1) (heckeStab x) := by
-  rw [MarkovTrace_markov_axiom x]
-  exact mul_pos markovParameter_pos hx
 
 end QOU.HeckeAlgebra.MarkovTrace

@@ -57,22 +57,13 @@ noncomputable def proton_mass (q : ℝ) : ℝ :=
   let hbar_q := 1 - q⁻¹
   vol_borromean / hbar_q ^ 2
 
-/- The proton mass derived from the substrate parameter q₀.
-    At the CODATA value q₀, the Borromean volume formula yields
-    m_𝔭(q₀) ≈ 938.272 MeV.
-    Ref: [leitner2026] Ch. 5, §Categorical proton -/
-/-- **External axiom (§3b-cond pattern): proton_mass_from_substrate.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom proton_mass_from_substrate_axiom  :
-    |proton_mass q₀ - 938.272| < 1
-
-theorem proton_mass_from_substrate :
-    |proton_mass q₀ - 938.272| < 1 :=
-  proton_mass_from_substrate_axiom
+/-- **What `proton_mass` evaluates to at `q₀`.** A pure arithmetic fact
+    about the formula above: `Vol(𝓑₃)/ℏ_q² ≈ 746.40` at the `q₀` of this
+    file. No experimental value enters. A former axiom asserting
+    `|proton_mass q₀ - 938.272| < 1` was false (this lemma contradicts
+    it) and was deleted on owner approval, 2026-11-23. -/
+theorem proton_mass_q₀_bounds : 746 < proton_mass q₀ ∧ proton_mass q₀ < 747 := by
+  unfold proton_mass q₀
+  norm_num
 
 end QOU.Torsion
