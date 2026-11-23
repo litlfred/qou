@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-11-17T23:08:22Z
+updated_at: 2026-11-23T12:00:00Z
 parent: qou-v2om
 ---
 
@@ -1041,3 +1041,7 @@ Float64 residue found in `lp_shadow_price` on the way: bean `qou-f2pf`.
 ## 2026-11-17 sibling sweep
 A sibling measured an accuracy ceiling for this route (see table). Left: record the ceiling in the audit doc; no new fit.
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+## 2026-11-23 — main sync (binding-leftovers thread)
+Main at 7836e3c2290. New: `computations/probes/light_nuclei_a2_a3/hecke_flint.py`, an exact Hecke engine over ℤ/ℚ[h, z]. Measured by its own probes (not re-run here): A = 3 bond-structure in about 1 s with z free; ⁴He all-pairs exact in about 25 min on 4 cores. That is the A ≥ 3 cost this bean said was unmeasured (deuteron row 817 s on the old producer, A = 3 never finished).
+What remains: the production binding producer still uses the old H_{3A} block sum and is not wired to flint. So this bean is SIMPLIFIED, not done: the job is now wiring flint into the producer and re-measuring, not designing a scalable path. The words are now the ruled γγ chain (#9053), so #7876 no longer blocks it.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-20T20:20:00Z
+updated_at: 2026-11-23T12:00:00Z
 parent: qou-v2om
 ---
 
@@ -3576,3 +3576,7 @@ The previous entry's *conclusion* stands (the cusp pole cannot distinguish the c
 **Self-audit against the anti-laundering rules.** No declaration concludes `: True`, none is `rfl` on a tautology, there is no `axiom`, no `native_decide`, and no conditional class. Each theorem is falsifiable: perturb any `m_λ`, either `10` or `3`, or the convention, and it fails.
 
 **What it still does NOT do.** It does not derive residual (ii) — the provenance asymmetry restated above is untouched — and it does not touch this bean's TITLE claim (saturated fraction = ℏ_q²). The `n ∈ {2,4}` trap is recorded in the docstring so the split is not carried up a tower.
+
+## 2026-11-23 — main sync (binding-leftovers thread)
+Checked what landed (#9053, #9078, #9108, #9120). The ²H/³H/³He redo on the ruled γγ chain is done (#9053): every chain unbinds for every A ≥ 2 and q > 1, scope (b), proved in `QOU/Mass/LightNucleiGGChainSign.lean`. ⁴He all-pairs unbinds on (1, q*), q* ≈ 1.49 (#9078). The ²H six-strand word was computed exactly there, which covers the H₆ free-vs-bound deuteron difference: B_diff −0.77 keV (pn order), −1.34 keV (np) against AME 2224.6.
+Residual (ii), why the binding count channel is a bare integer while the mass channel keeps lw, is NOT touched by any of these. It stays open math. The new γγ results sharpen it: the bound-state trace now exceeds the free one, so the open question also includes where binding comes from at all on the ruled word.
