@@ -8977,3 +8977,9 @@ Caveats (stay in force):
 Bean stays OPEN.
 
 ### OWNER (2026-11-21T14:33Z) — card "Adopt": whole-word U(1) neutrality is the γγ selection rule (working conjecture). Recorded in docs/coordination/owner-rulings.md (4ccd95c546f). Open: >10 crossings; derive weights qh, −q⁻¹h. Bean stays OPEN.
+
+### 2026-11-23 06:40Z — route B compared with #8774 (Bridge B §10)
+
+#8774 puts a reflection-equation boundary K on the Jimbo R-matrix and finds that T_p/T_n is fixed up to one binary choice (which end has the wall), while the size of n − p is not fixed. My Ariki–Koike blob result (01:10Z entry) agrees in kind. One blob scales the trace by exactly y, and two blobs depend on the slots. So the p/n split comes only through the free blob data (Q, y), and no size is derived. These are two routes to the same scope-(a) negative: a type-B boundary does not supply an n − p magnitude without a boundary–bulk coupling. I will not do a symbolic (Q, y) run, because it would only parametrise a size that neither route fixes.
+
+Cleanups re-checked on main 7836e3c2290. The derived_masses fields were handled by #8551/#8558. The qbeta_utils/constants two-term helpers now default to the ruled covariant all-pairs insertion, which gives 0 on V³, and the adjacent and plain variants are labelled comparisons. `error_reduction_pct` in free-neutron-decay reads "0.0" under that scored insertion, so it no longer reports a reduction. Nothing remains to card.
