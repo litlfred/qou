@@ -114,5 +114,5 @@ At $n \geq 5$: the partition combinatorics gets richer; Hoefsmit
 seminormal form
 ([Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$](#prop:hoefsmit-seminormal-form))
 and the explicit $e_\lambda$ formula
-([Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent))
+([Explicit central primitive idempotents $e_\lambda$ via Jucys–Murphy elements](#prop:explicit-central-idempotent))
 allow the bridge to be computed cell-by-cell.

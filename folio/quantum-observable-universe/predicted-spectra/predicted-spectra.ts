@@ -180,7 +180,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Bloch group and the Faddeev pentagon",
+      title: "Bloch group and the Faddeev–Kashaev pentagon",
       label: "sec:archimedean-hartree-crystal-mass-tower-deeper",
       blocks: [
         "archimedean-hartree-crystal-mass-tower-deeper-intro",
@@ -250,7 +250,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Hadron half-life and Gröbner NF",
+      title: "Hadron half-life and Gröbner–Shirshov normal form",
       label: "sec:nuclear-stability-decay-hadron-half-life",
       blocks: [
         "nuclear-stability-decay-hadron-half-life-intro",

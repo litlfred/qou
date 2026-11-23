@@ -90,7 +90,7 @@ Three narrow obstructions do bite:
    §5), but is not automatic.
 
 2. **Hyperbolic volume $\mathrm{Vol}(S^3 \setminus K)$**. Used
-   for cross-checking the Kashaev volume conjecture
+   for cross-checking the Kashaev–Murakami–Murakami volume conjecture
    ([Kashaev volume--density](#rem:kashaev-volume-density)).
    Hyperbolic geometry requires conformal structure on
    $\mathbb{CP}^1$ and metric completion of a universal cover

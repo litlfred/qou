@@ -46,7 +46,7 @@ The image of $\mathrm{Vol}_q(4_1)$ under $\tau_{\text{arch}}$ in
 the Faddeev-Kashaev quasi-classical limit is the *hyperbolic
 volume* of the figure-8 knot complement
 $S^3 \setminus 4_1$
-([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)),
+([Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)),
 which evaluates as the transcendental
 
 $$

@@ -1,5 +1,5 @@
 **Conjecture (conditional).**
-Under the [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
+Under the [Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)
 applied to an atomic Hecke element $T_w$ with `Markov closure` knot/link
 $K_w$, the multiplicative density prefactor
 $\rho_F \in \mathbb{Z}_{>0}$ in the binding-energy formula
@@ -160,7 +160,7 @@ removing the third unnamed $\rho$.
 
 ## Cross-references
 
-- Underlying Kashaev volume conjecture:
+- Underlying Kashaev–Murakami–Murakami volume conjecture:
   [`kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
 - $\nu_{\mathrm{SDP}}$ algorithmic definition:
   [`atom-knot-mass-derivation`](atom-knot-mass-derivation.md)

@@ -10,4 +10,4 @@ $$
 
 **Status:** Part A now PROVED. The elementary uniform convergence for $x \in (0, 1)$ holds strictly on the sub-unity limit. The substantive open content concerns the substrate continuation extending past the branch cut, demanding exact cancellation among algebraic poles before evaluating the principal branch.
 
-This conjecture supplies the required algebraic half of the overarching Kashaev volume conjecture, pairing with the Bloch-Wigner geometric half to construct the complete continuous volume.
+This conjecture supplies the required algebraic half of the overarching Kashaev–Murakami–Murakami volume conjecture, pairing with the Bloch-Wigner geometric half to construct the complete continuous volume.

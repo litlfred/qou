@@ -1,4 +1,4 @@
-The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
+The [Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)
 \cite{kashaev1997} (open in full generality; provenance is recorded in that
 block) states:
 
@@ -294,7 +294,7 @@ figure-eight discharge.
 
 ## Connection to QOU
 
-This paper uses the Kashaev volume conjecture as a *cross-
+This paper uses the Kashaev–Murakami–Murakami volume conjecture as a *cross-
 check* on its categorical mass formula
 ([Kashaev volume--density](#rem:kashaev-volume-density)). The
 mass formula computes a particle mass via Hoefsmit/Markov-trace

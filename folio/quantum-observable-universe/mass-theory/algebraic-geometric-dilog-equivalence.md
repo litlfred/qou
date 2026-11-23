@@ -80,7 +80,7 @@ is not established here.
 
 The conjecture is the **QOU-native, partial-product** form of the
 Kashaev–Murakami–Murakami theorem
-([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)).
+([Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)).
 Kashaev–MM pass through the colored Jones polynomial at roots of
 unity; the present conjecture passes through the **explicit shared
 denominator**:
@@ -101,7 +101,7 @@ schemes.
 ## Conjectural standing
 
 This result is downstream of
-([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) and
+([Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)) and
 ([Archimedean limit](#conj:dilogarithm-archimedean-limit)), so it is
 necessarily a **conjecture** — propagation of conjectural backing
 forbids promotion to `proposition`/`theorem`.

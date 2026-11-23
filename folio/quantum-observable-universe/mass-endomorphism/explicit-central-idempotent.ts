@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:explicit-central-idempotent",
   title:
-    "Explicit central primitive idempotents $e_\\lambda$ via Murphy elements",
+    "Explicit central primitive idempotents $e_\\lambda$ via Jucys–Murphy elements",
   lean: {
     ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem",
     validation: "not_checked",

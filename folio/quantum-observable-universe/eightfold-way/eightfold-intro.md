@@ -2,7 +2,7 @@ The previous chapter established the knot-particle dictionary: each
 observable particle corresponds to a specific braid configuration in the
 Iwahori--Hecke algebra $H_n(q)$, and the confinement hierarchy organises
 these configurations into shells.  The question this chapter takes up is:
-*why do these particles fall into octets and decuplets?*
+*why do these particles fall into the octets and decuplets of the Eightfold Way of Gell-Mann and Ne’eman?*
 
 The candidate answer lies in the representation theory of three-strand
 braiding --- but the chapter must open with a warning about the shape of

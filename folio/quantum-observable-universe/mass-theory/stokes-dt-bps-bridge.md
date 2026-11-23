@@ -48,14 +48,14 @@ Two published knot-homology/BPS bridges live in the literature, and they identif
 
 | Bridge | BPS sector | $4_1$ count |
 |--------|-----------|-------------|
-| Gukov--Stošić [`gukov-stosic2012`] | **open** BPS states (conormal $L_K \subset T^*S^3$; colored HOMFLY homology) | $\det(4_1) = 5$ |
+| Gukov--Stošić [`gukov-stosic2012`] | **open** BPS states (conormal $L_K \subset T^*S^3$; colored HOMFLY-PT homology) | $\det(4_1) = 5$ |
 | GPPV [`gukov-pei-putrov-vafa2017`] + GGM Conj 3(d) | **closed** / state-integral ($\hat{Z}$; resurgent Stokes) | $3$ |
 
 The closed-sector entry is the $4_1$ Stokes integer of GGM eq. (60) (§3.1, *the
 $4_1$ knot when $u = 0$*). The integer $4$ that has been quoted beside it comes
 from GGM eqs. (96)/(98), which are **$5_2$ data** (§3.2), not $4_1$ data.
 
-The **open**-HOMFLY count is fixed by the knots--quivers correspondence
+The **open**-HOMFLY-PT count is fixed by the knots--quivers correspondence
 [`kucharski-reineke-stosic-sulkowski2017`]: the quiver of a knot has one node per
 HOMFLY-PT homology generator, so the $4_1$ open-BPS count is $\det(4_1) = 5$.
 
@@ -75,13 +75,13 @@ identification is not a coincidence of the figure-eight:
 
 All four counts equal $1 + 4pm$, the determinant of the double twist knot
 $K(p, -m)$ implied by the Alexander polynomial of [`singh-physrevd108106023`].
-Since $5 \neq 3$, the **open**-HOMFLY Gukov--Stošić bridge does *not* reproduce
+Since $5 \neq 3$, the **open**-HOMFLY-PT Gukov--Stošić bridge does *not* reproduce
 the $4_1$ Stokes integer $3$ of GGM eq. (60) and does *not* license
 $A_\omega = 3$. Only the **closed**-sector bridge stated above relates to that
 integer; its $q \to 0$ anchor $S^+(0)_{01} = 3$ is proved
 unconditionally.
 
-The **closed**-sector bridge is therefore adopted. It is *not* the open-HOMFLY bridge.
+The **closed**-sector bridge is therefore adopted. It is *not* the open-HOMFLY-PT bridge.
 
 ### The hypothesis
 
@@ -92,4 +92,4 @@ These are the conjecture's *inputs*; neither asserts a value of $A_\omega$.
 Neither is established (the general statement is open for every knot, $4_1$
 included). Downstream results take the bridge as an explicit hypothesis and are
 proved conditionally on it, following the same pattern as the
-[Kashaev volume conjecture](kashaev-volume-conjecture.md).
+[Kashaev–Murakami–Murakami volume conjecture](kashaev-volume-conjecture.md).
