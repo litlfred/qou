@@ -1,11 +1,11 @@
 ---
 # qou-kdmr
 title: 'Outreach Survey: 10–15 Page PBS Space Time Accessible Article + Per-Section Narrated Slide Decks & Visual Storyboards'
-status: todo
+status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-23T21:31:07Z
-updated_at: 2026-11-23T21:31:07Z
+updated_at: 2026-11-23T23:53:06Z
 parent: qou-hksc
 ---
 
