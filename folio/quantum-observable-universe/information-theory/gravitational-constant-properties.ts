@@ -22,6 +22,7 @@ export default remark({
   ],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The associated Julia-set\nHausdorff-dimension prediction is recorded separately\n([Hausdorff-dimension prediction](#rem:julia-hausdorff-dimension-prediction))." },
+    { kind: "caveat", date: "2026-11-23", body: "The phrase \"the holographic content of the descent involution\" was rescoped to a heuristic area-law reading: no holographic statement about the descent involution is proved in the corpus." },
   ],
   foreshadows: ["rem:julia-hausdorff-dimension-prediction"],
   cites: [

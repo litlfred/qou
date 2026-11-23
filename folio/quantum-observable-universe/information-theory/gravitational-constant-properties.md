@@ -76,10 +76,11 @@ divisors of codimension $\geq 2$.
 The exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$
 is a $2$-sphere.  Each jet level $k$ adds a shell of in-progress
 braids whose **information surface area** scales as $\hbar_q^2$
-(the square of the linear Reeb dimension), not $\hbar_q$.  This is
-the holographic content of the :refterm[descent]{#descent} involution: information on
-the exceptional divisor lives on $2$-surfaces, and area is quadratic
-in the linear scale.
+(the square of the linear Reeb dimension), not $\hbar_q$.  Read
+heuristically, information on the exceptional divisor lives on
+$2$-surfaces, and area is quadratic in the linear scale; this is an
+analogy with area-law entropy, not a holographic statement proved
+about the :refterm[descent]{#descent} involution.
 
 Concretely, the entropy at jet level $k$ is suppressed by the
 **area** of the transient shell, not its radius:
