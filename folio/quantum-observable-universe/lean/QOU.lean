@@ -352,6 +352,13 @@ import QOU.MathlibExt.PLScaling
 import QOU.MathlibExt.PLMoiseAssembly
 import QOU.MathlibExt.PLSlice
 import QOU.MathlibExt.PLTies
+import QOU.MathlibExt.PLCone
+import QOU.MathlibExt.PLDerived
+import QOU.MathlibExt.PLConeMap
+import QOU.MathlibExt.PLBarycentric
+import QOU.MathlibExt.PLRegularNbhd
+import QOU.MathlibExt.PLStar
+import QOU.MathlibExt.PLBall
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
