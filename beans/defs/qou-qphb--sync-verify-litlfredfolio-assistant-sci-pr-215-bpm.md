@@ -1,11 +1,11 @@
 ---
 # qou-qphb
 title: 'Sync & verify litlfred/folio-assistant-sci PR #215 (BPMN checklist/SVG generation + landing-page survey)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T21:29:52Z
-updated_at: 2026-11-23T21:29:52Z
+updated_at: 2026-11-23T22:08:56Z
 parent: qou-hksc
 ---
 
