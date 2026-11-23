@@ -2920,6 +2920,22 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "silver2006knotorigins" },
   { id: "przytycki2007knothistory" },
   { id: "faddeevniemi1997" },
+  // 2026-11-23: relational space, trace-radical quotient, and Rieffel–Kantorovich prior art (bean qou-u58f).
+  { id: "leibniz-clarke1717" },
+  { id: "temperley-lieb1971" },
+  { id: "bhmv1995" },
+  { id: "gelfand-naimark1943" },
+  { id: "segal1947" },
+  { id: "haag-kastler1964" },
+  { id: "henneaux-teitelboim1992" },
+  { id: "kantorovich1942" },
+  { id: "rubinstein1957" },
+  { id: "connes1989" },
+  { id: "rieffel1999" },
+  { id: "rieffel2004" },
+  { id: "latremoliere2016" },
+  { id: "iochum-krajewski-martinetti2001" },
+  { id: "dandrea-martinetti2010" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

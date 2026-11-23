@@ -36,6 +36,26 @@ Stated the other way: the degeneracy is not a defect convention D introduces, it
 what convention D means. Under convention C the framework computes in the full Hecke
 algebra; under convention D it has been computing in Temperley--Lieb throughout.
 
+## Lineage of the trace-radical quotient
+
+The algebraic ingredients assemble a well-documented lineage. Harold Neville Vazeille
+Temperley and Elliott H. Lieb \cite{temperley-lieb1971} introduced the planar diagram
+algebra $TL_n$ of Catalan dimension $C_n$; Vaughan F. R. Jones \cite{jones1987} and
+Hans Wenzl \cite{wenzl1988} identified $TL_n(q)$ as the two-row GNS quotient of
+$H_n(q)$ via explicit Gram determinants and minimal idempotents; and Rosa C. Orellana
+\cite{orellana1998} together with Meinolf Geck and Sofia Lambropoulou
+\cite{geck-lambropoulou-2004} gave closed Young-diagram weight formulas characterizing
+weight-vanishing Markov trace radicals across Iwahori--Hecke towers. Categorically,
+quotienting by pairings that vanish under every trace closure matches the universal
+skein construction of Christian Blanchet, Nathan Habegger, Gregor Masbaum, and Pierre
+Vogel \cite{bhmv1995}, Vladimir G. Turaev \cite{turaev2010}, and the negligible-morphism
+ideal of John W. Barrett and Bruce W. Westbury \cite{barrett1993}. What distinguishes
+the present regime from root-of-unity topological field theory is the parameter locus:
+skein semisimplification specialises $q = e^{i\pi/r}$ to kill tilting modules of zero
+quantum dimension, whereas here $q > 1$ is real and $U_q(\mathfrak{sl}_2)$ is
+semisimple, with the radical generated at every real $q$ by Michio Jimbo's two-row
+$\mathrm{SU}_q(2)$ Schur--Weyl rank cap \cite{jimbo1986}.
+
 ## What is measured and what is proved
 
 The dimension count above **was** a measurement rather than a theorem of this

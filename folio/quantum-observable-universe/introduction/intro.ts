@@ -6,5 +6,8 @@ export default prose({
   cites: [
     "wigner1960",
     "heisenberg1958",
+    "leibniz-clarke1717",
+    "gelfand-naimark1943",
+    "segal1947",
   ],
 });
