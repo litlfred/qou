@@ -1,0 +1,369 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-23T00:43:58.313049+00:00",
+  "commitSha": "8c51ea692448f137add14f704cc6b700e9ab9903",
+  "assertions": [
+    {
+      "name": "G1_V0V1V0_group_relations_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "s0 s1^-1 s1 s2^-1 s0 s1^-1 -> s0 s2^-1 s0 s1^-1 by free cancellation across far-commuting letters; Burau matrices equal in Q(t), crossing data equal."
+    },
+    {
+      "name": "G2_V0V1V0_excess",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "length 6 -> 4, crossing bound 4 (pred 4); excess 1 (pred 1); cancellation counts over 200 random orders [1]; matches predicted reduced word: True."
+    },
+    {
+      "name": "G1_V1V2V1_group_relations_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "s1 s2^-1 s2 s3^-1 s1 s2^-1 -> s1 s3^-1 s1 s2^-1 by free cancellation across far-commuting letters; Burau matrices equal in Q(t), crossing data equal."
+    },
+    {
+      "name": "G2_V1V2V1_excess",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "length 6 -> 4, crossing bound 4 (pred 4); excess 1 (pred 1); cancellation counts over 200 random orders [1]; matches predicted reduced word: True."
+    },
+    {
+      "name": "G1_V2V3V2_group_relations_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "s2 s3^-1 s3 s4^-1 s2 s3^-1 -> s2 s4^-1 s2 s3^-1 by free cancellation across far-commuting letters; Burau matrices equal in Q(t), crossing data equal."
+    },
+    {
+      "name": "G2_V2V3V2_excess",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "length 6 -> 4, crossing bound 4 (pred 4); excess 1 (pred 1); cancellation counts over 200 random orders [1]; matches predicted reduced word: True."
+    },
+    {
+      "name": "G1_V0V1V2V0V3_group_relations_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "s0 s1^-1 s1 s2^-1 s2 s3^-1 s0 s1^-1 s3 s4^-1 -> s0 s0 s1^-1 s4^-1 by free cancellation across far-commuting letters; Burau matrices equal in Q(t), crossing data equal."
+    },
+    {
+      "name": "G2_V0V1V2V0V3_excess",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "length 10 -> 4, crossing bound 4 (pred 4); excess 3 (pred 3); cancellation counts over 200 random orders [3]; matches predicted reduced word: True."
+    },
+    {
+      "name": "G1_V0V1V2V3V0_group_relations_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "s0 s1^-1 s1 s2^-1 s2 s3^-1 s3 s4^-1 s0 s1^-1 -> s0 s4^-1 s0 s1^-1 by free cancellation across far-commuting letters; Burau matrices equal in Q(t), crossing data equal."
+    },
+    {
+      "name": "G2_V0V1V2V3V0_excess",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "length 10 -> 4, crossing bound 4 (pred 4); excess 3 (pred 3); cancellation counts over 200 random orders [3]; matches predicted reduced word: True."
+    },
+    {
+      "name": "G1_V2V0V3V1V0_group_relations_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "s2 s3^-1 s0 s1^-1 s3 s4^-1 s1 s2^-1 s0 s1^-1 -> s0 s4^-1 s0 s1^-1 by free cancellation across far-commuting letters; Burau matrices equal in Q(t), crossing data equal."
+    },
+    {
+      "name": "G2_V2V0V3V1V0_excess",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "length 10 -> 4, crossing bound 4 (pred 4); excess 3 (pred 3); cancellation counts over 200 random orders [3]; matches predicted reduced word: True."
+    },
+    {
+      "name": "G1_V2V3V0V1V0_group_relations_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "s2 s3^-1 s3 s4^-1 s0 s1^-1 s1 s2^-1 s0 s1^-1 -> s4^-1 s0 s0 s1^-1 by free cancellation across far-commuting letters; Burau matrices equal in Q(t), crossing data equal."
+    },
+    {
+      "name": "G2_V2V3V0V1V0_excess",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "length 10 -> 4, crossing bound 4 (pred 4); excess 3 (pred 3); cancellation counts over 200 random orders [3]; matches predicted reduced word: True."
+    },
+    {
+      "name": "G1_V0V1V0V1V2_group_relations_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "s0 s1^-1 s1 s2^-1 s0 s1^-1 s1 s2^-1 s2 s3^-1 -> s0 s2^-1 s0 s3^-1 by free cancellation across far-commuting letters; Burau matrices equal in Q(t), crossing data equal."
+    },
+    {
+      "name": "G2_V0V1V0V1V2_excess",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "length 10 -> 4, crossing bound 4 (pred 4); excess 3 (pred 3); cancellation counts over 200 random orders [3]; matches predicted reduced word: True."
+    },
+    {
+      "name": "G1_V1V2V1V2V3_group_relations_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "s1 s2^-1 s2 s3^-1 s1 s2^-1 s2 s3^-1 s3 s4^-1 -> s1 s3^-1 s1 s4^-1 by free cancellation across far-commuting letters; Burau matrices equal in Q(t), crossing data equal."
+    },
+    {
+      "name": "G2_V1V2V1V2V3_excess",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "length 10 -> 4, crossing bound 4 (pred 4); excess 3 (pred 3); cancellation counts over 200 random orders [3]; matches predicted reduced word: True."
+    },
+    {
+      "name": "G1_two_five_vertex_words_same_braid",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "V0V1V2V0V3 and V0V1V2V3V0 have the same Burau matrix (Lean pairWord'_braidEq proves they are the same braid)."
+    },
+    {
+      "name": "G3_no_nucleon_strand",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The family has six lepton/photon strands and no nucleon strand; no energy per cancelled pair is derived in the corpus. The reduction does not assign 2E0 ln q = 0.8735366214 MeV (comparison only)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-gg-pair-gb",
+  "scriptFile": "qbeta_gg_pair_gb_probe.py",
+  "scriptHash": "0c25cb3f3733",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_gg_pair_gb/qbeta_gg_pair_gb_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_gg_pair_gb/qbeta_gg_pair_gb_probe.py"
+  },
+  "description": "Group-relation reduction of the gamma-gamma lepton pair words (W5): the unreduced and reduced words are one braid, and each word's cancellation excess is fixed by the signed crossing matrix.",
+  "photon": "gamma_i(a,b,c) = 1 + a s_i + b s_{i+1} + c s_i s_{i+1}^-1",
+  "rows": [
+    {
+      "word": "V0V1V0",
+      "letters": 6,
+      "reduced": "s0 s2^-1 s0 s1^-1",
+      "reduced_letters": 4,
+      "crossing_bound": 4,
+      "cancelled_pairs": 1,
+      "excess": 1,
+      "cancel_counts_over_200_random_orders": [
+        1
+      ],
+      "crossing_matrix": {
+        "01": 2,
+        "13": -1,
+        "23": -1
+      },
+      "burau_equal": true
+    },
+    {
+      "word": "V1V2V1",
+      "letters": 6,
+      "reduced": "s1 s3^-1 s1 s2^-1",
+      "reduced_letters": 4,
+      "crossing_bound": 4,
+      "cancelled_pairs": 1,
+      "excess": 1,
+      "cancel_counts_over_200_random_orders": [
+        1
+      ],
+      "crossing_matrix": {
+        "12": 2,
+        "24": -1,
+        "34": -1
+      },
+      "burau_equal": true
+    },
+    {
+      "word": "V2V3V2",
+      "letters": 6,
+      "reduced": "s2 s4^-1 s2 s3^-1",
+      "reduced_letters": 4,
+      "crossing_bound": 4,
+      "cancelled_pairs": 1,
+      "excess": 1,
+      "cancel_counts_over_200_random_orders": [
+        1
+      ],
+      "crossing_matrix": {
+        "23": 2,
+        "35": -1,
+        "45": -1
+      },
+      "burau_equal": true
+    },
+    {
+      "word": "V0V1V2V0V3",
+      "letters": 10,
+      "reduced": "s0 s0 s1^-1 s4^-1",
+      "reduced_letters": 4,
+      "crossing_bound": 4,
+      "cancelled_pairs": 3,
+      "excess": 3,
+      "cancel_counts_over_200_random_orders": [
+        3
+      ],
+      "crossing_matrix": {
+        "01": 2,
+        "12": -1,
+        "45": -1
+      },
+      "burau_equal": true
+    },
+    {
+      "word": "V0V1V2V3V0",
+      "letters": 10,
+      "reduced": "s0 s4^-1 s0 s1^-1",
+      "reduced_letters": 4,
+      "crossing_bound": 4,
+      "cancelled_pairs": 3,
+      "excess": 3,
+      "cancel_counts_over_200_random_orders": [
+        3
+      ],
+      "crossing_matrix": {
+        "01": 2,
+        "12": -1,
+        "45": -1
+      },
+      "burau_equal": true
+    },
+    {
+      "word": "V2V0V3V1V0",
+      "letters": 10,
+      "reduced": "s0 s4^-1 s0 s1^-1",
+      "reduced_letters": 4,
+      "crossing_bound": 4,
+      "cancelled_pairs": 3,
+      "excess": 3,
+      "cancel_counts_over_200_random_orders": [
+        3
+      ],
+      "crossing_matrix": {
+        "01": 2,
+        "12": -1,
+        "45": -1
+      },
+      "burau_equal": true
+    },
+    {
+      "word": "V2V3V0V1V0",
+      "letters": 10,
+      "reduced": "s4^-1 s0 s0 s1^-1",
+      "reduced_letters": 4,
+      "crossing_bound": 4,
+      "cancelled_pairs": 3,
+      "excess": 3,
+      "cancel_counts_over_200_random_orders": [
+        3
+      ],
+      "crossing_matrix": {
+        "01": 2,
+        "12": -1,
+        "45": -1
+      },
+      "burau_equal": true
+    },
+    {
+      "word": "V0V1V0V1V2",
+      "letters": 10,
+      "reduced": "s0 s2^-1 s0 s3^-1",
+      "reduced_letters": 4,
+      "crossing_bound": 4,
+      "cancelled_pairs": 3,
+      "excess": 3,
+      "cancel_counts_over_200_random_orders": [
+        3
+      ],
+      "crossing_matrix": {
+        "01": 2,
+        "23": -1,
+        "24": -1
+      },
+      "burau_equal": true
+    },
+    {
+      "word": "V1V2V1V2V3",
+      "letters": 10,
+      "reduced": "s1 s3^-1 s1 s4^-1",
+      "reduced_letters": 4,
+      "crossing_bound": 4,
+      "cancelled_pairs": 3,
+      "excess": 3,
+      "cancel_counts_over_200_random_orders": [
+        3
+      ],
+      "crossing_matrix": {
+        "12": 2,
+        "34": -1,
+        "35": -1
+      },
+      "burau_equal": true
+    }
+  ],
+  "comparison_context": {
+    "q0": "1.1099785827513808076",
+    "E0_order_zero_MeV": "4.18598136329448",
+    "two_E0_ln_q_MeV": "0.87353662138046",
+    "Q_beta_CODATA_MeV": "0.78233",
+    "m_n_minus_m_p_CODATA_MeV": "1.29333",
+    "note": "context only; G3 says the reduction alone does not assign this cell"
+  },
+  "scope": "(b) for G1 (invariant: the braid-group identity, Lean eval_pairWord); (b) for the excess of V0V1V2V0V3 (invariant: signed crossing matrix, Lean cancellation_count); other rows checked in this probe; G3 is a statement about what the reduction contains, not a refutation.",
+  "lean": "QOU/QBeta/GammaGammaPairReduction.lean"
+}
