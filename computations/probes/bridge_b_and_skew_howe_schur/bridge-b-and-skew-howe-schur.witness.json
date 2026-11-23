@@ -1,8 +1,8 @@
 {
   "engine": "sympy + mpmath (80 dps)",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-23T18:43:57.087440+00:00",
-  "commitSha": "5eb70f8ddcb6bb6f52f01144c29b88586045a6a2",
+  "computedAt": "2026-11-23T18:53:14.429441+00:00",
+  "commitSha": "e13fce46f1d7ff8d283cf11197e7607fbfe7a14c",
   "assertions": [
     {
       "name": "q0_at_80_matches_Q_MP",
@@ -94,11 +94,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 42,
+  "durationMs": 47,
   "computation": "bridge-b-and-skew-howe-schur",
   "scriptFile": "bridge_b_and_skew_howe_schur_probe.py",
   "scriptHash": "dd48da2f7193",
-  "scriptCommitSha": "0939230d151b85bf38708c5d184cdea7a9de0b97",
+  "scriptCommitSha": "b8a1837a211b9ba303c9fb7dee8daadf3c1a8d60",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
