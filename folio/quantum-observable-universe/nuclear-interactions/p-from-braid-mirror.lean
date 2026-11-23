@@ -139,4 +139,88 @@ theorem pFromBraidMirror_refutable :
   have h := hc.writhe_neg 1
   simp at h
 
+/-! ## Unconditional Braid-Mirror Parity Action & Writhe Negation on Signed Braid Words -/
+
+/-- Signed braid words on `n` strands: each crossing `(i, b)` pairs a generator index
+    `i : Fin (n - 1)` with its crossing sign `b : Bool` (`true` = `σ_i`, `false` = `σ_i⁻¹`). -/
+abbrev MirrorBraidWord (n : ℕ) := List (Fin (n - 1) × Bool)
+
+/-- Crossing sign `+1` for positive `σ_i` (`true`) and `-1` for negative `σ_i⁻¹` (`false`). -/
+def crossingSign (b : Bool) : ℤ :=
+  if b then 1 else -1
+
+@[simp]
+theorem crossingSign_not (b : Bool) : crossingSign (!b) = -crossingSign b := by
+  cases b <;> rfl
+
+/-- Signed writhe `w(β) ∈ ℤ` of a braid word `β`. -/
+def writhe {n : ℕ} : MirrorBraidWord n → ℤ
+  | [] => 0
+  | (_, b) :: rest => crossingSign b + writhe rest
+
+@[simp]
+theorem writhe_nil {n : ℕ} : writhe ([] : MirrorBraidWord n) = 0 := rfl
+
+@[simp]
+theorem writhe_cons {n : ℕ} (i : Fin (n - 1)) (b : Bool) (w : MirrorBraidWord n) :
+    writhe ((i, b) :: w) = crossingSign b + writhe w := rfl
+
+/-- Braid-diagram mirror reflection `P`: sends each crossing `σ_i^ε ↦ σ_i^{-ε}`
+    without reversing crossing order. -/
+def mirror {n : ℕ} (w : MirrorBraidWord n) : MirrorBraidWord n :=
+  w.map (fun p => (p.1, !p.2))
+
+@[simp]
+theorem mirror_nil {n : ℕ} : mirror ([] : MirrorBraidWord n) = [] := rfl
+
+@[simp]
+theorem mirror_cons {n : ℕ} (i : Fin (n - 1)) (b : Bool) (w : MirrorBraidWord n) :
+    mirror ((i, b) :: w) = (i, !b) :: mirror w := rfl
+
+/-- `mirror` is a braid-word monoid homomorphism (`mirror (u ++ v) = mirror u ++ mirror v`). -/
+theorem mirror_append {n : ℕ} (u v : MirrorBraidWord n) :
+    mirror (u ++ v) = mirror u ++ mirror v :=
+  List.map_append
+
+/-- **`mirror` is an involution** (`P² = id`) for every `n : ℕ`. -/
+@[simp]
+theorem mirror_involutive {n : ℕ} (w : MirrorBraidWord n) :
+    mirror (mirror w) = w := by
+  induction w with
+  | nil => rfl
+  | cons hd tl ih =>
+    obtain ⟨i, b⟩ := hd
+    simp [mirror_cons, Bool.not_not, ih]
+
+/-- `writhe` is additive under braid concatenation. -/
+theorem writhe_append {n : ℕ} (u v : MirrorBraidWord n) :
+    writhe (u ++ v) = writhe u + writhe v := by
+  induction u with
+  | nil => simp
+  | cons hd tl ih =>
+    obtain ⟨i, b⟩ := hd
+    simp [ih]
+    linarith
+
+/-- **Unconditional braid-mirror writhe negation:** `writhe (mirror w) = - writhe w`
+    for every `n`-strand signed braid word `w`. -/
+@[simp]
+theorem writhe_mirror {n : ℕ} (w : MirrorBraidWord n) :
+    writhe (mirror w) = -writhe w := by
+  induction w with
+  | nil => simp
+  | cons hd tl ih =>
+    obtain ⟨i, b⟩ := hd
+    simp [mirror_cons, writhe_cons, crossingSign_not, ih]
+    linarith
+
+/-- Concrete unconditional satisfaction of `PFromBraidMirror` on `(MirrorBraidWord n × Q)`
+    with `P (w, q) = (mirror w, q)` holding the `q`-datum fixed while negating writhe. -/
+theorem pFromBraidMirror_mirrorWord {n : ℕ} {Q : Type*} :
+    PFromBraidMirror (B := MirrorBraidWord n × Q) (Q := Q)
+      (fun b => (mirror b.1, b.2)) (fun b => writhe b.1) Prod.snd where
+  involutive b := Prod.ext (mirror_involutive b.1) rfl
+  writhe_neg b := writhe_mirror b.1
+  fixes_q _ := rfl
+
 end QOU.BraidsAndKnots

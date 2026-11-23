@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.Machinery.HeckeH3AlgebraInstance
 
 /-!
 # QOU.Conjectures.QuantumLanglandsDual — quantum Langlands duality (D19)
@@ -70,5 +71,125 @@ class QuantumLanglandsDual (R : Type*) [Field R] where
 -- (the latter is just `inv_inv`), but it carries neither the actual
 -- Iwahori–Hecke algebra nor the Langlands-dual functor — the research-
 -- grade content of the conjecture.  Honest open state ⇒ no instance.
+
+/-! ## Unconditional Type-`A` Quantum Langlands Algebra Isomorphism & Sign-Twisted Generators -/
+
+section UnconditionalQuantumLanglands
+
+open QOU.Machinery.H3
+
+/-- Balanced Hecke parameter `h(q) = q - q⁻¹` for any invertible `q : Sˣ` over a
+    commutative ring `S`. -/
+def heckeParamUnits {S : Type*} [CommRing S] (q : Sˣ) : S :=
+  (q : S) - (↑(q⁻¹) : S)
+
+/-- **Langlands parameter inversion `q ↦ q⁻¹` negates `h`:** `h(q⁻¹) = -h(q)` over any `[CommRing S]`. -/
+theorem heckeParamUnits_inv {S : Type*} [CommRing S] (q : Sˣ) :
+    heckeParamUnits (q⁻¹) = -heckeParamUnits q := by
+  unfold heckeParamUnits
+  rw [inv_inv]
+  ring
+
+/-- **Signed inverse `q ↦ -q⁻¹` preserves `h`:** `((-q⁻¹) - (-q⁻¹)⁻¹) = q - q⁻¹` over any `[CommRing S]`. -/
+theorem heckeParamUnits_neg_inv {S : Type*} [CommRing S] (q : Sˣ) :
+    ((-↑(q⁻¹) : S) - (-↑q : S)) = (q : S) - (↑(q⁻¹) : S) := by
+  ring
+
+/-- **Presentation-level quadratic intertwining (`σ_i ↦ -σ_i`, `h ↦ -h`)** in any `S`-algebra `A`
+    over `[CommRing S]`: `(-s)² = (-h) • (-s) + 1 ↔ s² = h • s + 1`. -/
+theorem hecke_quad_neg_gen_iff {S A : Type*} [CommRing S] [Ring A] [Algebra S A]
+    (h : S) (s : A) :
+    (-s) * (-s) = (-h) • (-s) + 1 ↔ s * s = h • s + 1 := by
+  rw [neg_mul_neg, neg_smul_neg]
+
+/-- **Presentation-level braid relation under `σ_i ↦ -σ_i`** in any ring `A`:
+    `(-s₀)(-s₁)(-s₀) = (-s₁)(-s₀)(-s₁) ↔ s₀ s₁ s₀ = s₁ s₀ s₁`. -/
+theorem hecke_braid_neg_gen_iff {A : Type*} [Ring A] (s₀ s₁ : A) :
+    (-s₀) * (-s₁) * (-s₀) = (-s₁) * (-s₀) * (-s₁) ↔
+      s₀ * s₁ * s₀ = s₁ * s₀ * s₁ := by
+  simp only [neg_mul, mul_neg, neg_neg, neg_inj]
+
+/-- **Presentation-level far commutation under `σ_i ↦ -σ_i`** in any ring `A`. -/
+theorem hecke_comm_neg_gen_iff {A : Type*} [Ring A] (sᵢ sⱼ : A) :
+    (-sᵢ) * (-sⱼ) = (-sⱼ) * (-sᵢ) ↔ sᵢ * sⱼ = sⱼ * sᵢ := by
+  simp only [neg_mul_neg]
+
+/-- Sign-twisted normal-form coordinates on `H_3`: sends generators `σ₀ ↦ -σ₀`, `σ₁ ↦ -σ₁`,
+    fixing even-length basis words (`1`, `L₊`, `L₋`) and negating odd-length basis words
+    (`σ₀`, `σ₁`, `e⁻ = σ₀σ₁σ₀`). -/
+def signTwistNF {S : Type*} [CommRing S] (v : Fin 6 → S) : Fin 6 → S :=
+  ![v 0, -v 1, -v 2, v 3, v 4, -v 5]
+
+theorem signTwistNF_involutive {S : Type*} [CommRing S] (v : Fin 6 → S) :
+    signTwistNF (signTwistNF v) = v := by
+  funext i
+  fin_cases i <;> simp [signTwistNF]
+
+theorem signTwistNF_mulNF {S : Type*} [CommRing S] (h : S) (u v : Fin 6 → S) :
+    signTwistNF (mulNF h u v) = mulNF (-h) (signTwistNF u) (signTwistNF v) := by
+  funext i
+  fin_cases i <;> simp [signTwistNF, mulNF, mulσ₀, mulσ₁] <;> ring
+
+/-- **Explicit sign-twisted `S`-algebra isomorphism `H_3(S, h) ≃ₐ[S] H_3(S, -h)`**
+    over any `[CommRing S]`, sending `σ_i ↦ -σ_i` and intertwining `h ↔ -h`. -/
+def langlandsSignTwistH3Equiv (S : Type*) [CommRing S] (h : S) :
+    H3A S h ≃ₐ[S] H3A S (-h) where
+  toFun x := ⟨signTwistNF x.v⟩
+  invFun y := ⟨signTwistNF y.v⟩
+  left_inv x := H3A.ext (signTwistNF_involutive x.v)
+  right_inv y := H3A.ext (signTwistNF_involutive y.v)
+  map_mul' x y := H3A.ext (signTwistNF_mulNF h x.v y.v)
+  map_add' x y := by
+    apply H3A.ext
+    funext i
+    fin_cases i <;> simp [signTwistNF, Pi.add_apply] <;> ring
+  commutes' r := by
+    apply H3A.ext
+    funext i
+    fin_cases i <;> simp [Algebra.algebraMap_eq_smul_one, signTwistNF, unitNF]
+
+/-- Explicit generator action: `langlandsSignTwistH3Equiv` maps `σ₀ ↦ -σ₀` and `σ₁ ↦ -σ₁`. -/
+theorem langlandsSignTwistH3Equiv_generators {S : Type*} [CommRing S] (h : S) :
+    langlandsSignTwistH3Equiv S h ⟨![0, 1, 0, 0, 0, 0]⟩ = -⟨![0, 1, 0, 0, 0, 0]⟩ ∧
+    langlandsSignTwistH3Equiv S h ⟨![0, 0, 1, 0, 0, 0]⟩ = -⟨![0, 0, 1, 0, 0, 0]⟩ := by
+  constructor <;> apply H3A.ext <;> funext i <;> fin_cases i <;>
+    simp [langlandsSignTwistH3Equiv, signTwistNF]
+
+/-- Parameter-equality transport `H3A S h₁ ≃ₐ[S] H3A S h₂` when `h₁ = h₂`. -/
+def h3AlgEquivOfEq (S : Type*) [CommRing S] {h₁ h₂ : S} (hh : h₁ = h₂) :
+    H3A S h₁ ≃ₐ[S] H3A S h₂ where
+  toFun x := ⟨x.v⟩
+  invFun y := ⟨y.v⟩
+  left_inv _ := rfl
+  right_inv _ := rfl
+  map_mul' x y := by subst hh; rfl
+  map_add' _ _ := rfl
+  commutes' r := by subst hh; rfl
+
+/-- **Unconditional `q ↔ q⁻¹` Langlands-dual algebra isomorphism over `[CommRing S]`:**
+    for any unit `q : Sˣ`, `H_3(S, q - q⁻¹) ≃ₐ[S] H_3(S, q⁻¹ - (q⁻¹)⁻¹)` via `σ_i ↦ -σ_i`. -/
+def langlandsDualH3UnitsInvEquiv (S : Type*) [CommRing S] (q : Sˣ) :
+    H3A S ((q : S) - (↑(q⁻¹) : S)) ≃ₐ[S] H3A S ((↑(q⁻¹) : S) - (↑((q⁻¹)⁻¹) : S)) :=
+  (langlandsSignTwistH3Equiv S ((q : S) - (↑(q⁻¹) : S))).trans
+    (h3AlgEquivOfEq S (by rw [inv_inv]; ring))
+
+/-- **Unconditional `H_3(S, q - q⁻¹) ≃ₐ[S] H_3(S, (-q⁻¹) - (-q⁻¹)⁻¹)` over `[CommRing S]`**
+    for any unit `q : Sˣ` (where `-q⁻¹ : Sˣ` has inverse `-q`). -/
+def langlandsDualH3UnitsNegInvEquiv (S : Type*) [CommRing S] (q : Sˣ) :
+    H3A S ((q : S) - (↑(q⁻¹) : S)) ≃ₐ[S] H3A S ((↑(-q⁻¹) : S) - (↑((-q⁻¹)⁻¹) : S)) :=
+  h3AlgEquivOfEq S (by simp [Units.val_neg, inv_inv]; ring)
+
+/-- Field-level `H_3(R, q - q⁻¹) ≃ₐ[R] H_3(R, (-q⁻¹) - (-q⁻¹)⁻¹)` and
+    `H_3(R, q - q⁻¹) ≃ₐ[R] H_3(R, q⁻¹ - (q⁻¹)⁻¹)` for every `q : R`! -/
+def langlandsDualH3NegInvEquiv (q : R) :
+    H3A R (q - q⁻¹) ≃ₐ[R] H3A R ((-q⁻¹) - (-q⁻¹)⁻¹) :=
+  h3AlgEquivOfEq R (by rw [inv_neg, inv_inv]; ring)
+
+def langlandsDualH3InvEquiv (q : R) :
+    H3A R (q - q⁻¹) ≃ₐ[R] H3A R (q⁻¹ - (q⁻¹)⁻¹) :=
+  (langlandsSignTwistH3Equiv R (q - q⁻¹)).trans
+    (h3AlgEquivOfEq R (by rw [inv_inv]; ring))
+
+end UnconditionalQuantumLanglands
 
 end QOU.Conjectures
