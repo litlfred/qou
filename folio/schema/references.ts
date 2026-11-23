@@ -2972,6 +2972,28 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "latremoliere2016" },
   { id: "iochum-krajewski-martinetti2001" },
   { id: "dandrea-martinetti2010" },
+  // 2026-11-23: iterated confinement tower & toric chemical Gröbner stoichiometry (bean qou-5lct).
+  { id: "dantzig-wolfe1960" },
+  { id: "benders1962" },
+  { id: "deloera-hemmecke-koeppe2013" },
+  { id: "hemmecke-koeppe-weismantel2014" },
+  { id: "bloch-horowitz1958" },
+  { id: "schrieffer-wolff1966" },
+  { id: "wilson1971" },
+  { id: "weinberg1990" },
+  { id: "aubert-emc1983" },
+  { id: "vidal2007" },
+  { id: "squier1987" },
+  { id: "lafont2003" },
+  { id: "guiraud-malbos2012" },
+  { id: "guiraud-malbos2018" },
+  { id: "mulliken1934" },
+  { id: "parr-pearson1983" },
+  { id: "birch1963" },
+  { id: "horn-jackson1972" },
+  { id: "feinberg1972" },
+  { id: "gatermann-huber2002" },
+  { id: "craciun-dickenstein-shiu-sturmfels2009" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

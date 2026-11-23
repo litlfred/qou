@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-adiabatic-confinement-gap-stability",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:adiabatic-confinement-gap-stability",
+  "kind": "theorem",
+  "title": "Reduced-cost fiber invariance, adiabatic gap stability, and cross-layer deconfinement flip",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-iterated-confinement-layer"
+  ],
+  "cites": [
+    "references/dantzig-wolfe1960",
+    "references/bloch-horowitz1958",
+    "references/schrieffer-wolff1966"
+  ],
+  "tags": [
+    "confinement-tower",
+    "adiabatic-stability",
+    "LP-duality",
+    "deconfinement"
+  ],
+  "leanRef": "qou:QOU.MathlibInfra.ConfinementLayerTower.hierarchical_confinement_of_gap_gt_perturbation",
+  "text": "adiabatic-confinement-gap-stability.md",
+  "provenance": "authored"
+}

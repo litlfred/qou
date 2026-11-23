@@ -13,18 +13,27 @@
   ],
   "label": "rem:shell-filling-electronegativity-ilp",
   "kind": "remark",
-  "title": "Electronegativity and ILP generator alternation",
+  "title": "Electronegativity, Parr–Pearson shadow-price hardness, and ILP generator alternation",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-electron-shell-braid-capacity"
+    "papers/quantum-observable-universe/blocks/def-electron-shell-braid-capacity",
+    "papers/quantum-observable-universe/blocks/prop-shell-capacity-self-square",
+    "papers/quantum-observable-universe/blocks/prop-shell-filling-rule"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/prop-shell-filling-rule",
+  "cites": [
+    "references/mulliken1934",
+    "references/perdew-parr-levy-balduz1982",
+    "references/parr-pearson1983"
+  ],
   "tags": [
     "electronegativity",
+    "chemical-hardness",
     "ILP",
     "Hund",
     "generator-alternation",
     "LP-dual"
   ],
+  "leanRef": "qou:QOU.MathlibInfra.ConfinementLayerTower.parr_pearson_hardness_eq_shadow_jump",
   "text": "shell-filling-electronegativity-ilp.md",
   "provenance": "authored"
 }

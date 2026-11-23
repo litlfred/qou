@@ -164,6 +164,19 @@ export default chapter({
         "benzene-assembly-spine",
         "assembly-shortest-production",
         "assembly-emission-ledger",
+      ],
+    }),
+
+    // ── §8. Iterated confinement tower and toric stoichiometry ──────
+    section({
+      title: "Iterated confinement layers and toric chemical stoichiometry",
+      label: "sec:confinement-tower-stoichiometry",
+      blocks: [
+        "iterated-confinement-layer",
+        "adiabatic-confinement-gap-stability",
+        "five-layer-confinement-tower-rg",
+        "toric-diophantine-stoichiometry",
+        "toric-chemical-groebner-geometry",
         "outro-molecular-construction",
       ],
     }),
