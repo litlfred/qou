@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-23T16:24:49Z
-updated_at: 2026-11-23T16:27:34Z
+updated_at: 2026-11-23T16:32:18Z
 parent: qou-tt2u
 ---
 
@@ -19,3 +19,5 @@ Each is a name the book uses the result of but does not name. Measured 2026-11-2
 Dropped as already done: Ladyzhenskaya (named in 7 files), Lawrence (credited), Birman 1974 (held). Add references only after DOI check.
 
 2026-11-23: PR #9196 cites mayer1949, lee-yang-1956 and wu1957parity. Hermann, Dietrich-Buchecker, Flapan and Witherspoon still need references that have been checked against their DOIs.
+
+2026-11-23: #9196 merged (Mayer, Lee-Yang, Wu now cited).

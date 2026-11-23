@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-23T16:24:48Z
-updated_at: 2026-11-23T16:27:34Z
+updated_at: 2026-11-23T16:32:18Z
 parent: qou-tt2u
 ---
 
@@ -23,3 +23,5 @@ Measured 2026-11-23 by grep over folio/quantum-observable-universe (md + ts). Ea
 NOT changed: Möbius energy titles already sit on blocks citing ohara1991 and freedman1994 (Freedman-He-Wang, Ann Math 139 1-50); check only that the section title credits them. Lawrence-Krammer already credits Lawrence (appendix-standard-model/gauge-hecke-realization.md:13). Birman-Murakami-Wenzl: the book never uses BMW, so the 'Birman-Wenzl' fix is not applicable.
 
 2026-11-23: PR #9196 does the name fixes. Not done yet: new references for Saavedra Rivano, Greenberg, Han-Nambu, Tanaka, Webster and Belavin. DOI hosts are blocked in this session.
+
+2026-11-23: #9196 merged 460f4a8. Next: new references (Saavedra Rivano, Greenberg, Han-Nambu, Tanaka, Webster, Belavin), each checked against its DOI.
