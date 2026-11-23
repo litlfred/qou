@@ -1,14 +1,1 @@
-The Frobenius--Hopf structure on $J^1(A)$ inherits from $A$ via the jet prolongation functor. The induced fibre functor $\tau'$ is defined by composition with the canonical projection $J^1(A) \to A$, preserving the substrate parameter $q$. The commutativity of the diagram
-
-```tex
-\begin{equation}
-\begin{tikzcd}[row sep=2.5em, column sep=3em]
-  J^1(A) \ar[r, "\nabla'"] \ar[d, "j^1"']
-  & J^1(A) \otimes \Omega^1(J^1(A)) \ar[d, "j^1 \otimes j^1"] \\
-  A \ar[r, "\nabla"']
-  & A \otimes \Omega^1(A)
-\end{tikzcd}
-\end{equation}
-```
-
-follows from the jet bundle's universal property. Because $j^1$ is the universal first-order differential operator, any connection $\nabla$ on $A$ lifts uniquely to $\nabla'$ on $J^1(A)$, forcing the square to commute.
+The splitting $j^1 \circ \ell = \mathrm{id}_A$ is [the jet object splitting](#lem:jet-prolongation-categorical-jet). For the second statement, suppose a multiplicative comultiplication $\Delta$ on $J^1(k[X])$ restricts along both jet sections to the additive coproduct $\Delta X = X \otimes 1 + 1 \otimes X$. Then the difference of the two images of $X$, the class $dX = [X \otimes 1 - 1 \otimes X]$, is a primitive element whose square is zero, and in characteristic zero such an element lies in $I^2$. But $dX \notin I^2$: the derivative $d/dX$ induces a functional on $k[X] \otimes k[X]$ that vanishes on $I^2$ and takes the value $1$ on $X \otimes 1 - 1 \otimes X$. This contradiction is `QOU.LiftingDescent.jet_polynomial_no_bialgebra` (sorry-free). $\square$
