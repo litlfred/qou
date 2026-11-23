@@ -1,12 +1,12 @@
 ---
-id: qou-nu01
-title: "SM/Eightfold Worker Pkg 4 (Q-Gap-10): Non-Zero Neutrino Mass Lift Above Unknot Vol(0_1)=0 & Dirac vs. Majorana Framing Test"
-status: todo
+# qou-nu01
+title: 'SM/Eightfold Worker Pkg 4 (Q-Gap-10): Non-Zero Neutrino Mass Lift Above Unknot Vol(0_1)=0 & Dirac vs. Majorana Framing Test'
+status: in-progress
 type: feature
 priority: medium
-parent: qou-sm8w
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T20:06:00Z
+updated_at: 2026-11-23T23:09:33Z
+parent: qou-sm8w
 ---
 
 ## Scope (`sm-params-neutrino.md`)
