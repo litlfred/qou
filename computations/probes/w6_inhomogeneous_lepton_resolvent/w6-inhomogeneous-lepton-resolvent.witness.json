@@ -1,0 +1,267 @@
+{
+  "engine": "mpmath (80 dps)",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T21:03:41.228678+00:00",
+  "commitSha": "6dc2293c9a65943b956870d053974b1c11c66346",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "lean_fig8_21_trace_and_closed_form_exact",
+      "computed": "2.6355494858076308060871435128175047519274903455921268875194407562770360727424399e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-73",
+      "source": "InhomogeneousLeptonLoopResolvent.fig8_21_trace, tauFigureEight_closed_form, tauFigureEight_bar"
+    },
+    {
+      "name": "lean_unit_ratio_gt_six_and_split_exact",
+      "computed": "2.6988026734670139454332349571251248659737501138863379328199073344276849384882585e-79",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "InhomogeneousLeptonLoopResolvent.unit_ratio_gt_six & half_div_tauElectron_lt_one"
+    },
+    {
+      "name": "lean_inhomogeneous_resolvent_electron_unit_decomp_exact",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "InhomogeneousLoopResolvent.carrier_ratio_of_electron_unit_alg"
+    },
+    {
+      "name": "lean_murakami_cone_window_and_riley_unit_norm_exact",
+      "computed": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-72",
+      "source": "InhomogeneousLeptonLoopResolvent.reidemeisterDisc41_eq_wCoord, riley_longitude_unit_norm_identity, reidemeisterTorsionAbsSq_excess_pos"
+    },
+    {
+      "name": "lean_universal_qed_self_energy_cancels_exact",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "InhomogeneousLeptonLoopResolvent.universal_qed_self_energy_cancels & fig8_21_trace_neg_of_le_five_fourths"
+    },
+    {
+      "name": "knot_5_2_shape_cubic_and_volume_verified",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-73",
+      "source": "5_2 ideal triangulation z^3 - z^2 + 1 = 0, Vol(5_2) = 3 D(z) = 2.828122088..."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 451,
+  "computation": "w6-inhomogeneous-lepton-resolvent",
+  "scriptFile": "w6_inhomogeneous_lepton_resolvent_probe.py",
+  "scriptHash": "a3d2436e22ac",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/w6_inhomogeneous_lepton_resolvent/w6_inhomogeneous_lepton_resolvent_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/w6_inhomogeneous_lepton_resolvent/w6_inhomogeneous_lepton_resolvent_probe.py"
+  },
+  "description": "Pre-registered 80-dps verification of QOU/Observations/InhomogeneousLeptonLoopResolvent.lean (W6 / Q-Gap-2, beans qou-91w7, qou-6gf9, qou-mk7u): exact H_3(q) figure-eight closed form, R = tau_e/hbar_q^2 = 70.4037 homogeneous obstruction, inhomogeneous loop resolvent decomposition, Murakami 2011 real-q Reidemeister torsion & deformed Chern-Simons test (H1), Form-B alpha_q(q_0) two-term radiative self-energy differentials (H2), and T(2,7)x4_1 / 5_2 m_tau/m_e resolvent check (H3). Zero fitted parameters.",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "alpha_q_formB_inv_50dps": "137.03541544437177808907128375560483097764260804073"
+  },
+  "data": {
+    "section1_2_resolvent_baseline": {
+      "q0_proton": "1.1099785827513808075916690956107688798744991218736",
+      "q_muon_comparison": "1.1099785956427390466817951293800017527000655610290",
+      "hbar_q": "0.099081716044258507839177117518906063985258373389446",
+      "hbar_q_sq": "0.0098171864542750738105690571795642528890492845753979",
+      "h0": "0.20906029879563931543084621312967494385975749526302",
+      "w0": "0.010896866707122299752491978091862815889240748484133",
+      "alpha_q_formB": "0.0072973836490169249495703995816829078019701535703283",
+      "alpha_q_formB_inv": "137.03541544437177808907128375560483097764260804073",
+      "tau_electron_hopf_q0": "0.69116647835844452614771953097904620661424111867810",
+      "tau_figure_eight_q0": "0.28019564227269498143312257757620762061733596633898",
+      "fig8_21_trace_q0": "-0.91067735027066772324562475403826347807219357991737",
+      "homogeneous_trace_ratio_q0": "0.40539530062015428792224941228462005066518204283928",
+      "unit_split_R_tau_e_over_hbar_sq": "70.403723264058350715646458699103555521169426417447",
+      "half_over_tau_e_scale_drift": "0.72341471361216097024167414986797660045770080982498",
+      "qvolume_c_half_unnormalized_ratio": "150.32919830538499431951135284252403088684272910827",
+      "resolvent_with_unsubtracted_O1_contact": "207.17372167129404457753183582218729598912338659387",
+      "bare_singular_carrier_Vol41_over_hbar_sq": "206.76832637067389028960958640990267593845820455103",
+      "codata_2022_mu_over_e_comparison": "206.7682827",
+      "codata_2022_mu_over_e_sigma": "0.0000046",
+      "bare_carrier_residual_ppb": "211.20586445867700571858501330938634431358572184962",
+      "required_fractional_shift_ppb": "-211.20581985076924543326242745941970408591178459958"
+    },
+    "H1_kashaev_ohtsuki_murakami_real_q": {
+      "N_eff_2pi_over_hbar_sq": "640.01894396570804166701177447853784637572490288497",
+      "S1_torsion_neg_quarter_ln3": "-0.27465307216702742284881130923063142616187263945569",
+      "H1a_root_of_unity_1loop_plus_rungs_ppb": "45550793.438427127764806632447671026707406783629189",
+      "H1b_multiplicative_S1_hbar_ppb": "-27213097.707136650822476294860961836544765419370293",
+      "H1b_multiplicative_S1_hbar_sq_ppb": "-2696320.4197031759081833629671644894111026868234999",
+      "H1b_multiplicative_kappa1_hbar_ppb": "54912719.145872922869133957056481813611644058052424",
+      "H1b_multiplicative_kappa1_hbar_sq_ppb": "5440846.4456294985265975840448994371541519104139809",
+      "murakami_cone_upper_bound_u_max": "0.96242365011920689499551782684873684627036866877132",
+      "H1c_murakami_at_u0_ln_q0": {
+        "u0": "0.10434072031951951231590627997307239705374428082898",
+        "theta_rad": "1.0408947328077780634127819500085082913084059672097",
+        "im_S_u0": "2.3671248152913265408533534580693138389956213432317",
+        "eff_vol_2pi_Re_S_over_xi": "2.3664722118890948760906549958080478256495819892480",
+        "eff_vol_shift_ppb": "165816928.25682259721436318108504592148938653936001",
+        "kirk_klassen_im_CS_u0": "1.8848935204734885587267353166921071934208587971265",
+        "kirk_klassen_im_CS_shift_ppb": "-71427603.041478594331384338549349807154383291836819",
+        "reidemeister_disc_q0": "-2.9780875248817226101029646205063373220102675362548",
+        "torsion_abs_sq_shift_ppb": "7357901.6517144382113212904040898861672220569029471",
+        "amphichiral_cusp_slope_d_eff_vol_du_at_0": "+pi (strictly positive for all 0 < |u| < u_max by [murakami-h2011] Thm 1.3 & Rem 1.4)"
+      },
+      "H1c_murakami_at_u_eq_hbar_q_vol_shift_ppb": "157253439.35374698313829369807694429533936519725892",
+      "H1c_murakami_at_u_eq_hbar_q_sq_vol_shift_ppb": "15232421.298509286353578400058570151428931427135065"
+    },
+    "H2_two_term_radiative_self_energy_at_alpha_q": {
+      "universal_1loop_schwinger_ratio_shift": {
+        "fractional_shift": "0.0",
+        "fractional_shift_ppb": "0.0",
+        "shifted_mu_over_e": "206.76832637067389028960958640990267593845820455103",
+        "post_shift_residual_vs_codata_ppb": "211.20586445867700571858501330938634431358572184962",
+        "post_shift_sigma": "9.4936247587586107796543266686822735227284847795838"
+      },
+      "shared_cutoff_pole_mass_log_neg_3alpha_2pi_ln_R0": {
+        "fractional_shift": "-0.018576591925728696818684228431648022481247084897965",
+        "fractional_shift_ppb": "-18576591.925728696818684228431648022481247084897965",
+        "shifted_mu_over_e": "202.92727554851999372081631673556107590024120109401",
+        "post_shift_residual_vs_codata_ppb": "-18576384.643349394511287311980170177714392744753360",
+        "post_shift_sigma": "-835001.55466956658243123549226933132603452150130252"
+      },
+      "pure_qed_neg_alpha_over_pi_sq": {
+        "fractional_shift": "-0.0000053955362299082521490148422936025752250662818154455",
+        "fractional_shift_ppb": "-5395.5362299082521490148422936025752250662818154455",
+        "shifted_mu_over_e": "206.76721074467775982477461008322929416774730024244",
+        "post_shift_residual_vs_codata_ppb": "-5184.3315050184687991796953232896983996654219956033",
+        "post_shift_sigma": "-233.03376570438591856302538493605048971733860013081"
+      },
+      "pure_qed_neg_alpha_over_pi_cu": {
+        "fractional_shift": "-0.000000012532909961073517199775616845514744751961001068476",
+        "fractional_shift_ppb": "-12.532909961073517199775616845514744751961001068476",
+        "shifted_mu_over_e": "206.76832377926507308409078015957073841218803846360",
+        "post_shift_residual_vs_codata_ppb": "198.67295185057940600751321488057311237930787655116",
+        "post_shift_sigma": "8.9302750158878458217738197257417800083616523150144"
+      },
+      "mixed_neg_alpha_sq_h0_sq": {
+        "fractional_shift": "-0.0000023274346304676328410695215021581209331399262222792",
+        "fractional_shift_ppb": "-2327.4346304676328410695215021581209331399262222792",
+        "shifted_mu_over_e": "206.76784513091061134932098564352703689129330738923",
+        "post_shift_residual_vs_codata_ppb": "-2116.2292575767989343288020303469334114298893221132",
+        "post_shift_sigma": "-95.123715084489278046599233252849718846219731866175"
+      },
+      "mixed_neg_alpha_h0_pow4_over_4pi": {
+        "fractional_shift": "-0.0000011092861286668587427703570696755075220338842443036",
+        "fractional_shift_ppb": "-1109.2861286668587427703570696755075220338842443036",
+        "shifted_mu_over_e": "206.76809700543759963921090807362776021972803141340",
+        "post_shift_residual_vs_codata_ppb": "-898.08049849591747415488097120893809100919034026765",
+        "post_shift_sigma": "-40.368383130513215019983993965169624340997086211863"
+      },
+      "mixed_neg_y21_alpha_h0_pow4_over_4pi": {
+        "fractional_shift": "-0.00000027432411541822256912263197279264669219383305775071",
+        "fractional_shift_ppb": "-274.32411541822256912263197279264669219383305775071",
+        "shifted_mu_over_e": "206.76826964913566214815201117557075651163207292867",
+        "post_shift_residual_vs_codata_ppb": "-63.118308898407502171629871758316673039096301396258",
+        "post_shift_sigma": "-2.8371444212721408671357454877148625928415939564404"
+      },
+      "mixed_neg_alpha_hbar_pow4_over_4pi": {
+        "fractional_shift": "-0.000000055966918312511539987145583296687295535489532681010",
+        "fractional_shift_ppb": "-55.966918312511539987145583296687295535489532681010",
+        "shifted_mu_over_e": "206.76831479848785868737826916630463733978610808122",
+        "post_shift_residual_vs_codata_ppb": "155.23893432562410244927910617763130509416966875159",
+        "post_shift_sigma": "6.9779321431929083193839792689869100234959183022162"
+      },
+      "mixed_neg_alpha_w0_sq_over_2pi": {
+        "fractional_shift": "-0.00000013790835811816129012666456483292188786157185479281",
+        "fractional_shift_ppb": "-137.90835811816129012666456483292188786157185479281",
+        "shifted_mu_over_e": "206.76829785559348966986182180763502617794744915502",
+        "post_shift_residual_vs_codata_ppb": "73.297477213461723168858310715069586681608689316713",
+        "post_shift_sigma": "3.2946942368847525699581815274299885759032652963945"
+      },
+      "channel_21_1loop_schwinger_y21_chi21": {
+        "fractional_shift": "-0.00026156055564832291933759653162101034245052708687748",
+        "fractional_shift_ppb": "-261560.55564832291933759653162101034245052708687748",
+        "shifted_mu_over_e": "206.71424393233790304616224277336651529995068411900",
+        "post_shift_residual_vs_codata_ppb": "-261349.40502698750632781275516916937691099700273748",
+        "post_shift_sigma": "-11747.558187412381269077657963801021749851278478452"
+      },
+      "channel_21_2loop_schwinger_sq_chi21_over_tau41": {
+        "fractional_shift": "-0.0000043840730331203513684220324704541403871515753343101",
+        "fractional_shift_ppb": "-4384.0730331203513684220324704541403871515753343101",
+        "shifted_mu_over_e": "206.76741988323014519059410548792942988093728577838",
+        "post_shift_residual_vs_codata_ppb": "-4172.8680946036091728613658915401876707380595817527",
+        "post_shift_sigma": "-187.56886301191508823793740664567805711178730896724"
+      }
+    },
+    "H3_tau_resolvent_candidates": {
+      "vol_5_2_exact": "2.8281220883307831627638988092766349427709813173006",
+      "codata_2022_tau_over_e_comparison": "3477.23",
+      "candidates": {
+        "H3a_satellite_T27_41_additive_hbar2": {
+          "predicted_tau_over_e": "206.76832637067389028960958640990267593845820455103",
+          "relative_error_percent": "-94.053648266848212793240320990848960927564233468852"
+        },
+        "H3a_satellite_T27_41_with_contact_trace": {
+          "predicted_tau_over_e": "208.85666532740497616429864706549537622300358390737",
+          "relative_error_percent": "-93.993590722287424870822503916465250322152875020997"
+        },
+        "H3b_satellite_cable_p2_sq_4x_Vol41_hbar2": {
+          "predicted_tau_over_e": "827.07330548269556115843834563961070375383281820412",
+          "relative_error_percent": "-76.214593067392851172961283963395843710256933875409"
+        },
+        "H3b_generation_step_Vol41_hbar3": {
+          "predicted_tau_over_e": "2086.8464397438694014650158490313757463982922245109",
+          "relative_error_percent": "-39.985378023775551186863801099398781604947264790915"
+        },
+        "H3c_five_two_Vol52_hbar2": {
+          "predicted_tau_over_e": "288.07867727715669026057367912101077782398778175995",
+          "relative_error_percent": "-91.715282645175709105794736640342721711707658631728"
+        },
+        "H3c_five_two_Vol52_hbar3": {
+          "predicted_tau_over_e": "2907.4857479100958394220681228692417134997291038564",
+          "relative_error_percent": "-16.385003352953476203125242711317867569883812579082"
+        },
+        "H3c_five_two_qvolume_3ImG_hbar0": {
+          "predicted_tau_over_e": "356.39902547174828287802082012849769653529795931802",
+          "relative_error_percent": "-89.750490319255606247558521578138411996465636172527"
+        },
+        "H3c_five_two_qvolume_div_hbar": {
+          "predicted_tau_over_e": "3597.0211225706819139773539988999890419031367850245",
+          "relative_error_percent": "3.4450157904620032030482308878040578823700699989511"
+        }
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "Canonical proton pin q_0 = q_at(80) held fixed per owner gate qou-eic1; muon pin q_muon_at(80) recorded strictly as a labelled comparison datum.",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
