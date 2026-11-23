@@ -1,0 +1,466 @@
+{
+  "engine": "mpmath (80 dps) + sympy Q(q)",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T23:01:27.795945+00:00",
+  "commitSha": "39a4158b03b4bd3a7d509334fc506b9f38e4e99f",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "P1_z3_equals_q5_over_q4_q2_1",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-77",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.zRank3_eq_rational"
+    },
+    {
+      "name": "P1_z2_sub_z3_closed_form_exact",
+      "computed": "7.9066484574228924182614305384525142557824710367763806625583222688311082182273197e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-77",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.zRank2_sub_zRank3"
+    },
+    {
+      "name": "P1_z2_strictly_exceeds_z3",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.zRank2_sub_zRank3"
+    },
+    {
+      "name": "P1_quantum_cube_3x3x3_equals_qBracket3_cubed",
+      "computed": "1.3494013367335069727166174785625624329868750569431689664099536672138424692441292e-79",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-76",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.quantum_cube_3x3x3_and_decuplet_10"
+    },
+    {
+      "name": "P1_rank3_ocneanu_weights_sum_to_one",
+      "computed": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-77",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.quantum_cube_3x3x3_and_decuplet_10"
+    },
+    {
+      "name": "P1_split_bundle_killing_weinberg_3_over_8",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.splitBundle_killing_traces"
+    },
+    {
+      "name": "P1_framed_antiUp_down_separation_one_third",
+      "computed": "1.5813296914845784836522861076905028511564942073552761325116644537662216436454639e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.antiUp_down_same_weakSign_yet_distinct_charge"
+    },
+    {
+      "name": "P1_clasp_det_rho21_equals_1_all_9_pairs",
+      "computed": "8.4337583545844185794788592410160152061679691058948060400622104200865154327758077e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-76",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.claspMarkovTrace_separates_Dbar0_K0"
+    },
+    {
+      "name": "P1_clasp_sl2_monodromy_hyperbolic_ge_27_and_real_hecke_elliptic_diagnostic",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.claspSL2_hyperbolic_all_generations"
+    },
+    {
+      "name": "P1_clasp_rho21_trace_symmetric_under_swap",
+      "computed": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.claspMarkovTrace_separates_Dbar0_K0"
+    },
+    {
+      "name": "P1_clasp_markov_z2_asymmetry_matches_closed_form",
+      "computed": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.claspMarkovTrace_separates_Dbar0_K0"
+    },
+    {
+      "name": "P1_clasp_markov_z3_asymmetry_matches_closed_form",
+      "computed": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.claspMarkovTrace_separates_Dbar0_K0"
+    },
+    {
+      "name": "P1_all_five_dictionary_mesons_pairwise_distinct_and_Dbar0_ne_K0",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.framedMesonClaspDatum_injective"
+    },
+    {
+      "name": "P2_2D_diquark_projectors_complete_orthogonal_idempotents",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-77",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.projDiquark_complete_orthogonal_idempotents"
+    },
+    {
+      "name": "P2_2D_and_3D_diquark_projectors_agree_on_sigma1_sigma2_V_V3",
+      "computed": "1.6867516709168837158957718482032030412335938211789612080124420840173030865551615e-80",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-76",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.jm2_jm3_comm_and_diquark_split"
+    },
+    {
+      "name": "P2_jucys_murphy_comm_and_jm2_eigenvalues_exact",
+      "computed": "5.187181705291630479848067634156259219616794319100726274907277861951145565439875e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-76",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.jm2_jm3_comm_and_diquark_split"
+    },
+    {
+      "name": "P2_borromean_V_ratio_q6_and_V3_diquark_split_closed_form",
+      "computed": "2.0722007832162497212860165869527631112029892842218097653121602946228196121937434e-80",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-76",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.trace_projDiquark_V_and_V3_split"
+    },
+    {
+      "name": "P2_microscopic_borromean_V3_coleman_glashow_zero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "USpinColemanGlashowLambdaSigma.borromean_coulomb_coleman_glashow_zero"
+    },
+    {
+      "name": "codata_registry_nucleon_and_electron_consistency",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-45",
+      "source": "codata_constants"
+    },
+    {
+      "name": "codata_registry_meson_validation_consistency",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-45",
+      "source": "codata_constants"
+    },
+    {
+      "name": "P3_quantum_casimir_gmo_universal_ratio_exact",
+      "computed": "4.3725413187977224842239515342337914774947019514839380143252221797108701594342542e-80",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-77",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.qCasimir_gmo_second_order_and_universal_ratio"
+    },
+    {
+      "name": "P3_quantum_casimir_matches_both_meson_positive_and_baryon_negative_GMO_signs",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.qCasimir_gmo_second_order_and_universal_ratio"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 193,
+  "computation": "sm8w-eightfold-clasp-diquark-gmo",
+  "scriptFile": "sm8w_eightfold_clasp_diquark_gmo_probe.py",
+  "scriptHash": "ced712935226",
+  "scriptCommitSha": "39a4158b03b4bd3a7d509334fc506b9f38e4e99f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w_eightfold_clasp_diquark_gmo_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w_eightfold_clasp_diquark_gmo_probe.py"
+  },
+  "description": "Pre-registered 80-dps evaluation of (1) split-bundle F = V_2 (+) W_3^* (z_3 = q^3/[3]_q) quantum W_3^{x3} = 10 + 8 + 8 + 1 decomposition and 3-strand hyperbolic meson gluon-clasp invariants separating Dbar^0 from K^0; (2) zero-parameter H_3(q_0) S^{(2,1)} diquark spin-isospin projector split (Lambda vs Sigma^0) and microscopic Borromean V^3 Coleman-Glashow cancellation; (3) O((q_0 - q_0^{-1})^2) 2nd-order rational quantum Casimir Gell-Mann-Okubo ratio vs PDG-2024 hadron masses (beans qou-8fw2, qou-8fl1, qou-3ttt, qou-qpj9, qou-pwz4, qou-c9uj, qou-3oi0).",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "h0_50dps": "0.20906029879563931543084621312967494385975749526302",
+    "preregistration_commit": "3c6d1b9dc71"
+  },
+  "data": {
+    "P1_split_bundle_and_ocneanu_parameters": {
+      "z2_rank2": "0.61268803714646525159582986394589924802630839154506",
+      "z3_rank3": "0.44930480909020786055515120160900762414255594456971",
+      "z2_minus_z3": "0.16338322805625739104067866233689162388375244697536",
+      "qBracket3_q0": "3.0437062085325219894020193356773883097682139607135",
+      "dim_q_10": "10.669048245665018946103436965569947555999583822813",
+      "dim_q_8": "8.2641474838594202343624525886712897610006622629367",
+      "dim_q_1": "1.0",
+      "qBracket3_cubed": "28.197343213383859414828342142912527078000908348687",
+      "ocneanu_w3_sym": "0.37837069134233039396726850621483345409819022150902",
+      "ocneanu_w3_mix": "0.29308248728684642273556769702332518216077214555755",
+      "ocneanu_w3_alt": "0.035464334083976760561596099738516181580265487375879",
+      "ocneanu_w2_sym": "0.50540422650393080318755870324047227566035119774981",
+      "ocneanu_w2_mix": "0.2472978867480345984062206483797638621698244011251",
+      "weinberg_killing_ratio_exact": "3/8",
+      "framed_strand_charges_exact": {
+        "u": "+2/3",
+        "d": "-1/3",
+        "d_bar": "+1/3",
+        "u_bar": "-2/3"
+      }
+    },
+    "P1_clasp_3x3_generation_table": [
+      {
+        "n1": 3,
+        "n2": 3,
+        "sl2_monodromy_trace": 27,
+        "pseudo_anosov_dilatation": "26.962912017836260078126776228850823890737800404112",
+        "det_rho21": "1.0",
+        "tr_rho21_q0": "-0.75995181487836094504223607450915362462880612577881",
+        "tr_markov_rank2_z2": "0.31746974865417854368303827390058488106973382910047",
+        "tr_markov_rank3_z3": "0.19110645730360406672295552856641322025999631646754"
+      },
+      {
+        "n1": 3,
+        "n2": 5,
+        "sl2_monodromy_trace": 41,
+        "pseudo_anosov_dilatation": "40.975595229443270082158438228674149461590293077029",
+        "det_rho21": "1.0",
+        "tr_rho21_q0": "-0.69196128753435425998445978857435143889323110856091",
+        "tr_markov_rank2_z2": "0.23909267379554245591864561593826145519314727169898",
+        "tr_markov_rank3_z3": "0.1479981767567462099359242584507156716073411262301"
+      },
+      {
+        "n1": 3,
+        "n2": 7,
+        "sl2_monodromy_trace": 55,
+        "pseudo_anosov_dilatation": "54.981812167322590883074787429867761762744852748483",
+        "det_rho21": "1.0",
+        "tr_rho21_q0": "-0.65421376451975647078622743241319489255445901006217",
+        "tr_markov_rank2_z2": "0.17116543319641260250651444018878027149419435093715",
+        "tr_markov_rank3_z3": "0.11135833538565175191793835023161261139458159752851"
+      },
+      {
+        "n1": 5,
+        "n2": 3,
+        "sl2_monodromy_trace": 41,
+        "pseudo_anosov_dilatation": "40.975595229443270082158438228674149461590293077029",
+        "det_rho21": "1.0",
+        "tr_rho21_q0": "-0.69196128753435425998445978857435143889323110856091",
+        "tr_markov_rank2_z2": "0.45156395349172803770292959025936524399189894849589",
+        "tr_markov_rank3_z3": "0.29215556350165729040174969589456904814881356643717"
+      },
+      {
+        "n1": 5,
+        "n2": 5,
+        "sl2_monodromy_trace": 63,
+        "pseudo_anosov_dilatation": "62.984122982862330319734494080240195861546997673621",
+        "det_rho21": "1.0",
+        "tr_rho21_q0": "-0.56489111479042419403185218645145837062665258997954",
+        "tr_markov_rank2_z2": "0.36570784757351746876473058972032449774701197257153",
+        "tr_markov_rank3_z3": "0.24827533245729015244429869363616680771117195888573"
+      },
+      {
+        "n1": 5,
+        "n2": 7,
+        "sl2_monodromy_trace": 85,
+        "pseudo_anosov_dilatation": "84.988233665333747314591838690053988341732070126489",
+        "det_rho21": "1.0",
+        "tr_rho21_q0": "-0.46251019090769322455555423527253701579671686298482",
+        "tr_markov_rank2_z2": "0.29583544510333482013777637952591569965563847709502",
+        "tr_markov_rank3_z3": "0.21524627486678256296553381224526881293737478060932"
+      },
+      {
+        "n1": 7,
+        "n2": 3,
+        "sl2_monodromy_trace": 55,
+        "pseudo_anosov_dilatation": "54.981812167322590883074787429867761762744852748483",
+        "det_rho21": "1.0",
+        "tr_rho21_q0": "-0.65421376451975647078622743241319489255445901006217",
+        "tr_markov_rank2_z2": "0.60539430664635705847375293978260683167401767486",
+        "tr_markov_rank3_z3": "0.40597368168205041785032966962990931269928694971761"
+      },
+      {
+        "n1": 7,
+        "n2": 5,
+        "sl2_monodromy_trace": 85,
+        "pseudo_anosov_dilatation": "84.988233665333747314591838690053988341732070126489",
+        "det_rho21": "1.0",
+        "tr_rho21_q0": "-0.46251019090769322455555423527253701579671686298482",
+        "tr_markov_rank2_z2": "0.50830672479952040192206035384701948845439015389193",
+        "tr_markov_rank3_z3": "0.35940366161169364343135924968912218947884722081638"
+      },
+      {
+        "n1": 7,
+        "n2": 7,
+        "sl2_monodromy_trace": 115,
+        "pseudo_anosov_dilatation": "114.99130369021040037664134357779693254998929524792",
+        "det_rho21": "1.0",
+        "tr_rho21_q0": "-0.29102118414785817417836935012886183389315653588709",
+        "tr_markov_rank2_z2": "0.43343530266525485067368230002709081524126566388448",
+        "tr_markov_rank3_z3": "0.32854181292308951950430691677784993424683882599147"
+      }
+    ],
+    "P1_clasp_ordered_pair_asymmetries": [
+      {
+        "pair": "Dbar0_5_3_vs_K0_3_5",
+        "abs_diff_tr_rho21": "0.0",
+        "diff_markov_z2": "0.21247127969618558178428397432110378879875167679691",
+        "diff_markov_z2_closed_form": "0.21247127969618558178428397432110378879875167679691",
+        "diff_markov_z3": "0.14415738674491108046582543744385337654147244020707",
+        "diff_markov_z3_closed_form": "0.14415738674491108046582543744385337654147244020707"
+      },
+      {
+        "pair": "B_7_3_vs_3_7",
+        "abs_diff_tr_rho21": "2.1084395886461046448697148102540038015419922764737e-81",
+        "diff_markov_z2": "0.43422887344994445596723849959382656017982332392284",
+        "diff_markov_z2_closed_form": "0.43422887344994445596723849959382656017982332392284",
+        "diff_markov_z3": "0.29461534629639866593239131939829670130470535218911",
+        "diff_markov_z3_closed_form": "0.29461534629639866593239131939829670130470535218911"
+      },
+      {
+        "pair": "Bs_Bc_7_5_vs_5_7",
+        "abs_diff_tr_rho21": "4.2168791772922092897394296205080076030839845529474e-81",
+        "diff_markov_z2": "0.21247127969618558178428397432110378879875167679691",
+        "diff_markov_z2_closed_form": "0.21247127969618558178428397432110378879875167679691",
+        "diff_markov_z3": "0.14415738674491108046582543744385337654147244020707",
+        "diff_markov_z3_closed_form": "0.14415738674491108046582543744385337654147244020707"
+      }
+    ],
+    "P2_diquark_projector_traces": {
+      "tr_P_Sigma0_sigma1": "1.1099785827513808075916690956107688798744991218736",
+      "tr_P_Lambda_sigma1": "-0.90091828395574149216082288248109393601474162661055",
+      "tr_P_Sigma0_JM2": "1.232052454166763931269804513535636184849681422917",
+      "tr_P_Lambda_JM2": "0.81165375436575805813221482214175212491853253779651",
+      "tr_P_Sigma0_V": "-0.6800705991405588584314780842674411170665821208361",
+      "tr_P_Lambda_V": "-0.3636356093919631309705412514099471927016318398774",
+      "abs_ratio_V_q0_pow_6": "1.870198026749108017999330883898209914098494807644",
+      "tr_P_Sigma0_V3": "0.98296050061427271040160786657537893254844798367118",
+      "tr_P_Lambda_V3": "1.0112253123656913763265915014433377675406915988406",
+      "diquark_V3_split_Lambda_minus_Sigma0": "0.028264811751418665924983634867958834992243615169457",
+      "borromean_V3_coleman_glashow_QED_combination": "0.0",
+      "zero_param_candidates_vs_PDG": [
+        {
+          "candidate": "q0_single_crossing_eigenvalue",
+          "zero_param_ratio": "1.1099785827513808075916690956107688798744991218736",
+          "pdg_m_Sigma0_over_m_Lambda": "1.0689792709936424593724203021826092178513072261565",
+          "rel_diff_on_mass_ratio": "0.038353701395564464069097140297180089419139023939522",
+          "implied_splitting_MeV_from_m_Lambda": "122.70123513980879355629615159830945620502080378928",
+          "rel_diff_on_76p959_MeV_splitting": "0.5943714853338634020231051806586553386221339127234"
+        },
+        {
+          "candidate": "q0_sq_JM_half_twist",
+          "zero_param_ratio": "1.232052454166763931269804513535636184849681422917",
+          "pdg_m_Sigma0_over_m_Lambda": "1.0689792709936424593724203021826092178513072261565",
+          "rel_diff_on_mass_ratio": "0.15255036986969910763740444246888771787480829868838",
+          "implied_splitting_MeV_from_m_Lambda": "258.89697822213768313088930907497918562164711896431",
+          "rel_diff_on_76p959_MeV_splitting": "2.3640896870039590318336946825579748388316781528386"
+        },
+        {
+          "candidate": "q0_fourth_JM2_ratio",
+          "zero_param_ratio": "1.5179532498183459375471101827762736396207805095132",
+          "pdg_m_Sigma0_over_m_Lambda": "1.0689792709936424593724203021826092178513072261565",
+          "rel_diff_on_mass_ratio": "0.42000251174877427647221255837911234307783162189087",
+          "implied_splitting_MeV_from_m_Lambda": "577.87163561708165064037253005038130307303126119517",
+          "rel_diff_on_76p959_MeV_splitting": "6.5088246419142874860688487382941735608964677451002"
+        },
+        {
+          "candidate": "one_plus_half_JM2_diff",
+          "zero_param_ratio": "1.2101993499005029365687948456969420299655744425602",
+          "pdg_m_Sigma0_over_m_Lambda": "1.0689792709936424593724203021826092178513072261565",
+          "rel_diff_on_mass_ratio": "0.13210740632565582780070024351959881910756286530153",
+          "implied_splitting_MeV_from_m_Lambda": "234.51584129504281777988273983170137481808199079894",
+          "rel_diff_on_76p959_MeV_splitting": "2.0472828557419251520924484443885884018514012759904"
+        },
+        {
+          "candidate": "one_plus_borromean_V3_diquark_split",
+          "zero_param_ratio": "1.0282648117514186659249836348679588349922436151695",
+          "pdg_m_Sigma0_over_m_Lambda": "1.0689792709936424593724203021826092178513072261565",
+          "rel_diff_on_mass_ratio": "-0.038087229890228558565618587388010050878091385928799",
+          "implied_splitting_MeV_from_m_Lambda": "31.534569969258031455183516700388916900651333303106",
+          "rel_diff_on_76p959_MeV_splitting": "-0.59024194741020502533578247248029578216126335707187"
+        },
+        {
+          "candidate": "abs_tr_P_Lambda_V3_over_abs_tr_P_Sigma0_V3",
+          "zero_param_ratio": "1.0287547787868946819557440820215706345792387767774",
+          "pdg_m_Sigma0_over_m_Lambda": "1.0689792709936424593724203021826092178513072261565",
+          "rel_diff_on_mass_ratio": "-0.037628879528560104835792782191074949314824686543562",
+          "implied_splitting_MeV_from_m_Lambda": "32.081217861299019448430424662071990299268856191313",
+          "rel_diff_on_76p959_MeV_splitting": "-0.58313884196391559858586488049387348719098667873396"
+        }
+      ]
+    },
+    "P3_quantum_casimir_gmo_evaluation": {
+      "universal_ratio_neg_q_minus_1_over_q_plus_1_sq": "-0.002716815482734773200806951041196611849769073473554",
+      "meson_pdg_4mK2_minus_3meta2_minus_mpi2_iso_avg_MeV2": "63149.5541454186",
+      "meson_pdg_rel_deviation_over_4mK2_iso_avg": "0.064263407672550009812053643336214257646577228338355",
+      "meson_pdg_rel_deviation_over_4mK02_neutral": "0.072480750986538557486434560519595739851308851739676",
+      "meson_pdg_normalized_ratio_iso_avg": "-0.2246569464761834677133660680385445507283809562016",
+      "meson_pdg_normalized_ratio_neutral": "-0.25463325043253446748199746514571192929444174391533",
+      "meson_qcasimir_predicted_num_MeV2": "763.67852906902794667828311453000681096702840973349",
+      "meson_fraction_of_deviation_explained": "0.012093173727093235745221616339363579244908868635078",
+      "baryon_pdg_2N_2Xi_minus_3Lambda_minus_Sigma_MeV": "-25.795155296666666666666666666666666666666666666667",
+      "baryon_pdg_rel_deviation_over_2N_2Xi": "-0.0057139625148369775818798439353764234002882399529483",
+      "baryon_pdg_normalized_ratio": "-0.33296673962618109219833743524430752284735727931432",
+      "baryon_qcasimir_predicted_num_MeV": "-0.21047350665778470304864836846219565107617663471187",
+      "baryon_fraction_of_deviation_explained": "0.0081594200243090906995371079413758240698566130211047"
+    },
+    "comparison_only_empirical": {
+      "CODATA_2022_m_e_MeV": "0.51099895069",
+      "CODATA_2022_m_p_MeV": "938.27208943",
+      "CODATA_2022_m_n_MeV": "939.56542194",
+      "PDG_2024_m_pi_pm_MeV": "139.57039",
+      "PDG_2024_m_pi_0_MeV": "134.9768",
+      "PDG_2024_m_K_pm_MeV": "493.677",
+      "PDG_2024_m_K_0_MeV": "497.611",
+      "PDG_2024_m_eta_MeV": "547.862",
+      "PDG_2024_m_Lambda_MeV": "1115.683",
+      "PDG_2024_m_Sigma0_MeV": "1192.642",
+      "PDG_2024_m_Sigma_plus_MeV": "1189.37",
+      "PDG_2024_m_Sigma_minus_MeV": "1197.449",
+      "PDG_2024_m_Xi0_MeV": "1314.86",
+      "PDG_2024_m_Xi_minus_MeV": "1321.71",
+      "PDG_2024_Delta_m_Sigma0_minus_Lambda_MeV": "76.959"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
