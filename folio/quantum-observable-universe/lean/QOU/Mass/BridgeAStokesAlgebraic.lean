@@ -59,7 +59,18 @@ conjugacy statements here hold for every choice.
 No empirical number enters. `q = e^{iπβ}` is a free complex parameter, constrained only to not
 be a root of unity, and `α, β` are free.
 
--- Ref: [kohno1987] Kohno, Ann. Inst. Fourier 37 (1987).
+The source for `hKZ` is Kohno 1987, Theorem 1.2.8 (p. 145), in the case `𝔤 = sl(m, ℂ)` with
+its vector representation `W = ℂ^m`. There the KZ form is `λ Σ (p⊗p)(t) dlog(z_a − z_b)` with
+`t` the Casimir, which on `W ⊗ W` is the swap minus a scalar; the scalar is the `c` of
+`kzResidAlg`. Kohno's monodromy is `σ_i ↦ T_i(q)`, with `T(q)` the Hecke matrix (1.2.9) (p. 146).
+Two points of scope:
+* Kohno states the result as an identity in `End(W^{⊗n}) ⊗ ℂ{λ}`, i.e. for the KZ parameter in a
+  neighbourhood of `0` (the proof in §1.3 uses Theorem 1.3.4, which needs `‖θ(γ_ab) − 1‖` small).
+  Extending to every `q` that is not a root of unity is analytic continuation in the parameter.
+* Kohno's statement is about the analytic monodromy. `hKZ` asks for it on an algebraic
+  fundamental solution, which is the Riemann–Hilbert step this file does not supply.
+
+-- Ref: [kohno1987] https://doi.org/10.5802/aif.1114 Theorem 1.2.8, p. 145; (1.2.9), p. 146
 -/
 
 set_option linter.unusedSectionVars false
