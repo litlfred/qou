@@ -255,3 +255,7 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
   - **The missing ×2.04 in Q_β cannot come from the reduced/unreduced choice.** This is a scope-(b) exclusion; the invariant is the braid identity. The search for a q = 1 term stays with W1 (§36) and W2.
   - **The only q-independent leftover is the cancellation count.** The shortest word has 4 letters, and any reduction cancels exactly 3 pairs.
   - **No MeV figures**, so the electron-unit split (R ≈ 70) does not apply.
+- **2026-11-23 00:57Z, W7 (#9163 at a091ea296):** two new results, and qou-et5f is narrowed.
+  - `KohnoAssemblyGL` proves Drinfeld–Kohno for ℂ^d.
+  - `colourC3_flavour_monodromy_conj`: the colour ℂ³ ⊗ flavour ℂ² monodromy is conjugate to Ř^{gl3}(q_c) ⊗ Ř^{gl2}(q_f). This assumes generic couplings and no colour hypothesis.
+  - `ColourTubeBraided` (qou-et5f) now reduces to one Lagrangian condition: the mixed P_c·P_f term of the pair residue vanishes.
