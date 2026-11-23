@@ -1,0 +1,130 @@
+{
+  "engine": "mpmath (80 dps)",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T19:06:17.383324+00:00",
+  "commitSha": "048a8cb73d48640e5ff8576f4da9f8f06735c0ca",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "taft_nakayama_order_and_non_unimodularity_n2_to_n6",
+      "computed": "5.9345825934952734799969033215494705873302258819153730565557020835276236687392781e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "FiniteJetNormPoleOrder.taft_unimodular_iff_zeta_eq_one & taft_nakayama_pow_id_iff"
+    },
+    {
+      "name": "finite_laurent_ratio_4_1_over_hopf_regular_at_q_eq_1",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "FiniteJetNormPoleOrder.no_laurent_trace_ratio_pole_at_one (ratio(1) = 1/2, finite)"
+    },
+    {
+      "name": "electron_unit_chart_split_matches_70p4037",
+      "computed": "0.0000037359416492843535413008964444788305735825529739515727343184072600153292719272074",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0.0001",
+      "source": "ElectronUnitSplit R = tau_e(q_0) / hbar_q^2 = 70.403727..."
+    },
+    {
+      "name": "commutator_hbar_inv_sq_identity_exact",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-73",
+      "source": "FiniteJetNormPoleOrder.hbarInvSq_eq"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "taft-tower-lepton-carrier",
+  "scriptFile": "taft_tower_lepton_carrier_probe.py",
+  "scriptHash": "eb39da0182ef",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/taft_tower_lepton_carrier/taft_tower_lepton_carrier_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/taft_tower_lepton_carrier/taft_tower_lepton_carrier_probe.py"
+  },
+  "description": "80-dps verification of Taft root-of-unity Nakayama order & non-unimodularity, finite-Laurent pole regularity at q=1, the 70.4037x ElectronUnitSplit ratio, and the +211.2 ppb proton-pinned muon residual (qou-2b62 / NF-P5).",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "taft_nakayama_table": [
+      {
+        "n": 2,
+        "nakayama_order": 2,
+        "distinguished_modulus_abs_minus_1": "2.0000000000000000000000000000000000000000000000000",
+        "zeta_pow_n_minus_1_err": "2.1433393129688096180996420313048697722770857413685e-81"
+      },
+      {
+        "n": 3,
+        "nakayama_order": 3,
+        "distinguished_modulus_abs_minus_1": "1.7320508075688772935274463415058723669428052538104",
+        "zeta_pow_n_minus_1_err": "3.9063511748927782716717472281274435332726802383678e-81"
+      },
+      {
+        "n": 4,
+        "nakayama_order": 4,
+        "distinguished_modulus_abs_minus_1": "1.4142135623730950488016887242096980785696718753769",
+        "zeta_pow_n_minus_1_err": "2.1433393129688096180996420313048697722770857413685e-81"
+      },
+      {
+        "n": 5,
+        "nakayama_order": 5,
+        "distinguished_modulus_abs_minus_1": "1.1755705045849462583374119092781455371953048752863",
+        "zeta_pow_n_minus_1_err": "5.8672433765545150245491123939137871801267350780891e-81"
+      },
+      {
+        "n": 6,
+        "nakayama_order": 6,
+        "distinguished_modulus_abs_minus_1": "1.0000000000000000000000000000000000000000000000000",
+        "zeta_pow_n_minus_1_err": "3.5667871406891236611544292983297158863591861996077e-81"
+      }
+    ],
+    "lepton_carrier_comparison_80dps": {
+      "tau_e_hopf_q0": "0.69116647835844452614771953097904620661424111867810",
+      "tr_M_4_1_h3_q0": "0.23696183024124855593265295165242941533452638434051",
+      "finite_laurent_ratio_4_1_over_hopf_q0": "0.34284334912197265752482036246758144021487004680327",
+      "finite_laurent_ratio_at_q1": "1/2",
+      "hbar_q_sq": "0.0098171864542750738105690571795642528890492845753979",
+      "electron_unit_chart_split_R": "70.403723264058350715646458699103555521169426417447",
+      "vol_4_1_over_hbar_q_sq": "206.76832637067389028960958640990267593845820455103",
+      "codata_2022_mu_over_e_comparison": "206.76828269999998610728653147816658020019531250000",
+      "vol_channel_residual_ppb": "211.20586452586679044442387693654494640990531510879",
+      "vol_4_1_over_tau_e_if_undivided_by_hbar_sq": "2.9368947661356247043699991802682247698585851189288",
+      "verdict_honest": "Any finite-rank Laurent/Taft norm with non-vanishing q=1 electron reference is regular at q=1 (ratio(1)=1/2 on 4_1/Hopf) and cannot generate the 1/hbar_q^2 double pole; the 206.7683264 muon ratio requires either an order-2 vanishing commutator-squared reference (q-1)^2 or the infinite q-dilog tower, leaving R = tau_e/hbar_q^2 = 70.403727 and the +211.22 ppb proton-pin residual intact."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

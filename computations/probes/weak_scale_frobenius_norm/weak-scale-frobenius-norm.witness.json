@@ -1,0 +1,141 @@
+{
+  "engine": "mpmath (80 dps)",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T19:07:18.400154+00:00",
+  "commitSha": "048a8cb73d48640e5ff8576f4da9f8f06735c0ca",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "three_crossing_lepton_passage_higher_h_terms_identically_zero",
+      "computed": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-73",
+      "source": "SweedlerWeakDegreeCount.three_crossing_lepton_passage_linear_in_h (F*D*F = 0)"
+    },
+    {
+      "name": "single_passage_amp_equals_q0_sq_minus_1",
+      "computed": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "SweedlerWeakDegreeCount.singlePassageAmp_eq"
+    },
+    {
+      "name": "four_hop_rate_q2_minus_1_pow_8_matches_8p4079e_minus_6",
+      "computed": "1.4477505720378831332265802987889125224211067572222376701461771732478835848804907e-85",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "SweedlerWeakDegreeCount.sweedler_weak_degree_ladder ((q_0^2 - 1)^8 = 8.4079346e-6)"
+    },
+    {
+      "name": "bring_form_b_modular_defect_vanishes_at_q1_while_static_nonzero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "BringZeroModeClassicalCriterion.modularDefect_em_vanishes_at_one"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "weak-scale-frobenius-norm",
+  "scriptFile": "weak_scale_frobenius_norm_probe.py",
+  "scriptHash": "b78a46f1f22a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/weak_scale_frobenius_norm/weak_scale_frobenius_norm_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/weak_scale_frobenius_norm/weak_scale_frobenius_norm_probe.py"
+  },
+  "description": "80-dps verification of exact Sweedler (q^2 - 1)^k weak degree counts in ChargedCurrentW (1-passage (q^2-1)^2, 2-vertex (q^2-1)^4, 4-hop (q^2-1)^8 = 8.4079e-6 vs G_F m_p^2 = 1.0268e-5), Bring Sigma_4 q->1 modular-defect dichotomy, and T(2,4)/T(3,5) Frobenius trace norms (qou-vexf / NF-P6).",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "sweedler_degree_ladder_vs_GF": {
+      "GF_GeV_inv2_CODATA": "0.000011663786999999999462532263017067180044250562787056",
+      "GF_mp2_derived": "0.000010268267533432127053773450144467057833736759133275",
+      "GF_mp2_CODATA": "0.000010268267533490694002825066574057066614346437606754",
+      "one_passage_rate_pow2": "0.053848341484818075007501155705001269921417663679156",
+      "two_vertex_rate_pow4": "0.0028996438806655792869835654345730243147273175630619",
+      "four_hop_rate_pow8": "0.0000084079346346813402127563141331399720909027079216983",
+      "pow8_over_GF_mp2": "0.81882699367797071171500427655564685008252898493947",
+      "ladder": {
+        "(q0^2-1)^1": {
+          "value": "0.23205245416676393126980451353563618484968142291700",
+          "ratio_over_GF_mp2": "22598.987941367099671617001827422427459155019717386"
+        },
+        "(q0^2-1)^2": {
+          "value": "0.053848341484818075007501155705001269921417663679156",
+          "ratio_over_GF_mp2": "5244.1506134793396654826034254017777012099690348141"
+        },
+        "(q0^2-1)^4": {
+          "value": "0.0028996438806655792869835654345730243147273175630619",
+          "ratio_over_GF_mp2": "282.38881303245368423819285800140918464319562566314"
+        },
+        "(q0^2-1)^6": {
+          "value": "0.00015614101387044318483959444182987278491251427209068",
+          "ratio_over_GF_mp2": "15.206169235664010793611884416349890065463677039357"
+        },
+        "(q0^2-1)^8": {
+          "value": "0.0000084079346346813402127563141331399720909027079216983",
+          "ratio_over_GF_mp2": "0.81882699367797071171500427655564685008252898493947"
+        },
+        "(q0^2-1)^12": {
+          "value": "0.000000024380016212489931037272375346668195729855522822400",
+          "ratio_over_GF_mp2": "0.0023743066815421207516587366427975895463997424590345"
+        },
+        "(q0^2-1)^16": {
+          "value": "0.000000000070693364821074041901205708889941336433984929206633",
+          "ratio_over_GF_mp2": "0.0000068846438399570087479493756466751931028740426290993"
+        }
+      }
+    },
+    "torus_link_frobenius_candidates": {
+      "tr_M_T24": "1.1330288582618542661563945816391248316960203807961",
+      "m_T24_over_me_schur_hbar2": "257.60739652895638970988626905969613079233791973501",
+      "m_T24_GeV": "0.13163710931627946334252259700874373580513767527649",
+      "weak_suppression_T24": "0.000000000012227537900916468742206386041739450547319148391315",
+      "tr_M_T35": "1.1874806131459626461071158300792049240880255765815",
+      "m_T35_over_me_schur_hbar2": "1012.4551955893949668981547978659859760820844580216",
+      "m_T35_GeV": "0.51736354256681954417692438580670788502020059535699",
+      "weak_suppression_T35": "0.000000000000051247074493366440024716262298421233549959865494865",
+      "note_honest": "Single lepton passage in ChargedCurrentW has exact amplitude degree k=1 ((q^2-1)^2 = 5.3848e-2 in rate), 2-vertex tree contraction gives (q^2-1)^4 = 2.8996e-3, while (q^2-1)^8 = 8.4079e-6 sits within 18.1% of G_F m_p^2 = 1.0268e-5 but requires 4 independent Sweedler hops (8 in |M|^2 ~ (G_F m_p^2)^2). Unadorned Schur/hbar^2 norms on T(2,4)/T(3,5) yield GeV-scale (~0.24-1.73 GeV) carriers (~10^-13 to 10^-17 suppression vs ~1.6e-22 electroweak (m_e/m_W)^4)."
+    },
+    "bring_zero_mode_q1": {
+      "alpha_inv_FormB_at_q1": "90.212206590789193781025178351163352482712612860987",
+      "alpha_inv_FormB_at_q0": "137.03541544437177808907128375560483097764260804073",
+      "V_EM_modular_at_q1": "0.0",
+      "V_EM_static_u_d_at_q1": "-0.0024633276429013926347615906579301177677685567151040"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
