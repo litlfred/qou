@@ -359,6 +359,7 @@ import QOU.MathlibExt.PLBarycentric
 import QOU.MathlibExt.PLRegularNbhd
 import QOU.MathlibExt.PLStar
 import QOU.MathlibExt.PLBall
+import QOU.MathlibExt.PLDeltaEquiv
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
 import QOU.Knot.FiveTwoNinthPower
