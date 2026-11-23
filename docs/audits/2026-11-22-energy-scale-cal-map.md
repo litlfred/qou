@@ -121,3 +121,48 @@ other pipeline's unit is off by a factor of about 70. That is the size of the ga
 derivation of w_e has to close. It is not c_q² (82.68) and not E₀/m_e (8.19), so neither of
 the two scales already in the corpus is this factor. No measured value enters R except
 through q₀.
+
+## 8. Where the factor 70 comes from (added 2026-11-23)
+
+Lean: `QOU/Observations/ElectronUnitSplit.lean`. It is stated over a generic field, sorry-free, and `lean -DautoImplicit=false` exits 0. `#print axioms` shows only `propext`, `Classical.choice` and `Quot.sound`. The probe in §7 now also checks each identity numerically (11/11).
+
+1. **The electron trace is one block.** The ruled electron word σ₀σ₁σ₀ has trace 0 in the
+   (2,1) block (`electron_21_trace_zero`), and convention D gives y₍₁³₎ = 0. So
+   τ_e = q³·y₍₃₎(q): the framing q³ (writhe 3) times the Ocneanu weight of the one-row block
+   (`tau_electron_eq_framing_mul_y3`).
+2. **That weight is a classical half plus an order-two remainder.**
+   y₍₃₎ = 1/2 + h²/(2[2]²), with h = q − q⁻¹ and [2] = q + q⁻¹ (`y3_split`). The 1/2 is the classical value 2^{c−n}
+   (`traceD_one`). The remainder is of order two because y₍₃₎ is bar-invariant (`y3_bar`).
+   It equals ℏ_q²·q²(q+1)²/(2(q²+1)²) (`y3_quantum_part_eq`).
+3. **So R splits exactly** (`unit_ratio_split`):
+   R = τ_e/ℏ_q² = q³/(2ℏ_q²) + q⁵(q+1)²/(2(q²+1)²).
+   At the proton pin the first term is 69.6509, the second 0.7528, total 70.4037. Almost all of
+   the factor is the classical Hopf value 1/2 divided by ℏ_q². The two pipelines disagree
+   because the trace pipeline gives the electron a weight that is finite at q = 1, while the
+   mass formula gives it ℏ_q², which vanishes there. The order-two quantum part of the trace is
+   the same size as ℏ_q² (ratio 1/2 at q = 1, 0.753·q⁻³ at q₀), but it is not what the trace
+   pipeline uses as the electron's weight.
+
+### The gap on the mass-formula side
+
+The ruled electron closes to the Hopf link, which is a torus link of hyperbolic volume 0
+(Thurston; the corpus already records this for torus leptons in
+`lepton-mass-tower-canonical`). A chart whose weight is Vol·ρ therefore gives the electron the
+value 0 for every finite ρ, and cannot match a non-zero CAL-1 (`product_weight_ne`). So the
+mass formula's electron weight ℏ_q² is not given by the formula's own rule; it is the CAL-1
+placement, made by hand. The trace pipeline's electron weight is the only one in the corpus
+that comes from its own rule. This is a structural difference between the two charts. It does
+not decide which chart is canonical, because the trace chart has its own gap (next paragraph).
+
+### The gap on the trace side
+
+In the trace chart the muon carrier would need w_μ/w_e = Vol(4₁)/ℏ_q² = 206.77. The
+convention-D trace of the standard 3-braid of 4₁, (σ₀σ₁⁻¹)², gives
+τ(4₁)/τ_e = 0.4054 at the proton pin (it is 1/2 at q = 1). That is short by a factor of
+510, as the pole obstruction of §4 requires. So neither chart derives the muon carrier: the
+mass chart builds it in through its unit, and the trace chart cannot reach it with a single trace.
+
+### What is left open
+
+- Which chart is canonical. The mass chart derives the muon and not the electron; the trace chart derives the electron and not the muon. Neither derives both.
+- One candidate for joining them: take the electron's mass-chart weight to be the order-two part of its trace, q³·ℏ_q²·q²(q+1)²/(2(q²+1)²). That would replace ℏ_q² by ℏ_q² times a factor that is 1/2 at q = 1. This is an identification, not a derivation. It would also move q₀, because CAL-2 is defined in the mass chart, so it is not adopted here.
