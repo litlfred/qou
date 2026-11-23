@@ -1,16 +1,20 @@
 ## Statement
 
-*Let $\beta \in B_n$ be any braid word. There is a terminating algorithm that returns a closed-form symbolic expression for $\mathrm{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
+*Let $\beta \in B_n$ be any braid word. There is a terminating algorithm (implemented in Lean as the total function `trWord`) that returns a closed-form symbolic expression for $\mathrm{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
 - *the Hecke quadratic $\sigma_i^2 = h \sigma_i + 1$ (with $h = q - q^{-1}$);*
 - *the Markov axiom $\mathrm{tr}_M(\alpha \sigma_n) = z \mathrm{tr}_M(\alpha)$ for $\alpha \in H_n \subset H_{n+1}$, for the Markov parameter $z$;*
 - *cyclicity $\mathrm{tr}_M(\alpha\beta) = \mathrm{tr}_M(\beta\alpha)$;*
 - *and the braid relations.*
 
-*The algorithm is correct, terminates in $O(\ell(\beta) \cdot n!)$ basis-element evaluations, and verifies the **disjoint-product property**:*
+*The trace it computes has the **disjoint-product property**. Number the generators from $1$. Let $\alpha$ be a word in $\sigma_1, \ldots, \sigma_{k+1}$ and $\beta$ a word in $\sigma_1, \ldots, \sigma_m$, and write $\beta^{\uparrow}$ for $\beta$ with every generator index raised by $k+1$, so that $\beta^{\uparrow}$ uses $\sigma_{k+2}, \ldots, \sigma_{k+m+1}$. Then*
 $$
-  \mathrm{tr}_M(\alpha \otimes \beta) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)
+  \mathrm{tr}_M(\alpha \beta^{\uparrow}) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta).
 $$
-*for $\alpha \in H_k(q) \hookrightarrow H_n(q)$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}(q) \hookrightarrow H_n(q)$ on strands $\{k+2, \ldots, n\}$ (separated by the unused generator $\sigma_{k+1}$).*
+*The two clusters share the strand $k+2$.*
+
+*The split form also holds: $\mathrm{tr}_M(\alpha \otimes \beta) = \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)$ for $\alpha \in H_k(q)$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}(q)$ on strands $\{k+2, \ldots, n\}$, separated by the unused generator $\sigma_{k+1}$.*
+
+The shared-strand law is formalised in Lean (`markovTrace_disjointProduct`). Correctness is formalised as uniqueness (`markovTrace_unique`): two traces satisfying the axioms with the same $z$ and $h$ agree on every positive word, so any procedure that uses only these axioms, the reducer included, returns the trace. Since $\sigma_i^{-1} = \sigma_i - h$, positive words suffice. The algorithm itself is implemented in Lean as `trWord`, a structurally recursive and therefore terminating function. It is proved that `trWord` is normalised (`trWord_nil`), stable under adding a strand (`trWord_stable`), and satisfies the Hecke relation (`trWord_hecke`), far commutation (`trWord_far_comm`), the braid relation (`trWord_braid`) and Markov stabilisation (`trWord_strip`). The disjoint-embedding axiom concerns only the shift map, which is satisfied by `β ↦ β.map (· + j)`. Cyclicity is proved too (`trWord_cyclic`), by Ocneanu's induction on the level, so `trWord` satisfies every axiom (`trWord_isMarkovTrace`). This gives existence of the trace for every $z$ and $h$ (Ocneanu), and with uniqueness every trace satisfying the axioms equals `trWord` (`isMarkovTrace_eq_trWord`). Shift invariance $\mathrm{tr}_M(\beta^{\uparrow}) = \mathrm{tr}_M(\beta)$ is the shared-strand law with $\alpha$ empty (`markovTrace_shift`), and the split form follows (`markovTrace_disjointProduct_split`).
 
 The algorithm and its correctness are **parametric in $z$**: no step below
 evaluates the Markov parameter, so the statement holds for whatever value the
@@ -52,11 +56,11 @@ def tr_M(perm, n):
 
 ## Correctness
 
-**Termination.** Each invocation of the recursive `tr_M` call either:
+**Termination.** Each invocation of the recursive $\mathrm{tr}_M$ call either:
 (i) truncates the ambient algebra ($n \to \text{max\_gen} + 2$ where $\text{max\_gen} + 2 < n$), strictly decreasing the integer $n$; or
 (ii) peels one $\sigma_{n-2}$ from the word and recurses on basis elements $w'$ with $\ell(w') \leq \ell(\text{rotated}) = \ell(w) - 1$, strictly decreasing the Coxeter length.
 
-The lex order on $(n, \ell(w))$ has no infinite descending chain, so termination is guaranteed. $\square$
+The lex order on $(n, \ell(w))$ has no infinite descending chain, so termination is guaranteed. Each basis expansion involves at most $n!$ basis elements; no bound on the total number of evaluations is proved here. $\square$
 
 **Correctness.** Each step is an exact equality in $\mathbb{Q}(q)$:
 - Step 1 is exact (Hecke-quadratic expansion).
@@ -67,11 +71,19 @@ By induction on $(n, \ell)$, the output equals $\mathrm{tr}_M(\beta)$ in $\mathb
 
 ## Disjoint-product property
 
-For $\alpha \in H_k$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}$ on strands $\{k+2, \ldots, n\}$ (no $\sigma_{k+1}$ appears in $\beta$), the words commute. We have $\alpha \beta = \beta \alpha$, and the Markov axiom plus cyclicity gives:
+Write $\beta^{\uparrow}$ for $\beta$ with every generator index raised by $k+1$, so that $\alpha$ uses $\sigma_1, \ldots, \sigma_{k+1}$ and $\beta^{\uparrow}$ uses $\sigma_{k+2}, \ldots$. Then
 $$
-  \mathrm{tr}_M(\alpha \beta) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)
+  \mathrm{tr}_M(\alpha \beta^{\uparrow}) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta).
 $$
-by induction on $\ell(\beta)$. The recursive algorithm realises this property automatically. The peeling phase strips $\beta$'s top generators $\sigma_{n-2}, \sigma_{n-3}, \ldots, \sigma_{k+2}$ in order. This contributes factors of $z$ that exactly match the standalone $\mathrm{tr}_M(\beta)$ computed in its own algebra $H_{n-k-1}$.
+The proof is by induction on the number $m$ of generators of $\beta$, with Ocneanu's reduction inside each level. Fix $\alpha$ and let $F(\beta)$ be the difference of the two sides. Both sides satisfy the Hecke quadratic, braid and far-commutation relations in any context, so $F$ does too.
+
+- If $\beta$ avoids its top generator $\sigma_{m}$, stability lowers $m$ on both sides, and the induction hypothesis gives $F(\beta) = 0$.
+- If $\beta = a\,\sigma_{m}\,b$ uses it once, cyclicity moves $b^{\uparrow}$ to the front, the Markov axiom strips the top letter with a factor $z$, and cyclicity restores $\alpha (ab)^{\uparrow}$. The same steps on the right side give $z\,\mathrm{tr}_M(ab)$, and the induction hypothesis closes the case.
+- If $\beta$ uses $\sigma_m$ twice or more, take two consecutive occurrences $\sigma_m x \sigma_m$. If $x$ avoids $\sigma_{m-1}$, far commutation brings the two letters together and the quadratic relation shortens the word. If $x$ uses $\sigma_{m-1}$ once, one braid move removes a $\sigma_m$. Otherwise $x$ is first reduced one level down by the same argument.
+
+Every function on words that satisfies the three relations and vanishes on words using the top generator at most once therefore vanishes, so $F = 0$. Both clusters share the strand $k+2$, so the closures form a connected sum.
+
+For the split form, let $\alpha \in H_k$ use $\sigma_1, \ldots, \sigma_{k-1}$ and let $\beta_0$ be $\beta$ written on $\sigma_1, \ldots, \sigma_{n-k-2}$. Apply the shared-strand law with $k-1$ in place of $k$ to $\alpha$ and to $\beta'$, the word $\beta_0$ with every index raised by $1$; then $\beta'^{\uparrow}$ is $\beta$ on strands $\{k+2, \ldots, n\}$, and the law gives $\mathrm{tr}_M(\alpha \otimes \beta) = \mathrm{tr}_M(\alpha)\,\mathrm{tr}_M(\beta')$. Shift invariance gives $\mathrm{tr}_M(\beta') = \mathrm{tr}_M(\beta_0)$; it is the shared-strand law applied with $\alpha$ the empty word, since $\mathrm{tr}_M(1) = 1$.
 
 ## Which axioms the disjoint product actually needs
 
@@ -91,14 +103,16 @@ The product law fails at $k = 0$, $n = 2$, $\alpha = \beta = 1$, where the left
 side is $4$ and the right is $2^0 \cdot 2^1 = 2$. So a trace that grows with the
 ambient index alone is not excluded by stripping and rearrangement.
 
-With normalisation and stability added, the product law is a **consequence**
-rather than a further axiom: stability makes the value independent of the
-ambient index, stripping then peels one generator for a factor of $z$, and
-induction from the right gives $z^{\ell(\beta)}$ on both sides. The separating
-slot $\sigma_{k+1}$ plays no role in that argument, and the generator indices of
-$\beta$ must be non-negative for the peel to apply — a word on the upper cluster
-satisfies this, which is what the support condition $\{k+2, \ldots, n\}$ above
-amounts to in the index encoding.
+Normalisation and stability are therefore part of the axiom set, but they are
+not enough either: if stripping, stability and cyclicity are quantified over
+every word, they force $\mathrm{tr}_M(\beta) = z^{\ell(\beta)}$, which
+contradicts $\mathrm{tr}_M(\sigma_1^2) = hz + 1$. The axiom set
+therefore restricts stripping, stability and cyclicity to words of $H_n$ and adds
+the Hecke quadratic, braid and far-commutation relations. From these axioms it
+proves $\mathrm{tr}_M(\sigma_n^2) = hz + 1$ and the product law when $\beta$ is
+an ascending run $\sigma_{k+1}\cdots\sigma_{k+m}$, and the general product law
+by the reduction in the previous section (Lean: `markovTrace_disjointProduct`,
+sorry-free).
 
 ## Empirical verification
 

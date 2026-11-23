@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   authorNotes: [
+    { kind: "caveat", date: "2026-11-21", body: "The Lean proves the iff by composing two hypotheses, one per direction, so the whole content is carried by `p_to_bandwidth` and `bandwidth_to_p` (round-trip audit pass 2, C07). Membership in P is a property of a family of instances, not of one link $L$; the statement needs restating over a family $(L_N)$ with $c(N) = 3N$. The Planck-step cost is a physical comparison, not part of the mathematics." },
     {
       kind: "note",
       date: "2026-08-08",

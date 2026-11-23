@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
+from _precision import set_compute_dps, fmt  # noqa: E402 — raise dps before any mpmath value
 # polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Compute C_{[3,2,1]} at q_0 — the BW shadow-price coefficient for
@@ -36,7 +36,7 @@ import mpmath as mp
 import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP
 
 
 def q_int(n, q):
@@ -70,17 +70,16 @@ def trace_per_dim_321(q):
     return (q - 1 / q) / 2
 
 
-# This producer never raised working precision, so every mpmath value in
-# it was built at mpmath's default 15 dps and the numbers it emits are
-# HONESTLY float64 — no fake precision to detect, no constant built too
-# early, so the padding / raw-float64 / import-time gates all pass it.
-# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+# Working precision is raised here and q_0 is read as Q_MP, so the values
+# this producer emits carry the full 60-digit output precision. Until
+# 2026-11-21 it read q_0 through float(), which capped every result at
+# float64 (rel. moves 4e-17..1.2e-16); gate: f64_into_mpmath_audit F64_CAST.
 set_compute_dps()
 
 if __name__ == "__main__":
     print("BW SHADOW PRICE C_{[3,2,1]} AT q_0")
     print("=" * 80)
-    q0 = mp.mpf(str(float(Q0_FLOAT)))
+    q0 = Q_MP  # was mp.mpf(str(float(Q0_FLOAT))): float64 cap (f64_into_mpmath_audit F64_CAST)
     print(f"q_0 = {float(q0):.6f}")
 
     # Numerical at q_0
@@ -145,6 +144,10 @@ if __name__ == "__main__":
 
     witness = {
         "computation": "shadow-price-c-321-q0",
+        "engine": "python",
+        # Downstream-added field, now emitted by the producer so a re-run
+        # does not delete it (AGENTS.md "Bare producers").
+        "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
         "description": (
             "Numerical evaluation of the BW shadow-price coefficient "
             "C_{[3,2,1]} at q_0 via the closed form from "
@@ -159,13 +162,13 @@ if __name__ == "__main__":
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": float(Q0_FLOAT),
+            "q_0": fmt(q0),
         },
         "results": {
-            "C_321_at_q0": float(c_q0),
-            "w_321_at_q0": float(w_q0),
-            "h_at_q0": float(h_q0),
-            "trace_per_dim_at_q0": float(tr_per_dim),
+            "C_321_at_q0": fmt(c_q0),
+            "w_321_at_q0": fmt(w_q0),
+            "h_at_q0": fmt(h_q0),
+            "trace_per_dim_at_q0": fmt(tr_per_dim),
             "wigner_2_identity_check": (abs(float(c_q0 / c_check) - 1.0)
                                           < 1e-9),
         },

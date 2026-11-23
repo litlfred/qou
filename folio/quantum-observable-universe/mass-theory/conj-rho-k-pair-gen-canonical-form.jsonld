@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-rho-k-pair-gen-canonical-form",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:rho-k-pair-gen-canonical-form",
+  "kind": "conjecture",
+  "title": "Conjectural canonical form of the pair-gen piece $\\rho_K^{\\text{pair-gen}}$ in the graded $\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\hat V_i, \\hat V_j)$ such that $\\rho_K^{\\text{pair-gen}} = \\sum_{i<j} f_2(q, \\hat V_i^{\\text{full}}, \\hat V_j^{\\text{full}})$ recovering the six-term theorem's Kashaev limit at sub-percent accuracy.",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-rho-k-graded-expansion"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/kashaev1995"
+  ],
+  "tags": [
+    "tier:S",
+    "rho_k",
+    "graded-expansion",
+    "pair-gen",
+    "open-conjecture",
+    "kashaev-limit",
+    "wedderburn-coupling",
+    "phase-3"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.RhoKPairGenCanonicalForm.PairGenCanonical",
+  "text": "conj-rho-k-pair-gen-canonical-form.md",
+  "leanSource": "conj-rho-k-pair-gen-canonical-form.lean",
+  "provenance": "authored"
+}

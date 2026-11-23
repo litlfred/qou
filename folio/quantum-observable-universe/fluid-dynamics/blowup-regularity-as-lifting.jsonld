@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-blowup-regularity-as-lifting",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:blowup-regularity-as-lifting",
+  "kind": "remark",
+  "title": "Regularity as lifting through the obstruction tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-blowup-yekutieli",
+    "papers/quantum-observable-universe/blocks/thm-q-ns-wellposedness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-blowup-yekutieli",
+  "tags": [
+    "blowup",
+    "regularity",
+    "lifting",
+    "fourier-decay"
+  ],
+  "text": "blowup-regularity-as-lifting.md",
+  "provenance": "authored"
+}

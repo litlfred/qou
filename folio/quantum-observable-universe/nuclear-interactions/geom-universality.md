@@ -8,7 +8,7 @@
 3. *Normalization: $\mathrm{Geom}(\bigcirc) = 0$ (vacuum) and $\mathrm{Geom}(4_1) = \mathrm{Vol}(4_1)/\hbar_q^2$ (fixes $q_0$).*
 
 **Proof sketch.**
-We divide the supporting argument into three steps; it is a sketch, not a complete proof.
+The supporting argument has three steps; it is a sketch, not a complete proof.
 
 **Step 1: Existence (Neumann--Zagier, τ-image side).**
 On the τ-image side, the Neumann--Zagier theorem establishes that for a hyperbolic knot $K$, $\mathrm{Vol}(K)$ and $\mathrm{CS}(K)$ are related by the Bloch--Wigner dilogarithm. This is a function of the $\mathrm{SL}(2,\mathbb{C})$ representation variety. In the categorical framework, the Frobenius--Hopf algebra $A$ at parameter $q$ has a representation variety isomorphic to $\mathrm{Spec}$ of the coordinate ring $\mathcal{O}_q(\mathrm{SL}_2)$. The fibre functor $\tau$ evaluates the volume form $\omega$ on this variety. By Neumann--Zagier, the real part of this evaluation is $\mathrm{Vol}(K)$.

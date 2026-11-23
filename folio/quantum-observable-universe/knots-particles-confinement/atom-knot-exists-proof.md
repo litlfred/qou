@@ -1,5 +1,5 @@
 *Proof.*
-*We construct the normal form (NF) $T_w \in H_{3(Z+N)}(q)$ explicitly.*
+*One constructs the normal form (NF) $T_w \in H_{3(Z+N)}(q)$ explicitly.*
 
 *On the intra-nucleon blocks, each Borromean baryon ([borromean baryon](#def:borromean-baryon)) possesses a canonical normal form in $H_3(R, q)$ on three strands; let $T_p, T_n \in H_3(R, q)$ denote the proton and neutron normal forms. Under the block-diagonal inclusion, the disconnected tensor product $T_p^{\otimes Z} \otimes T_n^{\otimes N} \in H_3(R, q)^{\otimes (Z+N)}$ embeds into the many-body algebra $H_{3(Z+N)}(q)$ on the intra-nucleon strands.*
 

@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:sw-period-residue-sum",
@@ -19,6 +20,9 @@
   ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-sw-period-residue-sum"
+  ],
+  "cites": [
+    "references/donagi1997"
   ],
   "leanRef": "qou:QOU.Brings.sw_period_eq_residue_sum",
   "text": "sw-period-residue-sum.md",

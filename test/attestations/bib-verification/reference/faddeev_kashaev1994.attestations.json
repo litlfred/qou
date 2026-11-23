@@ -18,12 +18,12 @@
           "model": "claude-opus-4-7"
         },
         "fixes_applied": 1,
-        "note": "Confirmed paper is 'Quantum Dilogarithm' by Faddeev & Kashaev (arXiv:hep-th/9310070, 1993-09 \u2014 published Mod. Phys. Lett. A 1994). pentagon-uv-commutation-woronowicz.lean:40 cites it alongside Woronowicz 1989 for the pentagon equation \u2014 this is the Faddeev-Kashaev quantum-dilogarithm paper's central result. Verified scope match.",
+        "note": "Confirmed paper is 'Quantum Dilogarithm' by Faddeev & Kashaev (arXiv:hep-th/9310070, 1993-09 \u2014 published Mod. Phys. Lett. A 1994). pentagon-uv-commutation-woronowicz.lean:40 cites it alongside Woronowicz 1989 for the pentagon equation \u2014 this is the Faddeev-Kashaev quantum-dilogarithm paper's central result. Verified scope match. [2026-11-22, bean qou-cxlo: the uploads/ path no longer exists; repointed to the same document's library copy, arXiv:hep-th/9310070v1.]",
         "source": {
           "kind": "upload",
-          "file": "uploads/faddeev-kashaev-1994-quantum-dilogarithm.pdf"
+          "file": "library/arxiv-hep-th-9310070v1/9310070v1.pdf"
         },
-        "local_pdf": "uploads/faddeev-kashaev-1994-quantum-dilogarithm.pdf",
+        "local_pdf": "library/arxiv-hep-th-9310070v1/9310070v1.pdf",
         "relevance": {
           "verdict": "core",
           "rationale": "PATH DANGLING BUT DOCUMENT RECOVERED. The listed path does not exist; the same document is present in-repo as `library/arxiv-hep-th-9310070v1/9310070v1.pdf`, which the ledger already carries as a separate `unreviewed` row under the same id. So this is a duplicate-row-with-dead-path, not a lost document. Join CONFIRMED against the recovered file's front matter. Citation is LOAD-BEARING and correct: `pentagon-uv-commutation-woronowicz.lean:40` cites this id alongside `[woronowicz1989]` for the pentagon-ascension structure, and the recovered document's abstract is exactly that result \u2014 a quantum generalisation of the five-term (pentagon) dilogarithm identity whose classical limit recovers the classical one, plus a finite-dimensional realisation. Also underpins the Phi_b / Li_2^q line the corpus develops via `faddeev1995`. `source_sha` below is that of the recovered file.",

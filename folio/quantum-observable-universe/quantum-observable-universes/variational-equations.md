@@ -1,6 +1,6 @@
 Let $\mathfrak{S}_q$ be the categorical action. The three variational equations are:
 
-1. **Gravity (vary $\int_A$)**: $\delta\mathfrak{S}_q / \delta\!\int_A = 0$ yields the *categorical Einstein equation*:
+1. **Gravity (vary $\int_A$)**: $\delta\mathfrak{S}_q / \delta\!\int_A = 0$ is postulated to yield the *categorical Einstein equation* (in the Lean formalisation the equation is a field of the class `HasCategoricalEOM`, taken as a hypothesis, not derived by a variation):
    $$
      R_{\int} - \tfrac{1}{2}\mathrm{tr}(R_{\int})\mathrm{id}_A =  T_q[\nabla, \psi],
    $$

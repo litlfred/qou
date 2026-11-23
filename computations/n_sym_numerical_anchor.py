@@ -39,6 +39,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR
 from experimental_constants import M_E_MEV, G_F_MEV
 
+# Ref: [leitner2026] conj:g-action-on-substrate (the anchor and why it is not a host trace)
+
 q = mpmath.mpf(Q_50_DIGIT_STR)
 
 
@@ -113,7 +115,7 @@ def main():
     }
     ranked = sorted(
         candidates.items(),
-        key=lambda kv: abs(float(kv[1] - N_sym_target)) / float(N_sym_target),
+        key=lambda kv: abs(kv[1] - N_sym_target) / N_sym_target,
     )
     print(f"{'ansatz':<42} {'value':>14} {'rel err %':>14}")
     print('-' * 75)
@@ -125,7 +127,7 @@ def main():
         rows.append({
             'ansatz': name,
             'value_at_q0': mpmath.nstr(val, 30),
-            'rel_err_pct': float(rel_err) * 100,
+            'rel_err_pct': mpmath.nstr(rel_err * 100, 25),
         })
 
     # PSLQ search on log(N_sym)
@@ -200,7 +202,7 @@ def main():
         'ansatz_tests': rows,
         'pslq_runs': pslq_results,
         'candidate_a_gram_det_naive': mpmath.nstr(gram_det_naive, 25),
-        'candidate_a_rel_err_pct': float(rel_a) * 100,
+        'candidate_a_rel_err_pct': mpmath.nstr(rel_a * 100, 25),
         'closes_audit_flag_partially': 'NV-1 (closure path identified)',
         'next_step': (
             'Discharge candidate (a) Gram determinant by computing the '

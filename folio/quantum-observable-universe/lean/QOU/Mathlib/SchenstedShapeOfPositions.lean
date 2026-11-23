@@ -26,7 +26,7 @@ empty rows and the built shape because `addCell` only ever adds.
 
 The shape hypothesis of brick 32, discharged from "the pair shares a shape". It does not run brick
 32, and `rskPair` surjectivity still needs its `Σ`-equality threaded through `rskPair`'s definition.
-`RSKBurnsideHolds` for general `n` remains open.
+At the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 

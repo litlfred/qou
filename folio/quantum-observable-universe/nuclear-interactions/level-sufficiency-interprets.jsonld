@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-level-sufficiency-interprets",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:level-sufficiency-interprets",
+  "kind": "remark",
+  "title": "Physical interpretation of level sufficiency: default coarse, unfold on witness",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-level-sufficiency",
+  "tags": [
+    "confinement",
+    "nucleon",
+    "atom",
+    "compound-atom",
+    "computational-strategy",
+    "magic-numbers",
+    "sdp"
+  ],
+  "text": "level-sufficiency-interprets.md",
+  "provenance": "authored"
+}

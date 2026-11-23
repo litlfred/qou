@@ -1175,6 +1175,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "S↔L: (1) direction: md:4-5 is a *min* of Σ t·x, but Lean `Optimal` is \"objective-maximal\" (lean:75-78). (2) The conclusion composes two class fields (l.115-123). `strongDuality` asserts that *every* n_T has an optimum, which contradicts md:10 (\"feasible iff the demand lies in the positive cone\"): an infeasible n_T has no optimum, so the class is uninhabitable unless every demand is feasible. `complementarySlackness`, which says every optimum is supported on one operator, is not what complementary slackness says. (3) The G⁻¹S constraint is replaced by a diagonal read `supply o i i i` (l.62-65), and the dual variables (y₀*, y*) never appear. (4) `frob_nondegenerate` (l.110), and the md's G⁻¹ itself, contradict prop:frobenius-gram-matrix, where det G = 0 identically under convention D, so G⁻¹ does not exist for H₃.",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "54d108844adc",
+          "ts": "59c5351fe5e1",
+          "lean": "585ea10a4053",
+          "lean_statement": "e1fa181baabb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:14.778Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "Full review 2026-11-21. Both md and Lean were rewritten and every point of the earlier fail is addressed. (1) Direction: md:15-19 minimises sum t_o x_o s.t. x >= 0, G+ S x >= n_T; Lean KnotOperatorLP.Optimal is now minimisation and M = gramPinv * supply (knot-operator-lp-selection.lean, def M, Feasible, Optimal). (2) No self-assuming class: knot_operator_lp_selection takes feasibility of x and y and the equal-objective certificate heq as hypotheses (strong duality 'assumed here', md:21) and derives primal and dual optimality and both complementary-slackness families from gap_eq / gap_terms_nonneg / weak_duality / optimal_of_objectives_eq / complementary_slackness, all proved over an ordered comm ring. (3) The Gram factor is restored as a Moore-Penrose pseudo-inverse (IsMoorePenrose field), with gramPinv_eq_inv_of_isUnit_det for the non-degenerate case, so the convention-D radical (G^{-1} absent) no longer contradicts the block. (4) demandVector / demandVector_eq_zero_iff / feasible_zero_of_no_demand encode n_T^i = max(0,-c_i) and the n_T = 0 empty-selection claim; the old uninhabitable class is kept and proved empty (KnotOperatorLPSelectionLegacy.isEmpty). What remains: gram, supply and cost are free structure fields, so G_ij = tr_M(b_i b_j) and S_{i,o} = [b_i] NF(beta(o)) are not tied to toH or to a trace in Lean (md:10-11 presents them as definitions), and the paper's instance (operator family, torus braids, t = (m-1) m' q; md:27-35) is not formalised; the md says the theorem holds for every choice of these data, which is what the Lean proves. No ruling conflict: the .ts note correctly records that the closure of s0 s1 s0 in B3 is the Hopf link."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2154,6 +2171,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:27.254Z",
+  "updated_at": "2026-11-21T08:18:14.778Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

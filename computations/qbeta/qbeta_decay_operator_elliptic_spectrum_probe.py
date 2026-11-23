@@ -23,7 +23,7 @@ number. And "you should be able to see the trefoil in some part of the tower".
 BOTH ARE ALREADY IN THE CORPUS, and finding them is what fixes the error:
   * the H_3 normal-form basis is [gamma, sigma_0, sigma_1, L+, L-, e^-]
     = [1, T0, T1, T0T1, T1T0, T0T1T0]. The last basis element -- named `e^-`,
-    the ELECTRON -- IS the longest element, which IS the trefoil sigma_0 sigma_1
+    the ELECTRON -- IS the longest element sigma_0 sigma_1
     sigma_0 (`qbeta_ck_from_operator_markov_trace_probe`: tr_M^lam(trefoil) =
     chi^lam(sigma_1 sigma_2 sigma_1)).
   * `qbeta_hoefsmit_tbeta_matrix_build_probe` already builds the operator-valued
@@ -129,7 +129,7 @@ QB = mp.mpf(str(C.Q_BETA_MEV))
 QA = ME * mp.fabs(Q0 ** 2 - 2 * Q0 - 1) * (Q0 + 1) / (2 * Q0 ** 3)
 
 # The H_3 normal-form basis, as words in the generators. `e^-` (the electron) is
-# the longest element, which is the trefoil.
+# the longest element (closure: Hopf link, owner ruling 2026-11-21).
 WORDS = [[], [0], [1], [0, 1], [1, 0], [0, 1, 0]]
 BASIS_NAMES = ["gamma", "sigma_0", "sigma_1", "L+", "L-", "e^- (trefoil)"]
 
@@ -279,7 +279,7 @@ def main() -> int:
             "coincidence is flagged and not pursued: theta sits 0.012 % from |c_3(muon)| at "
             "the SUPERSEDED CODATA-2018 anchor, with no mechanism and a documented precedent "
             "for the trap. Lean: QOU/QBeta/TraceRealSpectrumComplex.lean, sorry-free."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": all_passed,
         "parameters": {

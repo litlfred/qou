@@ -1,7 +1,7 @@
-import { theorem } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default theorem({
-  label: "thm:six-term-mass-formula-complete",
+export default conjecture({
+  label: "conj:six-term-mass-formula-complete",
   title:
     "Six-term mass formula: derivation + computation index",
   lean: {
@@ -9,7 +9,7 @@ export default theorem({
     validation: "not_checked",
   },
   uses: [
-    "prop:terms-2-6-higher-operations",
+    "conj:terms-2-6-higher-operations",
     "prop:chirality-writhe-ribbon-derivation",
   ],
   computation: {
@@ -27,5 +27,12 @@ export default theorem({
     "master-index",
     "completeness",
     "derivation-status",
+  ],
+  authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-20",
+      body: "**Demoted to `conjecture` (owner, 2026-11-20, bean `qou-6qbv`; W8, full cascade).** `terms-2-6-higher-operations` and `spectral-sequence-h3-explicit` (formerly `prop:`) state open research claims (the Term 2/6 Wedderburn/residue identifications; the explicit $d_1, d_2$ on $H_3$) whose Lean siblings carried them on context-class fields any instance could satisfy. Both were demoted, and by the conjectural-propagation rule (AGENTS.md §3b) so was every provable block whose `uses[]` cone reaches them. The owner chose the full cascade over dropping citational edges. Label prefix changed to `conj:`. Nothing in the mathematics or the Lean of this block changed.",
+    },
   ],
 });

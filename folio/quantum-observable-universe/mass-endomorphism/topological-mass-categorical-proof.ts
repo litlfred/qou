@@ -4,7 +4,7 @@ export default proof({
   label: "prf:topological-mass-categorical",
   title: "Categorical proof of the topological decomposition of mass",
   uses: [
-    "thm:topological-mass",
+    "prop:topological-mass-upper-bound",
     "lem:topological-mass-cat-descended",
     "lem:topological-mass-cat-transient",
   ],

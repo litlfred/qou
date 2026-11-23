@@ -162,4 +162,11 @@ theorem internal_regular_of_classical_regular (B : QOUNSSurrealBridge S)
   rw [B.classical_regular_iff_finite] at h
   exact not_not_intro h
 
+/-- **Combined B2 equivalence (`bean qou-joia`):** under `QOUNSSurrealBridge`,
+    internal blow-up holds if and only if the standard-part flow is not
+    classically regular. -/
+theorem internalBlowup_iff_not_classicalRegular (B : QOUNSSurrealBridge S) :
+    B.internalBlowup ↔ ¬ B.classicalRegular := by
+  rw [B.blowup_iff_infinite, B.classical_regular_iff_finite]
+
 end QOU.FluidDynamics

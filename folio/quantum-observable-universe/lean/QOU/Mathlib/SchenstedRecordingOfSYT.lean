@@ -28,7 +28,7 @@ The `Q` argument of brick 32, assembled. It does **not** yet run brick 32 on it:
 `P` side (`hshape : tableauShape P = addCellSteps [] (qPositions Q n)`, i.e. that the two tableaux
 of the pair share a shape) and, for `rskPair` proper, the round trip
 `listStandardYT (toListTableau S) = S` in the other direction. Neither is claimed here, `rskPair`
-bijectivity is not claimed, and `RSKBurnsideHolds` for general `n` remains open.
+bijectivity is not claimed, and at the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 

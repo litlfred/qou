@@ -60,7 +60,25 @@ attribute [instance] MassEndoModule.endoMonoid
     saturated level `n`, the full-twist `Δ_n²` acts trivially on
     `Φ_n` in the endomorphism algebra `Endo n`. The unproved input
     is the existence of the instance; downstream conditional
-    theorems are then fully verified by Lean. -/
+    theorems are then fully verified by Lean.
+
+    **🛑 Vacuity status (audited 2026-11-20, bean `qou-dx7g`; triage rank 77).**
+    As encoded this class does **not** state the conjecture, and no repair is
+    available in the corpus.  `Endo`, `fullTwist` and `phi` are instance fields
+    of `MassEndoModule`, so the trivial monoid (`Endo := Unit`) satisfies both
+    neutrality fields at every magic `n`; even with `Endo := H_n(q)` and the
+    genuine central full twist `Δ_n²` (which acts on the block `V_λ` by
+    `q^{2κ_λ}`), a free `phi` can be taken to be `0`, or the block idempotent
+    of any self-conjugate `λ ⊢ n`, and the class holds.  The claim is about one
+    specific element, the categorical mass endomorphism `Φ_n`, and `Φ_n` is not
+    defined anywhere in the corpus: `conj:mass-endomorphism-conjecture` is itself
+    a conjecture and lists only candidate constructions.  Encoding this
+    conjecture therefore needs (i) a definition of `Φ_n` in a concrete Hecke
+    algebra, and (ii) `fullTwist` as the genuine `Δ_n²` there; both fields would
+    then become definitions and only `neutrality_left/right` would remain as
+    the conjectural content.  Until then `Endo`, `fullTwist` and `phi` are
+    free, and the conditional theorems below hold for any monoid element fixed
+    by another. -/
 -- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 class SaturatedShellConjecture (n : ℕ) extends MassEndoModule n where
   /-- The level `n` lies in the magic set (precondition). -/

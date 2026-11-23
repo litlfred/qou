@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-observability-independent-motivation",
@@ -15,6 +16,9 @@
   "title": "Independent motivation for observability: why $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ is not an NS assumption",
   "uses": [
     "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/prop-core-levi-form"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
   "tags": [

@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-gram-kappa-spectral-interpretation",
@@ -12,11 +13,12 @@
   ],
   "label": "rem:gram-kappa-spectral-interpretation",
   "kind": "remark",
-  "title": "Plancherel form of $\\kappa$ replaces the 2-jet hand calculation",
+  "title": "Conjectural Plancherel form of $\\kappa$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-gram-determinant-plancherel-ratio"
+    "papers/quantum-observable-universe/blocks/conj-gram-determinant-plancherel-ratio",
+    "papers/quantum-observable-universe/blocks/def-cs-gram-determinant-ratio"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-gram-determinant-plancherel-ratio",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-gram-determinant-plancherel-ratio",
   "cites": [
     "references/jones1987"
   ],

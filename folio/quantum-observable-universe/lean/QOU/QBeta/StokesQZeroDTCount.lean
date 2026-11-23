@@ -44,7 +44,7 @@ Matrices are hand-rolled `Fin 2 → Fin 2 → ℤ` (elementary, `decide`-checkab
 `Mathlib.Data.Matrix.Notation` is deliberately avoided so the file verifies on the
 minimal restored olean set.
 
--- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (eq 59a sandwich, eq 60 S⁺(0), Thm 9 det W_m = 2)
+-- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 (eq 59a sandwich, eq 60 S⁺(0), Thm 9 det W_m = 2)
 -- Ref: [leitner2026] docs/audits/2026-08-01-ujmw-aomega-dt-index-derivation.md
 -/
 

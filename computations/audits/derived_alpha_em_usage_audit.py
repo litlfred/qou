@@ -60,7 +60,10 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent          # computations/
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent          # computations/
+sys.path.insert(0, str(HERE))
+from _source_normalise import code_and_numeric_strings_only, code_only  # noqa: E402
 
 # CODATA α_EM in its usual spellings: 1/α, α, and α·ℏc in MeV·fm.
 CODATA_PAT = re.compile(
@@ -117,9 +120,9 @@ def classify(line: str, path: str = "") -> str:
     """
     if ALPHA_HOME.search(path):
         return "VALIDATION"
-    code = _strip_comment(line)
+    code = code_and_numeric_strings_only(_strip_comment(line))
     if not CODATA_PAT.search(code):
-        return "VALIDATION"          # literal lives only in a comment/docstring
+        return "VALIDATION"          # literal lives only in a comment/docstring/prose string
     if CONSUMED.search(code):
         return "INPUT"
     return "UNCLEAR"
@@ -133,32 +136,22 @@ def scan() -> dict[str, list[tuple[str, int, str]]]:
             text = p.read_text(encoding="utf-8", errors="replace")
         except OSError:
             continue
-        # Skip the audit itself — its own regexes contain the literals.
-        if p.name == Path(__file__).name:
+        # Skip the audit itself and the shared normaliser — their own regexes
+        # and selftests contain the literals.
+        if p.name in (Path(__file__).name, "_source_normalise.py"):
             continue
-        in_doc, delim = False, ""
-        for i, line in enumerate(text.splitlines(), 1):
-            # Skip docstring/prose regions. Without this the audit flags its own
-            # documentation: a docstring sentence containing "137.03" and an "="
-            # looks exactly like an assignment. Not hypothetical — it produced a
-            # VACUOUS regression test here, which kept "finding" the
-            # coulomb_energy defect after that defect was fixed, because it was
-            # matching the prose describing the old behaviour.
-            stripped = line.strip()
-            if in_doc:
-                if delim in line:
-                    in_doc = False
+        code_lines = code_only(text).splitlines()
+        norm_lines = code_and_numeric_strings_only(text).splitlines()
+        for i, (orig_line, code_line, norm_line) in enumerate(
+            zip(text.splitlines(), code_lines, norm_lines), 1
+        ):
+            # Skip docstring/comment regions via `code_only` so multi-line
+            # strings and inline comments cannot look like assignments.
+            if not CODATA_PAT.search(code_line):
                 continue
-            for d in (chr(34) * 3, chr(39) * 3):
-                if stripped.startswith(d) and stripped.count(d) == 1:
-                    in_doc, delim = True, d
-                    break
-            if in_doc:
-                continue
-            if CODATA_PAT.search(line):
-                rel = str(p.relative_to(ROOT))
-                out[classify(line, rel)].append(
-                    (rel, i, line.strip()[:104]))
+            rel = str(p.relative_to(ROOT))
+            out[classify(norm_line, rel)].append(
+                (rel, i, orig_line.strip()[:104]))
     return out
 
 
@@ -213,6 +206,12 @@ def self_test() -> int:
     # behaviour, which is exactly the failure the docstring-skip above prevents.
     chk("the coulomb_energy defect shape is caught",
         classify("ALPHA_HBAR_C_MEV_FM = 1.43996", "coulomb_energy.py") == "INPUT")
+    chk("prose string announcing derivation is NOT a flag",
+        classify('"(was CODATA 1.43996) and R0 = lambda_bar_pi"', "probe.py") == "VALIDATION")
+    chk("f-string prose with operator is NOT a flag",
+        classify('f"(3/5) Z(Z-1) e^2 / R, with e^2 = 1.43996 MeV.fm: {x}"', "probe.py") == "VALIDATION")
+    chk("mpf numeric string assignment IS caught",
+        classify('alpha_em = mp.mpf(1) / mp.mpf("137.035999084")', "probe.py") == "INPUT")
     chk("live tree: coulomb_energy is now CLEAN",
         not any("coulomb_energy" in r for r, _, _ in scan()["INPUT"]))
     print(f"\n{'PASS' if not fails else 'FAIL'} — {fails} failure(s)")

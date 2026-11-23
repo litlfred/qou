@@ -23,5 +23,6 @@ export default remark({
       kind: "status",
       body: "**Tabulation block.** Aggregates the existing knot atlas data\n(`../appendix-knot-periodic-table/recursive-atom-knot-atlas.md`)\nunder the graded-Mikusiński prediction. No new mathematical\ncontent; provides the *list of falsifiability targets* for B1.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): One verified the figure-$8$ row ([Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)](#conj:bring-figure-eight-depth-2-witness)), but confirming" },
   ],
 });

@@ -25,4 +25,7 @@ export default diagram({
     witness: "computations/bring-chiral-fibre-figure.witness.json",
     workplan: "docs/workplans/2026-05-24-pr31-affine-light-cone-redo.md",
   },
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Branch point $z_c \\approx 0.106 - 0.937i$ (see the `branch_point_chosen` field in the witness). We generate this figure programmatically via [`bring_chiral_fibre_figure.py`](../../../computations/bring_chiral_fibre_figure.py). We record parameters and verified sample values in [`bring-chiral-fibre-figure.witness.json`](../../../computations/bring-chiral-fibre-figure.witness.json)." },
+  ],
 });

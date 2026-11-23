@@ -2,6 +2,18 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "Two n–p values now coexist. This block: 1.0541 MeV (−18.5 %), conditional on (H_α). " +
+        "Owner ruling 2026-11-20 (D1 = A, D2 = Q_β): |t_n − t_p|·E₀^full = 0.325434 MeV is Q_β, " +
+        "so Q_β + m_e = 0.836433 MeV (−35.33 %). The sign of the mass ordering is open. " +
+        "See np-splitting audit §23, bean qou-99qc, issue #7965.",
+      see: "docs/audits/2026-11-15-np-splitting-error-budget.md",
+    },
+    { kind: "note", date: "2026-11-21", body: "Moved out of the prose by the voice-leak drain (qou-d4kh, W14b, 2026-11-21): Lean for the 2026-11-20 update: `QOU.BraidsAndKnots.NucleonWeightSpaceQTrace.qtrace_crossing_eq_zD` (quantum trace reproduces z_D), `deltaT_allPairs_connected_eq_zero`, `deltaT_adjacent_connected_eq`." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The files `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm`, `QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace` and `QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge` prove, sorry-free, facts about the 3-strand weight spaces $W_p = (2,1)$ and $W_n = (1,2)$: the quark-charge operators $Q_iQ_j$ break the intertwiner $P(q)$ of `NucleonWeightSpaceTraces`; … $E_0 = m_e/(q(q-1))$ (a definition; `hadronicScale_mul_q_sq_hbar_eq_me` unfolds it)." },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "caveat",
@@ -50,7 +62,15 @@ export default proposition({
         "`trace_QAdj_connected_diff_borromeanV3`, `trace_e21_strong_cartan_diff_borromeanV3`), " +
         "`QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace` (`chi21Reduced_ratio_at_one`, `tMod111_neutron_eq_q_sq_mul_proton`), " +
         "and `QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge` (`hadronicScale_mul_q_sq_hbar_eq_me`, " +
-        "`trace_lagrangian_diff_concrete_borromean_connected`) formalize the parameter-free two-term decomposition on $W_p=(2,1)$ and $W_n=(1,2)$.",
+        "`trace_lagrangian_diff_concrete_borromean_connected`) formalize two-term charge-insertion algebra on $W_p=(2,1)$ and $W_n=(1,2)$. The mass scale and the adjacent-pair restriction are choices; see the 2026-11-19 caveat.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-19",
+      body:
+        "The 2026-11-18 two-term figures (M_p^QED,conn = +0.22 keV, Δm_QED^conn = −0.33 keV, the μ–p and Q_β residual reductions) are selections, not derivations. " +
+        "Summed over all three quark pairs the charge insertion is word-independent (`trace_QPair_diff_word`); the word dependence comes from dropping pair 1–3, which the Borromean word does not single out. " +
+        "The scale (m_e, E_0, α_bind) and the four weightings were compared against targets. Measured in bean qou-99qc, 2026-11-19 00:10Z.",
     },
   ],
   label: "prop:neutron-proton-mass-splitting",

@@ -1,5 +1,5 @@
 **Definition.**
-*Let $H_n(R, q)$ be the Hecke algebra at substrate parameter $q$. For each Wedderburn block indexed by a partition $\lambda \vdash k$ ($k = 2, \ldots, k_{\max}(K, q)$, where $k_{\max}(K, q)$ is the per-atom truncation determined by the interaction-strand requirement of $K$ — see [confinement level](#def:confinement-level)), the **knot operator energy** of $\lambda$ at $q$ is the absolute value of its LP-dual shadow price ([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)):*
+*Let $H_n(R, q)$ be the Hecke algebra at substrate parameter $q$. For each Wedderburn block indexed by a partition $\lambda \vdash k$ ($k = 2, \ldots, k_{\max}(K, q)$, where $k_{\max}(K, q)$ is the per-atom truncation determined by the interaction-strand requirement of $K$ — see [confinement level](#def:confinement-level)), the **knot operator energy** of $\lambda$ at $q$ is the absolute value of its LP-dual shadow price:*
 
 $$
   E(\lambda, q)
@@ -14,8 +14,6 @@ $$
 $$
 
 *where $w_\lambda(q) = d_q(\lambda)^2 / [k]_q!$ is the Wedderburn weight, $d_\lambda(q) = \dim_q V_\lambda$ is the quantum dimension, and $1/[k]_q!$ is $\min_\lambda\, w_\lambda/d_\lambda$, the minimum taken across partitions of $k$ and attained by the trivial $1$-dimensional $(k)$ and $(1^k)$ representations.*
-
-**Interpretation of the subtrahend $1/[k]_q!$.** In [the operator-selection LP](#prop:operator-selection-lp), the net-constraint dual multiplier is identically zero at every $n$ and $q$ because the normal-form basis contains the identity and the first Frobenius row coincides with the objective vector. The subtrahend $1/[k]_q!$ in the displayed formula is therefore the minimum normalized weight $\min_{\lambda \vdash k} w_\lambda(q)/d_\lambda(q)$ across partitions of $k$ (attained on the one-dimensional representations $(k)$ and $(1^k)$), rather than a nonzero dual multiplier of the normalisation constraint.
 
 **Values.**
 *The energy takes values in:*

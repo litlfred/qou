@@ -62,7 +62,7 @@ THE ONE COMPOSITE FACT THE CORPUS DOES NOT STATE IN ONE PLACE.  Sections 2-5
 below chain five things each of which is separately on the record:
 
   - the chain's `uses[]` graph routes steps 7/8 through
-    `prop:jet-prefix-gb-filtration` (measured in #7362, defect #4);
+    `conj:jet-prefix-gb-filtration` (measured in #7362, defect #4);
   - that block is the 2026-08-26 audit's **Class B** site;
   - its displayed object is `J^{k-3}(q)/J^{k-2}(q)`, and EVERY candidate
     reading of `J^•` is now excluded;
@@ -180,8 +180,8 @@ def section2() -> None:
     print("\n=== 2. the chain routes steps 7/8 through the Class-B site ===\n")
     ts = read(BLOCK.with_suffix(".ts"))
     check(
-        'label: "prop:jet-prefix-gb-filtration"' in ts,
-        "`prop:jet-prefix-gb-filtration` is a live content block",
+        'label: "conj:jet-prefix-gb-filtration"' in ts,
+        "`conj:jet-prefix-gb-filtration` is a live content block",
         f"{BLOCK.with_suffix('.ts').relative_to(REPO)}",
     )
     check(
@@ -191,7 +191,7 @@ def section2() -> None:
     )
     audit = read(AUDITS / "2026-08-26-no-shift-rescues-the-word-partition-bridge.md")
     check(
-        "Class B" in audit and "prop:jet-prefix-gb-filtration" in audit,
+        "Class B" in audit and "conj:jet-prefix-gb-filtration" in audit,
         "the 2026-08-26 audit names it explicitly as a **Class B** site",
         "Class B = \"the site needs genuine compatibility with the word\n"
         "filtration\" -- i.e. it IS the identification, not a labelling.",
@@ -283,7 +283,7 @@ def section5() -> None:
         if not p.exists():
             continue
         blob = json.dumps(json.load(open(p, encoding="utf-8")))
-        if "prop:jet-prefix-gb-filtration" in blob:
+        if "conj:jet-prefix-gb-filtration" in blob:
             found.append((name, "listed"))
     for name, _ in found:
         print(f"    listed in  docs/audits/{name}")
@@ -310,7 +310,7 @@ def section5() -> None:
     print("    decides the disposition, so it is measured here rather than said.")
     p = AUDITS / "2026-05-01-p3-1-conjectural-propagation.witness.json"
     d = json.load(open(p, encoding="utf-8"))
-    L = "prop:jet-prefix-gb-filtration"
+    L = "conj:jet-prefix-gb-filtration"
     in_viol = any(x.get("label") == L for x in d.get("violators", []))
     in_cond = any(x.get("label") == L for x in d.get("conditional_on_class", []))
     print(f"\n      violators            : {len(d.get('violators', [])):4d}   contains block: {in_viol}")

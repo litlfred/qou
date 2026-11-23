@@ -15,7 +15,7 @@ discards its polarization argument (definitional reading of
 ## References
 
 - [def:derived-atom]
-- [prop:four-term-pair-nucleon]
+- [conj:four-term-pair-nucleon]
 - [prop:confinement-universality]
 -/
 

@@ -1,0 +1,1114 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet-proof",
+    "path": "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:13.326Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] sibling `def jp_categorical_jet : Nonempty C := ⟨fhd.obj⟩` (vacuous). Library ref returns the class field `antipode_involutive` (S'²=id), which is not in the statement and is false for general Hopf algebras. S↔P: Step 2 asserts that Δ restricts to Δ' : J¹→J¹⊗J¹ \"by the Frobenius relation\" with no computation; Step 1's \"ε∘m non-degenerate ⇒ Ω¹ is a direct summand of A⊗A\" needs a splitting of m (special/separable Frobenius), not stated; the char-p paragraph cites [fred2005] for a different construction (Dist(G))"
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "major",
+        "evidence": "Re-read at c8da524af60. Partly resolved: the [fred2005] char-p citation for a different construction is gone. Still open (pre-existing): Step 2 asserts that Delta restricts to Delta' : J^1 -> J^1 (x) J^1 'by the Frobenius relation' with no computation, and Step 1's 'epsilon o m non-degenerate => Omega^1 is a direct summand of A (x) A' needs a splitting of m (special/separable Frobenius) that is not stated."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely retaining strong algebraic multiplications solidly within strict analytic derivations.",
+        "reviewed_at": "2026-07-08T14:15:02.000Z",
+        "reviewed_sha": "396cb86aa8a1d397aa47c37d0232a371150c16e2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.232Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no assert-by-denial construction; contrasts present are substantive mathematical distinctions or absent."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.272Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no setup-then-reframe pivot construction."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.311Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no load-bearing spaced dashes; any dashes are ranges or true parentheticals."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.351Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no reflex three-item list; enumerations present are substantive."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.392Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no quotable-sounding final line."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.430Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no narration of emphasis (no 'we emphasize'/'note the framing')."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "severity": "minor",
+        "evidence": "Re-read at c8da524af60. New closing paragraph ('No deformation enters this step ... strong multiplicativity of leitner2006 is a different condition ... and is not used here') cites a source only to say it is not used; it is a correction note and belongs in authorNotes."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.470Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no block-final restatement of already-established content."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.510Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no personal register in institutional prose."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.549Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no unqualified maximum-strength claims."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2edb3ad4f4b7",
+          "ts": "29d4db73b8ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:31.592Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): prose parses aloud; no stalling noun chains."
+      },
+      {
+        "field_hash": {
+          "md": "26ee0e5864e2",
+          "ts": "da461fc1cb6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60). The closing paragraph that cited [fred2005] for a char-p deformation now says no deformation enters Step 2 and that strong multiplicativity of leitner2006 is a different condition, not used. Steps 1-2 unchanged. No instance of this criterion."
+      }
+    ]
+  }
+}

@@ -20,7 +20,7 @@ pairing.*
 ## Relationship to the Bloch-group route
 
 The K-theoretic Bloch-group element
-([`conj:borromean-bloch-group-element`](#conj:borromean-bloch-group-element))
+([Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](#conj:borromean-bloch-group-element))
 provides the **regulator** side of the Borromean structure
 ($r_2[\mathcal{B}_3] = 8G$).  Poincaré–Lefschetz provides the
 **topological** side: the volume form $\in$ $H^3$ pairs with the
@@ -43,20 +43,19 @@ topological-cohomological route, the Bloch group the K-theoretic one.
 ## What remains open
 
 1. Verify that the Borromean volume $8G$ arises as a Poincaré–
-   Lefschetz pairing in Lean — partial Mathlib infrastructure
-   exists (Mathlib's `Topology.Manifold` library).
+   Lefschetz pairing.
 2. Connect to the Bloch-group route: show the regulator $r_2$ and the
    Poincaré–Lefschetz pairing both produce $8G$ via the
    `vol-as-motivic-period` framing.
-3. Closing the conjecture needs a Lean class for manifold-with-cusps
-   Poincaré–Lefschetz (partial in Mathlib).
+3. Closing the conjecture needs Poincaré–Lefschetz duality for
+   manifolds with cusps, in the form used above.
 
 ## Cross-references
 
-- [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- [Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](borromean-bloch-group-element.md)
   — K-theoretic regulator route to the same $8G$
-- [`prop:reeb-bundle-complement-equals-volume`](#prop:reeb-bundle-complement-equals-volume)
+- [Reeb-bundle complement is the JSJ-graded volume sum (Reeb-bundle face of mass-volume)](#prop:reeb-bundle-complement-equals-volume)
   — Reeb-pairing volume route (third route to $8G$)
-- [`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period)
+- [$\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\tau_{\mathrm{arch}}$](#rem:vol-as-motivic-period)
   — motivic framing tying all three routes together
 - [Lefschetz 1926; Neumann–Zagier 1985 for cusped 3-manifolds]

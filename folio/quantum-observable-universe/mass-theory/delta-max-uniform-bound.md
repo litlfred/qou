@@ -148,9 +148,7 @@ $$
 For light atoms ($A \le 16$) at $q_0$, canonical evaluation
 shows $N = 3$ is sufficient for sub-ppm precision on binding
 energies; the bound is saturated within a factor of 2 on the
-deuteron, tritium, and ${}^3\mathrm{He}$
-(cf. the formal derivation with
-`JET_TARGET_PPM`).
+deuteron, tritium, and ${}^3\mathrm{He}$.
 
 ## Remaining open items
 

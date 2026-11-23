@@ -1,4 +1,4 @@
 **Definition.**
-*In the [atomic braid](#def:atomic-braid) $\mathcal{A}(Z, N)$, each of the $Z$ electrons is a trefoil $T_{2,3} = \sigma_0\sigma_1\sigma_0$ in $H_3(q)$ Hopf-linked to the nuclear core. A* **bonding site** *is a position in the atomic braid available to an electron. The* **shell capacity** *is the number of bonding sites at each shell level, determined by the electron arrangement that minimises $\Phi_1$.*
+*In the [atomic braid](#def:atomic-braid) $\mathcal{A}(Z, N)$, each of the $Z$ electrons is the word $\sigma_0\sigma_1\sigma_0$ in $H_3(q)$ (closure: the Hopf link), Hopf-linked to the nuclear core. A* **bonding site** *is a position in the atomic braid available to an electron. The* **shell capacity** *is the number of bonding sites at each shell level, determined by the electron arrangement that minimises $\Phi_1$.*
 
 *An atom with $Z$ electrons fills shells in order of increasing $\Phi_1$ contribution.*

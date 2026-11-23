@@ -1,0 +1,38 @@
+{
+ "probe": "mn_labelled_closure_probe",
+ "checks": {
+  "s1 S1 = 1, s2 S2 = 1": true,
+  "braid relation s1 s2 s1 = s2 s1 s2": true,
+  "V^3 is a pure braid": true,
+  "(1) labelled closure of V^3 = sector trace on every sector": true,
+  "(2) count = 6 on the proton sector (two u), for all q": true,
+  "(2) count = 6 on the neutron sector (one u), for all q": true,
+  "(2) count is NOT q-independent on uuu and ddd": true
+ },
+ "all_pass": true,
+ "V3_labelled_vs_sector": {
+  "0": {
+   "labelled": "1",
+   "sector": "1"
+  },
+  "1": {
+   "labelled": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**6",
+   "sector": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**6"
+  },
+  "2": {
+   "labelled": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**6",
+   "sector": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**6"
+  },
+  "3": {
+   "labelled": "1",
+   "sector": "1"
+  }
+ },
+ "S3_labelled_count_by_number_of_u": {
+  "0": "q**2 + 5",
+  "1": "6",
+  "2": "6",
+  "3": "q**2 + 5"
+ },
+ "reading": "Labelling alone does not separate the volume term (V^3 is pure). On the permutation braids with weight q^{c-n} it gives a q-independent count 6 exactly on the two nucleon sectors."
+}

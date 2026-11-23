@@ -14,6 +14,7 @@ export default remark({
   ],
   uses: ["prop:h3-markov-wenzl-weights"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): `lem:feynman-eigenbasis-decomposition` puts the row cap ..., and `markovWeights_eq_jones_of_threeRow_eq_zero` then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace. ... entering as `trM_borromean` $\\to$ `F_Bor` $\\to$ `canonical_mass`." },
     {
       kind: "deprecated",
       date: "2026-08-09",

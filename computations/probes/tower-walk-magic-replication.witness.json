@@ -2,7 +2,7 @@
   "engine": "python+numpy",
   "engineVersion": "python 3.11.15",
   "computedAt": "2026-09-03T16:48:28.548613+00:00",
-  "commitSha": "e1ee9bdd4f146954f89e110a700d962e93c96d81",
+  "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "assertions": [
     {
       "name": "control_exhaustive_at_A2",
@@ -24,20 +24,20 @@
     },
     {
       "name": "both_groups_non_empty_at_A2",
-      "computed": "2/1",
-      "expected": "2/1",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A3",
-      "computed": "2/2",
-      "expected": "2/2",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A4",
-      "computed": "1/4",
-      "expected": "1/4",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
@@ -51,8 +51,8 @@
   "durationMs": 3924014,
   "computation": "tower-walk-magic-replication",
   "scriptFile": "tower_walk_magic_replication_probe.py",
-  "scriptHash": "b8d20be074db",
-  "scriptCommitSha": "19e4395962027d00fcd665f816de7ddbe2300ef4",
+  "scriptHash": "9d61ce01a395",
+  "scriptCommitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

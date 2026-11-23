@@ -1,4 +1,4 @@
-Tate's thesis realises the global Riemann $\zeta$-function as an adelic Fourier transform: the global zeta integral factors as a restricted product over local zeta integrals. The QOU framework lifts this factorisation to the surreal register: each local place carries its own Reeb infinitesimal $\varepsilon_v$, the global $\varepsilon$ is a restricted product of $\varepsilon_v$'s, and the surreal squeeze at each prime descends to the global squeeze of [RH surreal bound](#rem:rh-surreal-bound).
+Tate's thesis realises the global Riemann $\zeta$-function as an adelic Fourier transform: the global zeta integral factors as a restricted product over local zeta integrals. The QOU framework lifts this factorisation to the surreal register: each local place carries its own Reeb infinitesimal $\varepsilon_v$, and the global $\varepsilon$ is a restricted product of $\varepsilon_v$'s.
 
 **$\tau$ and $\mathrm{St}$ are dual archimedean reductions.** Two morphisms extract real-valued data from substrate-internal data, meeting at the archimedean place $v = \infty$ of $\mathbb{A}$:
 - $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$ is the algebraic-geometry realization.

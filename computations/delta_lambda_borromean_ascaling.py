@@ -31,9 +31,10 @@ sys.path.insert(0, str(HERE)); sys.path.insert(0, str(HERE / "substrate"))
 
 from borromean_binding_recompute import borromean_binding  # noqa: E402
 from codata_constants import AME_B_HE4_MEV_VALIDATION
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 # AME2020 totals (MeV) — comparison target only.
-AME = {"D": (1, 1, 2.224573), "T": (1, 2, 8.481821), "3He": (2, 1, 7.718058),
+AME = {"D": (1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)), "T": (1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)), "3He": (2, 1, float(AME_B_HE3_MEV_VALIDATION)),
        "4He": (2, 2, AME_B_HE4_MEV_VALIDATION), "6Li": (3, 3, 31.994564),
        "12C": (6, 6, 92.161728), "16O": (8, 8, 127.619), "56Fe": (26, 30, 492.254)}
 
@@ -99,7 +100,8 @@ def main() -> int:
     from _li_2_q_util import li_2_q as _li
     _mp.mp.dps = 50
     _q = _mp.mpf(str(_Q)); _me = _mp.mpf(str(_ME)); _qi = 1 / _q; _hh = _q - _qi
-    _E0 = _me / (_q * (_q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    _E0 = _qbeta_e0.order_zero_scaled(_me, _q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
     #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + sqrt(1/q)) = sqrt q/(q+1), excised.
     # The swap ratio z/(z-h) that _fp/_fn carries is exactly q^4 under D

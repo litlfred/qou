@@ -1,0 +1,1 @@
+50 BIBLIOGRAPHY My thought was that it could be possible to construct a theorem similar to that for the algebraic surfaces, but before that a lot of work ought to be done: there should be created something for algebraic surfaces that could correspond to the Riemann surfaces of algebraic curves; next topological criteria for their unique cor- respondence should be advanced.

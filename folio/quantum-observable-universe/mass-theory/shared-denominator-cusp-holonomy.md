@@ -138,17 +138,14 @@ locus.
 Stated conditional on
 ([algebraic-geometric dilog equivalence](#conj:algebraic-geometric-dilog-equivalence))
 and
-([Archimedean limit](#conj:dilogarithm-archimedean-limit)). The Lean
-formulation
-`QOU.QPochhammer.shared_denominator_cusp_holonomy` is a conditional
-theorem over the class `SharedDenominatorCuspHolonomy`, which
-deliberately has **no instance**: the conjecture's open state is
-visible in the type system.
+([Archimedean limit](#conj:dilogarithm-archimedean-limit)). The
+shared-denominator statement is a conditional result over a hypothesis
+that is **not known to hold**: the conjecture is open.
 
-What makes the class unsatisfiable by fiat is that the cusp shape
+What keeps the hypothesis from being satisfiable by fiat is that the cusp shape
 assignment $k \mapsto z_k$ is one of its parameters. Requiring a geometric
 shape, $\mathrm{Im}\, z > 0$, excludes real constants such as the
-"skeleton" $z = 2$ of an earlier revision, but a class field asserting only
+"skeleton" $z = 2$ of an earlier revision, but a clause asserting only
 that *some* geometric shape exists is discharged by $z = i$ for every $q$,
 $x$ and $n$, since that existential is unlinked to the root index. Binding
 the shape as a parameter is what makes the conjecture constrain the cusp
@@ -177,8 +174,8 @@ Two computational witnesses bracket the conjecture's strong form:
   and the Borromean rings $\mathtt{L6a4}$. The bare seeds sit at
   distance $\approx 0.4$–$0.9$ from the recorded $z_k$, so the
   pole-to-shape correspondence is not the literal identity
-  $q_0^{-k} = z_k$. The producer pairs each seed against
-  `M.tetrahedra_shapes`, so what it measures is indexed by
+  $q_0^{-k} = z_k$. Each seed is paired against
+  the tetrahedral shape parameters, so what is measured is indexed by
   **tetrahedron**, not by cusp.
 
 The two witnesses together support the conjecture's *structural*
@@ -191,14 +188,14 @@ parameters).
 The identity $q_0^{-k} = z_k$ is excluded twice over, and neither
 exclusion needs the distances above.
 
-**It is already a theorem.** `seed_is_not_the_cusp_shape` (conditional on the class below) gives $z_k \neq r$ for every real $r$,
-because `im_pos` excludes every real shape and the seeds $q_0^{-k}$ are
+**It is already a (conditional) theorem.** Conditional on the hypothesis above, $z_k \neq r$ for every real $r$,
+because the requirement $\mathrm{Im}\, z_k > 0$ excludes every real shape and the seeds $q_0^{-k}$ are
 real. So the identity fails for a reason internal to the conjecture.
 
 **The stronger statement is that the shapes do not separate the
 indices at all.** An ideal tetrahedron carries three shape parameters —
 the relabelling orbit $z \mapsto 1/(1-z) \mapsto 1 - 1/z$, which
-`IdealTetrahedron.rotate` realises and `rotate_angles` proves leaves the
+leaves the
 tetrahedron unchanged — so two distinct recorded values may be one
 tetrahedron. Reading the committed witness through that orbit:
 

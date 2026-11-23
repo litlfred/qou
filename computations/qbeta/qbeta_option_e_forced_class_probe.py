@@ -27,6 +27,7 @@ an exact Rational from the 50-digit proton string. No float64 arithmetic.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import sys
 from pathlib import Path
@@ -162,7 +163,7 @@ def main() -> int:
     q0 = sp.Rational(Q_50_DIGIT_STR)
     m_e = sp.Rational(str(CONST.M_E_MEV))
     Qexp = sp.Rational(str(CONST.Q_NEUTRON_MEV))
-    E0 = m_e / (q0 * (q0 - 1))
+    E0 = _qbeta_e0.order_zero_scaled(m_e, q0)
     T = Qexp / E0                      # |eps(Delta)| must equal this
 
     A0, B0 = sp.simplify(A.subs(q, q0)), sp.simplify(B.subs(q, q0))

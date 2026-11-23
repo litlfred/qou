@@ -3,11 +3,14 @@ import UGB.GrobnerShirshov.NormalForms
 /-!
 # `UGB.GrobnerShirshov.QSerreCriticalPairs` — discharging the q-Serre GS obligation
 
-`qSerre_is_gs_basis` is an axiom. Bean qou-18s7 verified it by an exact symbolic
+`qSerre_is_gs_basis` was an axiom. Bean qou-18s7 verified it by an exact symbolic
 critical-pair computation
 (`computations/qserre_gs_basis_check.py`) but left it *verified, not formalised*.
 This file formalises what can be formalised from the shape of the system alone,
-and isolates exactly what is left.
+and isolates exactly what is left. **Update 2026-11-21:** `QSerreGS.lean` closes
+what is left and proves `qSerre_is_gs_basis` as a theorem, through the
+composition lemma (`Diamond.isGrobnerShirshovBasis_iff_compositionsTrivial`)
+rather than through the `MultiStepReduction` route sketched in §5 below.
 
 ## The structural observation everything here rests on
 
@@ -56,7 +59,7 @@ variable {k : Type v} [Field k]
 theorem qSerre_lm_length (qs : QSerreRelations k) :
     ∀ r ∈ (qSerreRewritingSystem k qs).rules, (r.lm degLexOrder).length = 2 := by
   intro r hr
-  simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons, List.not_mem_nil,
+  simp only [qSerreRewritingSystem, RewritingSystem.mem_ofList_rules, qSerreRules, List.mem_cons, List.not_mem_nil,
     or_false] at hr
   rcases hr with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> simp
 
@@ -67,7 +70,7 @@ theorem qSerre_rule_eq_of_lm_eq (qs : QSerreRelations k)
     (hr : r ∈ (qSerreRewritingSystem k qs).rules)
     (hs : s ∈ (qSerreRewritingSystem k qs).rules)
     (h : r.lm degLexOrder = s.lm degLexOrder) : r = s := by
-  simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons, List.not_mem_nil,
+  simp only [qSerreRewritingSystem, RewritingSystem.mem_ofList_rules, qSerreRules, List.mem_cons, List.not_mem_nil,
     or_false] at hr hs
   rcases hr with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
     rcases hs with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
@@ -228,7 +231,7 @@ theorem qSerre_overlap_enumeration (qs : QSerreRelations k)
     have e2 : oc.rule₂.lm degLexOrder = [b, c] := by
       rw [oc.lm₂_decomp, hb, hc]; rfl
     have m1 := h₁; have m2 := h₂
-    simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons,
+    simp only [qSerreRewritingSystem, RewritingSystem.mem_ofList_rules, qSerreRules, List.mem_cons,
       List.not_mem_nil, or_false] at m1 m2
     rcases m1 with h1|h1|h1|h1|h1|h1|h1 <;> rcases m2 with h2|h2|h2|h2|h2|h2|h2 <;>
       rw [h1] at e1 <;> rw [h2] at e2 <;>

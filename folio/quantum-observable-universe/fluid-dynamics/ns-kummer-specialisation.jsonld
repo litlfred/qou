@@ -2,18 +2,23 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-ns-kummer-specialisation",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:ns-kummer-specialisation",
   "kind": "proposition",
   "title": "Kummer specialisation: the NS obstruction survives $q = 1$ for $\\gcd(\\chi(A), n) \\neq n$",
   "uses": [
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou",
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics",
+    "papers/quantum-observable-universe/blocks/lem-bring-cone-reeb-quaternionic-twist",
+    "papers/quantum-observable-universe/blocks/def-reeb-bundle",
     "papers/quantum-observable-universe/blocks/rem-substrate-gm-torsion",
     "papers/quantum-observable-universe/blocks/prop-ns-obstruction-computation",
     "papers/quantum-observable-universe/blocks/conj-qou-p-neq-np",

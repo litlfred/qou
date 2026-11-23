@@ -17,4 +17,4 @@ $$
 \mathrm{rank}(M) \leq 2 + 2 = 4 < 5
 $$
 
-independently of $q$. See [the block-rank remark](#rem:torus-evaluation-block-rank).
+independently of $q$.

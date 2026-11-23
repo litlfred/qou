@@ -136,4 +136,13 @@ theorem abs_cot_saddle_div_two :
     |Real.cos (5 * π / 6) / Real.sin (5 * π / 6)| / 2 = Real.sqrt 3 / 2 := by
   rw [cot_five_pi_div_six, abs_neg, abs_of_nonneg (Real.sqrt_nonneg 3)]
 
+/-- **Fourth-power reciprocity between the saddle constant and target torsion (`qou-vdvE`).**
+Combining `cSigma_saddle_pow_four` (`c_σ(5π/6)⁴ = 1/3`) with the square of
+`abs_cot_saddle_div_two` (`(|cot(5π/6)|/2)² = 3/4`) shows that their product
+equals `1/4`. -/
+theorem cSigma_pow_four_mul_sq_abs_cot_div_two :
+    cSigma (5 * π / 6) ^ 4 * (|Real.cos (5 * π / 6) / Real.sin (5 * π / 6)| / 2) ^ 2 = 1 / 4 := by
+  rw [cSigma_saddle_pow_four, abs_cot_saddle_div_two, div_pow, Real.sq_sqrt (by norm_num)]
+  norm_num
+
 end QOU.Knot.FigureEightVolume

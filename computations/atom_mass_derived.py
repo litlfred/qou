@@ -86,6 +86,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as HA_val
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from witness_base import WitnessBuilder
+from codata_constants import M_HE4_ATOMIC_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 
 # ══════════════════════════════════════════════════════════════
@@ -315,7 +316,7 @@ def build_atom(Z, N):
     nucleus_nf = dict(elem)
 
     # Add Z electrons via Hopf links
-    electron = {(0, 1, 0): 1.0}  # trefoil T_{2,3} = σ₀σ₁σ₀
+    electron = {(0, 1, 0): 1.0}  # e⁻ = σ₀σ₁σ₀ (closure: Hopf link)
     atom_elem = dict(nucleus_nf)
     for e_idx in range(Z):
         gen = e_idx % max(A - 1, 1)
@@ -373,7 +374,7 @@ ELEMENTS = {
 
 # AME2020 observed atomic masses (MeV)
 AME2020_MASS = {
-    (1, 0): 938.783,     (2, 2): 3728.401,   (3, 4): 6535.367,
+    (1, 0): 938.783,     (2, 2): float(M_HE4_ATOMIC_MEV_VALIDATION),   (3, 4): 6535.367,
     (4, 5): 8394.794,    (5, 6): 10255.103,  (6, 6): 11177.930,
     (7, 7): 13043.781,   (8, 8): 14899.169,  (9, 10): 17696.901,
     (10, 10): 18622.835,

@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:19:53.562461+00:00",
-  "commitSha": "2f5868a2c69c25eb0fece57bdd8123c2a09382eb",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T06:05:58.810277+00:00",
+  "commitSha": "81e3c725276366243e384c7e0205861b15a235ec",
   "assertions": [
     {
       "name": "T_{1,0} e⁻ pair count",
@@ -29,7 +29,7 @@
       "source": "H₃(q) basis multiplication; expected pinned 2026-08-25"
     },
     {
-      "name": "T_{2,3} e⁻ pair count",
+      "name": "T_{2,2}^{(3)} e⁻ pair count",
       "computed": 36,
       "expected": 36,
       "passed": true,
@@ -37,7 +37,7 @@
       "source": "H₃(q) basis multiplication; expected pinned 2026-08-25"
     },
     {
-      "name": "T_{2,5} e⁻ pair count",
+      "name": "T_{2,4}^{(3)} e⁻ pair count",
       "computed": 36,
       "expected": 36,
       "passed": true,
@@ -45,20 +45,20 @@
       "source": "H₃(q) basis multiplication; expected pinned 2026-08-25"
     },
     {
-      "name": "T_{2,3} universally opens e⁻ channel",
+      "name": "T_{2,2}^{(3)} universally opens e⁻ channel",
       "computed": 36,
       "expected": 36,
       "passed": true,
       "tolerance": 0,
-      "source": "Trefoil = e⁻ in NF basis; b_i·e⁻·b_j always has e⁻ ≠ 0"
+      "source": "σ₀σ₁σ₀ = e⁻ in NF basis (closure: Hopf link); b_i·e⁻·b_j always has e⁻ ≠ 0"
     }
   ],
   "allPassed": true,
   "durationMs": 5,
   "computation": "photon-operator-table",
   "scriptFile": "photon_operator_table.py",
-  "scriptHash": "c6eb1d7adea9",
-  "scriptCommitSha": "d4c8cceb49842afbb17884447af09db6b839bdad",
+  "scriptHash": "1d42e50df124",
+  "scriptCommitSha": "2bafc1822619fb9f6468dff4a229b45c4feb2c88",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "a6049e98cf53fd91"
   },
   "invocation": {
     "argv": [
@@ -84,9 +85,9 @@
   "description": "Compact photon operator table: NF of b_i·β(T_{m,n})·b_j for all 6×6 basis pairs and 5 torus knot operators. Each operator stored as a 6×6 matrix of 6-element NF vectors. Replaces the verbose knot-operator-table witness (78KB → ~8KB).",
   "contentBlock": "rem:knot-operator-basis-table",
   "parameters": {
-    "q": "1.109978582751380807591669095610768879874499121873577636056718792510176",
-    "h": "0.2090602987956393154308462131296749438597574952630230559330742613330572",
-    "z": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
+    "q": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "h": "0.2090602987956393154308462131296749438597574952630245553816960544589759",
+    "z": "0.6126880371464652515958298639458992480263083915450647597242866851041912",
     "basis": [
       "γ",
       "σ₀",
@@ -1043,8 +1044,8 @@
         "e_minus_pairs": 24,
         "demand_pairs": 0
       },
-      "T_{2,3}": {
-        "phys": "trefoil (electron)",
+      "T_{2,2}^{(3)}": {
+        "phys": "Hopf link (closure of σ₀σ₁σ₀ ∈ B_3; electron word)",
         "operator_nf": [
           "0.0",
           "0.0",
@@ -1358,8 +1359,8 @@
         "e_minus_pairs": 36,
         "demand_pairs": 0
       },
-      "T_{2,5}": {
-        "phys": "cinquefoil (muon)",
+      "T_{2,4}^{(3)}": {
+        "phys": "T(2,4) torus link (closure of (σ₀σ₁)²σ₀ ∈ B_3)",
         "operator_nf": [
           "0.0",
           "0.0",

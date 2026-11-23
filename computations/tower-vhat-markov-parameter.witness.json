@@ -593,11 +593,11 @@
         "1.0646262153778452"
       ],
       "mass_at_3A_proper.per_generator_V_hat_3A": [
-        "0.6713858243916997",
-        "1.0551103188317246"
+        "1.2824204700738209",
+        "0.8934352805451921"
       ],
       "max_over_q_canonical_tower": "0.9591412230125039415",
-      "max_over_q_mass_at_3A": "0.95056817782587260308"
+      "max_over_q_mass_at_3A": "1.1553560492086220621"
     },
     "include_inter_False": {
       "canonical_tower.per_gen_V_hat_canonical": [
@@ -605,36 +605,36 @@
         "1.0646262153778452"
       ],
       "mass_at_3A_proper.per_generator_V_hat_3A": [
-        "0.6713858243916997",
-        "1.0551103188317246"
+        "1.2824204700738209",
+        "0.8934352805451921"
       ],
       "max_over_q_canonical_tower": "0.9591412230125039415",
-      "max_over_q_mass_at_3A": "0.95056817782587260308"
+      "max_over_q_mass_at_3A": "1.1553560492086220621"
     }
   },
   "pn_identity_coefficient_relation": {
     "flavor_split_delta_solved_from_word": "0.0013757108070270960086",
     "flavor_split_leading_closed_form": "0.0013757108070270960086",
-    "flavor_split_abs_difference": "3.8029213427316681001e-49",
+    "flavor_split_abs_difference": "3.8184134514887023553e-49",
     "inter_nucleon_vHat_predicted_h_delta_over_4": "0.000071901628093368697589",
     "inter_nucleon_vHat_measured": "0.000071901628093368697589",
-    "inter_nucleon_vHat_abs_difference": "1.9298587964105636288e-52",
+    "inter_nucleon_vHat_abs_difference": "2.6784558603512114339e-72",
     "distinct_d_values": {
       "0.0": 22,
-      "-0.10453014939781965772": 8,
       "-0.20906029879563931543": 14,
+      "-0.10453014939781965772": 8,
       "-0.10445824776972628902": 1
     },
     "beta_proton_gen1": "1.0883675333971881278",
     "V_hat_neutron_gen1": "1.0883675333971881278",
-    "abs_difference": "2.6727647100921956461e-51",
+    "abs_difference": "4.1835393125919606835e-51",
     "identity_lhs_beta_of_x_times_avg": "1.0883675333971881278",
     "identity_rhs_trace_of_x_times_full": "1.0883675333971881278",
     "identity_abs_difference": "0.0",
     "h": "0.20906029879563931543",
     "half_h": "0.10453014939781965772",
     "factors_checked": 45,
-    "worst_factor_deviation_from_template": "3.708461035252921459e-50"
+    "worst_factor_deviation_from_template": "4.0022322140479242871e-50"
   },
   "lean_hypotheses_on_production_weights": [
     {
@@ -643,7 +643,7 @@
       "h_eq_q_minus_qinv": "0.20906029879563931543",
       "half_h": "0.10453014939781965772",
       "Z_eff": "0.10453014939781965772",
-      "abs_Z_minus_half_h": "3.3409558876152445577e-52",
+      "abs_Z_minus_half_h": "0.0",
       "worst_weight_transpose_asymmetry": "0.0",
       "worst_trace_pair_deviation_from_h": "0.0",
       "eigenvalue_exchange_holds": true,
@@ -695,9 +695,9 @@
       "h_eq_q_minus_qinv": "0.20906029879563931543",
       "half_h": "0.10453014939781965772",
       "Z_eff": "0.10453014939781965772",
-      "abs_Z_minus_half_h": "1.6704779438076222788e-52",
-      "worst_weight_transpose_asymmetry": "2.5057169157114334183e-52",
-      "worst_trace_pair_deviation_from_h": "6.6819117752304891154e-52",
+      "abs_Z_minus_half_h": "2.2639197697066780919e-72",
+      "worst_weight_transpose_asymmetry": "4.5278395394133561838e-72",
+      "worst_trace_pair_deviation_from_h": "0.0",
       "eigenvalue_exchange_holds": true,
       "per_partition": [
         {
@@ -877,9 +877,9 @@
       "h_eq_q_minus_qinv": "0.20906029879563931543",
       "half_h": "0.10453014939781965772",
       "Z_eff": "0.10453014939781965772",
-      "abs_Z_minus_half_h": "1.6704779438076222788e-52",
-      "worst_weight_transpose_asymmetry": "3.3409558876152445577e-52",
-      "worst_trace_pair_deviation_from_h": "1.3363823550460978231e-51",
+      "abs_Z_minus_half_h": "2.2639197697066780919e-72",
+      "worst_weight_transpose_asymmetry": "3.3958796545600171378e-72",
+      "worst_trace_pair_deviation_from_h": "4.5278395394133561838e-72",
       "eigenvalue_exchange_holds": true,
       "per_partition": [
         {
@@ -1435,12 +1435,12 @@
     {
       "name": "the two corpus V_hat constructions differ well above rounding",
       "passed": true,
-      "detail": "canonical_tower ['0.6629533727041369', '1.0646262153778452'] vs mass_at_3A_proper ['0.6713858243916997', '1.0551103188317246']"
+      "detail": "canonical_tower ['0.6629533727041369', '1.0646262153778452'] vs mass_at_3A_proper ['1.2824204700738209', '0.8934352805451921']"
     },
     {
       "name": "weights are transpose-symmetric (markov_param_eq_half_h hypothesis hw)",
       "passed": true,
-      "detail": "worst |w(lambda') - w(lambda)| = 3.3409558876152445577e-52"
+      "detail": "worst |w(lambda') - w(lambda)| = 4.5278395394133561838e-72"
     },
     {
       "name": "transposing exchanges the Hecke eigenvalue multiplicities",
@@ -1450,17 +1450,17 @@
     {
       "name": "t(lambda) + t(lambda') = h (hypothesis ht)",
       "passed": true,
-      "detail": "worst deviation = 6.6819117752304891154e-52"
+      "detail": "worst deviation = 4.5278395394133561838e-72"
     },
     {
       "name": "CONCLUSION: Z_eff = h/2 exactly, and independently of n",
       "passed": true,
-      "detail": "worst |Z - h/2| over n = 3, 6, 9 = 3.3409558876152445577e-52"
+      "detail": "worst |Z - h/2| over n = 3, 6, 9 = 2.2639197697066780919e-72"
     },
     {
       "name": "proton's identity coefficient EQUALS the neutron's V_hat (gen 1)",
       "passed": true,
-      "detail": "|beta_p - V_n| = 2.6727647100921956461e-51"
+      "detail": "|beta_p - V_n| = 4.1835393125919606835e-51"
     },
     {
       "name": "and it is identity_coeff_avg_eq_trace_full, not a coincidence",
@@ -1470,21 +1470,21 @@
     {
       "name": "every braid-word factor is (1, d) with d in the 4-value template",
       "passed": true,
-      "detail": "45 factors checked across p, n, d; worst deviation 3.708461035252921459e-50"
+      "detail": "45 factors checked across p, n, d; worst deviation 4.0022322140479242871e-50"
     },
     {
       "name": "the fourth template value IS the colour weighting (delta solved from the word == flavor_split_leading(q))",
       "passed": true,
-      "detail": "solved 0.0013757108070270960086 vs closed form 0.0013757108070270960086, differ 3.8029213427316681001e-49 \u2014 this is the non-circular one; h*delta/4 == V_hat is an identity and proves nothing on its own. With the identification made, inter_nucleon_vHat says the p-n interface reaches the tower ONLY through the colour weighting and contributes exactly 0 under the colour-blind convention"
+      "detail": "solved 0.0013757108070270960086 vs closed form 0.0013757108070270960086, differ 3.8184134514887023553e-49 \u2014 this is the non-circular one; h*delta/4 == V_hat is an identity and proves nothing on its own. With the identification made, inter_nucleon_vHat says the p-n interface reaches the tower ONLY through the colour weighting and contributes exactly 0 under the colour-blind convention"
     }
   ],
   "all_checks_passed": true,
   "scriptFile": "tower_vhat_markov_parameter_probe.py",
-  "scriptHash": "6f238b5fdded",
-  "scriptCommitSha": "2330002b851c122ca72a7504ceae53ad59838dc2",
-  "commitSha": "2330002b851c122ca72a7504ceae53ad59838dc2",
+  "scriptHash": "934ec863cb94",
+  "scriptCommitSha": "b500d8e9a850d6bcd3fa6bcf557875e6d82c969e",
+  "commitSha": "b500d8e9a850d6bcd3fa6bcf557875e6d82c969e",
   "engine": "python",
-  "computedAt": "2026-08-29T08:35:45.222793+00:00",
+  "computedAt": "2026-11-20T08:05:19.474478+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

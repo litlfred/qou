@@ -61,15 +61,17 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from binding_canonical import binding_canonical  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 # (name, Z, N, B_AME_MeV) — AME 2020 binding energies.
 ATOMS = [
-    ("D",   1, 1, "2.224566"),
-    ("T",   1, 2, "8.481798"),
-    ("3He", 2, 1, "7.718043"),
-    ("4He", 2, 2, "28.295673"),
+    ("D",   1, 1, _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)),
+    ("T",   1, 2, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+    ("3He", 2, 1, _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)),
+    ("4He", 2, 2, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)),
     ("5Li", 3, 2, "26.3286"),
-    ("6Li", 3, 3, "31.9941"),
+    ("6Li", 3, 3, _ame_nstr(AME_B_LI6_MEV_VALIDATION, 30)),
     ("7Li", 3, 4, "39.2446"),
 ]
 

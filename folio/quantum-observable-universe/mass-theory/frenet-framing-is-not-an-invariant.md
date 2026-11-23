@@ -40,10 +40,9 @@ $4/29$, $4/53$ for the three component types. Since $\cos qt = -1$ at the $q$
 parameters $(2k+1)\pi/q$, the family crosses $q$ inflection points at once; the
 Frenet normal flips at each, and the Frenet self-linking jumps by $q$:
 $\mathrm{Lk}_F = -2q$ for $r > r^*$ and $-q$ for $r < r^*$, in all three
-families. The factorisation is exact (sympy) and the algebra is formalised
-(`QOU.Mass.TorusInflection`: `cross_vel_acc`, `inflection_iff`,
-`inflection_radius_three_five_seven`, `cos_q_mul_inflection`,
-`inflection_params_injective`).
+families. The factorisation is exact, and the algebra (the cross product of
+velocity and acceleration, the inflection criterion, the three inflection
+radii, the inflection parameters and their injectivity) is proved.
 
 ## What this closes
 
@@ -65,5 +64,5 @@ and no torsion number is compared with the substrate's hull-exit window,
 because the principle says such a comparison has no invariant meaning. That
 the $t = \pi/q$ inflections are the only ones in the family is observed
 (sampled $\kappa_{\min} > 0$ at every listed $r$), not proved; the
-differentiation behind $\gamma'(\pi/q)$, $\gamma''(\pi/q)$ is symbolic, not
-formalised. Nothing here connects curvature or torsion to binding.
+differentiation behind $\gamma'(\pi/q)$, $\gamma''(\pi/q)$ is a symbolic
+computation and is not part of the proved algebra. Nothing here connects curvature or torsion to binding.

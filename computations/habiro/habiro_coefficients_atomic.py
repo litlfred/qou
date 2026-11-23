@@ -691,10 +691,36 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
     }
 
 
+def _selftest() -> int:
+    """Fast self-test (bean qou-0ndb): verify `str_in_u`, `to_u_polynomial`,
+    `cyclotomic_expansion`, and `reconstruct` serialize identically in `u`
+    regardless of whether the caller passes `u` or `check_q`."""
+    q_s = sp.Symbol("q", positive=True, real=True)
+    u_s = sp.Symbol("u", positive=True, real=True)
+    cq_s = sp.Symbol("check_q", positive=True, real=True)
+    expr_q = (q_s ** 2 - 3 * q_s + 8) / (q_s * (q_s + 1))
+    pu_u, sh_u, den_u = to_u_polynomial(expr_q, q_s, u_s)
+    pu_cq, sh_cq, den_cq = to_u_polynomial(expr_q, q_s, cq_s)
+    assert sh_u == sh_cq, (sh_u, sh_cq)
+    assert den_u == den_cq and "check_q" not in den_cq, (den_u, den_cq)
+    assert str_in_u(pu_u, u_s) == str_in_u(pu_cq, cq_s)
+    assert "check_q" not in str_in_u(pu_cq, cq_s)
+    c_u = cyclotomic_expansion(pu_u, u_s)
+    c_cq = cyclotomic_expansion(pu_cq, cq_s)
+    assert [c["a_m"] for c in c_u] == [c["a_m"] for c in c_cq]
+    assert all("check_q" not in c["a_m"] for c in c_cq)
+    assert sp.expand(reconstruct(c_u, cq_s) - pu_cq) == 0
+    assert sp.expand(reconstruct(c_cq, u_s) - pu_u) == 0
+    print("self-test: ok (str_in_u / to_u_polynomial / cyclotomic_expansion / reconstruct)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        raise SystemExit(_selftest())
     print("HABIRO CYCLOTOMIC COEFFICIENTS — atomic braids")
     print("=" * 80)
-    print(f"q_0 = {float(_Q_CANONICAL):.6f}")
+    print(f"q_0 = {mp.nstr(_Q_CANONICAL, 7)}")
 
     q = sp.Symbol('q', positive=True, real=True)
 

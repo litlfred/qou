@@ -116,6 +116,17 @@ theorem traceMap_one (z : R) : traceMap R q z 1 = 1 := by
 theorem traceMap_sigma (z : R) : traceMap R q z (sigma R q) = z := by
   rw [traceMap_apply, coord_zero_sigma, coord_one_sigma, mul_one, zero_add]
 
+/-- **Chain factorisation at `n = 2`** (bean `qou-ltwg`, owner option 3,
+2026-11-20). On the genuine rank-two Hecke algebra `H₂(q)`, where `σ² = hσ + 1`
+bites at `q ≠ 1`, the Markov trace of one affine letter `a·σ + b` is its vertex
+volume `a·z + b`. This is the one-letter case of
+`QOU.Hecke.markov_trace_product`, realised on a concrete algebra rather than on
+the abstract tower. -/
+theorem traceMap_chainLetter (z a b : R) :
+    traceMap R q z (a • sigma R q + algebraMap R (H2 R q) b) = a * z + b := by
+  rw [map_add, map_smul, traceMap_sigma, Algebra.algebraMap_eq_smul_one, map_smul,
+    traceMap_one, smul_eq_mul, smul_eq_mul, mul_one]
+
 /-! ## The instance -/
 
 /-- **A Markov trace on `H₂(q)`**, for any choice of Markov parameter `z`.

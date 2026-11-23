@@ -59,13 +59,18 @@ caller-supplied data**, and two genuinely different things are separated:
 
 ## What is still open, stated rather than implied
 
-**Norm-additivity itself** — Pythagoras for the `*`-compatible Frobenius
-pairing, which is the whole content of the lemma. It needs the
-inner-product / orthogonality infrastructure the `QOU` library does not
-carry, and it cannot be stated honestly while `nrm` is an arbitrary
-`ℝ → ℝ`: it is a claim about a norm induced by a pairing, and no pairing is
-constructed here. Nothing in this file builds `α` from `(∫_A ⊗ id) ∘ Δ ∘ ρ`,
-the descent involution `τ̂_n`, the Frobenius trace, or the `*`-involution.
+**Norm-additivity itself.** This is the lemma's whole content, and it is
+**not** Pythagoras. Pythagoras for the `*`-compatible Frobenius pairing gives
+additivity of *squared* norms, `‖a + b‖² = ‖a‖² + ‖b‖²`. For two non-zero
+orthogonal vectors it forces the triangle inequality to be **strict**
+(`QOU.Torsion.norm_add_lt_of_inner_eq_zero`, PR #8581). An earlier version of
+this docstring called norm-additivity "Pythagoras"; that was wrong. Norm
+additivity holds iff the two trace values lie on a common ray
+(`QOU.Torsion.mass_decomposition_eq_iff`), i.e. share a sign or phase, and
+that is open (beans `qou-27ys`, `qou-tmeq`). It also cannot be stated honestly
+while `nrm` is an arbitrary `ℝ → ℝ`. Nothing in this file builds `α` from
+`(∫_A ⊗ id) ∘ Δ ∘ ρ`, the descent involution `τ̂_n`, the Frobenius trace, or the
+`*`-involution.
 
 **Base ring (§7c).** `ℝ`: the mass norm is an archimedean (real) norm.
 

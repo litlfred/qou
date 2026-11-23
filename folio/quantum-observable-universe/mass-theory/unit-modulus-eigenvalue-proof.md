@@ -21,8 +21,7 @@ $$
 
 which satisfies the braid relation, with $\sigma_2^{-1} = \sigma_2 - h$.
 Multiplying out $(\sigma_1\sigma_2^{-1})^3$ and taking the trace gives the
-displayed formula. Both facts are proved in the Lean sibling
-(`unitMod_braid`, `borromean_trace_standard`). $\square$
+displayed formula. $\square$
 
 ## Values
 
@@ -37,7 +36,7 @@ At $q = q_0$ the Borromean eigenvalues lie on the unit circle close to $+1$,
 at angle $\theta \approx 4.37^\circ$. At $q = 2$ the trace is $-1573/64$ and
 they are real, off the unit circle.
 
-Note that unit modulus holds specifically for the three-cycle and Borromean elements above rather than for arbitrary even words, with $\chi_{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - h^4$ and non-degenerate complex-conjugate eigenvalues on $V_{(2,1)}$.
+Unit modulus is not automatic for even words. It holds for $\sigma_1\sigma_2$ at every $q$, and for $\beta_{\mathrm{Bor}}$ exactly when $|\chi_{(2,1)}(\beta_{\mathrm{Bor}})| \le 2$, where the displayed formula equals $\chi_{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - 3h^4 - h^6$. This holds at $q_0$ (non-degenerate complex-conjugate eigenvalues on $V_{(2,1)}$) and fails at $q = 2$.
 
 ## Rotation versus growth
 

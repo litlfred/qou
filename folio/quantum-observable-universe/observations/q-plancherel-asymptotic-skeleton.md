@@ -10,7 +10,7 @@ $$
   n(\lambda) \;=\; \sum_i (i-1)\lambda_i ,
 $$
 
-*with $f^\lambda$ the number of standard Young tableaux and $h(\square)$ the hook lengths. Here $n(\lambda)$ is Macdonald's partition statistic, not a function of the size $n$ — the two are distinct objects sharing a glyph, and the size is always the bare $n$. We write $\lambda'$ for the conjugate (transposed) partition and $c(\square) = j - i$ for the content of the box in row $i$, column $j$. The blackboard-bold $\mathbb{M}$ follows the $\mathbb{V}$ precedent in the notation register: it is the source literature's own symbol, raised out of plain $M$ and $\mathcal{M}$, both of which are claimed here (the latter by the mass endomorphism). We define a topological space $\mathcal{K}_q$ (the $q$-deformed Kerov limit-shape space) and pushforward maps*
+*with $f^\lambda$ the number of standard Young tableaux and $h(\square)$ the hook lengths. Here $n(\lambda)$ is Macdonald's partition statistic, not a function of the size $n$ — the two are distinct objects sharing a glyph, and the size is always the bare $n$. Write $\lambda'$ for the conjugate (transposed) partition and $c(\square) = j - i$ for the content of the box in row $i$, column $j$. The blackboard-bold $\mathbb{M}$ follows the $\mathbb{V}$ precedent in the notation register: it is the source literature's own symbol, raised out of plain $M$ and $\mathcal{M}$, both of which are claimed here (the latter by the mass endomorphism). Define a topological space $\mathcal{K}_q$ (the $q$-deformed Kerov limit-shape space) and pushforward maps*
 
 $$
   \iota_n \colon \{\lambda \vdash n\}
@@ -23,11 +23,11 @@ $$
 
 1. *(Existence at $q = 1$.) The sequence $\{\mu_n^{(1)}\}$ converges weakly to $\mu_\infty^{(1)}$* [`vershik-kerov1977`, `biane1998`].
 2. *(Asymptotics at generic $q$.) The row lengths obey a law of large numbers, $\lambda_i/n \to (1-q)q^{i-1}$ in probability, and their fluctuations are asymptotically Gaussian at scale $\sqrt{n}$* [`feray-meliot2012`].
-3. *(Limit identification, conjectural.) For $q \neq 1$, $\{\mu_n^{(q)}\}$ converges weakly to $\mu_\infty^{(q)}$. We identify $\mu_\infty^{(q)}$ with a measure on $\pi_{\mathrm{GNS}}(H_\infty(q))$.*
+3. *(Limit identification, conjectural.) For $q \neq 1$, $\{\mu_n^{(q)}\}$ converges weakly to $\mu_\infty^{(q)}$. Identify $\mu_\infty^{(q)}$ with a measure on $\pi_{\mathrm{GNS}}(H_\infty(q))$.*
 
 ## Which weight this is, and why it changed
 
-**Identification of $\mathbb{M}_{n,q}$ with the Molien fake-degree measure.** Note that the Plancherel measure $\mathbb{M}_{n,q}$ governing clause 2 is distinct from the squared-quantum-dimension weight $w_\lambda^{(n)}(q) = \dim_q^2(\lambda)/[n]_q!$; rather, $\mathbb{M}_{n,q}$ coincides with the Molien fake-degree weight of `QOU.MathlibExt.MolienFakeDegreeGeneralN.molienSum`, which satisfies
+**Identification of $\mathbb{M}_{n,q}$ with the Molien fake-degree measure.** Note that the Plancherel measure $\mathbb{M}_{n,q}$ governing clause 2 is distinct from the squared-quantum-dimension weight $w_\lambda^{(n)}(q) = \dim_q^2(\lambda)/[n]_q!$; rather, $\mathbb{M}_{n,q}$ coincides with the Molien fake-degree weight, which satisfies
 
 $$
   \frac{f^\lambda \, q^{-\kappa_\lambda} \, \dim_q(\lambda)}{[n]_q!}
@@ -36,15 +36,23 @@ $$
   \kappa_\lambda \;=\; \sum_{\square \in \lambda} c(\square),
 $$
 
-verified in exact rational arithmetic for every partition of $n = 1,\dots,9$ ([`probes/molien_feray_meliot_bridge_probe.py`](../../../computations/probes/molien_feray_meliot_bridge_probe.py)). So this proposition is not being restated over a *new* object; it is being restated over one the corpus has had all along, with the substitution $Q = q^2$ making the identification.
+verified in exact rational arithmetic for every partition of $n = 1,\dots,9$. So this proposition is not being restated over a *new* object; it is being restated over one the corpus has had all along, with the substitution $Q = q^2$ making the identification.
 
 **The exponent $\kappa_\lambda$ is forced, not chosen.** Substituting $Q = q^2$ into the display above leaves $q^{2n(\lambda) - \sum_\square h(\square) + n}$, which collapses to $q^{-\kappa_\lambda}$ by two identities — $\sum_\square h(\square) = n(\lambda) + n(\lambda') + n$ and $\kappa_\lambda = n(\lambda') - n(\lambda)$ — each verified independently over all partitions of $n \leq 10$ in the same probe. Without them the identity would be an agreement at $96$ sample points; with them it is a derivation.
 
-This also explains a coincidence the corpus carried without comment: `molienSum_eq_qFactorial` (Lean) says $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$, and $\mathbb{M}_{n,q}$ is a probability measure by construction. Those are the same theorem.
+This also explains a coincidence the corpus carried without comment: the proved identity $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$ holds for every $n$, and $\mathbb{M}_{n,q}$ is a probability measure by construction. Those are the same theorem.
 
 ## The substrate sits at $q > 1$, and that costs an orientation, not the theorem
 
-[`feray-meliot2012`] states its asymptotics for $q < 1$, while the substrate gives $Q = q_0^2 \approx 1.2321$. The paper's own duality $\mathbb{M}_{n,q^{-1}}(\lambda') = \mathbb{M}_{n,q}(\lambda)$ closes the gap: it is an *exact* identity, verified here over all partitions of $n \leq 9$ in exact arithmetic, so the $Q > 1$ results are the $Q^{-1} < 1$ results read on conjugate diagrams. Clause 2 at the substrate therefore describes the **columns** of $\lambda$ where the cited statement describes rows. Nothing is lost and nothing is approximated; the reader has to transpose.
+[`feray-meliot2012`] states its asymptotics for $q < 1$, while the substrate gives $Q = q_0^2 \approx 1.2321$. The paper's own duality $\mathbb{M}_{n,q^{-1}}(\lambda') = \mathbb{M}_{n,q}(\lambda)$ closes the gap: it is an *exact* identity, verified here over all partitions of $n \leq 9$ in exact arithmetic, so the $Q > 1$ results are the $Q^{-1} < 1$ results read on conjugate diagrams. Clause 2 at the substrate therefore describes the **columns** of $\lambda$ where the cited statement describes rows. Nothing is lost and nothing is approximated; only a transposition is needed.
+
+## Deformed precedents for clause 3, and what each would need (literature)
+
+Two published routes reach a limit-shape and fluctuation theorem for a deformed Plancherel measure. Neither covers $\mathbb{M}_{n,q}$, and neither has had its hypotheses checked for it.
+
+*The Jack deformation.* Replacing symmetric-group characters by Jack characters with parameter $\alpha > 0$ ($\alpha = 1$ recovers the classical case) gives a deformed Plancherel measure whose bulk has a deterministic limit shape and Gaussian fluctuations \cite[\S1.1--\S1.2]{dolega-feray2014}, and the construction extends to a general measure $P^\chi$ attached to a family of characters on partitions \cite[\S1.4--\S1.7]{dolega-sniady2018}. The tool that makes the argument run is that the structure constants of Jack characters are polynomial in the deformation parameter \cite[\S1.5, \S4]{dolega-feray2014}. The Jack parameter is a different deformation from $q$, so this is a template, not a proof: a $q$-analogue along this route would first need a polynomiality or degree bound on the structure constants of the characters that define $\mathbb{M}_{n,q}$.
+
+*Approximate factorization.* Biane proves concentration for any normalized positive-definite function $\psi$ on the symmetric group whose values on a permutation $\rho$ of support size $l$ are bounded by $c_l N^{-l/2}$ and approximately factorize on disjointly supported permutations: the induced measure on Young diagrams concentrates, and character values satisfy $|\chi^\lambda(\rho) - \psi(\rho)| \le K(\delta + N^{-1})^{1/4} N^{-l/2}$ \cite[Def.~1.3, Thms~1--2]{biane2000}. Here $N$ is the size of the symmetric group, written $q$ in the source; it is unrelated to the deformation parameter $q$ of this block. Using this route would require exhibiting $\mathbb{M}_{n,q}$ as the measure of such a $\psi$ and checking both bounds, which has not been done.
 
 ## What is still open
 

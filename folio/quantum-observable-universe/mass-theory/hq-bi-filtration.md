@@ -3,8 +3,7 @@
 *Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)),
 filtered by iterated-integral depth
-$G^{(0)} \subseteq G^{(1)} \subseteq \cdots$
-([depth correspondence](#conj:gb-depth-period-correspondence)).
+$G^{(0)} \subseteq G^{(1)} \subseteq \cdots$.
 For each Bring-embeddable knot/link $K$ ([Bring-embeddable
 knots](#rem:bring-embeddable-knots)) with dominant cell
 $\lambda_K \vdash n_K$ and central primitive idempotent
@@ -26,8 +25,7 @@ $K$ (Hecke cell side).*
 
 ### Axes and refinements
 
-**Depth axis $n$ (horizontal).** Inherited from
-[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence):
+**Depth axis $n$ (horizontal).**
 $G^{(0)}$ contains $\exp_q$ and scalars; $G^{(n)}$ adjoins the
 grouplikes $\log_q, \mathrm{Li}_2^q, \ldots, \mathrm{Li}_n^q$.
 Compatible with $\tau_{\mathrm{arch}}$ via
@@ -37,9 +35,9 @@ $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$.
 $\lambda_K$. Two natural sub-axes inside the $K$-axis:
 
 1. **Bar-class.** Self-conjugate $\lambda_K = \lambda_K'$ vs chiral
-   pair $\lambda_K \neq \lambda_K'$ (cf. [`rem:chirality-period-pairing`](#rem:chirality-period-pairing)).
+   pair $\lambda_K \neq \lambda_K'$ (cf. [Chirality structure on Goncharov period classes via the bar involution](#rem:chirality-period-pairing)).
 2. **Genus.** $g(K) \leq 4$ for Bring-embeddable
-   ([`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots)).
+   ([Bring-embeddable knots: genus-bounded table and per-knot witness targets for the depth correspondence](#rem:bring-embeddable-knots)).
 
 ### Compatibility with the Hopf and braid structures
 
@@ -65,15 +63,4 @@ The bi-filtration interacts with the existing structures on $\mathcal{H}_q$:
 ### The bi-filtration as a tooling unification
 
 This is the **definition layer** for the framework the
-depth correspondence implies but does not name. Three downstream conjectures
-populate it:
-
-- [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
-  — the symmetry group acting on $\mathcal{H}_q^{(n, K)}$.
-- [`prop:knot-indexed-convolution-grid`](#prop:knot-indexed-convolution-grid)
-  — placement of paper's existing knot-indexed convolutions
-  ($\mathrm{Lk}_R^{(k)}$, $\bowtie_K$, Markov trace, Hoefsmit pairing,
-  Higgs-vev coupling) into the $(n, K)$-grid.
-- [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)
-  — Beilinson regulator on $K_{2n-1}^{\mathrm{ind}}(\overline{\mathbb{Q}})$
-  matches the depth-$n$ axis.
+depth correspondence implies but does not name.

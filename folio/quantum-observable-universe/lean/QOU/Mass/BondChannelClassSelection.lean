@@ -10,8 +10,9 @@
       (CAL-1 = m_e W-plane scale, CAL-2 = P_skew^β / q₀ W-plane modulus
       (dimensionless), CAL-3 = P_avg^π / m_π orthogonal meson class).  The
       count-alignment of the triple with the three H¹(Bring) degrees of
-      freedom is `QOU.Mass.calibrations_eq_cohomology` (content block
-      `mass-theory/calibration-cohomology-alignment`); this file needs only
+      freedom is the conjecture `conj:calibration-cohomology-alignment`
+      (content block `mass-theory/calibration-cohomology-alignment`; no Lean
+      carrier since 2026-11-20); this file needs only
       the three-element class inventory.
     * `BondChannelModel` — the two dimensionful scales m_e, m_π, a
       dimensionless q₀-rational factor per class (CAL-2's entire

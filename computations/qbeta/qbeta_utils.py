@@ -529,7 +529,7 @@ def c3_proton_extracted(dps: int | None = None) -> mpf:
 # theorems `trace_QAdjp_borromeanV3`, `trace_QAdjn_borromeanV3_connected`,
 # and `trace_QAdj_connected_diff_borromeanV3`.
 
-_VALID_QED_WEIGHTINGS = ("plain", "KnKp", "Kp3", "q")
+_VALID_QED_WEIGHTINGS = ("derived", "plain", "KnKp", "Kp3", "q")  # derived canonical; rest historical (qou-99qc)
 
 
 def _load_default_q_codata_me(dps: int) -> tuple[mpf, mpf, mpf]:
@@ -548,46 +548,44 @@ def _load_default_q_codata_me(dps: int) -> tuple[mpf, mpf, mpf]:
 
 
 def borromean_v3_connected_qed_diff_over_me(
-    q: mpf, weighting: str = "plain"
+    q: mpf, weighting: str = "derived", insertion: str | None = None
 ) -> mpf:
     """Dimensionless connected 4th-order Borromean V³ QED splitting Δm_QED^{conn} / m_e.
 
-    Implements `NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3`:
-        tr_conn(p, V³) = -2(q² - 1)⁴(q⁴ + q² + 1) / (27 q⁶)
-        tr_conn(n, V³) = +(q² - 1)⁴(2q⁴ - q² + 2) / (27 q⁶)
-        Δtr_conn(V³)   = +(q² - 1)⁴(4q⁴ + q² + 4) / (27 q⁶)
-        Δm_QED^{conn} / m_e = -Δtr_conn^{(w)}(V³) < 0.
+    Default (derived weighting, insertion None): the ruled covariant all-pairs insertion (owner
+    2026-11-20 16:44), whose connected part is 0 on V³, so this returns 0. With
+    insertion='adjacent' (labelled comparison):
+    = −[t_conn(W_n) − t_conn(W_p)] with the DERIVED quantum-trace weighting Tr(K^{⊗3}·)/[2]_q³
+    (`NucleonWeightSpaceQTrace.deltaT_adjacent_connected_eq`, bean qou-99qc):
+        −(q−1)⁴(q+1)⁴(q²+2)(2q⁴+1)/(9q⁴(q²+1)³).
+    'plain', 'KnKp', 'Kp3', 'q' are historical comparisons (1/3 normalisation,
+    `trace_QAdj_connected_diff_borromeanV3`). Library: `two_term_qtrace_weighting.py`.
     """
-    q2 = q ** 2
-    q2_m1_4 = (q2 - 1) ** 4
-    denom = 27 * (q2 ** 3)
-    tr_conn_p = -2 * q2_m1_4 * (q2 ** 2 + q2 + 1) / denom
-    tr_conn_n = q2_m1_4 * (2 * (q2 ** 2) - q2 + 2) / denom
-    if weighting == "plain":
-        delta_tr = tr_conn_n - tr_conn_p
-    elif weighting == "KnKp":
-        delta_tr = (tr_conn_n / q) - (q * tr_conn_p)
-    elif weighting == "Kp3":
-        delta_tr = tr_conn_n - (q * tr_conn_p)
-    elif weighting == "q":
-        delta_tr = q * (tr_conn_n - tr_conn_p)
-    else:
+    import sys
+    from pathlib import Path
+
+    _comp = str(Path(__file__).resolve().parents[1])
+    if _comp not in sys.path:
+        sys.path.insert(0, _comp)
+    if weighting not in _VALID_QED_WEIGHTINGS:
         raise ValueError(
             f"borromean_v3_connected_qed_diff_over_me: unknown weighting {weighting!r}; "
             f"expected one of {_VALID_QED_WEIGHTINGS}"
         )
-    return -delta_tr
+    from two_term_qtrace_weighting import connected_trace_diff
+    # insertion None + derived -> the ruled covariant all-pairs (owner 2026-11-20 16:44): 0 on V³.
+    return -connected_trace_diff(q, weighting, insertion)
 
 
 def borromean_v3_connected_qed_diff_mev(
     q: mpf | None = None,
     m_e: mpf | str | None = None,
-    weighting: str = "plain",
+    weighting: str = "derived",
 ) -> mpf:
     """Connected 4th-order Borromean V³ (n - p) QED splitting Δm_QED^{conn} in MeV.
 
-    Supports both `borromean_v3_connected_qed_diff_mev(q, m_e, weighting="plain")`
-    and `borromean_v3_connected_qed_diff_mev(q=None, m_e=None, weighting="plain")`.
+    Supports both `borromean_v3_connected_qed_diff_mev(q, m_e, weighting="derived")`
+    and `borromean_v3_connected_qed_diff_mev(q=None, m_e=None, weighting="derived")`.
     """
     from mpmath import mp
 
@@ -611,7 +609,7 @@ def c2_target_two_term_at(
     m_e: mpf | None = None,
     *,
     convention: str = "D",
-    weighting: str = "plain",
+    weighting: str = "derived",
 ) -> mpf:
     """Empirical c_2 target after subtracting the two-term Borromean V³ connected QED
     dressing Δm_QED^{conn} from Q_codata:
@@ -659,7 +657,7 @@ def c3_target_two_term_at(
     *,
     c2: mpf | int = -1,
     convention: str = "D",
-    weighting: str = "plain",
+    weighting: str = "derived",
 ) -> mpf:
     """Empirical c_3 target after subtracting the two-term Borromean V³ connected QED
     dressing Δm_QED^{conn} from Q_codata:

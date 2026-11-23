@@ -2,7 +2,7 @@
 ([observation](#def:observation)) perturb the substrate parameter by
 germ-level increments $\delta q_1, \delta q_2$ in the germ algebra
 $A/\mathfrak{m}_p^2$. Their commutator equals the $q$-curvature $F_q$
-of the $q$-connection ([$q$-flat connection](#def:q-flat-connection))
+of the $q$-connection (a $q$-flat connection, defined in the $q$-Geometric Langlands chapter)
 evaluated on the loop spanned by the two observation directions:*
 
 $$

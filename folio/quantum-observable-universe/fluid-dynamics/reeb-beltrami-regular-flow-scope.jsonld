@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-reeb-beltrami-regular-flow-scope",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:reeb-beltrami-regular-flow-scope",
+  "kind": "remark",
+  "title": "Scope of the regular fibre-rotation flow",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-beltrami-regular-flow",
+    "papers/quantum-observable-universe/blocks/def-reeb-bundle",
+    "papers/quantum-observable-universe/blocks/ex-torus-ns-regular"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-reeb-beltrami-regular-flow",
+  "tags": [
+    "navier-stokes",
+    "regularity",
+    "scope",
+    "reeb",
+    "descartes"
+  ],
+  "text": "reeb-beltrami-regular-flow-scope.md",
+  "provenance": "authored"
+}

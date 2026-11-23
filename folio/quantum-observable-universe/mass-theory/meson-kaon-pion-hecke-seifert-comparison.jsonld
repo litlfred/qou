@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-meson-kaon-pion-hecke-seifert-comparison",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:meson-kaon-pion-hecke-seifert-comparison",
+  "kind": "remark",
+  "title": "Kaon-to-pion ratio: inputs and comparison with experiment",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-meson-kaon-pion-hecke-seifert"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-meson-kaon-pion-hecke-seifert",
+  "tags": [
+    "meson",
+    "kaon",
+    "pion",
+    "comparison-with-measurement"
+  ],
+  "text": "meson-kaon-pion-hecke-seifert-comparison.md",
+  "provenance": "authored"
+}

@@ -1,9 +1,11 @@
-The **positron** corresponds to the mirror trefoil $T_{2,3}^{\sigma}$ in the lepton sector. It serves as the antiparticle of the electron:
+The **positron** is the conjugate of the electron word, with every crossing reversed:
 
 $$
-  e^+ =  T_{2,3}^{\sigma}. \qquad \text{(mirror trefoil)}
+  e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1} \in B_3 .
 $$
 
-Like the electron, environment distinguishes the positron from its quark counterpart (the down quark). The mirror operation $\sigma$ reverses all crossings. This reversed crossing chirality shifts the Coulomb charge from $Q = -1$ to $Q = +1$.
+Its closure is the negative Hopf link. It serves as the antiparticle of the electron.
 
-We draw the positron as an outlined trefoil to denote reversed time direction. In the Reeb flow, crossing reversal corresponds to reversing time. The positron thus represents an electron traveling backward in time, recovering the Feynman–Stueckelberg interpretation.
+Like the electron, environment distinguishes the positron from its quark counterpart (the down quark). Reversing every crossing shifts the Coulomb charge from $Q = -1$ to $Q = +1$.
+
+In the Reeb flow, crossing reversal corresponds to reversing time. The positron thus represents an electron traveling backward in time, recovering the Feynman–Stueckelberg interpretation.

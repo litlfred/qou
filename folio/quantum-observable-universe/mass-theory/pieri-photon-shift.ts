@@ -5,21 +5,22 @@ export default proposition({
   title:
     "Multiplication by a degree-one Hecke element is a non-commutative Fourier shift (Pieri rule)",
   lean: {
-    ref: "qou:QOU.SchurWeyl.SeminormalRep.pieri_support",
+    ref: "qou:QOU.Photon.pieri_one_box_shift",
     validation: "not_checked",
   },
-  uses: ["lem:degree-one-braid-trivial-volume"],
+  uses: ["lem:degree-one-braid-trivial-volume", "def:photon"],
   cites: ["fulton1997", "kassel1995"],
   authorNotes: [
     {
       kind: "note",
-      date: "2026-11-18",
+      date: "2026-11-23",
       body:
-        "**Rewritten 2026-11-18.** The Lean was an axiomatised `PieriInterface` class whose theorem returned " +
-        "its own field. It is replaced by `QOU/SchurWeyl/PieriSupport.lean`, which proves the rule for every " +
-        "partition and every $m$ from the seminormal branching (`compress_seminormalRep_heckeIncl`), " +
-        "sorry-free. The old statement also listed $\\lambda - \\square$; that was the second addable box " +
-        "$(\\lambda_1, \\lambda_2 + 1)$ under a spin relabelling, not a removal, and a product never removes a box.",
+        "**Lean closed 2026-11-23.** The 2026-11-21 caveat said the containment was stated with an honest `sorry` over an " +
+        "abstract `PieriInterface` that could not be proved. `pieri_one_box_shift` is now proved, sorry-free, for every " +
+        "$m$ and every partition: it re-exports `QOU.SchurWeyl.SeminormalRep.pieri_support`, which derives the rule from the " +
+        "seminormal branching (`compress_seminormalRep_heckeIncl`). It covers case 2 up to the restriction to " +
+        "$V_\\square^{\\otimes(n+1)}$; the three-row component vanishing there is the Schur–Weyl step of the narrative proof. " +
+        "Case 1 is `commute_photon_of_commute` (and `supportedOn_mul_left`). The $a = n$ case stays out of scope, as the statement says.",
     },
   ],
   tags: [

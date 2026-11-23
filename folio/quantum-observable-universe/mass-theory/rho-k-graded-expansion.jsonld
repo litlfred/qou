@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-rho-k-graded-expansion",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:rho-k-graded-expansion",
+  "kind": "proposition",
+  "title": "Graded expansion of the categorical density $\\rho_K = \\rho_K^{\\mathrm{LO}} + \\rho_K^{\\text{single-gen}} + \\rho_K^{\\text{pair-gen}} + \\dots$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atomic-mass-gb-nf"
+  ],
+  "cites": [
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "mass",
+    "categorical-density",
+    "graded-expansion",
+    "markov-multiplicativity",
+    "brane-tower",
+    "wedderburn-coupling"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.rhoKGradedExpansion",
+  "text": "rho-k-graded-expansion.md",
+  "leanSource": "rho-k-graded-expansion.lean",
+  "provenance": "authored"
+}

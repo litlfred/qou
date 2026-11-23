@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-type-b-folding-cpt",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:type-b-folding-cpt",
@@ -17,7 +18,8 @@
     "papers/quantum-observable-universe/blocks/conj-cpt-d6-d7-d8-closure",
     "papers/quantum-observable-universe/blocks/conj-c-from-color-flavor-swap",
     "papers/quantum-observable-universe/blocks/conj-p-from-braid-mirror",
-    "papers/quantum-observable-universe/blocks/conj-t-from-trace-cyclicity"
+    "papers/quantum-observable-universe/blocks/conj-t-from-trace-cyclicity",
+    "papers/quantum-observable-universe/blocks/rem-breit-wheeler-vertex"
   ],
   "cites": [
     "references/kashiwara1991",

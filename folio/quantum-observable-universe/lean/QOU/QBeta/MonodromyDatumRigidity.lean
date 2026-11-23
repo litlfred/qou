@@ -52,7 +52,7 @@ large-argument* monodromy that the local `ib`-quasi-period does not pin.
 No `c_k` is produced or wired; registry untouched; scope-(a) throughout.
 
 -- Ref: [faddeev_kashaev1994] Faddeev–Kashaev, "Quantum dilogarithm",
---        Mod. Phys. Lett. A 9 (1994) 427. https://doi.org/10.1142/S0217732394002446
+--        Mod. Phys. Lett. A 9 (1994) 427. https://doi.org/10.1142/S0217732394000447
 -- Ref: [leitner2026] docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md (G3)
 -/
 

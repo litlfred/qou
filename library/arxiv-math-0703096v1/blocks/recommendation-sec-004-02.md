@@ -1,0 +1,1 @@
+Alexander must also have read Tietze 1908 at this time, because in short order he disposed of two of the most important of Ti- etze’s conjectures: Alexander 1919a42 shows that there are nonhomeomorphic lens spaces with the same group, while Alexander 1919b43 proves that any orientable 3-manifold is a branched cover of S3.

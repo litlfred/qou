@@ -1,0 +1,89 @@
+{
+ "description": "Leray DSS search in a log-phase trial basis (arbitrary precision; numerical exploration, NOT a proof).",
+ "dps": 60,
+ "radial_rule": {
+  "QN": 24,
+  "phase_per_panel": "12.00"
+ },
+ "trial_tail": "(1+rho)^-(p + i theta m w); theta=1: mode m decays like |y|^(-1-2imw)",
+ "mode": "homotopyC",
+ "L": 2,
+ "N": 3,
+ "K": 4,
+ "seed": "periodic C: L2N3, seeded from complex eigenmode of steady class 0 (L2N3), K-refined 2->8 (float S=0.471208)",
+ "path": [
+  {
+   "L": 2,
+   "N": 3,
+   "K": 4,
+   "axi": false,
+   "theta": "0",
+   "converged": true,
+   "residual": "1.2365e-43",
+   "cls": "periodic",
+   "period_S": "0.4712083214466819215465080031148820147158",
+   "mode_norms": [
+    "109.24115255852676128",
+    "38.380243747801742767",
+    "4.3873767582892724386",
+    "0.42280141572666495054",
+    "0.068385927433019139452"
+   ]
+  },
+  {
+   "L": 2,
+   "N": 3,
+   "K": 4,
+   "axi": false,
+   "theta": "0.0125000",
+   "converged": true,
+   "residual": "1.9423e-40",
+   "cls": "periodic",
+   "period_S": "0.5399751928205520852536158665518861053354",
+   "mode_norms": [
+    "130.08527922884539626",
+    "54.915952908030345222",
+    "10.067892174167953101",
+    "1.6922380025093407938",
+    "0.46945049887832973935"
+   ]
+  },
+  {
+   "L": 2,
+   "N": 3,
+   "K": 4,
+   "axi": false,
+   "theta": "0.0250000",
+   "converged": true,
+   "residual": "4.5538e-44",
+   "cls": "periodic",
+   "period_S": "0.6292712349082690763598955045160038677475",
+   "mode_norms": [
+    "154.74560016390737487",
+    "64.543189228086949153",
+    "14.025176339525551561",
+    "3.4593349993516553420",
+    "1.3936387842165446745"
+   ]
+  },
+  {
+   "L": 2,
+   "N": 3,
+   "K": 4,
+   "axi": false,
+   "theta": "0.0375000",
+   "converged": false,
+   "residual": "1.0629e+8",
+   "cls": "periodic",
+   "period_S": "0.09712073958851142997420109568039978415837",
+   "mode_norms": [
+    "901.37300813916762910",
+    "1177.1120456134553589",
+    "675.07815063974450741",
+    "670.91789103016800514",
+    "714.25453834135762317"
+   ]
+  }
+ ],
+ "verdict": "newton_fails_at_theta_0.0375000"
+}

@@ -17,7 +17,7 @@ $$
 
 This is the exact substitute for the (broken) classical-limit functor
 ([classical limit functor](#def:classical-limit-functor)): instead of
-taking $q \to 1$ as a topological limit in $\mathbb{R}$, we evaluate at
+taking $q \to 1$ as a topological limit in $\mathbb{R}$, evaluate at
 a specific infinitesimal-shifted surreal and take the standard-part.
 Unlike the topological limit, this construction makes sense in pure
 algebra.

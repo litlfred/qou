@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:21:55.391Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. The proof does not establish that each mass-formula coefficient is a shadow price. (1) It starts from prop:operator-selection-lp as stated (NF-basis-indexed), which the statement's own scope note says is NOT the program meant, and whose net-constraint dual is identically 0; the switch to a partition-indexed program is never carried out. (2) The Gram block form G_lambda = (w_lambda/d_lambda) I with w_lambda = dim_q(lambda)^2/[k]_q! uses the quantum Plancherel weight, not the Markov-trace weights y_lambda of G_ij = tr_M(b_i b_j); under convention D the ell >= 3 Markov weights vanish while these do not (the y_lambda vs Plancherel conflation flagged in AGENTS.md notation rules). (3) The dual program is written down, not derived from the primal; strong duality is invoked on 'non-empty and bounded' without showing boundedness. (4) The factorisation u*_lambda = C_lambda S_lambda(Z,N,A), with S_lambda volume-, isospin- (T(T+1)/A^p, p unspecified) or charge-type by the sign of the content sum, is asserted with no argument; 'unique because blocks are orthogonal' does not imply any such factorisation. This reproduces semi-empirical mass-formula term shapes by assertion, which is an imported empirical structure, not a derivation (anti-fit rule). (5) B(Z,N) = sum C_lambda S_lambda m_e and 'each term of the six-term formula is one shadow price' are asserted. (6) The first corollary moves from sum d_lambda y_lambda = 1 to a budget [k]_q! without argument; the branching corollary is stated without proof. Nothing is fitted numerically and no CODATA/AME number is used as a step, but the structural claim is unsupported. Recommend demoting the statement to conjecture."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1156,7 @@
           "in_degree": 0,
           "cone_size": 17,
           "depth": 10,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1440,7 +1456,7 @@
         },
         "reviewed_at": "2026-08-21T21:36:09.587Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "One em-dash, appending '\u2014 independent of any nuclear datum' to the C_lambda definition; 1 in 494 words, and it marks a genuine qualification."
+        "evidence": "One em-dash, appending '— independent of any nuclear datum' to the C_lambda definition; 1 in 494 words, and it marks a genuine qualification."
       }
     ],
     "trap-triples": [
@@ -1703,6 +1719,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:36:10.016Z",
+  "updated_at": "2026-11-21T08:21:55.391Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

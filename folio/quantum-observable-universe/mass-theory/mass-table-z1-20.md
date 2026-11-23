@@ -23,8 +23,8 @@ $q_{0}$ is confined to step 3 alone.
 See [Table](#tbl:mass-table-z1-20-table-data).
 
 The row values tabulated here are reproduced by
-[`wedderburn_mass_table_z1_20.py`](https://github.com/litlfred/qou/blob/main/computations/wedderburn_mass_table_z1_20.py)
-from the committed witness `wedderburn-mass-table-z1-20`, evaluating the
+[the mass-table computation](https://github.com/litlfred/qou/blob/main/computations/wedderburn_mass_table_z1_20.py),
+evaluating the
 formula above at the proton-pin $q_{0}$ with zero fitted parameters: the
 three coefficients are fixed by $m_{e}$, Catalan's constant and $q_{0}$
 through the formula's own definitions.
@@ -84,8 +84,7 @@ $$
 and both are **convention-independent** — neither involves the Markov
 parameter $z$, so neither moved when $C \to D$. Both reproduce all nineteen
 non-hydrogen values of the superseded table exactly. The per-crossing
-determinants and ratios they rest on are proved in Lean
-(`QOU.BraidKnot.detT_*`, `symAltRatio_*`, `chiralityCount_collapse`).
+determinants and ratios they rest on are proved.
 
 $\Phi_{1}$ is the only invariant that uses $z$, and it is the only one the
 convention change moves. It is recomputed here rather than carried.

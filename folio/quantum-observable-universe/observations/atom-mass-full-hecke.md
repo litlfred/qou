@@ -1,6 +1,6 @@
 The semi-empirical mass formula $M_q$ uses the 2$\times$2 **standard** irrep of $H_3(q)$. This discards the symmetric and alternating channels, missing the dominant contribution for multi-nucleon systems.
 
-We compute the atomic mass for $Z = 1$--$10$ using the full regular representation of $H_3(q)$.
+Compute the atomic mass for $Z = 1$--$10$ using the full regular representation of $H_3(q)$.
 
 ## Three-channel decomposition
 
@@ -38,15 +38,15 @@ The mass integrand splits into:
 
 ## Results for $Z = 1$--$10$
 
-We evaluate the traces at $q = 111/100$.
+Evaluate the traces at $q = 111/100$.
 
 See [Table](#tbl:atom-mass-full-hecke-table-data).
 
 ## Key observations
 
 1. **Standard channel suppression.** The standard trace shrinks rapidly with $A$. The symmetric and alternating channels remain $O(1)$.
-2. **Alternating channel sign flips.** The alternating *trace* alternates in sign with $A$, as the table shows. Its *contribution* does not: under the canonical convention the alternating block is **absent**, because its Ocneanu weight is identically zero for any partition with three or more rows (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, general $n$). So the sign variation is carried by a channel that is multiplied by $\hat y_{\mathrm{alt}} = 0$ and cannot reach $\mathrm{tr}_{\mathrm{full}}$ at all. The apparent sign variation in the *total* was a classical-weighting artifact.
+2. **Alternating channel sign flips.** The alternating *trace* alternates in sign with $A$, as the table shows. Its *contribution* does not: under the canonical convention the alternating block is **absent**, because its Ocneanu weight is identically zero for any partition with three or more rows (for every $n$). So the sign variation is carried by a channel that is multiplied by $\hat y_{\mathrm{alt}} = 0$ and cannot reach $\mathrm{tr}_{\mathrm{full}}$ at all. The apparent sign variation in the *total* was a classical-weighting artifact.
 3. **${}^{14}\mathrm{N}$ cancellation.** The near-cancellation between symmetric and alternating traces depends entirely on classical weighting. It vanishes under canonical $q$-deformed weights.
 4. **Binding energy deviations.** The semi-empirical formula undercounts the doubly-magic shell closure at ${}^4\mathrm{He}$.
 
-**Witness**: `atom-mass-full-hecke.witness.json`. We lack independent witnesses for high-$A$ traces.
+No independent check of the high-$A$ traces is available.

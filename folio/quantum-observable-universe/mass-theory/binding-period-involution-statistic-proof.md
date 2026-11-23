@@ -40,9 +40,8 @@ $\sum_{w} q^{2\,\mathrm{maj}(w) + \mathrm{content}(\lambda(w))}
 standard Young tableaux, $\sum_{\lambda \vdash n} f^{\lambda} = I(n)$ with
 $f^{\lambda} = \tilde f^{\lambda}(1)$ their number per shape. $\blacksquare$
 
-**Machine verification.** The Lean sibling decides the exponent multisets and
-proves the identity for $n = 3, 4$ from the computable RSK insertion
-(kernel-checked); exact symbolic verification for $n \leq 8$ (all
+**Verification.** For $n = 3, 4$ the identity is also proved by deciding
+the exponent multisets from the computable RSK insertion; exact symbolic verification for $n \leq 8$ (all
 $764$ involutions at $n = 8$) has been carried out, and
 the transfer-operator reconstruction extends the exact cross-checks to
 $n \leq 16$ (hook side) and $n \leq 24$ (at $q = 1$).

@@ -22,6 +22,7 @@ Claims checked:
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import importlib.util
 import os
 import sys
@@ -164,7 +165,7 @@ Q0 = sp.Rational(Q_50_DIGIT_STR)
 mq = mp.mpf(Q_50_DIGIT_STR)
 me = mp.mpf(str(M_E_MEV))
 QB = mp.mpf(str(Q_BETA_MEV_AME))
-E0 = {"order_zero": me / (mq * (mq - 1))}
+E0 = {"order_zero": _qbeta_e0.order_zero_scaled(me, mq)}
 E0["tower"] = E0["order_zero"] / (1 - (1 - 1 / mq) ** 2)
 
 

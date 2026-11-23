@@ -2,23 +2,25 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-modular-s-transform-q-q-tilde",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:modular-s-transform-q-q-tilde",
   "kind": "conjecture",
-  "title": "Modular $S$-transform $q \\leftrightarrow \\tilde q = \\exp(2\\pi i / \\tau)$ for Hecke parameter analytic continuation",
+  "title": "Modular $S$-transform $q \\leftrightarrow \\tilde q = \\exp(-2\\pi i / \\tau)$ for Hecke parameter analytic continuation",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-bar-involution",
     "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
     "papers/quantum-observable-universe/blocks/rem-vol-as-motivic-period"
   ],
   "cites": [
+    "references/garoufalidis2013",
     "references/kashaev1997",
     "references/neumann-zagier1985",
     "references/kashaev-tirkkonen2014"

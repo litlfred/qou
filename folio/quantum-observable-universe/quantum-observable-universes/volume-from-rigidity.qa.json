@@ -1241,6 +1241,24 @@
         "severity": "critical",
         "evidence": "`ctx.claim_rank_eq_two` is self-assuming. Counterexample: the defining representation ℂ⁴ of Sp(4) is simple and symplectically self-dual (φ^∨ = −φ), with rank 4 ≠ 2, and Λ²ℂ⁴ has dimension 6. The proof never shows rank 2.",
         "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "2fa0858c1da6",
+          "ts": "f69e1c2097ad",
+          "lean": "f7c79a4a4f66",
+          "lean_statement": "57f2a6660992"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:07:44.853Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[full review 2026-11-21; Lean changed] The Lean now derives, rather than assumes, rank(V) = 2: SymplecticSelfDualContext carries exterior_rank_eq_one : C(rank V, 2) = 1, and exteriorSquareDim_eq_one_iff (sorry-free) gives rank V = 2. That is a correct conditional. But the md headline is unchanged: 'This alternating condition forces rank(V) = 2'. Symplectic self-duality alone does not force it. The defining representation C^4 of Sp(4) is simple with phi^vee = -phi, rank 4, and Lambda^2 C^4 has dimension 6, so epsilon: Lambda^2 V -> 1 is an epimorphism but not an isomorphism. The md calls epsilon an epimorphism, then needs rank(Lambda^2 V) = 1 for non-degeneracy. The Lean takes that rank equality as a hypothesis, so the Lean proves the conditional while the md claims the unconditional. Also rank(Lambda^2 V) = C(rank V, 2) assumes a symmetric setting with integer dimensions; for a general rigid monoidal category it is not automatic."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2422,6 +2440,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:15.062Z",
+  "updated_at": "2026-11-21T08:07:44.853Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

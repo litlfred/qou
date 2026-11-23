@@ -5,12 +5,11 @@ The knot formula for an atom with $Z$ protons and $N$ neutrons is
 
 $$
   Z\mathfrak{p}  \oplus  N\mathfrak{n}
-   \oplus  Z \cdot T_{2,3}
+   \oplus  Z \cdot e^-
 $$
 
 where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the
-proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the neutron, $T_{2,3}$ is the trefoil
-(electron), and $\oplus$ denotes Hopf linking.
+proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the neutron, $e^-$ is the electron, the closure of the word $\sigma_0\sigma_1\sigma_0 \in B_3$ (the Hopf link; the trefoil $T_{2,3}$ is the backup reading), and $\oplus$ denotes Hopf linking.
 Here $Z$ is the atomic number (proton count) and $N$ is the
 neutron count, with $A = Z + N$ the mass number.
 Throughout, fraktur letters name particles ($\mathfrak{p}$ the
@@ -30,7 +29,7 @@ $$
 where $m_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$
 and $m_{\mathfrak{n}} = 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ are
 the nucleon masses from the pair Skein formula
-([terminal resolution](#prop:terminal-resolution)), $B/A$ is the
+([pair Skein mass formula](#lem:pair-skein-mass-formula)), $B/A$ is the
 binding energy per nucleon from the Skein polynomial of the
 multi-nucleon Hopf link (AME2020 values used here), and
 $m_e \approx 0.511$ MeV is the electron mass.
@@ -128,18 +127,16 @@ $m_e \approx 0.51100$ MeV.
 | $s$ | $q_0^{1/2} - q_0^{-1/2}$ | $\approx 0.10439$ |
 | $[2]_{q_0}$ | $q_0 + q_0^{-1}$ | $\approx 2.01090$ |
 
-**Knot-particle identification.** Each constituent knot is
+**Knot-particle identification.** The torus-family constituents are
 classified by the fermion--boson decomposition
-([fermions are knots, bosons are links](#prop:fermion-boson-knot-link)):
-proton and neutron quarks are Borromean-linked trefoils
-([Borromean baryon](#def:borromean-baryon)), electrons are trefoil
-fermions ($T_{2,3}$), and nuclear binding comes from Hopf link
-crossings.  The full building-block catalogue with Jones polynomials
+([fermions are knots, bosons are links](#prop:fermion-boson-knot-link)).
+Proton and neutron quarks are Borromean-linked trefoils
+([Borromean baryon](#def:borromean-baryon)), and nuclear binding comes from Hopf link
+crossings. The electron is the word $\sigma_0\sigma_1\sigma_0$, whose closure is the Hopf
+link; that decomposition covers the $T(2,n)$ family only, so it does not decide the
+electron's statistics, which remain open. The trefoil $T_{2,3}$ is the backup electron reading.  The full building-block catalogue with Jones polynomials
 and volumes is in
 ([building-block knots](#rem:building-block-knots)).
-
-**Per-element table.** The full $Z = 1$ to $92$ grid lives as the *Per-element stability summary* section of the [recursive atom-knot atlas](#prop:recursive-atom-knot-atlas), which also carries the per-isotope coverage table for all 3558 nuclides in AME 2020 (Z = 0 to 118).
-
 
 **Column key.** $N_{\mathrm{pred}}$ = predicted $N$ from beta-stability formula
 ([beta-stability](#prop:beta-stability)),

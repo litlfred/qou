@@ -7,7 +7,7 @@ $$
 
 *the second tensor factor being a copy of the first, tied to it by the coproduct. In particular $\dim_q \mathcal{O}_n = [n]_q^2$.*
 
-The spin labelling is the one used in [`conj:orbital-space-normal-bundle`](#conj:orbital-space-normal-bundle): $V_\ell$ there is the sub-shell irrep of dimension $2\ell+1$, which is $V_j$ here at integer $j = \ell$.
+The spin labelling is the one used in [The orbital space at shell $n$ is the space of framing-$k$ sections of the normal bundle](#conj:orbital-space-normal-bundle): $V_\ell$ there is the sub-shell irrep of dimension $2\ell+1$, which is $V_j$ here at integer $j = \ell$.
 
 This is the one step of the $2n^2$ shell-capacity account that is not derived. Everything downstream of it is exact.
 
@@ -21,8 +21,8 @@ $$
   [n]_q^2 \;=\; \sum_{\ell=0}^{n-1} [2\ell+1]_q ,
 $$
 
-which is [`prop:shell-capacity-self-square`](#prop:shell-capacity-self-square) and, at $q = 1$, the periodic-table capacities $2n^2 = 2,8,18,32,\ldots$. Clearing the common denominator $(q - q^{-1})$ turns this into a polynomial identity over $\mathbb{Z}[q,q^{-1}]$, proved for every $n$ in the Lean sibling as `qCG_self_square`.
+which is [Shell capacity $2n^2$ as the self-square of the angular $q$-dimension](#prop:shell-capacity-self-square) and, at $q = 1$, the periodic-table capacities $2n^2 = 2,8,18,32,\ldots$. Clearing the common denominator $(q - q^{-1})$ turns this into a polynomial identity over $\mathbb{Z}[q,q^{-1}]$, proved for every $n$.
 
-**Falsifiable content.** The conjecture asserts more than a coincidence of counts. It fixes the sub-shell multiplicities as the $q$-integers $[2\ell+1]_q$, and not only their $q \to 1$ values $2\ell+1$; a resolved sub-shell structure departing from $[2\ell+1]_q$ at $q \neq 1$ would refute it. The Lean sibling records this as `subshell_decomposition_of_self_square`, derived from the conjectural hypothesis rather than assumed alongside it, together with a concrete refuting witness `not_selfSquare_linear` showing that the class is not satisfied by an arbitrary dimension function.
+**Falsifiable content.** The conjecture asserts more than a coincidence of counts. It fixes the sub-shell multiplicities as the $q$-integers $[2\ell+1]_q$, and not only their $q \to 1$ values $2\ell+1$; a resolved sub-shell structure departing from $[2\ell+1]_q$ at $q \neq 1$ would refute it. The sub-shell decomposition is derived from the conjectural hypothesis rather than assumed alongside it, and a concrete counterexample shows that the hypothesis is not satisfied by an arbitrary dimension function.
 
-**Relation to the normal-bundle model.** [`conj:orbital-space-normal-bundle`](#conj:orbital-space-normal-bundle) describes the same space $\mathcal{O}_n$ geometrically, as framing-$k$ sections of the trefoil's normal bundle in Bring's surface cut off by a $q$-Laplacian eigenvalue bound. The two are independent descriptions of one object: the present conjecture supplies its categorical structure, the normal-bundle conjecture its geometric realisation. Establishing an isomorphism between them would close both at once.
+**Relation to the normal-bundle model.** [The orbital space at shell $n$ is the space of framing-$k$ sections of the normal bundle](#conj:orbital-space-normal-bundle) describes the same space $\mathcal{O}_n$ geometrically, as framing-$k$ sections of the trefoil's normal bundle in Bring's surface cut off by a $q$-Laplacian eigenvalue bound. The two are independent descriptions of one object: the present conjecture supplies its categorical structure, the normal-bundle conjecture its geometric realisation. Establishing an isomorphism between them would close both at once.

@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-figure-8-muon-mass-cross-check",
@@ -17,7 +18,7 @@
     "papers/quantum-observable-universe/blocks/rem-figure-8-archimedean-illustration",
     "papers/quantum-observable-universe/blocks/conj-borromean-baryon-mass-formula"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-three-calibration-inputs",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-three-calibration-inputs",
   "cites": [
     "references/codata2022",
     "references/thurston1978"

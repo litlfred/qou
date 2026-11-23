@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/ex-electron-knot-concrete",
@@ -12,17 +13,16 @@
   ],
   "label": "ex:electron-knot-concrete",
   "kind": "example",
-  "title": "The electron as the trefoil knot on $\\Sigma_4$",
+  "title": "The electron as the Hopf link on $\\Sigma_4$",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-electron-knot",
-    "papers/quantum-observable-universe/blocks/ex-brings-surface-concrete",
-    "papers/quantum-observable-universe/blocks/ex-topological-mass-trefoil"
+    "papers/quantum-observable-universe/blocks/ex-brings-surface-concrete"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/def-electron-knot",
   "tags": [
     "electron",
-    "trefoil",
-    "knot",
+    "hopf-link",
+    "link",
     "example"
   ],
   "text": "electron-knot-example.md",

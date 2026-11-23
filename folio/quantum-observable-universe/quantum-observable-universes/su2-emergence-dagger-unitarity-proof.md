@@ -2,14 +2,14 @@
 The QOU non-degeneracy axiom ensures the Frobenius form
 $\int_A \colon A \to \mathbf{1}$ is non-degenerate, inducing the
 Frobenius self-duality $A \cong A^{\vee}$
-([fibre adjoint involution](#prop:fiber-adjoint-involution)). Define a dagger on
+(the fibre-adjoint involution, constructed later in this chapter). Define a dagger on
 morphisms by $f^{\dagger} = \int_A \circ \mu(S(f) \otimes -)$, where
 $S$ is the antipode. Non-degeneracy of $\int_A$ and faithfulness
 of $\tau$ imply $f^{\dagger} \circ f = 0 \Rightarrow f = 0$, so this
 is a positive-definite dagger structure
 ([positive definite dagger](#prop:positive-definite-dagger)).
 
-We now show that every tensor automorphism $g \in G$ preserves this
+It remains to show that every tensor automorphism $g \in G$ preserves this
 dagger, forcing unitarity on $\tau(V)$. By naturality, $g$ commutes
 with every morphism in $\mathbf{C}$; in particular with the antipode
 $S$ and the Frobenius form $\int_A$:

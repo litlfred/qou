@@ -8,8 +8,9 @@ The canonical Lean source for `prop:nuclear-groebner-reduction` lives at
 `folio/quantum-observable-universe/lean/QOU/Archimedean/NuclearGroebnerReduction.lean`,
 which is Lake-built under the `qou` package and declares
 `QOU.Archimedean.nuclear_groebner_reduction` together with its
-supporting structures (`HeckeElement`, `isReduced`, the
-`normal_form_exists_unique` axiom, and `max_word_length_bound`).
+supporting structures (`HeckeElement`, `isReduced` and
+`max_word_length_bound`; the former `normal_form_exists_unique` axiom was
+removed on 2026-08-25 as formally defective).
 
 This sibling re-exports that module (via `import`) so the content-block
 manifest's `lean.ref` (`qou:QOU.Archimedean.nuclear_groebner_reduction`)

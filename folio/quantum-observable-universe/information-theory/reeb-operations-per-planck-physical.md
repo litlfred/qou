@@ -1,4 +1,4 @@
-At our local substrate parameter $q_0$ ([local substrate $q$](#prop:local-substrate-q)),
+At the local substrate parameter $q_0$ ([local substrate $q$](#prop:local-substrate-q)),
 approximately $10$ iterations of the Julia set dynamics $f_q$ occur within each Planck
 time. Each iteration:
 

@@ -69,5 +69,4 @@ This equivalence is parametrised by the non-torsion locus $q \in \mathbb{G}_m^{\
    persists at all Kummer levels $n \nmid \chi(A)$.
 
 5. **Classical limit**: as $q \to 1$, $\mathbb{L}_q$ recovers the
-   classical Geometric Langlands equivalence
-   ([classical limit](#conj:q-gl-classical-limit)).
+   classical Geometric Langlands equivalence.

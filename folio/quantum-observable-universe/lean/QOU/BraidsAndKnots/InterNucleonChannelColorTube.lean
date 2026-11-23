@@ -201,4 +201,65 @@ theorem colorSheet_fiber_rotation_angle :
     (bringFiberAction_icosahedral.irrepToRotation A5Irrep.T₁).asSO3.angle
       = Real.arccos ((1 + Real.sqrt 5) / 6) := rfl
 
+/-! ## Proton–neutron contact split and linear contraction (`qou-dx1t`) -/
+
+/-- **Proton–neutron contact counts (`qou-dx1t`).** Across the 9 color-sheet
+    contacts of `(proton, neutron)` (`uud × udd`), there are exactly:
+    - `4` matched contacts (`ε = +1`: `2` `u–u` and `2` `d–d`),
+    - `5` mixed contacts (`ε = 0`: `u–d` and `d–u`),
+    - `0` flavor-conjugate contacts (`ε = -1`: no antiquarks in matter–matter). -/
+theorem proton_neutron_contact_counts :
+    (colorPairs.filter (fun p => decide (chiralitySign p.1 p.2 proton neutron = 1))).length = 4 ∧
+    (colorPairs.filter (fun p => decide (chiralitySign p.1 p.2 proton neutron = 0))).length = 5 ∧
+    (colorPairs.filter (fun p => decide (chiralitySign p.1 p.2 proton neutron = -1))).length = 0 := by
+  decide
+
+/-- Sum of `W_{c₁c₂}(proton, neutron)` over the 5 mixed-flavor (`ε = 0`)
+    color-sheet contacts (`c(W)` in bean `qou-dx1t`). -/
+def pnMixedWeightSum
+    (W : ColorSheet → ColorSheet → NucleonColorContent → NucleonColorContent → ℚ) : ℚ :=
+  (colorPairs.map (fun p =>
+    if chiralitySign p.1 p.2 proton neutron = 0 then W p.1 p.2 proton neutron else 0)).sum
+
+/-- The color-pair-contracted `(proton, neutron)` crossing offset `t_{pn}`
+    (measured in units of `−h`), when a matched contact (`ε = +1`, `σ_g`) has
+    offset `0`, a conjugate contact (`ε = -1`, `σ_g⁻¹`) has offset `1`, and a
+    mixed contact (`ε = 0`, `σ_avg`) has offset `x` (`x = 1/2` for the raw
+    symmetrised channel, or `x = 1/2 - δ/4` on the weighted channel). -/
+def pnContractedOffset
+    (W : ColorSheet → ColorSheet → NucleonColorContent → NucleonColorContent → ℚ)
+    (x : ℚ) : ℚ :=
+  (colorPairs.map (fun p =>
+    W p.1 p.2 proton neutron *
+      (if chiralitySign p.1 p.2 proton neutron = 1 then (0 : ℚ)
+       else if chiralitySign p.1 p.2 proton neutron = -1 then 1
+       else x))).sum
+
+/-- **Linear contraction identity (`qou-dx1t`).** Because `(proton, neutron)` has
+    `0` contacts with `ε = -1` and `4` contacts with `ε = +1` (whose offset is `0`),
+    the contracted `(p, n)` offset is strictly linear in the mixed-contact datum `x`:
+    `t_{pn} = c(W) · x`. The colour-tube weight tensor `W` scales `x` by `c(W)`
+    and does not eliminate `x` as an input unless `c(W) = 0`. -/
+theorem pnContractedOffset_eq_mixedWeightSum_mul
+    (W : ColorSheet → ColorSheet → NucleonColorContent → NucleonColorContent → ℚ)
+    (x : ℚ) :
+    pnContractedOffset W x = pnMixedWeightSum W * x := by
+  simp [pnContractedOffset, pnMixedWeightSum, colorPairs, ColorSheet.allList,
+    chiralitySign, proton, neutron, NucleonColorContent.flavorAt, QuarkFlavor.conj]
+  ring
+
+/-- Under uniform color-pair weighting `W = 1/9`, the 5 mixed contacts sum to
+    `c(W) = 5/9`. -/
+theorem uniform_pnMixedWeightSum :
+    pnMixedWeightSum uniformWeight = 5 / 9 := by
+  simp [pnMixedWeightSum, uniformWeight, colorPairs, ColorSheet.allList,
+    chiralitySign, proton, neutron, NucleonColorContent.flavorAt, QuarkFlavor.conj]
+  norm_num
+
+/-- Under uniform color-pair weighting `W = 1/9`, the contracted `(p, n)` offset
+    is `t_{pn} = (5/9) · x`. -/
+theorem uniform_pnContractedOffset (x : ℚ) :
+    pnContractedOffset uniformWeight x = (5 / 9) * x := by
+  rw [pnContractedOffset_eq_mixedWeightSum_mul, uniform_pnMixedWeightSum]
+
 end QOU.BraidsAndKnots

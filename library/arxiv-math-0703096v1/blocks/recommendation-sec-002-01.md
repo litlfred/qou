@@ -1,0 +1,1 @@
+Dawn of Knot Theory We would argue, that modern knot theory has its roots with Gottfried Wil- helm Leibniz (1646-1716) speculation that aside from calculus and analytical geometry there should exist a “geometry of position” (geometria situs) which deals with relations depending on position alone (ignoring magnitudes).

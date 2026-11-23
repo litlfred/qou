@@ -28,8 +28,8 @@ of a physical theory are usually taken as given. Here the categorical
 computations are carried out for every $q$ at once — the traces they
 produce are rational functions of $q$ with rational coefficients
 ([derivation chain](#prose:pre-archimedean-derivation-chain)) — and
-only at the very end is a particular value $q_0$ substituted. The universe we
-inhabit is then one member of a family of mathematically consistent
+only at the very end is a particular value $q_0$ substituted. The observed
+universe is then one member of a family of mathematically consistent
 universes, picked out by measurement rather than by the axioms. Which
 member, and how it is picked out, is the subject of the calibration
 discussed below.

@@ -5,7 +5,7 @@ Closes the G3 3d-index gluing (docs/audits/2026-07-18-tetrahedron-index-triality
 #3805): assembles the two-tetrahedron 4_1 index on the triality-validated tetrahedron
 index I_Delta and validates it against the primary source to 11 coefficients.
 
-SOURCE. Garoufalidis-Hodgson-Hoffman-Rubinstein, "The 3D-index and normal surfaces"
+SOURCE. [garoufalidis-hodgson-hoffman-rubinstein2016] Garoufalidis-Hodgson-Hoffman-Rubinstein, "The 3D-index and normal surfaces"
 (arXiv:1604.02688), Example 4.1 (p.8). The figure-eight cusp gluing data gives
 
     I_T(x mu + y lam) = sum_{k in Z} q^k J_D(2k, k, x) J_D(2k - x + 2y, k, -2y),

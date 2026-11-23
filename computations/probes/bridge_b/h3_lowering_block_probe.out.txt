@@ -1,0 +1,4 @@
+1. Delta(F) commutes with R: True
+2. lowering block = [[1/q, 1, 0], [1, 0, 1], [0, 1, q]] ; equals q*P: True
+3. F3 commutes with sigma_1, sigma_2: True
+ALL CHECKS PASS

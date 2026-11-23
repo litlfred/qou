@@ -51,6 +51,7 @@ probes not exempt).
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import sys
 from pathlib import Path
@@ -86,7 +87,7 @@ def main() -> int:
     # ---- the objects, all exact over Q(q) --------------------------------
     # affine trace of the short element, from the 2026-08-29 audit
     trM_S = q**2 / 2 - q * z - 1 + z / q + 1 / (2 * q**2)
-    E0 = 1 / (q * (q - 1))                    # in units of m_e
+    E0 = _qbeta_e0.order_zero_scaled(1, q)                    # in units of m_e
     published = sp.Abs(q**2 - 2 * q - 1) * (q + 1) / (2 * q**3)   # units of m_e
     epsNPq = h**2 / 2 - h
     # the (1^3) weight numerator whose roots are the admissible parameters
@@ -194,7 +195,7 @@ def main() -> int:
 
     def err_pct(zval):
         """Exact rational throughout; mpmath only at the final readout."""
-        pred = sp.Abs(trM_S.subs({z: zval, q: q0})) * (m_e / (q0 * (q0 - 1)))
+        pred = sp.Abs(trM_S.subs({z: zval, q: q0})) * (_qbeta_e0.order_zero_scaled(m_e, q0))
         r = sp.nsimplify((pred - Qexp) / Qexp * 100, rational=True)
         r = sp.Rational(r)
         return mp.mpf(r.p) / mp.mpf(r.q)

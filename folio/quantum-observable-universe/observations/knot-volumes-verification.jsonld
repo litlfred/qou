@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prf-knot-volumes-verification",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-sci:Proof",
     "doco:Section"
   ],
   "label": "prf:knot-volumes-verification",
   "kind": "proof",
   "title": "Knot volume verification (SnapPy)",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-topological-mass-formula",
+    "papers/quantum-observable-universe/blocks/def-three-calibration-discipline",
     "papers/quantum-observable-universe/blocks/sec-hyperbolic-volumes-prose"
   ],
   "tags": [

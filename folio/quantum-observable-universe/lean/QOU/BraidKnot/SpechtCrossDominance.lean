@@ -193,4 +193,14 @@ theorem dominance_of_tableau_noclash {μ ν : YoungDiagram} (h : nOf μ = nOf ν
     · simpa using (by simpa using hl : rowPattern s l < r)
     · exact Fin.ext rfl
 
+/-- Zero-subtracted partial row-length deficit vanishes under the no-clash column/row tableau condition. -/
+theorem partial_rowLen_sub_eq_zero_of_tableau_noclash {μ ν : YoungDiagram} (h : nOf μ = nOf ν)
+    (t : Tableau μ) (s : Tableau ν)
+    (hnoclash : ∀ a b : Fin (nOf μ),
+      colPattern t a = colPattern t b →
+      rowPattern s (Fin.cast h a) = rowPattern s (Fin.cast h b) → a = b)
+    (i : ℕ) :
+    (∑ j ∈ Finset.range i, ν.rowLen j) - (∑ j ∈ Finset.range i, μ.rowLen j) = 0 :=
+  Nat.sub_eq_zero_of_le (dominance_of_tableau_noclash h t s hnoclash i)
+
 end QOU.BraidKnot.SpechtCrossDominance

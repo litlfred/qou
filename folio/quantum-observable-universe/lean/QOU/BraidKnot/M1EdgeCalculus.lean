@@ -231,6 +231,17 @@ theorem diagLen_sub_nonneg_le {u v : ℕ} (h : u ≤ v) :
   have h2 := diagLen_le_add_sub μ h
   omega
 
+/-- **Same-sign edge numerator bound (division-free, `qou-t6hc`).**
+On any oriented same-sign Fulman edge (`a < r`), the `N`-term factor
+`2(D(a) - D(r) + 1)` is bounded below by `2` and above by `4(r - a)`, i.e.
+the per-edge ratio `2(D(a) - D(r) + 1)/(r - a)` is at most `4` on all
+same-sign moves. -/
+theorem same_sign_edge_num_bounds {a r : ℕ} (h : a < r) :
+    2 ≤ 2 * ((diagLen μ a : ℤ) - (diagLen μ r : ℤ) + 1) ∧
+      2 * ((diagLen μ a : ℤ) - (diagLen μ r : ℤ) + 1) ≤ 4 * ((r : ℤ) - (a : ℤ)) := by
+  have hbounds := diagLen_sub_nonneg_le μ (Nat.le_of_lt h)
+  omega
+
 /-- The main diagonal is transpose-invariant — it is cut out by `(i, i) ∈ μ`,
 and the range bounds are implied by membership rather than extra conditions. -/
 theorem diagLen_transpose_zero : diagLen μ.transpose 0 = diagLen μ 0 := by
@@ -1251,6 +1262,38 @@ theorem sum_lt_of_split_bound [DecidableEq ι] (E S : Finset ι) (w r bs bo : ι
       mul_le_mul_of_nonneg_left (hsame e he) (hw e (hS he)))
     (Finset.sum_le_sum fun e he =>
       mul_le_mul_of_nonneg_left (hopp e he) (hw e (Finset.mem_sdiff.mp he).1))
+
+/-- **Pointwise slope-plus-gap decomposition of the edge ratio (`qou-t6hc`).**
+Splits `2(d_a - d_r + 1) · g⁻¹` into the discrete diagonal slope term
+`2(d_a - d_r) · g⁻¹` and the small-gap harmonic term `2 · g⁻¹`. -/
+theorem edge_ratio_eq_slope_add_gap (da dr invGap : ℚ) :
+    2 * (da - dr + 1) * invGap = 2 * (da - dr) * invGap + 2 * invGap := by
+  ring
+
+/-- **Weighted `S + Q` edge-ratio decomposition (`qou-t6hc` leg A).**
+Summing `w_e · ratio_e` over the edge set `E` splits identically into the
+weighted slope sum `S` plus the weighted inverse-gap sum `Q`, matching the exact
+control identity `S(n) + Q(n) = N(n)/P(n)` of
+`wlambda_covariance_epic_M1_edge_ratio_decomposition.py`. -/
+theorem weighted_edge_ratio_eq_slope_add_gap (E : Finset ι) (w da dr invGap : ι → ℚ) :
+    ∑ e ∈ E, w e * (2 * (da e - dr e + 1) * invGap e)
+      = (∑ e ∈ E, w e * (2 * (da e - dr e) * invGap e))
+        + (∑ e ∈ E, w e * (2 * invGap e)) := by
+  rw [← Finset.sum_add_distrib]
+  exact Finset.sum_congr rfl fun e _ => by ring
+
+/-- **Domination `N < P` from separate `S` and `Q` bounds (`qou-t6hc`).**
+If the weighted slope term is bounded by `S_bound` and the weighted small-gap
+term is bounded by `Q_bound` with `S_bound + Q_bound < ∑_{e ∈ E} w_e`, then
+`N < P` (`∑_{e ∈ E} w_e · ratio_e < ∑_{e ∈ E} w_e`). -/
+theorem sum_edge_ratio_lt_of_slope_and_gap_bounds (E : Finset ι)
+    (w da dr invGap : ι → ℚ) {S_bound Q_bound : ℚ}
+    (hS : ∑ e ∈ E, w e * (2 * (da e - dr e) * invGap e) ≤ S_bound)
+    (hQ : ∑ e ∈ E, w e * (2 * invGap e) ≤ Q_bound)
+    (hsum : S_bound + Q_bound < ∑ e ∈ E, w e) :
+    ∑ e ∈ E, w e * (2 * (da e - dr e + 1) * invGap e) < ∑ e ∈ E, w e := by
+  have hdecomp := weighted_edge_ratio_eq_slope_add_gap E w da dr invGap
+  linarith
 
 end Reduction
 

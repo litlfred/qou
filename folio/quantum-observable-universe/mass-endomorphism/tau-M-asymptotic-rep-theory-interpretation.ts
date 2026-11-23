@@ -19,4 +19,7 @@ export default remark({
     "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   ],
   cites: ["kashiwara1990", "macdonald1995", "habiro2002"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Habiro completion ≡ Gröbner–Shirshov residue spectral sum (equivalence)](#prop:habiro-residue-sum-equivalence))" },
+  ],
 });

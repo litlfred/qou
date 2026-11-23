@@ -111,4 +111,13 @@ theorem canonicalInstance_eq_ocneanuWeight (q : ℝ) (hq2 : q ^ 2 ≠ 1) :
     ocneanuWeight_rowLens_oneCubed q _ hq2]
   exact canonicalInstance_eq_markovWeights q
 
+/-- Total weight normalisation `y_3(q) + 2 * y_{2,1}(q) = 1` of the canonical
+three-strand weights across all `q : ℝ`. -/
+theorem canonical_y3_add_two_y21_eq_one (q : ℝ) :
+    canonical_y3 q + 2 * canonical_y21 q = 1 := by
+  have hp : (q ^ 2 + 1 : ℝ) ≠ 0 := by positivity
+  unfold canonical_y3 canonical_y21
+  field_simp
+  ring
+
 end QOU.BraidKnot

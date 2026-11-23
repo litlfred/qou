@@ -88,4 +88,15 @@ theorem cusp_barParity_split {ω : R} (hω : ω ^ 2 - ω + 1 = 0) :
   ⟨QOU.QBeta.CuspShapeBarParity.cuspShape_barEven hω,
    QOU.QBeta.CuspShapeBarParity.cuspShape_barOdd_sq hω⟩
 
+
+/-- **Cusp-shape boost hyperbola andholonomy reconstruction (`qou-qmnb`).**
+For any root `ω` of `Φ₆(ω) = ω² - ω + 1 = 0`, `barEven ω ^ 2 - barOdd ω ^ 2 = 4`
+(`1² - (-3) = 4`) and `barEven ω + barOdd ω = 2 * ω`. -/
+theorem cusp_holonomy_hyperbola_and_reconstruct {ω : R} (hω : ω ^ 2 - ω + 1 = 0) :
+    barEven ω ^ 2 - barOdd ω ^ 2 = 4 ∧ barEven ω + barOdd ω = 2 * ω := by
+  obtain ⟨he, ho⟩ := cusp_barParity_split hω
+  refine ⟨?_, by simp only [barEven, barOdd]; ring⟩
+  rw [he, ho]
+  ring
+
 end QOU.Knot.CuspShapeBarParity

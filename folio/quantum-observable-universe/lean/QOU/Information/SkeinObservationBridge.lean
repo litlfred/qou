@@ -182,6 +182,29 @@ theorem regular_of_len_nonincreasing (P : S)
   | zero => simp
   | succ n ih => exact le_trans (hmono n) ih
 
+/-- **Enstrophy Lyapunov filtration bound ⇒ regularity (`qou-a6vt`).**
+    If an enstrophy / Lyapunov functional `E : S → ℕ` dominates the complexity
+    filtration (`∀ x, sys.len x ≤ E x`) and is non-increasing along the orbit of `P`,
+    then the orbit is `Regular` with bound `E P`. -/
+theorem regular_of_lyapunov_filtration (E : S → ℕ) (P : S)
+    (hcoercive : ∀ x : S, sys.len x ≤ E x)
+    (hdecay : ∀ k : ℕ, E (sys.step^[k + 1] P) ≤ E (sys.step^[k] P)) :
+    sys.Regular (E P) P := by
+  have hE : ∀ k : ℕ, E (sys.step^[k] P) ≤ E P := by
+    intro k
+    induction k with
+    | zero => simp
+    | succ n ih => exact le_trans (hdecay n) ih
+  intro k
+  exact le_trans (hcoercive (sys.step^[k] P)) (hE k)
+
+/-- **Enstrophy Lyapunov filtration bound ⇒ no finite-time blow-up (`qou-a6vt`).** -/
+theorem not_blowsUp_of_lyapunov_filtration (E : S → ℕ) (P : S)
+    (hcoercive : ∀ x : S, sys.len x ≤ E x)
+    (hdecay : ∀ k : ℕ, E (sys.step^[k + 1] P) ≤ E (sys.step^[k] P)) :
+    ¬ sys.BlowsUp P :=
+  sys.not_blowsUp_of_regular (E P) P (sys.regular_of_lyapunov_filtration E P hcoercive hdecay)
+
 /-! #### Cross-pollination: the q-Collatz and q-NS walls are one missing lemma
 
 The q-Collatz descent (`halts_of_len_descent`) and the q-NS regularity

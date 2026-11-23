@@ -1,243 +1,143 @@
 /-
-  Wedderburn–Bratteli recursion for Jones–Markov weights y_λ at H_n(R, q).
+  Wedderburn–Bratteli recursion for the Jones–Markov weights `y_λ` at
+  `H_n(R, q)`, convention D.
 
-  Statement: with z = 1/(v + v⁻¹) the Markov parameter (where v
-  is the formal square root of q, so v² = q), the Jones–Markov
-  weights satisfy a multiplicative recursion of the form
+  ## 2026-11-20 rewrite (W8b, gap 3 of bean `qou-w8cg`)
 
-    y_λ^(n+1) = z · F_q(λ, μ) · y_μ^(n)
+  The previous file was degenerate in three ways, and all three are removed:
 
-  for every Bratteli edge μ ↗ λ at generic q, where F_q(λ, μ) is a
-  q-rational function of the added cell's q-content c(λ, μ) = j - i
-  and the partition shape data.  The specific closed form
+  * **The recursion predicate forced `y ≡ 0`.** Its `BratteliEdge` carried the
+    added cell's content as a free field and had no `μ ⊂ λ` constraint, so an
+    "edge" `λ ↗ λ` was admissible, and `y λ = z·F·y λ` then forces `y λ = 0`
+    unless `z·F = 1`. The existence theorem was witnessed by `y ≡ 0` for that
+    reason.
+  * **An undisclosed `axiom`** (`plancherel_completeness_axiom`,
+    `Σ y_λ d_λ = 1` for every `y` satisfying that predicate). Its hypothesis
+    "`parts` lists every partition of `n`" can never hold — the skeleton
+    `Partition` admits trailing zeros, so infinitely many lists sum to `n` — so
+    it was consistent only because it was unusable. Read with a satisfiable
+    hypothesis it would be false, since `y ≡ 0` satisfies the predicate.
+  * **The `lean.ref` `wedderburn_bratteli_recursion` did not exist.**
 
-    F_q(c, h) = [c+1]_q / [c+h]_q
+  ## What is stated now, and proved sorry-free
 
-  with h := height(λ) is one candidate matching the Wenzl-bridge
-  derivation (see prop:y-lambda-closed-form-wenzl-bridge); the full
-  closed form is extracted symbolically from the y_λ witness ratios
-  via y_lambda_bratteli_extract.py and is canonically expressed via
-  the Wenzl Schur principal-specialization formula.
+  Under **convention D** (`z = q³/(q²+1)`) every shape with three or more rows
+  carries Ocneanu weight `0` (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`),
+  so the Jones–Markov weights live on two-row shapes `(a, b)`, `a ≥ b`, where
+  they have the closed form
 
-  The Bratteli diagram is multiplicity-free at generic q (Hoefsmit),
-  so the recursion is well-defined and reproduces the y_λ tower from
-  H_2 base data.
+    `y_(a,b) = [a − b + 1]_q / [2]_q^{a+b}`        (`jonesWeightD`),
 
-  **Pre-Archimedean stub.** The recursion is stated over an
-  abstract field `R` carrying `q : R` and `v : R` with `v² = q`
-  (the formal square root of `q`).  On `R = ℚ(v)` (a Laurent
-  field over the formal `v`) every quantity is rational in `v`;
-  the Archimedean specialisation `R = ℝ` evaluating at `v = √q₀`
-  is the post-τ realisation and lives downstream
-  (`QOU.Calculations`).  Real.sqrt was removed; the formal square
-  root `v` is now an explicit parameter.
+  `[k]_q` the balanced q-integer. At `n = 3` this is
+  `([4]_q/[2]_q³, 1/[2]_q², 0)`, the convention-D vector of
+  `QOU.BraidsAndKnots.MarkovTraceTLUniqueness` (`jonesWeightD_h3`).
 
-  **Base ring (§7c): the `Field` is essential here, not scaffolding.**
-  Adjudicated against `wall-base-ring-minimal`: the recursion is a
-  q-*rational* statement, not a q-Laurent one, and both of its divisions
-  are by elements that genuinely vanish somewhere.
+  * `wedderburn_bratteli_recursion` — **the Bratteli recursion**: restricting
+    the trace from `H_{n+1}` to `H_n` sums the weights over the two Bratteli
+    edges out of `(a, b)`:
+    `y_(a,b) = y_(a+1,b) + y_(a,b+1)`. When `a = b` the second shape is not a
+    partition, and the formula gives it weight `[0]_q = 0`
+    (`jonesWeightD_diag_succ`), so the identity is the correct one-edge rule
+    there too. The key step is the q-integer identity `[d+1] + [d−1] = [2][d]`
+    (`qIntBalZ_add_sub`).
+  * `jonesWeightD_edge_row` / `jonesWeightD_edge_col` — **the multiplicative
+    form along a single edge**, division-free:
+    `[2]_q · [d]_q · y_(a+1,b) = [d+1]_q · y_(a,b)` and
+    `[2]_q · [d]_q · y_(a,b+1) = [d−1]_q · y_(a,b)` with `d = a − b + 1`. The
+    edge factor depends on which row the cell is added to, through `d`; that
+    is the content of the `.md`'s "`F_q(c(λ, μ), …)`".
 
-  * `markovZD q = q³/(q² + 1)` divides by `q² + 1`, which is `0` at
-    `q² = −1`; so `q² + 1` is not a unit and the quotient is not a
-    Laurent polynomial.
-  * `bratteliFactor = [c+1]_q / [c+h]_q` divides by a q-integer, which
-    vanishes at roots of unity — exactly the locus this file excludes by
-    working "at generic q".
-  * `qIntZ` is an abbreviation for the **canonical** `QOU.QInteger.qIntBalZ`,
-    whose own defining equation is `(q^k − q^{−k})/(q − q⁻¹)` over
-    `[Field R]`. That `Field` is a deliberate, documented upstream choice
-    ("algebraic inverse — §7c, NOT archimedean; no `ℝ`"), so it is
-    inherited here and cannot be weakened locally.
+  **Not encoded:** the normalisation `Σ_λ f^λ y_λ = 1` over all `λ ⊢ n`
+  (`f^λ` the number of standard tableaux). It follows from the sum rule above
+  and the branching rule `f^λ = Σ_{μ ↗ λ} f^μ`, which needs a partition type
+  this file does not build. It is a gap, not an axiom.
 
-  A division-free restatement is possible in principle by moving to the
-  relational R[h] form (`z·(v²+1) = v`, `F·[c+h]_q = [c+1]_q`), but that
-  converts `markovZD`/`bratteliFactor` from functions into relations and
-  so changes the shape of `SatisfiesWedderburnBratteliRecursion` and every
-  consumer; it would have to start at `QOU.MathlibExt.QIntegerCanonical`,
-  not here.  Nothing in this file is archimedean, so it is already on the
-  correct side of the wall.
+  Base ring: a generic field (§7c). The divisions are genuine: `[2]_q` and the
+  balanced q-integers vanish at roots of unity, excluded as "generic `q`".
 
-  Refs: prop:wedderburn-bratteli-recursion,
+  Refs: conj:wedderburn-bratteli-recursion,
         prop:y-lambda-closed-form-wenzl-bridge,
-        prop:hoefsmit-seminormal-form,
         thm:jones-markov-trace
 -/
 
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.GroupWithZero.Basic
+import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.BraidsAndKnots
 
-universe u
+open QOU.QInteger
 
-/-- Symmetric q-integer for ℤ exponents:
-    `qIntZ q k = [k]_q = (q^k - q^(-k)) / (q - q^(-1))`.
+variable {R : Type*} [Field R]
 
-    Polymorphic in the ground field `R`.  The denominator
-    `q - q⁻¹` is required to be invertible (`q² ≠ 1`); on the
-    Laurent field `ℚ(q)` this holds as long as we work generically
-    (away from roots of unity). -/
-noncomputable abbrev qIntZ {R : Type u} [Field R] (q : R) (k : ℤ) : R :=
-  QOU.QInteger.qIntBalZ q k
+/-- `[d+1]_q + [d−1]_q = [2]_q · [d]_q`, with `[2]_q = q + q⁻¹`. -/
+theorem qIntBalZ_add_sub {q : R} (hq : q ≠ 0) (d : ℤ) :
+    qIntBalZ q (d + 1) + qIntBalZ q (d - 1) = (q + q⁻¹) * qIntBalZ q d := by
+  simp only [qIntBalZ_def]
+  rw [← add_div, mul_div_assoc']
+  congr 1
+  rw [zpow_add₀ hq, zpow_sub₀ hq, show -(d + 1) = -d - 1 by ring,
+    show -(d - 1) = -d + 1 by ring, zpow_sub₀ hq, zpow_add₀ hq, zpow_one]
+  field_simp
+  ring
 
-/-- **Convention-D Markov parameter** `z_D = q³/(q² + 1)`.
+/-- Convention-D Jones–Markov weight on the two-row shape `(a, b)`:
+`y_(a,b) = [a − b + 1]_q / [2]_q^{a+b}`. -/
+noncomputable def jonesWeightD (q : R) (a b : ℕ) : R :=
+  qIntBalZ q ((a : ℤ) - b + 1) / (q + q⁻¹) ^ (a + b)
 
-    **MIGRATED FROM CONVENTION C (2026-08-24).**  This read
-    `markovZ' v = 1/(v + v⁻¹)` with `v² = q`, which evaluates to
-    `√q/(q + 1)` — convention C, excised by the 2026-08-15 ruling in
-    favour of D.  The formal square root `v` was needed only to express
-    C; under D it is not needed at all and is gone from every signature
-    in this file.
+/-- The `n = 3` weights: `y_(3) = [4]_q/[2]_q³`, `y_(2,1) = [2]_q/[2]_q³ = 1/[2]_q²`. -/
+theorem jonesWeightD_h3 {q : R} (h1 : q - q⁻¹ ≠ 0) :
+    jonesWeightD q 3 0 = qIntBalZ q 4 / (q + q⁻¹) ^ 3 ∧
+    jonesWeightD q 2 1 = (q + q⁻¹) / (q + q⁻¹) ^ 3 := by
+  refine ⟨by norm_num [jonesWeightD], ?_⟩
+  have h : qIntBalZ q 2 = q + q⁻¹ := by
+    rw [show (2 : ℤ) = ((2 : ℕ) : ℤ) by norm_num, qIntBalZ_natCast, qIntBal_two q h1]
+  simp only [jonesWeightD]
+  rw [show ((2 : ℕ) : ℤ) - ((1 : ℕ) : ℤ) + 1 = 2 by norm_num, h]
 
-    Equivalently `z_D = q²/(q + q⁻¹)`, the form closest to the old
-    `1/(v + v⁻¹)`: the convention change is that extra factor `q²`
-    together with `v ↦ q`.
+/-- On the diagonal the second Bratteli edge leaves the partitions: the formula
+assigns `(a, a+1)` the weight `[0]_q = 0`. -/
+theorem jonesWeightD_diag_succ (q : R) (a : ℕ) : jonesWeightD q a (a + 1) = 0 := by
+  simp [jonesWeightD]
 
-    **Why this is a migration and not a `z`-swap.**  Bean `qou-cds1`
-    forbids substituting `z_D` into a result *derived* under C.  Here `z`
-    enters only through this definition and through the *definition* of
-    the recursion relation below; the one theorem that consumes it,
-    `y_base_case_singleton`, closes by `rw … mul_one` and never uses `z`'s
-    value.  So nothing in this file was derived from C's value, and
-    changing the definition changes the convention rather than
-    laundering a C-frame conclusion. -/
-noncomputable def markovZD {R : Type u} [Field R] (q : R) : R :=
-  q ^ 3 / (q ^ 2 + 1)
+/-- **The Wedderburn–Bratteli recursion (convention D).** Restricting the trace
+from `H_{n+1}` to `H_n` sums the weights over the Bratteli edges out of
+`(a, b)`: `y_(a,b) = y_(a+1,b) + y_(a,b+1)`. -/
+-- Ref: [leitner2026] mass-theory/wedderburn-bratteli-recursion.md
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
+theorem wedderburn_bratteli_recursion {q : R} (hq : q ≠ 0) (h2 : q + q⁻¹ ≠ 0)
+    (a b : ℕ) :
+    jonesWeightD q a b = jonesWeightD q (a + 1) b + jonesWeightD q a (b + 1) := by
+  simp only [jonesWeightD]
+  have hk := qIntBalZ_add_sub hq ((a : ℤ) - b + 1)
+  have e1 : ((↑(a + 1) : ℤ) - b + 1) = (a : ℤ) - b + 1 + 1 := by push_cast; ring
+  have e2 : ((a : ℤ) - ↑(b + 1) + 1) = (a : ℤ) - b + 1 - 1 := by push_cast; ring
+  rw [e1, e2, show a + 1 + b = a + b + 1 by ring, show a + (b + 1) = a + b + 1 by ring,
+    ← add_div, hk, pow_succ]
+  generalize q + q⁻¹ = t at h2 ⊢
+  field_simp
 
-/-- A partition (skeleton). The recursion statement below does not
-    depend on internal partition structure; it carries the q-content
-    of the added cell and the height of `lam` as explicit parameters.
-    Full box-difference decoder (μ ⊂ λ check, removable-corner
-    enumeration, content extraction) is open work. -/
-structure Partition where
-  parts : List ℕ
+/-- Single edge, cell added to the first row: `[2] [d] y_(a+1,b) = [d+1] y_(a,b)`. -/
+theorem jonesWeightD_edge_row {q : R} (h2 : q + q⁻¹ ≠ 0) (a b : ℕ) :
+    (q + q⁻¹) * qIntBalZ q ((a : ℤ) - b + 1) * jonesWeightD q (a + 1) b =
+      qIntBalZ q ((a : ℤ) - b + 1 + 1) * jonesWeightD q a b := by
+  simp only [jonesWeightD]
+  rw [show ((↑(a + 1) : ℤ) - b + 1) = (a : ℤ) - b + 1 + 1 by push_cast; ring,
+    show a + 1 + b = a + b + 1 by ring, pow_succ]
+  generalize q + q⁻¹ = t at h2 ⊢
+  field_simp
 
-/-- The height of λ — number of rows. -/
-def Partition.height (lam : Partition) : ℕ := lam.parts.length
-
-/-- A Bratteli edge `μ ↗ λ` decorated with the q-content `c` of the
-    added cell. The content is carried as a structure field rather
-    than recovered from `μ, λ` (which would require the box-difference
-    decoder). At generic q the Bratteli diagram is multiplicity-free
-    (Hoefsmit), so `c` is determined uniquely by the edge. -/
-structure BratteliEdge where
-  mu : Partition
-  lam : Partition
-  /-- q-content `c(λ, μ) = j - i` of the unique box in `λ \ μ`. -/
-  content : ℤ
-
-/-- The Bratteli content factor `F_q(c, h) = [c+1]_q / [c+h]_q` in
-    the recursion `y_λ^(n+1) = z · F_q · y_μ^(n)`. -/
-noncomputable def bratteliFactor {R : Type u} [Field R]
-    (q : R) (c h : ℤ) : R :=
-  qIntZ q (c + 1) / qIntZ q (c + h)
-
-/-- A weight function `y : Partition → R` satisfies the Wedderburn–
-    Bratteli recursion at parameter `q` (convention D) if for
-    every Bratteli edge `e : BratteliEdge`, the next-level weight
-    `y e.lam` equals `z · F_q(c, height(λ)) · y e.mu`. -/
-def SatisfiesWedderburnBratteliRecursion {R : Type u} [Field R]
-    (q : R) (y : Partition → R) : Prop :=
-  ∀ e : BratteliEdge,
-    y e.lam = (markovZD q) *
-              bratteliFactor q e.content (e.lam.height : ℤ) *
-              y e.mu
-
-/-- Existence: a function `y : Partition → R` satisfying the
-    Wedderburn–Bratteli recursion exists at any generic `q`.
-
-    Closed with the trivial witness `y ≡ 0`: the recursion
-    `y e.lam = z · F · y e.mu` is satisfied vacuously since both
-    sides reduce to 0. The intended Jones–Markov witness is
-    constructed numerically in
-    `computations/y-lambda-jones-markov-witness.json`
-    (n=2..12) and symbolically in `y-lambda-symbolic-witness.json`;
-    porting that construction into Lean (with the Hoefsmit seminormal
-    eigenvalues + Markov property) is the meaningful next step.
-
-    The theorem as stated only asserts *consistency* of the recursion,
-    not non-triviality of the weight. Sharpening to "the unique
-    Markov-trace-derived weight satisfies the recursion" requires a
-    Jones-Markov axiom on top of `MarkovTransitionStep`. -/
--- Ref: prop:wedderburn-bratteli-recursion proof, [hoefsmit1974];
--- Hoefsmit seminormal eigenvalue on per-cell idempotent + Markov property.
-theorem wedderburn_bratteli_recursion_holds
-    {R : Type u} [Field R] (q : R) :
-    ∃ y : Partition → R, SatisfiesWedderburnBratteliRecursion q y :=
-  ⟨fun _ => 0, by
-    intro e
-    show (0 : R) = _ * _ * 0
-    ring⟩
-
-/-- Application: given any `y` known to satisfy the recursion, the
-    edge equation follows. -/
-theorem wedderburn_bratteli_apply
-    {R : Type u} [Field R] (q : R) (y : Partition → R)
-    (hrec : SatisfiesWedderburnBratteliRecursion q y)
-    (e : BratteliEdge) :
-    y e.lam = (markovZD q) *
-              bratteliFactor q e.content (e.lam.height : ℤ) *
-              y e.mu :=
-  hrec e
-
-/-- Base case at H_1: the weight on the single partition `(1)` is 1, and
-    that value **anchors** the recursion — on any edge out of `(1)` the
-    next-level weight is the bare Bratteli factor, with no free constant
-    left. This is `tr_M(1_1) = 1` propagating one level up.
-
-    The old statement was `(hbase : y ⟨[1]⟩ = 1) : y ⟨[1]⟩ = 1 := hbase` —
-    hypothesis identical to conclusion, proof the identity. It named the
-    base case without asserting anything about it, and would have stayed
-    true had every definition in this file been swapped. Anchoring is the
-    content the docstring already claimed; it just was not stated.
-
-    §7c: `Field` now, not `CommRing`. The old form divided by nothing
-    because it did nothing; using the recursion brings in `bratteliFactor`,
-    whose q-integer quotient is exactly why the rest of this file needs a
-    field. -/
--- Ref: [leitner2026] thm:jones-markov-trace base case;
--- H_1(R, q) = R, tr_M = identity character on V_(1).
-theorem y_base_case_singleton {R : Type u} [Field R] (q : R)
-    (y : Partition → R)
-    (hrec : SatisfiesWedderburnBratteliRecursion q y)
-    (hbase : y ⟨[1]⟩ = (1 : R))
-    (e : BratteliEdge) (he : e.mu = ⟨[1]⟩) :
-    y e.lam = (markovZD q) * bratteliFactor q e.content (e.lam.height : ℤ) := by
-  rw [wedderburn_bratteli_apply q y hrec e, he, hbase, mul_one]
-
--- Plancherel completeness at every level: `Σ y_λ · d_λ = 1` where
--- `d_λ = dim V_λ` (hook-length formula), summed over all partitions
--- of n.  The Markov-trace normalisation `tr_M(1_n) = 1` transported
--- through Wedderburn, valid for any `y` arising from a Markov trace.
---
--- The `parts_complete` hypothesis ensures the list `parts` contains
--- every partition of `n` exactly once — without it, the partial sum
--- is not guaranteed to equal 1.
-/-- **External axiom (§3b-cond pattern): plancherel_completeness.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Plancherel completeness Σ_λ y_λ·d_λ = 1 from Markov-trace normalisation)
-axiom plancherel_completeness_axiom {R : Type u} [Field R] (q : R) (n : ℕ)
-    (parts : List Partition)
-    (_parts_complete : ∀ lam : Partition, lam.parts.sum = n → lam ∈ parts)
-    (_parts_nodup : parts.Nodup)
-    (y : Partition → R) (d : Partition → ℕ)
-    (_hrec : SatisfiesWedderburnBratteliRecursion q y) :
-    (parts.map (fun lam => y lam * (d lam : R))).sum = (1 : R)
-
-theorem plancherel_completeness
-    {R : Type u} [Field R] (q : R) (n : ℕ)
-    (parts : List Partition)
-    (_parts_complete : ∀ lam : Partition, lam.parts.sum = n → lam ∈ parts)
-    (_parts_nodup : parts.Nodup)
-    (y : Partition → R) (d : Partition → ℕ)
-    (_hrec : SatisfiesWedderburnBratteliRecursion q y) :
-    (parts.map (fun lam => y lam * (d lam : R))).sum = (1 : R) :=
-  plancherel_completeness_axiom q n parts _parts_complete _parts_nodup y d _hrec
+/-- Single edge, cell added to the second row: `[2] [d] y_(a,b+1) = [d−1] y_(a,b)`. -/
+theorem jonesWeightD_edge_col {q : R} (h2 : q + q⁻¹ ≠ 0) (a b : ℕ) :
+    (q + q⁻¹) * qIntBalZ q ((a : ℤ) - b + 1) * jonesWeightD q a (b + 1) =
+      qIntBalZ q ((a : ℤ) - b + 1 - 1) * jonesWeightD q a b := by
+  simp only [jonesWeightD]
+  rw [show ((a : ℤ) - ↑(b + 1) + 1) = (a : ℤ) - b + 1 - 1 by push_cast; ring,
+    show a + (b + 1) = a + b + 1 by ring, pow_succ]
+  generalize q + q⁻¹ = t at h2 ⊢
+  field_simp
 
 end QOU.BraidsAndKnots

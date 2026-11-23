@@ -18,7 +18,7 @@ whose Taylor coefficients are the c_k:
 Axis (b) is the one that is genuinely different from a single closed form:
 instead of c_k = [u^k] F(u), the c_k would satisfy a linear recurrence
 (C-finite: c_{k+1} = Σ_j a_j(q) c_{k-j}). Sibling PR #1875 / #1839 build a
-`CFinite.recurrence_step` engine for exactly this shape.
+`QOU.QBeta.recurrence_step` engine for exactly this shape.
 
 ## The data-block (quantitative)
 
@@ -71,7 +71,7 @@ not warranted by the data — the opposite of proposing an ansatz.
 
 ## References
 - Closed-form refutation: PR #1866, PR #1880 (this branch)
-- Recurrence engine sibling: PR #1875 / #1839 (`CFinite.recurrence_step`)
+- Recurrence engine sibling: PR #1875 / #1839 (`QOU.QBeta.recurrence_step`)
 - c_k cache + precision floor: `qbeta-ck-cache.witness.json`, PR #7f36be0e
 - Holonomic data-blocker (sibling): main `d2617ae8`
 """

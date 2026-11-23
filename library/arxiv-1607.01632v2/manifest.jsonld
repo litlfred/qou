@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1607.01632v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Charge speciﬁc baryon mass relations with deformed SU q (3) ﬂavor symmetry",
+  "contains": [
+    "library/arxiv-1607.01632v2/sections/sec-front-matter",
+    "library/arxiv-1607.01632v2/sections/sec-000",
+    "library/arxiv-1607.01632v2/sections/sec-001",
+    "library/arxiv-1607.01632v2/sections/sec-002",
+    "library/arxiv-1607.01632v2/sections/sec-003",
+    "library/arxiv-1607.01632v2/sections/sec-004",
+    "library/arxiv-1607.01632v2/sections/sec-005",
+    "library/arxiv-1607.01632v2/sections/sec-006",
+    "library/arxiv-1607.01632v2/sections/sec-007",
+    "library/arxiv-1607.01632v2/sections/sec-008",
+    "library/arxiv-1607.01632v2/sections/sec-009",
+    "library/arxiv-1607.01632v2/sections/sec-010",
+    "library/arxiv-1607.01632v2/sections/sec-011",
+    "library/arxiv-1607.01632v2/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1607.01632v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "arxiv-1607.01632v2.pdf",
+    "source_sha256": "bbfdc5c00d97adff74e26adec34d9479dfcad093d9b851baf27d7afdddd8f495",
+    "pages": 14,
+    "arxiv": {
+      "id": "1607.01632",
+      "version": "2",
+      "primary_class": "hep-ph",
+      "stamp_date": "19 Sep 2016"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

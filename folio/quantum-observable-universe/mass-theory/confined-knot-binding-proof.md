@@ -42,5 +42,3 @@ $$
 Each factor is determined by the Hecke algebra multiplication
 rules applied to the crossing parameters at that level.
 $\square$
-
-**Witness**: `confined-knot-binding.witness.json`.

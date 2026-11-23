@@ -367,11 +367,14 @@ def main() -> int:
     w.add_assertion(name="braid_relation", computed=_sig(bdev),
                     expected="0", tolerance=_sig(tol),
                     source="rho(s0)rho(s1)rho(s0) = rho(s1)rho(s0)rho(s1)")
-    # 3. chi_std vs native Hoefsmit (f64)
+    # 3. chi_std vs native Hoefsmit, MPFR entry (2026-11-21). This used the
+    #    f64 `chi_lambda_braid` at float(Q0), so the check could only ever
+    #    confirm ~1e-16 agreement of a 40-digit computation; the MPFR entry
+    #    takes q as a decimal string and checks at the working precision.
     native_dev = None
     try:
         import pyhecke_native as nat
-        qf = float(Q0)
+        q_str = mp.nstr(Q0, DPS + 5)
         words = [[(1, 1)], [(1, 1), (1, 2)], [(1, 1), (1, 1)],
                  [(1, 1), (-1, 2), (1, 1)]]
         devs = []
@@ -383,13 +386,14 @@ def main() -> int:
                     m = m2(m, rho)
                 else:
                     m = m_affine(m, rho, mp.mpf(1), -H)  # sigma^-1
-            mine = float(m_tr(m))
-            ref = float(nat.chi_lambda_braid([2, 1], word, qf))
+            mine = m_tr(m)
+            ref = mp.mpf(nat.chi_lambda_braid_mpfr([2, 1], word, q_str, DPS))
             devs.append(abs(mine - ref))
         native_dev = max(devs)
         w.add_assertion(name="chi_std_vs_native_hoefsmit",
-                        computed=native_dev, expected=0.0, tolerance=1e-9,
-                        source="pyhecke_native.chi_lambda_braid([2,1],...)")
+                        computed=_sig(native_dev), expected="0",
+                        tolerance=_sig(tol),
+                        source="pyhecke_native.chi_lambda_braid_mpfr([2,1],...)")
     except Exception as e:  # pragma: no cover
         w.add_data("native_chi_crosscheck", f"unavailable: {e}")
 

@@ -6,9 +6,28 @@
 **Runnable 50-dps + SymPy Probe:** [`folio/quantum-observable-universe/computations/probes/np_two_term_qed_mup_tension_probe.py`](../../folio/quantum-observable-universe/computations/probes/np_two_term_qed_mup_tension_probe.py) (mirrored at [`computations/probes/np_two_term_qed_mup_tension_probe.py`](../../computations/probes/np_two_term_qed_mup_tension_probe.py))  
 **Companion Error-Budget Audit:** [`docs/audits/2026-11-15-np-splitting-error-budget.md`](2026-11-15-np-splitting-error-budget.md)
 
+
+> **🛑 CORRECTION 2026-11-19 (owner asked for it; measurement in bean `qou-99qc`, 00:10Z).** The figures below are labelled "zero-parameter" and "DERIVED". Two choices make them selections instead:
+>
+> 1. **The word dependence comes only from omitting a quark pair.** Summed over all three pairs, the charge insertion differs between $W_n$ and $W_p$ by $-\tfrac13\,\mathrm{tr}(w)$ for every word (`trace_QPair_diff_word`, in the same Lean file), so it carries no braid content. The "connected" term keeps pairs 1–2 and 2–3 and drops 1–3. In $V^3 = (\sigma_1\sigma_2^{-1})^3$ every pair crosses exactly twice, so the word gives no reason to drop one.
+> 2. **The scale and weighting were picked against targets.** $m_e$, $E_0$ and $\alpha_{\mathrm{bind}}$, under four weightings, were compared with the $\mu$–$p$ tension, the $Q_\beta$ residual and lattice benchmarks. `hadronicScale_mul_q_sq_hbar_eq_me` unfolds a definition and does not derive a scale.
+>
+> The algebra (the closed forms of the traces) stands. The keV / ppm / ppb figures and the "closes N %" statements are records of selected combinations, not predictions, and must not be cited as a derived $n$–$p$ split. Canonical $m_n$ was never changed.
+
 ---
 
 ## 1. Executive Summary
+
+> **🛑 Pin label corrected 2026-11-20 (PR #8552).** The values quoted below "at
+> $q_0$" — $\overline{\mathrm{tr}}_{\mathrm{conn}}(p,V^3) = -0.00043068071$ and
+> $\Delta\overline{\mathrm{tr}}_{\mathrm{conn}} = +0.00064911326$ (§1, §4.2) — are evaluated at the
+> **muon** pin $q_\mu = 1.10997859564\ldots$, not the proton pin. At the proton pin
+> $q_p = 1.10997858275\ldots$ they are $-0.000430680520$ and $+0.000649112966$
+> (relative shift $4.5\times10^{-7}$; recomputed at 40 dps). No conclusion here moves.
+> Separately, #8552 proves the adjacent insertion $Q_{12}+Q_{23}$ is not braid-covariant and
+> that on $W_p$ its trace equals $-\mathrm{tr}(Q_{13}\,\cdot)$ for every word, so the
+> "zero-parameter derived" label on the figures below is scoped there (bean `qou-qcov`).
+> The values are left as recorded.
 
 This audit executes the two pre-registered 50-dps `mpmath` + exact `sympy` tests required by `qou-eas4` and compiles a complete, file-by-file downstream impact inventory and formalize-first workplan for Epic `qou-9pl8` (upgrading QOU's one-term nucleon mass and $n\text{--}p$ splitting architecture to a two-term strong + electromagnetic decomposition $m_N = m_N^{\mathrm{QCD}} + m_N^{\mathrm{QED}}$ and $\Delta m_{np} = \Delta m_{\mathrm{QCD}} + \Delta m_{\mathrm{QED}}$).
 

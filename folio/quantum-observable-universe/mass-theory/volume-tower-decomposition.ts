@@ -52,7 +52,10 @@ export default proposition({
   ],
   uses: [
     "prop:cosimplicial-crossed-groupoid",
-    "prop:topological-mass-formula",
+    // conj:topological-mass-formula dropped 2026-11-20 (owner, option 2 of
+    // the W11b ask on #8526; bean qou-tm3c). The statement decomposes the
+    // volume Vol(K) and never mentions mass, Vol(K)/hbar_q^2, or the formula;
+    // the edge was not used by the text.
   ],
   lean: { ref: "qou:QOU.Archimedean.VolumeTowerDecomposition",
     validation: "not_checked",

@@ -5,7 +5,7 @@
   "computation": "codata-2022-validation-masses",
   "scriptFile": "(none — published-data witness)",
   "description": "CODATA 2022 published rest masses (MeV/c²) for the electron, proton, neutron, deuteron, triton, helium-3 and helium-4. Values transcribed from the primary source: Mohr, Newell, Taylor & Tiesinga, 'CODATA recommended values of the fundamental physical constants: 2022', Rev. Mod. Phys. 97, 025002 (30 April 2025), vendored at library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf, pp. 45-48. CORRECTED 2026-08-09 (PR #4860): all seven literals previously held the CODATA-2018 values under a 'CODATA 2022' label — a ~1.3 ppb systematic straddle, first detected from internal inconsistency alone (bean qou-2an8) and then confirmed against this primary source. The old neutron entry was additionally the AME-derived value built on the stale proton, not the published direct determination. Per the QOU three-calibration discipline (content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md), only m_e (CAL-1) and Q_β (CAL-3) are calibration INPUTS to mass predictions; the m_p / m_n / m_D / m_T / m_3He / m_4He values are exposed for VALIDATION ONLY — to compare framework predictions against experiment. Importing them as upstream inputs to a mass / binding prediction violates the discipline and silently inflates the calibration count beyond the pre-approved 3.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
   "parameters": {
     "data_source_primary": "CODATA 2022 (https://physics.nist.gov/cuu/Constants/)",

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-boltzmann-constant-motivation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:boltzmann-constant-motivation",
+  "kind": "remark",
+  "title": "Why the Boltzmann constant is set to unity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-boltzmann-constant",
+    "papers/quantum-observable-universe/blocks/def-quantum-temperature"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-boltzmann-constant",
+  "tags": [
+    "boltzmann-constant",
+    "statistical-mechanics",
+    "interpretation"
+  ],
+  "text": "boltzmann-constant-motivation.md",
+  "provenance": "authored"
+}

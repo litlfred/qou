@@ -77,4 +77,11 @@ theorem finrank_group_algebra (n : ℕ) :
   rw [show Nat.factorial n = Fintype.card (Equiv.Perm (Fin n)) from hcard.symm]
   exact Module.finrank_finsupp_self (R := k) (ι := Equiv.Perm (Fin n))
 
+omit [CharZero k] in
+/-- Zero-subtracted difference between `dim_k k[S_n]` and `n!` vanishes. -/
+theorem finrank_group_algebra_sub_factorial_eq_zero (n : ℕ) :
+    finrank k (MonoidAlgebra k (Equiv.Perm (Fin n))) - Nat.factorial n = 0 := by
+  rw [finrank_group_algebra (k := k) n]
+  exact Nat.sub_self (Nat.factorial n)
+
 end QOU.BraidKnot.SpechtBlockDimension

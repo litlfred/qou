@@ -27,7 +27,7 @@ This is the $c = 0, d = 1$ case.
 These three matrices govern all nuclear interactions.
 
 **2a. Proton--proton ($\mathfrak{p}$-$\mathfrak{p}$)**
-Knots: $K_1 = T_{2,3}$ (up quark), $K_2 = T_{2,3}$ (up quark).
+Strands: two up quarks, each an unknot strand of $\mathcal{B}_3$ with positive crossing orientation (lepton partner $T_{2,3}$).
 Crossing coefficients: $c = 1$, $d = 0$.
 
 $$
@@ -37,7 +37,7 @@ $$
 Explicit entries are in [Table 1](#tbl:tm-knot-pairs-table1-data). Eigenvalues are $\lambda_{\pm} = \frac{1}{2}\left((q - q^{-1}) \pm \sqrt{(q-q^{-1})^2 + 4}\right)$.
 
 **2b. Neutron--neutron ($\mathfrak{n}$-$\mathfrak{n}$)**
-Knots: $K_1 = T_{2,3}^{\sigma}$ (down quark), $K_2 = T_{2,3}^{\sigma}$ (down quark).
+Strands: two down quarks, each an unknot strand of $\mathcal{B}_3$ with negative crossing orientation (lepton partner $T_{2,3}^{\sigma}$).
 Crossing coefficients: $c = 1$, $d = -(q - q^{-1})$.
 
 $$
@@ -47,7 +47,7 @@ $$
 Explicit entries are in [Table 2](#tbl:tm-knot-pairs-table2-data). Relation to $T_{pp}$: $T_{nn}(q) = T_{pp}(q) - (q - q^{-1}) \mathbb{I}$.
 
 **2c. Mixed ($\mathfrak{p}$-$\mathfrak{n}$)**
-Knots: $K_1 = T_{2,3}$ (up), $K_2 = T_{2,3}^{\sigma}$ (down).
+Strands: one up and one down quark, unknot strands of opposite crossing orientation (lepton partners $T_{2,3}$ and $T_{2,3}^{\sigma}$).
 Crossing coefficients: $c = 1$, $d = -\frac{1}{2}(q - q^{-1})$.
 
 $$
@@ -102,11 +102,11 @@ $$
 For any knot $K$ paired with the unknot $T_{1,0}$, the connected sum gives $c = 1$. In the nuclear context, the unknot contributes $c = 1, d = 0$. Therefore $T_{T_{1,0}, K}(q) = T_{pp}(q)$ for every knot $K$. The unknot is universally invisible. The same applies to the photon.
 
 **4b. Cinquefoil--cinquefoil ($\mathfrak{b}$-$\mathfrak{b}$)**
-Knots: $K_1 = T_{2,5}$, $K_2 = T_{2,5}$.
+Knots: $K_1 = T_{2,5}$, $K_2 = T_{2,5}$ (lepton partners; the quarks are unknot strands).
 $c = 1, d = 0$. Thus $T_{\mathfrak{b}\mathfrak{b}}(q) = T_{pp}(q)$. All same-chirality identical-knot pairs give $T_{pp}$.
 
 **4c. Trefoil--cinquefoil ($\mathfrak{u}$-$\mathfrak{b}$)**
-Knots: $K_1 = T_{2,3}$, $K_2 = T_{2,5}$.
+Knots: $K_1 = T_{2,3}$, $K_2 = T_{2,5}$ (lepton partners; the quarks are unknot strands).
 $c = 1, d = 0$. Thus $T_{\mathfrak{u}\mathfrak{b}}(q) = T_{pp}(q)$.
 
 **4d. $T_{3,4}$--$T_{3,4}$ (Hopf${}^2$--Hopf${}^2$, color binding)**

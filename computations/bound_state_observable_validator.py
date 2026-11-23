@@ -5,7 +5,7 @@ master formula
 
     ⟨O⟩_T  =  Σ_{i,j ∈ A*(T)}  u_i*  (G^{-1})_{ij}  ⟨O, b_j⟩
 
-(prop:confinement-frobenius-reciprocity).
+(conj:confinement-frobenius-reciprocity).
 
 Rule
 ----
@@ -182,7 +182,7 @@ def main(argv: list[str]) -> int:
     print()
     print("To fix: implement the master formula")
     print("  ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O, b_j⟩")
-    print("(prop:confinement-frobenius-reciprocity), and emit:")
+    print("(conj:confinement-frobenius-reciprocity), and emit:")
     print("  - gram_matrix, gram_inverse  (from gram-matrix-dual.witness.json)")
     print("  - lp_active_set, shadow_prices  (from lp_dual_solver.py)")
     print("Or, if the observable is the Hamiltonian and the raw Markov trace")

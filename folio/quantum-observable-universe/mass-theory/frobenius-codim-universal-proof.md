@@ -130,7 +130,7 @@ $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
   $\varrho_{\mathfrak{n}}$ or any other trefoil-like vortex.
   Vortex-dependent corrections — e.g. chirality factors
   $\{1+h, 1-h^2, (1-h^2)^2\}$ per
-  ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
+  ([figure-eight BW coefficients](#conj:six-term-mass-formula-complete))
   or knot-factor Frobenius pairings per
   ([knot-factor Frobenius pairing](#conj:knot-factor-frobenius-pairing))
   — are separate structural terms beyond $\tau(C_{\dim_q})$.*
@@ -145,7 +145,7 @@ three tiers:*
    co-Casimir $\tau(C_{\dim_q}^{(A)})$.*
 3. *Isotope-specific (vortex-dependent but structural):
    chirality / knot-factor coefficients from
-   `thm:six-term-mass-formula-complete`.*
+   the [six-term mass formula](#conj:six-term-mass-formula-complete).*
 
 **Consistency.**
 
@@ -167,47 +167,35 @@ three tiers:*
    two eigenvalues $(q, -q^{-1})$ — the source of all
    $q$-deformation structure in the paper.*
 
-## Explicit Lean closures by partition count $n$
+## Explicit closures by partition count $n$
 
 For each $n$, the Frobenius co-Casimir trace
 $\tau(C_{\dim_q}^{(n)}) = \sum_{\lambda \vdash n} 1/\dim_q(\lambda)$
-admits an explicit closed form via $\mathrm{Fin}\,p(n)$ enumeration
-once a Lean definition of $\dim_q(\lambda)$ for each partition is
-available. The convention used throughout is the **quantum
+admits an explicit closed form by enumerating the $p(n)$ partitions
+once $\dim_q(\lambda)$ is written out for each partition. The convention used throughout is the **quantum
 hook-length formula** $\dim_q(\lambda) = [n]_q!\,/\,\prod_{x \in \lambda} [h_x]_q$,
 which reduces to the classical $S_n$-irrep dimension at $q = 1$.
 
 The status table:
 
-| $n$ | $p(n)$ | conj. pairs | self-conj. | Lean theorem | nucleus covered |
-|----:|-------:|------------:|-----------:|-------------|-------------------|
-| $3$ | $3$ | $1$ | $1$ ((2,1)) | inline at $\sigma_w$-trace | $\mathfrak{p}, \mathfrak{n}$ (single-vortex) |
-| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | `hecke_n6_frobenius_codim` | ${}^{4}$He (H_{12} block; ) |
-| $7$ | $15$ | $7$ | $1$ ((4,2,1)) | `hecke_n7_frobenius_codim` | A $\ge$ 5 nuclei |
-| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | `hecke_n8_frobenius_codim` | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne |
+| $n$ | $p(n)$ | conj. pairs | self-conj. | nucleus covered |
+|----:|-------:|------------:|-----------:|-------------------|
+| $3$ | $3$ | $1$ | $1$ ((2,1)) | $\mathfrak{p}, \mathfrak{n}$ (single-vortex) |
+| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | ${}^{4}$He (H_{12} block; ) |
+| $7$ | $15$ | $7$ | $1$ ((4,2,1)) | A $\ge$ 5 nuclei |
+| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne |
 
-Each closure follows the same proof scheme: (i) a `Fin.sum_univ_*`
-decomposition lemma extending Mathlib's `Fin.sum_univ_eight` to
-$p(n)$ summands via a sequence of `Fin.sum_univ_castSucc` peels;
-(ii) per-partition `@[simp]` lemmas unfolding $\dim_q(\lambda)$ to
-its product-of-$q$-integers form; (iii) the trace identity itself,
-discharged by `simp + ring` after the conjugate-pair grouping.
+Each closure follows the same proof scheme: (i) a decomposition of the
+sum into its $p(n)$ summands, one per partition; (ii) per-partition
+expansion of $\dim_q(\lambda)$ into its product-of-$q$-integers form;
+(iii) the trace identity itself, an identity of rational functions after
+the conjugate-pair grouping.
 
 The $n = 8$ closure introduces partitions whose hook-product
 cancellation against $[8]_q!$ leaves residual $/[2]_q$ factors
-(specifically (5,1,1,1), (4,4), (4,1,1,1,1), (2,2,2,2)). These are
-encoded as $(q + q^{-1})^{-1}$ in the explicit `dim_q` expressions;
-the `ring` discharge handles them via real-arithmetic field
-identities. Self-conjugates at $n = 8$ are (4,2,1,1) and (3,3,2).
-The complete index map and the conjugate-symmetric `Fin 22`
-ordering are documented in
-[`frobenius-codim-universal.lean`](frobenius-codim-universal.lean).
-
-The generator that produces the per-partition $\dim_q$ table and
-the Lean source is
-the canonical formalism;
-the JSON output and per-partition factor signatures are committed
-under `phase5-n8-dim-q-table.json`.
+(specifically (5,1,1,1), (4,4), (4,1,1,1,1), (2,2,2,2)). These appear
+as factors $(q + q^{-1})^{-1}$ in the explicit $\dim_q$ expressions
+and are handled by field identities. Self-conjugates at $n = 8$ are (4,2,1,1) and (3,3,2).
 
 Beyond $n = 8$, the same scheme extends mechanically to $n = 9$
 (partitions of $9$, $p(9) = 30$, needed for triton and ${}^{3}$He at

@@ -26,6 +26,7 @@ are q-dependent (kernel R(q,xi) needed). auditOnly; no production wiring.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -84,7 +85,7 @@ def main() -> int:
     # Q_beta(q0) = |Δnet|·E0 ; m_e in MeV
     from codata_constants import M_E_MEV  # noqa
     m_e = mp.mpf(str(M_E_MEV))
-    E0 = lambda qq: m_e / (qq * (qq - 1))
+    E0 = lambda qq: _qbeta_e0.order_zero_scaled(m_e, qq)
     Qb_q0 = abs(dn_mine) * E0(q0)
     print(f"  VALIDATE @ q0:  |Δnet|·E0 = {mp.nstr(Qb_q0,10)} MeV   (Q_β CODATA ≈ 0.78233)")
 

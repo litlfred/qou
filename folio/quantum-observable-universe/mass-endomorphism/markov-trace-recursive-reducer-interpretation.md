@@ -1,6 +1,6 @@
 ## Optimisation: memoisation on basis elements
 
-Each $S_n$ has $n!$ basis elements. We memoise the recursive `tr_M` on $(w, n)$ via `functools.lru_cache`. For repeated atom evaluations within a single Python process (e.g., in the multi-atom witness pipeline), we compute basis-element traces once and re-use them. This yields an asymptotic speed-up proportional to the duplication factor across atoms. Empirically, the cache hit rate exceeds 50% on the proton+neutron+deuteron sweep.
+Each $S_n$ has $n!$ basis elements. The recursive $\mathrm{tr}_M$ is memoised on $(w, n)$. For repeated atom evaluations within a single Python process (e.g., in the multi-atom witness pipeline), basis-element traces are computed once and re-used. This yields an asymptotic speed-up proportional to the duplication factor across atoms. Empirically, the cache hit rate exceeds 50% on the proton+neutron+deuteron sweep.
 
 ## Categorical interpretation
 

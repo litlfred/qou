@@ -4,7 +4,7 @@ export default remark({
   label: "rem:collatz-parity-to-divisor",
   title:
     "From integer parity to the $[2]_q$-divisor",
-  interprets: "prop:collatz-contact-boundary",
+  interprets: "conj:collatz-contact-boundary",
   uses: [
     "def:two-q-adic-valuation",
     "conj:q-collatz",

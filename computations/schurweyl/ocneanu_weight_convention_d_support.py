@@ -28,14 +28,10 @@ also Lean-proved sorry-free as
 
 PRECISION.  Part 1 is exact sympy over Q(q,z).  Part 2 compares against
 `computations/ocneanu_weights.py::omega_lambda_via_inversion`, an independent
-p(n) x p(n) linear solve, which is FLOAT64 -- that is the path's own arithmetic, not a
-choice made here.  This side is carried in mpmath at 50 dps; the agreement can therefore
-only be reported "to the limit of the float64 arithmetic the inversion path uses", and a
-discrepancy below ~1e-16 is invisible to this comparison by construction.  The
-qualitative half -- WHICH weights vanish -- does not depend on that resolution and is the
-substantive check.
+p(n) x p(n) linear solve.  That path was FLOAT64 until 2026-11-22 (branch-cache item
+P9); it now returns mpmath.mpf at qou_substrate.precision.COMPUTE_DPS, so both sides are
+mpf and the comparison is made here at 50 dps against a 1e-40 floor.
 
-Requires numpy + scipy (dependencies of the corpus inversion path, not of this script).
 """
 
 import math
@@ -100,7 +96,7 @@ assert not hitC, hitC
 # ------------------------------- part 2: cross-check vs the corpus inversion
 print()
 print("=" * 74)
-print("PART 2 -- cross-check vs computations/ocneanu_weights.py (float64 inversion)")
+print("PART 2 -- cross-check vs computations/ocneanu_weights.py (mpf inversion)")
 print("=" * 74)
 try:
     import ocneanu_weights as ow
@@ -108,16 +104,14 @@ except Exception as exc:                                    # pragma: no cover
     print(f"  SKIPPED: {type(exc).__name__}: {exc}")
     raise SystemExit(0)
 
-Q0 = mp.mpf(repr(ow.Q0))
-Z0 = mp.mpf(repr(ow.z_num))
+Q0 = +ow.Q0          # mpf since 2026-11-22; `mp.mpf(repr(.))` would raise on it
+Z0 = Q0**3 / (Q0**2 + 1)
 print(f"  q0     = {mp.nstr(Q0, 17)}")
 print(f"  z_num  = {mp.nstr(Z0, 17)}   (module defines z_num = Q0**3/(Q0**2+1))")
 print(f"  q^3/(q^2+1) at that q0 = {mp.nstr(Q0**3 / (Q0**2 + 1), 17)}   -> convention D")
 print()
-print("  NOTE: that module's DOCSTRING declares convention C, z = 1/(q^{1/2}+q^{-1/2})")
-print(f"        = {mp.nstr(1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0)), 17)}, which its own code does")
-print("        NOT use.  The code is canonical per the 2026-08-15 ruling; the docstring")
-print("        is stale.  Recorded, not edited here.")
+print("  NOTE: that module's docstring declared convention C until 2026-10-10 (bean")
+print("        qou-pc7l); its code was always convention D, and both now say D.")
 print()
 
 
@@ -131,7 +125,7 @@ def W(s):
     return num / den
 
 
-FLOAT64_FLOOR = mp.mpf('1e-15')
+FLOOR = mp.mpf('1e-40')
 worst = mp.mpf(0)
 bad = []
 for n in (2, 3, 4, 5):
@@ -140,30 +134,27 @@ for n in (2, 3, 4, 5):
     for shape, om in sorted(theirs.items()):
         s = tuple(shape)
         mine = dim(s) * W(s)                       # their omega_lam = d_lam * W_lam
-        t = mp.mpf(repr(om))
+        t = +om
         d = abs(mine - t)
         worst = max(worst, d)
         rows = len(s)
         pred = "0 (>=3 rows)" if rows >= 3 else ""
-        if rows >= 3 and abs(mine) > FLOAT64_FLOOR:
+        if rows >= 3 and abs(mine) > FLOOR:
             bad.append(("closed form nonzero on a >=3-row shape", n, s))
-        if rows >= 3 and abs(t) > FLOAT64_FLOOR:
+        if rows >= 3 and abs(t) > FLOOR:
             bad.append(("inversion nonzero on a >=3-row shape", n, s))
-        if d > FLOAT64_FLOOR:
-            bad.append(("disagreement above the float64 floor", n, s))
-        print(f"    {str(s):18s} inversion={float(t): .17g}  closed={mp.nstr(mine, 17):>22s}"
+        if d > FLOOR:
+            bad.append(("disagreement above the 1e-40 floor", n, s))
+        print(f"    {str(s):18s} inversion={mp.nstr(t, 17):>22s}  closed={mp.nstr(mine, 17):>22s}"
               f"  |diff|={mp.nstr(d, 3):>9s}  {pred}")
 
 print()
 print(f"  worst |diff| over n = 2..5: {mp.nstr(worst, 3)}")
-print("  -- agreement to the limit of the float64 arithmetic the inversion path uses;")
-print("     this comparison cannot distinguish that from a discrepancy below ~1e-16.")
-print("  The closed form's ~1e-18 residual on the >=3-row shapes is the float64 rounding")
-print("  of z_num propagating, NOT a nonzero weight: at the exact z = q^3/(q^2+1) it is")
-print("  identically zero, which is the Lean-proved statement.")
-print("  The qualitative half is resolution-independent: the closed form predicts WHICH")
-print("  weights vanish (exactly the >=3-row shapes), and the inversion returns float64")
-print("  noise on precisely those and nothing else.")
+print("  -- both sides mpf at 50 dps: agreement and the >=3-row zeros are checked")
+print("     against a 1e-40 floor, not the float64 floor this used to be limited to.")
+print("  The qualitative half: the closed form predicts WHICH weights vanish (exactly")
+print("  the >=3-row shapes), and the inversion returns zero to that floor on precisely")
+print("  those and nothing else.")
 print()
 print("VERDICT:", "consistent" if not bad else f"FAILURES: {bad}")
 sys.exit(0 if not bad else 1)

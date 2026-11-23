@@ -233,6 +233,23 @@ theorem trM_tensor₃ (hD : B'.D₁ = B.D) (a : A₁) (b : A₂) (c : A₃) :
     B'.D.trM (B'.tensor (B.tensor a b) c) = B.D₁.trM a * B.D₂.trM b * B'.D₂.trM c := by
   rw [B'.trM_tensor, hD, B.trM_tensor]
 
+/-- **Three-body trace decomposition into free product plus `y`-weighted deviation (`qou-hlbx`).** -/
+theorem trM_eq_tensor₃_add_weighted_deviation (hD : B'.D₁ = B.D)
+    (atom : A') (a : A₁) (b : A₂) (c : A₃) :
+    B'.D.trM atom =
+      B.D₁.trM a * B.D₂.trM b * B'.D₂.trM c +
+        ∑ l, B'.D.y l * B'.deviation atom (B.tensor a b) c l := by
+  rw [B'.trM_eq_tensor_add_weighted_deviation atom (B.tensor a b) c, hD, B.trM_tensor]
+
+/-- **Three-body `y`-weighted deviation pinned by a multiplicative bond factor (`qou-hlbx`).** -/
+theorem weighted_deviation₃_eq_of_trM_eq_mul (hD : B'.D₁ = B.D)
+    (atom : A') (a : A₁) (b : A₂) (c : A₃) (bond : R)
+    (h : B'.D.trM atom = B.D₁.trM a * B.D₂.trM b * B'.D₂.trM c * bond) :
+    ∑ l, B'.D.y l * B'.deviation atom (B.tensor a b) c l =
+      B.D₁.trM a * B.D₂.trM b * B'.D₂.trM c * (bond - 1) := by
+  have hdecomp := B.trM_eq_tensor₃_add_weighted_deviation B' hD atom a b c
+  linear_combination h - hdecomp
+
 end Iterated
 
 end BranchingData

@@ -345,3 +345,20 @@ Not formalised in Lean yet. The natural statement is a pair of lemmas on the exp
 - `trace_FE_differ`: taken alone, the FE traces differ by 3, independent of q.
 
 The 3×3 matrices themselves are computed from the coproduct in the probe and are not derived in Lean. The same holds for A and B in the parent file.
+
+## 23. Owner ruling 2026-11-20 on §18/§21: the 0.3254 MeV is Q_β, not m_n − m_p
+
+Recorded 2026-11-20 from PR #8586 (`docs/audits/2026-11-20-qbeta-flavour-weight-split.md` §6).
+
+- **D1 = A.** The owner adopted the T³ weight split of the z_D trace on the γγ base V³,
+  |ε_flavour(V³)|·E₀^full = |t_n − t_p|·E₀^full = **0.325433929 MeV**, as the **scored Q_β** on
+  the L2 scorecard (−58.402 % against CODATA 0.78233341 MeV).
+- **D2 = Q_β.** That number is Q_β, not m_n − m_p. So the "D1, corpus linear form" row of the §18
+  table is re-read: it is not an n–p splitting candidate. Under the ruling and the kinematic
+  identity m_n − m_p = Q_β + m_e, the implied **m_n − m_p = 0.8364 MeV (−35.3 %** against CODATA
+  1.2933 MeV), not 0.3254 MeV (−74.84 %). The other reading would have forced Q_β = 0.3254 − m_e
+  = −0.186 MeV, negative, which a Q-value cannot be.
+- **What stays open.** The sign of the mass ordering. §21 found that under mass ∝ trace the
+  neutron sector comes out smaller (t_n = q⁻²·t_p < t_p at q₀). The ruling fixes which observable
+  the magnitude belongs to; it does not supply a derivation that makes the neutron heavier. Q_β
+  uses |·|, so the sign does not enter the scored row. Bean `qou-99qc`.

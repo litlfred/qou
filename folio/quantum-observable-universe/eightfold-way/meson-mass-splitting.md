@@ -60,14 +60,12 @@ $$
   4m_K^2 - 3m_\eta^2 - m_\pi^2 \;=\; 0
   \qquad\text{for \emph{all} } a, b, c .
 $$
-This is proved over any commutative ring in
-`QOU/Eightfold/GellMannOkuboIdentity.lean`
-(`gmo_identity`), together with the sharper consequence
-`gmo_cannot_discriminate`: two arbitrarily different breaking
+This is proved over any commutative ring, together with the sharper
+consequence that two arbitrarily different breaking
 patterns give the *same* value of the combination, namely zero.  In
 particular $b$ --- the entire hypercharge dependence, which is the whole
 content of a breaking mechanism --- cancels
-(`gmo_independent_of_breaking_strength`).
+.
 
 Two consequences.  First, if the QOU crossing-energy splitting is
 first-order octet then it reproduces Gell-Mann--Okubo automatically and

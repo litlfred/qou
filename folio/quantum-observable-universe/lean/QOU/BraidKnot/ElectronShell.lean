@@ -88,7 +88,15 @@ instance nobleGasMultiOperator_of_fact
   ⟨hf.out⟩
 
 /-- **Multi-operator regime at noble-gas `Z`** (per-instance form).
-    Backed by `NobleGasMultiOperator`. -/
+    Backed by `NobleGasMultiOperator`.
+
+    **Assumed, not derived here** — the body projects
+    `NobleGasMultiOperator.multi`, so the multiplicity inequality
+    `bindingMultiplicity S q ≥ 2` is carried as a context-class hypothesis
+    (§3b-conditional, derivation pending), not derived below.
+    Boyd–Vandenberghe is cited for the convex-duality / KKT background of the
+    multi-operator regime, not for a proof performed here; since `S` and `q`
+    are arbitrary, this projection may not be converted to a global `axiom`. -/
 -- Ref: [leitner2026] braids-and-knots/electron-shell
 -- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition) + §5.3
 --      (strong duality for convex problems) + §5.5 (KKT optimality)

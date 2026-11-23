@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-cyclotomic-boundary-at-keystone",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:cyclotomic-boundary-at-keystone",
@@ -16,7 +17,7 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration",
     "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum",
-    "papers/quantum-observable-universe/blocks/prop-calibration-cohomology-alignment"
+    "papers/quantum-observable-universe/blocks/conj-calibration-cohomology-alignment"
   ],
   "tags": [
     "binding",

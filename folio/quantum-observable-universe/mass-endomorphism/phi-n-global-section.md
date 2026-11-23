@@ -22,8 +22,7 @@ trivialises the full-twist action. That picture carries two flaws:
    brane level $A_{n+1} = A_n \otimes \Omega^1(A_n)$ inherits the
    framing flux. Without a global cancellation mechanism, the
    accumulated flux at the :refterm[descent]{#descent} limit diverges.
-2. **Finite observable mass.** The categorical mass identity
-   ([def:hecke-mass-element](#def:hecke-mass-element)) is finite:
+2. **Finite observable mass.** The categorical mass identity is finite:
    $\mathfrak{m}(\varrho) \in \mathbb{R}$ for every observed
    hadron. Finite observable mass remains incompatible with
    unbounded framing flux.
@@ -32,7 +31,7 @@ The only consistent reconciliation requires global topological
 neutrality at saturation: at $n \in \mathfrak{M}$, the ribbon
 action on $\Phi_n$ evaluates globally to zero (in the centre-of-the-braid-group sense), not locally trivialised by some spectator structure.
 This forms precisely the
-`prop:categorical-neutrality-saturated-shells`
+[categorical neutrality of saturated shells](#prop:categorical-neutrality-saturated-shells)
 statement. It provides the structural reason a non-trivial action
 cannot coexist with finite mass at saturated $n$.
 
@@ -61,7 +60,7 @@ saturated $n$.
 
 ## Implications for the conjecture
 
-[`conj:mass-endomorphism`](#conj:mass-endomorphism) (the open
+[Mass endomorphism conjecture](#conj:mass-endomorphism) (the open
 problem of finding a closed-form NF for $\Phi_{\mathrm{mass}}$) is
 correspondingly reframed. The conjecture is no longer "find the
 local NF generators and combine". It becomes "find the categorical
@@ -69,7 +68,7 @@ global section that satisfies the saturated-shell global-neutrality
 constraint". The reframing constructs the magic-number ladder as a
 structural prediction rather than a numerical phenomenon.
 
-This remark interprets `conj:mass-endomorphism` only. It makes no
+This remark interprets the [mass endomorphism conjecture](#conj:mass-endomorphism) only. It makes no
 new logical claim. The mathematical content resides in the
 saturated-shell
 and [shell-condensation](./homological-shell-condensation.md)

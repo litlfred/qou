@@ -232,7 +232,13 @@ def compute_two_term_borromean_qed_mev(q0: mp.mpf, me_codata: mp.mpf) -> dict[st
         / (mp.mpf(9) * (q0**6))
     )
     delta_m_qed_two_term = -(me_codata / mp.mpf(3)) * delta_tr_conn
+    # Derived quantum-trace weighting (PR #8591): adjacent comparison and the ruled covariant
+    # all-pairs insertion (owner 2026-11-20 16:44), which is 0 on V^3. The 1/3-normalised value
+    # above is kept as the historical record this probe was written with.
+    import two_term_qtrace_weighting as _ttq
     return {
+        "delta_m_qed_derived_adjacent_mev": _ttq.delta_m_qed_conn_mev(q0, me_codata, "derived", "adjacent"),
+        "delta_m_qed_ruled_all_pairs_mev": _ttq.delta_m_qed_conn_mev(q0, me_codata),
         "delta_tr_QAdj_conn_borromeanV3": delta_tr_conn,
         "delta_m_qed_two_term_mev": delta_m_qed_two_term,
     }
@@ -381,6 +387,8 @@ def evaluate_lever_a_cosh_holonomy(
     w21_zD = gpmt_info["w21_zD"]
     dpn_codata = mn_codata - mp_codata
     delta_m_qed = qed_info["delta_m_qed_two_term_mev"]
+    delta_m_qed_adj = qed_info["delta_m_qed_derived_adjacent_mev"]
+    delta_m_qed_ruled = qed_info["delta_m_qed_ruled_all_pairs_mev"]
 
     # Convention-D elliptic N=1 and N=2 rungs via canonical substrate_ladder_quantities(q0, convention="D"):
     lad_d = substrate_ladder_quantities(q0, convention="D")
@@ -460,6 +468,12 @@ def evaluate_lever_a_cosh_holonomy(
                 "Q_KD_N2_plus_QED_pct_err": fmt((q_kd_n2_qed - q_codata) / q_codata * 100),
                 "Q_KD_N2_plus_QED_ppm_err": fmt((q_kd_n2_qed - q_codata) / q_codata * mp.mpf("1e6")),
                 "Q_KD_N2_plus_QED_eV_err": fmt((q_kd_n2_qed - q_codata) * mp.mpf("1e6")),
+                "Q_KD_N2_plus_QED_ruled_all_pairs_MeV": fmt(q_kd_n2 + delta_m_qed_ruled),
+                "Q_KD_N2_plus_QED_ruled_all_pairs_ppm_err": fmt(
+                    (q_kd_n2 + delta_m_qed_ruled - q_codata) / q_codata * mp.mpf("1e6")),
+                "Q_KD_N2_plus_QED_derived_adjacent_MeV": fmt(q_kd_n2 + delta_m_qed_adj),
+                "Q_KD_N2_plus_QED_derived_adjacent_ppm_err": fmt(
+                    (q_kd_n2 + delta_m_qed_adj - q_codata) / q_codata * mp.mpf("1e6")),
                 "m_n_final_MeV": fmt(mn_final),
                 "m_n_final_ppm_err": fmt(mn_final_ppm),
                 "Delta_pn_final_MeV": fmt(dpn_final),
@@ -475,6 +489,9 @@ def evaluate_lever_a_cosh_holonomy(
             "rung_N2_one_minus_u0_sq": fmt(rung_N2_factor),
             "product_N1_N2_D": fmt(rung_N1_N2_D),
             "delta_m_QED_conn_two_term_MeV": fmt(delta_m_qed),
+            "delta_m_QED_conn_two_term_note": "1/3-normalised adjacent 'plain' (historical record)",
+            "delta_m_QED_derived_adjacent_MeV": fmt(delta_m_qed_adj),
+            "delta_m_QED_ruled_all_pairs_MeV": fmt(delta_m_qed_ruled),
         },
         "kd_hyperbolic_factors": kd_factors,
         "live_cell_kd_table": live_cell_kd_table,

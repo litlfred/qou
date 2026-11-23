@@ -26,6 +26,7 @@ export default conjecture({
     "scope-b-excluded",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, general $n$)" },
     {
       kind: "caveat",
       body: "This block previously reported 12 % agreement with B(D)/(2m_p); that figure was computed in convention C, on the superseded grouped deuteron word.",

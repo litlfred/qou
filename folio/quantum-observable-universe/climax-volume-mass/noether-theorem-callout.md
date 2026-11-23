@@ -11,7 +11,7 @@ The three $q$-deformed kinematic quantities—$q$-momentum ([q-momentum](#def:q-
 
 **$q$-Anomaly.** At $q \neq 1$, the correspondence **deforms** rather than breaks. The key mechanism is $d_q^2 \neq 0$ ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared)): the $q$-differential does not square to zero. The classical chain of "symmetry $\Rightarrow$ closed current $\Rightarrow$ conserved charge" acquires a correction term at each step.
 
-1. **Energy** is not naively conserved in transitions. The $Q$-value of a nuclear decay differs from the sum of product kinetic energies by a $q$-anomaly $\delta_q \propto \hbar_q^2$ ([q-value transition](#def:Q-value-transition)). A shift in the effective substrate parameter absorbs the "missing" energy. The conserved quantity is the **full categorical action** evaluated at the shifted $q$.
+1. **Energy** is not naively conserved in transitions. The $Q$-value of a nuclear decay differs from the sum of product kinetic energies by a $q$-anomaly $\delta_q \propto \hbar_q^2$. A shift in the effective substrate parameter absorbs the "missing" energy. The conserved quantity is the **full categorical action** evaluated at the shifted $q$.
 2. **Momentum** acquires an anomalous correction $\delta p_q \propto \hbar_q$ from the non-commutativity of the Iwahori--Hecke algebra.
 3. **Angular momentum** remains exactly conserved (the $\mathrm{SU}_q(2)$ Casimir commutes with the coproduct), but its eigenvalues are $q$-deformed: $[j]_q[j+1]_q \neq j(j+1)$.
 

@@ -21,4 +21,4 @@ The fixed points $\{1/\varphi, -\varphi\}$ of the baryon integration-limit Möbi
 
 **Falsifiability.**
 
-We predict that any observable monotone in $q - q_{\mathrm{gold}}$ on the sub-classical side has a bar-paired analogue monotone in $\varphi^2 - q$ on the super-classical side. The same Hecke skew-symmetry that exchanges $L_+$ and $L_-$ in the Skein relation relates their sensitivities. At $q = q_0$, the super-classical margin $\approx 1.508$ dominates. This aligns with the empirical observation that nuclear physics is more robust against substrate compression than rarefaction.
+The prediction is that any observable monotone in $q - q_{\mathrm{gold}}$ on the sub-classical side has a bar-paired analogue monotone in $\varphi^2 - q$ on the super-classical side. The same Hecke skew-symmetry that exchanges $L_+$ and $L_-$ in the Skein relation relates their sensitivities. At $q = q_0$, the super-classical margin $\approx 1.508$ dominates. This aligns with the empirical observation that nuclear physics is more robust against substrate compression than rarefaction.

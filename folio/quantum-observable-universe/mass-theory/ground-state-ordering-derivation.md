@@ -47,7 +47,7 @@ $Z = 1$ it is the strict worst of all five arrangements on both
 readouts, while the sorted arrangement — which the rule reserves for
 $A \leq 3$ — is the minimiser.  The excess neutrons of the minimising
 arrangement head-pack rather than tail-pack.  Full tallies and the
-Lean-proved counterexample are in
+proved counterexample are in
 [the proposition](#prop:ground-state-ordering).
 
 ## Why the heuristic failed

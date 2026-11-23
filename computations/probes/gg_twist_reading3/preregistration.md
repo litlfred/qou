@@ -24,6 +24,15 @@ Either outcome is reported: "no word of writhe ≠ 0 passes up to length 6" (sco
 
 ## Stage 3 — full photon (owner 2026-11-16: "L is part of photon so it is supposed to be included … use it")
 
+> **Scope note (2026-11-20, added after the fact; the record above is unchanged).**
+> This stage was written with the photon's last term `σ₀σ₁`. By owner ruling
+> (bean `qou-99qc`, 2026-11-18, confirmed 2026-11-20) `def:photon` is
+> `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`. The two forms are the same family of elements
+> (`γ(φ₀,φ₁,φ₀₁) = 1 + (φ₀ − hφ₀₁)σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁`), so the span statement and
+> the word set B₃ used here are unaffected; only the colour-weight coordinates differ.
+> PR #8583.
+
+
 Basis: `gamma-gamma-generates-particles` (γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁; two-photon products span H₃(q), incl. L±
 and e⁻ = σ₀σ₁σ₀; `gamma_gamma_chirality_surjective`, `gamma_gamma_reaches_Lminus`). With γ and γ̄ the letters
 σ₀^±1, σ₁^±1 are all photon terms, so the full-photon γγ word set on 3 strands is the whole braid group B₃ and the

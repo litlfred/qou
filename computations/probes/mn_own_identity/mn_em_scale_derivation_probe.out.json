@@ -1,0 +1,69 @@
+{
+  "preregistration": "PREREGISTRATION-em-scale-derivation.md (be98c91fbf6)",
+  "q0_proton_pin": "1.109978582751380807591669",
+  "alpha_at_q0": "0.0073087015600556568914",
+  "tanh_ln_q0": "0.10396371005241014568",
+  "trM_Bor_at_q0": "0.99856216383678726595",
+  "checks": {
+    "Vol(4_1) matches constants": true,
+    "hol = 1 at q = 1": true,
+    "tanh(ln q0) = (q0^2-1)/(q0^2+1)": true
+  },
+  "candidates": {
+    "C1_crossing_energy_coulomb_channel": {
+      "n_plus": 3,
+      "n_minus": 3,
+      "coulomb_channel_each_nucleon": "3*(q - 1)*(q + 1)/q",
+      "strong_channel_each_nucleon": "0",
+      "Delta_n_minus_p_exact": "0 (same word for both nucleons)",
+      "note": "word-level channel is blind to the weight-block label; ratio tanh(ln q) undefined here because the symmetric channel is 0 (n_+ = n_-)"
+    },
+    "C2_tanh_times_D2_arm_WEAK": {
+      "E_M1_MeV_at_q0": "0.171182255156583",
+      "E_C2_MeV_at_q0": "0.0177967423412167",
+      "E_C2_over_(m_e Vol) series in eps=q-1": "9*epsilon**3 - 9*epsilon**2/4",
+      "E_C2_MeV_approaching_q=1": {
+        "q=1+1e-2": "-0.000220051401812094",
+        "q=1+1e-4": "-2.33291564701563e-8",
+        "q=1+1e-8": "-2.33385333813712e-16"
+      },
+      "uses_quark_charges": false
+    },
+    "C3_insertion_on_canonical_functional": {
+      "M_QCD_MeV_at_q0": "944.404076835604",
+      "tr_Wn(K hol)_at_q0": "2.69751674447454",
+      "tr_Wp(K hol)_at_q0": "3.32348212518579",
+      "a_n_over_alpha_at_q0": "-0.333333333333333",
+      "a_p_over_alpha_at_q0": "0",
+      "a_n_at_q=1": "-1/270",
+      "a_p_at_q=1": "0",
+      "E_C3_MeV_at_q0": "-2.30078918323043",
+      "E_C3_over_M_QCD_at_q0": "-0.00243623385335189",
+      "E_C3_over_M_QCD_at_q=1": "-1/270",
+      "hbar_q^2*E_C3/(m_e*Vol(4_1)) at q=1 (pole coefficient)": "-2/45",
+      "E_C3_MeV_approaching_q=1": {
+        "q=1+1e-2": "-450.673641136002",
+        "q=1+1e-4": "-4609157.68400677",
+        "q=1+1e-8": "-461008076012687.0"
+      },
+      "diagnostic_sector_share_variant_MeV_at_q0 (= EM-2 * |tr_M|)": "-0.763258384687588"
+    }
+  },
+  "predictions_checked": {
+    "C1 Delta = 0 exactly": true,
+    "C2 ~ +0.018 MeV at q0": "0.0177967",
+    "C2 -> 0 like -(9/4) m_e Vol eps^2": "-9/4",
+    "C3 negative": true,
+    "C3 magnitude in [1.5, 3.5] MeV": true,
+    "C3 pole coefficient = -2/45": "-2/45"
+  },
+  "comparison_printed_after": {
+    "BMW2015_lattice_QED_part_MeV": "-1.00 (approx)",
+    "CODATA_mn_minus_mp_MeV": "1.29333",
+    "EM1_keV": "-0.358",
+    "EM2_MeV": "-0.764",
+    "C3_over_lattice_QED": "2.30079",
+    "C2_over_lattice_QED": "-0.0177967",
+    "note": "target known before registration; no candidate adopted; scope (a)"
+  }
+}

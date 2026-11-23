@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-gb-spectral-sequence-interpretation",
@@ -16,7 +17,7 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
     "papers/quantum-observable-universe/blocks/thm-frobenius-codim-universal",
-    "papers/quantum-observable-universe/blocks/prop-mass-formula-regime-switching"
+    "papers/quantum-observable-universe/blocks/conj-mass-formula-regime-switching"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
   "tags": [

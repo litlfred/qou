@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-19T11:48:57.759127+00:00",
-  "commitSha": "67ccee2d220f8dcf8444871ce94c28dd653922f0",
+  "computedAt": "2026-11-20T19:50:28.713990+00:00",
+  "commitSha": "9be0b99e7af8d5a8387f0e3fa784054a3b765e05",
   "assertions": [
     {
       "name": "deuteron_full_tr_M_u_pole_eq_shift_NF",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 94,
+  "durationMs": 48,
   "computation": "per-irrep-pole-deuteron-h6",
   "scriptFile": "per_irrep_pole_atom.py",
-  "scriptHash": "12a690fe9df3",
-  "scriptCommitSha": "01b79b383f2173a74c0adc71a9b067151a1fd317",
+  "scriptHash": "0e7b8f60d9a2",
+  "scriptCommitSha": "9be0b99e7af8d5a8387f0e3fa784054a3b765e05",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,12 +30,22 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/per_irrep_pole_atom.py",
+      "deuteron"
+    ],
+    "reproduce": "python3 -u computations/per_irrep_pole_atom.py deuteron"
   },
   "description": "Path A: per-term symbolic u-pole-order analysis of the deuteron's tr_M = Σ_λ y_λ(q) · χ^λ_q(β_{1,1}) at q = u² (per the D(u) convention).  Loads cached symbolic y_λ from y-lambda-wenzl-bridge-symbolic-witness.json and cached chi_λ from chi-deuteron-h6.witness.json (auto-emit on first run, multiprocessing).  Per-term ord_{u=0}(y_λ · χ^λ) avoids the sp.together bottleneck.  Verifies shift_NF(β_deuteron) = 40 = 18·1 + 21·1 + 1, matching prop:per-nucleon-shift-additive-linearity.",
   "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
@@ -247,7 +257,7 @@
       "note": "Canonical crossings from atom_canonical_crossings(Z, N), aggregated per generator index.  Provides structural baseline for GAP-C-1 (q-integer counting per generator) in derivation-audit-report.md.  KLR-canonical-class enrichment per AGENTS.md §7b (and PR #608 KLR cemetery infra): each per-generator sub-word σ_g^k (pure power) is a cemetery class trivially; the full atom's canonical class is the per-partition χ-fingerprint at q_0 (emitted as `atom_chi_fingerprint` below)."
     },
     "atom_chi_fingerprint": {
-      "q0": 1.1099785827513808,
+      "q0": "1.1099785827513808075916690956107688798744991218736",
       "precision": 8,
       "n_partitions": 11,
       "fingerprint": [
@@ -260,7 +270,7 @@
             1,
             1
           ],
-          -0.67687668
+          "-0.67687668"
         ],
         [
           [
@@ -270,7 +280,7 @@
             1,
             1
           ],
-          2.15525534
+          "-0.33826264"
         ],
         [
           [
@@ -279,7 +289,7 @@
             1,
             1
           ],
-          -0.49012565
+          "1.00437229"
         ],
         [
           [
@@ -288,7 +298,7 @@
             1,
             1
           ],
-          -0.81965495
+          "-0.03669817"
         ],
         [
           [
@@ -296,7 +306,7 @@
             1,
             1
           ],
-          -0.46980589
+          "-1.20480513"
         ],
         [
           [
@@ -304,7 +314,7 @@
             2,
             1
           ],
-          -1.97227245
+          "0.38502861"
         ],
         [
           [
@@ -312,34 +322,34 @@
             2,
             2
           ],
-          -3.49729441
+          "-1.18043195"
         ],
         [
           [
             5,
             1
           ],
-          3.21631734
+          "-0.68228501"
         ],
         [
           [
             4,
             2
           ],
-          1.67439526
+          "0.32908035"
         ],
         [
           [
             3,
             3
           ],
-          4.24940202
+          "0.71394515"
         ],
         [
           [
             6
           ],
-          1.5598702
+          "1.55987020"
         ]
       ],
       "note": "Per-partition χ^λ(β_atom; q_0) tuple — heuristic comparison hash for braid/Markov-equivalence at q_0.  It is a NECESSARY but NOT SUFFICIENT condition for canonical-basis (KL) equivalence: identical fingerprints are evidence of equivalence, but two distinct canonical-basis classes can collide at the rounded-trace level (no iff guarantee).  Trace-only form because per-block matrices are not currently materialised at H_n>3 in Path A — full equivalence requires the per-block matrix entries (cf. r5_full_canonical_knot_solver.chi_fingerprint at H_3). Per Copilot review #r3213426336."
@@ -347,7 +357,7 @@
     "lean_uniqueness_ref": {
       "nucleus": "per-nucleus (H_6 deuteron / per-atom)",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },

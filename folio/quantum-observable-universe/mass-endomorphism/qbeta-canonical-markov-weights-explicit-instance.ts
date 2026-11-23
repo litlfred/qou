@@ -21,6 +21,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean class `CanonicalMarkovWeightsH3` (declared in [Per-block character closed forms for $\\chi_\\lambda(\\Delta_{T_\\beta})(q)$ over $H_3(q)$](qbeta-per-block-chi-closed-forms.md) §Extension #4) is inhabited. We construct an explicit $\\sqrt q$-bearing instance:" },
     {
       kind: "note",
       date: "2026-08-09",

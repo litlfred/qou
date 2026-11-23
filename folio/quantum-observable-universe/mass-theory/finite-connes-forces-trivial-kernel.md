@@ -22,10 +22,5 @@ exactly those with $y_\lambda > 0$ and each contributes a sum of squares. A defi
 form is what a Rieffel Lipschitz seminorm needs, so the construction that the
 degeneracy blocked runs unobstructed one level down.
 
-Two qualifications travel with the repair. Deleting the radical is observationally
-free --- no trace value moves, because the deleted block already contributed zero ---
-and that is established by
-[the branching identity](#prop:branching-identity-isospin-weights) rather than
-assumed here. Separately, the distance one recovers is not a Reeb step count at finite
-$q$; the mixing is quantified in
-[the finite-$q$ qualification](#rem:connes-distance-not-reeb-step-count).
+One qualification travels with the repair. Deleting the radical is observationally
+free: no trace value moves, because the deleted block already contributed zero.

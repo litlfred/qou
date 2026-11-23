@@ -1,0 +1,51 @@
+[    0.1s] L6: 132 fully commutative words, span dim over Q(q) 10 of 16 sectors
+[    4.3s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[    4.3s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[    4.4s]   span closed under the sector involution: True
+[    4.4s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[    4.4s]   beta(q) = alpha(1/q): True
+[    5.1s] L6: 720 all words, span dim over Q(q) 10 of 16 sectors
+[    8.3s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[    8.3s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[    8.3s]   span closed under the sector involution: True
+[    8.3s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[    8.4s]   beta(q) = alpha(1/q): True
+[    8.4s]   L6: fully commutative span agrees with the all-words span: True
+[    8.8s] L7e: 429 fully commutative words, span dim over Q(q) 10 of 16 sectors
+[   13.3s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   13.3s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   13.3s]   span closed under the sector involution: True
+[   13.3s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   13.3s]   beta(q) = alpha(1/q): True
+[   21.2s] L7e: 5040 all words, span dim over Q(q) 10 of 16 sectors
+[   24.8s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   24.8s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   24.8s]   span closed under the sector involution: True
+[   24.8s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   24.8s]   beta(q) = alpha(1/q): True
+[   24.8s]   L7e: fully commutative span agrees with the all-words span: True
+[   25.3s] L7s: 429 fully commutative words, span dim over Q(q) 14 of 16 sectors
+[   26.1s]   rank 1; relation on (kappa, kappa alpha, kappa beta): [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]
+[   26.1s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   26.1s]   span closed under the sector involution: False
+[   26.1s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   26.1s]   pinned alpha satisfies alpha(q) + alpha(1/q) = 1: True
+[   35.3s] L7s: 5040 all words, span dim over Q(q) 14 of 16 sectors
+[   36.0s]   rank 1; relation on (kappa, kappa alpha, kappa beta): [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]
+[   36.0s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   36.0s]   span closed under the sector involution: False
+[   36.0s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   36.1s]   pinned alpha satisfies alpha(q) + alpha(1/q) = 1: True
+[   36.1s]   L7s: fully commutative span agrees with the all-words span: True
+[   38.8s] L8s: 1430 fully commutative words, span dim over Q(q) 14 of 16 sectors
+[   39.6s]   rank 1; relation on (kappa, kappa alpha, kappa beta): [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]
+[   39.6s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   39.6s]   span closed under the sector involution: False
+[   39.6s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   39.6s]   pinned alpha satisfies alpha(q) + alpha(1/q) = 1: True
+[   39.6s] summary:
+[   39.6s]   L6: dim 10, rank 2, closed True, bar-closed True, Coulomb False, alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   39.6s]   L7e: dim 10, rank 2, closed True, bar-closed True, Coulomb False, alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   39.6s]   L7s: dim 14, rank 1, closed False, bar-closed True, Coulomb False, relation [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]; forces alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), equal to the L6 alpha: True
+[   39.6s]   L8s: dim 14, rank 1, closed False, bar-closed True, Coulomb False, relation [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]; forces alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), equal to the L6 alpha: True
+[   39.6s] done

@@ -2,7 +2,7 @@
 Sorting deposits energy because a disordered pair sits in the
 antisymmetric eigenspace at eigenvalue $-q^{-1}$, and sorting lifts
 it to the symmetric eigenspace at eigenvalue $q$; the exchange must
-therefore pay the gap between the two.  We make this precise by
+therefore pay the gap between the two.  This is made precise by
 computing the projections onto each eigenspace.
 
 (1) The Hecke relation $\sigma_i^2 - (q - q^{-1})\sigma_i - 1 = 0$

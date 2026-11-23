@@ -105,4 +105,11 @@ theorem ratios_are_scale_free (γ f₂ f₃ f₄ : R) :
   · unfold b3Contrib; ring
   · unfold b4Contrib; ring
 
+
+/-- **First projection of scale-freeness for `b3Contrib` (`qou-bmz8`).**
+Scaling `(f₂, f₃)` by `γ` scales `b3Contrib` by `γ`. -/
+theorem b3Contrib_scale (γ f₂ f₃ : R) :
+    b3Contrib (γ * f₂) (γ * f₃) = γ * b3Contrib f₂ f₃ :=
+  (ratios_are_scale_free γ f₂ f₃ 0).1
+
 end QOU.Mass.SaturationInvisibleToCumulants

@@ -110,7 +110,7 @@ theorem slot_nonneg_multiplicative {c rₐ r_b r_c : ℝ} (hc : 0 ≤ c)
     mul_nonneg (mul_nonneg hc hv) hw,
     mul_nonneg (mul_nonneg (mul_nonneg hc hu) hv) (sub_nonneg.mpr hw1)]
 
-/-- **The exclusion survives the slot correction, blockwise.**  If every Wedderburn block is
+/-- **The exclusion survives the slot correction, blockwise.**  If every spectral block is
 multiplicatively damped by the three bonds (factors in `[0,1]`, non-negative bases), the
 corrected slot `∑_{pairs}Δ²g + Δ³g` is non-negative — so a **positive** `μ₃` cannot equal it.
 
@@ -231,5 +231,17 @@ theorem door_needs_one_of_two_mechanisms (B : Finset ι) (w d : ι → ℝ)
   have hlt : ∑ l ∈ B, w l * d l < ∑ _l ∈ B, (0 : ℝ) := by simpa using h
   obtain ⟨l, hl, hlt'⟩ := Finset.exists_lt_of_sum_lt hlt
   exact ⟨l, hl, door_mechanism_dichotomy hlt'⟩
+
+/-- Vanishing of the third mixed finite difference on a constant baseline (`r = 1`
+on any bond): `thirdDiff c c c c c c c c = 0`, and for multiplicative damping
+with `r_c = 1` the triple difference vanishes identically. -/
+theorem thirdDiff_const_and_unit_damping (c rₐ r_b : ℝ) :
+    thirdDiff c c c c c c c c = 0 ∧
+      thirdDiff c (c * rₐ) (c * r_b) c
+        (c * rₐ * r_b) (c * rₐ) (c * r_b) (c * rₐ * r_b) = 0 := by
+  dsimp [thirdDiff]
+  constructor
+  · ring
+  · ring
 
 end QOU.MassTheory.Mu3SlotExclusion

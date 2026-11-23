@@ -151,4 +151,10 @@ theorem sq_min_le_sum_hookZ' (μ : YoungDiagram) (hr : 0 < μ.rowLen 0) (hc : 0 
     (min (μ.rowLen 0) (μ.colLen 0) : ℤ) ^ 2 ≤ ∑ c ∈ μ.cells, hookZ μ c :=
   sq_min_le_sum_hookZ μ (le_refl _) (le_refl _) hc hr
 
+/-- The difference between the cellwise hook sum and the squared minimum dimension is non-negative. -/
+theorem sum_hookZ_sub_sq_min_nonneg (μ : YoungDiagram) {N M : ℕ}
+    (hN : μ.colLen 0 ≤ N) (hM : μ.rowLen 0 ≤ M) (hN0 : 0 < N) (hM0 : 0 < M) :
+    0 ≤ ∑ c ∈ μ.cells, hookZ μ c - (min (μ.rowLen 0) (μ.colLen 0) : ℤ) ^ 2 :=
+  sub_nonneg.mpr (sq_min_le_sum_hookZ μ hN hM hN0 hM0)
+
 end QOU.BraidKnot.HookSum

@@ -1,0 +1,485 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1607.01632v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "1",
+   "text": "InthispaperwewillonlyhavetodealwithintegervaluesofN.Thedeﬁnitionhowever holds for real numbers.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "i)2= 0,j= i ± 1,"
+    },
+    {
+     "page": 4,
+     "context": "isdeﬁnedforbothoperators(asinequation(6))andrealnumbers"
+    }
+   ],
+   "block": "library/arxiv-1607.01632v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "Foratablewheretheaccuracyofthemassrelationsisevaluatedfordiﬀerentvaluesofn, see Gavrilik [3].",
+   "marks": [
+    {
+     "page": 5,
+     "context": "whereitistheaveragemassofisopletsthathasbeenused"
+    }
+   ],
+   "block": "library/arxiv-1607.01632v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "3",
+   "text": "Itisworthnotingthatthesecondorderﬂavorsymmetrybreakingaﬀectsonlybaryons with a strangeness of 2 or 3, namely Ξ, Ξ∗and Ω.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "ﬁndsthat"
+    }
+   ],
+   "block": "library/arxiv-1607.01632v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "4",
+   "text": "Puttingtheexperimentaldatainto23,substitutingq=eiπ/ngivesn=22(forinteger n). The error that formula 3 give when n = 22 is just 0.01%!",
+   "marks": [
+    {
+     "page": 9,
+     "context": "Althoughthisisnottheabsolutebestchoiceforq"
+    }
+   ],
+   "block": "library/arxiv-1607.01632v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "5",
+   "text": "Theauthorisindebtedtotherefereeforpointingoutthatformula(26)withθ10= π",
+   "marks": [
+    {
+     "page": 10,
+     "context": "thespinparityJPanddeformationparameterq"
+    }
+   ],
+   "block": "library/arxiv-1607.01632v2/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "4Y"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "i,i=1,"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "qH"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "qHi−q−H"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "i)"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "i)2= 0,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "i)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "(Hi)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "i)"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "3.CalculateexpressionsformassesMBi=<B"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "[2]qn−1Ξ =[3]q"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "[2]qn−1−[3]q"
+  },
+  {
+   "page": 5,
+   "mark": "7",
+   "context": "[3]q"
+  },
+  {
+   "page": 5,
+   "mark": "7",
+   "context": "[2]q"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "[2]q7−1+ Σ,"
+  },
+  {
+   "page": 5,
+   "mark": "7",
+   "context": "[2]q7−1+ Σ,q"
+  },
+  {
+   "page": 5,
+   "mark": "7",
+   "context": "[2]q"
+  },
+  {
+   "page": 6,
+   "mark": "14",
+   "context": "motivatedbytheobservationthat[2]q"
+  },
+  {
+   "page": 6,
+   "mark": "7",
+   "context": "motivatedbytheobservationthat[2]q14isreadilyrelatedto[2]q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "([2]q14)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "([2]q14)2= q"
+  },
+  {
+   "page": 6,
+   "mark": "7",
+   "context": "14= q"
+  },
+  {
+   "page": 6,
+   "mark": "7",
+   "context": "+ 2 = [2]q"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "δ0Σ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "δ0Ξ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "δ0p + δ0Ξ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "2δ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "2δ0Λ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "2(2δ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "2(2δ0Σ+ −δ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "2(2δ0Σ+ −δ0Σ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "2(p + Ξ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "4(3Λ + 2Σ+ −Σ"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "2(Ω−+Σ∗−)=5.18MeVis"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Ξ"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Σ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "p +(2Ξ"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "[2]q"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "[2]q7−1+(Σ−−Σ"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "3([2]q"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "3([2]q"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "p + Ξ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "2(2Σ+ −Σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2(2Σ+ −Σ0),T= 5."
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "[2]q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "[2]q7−1+ Σ,"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "[2]q7−1+ Σ,q"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "[2]q"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "p +(2Ξ"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "[2]q"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "[2]q7−1+(Σ−−Σ"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "3([2]q"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "3([2]q"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "Ω−∆= ([2]q"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "Ω−∆= ([2]q14+ 1)(Ξ∗−Σ∗),q"
+  },
+  {
+   "page": 9,
+   "mark": "21",
+   "context": "Ω−−∆−= ([2]q"
+  },
+  {
+   "page": 9,
+   "mark": "21",
+   "context": "Ω−−∆−= ([2]q21+ 1)(Ξ∗−−Σ∗−),q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "by solving both mass relations for [2]q"
+  },
+  {
+   "page": 9,
+   "mark": "21",
+   "context": "by solving both mass relations for [2]q7and [2]q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "21)"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "21)3= [2]q"
+  },
+  {
+   "page": 9,
+   "mark": "21",
+   "context": "21)3= [2]q7+ 3[2]q"
+  },
+  {
+   "page": 9,
+   "mark": "21",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "21",
+   "context": "q21= (q"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "Σ−−Σ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "Σ−−Σ0−2Ξ"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "7, such that"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "7, such that q= eiθ"
+  },
+  {
+   "page": 10,
+   "mark": "10",
+   "context": "7, such that q= eiθ8for octet baryons and θ"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "With the choice of θ"
+  },
+  {
+   "page": 10,
+   "mark": "10",
+   "context": "suchthatq=eiθ"
+  },
+  {
+   "page": 10,
+   "mark": "10",
+   "context": "θ"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "θ"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "Thesechoicesforθ"
+  },
+  {
+   "page": 10,
+   "mark": "10",
+   "context": "Thesechoicesforθ8andθ"
+  },
+  {
+   "page": 10,
+   "mark": "10",
+   "context": "tionstomassaretakenintoaccounthowever,thechoiceq=eiθ"
+  },
+  {
+   "page": 10,
+   "mark": "10",
+   "context": "superior,providingasigniﬁcantlybetterﬁttodatathanθ"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "2θ"
+  },
+  {
+   "page": 10,
+   "mark": "10",
+   "context": "2θ"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "MakingtheobservationthatforoctetbaryonsJ"
+  }
+ ]
+}

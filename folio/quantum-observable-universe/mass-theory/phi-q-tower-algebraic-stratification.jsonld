@@ -2,22 +2,23 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-phi-q-tower-algebraic-stratification",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:phi-q-tower-algebraic-stratification",
   "kind": "proposition",
   "title": "Algebraic stratification of the Φ$_q$ tower in $H_n(R, q)$ (no 3-manifold language)",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-phi-q-piece"
+    "papers/quantum-observable-universe/blocks/def-phi-q-piece",
+    "papers/quantum-observable-universe/blocks/rem-mass-endomorphism-jet-tower"
   ],
   "cites": [
-    "references/bokut1978",
     "references/shirshov1962",
     "references/jones1987"
   ],
@@ -30,7 +31,7 @@
     "no-3-manifold",
     "narrative-anchor"
   ],
-  "leanRef": "qou:QOU.BraidKnot.phi_q_tower_algebraic_stratification",
+  "leanRef": "qou:QOU.BraidKnot.phi_q_tower_algebraic_stratification_of_regrouping",
   "text": "phi-q-tower-algebraic-stratification.md",
   "provenance": "authored"
 }

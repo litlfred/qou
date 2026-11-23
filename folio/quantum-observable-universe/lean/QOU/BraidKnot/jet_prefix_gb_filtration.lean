@@ -5,7 +5,7 @@ import Mathlib.Tactic.FieldSimp
 /-!
 # QOU.BraidKnot.jet_prefix_gb_filtration
 
-**Proposition** ([`prop:jet-prefix-gb-filtration`](../../../mass-theory/jet-prefix-gb-filtration.md)).
+**Proposition** ([`conj:jet-prefix-gb-filtration`](../../../mass-theory/jet-prefix-gb-filtration.md)).
 
 *Define the Gröbner–Shirshov-filtered prefix `β_k^GS` of an atomic braid word
 `T_w ∈ H_{3A}(q)` as the projection onto the filtration stratum*
@@ -75,7 +75,7 @@ Bean `qou-z9ws`.
 namespace QOU.BraidKnot
 
 /-- **The jet-level prefix evaluation**
-([`prop:jet-prefix-gb-filtration`](../../../mass-theory/jet-prefix-gb-filtration.md)),
+([`conj:jet-prefix-gb-filtration`](../../../mass-theory/jet-prefix-gb-filtration.md)),
 as a proposition over caller-supplied data:
 
     a_k = tr_M^{[ℓ]}(β_k^GS) / Σ_λ w_λ · dim Res^{H_k}_{H_3}(V_λ).

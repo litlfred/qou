@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-knot-particle-correspondence",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:knot-particle-correspondence",
@@ -16,6 +17,9 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/def-hadron"
   ],
+  "cites": [
+    "references/jones1987"
+  ],
   "tags": [
     "knot",
     "particle",
@@ -23,7 +27,7 @@
     "schur-weyl",
     "markov-trace"
   ],
-  "leanRef": "qou:QOU.Braiding.knot_particle_correspondence",
+  "leanRef": "qou:QOU.Braiding.no_surjection_onto_infinite",
   "text": "knot-particle-correspondence.md",
   "leanSource": "knot-particle-correspondence.lean",
   "provenance": "authored"

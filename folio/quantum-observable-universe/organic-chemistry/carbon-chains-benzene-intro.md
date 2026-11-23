@@ -1,4 +1,4 @@
-We instantiate the chain–ring machinery at $N = 6$. The **linear $\mathrm{C}_6$ Hopf chain** assembles six carbons with a $6 \times 6$ tridiagonal linking matrix. Interior carbons consume two of their four sites for the backbone. Endpoint carbons carry three dangling links each. These soft modes make linear $\mathrm{C}_6$ flexible.
+The chain–ring machinery is instantiated at $N = 6$. The **linear $\mathrm{C}_6$ Hopf chain** assembles six carbons with a $6 \times 6$ tridiagonal linking matrix. Interior carbons consume two of their four sites for the backbone. Endpoint carbons carry three dangling links each. These soft modes make linear $\mathrm{C}_6$ flexible.
 
 **Benzene** is the closed counterpart: six carbons threaded by $T(2,6)$, whose two components are the two delocalised $\pi$ electrons. Its reduced Alexander polynomial $q^2 + 1 + q^{-2}$ replaces six pairwise Hopf weights with a single threading invariant. This explains bond-order equalisation and the $\mathrm{C}_6\mathrm{H}_6$ formula. 
 

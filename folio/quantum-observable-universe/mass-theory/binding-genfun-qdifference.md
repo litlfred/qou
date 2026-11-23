@@ -1,8 +1,8 @@
-**Proposition (q-difference recurrence of the binding generating function; conditional on [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)).**
+**Proposition (q-difference recurrence of the binding generating function).**
 
 Let $G(x;q)=\sum_{n\geq 0} B_n(K)\,x^n$ be the generating function of the
 body-order binding terms
-([`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)).
+([Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$](#conj:binding-manybody-eq-jet-filtration)).
 Suppose $G$ satisfies a fibre-level $q$-difference equation
 
 $$
@@ -35,7 +35,7 @@ $G$. By the precision-floor obstruction — the $c_k$ information bound, which
 makes term data unmeasurable beyond low order — $R$ **cannot** be fixed by
 fitting the $B_n$; it must be derived from the fibre root-of-unity
 singularity structure of the Seiberg--Witten differential
-([`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum)). This is the
+([The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum)). This is the
 same $q$-difference machinery as the $\mathfrak{Q}_\beta$ precision ladder, applied to
 the binding series.
 
@@ -46,13 +46,12 @@ the binding series.
 >
 > The **raw** carrier — the ordinary generating function of the raw body terms
 > $B_n = I(n)/n$ — was excluded by the confluent/Gevrey growth argument
-> ([`QOU.Mass.QDifferenceConfluentObstruction.no_bounded_depth_first_order_kernel`](../lean/QOU/Mass/QDifferenceConfluentObstruction.lean)).
+> (proved).
 > That exclusion explicitly re-targeted the conjecture at the
 > **$q$-Borel / Gevrey-normalized** carrier $b_n = f_n/[n]_q!$, predicting depth
 > $d = 2$. The normalized carrier provably satisfies
 > $[m+2]_q\,b_{m+2} = b_{m+1} + b_m$, i.e. the operator
-> $L_{\mathcal{K}} = (q^2x-1)\sigma^2 - (q-1)\sigma - (q-1)$ named by
-> [`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol).
+> $L_{\mathcal{K}} = (q^2x-1)\sigma^2 - (q-1)\sigma - (q-1)$.
 >
 > A scalar kernel is a first-order right factor $\sigma - a$ of
 > $L_{\mathcal{K}}$, i.e. a solution $a\in K(x)$ of the $q$-Riccati equation
@@ -66,8 +65,7 @@ the binding series.
 > $L_{\mathcal{K}}$ obeys any scalar relation $G(qx) = R(q,x)G(x)$ with
 > $R \in K(x)$** — a fortiori none with $R\in\mathbb{Q}(q)[x,x^{-1}]$ of any
 > depth $d$; the depth never enters the argument, only the degrees do.
-> Formalized in
-> [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean).
+> This exclusion is proved.
 >
 > **Scope (b), structural exclusion, invariant cited.** The parity is the
 > Newton-slope invariant: $L_{\mathcal{K}}$ is pure isoclinic of slope
@@ -88,3 +86,22 @@ the binding series.
 > scalar kernel does exist on the double cover, relating half-shifts — that is,
 > even and odd body orders separately. That ramification is the missing
 > structure, not a gap in the argument.
+
+**Geometric target of the kernel module (literature).** Fix $q\in\mathbb{C}$
+with $0<|q|<1$ and let $K=\mathbb{C}(\{z\})$ be the field of germs of
+meromorphic functions at $0$, with $\varphi(z)=qz$. Van der Put and Reversat
+show that a $q$-difference module $M$ over $K$ induces functorially a vector
+bundle $v(M)$ on the Tate curve $\mathbb{C}^{*}/q^{\mathbb{Z}}$, for all slopes,
+and recover Atiyah's classification of indecomposable bundles on that curve as
+a corollary \cite[Introduction, \S2]{vanderput-reversat2007}. Two points of
+convention apply before this is used here. First, the kernel module
+$\mathcal{K}$ above is stated over $K(x)$ with $q$ an indeterminate and its
+slope is read at $x=\infty$, so the functor applies only after $q$ is
+specialised to a complex number with $|q|\neq 1$ and the module is passed to
+germs at a point; for $|q|>1$, as at the substrate value $q_0$, one replaces
+$(q,\Phi)$ by $(q^{-1},\Phi^{-1})$, which leaves the lattice $q^{\mathbb{Z}}$,
+and so the curve, unchanged. Second, the Tate curve $\mathbb{C}^{*}/q^{\mathbb{Z}}$
+is not the Descartes elliptic curve $\mathcal{E}_q$ of
+[the Descartes elliptic curve](#prop:descartes-elliptic-curve); the symbol
+$\mathcal{E}_q$ keeps that meaning, and the bundle $v(\mathcal{K})$ itself is
+not constructed in this paper.

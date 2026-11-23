@@ -102,22 +102,22 @@ def withCounit (F : FrobeniusHopfDataPreAxiom C) (g : F.obj ⟶ (𝟙_ C)) :
   { F with counit := g }
 
 @[simp] theorem withAntipode_obj (F : FrobeniusHopfDataPreAxiom C)
-    (g : F.obj ⟶ F.obj) : (F.withAntipode g).obj = F.obj := rfl
+    (g : F.obj ⟶ F.obj) : (F.withAntipode g).obj = F.obj := Eq.refl _
 
 @[simp] theorem withAntipode_antipode (F : FrobeniusHopfDataPreAxiom C)
-    (g : F.obj ⟶ F.obj) : (F.withAntipode g).antipode = g := rfl
+    (g : F.obj ⟶ F.obj) : (F.withAntipode g).antipode = g := Eq.refl _
 
 @[simp] theorem withAntipode_mul (F : FrobeniusHopfDataPreAxiom C)
-    (g : F.obj ⟶ F.obj) : (F.withAntipode g).mul = F.mul := rfl
+    (g : F.obj ⟶ F.obj) : (F.withAntipode g).mul = F.mul := Eq.refl _
 
 @[simp] theorem withAntipode_comul (F : FrobeniusHopfDataPreAxiom C)
-    (g : F.obj ⟶ F.obj) : (F.withAntipode g).comul = F.comul := rfl
+    (g : F.obj ⟶ F.obj) : (F.withAntipode g).comul = F.comul := Eq.refl _
 
 @[simp] theorem withUnit_unit (F : FrobeniusHopfDataPreAxiom C)
-    (g : (𝟙_ C) ⟶ F.obj) : (F.withUnit g).unit = g := rfl
+    (g : (𝟙_ C) ⟶ F.obj) : (F.withUnit g).unit = g := Eq.refl _
 
 @[simp] theorem withCounit_counit (F : FrobeniusHopfDataPreAxiom C)
-    (g : F.obj ⟶ (𝟙_ C)) : (F.withCounit g).counit = g := rfl
+    (g : F.obj ⟶ (𝟙_ C)) : (F.withCounit g).counit = g := Eq.refl _
 
 /-! ### Independence -/
 
@@ -214,5 +214,81 @@ theorem id_eq_zero_of_antipode_sq_eq_id
     (0 : F.obj ⟶ F.obj) = CategoryTheory.CategoryStruct.id F.obj := by
   have := FrobeniusHopfDataPreAxiom.involutive_of_sq_eq_id h F 0
   rwa [CategoryTheory.Limits.zero_comp] at this
+
+/-! ### Independence of `unit`, `counit`, and `frobeniusForm` in the 6-law package (`qou-k4zx`)
+
+Bean `qou-k4zx` records two questions that the monomial-map group-algebra probe
+(`frobenius_hopf_axiom_independence_probe.py`) could not separate:
+
+1. **Why `antipode_unit` (`S(1) = 1`) is not redundant in general:** on a group
+   algebra `k[G]` a monomial map `S` sends `1` to a basis group element, where
+   being idempotent forces `S(1) = 1`. In a general algebra with a non-trivial
+   idempotent `e ≠ 1` (such as `ℚ × ℚ` with `e = (1, 0)`), the projection
+   `S(x, y) = (x, 0)` is an anti-multiplicative involution (`S(ab) = S(b)S(a)`)
+   whose image of the unit `(1, 1)` is `(1, 0) ≠ (1, 1)`.
+2. **Why `antipode_counit` (`ε ∘ S = ε`) and `antipode_frobeniusForm` (`λ ∘ S = λ`)
+   are independent once `λ ≠ ε`:** on `k[G]` the counit and Frobenius form
+   coincide (`λ = ε`), so each forces the other. On `ℚ × ℚ` with the factor-swap
+   involution `S(x, y) = (y, x)` (which is an algebra/coalgebra anti-automorphism
+   fixing `(1, 1)` and squaring to `id`), choosing a symmetric counit
+   `ε(x, y) = x + y` and a non-degenerate asymmetric Frobenius form
+   `λ(x, y) = x + 2y` satisfies `ε ∘ S = ε` while violating `λ ∘ S = λ`
+   (and dually when `ε` and `λ` are exchanged). -/
+
+/-- The idempotent projection `S(x, y) = (x, 0)` on `ℚ × ℚ`. -/
+def idempotentProjAntipode (p : ℚ × ℚ) : ℚ × ℚ := (p.1, 0)
+
+/-- **`idempotentProjAntipode` is anti-multiplicative (`S(ab) = S(b)S(a)`),
+    yet violates `S(1) = 1` (`qou-k4zx`).** -/
+theorem idempotentProjAntipode_anti_mul_not_unit :
+    (∀ a b : ℚ × ℚ,
+      idempotentProjAntipode (a.1 * b.1, a.2 * b.2) =
+        ((idempotentProjAntipode b).1 * (idempotentProjAntipode a).1,
+         (idempotentProjAntipode b).2 * (idempotentProjAntipode a).2)) ∧
+    idempotentProjAntipode (1, 1) ≠ (1, 1) := by
+  refine ⟨fun a b => ?_, ?_⟩
+  · ext <;> simp [idempotentProjAntipode, mul_comm]
+  · intro h
+    have h2 : (0 : ℚ) = 1 := congrArg Prod.snd h
+    norm_num at h2
+
+/-- The factor-swap involution `S(x, y) = (y, x)` on `ℚ × ℚ`. -/
+def swapAntipode (p : ℚ × ℚ) : ℚ × ℚ := (p.2, p.1)
+
+/-- Symmetric linear functional `(x, y) ↦ x + y` on `ℚ × ℚ`. -/
+def symLinearForm (p : ℚ × ℚ) : ℚ := p.1 + p.2
+
+/-- Non-degenerate asymmetric linear functional `(x, y) ↦ x + 2y` on `ℚ × ℚ`. -/
+def asymLinearForm (p : ℚ × ℚ) : ℚ := p.1 + 2 * p.2
+
+/-- **Invariance of the pairing functional `λ` is independent of `antipode_counit`,
+    `antipode_anti_mul`, `antipode_unit`, and `antipode_involutive` when `λ ≠ ε` (`qou-k4zx`).** -/
+theorem pairingForm_independent_of_counit :
+    (∀ a b : ℚ × ℚ,
+      swapAntipode (a.1 * b.1, a.2 * b.2) =
+        ((swapAntipode b).1 * (swapAntipode a).1,
+         (swapAntipode b).2 * (swapAntipode a).2)) ∧
+    swapAntipode (1, 1) = (1, 1) ∧
+    (∀ a : ℚ × ℚ, swapAntipode (swapAntipode a) = a) ∧
+    (∀ a : ℚ × ℚ, symLinearForm (swapAntipode a) = symLinearForm a) ∧
+    ¬ (∀ a : ℚ × ℚ, asymLinearForm (swapAntipode a) = asymLinearForm a) := by
+  refine ⟨fun a b => ?_, rfl, fun a => ?_, fun a => ?_, ?_⟩
+  · ext <;> simp [swapAntipode, mul_comm]
+  · ext <;> rfl
+  · simp [swapAntipode, symLinearForm, add_comm]
+  · intro h
+    have h10 := h (1, 0)
+    norm_num [swapAntipode, asymLinearForm] at h10
+
+/-- **Dually, `antipode_counit` is independent of the pairing-functional invariance law (`qou-k4zx`).** -/
+theorem counit_independent_of_pairingForm :
+    (∀ a : ℚ × ℚ, symLinearForm (swapAntipode a) = symLinearForm a) ∧
+    asymLinearForm (swapAntipode (1, 0)) ≠ asymLinearForm (1, 0) := by
+  constructor
+  · intro a
+    change a.2 + a.1 = a.1 + a.2
+    exact add_comm a.2 a.1
+  · intro h
+    norm_num [swapAntipode, asymLinearForm] at h
 
 end QOU.AntipodeIndependence

@@ -1,226 +1,226 @@
 {
-  "computation": "deuteron-two-body-kernel-overshoot",
-  "scriptFile": "deuteron_two_body_kernel_overshoot_probe.py",
-  "q0Anchor": "comparison",
-  "q0Values": {
-    "proton": "1.1099785827513808075916690956107688798744991218736",
-    "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+ "computation": "deuteron-two-body-kernel-overshoot",
+ "scriptFile": "deuteron_two_body_kernel_overshoot_probe.py",
+ "q0Anchor": "comparison",
+ "q0Values": {
+  "proton": "1.1099785827513808075916690956107688798744991218736",
+  "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+ },
+ "q0AnchorReason": "results are computed at the PROTON pin (owner directive 2026-08-07); the MUON pin is read once, to compute the proton-vs-muon spread of E_0 that bounds how far the energy scale could move. The comparison is the subject of the `allowed_rel_move` column, not an accidental layer straddle.",
+ "computedAt": "2026-11-20T15:22:01.027535+00:00",
+ "engine": "mpmath mpf at 60 dps; no float64 anywhere; 0 free parameters",
+ "free_parameters": 0,
+ "inputs": {
+  "q0": "1.10997858275138080759166909561076887987449912187360000000000",
+  "q0_pin": "proton (experimental / Physical-Observations layer)",
+  "m_e_MeV": "0.510998950690000000000000000000000000000000000000000000000000",
+  "B_AME_2H_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
+  "B_AME_role": "COMPARISON TARGET ONLY \u2014 never inverted into any output",
+  "convention": "D (z = q^3/(q^2+1)), owner ruling R1 2026-08-15",
+  "pn_convention": "bring_color_weighted, owner ruling R3 2026-08-15",
+  "arithmetic": "mpmath mpf, 60 dps"
+ },
+ "results": {
+  "z_D": "0.612688037146465251595829863945899248026308391545087014074774",
+  "h": "0.209060298795639315430846213129674943859757495263063078255215",
+  "flavor_delta": "0.00137571080702709600855110927410655062222547601193777493132134",
+  "t_derived": "0.499656072298243225997862222681473362344443630997015556267170",
+  "E_0_MeV": "4.18598136329447589694506215875900841014348689087871544862230",
+  "interface_factor": "0.508229789376738962577995797655893603898308390916567021541465",
+  "L_pn": "0.676740929803152870231636729034957439696823375384424028894735",
+  "B_sym_2H_MeV": "2.83282491993457306573280762985339199535209801902165446534043",
+  "overshoot_percent": "27.3428014834790291128583914406949092075613672014640187080262",
+  "residual_MeV": "0.608258719934573065732807629853391995352098019021654465340429",
+  "bar_symmetric_B_MeV": "2.83375482411947010855370314674164655959009612888689419999772",
+  "bar_symmetric_closed_form_MeV": "2.83375482411947010855370314674164655959009612888689419999772",
+  "bar_symmetric_closed_form_agrees": true,
+  "bar_symmetric_closed_form": "E_0 * ln( 2 q (q^2+1) / (q^4+1) )  [writhe factor exactly 1 at t=1/2]",
+  "flavour_split_contribution_MeV": "-0.000929904184897042820895516888254564237998109865239734657294705",
+  "admissible_band": {
+   "t_0_pp_MeV": "1.55983316771362360313997578015708712210734546756011096806376",
+   "t_1_nn_MeV": "4.28865945981016341161480803958136261902981937757687139229904",
+   "B_AME_2H_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
+   "target_inside_band": true,
+   "note": "the band is WRITHE-CONSISTENT: delta_e = 2t-1 is varied with t. The [2.0507, 3.7978] band quoted in the 2026-08-25 low-isotope audit is the NO-WRITHE band, and its 't = 0.119453' requirement is the no-writhe root; both are superseded here."
   },
-  "q0AnchorReason": "results are computed at the PROTON pin (owner directive 2026-08-07); the MUON pin is read once, to compute the proton-vs-muon spread of E_0 that bounds how far the energy scale could move. The comparison is the subject of the `allowed_rel_move` column, not an accidental layer straddle.",
-  "computedAt": "2026-08-29T03:08:09.261448+00:00",
-  "engine": "mpmath mpf at 60 dps; no float64 anywhere; 0 free parameters",
-  "free_parameters": 0,
-  "inputs": {
-    "q0": "1.10997858275138080759166909561076887987449912187360000000000",
-    "q0_pin": "proton (experimental / Physical-Observations layer)",
-    "m_e_MeV": "0.510998950690000000000000000000000000000000000000000000000000",
-    "B_AME_2H_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
-    "B_AME_role": "COMPARISON TARGET ONLY \u2014 never inverted into any output",
-    "convention": "D (z = q^3/(q^2+1)), owner ruling R1 2026-08-15",
-    "pn_convention": "bring_color_weighted, owner ruling R3 2026-08-15",
-    "arithmetic": "mpmath mpf, 60 dps"
-  },
-  "results": {
-    "z_D": "0.612688037146465251595829863945899248026308391545087014074774",
-    "h": "0.209060298795639315430846213129674943859757495263063078255215",
-    "flavor_delta": "0.00137571080702709600855110927410655062222547601193777493132134",
-    "t_derived": "0.499656072298243225997862222681473362344443630997015556267170",
-    "E_0_MeV": "4.18598136329447589694506215875900841014348689087871544862230",
-    "interface_factor": "0.508229789376738962577995797655893603898308390916567021541465",
-    "L_pn": "0.676740929803152870231636729034957439696823375384424028894735",
-    "B_sym_2H_MeV": "2.83282491993457306573280762985339199535209801902165446534043",
-    "overshoot_percent": "27.3428014834790291128583914406949092075613672014640187080262",
-    "residual_MeV": "0.608258719934573065732807629853391995352098019021654465340429",
-    "bar_symmetric_B_MeV": "2.83375482411947010855370314674164655959009612888689419999772",
-    "bar_symmetric_closed_form_MeV": "2.83375482411947010855370314674164655959009612888689419999772",
-    "bar_symmetric_closed_form_agrees": true,
-    "bar_symmetric_closed_form": "E_0 * ln( 2 q (q^2+1) / (q^4+1) )  [writhe factor exactly 1 at t=1/2]",
-    "flavour_split_contribution_MeV": "-0.000929904184897042820895516888254564237998109865239734657294705",
-    "admissible_band": {
-      "t_0_pp_MeV": "1.55983316771362360313997578015708712210734546756011096806376",
-      "t_1_nn_MeV": "4.28865945981016341161480803958136261902981937757687139229904",
-      "B_AME_2H_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
-      "target_inside_band": true,
-      "note": "the band is WRITHE-CONSISTENT: delta_e = 2t-1 is varied with t. The [2.0507, 3.7978] band quoted in the 2026-08-25 low-isotope audit is the NO-WRITHE band, and its 't = 0.119453' requirement is the no-writhe root; both are superseded here."
-    },
-    "free_parameter_inventory": [
-      {
-        "ingredient": "m_e",
-        "role": "sets the MeV unit",
-        "fixed_by": "CAL-1 (CODATA electron mass)",
-        "kind": "calibration input",
-        "continuous_freedom": 0
-      },
-      {
-        "ingredient": "q_0",
-        "role": "substrate modulus",
-        "fixed_by": "CAL-2 via the proton mass-ratio pin (0.017 ppb)",
-        "kind": "calibration input",
-        "continuous_freedom": 0
-      },
-      {
-        "ingredient": "E_0 = m_e/(q_0(q_0-1))",
-        "role": "energy scale of the bond",
-        "fixed_by": "derived form, observations/mass-formula-validation.md",
-        "kind": "derived",
-        "continuous_freedom": 0
-      },
-      {
-        "ingredient": "z_D = q^3/(q^2+1)",
-        "role": "Markov parameter",
-        "fixed_by": "owner ruling R1 2026-08-15 (convention D canonical)",
-        "kind": "discrete convention",
-        "continuous_freedom": 0
-      },
-      {
-        "ingredient": "a = 1",
-        "role": "interface coefficient in a*sigma + b*1",
-        "fixed_by": "convexity of the colour superposition (a = (1-t)+t = 1)",
-        "kind": "forced",
-        "continuous_freedom": 0
-      },
-      {
-        "ingredient": "t = 1/2 - delta/4",
-        "role": "p-n colour weight",
-        "fixed_by": "owner ruling R3 + prop:flavor-split-substrate",
-        "kind": "derived",
-        "continuous_freedom": 0
-      },
-      {
-        "ingredient": "(1-h)^(delta_e/2)",
-        "role": "writhe normalisation",
-        "fixed_by": "QOU.QBeta.WritheNormalisation (sorry-free, unique up to sign)",
-        "kind": "proved",
-        "continuous_freedom": 0
-      },
-      {
-        "ingredient": "one p-n bond",
-        "role": "chain topology at A=2",
-        "fixed_by": "A=2 has exactly one nucleon pair",
-        "kind": "forced",
-        "continuous_freedom": 0
-      }
-    ],
-    "continuous_free_parameter_count": 0,
-    "where_the_miss_lives": [
-      {
-        "ingredient": "colour weight t",
-        "derived_value": "0.499656072298243225997862222681473362344443630997015556267170",
-        "required_value": "0.268071040531590190524443238834560693114378059028442280023890",
-        "required_displacement": "0.231585031766653035473418983846912669230065571968573276243280",
-        "allowed_scale": "0.000343927701756774002137777318526637655556369002984443732830335",
-        "allowed_scale_meaning": "the entire derived flavour split delta/4",
-        "displacement_over_allowed": "673.353819956120284392170807145449509658619831596255791148100",
-        "reachable": true
-      },
-      {
-        "ingredient": "energy scale E_0",
-        "derived_value": "4.18598136329447589694506215875900841014348689087871544862230",
-        "required_value": "3.28717549365171552571859787127223454605571437508153550826327",
-        "required_rel_move": "-0.214718077228938458807981441103676115652722317069814933543454",
-        "allowed_rel_move": "0.000000128831033328995665582077880393396434800583483195560875760989",
-        "reachable": true,
-        "allowed_rel_move_meaning": "the ENTIRE proton-vs-muon pin spread",
-        "displacement_over_allowed": "1666664.24758554210592818097652206617300301792317266708531413"
-      },
-      {
-        "ingredient": "Markov parameter z",
-        "derived_value": "0.612688037146465251595829863945899248026308391545087014074774",
-        "required_value": "0.692173283800313721440046182272430974088391747359664699107700",
-        "required_rel_move": "0.129732003621358840557519951570496291417204823871667689964874",
-        "convention_C_value": "0.499320334183694452413442680257666303751948164041531945276170",
-        "note": "convention C is FARTHER from the required z than D is; the R1 ruling moved z toward the deuteron and away from A >= 3, which is why it cannot be read as a fit to 2H",
-        "reachable": true
-      },
-      {
-        "ingredient": "writhe normalisation",
-        "whole_contribution_MeV": "-0.000337652069950704605008171638627528834762141705805244477500912",
-        "miss_MeV": "0.608258719934573065732807629853391995352098019021654465340429",
-        "fraction_of_miss": "-0.000555112584307914105321131799924683203454315503864019878619921",
-        "reachable": false,
-        "note": "the entire writhe term is ~5.7e-4 of the miss; it cannot carry it"
-      },
-      {
-        "ingredient": "substrate modulus q_0 (pin abandoned)",
-        "derived_value": "1.10997858275138080759166909561076887987449912187360000000000",
-        "required_value": "1.13532171999850117666261656305179525652521385585453297839349",
-        "required_rel_move": "0.0228320957187305174063236481728217469996535563654304027051149",
-        "allowed_rel_move": "1.7e-11 (proton pin, 0.017 ppb)",
-        "reachable": true,
-        "note": "listed for completeness; moving q_0 breaks CAL-2 and every other observable at once"
-      }
-    ],
-    "lean_bound_crosscheck": [
-      {
-        "claim": "q_lo <= q_0",
-        "holds": true
-      },
-      {
-        "claim": "q_0 <= q_hi",
-        "holds": true
-      },
-      {
-        "claim": "0.6126879 <= z_D",
-        "holds": true
-      },
-      {
-        "claim": "z_D <= 0.6126881",
-        "holds": true
-      },
-      {
-        "claim": "0.2090601 <= h",
-        "holds": true
-      },
-      {
-        "claim": "h <= 0.2090604",
-        "holds": true
-      },
-      {
-        "claim": "4.185980 <= E_0",
-        "holds": true
-      },
-      {
-        "claim": "0.499 <= t_derived",
-        "holds": true
-      },
-      {
-        "claim": "t_derived <= 1/2",
-        "holds": true
-      },
-      {
-        "claim": "0.4996 <= t_derived",
-        "holds": true
-      },
-      {
-        "claim": "delta <= 0.001377",
-        "holds": true
-      },
-      {
-        "claim": "q^4 <= 1.5180",
-        "holds": true
-      },
-      {
-        "claim": "z_D - h/2 == (q^4+1)/(2q(q^2+1))",
-        "holds": true
-      },
-      {
-        "claim": "1.25 * B_AME < B_sym(2H)",
-        "holds": true
-      },
-      {
-        "claim": "B_sym(q, 0.4) > 2.4",
-        "holds": true
-      }
-    ],
-    "lean_crosscheck_all_hold": true
-  },
-  "verdict": "B_sym(2H) = E_0 * L_pn = 2.8328 MeV against B_AME = 2.2246 MeV, +27.34 %, with ZERO continuous free parameters: m_e is CAL-1, q_0 is the CAL-2 proxy pin, E_0's form is derived, the interface coefficient a = 1 is forced by convexity, the colour weight is derived from prop:flavor-split-substrate, and the writhe factor is Lean-proved unique up to sign. So the overshoot is a PARAMETER-FREE PREDICTION FAILURE of the two-body kernel, not a tuning gap. Of the ingredients, only the colour weight t reaches the target at all, and it must move 673x its own derived scale (delta/4) to do so; a fix through E_0 needs -21.5 % against a 128 ppb CAL-2 pin spread, i.e. 1.7e6x the available room, so no CAL-2-respecting fix exists inside this kernel.",
-  "scope": "scope-(a) scope-limited negative: the two-body Markov-trace kernel, ALONE, with convention D and the derived colour weighting, does not reproduce B_AME(2H). NOT scope-(b): the target IS inside the convention-D admissible band (reached at t ~ 0.268), so no invariant excludes it, and an ADDITIVE term is untouched by anything measured here. The convention-C-era claim that 2H sat below the whole band does not survive the R1 ruling.",
-  "lean": "QOU.MassTheory.DeuteronTwoBodyKernel (7 theorems, sorry-free)",
-  "wired": false,
-  "notes": "Supersedes the band [2.0507, 3.7978] and the requirement t = 0.119453 quoted in docs/audits/2026-08-25-low-isotope-binding-error-staleness-vs-gap.md section 6: both are NO-WRITHE values, computed before the 2026-08-09 writhe normalisation was applied to the p-n bond. The writhe-consistent band is [1.5598, 4.2887] and the root is t = 0.26807.",
-  "scriptHash": "3206392ad66a",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "adb0c673114f637a5a6b70badc8fb14ab14ffff8",
-  "durationMs": 0
+  "free_parameter_inventory": [
+   {
+    "ingredient": "m_e",
+    "role": "sets the MeV unit",
+    "fixed_by": "CAL-1 (CODATA electron mass)",
+    "kind": "calibration input",
+    "continuous_freedom": 0
+   },
+   {
+    "ingredient": "q_0",
+    "role": "substrate modulus",
+    "fixed_by": "CAL-2 via the proton mass-ratio pin (0.017 ppb)",
+    "kind": "calibration input",
+    "continuous_freedom": 0
+   },
+   {
+    "ingredient": "E_0 = m_e/(q_0(q_0-1))",
+    "role": "energy scale of the bond",
+    "fixed_by": "derived form, observations/mass-formula-validation.md",
+    "kind": "derived",
+    "continuous_freedom": 0
+   },
+   {
+    "ingredient": "z_D = q^3/(q^2+1)",
+    "role": "Markov parameter",
+    "fixed_by": "owner ruling R1 2026-08-15 (convention D canonical)",
+    "kind": "discrete convention",
+    "continuous_freedom": 0
+   },
+   {
+    "ingredient": "a = 1",
+    "role": "interface coefficient in a*sigma + b*1",
+    "fixed_by": "convexity of the colour superposition (a = (1-t)+t = 1)",
+    "kind": "forced",
+    "continuous_freedom": 0
+   },
+   {
+    "ingredient": "t = 1/2 - delta/4",
+    "role": "p-n colour weight",
+    "fixed_by": "owner ruling R3 + prop:flavor-split-substrate",
+    "kind": "derived",
+    "continuous_freedom": 0
+   },
+   {
+    "ingredient": "(1-h)^(delta_e/2)",
+    "role": "writhe normalisation",
+    "fixed_by": "QOU.QBeta.WritheNormalisation (sorry-free, unique up to sign)",
+    "kind": "proved",
+    "continuous_freedom": 0
+   },
+   {
+    "ingredient": "one p-n bond",
+    "role": "chain topology at A=2",
+    "fixed_by": "A=2 has exactly one nucleon pair",
+    "kind": "forced",
+    "continuous_freedom": 0
+   }
+  ],
+  "continuous_free_parameter_count": 0,
+  "where_the_miss_lives": [
+   {
+    "ingredient": "colour weight t",
+    "derived_value": "0.499656072298243225997862222681473362344443630997015556267170",
+    "required_value": "0.268071040531590190524443238834560693114378059028442280023890",
+    "required_displacement": "0.231585031766653035473418983846912669230065571968573276243280",
+    "allowed_scale": "0.000343927701756774002137777318526637655556369002984443732830335",
+    "allowed_scale_meaning": "the entire derived flavour split delta/4",
+    "displacement_over_allowed": "673.353819956120284392170807145449509658619831596255791148100",
+    "reachable": true
+   },
+   {
+    "ingredient": "energy scale E_0",
+    "derived_value": "4.18598136329447589694506215875900841014348689087871544862230",
+    "required_value": "3.28717549365171552571859787127223454605571437508153550826327",
+    "required_rel_move": "-0.214718077228938458807981441103676115652722317069814933543454",
+    "allowed_rel_move": "0.000000128831033328995665582077880393396434800583483195560875760989",
+    "reachable": true,
+    "allowed_rel_move_meaning": "the ENTIRE proton-vs-muon pin spread",
+    "displacement_over_allowed": "1666664.24758554210592818097652206617300301792317266708531413"
+   },
+   {
+    "ingredient": "Markov parameter z",
+    "derived_value": "0.612688037146465251595829863945899248026308391545087014074774",
+    "required_value": "0.692173283800313721440046182272430974088391747359664699107700",
+    "required_rel_move": "0.129732003621358840557519951570496291417204823871667689964874",
+    "convention_C_value": "0.499320334183694452413442680257666303751948164041531945276170",
+    "note": "convention C is FARTHER from the required z than D is; the R1 ruling moved z toward the deuteron and away from A >= 3, which is why it cannot be read as a fit to 2H",
+    "reachable": true
+   },
+   {
+    "ingredient": "writhe normalisation",
+    "whole_contribution_MeV": "-0.000337652069950704605008171638627528834762141705805244477500912",
+    "miss_MeV": "0.608258719934573065732807629853391995352098019021654465340429",
+    "fraction_of_miss": "-0.000555112584307914105321131799924683203454315503864019878619921",
+    "reachable": false,
+    "note": "the entire writhe term is ~5.7e-4 of the miss; it cannot carry it"
+   },
+   {
+    "ingredient": "substrate modulus q_0 (pin abandoned)",
+    "derived_value": "1.10997858275138080759166909561076887987449912187360000000000",
+    "required_value": "1.13532171999850117666261656305179525652521385585453297839349",
+    "required_rel_move": "0.0228320957187305174063236481728217469996535563654304027051149",
+    "allowed_rel_move": "1.7e-11 (proton pin, 0.017 ppb)",
+    "reachable": true,
+    "note": "listed for completeness; moving q_0 breaks CAL-2 and every other observable at once"
+   }
+  ],
+  "lean_bound_crosscheck": [
+   {
+    "claim": "q_lo <= q_0",
+    "holds": true
+   },
+   {
+    "claim": "q_0 <= q_hi",
+    "holds": true
+   },
+   {
+    "claim": "0.6126879 <= z_D",
+    "holds": true
+   },
+   {
+    "claim": "z_D <= 0.6126881",
+    "holds": true
+   },
+   {
+    "claim": "0.2090601 <= h",
+    "holds": true
+   },
+   {
+    "claim": "h <= 0.2090604",
+    "holds": true
+   },
+   {
+    "claim": "4.185980 <= E_0",
+    "holds": true
+   },
+   {
+    "claim": "0.499 <= t_derived",
+    "holds": true
+   },
+   {
+    "claim": "t_derived <= 1/2",
+    "holds": true
+   },
+   {
+    "claim": "0.4996 <= t_derived",
+    "holds": true
+   },
+   {
+    "claim": "delta <= 0.001377",
+    "holds": true
+   },
+   {
+    "claim": "q^4 <= 1.5180",
+    "holds": true
+   },
+   {
+    "claim": "z_D - h/2 == (q^4+1)/(2q(q^2+1))",
+    "holds": true
+   },
+   {
+    "claim": "1.25 * B_AME < B_sym(2H)",
+    "holds": true
+   },
+   {
+    "claim": "B_sym(q, 0.4) > 2.4",
+    "holds": true
+   }
+  ],
+  "lean_crosscheck_all_hold": true
+ },
+ "verdict": "B_sym(2H) = E_0 * L_pn = 2.8328 MeV against B_AME = 2.2246 MeV, +27.34 %, with ZERO continuous free parameters: m_e is CAL-1, q_0 is the CAL-2 proxy pin, E_0's form is derived, the interface coefficient a = 1 is forced by convexity, the colour weight is derived from prop:flavor-split-substrate, and the writhe factor is Lean-proved unique up to sign. So the overshoot is a PARAMETER-FREE PREDICTION FAILURE of the two-body kernel, not a tuning gap. Of the ingredients, only the colour weight t reaches the target at all, and it must move 673x its own derived scale (delta/4) to do so; a fix through E_0 needs -21.5 % against a 128 ppb CAL-2 pin spread, i.e. 1.7e6x the available room, so no CAL-2-respecting fix exists inside this kernel.",
+ "scope": "scope-(a) scope-limited negative: the two-body Markov-trace kernel, ALONE, with convention D and the derived colour weighting, does not reproduce B_AME(2H). NOT scope-(b): the target IS inside the convention-D admissible band (reached at t ~ 0.268), so no invariant excludes it, and an ADDITIVE term is untouched by anything measured here. The convention-C-era claim that 2H sat below the whole band does not survive the R1 ruling.",
+ "lean": "QOU.MassTheory.DeuteronTwoBodyKernel (7 theorems, sorry-free)",
+ "wired": false,
+ "notes": "Supersedes the band [2.0507, 3.7978] and the requirement t = 0.119453 quoted in docs/audits/2026-08-25-low-isotope-binding-error-staleness-vs-gap.md section 6: both are NO-WRITHE values, computed before the 2026-08-09 writhe normalisation was applied to the p-n bond. The writhe-consistent band is [1.5598, 4.2887] and the root is t = 0.26807.",
+ "scriptHash": "5cc28f19e41d",
+ "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+ "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+ "durationMs": 0
 }

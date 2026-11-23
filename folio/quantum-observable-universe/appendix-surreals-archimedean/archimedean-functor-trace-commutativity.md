@@ -61,5 +61,5 @@ A\,\mathrm{Vol}(L6a4)$ with $\mathrm{Vol}(L6a4) = 8G$ the Borromean residue; the
 per-knot trace forms undershoot the heavier $^6\mathrm{Li}$ and $^7\mathrm{Li}$ by
 $\approx 1.6\times$, marking where the single-trace estimate gives way to shell
 structure. The side-by-side evaluation through this one canonical trace — now
-spanning $^2\mathrm{H}$ through $^7\mathrm{Li}$ — is recorded in
-`binding-single-pipeline-comparison.witness.json`.
+spanning $^2\mathrm{H}$ through $^7\mathrm{Li}$ — has been carried out
+numerically.

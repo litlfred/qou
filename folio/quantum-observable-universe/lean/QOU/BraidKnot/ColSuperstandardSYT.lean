@@ -82,4 +82,11 @@ theorem sytToTableau_colSuperstandardSYT (μ : YoungDiagram) :
     SpechtStandardBasis.sytToTableau (colSuperstandardSYT μ) = colSuperstandard μ :=
   SpechtStandardBasis.sytToTableau_sytOfStrict _ _ _
 
+/-- Strictness of column-adjacent labels in the column-superstandard filling implies inequality (`qou-geqa`). -/
+theorem labelAt_col_ne (μ : YoungDiagram) (i j : ℕ)
+    (hij : (i, j) ∈ μ) (hi1j : (i + 1, j) ∈ μ) :
+    SpechtStandardBasis.labelAt (colSuperstandard μ) hij
+      ≠ SpechtStandardBasis.labelAt (colSuperstandard μ) hi1j :=
+  ne_of_lt (labelAt_col_strict μ i j hij hi1j)
+
 end QOU.BraidKnot.ColSuperstandardTableau

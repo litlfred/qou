@@ -166,4 +166,21 @@ theorem pair_count_exceeds_adjacency_budget {A : ℕ} (hA : 7 ≤ A) :
   have hsq : 0 ≤ m * m := Nat.zero_le _
   omega
 
+
+/-- **Exact characterization of inter-nucleon single-generator coupling in the contiguous `3A` layout (`qou-8274`).**
+For distinct nucleons `i ≠ j`, a strand index `x` couples nucleon `i` to nucleon `j` (`IsCoupling i j x`)
+if and only if `x = 3 * i + 2` (the upper boundary strand of nucleon `i`) and `j = i + 1`. -/
+theorem isCoupling_of_ne_iff_boundary_strand {i j x : ℕ} (hne : i ≠ j) :
+    IsCoupling i j x ↔ x = 3 * i + 2 ∧ j = i + 1 := by
+  unfold IsCoupling nucleonBlock
+  rw [mem_block, mem_block]
+  omega
+
+/-- **Every consecutive nucleon pair `(i, i + 1)` is coupled at strand `3i + 2` (`qou-8274`).** -/
+theorem coupled_consecutive_pair (i : ℕ) :
+    IsCoupling i (i + 1) (3 * i + 2) ∧ Coupled i (i + 1) := by
+  have h : IsCoupling i (i + 1) (3 * i + 2) :=
+    (isCoupling_of_ne_iff_boundary_strand (by omega)).mpr ⟨rfl, rfl⟩
+  exact ⟨h, ⟨3 * i + 2, Or.inl h⟩⟩
+
 end QOU.Hecke.ContiguousCouplingGraph

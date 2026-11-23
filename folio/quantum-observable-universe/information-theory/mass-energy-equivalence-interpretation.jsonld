@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-mass-energy-equivalence-interpretation",
@@ -12,9 +13,9 @@
   ],
   "label": "rem:mass-energy-equivalence-interpretation",
   "kind": "remark",
-  "title": "Regime behaviour, the electron consistency check, and pair creation",
+  "title": "Regime behaviour, the electron, and pair creation",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-mass-energy-equivalence",
+    "papers/quantum-observable-universe/blocks/def-mass-energy",
     "papers/quantum-observable-universe/blocks/cor-mass-identity-C",
     "papers/quantum-observable-universe/blocks/rem-mass-energy-electron-check",
     "papers/quantum-observable-universe/blocks/rem-mass-energy-pair-creation"
@@ -23,7 +24,7 @@
     "papers/quantum-observable-universe/blocks/rem-mass-energy-electron-check",
     "papers/quantum-observable-universe/blocks/rem-mass-energy-pair-creation"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/thm-mass-energy-equivalence",
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-energy",
   "cites": [
     "references/yekutieli2015"
   ],

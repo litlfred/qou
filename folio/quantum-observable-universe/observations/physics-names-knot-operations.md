@@ -6,7 +6,7 @@ This table records the current mapping at $q_0 = 1.109978595642739\ldots$ (muon 
 See [Table](#tbl:physics-names-knot-operations-table-data).
 
 **Generation of the table.**
-A discovery cache is populated by SDP shadow-price analysis on Hecke Wedderburn blocks. It records each recurring categorical structure as a key. The lookup `physics-names.json` maps cache keys to physics names at the current $q_0$. The categorical cache keys are the source of truth. The physics names are the display layer.
+A discovery cache is populated by SDP shadow-price analysis on Hecke Wedderburn blocks. It records each recurring categorical structure as a key. A lookup table maps cache keys to physics names at the current $q_0$. The categorical cache keys are the source of truth. The physics names are the display layer.
 
 **Substrate dependency.**
 Several entries carry "Depends on $q_0$" annotations. These indicate:
@@ -16,4 +16,4 @@ Several entries carry "Depends on $q_0$" annotations. These indicate:
 
 The "alpha particle" identification requires $w_{(3,3,3,3)}(q_0)$ to dominate the depth-3 chirality cells of $H_{12}$. At $q_0 = 1.109978595642739\ldots$ (muon pin; the run behind this figure is not reproducible from the repository), this weight is $\sim 0.024$. It is the largest contribution at depth 3. At $q_0 = 1$ (classical limit), the weight becomes the symmetric-group Specht-module dimension squared over $12!$. The ranking changes. The "alpha particle" identification must be re-derived.
 
-**Remark.** This table is the interface between the categorical machinery (`prop:em-spectral-completeness`, `prop:gauge-coupling-uniqueness`, `prop:chirality-residue-mass-term`) and the physics-language predictions in this chapter. Every physics name in this chapter that does not appear in this table is either an external empirical reference (CODATA, AME) or a forward reference to a later definition.
+**Remark.** This table is the interface between the categorical machinery ([two-strand spectral completeness](#thm:em-spectral-completeness), [uniqueness of the scalar gauge coupling](#cor:gauge-coupling-uniqueness), [the chirality / non-chirality mass split](#prop:chirality-residue-mass-term)) and the physics-language predictions in this chapter. Every physics name in this chapter that does not appear in this table is either an external empirical reference (CODATA, AME) or a forward reference to a later definition.

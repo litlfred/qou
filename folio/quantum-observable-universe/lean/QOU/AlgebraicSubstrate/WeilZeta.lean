@@ -87,7 +87,7 @@ theorem eigenvalue_functional_equation
   exact ⟨σ i, hσ i⟩
 
 /-- The Castelnuovo–Severi inequality on B × B bounds the
-    self-intersection of the Frobenius correspondence, yielding
+    self-intersection of the correspondence, yielding
     |αᵢ|² ≤ q for all i. -/
 theorem castelnuovo_severi_bound
     (Z : LocalQZetaFunction) [IsWeilZeta Z] (i : Fin 8) :
@@ -121,12 +121,23 @@ theorem eigenvalue_norm_sq
   rw [hj_norm, div_pow, div_le_iff₀ hsq] at h_cs_j
   nlinarith [h_cs, h_cs_j, hq, hsq]
 
-/-- **Hasse–Weil bound**: every fundamental Frobenius eigenvalue αᵢ
-    of Bring's curve satisfies |αᵢ| = q^{1/2}.
+/-- Direct `[IsWeilZeta Z]` corollary (`qou-ahss`): every eigenvalue satisfies
+    `‖Z.eigenvalues i‖ ^ 2 = Z.q` without passing separate `h_cs` / `h_fe` witnesses. -/
+theorem eigenvalue_norm_sq_of_isWeilZeta
+    (Z : LocalQZetaFunction) [IsWeilZeta Z] (i : Fin 8) :
+    ‖Z.eigenvalues i‖ ^ 2 = Z.q :=
+  eigenvalue_norm_sq Z i (castelnuovo_severi_bound Z i) (eigenvalue_functional_equation Z i)
 
-    This is the Riemann hypothesis for curves over finite fields,
-    proved by Weil via the Castelnuovo–Severi inequality on the
-    self-product B × B.
+/-- Under `[IsWeilZeta Z]` (`qou-ahss`), the product of the squared norms of any two
+    eigenvalues equals `Z.q ^ 2`. -/
+theorem eigenvalue_norm_sq_mul
+    (Z : LocalQZetaFunction) [IsWeilZeta Z] (i j : Fin 8) :
+    ‖Z.eigenvalues i * Z.eigenvalues j‖ ^ 2 = Z.q ^ 2 := by
+  rw [norm_mul, mul_pow, eigenvalue_norm_sq_of_isWeilZeta Z i,
+    eigenvalue_norm_sq_of_isWeilZeta Z j, sq]
+
+/-- **Hasse–Weil bound**: every fundamental local-zeta eigenvalue αᵢ
+    of Bring's curve satisfies |αᵢ| = q^{1/2}.
 
     Stated **conditionally on `[IsWeilZeta Z]`** (§3b-cond): the two Weil
     inputs are hypotheses, and everything else is derived. The proof combines:

@@ -23,6 +23,12 @@ export default definition({
     { mime: "image/svg+xml", url: "rendered/quantum-observable-universe-1.svg", blockIndex: 1, hash: "198957633587" },
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the two table rows are `exteriorSquareDim_ne_zero_iff` and `exteriorSquareDim_eq_one_iff`.",
+    },
     { kind: "note", date: "2026-10-11", body: "Relocated from the block prose by the paper-voice commentary audit: earlier statements of this definition wrote ε as a non-degenerate epimorphism; the two dimension rows are proved in `lean/QOU/BraidsAndKnots/VolumeConstraintForcesFibreTwo.lean`." },
     {
       kind: "refined-framing",

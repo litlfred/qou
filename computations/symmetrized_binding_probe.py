@@ -39,6 +39,7 @@ Output: symmetrized-binding-probe.witness.json
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import sys
 import time
@@ -70,7 +71,7 @@ set_compute_dps()
 # disputed in-repo; we report B under BOTH so the structural conclusion (does
 # symmetrization move B toward AME?) is scale-independent.
 Q_BETA_MEV = mp.mpf("0.78233341")
-E0_MEV = M_E_MEV / (Q_MP * (Q_MP - 1))
+E0_MEV = _qbeta_e0.order_zero_scaled(M_E_MEV, Q_MP)
 
 ISO = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 

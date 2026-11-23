@@ -1,0 +1,1 @@
+The mass diﬀerences within the isoplets should not be ignored at the level of accuracy aﬀorded by these deformed mass relations because they exceed the error in these formulas (for the best ﬁt value of the deformation parameter q).

@@ -1,0 +1,6762 @@
+{
+ "description": "a4_bonds_generic_z_probe.py: Rule B at A = 4 with the Markov parameter z left FREE\n(exploratory; follows a3_bonds_generic_z_probe, not preregistered).\n\nPrediction, written before this probe was run, the same rule as at A = 3: bonds add to\nleading order in h, a bond (i, j) counted as a bond into nucleon j. So\n\n    ratio - 1 = n_into_p (1 - z^2)/2 h^4 + O(h^5)   if n_into_p > 0,\n              = n_bonds  (1 - z^2)/z h^5 + O(h^6)   otherwise,\n\nwith n_into_p the number of bonds (i, j) with order[j] = \"p\". Tested as a polynomial\nidentity in z on all 16 orders, over and under transport, for the gamma-gamma chain, the\nfour all-pairs formation routes of he4_all_pairs_exact_probe (bond placement: after the\nrunning maximum of j, as there), and two non-chain sets.\n\nExact: letter coefficients in Q[h], basis traces in Z[h, z] (hecke_flint.trT), so the trace\nis a polynomial in Q[h, z]. Block 0 factors out (towerTr_disjoint), so the tail suffices.",
+ "engine": "python-flint exact Q[h, z]",
+ "exploratory": true,
+ "checks": {
+  "rule_B_generic_z_A4": "224/224"
+ },
+ "rows": [
+  {
+   "order": "pppp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "pppn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-2*z^4 + 2*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-2*z^4 + 2*z^2",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-2*z^4 + 2*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-2*z^4 + 2*z^2",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "ppnn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "pnpn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-3*z^4 + 3*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-3*z^4 + 3*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-3*z^4 + 3*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-3*z^4 + 3*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-2*z^4 + 2*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-2*z^4 + 2*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-2*z^4 + 2*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-2*z^4 + 2*z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "pnnn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3*z^5 + 3*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3*z^5 + 3*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "nppn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-2*z^5 + 2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-2*z^5 + 2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-2*z^4 + 2*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-2*z^4 + 2*z^2",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-2*z^4 + 2*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-2*z^4 + 2*z^2",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "npnn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-5/2*z^5 + 5/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-5/2*z^5 + 5/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-z^5 + z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-z^5 + z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "nnpn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-3/2*z^5 + 3/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-3/2*z^5 + 3/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnp",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 4,
+   "lead": "-1/2*z^5 + 1/2*z^3",
+   "free_at_h0": "z^3",
+   "predicted_order": 4,
+   "predicted_lead": "-1/2*z^5 + 1/2*z^3",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-3*z^4 + 3*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-3*z^4 + 3*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "chain",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-3*z^4 + 3*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-3*z^4 + 3*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "D+D pairing a",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "D+D pairing b",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "3H+p",
+   "bonds": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "3He+n",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-6*z^4 + 6*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-6*z^4 + 6*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-2*z^4 + 2*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-2*z^4 + 2*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "02+13",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-2*z^4 + 2*z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-2*z^4 + 2*z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "over",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  },
+  {
+   "order": "nnnn",
+   "bonds_name": "13",
+   "bonds": [
+    [
+     1,
+     3
+    ]
+   ],
+   "variant": "under",
+   "h_order": 5,
+   "lead": "-z^4 + z^2",
+   "free_at_h0": "z^3",
+   "predicted_order": 5,
+   "predicted_lead": "-z^4 + z^2",
+   "match": true
+  }
+ ]
+}

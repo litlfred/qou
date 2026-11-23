@@ -10,6 +10,7 @@ export default proposition({
     "Lusztig bar ($q \\mapsto q^{-1}$) vs Hermitian-$\\ast$ ($q \\mapsto \\overline{q}^{-1}$) on the complex Hecke algebra: the two anti-involutions coincide on the parameter iff $q \\in \\mathbb{R}$. On the unit circle $|q| = 1$, Lusztig coincides with complex conjugation ($\\overline{q} = q^{-1}$) while Hermitian becomes the identity on $q$; on general $|q| > 1$ with $\\mathrm{Im}(q) \\neq 0$ the three involutions (Lusztig, Hermitian, complex conjugation) are pairwise distinct. The split is the categorical home for any future $\\mathrm{Im}(q_0)$ contribution.",
   uses: ["prop:q-zero-complex-extension"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean formalization specialises to $\\mathbb{R}$ for the archimedean evaluation at the substrate $q_0$." },
     {
       kind: "status",
       date: "2026-05-24",

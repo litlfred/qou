@@ -6,7 +6,7 @@ import QOU.ParticleInteractions.HadronDisplay
 # QOU.Hadron.exists — existence of hadrons
 
 Proton witnesses the existence of stable hadrons; Borromean braid +
-Hopf gluon gives E_cross < 0.
+gluon (L₋) gives E_cross < 0.
 
 LaTeX: `\label{prop:hadron-exists}`
 
@@ -21,7 +21,7 @@ namespace QOU
 /-- **Existence of hadrons.**
 
     A `Hadron` term exists. The intended witness is the proton
-    `𝔭 = B₃(u, u, d)` (Borromean braid + Hopf gluon, satisfying
+    `𝔭 = B₃(u, u, d)` (Borromean braid + gluon L₋, satisfying
     `E_cross < 0`), but constructing that witness requires the full
     Hecke-element + crossing-energy chain.
 

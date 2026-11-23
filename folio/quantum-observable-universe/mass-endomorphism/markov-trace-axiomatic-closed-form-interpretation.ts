@@ -20,4 +20,7 @@ export default remark({
     "def:markov-axiom-recursive-ascent",
   ],
   cites: ["jones1987", "kassel1995", "wenzl1988"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , [Mass-formula coefficients as shadow prices of the Frobenius positivity constraints](#prop:mass-coefficient-shadow-price)" },
+  ],
 });

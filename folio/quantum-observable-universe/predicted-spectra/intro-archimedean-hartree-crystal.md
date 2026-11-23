@@ -1,3 +1,3 @@
 Evaluating the Hartree and mass-tower series over $\mathbb{R}$ requires analytic special functions that realize the pre-archimedean $z$-Habiro cocycles. Through the archimedean realization functor $\tau_{\mathrm{arch}}$, the combinatorial branching of the Type-B folded Kashiwara crystal maps onto real-analytic dilogarithmic periods.
 
-This section establishes the Bloch-group decomposition of hyperbolic knot complements over Bring's surface, details the Type-B folded crystal combinatorics, and develops the formal Mathlib bridge for the Clausen function $\mathrm{Cl}_2(\theta)$ and the real-analytic Bloch–Wigner dilogarithm $D(z)$.
+This section establishes the Bloch-group decomposition of hyperbolic knot complements over Bring's surface, details the Type-B folded crystal combinatorics, and develops the Clausen function $\mathrm{Cl}_2(\theta)$ and the real-analytic Bloch–Wigner dilogarithm $D(z)$.

@@ -10,7 +10,6 @@ $$
 *the* **shared closed-form derivation** *across the α_shift
 universal chain's specialisations.*
 
-The scaffolded open math, the Lean structure, the class-instance
-closure, and the downstream consequence are collected in
+The open math, the conditional closure, and the downstream consequence are collected in
 [the Bring-residue resolvent context](#rem:bring-residue-resolvent-context).
 

@@ -1,4 +1,4 @@
-Given a branched cover $\mathcal{S}\to\mathbb{P}^1(\mathbb{C})$ with singular fibres at the critical values, we choose two loops $\gamma_1,\gamma_2$ in $\mathbb{P}^1(\mathbb{C})$ encircling distinct branch points. Parallel-transporting the spectral modes $w_k$ around these loops yields the holonomy operators:
+Given a branched cover $\mathcal{S}\to\mathbb{P}^1(\mathbb{C})$ with singular fibres at the critical values, choose two loops $\gamma_1,\gamma_2$ in $\mathbb{P}^1(\mathbb{C})$ encircling distinct branch points. Parallel-transporting the spectral modes $w_k$ around these loops yields the holonomy operators:
 ```tex
 \begin{equation}\label{eq:holonomy-generators}
   H_1=\sigma_1,\qquad H_2=\sigma_2.

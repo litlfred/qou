@@ -1,4 +1,4 @@
-The $\Phi_1$-minimisation of [`prop:shell-filling-rule`](#prop:shell-filling-rule) reproduces the aufbau and Hund rules:
+The $\Phi_1$-minimisation of [Shell filling minimises $\Phi_1$ (aufbau from LP dual)](#prop:shell-filling-rule) reproduces the aufbau and Hund rules:
 
 1. Inner shells ($n < n_{\mathrm{val}}$) fill completely because each additional electron in a partly filled inner shell reduces $\Phi_1$ more than any valence electron.
 

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-18T23:09:21.652220+00:00",
-  "commitSha": "f41c91cb7eacfa3c40bd2d7c8c97d88055f1a1c6",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T16:36:37.833286+00:00",
+  "commitSha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
   "assertions": [
     {
       "name": "twoMulP1_laurent_identity",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "electroweak-bring-schwinger-bridge",
   "scriptFile": "electroweak_bring_schwinger_bridge_probe.py",
   "scriptHash": "fc09799a0bda",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "48f446490cc833b25914ad7c198fcdd1a26a6e5c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -98,14 +98,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "a9f23cb94545f585"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -227,5 +228,7 @@
         "err_Z_sigma": "-1.53980292712615406684310772742654209808050798097756723307464"
       }
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

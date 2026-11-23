@@ -67,6 +67,15 @@ it is not q₀.
 
 ## Stage 3 — full-photon γγ words (pre-registered in 3df55fdc6d7)
 
+> **Scope note (2026-11-20, added after the fact; the record above is unchanged).**
+> This stage was written with the photon's last term `σ₀σ₁`. By owner ruling
+> (bean `qou-99qc`, 2026-11-18, confirmed 2026-11-20) `def:photon` is
+> `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`. The two forms are the same family of elements
+> (`γ(φ₀,φ₁,φ₀₁) = 1 + (φ₀ − hφ₀₁)σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁`), so the span statement and
+> the word set B₃ used here are unaffected; only the colour-weight coordinates differ.
+> PR #8583.
+
+
 **Word set.** The photon is γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁, and two-photon products span H₃(q)
 (`gamma-gamma-generates-particles`, theorems `gamma_gamma_chirality_surjective`,
 `gamma_gamma_reaches_Lminus`). With γ and γ̄ the words are all of B₃, so L± = σ₀σ₁, σ₀⁻¹σ₁⁻¹ are
@@ -96,6 +105,16 @@ Scope (a): this is a finite computation on words of length ≤ 7 at one q. It is
 Witness: `gg-full-photon-stage3.witness.json`.
 
 ## Stage 4 — prior entangled γγ pair across proton and electron (run 2026-11-16, proton pin, convention D)
+
+> **Scope note (2026-11-20, added after the fact; the record below is unchanged).**
+> The producer calls each pair word "a product of two photon letters: one L term and one V⁻¹".
+> That reading took `L₊ = σ₀σ₁` as the photon's fourth term. By owner ruling (bean `qou-99qc`,
+> 2026-11-18, confirmed 2026-11-20) `def:photon` is `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`, so the
+> single-photon terms are `σ₀, σ₁, V = σ₀σ₁⁻¹`, and `L±` are letters of a two-photon product
+> (`prop:gamma-gamma-generates-particles`, which still reaches them), not of one photon. The pair
+> words, their reduced forms and every number below are fixed braid words and do not depend on
+> the photon form; only the "two photon letters" justification of the alphabet is superseded.
+> Not re-run (the producer is long-compute). PR for the compute side of the ruling.
 
 Witness `gg-entangled-pair-stage4.witness.json`, producer `gg_entangled_pair_stage4_probe.py`,
 18 configurations (2 nucleons V³, V⁶ × (control + 4 pair words × 2 windows)), as pre-registered.
@@ -239,6 +258,14 @@ main; the probe reads q₀ only for the reported value at t = q₀, through `q_a
 further here.
 
 ## Stage 1b — re-run with L₋ = σ₁σ₀ and the four-term photon (run 2026-11-17, pre-registered)
+
+> **Scope note (2026-11-20, added after the fact; the record below is unchanged).**
+> "Four-term photon" here meant `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁`. By owner ruling (bean `qou-99qc`,
+> 2026-11-18, confirmed 2026-11-20) the fourth term is the chiral vertex `σ₀σ₁⁻¹ = V`. The two forms
+> are one family (`γ(φ₀,φ₁,φ₀₁) = γ_straight(φ₀ − hφ₀₁, φ₁, φ₀₁)`), and the γγ product reaches
+> `L₊, L₋, e⁻` under both, so the alphabets (a) and (b) are unaffected. Re-run on 2026-11-20 after
+> the producer's description was scoped: payload byte-identical. `e⁻ = σ₀σ₁σ₀` is a letter of a
+> two-photon product, not of one photon, under either form.
 
 Probe `gg_twist_reading3_stage1b_probe.py`, witness `gg-twist-reading3-stage1b.witness.json`. Same
 reading 3 as stage 1 (every level, convention D, proton pin, 40 dps). L₋ is now σ₁σ₀, the order

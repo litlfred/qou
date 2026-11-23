@@ -31,7 +31,7 @@ Source values, measured 2026-09-30:
                                  codata_2022_source.M_N_MEV_AME_DERIVED)
 
 m_n is the AME-derived value BY OWNER DECISION (2026-09-30), and is read by
-that name, not through `codata_constants.M_N_MEV`: that deprecated alias
+that name, not through `codata_constants.M_N_MEV`: that legacy alias
 resolves to the CODATA-direct VALIDATION value, 939.56542194. This is what
 the witness briefly carried after its first regeneration that day. One m_n
 for the corpus, the one `codata_2022_source`, `experimental_constants` and
@@ -81,7 +81,7 @@ def main() -> int:
         "values registry can pin Lean and Markdown literals via "
         ":leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV]."
     )
-    w.set_content_block("prop:three-calibration-inputs")
+    w.set_content_block("def:three-calibration-discipline")
     w.add_parameter("source", "CODATA 2022 (m_e, m_p); AME 2020 + Q_β (m_n, codata_2022_source.M_N_MEV_AME_DERIVED)")
 
     w.add_assertion(

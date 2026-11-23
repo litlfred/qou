@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:15:34.460791+00:00",
-  "commitSha": "65ead20c4bf19cbee462489a9ff5ed9342f2df61",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-17T07:13:34.051610+00:00",
+  "commitSha": "d3dcd4c4757a988299ad0246ed502bd2358a90e4",
   "assertions": [
     {
       "name": "C1",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 431,
+  "durationMs": 288,
   "computation": "growing-width-cut-shape-exclusion",
   "scriptFile": "growing_width_cut_shape_exclusion_probe.py",
-  "scriptHash": "990ed763e657",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "be88c5520dc7",
+  "scriptCommitSha": "d3dcd4c4757a988299ad0246ed502bd2358a90e4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/moffatt1969-jfm-knottedness/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The effect of the presence of solid boundaries",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "contains": [
+    "library/moffatt1969-jfm-knottedness/blocks/prose-sec-001",
+    "library/moffatt1969-jfm-knottedness/blocks/recommendation-sec-001-01",
+    "library/moffatt1969-jfm-knottedness/blocks/recommendation-sec-001-02",
+    "library/moffatt1969-jfm-knottedness/blocks/recommendation-sec-001-03",
+    "library/moffatt1969-jfm-knottedness/blocks/recommendation-sec-001-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/moffatt1969-jfm-knottedness",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/moffatt1969-jfm-knottedness",
+  "provenance": "ingested"
+}

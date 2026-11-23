@@ -26,7 +26,6 @@ $n \in \mathbb{N}$ write
  the global section of the mass functor over the rigid braided
  :refterm[monoidal category]{#monoidal-category}, related to the Hecke-mass element
  $\Phi_{\mathrm{mass}}$ by
- $\Phi_{\mathrm{mass}}(\beta) = (\tau \otimes \cdots \otimes \tau) \circ \Phi_n \circ \rho(\beta)$
- ([Hecke mass element](#def:hecke-mass-element));
+ $\Phi_{\mathrm{mass}}(\beta) = (\tau \otimes \cdots \otimes \tau) \circ \Phi_n \circ \rho(\beta)$;
 * $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ for the seven
  observed nuclear magic numbers.

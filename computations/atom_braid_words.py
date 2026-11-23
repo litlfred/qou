@@ -82,6 +82,18 @@ def _neutron_braid_word() -> list[int]:
     return hecke_word_to_braid_word(_neutron_body())
 
 
+def shift_word(word: list[int], k: int) -> list[int]:
+    """Move a signed braid word ``k`` strands to the right.
+
+    Letters are SIGNED (``-g`` is σ_g⁻¹, the convention of
+    ``hecke_word_to_braid_word`` above), so the shift acts on the absolute
+    value and keeps the sign: σ_g^{±1} ↦ σ_{g+k}^{±1}.  The bare ``g + k``
+    this replaces sent σ_2⁻¹ = -2 to +1 = σ_1 under k = 3 instead of to
+    -5 = σ_5⁻¹ (bean qou-yaqm).
+    """
+    return [g + k if g > 0 else g - k for g in word]
+
+
 def he4_compositional_braids() -> dict[str, tuple[list[int], int]]:
     """Three compositional ⁴He braid words (1-indexed, n_strands=12).
 
@@ -98,25 +110,25 @@ def he4_compositional_braids() -> dict[str, tuple[list[int], int]]:
     canonical = (
         list(p)
         + [3]                                       # I_pp = σ_3
-        + [g + 3 for g in p]                       # p₂ on strands 4-6
+        + shift_word(p, 3)                       # p₂ on strands 4-6
         + [6]                                       # I_pn averaged → σ_6
-        + [g + 6 for g in n]                       # n₁ on strands 7-9
+        + shift_word(n, 6)                       # n₁ on strands 7-9
         + [-9]                                      # I_nn = σ_9⁻¹
-        + [g + 9 for g in n]                       # n₂ on strands 10-12
+        + shift_word(n, 9)                       # n₂ on strands 10-12
     )
 
     # D⊕D disjoint: β_D = p · I_pn · n on H_6, two copies on disjoint strands
     # First D on strands 1-6 (gens 1..5), Second D on strands 7-12 (gens 7..11)
-    deuteron = list(p) + [3] + [g + 3 for g in n]  # canonical D
-    D_disjoint = list(deuteron) + [g + 6 for g in deuteron]
+    deuteron = list(p) + [3] + shift_word(n, 3)  # canonical D
+    D_disjoint = list(deuteron) + shift_word(deuteron, 6)
 
     # T⊕p: T on strands 1-9, p on strands 10-12
-    tritium = list(p) + [3] + [g + 3 for g in n] + [-6] + [g + 6 for g in n]
-    T_p_disjoint = list(tritium) + [g + 9 for g in p]
+    tritium = list(p) + [3] + shift_word(n, 3) + [-6] + shift_word(n, 6)
+    T_p_disjoint = list(tritium) + shift_word(p, 9)
 
     # ³He⊕n: ³He on strands 1-9, n on strands 10-12
-    he3 = list(p) + [3] + [g + 3 for g in p] + [6] + [g + 6 for g in n]
-    He3_n_disjoint = list(he3) + [g + 9 for g in n]
+    he3 = list(p) + [3] + shift_word(p, 3) + [6] + shift_word(n, 6)
+    He3_n_disjoint = list(he3) + shift_word(n, 9)
 
     return {
         "canonical_pppnnn": (canonical, 12),
@@ -154,8 +166,21 @@ def _self_test() -> int:
         3 in canon and 6 in canon and -9 in canon)
 
     # the two producers' own D / T / ³He constructions, reproduced here
-    D = list(p) + [3] + [g + 3 for g in n]
+    D = list(p) + [3] + shift_word(n, 3)
     chk("deuteron word length = 2·|p| + 1", len(D) == len(p) + len(n) + 1)
+
+    # qou-yaqm: the strand shift must keep each letter's sign.  The proton
+    # word carries inverse letters, so a sign-dropping shift changes the
+    # count of inverse letters and leaves the top strand untouched.
+    neg = lambda w: sum(1 for g in w if g < 0)  # noqa: E731
+    chk("shift_word keeps signs: σ_2⁻¹ shifted by 3 is σ_5⁻¹",
+        shift_word([-2, 1], 3) == [-5, 4])
+    chk("shifted words keep their count of inverse letters",
+        all(neg(shift_word(w, k)) == neg(w) for w in (p, n) for k in (3, 6, 9)))
+    chk("deuteron word reaches strand 6 (σ_5^{±1} present)",
+        max(abs(g) for g in D) == 5)
+    chk("canonical ⁴He word reaches strand 12 (σ_11^{±1} present)",
+        max(abs(g) for g in canon) == 11)
 
     print(f"\n{'PASS' if not fails else 'FAIL'} — {fails} failure(s)")
     return 1 if fails else 0

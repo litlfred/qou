@@ -26,12 +26,12 @@ verify the categorical self-duality $\Psi = S^2 = \mathrm{id}$
 
 ### Correctness conditions
 
-1. *[`def:frobenius-pairing`](#def:frobenius-pairing) defines
+1. *[Frobenius pairing](#def:frobenius-pairing) defines
    $\langle a, b\rangle_F$ as the Markov trace of the product,
    making it symmetric and non-degenerate.*
-2. *[`prop:frobenius-pairing-exists`](#prop:frobenius-pairing-exists)
+2. *[Existence of the Frobenius pairing](#prop:frobenius-pairing-exists)
    gives existence in the QOU rigid-monoidal premise.*
-3. *[`prop:frobenius-pairing-unique`](#prop:frobenius-pairing-unique)
+3. *[Uniqueness of the Frobenius pairing](#prop:frobenius-pairing-unique)
    makes the pairing canonical (up to the chosen Markov parameter).*
 
 ### Complexity

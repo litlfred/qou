@@ -75,8 +75,8 @@ noncomputable def markovTraceNF (z h : R_q) : Fin 6 → R_q
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 theorem gram_indefinite :
-    hopfPlus * hopfPlus + hopfMinus * hopfMinus ≠
-    2 • (hopfPlus * hopfMinus) :=
+    lPlus * lPlus + lMinus * lMinus ≠
+    2 • (lPlus * lMinus) :=
   gram_indefinite_witness
 
 /-- The LP over continuous H₃(q) can achieve trace = 0.
@@ -92,8 +92,8 @@ theorem gram_indefinite :
 theorem lp_achieves_zero_trace :
     -- The indefiniteness of the Gram form implies LP feasibility.
     -- We state the consequence: L₊ and L₋ are distinct operators.
-    hopfPlus ≠ hopfMinus :=
-  hopf_ne
+    lPlus ≠ lMinus :=
+  lPlus_ne_lMinus
 
 /-! ## §4  Braid group image is a proper subset -/
 
@@ -109,10 +109,10 @@ theorem lp_achieves_zero_trace :
 --      published version.
 theorem braid_coefficients_bounded :
     -- Braid group image ⊊ H₃(q): the distinction between L₊ and L₋
-    -- (hopf_ne) means the braid group cannot explore all LP directions.
+    -- (lPlus_ne_lMinus) means the braid group cannot explore all LP directions.
     -- Full proof requires formalizing coefficient growth bounds.
-    hopfPlus * hopfPlus + hopfMinus * hopfMinus ≠
-    2 • (hopfPlus * hopfMinus) :=
+    lPlus * lPlus + lMinus * lMinus ≠
+    2 • (lPlus * lMinus) :=
   gram_indefinite_witness
 
 end QOU.Interactions

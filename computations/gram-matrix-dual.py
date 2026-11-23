@@ -6,7 +6,12 @@ Computes:
   1. The 6×6 Gram matrix G_{ij} = tr_M(b_i · b_j)
   2. Its inverse G⁻¹
   3. The Frobenius dual K∨ = Σ_{i,j} c_i (G⁻¹)_{ij} b_j
-     for key particles (e⁺, d-quark, colored photon, etc.)
+     for key particles (e⁺, d-quark, bare photon 𝟏, etc.)
+
+Scope note (2026-11-20). Owner ruling (bean qou-99qc, 2026-11-18, confirmed 2026-11-20):
+def:photon is gamma(phi) = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1. A single crossing is a TERM of a
+photon, not a photon. The four-term recomputation of this file's photon claim is
+probes/photon_chiral/photon_chiral_ports_probe.py, section B (results.md there).
   4. Demand profiles from negative NF coefficients
 
 Usage:
@@ -350,9 +355,12 @@ lminus_inv_nf = reduce_nf(lminus_inv_raw)
 lminus_inv_vec = to_nf_vector(lminus_inv_nf)
 print_particle("L₋⁻¹ (antigluon−)", "σ₀⁻¹σ₁⁻¹", lminus_inv_vec)
 
-# (c) Colored photon γ_φ = 𝟏 + φσ₀ + φσ₁  (linear, φ = 0.0487)
+# (c) Three-term specialisations γ(φ₀, φ₁, 0) with the Breit-Wheeler FITTED weights.
+#     LABELLED FITS (audit 2026-11-17 C2/C5): φ = 0.0487 / s = 0.0978 were chosen to match a
+#     threshold, not derived. Shown for comparison only. φ₀₁ = 0, so they are the same element
+#     under the 2026-11-18 ruling (def:photon fourth term σ₀σ₁⁻¹); see probes/photon_chiral §B.
 print("\n" + "─" * 72)
-print("  PART C: Colored photons")
+print("  PART C: three-term specialisations, LABELLED FITS (comparison only)")
 print("─" * 72)
 
 phi_lin = 0.0487
@@ -379,8 +387,8 @@ KNOT_OPS = {
     "T_{1,0}": (),
     "T_{2,1}": (0,),
     "T_{2,2}": (0, 0),
-    "T_{2,3}": (0, 1, 0),
-    "T_{2,5}": (0, 1, 0, 1, 0),
+    "T_{2,2}^{(3)}": (0, 1, 0),        # σ₀σ₁σ₀: Hopf-link closure (was mislabelled T_{2,3})
+    "T_{2,4}^{(3)}": (0, 1, 0, 1, 0),  # (σ₀σ₁)²σ₀: T(2,4)-link closure (was mislabelled T_{2,5})
 }
 
 particles = {
@@ -425,7 +433,7 @@ print("     then its dual, then pair with each operator.")
 print("=" * 72)
 
 pairs = [
-    ("γ⊗γ", (0,), (0,), "bare photon pair σ₀²"),
+    ("σ₀⊗σ₀", (0,), (0,), "single-crossing terms σ₀² (not a photon pair; bare pair = 𝟏)"),
     ("γ₁⊗γ₂ (circ)", None, None, "circular polarized pair"),
     ("e⁻⊗e⁺", None, None, "electron-positron"),
     ("σ₀⊗σ₁", (0,), (1,), "orthogonal polarizations"),
@@ -437,7 +445,7 @@ gg_nf = reduce_nf(gg_terms)
 gg_vec = to_nf_vector(gg_nf)
 gg_dual = frobenius_dual(gg_vec)
 
-print(f"\n  ── γ⊗γ (bare photon pair σ₀²) ──")
+print(f"\n  ── σ₀⊗σ₀ (single-crossing terms; two bare photons give 𝟏; four-term pair: probes/photon_chiral §B) ──")
 print(f"  NF(γγ) = {['%.4f' % v for v in gg_vec]}")
 print(f"  (γγ)∨  = {['%.4f' % v for v in gg_dual]}")
 

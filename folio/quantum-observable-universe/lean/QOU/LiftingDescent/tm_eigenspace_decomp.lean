@@ -28,6 +28,15 @@ This replaces an earlier encoding in which `killing_orthogonal` and
 conclusion was a third field projected out — a shape under which an
 instance could take both hypotheses to be `True` and still be forced to
 supply the conclusion outright.
+**The `mi_additive` field is not satisfiable by a norm (2026-11-20).** If `MI`
+is an actual norm induced by an inner product, and `killing` is that inner
+product, then two non-zero orthogonal elements satisfy the triangle inequality
+**strictly** (`QOU.Torsion.norm_add_lt_of_inner_eq_zero`, PR #8581). So
+`mi_additive` fails for them, and the class has no honest instance with
+`MI = norm`. The content block now states `≤`. Its Lean is
+`QOU.LiftingDescent.tm_eigenspace_decomp_norm_le` in the content sibling. The
+equality is tracked as open in bean `qou-tmeq`. This conditional theorem is
+kept as a record of the earlier claim. It is no longer the block's `lean.ref`.
 -/
 
 universe u v

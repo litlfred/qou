@@ -109,11 +109,31 @@ _MU_QUOTED = (
 # m_e·Vol(4_1)/ℏ_q² value carried by the committed
 # per-observable-100x-status.witness.json (2026-05-28 re-pin).
 # AGENTS.md §"q₀ anchor convention" STRICT rule 1.
-_M_MU_PRED_PROTON_MEV = mpf("105.658397811")
+#
+# 2026-11-20: the frozen literal mpf("105.658397811") that stood here is
+# replaced by a DERIVATION at the package's default (one-term proton) pin,
+# read from qou_substrate.constants directly so no manifest rebinding can
+# turn it into the muon tautology. Precision fix only: at the one-term pin
+# the derived value rounds to the old literal (checked when this landed).
+def _m_mu_pred_at(q_str: str) -> mpf:
+    from qou_substrate.constants import vol_4_1_at as _vol
+    with mp.workdps(max(70, mp.dps)):
+        q = mpf(q_str)
+        return mpf(str(M_E_MEV)) * _vol(70) / ((q - 1) / q) ** 2
+
+
+def _proton_pin_strings() -> tuple[str, str]:
+    """(one-term DEFAULT pin, two-term COMPARISON pin), both 50 digits."""
+    from qou_substrate import constants as _qc
+    return _qc.Q_50_DIGIT_STR, _qc.Q_PROTON_TWO_TERM_50_DIGIT_STR
+
+
+_M_MU_PRED_PROTON_MEV = _m_mu_pred_at(_proton_pin_strings()[0])
 _M_MU_PRED_SOURCE = (
-    "PINNED proton-anchored prediction (m_e·Vol(4_1)/ℏ_q² at the m_p/m_e "
-    "re-pinned q₀, 2026-05-28); decoupled from the muon-flipped Borromean "
-    "muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1"
+    "DERIVED proton-anchored prediction m_e·Vol(4_1)/ℏ_q² at the package "
+    "default one-term proton pin (m_p/m_e re-pin 2026-05-28); never read from "
+    "the muon-flipped Borromean muon_check per bean tnjb / AGENTS.md "
+    "§q₀-anchor STRICT rule 1"
 )
 
 # Observable registry: (codata_value, codata_err, role, source_label)
@@ -661,8 +681,28 @@ def _qbeta_ruled_base() -> dict:
         (COMPUTE_DIR / "qbeta" / "qbeta-option-e-required-level.witness.json"
          ).read_text())
     _cand = _CENSUS["data"]["per_candidate"]
-    _ELEMENT = "nuc11_interleaved"
-    tr_M = mpf(_cand[_ELEMENT]["tr_conv_D"])
+    # 🟧 OWNER RULING 2026-11-20 (Carl, D1 = A, PR #8586): the SCORED Q_beta is
+    # the T^3 weight split of the z_D trace on the gamma-gamma + reading-3 base
+    # V^3, V = sigma_0 sigma_1^{-1}:
+    #     eps_flavour(V^3) = Tr(K^{(x)3} V^3)|_{W_n} - ...|_{W_p}, / [2]^3
+    #                      = (q^2 - 1) P(q) / (q^4 (q^2 + 1)^3),
+    #     P(q) = q^12 - 3q^10 + 3q^8 - 5q^6 + 3q^4 - 3q^2 + 1
+    # (global [2]^3 normalisation; Lean QOU.QBeta.FlavourWeightSplit, exactly
+    # bar-odd), Q_beta = |eps_flavour(V^3)| * E0_tower at the proton q0.
+    # This RESOLVES the element conflict recorded below (nuc11_interleaved
+    # 0.6519 MeV on this row vs delta_S 0.4491 MeV in the content blocks):
+    # both stay as labelled UNSCORED history cells. NOT chosen by residual --
+    # it undershoots CODATA by 58 %, further than either superseded cell; it is
+    # scored because the owner ruled the functional and the element.
+    # The element V^3 is the cost-minimal gamma-gamma word surviving reading 3
+    # (PR #8564, GammaGammaSdpQBetaBase.frobeniusSelected_ten_unique).
+    _ELEMENT = "V^3"
+    _P = (q ** 12 - 3 * q ** 10 + 3 * q ** 8 - 5 * q ** 6 + 3 * q ** 4
+          - 3 * q ** 2 + 1)
+    eps_flavour = (q ** 2 - 1) * _P / (q ** 4 * (q ** 2 + 1) ** 3)
+    tr_M = eps_flavour
+    _HIST = "nuc11_interleaved"
+    _tr_M_nuc11 = mpf(_cand[_HIST]["tr_conv_D"])
     # tr^{z_D}(Delta_S) = h^2/2 - z_D*h exactly (h = q - 1/q), kept so the
     # superseded cell stays reproducible and the delta is measurable.
     _tr_M_delta_S = q ** 2 / 2 - q * z_D - 1 + z_D / q + 1 / (2 * q ** 2)
@@ -685,16 +725,21 @@ def _qbeta_ruled_base() -> dict:
     # So: calibrate the TRACE against the recorded cell at the E_0 that cell was
     # computed with, then publish at the CANONICAL E_0. One check per claim.
     adm = _functional_admissibility_check()
-    # Calibrate against the CENSUS witness's own recorded pct for the element
-    # actually scored -- not against the Delta_S cell, which is a different
-    # element. Both are at order-zero E_0, so the trace/E_0 separation below
-    # still holds.
-    recorded = _cand[_ELEMENT]["pct_D"]
+    # Calibrate against the flavour-split probe witness's own recorded V^3
+    # cell (computed there at the canonical tower E_0, same q0). Since
+    # 2026-11-20 the scored element is V^3 (owner D1 = A); the nuc11 census
+    # cell is history and no longer the calibration target.
+    _FW = json.loads(
+        (COMPUTE_DIR / "probes" / "qbeta_flavour_weight_split"
+         / "qbeta-flavour-weight-split.witness.json").read_text())
+    _fw_v3 = next(r for r in _FW["data"]["qbeta_table"] if r["element"] == "V^3")
+    recorded = _fw_v3["vs_codata_pct"]
+    recorded_Q = mpf(_fw_v3["Q_beta_MeV"])
     err_pct = (pred - Q_BETA_MEV) / Q_BETA_MEV * 100
     err_pct_order_zero = (pred_order_zero - Q_BETA_MEV) / Q_BETA_MEV * 100
-    calibrated = False
-    if recorded is not None:
-        calibrated = abs(err_pct_order_zero - mpf(str(recorded))) < mpf("1e-4")
+    calibrated = (abs(pred / recorded_Q - 1) < mpf("1e-20")
+                  and abs(eps_flavour - mpf(_fw_v3["eps_flavour"]))
+                  < mpf("1e-30"))
     return {
         "Q_beta_MeV": fmt(pred),
         "markov_parameter": "z_D = q^3/(q^2+1)",
@@ -708,11 +753,38 @@ def _qbeta_ruled_base() -> dict:
         "err_pct": fmt(err_pct),
         "err_pct_at_order_zero_E0": fmt(err_pct_order_zero),
         "recorded_err_pct_in_probe_witness": recorded,
-        "calibration_compares": "err_pct_at_order_zero_E0 vs the recorded cell -- "
-                                "the cell was computed at order-zero E_0, so "
-                                "calibrating the published (tower-E_0) value "
-                                "against it would conflate the trace with the "
-                                "E_0 choice and fail by ~0.56 points",
+        "calibration_compares": "Q_beta_MeV (tower E_0) and eps_flavour(V^3) "
+                                "vs the V^3 cell of "
+                                "probes/qbeta_flavour_weight_split/"
+                                "qbeta-flavour-weight-split.witness.json "
+                                "(same q0, same E_0 form)",
+        "functional": "eps_flavour(V^3) = T^3 weight split of the z_D trace "
+                      "Tr(K^{(x)3} .)/[2]^3 on W_n - W_p (global [2]^3 "
+                      "normalisation) = (q^2-1)P(q)/(q^4(q^2+1)^3)",
+        "eps_flavour_V3": fmt(eps_flavour),
+        "ruling_D1": "owner 2026-11-20 (Carl), D1 = A: adopt the T^3 weight "
+                     "split as the SCORED Q_beta (PR #8586)",
+        "ruling_D2": "owner 2026-11-20, D2 = Q_beta: |eps_flavour(V^3)|*E0 is "
+                     "Q_beta, not m_n - m_p; the m_n - m_p sign (neutron "
+                     "sector smaller under mass ~ trace) stays OPEN",
+        "unscored_history_cells": {
+            "nuc11_interleaved (scored 2026-09-12 .. 2026-11-20)": {
+                "Q_beta_MeV": fmt(abs(_tr_M_nuc11)
+                                  * _e0_canonical(q=q, m_e=M_E_MEV)),
+                "err_pct": fmt((abs(_tr_M_nuc11)
+                                * _e0_canonical(q=q, m_e=M_E_MEV)
+                                - Q_BETA_MEV) / Q_BETA_MEV * 100),
+                "status": "unscored history (superseded by owner D1 = A)",
+            },
+            "delta_S (content blocks until 2026-11-20)": {
+                "Q_beta_MeV": fmt(abs(_tr_M_delta_S)
+                                  * _e0_canonical(q=q, m_e=M_E_MEV)),
+                "err_pct": fmt((abs(_tr_M_delta_S)
+                                * _e0_canonical(q=q, m_e=M_E_MEV)
+                                - Q_BETA_MEV) / Q_BETA_MEV * 100),
+                "status": "unscored history (superseded by owner D1 = A)",
+            },
+        },
         "calibrated_against_probe_witness": bool(calibrated),
         "ck_rungs_applied": 0,
         "ladder_on_admissible_base_exists": False,
@@ -783,9 +855,28 @@ def _qbeta_ruled_base() -> dict:
         # So the figure is scoped twice over, not once: no ladder (above), AND
         # an element whose 5 free letters have no derived constraint. Do not read
         # it as the framework's Q_beta.
-        "element_scored": _ELEMENT + " (gamma-gamma-selected nucleon word)",
-        "element_is_ruled": False,
-        "element_ruled_status": "partial",
+        "element_scored": _ELEMENT + " = (sigma_0 sigma_1^-1)^3 (gamma-gamma + "
+                                     "reading-3 cost-minimal word, PR #8564)",
+        "element_is_ruled": True,
+        "element_is_ruled_since": "2026-11-20 (owner D1 = A, PR #8586); was "
+                                  "False for nuc11_interleaved 2026-10-11 .. "
+                                  "2026-11-20",
+        # Corpus-derived cross-reference (2026-11-20): the CONTENT BLOCKS score a
+        # DIFFERENT element on the same ruled base. `mass-comparison-table.md:33`
+        # and `neutron-qvalue-symbolic.md:53` state Q_beta^{z_D} =
+        # |h^2/2 - h z_D| E0_tower = 0.4491 MeV, i.e. element Delta_S (commit
+        # 72a589b57b), while this row scores nuc11_interleaved (0.6519 MeV).
+        # Both are on main at once. Recorded, NOT resolved: which element is
+        # canonical is an owner decision (bean qou-99qc), and choosing by
+        # residual is forbidden.
+        "content_blocks_element": "V^3 since 2026-11-20 (were delta_S 0.4491 MeV, tower E0; mass-comparison-table.md, neutron-qvalue-symbolic.md)",
+        "element_conflict_open": None,
+        "element_conflict_resolved": "resolved by owner ruling 2026-11-20 (D1 = A): "
+                                     "scored element V^3 with eps = T^3 weight "
+                                     "split; nuc11_interleaved and delta_S kept "
+                                     "as unscored history cells",
+        "element_ruled_status": "ruled (V^3, owner D1 = A 2026-11-20)",
+        "element_ruled_status_history": "partial",
         "element_ruled_status_rationale": (
             "6/11 letters (the core (sigma_0 sigma_1^-1)^3) are gamma-gamma-"
             "reachable, and even those are conditional on the provisional "
@@ -800,9 +891,13 @@ def _qbeta_ruled_base() -> dict:
         # they are what the parity bound in the comment above measures. Kept
         # ALONGSIDE the boolean so no consumer breaks. 6 + 5 = 11 letters.
         "element_ruled_letters": 6,
-        "element_census_letters": 5,
+        "element_census_letters": 0,
+        "element_letters_history_nuc11": {"ruled": 6, "census": 5},
         "element_ruled_scope": (
-            "the 6-letter core (sigma_0, sigma_1)^3 = three gamma-gamma "
+            "V^3 = (sigma_0 sigma_1^-1)^3: all 6 letters are three "
+            "gamma-gamma vertices, selected by confinement reading 3 as the "
+            "cost-minimal survivor (PR #8564). HISTORY (nuc11_interleaved, "
+            "scored until 2026-11-20): the 6-letter core (sigma_0, sigma_1)^3 = three gamma-gamma "
             "vertices. The 3-letter quark block is odd and the 2-letter gluon "
             "pair has both letters positive, so neither is gamma-gamma "
             "reachable -- gammaGamma_length_even, sorry-free. qou-ales says "
@@ -814,9 +909,11 @@ def _qbeta_ruled_base() -> dict:
                              "GammaGammaWordSelection.vertex on main (a "
                              "gamma-gamma word's 2nd letter is negative, which "
                              "excludes the gen-grouped core)",
-        "element_superseded": "delta_S (short NF) -- census-derived, "
-                              "inadmissible under the gamma-gamma ruling; its "
-                              "cell was -43.157175%",
+        "element_superseded": "nuc11_interleaved (scored 2026-09-12 .. "
+                              "2026-11-20) and delta_S (short NF, "
+                              "census-derived; cell -43.157175% at "
+                              "order-zero E_0) -- both unscored history "
+                              "since owner D1 = A 2026-11-20",
         "Q_beta_MeV_on_superseded_delta_S": fmt(
             abs(_tr_M_delta_S) * _e0_canonical(q=q, m_e=M_E_MEV)),
         "element_ordering_proof_open_in": "PR #7212 (Lean lemma for the "
@@ -828,13 +925,96 @@ def _qbeta_ruled_base() -> dict:
             "nuc11 interleaved (gamma-gamma-selected per PR #7212, OPEN)": "-17.496",
             "nuc11 gen-grouped": "-15.451",
         },
-        "element_tracked_by": "qou-99qc (the Delta/eps fork, open); "
-                              "PR #7212 narrows the nucleon-word branch",
+        "element_tracked_by": "qou-99qc (eps question stays open per rule "
+                              "13a: 58 % miss, beyond the ladder cap, and a "
+                              "sign problem under mass ~ trace)",
+    }
+
+
+def _qbeta_conditional_t3_split() -> dict:
+    """Q_β on the γγ base with the T³ split of the z_D trace -- CONDITIONAL.
+
+    Owner choice 2026-11-20 (bean qou-99qc, option B), followed the same hour by
+    the directive *"Rulings are only temporary conjectures. We need to formalize
+    first always and then try to Lean prove and derive."* So this row is NOT
+    published as a derived prediction. It is the value of Q_β **conditional on
+    three named Lean conjectures** (`QOU.QBeta.DecayConjectures`, PR #8617):
+
+      C1 DecayFunctionalIsWeightTrace     ε = ε_n − ε_p, the T³ components of
+                                          Tr(K^{⊗3}·)/[2]³ (= the z_D trace)
+      C2 NucleonElementsAreGammaGammaBase both nucleon elements are V³
+      C3 DecayEnergyScale                 Q_β = |ε|·E₀, E₀ the canonical
+                                          tower-summed scale (posited)
+
+    and `qbeta_eq_of_conjectures` proves Q_β = |f(q)|·E₀ from them, with
+    f(q) = (q²−1)P(q)/(q⁴(q²+1)³) (`FlavourWeightSplit.epsFlavour_V3_eq`).
+
+    CALIBRATION, NOT A LITERAL. The value is computed twice from q₀ alone and
+    must agree: (a) the closed form f(q); (b) the explicit weight-space traces
+    of V³ = (σ₁σ₂⁻¹)³ built from the 3×3 matrices of
+    `NucleonWeightSpaceTraces` (A₁, A₂ on W_p; B₁, B₂ on W_n). If they disagree
+    the caller keeps the previous row.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    sys.path.insert(0, str(COMPUTE_DIR / "qbeta"))
+    from qbeta_e0 import canonical as _e0_canonical
+    from mpmath import matrix as _mx
+    q = mpf(Q_50_DIGIT_STR)
+    qi = 1 / q
+    h = q - qi
+    P = (q ** 12 - 3 * q ** 10 + 3 * q ** 8 - 5 * q ** 6 + 3 * q ** 4
+         - 3 * q ** 2 + 1)
+    f_closed = (q ** 2 - 1) * P / (q ** 4 * (q ** 2 + 1) ** 3)
+
+    def _tr(M):
+        return M[0, 0] + M[1, 1] + M[2, 2]
+
+    A1 = _mx([[q, 0, 0], [0, 0, 1], [0, 1, h]])
+    A2 = _mx([[0, 1, 0], [1, h, 0], [0, 0, q]])
+    B1 = _mx([[0, 1, 0], [1, h, 0], [0, 0, q]])
+    B2 = _mx([[q, 0, 0], [0, 0, 1], [0, 1, h]])
+    VA = A1 * A2 ** -1
+    VB = B1 * B2 ** -1
+    d2 = q + qi
+    eps_p = q * _tr(VA * VA * VA) / d2 ** 3
+    eps_n = qi * _tr(VB * VB * VB) / d2 ** 3
+    f_explicit = eps_n - eps_p
+    calibrated = abs(f_explicit - f_closed) < mpf(10) ** -40
+    E0 = _e0_canonical(q=q, m_e=M_E_MEV)
+    pred = abs(f_closed) * E0
+    return {
+        "_pred": pred,
+        "Q_beta_MeV": fmt(pred),
+        "err_pct": fmt((pred - Q_BETA_MEV) / Q_BETA_MEV * 100),
+        "element": "V^3 = (sigma_1 sigma_2^-1)^3 for both nucleons (gamma-gamma "
+                   "+ reading 3, PR #8564)",
+        "functional": "eps_n - eps_p, T^3 components of Tr(K^{x3} .)/[2]^3 "
+                      "(= the z_D Markov trace), PR #8586",
+        "epsilon_flavour_V3": fmt(f_closed),
+        "E0_MeV": fmt(E0),
+        "E0_form": "tower_summed (canonical, qbeta_e0.canonical) -- posited, C3",
+        "status": "CONDITIONAL on conjectures C1-C3, NOT a derived prediction",
+        "conjectures": [
+            "C1 QOU.QBeta.DecayConjectures.DecayFunctionalIsWeightTrace",
+            "C2 QOU.QBeta.DecayConjectures.NucleonElementsAreGammaGammaBase",
+            "C3 QOU.QBeta.DecayConjectures.DecayEnergyScale",
+        ],
+        "conditional_theorem": "QOU.QBeta.DecayConjectures.qbeta_eq_of_conjectures (PR #8617)",
+        "owner_choice": "qou-99qc option B, 2026-11-20; directive same day: "
+                        "rulings are temporary conjectures",
+        "calibration": "closed form vs explicit weight-space traces of V^3",
+        "calibration_gap": fmt(abs(f_explicit - f_closed)),
+        "calibrated": bool(calibrated),
+        "ladder_on_admissible_base_exists": False,
+        "sign_is_convention_dependent": "the sign of eps flips with K <-> K^-1; "
+                                        "|eps| and Q_beta do not (independent "
+                                        "check 2026-11-20)",
     }
 
 
 def _inherited_qbeta_scope(conv: dict, adm: dict,
-                           ruled: dict | None = None) -> str | None:
+                           ruled: dict | None = None,
+                           cond: dict | None = None) -> str | None:
     """The scope `m_n` and `Δ_pn` inherit from `Q_β`, written onto their own rows.
 
     `m_n = m_p + Q_β + m_e` and `Δ_pn = Q_β + m_e`, so every caveat on `Q_β`
@@ -873,6 +1053,17 @@ def _inherited_qbeta_scope(conv: dict, adm: dict,
     RULED-base note. Bean ``qou-zzwm``.
     """
     parts = []
+    if cond is not None and cond.get("calibrated"):
+        # 2026-11-20 (qou-99qc option B + "rulings are conjectures"): the scored
+        # Q_beta is conditional on C1-C3, and so is everything built from it.
+        return (
+            f"INHERITS A CONDITIONAL Q_beta: this value is m_p(substrate) + "
+            f"Q_beta + m_e, and the Q_beta term ({cond.get('Q_beta_MeV', '')[:12]} "
+            f"MeV) is |eps_n - eps_p|*E0 on the gamma-gamma base V^3, which holds "
+            f"only IF conjectures C1-C3 of QOU.QBeta.DecayConjectures hold "
+            f"(PR #8617). None is proved; zero c_k rungs (qou-cds1). Not a "
+            f"derived prediction."
+        )
     _on_ruled_base = bool(ruled is not None
                           and ruled.get("calibrated_against_probe_witness"))
     if conv.get("status") == "INHERITED_C" and not _on_ruled_base:
@@ -893,9 +1084,10 @@ def _inherited_qbeta_scope(conv: dict, adm: dict,
         parts.append(
             f"INHERITS THE RULED Q_beta BASE: this value is "
             f"m_p(substrate) + Q_beta + m_e, and the Q_beta term is now "
-            f"|tr_M(Delta_S)(z_D)|*E0 at z_D = q^3/(q^2+1) -- the functional the "
-            f"owner ruled on 2026-09-08 (convention D, two-row truncation, D7), "
-            f"re-scored here on the 2026-09-12 authorisation. IT CARRIES ZERO "
+            f"|eps_flavour(V^3)|*E0, the T^3 weight split of the z_D = "
+            f"q^3/(q^2+1) trace on the gamma-gamma base V^3 (owner ruling "
+            f"2026-11-20, D1 = A; z_D itself ruled 2026-09-08, D7). It "
+            f"replaced the nuc11_interleaved cell on 2026-11-20. IT CARRIES ZERO "
             f"c_k RUNGS: no ladder has been derived on an admissible base "
             f"(qou-cds1, blocked on the phase qou-pdix), and on the retired "
             f"z = 1 base the five rungs bought ~4.5 orders. So this row is NOT "
@@ -980,6 +1172,52 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
         "compute_truncation_ppb": fmt(truncation_ppb, 4),
         "compute_output_dps": OUTPUT_DPS,
     }
+
+
+def _mk_over_mpi_at(qq: mpf) -> mpf:
+    """m_K/m_π = sqrt([3]_q·[4]_q + (α_em(q)/π)·(1 + log(1+ℏ_q))) at the given q.
+
+    Strong core [3]_q·[4]_q: Lean `qou:QOU.BraidKnot.meson_qCG_3x4`. EM factor is
+    the FULL sinh-channel series (the (3q²−1)/(2q²) truncation was removed
+    2026-08-22 as a data-selected stopping point). α_em is DERIVED at the same q
+    by `meson_em_sinh_closed_form.alpha_em_inv_derived` (CS tower, conditional on
+    the Witten-κ Gram class). Previously this was inline in main(); lifted out
+    unchanged (2026-11-21) so the two-term block evaluates the identical form at
+    the covariant two-term q₀ pin.
+    """
+    # CLASS-A acknowledged anchor: pending Witten-κ Gram-determinant sorry.
+    # α_em is DERIVED, not copied. The consumer once held the literal
+    # mpf("137.035944") -- the MUON-anchor evaluation from before the
+    # 2026-05-28 proton re-pin, and a TRUNCATED CS tower besides (65.0 ppb off
+    # at the proton pin; effect on m_K/m_pi 0.0066 ppb).
+    from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
+    _hbar_q = 1 - 1 / qq
+    _hbar_factor = 1 + mp.log(1 + _hbar_q)  # sinh-channel, FULL series
+    _qcg_strong = (qq ** 2 + 1 + qq ** -2) * (
+        (qq ** 4 - qq ** -4) / (qq - qq ** -1)
+    )  # [3]_q · [4]_q
+    _alpha_em_inv = alpha_em_inv_derived(qq)
+    return mp.sqrt(_qcg_strong + (1 / _alpha_em_inv) / mp.pi * _hbar_factor)
+
+
+def _alpha_em_inv_form_b_at(qq: mpf) -> mpf:
+    """Form-B α_em⁻¹ at the given q: 1/α = T + α·H·(1 − h²α),
+    T = q[9]_q[10]_q + 8/(12π), H = [2]_q/(8π), h = q − q⁻¹.
+
+    The SAME cubic as `alpha_em_schwinger_ladder_probe.py` (whose witness
+    supplies the one-term row). Re-stated here only so the row can be evaluated
+    at another q₀ pin; main() asserts it reproduces that witness's
+    `form_B_alpha_inv` at the one-term pin, so the two cannot drift silently.
+    """
+    def _qb(n):
+        return (qq ** n - qq ** (-n)) / (qq - qq ** (-1))
+    h2 = (qq - 1 / qq) ** 2
+    T = qq * _qb(9) * _qb(10) + mpf(8) / (12 * mp.pi)
+    H = _qb(2) / (8 * mp.pi)
+    roots = mp.polyroots([-H * h2, H, T, -1], maxsteps=200, extraprec=2 * mp.prec)
+    aB = min([mp.re(r) for r in roots if abs(mp.im(r)) == 0 and mp.re(r) > 0],
+             key=lambda r: abs(r - mpf("0.0073")))
+    return 1 / aB
 
 
 def main() -> dict:
@@ -1147,7 +1385,14 @@ def main() -> dict:
             # how much. Dropping it would make this look like a regression of
             # unknown origin.
             _ruled = _qbeta_ruled_base()
-            if _ruled["calibrated_against_probe_witness"]:
+            _cond = _qbeta_conditional_t3_split()
+            if _cond["calibrated"]:
+                # 2026-11-20: owner chose option B (qou-99qc) and directed that
+                # rulings are conjectures. The scored value is now Q_beta
+                # CONDITIONAL on C1-C3; the nuc11_interleaved value stays in
+                # qbeta_ruled_base as the superseded element.
+                Q_pred = _cond["_pred"]
+            elif _ruled["calibrated_against_probe_witness"]:
                 Q_pred = _ruled["_pred"]
             else:
                 # The functional evaluated here does not reproduce the committed
@@ -1188,51 +1433,29 @@ def main() -> dict:
             _adm_note = ""
             if _ruled["calibrated_against_probe_witness"]:
                 _adm_note = (
-                    f" 🟧 SCORED ON THE RULED BASE, ZERO c_k RUNGS. The owner "
-                    f"ruled 2026-09-08 that eps in Q_beta = |eps(Delta)|*E0 is the "
-                    f"Markov trace at z_D = q^3/(q^2+1) (convention D, the two-row "
-                    f"truncation -- D7), and authorised this re-score 2026-09-12 "
-                    f"with the price measured first "
-                    f"({_ruled['price_witness']}). This row is now "
-                    f"|tr_M(Delta_S)(z_D)|*E0 evaluated from q0 alone -- no CODATA "
-                    f"in the value -- and calibrated against "
-                    f"{_adm.get('source_witness')} (recorded cell "
-                    f"{_ruled['recorded_err_pct_in_probe_witness']}%). "
-                    f"🛑 IT IS A BASE: no c_k ladder has been derived on an "
-                    f"admissible base (qou-cds1, blocked on the phase qou-pdix), so "
-                    f"do NOT read this as convention D's accuracy. WHAT IT REPLACED, "
-                    f"for comparison only: the laddered value on the RETIRED z = 1 "
-                    f"cell was {fmt(Q_pred_laddered_z1, 12)} MeV (err 0.16776% base, "
-                    f"~1279 ppb after five rungs) -- z = 1 is the coordinate sum and "
-                    f"is provably NOT an admissible root under D (roots: "
-                    f"{', '.join(_adm.get('admissible_roots_under_D') or [])}; "
-                    f"ConventionDAdmissibleRoots.lean, sorry-free). On the retired "
-                    f"base the ladder bought ~4.5 orders, so a z_D ladder could move "
-                    f"this row a long way; a SECOND re-score is authorised once "
-                    f"qou-pdix closes (bean qou-iagg). The ruled cell is also "
-                    f"3.4609x farther from CODATA than the augmentation (z = q), "
-                    f"which is admissible but is the finer one-row truncation and is "
-                    f"NOT convention D -- recorded because a referee will notice, "
-                    f"not as an argument: ranking cells by residual is the "
-                    f"selection-against-the-target the anti-fit directive forbids. "
-                    f"🛑 AND THE ELEMENT IS RULED IN "
-                    f"{_ruled['element_ruled_letters']} OF ITS "
-                    f"{_ruled['element_ruled_letters'] + _ruled['element_census_letters']} "
-                    f"LETTERS, NOT IN ALL OF THEM: this row scores Delta = "
-                    f"{_ruled['element_scored']}, selected over nuc11 gen-grouped "
-                    f"by the gamma-gamma word-selection ruling (qou-ales). But "
-                    f"that word is ELEVEN letters and every gamma-gamma word has "
-                    f"EVEN length (gammaGamma_length_even, sorry-free), so the "
-                    f"ruling reaches only the 6-letter core and provably cannot "
-                    f"reach the 3-letter quark block (odd) or the 2-letter gluon "
-                    f"pair (both letters positive). 5 of 11 letters are still "
-                    f"census-derived, which is what qou-ales asks not to use. The "
-                    f"corpus carries FOUR candidate Delta, all undershooting at "
-                    f"z_D (order-zero E_0) -- delta_S -43.157%, nuc9 -30.936%, "
-                    f"nuc11 interleaved -17.496% (this row, -16.678% on the "
-                    f"canonical tower E_0), nuc11 gen-grouped -15.451%. So the "
-                    f"figure is scoped TWICE: no ladder, and 5 element letters "
-                    f"with no derived constraint ({_ruled['element_tracked_by']})."
+                    f" 🟧 SCORED ON THE OWNER-RULED T^3 WEIGHT SPLIT (D1 = A, "
+                    f"2026-11-20), ZERO c_k RUNGS. Q_beta = |eps_flavour(V^3)|*E0, "
+                    f"eps_flavour = T^3 weight split of the z_D = q^3/(q^2+1) "
+                    f"trace Tr(K^(x)3 .)/[2]^3 on W_n - W_p (global [2]^3 "
+                    f"normalisation) = (q^2-1)P(q)/(q^4(q^2+1)^3), element "
+                    f"V^3 = (sigma_0 sigma_1^-1)^3 (gamma-gamma + reading 3, "
+                    f"PR #8564), tower E_0, proton q0 -- evaluated from q0 alone, "
+                    f"no CODATA in the value, calibrated against "
+                    f"probes/qbeta_flavour_weight_split (recorded "
+                    f"{_ruled['recorded_err_pct_in_probe_witness']}%). Lean: "
+                    f"QOU.QBeta.FlavourWeightSplit (exactly bar-odd). "
+                    f"🛑 SCOPE: this is a BASE with no ladder, and it is "
+                    f"OUTSIDE the ladder cap (F_required ~ 2.40 > 1, "
+                    f"LadderFactorBound), so no c_k ladder of the cos-form can "
+                    f"close it. The value was NOT blind (np-splitting audit "
+                    f"2026-11-15 §18/§21 already recorded 0.3254 MeV). "
+                    f"D2 (owner 2026-11-20): this number is Q_beta, not "
+                    f"m_n - m_p. UNSCORED HISTORY: nuc11_interleaved "
+                    f"(scored 2026-09-12 .. 2026-11-20, 0.6519 MeV) and delta_S "
+                    f"(content blocks, 0.4491 MeV) -- see "
+                    f"qbeta_ruled_base.unscored_history_cells. The retired "
+                    f"z = 1 laddered value was {fmt(Q_pred_laddered_z1, 12)} MeV. "
+                    f"eps itself stays open ({_ruled['element_tracked_by']})."
                 )
             elif _adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
                 _adm_note = (
@@ -1251,6 +1474,47 @@ def main() -> dict:
                     f"{_adm['source_witness']} (15/15, exact over Q(q)). The RULED "
                     f"cell is {_adm['ruled_cell_err_pct']}% on Delta_S. Fix the "
                     f"calibration; do not read this row as the ruled position."
+                )
+            if _cond["calibrated"]:
+                _adm_note = (
+                    f" 🟧 CONDITIONAL ON CONJECTURES, NOT A DERIVED PREDICTION "
+                    f"(owner 2026-11-20, qou-99qc option B; and: rulings are "
+                    f"temporary conjectures). Q_beta = |eps_n - eps_p|*E0 on the "
+                    f"gamma-gamma base V^3 (same word for both nucleons, PR #8564), "
+                    f"with eps the T^3 components of Tr(K^x3 .)/[2]^3 = the z_D "
+                    f"Markov trace (PR #8586): eps_flavour(V^3) = "
+                    f"{_cond['epsilon_flavour_V3'][:16]}, E0 = "
+                    f"{_cond['E0_MeV'][:12]} MeV (tower-summed, posited). The value "
+                    f"holds IF conjectures C1 (decay functional = weight-trace "
+                    f"difference), C2 (both elements V^3) and C3 (Q_beta = |eps|*E0) "
+                    f"hold; QOU.QBeta.DecayConjectures.qbeta_eq_of_conjectures "
+                    f"derives it from them (PR #8617). None of C1-C3 is proved. "
+                    f"Calibrated: closed form vs explicit weight-space traces, gap "
+                    f"{_cond['calibration_gap']}. Zero c_k rungs (qou-cds1). "
+                    f"Same value as the ruled-base cell "
+                    f"({_ruled['Q_beta_MeV'][:12]} MeV): the change is the label, "
+                    f"not the number. The photon is the owner-ruled "
+                    f"1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1, and "
+                    f"V^3 = gamma(0,0,qh) gamma(0,0,-q^-1 h) for both nucleons "
+                    f"(photon_product_eq_borWord). The plain trace difference "
+                    f"is 0 for EVERY photon pair, all six weights free "
+                    f"(DecayConjectures.photonPair_trace_n_eq_p). The value here "
+                    f"is scored on the two-term Lagrangian trace "
+                    f"(CategoricalLagrangianTwoTermBridge): the Cartan K-weighted "
+                    f"term gives this base, and the matter term (quark-charge "
+                    f"insertion, owner-ruled covariant all-pairs Q12+Q23+Q13, "
+                    f"connected part) adds exactly 0 on V^3 "
+                    f"(deltaT_allPairs_connected_eq_zero), so the two-term score "
+                    f"equals this value. The raw (static) all-pairs charge term, "
+                    f"-0.0565 MeV, is a labelled unscored row "
+                    f"(two_term_qed_diagnostics.alternatives_not_scored). "
+                    f"🛑 SCOPE: a BASE with no ladder, "
+                    f"OUTSIDE the ladder cap (F_required ~ 2.40 > 1, "
+                    f"LadderFactorBound). The value was NOT blind (np-splitting "
+                    f"audit 2026-11-15 §18/§21 already recorded 0.3254 MeV). "
+                    f"UNSCORED HISTORY: nuc11_interleaved (0.6519 MeV), delta_S "
+                    f"(0.4491 MeV); retired z = 1 laddered value "
+                    f"{fmt(Q_pred_laddered_z1, 12)} MeV."
                 )
             if qbeta_anchor.get("status") == "STRADDLE":
                 _anchor_note = (
@@ -1331,7 +1595,8 @@ def main() -> dict:
         # the inherited scope onto the derived rows themselves.
         _inherited = _inherited_qbeta_scope(qbeta_convention,
                                             _functional_admissibility_check(),
-                                            _qbeta_ruled_base())
+                                            _qbeta_ruled_base(),
+                                            _qbeta_conditional_t3_split())
         for _obs, _val in (("m_n", m_n_path_c), ("Delta_pn", delta_pn_path_c)):
             _r = _row_for(_obs, _val, path_c_source)
             if _inherited:
@@ -1378,9 +1643,12 @@ def main() -> dict:
             "(cubic form with the derived Schwinger factor (1-h^2 alpha), proton pin)",
         )
         _row["note"] = (
-            "CONDITIONAL on three unproved classes (ArchimedeanLimit, "
-            "BlochSuslinUniqueness, BringZeroModeBlochClass) — a conditional "
-            "prediction, not a proved derivation. The Schwinger factor is NOT "
+            "CANONICAL FORM OPEN (qou-aemx): see `arms` for the CS tower and the "
+            "additive A/B arms; compute consumers use the CS tower. The additive "
+            "form rests on an unproved postulate, the [10]_q coefficient, the "
+            "one-loop normalisation and c (docs/audits/2026-11-21-alpha-em-which-"
+            "form-is-canonical.md); of the three classes once listed here, two are "
+            "settled on main and the third is not load-bearing. The Schwinger factor is NOT "
             "FITTED and this is measured, not asserted: parametrising it as "
             "(1 - c*h^2*alpha), the c that hits CODATA exactly is 0.7312340272 "
             "and the 1-sigma window is [0.61846303, 0.84400502], so the "
@@ -1395,6 +1663,37 @@ def main() -> dict:
             "CODATA edition (the 2018->2022 shift is 2.2x the residual); the "
             "reference is read from the registry so the edition is not a choice."
         )
+        # ── Two labelled arms (owner card choice 2026-11-21, bean qou-aemx) ──
+        # The canonical alpha_em form is OPEN. Every alpha consumer in compute
+        # (pyhecke.constants, the m_K/m_pi EM term, coulomb_energy,
+        # atom_electron_mass) uses the CS tower, while this row's headline was
+        # Form B: two different objects. The row now carries every arm, each
+        # scored the same way. The headline stays Form B only so existing
+        # readers of `pred_MeV` keep working; it is NOT a canonical choice.
+        # Every arm misses the 100x target, so the scoreable counts do not
+        # depend on which arm is the headline.
+        from meson_em_sinh_closed_form import alpha_em_inv_derived as _a_cs
+        from q_parameter import Q_50_DIGIT_STR as _q50_for_cs  # noqa: E402
+        _arms = {
+            "cs_tower": (_a_cs(mpf(_q50_for_cs)),
+                         "meson_em_sinh_closed_form.alpha_em_inv_derived (exact resummation); "
+                         "the form every alpha consumer in compute uses"),
+            "additive_A_c0": (_alpha_w["data"]["ladder_proton"].get("form_A_alpha_inv"),
+                              "alpha-em-schwinger-ladder.witness.json :: form_A_alpha_inv"),
+            "additive_B_c1": (_alpha_inv_pred,
+                              "alpha-em-schwinger-ladder.witness.json :: form_B_alpha_inv (c = 1 is a choice)"),
+        }
+        _row["arms"] = {}
+        for _k, (_v, _src) in _arms.items():
+            if _v is None:
+                continue
+            _ar = _row_for("alpha_em_inv", mpf(str(_v)), _src)
+            _row["arms"][_k] = {f: _ar[f] for f in (
+                "pred_MeV", "err_ppb", "target_100x_ppb", "miss_factor",
+                "beats_1x", "beats_100x", "source_witness") if f in _ar}
+        _row["headline_arm"] = "additive_B_c1"
+        _row["canonical_form"] = "OPEN (qou-aemx); arms reported side by side"
+        _row["consumer_arm"] = "cs_tower"
         rows.append(_row)
     else:
         rows.append({"obs": "alpha_em_inv", "status": "NO-WITNESS"})
@@ -1458,26 +1757,11 @@ def main() -> dict:
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
     from mpmath import pi as _pi
     q0 = mpf(Q_50_DIGIT_STR)
-    _hbar_q = 1 - 1 / q0
-    _hbar_factor = 1 + mp.log(1 + _hbar_q)  # sinh-channel, FULL series
-    _qcg_strong = (q0 ** 2 + 1 + q0 ** -2) * (
-        (q0 ** 4 - q0 ** -4) / (q0 - q0 ** -1)
-    )  # [3]_q · [4]_q
-    # CLASS-A acknowledged anchor: pending Witten-κ Gram-determinant sorry.
-    # α_em is DERIVED, not copied. This line held the literal
-    # mpf("137.035944") -- the MUON-anchor evaluation from before the
-    # 2026-05-28 proton re-pin, and a TRUNCATED CS tower besides. At the
-    # current proton pin the exact resummation gives 137.0359350939756,
-    # i.e. the literal was 65.0 ppb off, and its stated "399 ppb vs CODATA"
-    # understated the real residual of 468 ppb. pyhecke.constants and
-    # meson_em_sinh_closed_form were both corrected; this consumer and
-    # meson_em_residual_alpha_em were not, so the fix never reached the
-    # dashboard. Effect on m_K/m_pi is 0.0066 ppb -- the L2 verdict is
-    # unchanged; the defect was in what the number CLAIMED, not what it did.
-    from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
-    _alpha_em_inv = alpha_em_inv_derived(q0)
-    _mk_sq_over_mpi_sq = _qcg_strong + (1 / _alpha_em_inv) / _pi * _hbar_factor
-    mk_pred = mp.sqrt(_mk_sq_over_mpi_sq)
+    # The closed form is evaluated by `_mk_over_mpi_at(q)` (module level) so the
+    # two-term block below can evaluate it at the covariant two-term pin with the
+    # identical expression. The α_em input there is `alpha_em_inv_derived(q)`,
+    # DERIVED at the same q, never a literal (history in that function's docstring).
+    mk_pred = _mk_over_mpi_at(q0)
     rows.append(_row_for(
         "m_K/m_pi", mk_pred,
         "[3]_q·[4]_q + (α_em/π)·(1+log(1+ℏ_q)) — closed form. Strong core "
@@ -1492,7 +1776,11 @@ def main() -> dict:
     ))
 
     # ── Two-Term Borromean V³ QED Diagnostics (m_mu, Q_beta, m_n, Delta_pn) ──
-    # Attach parameter-free connected 4th-order Borromean V³ QED diagnostics
+    # Attach connected 4th-order Borromean V³ QED diagnostics. NOT parameter-free:
+    # pair 1-3 is left out and the m_e scale is chosen (issue #8524,
+    # probes/two_term_qed_pair_choice). Since the owner ruling of 2026-11-20 the
+    # two-term value is the PRIMARY score (see the ruling block below), scoped
+    # as a selection.
     # (`QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm`) at 50 dps without altering
     # any primary ruled z_D scores (respecting owner ruling 2026-09-12).
     from canonical_mass import (
@@ -1500,21 +1788,62 @@ def main() -> dict:
         proton_qed_self_energy_borromean_mev as _cm_mp_qed_mev,
         np_qed_splitting_borromean_conn_mev as _cm_np_qed_mev,
     )
-    _mp_qed_plain = mpf(str(_cm_mp_qed_mev(k_weighted=False)))
-    _mp_qed_Kp = mpf(str(_cm_mp_qed_mev(k_weighted=True)))
-    _dm_qed_plain = mpf(str(_cm_np_qed_mev(weighting="plain")))
-    _dm_qed_KnKp = mpf(str(_cm_np_qed_mev(weighting="KnKp")))
-    _dm_qed_Kp3 = mpf(str(_cm_np_qed_mev(weighting="Kp3")))
-    _dm_qed_q = mpf(str(_cm_np_qed_mev(weighting="q")))
+    # WEIGHTING (2026-11-20, owner request; bean qou-99qc): the derived quantum trace
+    # Tr(K^{⊗3}·)/[2]_q³ is the canonical weighting (NucleonWeightSpaceQTrace). The #8518
+    # menu entries are kept below only as labelled historical comparisons.
+    from canonical_mass import delta_em_charge_insertion_mev as _cm_dem_mev
+    import two_term_qtrace_weighting as _ttq
+    # OWNER RULING 2026-11-20 16:44: the SCORED two-term object is the covariant all-pairs
+    # insertion with the derived weighting (option 2). Its connected part is 0 on V³, so the
+    # scored terms below are 0 and the two-term rows equal the one-term rows.
+    _mp_qed_canon = mpf(str(_cm_mp_qed_mev()))
+    _dm_qed_canon = mpf(str(_cm_np_qed_mev()))
+    assert _mp_qed_canon == 0 and _dm_qed_canon == 0
+    # Option 1 (adjacent, connected, −m_e·t, derived weighting): labelled comparison, unscored.
+    _mp_qed_derived = mpf(str(_cm_mp_qed_mev(insertion="adjacent")))
+    _dm_qed_derived = mpf(str(_cm_np_qed_mev(insertion="adjacent")))
+    _mp_qed_plain = mpf(str(_cm_mp_qed_mev(weighting="plain", insertion="adjacent")))
+    _mp_qed_Kp = mpf(str(_cm_mp_qed_mev(weighting="Kp", insertion="adjacent")))
+    _dm_qed_plain = mpf(str(_cm_np_qed_mev(weighting="plain", insertion="adjacent")))
+    _dm_qed_KnKp = mpf(str(_cm_np_qed_mev(weighting="KnKp", insertion="adjacent")))
+    _dm_qed_Kp3 = mpf(str(_cm_np_qed_mev(weighting="Kp3", insertion="adjacent")))
+    _dm_qed_q = mpf(str(_cm_np_qed_mev(weighting="q", insertion="adjacent")))
 
+    # Labelled alternatives the corpus does not decide between (NOT scored):
+    #   preregistered_raw_adjacent : +m_e·[t(W_n) − t(W_p)], X = Q12+Q23, raw (2026-11-19 05:10Z)
+    #   preregistered_raw_all_pairs: same with X = Q12+Q23+Q13 (covariant projection, #8552 T6)
+    #   connected_all_pairs        : identically 0 (deltaT_allPairs_connected_eq_zero)
+    #   connected_adjacent_prereg_sign: the scored connected term with the pre-registered +m_e sign
+    _dem_adj = mpf(str(_cm_dem_mev("adjacent")))
+    _dem_all = mpf(str(_cm_dem_mev("all_pairs")))
+    _alt_dm = {
+        "preregistered_raw_adjacent_option3": _dem_adj,
+        "preregistered_raw_all_pairs": _dem_all,
+        "connected_adjacent_derived_option1": _dm_qed_derived,
+        "connected_adjacent_prereg_sign_option4": -_dm_qed_derived,
+    }
     _mn_sub_1term = mpf(str(_cm_nucleon_mass_mev("n")))
-    _mn_sub_2term = _mn_sub_1term + _dm_qed_plain
+    _mn_sub_2term = _mn_sub_1term + _dm_qed_canon
+    _mn_sub_2term_adj = _mn_sub_1term + _dm_qed_derived
+    _mn_sub_2term_plain = _mn_sub_1term + _dm_qed_plain
     _mn_codata = OBSERVABLES["m_n"][0]
     _mn_sub_1term_err_ppb = (_mn_sub_1term - _mn_codata) / _mn_codata * mpf("1e9")
     _mn_sub_2term_err_ppb = (_mn_sub_2term - _mn_codata) / _mn_codata * mpf("1e9")
     _mn_sub_reduction_pct = (1 - abs(_mn_sub_2term_err_ppb) / abs(_mn_sub_1term_err_ppb)) * 100
 
-    # Linearised 2-term proton-pin shift on m_mu from d(m_p^QCD/m_e)/dq and d(m_mu/m_e)/dq at q0:
+    # Two-term proton pin as a named COMPARISON (owner ruling 2026-11-20:
+    # one-term stays the default). EXACT findroot root
+    # (qou_substrate.constants.q_proton_two_term_at), replacing a linearised
+    # finite-difference shift that was 7.5e-15 low and whose note had the
+    # sign of the shift wrong.
+    _q_1t_str, _q_2t_str = _proton_pin_strings()
+    _q0_2term_plain = mpf(_q_2t_str)
+    _q0_1term = mpf(_q_1t_str)
+    _dq_pin_ppb = (_q0_2term_plain - _q0_1term) / _q0_1term * mpf("1e9")
+    _mmu_pred_2term_plain = _m_mu_pred_at(_q_2t_str)
+    # Linearised shift helper (PR #8591) for the derived / pre-registered
+    # proton-term variants; the PLAIN comparison pin above stays the exact
+    # findroot root from #8554.
     _vol41 = 2 * mp.clsin(2, _pi / 3)
     _dq_fd = q0 * mpf("1e-25")
 
@@ -1527,53 +1856,301 @@ def main() -> dict:
         return 2 * (_vol41 / (((qq - 1) / qq) ** 2)) * _fbor - 12
 
     _dmp_dq = (_mp_qcd_ratio_at(q0 + _dq_fd) - _mp_qcd_ratio_at(q0 - _dq_fd)) / (2 * _dq_fd)
-    _dq_2term_plain = -(_mp_qed_plain / m_e_mev) / _dmp_dq
-    _q0_2term_plain = q0 + _dq_2term_plain
-    _mmu_pred_2term_plain = m_e_mev * _vol41 / (((_q0_2term_plain - 1) / _q0_2term_plain) ** 2)
+    def _mmu_from_mp_qed(_mpq: mpf) -> tuple[mpf, mpf]:
+        _qq = q0 - (_mpq / m_e_mev) / _dmp_dq
+        return _qq, m_e_mev * _vol41 / (((_qq - 1) / _qq) ** 2)
+
     _mmu_codata = OBSERVABLES["m_mu"][0]
+    _q0_2term_canon, _mmu_pred_2term_canon = _mmu_from_mp_qed(_mp_qed_canon)
+    _mmu_err_2term_canon_ppb = rel_error_ppb(_mmu_pred_2term_canon, _mmu_codata)
+    _q0_2term_derived, _mmu_pred_2term_derived = _mmu_from_mp_qed(_mp_qed_derived)
+    _mmu_err_2term_derived_ppb = rel_error_ppb(_mmu_pred_2term_derived, _mmu_codata)
     _mmu_err_2term_ppb = rel_error_ppb(_mmu_pred_2term_plain, _mmu_codata)
+    # proton term under the pre-registered sign (+m_e·t(W_p) < 0) and under all-pairs (0)
+    _q0_2term_prereg, _mmu_pred_2term_prereg = _mmu_from_mp_qed(-_mp_qed_derived)
 
     for _r in rows:
         _obs_name = _r.get("obs")
         if _obs_name == "m_mu" and "pred_MeV" in _r:
             _r["two_term_qed_diagnostics"] = {
                 "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3",
+                "lean_theorem_weighting": "QOU.BraidsAndKnots.NucleonWeightSpaceQTrace.qtrace_crossing_eq_zD",
+                "scored": "OWNER RULING 2026-11-20 16:44: covariant all-pairs, derived weighting; M_p^QED = 0",
+                "M_p_QED_scored_MeV": fmt(_mp_qed_canon, 15),
+                "m_mu_err_two_term_scored_ppb": fmt(_mmu_err_2term_canon_ppb, 4),
+                "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/Kp are historical",
+                "option1_adjacent_note": "the *_derived_* fields below are option 1 (adjacent), unscored",
+                "M_p_QED_conn_derived_MeV": fmt(_mp_qed_derived, 15),
+                "M_p_QED_conn_derived_keV": fmt(_mp_qed_derived * mpf(1000), 12),
+                "q0_two_term_derived": fmt(_q0_2term_derived, 25),
+                "m_mu_pred_two_term_derived_MeV": fmt(_mmu_pred_2term_derived, 12),
+                "m_mu_err_two_term_derived_ppb": fmt(_mmu_err_2term_derived_ppb, 4),
+                "alternatives_not_scored": {
+                    "option1_connected_adjacent_derived_m_mu_err_ppb": fmt(_mmu_err_2term_derived_ppb, 4),
+                    "option3_4_prereg_sign_m_mu_err_ppb": fmt(
+                        rel_error_ppb(_mmu_pred_2term_prereg, _mmu_codata), 4),
+                    "historical_plain_m_mu_err_ppb": fmt(_mmu_err_2term_ppb, 4),
+                },
                 "M_p_QED_conn_plain_MeV": fmt(_mp_qed_plain, 15),
                 "M_p_QED_conn_plain_keV": fmt(_mp_qed_plain * mpf(1000), 12),
                 "M_p_QED_conn_Kp_MeV": fmt(_mp_qed_Kp, 15),
                 "q0_two_term_plain": fmt(_q0_2term_plain, 25),
                 "m_mu_pred_two_term_plain_MeV": fmt(_mmu_pred_2term_plain, 12),
                 "m_mu_err_two_term_plain_ppb": fmt(_mmu_err_2term_ppb, 4),
+                "dq_two_term_minus_one_term_ppb": fmt(_dq_pin_ppb, 12),
                 "note": (
-                    "Diagnostic only — primary m_mu score remains pinned to the 1-term proton anchor "
-                    "(+209.8 ppb). Because d(m_p^QCD/m_e)/dq > 0 while d(m_mu/m_e)/dq < 0 at q0, "
-                    "subtracting a repulsive M_p^QED > 0 from m_p^exp lowers m_p^QCD(q_new) and "
-                    "decreases q_new by -2.23e-7, shifting m_mu(q_new) toward CODATA."
+                    "Diagnostic only — the primary m_mu score stays at the one-term proton "
+                    "pin (owner ruling 2026-11-20: 'Revert to 1-term default'; at the "
+                    "two-term pin alpha_em^-1 form B is at 495 sigma, PRs #8562/#8565). "
+                    "The two-term comparison pin is the exact root of m_p^QCD + M_p^QED "
+                    "= m_p^exp and sits +"
+                    f"{fmt(_dq_pin_ppb, 6)} ppb ABOVE the one-term pin (M_p^QED > 0 lowers "
+                    "the required m_p^QCD, and d(m_p^QCD/m_e)/dq < 0 here). The two-term "
+                    "term is selection-scoped (plain weighting, m_e scale; covariant "
+                    "all-pairs projection gives b = 0)."
+                    " The derived-weighting and pre-registered-sign variants (PR #8591) "
+                    "use the linearised shift of the same comparison pin."
                 ),
             }
         elif _obs_name in ("Q_beta", "m_n", "Delta_pn") and "pred_MeV" in _r:
             _pred_1t = mpf(str(_r["pred_MeV"]))
             _codata_val = OBSERVABLES[_obs_name][0]
-            _pred_2t = _pred_1t + _dm_qed_plain
+            _pred_2t = _pred_1t + _dm_qed_canon
             _err_2t_ppb = rel_error_ppb(_pred_2t, _codata_val)
+            _pred_2t_adj = _pred_1t + _dm_qed_derived
+            _pred_2t_plain = _pred_1t + _dm_qed_plain
+            _alts = {}
+            for _k, _v in _alt_dm.items():
+                _pv = _pred_1t + _v
+                _alts[_k] = {"Delta_m_MeV": fmt(_v, 15), "pred_MeV": fmt(_pv, 12),
+                             "err_ppb": fmt(rel_error_ppb(_pv, _codata_val), 4)}
             _diag = {
+                "scored": "OWNER RULING 2026-11-20 16:44: covariant all-pairs, derived weighting; Delta_m = 0",
+                "Delta_m_QED_scored_MeV": fmt(_dm_qed_canon, 15),
+                "pred_two_term_scored_MeV": fmt(_pred_2t, 12),
+                "err_two_term_scored_ppb": fmt(_err_2t_ppb, 4),
+                "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/KnKp/Kp3/q are historical",
+                "Delta_m_QED_conn_derived_adjacent_MeV": fmt(_dm_qed_derived, 15),
+                "Delta_m_QED_conn_derived_adjacent_keV": fmt(_dm_qed_derived * mpf(1000), 12),
+                "pred_two_term_derived_adjacent_MeV": fmt(_pred_2t_adj, 12),
+                "err_two_term_derived_adjacent_ppb": fmt(rel_error_ppb(_pred_2t_adj, _codata_val), 4),
+                "alternatives_not_scored": _alts,
                 "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
                 "Delta_m_QED_conn_plain_MeV": fmt(_dm_qed_plain, 15),
                 "Delta_m_QED_conn_plain_keV": fmt(_dm_qed_plain * mpf(1000), 12),
                 "Delta_m_QED_conn_KnKp_MeV": fmt(_dm_qed_KnKp, 15),
                 "Delta_m_QED_conn_Kp3_MeV": fmt(_dm_qed_Kp3, 15),
                 "Delta_m_QED_conn_q_MeV": fmt(_dm_qed_q, 15),
-                "pred_two_term_plain_MeV": fmt(_pred_2t, 12),
-                "err_two_term_plain_ppb": fmt(_err_2t_ppb, 4),
+                "pred_two_term_plain_MeV": fmt(_pred_2t_plain, 12),
+                "err_two_term_plain_ppb": fmt(rel_error_ppb(_pred_2t_plain, _codata_val), 4),
                 "primary_ruled_zD_score_untouched": True,
             }
             if _obs_name == "m_n":
                 _diag["substrate_identity_m_n_1term_MeV"] = fmt(_mn_sub_1term, 12)
                 _diag["substrate_identity_m_n_1term_err_ppb"] = fmt(_mn_sub_1term_err_ppb, 4)
-                _diag["substrate_identity_m_n_2term_plain_MeV"] = fmt(_mn_sub_2term, 12)
-                _diag["substrate_identity_m_n_2term_plain_err_ppb"] = fmt(_mn_sub_2term_err_ppb, 4)
+                _diag["substrate_identity_m_n_2term_scored_MeV"] = fmt(_mn_sub_2term, 12)
+                _diag["substrate_identity_m_n_2term_scored_err_ppb"] = fmt(_mn_sub_2term_err_ppb, 4)
+                _diag["substrate_identity_m_n_2term_derived_adjacent_err_ppb"] = fmt(
+                    (_mn_sub_2term_adj - _mn_codata) / _mn_codata * mpf("1e9"), 4)
+                _diag["substrate_identity_m_n_2term_plain_MeV"] = fmt(_mn_sub_2term_plain, 12)
+                _diag["substrate_identity_m_n_2term_plain_err_ppb"] = fmt(
+                    (_mn_sub_2term_plain - _mn_codata) / _mn_codata * mpf("1e9"), 4)
                 _diag["substrate_identity_residual_reduction_pct"] = fmt(_mn_sub_reduction_pct, 4)
             _r["two_term_qed_diagnostics"] = _diag
+
+    # ── OWNER RULING 2026-11-20: two-term QED is PRIMARY ────────────────────
+    # Verbatim: "Put two term in scorecards and ALL compute". The scored value
+    # of m_mu, Q_beta, m_n and Delta_pn is now the TWO-TERM value (plain
+    # normalised connected Borromean V^3 trace at the m_e scale,
+    # NucleonWeightSpaceTwoTerm). The one-term row is kept under `one_term`.
+    #
+    # SCOPE, stated with the ruling, not instead of it:
+    #   * the insertion Q12+Q23 is not braid-covariant; on W_p its trace equals
+    #     -tr(Q13 w) for every word (the dropped pair) — Lean proof on
+    #     claude/two-term-qed-covariance-2026-11-20;
+    #   * the covariant (all-pairs) projection gives M_p^QED = 0 and a
+    #     word-independent n-p splitting (derived coefficient b = 0);
+    #   * of the candidate scales only m_e lands near the mu-p gap
+    #     (0.2201 keV vs 0.2288 keV needed); E0_tower gives 1.821 keV, alpha_bind
+    #     1.613 keV, alpha_em*E0_tower 0.0133 keV. So the scale and the plain
+    #     weighting are SELECTIONS. The four weightings stay in the diagnostics.
+    # Do not read the two-term rows as derived until those are closed.
+    # 2026-11-20 16:00 (owner request, bean qou-99qc): the weighting is now DERIVED —
+    # Tr(K^{⊗3}·)/[2]_q³, convention D's Markov trace as the U_q(sl2) quantum trace — and
+    # replaces 'plain'. Insertion (adjacent), connected subtraction and the −m_e sign are kept
+    # as they were: the corpus does not fix them, and the alternatives are carried as
+    # labelled, unscored rows under `two_term_qed_diagnostics.alternatives_not_scored`.
+    _TWO_TERM_SCOPE = (
+        "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ "
+        "(NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs "
+        "Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so "
+        "the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are "
+        "unscored labelled rows. Historical record follows: "
+        "Selection-scoped: non-covariant adjacent insertion (whole proton signal "
+        "= dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/"
+        "alpha_em*E0; covariant all-pairs projection gives b = 0. One-term "
+        "value under `one_term`.")
+    _two_term_pred = {"m_mu": _mmu_pred_2term_canon}
+    for _r in rows:
+        _o = _r.get("obs")
+        if _o in ("Q_beta", "m_n", "Delta_pn") and "pred_MeV" in _r:
+            _two_term_pred[_o] = mpf(str(_r["pred_MeV"])) + _dm_qed_canon
+    for _i, _r in enumerate(rows):
+        _o = _r.get("obs")
+        if _o not in _two_term_pred:
+            continue
+        _one = {k: _r[k] for k in ("pred_MeV", "err_ppb", "miss_factor",
+                                   "beats_1x_experimental",
+                                   "beats_100x_experimental") if k in _r}
+        _new = _row_for(_o, _two_term_pred[_o], _r.get("source_witness", ""))
+        for _k in ("pred_MeV", "err_ppb", "miss_factor",
+                   "beats_1x_experimental", "beats_100x_experimental",
+                   "compute_truncation_ppb"):
+            _r[_k] = _new[_k]
+        _r["one_term"] = _one
+        _r["scored_form"] = "two_term_covariant_all_pairs_qtrace"
+        _r["scored_form_previous"] = ["two_term_plain_me", "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"]
+        _r["two_term_scope"] = _TWO_TERM_SCOPE
+
+    # ── OWNER REQUEST 2026-11-21 04:57: two-term Lagrangian trace on EVERY row ──
+    # Verbatim: "Update the scoreboard to use the two-term Lagrangian trace."
+    # The two-term object M = M_QCD + M_QED is defined in the corpus on the
+    # three-strand NUCLEON weight spaces (2,1)/(1,2) only
+    # (QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm, NucleonQEDCovariance,
+    # NucleonWeightSpaceQTrace). It reaches a row in one of two ways:
+    #   * mass_decomposition — the row is a nucleon quantity, so its own value
+    #     carries the M_QED term (m_p, m_n, Q_beta, Delta_pn);
+    #   * q0_pin_only — the row's functional has no QCD+QED split in the corpus,
+    #     but it is evaluated at q0, and q0 is pinned by the proton identity,
+    #     which IS two-term (m_mu, alpha_em_inv, m_K/m_pi). The row's OWN QED
+    #     term (muon carrier, meson word, coupling) is NOT defined and is not
+    #     invented here.
+    # m_e is the CAL-1 unit: no two-term object exists for it and its error is
+    # defined 0, so it is marked not_defined.
+    # Scored form is the owner-ruled covariant all-pairs insertion with the
+    # derived weighting (2026-11-20 16:44). Its connected term is 0 on V^3
+    # (deltaT_allPairs_connected_eq_zero), so the two-term pin is the one-term
+    # pin and every value below equals its one-term value. The adjacent pins
+    # are carried as labelled, unscored alternatives.
+    from qou_substrate.constants import (
+        q_at as _q_at_pin,
+        q_two_term_borromean_at as _q2t_at,
+    )
+    _dps_now = mp.dps
+    _q_one = _q_at_pin(_dps_now)
+    _q_cov = _q2t_at(_dps_now)  # derived weighting, covariant all-pairs (default)
+    _tol_q = mpf(10) ** (-(_dps_now - 5))
+    assert abs(_q_cov - _q_one) / _q_one < _tol_q, (
+        "covariant two-term pin must coincide with the one-term pin "
+        f"(M_p^QED,conn = 0): gap {_q_cov - _q_one}")
+    assert abs(mpf(_q_1t_str) - _q_one) / _q_one < mpf(10) ** -45
+    _q_adj_derived = _q2t_at(_dps_now, insertion="adjacent")
+    _q_adj_plain = mpf(_q_2t_str)  # exact findroot comparison pin (#8554)
+
+    _NOT_DEFINED_REASON = {
+        "m_e": ("CAL-1 anchor: m_e fixes the MeV unit and its err is defined 0. "
+                "The corpus two-term object lives on the three-strand nucleon weight "
+                "spaces (NucleonWeightSpaceTwoTerm); there is no electron weight-space "
+                "QED term, and an electron self-energy would be absorbed into the unit."),
+    }
+    _OWN_TERM_NOT_DEFINED = {
+        "m_mu": ("The muon carrier m_mu/m_e = Vol(4_1)/hbar_q^2 has no QED term in the "
+                 "corpus; the two-term object enters only through q0. A derived muon "
+                 "correction is open (bean qou-6gf9)."),
+        "alpha_em_inv": ("alpha_em^-1 is a coupling, not a mass: the form-B tower has no "
+                         "M_QCD + M_QED split. The two-term object enters only through q0."),
+        "m_K/m_pi": ("Meson words live on V (x) V*, not on the three-strand nucleon weight "
+                     "spaces where the two-term QED operators are defined; no meson two-term "
+                     "QED term exists in the corpus. NOT to be confused with the retired "
+                     "'two-term truncation' (3q^2-1)/(2q^2) of the EM series (de-fitted "
+                     "2026-08-22) -- a different object. Enters only through q0 (and through "
+                     "alpha_em(q0) inside the closed form)."),
+    }
+
+    # One-term recomputation check for alpha_em: the inline form-B cubic must
+    # reproduce the ladder witness it replaces at the one-term pin.
+    _alpha_1t_recomp = _alpha_em_inv_form_b_at(_q_one)
+    if _alpha_inv_pred is not None:
+        _alpha_w_val = mpf(str(_alpha_inv_pred))
+        assert abs(_alpha_1t_recomp - _alpha_w_val) / _alpha_w_val < mpf(10) ** -25, (
+            f"form-B alpha drift vs ladder witness: {_alpha_1t_recomp - _alpha_w_val}")
+
+    _pin_eval = {
+        "alpha_em_inv": _alpha_em_inv_form_b_at,
+        "m_K/m_pi": _mk_over_mpi_at,
+    }
+    _pin_alts = {
+        "q0_two_term_adjacent_derived_weighting": _q_adj_derived,
+        "q0_two_term_adjacent_plain_weighting_8554": _q_adj_plain,
+    }
+    _one_keys = ("pred_MeV", "err_ppb", "miss_factor", "beats_1x_experimental",
+                 "beats_100x_experimental")
+    _coverage = {"mass_decomposition": [], "q0_pin_only": [], "not_defined": []}
+    for _r in rows:
+        _o = _r.get("obs")
+        if "pred_MeV" not in _r:
+            continue
+        if _o in ("Q_beta", "m_n", "Delta_pn"):
+            _r["two_term_entry"] = "mass_decomposition"
+            _coverage["mass_decomposition"].append(_o)
+        elif _o == "m_mu":
+            _r["two_term_entry"] = "q0_pin_only"
+            _r["two_term_own_term"] = {"status": "not_defined",
+                                       "reason": _OWN_TERM_NOT_DEFINED[_o]}
+            _coverage["q0_pin_only"].append(_o)
+        elif _o == "m_p":
+            # CAL-2 anchor round-trip through the TWO-TERM proton identity:
+            # m_p = m_p^QCD(q_cov) + M_p^QED,cov with M_p^QED,cov = 0.
+            _one = {k: _r[k] for k in _one_keys if k in _r}
+            # Use the UNROUNDED m_p_sub: pred_MeV is a 12-digit display string,
+            # and rebuilding from it moved the round-trip 0.002852 -> 0.003197 ppb.
+            if m_p_sub is None:
+                continue
+            _new = _row_for(_o, m_p_sub + _mp_qed_canon,
+                            _r.get("source_witness", ""))
+            for _k in ("pred_MeV", "err_ppb", "roundtrip_residual_ppb",
+                       "compute_truncation_ppb"):
+                _r[_k] = _new[_k]
+            _r["one_term"] = _one
+            _r["scored_form"] = "two_term_covariant_all_pairs_qtrace"
+            _r["two_term_entry"] = "mass_decomposition"
+            _r["two_term_note"] = (
+                "Anchor round-trip, NOT scored. Two-term proton identity "
+                "m_p = m_p^QCD + M_p^QED with the covariant all-pairs M_p^QED = 0 "
+                "(Lean deltaT_allPairs_connected_eq_zero); value equals one_term.")
+            _coverage["mass_decomposition"].append(_o)
+        elif _o in _pin_eval:
+            _codata_val = OBSERVABLES[_o][0]
+            _one = {k: _r[k] for k in _one_keys if k in _r}
+            _pred2 = _pin_eval[_o](_q_cov)
+            _new = _row_for(_o, _pred2, _r.get("source_witness", ""))
+            for _k in ("pred_MeV", "err_ppb", "miss_factor",
+                       "beats_1x_experimental", "beats_100x_experimental",
+                       "compute_truncation_ppb"):
+                _r[_k] = _new[_k]
+            _r["one_term"] = _one
+            _r["scored_form"] = "two_term_covariant_all_pairs_qtrace"
+            _r["two_term_entry"] = "q0_pin_only"
+            _r["two_term_scope"] = (
+                "Evaluated at the covariant two-term proton pin "
+                "(q_two_term_borromean_at, derived weighting, all-pairs), which "
+                "coincides with the one-term pin because M_p^QED,cov = 0; so the "
+                "scored value equals one_term. Adjacent-pin values are unscored "
+                "labelled alternatives (non-covariant insertion, issue #8524).")
+            _r["two_term_q0_scored"] = fmt(_q_cov, 50)
+            _r["two_term_own_term"] = {"status": "not_defined",
+                                       "reason": _OWN_TERM_NOT_DEFINED[_o]}
+            _r["two_term_alternatives_not_scored"] = {
+                _k: {"q0_comparison_pin": fmt(_qv, 30),
+                     "pred": fmt(_pin_eval[_o](_qv), 20),
+                     "err_ppb": fmt(rel_error_ppb(_pin_eval[_o](_qv), _codata_val), 6)}
+                for _k, _qv in _pin_alts.items()
+            }
+            _coverage["q0_pin_only"].append(_o)
+        elif _o in _NOT_DEFINED_REASON:
+            _r["two_term"] = "not_defined"
+            _r["two_term_not_defined_reason"] = _NOT_DEFINED_REASON[_o]
+            _coverage["not_defined"].append(_o)
 
     return {
         "computation": "per-observable-100x-experimental-status",
@@ -1624,6 +2201,9 @@ def main() -> dict:
         # prose only. A field a consumer cannot read is not a record.
         "qbeta_ruled_base": {k: v for k, v in _qbeta_ruled_base().items()
                              if not k.startswith("_")},
+        "qbeta_conditional_t3_split": {
+            k: v for k, v in _qbeta_conditional_t3_split().items()
+            if not k.startswith("_")},
         "summary": {
             "total": len(rows),
             "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
@@ -1646,6 +2226,9 @@ def main() -> dict:
             "calibration_inputs": [
                 r["obs"] for r in rows if _is_calibration_input(r)
             ],
+            # Owner request 2026-11-21: which rows the two-term Lagrangian
+            # trace reaches, and how. not_defined rows need an owner decision.
+            "two_term_coverage": _coverage,
         },
     }
 
@@ -1739,6 +2322,7 @@ if __name__ == "__main__":
     w.add_data("convention_frame_qbeta", out["convention_frame_qbeta"])
     w.add_data("functional_admissibility_qbeta", out["functional_admissibility_qbeta"])
     w.add_data("qbeta_ruled_base", out["qbeta_ruled_base"])
+    w.add_data("qbeta_conditional_t3_split", out["qbeta_conditional_t3_split"])
     # Third and last site of the same repair (see `_inherited_qbeta_scope`).
     # This caveat asserted that the three published rows "were built in Markov
     # convention C" and are "UNREPRODUCIBLE under the canonical convention".

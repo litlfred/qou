@@ -3,7 +3,7 @@ Oxygen-16 ($Z = 8$, $N = 8$, $A = 16$) is the first doubly-magic nucleus beyond 
 
 ## Construction
 
-We build the derived atom $\mathcal{A}(8, 8)$ via the following four steps:
+Build the derived atom $\mathcal{A}(8, 8)$ via the following four steps:
 
 1. **48 pair productions** yield 16 quark triples.
 2. **16 Borromean confinements** yield 8 proton normal forms and 8 neutron normal forms.

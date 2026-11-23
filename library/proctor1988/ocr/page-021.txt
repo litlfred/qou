@@ -1,0 +1,57 @@
+Odd symplectic groups 327
+
+Lemma 8.4. The centralizer of the diagonal action of GL, on @*V is Zn.
+
+Proof. Clearly Z,, is contained in the centralizer, since both End[W] and CS,
+commute with GL,,. To show the converse, assume that de End[@*V] such
+that Pg=g® for every geGL,,. Let [k]={1, 2, ..., k}. Given a subset o S[k],
+let Y(o) be the tensor product of U’s and W’s with the U’s occurring the
+positions indexed by o, and with W’s elsewhere. Then
+
+@'V= 6 (0).
+
+oc[k]
+Using similar notation for ®, one has
+
+= @® (0,7).
+
+a,to[k]
+
+Let g,=a12,01,, for weC*. Then g,6=@g, implies that O(c, t)=0 unless |o|
+=|t|. Now since CS, commutes with GL,,, without loss of generality we need
+only consider (c, c) for o= {1, 2, ..., J} with I<k:
+
+D(a, a=). ¥,@Q,,
+?
+
+where ¥eEnd[@'U] and Q,¢End[@*~'W] and y runs through some indexing
+set. But trivially gQ,=Q,g since gly=TI,,, implying only that Q,¢End[@*W]
+=@*End[W]. We are left with requiring g¥%=,g for all geGL,,. But by
+the famous double centralizer theorem we must have ¥%eCS,CCS,. Hence
+%eZ,. O
+
+Let Tj‘ be a m-semistandard tableau of skew shape A/y with |A|=k and
+lx|=1. Suppose the entries of Tj‘ (read off in some pre-agreed upon order) are
+i,,i,,...,i,-2 with n+1<i,<n+m. Let WY be a GL,, irreducible submodule
+of @'U and let U(Tf)=U"@e;,®...@e;, , 5 OV.
+
+Proof of Theorem 2.1. Let ¥*<@*V be an irreducible GL,,,,, module. By
+Lemma 8.3, ¥¢" is an Spon, m module. Apply Lemma 8.2 to ¥*. The projections
+of Lemma 8.2 commute with GL,,, and hence by Lemmas 8.4 and 8.3 preserve
+trace-freeness:
+
+V= BD O% (Ti).
+
+uscd TH
+
+Recall each &'(T#) = (Ti) ~ WU" as GL,, modules. Lemma 8.1 cannot immedi-
+ately be applied to %} (TH) since we need trace-freeness for %’(T#) with respect
+to k indices, not | indices. But there is an equivalence 6¢End[@*V] between
+(TE) and &%(T}) since they are both equivalent to %. Since ® commutes
+with GL,, we have SeZ,,. So ® preserves trace-freeness by Lemma 8.3, ie.
+9[%(Tf)] =%p (Tf). The tensor factors €;,@...@e;,_, do not affect the traces
+for & (Tf) since each i,=n+ 1, so Uy (TH) =U@e;,®...@e;,_,- Apply Lemma
+8.1 to Uo(Tf) and use ® to transfer the (n,0)-symplectic tableau indexed basis
+'0 Wj (T#). Glue onto each such symplectic tableau of shape py the skew tableau
+
+? to obtain an (n, m)-symplectic tableau of shape 4. Refer to the sum for ¥%*

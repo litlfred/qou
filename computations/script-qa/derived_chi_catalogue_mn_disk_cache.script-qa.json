@@ -2,8 +2,7 @@
   "$schema": "script-qa/v1",
   "script_path": "computations/derived_chi_catalogue_mn_disk_cache.py",
   "language": "python",
-  "source_hash": "b1d28203faee",
-  "updated_at": "2026-08-16T02:29:17.116439+00:00",
+  "source_hash": "6e4a7e4b1885",
   "criteria": {
     "compute_no_mpf_to_float_cast": [
       {
@@ -35,24 +34,170 @@
         },
         "reviewed_at": "2026-06-09T03:47:37.719Z",
         "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
-      }
-    ],
-    "resume-cache-unvalidated": [
+      },
       {
         "field_hash": {
-          "py": "4d1ac3538815"
+          "ts": "6e4a7e4b1885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e"
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "6e4a7e4b1885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e"
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "ts": "6e4a7e4b1885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e"
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "ts": "6e4a7e4b1885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e"
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "ts": "6e4a7e4b1885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e"
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "ts": "6e4a7e4b1885"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "computations/audits/silent_self_check_audit.py",
+          "id": "pipeline/qa-checkers-python.ts",
           "version": "v1",
-          "script_hash": "f42329b8dcaa"
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
         },
-        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
-        "severity": "major",
-        "evidence": "line 74: loads its own prior output when the file exists | reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e",
+        "severity": "minor",
+        "evidence": "computations/derived_chi_catalogue_mn_disk_cache.py:1: script's sidecar has no `references` field \u2014 the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "ts": "6e4a7e4b1885"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e",
+        "severity": "minor",
+        "evidence": "computations/derived_chi_catalogue_mn_disk_cache.py:1: script `derived_chi_catalogue_mn_disk_cache.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script \u2014 likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "ts": "6e4a7e4b1885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e"
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "ts": "6e4a7e4b1885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e"
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "ts": "6e4a7e4b1885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "7c1d2ca10e0c4be043b679897cc500074fd1fc2e"
       }
     ]
-  }
+  },
+  "updated_at": "2026-11-22T15:55:48.386813+00:00"
 }

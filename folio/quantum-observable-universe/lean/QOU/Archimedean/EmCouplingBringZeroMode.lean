@@ -95,6 +95,7 @@ theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
   field_simp
   ring
 
+-- Ref: [riera-rodriguez-1992] pp. 180–181 (Γ* the (2,4,5) triangle group; B = Δ/Γ, genus 4)
 /-- The fundamental triangle of the Bring curve is a (2, 4, 5) hyperbolic triangle.
     Its hyperbolic area is given by the angle defect: π - (π/2 + π/4 + π/5). -/
 noncomputable def bringFundamentalTriangleArea : ℝ :=
@@ -195,6 +196,7 @@ documented attempt ledger — and the stated cost is that the `O(α²)` coeffici
 permanently observational (never computable without a mechanism), so the
 `+0.313 ppb` residual is a floor, not a waypoint. -/
 
+-- Ref: [riera-rodriguez-1992] pp. 180–181 (Γ*/Γ ≅ S₅; a fundamental domain of Γ* is two adjacent triangles, so 2·|S₅| = 240)
 /-- Number of triangles in the `(2,4,5)` tiling of Bring's curve. -/
 def bringTilingFaces : ℕ := 240
 
@@ -244,18 +246,15 @@ theorem bringZeroMode_fully_tiling_derived :
   rw [bringTiling_b1_eq_firstBetti, bringSurfaceArea_eq_gaussBonnet]
   exact bringZeroMode_genus_determined.symm
 
-/- **Phase-1 wiring (2026-05-30).**  Reference to the Bloch-Wigner
-    unit-circle function `D(e^{iθ}) = Cl_2 θ` defined in the
-    Mathlib filler at
-    `predicted-spectra/bloch-wigner-mathlib-filler.lean`
-    (`noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ`).
-
-    Declared here as an `axiom` for §3b-cond strengthening of the
-    `BringZeroModeBlochClass` field below.  Closing this axiom to a
-    direct namespace import is the Lake-tree wire-up Phase 1
-    follow-up (`folio/quantum-observable-universe/lean/QOU/...`);
-    until that lands, the axiom mirrors the filler's signature
-    exactly. -/
+/- **Phase-1 wiring (2026-05-30); updated 2026-11-22 (bean `qou-fv70`).**  The
+    Bloch-Wigner unit-circle function `D(e^{iθ}) = Cl_2 θ` is defined in
+    `QOU/Archimedean/BlochWignerUnitCircle.lean`
+    (`noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ`) and
+    imported here. The `predicted-spectra/bloch-wigner-mathlib-filler.lean` path
+    this note used to cite never existed; the block is
+    `appendix-formalisation-notes/bloch-wigner-mathlib-filler.md` and its lemmas are in
+    `QOU/Archimedean/BlochWignerMathlibFiller.lean`. The axiom that stood here
+    is gone. -/
 -- axiom removed in favor of import QOU.Archimedean.BlochWignerUnitCircle
 
 /-- Bloch-Wigner identification of the Bring zero-mode contribution,

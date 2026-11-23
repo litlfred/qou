@@ -1,0 +1,425 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/gravity-spacetime/sym2-adjoint-spin-two-gauge-not-lorentz",
+    "path": "folio/quantum-observable-universe/gravity-spacetime/sym2-adjoint-spin-two-gauge-not-lorentz"
+  },
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.761Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.784Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.809Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.834Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.859Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.883Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.913Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.942Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.971Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:36.996Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:42.932Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Graviton-reading scope remark in gravity chapter's positioning section; fits; the interpreted prop correctly lives in the spin-labels section."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:42.954Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:3 'The closest text is the spatial-isotropy condition in the preamble to Bring's surface' has no link and is not in uses[].",
+        "notes": "Link it as [the preamble to Bring's surface](#sec:archimedean-preamble) and add \"sec:archimedean-preamble\" to uses[] (brings-surface/archimedean-preamble.ts, item 3 Spatial isotropy; claim verified accurate)."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:42.975Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:3 'The closest text is the spatial-isotropy condition in the preamble' (15/16, H8): unlinked load-bearing reference.",
+        "notes": "Same fix as uses-editorial-completeness: link sec:archimedean-preamble."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:42.996Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Opening recap of the prop is setup; the gauge/spacetime section, the two missing results and the non-claims are distinct."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.017Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:3 'a motivating requirement on the choice of surface, not a theorem, ... not the Lorentz group' stacks two appositive not-tails.",
+        "notes": "Rewrite: 'That condition is a motivating requirement on the choice of surface, and it concerns the spatial rotation group SO(3) only.' The title's gauge-vs-spacetime contrast is the claim and passes."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.039Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; 'the scope of this result needs stating' is the motivation (why-before-what); closing non-claims section is content."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.063Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; 'the scope of this result needs stating' is the motivation (why-before-what); closing non-claims section is content."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.085Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; 'the scope of this result needs stating' is the motivation (why-before-what); closing non-claims section is content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.107Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; 'the scope of this result needs stating' is the motivation (why-before-what); closing non-claims section is content."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.131Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; 'the scope of this result needs stating' is the motivation (why-before-what); closing non-claims section is content."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.154Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; 'the scope of this result needs stating' is the motivation (why-before-what); closing non-claims section is content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.175Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; 'the scope of this result needs stating' is the motivation (why-before-what); closing non-claims section is content."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.199Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; 'the scope of this result needs stating' is the motivation (why-before-what); closing non-claims section is content."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ccc08239b281",
+          "ts": "af84397ddd50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:43.225Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; 'the scope of this result needs stating' is the motivation (why-before-what); closing non-claims section is content."
+      }
+    ]
+  }
+}

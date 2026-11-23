@@ -21,7 +21,8 @@ Owner ruling 2026-06-24: there is ONE correct [now: m_e-scaled] nucleon mass, th
     proton pin q₀ is solved from this identity, so m_p is a round trip there.
     m_μ   = m_e · Vol(4₁) / ℏ_q²                      (muon = figure-8 knot 4₁)
     F_Bor = |tr_M(β_Bor)| · [3]_q! / q³               (dimensionless Hecke factor)
-        → m_p ≈ 938.27 MeV, m_n ≈ 939.56 MeV  (matches CODATA; m_n predicted)
+        → m_p ≈ 938.27 MeV (round trip at the proton pin), m_n ≈ 939.11 MeV
+          (scored D1 = A Q_β, −486 ppm, conditional on C1–C3; issue #8769)
 
 The c_q² (= 1/ℏ_q²) factor is applied ONCE, in the muon anchor m_μ, then
 dressed by the *dimensionless* Borromean factor F_Bor.
@@ -49,11 +50,21 @@ if str(HERE) not in sys.path:
 _WITNESS = HERE / "m-p-substrate-identity-50dps.witness.json"
 
 
-def _from_witness() -> tuple[float, float] | None:
+def _wrap_formattable_mpf(val):
+    """Parse ``val`` (decimal string or mpf) at >= 50 dps into the module's one
+    format-spec-compatible ``mp.mpf`` subclass (``_as_formattable_mpf``), so
+    witness strings are never truncated to float64 (beans qou-4tui, qou-4ohh)."""
+    import mpmath as mp
+    with mp.workdps(max(50, mp.mp.dps)):
+        return _as_formattable_mpf(str(val))
+
+
+def _from_witness():
     if not _WITNESS.exists():
         return None
     preds = json.loads(_WITNESS.read_text())["data"]["predictions"]
-    return float(preds["m_p_MeV"]), float(preds["m_n_MeV"])
+    return (_wrap_formattable_mpf(preds["m_p_MeV"]),
+            _wrap_formattable_mpf(preds["m_n_MeV"]))
 
 
 def proton_neutron_mass_mev() -> tuple[float, float]:
@@ -67,7 +78,12 @@ def proton_neutron_mass_mev() -> tuple[float, float]:
     recomputed m_p from the F_Bor identity but derived m_n from the
     ``q_beta_toroidal_mev()`` near-match tower, whose Q_β (0.7823334279…)
     *diverges* from the canonical witness Q_β (0.7823343865… =
-    ``q_beta_kashiwara_n2_mev``). A missing witness therefore raises with a
+    ``q_beta_kashiwara_n2_mev``, the RETIRED MIXED BASE: z = 1 Form A with
+    a convention-D phase, labelled 2026-11-16; its +501 ppb on m_n is not a
+    convention-D result). Since 2026-11-21 (owner decision, issue #8769) the
+    witness m_n uses the SCORED D1 = A Q_β ``q_beta_scored_mev`` =
+    |ε_flavour(V³)|·E₀ (m_n −486 ppm, conditional on conjectures C1–C3);
+    the retired value survives only as a labelled witness diagnostic. A missing witness therefore raises with a
     regeneration instruction rather than silently substituting a
     non-canonical m_n. (Toroidal-tower over-claim audit:
     docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md; the
@@ -82,7 +98,7 @@ def proton_neutron_mass_mev() -> tuple[float, float]:
             "    python3 computations/m_p_substrate_identity_50dps.py\n"
             "No formula fallback is provided — the canonical (m_p, m_n) come "
             "only from this witness (muon-anchored F_Bor identity + the "
-            "canonical Kashiwara-N2 Q_β for m_n)."
+            "scored D1 = A Q_β for m_n)."
         )
     return result
 
@@ -93,7 +109,7 @@ def proton_mass_mev() -> float:
 
 
 def neutron_mass_mev() -> float:
-    """Canonical neutron mass (MeV) — muon-anchored Hecke energy ≈ 939.56."""
+    """Canonical neutron mass (MeV): m_p + scored D1 = A Q_β + m_e ≈ 939.11 (C1–C3 conditional)."""
     return proton_neutron_mass_mev()[1]
 
 
@@ -130,13 +146,16 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     from m_p_substrate_identity_50dps import F_Bor
     from q_parameter import Q_MP as q0, vol_4_1_at
     from codata_constants import M_E_MEV
-    from derived_masses import q_beta_kashiwara_n2_mev
+    from derived_masses import q_beta_scored_mev
     q = mp.mpf(str(q0)); m_e = mp.mpf(str(M_E_MEV))
     vol41 = vol_4_1_at(50)
 
     def constit(qq, mee):
         m_p = 2 * (mee * vol41 / ((qq - 1) / qq) ** 2 * F_Bor(qq) - 6 * mee)
-        m_n = m_p + q_beta_kashiwara_n2_mev() + mee  # Kashiwara b² Q_β (const in FD)
+        # Scored D1 = A Q_β (owner decision 2026-11-21, issue #8769), which
+        # depends on q and m_e through ε_flavour(V³) and E₀, so it now moves
+        # with the finite difference (the retired base was held constant).
+        m_n = m_p + q_beta_scored_mev(qq, mee) + mee
         return Z * m_p + N * m_n
 
     base = constit(q, m_e)
@@ -144,7 +163,9 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     dq = q * mp.mpf(str(sig["q0"])); dme = m_e * mp.mpf(str(sig["m_e"]))
     d_q0 = (constit(q + dq, m_e) - constit(q - dq, m_e)) / 2
     d_me = (constit(q, m_e + dme) - constit(q, m_e - dme)) / 2
-    return float(mp.sqrt(d_q0 ** 2 + d_me ** 2) / abs(base) * mp.mpf(10) ** 9)
+    return _wrap_formattable_mpf(
+        mp.sqrt(d_q0 ** 2 + d_me ** 2) / abs(base) * mp.mpf(10) ** 9
+    )
 
 
 def _as_formattable_mpf(val):
@@ -159,6 +180,9 @@ def _as_formattable_mpf(val):
             if not format_spec:
                 return str(self)
             return format(float(self), format_spec)
+
+        def __round__(self, n=None):
+            return round(float(self), n)
 
         def _wrap(self, res):
             return _FormattableMpf(res) if isinstance(res, mp.mpf) else res
@@ -222,111 +246,137 @@ def nucleon_mass_mev(species: str):
         return _as_formattable_mpf(str(preds[key]))
 
 
-def proton_qed_self_energy_borromean_mev(k_weighted: bool = False):
-    """Proton connected 4th-order Borromean V³ electromagnetic self-energy M_p^{QED,conn} (MeV).
+_TWO_TERM_SCOPE_NOTE = """
+    WEIGHTING (2026-11-20, owner request; bean qou-99qc). The weighting is DERIVED: convention D's
+    Markov trace is the U_q(sl2) quantum trace Tr(K^{⊗3}·)/[2]_q³ (Lean
+    `QOU.BraidsAndKnots.NucleonWeightSpaceQTrace.qtrace_crossing_eq_zD`), so the proton trace
+    carries q/[2]_q³ and the neutron trace q⁻¹/[2]_q³. That is the default and the only canonical
+    path (`weighting='derived'`). The #8518 menu entries ('plain', 'KnKp', 'Kp3', 'q'; 'Kp' on
+    the proton term) are kept only as labelled historical comparisons. Library:
+    `two_term_qtrace_weighting.py`.
 
-    Implements Lean theorem
-    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3`:
-        tr_conn(p, V³) = (1/3) tr((Q_{12}^{(p)} + Q_{23}^{(p)}) V_p³)
-                       = −2(q² − 1)⁴(q⁴ + q² + 1) / (27 q⁶)
-        M_p^{QED,conn} = m_e · w(q) · |tr_conn(p, V³)|,
-    where w(q) = q if `k_weighted=True` and 1 otherwise.
-    Reads `two_term_borromean_qed_diagnostics` from `m-p-substrate-identity-50dps.witness.json`
-    when available, with a direct 50-dps fallback computation so it works regardless of
-    witness regeneration order. Preserves full ≥50-dps mpmath precision via `_as_formattable_mpf`.
+    INSERTION (OWNER RULING 2026-11-20 16:44). The canonical insertion is the covariant
+    permutation-complete Q₁₂+Q₂₃+Q₁₃ (`insertion='all_pairs'`, the default). Its connected part is
+    identically 0 on V³ (`NucleonWeightSpaceQTrace.deltaT_allPairs_connected_eq_zero`), so the
+    canonical M_p^QED,conn and Δm_QED^conn are 0 and the two-term masses equal the one-term ones.
+    `insertion='adjacent'` (Q₁₂+Q₂₃, not braid-covariant, #8552; connected subtraction and −m_e·t
+    sign as previously selected) is kept as a labelled comparison only.
     """
+
+
+def _two_term_witness_value(key: str):
     import mpmath as mp
     if _WITNESS.exists():
         data = json.loads(_WITNESS.read_text()).get("data", {})
         diag = data.get("two_term_borromean_qed_diagnostics", {})
-        key = "M_p_QED_conn_Kp_MeV" if k_weighted else "M_p_QED_conn_MeV"
         if key in diag:
             with mp.workdps(max(50, mp.mp.dps)):
                 return _as_formattable_mpf(str(diag[key]))
+    return None
+
+
+def _two_term_q_me():
+    import mpmath as mp
     import _path_bridge  # noqa: F401
+    from q_parameter import Q_MP as q0
+    from codata_constants import M_E_MEV
+    return mp.mpf(str(q0)), mp.mpf(str(M_E_MEV))
+
+
+def proton_qed_self_energy_borromean_mev(weighting: str = "derived", insertion=None):
+    """Proton connected 4th-order Borromean V³ electromagnetic term M_p^{QED,conn} (MeV).
+
+    Canonical (all-pairs, derived): 0, since Q₁₂+Q₂₃+Q₁₃ = 0 on W_p.
+    Comparison (adjacent): −m_e·t_conn(W_p), t_conn(W_p) = q·tr((Q₁₂+Q₂₃)_p V_p³)/[2]_q³ < 0
+    (`trace_QAdjp_borromeanV3`) ≈ +0.0901243 keV; historical 'plain' (1/3, no K) +0.2200773 keV,
+    'Kp' (q/3) +0.2442811 keV.
+
+    Weighting and scope: see `_TWO_TERM_SCOPE_NOTE` in this module.
+    """
+    import mpmath as mp
+    if insertion is None:
+        insertion = "all_pairs" if weighting == "derived" else "adjacent"
+    if insertion == "all_pairs":
+        from two_term_qtrace_weighting import m_p_qed_conn_mev
+        with mp.workdps(max(50, mp.mp.dps)):
+            q, m_e = _two_term_q_me()
+            return _as_formattable_mpf(m_p_qed_conn_mev(q, m_e, weighting, "all_pairs"))
+    key = {"derived": "M_p_QED_conn_derived_MeV", "plain": "M_p_QED_conn_MeV",
+           "Kp": "M_p_QED_conn_Kp_MeV"}.get(weighting)
+    if key is None:
+        raise ValueError(f"unknown proton weighting {weighting!r} (use 'derived', 'plain', 'Kp')")
+    v = _two_term_witness_value(key)
+    if v is not None:
+        return v
+    from two_term_qtrace_weighting import m_p_qed_conn_mev
     with mp.workdps(max(50, mp.mp.dps)):
-        from q_parameter import Q_MP as q0
-        from codata_constants import M_E_MEV
-        q = mp.mpf(str(q0))
-        m_e = mp.mpf(str(M_E_MEV))
-        q2 = q ** 2
-        tr_conn_p = -2 * ((q2 - 1) ** 4) * (q2 ** 2 + q2 + 1) / (27 * (q2 ** 3))
-        w = q if k_weighted else mp.mpf(1)
-        return _as_formattable_mpf(m_e * w * abs(tr_conn_p))
+        q, m_e = _two_term_q_me()
+        return _as_formattable_mpf(m_p_qed_conn_mev(q, m_e, weighting, "adjacent"))
 
 
-def np_qed_splitting_borromean_conn_mev(weighting: str = "plain"):
+def np_qed_splitting_borromean_conn_mev(weighting: str = "derived", insertion=None):
     """(n − p) connected 4th-order Borromean V³ QED mass splitting Δm_QED^{conn} (MeV).
 
-    Implements Lean theorems
-    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjn_borromeanV3_connected` and
-    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3`:
-        Δtr_conn(V³) = +(q² − 1)⁴(4q⁴ + q² + 4) / (27 q⁶)
-        Δm_QED^{conn} = −m_e · Δtr_conn^{(w)}(V³) < 0.
-    Reads `two_term_borromean_qed_diagnostics` from `m-p-substrate-identity-50dps.witness.json`
-    when available, with a direct 50-dps fallback computation for `weighting` in
-    `{'plain', 'KnKp', 'Kp3', 'q'}`. Preserves full ≥50-dps mpmath precision via `_as_formattable_mpf`.
+    Canonical (all-pairs, derived): 0 (`deltaT_allPairs_connected_eq_zero`).
+    Comparison (adjacent): Δm_QED^{conn} = −m_e · [t_conn(W_n) − t_conn(W_p)],
+    Δt_conn = (q−1)⁴(q+1)⁴(q²+2)(2q⁴+1)/(9q⁴(q²+1)³)
+    (`NucleonWeightSpaceQTrace.deltaT_adjacent_connected_eq`). At the proton q₀ (derived)
+    ≈ −0.1272243 keV. Historical comparisons: 'plain' −0.3316960, 'KnKp' −0.3448405
+    (= ([2]_q³/3)·derived exactly, `knkp_eq_qdim_div_three_mul_deltaT_connected`),
+    'Kp3' −0.3558998, 'q' −0.3681755 keV.
+
+    Weighting and scope: see `_TWO_TERM_SCOPE_NOTE` in this module.
     """
     import mpmath as mp
-    if _WITNESS.exists():
-        data = json.loads(_WITNESS.read_text()).get("data", {})
-        diag = data.get("two_term_borromean_qed_diagnostics", {})
-        key_map = {
-            "plain": "Delta_m_QED_conn_MeV",
-            "KnKp": "Delta_m_QED_conn_KnKp_MeV",
-            "Kp3": "Delta_m_QED_conn_Kp3_MeV",
-            "q": "Delta_m_QED_conn_q_MeV",
-        }
-        key = key_map.get(weighting)
-        if key and key in diag:
-            with mp.workdps(max(50, mp.mp.dps)):
-                return _as_formattable_mpf(str(diag[key]))
-    import _path_bridge  # noqa: F401
+    key = {"derived": "Delta_m_QED_conn_derived_MeV", "plain": "Delta_m_QED_conn_MeV",
+           "KnKp": "Delta_m_QED_conn_KnKp_MeV"}.get(weighting)
+    if weighting not in ("derived", "plain", "KnKp", "Kp3", "q"):
+        raise ValueError(f"unknown weighting {weighting!r} (use 'derived'; historical: "
+                         "'plain', 'KnKp', 'Kp3', 'q')")
+    from two_term_qtrace_weighting import delta_m_qed_conn_mev
+    if insertion is None:
+        insertion = "all_pairs" if weighting == "derived" else "adjacent"
+    if insertion == "all_pairs":
+        with mp.workdps(max(50, mp.mp.dps)):
+            q, m_e = _two_term_q_me()
+            return _as_formattable_mpf(delta_m_qed_conn_mev(q, m_e, weighting, "all_pairs"))
+    if key:
+        v = _two_term_witness_value(key)
+        if v is not None:
+            return v
     with mp.workdps(max(50, mp.mp.dps)):
-        from q_parameter import Q_MP as q0
-        from codata_constants import M_E_MEV
-        q = mp.mpf(str(q0))
-        m_e = mp.mpf(str(M_E_MEV))
-        q2 = q ** 2
-        q2_m1_4 = (q2 - 1) ** 4
-        denom = 27 * (q2 ** 3)
-        tr_conn_p = -2 * q2_m1_4 * (q2 ** 2 + q2 + 1) / denom
-        tr_conn_n = q2_m1_4 * (2 * (q2 ** 2) - q2 + 2) / denom
-        if weighting == "plain":
-            delta_tr = tr_conn_n - tr_conn_p
-        elif weighting == "KnKp":
-            delta_tr = (tr_conn_n / q) - (q * tr_conn_p)
-        elif weighting == "Kp3":
-            delta_tr = tr_conn_n - (q * tr_conn_p)
-        elif weighting == "q":
-            delta_tr = q * (tr_conn_n - tr_conn_p)
-        else:
-            raise ValueError(
-                f"np_qed_splitting_borromean_conn_mev: unknown weighting {weighting!r} "
-                "(use 'plain', 'KnKp', 'Kp3', or 'q')"
-            )
-        return _as_formattable_mpf(-m_e * delta_tr)
+        q, m_e = _two_term_q_me()
+        return _as_formattable_mpf(delta_m_qed_conn_mev(q, m_e, weighting, "adjacent"))
 
 
-def neutron_mass_two_term_mev(weighting: str = "plain"):
+def delta_em_charge_insertion_mev(insertion: str = "adjacent"):
+    """Pre-registered charge-insertion EM term (bean qou-99qc, 2026-11-19 05:10Z), MeV.
+
+    Δ_EM := +m_e·[t(W_n) − t(W_p)], t(W_N) = Tr_{W_N}(K^{⊗3} X V³)/[2]_q³, raw insertion.
+    insertion='adjacent' (X = Q₁₂+Q₂₃, as pre-registered; `deltaT_adjacent_raw_eq`):
+    ≈ −0.0375433509 MeV at the proton q₀. insertion='all_pairs' (X = Q₁₂+Q₂₃+Q₁₃, the
+    covariant projection; `deltaT_allPairs_raw_eq`): ≈ −0.0565058628 MeV, word-independent.
+    Lattice EM part of m_n − m_p (≈ −0.6 to −1.0 MeV) is a comparison only. Not added to any
+    scored mass: the insertion, raw-vs-connected and the sign are open (see the scope note).
+    """
+    import mpmath as mp
+    from two_term_qtrace_weighting import delta_em_charge_insertion_mev as _f
+    with mp.workdps(max(50, mp.mp.dps)):
+        q, m_e = _two_term_q_me()
+        return _as_formattable_mpf(_f(q, m_e, insertion))
+
+
+def neutron_mass_two_term_mev(weighting: str = "derived", insertion=None):
     """Two-term neutron mass m_n^{two-term} = m_n + Δm_QED^{conn}(V³) in MeV.
 
-    Combines the canonical neutron mass `neutron_mass_mev()` with the connected
-    4th-order Borromean V³ QED splitting `np_qed_splitting_borromean_conn_mev(weighting)`.
-    At `weighting='plain'`, m_n^{two-term} ≈ 939.5655543 MeV (+147.0 ppb vs CODATA,
-    reducing the +501.3 ppb Convention-D residual by 70.7% without free parameters).
-    Preserves full ≥50-dps mpmath precision via `_as_formattable_mpf`.
+    Canonical (all-pairs): equals the one-term `nucleon_mass_mev("n")`.
+
+    Weighting and scope: see `_TWO_TERM_SCOPE_NOTE` in this module.
     """
     import mpmath as mp
-    if weighting == "plain" and _WITNESS.exists():
-        data = json.loads(_WITNESS.read_text()).get("data", {})
-        diag = data.get("two_term_borromean_qed_diagnostics", {})
-        if "m_n_two_term_MeV" in diag:
-            with mp.workdps(max(50, mp.mp.dps)):
-                return _as_formattable_mpf(str(diag["m_n_two_term_MeV"]))
     with mp.workdps(max(50, mp.mp.dps)):
         mn = nucleon_mass_mev("n")
-        dm_qed = np_qed_splitting_borromean_conn_mev(weighting=weighting)
+        dm_qed = np_qed_splitting_borromean_conn_mev(weighting=weighting, insertion=insertion)
         return _as_formattable_mpf(mn + dm_qed)
 
 

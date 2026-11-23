@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/witten1989-cmp-jones/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(Wy-+exp(2πit",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "contains": [
+    "library/witten1989-cmp-jones/blocks/prose-sec-001",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-001-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "provenance": "ingested"
+}

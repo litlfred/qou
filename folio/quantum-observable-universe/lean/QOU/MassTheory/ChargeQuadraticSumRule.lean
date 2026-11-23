@@ -245,4 +245,16 @@ theorem octet_em_pattern_unique {A B A' B' : ℚ}
   simp only [emPlus, emZero, emMinus, energy, chargeSelf, chargeInter, qU, qD, qS] at h1 h2
   constructor <;> linarith
 
+
+/-- **Left-inverse coupling recovery and full `Σ⁺ - Σ⁻` splitting (`qou-bn8e`).**
+The inverse formulas `2 * (emPlus A B - emZero A B) + (emZero A B - emMinus A B) = A`
+and `(emPlus A B - emZero A B) - (emZero A B - emMinus A B) = B` recover `(A, B)` identically,
+and the full `Σ⁺ - Σ⁻` gap is `emPlus A B - emMinus A B = (2 * A - B) / 3`. -/
+theorem octet_em_left_inverse_and_sigma_span (A B : ℚ) :
+    2 * (emPlus A B - emZero A B) + (emZero A B - emMinus A B) = A ∧
+      (emPlus A B - emZero A B) - (emZero A B - emMinus A B) = B ∧
+      emPlus A B - emMinus A B = (2 * A - B) / 3 := by
+  refine ⟨?_, ?_, ?_⟩ <;>
+    simp only [emPlus, emZero, emMinus, energy, chargeSelf, chargeInter, qU, qD, qS] <;> ring
+
 end QOU.MassTheory.ChargeQuadraticSumRule

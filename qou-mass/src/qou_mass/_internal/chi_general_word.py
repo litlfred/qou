@@ -73,7 +73,9 @@ from chi_monotone_transfer import chi_all_lambda  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
 from chi_window_transfer import chi_all_lambda_window  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
 
+set_compute_dps()
 # Template-classification tolerance, matching `chi_monotone_transfer`'s.
 _TEMPLATE_TOL = mp.mpf("1e-30")
 

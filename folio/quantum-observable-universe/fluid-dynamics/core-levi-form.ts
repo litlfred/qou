@@ -90,5 +90,6 @@ export default proposition({
         "Beans `qou-fm7s`, `qou-0ueg`.",
       see: "../../../docs/audits/2026-10-12-ns-v1-geometric-depletion.md",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): What the criteria do give is stated in [Levi degeneracy conjecture](#conj:levi-degeneracy)." },
   ],
 });

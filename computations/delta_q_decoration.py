@@ -9,7 +9,7 @@ Computes:
   2. δ_q for H_3(q) basis (6 NF elements) and force-carrier T_{3,5}
   3. Wedderburn decomposition of the bare H_2 molecular braid in H_4(q)
   4. Hypothesis test: bound-state projects onto force-carrier channels
-     (3,1) and (2,1,1) per prop:force-carrier-intertwining-correspondence
+     (3,1) and (2,1,1) per conj:force-carrier-intertwining-correspondence
   5. Algebraic identity α_EM = h² / [q · δ_q(T_29) · δ_q(T_35)]
      per prop:alpha-em-categorical-trace-ratio
 
@@ -17,7 +17,7 @@ Output: delta-q-decoration.witness.json
 
 Reference content blocks:
   def:delta-q-decoration
-  prop:force-carrier-intertwining-correspondence
+  conj:force-carrier-intertwining-correspondence
   prop:alpha-em-categorical-trace-ratio
   rem:bound-state-frobenius-self-dual-channel
   conj:e-hartree-categorical-derivation
@@ -46,7 +46,7 @@ WITNESS = {
     "description": (
         "δ_q Wedderburn decomposition for H_n(q), n=2,3,4. "
         "Tests the round-18 force-carrier intertwining correspondence "
-        "(prop:force-carrier-intertwining-correspondence): does the "
+        "(conj:force-carrier-intertwining-correspondence): does the "
         "bare H_2 molecular braid project onto the (3,1) and (2,1,1) "
         "Wedderburn channels matching T_{3,5} and T_{2,9} strand counts? "
         "Verifies the algebraic identity "
@@ -153,7 +153,7 @@ WITNESS["data"]["intertwining_hypothesis_test"] = {
     "lambda_22_contribution":  float(contrib_22),
     "total_trM": float(total_trM),
     "supported": bool(intertwining_supported),
-    "reference": "prop:force-carrier-intertwining-correspondence",
+    "reference": "conj:force-carrier-intertwining-correspondence",
     "all_lambdas": {str(lam): v["trM_contribution"] for lam, v in bare.items()},
 }
 WITNESS["assertions"].append({
@@ -161,7 +161,7 @@ WITNESS["assertions"].append({
     "computed": intertwining_supported,
     "expected": True,
     "passed":   intertwining_supported,
-    "source":   "prop:force-carrier-intertwining-correspondence (round-18)",
+    "source":   "conj:force-carrier-intertwining-correspondence (round-18)",
 })
 
 # ──────────────────────────────────────────────────────────────────────

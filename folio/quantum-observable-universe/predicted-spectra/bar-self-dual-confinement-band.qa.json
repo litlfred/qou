@@ -1153,6 +1153,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "The headline claim is maximality (md:7), but the Lean ref `bar_self_dual_confinement_band` (sibling .lean:167-173) proves only qGold·qGoldDual = 1, qGold < qGoldDual, 1 ∈ ℬ and bar-invariance. Maximality among ι-invariant connected intervals that avoid the nodes is not encoded anywhere (missing conclusion). Proof (prf:2) is correct in substance, but it considers only intervals of the form (a, 1/a). It never shows that every ι-invariant open interval (a,b) has ab = 1. That step is easy but omitted (warn). The phase table (prf:6-10) attaches physical labels (QGP, confined hadronic, CFL/strangelet) that are not proved here; this is empirical/physical content. Margins at q₀ checked: 0.728, 1.508, 0.519, 1.717 are correct."
+      },
+      {
+        "field_hash": {
+          "md": "d4acf569f3c8",
+          "ts": "3577def2a233",
+          "lean": "75dc75a22466",
+          "lean_statement": "26db14e09a4d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:10:16.132Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the sentence restating B as the largest interval satisfying both thresholds was removed; maximality, the headline claim, is still stated and still not encoded. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: The headline claim is maximality (md:7), but the Lean ref `bar_self_dual_confinement_band` (sibling .lean:167-173) proves only qGold·qGoldDual = 1, qGold < qGoldDual, 1 ∈ ℬ and bar-invariance. Maximality among ι-invariant connected intervals that avoid the nodes is not encoded anywhere (missing conclusion). Proof (prf:2) is correct in substance, but it considers only intervals of the form (a, 1/a). It never shows that every ι-invariant open interval (a,b) has ab = 1. That step is easy but omitted (warn). The phase table (prf:6-10) attaches physical labels (QGP, confined hadronic, CFL/strangelet) that are not proved here; this is empirical/physical content. Margins at q₀ checked: 0.728, 1.508, 0.519, 1.717 are correct."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2135,6 +2153,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:00.185Z",
+  "updated_at": "2026-11-21T08:10:16.132Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

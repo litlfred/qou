@@ -3,7 +3,7 @@ The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) decomposes via the
 :refterm[descent]{#descent} involution into descended and transient contributions.  The
 transient trace localises to blow-up centres $p$ in the brane tower
-([topological decomposition](#thm:topological-mass)); integrating the
+([topological decomposition](#conj:topological-mass)); integrating the
 $q$-deformed expansion flow $\ln_q(1+t)/t$ along the radial
 coordinate of the Briggs--Klein chart
 ([Briggs--Klein chart](#def:briggs-klein-chart)) over each resolved
@@ -45,7 +45,7 @@ $$
 *canonical structural verification: the integration value matches
 $-\mathrm{Li}_2^q(-V)$ to all displayed digits at $q_0 \approx 1.110$
 for $V \in \{0.1, 0.3, 0.5, 0.7, 0.85, 0.95, 0.989\}$
-(`kashaev-integration-identity.witness.json`).*
+.*
 
 *The integral is not the compact quantum dilogarithm
 $\Phi_q(V) = \prod_{k\geq 1}(1 - q^{-k}V)^{-1}$, whose logarithm uses

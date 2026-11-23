@@ -1,4 +1,4 @@
-Feynman noted \cite{feynman1963} that three color primaries cannot reproduce all visible spectral colors using strictly positive coefficients. The CIE chromaticity diagram formalizes this. The spectral locus is a curve that no inscribed triangle contains. Certain spectral colors require negative coefficients for at least one primary.
+Feynman noted \cite{feynman1963} that three color primaries cannot reproduce all visible spectral colors using strictly positive coefficients. The CIE chromaticity diagram makes this precise. The spectral locus is a curve that no inscribed triangle contains. Certain spectral colors require negative coefficients for at least one primary.
 
 In the Descartes universe, this geometric constraint transplants to the Skein algebra. It provides a mechanism for color confinement.
 

@@ -34,7 +34,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from gb_filtration_jet_tracker import HeckeElement  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import fmt  # noqa: E402
 
 
 def alpha_shift_pk(p: int, k: int) -> int:
@@ -91,7 +92,9 @@ ATOMS = [
 
 
 def main() -> int:
-    q0 = float(Q0)
+    # α_shift and ℓ(K,q) below are integers; q₀ is only recorded, so record
+    # it at full precision (was float(Q), F64_CAST).
+    q0 = fmt(Q0)
     print(f"L6 advance — atomic-braid α_shift via crystal-R-matrix")
     print(f"  q_0 = {q0}\n")
     print(f"  {'atom':<6} {'A':>2} {'n':>3} {'len(β)':>7} "

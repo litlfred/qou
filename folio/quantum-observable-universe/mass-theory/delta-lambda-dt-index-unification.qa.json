@@ -1,0 +1,25 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "cf4661436306",
+          "ts": "44be70d98d7d",
+          "lean": "a60b1f45e650"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:21:11.128Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. lean.ref QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional (lean/QOU/BraidsAndKnots/DeltaLambdaGeneralNUnconditional.lean:41), sorry-free, conjoins two legs. CHIRALITY leg (item 2) is genuine: parity_eq_w0_sign_general uses aStat_eq_sumChoose2_conjugate, the real combinatorial identity n(lambda) = sum_i C(lambda'_i,2) for every sorted list, removing the old n <= 5 restriction exactly as the md says. VALUE leg (item 1) does not carry the md's claim. dtEulerG N d sums (-1)^k gradedDimG N d k where gradedDimG N d k := if k = N then d else 0 (DeltaLambdaDTIndexGeneralN.lean:74), i.e. the graded object is DEFINED to sit in the single degree N = n(lambda), so the Euler characteristic equals (-1)^N d by construction (dtEulerG_collapse, then rfl). No DT invariant, 3d index or graded piece of any independently defined object appears, and d is a free natural number, never tied to dim V_lambda. The md's section 'Why this is a theorem and not a definition' says the magnitude is 'forced as an Euler characteristic rather than posited as the Wedderburn dimension'; in the Lean the magnitude is posited (free d) and the grading is posited (single degree), so that sentence overclaims. Fix: either build gr_k from an actual filtration/index object with dim V_lambda as a derived quantity, or soften the md to say the value leg is a single-degree bookkeeping identity. Scope paragraph (binding magnitude open) is accurate. No ruling conflicts."
+      }
+    ]
+  },
+  "updated_at": "2026-11-21T08:21:11.128Z"
+}

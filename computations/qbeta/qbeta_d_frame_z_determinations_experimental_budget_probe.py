@@ -375,7 +375,7 @@ def main() -> int:
             "cap: the ladder's anchor independently measures z and selects C. Hence "
             "there is no D-frame anchor and the ladder's FORM must change, not its "
             "parameter. Scope-(a); nothing derived, wired or readmitted."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": all_passed,
         "parameters": {

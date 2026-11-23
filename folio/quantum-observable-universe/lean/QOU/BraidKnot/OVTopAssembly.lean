@@ -39,6 +39,14 @@ proved/stubbed bricks.
 | `decomp` | brick 5 `centralC2_acts_by_contentSqSum` + `centralC2_eq_sum_jucysMurphy_sq` (`C₂` acts by `ω_λ` on `Sᵘ`) | `sorryAx`-via-`JucysMurphy.centralC2_acts_by_contentSqSum`; the rfl bridge `centralC2_eq_sum_jucysMurphy_sq` is consumed sorry-free |
 | `complete` | `WedderburnSn.sn_wedderburnArtin_algClosed` `Σ proj = id` + brick 3 `card_irreducibles_eq_card_partitions` | `sorryAx`-via-`snBlocks` → `snBridge` (Ref `SnWedderburnPartitionBridge.sn_rational_specht_split`) |
 
+**The `sorryAx` entries in the "status here" column are stale (re-measured 2026-11-22, bean
+`qou-ep4e`).** Against a cone rebuilt from source (38 modules, all exit 0), `#print axioms` on
+`snSpectralData`, `sn_spectralData_exists`, `identityB_general` and `sum_numSYT_sq_eq_factorial`
+gives `[propext, Classical.choice, Quot.sound]` for each: no field reaches `sorryAx`. All four
+still take the binder `[SnWedderburnPartitionBridge.SnIsotypicSpechtSplit R]`; its instance is
+built from `QOU.Mathlib.rskBurnsideHolds` (Schensted, no binder), so cite that theorem, not
+these, as the source of `∑_λ (#SYT λ)² = n!` (see `scripts/lean-axiom-guard.py`).
+
 The genuinely hard, irreducibly-OV content (which Mathlib does not provide at the pinned `f897ebcf`)
 is exactly the explicit isotypic-projection family **re-indexed by partitions** — i.e. the rational,
 OV-labelled Wedderburn split of `R[S_n]` over a char-0 field, matching the blocks against

@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-phi-q-categorical-truncation-interpretation",
@@ -14,11 +15,12 @@
   "kind": "remark",
   "title": "Disambiguating the three depth invariants and the empirical truncation behaviour",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-phi-q-categorical-truncation",
+    "papers/quantum-observable-universe/blocks/conj-phi-q-categorical-truncation",
     "papers/quantum-observable-universe/blocks/cor-habiro-expansion-atomic",
-    "papers/quantum-observable-universe/blocks/conj-brane-tower-z-habiro"
+    "papers/quantum-observable-universe/blocks/conj-brane-tower-z-habiro",
+    "papers/quantum-observable-universe/blocks/prop-cell-depth-truncation"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-phi-q-categorical-truncation",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-phi-q-categorical-truncation",
   "text": "phi-q-categorical-truncation-interpretation.md",
   "provenance": "authored"
 }

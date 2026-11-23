@@ -51,7 +51,7 @@ The residual $-0.468\;\mathrm{ppm}$ survives exact resummation and is therefore 
 
 **Sensitivity to $q$.**
 
-The prediction $\alpha^{-1}(q) = [9]_q [10]_q / q^{-1}$ depends steeply on $q$. Matching the CODATA central value requires $q \approx 1.11023 \pm 0.00002$. We extract $q$ independently from two other observables:
+The prediction $\alpha^{-1}(q) = [9]_q [10]_q / q^{-1}$ depends steeply on $q$. Matching the CODATA central value requires $q \approx 1.11023 \pm 0.00002$. Extract $q$ independently from two other observables:
 
 * **Neutron-to-proton mass ratio**: $q \approx q_0$ (via the Skein mass formula).
 * **Tritium half-life**: $q \approx 1.109$--$1.112$ (via the transfer matrix calculation).

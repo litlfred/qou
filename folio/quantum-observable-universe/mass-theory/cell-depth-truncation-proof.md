@@ -4,4 +4,4 @@
 
 **Item 5.** Put $P=\Phi_q^{[\le K']}(z)\ne0$ and $u=1-q^{-(K'+1)}z$. Then $\Phi_q^{[\le K'+1]}(z)=Pu^{-1}$, and $Pu^{-1}=P$ would force $u=1$, so $q^{-(K'+1)}z=0$, contradicting $q,z\ne0$. For the consequence apply this at $K'=k_0$. The hypotheses are satisfiable, for example $q=2$, $z=1$ over $\mathbb Q$.
 
-**Lean.** `stratum_eq_zero_of_gt`, `tower_stable`, `tower_total` and `kstar_eq_of_max_in_supp` (items 1–4, for an arbitrary depth function on a finite index set, with the vanishing derived from the definition of the support rather than assumed), and `phiTrunc_succ_ne`, `no_stable_phi_tower`, `witness_hyp` (item 5) in the sibling file. The Hecke algebra, the Kazhdan–Lusztig basis and the cell–irreducible correspondence are not formalised; they are cited [Kazhdan–Lusztig 1979] and were checked exactly for $n\le5$ (probe recorded on issue #8094). Sorry-free, lean-direct exit 0. $\blacksquare$
+**Scope.** Items 1–4 hold for an arbitrary depth function on a finite index set. The Kazhdan–Lusztig basis and the cell–irreducible correspondence are cited [Kazhdan–Lusztig 1979] rather than proved here, and were checked exactly for $n\le5$. $\blacksquare$

@@ -55,7 +55,7 @@ inductive PredictionMethod : Type
   | volume_match_deprecated
   deriving Repr, DecidableEq
 
-/-- Three-anchor calibration source per `prop:three-calibration-inputs`. -/
+/-- Three-anchor calibration source per `conj:three-calibration-inputs`. -/
 inductive CalibrationSource : Type
   | CAL_1   -- electron mass m_e
   | CAL_2   -- substrate parameter q_0

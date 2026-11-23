@@ -183,4 +183,12 @@ theorem sum_hookZ_eq_bStat_via_reflections (μ : YoungDiagram) :
         + (μ.cells.card : ℤ) :=
   QOU.BraidKnot.HookSum.sum_hookZ_eq_bStat μ le_rfl le_rfl
 
+/-- Subtracting the list-register b-statistic sum from the cellwise hook sum yields zero. -/
+theorem sum_hookZ_sub_bStat_eq_zero (μ : YoungDiagram) :
+    ∑ c ∈ μ.cells, hookZ μ c
+      - (∑ j ∈ range (μ.rowLen 0), (j : ℤ) * (μ.colLen j : ℤ)
+        + ∑ i ∈ range (μ.colLen 0), (i : ℤ) * (μ.rowLen i : ℤ)
+        + (μ.cells.card : ℤ)) = 0 := by
+  rw [sum_hookZ_eq_bStat_via_list, sub_self]
+
 end QOU.BraidKnot.HookSumBridge

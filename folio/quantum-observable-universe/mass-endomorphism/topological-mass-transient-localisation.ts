@@ -13,6 +13,7 @@ export default lemma({
   ],
   proofs: ["prf:topological-mass-transient-localisation"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The equality is recorded as the open conjecture `TransientLocalisationNormEquality` in the Lean formalisation." },
     {
       kind: "refined-framing",
       date: "2026-10-10",

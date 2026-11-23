@@ -46,4 +46,7 @@ export default remark({
     "rem:decuplet-equal-spacing",
   ],
   cites: ["colemanglashow1961"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This is\na theorem, machine-checked in\n`QOU/Eightfold/ColemanGlashowIdentity.lean`: the combination" },
+  ],
 });

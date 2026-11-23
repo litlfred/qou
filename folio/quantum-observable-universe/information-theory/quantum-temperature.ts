@@ -18,5 +18,8 @@ export default definition({
   lean: { ref: "qou:QOU.Information.quantumTemperature",
     validation: "not_checked",
   },
-  uses: ["rem:kashaev-volume-density", "def:quantum-entropy", "def:planck-time"],
+  // rem:kashaev-volume-density dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the definition. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: ["def:quantum-entropy", "def:planck-time"],
 });

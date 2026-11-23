@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "witten1989-cmp-jones",
+  "contains": [
+    "library/witten1989-cmp-jones/sections/sec-front-matter",
+    "library/witten1989-cmp-jones/sections/sec-000",
+    "library/witten1989-cmp-jones/sections/sec-001",
+    "library/witten1989-cmp-jones/sections/sec-002",
+    "library/witten1989-cmp-jones/sections/sec-003",
+    "library/witten1989-cmp-jones/sections/sec-004",
+    "library/witten1989-cmp-jones/sections/sec-005",
+    "library/witten1989-cmp-jones/sections/sec-006",
+    "library/witten1989-cmp-jones/sections/sec-007",
+    "library/witten1989-cmp-jones/sections/sec-008",
+    "library/witten1989-cmp-jones/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "witten1989-cmp-jones",
+    "title_source": "slug",
+    "source_file": "witten1989-cmp-jones.pdf",
+    "source_sha256": "32f98ed8f7b235887c2d0bffbf3be412cfbd287836b2f389bc662466f9c47f5b",
+    "pages": 50,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}
