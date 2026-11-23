@@ -7,7 +7,7 @@ priority: normal
 tags:
     - lean
 created_at: 2026-11-22T15:29:12Z
-updated_at: 2026-11-22T22:14:59Z
+updated_at: 2026-11-23T17:24:43Z
 parent: qou-uwyf
 ---
 
@@ -18,3 +18,5 @@ Found 2026-11-22 while fixing qou-uu6g. The general block's class PSDTrace (t-be
 
 
 2026-11-22 (W8 thread, branch claude/hecke-axioms-positivity-2026-11-22): instance supplied. QOU/SchurWeyl/WtraceTwistedPositivity.lean proves 0 ≤ wtrace(X·X†) and wtrace(X†) = wtrace(X) at z_D for q > 1 over any ordered field (positive diagonal form on SYT making Young's seminormal matrices self-adjoint; Ocneanu weights at z_D ≥ 0). t-beta-markov-collapse-general-lift.lean: markovTraceZD, markovTraceZDTwist, instance markovTraceZD_twistedPSD, markov_frobenius_min_norm_zD. TwistedNonDegTrace is false at z_D for n+1 ≥ 3. Open point put to owner: TraceTwist admits the degenerate twist x ↦ τ(x)·1, proposed fix adds dag_mul.
+
+2026-11-23 (WS2 consolidation): Consolidated #9166 (WtraceTwistedPositivity, markovTraceZD_twistedPSD, anti-multiplicative TraceTwist, HeckeModelsBridge, MarkovTraceDescent, LaurentHeckeMonodromy, and 8 legacy/false axiom deletions) into READY PR https://github.com/litlfred/qou/pull/9197 (consolidate/ws2-hecke-models-positivity, f5d343840a6). Verified all 59 downstream QOU modules + 70 new declarations clean via lean-axiom-guard.py.

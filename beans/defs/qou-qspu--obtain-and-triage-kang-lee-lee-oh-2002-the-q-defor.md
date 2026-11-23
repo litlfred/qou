@@ -1,13 +1,13 @@
 ---
 # qou-qspu
 title: Obtain and triage Kang-Lee-Lee-Oh 2002 — the q-deformed type-A GS basis qou-auq3 needs
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T18:28:16Z
-updated_at: 2026-10-04T15:14:58Z
+updated_at: 2026-11-23T17:24:43Z
 parent: qou-1qhv
 ---
 
@@ -41,3 +41,5 @@ WORK:
 HONESTY FLAG: this paper has NOT been read. Everything above is from two other
 documents' bibliographies and introductions. Do not cite it as load-bearing
 before reading it.
+
+2026-11-23 (WS2 consolidation): Consolidated #9172 ([kangleeleeoh2002] Prop. 4.3, [kanglee2000], [bokut2001] note update, HeckeCompletion.lean attribution) + #9156 L2 plan into READY PR https://github.com/litlfred/qou/pull/9199 (consolidate/ws2-gs-citations-and-l2-plan, a6ba03c5a7b). Verified HeckeCompletion.lean and 1,024 bibliography entries clean; ready to close on merge.
