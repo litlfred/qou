@@ -32,7 +32,7 @@ zero empirical literals, zero `sorry`):
    `abs_epsFlavourV3_skewHowe_invariant`), leaving `|epsFlavourV3|` invariant.
 
 -- Ref: [leitner2026] beans qou-pdio, qou-qzvs
--- Ref: [turaev2016] Quantum Invariants of Knots and 3-Manifolds, De Gruyter (pivotal quantum trace)
+-- Ref: [reshetikhin-turaev1990] Commun. Math. Phys. 127 (1990) (pivotal quantum trace)
 -/
 
 namespace QOU.QBeta.FlavourWeightSplitPivotalSkewHowe
