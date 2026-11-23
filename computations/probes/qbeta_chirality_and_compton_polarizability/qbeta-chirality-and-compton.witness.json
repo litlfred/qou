@@ -1,8 +1,8 @@
 {
   "engine": "mpmath (80 dps) + sympy Q(q)",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-23T19:50:39.124418+00:00",
-  "commitSha": "5be409c2671eb97dad4a9b6081fe69e273eff7a7",
+  "computedAt": "2026-11-23T20:30:18.028282+00:00",
+  "commitSha": "fd42ffcfdefff5eda78987229eb7aedbe3951e71",
   "assertions": [
     {
       "name": "q0_at_80_matches_Q_MP",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3755,
+  "durationMs": 3499,
   "computation": "qbeta-chirality-and-compton",
   "scriptFile": "qbeta_chirality_and_compton_probe.py",
   "scriptHash": "28e2732a0d8c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "fd42ffcfdefff5eda78987229eb7aedbe3951e71",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
