@@ -27,3 +27,17 @@ QOU's Lean formalization currently spans **`~4,545` `.lean` files** (`~3,530` in
    - **Pure `Mathlib`-Ready Subgraphs (`zero` QOU imports, upstream-ready PR bundles):** `Algebra.IwahoriHecke` & `Algebra.TemperleyLieb`, `RingTheory.TwistedFrobenius` & `HopfAlgebra` (Sweedler/Taft/`O_q(SU(2))`), `NumberTheory.QCalculus` (Thomae-Jackson), `AlgebraicGeometry.BringCurve` & `Algebra.OctonionG2`, `Optimization.SymmetryReducedConic` & `Combinatorics.ToricGroebner`, `Topology.CompactQuantumMetric` (Rieffel-KR) & `Topology.BraidKnot`.
    - **QOU Model Subgraphs (aligned 1-to-1 with monograph chapters):** `QOU.Core`, `QOU.LiftingDescent`, `QOU.BraidsAndKnots`, `QOU.BringsSurface`, `QOU.Confinement` (`L_0..L_4`), `QOU.EightfoldWay`, `QOU.Nuclear`, `QOU.MassTheory`, `QOU.StandardModel`, `QOU.FluidDynamics`, `QOU.InformationTheory`, `QOU.Molecular`, `QOU.Observations`, updating `.olean` caches and `lean.ref` pointers atomically.
 4. **`qou-lanx` (Stage 4 — Monograph Annex on Reusable Lean 4 Libraries & Subgraph Architecture):** Author a crisp, scholarly monograph Appendix/Annex (`appendix-lean-libraries` / `tabLabel: "LEAN"`) documenting the DAG architecture, the `Mathlib4`-upstreamable pure-mathematics libraries developed for QOU (their main theorems, typeclass generality, and `Mathlib` target namespaces), and the verification boundary (`[propext, Classical.choice, Quot.sound]` only, `0 sorry`, `0 custom axioms`).
+
+
+## Owner Clarification (`2026-11-23`): Two-Tier Community Contribution (`Reservoir` `lean_lib` Packages + Selective `Mathlib4` Core)
+
+Target is **NOT** forcing every specialized mathematical theorem directly into monolithic `mathlib4` core, but structuring QOU's non-QOU-specific mathematics as **clean, `Mathlib4`-style Lean 4 Community Contributions** (Reservoir-ready standalone `lean_lib` targets depending *only* on `Mathlib` with zero `QOU.*` imports, plus selective `mathlib4` core PRs for small foundational lemmas):
+1. **Tier A — Selective `Mathlib4` Core PRs:** General `List`/sort/foldl lemmas, basic Frobenius/Hopf definitions, `LinearOrderedField` inequalities, elementary `q`-calculus / Chebyshev identities.
+2. **Tier B — Reservoir-Ready Lean 4 Community Contrib Libraries (`lean_lib` targets in `lakefile.toml`, extractable as standalone community repos):**
+   - `HeckeTemperleyLieb` (Iwahori-Hecke, Temperley-Lieb, GS normal forms, Markov/GPMT traces, Hoefsmit representations)
+   - `TwistedFrobeniusHopf` (Nakayama-twisted Frobenius, Sweedler `H_4`, Taft `T_n(zeta)`, Woronowicz `O_q(SU(2))`)
+   - `ToricConicOpt` (Symmetry-reduced conic dual certificates, Perdew-Parr kinks, Sturmfels-Thomas Graver/UGB, multilevel `ConfinementLayer`)
+   - `CompactQuantumMetrics` (Rieffel `Lip`-seminorms, Kantorovich-Rubinstein graph duality)
+   - `QCalculus` (Thomae-Jackson `q`-calculus, `q`-IBP, quantum dilogarithms)
+   - `BraidKnotOctonion` (PL knot topology & `Delta`-moves, braid invariants, Milnor `mu_123`, octonions `O` & `g_2`, Bring curve)
+All Tier-A and Tier-B subgraphs enforce `Mathlib4` naming, docstring, minimal-import, `#lint`, and §7c typeclass-generality standards, and are documented in the Lean Libraries Annex (`qou-lanx`).
