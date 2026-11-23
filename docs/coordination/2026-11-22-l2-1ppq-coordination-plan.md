@@ -238,3 +238,8 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
   - **TraceTwist:** now requires † to be anti-multiplicative.
   - **Legacy axioms:** the eight owner-approved axioms are deleted, including the false `proton_mass_from_substrate_axiom`, which is replaced by proved bounds.
   - **Next:** the HeckeMonodromy instance on the Laurent family. This is unblocked by W7's 2b13465d3, and W8 has been told.
+- **2026-11-23 00:47Z, W6 draft PR #9165 (issue #9164): two electron units in the corpus.**
+  - The trace pipeline uses τ_e = tr(σ₀σ₁σ₀, Hopf closure). The mass formula uses ℏ_q².
+  - Their ratio is R = τ_e/ℏ_q² = 70.4037232641 at the proton pin (70.4037110138 at the muon pin). R is neither c_q² nor E₀/m_e.
+  - **Cross-cutting hazard:** any workstream that converts a trace-pipeline weight to MeV with the mass-formula unit, or the other way round, is off by about 70×. This touches W1 (Q_β, E_C), W4 (binding) and W5.
+  - Which unit is canonical is open. CAL-1/2/3 cannot decide it, so it is an owner question.
