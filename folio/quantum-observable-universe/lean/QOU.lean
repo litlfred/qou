@@ -1955,3 +1955,6 @@ import QOU.StandardModel.SixStrandClusterChargeGellMannNishijima
 import QOU.QBeta.BorromeanFlavourPivotalUnification
 import QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling
 import QOU.Observations.DeBroglieBoostedReebPhase
+import QOU.QBeta.ChargedCurrentChiralitySelection
+import QOU.StandardModel.TorusLinkElectroweakSchurRatio
+import QOU.AtomicMass.ComptonHarmonicOscillatorSlaterRatios
