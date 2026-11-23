@@ -2897,6 +2897,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "jones2015vonneumann" },
   { id: "arnold1969" },
   { id: "deligne1970" },
+  { id: "deligne1971" },
   { id: "zagier1991" },
   { id: "mcphail-snyder-2025" },
   { id: "helmholtz1858" },
