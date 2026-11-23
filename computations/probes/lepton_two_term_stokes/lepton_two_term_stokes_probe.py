@@ -5,7 +5,7 @@ Pre-registered in PREREGISTRATION.md (commit e4ad92f18d) before any number. Lean
 QOU.QBeta.LeptonTwoTermStokesCovariance (sorry-free).
 
 What this checks and computes, exact in ℚ(q) (sympy field, q = 2, 3/2 Fractions) and at the proton q₀
-(mpmath, 70 dps). No floats on any value path. The coupling scale c_em is NOT chosen.
+(mpmath, 80 dps). No floats on any value path. The coupling scale c_em is NOT chosen.
 
 A. Carry test (the covariance the Stokes step requires). On V^{⊗4} with strand species carried along
    by each crossing, an insertion O is admissible iff ρ(σ_i)·O(col) = O(col∘(i i+1))·ρ(σ_i) for every
@@ -39,7 +39,7 @@ import two_term_engine as E  # noqa: E402
 import beta_routes_words as W  # noqa: E402  (#8707 words; its main() is not run)
 
 W.E = E  # one engine instance
-DPS = 70
+DPS = 80
 mp.mp.dps = DPS
 T0 = time.time()
 ASSERTS: list = []
@@ -253,7 +253,7 @@ def main():
         check(f"[{tag}] engine: t1(σ) = z_D", E.t_one(3, E.rho_blocks(3, [W.L([0])])) == E.q ** 3 / (E.q ** 2 + 1))
         runs[tag] = dict(flat(routes()))
         log(f"routes at {tag}")
-    E.use(Q0, mp.mpf(1), exact=False, tol=mp.mpf(10) ** -55)
+    E.use(Q0, mp.mpf(1), exact=False, tol=mp.mpf(10) ** -65)
     runs["q0"] = dict(flat(routes()))
     log("routes at q0")
     table = {}

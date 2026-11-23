@@ -321,7 +321,9 @@ def order_at_one(v3, v4):
     """exact values at q = 1+1e-3, 1+1e-4 -> estimated power of (q-1)."""
     if v3 == 0 or v4 == 0:
         return None
-    return round(float(mp.log(abs(mp.mpf(v3.numerator) / v3.denominator / (mp.mpf(v4.numerator) / v4.denominator))) / mp.log(10)))
+    a = mp.mpf(v3.numerator) / v3.denominator
+    b = mp.mpf(v4.numerator) / v4.denominator
+    return int(mp.nint(mp.log(abs(a / b)) / mp.log(10)))
 
 
 def main():
