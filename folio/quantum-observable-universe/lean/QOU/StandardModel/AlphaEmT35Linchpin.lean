@@ -751,6 +751,14 @@ end CartanInnerDerivationAndTwoTerm
 
 section ArchimedeanHadronLineBridge
 
+open QOU.QBeta.WeakVertexTwoTerm (Econn kappa)
+
+/-- Archimedean `ℝ` specialisation of `dressedKernel_posSemidef_iff` (prescribed `§7c` `_real` bridge). -/
+theorem dressedKernel_posSemidef_iff_real (q c_em : ℝ) (Q : Fin 3 → ℝ) :
+    (∀ x : Fin 3 → ℝ, 0 ≤ quadForm (1 + c_em • Econn q Q) x) ↔
+      (-1 ≤ c_em * kappa q Q ∧ c_em * kappa q Q ≤ 2) :=
+  dressedKernel_posSemidef_iff (F := ℝ) q c_em Q
+
 /-- Hadron charge-line coupling `t(α) = exp(-α / 2)` on `ℝ` (`Uses Real.exp — archimedean wall`). -/
 noncomputable def hadronLineParam (α : ℝ) : ℝ :=
   Real.exp (-α / 2)
