@@ -1,0 +1,371 @@
+{
+  "engine": "mpmath (80 dps)",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T21:35:37.513943+00:00",
+  "commitSha": "a9bdf696a8dd32b7555e6e602e430e6257543f69",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "P1_H7_eleven_three_or_more_row_weights_vanish",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "OcneanuWeight.ocneanuWeight_conventionD_eq_zero_of_three_rows (N=7)"
+    },
+    {
+      "name": "P1_H8_seventeen_three_or_more_row_weights_vanish",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "OcneanuWeight.ocneanuWeight_conventionD_eq_zero_of_three_rows (N=8)"
+    },
+    {
+      "name": "P1_H7_two_row_weights_match_qdim_closed_form",
+      "computed": "1.6472184286297692538044646955109404699546814659950793046996504726731475454640249e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "CrossNucleonPairWedderburnZRemoval.twoRowWeightD (N=7)"
+    },
+    {
+      "name": "P1_H8_two_row_weights_match_qdim_closed_form",
+      "computed": "6.5888737145190770152178587820437618798187258639803172187986018906925901818560997e-83",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "CrossNucleonPairWedderburnZRemoval.twoRowWeightD (N=8)"
+    },
+    {
+      "name": "P1_H7_and_H8_normalized_weight_sums_eq_one",
+      "computed": "6.3253187659383139346091444307620114046259768294211045300466578150648865745818558e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "h7_twoRowWeightD_sum_eq_one / h8_twoRowWeightD_sum_eq_one"
+    },
+    {
+      "name": "P2_Hoefsmit_H7_and_H8_quadratic_braid_farcomm_relations",
+      "computed": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "Hoefsmit seminormal representations on H_7(q_0) and H_8(q_0)"
+    },
+    {
+      "name": "P2_Hoefsmit_single_generator_traces_match_column_branching",
+      "computed": "3.3735033418337674317915436964064060824671876423579224160248841680346061731103231e-80",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "h7_twoRow_gen_trace_eq_zD / h8_twoRow_gen_trace_eq_zD"
+    },
+    {
+      "name": "P2_H7_Hoefsmit_cross_cluster_pp_pn_nn_match_rational_closed_form",
+      "computed": "7.9066484574228924182614305384525142557824710367763806625583222688311082182273197e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "4-block Hoefsmit character sum vs closed rational Markov formula on H_7(q_0)"
+    },
+    {
+      "name": "P2_H8_Hoefsmit_cross_cluster_pp_pn_nn_match_rational_closed_form",
+      "computed": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "5-block Hoefsmit character sum vs closed rational Markov formula on H_8(q_0)"
+    },
+    {
+      "name": "P2_cross_cluster_skein_isovector_and_zero_coulomb_curvature",
+      "computed": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "CrossNucleonPairWedderburnZRemoval.crossCluster_skein_isovector_and_zero_coulomb"
+    },
+    {
+      "name": "P3_right_spectator_L7e_L8e_exact_zD_factorization",
+      "computed": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "rightTrace_R_norm_eq_zD / rightTrace2_R_Rinv_norm_eq_zD_mul_zDBar"
+    },
+    {
+      "name": "P3_alphaSix_plus_betaSix_eq_one_analytic",
+      "computed": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "CrossNucleonPairWedderburnZRemoval.alphaSix_add_betaSix"
+    },
+    {
+      "name": "P3_leftChainOp_H8_L8s_linear_comb_of_H7_L7s_and_H6_all_16_sectors",
+      "computed": "3.3735033418337674317915436964064060824671876423579224160248841680346061731103231e-80",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-77",
+      "source": "CrossNucleonPairWedderburnZRemoval.leftChainOp_two_linear_comb"
+    },
+    {
+      "name": "P3_H6_H7s_H8s_fc_wedderburn_spans_match_analytic_alphaSix_to_78dps",
+      "computed": "1.2385986194709768814194242258540940252082402788299230046556163467147458294883207e-75",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-72",
+      "source": "132/429/1430 Temperley-Lieb basis spans on L6 (dim 10), L7s (dim 14), L8s (dim 14)"
+    },
+    {
+      "name": "P3_H7s_and_H8s_strictly_exclude_pure_coulomb_QaQb",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "CrossNucleonPairWedderburnZRemoval.h7_h8_pinned_alphaSix_not_coulomb"
+    },
+    {
+      "name": "P4_split_bundle_killing_norms_slope_half_and_weinberg_3_8",
+      "computed": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "splitT3_traces / splitY_half_sq_trace / gmn_slope_half_from_killing_norm"
+    },
+    {
+      "name": "P4_massive_Z_yukawa_suppression_below_1e_neg_280_at_r_pi",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1.0e-78",
+      "source": "CrossNucleonPairWedderburnZRemoval.nuclear_z_channel_coulomb_isolation_280_digits"
+    },
+    {
+      "name": "P4_exch_Z_residual_matches_analytic_linear_formula_at_80dps",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-76",
+      "source": "CrossNucleonPairWedderburnZRemoval.exch_residuals_exact"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14100,
+  "computation": "w2-h7-h8-wedderburn-zremoval",
+  "scriptFile": "w2_h7_h8_wedderburn_zremoval_probe.py",
+  "scriptHash": "b7a26ba42179",
+  "scriptCommitSha": "a9bdf696a8dd32b7555e6e602e430e6257543f69",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/w2_h7_h8_wedderburn_zremoval/w2_h7_h8_wedderburn_zremoval_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/w2_h7_h8_wedderburn_zremoval/w2_h7_h8_wedderburn_zremoval_probe.py"
+  },
+  "description": "Pre-registered 80-dps verification of H_7(q_0) and H_8(q_0) two-row Wedderburn character/Hoefsmit traces across pp, pn, nn cross-cluster dressings, iterated left/right WeightedTraceSide chain factorizations, coideal split-bundle hypercharge slope 1/2, and massive-Z Yukawa nuclear suppression exp(-M_Z r_pi) < 10^-280 (W2: qou-20sx, qou-vudb, qou-fbrp).",
+  "parameters": {
+    "workdps": 80,
+    "q0Anchor": "proton",
+    "q0_proton_80dps": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
+    "z_D_80dps": "0.61268803714646525159582986394589924802630839154506475972428668510419114828478759",
+    "z_D_bar_80dps": "0.40362773835082593616498365081622430416655089628204020434259063064521524936653769",
+    "tr_M_Borromean_80dps": "0.99856216383678726595121313514665020209402588005941107920602244505473912490572189"
+  },
+  "data": {
+    "P1_wedderburn_accounting": {
+      "H7": {
+        "factorial_dim": 5040,
+        "partitions_total": 15,
+        "partitions_three_plus_rows": 11,
+        "two_row_shapes": [
+          [
+            7,
+            0
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "two_row_dims": [
+          1,
+          6,
+          14,
+          14
+        ],
+        "catalan_C7": 429,
+        "radical_corank": 4611,
+        "weights_80dps": {
+          "(7, 0)": "0.067279887020136594754699314470656962414599650543977625758327925163406913129117315",
+          "(6, 1)": "0.048044337881929571355669755419533569099160826787536967449782845136412785736157413",
+          "(5, 2)": "0.030908624593997107632049875972677429425920493066298995041159217959493430031616551",
+          "(4, 3)": "0.015123810098023319304470277813904115073396320414472474211910425184657739429379035"
+        }
+      },
+      "H8": {
+        "factorial_dim": 40320,
+        "partitions_total": 22,
+        "partitions_three_plus_rows": 17,
+        "two_row_shapes": [
+          [
+            8,
+            0
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "two_row_dims": [
+          1,
+          7,
+          20,
+          28,
+          14
+        ],
+        "catalan_C8": 1430,
+        "radical_corank": 38890,
+        "weights_80dps": {
+          "(8, 0)": "0.038760449911000564582354465457644413420307876664474041782000974493334005863413044",
+          "(7, 1)": "0.028519437109136030172344849013012548994291773879503583976326950670072907265704271",
+          "(6, 2)": "0.019524900772793541183324906406521020104869052908033383473455894466339878470453142",
+          "(5, 3)": "0.011383723821203566448724969566156409321051440158265611567703323493153551561163409",
+          "(4, 4)": "0.0037400862768197528557453082477477057523448802562068626442071016915041878682156260"
+        }
+      }
+    },
+    "P2_hoefsmit_cross_cluster_traces": {
+      "H7_L7e_pp_80dps": "0.37430791798042955305021109357002845321204975630154609839014678133694126710710298",
+      "H7_L7e_pn_80dps": "0.31044758414804593134464257437839682021713183320806292547961309827686951057197311",
+      "H7_L7e_nn_80dps": "0.24658725031566230963907405518676518722221391011457975256907941521679775403684324",
+      "H7_L7e_per_block_pp": {
+        "(7, 0)": "1.2320524541667639312698045135356361848496814229170",
+        "(6, 1)": "2.9306424291937323541603961686940517485310962608519",
+        "(5, 2)": "3.4013242870091229537991465578129757915404592083002",
+        "(4, 3)": "3.0074787489060107519023489538303151573591429384962"
+      },
+      "H7_L7e_per_block_nn": {
+        "(7, 0)": "1.0000000000000000000000000000000000000000000000000",
+        "(6, 1)": "1.9590712898860564811721298511433025425866412508212",
+        "(5, 2)": "1.8401984475968268213341107349534484383580559226209",
+        "(4, 3)": "1.8716895498394003375813055117917314516319447861937"
+      },
+      "H7_L7s_per_block_pp": {
+        "(7, 0)": "1.2320524541667639312698045135356361848496814229170",
+        "(6, 1)": "3.9181467893993703549929822925177541987458987129964",
+        "(5, 2)": "3.3750365836492258543861316884338802244958095583142",
+        "(4, 3)": "-0.075836638206901531850832308519756206939807388045232"
+      },
+      "H7_L7s_per_block_nn": {
+        "(7, 0)": "1.0000000000000000000000000000000000000000000000000",
+        "(6, 1)": "2.9504796044474420973261800323413283903209256217983",
+        "(5, 2)": "1.8137174188730139686591226871136116903834842215261",
+        "(4, 3)": "-1.2236325657280786089145541134674732355276604251509"
+      },
+      "H8_L8e_pp_80dps": "0.15108105838124723450545781858891000719260626739641324574569793276287431151869566",
+      "H8_L8e_pn_80dps": "0.12530525626615350072763713296964665582469835984427092512758791801819124645107607",
+      "H8_L8e_nn_80dps": "0.099529454151059766949816447350383304456790452292128604509477903273508181383456487",
+      "H8_L8e_per_block_pp": {
+        "(8, 0)": "1.1099785827513808075916690956107688798744991218736",
+        "(7, 1)": "2.3826960939970986147641135687992920491872573695265",
+        "(6, 2)": "1.3555255677169619641911786974126800504809111747651",
+        "(5, 3)": "0.92245776182955507908811456414829880644660510044133",
+        "(4, 4)": "0.83878576189173318275872630356393546730956862307653"
+      },
+      "H8_L8e_per_block_nn": {
+        "(8, 0)": "0.90091828395574149216082288248109393601474162661055",
+        "(7, 1)": "1.5559028458354676730728984629525464352080120592664",
+        "(6, 2)": "0.35864366472613940697115095430564421015639734755247",
+        "(5, 3)": "0.80194021396587472643391447439437715507402609499860",
+        "(4, 4)": "1.0974171676528837610641850641999789861420156298494"
+      },
+      "H8_L8s_per_block_pp": {
+        "(8, 0)": "1.1099785827513808075916690956107688798744991218736",
+        "(7, 1)": "3.2706358640585076027086639291312404162293690899995",
+        "(6, 2)": "2.2198500337321969595487563832982603183866440255672",
+        "(5, 3)": "-1.8736442034764831125835194548659986627939547748195",
+        "(4, 4)": "-1.9337008993681310163259350410039939027946123825134"
+      },
+      "H8_L8s_per_block_nn": {
+        "(8, 0)": "0.90091828395574149216082288248109393601474162661055",
+        "(7, 1)": "2.4476838967761755976008887360084106288549184602228",
+        "(6, 2)": "1.2266191898721019781432301905910527777771280474790",
+        "(5, 3)": "-2.0061659473908572912707635971528139940127653160564",
+        "(4, 4)": "-1.6868834679091029032845819705767565369186000801758"
+      }
+    },
+    "P3_sector_pair_identities": {
+      "alpha_6_q0_80dps": "0.65609526310182166475619453708514061051555879158798941441073907803498758779301458",
+      "beta_6_q0_80dps": "0.34390473689817833524380546291485938948444120841201058558926092196501241220698542",
+      "L6_span_dim": 10,
+      "L7s_span_dim": 14,
+      "L8s_span_dim": 14,
+      "L7s_coulomb_projection_residual": "43.950745916608823050146464051085765907860356695636",
+      "L8s_coulomb_projection_residual": "88.380417253149532147877962373615626097439598137890"
+    },
+    "P4_z_channel_yukawa_decoupling": {
+      "m_e_CAL1_MeV": "0.51099895069",
+      "hbar_c_SI2019_MeV_fm_80dps": "197.32698045930246589089440818672110372727270355631640059626743398043828495517862",
+      "r_pi_pm_fm_80dps": "1.4138169310790237520357606522896518647491971868554383246780884826676939503173032",
+      "r_pi_bar_fm_80dps": "1.4294996637860855790586896227882025949775378062166527723570738096685363010162144",
+      "r_pi_0_fm_80dps": "1.4619325725554500172688521893149126644525037158705525734516408299829176941939099",
+      "x_MZ_r_pi_pm_80dps": "653.34488210572457381540597543648047411775520581406987542271680977605636870518884",
+      "x_MZ_r_1p418fm_80dps": "655.27793765976263047745038229244454372227801858216493108767970105361189410235277",
+      "x_MZ_r_pi_bar_80dps": "660.59209560724275458192332718644786826002412165163333563380719070173258550656800",
+      "x_MZ_r_pi_0_80dps": "675.57980334398207691988549143260175081940007467950047711903082603825249993018239",
+      "lambda_Z_r_pi_pm_80dps": "1.8026977710683680271794626098961825947618898995329147976737058041367806676263355e-284",
+      "lambda_Z_r_1p418fm_80dps": "2.6086004293399717556267720995779031306543054226134187149808423249789376940322447e-285",
+      "lambda_Z_r_pi_bar_80dps": "1.2838021210355373222734565231619539968038829335764572382147628274503847351444979e-287",
+      "lambda_Z_r_pi_0_80dps": "3.9757523326267470281189301257064406263350350040123601934193320330805602038017466e-294",
+      "log10_lambda_Z_r_pi_pm": "-283.74407707824679976261500312924408681689974790801",
+      "log10_lambda_Z_r_1p418fm": "-284.58359243857796099704221148433551513859309027750",
+      "max_rel_Z_contamination_SU5_r_pi_pm": "2.4035970280911573695726168131949101263491865327105530635649410721823742235017807e-284",
+      "max_rel_Z_contamination_phys_r_pi_pm": "4.0410171958492894579230275944769840725440257779262828909968747010463588155712519e-284",
+      "max_rel_Z_contamination_phys_1p418fm": "5.8475687723379774840322172149246875827265308733768632929406911566441104999601989e-285",
+      "M_Z_tree_FormB_onshell_MeV_50dps": "89553.711099667510247438937506801419469499484210108"
+    }
+  }
+}
