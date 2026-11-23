@@ -1,0 +1,112 @@
+[    0.1s] L6: 132 fully commutative words, span dim over Q(q) 10 of 16 sectors
+[    0.4s]   Q_a alone reachable: False; Q_b alone reachable: False
+[    4.4s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[    4.4s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[    4.4s]   span closed under the sector involution: True
+[    4.4s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[    4.4s]   beta(q) = alpha(1/q): True
+[    5.0s] L6: 720 all words, span dim over Q(q) 10 of 16 sectors
+[    5.4s]   Q_a alone reachable: False; Q_b alone reachable: False
+[    8.6s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[    8.6s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[    8.6s]   span closed under the sector involution: True
+[    8.6s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[    8.6s]   beta(q) = alpha(1/q): True
+[    8.6s]   L6: fully commutative span agrees with the all-words span: True
+[    9.3s] L7s: 429 fully commutative words, span dim over Q(q) 14 of 16 sectors
+[    9.4s]   Q_a alone reachable: False; Q_b alone reachable: True
+[   10.0s]   rank 1; relation on (kappa, kappa alpha, kappa beta): [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]
+[   10.0s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   10.0s]   span closed under the sector involution: False
+[   10.0s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   10.1s]   pinned alpha satisfies alpha(q) + alpha(1/q) = 1: True
+[   11.5s]   L7s: 1000 words, span dim 14
+[   13.3s]   L7s: 2000 words, span dim 14
+[   15.2s]   L7s: 3000 words, span dim 14
+[   17.1s]   L7s: 4000 words, span dim 14
+[   18.9s]   L7s: 5000 words, span dim 14
+[   19.0s] L7s: 5040 all words, span dim over Q(q) 14 of 16 sectors
+[   19.1s]   Q_a alone reachable: False; Q_b alone reachable: True
+[   19.5s]   rank 1; relation on (kappa, kappa alpha, kappa beta): [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]
+[   19.5s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   19.6s]   span closed under the sector involution: False
+[   19.6s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   19.6s]   pinned alpha satisfies alpha(q) + alpha(1/q) = 1: True
+[   19.6s]   L7s: fully commutative span agrees with the all-words span: True
+[   20.0s] L7e: 429 fully commutative words, span dim over Q(q) 10 of 16 sectors
+[   20.3s]   Q_a alone reachable: False; Q_b alone reachable: False
+[   24.3s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   24.3s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   24.3s]   span closed under the sector involution: True
+[   24.3s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   24.3s]   beta(q) = alpha(1/q): True
+[   25.6s]   L7e: 1000 words, span dim 9
+[   27.2s]   L7e: 2000 words, span dim 10
+[   28.6s]   L7e: 3000 words, span dim 10
+[   30.1s]   L7e: 4000 words, span dim 10
+[   31.6s]   L7e: 5000 words, span dim 10
+[   31.7s] L7e: 5040 all words, span dim over Q(q) 10 of 16 sectors
+[   31.9s]   Q_a alone reachable: False; Q_b alone reachable: False
+[   34.9s]   rank 2: alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), beta = (q**6 - q**4 - q**3 + q**2 - q - 1)*(q**6 - q**4 + q**3 + q**2 + q - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   34.9s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   34.9s]   span closed under the sector involution: True
+[   34.9s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   34.9s]   beta(q) = alpha(1/q): True
+[   34.9s]   L7e: fully commutative span agrees with the all-words span: True
+[   35.6s] L7b: 429 fully commutative words, span dim over Q(q) 16 of 16 sectors
+[   35.7s]   Q_a alone reachable: True; Q_b alone reachable: True
+[   35.7s]   rank 0; relation on (kappa, kappa alpha, kappa beta): []
+[   35.7s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: True
+[   35.7s]   span closed under the sector involution: True
+[   35.7s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   37.6s]   L7b: 1000 words, span dim 16
+[   39.8s]   L7b: 2000 words, span dim 16
+[   42.1s]   L7b: 3000 words, span dim 16
+[   44.4s]   L7b: 4000 words, span dim 16
+[   46.8s]   L7b: 5000 words, span dim 16
+[   46.9s] L7b: 5040 all words, span dim over Q(q) 16 of 16 sectors
+[   46.9s]   Q_a alone reachable: True; Q_b alone reachable: True
+[   46.9s]   rank 0; relation on (kappa, kappa alpha, kappa beta): []
+[   46.9s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: True
+[   47.0s]   span closed under the sector involution: True
+[   47.0s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   47.0s]   L7b: fully commutative span agrees with the all-words span: True
+[   48.6s]   L8s: 1000 words, span dim 14
+[   49.5s] L8s: 1430 fully commutative words, span dim over Q(q) 14 of 16 sectors
+[   49.7s]   Q_a alone reachable: False; Q_b alone reachable: True
+[   50.2s]   rank 1; relation on (kappa, kappa alpha, kappa beta): [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]
+[   50.2s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: False
+[   50.2s]   span closed under the sector involution: False
+[   50.2s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   50.3s]   pinned alpha satisfies alpha(q) + alpha(1/q) = 1: True
+[   53.1s]   L8o: 1000 words, span dim 16
+[   54.6s] L8o: 1430 fully commutative words, span dim over Q(q) 16 of 16 sectors
+[   54.6s]   Q_a alone reachable: True; Q_b alone reachable: True
+[   54.6s]   rank 0; relation on (kappa, kappa alpha, kappa beta): []
+[   54.6s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: True
+[   54.7s]   span closed under the sector involution: True
+[   54.7s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   56.9s]   L8bs: 1000 words, span dim 16
+[   58.0s] L8bs: 1430 fully commutative words, span dim over Q(q) 16 of 16 sectors
+[   58.0s]   Q_a alone reachable: True; Q_b alone reachable: True
+[   58.0s]   rank 0; relation on (kappa, kappa alpha, kappa beta): []
+[   58.0s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: True
+[   58.0s]   span closed under the sector involution: True
+[   58.0s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   60.3s]   L8bb: 1000 words, span dim 16
+[   61.3s] L8bb: 1430 fully commutative words, span dim over Q(q) 16 of 16 sectors
+[   61.3s]   Q_a alone reachable: True; Q_b alone reachable: True
+[   61.3s]   rank 0; relation on (kappa, kappa alpha, kappa beta): []
+[   61.3s]   Coulomb form (Q_a Q_b alone, plus constants) reachable: True
+[   61.4s]   span closed under the sector involution: True
+[   61.4s]   span closed under the bar flip (q -> 1/q, Q -> 1 - Q in both blocks): True
+[   61.4s] summary:
+[   61.4s]   L6: dim 10, rank 2, closed True, bar-closed True, Coulomb False, Q_a alone False, Q_b alone False, alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   61.4s]   L7s: dim 14, rank 1, closed False, bar-closed True, Coulomb False, Q_a alone False, Q_b alone True, relation [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]; forces alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), equal to the L6 alpha: True
+[   61.4s]   L7e: dim 10, rank 2, closed True, bar-closed True, Coulomb False, Q_a alone False, Q_b alone False, alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), alpha + beta = 1
+[   61.4s]   L7b: dim 16, rank 0, closed True, bar-closed True, Coulomb True, Q_a alone True, Q_b alone True, relation []
+[   61.4s]   L8s: dim 14, rank 1, closed False, bar-closed True, Coulomb False, Q_a alone False, Q_b alone True, relation [1, -(q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)), 0]; forces alpha = q**2*(q**6 - q**5 - q**4 - q**3 + q**2 - 1)*(q**6 + q**5 - q**4 + q**3 + q**2 - 1)/((q**2 + 1)*(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)), equal to the L6 alpha: True
+[   61.4s]   L8o: dim 16, rank 0, closed True, bar-closed True, Coulomb True, Q_a alone True, Q_b alone True, relation []
+[   61.4s]   L8bs: dim 16, rank 0, closed True, bar-closed True, Coulomb True, Q_a alone True, Q_b alone True, relation []
+[   61.4s]   L8bb: dim 16, rank 0, closed True, bar-closed True, Coulomb True, Q_a alone True, Q_b alone True, relation []
+[   61.4s] done

@@ -55,6 +55,9 @@ LAYOUTS = {
     "L9s": (9, (0, 1, 2), (6, 7, 8)),
     "L9m": (9, (0, 1, 2), (4, 5, 6)),
     "L10s": (10, (0, 1, 2), (7, 8, 9)),
+    # strands before the pair combined with strands between, and two before
+    "L8bs": (8, (1, 2, 3), (5, 6, 7)),
+    "L8bb": (8, (2, 3, 4), (5, 6, 7)),
 }
 
 QS = sp.Symbol("q")
@@ -231,7 +234,12 @@ def run(layout, all_words=False):
     ra = residual(lambda k: k[0])
     rb = residual(lambda k: k[1])
     coulomb = all(x == 0 for x in rQ)
-    out = {"layout": layout, "dim": dim, "words": count, "coulomb": coulomb}
+    # single-block charges as readouts: is Q_a alone (resp. Q_b alone), plus constants, reachable?
+    qa_alone, qb_alone = all(x == 0 for x in ra), all(x == 0 for x in rb)
+    out = {"layout": layout, "dim": dim, "words": count, "coulomb": coulomb,
+           "qa_alone": qa_alone, "qb_alone": qb_alone}
+    log(f"  Q_a alone reachable: {qa_alone}; Q_b alone reachable: {qb_alone}")
+    out["_span"], out["_keys"], out["_t1"] = span, keys, t1
     # pair term c + kappa*(Qa - beta)(Qb - alpha) = kappa*QaQb - kappa*alpha*Qa - kappa*beta*Qb + const;
     # columns of the 3 unknowns (kappa, kappa*alpha, kappa*beta)
     Mx = sp.Matrix([[rQ[i], -ra[i], -rb[i]] for i in range(len(free))]) if free else sp.zeros(0, 3)
@@ -337,7 +345,7 @@ def main():
                 al = sp.cancel(-1 / r["relation"][1])
                 extra += f"; forces alpha = {sp.factor(al)}, equal to the L6 alpha: {sp.cancel(al - a6) == 0}"
         log(f"  {lay}: dim {r['dim']}, rank {r['rank']}, closed {r['closed']}, bar-closed {r['bar_closed']}, "
-            f"Coulomb {r['coulomb']}{extra}")
+            f"Coulomb {r['coulomb']}, Q_a alone {r['qa_alone']}, Q_b alone {r['qb_alone']}{extra}")
     log("done")
 
 
