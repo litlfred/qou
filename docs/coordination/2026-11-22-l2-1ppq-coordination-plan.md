@@ -265,3 +265,9 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
   - The mass-formula chart cannot produce the electron: Vol(Hopf) = 0, so its ℏ_q² electron weight is CAL-1 inserted by hand.
   - The trace chart reaches the electron but not the muon: (σ₀σ₁⁻¹)²/τ_e = 0.4054, which is 510× short of Vol(4₁)/ℏ_q².
   - So neither chart covers both leptons. Which one is canonical is on the owner's card from W6.
+- **2026-11-23 05:56Z, W6 (#9165 at ec0980bb1): search for one object giving both leptons.** This follows the owner's card choice.
+  - The q-volume G = Σ zⁿ/(1−q⁻ⁿ)² has 2 Im G(e^{iπ/3}) → Vol(4₁)/ℏ_q² as q → 1. The same object gives 0 for the Hopf electron.
+  - At the proton q₀ it gives 207.2446, against the carrier's 206.7683 (+0.230 %).
+  - **G is a candidate only, not adopted:** using it would re-solve q₀, which the owner ruling forbids.
+  - The combination trace + c·volume forces c = 1/2 and then misses by −27.3 %.
+  - No joint electron + muon object has been found yet. qou-6gf9 may cite +0.230 % only as a candidate.
