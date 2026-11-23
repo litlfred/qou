@@ -1,12 +1,12 @@
 ---
-id: qou-ewsb
-title: "SM/Eightfold Worker Pkg 3 (Q-Gap-9): Categorical Higgs Mechanism, EWSB Scale v_EW & m_H, and UV-to-M_Z RG Thresholds (sin^2 theta_W, alpha_s)"
-status: todo
+# qou-ewsb
+title: 'SM/Eightfold Worker Pkg 3 (Q-Gap-9): Categorical Higgs Mechanism, EWSB Scale v_EW & m_H, and UV-to-M_Z RG Thresholds (sin^2 theta_W, alpha_s)'
+status: in-progress
 type: feature
 priority: high
-parent: qou-sm8w
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T20:06:00Z
+updated_at: 2026-11-23T22:19:37Z
+parent: qou-sm8w
 ---
 
 ## Scope & Linked Legacy Beans (`qou-ukqh`, `qou-z3x8`, `qou-zd6l`, `qou-5iaz`, `qou-0whz`)
