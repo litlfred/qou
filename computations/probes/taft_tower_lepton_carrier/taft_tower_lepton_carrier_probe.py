@@ -65,7 +65,8 @@ def main() -> int:
         q0 = q_at(80)
         qi0 = mpf(1) / q0
         vol_41 = vol_4_1_at(80)
-        mu_e_codata = codata("muon-electron mass ratio").value
+        mu_e_entry = codata("muon-electron mass ratio")
+        mu_e_codata = mpf(mu_e_entry.value_str)
 
         wb = WitnessBuilder(
             "taft-tower-lepton-carrier",
@@ -176,7 +177,7 @@ def main() -> int:
                 "hbar_q_sq": fmt50(hbar_sq),
                 "electron_unit_chart_split_R": fmt50(chart_split_R),
                 "vol_4_1_over_hbar_q_sq": fmt50(mu_e_pred_vol),
-                "codata_2022_mu_over_e_comparison": fmt50(mu_e_codata),
+                "codata_2022_mu_over_e_comparison": mu_e_entry.value_str,
                 "vol_channel_residual_ppb": fmt50(mu_e_rel_ppb),
                 "vol_4_1_over_tau_e_if_undivided_by_hbar_sq": fmt50(mu_e_divided_by_tau_e),
                 "verdict_honest": (

@@ -59,8 +59,10 @@ def main() -> int:
         mp_derived_mev = derived_mp_mev(q0, me_mev, dps=80)
 
         # Authoritative NIST CODATA-2022 comparison constants (comparison only!)
-        gf_gev_inv2 = codata("Fermi coupling constant").value
-        mp_codata_mev = codata("proton mass energy equivalent in MeV").value
+        gf_entry = codata("Fermi coupling constant")
+        mp_entry = codata("proton mass energy equivalent in MeV")
+        gf_gev_inv2 = mpf(gf_entry.value_str)
+        mp_codata_mev = mpf(mp_entry.value_str)
         # Dimensionless G_F * m_p^2 (converting m_p from MeV to GeV via exact 1e-3)
         mp_derived_gev = mp_derived_mev * mpf("1e-3")
         mp_codata_gev = mp_codata_mev * mpf("1e-3")
@@ -179,7 +181,7 @@ def main() -> int:
         wb.add_data(
             "sweedler_degree_ladder_vs_GF",
             {
-                "GF_GeV_inv2_CODATA": fmt50(gf_gev_inv2),
+                "GF_GeV_inv2_CODATA": gf_entry.value_str,
                 "GF_mp2_derived": fmt50(gf_mp2_derived),
                 "GF_mp2_CODATA": fmt50(gf_mp2_codata),
                 "one_passage_rate_pow2": fmt50((q0 ** 2 - mpf(1)) ** 2),
