@@ -41,7 +41,7 @@ commutative rings and fields (§7c, zero `ℝ`, zero empirical literals, zero `s
      `QOU.QBeta.QBetaErrorBudget` (`rCondPairPos_one_ne_three_quarters`).
 
 -- Ref: [leitner2026] beans qou-gtv6, qou-qzvs
--- Ref: [sweedler1969] Hopf Algebras, Benjamin 1969 (4-dimensional skew-primitive example)
+-- Ref: [kassel1995] Quantum Groups, Springer GTM 155, §III (Sweedler 4-dimensional Hopf algebra)
 -/
 
 namespace QOU.QBeta.SweedlerChargedCurrentBridge

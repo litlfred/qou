@@ -39,7 +39,7 @@ zero empirical literals, zero `sorry`), building directly on `QOU.MassTheory.Pro
    overclaiming a derivation from the axioms alone.
 
 -- Ref: [leitner2026] beans qou-2eg2, qou-24w9, qou-qzvs
--- Ref: [geck-pfeiffer2000] Characters of Finite Coxeter Groups and Iwahori–Hecke Algebras, Ch. 8–9
+-- Ref: [geckpfeiffer2000] Characters of Finite Coxeter Groups and Iwahori–Hecke Algebras, Ch. 8–9
 -/
 
 namespace QOU.MassTheory.SkewHoweProtonSchurNorm
