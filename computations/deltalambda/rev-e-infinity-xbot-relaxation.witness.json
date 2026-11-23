@@ -1,11 +1,13 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-10-10T18:15:06.003547+00:00",
+  "computedAt": "2026-11-23T21:28:19.057401+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py"
   },
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_e_infinity_xbot_relaxation_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "The bottom edge of the e_inf staircase is concave in the displacement vector for the same reason the top edge is, so sup_s Xbot is a concave program and its maximum can be certified rather than enumerated.  This matters because gap G1 -- Xbot(s) <= Xblock(s) -- cannot be settled by enumeration at all (a capped maximum is a LOWER bound on its own supremum), and because the join does not actually need G1: it needs a finite window, which follows from SEPARATE caps on the two edges.  So a certified B_bot REMOVES G1 from the argument rather than proving it.  The extension to real u is not automatic: the one-body term fi(beta) - fi(b0) is a partial sum, and the obvious integral extension is concave but not exact at integers; R(b0) - R(b0+u) with R(x) = sum_{j>=1} eps(x+j) is both, because the constant sum_m eps(m) cancels.  #7349's block-length bound does NOT transfer, and the reason is the class: its blocks have every entry >= 1, so a row whose tangent slope is small contributes a NEGATIVE cap and the cumulative cap eventually falls below the bound; the bottom class permits zero entries, so every row cap is >= 0 and the cumulative cap never falls.  What replaces it is stronger: Gamma_j is exactly independent of the block length, so a length-T program is the restriction of one infinite program, and the certificate taken at the best ascent point PADDED WITH ZEROS charges every padded row exactly zero (gradient <= 0 puts the box maximum at lo_j, and lo_j = 0 = w_j) -- one number bounding every block length at once.",
   "constants": {
@@ -47,33 +49,42 @@
     "checkpoint": [
       {
         "stage": "R1",
-        "restored": true,
-        "key": "035515cefb314b5aeddb3116e8fd26ed6903f3714bb3c00ad22756d338a63735",
-        "computed_at": "2026-10-10T14:55:37+00:00"
+        "restored": false,
+        "key": "dff2f81ad1019a15b75956f33f40f264e2b2f818c36aad211f4123f99ae4b731",
+        "seconds": 0,
+        "not_checkpointed": []
       },
       {
         "stage": "R2",
-        "restored": true,
-        "key": "f16def29c4a3bbf263a8c82ffbacc9f4628113adceb08140c9384271d291d7c5",
-        "computed_at": "2026-10-10T14:55:55+00:00"
+        "restored": false,
+        "key": "69c7a9ac41bf2692f804fa4704ec0b9aa44d7a97b5a4d904e72da840594a5417",
+        "seconds": 7,
+        "not_checkpointed": [
+          "_rp"
+        ]
       },
       {
         "stage": "R3",
-        "restored": true,
-        "key": "27e38b95e9377dd2056458ec473bc047c474a8a49d409f7765f35d59402abf53",
-        "computed_at": "2026-10-10T14:55:56+00:00"
+        "restored": false,
+        "key": "3e1beef3794bfbc6b55de0b751933d46bbeb02c8ba9f459f5dd0dc91e8eedf03",
+        "seconds": 0,
+        "not_checkpointed": []
       },
       {
         "stage": "R4",
-        "restored": true,
-        "key": "ccbcc33390adc64404b2b05d7abca89317f55e1913a9dd0e949e26989e2a6c5d",
-        "computed_at": "2026-10-10T15:58:34+00:00"
+        "restored": false,
+        "key": "229c27601966e8e58ded1c1162dd08e9093fdc09d698888c507fbec237051e6c",
+        "seconds": 1515,
+        "not_checkpointed": [
+          "_t0",
+          "_dt4"
+        ]
       },
       {
         "stage": "R5",
         "restored": false,
-        "key": "d040b16ef4b0971487146fe7944ce8f683306d5c919d1d60c1d977a7773cabce",
-        "seconds": 1258,
+        "key": "117d9f65d95057e0fa842f2a4941316cf0212ef9ed77b58fecb40c912f10c142",
+        "seconds": 1594,
         "not_checkpointed": []
       }
     ],
@@ -145,7 +156,7 @@
     "_ascent_note": "the certificate is valid at ANY w, so a badly converged ascent point gives a SOUND but useless bound and nothing else reports it.  Two guards: the KKT residual above, and the invariant that sup is non-decreasing in T (padding the length-(T-1) optimum with a zero is feasible at length T and has the same value, since Gamma is T-free).  The second caught a cold-start ascent returning 1.8466 at T = 6 against 2.0310 at T = 5 at pe = 2.",
     "ratio_to_enumerated": "1.5631278415886739457",
     "ratio_tangent_to_enumerated": "6.5687777511714354353",
-    "B_top_certified_7349": "2.25373556700090488296611002132",
+    "B_top_certified_7349": "2.25373556700090488296611245116",
     "gamma_max": "1.4189571916251339953",
     "pe0_rigorous": 66,
     "_note": "B_certified / B_bot are the RIGOROUS numbers; B_relax is the coordinate-ascent value, a LOWER bound on the sup rather than an upper one.  B_tangent is the T-free per-row cap sum -- valid, and the loose bound the certificate exists to replace."
