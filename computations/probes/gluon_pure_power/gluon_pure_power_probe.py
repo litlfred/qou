@@ -25,10 +25,12 @@ import sympy as sp
 
 HERE = pathlib.Path(__file__).resolve()
 ROOT = HERE.parents[3]
-sys.path.insert(0, str(ROOT / "tools" / "qou-substrate" / "python"))
+for _p in ("computations", "computations/substrate", "tools/qou-substrate/python"):
+    sys.path.insert(0, str(ROOT / _p))
 from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402  (proton pin)
+from witness_base import WitnessBuilder  # noqa: E402
 
-DPS = 60
+DPS = 80
 
 
 def main() -> int:
@@ -75,19 +77,28 @@ def main() -> int:
         "q0Anchor": "proton",
         "q0Value": Q_50_DIGIT_STR,
         "lean": "QOU.QBeta.GluonVertexPurePower.least_admissible_power",
-        "t_at_q0": mp.nstr(tq, 30),
-        "t_sq_at_q0": mp.nstr(tq**2, 30),
-        "rotation_angle_over_2pi_at_q0": mp.nstr(theta / (2 * mp.pi), 30),
-        "q_edge_t_sq_eq_2": mp.nstr(q2, 30),
-        "q_edge_t_sq_eq_3": mp.nstr(q3, 30),
-        "s_k_at_q0": {str(k): mp.nstr(sv[k], 20) for k in range(0, 31)},
+        "t_at_q0": mp.nstr(tq, 60),
+        "t_sq_at_q0": mp.nstr(tq**2, 60),
+        "rotation_angle_over_2pi_at_q0": mp.nstr(theta / (2 * mp.pi), 60),
+        "q_edge_t_sq_eq_2": mp.nstr(q2, 60),
+        "q_edge_t_sq_eq_3": mp.nstr(q3, 60),
+        "s_k_at_q0": {str(k): mp.nstr(sv[k], 50) for k in range(0, 31)},
         "admissible_k_le_30_at_q0": admissible,
         "first_admissible_k_not_multiple_of_3": first_non_mult3,
         "checks": checks,
     }
+    wb = WitnessBuilder("gluon-pure-power", engine="sympy+mpmath", output_dir=HERE.parent)
+    wb.set_description(
+        "Gluon segment pure-power selection in H_3(q) (bean qou-99qc, Q1; issue #8910): "
+        "evaluates t^2 < 2 at the proton pin q0 at 80 dps and checks Chebyshev characters "
+        "s_k = chi_(2,1)(V^k) for V = sigma0 sigma1^-1."
+    )
+    for cname, cok in checks.items():
+        wb.add_assertion(cname, computed="PASS" if cok else "FAIL", expected="PASS",
+                         tolerance="exact")
+    wb.save(out)
     out["allPassed"] = all(checks.values())
     print(json.dumps({k: out[k] for k in out if k != "s_k_at_q0"}, indent=1))
-    HERE.with_name("gluon-pure-power.witness.json").write_text(json.dumps(out, indent=1) + "\n")
     return 0 if out["allPassed"] else 1
 
 

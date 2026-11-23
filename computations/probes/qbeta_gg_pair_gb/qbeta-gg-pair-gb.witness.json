@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-23T00:43:58.313049+00:00",
-  "commitSha": "8c51ea692448f137add14f704cc6b700e9ab9903",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T15:17:02.394702+00:00",
+  "commitSha": "481295c5b181643b8b5529f78da909fd8ddc247e",
   "assertions": [
     {
       "name": "G1_V0V1V0_group_relations_only",
@@ -169,8 +169,8 @@
   "durationMs": 14,
   "computation": "qbeta-gg-pair-gb",
   "scriptFile": "qbeta_gg_pair_gb_probe.py",
-  "scriptHash": "0c25cb3f3733",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "295e7d78405d",
+  "scriptCommitSha": "602a46b72aad80ffeb73bcd1e069527c9f2a7e02",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -178,11 +178,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "cvxpy": "absent"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -190,6 +193,8 @@
     ],
     "reproduce": "python3 -u computations/probes/qbeta_gg_pair_gb/qbeta_gg_pair_gb_probe.py"
   },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "comparison_context evaluates 2*E0*ln(q0) at the default proton pin",
   "description": "Group-relation reduction of the gamma-gamma lepton pair words (W5): the unreduced and reduced words are one braid, and each word's cancellation excess is fixed by the signed crossing matrix.",
   "photon": "gamma_i(a,b,c) = 1 + a s_i + b s_{i+1} + c s_i s_{i+1}^-1",
   "rows": [
@@ -365,5 +370,6 @@
     "note": "context only; G3 says the reduction alone does not assign this cell"
   },
   "scope": "(b) for G1 (invariant: the braid-group identity, Lean eval_pairWord); (b) for the excess of V0V1V2V0V3 (invariant: signed crossing matrix, Lean cancellation_count); other rows checked in this probe; G3 is a statement about what the reduction contains, not a refutation.",
-  "lean": "QOU/QBeta/GammaGammaPairReduction.lean"
+  "lean": "QOU/QBeta/GammaGammaPairReduction.lean",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

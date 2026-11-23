@@ -167,6 +167,8 @@ def main() -> int:
         wb.add_assertion(nm, computed="PASS" if o else "FAIL", expected="PASS",
                          tolerance="exact", source=det)
     wb.save({
+        "q0Anchor": "proton",
+        "q0AnchorReason": "comparison_context evaluates 2*E0*ln(q0) at the default proton pin",
         "description": "Group-relation reduction of the gamma-gamma lepton pair words (W5): "
                        "the unreduced and reduced words are one braid, and each word's "
                        "cancellation excess is fixed by the signed crossing matrix.",
