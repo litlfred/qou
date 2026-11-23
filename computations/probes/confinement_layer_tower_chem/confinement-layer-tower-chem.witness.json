@@ -1,8 +1,8 @@
 {
   "engine": "sympy exact Z/Q + mpmath (80 dps)",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-23T20:36:37.360203+00:00",
-  "commitSha": "e800e93bde6640a98941cf24dcaf1836207e9198",
+  "computedAt": "2026-11-23T20:59:37.459147+00:00",
+  "commitSha": "684b35e3fdc8a64b593c25feb515ad2b2e769676",
   "assertions": [
     {
       "name": "q0_at_80_matches_Q_MP_to_65dps",
@@ -118,11 +118,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 58002,
+  "durationMs": 59932,
   "computation": "confinement-layer-tower-chem",
   "scriptFile": "confinement_layer_tower_chem_probe.py",
   "scriptHash": "09d00860466c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "684b35e3fdc8a64b593c25feb515ad2b2e769676",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
