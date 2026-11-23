@@ -427,6 +427,7 @@ export default chapter({
         "spectrahedral-phase-collapse",
         "spectrahedral-phase-collapse-melt",
         "spectrahedral-phase-collapse-interpretation",
+        "spectrahedral-phase-collapse-prior-art",
         "tilting-module-rigidity",
         "tilting-module-rigidity-context",
         "eigenspace-invariance-intro",

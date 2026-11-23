@@ -67,6 +67,7 @@ export default chapter({
         "mba-sidecar-isovector-chiral-residue",
         "mba-sidecar-ck-truncation-ladder",
         "mba-sidecar-lp-sdp-dual-emission",
+        "lp-sdp-bootstrap-prior-art",
         "mba-sidecar-witness-json-pipeline",
       ],
     }),

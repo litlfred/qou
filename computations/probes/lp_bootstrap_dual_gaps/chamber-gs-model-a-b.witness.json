@@ -1,0 +1,335 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T20:17:46.961827+00:00",
+  "commitSha": "5c7972efa6c607fea983b611b2fd6c9675f9ffcd",
+  "assertions": [
+    {
+      "name": "model_a0_graver_28_circuits_17_ugb_27_chambers_73",
+      "computed": "28,17,27,73",
+      "expected": "28,17,27,73",
+      "passed": true,
+      "source": "Exact Pottier + [-6,6]^4 box Graver enumeration and rational BFS Grobner fan of A_0"
+    },
+    {
+      "name": "qou_q0_bare_tower_and_ame2020_coincide_in_11_rule_5_wall_C_phys",
+      "computed": "True,11,5,True",
+      "expected": "True,11,5,True",
+      "passed": true,
+      "source": "QOU.MathlibInfra.gPhys_strict_cost_decrease_of_chamber + sympy.groebner cross-check"
+    },
+    {
+      "name": "he5_drip_and_hoyle_bottleneck_verified",
+      "computed": "[0, 1, 0, 0, 0, 1],True,True",
+      "expected": "[0, 1, 0, 0, 0, 1],True,True",
+      "passed": true,
+      "source": "QOU.MathlibInfra.he5_normal_form_eq_alpha_neutron and hoyle_triple_alpha_bottleneck"
+    },
+    {
+      "name": "mayer_jensen_shell_graver_21_and_adjacent_confluence",
+      "computed": "[2, 8, 20, 28, 50, 82, 126],21,True",
+      "expected": "[2, 8, 20, 28, 50, 82, 126],21,True",
+      "passed": true,
+      "source": "QOU.MathlibInfra.mayerJensen_cumulative_magic and capacitated_shell_occupancy_or_hole_pos"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1564,
+  "computation": "chamber-gs-model-a-b",
+  "scriptFile": "chamber_gs_model_a_b_probe.py",
+  "scriptHash": "ab1351bcc17c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/lp_bootstrap_dual_gaps/chamber_gs_model_a_b_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/lp_bootstrap_dual_gaps/chamber_gs_model_a_b_probe.py"
+  },
+  "description": "Pre-registered 80-dps mpmath + exact rational Sturmfels-Thomas ChamberGS probe (PREREGISTRATION-chamber-gs.md, 5c7972efa6c; qou-h6ef): verifies |Gr_{A_0}|=28, 17 circuits, |U_{A_0}|=27, 73 Grobner fan chambers, exact chamber coincidence between QOU bare q_0, QOU tower q_0, and AME2020 in 5-wall C_phys (11-rule G_phys), NF(x_p^2 x_n^3) = x_alpha x_n (^5He drip), Hoyle bottleneck, and A_shell confluence.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "workdps": 80
+  },
+  "data": {
+    "preregistration": "computations/probes/lp_bootstrap_dual_gaps/PREREGISTRATION-chamber-gs.md",
+    "preregistration_commit": "5c7972efa6c",
+    "model_a_cluster_toric": {
+      "unsigned_graver_count": 28,
+      "signed_graver_count": 56,
+      "unsigned_circuit_count": 17,
+      "unsigned_ugb_count": 27,
+      "non_ugb_graver_elements": [
+        "x_alpha - x_p x_n x_d"
+      ],
+      "groebner_fan_chamber_count": 73,
+      "sympy_groebner_crosscheck_passed": true,
+      "qou_bare_tower_ame2020_in_same_chamber": true,
+      "g_phys_rule_count": 11,
+      "g_phys_rules": [
+        {
+          "rule": "x_h^2 -> x_p^2 x_alpha",
+          "vector": [
+            -2,
+            0,
+            0,
+            0,
+            2,
+            -1
+          ],
+          "delta_E_QOU_bare_MeV": "9.75027830474180203317692973161145325647129247833208763126664",
+          "delta_E_AME2020_MeV": "12.8595797600000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_d x_h -> x_p x_alpha",
+          "vector": [
+            -1,
+            0,
+            1,
+            0,
+            1,
+            -1
+          ],
+          "delta_E_QOU_bare_MeV": "15.2542852614072570031613698281867665960715108455663363800472",
+          "delta_E_AME2020_MeV": "18.3530548800000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_t^2 -> x_n^2 x_alpha",
+          "vector": [
+            0,
+            -2,
+            0,
+            2,
+            0,
+            -1
+          ],
+          "delta_E_QOU_bare_MeV": "8.05543462615806238482113714727712052527259401105968583227207",
+          "delta_E_AME2020_MeV": "11.3320700000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_d x_t -> x_n x_alpha",
+          "vector": [
+            0,
+            -1,
+            1,
+            1,
+            0,
+            -1
+          ],
+          "delta_E_QOU_bare_MeV": "14.4068634221153871789834735360196002304721616119301354805499",
+          "delta_E_AME2020_MeV": "17.5893000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_t x_h -> x_d x_alpha",
+          "vector": [
+            0,
+            0,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "delta_E_QOU_bare_MeV": "11.7366112895694023175527365861859334504620393735834109035361",
+          "delta_E_AME2020_MeV": "14.3203910800000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_d^2 -> x_alpha",
+          "vector": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            -1
+          ],
+          "delta_E_QOU_bare_MeV": "20.7582922180727119731458099247620799356717292128005851288277",
+          "delta_E_AME2020_MeV": "23.8465300000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_n x_h -> x_alpha",
+          "vector": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            -1
+          ],
+          "delta_E_QOU_bare_MeV": "18.0880400855267271117150729749284131556616069744538605518139",
+          "delta_E_AME2020_MeV": "20.5776210800000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_n x_d -> x_t",
+          "vector": [
+            0,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "delta_E_QOU_bare_MeV": "6.35142879595732479416233638874247970519956760087044964827782",
+          "delta_E_AME2020_MeV": "6.25723000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_p x_t -> x_alpha",
+          "vector": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1
+          ],
+          "delta_E_QOU_bare_MeV": "17.2406182462348572875371766827612467900622577408176596523166",
+          "delta_E_AME2020_MeV": "19.8138662000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_p x_d -> x_h",
+          "vector": [
+            1,
+            0,
+            1,
+            0,
+            -1,
+            0
+          ],
+          "delta_E_QOU_bare_MeV": "5.50400695666545496998444009657531333960021836723424874878054",
+          "delta_E_AME2020_MeV": "5.49347512000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "rule": "x_p x_n -> x_d",
+          "vector": [
+            1,
+            1,
+            -1,
+            0,
+            0,
+            0
+          ],
+          "delta_E_QOU_bare_MeV": "2.83375482411947010855370314674164655959009612888752417176675",
+          "delta_E_AME2020_MeV": "2.22456620000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "c_phys_irredundant_facets": [
+        {
+          "normal_w": [
+            0,
+            0,
+            2,
+            -1
+          ],
+          "margin_QOU_bare_MeV": "9.75027830474180203317692973161145325647129247833208763126664",
+          "margin_AME2020_MeV": "12.8595797600000000000000000000000000000000000000000000000000"
+        },
+        {
+          "normal_w": [
+            0,
+            2,
+            0,
+            -1
+          ],
+          "margin_QOU_bare_MeV": "8.05543462615806238482113714727712052527259401105968583227207",
+          "margin_AME2020_MeV": "11.3320700000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "normal_w": [
+            1,
+            -1,
+            0,
+            0
+          ],
+          "margin_QOU_bare_MeV": "6.35142879595732479416233638874247970519956760087044964827782",
+          "margin_AME2020_MeV": "6.25723000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "normal_w": [
+            1,
+            0,
+            -1,
+            0
+          ],
+          "margin_QOU_bare_MeV": "5.50400695666545496998444009657531333960021836723424874878054",
+          "margin_AME2020_MeV": "5.49347512000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "normal_w": [
+            -1,
+            0,
+            0,
+            0
+          ],
+          "margin_QOU_bare_MeV": "2.83375482411947010855370314674164655959009612888752417176675",
+          "margin_AME2020_MeV": "2.22456620000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "nf_He5_2p3n": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "nf_C12_6p6n": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "nf_N14_7p7n": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        3
+      ],
+      "ame_Be8_minus_2alpha_MeV": "-0.0918400000000000000000000000000000000000000000000000000000000",
+      "ame_C12_minus_3alpha_MeV": "7.27474800000000000000000000000000000000000000000000000000000"
+    },
+    "model_b_mayer_jensen_shell": {
+      "shell_capacities": [
+        2,
+        6,
+        12,
+        8,
+        22,
+        32,
+        44
+      ],
+      "cumulative_magic_numbers": [
+        2,
+        8,
+        20,
+        28,
+        50,
+        82,
+        126
+      ],
+      "single_species_unsigned_graver_S7": 21,
+      "adjacent_promotion_confluence_S4_states": 2457,
+      "adjacent_promotion_100pct_confluent": true
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "preregistration": "PREREGISTRATION-chamber-gs.md"
+}

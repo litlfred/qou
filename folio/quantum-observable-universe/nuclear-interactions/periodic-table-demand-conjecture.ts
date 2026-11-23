@@ -17,5 +17,10 @@ export default remark({
     "conjecture",
     "nuclear-physics",
   ],
-  uses: ["prop:demand-stability"],
+  uses: [
+    "prop:demand-stability",
+    "prop:nuclear-groebner-reduction",
+    "prop:nuclear-chamber-groebner-basis",
+    "def:lp-confined",
+  ],
 });
