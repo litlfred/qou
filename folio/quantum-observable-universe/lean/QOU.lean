@@ -1944,3 +1944,14 @@ import QOU.QuarkState.TPlusChargedCurrentElement
 import QOU.QuarkState.WeakScaleFactorisation
 import QOU.QuarkState.YukawaStrandOrder
 import QOU.QuarkState.YukawaTypeStrength
+import QOU.MathlibInfra.SL2ChebyshevTrace
+import QOU.MathlibInfra.ThomaeJacksonCalculus
+import QOU.MathlibInfra.LorentzBoostPhase
+import QOU.AlgebraicSubstrate.TwistedAmbidextrousAdjunction
+import QOU.AlgebraicSubstrate.OqSU2ModularNakayama
+import QOU.AlgebraicSubstrate.DescentComptonOrthogonalSplit
+import QOU.AlgebraicSubstrate.FrobeniusSchurExpectationCancellation
+import QOU.StandardModel.SixStrandClusterChargeGellMannNishijima
+import QOU.QBeta.BorromeanFlavourPivotalUnification
+import QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling
+import QOU.Observations.DeBroglieBoostedReebPhase
