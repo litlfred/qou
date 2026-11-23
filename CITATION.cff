@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. It is a work in progress; cite the commit or release you used."
+title: "On the Mechanics of Quantum Observable Universes"
+type: software
+authors:
+  - family-names: Leitner
+    given-names: Frederick Carl
+repository-code: "https://github.com/litlfred/qou"
+url: "https://litlfred.github.io/qou/"
+license: CC-BY-4.0
+date-released: "2026-03-21"
+keywords:
+  - braided monoidal categories
+  - Hecke algebras
+  - Lean 4
+  - knot theory
+  - Bring's surface
+preferred-citation:
+  type: article
+  title: "On the Mechanics of Quantum Observable Universes"
+  authors:
+    - family-names: Leitner
+      given-names: Frederick Carl
+  year: 2026
+  notes: "Work in progress. Source and Lean formalisation at https://github.com/litlfred/qou"
