@@ -3,11 +3,12 @@ Copyright (c) 2026 litlfred. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Linarith
-import Mathlib.Data.Real.Basic
 
 /-!
 # Convention D is the Jones / Temperley–Lieb Markov trace, with index `[2]_q²`
@@ -21,10 +22,13 @@ At convention D, `z = q³/(q² + 1)`:
 
 * `jonesParam_convD`: `τ_J = q² / (q² + 1)²`;
 * `jonesIndex_convD`: `1/τ_J = (q + q⁻¹)²`, i.e. the index is `[2]_q²`;
-* `four_le_jonesIndex`: for real `q > 0` the index is at least `4`. That is Jones'
-  range in which the Markov trace on the Temperley–Lieb tower is positive.
+* `four_le_jonesIndex`: over any linearly ordered field, for `q ≠ 0` (in particular `q > 0`),
+  the index is at least `4`. Over `ℝ` this is Jones' range in which the Markov trace on the
+  Temperley–Lieb tower is positive.
 
 The positivity theorem itself (Jones 1983) is cited, not formalised here.
+Base ring (§7c): generic `[Field K]`, with `[LinearOrder K] [IsStrictOrderedRing K]` for the
+order bound; no `ℝ` import.
 
 No `sorry`.
 
@@ -66,9 +70,11 @@ theorem jonesIndex_convD (q : K) (hq : q ≠ 0) (h : q ^ 2 + 1 ≠ 0) :
 
 end Generic
 
-/-- For real `q > 0`, the convention-D index `(q + q⁻¹)²` is at least `4`. -/
-theorem four_le_jonesIndex (q : ℝ) (hq : 0 < q) : 4 ≤ (q + q⁻¹) ^ 2 := by
-  have h1 : q * q⁻¹ = 1 := mul_inv_cancel₀ hq.ne'
+/-- Over any linearly ordered field, for nonzero `q` (in particular `0 < q`),
+the convention-D index `(q + q⁻¹)²` is at least `4`. -/
+theorem four_le_jonesIndex {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    (q : K) (hq : q ≠ 0) : 4 ≤ (q + q⁻¹) ^ 2 := by
+  have h1 : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
   nlinarith [sq_nonneg (q - q⁻¹)]
 
 end QOU.QuantumObservableUniverse.JonesIndex
