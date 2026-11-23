@@ -1,8 +1,8 @@
 {
   "engine": "mpmath (80 dps)",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-23T19:06:16.883974+00:00",
-  "commitSha": "048a8cb73d48640e5ff8576f4da9f8f06735c0ca",
+  "computedAt": "2026-11-23T19:07:23.500634+00:00",
+  "commitSha": "698e2e96f29b0140fb5bdec6589e46864fd7493b",
   "assertions": [
     {
       "name": "q0_at_80_matches_Q_MP",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 622,
+  "durationMs": 394,
   "computation": "jackson-mirror-and-a4-gs",
   "scriptFile": "jackson_mirror_and_a4_gs_probe.py",
   "scriptHash": "83b24a6c4242",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "698e2e96f29b0140fb5bdec6589e46864fd7493b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
