@@ -1,0 +1,1 @@
+Corrections and contributions are welcome through the repository. To keep reports checkable, an issue must carry a Lean counterexample, a failing Python test, or a citation that names a theorem or equation and a page; the policy is set out in the repository's contributing guide. A contributor whose pull request is merged into the paper's source is listed among its authors.

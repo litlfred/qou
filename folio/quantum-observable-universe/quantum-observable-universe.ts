@@ -65,6 +65,7 @@ export default paper({
   chapters: [
     // ── Front matter (intro only; notation register moved to appendix) ──
     chapterRef({ dir: "introduction" }),
+    chapterRef({ dir: "authors-note" }),
 
     // ── Part I: Foundations ──────────────────────────────────────────
     // The `partTitle` field renders as a \part{...} banner before this

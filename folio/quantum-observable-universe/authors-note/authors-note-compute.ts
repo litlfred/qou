@@ -1,5 +1,5 @@
 import { prose } from "../../schema/builders";
 
 export default prose({
-  label: "prose:authors-note",
+  label: "prose:authors-note-compute",
 });
