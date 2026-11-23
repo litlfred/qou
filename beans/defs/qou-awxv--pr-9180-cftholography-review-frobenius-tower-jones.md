@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-23T21:14:34Z
-updated_at: 2026-11-23T21:15:08Z
+updated_at: 2026-11-23T21:16:01Z
 ---
 
 Thread: CFT/holography review (owner ofri, 2026-11-23). Branch claude/project-thread-p6bqaz, PR #9180, issue #9179. Head ae490aa67e (main merged). NOT merged: owner's explicit go required.
@@ -31,3 +31,6 @@ Open / next:
 
 
 2026-11-23 21:15Z: since ae490aa67e, main took #9184 (gravity-spacetime.ts, where this PR also adds a block), #9199 and #9187 (folio/schema/references.ts, references.bib, QOU.lean). Expect conflicts in gravity-spacetime.ts and references.ts ORDER. Merge origin/main (do not force-push), keep both sides' blocks and refs, then re-run lean-library-sweep.
+
+
+2026-11-23 21:16Z: PR #9180 MERGED (rebase) at head 832835c9f5 by owner's prepare-merge-auto; the rebase note above is obsolete. Open items 1-6 remain.
