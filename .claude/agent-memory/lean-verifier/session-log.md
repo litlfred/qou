@@ -436,3 +436,18 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
   throwaway-repo fetch 2m10s + streamed extract 59 s with `--transform 's,^content/,folio/,'`.
   Result: root mathlib 3697 oleans, paper QOU build 3466; trace check cleared the marker. Disk 55G→45G free.
 - `scripts/lean-direct-env.sh` works as-is; NucleonWeightSpaceTraces.lean exit 0 in 4.2 s.
+
+## 2026-11-22 — fresh container, hooks never ran, UGB HeckeCompletion cone (main 3c4c98fccf3)
+
+- **STABLE** repo at `/home/claude/qou` (not `/home/user/qou`). `./scripts/setup-lean-toolchain.sh`
+  alone did the whole job: elan bootstrap from GitHub, toolchain zip, then `lean-cache-restore.sh`.
+  **4m52s wall**, exit 0. Cache branch is now `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`
+  (the script resolves it via `lib/lake-cache-family.sh`; the old `lake-cache/qou-v4-24-0` name in
+  MEMORY.md is stale). Paper trees landed under `folio/` directly; ONE mathlib root (3697 oleans),
+  no per-paper packages tree, so no union mirror needed. UGB tree: 35 oleans.
+- **TRAP (measured)** restored UGB oleans are STALE: Lake-hash check (MEMORY §STABLE source hash)
+  on the 8-module cone of `UGB.GrobnerShirshov.HeckeCompletion`: Elem, CompositionLemma, AlgOps
+  fresh; Basic, DiamondLemma, NormalForms, HeckeGS, HeckeCompletion CHANGED. Rebuilt the 7 from
+  Basic down in place (`rm -f` then `lean -DautoImplicit=false -o … -i …`, cwd = UGB package root):
+  1.5–4.2 s each; HeckeCompletion **1m29s wall / 4m20s user**, exit 0, zero output.
+- **BASELINE** autoImplicit control reproduced (bare exit 0, `-DautoImplicit=false` exit 1).
