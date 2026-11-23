@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T23:41:01Z
-updated_at: 2026-10-04T15:12:50Z
+updated_at: 2026-11-23T20:59:24Z
 parent: qou-v2om
 ---
 
@@ -75,3 +75,5 @@ Was in-progress with no bean update since 2026-08-21 and no main commit naming i
 
 ## Round 76 Progress (2026-11-17T12:02:46Z)
 - Advanced in PR `litlfred/qou#8337` (branch `feat/round76-torusmass-pinchoct-gramsig-motivic-spectrahedral-43c1`, head `df1ab810bdd422f72dc74878dc341f5f55564271`).
+
+Claimed 2026-11-23 by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, session ): formalizing ColourReconnectionStokesAssembly.lean + 80-dps probe w4_colour_reconn_stokes_aomega.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T15:55:10Z
-updated_at: 2026-11-23T20:59:22Z
+updated_at: 2026-11-23T20:59:24Z
 parent: qou-10v9
 ---
 
@@ -242,3 +242,5 @@ Was in-progress with no bean update since 2026-09-07 and no main commit naming i
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
 
 Claimed by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, 2026-11-23)
+
+Claimed 2026-11-23 by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, session ): formalizing ColourReconnectionStokesAssembly.lean + 80-dps probe w4_colour_reconn_stokes_aomega.

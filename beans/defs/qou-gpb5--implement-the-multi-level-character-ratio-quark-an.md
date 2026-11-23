@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T06:49:42Z
-updated_at: 2026-11-23T20:59:22Z
+updated_at: 2026-11-23T20:59:24Z
 parent: qou-10v9
 ---
 
@@ -326,3 +326,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8345, closed o
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-05: "merge: intra-word ordering — beta_Bor confinement core, the invariance proved in Lean, and the 5.045e-4 residual retract"). The work may be partly or fully done. Read the bean before you close it.
 
 Claimed by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, 2026-11-23)
+
+Claimed 2026-11-23 by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16, session ): formalizing ColourReconnectionStokesAssembly.lean + 80-dps probe w4_colour_reconn_stokes_aomega.
