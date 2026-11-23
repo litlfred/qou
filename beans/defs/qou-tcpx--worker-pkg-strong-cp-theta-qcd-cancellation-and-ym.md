@@ -1,12 +1,12 @@
 ---
-id: qou-tcpx
-title: "SM/Eightfold Worker Pkg 5 (Q-Gap-11): Strong-CP theta_QCD=0 via 3x3 Singlet Writhe Cancellation & Multiscale Yang-Mills Freeze-Out"
-status: todo
+# qou-tcpx
+title: 'SM/Eightfold Worker Pkg 5 (Q-Gap-11): Strong-CP theta_QCD=0 via 3x3 Singlet Writhe Cancellation & Multiscale Yang-Mills Freeze-Out'
+status: in-progress
 type: feature
 priority: medium
-parent: qou-sm8w
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T20:06:00Z
+updated_at: 2026-11-23T23:27:00Z
+parent: qou-sm8w
 ---
 
 ## Scope & Linked Legacy Beans (`tqcp`, `qou-1jqd`)
