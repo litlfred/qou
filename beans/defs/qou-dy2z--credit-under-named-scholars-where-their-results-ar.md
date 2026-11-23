@@ -4,8 +4,10 @@ title: Credit under-named scholars where their results are used (verified absenc
 status: in-progress
 type: task
 priority: normal
+tags:
+    - needs-owner-ok
 created_at: 2026-11-23T16:24:49Z
-updated_at: 2026-11-23T16:32:18Z
+updated_at: 2026-11-23T23:52:44Z
 parent: qou-tt2u
 ---
 
@@ -21,3 +23,5 @@ Dropped as already done: Ladyzhenskaya (named in 7 files), Lawrence (credited), 
 2026-11-23: PR #9196 cites mayer1949, lee-yang-1956 and wu1957parity. Hermann, Dietrich-Buchecker, Flapan and Witherspoon still need references that have been checked against their DOIs.
 
 2026-11-23: #9196 merged (Mayer, Lee-Yang, Wu now cited).
+
+2026-11-23 (Worker 24): DOI-verified bibliography entries and scholarly positioning wired on branch `claude/prior-art-doi-verified-pkg-20261123` (commit `63446514c77`), gated on owner OK before opening PR (`qou-cvu9`).

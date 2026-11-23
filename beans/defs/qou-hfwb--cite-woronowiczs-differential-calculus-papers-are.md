@@ -1,13 +1,14 @@
 ---
 # qou-hfwb
 title: 'CITE: Woronowicz''s differential-calculus papers are not held and the 4D bicovariant classification carries no Ref key — U+C — CalculusDimensionObstruction.lean:89-94, SelfDualityDegree.lean:89-90'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
+    - needs-owner-ok
 created_at: 2026-09-04T09:04:51Z
-updated_at: 2026-10-04T15:14:46Z
+updated_at: 2026-11-23T23:52:43Z
 parent: qou-mub3
 ---
 
@@ -63,3 +64,5 @@ writing a locator**, not just add a key.
    currently cited three times with nothing behind it.
 
 Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.md`.
+
+2026-11-23 (Worker 24): Added DOI-verified `stachura1992` (10.1007/BF00406546) and `schmudgen-schuler1995` (10.1007/BF02108331) alongside verified `woronowicz1987-twisted-su2` and `woronowicz1989`, and wired `-- Ref:` lines in `CalculusDimensionObstruction.lean` and `SelfDualityDegree.lean` on `claude/prior-art-doi-verified-pkg-20261123` (`63446514c77`; `lean-direct-cone -j 1` green). Note: full PDF ingestion into `library/` remains separate; C-half + attribution settled pending owner OK on consolidated prior-art PR (`qou-cvu9`).
