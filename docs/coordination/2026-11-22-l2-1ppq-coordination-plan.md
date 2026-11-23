@@ -259,3 +259,9 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
   - `KohnoAssemblyGL` proves Drinfeld–Kohno for ℂ^d.
   - `colourC3_flavour_monodromy_conj`: the colour ℂ³ ⊗ flavour ℂ² monodromy is conjugate to Ř^{gl3}(q_c) ⊗ Ř^{gl2}(q_f). This assumes generic couplings and no colour hypothesis.
   - `ColourTubeBraided` (qou-et5f) now reduces to one Lagrangian condition: the mixed P_c·P_f term of the pair residue vanishes.
+- **2026-11-23 00:58Z, W6 (#9165): the electron-unit factor R is now derived exactly.**
+  - τ_e = q³·y₍₃₎, because the electron word's trace in the (2,1) block is 0.
+  - R = q³/(2ℏ_q²) + q⁵(q+1)²/(2(q²+1)²) = 69.6509 + 0.7528 at the proton pin.
+  - The mass-formula chart cannot produce the electron: Vol(Hopf) = 0, so its ℏ_q² electron weight is CAL-1 inserted by hand.
+  - The trace chart reaches the electron but not the muon: (σ₀σ₁⁻¹)²/τ_e = 0.4054, which is 510× short of Vol(4₁)/ℏ_q².
+  - So neither chart covers both leptons. Which one is canonical is on the owner's card from W6.
