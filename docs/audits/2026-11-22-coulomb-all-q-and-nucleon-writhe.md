@@ -223,8 +223,51 @@ only on how many there are. With the readout of §26 the pair must have no stran
 
 **Why α is pinned and β free with strands between.** The pattern in the table is consistent with
 a block rule: strands to the right of a block are harmless to it, strands to its left free its
-parameter. Between the blocks, strands are right of A and left of B, and one parameter frees;
+parameter (§6 gives the one-crossing mechanism). Between the blocks, strands are right of A and left of B, and one parameter frees;
 before A, they are left of both, and both free. This is a reading of seven layouts, not a proof.
+
+## 6. The local mechanism behind the side rule (issue #9124, items 2 and 3)
+
+**The block rule now covers nine layouts.** The probe also reports whether a single block's
+charge, `Q_a` alone or `Q_b` alone (plus constants), is a reachable readout. Exact over Q(q),
+`np_more_strands_symbolic_probe_sides.out.txt`:
+
+| layout | strands left of A | strands between | `Q_a` alone | `Q_b` alone | Coulomb |
+|---|---|---|---|---|---|
+| L6, L7e | 0 | 0 | no | no | no |
+| L7s, L8s | 0 | 1, 2 | no | **yes** | no |
+| L7b, L8o | 1 | 0 | **yes** | **yes** | **yes** |
+| L8bs | 1 | 1 | **yes** | **yes** | **yes** |
+| L8bb | 2 | 0 | **yes** | **yes** | **yes** |
+
+So the rule reads: a block's own charge becomes reachable exactly when some strand sits to its
+left. `α` goes with `Q_a` and `β` with `Q_b`, so strands between the blocks free `β` and leave
+`α` at its six-strand value, and a strand before A frees both.
+
+**One crossing shows where it comes from.** The readout weights every strand by `K = diag(q, q⁻¹)`
+and traces it out. For a crossing `Ř` between two strands (Lean
+`QOU/QBeta/WeightedTraceSide.lean`, sorry-free, axioms propext, Classical.choice, Quot.sound,
+over any field with `q ≠ 0`):
+
+* closing the right strand with weight `K` leaves the scalar `q²` on the left strand
+  (`rightTrace_R`; `q⁻²` for `Ř⁻¹`, `rightTrace_Rinv`);
+* closing the left strand with the same weight `K` leaves `diag(q² + 1 − q⁻², 1)` on the right
+  strand (`leftTrace_R`; `diag(1, q⁻² + 1 − q²)` for `Ř⁻¹`), which is not a scalar when
+  `q⁴ ≠ 1` (`leftTrace_R_not_scalar`). The scalar on this side needs `K⁻¹` (`leftTraceInv_R`).
+
+So a spectator left of a block, crossing the block's first strand and traced out by the readout,
+leaves an operator that counts that strand's weight. A spectator to the right leaves a number. In
+the readout of one block (`np_one_crossing_trace_side_probe.py`, exact), the ratio `T_X/T_1` for
+that single crossing is `q²` in every charge sector when the spectator is on the right, and takes
+four different values across the charges −1, 0, 1, 2 when it is on the left. That is item 3 in one
+line: a strand before the pair gives a charge-dependent readout of block A, which is what frees
+`α`, and with `α` free the bar argument of §4 no longer excludes the Coulomb form.
+
+**What this does not prove.** It is the mechanism for one crossing. It does not show that `α`
+stays at its six-strand value for every number of strands between the blocks. That needs a
+statement about the whole span, not one insertion, and remains open; the computed range is
+still n ≤ 10. Every figure here is a dimensionless readout ratio; no MeV value, and so neither
+electron unit (`τ_e` or `ℏ_q²`), enters.
 
 ## Scope
 
