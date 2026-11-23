@@ -109,6 +109,9 @@ Re-run the setup script any time to update the platform clone or repair the syml
 
 ## Where to start
 
+The easiest way in is to fork the repository and explore it with the language model of your choice. Ask it what the paper claims, how a result is proved, or where a number comes from, and let it walk you through the files.
+
+
 | If you're working on… | Start here |
 |---|---|
 | Paper content (definitions, theorems, proofs) | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) §"Content-object architecture" + [`AGENTS.md`](AGENTS.md) §"Content-object architecture" |

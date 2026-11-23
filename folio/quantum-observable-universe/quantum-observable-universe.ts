@@ -17,6 +17,10 @@ export default paper({
   affiliations: [],
   date: paperIdentity.date,
   abstract:
+    "This is a work in progress.  Meaningful contributions are welcome: " +
+    "see the Authors' Note for the contribution policy, the open problems, and " +
+    "a summary of how the model's mass, charge, $\\beta$-decay and binding values " +
+    "compare with experiment.  " +
     "This monograph develops the mathematical framework of the Quantum Observable " +
     "Universe (QOU): a rigid braided monoidal category equipped with a " +
     "Frobenius--Hopf object $A$ and a fibre functor $\\tau$ whose differential " +

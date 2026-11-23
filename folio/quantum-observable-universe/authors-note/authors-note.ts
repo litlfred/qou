@@ -11,6 +11,11 @@ export default chapter({
   label: "chap:authors-note",
   sections: [
     section({
+      title: "Status: a work in progress",
+      label: "sec:authors-note-status",
+      blocks: ["authors-note-status"],
+    }),
+    section({
       title: "Verification and source",
       label: "sec:authors-note-verification",
       blocks: ["authors-note-verification"],
