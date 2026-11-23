@@ -133,9 +133,11 @@ def main() -> int:
 
         # Comparison-only empirical weak mixing angles:
         # CODATA-2022 on-shell sin^2(theta_W) = 1 - (m_W / m_Z)^2
-        sin2_codata_onshell = codata("weak mixing angle").value
+        sin2_codata_entry = codata("weak mixing angle")
+        sin2_codata_onshell = mpf(sin2_codata_entry.value_str)
         # PDG MS-bar sin^2(theta_W)(M_Z) benchmark cited in prompt (comparison only)
-        sin2_pdg_msbar = mpf("0.23122")  # noqa: P31 (PDG MS-bar comparison benchmark)
+        sin2_pdg_msbar_str = "0.23122"
+        sin2_pdg_msbar = mpf(sin2_pdg_msbar_str)  # noqa: P31 (PDG MS-bar comparison benchmark)
 
         wb = WitnessBuilder(
             "electroweak-torus-schur",
@@ -454,8 +456,8 @@ def main() -> int:
         wb.add_data(
             "comparison_only_empirical",
             {
-                "CODATA_2022_onshell_sin2_thetaW": fmt50(sin2_codata_onshell),
-                "PDG_MSbar_sin2_thetaW_MZ": fmt50(sin2_pdg_msbar),
+                "CODATA_2022_onshell_sin2_thetaW": sin2_codata_entry.value_str,
+                "PDG_MSbar_sin2_thetaW_MZ": sin2_pdg_msbar_str,
             },
         )
         wb.save({"q0Anchor": "proton"})
