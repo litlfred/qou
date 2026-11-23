@@ -351,7 +351,9 @@ def main() -> int:
     rec = {"source": "library/arxiv-1901.01312v1 sec 4.2 (pp.4-5), sec 4.3 (pp.5-6)",
            "task_named_source_held": False,
            "hecke_convention": "T^2 = (q - q^-1) T + 1",
-           "q_status": "zeta8 fixed by Gresnigt's construction; specialisation of formal q; NOT q0"}
+           "q_status": "zeta8 fixed by Gresnigt's construction; specialisation of formal q; NOT q0",
+           "q0Anchor": "independent",
+           "q0AnchorReason": "zeta8 fixed by Gresnigt's construction; formal q specialisation only, q0 never read"}
     rec["C1_C2"] = c1_c2()
     rec["C3_C4"] = c3_c4()
     rec["C5_C6_C7"] = c5_c6_c7()

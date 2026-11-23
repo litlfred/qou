@@ -288,6 +288,8 @@ out = {
     "issue": 9096,
     "scriptHash": script_hash,
     "arithmetic": "exact sympy over Q(sqrt2, sqrt3); no float; q0 not used",
+    "q0Anchor": "independent",
+    "q0AnchorReason": "exact sympy over Q(sqrt2, sqrt3); q0 never read",
     "source": "Chester-Arsiwalla-Kauffman arXiv:2501.03260v1 §2-3, §6 Eqs.(31)-(35), Tables 1-2; "
               "NOT held in library/, transcribed via a summarising fetch of the arXiv HTML",
     "map": "t -> sum_c t_c eps_c (colour = position, K0); mu = t - (T/3)(1,1,1); Q = T/3; N3 = t3",

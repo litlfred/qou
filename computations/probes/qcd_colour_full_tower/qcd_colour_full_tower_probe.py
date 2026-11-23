@@ -302,8 +302,7 @@ def hook_dim(lam):
     for i, r in enumerate(lam):
         for j in range(r):
             prod *= (r - j - 1) + (conj[j] - i - 1) + 1
-    from math import factorial
-    return factorial(n) // prod
+    return int(sp.factorial(n)) // prod
 
 
 def skew_syt(lam, mu):
@@ -476,12 +475,11 @@ def T3(R):
 
 # ================================================================== T4
 def T4(R):
-    from math import factorial
     rad = {}
     for n in range(3, 10):
         tot = sum(hook_dim(l) ** 2 for l in partitions(n) if len(l) >= 3)
         catalan = sp.binomial(2 * n, n) // (n + 1)
-        rad[n] = {"radical_dim": tot, "n!-Catalan": int(factorial(n) - catalan)}
+        rad[n] = {"radical_dim": tot, "n!-Catalan": int(sp.factorial(n) - catalan)}
     OUT["T4_D_radical"] = rad
     check("T4 radical of the D trace form on H_n = (+) three-row blocks, dim n! - Catalan(n), n=3..9",
           all(v["radical_dim"] == v["n!-Catalan"] for v in rad.values()), rad)
