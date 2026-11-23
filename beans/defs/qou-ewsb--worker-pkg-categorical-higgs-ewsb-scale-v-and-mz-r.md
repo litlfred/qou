@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: high
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T22:19:37Z
+updated_at: 2026-11-23T23:28:45Z
 parent: qou-sm8w
 ---
 
@@ -17,3 +17,11 @@ parent: qou-sm8w
 
 ## Additional Lean Targets from Analyst 10 Audit
 - Reconcile `ElectroweakBringSchwingerBridge.lean` (`v_EW` at `-29.37 ppb`, `m_Z/m_W` at `+174.7 ppm`, `m_H = 124.26 GeV` at `-0.67%`) with `ElectroweakVevGaps.su2_coupling_not_selfConsistent` by testing whether `#9204`'s Sweedler weak-jet Frobenius norm `(q_0^2 - 1)^8` (`(q_0^2 - 1)^{-4} = 344.87` vs `v/m_p = 262.42`) supplies the self-consistent `alpha_v` without importing `alpha_2`; fix `catalanG` rational literal in `HiggsCategoricalMassFormula.lean:96` (`qou-3nva`) and sync `sm-params-higgs.md`.
+
+
+## 2026-11-23 Worker 23 Delivery (PR #9227, Issue #9226, Branch `claude/sm8w-ewsb-vew-mh-mz-rg-20261123`)
+- **Pre-Registration**: `computations/probes/sm8w_ewsb_vew_mh_mz_rg/PREREGISTRATION.md` committed first (`bdfaf539356`).
+- **Lean 4 (`0 sorry`, standard axioms only, wired into `QOU.lean`)**:
+  - Remediated `QOU.BraidKnot.catalanG` decimal literal in `HiggsCategoricalMassFormula.lean` to exact `QOU.Archimedean.Catalan_constant = Cl_2 (Real.pi / 2)` + certified rational bracket `(87/100, 96/100)` (`qou-3nva`).
+  - Added `QOU/StandardModel/ElectroweakSweedlerScaleAndRGThresholds.lean` proving Sweedler `(q^2-1)^k` ↔ `(G_F, v_EW)` bridges, `EwVevGaps` loop compatibility (`0 < (q^2-1)^4 < 1/256 < 1/30`) vs tree non-coincidence (`ewDressedTreeComplexity q < 287 < 300 < (q^2-1)^{-4}`), `su(2)_L + u(1)_Y -> u(1)_EM` Goldstone rank `3`, Higgs potential stability (`lambda_H > 0, m_H^2 = 2 lambda_H v^2`), representation-derived 1-loop `(41/10, -19/6, -7)` & 2-loop `b_{ij}` matrix, and `sin^2 theta_W^0 = 3/8` Georgi-Quinn-Weinberg / coupling-triangle RG theorems.
+- **80-dps Probe & Stamped Witness**: `computations/probes/sm8w_ewsb_vew_mh_mz_rg/sm8w_ewsb_vew_mh_mz_rg_probe.{py,witness.json}` (`5/5` assertions passed, `scriptCommitSha = 9f5084e881b`, synced `sm-params-higgs.{md,ts}`). Held `in-progress` per reviewer-separated closure discipline pending owner merge of #9227.
