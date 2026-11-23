@@ -1,14 +1,13 @@
 ---
 # qou-4383
 title: 'Ordering fingerprint audit: find grouped-era artifacts by VALUE, not by symptom'
-status: todo
-pr: 8352
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T04:29:13Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-23T20:54:19Z
 parent: qou-v2om
 ---
 
@@ -949,3 +948,8 @@ the next run.
 ## 2026-11-21 (later) — CORRECTION to my own line above: the numeric `-at-q0-50dps` caches are NOT stale
 
 I wrote "the numeric `-at-q0-50dps` caches ... are not touched by this PR" as an open item, implying they were still on the old word. Measured: all 19 averaged-crossing numeric caches (proton, muon, free, binding; p/n/D/pp/nn/T/3He/4He) agree with a fresh mpf path sum on today's word at their own recorded q to <= 2.5e-48 relative (their 50-dps floor). The six sign-only matrix-m caches re-run byte-identical in chi and tr_M. Only chi-helium-4-h12-at-q0-50dps-matrix-m changed (q0Anchor stamp + convention-D y=0 on three-row partitions; tr_M unchanged), PR on branch claude/chi-at-q0-numeric-cache-rebuild-2026-11-21. Nothing in this repo still serves old-word chi that I can find.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #8672 (`6f0fa27cb5`) & commits `7e8c46d2825`, `1660c49f2ff`: Ordered-word `word_fingerprint` guard, `chi_path_sum_symbolic.py` H9/H12 cache rebuilds, and `-at-q0-50dps` cache verification landed on `origin/main`.

@@ -1,16 +1,17 @@
 ---
-id: qou-anx0
-title: "EPIC: Consolidate All 14 Monograph Appendices/Annexes & Build Dense Witness-Backed Master Reference Tables (Braid Words, Predictions, Propagated Calibration Bounds & CODATA/PDG/AME2020 Errors)"
+# qou-anx0
+title: 'EPIC: Consolidate All 14 Monograph Appendices/Annexes & Build Dense Witness-Backed Master Reference Tables (Braid Words, Predictions, Propagated Calibration Bounds & CODATA/PDG/AME2020 Errors)'
 status: todo
 type: epic
 priority: high
-blocked_by:
-  - qou-qzvs
-  - qou-udad
-  - qou-h6ef
-  - qou-5lct
 created_at: 2026-11-23T20:30:00Z
-updated_at: 2026-11-23T20:30:00Z
+updated_at: 2026-11-23T20:55:42Z
+parent: qou-hksc
+blocked_by:
+    - qou-qzvs
+    - qou-udad
+    - qou-h6ef
+    - qou-5lct
 ---
 
 ## Goal (Gated Until Active Derivations Stabilize; Coordinates `qou-mba8`, `qou-lanx`, `qou-7p89`, `qou-t0fc`, `qou-4b6g`, `qou-nmjd`)

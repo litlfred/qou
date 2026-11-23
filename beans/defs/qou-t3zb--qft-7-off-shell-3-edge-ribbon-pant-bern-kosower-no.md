@@ -1,11 +1,11 @@
 ---
 # qou-t3zb
 title: 'QFT-7 (math): su(3) structure constants — Gell-Mann Fierz completeness, Jacobi identity, total antisymmetry of f^{abc}'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T16:48:45Z
-updated_at: 2026-11-22T22:05:00Z
+updated_at: 2026-11-23T20:54:10Z
 parent: qou-3fjn
 ---
 
@@ -33,3 +33,8 @@ Target: Lie-algebra facts about su(3) in the Gell-Mann basis (Fierz completeness
 **Verdict: APPLIES.** Re-scoped target is Lie algebra. Fierz completeness was already on main (`ColourStructureConstantCommutator.fierz`, strand-colour arc); reused read-only.
 
 Worked: `QOU/QFTMath/Su3StructureConstants.lean` on `claude/qft-math-cores-2026-11-22` (df504460b): orthonormality, f totally antisymmetric, d totally symmetric, completeness X = 2Σ tr(XTᵉ)Tᵉ derived from `fierz`, `[Tᵃ,Tᵇ] = iΣ fᵃᵇᵉTᵉ`, and the Jacobi identity `jacobi_f`. Standard axioms only.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #9148 (`47bc8300ca`) & PR #9190 (`45091e571b`): `su(3)` Gell-Mann Fierz completeness, total antisymmetry of `f^{abc}`, symmetry of `d^{abc}`, Jacobi identity (`QOU/QFTMath/Su3StructureConstants.lean`), and pure-algebra ribbon-pant 3-gluon Ward identity (`QOU/StandardModel/RibbonPantBernKosowerGluonVertex.lean`) landed sorry-free on `origin/main`.

@@ -1,13 +1,13 @@
 ---
 # qou-hkwd
 title: 'RENAME TRANCHE: the atomic object is a Hecke word, not a braid word — 5 mathematically-false lines, not a 672-file rename'
-status: todo
+status: completed
 type: feature
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T12:25:33Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-23T20:54:13Z
 parent: qou-mub3
 ---
 
@@ -97,3 +97,8 @@ Re-measured on main 2ae54ab40. The detector `computations/audits/braid_vs_hecke_
 
 
 2026-11-21 (expo-chapter, 36f528e0e, PR #8889): Lean residue done. rho-k-h3a-refinement.lean docstring now says H_{3A}(q) Hecke word; lean-direct exit 0. Stays todo until #8889 merges.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #8889 (`a4bdf12e08` / `e9c041992b` / `00c382ce62`): Nuclear core `B_K` renamed from braid word to Hecke word in `H_{3A}(q)` across `.md`/`.lean` and `braid_vs_hecke_word_audit.py` repaired (`3/3`, `0` defects).

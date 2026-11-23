@@ -10,7 +10,7 @@ tags:
     - nuclear-binding
     - compute-closure
 created_at: 2026-11-23T19:37:30Z
-updated_at: 2026-11-23T19:37:30Z
+updated_at: 2026-11-23T20:54:29Z
 parent: qou-qzvs
 ---
 
@@ -43,3 +43,6 @@ Formalize and compute the **Layer-1 vs. Layer-2 architectural split** for QOU nu
    - **Layer 1 (`HeckeGS`, §3.3, §9.5, §12.1):** Enforces colour confinement as the column-alphabet filter (`SU(3)_c` singlets only; `q_local -> q_gold = 1/phi^2` modifies the alphabet at QGP deconfinement).
    - **Layer 2 (`ChamberGS`, §12.2, §12.4-12.5, §15.14-15.15):** Enforces nuclear confinement / stability selection via Sturmfels-Thomas binomial arrow orientation (`x_A x_B -> x_{AB}` bound vs `x_{AB} -> x_A x_B` at drip lines `^5He -> alpha + n`, `^8Be -> 2 alpha` paired with degree-3 Hoyle `x_alpha^3 -> x_{12C}`, and `Z >= 84` alpha-fission), refining `periodic-table-demand-conjecture.md:40`.
 
+
+Claimed by claude/lp-bootstrap-prior-art-dual-gaps-20261123 (2026-11-23)
+PR #9210 opened on claude/lp-bootstrap-prior-art-dual-gaps-20261123 (f89375881ae6)

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T20:56:46Z
-updated_at: 2026-11-20T16:00:00Z
+updated_at: 2026-11-23T20:54:29Z
 parent: qou-3l2l
 ---
 
@@ -43,3 +43,6 @@ another. The gram_kappa_numerical_value sorry was a false statement and is
 replaced by a sorry-free refutation; kappa = 1.7216 is det G_cl/det G_q and
 never used gramKappa (bean qou-wkgp). Status unchanged: the CS-tower conjecture
 class still has no instance.
+
+
+Claimed by claude/w1-hadron-alpha-em-linchpin-20261123 (2026-11-23)

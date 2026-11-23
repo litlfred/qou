@@ -1,13 +1,13 @@
 ---
 # qou-3e5m
 title: 'GAP: 56 self-fulfilling MEASURED assertions, hidden by a positional-only detector'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T03:40:10Z
-updated_at: 2026-11-16T19:43:00Z
+updated_at: 2026-11-23T20:54:19Z
 parent: qou-trd0
 ---
 
@@ -409,3 +409,8 @@ Was in-progress with no bean update since 2026-08-31 and no main commit naming i
   - Replaced all 15 remaining live `MEASURED` self-comparisons across 9 probes in `computations/probes/` (`cyclic_square_does_not_reopen_milnor_probe.py`, `frobenius_admissibility_net_row_probe.py`, `gs_filtration_jet_shape_magic_probe.py`, `milnor_mubar_vanishes_on_every_triple_probe.py`, `milnor_one_separated_component_and_the_chain_residual_probe.py`, `milnor_vanishing_is_generic_for_monotone_probe.py`, `nf_bond_count_injectivity_probe.py`, `symbolic_nf_q_degree_magic_probe.py`, `tower_walk_magic_replication_probe.py`) with genuine boolean/expected assertions.
   - Verified `python3 computations/audits/self_fulfilling_assertion_audit.py` now reports `MEASURED (cannot report a regression): 0` and exits `0`.
 - **Status:** Kept `in-progress` pending PR #8152 merge and owner review.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `bc6e912e5ee` (port #8152): All remaining self-fulfilling `MEASURED` assertions replaced across 9 probes; `self_fulfilling_assertion_audit.py` reports `MEASURED: 0` (`--self-test` exits 0).

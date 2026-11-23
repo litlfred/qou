@@ -1,13 +1,13 @@
 ---
 # qou-em1j
 title: 'twwf n=3: Poincaré poly ∑_{w∈S_n} q^ℓ(w) = [n]_q! — the T_w Gram RHS'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-31T20:00:58Z
-updated_at: 2026-11-23T17:32:53Z
+updated_at: 2026-11-23T20:54:10Z
 parent: qou-1oif
 ---
 
@@ -32,3 +32,8 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8323, closed o
 
 ## 2026-11-23 — WS4 Consolidation Update (PR #9189)
 - Consolidated `#9132` (`QOU/MathlibExt/SymmetricGroupPoincare.lean`: `poincare_poly_perm_eq_qFactorial` over any `CommRing R`, 14 theorems, 0 `sorryAx`) into Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`).
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #9189 (`bdb0f07969a`, consolidating #9132, closing #9131): Symmetric-group Poincaré polynomial `poincare_poly_perm_eq_qFactorial` (`∑_{w ∈ S_n} q^{ℓ(w)} = [n]_q!`) proved for every `n` over any `CommRing R` (`0 sorryAx`) in `QOU/MathlibExt/SymmetricGroupPoincare.lean`.

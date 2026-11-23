@@ -1,13 +1,13 @@
 ---
 # qou-z9fx
 title: 'GAP: docstring-states-a-VALUE the body does not compute — the schurElement/hookDim class'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T21:41:57Z
-updated_at: 2026-11-15T20:59:00Z
+updated_at: 2026-11-23T20:54:18Z
 parent: qou-6qbv
 ---
 
@@ -152,3 +152,8 @@ it.
 
 - PR: https://github.com/litlfred/qou/pull/8001 (`claude/qou-z3k1-ajfl-z9fx-2026-11-15`, head `dc257cfe44475b4d418b26d8e48c2b5566459344`)
 - Wired real `cellContent`, `cellHook`, `nLambda`, `hookDim` (`n! / ∏ cellHook`), `wenzlSchurElement` (`Q^{n(λ)} · ∏ (1 - X Q^c)/(1 - Q^h)`), and non-vacuous `MarkovTraceFamilyOneDim.unique` in `folio/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean`.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #8001 (`b67ed293ec` / `dc257cfe44`): Real `cellContent`, `cellHook`, `nLambda`, `hookDim`, and `wenzlSchurElement` wired in `y-lambda-closed-form-wenzl-bridge.lean`.

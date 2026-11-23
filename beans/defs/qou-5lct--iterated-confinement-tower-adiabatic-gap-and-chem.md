@@ -1,11 +1,12 @@
 ---
-id: qou-5lct
-title: "5-Layer Iterated Confinement Tower (ConfinementLayer RG), Adiabatic Gap Stability, & Layer-4 Chemical Toric/Diophantine Gröbner Stoichiometry"
+# qou-5lct
+title: 5-Layer Iterated Confinement Tower (ConfinementLayer RG), Adiabatic Gap Stability, & Layer-4 Chemical Toric/Diophantine Gröbner Stoichiometry
 status: in-progress
 type: feature
 priority: critical
 created_at: 2026-11-23T19:58:00Z
-updated_at: 2026-11-23T19:58:00Z
+updated_at: 2026-11-23T20:55:42Z
+parent: qou-hksc
 ---
 
 ## Goal
@@ -25,3 +26,6 @@ Formalize and Lean-prove (`0 sorry`, `0 axiom`) QOU's 5-Layer Iterated Confineme
    - Explicit 5-Layer Confinement Tower table (`L_0` Convention-D `TL_n(q)`, `L_1` `SU(3)_c` hadron singlets, `L_2` `ChamberGS` nuclei, `L_3` Pauli `2n^2` atoms & electronegativity/hardness shadow prices, `L_4` covalent/stoichiometric toric reaction networks).
    - Detailed discussion of chemical equation balancing (`ker_Z(A_chem)` linear Diophantine lattices / Smith & Hermite normal forms), Sturmfels-Thomas Gröbner enthalpy/Gibbs reduction, and toric algebraic geometry of detailed-balance mass-action equilibria (`Spec C[N A_chem] = V(I_{A_chem})`, Birch's theorem).
    - Full multi-author citations: George B. Dantzig & Philip Wolfe (1960); Jacques F. Benders (1962); Jesús A. De Loera, Raymond Hemmecke, Matthias Köppe & Robert Weismantel (2008-2013); Claude Bloch & Jules Horowitz (1958); J. Robert Schrieffer & Peter A. Wolff (1966); Kenneth G. Wilson (1971, 1975); Steven Weinberg (1979, 1990) & European Muon Collaboration / J. J. Aubert et al. (1983); Guifré Vidal (2007, 2008) & Glen Evenbly & Guifré Vidal (2015); Craig C. Squier (1987), Yves Lafont (1995, 2003), Yves Guiraud & Philippe Malbos (2009-2018); Robert S. Mulliken (1934), Robert G. Parr & Ralph G. Pearson (1983), Perdew-Parr-Levy-Balduz (1982); Fritz Horn & Roy Jackson (1972), Martin Feinberg (1972), Karin Gatermann & Birkett Huber (2002), Gheorghe Craciun, Alicia Dickenstein, Anne Shiu & Bernd Sturmfels (2009).
+
+
+Claimed by claude/iterated-confinement-tower-chem-gb-20261123 (2026-11-23)

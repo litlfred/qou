@@ -1,11 +1,11 @@
 ---
 # qou-qssg
 title: 'QFT-5 (math): Clifford algebra Cl(1,3) — Weyl/Dirac trace identities'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T16:48:45Z
-updated_at: 2026-11-22T22:05:00Z
+updated_at: 2026-11-23T20:54:17Z
 parent: qou-3fjn
 ---
 
@@ -37,3 +37,8 @@ Target: Cl(1,3) presentation, γ⁵ and the chiral projectors, and the standard 
 **Verdict: APPLIES.** Re-scoped target is pure algebra; no retired premise.
 
 Worked: `QOU/QFTMath/CliffordTraces.lean` on `claude/qft-math-cores-2026-11-22` (df504460b). Proves the 2- and 4-gamma traces and odd-trace vanishing for any cyclic trace from the Clifford relation alone, the Weyl representation over any ring with i²=−1 (Kronecker form), γ⁵ properties, tr γ⁵ = tr γ⁵γ^μγ^ν = 0, chiral projectors. lean-direct exit 0; `#print axioms` standard only. Not done: tr(γ⁵γγγγ) = −4iε. Stays in-progress until the PR merges.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #9148 (`47bc8300ca` / `14596f70ae`, closing #9147): Re-scoped `Cl(1,3)` Clifford algebra presentation, Weyl representation, `γ⁵`, chiral projectors, and 2-/4-/odd-gamma cyclic trace identities proved sorry-free in `QOU/QFTMath/CliffordTraces.lean`.

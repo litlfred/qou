@@ -1,13 +1,13 @@
 ---
 # qou-pwd4
 title: Add the missing 'free as an R-module' hypothesis to cor:pbw and cor:ugb-pbw, and cite [bokutchen2015pbw] §3.7
-status: todo
+status: completed
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T18:29:01Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-23T20:54:16Z
 parent: qou-q4oa
 ---
 
@@ -63,3 +63,8 @@ Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/pa
 Ruling check (owner-rulings.md on main 2ae54ab401, 2026-11-21): no superseded premise (photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ = 2 − h⁴, fitted values in proofs) is used by this bean's finding.
 
 Fix applied on owner card (2026-11-21) in PR #8825 (branch claude/paper-structure-drain-2026-11-21). Close when it merges.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #8825 (`869260b81c`): Missing `'free as an R-module'` hypothesis added to `cor:pbw` and `cor:ugb-pbw` with `[bokutchen2015pbw]` §3.7 citation.

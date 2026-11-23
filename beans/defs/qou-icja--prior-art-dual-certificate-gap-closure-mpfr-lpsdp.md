@@ -10,7 +10,7 @@ tags:
     - lp-duality
     - compute-closure
 created_at: 2026-11-23T19:27:02Z
-updated_at: 2026-11-23T19:27:02Z
+updated_at: 2026-11-23T20:54:28Z
 parent: qou-qzvs
 ---
 
@@ -44,3 +44,7 @@ parent: qou-qzvs
    - **Thomas C. Hales et al. (2017)** & **Alexey Solovyev (2011)** (Flyspeck external LP $\to$ formal HOL Light dual verification), **Xavier Allamigeon & Ricardo D. Katz (2019)**, **Sylvie Boldo, Catherine Lelay, Guillaume Melquiond, Assia Mahboubi & Pierre Roux** (Coq certified SDP/positivity witnesses), and **Martin Dvořák & Vladimir Kolmogorov (2024/2026)** (*arXiv:2409.08119*, Lean 4 linear optimization duality).
 
 5. **QOU-Distinctive Synthesis:** Unlike continuum CFT/QCD bootstraps that bound infinite-dimensional correlator islands, QOU solves MPFR conic programs on finite-dimensional Hecke/Temperley–Lieb Young-diagram strata (`Delsarte–Schrijver` + `Gatermann–Parrilo`) to select minimum-action normal forms and verify exact rational dual certificates in Lean 4 (`Hales–Solovyev` + `Dvořák–Kolmogorov`).
+
+
+Claimed by claude/lp-bootstrap-prior-art-dual-gaps-20261123 (2026-11-23)
+PR #9210 opened on claude/lp-bootstrap-prior-art-dual-gaps-20261123 (f89375881ae6)

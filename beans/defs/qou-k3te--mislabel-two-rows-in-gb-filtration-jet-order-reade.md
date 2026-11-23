@@ -1,13 +1,13 @@
 ---
 # qou-k3te
 title: 'MISLABEL: two rows in gb-filtration-jet-order-reader name knots their braid words do not close to'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:30:55Z
-updated_at: 2026-11-16T19:56:39Z
+updated_at: 2026-11-23T20:54:22Z
 parent: qou-trd0
 ---
 
@@ -29,3 +29,8 @@ Found while amending docs/audits/2026-08-21-deuteron-knot-assignment-adjudicatio
 - Fixed the `deuteron 6_2` 3-braid word from `[-1, 2, -1, 2, 2]` (2-component link, det 8) to `[-1, 2, -1, 2, 2, 2]` (`\sigma_1^{-1} \sigma_2 \sigma_1^{-1} \sigma_2^3`, 1-component knot $6_2$, det 11) and relabelled the 2-component `\sigma_1^{-1} \sigma_2 \sigma_1^{-2} \sigma_2^3` row honestly so it no longer claims to be the 1-component knot $8_{11}$.
 - Added `gb_filtration_knot_named_rows_have_single_component` / `gb_reader_knot_named_rows_have_single_component` assertions and `--self-test` to both `gb_filtration_jet_tracker.py` and `gb_filtration_jet_order_reader.py`, lifted `speedup_estimate` to `mpmath.mpf` serialized via `_precision.fmt`, and regenerated `gb-filtration-jet-order.witness.json` and `gb-filtration-jet-order-reader.witness.json` (`0` raw float64 fields).
 - PR: https://github.com/litlfred/qou/pull/8178 (`6465362ef2e7902778c4f8796f81286e3aeb81bc`)
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `2eb92b6a369` (port #8178): Exact `closure_component_count` check added, `deuteron 6_2` and 2-component rows fixed in `gb_filtration_jet_tracker.py` & reader, and witnesses regenerated (`0` raw float64).

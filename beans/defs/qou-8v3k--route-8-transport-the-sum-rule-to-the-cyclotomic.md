@@ -11,7 +11,7 @@ tags:
     - reorg-2026-10-04
     - qbeta
 created_at: 2026-08-07T16:40:00Z
-updated_at: 2026-11-23T17:32:54Z
+updated_at: 2026-11-23T20:54:32Z
 parent: qou-n4nr
 ---
 
@@ -206,3 +206,8 @@ No change. The latest note above points at batch PR #8193, which is still open a
 
 ## 2026-11-23 — WS4 Consolidation Update (PR #9189)
 - Consolidated `#9151` (`QOU/QBeta/FiveTwoCyclotomicBloch.lean`, 14 theorems, 0 `sorryAx`) into Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`).
+
+
+## 2026-11-23 Merge Update (Rule 13a Guard)
+
+PR #9189 (`bdb0f07969a`) merged `FiveTwoCyclotomicBloch.lean` algebraic Vieta/cyclotomic steps; kept open per Rule 13a pending analytic envelope transport proof (`qou-trns`).

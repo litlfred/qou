@@ -1,11 +1,11 @@
 ---
 # qou-mgg1
-title: 'Magic shells via gamma-gamma processes in Hecke normal form (capture, photon excitation, e-e interaction)'
-status: in-progress
+title: Magic shells via gamma-gamma processes in Hecke normal form (capture, photon excitation, e-e interaction)
+status: completed
 type: task
 priority: high
 created_at: 2026-11-21T04:10:00Z
-updated_at: 2026-11-21T04:10:00Z
+updated_at: 2026-11-23T20:54:15Z
 parent: qou-6qbv
 ---
 
@@ -23,3 +23,8 @@ Complexity smooth (W_k 6*4^(k-2) terms, O_k 2^k+4), no closure feature to k=7. B
 
 ## 2026-11-21 — phi region + margin (PR #8718, merged 3d0525196f)
 Binding region never vanishes/reopens; parity alternation (odd Z 10-13/27, even 8/27), no Z=2/Z=10 feature; margins smooth. Scope (a) for this capture rule. Next: owner choice of capture-rule variant.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PRs #8710, #8718, #9186 (`8f82f389a9` / `b32f25dc4d`): `GammaGammaAtom` all-pairs capture Lean formalisation, Z=1..10 photon-colour binding-region probes, and model audit consolidated on `origin/main`.

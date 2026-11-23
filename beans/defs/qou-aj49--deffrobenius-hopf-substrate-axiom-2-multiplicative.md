@@ -1,11 +1,11 @@
 ---
 # qou-aj49
 title: def:frobenius-hopf-substrate axiom 2 (multiplicative counit) + Frobenius relation + counit law forces A = k·1
-status: in-progress
+status: completed
 type: bug
 priority: high
 created_at: 2026-10-12T20:13:17Z
-updated_at: 2026-11-16T19:05:00Z
+updated_at: 2026-11-23T20:54:12Z
 parent: qou-rtxm
 ---
 
@@ -27,3 +27,8 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## 2026-11-16 — Two-Counit Frobenius–Hopf Separation & Non-Collapse Witness (PR #8157)
 - Added `QOU.Foundations.FrobeniusHopfMarkovBridge` (`folio/quantum-observable-universe/lean/QOU/Foundations/FrobeniusHopfMarkovBridge.lean`, wired into `QOU.lean`, 0 `sorry`, generic `CommRingOps R` per §7c) proving `frobenius_multiplicative_counit_collapses` (`x = ε(x) • 1_A` when the Frobenius counit is multiplicative) and the explicit rank-2 group-algebra non-collapse witness `c2_two_counit_noncollapse` on `R[C₂] ≅ R × R` (`c2_frobenius_right_counit_law` for `ε_F(a·1 + b·g) = b`, `c2_hopf_counit_multiplicative` for `ε_H(a·1 + b·g) = a + b`, `ε_F(g²) = 0 ≠ 1 = ε_F(g)²`, and `∀ c : ℤ, g ≠ c • 1`).
 - PR: https://github.com/litlfred/qou/pull/8157 (commit `16f8c01498462170d1ad98f5b5426233d3feea7d`). Status kept `in-progress`.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commits `1b9df90d24`, `7d861d4a8e6`: Multiplicative-counit collapse proved sorry-free (`MultiplicativeCounitCollapse.lean`, `FrobeniusHopfMarkovBridge.lean`) and multiplicative-counit sentence removed from `def:frobenius-hopf-substrate` axiom 2 (coproduct follow-up tracked in `qou-xapv`).

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-15T18:12:20Z
-updated_at: 2026-11-23T17:32:54Z
+updated_at: 2026-11-23T20:54:32Z
 parent: qou-r9ih
 ---
 
@@ -42,3 +42,8 @@ Still open on this bean: the endpoint `x = -1` (the same route needs the limit a
 
 ## 2026-11-23 — WS4 Consolidation Update (PR #9189, Owner Default B1)
 - Consolidated `#9151` (`ArchimedeanLimitNegative.lean`, `ArchimedeanLimitEndpoints.lean`, 21 theorems, 0 `sorryAx`) and added Owner Default B1 shifted-index `k ≥ 1` classical `(q;q)_n` Faddeev limit theorems at `x = 1` (`qPochhammerShiftedOne`, `archimedeanLimit_shifted_one`, `archimedeanLimit_shifted_one_pi_sq_div_six`) while preserving `denomPolyLocal` and `not_archimedeanLimit_one` in Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`).
+
+
+## 2026-11-23 Merge Update (Rule 13a Guard)
+
+PR #9189 (`bdb0f07969a`) merged `ArchimedeanLimitNegative.lean` & `ArchimedeanLimitEndpoints.lean` (`x = ±1`, Default B1); kept open per Rule 13a (`x > 1` `Re Li₂` case & `ArchimedeanLimit` class instantiation remain open).

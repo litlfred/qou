@@ -1,7 +1,7 @@
 ---
 # qou-bvo3
 title: Add disclosure — 20 bare projections that are NON-EXEMPT (live scanner defects)
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - issue-2472
     - reorg-2026-10-04
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-11-16T20:00:34Z
+updated_at: 2026-11-23T20:54:21Z
 parent: qou-6qbv
 ---
 
@@ -46,3 +46,8 @@ Criterion: `docs/audits/2026-08-09-honest-placeholder-criterion.md`
 
 - Added explicit Criterion-(1)+(3) `"**Assumed, not derived here:**"` disclosures and proved consumer theorems (`substrate_split_factor_at_one`, `dressed_mass_down_eq_up_add_split`, `e_infinity_first_three_pages_sum`, `e_infinity_chirality_sq_eq_one`) in `folio/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean` and `folio/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean`.
 - Verified `lean-self-assuming-audit.py` and `lean-self-assuming-typematch-scan.mjs` report `0` findings on both files.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `c803c508a63` (port #8180): Explicit Criterion-(1)+(3) disclosures and proved consumer theorems landed; `lean-self-assuming-audit.py` reports `0` findings.

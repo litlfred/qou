@@ -1,11 +1,11 @@
 ---
 # qou-91w7
 title: 'OWNER CALL: global reading of def:mass-energy (c_q^2 converts mass to energy, or pure number); E0 pole'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-23T05:55:40Z
+updated_at: 2026-11-23T20:54:30Z
 parent: qou-wxhi
 ---
 
@@ -59,3 +59,6 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
 
 
 2026-11-23 (W6, ec0980bb1): owner chose 'search for one object for both'. q-volume derives the muon shape but gives the electron 0; trace+c*volume: carrier forces c = T_e(1) = 1/2 (Lean sum_family_forces_c), giving 150.33 at q0 (-27.3 %), scope-(a) negative. No single derived object yet. Audit section 9.
+
+
+Claimed by claude/w6-joint-lepton-resolvent-20261123 (2026-11-23)

@@ -1,13 +1,13 @@
 ---
 # qou-9q4h
 title: 'Three importers are broken on main: unsupported format string passed to mpf.__format__'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T10:08:46Z
-updated_at: 2026-11-16T19:29:47Z
+updated_at: 2026-11-23T20:54:21Z
 parent: qou-trd0
 ---
 
@@ -72,3 +72,8 @@ refresh their own witnesses, so those witnesses can only go staler.
 - Fixed the remaining `TypeError: unsupported format string passed to mpf.__format__` crash on line 334 of `computations/codata_reconciliation.py` (`float(max_dev):.3f`) and lifted `ppb()`, `codata_uncertainty_ppb()`, and all witness rows/assertions to `mpmath.mpf` serialized via `_precision.fmt` (`0` raw float64 fields in `computations/codata-reconciliation.witness.json`).
 - Verified `computations/mass-from-q-symbolic.py`, `computations/rho_f_volume_binding_gap.py`, and `computations/codata_reconciliation.py` all run cleanly and exit `0`.
 - PR: https://github.com/litlfred/qou/pull/8170 (`8b83507c7e14547848b5b991bdd3396fc7f3a703`)
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `ca6b5d6dd94` (port #8170): `mpf.__format__` crash fixed in `codata_reconciliation.py` (`0` raw float64 fields) and all 3 importers verified exit 0 on `origin/main`.

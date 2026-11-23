@@ -1,13 +1,13 @@
 ---
 # qou-c46w
 title: prop:brings-smoothness-resolution is a PROPOSITION whose cited Lean proof was True AND True AND True -- owner decision needed on the block kind
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T12:19:32Z
-updated_at: 2026-11-16T19:22:00Z
+updated_at: 2026-11-23T20:54:12Z
 parent: qou-6qbv
 ---
 
@@ -73,3 +73,8 @@ one of nineteen.
 
 - Replaced the conditional accessor in `folio/quantum-observable-universe/brings-surface/brings-smoothness-resolution.lean` with an **unconditional, sorry-free proof** (`BringTransverseInP4 ∧ BringIntrinsicResolution ∧ BringRegularC5Foliation`) backing `prop:brings-smoothness-resolution`: proved the $3 \times 3$ Vandermonde Jacobian factorisation `bringJacobianMinor_eq_six_vandermonde`, non-vanishing on distinct coordinates `bringJacobianMinor_ne_zero`, the two-value power-sum elimination lemmas (`two_value_sum_identity`, `eq_zero_of_mem_zero_pair`, `all_zero_of_mem_zero_pair`, `all_zero_of_two_values`), `bring_transverse_in_P4`, `bring_intrinsic_resolution`, and `bring_regular_c5_foliation` (`0` `sorry`, `0` self-assuming projections).
 - Opened PR `litlfred/qou#8165` (`cf010d07bb34f2e3118733212559b61ede4b8cc4`) with `ready-to-merge` + `release` labels.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `9dd5e021cb` (port #8165): Unconditional sorry-free proof of Bring surface smoothness (`BringTransverseInP4 ∧ BringIntrinsicResolution ∧ BringRegularC5Foliation`) landed in `brings-smoothness-resolution.lean`.

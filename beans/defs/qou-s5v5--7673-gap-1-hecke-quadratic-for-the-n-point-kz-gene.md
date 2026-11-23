@@ -6,7 +6,6 @@ type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
 updated_at: 2026-10-12T18:43:26Z
-parent: qou-xhci
 ---
 
 docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §5.1 gap 1. Tools on main: QOU/KZ/Fuchsian*, KZHalfMonodromy (#7706).

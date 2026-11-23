@@ -1,7 +1,7 @@
 ---
 # qou-mtc9
 title: 'GAP: confinement_categorical docstring contradicts its own code (self-assuming projection)'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - 3b-cond
     - vacuity
 created_at: 2026-08-08T18:45:00Z
-updated_at: 2026-11-21T16:00:00Z
+updated_at: 2026-11-23T20:54:15Z
 parent: qou-5p7n
 ---
 
@@ -118,3 +118,8 @@ Was in-progress with no bean update since 2026-08-08 and no main commit naming i
 ## 2026-11-21 (honesty-audits sibling)
 
 Honest `sorry` restored (owner ruling 2026-11-21, PR #8888, commit 863f384b9b4). Field `confinement_ident` deleted. lean-direct -DautoImplicit=false exit 0; #print axioms = [propext, sorryAx, Classical.choice, Quot.sound]. Statement unchanged; the theorem is now stated-not-proved. Stays open: the proof (semisimple HH vanishing + Wedderburn) is not formalised.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `63e97e855c`: `confinement_categorical` proved sorry-free over `H_{n+1}(q)` via the Wedderburn isotypic decomposition, eliminating the self-assuming projection and temporary `sorry`.

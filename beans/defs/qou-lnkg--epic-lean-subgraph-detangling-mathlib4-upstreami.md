@@ -1,11 +1,12 @@
 ---
-id: qou-lnkg
-title: "EPIC: Lean Topical Subgraph Detangling, Mathlib4 Upstreaming Preparation, KG Detangler Skill Upgrade, & Lean Libraries Annex"
+# qou-lnkg
+title: 'EPIC: Lean Topical Subgraph Detangling, Mathlib4 Upstreaming Preparation, KG Detangler Skill Upgrade, & Lean Libraries Annex'
 status: todo
 type: epic
 priority: high
 created_at: 2026-11-23T20:22:30Z
-updated_at: 2026-11-23T20:22:30Z
+updated_at: 2026-11-23T20:55:41Z
+parent: qou-hksc
 ---
 
 ## Measured Current State (`origin/main` @ `90aaaf4632d`)

@@ -1,7 +1,7 @@
 ---
 # qou-4xht
 title: 'GAP (Antigravity): identity theorem on a connected Riemann surface, to discharge hloc of ChartStep'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-11-21T07:30:00Z
-updated_at: 2026-11-23T17:32:52Z
+updated_at: 2026-11-23T20:54:09Z
 parent: qou-mq3p
 ---
 
@@ -46,3 +46,8 @@ ALREADY-DONE pending merge: PR #9133 (stacked on #8750) proves eq_id_of_eventual
 
 ## 2026-11-23 — WS4 Consolidation Update (PR #9189)
 - Consolidated `#8750` + `#9133` (`QOU/RiemannSurface/ChartStep.lean` + `QOU/RiemannSurface/IdentityTheorem.lean`: `holomorphic_eq_id_of_eq_on_open`, `hloc_of_faithful`, `isCyclic_stabilizer_of_faithful`, 14 theorems, 0 `sorryAx`) into Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`).
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #9189 (`bdb0f07969a`, consolidating #8750 + #9133, closing #9128): Identity theorem on a connected Riemann surface (`holomorphic_eq_id_of_eq_on_open`), `hloc_of_faithful`, and `isCyclic_stabilizer_of_faithful` without `hloc` proved sorry-free in `QOU/RiemannSurface/{ChartStep,IdentityTheorem}.lean`.

@@ -1,13 +1,13 @@
 ---
 # qou-sgv5
 title: 'chi-matrix-m family does not distinguish proton from neutron: tr_M identical, so Delta(n-p)=0'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T14:18:01Z
-updated_at: 2026-11-16T18:04:00Z
+updated_at: 2026-11-23T20:54:23Z
 parent: qou-wp3h
 ---
 
@@ -141,3 +141,8 @@ Probe [`computations/probes/chi_matrix_m_isospin_degeneracy_diagnostic_probe.py`
 4. **Step 4 (Exact-triple cross-check):** Verified against the exact-triple Hoefsmit (`chi-{atom}-h{n}-at-q0-50dps.witness.json`) and closed-form Wenzl bridge (`closed_form_tau_M.py`) routes where `Delta tr_M(n - p) = -0.1541948850472397056592555...` and `Delta tr_M(3He - T) = +0.0294522112934643148617025...`, matching `closed_form_tau_M` to `< 3e-51`.
 
 Status kept `in-progress` pending owner review / merge of PR #8145.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `c902ae566f6` (port #8145): All 4 `chi-matrix-m` isospin-degeneracy diagnostic steps verified at 50 dps (`7/7` assertions) and `isospinDegeneracyNote` stamped across all 11 `matrix-m` witnesses.

@@ -1,13 +1,13 @@
 ---
 # qou-wn1w
 title: 'GAP: the CODATA stale-edition scan was a gate nobody ran'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T16:00:32Z
-updated_at: 2026-11-16T18:12:00Z
+updated_at: 2026-11-23T20:54:24Z
 parent: qou-2002
 ---
 
@@ -72,3 +72,8 @@ Verified on `origin/main` (`dc12b128cc`) and PR #8146 (`5c6c5fb610a38f0405e9d280
 
 - `scripts/precision-gates.sh` carries `"CODATA stale-edition|computations/codata_corpus_literal_scan.py|--strict --quiet --no-witness|yes|yes"` as a blocking gate with self-test enabled (`--changed` predicate includes `^folio/.*\.(lean|ts)$`).
 - Re-ran `python3 computations/codata_corpus_literal_scan.py --self-test`: 30/30 assertions pass (`self-test passed`, exit 0). Kept at `status: in-progress` for owner review.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `ca352051402` (port #8146): `CODATA stale-edition` blocking gate wired in `scripts/precision-gates.sh` (`--changed` includes `^folio/.*\.(lean|ts)$`; `30/30` self-test assertions pass).

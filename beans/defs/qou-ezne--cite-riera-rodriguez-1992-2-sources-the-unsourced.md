@@ -1,13 +1,13 @@
 ---
 # qou-ezne
 title: 'CITE: Riera-Rodriguez 1992 §2 sources the unsourced 240 and B = Delta/Gamma — M — EmCouplingBringZeroMode.lean, em-coupling-bring-zero-mode.md'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:03:28Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-23T20:54:13Z
 parent: qou-mub3
 ---
 
@@ -76,3 +76,8 @@ Done on branch `claude/expo-chapter-drain-2026-11-21` (354d4bddc): `riera-rodrig
 
 
 2026-11-21 (expo-chapter, 36f528e0e, PR #8889): Lean residue done. Riera-Rodriguez `-- Ref:` lines added at bringFundamentalTriangleArea and bringTilingFaces; lean-direct exit 0. Stays todo until #8889 merges.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #8889 (`a4bdf12e08` / `c473f9dfa0` / `00c382ce62`): `riera-rodriguez-1992` cited on `em-coupling-bring-zero-mode.ts` and `-- Ref:` lines added on `EmCouplingBringZeroMode.lean`.

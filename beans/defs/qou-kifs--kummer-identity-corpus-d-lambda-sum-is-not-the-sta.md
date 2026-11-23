@@ -7,7 +7,7 @@ priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T19:20:00Z
-updated_at: 2026-11-23T17:32:55Z
+updated_at: 2026-11-23T20:54:33Z
 parent: qou-r9ih
 ---
 
@@ -112,3 +112,8 @@ Status left unchanged: resetting the claim and closing the PR are the owner's ca
 
 ## 2026-11-23 — WS4 Consolidation Update (PR #9189)
 - Consolidated `#9151` (`QOU/MathlibExt/BlochWignerLobachevskyLowerHalf.lean`: `blochWigner_eq_lobachevskySum` for all `z.im ≠ 0`, 2 theorems, 0 `sorryAx`) into Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`).
+
+
+## 2026-11-23 Merge Update (Rule 13a Guard)
+
+PR #9189 (`bdb0f07969a`) merged `BlochWignerLobachevskyLowerHalf.lean` (`D(z) = -Λ-sum(z̄)` for `Im z < 0`); kept open per bean body (`BlochWigner_lob` rename & geometric `H_4` factor).

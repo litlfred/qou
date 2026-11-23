@@ -1,11 +1,11 @@
 ---
 # qou-mk7u
 title: 'GAP: muon carrier at the Murakami real deformation xi = 2 pi i + u of the 4_1 colored Jones (does a derived u exist?)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-20T16:00:00Z
-updated_at: 2026-11-22T21:59:12Z
+updated_at: 2026-11-23T20:54:31Z
 parent: qou-2002
 ---
 
@@ -39,3 +39,6 @@ Stays clear of the q_0-derivation gate (qou-eic1): q_0 is held fixed.
 ## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
 
 Parent set to `qou-2002`: old parent `qou-6gf9` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.
+
+
+Claimed by claude/w6-joint-lepton-resolvent-20261123 (2026-11-23)

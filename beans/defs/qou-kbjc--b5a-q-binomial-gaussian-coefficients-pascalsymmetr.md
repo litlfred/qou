@@ -1,13 +1,13 @@
 ---
 # qou-kbjc
 title: 'B5a: q-binomial (Gaussian) coefficients + Pascal/symmetry identities over a field. [track5]'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-24T16:34:38Z
-updated_at: 2026-11-23T17:32:54Z
+updated_at: 2026-11-23T20:54:10Z
 parent: qou-1oif
 ---
 
@@ -32,3 +32,8 @@ Most of this bean was already on main: `HabiroTailStar.gaussBinom` (generic Comm
 
 ## 2026-11-23 — WS4 Consolidation Update (PR #9189)
 - Consolidated `#9132` (`QOU/MathlibExt/GaussBinomSymm.lean`: `gaussBinom_symm` over any `Field K`, 3 theorems, 0 `sorryAx`) into Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`).
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #9189 (`bdb0f07969a`, consolidating #9132, closing #9131): Gaussian binomial symmetry `gaussBinom_symm` (`[a+b, a]_q = [a+b, b]_q`) and `q = 1` specialization proved sorry-free in `QOU/MathlibExt/GaussBinomSymm.lean`.

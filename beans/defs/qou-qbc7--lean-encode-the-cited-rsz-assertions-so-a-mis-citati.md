@@ -1,13 +1,13 @@
 ---
 # qou-qbc7
 title: Lean-encode the CITED RSZ assertions so a mis-citation is a type error, not prose drift
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:35:00Z
-updated_at: 2026-11-16T19:22:00Z
+updated_at: 2026-11-23T20:54:17Z
 parent: qou-6qbv
 ---
 
@@ -75,3 +75,8 @@ Plan: `docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md`.
 
 - Extended `folio/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterface.lean` with Tier A positivity lemmas `rszLevel_pos_of_integralSlopeSetting` and `rszIsoformalDim_two_pos` plus the Tier B §3b conditional class `RSZIsoformalClassification` (`extends IntegralSlopeSetting k μ`) and `rszIsoformalDim_pos_of_classification_two` (`0` `sorry`).
 - Opened PR `litlfred/qou#8165` (`cf010d07bb34f2e3118733212559b61ede4b8cc4`) with `ready-to-merge` + `release` labels.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `9dd5e021cb` (port #8165): Cited RSZ assertions and `RSZIsoformalClassification` encoded with Tier A positivity lemmas (`0 sorry`) in `QOU/MathlibExt/RSZIsoformalInterface.lean`.

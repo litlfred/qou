@@ -1,13 +1,13 @@
 ---
 # qou-5li4
 title: 'AUDIT: six scanners match prose ABOUT q0/CODATA rather than code USING it — 3 are gates, 1 under-reports this epic''s own counts'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T03:58:32Z
-updated_at: 2026-11-16T18:12:00Z
+updated_at: 2026-11-23T20:54:20Z
 parent: qou-2002
 ---
 
@@ -257,3 +257,8 @@ Extended `computations/audits/_source_normalise.py` with two line/column-preserv
 6. **`computations/audits/q0_muon_population_partition.py`**: Evaluated `direct_pinners()` against `code_only(text)`, recovering `derived_masses.py` (previously exempted by its own docstring mentioning `q_parameter`) and dropping 2 audit scripts (`mech5_pin_bind_taint_audit.py`, `proton_pin_assertion_check.py`) that quoted `d["derived_50_digit"]["q"]` in comments/docstrings. Added `--self-test`.
 - Note on `q0_producer_pin_classifier.py`: measured replacing `_code_only_text` (which strips all `STRING` tokens) with `code_only` (which keeps single-quoted strings); keeping single-quoted strings caused 23 false `BOTH` flips where `"ANCHOR"` appeared in a string literal alongside `"ideal"`/`"muon"`, so `_code_only_text`'s all-string strip in `q0_producer_pin_classifier.py` is intentionally retained (`--selftest` passes).
 - Kept at `status: in-progress` for owner review. PR #8146 (`5c6c5fb610a38f0405e9d280b16b0999a8124c8f`).
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `ca352051402` (port #8146): `_source_normalise` (`code_and_numeric_strings_only` / `identifiers_only`) wired into all 6 scanners with `--self-test` on `origin/main`.

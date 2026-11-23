@@ -1,11 +1,11 @@
 ---
 # qou-iw1d
 title: 'QFT-4 (math): g_A⁽⁰⁾ = 5/3 and μ_p/μ_n = −3/2 on the symmetric cube of the 4-dim spin⊗flavour space'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-22T22:05:00Z
+updated_at: 2026-11-23T20:54:14Z
 parent: qou-3fjn
 ---
 
@@ -37,3 +37,8 @@ Target: on Sym³(ℂ²⊗ℂ²) (spin ⊗ isospin), the matrix element of Σ_i �
 **Verdict: RESCOPE.** The bean asks for μ_p/μ_n = −3/2, which needs quark charges; owner ruling 2026-11-22 says quark charges must be derived, not adopted from the SM. Restated: prove the ratio as a condition on generic flavour weights.
 
 Worked: `QOU/QFTMath/SpinFlavourAxialCharge.lean` on `claude/qft-math-cores-2026-11-22` (df504460b): the symmetric spin-½ isospin-½ state (S₊ψ = I₊ψ = 0, S₃-symmetric, norm² 18), `axial_charge` (g_A⁽⁰⁾ = 5/3), `moment_p`/`moment_n` for arbitrary e_u, e_d, and `moment_ratio_iff`: ratio −3/2 iff e_u = −2e_d. No charge value is assumed. All kernel `decide` over ℤ.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #9148 (`47bc8300ca` / `14596f70ae`, closing #9147): Symmetric spin-flavour proton state `g_A⁽⁰⁾ = 5/3` and `moment_ratio_iff` (`μ_p/μ_n = -3/2 ↔ e_u = -2e_d`) proved sorry-free in `QOU/QFTMath/SpinFlavourAxialCharge.lean`.

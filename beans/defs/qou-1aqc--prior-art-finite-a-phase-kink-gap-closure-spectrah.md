@@ -10,7 +10,7 @@ tags:
     - spectrahedron
     - magic-numbers
 created_at: 2026-11-23T19:29:24Z
-updated_at: 2026-11-23T19:29:24Z
+updated_at: 2026-11-23T20:54:28Z
 parent: qou-qzvs
 ---
 
@@ -43,3 +43,7 @@ parent: qou-qzvs
 
 4. **Conic Intrinsic-Volume Phase Transitions (Ch. 20 Computational Complexity):**
    - **David L. Donoho & Jared Tanner (2005, 2009)** (*PNAS* 102; *J. Amer. Math. Soc.* 22) and **Dennis Amelunxen, Martin Lotz, Michael B. McCoy & Joel A. Tropp (2014)** (*Information and Inference* 3, 224–294).
+
+
+Claimed by claude/lp-bootstrap-prior-art-dual-gaps-20261123 (2026-11-23)
+PR #9210 opened on claude/lp-bootstrap-prior-art-dual-gaps-20261123 (f89375881ae6)

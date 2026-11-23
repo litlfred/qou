@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T17:00:30Z
-updated_at: 2026-11-23T17:32:56Z
+updated_at: 2026-11-23T20:54:33Z
 parent: qou-6qbv
 ---
 
@@ -111,3 +111,8 @@ Lie-algebra-valued 1-forms on a normed space).
 
 ## 2026-11-23 — WS4 Consolidation Update (PR #9191)
 - Rebased Group 8 (`#8761`: `non_abelian_stokes.lean`, `stokes_holonomy_surface_ordering.lean`) onto `main` in Ready PR https://github.com/litlfred/qou/pull/9191 (`b2871d936cd`).
+
+
+## 2026-11-23 Merge Update (Rule 13a Guard)
+
+PR #9191 (`b52f24ae74`) merged Group 8 `non_abelian_stokes.lean` & `stokes_holonomy_surface_ordering.lean`; kept open per Rule 13a (`LieValuedStokes` / `NonAbelianStokes` non-degenerate model remains open).

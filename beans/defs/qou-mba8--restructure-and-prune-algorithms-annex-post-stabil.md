@@ -1,16 +1,17 @@
 ---
-id: qou-mba8
-title: "Post-Stabilization Algorithms Annex Overhaul & Prior-Art Pruning (app:mass-binding-algorithms + Scattered Algorithm Blocks)"
+# qou-mba8
+title: Post-Stabilization Algorithms Annex Overhaul & Prior-Art Pruning (app:mass-binding-algorithms + Scattered Algorithm Blocks)
 status: todo
 type: task
 priority: high
-blocked_by:
-  - qou-qzvs
-  - qou-udad
-  - qou-h6ef
-  - qou-5lct
 created_at: 2026-11-23T20:04:00Z
-updated_at: 2026-11-23T20:04:00Z
+updated_at: 2026-11-23T20:55:42Z
+parent: qou-hksc
+blocked_by:
+    - qou-qzvs
+    - qou-udad
+    - qou-h6ef
+    - qou-5lct
 ---
 
 ## Goal (Gated Until Active Derivations Stabilize)

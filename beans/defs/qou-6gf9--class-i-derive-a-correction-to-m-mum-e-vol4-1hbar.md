@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-23T05:55:40Z
+updated_at: 2026-11-23T20:54:30Z
 parent: qou-2002
 ---
 
@@ -356,3 +356,6 @@ reverted #8554 to the one-term default pin (two-term kept as a named comparison)
 
 
 2026-11-23 (W6, PR #9165, ec0980bb1): candidate derived correction. q-volume G(z;q)=sum z^n/(1-q^-n)^2; 1-q^-n = hbar_q [n]' exactly (Lean one_sub_inv_pow_eq), so 2 Im G(e^{i pi/3};q) ~ Vol(4_1)/hbar_q^2. At proton q0: 207.2446 vs carrier 206.7683 (+0.230 %); hbar_q is the closest normalisation (log q gives +11.2 %). Not adopted: would re-solve q0 (CAL-2), owner call. Gives the Hopf electron 0. Audit section 9. Still OPEN.
+
+
+Claimed by claude/w6-joint-lepton-resolvent-20261123 (2026-11-23)

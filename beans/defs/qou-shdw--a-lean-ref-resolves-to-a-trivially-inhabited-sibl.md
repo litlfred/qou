@@ -1,13 +1,13 @@
 ---
 # qou-shdw
 title: A lean.ref resolves to a trivially-inhabited sibling while the substantive theorem of the same name sits in the library
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T04:40:00Z
-updated_at: 2026-11-16T20:00:34Z
+updated_at: 2026-11-23T20:54:23Z
 parent: qou-6qbv
 ---
 
@@ -91,3 +91,8 @@ something too weak, which is worse, because it reads as verified.
 - Replaced the shadowing vacuous existential `∃ c : Fin (massNumber Z N) → ℝ, ∀ i, c i = markovVolume i q` in `folio/quantum-observable-universe/predicted-spectra/optimal-normal-form-valley.lean` with the substantive `standardBasis` / `IsI8Absorbable` / `IsI9Absorbable` / `IsPrefixClosed` normal-form formalisation matching `QOU/Archimedean/OptimalNF.lean`.
 - Strengthened `nf_support_prefix_closed` and `optimal_nf_is_standard_basis` in `folio/quantum-observable-universe/lean/QOU/Archimedean/OptimalNF.lean` to assert `support.length = Z + N ∧ 2 * Z ≤ Z + N + 1` so `h_stable : valleyOfStability Z N` and `h_pos : Z + N ≥ 2` are genuinely consumed (`0` warnings).
 - Verified with `lean -DautoImplicit=false -s 65536` (`0` errors, `0` warnings, `0` `sorry`).
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `c803c508a63` (port #8180): Shadowing vacuous existential in `predicted-spectra/optimal-normal-form-valley.lean` replaced with substantive `OptimalNF` formalisation (`0` warnings, `0 sorry`).

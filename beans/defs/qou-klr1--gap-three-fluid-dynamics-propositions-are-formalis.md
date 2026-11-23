@@ -1,13 +1,13 @@
 ---
 # qou-klr1
 title: 'GAP: three fluid-dynamics propositions are formalised twice and the LIBRARY copy is the vacuous one (§0a inverted)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T07:59:14Z
-updated_at: 2026-11-16T20:00:34Z
+updated_at: 2026-11-23T20:54:22Z
 parent: qou-6qbv
 ---
 
@@ -78,3 +78,8 @@ compiles is the owner's call, and option 3 is safe.
 
 - Replaced the three decoy-hypothesis library twins in `folio/quantum-observable-universe/lean/QOU/FluidDynamics/` (`acoustic_horizon_conditions.lean`, `discrete_vortex_spectrum.lean`, `root_of_unity_truncation.lean`) with the non-decoy context classes from their `fluid-dynamics/` chapter siblings plus proved consumer theorems (`acoustic_horizon_criterion_iff`, `acoustic_horizon_conditions`, `acoustic_horizon_hawking_temperature`, `discrete_vortex_transition_energy`, `discrete_vortex_ladder_rule`, `discrete_vortex_classical_energy`, `root_of_unity_truncation_core_at_one`).
 - Verified `lean-decoy-hypothesis-audit.py` reports `0` hits on all three files and `lean -DautoImplicit=false -s 65536` exits `0` with `0` warnings.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `c803c508a63` (port #8180): All 3 `QOU/FluidDynamics/` decoy-hypothesis library twins replaced with non-decoy classes and proved consumer theorems (`0` decoy-audit hits).

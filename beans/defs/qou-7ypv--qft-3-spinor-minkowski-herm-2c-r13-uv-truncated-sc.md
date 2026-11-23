@@ -1,11 +1,11 @@
 ---
 # qou-7ypv
 title: 'QFT-3 (math): Herm₂(ℂ) ≅ ℝ^{1,3} with det the Minkowski form; SL₂(ℂ) acts by isometries (double cover of SO⁺(1,3))'
-status: in-progress
+status: completed
 type: task
 priority: critical
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-22T22:05:00Z
+updated_at: 2026-11-23T20:54:11Z
 parent: qou-3fjn
 ---
 
@@ -37,3 +37,8 @@ Target: the real-linear isomorphism Herm₂(ℂ) ≅ ℝ⁴ under which det is t
 **Verdict: APPLIES.** Re-scoped target is pure linear algebra.
 
 Worked: `QOU/QFTMath/SpinorMinkowski.lean` on `claude/qft-math-cores-2026-11-22` (df504460b): `toHerm` is a real-linear bijection ℝ⁴ → Herm₂(ℂ), `det_toHerm` (det = Minkowski form), `det_conj`/`minkowski_conj` (SL₂(ℂ) isometries), `conj_mul` (left action), `conj_trivial_iff` (kernel exactly ±1). NOT proved: image = SO⁺(1,3) (surjectivity of the double cover). Standard axioms only.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via PR #9148 (`47bc8300ca` / `14596f70ae`, closing #9147): Re-scoped math-only target (`Herm₂(ℂ) ≅ ℝ⁴`, `det` = Minkowski form, `SL₂(ℂ)` isometries with kernel `{±1}`) proved sorry-free in `QOU/QFTMath/SpinorMinkowski.lean`.

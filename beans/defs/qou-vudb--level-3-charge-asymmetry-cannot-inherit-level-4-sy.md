@@ -1,13 +1,13 @@
 ---
 # qou-vudb
 title: 'Level-3 charge asymmetry cannot inherit level-4 symmetry: wrong A-scaling, and no fixed block to restrict to'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T11:00:10Z
-updated_at: 2026-11-22T21:54:13Z
+updated_at: 2026-11-23T20:54:31Z
 parent: qou-10v9
 ---
 
@@ -118,3 +118,11 @@ Parents: qou-1pig (the parity defect), qou-rvse (scrapped repair), qou-brng.
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+
+
+## Session Intent (2026-11-23)
+Claimed by `claude/w2-h7-h8-hypercharge-zremoval-20261123` (W2: H7/H8 two-row Wedderburn pair identities, coideal Killing-norm hypercharge slope 1/2, and Z-channel Yukawa removal).
+
+
+Claimed by claude/w2-h7-h8-hypercharge-zremoval-20261123 (Worker 15)

@@ -1,13 +1,13 @@
 ---
 # qou-dx1t
 title: 'Colour-tube selection rule: it does NOT consume t, but it cannot produce it either -- floor overshoots 2H by 3.2%'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T14:12:47Z
-updated_at: 2026-11-16T18:04:00Z
+updated_at: 2026-11-23T20:54:21Z
 parent: qou-10v9
 ---
 
@@ -151,3 +151,8 @@ Was in-progress with no bean update since 2026-08-09 and no main commit naming i
   - `pnContractedOffset_eq_mixedWeightSum_mul`: proves that for any colour-pair weight tensor `W` and mixed-contact offset datum `x`, `pnContractedOffset W x = pnMixedWeightSum W * x` (`t_{pn} = c(W) * x`), confirming in Lean that `W` scales `x` linearly by `c(W)` and cannot eliminate `x` unless `c(W) = 0`.
   - `uniform_pnMixedWeightSum` & `uniform_pnContractedOffset`: proves `pnMixedWeightSum uniformWeight = 5 / 9` and `pnContractedOffset uniformWeight x = (5 / 9) * x`.
 - Status kept `in-progress` pending merge of PR #8145 (`ed78b60a0ffe233f132df45a37bb1456ec237832`).
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `c902ae566f6` (port #8145): Sorry-free proton-neutron colour-sheet contact split and linear contraction `pnContractedOffset_eq_mixedWeightSum_mul` landed in `InterNucleonChannelColorTube.lean`.

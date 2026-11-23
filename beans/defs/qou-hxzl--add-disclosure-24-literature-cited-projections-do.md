@@ -1,7 +1,7 @@
 ---
 # qou-hxzl
 title: Add disclosure — 24 literature-cited projections (do NOT bulk-convert to axioms)
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - issue-2472
     - reorg-2026-10-04
 created_at: 2026-08-10T01:47:53Z
-updated_at: 2026-11-16T19:22:00Z
+updated_at: 2026-11-23T20:54:14Z
 parent: qou-6qbv
 ---
 
@@ -52,3 +52,8 @@ Criterion: `docs/audits/2026-08-09-honest-placeholder-criterion.md`
 
 - Audited all 24 literature-cited declarations and added the explicit criterion-(1)+(3) `**Assumed, not derived here**` context-class disclosures to `noble_gas_multi_operator` (`ElectronShell.lean`), `shell_closure_monotone` (`ShellClosureStability.lean`), `strong_duality` (`SDP.lean`), `bar_even_kernel_implies_radius_of_convergence`, and `bar_even_kernel_implies_direction_sanity` (`q-beta-bar-even-kernel-typeclass.lean`) without converting any conditional class projection to a global `axiom`.
 - Opened PR `litlfred/qou#8165` (`cf010d07bb34f2e3118733212559b61ede4b8cc4`) with `ready-to-merge` + `release` labels.
+
+
+## Resolution Verified on origin/main (2026-11-23)
+
+Verified resolved on `origin/main` via commit `9dd5e021cb` (port #8165): All 24 literature-cited class-field projections audited and explicit context-class disclosures added without introducing global axioms.
