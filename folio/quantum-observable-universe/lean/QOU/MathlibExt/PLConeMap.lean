@@ -58,13 +58,22 @@ def ConeRep (p : E) (S : Set E) (x : E) (s : ℝ) (y : E) : Prop :=
 def pointCone (p : E) (S : Set E) : Set E :=
   insert p {x | ∃ s y, ConeRep p S x s y}
 
+lemma ConeRep.pos {p : E} {S : Set E} {x : E} {s : ℝ} {y : E}
+    (h : ConeRep p S x s y) : 0 < s :=
+  h.2.1.1
+
+lemma ConeRep.le_one {p : E} {S : Set E} {x : E} {s : ℝ} {y : E}
+    (h : ConeRep p S x s y) : s ≤ 1 :=
+  h.2.1.2
+
 lemma ConeRep.ne_apex {p : E} {S : Set E} (hp : p ∉ S) {x : E} {s : ℝ} {y : E}
     (h : ConeRep p S x s y) : x ≠ p := by
-  obtain ⟨hy, hs, rfl⟩ := h
+  have hspos : 0 < s := h.pos
+  obtain ⟨hy, _, rfl⟩ := h
   intro he
   have h0 : s • (y - p) = 0 := by simpa using he
   rcases smul_eq_zero.mp h0 with h | h
-  · exact hs.1.ne' h
+  · exact hspos.ne' h
   · exact hp (sub_eq_zero.mp h ▸ hy)
 
 /-- **The cone representation is unique.** -/
