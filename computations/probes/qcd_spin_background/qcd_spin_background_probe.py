@@ -17,8 +17,8 @@ import sys
 
 import sympy as sp
 from mpmath import mp, mpf
+from qou_substrate.constants import Q_MP
 
-mp.dps = 40
 q, t, hb = sp.symbols("q t hbar", positive=True)
 h = q - 1 / q
 CHECKS = []
@@ -128,8 +128,9 @@ def hbar_series(e, order=3):
 
 
 def mpq(e):
-    Q0 = mpf("1.1099785827513808075912")  # proton pin, display only
-    return str(mp.nstr(sp.lambdify(q, e, "mpmath")(Q0), 15))
+    with mp.workdps(max(mp.dps, 50)):
+        Q0 = mpf(Q_MP)  # proton pin, display only
+        return str(mp.nstr(sp.lambdify(q, e, "mpmath")(Q0), 15))
 
 
 out = {"probe": "qcd_spin_background", "bean": "qou-bwwr", "route": "qou-ni4b"}
@@ -232,7 +233,8 @@ out["S3_heat_kernel"] = {"mu": {str(k): str(v) for k, v in mu.items()},
                          "reading": {"real background exp(eps a): Gamma ~ -log Z": "falling chi -> 1/g^2 rises toward IR -> screening",
                                      "unitary background exp(i eps a)": "sign of eps^2 flips; falling |chi| -> antiscreening reading",
                                      "verdict": "sign is set by the background convention, not by the construction"}}
-check("d/dt (chi/Z) at t=0 < 0 at q0 (falling toward IR)", sp.lambdify(q, ds0, "mpmath")(mpf("1.10997858275138")) < 0)
+with mp.workdps(max(mp.dps, 50)):
+    check("d/dt (chi/Z) at t=0 < 0 at q0 (falling toward IR)", sp.lambdify(q, ds0, "mpmath")(mpf(Q_MP)) < 0)
 
 # ---------------------------------------------------------------- S2 and S1 across N (n = 2)
 S2, S1 = {}, {}

@@ -200,7 +200,12 @@ def analyse(name, w, n_strands=3):
     }
 
 def main():
-    out = {"schema": "qcd-chirality-psl2z/v1", "prereg": "PREREG.md"}
+    out = {
+        "schema": "qcd-chirality-psl2z/v1",
+        "prereg": "PREREG.md",
+        "q0Anchor": "independent",
+        "q0AnchorReason": "exact integer/symbolic PSL(2,Z) and B3 braid computation; q0 never read",
+    }
     s1, s2 = (1, 1), (2, 1)
     s1i, s2i = (1, -1), (2, -1)
 

@@ -463,6 +463,8 @@ def main():
         "description": "Helon battery on K0 position colour (issue #9096). Exact sympy; no float; q0 unused.",
         "prereg": "computations/probes/qcd_helon_battery/PREREG.md",
         "source": "bilson-thompson2005 (library/arxiv-hep-ph-0503213v2) Sec. 2 table, Sec. 3, Fig. 1",
+        "q0Anchor": "independent",
+        "q0AnchorReason": "exact sympy over Q(q) and Q(t); q0 never read",
         "scriptHash": hashlib.sha256(src).hexdigest()[:12],
         "z_D": str(zD), "K_D": "diag(q^-3, q^-1, 0)",
         "helon_braid_b": wstr(b),

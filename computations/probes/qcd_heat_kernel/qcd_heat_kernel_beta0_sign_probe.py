@@ -67,14 +67,13 @@ def dimq_gl3(lam):
 
 
 def n_syt(lam):
-    from math import factorial
     n = sum(lam)
     hooks = 1
     lamc = [sum(1 for r in lam if r > j) for j in range(lam[0])] if lam else []
     for i, row in enumerate(lam):
         for j in range(row):
             hooks *= (row - j - 1) + (lamc[j] - i - 1) + 1
-    return factorial(n) // hooks
+    return int(sp.factorial(n)) // hooks
 
 
 # ---------------------------------------------------------------- checks of the setting
@@ -210,7 +209,7 @@ check("C3: Casimir entries both > 0", Fraction(C3["Casimir"]["gluon field (adjoi
 # ---------------------------------------------------------------- proton pin read-out
 import mpmath as mp
 from qou_substrate.constants import Q_MP
-mp.mp.dps = 50
+mp.mp.dps = max(mp.mp.dps, 50)
 pin = {}
 for row in C1:
     expr = sp.sympify(row["b_C1 = -(mu_adj - mu_sing)"], locals={"q": q})

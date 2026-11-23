@@ -3,6 +3,8 @@
  "task_named_source_held": false,
  "hecke_convention": "T^2 = (q - q^-1) T + 1",
  "q_status": "zeta8 fixed by Gresnigt's construction; specialisation of formal q; NOT q0",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "zeta8 fixed by Gresnigt's construction; formal q specialisation only, q0 never read",
  "C1_C2": {
   "eigenvalues_sigma": [
    "sqrt(2)*(1 + I)/2",

@@ -13,7 +13,6 @@ from __future__ import annotations
 
 import json
 import os
-from math import factorial
 
 import sympy as sp
 
@@ -43,7 +42,7 @@ def n_syt(lam):
     for i, row in enumerate(lam):
         for j in range(row):
             hooks *= (row - j - 1) + (lamc[j] - i - 1) + 1
-    return factorial(n) // hooks
+    return int(sp.factorial(n)) // hooks
 
 
 def fact_ratio(u, v):
@@ -159,7 +158,7 @@ for N in (2, 3, 4):
     # read-out signs at q0 and 1/q0 for k = 2..12 (exact rationals in k, q evaluated with mpmath)
     import mpmath as mp
     from qou_substrate.constants import Q_MP
-    mp.mp.dps = 40
+    mp.mp.dps = max(mp.mp.dps, 50)
     q0 = mp.mpf(Q_MP)
     signs = {"q0": [], "1/q0": []}
     for kv in range(2, 13):

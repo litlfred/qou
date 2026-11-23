@@ -18,7 +18,7 @@ identity specialises.
 """
 import sys, json, os, itertools
 import sympy as sp
-import numpy as np
+import numpy as np  # float64-ok: exact int64 modular matmul over F_p (p = 67108859 < 2^26; 343 * p^2 < 2^63, zero floats)
 
 P_MOD = 67108859  # prime < 2^26
 assert sp.isprime(P_MOD)
