@@ -588,3 +588,9 @@ This work is licensed under a
 You are free to share and adapt this material for any purpose, provided
 appropriate credit is given, a link to the license is provided, and any
 changes made are indicated.
+
+The license covers the **whole repository**: the paper text, the Lean
+formalisation, the Python and Rust code, and the data and witnesses. Third-party
+material keeps the notice that ships beside it. Contributions are accepted under
+the same license; see [`CONTRIBUTING.md`](CONTRIBUTING.md) for the contribution
+policy and how a merged pull request earns authorship.
