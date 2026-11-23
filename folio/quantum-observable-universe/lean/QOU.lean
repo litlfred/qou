@@ -1926,6 +1926,7 @@ import QOU.QFTMath.InfinitesimalPureBraid
 import QOU.Interactions.HopfElectronTwoTermMass
 import QOU.QBeta.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry
+import QOU.QBeta.CrossNucleonPairWedderburnZRemoval
 import QOU.QBeta.EntangledLeptonPairTrace
 import QOU.QBeta.LogTraceAdditiveEnergy
 import QOU.QBeta.NormalFormLengthInvariants
