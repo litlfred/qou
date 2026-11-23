@@ -1,13 +1,13 @@
 ---
 # qou-slfm
 title: Length/Time Reconciliation (Reeb Flow, Computation Time, E = m c_q^2, L_cal) & Bekenstein-Hawking Entropy via Light-Cone (LCQ) Approach
-status: todo
+status: in-progress
 type: feature
 priority: high
 tags:
     - needs-owner-ok
 created_at: 2026-11-23T21:31:08Z
-updated_at: 2026-11-23T21:31:08Z
+updated_at: 2026-11-23T23:40:23Z
 parent: qou-hksc
 ---
 
