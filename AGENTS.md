@@ -65,6 +65,17 @@ chat-app / project memory. Current headline rulings: the photon form above;
 backup)**; the up quark is an unknot strand; Q_β from γγ pair production;
 two-term Lagrangian trace on the scoreboard and all β-decay routes.
 
+## 🟥 REBUILD THE SITE AFTER EVERY MERGE TO MAIN (owner directive 2026-11-23) — STRICT
+
+Verbatim: *"agents should rebuild when merge to main if github actions not
+enabled"*. Actions is dispatch-only here, so a merge does not rebuild the
+site. The agent that merges runs `bash scripts/publish-main-local.sh --deploy`
+on the merged `main` and reports in the merge report whether it pushed and
+whether the Lean render (`lean/`) was rebuilt or skipped. Skill:
+[`post-merge-rebuild`](.claude/skills/local/post-merge-rebuild.md). The
+dispatchable route is `build.yml`, which calls the platform's
+`folio-staging.yml` with `build_command: bash scripts/build-site.sh`.
+
 ## 🟥 CONTRIBUTION POLICY AND ATTRIBUTION (owner directive 2026-11-23) — STRICT
 
 The repository is being prepared for public release. The policy is in

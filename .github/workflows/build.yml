@@ -6,33 +6,35 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
-    # PINNED, and it MUST move together with `.folio-assistant-pin` (qou-pwp9).
+  site:
+    # Builds and publishes qou's site through the platform's reusable
+    # folio-staging.yml: on main it publishes at the root of gh-pages
+    # (`publish-main` job), on any other branch as a preview under
+    # branches/<slug>/.
     #
-    # This read `@main` until 2026-09-26. That bypassed the pin entirely: the pin
-    # file governs what an agent measures in its local `folio-assistant/`
-    # checkout, while this line governed what actually PUBLISHES — so the two
-    # could disagree with no signal, which is the exact failure the pin exists to
-    # prevent one level down. The pin file's own text claims "bumping the platform
-    # is now a deliberate, reviewable edit to this one line"; with `@main` here
-    # that claim was false, because there were two lines and it named one.
+    # This called `publish.yml@<pin>` until 2026-11-23. Platform 0c5468ac46
+    # (2026-11-10) DELETED publish.yml, so the `uses:` named a file that does
+    # not exist and GitHub could not start the workflow at all (owner,
+    # 2026-11-23: "i cant seem to kick off from github actions"). Recorded as a
+    # KNOWN BREAK in .folio-assistant-pin since 82b389982.
     #
-    # Verified input-compatible at this sha before pinning, not assumed: the
-    # pinned publish.yml declares `builder_image` under `workflow_call` and has
-    # ZERO required inputs, so the single input passed below is accepted and
-    # nothing else is owed.
+    # PINNED, and it MUST move together with `.folio-assistant-pin` (qou-pwp9):
+    # keep this sha and `platform_ref` byte-identical to the pin's last line.
+    # `bash scripts/folio-pin-coupling-check.sh` asserts it.
     #
-    # Keep this sha byte-identical to `.folio-assistant-pin`. When you bump one,
-    # bump both in the same commit.
-    uses: litlfred/folio-assistant/.github/workflows/publish.yml@42bd8d605d8c4416656611be69def69e6e855367
+    # The TeX PDF build that publish.yml carried is NOT replaced here; the
+    # builder image (paper-builder-image.yml) is kept for when it is.
+    #
+    # When Actions is not enabled, an agent runs the same steps after a merge
+    # to main: scripts/publish-main-local.sh (skill post-merge-rebuild).
+    uses: litlfred/folio-assistant/.github/workflows/folio-staging.yml@42bd8d605d8c4416656611be69def69e6e855367
     permissions:
       contents: write
       pull-requests: write
-      packages: read
+      issues: read
     with:
-      # The TeX builder image is a FOLIO asset, not a platform one: its TeX
-      # package set is chosen for this paper and it carries this repo's
-      # CC-BY-4.0 licence. It is built here by `paper-builder-image.yml` from
-      # `.github/docker/Dockerfile.paper-builder`, and passed in so the
-      # platform's publish pipeline stays folio-agnostic.
-      builder_image: ghcr.io/litlfred/qou-paper-builder:latest
+      build_command: bash scripts/build-site.sh
+      site_dir: _site
+      folio_dir: folio
+      platform_dir: folio-assistant
+      platform_ref: 42bd8d605d8c4416656611be69def69e6e855367

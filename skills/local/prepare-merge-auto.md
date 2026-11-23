@@ -314,6 +314,13 @@ Then coordinate:
   if needed."
 - Unsubscribe from the merged PR's activity.
 
+**Then rebuild the published site (owner, 2026-11-23).** GitHub Actions is
+dispatch-only here, so nothing rebuilds the site on a merge. After every merge
+to main, follow [`post-merge-rebuild`](post-merge-rebuild.md): check out the
+merged `main` and run `bash scripts/publish-main-local.sh --deploy`. If it
+cannot run (no platform checkout, a failed build), say so in the merge report;
+do not skip it silently.
+
 ## Error handling
 
 - If `/prepare-merge` fails at any step, STOP and report the
