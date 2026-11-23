@@ -2,7 +2,6 @@
 
 The volume of an ideal tetrahedron admits two expressions: a sum of Lobachevsky values at its three dihedral angles, and a single dilogarithm expression. They agree.
 
-**Theorem.**
 *For every $z$ with $\mathrm{Im} z > 0$,*
 
 $$

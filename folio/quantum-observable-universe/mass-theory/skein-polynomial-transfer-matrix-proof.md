@@ -1,4 +1,3 @@
-*Proof.*
 The Iwahori--Hecke algebra $H_A(q)$ is defined over the ring
 $\mathbb{Z}[q^{\pm 1}]$.  Each crossing factor
 $C_{ij} = c_j \sigma_i + d_j$ has coefficients $(c_j, d_j)$

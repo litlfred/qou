@@ -1,6 +1,6 @@
 # Unitary phases are bar-odd: the fibre-saddle rigidity
 
-**Proposition.** *Let $R$ be a commutative ring with a ring involution
+*Let $R$ be a commutative ring with a ring involution
 $\sigma$, and call $u \in R$ **$\sigma$-unitary** when*
 
 $$

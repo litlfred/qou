@@ -89,7 +89,7 @@ $$
 with $\mu_T$ = normalised SYT Plancherel weight.
 
 The pair weight $z^2$ in the cross sum matches the generator-indexed
-form of [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower)
+form of [the mass-endomorphism tower](#prop:mass-endomorphism-tower)
 and is justified universally (all $k_1 < k_2$, not just adjacent
 pairs) by the
 [Markov-trace factorization theorem](#thm:markov-trace-factorization):
@@ -117,9 +117,7 @@ factorization theorem.
 ## Implementation path
 
 1. Compute $L_k$ seminormal eigenvalues $q^{2 c_T(k)}$ per SYT
- (already available via
- `hecke_characters.build_seminormal_matrices` in
- the formal derivation).
+ (from the seminormal matrix representation).
 2. Build $\hat V_k^{\mathrm{JM}}$ via Plancherel-weighted sum
  over SYTs.
 3. Sum cell-pair $\Phi_q$ contributions (all $\binom{n}{2}$ pairs,
@@ -128,12 +126,11 @@ factorization theorem.
 
 ## Empirical validation
 
-A first-pass implementation
-(the formal derivation) computes
+Direct evaluation computes
 $\hat V_k^{\mathrm{JM}}$ for $k = 1, \ldots, 3A$ on the atom braid
 word and assembles the tower of
-equation\~\ref{eq:syt-cell-tower}. Against the scalar all-pairs form
-of [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower),
+[the cell-tower equation](#eq:syt-cell-tower). Against the scalar all-pairs form
+of [the mass-endomorphism tower](#prop:mass-endomorphism-tower),
 with $E_0$ calibrated per path on the proton:
 
 | Atom | scalar all-pairs | JM all-pairs |

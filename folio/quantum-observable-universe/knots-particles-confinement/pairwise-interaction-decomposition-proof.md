@@ -1,4 +1,4 @@
-*Proof.* Part 1 is the hexagon axiom for the braiding, solved for $c_{X \otimes Y, Z}$. The hexagon states that the two paths from $(X \otimes Y) \otimes Z$ to $Z \otimes (X \otimes Y)$ — cross the composite in one step, or cross its factors one at a time — agree. Reassociating gives the displayed identity.
+Part 1 is the hexagon axiom for the braiding, solved for $c_{X \otimes Y, Z}$. The hexagon states that the two paths from $(X \otimes Y) \otimes Z$ to $Z \otimes (X \otimes Y)$ — cross the composite in one step, or cross its factors one at a time — agree. Reassociating gives the displayed identity.
 
 Part 2 follows from part 1 together with naturality of the braiding. Apply part 1 to $c_{X, Y \otimes Z}$ to expand the same morphism in two ways: expanding first on the left factor gives $c_1 c_2 c_1$, expanding first on the right factor gives $c_2 c_1 c_2$. Naturality identifies the two expansions.
 

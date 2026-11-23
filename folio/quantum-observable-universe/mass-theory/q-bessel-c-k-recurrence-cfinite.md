@@ -1,4 +1,4 @@
-**Proof.** Throughout, $q$ and the order $\nu$ are formal parameters in a field; no archimedean structure is used. Write $(x;q)_k = \prod_{j=0}^{k-1}\bigl(1 - x q^{j}\bigr)$ for the $q$-Pochhammer symbol, with $(x;q)_0 = 1$.
+Throughout, $q$ and the order $\nu$ are formal parameters in a field; no archimedean structure is used. Write $(x;q)_k = \prod_{j=0}^{k-1}\bigl(1 - x q^{j}\bigr)$ for the $q$-Pochhammer symbol, with $(x;q)_0 = 1$.
 
 **Step 1 — the closed-form coefficients and their ratio.** The Hahn–Exton $q$-Bessel function of order $\nu$ has power-series coefficients
 

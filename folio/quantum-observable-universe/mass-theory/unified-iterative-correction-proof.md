@@ -1,4 +1,3 @@
-*Proof.*
 By [prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price),
 the BW coefficient of partition $\lambda$ is the LP-dual variable
 $u_\lambda^* = C_\lambda \cdot S_\lambda(Z, N, A)$.  The

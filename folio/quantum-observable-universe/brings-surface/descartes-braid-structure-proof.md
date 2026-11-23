@@ -1,4 +1,3 @@
-
 *Item (1)* follows from [braid action on tensor products](#prop:braid-action-tensor)
 applied to the fundamental representation $V$ of
 $\mathrm{SU}_q(2)$, which is $2$-dimensional.  The braiding

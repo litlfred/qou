@@ -1,4 +1,3 @@
-**Conjecture (Archimedean limit).**
 *Under the joint Faddeev scaling $q \to 1$, $n \to \infty$, the rescaled logarithm of the $q$-Pochhammer partial product converges strictly to the classical dilogarithm:*
 
 $$

@@ -1,4 +1,3 @@
-**Definition.**
 The **information bandwidth** per Planck time quantifies the total information transferred across the causal boundary in one Planck step. It is the product of the speed of light $c_q$ ([speed of light](#def:information-speed-of-light)) (fibres correlated per tick) and the operational entropy per fibre ([operational entropy](#def:operational-entropy)):
 
 $$

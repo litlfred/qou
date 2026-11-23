@@ -1,4 +1,4 @@
-**Proposition (conditional on flow rigidity).**
+**Conditional on flow rigidity.**
 Let $H$ be an additive abelian group whose counit $\epsilon$ and
 $q$-Jackson derivative $D_q$ are additive, and suppose the flow equation
 is *rigid* on $H$: an element fixed by $D_q$ with vanishing counit is

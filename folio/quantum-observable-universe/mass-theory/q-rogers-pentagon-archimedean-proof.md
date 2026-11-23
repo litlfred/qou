@@ -1,4 +1,4 @@
-### Proof (classical limit + q-deformation)
+*(Classical limit and $q$-deformation.)*
 
 **Classical limit ($q = 1$).** Set $q = 1$. The q-integers reduce
 to ordinary integers, $[n]_q \to n$, and $\mathrm{Li}_2^q(z) \to

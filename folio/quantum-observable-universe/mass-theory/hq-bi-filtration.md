@@ -1,5 +1,3 @@
-**Definition (knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra).**
-
 *Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)),
 filtered by iterated-integral depth

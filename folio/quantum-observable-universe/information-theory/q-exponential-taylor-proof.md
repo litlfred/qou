@@ -1,4 +1,4 @@
-*Proof.* The categorical defining equation $D_q\, \exp_q = \exp_q$, joined with the boundary condition $\exp_q(0) = 1$, determines a unique formal power series $\exp_q(x) = \sum_{n\ge 0} a_n x^n$ in $R[\![x]\!]$. The Jackson derivative acts on monomials via $D_q(x^n) = [n]_q\, x^{n-1}$. One substitutes this into the equation:
+The categorical defining equation $D_q\, \exp_q = \exp_q$, joined with the boundary condition $\exp_q(0) = 1$, determines a unique formal power series $\exp_q(x) = \sum_{n\ge 0} a_n x^n$ in $R[\![x]\!]$. The Jackson derivative acts on monomials via $D_q(x^n) = [n]_q\, x^{n-1}$. One substitutes this into the equation:
 
 $$
   D_q\,\sum_n a_n x^n

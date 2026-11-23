@@ -1,5 +1,3 @@
-*Proof.*
-
 **Step 1: Frobenius pairing.** The Markov trace
 $\tau : H_n(R,q) \to R$ satisfies
 $\tau(ab) = \tau(ba)$ for all $a,b \in H_n$, and

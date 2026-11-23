@@ -1,4 +1,3 @@
-**Definition (spin involution on a Frobenius $*$-algebra).**
 *Let $(A, \tau, {}^*)$ be a Frobenius $*$-algebra over a commutative ring $R$. A **spin involution** on $(A, \tau, {}^*)$ is an $R$-linear map $\sigma : A \to A$ satisfying:*
 
 1. *Involution: $\sigma \circ \sigma = \mathrm{id}_A$.*

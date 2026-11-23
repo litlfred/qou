@@ -1,4 +1,4 @@
-**Proposition.** *Let $K$ be a field with $2 \neq 0$, and let $z, h \in K$. Write
+*Let $K$ be a field with $2 \neq 0$, and let $z, h \in K$. Write
 $\mathrm{tr}$ for the Markov trace on $H_4$ with parameter $z$ and $h = q - q^{-1}$, and use the
 letters $S_i = \sigma_i$, $I_i = \sigma_i - h = \sigma_i^{-1}$ and $A_i = \sigma_i - h/2$. Let*
 
@@ -30,7 +30,7 @@ $$
 $z = -q^{-1}$.*
 
 **Setting.** In the $A = 2$ $\gamma\gamma$ chain the first nucleon's block factors out of the
-trace (`towerTr_disjoint` in `prop:markov-trace-hecke-functional`), so the bond from nucleon $0$
+trace ([Hecke Markov-trace functional](#prop:markov-trace-hecke-functional)), so the bond from nucleon $0$
 into nucleon $1$ acts on a four-strand tail: the receiving block's word on $\sigma_1, \sigma_2$,
 followed by $V^3_0 = (\sigma_0\sigma_1^{-1})^3$. The words $p$ and $n$ above are the production
 proton and neutron blocks on that tail.
@@ -38,22 +38,18 @@ proton and neutron blocks on that tail.
 **Consequence.** At $h = 0$ both free traces equal $z$. Dividing the bond terms by the free
 traces, the relative change starts at order $h^4$ for a bond into a proton, with coefficient
 $(1 - z^2)/2$, and at order $h^5$ for a bond into a neutron, with coefficient $(1 - z^2)/z$.
-At $z = 1/2$ these are $3/8$ and $3/2$. This step is elementary algebra on the identities and
-is not part of the Lean statement.
+At $z = 1/2$ these are $3/8$ and $3/2$.
 
-**Lean.** The sibling file proves the four identities and the two vanishing statements over
-any field with $2 \neq 0$. The trace is computed by a merging evaluator `ME`, proved equal to
-the plain expansion (`ME_eq_P`) and to a sum of the word evaluator `trWord` over the
-positive-word expansion of the letters (`tail_eq_trWord`); `trWord` equals every Markov trace
-by `isMarkovTrace_eq_trWord`. The reduction in **Setting** is also proved (`a2_reduce`): for any
-first nucleon $N_0 \in H_3$ the full chain `ggChain` and the free product `freeTail` have traces
-$\mathrm{tr}(N_0)$ times the bonded and free tails, so `a2_bond_into_proton` and
-`a2_bond_into_neutron` state the two identities on the full $A = 2$ words.
+**Algebraic reduction.** Over any field of characteristic $\neq 2$, expanding inverse crossings via
+$\sigma_i^{-1} = \sigma_i - h$ reduces each four-strand tail word to a linear combination of positive
+words evaluated by the unique Markov-trace reducer. For any first nucleon $N_0 \in H_3(q)$, disjoint-strand
+factorisation multiplies both the bonded chain and the unbonded product by $\mathrm{tr}_M(N_0)$, yielding
+the stated identities on the full $A = 2$ words.
 
-**The $h^2$ step.** The file also proves `towerTr_shift_commutator`: for every $Y$ on strands
-$\geq 1$, $\mathrm{tr}\bigl(Y^{\uparrow}(\sigma_0\sigma_1 - \sigma_1\sigma_0)\bigr) = 0$, over any
+**The $h^2$ step.** For every $Y$ supported on strands $\geq 1$,
+$\mathrm{tr}_M\bigl(Y^{\uparrow}(\sigma_0\sigma_1 - \sigma_1\sigma_0)\bigr) = 0$ over any
 commutative ring and for every $z$ and $h$. Since $\sigma_1$ is the shift of $\sigma_0$,
 cyclicity and the Markov factorisation at the first strand reduce the two terms to
-$\mathrm{tr}(\sigma_0)\,\mathrm{tr}(\sigma_0 Y)$ and $\mathrm{tr}(\sigma_0)\,\mathrm{tr}(Y\sigma_0)$,
+$\mathrm{tr}_M(\sigma_0)\,\mathrm{tr}_M(\sigma_0 Y)$ and $\mathrm{tr}_M(\sigma_0)\,\mathrm{tr}_M(Y\sigma_0)$,
 which are equal. The $h^2$ part of $V^3 - 1$ is this commutator, so it never contributes to the
 trace of a bond, whatever the receiving word.

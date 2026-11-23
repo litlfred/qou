@@ -1,4 +1,3 @@
-**Proof.**
 The argument proceeds in two steps.
 
 *Step 1: Reachability from the unknot.*

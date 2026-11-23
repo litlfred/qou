@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:upstream-mathlib-additions",
   title:
-    "Upstream Mathlib additions: complex dilogarithm via tsum + BW formula + Cl_2 oddness",
+    "Upstream Mathlib additions: complex dilogarithm via tsum + BW formula + $\\mathrm{Cl}_2$ oddness",
   // rem:three-substantive-mathlib-fillers dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
   // not cited in the statement or proof. A remark carries no premise; the edge only put this block
   // downstream of a conjecture.

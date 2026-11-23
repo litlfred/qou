@@ -1,4 +1,3 @@
-**Definition.**
 *Let $H_n(R, q)$ be the Iwahori–Hecke algebra and let $\mathcal{K}_n$ denote the category of finitely generated graded projective modules over the Khovanov–Lauda–Rouquier algebra whose cyclotomic quotient is $H_n(R, q)$. The fibre functor $\tau \colon \mathcal{K}_n \to \mathrm{Vect}$ acts as decategorification by graded Euler characteristic. For a graded module $M = \bigoplus_{d \in \mathbb{Z}} M_d$,*
 
 $$

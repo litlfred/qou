@@ -1,5 +1,3 @@
-## Proof
-
 The four expressions are equal as rational functions of $q$ over any
 commutative ring in which $q$ and $2$ are invertible (the factor $\tfrac12$
 needs $2$ invertible, so characteristic $2$ is excluded). Starting from the leftmost, expand

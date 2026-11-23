@@ -1,6 +1,3 @@
-**Conjecture (two-filtration bridge: iterated-integral depth $\leftrightarrow$
-partition-cellular GB-depth via central idempotents).**
-
 *The substrate convolution Hopf algebra $\mathcal{H}_q$ carries
 two distinct filtrations:*
 

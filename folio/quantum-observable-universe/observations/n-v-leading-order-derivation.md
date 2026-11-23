@@ -1,4 +1,3 @@
-**Conjecture (Leading-order $N_v$).**
 *The electroweak topological invariant $N_v$ admits the leading-order closed form*
 
 $$

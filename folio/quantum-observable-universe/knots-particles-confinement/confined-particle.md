@@ -1,4 +1,3 @@
-**Definition.**
 *A **confined particle** is a tuple*
 
 $$

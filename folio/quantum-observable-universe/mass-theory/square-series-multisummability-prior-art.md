@@ -1,4 +1,3 @@
-**Remark (prior art: the square of a single-slope $q$-series needs two levels of summation).**
 Di Vizio, Ramis, Sauloy and Zhang work through the series $\hat y = \sum_{n \ge 0} q^{n(n-1)/2} x^n$, whose equation has a single non-trivial slope, and its square $\hat Y = \hat y^{\,2}$ \cite[\S 4.4, p. 43]{divizio-ramis-sauloy-zhang}. The $q$-Borel transform of $\hat Y$ is meromorphic on $\mathbb{C}$ with simple poles in $q^{\mathbb{N}}$ and has $q$-exponential growth of order exactly two at infinity, so $\hat Y$ is not $q$-Borel–Laplace summable at a single level as $\hat y$ is. The equation of $\hat Y$,
 $$
 \Delta \hat Y = 1 + x, \qquad \Delta = q^2 x^3 \sigma_q^2 - x(1+x)\sigma_q + 1 = (x\sigma_q - 1)(x^2\sigma_q - 1),

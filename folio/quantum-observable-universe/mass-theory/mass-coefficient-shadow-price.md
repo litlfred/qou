@@ -26,8 +26,8 @@ is a claim that the coefficients are wrong:
    pairing: every $\ell(\lambda) \ge 3$ weight vanishes identically, which is
    why a partition-indexed program must be posed on the two-row quotient.
 
-**Note (what the binding compute actually calls).** The function named for this
-proposition, `hecke_core_legacy.lp_shadow_price`, evaluates
+**Note (closed-form shifted weight vs. LP dual).** The closed-form formula often paired with this
+proposition evaluates
 $y_\lambda = w_\lambda/d_\lambda - 1/[k]_q!$ in closed form and **solves no
 program**. Its $1/[k]_q!$ term is $\min_\lambda (w_\lambda/d_\lambda)$, so it
 subtracts a constant that zeroes exactly the two one-dimensional blocks

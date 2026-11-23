@@ -1,4 +1,4 @@
-**Proof.** Three steps, each forced.
+Three steps, each forced.
 
 **Step 1 — $y_{(1^3)} \equiv 0$ (Temperley–Lieb quotient).** The Jones
 polynomial factors through the Temperley–Lieb algebra

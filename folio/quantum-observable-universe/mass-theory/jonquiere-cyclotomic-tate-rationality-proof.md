@@ -1,5 +1,3 @@
-### Proof
-
 **Step 1 (Jonquière inversion formula, Lewin 1991 §7).** For
 $z \notin (0, 1)$ and $n \geq 1$:
 

@@ -4,7 +4,7 @@ $$
   (\sigma_0\sigma_1)^5 = e^- \cdot \bigl(e^- \cdot (\sigma_0\sigma_1)^2\bigr) \quad\text{in } B_3 ,
 $$
 
-so the $10$ letters split into the $3$ of $e^-$ and a positive residue of $7$ (`QOU.BraidKnot.WeakVertexElectronFactor.weakVertex_eq_electron_mul`).
+so the $10$ letters split into the $3$ of $e^-$ and a positive residue of $7$.
 
 A $\beta^-$ transition inserts the $T_{3,5}$ braid at the converting $\mathfrak{d}$-quark crossing of $\mathcal{N}(Z, N)$, followed by re-reduction:
 

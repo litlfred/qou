@@ -2,7 +2,6 @@ Recast the confinement operator selection as a linear program over the NF basis 
 
 ## Primal program (operator selection)
 
-**Proposition.**
 *The confinement operator $\Phi = \sum_{i=1}^{6} x_i b_i \in H_3(q)$ for quark types $(f_1, f_2, f_3)$ is the solution of:*
 
 $$

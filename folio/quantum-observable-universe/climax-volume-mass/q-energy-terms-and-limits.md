@@ -1,5 +1,3 @@
-**Remark (the three energy terms, limits, and crossing-energy relation).**
-
 This remark unpacks the three terms of the [$q$-energy](#def:q-energy) $\mathfrak{E}_q(K)$, its classical and deep-quantum limits, and its relation to the crossing energy.
 
 **The three terms.**

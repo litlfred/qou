@@ -1,4 +1,4 @@
-*Proof.* Since $P_L + P_R = 1$, every element $x$ satisfies $x = x P_L + x P_R$. By definition $W P_L = \sigma^{-1} P_L$ and $W P_R = \sigma P_R$. Hence
+Since $P_L + P_R = 1$, every element $x$ satisfies $x = x P_L + x P_R$. By definition $W P_L = \sigma^{-1} P_L$ and $W P_R = \sigma P_R$. Hence
 
 $$
 W - \sigma \;=\; (\sigma^{-1} - \sigma)\, P_L \;=\; -(q - q^{-1})\, P_L ,

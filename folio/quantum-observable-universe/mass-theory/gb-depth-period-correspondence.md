@@ -1,5 +1,3 @@
-**Conjecture (GS-depth $\leftrightarrow$ Goncharov period-depth correspondence).**
-
 *Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)) and let
 $G(\mathcal{H}_q)$ be its sub-Hopf-algebra of grouplikes. Filter

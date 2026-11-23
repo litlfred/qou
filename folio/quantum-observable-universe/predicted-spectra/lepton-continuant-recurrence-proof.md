@@ -1,5 +1,3 @@
-## Proof
-
 The Hecke relation $\sigma_0^2 = (q - q^{-1}) \sigma_0 + \mathbf{1}$ yields:
 
 $$

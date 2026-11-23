@@ -1,4 +1,3 @@
-**Remark (categorical coordinate of the commutative limit).**
 The Hecke generator $\sigma = P \circ R$ on $V \otimes V$ has eigenvalues $(\lambda_+, \lambda_-) = (q, -q^{-1})$ on the symmetric/antisymmetric decomposition $S^2 V \oplus \Lambda^2 V$ ([def:crossing-energy](#def:crossing-energy)). At $q = 1$ ([def:commutative-qou](#def:commutative-qou)), the eigenvalues collapse to $(+1, -1) = \mathbb{Z}_2$, and the per-crossing weight $q - q^{-1}$ vanishes identically. The categorical structure of the commutative limit is recovered by extracting the *square root* of the antisymmetric eigenvalue $\lambda_- = -1$:
 
 $$

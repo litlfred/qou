@@ -1,6 +1,3 @@
-**Conjecture (joint motivic-Galois $\times$ braid-group action on the
-bi-filtration).**
-
 *Let $\mathcal{H}_q^{(n, K)}$ be the knot-indexed bi-filtration
 ([Knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra](#def:hq-bi-filtration)). Two groups act
 on it by symmetry:*

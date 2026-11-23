@@ -1,4 +1,3 @@
-**Conjecture ($S_5$ acts on the EW slice of $H_n(q)$).**
 *At the **electroweak slice** $\Sigma_{\mathrm{EW}}$, the Iwahori--Hecke algebra $H_{n_{\mathrm{EW}}}(R, q)$ carries a faithful action of $S_5$ that fixes the Markov trace $\mathrm{tr}_M$. The Markov-trace-residual rescaling factor equals $|S_5| = 120$.*
 
 ## Forcing of $S_5$ over other finite groups

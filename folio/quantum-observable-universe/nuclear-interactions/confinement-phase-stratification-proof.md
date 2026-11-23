@@ -1,4 +1,3 @@
-*Proof.*
 *Claim (1)—Openness.*
 *Let $S := \{(q, X) : \forall i,\ 0 < g_i(q, X)\}$. Each set $\{0 < g_i\}$ is open because $g_i$ is continuous, and $I$ is finite, so $S$ is open. $\Omega(P)$ is the image of $S$ under the projection $(q, X) \mapsto q$, which is an open map. Hence $\Omega(P)$ is open.*
 

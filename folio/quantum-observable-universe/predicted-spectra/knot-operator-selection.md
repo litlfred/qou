@@ -1,5 +1,3 @@
-## Statement
-
 **Proposition (knot operator selection).**
 *Let $(\mathbf{C}, A, \tau)$ be a QOU with archimedean realisation $H_r(q)$. Let $\{\tau(r_i, s_i)\}_{i=1}^{6}$ be the embeddable torus knots on $\Sigma_4$. Let $\gamma_1, \gamma_2 \in H_3(q)$ be two incoming particle states.*
 

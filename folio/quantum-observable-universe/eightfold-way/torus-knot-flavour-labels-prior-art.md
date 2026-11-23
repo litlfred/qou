@@ -1,4 +1,3 @@
-**Remark (prior art: torus knots as flavour labels).**
 With symmetric $q$-integers $[n]_q = (q^n - q^{-n})/(q - q^{-1})$, Gavrilik observes that the differences $[n]_q - [n-1]_q$ are the Alexander polynomials of the $(2n-1,2)$ torus knots \cite[\S 2, p. 2]{gavrilik2001}:
 $$
 [2]_q - 1 = \Delta_q\{3_1\},\qquad [3]_q - [2]_q = \Delta_q\{5_1\},\qquad [4]_q - [3]_q = \Delta_q\{7_1\}.

@@ -1,5 +1,3 @@
-## Proof
-
 **Step 1 — maximal crossings.** A perfect matching of $[2n]$ has at most
 $\binom{n}{2}$ crossings, attained by
 $M^\star = \{(i,\, n+i) : 1 \le i \le n\}$. For $i < j \le n$ the arcs

@@ -1,4 +1,3 @@
-*Proof.* 
 The operator $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is built from $q$-Toffoli generators. By [Toffoli transfer matrix](#prop:toffoli-transfer-matrix), these act as elements of $H_3(q) \otimes \cdots \otimes H_3(q)$ on the tensor product of Reeb bundles $\bigotimes_i \mathcal{S}_{p_i}$. Each generator is *invertible* in $H_n(q)$, and it is invertibility — not unitarity — that this argument establishes. The eigenvalues of $\sigma_i$ are $q$ and $-q^{-1}$, of modulus $\neq 1$ whenever $q \neq 1$, so $\sigma_i$ is not unitary with respect to any inner product away from the classical limit; and the Markov trace form is not available as one, being degenerate under the production trace convention. Reversibility therefore rests on invertibility alone: the quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ gives the explicit inverse
 $$
   \sigma_i^{-1} = \sigma_i - (q - q^{-1})\cdot 1 ,

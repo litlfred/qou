@@ -1,4 +1,4 @@
-**Remark (categorical content).** The Frobenius self-duality
+The Frobenius self-duality
 holds at the categorical level: the rigid monoidal category
 $\mathbf{Rep}(H_n(R,q))$ is self-dual under the
 $\tau$-pairing, and $\tau$ is precisely the categorical trace

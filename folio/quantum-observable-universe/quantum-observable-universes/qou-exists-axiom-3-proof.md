@@ -1,4 +1,3 @@
-**Proof.**
 Categorical Chern classes are defined via $\tau$:
 $c_{i}(X) := c_{i}(\tau(X))$.  For $X = \mathrm{Ad}(A)$ with
 archimedean realisation $\tau(\mathrm{Ad}(A)) = \mathrm{Ad}(P)$, these

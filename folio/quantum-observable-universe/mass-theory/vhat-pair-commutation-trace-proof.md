@@ -1,5 +1,3 @@
-## Proof
-
 The traced volume $\hat V_i(q) = z(q)\,a_i(q) + b_i(q)$ is, by
 construction
 ([def:algebraic-quantum-volume §partial-product expansion](#def:algebraic-quantum-volume)),

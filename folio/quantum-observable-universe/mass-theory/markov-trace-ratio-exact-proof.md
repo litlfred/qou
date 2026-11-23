@@ -1,4 +1,4 @@
-**Proof.** The Jones polynomial of a braid closure $\hat\beta$ on
+The Jones polynomial of a braid closure $\hat\beta$ on
 $n$ strands is $J(\hat\beta, q) = C(n, q) \cdot \mathrm{tr}_M(\beta)$
 where $C(n, q) = (-q^{1/2} - q^{-1/2})^{n-1} \cdot (-q^{-3/2})^{-w(\beta)}$
 depends on the strand count $n$, the substrate parameter $q$, and the

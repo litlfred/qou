@@ -1,4 +1,3 @@
-**Conjecture (CWF linking normalization).**
 *Let $K$ be a field containing the bond-factor algebra, with
 $[2]_v = v + v^{-1}$ invertible. There is a linking-amplitude assignment
 $\ell : K \to K$ on bond factors such that*

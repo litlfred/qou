@@ -1,5 +1,3 @@
-### Proof
-
 By the canonical Wedderburn decomposition for $H_n(q)$ at generic $q$:
 
 $$

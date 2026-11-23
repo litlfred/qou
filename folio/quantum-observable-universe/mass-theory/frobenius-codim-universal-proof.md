@@ -1,4 +1,3 @@
-**Proof.**
 *Since $p_\lambda$ is central and primitive in $Z(A)$, and each
 $p_\lambda$ is $\tau$-dual to itself up to the scalar
 $\tau(p_\lambda)$, linearity of $\tau$ gives*

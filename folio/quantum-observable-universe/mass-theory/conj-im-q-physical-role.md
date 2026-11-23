@@ -1,4 +1,3 @@
-**Conjecture (physical role of Im(q)).**
 *The substrate parameter $q$ admits a complex extension
 ([prop:q-zero-complex-extension](q-zero-complex-extension.md)).
 The current QOU framework's observables (categorical masses

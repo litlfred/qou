@@ -1,4 +1,3 @@
-**Conjecture (Habiro element for the flavor split).**
 *The residual of the nucleon flavor split $\Delta_{pn}$ against its baseline coupling closes multiplicatively through the alternating channel of $H_4(q)$: the weak two-vertex insertion, weighted by the alternating quantum dimension $1/[4]_q!$, refines the baseline as*
 
 $$

@@ -1,4 +1,3 @@
-**Definition.**
 **Benzene** *$C_6H_6$ is the **molecular braid** of six carbon atoms and six hydrogen atoms, assembled iteratively from pre-computed atomic braids.*
 
 ### Strand count

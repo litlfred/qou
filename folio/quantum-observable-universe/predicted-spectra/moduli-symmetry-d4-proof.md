@@ -1,4 +1,3 @@
-*Proof.*
 The dihedral relations hold by inspection. The orbit of $\varphi$ under $\langle \sigma \rangle$ is the set $\{\sigma^k \varphi : k = 0, 1, 2, 3\} = \{\varphi, i\varphi, -\varphi, -i\varphi\}$. Acting by $\tau$ yields the reciprocals $\{1/\varphi, -i/\varphi, -1/\varphi, i/\varphi\}$. This generates the full octet $G_8$. Since $|D_4| = 8$ and $|G_8| = 8$, the action is transitive, and the stabilizer of each element is trivial.
 
 For the polynomial, $P(z/i) = P(-iz) = z^4 + 3z^2 + 1$. The product is a difference of squares:

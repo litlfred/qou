@@ -1,5 +1,3 @@
-## Statement
-
 **Scope of the three expansion pieces.** In the graded expansion below, only the leading-order piece $\rho_K^{\mathrm{LO}}$ is a proved algebraic identity (by Wenzl's Markov multiplicativity). The single-generator piece $\rho_K^{\text{single-gen}}$ is an empirical logarithmic model whose prefactor $\alpha$ is chosen against the mass table (yielding the $0.18\%$ mean residual recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy)), while the pair-generator piece $\rho_K^{\text{pair-gen}}$ remains open.
 
 

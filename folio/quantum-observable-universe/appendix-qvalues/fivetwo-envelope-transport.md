@@ -1,4 +1,4 @@
-**Proposition.** *Let $S(\varphi) = \sum_j \mathrm{Re}\, V(x(\varphi), y_j(\varphi))$
+*Let $S(\varphi) = \sum_j \mathrm{Re}\, V(x(\varphi), y_j(\varphi))$
 be the envelope of the $5_2$ deformed saddle along the unit-circle arc
 $x(\varphi) = e^{i\varphi}$. Suppose $S$ is continuous on $[0,\pi]$ and satisfies*
 

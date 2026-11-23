@@ -1,4 +1,3 @@
-**Definition.**
 *The **hydrogen molecule** $H_2$ is the molecular braid of two hydrogen atoms sharing one electron pair. The construction proceeds in three stages:*
 
 ### Stage 1: Build two hydrogen atoms

@@ -1,4 +1,3 @@
-**Proof.**
 The brane tower $A_n \hookrightarrow A_{n+1}$
 ([quantum characteristic classes](#def:quantum-characteristic-classes))
 provides a central extension of gerbes at each level.  For a

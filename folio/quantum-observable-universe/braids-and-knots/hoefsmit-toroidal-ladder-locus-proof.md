@@ -1,4 +1,4 @@
-*Proof.* Expanding the ladder factor,
+Expanding the ladder factor,
 
 $$
 (d + \alpha - \beta)(d + \alpha + \beta + 1)

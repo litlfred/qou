@@ -1,5 +1,3 @@
-**Remark (Clausen function `Cl_2` as repo-internal Mathlib filler).**
-
 Mathlib lacks the Clausen function
 
 $$

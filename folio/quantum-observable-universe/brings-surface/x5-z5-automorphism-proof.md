@@ -1,4 +1,3 @@
-*Proof.*
 Invariance of the defining equation:
 
 $$

@@ -1,4 +1,4 @@
-**Remark (comparison with measurement).** This remark records the [cos-resummation](#prop:q-beta-cos-resummation) evaluated at the proton pin and compared with the CODATA value.
+This remark records the [cos-resummation](#prop:q-beta-cos-resummation) evaluated at the proton pin and compared with the CODATA value.
 
 **Comparison with measurement at the proton pin $q_0 \approx 1.1099785827513808$.** At $q_0$ one has $z_D \approx 0.6126880371$, $h \approx 0.2090602988$, $\alpha \approx -0.0404857773$ and $\cos\alpha \approx 0.9991805629$. Two bases are recorded side by side; neither is selected by its residual.
 

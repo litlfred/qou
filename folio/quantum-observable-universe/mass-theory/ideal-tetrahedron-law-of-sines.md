@@ -10,7 +10,6 @@ $$
 
 They satisfy $\theta_1 + \theta_2 + \theta_3 = \pi$, which is what makes the angles those of a Euclidean triangle — the link of an ideal vertex.
 
-**Theorem.**
 *For every $z$ with $\mathrm{Im}\, z > 0$,*
 
 $$

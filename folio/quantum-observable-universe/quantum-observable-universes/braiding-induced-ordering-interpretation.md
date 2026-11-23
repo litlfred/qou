@@ -1,4 +1,4 @@
-**Remark (readings of the ordering).** The proposition and its proof use no braiding hypothesis; the readings below attach physical meaning to the letters of $W_n$ and are not part of the statement.
+The proposition and its proof use no braiding hypothesis; the readings below attach physical meaning to the letters of $W_n$ and are not part of the statement.
 
 **Two readings of the arrow of time.** The braiding $c_{V,V}$ and the Reeb vector field $\xi$ of the categorical Reeb derivation, defined later in this chapter, are read as two complementary viewpoints on one arrow of time.
 

@@ -1,4 +1,4 @@
-**Proposition.** *Let $R$ be a commutative ring and $A$ an $R$-algebra. Call an $R$-linear map
+*Let $R$ be a commutative ring and $A$ an $R$-algebra. Call an $R$-linear map
 $t : A \to M$ a trace if $t(xy) = t(yx)$ for all $x, y \in A$, and let $[A, A]$ be the
 $R$-span of all $xy - yx$.*
 

@@ -1,4 +1,4 @@
-**Proposition.** The idempotency below is proved unconditionally, for every $n$, at generic $q$ ([The Murphy–Lagrange elements $e_\lambda$ are the central primitive idempotents of $H_n(q)$](#thm:explicit-central-idempotent-cross-checks)).
+The idempotency below is proved unconditionally, for every $n$, at generic $q$ ([The Murphy–Lagrange elements $e_\lambda$ are the central primitive idempotents of $H_n(q)$](#thm:explicit-central-idempotent-cross-checks)).
 
 *Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ at generic $q$ ($q \neq 0$, not a root of unity). The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, one has $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
 

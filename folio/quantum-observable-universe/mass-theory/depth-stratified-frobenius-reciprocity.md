@@ -1,5 +1,3 @@
-**Conjecture (Frobenius-reciprocity ideal restriction at low curvature-rank).**
-
 *The unified curvature-rank mass formula admits a Frobenius-reciprocity refinement at low curvature-rank $k \le 3$. The depth-$k$ Wedderburn weight restricts to the distinguished hyperbolic-knot ideal at depth $k$ via Frobenius reciprocity for the center inclusion $Z(H_3) \hookrightarrow Z(H_n)$.*
 
 *For each low curvature-rank $k \in \{1, 2, 3\}$ there is a distinguished hyperbolic knot $K_k^*$. At $k = 3$, $K_3^* = 4_1$ gives the best variance reduction **when the partition weight is the textbook form $w_\lambda = \dim_q^2 V_\lambda / [n]_q!$**, consistent with the Fricke-trace derivation. The depth-$k$ contribution to the mass formula is*

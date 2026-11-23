@@ -1,4 +1,4 @@
-*Proof sketch.*
+**Sketch.**
 
 Part (1): The topological mass formula $\mathfrak{m} = V/\hbar_q^2$ with $V_B = 7.32772$ yields the Borromean mass. The diquark mass calculation uses $\mathrm{Vol}(\mathcal{L}_H) = 0$.
 

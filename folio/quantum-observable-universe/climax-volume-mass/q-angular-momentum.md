@@ -1,6 +1,5 @@
 The **$q$-angular momentum** of a particle is the $\mathrm{SU}_q(2)$ Casimir eigenvalue of its knot representation.
 
-**Definition.**
 Let $K = \hat{\beta}$ be a knot/link with braid representative $\beta \in B_n$. The **$q$-angular momentum** is the eigenvalue of the $q$-Casimir element $C_q$ (cf. [def:q-casimir](#def:q-casimir)) on the spin-$j$ irreducible of $\mathrm{SU}_q(2)$:
 
 $$

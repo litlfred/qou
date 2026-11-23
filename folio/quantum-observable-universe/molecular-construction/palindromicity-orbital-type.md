@@ -1,4 +1,3 @@
-**Conjecture.**
 *The word-length histogram of the quotient atom NF is palindromic (Poincaré-dual) if and only if all occupied sub-shells have angular momentum $\ell = 0$ ($s$-type). Palindromicity breaks at the first electron with $\ell \geq 1$ ($p$-type or higher).*
 
 ## Computational evidence

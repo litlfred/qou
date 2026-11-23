@@ -15,7 +15,7 @@ export default proposition({
     "inductive-construction",
   ],
   lean: { ref: "qou:QOU.Archimedean.torus_knot_shell_binding",
-    validation: "not_checked",
+    validation: "stub",
   },
   uses: ["def:inter-shell-operator", "def:chebyshev-torus-coefficients"],
   examples: [

@@ -1,4 +1,3 @@
-**Conjecture (archimedean agreement, generic instance).**
 *For every closed braid $K$ admitting a Habiro polynomial trace $T_K(u) \in \mathbb{Z}[u]$ and a Gröbner–Shirshov mass value $\mathfrak{m}_{\mathrm{GB}}(K, q_0)$, the archimedean evaluation*
 
 $$

@@ -1,5 +1,3 @@
-## Proof.
-
 The proof proceeds in two structural steps.
 
 ### Step 1 — Schur–Weyl + R-matrix derivation of $\chi^{(2,1)}(\beta_{\mathrm{Bor}})$.

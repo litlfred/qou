@@ -1,4 +1,3 @@
-**Conjecture (Weinberg angle as Hecke-eigenvalue ratio).**
 *Let $R$ be the categorical coefficient ring with generic $q \in R$. Under the Hoefsmit cell-content identification of the EW triplet inside $\mathrm{End}_R(V^{\otimes 6})$, $W \leftrightarrow \sigma_1^4$, $Z \leftrightarrow \sigma_3^6$, $H \leftrightarrow \sigma_5^8$. The Standard Model Weinberg angle $\theta_W$ is the categorical scalar in $R$ given by*
 
 $$

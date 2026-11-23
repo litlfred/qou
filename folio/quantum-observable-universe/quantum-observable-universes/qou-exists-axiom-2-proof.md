@@ -1,4 +1,3 @@
-**Proof.**
 Take $\mathfrak{g} = \mathfrak{sl}_2$. Its adjoint representation is
 three-dimensional with weights $2, 0, -2$ for the Cartan element $H$, so it
 is the irreducible highest-weight module $V_1$ of highest weight $2$ (spin

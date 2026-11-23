@@ -1,6 +1,3 @@
-**Conjecture (geometric realisation of the depth-3 Bring trilog
-$\mathrm{Cl}_3(2\pi/5)$ — candidates list).**
-
 The depth-3 canonical witness
 [Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)](#conj:bring-trilog-depth-3-witness)
 established that
@@ -58,8 +55,7 @@ be expressible via $\mathrm{Cl}_3(2\pi/5)$ and its Galois conjugates.
 $\mathrm{CS}(K) \stackrel{?}{=} \alpha \cdot \mathrm{Cl}_3(2\pi/5) + \beta \cdot \zeta(3) + \cdots$
 for explicit $\alpha, \beta \in \mathbb{Q}$.
 
-> [!WARNING]
-> **Update (canonical refutation)**: A PSLQ canonical experiment on the CS invariants of the seven Bring-natural torus-knot generators $\{T(2, 3), T(2, 5), T(2, 7), T(2, 9), T(3, 4), T(3, 5), T(5, 2)\}$ reveals that their Chern-Simons invariants are exactly rational (e.g., $\mathrm{CS}(T(2,5)) = 1/20, \mathrm{CS}(T(2,3)) = -1/12$). Therefore, their CS invariants cannot be expressed as non-trivial $\mathbb{Q}$-linear combinations of transcendental numbers like $\zeta(3)$ and $\mathrm{Cl}_3(2\pi/5)$. This strictly rules out torus knots as direct geometric realisations for this depth-3 period under Candidate 2.
+> **Canonical refutation.** A PSLQ canonical experiment on the CS invariants of the seven Bring-natural torus-knot generators $\{T(2, 3), T(2, 5), T(2, 7), T(2, 9), T(3, 4), T(3, 5), T(5, 2)\}$ reveals that their Chern-Simons invariants are exactly rational (e.g., $\mathrm{CS}(T(2,5)) = 1/20, \mathrm{CS}(T(2,3)) = -1/12$). Therefore, their CS invariants cannot be expressed as non-trivial $\mathbb{Q}$-linear combinations of transcendental numbers like $\zeta(3)$ and $\mathrm{Cl}_3(2\pi/5)$. This strictly rules out torus knots as direct geometric realisations for this depth-3 period under Candidate 2.
 
 #### Candidate 3: iterated integral on $\overline{\mathcal{M}}_{0, 5}$
 
@@ -81,7 +77,7 @@ upper bound (Deligne–Goncharov), but no unconditional lower bound is known, so
 $\mathbb{Q}$-linear identification of $\mathrm{Cl}_3(2\pi/5)$ inside this span
 comes with no proved independence of the spanning values; for standard levels,
 including $N = 5$, the standard relations are conjectured to generate all
-$\mathbb{Q}$-linear relations \cite[\S1.1, \S6, \S7.4]{zhao2010-standard-relations}.
+$\mathbb{Q}$-linear relations \cite[§1.1, §6, §7.4]{zhao2010-standard-relations}.
 
 **Discharge target**: write down the explicit iterated integral
 $\int_\gamma \omega$ on $\overline{\mathcal{M}}_{0, 5}$ whose

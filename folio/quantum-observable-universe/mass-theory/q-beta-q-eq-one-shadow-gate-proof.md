@@ -1,5 +1,3 @@
-## Proof
-
 Let $F(q)$ be a candidate Habiro element for the $\mathfrak{Q}_\beta$
 precision ladder, generating coefficient functions $c_k(q)$ through
 its $q$-difference kernel

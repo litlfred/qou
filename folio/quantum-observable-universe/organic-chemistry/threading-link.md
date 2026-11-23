@@ -1,4 +1,3 @@
-**Definition.**
 Let $\mathcal{A}_1, \ldots, \mathcal{A}_N$ be atoms arranged in a cycle. The **threading link** of the ring is the torus link
 
 $$

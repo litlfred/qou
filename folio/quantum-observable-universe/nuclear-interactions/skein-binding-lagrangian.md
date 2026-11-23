@@ -1,4 +1,3 @@
-**Definition.**
 *Let $L = Z\mathfrak{p} \oplus N\mathfrak{n}$ be a multi-nucleon Hopf link with $Z$ protons, $N$ neutrons, and $A = Z + N$. The **canonical binding Lagrangian** is the categorical action $\mathfrak{S}_q$ evaluated on $L$:*
 $$
   \mathcal{L}_{\mathrm{bind}}[L]

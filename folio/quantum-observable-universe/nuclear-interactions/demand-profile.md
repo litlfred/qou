@@ -1,4 +1,3 @@
-**Definition.**
 *Let $\mathcal{A}(Z, N) = \sum_w c_w \cdot w$ be a derived atom in normal form. Its **demand profile** is*
 
 $$

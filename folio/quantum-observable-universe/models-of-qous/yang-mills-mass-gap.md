@@ -1,4 +1,3 @@
-**Conjecture (Yang–Mills existence and mass gap, categorical formulation).**
 *Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe over a commutative ring $R$ with substrate parameter $q > 1$. Let $\nabla$ be a categorical connection on the Frobenius–Hopf object $A$ with curvature $F_\nabla = \nabla^2$. Let $\mathfrak{S}_q[\nabla]$ be the $q$-weighted Yang–Mills–Levi functional. Let $\Omega_0 \colon R \to \mathrm{End}_{\mathbf{C}}(A)$ be the vacuum state — the unique $G_q$-invariant functional on the direct limit algebra $\mathcal{A}_\infty = \varinjlim \mathrm{End}_{\mathbf{C}}(A_n)$.*
 
 *Then:*

@@ -1,4 +1,3 @@
-**Proof.**
 The transient component $\alpha - \hat{\tau}_n(\alpha)$ is annihilated by
 $\hat{\tau}_n$: it lies in
 $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\hat{\tau}_n$

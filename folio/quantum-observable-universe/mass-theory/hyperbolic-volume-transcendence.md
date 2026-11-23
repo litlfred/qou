@@ -12,7 +12,6 @@ hyperbolic volumes drive the Descartes universe mass spectrum:
 All torus knots (trefoil, cinquefoil, septafoil) possess zero hyperbolic
 volume. They contribute no topological mass from this channel.
 
-**Conjecture.**
 The set $\{\mathrm{Vol}(4_1),\; \mathrm{Vol}(5_2),\;
 \mathrm{Vol}(\mathcal{B}_3)\}$ is algebraically independent over
 $\mathbb{Q}[q, q^{-1}]$. There exists no non-zero polynomial

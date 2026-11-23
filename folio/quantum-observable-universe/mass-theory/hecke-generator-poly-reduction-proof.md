@@ -1,5 +1,3 @@
-## Proof
-
 By induction on the list. The empty product is $1 = 0\cdot\sigma_i + 1\cdot 1$.
 For the step, suppose $\prod_{\mathrm{ds}} = \alpha'\,\sigma_i + \beta'\,1$.
 Then

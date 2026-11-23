@@ -1,2 +1,1 @@
-**Remark (physical interpretation).**
 The energy functional $E(\mathcal{N}(Z, N))$ gives the Skein binding energy of the nucleus. Each Hecke step resolves a double crossing into a weighted single crossing plus a resolved identity term. The factor $(q - q^{-1})$ acts as the crossing asymmetry. The Hecke reduction algebraically expresses the physical process of resolving a double crossing into its electromagnetic and strong components.

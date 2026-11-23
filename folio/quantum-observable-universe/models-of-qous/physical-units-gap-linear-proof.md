@@ -3,7 +3,7 @@ back exactly two of the three vanishing orders of $\Delta_q$, and no
 more. It separates two rates that are easily conflated, and leaves a
 physical-units mass gap at first order in $h$.
 
-**Proof.** Direct computation:
+Direct computation:
 $\Delta_q / \hbar_q^2
 = \tfrac{1}{2}(q - q^{-1})(q-1)^2 \cdot q^2/(q-1)^2
 = \tfrac{1}{2}\,q^2\,(q - q^{-1})

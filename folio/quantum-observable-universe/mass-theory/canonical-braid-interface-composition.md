@@ -1,4 +1,3 @@
-**Definition (canonical-braid interface composition).**
 *Let $\beta(Z, N) \in H_{3A}(q)$ be the canonical atomic braid in standard pppnnn ordering. The $A - 1$ inter-nucleon interface generators $\sigma_{3k + 2}$ are classified by the flavour pair they bridge:*
 
 See [Table 1](#tbl:canonical-braid-interface-composition-table1-data).

@@ -1,4 +1,4 @@
-**Proposition (conditional on [Quarks as Borromean-linked unknots in the exceptional divisor](../predicted-spectra/borromean-quark.md)).**
+**Conditional on [Quarks as Borromean-linked unknots in the exceptional divisor](../predicted-spectra/borromean-quark.md).**
 *Let $h = q - q^{-1}$ and $\mathfrak{E}_0 = m_e/(q(q-1))$. Let $\mathrm{net}(p) = 1 - \tfrac{h}{2}$ and $\mathrm{net}(n) = 1 - \tfrac{3h}{2} + \tfrac{h^2}{2}$ be the single-wrap normal-form net coefficients of the proton $[u,u,d]$ and neutron $[u,d,d]$ in $H_3(q)$ (from [Quarks as Borromean-linked unknots in the exceptional divisor](../predicted-spectra/borromean-quark.md)). For any trace difference $\Delta\mathrm{tr}$,*
 
 $$

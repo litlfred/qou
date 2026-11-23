@@ -1,4 +1,3 @@
-**Definition (proposed; conjectural utility).**
 *The $(q, z)$-bicompletion is the inverse limit*
 
 $$

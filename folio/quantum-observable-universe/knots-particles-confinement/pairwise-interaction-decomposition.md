@@ -1,4 +1,4 @@
-**Proposition.** *Let $\mathbf{C}$ be a braided monoidal category with braiding $c$. For objects $V_1, \dots, V_n$ of $\mathbf{C}$, write*
+*Let $\mathbf{C}$ be a braided monoidal category with braiding $c$. For objects $V_1, \dots, V_n$ of $\mathbf{C}$, write*
 
 $$
   c_i

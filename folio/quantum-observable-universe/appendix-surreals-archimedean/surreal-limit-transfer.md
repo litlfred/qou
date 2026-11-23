@@ -1,4 +1,4 @@
-**Conjecture (surreal limit transfer).** There is an $\omega$-evaluation
+There is an $\omega$-evaluation
 $\mathrm{ev}_\omega : \mathbb{R}^{\mathbb{N}} \to \mathbf{No}$ of real
 sequences, sending constants to their embedded reals, respecting
 pointwise addition and multiplication, transferring eventual pointwise

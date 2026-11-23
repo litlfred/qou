@@ -1,4 +1,3 @@
-**Proof.**
 Let $V \in \mathbf{C}$ be the standard representation (dimension
 $n = \dim V_{\mathrm{std}}$).  The top exterior power $\Lambda^{n} V$
 is the 1-dimensional trivial module, $\Lambda^{n} V \cong \mathbf{1}$,

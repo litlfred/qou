@@ -1,4 +1,3 @@
-**Example.**
 Oxygen-16 ($Z = 8$, $N = 8$, $A = 16$) is the first doubly-magic nucleus beyond ${}^{4}\mathrm{He}$. Both $Z = 8$ and $N = 8$ are nuclear magic numbers, corresponding to the closure of the $1p$ shell.
 
 ## Construction

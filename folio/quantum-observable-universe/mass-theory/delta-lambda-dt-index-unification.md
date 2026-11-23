@@ -1,4 +1,4 @@
-**Proposition.** *Let $\lambda$ be a partition, written as a weakly decreasing list, with
+*Let $\lambda$ be a partition, written as a weakly decreasing list, with
 a-function grade $n(\lambda)$ and Wedderburn dimension $\dim V_\lambda$. Set*
 
 $$

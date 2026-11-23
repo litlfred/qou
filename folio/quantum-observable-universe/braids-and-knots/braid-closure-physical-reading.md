@@ -1,6 +1,5 @@
 Closing a braid adds a coevaluation (cup) below each strand and an evaluation (cap) above it.
-It adds no crossing. An observation in this framework inserts a crossing
-([observation braid](#rem:observation-braid)), so closure is not an observation.
+It adds no crossing. An observation in this framework inserts a crossing, so closure is not an observation.
 
 **Cups and caps as entangled pairs.** The coevaluation of $V$ is the maximally entangled vector
 $\Omega$ of [the proposition](#prop:closure-unseen-subword), item 3. With the pivotal weight
@@ -16,7 +15,7 @@ return arc is the entangled partner of its strand.
    of item 1 of [the proposition](#prop:closure-unseen-subword), and it keeps every character
    $\chi_\lambda$ separately.
 2. *Forgetting the axis* sends each block to its quantum dimension. The result is the Markov
-   trace at $z_D$ ([categorical trace](#rem:categorical-trace-is-the-markov-trace)), which
+   trace at $z_D$, which
    averages the blocks.
 
 **What an unseen intermediate is.** A process that emits $u$, runs $w$, and reabsorbs $u^{-1}$
@@ -25,7 +24,7 @@ cancels. More generally, a subword is invisible to every closure exactly when re
 changes the element by a commutator (item 1). This gives a precise meaning to an intermediate
 that is produced and not seen, without a virtual particle.
 
-**Fluid dynamics.** The [helicity](#prop:helicity-conservation) of a vortex tangle is a closure
+**Fluid dynamics.** The helicity of a vortex tangle is a closure
 invariant. Its classical counterpart is the asymptotic linking number, in which long orbit
 segments are closed by short paths whose contribution vanishes in the limit
 \cite{komendarczyk2008}; the closing arcs are again unseen.

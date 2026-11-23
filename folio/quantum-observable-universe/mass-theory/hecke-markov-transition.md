@@ -1,6 +1,5 @@
 The Hecke algebra $H_n(R, q)$ and the Jones-Markov trace admit a direct probabilistic interpretation: each Hecke generator acts as a stochastic transition operator. The product factorization corresponds to independent one-step expectations along a Markov chain.
 
-**Proposition.**
 *Let $H_n(R, q)$ be the Iwahori-Hecke algebra.*
 
 **(i)** *Spectral idempotents.*

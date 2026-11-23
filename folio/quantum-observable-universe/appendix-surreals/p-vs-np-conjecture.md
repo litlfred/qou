@@ -1,4 +1,3 @@
-**Conjecture ($q$-complexity separation).**
 Let $\varepsilon$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)) and $q = 1 + \varepsilon$ the associated substrate parameter. Let $\mathrm{BQP}_q$ denote the class of decision problems solvable in polynomial time on a $q$-deformed computational substrate (a topological quantum computer whose anyonic model is the $R$-matrix of $\mathbf{C}_q$). Then
 
 $$

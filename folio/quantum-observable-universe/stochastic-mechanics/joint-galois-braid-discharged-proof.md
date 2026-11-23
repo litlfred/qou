@@ -1,5 +1,3 @@
-### Proof
-
 **Step 1 (decompose the bi-filtration cell).**  Every element
 $\alpha \in \mathcal{H}_q^{(n, K)}$ admits a canonical factorisation:
 

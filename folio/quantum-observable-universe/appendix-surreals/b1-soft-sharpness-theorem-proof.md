@@ -1,5 +1,3 @@
-**Proof.**
-
 *Step 1 (Borel non-vanishing).* By [Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](#prop:borel-partial-resolution),
 $\dim_\mathbb{Q} K_{2n-1}^{\mathrm{ind}}(F) \otimes \mathbb{Q} \geq 1$
 for $n \geq 2$ when $F$ is non-trivial cyclotomic (specifically:

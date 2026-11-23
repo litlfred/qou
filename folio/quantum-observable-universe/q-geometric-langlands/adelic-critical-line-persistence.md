@@ -1,4 +1,4 @@
-**Conjecture (adelic critical-line persistence).** *Suppose the local spectral
+*Suppose the local spectral
 exponents are critical-line aligned at every place --- that is, for every place
 $v$ and every fundamental mode $i$, the exponent $\rho_i^{(v)}$ satisfies
 $\mathrm{Re}(\rho_i^{(v)}) = \tfrac{1}{2}$. Then the global zeta function

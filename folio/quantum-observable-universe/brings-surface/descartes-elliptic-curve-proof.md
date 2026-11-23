@@ -1,4 +1,3 @@
-*Proof.*
 The color elliptic curve
 ([color elliptic](#prop:color-elliptic)) at spacetime ratio $z$
 is $X^3 + (z + 1)X^2 + (z^2 + z + 1)X + (z^3 + z^2 + z + 1) = 0$.

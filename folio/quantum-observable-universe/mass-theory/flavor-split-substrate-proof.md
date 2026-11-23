@@ -1,5 +1,3 @@
-**Proof.**
-
 Step 5 proves the identity: dividing (4) by 3 gives it, and it holds for every nonzero $q$. Steps 1 to 4 and 6 show how its two sides arise as the substrate formula for $(m_n - m_p)/M_N$, under the pair-Skein formula and the ansatz of Step 2. Those steps are not needed for the identity.
 
 *Step 1 (Pair-Skein difference, exact).*
@@ -47,7 +45,7 @@ This is the minimal substrate-atom combination satisfying three conditions:
 - (b) holds: the right-hand side is $4(q-1)^3 + O((q-1)^4)$.
 - (a) does not hold as stated. Writing $f(q) = h_q^2\,\hbar_q/\sqrt{q}$, one finds $f(q^{-1}) = -q^2 f(q)$, so $f$ is antisymmetric under $q \mapsto q^{-1}$ only up to the factor $q^2$ (checked symbolically).
 
-Everything downstream of (2) therefore inherits a fitted input, and no derivation is on record. One class of derived objects is excluded. Suppose the nucleon masses are additive over strands, $m_{\mathfrak{p}} = 2\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}}$ and $m_{\mathfrak{n}} = \mu_{\mathfrak{u}} + 2\mu_{\mathfrak{d}}$, and that $m_{\mathfrak{p}}/m_{\mathfrak{n}}$ is a nonzero integer power of $q$, as for the pivot ratio $q^{\pm 2}$ that the restricted quantum trace gives on the $U_q(\mathfrak{sl}_2)$ commutant. Then, with $t = \sqrt{q}$, the per-quark split is $c\,(t^m - 1)/(t^m + 1)$ for a nonzero rational $c$ and an integer $m \ge 1$. This vanishes to first order at $q = 1$, while the right-hand side of (2) vanishes to third order, so the two never agree (Lean: `QOU.FlavorDressing.PivotSplitOrder.ansatz_ne_pivotSplit`; the failure of (a) is `ansatz_bar`). The exclusion says nothing about non-additive strand rules or about objects that break $U_q(\mathfrak{sl}_2)$ symmetry.
+Everything downstream of (2) therefore inherits a fitted input, and no derivation is on record. One class of derived objects is excluded. Suppose the nucleon masses are additive over strands, $m_{\mathfrak{p}} = 2\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}}$ and $m_{\mathfrak{n}} = \mu_{\mathfrak{u}} + 2\mu_{\mathfrak{d}}$, and that $m_{\mathfrak{p}}/m_{\mathfrak{n}}$ is a nonzero integer power of $q$, as for the pivot ratio $q^{\pm 2}$ that the restricted quantum trace gives on the $U_q(\mathfrak{sl}_2)$ commutant. Then, with $t = \sqrt{q}$, the per-quark split is $c\,(t^m - 1)/(t^m + 1)$ for a nonzero rational $c$ and an integer $m \ge 1$. This vanishes to first order at $q = 1$, while the right-hand side of (2) vanishes to third order, so the two never agree, and the ansatz also fails bar-parity symmetry. The exclusion says nothing about non-additive strand rules or about objects that break $U_q(\mathfrak{sl}_2)$ symmetry.
 
 *Step 3 (Algebraic identity tying the equivalent forms).*
 

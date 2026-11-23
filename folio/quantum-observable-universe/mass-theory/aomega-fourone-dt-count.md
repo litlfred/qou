@@ -1,4 +1,4 @@
-**Theorem (conditional on [Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies](#conj:stokes-dt-bps-bridge)).**
+**Conditional on [Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies](#conj:stokes-dt-bps-bridge).**
 Under the closed-sector Stokes--DT--BPS bridge, the G3 Stokes integer of the
 figure-eight $4_1$ is a BPS/DT count:
 

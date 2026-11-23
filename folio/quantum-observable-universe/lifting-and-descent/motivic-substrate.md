@@ -1,4 +1,3 @@
-**Definition (motivic substrate, axiom).**
 The **motivic substrate** of the QOU framework is the triple
 $$
   \mathcal{S}_{\mathrm{mot}}

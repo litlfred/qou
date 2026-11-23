@@ -4,7 +4,7 @@ The QOU framework is parameter-time-symmetric: the substrate $q \in \mathbb{R}_{
 
 Both endpoints are singular limits in the archimedean sense. Standard physics treats these as unattainable.
 
-**Conjecture.** The Big Bang and heat-death endpoints are the standard-part of evaluation at specific named surreals.
+The Big Bang and heat-death endpoints are the standard-part of evaluation at specific named surreals.
 
 Let $\mathbf{QOU}_{1 + \varepsilon}$ be the surreal QOU at $q = 1 + \varepsilon$. Define
 $$

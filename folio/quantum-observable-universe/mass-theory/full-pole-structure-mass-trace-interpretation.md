@@ -1,4 +1,3 @@
-**Remark (what the Mittag-Leffler picture actually was).**
 *The earlier "$\sum_{n,j} r_n^{(j)}/(q_0 - \zeta_n^{(j)})$" expression
 is a formal residue spectral sum
 ([GB residue spectral sum](#prop:gb-residue-spectral-sum)) — a

@@ -1,4 +1,4 @@
-## Proof sketch
+**Sketch.**
 
 **(i)** The Hecke algebra $H_r(q)$ is semisimple for generic $q$,
 so $\mathrm{End}_{H_r(q)}(V^{\otimes r})$ decomposes as

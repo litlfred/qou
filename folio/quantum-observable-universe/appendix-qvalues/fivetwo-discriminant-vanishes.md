@@ -1,4 +1,4 @@
-**Proposition.** *The discriminant of the GGM curve vanishes somewhere on the
+*The discriminant of the GGM curve vanishes somewhere on the
 unit circle:*
 
 $$

@@ -1,4 +1,3 @@
-*Proof.*
 The equality $W_{\mathrm{sym}} = W_{\mathrm{alt}}$ follows from
 $\dim_q(\lambda_{\mathrm{sym}}) = \dim_q(\lambda_{\mathrm{alt}}) = 1$
 for the one-dimensional representations of $H_3(R, q)$.

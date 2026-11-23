@@ -1,4 +1,4 @@
-*Proof.* Write $X$ for a polynomial variable and $p(X) = X^{2} - hX - 1$. The quadratic relation $\sigma^{2} = h\sigma + 1$ says $p(\sigma) = 0$, so any polynomial in $\sigma$ can be reduced modulo $p$ before the trace is taken. By linearity, $\mathrm{tr}(aX + b)|_{X=\sigma} = a z + b$.
+Write $X$ for a polynomial variable and $p(X) = X^{2} - hX - 1$. The quadratic relation $\sigma^{2} = h\sigma + 1$ says $p(\sigma) = 0$, so any polynomial in $\sigma$ can be reduced modulo $p$ before the trace is taken. By linearity, $\mathrm{tr}(aX + b)|_{X=\sigma} = a z + b$.
 
 **Variance.** In $K[X]$,
 $$

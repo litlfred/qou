@@ -1,4 +1,3 @@
-**Algorithm (Gröbner–Shirshov reduction to Hecke normal form).**
 *Quotient a braid-word $w \in B_n$ by the Hecke relation
 $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ to produce its canonical
 representative $\mathrm{NF}(w) \in H_n(q)$.*

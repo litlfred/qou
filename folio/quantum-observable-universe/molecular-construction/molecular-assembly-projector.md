@@ -1,4 +1,3 @@
-**Definition.**
 *Let $\lambda$ be a strand-partition of $N$ and $\mu \vdash N$ a Wedderburn block of $H_N(q)$. The **assembly projector** $e_{\lambda,\mu} \in H_N(q)$ is the canonical idempotent projecting the composite's module onto the irreducible block $\mu$.*
 
 It is the $q$-Young symmetriser for the pair $(\lambda,\mu)$. The distinguished case $\mu = (N)$—projection onto the one-row symmetric block—is delocalisation.

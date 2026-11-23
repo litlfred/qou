@@ -1,5 +1,5 @@
-**Proposition (conditional on the identification
-`BWVacuumRowIsHecke`).**
+**Conditional on the identification
+`BWVacuumRowIsHecke`.**
 *Let the binding residual's isovector (bar-odd) part be the chiral residue of the
 $W_\lambda$ Plancherel measure $\mu(\lambda) = d_q(\lambda)^2/D^2$ — i.e. the
 chiral part $\mathfrak{m}_{\mathrm{chiral}}$ of the categorical mass

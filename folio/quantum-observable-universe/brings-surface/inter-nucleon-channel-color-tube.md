@@ -1,4 +1,4 @@
-**Conjecture (conditional on the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action conjecture).** The canonical inter-nucleon Hecke channel assignment for the atomic braid word—currently realised as the uniform-flavor map $\mathrm{pp} \mapsto \sigma$, $\mathrm{nn} \mapsto \sigma^{-1}$, $\mathrm{pn} \mapsto \sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2$—is the **flavor-only projection** of a categorically-refined *color-tube weighted* assignment derived from the Bring color-tube structure on the quintic.
+**Conditional on the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action conjecture.** The canonical inter-nucleon Hecke channel assignment for the atomic braid word—currently realised as the uniform-flavor map $\mathrm{pp} \mapsto \sigma$, $\mathrm{nn} \mapsto \sigma^{-1}$, $\mathrm{pn} \mapsto \sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2$—is the **flavor-only projection** of a categorically-refined *color-tube weighted* assignment derived from the Bring color-tube structure on the quintic.
 
 ## Setup
 
@@ -7,7 +7,7 @@ Each nucleon carries 3 quark color sheets. The nucleon type fixes the quark-flav
 - **proton** (uud): color sheets $(\mu_u, \mu_u, \mu_d)$
 - **neutron** (udd): color sheets $(\mu_u, \mu_d, \mu_d)$
 
-The atomic braid word places one inter-nucleon Hecke generator at every position $3k + 2$ for each adjacent nucleon pair $k, k+1$ with $k = 0, \ldots, A - 2$. This gives $A - 1$ inter-nucleon arcs total (matching [`isotope_record_schema.build_knot_operator_catalogue`](../../../computations/isotope_record_schema.py) lines 248-262 and [Canonical-braid interface composition $(n_{pp}, n_{pn}, n_{nn})$ for atom $(Z, N)$ in pppnnn ordering](../mass-theory/canonical-braid-interface-composition.md)). The current production assignment treats each such generator as a single element of the Hecke algebra $H_{3A}(q)$—one $\sigma$ for pp, one $\sigma^{-1}$ for nn, one $\sigma_{\mathrm{avg}}$ for pn—regardless of which flavor triple across the three color sheets pairs across the inter-nucleon arc.
+The atomic braid word places one inter-nucleon Hecke generator at every position $3k + 2$ for each adjacent nucleon pair $k, k+1$ with $k = 0, \ldots, A - 2$. This gives $A - 1$ inter-nucleon arcs total (matching [Canonical-braid interface composition $(n_{pp}, n_{pn}, n_{nn})$ for atom $(Z, N)$ in pppnnn ordering](../mass-theory/canonical-braid-interface-composition.md)). The current production assignment treats each such generator as a single element of the Hecke algebra $H_{3A}(q)$—one $\sigma$ for pp, one $\sigma^{-1}$ for nn, one $\sigma_{\mathrm{avg}}$ for pn—regardless of which flavor triple across the three color sheets pairs across the inter-nucleon arc.
 
 ## The conjectural refinement
 

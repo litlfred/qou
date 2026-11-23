@@ -1,6 +1,5 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$, $V$ the fundamental representation, $q$ real and not a root of unity, and $\mathrm{tr}_M$ the Markov trace at $z = q^3/(q^2+1)$. Let $\varrho \colon \mathbf{1} \to A$ be a closed cycle with braid representative $\beta \in B_n$.
 
-**Proposition.**
 *The Feynman transition amplitude evaluated on the knot-type eigenbasis equals the Jones--Markov trace of the braid representation in the Hecke algebra:*
 
 $$

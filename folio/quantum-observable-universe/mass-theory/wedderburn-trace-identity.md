@@ -1,4 +1,3 @@
-**Proposition (Markov-trace normalization).**
 *Let $R$ be a field of characteristic $0$ and $q \in R^\times$ with
 $[k]_q \neq 0$ for $2 \le k \le n$, so that $H_n(R, q)$ is semisimple
 and the convention-D Markov parameter $z = q^3/(q^2+1)$ is defined

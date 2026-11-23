@@ -1,5 +1,3 @@
-**Remark (Hecke-algebraic structure).**
-
 The Hecke-algebraic formulation of the Bohr radius possesses three structural properties.
 
 #### Additive decomposition in $\{h_b, h_d\}$

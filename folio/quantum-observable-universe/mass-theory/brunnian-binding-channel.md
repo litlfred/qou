@@ -1,4 +1,4 @@
-**Proposition.** *Let a nuclear composite be assembled from component knots whose pairwise
+*Let a nuclear composite be assembled from component knots whose pairwise
 inter-component linking pattern is Brunnian — every pairwise Gauss linking number vanishes, as for
 the Borromean carrier $\mathrm{L6a4}$ of ${}^3\mathrm{He}$/${}^4\mathrm{He}$. Then the mutual
 binding contribution to the [crossing energy](#def:crossing-energy) is carried entirely by the

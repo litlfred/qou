@@ -1,4 +1,4 @@
-**Proposition.** *Let $q \in \mathbb{R}$ with $q > 0$ and $q \neq 1$, and set*
+*Let $q \in \mathbb{R}$ with $q > 0$ and $q \neq 1$, and set*
 
 $$
   \delta(q) = q + q^{-1}, \qquad \Delta(q) = \tfrac{1}{2}\,\delta(q).

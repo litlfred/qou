@@ -1,4 +1,3 @@
-*Proof.*
 Direct expansion yields:
 
 $$

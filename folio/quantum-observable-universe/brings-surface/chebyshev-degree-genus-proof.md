@@ -1,4 +1,3 @@
-**Proof.**
 The Hecke relation $T^2 = s T + \mathbf{1}$ (where $s = q - q^{-1}$)
 gives the recurrence $a_{n+1} = s \cdot a_n + a_{n-1}$ with
 $a_0 = 0$, $a_1 = 1$.  For odd $n$, each step increases the

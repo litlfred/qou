@@ -1,4 +1,3 @@
-*Proof.*
 The torus knot $T(2,n)$ on Bring's surface wraps $2$ times around the meridian and $n$ times around the longitude. The number of connected components is $\gcd(2, n)$.
 
 **Case $n$ odd** ($\gcd(2,n) = 1$): $T(2,n)$ is a knot with one connected component. This single component winds around the Reeb direction ([categorical Reeb](#def:categorical-reeb)) with nonzero winding number. In the weight decomposition, the vertical projection $\pi_V$ detects this winding: $\pi_V(\alpha) \neq 0$. The particle is a **fermion**.

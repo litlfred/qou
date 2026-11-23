@@ -1,4 +1,4 @@
-*Proof.* By definition $B^{\mathrm{pred}} - B = (M_{\mathrm{free}} -
+By definition $B^{\mathrm{pred}} - B = (M_{\mathrm{free}} -
 M_{\mathrm{bound}}(1+\delta)) - (M_{\mathrm{free}} - M_{\mathrm{bound}}) =
 -\delta\,M_{\mathrm{bound}}$. Dividing by $B$ gives
 $-\delta\,M_{\mathrm{bound}}/B = -\delta\,(M_{\mathrm{bound}}/B)$. The

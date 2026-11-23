@@ -1,4 +1,3 @@
-**Remark (prior art: a geometric form of the triple-linking residue).**
 Let $\delta$ be the greatest common divisor of the pairwise linking numbers of components $L_i, L_j, L_k$. Mellor and Melvin prove that for any choice of Seifert surfaces $F = F_i \cup F_j \cup F_k$,
 $$
 \bar\mu_{ijk} \equiv m_{ijk}(F) - t_{ijk}(F) \pmod{\delta},

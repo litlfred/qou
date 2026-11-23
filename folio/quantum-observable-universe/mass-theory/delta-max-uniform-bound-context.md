@@ -1,4 +1,4 @@
-*Remark.* This proposition is tightly coupled to the
+This proposition is tightly coupled to the
 $\Phi_q$-tower binding pipeline. The active framework instead
 uses JSJ decomposition with hyperbolic volumes; the result here
 is retained as the analogous tail bound on the $\Phi_q$ side and

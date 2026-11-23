@@ -1,4 +1,3 @@
-**Remark.**
 The classification of [prop:s5-equivariant-torus-knots](#prop:s5-equivariant-torus-knots) admits a sharp physical reading. The three charged lepton generations map to torus knots:
 
 $$

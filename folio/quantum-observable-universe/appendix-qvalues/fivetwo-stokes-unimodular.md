@@ -1,4 +1,4 @@
-**Proposition.** *Let $S^{+}(0)$ and $S^{-}(0)$ be the leading ($q \to 0$)
+*Let $S^{+}(0)$ and $S^{-}(0)$ be the leading ($q \to 0$)
 coefficient matrices of the $5_2$ Stokes sandwich, as $3 \times 3$ integer
 matrices. Then*
 

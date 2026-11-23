@@ -1,4 +1,4 @@
-*Proof that $\prec_c$ is well-founded on $W_n$.*
+**Well-foundedness of $\prec_c$ on $W_n$.**
 Let $S \subseteq W_n$ be non-empty.
 
 (a) **Degree is bounded below.**  Every $w \in W_n$ has

@@ -6,7 +6,7 @@ $$
 W \;=\; \sigma^{-1} P_L + \sigma\, P_R .
 $$
 
-**Proposition.** The difference between the weak vertex and the free crossing is a multiple of the left projector:
+The difference between the weak vertex and the free crossing is a multiple of the left projector:
 
 $$
 W - \sigma \;=\; -(q - q^{-1})\, P_L .

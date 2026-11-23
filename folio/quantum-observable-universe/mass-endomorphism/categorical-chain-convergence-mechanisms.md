@@ -1,4 +1,4 @@
-**Proposition (conditional on [exponential decay of the archimedean brane-tower truncation remainder](#conj:archimedean-remainder-exponential-decay)).** **Categorical-chain convergence: per-knot finite truncation + inter-knot linking-number locality.**
+**Conditional on [exponential decay of the archimedean brane-tower truncation remainder](#conj:archimedean-remainder-exponential-decay).** **Categorical-chain convergence: per-knot finite truncation + inter-knot linking-number locality.**
 
 The categorical-derivation precision ladder $\mathfrak{Q}_\beta^{\text{cat}}$ is formally an **infinite product** in the Habiro ring (cyclotomic-Pochhammer completion of $\mathbb{Z}[q]$). For any **single isolated knot**, this product reduces to a **finite truncation** at sub-CODATA precision through two convergence mechanisms.
 

@@ -1,4 +1,4 @@
-**Proposition.** *Let $\mathbf{A}$ be a ring carrying a Hecke generator
+*Let $\mathbf{A}$ be a ring carrying a Hecke generator
 $\sigma$ with $\sigma^2 = h\,\sigma + 1$, and let $\mathrm{tr}$ be linear with
 $\mathrm{tr}(1) = 1$. If $\mathrm{tr}(\sigma) = z$ and Markov stabilisation
 $\mathrm{tr}(W\sigma) = z\,\mathrm{tr}(W)$ is assumed at $W = \sigma$, then*

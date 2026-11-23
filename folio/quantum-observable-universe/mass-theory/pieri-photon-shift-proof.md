@@ -1,4 +1,3 @@
-**Proof.**
 Let $\gamma = \gamma(\varphi)$ be a [photon](#def:photon). Its
 degree-one specialisation $\varphi_{01} = 0$ is the element of the
 [degree-one volume lemma](#lem:degree-one-braid-trivial-volume).

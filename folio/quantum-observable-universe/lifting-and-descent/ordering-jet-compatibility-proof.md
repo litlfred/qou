@@ -1,4 +1,3 @@
-*Proof.*
 (1) **Extension.**  At level $n$, the Hecke basis of $A_n$
 is a monomial basis $B_n$ in the generators
 $\sigma_1^{(n)}, \ldots, \sigma_{d_n - 1}^{(n)}$.  The jet

@@ -1,4 +1,4 @@
-**Proposition.** *Let $G = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$ be the gauge group of [the emergence theorem](#thm:su2-emergence), with simple objects $V_j$ labelled by [spin](#prop:spin-labels) and adjoint $V_1 \cong \mathrm{Ad}(A)$. Then*
+*Let $G = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$ be the gauge group of [the emergence theorem](#thm:su2-emergence), with simple objects $V_j$ labelled by [spin](#prop:spin-labels) and adjoint $V_1 \cong \mathrm{Ad}(A)$. Then*
 
 $$
   \mathrm{Sym}^2(V_1) \;\cong\; V_0 \oplus V_2,

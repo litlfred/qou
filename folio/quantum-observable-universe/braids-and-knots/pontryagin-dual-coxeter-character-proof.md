@@ -1,5 +1,3 @@
-## Proof
-
 The proof splits into two short verifiable observations:
 
 1. **Self-duality of $\mathbb{Z}/2$.** Every additive homomorphism

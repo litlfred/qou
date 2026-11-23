@@ -1,5 +1,3 @@
-**Conjecture (cyclotomic boundary at the quintic order).**
-
 The binding $q$-deformation of the na-Stokes period
 $S(n) = \sum_{\lambda \vdash n} \dim_q(\lambda)$ satisfies the recurrence
 

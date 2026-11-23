@@ -1,4 +1,3 @@
-**Definition.**
 *Fix the substrate parameter $q$. Sort the Wedderburn-block knot operators by energy:*
 
 $$

@@ -1,4 +1,3 @@
-**Algorithm ($\mathfrak{Q}_\beta$ truncation ladder).**
 *Evaluate $\beta$-decay $Q$-values via the convergent series
 $\mathfrak{Q}_\beta = Q_{\mathrm{base}} \cdot \prod_{k = 2}^{N} (1 + c_k\, u^k)$
 with $u = b \cdot \hbar_q^2 \approx 0.00852$, truncating at order

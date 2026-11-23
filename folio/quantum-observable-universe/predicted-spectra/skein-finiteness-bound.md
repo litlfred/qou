@@ -1,6 +1,5 @@
 ## The finiteness inequality
 
-**Proposition.**
 *A nuclear configuration $\mathcal{N}(p, n)$ is stable only if the Skein polynomial is positive,*
 
 $$

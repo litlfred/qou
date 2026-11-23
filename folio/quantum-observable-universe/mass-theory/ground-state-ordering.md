@@ -1,4 +1,3 @@
-**Proposition (negative).**
 *Let $Z$ protons and $N$ neutrons ($A = Z + N$) be arranged along the
 transfer-matrix chain, and let*
 

@@ -1,5 +1,3 @@
-**Conjecture (bar-parity conjugate faces).**
-
 Let $\mathcal{K}$ be the rank-$2$ $q$-difference module of the binding $q$-lift
 recurrence
 $[m+2]_q\,b_{m+2}=b_{m+1}+b_m$
@@ -72,10 +70,10 @@ McSpirit and Rolen prove that cusp forms of integral or half-integral weight,
 Eichler integrals of such cusp forms, and two periodic functions attached to
 weight-$\tfrac12$ Maass and Eisenstein data are holomorphic quantum modular
 forms whose modular obstruction $h_\gamma$ is a Borel--Laplace sum of the
-asymptotic series at the cusp $\gamma^{-1}(i\infty)$ \cite[\S1.1, Thm.~1.5]{mcspirit-rolen2025};
+asymptotic series at the cusp $\gamma^{-1}(i\infty)$ \cite[§1.1, Thm. 1.5]{mcspirit-rolen2025};
 for the half-integral weight Eichler integrals and the two periodic functions,
 the median resummation of the asymptotic series recovers the function
-\cite[Cor.~1.6]{mcspirit-rolen2025}. Those results apply to $\mathcal{G}$ or
+\cite[Cor. 1.6]{mcspirit-rolen2025}. Those results apply to $\mathcal{G}$ or
 $\mathcal{K}$ only after their solutions are shown to lie in one of the six
 classes of Thm.~1.5. Neither module is presented here in that form: both are
 given by $q$-difference recurrences and their Newton polygons, not as Eichler

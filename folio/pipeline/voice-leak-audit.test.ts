@@ -102,6 +102,8 @@ describe("owner ruling 2026-11-21 (conditional banners may point ahead)", () => 
   it("finds single- and multi-line banners, not ordinary prose", () => {
     expect([...bannerLines("**Proposition (conditional on [X](#conj:x)).**\nbody [Y](#prop:y)")]).toEqual([0]);
     expect([...bannerLines("**Proposition (conditional on\n[X](#conj:x)).**\nbody")]).toEqual([0, 1]);
+    expect([...bannerLines("**Conditional on [X](#conj:x).**\nbody [Y](#prop:y)")]).toEqual([0]);
+    expect([...bannerLines("**Within a QOU with $2 \\mid \\chi(A)$; conditional on [X](#conj:x).**\nbody")]).toEqual([0]);
     expect([...bannerLines("this is conditional on [X](#conj:x).")]).toEqual([]);
   });
 });

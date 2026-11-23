@@ -1,4 +1,3 @@
-**Remark (prior art: the adjoint torsion as a derivative, with a signed duality).**
 Let $M$ be a hyperbolic $3$-manifold whose boundary is $b$ tori, $\rho$ an irreducible $\mathrm{SL}_2(\mathbb{C})$-representation on the geometric component, and $\varphi\colon \pi_1(M) \to \mathbb{Z}^n$ a surjection. Dubois and Yamaguchi define the twisted Alexander invariant $\Delta^{\varphi \otimes \mathrm{Ad}\circ\rho}_M$ as the torsion of an acyclic complex, show that it is a Laurent polynomial up to a monomial factor, and prove that its limit at $t_1, \ldots, t_n \to 1$, divided by one factor $t^{a^{(\ell)}} - 1$ per boundary torus, is $(-1)^b$ times the non-abelian (adjoint) Reidemeister torsion $\mathbb{T}^M_\lambda(\rho)$ \cite[\S 1, p. 2]{dubois-yamaguchi2012}. They also prove a signed duality: for a link exterior,
 $$
 \Delta^{\varphi \otimes \mathrm{Ad}\circ\rho}_{E_L}(t^{-1}) = (-1)^b\, \Delta^{\varphi \otimes \mathrm{Ad}\circ\rho}_{E_L}(t)

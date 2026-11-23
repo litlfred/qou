@@ -1,4 +1,4 @@
-**Conjecture (conditional).**
+**(Conditional.)**
 Under the [Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)
 applied to an atomic Hecke element $T_w$ with `Markov closure` knot/link
 $K_w$, the multiplicative density prefactor
@@ -86,7 +86,7 @@ which reduces to $\det(I - A)$ at $q = 1$ where the MacMahon Master
 Theorem inverts it as $\sum_n \mathrm{tr}\,S^n(A)$, every knot diagram
 $K$ has an arc-graph matrix $B'_K$ with
 $J_n(K,q) = q^{\delta(K,n)} / \mathrm{Ferm}(B'_K)$, $n$-evaluated
-\cite[\S1, Def.~1.4 and Thm.~2]{garoufalidis-loebl2005}. That theorem
+\cite[§1, Def. 1.4 and Thm. 2]{garoufalidis-loebl2005}. That theorem
 expresses $J_n$ as the inverse of a non-commutative fermionic partition
 function; it is not a statement about Wedderburn multiplicities of
 $H_n(q)$, so the identification of $\nu_{\mathrm{SDP}}$ as a

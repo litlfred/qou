@@ -1,4 +1,4 @@
-**Conjecture (Casimir force as standard-part of $\varepsilon$-vacuum density gradient).** Assume the [$\varepsilon$-relaxed vacuum axiom](#conj:vacuum-epsilon). Let two parallel conducting plates of area $A$ separated by $d$ constrain the unknot-component count of the vacuum to a surreal-valued density $N_{\bigcirc}^{\text{in}}(A, d)$ between the plates and $N_{\bigcirc}^{\text{out}}(A, d)$ outside. The standard Casimir force per unit area
+Assume the [$\varepsilon$-relaxed vacuum axiom](#conj:vacuum-epsilon). Let two parallel conducting plates of area $A$ separated by $d$ constrain the unknot-component count of the vacuum to a surreal-valued density $N_{\bigcirc}^{\text{in}}(A, d)$ between the plates and $N_{\bigcirc}^{\text{out}}(A, d)$ outside. The standard Casimir force per unit area
 $$
   \frac{F_{\text{Cas}}(d)}{A} \approx -\frac{\pi^{2}\hbar c}{240 d^{4}}
 $$

@@ -132,8 +132,7 @@ $$
 
 The correction $(\alpha_{\mathrm{em}}/\pi) / \dim H_3 = (\alpha_{\mathrm{em}}/\pi) / 6$
 appeared at 0.054 ppm (vs the bare identity's 32 ppm residual to integer
-12) — a $600\times$ improvement, computed by
-[`ocneanu-12-em-correction-candidate`](../../../computations/ocneanu_12_em_correction_candidate.py).
+12) — a $600\times$ reduction in the residual.
 Both factors are structurally motivated: $(\alpha_{\mathrm{em}}/\pi)$
 appears in m_K/m_π's Bring zero-mode closure, and
 $1/\dim H_3$ is the Plancherel-mean normalization over the H_3

@@ -1,5 +1,3 @@
-*Proof.*
-
 Each $\{\lambda : \mathrm{depth}(\lambda) = k\}$ is finite, so each
 $\Phi_k$ is a finite $R$-valued sum.  By
 [curvature-rank stratification](#conj:curvature-rank-gb-stratification),

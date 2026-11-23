@@ -1,4 +1,3 @@
-**Conjecture (atom-braid exterior-algebra structure).**
 *Let $T_w(Z, N) \in H_{3A}(q)$ denote the canonical atomic Hecke word. It generates a sub-algebra whose Gröbner-Shirshov normal-form filtration shape is given by:*
 
 $$

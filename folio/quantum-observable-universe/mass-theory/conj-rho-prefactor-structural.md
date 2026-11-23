@@ -1,4 +1,3 @@
-**Conjecture (structural multiplicity $\rho$).**
 *The SDP multiplicity $\rho$ for a confined particle $\mathfrak{H}$ equals the nearest integer to the quantum dimension of the dominant Wedderburn block:*
 
 $$

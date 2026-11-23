@@ -1,4 +1,3 @@
-**Conjecture (Bring trilog at $\zeta_5$ as depth-3 grouplike value).**
 *The depth-3 grouplike of $\mathcal{H}_q$ at the primitive 5th root of unity $\zeta_5$ maps under archimedean realisation to a class in $\mathcal{P}_3 / \mathcal{P}_2$:*
 
 $$

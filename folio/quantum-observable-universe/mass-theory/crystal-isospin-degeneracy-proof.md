@@ -1,4 +1,3 @@
-**Proof.**
 The crystal-limit character $\chi^\lambda_{\mathrm{crystal}}(\sigma)$
 on a single Hecke generator $\sigma$ is, by
 [crystal-graph realisation](#conj:crystal-graph-realization),
@@ -88,7 +87,7 @@ which records both values to fifty decimal digits as
 $0.0020612874779541296$.*
 
 **Caveat — this corollary is *not* a statement about physical
-${}^3\mathrm{H}$ vs.\ ${}^3\mathrm{He}$.** Under the canonical
+${}^3\mathrm{H}$ vs. ${}^3\mathrm{He}$.** Under the canonical
 $\bowtie_K$-coupled convention
 the canonical formalism,
 ${}^3\mathrm{H}$ has interface types $(pn{=}\bowtie_K,\;nn{=}\sigma^{-1})$

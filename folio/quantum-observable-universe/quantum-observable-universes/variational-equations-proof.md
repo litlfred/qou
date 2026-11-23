@@ -1,4 +1,3 @@
-
 Each equation is obtained by computing
 $\delta\mathfrak{S}_q = 0$ with respect to the indicated variable, using
 the non-degeneracy of $\int_A$.

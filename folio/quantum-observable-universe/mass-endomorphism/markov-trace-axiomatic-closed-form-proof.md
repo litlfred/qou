@@ -1,5 +1,3 @@
-## Proof
-
 **Step 1: Hecke-power recurrence.** One applies the Hecke quadratic relation iteratively. One sets $\sigma_i^k = a_k\sigma_i + b_k$ with $a_k, b_k \in \mathbb{Z}[h]$. Multiplying by $\sigma_i$ yields:
 
 $$

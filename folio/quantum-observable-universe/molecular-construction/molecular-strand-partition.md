@@ -1,4 +1,3 @@
-**Definition.**
 *Let a molecule be assembled from $k$ sub-units carrying strand counts $n_1,\dots,n_k$. The **molecular strand-partition** is the composition*
 
 $$

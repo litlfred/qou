@@ -36,7 +36,7 @@ $$
   \;=\; \frac{1}{q(q^2+1)}
   \;\approx\; 0.4036
 $$
-at $q_0$ ($0.290$ under the excised convention C) ([Markov axioms](#rem:markov-axioms-primitive)). This is the value the pyhecke normal-form reduction computes for $\mathrm{tr}_M(\sigma_i^{-1})$; it is neither $z_{\mathrm{m}}$ nor $z_{\mathrm{m}}^{-1}$.
+at $q_0$ ($0.290$ under the excised convention C) ([Markov axioms](#rem:markov-axioms-primitive)). This is the value that Hecke normal-form reduction yields for $\mathrm{tr}_M(\sigma_i^{-1})$; it is neither $z_{\mathrm{m}}$ nor $z_{\mathrm{m}}^{-1}$.
 
 **Block weights.** The two loop values jointly determine the Wedderburn block weights of the trace in closed form:
 
@@ -49,11 +49,11 @@ $$
   \frac{z_{\mathrm{m}}\,q^{c(x)} - z_{-}\,q^{-c(x)}}{q^{h(x)} - q^{-h(x)}},
 $$
 
-with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified exactly for every $\lambda \vdash n \leq 5$ ([witness](../../../computations/markov-trace-weights-wenzl.witness.json)). The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
+with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified exactly for every $\lambda \vdash n \leq 5$. The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
 
-**Convention.** The parameter $z_{\mathrm{m}} = q^3/(q^2+1)$ is **convention D** of the [trace-convention registry](../../../docs/coordination/trace-convention-registry.md), registered for the **mass** and **binding** channels in both their definitional and production layers, whereas convention C ($z_{\mathrm{C}} = \sqrt{q}/(1+q)$, the full-Hecke Ocneanu/Wenzl $z$-trace) is excised for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$.
+**Convention.** The parameter $z_{\mathrm{m}} = q^3/(q^2+1)$ is **convention D**, used for the **mass** and **binding** channels across the monograph, whereas convention C ($z_{\mathrm{C}} = \sqrt{q}/(1+q)$, the full-Hecke Ocneanu/Wenzl $z$-trace) is excised for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$.
 
-**A structural separation between the two conventions.** The justification on record for the convention-D ruling is empirical — the $195.8$ ppm and $-197$ ppm figures above. There is also a structural one, and it involves no anchor, no measurement and no ppm figure. Using $\hbar_\times = q - q^{-1}$ and $[2]_q^2 - \hbar_\times^2 = 4$, the two loop values of convention D satisfy
+**A structural separation between the two conventions.** One motivation for convention D is empirical — the $195.8$ ppm and $-197$ ppm figures above. There is also a structural one, and it involves no anchor, no measurement and no ppm figure. Using $\hbar_\times = q - q^{-1}$ and $[2]_q^2 - \hbar_\times^2 = 4$, the two loop values of convention D satisfy
 
 $$
   z_{-} \;=\; \frac{1}{q(q^2+1)} , \qquad

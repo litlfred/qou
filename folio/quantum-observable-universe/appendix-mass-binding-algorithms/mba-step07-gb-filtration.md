@@ -1,4 +1,3 @@
-**Algorithm (Gröbner–Shirshov length filtration).**
 *Compute the length filtration on $H_n(q)$ and the length grade of
 each normal form.*
 

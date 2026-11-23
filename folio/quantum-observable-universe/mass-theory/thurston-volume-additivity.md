@@ -2,7 +2,6 @@
 
 Every hyperbolic knot complement admits an ideal triangulation by tetrahedra with vertices on the sphere at infinity. A single complex shape parameter $z_i$ determines each tetrahedron up to isometry.
 
-**Proposition.**
 *The hyperbolic volume of the knot complement $S^3 \setminus \mathcal{K}$ is the sum of its tetrahedral volumes:*
 
 $$
@@ -13,7 +12,7 @@ $$
 
 *where $D(z_i)$ is the Bloch-Wigner dilogarithm evaluated at the shape parameter. Flat tetrahedra ($z_i \in \mathbb{R}$) contribute zero volume.*
 
-The sum does not depend on the ideal triangulation chosen. More generally, for any representation $\rho\colon \pi_1(M) \to \mathrm{Isom}^+(\mathbb{H}^3)$ of a cusped orientable 3-manifold $M$, the volume of $\rho$ is well defined and equals the volume obtained by straightening any ideal triangulation of $M$ \cite[\S2]{francaviglia2003}.
+The sum does not depend on the ideal triangulation chosen. More generally, for any representation $\rho\colon \pi_1(M) \to \mathrm{Isom}^+(\mathbb{H}^3)$ of a cusped orientable 3-manifold $M$, the volume of $\rho$ is well defined and equals the volume obtained by straightening any ideal triangulation of $M$ \cite[§2]{francaviglia2003}.
 
 ## Braid-theoretic consequence
 

@@ -1,4 +1,3 @@
-**Definition.**
 A **quantum universe** is a tuple $(\mathbf{C}, A, \tau)$ consisting of:
 1. an $R$-linear braided [monoidal category](#def:rigid-monoidal-category) $\mathbf{C}$ over a commutative ring $R$, whose unit endomorphisms recover the ground ring: $R \xrightarrow{\ \sim\ } \mathrm{End}_{\mathbf{C}}(\mathbf{1})$, $r \mapsto r \cdot \mathrm{id}_{\mathbf{1}}$,
 2. a distinguished object $A \in \mathrm{Ob}(\mathbf{C})$ equipped with a Frobenius–Hopf algebra structure, spelled out in axiom 2,

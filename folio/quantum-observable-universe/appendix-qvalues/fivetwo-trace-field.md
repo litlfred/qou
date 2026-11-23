@@ -1,4 +1,4 @@
-**Proposition.** *Let $R$ be a commutative ring and let $y_1, y_2, y_3 \in R$
+*Let $R$ be a commutative ring and let $y_1, y_2, y_3 \in R$
 satisfy the Vieta relations of the $5_2$ saddle cubic,*
 
 $$

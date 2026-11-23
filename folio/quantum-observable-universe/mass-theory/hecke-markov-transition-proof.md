@@ -1,5 +1,3 @@
-## Proof
-
 **(i)** Direct computation from $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$.
 Since $\sigma_i$ satisfies a quadratic with distinct roots $q$ and
 $-q^{-1}$, the spectral projectors are

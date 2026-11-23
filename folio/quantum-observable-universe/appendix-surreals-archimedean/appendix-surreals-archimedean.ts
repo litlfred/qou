@@ -17,7 +17,7 @@ import { chapter } from "../../schema/builders";
  */
 export default chapter({
   label: "app:surreals-archimedean",
-  title: "Surreal-number lift at the substrate (archimedean appendix)",
+  title: "Surreal-number lift at the substrate",
   sections: [
     {
       title: "Substrate-pinned algebraic structure",

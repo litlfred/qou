@@ -1,4 +1,3 @@
-*Proof.*
 The $e_\lambda$ are orthogonal central idempotents, so
 $e_\lambda x = x e_\lambda$ and $\chi_\mu(e_\lambda x) = \delta_{\lambda\mu}\,\chi_\lambda(x)$
 for every $x \in A$. Hence

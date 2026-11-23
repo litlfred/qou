@@ -2,7 +2,6 @@ The Wedderburn--Artin decomposition of $H_3(q)$, combined with jet-descended con
 
 ## Statement
 
-**Proposition.**
 *The Markov trace decomposes as:*
 
 $$

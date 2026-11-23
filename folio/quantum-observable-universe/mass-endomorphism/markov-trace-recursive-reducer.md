@@ -1,6 +1,4 @@
-## Statement
-
-*Let $\beta \in B_n$ be any braid word. There is a terminating algorithm (implemented in Lean as the total function `trWord`) that returns a closed-form symbolic expression for $\mathrm{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
+*Let $\beta \in B_n$ be any braid word. There is a terminating structural recursion on words that returns a closed-form symbolic expression for $\mathrm{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
 - *the Hecke quadratic $\sigma_i^2 = h \sigma_i + 1$ (with $h = q - q^{-1}$);*
 - *the Markov axiom $\mathrm{tr}_M(\alpha \sigma_n) = z \mathrm{tr}_M(\alpha)$ for $\alpha \in H_n \subset H_{n+1}$, for the Markov parameter $z$;*
 - *cyclicity $\mathrm{tr}_M(\alpha\beta) = \mathrm{tr}_M(\beta\alpha)$;*
@@ -14,7 +12,7 @@ $$
 
 *The split form also holds: $\mathrm{tr}_M(\alpha \otimes \beta) = \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)$ for $\alpha \in H_k(q)$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}(q)$ on strands $\{k+2, \ldots, n\}$, separated by the unused generator $\sigma_{k+1}$.*
 
-The shared-strand law is formalised in Lean (`markovTrace_disjointProduct`). Correctness is formalised as uniqueness (`markovTrace_unique`): two traces satisfying the axioms with the same $z$ and $h$ agree on every positive word, so any procedure that uses only these axioms, the reducer included, returns the trace. Since $\sigma_i^{-1} = \sigma_i - h$, positive words suffice. The algorithm itself is implemented in Lean as `trWord`, a structurally recursive and therefore terminating function. It is proved that `trWord` is normalised (`trWord_nil`), stable under adding a strand (`trWord_stable`), and satisfies the Hecke relation (`trWord_hecke`), far commutation (`trWord_far_comm`), the braid relation (`trWord_braid`) and Markov stabilisation (`trWord_strip`). The disjoint-embedding axiom concerns only the shift map, which is satisfied by `β ↦ β.map (· + j)`. Cyclicity is proved too (`trWord_cyclic`), by Ocneanu's induction on the level, so `trWord` satisfies every axiom (`trWord_isMarkovTrace`). This gives existence of the trace for every $z$ and $h$ (Ocneanu), and with uniqueness every trace satisfying the axioms equals `trWord` (`isMarkovTrace_eq_trWord`). Shift invariance $\mathrm{tr}_M(\beta^{\uparrow}) = \mathrm{tr}_M(\beta)$ is the shared-strand law with $\alpha$ empty (`markovTrace_shift`), and the split form follows (`markovTrace_disjointProduct_split`).
+Correctness follows from uniqueness on positive words: any two linear functionals satisfying these axioms with the same $z$ and $h$ agree on every positive braid word, and since $\sigma_i^{-1} = \sigma_i - h$, positive words determine the trace on all of $B_n$. Conversely, defining the evaluator by structural recursion on positive words yields a terminating procedure that is normalised on the empty word, stable under strand addition, invariant under strand shift $\sigma_a \mapsto \sigma_{a+j}$, and compatible with the Hecke quadratic relation, far commutation, the braid relation, Markov stabilisation, and—by Ocneanu's induction on the strand index—cyclicity. This establishes existence of the Markov trace for arbitrary $z$ and $h$, and uniqueness identifies every trace satisfying the axioms with the recursive evaluator. Shift invariance $\mathrm{tr}_M(\beta^{\uparrow}) = \mathrm{tr}_M(\beta)$ is the shared-strand law with $\alpha$ empty, from which the split disjoint-product formula follows.
 
 The algorithm and its correctness are **parametric in $z$**: no step below
 evaluates the Markov parameter, so the statement holds for whatever value the
@@ -111,8 +109,7 @@ therefore restricts stripping, stability and cyclicity to words of $H_n$ and add
 the Hecke quadratic, braid and far-commutation relations. From these axioms it
 proves $\mathrm{tr}_M(\sigma_n^2) = hz + 1$ and the product law when $\beta$ is
 an ascending run $\sigma_{k+1}\cdots\sigma_{k+m}$, and the general product law
-by the reduction in the previous section (Lean: `markovTrace_disjointProduct`,
-sorry-free).
+by the reduction in the previous section.
 
 ## Empirical verification
 

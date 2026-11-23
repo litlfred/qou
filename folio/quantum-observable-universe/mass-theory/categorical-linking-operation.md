@@ -1,4 +1,3 @@
-**Conjecture (categorical linking operation $\mathrm{Lk}_R$).**
 *Let $\mathbf{C}$ be a rigid monoidal $R$-linear category with braiding $c_{X, Y}$, and let $A$ be the Frobenius-Hopf substrate. The **categorical linking operation** is the family of $R$-linear maps*
 
 $$

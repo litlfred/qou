@@ -1,4 +1,3 @@
-**Definition.**
 *The **proton** is the baryon governed by the $2 + 1$ crossing partition: two up quarks (positive orientation) and one down quark (negative orientation) bound within the Borromean braid $\mathcal{B}_3$.*
 
 $$

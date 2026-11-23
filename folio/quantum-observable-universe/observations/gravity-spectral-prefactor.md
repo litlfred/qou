@@ -1,4 +1,4 @@
-**Proposition (conditional on [binding scale from Catalan's constant](#conj:binding-scale-catalan)).**
+**Conditional on [binding scale from Catalan's constant](#conj:binding-scale-catalan).**
 
 *Working over $A = H_n(R, q)$, write the stratum-dependent prefactor of the universal curvature-rank tail $\mathfrak{m}^{\geq 4}_{q,\mathcal{K}}(\mathcal{T})$ of the unified mass formula ([universal residue](#prop:plancherel-term-7-formulation)) as $\alpha = m_e \cdot 8\,G_q$. If, as [binding scale from Catalan's constant](#conj:binding-scale-catalan) conjectures,*
 

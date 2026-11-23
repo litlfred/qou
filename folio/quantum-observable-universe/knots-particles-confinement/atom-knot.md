@@ -1,4 +1,3 @@
-**Definition.**
 *An **atom of type $(Z, N)$** is a closed braid $K$ whose Gröbner–Shirshov normal form in $H_{n(K)}(q)$ admits a block decomposition:*
 
 $$

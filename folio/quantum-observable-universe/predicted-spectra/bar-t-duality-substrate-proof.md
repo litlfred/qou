@@ -1,4 +1,3 @@
-*Proof.*
 The substitution $q \mapsto q^{-1}$ in the Weierstrass coefficients $p(q)$ and $r(q)$ yields rational functions $p^*(q) = p(q^{-1})$ and $r^*(q) = r(q^{-1})$, defining the curve $\mathcal{E}_{q^{-1}} : y^2 = x^3 + p^*(q)\,x + r^*(q)$. The map $\iota_* \colon \mathcal{E}_q \to \mathcal{E}_{q^{-1}}$ is defined by $(x, y, q) \mapsto (x, y, q^{-1})$ on the total space $\mathcal{X} = \{(x, y, q) : y^2 = x^3 + p(q)x + r(q)\}$ and is an involution since $\iota \circ \iota = \mathrm{id}$.
 
 (1) The condition $\Delta(\mathcal{E}_q) = -4p(q)^3 - 27r(q)^2 = 0$ at $q = 1/\varphi^2$ implies $\Delta(\mathcal{E}_{1/q}) = -4p(1/q)^3 - 27r(1/q)^2 = 0$ at $1/q = 1/\varphi^2$, meaning $q = \varphi^2$.

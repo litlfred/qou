@@ -1,4 +1,4 @@
-**Proof.** The Hoefsmit seminormal matrix for $\sigma_2$ on
+The Hoefsmit seminormal matrix for $\sigma_2$ on
 $V_{(2,1)}$ has a $2 \times 2$ block with entries
 
 $$

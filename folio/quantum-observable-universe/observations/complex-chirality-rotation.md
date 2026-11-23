@@ -1,6 +1,5 @@
 Let $q = |q|e^{i\theta}$ be a complex substrate parameter with $|q| > 1$ and $\theta \in (-\pi, \pi]$ ([complex substrate interpretation](#rem:complex-substrate-interpretation)).
 
-**Conjecture.**
 In the pre-observable sector (before the dagger positive-definiteness axiom), the phase $\theta$ controls the particle-antiparticle distinction:
 
 1. **Crossing energy phase.** For a torus knot $T_{p,k}$ with [crossing energy](#def:crossing-energy) $\mathcal{S}_c(T_{p,k}; q)$, the complex extension is:

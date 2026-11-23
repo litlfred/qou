@@ -1,4 +1,3 @@
-**Example.**
 Hydrogen $\mathcal{A}(1,0)$ derived from $3 \times \gamma\gamma$ pair production.
 
 ## Derivation chain

@@ -1,5 +1,3 @@
-## Proof
-
 **Step 1 — character values at $w_0$.** The longest element
 $w_0 \in S_3$ is the involution $(1\,3)$ (cycle type $[2,1]$).
 Standard $S_n$ character theory gives:

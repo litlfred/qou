@@ -1,5 +1,3 @@
-**Conjecture (reverse-limit closure — algebraic fragment).**
-
 *The Kashiwara crystal limit $q \to 0$ ([Crystal-limit isospin degeneracy](#prop:crystal-isospin-degeneracy)) has a structural counterpart at $q \to \infty$, related to the $q \to 0$ limit by the bar involution $q \mapsto q^{-1}$ ([Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution), D1).*
 
 *The $q \to \infty$ limit produces a "reverse crystal" whose combinatorial structure is the bar-image of the Kashiwara crystal, with the same combinatorial invariants but inverted $q$-character orderings. Together, the pair $(q \to 0, q \to \infty)$ + the classical limit $q = 1$ + the substrate $q = q_0$ form the complete picture of limit dualities on $H_n(q)$.*

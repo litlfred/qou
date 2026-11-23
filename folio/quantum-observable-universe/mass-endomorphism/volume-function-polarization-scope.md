@@ -1,4 +1,3 @@
-**Remark (prior art: the polarization choice in the deformed volume function away from $\operatorname{Re} u = 0$).**
 Murakami's parameterized volume conjecture relates the limit of $\log J_N\bigl(K; \exp((u + 2\pi\sqrt{-1})/N)\bigr)/N$ to the volume function $V(K;u)$ of the $SL(2;\mathbb{C})$ representation whose meridian has eigenvalue ratio $\exp(u)$, through
 $$
 V(K;u) = \operatorname{Im} H(K;u) - \pi \operatorname{Re}(u) - \tfrac{1}{2}\operatorname{Re}(u)\operatorname{Im} v_K(u)

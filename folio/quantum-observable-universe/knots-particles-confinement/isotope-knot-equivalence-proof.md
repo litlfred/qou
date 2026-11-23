@@ -1,5 +1,3 @@
-*Proof.*
-
 - ***Reflexivity:*** *$K \sim K$ by definition since $w_{q^Z}^{(1)} = w_{q^Z}^{(2)} = w_{q^Z}$ for $K_1 = K_2$.*
 
 - ***Symmetry:*** *$K_1 \sim K_2$ iff $w_{q^Z}^{(1)} = w_{q^Z}^{(2)}$, which is symmetric in $K_1, K_2$.*

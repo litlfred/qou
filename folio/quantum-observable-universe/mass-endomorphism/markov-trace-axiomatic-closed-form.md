@@ -1,5 +1,3 @@
-## Statement
-
 *Let $H_n(q)$ denote the Iwahori-Hecke algebra of type $A_{n-1}$ with Hecke quadratic relation:*
 
 $$

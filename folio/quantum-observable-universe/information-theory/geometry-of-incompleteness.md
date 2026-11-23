@@ -1,4 +1,4 @@
-**Theorem (geometry of incompleteness).** *Given a QOU whose substrate is Turing-complete, the jet horizon $\mathcal{H} = V(\mathfrak{h})$ is non-empty: there exists a degree-0 datum whose truth is inaccessible. Equivalently, the degree-0 sections vanish on a non-trivial region, $\Gamma(\mathcal{H}, A_0) = 0$.*
+*Given a QOU whose substrate is Turing-complete, the jet horizon $\mathcal{H} = V(\mathfrak{h})$ is non-empty: there exists a degree-0 datum whose truth is inaccessible. Equivalently, the degree-0 sections vanish on a non-trivial region, $\Gamma(\mathcal{H}, A_0) = 0$.*
 
 A **degree-0 datum** is an observable answer read off the substrate — a decision result, a particle identity, or the truth value of a self-referential sentence. It is **inaccessible** — behind the horizon — when it fails either route to access:
 

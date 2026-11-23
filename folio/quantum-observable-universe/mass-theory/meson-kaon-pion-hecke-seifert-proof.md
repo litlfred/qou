@@ -1,4 +1,3 @@
-**Proof.**
 The algebraic factor arises from the Hecke representation theory
 of $H_3(q_0)$.  On the standard $(2,1)$ irreducible representation,
 $\sigma_1$ acts diagonally in the Hoefsmit seminormal basis with

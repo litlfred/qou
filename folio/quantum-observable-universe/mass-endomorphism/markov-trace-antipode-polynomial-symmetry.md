@@ -1,5 +1,3 @@
-## Statement
-
 *Let $\mathcal{B}_p$ denote the proton braid in $B_3$ used in [Atomic mass as Markov trace of the Gröbner–Shirshov normal form](#prop:atomic-mass-gb-nf). Let*
 
 $$

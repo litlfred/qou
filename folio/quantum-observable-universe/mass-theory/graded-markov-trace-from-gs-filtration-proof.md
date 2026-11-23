@@ -1,4 +1,4 @@
-## Proof sketch
+**Sketch.**
 
 The Markov trace $\mathrm{tr}_M$ is uniquely characterised by its
 cyclicity and Markov property

@@ -1,4 +1,3 @@
-*Proof.*
 The classical Young seminormal form (Young \cite{young1901}, Rutherford
 \cite{rutherford1948}) represents the symmetric group $S_n$ on the basis
 of standard Young tableaux with diagonal entry $1/\rho$ for the

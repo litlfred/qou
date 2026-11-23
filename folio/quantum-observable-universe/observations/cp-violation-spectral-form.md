@@ -1,4 +1,3 @@
-**Conjecture (spectral form of $\delta_{\mathrm{CP}}$).**
 *Let $A = H_n(R_\mathbb{C}, q)$ with complexified ground ring $R_\mathbb{C} = R \otimes \mathbb{Z}[i]$, accommodating $q = |q| \exp(i\theta)$ ([complex chirality rotation](#conj:complex-chirality-rotation)). For a hadronic braid $\beta_\mathcal{K} \in B_n$, the CP-violating discriminant equals the imaginary part of the alternating/symmetric Wedderburn-block trace ratio:*
 
 $$

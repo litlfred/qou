@@ -2,8 +2,6 @@ The $Q$-value for tritium beta decay ${}^3\mathrm{H} \to {}^3\mathrm{He} + e^- +
 
 ## Statement
 
-**Proposition.**
-
 $$
   Q({}^3\mathrm{H} \to {}^3\mathrm{He})
   = \frac{3(q^2-1)^3(q^2+1)^2(3q^4+4q^2+3)}{32q^7}

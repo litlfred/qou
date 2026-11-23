@@ -1,6 +1,6 @@
 The electron is the word $e^- = \sigma_0\sigma_1\sigma_0$ ([electron](#def:electron-knot)) and the positron is its mirror $e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ ([positron](#def:positron-knot)), the same word with every crossing reversed. The mirror word is the inverse braid, $e^+ = (e^-)^{-1}$. The chirality assignment is conventional. The physical content resides in their mirror relationship.
 
-**Where the chirality lives.** The closures are the positive and negative Hopf links. Unlike the trefoil (the backup electron, which is chiral as an unoriented knot), the Hopf link is amphichiral as an unoriented link: its mirror image is itself with one component reversed. So the electron and positron cannot be told apart by the unoriented link type of their closures. They are told apart by the braid itself and by the orientation of the closure. The writhe, a well-defined invariant of the braid, is $+3$ for $e^-$ and $-3$ for $e^+$, so $e^- \neq e^+$ in $B_3$ (`QOU.BraidKnot.ElectronPositronWrithe.electron_ne_positron`). The linking number of the oriented closure is $+1$ for $e^-$ and $-1$ for $e^+$.
+**Where the chirality lives.** The closures are the positive and negative Hopf links. Unlike the trefoil (the backup electron, which is chiral as an unoriented knot), the Hopf link is amphichiral as an unoriented link: its mirror image is itself with one component reversed. So the electron and positron cannot be told apart by the unoriented link type of their closures. They are told apart by the braid itself and by the orientation of the closure. The writhe, a well-defined invariant of the braid, is $+3$ for $e^-$ and $-3$ for $e^+$, so $e^- \neq e^+$ in $B_3$. The linking number of the oriented closure is $+1$ for $e^-$ and $-1$ for $e^+$.
 
 **Antiparticles from crossing reversal.**
 
@@ -12,7 +12,7 @@ $$
   [u^{\sigma}, u^{\sigma}, d^{\sigma}]_p \oplus \mathcal{L}_H
 $$
 
-Each quark is an unknot strand carrying one crossing letter ([knot formula table](#rem:knot-formula-table)): $\sigma_i$ for $u$ and $\sigma_i^{-1}$ for $d$. Mirroring reverses the letter, so $u^{\sigma}$ carries $\sigma_i^{-1}$ and $d^{\sigma}$ carries $\sigma_i$. The crossing energy of $\mathfrak{p}^{\sigma}$ reverses sign. This yields Coulomb charge $Q(\mathfrak{p}^{\sigma}) = -1$.
+Each quark is an unknot strand carrying one crossing letter: $\sigma_i$ for $u$ and $\sigma_i^{-1}$ for $d$. Mirroring reverses the letter, so $u^{\sigma}$ carries $\sigma_i^{-1}$ and $d^{\sigma}$ carries $\sigma_i$. The crossing energy of $\mathfrak{p}^{\sigma}$ reverses sign. This yields Coulomb charge $Q(\mathfrak{p}^{\sigma}) = -1$.
 
 **Time reversal and the exceptional divisor.**
 

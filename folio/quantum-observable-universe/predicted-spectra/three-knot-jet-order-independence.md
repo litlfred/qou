@@ -1,4 +1,3 @@
-**Conjecture (jet-order independence — the QOU-attackable reduction).**
 For every truncation order $N$, the Habiro-ring expansions of the coloured-Jones invariants for the three QOU knots/links,
 
 $$

@@ -1,4 +1,3 @@
-**Proof.**
 The Borromean braid has $6$ crossings with quaternion images
 $[i, -j, i, -j, i, -j]$ and signs $[+1, -1, +1, -1, +1, -1]$.
 The $\binom{6}{2} = 15$ pairwise products $s_k s_l \, c_k c_l$

@@ -2,5 +2,5 @@ import { prose } from "../../schema/builders";
 
 export default prose({
   label: "prose:stochastic-mechanics-outro-braids-and-knots",
-  title: "Chapter close — Braids and Knots",
+  title: "Section close — Classical-limit implications",
 });

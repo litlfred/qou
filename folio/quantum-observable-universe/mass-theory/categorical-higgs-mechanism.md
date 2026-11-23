@@ -1,4 +1,3 @@
-**Conjecture (categorical Higgs mechanism).**
 *The symmetry-breaking Higgs mechanism $SU(2)_L \times U(1)_Y \to U(1)_{\rm em}$ admits a categorical formulation. Goldstone boson consumption corresponds exactly to the topological linking of closed braids.*
 
 Pre-symmetry breaking, the four electroweak gauge bosons form individual 1-component knots. A Higgs doublet provides four real scalar degrees of freedom, also corresponding to 1-component knots. 

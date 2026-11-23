@@ -1,4 +1,3 @@
-**Remark (scope: a third-order winding number on braids).**
 For a braid on three strings $z_1(t), z_2(t), z_3(t)$ in $\mathbb{C}$, Evans and Berger use Arnol'd's relation in the cohomology of the braid group to show that the one-form
 $$
 \psi_{ijk} = \lambda_{ij}\,d\lambda_{jk} + \lambda_{jk}\,d\lambda_{ki} + \lambda_{ki}\,d\lambda_{ij}

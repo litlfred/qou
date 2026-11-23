@@ -1,4 +1,4 @@
-**Proof.** Coefficient-by-coefficient match in descending order of $X$-power:
+Coefficient-by-coefficient match in descending order of $X$-power:
 
 | Power of $X$ | Coefficient in $a_8$ | $p(n)$ | $n = 5 - k$ |
 |---|---|---|---|

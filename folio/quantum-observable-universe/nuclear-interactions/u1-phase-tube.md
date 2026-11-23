@@ -1,4 +1,3 @@
-**Remark (physical interpretation).**
 *The $\mathrm{U}(1)$-equivariant reduction admits a compact physical reading. The three color tubes originate from the $S_5$-symmetric action on the genus-$4$ Bring geometry. This geometry lifts to a normal bundle structure on the exceptional divisor supporting three distinct $\mathrm{SU}(3)$-triality-compatible fibres.*
 
 In the commutative-limit specialisation, the representation theory truncates to the maximal torus $\mathrm{U}(1) \subset \mathrm{SU}(2)$. $\mathrm{U}(1)$-equivariant observables reduce to a single phase coordinate $\varphi \in S^1$. All three non-abelian tubes collapse to **one $\mathrm{U}(1)$ phase tube**.

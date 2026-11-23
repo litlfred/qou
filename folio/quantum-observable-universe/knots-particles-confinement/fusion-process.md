@@ -1,4 +1,3 @@
-**Definition (fusion process).**
 *A **fusion process** is a nuclear process $P = (\mathrm{initial}, \mathrm{final})$ — two finite families of subjects $(Z_i, N_i)$ — that conserves the Hecke strand count $\sum 3(Z_i+N_i)$, the proton number $\sum Z_i$, and the baryon number $\sum (Z_i+N_i)$ between its two sides.*
 
 A fusion process is a rearrangement inside the strong sector of [the interaction-sector taxonomy](#def:interaction-sector-taxonomy): both sides embed in the common Hecke frame $H_{3A_{\mathrm{tot}}}$, and the energy release is a difference of bar-even bindings. A process that conserves baryon number while moving proton number — β-decay $n \to p$ on the subject side — is not a fusion process; that failure is the subject-side discriminator routing it to the weak sector.

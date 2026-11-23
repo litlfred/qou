@@ -52,8 +52,7 @@ Then:
    arcs adding no crossing ([closure](#prop:closure-unseen-subword)). Closure is a trace, so it
    factors through the annular class of $\beta$ in
    $\mathrm{HH}_0 = H_n(q)/[H_n(q), H_n(q)]$, which keeps every sector character $\chi_\lambda$; the
-   Markov trace then averages the sectors. Three statements follow, each proved in the Lean twin
-   from the stated input.
+   Markov trace then averages the sectors. Three statements follow directly from the stated input.
 
    - *Isotopy.* A smooth ideal flow carries vortex lines with it \cite{moffatt1969}, so the closed
      vortex link at time $t$ is isotopic to the link at time $0$. By the Alexander and Markov

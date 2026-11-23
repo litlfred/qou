@@ -1,4 +1,4 @@
-**Remark (two-nucleon reading).** This remark records how the ordering $\mu_- < \mu_+$ of [the isospin interface scalars](#prop:isospin-singlet-binds-more) is read against the measured two-nucleon channels, and the values of the two scalars at $q_0$.
+This remark records how the ordering $\mu_- < \mu_+$ of [the isospin interface scalars](#prop:isospin-singlet-binds-more) is read against the measured two-nucleon channels, and the values of the two scalars at $q_0$.
 
 ### What it selects
 

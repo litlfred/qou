@@ -2,7 +2,7 @@ import { chapter } from "../../schema/builders";
 
 export default chapter({
   label: "app:surreals",
-  title: "Surreal-number lift of QOU (appendix)",
+  title: "Surreal-number lift of QOU",
   sections: [
     {
       title: "Motivation and scope",

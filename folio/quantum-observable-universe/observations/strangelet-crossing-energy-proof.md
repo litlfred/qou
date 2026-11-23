@@ -1,4 +1,4 @@
-*Proof.* (1) The up quark occupies a color tube with positive orientation ($+2/3$ charge). The down and strange quarks occupy tubes with negative orientation ($-1/3$ each). The Coulomb charge $Q = \frac{1}{2}(n_+ - n_-)$ vanishes by the partition $\{+, -, -\}$, independent of knot type.
+(1) The up quark occupies a color tube with positive orientation ($+2/3$ charge). The down and strange quarks occupy tubes with negative orientation ($-1/3$ each). The Coulomb charge $Q = \frac{1}{2}(n_+ - n_-)$ vanishes by the partition $\{+, -, -\}$, independent of knot type.
 
 (2) This is immediate from $\mathfrak{E}_{\mathrm{cross}} = \text{strong} + Q \cdot (q - q^{-1})$ with $Q = 0$.
 

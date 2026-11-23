@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:q-beta-categorical-precision-ladder-context",
   title:
-    "Per-rung sources, truncation-order analysis, and open questions for the Q_beta precision ladder",
+    "Per-rung sources, truncation-order analysis, and open questions for the $\\mathfrak{Q}_\\beta$ precision ladder",
   interprets: "prop:q-beta-categorical-precision-ladder",
   tags: [
     "q-beta",

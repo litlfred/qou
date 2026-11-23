@@ -1,4 +1,3 @@
-**Proof.**
 The Borromean braid of a nucleon with quarks $(q_1, q_2, q_3)$ has six crossings organised into three crossing pairs. Each pair corresponds to a color-exchange channel. At each pair involving quarks of species $a$ and $b$, a double application of the Skein relation yields the pair Skein mass
 $$
   \mathcal{S}_{ab}(q)

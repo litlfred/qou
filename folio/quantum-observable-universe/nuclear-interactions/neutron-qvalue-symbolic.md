@@ -1,4 +1,4 @@
-**Proposition (conditional on Borromean quark conjecture — $\mathfrak{Q}_\beta$ of free neutron $\beta^{-}$-decay).**
+**Conditional on Borromean quark conjecture.**
 *The $Q$-value of free neutron $\beta^-$-decay $n \to p + e^- + \bar\nu_e$ is derived symbolically from the categorical three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$). The value $\mathfrak{Q}_\beta(n)$ ($H^2$) is the $\beta$-decay datum being predicted, not used as input.*
 
 ## Single-wrap normal-form computation
@@ -31,7 +31,7 @@ The $L_+$ and $L_-$ contributions cancel exactly because both nucleons share the
 
 ## $Q$-value from two inputs
 
-The energy scale $E_0 = m_e / \bigl(q_0(q_0 - 1)(1 - \hbar_q^2)\bigr)$, with $\hbar_q = 1 - q_0^{-1}$, converts dimensionless differences to MeV. This tower-summed form is canonical under the full-tower ruling; the derivation of its series is still open. The order-zero form $m_e/(q_0(q_0-1))$ is $0.98\%$ smaller. The functional applied to $\Delta = \mathrm{net}(n) - \mathrm{net}(p) = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ is the Markov trace at $z_D = q^3/(q^2+1)$ (convention D, owner ruling 2026-09-08), which sends $\gamma \mapsto 1$ and $\sigma_i \mapsto z_D$:
+The energy scale $E_0 = m_e / \bigl(q_0(q_0 - 1)(1 - \hbar_q^2)\bigr)$, with $\hbar_q = 1 - q_0^{-1}$, converts dimensionless differences to MeV. This tower-summed form is the canonical energy scale, though the first-principles derivation of its geometric series remains open. The order-zero form $m_e/(q_0(q_0-1))$ is $0.98\%$ smaller. The functional applied to $\Delta = \mathrm{net}(n) - \mathrm{net}(p) = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ is the Markov trace at $z_D = q^3/(q^2+1)$ (convention D), which sends $\gamma \mapsto 1$ and $\sigma_i \mapsto z_D$:
 
 $$
   \mathfrak{Q}_\beta

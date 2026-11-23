@@ -1,4 +1,4 @@
-### Proof (Markov axiom + Hecke skein)
+*(Markov axiom and Hecke skein.)*
 
 For a positive interface generator $\sigma_g$, the **Markov axiom**
 ([Existence and non-degeneracy of the Markov trace (Jones, 1987)](#thm:jones-markov-trace)) gives

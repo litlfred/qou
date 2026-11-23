@@ -1,4 +1,3 @@
-**Conjecture (Stokes region identification).**
 *The substrate parameter $q_0$ admits a canonical identification with a specific point on the geometric component of the character variety $X(\mathcal{B}_3)$, realized via two dual perspectives that coincide by the AJ-conjecture machinery:*
 
 *(a) **Analytic / Stokes side**: $q_0$ is the parameter value at which the Stokes region of the colored-Jones generating function $G_K(x; q) = \sum J_N(K; q) \cdot x^N$ transitions between dilog-asymptotic regimes.*

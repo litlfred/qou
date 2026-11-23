@@ -1,5 +1,3 @@
-## Proof
-
 Recall the definition from the statement block: for a confined
 particle $\mathfrak{H}$,
 

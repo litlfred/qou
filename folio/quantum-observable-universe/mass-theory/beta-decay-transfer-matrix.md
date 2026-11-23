@@ -52,7 +52,6 @@ group element, so $\det T_{\mathrm{mix}} \neq -1$.
 
 ## The universal beta decay matrix
 
-**Proposition.**
 *The two elementary decay matrices $\Delta_\beta^{nn \to \mathrm{mix}}$
 and $\Delta_\beta^{\mathrm{mix} \to pp}$ are identical:*
 

@@ -1,5 +1,3 @@
-*Proof.*
-
 **1. $\#$ is well defined.** Put $\tau_i = h - \sigma_i$. From $\sigma_i^2 = h\sigma_i + 1$,
 
 $$

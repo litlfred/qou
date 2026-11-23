@@ -1,5 +1,3 @@
-## Proof
-
 One proves this by direct expansion. Substituting $q \mapsto 1/q$ in $p(q)$:
 
 $$

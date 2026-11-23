@@ -1,4 +1,3 @@
-**Definition (Universal ILP Algorithm).**
 *A single integer linear program selects the operator at every level of the QOU construction. The same Gram matrix $G$, the same Frobenius check $Gx \geq 0$, and the same ILP are applied to quarks, nucleons, atoms, and molecules.*
 
 ### Input

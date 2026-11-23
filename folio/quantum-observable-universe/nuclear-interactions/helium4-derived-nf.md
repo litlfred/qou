@@ -1,4 +1,3 @@
-**Example.**
 Helium-4 $\mathcal{A}(2,2)$ contains two protons, two neutrons, and two electrons. It forms the doubly-magic alpha particle.
 
 ## Derivation

@@ -1,4 +1,4 @@
-**Theorem (binding closure, conditional on the inputs (C) and (B)).**
+**Conditional on the inputs (C) and (B).**
 
 Suppose the per-isotope binding of the canonical braid $\mathcal{B}_K$ admits
 the two structural inputs of the many-body conjecture ([Binding many-body series equals the jet-order filtration](#conj:binding-manybody-eq-jet-filtration)):

@@ -1,4 +1,3 @@
-**Remark (classical limit).**
 As $q \to 1$, $[n]_q \to n$ and $\alpha_{\mathrm{EM}} \to 1/90$. The observed value $\alpha^{-1} \approx 137$ requires $q > 1$. The departure from the classical limit makes the coupling weaker than $1/90$.
 
 **Remark (physical interpretation).**

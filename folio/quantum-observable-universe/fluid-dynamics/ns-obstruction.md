@@ -1,4 +1,3 @@
-**Definition.**
 *For a valid quantum universe $(A, \varTheta)$ over a spectral surface $\mathcal{S}$ with Reeb bundle $\xi$, the **NS obstruction class** is evaluated in the surface realisation ([NS-regular QOU](#def:ns-regular-qou)) as the global Euler class*
 
 $$

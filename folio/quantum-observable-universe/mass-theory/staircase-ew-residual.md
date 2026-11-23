@@ -1,4 +1,3 @@
-**Conjecture (staircase EW-residual).**
 *Let $\rho_k = (k, k-1, \ldots, 1)$ be the staircase partition. Let $V_{\rho_k}$ be the corresponding Specht module of $H_{n_k}(q)$. Let $\beta_{\mathrm{EW}}\,\bowtie_K^{\mathrm{minimal}} \in H_{n_k}(q)$ be the canonical electroweak braid word. For every $k \geq 2$, the matrix image*
 
 $$

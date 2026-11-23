@@ -1,6 +1,5 @@
 Let $\beta$ be a braid on $n$ strands with $c$ crossings. Let $L = \hat{\beta}$ be its closure. Let $\mathcal{R}(L)$ be the Skein resolution tree ([Skein Turing machine](#rem:skein-turing-machine)). Fix a polynomial bound $p(c) = c^d$.
 
-**Definition.**
 The **polynomial observable subcategory** of the resolution tree is the full sub-poset
 
 $$

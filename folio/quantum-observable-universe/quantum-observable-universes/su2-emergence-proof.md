@@ -1,4 +1,3 @@
-**Proof.**
 The argument proceeds in two steps, combined to identify $G$.
 
 By ([volume determinant](#lem:su2-emergence-volume-determinant)), the

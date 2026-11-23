@@ -1,4 +1,3 @@
-**Proof.**
 In Feynman's formulation, the transition amplitude between initial state
 $|\psi_i\rangle$ and final state $|\psi_f\rangle$ is
 

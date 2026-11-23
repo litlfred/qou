@@ -1,5 +1,3 @@
-**Remark (visual inventory of binding knots).**
-
 One collects diagrams for the knots and links that act as binding operators across the QOU framework. Each entry shows the standard diagram (TikZ), its braid word in $B_n$, and its entry point in the binding pipeline. For per-particle context, see the knot-particle dictionary.
 
 ## Trivial: the unknot

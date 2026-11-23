@@ -1,4 +1,3 @@
-*Proof.*
 By [Frobenius S-classification](#prop:frobenius-s-classification),
 $h_{\mathrm{A}} = q - q^{-1}$ has $S$-eigenvalue $-1$, so
 $h_{\mathrm{A}}^2$ has eigenvalue $+1$. As $q \to 1$, $h_{\mathrm{A}} \to 0$ continuously,

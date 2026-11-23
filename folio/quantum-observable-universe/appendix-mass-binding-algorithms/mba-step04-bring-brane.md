@@ -1,4 +1,3 @@
-**Algorithm (Bring brane constants).**
 *Return the substrate constants of the
 Bring surface $\mathcal{E}_q$ (Euler characteristic $\chi = -6$,
 six torus-knot embeddings, fundamental-group presentation) used by

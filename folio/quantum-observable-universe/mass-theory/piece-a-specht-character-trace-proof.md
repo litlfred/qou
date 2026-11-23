@@ -1,4 +1,4 @@
-**Proof.** $C_2$ is central, so by Schur's lemma \cite{serre1977} it acts on
+$C_2$ is central, so by Schur's lemma \cite{serre1977} it acts on
 the irreducible
 $S^\mu$ by a scalar. That scalar is the common eigenvalue of $\sum_i L_i^2$ on
 the Gelfand–Tsetlin basis of $S^\mu$: each $L_i$ acts on a basis vector indexed

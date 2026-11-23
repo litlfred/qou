@@ -1,4 +1,4 @@
-## Proof sketch
+**Sketch.**
 
 The Hoefsmit seminormal basis is built by inductively decomposing
 $V^{\otimes n}$ via the chain

@@ -1,6 +1,6 @@
 Let $\beta \in B_n$ be a **generator-monotone** braid: $\beta = w_0 w_1 \cdots w_{n-2}$, where each $w_i$ is a word in $\sigma_i^{\pm 1}$ alone. Since $\sigma_i$ generates the two-dimensional subalgebra $\mathrm{span}\{1, \sigma_i\}$ of $H_n(R, q)$ (by $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$), each factor reduces to $\rho(w_i) = a_i \sigma_i + b_i$ with $a_i, b_i \in \mathbb{Z}[q^{\pm 1}]$.
 
-**Theorem.** For such $\beta$, and for any cyclic rotation of $\beta$, the Markov trace factors as a product over generators:
+For such $\beta$, and for any cyclic rotation of $\beta$, the Markov trace factors as a product over generators:
 
 $$
   \mathrm{tr}_M\!\bigl(\rho(\beta)\bigr) = \prod_{i=0}^{n-2} \hat{V}_i(q), \qquad \hat{V}_i(q) = z \cdot a_i + b_i,

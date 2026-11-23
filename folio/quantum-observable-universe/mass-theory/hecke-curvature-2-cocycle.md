@@ -1,4 +1,3 @@
-**Definition (Hecke curvature 2-cocycle).**
 *The Hecke curvature 2-cocycle is the 2-form-valued bilinear map $F \in C^2(H_n(R, q), H_n(R, q))$ defined on generator pairs by the deviation from Hecke and Yang-Baxter flat relations:*
 
 $$

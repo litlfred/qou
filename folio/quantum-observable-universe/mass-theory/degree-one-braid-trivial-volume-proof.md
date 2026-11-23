@@ -1,4 +1,3 @@
-**Proof.**
 The hyperbolic volume vanishes on every non-hyperbolic link, by
 convention ([Kashaev--Murakami--Murakami convention](#conj:kashaev-volume-conjecture)).
 

@@ -1,4 +1,3 @@
-**Algorithm (Jet-prefix transport, $q \to 1$ limit).**
 *Truncate the Markov-trace Laurent polynomial at jet order $N$
 and transport its leading coefficients to the archimedean fibre
 at $q = q_0$ via the GS filtration of Step 7.*

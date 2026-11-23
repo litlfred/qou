@@ -1,4 +1,3 @@
-**Remark.**
 *This proposition is the formal justification for a default-coarse computational strategy across the full confinement category. The hierarchy has at least four relevant levels:*
 
 | *Level $\ell$* | *Confined particle* | *Default strand count $n_0$* |

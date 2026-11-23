@@ -1,5 +1,3 @@
-## Proof
-
 By [Wenzl bridge](#prop:y-lambda-closed-form-wenzl-bridge),
 $y_\lambda(q) = s_{\lambda, \check{q}}(Q) / Z_n$ with $Q = q^2$ and
 $X = Q^{\check{q}} = q \cdot z / (1 - Q + q \cdot z)$.

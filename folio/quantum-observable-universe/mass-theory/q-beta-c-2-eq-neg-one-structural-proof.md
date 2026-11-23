@@ -1,4 +1,4 @@
-## Proof (algebraic identity)
+*(Algebraic identity.)*
 
 The operator-valued $N{=}2$ correction to $\mathfrak{Q}_\beta$ (per the brane-tower
 truncation of the canonical formalism)

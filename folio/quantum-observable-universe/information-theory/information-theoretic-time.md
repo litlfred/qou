@@ -1,4 +1,3 @@
-**Definition.**
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with braiding-induced ordering $\prec_c$ ([ordering–jet compatibility](#prop:ordering-jet-compatibility)). Let $f_q(z) = z^2 + c(q)$ be the Julia set iteration on the exceptional divisor.
 
 The **information-theoretic time** at substrate parameter $q$ is the cumulative Reeb operation count:

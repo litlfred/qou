@@ -1,4 +1,3 @@
-**Remark (geometric interpretation of $G/3$).**
 *The blending parameter approximates $G/3$. This fraction carries a geometric meaning:*
 
 $$

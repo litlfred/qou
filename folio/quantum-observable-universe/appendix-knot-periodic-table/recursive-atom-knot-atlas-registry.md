@@ -34,7 +34,7 @@ For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and SnapPe
 | $6_1, 6_2, 6_3$ | 6-crossing prime knots. |
 | $\mathcal{B}_3$ | Borromean rings = $\widehat{(\sigma_1 \sigma_2^{-1})^3}$ in $B_3$. |
 | $L_H$ | Hopf link $= \widehat{\sigma_1^2}$ in $B_2$. |
-| $K_{n_a m}$, $L_{n_a m}$ | Knots / links from SnapPy HT-tables (e.g.\ $K11a259$ = 11-crossing alternating knot, position 259). |
+| $K_{n_a m}$, $L_{n_a m}$ | Knots / links from SnapPy HT-tables (e.g. $K11a259$ = 11-crossing alternating knot, position 259). |
 | $B_3(\mathrm{flav})$ | Borromean baryon: 3-strand Borromean with flavor labels (uud, udd, etc.) on crossings. |
 | $\oplus$ | Binding operator: $H = K \oplus L$ decorates knot $K$ with link $L$. |
 | $[K_1, \ldots, K_n]_p$ | Composite hadron of valence $n$ with constituents $K_1, \ldots, K_n$ bound at link $p$. |
@@ -250,7 +250,7 @@ forms differ by $h\delta/4 \approx 7.190 \times 10^{-5}$ at the substrate anchor
 | $c_{\alpha\alpha}$ | $\alpha$–$\alpha$ pair-energy correction (${}^{8}$Be, ${}^{12}$C, $\ldots$, ${}^{40}$Ca) |
 | $\alpha$–N attachment | Layer 3: $^4$He cluster + valence nucleon (for non-magic $A$) |
 
-For an atom with mass number $A$, build the canonical braid word in $B_{3A}$ sequentially per nucleon. At each $k \in \{0, \dots, A-1\}$, apply the intra block at base $3k$ and $3k+1$. For $k < A-1$, then apply the inter-nucleon interface at $3k+2$ between nucleon $k$ and $k+1$. The [`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) function enumerates this sequence.
+For an atom with mass number $A$, build the canonical braid word in $B_{3A}$ sequentially per nucleon. At each $k \in \{0, \dots, A-1\}$, apply the intra block at base $3k$ and $3k+1$. For $k < A-1$, then apply the inter-nucleon interface at $3k+2$ between nucleon $k$ and $k+1$. This sequential rule uniquely specifies the canonical braid word for every $(Z, N)$.
 
 ### Layer-1 canonical $|\mathrm{tr}_M(q_0)|$ table
 

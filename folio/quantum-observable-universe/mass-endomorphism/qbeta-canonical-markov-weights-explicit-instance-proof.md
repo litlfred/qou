@@ -1,5 +1,3 @@
-# Proof of the normalisation axiom
-
 $$
 y_{(3)}(q) + 2 \, y_{(2,1)}(q) + y_{(1,1,1)}(q)
 = z(q) + 2 \left( \tfrac{1}{2} - z(q) \right) + z(q)

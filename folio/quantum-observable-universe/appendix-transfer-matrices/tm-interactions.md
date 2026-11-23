@@ -68,7 +68,7 @@ $$
 
 The full $2 \times 2$ Toffoli transfer matrix $\mathbf{M}(q)$ is in [Table 2](#tbl:tm-interactions-table2-data).
 
-**Two statements withdrawn here (2026-08-30).** The factorisation $P_{\mathrm{flip}} = c_{k_1k_2}(q)\cdot\Phi(q)$ with the universal $\Phi(q) = (q-1)(q^{3/2}+q^{1/2}-1)(q^{3/2}+q+1)/2(q+1)^2$ is retired: $\Phi$ is not in the image of the Toffoli construction under any indexing or convention ([Toffoli transfer matrix](#prop:toffoli-transfer-matrix)). And $\hat V_1 = z$ *does* depend on crossing type — the traced volume at $\sigma_1$ is $\hat V_1(k_1,k_2) = z(q)\,c_{k_1k_2} + d_{k_1k_2}$, which reduces to $z$ only for the crossings with $(c,d) = (1,0)$.
+**Two withdrawn statements.** The factorisation $P_{\mathrm{flip}} = c_{k_1k_2}(q)\cdot\Phi(q)$ with the universal $\Phi(q) = (q-1)(q^{3/2}+q^{1/2}-1)(q^{3/2}+q+1)/2(q+1)^2$ is retired: $\Phi$ is not in the image of the Toffoli construction under any indexing or convention ([Toffoli transfer matrix](#prop:toffoli-transfer-matrix)). And $\hat V_1 = z$ *does* depend on crossing type — the traced volume at $\sigma_1$ is $\hat V_1(k_1,k_2) = z(q)\,c_{k_1k_2} + d_{k_1k_2}$, which reduces to $z$ only for the crossings with $(c,d) = (1,0)$.
 
 ## 7. Catalogue of all $\Delta$ operators
 

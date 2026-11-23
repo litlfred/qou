@@ -1,5 +1,3 @@
-**Remark (Chern--Simons as a knot invariant).**
-
 Classical Chern--Simons theory does not serve as the bulk categorical action ([comparison](#rem:categorical-action-vs-chern-simons)). That role belongs to $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$. Its archimedean image recovers Einstein--Hilbert, Yang--Mills, and Dirac. The Chern--Simons functional enters strictly as a geometric knot invariant. The commensurability class of the knot complement selects it.
 
 The mechanism proceeds as follows:

@@ -1,5 +1,3 @@
-**Conjecture (graded Baer-* on $\mathcal{H}_q$ across the depth filtration).**
-
 *Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)), filtered by iterated-integral depth:*
 
 $$

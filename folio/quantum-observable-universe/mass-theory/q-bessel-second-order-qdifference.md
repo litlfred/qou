@@ -1,4 +1,4 @@
-**Proof.** Throughout, $q$ and the order $\nu$ are formal parameters in a field; the argument is purely $q$-difference-algebraic. Write $(x;q)_k = \prod_{j=0}^{k-1}\bigl(1 - x q^{j}\bigr)$ for the $q$-Pochhammer symbol, and let
+Throughout, $q$ and the order $\nu$ are formal parameters in a field; the argument is purely $q$-difference-algebraic. Write $(x;q)_k = \prod_{j=0}^{k-1}\bigl(1 - x q^{j}\bigr)$ for the $q$-Pochhammer symbol, and let
 
 $$
 g(w) \;=\; \sum_{k \ge 0} c_k\, w^{k},

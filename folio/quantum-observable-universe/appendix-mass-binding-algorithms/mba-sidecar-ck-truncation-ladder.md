@@ -1,4 +1,3 @@
-**Algorithm ($c_k$ truncation ladder).**
 *Compute the coefficients of the convergent $\mathfrak{Q}_\beta$ series
 $\mathfrak{Q}_\beta = Q_{\mathrm{base}} \cdot \prod_{k = 2}^{N} (1 + c_k\, u^k)$
 and report each $c_k$ with its **tiered classification**.*
@@ -57,8 +56,7 @@ which records each $c_k$ row with its `tier` (`"derived"` vs
 prediction `Q_pred_after_this_rung_MeV` alongside `data.Q_beta_tiers` in the
 witness JSON. Note that the cached $c_k$ ladder artifact is a retained
 **Convention-C** cache (`markov_convention: "C"`, generated via
-`--historical-convention-C` pending the Convention-D re-derivation tracked
-under `qou-cds1` / `qou-wxhi`; its default Convention-D path refuses because
+`--historical-convention-C` pending Convention-D re-derivation; its default Convention-D path refuses because
 substituting $z_D$ into $\alpha = (z-1)h/2$ is proved invalid by
 `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` and
 `QOU.QBeta.eigenphase_bar_defect_of_fullBar`). The downstream consumer

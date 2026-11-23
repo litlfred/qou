@@ -1,4 +1,3 @@
-**Algorithm ($\Delta_\lambda$ per-partition value — PROVED; many-body magnitude — open).**
 *Compute the per-partition binding weight $\Delta_\lambda(K)$
 for an isotope knot $K$, consumed by Step 9b
 ([Per-isotope binding $B(K) = m_e \cdot \sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda$](#alg:per-isotope-binding)).*
@@ -14,7 +13,7 @@ for an isotope knot $K$, consumed by Step 9b
   (the signed Springer dimension; $n(\lambda)$ is the jet-order valuation
   parity, $\dim V_\lambda$ the Wedderburn dimension).*
 
-  The name refers to the Springer correspondence: for a unipotent element $x$ of Jordan type $\lambda$ in $GL_n$, the top cohomology of the Springer fibre $\mathcal{B}_x$ is the irreducible $S_n$-module $V_\lambda$ \cite{springer1976}, \cite[Thm.~2.1]{shoji2019}. This explains the name only. The sign and the magnitude are derived independently below, and neither reference is an input to that proof.
+  The name refers to the Springer correspondence: for a unipotent element $x$ of Jordan type $\lambda$ in $GL_n$, the top cohomology of the Springer fibre $\mathcal{B}_x$ is the irreducible $S_n$-module $V_\lambda$ \cite{springer1976}, \cite[Thm. 2.1]{shoji2019}. This explains the name only. The sign and the magnitude are derived independently below, and neither reference is an input to that proof.
 
 ### Status: value proved, magnitude external
 

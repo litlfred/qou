@@ -1,4 +1,3 @@
-**Definition.**
 *Two atom-knots $K_1, K_2$ of types $(Z, N_1)$ and $(Z, N_2)$ with $N_1 \neq N_2$ are **isotopes** iff their NF block decompositions agree on the proton-quark block:*
 
 $$

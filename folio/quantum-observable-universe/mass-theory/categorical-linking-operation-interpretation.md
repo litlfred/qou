@@ -1,1 +1,1 @@
-**Remark (proof scope).** The proofs for properties 1-3 utilize only standard rigid monoidal axioms. They apply generically across any suitable category supporting trace-cuts and require no QOU-specific Hecke algebra or Markov trace assumptions.
+The proofs for properties 1-3 utilize only standard rigid monoidal axioms. They apply generically across any suitable category supporting trace-cuts and require no QOU-specific Hecke algebra or Markov trace assumptions.

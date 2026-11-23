@@ -1,4 +1,3 @@
-*Proof.*
 The isospin Casimir $T^2$ commutes with all $\sigma_i$ (it lies
 in the center of $H_n$).  By Schur's lemma, $T^2$ acts as a
 scalar $c_\lambda$ on each irreducible representation $\lambda$.
@@ -24,8 +23,7 @@ the $q$-factorial at level $5$
 ([Markov-trace normalization](#prop:wedderburn-trace-identity)). The
 identification of the Bethe--Weizsäcker Wigner term with this coefficient is
 the content of the conjecture the proposition is conditional on, and the
-choice $k = 5$ is an input, not an output of the argument. What the Lean
-proves is only the product expansion of $[5]_q! \cdot m_e$.
+choice $k = 5$ is an input, not an output of the argument. Only the algebraic product expansion of $[5]_q! \cdot m_e$ is unconditional.
 
 *At level $k$, the coefficient is $[k]_q! \cdot m_e$.*
 

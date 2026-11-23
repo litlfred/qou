@@ -1,4 +1,3 @@
-
 Write $a = q^{-1}$ and $b = 1 - q^{-1}$, so $a + b = 1$. Then
 
 ```tex

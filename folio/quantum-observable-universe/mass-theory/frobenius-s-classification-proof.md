@@ -1,4 +1,3 @@
-*Proof.*
 Each $S$-eigenvalue is checked in turn.
 
 **Coefficients.** The action $q \mapsto q^{-1}$ extends to the

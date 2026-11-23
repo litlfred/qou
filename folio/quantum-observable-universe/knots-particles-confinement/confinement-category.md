@@ -1,4 +1,3 @@
-**Definition.**
 *The **confinement category** $\mathbf{Conf}$ has:*
 
 - ***Objects:** confined particles $P$ at every level $\ell \ge 0$.*

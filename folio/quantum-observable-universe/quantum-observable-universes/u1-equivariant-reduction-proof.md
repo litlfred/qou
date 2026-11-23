@@ -1,4 +1,4 @@
-*Proof sketch.*
+**Sketch.**
 Using the spherical parametrisation of
 [def:exceptional-divisor](#def:exceptional-divisor), the
 $\mathrm{U}(1)$ action is $\psi \mapsto \psi + \alpha$, leaving $\phi$

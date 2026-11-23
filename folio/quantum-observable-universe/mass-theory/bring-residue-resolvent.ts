@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:bring-residue-resolvent",
-  title: "Bring residue → canonical resolvent form 1/(1 − h_q · q^{α_shift})",
+  title: "Bring residue to canonical resolvent form $1/(1 - h_q \\cdot q^{\\alpha_{\\mathrm{shift}}})$",
   cites: ["suslin1991", "thurston1978"],
   uses: [],
   defines: [],

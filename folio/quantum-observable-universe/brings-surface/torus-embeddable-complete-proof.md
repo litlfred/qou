@@ -1,4 +1,3 @@
-**Proof.**
 The Seifert genus of $T_{m,n}$ is $g(T_{m,n}) = (m-1)(n-1)/2$.
 Embeddability requires $g(T_{m,n}) \leq g(\Sigma_4) = 4$, i.e.,
 $(m-1)(n-1) \leq 8$. Enumerate all coprime pairs $(m,n)$ with

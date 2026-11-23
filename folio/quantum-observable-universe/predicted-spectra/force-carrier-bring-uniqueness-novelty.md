@@ -1,1 +1,1 @@
-**Remark.** The Diophantine constraint $(m-1)(n-1)=2g$ enforces genus-saturation on the symplectic homology of Bring's surface. This algebraic geometry condition determines the force-carrier pair (knots with 9 and 10 crossings). It eliminates the need for auxiliary symmetry assumptions.
+The Diophantine constraint $(m-1)(n-1)=2g$ enforces genus-saturation on the symplectic homology of Bring's surface. This algebraic geometry condition determines the force-carrier pair (knots with 9 and 10 crossings). It eliminates the need for auxiliary symmetry assumptions.

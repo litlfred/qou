@@ -1,4 +1,3 @@
-**Definition.**
 **Carbon dioxide** *$CO_2$ is the molecular braid of one carbon atom $C(6, 6)$ and two oxygen atoms $O_1(8, 8)$, $O_2(8, 8)$, with two double bonds (O=C=O).*
 
 ### Stage 1: Constituent atoms

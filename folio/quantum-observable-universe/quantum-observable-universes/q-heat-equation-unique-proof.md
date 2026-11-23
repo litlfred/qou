@@ -1,4 +1,4 @@
-*Proof.* Because each $V_j$ is $\Delta_q$-stable, $\pi_j \Delta_q = \Delta_q \pi_j$, so the equation splits into one linear ODE on each finite-dimensional space $V_j$.
+Because each $V_j$ is $\Delta_q$-stable, $\pi_j \Delta_q = \Delta_q \pi_j$, so the equation splits into one linear ODE on each finite-dimensional space $V_j$.
 
 *Existence.* The displayed formula gives a differentiable curve in $V_j$ with $\tfrac{d}{dt}\pi_j u = -\Delta_q \pi_j u$. Only the finitely many $j$ with $\pi_j u_0 \neq 0$ give a nonzero component, so $u(t)$ lies in the algebraic direct sum $V$.
 

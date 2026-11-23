@@ -1,4 +1,3 @@
-**Proof.**
 On the exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ the principal
 $\mathrm{SU}(2)$-bundle $P$ trivialises (every $\mathrm{SU}(2)$-bundle
 over $S^2$ is classified by $\pi_1(\mathrm{SU}(2)) = 0$).  The

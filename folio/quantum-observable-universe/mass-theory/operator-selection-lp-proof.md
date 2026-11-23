@@ -1,4 +1,3 @@
-*Proof.*
 The feasible set is non-empty: any element $\Phi_0$ with
 $\mathrm{tr}_M(\Phi_0) > 0$ can be rescaled to satisfy the net constraint,
 and the Frobenius positivity constraints admit interior points (the identity

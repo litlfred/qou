@@ -1,4 +1,4 @@
-**Remark (the obstruction as a function on $\mathbb{P}^1$).** The obstruction $\chi(A) \bmod n$ varies over the Kummer tower $\{\mu_n\}_{n \geq 1}$:
+The obstruction $\chi(A) \bmod n$ varies over the Kummer tower $\{\mu_n\}_{n \geq 1}$:
 
 $$
 \mathrm{obs}(n) :=
