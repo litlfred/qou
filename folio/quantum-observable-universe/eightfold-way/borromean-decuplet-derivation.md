@@ -62,18 +62,30 @@ dimensions and weights*, not a derivation of the spin--flavour--colour
 selection rule.  This is recorded as an open item in
 [the open-problems section](#sec:eightfold-open-problems).
 
-**Octet versus decuplet.**
+**Octet versus decuplet and quantum dimension balance.**
 The mixed partition $\lambda = (2,1)$ gives the $8$-dimensional
 baryon octet (proton, neutron, $\Sigma$, $\Lambda$, $\Xi$).  The
 antisymmetric partition $\lambda = (1^3)$ gives the singlet.  The
 distinction between octet and decuplet is entirely carried by the
 Hecke module: the $S^{(3)}$ projector (one-dimensional) selects the
 decuplet, while the $S^{(2,1)}$ projector (two-dimensional) selects
-the octet.
+the octet.  Over any field and for every $q \neq 0$, the quantum
+dimensions $\dim_q(\mathbf{10}) = (q^2 + q^{-2})[5]_q$,
+$\dim_q(\mathbf{8}) = [2]_q[4]_q$, and $\dim_q(\mathbf{1}) = 1$
+satisfy the identity
+$$
+  (q^2 + q^{-2})[5]_q + 2\,[2]_q[4]_q + 1 \;=\; [3]_q^3,
+$$
+normalizing the rank-$3$ Ocneanu weights $w_\lambda(q, z_3) =
+\dim_q(V_\lambda)/[3]_q^3$ at $z_3 = q^3/[3]_q$ to
+$w_{(3)} + 2\,w_{(2,1)} + w_{(1^3)} = 1$ ($10.6690 + 2 \times 8.2641
++ 1 = 28.1973 = [3]_{q_0}^3$ at $q_0$).
 
 **Conditional on $N = 3$.**
 As with all eightfold-way content, this derivation is conditional on
 the flavor fundamental being three-dimensional
-([Proposition](#prop:schur-weyl-eightfold)).  At $N = 2$, the
-symmetric partition $(3)$ yields only a $4$-dimensional spin-$3/2$
-quadruplet, not a decuplet.
+([Proposition](#prop:schur-weyl-eightfold)).  Realised on degree-$3$
+homogeneous polynomials, $\dim_K \mathrm{Sym}^3(W_3^*) = \binom{5}{3}
+= 10$ whereas $\dim_K \mathrm{Sym}^3(V_2^*) = \binom{4}{3} = 4$, so at
+$N = 2$ the symmetric partition $(3)$ yields only a $4$-dimensional
+spin-$3/2$ quadruplet, not a decuplet.
