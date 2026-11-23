@@ -6,4 +6,11 @@ export default remark({
   interprets: "prop:delta-lambda-dt-index-unification",
   cites: ["shoji2019"],
   tags: ["springer-correspondence", "springer-fibre", "a-function", "sign-convention", "prior-art"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-23",
+      body: "Relocated from block prose (Milnor Voice A; Lean talk out of prose): prop:delta-lambda-dt-index-unification is proved in Lean without citing Shoji 2019.",
+    },
+  ],
 });
