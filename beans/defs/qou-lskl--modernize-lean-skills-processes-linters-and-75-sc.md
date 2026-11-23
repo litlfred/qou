@@ -1,12 +1,12 @@
 ---
-id: qou-lskl
-title: "Lean KG Stage 1b: Modernize All 18 Lean/KG Skills, CI Processes, `#lint` Gates & Consolidate the 75 `scripts/*lean*` Tools for Mathlib4 / Reservoir Best Practices"
-status: todo
+# qou-lskl
+title: 'Lean KG Stage 1b: Modernize All 18 Lean/KG Skills, CI Processes, `#lint` Gates & Consolidate the 75 `scripts/*lean*` Tools for Mathlib4 / Reservoir Best Practices'
+status: in-progress
 type: task
 priority: high
-parent: qou-lnkg
 created_at: 2026-11-23T20:27:30Z
-updated_at: 2026-11-23T20:27:30Z
+updated_at: 2026-11-23T23:30:34Z
+parent: qou-lnkg
 ---
 
 ## Measured Diagnosis (`origin/main`)

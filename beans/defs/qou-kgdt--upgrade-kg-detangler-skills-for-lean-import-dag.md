@@ -1,12 +1,12 @@
 ---
-id: qou-kgdt
-title: "Lean KG Stage 1: Upgrade KG & Detangler Skills (`content-graph`, `lean-mathlibext-curator`, `lean-kg-detangler.py`) and Map Full 4,545-File Lean Subgraph DAG"
-status: todo
+# qou-kgdt
+title: 'Lean KG Stage 1: Upgrade KG & Detangler Skills (`content-graph`, `lean-mathlibext-curator`, `lean-kg-detangler.py`) and Map Full 4,545-File Lean Subgraph DAG'
+status: in-progress
 type: task
 priority: high
-parent: qou-lnkg
 created_at: 2026-11-23T20:22:30Z
-updated_at: 2026-11-23T20:22:30Z
+updated_at: 2026-11-23T23:30:34Z
+parent: qou-lnkg
 ---
 
 ## Deliverables
