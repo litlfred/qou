@@ -206,4 +206,88 @@ theorem axial_eq_div (q : Kˣ) (a : K) (h4 : (1 : K) - (q : K) ^ 4 ≠ 0)
 
 end RatioForm
 
+/-! ## Explicit Hoefsmit `H₃(q)` Generators (`σ₁`, `σ₂`), Hecke + Braid Relations, and Primitive `ζ₃` Eigenvalues -/
+
+section HoefsmitGeneratorsAndEigenvalues
+
+variable {R : Type*} [CommRing R]
+
+/-- Scalar multiplication on `2 × 2` matrices `M2 R`. -/
+def M2.smul (c : R) (A : M2 R) : M2 R :=
+  ⟨c * A.a, c * A.b, c * A.c, c * A.d⟩
+
+/-- Matrix addition on `2 × 2` matrices `M2 R`. -/
+def M2.add (A B : M2 R) : M2 R :=
+  ⟨A.a + B.a, A.b + B.b, A.c + B.c, A.d + B.d⟩
+
+/-- Explicit Hoefsmit `(2,1)` generator `σ₁ = diag(q, -q⁻¹)`. -/
+def hoefsmitSigma1 (q : Rˣ) : M2 R :=
+  ⟨(q : R), 0, 0, -(↑q⁻¹ : R)⟩
+
+/-- Explicit Hoefsmit `(2,1)` generator `σ₂ = !![a, β; β, a₋₂]`. -/
+def hoefsmitSigma2 (q : Rˣ) (a β : R) : M2 R :=
+  ⟨a, β, β, axialNeg q a⟩
+
+/-- `threeStrandRotation q a β` is literally the matrix product
+`hoefsmitSigma1 q * hoefsmitSigma2 q a β`. -/
+theorem hoefsmitSigma1_mul_hoefsmitSigma2 (q : Rˣ) (a β : R) :
+    M2.mul (hoefsmitSigma1 q) (hoefsmitSigma2 q a β) =
+      threeStrandRotation q a β :=
+  threeStrandRotation_eq_product q a β
+
+/-- `hoefsmitSigma1 q` satisfies the Hecke quadratic relation `σ₁² = h · σ₁ + I₂`. -/
+theorem hoefsmitSigma1_hecke_sq (q : Rˣ) :
+    M2.mul (hoefsmitSigma1 q) (hoefsmitSigma1 q) =
+      M2.add (M2.smul (heckeH q) (hoefsmitSigma1 q)) M2.one := by
+  have h : (q : R) * (↑q⁻¹ : R) = 1 := q.mul_inv
+  simp only [hoefsmitSigma1, M2.mul, M2.add, M2.smul, M2.one, heckeH, M2.mk.injEq]
+  exact ⟨by linear_combination h, by ring, by ring, by linear_combination h⟩
+
+/-- `hoefsmitSigma2 q a β` satisfies the Hecke quadratic relation `σ₂² = h · σ₂ + I₂`
+whenever `a + a₋₂ = h` (`htr2`) and `β² = a₋₂ · a + 1` (`hβ`). -/
+theorem hoefsmitSigma2_hecke_sq (q : Rˣ) (a β : R)
+    (htr2 : a + axialNeg q a = heckeH q)
+    (hβ : β ^ 2 = axialNeg q a * a + 1) :
+    M2.mul (hoefsmitSigma2 q a β) (hoefsmitSigma2 q a β) =
+      M2.add (M2.smul (heckeH q) (hoefsmitSigma2 q a β)) M2.one := by
+  simp only [hoefsmitSigma2, M2.mul, M2.add, M2.smul, M2.one, M2.mk.injEq]
+  exact ⟨by linear_combination a * htr2 + hβ,
+         by linear_combination β * htr2,
+         by linear_combination β * htr2,
+         by linear_combination (axialNeg q a) * htr2 + hβ⟩
+
+/-- `hoefsmitSigma1 q` and `hoefsmitSigma2 q a β` satisfy the 3-strand Artin braid
+relation `σ₁ σ₂ σ₁ = σ₂ σ₁ σ₂` whenever `(q : R) * a - (↑q⁻¹ : R) * axialNeg q a = -1`,
+`(q : R) * a ^ 2 - (↑q⁻¹ : R) * β ^ 2 = (q : R) ^ 2 * a`, and
+`(q : R) * β ^ 2 - (↑q⁻¹ : R) * (axialNeg q a) ^ 2 = (↑q⁻¹ : R) ^ 2 * axialNeg q a`. -/
+theorem hoefsmitSigma_braid_relation (q : Rˣ) (a β : R)
+    (htr12 : (q : R) * a - (↑q⁻¹ : R) * axialNeg q a = -1)
+    (hdiag1 : (q : R) * a ^ 2 - (↑q⁻¹ : R) * β ^ 2 = (q : R) ^ 2 * a)
+    (hdiag2 : (q : R) * β ^ 2 - (↑q⁻¹ : R) * (axialNeg q a) ^ 2 =
+      (↑q⁻¹ : R) ^ 2 * axialNeg q a) :
+    M2.mul (M2.mul (hoefsmitSigma1 q) (hoefsmitSigma2 q a β)) (hoefsmitSigma1 q) =
+      M2.mul (M2.mul (hoefsmitSigma2 q a β) (hoefsmitSigma1 q)) (hoefsmitSigma2 q a β) := by
+  have h : (q : R) * (↑q⁻¹ : R) = 1 := q.mul_inv
+  simp only [hoefsmitSigma1, hoefsmitSigma2, M2.mul, M2.mk.injEq]
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · linear_combination -hdiag1
+  · linear_combination -β * htr12 - β * h
+  · linear_combination -β * htr12 - β * h
+  · linear_combination -hdiag2
+
+/-- **Primitive cube root of unity eigenvalues (`λ = e^{±2πi/3}`):**
+Any eigenvalue `lam : R` satisfying the characteristic equation `lam² + lam + 1 = 0`
+of `M = σ₁ σ₂` satisfies `lam³ = 1`, and over any domain with `(3 : R) ≠ 0` is a
+*primitive* cube root of unity (`lam ≠ 1`). -/
+theorem threeStrand_eigenvalue_primitive_cube_root (lam : R)
+    (hchar : lam ^ 2 + lam + 1 = 0) :
+    lam ^ 3 = 1 ∧ ([IsDomain R] → (3 : R) ≠ 0 → lam ≠ 1) := by
+  refine ⟨by linear_combination (lam - 1) * hchar, ?_⟩
+  intro _ h3 h1
+  subst h1
+  have h0 : (3 : R) = 0 := by linear_combination hchar
+  exact h3 h0
+
+end HoefsmitGeneratorsAndEigenvalues
+
 end QOU.BraidsAndKnots

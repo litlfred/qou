@@ -1,5 +1,8 @@
 import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Ring.Units
+import Mathlib.Algebra.Group.Invertible.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Meson GMOR fusion identity: [3]_q · [4]_q = [2]_q + [4]_q + [6]_q
@@ -60,5 +63,25 @@ theorem meson_qCG_3x4 (q qi : R) (hq : q * qi = 1) :
 classical SU(2) dimension identity `3 · 4 = 2 + 4 + 6` (the classical
 limit observed in `meson_3x4_structural_origin.py`). -/
 theorem meson_qCG_3x4_classical : (3 : ℕ) * 4 = 2 + 4 + 6 := by decide
+
+/-- Symmetric quantum integer `[n]_q = (q^n - q^{-n}) / (q - q⁻¹)` over any
+commutative ring `R` equipped with a unit `q : Rˣ` and `[Invertible ((q : R) - ↑q⁻¹)]`. -/
+def qIntSym (q : Rˣ) [Invertible ((q : R) - (↑q⁻¹ : R))] (n : ℕ) : R :=
+  ((q : R) ^ n - (↑q⁻¹ : R) ^ n) * ⅟((q : R) - (↑q⁻¹ : R))
+
+/-- **Exact `q`-integer Clebsch–Gordan fusion identity (`[3]_q · [4]_q = [2]_q + [4]_q + [6]_q`):**
+stated directly in terms of the symmetric `q`-integers `qIntSym q n` over any commutative ring
+`R` with `q : Rˣ` and `[Invertible ((q : R) - ↑q⁻¹)]`. -/
+theorem meson_qCG_3x4_qInt (q : Rˣ) [Invertible ((q : R) - (↑q⁻¹ : R))] :
+    qIntSym q 3 * qIntSym q 4 =
+      qIntSym q 2 + qIntSym q 4 + qIntSym q 6 := by
+  unfold qIntSym
+  have hmul := meson_qCG_3x4 (q : R) (↑q⁻¹ : R) q.mul_inv
+  have hinv : ((q : R) - (↑q⁻¹ : R)) * ⅟((q : R) - (↑q⁻¹ : R)) = 1 :=
+    mul_invOf_self ((q : R) - (↑q⁻¹ : R))
+  linear_combination
+    (⅟((q : R) - (↑q⁻¹ : R)) ^ 2) * hmul +
+    (((q : R) ^ 2 - (↑q⁻¹ : R) ^ 2 + ((q : R) ^ 4 - (↑q⁻¹ : R) ^ 4) +
+      ((q : R) ^ 6 - (↑q⁻¹ : R) ^ 6)) * ⅟((q : R) - (↑q⁻¹ : R))) * hinv
 
 end QOU.BraidKnot
