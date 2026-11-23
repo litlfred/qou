@@ -20,6 +20,11 @@ export default proposition({
   ],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , whose weight\ndiagram and its degeneracy are treated in\n[the octet proposition](#prop:baryon-octet-decomposition)" },
+    {
+      kind: "note",
+      date: "2026-11-23",
+      body: "Vector-space and quantum `W₃^{⊗3}` wiring (`qou-8fw2`, `qou-8fl1`, `qou-3oi0`): `QOU.EightfoldWay.SymmetricChannelDimension` (`finrank_homogeneousSubmodule`, `decuplet_dim = 10`, `quadruplet_dim = 4`, `decuplet_ne_quadruplet`) and `QOU.Eightfold.HyperbolicMesonClaspAndDiquarkSplit.quantum_cube_3x3x3_and_decuplet_10` (`(q² + q⁻²)[5]_q + 2 [2]_q [4]_q + 1 = [3]_q³` and rank-3 Ocneanu weight normalization at `z₃ = q³/[3]_q`) are now wired in `QOU.lean` alongside `RowCapObstruction.eightfold_channels_at_three`.",
+    },
   ],
   // Lean backs the DIMENSION claim the block states: the fully-symmetric
   // Schur-Weyl channel at N = 3 has dimension C(5,3) = 10 (the decuplet).

@@ -35,5 +35,10 @@ export default proposition({
       body: "The QOU realization paragraph previously called 3⊗3̄ a Clebsch–Gordan decomposition of H₃(q) Specht modules. H₃(q) is not a Hopf algebra, so its modules carry no tensor product, and its Specht modules have dimensions 1, 2, 1; it acts on V^{⊗3} (the baryon side), not on V⊗V*. The paragraph now uses the rigid-category trace splitting in Rep U_q(sl₃): singlet = image of coevaluation, octet = kernel of evaluation, projector coev∘ev/[3]_q. The idempotent algebra is proved sorry-free for any k-linear category in `QOU.Eightfold.TraceSplitting` (proj_idem, coproj_idem, proj_add_coproj, coev_comp_coproj, coproj_comp_ev, qint_three_ne_zero). That file does not construct U_q(sl₃), does not supply the pivotal structure, and does not prove the octet irreducible.",
     },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): As noted in\n[the Schur--Weyl proposition](#prop:schur-weyl-eightfold), the $N = 3$ question is" },
+    {
+      kind: "note",
+      date: "2026-11-23",
+      body: "Umbrella wiring (`qou-8fw2`, `qou-8fl1`): both `QOU.EightfoldWay.MesonOctetTracelessSplit` (`traceless_add_scalar`, `trace_tracelessPart`, `scalar_coeff_unique`, `traceless_scalar_disjoint`, `meson_split_dims`) and `QOU.Eightfold.TraceSplitting` (`proj_idem`, `coproj_idem`, `proj_add_coproj`, `qint_three_ne_zero`) are now wired into `QOU.lean` alongside the sibling `meson-octet-decomposition.lean`.",
+    },
   ],
 });

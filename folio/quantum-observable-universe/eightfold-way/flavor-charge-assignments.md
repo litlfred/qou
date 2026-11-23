@@ -157,3 +157,27 @@ and a $Z$ mass scale that removes the second term at nuclear distance.
 Neither is derived in this framework: the electroweak torus-link triplet
 of [the electroweak conjecture](#conj:electroweak-higgs-torus-link-triplet)
 orders $m_W < m_Z < m_H$ by crossing number but fixes no absolute scale.
+
+**Split-bundle framing $F = V_2 \oplus W_3^*$ and conditional hypercharge coupling.**
+In the Standard Model appendix, the missing hypercharge and the missing
+three-dimensional partner are shown to be one conditional gap rather than two
+independent knobs.  If the two-dimensional fibre $V_2$ ($z_2 = q^3/(q^2+1)$)
+is paired with a three-dimensional partner $W_3^*$ ($z_3 = q^3/[3]_q =
+q^5/(q^4+q^2+1)$, separated from $z_2$ by the identity $z_2 - z_3 =
+q^3 / ((q^2+1)(q^4+q^2+1)) \neq 0$) inside $F = V_2 \oplus W_3^*$, then over
+any field of characteristic outside $\{2, 3\}$ the traceless centralizer
+$\mathrm{diag}(y_2, y_2, y_3, y_3, y_3)$ satisfies $2 y_2 + 3 y_3 = 0$ if and
+only if $y_3 = -\tfrac{2}{3} y_2$.  Fixing the doublet normalisation $y_2 = 1$
+pins $y_3 = -\tfrac{2}{3}$, gives the exterior-pair quark doublet in $V_2 \otimes
+W_3^*$ hypercharge $y_2 + y_3 = +\tfrac{1}{3}$, and yields the Killing traces
+$\mathrm{tr}(T_3^2) = \tfrac{1}{2}$ and $\mathrm{tr}((Y_F/2)^2) = \tfrac{5}{6}$,
+hence the unrenormalized Weinberg ratio
+$\mathrm{tr}(T_3^2)/(\mathrm{tr}(T_3^2) + \mathrm{tr}((Y_F/2)^2)) = \tfrac{3}{8}$.
+On single strands, combining the weak-crossing sign $s_2 \in \{\pm 1\}$ with the
+$W_3$ versus $W_3^*$ triality orientation $\tau_3 \in \{\pm 1\}$ via
+$Q = \tfrac{1}{2} s_2 + \tfrac{1}{6} \tau_3$ reproduces
+$(+\tfrac{2}{3}, -\tfrac{1}{3}, +\tfrac{1}{3}, -\tfrac{2}{3})$ on
+$(u, d, \bar d, \bar u)$ and separates $\bar u$ ($-\tfrac{2}{3}$) from $d$
+($-\tfrac{1}{3}$) by $+\tfrac{1}{3} \neq 0$ despite their identical crossing
+sign $-1$.  This implication is proved conditionally on $W_3^*$: constructing
+$W_3$ categorically in the multi-fibre groupoid remains the open antecedent.
