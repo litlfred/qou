@@ -1,1 +1,0 @@
-Therefore the following is not allowed: \begin{lstlisting}[style=reg] reg invalid {0,-1,-2} "(@\textcolor{blue}{$-20^*$}@)"; \end{lstlisting} \vspace*{-\baselineskip} \begin{lstlisting}[style=regerr] the input alphabet of an automaton generated from a regular expression must be a subset of {0,1,...,9} : reg invalid {0,-1,-2} "(@$-20^*$@)"; \end{lstlisting}

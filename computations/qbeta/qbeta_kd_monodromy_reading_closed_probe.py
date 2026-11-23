@@ -263,7 +263,7 @@ def main() -> int:
             "zeta(3) proposal noted earlier today. SURVIVES: the open-path / non-abelian "
             "Stokes reading, which is not a monodromy, not trace-pinned, and "
             "gauge-dependent rather than conjugation-covariant."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"block": "(2,1)", "symbolic": True, "anchor": "none required"},

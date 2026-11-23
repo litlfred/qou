@@ -1,1 +1,0 @@
-It is only necessary that M is negative on a certain subspace of ZL. – 70 – We do not provide a proof of (A.27), and therefore (A.28), but believe it should be similar to the proof of the similar statement in [90].

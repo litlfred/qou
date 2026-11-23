@@ -70,6 +70,7 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from codata_constants import AME_B_LI7_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
@@ -108,7 +109,7 @@ B_AME_MEV: dict[tuple[int, int], mp.mpf] = {
     (2, 2): AME_B_HE4_MEV_VALIDATION,    # ⁴He
     (3, 2): mp.mpf("26.328"),      # ⁵Li (unstable, half-life ~10⁻²² s)
     (3, 3): AME_B_LI6_MEV_VALIDATION,     # ⁶Li
-    (3, 4): mp.mpf("39.24522"),    # ⁷Li
+    (3, 4): AME_B_LI7_MEV_VALIDATION,    # ⁷Li
     (4, 3): mp.mpf("37.6"),        # ⁷Be
     (4, 4): mp.mpf("56.49951"),    # ⁸Be
 }

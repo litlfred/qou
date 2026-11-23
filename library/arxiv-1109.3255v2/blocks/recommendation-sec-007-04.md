@@ -1,1 +1,0 @@
-Thus, assuming that (a) is valid above the singularity, while (b) is valid below the singularity, we find that $T_\epsilon$ is essentially the same as what appears in (b), but that the vertical leg must terminate at the singularity, in order to be consistent with the fact that in (a) no part of the curve appears above the singularity.

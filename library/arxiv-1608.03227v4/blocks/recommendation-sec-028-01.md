@@ -1,1 +1,0 @@
-After the elimination the only term that has dependence on $Y_2$ is the Koszul complex $\begin{bmatrix} G& (Y_{2}-\Ad_{g_{23}}(Y_3)_{++})\end{bmatrix}$ and since $\pi_{13}^*(W)$ does not depend on $Y_2$ and the correction correction differentials $\partial$, which could depend on $Y_2$ does not contribute the square of the total differential, the element $G$ must vanish.

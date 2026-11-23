@@ -1,1 +1,0 @@
-The only thing I did not know was how to fill out the holes in the mathematics and show the epsilons and deltas and all of that, and the limiting processes; I did not know just how it should be done and what mathematicians really knew about limiting processes in that ball park." As it turned out, by that point, mathematicians knew a lot!

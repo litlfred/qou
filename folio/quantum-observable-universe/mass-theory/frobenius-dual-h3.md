@@ -1,5 +1,5 @@
 **Definition (Frobenius dual).**
-*Let $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ be the (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)) non-degenerate
+*Let $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ be the (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical) non-degenerate
 Frobenius Gram matrix on the NF basis $\{b_i\}$ of $H_3(q)$
 ([prop:frobenius-gram-matrix](#prop:frobenius-gram-matrix)). For a
 state $K = \sum_i c_i b_i$ in NF, the **Frobenius dual**

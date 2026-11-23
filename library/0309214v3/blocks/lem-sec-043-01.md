@@ -1,0 +1,1 @@
+1 The structure constants of U−, in the basis of w, is q–holonomic. Let us deﬁne a scalar product (·, ·) on U−such that the PBW basis of w is an orthonormal basis. Since f m′ 3′ f n′ 2′ f p′ 1′ = X m,n,p (f m′ 3′ f n′ 2′ f p′ 1′ , f m 3 f n 2 f n 1 )f m 3 f n 2 f p Geometry & Topology, Volume 9 (2005) Stavros Garoufalidis and Thang T Q Lˆe

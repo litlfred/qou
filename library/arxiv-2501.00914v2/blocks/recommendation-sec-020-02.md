@@ -1,1 +1,0 @@
-Then the remaining $g-2$ exponents $a_1 > a_2 > \dots > a_{g-2}$ contain at most one element from each pair $\{g-2,3-g\}, \{g-3,4-g\}, \dots, \{1,0\}$, since otherwise two of them would sum to $1$, but there are exactly $g-2$ such pairs so each must contain one of the $a_i$ as claimed. \end{proof}

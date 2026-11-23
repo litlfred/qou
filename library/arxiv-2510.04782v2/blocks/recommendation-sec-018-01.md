@@ -1,1 +1,0 @@
-Intuitively, this should be done via the $(q-1)$-adic filtration $(q-1)^{\star -n}\fil_{\qHodge,n}^n\qOmega_{S/A}$ as in [\[par:qHodgeForCurves\]](#par:qHodgeForCurves){reference-type="ref" reference="par:qHodgeForCurves"}.

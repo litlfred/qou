@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2607.29018v1/blocks/lem-sec-004-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "cf. [27, Proposition 2.3]",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "text": "lem-sec-004-01.md",
+  "derivedFrom": "library/arxiv-2607.29018v1/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2607.29018v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.1",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-004-3-proof-of-theorem.md (p. 8-11) citing cf. [27, Proposition 2.3], [27, Proposition 2.3]",
+    "claim_id": "arxiv-2607.29018v1#lemma:2.1",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

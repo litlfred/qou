@@ -1,1 +1,0 @@
-Working with the obvious integrable almost complex structure, rational curves in W must meet the ﬁbre non-negatively, which means that curves only exist in classes dL −rR with r ≤2d; on the other hand, curves in classes with a positive coeﬃcient of R meet E negatively, hence are entirely contained in that divisor.

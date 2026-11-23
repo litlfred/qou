@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1909.06744v1/blocks/rem-sec-003-01",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "rem-sec-003-01.md",
+  "derivedFrom": "library/arxiv-1909.06744v1/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06744v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.1",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-003-3-springer-correspondence-for-reductive-groups.md (p. 3-4)",
+    "claim_id": "arxiv-1909.06744v1#remark:3.1"
+  }
+}

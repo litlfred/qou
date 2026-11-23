@@ -13,9 +13,10 @@
   "pageStart": 7,
   "pageEnd": 10,
   "contains": [
-    "library/ki52/blocks/prose-sec-003"
+    "library/ki52/blocks/prose-sec-003",
+    "library/ki52/blocks/lem-sec-003-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
   "provenance": "ingested"
 }

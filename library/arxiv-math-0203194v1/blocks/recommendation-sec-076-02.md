@@ -1,1 +1,0 @@
-To imitate the complex theory, we shall assume that {\it there exists a finite Galois global orbifold chart $\phi: \ovl{S}'\to \ovl{S}$ such that $\ovl{S}'$ is a Mumford curve} (of any genus $\geq 0$).

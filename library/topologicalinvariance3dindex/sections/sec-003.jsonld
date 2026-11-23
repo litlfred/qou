@@ -13,9 +13,15 @@
   "pageStart": 4,
   "pageEnd": 5,
   "contains": [
-    "library/topologicalinvariance3dindex/blocks/prose-sec-003"
+    "library/topologicalinvariance3dindex/blocks/prose-sec-003",
+    "library/topologicalinvariance3dindex/blocks/thm-sec-003-01",
+    "library/topologicalinvariance3dindex/blocks/thm-sec-003-02",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-003-03",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-003-04",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-003-05",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-003-06"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
   "provenance": "ingested"
 }

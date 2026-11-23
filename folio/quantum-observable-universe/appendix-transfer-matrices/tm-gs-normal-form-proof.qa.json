@@ -1282,9 +1282,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "minor",
         "evidence": "[sidecar review 2026-11-15, issue #8030] Recurrence a′ = ac(q−q⁻¹) + ad + bc, b′ = ac + bd ✓. The ≤ C(A−1, 2) count ✓. The confluence citation is false (S₄ counterexample above). The uniqueness conclusion holds via reduced words / the T_w basis instead. The induction is unnecessary: each block lies in the commutative subalgebra ℤ[q^±][σ_i]."
+      },
+      {
+        "field_hash": {
+          "md": "c6116c9d3227",
+          "ts": "0f647006539e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:59:42.015Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[full review 2026-11-21] The earlier defect is fixed. The proof used to cite confluence of the Hecke + Yang-Baxter + far-commutativity system, which is false from A = 4 (S4 counterexample). Statement and proof now use the completed system with the whole Bokut-Shiao family, which is confluent by the Diamond Lemma. I checked the argument: (1) Xi_A is weakly increasing in generator index, every Bokut-Shiao and far-commutativity leading word needs a descent, and a Hecke step keeps the word weakly increasing, so only the Hecke rule ever applies, on every reduction path. (2) Expanding (c sigma + d)(a sigma + b) and reducing sigma^2 gives a' = ac(q - q^-1) + ad + bc and b' = ac + bd. (3) Block i has A-1-i factors, so there are sum (A-2-i) = C(A-1, 2) block multiplications. (4) The chain-form monomials are strictly increasing and pairwise distinct, so they are distinct normal words. Minor: the induction on A is not needed, since each block lies in the commutative subalgebra Z[q^+-1][sigma_i]."
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:10.568Z",
+  "updated_at": "2026-11-21T07:59:42.015Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

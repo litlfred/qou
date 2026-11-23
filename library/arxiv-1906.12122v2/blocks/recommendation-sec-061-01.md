@@ -1,1 +1,0 @@
-The additional pion interactions from $D_{2\mathrm{s}}$ should have effects on other processes, such as pion-nucleus scattering, but only when there is a significant contribution from the $^1S_0$ $2N$ partial wave.

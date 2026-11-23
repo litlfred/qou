@@ -1,1 +1,0 @@
-Even for steps that seem mathematically straightforward, you should decompose the proof into simple, manageable subgoals for AlphaProof to solve [...] Some of these problems are very hard, possibly even open problems in mathematics.

@@ -1,1 +1,0 @@
-Although in their situation the parameter X is given by (/+^)~1 where f is a positive integer and g is the corresponding dual Coxeter number, we shall deal with the monodromy by considering \ as a parameter.

@@ -1,0 +1,1 @@
+— Let f ∈xC{x} and φ ∈C{ξ} such that Bqf = φ. Then: φ(ξ) = 2πi Z |x|=R f(x) ((1 −q) ξ x; q)∞ dx x2 = 2πi Z |x|=R f(x)eq (ξ/x) dx x2 , f(x) = −1 2πi Z |ξ|=ρ φ(ξ)Eq  −x ξ  dξ, where the radii R and ρ are assumed to be chosen suﬃciently small, inde- pendently of the variables ξ and x, respectively.

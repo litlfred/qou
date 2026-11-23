@@ -1,1 +1,0 @@
-2020, Proposition 4.3] to ﬁnd elements s1 and s2 in ˜G with |C ˜G(s1)|2̸ = |C ˜G(s2)|2 such that the corresponding semisimple characters (which again must be ﬁxed by σ1) are irreducible on G and trivial on Z( ˜G).

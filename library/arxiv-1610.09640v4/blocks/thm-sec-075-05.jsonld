@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/thm-sec-075-05",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Mittag-Leﬄer Argument",
+  "pageStart": 185,
+  "pageEnd": 187,
+  "text": "thm-sec-075-05.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-075",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "11.1.7",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-075-111-direct-and-inverse-limits-of-complexes.md (p. 185-187) citing [75, Proposition 1.12.4], [56, Chapitre 0III,\nProposition 13.2.3]",
+    "claim_id": "arxiv-1610.09640v4#theorem:11.1.7",
+    "lean_status": "unformalized"
+  }
+}

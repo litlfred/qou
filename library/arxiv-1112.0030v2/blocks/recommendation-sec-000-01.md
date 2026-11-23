@@ -1,1 +1,0 @@
-In both cases, knot homology is realized as the space of BPS states and, as we shall see momentarily, the physical realization of the triply-graded knot homology proposed in \cite{GSV} is essentially the large-$N$ dual of the system realizing the doubly-graded knot homology in \cite{fiveknots}.

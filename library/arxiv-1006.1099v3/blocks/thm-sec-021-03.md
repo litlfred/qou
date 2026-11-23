@@ -1,0 +1,1 @@
+When A = Λ(V ) is an exterior algebra, with its natural Z2-grading placing V in degree 1, there is an L∞-quasi-isomorphism Φ : CC•(A, A) −→Sym•(V ∨) ⊗Λ(V ) between the Hochschild complex and its cohomology, the Lie algebra of polyvector ﬁelds.

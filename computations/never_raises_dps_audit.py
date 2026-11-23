@@ -84,7 +84,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 BASELINE = HERE / "never-raises-dps-baseline.json"
-SKIP_DIRS = {"_deprecated", "fsh-guts", "__pycache__", "data"}
+SKIP_DIRS = {"_deprecated", "fsh-guts", "__pycache__", "data", ".claude", ".git", ".lake", "node_modules"}
 
 # Calls that CONSTRUCT an mpmath value. Deliberately a construction list rather
 # than "anything on mp": `mp.dps`, `mp.prec` and friends are settings, not values.
@@ -94,6 +94,30 @@ MP_VALUE_FUNCS = {
     "polylog", "hyper", "besselj", "erf", "mpc",
 }
 RAISERS = {"set_compute_dps", "workdps"}
+
+# Modules that export `mpmath.mpf` constants at module scope (bean qou-0p2h).
+# A file that never names `mpmath` directly but imports `HBAR_MEV_S` (etc.)
+# from one of these and performs arithmetic on it without importing a float64
+# `Q` computes in mpmath at `mp.dps = 15`.
+MPF_CONST_MODULES = {
+    "experimental_constants": {
+        "M_E_MEV", "M_P_MEV", "M_N_MEV", "M_MU_MEV", "M_TAU_MEV",
+        "Q_NEUTRON_MEV", "HBAR_MEV_S", "ALPHA_EM", "ALPHA_EM_INV",
+        "MU_OVER_E", "P_OVER_E", "N_OVER_E", "VOL_FIGURE_EIGHT",
+        "VOL_THREE_TWIST", "VOL_BORROMEAN",
+    },
+    "codata_constants": {
+        "M_E_MEV", "M_P_MEV", "M_N_MEV", "M_MU_MEV", "ALPHA_EM", "ALPHA_EM_INV",
+    },
+    "knot_volumes": {
+        "VOL_FIGURE_EIGHT", "VOL_THREE_TWIST", "VOL_BORROMEAN", "CATALAN_G",
+    },
+    "q_parameter": {
+        "Q_MP", "Q_INV_MP", "HA_MP", "HBAR_Q_MP", "HBAR_Q_SQ_MP", "Z_CANONICAL_MP",
+    },
+}
+FLOAT64_Q_MODULES = {"q_parameter", "qou_substrate.constants"}
+FLOAT64_Q_NAMES = {"Q", "Q_INV", "HA", "HBAR_Q", "HBAR_Q_SQ"}
 
 
 def raises_precision(tree: ast.Module) -> bool:
@@ -149,9 +173,23 @@ def raises_precision(tree: ast.Module) -> bool:
 
 
 def mp_value_calls(tree: ast.Module) -> list[int]:
-    """Line numbers of calls that construct an mpmath value."""
+    """Line numbers of calls that construct an mpmath value, plus arithmetic on
+    imported `mpf` constants when no float64 `Q` is imported (bean qou-0p2h)."""
     out: list[int] = []
+    imported_mpf_names: set[str] = set()
+    has_f64_q = False
     for node in ast.walk(tree):
+        if isinstance(node, ast.ImportFrom) and node.module:
+            mod = node.module.split(".")[0]
+            if node.module in FLOAT64_Q_MODULES or mod in FLOAT64_Q_MODULES:
+                for a in node.names:
+                    if a.name in FLOAT64_Q_NAMES:
+                        has_f64_q = True
+            if mod in MPF_CONST_MODULES:
+                known = MPF_CONST_MODULES[mod]
+                for a in node.names:
+                    if a.name in known:
+                        imported_mpf_names.add(a.asname or a.name)
         if not isinstance(node, ast.Call):
             continue
         f = node.func
@@ -160,7 +198,13 @@ def mp_value_calls(tree: ast.Module) -> list[int]:
             out.append(node.lineno)
         elif isinstance(f, ast.Name) and f.id in {"mpf", "mpmathify"}:
             out.append(node.lineno)
-    return sorted(out)
+    if not out and imported_mpf_names and not has_f64_q:
+        for node in ast.walk(tree):
+            if isinstance(node, ast.BinOp):
+                if any(isinstance(sub, ast.Name) and sub.id in imported_mpf_names
+                       for sub in (node.left, node.right)):
+                    out.append(node.lineno)
+    return sorted(set(out))
 
 
 
@@ -327,6 +371,14 @@ def self_test() -> int:
          'if __name__ == "__main__":\n    pass\n', False),
         ("does NOT flag a script that emits no witness",
          'import mpmath as mp\nx = mp.mpf("1.5")\n'
+         'if __name__ == "__main__":\n    pass\n', False),
+        ("FLAGS a producer that never names mpmath but does arithmetic on an imported mpf constant (qou-0p2h)",
+         'from experimental_constants import HBAR_MEV_S\n'
+         'x = HBAR_MEV_S * 1e6\nopen("a.witness.json")\n'
+         'if __name__ == "__main__":\n    pass\n', True),
+        ("does NOT flag imported mpf constant when float64 Q is also imported (qou-840k class, not qou-0p2h)",
+         'from experimental_constants import M_P_MEV\n'
+         'from q_parameter import Q\nx = M_P_MEV / Q\nopen("a.witness.json")\n'
          'if __name__ == "__main__":\n    pass\n', False),
     ]
     bad = 0

@@ -1,1 +1,0 @@
-Before commencing the proof let us introduce the following notation $$\exp(x)=\begin{pmatrix} e^{x} & 0 \\ 0 & e^{-x} \end{pmatrix},$$ which should not cause any ambiguities as long as the context shows that we are dealing with a matrix.

@@ -1,0 +1,1 @@
+Let (F, σ) be an idempotent copointed linear functor on M(A, gr), and assume that F is left exact and weakly stable. (1) The copointed triangulated functor (RF, σR) on D+(A, gr) is idempotent. (2) If F has ﬁnite right cohomological dimension, then the copointed triangu- lated functor (RF, σR) on D(A, gr) is idempotent.

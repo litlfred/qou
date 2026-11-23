@@ -1,1 +1,0 @@
-However, in almost all the examples considered, we shall indeed have (complex) mod-$\phi$ convergence (convergence of the residues $\theta_n$), with the same parameters $t_n$ as for the notion of zone of control.

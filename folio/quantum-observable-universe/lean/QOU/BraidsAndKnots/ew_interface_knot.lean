@@ -5,7 +5,15 @@ import Mathlib.Tactic
 
 **Canonical declaration** for content block EW interface knot.
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+This module defines the combinatorial skeleton of the EW interface knot and
+proves it. Until 2026-11-20 (bean `qou-6qbv`) it carried a context class whose
+fields were the bare equations `n_strands = 6`, `exp_W = 4 ∧ …`,
+`n_adjacent_pair_generators = 2 ∧ …` on free `ℕ` fields, and the declaration
+projected them back out: every instance chose the numbers, so nothing was
+asserted. The numbers are now computed from the strand/generator data.
+
+What stays prose: the physical identification of `σ_1^4, σ_3^6, σ_5^8` with
+`W, Z, H` (`conj:hoefsmit-ew-cell-content`) and the bar-self-duality reading.
 
 Note: the chapter-dir uses singular `QOU.BraidKnot` for most blocks;
 this plural `QOU.BraidsAndKnots` namespace was inherited from existing
@@ -14,37 +22,34 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
+/-- Strands of `H_6(q)`, numbered `1 … 6`; generator `σ_i` (`i ∈ 1 … 5`)
+crosses strands `i` and `i + 1`. -/
+def ewStrands : Finset ℕ := Finset.Icc 1 6
+def ewGenerators : Finset ℕ := Finset.Icc 1 5
 
-/-- Abstract context for the `ew_interface_knot` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class EwInterfaceKnotContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Strand count of the EW interface knot (manuscript: `n = 6`). -/
-  n_strands : ℕ
-  /-- EW-carrier exponents `(σ_1^4, σ_3^6, σ_5^8)` for `(W, Z, H)`. -/
-  exp_W : ℕ
-  exp_Z : ℕ
-  exp_H : ℕ
-  /-- Manuscript sub-claim (i) — Strand-count identity: the EW
-      interface knot lives in `H_6(q)` (n_strands = 6). -/
-  claim_i_strand_count : n_strands = 6
-  /-- Manuscript sub-claim (ii) — EW-carrier exponents:
-      `(W, Z, H) ↔ (σ_1^4, σ_3^6, σ_5^8)`. -/
-  claim_ii_ew_carrier_exponents :
-    exp_W = 4 ∧ exp_Z = 6 ∧ exp_H = 8
-  /-- Number of adjacent-pair generators used by the EW interface
-      knot (`σ_2` and `σ_4` for `H_6`). -/
-  n_adjacent_pair_generators : ℕ
-  /-- Number of disjoint strand-pairs on which the EW carriers act
-      (`(1,2), (3,4), (5,6)` for `H_6`). -/
-  n_disjoint_strand_pairs : ℕ
-  /-- Manuscript sub-claim (iii) — Bar-self-duality breakdown is
-      structural: the EW interface knot uses the 2 adjacent-pair
-      generators `(σ_2, σ_4)` connecting the 3 disjoint strand pairs
-      that carry the EW exponents. -/
-  claim_iii_bar_self_duality :
-    n_adjacent_pair_generators = 2 ∧ n_disjoint_strand_pairs = 3
+/-- The EW carrier generators `σ_1, σ_3, σ_5` with exponents `4, 6, 8`
+(`W, Z, H`). -/
+def ewCarrierExponent : ℕ → ℕ
+  | 1 => 4
+  | 3 => 6
+  | 5 => 8
+  | _ => 0
+
+def ewCarriers : Finset ℕ := ewGenerators.filter (fun i => ewCarrierExponent i ≠ 0)
+
+/-- The strand pair a generator acts on. -/
+def strandPair (i : ℕ) : Finset ℕ := {i, i + 1}
+
+/-- The adjacent-pair generators: the generators that are not EW carriers. -/
+def ewAdjacentPairGenerators : Finset ℕ := ewGenerators \ ewCarriers
+
+/-- The carrier pairs containing a given strand. -/
+def carrierOf (s : ℕ) : Finset ℕ := ewCarriers.filter (fun c => s ∈ strandPair c)
+
+/-- An EW interface word: a non-empty signed braid word in the adjacent-pair
+generators `σ_2, σ_4` only. -/
+def IsEwInterfaceWord (w : List (ℕ × Bool)) : Prop :=
+  w ≠ [] ∧ ∀ l ∈ w, l.1 ∈ ewAdjacentPairGenerators
 
 /-- **Content statement** (from manuscript):
 
@@ -60,13 +65,32 @@ $W \leftrightarrow \sigma_1^{\,4}$, $Z \leftrightarrow \sigma_3^{\,6}$,
 $H \leftrightarrow \sigma_5^{\,8}$ act
 ([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).*
 
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
+    Proved below: the carriers are `σ_1, σ_3, σ_5`; their strand pairs are
+    pairwise disjoint and cover the six strands; the non-carrier generators
+    are exactly `σ_2, σ_4`; and each of these crosses between two different
+    carrier pairs. -/
 -- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/ew-interface-knot.ts
-def ew_interface_knot [ctx : EwInterfaceKnotContext] :
-    ctx.n_strands = 6 ∧
-    (ctx.exp_W = 4 ∧ ctx.exp_Z = 6 ∧ ctx.exp_H = 8) ∧
-    (ctx.n_adjacent_pair_generators = 2 ∧ ctx.n_disjoint_strand_pairs = 3) :=
-  ⟨ctx.claim_i_strand_count, ctx.claim_ii_ew_carrier_exponents,
-   ctx.claim_iii_bar_self_duality⟩
+theorem ew_interface_knot :
+    ewCarriers = {1, 3, 5} ∧
+    (ewCarrierExponent 1 = 4 ∧ ewCarrierExponent 3 = 6 ∧ ewCarrierExponent 5 = 8) ∧
+    ((ewCarriers : Set ℕ).PairwiseDisjoint strandPair) ∧
+    ewCarriers.biUnion strandPair = ewStrands ∧
+    ewAdjacentPairGenerators = {2, 4} ∧
+    (∀ g ∈ ewAdjacentPairGenerators, ∃ c ∈ ewCarriers, ∃ c' ∈ ewCarriers,
+        c ≠ c' ∧ g ∈ strandPair c ∧ g + 1 ∈ strandPair c') := by
+  refine ⟨by decide, ⟨rfl, rfl, rfl⟩, ?_, by decide, by decide, by decide⟩
+  intro a ha b hb hab
+  simp only [Finset.coe_insert, Finset.coe_singleton, Set.mem_insert_iff,
+    Set.mem_singleton_iff, show ewCarriers = {1, 3, 5} by decide] at ha hb
+  rcases ha with rfl | rfl | rfl <;> rcases hb with rfl | rfl | rfl <;>
+    first | exact absurd rfl hab | (simp [Function.onFun, strandPair])
+
+/-- The word `σ_2 σ_4⁻¹` is an EW interface word, so the class is non-empty;
+`σ_1` alone is not one. -/
+theorem ew_interface_word_examples :
+    IsEwInterfaceWord [(2, true), (4, false)] ∧ ¬ IsEwInterfaceWord [(1, true)] := by
+  refine ⟨⟨by simp, by decide⟩, fun h => ?_⟩
+  have := h.2 (1, true) (by simp)
+  revert this; decide
 
 end QOU.BraidsAndKnots

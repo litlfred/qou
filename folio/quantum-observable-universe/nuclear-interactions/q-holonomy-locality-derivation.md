@@ -8,7 +8,7 @@ Let $X_n$ be the configuration space of $n$ distinct complex points. The quantum
 
 ## Applying to the mass endomorphism
 
-We model each crossing of an atomic braid as a puncture in $X_n$. A lifted crossing inserts $\Phi_q(z_c)$; an unlifted crossing inserts the identity. The mass contribution is the trace of the braid-word operator, computed via parallel transport.
+Model each crossing of an atomic braid as a puncture in $X_n$. A lifted crossing inserts $\Phi_q(z_c)$; an unlifted crossing inserts the identity. The mass contribution is the trace of the braid-word operator, computed via parallel transport.
 
 **Claim.**
 *At generic $q$, the parallel transport factorizes over disjoint punctures:*
@@ -37,4 +37,4 @@ The KZ connection is flat at every level (the infinitesimal braid relations are 
 
 ## Corollary — exponential mass scaling
 
-Combining locality with the crossing-graded expansion, we find that at the homogeneous fixed point, $\mathfrak{m}(\mathcal{K}; q_0) = \mathfrak{m}_{\mathrm{GB}}(\mathcal{K}) \cdot (1 + \xi(q_0))^{c(\mathcal{K})}$. Each crossing multiplies mass by $\approx 94$. Exponential scaling is the empirical signature of KZ flatness at the substrate.
+Combining locality with the crossing-graded expansion gives, at the homogeneous fixed point, $\mathfrak{m}(\mathcal{K}; q_0) = \mathfrak{m}_{\mathrm{GB}}(\mathcal{K}) \cdot (1 + \xi(q_0))^{c(\mathcal{K})}$. Each crossing multiplies mass by $\approx 94$. Exponential scaling is the empirical signature of KZ flatness at the substrate.

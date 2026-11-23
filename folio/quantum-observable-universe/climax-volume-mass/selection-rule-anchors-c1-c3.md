@@ -18,16 +18,16 @@ $$
 
 ## Significance
 
-The zero-parameter selection rule reads $\mathrm{lw}(L) = \frac{1}{c+1}\sum_{\lambda\vdash(c+1)} \dim_q V_\lambda$, where $c$ is the number of link components. The c=1 case must equal 1 for all $q$ (muon, a knot, framework `linking_weight = 1`). The c=3 case must equal the Family-A formula $\frac{5}{2} + \frac{3}{4}h^2$ (proton). This proposition Lean-formalises both identities *from the hook-length formula itself*: [`QOU.Mass.selection_rule_c1_real`](../lean/QOU/Mass/QHookDimension.lean) and `QOU.Mass.selection_rule_c3_real` state the sums over `dimQ` of the actual partitions, where `dimQ` is built as shape → conjugate → hook lengths → `[n]_q!` over the hooks' q-integers, and the hook multiset of each shape is settled by `decide`. So the anchors are derivation-tight in the sense claimed: not a fit, and not a hand-substituted value either.
+The zero-parameter selection rule reads $\mathrm{lw}(L) = \frac{1}{c+1}\sum_{\lambda\vdash(c+1)} \dim_q V_\lambda$, where $c$ is the number of link components. The $c=1$ case equals $1$ for all $q$ (muon, a single-component knot with $\mathrm{lw} = 1$), and the $c=3$ case equals the Family-A formula $\frac{5}{2} + \frac{3}{4}h^2$ (proton, a three-component Borromean link). This proposition derives both identities directly from the hook-length formula: the sums run over the partitions of $2$ and $4$, and each $\dim_q V_\lambda$ is $[n]_q!$ divided by the product of the hook $q$-integers of $\lambda$.
 
-## Lean proof structure
+## Proof structure
 
-We provide two purely algebraic identities at the symbolic level, each closed by `field_simp; ring`:
+The proof consists of two purely algebraic identities at the symbolic level:
 
-1. **c=1 anchor** (`selection_rule_c1_eq_one`):
+1. **c=1 anchor**:
    $\frac{1}{2}\bigl( \dim_q V_{(2)} + \dim_q V_{(1,1)} \bigr) = 1$.
    Both q-dimensions equal $1$ (each partition of 2 has a hook product equal to the q-factorial), so the average is exactly 1.
-2. **c=3 anchor** (`selection_rule_c3_eq_family_a`):
+2. **c=3 anchor**:
    $\frac{1}{4} \bigl( \dim_q V_{(4)} + \dim_q V_{(3,1)} + \dim_q V_{(2,2)} + \dim_q V_{(2,1,1)} + \dim_q V_{(1,1,1,1)} \bigr) = (3q^2 + 4 + 3q^{-2})/4$.
 
    Using the explicit q-hook formula:
@@ -37,7 +37,7 @@ We provide two purely algebraic identities at the symbolic level, each closed by
 
    Their sum is $1 + (q^2{+}1{+}q^{-2}) + (q^2{+}q^{-2}) + (q^2{+}1{+}q^{-2}) + 1 = 4 + 3q^2 + 3q^{-2}$. Dividing by 4 yields the stated form. The $h^2$ form follows from $q^2 + q^{-2} = h^2 + 2$.
 
-   Both steps operate as pure polynomial identities in $\mathbb{Z}[q, q^{-1}]$. They close by `ring` after `field_simp` clears the $q^{-1}$ denominators.
+   Both steps operate as pure polynomial identities in $\mathbb{Z}[q, q^{-1}]$. They hold once the $q^{-1}$ denominators are cleared.
 
 ## q-usage discipline
 
@@ -45,5 +45,5 @@ This holds over real $q > 0$ (the substrate-anchor regime). Both identities are 
 
 ## Cross-references
 
-- [`def:coulomb-charge`](#def:coulomb-charge) — introduces the $h = q - q^{-1}$ structure at the per-crossing level.
-- [`prop:coulomb-strong-ratio-q-rational`](#prop:coulomb-strong-ratio-q-rational) — companion identity proving $\tanh(\ln q) = (q^2-1)/(q^2+1)$ over real $q > 0$.
+- [Coulomb charge of a knot composite](#def:coulomb-charge) — introduces the $h = q - q^{-1}$ structure at the per-crossing level.
+- [Coulomb/strong ratio $\tanh(\ln q)$ is the q-rational $(q^2-1)/(q^2+1)$](#prop:coulomb-strong-ratio-q-rational) — companion identity proving $\tanh(\ln q) = (q^2-1)/(q^2+1)$ over real $q > 0$.

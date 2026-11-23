@@ -1,1 +1,0 @@
-From this point of view objects of the category $\CC$ should be interpreted as critical points of the function (called the potential), which is obtained from the solution to the so-called classical master equation.

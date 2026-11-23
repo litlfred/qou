@@ -1,0 +1,1 @@
+The spaces L1 b(ΦD) and A are Banach algebras with respect to the usual addition of functions and the convolution (1.20). Furthermore ∥f ∗g∥b ≤∥f∥b∥g∥b (f, g ∈L1 b(ΦD)) ∥f ∗g∥u ≤∥f∥u∥g∥u (f, g ∈A) ∥f ∗g∥u ≤∥f∥u∥g∥b (f ∈C(ΦD), g ∈L1 b(ΦD) (2.6) (D = ∞is allowed in the ﬁrst inequality). With F(s) := f(seiφ) and G(s) := g(seiφ) we have: Z D dte−bt

@@ -1,1 +1,0 @@
-The orientations of the curves must satisfy the following two conditions. a) A curve meeting a box at an odd marked point must exit the box at that point. b) The connected components of R2\N may be oriented in such a way that the orientation of a curve coincides with the orientation induced as part of the boundary of a connected component.

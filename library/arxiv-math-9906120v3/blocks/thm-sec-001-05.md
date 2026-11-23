@@ -1,0 +1,1 @@
+Let F(t) be the Tracy-Widom distribution function (1.5). Then, for all t ∈R, (1.26) lim α→∞Pα W,M " L(w) ≤α M + 2√α +  1 + √α M 2/3 α1/6t # = F(t). Assume that M = M(N) →∞as N →∞in such a way that (log N)1/6/M(N) →0. Then, for all t ∈R, (1.27) lim N→∞PW,M,N " L(w) ≤N M + 2 √ N +  1 + √ N M 2/3 N 1/6t # = F(t).

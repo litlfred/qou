@@ -11,7 +11,7 @@ export default definition({
   },
   uses: [
     "prop:markov-pair-z2",
-    "thm:topological-mass",
+    "conj:topological-mass",
   ],
   computation: {
     engine: "sympy",

@@ -1,1 +1,0 @@
-The general description of a Gromov-Floer limit of disks as a tree of holomorphic disks and sphere bubbles, see for instance [35], implies that u∞has at least one disk component inside C1, with boundary on KL, and that any component of u∞meeting C0\(C0 ∩C1) must be a rational curve, since L ∩C0 = ∅.

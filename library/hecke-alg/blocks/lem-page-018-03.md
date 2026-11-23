@@ -1,0 +1,1 @@
+Suppose that P is a projective A-module. Then P has a filtration @= Py C-:: C PB, = P with composition factors P;/P;-1 isomorphic to the (non-zero) modules P ®4 (CH* @p C#), with each pe € A occurring exactly once.

@@ -90,6 +90,8 @@ def main():
                      "magnitudes_differ": bool(sp.simplify(ac**2 - am**2) != 0)})
     res = {"producer": "computations/probes/word_dressing_chirality_probe.py", "bean": "qou-g0jn",
            "arithmetic": "exact (sympy over Q(q)); no floats", "q0_anchor": "none (symbolic in q)",
+           "q0Anchor": "independent",
+           "q0AnchorReason": "probe never reads q0: every quantity is exact over Q(q) (sympy), with q a free symbol; its import cone (w_braid_reconcile_probe) evaluates nothing at a substrate pin",
            "rows": rows,
            "checks": {"expectation_magnitudes_differ_all_words": all(r["magnitudes_differ"] for r in rows)}}
     print(json.dumps(res, indent=1, ensure_ascii=False))

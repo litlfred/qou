@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/blocks/rem-sec-024-06",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 48,
+  "pageEnd": 52,
+  "text": "rem-sec-024-06.md",
+  "derivedFrom": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-024",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-024-82-curves-on-class-vii-surfaces-a-gauge-theoreti.md (p. 48-52)",
+    "claim_id": "oberwolfachreports1223-v20120708-9-40#rem-sec-024-06"
+  }
+}

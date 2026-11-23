@@ -1,1 +1,0 @@
-Since changing ﬂattenings changes log parameters by multiples of πi, it must be true that if we make an arbitrary choice of ﬂattenings of the individual ideal simplices then the sum of log parameters along any normal path in the star of a 0–simplex is a multiple of πi.

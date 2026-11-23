@@ -1,1 +1,0 @@
-(6.3) This set, which can be also looked as P p−1 + ∪{wθ(P p+1 ++ ) + p θ} , contains p2 weights, |Ep| ≡|P+,p| , and we shall argue below that it is the analog for k = 3/p −3 of the integrable ‘dual’ set {µ ∈P h−3 + }, see ﬁgs.

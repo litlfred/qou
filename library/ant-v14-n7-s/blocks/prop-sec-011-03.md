@@ -1,1 +1,1 @@
-There exists a complex period 9∈ C×, uniquely determined up to multiplication
+We have LAs(9, χ, s) = LAs(5, χ, s) Y ℓ|mN Cℓ(9, χ, s), where the local error terms Cℓ(9, χ, s) are polynomials in ℓ−s, of degree ⩽4. In particular, the primitive and imprimitive L-functions have the same local factors at all but ﬁnitely many primes.

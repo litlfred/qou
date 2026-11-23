@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/invariant-eigendistributions-2/blocks/thm-sec-008-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "thm-sec-008-01.md",
+  "derivedFrom": "library/invariant-eigendistributions-2/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.1",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-008-6-characters-and-characteristic-cycles.md (p. 10-12)",
+    "claim_id": "invariant-eigendistributions-2#theorem:6.1",
+    "lean_status": "unformalized"
+  }
+}

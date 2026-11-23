@@ -1,0 +1,1 @@
+Let M be an abelian category with enough projectives. The following are equivalent for M ∈D−(M) : (i) M has ﬁnite projective dimension. (ii) M has ﬁnite projective dimension relative to M. Derived Categories | Amnon Yekutieli |

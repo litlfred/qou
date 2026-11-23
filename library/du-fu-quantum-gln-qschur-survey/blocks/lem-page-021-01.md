@@ -1,0 +1,1 @@
+Let M be a weight S(∞, r)-module regarded naturally as a U(∞)-module. Then, for any λ ∈Λ(n, r), kλM = Mλ. Hence, M is a weight U(∞)-module. Moreover, M is also an integrable U(∞)-module. We may deﬁne the category K(∞, r)-mod of weight K(∞, r)-modules. By regarding U(∞, r) as a subalgebra of S(∞, r), we may deﬁne U(∞, r)-mod similarly.

@@ -243,14 +243,10 @@ def render_all(shards: list[dict]) -> str:
     lines.append("## Per-element coverage (AME 2020 cross-reference)")
     lines.append("")
     lines.append(
-        "_Auto-rendered from per-Z shards "
-        "`canonical-isotope-witness-Z<NN>.witness.json` "
-        "(emitted by [`canonical_isotope_witness.py`]"
-        "(https://github.com/litlfred/qou/blob/main/folio-assistant/"
-        "computations/canonical_isotope_witness.py)). Each row carries "
+        "_Rendered from the per-element isotope computations. Each row carries "
         "the framework prediction, the AME 2020 reference, and the residual. "
         "For free nucleons (p, n) the prediction is the mass "
-        "conditional on `conj:borromean-baryon-mass-formula`. "
+        "conditional on the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula). "
         "For D and up, the prediction is the binding energy; "
         "the AME 2020 reference is the total binding energy. "
         "$M_{\\mathrm{atom}}$ is the composite atomic mass "

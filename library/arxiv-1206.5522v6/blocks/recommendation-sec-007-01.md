@@ -1,1 +1,0 @@
-We must show that, for each symmetric monoidal functor $A\colon \mathop{\mathrm{{\mathcal D}\sf isk}}_n^B\to \mathcal V$, and for each based map among finite sets $I_+ \xrightarrow{f} J_+$, the diagram of $\infty$-categories $$\xymatrix{ (\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_n^B)^I \ar[d]_-{f_\ast} \ar[rr]^-{(\iota_!

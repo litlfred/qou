@@ -14,7 +14,7 @@ $$
 
 This is a smooth curve of genus 4, yielding $\chi = 2 - 2g = 2 - 8 = -6$. Its automorphism group is $S_5$, acting by permutations of the five coordinates.
 
-**Genus 4.** The lifting obstructions require only $g \geq 1$; the value $\chi(A) = -6$ comes from the six-branch-point count of the geometric descent ([the $\chi(A) = -6$ chain](#ex:chi-minus-six-derivation)). Riemann–Roch for the rank-2 bundle $V$ over the base curve converts it: $\chi(V) = \deg(V) + \mathrm{rank}(V)(1-g) = 0 + 2(1-g)$, so $\chi(V) = -6$ yields $g = 4$.
+**Genus 4.** The lifting obstructions require only $g \geq 1$; the value $\chi_{\mathrm{eu}}(M_0) = -6$ comes from the six-branch-point count of the geometric descent. Riemann–Roch for the rank-2 bundle $V$ over the base curve converts it: $\chi(V) = \deg(V) + \mathrm{rank}(V)(1-g) = 0 + 2(1-g)$, so $\chi(V) = -6$ yields $g = 4$.
 
 **Minimality of Bring's surface.** Among all genus-4 curves, Bring's surface is the **terminal object**. It has the largest automorphism group ($S_5$ has order 120), and any other genus-4 QOU maps to it. This establishes the Descartes theorem.
 

@@ -1,0 +1,1 @@
+Since the various attempts at evaluating the Cottingham formula arrive at very similar values for the elastic part, the discrepancies in the results for the mass diﬀerence mainly come from the term m ¯S, i.e. from the fact that the parametrizations used for the Compton amplitude yield diﬀerent representations for 7 the subtraction function ¯S .

@@ -1,1 +1,1 @@
-Let Y be an intertwining operator of type W3
+Let Y be an intertwining operator of type W3 W1 W2  , and Yr the associated primary field. We refer to Y0 as the initial term of Yr. The following simple remark shifts the viewpoint and will play in important role.

@@ -1,1 +1,0 @@
-It turns out that (as in the case of p=3) the periodic link represented by Do. must have either 2 components or p+1 components, and in the second case one of the components is invariant (we denote it by Dj,,) while the other p components are permuted cyclically (which implies that they are all of the same isotopy type, so we just use one notation D,.,, to denote any of them).

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-14",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "kind": "definition",
+  "pageStart": 2,
+  "pageEnd": 9,
+  "text": "def-sec-001-14.md",
+  "derivedFrom": "library/1-s20-s000187089891800x-main/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s000187089891800x-main/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.14",
+    "source_kind": "definition",
+    "claim_domain": "math",
+    "evidence_kind": "axiomatic-definition",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper definition in sections/sec-001-1-monoidal-categories-with-duals.md",
+    "claim_id": "1-s20-s000187089891800x-main#definition:1.14",
+    "lean_status": "unformalized"
+  }
+}

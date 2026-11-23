@@ -1,1 +1,0 @@
-Doing so, the logarithmic form of the gluing equations now become linear equations for $\log z_i$ and $\log (1-z_i)$, whose coefficients give rise to the Neumann--Zagier matrices $A$ and $B$, and where right-hand side is a distinguished flattening $\nu$ that should satisfy the mod 2 congruence given in [\[DefXi\]](#DefXi){reference-type="eqref" reference="DefXi"}.

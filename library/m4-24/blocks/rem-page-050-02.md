@@ -1,0 +1,1 @@
+One may also ask, “what is the Zariski closure of a given set of links?”. I believe that in the light of the paragraphs above the meaning of this question should be clear. I know of at least one interesting example: In [312] Ng shows that the Zariski closure of the set of ribbon knots is the set of knots whose Arf invariant vanishes.

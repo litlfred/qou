@@ -1,1 +1,0 @@
-So a connected component of any Seifert surface $S$ of $L$ must have at least two boundary components of $L$, and if $S$ is disconnected, $L$ has at least 4 components, which is clearly not the case. \qed

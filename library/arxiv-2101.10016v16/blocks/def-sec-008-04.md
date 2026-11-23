@@ -1,1 +1,1 @@
-An algebra A with coproduct ∆ and counit ε for which the projections
+An algebra A with coproduct ∆ and counit ε for which the projections P, Pj, Qj, j = 3, 4, satisfy the requirements of the previous proposition is a weak quasibialgebra with associator Φ = Q3P3 and will be called a be called a weak bialgebra.

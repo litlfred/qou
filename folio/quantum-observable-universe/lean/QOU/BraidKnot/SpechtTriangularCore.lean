@@ -412,4 +412,11 @@ theorem standardPolytabloid_triangular' :
                 diag_unit := standardPolytabloid_diag_unit
                 supp_le := hsupp }⟩
 
+omit [CharZero k] in
+/-- Zero-subtracted difference between the cardinality of `rowSet T i` and `μ.rowLen i` vanishes. -/
+theorem rowSet_card_sub_rowLen_eq_zero (T : StandardYoungTableau μ) (i : ℕ) :
+    (rowSet T i).card - μ.rowLen i = 0 := by
+  rw [rowSet_card T i]
+  exact Nat.sub_self (μ.rowLen i)
+
 end QOU.BraidKnot.SpechtTriangularCore

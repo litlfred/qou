@@ -1,1 +1,0 @@
-Notice that in this case the number $\lambda=\mathrm L(\xi_A)/4\pi^2$ must be rational, since the modularity of $\widetilde f(\tau)=f_{A,B,C}(\mathbf{e}(\tau))$ implies that the function $\widetilde f(-1/\tau)$ is invariant under some power of $\bigl(\begin{smallmatrix}1&1\\0&1\end{smallmatrix}\bigr)$.

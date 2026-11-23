@@ -1,4 +1,4 @@
-By [`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation), for each vertical
+By [Abelianisation of the MI integral on exceptional divisors](#prop:mi-sw-abelianisation), for each vertical
 degree $n\geq 0$ the Killing-norm projection of the surface-ordered
 multiplicative integral onto the $n$-jet component equals the prolonged
 Seiberg--Witten period, $\lVert\mathrm{MI}\!\int_{\mathcal{S}_c}\rVert_{J^n} =
@@ -18,8 +18,6 @@ $$
 $$
 
 Rewriting each period as its residue sum
-([`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum)) gives the second
-equality. The Lean witness
-[`QOU.Brings.jet_sw_tau_decomposition`](#prop:jet-sw-tau-decomposition) packages
-the exhaustiveness and additivity as the structure hypothesis and extracts the
-graded-sum identity. $\qquad\blacksquare$
+([The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum)) gives the second
+equality. Exhaustiveness and additivity of the decomposition enter as hypotheses, from
+which the graded-sum identity follows. $\qquad\blacksquare$

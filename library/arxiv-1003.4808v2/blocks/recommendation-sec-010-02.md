@@ -1,1 +1,0 @@
-(In general, the condition is that the second Stieffel-Whitney class $w_2({\cal M}) \in H^2({\cal M};{\mathbb{Z}}_2)$ must be a mod 2 reduction of a torsion class in the integral cohomology of ${\cal M}$.)

@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "e_a^2 = [2]_q e_a": true,
+    "state sum = hol": true,
+    "all-zero coefficient = 1 (writhe 0)": true,
+    "hol - 1 = sum of s != 0 states": true
+  },
+  "states": 64,
+  "note": "hol - 1 is the Temperley-Lieb (s != 0) part of the corpus's own state sum for the mass identity. log hol has no counterpart in that linear expansion. This is a reason for the reading, not a proof that the nabla in D equals hol - 1.",
+  "all_checks_pass": true
+}

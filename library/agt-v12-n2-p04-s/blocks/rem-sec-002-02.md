@@ -1,0 +1,1 @@
+The torsion Tor.C.W I V/; c; ∅/ depends on the choice of the lifts zei j under the action of 1.W / by . The effect of different lift of a cell is expressed as the determinant of . / for some in 1.W /. To avoid this problem, we often use representations into SL.V /.

@@ -32,5 +32,6 @@ export default proposition({
       body:
         "Part (2), Gröbner–Shirshov non-locality, had no precise statement and was moved to `rem:trace-locality-gs-non-locality` on owner ruling (2026-11-15). The statement now carries Markov locality only. The Lean class `HasReconciliation` still names the reconciliation; that is for the Lean-foundations work to rescope.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The contrast with the Gröbner–Shirshov reduction to normal form is described in [rem:trace-locality-gs-non-locality](#rem:trace-locality-gs-non-locality)." },
   ],
 });

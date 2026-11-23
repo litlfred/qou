@@ -272,9 +272,10 @@ the writhe, which for the Artin presentation is `QOU.MathlibExt.Braid.exponentSu
 file, not importable here under the Mathlib-only constraint). The other two fields are *not*
 available for that tower even in principle at present: `w_incl` and `w_gen` are compatibilities
 with `BraidTower.incl` and `BraidTower.gen`. A tower on the Artin groups exists downstream
-(`QOU.Torsion.MassTraceMarkovClass.artinTower`), but no `Framing` on it is constructed; the writhe
-correction there is carried by `QOU.IwahoriHecke.JonesNormalisation.jonesFn` directly. The only
-tower and framing exhibited in this file are the abelianised ones below. -/
+(`QOU.Torsion.MassTraceMarkovClass.artinTower`), and the writhe framing on it is
+`QOU.Mass.QuantumSl2.MarkovTrace.artinFraming` (it uses the writhe of `JonesNormalisation`, which
+this file cannot import). The only tower and framing exhibited in this file are the abelianised
+ones below. -/
 structure Framing (T : BraidTower B) where
   /-- The writhe homomorphism at each level. -/
   w : ∀ n, B n →* Multiplicative ℤ

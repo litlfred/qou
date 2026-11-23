@@ -1,1 +1,0 @@
-Although the insights from the theory of deformations of potentials imply that such universal colored differentials should exists for any row- or column-removal, we have managed to find explicitly such differentials only in the cases when $\lambda$ has two rows or two columns.

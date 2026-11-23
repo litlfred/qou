@@ -1,0 +1,1 @@
+For 1 ≤i ≤k −1, the number of overpartitions counted by Bk,i(n) plus the number of overpartitions counted by Bk,i+1(n) is equal to the number of superpartitions where the non-overlined parts are not congruent to 0, ±i modulo 2k.

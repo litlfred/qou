@@ -42,6 +42,8 @@ of 3, and `8 ≤ 8²` clears the dimension obstruction — but the
 module, and no instance is claimed for it here.
 
 Base ring ℚ; nothing archimedean.
+-- Ref: [dubois-violette-todorov2018] https://arxiv.org/abs/1808.08110 (Sec. 2: 𝕆 = ℂ ⊕ ℂ³, with the
+--      colour SU(3) acting on the ℂ³ summand)
 -/
 
 namespace QOU.MathlibExt.OctonionDerivations

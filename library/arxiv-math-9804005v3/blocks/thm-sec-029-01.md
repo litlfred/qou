@@ -1,1 +1,1 @@
-Suppose that A is a noetherian k-algebra,R is an Auslander du-
+Suppose that A is a noetherian k-algebra,R is an Auslander du- alizing complex over A and CdimR is weakly symmetric. Let p ⫋ q be prime ideals ofA with height q/p = 1. If there exists an element a ∈ q − p that is normal modulo p, then CdimRA/p = CdimRA/q + 1.

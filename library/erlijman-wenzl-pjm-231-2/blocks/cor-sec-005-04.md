@@ -1,0 +1,1 @@
+Let f ∈HomM–M(M⃗λ, M⃗µ) (with the notation as explained at the beginning of Section 4B), viewed as an element in HomC(X⃗λ, X⃗µ) (see Lemma 4.5(c)), and let P be as in Proposition 5.4. Then ˆfr = P( ˆfr) = ( ˆfr)T.

@@ -1,0 +1,1 @@
+Let s : M →P be a quasi-isomorphism in K(A, M), and assume P is K-projective. Then s has a right inverse; namely there is a morphism t : P →M in K(A, M) such that s ◦t = idP . Moreover, this morphism t is unique. Derived Categories | Amnon Yekutieli |

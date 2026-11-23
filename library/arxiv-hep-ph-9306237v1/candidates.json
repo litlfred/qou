@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-ph-9306237v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6fea847208a60505bf14d48dcf27d4c8db984176da9ba577c3f8240846150051",
   "file": "9306237v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:hep-ph/9306237v1 7 Jun 1993",
+  "title": "Chiral Perturbation to One Loop Including the rho Meson",
   "authors": "April, 1993",
   "arxiv": {
    "id": "hep-ph/9306237",
@@ -16,151 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "recommendation": 9
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be stressed here that the \u03c1 meson acquires its mass (m2 \u03c1 = ag2f 2) through the Higgs mechanism in the present model.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the external vector \ufb01elds (L\u00b5, R\u00b5) couple to \u03be as gauge connections, they should be balanced with a derivative in the order counting.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The order of \u02c6\u03c7 is determined as O(E2), since it produces the pion mass which should be balanced with p2 in the propagator.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be stressed that we need to assign O(E) to the coupling g in order for the kinetic term of \u03c1 to be O(E2).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be, however, noticed that the anti-symmetric combination of the covariant derivatives of \u02c6\u03b1\u00b5\u22a5,\u2225can be expressed in terms of other operators: D\u00b5\u02c6\u03b1\u03bd\u22a5\u2212D\u03bd \u02c6\u03b1\u00b5\u22a5= i[\u02c6\u03b1\u00b5\u2225, \u02c6\u03b1\u03bd\u22a5] + i[\u02c6\u03b1\u00b5\u22a5, \u02c6\u03b1\u03bd\u2225] \u2212\u02c6 A\u00b5\u03bd, (9a) D\u00b5\u02c6\u03b1\u03bd\u2225\u2212D\u03bd \u02c6\u03b1\u00b5\u2225= i[\u02c6\u03b1\u00b5\u2225, \u02c6\u03b1\u03bd\u2225] + i[\u02c6\u03b1\u00b5\u22a5, \u02c6\u03b1\u03bd\u22a5] + \u02c6V\u00b5\u03bd \u2212V\u00b5\u03bd.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be noted, however, these renormalization group equations (20) are derived in the mass independent scheme and thus the scale \u00b5 is not directly related to the actual physics scale, especially at the low energy region below m\u03c1 where the dynamical degree of freedom of the \u03c1 meson is frozen out.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be stressed here that the infrared singularity (ln(p2)) in z\u2217 i (i = 1, 2, 3, 4, 6) does not appear at a = 2 (vector dominance).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should also be stressed that the matching conditions (24) are free from the renormalization scale ambiguity in con- trast with the previous tree level analysis of the resonance e\ufb00ect to Gasser\u2013Leutwyler parameters[10].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be emphasized that the one loop e\ufb00ect imitates the tree level contribution of the a1 resonance in the matching condition for L10.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

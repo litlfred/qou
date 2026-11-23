@@ -1,0 +1,1 @@
+Under Setup 16.1.1, assume the functor F has ﬁnite right cohomological dimension, and the functors RqF, for all q ≥0, are quasi-compact. Then the triangulated functor RF : D(A, gr) →D(B, gr) has ﬁnite cohomological dimensional and is quasi-compact.

@@ -20,4 +20,4 @@ with the linear term excluded by the bar-invariance $w_\lambda(q) = w_\lambda(q^
 | $\varepsilon^2$ | degeneracy resolution (the $n = 6$ inter-nucleon channel splitting, coefficient $5/18$) |
 | $\varepsilon^3$ | categorical gap bound $\tfrac{1}{2}(q - q^{-1})(q-1)^2$ |
 
-Every structure survives the limit surreally—as a positive infinitesimal of definite order—while only the standard parts of the gap quantities vanish. The classical point is not an impoverished theory but an unresolved one. Numerical verification at fifty digits is recorded in `q1-mass-gap-probe.witness.json`.
+Every structure survives the limit surreally—as a positive infinitesimal of definite order—while only the standard parts of the gap quantities vanish. The classical point is not an impoverished theory but an unresolved one. This is verified numerically to fifty digits.

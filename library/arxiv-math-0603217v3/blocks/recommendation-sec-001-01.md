@@ -1,1 +1,0 @@
-(The sign of $\pi\operatorname{Re}{u}$ in [@Murakami:FUNDM2004 (4.1)] should be negative because the author used a wrong definition of the function $H$ in the old version of [@Murakami/Yokota:JREIA].)

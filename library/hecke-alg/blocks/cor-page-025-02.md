@@ -1,0 +1,1 @@
+Suppose that rT, g and t are row standard \-tableaur such that 7 > g and d(t) = d(g)w for some w € Gy with &(d(t)) = E(d(g)) + €(w). Then there exist rs € R such that my Ty7)Tw = do, 7sMpTas) and where rs #0 only ifs > t.

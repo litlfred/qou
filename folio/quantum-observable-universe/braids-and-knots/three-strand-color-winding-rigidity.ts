@@ -16,6 +16,7 @@ export default proposition({
     status: "verified",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The\nLean sibling states both over a generic commutative ring with $q$ a unit\nand with both $\\beta$ and the axial entry $a_{-2}$ carried as constrained\nvariables — $\\beta^2 = a_{-2} a_2 + 1$ and $a_{-2} (1 - q^4) = q - q^{-1}$ — so\nneither the square root nor the axial-distance quotient appears (no\ndivision, no $\\mathbb{R}$), and derives the cube identity from the two\nscalar facts.\n\nThe Lean sibling, which carries $a_{-2}$ as a constrained variable, needs\nonly $1 - q^2$ invertible and only for the trace; the statement's\nhypothesis implies it." },
     {
       kind: "refined-framing",
       date: "2026-08-09",

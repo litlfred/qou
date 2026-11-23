@@ -1,1 +1,0 @@
-In Section [\[3\]](#3){reference-type="ref" reference="3"} we shall then study the anomalous sector of the theory and in Section [\[4\]](#4){reference-type="ref" reference="4"} the non-anomalous sector.

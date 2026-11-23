@@ -1,20 +1,20 @@
 {
   "mcpServers": {
     "paper-assistant": {
-      "command": "bun",
-      "args": ["run", "folio-assistant/cat-harness/src/index.ts", "--stdio", "--repo", "."]
+      "command": "python3",
+      "args": ["scripts/mcp-lazy.py", "paper-assistant"]
     },
     "paper-search-mcp": {
-      "command": "uvx",
-      "args": ["--from", "paper-search-mcp", "python", "-m", "paper_search_mcp.server"]
+      "command": "python3",
+      "args": ["scripts/mcp-lazy.py", "paper-search-mcp"]
     },
     "openalex-paper-search": {
-      "command": "uvx",
-      "args": ["--from", "git+https://github.com/drAbreu/alex-mcp.git@4.1.0", "alex-mcp"]
+      "command": "python3",
+      "args": ["scripts/mcp-lazy.py", "openalex-paper-search"]
     },
     "lean-lsp": {
-      "command": "uvx",
-      "args": ["lean-lsp-mcp"]
+      "command": "python3",
+      "args": ["scripts/mcp-lazy.py", "lean-lsp"]
     }
   }
 }

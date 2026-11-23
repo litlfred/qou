@@ -1,1 +1,0 @@
-By Lemma 4.2 the leaf with name 46 which is produced by the surgery bounds a degenerately foliated region, so the surgery must be followed by a braiding of type b^ 1 - By a small change in fibration, we may assume that the braiding occurs before the surgery, so the sequence may be assumed to be b^ 1, 26+ 16 —• 66+ 12.

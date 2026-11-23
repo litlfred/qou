@@ -1,1 +1,0 @@
-More precisely, the sum of some chosen branches of $\log z_j^{(i)}$ (equal to the standard branch if one is near the complete structure) should equal $2\pi i$, so that the total dihedral angle at each edge is $2\pi$.

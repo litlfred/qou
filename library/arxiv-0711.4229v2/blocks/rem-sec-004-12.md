@@ -1,0 +1,1 @@
+Both Propositions 18 and 19 can be extended to analogous statements for non- closed C-colored ribbon graphs. In other words, F ′ behaves under cabling and reversing orienta- tion in the same way as the standard ribbon functor F.

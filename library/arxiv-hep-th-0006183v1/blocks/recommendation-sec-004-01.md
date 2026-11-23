@@ -1,1 +1,0 @@
-In order to check the consistency of our computation the ﬁne-tuning equation δ4 ≡ −i(σ2 −σ3) = ˆδ4 must be automatically satisﬁed with the couplings σ2 and σ3 previously determined and given in (20) and (24), respectively.

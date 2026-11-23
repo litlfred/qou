@@ -35,5 +35,5 @@ reframe $\mathfrak{Q}_\beta/Q_A = \cos\Phi(u)$ is the natural bar-odd form
 for the decay channel. (The identification of the bar-odd face with the
 decay observable $\mathfrak{Q}_\beta = \mathrm{Im}\,\mathfrak{V}$ is
 conditional on the complex-volume conjecture
-`conj:binding-qbeta-complex-volume`; the proposition itself is
+[Complex-volume unification of binding and $\beta$-decay](#conj:binding-qbeta-complex-volume); the proposition itself is
 unconditional algebra.)

@@ -1,1 +1,0 @@
-Since the polar condition that uniquely characterizes the solution $S_{\lambda} \hat{f}$ only depends on $\overline{\lambda} := \lambda \pmod{q^{{\mathbf Z}}} \in {\mathbf{E}_{q}}$, or (equivalently) on $\Lambda := [\lambda;q]$, we shall also write: $$S_{\overline{\lambda}} \hat{f} := S_{\Lambda} \hat{f} := S_{\lambda} \hat{f}.$$ We now make this dependency explicit.

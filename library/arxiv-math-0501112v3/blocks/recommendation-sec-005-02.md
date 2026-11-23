@@ -1,1 +1,0 @@
-In principle, the information about the characters such as [\[eq:approximate2\]](#eq:approximate2){reference-type="eqref" reference="eq:approximate2"} should be sufficient to compute the distribution of random variables $f(\lambda)$ for reasonable functions $f$, however this relation is not very direct.

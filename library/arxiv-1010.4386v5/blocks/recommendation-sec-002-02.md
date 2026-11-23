@@ -1,1 +1,0 @@
-Therefore \begin{equation} \label{eqn:54} \cat{D}(\cat{Mod} A)_{\a \text{-} \mrm{tors}} \subset \cat{D}_{\a \tup{-tor}}(\cat{Mod} A) . \end{equation} Later (in Corollary \ref{cor:17}) we shall see that there is equality in (\ref{eqn:54}) under some extra assumption.

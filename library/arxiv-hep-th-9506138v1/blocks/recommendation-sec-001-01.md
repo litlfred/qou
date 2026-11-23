@@ -1,1 +1,0 @@
-The surfaces should avoid regions of strong spacetime curvature and yet cut through the infalling matter and the outgoing Hawking radiation so that both sets of particles have low energy in the local frame of the slice.

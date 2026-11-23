@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s10052-020-08615-2/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Form factors, m_(el)",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "contains": [
+    "library/s10052-020-08615-2/blocks/prose-sec-023"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10052-020-08615-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10052-020-08615-2/manifest.jsonld",
+  "provenance": "ingested"
+}

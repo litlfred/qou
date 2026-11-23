@@ -1,1 +1,0 @@
-As we shall argue in this paper, the structure corresponding to Lie superalgebras is more natural, and the single parameter $N$ from \cite{DGR} and \cite{GS} is just a super-rank of a corresponding Lie superalgebra: \be N = n - m. \ee

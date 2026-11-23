@@ -1,1 +1,0 @@
-During this time the mass of an evaporating black hole signiﬁcantly decreases (the total lifetime is also of order M3) but we shall ignore this for the time being and make use of a static Schwarzschild geometry.

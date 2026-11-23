@@ -1,0 +1,1 @@
+C.1. For any word w on e0∪µN and any m0 ∈N, there exists a sequence (c(l,ξ,n)[w](m0)) l∈N ξ∈µN(K) n∈N of elements of K such that, for any ˜α ∈N such that q ˜α > m0 and m ∈N∗satisfying |m −m0|p ⩽q−˜α, we have Li† q,˜α[w][zm] = ∞ X n=0 (q ˜α)n X l∈N X ξ c(l,ξ,n)[w](m0)ξ −m(m −m0)l  .

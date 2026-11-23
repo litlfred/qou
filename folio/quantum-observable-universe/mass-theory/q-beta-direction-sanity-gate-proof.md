@@ -33,14 +33,13 @@ $|F(q_0) - F_{\text{target}}(q_0)|/F_{\text{target}}(q_0) > 10$ is
 negative: $F_{\text{target}}=1$, $F(q_0)=-19/2$ passes the window but
 fails the additive test. For $F(q_0)\ge0$ it is sufficient, but it
 never rejects a too-small magnitude
-([`prop:order-of-magnitude-screen`](#prop:order-of-magnitude-screen), item 6).
+([The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$](#prop:order-of-magnitude-screen), item 6).
 
 **Step 1 — the target has order of magnitude one.** Every ladder
 factor satisfies $|c_k u_0^k| \le |c_2|\,u_0^2 \approx 7.3\times
 10^{-5}$, with the sequence $|c_k|\,u_0^k$ decreasing to the flat
 asymptote $\approx 2.1\times 10^{-13}$ measured on the window
-$c_2, \ldots, c_{10}$ (witness
-`computations/qbeta/qbeta-radius-of-convergence-gate-probe.witness.json`).
+$c_2, \ldots, c_{10}$ (radius-of-convergence gate computation).
 Hence
 
 $$
@@ -67,7 +66,7 @@ decade threshold), to $F_{\text{target}}(q_0)$. Its window ratio is
 $\approx 1 \ll 10$: *granted that ladder comparison*, the true kernel
 passes at any decade threshold, so the screen raises no false refutation. Contrapositively, *if* the true kernel passes, a candidate whose
 magnitude falls outside the decade window has $F(q_0) \ne
-F_{\text{true}}(q_0)$ ([`prop:order-of-magnitude-screen`](#prop:order-of-magnitude-screen), item 2).
+F_{\text{true}}(q_0)$ ([The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$](#prop:order-of-magnitude-screen), item 2).
 That premise rests on the comparison of the ladder with
 $\mathfrak{Q}_\beta^{\text{CODATA}}$ and on the infinite ladder
 bound, whose convergence is not proved, so rejection is conditional,
@@ -120,12 +119,12 @@ $m = 4$ at the convention-D target $\approx 1.76$. Repeated stabilisation can on
 shrink the magnitude — it can never climb to a target of order unity,
 let alone to the linking-weight scale $\approx 2.5$ of the precedent —
 and, at that target, the gate screens out every member with $m \ge 5$
-([`prop:order-of-magnitude-screen`](#prop:order-of-magnitude-screen), item 5). The members with
+([The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$](#prop:order-of-magnitude-screen), item 5). The members with
 $m \le 4$ are not caught by the decade threshold; their exclusion
 rests on the direction argument itself, not on this gate.
 $\blacksquare$
 
-Until 2026-10-10 this step used the excised convention-C weight
+Under the alternative Convention-C weight
 $z = 1/(q^{1/2} + q^{-1/2})$. That weight satisfies $0 < z < 1/2$ for
 every $q > 1$ by AM–GM, which made the obstruction hold at all $q > 1$
 with first exceedance at $m = 4$ (ratio $\approx 16$). Neither holds

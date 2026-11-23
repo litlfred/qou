@@ -1,1 +1,0 @@
-Note also that in order for a spherical category to give rise to a triangulation TQFT -- as opposed to just the invariant -- one must assume that it does not contain symplectic self-dual simple objects.

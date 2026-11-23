@@ -1,175 +1,107 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
-# QOU.Observations.threeCalibrationDiscipline
+# QOU.Observations.CalibrationTriple — the three calibration inputs (definition)
 
-Conditional proposition: every algebraic-side mass functional in
-the QOU paper factors as `m_e^a · m_π^c · Q(q_0)` with
-`Q ∈ ℚ(q)` realised at `q_0`, `a, c ∈ ℕ`. The framework allows
-**categorically exactly three** external calibration inputs, which
-are the three real degrees of freedom of the Bring Hodge structure
-`H^1 = 2W` (see `prop:calibration-cohomology-alignment`):
+`def:three-calibration-discipline` names the three external calibration
+inputs and **defines** the substrate parameter `q₀` from the second one:
 
-* `m_e` — the **scale** of the rank-2 `W`-Hodge plane (`h^0` prefactor);
-* `q_0` — the **modulus** of that plane (`SL₂` trace `2cosh θ`); the
-  canonical CAL-2 observable is the neutron β-sector bar-skew channel `P_skew^β`
-  (order `h^2`), pinned numerically through its most precise proxy, the
-  lepton ratio `m_μ/m_e` (which dimensionalises to `Vol(4_1)`). In the
-  Physical-Observations layer `q_0` may instead be anchored on the
-  more-precise proton ratio `m_p/m_e` (re-pin 2026-05-28) — a precision
-  substitution, not a change to the canonical calibration;
-* `m_π` — the **scale** of the `Vol(Hopf)=0` meson sector, an
-  *orthogonal* class independent of `(m_e, q_0)` because the Hopf-link
-  complement has zero hyperbolic volume.
+* CAL-1 `m_e` — the mass unit;
+* CAL-2 — the substrate parameter `q₀`, defined as the unique `q > 1` with
+  `(1 - q⁻¹)² = Vol(4₁) / (m_μ/m_e)`; the ratio `m_μ/m_e` is the numerical
+  proxy of the ideal CAL-2 observable (the neutron β-decay width);
+* CAL-3 `m_π` — the meson-sector scale.
 
-`Q_β = P_skew^β (the channel’s measured energy)` is the **measured proxy for CAL-2** (`P_skew^β`); because the
-modulus is overdetermined and pinned most precisely by `m_μ/m_e`, the
-substrate identity `Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³)` makes it a 0.17%
-cross-check, not a separate primitive calibration factor; for the baryon
-sector the meson exponent `c` is `0`.
+This file states that definition and proves what makes it a definition: for
+every ratio `r ∈ (0, 1)` the equation `(1 - q⁻¹)² = r` has exactly one root
+`q > 1`, namely `q = 1 / (1 - √r)`.
 
-The narrative proof is by induction along the 19-link
-cat-action → Hecke-energy chain
-([three-calibration-discipline.md](three-calibration-discipline.md)).
+It asserts nothing about how masses factor through the three inputs. That
+claim is `conj:three-calibration-inputs`. Nor does it assert that the three
+inputs are the three real moduli of `H¹(Bring)`; that is
+`conj:calibration-cohomology-alignment`. Until 2026-11-20 this block carried
+the factorisation claim as an assumed class field (bean qou-tm3c).
 
-This Lean stub records the statement; the full induction follows
-the chain of definitions whose Lean formalisation is tracked by
-`prop:mass-endomorphism-tower` and the upstream blocks. We state
-the discipline as a `class` per AGENTS.md §3b: it is a structural
-assumption on the realisation of the mass functional, not a
-free-standing theorem about an arbitrary `MassFunctional`
-typeclass.
+**Ground ring**: `ℝ`. The construction uses `Real.sqrt` and the ordering
+`1 < q`, both archimedean (AGENTS.md §7c).
 
-The realised tower value `towerValue X : ℝ` is the coefficient-wise
-cast along `ℚ → ℝ` of a `ℚ[q^{±1}]`-element evaluated at `q_0` —
-every algebraic-side construction in the cat-action → Hecke-energy
-chain produces an element of `ℤ[q^{±1}]` (or `ℚ[q^{±1}]` after
-Wedderburn weights), strictly inside the algebraic substrate. The
-numerical evaluation at the substrate parameter `q_0 ∈ ℝ` is the
-final step that crosses into `ℝ`, on the far side of the
-substrate→archimedean wall (AGENTS.md §7c). We carry the realised
-real value here rather than the formal Laurent polynomial, since
-`LaurentPolynomial.eval` at a non-unit ring element is not the
-intended archimedean evaluation.
-
-Ref: [jones1985] https://doi.org/10.2307/1971403
-Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+Ref: [leitner2026] observations/three-calibration-discipline
 -/
 
 namespace QOU.Observations
 
-universe u
+/-- The root `q = 1 / (1 - √r)` of `(1 - q⁻¹)² = r`. -/
+noncomputable def calibratedQ (r : ℝ) : ℝ := 1 / (1 - Real.sqrt r)
 
-/-- A formal hadronic state — abstract carrier; the algebraic-side
-    chain produces a `ℚ(q)`-valued tower expression for each such
-    `X`, together with non-negative integer exponents counting the
-    `m_e` and `m_π` insertions supplied by the observable. -/
-structure HadronicState where
-  carrier : Type u
+/-- For `0 < r < 1`, `calibratedQ r` exceeds `1` and solves `(1 - q⁻¹)² = r`. -/
+theorem calibratedQ_spec {r : ℝ} (hr0 : 0 < r) (hr1 : r < 1) :
+    1 < calibratedQ r ∧ (1 - (calibratedQ r)⁻¹) ^ 2 = r := by
+  have hs0 : 0 < Real.sqrt r := Real.sqrt_pos.mpr hr0
+  have hs1 : Real.sqrt r < 1 := by
+    rw [show (1 : ℝ) = Real.sqrt 1 from Real.sqrt_one.symm]
+    exact Real.sqrt_lt_sqrt hr0.le hr1
+  have hd : 0 < 1 - Real.sqrt r := by linarith
+  refine ⟨?_, ?_⟩
+  · unfold calibratedQ
+    rw [lt_div_iff₀ hd]
+    linarith
+  · unfold calibratedQ
+    rw [one_div, inv_inv, sub_sub_cancel, Real.sq_sqrt hr0.le]
 
-/-- The three-calibration discipline class.
+/-- Uniqueness: any `q > 1` with `(1 - q⁻¹)² = r` equals `calibratedQ r`. -/
+theorem calibratedQ_unique {r q : ℝ} (hq : 1 < q) (h : (1 - q⁻¹) ^ 2 = r) :
+    q = calibratedQ r := by
+  have hq0 : 0 < q := by linarith
+  have hinv : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
+  have hpos : 0 ≤ 1 - q⁻¹ := by linarith
+  have hsq : Real.sqrt r = 1 - q⁻¹ := by
+    rw [← h]; exact Real.sqrt_sq hpos
+  unfold calibratedQ
+  rw [hsq, sub_sub_cancel, one_div, inv_inv]
 
-    An instance asserts that the mass functional `mass` factors as
-    `m_e^a · m_π^c · towerValue(X)` for the realised tower value at
-    `q_0` and non-negative integer grading exponents `a, c` supplied
-    by the observable.
+/-- **The calibration triple** (`def:three-calibration-discipline`).
 
-    The three calibration inputs (`m_e`, `q_0`, `m_π`) are the three
-    real degrees of freedom of the Bring Hodge structure `H^1 = 2W`
-    (`prop:calibration-cohomology-alignment`):
-
-    - `m_e` is the **scale** of the rank-2 `W`-Hodge plane.
-    - `q_0` is the **modulus** of that plane; the canonical CAL-2
-      observable is the neutron β-sector bar-skew channel `P_skew^β`, pinned through
-      its proxy `m_μ/m_e`.
-    - `m_π` is the proxy for the **scale** of the `Vol(Hopf)=0` meson
-      sector (CAL-3 `P_avg^π`) — an orthogonal class independent of
-      `(m_e, q_0)`.
-
-    `Q_β = P_skew^β (the channel’s measured energy)` is the **CAL-2 proxy**, reproduced from `m_e` and
-    `q_0` as a cross-check, not an independent input. A **fourth**
-    dimensional input would violate the cohomological alignment and is
-    a hard audit failure. -/
-class ThreeCalibrationDiscipline (State : Type u) where
-  /-- CAL-1: dimensional unit (CODATA `m_e`), the scale of the
-      `W`-Hodge plane. -/
+    The three external inputs, with the substrate parameter `q₀` defined
+    from the CAL-2 proxy. `vol41` is the hyperbolic volume of the
+    figure-eight knot, `2·Cl₂(π/3)`, supplied as data; `vol41_lt` says the
+    ratio `Vol(4₁)/(m_μ/m_e)` lies below `1`, which is the range where the
+    defining equation has a root `q > 1`. -/
+structure CalibrationTriple where
+  /-- CAL-1: the mass unit `m_e`. -/
   m_e : ℝ
-  /-- Positivity of the mass scale. -/
   m_e_pos : 0 < m_e
-  /-- CAL-2: dimensionless substrate parameter (the modulus of the
-      `W`-Hodge plane), fixed by the lepton mass ratio `m_μ / m_e`
-      (Physical-Observations may numerically anchor on `m_p / m_e`). -/
-  q_0 : ℝ
-  /-- `q_0 > 1` (positivity / non-degenerate substrate). -/
-  q_0_pos : 1 < q_0
-  /-- CAL-3: meson-sector scale (representative `m_π`), the scale of
-      the `Vol(Hopf)=0` orthogonal class, in the same energy units as
-      `m_e`. -/
+  /-- CAL-2 proxy: the lepton mass ratio `m_μ/m_e`. -/
+  mu_over_e : ℝ
+  /-- CAL-3: the meson-sector scale `m_π`, in the units of `m_e`. -/
   m_pi : ℝ
-  /-- Positivity of the meson scale. -/
   m_pi_pos : 0 < m_pi
-  /-- The realised dimensionless tower value `Q_X(q_0) ∈ ℝ`, obtained
-      by casting a `ℚ[q^{±1}]`-element along `ℚ → ℝ` and evaluating at
-      `q_0`. The algebraic-side framework constructs every tower
-      element strictly inside `ℚ[q^{±1}]` (Wedderburn weights ×
-      Markov-trace polynomials in `ℤ[q^{±1}]`); the cast to `ℝ` is the
-      final archimedean step. -/
-  towerValue : State → ℝ
-  /-- Cohomological-grading exponents supplied by the observable:
-      `a` counts `m_e` insertions, `c` counts meson-sector (`m_π`)
-      insertions (`c = 0` for the baryon sector). -/
-  m_e_degree : State → ℕ
-  m_pi_degree : State → ℕ
-  /-- The mass functional. -/
-  mass : State → ℝ
-  /-- The discipline:
-      `mass X = m_e^{a(X)} · m_π^{c(X)} · towerValue(X)`. -/
-  mass_factorisation :
-    ∀ X,
-      mass X =
-        m_e ^ (m_e_degree X)
-          * m_pi ^ (m_pi_degree X)
-          * towerValue X
+  /-- The figure-eight volume `Vol(4₁)`. -/
+  vol41 : ℝ
+  vol41_pos : 0 < vol41
+  vol41_lt : vol41 < mu_over_e
 
-/-- Headline statement ([`def:three-calibration-discipline`]): under
-    `ThreeCalibrationDiscipline`, every mass factors as
-    `m_e^a · m_π^c · Q_ℝ(q_0)` where `Q_ℝ(q_0)` is the realised real value
-    (`towerValue`) of the dimensionless `ℚ[q^{±1}]`-tower at the substrate
-    parameter.
+namespace CalibrationTriple
 
-    This faithfully surfaces the discipline *axiom* — the factorisation is
-    a structural assumption on how the algebraic-side chain realises the
-    mass functional (AGENTS.md §3b), not a result derived from more
-    primitive Lean data; its content lives in the class field
-    `mass_factorisation`. The genuinely-derived consequence that exercises
-    the discipline (and its scale-positivity hypotheses) is
-    `threeCalibrationDiscipline_mass_pos` below. -/
-theorem threeCalibrationDiscipline
-    {State : Type u} [c : ThreeCalibrationDiscipline State]
-    (X : State) :
-    c.mass X =
-      c.m_e ^ (c.m_e_degree X)
-        * c.m_pi ^ (c.m_pi_degree X)
-        * c.towerValue X :=
-  c.mass_factorisation X
+/-- The substrate parameter `q₀` defined by CAL-2:
+    the root `q > 1` of `(1 - q⁻¹)² = Vol(4₁)/(m_μ/m_e)`. -/
+noncomputable def q0 (c : CalibrationTriple) : ℝ :=
+  calibratedQ (c.vol41 / c.mu_over_e)
 
-/-- **Positivity consequence of the discipline** — *derived*, not assumed:
-    a mass with a positive realised tower value is itself positive.
+private theorem ratio_mem (c : CalibrationTriple) :
+    0 < c.vol41 / c.mu_over_e ∧ c.vol41 / c.mu_over_e < 1 := by
+  have hm : 0 < c.mu_over_e := lt_trans c.vol41_pos c.vol41_lt
+  exact ⟨div_pos c.vol41_pos hm, (div_lt_one hm).mpr c.vol41_lt⟩
 
-    Composes the factorisation with the two calibration-scale positivity
-    hypotheses `m_e_pos`, `m_pi_pos` (the `q_0` modulus enters only through
-    `towerValue`, whose positivity is the antecedent). The conclusion
-    `0 < mass X` appears in no class field — this is the discipline earning
-    a real inference: the two dimensional scales `m_e`, `m_π` never flip a
-    positive dimensionless tower amplitude to a non-positive mass. -/
-theorem threeCalibrationDiscipline_mass_pos
-    {State : Type u} [c : ThreeCalibrationDiscipline State]
-    (X : State) (hX : 0 < c.towerValue X) :
-    0 < c.mass X := by
-  rw [threeCalibrationDiscipline X]
-  have hpe : 0 < c.m_e ^ (c.m_e_degree X) := pow_pos c.m_e_pos _
-  have hpi : 0 < c.m_pi ^ (c.m_pi_degree X) := pow_pos c.m_pi_pos _
-  exact mul_pos (mul_pos hpe hpi) hX
+/-- `q₀ > 1` and it solves the CAL-2 equation. -/
+theorem q0_spec (c : CalibrationTriple) :
+    1 < c.q0 ∧ (1 - c.q0⁻¹) ^ 2 = c.vol41 / c.mu_over_e :=
+  calibratedQ_spec c.ratio_mem.1 c.ratio_mem.2
+
+/-- `q₀` is the only `q > 1` solving the CAL-2 equation. -/
+theorem q0_unique (c : CalibrationTriple) {q : ℝ} (hq : 1 < q)
+    (h : (1 - q⁻¹) ^ 2 = c.vol41 / c.mu_over_e) : q = c.q0 :=
+  calibratedQ_unique hq h
+
+end CalibrationTriple
 
 end QOU.Observations

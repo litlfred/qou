@@ -281,7 +281,7 @@ def main() -> int:
             "'the two functionals are one functional': the ladder fixes z by convention "
             "while the trace route frees it, so they are two allocations of one residual. "
             "Lean: QOU/QBeta/CosineParametrisationUnfalsifiable.lean, 3 theorems, sorry-free."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": all_passed,
         "parameters": {

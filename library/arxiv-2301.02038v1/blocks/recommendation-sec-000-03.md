@@ -1,1 +1,0 @@
-As a consequence the space of solutions of a PDE share some features of the leaf space of a foliation (and \emph{it is} the leaf space of a foliation when $\dim \mathscr E < \infty$) and should be treated as a stack rather than as an ordinary space \cite{mm03, BX2011, dH2013}.

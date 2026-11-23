@@ -1,0 +1,1 @@
+2. Note that even though S3 pk(Tak,bk) ∼= S3 pk(Tck,dk) in the theorem, Proposition 5.2 says that these torus knots have different genera. Then Theorem 1.3 implies that the corresponding traces are distinct, Xpk(Tak,bk)̸ ∼= Xpk(Tck,dk).

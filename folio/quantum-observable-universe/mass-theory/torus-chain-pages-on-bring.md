@@ -8,7 +8,7 @@ that fixes the genus of [Bring's surface](#def:brings-surface) is
 $\operatorname{rank} H_1(\mathrm{Seifert}(T_{2,s})) = (s-1)/2 \le g$ at the
 forced $g = 4$, the pages of $T(2,3)$, $T(2,5)$ and $T(2,7)$ all embed on
 Bring's surface, and $T(2,9)$ is the last of the family that does
-(`pages_embed_on_bring`, machine-checked).
+(proved).
 
 The complement of $T(2, 2g+1)$ is the unit tangent bundle of the
 $(2, 2g+1, \infty)$ triangle orbifold, $\mathrm{PSL}(2,\mathbb{R})/\Delta(2, 2g+1, \infty)$;

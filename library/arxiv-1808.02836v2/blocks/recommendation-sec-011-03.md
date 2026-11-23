@@ -1,1 +1,0 @@
-Since our manifold is hyperbolic this torus must be inessential, and thus it must bound a solid torus outside $T_0 \cup \mathcal{N}.$ Hence the Seifert structure on $T_0 \cup \mathcal{N}$ extends to a Seifert fibering over this solid torus with at most two exceptional fibres, one at the centre line of the Möbius band $\mathcal{N}.$

@@ -1,0 +1,1 @@
+If a left derived functor (LF, ηL) exists, then it is unique, up to a unique isomorphism. Namely, if (G, θ) is another left derived functor of F, then there is a unique isomorphism of functors µ : G ≃ =⇒LF such that θ = ηL∗(µ◦idQ).

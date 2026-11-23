@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-061",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Index.",
+  "pageStart": 141,
+  "pageEnd": 146,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-061",
+    "library/vonneumann2015/blocks/prop-sec-061-01",
+    "library/vonneumann2015/blocks/cor-sec-061-02",
+    "library/vonneumann2015/blocks/ex-sec-061-03",
+    "library/vonneumann2015/blocks/ex-sec-061-04",
+    "library/vonneumann2015/blocks/ex-sec-061-05",
+    "library/vonneumann2015/blocks/ex-sec-061-06",
+    "library/vonneumann2015/blocks/ex-sec-061-07",
+    "library/vonneumann2015/blocks/prop-sec-061-08",
+    "library/vonneumann2015/blocks/prop-sec-061-09",
+    "library/vonneumann2015/blocks/cor-sec-061-10",
+    "library/vonneumann2015/blocks/prop-sec-061-11",
+    "library/vonneumann2015/blocks/cor-sec-061-12",
+    "library/vonneumann2015/blocks/cor-sec-061-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

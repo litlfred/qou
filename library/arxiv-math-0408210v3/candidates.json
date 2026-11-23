@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0408210v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "16d5ccb83a86954f958e4277a6a5c5f65b3db17b30d21da2f71a77b979c8e318",
   "file": "0408210v3.pdf"
  },
  "provenance": {
-  "title": "arXiv:math/0408210v3 [math.QA] 7 May 2005",
+  "title": "A simple algebraic proof of the algebraic index theorem",
   "authors": "PoNing Chen and Vasiliy Dolgushev1",
   "arxiv": {
    "id": "math/0408210",
@@ -16,9 +19,7 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 0,
   "by_kind": {},

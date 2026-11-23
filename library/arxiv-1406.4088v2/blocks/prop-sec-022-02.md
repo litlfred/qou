@@ -1,0 +1,1 @@
+Using ∆M 2 = 0 to deﬁne the electro- magnetic contribution to splittings we found ∆QEDMΣ = −0.08(12)(34) MeV in our electroquenched lattice computation (10), which is consistent with 0, albeit within relatively large uncertainties.

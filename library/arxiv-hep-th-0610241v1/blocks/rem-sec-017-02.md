@@ -1,0 +1,1 @@
+It is the use of the Pfaﬃan as a square root of the determinant that makes it possible to solve the Fermion doubling puzzle which was pointed out in [36]. We discuss this in §4.4.1 below. The solution obtained by a better choice of the KO-dimension of the space F and hence of M × F is not unrelated to the point made in [27].

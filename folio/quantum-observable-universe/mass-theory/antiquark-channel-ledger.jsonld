@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-antiquark-channel-ledger",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:antiquark-channel-ledger",
+  "kind": "remark",
+  "title": "The antiquark ledger: why the meson channel is absent from step 2",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-derived-atom",
+    "papers/quantum-observable-universe/blocks/def-categorical-meson",
+    "papers/quantum-observable-universe/blocks/conj-atom-knot-mass-derivation",
+    "papers/quantum-observable-universe/blocks/rem-pion-mass-hyperbolic-threshold"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-derived-atom",
+  "tags": [
+    "meson",
+    "antiquark",
+    "binding",
+    "channel",
+    "hyperbolic-volume",
+    "confinement"
+  ],
+  "text": "antiquark-channel-ledger.md",
+  "provenance": "authored"
+}

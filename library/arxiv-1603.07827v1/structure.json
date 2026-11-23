@@ -1,0 +1,571 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1603.07827v1",
+ "source": {
+  "file": "arxiv-1603.07827v1.pdf",
+  "sha256": "8f4959c11d26c8c2f4e094862e465fc0de8676bf3ac49165f597f08303e59991",
+  "bytes": 169932,
+  "pages": 15,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-22T19:30:56Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1603.07827",
+   "version": "1",
+   "primary_class": "cond-mat.str-el",
+   "stamp_date": "25 Mar 2016"
+  },
+  "doi": null,
+  "title": "Braiding With Majorana Fermions",
+  "authors_raw": "Louis H. Kauffmana and Samuel J. Lomonaco Jr.2b",
+  "title_lines": [
+   "Braiding With Majorana Fermions"
+  ],
+  "abstract": "This paper is an introduction to relationships between topology, quantum computing and the properties of fermions. In particular we study the remarkable unitary braid group representations associated with Majorana fermions.",
+  "docinfo": {
+   "Title": "arXiv:1603.07827v1  [cond-mat.str-el]  25 Mar 2016",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.08",
+   "Creator": "dvips(k) 5.991 Copyright 2011 Radical Eye Software",
+   "CreationDate": "D:20160327201742-04'00'"
+  },
+  "title_raw": "Braiding With Majorana Fermions",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:1603.07827v1 [cond-mat.str-el] 25 Mar 2016",
+   "heading": "Braiding With Majorana Fermions",
+   "text": "Braiding With Majorana Fermions",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "ABSTRACT",
+   "page": 1,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "INTRODUCTION",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "BRAIDS",
+   "page": 3,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "FERMIONS, MAJORANA FERMIONS AND BRAIDING",
+   "page": 5,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "(1 + I + J + IJ)(1 + I)",
+   "page": 7,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "(1 + I + J + IJ + I + I2 + JI + IJI)",
+   "page": 7,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "(1 + I + J + IJ + I \u22121 \u2212IJ + J)",
+   "page": 7,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "BRAIDING OPERATORS AND UNIVERSAL QUANTUM GATES",
+   "page": 8,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Universal Gates",
+   "page": 9,
+   "source": "inferred",
+   "number": "4.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Majorana Fermions Generate Universal Braiding Gates",
+   "page": 10,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "SU(2) REPRESENTATIONS OF THE ARTIN BRAID GROUP",
+   "page": 10,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "REFERENCES",
+   "page": 14,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Braiding Anyons",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Braid Generators",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Borromean Rings as a Braid Closure",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Braiding Action on a Pair of Fermions",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The Yang-Baxter equation",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 443,
+   "n_words": 60,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "ABSTRACT",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6830,
+   "n_words": 1140,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-braids",
+   "number": "2",
+   "title": "BRAIDS",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3466,
+   "n_words": 641,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-3-fermions-majorana-fermions-and-braiding",
+   "number": "3",
+   "title": "FERMIONS, MAJORANA FERMIONS AND BRAIDING",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5071,
+   "n_words": 993,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-2-1-i-j-ij1-i",
+   "number": "2",
+   "title": "(1 + I + J + IJ)(1 + I)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 8,
+   "n_words": 3,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-2-1-i-j-ij-i-i2-ji-iji",
+   "number": "2",
+   "title": "(1 + I + J + IJ + I + I2 + JI + IJI)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 8,
+   "n_words": 3,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-2-1-i-j-ij-i-1-ij-j",
+   "number": "2",
+   "title": "(1 + I + J + IJ + I \u22121 \u2212IJ + J)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2538,
+   "n_words": 450,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-4-braiding-operators-and-universal-quantum-gates",
+   "number": "4",
+   "title": "BRAIDING OPERATORS AND UNIVERSAL QUANTUM GATES",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1810,
+   "n_words": 322,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-41-universal-gates",
+   "number": "4.1",
+   "title": "Universal Gates",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1693,
+   "n_words": 290,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-42-majorana-fermions-generate-universal-braiding",
+   "number": "4.2",
+   "title": "Majorana Fermions Generate Universal Braiding Gates",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 792,
+   "n_words": 140,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-5-su2-representations-of-the-artin-braid-group",
+   "number": "5",
+   "title": "SU(2) REPRESENTATIONS OF THE ARTIN BRAID GROUP",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 8825,
+   "n_words": 1901,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "REFERENCES",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 5124,
+   "n_words": 773,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "toc_inferred_entries": 12,
+  "toc_inferred_mean_confidence": 0.742,
+  "toc_inferred_empty_share": 0.25,
+  "toc_inferred_method": "font",
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 36608,
+  "furniture_lines_stripped": 0
+ }
+}

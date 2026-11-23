@@ -54,6 +54,7 @@ sys.path.insert(0, _HERE)
 sys.path.insert(0, os.path.dirname(_HERE))  # computations/
 
 import mpmath as mp  # noqa: E402
+mp.mp.dps = max(50, mp.mp.dps)
 
 import he4_magnus_omega2_sign_sparse_probe as base  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402

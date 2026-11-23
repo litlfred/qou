@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0611504v1/blocks/rem-sec-020-06",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 29,
+  "pageEnd": 35,
+  "text": "rem-sec-020-06.md",
+  "derivedFrom": "library/arxiv-math-0611504v1/sections/sec-020",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0611504v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.9",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-020-62-invariants-of-cusped-manifolds-and-surgery-fo.md (p. 29-35)",
+    "claim_id": "arxiv-math-0611504v1#remark:6.9"
+  }
+}

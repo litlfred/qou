@@ -1,1 +1,0 @@
-Note that the orientation on $(L_k,L^=_k)$ in the above definitions must be chosen such that the boundary of a small hexagon in $(L_k,L^=_k)$ contains a $\gamma^{\sigma(0)\sigma(1)\sigma(2)}$ for $\sigma\in \mathbf{A}_4$.

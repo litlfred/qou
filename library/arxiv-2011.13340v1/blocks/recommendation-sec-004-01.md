@@ -1,1 +1,0 @@
-Our strategy seems general enough that it should work for proving Matrix concentration for a large class of interesting Markov chains for which scalar spectral gap inequalities are proved using the chain decomposition idea of \cite{JSTV04}.

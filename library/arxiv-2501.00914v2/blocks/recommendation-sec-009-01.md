@@ -1,1 +1,0 @@
-We must therefore have J = K rather than J = K, as claimed. □ We will prove an analogue of Lemma 2.11 for cable knots after establishing the following general fact about satellite knots, cf. [Gor83, Lemma 3.3]: Lemma 2.12.

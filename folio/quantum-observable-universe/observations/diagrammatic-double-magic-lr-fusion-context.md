@@ -1,4 +1,4 @@
-This remark records the setup, mechanism, worked cases, higher-magic predictions, and proof outlook for [`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion).
+This remark records the setup, mechanism, worked cases, higher-magic predictions, and proof outlook for [Conjecture (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$](#conj:diagrammatic-double-magic-lr-fusion).
 
 A nuclide is double-magic when its proton and neutron counts both fall in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. Canonical examples include $^4\mathrm{He}$, $^{16}\mathrm{O}$, $^{40}\mathrm{Ca}$, $^{48}\mathrm{Ca}$, $^{56}\mathrm{Ni}$, $^{132}\mathrm{Sn}$, and $^{208}\mathrm{Pb}$. The empirical signature is exceptional binding-energy stability: these nuclei occupy sharp local maxima on the binding-per-nucleon curve. The Littlewood-Richardson (LR) fusion of the two saturated $Z$- and $N$-blocks is rigid (a single self-conjugate Specht module on the diagonal) and permits no off-diagonal flux.
 
@@ -24,7 +24,7 @@ Physically, there is no Wedderburn block at the double-magic level capable of ab
 
 ## Examples
 
-The illustration blocks [`ex:single-magic-O18-diagram`](single-magic-O18-diagram.md), [`ex:double-magic-Ca40-diagram`](double-magic-Ca40-diagram.md), and [`ex:non-magic-Li6-diagram`](non-magic-Li6-diagram.md) display the diagrammatic content of LR-fusion at the partition level for one representative case from each regime:
+The illustration blocks [Single-magic illustration: $^{18}\mathrm{O}$ at $Z = 8$, $N = 10$](single-magic-O18-diagram.md), [Double-magic illustration: $^{40}\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)](double-magic-Ca40-diagram.md), and [Non-magic illustration: $^{6}\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)](non-magic-Li6-diagram.md) display the diagrammatic content of LR-fusion at the partition level for one representative case from each regime:
 
 - $^{40}\mathrm{Ca}$ ($Z = N = 20$): both blocks are self-conjugate. LR fusion yields a single $\nu = \nu'$ with zero content sum (**rigid**).
 - $^{18}\mathrm{O}$ ($Z = 8$, $N = 10$): the $Z$-block is self-conjugate (saturated), but $N = 10 \notin \mathfrak{M}$. The fusion is non-rigid. The $\kappa$-leakage from the $N$ side is the algebraic source of the binding tail beyond the saturated $Z = 8$ contribution.
@@ -34,11 +34,11 @@ The illustration blocks [`ex:single-magic-O18-diagram`](single-magic-O18-diagram
 
 The combinatorial barrier at $k \geq 12$ prevents Hoefsmit matrix-evaluation for $\{50, 82, 126\}$. The LR-rigidity conjecture nonetheless predicts a uniquely determined $\nu_{ZN}$ at each double-magic candidate independent of matrix evaluations. Predicted targets in the higher-magic ladder include $^{132}\mathrm{Sn}$ ($Z = 50, N = 82$) and $^{208}\mathrm{Pb}$ ($Z = 82, N = 126$). At each target, the LR fusion is conjecturally rigid. The algebraic prediction of the binding-per-nucleon peak is a zero-parameter statement.
 
-*The dominant component $V_{\lambda_A}$ in the LR decomposition need not be self-conjugate. Empirical Yamanouchi enumeration ([`lr_fusion_self_conj_test.py`](../../../computations/lr_fusion_self_conj_test.py)) finds the dominant $\nu$ is non-self-conjugate at every tested $(Z, N)$. The criterion is content additivity on the LR-fusion, not self-conjugacy of the dominant component.*
+*The dominant component $V_{\lambda_A}$ in the LR decomposition need not be self-conjugate. Empirical Yamanouchi enumeration finds the dominant $\nu$ is non-self-conjugate at every tested $(Z, N)$. The criterion is content additivity on the LR-fusion, not self-conjugacy of the dominant component.*
 
 ## Discussion
 
-This conjecture is conditional on [`prop:categorical-neutrality-saturated-shells`](../mass-endomorphism/categorical-neutrality-saturated-shells.md) and [`prop:homological-shell-condensation`](../mass-endomorphism/homological-shell-condensation.md). A proof proceeds in two steps: (1) the upstream conjectures force self-conjugate support of $\Phi_Z$ and $\Phi_N$; (2) a self-conjugacy and content-sum LR rigidity lemma (provable Hecke fragment) collapses the LR product to a single $\nu$.
+This conjecture is conditional on [Categorical neutrality of saturated shells: full-twist identity action on $\Phi_n$ at magic $n$](../mass-endomorphism/categorical-neutrality-saturated-shells.md) and [Proposition (homological shell condensation): BB-stratified $E_\infty^{p,>0}(n) = 0$ at magic $n$](../mass-endomorphism/homological-shell-condensation.md). A proof proceeds in two steps: (1) the upstream conjectures force self-conjugate support of $\Phi_Z$ and $\Phi_N$; (2) a self-conjugacy and content-sum LR rigidity lemma (provable Hecke fragment) collapses the LR product to a single $\nu$.
 
 Step 2 is plausibly provable in pure Hecke combinatorics. It is not attempted here.
 

@@ -1,1 +1,1 @@
-Let c be a generalised coboundary and η ∈ (1, 1) a natural isomorphism
+Let c be a generalised coboundary and η ∈ (1, 1) a natural isomorphism of the identity functor with ηι = 1ι. Then c η (ρ, σ) := c(ρ, σ)◦η −1 ρ ⊗η −1 σ ◦ηρ⊗σ is a generalised coboundary as well. If c is a braided symmetry, c η may fail to be a braided symmetry, but it is a generalised coboundary.

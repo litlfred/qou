@@ -1,1 +1,0 @@
-Finally, we stress that in order to simplify notations, we systematically write $$\langle C_{\alpha} C_{\beta}\rangle_{g,d}\, ,$$ in order to refer to the correlation function $$\langle C_{\alpha}, C_{\beta}\rangle_{g,d}\, .$$ In this paper, expressions involving products of correlators should always be understood as the insertion of two separate observables.

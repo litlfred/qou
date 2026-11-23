@@ -15,7 +15,7 @@ so $\mathrm{tr}_M\bigl((S\cdot 1 + tX)^2\bigr) = S^2 + t^2\,\mathrm{tr}_M(X^2)$ 
 
 ## Corollary — observable c_k invariance
 
-The $\mathfrak{Q}_\beta$ production rule extracts the Taylor coefficients $c_k$ from $\mathrm{tr}_M(T_\beta)(q)$. The constraint $\mathrm{tr}_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically under both the Euclidean $L^2$ coordinate norm and the canonical Markov–Frobenius norm. We have $\mathrm{tr}_M(T_\beta)(q) \equiv S(q)$. The coefficients $c_k$ are invariant:
+The $\mathfrak{Q}_\beta$ production rule extracts the Taylor coefficients $c_k$ from $\mathrm{tr}_M(T_\beta)(q)$. The constraint $\mathrm{tr}_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically under both the Euclidean $L^2$ coordinate norm and the canonical Markov–Frobenius norm. Then $\mathrm{tr}_M(T_\beta)(q) \equiv S(q)$. The coefficients $c_k$ are invariant:
 $$
 c_k^{\,L^2} = c_k^{\,\mathrm{Markov}} = c_k\!\!\left(S(q)\right)
 \quad\text{for all } k.

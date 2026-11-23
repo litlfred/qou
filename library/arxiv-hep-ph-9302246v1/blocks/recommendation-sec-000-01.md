@@ -1,1 +1,0 @@
-In this work we shall study the chiral Lagrangians for spin-1 particles to ${\cal O} (p^3)$ in the chiral expansion, in the context of the extended Nambu--Jona-Lasinio (ENJL) cut-off model described in Ref. [@bbr].

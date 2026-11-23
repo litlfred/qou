@@ -158,6 +158,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "wigner-np-pairing.md:5-9 '≈ 6.29 MeV ... matches the empirical Wigner value'; proof.md:1-24 no derivation of m_e[3]_q[2]_q²; proof.md:26-33 data table",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "af7ba4076e9a",
+          "ts": "9f4b05204fde"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:25.268Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: a witness filename line removed. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: wigner-np-pairing.md:5-9 '≈ 6.29 MeV ... matches the empirical Wigner value'; proof.md:1-24 no derivation of m_e[3]_q[2]_q²; proof.md:26-33 data table"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1537,6 +1552,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:36.468Z",
+  "updated_at": "2026-11-21T08:18:25.268Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

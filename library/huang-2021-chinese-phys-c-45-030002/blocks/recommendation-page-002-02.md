@@ -1,1 +1,0 @@
-This article describes the evaluation philosophy and procedures that were implemented in the selection of speciﬁc nuclear reaction, decay and mass-spectrometric data which were used in a least-squares ﬁt adjustment in order to determine the recommended mass values and their uncertainties.

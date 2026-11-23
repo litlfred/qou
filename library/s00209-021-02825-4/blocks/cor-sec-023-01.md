@@ -1,0 +1,1 @@
+Fix λ, α ∈Nm 0 , a linear operator T ∈Hom(V (λ), V (α)), and a Grace pair of the form (C1 × · · · × Cm, Cc 1 × · · · × Cc m). The following are equivalent. (i) T preserves strong (C1 × · · · × Cm)-stability. (ii) Symb(T ) is (Cc 1 × · · · × Cc m) × (C1 × · · · × Cm)-stable.

@@ -1,0 +1,1 @@
+Let χ be an irreducible character, and ρ : π1(M) →SL2(k) a re- presentation which lifts χ. Then we have an isomorphism TχX(M) ≃H1(M, Ad ◦ρ), where the cohomology coeﬃcient is sl2(k) with the adjoint action.

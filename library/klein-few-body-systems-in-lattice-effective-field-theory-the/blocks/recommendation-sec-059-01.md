@@ -1,1 +1,0 @@
-(E.3) Now the Lippmann-Schwinger equation has the form T  p′, p; E  = 1 X i,j=0 p′2iτi j(E)p2 j, (E.4) where τ must fulﬁll the following equation τ(E) = λ + λI(E)τ(E), (E.5) with I(E) = I0(E) I2(E) I2(E) I4(E) ! .

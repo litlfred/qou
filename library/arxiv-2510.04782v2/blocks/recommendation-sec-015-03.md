@@ -1,1 +1,0 @@
-In view of [\[lem:NygaardRationalisation\]](#lem:NygaardRationalisation){reference-type="ref" reference="lem:NygaardRationalisation"}, on the rationalisation we should put the combined Hodge and $[p]_q$-adic filtration.

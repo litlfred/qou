@@ -1,0 +1,1 @@
+(restatement). Fix Δ ∈Z+. Let G = (V, E) be a graph of maximum degree at most Δ, and let β be a complex number such that ∣β∣≤ e4Δ. The cluster expansion for log(ZG(β)) converges absolutely, ZG(β) ≠0, and for m ∈Z+, ∣Tm(ZG(β)) −log(ZG(β))∣≤∣V∣e−m.

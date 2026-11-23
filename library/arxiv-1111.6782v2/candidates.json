@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1111.6782v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5acfde49432e59e3329c6e402a39496934d5df3682eed4b337f9c32c1eca81a1",
   "file": "1111.6782v2.pdf"
@@ -16,13 +19,85 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 2,
+  "by_kind": {
+   "lemma": 2
+  },
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "elsewhere": 2
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
+   "name": null,
+   "statement": "1 (Leibniz Rule, cf. [9]). Let pi, qi, r \u2208(1, \u221e), be such that 1 pi + 1 qi = 1 r , for i = 1, 2 and s > 0. Then \u2225f \u00b7 g\u2225Hs,r \u2264C (\u2225f\u2225Lp1 \u2225g\u2225Hs,q1 + \u2225f\u2225Hs,p2 \u2225g\u2225Lq2 ) . We also refer to Runst and Sickel [20, Lem. 5.3.7/1 (i)]. \u2014 For the following statement, one mainly has to treat",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [9], [20, Lem. 5.3.7/1 (i)] in sections/sec-003-a-results-on-fractional-sobolev-spaces.md",
+   "external_refs": [
+    "[9]",
+    "[20, Lem. 5.3.7/1 (i)]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-003-a-results-on-fractional-sobolev-spaces.md",
+   "section_title": "A Results on fractional Sobolev spaces",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [9], [20, Lem. 5.3.7/1 (i)] in sections/sec-003-a-results-on-fractional-sobolev-spaces.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-003-01",
+   "block_iri": "library/arxiv-1111.6782v2/blocks/lem-sec-003-01",
+   "claim_id": "arxiv-1111.6782v2#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
+   "name": null,
+   "statement": "2 (Chain rule, cf. [9]). Let f \u2208Hs,p(R/Z, Rn), s > 0, p \u2208(1, \u221e). If \u03c8 \u2208 C\u221e(R) such that \u03c8 and all its derivatives vanish at 0 then \u03c8 \u25e6f \u2208Hs,p and \u2225\u03c8 \u25e6f\u2225Hs,p \u2264C\u2225\u03c8\u2225Ck\u2225f\u2225Hs,p where k is the smallest integer greater or equal to s. References [1] A. Abrams, J. Cantarella, J. H. G. Fu, M. Ghomi, and R. Howard. Circles mini- mize most knot energies. Topology, 42(2):381\u2013394, 2003. [2] W. Alt, D. Felix, Ph. Reiter, and H. von der Mosel. Energetics and dynamics of global integrals modeling interaction between sti\ufb00\ufb01laments. J. Math. Biol., 59(3):377\u2013414, 2009. [3] S. Blatt. Boundedness and regularizing e\ufb00ects of O\u2019Hara\u2019s knot energies. To appear in J. K",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [9], [1], [2] in sections/sec-003-a-results-on-fractional-sobolev-spaces.md",
+   "external_refs": [
+    "[9]",
+    "[1]",
+    "[2]",
+    "[3]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-003-a-results-on-fractional-sobolev-spaces.md",
+   "section_title": "A Results on fractional Sobolev spaces",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [9], [1], [2] in sections/sec-003-a-results-on-fractional-sobolev-spaces.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-003-02",
+   "block_iri": "library/arxiv-1111.6782v2/blocks/lem-sec-003-02",
+   "claim_id": "arxiv-1111.6782v2#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
 }

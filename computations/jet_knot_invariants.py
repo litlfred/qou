@@ -10,6 +10,12 @@ each partition of k decomposes into H₃ components.
 The per-level knot invariant is:
   a_k = Σ_λ w_λ × χ_λ(β) / Σ_λ w_λ × dim_restricted(λ)
 
+Scope note (bean `qou-zgg2`): `internuc_characters(Z, N)` below evaluates
+only the inter-nucleon crossing pair factors `(1, 0), (1, -h), (1, -h/2)`
+projected into the 2-generator H₃(q) quotient (omitting intra-nucleon B₃
+prefixes and true B_{3A} strand positions). Convergence by k=4 reflects
+this H₃-projected model, not the full B_{3A} → H_{3A} atomic braid word.
+
 Key finding: a_k CONVERGES by k=4. This means:
   - k=3 carries the nuclear braid's topology
   - k≥4 corrections are topology-independent (generic)
@@ -28,7 +34,6 @@ Usage:
 """
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
-import math
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -47,7 +52,6 @@ from pyhecke.gram import (
     G,
     NF_NAMES,
     hm,
-    build_atom_nf,
 )
 from hecke_characters import partitions_of, dim_q, qfac
 from witness_base import WitnessBuilder

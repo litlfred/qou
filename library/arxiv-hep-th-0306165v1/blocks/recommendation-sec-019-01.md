@@ -1,1 +1,0 @@
-Then, using the fact that CS(41) = 0, we can write the integrals (5.7) in the following simple form, Vol(m) = Vol(41) −2 Z y 0 log |l|d(arg m) (5.25) 42 and CS(m) = −1 π2 Z y 0 (arg l)d(arg m) (5.26) where log |l| and arg l should be determined from the equation A(l, eiy) = 0.

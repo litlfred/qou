@@ -13,9 +13,12 @@
   "pageStart": 10,
   "pageEnd": 12,
   "contains": [
-    "library/stateintegralsqseries/blocks/prose-sec-009"
+    "library/stateintegralsqseries/blocks/prose-sec-009",
+    "library/stateintegralsqseries/blocks/lem-sec-009-01",
+    "library/stateintegralsqseries/blocks/lem-sec-009-02",
+    "library/stateintegralsqseries/blocks/lem-sec-009-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
   "provenance": "ingested"
 }

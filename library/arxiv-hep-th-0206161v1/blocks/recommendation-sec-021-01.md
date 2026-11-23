@@ -1,1 +1,0 @@
-If we ﬁrst pull the H SJ as close to Cl as possible, we shall get the Hilbert space obtained by quantization of the fermions which have al + 1 2modZZ moding: ψ(w) ∼ X i∈ZZ ψl,iwal+i dw w  1 2 (4.12) near Cl ⊂Σ.

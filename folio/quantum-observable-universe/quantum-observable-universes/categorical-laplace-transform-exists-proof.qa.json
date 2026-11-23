@@ -1020,6 +1020,22 @@
         "severity": "major",
         "evidence": "The Lean witness is the identity. There is a type error: tr_M lands in End(𝟙), not Hom(𝟙, A). The proof builds a different map, and monoidality is asserted.",
         "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "276b3938a5bd",
+          "ts": "74e0ad06c537"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:07:26.069Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice changes ('we' to impersonal) and label references replaced by descriptive pointers. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: The Lean witness is the identity. There is a type error: tr_M lands in End(𝟙), not Hom(𝟙, A). The proof builds a different map, and monoidality is asserted."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1742,6 +1758,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:12.770Z",
+  "updated_at": "2026-11-21T08:07:26.069Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

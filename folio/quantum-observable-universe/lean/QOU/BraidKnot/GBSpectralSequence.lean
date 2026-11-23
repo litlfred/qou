@@ -2,23 +2,26 @@ import Mathlib.Algebra.Ring.Basic
 import QOU.BraidKnot.ConfinementLevel
 
 /-!
-# QOU.BraidKnot.GBSpectralSequence — Gröbner–Shirshov spectral sequence
+# QOU.BraidKnot.GBSpectralSequence — abstract spectral-sequence carrier
 
-The unified knot mass formula has six structural terms which emerge
-as pages of a **spectral sequence** associated with the Gröbner–
-Shirshov filtration `J^•(q)` on `H_n(R, q)`.
+LaTeX label: `prop:gb-spectral-sequence`.
 
-**Conditional-class axiomatisation** (AGENTS.md §3b).  The
-spectral-sequence existence statement is captured here as an
-abstract typeclass; full constructive formalisation requires the
-filtered-Hochschild-cochain machinery and is multi-week work
-(currently sketched in the .md).  Downstream consumers take a
-`[GBSpectralSequence R]` instance and proceed.
+**Scope (2026-11-20, bean `qou-6qbv`).** The content block was rewritten
+on the Coxeter length filtration: it now states the spectral sequence of
+the Hochschild complex `Hom(H_n^{⊗k}, H_n)` filtered by length weight,
+with `E₁` the Hochschild cohomology of the nil-Coxeter algebra and
+abutment `HH^*(H_n, H_n)`. The class below is an abstract carrier with
+free graded pieces and does **not** formalise that statement; it is kept
+because downstream files take `[GBSpectralSequence R]`. The earlier
+reading (confinement filtration, rewriting-map differential, abutment
+`gr H_n`) is withdrawn: the rewriting map is not a differential
+(`QOU.BraidKnot.GBRewriteDifferential`) and the confinement filtration is
+not preserved by the Hochschild differential at `n = 3`.
 
-**Formal-chain version.**  Lives under `lean/QOU/` and is compiled
-by `lake build`.
-
-LaTeX label: `prop:gb-spectral-sequence`
+`GBSpectralSequenceCollapsesAtE2` is likewise abstract. For the
+length-filtered Hochschild sequence it does **not** describe `H₃`: there
+`d₄ ≠ 0` and the sequence stabilises at `E₅`
+(`computations/probes/gb_spectral_sequence_h3_probe.py`, exact).
 -/
 
 namespace QOU.BraidKnot
@@ -30,9 +33,9 @@ universe u
     A class instance carries:
     * `filtration : ℕ → Type*` — the filtered pieces `J^ℓ(q)` (or,
       strictly, the associated graded `J^ℓ / J^{ℓ+1}` at level ℓ).
-    * `differential : ∀ ℓ, filtration ℓ → filtration ℓ` — the
-      direct sum `d = d_H + d_F + d_{YB}` of the three GS rewriting
-      rules, lifted to the Hochschild cochain complex.
+    * `differential : ∀ ℓ, filtration ℓ → filtration ℓ` — an abstract
+      differential on each graded piece (not the GS rewriting map,
+      which is not a differential).
     * `d_squared_zero` — the differential squares to zero
       (Cartan–Eilenberg).
     * `e_infty_converges` — the spectral sequence converges to the

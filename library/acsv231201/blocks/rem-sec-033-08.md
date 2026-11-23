@@ -1,0 +1,1 @@
+When f is a ratio of coprime analytic functions P and Q on D, where Q(z) = 1 −q(z) for a combinatorial power series q, then the results of Lemma 6.41 still hold. Without aperiodicity, w may not even be ﬁnitely minimal, as the periodic example q(x, y) = 1 −xy illustrates.

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1011.1343v1/blocks/prop-sec-008-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "prop-sec-008-02.md",
+  "derivedFrom": "library/arxiv-1011.1343v1/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.1343v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "computational-claim",
+    "claim_domain": "science",
+    "evidence_kind": "computational-simulation",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper computational simulation in sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md (p. 13-15)",
+    "claim_id": "arxiv-1011.1343v1#prop-sec-008-02"
+  }
+}

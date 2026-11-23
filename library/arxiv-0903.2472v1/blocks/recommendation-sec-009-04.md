@@ -1,1 +1,0 @@
-Moreover, if such a solution ${\bf x}^{(\alpha)}$ (corresponding to branch $\alpha$) can be lifted to a real critical point ${\bf p}^{(\alpha)} (u)$ of $V$, then one must have relations [\[lValpha\]](#lValpha){reference-type="eqref" reference="lValpha"} and [\[SValpha\]](#SValpha){reference-type="eqref" reference="SValpha"}.

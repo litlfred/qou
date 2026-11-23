@@ -1,0 +1,1 @@
+(12) 4 PoS(LATTICE2021)543 푀푛−푀푝in Lattice QCD+QED at LO in IB Simone Romiti Finally the IB correction to 푀Ω−is: Δ푀Ω−= −Δ푚푠[ΩM 1 + ΩM 2 + ΩM 3 ] + Δ푚(푐푟) 푠 [ΩC 1 + ΩC 2 + ΩC 3 ] + 푞2 푠[Ωself 1 + Ωself 2 + Ωself 3 + Ωexch 3 + Ωexch 2 + Ωexch 1 ] + Õ 푓∈(푠푒푎) 푞푓푞푠 h Ωloop 1 푓 + Ωloop 2 푓 + Ωloop 3 푓 i + [isosymm. vac. pol. diag.] .

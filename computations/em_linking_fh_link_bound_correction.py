@@ -124,8 +124,12 @@ def main() -> None:
     comp_vals = [v["acn_component_vs_link"] for v in sweep.values()]
     spread_pct = (max(comp_vals) - min(comp_vals)) / acn_component * 100
 
-    # Lower bound via Komendarczyk's genus estimate. The genus >= 1 step
-    # is MY inference, flagged as such: neither source computes it.
+    # Lower bound via Komendarczyk's genus estimate. Non-vanishing
+    # mu-bar(12..A) = +/-1 != 0 is now proved sorry-free in
+    # QOU/MassTheory/MilnorMagnusCoefficient.lean (milnorMagnusCoeff_eq,
+    # milnorMagnusCoeff_ne_zero); the remaining unformalised step is the
+    # topological implication mu-bar != 0 => genus >= 1 in the complement
+    # (bean qou-my0j).
     genus_lower = 1
     ac_lower = 2 * genus_lower - 1
     sum_lower = N_COMPONENTS * ac_lower
@@ -227,9 +231,13 @@ def main() -> None:
             "among surfaces in R^3 minus the other components, with "
             "boundary L_k. For Borromean, L_k is null-homologous there "
             "(pairwise lk = 0) so a surface exists, while mu-bar_123 = "
-            "1 != 0 obstructs a genus-0 spanning disk, giving genus >= "
-            "1 and hence ac >= 1. NEITHER SOURCE COMPUTES THIS -- the "
-            "obstruction step is my inference and is flagged as such."),
+            "+/-1 != 0 (now proved sorry-free via faithful nilpotent "
+            "Magnus realization in QOU/MassTheory/MilnorMagnusCoefficient.lean: "
+            "milnorMagnusCoeff_eq, milnorMagnusCoeff_ne_zero) obstructs a "
+            "genus-0 spanning disk, giving genus >= 1 and hence ac >= 1. "
+            "With non-vanishing proved in Lean, the remaining unformalised "
+            "inference is the single topological implication 'mu-bar != 0 "
+            "=> genus >= 1 in the complement' (bean qou-my0j)."),
     })
     wb.add_data("what_eq43_actually_predicts", {
         "structure": ("with a fixed local Borromean configuration the "

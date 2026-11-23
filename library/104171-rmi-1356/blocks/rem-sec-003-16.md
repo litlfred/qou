@@ -1,0 +1,1 @@
+We have not defined Bld;b g;n.c/ as a quotient of TLg;n.c/ because blobs would be invertible if we define them as the image of u in the quotient and we want to include the possibility of blobs being nilpotent, cf. Example 4.16.

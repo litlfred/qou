@@ -54,9 +54,10 @@ def _producer_stem(witness_rel: str) -> str | None:
     `ideal_muon` was simply **unreachable** outside the root directory.
     """
     stem = Path(witness_rel).name[: -len(".witness.json")]
+    u = stem.replace("-", "_")
     wdir = (ROOT / witness_rel).parent
     for base in (wdir, HERE):
-        for cand in (stem.replace("-", "_"), stem):
+        for cand in (u, stem, f"{u}_probe", f"{u}_derivation"):
             if (base / f"{cand}.py").exists():
                 return cand
     return None

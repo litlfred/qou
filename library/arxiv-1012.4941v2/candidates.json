@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1012.4941v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1932a359f3bafb8329e43e040873de5caab69ce3439df7a539ae9392ea5da59b",
   "file": "1012.4941v2.pdf"
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then the corresponding right hand side must be non-negative, since otherwise the linear program would be infeasible, and this was explicitly excluded above.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-automorphisms-of-linear-programs.md",
-   "section_title": "Automorphisms of Linear Programs",
-   "pages": "2-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We learned that some coordinate difference $|x_i-x_k|$ must exceed one.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-searching-integer-layers-efficiently.md",
-   "section_title": "Searching Integer Layers Efficiently",
-   "pages": "11-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Applying Proposition [\\[prop:mu-trs\\]](#prop:mu-trs){reference-type=\"ref\" reference=\"prop:mu-trs\"} with $\\mu=\\lfloor n/2\\rfloor+1$ yields that then *each* core point must be feasible. \u25fb :::",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-searching-integer-layers-efficiently.md",
-   "section_title": "Searching Integer Layers Efficiently",
-   "pages": "11-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For practical applications this should be superior to our approach via graph automorphisms if the number $m$ of constraints is much larger than the dimension $n$. :::",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-finding-all-symmetries.md",
-   "section_title": "Finding All Symmetries",
-   "pages": "13-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be stressed that `CPLEX` can detect if the symmetry group of an integer linear program contains the full symmetric group acting on the standard basis of ${\\mathbb{R}}^n$, and this is exploited in its algorithms.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-8-computational-results.md",
-   "section_title": "Computational Results",
-   "pages": "18-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

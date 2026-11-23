@@ -1263,6 +1263,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] library ref returns the class field `claim_descartes_terminal` (self-assuming). The hashed sibling only proves genus = 4 from a `gauss_bonnet` field, and \"terminality\" is encoded as \"any two Descartes universes have the same genus\". S↔P: (a) uniqueness fails at X = Bring itself: Aut(Σ₄) ≅ S₅ has 120 elements, all χ-preserving, so Hom(Σ₄, Σ₄) is not a singleton unless the morphisms are defined to exclude automorphisms; (b) existence fails in the holomorphic setting: a non-constant map between genus-4 curves has degree 1 by Riemann–Hurwitz (6 = 6d + R ⇒ d = 1), so any genus-4 curve not isomorphic to Bring's admits no non-constant map to it. The proof's \"the descent data defines a map Σ → Σ₄\" and \"Tannaka–Krein rigidity gives uniqueness\" do not address either point. The cited fact that S₅ (order 120) is the largest automorphism group in genus 4 is right"
+      },
+      {
+        "field_hash": {
+          "md": "476bbf249fb5",
+          "ts": "ab7faa150930",
+          "lean": "1d6e23bf0157",
+          "lean_statement": "409e89a8b061"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:39:25.978Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: 'at a fixed value of the substrate parameter q' was added and chi(A) renamed chi_eu(M_0); neither touches the automorphism or Riemann-Hurwitz objections. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: [sidecar review 2026-11-15, issue #8030] library ref returns the class field `claim_descartes_terminal` (self-assuming). The hashed sibling only proves genus = 4 from a `gauss_bonnet` field, and \"terminality\" is encoded as \"any two Descartes universes have the same genus\". S↔P: (a) uniqueness fails at X = Bring itself: Aut(Σ₄) ≅ S₅ has 120 elements, all χ-preserving, so Hom(Σ₄, Σ₄) is not a singleton unless the morphisms are defined to exclude automorphisms; (b) existence fails in the holomorphic setting: a non-constant map between genus-4 curves has degree 1 by Riemann–Hurwitz (6 = 6d + R ⇒ d = 1), so any genus-4 curve not isomorphic to Bring's admits no non-constant map to it. The proof's \"the descent data defines a map Σ → Σ₄\" and \"Tannaka–Krein rigidity gives uniqueness\" do not address either point. The cited fact that S₅ (order 120) is the largest automorphism group in genus 4 is right"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2460,6 +2478,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:11.387Z",
+  "updated_at": "2026-11-21T07:39:25.978Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

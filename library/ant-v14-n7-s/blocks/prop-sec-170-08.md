@@ -1,0 +1,1 @@
+Let S be a simple group of Lie type deﬁned over Fq with 3∤q and assume S is not one of the groups PSLϵ n(q) with n ≤3. Then there exist three nontrivial characters χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 such that χ1 and χ2 extend to Aut(S). Further, if S is not PSLϵ 4(q) nor PSp4(2a) with a odd, then χ1, χ2, and χ3 may be chosen to extend to Aut(S).

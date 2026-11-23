@@ -1,0 +1,1 @@
+5. The reason we require that K contains R is because the explicit formula of Kontsevich for the higher homotopies Υj involves transcendental real numbers. See discussion in [Ko2]. More recent work (based on ideas of Tamarkin, cf. [CV2]) shows that this requirement can be avoided.

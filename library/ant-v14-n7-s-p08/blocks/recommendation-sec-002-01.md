@@ -1,1 +1,0 @@
-In the other direction, if F is a perfect d-th power over ks, then in the factorization above, all ai must be multiples of d, so that F factors over k as F = cGd with G = Fa1/d 1 · · · Faℓ/d ℓ . □ 3B.

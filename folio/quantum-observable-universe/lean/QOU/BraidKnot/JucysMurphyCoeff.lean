@@ -118,4 +118,11 @@ theorem centralC2_coeff_one (n : ℕ) :
       rw [Finset.sum_range_id, Nat.choose_two_right],
     Nat.cast_sum]
 
+/-- Subtracting the binomial identity coefficient from the squared Jucys-Murphy sum yields zero. -/
+theorem centralC2_coeff_one_sub_eq_zero (n : ℕ) :
+    ((∑ k : Fin n, (∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val),
+        single (Equiv.swap i k) (1 : R)) ^ 2)) (1 : Equiv.Perm (Fin n))
+      - (n.choose 2 : R) = 0 := by
+  rw [centralC2_coeff_one, sub_self]
+
 end QOU.BraidKnot.JucysMurphyCoeff

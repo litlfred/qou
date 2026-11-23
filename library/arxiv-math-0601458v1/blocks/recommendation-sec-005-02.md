@@ -1,1 +1,0 @@
-It should be clear that A acts like diﬀerentiation, by seeing how it acts on Zn, since A(Zn) is the structure which, to put it on a set, means putting the structure of “being a totally ordered n-element set” on S ∪{⋆}.

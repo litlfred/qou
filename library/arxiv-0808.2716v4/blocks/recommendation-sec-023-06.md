@@ -1,1 +1,0 @@
-If $\det(K)= 4$, Lemma [\[lemma:determinant\]](#lemma:determinant){reference-type="ref" reference="lemma:determinant"} says the only generic braids representing $K$ must be conjugate to $C^k \sigma_1^2 \sigma_2^{-2}$, $C^k \sigma_1^4 \sigma_2^{-1}$, or $C^k \sigma_1 \sigma_2^{-4}$.

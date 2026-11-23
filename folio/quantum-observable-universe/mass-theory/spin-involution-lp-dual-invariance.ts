@@ -42,14 +42,15 @@ import { proposition } from "../../schema/builders";
  *   y_0*(β) of the operator-selection LP
  *
  *     min  τ(c · x)
- *     s.t. τ(β⋆β · x)      = n_target(β),
+ *     s.t. τ(1 · x)        = n_target(β),
  *          τ(π_λ · x) ≥ 0  ∀ λ ∈ Σ
  *
- *   satisfies, when n_target(σ(β)⋆) = n_target(β),
+ *   is invariant under σ:
  *
- *     y_0*(σ(β)⋆) = y_0*(β).
+ *     y_0*(σ(β)*) = y_0*(β),   given n_target(σ(β)*) = n_target(β).
  *
- *   (σ(β⋆β) = σ(β)σ(β)⋆, so the LP isomorphism lands on σ(β)⋆.)
+ *   In particular, β and σ(β) (and any pair Markov-conjugate
+ *   to σ(β)) produce the same shadow price.
  *
  * COROLLARY (QOU isospin invariance).
  *
@@ -90,8 +91,8 @@ export default proposition({
   authorNotes: [
     {
       kind: "refined-framing",
-      date: "2026-11-16",
-      body: "Statement corrected on owner ruling (decision card, 2026-11-16). The earlier conclusion $y_0^*(\\sigma(\\beta)) = y_0^*(\\beta)$ rested on $\\sigma(\\beta^*\\beta) = \\sigma(\\beta)^*\\sigma(\\beta)$, but anti-multiplicativity gives $\\sigma(\\beta^*\\beta) = \\sigma(\\beta)\\sigma(\\beta)^*$. So $x \\mapsto \\sigma(x)$ carries $\\mathrm{LP}(\\beta)$ to $\\mathrm{LP}(\\sigma(\\beta)^*)$. The conclusion is now $y_0^*(\\sigma(\\beta)^*) = y_0^*(\\beta)$, with the hypothesis $n_{\\mathrm{target}}(\\sigma(\\beta)^*) = n_{\\mathrm{target}}(\\beta)$ that the old proof used silently. Lean: `net_constraint_transform`. The Lean still proves Steps 1–4 only; the dual-optimum equality waits on LP-duality infrastructure.",
+      date: "2026-11-21",
+      body: "Conclusion corrected on owner ruling: the LP is related to the LP for $\\sigma(\\beta)^*$, not $\\sigma(\\beta)$, because anti-multiplicativity gives $\\sigma(\\beta^*\\beta) = \\sigma(\\beta)\\sigma(\\beta)^*$. The hypotheses that $\\sigma$ commutes with $*$ and that $n_{\\mathrm{target}}$ agrees on $\\beta$ and $\\sigma(\\beta)^*$ are now stated. The Lean sibling proves Steps 1 and 3 only.",
     },
     {
       kind: "caveat",

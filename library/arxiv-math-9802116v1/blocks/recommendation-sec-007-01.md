@@ -1,1 +1,0 @@
-Proof The deﬁnition of the coaction is consistent with the relations of A: β(ei · ej) = β(ei)β(ej) = ea · eb ⊗tai · tbj = cabkek ⊗tai · tbj = cijaek ⊗tka = β(cijaea) in virtue of the relations of M1. ⊔⊓ In fact, it should be clear from the proof that the relations of M are the minimum relations such that a coaction of this form extends as an algebra map.

@@ -1,0 +1,1 @@
+Let L ∈LA(J) and V be the color of an edge of L belonging to A(J). Cutting this edge, we obtain a colored (1, 1)-ribbon graph TV whose closure is L. Then F ′(L) = dJ(V )⟨TV ⟩∈F is independent of the choice of the edge to be cut and yields a well-deﬁned invariant of L.

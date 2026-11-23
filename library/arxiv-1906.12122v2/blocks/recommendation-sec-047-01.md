@@ -1,1 +1,0 @@
-However, due to the Coulomb barrier it cannot be measured at the very low energies required for this purpose and the data must be extrapolated. \textcite{Zhang:2014zsa} demonstrated that Halo EFT together with input from \abinitio calculations constitutes a powerful tool to carry out this extrapolation.

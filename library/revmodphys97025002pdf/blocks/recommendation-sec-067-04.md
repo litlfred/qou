@@ -1,1 +1,0 @@
-However, because the adjusted constant ArðnÞ is not used in any other observational equation, the input datum ηd does not contribute to the determination of d220ðILLÞ and hence the 2022 recommended values of the six silicon lattice-spacing TABLE XXX.

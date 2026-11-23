@@ -1,0 +1,1 @@
+For all λ ∈C×, we have Hλt,λc(W) ∼= Ht,c(W). So we only need to consider the cases t = 1 and t = 0. There is a natural ﬁltration F on Ht,c(W) given by putting V ∗in degree one and W in degree zero. The crucial result by Etingof and Ginzburg is the Poincar´e–Birkhoﬀ–Witt (PBW) Theorem [EtGi,

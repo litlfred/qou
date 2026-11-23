@@ -103,14 +103,24 @@ theorem screen_trans {lam mu a b c : K} (hlam : 0 ≤ lam) (hmu : 0 ≤ mu)
       _ ≤ mu * (lam * a) := mul_le_mul_of_nonneg_left h1b hmu
       _ = lam * mu * a := by ring
 
-/-- Closed under products (nonnegative data): thresholds multiply. -/
-theorem screen_mul {lam mu a b c d : K} (hlam : 0 ≤ lam)
+/-- Closed under products (nonnegative data): thresholds multiply.
+    No sign hypothesis on `lam` is needed: with `a, b ≥ 0` a negative
+    threshold forces `a = b = 0`, and the product screen holds trivially. -/
+theorem screen_mul {lam mu a b c d : K}
     (ha : 0 ≤ a) (hb : 0 ≤ b) (hc : 0 ≤ c) (hd : 0 ≤ d)
     (h1 : Screen lam a b) (h2 : Screen mu c d) :
     Screen (lam * mu) (a * c) (b * d) := by
   obtain ⟨h1a, h1b⟩ := h1
   obtain ⟨h2a, h2b⟩ := h2
   rw [abs_of_nonneg hb] at h1a h1b
+  rcases le_or_gt 0 lam with hlam | hlam
+  swap
+  · have ha0 : a = 0 := le_antisymm
+      (h1a.trans (mul_nonpos_of_nonpos_of_nonneg hlam.le hb)) ha
+    have hb0 : b = 0 := le_antisymm (by
+      have := h1b; rw [ha0, mul_zero] at this; exact this) hb
+    subst ha0; subst hb0
+    unfold Screen; simp
   rw [abs_of_nonneg hd] at h2a h2b
   unfold Screen
   rw [abs_of_nonneg (mul_nonneg hb hd)]
@@ -136,7 +146,7 @@ theorem screen_prod_one {ι : Type*} (s : Finset ι) (r f : ι → K)
     have ih' := ih (fun i hi => hr i (Finset.mem_insert_of_mem hi))
       (fun i hi => hf i (Finset.mem_insert_of_mem hi))
       (fun i hi => h i (Finset.mem_insert_of_mem hi))
-    have := screen_mul (hr j (Finset.mem_insert_self j s))
+    have := screen_mul
       zero_le_one (hf j (Finset.mem_insert_self j s)) zero_le_one
       (Finset.prod_nonneg fun i hi => hf i (Finset.mem_insert_of_mem hi))
       (h j (Finset.mem_insert_self j s)) ih'

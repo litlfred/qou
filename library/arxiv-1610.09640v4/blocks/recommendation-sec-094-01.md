@@ -1,1 +1,0 @@
-Let us emphasize the hybrid nature of the category C(A)rig/K : the morphisms are homomorphisms of complexes (literally degree 0 homomorphisms of graded A- modules φ : M →N that commute with the diﬀerentials); but they must satisfy a compatibility condition (rigidity) in the derived category.

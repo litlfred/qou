@@ -1,0 +1,1 @@
+The q →1 limit of Proposition 3.1 is discussed in full generality in [8, Thm.1.1], where it is shown that the dual of the module associated to rFr−1(a; b; t) is the module associated to rFr−1(1 −a; 2 −b; t).

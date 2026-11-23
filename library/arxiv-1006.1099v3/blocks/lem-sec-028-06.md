@@ -1,0 +1,1 @@
+Suppose L ∈F(B; 0), and let ΓL denote its image under the correspondence Γ = ΓR ◦ΓE. Either HF(ΓL, ΓL) = 0 for all L ∈F(B; 0), or there is an isomorphism HF(ΓL, ΓL) ∼= HF(L, L) ⊗Cl2 of QH∗(B; 0)-modules.

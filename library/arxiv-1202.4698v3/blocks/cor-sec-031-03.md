@@ -1,0 +1,1 @@
+I(ρ) = Y 1≤i<j≤3 Sb(ρi + ρj)Sb(ρi+3 + ρj+3)J(µ, ν), (B.10) and the balancing condition P4 i=1 µi + νi = 2Q. Here we have  µ1 µ2 µ3 µ4 ν1 ν2 ν3 ν4  =  ρ1 −x ρ2 −x ρ3 −x Q −ρ456 −x ρ4 + x ρ5 + x ρ6 + x Q −ρ123 + x  , where ρ123 = ρ1 + ρ2 + ρ3, ρ456 = ρ4 + ρ5 + ρ6, and x is arbitrary.

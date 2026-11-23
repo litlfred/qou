@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-topological-mass-upper-bound",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:topological-mass-upper-bound",
+  "kind": "proposition",
+  "title": "Upper bound for the topological decomposition of mass",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/def-brane-boundary",
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-topological-mass-categorical",
+    "papers/quantum-observable-universe/blocks/prf-topological-mass"
+  ],
+  "tags": [
+    "mass",
+    "topological-decomposition",
+    "descent-involution",
+    "upper-bound"
+  ],
+  "leanRef": "qou:QOU.Torsion.mass_upper_bound_localised",
+  "text": "topological-mass-upper-bound.md",
+  "leanSource": "topological-mass-upper-bound.lean",
+  "provenance": "authored"
+}

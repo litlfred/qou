@@ -1,1 +1,0 @@
-In general, one should consider bidiﬀerential operators Bi with complex coeﬃcients, as we expect to associate by quantization self-adjoint operators in a Hilbert space to real-valued classical observables.

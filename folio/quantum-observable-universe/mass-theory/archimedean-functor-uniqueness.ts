@@ -44,4 +44,13 @@ export default proposition({
     ref: "qou:QOU.Archimedean.archimedean_functor_uniqueness",
     validation: "not_checked",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-21",
+      body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner: fix issues): Hypothesis (C1) ended \"together with the archimedean limit\n   ([$(1{-}q)\\,\\log\\Phi_n(x; q) \\to \\mathrm{Li}_2(x)$ under $\\tau_{\\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit)).\"; the same conjecture is already the block's opening conditional banner.",
+    },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): > The upstream conjecture is axiomatised in Lean as the typeclass\n> [`QOU.QPochhammer.ArchimedeanLimit`](dilogarithm-archimedean-limit.lean);\n> the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`,\n> `bloch2000`] is similarly axiomatised as\n> [`QOU.Archimedean.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean).\n> The Lean theorem\n> [`QOU.Archimedean.archimedean_functor_uniqueness`](archimedean-functor-uniqueness.lean)\n> takes both classes as `[Instance]` hypotheses and is proved\n> **without `sorry`**; the uniqueness statement therefore qualifies as a\n> *rigorous conditional result* rather than an unproved\n> conjecture." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): together with the archimedean-limit class `QOU.QPochhammer.ArchimedeanLimit`" },
+  ],
 });

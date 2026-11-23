@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9310164v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9310164v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9310164v2",
+  "title": "SPHERICAL CATEGORIES",
   "contains": [
     "library/arxiv-hep-th-9310164v2/sections/page-001",
     "library/arxiv-hep-th-9310164v2/sections/page-002",
@@ -39,7 +39,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9310164v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9310164v2.pdf",
     "source_sha256": "e0972e04667ccc47e526b1289acfeb7cfda6f852c08ed2431f1dffdebbd689e8",
     "pages": 16,
@@ -50,8 +52,8 @@
       "stamp_date": "22 Jul 1998"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

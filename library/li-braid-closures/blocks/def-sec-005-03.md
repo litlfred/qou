@@ -1,0 +1,1 @@
+For a braid α ∈Bn, the HOMFLYPT polynomial under Jones normalization is the product Xˆα(q, Λ) :=  − 1 −Λq √ Λ(1 −q) n−1 ( √ Λ)e(α) X λ⊢n Ωλχλ(α). This two-variable polynomial Xˆα(q, Λ) is a link invariant. The sum P λ⊢n Ωλχλ(α) is some- times referred to as the Ocneanu trace.

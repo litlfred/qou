@@ -1,4 +1,4 @@
-The vertex operator algebra $(V, Y, |0\rangle)$ ([vertex operator](#def:vertex-operator)) inherits every QU and QUO axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$ of $H_n(R, q)$, translated into **knot coordinates**: braid words in $\sigma_i$, the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace $\mathrm{tr}_M$, and cup/cap morphisms $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$, $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$. The generators obey the Hecke relation
+The vertex operator algebra $(V, Y, |0\rangle)$ inherits every QU and QUO axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$ of $H_n(R, q)$, translated into **knot coordinates**: braid words in $\sigma_i$, the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace $\mathrm{tr}_M$, and cup/cap morphisms $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$, $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$. The generators obey the Hecke relation
 
 $$
   \sigma_i^2 = (q - q^{-1})\sigma_i + 1 \qquad (1 \leq i \leq n-1),
@@ -16,7 +16,7 @@ Each axiom is translated into knot coordinates below.
 
 ### QOU-1: Rigid braided monoidal structure (rigidity is a quantum-observable-universe condition; a quantum universe is braided but not rigid)
 
-The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke representation $\rho_n\colon B_n \to H_n(R, q)$. We write $\sigma_i$ both for the braid generator in $B_n$ and for its image $\rho_n(\sigma_i)$ in $H_n(R, q)$. Three families of relations encode rigidity and braiding:
+The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke representation $\rho_n\colon B_n \to H_n(R, q)$. Write $\sigma_i$ both for the braid generator in $B_n$ and for its image $\rho_n(\sigma_i)$ in $H_n(R, q)$. Three families of relations encode rigidity and braiding:
 
 **(QU-1a) Hecke relation** (quadratic):
 
@@ -246,7 +246,7 @@ $$
   \beta = \varnothing  \text{(empty braid)}.
 $$
 
-Equivalently, the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is invertible (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)).
+Equivalently, the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is invertible (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical).
 
 ### QUO-2: Observability ($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$)
 
@@ -439,7 +439,7 @@ The translation operator $L_{-1}$ preserves the Euler characteristic: $\chi(A_{n
 **Descartes constraint** (C-4b): For the physical universe,
 
 $$
-  \chi(A) =  -6
+  \chi_{\mathrm{eu}}(M_0) =  -6
   \qquad\Longleftrightarrow\qquad
   \mathrm{tr}_M(\mathrm{id}) =  -6.
 $$
@@ -462,14 +462,14 @@ $$
 
 where $\check{R}_{(n)}$ is the $R$-matrix at brane level $n$. The class $\kappa_n = 0$ if and only if jet prolongation determines the level-$(n+1)$ braiding entirely from the level-$n$ braiding.
 
-**Kummer persistence** (C-5a): When $\chi(A) = -6$, item 3 of the [QU-to-QOU theorem](#thm:qu-to-qou) gives
+**Kummer persistence** (C-5a): When $\chi_{\mathrm{eu}}(M_0) = -6$, item 3 of the [QU-to-QOU theorem](#thm:qu-to-qou) gives
 
 $$
   \kappa_n = 0 \iff n \mid 6,
   \qquad n \geq 1,
 $$
 
-for the Kummer obstruction $\chi(A) \bmod n$. This relation formerly asserted $\kappa_n \neq 0$ for all $n$, on the ground that jet corrections and the base obstruction occupy complementary subgroups; that argument is withdrawn. Whether the $R$-matrix class defined above coincides with the Kummer obstruction is open.
+for the Kummer obstruction $\chi(A) \bmod n$. This relation formerly asserted $\kappa_n \neq 0$ for all $n$, on the ground that jet corrections and the base obstruction occupy complementary subgroups; that argument is withdrawn. Whether the $R$-matrix expression defined above coincides with the Kummer obstruction is open, and only in a restricted sense can it hold. The Markov trace takes values in a torsion-free ring, and every additive map from $\mathbb{Z}/n$ into a torsion-free group is zero. So the trace expression cannot be the image of the Kummer class under any homomorphism; at most it can vanish at the same levels $n \mid 6$. It is also identically zero whenever $\check{R}_{(n+1)}$ is the jet image of $\check{R}_{(n)}$, as it is for $\check{R} = \sigma_i$ at every level (see JC-4 in the [jet relations](#prop:vertex-algebra-jet-relations)). Both facts are proved in `QOU.KummerObstruction` and `QOU.JetObstruction` (library file `MathlibExt/KummerObstruction.lean`). What does hold at the level of traces is the identity route: by C-4b, $\mathrm{tr}_M(\mathrm{id}) = \chi(A) = -6$, so the Kummer obstruction at level $n$ is $\mathrm{tr}_M(\mathrm{id}) \bmod n$ (`kummerObstruction_eq_trace_id_mod`).
 
 *Scope.* This restates item 3 of [QU-to-QOU](#thm:qu-to-qou) in its earlier, jet-tower form, which is retracted. Item 3 now states persistence in the Kummer tower (the obstruction $\chi(\mathcal{S}) \bmod n$ to an $n$-th root of the Reeb bundle), not at every level of the jet tower. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou).
 

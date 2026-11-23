@@ -1,1 +1,0 @@
-Deﬁnition 3.1 We shall call any triple of the form w = (w0, w1, w2) = (log z + pπi, log z′ + qπi, log z′′ + rπi) with p, q, r ∈Z and w0 + w1 + w2 = 0 1It is associated with the unoriented edge since there is an orientation preserving symmetry of the simplex exchanging z0 and z1 (it also exchanges z2 and z3 and acts on C∗by z 7→1/z).

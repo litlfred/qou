@@ -1,1 +1,0 @@
-But to construct g-invariant symmetric elements F, € Ug ® Ug and 4,,, €9@g such that D= A (ho,,,,)mod h”*! and R= exp(hé,,,,/2) mod h"*' where ® and R are obtained by twisting ® and R via F,, we must still prove that r € Sym?

@@ -1,1 +1,0 @@
-Other resonances lie at least $\Mhi\simeq 500~\MeV$ above threshold---the next resonance ($S_{11}$) has a mass $m_{S_{11}} - m_N\simeq 500~\MeV$~\cite{Arndt:2006bf}---and it is difficult to see why they should be incorporated in the EFT without the concomitant inclusion of meson resonances.

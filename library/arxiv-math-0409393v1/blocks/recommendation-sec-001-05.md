@@ -1,1 +1,0 @@
-We shall write ${\mathcal{F}}(M_{0})$ for the set of equivalence classes of pairs $(M,g)$ of a module $M$ and an isomorphismism $g : {\text{gr}}(M) \rightarrow M_{0}$, where $(M,g)$ is said to be equivalent to $(M',g')$ if there exists a morphism $u : M \rightarrow M'$ such that $g = g' \circ {\text{gr}}(u)$ ($u$ is automatically an isomorphism). :::

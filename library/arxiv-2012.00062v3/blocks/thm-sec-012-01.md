@@ -1,0 +1,1 @@
+Wm(q) is a fundamental solution of the linear q-diﬀerence equation (86) that has constant determinant det(Wm(q)) = 2 , (91) satisﬁes the orthogonality property 2Wm−1(q)    W−m−1(q−1)T =   3 −qm  . (92) as well as 2Wm(q)    Wℓ(q−1)T ∈SL(3, Z[q±]) (93) for all integers m, ℓand for |q|̸ = 1. STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARIÑO

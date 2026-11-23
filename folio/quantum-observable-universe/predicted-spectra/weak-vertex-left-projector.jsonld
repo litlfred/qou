@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-weak-vertex-left-projector",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:weak-vertex-left-projector",
+  "kind": "proposition",
+  "title": "The weak vertex insertion is proportional to the left projector",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-force-knot-identification"
+  ],
+  "cites": [
+    "references/jones1987"
+  ],
+  "tags": [
+    "weak",
+    "chirality",
+    "hecke-letter",
+    "skein",
+    "left-line",
+    "scope-a"
+  ],
+  "leanRef": "qou:QOU.QuarkState.WeakVertexLeftProjector.weakVertex_sub_letter",
+  "text": "weak-vertex-left-projector.md",
+  "provenance": "authored"
+}

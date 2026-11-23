@@ -1,0 +1,1 @@
+Let V be a subspace of B(H) and let φ : V →C be a linear functional. The following are equivalent: (i) There are vectors in H, ξ1, ξ2, ..., ξn and η1, η2, ..., ηn with φ(x) = n X i=1 ⟨xξi, ηi⟩ (ii) φ is weakly continuous. (iii) φ is strongly continuous.

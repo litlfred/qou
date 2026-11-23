@@ -1,4 +1,4 @@
-*Lean sibling: structural, over a generic commutative ring $R$.*
+*Structural; holds over a generic commutative ring $R$.*
 
 **Definition.** A **one-dimensional channel** over a commutative ring $R$ is a bounded braid carrier along a line, conveying a braid word $\beta \in B_n$. The transmitted datum is the Markov trace $\mathrm{tr}_M(\beta) \in R$. 
 

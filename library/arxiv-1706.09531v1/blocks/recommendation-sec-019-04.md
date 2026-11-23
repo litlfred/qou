@@ -1,1 +1,0 @@
-For these reasons, intensifying the search for the e+π0-mode to the level of sensitivity of about (a few) × 1035 years in a next-generation proton decay detector and, if need be, to that of 1036 yrs in a next-to-next generation detector, should be well worth the eﬀort.

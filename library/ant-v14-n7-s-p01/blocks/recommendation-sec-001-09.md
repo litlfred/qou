@@ -1,1 +1,0 @@
-We shall also assume that p is unramiﬁed in F and 5 has conductor coprime to p, and is ordinary at the primes above p, so there is a unique eigenvalue α of Frob−1 p on As Vq(5), for q not dividing p, such that α is a unit at p.

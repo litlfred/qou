@@ -1,1 +1,0 @@
-Looking back at the formula for the characteristic map $$h_L(s,t,u) \ = \ (y_z-x_z)/|y_z-x_z| \quad\text{where}\quad a_z = \mathrm{pr}_{-1}(-a\bar z)\,,$$ we see that we must understand the $K$-action sending $z\in K$ to the automorphism $a\mapsto a\bar z$ of $S^3$, and the induced $K$-action on $\mathbb R^3$ via stereographic projection.

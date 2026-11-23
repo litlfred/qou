@@ -1,0 +1,1 @@
+Using the experimental value MK0 = 497.611(13) MeV [19] our results (77) and (62) correspond to a kaon mass in pure QCD equal to MK = 494.4(1) MeV in agreement with the FLAG estimate MK = 494.2(3) MeV.

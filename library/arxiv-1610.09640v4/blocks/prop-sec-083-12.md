@@ -1,0 +1,1 @@
+Let A be a ring. The following are equivalent for M ∈D(A): (i) M has ﬁnite ﬂat dimension. (ii) M has ﬁnite ﬂat dimension relative to M(Aop). (iii) There is an isomorphism P ∼= M in D(A), where P is a bounded complex of ﬂat A-modules. Exercise 12.4.20. Prove Proposition 12.4.19. (The proof is similar to that of

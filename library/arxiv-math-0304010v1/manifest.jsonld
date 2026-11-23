@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0304010v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0304010v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0304010v1",
+  "title": "Kerov's central limit theorem for the Plancherel measure on Young diagrams",
   "contains": [
     "library/arxiv-math-0304010v1/sections/page-001",
     "library/arxiv-math-0304010v1/sections/page-002",
@@ -72,7 +72,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0304010v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0304010v1.pdf",
     "source_sha256": "fc2296c027b3feb0ff6c894f9ab594d35b5d79e489795280ee70315235af1362",
     "pages": 49,
@@ -83,8 +85,8 @@
       "stamp_date": "1 Apr 2003"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

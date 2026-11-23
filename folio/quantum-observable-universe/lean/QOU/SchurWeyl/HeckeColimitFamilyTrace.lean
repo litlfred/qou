@@ -47,6 +47,11 @@ general-`z` family is instantiated here.  Every theorem downstream of
 `ocneanuMarkovTraceAt` is therefore a theorem about whichever family is fed in,
 and holds at a given `z` exactly when a family at that `z` exists.
 
+**Update 2026-11-20:** a family now exists at **every** `z` (over a field, `q` and `q²` not roots
+of unity): `SeminormalRep.ocneanuMarkovTraceEveryZ` in `OcneanuMarkovTraceEveryZ`, whose colimit
+trace is `SeminormalRep.ocneanuMarkovTraceColimit`. The general-`z` Markov property described as
+open above is proved there; this file is unchanged.
+
 `ofLim n` is not known to be injective (bean `qou-ejde`), so `H n` is the image
 of level `n`, as in `HeckeColimit`.
 

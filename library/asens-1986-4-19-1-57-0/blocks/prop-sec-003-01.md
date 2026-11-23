@@ -1,0 +1,1 @@
+- Let Nc=M be type II^ factors mth finite index a=[M:N]. Let McM^cM^ be the factors obtained by iterating the basic construction, i.e. M^ is the extension of M by N and M^ 15 the extension of M^ by M. // i: N -> M, j : M^ -^ M^ ^r^ ^ inclusion maps then there exist isomorphisms p : N^ -> M^, cr : M^ ^ M^ such that the diagram N, ^M, p! 1° Mi ^M^ commutes.

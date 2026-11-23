@@ -71,6 +71,106 @@ def chi_block_111(q: mpf) -> mpf:
     return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q ** 5)
 
 
+# ── Route 2 Per-Nucleon Sector Characters & GPMT Modified Trace over H_3(q) ──
+# Canonical source: `QOU/BraidsAndKnots/NucleonIdempotentModifiedTrace.lean` (§3–§4),
+# theorems `chi3_protonCoord`, `chi3_neutronCoord`, `chi21_protonCoord`,
+# `chi21_neutronCoord`, `chi111_protonCoord`, `chi111_neutronCoord`,
+# `dMod111`, and `tMod111`.
+#
+# Exact difference consistency with `chi_block_{3,21,111}` above:
+#   chi_neutron_3(q)   - chi_proton_3(q)   == chi_block_3(q)
+#   chi_neutron_21(q)  - chi_proton_21(q)  == chi_block_21(q, intra_order="borromean")
+#   chi_neutron_111(q) - chi_proton_111(q) == chi_block_111(q)
+
+
+def chi_proton_3(q: mpf) -> mpf:
+    """χ_(3)(p)(q) = q(q²+1)² / 4 (`NucleonIdempotentModifiedTrace.chi3_protonCoord`)."""
+    return q * (q ** 2 + 1) ** 2 / 4
+
+
+def chi_neutron_3(q: mpf) -> mpf:
+    """χ_(3)(n)(q) = (q²+1)² / (4q) (`NucleonIdempotentModifiedTrace.chi3_neutronCoord`)."""
+    return (q ** 2 + 1) ** 2 / (4 * q)
+
+
+def chi_proton_21(q: mpf) -> mpf:
+    """χ_(2,1)(p)(q) on the 11-letter production proton word (`chi21_protonCoord`).
+
+    Closed form:
+        (q²-1)(q⁴+1)(q⁴+q²+1)(q¹²-3q¹⁰+6q⁸-9q⁶+6q⁴-3q²+1) / (4q¹¹)
+    """
+    poly = (
+        q ** 12 - 3 * q ** 10 + 6 * q ** 8 - 9 * q ** 6
+        + 6 * q ** 4 - 3 * q ** 2 + 1
+    )
+    return (
+        (q ** 2 - 1) * (q ** 4 + 1) * (q ** 4 + q ** 2 + 1) * poly
+        / (4 * q ** 11)
+    )
+
+
+def chi_neutron_21(q: mpf) -> mpf:
+    """χ_(2,1)(n)(q) on the 11-letter production neutron word (`chi21_neutronCoord`).
+
+    Closed form:
+        (q²-1)(q²+1)²(q⁴+1)(q¹²-2q¹⁰+2q⁸-3q⁶+2q⁴-2q²+1) / (4q¹¹)
+    """
+    poly = (
+        q ** 12 - 2 * q ** 10 + 2 * q ** 8 - 3 * q ** 6
+        + 2 * q ** 4 - 2 * q ** 2 + 1
+    )
+    return (
+        (q ** 2 - 1) * (q ** 2 + 1) ** 2 * (q ** 4 + 1) * poly
+        / (4 * q ** 11)
+    )
+
+
+def chi_proton_111(q: mpf) -> mpf:
+    """χ_(1,1,1)(p)(q) = -(q²+1)² / (4q⁵) (`NucleonIdempotentModifiedTrace.chi111_protonCoord`)."""
+    return -(q ** 2 + 1) ** 2 / (4 * q ** 5)
+
+
+def chi_neutron_111(q: mpf) -> mpf:
+    """χ_(1,1,1)(n)(q) = -(q²+1)² / (4q³) (`NucleonIdempotentModifiedTrace.chi111_neutronCoord`)."""
+    return -(q ** 2 + 1) ** 2 / (4 * q ** 3)
+
+
+def d_mod_111_convention_D(q: mpf) -> mpf:
+    """Geer–Patureau-Mirand–Turaev (GPMT) modified quantum dimension d_D(S^{(1^3)})
+    on the Convention-D killed antisymmetric ideal H_3(q)e_{(1^3)}
+    (`NucleonIdempotentModifiedTrace.dMod111`):
+
+        d_D(S^{(1^3)}) = -q³ / ((q² + 1)(q⁴ + q² + 1)) = -1 / ([2]_q [3]_q).
+    """
+    return -(q ** 3) / ((q ** 2 + 1) * (q ** 4 + q ** 2 + 1))
+
+
+def t_mod_111_convention_D(q: mpf, species: str = "diff") -> mpf:
+    """GPMT renormalized modified trace t_D(x) = d_D(S^{(1^3)}) · χ_{(1^3)}(x)
+    on the killed antisymmetric sector (`NucleonIdempotentModifiedTrace.tMod111`).
+
+    Parameters
+    ----------
+    q : mpf or sympy Expr
+        Substrate quantum parameter.
+    species : {'diff', 'proton', 'neutron', 'p', 'n', 'n-p', 'delta'}
+        Which nucleon observable to evaluate:
+        - 'proton' / 'p'   : t_D(p) = d_D(S^{(1^3)}) · χ_{(1^3)}(p)
+        - 'neutron' / 'n'  : t_D(n) = d_D(S^{(1^3)}) · χ_{(1^3)}(n) = q² · t_D(p)
+        - 'diff' / 'n-p'   : Δt_D   = t_D(n) - t_D(p) = d_D(S^{(1^3)}) · χ_block_111(q)
+    """
+    d_mod = d_mod_111_convention_D(q)
+    if species in ("proton", "p"):
+        return d_mod * chi_proton_111(q)
+    if species in ("neutron", "n"):
+        return d_mod * chi_neutron_111(q)
+    if species in ("diff", "n-p", "delta"):
+        return d_mod * chi_block_111(q)
+    raise ValueError(
+        f"t_mod_111_convention_D: species must be 'proton', 'neutron', or 'diff', got {species!r}"
+    )
+
+
 #: The variable the Q_β `c_k` rungs are currently expanded in.
 #:
 #: `"u"` — the committed frame, `u = b·ℏ_q²`.
@@ -422,3 +522,179 @@ def c3_proton_extracted(dps: int | None = None) -> mpf:
                           convention="C")
     with mp.workdps(d):
         return +c3
+
+
+# ── Route 1 Two-Term Connected Borromean V³ QED & Ladder Helpers ──
+# Canonical source: `QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean` (§6–§9),
+# theorems `trace_QAdjp_borromeanV3`, `trace_QAdjn_borromeanV3_connected`,
+# and `trace_QAdj_connected_diff_borromeanV3`.
+
+_VALID_QED_WEIGHTINGS = ("derived", "plain", "KnKp", "Kp3", "q")  # derived canonical; rest historical (qou-99qc)
+
+
+def _load_default_q_codata_me(dps: int) -> tuple[mpf, mpf, mpf]:
+    """Load canonical (q_proton, Q_BETA_MEV, M_E_MEV) at working precision `dps`."""
+    import sys
+    from pathlib import Path
+
+    _comp = str(Path(__file__).resolve().parents[1])
+    if _comp not in sys.path:
+        sys.path.insert(0, _comp)
+    import _path_bridge  # noqa: F401
+    from codata_constants import M_E_MEV, Q_BETA_MEV
+    from q_parameter import q_at
+
+    return q_at(dps), mpf(str(Q_BETA_MEV)), mpf(M_E_MEV)
+
+
+def borromean_v3_connected_qed_diff_over_me(
+    q: mpf, weighting: str = "derived", insertion: str | None = None
+) -> mpf:
+    """Dimensionless connected 4th-order Borromean V³ QED splitting Δm_QED^{conn} / m_e.
+
+    Default (derived weighting, insertion None): the ruled covariant all-pairs insertion (owner
+    2026-11-20 16:44), whose connected part is 0 on V³, so this returns 0. With
+    insertion='adjacent' (labelled comparison):
+    = −[t_conn(W_n) − t_conn(W_p)] with the DERIVED quantum-trace weighting Tr(K^{⊗3}·)/[2]_q³
+    (`NucleonWeightSpaceQTrace.deltaT_adjacent_connected_eq`, bean qou-99qc):
+        −(q−1)⁴(q+1)⁴(q²+2)(2q⁴+1)/(9q⁴(q²+1)³).
+    'plain', 'KnKp', 'Kp3', 'q' are historical comparisons (1/3 normalisation,
+    `trace_QAdj_connected_diff_borromeanV3`). Library: `two_term_qtrace_weighting.py`.
+    """
+    import sys
+    from pathlib import Path
+
+    _comp = str(Path(__file__).resolve().parents[1])
+    if _comp not in sys.path:
+        sys.path.insert(0, _comp)
+    if weighting not in _VALID_QED_WEIGHTINGS:
+        raise ValueError(
+            f"borromean_v3_connected_qed_diff_over_me: unknown weighting {weighting!r}; "
+            f"expected one of {_VALID_QED_WEIGHTINGS}"
+        )
+    from two_term_qtrace_weighting import connected_trace_diff
+    # insertion None + derived -> the ruled covariant all-pairs (owner 2026-11-20 16:44): 0 on V³.
+    return -connected_trace_diff(q, weighting, insertion)
+
+
+def borromean_v3_connected_qed_diff_mev(
+    q: mpf | None = None,
+    m_e: mpf | str | None = None,
+    weighting: str = "derived",
+) -> mpf:
+    """Connected 4th-order Borromean V³ (n - p) QED splitting Δm_QED^{conn} in MeV.
+
+    Supports both `borromean_v3_connected_qed_diff_mev(q, m_e, weighting="derived")`
+    and `borromean_v3_connected_qed_diff_mev(q=None, m_e=None, weighting="derived")`.
+    """
+    from mpmath import mp
+
+    if isinstance(m_e, str) and m_e in _VALID_QED_WEIGHTINGS:
+        weighting = m_e
+        m_e = None
+    d = max(50, mp.dps)
+    with mp.workdps(d):
+        if q is None or m_e is None:
+            q_def, _, me_def = _load_default_q_codata_me(d)
+            if q is None:
+                q = q_def
+            if m_e is None:
+                m_e = me_def
+        return m_e * borromean_v3_connected_qed_diff_over_me(q, weighting=weighting)
+
+
+def c2_target_two_term_at(
+    q: mpf | None = None,
+    q_codata: mpf | str | None = None,
+    m_e: mpf | None = None,
+    *,
+    convention: str = "D",
+    weighting: str = "derived",
+) -> mpf:
+    """Empirical c_2 target after subtracting the two-term Borromean V³ connected QED
+    dressing Δm_QED^{conn} from Q_codata:
+
+        Q_QCD_target = Q_codata - Δm_QED^{conn}(q)
+        c_2^{two-term}(q) = (Q_QCD_target / Q_N1(q) - 1) / u(q)².
+    """
+    from mpmath import mp
+
+    if isinstance(q_codata, str) and q_codata in _VALID_QED_WEIGHTINGS:
+        weighting = q_codata
+        q_codata = None
+
+    d = mp.dps
+    use_guard = q is None or q_codata is None or m_e is None
+    work_d = d + 15 if use_guard else d
+    with mp.workdps(work_d):
+        if q is None or q_codata is None or m_e is None:
+            q_def, q_cod_def, me_def = _load_default_q_codata_me(work_d)
+            if q is None:
+                q = q_def
+            if q_codata is None:
+                q_codata = q_cod_def
+            if m_e is None:
+                m_e = me_def
+        sub = substrate_ladder_quantities(q, convention=convention)
+        if sub["u"] == 0:
+            raise ValueError(
+                f"c2_target_two_term_at: substrate u(q) = b·ℏ_q² is zero at q={q!s} "
+                f"(classical limit)."
+            )
+        Q_A = m_e * sub["Q_A_over_me"]
+        Q_N1 = Q_A * mpcos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)
+        dm_qed = borromean_v3_connected_qed_diff_mev(q, m_e, weighting=weighting)
+        q_qcd_target = q_codata - dm_qed
+        c2_val = (q_qcd_target / Q_N1 - 1) / (sub["u"] ** 2)
+    with mp.workdps(d):
+        return +c2_val
+
+
+def c3_target_two_term_at(
+    q: mpf | None = None,
+    q_codata: mpf | str | None = None,
+    m_e: mpf | None = None,
+    *,
+    c2: mpf | int = -1,
+    convention: str = "D",
+    weighting: str = "derived",
+) -> mpf:
+    """Empirical c_3 target after subtracting the two-term Borromean V³ connected QED
+    dressing Δm_QED^{conn} from Q_codata:
+
+        Q_QCD_target = Q_codata - Δm_QED^{conn}(q)
+        Q_N2(q)      = Q_N1(q) · (1 + c_2 · u(q)²)
+        c_3^{two-term}(q) = (Q_QCD_target / Q_N2(q) - 1) / u(q)³.
+    """
+    from mpmath import mp
+
+    if isinstance(q_codata, str) and q_codata in _VALID_QED_WEIGHTINGS:
+        weighting = q_codata
+        q_codata = None
+
+    d = mp.dps
+    use_guard = q is None or q_codata is None or m_e is None
+    work_d = d + 15 if use_guard else d
+    with mp.workdps(work_d):
+        if q is None or q_codata is None or m_e is None:
+            q_def, q_cod_def, me_def = _load_default_q_codata_me(work_d)
+            if q is None:
+                q = q_def
+            if q_codata is None:
+                q_codata = q_cod_def
+            if m_e is None:
+                m_e = me_def
+        sub = substrate_ladder_quantities(q, convention=convention)
+        if sub["u"] == 0:
+            raise ValueError(
+                f"c3_target_two_term_at: substrate u(q) = b·ℏ_q² is zero at q={q!s} "
+                f"(classical limit)."
+            )
+        Q_A = m_e * sub["Q_A_over_me"]
+        Q_N1 = Q_A * mpcos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)
+        Q_N2 = Q_N1 * (1 + c2 * (sub["u"] ** 2))
+        dm_qed = borromean_v3_connected_qed_diff_mev(q, m_e, weighting=weighting)
+        q_qcd_target = q_codata - dm_qed
+        c3_val = (q_qcd_target / Q_N2 - 1) / (sub["u"] ** 3)
+    with mp.workdps(d):
+        return +c3_val

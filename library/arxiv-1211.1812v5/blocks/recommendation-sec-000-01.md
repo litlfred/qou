@@ -1,1 +1,0 @@
-In the ordinary approach to the theory of particle physics quantum fields are fundamental objects, but do not necessarily yield quantum observables because the property of gauge invariance with respect to a symmetry group must be imposed.

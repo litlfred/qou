@@ -62,7 +62,10 @@ sys.path.insert(0, str(HERE.parent / "tools" / "qou-substrate" / "python"))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _Y_LAMBDA_DEFAULT, _load_y_lambda  # noqa: E402
 from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
-from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
+from derived_chi_catalogue_matrix_m import (  # noqa: E402
+    ISOSPIN_DEGENERACY_NOTE,
+    _word_for_braid_word_3a,
+)
 from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
 from chi_path_sum_seminormal import (  # noqa: E402
     NotLevelLocal, build_segments, chi_lambda_path_sum, segments_of,
@@ -122,6 +125,10 @@ def _stamp_anchor(out: Path, cached: dict) -> None:
     if "pn_split_carried" not in cached:
         cached["pn_split_carried"] = False
         cached["pn_split_note"] = PN_SPLIT_NOTE
+        dirty = True
+
+    if "isospinDegeneracyNote" not in cached:
+        cached["isospinDegeneracyNote"] = ISOSPIN_DEGENERACY_NOTE
         dirty = True
 
     recorded = str(cached.get("q_0_50dps", ""))
@@ -286,6 +293,7 @@ def compute_atom(atom: str, q: mp.mpf, fresh: bool = False,
         # wire is a different encoding and is the one still lossy).
         "pn_split_carried": False,
         "pn_split_note": PN_SPLIT_NOTE,
+        "isospinDegeneracyNote": ISOSPIN_DEGENERACY_NOTE,
         "q_0_50dps": str(q),
         # Declare the pin the audit reads. Not "ambiguous" any more: q comes
         # from q_parameter.Q_50_DIGIT_STR and y_λ from the proton-pinned table,

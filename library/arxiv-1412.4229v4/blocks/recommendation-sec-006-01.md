@@ -1,1 +1,0 @@
-Work in progress by Shaul indicates that the result above should hold in greater generality: $A$ can be as in the first paragraph of the remark, and $M, N$ can be any objects in $\cat{D}^+_{\mrm{f}}(A)$. \end{rem}

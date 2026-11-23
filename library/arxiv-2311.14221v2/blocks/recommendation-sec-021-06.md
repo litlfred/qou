@@ -1,1 +1,0 @@
-In the next Proposition we shall see that the reconstructed antipode given in Theorem \ref{antipode-natural}, out of the forgetful functor $\uc:{}^H\vc\to\vc$, coincides with the original antipode $S:H\to H$.

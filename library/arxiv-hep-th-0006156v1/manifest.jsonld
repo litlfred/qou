@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0006156v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006156v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-0006156v1",
+  "title": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality",
   "contains": [
     "library/arxiv-hep-th-0006156v1/sections/sec-front-matter",
     "library/arxiv-hep-th-0006156v1/sections/sec-000",
@@ -55,7 +55,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-0006156v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0006156v1.pdf",
     "source_sha256": "b799d4ef150291cf7c6aeca96ff9eae2abbba976c49fc668d36e3141653f0217",
     "pages": 20,
@@ -66,8 +68,8 @@
       "stamp_date": "20 Jun 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

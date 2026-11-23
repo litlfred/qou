@@ -1,1 +1,0 @@
-Also, we present only a sketch of the proof of the $l$-adic version of the main identity in Section 4.4, leaving aside few technical details (which are not difficult to restore), and the definition of the orientation data for cluster categories in Section 8.2 is left as a conjecture (although there is no doubt that it should be true).

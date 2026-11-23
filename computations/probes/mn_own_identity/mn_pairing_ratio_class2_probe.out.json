@@ -1,0 +1,59 @@
+{
+  "P1_pure_weight_states": {
+    "proton_uud": {
+      "ratio": "-(q**2 - 2)*(q**2 + 1)**2*(q**4 - q**2 + 1)/(q**3*(q**4 + 1))",
+      "at_q1": "2",
+      "eq_12": false
+    },
+    "proton_udu": {
+      "ratio": "(q**2 + 1)**2/(q**3*(q**4 + 1))",
+      "at_q1": "2",
+      "eq_12": false
+    },
+    "proton_duu": {
+      "ratio": "(q**2 + 1)**2*(2*q**2 - 1)*(q**4 - q**2 + 1)/(q**9*(q**4 + 1))",
+      "at_q1": "2",
+      "eq_12": false
+    },
+    "neutron_udd": {
+      "ratio": "(q**2 + 1)**2*(q**6 - 2*q**4 + 3*q**2 - 1)/(q**7*(q**4 + 1))",
+      "at_q1": "2",
+      "eq_12": false
+    },
+    "neutron_dud": {
+      "ratio": "-(q**2 + 1)**2*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/(q**9*(q**4 + 1))",
+      "at_q1": "2",
+      "eq_12": false
+    },
+    "neutron_ddu": {
+      "ratio": "-(q**2 + 1)**2*(q**6 - 3*q**4 + 2*q**2 - 1)/(q**5*(q**4 + 1))",
+      "at_q1": "2",
+      "eq_12": false
+    }
+  },
+  "P2_unnormalised_traces": {
+    "proton": {
+      "ratio": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**5*(q**2 + 1)*(q**4 + 1))",
+      "at_q1": "3/4",
+      "eq_12": false
+    },
+    "neutron": {
+      "ratio": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**7*(q**2 + 1)*(q**4 + 1))",
+      "at_q1": "3/4",
+      "eq_12": false
+    }
+  },
+  "P3_hecke_symmetriser": {
+    "proton": {
+      "ratio": "-(q + 1)*(q**2 + 1)**2*(q**13 - q**12 - 3*q**11 + 3*q**10 + 2*q**9 - 4*q**8 - 5*q**7 + 4*q**6 + 3*q**5 - 3*q**4 - 3*q**3 + 3*q**2 + q - 1)/(3*q**10*(q**4 + 1))",
+      "at_q1": "4",
+      "eq_12": false
+    },
+    "neutron": {
+      "ratio": "-(q + 1)*(q**2 + 1)**2*(q**13 - q**12 - 3*q**11 + 3*q**10 + 2*q**9 - 4*q**8 - 5*q**7 + 4*q**6 + 3*q**5 - 3*q**4 - 3*q**3 + 3*q**2 + q - 1)/(3*q**10*(q**4 + 1))",
+      "at_q1": "4",
+      "eq_12": false
+    }
+  },
+  "verdict": "scope-(a) negative: no pre-registered variant gives 12 identically"
+}

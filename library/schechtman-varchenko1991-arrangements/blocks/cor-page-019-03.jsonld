@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/schechtman-varchenko1991-arrangements/blocks/cor-page-019-03",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 19,
+  "pageEnd": 19,
+  "text": "cor-page-019-03.md",
+  "derivedFrom": "library/schechtman-varchenko1991-arrangements/sections/page-019",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.1.5",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-019.md (p. 19-19)",
+    "claim_id": "schechtman-varchenko1991-arrangements#corollary:4.1.5",
+    "lean_status": "unformalized"
+  }
+}

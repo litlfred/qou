@@ -1,1 +1,0 @@
-We shall also need $$X_{\omega}=\sum_{i=1}^{d} \alpha_{i}\,\delta_{\left(\alpha_{i}\right)}+\sum_{i=1}^{d}\beta_{i}\,\delta_{\left(-\beta_{i}\right)}+\gamma\,\delta_{\left(0\right)},$$ which will appear in a moment as the limit of the random measures $X_{\lambda}$.

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/invariant-eigendistributions-2/blocks/cor-sec-007-01",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 10,
+  "pageEnd": 10,
+  "text": "cor-sec-007-01.md",
+  "derivedFrom": "library/invariant-eigendistributions-2/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.2",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-007-52-corollary.md (p. 10-10)",
+    "claim_id": "invariant-eigendistributions-2#corollary:5.2",
+    "lean_status": "unformalized"
+  }
+}

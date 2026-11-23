@@ -1,0 +1,1 @@
+Let Γ be an icc group possessing a subset ∆not containing the identity and three elements α, β and γ such that (a)Γ = {1} ∪∆∪α∆α−1 (b)∆, β∆β−1 and γ∆γ−1 are mutually disjoint. then for x ∈vN(Γ), ||x −tr(x)id||2 ≤14 max{||[x, uα]||2, ||[x, uβ]||2, ||[x, uγ]||2}.

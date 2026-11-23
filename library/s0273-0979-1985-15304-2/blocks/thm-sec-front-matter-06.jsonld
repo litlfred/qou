@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s0273-0979-1985-15304-2/blocks/thm-sec-front-matter-06",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 1,
+  "pageEnd": 7,
+  "text": "thm-sec-front-matter-06.md",
+  "derivedFrom": "library/s0273-0979-1985-15304-2/sections/sec-front-matter",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0273-0979-1985-15304-2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [21], [3] in sections/sec-front-matter.md",
+    "claim_id": "s0273-0979-1985-15304-2#theorem:5",
+    "lean_status": "proved-here"
+  }
+}

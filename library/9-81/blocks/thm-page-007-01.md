@@ -1,0 +1,1 @@
+Let S be a branched surface and w be a weight of S. Let F0 be a subset of FðSÞ, and let E0 be the set of all edges contained in an element of F0. Suppose that each F0 satisﬁes X e2E0 wðeÞ jF0j with equality if and only if F0 ¼ FðSÞ or F0 ¼ . Then S admits a unique singular Euclidean structure coming from w. For 3-simplicial complexes, we can prove the following theorem.

@@ -1,0 +1,1 @@
+With the above notation, there exists a lower triangular matrix P with 1’s on the diagonal such that P A(t) =  −1 −1 −1 0 b1 + b2 a1 a2 ai  , P B(t) =  −1 −1 −1 0 a2 + b1 a1 + b2 bi  . (19) This corrects the omission of P in [6, Eqn.(3.27)], which does not aﬀect the validity of the proofs in [6].

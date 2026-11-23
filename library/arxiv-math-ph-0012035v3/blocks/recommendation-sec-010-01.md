@@ -1,1 +1,0 @@
-Formally, $$h\left|R\right\rangle = \left|R\right\rangle e^{i\phi(h)}, \qquad h\in H.$$ The phase factor is unimportant here because we shall generally take the expectation value of any operator in the coherent state.

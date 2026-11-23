@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-upstream-mathlib-additions-detail",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:upstream-mathlib-additions-detail",
+  "kind": "remark",
+  "title": "Details of the three Mathlib additions and their upstreaming targets",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-upstream-mathlib-additions"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-upstream-mathlib-additions",
+  "text": "upstream-mathlib-additions-detail.md",
+  "provenance": "authored"
+}

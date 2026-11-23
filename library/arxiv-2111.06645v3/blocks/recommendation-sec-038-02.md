@@ -1,1 +1,0 @@
-The corresponding property no longer holds for $\sigma\ne\sigma_0$, even for $\alpha=0$ and the figure 8 knot, and in some sense should not even be expected, because the "natural" invariant here is the completed power series , which contains a transcendental factor ${\rm e}^{\mathbf V(4_1)/h}$.

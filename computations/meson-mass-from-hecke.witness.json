@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-08-25T03:00:16.107659+00:00",
+  "computedAt": "2026-11-20T16:02:35.140216+00:00",
   "computation": "meson-mass-from-hecke",
   "scriptFile": "meson_mass_from_hecke.py",
   "description": "Systematic probe of pion and kaon mass predictions following the same generic structure as the leptonic (CAL-2: m_\u03bc/m_e = Vol(4_1)/\u210f_q\u00b2) and hadronic (Q_\u03b2 = m_e\u00b7|q\u00b2-2q-1|\u00b7(q+1)/(2q\u00b3)) derivation instances. Tests 10+ candidate formulas for absolute m_\u03c0 and ratio m_K/m_\u03c0.",
@@ -12,7 +12,7 @@
     "Vol_4_1": "2.0298832128193072500424051085490405718833786150606",
     "m_e_MeV": "0.51099895069",
     "meson_net": "1.5146703169730890468937256085321258122748543534975",
-    "E_0_MeV": "4.185980824010171367799724430485258393389751702537"
+    "E_0_MeV": "4.2274828198503498715422770456688846231563416885722"
   },
   "generic_structure": {
     "description": "Two calibration instances in QOU share a generic pattern: a mass observable is determined by an algebraic function of q_0 built from Hecke-algebra eigenvalues and hyperbolic-knot invariants.",
@@ -82,8 +82,8 @@
   "pion_absolute_mass": {
     "strategy_A": {
       "formula": "net\u00b7E_0",
-      "predicted_MeV": "6.3403809015467587432308306376670751791954778568841",
-      "err_ppm": 954572.1631819847
+      "predicted_MeV": "6.4032427427410177405672766551179939599090930042601",
+      "err_ppm": 954121.7679284194
     },
     "strategy_B": {
       "formula": "m_e\u00b7net\u00b7Vol/\u210f_q",
@@ -118,8 +118,8 @@
   "allPassed": true,
   "q0Anchor": "ambiguous",
   "q0AnchorReason": "Derives q0 = 1/(1 - sqrt(Vol(4_1)/(m_mu/m_e))) from the registry ratio rather than reading an anchor, so no manifest entry describes it. The result, 1.10997859564273904668, is value C of qou-khac -- which the owner RULED canonical for the muon anchor on 2026-08-22 (PR #5500, 'A --> CODATA 2022'). This is ambiguous only transitionally: main's anchor witness still holds A, so a 'muon' stamp would read as a Q0_FLIP until #5500 lands. Revisit then; the correct label at that point is 'muon'.",
-  "scriptHash": "43de8e3c5b1f",
-  "scriptCommitSha": "2c10b9f30cd2fc0c1c3a60cb236bc6c3d3e14828",
-  "commitSha": "7bcdd6e995995e4605439291bd9313105096ba32",
+  "scriptHash": "eaca76041282",
+  "scriptCommitSha": "0218c9ba9ad273ba5984b06c405cefcf6d2da644",
+  "commitSha": "a06009c1e8d5bc59f8881417772e0ae906b048b8",
   "durationMs": 0
 }

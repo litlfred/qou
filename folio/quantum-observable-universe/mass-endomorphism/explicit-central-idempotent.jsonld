@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-explicit-central-idempotent",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:explicit-central-idempotent",
@@ -16,7 +17,7 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-jucys-murphy-central-elements-qou",
     "papers/quantum-observable-universe/blocks/prop-hecke-baer-star-generic",
-    "papers/quantum-observable-universe/blocks/conj-explicit-central-idempotent"
+    "papers/quantum-observable-universe/blocks/thm-explicit-central-idempotent-cross-checks"
   ],
   "tags": [
     "central-idempotent",
@@ -26,8 +27,7 @@
     "explicit-formula",
     "computability"
   ],
-  "leanRef": "qou:QOU.BraidKnot.ExplicitCentralIdempotent.explicit_central_idempotent_via_murphy",
+  "leanRef": "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem",
   "text": "explicit-central-idempotent.md",
-  "leanSource": "explicit-central-idempotent.lean",
   "provenance": "authored"
 }

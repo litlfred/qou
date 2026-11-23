@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s0894-0347-08-00618-8/blocks/cor-sec-016-07",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 25,
+  "pageEnd": 29,
+  "text": "cor-sec-016-07.md",
+  "derivedFrom": "library/s0894-0347-08-00618-8/sections/sec-016",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.18",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-016-43-stochastic-domination-and-truncations.md (p. 25-29)",
+    "claim_id": "s0894-0347-08-00618-8#corollary:4.18",
+    "lean_status": "unformalized"
+  }
+}

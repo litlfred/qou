@@ -1,0 +1,1 @@
+i) (q-binomial theorem) (qx; q)n = n X k=1 (−1)kqk(k+1)xk  n k  q , (2.5) ii) (Euler identity) (qx; q)n = n X k=0  n k  q xkqk (xq; q)k , (2.6) iii) (Cauchy identity) n X k=−n xkq 2 k(k+1)  2n n + k  q = n Y k=1 (1 + xqk)(1 + x−1qk−1). (2.7)

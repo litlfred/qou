@@ -1,1 +1,0 @@
-Vogan ([@VoganLLC]) proposed that in order to upgrade the correspondence to contain $\mathop{\mathrm{Irr}}(\pi_0(S_{\phi})) \subset \mathop{\mathrm{Irr}}(S_{\phi})$ in its image, one should enlarge the domain by adding in irreducible representations of inner forms of $G$.

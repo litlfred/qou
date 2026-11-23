@@ -1,0 +1,1 @@
+Let A be a category, let S ⊆A be a right denominator set, and let A′ ⊆A be a full subcategory. Deﬁne S′ := A′ ∩S. Assume these two conditions hold: (i) S′ is a right denominator set in A′. (ii) Let M ∈Ob(A). If there exists a morphism s : M →L′ in S with L′ ∈ Ob(A′), there exists a morphism t : K′ →M in S with K′ ∈Ob(A′). Then the canonical functor A′ S′ →AS is fully faithful.

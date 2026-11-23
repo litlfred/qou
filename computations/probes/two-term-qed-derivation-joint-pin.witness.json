@@ -1,0 +1,315 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T19:08:10.078633+00:00",
+  "commitSha": "b82c9695a223389ff5d4799588290e6e57be4cb3",
+  "assertions": [
+    {
+      "name": "alpha_pin_near_proton_pin",
+      "computed": "0.0534472380386",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0.1",
+      "source": "|q_alpha - q_p| < 0.1 ppb"
+    },
+    {
+      "name": "muon_pin_far_from_alpha_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|q_mu - q_alpha| > 10 ppb"
+    },
+    {
+      "name": "colored_writhe_zero_both_nucleons",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact Fraction"
+    },
+    {
+      "name": "u1_coloured_charge_independent_on_V3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact Fraction; QEDHigherOrderCovariance.u1Trace_borromean"
+    },
+    {
+      "name": "u1_controls_see_charges",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "negative controls (Hopf, sigma1^3)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 45,
+  "computation": "two-term-qed-derivation-joint-pin",
+  "scriptFile": "two_term_qed_derivation_joint_pin_probe.py",
+  "scriptHash": "3cf7e08450d6",
+  "scriptCommitSha": "6802ee2d7e1669c6695bb67fa04537ab55408749",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/two_term_qed_derivation_joint_pin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/two_term_qed_derivation_joint_pin_probe.py"
+  },
+  "description": "Owner 2026-11-20 'derive to make two-term primary'. (a) exact V3 crossing data for proton/neutron charges: coloured writhe S = 0 for both, so every covariant local insertion (all orders, QEDHigherOrderCovariance.lean) leaves tr(V3) unchanged; the naive double sum D = -Sq/2 is nonzero but not braid-covariant. (b) the three q-pins from the corpus closed forms: proton identity, muon identity, alpha_em form B. alpha_em pins within 0.053 ppb of the proton pin; the muon pin sits +11.61 ppb away. A proton-only term can move q0 toward the muon pin but alpha_em^-1 then misses by +79 ppb: no single q satisfies m_mu and alpha_em together under these forms. Scope (a): conditional on the alpha_em form B (structurally motivated, not derived; alpha_em itself conditional on the Witten-kappa sorry).",
+  "data": {
+    "v3_crossing_data_exact": {
+      "proton": {
+        "pairs_exchanged": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            2,
+            -1
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            -1
+          ]
+        ],
+        "final_perm": [
+          0,
+          1,
+          2
+        ],
+        "crossSum": {
+          "01": 0,
+          "02": 0,
+          "12": 0
+        },
+        "S_colored_writhe": "0",
+        "Sq": "16/27",
+        "D_double_sum": "-8/27",
+        "check_2D_plus_Sq_eq_S2": true,
+        "D_shift_under_R2_prefix": "-16/81"
+      },
+      "neutron": {
+        "pairs_exchanged": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            2,
+            -1
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            -1
+          ]
+        ],
+        "final_perm": [
+          0,
+          1,
+          2
+        ],
+        "crossSum": {
+          "01": 0,
+          "02": 0,
+          "12": 0
+        },
+        "S_colored_writhe": "0",
+        "Sq": "2/9",
+        "D_double_sum": "-1/9",
+        "check_2D_plus_Sq_eq_S2": true,
+        "D_shift_under_R2_prefix": "-4/81"
+      },
+      "degree_zero": {
+        "proton_sumQ2": "1",
+        "proton_sumQaQb": "0",
+        "neutron_sumQ2": "2/3",
+        "neutron_sumQaQb": "-1/3"
+      }
+    },
+    "u1_coloured_invariant_exact": {
+      "proton_V3": {
+        "t_exponent": "0",
+        "theta_exponent": "0",
+        "self_writhe": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        },
+        "final_perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "proton_hopf_control": {
+        "t_exponent": "8/9",
+        "theta_exponent": "0",
+        "self_writhe": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        },
+        "final_perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "proton_sigma1_cubed_control": {
+        "t_exponent": "4/3",
+        "theta_exponent": "4/3",
+        "self_writhe": {
+          "0": 3,
+          "2": 0
+        },
+        "final_perm": [
+          1,
+          0,
+          2
+        ]
+      },
+      "neutron_V3": {
+        "t_exponent": "0",
+        "theta_exponent": "0",
+        "self_writhe": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        },
+        "final_perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "neutron_hopf_control": {
+        "t_exponent": "-4/9",
+        "theta_exponent": "0",
+        "self_writhe": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        },
+        "final_perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "neutron_sigma1_cubed_control": {
+        "t_exponent": "-2/3",
+        "theta_exponent": "4/3",
+        "self_writhe": {
+          "0": 3,
+          "2": 0
+        },
+        "final_perm": [
+          1,
+          0,
+          2
+        ]
+      },
+      "verdict": "On V3 both exponents are exactly 0 for proton and neutron, so the U(1)-coloured trace equals the uncoloured trace for every t, theta: the coefficient of every charge monomial (Q0Q1Q2*mubar^2, sumQ^2, sumQaQb) is 0 in this class. Controls (Hopf, sigma1^3) are nonzero."
+    },
+    "pins": {
+      "proton_identity": {
+        "q": "1.1099785827513808075916690956107688798744991218736",
+        "dq_vs_proton_ppb": "0.0",
+        "m_p_resid_ppb": "9.0904356264392566984e-62",
+        "m_mu_resid_ppb": "211.20586445867700572",
+        "alpha_inv_resid_ppb": "-0.36522583759310081907",
+        "Q_beta_shift_vs_proton_pin_ppb_formA_sensitivity": "0.0"
+      },
+      "muon_identity": {
+        "q": "1.1099785956427390466817951293800017527000655610290",
+        "dq_vs_proton_ppb": "11.614060342619785788",
+        "m_p_resid_ppb": "-243.86021194309045833",
+        "m_mu_resid_ppb": "-4.4847378213092609219e-62",
+        "alpha_inv_resid_ppb": "78.998187355682417348",
+        "Q_beta_shift_vs_proton_pin_ppb_formA_sensitivity": "-30.158870224320468355"
+      },
+      "alpha_em_formB": {
+        "q": "1.1099785828107060971217108967096619653281585994064",
+        "dq_vs_proton_ppb": "0.053447238038582777103",
+        "m_p_resid_ppb": "-1.1222308760525175372",
+        "m_mu_resid_ppb": "210.23390704755163077",
+        "alpha_inv_resid_ppb": "-1.6917115634595467858e-62",
+        "Q_beta_shift_vs_proton_pin_ppb_formA_sensitivity": "-0.13878938702761931443"
+      }
+    },
+    "sensitivities_at_proton_pin": {
+      "dln_m_p_dlnq": "-20.996985403898909635",
+      "dln_m_mu_dlnq": "-18.185358912300490782",
+      "dln_alpha_inv_dlnq": "6.8333902929736950598",
+      "dln_Qbeta_dlnq_formA": "-2.5967550825999519729"
+    },
+    "proton_only_term": {
+      "m_p_at_muon_pin_minus_codata_keV": "-0.22880723058803361498",
+      "F_Bor_term_at_proton_pin_keV": "944404.07683560424736",
+      "scalar_relative_coupling_needed_a": "2.4227689358288101018e-7",
+      "note": "a scalar (topology-independent) insertion rescales the whole F_Bor term (scalar_insertion_shift); it is degenerate with q0 on the proton alone. The figure is the size required, NOT matched to any candidate."
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873579"
+  },
+  "q0AnchorReason": "the subject is where each closed form pins q0: the probe solves the proton, muon and alpha_em form-B identities itself and reports every pin under its own key"
+}

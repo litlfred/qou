@@ -1,0 +1,1 @@
+Thus, putting together the results (82) and (85) we get the prediction MD+ −MD0 = 5.47 (30)stat+fit (40)disc (6)chir (3)FSE (12)qQED MeV , = 5.47 (30)stat+fit (42)syst (12)qQED MeV , = 5.47 (53) MeV , (86) which is consistent with the experimental value MD+ −MD0 = 4.75(8) MeV [19] within ≃1.4 standard deviations.

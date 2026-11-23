@@ -1,1 +1,0 @@
-\end{equation} where $\varepsilon$ is a sign depending on whether or not $\sigma$ flips the orientation of the edge $v_0v_1$. \end{lemma} \begin{proof} We shall not need this, so we leave the proof to the reader. \end{proof}

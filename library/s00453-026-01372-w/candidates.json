@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "s00453-026-01372-w",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "98b569eff84fb4893f38795b1c75a726a05d418f31ee2115852f3314572e0680",
   "file": "s00453-026-01372-w.pdf"
@@ -11,31 +14,11 @@
   "arxiv": null,
   "doi": "10.1007/s00453-026-01372-w"
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We are further given subsets C1, . . . , C\u2113\u2286[n] (which should be thought of as demographic groups) along with thresholds w1, . . . , w\u2113.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

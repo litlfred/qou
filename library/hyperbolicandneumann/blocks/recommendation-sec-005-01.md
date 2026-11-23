@@ -1,1 +1,0 @@
-Extensive numerical experiments led to a concrete conjecture saying that this is the case and also to a deﬁnition (originally highly speculative, but now supported by more theory) of “higher Bloch groups” Bm(F) that should be isomorphic after tensoring with Q to the higher algebraic K-groups K2m−1(F) and should express the Borel regulator in terms of polylogarithms.

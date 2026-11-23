@@ -1,1 +1,0 @@
-The fundamental rule by which this Lagrangian---as well as all the other ones---are assembled is that they must contain {\it all\/} terms consistent with chiral symmetry and Lorentz invariance (apart from other trivial symmetries) at a given chiral dimension (here: order two).

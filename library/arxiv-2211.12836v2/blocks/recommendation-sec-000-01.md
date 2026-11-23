@@ -1,1 +1,0 @@
-From the geometric interpretation of the quantum cohomology, an informal description of this asymptotic formula says the following (the reader should refer to Corollary [\[cor:cohomology\]](#cor:cohomology){reference-type="ref" reference="cor:cohomology"} for an exact result):

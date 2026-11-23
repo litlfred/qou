@@ -1,1 +1,0 @@
-Relative complexity should be of interest in quantum-computer science but has not been of much use in the study of ordinary quantum systems, not even black holes if we are interested in the region outside the horizon.

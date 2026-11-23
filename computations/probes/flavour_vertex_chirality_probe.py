@@ -85,6 +85,8 @@ def main():
     r2 = c2_vertex_amplitudes()
     res = {"producer": "computations/probes/flavour_vertex_chirality_probe.py", "bean": "qou-g0jn",
            "arithmetic": "exact (sympy over Q(q)); no floats", "q0_anchor": "none (symbolic in q)",
+           "q0Anchor": "independent",
+           "q0AnchorReason": "exact sympy arithmetic over Q(q) with q a free symbol; no substrate q0 is read or substituted",
            "C1_equivariant_vertex_space": r1, "C2_vertex_amplitudes": r2,
            "checks": {"C1": ok1, "prediction_same_magnitude_opposite_sign":
                       bool(r2["left_right_same_magnitude"] and r2["left_right_opposite_sign"])}}

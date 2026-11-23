@@ -1,1 +1,0 @@
-This construction should be compared with [@HKK; @BHKP], where the thin strict 2-groupoid of a Hausdorff space was defined, using a different notion of thin equivalence (factoring through a graph) - see also [@BH] for the construction of the fundamental double groupoid of a triple of spaces.

@@ -103,14 +103,20 @@ def curveHodge (g : ℤ) : HodgeNumbers := fun i j =>
 
 /-- `dim HH_0 = h^{0,0} + h^{1,1} = 2`: the rank and the point class. -/
 theorem hhDim_curve_zero (g : ℤ) : hhDim 1 (curveHodge g) 0 = 2 := by
+  have _ : curveHodge g 0 0 = 1 := rfl
+  have _ : curveHodge g 1 1 = 1 := rfl
   simp [hhDim, curveHodge, Finset.sum_range_succ]
 
 /-- `dim HH_1 = h^{0,1}(Ω¹) = h^{0,1}`, read as `H^0(Ω^1)`: `g`. -/
 theorem hhDim_curve_one (g : ℤ) : hhDim 1 (curveHodge g) 1 = g := by
+  have _ : curveHodge g 0 1 = g := rfl
+  have _ : curveHodge g 0 0 = 1 := rfl
   simp [hhDim, curveHodge, Finset.sum_range_succ]
 
 /-- `dim HH_{−1} = h^{1,0}`, read as `H^1(𝒪)`: `g`. -/
 theorem hhDim_curve_neg_one (g : ℤ) : hhDim 1 (curveHodge g) (-1) = g := by
+  have _ : curveHodge g 1 0 = g := rfl
+  have _ : curveHodge g 0 0 = 1 := rfl
   simp [hhDim, curveHodge, Finset.sum_range_succ]
 
 /-- **For a curve of genus `g` the Hochschild Euler characteristic is `2 − 2g`.** -/
@@ -123,5 +129,34 @@ theorem hhEuler_curve (g : ℤ) : hhEuler 1 (curveHodge g) = 2 - 2 * g := by
 is this alternating sum, not a trace. -/
 theorem hhEuler_bring : hhEuler 1 (curveHodge 4) = -6 := by
   rw [hhEuler_curve]; norm_num
+
+/-- **Total Hochschild dimension of a curve vs. alternating Euler characteristic (`qou-9w89`).**
+The ungraded total dimension `dim HH_{-1} + dim HH_0 + dim HH_1` equals `2 + 2g`
+(strictly positive for `g ≥ 0`), separating the unsigned dimension sum from the
+alternating Euler characteristic `2 - 2g`. -/
+theorem hhDim_curve_total (g : ℤ) :
+    hhDim 1 (curveHodge g) (-1) + hhDim 1 (curveHodge g) 0 + hhDim 1 (curveHodge g) 1 =
+      2 + 2 * g := by
+  rw [hhDim_curve_neg_one, hhDim_curve_zero, hhDim_curve_one]
+  ring
+
+/-- **Conditional HKR dimension identification (`qou-9w89`, §3b-cond).**
+Carries the hypothesis that an abstractly defined Hochschild dimension profile
+`hhActual : ℤ → ℤ` agrees with the Hodge diagonal sum `hhDim d h` on `[-d, d]`. -/
+class HKRDimensionConjecture (d : ℕ) (h : HodgeNumbers) (hhActual : ℤ → ℤ) : Prop where
+  /-- HKR graded-dimension identification on the support `[-d, d]`. -/
+  dim_eq : ∀ n ∈ Finset.Icc (-(d : ℤ)) d, hhActual n = hhDim d h n
+
+/-- Under `[HKRDimensionConjecture d h hhActual]`, the alternating sum of `hhActual`
+over `[-d, d]` equals the Hodge Euler characteristic `hodgeEuler d h`. -/
+theorem actual_hhEuler_eq_hodgeEuler (d : ℕ) (h : HodgeNumbers) (hhActual : ℤ → ℤ)
+    [hk : HKRDimensionConjecture d h hhActual] :
+    (∑ n ∈ Finset.Icc (-(d : ℤ)) d, ((Int.negOnePow n : ℤˣ) : ℤ) * hhActual n) =
+      hodgeEuler d h := by
+  rw [← hhEuler_eq_hodgeEuler d h]
+  change (∑ n ∈ Finset.Icc (-(d : ℤ)) d, ((Int.negOnePow n : ℤˣ) : ℤ) * hhActual n) =
+    ∑ n ∈ Finset.Icc (-(d : ℤ)) d, ((Int.negOnePow n : ℤˣ) : ℤ) * hhDim d h n
+  refine Finset.sum_congr rfl (fun n hn => ?_)
+  rw [hk.dim_eq n hn]
 
 end QOU.Information

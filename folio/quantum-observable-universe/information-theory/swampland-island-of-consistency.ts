@@ -13,5 +13,8 @@ export default remark({
     "weak-gravity-conjecture",
     "external-program",
   ],
-  cites: ["vafa2005", "arkani-hamed2007"],
+  cites: ["vafa2005", "arkani-hamed2007", "mostow1968"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The derivation of $\\chi_{\\mathrm{eu}}(M_0) = -6$ is Lean-checked." },
+  ],
 });

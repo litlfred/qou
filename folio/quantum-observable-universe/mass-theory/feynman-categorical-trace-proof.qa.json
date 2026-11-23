@@ -1024,6 +1024,42 @@
         "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
         "severity": "minor",
         "evidence": "Chains three lemmas whose Lean carriers are self-assuming (conclusions held as class fields). The 'path integral' is defined as the trace, not derived, so the identification is definitional."
+      },
+      {
+        "field_hash": {
+          "md": "03d6169df0ee",
+          "ts": "4b000a566027",
+          "lean": "7f1b1c00abc1",
+          "lean_statement": "3044f7537af9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:18.794Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21. Diff removed the factor \\cdot\\dim(S_\\lambda) from the Markov weight (prf:15-16), so the prf now gives w_lambda = dim_q(V_lambda)/dim_q(V^{tensor n}), the same weight the statement gives (md:14) against the unnormalised character tr_{S_lambda}; this is the correct Schur-Weyl weight, so the prf/statement mismatch is fixed. What remains: the prf only chains three lemmas, and the Lean ref QOU.FeynmanPathIntegrals.mass_eq_abs_amplitude (FeynmanPathIntegrals.lean:214-217) is closed by rewriting with the structure field FeynmanCategoricalTrace.amplitude_eq_markov, so the amplitude=trace identification is a field of the carrier, not derived; the 'path integral' is defined as the weighted trace sum, so the identification is definitional. No owner-ruling conflict."
+      },
+      {
+        "field_hash": {
+          "md": "03d6169df0ee",
+          "ts": "4b000a566027",
+          "lean": "7f1b1c00abc1",
+          "lean_statement": "3044f7537af9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:22:16.843Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21. The proof is a valid composition of four cited blocks: lem:feynman-eigenbasis-decomposition, lem:feynman-trace-collapse, lem:feynman-markov-identification (whose status note records it is now a theorem at convention D via MarkovIdentificationInstance / eq_wtrace_of_markov, general n, sorry-free; general z open) and prop:categorical-mass-markov (single-level mass = |integral of rho(beta)|). The weights w_lambda = dim_q(V_lambda)/dim_q(V^{otimes n}) with ell(lambda) <= 2 agree with the convention-D Jones weights [n-2k+1]_q/[2]_q^n. Lean mass_eq_abs_amplitude (lean/QOU/FeynmanPathIntegrals.lean:214) is a rewrite by the structure field amplitude_eq_markov, so the Lean side carries the identification as a field, not a derivation. Minor gaps: (1) the statement's last display writes m|single level = tr_M(rho(beta)) without absolute value, while the proof (and prop:categorical-mass-markov) only gives m = |tr_M|; tr_M can be negative, so the middle equality is unsupported as written. (2) The 'Feynman transition amplitude on the eigenbasis' is DEFINED in lem:feynman-markov-identification as the Markov-weighted sum, so the step 'path integral collapses to this sum' is definitional; the proof should say so rather than present it as a physical collapse. (3) The Markov identification holds at convention D only, which the proof does not state. No empirical data used; no ruling conflict (convention D consistent)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1671,6 +1707,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:12:07.681Z",
+  "updated_at": "2026-11-21T08:22:16.843Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

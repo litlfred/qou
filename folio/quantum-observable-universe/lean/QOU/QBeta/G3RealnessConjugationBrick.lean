@@ -46,7 +46,7 @@
   -- Ref: [leitner2026] arXiv:2410.20973 (Fantini–Wheeler 2024), Thm 1.1/1.4;
      probe PR #4475 (5₂ AK-integral G3 realness);
      docs/audits/2026-08-01-fantini-wheeler-summability-c3-borel-reframe.md
-  -- Ref: [garoufalidis-gu-marino2021] (GGM) 2012.00062 — the Z_GGM assembly
+  -- Ref: [garoufalidis-gu-marino2023peacock] (GGM) 2012.00062 — the Z_GGM assembly
 -/
 import Mathlib.Data.Complex.Basic
 import Mathlib.Algebra.Field.Basic

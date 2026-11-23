@@ -66,7 +66,7 @@ from __future__ import annotations
 import pathlib
 import sys
 from itertools import combinations
-from math import gcd
+from math import gcd  # float64-ok: exact integer GCD
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -306,9 +306,9 @@ def main() -> int:
     )
     b.add_assertion(
         name="delta_2_triples_examined",
-        computed=str(by_delta[2]), expected=str(by_delta[2]), tolerance="0", unit="triples",
+        computed="1" if by_delta[2] > 0 else "0", expected="1", tolerance="0", unit="bool",
         source=("the residual's own population, recorded so the SIZE of the null result is "
-                "visible in the witness: a vanishing over zero Delta = 2 triples would "
+                f"visible in the witness ({by_delta[2]} triples): a vanishing over zero Delta = 2 triples would "
                 "close nothing."),
     )
 

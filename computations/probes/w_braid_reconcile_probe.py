@@ -225,6 +225,9 @@ def main():
         "bean": "qou-0whz",
         "arithmetic": "exact (sympy over Q(q)); no floats",
         "q0_anchor": "none (symbolic in q)",
+        "q0Anchor": "independent",
+        "q0AnchorReason": ("probe never reads q0: every quantity is exact over Q(q) (sympy), "
+                           "q a free symbol; imports only sympy and the standard library"),
         **res,
     }, indent=1, ensure_ascii=False) + "\n")
     assert all(res["checks"].values())

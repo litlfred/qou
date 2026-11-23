@@ -1,1 +1,0 @@
-Then the tetrahedron shapes corresponding to p must satisfy all the edge and completeness equations of Deﬁnition 2.4: we must have H(σ) = 2πi for every closed curve σ encircling an endpoint of an edge, and H(σj) = 0 for a collection of simple closed curves σ1, . . . , σ2k that form a basis of H1(∂M).

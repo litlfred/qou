@@ -1,1 +1,0 @@
-To write $\sigma_i(v_{j,k})$ in terms of basis vectors, we must find a $\Lambda$-linear combination of standard forks which represents the same element of $H_2(\tilde{C})$ as the fork $\sigma_i(F_{j,k})$.

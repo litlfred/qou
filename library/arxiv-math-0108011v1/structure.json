@@ -1,0 +1,657 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0108011v1",
+ "source": {
+  "file": "0108011v1.pdf",
+  "sha256": "e4af4b5d3c5ff6cd74aade171241729533beefc5d0c937407d3b050ab26bde44",
+  "bytes": 219101,
+  "pages": 25,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0108011",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "2 Aug 2001"
+  },
+  "doi": null,
+  "title": "The Homfly polynomial of the decorated Hopf link",
+  "authors_raw": "HUGH R. MORTON and SASCHA G. LUKAC 1",
+  "title_lines": [
+   "The Homfly polynomial of the decorated",
+   "Hopf link"
+  ],
+  "abstract": "The main goal is to ﬁnd the Homﬂy polynomial of a link formed by decorating each component of the Hopf link with the closure of a directly oriented tangle. Such decorations are spanned in the Hom- ﬂy skein of the annulus by elements Qλ, depending on partitions λ. We show how the 2-variable Homﬂy invariant ⟨λ, µ⟩of the Hopf link arising from decorations Qλ and Qµ can be found from the Schur symmetric function sµ of an explicit power series depending on λ. We show also that the quantum invariant of the Hopf link coloured by irreducible sl(N)q modules Vλ and Vµ, which is a 1-variable speciali- sation of ⟨λ, µ⟩, can be expressed in terms of an N × N minor of the Vandermonde matrix (qij).",
+  "docinfo": {
+   "Title": "arXiv:math/0108011v1  [math.GT]  2 Aug 2001",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181030093316-04'00'"
+  },
+  "title_raw": "The Homfly polynomial of the decorated Hopf link",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0108011v1 [math.GT] 2 Aug 2001",
+   "heading": "The Homﬂy polynomial of the decorated Hopf link Introduction",
+   "text": "The Homfly polynomial of the decorated Hopf link",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "The Homfly polynomial of the decorated Hopf link",
+   "basis": "Printed title on page 1 (H. R. Morton and S. G. Lukac); the extracted title was the arXiv stamp",
+   "extracted_title": "arXiv:math/0108011v1 [math.GT] 2 Aug 2001",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "The skein models.",
+   "page": 2,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "The plane",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Hecke algebras",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "The annulus.",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Interrelations",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "The Hopf link",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "Symmetric functions and the skein of the annulus.",
+   "page": 7,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Formal Schur functions",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "Applications in the skein of the annulus",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "The Hopf link decorated with columns and rows",
+   "page": 10,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "10"
+  },
+  {
+   "level": 1,
+   "title": "The Hopf link decorated with any Young diagrams",
+   "page": 13,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "13"
+  },
+  {
+   "level": 2,
+   "title": "An explicit example",
+   "page": 21,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "21"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 24,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "24"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4025,
+   "n_words": 694,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-the-skein-models",
+   "number": "1",
+   "title": "The skein models.",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 867,
+   "n_words": 157,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-11-the-plane",
+   "number": "1.1",
+   "title": "The plane",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 697,
+   "n_words": 132,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-12-the-hecke-algebras",
+   "number": "1.2",
+   "title": "The Hecke algebras",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 795,
+   "n_words": 153,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-13-the-annulus",
+   "number": "1.3",
+   "title": "The annulus.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 716,
+   "n_words": 130,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-14-interrelations",
+   "number": "1.4",
+   "title": "Interrelations",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2331,
+   "n_words": 475,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-15-the-hopf-link",
+   "number": "1.5",
+   "title": "The Hopf link",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1479,
+   "n_words": 325,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-006-2-symmetric-functions-and-the-skein-of-the-annul",
+   "number": "2",
+   "title": "Symmetric functions and the skein of the annulus.",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 223,
+   "n_words": 36,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-007-21-formal-schur-functions",
+   "number": "2.1",
+   "title": "Formal Schur functions",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1689,
+   "n_words": 324,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-008-22-applications-in-the-skein-of-the-annulus",
+   "number": "2.2",
+   "title": "Applications in the skein of the annulus",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2334,
+   "n_words": 447,
+   "label_start": "8",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-009-3-the-hopf-link-decorated-with-columns-and-rows",
+   "number": "3",
+   "title": "The Hopf link decorated with columns and rows",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 3751,
+   "n_words": 707,
+   "label_start": "10",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-010-4-the-hopf-link-decorated-with-any-young-diagram",
+   "number": "4",
+   "title": "The Hopf link decorated with any Young diagrams",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 21,
+   "n_chars": 10262,
+   "n_words": 2205,
+   "label_start": "13",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-011-42-an-explicit-example",
+   "number": "4.2",
+   "title": "An explicit example",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 5238,
+   "n_words": 1119,
+   "label_start": "21",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2041,
+   "n_words": 300,
+   "label_start": "24",
+   "label_end": "25"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "toc_inferred_entries": 13,
+  "toc_inferred_mean_confidence": 0.742,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 36448,
+  "furniture_lines_stripped": 0
+ }
+}

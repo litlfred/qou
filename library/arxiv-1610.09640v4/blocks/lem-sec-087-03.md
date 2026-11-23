@@ -1,0 +1,1 @@
+Let X be a graded set, and consider the graded K-ring B := K⟨X⟩. Suppose dX : X →B is a degree 1 function. (1) The function dX extends uniquely to a K-linear degree 1 derivation dB : B →B. (2) The derivation dB is a diﬀerential on B, i.e. dB ◦dB = 0, if and only if dB(dX((x)) = 0 for every x ∈X.

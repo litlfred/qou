@@ -25,12 +25,11 @@ $$
 The strict-positive part $E_\infty^{p, >0}(n)$ measures the
 non-trivial cohomology supported above the $E_2$-collapse line.
 Operationally, it measures the obstruction to reading the :refterm[descent]{#descent}-graded trace
-purely from the diagonal
-([prop:graded-trace-residue-split](#prop:graded-trace-residue-split)).
+purely from the diagonal.
 
 ## Statement
 
-**Proposition (Conjecture — homological shell condensation).**
+**Conjecture (homological shell condensation).**
 *For every $n \in \mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$, the
 Białynicki-Birula spectral sequence on $A_n$ collapses entirely above
 the $E_2$ line:*
@@ -43,6 +42,5 @@ $$
 
 *Equivalently, the :refterm[descent]{#descent}-graded trace
 $\mathrm{tr}_{M, \ell}$ on $J^\ell / J^{\ell+1}$
-([prop:graded-trace-residue-split](#prop:graded-trace-residue-split))
 is supported entirely on the diagonal at saturated $n$, and the
 brane-tower :refterm[descent]{#descent} residues vanish for $\ell \geq 2$.*

@@ -1,1 +1,0 @@
-It may be noted that the computer program may be used to compute the Ohtsuki series for surgery around an arbitrary knot, though the complexity of the calculation is likely to be prohibitively high for more general manifolds.

@@ -1,1 +1,0 @@
-Let $\varrho_\sigma\colon\pi_1 M^3\to \mathrm{SL}_2(\mathbb{C})$ denote a lift corresponding to a spin structure $\sigma$, we shall denote its composition with $\operatorname{Sym}^{k_1,k_2}$ by $$\label{eqn:varrho} \varrho_\sigma^{k_1,k_2}:= \operatorname{Sym}^{k_1,k_2}\circ \varrho_\sigma,$$ and $\varrho_\sigma^{k}= \varrho_\sigma^{k,0}$.

@@ -27,11 +27,11 @@ The shortcut of axiomatising a single integration operator on $\mathbf{No}$ is m
   $C(\mathbf{No})$ can simultaneously be translation-invariant,
   $\sigma$-additive, and non-degenerate.
 
-We do **not** postulate a measure on all of $C(\mathbf{No})$. That object does not exist. Manufacturing one via a categorical proxy (e.g.\ asserting the Frobenius pairing $\int_A : A \otimes A \to \mathbf{1}$ at $A = C(\mathbf{No})$) smuggles the obstruction into the axiom. Instead, we audit each genuine use of an analytic structure in this paper to determine whether the use lifts to $\mathbf{No}$ on the CEF-positive side (algebraic / transserial) or requires a custom workaround. We perform this audit below.
+No measure on all of $C(\mathbf{No})$ is postulated. That object does not exist. Manufacturing one via a categorical proxy (e.g.\ asserting the Frobenius pairing $\int_A : A \otimes A \to \mathbf{1}$ at $A = C(\mathbf{No})$) smuggles the obstruction into the axiom. Instead, each genuine use of an analytic structure in this paper is audited to determine whether the use lifts to $\mathbf{No}$ on the CEF-positive side (algebraic / transserial) or requires a custom workaround. The audit follows.
 
 ## 1. Lebesgue measure: one genuine use, no others
 
-We evaluate Lebesgue, Haar, and Hausdorff measures throughout this paper. Almost all instances are *categorical* or *algebraic* upon inspection:
+Lebesgue, Haar, and Hausdorff measures are evaluated throughout this paper. Almost all instances are *categorical* or *algebraic* upon inspection:
 
 See [Table 1](#tbl:analytic-obstructions-table1-data).
 
@@ -45,7 +45,7 @@ never integrates.
 ## 2. Hilbert-space completion: stylistic, not load-bearing
 
 Only one place in this paper writes down a Hilbert-
-space completion: `knot-eigenbasis-complete-proof.md` (part 3 of
+space completion: [Proof of Completeness of the knot-type eigenbasis](#prf:knot-eigenbasis-complete) (part 3 of
 the proof). The passage reads:
 
 > The direct limit $\varinjlim V^{\otimes n}$ is a pre-Hilbert
@@ -82,7 +82,7 @@ it.
 
 Three narrow obstructions do bite:
 
-1. **Möbius energy integral** (`mobius-energy-proof.md`).
+1. **Möbius energy integral**.
    Requires Lebesgue on $S^1 \times S^1$ plus diagonal
    regularisation. A surreal Loeb-measure replacement is
    possible in principle (see

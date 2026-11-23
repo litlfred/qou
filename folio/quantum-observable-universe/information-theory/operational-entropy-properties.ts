@@ -20,4 +20,7 @@ export default remark({
     "rem:golden-ratio-degeneration",
     "rem:operational-entropy-self-consistency",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): Gravitational self-consistency forces this formula, without fitting ([operational entropy is forced by self-consistency](#rem:operational-entropy-self-consistency))." },
+  ],
 });

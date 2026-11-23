@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1704.01735v4/blocks/ex-sec-010-01",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 35,
+  "pageEnd": 37,
+  "text": "ex-sec-010-01.md",
+  "derivedFrom": "library/arxiv-1704.01735v4/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.01735v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.2",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [24] in sections/sec-010-5-an-explicit-construction-of-the-modular-curve.md",
+    "claim_id": "arxiv-1704.01735v4#example:5.2"
+  }
+}

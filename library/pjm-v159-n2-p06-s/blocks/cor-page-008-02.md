@@ -1,0 +1,1 @@
+If triads are added together to form a tree X(aΪ9 a2, ... , as; iΪ9 i2, ... , ^-3) as in Figure 9, then, fixing a\, a^, ... , as and allowing i\,h, ... Js-3 to vary in all ways so that admissibility occurs at each node of the tree, the elements {X{a\, a2 , ... , as i\, h, > ^-3)*} a r e independent.

@@ -1,0 +1,1 @@
+Let S = G2(q), 3D4(q), 2G2(q), E± 6 (q), E7(q), F4(q) or E8(q) be simple with q a power of 3. Then there exist nontrivial χ1, χ2, χ3 ∈Irr3′(B0(S))σ1 that are pairwise not Aut(S)-conjugate and such that χ1 is Aut(S)-invariant.

@@ -1,0 +1,1 @@
+(b). In the present smooth case, a nice simplification occurs: be- cause the height function is the real part of a complex (locally) analytic func- tion, every critical point z ¢ V, has Morse index d — 1.

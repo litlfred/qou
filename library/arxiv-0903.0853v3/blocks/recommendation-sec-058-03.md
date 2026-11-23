@@ -1,1 +1,0 @@
-Since these solutions are analytical in some disk $0 < \left |z \right |< R$ except maybe respectively on the $q$-spiral $[\lambda_0;q]$ or $[\lambda;q]$ and that they have the same asymptotic expansion at zero, they must be analytic at $z=0$ and we arrive at assertion (3). ◻ :::

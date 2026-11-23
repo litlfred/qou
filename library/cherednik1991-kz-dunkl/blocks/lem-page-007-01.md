@@ -1,0 +1,1 @@
+Given M, w, there is a one-dimensional family M(v) of maximal ideals in CY], analytically depending on a parameter veC, which is close to 0, such that M(0) = M and the function v* ,,(M (v)) (see (1.15)) has a non-zero value ©,,¢H for some ke Z. Then the map

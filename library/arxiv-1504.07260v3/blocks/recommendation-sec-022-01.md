@@ -1,1 +1,0 @@
-Explicitly the relation between $F_1$ and $f_{R^2}$ is [@Gregori:1997hi] $$\partial_{T_{\text{IIA}}} f_{R^2} = \partial_{T_{\text{IIA}}} F_1\ .$$ If Fricke S-duality holds, then the associated coupling $f^{\text{CHL}[\hat g]}_{R^2}$ for CHL models should be invariant under $T_{\text{IIA}}\to -1/(\hat{N} T_{\text{IIA}})$ whenever the model is self-dual.

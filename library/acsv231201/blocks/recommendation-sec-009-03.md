@@ -1,1 +1,0 @@
-If we wish to enumerate paths by length we must sum (zM)" over n, so the generating function counting finite paths from v to w weighted by their length is Fyy(2) = DCM =|[-2M)"], This approach, known as the transfer matrix method, is quite versatile.

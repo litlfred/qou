@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/revmodphys97025002pdf/blocks/prop-sec-009-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "prop-sec-009-01.md",
+  "derivedFrom": "library/revmodphys97025002pdf/sections/sec-009",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "empirical-claim",
+    "claim_domain": "science",
+    "evidence_kind": "empirical-measurement",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "External scientific/empirical source cited in sections/sec-009-5-electron-magnetic-moment-anomaly.md",
+    "claim_id": "revmodphys97025002pdf#prop-sec-009-01"
+  }
+}

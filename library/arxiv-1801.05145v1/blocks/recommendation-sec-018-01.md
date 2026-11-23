@@ -1,1 +1,0 @@
-Note also that if there is an epimorphism $q^mM_k\conv M'_k\epito \sodot_{b_{ik} <0} M_i^{\snconv(-b_{ik})}$ for some $m\in\Z$, then $m$ should coincide with $\tL(M_k,M'_k)$ by Lemma~\ref{lem:selfdual} and Lemma~\ref{lem:multipro}.

@@ -1,1 +1,0 @@
-Reactions are an area of renewed interest in Chiral EFT, in consonance 15 Although parametrically √mπmN = O(pmπMQCD) < MQCD, one should keep in mind that the breakdown scale MQCD of Chiral EFT is not known precisely. with the revival of development in the broader area of nu- clear reactions, including ab initio approaches.

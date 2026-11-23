@@ -28,6 +28,7 @@ export default proposition({
     "restartable-witness",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Both are recorded in `QOU.MassTheory.UICFunctionalSelection`." },
     {
       kind: "refined-framing",
       body: "Earlier formulations restricted the sum to blocks with tr ≤ 0. That restriction was asserted, not derived — it was what the accumulator computed — and was removed on that ground.",

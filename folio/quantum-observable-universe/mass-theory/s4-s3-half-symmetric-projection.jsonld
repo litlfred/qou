@@ -2,20 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-s4-s3-half-symmetric-projection",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:s4-s3-half-symmetric-projection",
   "kind": "proposition",
-  "title": "Half-symmetric $H_4$ projection extracts one octahedral cell via $S_4 \\downarrow S_3$ branching",
-  "uses": [
-    "papers/quantum-observable-universe/blocks/conj-borromean-baryon-mass-formula"
-  ],
+  "title": "$S_3$-trivial share of the half-symmetric part of $H_4$ under $S_4 \\downarrow S_3$ branching",
   "cites": [
     "references/adams1985hyperbolic",
     "references/wenzl1988",
@@ -26,7 +24,6 @@
     "half-symmetric",
     "S4-S3",
     "bijection",
-    "octahedral-cell",
     "borromean",
     "vol-density-refinement"
   ],

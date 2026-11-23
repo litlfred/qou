@@ -21,9 +21,11 @@ export default proposition({
   lean: { ref: "qou:QOU.Archimedean.BoxBraidIrreducibility",
     validation: "not_checked",
   },
+  // rem:electron-immortality dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
   uses: [
     "rem:virtual-particles-exceptional-divisor",
-    "rem:electron-immortality",
-    "ex:photon-wavefront",
+    "ex:photon-wavefront"
   ],
 });

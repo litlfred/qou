@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/rem-sec-103-04",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 331,
+  "pageEnd": 338,
+  "text": "rem-sec-103-04.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-103",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "15.2.8",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [111, Proposition 3.4.5] in sections/sec-103-152-properties-of-algebraically-graded-modules.md",
+    "claim_id": "arxiv-1610.09640v4#remark:15.2.8"
+  }
+}

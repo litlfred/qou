@@ -1,0 +1,1 @@
+Graded algebras HH•(X) and HT •(X) are canonically isomorphic. The isomorphism between them is functorial with respect to ´etale maps. This statement is again a corollary of the theorem from 8.2. We will give the proof of it, and explain an application to the Mirror Symmetry (see [Ko4]) in the next paper.

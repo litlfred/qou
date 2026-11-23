@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-three-substantive-mathlib-fillers",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:three-substantive-mathlib-fillers",
+  "kind": "remark",
+  "title": "Three substantive Mathlib gaps: BlochGroup quotient, $\\mathrm{Cl}_2$ pentagon, Faddeev-Kashaev limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-mass-tower-deeper-fillers"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-mass-tower-deeper-fillers",
+  "cites": [
+    "references/bloch2000",
+    "references/suslin1991",
+    "references/borel1974",
+    "references/zagier1986",
+    "references/faddeev1994",
+    "references/kashiwara1991"
+  ],
+  "tags": [
+    "mathlib-filler",
+    "substantive-gap",
+    "bloch-group",
+    "pentagon-identity",
+    "faddeev-kashaev",
+    "free-abelian-group",
+    "lean-infrastructure"
+  ],
+  "text": "three-substantive-mathlib-fillers.md",
+  "provenance": "authored"
+}

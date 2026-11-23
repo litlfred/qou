@@ -1,0 +1,1 @@
+Let (X, µ) be a ﬁnite measure space and F a measure- able, real-valued, a.e. ﬁnite function on X. Let D(Mf) = {g ∈L2(X, µ) : fg ∈L2(X, µ)} and let Mfg = fg. Then Mf is self-adjoint and σ(Mf) = ess.range(f) = {λ ∈C : µ({x : |λ −f(x)| < ϵ}) > 0 ∀ϵ > 0}. Exercise 12.2.5. Prove Prop 12.2.4.

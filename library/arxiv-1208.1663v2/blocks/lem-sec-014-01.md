@@ -1,0 +1,1 @@
+Suppose C is a closed cone in Rr and p : C −→R is a polynomial that satisﬁes p(nx) ≥cxn for n > 0, x ∈C \ {0} and cx > 0. Then, there exists c > 0 and c′ > 0 such that p(x) ≥c|x| for all x ∈C with |x| ≥c′.

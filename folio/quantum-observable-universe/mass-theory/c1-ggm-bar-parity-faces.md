@@ -3,7 +3,7 @@
 Let $\mathcal{K}$ be the rank-$2$ $q$-difference module of the binding $q$-lift
 recurrence
 $[m+2]_q\,b_{m+2}=b_{m+1}+b_m$
-([`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol)),
+([The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module](#conj:qdifference-kernel-prolongation-symbol)),
 and let $\mathcal{G}$ be the module of
 $$
 y_{m+2}-(2-q^{m+1})\,y_{m+1}+y_m \;=\; 0,
@@ -50,7 +50,7 @@ $\mathcal{G}$ does: for $m+1<\log 2/\log q$ the coefficient $2-q^{m+1}$ is
 positive, and while it is positive a sign flip is always followed by a
 same-sign pair, since $y_{m+2}y_{m+1} = (2-q^{m+1})\,y_{m+1}^2 - y_m y_{m+1} > 0$
 whenever $y_m y_{m+1} < 0$
-(`QOU.Mass.GGMAlternationOnset.ggm_solution_no_double_flip`, over an
+(this holds over any
 ordered field). The recurrence *is* oscillatory there — its solutions do change
 sign inside the window — but never
 at two consecutive pairs, and that is what the argument needs. So the untwisted
@@ -58,8 +58,7 @@ sequence has same-sign consecutive pairs in that window, the twisted sequence
 acquires flips exactly there, and the obstruction fires on it too. At the
 substrate value the window is $m \le 5$, and the strict alternation of the
 growing solution becomes persistent only later, at an index that depends on the
-initial data ($m \approx 11$–$14$ across six generic choices, measured in
-[`door_v_residual_scope_probe.py`](../../../computations/probes/door_v_residual_scope_probe.py)).
+initial data ($m \approx 11$–$14$ across six generic choices, measured numerically).
 
 Consequently the residual claim must be read **at the level of modules**, up to
 a gauge transformation over the $q$-difference field — not as the assertion that
@@ -67,3 +66,18 @@ $(-1)^{m}z$ is a non-negative combination of $f_+^{2}$ and $f_-^{2}$. That
 scalar reading is excluded by the same non-negativity invariant that supplies
 the obstruction. The module-level statement is untouched by this and remains
 what is conjectured.
+
+**Where median-resummation theorems would enter, and the check they need.**
+McSpirit and Rolen prove that cusp forms of integral or half-integral weight,
+Eichler integrals of such cusp forms, and two periodic functions attached to
+weight-$\tfrac12$ Maass and Eisenstein data are holomorphic quantum modular
+forms whose modular obstruction $h_\gamma$ is a Borel--Laplace sum of the
+asymptotic series at the cusp $\gamma^{-1}(i\infty)$ \cite[\S1.1, Thm.~1.5]{mcspirit-rolen2025};
+for the half-integral weight Eichler integrals and the two periodic functions,
+the median resummation of the asymptotic series recovers the function
+\cite[Cor.~1.6]{mcspirit-rolen2025}. Those results apply to $\mathcal{G}$ or
+$\mathcal{K}$ only after their solutions are shown to lie in one of the six
+classes of Thm.~1.5. Neither module is presented here in that form: both are
+given by $q$-difference recurrences and their Newton polygons, not as Eichler
+integrals of a named cusp form. Until that membership is established, the
+connection to these theorems is thematic, and no step of items 1--3 uses them.

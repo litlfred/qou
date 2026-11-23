@@ -1,1 +1,0 @@
-Therefore, the link variable should be defined by Downloaded from academic.oup.com/ptp/article/72/4/841/1853443 by guest on 29 August 2026 850 K.-L Kondo (5-1) Here both the vierbein ep and the connection AI' are defined on a link b=(n; fJ.) originat- ing at site n and extending in the positive fJ. direction.

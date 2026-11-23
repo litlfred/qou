@@ -1,0 +1,1 @@
+det(1 + L) = eθ. This follows from the fact that Mθ is a probability measure. This is explained in Propositions A.1 and A.4 in the Appendix. Note that, in general, one needs to check that L is a trace class operator. However, because of the special form of L, it suﬃces to check a weaker claim – that L is a Hilbert–Schmidt operator, which is immediate.

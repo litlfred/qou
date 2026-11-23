@@ -34,6 +34,7 @@ export default conjecture({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): We formalize these coefficients as conjectures. This permits downstream claims to use the conditional-class exception, as implemented in [$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder) via the Lean class `QBetaPrecisionLadderCoefficients`." },
     {
       kind: "status",
       body: "Per AGENTS.md §3b-cond conditional-class exception, the existing\n[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)\nLean class `QBetaPrecisionLadderCoefficients` (which axiomatises\nthe c_k values as class fields) is the correct integration point.\nDownstream provable claims taking\n`[QBetaPrecisionLadderCoefficients q]` as a hypothesis are\n**rigorous conditional results** modulo this conjecture.\n\nThe current canonical instance `qBetaPrecisionLadderCoeffsCanonical`\non main provides the empirical closed forms; this conjecture block\nstates the conditions under which those instance values are\n**proved** rather than **fit**.",
@@ -60,5 +61,6 @@ export default conjecture({
       see:
         "computations/per-observable-100x-status.witness.json",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): These coefficients are stated as conjectures, so downstream claims such as the [$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder) hold conditionally on them." },
   ],
 });

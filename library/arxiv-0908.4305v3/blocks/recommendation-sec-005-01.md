@@ -1,1 +1,0 @@
-Recall that a **complete flag** in the vector space ${\mathbb F}_q^3$ is a pair of subspaces $$0 \subset V_1 \subset V_2 \subset {\mathbb F}_q^3 .$$ The subspace $V_1$ must have dimension 1, while $V_2$ must have dimension 2.

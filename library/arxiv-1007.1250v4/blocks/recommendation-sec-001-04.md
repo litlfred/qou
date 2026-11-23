@@ -1,1 +1,0 @@
-In order for $f$ to be smooth according to \cite{Jo} it must satisfy a condition involving the boundary strata of $X$ and $Y$; such a condition can't even be stated when sharp corners are present. \end{rem}

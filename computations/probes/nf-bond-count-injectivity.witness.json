@@ -2,7 +2,7 @@
   "engine": "python+fractions",
   "engineVersion": "python 3.13.18",
   "computedAt": "2026-11-15T20:21:07.482578+00:00",
-  "commitSha": "f1be230920b1bdc1f6a9070fd8fc7d187c5c2345",
+  "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "assertions": [
     {
       "name": "control_reproduces_canonical_builder",
@@ -12,20 +12,20 @@
     },
     {
       "name": "configurations_swept",
-      "computed": "222",
-      "expected": "222",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "shape_is_many_to_one_on_this_sample",
-      "computed": "107 shapes / 222 configs",
-      "expected": "107 shapes / 222 configs",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "normal_forms_distinct_on_this_sample",
-      "computed": "222 normal forms / 222 configs",
-      "expected": "222 normal forms / 222 configs",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     }
   ],
@@ -33,8 +33,8 @@
   "durationMs": 17901,
   "computation": "nf-bond-count-injectivity",
   "scriptFile": "nf_bond_count_injectivity_probe.py",
-  "scriptHash": "3dbf74a9e518",
-  "scriptCommitSha": "b75db90fcd6d8cb206c7ee967d8b10beb63b9467",
+  "scriptHash": "a562e9f12e7a",
+  "scriptCommitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -1,1 +1,0 @@
-::: proof *Proof.* The argument here is similar to that in Theorem [\[thm:groupoidification\]](#thm:groupoidification){reference-type="ref" reference="thm:groupoidification"}, except that we must deal with nontrivial representations of the $Aut(x_i)$.

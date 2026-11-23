@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.Su2Generators
 
 **Canonical declaration** for content block at
-[`quantum-observable-universe/brings-surface/su2-generators.ts`](quantum-observable-universe/brings-surface/su2-generators.ts).
+[`quantum-observable-universe/braids-and-knots/su2-generators.ts`](quantum-observable-universe/braids-and-knots/su2-generators.ts).
 
 Formalises the manuscript **definition** of the binary dihedral group
 `Dic₃ ⊂ SU(2)` (order 12) — the `SU(2)`-lift of `S₃ ≅ D₃` — by its two
@@ -39,7 +39,7 @@ structure Su2Generators (G : Type*) [Group G] where
   /-- Dihedral relation `βαβ⁻¹ = α⁻¹`. -/
   dihedral : β * α * β⁻¹ = α⁻¹
 
--- Ref: [leitner2026] quantum-observable-universe/brings-surface/su2-generators.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/su2-generators.ts
 
 /-- The commutator relation `[β,α] = βαβ⁻¹α⁻¹ = α⁻²` follows from the
     dihedral relation (manuscript). -/

@@ -1,1 +1,0 @@
-Condition (3.2) becomes 1 + X n≥1 X {γ1,...,γn}⊂P γ0∩γi̸=∅, γi∩γj =∅, 1≤i,j≤n n Y i=1 ργi ea(γi) ≤ea(γ0) (3.15) From the constraint in the sum we only keep the fact that each of the polymers γ1, . . . , γn must intersect diﬀerent points in γ0 (otherwise they would overlap).

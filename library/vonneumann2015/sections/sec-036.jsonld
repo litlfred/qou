@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-036",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Unbounded operators aﬃliated with a von Neumann algebra.",
+  "pageStart": 90,
+  "pageEnd": 91,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-036",
+    "library/vonneumann2015/blocks/lem-sec-036-01",
+    "library/vonneumann2015/blocks/lem-sec-036-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

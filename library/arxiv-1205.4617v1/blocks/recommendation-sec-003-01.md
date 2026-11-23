@@ -1,1 +1,0 @@
-This this approach may be used as the milestone for the unification of fundamental interaction at one end and the existence of magnetic monopole at other end so that the unanswered question for the existence of magnetic monopoles can be tackled.

@@ -1,1 +1,0 @@
-By the Dirac quantization condition, the lattice of purely magnetic charges $\Lambda_m$ must be contained in the dual of the lattice [\[electLattsimpl\]](#electLattsimpl){reference-type="eqref" reference="electLattsimpl"}, that is

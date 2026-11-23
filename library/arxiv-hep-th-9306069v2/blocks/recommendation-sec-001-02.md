@@ -1,1 +1,0 @@
-The semi-classical equations should contain enough quantum corrections to account for the outgoing Hawking ﬂux and the evaporation of the black hole. • Postulate 2: Outside the stretched horizon of a massive black hole, physics can be described to good approximation by a set of semi-classical ﬁeld equations.

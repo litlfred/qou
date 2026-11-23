@@ -2,7 +2,7 @@
 bi-filtration).**
 
 *Let $\mathcal{H}_q^{(n, K)}$ be the knot-indexed bi-filtration
-([`def:hq-bi-filtration`](#def:hq-bi-filtration)). Two groups act
+([Knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra](#def:hq-bi-filtration)). Two groups act
 on it by symmetry:*
 
 - *the **motivic Galois group** $G_{\mathrm{mot}}$ acts on the
@@ -69,7 +69,7 @@ Three motivations:
 ### Concrete prediction at $(n, K) = (3, \zeta_5\text{-Bring})$
 
 For the Bring depth-3 bi-filtration cell
-([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)):
+([Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)](#conj:bring-trilog-depth-3-witness)):
 
 - $G_{\mathrm{mot}}$-action: cyclotomic Galois $\sigma_a \colon
   \zeta_5 \mapsto \zeta_5^a$ for $\gcd(a, 5) = 1$. Permutes

@@ -1,0 +1,1 @@
+2.1 (Compare [13]). The element c>. E'lid defined by (III.10) satisfies c>.c>. = h>.c>. for some h>. E CC(v)x. Moreover, for any two partitions A 1= il, c>,c/1 = O. Hence, the collection of e(A) = h-;lC>. for all partitions of d are mutually orthogonal, primitive, central idempotents that sum to one, which explicitly realize the decomposition in (III.8) . III.3.

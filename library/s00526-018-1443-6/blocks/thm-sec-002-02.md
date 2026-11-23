@@ -1,0 +1,1 @@
+Let γ : R/Z →Rn be a closed, simple, and by arc-length parametrized curve in H 2 (R/Z, Rn). If γ is a critical point of the Möbius energy E, then γ is analytic. Together Theorem 1.1 and the characterization of the energy spaces in [4] immediately gives the following corollary.

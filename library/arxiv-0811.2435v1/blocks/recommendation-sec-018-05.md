@@ -1,1 +1,0 @@
-Namely, it should be a simplicial constructible set $X_\bullet$ which satisfies a constructible version of the Kan property (i.e. there exists a constructible lifting from horns to simplices) and such that

@@ -254,10 +254,10 @@ def main() -> int:
     )
     b.add_assertion(
         name="insertions_tested_across_positions_and_isotopes",
-        computed=str(tot_tested), expected=str(tot_tested), tolerance="0",
-        unit="insertions",
+        computed="1" if tot_tested > 0 else "0", expected="1", tolerance="0",
+        unit="bool",
         source=("recorded so the SIZE of the search is visible in the witness rather than "
-                "only in prose: a null result is only as strong as what was searched."),
+                f"only in prose ({tot_tested} insertions): a null result is only as strong as what was searched."),
     )
     b.add_assertion(
         name="all_linking_numbers_are_integers",

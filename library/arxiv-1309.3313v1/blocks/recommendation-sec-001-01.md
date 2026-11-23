@@ -1,1 +1,0 @@
-To investigate the behavior of the pion form factor experimentally at momentum transfers $Q^{2}>0.3\, GeV^{2}$ and in the transitional region between long-distance and short-distance QCD, one must use the charged pion electroproduction process.

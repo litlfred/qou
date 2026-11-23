@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2111.06645/blocks/prop-sec-025-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 28,
+  "pageEnd": 32,
+  "text": "prop-sec-025-02.md",
+  "derivedFrom": "library/arxiv-2111.06645/sections/sec-025",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "empirical-claim",
+    "claim_domain": "science",
+    "evidence_kind": "empirical-measurement",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper result in sections/sec-025-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn.md combined with [26]",
+    "claim_id": "arxiv-2111.06645#prop-sec-025-02"
+  }
+}

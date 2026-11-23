@@ -81,4 +81,13 @@ theorem seminormalRep_qJM_spectrum_injective {K : Type*} [Field K] (q : K) (hq0 
   have := zpow_injective_of_not_root_of_unity hq0 hq2 hentry
   omega
 
+/-- **Content-exponent separation (`qou-yuyz`).** For a generic parameter `q`
+(`q ≠ 0`, `NotRootOfUnity q`), equal even powers `q ^ (2 * a) = q ^ (2 * b)`
+force equal integer contents `a = b`. -/
+theorem zpow_two_mul_injective_of_not_root_of_unity {K : Type*} [Field K] {q : K}
+    (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) {a b : ℤ}
+    (h : q ^ (2 * a) = q ^ (2 * b)) : a = b := by
+  have h2 : 2 * a = 2 * b := zpow_injective_of_not_root_of_unity hq0 hq2 h
+  omega
+
 end QOU.SchurWeyl

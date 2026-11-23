@@ -1,1 +1,0 @@
-The three expansions near $x=1$ in order of increasing $y$ for $x < 1$ are $$\begin{gathered} y \approx \alpha,\qquad y \approx 1 + (x-1)\frac{-1+\sqrt{5}}{2}, \qquad y \approx 1 + (x-1)\frac{-1-\sqrt{5}}{2}. \end{gathered}$$ Thus the path that started $y\ll 0$ must pass through the first point, $y\approx 0$ must pass through the second and $y\gg 0$ the third.

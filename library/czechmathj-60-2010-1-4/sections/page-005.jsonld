@@ -13,9 +13,11 @@
   "pageStart": 5,
   "pageEnd": 5,
   "contains": [
-    "library/czechmathj-60-2010-1-4/blocks/prose-page-005"
+    "library/czechmathj-60-2010-1-4/blocks/prose-page-005",
+    "library/czechmathj-60-2010-1-4/blocks/cor-page-005-01",
+    "library/czechmathj-60-2010-1-4/blocks/rem-page-005-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/czechmathj-60-2010-1-4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/czechmathj-60-2010-1-4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/czechmathj-60-2010-1-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/czechmathj-60-2010-1-4/manifest.jsonld",
   "provenance": "ingested"
 }

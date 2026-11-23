@@ -1,0 +1,1 @@
+Let L be a compact object of D(A), let {Mz}z∈Z be a collection of objects of D(A), let M := L z∈Z Mz, and let φ : L →M be a morphism in D(A). Then there is a ﬁnite subset Z0 ⊆Z, such that writing M0 := L z∈Z0 Mz, and denoting by γ0 : M0 →M the inclusion, there exists a morphism φ0 : L →M0 in D(A) satisfying φ = Q(γ0) ◦φ0.

@@ -1,1 +1,0 @@
-Note that $n$ in ([\[Jcol\]](#Jcol){reference-type="ref" reference="Jcol"}) must be odd for torus knots and even for twist knots (see sec.[\[app:coltor\]](#app:coltor){reference-type="ref" reference="app:coltor"},[\[app:coltw\]](#app:coltw){reference-type="ref" reference="app:coltw"}).

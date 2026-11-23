@@ -1,0 +1,1 @@
+3.1. Consider the maps Pd ( ) ITd U -----+ End W ® ... ® W ~ {-{d. 1. The actions of U and {-{d on W ® ... ® W commute. 2. As a (U, (-{d) -bimodule, tensor space decomposes into simples W ® .. , ® W ~ EB L(>.) ® S(>.). AEA+ (Z,k) (IlLl4) (IlLl5) 3. The map trd factors through the Temperley Lieb algebra T Ld' via 'l/J which was defined in (II. 21). (IlLl6)

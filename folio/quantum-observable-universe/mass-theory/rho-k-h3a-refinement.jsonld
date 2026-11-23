@@ -2,19 +2,19 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-rho-k-h3a-refinement",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:rho-k-h3a-refinement",
   "kind": "proposition",
   "title": "$H_{3A}$ Wedderburn refinement of the categorical density $\\rho_K$ beyond leading-order",
   "uses": [
-    "papers/quantum-observable-universe/blocks/conj-hoefsmit-scattering-pipeline",
     "papers/quantum-observable-universe/blocks/prop-y-lambda-closed-form-wenzl-bridge"
   ],
   "cites": [

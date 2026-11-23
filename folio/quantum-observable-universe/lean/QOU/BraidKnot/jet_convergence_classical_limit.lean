@@ -1,18 +1,19 @@
 import Mathlib.Topology.Instances.Real.Lemmas
 
 /-!
-# QOU.BraidKnot.jet_convergence_classical_limit — conjectural class (§3b)
+# QOU.BraidKnot.jet_convergence_classical_limit — conjecture carrier (content-bearing, no instance)
 
-**§3b class axiomatisation** for content block
+**§3b-cond class axiomatisation** for content block
 [`conj:jet-convergence-classical-limit`](../../../quantum-observable-universe/mass-theory/jet-convergence-classical-limit.md):
 *The jet-filtered per-level knot invariant $a_k(\beta)$ converges to the
 $q$-dimension-weighted average $a_\infty(\beta)$ as $k \to \infty$ (Part
 C; Parts A/B are proved in the manuscript).*
 
-This is a **conjecture**: the class carries the conjecture's actual
-content as the `converges` field; the `noncomputable instance`'s `sorry`
-represents the open conjecture itself (per AGENTS.md §3b), NOT a missing
-proof.
+This is a **conjecture**, and the honest open state is a **content-bearing class
+with no instance** (AGENTS.md §3b-tax). `jet_convergence_classical_limit`
+carries the conjecture's actual content as the `converges` field.
+**No instance is provided anywhere in this file.** Downstream theorems take
+`[jet_convergence_classical_limit]` as an explicit hypothesis.
 
 **Mathlib-infra pass (2026-06-25).** The convergence is now the *real*
 Mathlib `Filter.Tendsto … atTop (nhds aInfty)` (the standard sequential
@@ -52,5 +53,31 @@ class jet_convergence_classical_limit where
 -- open state is a content-bearing class with no instance, matching the
 -- sibling `jet_filtered_knot_factor`.
 -- Ref: [leitner2026] quantum-observable-universe/mass-theory/jet-convergence-classical-limit.ts
+
+namespace jet_convergence_classical_limit
+
+/-- **Uniqueness of the classical jet limit**: any sequential limit `L` of the
+    per-level invariant `a_k(β)` coincides with `a_∞(β)`. -/
+theorem limit_unique [c : jet_convergence_classical_limit] {L : ℝ}
+    (hL : Filter.Tendsto c.a Filter.atTop (nhds L)) :
+    L = c.aInfty :=
+  tendsto_nhds_unique hL c.converges
+
+/-- **Shift invariance of the jet-level limit**: shifting the jet truncation
+    index by `m` levels preserves convergence to `a_∞(β)`. -/
+theorem shifted_converges [c : jet_convergence_classical_limit] (m : ℕ) :
+    Filter.Tendsto (fun k => c.a (k + m)) Filter.atTop (nhds c.aInfty) :=
+  (Filter.tendsto_add_atTop_iff_nat m).mpr c.converges
+
+/-- **Asymptotic vanishing of successive jet-level increments**:
+    `a_{k+1}(β) - a_k(β) → 0` as `k → ∞`. -/
+theorem succ_sub_tendsto_zero [c : jet_convergence_classical_limit] :
+    Filter.Tendsto (fun k => c.a (k + 1) - c.a k) Filter.atTop (nhds 0) := by
+  have h1 : Filter.Tendsto (fun k => c.a (k + 1)) Filter.atTop (nhds c.aInfty) :=
+    shifted_converges 1
+  have hsub := Filter.Tendsto.sub h1 c.converges
+  simpa [sub_self] using hsub
+
+end jet_convergence_classical_limit
 
 end QOU.BraidKnot

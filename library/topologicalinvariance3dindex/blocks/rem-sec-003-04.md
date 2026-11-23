@@ -1,0 +1,1 @@
+For a typical cusped hyperbolic manifold, one expects that the Epstein-Penner ideal cell decomposition consists of ideal tetrahedra, i.e., that XEP M consists of one element. Many examples of such cusped hyperbolic manifolds appear in the census [CDW] and also in [Aki01, GS10].

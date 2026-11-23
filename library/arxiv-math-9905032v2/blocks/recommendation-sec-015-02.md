@@ -1,1 +1,0 @@
-First, we shall prove that under the poissonized measure $M^\theta$ on the set of partitions $\lambda$, the random variables $\widetilde{\lambda}$ converge, in joint distribution, to the Airy ensemble as $\theta\approx n\to\infty$.

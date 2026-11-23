@@ -1,0 +1,1 @@
+For any free link, there exists a free braid whose closure is isotopic to the given link. In [3] Louis Kauﬀman and Soﬁa Lambropoulou using the L-move method to give a local version of the Markov theorem for virtual braids. Markov theorem for ﬂat virtual links follows immediately from the argument of [3]. Together with

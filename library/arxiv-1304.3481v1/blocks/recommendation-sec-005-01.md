@@ -1,1 +1,0 @@
-As a final clarification of terminology, we should mention that a model is called {\it Landau-Ginzburg model} when the superpotential is non-zero, and is referred to as the {\it sigma-model} (on a certain target manifold) when $W=0$.

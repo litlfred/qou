@@ -94,8 +94,12 @@ and conversely, that complex rank 3 holds exactly at `dim M = 7`, that no
   the canonical bundle is a genuine geometric condition (Sasaki–Einstein), not a
   consequence of being contact.  This file says which `n` it *would* require.
 * the identification of `ξ` with a fundamental object of the braided category.
-  Mathlib has no exterior-power-of-an-object API and no differential forms on
-  manifolds at all, so every declaration below is about `ℕ`.
+  Mathlib has exterior powers of **modules** (`⋀[R]^n M`,
+  `Mathlib.LinearAlgebra.ExteriorPower.Basic`) and of `ModuleCat`, but no `Λ^k`
+  of an **object of an abstract monoidal category** and no wedge product as a
+  named operation; it has differential forms with `extDeriv` on a **normed
+  space** (`Mathlib.Analysis.Calculus.DifferentialForm.Basic`) but none on
+  **manifolds** — so every declaration below is about `ℕ`.
 * anything about `dim M` for the corpus's `M_S`, which the corpus states
   inconsistently — 3-dimensional in one block, `ker Θ` of rank 4 (hence 5) in two
   others.  The table above is stated for **both** readings precisely because that

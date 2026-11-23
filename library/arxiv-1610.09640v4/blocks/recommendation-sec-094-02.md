@@ -1,1 +1,0 @@
-In this remark we shall dispense with the ﬂatness condition (invoking Remark 13.4.24); so K is a nonzero regular noetherian base ring (e.g. a ﬁeld or the ring of integers Z), and we consider the category Sch/eft K of EFT K-schemes.

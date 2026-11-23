@@ -1,1 +1,0 @@
-Going Beyond G(2, 2, 4): SO(10) and SU(5) To realize the idea of a single gauge coupling governing the three forces,[7,10] one must embed the standard model symmetry, or G(2, 2, 4), in a simple or eﬀectively simple group (like SU(N) × SU(N)).

@@ -1,1 +1,1 @@
-Let A be a weak quasi-bialgebra endowed with the structure of a C
+Let A be a weak quasi-bialgebra endowed with the structure of a C ∗ - algebra (or a discrete weak quasi-bialgebra with positive involution). Let Ω and Ω ′ define two unitary Ω-involutive structures. Let us upgrade the category of C ∗ -representations of A to corresponding tensor C ∗ -categories Rep+ Ω (A) and Rep+ Ω′(A). Then the functor F : Rep+ Ω (A) → Rep+ Ω′(A) acting as identity on objects and morphisms admits the structure of a unitary tensor equivalence.

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-blowup-topological-selection",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:blowup-topological-selection",
+  "kind": "remark",
+  "title": "Topological selection rule on the blowup obstruction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-blowup-yekutieli",
+    "papers/quantum-observable-universe/blocks/prop-descent-condition",
+    "papers/quantum-observable-universe/blocks/rem-vortex-reconnection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-blowup-yekutieli",
+  "tags": [
+    "blowup",
+    "topological-selection",
+    "vortex-reconnection",
+    "berry-phase"
+  ],
+  "text": "blowup-topological-selection.md",
+  "provenance": "authored"
+}

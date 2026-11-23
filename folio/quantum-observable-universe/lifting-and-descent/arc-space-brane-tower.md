@@ -3,6 +3,6 @@ $$
   \mathcal{S}_n \equiv \mathcal{L}_n(X), \qquad \mathcal{S}_\infty := \varprojlim_n \mathcal{S}_n \equiv \mathcal{L}(X).
 $$
 
-**Role of arc spaces.** When the base $X$ is singular—a vortex reconnection, an exceptional divisor, or a braid resolution—the arc space $\mathcal{L}(X)$ safely retains the formal data necessary to evaluate the variety algebraically without analytic charts. This algebraic evaluation grounds the [motivic mass measure](#def:motivic-mass-measure), predictably assigning a finite volume to subsets of $\mathcal{L}(X)$ even when $X$ inherently lacks a smooth volume form.
+**Role of arc spaces.** When the base $X$ is singular—a vortex reconnection, an exceptional divisor, or a braid resolution—the arc space $\mathcal{L}(X)$ safely retains the formal data necessary to evaluate the variety algebraically without analytic charts.
 
-Through this arc-space identification, the brane tower natively inherits motivic integration. The [algebraic quantum volume](#def:algebraic-quantum-volume) formally makes this measure explicit.
+Through this arc-space identification, the brane tower natively inherits motivic integration.

@@ -1,0 +1,1 @@
+If p5(˜s) = s ∈S5 and σ ∈S4 is a colored 4-simplex, then ˜s(σ)[s(i)] = Hs(i) ˜s (σ[i]), i = 0, 1, 2, 3, 4, (4.20) where Hi (−) : F4 −→F3 is a map such that p4(Hs(i) ˜s ) = sˆi. By Lemma 4.2.7, V (Hs(i) ˜s ) : V ±(σ[i]) ≃ −→V sgn(s)±(˜s(σ)[s(i)]), Thus V (˜s) := 4N i=0 V (Hs(i) ˜s ) : V ±(∂σ) ≃ −→V sgn(s)±(∂˜s(σ)) is an isomorphism.

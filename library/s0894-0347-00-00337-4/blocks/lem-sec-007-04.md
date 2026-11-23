@@ -1,0 +1,1 @@
+K△(x, y) = ε(x) ε(y) J(x −1 2, y −1 2). It is clear that since the ε-factors cancel out of all determinantal formulas, this lemma and Proposition A.8 establish the equivalence of Theorems 1 and 2. A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI

@@ -1,1 +1,0 @@
-Improvements should come from the incorporation of additional tree conditions contained in the Penrose identity or, for speciﬁc models, through a more accurate description of the compatibility constraints.

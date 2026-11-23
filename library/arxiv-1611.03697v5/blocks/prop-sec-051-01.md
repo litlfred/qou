@@ -1,0 +1,1 @@
+3. For all suﬃciently large R > 0 the following statements hold. For each ray ℓ⊂∆, the power series DT(ℓ) is absolutely convergent on U∆(R), and hence deﬁnes a holomorphic function DT(ℓ): U∆(R) →C. Moreover the time 1 Hamiltonian ﬂow of this function gives a holomorphic map S(ℓ): U∆(R) →T which deﬁnes an invertible, bounded ∆-map germ.

@@ -1,1 +1,0 @@
-After the comprehensive tries and errors of the past, it appears that there are two renormalization schemes which have the potential to achieve the above goals and, therefore, should be investigated systematically in the near future.

@@ -1,1 +1,0 @@
-In analogy to $F_0$ and $B_0$ of ${\cal L}_2$ they are parameters containing information on the underlying dynamics and should, in principle, be calculable in terms of the (remaining) parameters of QCD, namely, the heavy-quark masses and the QCD scale $\Lambda_{\rm QCD}$.

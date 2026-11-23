@@ -1,1 +1,0 @@
-There should be a version of Hamiltonian Floer cohomology which only uses orbits and Riemann surfaces satisfying the perturbed Floer equation joining them so that the associated symplectic cohomology group of M  M is isomorphic to big quantum cohomology (see [41]).

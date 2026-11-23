@@ -1,1 +1,0 @@
-O"n-t. we have (4.5) We shall need to identify several sub- and quotient algebras of ~(q), and for this purpose we introduce the symmetric group W ~ Symn, the corresponding affine Weyl group wa. ~ Symn ~ zn- 1, which is a Coxeter group of rank n, and the Weyl group W Bn of type Bn.

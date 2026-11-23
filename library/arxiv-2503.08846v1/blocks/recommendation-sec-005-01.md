@@ -1,1 +1,0 @@
-Since computing a trace corresponds to closing the lines of a braid, that is gluing the beginning and the end of the braid, computing a matrix element should correspond to “gluing” states to the beginning and to the end.

@@ -1,1 +1,0 @@
-If we demand that the algebraic structure of the associated Lie algebras should also explain the values of the fundamental constants of the standard model, that challenge is enough to rule out most branchings and we are constrained to find at least one branching which successfully explains the experimentally observed data of the standard model.

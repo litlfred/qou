@@ -1,0 +1,1407 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1406.4088v2",
+ "source": {
+  "file": "1406.4088v2.pdf",
+  "sha256": "d8f2ff1efb5bea30407619d3b8c03014ecc63539fe84721693725f8120d5bca4",
+  "bytes": 895835,
+  "pages": 57,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1406.4088",
+   "version": "2",
+   "primary_class": "hep-lat",
+   "stamp_date": "7 Apr 2015"
+  },
+  "doi": null,
+  "title": "Ab initio calculation of the neutron-proton mass difference",
+  "authors_raw": "Sz. Borsanyi1, S. Durr1,2, Z. Fodor1,2,3, C. Hoelbling1, S. D. Katz3,4, S. Krieg1,2, L. Lellouch5, T. Lippert1,2, A",
+  "title_lines": [
+   "Ab initio calculation of",
+   "the neutron-proton mass difference"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20150408002942Z"
+  },
+  "title_raw": "Ab initio calculation of the neutron-proton mass difference",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Ab initio calculation of the neutron-proton mass difference",
+   "outline": "1",
+   "text": "Ab initio calculation of the neutron-proton mass difference",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "1",
+   "page": 2,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "Outline",
+   "page": 13,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
+  },
+  {
+   "level": 2,
+   "title": "Lattice and action details",
+   "page": 13,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
+  },
+  {
+   "level": 3,
+   "title": "Photon action",
+   "page": 14,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 3,
+   "title": "The Dirac operator",
+   "page": 16,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 3,
+   "title": "HEX smearing",
+   "page": 17,
+   "source": "outline",
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
+  },
+  {
+   "level": 2,
+   "title": "Analytical studies of various QED formulations in finite volume",
+   "page": 17,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
+  },
+  {
+   "level": 3,
+   "title": "Computation of finite-volume corrections in various QED formulations",
+   "page": 19,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 3,
+   "title": "Results for finite-volume corrections to the pole mass and consequences for the various QED formulations",
+   "page": 21,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
+  },
+  {
+   "level": 2,
+   "title": "Finite-volume and lattice-spacing corrections in QED: numerical investigations",
+   "page": 23,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
+  },
+  {
+   "level": 2,
+   "title": "Finite-volume effects for composite particles",
+   "page": 24,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
+  },
+  {
+   "level": 3,
+   "title": "Comparison to numerical QCD+QED results",
+   "page": 27,
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "Algorithms",
+   "page": 27,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
+  },
+  {
+   "level": 3,
+   "title": "Hybrid Monte Carlo",
+   "page": 28,
+   "source": "outline",
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
+  },
+  {
+   "level": 3,
+   "title": "Updating the photon field",
+   "page": 29,
+   "source": "outline",
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
+  },
+  {
+   "level": 3,
+   "title": "Cost issues",
+   "page": 29,
+   "source": "outline",
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
+  },
+  {
+   "level": 2,
+   "title": "Ensembles",
+   "page": 30,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
+  },
+  {
+   "level": 2,
+   "title": "Electric charge renormalization",
+   "page": 30,
+   "source": "outline",
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
+  },
+  {
+   "level": 2,
+   "title": "Extracting hadron masses",
+   "page": 32,
+   "source": "outline",
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
+  },
+  {
+   "level": 2,
+   "title": "Reaching the physical point",
+   "page": 33,
+   "source": "outline",
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
+  },
+  {
+   "level": 3,
+   "title": "Normalizing hadron masses",
+   "page": 33,
+   "source": "outline",
+   "number": "10.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
+  },
+  {
+   "level": 3,
+   "title": "Determining the isospin splittings",
+   "page": 33,
+   "source": "outline",
+   "number": "10.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
+  },
+  {
+   "level": 3,
+   "title": "Separating QED and QCD effects",
+   "page": 34,
+   "source": "outline",
+   "number": "10.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
+  },
+  {
+   "level": 3,
+   "title": "The Coleman-Glashow relation",
+   "page": 35,
+   "source": "outline",
+   "number": "10.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
+  },
+  {
+   "level": 2,
+   "title": "Akaike's information criterion",
+   "page": 35,
+   "source": "outline",
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
+  },
+  {
+   "level": 2,
+   "title": "Final results and systematic errors",
+   "page": 36,
+   "source": "outline",
+   "number": "12",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Finite-volume behavior of kaon masses. (A) The neutral kaon mass, MK0, shows no signi\ufb01cant \ufb01nite volume dependence; L denotes the linear size of the system. (B) The mass-squared difference of the charged kaon mass, MK+, and MK0 indicates that MK+ is strongly dependent on volume. This \ufb01nite-volume de",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Mass splittings in channels that are stable under the strong and electromagnetic interactions. Both of these interactions are fully unquenched in our 1+1+1+1 \ufb02avor calculation. The horizontal lines are the experimental values and the grey shaded regions represent the experimental error (2). Our resu",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Contour lines for the neutron-proton mass splitting. The contours are shown as a function of the quark mass difference and the \ufb01ne structure constant, both normalized with their real world, physical value",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Isospin mass splittings of light and charm hadrons. Also shown are the individual contributions to these splittings from the mass difference (md \u2212mu) (QCD) and from electromagnetism (QED). The separation requires \ufb01xing a convention, which is described in (17). The last line is the violation of the C",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "table",
+   "number": "S2",
+   "title": "",
+   "page": 33,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "S1",
+   "title": "1 \u2212\u27e8U\u25a1\u27e9for 1, 2, and 3 HEX smearing steps, using our preferred values for the parameters [\u03c11, \u03c12, \u03c13] = (0.22, 0.15, 0.12). The lines connecting the points are to guide the eye",
+   "page": 41,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "41"
+  },
+  {
+   "kind": "figure",
+   "number": "S2",
+   "title": "Quark effective masses in QED using different zero-mode subtractions. The four-dimensional zero-mode subtraction (QEDTL) produces masses that depend on T. The time-slice by time-slice removal (QEDL) makes effective masses well behaved",
+   "page": 42,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "S3",
+   "title": "Finite-size dependence of the fermion mass in two different realizations of \ufb01nite-volume QED, that differ in the zero-mode subtraction. The open/\ufb01lled symbols are obtained using QEDTL/QEDL prescription",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "S4",
+   "title": "Continuum scaling of a mass difference in QEDL using two different lattice actions. The crossed",
+   "page": 44,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "44"
+  },
+  {
+   "kind": "figure",
+   "number": "S5",
+   "title": "Decomposition of the four-point vertex into 1PI parts",
+   "page": 45,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "45"
+  },
+  {
+   "kind": "figure",
+   "number": "S6",
+   "title": "Finite-volume effects in baryon isospin splittings. The dependence is always consistent with the universal behavior of Eq. (S26) (dashed lines)",
+   "page": 46,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "figure",
+   "number": "S7",
+   "title": "Lowest eigenvalue of the",
+   "page": 47,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "S8",
+   "title": "Thermalization of the compact plaquette in the pure photon theory using the standard HMC and our improved variant",
+   "page": 48,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "48"
+  },
+  {
+   "kind": "figure",
+   "number": "S9",
+   "title": "Renormalization factor of the electric charge as the function of \ufb02ow time on four ensembles with \ufb01xed bare parameters. The dashed curves show Z(\u03c4)\u2019s using Etree = 3/(32\u03c02) and have sizeable \ufb01nitevolume dependence. Using Etree(\u03c4) from Eq. (S36) eliminates volume dependence completely: the curves corr",
+   "page": 49,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "49"
+  },
+  {
+   "kind": "figure",
+   "number": "S10",
+   "title": "Pion splitting as a function of the bare and renormalized couplings for four charged ensembles. The solid lines are linear/cubic \ufb01ts to the renormalized/bare data points. The arrow indicates the physical value of \u03b1",
+   "page": 50,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "S11",
+   "title": "Cumulative distribution functions of the \ufb01t qualities. The distribution is obtained using the \ufb01ts for the \u2206MN (panel A) and \u2206M\u039e (panel B) mass difference on the 41 ensembles. Three different measured distributions are plotted using three different tmin values, the largest ones correspond to our choi",
+   "page": 51,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "S12",
+   "title": "Lattice spacing dependence of the baryon octet isospin splittings in one particular \ufb01t",
+   "page": 52,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "table",
+   "number": "S1",
+   "title": "Comparison of analytical and in\ufb01nite volume extrapolated numerical results",
+   "page": 53,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "53"
+  },
+  {
+   "kind": "table",
+   "number": "S3",
+   "title": "List of \u201cneutral ensembles\u201d",
+   "page": 55,
+   "confidence": 0.5,
+   "evidence": [],
+   "page_label": "55"
+  },
+  {
+   "kind": "table",
+   "number": "S5",
+   "title": "Starting time of the \ufb01t-intervals for different mass-splittings",
+   "page": 57,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "57"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1614,
+   "n_words": 227,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1",
+   "number": null,
+   "title": "1",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 13,
+   "n_chars": 19850,
+   "n_words": 3160,
+   "label_start": "2",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-001-1-outline",
+   "number": "1",
+   "title": "Outline",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 3434,
+   "n_words": 560,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-002-2-lattice-and-action-details",
+   "number": "2",
+   "title": "Lattice and action details",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1002,
+   "n_words": 170,
+   "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-003-21-photon-action",
+   "number": "2.1",
+   "title": "Photon action",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 6836,
+   "n_words": 1167,
+   "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-004-22-the-dirac-operator",
+   "number": "2.2",
+   "title": "The Dirac operator",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2659,
+   "n_words": 483,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-005-23-hex-smearing",
+   "number": "2.3",
+   "title": "HEX smearing",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1724,
+   "n_words": 317,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-006-3-analytical-studies-of-various-qed-formulations",
+   "number": "3",
+   "title": "Analytical studies of various QED formulations in finite volume",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 6247,
+   "n_words": 1135,
+   "label_start": "17",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-007-31-computation-of-finite-volume-corrections-in-v",
+   "number": "3.1",
+   "title": "Computation of finite-volume corrections in various QED formulations",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 4402,
+   "n_words": 841,
+   "label_start": "19",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-008-32-results-for-finite-volume-corrections-to-the",
+   "number": "3.2",
+   "title": "Results for finite-volume corrections to the pole mass and consequences for the various QED formulations",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 6206,
+   "n_words": 1135,
+   "label_start": "21",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-009-4-finite-volume-and-lattice-spacing-corrections",
+   "number": "4",
+   "title": "Finite-volume and lattice-spacing corrections in QED: numerical investigations",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 6182,
+   "n_words": 1055,
+   "label_start": "23",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-010-5-finite-volume-effects-for-composite-particles",
+   "number": "5",
+   "title": "Finite-volume effects for composite particles",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 11053,
+   "n_words": 1940,
+   "label_start": "24",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-011-51-comparison-to-numerical-qcdqed-results",
+   "number": "5.1",
+   "title": "Comparison to numerical QCD+QED results",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1792,
+   "n_words": 314,
+   "label_start": "27",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-012-6-algorithms",
+   "number": "6",
+   "title": "Algorithms",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 406,
+   "n_words": 65,
+   "label_start": "27",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-013-61-hybrid-monte-carlo",
+   "number": "6.1",
+   "title": "Hybrid Monte Carlo",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 3819,
+   "n_words": 584,
+   "label_start": "28",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-014-62-updating-the-photon-field",
+   "number": "6.2",
+   "title": "Updating the photon field",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 2488,
+   "n_words": 419,
+   "label_start": "29",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-015-63-cost-issues",
+   "number": "6.3",
+   "title": "Cost issues",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 1546,
+   "n_words": 269,
+   "label_start": "29",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-016-7-ensembles",
+   "number": "7",
+   "title": "Ensembles",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 2750,
+   "n_words": 470,
+   "label_start": "30",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-017-8-electric-charge-renormalization",
+   "number": "8",
+   "title": "Electric charge renormalization",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 5160,
+   "n_words": 891,
+   "label_start": "30",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-018-9-extracting-hadron-masses",
+   "number": "9",
+   "title": "Extracting hadron masses",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 3538,
+   "n_words": 579,
+   "label_start": "32",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-019-10-reaching-the-physical-point",
+   "number": "10",
+   "title": "Reaching the physical point",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 243,
+   "n_words": 38,
+   "label_start": "33",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-020-101-normalizing-hadron-masses",
+   "number": "10.1",
+   "title": "Normalizing hadron masses",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 1974,
+   "n_words": 318,
+   "label_start": "33",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-021-102-determining-the-isospin-splittings",
+   "number": "10.2",
+   "title": "Determining the isospin splittings",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 2359,
+   "n_words": 411,
+   "label_start": "33",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-022-103-separating-qed-and-qcd-effects",
+   "number": "10.3",
+   "title": "Separating QED and QCD effects",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 3137,
+   "n_words": 537,
+   "label_start": "34",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-023-104-the-coleman-glashow-relation",
+   "number": "10.4",
+   "title": "The Coleman-Glashow relation",
+   "level": 3,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1204,
+   "n_words": 230,
+   "label_start": "35",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-024-11-akaikes-information-criterion",
+   "number": "11",
+   "title": "Akaike's information criterion",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 3492,
+   "n_words": 617,
+   "label_start": "35",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-025-12-final-results-and-systematic-errors",
+   "number": "12",
+   "title": "Final results and systematic errors",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 57,
+   "n_chars": 15931,
+   "n_words": 2691,
+   "label_start": "36",
+   "label_end": "57"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 26,
+  "toc_inferred_entries": 0,
+  "figure_entries": 20,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 27,
+  "chars_total": 121048,
+  "furniture_lines_stripped": 57
+ }
+}

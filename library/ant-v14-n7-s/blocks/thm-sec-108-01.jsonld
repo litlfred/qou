@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/ant-v14-n7-s/blocks/thm-sec-108-01",
@@ -16,6 +16,16 @@
   "pageEnd": 175,
   "text": "thm-sec-108-01.md",
   "derivedFrom": "library/ant-v14-n7-s/sections/sec-108",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "8.4",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-108-8c-milnorwitt-cohomology-and-chowwitt-groups.md (p. 173-175) citing [2004, Theorem 6.4.1, Remark 6.4.2; 2012, \nTheorem 6.40], [2008]",
+    "claim_id": "ant-v14-n7-s#theorem:8.4",
+    "lean_status": "unformalized"
+  }
 }

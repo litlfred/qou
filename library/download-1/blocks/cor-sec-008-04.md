@@ -1,0 +1,1 @@
+Let X be an mm-space with X 2 B1ðXÞ. Then, for any p  1, we have ObsCRadRnðX; Þ  ðmÞ1=p Obs Lp-VarRnðXÞ: ð2:3Þ In the case of p ¼ 2, we also have the better estimate ObsCRadRnðX; Þ  ﬃﬃﬃﬃﬃﬃﬃﬃﬃ 2m p Obs L2-VarRnðXÞ: ð2:4Þ

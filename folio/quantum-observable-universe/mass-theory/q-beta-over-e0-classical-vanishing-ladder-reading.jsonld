@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-beta-over-e0-classical-vanishing-ladder-reading",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-beta-over-e0-classical-vanishing-ladder-reading",
+  "kind": "remark",
+  "title": "What the vanishing $S(1) = 0$ means for the $c_k$ ladder",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-over-e0-classical-vanishing"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-beta-over-e0-classical-vanishing",
+  "tags": [
+    "q-beta",
+    "c-k-ladder",
+    "comparison-with-measurement"
+  ],
+  "text": "q-beta-over-e0-classical-vanishing-ladder-reading.md",
+  "provenance": "authored"
+}

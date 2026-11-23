@@ -1,1 +1,0 @@
-For example, our notation of the prime in \eqref{eq:identitylinkeddumbbell} to indicate an S-transform should really be thought of as an embedding of the dumbbell graph in $\mathrm{S}^2\times \mathrm{S}^1$ (or connected sums thereof, for multiple S-transforms).

@@ -1,1 +1,0 @@
-Then, for $j > i$, one must solve the non homogeneous first order equation: $$\label{equation:calculrecursifhat(F)} \sigma_q\hat{F}_{i,j} z^{\mu_{j}} A_{j} - z^{\mu_{i}} A_{i} \hat{F}_{i,j} = \sum_{i < k < j} U_{i,k} \hat{F}_{k,j} + U_{i,j}.$$

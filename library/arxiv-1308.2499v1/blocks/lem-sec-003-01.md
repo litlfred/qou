@@ -1,0 +1,1 @@
+Let (0.6) hold and γ ∈W(3p−2)/q−1,q(R/Z, Rn) be an injective regular curve. Then intM(p,q) is Gˆateaux diﬀerentiable in γ and the ﬁrst variation in direction h ∈W(3p−2)/q−1,q(R/Z, Rn) is given by δintM(p,q)(γ; h) = 6 $ R/Z×D δL(γ; h)(u, v, w) dw dv du (3.1) and (0.10) holds.

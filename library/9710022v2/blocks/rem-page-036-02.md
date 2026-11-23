@@ -1,0 +1,1 @@
+The linear relation Fi) («)q7 = Rog?" galt F,o(z) is a very important relation. We have computed [3], see also [2 a “using a generalisation of this identity, the exact form of the shifted cocycles F : §* + Uq(6), where § is a Cartan subalgebra of 6.

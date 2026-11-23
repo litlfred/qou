@@ -1,0 +1,1 @@
+Lawrence and Zagier discovered in [243] that the per- turbative series for the Poincaré homology sphere was close to a modular form. Is this a random coincidence, or is there a more systematic explanation? Does such a relation ever hold for a hyperbolic 3-manifold?

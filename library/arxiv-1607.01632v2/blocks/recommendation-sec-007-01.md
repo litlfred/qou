@@ -1,0 +1,1 @@
+To account for these mass splitting the speciﬁc charges or baryons must be inserted into the mass relations in such a way that the electromagnetic contribution to masses is the same on both sides of the equation.

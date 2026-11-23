@@ -1,1 +1,0 @@
-In order to make the structure of the 2-category $\diffco{\mathfrak{G}}{2}{\pi}$ of degree two differential $\mathfrak{G}$-cocycles more transparent, we shall spell out all details in case that the surjective submersion $\pi$ comes from an open cover $\mathfrak{V}=\left \lbrace V_i \right \rbrace$ of $M$.

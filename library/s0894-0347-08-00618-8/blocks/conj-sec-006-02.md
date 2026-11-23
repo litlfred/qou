@@ -1,0 +1,1 @@
+If µ ∈Pn is NA, then it is ULC. Inspired by Conjecture 2.3 and motivated by Mason’s long-standing conjecture in enumerative graph/matroid theory [62], Wagner made the following conjecture in [72, Conjecture 3.4] and baptized it “The Big Conjecture” since – if true – it would prove the validity of Mason’s conjecture for a large class of matroids.

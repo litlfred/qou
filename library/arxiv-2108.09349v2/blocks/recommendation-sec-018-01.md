@@ -1,1 +1,0 @@
-For example, hyperbolic T-links on three strands must be equivalent to closures of braids of the form $C^k\sigma_1^p\sigma_2^{-1}$ with $p>0$ and $k\ge2$, so adding more full twists to the construction would provide triangulations of all possible hyperbolic T-links on three strands.

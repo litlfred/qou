@@ -1,0 +1,13 @@
+conjugate matrices |c|<=6: 256  (2s)
+  nodes 500,000  elapsed 12s
+  nodes 1,000,000  elapsed 23s
+  nodes 1,500,000  elapsed 34s
+  nodes 2,000,000  elapsed 43s
+  nodes 2,500,000  elapsed 54s
+  nodes 3,000,000  elapsed 66s
+  nodes 3,500,000  elapsed 76s
+E3 len 12: same chi 2240, -tr 0, conjugate found 2240, not found 0 []
+E4 len 12: distinct Brunnian chars 4: 2240x s0s0s0s0s1s0's1's1's0s1's0's0' (BOR); 640x s0s0s0s0s1s0's1's1's1's1's0s1'; 24x s0s0s1's0s1's0s1's1's0s1's0s1'; 4x s0s1's0s1's0s1's0s1's0s1's0s1'
+E3 len 14: same chi 15812, -tr 0, conjugate found 15812, not found 0 []
+E4 len 14: distinct Brunnian chars 9: 15812x s0s0s0s0s0s1s0's1's1's0s1's0's0's0' (BOR); 5520x s0s0s0s0s0s1s0's1's1's1's1's0s1's0'; 28x s0s0s0s0s0s1's0s1's1's1's1's1's0s1'; 672x s0s0s0s1s0's0's1s0's0's0's1s0's0's1; 1056x s0s0s0s1s0's1's1's0s1's1's0s1's0s1'; 28x s0s0s0s1's0s0s0s1's1's1's0s1's1's1'; 56x s0s0s0s1's0s1's1's0s0s1's0s1's1's1'; 176x s0s0s1s0's1's1's0s1's0s1's0s1's0s1'; 28x s0s0s1's0s1's0s0s1's1's0s1's0s1's1'
+nodes 3,587,489, wall 80s

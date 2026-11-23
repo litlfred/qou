@@ -42,7 +42,7 @@ class instance.
 ## References
 - [leitner2026] conj:rho-prefactor-structural
 - [leitner2026] prop:wedderburn-trace-identity
-- [leitner2026] prop:alpha-k-derivation-procedure
+- [leitner2026] conj:alpha-k-derivation-procedure
 -/
 
 namespace QOU.BraidKnot

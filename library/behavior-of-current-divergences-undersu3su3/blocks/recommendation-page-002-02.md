@@ -1,1 +1,0 @@
-We have arrived at the simplest theory of the behavior of 5¢’, because it introduces the least number of new operators to complete the multiplet of the current divergences. [We shall argue at the end of the article that if there is a (1,8)+-(8,1) contribution, its effects on our deductions are unlikely to be large.] We then obtain the formula

@@ -13,7 +13,7 @@
   parameter — set it to 0.76 and it "closes": a FIT, which the Δ_λ gate forbids
   ("no seventh fit-based ansatz", AGENTS.md §"Precision goals"). It also re-invokes
   Wigner-SU(4), already REFUTED for Δ_λ (the KL-positivity prune,
-  `QOU.BraidsAndKnots.S5SO3FiberAction.PartitionOf5.deltaSign_mixed`); the honest
+  `QOU.BraidsAndKnots.deltaSign_mixed`); the honest
   structural obstruction is `QOU.SelectionRules.nonneg_sum_ne_neg_target`. The real
   ³H/³He binding difference is Coulomb-dominated, not an SU(4) categorical residue.
   Ref: `docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`.

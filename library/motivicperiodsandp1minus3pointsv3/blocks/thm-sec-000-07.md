@@ -1,0 +1,1 @@
+An element ξ ∈O(0Π1) of weight n ≥2 satisﬁes Dξ = [ξu] ⊗1 if and only if ξ ∈Q ζm(n). This theorem, combined with (2.18), provides a powerful method for proving identities between motivic multiple zeta values. Applications are given in [6].

@@ -115,6 +115,81 @@ def forward_cumulants():
     nu4 = Salg(4) - 6 * nu2 - 4 * nu3
     return nu2, nu3, nu4
 
+
+# --------------------------------------------------------------------------- #
+# GPMT 3-Row Modified Trace Renormalization & A=3 Mirror Split (exact Fraction)
+# Mirrors `QOU.MassTheory.GPMTThreeRowCumulantBridge` (bean qou-8mxc)
+# --------------------------------------------------------------------------- #
+
+def zD_rat(q: Fraction) -> Fraction:
+    """Convention-D Markov root z_D(q) = q³ / (q² + 1)."""
+    return (q ** 3) / (q ** 2 + 1)
+
+
+def dMod111_rat(q: Fraction) -> Fraction:
+    """GPMT modified quantum dimension d_D(S^{(1^3)}) = -q³ / ((q² + 1)(q⁴ + q² + 1))."""
+    return -(q ** 3) / ((q ** 2 + 1) * (q ** 4 + q ** 2 + 1))
+
+
+def qInt2_rat(q: Fraction) -> Fraction:
+    """Symmetric quantum integer [2]_q = q + q⁻¹."""
+    return q + Fraction(1, 1) / q
+
+
+def qInt3_rat(q: Fraction) -> Fraction:
+    """Symmetric quantum integer [3]_q = q² + 1 + q⁻²."""
+    return q ** 2 + 1 + Fraction(1, 1) / (q ** 2)
+
+
+def s_row3_gpmt_rat(q: Fraction, A: int) -> Fraction:
+    """GPMT-renormalized ≥3-row single-algebra stratum sRow3GPMT(q, A) = dMod111(q) · s_A."""
+    return dMod111_rat(q) * s_row3(A)
+
+
+def gpmt_forward_cumulants_rat(q: Fraction) -> tuple[Fraction, Fraction, Fraction]:
+    """GPMT-weighted Mayer cumulants (μ₂^GPMT, μ₃^GPMT, μ₄^GPMT) at rational q > 0."""
+    mu2 = s_row3_gpmt_rat(q, 2)
+    mu3 = s_row3_gpmt_rat(q, 3) - 3 * mu2
+    mu4 = s_row3_gpmt_rat(q, 4) - 6 * mu2 - 4 * mu3
+    return mu2, mu3, mu4
+
+
+def Bext_gpmt_rat(q: Fraction, A: int) -> Fraction:
+    """GPMT-weighted extensive cluster sum BextGPMT(q, A) = Σ_{k≥3} C(A,k) · sRow3GPMT(q, k)."""
+    return sum(
+        (comb(A, k) * s_row3_gpmt_rat(q, k) for k in range(3, A + 1)),
+        Fraction(0, 1),
+    )
+
+
+def simplex_equations_rat(
+    m2: Fraction, m3: Fraction, m4: Fraction
+) -> tuple[Fraction, Fraction, Fraction]:
+    """Coordination-simplex equations (simplexA2, simplexA3, simplexA4) of AdditiveResidualSimplex."""
+    return m2, 3 * m2 + m3, 6 * m2 + 4 * m3 + m4
+
+
+TRITON_CHARGES: tuple[int, int, int] = (1, 0, 0)
+HELIUM3_CHARGES: tuple[int, int, int] = (0, 1, 1)
+TRITON_ISOSPIN: tuple[int, int, int] = (1, -1, -1)
+HELIUM3_ISOSPIN: tuple[int, int, int] = (-1, 1, 1)
+
+
+def pair_charge_A3(qN: tuple[int, int, int]) -> int:
+    """Inter-nucleon pairwise electromagnetic charge operator Σ_{i<j} q_i q_j on A=3."""
+    return qN[0] * qN[1] + qN[0] * qN[2] + qN[1] * qN[2]
+
+
+def isospin_exchange_matrix_A3(
+    mag: tuple[tuple[Fraction, Fraction, Fraction], ...],
+    s: tuple[int, int, int],
+) -> tuple[tuple[Fraction, Fraction, Fraction], ...]:
+    """Isospin-signed 3×3 exchange matrix M_{ij} = s_i s_j mag_{ij} (`IsospinMirrorInvariance`)."""
+    return tuple(
+        tuple(s[i] * s[j] * mag[i][j] for j in range(3))
+        for i in range(3)
+    )
+
 # --------------------------------------------------------------------------- #
 # AME2020 total binding energies (MeV) — TARGETS ONLY, never inverted
 # --------------------------------------------------------------------------- #
@@ -138,6 +213,99 @@ def main() -> dict:
     ame_ratio_43 = AME_MeV["He4"] / AME_MeV["T"]          # ≈ 3.336
     y_ratio_43 = Fraction(abs(bext[4]), abs(bext[3]))      # 6
     x_ratio_43 = Fraction(abs(salg[4]), abs(salg[3]))      # 2
+
+    # Exact rational verification of `QOU.MassTheory.GPMTThreeRowCumulantBridge` (bean qou-8mxc)
+    # at two q₀-free rational test points q = 111/100 and q = 2/1 (strictly no float64):
+    q_test = Fraction(111, 100)
+    q_test2 = Fraction(2, 1)
+    zD_gap_1 = zD_rat(q_test) - q_test
+    zD_gap_1_expected = -q_test / (q_test ** 2 + 1)
+    zD_gap_2 = zD_rat(q_test2) - q_test2
+    zD_gap_2_expected = -q_test2 / (q_test2 ** 2 + 1)
+
+    dmod_1 = dMod111_rat(q_test)
+    dmod_1_recip = -Fraction(1, 1) / (qInt2_rat(q_test) * qInt3_rat(q_test))
+    dmod_2 = dMod111_rat(q_test2)
+    dmod_2_recip = -Fraction(1, 1) / (qInt2_rat(q_test2) * qInt3_rat(q_test2))
+
+    mu2_g1, mu3_g1, mu4_g1 = gpmt_forward_cumulants_rat(q_test)
+    mu2_g2, mu3_g2, mu4_g2 = gpmt_forward_cumulants_rat(q_test2)
+
+    bext_g1 = {A: Bext_gpmt_rat(q_test, A) for A in (2, 3, 4)}
+    bext_g2 = {A: Bext_gpmt_rat(q_test2, A) for A in (2, 3, 4)}
+    simp_A2_1, simp_A3_1, simp_A4_1 = simplex_equations_rat(mu2_g1, mu3_g1, mu4_g1)
+
+    pair_q_triton = pair_charge_A3(TRITON_CHARGES)
+    pair_q_he3 = pair_charge_A3(HELIUM3_CHARGES)
+    sample_mag = (
+        (Fraction(0, 1), Fraction(3, 5), Fraction(4, 7)),
+        (Fraction(3, 5), Fraction(0, 1), Fraction(5, 9)),
+        (Fraction(4, 7), Fraction(5, 9), Fraction(0, 1)),
+    )
+    exch_triton = isospin_exchange_matrix_A3(sample_mag, TRITON_ISOSPIN)
+    exch_he3 = isospin_exchange_matrix_A3(sample_mag, HELIUM3_ISOSPIN)
+    sample_c_em = Fraction(76375, 100000)  # exact rational test coupling
+    sample_f_strong = Fraction(848180, 100000)
+    b_triton_two_term = sample_f_strong - sample_c_em * pair_q_triton
+    b_he3_two_term = sample_f_strong - sample_c_em * pair_q_he3
+    mirror_split_diff = b_triton_two_term - b_he3_two_term
+
+    gpmt_bridge_block = {
+        "lean_module": "QOU.MassTheory.GPMTThreeRowCumulantBridge",
+        "bean": "qou-8mxc",
+        "rational_test_point_q": str(q_test),
+        "zD_sub_q_exact": str(zD_gap_1),
+        "zD_sub_q_is_negative": (zD_gap_1 < 0),
+        "dMod111_exact": str(dmod_1),
+        "dMod111_is_negative": (dmod_1 < 0),
+        "dMod111_matches_neg_inv_qInt2_mul_qInt3": (dmod_1 == dmod_1_recip),
+        "gpmt_weighted_cumulants": {
+            "mu2_GPMT": str(mu2_g1),
+            "mu3_GPMT": str(mu3_g1),
+            "mu4_GPMT": str(mu4_g1),
+            "mu3_GPMT_pos": (mu3_g1 > 0),
+            "mu4_GPMT_neg": (mu4_g1 < 0),
+            "mu4_eq_neg_two_mul_mu3": (mu4_g1 == -2 * mu3_g1),
+            "sign_window": [
+                "+" if mu3_g1 > 0 else "-",
+                "+" if mu4_g1 > 0 else "-",
+            ],
+            "inverts_unweighted_sign_window_to_physical_plus_minus": (
+                mu2_g1 == 0 and mu3_g1 > 0 and mu4_g1 < 0
+            ),
+        },
+        "gpmt_extensive_cluster_BextGPMT": {
+            "2": str(bext_g1[2]),
+            "3": str(bext_g1[3]),
+            "4": str(bext_g1[4]),
+            "BextGPMT_3_pos": (bext_g1[3] > 0),
+            "BextGPMT_4_pos": (bext_g1[4] > 0),
+            "BextGPMT_4_eq_6_mul_BextGPMT_3": (bext_g1[4] == 6 * bext_g1[3]),
+        },
+        "coordination_simplex_verification": {
+            "simplexA2": str(simp_A2_1),
+            "simplexA3": str(simp_A3_1),
+            "simplexA4": str(simp_A4_1),
+            "matches_single_algebra_sRow3GPMT": (
+                simp_A2_1 == 0
+                and simp_A3_1 == -dmod_1
+                and simp_A4_1 == -2 * dmod_1
+            ),
+        },
+        "two_term_mirror_split_A3": {
+            "triton_charges_3H": list(TRITON_CHARGES),
+            "helium3_charges_3He": list(HELIUM3_CHARGES),
+            "triton_isospin_3H": list(TRITON_ISOSPIN),
+            "helium3_isospin_3He": list(HELIUM3_ISOSPIN),
+            "helium3_is_neg_triton_isospin": (
+                tuple(-s for s in TRITON_ISOSPIN) == HELIUM3_ISOSPIN
+            ),
+            "isospin_exchange_matrix_mirror_invariant": (exch_triton == exch_he3),
+            "pairChargeA3_triton": pair_q_triton,
+            "pairChargeA3_helium3": pair_q_he3,
+            "B_3H_minus_B_3He_equals_c_EM": (mirror_split_diff == sample_c_em),
+        },
+    }
 
     result = {
         "free_parameters": 0,
@@ -182,6 +350,7 @@ def main() -> dict:
                    "magnitude. The many-body binding sign+magnitude live in the "
                    "q₀-dependent y_λ·χ^λ trace weighting, not in the combinatorial "
                    "Δ_λ. Nothing wired.",
+        "gpmt_renormalized_three_row_bridge": gpmt_bridge_block,
     }
 
     # assertions (exact)
@@ -194,6 +363,67 @@ def main() -> dict:
         ("forward_nu2_zero_matches_derived_mu2", nu2 == 0, True),
         ("forward_sign_window_opposite", (nu3 < 0 and nu4 > 0), True),
         ("forward_ratio_two_not_derived_9p75", nu4 == -2 * nu3, True),
+        (
+            "gpmt_zD_sub_q_neg_for_pos_q",
+            (
+                zD_gap_1 == zD_gap_1_expected
+                and zD_gap_1 < 0
+                and zD_gap_2 == zD_gap_2_expected
+                and zD_gap_2 < 0
+            ),
+            True,
+        ),
+        (
+            "gpmt_dMod111_neg_and_qInt_reciprocal",
+            (
+                dmod_1 < 0
+                and dmod_1 == dmod_1_recip
+                and dmod_2 < 0
+                and dmod_2 == dmod_2_recip
+            ),
+            True,
+        ),
+        (
+            "gpmt_threeRow_cumulant_signs_inverted",
+            (
+                mu2_g1 == 0
+                and mu3_g1 == -dmod_1
+                and mu3_g1 > 0
+                and mu4_g1 == 2 * dmod_1
+                and mu4_g1 < 0
+                and mu4_g1 == -2 * mu3_g1
+                and mu2_g2 == 0
+                and mu3_g2 > 0
+                and mu4_g2 < 0
+                and mu4_g2 == -2 * mu3_g2
+            ),
+            True,
+        ),
+        (
+            "gpmt_BextGPMT_values_and_pos",
+            (
+                bext_g1[2] == 0
+                and bext_g1[3] == -dmod_1
+                and bext_g1[4] == -6 * dmod_1
+                and bext_g1[3] > 0
+                and bext_g1[4] > 0
+                and bext_g1[4] == 6 * bext_g1[3]
+                and bext_g2[2] == 0
+                and bext_g2[3] > 0
+                and bext_g2[4] == 6 * bext_g2[3]
+            ),
+            True,
+        ),
+        (
+            "gpmt_twoTerm_mirror_split_A3",
+            (
+                pair_q_triton == 0
+                and pair_q_he3 == 1
+                and exch_triton == exch_he3
+                and mirror_split_diff == sample_c_em
+            ),
+            True,
+        ),
     ]
     return result, assertions
 
@@ -232,6 +462,10 @@ if __name__ == "__main__":
     # witness directly, so nothing else records which script made
     # it -- and a re-run of an unstamped producer DELETES the
     # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import sys as _sys  # noqa: E402 -- provenance stamp
+    _sub_py = str(script_path.resolve().parents[2] / "tools" / "qou-substrate" / "python")
+    if _sub_py not in _sys.path:
+        _sys.path.insert(0, _sub_py)
     from qou_substrate.witness import WitnessBuilder as _WB
     import os as _os  # noqa: E402 -- provenance stamp
     witness.setdefault("scriptFile", _os.path.basename(__file__))

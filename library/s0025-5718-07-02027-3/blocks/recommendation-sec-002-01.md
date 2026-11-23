@@ -1,1 +1,0 @@
-On U0 it is well known (and immediate) that the series in (1.1) for z in Cp with |z| < 1 and n ≥0 satisfy the systems (2.3) and (2.4), and we shall in fact assume that the Lin(z) on U0 are given by those series.

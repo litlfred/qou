@@ -13,9 +13,13 @@
   "pageStart": 5,
   "pageEnd": 7,
   "contains": [
-    "library/download/blocks/prose-sec-001"
+    "library/download/blocks/prose-sec-001",
+    "library/download/blocks/prop-sec-001-01",
+    "library/download/blocks/lem-sec-001-02",
+    "library/download/blocks/prop-sec-001-03",
+    "library/download/blocks/cor-sec-001-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download/manifest.jsonld",
   "provenance": "ingested"
 }

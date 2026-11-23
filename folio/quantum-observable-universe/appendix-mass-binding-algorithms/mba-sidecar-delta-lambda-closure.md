@@ -1,7 +1,7 @@
 **Algorithm ($\Delta_\lambda$ per-partition value — PROVED; many-body magnitude — open).**
 *Compute the per-partition binding weight $\Delta_\lambda(K)$
 for an isotope knot $K$, consumed by Step 9b
-([`alg:per-isotope-binding`](#alg:per-isotope-binding)).*
+([Per-isotope binding $B(K) = m_e \cdot \sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda$](#alg:per-isotope-binding)).*
 
 ### Input
 
@@ -63,7 +63,7 @@ refuted on the deuteron (each supplied the wrong $r^\ast$, none touched the now-
 
 ### Correctness conditions
 
-*[`rem:term6-binding-density`](#rem:term6-binding-density)
+*[Term 6 binding density: $B(Z,N)/A \approx \alpha \cdot T_6(Z,N)/A^3 + \beta + \delta_M(Z,N)$](#rem:term6-binding-density)
 fixes the binding sum's algebraic shape. The per-partition weight is now the
 closed form $(-1)^{n(\lambda)}\dim V_\lambda$; the open piece is the separate,
 super-pairwise extensive magnitude term (see Status).*

@@ -1,4 +1,4 @@
-*Proof.* The Markov property pins each $\mathrm{tr}_M(w_\mu)$ to
+*Proof sketch.* The Markov property pins each $\mathrm{tr}_M(w_\mu)$ to
 $z^{n - \mathrm{len}(\mu)}$ by induction on $\mathrm{len}(\mu)$
 ([Jones, Theorem 5.1](#thm:jones-markov-trace)).  Cycle-type
 representatives form a class-function basis on $H_n(R, q)$ at
@@ -51,7 +51,7 @@ $$
 *with $\Lambda_k$ the depth-$k$ stratum
 (enumeration).  The
 representatives $r_k$ at $H_3(R, q)$ are explicitly identified in
-([H_3 explicit](#prop:spectral-sequence-h3-explicit)); analogues
+([H_3 explicit](#conj:spectral-sequence-h3-explicit)); analogues
 for $H_n(R, q)$ at $n \geq 4$ follow the same pattern (depth-$k$
 reduced word of length $\geq k$).*
 
@@ -62,7 +62,12 @@ are tabulated by the formal derivation.  Each table records:*
 
 - *partition $\lambda \vdash n$ and curvature-rank
   $\mathrm{depth}(\lambda)$;*
-- *Jones–Markov weight $y_\lambda$ (numeric at $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps));*
+- *Jones–Markov weight $y_\lambda$: under convention D it vanishes on
+  every shape with three or more rows and equals
+  $[a-b+1]_q/[2]_q^{a+b}$ on the two-row shape $(a, b)$, exactly and for
+  generic $q$ ([Wedderburn–Bratteli recursion](#conj:wedderburn-bratteli-recursion));
+  it is evaluated at
+  $60$ digits at the proton pin $q_0 \approx 1.1099785827513808$;*
 - *linear-system condition number and residual.*
 
 *Output sums consistent with Plancherel-completeness
@@ -78,7 +83,7 @@ $$
 $$
 
 *Solution
-([H_3 explicit](#prop:spectral-sequence-h3-explicit)):
+([H_3 explicit](#conj:spectral-sequence-h3-explicit)):
 $y_{(3)}, y_{(2,1)}, y_{(1,1,1)}$ are explicit $q$-rational
 expressions.  The depth-$k$ prefactors are*
 
@@ -129,8 +134,8 @@ $\partial y_\lambda/\partial q$ near $q_0$, (ii) consistency
 checks against any analytically derived closed form.
 
 *Symbolic linear-system solve.*
-For exact rational forms, replace numeric `numpy.linalg.solve` with
-`sympy` over a symbolic $q$.  Cost grows rapidly with $p(n)$, but the
+For exact rational forms, replace the numeric linear solve with
+exact symbolic linear algebra over a symbolic $q$.  Cost grows rapidly with $p(n)$, but the
 output is the exact $q$-rational $y_\lambda$.  Tractable in pure
 Python for $n \leq 5$; larger $n$ needs a compiled character kernel.
 
@@ -146,7 +151,7 @@ a compiled kernel for higher-$n$ probes).
 | $n$ | $p(n)$ | $y_\lambda$ witness | $\alpha_k$ closed form |
 |---|---|---|---|
 | $2$ | $2$ | available | trivial: $\alpha_0 = 1$, $\alpha_1$ from singlet |
-| $3$ | $3$ | available | done: $\alpha_0, \alpha_1, \alpha_2, \alpha_3$ ([H_3 explicit](#prop:spectral-sequence-h3-explicit)) |
+| $3$ | $3$ | available | done: $\alpha_0, \alpha_1, \alpha_2, \alpha_3$ ([H_3 explicit](#conj:spectral-sequence-h3-explicit)) |
 | $4$ — $12$ | $5$ — $77$ | available | $\alpha_k$ pending: requires depth-$k$ representatives $r_k$ at each $n$ |
 
 *Per-$n$ $\alpha_k$ derivation reduces to: (i) selecting depth-$k$

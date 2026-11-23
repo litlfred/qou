@@ -1,0 +1,1 @@
+7 ([34]) For a factorizable ribbon Hopf algebra the following modular rela- tions hold: S+ ◦S−= id = S−◦S+, (S+ ◦T )3 = λS2 +, S2 + = S, (A.2) where S(x) = R(2)S(Ad R(1)(x)) with Ad Y (x) = Y(1)xS(Y(2)) is the braided antipode, and λ̸ = 0 is deﬁned by S+(θ) = λθ−1.

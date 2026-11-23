@@ -1,1 +1,0 @@
-The invariant of the unknot should be the quotient of the polynomial ring $\Q[x,a_1, \dots, a_n]$ by the relation $x^{n+1}+a_n x^n + \dots + a_1 x=0,$ isomorphic to the $U(n)$-equivariant cohomology ring of $\mathbb{CP}^n.$ A certain version of Bar-Natan link homology \[BN\], \[K\] should correspond to the potential $x^3+ a x.$

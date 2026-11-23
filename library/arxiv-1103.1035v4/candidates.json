@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1103.1035v4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "dd5c4660e1d08ea1abdcd646c885842b0d5c4c68567b44133dc7b5a6c52bed2a",
   "file": "1103.1035v4.pdf"
@@ -16,136 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 8,
-  "by_kind": {
-   "recommendation": 8
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If $W$ is another $\\K$-module, then there is a unique $R$-module isomorphism \\[ M \\hot (V \\ot W) \\cong (M \\hot V) \\hot W \\] that commutes with the canonical homomorphisms from $M \\ot V \\ot W$; hence we shall simply denote this complete $R$-module by $M \\hot V \\hot W$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-1-some-facts-about-dg-lie-algebras.md",
-   "section_title": "Some Facts about DG Lie Algebras",
-   "pages": "4-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall need the following sort of algebraic differential calculus (which is used a lot implicitly in deformation theory).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-1-some-facts-about-dg-lie-algebras.md",
-   "section_title": "Some Facts about DG Lie Algebras",
-   "pages": "4-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall need some of this construction also for the groupoid $\\mbf{Del}^{\\mrm{r}}(\\g, R)$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-dg-lie-quasi-isomorphisms-nilpotent-algebras.md",
-   "section_title": "DG Lie Quasi-isomorphisms \u2013 Nilpotent Algebras",
-   "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For $\\al \\in \\m \\otimes \\mrm{Z}^i(\\g)$ we shall denote its cohomology class by $[\\al] \\in \\m \\otimes \\mrm{H}^i(\\g) \\cong \\mrm{H}^i(\\m \\ot \\g)$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-dg-lie-quasi-isomorphisms-nilpotent-algebras.md",
-   "section_title": "DG Lie Quasi-isomorphisms \u2013 Nilpotent Algebras",
-   "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall use the coalgebra approach to $\\mrm{L}_{\\infty}$ morphisms, following \\cite{Qu}, \\cite[Section 4]{Ko2}, \\cite{Hi2}, \\cite[Section 3.7]{CKTB} and \\cite[Section 3]{Ye2}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-7-l-morphisms-and-coalgebras.md",
-   "section_title": "L Morphisms and Coalgebras",
-   "pages": "24-26",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall often think of elements of $\\Om_{\\K[t]}$ as ``functions of $t$'', as in Section \\ref{sec:facts}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-8-l-quasi-isomorphisms-between-pronilpotent-alge.md",
-   "section_title": "L Quasi-isomorphisms between Pronilpotent Algebras",
-   "pages": "26-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Given elements $f(t) \\in \\Om_{\\K[t]}$ and $\\la \\in \\K$, we shall use the substitution notation $f(\\la) := \\sg_{\\la} (f(t)) \\in \\K$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-8-l-quasi-isomorphisms-between-pronilpotent-alge.md",
-   "section_title": "L Quasi-isomorphisms between Pronilpotent Algebras",
-   "pages": "26-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In Lemmas 3.14 and 3.18 of op.\\ cit., instead of ``$\\m \\g [1]$'' the correct expression should be ``$\\m \\g^1$'' or ``$(\\m \\g [1])^0$''.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-8-l-quasi-isomorphisms-between-pronilpotent-alge.md",
-   "section_title": "L Quasi-isomorphisms between Pronilpotent Algebras",
-   "pages": "26-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

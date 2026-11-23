@@ -1,4 +1,4 @@
-We build $d_q$ as a scalar-weighted linear combination of the
+Build $d_q$ as a scalar-weighted linear combination of the
 categorical de Rham differential $d$ and its vertical projection
 $\pi_V \circ d$.
 $d \colon \Omega^k(A) \to \Omega^{k+1}(A)$ is the non-commutative de

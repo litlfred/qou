@@ -1,0 +1,1 @@
+There is an isomorphism HF(Vγ, Vγ) ∼= QH∗(M(Σg−1)) ⊗H∗(S3; ΛR) as QH∗(M(Σg−1))-modules. This is [80, Theorem 7.5] (and is a direct application of Perutz’ Theorem 3.3 in a case where the Euler class of the sphere bundle vanishes).

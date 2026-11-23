@@ -1,0 +1,1 @@
+For a generic stability condition ζ there exist embeddings BPSζ,S W,µ ⊗H(BC*)vir ⊂ H((ψ)AW ) such that the induced morphism ⊠tw ⊕,∞ µ−→−∞  (τ)Sym⊠+  BPSζ,S W,µ ⊗H(BC*)vir  (¬ψ)H(˜∗W ) −−−−−−−→H(AS W ) is an isomorphism. The meaning of the bracketed superscripts is as in Theorem 6.12.

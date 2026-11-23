@@ -5,8 +5,8 @@
 With the metric `dH` and the two boundary isometries now DERIVED
 (`HyperbolicMetric`, `HyperbolicIsometryReflection`,
 `HyperbolicIsometryInversion`), this file states what remains genuinely open —
-geodesic existence + uniqueness in `H³` — as a **content-bearing conjecture
-class with NO instance**, and proves, *conditional on it*, that the fixed set of
+geodesic existence + uniqueness in `H³` — as a **content-bearing class**, and
+proves, *conditional on it*, that the fixed set of
 each boundary isometry is totally geodesic.  That is the vertical-plane /
 hemisphere classification Thurston cites: here it is DERIVED from the isometries
 plus the single named uniqueness hypothesis, not adopted.
@@ -21,7 +21,13 @@ pins the CANONICAL parametrisation — the geodesic one — so that uniqueness i
 to constant speed without changing its length, so this is the standard geodesic
 convention, not a restriction of content.
 
-## The wall (`HypMinimizerUnique`) — honest, no instance
+## The wall (`HypMinimizerUnique`) — since CLOSED
+
+**Status update:** the class is now inhabited without assumption —
+`hypMinimizerUnique_derived` (`QOU.Archimedean.HyperbolicGeodesicUniqueness`,
+sorry-free) and the instance `instHypMinimizerUnique`
+(`QOU.Archimedean.TotallyGeodesicUnconditional`). The paragraph below is the
+original statement of the wall, kept as the record of what was proved.
 
 `HypMinimizerUnique` axiomatises exactly ONE proposition: between two points of
 `H³` a constant-speed minimiser is unique (pointwise).  This is the real Mathlib-

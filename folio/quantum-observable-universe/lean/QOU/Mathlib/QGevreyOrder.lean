@@ -568,9 +568,11 @@ theorem cauchyMul_leadingCoeff_ge_endpoint {q s : ℝ} {a b : ℕ → K}
         θ-coefficient of the `q^{m²/4}` exponent, closing the numerical
         `θ = ½·C(m,2)` identity at the level of leading coefficients.  What
         stays probe-only is that the kernel's *actual* coefficient sequence
-        realises this order (the RSZ slope=order theorem, MI-2's harder
-        direction); this bridge compiles the leading-coefficient arithmetic, not
-        that identification. -/
+        realises this order. There is no "RSZ slope=order theorem": RSZ attach
+        the Newton slope to the q-Gevrey LEVEL, the reciprocal of the order (see
+        §"q-Gevrey LEVEL" below). The two `½`s here are a numerical coincidence of
+        an order and a leading coefficient, not a slope identification; this
+        bridge compiles the leading-coefficient arithmetic only. -/
 
 /-- **[MI-3(a), sorry-free] Limit form ⟹ eventual upper bound.**  If `a` has
     q-Gevrey order `s`, then for every `ε > 0` the leading Gaussian coefficient

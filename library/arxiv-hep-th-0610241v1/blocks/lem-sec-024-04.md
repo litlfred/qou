@@ -1,0 +1,1 @@
+Assume that the matrix MR is a multiple of a ﬁxed matrix kR, i.e. is of the form MR = x kR. In ﬂat space, and assuming that the Higgs vacuum expectation value is negligible with respect to uniﬁcation scale, the equations of motion of the spectral action ﬁx x to be either x = 0 (unstable) or satisfying x2 = 2 f2 Λ2 Tr(k∗ RkR) f0 Tr((k∗ RkR)2) . (5.17)

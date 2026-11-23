@@ -89,7 +89,8 @@ def constants():
     q0 = mp.mpf(Q_50_DIGIT_STR)
     h = q0 - 1 / q0
     me = _me if isinstance(_me, mp.mpf) else mp.mpf(str(_me))
-    alpha = me / (q0 * (q0 - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    alpha = _qbeta_e0.order_zero_scaled(me, q0)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     z = q0**3 / (q0**2 + 1)                       # convention D
     delta = flavor_split_leading(q0)
     d = {"pp": mp.mpf(0),                          # sigma

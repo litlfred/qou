@@ -1,1 +1,0 @@
-Since the clasp arcs in Ndl are doubly long, there must be some connected component of PA split along the bounded set S which has the property that as one travels along X± in this component one passes from Ndl to N ′ dl an unbounded number of times.

@@ -1,1 +1,0 @@
-We should also mention the work of integrating the group $E_6$ with octonions, carried out over some years by Tevian Dray and Corrine Manogue (e.g.\ \cite{Manogue_2010}), and which is another example of explicitly seeking to integrate exceptional groups, particle physics and octonions, and for which we hope there will be interesting analogues within the STA.

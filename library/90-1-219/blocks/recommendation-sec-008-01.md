@@ -1,1 +1,0 @@
--- Dirac Operator in the Quaternionic Formulation and 4 x 4 Matrix Formalism of Coquereaux et al. -- In this appendix we shall present an alternative derivation of the lagrangian (38) and the gauge transformation law (40) without invoking the translation (15).

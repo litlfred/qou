@@ -1,1 +1,0 @@
-For the sum above to converge for *all* nonnegative $\psi$, this sum: $$\sum_{[s]\in\underline{p^{-1}(x)}\bigcap \underline{q^{-1}(y)}} \frac{|{\rm Aut}(x)|} {|{\rm Aut}(s)|}$$ must have the following two properties:

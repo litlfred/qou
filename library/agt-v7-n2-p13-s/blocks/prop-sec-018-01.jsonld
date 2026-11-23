@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/agt-v7-n2-p13-s/blocks/prop-sec-018-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 48,
+  "pageEnd": 50,
+  "text": "prop-sec-018-01.md",
+  "derivedFrom": "library/agt-v7-n2-p13-s/sections/sec-018",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.13",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-018-55-tunneling-the---states.md (p. 48-50)",
+    "claim_id": "agt-v7-n2-p13-s#proposition:5.13",
+    "lean_status": "unformalized"
+  }
+}

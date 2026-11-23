@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-047-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 77,
+  "pageEnd": 77,
+  "text": "lem-sec-047-01.md",
+  "derivedFrom": "library/pjm-v161-n1-p02-p/sections/sec-047",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.5",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-047-resp-b-page-77.md (p. 77-77)",
+    "claim_id": "pjm-v161-n1-p02-p#lemma:6.5",
+    "lean_status": "unformalized"
+  }
+}

@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/tbl-qvalue-observation-table-data",
@@ -12,7 +13,7 @@
   ],
   "label": "tbl:qvalue-observation-table-data",
   "kind": "table",
-  "title": "Data table from rem:qvalue-observation",
+  "title": "Predicted vs observed $\\beta^-$ $Q$-values, $q$-weighted method (convention C)",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-qvalue-observation"
   ],

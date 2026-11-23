@@ -13,4 +13,7 @@ export default remark({
     status: "verified",
   },
   uses: ["conj:six-term-per-derivation-weights"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The `term4_frobenius_codim` evaluation gives the same value for bound and free configurations" },
+  ],
 });

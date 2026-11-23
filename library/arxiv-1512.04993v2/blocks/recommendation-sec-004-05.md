@@ -1,1 +1,0 @@
-If instead you have another question in mind---factorization, chess strategy, etc.---then the unitary is useful to you only if combined with other computing resources to ``encode'' the problem instance in terms of ingoing perturbations into the black hole, and to ``decode'' the Hawking radiation output of the black hole in terms of a strategy recommendation.

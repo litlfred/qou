@@ -1,4 +1,4 @@
-We develop the $Q$-value of a nuclear transition. We analyse its precision behaviour, crossing-level decomposition, $q$-anomaly, and the non-conservation of $q$-momentum. The $q$-anomaly breaks classical energy conservation.
+This section develops the $Q$-value of a nuclear transition. It analyses its precision behaviour, crossing-level decomposition, $q$-anomaly, and the non-conservation of $q$-momentum. The $q$-anomaly breaks classical energy conservation.
 
 This definition is consistent with mass accuracy. If $|\Delta M/M| \approx 0.002\%$, then $Q$-values for transitions with $Q \gg \Delta M$ inherit the same precision. For transitions with small $Q$ (e.g. ${}^3\mathrm{H} \to {}^3\mathrm{He}$, $Q = 18.6$ keV), catastrophic cancellation amplifies the mass error: $\delta Q/Q \approx (M/Q) \times (\delta M/M)$.
 
@@ -15,7 +15,7 @@ $$
   - \mathfrak{E}_\times^{(\epsilon_{\mathrm{dau}})}(q).
 $$
 
-For a $\mathfrak{d} \to \mathfrak{u}$ change ($\sigma_k^{-1} \to \sigma_k$), we have $\Delta \mathfrak{E}_\times = q - q^{-1}$. The $Q$-value is:
+For a $\mathfrak{d} \to \mathfrak{u}$ change ($\sigma_k^{-1} \to \sigma_k$), $\Delta \mathfrak{E}_\times = q - q^{-1}$. The $Q$-value is:
 
 $$
   Q
@@ -24,11 +24,11 @@ $$
   -  \mathfrak{S}_q(e).
 $$
 
-The unknot has trivial action. We drop $\mathfrak{S}_q(\nu^{\sigma}) = 0$.
+The unknot has trivial action. Drop $\mathfrak{S}_q(\nu^{\sigma}) = 0$.
 
 ## Classical limit and the $q$-anomaly
 
-**Warning.** We do not assume classical energy conservation.
+**Warning.** Classical energy conservation is not assumed.
 
 In classical physics, conservation of energy defines the $Q$-value:
 
@@ -56,7 +56,7 @@ $$
   d_q^2  \neq  0 \quad \text{for } q \neq 1.
 $$
 
-**Corollary:** The total $q$-energy of the products need not equal the total $q$-energy of the parent. We define the $q$-anomaly:
+**Corollary:** The total $q$-energy of the products need not equal the total $q$-energy of the parent. Define the $q$-anomaly:
 
 $$
   \delta_q
@@ -98,7 +98,7 @@ $$
 
 **At $q = 1$:** $\delta_q = 0$ and $Q \to Q_{\mathrm{classical}}$. Classical conservation is restored.
 
-**At the substrate parameter $q$:** $\delta_q \neq 0$. For tritium ($A = 3$), we have $\Delta q_{\mathrm{eff}} = 2/9 \cdot \hbar_q^2 \approx 0.0022$. This gives a correction $\delta_q / Q \sim 5\%$. This correction brings the tritium half-life prediction from 13 yr to 12.4 yr (observed 12.32 yr).
+**At the substrate parameter $q$:** $\delta_q \neq 0$. For tritium ($A = 3$), $\Delta q_{\mathrm{eff}} = 2/9 \cdot \hbar_q^2 \approx 0.0022$. This gives a correction $\delta_q / Q \sim 5\%$. This correction brings the tritium half-life prediction from 13 yr to 12.4 yr (observed 12.32 yr).
 
 ## $Q$ is not conserved
 
@@ -118,14 +118,14 @@ $$
   \text{kinetic terms}.
 $$
 
-We evaluate the daughter at the shifted $q$. This is the $q$-analogue of energy conservation.
+Evaluate the daughter at the shifted $q$. This is the $q$-analogue of energy conservation.
 
 ## Limits
 
 | $q$ | Regime | $Q$ | $\delta_q$ |
 |-----|--------|:---:|:---:|
 | $q = 1$ | Classical | $0$ | $0$ |
-| the substrate $q$ | Our universe | $\mathcal{Q}_{\exp} + \delta_q$ | $\neq 0$ |
+| the substrate $q$ | Observed universe | $\mathcal{Q}_{\exp} + \delta_q$ | $\neq 0$ |
 | $q \to \infty$ | Deep-quantum | $\to \infty$ | $\to \infty$ |
 
 ## $q$-Momentum

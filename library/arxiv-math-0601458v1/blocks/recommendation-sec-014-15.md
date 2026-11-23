@@ -1,1 +1,0 @@
-It should be clear that in the case where the "overlying" groupoid of an $M$-groupoid happens to be a set (i.e. groupoid with only trivial morphisms), this reduces to the definition of an $M$-set and its cardinality.

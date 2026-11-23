@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-068-01",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 68,
+  "pageEnd": 68,
+  "text": "rem-page-068-01.md",
+  "derivedFrom": "library/lect-mathematical-ideas-notions-qft-2002/sections/page-068",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lect-mathematical-ideas-notions-qft-2002/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-068.md (p. 68-68)",
+    "claim_id": "lect-mathematical-ideas-notions-qft-2002#rem-page-068-01"
+  }
+}

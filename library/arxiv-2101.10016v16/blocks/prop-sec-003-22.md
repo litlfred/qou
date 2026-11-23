@@ -1,0 +1,1 @@
+Let C be a tensor ∗-category, C ′ a tensor C∗ -category and (F, G) a weak quasi-tensor structure for a ∗-functor F : C → C ′ . Let ρ, σ ∈ C be a pair of objects. If F ∗ ρ,σ and Gρ,σ are isometries then F ∗ ρ,σ = Gρ,σ. In particular, any unitary weak quasi-tensor structure is automatically strongly unitary.

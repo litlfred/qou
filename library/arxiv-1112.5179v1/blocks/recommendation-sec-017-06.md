@@ -1,1 +1,0 @@
-In this affine $Sp(2N,{\mathbb Z})$ frame, we know that the leading exponent function $\mathrm{lead}_{\{\Delta_i\},\tilde\Pi}(m,e)$ of the product index $\mathcal{I}_{\{\Delta_i\},\tilde\Pi}(m,e)$ should grow linearly in any electric direction $e_I$ corresponding to the charge of $\mathcal{O}_I$, with slope $R_{\mathcal{O}_I}/2$.

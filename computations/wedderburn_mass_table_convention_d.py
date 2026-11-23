@@ -58,6 +58,8 @@ set_compute_dps(50)
 from qou_substrate.constants import q_at  # mpmath-native proton pin; NOT the f64 `Q`
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
+from codata_constants import M_C12_ATOMIC_MEV_VALIDATION, M_HE4_ATOMIC_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 # q0 at full working precision. `constants.Q` is `_solve_q_proton_f64` -- a
 # float64 solve -- so `mpf(str(Q))` would inflate a double's error to 50 dps
@@ -152,9 +154,9 @@ def minimise(Z, N, restarts=4, seed=0):
 
 # (atom, Z, N, M_obs AME2020 as recorded, M_pred as published in convention C)
 ROWS = [
-    ("H", 1, 0, "938.78313", "938.910"),      ("He", 2, 2, "3728.4013", "3734.624"),
+    ("H", 1, 0, "938.78313", "938.910"),      ("He", 2, 2, _ame_nstr(M_HE4_ATOMIC_MEV_VALIDATION, 30), "3734.624"),
     ("Li", 3, 4, "6535.367", "6534.188"),     ("Be", 4, 5, "8394.7937", "8378.704"),
-    ("B", 5, 6, "10255.103", "10237.301"),    ("C", 6, 6, "11177.9292", "11168.874"),
+    ("B", 5, 6, "10255.103", "10237.301"),    ("C", 6, 6, _ame_nstr(M_C12_ATOMIC_MEV_VALIDATION, 30), "11168.874"),
     ("N", 7, 7, "13043.7816", "13029.983"),   ("O", 8, 8, "14899.1693", "14890.701"),
     ("F", 9, 10, "17696.901", "17690.792"),   ("Ne", 10, 10, "18622.8354", "18615.219"),
     ("Na", 11, 12, "21414.8301", "21418.256"), ("Mg", 12, 12, "22341.908", "22342.658"),

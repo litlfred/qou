@@ -1,0 +1,1 @@
+For any J ⊆N, the ﬁltration by degJ( · ) as deﬁned above is compatible with the multiplication in A. I.e., for any partitions ρ, σ, τ, f ρ στ̸ = 0 =⇒|ρ|J ≤|σ|J + |τ|J , so that this is an algebra ﬁltration.

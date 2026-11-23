@@ -1,1 +1,0 @@
-After orbifolding by the symmetry $\hat g=(\delta, g)$, only the states invariant under $g\in O(\Gamma_{K3})$ should be included in the spectrum (the shift $\delta$ has no effect on this set of charges).

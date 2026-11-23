@@ -1,0 +1,1 @@
+— Let (γ ∈Rd, A ∈M(d × d, R), Π) be the triplet of the Lévy–Khintchine representation of the Fourier transform of an inﬁnitely divisible random variable X (cf. [53, Theorem 8.1]). Then, X is supported on Zd and has a moment of order 2 if and only if: (1) A = 0 and γ ∈Zd; (2) the Lévy measure Π is supported on Zd and has a second moment.

@@ -1,1 +1,0 @@
-Likewise, assuming that SU(2)L×SU(2)R is gauged and again asking for a compelling reason for the quantization of electric charge dic- tate that one must minimally gauge the symmetry SU(4)c (rather than SU(3)c × U(1)B−L).

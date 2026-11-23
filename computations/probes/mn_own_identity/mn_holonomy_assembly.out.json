@@ -1,0 +1,20 @@
+{
+  "rank_one_n_minus_p": "(q^-2 - 1) mu - (1 - q^-1)[2]_q/2",
+  "rank_one_check": true,
+  "block_n_minus_p": "(q - 1)*(2*q**13 + 2*q**12 - 6*q**11 - 6*q**10 + 6*q**9 + 3*q**8 - 4*q**7 - 7*q**6 + 6*q**5 + 6*q**4 - 6*q**3 - 6*q**2 + 2*q + 2)/(2*q**8)",
+  "block_form": "(q^-2 - 1)(-h^4[3]_q) - 3(1 - q^-1)[2]_q/2",
+  "block_check": true,
+  "pin": {
+    "own_sector_part_complex": "(0.00054754044955288939641 - 0.014351118287932001299j)",
+    "isospin_part_rank_one": "-0.099621566811297160597",
+    "rank_one_total_complex": "(-0.0990740263617442712 - 0.014351118287932001299j)",
+    "block_own_sector_part": "0.0010950808991057787928",
+    "block_total": "-0.297769619534785703",
+    "ratio_own_sector_to_isospin_block": "-0.0036641359702766549786"
+  },
+  "q_to_1": {
+    "mu_order": "h^2 (|mu|^2 = h^4 [3]_q)",
+    "own_sector_part_order": "h^3",
+    "isospin_part_order": "h"
+  }
+}

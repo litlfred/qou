@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-phase-transition-interpretation",
@@ -15,7 +16,7 @@
   "title": "Three phases from Hecke channels and the triple point",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-phase-transition-boundary",
-    "papers/quantum-observable-universe/blocks/prop-composite-crossing-parity",
+    "papers/quantum-observable-universe/blocks/conj-composite-crossing-parity",
     "papers/quantum-observable-universe/blocks/rem-composite-crossing-sublimation-criteria"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/prop-phase-transition-boundary",

@@ -13,9 +13,12 @@
   "pageStart": 10,
   "pageEnd": 14,
   "contains": [
-    "library/aif-2009-59-1-347-0/blocks/prose-sec-004"
+    "library/aif-2009-59-1-347-0/blocks/prose-sec-004",
+    "library/aif-2009-59-1-347-0/blocks/thm-sec-004-01",
+    "library/aif-2009-59-1-347-0/blocks/prop-sec-004-02",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-004-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2009-59-1-347-0",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2009-59-1-347-0",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
   "provenance": "ingested"
 }

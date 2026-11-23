@@ -18,6 +18,7 @@ export default remark({
     "audit-forward-reference",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The quantified targets are pinned in the witness `m-tau-volume-target.witness.json`." },
     {
       kind: "status",
       date: "2026-06-03",

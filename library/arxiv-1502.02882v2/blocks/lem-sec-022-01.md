@@ -1,0 +1,1 @@
+In the pairing convention for the graphical calculus associated to a fusion category, we have X α,p dp = X k dk where dp are the fusion dimensions, X is an arbitrary object, and f : Xk ⊗X → Xk ⊗X is an arbitrary morphism.

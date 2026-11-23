@@ -1,0 +1,1 @@
+Let gpnq be the number of simple walks on the p3, nq torus braid γn. Then gpnq “ c1αn ` c2βn ` c3γn, where α, β, γ are the roots of t3 ´ t2 ´ t ´ 1 (see Equation (7) for explicit formulas for the roots) and where c1 “ 1 ` 3α´1 ´α2 ` 4α ´ 1, c2 “ 1 ` 3β´1 ´β2 ` 4β ´ 1, c3 “ 1 ` 3γ´1 ´γ2 ` 4γ ´ 1.

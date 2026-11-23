@@ -1,1 +1,1 @@
-An Ω-involutive weak quasi-Hopf algebra is called of Kac type if it
+An Ω-involutive weak quasi-Hopf algebra is called of Kac type if it admits a (unique) strong antipode satisfying one of the equivalent conditions stated in Cor. 11.17. We shall also refer to the antipode as being of Kac type. The definition is motivated by the fact that if A is in turn a Hopf ∗–algebra in the usual sense (Ω = I) then ω = I, and Cor. 11.17 reduces to the well known characterisation of Hopf ∗–algebras of Kac type.

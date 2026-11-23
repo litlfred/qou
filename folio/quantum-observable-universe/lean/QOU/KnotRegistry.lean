@@ -159,25 +159,28 @@ noncomputable def photonEntry : KnotEntry where
 The registry's `photonEntry` records the photon's **bare** limit — the
 identity braid `𝟙` — because `KnotEntry` carries a single `BraidWord`,
 not a Hecke-algebra superposition.  The genuine photon is a four-term
-element of `H₃(q)`, `γ = 𝟙 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁`, over the basis
-words `{𝟙, σ₀, σ₁, σ₀σ₁}` with real colour weights.  It is therefore
+element of `H₃(q)`, `γ = 𝟙 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁⁻¹` (`def:photon`; the last
+term is the chiral pair-production vertex by owner ruling 2026-11-18, bean
+`qou-99qc`). Since `σ₀σ₁⁻¹ = σ₀σ₁ − h·σ₀`, its support in the normal-form basis is
+the four words `{𝟙, σ₀, σ₁, σ₀σ₁}`.  It is therefore
 **not** the unknot `0₁` (which is the neutrino): its support has four
 words, and its two-photon products generate the full operator basis
 (see the `gamma-gamma-generates-particles` proposition). -/
 
 /-- The photon as a four-term element of the Hecke algebra `H₃(q)`:
-    `γ = 𝟙 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁`.  The colour weights are formal,
+    `γ = 𝟙 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁⁻¹`.  The colour weights are formal,
     so this is stated over a generic commutative ring (no `q₀`). -/
 structure PhotonHeckeElement (R : Type*) [CommRing R] where
   /-- Colour weight of `σ₀`. -/
   phi0 : R
   /-- Colour weight of `σ₁`. -/
   phi1 : R
-  /-- Colour weight of `σ₀σ₁ = L₊`. -/
+  /-- Colour weight of the chiral vertex `σ₀σ₁⁻¹`. -/
   phi01 : R
 
-/-- The four basis words carrying the photon, as `σ`-index sequences:
-    `𝟙 = []`, `σ₀ = [0]`, `σ₁ = [1]`, `σ₀σ₁ = [0,1]`. -/
+/-- The four normal-form basis words carrying the photon, as `σ`-index
+    sequences: `𝟙 = []`, `σ₀ = [0]`, `σ₁ = [1]`, `σ₀σ₁ = [0,1]` (the vertex
+    `σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀` lies in their span). -/
 def photonSupportWords : List (List ℕ) := [[], [0], [1], [0, 1]]
 
 /-- The photon is a **four-term** element: its support has four basis

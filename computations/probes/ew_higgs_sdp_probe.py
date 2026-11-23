@@ -48,6 +48,13 @@ from joint_tower_sdp_solver_v2 import (
     sdp_feasibility_h3,
     q_0_NUMERIC,
 )
+import mpmath as mp
+from _precision import set_compute_dps, fmt
+from qou_substrate.constants import Q_50_DIGIT_STR
+
+# Ref: [leitner2026] conj:electroweak-higgs-torus-link-triplet
+set_compute_dps()
+Q_PROTON = mp.mpf(Q_50_DIGIT_STR)  # proton pin (package layer)
 
 # ───────────────────────────────────────────────────────────────────
 # EW/Higgs candidate registry — three paths.
@@ -170,18 +177,19 @@ def solve_ew_entry(entry: dict) -> dict:
     elif n == 2:
         # B_2 has trivial Hecke quotient (one generator, one relation).
         # PSD check is straightforward: σ_1^k acts as q^k on sym, (-q^{-1})^k on alt.
-        import numpy as np
-        q = q_0_NUMERIC
+        # Exact closed form at the proton q0 (mpmath, no float64): q^k > 0 for
+        # every k, and (-q^{-1})^k >= 0 iff k is even, so PSD is decided by
+        # the parity of k, not by a numerical threshold.
+        q = Q_PROTON
         k = sum(1 if w > 0 else -1 for w in word)
-        sym_eig = q ** k  # sym: q^k for any k
-        alt_eig = (-q ** (-1)) ** k if k != 0 else 1.0
-        # For generic k, alt_eig may be negative (depends on parity).
+        sym_eig = q ** k
+        alt_eig = (-1 / q) ** k
         cert["sdp_feasibility"] = {
-            "B_2_sym_eigenvalue": float(sym_eig),
-            "B_2_alt_eigenvalue": float(alt_eig),
-            "B_2_sym_psd": sym_eig >= -1e-9,
-            "B_2_alt_psd": alt_eig >= -1e-9,
-            "all_blocks_psd_or_close": (sym_eig >= -1e-9) and (alt_eig >= -1e-9),
+            "B_2_sym_eigenvalue": fmt(sym_eig),
+            "B_2_alt_eigenvalue": fmt(alt_eig),
+            "B_2_sym_psd": True,
+            "B_2_alt_psd": k % 2 == 0,
+            "all_blocks_psd_or_close": k % 2 == 0,
             "k": k,
             "comment": (
                 "B_2 Hecke has only sym + alt blocks. σ_1^k eigenvalues: "
@@ -227,9 +235,9 @@ def main():
                       f"{'PSD' if sdp['standard_(2,1)']['psd_symmetric_part'] else 'NOT PSD'}")
                 print(f"    ALL PSD: {sdp['all_blocks_psd_or_close']}")
             else:
-                print(f"    sym eig: {sdp['B_2_sym_eigenvalue']:+.6e}  "
+                print(f"    sym eig: {mp.nstr(mp.mpf(sdp['B_2_sym_eigenvalue']), 7)}  "
                       f"{'PSD' if sdp['B_2_sym_psd'] else 'NOT PSD'}")
-                print(f"    alt eig: {sdp['B_2_alt_eigenvalue']:+.6e}  "
+                print(f"    alt eig: {mp.nstr(mp.mpf(sdp['B_2_alt_eigenvalue']), 7)}  "
                       f"{'PSD' if sdp['B_2_alt_psd'] else 'NOT PSD'}")
                 print(f"    ALL PSD: {sdp['all_blocks_psd_or_close']}")
 
@@ -243,7 +251,8 @@ def main():
             "duty; γ non-torus) per docs/audits/2026-05-02-nv-frob-filter-"
             "conjectures.md NV-1 §Bring-surface inventory."
         ),
-        "q_0_numeric": q_0_NUMERIC,
+        "q_0_numeric": fmt(Q_PROTON),
+        "q_0_numeric_h3_solver": "float64 q_0_NUMERIC of joint_tower_sdp_solver_v2 (H_3 entries only; not changed here)",
         "registry": REGISTRY_EW_HIGGS,
         "per_entry_certificates": per_entry_certs,
         "summary": {

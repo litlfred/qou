@@ -1,1 +1,0 @@
-- The moduli space of vacua of the 3d theory must coincide (with some caveats) with the space of flat $SL(2)$ connections on $M$.

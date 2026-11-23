@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0410111v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0ccaeeabd8de6b5fca592009cff67076819b17e01c77d5cfd9083282a6809a49",
   "file": "0410111v2.pdf"
@@ -16,31 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The purpose of this section is to present an algorithm to generate lower and upper bounds $L_k,U_k$ to the integer global optimum value of $$\\hbox{maximize} \\ f(x_1,\\dots,x_d) \\ \\hbox {subject to} \\ (x_1,\\dots,x_d) \\in P \\cap \\mathbb Z^d.$$ We should also remark that in our algorithm the polynomial objective function $f$ can be arbitrary (e.g. non-convex).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-fptas-for-optimizing-non-negative-polynomials.md",
-   "section_title": "FPTAS for Optimizing Non-Negative Polynomials over Integer Points of Polytopes",
-   "pages": "2-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

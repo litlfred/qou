@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-flavor-split-substrate",
+  "@type": [
+    "folio-assistant-sci:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:flavor-split-substrate",
+  "kind": "proof",
+  "title": "Proof of the substrate-pure flavor split formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate"
+  ],
+  "text": "flavor-split-substrate-proof.md",
+  "provenance": "authored"
+}

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "celebratio-mathematica-neumann-hyperbolic-3-manifolds",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9e541693c60cbd3ffbc5ce0e1e8fe5c84bf8c7a22d8a74faec8173bebda8f34b",
   "file": "Celebratio Mathematica \u2014 Neumann \u2014 Hyperbolic 3-Manifolds.pdf"
@@ -11,151 +14,45 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 9
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "The starting point of the paper [1] was Thurston\u2019s amazing insight in the 1980\u2019s that all 3-dimensional manifolds should be canonically divisible into pieces having a well-defined geometric structure of one of eight types, the most important of which is the hyperbolic one.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-ideal-triangulations-and-the-gluing-equations.md",
-   "section_title": "Ideal triangulations and the gluing equations",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Specifically, the shape parameters at that edge of all tet\u2010 rahedra that are incident with it must clearly have arguments that add up to (because otherwise the metric would not be smooth along that edge), but in fact the shape parameters themselves have product by an easy argument.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-ideal-triangulations-and-the-gluing-equations.md",
-   "section_title": "Ideal triangulations and the gluing equations",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Before studying the effect of surgeries, we must understand the volume of a single hyperbolic 3-manifold .",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-volumes-and-dehn-surgeries.md",
-   "section_title": "Volumes and Dehn surgeries",
-   "pages": "4-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should mention that and can be defined invariantly, without us\u2010 ing any triangulation, as follows: the deformed hyperbolic structure on corres\u2010 ponds to a homomorphism near to the inclusion map, and then and are simply the logarithms of the ratios of the eigenvalues of the images un\u2010 der of the meridians and longitudes, respectively.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-volumes-and-dehn-surgeries.md",
-   "section_title": "Volumes and Dehn surgeries",
-   "pages": "4-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should perhaps also be mentioned that simpler proofs of the last results described could probably have been obtained by using the second rather than the first volume formula in (4).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-volumes-and-dehn-surgeries.md",
-   "section_title": "Volumes and Dehn surgeries",
-   "pages": "4-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should mention that parts of both sections have been transferred here from the arXiv version of [e33] and also edited somewhat for the purpose of the present exposition.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-the-bloch-group-and-the-extended-bloch-group.md",
-   "section_title": "The Bloch group and the extended Bloch group",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "On the other hand, as described at the end of the last section, the hyperbolic volume should actually be seen as the imaginary part of a complexified volume taking values in , so we would like to replace the function by some complex-valued version of the dilogarithm which, even though it may be many- valued at individual arguments , becomes one-valued modulo if we take a linear combination of its values with arguments belonging to the Bloch group.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-the-bloch-group-and-the-extended-bloch-group.md",
-   "section_title": "The Bloch group and the extended Bloch group",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Extensive numerical experiments led to a concrete conjecture saying that this is the case and also to a definition (originally highly speculative, but now sup\u2010 ported by more theory) of \u201chigher Bloch groups\u201d that should be iso\u2010 morphic after tensoring with to the higher algebraic -groups and should express the Borel regulator in terms of polylogarithms.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "This consequence was observed in [e3] and was also generalized there to the value of for arbitrary number fields , with for any value of .",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-005-6-connections-to-number-theory.md (p. 16-23)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-005-6-connections-to-number-theory.md",
    "section_title": "Connections to number theory",
    "pages": "16-23",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Finally, we mention that the new generalized Kashaev invariants have beautiful arithmetic properties generalizing the known property [e10] that the original Kashaev invariant belongs to the so-called Habiro ring The results of [e33] and [e34] suggest that there should be a Habiro ring asso\u2010 ciated to any number field in which the generalized Kashaev invariants take their values and which is graded by the Bloch group of .",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-connections-to-number-theory.md",
-   "section_title": "Connections to number theory",
-   "pages": "16-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-005-6-connections-to-number-theory.md (p. 16-23)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-005-01",
+   "block_iri": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/blocks/prop-sec-005-01",
+   "claim_id": "celebratio-mathematica-neumann-hyperbolic-3-manifolds#prop-sec-005-01"
   }
  ]
 }

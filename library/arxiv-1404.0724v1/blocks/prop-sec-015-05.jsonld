@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1404.0724v1/blocks/prop-sec-015-05",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 22,
+  "pageEnd": 26,
+  "text": "prop-sec-015-05.md",
+  "derivedFrom": "library/arxiv-1404.0724v1/sections/sec-015",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.9",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-015-51-the-yang-baxter-equation-and-quasi-triangular.md (p. 22-26)",
+    "claim_id": "arxiv-1404.0724v1#proposition:5.9",
+    "lean_status": "unformalized"
+  }
+}

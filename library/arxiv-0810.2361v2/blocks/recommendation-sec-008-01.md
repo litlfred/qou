@@ -1,1 +1,0 @@
-If $F : \boldsymbol{\operatorname{{X}}}\mathop{\rightarrow}\boldsymbol{\operatorname{{Vect}}}$ is as above, there should be a canonical isomorphism between $[G,f^{\ast}(F)]$ (a hom-set in $[\boldsymbol{\operatorname{{Y}}},\boldsymbol{\operatorname{{Vect}}}]$) and $[p_{\ast}(G),F]$ (a hom-set in $[\boldsymbol{\operatorname{{X}}},\boldsymbol{\operatorname{{Vect}}}]$).

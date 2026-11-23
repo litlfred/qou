@@ -1,1 +1,0 @@
-Because of this, when comparing the results in these notes with those from the representation theory of the symmetric groups (q¢ = 1), or with the papers of Dipper and James, the Specht module $* must be replaced with S*’*.

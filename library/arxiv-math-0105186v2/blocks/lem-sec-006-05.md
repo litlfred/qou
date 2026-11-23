@@ -1,0 +1,1 @@
+Let g be a smooth map from some arbitrary manifold G to Qζ. Then, for any J and U as in the previous lemma, there are J′ ∈Jreg(E, π, Q, j) arbitrarily close to J, with J′ = J outside π−1(U), such that evζ|MJ′ is trans- verse to g.

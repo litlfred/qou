@@ -1,1 +1,1 @@
-The adjoint representation is the irreducible spin-1 representation, guaranteeing $\mathrm{Hom}(\mathbf{1}, V_1) = 0$.
+For $\mathfrak{g} = \mathfrak{sl}_2$ over a field of characteristic $\neq 2$, the adjoint representation is the irreducible spin-1 representation $V_1$, and $\mathrm{Hom}(\mathbf{1}, V_1) = 0$. The statement concerns the adjoint representation of the Lie algebra (or of $U_q(\mathfrak{sl}_2)$ at generic $q$), not the adjoint coaction of $\mathcal{O}_q(G)$ on itself, whose invariants are nonzero.

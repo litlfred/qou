@@ -159,7 +159,7 @@ complement is Thurston hyperbolisation plus Mostow rigidity, and needs hyperboli
 
 /-- The 5₂ ideal tetrahedron: shape `y₁`. -/
 noncomputable def fiveTwoTet : QOU.MathlibExt.IdealTetrahedron :=
-  ⟨fiveTwoShape, fiveTwoShape_im_pos⟩
+  .ofIm fiveTwoShape fiveTwoShape_im_pos
 
 /-- **The 5₂ ideal triangulation**, with SnapPy's actual shapes.
 
@@ -194,7 +194,7 @@ noncomputable def fiveTwoTriangulation : QOU.MathlibExt.IdealTriangulation 3 :=
 
 /-- The middle tetrahedron's shape is `1/(1 − y₁)`, matching SnapPy. -/
 theorem fiveTwoTriangulation_middle_shape :
-    (fiveTwoTriangulation.tet 1).shape = 1 / (1 - fiveTwoShape) := rfl
+    ((fiveTwoTriangulation.tet 1).shape : ℂ) = 1 / (1 - fiveTwoShape) := rfl
 
 /-- **`volume (5₂ triangulation) = VOL_5_2`.**
 
@@ -210,6 +210,7 @@ theorem fiveTwoTriangulation_volume : fiveTwoTriangulation.volume = VOL_5_2 := b
       + QOU.MathlibExt.IdealTetrahedron.volume fiveTwoTet
       + QOU.MathlibExt.IdealTetrahedron.volume fiveTwoTet = _
   unfold QOU.MathlibExt.IdealTetrahedron.volume fiveTwoTet
+  rw [QOU.MathlibExt.IdealTetrahedron.ofIm_shape]
   ring
 
 /-- And in dilogarithm form. -/

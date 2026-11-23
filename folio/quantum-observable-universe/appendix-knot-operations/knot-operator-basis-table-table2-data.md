@@ -1,9 +1,11 @@
-**Table 2.** Action of the trefoil operator $\beta(T_{2,3}) = e^-$ on
-NF basis pairs. Each cell gives the coefficient of the column NF basis
+**Table 2.** Action of the electron operator
+$\beta(T_{2,2}^{(3)}) = e^- = \sigma_0\sigma_1\sigma_0$, whose closure
+in $B_3$ is the Hopf link, on NF basis pairs. Each cell gives the coefficient of the column NF basis
 operator in the product $b_i \cdot e^- \cdot b_j$, exact in the Hecke
 amplitude $h = q - q^{-1}$. The six NF basis elements
-$\{\ \gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-\ \}$ and the
-amplitude $h$ are introduced in the parent remark
+$\{\ \gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-\ \}$, the
+amplitude $h$ and the operator names $T_{2,n}^{(3)}$ are introduced in
+the parent remark
 [Knot operator action on NF basis pairs](#rem:knot-operator-basis-table).
 
 | $b_i \cdot e^- \cdot b_j$ | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ |
@@ -18,5 +20,5 @@ amplitude $h$ are introduced in the parent remark
 The elided entries ($\ldots$) in the final row are the remaining NF
 coefficients of $e^- \cdot e^- \cdot e^-$ ($L_+$, $L_-$, $e^-$
 channels); their full symbolic values are recorded in the computation
-witness `photon-operator-table.witness.json` referenced by the parent
+attached to the parent
 remark [Knot operator action on NF basis pairs](#rem:knot-operator-basis-table).

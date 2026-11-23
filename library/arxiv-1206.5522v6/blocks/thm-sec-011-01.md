@@ -1,0 +1,1 @@
+For V a symmetric monoidal ∞-category which is ⊗-presentable, there is an equiv- alence Z : AlgDiskB n (V) / H(MﬂdB n , V) : evRn o between DiskB n -algebras in V and homology theories of B-framed n-manifolds with coeﬃcients in V. This equivalence is implemented by the factorization homology functor R and the functor of evaluation on Rn.

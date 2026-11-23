@@ -1,0 +1,4 @@
+one-u sector indices [3, 5, 6]  two-u sector indices [1, 2, 4]
+sigma0 -> A0, sigma1 -> A1 on one-u; sigma0 -> A1, sigma1 -> A0 on two-u: True
+h^2 C on sites 0,1,2 restricted to the one-u and to the two-u sector equals G: True
+G commutes with A0 and A1: True

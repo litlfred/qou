@@ -1,1 +1,0 @@
-To see why the exponent must be weakened consider the example of Bernoulli random variables $X_1 , \ldots , X_n$ with $n$ even, $\{ X_1 , \ldots , X_{n/2} \}$ independent with mean $1/2$, and $X_{n/2 + j} = 1 - X_j$ for $1 \leq j \leq n/2$.

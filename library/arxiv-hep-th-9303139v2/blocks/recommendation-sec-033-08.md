@@ -1,1 +1,0 @@
-Two terms in the line $(B)$ are eliminated by adjustment of $\alpha $ and $\gamma $: \be \gamma ^2 = {N\over \beta ^2}\hbox{ , } \alpha = {2N\over \beta }\hbox{ .} \ee As we shall see soon, $\gamma ^2 = N/\beta ^2$ is large in the limit of $N\rightarrow \infty $ .

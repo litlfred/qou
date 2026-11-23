@@ -1,1 +1,0 @@
-As a last step before applying the iterated filtering algorithm to our observations we recommend to fit the data first to the simpler, deterministic model in order to get a feeling for how the parameters behave and identify possible problems with the likelihood surface etc.

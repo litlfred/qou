@@ -1,0 +1,1 @@
+Let C and D be categories, and let S ⊆C and T ⊆D be multiplicatively closed sets of morphisms. Then S × T is a multiplicatively closed set of morphisms in C × D, and the canonical functor Θ : (C × D)S × T →CS × DT is an isomorphism of categories.

@@ -1,0 +1,1 @@
+Let (tn) be a Markov trace on (BMW †† n ) with value in some S††-module M, and t′ n its composite with M →M ⊗S††[(a−x)−1, (2a−x)−1, (2a+x)−1]. Then t′ n is a linear combination tH n , tK n , t†† n with coeﬃcients in M ⊗R S††[(a −x)−1, (2a −x)−1, (2a + x)−1].

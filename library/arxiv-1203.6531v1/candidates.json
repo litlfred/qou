@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1203.6531v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "29541f28c1c62d8f5172503dcc5ff03c3483fc67fb685c174d51074d3daf66d0",
   "file": "1203.6531v1.pdf"
  },
  "provenance": {
-  "title": "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0",
+  "title": "Groebner-Shirshov basis and reduced words for affine Weyl group A_n",
   "authors": "GR\u00d6BNER-SHIRSHOV BASIS AND REDUCED WORDS FOR",
   "arxiv": {
    "id": "1203.6531",
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Hence $w_{1}w_{2}\\ldots w_{k+1}$ must be a reduced word. \u25fb :::",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-gr\u00f6bner-shirshov-basis-and-reduced-words.md",
-   "section_title": "Gr\u00f6bner-Shirshov Basis and Reduced Words",
-   "pages": "3-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "::: proof *Proof.* Since we identify each word $\\widehat{w}$ with a sequence of connected basic partitions, we must find a correspondence between sequences of connected partitions and the partitions fit into a box of size $n \\times n$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-counting-reduced-words.md",
-   "section_title": "Counting Reduced Words",
-   "pages": "7-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

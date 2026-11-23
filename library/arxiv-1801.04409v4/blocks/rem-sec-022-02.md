@@ -1,0 +1,1 @@
+2. (i) We expect that the assumption on q in Theorem A.1 is automatically satisﬁed, i.e., there is no categoriﬁcation of K∞where q2̸ = ±1 is a root of 1. Moreover, it seems likely that the assumption on pivotality of C can also be dropped.

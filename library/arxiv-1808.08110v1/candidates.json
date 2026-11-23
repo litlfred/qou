@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1808.08110v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "4bf98566792d47bdc7c72bce3c3d0e4a82dbc3ec5d8287d112b180e94c7fb443",
   "file": "1808.08110v1.pdf"
  },
  "provenance": {
-  "title": "EXCEPTIONAL QUANTUM GEOMETRY",
+  "title": "Exceptional quantum geometry and particle physics II",
   "authors": "AND PARTICLE PHYSICS II",
   "arxiv": {
    "id": "1808.08110",
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This part of [@mdv:2016b] will be briefly reviewed in Sections 2 and 3.\\ The quark-lepton symmetry means here (as in [@mdv:2016b]) the fact that to each quark corresponds one and only one lepton.\\ The automorphism group of the octonion algebra $\\mathbb O$ is the exceptional group $G_2$ while the subgroup which preserves the splitting $\\mathbb C\\oplus \\mathbb C^3$ is $SU(3)$ which in our interpretation should be identified to the color group $SU(3)_c$ (compare to the approach of [@gun-gur:1973]).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The automorphism group of the exceptional algebra $J^8_3$ is the exceptional group $F_4$ while the subgroup which preserves the representation of the octonions occurring in the elements of $J^8_3$ as elements of $\\mathbb C\\oplus \\mathbb C^3$ is isomorphic to $SU(3)\\times SU(3)/\\mathbb Z_3$ where the first factor $SU(3)$ should be again identified to the color group $SU(3)_c$ (see Section 3 and [@mdv:2016b] and Section 2.12 of [@yok:2009]).\\ In [@tod-dre:2018] it has been suggested that the quantum space corresponding to the Jordan subalgebra $J^8_2=JSpin_9$ of $J^8_3$ is relevant for the description of the fundamental fermions of the Standard Model (i.e. of one generation).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As recalled in Section 3.2 of [@mdv:2016b] and originally analyzed in [@jor-vn-wig:1934], the algebra of observables of a finite quantum space should be a finite-dimensional Euclidean Jordan algebra which is clearly not the case of the octonion algebra $\\mathbb O$.\\ However, as pointed out in Section 3.1 of [@mdv:2016b], the existence of three generations of fundamental fermions reveals a sort of triality underlying the classification of these fundamental fermions.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-the-3-generations-and-the-triality-in-j83.md",
-   "section_title": "The 3 generations and the triality in J83",
-   "pages": "7-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It turns out that, in spite of their obvious formal equivalence, the descriptions W1 and W2 lead naturally to 2 conceptually different interpretations.\\ If one adopts W1, as in [@mdv:2016b], each octonion occurring in $J^8_3$ should correspond to one quark-lepton family but then remembering that one generation contains two families of quark-lepton having distinct sectors of charges, namely the neutrino and the electron families, and remembering that the $J^8_3$-modules are free we are led to consider a free module which is a factor of the sum of 2 copies $J^u$ and $J^d$ of $J^8_3$ with the particle assignment $$\\label{AP1} J^u= \\left( \\begin{array}{ccc} \\alpha_1 & \\nu_\\tau+t & \\bar\\nu_\\mu-c\\\\ \\bar \\nu_\\tau-t & \\alpha_2 & \\nu_e+u\\\\ \\nu_\\mu+c & \\bar \\nu_e-u & \\alpha_3 \\end{array} \\right), \\>\\> J^d= \\left( \\begin{array}{ccc} \\beta_1 & \\tau+b & \\bar\\mu-s\\\\ \\bar \\tau-b & \\beta_2 & e+d\\\\ \\mu+s & \\bar e-d & \\beta_3 \\end{array} \\right)$$ where the fundamental fermions are identified with their internal spaces that is $\\mathbb C$ for the leptons and $\\mathbb C^3$ for the quarks in the above representation $\\mathbb C\\oplus \\mathbb C^3=\\mathbb O$ of the octonion algebra, and where the $\\alpha",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-the-3-generations-and-the-triality-in-j83.md",
-   "section_title": "The 3 generations and the triality in J83",
-   "pages": "7-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "More precisely, we shall prove in Section 4 that there is a canonical Euclidean extension of the observable algebra $J^8_2$ which corresponds to one full generation.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-the-3-generations-and-the-triality-in-j83.md",
-   "section_title": "The 3 generations and the triality in J83",
-   "pages": "7-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Nevertheless one should not forget that there is another possibility, namely the one suggested in Section 4 of [13], which is based on the same basic princi- ples within this exceptional quantum geometry.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-8-discussion.md",
-   "section_title": "Discussion",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

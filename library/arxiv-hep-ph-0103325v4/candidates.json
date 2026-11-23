@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-ph-0103325v4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "38590174ab836fa16ad0017ff8c948276206d8afd52f4c1288012ee0748bb1fb",
   "file": "0103325v4.pdf"
  },
  "provenance": {
-  "title": "arXiv:hep-ph/0103325v4 16 Oct 2002",
+  "title": "Quantum algebras in phenomenological description of particle properties",
   "authors": "Quantum and q-deformed algebras find their application not only in mathematical physics and field theoretical",
   "arxiv": {
    "id": "hep-ph/0103325",
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Hence, there must exist a direct connection of the $q$-parameter in (12), (14) with the fermion mixing angle.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-using-the-hopf-algebra-structure.md",
-   "section_title": "Using the Hopf-algebra structure",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The exact value $\\theta_{\\scr{C}}{=}\\frac{\\pi}{14}$ of the Cabibbo angle would then serve as the {\\it noncommutativity measure} of relevant quantum space, responsible for the mixing and explicitly as yet unknown, in extra dimensions whose number should be not less than 2.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-using-the-hopf-algebra-structure.md",
-   "section_title": "Using the Hopf-algebra structure",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then, experimentally one should observe the tendency of merging $\\lambda(\\pi)$ and $\\lambda(K)$ at large enough mean momenta, i.e., $\\lambda^{\\rm as}(\\pi)=\\lambda^{\\rm as}(K)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-9-algebras-of-q-oscillators-q-bose-gas-and-two-p.md",
-   "section_title": "Algebras of $q$-oscillators, $q$-Bose gas and two-pion (two-kaon) correlations",
-   "pages": "6-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Insisting on the asymptotical coincidence $\\lambda^{\\rm as}(\\pi)=\\lambda^{\\rm as}(K)$ we may predict for kaon intercepts: {\\it at any transverse momentum}, {\\it the intercept} $\\lambda(K)$ {\\it of 2-kaon correlations should not exceed} $0.80194$.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-9-algebras-of-q-oscillators-q-bose-gas-and-two-p.md",
-   "section_title": "Algebras of $q$-oscillators, $q$-Bose gas and two-pion (two-kaon) correlations",
-   "pages": "6-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Future research possibly involving noncomutative geometry in extra dimensions should give ultimate answer.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-10-outlook.md",
-   "section_title": "Outlook",
-   "pages": "8-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

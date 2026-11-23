@@ -1,1 +1,0 @@
-The dual cone N(1, 1, 1) must be contained within the outer curve, leading to the following “octic circle” result, conjectured by Cohn and Peman- tle in 1998 and proved when Kenyon and Okounkov obtained asymptotics for this ensemble [KO07].

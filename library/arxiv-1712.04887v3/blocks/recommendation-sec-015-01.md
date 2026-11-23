@@ -1,1 +1,0 @@
-(Explicitly, we have $H(\zeta)=F(\zeta,\epsilon^{1/n})$.) Hence our assumptions imply that any prime $q$ which splits completely in $F(\zeta+ \zeta^{-1})$ (which forces $q \equiv \pm 1 \;\text{\rm mod}\;n$) and is additionally congruent to $-1 \;\text{\rm mod}\;p$ must split in $H$.

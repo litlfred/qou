@@ -1,1 +1,0 @@
-We shall have here use for the classical theta functions, deﬁned for x ∈C and ℑ(ω) > 0: θ0,1(x) = θ0,1(x, ω) := X n∈Z (−1)neiπ(n2ω+2nx), θ1,1(x) = θ1,1(x, ω) := 1 i X m odd (−1)(m−1)/2eiπ(m2ω/4+mx), = eiπ(ω/4+x−1/2) X n∈Z (−1)neiπ(n(n+1)ω+2nx).

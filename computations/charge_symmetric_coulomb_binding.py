@@ -16,7 +16,7 @@ Three models on D/T/³He/⁴He (complete-graph bond set; B = E₀·Σ_bonds log(
   (3) SYMM+C  : charge-symmetric strong bond (all bonds = the isoscalar f_pn, the
                 symmetric midpoint of the 0/½h/h shifts) MINUS canonical Coulomb.
 
-E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV (#2089 deuteron-fixing scale); Coulomb via the shared
+E₀ = m_e/(q₀(q₀−1))/(1−ℏ_q²) ≈ 4.2275 MeV, tower-summed (owner ruling 2026-11-20, #8590; was the order-zero 4.186, #2089 deuteron-fixing scale); Coulomb via the shared
 computations/coulomb_energy (Z(Z−1), r₀=1.2 fm).
 
 Expected (diagnosis prediction): model (3) FIXES the mirror split (→ Coulomb) where
@@ -53,7 +53,8 @@ except ImportError:
 
 set_compute_dps()
 q = mp.mpf(Q_50_DIGIT_STR)
-E0 = M_E_MEV / (q * (q - 1))
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0 = _qbeta_e0.canonical(q=q, m_e=M_E_MEV)  # tower-summed E_0, canonical (owner ruling 2026-11-20, #8590); was order-zero m_e/(q(q-1))
 
 
 def f_bonds():
@@ -117,24 +118,24 @@ def main() -> int:
     for nm in NUCLEI:
         r = R[nm]
         e3 = 100 * (r["symm_c"] - r["ame"]) / r["ame"]
-        print(f"  {nm:<5}{r['ame']:>8.3f}{r['broken']:>11.3f}{r['broken_c']:>11.3f}"
-              f"{r['symm_c']:>11.3f}{e3:>+9.1f}")
+        print(f"  {nm:<5}{float(r['ame']):>8.3f}{float(r['broken']):>11.3f}{float(r['broken_c']):>11.3f}"
+              f"{float(r['symm_c']):>11.3f}{float(e3):>+9.1f}")
 
     # ── the headline: the ³H/³He mirror split ─────────────────────────────────
     def split(model):
         return R["T"][model] - R["3He"][model]
     ame_split = R["T"]["ame"] - R["3He"]["ame"]
     print("\n### Mirror split B(³H)−B(³He) — the diagnosis's target")
-    print(f"  AME                         = {ame_split:+.3f} MeV")
-    print(f"  (1) broken kernel, no Coul  = {split('broken'):+.3f}  ({split('broken')/ame_split:.1f}×)")
-    print(f"  (2) broken kernel + Coulomb = {split('broken_c'):+.3f}  (double-counts EM)")
-    print(f"  (3) charge-symm + Coulomb   = {split('symm_c'):+.3f}  "
-          f"({split('symm_c')/ame_split:.2f}× — Coulomb, uniform-sphere over-estimate)")
+    print(f"  AME                         = {float(ame_split):+.3f} MeV")
+    print(f"  (1) broken kernel, no Coul  = {float(split('broken')):+.3f}  ({float(split('broken')/ame_split):.1f}×)")
+    print(f"  (2) broken kernel + Coulomb = {float(split('broken_c')):+.3f}  (double-counts EM)")
+    print(f"  (3) charge-symm + Coulomb   = {float(split('symm_c')):+.3f}  "
+          f"({float(split('symm_c')/ame_split):.2f}× — Coulomb, uniform-sphere over-estimate)")
 
     print("\n### Verdict — the fix works on the SPLIT; absolute magnitude stays open (a)")
     print("  • Charge-symm + separate Coulomb FIXES the mirror split: it collapses to the")
     print(f"    Coulomb value ({split('symm_c'):.2f} MeV) from the broken kernel's "
-          f"{split('broken'):.2f}–{split('broken_c'):.2f} MeV — a ~3× accuracy gain, exactly")
+          f"{float(split('broken')):.2f}–{float(split('broken_c')):.2f} MeV — a ~3× accuracy gain, exactly")
     print("    as the #3564/#3570 diagnosis predicted. (Residual ~30% is the uniform-sphere")
     print("    Coulomb over-estimate, not charge symmetry.)")
     print("  • The ABSOLUTE binding is NOT closed (D over-, ⁴He under-bound): that residual")
@@ -156,7 +157,7 @@ def main() -> int:
                 "(2,1)/SU(4) mechanism, still on the charge-breaking kernel) must be re-run "
                 "charge-symmetric. Verified split win, not a closure. Scope-(a), no wiring."
                 % (split('symm_c'), split('broken'), split('broken_c'), ame_split))
-            wb.add_data("E0_MeV", E0)      # mpf: m_e/(q(q−1)), not a float64
+            wb.add_data("E0_MeV", E0)      # mpf: tower-summed qbeta_e0.canonical(), not a float64
             wb.add_data("nuclei", {nm: R[nm] for nm in NUCLEI})
             wb.add_data("mirror_split", {"AME": ame_split, "broken": split('broken'),
                                          "broken_plus_coulomb": split('broken_c'),
@@ -165,8 +166,8 @@ def main() -> int:
                 name="charge_symm_plus_coulomb_fixes_mirror_split",
                 computed=str(int(abs(split('symm_c') - ame_split) < abs(split('broken') - ame_split) / 2)),
                 expected="1", tolerance=0,
-                source=(f"charge-symm+Coulomb split {split('symm_c'):+.3f} MeV is >2× closer to "
-                        f"AME {ame_split:+.3f} than the broken kernel {split('broken'):+.3f}; the "
+                source=(f"charge-symm+Coulomb split {float(split('symm_c')):+.3f} MeV is >2× closer to "
+                        f"AME {float(ame_split):+.3f} than the broken kernel {float(split('broken')):+.3f}; the "
                         "residual ~30% is the uniform-sphere Coulomb over-estimate. Absolute "
                         "binding open (edge-set/connected magnitude → charge-symmetric #3548)."))
             out = wb.save()

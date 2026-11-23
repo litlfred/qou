@@ -1,1 +1,0 @@
-Since π(μ12(Φo)) and τt{μ^{φo)) are in distinct components of subset 1', it follows that the evolving arcs must cross the digon attaching curves, which are illustrated in Figure 6.6(a) as dotted arcs, because they are on F~ .

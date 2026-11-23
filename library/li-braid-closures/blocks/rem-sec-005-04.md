@@ -1,0 +1,1 @@
+The HOMFLYPT polynomial often admits the much more common normalization PL(a, z), related to the Jones normalization by XL(q, Λ) = PL((Λq)−1/2, q1/2 −q−1/2). Ocneanu originally calculated the eponymous weights, but this work has been lost. A reproof of the validity of these weights was given by Geck [6].

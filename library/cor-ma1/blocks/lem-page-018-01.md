@@ -1,0 +1,1 @@
+If (αn, βn) is a Bailey pair with respect to q, then for all 0 ≤i ≤k we have (q, −aq)∞ × X n1≥···≥nk≥0 q( n1+1 2 )+n2 2+···n2 k+ni+1+···nk(−1/a)n1an1 (q)n1−n2 · · · (q)nk−1−nk βnk = α0 (q)2∞ + (q)2∞ X n≥1 (−1/a)nanq(n2−n)(i−1/2)+in(1 −q) (−aq)n ×

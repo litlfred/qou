@@ -1,108 +1,57 @@
-**Definition (filtered differential algebra).**
-*The Hecke algebra $H_n(R, q)$ with the confinement filtration $J^\bullet(q)$ ([confinement level](#def:confinement-level)) carries a natural differential $d$ induced by three Gröbner–Shirshov rewriting rules — the Hecke relation, far commutativity, and Yang–Baxter ([Hecke normal form](#def:hecke-normal-form)):*
+**Setting.** *Let $R$ be a commutative ring and $q \in R^\times$. The Hecke algebra $H_n(R, q)$ is free over $R$ with standard basis $\{T_w : w \in S_n\}$ \cite{geckpfeiffer2000}, and for a simple reflection $s$*
 
 ```tex
 \[
-\begin{aligned}
-  &d_{\mathrm{H}}(\sigma_i^2) = (q - q^{-1})\sigma_i + \mathbf{1}, \\
-  &d_{\mathrm{F}}(\sigma_i \sigma_j) = \sigma_j \sigma_i \quad (|i - j| \geq 2), \\
-  &d_{\mathrm{YB}}(\sigma_i \sigma_{i+1} \sigma_i) = \sigma_{i+1} \sigma_i \sigma_{i+1}.
-\end{aligned}
+  T_s T_w \;=\;
+  \begin{cases}
+    T_{sw}, & \ell(sw) = \ell(w) + 1, \\
+    (q - q^{-1})\,T_w + T_{sw}, & \ell(sw) = \ell(w) - 1,
+  \end{cases}
 \]
 ```
 
-*Each rule lowers filtration degree. The direct sum $d = d_H + d_F + d_{YB}$ satisfies $d \circ d = 0$ on the filtered complex. This makes $(H_n(R, q), J^\bullet, d)$ a filtered differential algebra.*
+*where $\ell$ is the Coxeter length (the number of inversions). Write $N = \ell(w_0) = n(n-1)/2$.*
 
-**Proposition (GB spectral sequence).**
-*The filtered differential algebra $(H_n(R, q), J^\bullet, d)$ has an associated spectral sequence $(E_r^{\ell, *}, d_r)$ with:*
-
-$$
-  E_0^{\ell, *} \;=\; J^\ell(q) / J^{\ell+1}(q)
-  \qquad \text{(associated graded)},
-$$
+**Definition (length filtration).** *For $a \in \mathbb{Z}$ put $L_a = \operatorname{span}_R\{T_w : \ell(w) \le a\}$. On the Hochschild cochains $C^k = \operatorname{Hom}_R\bigl(H_n(R, q)^{\otimes k}, H_n(R, q)\bigr)$ put*
 
 $$
-  E_1^{\ell, *} \;=\; H^*\bigl(J^\ell / J^{\ell+1},\ d\bigr)
-  \qquad \text{(Hochschild-type cohomology of each stratum)},
+  F^p C^k \;=\; \bigl\{\, f \in C^k \;:\; f(L_{a_1} \otimes \cdots \otimes L_{a_k}) \subseteq L_{a_1 + \cdots + a_k - p} \text{ for all } a_1, \dots, a_k \,\bigr\}.
 $$
 
-*and higher pages $E_r^{\ell, *}$ obtained by successive homology of $d_r$.*
+*Equivalently, $F^p C^k$ is spanned by the elementary cochains $T_{w_1} \otimes \cdots \otimes T_{w_k} \mapsto T_v$ of weight $\ell(w_1) + \cdots + \ell(w_k) - \ell(v) \ge p$.*
 
-*Convergence:*
+**Proposition (length spectral sequence).** *Let $d$ be the Hochschild differential of $H_n(R, q)$ with coefficients in itself, and index pages $E_r^{p,k}$ by the filtration degree $p$ and the cochain degree $k$.*
+
+1. *$L_a L_b \subseteq L_{a+b}$, and $d(F^p C^k) \subseteq F^p C^{k+1}$, so $(C^\bullet, d, F^\bullet)$ is a filtered cochain complex with a spectral sequence $(E_r^{p,k}, d_r)$, $d_r \colon E_r^{p,k} \to E_r^{p+r,k+1}$.*
+2. *$E_1^{p,k}$ is the weight-$p$ part of $HH^k\bigl(\operatorname{gr}_L H_n, \operatorname{gr}_L H_n\bigr)$, where $\operatorname{gr}_L H_n$ is the nil-Coxeter algebra: basis $\{\bar T_w\}$ with $\bar T_u \bar T_w = \bar T_{uw}$ if $\ell(uw) = \ell(u) + \ell(w)$ and $0$ otherwise.*
+3. *In cochain degree $k$ the filtration is finite, with weights in $[-N, kN]$. Hence $E_r^{\bullet,k} = E_\infty^{\bullet,k}$ for $r > (k+2)N$, and*
 
 $$
-  E_\infty^{\ell, *}
-  \;\Longrightarrow\;
-  \mathrm{gr}^\ell\bigl(H_n(R, q)\bigr).
+  E_\infty^{p,k} \;\cong\; \operatorname{gr}^p HH^k\bigl(H_n(R, q), H_n(R, q)\bigr).
 $$
 
-*The Markov trace $\mathrm{tr}_M: H_n(R, q) \to \mathbb{C}$ forms a $d$-closed linear functional. It descends to $E_\infty$.*
+*When $R$ is a field over which $H_n(R, q)$ is split semisimple, the abutment is the centre $Z(H_n(R, q))$ in degree $0$, of rank the number of partitions of $n$, and $0$ in positive degree.*
 
 **Proof.**
 
-**Derivation of $d \circ d = 0$ (via Hochschild complex).**
+*(1) Multiplicativity.* *If $\ell(w) \le b$, the displayed rule shows that $T_s T_w$ lies in $L_{b+1}$. Writing $T_u = T_{s_1} \cdots T_{s_a}$ along a reduced word of $u$ and inducting on $a$ gives $T_u L_b \subseteq L_{a+b}$, hence $L_a L_b \subseteq L_{a+b}$.*
 
-*The rewriting rules $d_H, d_F, d_{YB}$ define a reduction procedure. To obtain $d \circ d = 0$, we pass to the Hochschild cochain complex over the natural ground ring $R$:*
+*Filtration preservation.* *The Hochschild differential is*
 
-$$
-  C^k(H_n(R, q), H_n(R, q))
-  \;:=\;
-  \mathrm{Hom}_R\bigl(H_n(R, q)^{\otimes k},\ H_n(R, q)\bigr),
-$$
-
-*where $R$ forms the categorical base ring. This forms the target of the fibre functor $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ ([Tannaka–Krein reconstruction](#prop:tannaka-krein-reconstruction)). $R$ is the commutative ring in which Markov-trace values live before archimedean calibration $\tau \colon R \to \mathbb{R}$ ([categorical mass, Markov](#prop:categorical-mass-markov)).*
-
-*Under different realisations ([knot operator energy](#def:knot-operator-energy)):*
-
-- *Archimedean: $R$ contains $\mathbb{R}[q, q^{-1}]$, evaluated at $q = q_0 \in \mathbb{R}$.*
-- *$p$-adic: $R$ contains $\mathbb{Q}_p[q, q^{-1}]$.*
-- *Finite-field: $R$ contains $\mathbb{F}_p[q, q^{-1}]$.*
-
-*The spectral-sequence construction operates over any such $R$. The physics application uses the archimedean realisation. The derivation is ring-agnostic. Complex numbers appear only as a derived embedding $R \hookrightarrow \mathbb{C}$ when we extract residues at roots of unity ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
-
-*We equip the complex with the standard Hochschild differential:*
-
-$$
-  (d\,f)(a_0 \otimes \cdots \otimes a_k)
+```tex
+\[
+  (d f)(x_0 \otimes \cdots \otimes x_k)
   \;=\;
-  a_0 \cdot f(a_1 \otimes \cdots \otimes a_k)
-  + \sum_{i=0}^{k-1} (-1)^{i+1} f\bigl(a_0 \otimes \cdots \otimes a_i a_{i+1} \otimes \cdots \otimes a_k\bigr)
-  + (-1)^{k+1} f(a_0 \otimes \cdots \otimes a_{k-1}) \cdot a_k.
-$$
+  x_0\, f(x_1 \otimes \cdots \otimes x_k)
+  + \sum_{i=0}^{k-1} (-1)^{i+1} f(x_0 \otimes \cdots \otimes x_i x_{i+1} \otimes \cdots \otimes x_k)
+  + (-1)^{k+1} f(x_0 \otimes \cdots \otimes x_{k-1})\, x_k .
+\]
+```
 
-*The identity $d \circ d = 0$ is a classical theorem for any associative $R$-algebra. It holds verbatim for $H_n(R, q)$. The Markov trace $\mathrm{tr}_M$ forms a cyclic $0$-cochain (satisfying $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$). It is therefore $d$-closed at degree $0$.*
+*Let $f \in F^p C^k$ and $x_i \in L_{a_i}$, and put $A = a_0 + \cdots + a_k$. The first term lies in $L_{a_0} L_{A - a_0 - p} \subseteq L_{A - p}$. In the middle terms $x_i x_{i+1} \in L_{a_i + a_{i+1}}$, so each lies in $L_{A - p}$. The last term is symmetric to the first. Hence $d f \in F^p C^{k+1}$. The identity $d \circ d = 0$ holds for every associative $R$-algebra, and a filtered cochain complex has a spectral sequence with $E_0^{p,\bullet} = F^p C^\bullet / F^{p+1} C^\bullet$ \cite{weibel1994}.*
 
-*The confinement filtration $J^\bullet(q)$ induces a decreasing filtration on $C^\bullet$:*
+*(2) The first page.* *The filtrations are split by the standard basis, so $\operatorname{gr}^p C^k$ is the span of the elementary cochains of weight exactly $p$, and $d_0$ is the weight-preserving part of $d$. In the product $T_u T_w$ only the coefficient of $T_{uw}$ with $\ell(uw) = \ell(u) + \ell(w)$ has top weight: by induction on $\ell(u)$ using the displayed rule, $T_u T_w = T_{uw}$ when the lengths add and $T_u T_w \in L_{\ell(u)+\ell(w)-1}$ otherwise. So the weight-preserving part of the multiplication is the nil-Coxeter product, and $d_0$ is the Hochschild differential of $\operatorname{gr}_L H_n$ restricted to weight $p$. Taking cohomology gives $E_1$.*
 
-$$
-  F^p C^k
-  \;:=\;
-  \{f \in C^k \mid f\bigl(J^{p_1}(q)^{\otimes k}\bigr) \subset J^{p + p_1}(q)\},
-$$
+*(3) Convergence.* *An elementary cochain in $C^k$ has weight between $0 - N = -N$ and $kN - 0 = kN$, so $F^{-N} C^k = C^k$ and $F^{kN+1} C^k = 0$. A differential $d_r$ out of $E_r^{p,k}$ lands in filtration degree $p + r \le (k+1)N$ with $p \ge -N$, so it vanishes for $r > (k+2)N$, and one into $E_r^{p,k}$ vanishes for $r > (k+1)N$. A finite filtration of each cochain group gives the stated convergence \cite{weibel1994}. For a split semisimple algebra, $HH^0$ is the centre and $HH^k = 0$ for $k > 0$, since such an algebra is separable. $\qquad\blacksquare$*
 
-*This filtration maintains compatibility with the Hochschild differential ($d(F^p) \subset F^p$), forming the filtered Hochschild complex.*
-
-*Therefore:*
-
-1. **$d \circ d = 0$ holds** *on the filtered complex.*
-2. **Filtration preservation** *follows because $J^\bullet$ provides an ideal-filtration compatible with multiplication.*
-
-*Hence $(C^\bullet(H_n(R, q)), d, F^\bullet)$ forms a filtered cochain complex with spectral sequence pages $(E_r^{p, q}, d_r)$.*
-
-**Convergence $E_\infty \Rightarrow \mathrm{gr}\,H_n(R, q)$.**
-
-*The filtration $J^\bullet(q)$ is:*
-
-1. *Bounded below: $J^0 = H_n(R, q)$.*
-2. *Exhaustive: $\bigcap_\ell J^\ell = 0$ for any generic $q = q_0$. Partition energies $E_\ell(q_0)$ are distinct and positive ([confinement level, uniqueness](#prop:confinement-level-unique)).*
-3. *Finite-dimensional at each degree $J^\ell(q)/J^{\ell+1}(q)$.*
-
-*These provide the classical convergence conditions for a filtered spectral sequence. Therefore:*
-
-$$
-  E_\infty^{p, q}
-  \;\cong\;
-  \mathrm{gr}^p\,H^{p+q}\bigl(H_n(R, q), H_n(R, q)\bigr),
-$$
-
-*The total Hochschild cohomology equals the sum over pages. Pairing this with the Markov-trace cocycle $\mathrm{tr}_M$ yields the six-term mass decomposition.*
+**Example ($n = 3$).** *An exact computation over $\mathbb{F}_P$ at $q = 2$ and $q = 3$, for two primes $P$, gives the following. In cochain degree $0$, $E_1 = E_\infty$ has one class in each of the filtration degrees $0, -2, -3$, matching the rank-$3$ centre of $H_3$. In degree $1$, $E_1$ has classes in filtration degrees $0$ and $-2$. In degree $2$, $E_1$ is two-dimensional in filtration degree $2$. The differentials $d_1$ and $d_3$ vanish, while $d_2$ and $d_4$ each have rank $1$ from degree $1$ to degree $2$. So $E_5 = E_\infty$ and the sequence does not collapse at $E_2$.*

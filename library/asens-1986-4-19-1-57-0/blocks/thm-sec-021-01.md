@@ -1,0 +1,1 @@
+- (^-(M, N^'^maxQ^^Sfe/^), w^r^ ^=min{a^, n^}. I k

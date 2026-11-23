@@ -1,0 +1,1 @@
+i) the fundamental class Ω may be represented by a cochain in Σl>Q^ (n+l}C l(M,~CC2n-\+ι)\ modulo h Σ h~ (n+l)C l(M9CC2n+l^)9 this cochain may be chosen in ii) One has where, by definition, td(ω))~ λ = Σ(-0*7i>

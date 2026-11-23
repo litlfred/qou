@@ -11,6 +11,6 @@ $q$-adic image of a Habiro truncation; computational data confirms
 that for the proton and neutron the Cauchy kernel partial sum
 truncated at $n \leq 6$ is identically zero, in agreement with
 the cyclotomic expansion of the cleared numerator in the mass-trace pole structure
-([`prop:full-pole-structure-mass-trace`](#prop:full-pole-structure-mass-trace))
+([Cyclotomic expansion of the cleared mass trace](#prop:full-pole-structure-mass-trace))
 (the Habiro coefficients $a_0, \ldots, a_5$
 vanish on the atomic trefoil class).*

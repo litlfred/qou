@@ -1,1 +1,0 @@
-Indeed, as we shall describe in Section [\[sec:analytic\]](#sec:analytic){reference-type="ref" reference="sec:analytic"}, this relation may be used to justify the "analytic continuation" approach to computing perturbative $G_{{\mathbb{C}}}$ invariants.

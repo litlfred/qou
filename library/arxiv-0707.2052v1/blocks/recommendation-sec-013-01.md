@@ -1,1 +1,0 @@
-In terms of diagrams, we can thus denote an element $\varphi\in \mathop{\mathrm{HH}}^\bullet(X)$ as $$\raisebox{-.45\height}{}.$$ Note that the grading is not indicated in the picture, but this should not give rise to confusion.

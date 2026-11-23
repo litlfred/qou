@@ -1,1 +1,1 @@
-We now develop physical regimes and limiting context, tracing the construction from the unit circle bundle onward.
+The unit-circle bundle $S^1 \hookrightarrow M \to \Sigma_4$ over Bring's surface interpolates between three physical regimes as the substrate parameter $q$ varies: the unitary circle $|q| = 1$, the primordial vortex limit, and the real hyperbolic regime $q > 1$ in which non-commutativity induces geometric drag along the Reeb fibres.

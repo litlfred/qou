@@ -13,7 +13,7 @@ structure. The corpus is explicit:
   * `bond-order-eq-jet-degree-proof` -- adding a nucleon "rais[es] the
     Groebner-Shirshov normal-form length by a fixed increment", placing the
     n-nucleon cluster sub-word at JET VERTICAL DEGREE n.
-  * `prop:gb-spectral-sequence` (E_2 collapse) + `prop:jet-prefix-gb-filtration`
+  * `prop:gb-spectral-sequence` (E_2 collapse) + `conj:jet-prefix-gb-filtration`
     -- the associated graded gr_n IS the n-nucleon cluster contribution.
 
 So the NF is not six numbers, it is six LAURENT POLYNOMIALS IN q, and the
@@ -405,8 +405,8 @@ def main() -> int:
                          computed="True", expected="True")
         for A, v in verdicts.items():
             wb.add_assertion(f"both_groups_non_empty_at_A{A}",
-                             computed=f"{v['n_magic']}/{v['n_non_magic']}",
-                             expected=f"{v['n_magic']}/{v['n_non_magic']}")
+                             computed=str(v["n_magic"] > 0 and v["n_non_magic"] > 0),
+                             expected="True")
         out = wb.save(extra={
             "auditOnly": True,
             "q0Anchor": "independent",

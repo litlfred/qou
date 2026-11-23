@@ -1,0 +1,1 @@
+By the Gauss decomposition, the Hopf algebra GL+ q (2, R) can be naturally put into the C∗-algebraic setting, so that it is identiﬁed with the quantum double D(A). Furthermore, the coproduct on D(A) induces the same coproduct on the generators zij.

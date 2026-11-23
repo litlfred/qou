@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0310279v5",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Stabilization in the braid groups I: MTWS Introduction",
+  "title": "Stabilization in the braid groups I: MTWS",
   "contains": [
     "library/0310279v5/sections/sec-front-matter",
     "library/0310279v5/sections/sec-000",
@@ -65,8 +65,8 @@
     "pages": 128,
     "arxiv": null,
     "doi": "10.2140/gt.2006.10.413",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

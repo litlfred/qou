@@ -71,4 +71,14 @@ structure MassIdentityC (M : Type*) extends ArchimedeanMassIdentity M where
     0 ≤ connectionGradient p * leviCurvatureCoupling p :=
     integrand_nonneg
 
+/-- **Non-negativity of a positively-weighted density integrand on the vortex cycle (`qou-xapv`).**
+For any non-negative density factor `u : M → ℝ` on `I.vortexCycle`, scaling the
+mass integrand `I.connectionGradient p * I.leviCurvatureCoupling p` by `u p`
+preserves non-negativity at every point `p ∈ I.vortexCycle`. -/
+theorem ArchimedeanMassIdentity.weighted_integrand_nonneg {M : Type*}
+    (I : ArchimedeanMassIdentity M) (u : M → ℝ) {p : M}
+    (hp : p ∈ I.vortexCycle) (hu : 0 ≤ u p) :
+    0 ≤ u p * (I.connectionGradient p * I.leviCurvatureCoupling p) :=
+  mul_nonneg hu (I.integrand_nonneg p hp)
+
 end QOU.Torsion

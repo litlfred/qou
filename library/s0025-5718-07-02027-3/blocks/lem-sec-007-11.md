@@ -1,0 +1,1 @@
+If we know z in C∗ p up to precision N ′ > vp(z), then we can calculate log(z) up to precision minm≥0{(N ′ −vp(z))pm −m}. If 1 ≤(N ′ −vp(z)) ln(p), then we can calculate log(z) up to precision N ′ −vp(z). AMNON BESSER AND ROB DE JEU

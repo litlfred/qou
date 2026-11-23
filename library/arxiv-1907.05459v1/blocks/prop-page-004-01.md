@@ -1,0 +1,1 @@
+Cottingham and Mp −Mn André Walker-Loud which either compute only the strong md −mu correction, and then determine the QED correction by subtracting this from the experimental value [28, 29, 30, 31, 32, 33, 34], or from calculations which incorporate QED in the LQCD calculations [35, 36, 37, 38].

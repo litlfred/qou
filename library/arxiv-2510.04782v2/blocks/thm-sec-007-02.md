@@ -1,0 +1,1 @@
+— Let A be a perfectly covered Λ-ring, R an A-algebra, and m ∈N. Then HR/A,m/(qm −1) ≃q9Wm(R/A) . In fact, HR/A,m is the unique lift of the étale A[q]/(qm −1)-algebra q9Wm(R/A) to a (qm −1)- complete E∞-algebra over A[q]∧ (qm−1). In particular, HR/A,m is an ordinary ring for all m ∈N, and the same is true for the relative Habiro ring HR/A.

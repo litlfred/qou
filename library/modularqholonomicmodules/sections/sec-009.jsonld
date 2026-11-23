@@ -13,9 +13,13 @@
   "pageStart": 14,
   "pageEnd": 17,
   "contains": [
-    "library/modularqholonomicmodules/blocks/prose-sec-009"
+    "library/modularqholonomicmodules/blocks/prose-sec-009",
+    "library/modularqholonomicmodules/blocks/lem-sec-009-01",
+    "library/modularqholonomicmodules/blocks/lem-sec-009-02",
+    "library/modularqholonomicmodules/blocks/lem-sec-009-03",
+    "library/modularqholonomicmodules/blocks/cor-sec-009-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "provenance": "ingested"
 }

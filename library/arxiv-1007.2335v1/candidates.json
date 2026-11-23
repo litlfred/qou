@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1007.2335v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a55d544d1740523fe4af458dc7fc07aa8723e99d3806dcc26753564cdfaebc48",
   "file": "1007.2335v1.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This should help in understanding the properties of Hopf solitons in theories constructed from more conventional terms.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-nicole-model-and-volume-preserving-flow.md",
-   "section_title": "The Nicole model and volume-preserving flow",
-   "pages": "3-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It is easy to prove that the volume-preserving flow ([\\[vpgf\\]](#vpgf){reference-type=\"ref\" reference=\"vpgf\"}) indeed preserves the volume $V$ and reduces the energy $E$: the proof is a simple modification of that presented in [@GS] but the result should be obvious from the geometrical aspect of its construction.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-nicole-model-and-volume-preserving-flow.md",
-   "section_title": "The Nicole model and volume-preserving flow",
-   "pages": "3-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In section [\\[sec-num\\]](#sec-num){reference-type=\"ref\" reference=\"sec-num\"} we shall present results for a scheme using fourth-order accurate finite difference approximations to spatial derivatives on a cubic lattice consisting of $151^3$ points with unit lattice spacing (taking advantage of the scale invariance of the continuum problem in $\\hbox{\\mybb R}^3$).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-nicole-model-and-volume-preserving-flow.md",
-   "section_title": "The Nicole model and volume-preserving flow",
-   "pages": "3-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The results of varying $V$ suggest that our quoted energies should be accurate to around one percent.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-numerical-results.md",
-   "section_title": "Numerical results",
-   "pages": "7-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

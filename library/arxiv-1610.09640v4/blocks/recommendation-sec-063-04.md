@@ -1,1 +1,0 @@
-The pair (LF, ηL) must have this universal property: (L) Given any pair (G, θ), consisting of a triangulated functor G : KS →E and a morphism of triangulated functors θ : G ◦Q ⇒F, there is a unique morphism of triangulated functors µ : G ⇒LF such that θ = ηL ∗(µ◦idQ).

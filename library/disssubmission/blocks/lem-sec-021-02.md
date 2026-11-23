@@ -1,0 +1,1 @@
+The functor Ψ descends to a functor Ψ : P(Xη) →P(Xs), for all P,Q ∈P(Xη) we have 0 ≤χ(Ψ(P)) ≤χ(P), (i) 0 ≤χ(Ψ(P)∗Ψ(Q)) ≤χ(Ψ(P∗Q)), (ii) and Ψ(P)∗Ψ(Q) is a direct summand of Ψ(P∗Q) in the category P(Xs).

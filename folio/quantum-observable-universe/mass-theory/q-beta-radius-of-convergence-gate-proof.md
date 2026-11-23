@@ -3,8 +3,7 @@
 Steps 1 and 2 are proved statements about generating functions. Steps 3 and 4 explain what the finite window of coefficients does and does not show.
 
 Write $c_k$ for the pinned ladder coefficients at the substrate
-anchor (canonical SDP extraction,
-`qbeta-decay-sdp-extended-ck.witness.json`),
+anchor (canonical SDP extraction),
 $g(u) := \sum_{k \ge 2} c_k u^k$ for the log-correction generating
 function, and $u_0 := u_{\text{substrate}} \approx 0.00852$.
 

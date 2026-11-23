@@ -1,1 +1,0 @@
-In order to avoid zig-zagging (see example in Section 4 of [19] and the details of how to avoid this), we must augment to a vertex with lower objective-function value after each discrete Dantzig-descent augmentation.

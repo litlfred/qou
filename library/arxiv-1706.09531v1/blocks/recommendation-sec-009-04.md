@@ -1,1 +1,0 @@
-This is because SU(2)L, generating weak interactions, commutes with SU(4)-color (as it must for the sake of renormalizability) and thus treats all four colors representing quarks and leptons universally.

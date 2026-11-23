@@ -1,1 +1,0 @@
-Conformal models with c ≥1, which are relevant for description of gauge theories in space-time dimension d ≥2 (which possess particles, rather than only topological degrees of freedom), should give rise to the discrete matrix models with ”non-factorizable” inte- gration over ”angular variables”, of which the simplest (solvable) example is Kazakov-Migdal model [25].

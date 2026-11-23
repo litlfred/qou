@@ -95,7 +95,7 @@ theorem density_borromean_eq_linking_weight (q : ℝ) (hq : q ≠ 0) :
     in the Hecke/algebraic world rather than the hyperbolic one. -/
 
 /-- **δ leading** = `(q − 1)²·(1 − q⁻⁴)/3` — the substrate flavor split
-    `Δm/M_N` at leading order (`prop:flavor-split-substrate`). Equal to the
+    `Δm/M_N` at leading order (`conj:flavor-split-substrate-mass`). Equal to the
     existing `HadronicMass.delta_m_over_M_N_substrate q = (q−1)²(q⁴−1)/(3q⁴)`
     via `1 − q⁻⁴ = (q⁴ − 1)/q⁴`. -/
 noncomputable def delta_leading (q : ℝ) : ℝ :=

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2304.04367v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "63fc9a4a5f6b6b71cc542a312f4a01ea1285c88bf6f6957fd47cb918b117c65f",
   "file": "2304.04367.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Fundamentally, the angular modulations, both in polar and azimuthal directions, originate from the total helicity of the \u039b\u03b3 = 0, \u00b12 two-photon system, which must be transferred to the orbital angular momentum of the e+e\u2212pair [2, 4].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-i-introduction.md",
-   "section_title": "I Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the c.m. frame, the polarization basis of \u03b3(2) must \ufb01rst be transformed to that of \u03b3(1), which involves modifying the Stokes parameters of \u03b3(2) as follows: \u03be(2) 1 \u2192\u2212\u03be(2) 1 , \u03be(2) 2 \u2192 \u2212\u03be(2) 2 , \u03be(2) 3 \u2192\u03be(2) 3 .",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-b-constructing-polarized-lbw-process-with-mc-sam.md",
-   "section_title": "B Constructing polarized LBW process with MC sampling",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(15) To take into account the e\ufb00ects of linear polarization of photons, the Stokes parameters \u03be(1) and \u03be(2), which are de\ufb01ned in the basis (\u02c6\u03b8, \u02c6\u03c6), must be transformed to the basis (o(1), o(2)) with a counter-clockwise rotation by an angle \u03d5.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-b-constructing-polarized-lbw-process-with-mc-sam.md",
-   "section_title": "B Constructing polarized LBW process with MC sampling",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

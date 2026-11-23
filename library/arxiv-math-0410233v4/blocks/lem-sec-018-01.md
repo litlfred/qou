@@ -1,0 +1,1 @@
+Suppose M is a hyperbolic cone manifold with one cusp, and with singular locus Σ. Suppose the tube radius R about the singular locus is at least log(2/ √ 3). Then there exists a horoball neighborhood U of the cusp such that the meridian of ∂U has length at least 1 −e−2R.

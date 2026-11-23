@@ -1,1 +1,0 @@
-Now, if $T$ comes from a genuine hyperbolic structure, it must be true that the sum of the dihedral angles incident to the edges of $T$ must equal $2\pi$, and so for $T$ to correspond to such a structure, the following linear program must have a strictly positive solution:

@@ -1,1 +1,0 @@
-Let WeE of maximal dimension and suppose dim W < dim V: a) if W is invariant under p(et) and p(fi), we must have W = V due to the irreducibility of V. b) assume there exists weW and J6{1,..., N} such that p(e )w$W.

@@ -65,9 +65,11 @@ import sympy as sp  # noqa: E402
 
 from canonical_braid_crossings import (  # noqa: E402
     CTYPES, atom_canonical_crossings, convention_fingerprint, convention_label,
+    word_fingerprint,
 )
 from per_irrep_pole_proton_h3 import negative_q_pole_order  # noqa: E402
 from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
@@ -183,6 +185,9 @@ def _write_chi_cache(
         "convention": convention_label(atom_canonical_crossings(Z, N)),
         "convention_fingerprint": convention_fingerprint(
             atom_canonical_crossings(Z, N)),
+        # The ORDERED word. The multiset above cannot see a reordering of the
+        # same letters; this can, and it is what the resume guard checks.
+        "word_fingerprint": word_fingerprint(atom_canonical_crossings(Z, N)),
         "compute_time_sec_so_far": f"{elapsed:.3f}",
         "workers": workers_eff,
         "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
@@ -255,6 +260,7 @@ def load_or_build_chi_atom(
         convention_fingerprint, convention_label,
     )
     want = convention_fingerprint(crossings)
+    want_word = word_fingerprint(crossings)
     if cache_path.exists():
         d = json.loads(cache_path.read_text())
         # Resume keyed on partition coverage ALONE was the defect: a cache
@@ -264,10 +270,19 @@ def load_or_build_chi_atom(
         # Compare the ctype multiset instead, and drop the whole cache on a
         # mismatch rather than resuming into a mixed one -- half-weighted
         # entries would be worse than either convention consistently applied.
+        #
+        # The multiset is not enough either: a reordering of the same letters
+        # leaves it unchanged. The 2026-09-05 intra-ordering ruling did exactly
+        # that, and chi-neutron-h3 / chi-deuteron-h6 kept serving characters of
+        # the superseded word with a matching multiset (bean qou-4383). So the
+        # ORDERED word must match too, and a cache written before
+        # `word_fingerprint` existed is untagged and is rebuilt.
         got = d.get("convention_fingerprint")
-        if got != want:
-            print(f"  chi cache for {atom_name} is a different crossing "
-                  f"convention ({got or 'untagged'} != {want}) — discarding "
+        got_word = d.get("word_fingerprint")
+        if got != want or got_word != want_word:
+            print(f"  chi cache for {atom_name} was built from a different "
+                  f"word (multiset {got or 'untagged'} vs {want}; ordered "
+                  f"{got_word or 'untagged'} vs {want_word}) — discarding "
                   f"{len(d.get('chi_lambda_symbolic', []))} cached partitions")
         else:
             for entry in d["chi_lambda_symbolic"]:
@@ -538,15 +553,21 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     # because the per-block matrices are not currently materialised
     # in the Path A pipeline at H_n for n > 3).  Q0_FLOAT is imported
     # at module top from q_parameter (per Gemini review PR #607).
+    # Evaluated at the 50-digit proton pin in exact/50-digit arithmetic and
+    # serialized as a decimal STRING rounded to FINGERPRINT_PRECISION places.
+    # It was float(chi.subs(q, Q0_FLOAT)) — a float64 pin and a float64 value
+    # (12 raw-float64 fields per witness).
+    q0_exact = sp.Float(Q_50_DIGIT_STR, 60)
     chi_fp_pairs = []
     for lam in sorted(chi_q, key=lambda L: (-len(L), tuple(-x for x in L))):
         try:
-            val = float(chi_q[lam].subs(q_var, Q0_FLOAT))
-            chi_fp_pairs.append((list(lam), round(val, FINGERPRINT_PRECISION)))
+            val = sp.N(chi_q[lam].subs(q_var, q0_exact), 50)
+            chi_fp_pairs.append(
+                (list(lam), f"{sp.Float(val, 50).round(FINGERPRINT_PRECISION):.{FINGERPRINT_PRECISION}f}"))
         except (TypeError, ValueError):
             chi_fp_pairs.append((list(lam), None))
     builder.add_data("atom_chi_fingerprint", {
-        "q0": float(Q0_FLOAT),
+        "q0": Q_50_DIGIT_STR,
         "precision": FINGERPRINT_PRECISION,
         "n_partitions": len(chi_fp_pairs),
         "fingerprint": chi_fp_pairs,

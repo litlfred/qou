@@ -1,0 +1,1 @@
+— The approximation scheme of order r ⩾1 can be con- sidered as a discrete analogue of the Edgeworth expansion in the central limit theorem, which is with respect to the Gaussian approximation, and thus gives results for a diﬀerent scale of ﬂuctuations [47, Chapter VI].

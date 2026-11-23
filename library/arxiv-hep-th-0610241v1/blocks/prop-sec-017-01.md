@@ -1,0 +1,1 @@
+On a real spectral triple of KO-dimension 2 ∈Z/8, the expression AD(ξ′, ξ) = ⟨J ξ′, D ξ⟩, ∀ξ, ξ′ ∈H+ (4.3) deﬁnes an antisymmetric bilinear form on H+ = {ξ ∈H , γ ξ = ξ}. The trilinear pairing (4.3) between D, ξ and ξ′ is gauge invariant under the adjoint action of the unitary group of A, namely AD(ξ′, ξ) = ADu(Ad(u)ξ′, Ad(u)ξ) , Du = Ad(u) D Ad(u∗). (4.4)

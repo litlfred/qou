@@ -1,0 +1,1 @@
+2. — 1. Notice that if F(x) is well-deﬁned then dqF(x) = f(x). 2. If f(x) is continuous on the closed disk D(0, r+), then F(x) is well deﬁned for any x ∈D(0, r+). In fact there exists M > 0 such that |f(qnx)qn| ⩽ M|q|n, which guarantees the convergence of the inﬁnite sum.

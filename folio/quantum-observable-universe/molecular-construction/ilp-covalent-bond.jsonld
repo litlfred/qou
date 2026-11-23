@@ -2,26 +2,27 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-ilp-covalent-bond",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:ilp-covalent-bond",
   "kind": "proposition",
-  "title": "The covalent bond is the inverse trefoil $T_{2,3}^{-1}$",
+  "title": "The $H_2$ bond word is $V^3$ under the $\\gamma\\gamma$ rule",
   "tags": [
     "covalent-bond",
-    "inverse-trefoil",
-    "ILP",
+    "gamma-gamma",
+    "reading-3",
     "knot-operator",
     "molecular",
     "zero-parameters"
   ],
-  "leanRef": "qou:QOU.Molecular.covalent_bond_is_ilp_optimal",
+  "leanRef": "qou:QOU.Molecular.inverse_trefoil_not_gammaGamma",
   "text": "ilp-covalent-bond.md",
   "leanSource": "ilp-covalent-bond.lean",
   "provenance": "authored"

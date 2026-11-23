@@ -1,1 +1,0 @@
-Combining this with a fact that our quantum invariant $Z_\gamma(\mathcal{M})$ may be regarded as a quantization of the Bloch invariant, we should have \begin{equation} \lim_{\gamma \to 0} 2 \, \gamma\, \log \left( Z_\gamma(\mathcal{M}) \right) = \Vol(\mathcal{M}) + \I \, \CS(\mathcal{M}) \end{equation} as a variant of the volume conjecture~\cite{Hikam00d}.

@@ -1,1 +1,0 @@
-We should point out that it is not only the MS border that is knotlike; we can also view an MS as a concatenation of (2, n) torus knots and we can illustrate that notion by letting the toroidal core radius, r, vary from zero up to some maximum value as we implement Equations 1-1.

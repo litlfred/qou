@@ -1,0 +1,1 @@
+It is not too hard to show that R could be chosen to be a k[t]-central complex of graded A-bimodules. Observe that the rigid dualizing complex R has HqR = 0 for q >0, since H 0 ˜R is t-torsion and Hq ˜R = 0 for q >0.

@@ -1,1 +1,0 @@
-Now, if B−is a missing block of D−that is taken to a missing block B+ of D+ by the ambient Geometry & Topology 10 (2006) Stabilization in the braid groups I: MTWS 521 isotopy of S3 that relates D−and D+ then by assumption B+ must contain at least one of the Bi blocks plus something else.

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/deligne-mostow-1986/blocks/cor-sec-011-06",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "title": "10.12.3",
+  "pageStart": 52,
+  "pageEnd": 62,
+  "text": "cor-sec-011-06.md",
+  "derivedFrom": "library/deligne-mostow-1986/sections/sec-011",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-011-q-uqt.md (p. 52-62)",
+    "claim_id": "deligne-mostow-1986#cor-sec-011-06",
+    "lean_status": "unformalized"
+  }
+}

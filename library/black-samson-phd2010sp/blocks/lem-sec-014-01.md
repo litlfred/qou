@@ -1,0 +1,1 @@
+2.1. The state-sum fOTm'ula in (IV.ii) descends to a well-defined link invaTiant: A(a) = A(,6) if a and,6 aTe Telated by the MaTkov moves. PTOOf. In order to show invariance under the cyclic move (II.2), note that there is a bijection

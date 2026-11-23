@@ -1,1 +1,0 @@
-By the commutative diagram in \refdef{2-bundle with local trivialization}, this autoequivalence must act trivially on the $U_{ij}$ factor, so \[ t_j \bar t_i(x,f) = (x,f g_{ij}(x)) \] for some smooth function $g_{ij}$ from $U_{ij}$ to the smooth space of autoequivalences of the fiber $F$.

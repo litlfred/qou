@@ -1,0 +1,57 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108011v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Homfly polynomial of the decorated Hopf link",
+  "contains": [
+    "library/arxiv-math-0108011v1/sections/sec-front-matter",
+    "library/arxiv-math-0108011v1/sections/sec-000",
+    "library/arxiv-math-0108011v1/sections/sec-001",
+    "library/arxiv-math-0108011v1/sections/sec-002",
+    "library/arxiv-math-0108011v1/sections/sec-003",
+    "library/arxiv-math-0108011v1/sections/sec-004",
+    "library/arxiv-math-0108011v1/sections/sec-005",
+    "library/arxiv-math-0108011v1/sections/sec-006",
+    "library/arxiv-math-0108011v1/sections/sec-007",
+    "library/arxiv-math-0108011v1/sections/sec-008",
+    "library/arxiv-math-0108011v1/sections/sec-009",
+    "library/arxiv-math-0108011v1/sections/sec-010",
+    "library/arxiv-math-0108011v1/sections/sec-011",
+    "library/arxiv-math-0108011v1/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0108011v1",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "The Homfly polynomial of the decorated Hopf link",
+      "basis": "Printed title on page 1 (H. R. Morton and S. G. Lukac); the extracted title was the arXiv stamp",
+      "extracted_title": "arXiv:math/0108011v1 [math.GT] 2 Aug 2001",
+      "corrected_on": "2026-11-18",
+      "extracted": "The Homfly polynomial of the decorated Hopf link"
+    },
+    "source_file": "0108011v1.pdf",
+    "source_sha256": "e4af4b5d3c5ff6cd74aade171241729533beefc5d0c937407d3b050ab26bde44",
+    "pages": 25,
+    "arxiv": {
+      "id": "math/0108011",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "2 Aug 2001"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

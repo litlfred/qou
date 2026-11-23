@@ -1,1 +1,0 @@
-The set of normalized secants (z −w)/|z −w| for z ∈Vq and |z −w| < s converges as s ↓0 to L, hence, once the parameter ρ is chosen smaller than half each ρw the homotopy Φt(y) must avoid Vq for all y in this case.

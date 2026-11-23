@@ -1,0 +1,1 @@
+The corresponding problem for the Alexander polynomial has been solved; it is known that a polynomial f(t) € Z[t,t7'] is equal to the Alexander polynomial of some knot K if and only if f(1) = 1 and f(t) =

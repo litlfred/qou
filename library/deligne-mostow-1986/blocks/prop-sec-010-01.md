@@ -1,0 +1,1 @@
+— TA^ wfl^ Q.I -> Q,i ls a branched cover with branch locus U Q,r ^ order K. By (9.8), the problem is local around each ^eQ,T* The claim then results from (9.2) and the fact that the order in the projective unitary group of diag((Xg <X(, i, ..., i) is the denominator of i — ^ — (JL(.

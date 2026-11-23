@@ -1,0 +1,1 @@
+There is a natural number K(E) and a sequence Mn of 2K(E) marked points on the disc such that after removing these marked points from D2, we have a uniform bound as follows |∇uin(z)| ≤ C ρ(z) ∀z ∈D2 n, where D2 n = D2 \ Mn and ρ is the radius of injectivity with respect to the standard hyperbolic metric on D2 n and uin is a subsequence of un.

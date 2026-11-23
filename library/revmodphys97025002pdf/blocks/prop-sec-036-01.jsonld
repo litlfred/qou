@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/revmodphys97025002pdf/blocks/prop-sec-036-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "prop-sec-036-01.md",
+  "derivedFrom": "library/revmodphys97025002pdf/sections/sec-036",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "empirical-claim",
+    "claim_domain": "science",
+    "evidence_kind": "empirical-measurement",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper empirical measurement in sections/sec-036-2-measurement-of-the-hydrogen-two-photon-1s-3s-t.md (p. 17-18)",
+    "claim_id": "revmodphys97025002pdf#prop-sec-036-01"
+  }
+}

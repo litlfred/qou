@@ -1,1 +1,0 @@
-Also, we should note that reproducing kernel for the blow-up space $\mathrm{Pol}^{\langle1\rangle}_{m,n,q}$ is connected with the reproducing kernel $K_{m,n,q}$ for $\mathrm{Pol}_{m,n,q}$ via the identity $$\label{eq-connect} K_{\mathrm{Pol}^{\langle1\rangle}_{m,n,q}}(\xi,\eta)= m^{-1}\mathrm e^{-m-m^{1/2}(\xi+\bar\eta)}K_{m,n,q}(1+m^{-1/2}\xi,1+m^{-1/2}\eta).$$

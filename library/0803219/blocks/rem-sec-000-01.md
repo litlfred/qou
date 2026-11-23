@@ -1,0 +1,1 @@
+Note that here we are using the SL(2; C) theory; not PSL(2; C). So we have to divide the term appearing in exp of (1.3) by −4 [33, pp. 553–556]. See [33, p. 543]. Note also that we are using the normalization of W. Neumann and D. Za- gier [51] for f(u). So Yoshida’s (and Kirk and Klassen’s) f(u) is our f(u)× π√−1.

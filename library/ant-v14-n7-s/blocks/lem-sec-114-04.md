@@ -1,0 +1,1 @@
+We have X D∈H∗ 2g+1 χD( f ) = X C1 | 1 µ(C1)χC1( f ) X C2 | (1f )∞ X R∈M2g+1−deg(C1)−2 deg(C2) χR( f ) −q X C1 | 1 µ(C1)χC1( f ) X C2 | (1f )∞ X R∈M2g−1−deg(C1)−2 deg(C2) χR( f ), where by C2 | (1f )∞we mean that the prime factors of C2 divide 1f .

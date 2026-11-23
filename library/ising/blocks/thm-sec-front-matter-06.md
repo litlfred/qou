@@ -1,0 +1,1 @@
+Consider the Ising model on Zd, with inverse temperature β and magnetic ﬁeld h, such that (β, h) ∈R(β1, β2, h1). Let P be a local pattern. Then Sn,P −E(Sn,P) p |Λn| d −−−−→ n→∞N(0, v2 P), where v2 P = lim n→∞ Var(Sn,P) |Λn| . Similarly, if Sn, ˜ P denotes the number of occurrences of a global pattern ˜P in Λn, we have the following result.

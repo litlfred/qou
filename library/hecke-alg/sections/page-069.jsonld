@@ -13,9 +13,11 @@
   "pageStart": 69,
   "pageEnd": 69,
   "contains": [
-    "library/hecke-alg/blocks/prose-page-069"
+    "library/hecke-alg/blocks/prose-page-069",
+    "library/hecke-alg/blocks/thm-page-069-01",
+    "library/hecke-alg/blocks/lem-page-069-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hecke-alg",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hecke-alg",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hecke-alg/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hecke-alg/manifest.jsonld",
   "provenance": "ingested"
 }

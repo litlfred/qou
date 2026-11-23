@@ -1,0 +1,1 @@
+Any Rayleigh measure µ ∈Pn is ULC. Since we now know that the Rayleigh and h-NLC+ properties are equivalent (Proposition 2.2), Conjecture 2.4 is actually already contained in the second part of Conjecture 4 in Pemantle’s paper [65]. The weakest form of the latter conjecture is the one stated below.

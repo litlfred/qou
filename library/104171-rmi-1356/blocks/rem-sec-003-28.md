@@ -1,0 +1,1 @@
+(1) For g D 0, Definition 4.29 is a classical definition, while the case g D 1 is related by Schur–Weyl duality to Verma modules, see [30]. (2) Without evaluation of circles, the case g > 2 can also be found in [30] under the name multi-polar, but not much appears to be known.

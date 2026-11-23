@@ -1,1 +1,0 @@
-To simplify, we shall write: $$\label{eqn:thetalambda} \theta_\Lambda(z) := \prod_{j=1}^m\left(\theta\left(-\frac z{\lambda_j}\right)\right)^{\nu_j}~.$$ Thus, if $f\in{\mathbb B}^{\Lambda}$, $\theta_\Lambda f$ represents an analytic function in a punctured disk $0 < \left |z \right |< R$.

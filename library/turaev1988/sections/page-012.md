@@ -1,0 +1,73 @@
+---
+doc_id: turaev1988
+doc_title: "The Yang-Baxter equation and invariants of links"
+section_id: page-012
+section_title: "Page 12"
+pages: 12-12
+pdf_page: 12
+source_pdf: turaev1988.pdf
+source_sha256: 3ccc9e1ee4f95480
+text_source: ocr
+granularity: page
+doc_brief: "Turaev, The Yang–Baxter equation and invariants of links (Invent. Math. 92, 527–553, 1988) — enhanced Yang–Baxter operators give link invariants via braid closure; the HOMFLY (P) and Kauffman (F) polynomials arise this way, with state models."
+---
+538 V.G. Turaey
+
+it is easy to compute a(i, j):
+
+0 if i>j
+q if i=j+i
+a(i,j)= 1 if i=j=i
+q-q' if i<j+i
+
+Q—-q'\tvgim"') if i<jai
+
+To verify (9) we shall consider 3 cases: i<i’, i=i’, i>i’. If i>i, then i>(m+1)/2
+and
+
+m
+
++ . m ry
+¥. ali, j) q2-™t =q?!-™ + 4.(q—q7}) Y gqzinm— tty gmty,
+
+j=l j=itt
+
+If i=i’, then i=(m+1)/2, m is odd, v= —1 and the computation is similar. Let
+i<i’. Then i<(m+1)/2 and
+
+m
+
+Y aq? t=q?ims(q—q7') Yo gm +0(q—q7'). il)
+
+j= jrit
+
+The sequence
+ginm-}, j=it1,it+2,...,m
+is the geometric progression
+
+2i+1—m 2i+3-m m+yv—1
+
+q » ree |
+
+with one superfluous member g°=1 in case v= —1 or one omitted member
+q°=1 in case v= 1. This excess or omission is exactly compensated by v(q—q_’).
+Therefore the right-hand side of (11) equals
+
+gt 4(q—qu)[qzit tom st g@ita—m ag  tgmt yt agnt,
+
+4.3.3. For an oriented link L the invariant T,(L) with S=S, will be denoted
+by Q,,,,(L). It follows from (4) that
+
+Qn,v(O)= —v+(q"**—q>™ "Yq—q7*).
+Apriori, if m is odd then Q,,,,(L)eZ[q'/?, q~1/]. The next theorem shows
+among other things that actually Q,, ,(L)¢Z[q,q~‘]. In the statement of this
+theorem ]/ —v=1, if v= —1, and |/ —v is the complex unit |/ —1 if v=1.
+
+4.3.4. Theorem. Let ve{1,—1}. For any diagram D of an oriented link L the
+polynomial
+
+Om,y(D)=(V —v 4" *)” Om, »(E)
+does not depend on the choice of orientation of L. (Here w(D) is the writhe of
+
+D — see Sect. 5.1). If D,, D-, Do and D,, are link diagrams coinciding outside
+some disk and looking as in Fig. 4 inside this disk then

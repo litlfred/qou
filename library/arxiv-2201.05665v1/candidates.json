@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2201.05665v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "bad7bde03d199a733f54dd787a0ac90f394c40a99658f54dd26f5128f1bd2c99",
   "file": "2201.05665v1.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be noted that Dyson obtained this result using one of the early results of Widom [@33] on the asymptotics of Toeplitz determinants with symbols supported on circular arcs.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-sine-kernel-determinant.md",
-   "section_title": "The sine-kernel determinant",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "[^4]: It should be noted that the Hastings-McLeod solution is very unstable; indeed, a small change in the pre-exponential numerical factor in the normalization condition ([\\[painleve2\\]](#painleve2){reference-type=\"ref\" reference=\"painleve2\"}) yields a completely different type of behavior of $u(x)$ for negative $x$, including the appearance of singularities (e.g. see again [@FIKN] ).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-the-tracy-widom-distribution-functions.md",
-   "section_title": "The Tracy-Widom distribution functions",
-   "pages": "3-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be noted that the authors of [@DeiGio1; @DeiGio2] based their analysis on Widom's papers [@95; @96] where important relations between symplectic, orthogonal and unitary ensembles were established for finite $N$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-41-general-invariant-ensembles-and-the-wigner-en.md",
-   "section_title": "General invariant ensembles and the Wigner ensembles",
-   "pages": "7-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be remarked that the analysis of the Fredholm determinant in [@135] was itself quite novel, requiring a number of ingenious operator manipulations.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-5-the-asymmetric-simple-exclusion-process-harold.md",
-   "section_title": "The asymmetric simple exclusion process. Harold Widom's papers 133,134,135",
-   "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

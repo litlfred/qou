@@ -1,0 +1,1 @@
+At large $n$, the behaviour was measured to be $${\rm vol}(F_{2n})=\df12Z_7 -\frac{C}{(\frac14n-1)^2}+O(1/n^4) \label{limits}$$ with $C\approx0.8160$, found from 12-digit SnapPea results, with up to 500 crossings.

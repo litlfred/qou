@@ -1,1 +1,0 @@
-Since the only rank three fusion category with Frobenius-Perron dimension three is $\text{Vec}_{\mathbb Z/3\mathbb Z}^1$, for $A$ to be separable, the three simple objects should form $\text{Vec}_{\mathbb Z/3\mathbb Z}^1$.

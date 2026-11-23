@@ -1,1 +1,1 @@
-Let πX : X →B be an object of SmB. View X ×B X as a X-scheme via the projection
+Let πX : X →B be an object of SmB. View X ×B X as a X-scheme via the projection p2 : X ×B X →X onto the second factor. Then there are canonical isomorphisms π∗ X(X/BB.M.) ≃p2♯6−p∗ 1TX/B(1X×B X) ≃X ×B X/XB.M. in SH(X) and a canonical isomorphism πX♯(X ×B X/XB.M.) ≃X/BB.M. ∧B X/B in SH(B).

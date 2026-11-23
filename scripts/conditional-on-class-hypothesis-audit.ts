@@ -31,7 +31,7 @@
  *      (`prop:b1-figure-8-row-theorem`) — a locally-minted context class is a
  *      different defect (item 5), not an unconditional statement;
  *   3. matching `class` alone missed `(S : BodyOrderJetGrading)`
- *      (`lem:bond-order-eq-jet-degree`) — a `structure` binds identically;
+ *      (`conj:bond-order-eq-jet-degree`) — a `structure` binds identically;
  *   4. matching same-file declarations only missed `(amphi : Amphicheiral …)`
  *      (`cor:knot-factor-amphicheiral`), whose carrier lives upstream.
  *
@@ -292,7 +292,7 @@ if (process.argv.includes("--item5")) {
 // day).  It is SUFFICIENT evidence of a projection, NOT NECESSARY for an
 // item-5 violation: a class can carry the conclusion in a lightly rearranged
 // form and the theorem can reach it by `ring` or `simp` while still deriving
-// nothing.  `prop:proton-mass-substrate-identity` is exactly that and this
+// nothing.  `conj:proton-mass-substrate-identity` is exactly that and this
 // filter does not see it.  So a clean run here is NOT an all-clear, and the
 // count is a LOWER bound on item-5 violations — the opposite direction from
 // every other count in this file, which is why it is said explicitly.

@@ -1,0 +1,1 @@
+Fix a prime p and a p-complete torsion-free ring S. Suppose that g(q) = (gm(x))m≥1,(m,p)=1 , gm(x) ∈S[ 1 p, ζm][[x]] (191) is a collection of power series such that φpg(qp) −pg(q) ∈ Y (m,p)=1 pS[ζm][[q −ζm]] . (192) Then f(q) := exp(g(q)) is well-defined and assuming f(ζm + x) ∈(1 + pS[ζm]) + xS[ζm] + O(x2), it satisfies f(q) ∈ Y m≥1 ,(m,p)=1 S[ζm][[q −ζm]] . (193)

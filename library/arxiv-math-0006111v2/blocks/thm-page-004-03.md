@@ -1,0 +1,1 @@
+Let the sequence (cl)l≥1 and the integer n be given, then there exists a constant K, such that for all δ ≥0, every ψ ∈Fn c,δ is (δ + q−1)1/2-supported by the set of Young diagrams λ ∈Yq satisfying |χλ(ρ) −ψ(ρ)| ≤K(δ + q−1)1/4q−l/2 for all ρ ∈Sq with |ρ| = l ≤n/2.

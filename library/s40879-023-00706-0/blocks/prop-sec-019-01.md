@@ -1,0 +1,1 @@
+The 120 tritangent planes on Bring’s curve split into two classes, 60 in each class; (i) those where all three contact points are Weierstrass points, and (ii) those where only one contact points is a Weierstrass point. Planes in the ﬁrst and second class respectively have equations (recalling notation from Sect. 3.1) (1) α jk ..= x j β −xk γ = 0

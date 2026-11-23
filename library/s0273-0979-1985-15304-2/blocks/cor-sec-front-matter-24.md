@@ -1,0 +1,1 @@
+If K is a knot and \AK{Ï)\ > 3, then K cannot be represented as a closed 3 braid. Of the 59 knots with 9 crossings or less which are known not to be closed 3 braids, this simple criterion establishes the result for 43 of them, at a glance.

@@ -1,1 +1,0 @@
-Let $M$ be a connected, oriented 3-manifold with (possibly empty) boundary.\index{three-manifold!irreducible three-manifold} \begin{defn} The manifold $M$ is \emph{irreducible} if every sphere $S\subset \interior M$ bounds a ball. \end{defn} It is important to recall here that the sphere must be a smooth surface.

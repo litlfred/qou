@@ -1,0 +1,1 @@
+For each relatively prime pair of inte- gers p,q > 1 and each k > 1, there is a (kp, kq)- torus link Vpp,4q which minimizes E among k-com- ponent links invariant under S' x Cy, and which is therefore critical for E. In particular, there are in- finitely many E-critical links with any number of components.

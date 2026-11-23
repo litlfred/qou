@@ -1,0 +1,1 @@
+Let ˜B be a graded ring of Laurent type, with uniformizer ˜c, and deﬁne B := ˜B0, the degree 0 subring. Then there is a unique isomorphism of graded rings B[t, t−1] ≃ −→˜B that is the identity on B, and sends t 7→˜c. Exercise 18.3.3. Prove Lemma 18.3.2.

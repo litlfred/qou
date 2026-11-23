@@ -20,6 +20,8 @@ export default proposition({
     "many-body",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): which is exactly what `QOU.Mass.ClosureNormalisationDefect` makes precise (`freeEnergy_closureNorm_additive_iff`: additivity holds iff $\\delta = 1$, excluded for $q > 1$)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (the complete graph is excluded there, `QOU.Mass.CoordinationSaturation`)." },
     {
       kind: "note",
       body: "An earlier version of this paragraph conflated connected-sum multiplicativity of the Jones polynomial with the disjoint-union loop value.",

@@ -1,0 +1,1 @@
+Let T be an R-tree and  2 B1ðTÞ. Then, the function ’ : T ! R satisﬁes that cðð’ÞðÞÞ  0, jcðð’ÞðÞÞj  CRadðð’ÞðÞ; m  Þ þ Sep ð’ÞðÞ; m 3 ;    ð5:4Þ þ Sepðð’ÞðÞ; m  ; m  Þ; and CRadð; m  Þ  CRadðð’ÞðÞ; m  Þ þ Sep ; m 3 ;    ð5:5Þ þ Sep ð’ÞðÞ; m 3 ;    þ Sepðð’ÞðÞ; m  ; m  Þ for any  > 0.

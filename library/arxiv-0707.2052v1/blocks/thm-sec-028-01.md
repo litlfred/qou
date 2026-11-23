@@ -1,0 +1,1 @@
+If Φ and Φ† form a politely dual pair of kernels, then the Serre trace is invariant under partial trace with respect to Φ: Tr     Ψ α Ψ    = Tr     Ψ α Ψ    ; Tr     Ψ′ α′ Ψ′    = Tr     α′ Ψ′ Ψ′    .

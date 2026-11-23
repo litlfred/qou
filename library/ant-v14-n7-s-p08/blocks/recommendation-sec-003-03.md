@@ -1,1 +1,0 @@
-(Precise implications may be found in Section A.2, where we show that even the conjecturally best possible values for the codimension do not signiﬁcantly change our main result.) For comparison, in the most extreme case, it is not hard to see that we must have θn ≤nr, and hence certainly must also have θ j ≤nr for all j ≤n.

@@ -1,1 +1,0 @@
-This should be quite a hard and technical problem, involving the precise study of generalized 6j symbols to compact quantum groups, but the main structures that we develop in our article should not suffer a lot of modifications, apart from the multiplicities, because many of the proofs were graphical.

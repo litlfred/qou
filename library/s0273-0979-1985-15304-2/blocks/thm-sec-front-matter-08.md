@@ -1,0 +1,1 @@
+For every n there are infinitely many words in Bn+\ which give close braids inequivalent to closed braids coming from elements of the form Us~lVsn, where U and V are in Bn. Explicit examples are easy to find; e.g., all but a finite number of powers of s^1S2Ss will do.

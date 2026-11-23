@@ -1,1 +1,0 @@
-We shall analyze (40) by differentiating it, since the derivatives of D(z) are elementary functions: dD i logll-zl +loglzl aD i logll-zl aZ=2 z ( 1_z’s=-2 r > ( +loglzi 1-2’ > (41) Assume therefore that the parameter value u (and hence also z) is varying in dependence on a single variable 5.

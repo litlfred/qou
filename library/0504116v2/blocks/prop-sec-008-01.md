@@ -1,0 +1,1 @@
+We have ai(x) = (−1)#V( ˆµi) · Q q∈V( ˆµi) Q T∈R( ˆµi,q) zx(T, q), bi(x) = (−1)#V(ˆλi) · Q q∈V(ˆλi) Q T∈R(ˆλi,q) zx(T, q). As a consequence of Mostow–Prasad’s rigidity Theorem for hyperbolic manifolds with geodesic boundary [7, 4] we get the following:

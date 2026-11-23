@@ -1,1 +1,0 @@
-For each i, either e∞ i = e∞ i+1, or e∞ i and e∞ i+1 are collinear and point in opposite directions at p; in addition, if we orient the edges ei and ei+1 by the outer normal orientation of ∂U along γ, their terminal end points must necessarily be equal in the ﬁrst case, and distinct in the second case.

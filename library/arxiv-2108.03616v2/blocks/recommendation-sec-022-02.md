@@ -1,1 +1,0 @@
-In fact, the crucial argument by Edmonds and Karp \cite{Edmonds72} and Dinic \cite{dinic1970algorithm} is showing that the length of the shortest augmenting path is non-decreasing, and must strictly increase within $|E|$ consecutive iterations.

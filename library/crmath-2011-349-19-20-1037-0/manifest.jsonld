@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/crmath-2011-349-19-20-1037-0",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/crmath-2011-349-19-20-1037-0/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -30,9 +30,9 @@
     "source_sha256": "fd5bd0558dfe892ff754e9644533d840342740970953c355d70ae60f7afa6a30",
     "pages": 3,
     "arxiv": null,
-    "doi": "10.1016/j.crma.201",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "doi": "10.1016/j.crma.2011.09.002",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

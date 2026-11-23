@@ -1,1 +1,1 @@
-Under the same assumptions as in Finkelberg’s theorem 21.1, O˜
+Under the same assumptions as in Finkelberg’s theorem 21.1, O˜ ℓ becomes a unitary modular fusion category with Kirillov’s Hermitian structure. Another consequence of Theorem 15.8 is the first positive answer to Galindo’s question Problem 6 for a wide class of tensor categories with possibly infinitely many simple objects, the proof is in Sect. 17, see Theorem 17.1. Another proof has been given by Reutter in [156] with different methods.

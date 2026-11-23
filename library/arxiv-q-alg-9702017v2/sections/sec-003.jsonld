@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9702017v2/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Idempotents",
+  "pageStart": 9,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-q-alg-9702017v2/blocks/prose-sec-003",
+    "library/arxiv-q-alg-9702017v2/blocks/thm-sec-003-01",
+    "library/arxiv-q-alg-9702017v2/blocks/cor-sec-003-02",
+    "library/arxiv-q-alg-9702017v2/blocks/lem-sec-003-03",
+    "library/arxiv-q-alg-9702017v2/blocks/cor-sec-003-04",
+    "library/arxiv-q-alg-9702017v2/blocks/lem-sec-003-05",
+    "library/arxiv-q-alg-9702017v2/blocks/thm-sec-003-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9702017v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9702017v2/manifest.jsonld",
+  "provenance": "ingested"
+}

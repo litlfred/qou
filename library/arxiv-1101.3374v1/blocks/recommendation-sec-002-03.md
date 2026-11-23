@@ -1,1 +1,0 @@
-If it is used to eliminate a self-crossing of an $n_i$-framed component $\mathcal D_i$ (meaning $\mathcal D_i$ is the projection of a component $\mathcal L_i$ of $\mathcal L$) then $\mathcal D_i$ splits into two components whose framings must add up to $n_i\pm1$, depending on the sign of the crossing.

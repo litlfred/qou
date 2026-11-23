@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1203.6041v2/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Induced representation method for calculating Clebsch-Gordan coefficients",
+  "pageStart": 30,
+  "pageEnd": 31,
+  "contains": [
+    "library/arxiv-1203.6041v2/blocks/prose-sec-020"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.6041v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.6041v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -50,8 +50,37 @@ $$
   /-- $\mathrm{Vol}(\mathcal{B}_3) \notin \mathbb{Q}$. -/
   volBorromean_irrational : Irrational volBorromean
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
+namespace SingleVolumeIrrationality
+
+variable [h : SingleVolumeIrrationality]
+
+/-- **$\mathrm{Vol}(4_1)$ is distinct from every rational number.** -/
+theorem vol41_ne_rat (q : ℚ) : h.vol41 ≠ (q : ℝ) :=
+  fun heq => h.vol41_irrational ⟨q, heq.symm⟩
+
+/-- **$\mathrm{Vol}(5_2)$ is distinct from every rational number.** -/
+theorem vol52_ne_rat (q : ℚ) : h.vol52 ≠ (q : ℝ) :=
+  fun heq => h.vol52_irrational ⟨q, heq.symm⟩
+
+/-- **$\mathrm{Vol}(\mathcal{B}_3)$ is distinct from every rational number.** -/
+theorem volBorromean_ne_rat (q : ℚ) : h.volBorromean ≠ (q : ℝ) :=
+  fun heq => h.volBorromean_irrational ⟨q, heq.symm⟩
+
+/-- **No positive integer multiple of $\mathrm{Vol}(4_1)$ is an integer.**
+    If $n \cdot \mathrm{Vol}(4_1) = m$ for $n \neq 0$ and $m \in \mathbb{Z}$,
+    then $\mathrm{Vol}(4_1) = m / n \in \mathbb{Q}$, contradicting
+    `vol41_irrational`. -/
+theorem nat_mul_vol41_ne_int (n : ℕ) (hn : n ≠ 0) (m : ℤ) :
+    (n : ℝ) * h.vol41 ≠ (m : ℝ) := by
+  intro heq
+  have hnR : (n : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr hn
+  have hrat : h.vol41 = (((m : ℚ) / (n : ℚ) : ℚ) : ℝ) := by
+    push_cast
+    exact eq_div_of_mul_eq hnR (by linarith)
+  exact vol41_ne_rat (h := h) ((m : ℚ) / (n : ℚ)) hrat
+
+end SingleVolumeIrrationality
+
 -- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/single-volume-irrationality.ts
 -- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
 -- History: this file previously carried

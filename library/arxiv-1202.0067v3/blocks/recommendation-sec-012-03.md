@@ -1,1 +1,0 @@
-However, as $\rho_1$ is a border strip of the same length with initial and terminal boxes $(i_1,k_1)$ and $(\ell_1,j_1)$ respectively, $\rho_2$ must contain the corners $(i_1,k_1)$ and $(\ell_1,j_1)$ and hence intersect $\rho_1$, contrary to our hypotheses. ◻ :::

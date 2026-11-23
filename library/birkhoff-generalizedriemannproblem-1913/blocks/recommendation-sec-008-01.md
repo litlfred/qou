@@ -1,1 +1,0 @@
-A solution may here be built up in a similar way (compare (70- It must be observed that since the de terminant of A(x) does not vanish along C, the elements of ^4-1(a0 satisfy the conditions imposed on a(x) at the outset.

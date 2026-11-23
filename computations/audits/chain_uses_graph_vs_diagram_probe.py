@@ -28,7 +28,7 @@ question arises.
 
 THE RESULT, narrowly.  None of steps 9, 10, 11 reaches -- through `uses[]` --
 any of the three carriers the step table NAMES for steps 7 and 8.  But step
-9's cone DOES reach `prop:jet-prefix-gb-filtration`, i.e. the same GB/jet
+9's cone DOES reach `conj:jet-prefix-gb-filtration`, i.e. the same GB/jet
 machinery under a different label.
 
 So the claim is about LABELS, not about dependence: the diagram's arrow is not
@@ -198,8 +198,8 @@ def main() -> int:
     print("\n=== 4. BUT the machinery is in the cone under a DIFFERENT label ===\n")
     c9 = cone("prop:atom-knot-mass-derivation", uses)
     check(
-        "prop:jet-prefix-gb-filtration" in c9,
-        "step 9's cone DOES reach prop:jet-prefix-gb-filtration",
+        "conj:jet-prefix-gb-filtration" in c9,
+        "step 9's cone DOES reach conj:jet-prefix-gb-filtration",
         "so 'step 9 does not reach step 7 or 8' is a statement about the\n"
         "CHEAT SHEET'S NAMED CARRIERS, not about the GB/jet machinery.  The\n"
         "machinery is there; the diagram points at different labels for it.\n"
@@ -210,7 +210,7 @@ def main() -> int:
     print("""    The cheat sheet draws 7 -> 8 -> 9 -> 10 -> 11 as one descending
     chain.  The corpus's uses[] graph has no edge from 9, 10 or 11 to any of
     the three carriers the step table NAMES for steps 7 and 8 -- while step
-    9's cone does reach `prop:jet-prefix-gb-filtration`, which is the same
+    9's cone does reach `conj:jet-prefix-gb-filtration`, which is the same
     machinery under another label.
 
     So the honest statement is narrow: **the diagram's arrow is not a uses[]

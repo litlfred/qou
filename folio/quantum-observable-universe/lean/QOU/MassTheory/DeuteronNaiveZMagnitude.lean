@@ -120,4 +120,11 @@ theorem naive_uniform_z_dead_across_A :
     (zDen * zDen - 5 * (zLo * zLo) < 0) ∧ (2 * BcatMilli < BAmeMilli) :=
   ⟨detHe4_factor_neg_scaled, one_interface_factor_insufficient⟩
 
+/-- Total exterior-algebra dimension sum `∑_{k=0}^4 C(4, k) = 16 = 2^4` and strict
+insufficiency even at five times `B_cat`: `5 * BcatMilli < BAmeMilli` (`1900 < 2225`). -/
+theorem choose4_row_sum_and_five_Bcat_lt_BAme :
+    choose4 0 + choose4 1 + choose4 2 + choose4 3 + choose4 4 = 16 ∧
+      5 * BcatMilli < BAmeMilli := by
+  decide
+
 end QOU.MassTheory.DeuteronNaiveZMagnitude

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ram1991-frobenius-formula/blocks/prop-page-007-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "text": "prop-page-007-01.md",
+  "derivedFrom": "library/ram1991-frobenius-formula/sections/page-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ram1991-frobenius-formula/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.3",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/page-007.md (p. 7-7)",
+    "claim_id": "ram1991-frobenius-formula#proposition:3.3",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

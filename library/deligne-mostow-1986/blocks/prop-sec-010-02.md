@@ -1,0 +1,1 @@
+— The map Z^: CL —^B^a),, is holomorphic. For w^ is holomorphic on ^and is continuous on CL by Proposition (8.7). Since Q^ — Q has C-codimension i, the assertion follows from the theorem on removable singularities.

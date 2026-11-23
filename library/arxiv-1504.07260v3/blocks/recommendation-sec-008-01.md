@@ -1,1 +1,0 @@
-In order for the model to be consistent, the level matching condition has to be satisfied, namely the eigenvalues of $L_0-\bar L_0$ in each $g^r$-twisted sector should take values in $\mathbb{Z}/\hat{N}\mathbb{Z}$, where $\hat N$ is the order of the symmetry.

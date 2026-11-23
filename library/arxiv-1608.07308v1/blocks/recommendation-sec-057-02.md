@@ -1,1 +1,0 @@
-Then there exist a collection of eigenobjects $P_i$ as in [\[eqn:eigenobject\]](#eqn:eigenobject){reference-type="eqref" reference="eqn:eigenobject"}, explicitly given by: $$\label{eqn:idempotent} \includegraphics{7_7.png}$$ The objects should be added $\oplus$ along columns, with differentials according to the arrows.

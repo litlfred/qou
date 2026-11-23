@@ -1,1 +1,0 @@
-We should mention that this procedure to obtain integer invariants and $q$-series from perturbative series is different from the one suggested in \cite{lz,hikami1, hikami-dec, gpv, gmp, gppv,andersen}, in the context of Chern--Simons theory with a compact gauge group.

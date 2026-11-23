@@ -1,1 +1,0 @@
-Upon applying $\rho$, the "Hamiltonian" appearing in the regulator changes, $H = E-R-j_3\to E+R+j_3$, so that the boson-fermion cancellations in $\mathcal{H}_{-m}$ should be counted differently than would be implied by the right-hand sides of [\[kind\]](#kind){reference-type="eqref" reference="kind"}.

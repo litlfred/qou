@@ -35,7 +35,7 @@ $\mathtt{def:universal-ilp-algorithm}$).*
 
 ### Correctness conditions
 
-*[`prop:operator-selection-lp`](#prop:operator-selection-lp)
+*[Knot operator selection as linear program with LP duality](#prop:operator-selection-lp)
 specifies the LP and proves the canonical $T_w$ is its primal
 optimum. Strong duality gives `primal_obj = dual_obj` (modulo
 solver tolerance); the active dual variables identify the

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-9803007v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "75f6484941ecbca0b8a455cbc48410ccd290d7be3cc5d27c67ccd13e69f92de9",
   "file": "9803007v2.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since these results should be universal, the identical factor should also arise from a generic random matrix potential.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-smallest-dirac-eigenvalue-distribution-from-rand.md",
-   "section_title": "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall provide a concise method to circumvent the di\ufb03culty in explicitly evaluating (1) and to e\ufb03ciently calculate E(s) for the massive chiral unitary ensembles with generic potentials.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-smallest-dirac-eigenvalue-distribution-from-rand.md",
-   "section_title": "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(7) In the following we shall show that the two factors in Eq.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-smallest-dirac-eigenvalue-distribution-from-rand.md",
-   "section_title": "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

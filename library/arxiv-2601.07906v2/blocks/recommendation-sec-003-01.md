@@ -1,1 +1,0 @@
-(In particular, all OPE indices come with their own factors of $\rho$, but the symbol $X$ makes the notation lighter.) One should think of the above constraints as holding inside every graph $\Gamma_{\mathcal{C}}$, where we have `zoomed in' to any portion of the graph that looks like one of the diagrams in figure \ref{fig:MS_moves}.

@@ -5,6 +5,7 @@ export default remark({
   title: "Homogeneity of the derivation chain under the calibration discipline",
   interprets: "def:three-calibration-discipline",
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Its content is the class field `mass_factorisation` of `qou:QOU.Observations.ThreeCalibrationDiscipline`." },
     {
       kind: "note",
       date: "2026-11-15",

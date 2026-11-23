@@ -1,1 +1,0 @@
-(Such forms exist since, by the Gysin sequence, H2(ST Σ, R) = 0 for g(Σ) ≥2.) Objects of the balanced Fukaya category are simple closed curves L ⊂Σ for which R L ι∗ Lθ = 0, where ιL : L →ST Σ is the tangent lift of L֒ →Σ (these curves should be equipped with orientations and Spin structures as usual).

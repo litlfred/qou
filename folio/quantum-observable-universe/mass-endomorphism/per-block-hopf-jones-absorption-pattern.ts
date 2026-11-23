@@ -2,6 +2,9 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:per-block-hopf-jones-absorption-pattern",
+  authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): The global precision-ladder coefficient $c_3 = J_{\\text{Hopf}}(q{=}1) = -2$ emerges via the two-strand sub-braid argument ([categorical derivation of $c_3 = -2$](#prop:q-beta-c3-hopf-three-fold-markov)). The per-block decomposition shows that this Hopf-Jones value arises structurally per Wedderburn block." },
+  ],
   lean: {
     ref: "qou:QOU.BraidKnot.dimension_scaled_absorption_pattern",
     validation: "not_checked",

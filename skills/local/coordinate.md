@@ -323,7 +323,7 @@ Run a triage **every 3–5 of your own commits**, or whenever you
 finish one substantive task and pick up the next.  Format:
 
 ```
-## Sibling-PR triage report (<your PR>, <timestamp>)
+## Sibling-PR triage report (#NNN, {timestamp})
 
 | PR | New comments | New commits | CI | Asks for me | Action |
 |----|:---:|:---:|:---:|---|---|

@@ -20,7 +20,9 @@ class was inhabited by `Unit` and zero (bean `qou-z9ws`).
    resolution checks the **sibling first** — so the block already resolves to
    [`mass-theory/joint-tower-sdp-confinement.lean`](../../mass-theory/joint-tower-sdp-confinement.lean),
    never to this file.
-2. That sibling carries the real formalisation: `PerParticleSdpVariables`, `WedderburnBlockPositivity`, `GbFiltrationGrading`, `JetOrderOrdering`, `TowerEdge`, `CrossLevelConsistency`.
+2. That sibling carries the SDP's data types: `PerParticleSdpVariables`, `TowerEdge`, `JointTowerSdp` and four
+   well-formedness predicates. It does **not** encode the SDP constraints or feasibility; until 2026-11-20 its
+   predicates were named as though it did (bean `qou-w8cg`).
 3. **Nothing imports this module** and nothing else in `content/` names the
    class (measured 2026-08-31 across every `.lean` in the tree).
 

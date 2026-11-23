@@ -1,0 +1,1 @@
+If A is noetherian, then it has a ﬁnite connected component decomposition. Exercise 13.1.52. (1) Prove the proposition above. (2) Find a ring A that does not have a ﬁnite connected component decompo- sition.

@@ -1,0 +1,1 @@
+Following [110], a semisimple rigid tensor category C together with an isomorphism of based rings ϕC : RN,ℓ → Gr(C) is called of slN,ℓ-type. Two slN,ℓ-type categories (ϕC, C) and (ϕC′, C ′ ) are equivalent if there is a tensor equivalence E : C → C ′ inducing an isomorphism between the Grothendieck rings compatible with ϕC and ϕC′.

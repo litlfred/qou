@@ -1,0 +1,1 @@
+Without going into detail of the vast literature on the application to QCD, and on comparing to lattice data from first principle lattice QCD simulations, cf [17, 18], let us focus on random matrix questions.

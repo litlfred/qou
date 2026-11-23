@@ -1,0 +1,207 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-quant-ph-0606114v3",
+ "source_sha256": "a8e08c457b65c728",
+ "brief": "q - Deformed Spin Networks, Knot Polynomials and Anyonic Topological Quantum Computation — We review the q-deformed spin network approach to Topological Quantum Field Theory and apply these methods",
+ "extended": "**q - Deformed Spin Networks, Knot Polynomials and Anyonic Topological Quantum Computation**\n\n*Polynomials and Anyonic Topological*\n\n88 pp, 37 sections.\n\n**Abstract.** We review the q-deformed spin network approach to Topological Quantum Field Theory and apply these methods to produce unitary representations of the braid groups that are dense in the unitary groups. Our methods are rooted in the bracket state sum model for the Jones polynomial. We give our results for a large class of representations based on values for the bracket polynomial that are roots of unity. We make a separate and self-contained study of the quan- tum universal Fibonacci model in this framework. We apply our results to give quantum algorithms for the computation of the colored Jones polynomi- als for knots and links, and the Witten-Reshetikhin-Turaev invariant of three manifolds.\n\n**Outline.** Front matter; Abstract; 0 Introduction; 1 Knots and Braids; Braid Generators; Hopf Link; Figure Eight Knot; Trefoil Knot; CL(b); 2 Quantum Mechanics and Quantum Computation; 2.1 What is a Quantum Computer?; 2.2 Universal Gates; 3 SU(2) Representations of the Artin Braid Gro; 4 The Bracket Polynomial and the Jones Polynom; or; 4.1 Quantum Computation of the Jones Polynomia; The Hadamard Test; 5 Quantum Topology, Cobordism Categories, Temp\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: If g = a + bu and h = c + dv are pure unit quaternions,then, without loss of generality, the braid relation ghg = hgh is true if and only if h = a + bv, and φg(v) = φh−1(u).\n- Theorem 2: In the Temperley-Lieb theory we obtain unitary (in fact real orthogonal) recoupling transformations when the bracket variable A has the form A = eiπ/2r for r a positive integer.\n- Lemma: eaiebjeci = cos(b)ei(a+c) +sin(b)ei(a−c)j. Hence any element of SU(2) can be written in the form eaiebjeci. for appropriate choices of angles a, b, c.\n- Lemma: For the bracket evaluation at the root of unity A = eiπ/2r the factor f(a, b, c) = q√∆a∆b∆c q Θ(a, b, c) is real, and can be taken to be a positive real number for (a, b, c)",
+ "tokens": {
+  "brief": 49,
+  "extended": 523
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-0-introduction",
+   "title": "Introduction",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-002-1-knots-and-braids",
+   "title": "Knots and Braids",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-003-braid-generators",
+   "title": "Braid Generators",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-004-hopf-link",
+   "title": "Hopf Link",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-005-figure-eight-knot",
+   "title": "Figure Eight Knot",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-006-trefoil-knot",
+   "title": "Trefoil Knot",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-007-clb",
+   "title": "CL(b)",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-008-2-quantum-mechanics-and-quantum-computation",
+   "title": "Quantum Mechanics and Quantum Computation",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-009-21-what-is-a-quantum-computer",
+   "title": "What is a Quantum Computer?",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-010-22-universal-gates",
+   "title": "Universal Gates",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-011-3-su2-representations-of-the-artin-braid-group",
+   "title": "SU(2) Representations of the Artin Braid Group",
+   "pages": "15-21"
+  },
+  {
+   "id": "sec-012-4-the-bracket-polynomial-and-the-jones-polynomia",
+   "title": "The Bracket Polynomial and the Jones Polynomial",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-013-or",
+   "title": "or",
+   "pages": "23-26"
+  },
+  {
+   "id": "sec-014-41-quantum-computation-of-the-jones-polynomial",
+   "title": "Quantum Computation of the Jones Polynomial",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-015-the-hadamard-test",
+   "title": "The Hadamard Test",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-016-5-quantum-topology-cobordism-categories-temperle",
+   "title": "Quantum Topology, Cobordism Categories, Temperley-Lieb Algebra and Topological Quantum Field Theory",
+   "pages": "29-33"
+  },
+  {
+   "id": "sec-017-identity",
+   "title": "Identity",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-018-su-us-u",
+   "title": "SU = US = U",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-019-pqp-p",
+   "title": "PQP P",
+   "pages": "38-41"
+  },
+  {
+   "id": "sec-020-6-braiding-and-topological-quantum-field-theory",
+   "title": "Braiding and Topological Quantum Field Theory",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-021-trinion",
+   "title": "Trinion",
+   "pages": "43-51"
+  },
+  {
+   "id": "sec-022-b-f-rf",
+   "title": "B = F RF",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-023-7-spin-networks-and-temperley-lieb-recoupling-th",
+   "title": "Spin Networks and Temperley-Lieb Recoupling Theory",
+   "pages": "51-52"
+  },
+  {
+   "id": "sec-024-n-strands",
+   "title": "n strands",
+   "pages": "52-56"
+  },
+  {
+   "id": "sec-025-tet",
+   "title": "Tet",
+   "pages": "56-57"
+  },
+  {
+   "id": "sec-026-71-evaluations",
+   "title": "Evaluations",
+   "pages": "57-58"
+  },
+  {
+   "id": "sec-027-72-symmetry-and-unitarity",
+   "title": "Symmetry and Unitarity",
+   "pages": "58-64"
+  },
+  {
+   "id": "sec-028-8-fibonacci-particles",
+   "title": "Fibonacci Particles",
+   "pages": "64-66"
+  },
+  {
+   "id": "sec-029-dimv-2",
+   "title": "dim(V ) = 2",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-030-dimv-1",
+   "title": "dim(V ) = 1",
+   "pages": "66-68"
+  },
+  {
+   "id": "sec-031-tree-of-squences-with-no-occurence-of",
+   "title": "Tree of squences with no occurence of **",
+   "pages": "68-68"
+  },
+  {
+   "id": "sec-032-9-the-fibonacci-recoupling-model",
+   "title": "The Fibonacci Recoupling Model",
+   "pages": "68-70"
+  },
+  {
+   "id": "sec-033-forbidden-process",
+   "title": "Forbidden Process",
+   "pages": "70-80"
+  },
+  {
+   "id": "sec-034-10-quantum-computation-of-colored-jones-polynomi",
+   "title": "Quantum Computation of Colored Jones Polynomials and the Witten-Reshetikhin- Turaev Invariant",
+   "pages": "80-83"
+  },
+  {
+   "id": "sec-035-references",
+   "title": "References",
+   "pages": "83-88"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

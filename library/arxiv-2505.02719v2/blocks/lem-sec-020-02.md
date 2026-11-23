@@ -1,0 +1,1 @@
+2 Let 𝑡≥0. Then for all 𝜀> 0 the map 𝐻𝑡(R/Z) × 𝐻𝑡(R/Z) →𝐻𝜎(𝑡,𝜀)(R/Z), (𝑢1, 𝑢2) ↦→𝑢1 · 𝑢2 is well-defined and continuous, where (as in Lemma 4.4) 𝜎(𝜏, 𝜀) ≔ ( 2 𝜏−1 2 −𝜀, for 𝜏∈[0, 1 2], 𝜏, for 𝜏∈( 1 2, ∞). Here, we regard 𝑢1 · 𝑢2 as a distribution whenever 𝜎(𝑡, 𝜀) < 0.

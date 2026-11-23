@@ -273,10 +273,35 @@ def audit(base: str, roots: list[str]):
         raw = open(p, encoding="utf-8", errors="replace").read()
         lines = raw.split("\n")
         code = blank_comments(raw)
+        has_import = bool(re.search(r"^\s*import\s+\S+", code, re.M))
         local_defs = {n.split(".")[-1]
                       for k, n, _, _ in decl_spans(code)
                       if k in ("def", "abbrev", "structure", "class", "inductive")}
         if not local_defs:
+            continue
+        if not has_import:
+            for kind, name, lineno, body in decl_spans(code):
+                if kind in PROVABLE:
+                    doc = docstring_before(lines, lineno)
+                    stmt, _ = split_statement(body)
+                    findings.append({
+                        "kind_of_finding": "no-import-wrapper",
+                        "file": os.path.relpath(p, base),
+                        "line": lineno,
+                        "decl": name,
+                        "kind": kind,
+                        "severity": "CRITICAL",
+                        "overclaim": True,
+                        "cheap_proof": True,
+                        "simp_unfold": False,
+                        "discharged_via_hypothesis": False,
+                        "proof_steps": 0,
+                        "borrowed": borrowed_hits(name, doc) or ["NO-IMPORT-WRAPPER"],
+                        "local_defs_in_statement": sorted(local_defs)[:6],
+                        "external_lemmas_in_proof": [],
+                        "disclaimed": False,
+                        "statement": re.sub(r"\s+", " ", stmt.strip())[:300],
+                    })
             continue
         for kind, name, lineno, body in decl_spans(code):
             if kind in DEFINITIONAL:

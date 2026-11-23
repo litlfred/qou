@@ -1,0 +1,1 @@
+If G is semiabelian and Z ⊂G is a smooth closed subvariety, then the number (−1)dim(Z)χ(Z, C) is nonnegative and coincides with gdeg(Z). Indeed, CZ[dim(Z)] is perverse and its characteristic cycle is [T ∗ ZG] taken with multiplicity 1.

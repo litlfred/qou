@@ -1,0 +1,1 @@
+(Functoriality) For any composition B′′ = B′ ∗B of bordisms, HN(B′′, h′′, k′′) coincides with HN(B′, h′, k′) ◦HN(B, h, k) up to sign and multiplication by Nth roots of unity. This is a direct consequence of Theorem 5.4. Also, we prove as in Proposition 4.29 of [5]:

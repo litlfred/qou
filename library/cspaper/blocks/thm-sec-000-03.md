@@ -1,0 +1,1 @@
+it should be associated with some kind of extra structure on M. Remark 4 and Section 2 both give some support for this belief. Acknowledgements. The support of the N.S.F. for this work is gratefully acknowledged. Don Zagier encouraged me to ﬁnally write up this work, despite the lack of proof of the conjecture of Theorem 2.

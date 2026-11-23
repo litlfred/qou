@@ -1,1 +1,0 @@
-Applied to the dual description of pure AdS$_3$ quantum gravity, these constraints give predictions for the set of topologies that must appear in the gravitational path integral and allows one to `discover' the sum over topologies from the statistical ensemble.

@@ -12,6 +12,7 @@ text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.951
 doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
+duplicate_of: "arxiv-math-0203060v11"
 ---
 Let ${\mathcal C}$ be a fusion category. Define the Frobenius-Perron dimension ${\rm FPdim}({\mathcal C})$ of ${\mathcal C}$ to be the sum of squares of Frobenius-Perron dimensions of simple objects of ${\mathcal C}$.
 

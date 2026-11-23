@@ -1,1 +1,0 @@
-Of course, it amounts to expand in power series the functions $$H_{c}(z)=z^{-1}G_{c}(z^{-1})=\frac{2}{1+cz+\sqrt{(1-cz)^{2}-4z^{2}}}$$ and $P_{c}(z)=zH_{c}'(z)/H_{c}(z)$, but the calculations are not at all trivial, and we shall need in particular the following hypergeometric identity:

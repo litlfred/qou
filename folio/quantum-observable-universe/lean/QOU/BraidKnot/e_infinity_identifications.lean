@@ -1,5 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.BraidKnot.e_infinity_identifications
@@ -79,6 +81,13 @@ class EInfinityIdentificationsContext (wenzlBridgeCorrection : Prop) where
       every consumer's type.  The conjecture is untouched and still open. -/
   claim_wenzl_bridge_correction_holds : wenzlBridgeCorrection
 
+/-- **Chirality sign involutivity (proved):** since `chirality_sign ∈ {1, -1}`,
+    its square is identically `1`. -/
+theorem e_infinity_chirality_sq_eq_one {wenzlBridgeCorrection : Prop}
+    [ctx : EInfinityIdentificationsContext wenzlBridgeCorrection] :
+    ctx.chirality_sign ^ 2 = 1 := by
+  rcases ctx.claim_chirality_sign with h | h <;> rw [h] <;> ring
+
 /-- **Content statement** (from manuscript):
 
 Having established the GB spectral sequence exists and converges
@@ -89,10 +98,12 @@ mass-formula term from
 proposition attempts that identification for all six terms, marking
 derivation status per term.
 
-    The Lean encoding below states the full six-term conjunction as the
-    type of `def e_infinity_identifications` and derives it from the
-    `EInfinityIdentificationsContext` fields (§3b-cond conditional); the
-    conjectural content lives in those class fields, not in a `sorry`. -/
+    **Assumed, not derived here:** the six `E_∞^{p,*}` page identifications are
+    carried as fields of `[EInfinityIdentificationsContext wenzlBridgeCorrection]`;
+    `def e_infinity_identifications` bundles their six-term conjunction together
+    with the derived involutivity `ctx.chirality_sign ^ 2 = 1` as the `lean.ref`
+    entry point, while `e_infinity_first_three_pages_sum` below proves the
+    3-page truncation expansion from those fields (bean `qou-bvo3`). -/
 -- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
 def e_infinity_identifications {wenzlBridgeCorrection : Prop}
     [ctx : EInfinityIdentificationsContext wenzlBridgeCorrection] :
@@ -106,9 +117,31 @@ def e_infinity_identifications {wenzlBridgeCorrection : Prop}
       (Finset.range ctx.n_branes).sum (fun i =>
         (Finset.range ctx.n_branes).sum (fun j => ctx.brane_pairwise i j))) ∧
     (ctx.chirality_sign = 1 ∨ ctx.chirality_sign = -1) ∧
-    wenzlBridgeCorrection :=
-  ⟨ctx.claim_mass_formula_unified, ctx.claim_descended,
+    ctx.chirality_sign ^ 2 = 1 ∧
+    wenzlBridgeCorrection := by
+  exact ⟨ctx.claim_mass_formula_unified, ctx.claim_descended,
    ctx.claim_brane_tower_single, ctx.claim_brane_tower_pairwise,
-   ctx.claim_chirality_sign, ctx.claim_wenzl_bridge_correction_holds⟩
+   ctx.claim_chirality_sign, e_infinity_chirality_sq_eq_one,
+   ctx.claim_wenzl_bridge_correction_holds⟩
+
+/-- **Three-page truncation expansion (proved):** when `n_pages = 3`, combining
+    `claim_mass_formula_unified` with the page-0, page-1, and page-2
+    identifications expands `m_total` explicitly in terms of `trM_T_w_abs`,
+    the single-generator brane sum, the pairwise brane sum, `ribbon_closure`,
+    and `frobenius_co_casimir`. -/
+theorem e_infinity_first_three_pages_sum {wenzlBridgeCorrection : Prop}
+    [ctx : EInfinityIdentificationsContext wenzlBridgeCorrection]
+    (h_pages : ctx.n_pages = 3) :
+    ctx.m_total =
+      ctx.trM_T_w_abs +
+      (Finset.range ctx.n_branes).sum (fun i => ctx.brane_pairing i) +
+      (Finset.range ctx.n_branes).sum (fun i =>
+        (Finset.range ctx.n_branes).sum (fun j => ctx.brane_pairwise i j)) +
+      ctx.ribbon_closure + ctx.frobenius_co_casimir := by
+  have hm := ctx.claim_mass_formula_unified
+  rw [h_pages] at hm
+  rw [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_one] at hm
+  rw [ctx.claim_descended, ctx.claim_brane_tower_single, ctx.claim_brane_tower_pairwise] at hm
+  linarith
 
 end QOU.BraidKnot

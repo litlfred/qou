@@ -1,0 +1,1 @@
+The algebra homomorphism ˜σun induces isomorphisms HC∗(˜σun) : HC∗(S ⋊Γ) → L w∈⟨W ′⟩ c(w) L i=1 HC∗(C∞(T σw,i un ))Gσw,i, HPev/odd(˜σ) : HPev/odd(S ⋊Γ) → L w∈⟨W ′⟩ c(w) L i=1 Hev/odd DR (T σw,i un )Gσw,i ∼= Hev/odd DR ( eTun)W ′.

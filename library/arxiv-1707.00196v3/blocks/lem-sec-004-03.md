@@ -1,0 +1,1 @@
+i) Let {xi}i and {yj}j be two ﬁnite sequences of positive real numbers such that for all n ∈N, X i x2n+1 i = X j yn j . (3.18) Then the xi, yj are rational. ii) Let {xi}i be a ﬁnite sequence of positive rational numbers such that P i x2n+1 i ∈N for all n ∈N. Then the xi are natural numbers.

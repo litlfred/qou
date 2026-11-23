@@ -16,7 +16,7 @@ Per [`mass-endomorphism-conjecture.md` §"Established results"]:
 - **Step 1 (proved, `prop:categorical-mass-markov`).** The single-level
   categorical mass is the descended Markov trace `|tr_M(ρ(β))|`
   (Nakayama `S² = id`).
-- **Step 2 (proved, `prop:topological-mass-formula`).** The full brane tower
+- **Step 2 (proved, `conj:topological-mass-formula`).** The full brane tower
   sums to `Vol(K_β)/ℏ_q²`.
 - **Step 3 (OPEN — the Volume Conjecture).** The Jones–Markov trace
   `tr_M(ρ(β)) = J(K;q)` (a Laurent polynomial) and the hyperbolic volume

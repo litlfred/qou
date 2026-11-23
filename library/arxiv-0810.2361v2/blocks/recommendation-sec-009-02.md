@@ -1,1 +1,0 @@
-To begin with, we should describe the functors $f^{\ast} f_{\ast}$ ("push-pull"), which is an endofunctor on $[\boldsymbol{\operatorname{{Y}}},\boldsymbol{\operatorname{{Vect}}}]$, and $f_{\ast} f^{\ast}$ ("pull-push"), which is an endofunctor on $[\boldsymbol{\operatorname{{X}}},\boldsymbol{\operatorname{{Vect}}}]$.

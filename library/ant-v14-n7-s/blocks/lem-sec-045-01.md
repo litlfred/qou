@@ -1,0 +1,1 @@
+B.1. (i) For all n ∈N∗, for all f ∈K⟨⟨e0∪µN ⟩⟩, we have N3,D(τn( f )) ⩽N3,D( f ), and in particular τn is a continuous linear map for the N3,D-topology. (ii) K⟨⟨e0∪µN ⟩⟩<∞and K⟨⟨e0∪µN ⟩⟩o(1) are stable by τn. (iii) For all f, g ∈51,0(K) and n ∈N we have N3,D(Ad(g◦∫1,0τn( f ))(e1)) ⩽3DN3,D(g)N3,D( f ). (1-13)

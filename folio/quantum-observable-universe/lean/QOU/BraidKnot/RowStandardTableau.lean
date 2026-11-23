@@ -243,4 +243,10 @@ theorem isStandard_sytToTableau (T : QOU.BraidKnot.StandardYoungTableau μ) :
 /-- Standard implies row-standard — the inclusion of index sets Lemma 3.14 moves along. -/
 theorem IsStandard.isRowStandard {t : Tableau μ} (h : IsStandard t) : IsRowStandard t := h.1
 
+/-- Zero-subtracted upper-minus-lower column entry vanishes for strictly increasing rows in `μ`. -/
+theorem entry_sub_entry_eq_zero_of_lt_row (T : QOU.BraidKnot.StandardYoungTableau μ) {i i' j : ℕ}
+    (hlt : i < i') (hmem : (i', j) ∈ μ) :
+    T.entry i j - T.entry i' j = 0 :=
+  Nat.sub_eq_zero_of_le (Nat.le_of_lt (entry_lt_entry_of_lt_row T hlt hmem))
+
 end QOU.BraidKnot.RowStandardTableau

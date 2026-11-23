@@ -15,6 +15,7 @@ import QOU.Torsion.Descent
 import QOU.Torsion.DescentCondition
 import QOU.Torsion.GlobalGluing
 import QOU.Torsion.TopologicalMass
+import QOU.Torsion.TopologicalMassEquality
 import QOU.Torsion.MassGap
 import QOU.Torsion.quantum_dilogarithm
 import QOU.Torsion.skein_generation

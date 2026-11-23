@@ -1,1 +1,0 @@
-In particular, since the order parameter in nematic liquid crystal and 3He superﬂuid involves a unit three vector, an experimental investigation of vortices in these materials should reveal the existence of stable knotlike structures.

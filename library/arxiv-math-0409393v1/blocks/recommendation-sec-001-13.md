@@ -1,1 +1,0 @@
-However, we shall need a slightly more general version afterwards (proposition [\[prop:Rwg=Ka\]](#prop:Rwg=Ka){reference-type="ref" reference="prop:Rwg=Ka"}).\ We start with a computation with two slopes.

@@ -1,0 +1,62 @@
+{
+  "$schema": "folio-tabular-csvw/v1",
+  "doc_id": "arxiv-1603.07827v1",
+  "source": {
+    "file": "arxiv-1603.07827v1.pdf",
+    "sha256": "8f4959c11d26c8c2f4e094862e465fc0de8676bf3ac49165f597f08303e59991",
+    "bytes": 169932,
+    "pages": 15,
+    "text_source": "embedded",
+    "extractor": "pymupdf",
+    "mtime": "2026-11-22T19:30:56Z",
+    "mimetype_sniffed": "application/pdf",
+    "mimetype_source": "magic-bytes",
+    "note": "tables extracted from the PDF pages by pdf-tables.py — drafts, not checked against the page"
+  },
+  "narrative": {
+    "text": null,
+    "state": "not-authored"
+  },
+  "tables": [
+    {
+      "url": "tables/table-1.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "1",
+            "titles": "1.",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "r-j-baxter-exactly-solved-models-in-statistical-",
+            "titles": "R.J. Baxter. Exactly Solved Models in Statistical Mechanics. Acad. Press (1982).",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 61,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 1",
+      "fac:pages": [
+        14,
+        15
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p014-014",
+        "at": "2026-11-22"
+      }
+    }
+  ]
+}

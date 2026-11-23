@@ -1158,6 +1158,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "minor",
         "evidence": "Ref (sibling only, `.lean:127`) is `Cl_2 0 = 0 ∧ LiTwo 0 = 0`, not the two displayed identities; those are proved under other names in the same file (`Cl_2_pentagon_at_zero_unconditional` :44, `faddeev_kashaev_at_zero_unconditional` :77, ∀ q n). Both are trivial (Cl₂(0)=0; Φₙ(0;q)=1 so log=0). Title \"(closes parts of substantive Mathlib gaps 2+3)\" overstates: nothing of the pentagon or the Faddeev–Kashaev limit is closed. Note PR #7915 shows the related `Cl_2_PentagonIdentity` class in `mass-tower-deeper-fillers.lean` has no instance; this block's `Cl_2_PentagonHolds` (ThreeSubstantiveMathlibFillers.lean:117) carries an abstract `closure` predicate and is not affected"
+      },
+      {
+        "field_hash": {
+          "md": "d25732eeb869",
+          "ts": "fa26f1446737",
+          "lean": "dff873c7a86e",
+          "lean_statement": "921c663d55ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:10:15.422Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice changes, label references and Lean or class names replaced by prose, and convention-D wording tidied. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Ref (sibling only, `.lean:127`) is `Cl_2 0 = 0 ∧ LiTwo 0 = 0`, not the two displayed identities; those are proved under other names in the same file (`Cl_2_pentagon_at_zero_unconditional` :44, `faddeev_kashaev_at_zero_unconditional` :77, ∀ q n). Both are trivial (Cl₂(0)=0; Φₙ(0;q)=1 so log=0). Title \"(closes parts of substantive Mathlib gaps 2+3)\" overstates: nothing of the pentagon or the Faddeev–Kashaev limit is closed. Note PR #7915 shows the related `Cl_2_PentagonIdentity` class in `mass-tower-deeper-fillers.lean` has no instance; this block's `Cl_2_PentagonHolds` (ThreeSubstantiveMathlibFillers.lean:117) carries an abstract `closure` predicate and is not affected"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2141,6 +2159,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:59.224Z",
+  "updated_at": "2026-11-21T08:10:15.422Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

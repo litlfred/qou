@@ -1,1 +1,0 @@
-Back to our model, a proper analysis of the mod- iﬁcation to h →γγ must not only incorporate the full set 4Easier to see in the Higgs basis, where the doublet orthogonal to the one with the Goldstones and the whole v contains H+ in the upper component and −hSM cos (β −α) in the lower component.

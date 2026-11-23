@@ -1,0 +1,1 @@
+Two R-matrices R, S ∈R0 are equivalent if and only if they have similar partial traces, ptr R ∼= ptr S. Our subfactor approach also completes the characterization of TYB as a subset of T. Using the standard notation for Thoma parameters (recalled in Thm. 2.3), we ﬁnd the following result.

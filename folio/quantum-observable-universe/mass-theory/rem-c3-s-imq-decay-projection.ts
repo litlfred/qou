@@ -14,4 +14,7 @@ export default remark({
     "c3-bar-odd",
     "candidate-iii",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The extraction is recorded in [`qbeta_c3_imq_decay_projection_probe.py`](../../../computations/qbeta/qbeta_c3_imq_decay_projection_probe.py)." },
+  ],
 });

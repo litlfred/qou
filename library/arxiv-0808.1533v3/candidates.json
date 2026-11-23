@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0808.1533v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "3e003cc35a4e57116b238f20d412c351d3632eacc207a8291136b03a567ce9b4",
   "file": "0808.1533v3.pdf"
  },
  "provenance": {
-  "title": "The third order helicity of magnetic \ufb01elds via link maps",
+  "title": "On the third order helicity of magnetic fields on invariant domains in S\u00b3",
   "authors": "R. Komendarczyk\u2217\u2020",
   "arxiv": {
    "id": "0808.1533",
@@ -16,136 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 8,
-  "by_kind": {
-   "recommendation": 8
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In order to determine a diagram of $l_{S,N}$, we must keep track of the \"head\" and \"tail\" of the vector $\\mathsf{v}_s=L^s_2(t)-L^s_3(u)$, for various values of $s$ and record values of $t$ and $u$ for which $\\mathsf{v}_s$ points \"North\" and \"South\" (Figure [3](#fig:4-pos){reference-type=\"ref\" reference=\"fig:4-pos\"}).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-the-milnor-mu-123-invariant-and-the-hopf-degree.md",
-   "section_title": "The Milnor mu-123-invariant and the Hopf degree.",
-   "pages": "3-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Let $\\mathcal{T}(t)=\\hat{g}(t)(\\mathcal{T}(0))\\subset \\text{\\rm Conf}_3(S^3)$, we must show $\\frac{d}{dt} \\mathsf{H}_{123}(B^t_1,B^t_2,B^t_3)=0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-definition-of-mu-123-helicity-on-invariant-unlin.md",
-   "section_title": "Definition of ``mu-123-helicity'' on invariant unlinked handlebodies.",
-   "pages": "11-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Before we start, we must point out the following identity (valid for any 3-form $\\beta$ on $M\\times M\\times M$ and vector fields $B_1,B_2,B_3$ on $M$)",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-ergodic-interpretation-of-h-123.md",
-   "section_title": "The ergodic interpretation of H-123",
-   "pages": "15-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For the proof of $(ii)$ we must show the following $$\\int_\\mathcal{T} m_{B_1,B_2,B_3}\\,\\mu_1\\wedge \\mu_2\\wedge \\mu_3=\\int_{g(\\mathcal{T})} m_{g_\\ast B_1,g_\\ast B_2, g_\\ast B_3}\\,\\mu_1\\wedge \\mu_2\\wedge \\mu_3\\ .$$ Theorem [\\[th:multi-ergodic\\]](#th:multi-ergodic){reference-type=\"ref\" reference=\"th:multi-ergodic\"} tells us that $m_{B_1,B_2,B_3}$ and $m_{g_\\ast B_1,g_\\ast B_2, g_\\ast B_3}$ admit $L^1$-averages $\\bar{m}_{B_1,B_2,B_3}$ and $\\bar{m}_{g_\\ast B_1,g_\\ast B_2, g_\\ast B_3}$, under actions of $B_i$ and $g_\\ast B_i$ respectively.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-ergodic-interpretation-of-h-123.md",
-   "section_title": "The ergodic interpretation of H-123",
-   "pages": "15-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Clearly, for $\\mathsf{H}_{123}(B;\\mathcal{T})$ to be nontrivial $\\mathcal{T}$ must be of nonzero measure.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-ergodic-interpretation-of-h-123.md",
-   "section_title": "The ergodic interpretation of H-123",
-   "pages": "15-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This clearly must be the case, as we work with the same topological invariants of links via a different approach.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-flux-formula-for-h-123.md",
-   "section_title": "Flux formula for H-123.",
-   "pages": "19-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "When Ti are handlebodies there are multiple Massey products, but the formula (8.2) should still be valid.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-comparison-to-the-known-approaches-via-massey-pr.md",
-   "section_title": "Comparison to the known approaches via Massey products.",
-   "pages": "25-28",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "After expanding, it is obvious that we must show the following (for all choices), when T \u2192\u221e: 1 T 3 Z \u03c3(\u03a61(x,T),x) Z O2 T (y) Z O3 T (z) f \u2212\u2192 0, (B.1) 1 T 3 Z \u03c3(\u03a61(x,T),x) Z \u03c3(\u03a62(y,T),y) Z O3 T (z) f \u2212\u2192 0, (B.2) 1 T 3 Z \u03c3(\u03a61(x,T),x) Z \u03c3(\u03a62(y,T),y) Z \u03c3(\u03a63(z,T),z) f \u2212\u2192 0.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-zero-contribution-of-short-paths-to-the-time-ave.md",
-   "section_title": "Zero contribution of short paths to the time average",
-   "pages": "29-29",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

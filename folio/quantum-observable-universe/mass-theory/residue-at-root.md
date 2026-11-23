@@ -1,5 +1,5 @@
-**Proposition (conditional on [`conj:gs-residue-at-root-existence`](#conj:gs-residue-at-root-existence)).**
-*Let $T_w \in J^\ell / J^{\ell+1}$ have $\mathrm{tr}_{M, \ell}(T_w) \in \mathbb{Q}(q)$. The cyclotomic residue*
+**Proposition.**
+*Let $T_w \in J^\ell / J^{\ell+1}$ have $\mathrm{tr}_{M, \ell}(T_w) \in \mathbb{Q}(q)$, and suppose $\Phi_q \cdot \mathrm{tr}_{M, \ell}(T_w)$ lies in the Habiro completion $\widehat{\mathbb{Z}[q]}$. The cyclotomic residue*
 
 $$
   \mathrm{Res}_{q \to \zeta_\ell}(\Phi_q \cdot \mathrm{tr}_{M, \ell})(T_w)
@@ -19,4 +19,6 @@ $$
 
 The cyclotomic residue is defined purely algebraically within the Habiro completion of $\mathbb{Z}[q^{\pm 1}]$. It avoids complex-analytic limits entirely. The formulation keeps the algebraic sector strictly within $\mathbb{Q}$-coefficients, fulfilling the three-calibration discipline.
 
-The conjectural hypothesis is the existence of the cyclotomic projection $\pi_{n_\ell}$ on the Habiro completion — the content of [`conj:gs-residue-at-root-existence`](#conj:gs-residue-at-root-existence), axiomatised as the Lean class `ResidueAtRoot` (fields: the target ring family and the projection ring homomorphism). Conditional on an instance of that class, the statement above is derived: the residue is the image of $\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)$ under $\pi_{n_\ell}$, realised by a ring homomorphism into $\mathbb{Z}[q]/\Phi_{n_\ell}(q)$.
+The cyclotomic projection $\pi_n$ is constructed: $\widehat{\mathbb{Z}[q]}$ is the ring of compatible threads in $\mathbb{Z}[q]/(q;q)_N$, $N \ge 0$, and $\pi_n$ reads off the level-$n$ class and reduces it modulo $\Phi_n(q)$, which divides $1 - q^n$ and hence $(q;q)_n$. It is a ring homomorphism, and on a polynomial it is reduction modulo $\Phi_n(q)$. The residue of a product is therefore the product of the residues.
+
+The hypothesis that $\Phi_q \cdot \mathrm{tr}_{M, \ell}(T_w)$ lies in $\widehat{\mathbb{Z}[q]}$ is not proved here. That membership, together with the reality of the residue and its dependence only on the class of $T_w$ modulo $J^{\ell+1}(q)$, is the open content of [Existence of the cyclotomic residue at each filtration level](#conj:gs-residue-at-root-existence).

@@ -1,1 +1,0 @@
-It should also be em- phasized that the N3LO contributions to the 2π-exchange potential were worked out in the covariant version of chi- ral EFT (more precisely, using the formulation by Becher and Leutwyler (162)) by Higa et al.

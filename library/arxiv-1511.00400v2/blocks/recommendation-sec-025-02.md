@@ -1,1 +1,0 @@
-We shall consider, for $k_1$ and $k_2$ even, $$\label{eqn:FF} \mathrm{F}^{k_1,k_2}= \left\{ \chi_\rho\in X_0(M^3) \mid \dim H^0(T^2 ; \rho^{k_1,k_2})\neq 1\right\}\cup \mathrm{E}^{k_1,k_2} \, ,$$ which is Zarsiki closed subset of $X_0(M^3)$ (over $\mathbb{C}$ for $k_2=0$, over $\mathbb{R}$ otherwise).

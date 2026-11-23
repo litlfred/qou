@@ -1,0 +1,1 @@
+4. Suppose that k is algebraically closed, and let H be a connected afﬁne k-group with prounipotent radical of dimension > 1. Then there exists a rep- resentation of H over the afﬁne line A1 with ﬁbres at k-points of A1 pairwise non-isomorphic.

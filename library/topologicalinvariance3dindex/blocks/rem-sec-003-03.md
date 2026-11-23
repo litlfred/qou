@@ -1,0 +1,1 @@
+In [HRS12], it is shown that a cusped hyperbolic 3manifold M admits an ideal triangulation with strict angle structure if H1(M, ∂M; Z2) = 0. All link complements in the 3sphere satisfy this condition. Such triangulations admit index structures but it is not known if they can be connected by 23 and 02 moves within the class of 1e cient triangulations.

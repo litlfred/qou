@@ -1,4 +1,4 @@
-We trace the trajectories across the Reeb bundle.
+The trajectories are traced across the Reeb bundle.
 
 1. **Identity.** All three sectors are spectators. Each strand traces a constant-meridian line from south to north. The boundary footprint is the identity.
 2. **Adjacent transpositions $\sigma_1, \sigma_2$.** The generator $\sigma_1$ activates the red and green sectors with opposite rates. The centre of mass is conserved. The difference accumulates a phase of $\pi$. At the north foundry, red and green swap. The blue spectator remains unchanged. This realises the transposition $(rg)$.

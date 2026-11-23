@@ -1,0 +1,1 @@
+The algebra B = (ALR ⊗R A0 LR)p is the direct sum of 4 copies of the algebra M2(C) ⊕M6(C). The sum of irreducible representations of B has dimension 32 and is given by 2L ⊗10 ⊕2R ⊗10 ⊕2L ⊗30 ⊕2R ⊗30 ⊕1 ⊗20 L ⊕1 ⊗20 R ⊕3 ⊗20 L ⊕3 ⊗20 R (2.7)

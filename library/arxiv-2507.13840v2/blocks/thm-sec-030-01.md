@@ -1,0 +1,1 @@
+1 (Efficient testing of Schmidt rank). Let |ψ⟩be an n-qubit state where it is promised that either (a) Fr(|ψ⟩) ≥ϵ1 , or (b) Fr(|ψ⟩) ≤ϵ2 , across a given bipartition, where it is assumed that ϵ2 1/r > ϵ2+2ϵ. Assuming ϵ = 1/poly(n), there exists an efficient quantum algorithm to distinguish case (a) and (b) using O(r2) two-copy measurements of |ψ⟩with high probability.

@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-ring-closure-superstability",
@@ -14,10 +15,10 @@
   "kind": "remark",
   "title": "Topological reorganisation, super-stability, and the spring analogy",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-ring-closure-barrier",
+    "papers/quantum-observable-universe/blocks/conj-ring-closure-barrier",
     "papers/quantum-observable-universe/blocks/def-molecular-hopf-ring"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-ring-closure-barrier",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-ring-closure-barrier",
   "tags": [
     "ring-closure",
     "super-stability",

@@ -1,1 +1,0 @@
-Here we note that in ideal versions of the model, it should be required that there be no friction preventing the sliding of one branch of the fat knot along another branch, and that the weight of the mechanism be negligible as compared with its resilience (internal energy).

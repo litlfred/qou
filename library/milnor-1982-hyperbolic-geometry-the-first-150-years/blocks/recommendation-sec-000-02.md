@@ -1,1 +1,0 @@
-As in the discussion of Riley's example, the original representation T c PSL2C must map this peripheral subgroup Z 0 Z to a unipotent subgroup, having just one eigenvector with a double eigenvalue of 1.

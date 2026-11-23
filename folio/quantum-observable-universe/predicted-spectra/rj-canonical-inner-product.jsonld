@@ -2,17 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-rj-canonical-inner-product",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:rj-canonical-inner-product",
   "kind": "proposition",
-  "title": "Canonical inner product on $R(H_r(q))$ via Schur orthogonality",
+  "title": "Canonical bilinear form on $R(H_r(q))$ via Schur orthogonality",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-cohomological-embedding"
   ],

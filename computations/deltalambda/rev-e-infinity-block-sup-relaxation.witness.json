@@ -1,11 +1,13 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-14T17:08:57.989507+00:00",
+  "computedAt": "2026-11-21T18:47:07.767446+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py"
   },
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_e_infinity_block_sup_relaxation_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "The top-block value is CONCAVE in the displacement vector -- every internal term is -eps(2d + (u_i - u_j)), concave composed with a linear map; every bulk tail is -eps(2d + u_i); the cost is -(ln q0/2) sum u^2 -- so maximising it over real u >= 1 is a concave program, a relaxation of the integer problem and hence a rigorous upper bound.  Its value B_relax = 2.2537 is 1.042x the integer maximum where #7349's B_sharp was 1.816x, and the resulting cut on the e_inf search falls from 90 to 27, which IS enumerable (~6e6 blocks) where 90 (~1e10) is not.  An intermediate Jensen bound is also recorded: valid, 2.6951 over the measured T range, cut 43, still not enumerable.  The concave maximum is then CERTIFIED rather than merely converged: the supergradient inequality at the polished ascent point, with the linear term maximised over the per-row box the incumbent forces, closes with slack 6.4e-12 -- 6.8e-11 of the distance to the integer maximum.  The join over the certified cut reproduces #7335's independently searched e_inf = 2.43929645512078402706542884314 to 1e-30, at (s_t, s_b) = (8, 8).  Gap G2 is CLOSED at the run's measured block-length range; covering EVERY admissible length additionally needs REV_BLOCK_SUP_TMAX set to the rigorous T0 (the default 12 does not).  G1 -- Xbot(s) <= Xblock(s) -- is untouched and is now the only conditionality left on e_inf.",
   "constants": {
@@ -16,7 +18,7 @@
     "lambert_depth": 160,
     "S_e_1": "2.56802799435927785590988196099",
     "Ghat_1": "0.777072792472441674676783274014",
-    "integer_sup": "2.1598023761182859616035304",
+    "integer_sup": "2.1598023761182859616035303726",
     "B_sharp_7349": "3.92139923021415319458053",
     "B_jensen_over_measured_T": "2.69513027628779033641104297338",
     "B_relax_over_measured_T": "2.25373133883860456408818003585",
@@ -32,7 +34,7 @@
   "certificate_P8": {
     "form": "F concave => F(u) <= F(w) + grad F(w).(u - w); the per-row bound confines each u_i to [1, U_i] for any u reaching the incumbent, and the linear term is maximised over that box",
     "gradient": "analytic (gx = -eps' in closed form), NOT a finite difference",
-    "incumbent": "2.1598023761182859616035304",
+    "incumbent": "2.1598023761182859616035303726",
     "T": 7,
     "bound": "2.25373556700090488296611243154",
     "slack": "6.4265741961233880087e-12",
@@ -471,7 +473,7 @@
     {
       "name": "P1 the real-u objective is the same function the integer enumeration maximised",
       "ok": true,
-      "detail": "F at the integer argmax reproduces #7349's enumerated maximum to -2.74e-26, and the Lambert tail resummation agrees with the direct sum to 3.155e-30 at 5 points.  Both matter: the relaxation is only a relaxation of the right problem if the extended function restricts correctly, and every evaluation here routes through the resummed tail rather than the sum #7349 used"
+      "detail": "F at the integer argmax reproduces #7349's enumerated maximum to -2.761e-30, and the Lambert tail resummation agrees with the direct sum to 3.155e-30 at 5 points.  Both matter: the relaxation is only a relaxation of the right problem if the extended function restricts correctly, and every evaluation here routes through the resummed tail rather than the sum #7349 used"
     },
     {
       "name": "P2 the block value is concave in u \u2014 measured, not assumed",

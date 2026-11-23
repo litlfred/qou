@@ -1,0 +1,1 @@
+The functional Q(p) is bilinear on  W3p/2−2,22, more precisely Q(p)( f, g) = X k∈Z ϱk D ˆfk, ˆgk E Cd where ϱk = c |k|3p−4 + o  |k|3p−4 as |k| ↗∞ and c > 0. Here ˆ·k denotes the k-th Fourier coeﬃcient ˆfk := Z 1 f(x)e−2πikx dx.

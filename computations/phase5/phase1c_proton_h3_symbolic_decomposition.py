@@ -272,7 +272,7 @@ def main():
         "as rational functions of q for all 3 partitions: (3), (2,1), "
         "(1,1,1). Cross-checks against Lean-proved closed form."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
     w.set_audit_only("docs/audits/2026-05-26-phase1c-proton-h3-decomposition.md")
 
     for shape in shapes:

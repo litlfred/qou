@@ -1,0 +1,1 @@
+This deﬁnition generalizes to R-characters for any k-algebra R. Deﬁnition 1.1.14. A representation ρ : Γ →SL2(k) is reducible if there exists an invariant line in k2, and irreducible if not. The following standard lemma tells us that this notion can be deﬁned at the level of characters. For any elements α, β ∈Γ, we will denote the commutator αβα−1β−1 by [α, β].

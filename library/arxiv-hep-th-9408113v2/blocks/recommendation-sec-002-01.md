@@ -1,1 +1,0 @@
-It was indicated by Lichtenbaum ([Li], see also Section 1.1.3) that one should be careful working with the single-valued dilogarithm, because it does not satisfy the ﬁve-term relation in general (but only modulo π2).

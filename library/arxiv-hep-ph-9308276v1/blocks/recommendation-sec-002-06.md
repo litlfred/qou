@@ -1,1 +1,0 @@
-A completely analogous computation of the whole set of four point 1LPI functions must be performed to extract the values of $a_4, a_5, a_6, a_7$ and $a_{10}$ as well as the corresponding counterterms [@HR1].

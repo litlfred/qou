@@ -1,0 +1,1 @@
+(18) then reduces to SLðffÞ 1 ðQ2Þ ¼ −ΔSðffÞ 1 ; ð19Þ where SLðffÞ 1 ðQ2Þ is the free fermion lattice calculation of the subtraction function, which can be determined from Feynman-Hellmann using a single perturbed propagator as in Eq.

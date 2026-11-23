@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/moffatt1969-jfm-knottedness",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The degree of knottedness of tangled vortex lines",
+  "contains": [
+    "library/moffatt1969-jfm-knottedness/sections/sec-front-matter",
+    "library/moffatt1969-jfm-knottedness/sections/sec-000",
+    "library/moffatt1969-jfm-knottedness/sections/sec-001",
+    "library/moffatt1969-jfm-knottedness/sections/sec-002",
+    "library/moffatt1969-jfm-knottedness/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "moffatt1969-jfm-knottedness",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "moffatt1969-jfm-knottedness.pdf",
+    "source_sha256": "279a07cbcbd5f86e5067a70ede472e26223fa80e9fb2bf9eb5040e7cef6991b1",
+    "pages": 13,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

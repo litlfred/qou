@@ -1,0 +1,1 @@
+Let K be an integral operator on L2[R, ∞) with kernel K(x, y) = Z R+ a(t)h1(x, t)h2(y, t) dt, where h1, h2 and a are some measurable functions. Then the estimate ∥K∥J1 ⩽ Z ∞ |a(t)| Z ∞ R |h1(x, t)|2 dx 1/2Z ∞ R |h2(y, t)|2 dy 1/2 dt (7.1) holds, provided that the right-hand side is finite.

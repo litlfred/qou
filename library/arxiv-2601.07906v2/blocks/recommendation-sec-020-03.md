@@ -1,1 +1,0 @@
-This led us to conclude that in addition to the handlebodies (required by the existence of the identity operator together with crossing symmetry and modular invariance), the gravitational path integral must also include an infinite set of non-handlebody topologies.

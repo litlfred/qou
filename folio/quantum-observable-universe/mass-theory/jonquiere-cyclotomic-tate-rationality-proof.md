@@ -11,7 +11,7 @@ $$
 where the principal branch of $\log$ is taken.
 
 **Step 2 (specialise at $z = \zeta_K = e^{2\pi i/K}$, $K \geq 2$).**
-We have $-\zeta_K = e^{i (2\pi/K + \pi)}$. For $K \geq 2$, the angle
+Here $-\zeta_K = e^{i (2\pi/K + \pi)}$. For $K \geq 2$, the angle
 $2\pi/K + \pi$ exceeds $\pi$, so the principal log subtracts $2\pi$:
 
 $$
@@ -78,7 +78,7 @@ $$
 $$
 
 This is the special case $n = 3$ — recovers
-[`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form).
+[Trilogarithm imaginary part at $\zeta_n$: closed form $(n - 1)(n - 2)\pi^3 / (3 n^3)$ for every root of unity](#prop:cyclotomic-trilog-imaginary-closed-form).
 
 **$n = 4$ (even, Re part):** $B_4(x) = x^4 - 2x^3 + x^2 - 1/30$.
 

@@ -1,0 +1,79 @@
+{
+ "schema": "witness/v1",
+ "computedAt": "2026-11-22T09:49:44.665566+00:00",
+ "engine": "fractions+mpmath",
+ "scriptFile": "gamma_gamma_bond_markov_crosscheck_probe.py",
+ "commitSha": "6a7c8d47996ff9f993085bd053b28758d664906e",
+ "q0Anchor": "proton",
+ "q0AnchorReason": "Fraction(Q_50_DIGIT_STR); convention D (z = q^3/(q^2+1))",
+ "description": "Independent exact Markov trace at z_D on H_6 against the gamma-gamma probe's y_lambda-weighted trace, and an exact check of the overlap identity mu = tr(V^3 Y^1)/tr Y proved as towerTr_gammaGammaBond. Not a line-by-line port of the Lean trWord; agreement with it follows from markovTrace_unique.",
+ "dps": 60,
+ "q0": "1.1099785827513808075916690956107688798744991218736",
+ "tr_V3_exact": "0.998562163836787265951213135147",
+ "worst_rel_dev_probe_vs_exact": "3.64e-60",
+ "pairs": {
+  "pp": {
+   "tr_free_exact": "0.396054237819282657020720926067",
+   "tr_atom_exact": "0.39647316519735734525004715148",
+   "mu_exact": "1.00105775254515984363438899056",
+   "rel_dev_probe_free": "3.04e-60",
+   "rel_dev_probe_atom": "3.63e-60",
+   "overlap_identity_exact": true,
+   "free_factorizes_exact": true
+  },
+  "pn": {
+   "tr_free_exact": "0.299015017184640076702160426771",
+   "tr_atom_exact": "0.299197772593671637363516064739",
+   "mu_exact": "1.00061119140688077961351843904",
+   "rel_dev_probe_free": "3.12e-60",
+   "rel_dev_probe_atom": "3.64e-60",
+   "overlap_identity_exact": true,
+   "free_factorizes_exact": true
+  },
+  "np": {
+   "tr_free_exact": "0.299015017184640076702160426771",
+   "tr_atom_exact": "0.299331301080108144125284811507",
+   "mu_exact": "1.00105775254515984363438899056",
+   "rel_dev_probe_free": "2.47e-60",
+   "rel_dev_probe_atom": "3.25e-60",
+   "overlap_identity_exact": true,
+   "free_factorizes_exact": true
+  },
+  "nn": {
+   "tr_free_exact": "0.225751859124728963348957023631",
+   "tr_atom_exact": "0.225889836721113358008666143015",
+   "mu_exact": "1.00061119140688077961351843904",
+   "rel_dev_probe_free": "2.84e-60",
+   "rel_dev_probe_atom": "3.27e-60",
+   "overlap_identity_exact": true,
+   "free_factorizes_exact": true
+  }
+ },
+ "assertions": [
+  {
+   "name": "tr(sigma_0) = tr(sigma_4) = z_D exactly",
+   "passed": true
+  },
+  {
+   "name": "tr V^3 = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4) exactly",
+   "passed": true
+  },
+  {
+   "name": "nucleon words equal the probe's nucleon_block letter by letter",
+   "passed": true
+  },
+  {
+   "name": "probe trace = exact Markov trace at z_D (all pairs, rel < 1e-50)",
+   "passed": true
+  },
+  {
+   "name": "mu = tr(V^3 Y^1)/tr Y exactly, all pairs",
+   "passed": true
+  },
+  {
+   "name": "tr(W_free) = tr X * tr Y exactly, all pairs",
+   "passed": true
+  }
+ ],
+ "allPassed": true
+}

@@ -1,0 +1,1 @@
+Assume Setup 15.4.12. (1) If A is a Gorenstein graded ring of graded injective dimension n, then B is a Gorenstein graded ring of graded injective dimension at most n −1. Derived Categories | Amnon Yekutieli |

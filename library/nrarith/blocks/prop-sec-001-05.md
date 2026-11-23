@@ -1,0 +1,1 @@
+The cusp ﬁeld of a hyperbolic orbifold is contained in the invariant trace ﬁeld. As we point out in Sect. 10, the cusp ﬁeld can be smaller than the invariant trace ﬁeld, even for hyperbolic knot complements. 2.4. The following theorem is from [NR1]. Our formulation here is stronger, but the proof in [NR1] applies verbatim.

@@ -15,7 +15,7 @@ is the operational entropy.
 | $q$ | $\eta_q$ ($q$-bits $=$ classical nats) | Regime |
 |-----|---------------------------------------|--------|
 | $1$ | $1.000$ | Classical limit (one $q$-bit $=$ one nat) |
-| $q_0$ | $0.892$ | Our universe |
+| $q_0$ | $0.892$ | The observed universe |
 | $\varphi^2$ | $0.327$ | Golden threshold |
 | $\infty$ | $0$ | Big Bang (no information) |
 

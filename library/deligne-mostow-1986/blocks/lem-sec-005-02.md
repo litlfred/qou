@@ -1,0 +1,1 @@
+—LetD be a disc ofradius R, (^)»gi be a family of points ofD and{^)^^ a family of real numbers, such that o< (JL,< i and S(JL,< i. Then, writing z == x + ly, one has r _ r 27^R 2(l- slJt* ) n\z-a,\-^dxdy<} \z\-^idxdy==-—————. -/D •' —JI^KR'

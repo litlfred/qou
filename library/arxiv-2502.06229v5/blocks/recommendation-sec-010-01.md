@@ -1,1 +1,0 @@
-In other words at the end we shall construct natural weak quasi-tensor structures (F, F0, G0), associated to the weak tensor structure of Wenzl functor of a corresponding fusion category of a quantum group at a root of unity.

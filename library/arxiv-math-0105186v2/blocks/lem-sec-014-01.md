@@ -1,0 +1,1 @@
+(E, π, Q) together with U = (−1; 1) × [−1; 1] ⊂S satisﬁes the conditions of Proposition 2.28(i). Moreover, given w ∈τL(L0) ∩L1 and x ∈ L0∩L1, the space Mh(x, w) contains precisely one horizontal section if w = q(x), and is empty otherwise.

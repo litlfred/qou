@@ -1,1 +1,0 @@
-As expected, the final least-squares adjustment that deter- mines the 2022 CODATA recommended values of the con- stants using the input data modified in this way yields the quite satisfactory results χ2 ¼44.2, pð44.2j54Þ¼0.83, and RB ¼0.90.

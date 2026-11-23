@@ -1,1 +1,0 @@
-Indeed, as we emphasized in \cite{Gaiotto:2011tf}, the quantity $\omega(\gamma, a)$ in general must be interpreted as a sum of contributions from 4d particles carrying charge $\gamma$ and 2d particles carrying the same charge.

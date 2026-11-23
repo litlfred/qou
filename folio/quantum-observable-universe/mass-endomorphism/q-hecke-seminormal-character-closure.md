@@ -6,17 +6,17 @@ $$
   \sum_{\lambda \vdash 3A} y_\lambda(q) \cdot \mathrm{tr}_{V_\lambda}\!\bigl(\rho_\lambda^q(\mathcal{B}_K)\bigr),
 $$
 
-This partition-sum form equals the canonical Markov-axiom reducer $\mathrm{tr}_M(\mathcal{B}_K)$ ([`prop:markov-trace-recursive-reducer`](#prop:markov-trace-recursive-reducer)) to numerical precision at $q = q_0$.
+This partition-sum form equals the canonical Markov-axiom reducer $\mathrm{tr}_M(\mathcal{B}_K)$ ([Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property](#prop:markov-trace-recursive-reducer)) to numerical precision at $q = q_0$.
 
 ## Significance
 
-The partition-sum form rewrites the Markov trace via the Wedderburn–Artin decomposition $H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}(\mathbb{C})$. The result `prop:hecke-branching-trace-decomposition` relies on this decomposition. Downstream consumers (such as binding-energy analysis via $\rho_K$ refinement and force-carrier saturation identities) require a partition-by-partition decomposition of $\mathrm{tr}_M$ that the recursive reducer does not directly expose.
+The partition-sum form rewrites the Markov trace via the Wedderburn–Artin decomposition $H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}(\mathbb{C})$. The [Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition) relies on this decomposition. Downstream consumers (such as binding-energy analysis via $\rho_K$ refinement and force-carrier saturation identities) require a partition-by-partition decomposition of $\mathrm{tr}_M$ that the recursive reducer does not directly expose.
 
 The recursive Markov-axiom ascent and partition-sum Wedderburn formulas must agree. The agreement was previously broken at $q \ne 1$ due to a character convention error. `schur_weyl_symbolic.specht_character_atomic` incorrectly returned the classical Murnaghan–Nakayama character $\chi^\lambda_{\mathrm{MN}}(\pi(\beta))$ at $q = 1$ instead of the $q$-Hecke character $\chi^\lambda_q(\beta)$.
 
 Two layers have to be got right, and each has a natural wrong answer:
 
-1. **Weight layer.** The weight is $y_\lambda(q)$, the Wenzl Schur principal specialisation (`prop:hecke-branching-trace-decomposition`), and what distinguishes it from the naive two-variable Schur function $s_\lambda(q, q^{-1}) / H_q(\lambda)$ is the **normalisation**: $y_\lambda$ divides by $Z = \sum_\mu s_\mu f^\mu$, fixed by $\sum_\lambda y_\lambda f^\lambda = \mathrm{tr}_M(1) = 1$, not by the hook polynomial $H_q(\lambda)$.
+1. **Weight layer.** The weight is $y_\lambda(q)$, the Wenzl Schur principal specialisation ([Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition)), and what distinguishes it from the naive two-variable Schur function $s_\lambda(q, q^{-1}) / H_q(\lambda)$ is the **normalisation**: $y_\lambda$ divides by $Z = \sum_\mu s_\mu f^\mu$, fixed by $\sum_\lambda y_\lambda f^\lambda = \mathrm{tr}_M(1) = 1$, not by the hook polynomial $H_q(\lambda)$.
 2. **Character layer.** The $q = 1$ limit of the Hecke character is not the character required here; the trace must be taken of the $q$-Hecke character $\chi^\lambda_q(\mathcal{B}_K) = \mathrm{tr}\,\rho_\lambda^q(\mathcal{B}_K)$, via Hoefsmit seminormal matrices at $q_0$. The $q$-Murnaghan–Nakayama rule for $\chi^\lambda_q$ is \cite[Thm.~4.1, Cor.~4.2]{jing-liu-2021}, with hook values in closed form \cite[Thm.~2.9]{jing-liu-2021}; those results use $T_i^2 = (q-1)T_i + q$, so their values must be rescaled to the $\sigma_i$ convention here.
 
 ### The sum is over at most two rows
@@ -43,8 +43,8 @@ $\mathrm{tr}_M$ factors through the two-row (Temperley–Lieb) quotient:
 
 These are algebraic zeros, not small residuals: the $H_4$ closed forms carry a
 literal factor $(A z - q^3)$ with $A = q^2+1$, and $z_D = q^3/A$ is its root
-(`h4_markov_weights_closed_form.py`, asserted at run time). Two independent
-paths agree exactly — the Wenzl specialisation `y_lambda_symbolic` and that
+(checked by exact symbolic computation). Two independent
+paths agree exactly — the Wenzl specialisation and that
 closed-form substitution — and both give $w^D_\lambda = s_\lambda(q,q^{-1})/[2]_q^4$
 on the surviving shapes with $\sum_\lambda w_\lambda d_\lambda = 1$.
 

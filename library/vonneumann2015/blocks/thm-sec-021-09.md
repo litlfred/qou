@@ -1,0 +1,1 @@
+If V is an ultraweakly closed subspace of B(H) then it is canonically the dual Banach space of V∗which is deﬁned as the space of ultraweakly continuous linear functionals on V . Moreover the ultraweak topology on V is the weak-* topology on V as the dual of V∗.

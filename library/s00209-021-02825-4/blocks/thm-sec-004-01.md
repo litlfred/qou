@@ -1,0 +1,1 @@
+Fix a linear operator T : Rn[x] →Rm[x] which has image of dimension greater than two. Further, let I, J ⊆R be intervals or rays. Up to certain degree restric- tions, T preserves weak real-rootedness and maps I-rooted polynomials to nonzero J-rooted polynomialsifandonlyifSymb(T )iseither(H−∪I)×(H+\J)-stableor(H−∪I)×(H−\J)- stable.

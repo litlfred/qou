@@ -1,1 +1,0 @@
-Assume $\mathcal E$ is a *neutral tannakian category*, with fiber functor $\omega$ (to the category of ${\mathbf C}$-vector spaces), then $Aut^{\otimes}(\omega )$ has a structure of *complex pro-algebraic affine group scheme*; we shall call it the tannakian group of the tannakian category $\mathcal E$.

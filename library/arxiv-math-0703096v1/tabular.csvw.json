@@ -1,0 +1,413 @@
+{
+  "$schema": "folio-tabular-csvw/v1",
+  "doc_id": "arxiv-math-0703096v1",
+  "source": {
+    "file": "arxiv-math-0703096v1.pdf",
+    "sha256": "337c26b7164ff942d1d12242abcc0b7a27c2624b3daaf17eb3b7e4fb83d8ce61",
+    "bytes": 966223,
+    "pages": 53,
+    "text_source": "embedded",
+    "extractor": "pymupdf",
+    "mtime": "2026-11-22T19:30:56Z",
+    "mimetype_sniffed": "application/pdf",
+    "mimetype_source": "magic-bytes",
+    "note": "tables extracted from the PDF pages by pdf-tables.py — drafts, not checked against the page"
+  },
+  "narrative": {
+    "text": null,
+    "state": "not-authored"
+  },
+  "tables": [
+    {
+      "url": "tables/table-1.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "l",
+            "titles": "L",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "col-2",
+            "titles": "",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 1,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 1",
+      "fac:caption": "Figure 5.1",
+      "fac:pages": [
+        30
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p030-029",
+        "at": "2026-11-22"
+      }
+    },
+    {
+      "url": "tables/table-2.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "at",
+            "titles": "[At]",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "m-atiyah-the-geometry-and-physics-of-knots-cambr",
+            "titles": "M. Atiyah, The geometry and physics of knots, Cambridge",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 45,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 2",
+      "fac:pages": [
+        33
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p033-032",
+        "at": "2026-11-22"
+      }
+    },
+    {
+      "url": "tables/table-3.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "d-w",
+            "titles": "[D-W]",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "r-dedekind-h-weber-theoriederalgebraischenfunkti",
+            "titles": "R.Dedekind,H.Weber,TheoriederalgebraischenFunktionen",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 49,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 3",
+      "fac:pages": [
+        35
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p035-034",
+        "at": "2026-11-22"
+      }
+    },
+    {
+      "url": "tables/table-4.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "36",
+            "titles": "36",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "bibliography",
+            "titles": "BIBLIOGRAPHY",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 49,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 4",
+      "fac:pages": [
+        36
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p036-035",
+        "at": "2026-11-22"
+      }
+    },
+    {
+      "url": "tables/table-5.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "38",
+            "titles": "38",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "bibliography",
+            "titles": "BIBLIOGRAPHY",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 51,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 5",
+      "fac:pages": [
+        38
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p038-037",
+        "at": "2026-11-22"
+      }
+    },
+    {
+      "url": "tables/table-6.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "kir",
+            "titles": "[Kir]",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "g-r-kirchhoff-u-ber-die-auflosung-der-gleichunge",
+            "titles": "G. R. Kirchhoff, U¨ber die Auflosung der Gleichungen, auf",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 49,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 6",
+      "fac:pages": [
+        39
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p039-038",
+        "at": "2026-11-22"
+      }
+    },
+    {
+      "url": "tables/table-7.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "40",
+            "titles": "40",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "bibliography",
+            "titles": "BIBLIOGRAPHY",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 50,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 7",
+      "fac:pages": [
+        40
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p040-039",
+        "at": "2026-11-22"
+      }
+    },
+    {
+      "url": "tables/table-8.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "42",
+            "titles": "42",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "bibliography",
+            "titles": "BIBLIOGRAPHY",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 47,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 8",
+      "fac:pages": [
+        42
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p042-041",
+        "at": "2026-11-22"
+      }
+    },
+    {
+      "url": "tables/table-9.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "sim",
+            "titles": "[Sim]",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "o-simony-u-ber-eine-reihe-neuer-thatsachen-aus-d",
+            "titles": "O. Simony, U¨ber eine Reihe neuer Thatsachen aus dem Gebi-",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 45,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 9",
+      "fac:pages": [
+        43
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p043-042",
+        "at": "2026-11-22"
+      }
+    },
+    {
+      "url": "tables/table-10.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "44",
+            "titles": "44",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          },
+          {
+            "name": "bibliography",
+            "titles": "BIBLIOGRAPHY",
+            "datatype": "any",
+            "datatypeSource": "undetermined"
+          }
+        ]
+      },
+      "fac:anchor": null,
+      "fac:headerRow": 1,
+      "fac:extent": {
+        "rows": 47,
+        "columns": 2,
+        "source": "measured"
+      },
+      "fac:label": "Table 10",
+      "fac:pages": [
+        44
+      ],
+      "fac:extracted": {
+        "tool": "pdf-tables.py",
+        "version": "b3b9e4012c21",
+        "backend": "pdfplumber",
+        "backendVersion": "0.11.10",
+        "confidence": null,
+        "id": "tab-p044-043",
+        "at": "2026-11-22"
+      }
+    }
+  ]
+}

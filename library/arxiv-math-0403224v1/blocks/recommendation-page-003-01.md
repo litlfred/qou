@@ -1,1 +1,0 @@
-The N-colored Jones polynomial for the torus knot Ts,t fulﬁlls a recursion relation of the second order; JTs,t(N) = q 1 2 (s−1)(t−1)(1−N) 1 −q−N  1 −qs(1−N)−1 −qt(1−N)−1 + q(s+t)(1−N) + 1 −q2−N 1 −q−N qst(1−N)−1 JTs,t(N −2) (7) We should note that this diﬀerence equation can be directly derived by use of Morton’s expression (5).

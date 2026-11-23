@@ -1,1 +1,0 @@
-Proof Since a short clasp arc does not cross any singular leaves and has one endpoint on X+ it must be in the boundary of a region in PA which is near X+ and foliated entirely by a–arcs and s–arcs (call it an a/s–region).

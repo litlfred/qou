@@ -1,0 +1,1 @@
+Let L be a compact object of D(A), and let {Mi}i∈N be a direct system in D(A), with homotopy colimit M. Then the morphism ψ in Deﬁnition 14.1.11 induces an isomorphism lim i→HomD(A)(L, Mi) ≃ −→HomD(A)(L, M) in M(K).

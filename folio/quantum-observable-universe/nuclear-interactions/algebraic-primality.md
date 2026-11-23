@@ -1,5 +1,5 @@
 **Definition (algebraic primality).**
-*Fix a substrate parameter $q > 1$. For each strand count $n \geq 1$, the confinement SDP selects a canonical state $\psi_n(q)$. We say that $n$ is **algebraically prime at $q$** if $\psi_n(q)$ is not contained in the closed span of any non-trivial tensor product*
+*Fix a substrate parameter $q > 1$. For each strand count $n \geq 1$, the confinement SDP selects a canonical state $\psi_n(q)$. Say that $n$ is **algebraically prime at $q$** if $\psi_n(q)$ is not contained in the closed span of any non-trivial tensor product*
 
 $$
   \overline{\mathrm{span}}\bigl\{\,

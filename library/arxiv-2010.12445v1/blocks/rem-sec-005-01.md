@@ -1,0 +1,1 @@
+The scheme D(K), thought of as a sheaf, is the constant sheaf associated with K. Instead D(K∗) as sheaf Aﬀ/R →(Sets) is D(K∗)(U) = {s: U → Y i∈I Ki with locally constant factors U →Ki} The map X →D(E∗) maps ξ : U →X to the map Q i rk(ξ∗Ei): U →Q i∈I ranks(Ei).

@@ -143,4 +143,13 @@ theorem realType_induced_fails_gate {S : Finset ℕ} {fs : ℕ → FSType}
     ¬ Passes S fs m dualIdx :=
   real_triple_fails_gate hi hr hpos
 
+/-- Iterated symmetric-square preservation of self-duality: if `V` is self-dual,
+then applying `sym` twice (`sym (sym V)`) also preserves self-duality. -/
+theorem symSquare_iterated_selfDual_of_selfDual
+    {sym dual : Rep → Rep} {iso : Rep → Rep → Prop}
+    (hc : SymSquareDualCompatible sym dual iso)
+    {V : Rep} (hV : IsSelfDual dual iso V) :
+    IsSelfDual dual iso (sym (sym V)) :=
+  symSquare_selfDual_of_selfDual hc (symSquare_selfDual_of_selfDual hc hV)
+
 end QOU.Eightfold.SymSquareHolonomyIsRealType

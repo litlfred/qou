@@ -1,0 +1,1 @@
+The subgroup of all t ∈R for which σφ t is inner is inde- pendent of the faithful normal state φ. Deﬁnition 14.1.4. The subgroup of the previous corollary, which is an in- variant of M, is called T(M). We shall now calculate T(M) for the Powers factor Rλ where this refers to the ITPFI factor with all nk = 2 and all states having the same density matrix h =  1+λ λ 1+λ  .

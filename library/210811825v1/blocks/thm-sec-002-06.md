@@ -1,0 +1,1 @@
+Let A be a symmetric operator, bounded from below. Let qA be the sesquilinear form such that qA[ψ] := (ψ, Aψ), and D(qA) := D(A) is densely deﬁned, symmetric and bounded from below. If qA is closable, we take the closure ˜qA := qA. Finally, we can associate to ˜qA the self-adjoint linear operator A˜q via Theorem 2.12.

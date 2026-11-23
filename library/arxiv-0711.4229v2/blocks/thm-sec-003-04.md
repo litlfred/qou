@@ -1,0 +1,1 @@
+The invariant F ′ : LA →F extends naturally to a F-bilinear monoidal quasi- functor F ′ : RibA →HC by the formula F ′(T )(g) = F ′(trRibC(T ◦cg)) where T ∈RibA(V, W), g ∈HomC(F(W), F(V )) and where cg is a coupon labeled by g. This expresion can be represented by the following diagram: F ′(T ) : g 7→F ′     T g    

@@ -1,0 +1,786 @@
+{
+ "$comment": "Triage of the 156 decl-not-found skips in docs/audits/lean-triviality.json (2026-11-21 snapshot), classified statically with the probe change in litlfred/folio-assistant-sci#213. found: found-in-own-file = the block's own .lean declares it under a qualified spelling; found-in-lake-root = declared in exactly one library file by its fully qualified name; not-in-lake-root = the ref names nothing the probe can find. Refs as recorded in the snapshot, not as repointed since.",
+ "generated": "2026-11-22",
+ "decls": [
+  {
+   "decl": "QOU.AlgebraicSubstrate.hasse_weil_bound",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/WeilZeta.lean"
+  },
+  {
+   "decl": "QOU.AppendixSurreals.QBirchSwinnertonDyer",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/QBirchSwinnertonDyer.lean"
+  },
+  {
+   "decl": "QOU.AppendixSurreals.QCollatz",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/QCollatz.lean"
+  },
+  {
+   "decl": "QOU.AppendixSurreals.standardPart",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/StandardPart.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.Antineutrino",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/ParticleKnots.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.BetaDecayTransfer.beta_decay_transfer_matrix",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/beta_decay_transfer_matrix.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.BreitWheelerPairProduction",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/BreitWheelerPairProduction.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.descartes",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/archimedean.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.descartes_braid_structure",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/archimedean_braid_structure.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.DownQuark",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/ParticleKnots.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.Electron",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/ParticleKnots.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.eos_borromean_cfl",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/eos_borromean_cfl.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.genus_filtration_ideal",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/genus_filtration_ideal.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.genus_maximal_descent",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/genus_maximal_descent.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.gram_weighted_qvalue",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/gram_weighted_qvalue.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.Neutrino",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/ParticleKnots.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.nuclear_spin_parity",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/nuclear_spin_parity.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.Positron",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/ParticleKnots.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.QMomentum",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/QMomentum.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.QqValue.value",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/predicted-spectra/q-value-transition.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.shell_structure_eigenvalues",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/shell_structure_eigenvalues.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.skein_finiteness_bound",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/skein_finiteness_bound.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.skein_polynomial_transfer_matrix",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/skein_polynomial_transfer_matrix.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.skew_poisson_integration",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/skew_poisson_integration.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.torus_knot_shell_binding",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/torus_knot_shell_binding.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.TransferMatrixOperator",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/TransferMatrixOperator.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.TypeBCrystal.PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean"
+  },
+  {
+   "decl": "QOU.Archimedean.UpQuark",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/ParticleKnots.lean"
+  },
+  {
+   "decl": "QOU.ArchimedeanSubstrateField.ofReebDecomposition",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.lean"
+  },
+  {
+   "decl": "QOU.BraidGroup",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/braids-and-knots/braid-group.lean"
+  },
+  {
+   "decl": "QOU.Braiding.beta_stability",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/nuclear-interactions/beta-stability.lean"
+  },
+  {
+   "decl": "QOU.Braiding.fermion_boson_knot_link",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.lean"
+  },
+  {
+   "decl": "QOU.Braiding.HeckeMassTraceContext",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Braiding/hecke_mass_trace.lean"
+  },
+  {
+   "decl": "QOU.Braiding.reidemeister_mass_invariance",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.AtomKnot.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot-exists.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.AtomKnot.unique_up_to_markov",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/knots-particles-confinement/atom-knot-unique.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCanonicalMarkovWeightsInstance.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.CompoundBetaShellCalibration",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/CompoundBetaShellCalibration.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.confined_knot_binding",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/confined_knot_binding.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.eigenvalue_product_expansion",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/eigenvalue_product_expansion.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.gb_residue_spectral_sum",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.geom_universality",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/geom_universality.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.hoefsmit_scattering_pipeline",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.hoefsmit_seminormal_form",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/hoefsmit_seminormal_form.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.IsotopeKnot.equivalence",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/IsotopeKnot/equivalence.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.KnotIndexedConvolutionGrid.grid_placement",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.KnotOperatorEnergy.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.KnotOperatorEnergy.shadowPrice_unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.MagicShellCouplingKappa",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/MagicShellCouplingKappa.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.markovTraceRecursiveReducer",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.mass_formula_regime_switching",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-theory/mass-formula-regime-switching.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.schur_weyl_mass_decomposition",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.SpinInvolutionLPDualInvariance",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/SpinInvolutionLPDualInvariance.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.StableAtom.decidable",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/knots-particles-confinement/stable-atom-decidable.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.wedderburnWeightCanonical",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.lean"
+  },
+  {
+   "decl": "QOU.BraidKnot.wigner2_coefficient",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-theory/wigner-2-coefficient.lean"
+  },
+  {
+   "decl": "QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean"
+  },
+  {
+   "decl": "QOU.BraidsAndKnots.wenzl_qmn_synergy",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/wenzl_qmn_synergy.lean"
+  },
+  {
+   "decl": "QOU.BraidsAndKnots.y_lambda_recipe_from_partition",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/y_lambda_recipe_from_partition.lean"
+  },
+  {
+   "decl": "QOU.BraidTwistFlip",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidTwistFlip.lean"
+  },
+  {
+   "decl": "QOU.Brings.brings_is_qou",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Brings/brings_is_qou.lean"
+  },
+  {
+   "decl": "QOU.Brings.color_elliptic",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Brings/color_elliptic.lean"
+  },
+  {
+   "decl": "QOU.BringsSurface.lagrange_resolvent_transform",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BringsSurface/lagrange_resolvent_transform.lean"
+  },
+  {
+   "decl": "QOU.categorical_irreducible",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean"
+  },
+  {
+   "decl": "QOU.CategoricalAction.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-action-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalAction.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalConnection.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-universes/categorical-connection-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalConnection.unique_up_to_gauge",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-universes/categorical-connection-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalDirac.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalDirac.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalFourier.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalFourier.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalHodgeStar.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-universes/categorical-hodge-star-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalHodgeStar.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-universes/categorical-hodge-star-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalInstanton.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalInstanton.unique_up_to_gauge",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalLagrangian.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalLagrangian.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalLaplace.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalLaplace.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalMassMarkov",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/CategoricalMassMarkov.lean"
+  },
+  {
+   "decl": "QOU.CategoricalNeutron.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalNeutron.unique_up_to_isotopy",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalProton.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalProton.unique_up_to_isotopy",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/predicted-spectra/categorical-proton-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalQConnection.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalQConnection.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalQExtDeriv.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean"
+  },
+  {
+   "decl": "QOU.CategoricalQExtDeriv.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalReeb.not_unique_unconstrained",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean"
+  },
+  {
+   "decl": "QOU.CategoricalReeb.QReebFlowOnColorCoords",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnColorCoords.lean"
+  },
+  {
+   "decl": "QOU.ColorTubeFibers",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/ColorTubeFibers.lean"
+  },
+  {
+   "decl": "QOU.CommutativeQOU.u1EquivariantReduction",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/CommutativeQOU/u1EquivariantReduction.lean"
+  },
+  {
+   "decl": "QOU.ComputationalHorizon",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/ComputationalHorizon.lean"
+  },
+  {
+   "decl": "QOU.Conjectures.ShellTransitionKnot",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Conjectures/ShellTransitionKnot.lean"
+  },
+  {
+   "decl": "QOU.DescentLemma",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/lifting-and-descent/descent-lemma.lean"
+  },
+  {
+   "decl": "QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean"
+  },
+  {
+   "decl": "QOU.frobenius_relation",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/frobenius_relation.lean"
+  },
+  {
+   "decl": "QOU.FrobeniusHopfData.frobeniusForm_unique_of_schur",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.lean"
+  },
+  {
+   "decl": "QOU.GaugeFieldFluidDynamics.BoundaryObservability",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean"
+  },
+  {
+   "decl": "QOU.Hadron.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/knots-particles-confinement/hadron-exists.lean"
+  },
+  {
+   "decl": "QOU.Hadron.unique_up_to_isotopy",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/knots-particles-confinement/hadron-unique.lean"
+  },
+  {
+   "decl": "QOU.Hecke.markov_trace_product",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceProduct.lean"
+  },
+  {
+   "decl": "QOU.HyperellipticQuintic.minimal_z5_classification",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/HyperellipticQuintic/minimal_z5_classification.lean"
+  },
+  {
+   "decl": "QOU.Interactions.FusionProcessBlock.Process.isRearrangement",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/knots-particles-confinement/fusion-process.lean"
+  },
+  {
+   "decl": "QOU.Interactions.UniversalILP",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Interactions/UniversalILP.lean"
+  },
+  {
+   "decl": "QOU.MassIdentity.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/mass-endomorphism/mass-identity-exists.lean"
+  },
+  {
+   "decl": "QOU.MassIdentity.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/mass-endomorphism/mass-identity-unique.lean"
+  },
+  {
+   "decl": "QOU.MassIdentityC",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-endomorphism/mass-identity-C.lean"
+  },
+  {
+   "decl": "QOU.Observations.centered_hecke_variance_positive",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Observations/centered_hecke_variance_positive.lean"
+  },
+  {
+   "decl": "QOU.OneDim.TLIsXXZChain",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/OneDim/TLIsXXZChain.lean"
+  },
+  {
+   "decl": "QOU.ParticleInteractions.ConfinementSDP",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/mass-theory/confinement-sdp.lean"
+  },
+  {
+   "decl": "QOU.ParticleInteractions.PerNucleonChannelDecomposition",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/PerNucleonChannelDecomposition.lean"
+  },
+  {
+   "decl": "QOU.ParticleInteractions.SpectatorNormalization",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/SpectatorNormalization.lean"
+  },
+  {
+   "decl": "QOU.PathIntegrals.SO3Generators",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/PathIntegrals.lean"
+  },
+  {
+   "decl": "QOU.q_jacobiator",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/q-jacobiator.lean"
+  },
+  {
+   "decl": "QOU.QBeta.FiveTwoDTSpectrumSplit",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean"
+  },
+  {
+   "decl": "QOU.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/lean/QOU/QBeta/FaddeevModularDouble.lean"
+  },
+  {
+   "decl": "QOU.QCasimir",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/CasimirShared.lean"
+  },
+  {
+   "decl": "QOU.QCasimir.not_exists_unconstrained",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean"
+  },
+  {
+   "decl": "QOU.QCasimir.not_unique_up_to_scalar_unconstrained",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean"
+  },
+  {
+   "decl": "QOU.QDilogarithm.exists_of_addZeroClass",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-exists.lean"
+  },
+  {
+   "decl": "QOU.QExponential.exists_in_shuffle_hopf",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/q-exponential-exists.lean"
+  },
+  {
+   "decl": "QOU.QHeatEquation.exists_solution",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/q-heat-equation-exists.lean"
+  },
+  {
+   "decl": "QOU.QHeatEquation.unique_solution",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/q-heat-equation-unique.lean"
+  },
+  {
+   "decl": "QOU.QLogarithm.exists_in_shuffle_hopf",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists.lean"
+  },
+  {
+   "decl": "QOU.QResolvent.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/q-resolvent-exists.lean"
+  },
+  {
+   "decl": "QOU.QResolvent.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/q-resolvent-unique.lean"
+  },
+  {
+   "decl": "QOU.QuantumCharClasses.exists",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists.lean"
+  },
+  {
+   "decl": "QOU.QuantumCharClasses.unique",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-unique.lean"
+  },
+  {
+   "decl": "QOU.QuantumObservableUniverse.exists_instance",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean"
+  },
+  {
+   "decl": "QOU.quantumPlanckConstant",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/SubstrateParameter.lean"
+  },
+  {
+   "decl": "QOU.QuantumUniverse.exists_instance",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-universes/quantum-universe-exists.lean"
+  },
+  {
+   "decl": "QOU.SkeinResolutionObstruction",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/SkeinResolutionObstruction.lean"
+  },
+  {
+   "decl": "QOU.su2_emergence_rank_forced",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/SU2EmergenceRankForced.lean"
+  },
+  {
+   "decl": "QOU.Su2Generators",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Su2Generators.lean"
+  },
+  {
+   "decl": "QOU.substrate_radial_coordinate",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/substrate_radial_coordinate.lean"
+  },
+  {
+   "decl": "QOU.Torsion.algebraic_filter_classification",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Torsion/algebraic_filter_classification.lean"
+  },
+  {
+   "decl": "QOU.Torsion.brane_boundary_structure",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Torsion/brane_boundary_structure.lean"
+  },
+  {
+   "decl": "QOU.Torsion.descent_condition",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Torsion/DescentCondition.lean"
+  },
+  {
+   "decl": "QOU.Torsion.EigenspaceDecomposition",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Torsion/Descent.lean"
+  },
+  {
+   "decl": "QOU.Torsion.jet_prolongation_C",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Torsion/JetProlongation.lean"
+  },
+  {
+   "decl": "QOU.Torsion.MassTraceIdentity.massIntegrand",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Torsion/MassTraceIdentity.lean"
+  },
+  {
+   "decl": "QOU.Torsion.quantum_dilogarithm",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Torsion/quantum_dilogarithm.lean"
+  },
+  {
+   "decl": "QOU.Torsion.weak_equiv_invariance",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/Torsion/weak_equiv_invariance.lean"
+  },
+  {
+   "decl": "QOU.Torsion.YekutieliTriple.qu_to_qou",
+   "found": "not-in-lake-root",
+   "file": "folio/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean"
+  },
+  {
+   "decl": "QOU.variational_equations",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/variational_equations.lean"
+  },
+  {
+   "decl": "QOU.WedderburnMass.chirality_residue_mass_term",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/WedderburnMass/chirality_residue_mass_term.lean"
+  },
+  {
+   "decl": "QOU.WedderburnMass.confinement_categorical",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/WedderburnMass/confinement_categorical.lean"
+  },
+  {
+   "decl": "QOU.WedderburnMass.CurvatureRankGbStratificationContext",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/WedderburnMass/curvature_rank_gb_stratification.lean"
+  },
+  {
+   "decl": "QOU.WedderburnMass.exterior_square_borromean",
+   "found": "found-in-lake-root",
+   "file": "folio/quantum-observable-universe/lean/QOU/WedderburnMass/exterior_square_borromean.lean"
+  },
+  {
+   "decl": "QOU.WeightDecomposition.ofMaximalTorus",
+   "found": "found-in-own-file",
+   "file": "folio/quantum-observable-universe/quantum-observable-universes/weight-decomposition-exists.lean"
+  },
+  {
+   "decl": "UGB.GrobnerShirshov.jet_stratified_correct",
+   "found": "not-in-lake-root",
+   "file": "folio/unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.lean"
+  },
+  {
+   "decl": "UGB.GrobnerShirshov.reduce",
+   "found": "not-in-lake-root",
+   "file": "folio/unital-groebner-bases/unital-groebner-bases-chapter/division-algorithm.lean"
+  },
+  {
+   "decl": "UGB.UnitalGroebner.UnitalGroebnerBasis",
+   "found": "not-in-lake-root",
+   "file": "folio/unital-groebner-bases/unital-groebner-bases-chapter/unital-groebner-basis.lean"
+  }
+ ]
+}

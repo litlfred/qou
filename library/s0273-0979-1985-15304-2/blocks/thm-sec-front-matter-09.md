@@ -1,0 +1,1 @@
+If b is in Bn and there is an integer k greater than 3 for which b G kerrt, t = e2lK%lk, then bA has braid index n. Here the braid index of a link L is the smallest n for which there is a pair (6, n) with bA = L. The kernel of rt is not hard to get into for these values oft.

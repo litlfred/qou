@@ -1,0 +1,1 @@
+Let K ∈D. Then χ(K) = χ(Kϕ) for all ϕ ∈Π(X), hence the following three conditions are equivalent: (a) The complex K lies in the full subcategory T. (b) We have H•(X,Kϕ) = 0 for generic ϕ ∈Π(X). (c) We have H• c (X,Kϕ) = 0 for generic ϕ ∈Π(X). Chapter 3 – Perverse sheaves on semiabelian varieties

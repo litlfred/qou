@@ -1,1 +1,0 @@
-This means that the 3-term relation is satisfied with $R_k = k$ and thus $\mid \mid {\rm He}_k\mid\mid^2 = \mid \mid {\rm He}_0\mid\mid^2 k!$ We shall use the normalization condition $\mid \mid He_0\mid\mid^2 = \sqrt{2\pi}$.

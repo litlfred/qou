@@ -1,1 +1,0 @@
-We set $$\label{not41} \Sigma := q^{- {\mathbf N}} \; \text{~and, for~} A \subset {\mathbf C}, \; \Sigma (A) := \bigcup\limits_{a\in A} q^{- {\mathbf N}}\{ a\}.$$ Let $U$ be an open set of ${\mathbf C}$ invariant by the semi-group $\Sigma := q^{- {\mathbf N}}$, that is, $q^{-1} U \subset U$ (we shall also call it "stable").

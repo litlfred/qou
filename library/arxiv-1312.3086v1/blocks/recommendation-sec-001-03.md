@@ -1,1 +1,0 @@
-We shall as- sume that the transmission eﬃciency is the same for all ﬁber connections and can be written under the form ηt = exp (−L0/Latt) where Latt is the attenuation length, typically of the order of 22km (corresponding to losses of 0.2dB/km).

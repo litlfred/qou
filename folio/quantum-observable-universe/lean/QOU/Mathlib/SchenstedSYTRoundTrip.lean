@@ -29,7 +29,7 @@ the other by the SSYT's own `zeros`.
 The bridge only. Two gaps remain between here and `rskPair` surjectivity, both named on the epic
 bean: threading the `Σ`-equality through `rskPair`'s definition, and the fact that a recovered word
 of content `{1, …, n}` comes from a permutation (`∃ σ, wordOfPerm σ = w`). `rskPair` bijectivity is
-not claimed and `RSKBurnsideHolds` for general `n` remains open.
+not claimed and at the time of this brick `RSKBurnsideHolds` for general `n` was still open; it is now proved by brick 42, `SchenstedRSKBurnside.rskBurnsideHolds` (axioms `[propext, Classical.choice, Quot.sound]`, checked 2026-11-22, bean `qou-ep4e`).
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 

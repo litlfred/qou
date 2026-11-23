@@ -1,1 +1,1 @@
-Let c be a generalised coboundary, (bρ, dρ) a right duality and v ∈ (1, 1)
+Let c be a generalised coboundary, (bρ, dρ) a right duality and v ∈ (1, 1) a ribbon structure for c . Then the left and right quantum traces corresponding to a given right duality (bρ, dρ) and to the associated left duality via ω := uv−1 ∈ (1, D2), coincide.

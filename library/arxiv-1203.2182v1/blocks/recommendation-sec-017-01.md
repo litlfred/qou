@@ -1,1 +1,0 @@
-In other words, the leading order free energy $S_0(u,t)$ computed directly from the asymptotics of $P_n (q,t)$ must agree with the integral ([\[S0ref\]](#S0ref){reference-type="ref" reference="S0ref"}) on an algebraic curve $A^{\text{ref}}(x,y;t) = 0$.

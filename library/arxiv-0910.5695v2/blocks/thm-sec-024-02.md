@@ -1,0 +1,1 @@
+2. Given an idempotent e ∈A/Au, there exists an idempotent ε ∈A such that ¯ε = e (we say ε is a lift of e). Moreover, if two idempotents are conjugate in A/Au, then their lifts are conjugate in A. ‡The equations in (6.14) are only deﬁned when m is suﬃciently large. JONATHAN COMES AND VICTOR OSTRIK

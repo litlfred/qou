@@ -1,1 +1,0 @@
-2 More precisely, Isom+(IH3) = PSL(2,C) = SL(2,C)/{±1}, but according to [5], a repre- sentation of PSL(2,C) corresponding to a complete hyperbolic structure can always be lifted to SL(2,C), and it is SL(2,C) with which we shall work.

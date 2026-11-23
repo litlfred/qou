@@ -1,0 +1,1 @@
+The very recent lattice determination of the magnetic polarizabilities, however, which makes use of a constant external magnetic ﬁeld, does yield a remarkably precise value for βp−n M , βp−n M = 0.80(28)(4) [69] , (86) in good agreement with our predicton in equation (85).

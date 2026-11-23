@@ -1,0 +1,1 @@
+Let A be a spherical Hopf algebra. Take the non-degenerate quotient of the spherical category of left A-modules. Take J to be a set of objects such that, if End(x) ∼= F then there is a unique a ∈J such that x ∼= a. Then, for each object x in the non-degenerate quotient, there is a natural isomorphism x ∼= M a∈J Hom(x, a) ⊗a.

@@ -13,9 +13,13 @@
   "pageStart": 18,
   "pageEnd": 19,
   "contains": [
-    "library/quaternioms/blocks/prose-sec-020"
+    "library/quaternioms/blocks/prose-sec-020",
+    "library/quaternioms/blocks/prop-sec-020-01",
+    "library/quaternioms/blocks/prop-sec-020-02",
+    "library/quaternioms/blocks/thm-sec-020-03",
+    "library/quaternioms/blocks/prop-sec-020-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,1 @@
+Let A and B be rings. Assume A is commutative, and it has a ﬁnite connected component decomposition A = Qm i=1 Ai. Let T be a tilting B-A- bimodule complex. We consider B as a central A-ring via the isomorphism gT from Deﬁnition 14.5.14. Then T ∼= Lm i=1 Pi[ni] in D(B ⊗Aop), where Bi := Ai ⊗A B, Pi is an invertible Bi-Ai-bimodule, and ni ∈Z.

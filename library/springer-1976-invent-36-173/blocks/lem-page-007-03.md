@@ -1,0 +1,1 @@
+There is a strongly regular element A’eG’ such that (dn) A’ is also strongly regular if and only if either p is odd and ® has no components of type Az, in case p=3; or if p=2 and G has only irreducible components of type A, (+1, 3) and Eg.

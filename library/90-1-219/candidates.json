@@ -1,161 +1,24 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "90-1-219",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "c2e3f2f8946c6f84c27c4482eb5b8375ce85cc9bd63293c8ce6f41a97c10edce",
   "file": "90-1-219.pdf"
  },
  "provenance": {
-  "title": "Progress of Theoretical Physics, Vol. 90, No.1, July 1993",
+  "title": "Quaternions and non-commutative geometry",
   "authors": "Quaternions and Non-Commutative Geometry",
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "recommendation": 9
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "12) should read Re[ VaVp].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-tst.md",
-   "section_title": "TST-",
-   "pages": "5-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall consider only those X for which both A and B are even (or odd) forms, while both C and D odd (or even) forms.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-bosonic-sector.md",
-   "section_title": "Bosonic sector",
-   "pages": "7-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should also be noted that, as far as a2>0, the mass relation does not depend on it, either, namely, one may rescale fl\"\"\"'> fl/a in Eq.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-xx8dx.md",
-   "section_title": "XX8(dX')",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall consider only those Q for which JQ=J(eaQa) for all a (not summed).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-xx8dx.md",
-   "section_title": "XX8(dX')",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The dagger t is reserved to indicate the hermitian conjugation, which should include the quaternionic conjugation, if neces- sary, as defined below Eq.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-xx8dx.md",
-   "section_title": "XX8(dX')",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The result is: oP= -dEo+i[Eo, P]+i[E3, Z], OZ=-dE3+i[Eo, Z]+i[E3, P], O(P1 = i[ Eo, 4>1] + {E3, 4>z} , 04>z=2fJ-E3+i[Eo, 4>z]-{E3, 4>1}, *) It can be shown that ddq+dqd=O also in the generalized case for any M. **) As in the Abelian case the phase factor e\u00b1re, is absorbed into the redefinition of Higgs fields. ***) If a in P and Z is left arbitrary, the rescaling should be W-->gW and Wo->gWo/a.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-4-bosonic-sector-of-weinberg-salam-theory.md",
-   "section_title": "\u00a7 4. Bosonic sector of Weinberg-Salam theory",
-   "pages": "12-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be emphasized, however, that our derivation has no recourse to SU(211).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-discussion.md",
-   "section_title": "Discussion",
-   "pages": "15-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "-- Dirac Operator in the Quaternionic Formulation and 4 x 4 Matrix Formalism of Coquereaux et al. -- In this appendix we shall present an alternative derivation of the lagrangian (38) and the gauge transformation law (40) without invoking the translation (15).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-appendix.md",
-   "section_title": "Appendix",
-   "pages": "16-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "On the contrary, one should never make a product like A8A.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-appendix.md",
-   "section_title": "Appendix",
-   "pages": "16-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

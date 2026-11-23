@@ -20,6 +20,7 @@ export default proposition({
       "qou:QOU.BraidKnot.delta_tau_M_surrogate_taylor_witness",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): [`delta_tau_M_surrogate`](qbeta-per-block-chi-closed-forms.md)\n\n| Order $n$ | Coefficient $c_n$ | Status in Lean |\n\nEvery order is now formally proved,\n\nThe witness independently reproduces all\neight coefficients by direct series expansion, which shares no machinery with\nthe Lean route.\n\n  (`delta_tau_M_surrogate` definition + order-0/order-1 proofs).\n\n\n- Witness JSON:\n  [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json)." },
     {
       kind: "note",
       body:

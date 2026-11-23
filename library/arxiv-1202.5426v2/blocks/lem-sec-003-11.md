@@ -1,0 +1,1 @@
+7. There is a ε0 > 0 such that for δ, ε ∈[0, ε0), for any a, b ∈S(R), Λ > 4 ∥H 1 2 (a, b)∥(2,q),Br ≲∥|D|1/2−δa∥( 1−2δ ,q1),BΛr∥|D|1/2−εb∥( 1−2ε ,q2),BΛr+ + ∥|D|1/2−δa∥( 1−2δ ,q1)Λ−θ ∞ X k=1 2−θ(k−1)∥|D|1/2−εb∥( 1−2ε ,q2),B2kΛr. If supp b ⊂Br we furthermore get for any k ≥2, Λ > 16, s ∈[0, 1 2) ∥H 1 2 (a, b)∥( 1+2s ,q),Ak Λ,r ≲(Λ2k)−θ∥|D| 2 a∥(2,∞),R ∥|D|1/2−εb∥( 1−2ε ,1),R.

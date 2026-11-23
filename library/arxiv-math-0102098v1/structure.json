@@ -1,0 +1,507 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0102098v1",
+ "source": {
+  "file": "0102098v1.pdf",
+  "sha256": "f4bc5ca0ba1e47aae91c518726360de2d461cb594e6355e6dad5429d6659505b",
+  "bytes": 195894,
+  "pages": 22,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0102098",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "13 Feb 2001"
+  },
+  "doi": null,
+  "title": "Skein theory and the Murphy operators",
+  "authors_raw": "HUGH R. MORTON",
+  "title_lines": [
+   "Skein theory and the Murphy operators"
+  ],
+  "abstract": "The Murphy operators in the Hecke algebra Hn of type A are ex- plicit commuting elements whose sum generates the centre. They can be represented by simple tangles in the Homﬂy skein theory version of Hn. In this paper I present a single tangle which represents their sum, and which is obviously central. As a consequence it is possible to identify a natural basis for the Homﬂy skein of the annulus, C. Symmetric functions of the Murphy operators are also central in Hn. I deﬁne geometrically a homomorphism from C to the centre of each algebra Hn, and ﬁnd an element in C, independent of n, whose image is the mth power sum of the Murphy operators. Generating function techniques are used to describe images of other elements of C in terms of the Murphy operators, and to demonstrate relations among other natural skein elements.",
+  "docinfo": {
+   "Title": "arXiv:math/0102098v1  [math.GT]  13 Feb 2001",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20210622204849-04'00'"
+  },
+  "title_raw": "Skein theory and the Murphy operators",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0102098v1 [math.GT] 13 Feb 2001",
+   "heading": "Skein theory and the Murphy operators Introduction",
+   "text": "Skein theory and the Murphy operators",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Skein theory and the Murphy operators",
+   "basis": "Printed title on page 1 (H. R. Morton); the extracted title was the arXiv stamp",
+   "extracted_title": "arXiv:math/0102098v1 [math.GT] 13 Feb 2001",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "The skein models.",
+   "page": 3,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Variants of the Hecke algebras.",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Geometric views of the Murphy operators.",
+   "page": 5,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The skein of the annulus.",
+   "page": 8,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Symmetric functions and the skein of the annulus.",
+   "page": 10,
+   "source": "inferred",
+   "number": "3.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Symmetric functions of the Murphy operators.",
+   "page": 13,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The annulus with two boundary points.",
+   "page": 16,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Algebraic properties of A.",
+   "page": 17,
+   "source": "inferred",
+   "number": "4.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Skein interaction between Hn, A and C.",
+   "page": 18,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 21,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4290,
+   "n_words": 735,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-the-skein-models",
+   "number": "1",
+   "title": "The skein models.",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2089,
+   "n_words": 409,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-11-variants-of-the-hecke-algebras",
+   "number": "1.1",
+   "title": "Variants of the Hecke algebras.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1467,
+   "n_words": 287,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-geometric-views-of-the-murphy-operators",
+   "number": "2",
+   "title": "Geometric views of the Murphy operators.",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 2488,
+   "n_words": 501,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-3-the-skein-of-the-annulus",
+   "number": "3",
+   "title": "The skein of the annulus.",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3299,
+   "n_words": 639,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-31-symmetric-functions-and-the-skein-of-the-annu",
+   "number": "3.1",
+   "title": "Symmetric functions and the skein of the annulus.",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 4907,
+   "n_words": 966,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-32-symmetric-functions-of-the-murphy-operators",
+   "number": "3.2",
+   "title": "Symmetric functions of the Murphy operators.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 3152,
+   "n_words": 606,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-4-the-annulus-with-two-boundary-points",
+   "number": "4",
+   "title": "The annulus with two boundary points.",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1012,
+   "n_words": 201,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-41-algebraic-properties-of-a",
+   "number": "4.1",
+   "title": "Algebraic properties of A.",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1363,
+   "n_words": 255,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-42-skein-interaction-between-hn-a-and-c",
+   "number": "4.2",
+   "title": "Skein interaction between Hn, A and C.",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 3705,
+   "n_words": 746,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2270,
+   "n_words": 342,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "toc_inferred_entries": 10,
+  "toc_inferred_mean_confidence": 0.74,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 30042,
+  "furniture_lines_stripped": 0
+ }
+}

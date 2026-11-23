@@ -1,0 +1,1 @@
+We have the same Tor.C.W I V/; c; ∅/ for all orthonormal bases of V since the effect of change of orthonormal bases in V is given by multiplying the determinant of the bases change matrix with power of .W /. If the Euler characteristic .W / is zero, then we have the same torsion for any basis of V .

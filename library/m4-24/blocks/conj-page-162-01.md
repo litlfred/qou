@@ -1,0 +1,1 @@
+For each compact Lie group G, level k, and every KTG K :T => R’, there exists a collection of measures [t, on the space of gauge equivalence classes of G-connections on I’ satisfying the following conditions.

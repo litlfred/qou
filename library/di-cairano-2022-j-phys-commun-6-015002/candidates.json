@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "di-cairano-2022-j-phys-commun-6-015002",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "f75313b507f971721997956a33bae9227281f588db750c74f9d429406b88c80c",
   "file": "Di_Cairano_2022_J._Phys._Commun._6_015002.pdf"
@@ -11,91 +14,11 @@
   "arxiv": null,
   "doi": "10.1088/2399-6528/ac438d"
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Its parametrization, in fact, is an open \ufb01eld of research which involves both OPEN ACCESS RECEIVED 11 November 2021 REVISED 13 December 2021 ACCEPTED FOR PUBLICATION 15 December 2021 PUBLISHED 10 January 2022 Original content from this work may be used under the terms of the Creative Commons Attribution 4.0 licence.",
-   "strength": "may",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-11-state-of-art.md",
-   "section_title": "State-of-art",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI. \u00a9 2022 The Author(s).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-11-state-of-art.md",
-   "section_title": "State-of-art",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This feature must hold also in case of a GLE, that is, we expect that, in the Zwanzig\u2019s derivation, all the microscopic information contained in the potential function are condensed within the friction matrix L.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-121-criticism.md",
-   "section_title": "Criticism",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Based on that, we conclude that the definition (18) should be adjusted in order to obtain the correct \u00a2 function without any ad hoc-adjustment and this is the principal aim of the paper.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-121-criticism.md",
-   "section_title": "Criticism",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, if we had different kinds of heat baths which interact in a nonlinear way with the heavy particle, the adjustment previously mentioned cannot be applied anymore but a different derivation as that proposed in this paper should be considered.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-3-conclusion.md",
-   "section_title": "Conclusion",
-   "pages": "11-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

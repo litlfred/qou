@@ -1,0 +1,1 @@
+If u : [0, ∞) × [0, 1] →R × Z with boundary on R × Λ, has finite Hofer energy EH(u) < ∞, then u has a limit as s →∞in the compactification N of R × Z and also finite energy EωN (u) < ∞with respect to the symplectic form ωN. Step 4 : Exponential convergence to a point in N We will use results from [Sch16] to show the exponential convergence of u to Reeb chords. In

@@ -1,0 +1,1 @@
+— A more direct proof of (i i .3.1) results from (7.3)—more precisely from the fact that on W, we have a horizontal family of functions d. It follows at once that F preserves a "distance to ^"function (5.3).

@@ -1,1 +1,0 @@
-The results of~\cite{GZ:kashaev} and~\cite{GZ:qseries} suggest that there should be a Habiro ring~$\calH_F$ associated to any number field~$F$ in which the generalized Kashaev invariants take their values and which is graded by the Bloch group of~$F$.

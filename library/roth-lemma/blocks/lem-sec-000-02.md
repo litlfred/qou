@@ -1,0 +1,1 @@
+Let m^2, and let be any ordered system of numbers tuith the property Tm. Then there exists an ordered system of numbers b; pi ,...,pm-l> Hi ,..., Hm-1 with the property rm-i such that 0m(a; ri ,..., rm; Hx ,..., Hm) « t where 14. Proof of Roth's Lemma. It is now easy to prove Roth's Lemma: Put cm=2m -3. If the ordered system of numbers has the property rm, then Cmt

@@ -1,1 +1,0 @@
-The beforementioned considerations concerning the solution of the free system only hold for an eﬀective potential ∝1/r 2 due to angular momentum and all other interactions must fall oﬀwith 1/r a with a ≥2.

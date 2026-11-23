@@ -1,4 +1,4 @@
-We catalog the analytic error bounds from the main paper alongside their surreal $\ordw$-equivalents. The main paper expresses bounds in classical Big-O, little-o, and geometric-tail forms. We translate them using [Big-O via $\ordw$](#rem:conway-normal-form). We leave the main paper in classical notation and use this catalog as a formal anchor.
+This catalogues the analytic error bounds from the main paper alongside their surreal $\ordw$-equivalents. The main paper expresses bounds in classical Big-O, little-o, and geometric-tail forms. They are translated using [Big-O via $\ordw$](#rem:conway-normal-form). The main paper stays in classical notation, and this catalog serves as a formal anchor.
 
 ### Chapter: Braids and Knots
 See [Table 1](#tbl:body-asymptotics-catalog-table1-data).

@@ -1,0 +1,1 @@
+— The category of the regular singular diﬀerence mod- ules over K is Tannakian equivalent to a full subcategory of connections on Eq. In section 6, this equivalence will be made explicit. This result is, in a diﬀerent form, present in the work of J. Sauloy, see [R-S-Z].

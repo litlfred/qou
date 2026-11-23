@@ -1,1 +1,0 @@
-Intuitively, each modulus $z_j$ with $\Im z_j=0$ should represent a flat tetrahedron, each $z_j$ with $\Im z_j <0$ a negatively oriented fat tetrahedron, and positively and negatively oriented tetrahedra should overlap; although appealing, it is however hard (and sometimes impossible) to translate this idea into a concrete definition in general.

@@ -1,1 +1,0 @@
-However, since the TQFT model was defined only for particles/Wilson lines in the fundamental representation we should find a way to express the calculations in terms of the fundamental particles, using tensor products of representations.

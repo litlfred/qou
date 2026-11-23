@@ -1,1 +1,1 @@
-[Ananyevskiy 2016a, Theorem 1]. Let E ∈SH(B) be an SL-oriented motivic spectrum on
+For u ∈0(X, O× X) we have [u]η = η[u] : 6∞ T X+ →6∞ T X+.

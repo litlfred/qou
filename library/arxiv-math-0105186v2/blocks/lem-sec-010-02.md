@@ -1,0 +1,1 @@
+In the same situation, let α be the minimum of aL0,e,L1,e(x−) − aL0,e,L1,e(x+), taken over all e and all x± ∈L0,e ∩L1,e for which this is > 0. Then the spaces MJ({xe}) is compact, in the Gromov-Floer topology, for all {xe} such that χ({xe}) < − R ∂S κQ + α.

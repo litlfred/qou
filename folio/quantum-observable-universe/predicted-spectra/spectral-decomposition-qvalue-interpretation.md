@@ -75,7 +75,7 @@ $$
     \times F_{\mathrm{Pauli}}^{[N \in \mathrm{magic}]},
 $$
 
-where $[\cdot]$ is the Iverson bracket. Until 2026-10-10 this paragraph quoted the combined proportion $F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} = 0.5904 \times 0.6382 \approx 0.377$, a convention-C figure. Under convention D no combined proportion is available: $F_{\mathrm{deg2}} \approx 3.6844$ and the Markov-trace Pauli factor is $0$. The formula was intended for magic-number nuclei in heavy shells (e.g. ${}^{137}\mathrm{Cs}$ with $N = 82$).
+where $[\cdot]$ is the Iverson bracket. Whereas the Convention-C trace gave a non-zero combined product $F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} = 0.5904 \times 0.6382 \approx 0.377$, under Convention D $F_{\mathrm{deg2}} \approx 3.6844$ and the Markov-trace Pauli factor is $0$. The formula was intended for magic-number nuclei in heavy shells (e.g. ${}^{137}\mathrm{Cs}$ with $N = 82$).
 
 ### Convention-D $Q$-values
 

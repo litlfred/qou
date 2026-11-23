@@ -113,7 +113,7 @@ masses, 3 CKM angles + 1 phase, 3 gauge couplings, Higgs mass, Higgs
 VEV, QCD theta angle). The QOU framework replaces all 19 with these
 **3** ([calibration inputs context](#rem:calibration-inputs)):
 
-- particle content is topological (from $\chi(A) = -6$), not chosen;
+- particle content is topological (from $\chi_{\mathrm{eu}}(M_0) = -6$), not chosen;
 - mass ratios are knot invariants (from algebraic quantum volume and
   $\mathrm{tr}_M$), not free;
 - coupling constants are $R$-matrix eigenvalues (from $q_0$);

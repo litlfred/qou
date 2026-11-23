@@ -1,0 +1,1 @@
+7 PoS(LATTICE2021)543 푀푛−푀푝in Lattice QCD+QED at LO in IB Simone Romiti The isosymmetric limit of hadronic masses 푀퐻are found from the large time behavior of ®푝= ®0 correlators with 푀(0) 퐻as the ground state.

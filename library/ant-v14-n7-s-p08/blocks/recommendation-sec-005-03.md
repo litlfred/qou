@@ -1,1 +1,0 @@
-The inequality is where we see that if 2n,i = 2r, we must replace δσ(i) by tσ(i) rather than by 0; this is why in the ﬁnal statement of the inequality we lose slightly in the maximal moment, compared to the nonmaximal moment.

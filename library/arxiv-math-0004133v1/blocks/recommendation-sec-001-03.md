@@ -1,1 +1,0 @@
-Any space $X$ should give us an $n$-category $\Pi_n(X)$ whose objects are the points of $X$, whose morphisms are paths in $X$, whose 2-morphisms are paths of paths, and so on\... with the $n$-morphisms being homotopy classes of $n$-fold paths.

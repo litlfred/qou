@@ -1,0 +1,1 @@
+Let , , be the angles of a triangle t ¼ ABC respectively. Then Dðt; AÞ ¼ log sin   log sin . Deﬁnition. Let vi ¼ ti1 \ ti \ tiþ1. The value Hðc; A Þ ¼ Pk1 i¼1 Dðti; viÞ is called the holonomy of c.

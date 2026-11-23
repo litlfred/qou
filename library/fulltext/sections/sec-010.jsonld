@@ -14,20 +14,13 @@
   "pageEnd": 56,
   "contains": [
     "library/fulltext/blocks/prose-sec-010",
-    "library/fulltext/blocks/recommendation-sec-010-01",
-    "library/fulltext/blocks/recommendation-sec-010-02",
-    "library/fulltext/blocks/recommendation-sec-010-03",
-    "library/fulltext/blocks/recommendation-sec-010-04",
-    "library/fulltext/blocks/recommendation-sec-010-05",
-    "library/fulltext/blocks/recommendation-sec-010-06",
-    "library/fulltext/blocks/recommendation-sec-010-07",
-    "library/fulltext/blocks/recommendation-sec-010-08",
-    "library/fulltext/blocks/recommendation-sec-010-09",
-    "library/fulltext/blocks/recommendation-sec-010-10",
-    "library/fulltext/blocks/recommendation-sec-010-11",
+    "library/fulltext/blocks/conj-sec-010-01",
+    "library/fulltext/blocks/prop-sec-010-02",
+    "library/fulltext/blocks/rem-sec-010-03",
+    "library/fulltext/blocks/lem-sec-010-04",
     "library/fulltext/blocks/figure-img-p045-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
   "provenance": "ingested"
 }

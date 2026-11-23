@@ -109,4 +109,18 @@ theorem heat_two_mode_composition {R : Type*} [CommRing R]
   exact two_mode_depth_two_composition F G
     (fun s => 1 - (q - 1) * (μ₁ * s)) (fun s => 1 - (q - 1) * (μ₂ * s)) q hF hG t
 
+/-- Subtracting the right-hand depth-two heat recurrence combination from the left-hand combination yields zero. -/
+theorem heat_two_mode_composition_sub_eq_zero {R : Type*} [CommRing R]
+    (F G : R → R) (q μ₁ μ₂ : R)
+    (hF : ∀ t, F (q * t) = (1 - (q - 1) * (μ₁ * t)) * F t)
+    (hG : ∀ t, G (q * t) = (1 - (q - 1) * (μ₂ * t)) * G t)
+    (t : R) :
+    (((1 - (q - 1) * (μ₂ * t)) - (1 - (q - 1) * (μ₁ * t))) *
+        ((F (q * (q * t)) + G (q * (q * t)))
+          - (1 - (q - 1) * (μ₁ * (q * t))) * (F (q * t) + G (q * t))))
+      - (((1 - (q - 1) * (μ₂ * (q * t))) - (1 - (q - 1) * (μ₁ * (q * t)))) *
+          (1 - (q - 1) * (μ₂ * t)) *
+          ((F (q * t) + G (q * t)) - (1 - (q - 1) * (μ₁ * t)) * (F t + G t))) = 0 := by
+  rw [heat_two_mode_composition F G q μ₁ μ₂ hF hG t, sub_self]
+
 end QOU.BraidKnot

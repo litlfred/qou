@@ -1,1 +1,0 @@
-In order to introduce a smooth structure on Cn, we should choose a Σn-equivariant smooth section ssmooth of the projection map Confn−→Cn instead of the section scont given by conﬁgurations in standard position.

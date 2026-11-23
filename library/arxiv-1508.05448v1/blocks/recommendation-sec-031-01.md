@@ -1,1 +1,0 @@
-We turn the cards face up one at a time and put them into a pile according to the following rule:\ *A low card may be placed on top of a higher card (i.e. a 2 on top of a 7), but a higher card must be placed into a new pile to the right of the current piles*.\ The object of the \"game\" is to finish with the fewest piles.

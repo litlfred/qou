@@ -1,1 +1,0 @@
-Indeed, in this case, we must only fulfill the condition $\Omega_{laser}\ll\frac{\mu_{B}B}{\hbar}\sim2\pi\times70$MHz to ensure that no unwanted transition such as $\left|0_{A}\right\rangle \leftrightarrow\left|12p_{1/2},m_{j}=-1/2,m_{I}=-3/2\right\rangle$ take place.

@@ -1,0 +1,1 @@
+The cyan-coloured wedge labeled A represents the tangent Q2 ¯S(−Q2) = Q2 ¯S(0) + . . . calculated with the value of ¯S(0) in equation (89) (lattice result for mag- netic polarizability plus Baldin sum rule).

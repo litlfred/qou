@@ -1,1 +1,0 @@
-We have seen that the subspace ${\mathbb C}^2$, spanned by $u$ and $d$, corresponds to $$\left\langle \! \begin{array}{c} e^+_R \\ \overline{\nu}_R \end{array} \! \right\rangle.$$ The top particle here has isospin up, while the bottom one has isospin down, so we must have $e^+_R = u$ and $\overline{\nu}_R = d$.

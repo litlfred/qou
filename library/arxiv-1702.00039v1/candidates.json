@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1702.00039v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b47ca7d1cf7b44be8ddad2be40c75dc8299d50c112dbedb64078d8f5cbb4341e",
   "file": "1702.00039v1.pdf"
@@ -16,181 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
-  "by_kind": {
-   "recommendation": 11
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It is combinatorial in nature and should be accessible to a broad audience.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-1",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "But we must say that Question [\\[braid\\]](#braid){reference-type=\"ref\" reference=\"braid\"} implies the conjecture of Rouquier.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-025-34-our-favorite-open-questions-about-hecke-algeb.md",
-   "section_title": "Our favorite open questions about Hecke algebras",
-   "pages": "19-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "**Philosphy:** *One should think of $B_s$, $B_sB_r$ and $B_{srs}$ as analogous objects to the elements $b_s$, $b_{sr}$ and $b_{srs}$ respectively in the Hecke algebra.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-027-41-the-objects-soergel-bimodules.md",
-   "section_title": "The objects: Soergel bimodules",
-   "pages": "20-22",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "One should also think of the product (resp. direct sum) between Soergel bimodules as an analogue of product (resp. sum) in the Hecke algebra.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-027-41-the-objects-soergel-bimodules.md",
-   "section_title": "The objects: Soergel bimodules",
-   "pages": "20-22",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Shifting the degree of a Soergel bimodule by one should be seen as multiplying the corresponding element in the Hecke algebra by $v$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-027-41-the-objects-soergel-bimodules.md",
-   "section_title": "The objects: Soergel bimodules",
-   "pages": "20-22",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To finish the proof of the Baby Stability Theorem \\ref{st} we just need to prove the following isomorphism (that one should compare with the formula in the Hecke algebra $b_sb_rb_s=b_{srs}+b_s).$",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-029-421-the-crucial-phenomena.md",
-   "section_title": "The crucial phenomena",
-   "pages": "22-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "[^1]: Strictly speaking, the map in Figure [3](#fbc3){reference-type=\"ref\" reference=\"fbc3\"} should be called birdcagecagecage, but it seems to us a bit impractical this name, so we stick with birdcagecage.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-040-54-two-colors-light-leaves.md",
-   "section_title": "Two colors light leaves",
-   "pages": "35-37",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The author believes this would give a rich combinatorial basis of the Hecke algebra, and a very natural set of Soergel bimodules that in our dreams should play a role in the understanding of the $p$-canonical basis[^1]. :::",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-046-63-path-morphisms.md",
-   "section_title": "Path morphisms",
-   "pages": "40-41",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Nonetheless, in [@li2.5] the author proves an analogue of the Forking path conjecture for \"extra-large Coxeter groups\", i.e. groups in which $m(s,r)>3$ for all $s,r\\in S,$ so it is quite mysterious for what groups this should be true. :::",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-046-63-path-morphisms.md",
-   "section_title": "Path morphisms",
-   "pages": "40-41",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Of course, for this basis to be well defined, these choices must be done once and for all.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-048-65-construction-of-the-double-leaves-basis.md",
-   "section_title": "Construction of the double leaves basis",
-   "pages": "43-44",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Extending x by a color t\u0338 = r, s one has Extending x by s one has 45 To convince the reader that this is a categori\ufb01cation of Dyer\u2019s formula, one should remark that the rightmost term, when multiplied by \u22121, is an idempo- tent of End(sx) projecting to Brx.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-049-7-final-calculations-examples-b-c-and-d.md",
-   "section_title": "Final calculations: examples B, C and D",
-   "pages": "44-47",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

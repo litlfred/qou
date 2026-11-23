@@ -1,1 +1,0 @@
-Since left- and right-multiplications commute, right-multiplication by an element $g\in G$ transforms $\omega$ into another non-vanishing left-invariant form which must be equal to $\lambda(g) \omega$ for some positive real number $\lambda(g)$.

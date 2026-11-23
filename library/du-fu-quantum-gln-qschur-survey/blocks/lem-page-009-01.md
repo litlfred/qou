@@ -1,0 +1,1 @@
+(1) W is a subalgebra of bK(η)k. (2) The elements Eh,h+1(¯0), Eh+1,h(¯0), 0(¯ei) (for h ∈η⊣and i ∈η) generate W as an algebra. Given A ∈eΞ± l (η) and j = (ji)i∈η ∈Zη, we rewrite A(¯j) := X z∈Zη εj·z[A + diag(z)] ∈bK(η)k = X ¯z∈(Zl′)η εj·¯z X x∈Zη ¯x=¯z [A + diag(x)] = X ¯z∈(Zl′)η εj·¯z[[A + diag(¯z)]] where εj·¯z = εj·z and [[A + diag(¯z)]] = X x∈Zη ¯x=¯z [A + diag(x)] ∈bK(η)k.

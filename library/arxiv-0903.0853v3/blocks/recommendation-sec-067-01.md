@@ -1,1 +1,0 @@
-In the study of $q$-special functions, one frequently falls upon series that are *convergent* solutions of *irregular* $q$-difference equations, the latter thus also admitting *divergent* solutions; and this should be so, since Adams lemma[^1] ensures us that irregular equations always have *some* convergent solutions.

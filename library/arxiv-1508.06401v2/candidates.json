@@ -1,0 +1,164 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1508.06401v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "354f6e4ea835af6d6159171af066ffe804ca6278f193527f049d59ac2c749f09",
+  "file": "1508.06401v2.pdf"
+ },
+ "provenance": {
+  "title": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED",
+  "authors": "R. Horsleya, Y. Nakamurab, H. Perltc, D. Pleiterd, P. E. L. Rakowe",
+  "arxiv": {
+   "id": "1508.06401",
+   "version": "2",
+   "primary_class": "hep-lat",
+   "stamp_date": "15 Jul 2016"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "proposition": 6
+  },
+  "formalization_candidates": 2,
+  "by_domain": {
+   "science": 6
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 4,
+   "analytic-derivation": 2
+  },
+  "by_evidence_location": {
+   "both": 2,
+   "elsewhere": 1,
+   "in-paper": 3
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "In [4, 5] we have outlined a program to systematically investigate the pattern of \ufb02avor sym- metry breaking in three-\ufb02avor lattice QCD for Wilson-type fermions.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper result in sections/sec-000-1-introduction-and-general-strategy.md combined with [4, 5]",
+   "external_refs": [
+    "[4, 5]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction-and-general-strategy.md",
+   "section_title": "Introduction and general strategy",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: both \u2014 In-paper result in sections/sec-000-1-introduction-and-general-strategy.md combined with [4, 5]). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The region of no fusion is to the left, the region where all hydrogen is converted to helium stars is to the right. the n \u2212p mass splitting in the \u2018Dashen\u2019 and MS schemes turns out to be somewhat larger (in absolute terms) than the numbers derived from the Cottingham formula [20].",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [20] in sections/sec-002-3-results.md",
+   "external_refs": [
+    "[20]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-002-3-results.md",
+   "section_title": "Results",
+   "pages": "7-13",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: elsewhere \u2014 Cites external source [20] in sections/sec-002-3-results.md). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "To accommodate the lower numbers from the Cottingham formula, the result of pure QCD [16] (fourth column of Table 1) would have to be smaller by a factor up to two as well.",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper result in sections/sec-002-3-results.md combined with [16]",
+   "external_refs": [
+    "[16]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-002-3-results.md",
+   "section_title": "Results",
+   "pages": "7-13",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: both \u2014 In-paper result in sections/sec-002-3-results.md combined with [16]). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Conclusion and outlook We have outlined a program to systematically investigate the \ufb02avor structure of hadrons in a full QCD + QED lattice simulation.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-003-4-conclusion-and-outlook.md (p. 13-14)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-003-4-conclusion-and-outlook.md",
+   "section_title": "Conclusion and outlook",
+   "pages": "13-14",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-003-4-conclusion-and-outlook.md (p. 13-14)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Finally, future simulations will also naturally be required on lattices with di\ufb00erent lattice spacings to allow for a continuum extrapolation.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-003-4-conclusion-and-outlook.md (p. 13-14)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-003-4-conclusion-and-outlook.md",
+   "section_title": "Conclusion and outlook",
+   "pages": "13-14",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-003-4-conclusion-and-outlook.md (p. 13-14)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "arXiv:1508.06401v2 [hep-lat] 15 Jul 2016 Isospin splittings of meson and baryon masses from three-\ufb02avor lattice QCD + QED R.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-front-matter.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-front-matter.md (p. 1-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  }
+ ]
+}

@@ -1,1 +1,0 @@
-However, since the SU(2) gauge symmetry is not completely broken, there are massive charged states in the spectrum and we should be careful in determining the way the un- broken global symmetry acts on them.

@@ -1,0 +1,1 @@
+Let Q be a Laurent polynomial, let B be a component of amoeba(Q), and let x € OB, so that q = Qo exp vanishes at some point z=a+iy. Fix u € tan,(B) and let g = hom(q, x + iy) denote the leading homogeneous part of q(a + iy + w) with respect to w. Then

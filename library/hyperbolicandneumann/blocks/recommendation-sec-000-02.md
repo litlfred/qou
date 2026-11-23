@@ -1,1 +1,0 @@
-Speciﬁcally, the shape parameters at that edge of all tetrahedra that are incident with it must clearly have arguments that add up to 2π (because otherwise the metric would not be smooth along that edge), but in fact the shape parameters themselves have product +1 by an easy argument.

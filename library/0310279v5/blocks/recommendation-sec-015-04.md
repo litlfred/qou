@@ -1,1 +1,0 @@
-But then, the orientation on one of the edges of N(l) will agree with that of the normal to Hθ and (since l is by hypothesis non-singular) the orientation of the other must disagree with the that of the normal, but that is impossible because the boundary curve is a closed braid.

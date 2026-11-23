@@ -1,0 +1,1 @@
+Let w0, w2 be complex numbers such that wN 2 = 1−w−N , and U an endomorphism such that U N = −Id. Then Ψw(U) deﬁned as above is the unique endomorphism up to scalar multiplication which is a solution of the functional relation (12) Ψw(q2U) = (w0 + q−1w0w2U)Ψw(U).

@@ -1,1 +1,0 @@
-In order to derive string equation one should act on partition function $Z_V\{T_k = \frac{1}{k}{\rm tr}\Lambda^{-k}\} = {\cal C}_V^{-1} {\cal F}_V\{L = V'(\Lambda)\}$ with operator ${\rm tr}\frac{\partial}{\partial L_{tr}} = {\rm tr}\frac{1}{V''(\Lambda)} \frac{\partial}{\partial \Lambda_{tr}}$.

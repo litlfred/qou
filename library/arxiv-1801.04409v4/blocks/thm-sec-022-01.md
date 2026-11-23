@@ -1,0 +1,1 @@
+1. (i) Assume that q2 = 1 or that q2 is not a root of 1. Then C is equivalent to the category Rep(SO(3)q) (see [MPS, Section 4]). (ii) Assume q2 = −1. Then C is equivalent to the category Rep(OSp(1|2)) (see [MPS, Section 4]).

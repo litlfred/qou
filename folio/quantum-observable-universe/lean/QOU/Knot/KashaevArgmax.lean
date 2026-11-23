@@ -231,4 +231,11 @@ theorem kashaevProd_le_argmax {N k : ℕ} (hN : 6 ≤ N) (hkN : k < N) :
       have : 5 * N ≤ 6 * j := by omega
       exact_mod_cast this
 
+/-- On the rising arc `[π/6, 5π/6]`, the step multiplier `(2 * Real.sin θ)^2` is at least `1`. -/
+theorem two_sin_sq_ge_one_on_rising_arc {θ : ℝ}
+    (h1 : π / 6 ≤ θ) (h2 : θ ≤ 5 * π / 6) :
+    (1 : ℝ) ≤ (2 * Real.sin θ) ^ 2 := by
+  have hs := half_le_sin h1 h2
+  nlinarith
+
 end QOU.Knot.FigureEightVolume

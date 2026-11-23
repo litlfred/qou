@@ -1,0 +1,1 @@
+If A is connected graded but not left noetherian, then there are coﬁnite graded Aop-modules that are not artinian. Take the ring A := K⟨x1, x2⟩ from Example 15.2.19. Then A∗∈M(Aop, gr) is coﬁnite but not artinian. Derived Categories | Amnon Yekutieli |

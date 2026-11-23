@@ -1,0 +1,1 @@
+Under Setup 10.4.7, assume that K has enough K-projectives. Then the triangulated right derived functor (RF, ηR) : Dop →E of F exists. Further- more, for every K-projective DG module P ∈K, the morphism ηR P : F(P) →RF(P) in E is an isomorphism.

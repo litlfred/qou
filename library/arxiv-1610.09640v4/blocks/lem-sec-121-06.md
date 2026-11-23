@@ -1,0 +1,1 @@
+Assume that ˜R is a graded rigid dualizing complex over ˜A. Then the homomorphisms (l) ˜At ⊗˜ A ˜R →˜At ⊗˜ A ˜R ⊗˜ A ˜At and (r) ˜R ⊗˜ A ˜At →˜At ⊗˜ A ˜R ⊗˜ A ˜At in Cstr( ˜Aen, gr) are quasi-isomorphisms.

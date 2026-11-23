@@ -1,1 +1,0 @@
-Evaluation procedures and policies that were used during the development of this evaluated nuclear data library are presented, together with a detailed table of recommended values and their uncertainties.

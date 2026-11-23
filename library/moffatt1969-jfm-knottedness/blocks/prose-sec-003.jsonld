@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/moffatt1969-jfm-knottedness/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Relation with the magnetohydrodynamic invariants of Woltjer",
+  "pageStart": 7,
+  "pageEnd": 13,
+  "text": "../sections/sec-003-5-relation-with-the-magnetohydrodynamic-invarian.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/moffatt1969-jfm-knottedness",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/moffatt1969-jfm-knottedness",
+  "provenance": "ingested"
+}

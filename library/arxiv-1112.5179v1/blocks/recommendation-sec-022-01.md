@@ -1,1 +1,0 @@
-Namely, the OPE of line defects and the Ward identities satisfied when they are brought to collide with domain walls must take the same form for the $S^4_b$ partition function and for the index, upon the dictionary established in the rest of this paper between vector-multiplet vevs and fugacities, and $2 \pi i b^2 \to \hbar$.

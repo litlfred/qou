@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0405126v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "713498dbe80f731940968055c95f50b654de89a60dbd183cb5010e2103a83979",
   "file": "0405126v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:math/0405126v1 [math.GT] 7 May 2004",
+  "title": "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT",
   "authors": "HITOSHI MURAKAMI",
   "arxiv": {
    "id": "math/0405126",
@@ -16,9 +19,7 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 0,
   "by_kind": {},

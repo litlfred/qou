@@ -1,0 +1,1 @@
+The bifunctor (13.4.3) has a left derived bifunctor (−⊗L A −) : D(B) × D(B) →D(B ⊗A B). If either M0 or M1 is a complex of B-modules that is K-ﬂat over A, then the morphism ηL M0,M1 : M0 ⊗L A M1 →M0 ⊗A M1 in D(B ⊗A B) is an isomorphism.

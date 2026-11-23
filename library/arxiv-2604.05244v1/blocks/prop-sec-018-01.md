@@ -1,0 +1,1 @@
+The cleanest experimental test is therefore the collapse plot: define $$\mathcal S_A(s) := \frac{h}{4e^3\mathcal T(1-\mathcal T)}\;\kappa_A\,\Delta_I(V), \qquad s = \frac{|eV|/\hbar\Omega - A}{\kappa_A}. \label{eq:collapse-obs}$$ The prediction is $\mathcal S_A(s)\to K_{\mathop{\mathrm{Ai}}}(s,s)$, independently of $A$.

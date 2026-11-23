@@ -1,1 +1,0 @@
-Since there are only finitely many $t$ such that $f_t$ fails to be excellent Morse, this process eventually must terminate and all the smooth interpolations are taken from the constructed $F_{\tau_i + \epsilon}$ to $S(f_1)$.

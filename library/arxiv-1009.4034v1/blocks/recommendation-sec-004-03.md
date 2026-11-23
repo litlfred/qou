@@ -1,1 +1,0 @@
-In the general case, we shall use the weight filtration on observables to neglict some terms: indeed, for any observable $f$, the order of magnitude is a $O(n^{\wt(f)/2})$, so one can for instance neglict terms of the kind $f/n^{k/2}$ with $k>\wt(f)$.

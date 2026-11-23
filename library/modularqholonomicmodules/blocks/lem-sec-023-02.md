@@ -1,0 +1,1 @@
+For t in some compact set where the functions are holomorphic, we have lim r→∞ g(0,0)(qrt, q) θ(qrt; q) = −1 (q; q)2 ∞ lim r→∞ f (−1)(qrt, q) θ(qrt; q) = 0 lim r→∞ g(0,1)(qrt, q) θ(qrt; q) = 0 lim r→∞ f (1)(qrt, q) θ(qrt; q) = (q; q)2 ∞ . (219)

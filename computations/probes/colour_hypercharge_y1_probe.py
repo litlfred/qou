@@ -76,7 +76,10 @@ def monodromy_V_around_Lambda(N):
     return vals.pop()
 
 
-out = {"probe": "colour_hypercharge_y1_probe", "bean": "qou-99qc", "id": "ε-Y1", "results": {}}
+out = {"probe": "colour_hypercharge_y1_probe", "bean": "qou-99qc", "id": "ε-Y1",
+       "q0Anchor": "independent",
+       "q0AnchorReason": "exact sympy over Q(q) (and exact rationals for the Y=1/3 consequence); q is a free symbol, no substrate q0 is read",
+       "results": {}}
 c, a = sp.symbols("c a", positive=True)
 for N in (2, 3):
     R = jimbo_R(N)

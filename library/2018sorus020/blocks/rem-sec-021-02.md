@@ -1,0 +1,1 @@
+It follows from the fact that A has maximal rank that none of those polynomials are zero. A proof that they only depend on M and are in fact topological invariants can be found in [BZH14]. Note that they are deﬁned up to a power of t.

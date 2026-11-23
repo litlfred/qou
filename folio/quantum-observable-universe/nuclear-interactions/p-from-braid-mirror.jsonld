@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-p-from-braid-mirror",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:p-from-braid-mirror",
+  "kind": "conjecture",
+  "title": "Parity $P$ as mirror reflection of the braid diagram (writhe sign flip)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-cpt-d6-d7-d8-closure",
+    "papers/quantum-observable-universe/blocks/def-bar-involution",
+    "papers/quantum-observable-universe/blocks/conj-cpt-orbit-closure-density",
+    "papers/quantum-observable-universe/blocks/prop-chirality-writhe-ribbon-derivation"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/jones1987",
+    "references/kauffman1991"
+  ],
+  "tags": [
+    "tier:S",
+    "parity",
+    "duality-d7",
+    "braid-mirror",
+    "writhe",
+    "cpt-decomposition",
+    "axiom-class",
+    "open-problem",
+    "conditional-on-class"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.PFromBraidMirror",
+  "text": "p-from-braid-mirror.md",
+  "leanSource": "p-from-braid-mirror.lean",
+  "provenance": "authored"
+}

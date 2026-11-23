@@ -1,1 +1,0 @@
-We should mention the work of Nicolas Bergeron and Akshay Venkatesh ([BV13]) where those relations are discussed in a much more general setting, and explicitely expressed in terms of the Ray-Singer analytic torsion.

@@ -1,1 +1,0 @@
-(31) where the ﬁrst term inside the brackets on the RHS corresponds to sequences with at least two elements and m1 = + 1 2, the second to sequences with at 7 least two elements and m1 = −1 2 and so on and the last term to sequences consisting of just m1 (which must be equal to p).

@@ -1,0 +1,1 @@
+Suppose that A = X/T satisﬁes axiom GV(A), and let K ∈D(X) be a constructible sheaf complex. For all degrees r ∈Z and a generic character χ ∈Π(X) then Hr c(X,Kχ) ∼= Hr(X,Kχ) ∼= H0(X, pHr(K)χ), where the ﬁrst isomorphism is induced by the forget support morphism.

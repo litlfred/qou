@@ -1,1 +1,0 @@
-However, since rows are of type $A_{\ell}$ and our construction algorithm for $Q$ does not allow $\murowperm$ to be repeated iterations of a single Coxeter-style mutation, we must be a bit more careful.

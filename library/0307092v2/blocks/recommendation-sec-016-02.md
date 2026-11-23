@@ -1,1 +1,0 @@
-We can use the procedure of Section 11 to correct this: we must modify ﬂattenings on the simplices traversed by a normal curve representing a longitude of the added solid torus as indicated in Figure 7 (the longitude runs horizontally across the center of the ﬁgure).

@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-ph-9612303v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5311d7faf2b3e0050d507e2ad6db2c66d116588c675275ea679a4f56134444cc",
   "file": "9612303v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:hep-ph/9612303v1 9 Dec 1996",
+  "title": "The q-deformed quark model : quantum isospin and q-hadrons",
   "authors": "M. Klein-Kreisler and M. Ruiz-Altaba\u2020",
   "arxiv": {
    "id": "hep-ph/9612303",
@@ -16,211 +19,47 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 13,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 13
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "A beautiful opportunity for deforming the SU(2) of isospin is provided by the quantum group of Leningrad, Drinfeld and Jimbo, which is the technical context we shall work in [1].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This seems, in principle, non-sense, but, as we shall argue, we can bypass all objections we could think of in the present context, with some minor caveats.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "By this we mean that we really want to imagine for a moment that the action of, say, the isospin lowering generator I\u2212on a two-particle state distinguishes between the \ufb01rst and the second particles: indeed, since its action on the state is precisely \u2206(I\u2212), and \u2206is asymmetric, we must have a way of ordering the two particles so that the results we get are physically meaningful.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Taking the experimental value of \u2206m\u03c0 = m\u00b1 \u03c0 \u2212m0 \u03c0 = 4.59 MeV, takes us then to the real value q = 0.324.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md (p. 2-8)",
+   "external_refs": [],
+   "quantitative_values": [
+    "4.59 MeV"
+   ],
    "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
    "section_title": "The quantum isospin group and its possible relevance to physics",
    "pages": "2-8",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For our application of the quantum group to strong interactions, we shall limit ourselves, in this letter, to single particle properties [4] such as the mass and the magnetic moment.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
-   "section_title": "The quantum isospin group and its possible relevance to physics",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To illustrate the point with a touch of chutzpah, we shall use \u2206\u2032 for mesons and \u2206for baryons below.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
-   "section_title": "The quantum isospin group and its possible relevance to physics",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The doublet of antiquarks is \u0012 | \u00afd > \u2212|\u00afu > \u0013 where the \u2212is con- ventional and allows one to read o\ufb00the G-parity of pion states e\ufb00ortlessly (nothing of what we shall do depends on this sign).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
-   "section_title": "The quantum isospin group and its possible relevance to physics",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To avoid pathologies, the value of q (not as a \u201csymbol\u201d) must be either real or a pure phase.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
-   "section_title": "The quantum isospin group and its possible relevance to physics",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Now, if we look at the \u21d1\u21d1\u21d3piece of the nucleon wave-function, we must require that the \ufb02avor counterpart be q-symmetric in the \ufb01rst two quarks (which are symmetric in the spin wavefunction).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
-   "section_title": "The quantum isospin group and its possible relevance to physics",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In what follows, we shall always quote the results for q real only.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
-   "section_title": "The quantum isospin group and its possible relevance to physics",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We note m\u2206++ =< \u2206++|M \u22971 \u22971 + 1 \u2297M \u22971 + 1 \u22971 \u2297M|\u2206++ > (4.1) and similarly for the other states, and \ufb01nd that the q dependence drops out: m\u2206++ = 3mu , m\u2206+ = 2mu + md , m\u22060 = mu + 2md , m\u2206\u2212= 3md (4.2) so that the prediction from q-isospin is the same as the usual one in the traditional quark model, namely m\u2206++ \u2212m\u2206+ = m\u2206+ \u2212m\u22060 = m\u22060 \u2212m\u2206\u2212= mu \u2212md \u2261\u2212\u03b4 (4.3) Although the actual values of the parameters mu and md are of no interest, their di\ufb00erence \u03b4 = md\u2212mu should be more or less glue-free and may be identi\ufb01ed with the mass di\ufb00erence obtained from nucleons (again the q\u2019s disappear): mp = 2mu + md , mn = mu + 2md (4.4) Thus, \u03b4 = mn \u2212mp = 1.29MeV (4.5) which agrees with the spread in masses of the \u2206-resonances[7], as it should since the quark model works.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
-   "section_title": "The quantum isospin group and its possible relevance to physics",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To solve this conundrum, one must include electromagnetic corrections.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
-   "section_title": "The quantum isospin group and its possible relevance to physics",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We believe, however, that the test of q-isospin will come from its extension to a q-deformed \ufb02avor SU(3), where the large mass di\ufb00erence between the strange quark and the light q-isospin doublet allows for much cleaner computations (q should be rather di\ufb00erent from one) and the pion mass di\ufb00erence is of no great import.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-6-conclusions-and-outlook.md",
-   "section_title": "Conclusions and outlook",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "At the very least, one should be able to come up with a q-deformed Gell-Mann\u2013Okubo mass formula.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-6-conclusions-and-outlook.md",
-   "section_title": "Conclusions and outlook",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md (p. 2-8)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/arxiv-hep-ph-9612303v1/blocks/prop-sec-001-01",
+   "claim_id": "arxiv-hep-ph-9612303v1#prop-sec-001-01"
   }
  ]
 }

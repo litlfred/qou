@@ -1,1 +1,0 @@
-(The solutions in dimensions 8 and 24 are obtained from the minimal nonzero vectors in the E8 and Leech lattices.) Because we know a priori that the answer must be an integer, any upper bound within less than 1 of the truth would suﬃce.

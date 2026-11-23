@@ -1,1 +1,1 @@
-If a discrete weak quasi bialgebra A can be made unitary with respect to
+If a discrete weak quasi bialgebra A can be made unitary with respect to an assigned pre-C ∗ -algebra involution of A, the same is true for any other such involution. As for twists of bialgebra structures, twists of involutive structures admit a categorical interpretation, that will be discussed in Prop. 13.1. The next results exploit the relations between antipode and Ω-involution.

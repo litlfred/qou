@@ -99,9 +99,11 @@ import sys
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 E0_STR = "4.1859813632944758969"
-DEUTERON = "2.2245662"
+DEUTERON = _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)
 S0_VIRTUAL = "0.0736"
 
 

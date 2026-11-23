@@ -1,0 +1,1 @@
+The stated forms for the residues follow from Lemma 3.6. □ As was observed above for rational functions, if f(z) satisﬁes the conditions of Proposition 3.7 and has a unique singularity closest to the origin then the contribution of this point determines dominant asymptotics of an, up to an exponentially smaller error.

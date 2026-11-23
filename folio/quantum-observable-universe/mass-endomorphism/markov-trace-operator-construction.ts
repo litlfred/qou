@@ -22,6 +22,7 @@ export default remark({
     "audit-forward-reference",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean classes `HnHilbertRep n q`, `HnInductiveEmbedding n q`, and `MarkovTraceVNFactor q` encode the per-$n$ representation, the inductive embedding, and the GNS bicommutant factor hosting $\\mathrm{tr}_M$. Downstream files import these classes as hypotheses. The operator-algebra steps—the GNS state and the bicommutant closure—supply the per-$n$ instances." },
     {
       kind: "status",
       date: "2026-06-03",

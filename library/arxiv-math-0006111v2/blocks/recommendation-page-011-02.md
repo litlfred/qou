@@ -1,1 +1,0 @@
-We shall now investigate the asymptotic decomposition of the associated probability measure on Young diagrams, under the hypothesis that τ := τq depends on q as q →∞, and that the moments Tr(T n q ) satisfy q(n−1)/2Tr(T n q ) →q→∞wn+1 n ≥1 for some sequence of real numbers wn, with |wn| ≤Cn for some constant C > 0.

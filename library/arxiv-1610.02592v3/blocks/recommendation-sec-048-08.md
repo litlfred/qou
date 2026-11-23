@@ -1,1 +1,0 @@
-We keep decomposing each factor until all factors are prime: this process must end, because a decomposition $M=M_1\# \ldots \#M_k$ gives rise to a system of $k-1$ spheres, and $k$ cannot be arbitrarily big by Corollary \ref{K:cor}.

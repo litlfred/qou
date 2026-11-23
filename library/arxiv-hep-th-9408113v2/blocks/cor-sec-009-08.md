@@ -1,0 +1,1 @@
+Let λ = (λ1, λ2) be a partition, |λ| ≡0 (mod 2k), and bkΛ0 λ (q) be the branching function for the level k vacuum representation kΛ0 of the aﬃne Lie algebra c sl2. Then lim N→∞q−k(N2−N)KλN,µN (q) = bkΛ0 λ (q), where λN := (λ1 + kN, λ2 + kN) and µN = (kM), M := M(N) = 1 k|λ| + 2N. Let us remind that, by deﬁnition, the partition (kM) is the one consisting of M parts all equal to k.

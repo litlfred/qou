@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1909.06744v1/blocks/prop-sec-014-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 18,
+  "pageEnd": 20,
+  "text": "prop-sec-014-01.md",
+  "derivedFrom": "library/arxiv-1909.06744v1/sections/sec-014",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06744v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "16.3",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-014-16-generalized-springer-correspondence-for-gιθ.md (p. 18-20)",
+    "claim_id": "arxiv-1909.06744v1#proposition:16.3",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

@@ -1,1 +1,0 @@
-The rule of associative conﬁnement, applied to this choice, is now concrete: for the duration of a given computational sequence, all state vector amplitudes and all gate operators must be elements of H1.

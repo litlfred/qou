@@ -1,0 +1,1 @@
+There is a complex structure j on S, standard over the ends, and a J ∈Jreg,h(E, π, Q, j, J(1), J(2), J(5)), such that CΦrel 0 (E, π, Q, J) : C′ −→C′′ is homotopic to zero by a chain homotopy of order [−2πR(0); ∞).

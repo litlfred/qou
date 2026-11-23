@@ -1,0 +1,1 @@
+The torsion of the complex C∗(M, ρ) can be expressed as tor(M, ρ) = tor(M1, h1) tor(M2, h2) tor(Σ, hΣ) tor(H, h1, h2, hΣ) ∈k(X)∗ where H is the Mayer-Vietoris sequence of Lemma 3.3.2. The following is identical to Proposition 2.4.4, hence we refer to it for a proof.

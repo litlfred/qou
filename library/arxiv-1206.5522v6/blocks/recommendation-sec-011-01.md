@@ -1,1 +1,0 @@
-While the cotensor only depends on the homotopy type of M, as we shall see in Proposition 5.1, it has a more reﬁned generalization taking as input a derived stack deﬁned over n-disk algebras, rather than commutative algebras, as in [Fra1].

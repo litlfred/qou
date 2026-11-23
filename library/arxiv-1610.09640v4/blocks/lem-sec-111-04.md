@@ -1,0 +1,1 @@
+Consider a complex M ∈D+(A, gr) and an integer p. (1) If Extp A(K, M) is a ﬁnite graded K-module, then Hp m(M) is a coﬁnite graded A-module. (2) If Hq m(M) is a coﬁnite graded A-module for every q ≤p, then Extq A(K, M) is a ﬁnite graded K-module for every q ≤p.

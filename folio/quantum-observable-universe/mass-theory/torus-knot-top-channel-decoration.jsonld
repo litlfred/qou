@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-torus-knot-top-channel-decoration",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "label": "def:torus-knot-top-channel-decoration",
+  "kind": "definition",
+  "title": "Top-channel decoration $\\delta^{\\mathrm{top}}_q(T_{m,p}) = q^{w} - q^{-w}$ of a torus knot",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-delta-q-decoration"
+  ],
+  "tags": [
+    "delta-q",
+    "torus-knot",
+    "writhe",
+    "bar-involution",
+    "alpha-em",
+    "pre-archimedean"
+  ],
+  "defines": [
+    "torus-knot-top-channel-decoration"
+  ],
+  "leanRef": "qou:QOU.TorusKnotTopChannel.topChannelDecoration",
+  "text": "torus-knot-top-channel-decoration.md",
+  "leanSource": "torus-knot-top-channel-decoration.lean",
+  "provenance": "authored"
+}

@@ -1,1 +1,0 @@
-The 2022 recommended value for the muon-to-electron mass ratio is mμ=me ¼ 206.768 2827ð46Þ ð187Þ and has a relative standard uncertainty of 2.2 × 10−8 that is nearly twice that of the 1999 measurement of ΔEMu in Eq.

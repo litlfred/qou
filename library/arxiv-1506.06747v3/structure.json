@@ -1,0 +1,1326 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1506.06747v3",
+ "source": {
+  "file": "1506.06747v3.pdf",
+  "sha256": "c44709743db788651e71c20874e22bad2212a8e54a07fac158140540e12cca41",
+  "bytes": 645952,
+  "pages": 30,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1506.06747",
+   "version": "3",
+   "primary_class": "hep-ph",
+   "stamp_date": "30 Mar 2020"
+  },
+  "doi": null,
+  "title": "Cottingham formula and nucleon polarizabilities",
+  "authors_raw": "J. Gasser1, M. Hoferichter1,2,3,4, H. Leutwyler1, A. Rusetsky5",
+  "title_lines": [
+   "Cottingham formula and nucleon polarizabilities"
+  ],
+  "abstract": "The di\ufb00erence between the electromagnetic self-energies of proton and neutron can be calculated with the Cottingham formula, which expresses the self- energies as an integral over the electroproduction cross sections \u2013 provided the nucleon matrix elements of the current commutator do not contain a \ufb01xed pole. We show that, under the same proviso, the subtraction function occurring in the dispersive representation of the virtual Compton forward scattering amplitude is determined by the cross sections. The representation in particular leads to a parameter-free sum rule for the nu- cleon polarizabilities. We evaluate the sum rule for the di\ufb00erence between the electric polarizabilities of proton and neutron by means of the available parameteriza- tions of the data and compare the result with experi- ment.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20200330211341-04'00'"
+  },
+  "title_raw": "Cottingham formula and nucleon polarizabilities",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Cottingham formula and nucleon polarizabilities",
+   "outline": "1 Introduction",
+   "text": "Cottingham formula and nucleon polarizabilities",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Cottingham formula, dispersion relations",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "Reggeons and fixed poles",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "Recent work",
+   "page": 3,
+   "source": "outline",
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Structure of the present paper",
+   "page": 4,
+   "source": "outline",
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Determination of the subtraction function",
+   "page": 4,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Elastic and inelastic contributions",
+   "page": 5,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "Elastic part",
+   "page": 5,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "Inelastic part",
+   "page": 5,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "Subtraction function in terms of cross sections",
+   "page": 6,
+   "source": "outline",
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "Chiral expansion",
+   "page": 6,
+   "source": "outline",
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "Nucleon polarizabilities",
+   "page": 7,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Low-energy theorems",
+   "page": 7,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Sum rules for the polarizabilities",
+   "page": 8,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "Numerical analysis",
+   "page": 8,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "Experimental information",
+   "page": 8,
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "Evaluation of T and 2 for the proton",
+   "page": 11,
+   "source": "outline",
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "T and 2: proton-neutron difference",
+   "page": 12,
+   "source": "outline",
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 2,
+   "title": "Pomeron exchange",
+   "page": 13,
+   "source": "outline",
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
+  },
+  {
+   "level": 2,
+   "title": "Evaluation of 1L for proton-neutron difference",
+   "page": 14,
+   "source": "outline",
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 2,
+   "title": "Prediction for the polarizabilities of the neutron",
+   "page": 14,
+   "source": "outline",
+   "number": "5.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 2,
+   "title": "Result for the subtraction function",
+   "page": 15,
+   "source": "outline",
+   "number": "5.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
+  },
+  {
+   "level": 2,
+   "title": "Comparison with previous work",
+   "page": 15,
+   "source": "outline",
+   "number": "5.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
+  },
+  {
+   "level": 1,
+   "title": "Self-energy",
+   "page": 16,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 2,
+   "title": "Cottingham formula",
+   "page": 16,
+   "source": "outline",
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 2,
+   "title": "Elastic part of the self-energy",
+   "page": 16,
+   "source": "outline",
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 2,
+   "title": "Inelastic part of the self-energy",
+   "page": 17,
+   "source": "outline",
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
+  },
+  {
+   "level": 2,
+   "title": "Numerical evaluation",
+   "page": 18,
+   "source": "outline",
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 1,
+   "title": "Summary and conclusion",
+   "page": 18,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 1,
+   "title": "A Notation",
+   "page": 20,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
+  },
+  {
+   "level": 1,
+   "title": "B Compton scattering",
+   "page": 21,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
+  },
+  {
+   "level": 2,
+   "title": "B.1 Lorentz invariance",
+   "page": 21,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
+  },
+  {
+   "level": 2,
+   "title": "B.2 Crossing symmetry, parity, and time reversal",
+   "page": 22,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
+  },
+  {
+   "level": 2,
+   "title": "B.3 Low-energy expansion",
+   "page": 22,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
+  },
+  {
+   "level": 2,
+   "title": "B.4 Spin average",
+   "page": 23,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
+  },
+  {
+   "level": 2,
+   "title": "B.5 Born terms",
+   "page": 24,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "B.6 Leading low-energy constants",
+   "page": 24,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "B.7 Real Compton scattering",
+   "page": 25,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "B.8 Low-energy theorems for T1(,q2) and T2(,q2)",
+   "page": 25,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 1,
+   "title": "C Causality",
+   "page": 26,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
+  },
+  {
+   "level": 1,
+   "title": "D A new causal representation",
+   "page": 27,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
+  },
+  {
+   "level": 1,
+   "title": "E Errata in the literature",
+   "page": 28,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1787,
+   "n_words": 240,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4247,
+   "n_words": 1071,
+   "label_start": null,
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-11-cottingham-formula-dispersion-relations",
+   "number": "1.1",
+   "title": "Cottingham formula, dispersion relations",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2320,
+   "n_words": 410,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-12-reggeons-and-fixed-poles",
+   "number": "1.2",
+   "title": "Reggeons and fixed poles",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 5039,
+   "n_words": 860,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-13-recent-work",
+   "number": "1.3",
+   "title": "Recent work",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2219,
+   "n_words": 358,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-14-structure-of-the-present-paper",
+   "number": "1.4",
+   "title": "Structure of the present paper",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1822,
+   "n_words": 298,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-2-determination-of-the-subtraction-function",
+   "number": "2",
+   "title": "Determination of the subtraction function",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2627,
+   "n_words": 477,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-006-3-elastic-and-inelastic-contributions",
+   "number": "3",
+   "title": "Elastic and inelastic contributions",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-007-31-elastic-part",
+   "number": "3.1",
+   "title": "Elastic part",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3035,
+   "n_words": 576,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-008-32-inelastic-part",
+   "number": "3.2",
+   "title": "Inelastic part",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1289,
+   "n_words": 262,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-009-33-subtraction-function-in-terms-of-cross-sectio",
+   "number": "3.3",
+   "title": "Subtraction function in terms of cross sections",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2182,
+   "n_words": 423,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-010-34-chiral-expansion",
+   "number": "3.4",
+   "title": "Chiral expansion",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3937,
+   "n_words": 753,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-011-4-nucleon-polarizabilities",
+   "number": "4",
+   "title": "Nucleon polarizabilities",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-012-41-low-energy-theorems",
+   "number": "4.1",
+   "title": "Low-energy theorems",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1717,
+   "n_words": 291,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-013-42-sum-rules-for-the-polarizabilities",
+   "number": "4.2",
+   "title": "Sum rules for the polarizabilities",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1561,
+   "n_words": 290,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-014-5-numerical-analysis",
+   "number": "5",
+   "title": "Numerical analysis",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-015-51-experimental-information",
+   "number": "5.1",
+   "title": "Experimental information",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 10311,
+   "n_words": 1824,
+   "label_start": "8",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-016-52-evaluation-of-t-and-2-for-the-proton",
+   "number": "5.2",
+   "title": "Evaluation of T and 2 for the proton",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 5119,
+   "n_words": 938,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-017-53-t-and-2-proton-neutron-difference",
+   "number": "5.3",
+   "title": "T and 2: proton-neutron difference",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2239,
+   "n_words": 395,
+   "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-018-54-pomeron-exchange",
+   "number": "5.4",
+   "title": "Pomeron exchange",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 4019,
+   "n_words": 690,
+   "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-019-55-evaluation-of-1l-for-proton-neutron-differenc",
+   "number": "5.5",
+   "title": "Evaluation of 1L for proton-neutron difference",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2334,
+   "n_words": 402,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-020-56-prediction-for-the-polarizabilities-of-the-ne",
+   "number": "5.6",
+   "title": "Prediction for the polarizabilities of the neutron",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1765,
+   "n_words": 306,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-021-57-result-for-the-subtraction-function",
+   "number": "5.7",
+   "title": "Result for the subtraction function",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1412,
+   "n_words": 241,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-022-58-comparison-with-previous-work",
+   "number": "5.8",
+   "title": "Comparison with previous work",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2415,
+   "n_words": 438,
+   "label_start": "15",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-023-6-self-energy",
+   "number": "6",
+   "title": "Self-energy",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1889,
+   "n_words": 322,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-024-61-cottingham-formula",
+   "number": "6.1",
+   "title": "Cottingham formula",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1228,
+   "n_words": 219,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-025-62-elastic-part-of-the-self-energy",
+   "number": "6.2",
+   "title": "Elastic part of the self-energy",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1637,
+   "n_words": 308,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-026-63-inelastic-part-of-the-self-energy",
+   "number": "6.3",
+   "title": "Inelastic part of the self-energy",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 3562,
+   "n_words": 627,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-027-64-numerical-evaluation",
+   "number": "6.4",
+   "title": "Numerical evaluation",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 4553,
+   "n_words": 760,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-028-7-summary-and-conclusion",
+   "number": "7",
+   "title": "Summary and conclusion",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 7785,
+   "n_words": 1261,
+   "label_start": "18",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-029-a-notation",
+   "number": null,
+   "title": "A Notation",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2562,
+   "n_words": 488,
+   "label_start": "20",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-030-b-compton-scattering",
+   "number": null,
+   "title": "B Compton scattering",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 849,
+   "n_words": 152,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-031-b1-lorentz-invariance",
+   "number": null,
+   "title": "B.1 Lorentz invariance",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2421,
+   "n_words": 430,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-032-b2-crossing-symmetry-parity-and-time-reversal",
+   "number": null,
+   "title": "B.2 Crossing symmetry, parity, and time reversal",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1720,
+   "n_words": 319,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-033-b3-low-energy-expansion",
+   "number": null,
+   "title": "B.3 Low-energy expansion",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 5393,
+   "n_words": 999,
+   "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-034-b4-spin-average",
+   "number": null,
+   "title": "B.4 Spin average",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2467,
+   "n_words": 497,
+   "label_start": "23",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-035-b5-born-terms",
+   "number": null,
+   "title": "B.5 Born terms",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 2184,
+   "n_words": 475,
+   "label_start": "24",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-036-b6-leading-low-energy-constants",
+   "number": null,
+   "title": "B.6 Leading low-energy constants",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1713,
+   "n_words": 354,
+   "label_start": "24",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-037-b7-real-compton-scattering",
+   "number": null,
+   "title": "B.7 Real Compton scattering",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 2915,
+   "n_words": 554,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-038-b8-low-energy-theorems-for-t1q2-and-t2q2",
+   "number": null,
+   "title": "B.8 Low-energy theorems for T1(,q2) and T2(,q2)",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2527,
+   "n_words": 486,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-039-c-causality",
+   "number": null,
+   "title": "C Causality",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2760,
+   "n_words": 470,
+   "label_start": "26",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-040-d-a-new-causal-representation",
+   "number": null,
+   "title": "D A new causal representation",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 3249,
+   "n_words": 649,
+   "label_start": "27",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-041-e-errata-in-the-literature",
+   "number": null,
+   "title": "E Errata in the literature",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 16290,
+   "n_words": 2755,
+   "label_start": "28",
+   "label_end": "30"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 42,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 16,
+    "items": [
+     "Abstract The di\ufb00erence between the electromagnetic 4.2 Sum rules for the polarizabilities",
+     "self-energies of proton and neutron can be calculated 5 Numerical analysis",
+     "with the Cottingham formula, which expresses the self- 5.1 Experimental information",
+     "energies as an integral over the electroproduction cross 5.3 \u03a3T and \u03a32: proton-neutron di\ufb00erence",
+     "sections \u2013 provided the nucleon matrix elements of the 5.4 Pomeron exchange",
+     "current commutator do not contain a \ufb01xed pole. We 5.5 Evaluation of \u03a3L 1 for proton-neutron di\ufb00erence",
+     "show that, under the same proviso, the subtraction 5.6 Prediction for the polarizabilities of the neutron",
+     "function occurring in the dispersive representation of 5.8 Comparison with previous work",
+     "the virtual Compton forward scattering amplitude is 6 Self-energy",
+     "determined by the cross sections. The representation in 6.1 Cottingham formula",
+     "particular leads to a parameter-free sum rule for the nu- 6.2 Elastic part of the self-energy",
+     "di\ufb00erence between the electric polarizabilities of proton 7 Summary and conclusion",
+     "and neutron by means of the available parameteriza- A Notation",
+     "tions of the data and compare the result with experi- B Compton scattering",
+     "Electromagnetic mass di\ufb00erences \u00b7 Elastic and B.5 Born terms",
+     "Dh C Causality"
+    ]
+   },
+   "found_not_listed": {
+    "count": 5,
+    "items": [
+     "3 Elastic and inelastic contributions",
+     "4 Nucleon polarizabilities",
+     "5 Numerical analysis",
+     "6 Self-energy",
+     "7 Summary and conclusion"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 43,
+  "chars_total": 131100,
+  "furniture_lines_stripped": 0
+ }
+}

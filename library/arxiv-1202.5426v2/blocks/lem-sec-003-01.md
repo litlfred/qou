@@ -1,0 +1,1 @@
+Let f ∈Hs,p(R/Z, Rn), s > 0, p ∈(1, ∞). If ψ ∈C∞(R) is globally Lipschitz continuous and ψ and all its derivatives vanish at 0 then ψ ◦f ∈Hs,p and ∥ψ ◦f∥Hs,p ≤C∥ψ∥Ck∥f∥Hs,p where k is the smallest integer greater than or equal to s. The key to the proof of Theorem IV is the following lemma.

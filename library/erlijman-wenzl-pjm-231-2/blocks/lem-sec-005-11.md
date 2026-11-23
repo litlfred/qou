@@ -1,0 +1,1 @@
+(b), and Proposition 5.7 that X i ind(Q⃗λ,i) ≥ ind(M⃗λ) dim(End(M⃗λ)) ≥ind(M⃗λ) |StabGs 1⃗λ| . Now let (Q j) j = S⃗ λ(Q⃗λ,i)i be the collection of nonisomorphic representatives of irreducible M–M submodules of any module M⃗λ with⃗λ ∈3s

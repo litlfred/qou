@@ -1,1 +1,0 @@
-The resulting part is analytic in the soft stuff and should thus be describable by an effective Lagrangian with coupling constants dependent on the external given momenta (Weinberg's folklore theorem \cite{Weinberg0}) Lagrangian in hadron fields with all orders of derivatives.

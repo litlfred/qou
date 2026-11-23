@@ -1,1 +1,0 @@
-Going still further, Grothendieck [@Gro] proposed that if we take the notion of 'set' and categorify it $n$ times, we should obtain a notion of *$n$-category*: a structure with objects, morphisms between objects, 2-morphisms between morphisms and so on up to $n$-morphisms.

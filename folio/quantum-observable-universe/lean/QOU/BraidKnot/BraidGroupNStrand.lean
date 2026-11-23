@@ -26,8 +26,8 @@ specialisations.
   - `axiom closureN`             — Markov closure to a Link, for any n
   - `class HeckeQuotient n q`    — the Iwahori-Hecke quotient relation
                                   `σ_i² = (q − q⁻¹) σ_i + 1`
-  - `class MarkovTraceN n q`     — Markov-trace axioms generalised
-                                  from `MarkovTraceAxioms` to n-strand
+  - `class MarkovTraceN n q`     — Markov-trace axioms M1–M4 at n strands
+                                  (genuine trace: `OcneanuTrace.MarkovTrace`)
 
 ## Specialisations
 
@@ -178,16 +178,17 @@ class HeckeQuotient (n : ℕ) (q : ℝ) : Type where
 
 /-! ## Markov-trace axioms generalised to n-strand
 
-Generalises `MarkovTraceAxioms` (`rem:markov-axioms-primitive`,
-2-strand) to n-strand. Per Jones (1985):
+The axioms M1–M4 at n strands, per Jones (1985). (The 2-strand class
+`MarkovTraceAxioms` this used to cite carried no trace and was removed
+2026-11-20, bean `qou-ltwg`; the genuine structure is
+`QOU.MathlibExt.OcneanuTrace.MarkovTrace`.)
 
   M1: τ(1) = 1
   M2: τ(xy) = τ(yx)                    (cyclic)
   M3: τ(x · σ_n) = z · τ(x), σ_n ∈ B_{n+1}\B_n   (stabilisation)
   M4: τ(x · σ_n⁻¹) = z · τ(x)          (stabilisation, inverse)
 
-Discharged at n = 2 by `MarkovTraceAxioms`; the n-strand class is
-the canonical extension. -/
+-/
 
 /-- Markov-Jones parameter (Tier 2 / generic-R form): `z = u / (u² + 1)`,
     where `u` is the formal square root of `q`. Mathematically equivalent

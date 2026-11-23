@@ -2,19 +2,23 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-braiding-induced-ordering",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:braiding-induced-ordering",
   "kind": "proposition",
-  "title": "Canonical admissible ordering on the Hecke basis induced by braiding",
+  "title": "Degree-lexicographic well-ordering on braid words",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor"
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor",
+    "papers/quantum-observable-universe/blocks/def-braid-group",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding",
+    "papers/unital-groebner-bases/blocks/def-admissible-system"
   ],
   "tags": [
     "braiding",
@@ -25,7 +29,7 @@
     "temporal",
     "groebner"
   ],
-  "leanRef": "qou:QOU.braiding_induced_ordering",
+  "leanRef": "qou:QOU.braiding_induced_ordering_holds",
   "text": "braiding-induced-ordering.md",
   "leanSource": "braiding-induced-ordering.lean",
   "provenance": "authored"

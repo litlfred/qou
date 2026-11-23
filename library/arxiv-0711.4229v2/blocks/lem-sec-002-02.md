@@ -1,0 +1,1 @@
+For all simple objects U, V , W of C such that W is ambidextrous and for any C-colored ribbon graph T with 2 inputs and 2 outputs colored by U, V , S′(U, W)S′(W, V ) * U T V + = S′(V, W)S′(W, U) * U T V + .

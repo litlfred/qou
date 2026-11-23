@@ -1,1 +1,0 @@
-Explain the right-hand side of (4.3), except for the constant, via a soft analysis: what are the free variables on the left, what units must λ have in order to abide by the principle of unitless exponentiation, what units must the left- hand side of (4.3) have (remembering to include the units of dx), and what power must λ therefore be given on the right-hand side?

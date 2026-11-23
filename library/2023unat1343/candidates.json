@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "2023unat1343",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "84e48770e4d07bea9d79a117103976556da065129943311bb49607c7b8baee12",
   "file": "2023UNAT1343.pdf"
@@ -11,91 +14,11 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Raschdorf, a former staff member of UNAMI, contested three administration decisions: (i) the administrative decision not to renew her fixed-term appointment beyond 31 May 2019; (ii) the 1 September 2020 decision of the Division of Healthcare Management and Occupational Safety and Health (DHMOSH) not to recommend her for a disability pension to the United Nations Staff Pension Committee (UNSPC); and (iii) the 5 November 2020 decision of the Advisory Board on Compensation Claims (ABCC) to reject her claim for compensation on the ground that her claim was time-barred.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-001.md",
-   "section_title": "Page 1",
-   "pages": "1-1",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Legal Principle(s) Staff Rule 11.2(a) confirms that staff members wishing to formally contest an administrative decision alleging non-compliance with their contract of employment or terms of appointment, including all pertinent Regulations and Rules pursuant to Staff Regulation 11.1 (a), shall, as a first step, submit to the Secretary-General in writing a request for a management evaluation of the administrative decision.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Decisions related to the timeliness of applications to the ABCC are regular administrative decisions that must be submitted for management evaluation because they address the administrative, rather than medical, aspects of the ABCC\u2019s work.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Article 33(a) of the UNJSPF Regulations requires proof of incapacitation before a recommendation can be made to the UNSPC for a disability pension.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It provides that \u201c[a] disability benefit shall, subject to article 41, be payable to a participant who is found by the Board to be incapacitated for further service in a member organization reasonably compatible with his or her abilities, due to injury or illness constituting an impairment to health which is likely to be permanent or of long duration\u201d.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

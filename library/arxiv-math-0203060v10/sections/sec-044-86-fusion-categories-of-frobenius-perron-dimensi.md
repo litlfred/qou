@@ -12,6 +12,7 @@ text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 1.0
 doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
+duplicate_of: "arxiv-math-0203060v11"
 ---
 ::: theorem
 []{#filtrat label="filtrat"} Let ${\mathcal C}$ be a fusion category of Frobenius-Perron dimension $p^n$, where $n\ge 1$ is an integer, and $p$ is a prime. Then:

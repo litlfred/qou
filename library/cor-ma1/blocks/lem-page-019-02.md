@@ -1,0 +1,1 @@
+The coeﬃcient of qn in qn2 1+n2 2+···+n2 k−1+ni+···+nk−1 (q)n1−n2 · · · (q)nk−2−nk−1(q)nk−1 is the number of paths with major index n, no South steps, starting at height k −i, whose height is less than k and having nj peaks of relative height ≥j for 1 ≤j ≤k −1.

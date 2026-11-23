@@ -746,4 +746,39 @@ theorem operator_selection_lp {R : Type*} [CommRing R] [LinearOrder R]
   rw [hgap]
   exact OperatorSelectionLpContext.dual_bound_le_objective x hx
 
+/-- Concrete non-degenerate `H₂` (`n = 2, d = 2`) instance of
+    `OperatorSelectionLpContext ℤ` built via `OperatorSelectionLpContext.ofCertificate`:
+    with Gram `G i j = 1`, cost vector `t = (2, 2)`, target net
+    `n_target = 1`, optimal primal point `x* = (1, 0)`, dual variable `y₀* = 2`,
+    and zero dual slack `s = 0`, all primal/dual feasibility and complementary
+    slackness conditions hold and `objective x* = 2 = n_target · y₀*`. -/
+def canonicalH2OperatorSelectionLpContext : OperatorSelectionLpContext ℤ :=
+  OperatorSelectionLpContext.ofCertificate
+    2 2 1
+    (fun _ => 2)
+    (fun _ _ => 1)
+    (fun i => if i = 0 then 1 else 0)
+    2
+    (fun _ => 0)
+    (fun _ => le_rfl)
+    (fun _ => by simp)
+    (by decide)
+    (by decide)
+    (fun _ => by simp)
+
+/-- `OperatorSelectionLpContext ℤ` is non-vacuously inhabitable. -/
+theorem nonempty_operatorSelectionLpContext :
+    Nonempty (OperatorSelectionLpContext ℤ) :=
+  ⟨canonicalH2OperatorSelectionLpContext⟩
+
+/-- Concrete evaluation of `operator_selection_lp` on `canonicalH2OperatorSelectionLpContext`. -/
+theorem canonicalH2_operator_selection_lp :
+    letI := canonicalH2OperatorSelectionLpContext
+    OperatorSelectionLpContext.IsFeasible canonicalH2OperatorSelectionLpContext.x_star ∧
+    OperatorSelectionLpContext.objective canonicalH2OperatorSelectionLpContext.x_star
+      = canonicalH2OperatorSelectionLpContext.n_target
+          * canonicalH2OperatorSelectionLpContext.y_0_star := by
+  letI := canonicalH2OperatorSelectionLpContext
+  exact ⟨operator_selection_lp.1, operator_selection_lp.2.2⟩
+
 end QOU.ParticleInteractions

@@ -1,0 +1,1 @@
+For n ≥2 the function (5.2) En(z) = Lin(z) − n −1 log(z)Lin−1(z) extends to a rigid analytic function on U1. (5.3) En(zm) = mn−1  for m ≥1 and z in C∗ p. In particular (5.4) En(z2) = 2n−1(En(z) + En(−z)) .

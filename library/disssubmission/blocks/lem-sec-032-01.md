@@ -1,0 +1,1 @@
+Over some Zariski-open dense subset U ⊂X there exists for each integer n ≥0 a polarized variation of pure Hodge structures Hn with stalks Hn x = Hn(Yx,Q), and there are subvariations V+ ⊂Hg−2 and V−⊂Hg−2 whose stalks are precisely the subspaces V+ and V−deﬁned in section 5.1.

@@ -1,1 +1,0 @@
-In the finite dimensional cellular case, homomorphisms between cell modules rarely are injective, there are no non-zero injective endomorphisms apart from automorphisms, and if there are no non-zero homomorphisms between different cell modules at all, the cellular algebra must be semisimple.

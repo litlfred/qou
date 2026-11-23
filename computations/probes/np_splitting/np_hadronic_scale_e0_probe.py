@@ -16,6 +16,7 @@ Candidates:
   D2 (log form kept, scale swapped):  dm = E0_full * 2 ln q
 CODATA 1.29333205 MeV is comparison only; nothing is selected by residual.
 """
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import itertools, sympy as sp
 from mpmath import mp, mpf, log
 mp.dps=40
@@ -36,7 +37,7 @@ def t(W,wt):
     return sp.simplify(tot/(q+1/q)**3)
 me=mpf('0.51099895069'); cod=mpf('1.29333205')
 qm=mpf(str(sp.N(qs,45))); hb=1-1/qm
-E00=me/(qm*(qm-1)); E0f=E00/(1-hb**2)
+E00=_qbeta_e0.order_zero_scaled(me, qm); E0f=E00/(1-hb**2)
 print('E0^(0) =',mp.nstr(E00,12),' E0_full =',mp.nstr(E0f,12))
 for name,W in [('V^3',V**3),('V^6',V**6)]:
     tp=t(W,(0,0,1)); tn=t(W,(0,1,1))

@@ -87,4 +87,13 @@ instance instSnIsotypicSpechtSplit :
     QOU.BraidKnot.SnWedderburnPartitionBridge.SnIsotypicSpechtSplit k where
   exists_split n := ⟨matrixSplit (k := k) n, matrixSplit_centralC2 (k := k) n⟩
 
+/-- The difference between the matrix split evaluation at `centralC2 n` and the content-square block scalar vanishes at each partition index. -/
+theorem matrixSplit_centralC2_sub_eq_zero (n : ℕ) (i : PartitionIndex n) :
+    matrixSplit (k := k) n (RegularRepTrace.centralC2 n) i -
+      ((JucysMurphy.contentSqSum i.diagram : ℤ) : k) •
+        (1 : Matrix (Fin (Module.finrank k (SpechtSubmodule (k := k) i.diagram)))
+                    (Fin (Module.finrank k (SpechtSubmodule (k := k) i.diagram))) k) = 0 := by
+  rw [matrixSplit_centralC2]
+  exact sub_self _
+
 end QOU.BraidKnot.SnIsotypicSpechtSplitInstance

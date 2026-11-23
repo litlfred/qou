@@ -1,1 +1,0 @@
-Since there are only two non-abelian branches, they must (as indicated in Section [\[sec:symmetries\]](#sec:symmetries){reference-type="ref" reference="sec:symmetries"}) be the geometric and conjugate ones.

@@ -1,1 +1,0 @@
-The domain of this variant map should not be quite $\CM(\Sigma, GL(1); \fm)$; rather it should be a space of twisted rank 1 connections on $\Sigma$ subject to some additional constraints and/or carrying some additional structure.

@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-0006156v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b799d4ef150291cf7c6aeca96ff9eae2abbba976c49fc668d36e3141653f0217",
   "file": "0006156v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:hep-th/0006156v1 20 Jun 2000",
+  "title": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality",
   "authors": "THEORY. I: ALGEBRAIC APPROACH AND DUALITY",
   "arxiv": {
    "id": "hep-th/0006156",
@@ -16,181 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
-  "by_kind": {
-   "recommendation": 11
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We must stress, that one can see the elements of the dualization idea in papers [@babelon; @gervais2; @curtho; @teschner] devoted to the Liouville model itself, and in [@BLZ1; @BLZ2; @BLZ3; @BPZ] within the framework of conformal field theory.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "They will attract our attention in the next couple of (sub)sections where we shall try to treat the Magri bracket and the \"chiral Hamiltonian\" $L_0$ as a stand-alone dynamical system, not for the first time of course.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-12-magri-bracket.md",
-   "section_title": "Magri bracket",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall review some earlier attempts to get it properly discretized and quantized.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-12-magri-bracket.md",
-   "section_title": "Magri bracket",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be noted however that the latter only emerges in a rather tricky continuous limit, while the simplest limit leads to the free equation ([\\[cr\\]](#cr){reference-type=\"ref\" reference=\"cr\"}).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-13-volterra-model.md",
-   "section_title": "Volterra model",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Which is a little unfortunate, for however essential a part has the Volterra system been playing in the soliton theory, there must be something wrong about a nonlinear equation emulating a linear one.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-13-volterra-model.md",
-   "section_title": "Volterra model",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "So, in the rest of this section we shall be looking at that motion, then we shall try to guess how it could be lifted back to the Magri--Virasoro case.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-14-bi-hamiltonity.md",
-   "section_title": "Bi-hamiltonity",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Those familiar with the braid group must have already recognized in it the first string crossing the very last one behind all the others, let us picture it for $N=4$: $$\\setlength{\\unitlength}{1mm} \\raisebox{4mm}{\\(b_1=\\;\\;\\)} \\begin{picture}(12,11)\\linethickness{0.3mm} \\qbezier(0,10)(-1,8)(1,6)\\qbezier(3,4)(5,2)(4,0) \\qbezier(4,10)(4,6)(2,5)\\qbezier(2,5)(0,4)(0,0) \\qbezier(8,10)(8,5)(8,0)\\qbezier(12,10)(12,5)(12,0) \\end{picture}\\qquad \\raisebox{4mm}{\\(b_2=\\;\\;\\)} \\setlength{\\unitlength}{1mm} \\begin{picture}(12,11)\\linethickness{0.3mm} \\qbezier(4,10)(3,8)(5,6)\\qbezier(7,4)(9,2)(8,0) \\qbezier(8,10)(8,6)(6,5)\\qbezier(6,5)(4,4)(4,0) \\qbezier(0,10)(0,5)(0,0)\\qbezier(12,10)(12,5)(12,0) \\end{picture}\\qquad \\raisebox{4mm}{\\(b_3=\\;\\;\\)} \\begin{picture}(12,11)\\linethickness{0.3mm} \\qbezier(8,10)(7,8)(9,6)\\qbezier(11,4)(13,2)(12,0) \\qbezier(12,10)(12,6)(10,5)\\qbezier(10,5)(8,4)(8,0) \\qbezier(0,10)(0,5)(0,0)\\qbezier(4,10)(4,5)(4,0) \\end{picture}\\qquad \\raisebox{4mm}{\\(b_4=\\;\\;\\)} \\setlength{\\unitlength}{1mm} \\begin{picture}(12,11)\\linethickness{0.3mm} \\qbezier(0,10)(-2,6)(1,5) \\qbezier[2](4,4)(7,3)(10,2) \\qbezier(10,2)(13,1)(12,0) \\qbezier(12,10)(13,8.5)(10,7.5) \\qbezier[2](10,7.5)(7,6.5)(4,5",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-17-it-has-to-do-with-braids.md",
-   "section_title": "It has to do with braids",
-   "pages": "6-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If that is to be, the \"global\" relations ought to remain the same as in the braid group $$d_1d_2\\ldots d_{N-1}=d_2d_3\\ldots d_N =\\cdots=d_Nd_{N+1}\\ldots d_{2N-2}\\;,$$ or equivalently $$\\tag{\\ref{cr}\\(''\\)} \\hat d_n=d_{n-1}=Q^{-1}d_nQ\\qquad\\qquad Q=d_1d_2\\ldots d_{N-1}\\; ,$$ but this time each generator should interfere not only with the nearest neighbours but also with the second-nearest ones $$d_md_n=d_nd_m\\qquad\\text{if }|m-n| \\not\\equiv1\\text{ and }2\\pmod{N} ,$$ just like it was in bracket ([\\[mb\\]](#mb){reference-type=\"ref\" reference=\"mb\"}$'$) of course.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-18-lattice-virasoro-algebra.md",
-   "section_title": "Lattice Virasoro algebra",
-   "pages": "6-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In continuum, the Liouville equation may be considered as a compatibility condition for the Liouville formula overloaded with M\u00f6bius-invariance.",
-   "strength": "may",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-22-discrete-liouville-equation.md",
-   "section_title": "Discrete Liouville equation",
-   "pages": "8-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "[]{#subsec:shevol label=\"subsec:shevol\"} If we guessed the equation right, there must exist the \"evolution operator\", that is an element $K$ such that $$\\chi_{j,k+1}=K^{-1}\\chi_{j,k-1}K.$$ Needless to say, these relations will hold everywhere if and only if they do so for $k$ equal $0$ and $-1$ where they become $$\\begin{aligned} \\chi_{2n-1}K\\chi_{2n-1} K^{-1}&=\\frac{q^2\\chi_{2n-2}\\chi_{2n}} {(1+q\\chi_{2n-2})(1+q\\chi_{2n})} \\\\ K^{-1}\\chi_{2n}K\\chi_{2n} &=\\frac{q^2\\chi_{2n-1}\\chi_{2n+1}} {(1+q\\chi_{2n-1})(1+q\\chi_{2n+1})}. \\end{aligned}$$ Following [@fadVol93; @fadVol97] we shall produce that element, with explicitly singled out d'Alembert part $K_\\infty^{}$ good for $$\\chi_{2n-1}K_\\infty^{}\\chi_{2n-1} K_\\infty^{-1}=q^2\\chi_{2n-2}\\chi_{2n}\\qquad K_\\infty^{-1}\\chi_{2n}K_\\infty^{}\\chi_{2n} =q^2\\chi_{2n-1}\\chi_{2n+1} ,$$ and complete with the \"shift operator\" $J$ moving the $\\chi$'s in the spatial direction $$\\chi_{j+1,k}=J^{-1}\\chi_{j-1,k}J .$$ Here follow explicit formulas for these shift and evolution operators $$K_\\infty^{}=VU\\qquad\\qquad K=E_2K_\\infty^{}E_1 \\qquad\\qquad J=VU^{-1}$$ where $$\\begin{aligned} E_1&=\\prod_{n=1}^N \\epsilon(\\chi_{2n-1})\\qquad\\qquad E_2=\\prod_{n=1}^N\\epsil",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-017-33-shift-and-evolution-operators.md",
-   "section_title": "Shift and evolution operators",
-   "pages": "9-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Moreover, we shall momentarily see that we get a new feature.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-021-43-unitarity.md",
-   "section_title": "Unitarity",
-   "pages": "12-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

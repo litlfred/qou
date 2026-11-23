@@ -1,1 +1,0 @@
-After expanding, it is obvious that we must show the following (for all choices), when T →∞: 1 T 3 Z σ(Φ1(x,T),x) Z O2 T (y) Z O3 T (z) f −→ 0, (B.1) 1 T 3 Z σ(Φ1(x,T),x) Z σ(Φ2(y,T),y) Z O3 T (z) f −→ 0, (B.2) 1 T 3 Z σ(Φ1(x,T),x) Z σ(Φ2(y,T),y) Z σ(Φ3(z,T),z) f −→ 0.

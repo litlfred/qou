@@ -1,0 +1,1 @@
+Let A be a 0-sectorial operator with Hα 2 calculus for some α > 1 2. Let (ϕn)n∈Z be a dyadic partition of R+. Then we have the following so-called Paley-Littlewood decomposition for x ∈R(A): ∥x∥X ∼= E

@@ -153,4 +153,53 @@ theorem birthdayFaithful_independent_witnessed :
       ¬ (∀ n : ℕ, S.birthday ((n : ℕ) : ℝ*) = (n : Ordinal)) :=
   ⟨HyperrealTransfer.surrealFieldHyperreal, flatBirthday_not_faithful⟩
 
+/-! ## §4 — Conway's simplicity (tree) axiom, as a second opt-in mixin
+
+`BirthdayFaithful` pins the birthdays of the naturals and nothing else.  The property
+that actually makes a birthday *Conway's* is simplicity: `x` is the simplest number in
+the cut it makes in the numbers born before it.  Equivalently (Ehrlich's
+s-hierarchical ordering): if `z ≠ x` lies on the same side as `x` of every number
+older than `x`, then `z` is born strictly **later** than `x`.
+Added 2026-11-20 (bean `qou-dx7g`, triage rank 3), because the six `SurrealField`
+axioms give only upper bounds and a flat birthday satisfies them. -/
+
+/-- **Conway simplicity.**  For `x ≠ z`: if every `y` born before `x` lies on the same
+side of `z` as of `x` (`y < x ↔ y < z`), then `z` is born after `x`.  True in `𝐍𝐨`:
+`x` is the simplest element of its cut `(L_x, R_x)`, and two distinct numbers with the
+same birthday are separated by their (older) common ancestor in the sign-sequence tree.
+-- Ref: [conway1976] Ch. 2, Theorem 11 (simplicity)
+-- Ref: [ehrlich2012] §3 (s-hierarchical ordered structures) -/
+class ConwaySimplicity (K : Type u) [SurrealField K] : Prop where
+  simplicity : ∀ x z : K, x ≠ z →
+    (∀ y : K, birthday y < birthday x → (y < x ↔ y < z)) →
+    birthday x < birthday z
+
+/-- **The flat model fails simplicity**, at `x = 1`, `z = 2`: the only number born before
+`1` is `0`, which lies below both, yet `flatBirthday 1 = flatBirthday 2 = 1`. -/
+theorem flatBirthday_not_simple :
+    ¬ (∀ x z : ℝ*, x ≠ z →
+        (∀ y : ℝ*, HyperrealTransfer.flatBirthday y < HyperrealTransfer.flatBirthday x →
+          (y < x ↔ y < z)) →
+        HyperrealTransfer.flatBirthday x < HyperrealTransfer.flatBirthday z) := by
+  intro h
+  have key := h 1 2 (by norm_num) (by
+    intro y hy
+    rw [HyperrealTransfer.flatBirthday_one] at hy
+    have hy0 : y = 0 := by
+      by_contra hne
+      have : HyperrealTransfer.flatBirthday y = 1 := by
+        simp [HyperrealTransfer.flatBirthday, hne]
+      rw [this] at hy
+      exact lt_irrefl _ hy
+    subst hy0
+    constructor <;> intro _ <;> norm_num)
+  rw [HyperrealTransfer.flatBirthday_one, HyperrealTransfer.flatBirthday_two] at key
+  exact lt_irrefl _ key
+
+/-- **Simplicity is independent of the six axioms**: one `SurrealField` structure on `ℝ*`
+(`surrealFieldHyperreal`) whose own birthday fails it. -/
+theorem conwaySimplicity_independent_witnessed :
+    ∃ S : SurrealField.{0, 0} ℝ*, ¬ @ConwaySimplicity ℝ* S :=
+  ⟨HyperrealTransfer.surrealFieldHyperreal, fun h => flatBirthday_not_simple h.simplicity⟩
+
 end QOU.AppendixSurreals

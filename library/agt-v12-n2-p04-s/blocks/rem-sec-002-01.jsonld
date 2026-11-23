@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/agt-v12-n2-p04-s/blocks/rem-sec-002-01",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "rem-sec-002-01.md",
+  "derivedFrom": "library/agt-v12-n2-p04-s/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v12-n2-p04-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.1",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-002-21-the-reidemeister-torsion.md (p. 3-6)",
+    "claim_id": "agt-v12-n2-p04-s#remark:2.1"
+  }
+}

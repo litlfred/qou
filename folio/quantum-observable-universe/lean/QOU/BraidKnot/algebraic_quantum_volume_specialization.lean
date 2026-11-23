@@ -1,64 +1,73 @@
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.MathlibExt.MarkovBondRule
+import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 /-!
-# QOU.BraidKnot.algebraic_quantum_volume_specialization
+# QOU.BraidKnot.algebraic_quantum_volume_specialization — conjecture carrier
 
-**Canonical declaration** for content block
-[`prop:algebraic-quantum-volume-specialization`](../../../quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.md): *Specialisation of the algebraic quantum volume*.
+No content block references this module; it was an orphan sibling of
+`def:algebraic-quantum-volume` (`mass-theory/algebraic-quantum-volume.md`),
+which defines `Vol_alg(W) := tr_M(W)` under convention D.
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+**Conjecture (owner, 2026-11-20, bean `qou-6qbv`).** Until 2026-11-20 this file
+carried a context class whose free fields were projected back out by a `def`.
+Two defects besides the projection:
+
+* claim (i) pinned the Markov parameter to `1/(√q₀ + 1/√q₀)`, which is
+  **convention C**, excised on 2026-08-15. Convention D, `z = q³/(q² + 1)`, is
+  now used, stated over a generic field per §7c. The parameter is
+  `QOU.MathlibExt.MarkovBondRule.markovZ`, reused rather than restated: a local
+  `QOU.BraidKnot.markovZD` here collided by name with the `ℝ`-valued one in
+  `MarkovConventionSeparation` and `QBetaCanonicalMarkovWeightsDerived`, so no
+  module could import this file together with either (bean `qou-961o`);
+* claims (ii)/(iii) read `∀ β, ∃ c, Vol β = c · J β`, letting `c` depend on
+  `β`, which holds whenever `J β ≠ 0` and says almost nothing.
+
+## What is stated now
+
+`AlgebraicQuantumVolumeSpecialization Vol J` is the β-**uniform** Jones route:
+one nonzero constant `c` with `Vol β = c · J β` for every braid. No instance is
+supplied.
+
+## What is proved
+
+* `markovZ_mul_qtwo`: the convention-D defining relation `z · (q + q⁻¹) = q²`.
+* `jones_alexander_proportional`: the old file asserted a Jones route and an
+  Alexander route side by side. If both held β-uniformly, the Jones and
+  Alexander values would be proportional on every braid, so the two invariants
+  could not be independent. The routes are therefore alternatives, not
+  simultaneous specialisations of one `Vol`.
 -/
 
 namespace QOU.BraidKnot
 
+/-- The convention-D defining relation `z · (q + q⁻¹) = q²`, for the shared
+convention-D parameter `QOU.MathlibExt.MarkovBondRule.markovZ`. -/
+theorem markovZ_mul_qtwo {R : Type*} [Field R] {q : R} (hq : q ≠ 0)
+    (hq2 : q ^ 2 + 1 ≠ 0) :
+    QOU.MathlibExt.MarkovBondRule.markovZ q * (q + q⁻¹) = q ^ 2 := by
+  unfold QOU.MathlibExt.MarkovBondRule.markovZ
+  field_simp
 
-/-- Abstract context for the `algebraic_quantum_volume_specialization`
-    claim — manuscript-named typed fields below; sub-claims encode the
-    three specialisation routes of `Vol_q(β)` (only one of which is part
-    of the QOU-internal derivation). -/
-class AlgebraicQuantumVolumeSpecializationContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- Substrate parameter `q_0`. -/
-  q_0 : ℝ
-  /-- The algebraic quantum volume `Vol_q(β)` evaluated at the
-      substrate (real specialisation). -/
-  Vol_q_at_q0 : Braid → ℝ
-  /-- Substrate Markov parameter `z_0 = 1 / (q_0^{1/2} + q_0^{-1/2})`. -/
-  z_0 : ℝ
-  /-- Manuscript sub-claim (i) — QOU-internal specialisation identity
-      `z_0 = 1 / (sqrt q_0 + 1 / sqrt q_0)`. -/
-  claim_i_qou_internal_specialisation :
-    z_0 = 1 / (Real.sqrt q_0 + 1 / Real.sqrt q_0)
-  /-- Jones polynomial value at the braid (substrate). -/
-  J_K : Braid → ℝ
-  /-- Manuscript sub-claim (ii) — Jones-bracket reduction: substrate
-      `Vol_q(β)` factors through the Jones polynomial value at every
-      braid. -/
-  claim_ii_jones_specialisation : ∀ β : Braid,
-    ∃ c : ℝ, Vol_q_at_q0 β = c * J_K β
-  /-- Alexander polynomial value at the braid. -/
-  Δ_K : Braid → ℝ
-  /-- Manuscript sub-claim (iii) — Conway-Alexander reduction. -/
-  claim_iii_alexander_specialisation : ∀ β : Braid,
-    ∃ c : ℝ, Vol_q_at_q0 β = c * Δ_K β
+/-- **Conjecture (Jones route).** The substrate evaluation `Vol β` of the
+algebraic quantum volume is a fixed nonzero multiple of the Jones value `J β`,
+uniformly in the braid `β`. -/
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/algebraic-quantum-volume
+-- Ref: [jones1987] Jones, "Hecke algebra representations of braid groups and link polynomials", Ann. Math. 126 (1987)
+class AlgebraicQuantumVolumeSpecialization {Braid R : Type*} [Field R]
+    (Vol J : Braid → R) : Prop where
+  jones_route : ∃ c : R, c ≠ 0 ∧ ∀ β, Vol β = c * J β
 
-/-- **Proposition statement** (from manuscript):
-
-The algebraic quantum volume
-$\mathrm{Vol}_q(\beta) \in \mathbb{Z}[q^{1/2}, q^{-1/2}][z]$
-specialises along three routes — only one of which is part of the
-QOU-internal derivation; the other two are*
-[
-
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.ts
-def algebraic_quantum_volume_specialization [ctx : AlgebraicQuantumVolumeSpecializationContext] :
-    ctx.z_0 = 1 / (Real.sqrt ctx.q_0 + 1 / Real.sqrt ctx.q_0) ∧
-    (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.J_K β) ∧
-    (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.Δ_K β) :=
-  ⟨ctx.claim_i_qou_internal_specialisation,
-   ctx.claim_ii_jones_specialisation,
-   ctx.claim_iii_alexander_specialisation⟩
+/-- A Jones route and an Alexander route holding together, β-uniformly, force the
+Jones and Alexander values to be proportional on every braid. -/
+theorem jones_alexander_proportional {Braid R : Type*} [Field R]
+    {Vol J Δ : Braid → R} {c₁ c₂ : R} (hc₂ : c₂ ≠ 0)
+    (hJ : ∀ β, Vol β = c₁ * J β) (hΔ : ∀ β, Vol β = c₂ * Δ β) :
+    ∀ β, Δ β = (c₁ / c₂) * J β := by
+  intro β
+  have h := (hΔ β).symm.trans (hJ β)
+  field_simp
+  rw [mul_comm]; exact h
 
 end QOU.BraidKnot

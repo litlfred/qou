@@ -11,5 +11,5 @@
 | 4 ($M(\mathfrak{H}) = \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \in \mathbb{Q}(q)$) | algebraically trivial once 2 + 3 are in | partial |
 | 5 (Archimedean realization at $q_0$ + $m_e$) | MPFR via SymPy/exact algebraic structures | ✓ |
 | 6 (AME comparison) | mass-table-ppb witness + the canonical formalism | ✓ |
-| 7 (methodology tag) | [`methodology-deprecation.witness.json`](../../../computations/methodology-deprecation.witness.json) | ✓ |
+| 7 (methodology tag) | [methodology-deprecation record](../../../computations/methodology-deprecation.witness.json) | ✓ |
 | 8 (post-Archimedean naming via volume conjecture) | borrowed; not in QOU derivation | ✓ as theorem |

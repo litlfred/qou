@@ -1,1 +1,0 @@
-More precisely, [DG, Conj.1.8] we should have (1.4) τ R M = 4π3 exp(−2SM,1) ∈E∗ M where τ R M is the nonabelian Reidemeister-Ray-Singer torsion of M with respect to the meridian [Por97, Dub06], and EM is the invariant trace ﬁeld of M. • For n ≥2, the n-loop invariants SM,n are conjectured to lie in the invariant trace ﬁeld EM [DGLZ09, Gar08].

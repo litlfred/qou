@@ -1,1 +1,1 @@
-Let A be a quasitriangular weak quasi-Hopf algebra with strong antipode
+Let A be a quasitriangular weak quasi-Hopf algebra with strong antipode S and R-matrix R. The element u = X i S(ti)ri (10.12) where R = P i ri ⊗ tiis called Drinfeld element. We also set R−1 = P j rj ⊗ tj.

@@ -1,1 +1,0 @@
-Explicit but rather complicated formulas for the general genus $K_{k,k+1-2g}$ were found by Goulden and Rattan [@GouldenRattan2007] (for a more elementary proof we refer to the work of Biane [@Biane2005/07]) and we shall discuss their result in Section [\[sec:Goulden-Rattan\]](#sec:Goulden-Rattan){reference-type="ref" reference="sec:Goulden-Rattan"}.

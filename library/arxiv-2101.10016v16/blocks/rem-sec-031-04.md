@@ -1,0 +1,1 @@
+By the iterative argument in the construction, every representation V ⊗n has a canonical decomposition into irreducible subrepresentations V (n) γ,j , where γ denotes the highest weight of V (n) γ,j and j counts the multiplicity up to isomorphism.

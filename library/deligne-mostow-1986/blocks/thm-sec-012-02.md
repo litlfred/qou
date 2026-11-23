@@ -1,0 +1,1 @@
+— Let S be a finite set, o < ^ < i, a, = exp 271 v^^T^, S^ == 2 {all s e S ) . Let 6: ^(Q, o) ->PU(V) be the monodromy action defined in (3.10.2). Assume (INT) For all s + t in S such that ^ + ^< i, (i — ^ — (Ji<)~ 1 is an integer. Then F, the image of 6, ?j a lattice in PU(V).

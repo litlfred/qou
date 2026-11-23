@@ -67,7 +67,8 @@ mp.mp.dps = 50
 Q, H, Z_D, TOL = ct.Q, ct.H, ct.Z_D, ct.TOL
 Z_INV = Z_D - H                                  # MarkovTrace.markovParam_inv_eq_sub
 M_E = mp.mpf(str(M_E_MEV))
-E0 = M_E / (Q * (Q - 1))
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0 = _qbeta_e0.order_zero_scaled(M_E, Q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
 NU = 1 / Q ** 2
 MU = (Q ** 2 + 1) / Q
 W_NORM = Q / (Q ** 2 + 1)

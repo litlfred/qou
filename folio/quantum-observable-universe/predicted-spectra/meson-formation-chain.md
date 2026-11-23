@@ -1,17 +1,17 @@
 The meson arises through a three-step formation chain.
 
 **Step 1: Pair production.**
-A $1.6\%$ energy gap separates the bare photon pair from the threshold $2\mathfrak{m}_e$. The color weights $\varphi_0, \varphi_1$ close this gap by supplying Hopf link terms. Two colored photons $\gamma_i = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$ thus fuse into an electron--positron pair:
+A $1.6\%$ energy gap separates the bare photon pair from the threshold $2\mathfrak{m}_e$. The color weights $\varphi_0, \varphi_1$ close this gap by supplying Hopf link terms. Two colored photons $\gamma_i = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$ thus fuse into an electron--positron pair:
 
 $$
   \gamma_1 \cdot \gamma_2
    \longrightarrow 
   e^- + e^+
-  +  \text{Hopf link content}(L_+ = \varphi_0\psi_1, L_- = \varphi_1\psi_0)
+  +  \text{$L_\pm$ content}(L_+ = \varphi_0\psi_1, L_- = \varphi_1\psi_0)
 $$
 
 **Step 2: Quark creation.**
-To create a quark on the trefoil channel, the Hopf link $L_+ = \sigma_0\sigma_1$ from the colored photon normal form acts as a creation operator:
+To create a quark on the $e^-$ channel, $L_+ = \sigma_0\sigma_1$ from the colored photon normal form acts as a creation operator:
 
 $$
   L_+ \cdot e^-
@@ -46,7 +46,7 @@ $$
   \mathfrak{M}
 $$
 
-Each arrow is a morphism in the Iwahori--Hecke algebra $H_3(q)$. Breit--Wheeler multiplies by $\sigma_0^2$. Quark creation left-multiplies by $L_+ = \sigma_0\sigma_1$. Meson binding inserts the Hopf link $\mathcal{L}_H = \sigma_0\sigma_1$ between the quark and antiquark crossing pairs. Evaluating at $q = q_0$ yields the meson normal form:
+Each arrow is a morphism in the Iwahori--Hecke algebra $H_3(q)$. Breit--Wheeler multiplies by $\sigma_0^2$. Quark creation left-multiplies by $L_+ = \sigma_0\sigma_1$. Meson binding inserts $\mathcal{L}_H = \sigma_0\sigma_1$ between the quark and antiquark crossing pairs. Evaluating at $q = q_0$ yields the meson normal form:
 
 $$
   \mathrm{NF}(\mathfrak{M}_+)

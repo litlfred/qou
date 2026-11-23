@@ -38,41 +38,36 @@ The cost is $\sigma$-invariant: replacing $x$ by $\sigma(x)$
 does not change the objective.
 
 **Step 4 — σ relates the two LPs.**
-Define $\mathrm{LP}(\beta)$ to be the LP with input $\beta$, and put
-$\gamma := \sigma(\beta)^*$. Since $\sigma$ is anti-multiplicative and
-commutes with $*$,
+Define $\mathrm{LP}(\beta)$ to be the LP with input $\beta$.
+The net constraint $\tau(\beta^* \beta \cdot x) =
+n_{\mathrm{target}}(\beta)$ transforms under $x \mapsto
+\sigma(x)$ to
 
 $$
-  \sigma(\beta^*\beta) = \sigma(\beta)\,\sigma(\beta^*)
-  = \sigma(\beta)\,\sigma(\beta)^* = \gamma^*\gamma .
+  \tau(\beta^* \beta \cdot \sigma(x))
+  = \tau\bigl(\sigma(\sigma(\beta^*\beta) \cdot x)\bigr)
+  = \tau\bigl(\sigma(\beta^*\beta) \cdot x\bigr)
+  = \tau\bigl(\sigma(\beta)\,\sigma(\beta)^* \cdot x\bigr),
 $$
 
-This is in general different from $\sigma(\beta)^*\sigma(\beta)$. The net
-constraint of $\mathrm{LP}(\beta)$ evaluated at $\sigma(x)$ is then, by
-involutivity, anti-multiplicativity, $\tau \circ \sigma = \tau$ and
-cyclicity,
-
-$$
-  \tau(\beta^*\beta \cdot \sigma(x))
-  = \tau\bigl(\sigma(x \cdot \sigma(\beta^*\beta))\bigr)
-  = \tau(\sigma(\beta^*\beta) \cdot x)
-  = \tau(\gamma^*\gamma \cdot x).
-$$
-
-So $x \mapsto \sigma(x)$ maps the feasible set of $\mathrm{LP}(\gamma)$
-onto that of $\mathrm{LP}(\beta)$, provided the right-hand sides agree,
-$n_{\mathrm{target}}(\gamma) = n_{\mathrm{target}}(\beta)$, which is the
-hypothesis of the statement. With Steps 2 and 3, $\sigma$ is a bijection
-between the feasible sets of $\mathrm{LP}(\beta)$ and
-$\mathrm{LP}(\sigma(\beta)^*)$ that preserves the objective. (Lean:
-`net_constraint_transform`.)
+where the first equality uses anti-multiplicativity and $\sigma^2 = \mathrm{id}$,
+the second uses $\tau \circ \sigma = \tau$, and the third uses
+$\sigma(\beta^*\beta) = \sigma(\beta)\,\sigma(\beta^*) = \sigma(\beta)\,\sigma(\beta)^*$
+(anti-multiplicativity, and $\sigma$ commuting with $*$). Put
+$\beta' = \sigma(\beta)^*$; then $\beta'^*\beta' = \sigma(\beta)\,\sigma(\beta)^*$,
+so the transformed constraint is the net constraint of $\mathrm{LP}(\beta')$.
+By the hypothesis $n_{\mathrm{target}}(\beta') = n_{\mathrm{target}}(\beta)$,
+$\sigma$ is a bijection between the feasible sets of $\mathrm{LP}(\beta)$ and
+$\mathrm{LP}(\beta')$, preserving the objective. In general
+$\sigma(\beta)\,\sigma(\beta)^* \neq \sigma(\beta)^*\sigma(\beta)$, so this does not
+relate $\mathrm{LP}(\beta)$ to $\mathrm{LP}(\sigma(\beta))$.
 
 **Step 5 — LP-duality.**
 By Steps 2–4, $\mathrm{LP}(\beta)$ and $\mathrm{LP}(\sigma(\beta)^*)$
 have feasible sets in $\sigma$-bijection and the same
 $\sigma$-invariant cost; their primal optima coincide. By
 strong duality (which holds for Frobenius algebras structurally
-— see [`prop:frobenius-self-duality-forces-lp-dual-extraction`](#prop:frobenius-self-duality-forces-lp-dual-extraction)),
+— see [Frobenius self-duality of $(H_n(R,q),\tau)$ forces $\tau$-extraction to produce LP-dual variables](#prop:frobenius-self-duality-forces-lp-dual-extraction)),
 the dual optima coincide. In particular,
 
 $$
@@ -110,7 +105,7 @@ $T_w \mapsto T_{w^{-1}}$ does preserve $\tau$, but it fixes every
 generator and so does not exchange $Z$ and $N$.
 
 **Empirical confirmation.**
-[`alpha-5-lp-dual-crystal.witness.json`](../../../computations/alpha/alpha-5-lp-dual-crystal.witness.json)
+[The $\alpha_5$ LP-dual crystal computation](../../../computations/alpha/alpha-5-lp-dual-crystal.witness.json)
 verifies $y_0^*(T) = y_0^*({}^3\mathrm{He})$ to machine
 precision (= 570.6762 at $q_0$, = 26.8242 in ht=6 stratum, and
 exactly equal across the entire $q$-sweep).
@@ -145,7 +140,7 @@ role, and could not: it sends $\sigma_i$ to $\sigma_i^{-1}$, not to
 another positive generator. $\square$
 
 **Empirical confirmation (Markov-trace level).**
-[`canonical evaluation-phiq-pair-knot-markov-trace.witness.json`](../../../computations/canonical evaluation-phiq-pair-knot-markov-trace.witness.json)
+[The pair-knot Markov-trace computation](../../../computations/canonical evaluation-phiq-pair-knot-markov-trace.witness.json)
 computes
 $\mathrm{tr}_M(\sigma_{pp})$ and $\mathrm{tr}_M(\sigma_{nn})$ via
 Hoefsmit seminormal at $q_0$ for $T$ ($n=9$ with $N=2$ shell) and
@@ -171,7 +166,7 @@ Markov trace does.
 
 **Operator-level signature.** The
 the canonical formalism
-(per [`prop:operator-selection-lp`](#prop:operator-selection-lp))
+(per [Knot operator selection as linear program with LP duality](#prop:operator-selection-lp))
 confirms that $\sigma_{pp}, \sigma_{nn}$ are in the active set
 EXACTLY at magic-shell atoms ($Z=2$ activates $\sigma_{pp}$, $N=2$
 activates $\sigma_{nn}$, doubly magic ${}^{4}$He activates both) — see

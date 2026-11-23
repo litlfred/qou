@@ -1,0 +1,1 @@
+[5] Let x ∈Xk. (1) DSx : Om|n →Om−k|n−k is a symmetric monoidal functor which com- mutes with translation functors Ei, Fi. (2) Passage to the Grothendieck groups induces a homomorphism of sl(∞)- modules dsx : Km|n →Km−k|n−k.

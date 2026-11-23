@@ -1,1 +1,1 @@
-Let η ∈ (1, 1) be a compatible with duality. We have
+Let η ∈ (1, 1) be a compatible with duality. We have a) u η = u ◦ η−2 , b) c η (ρ, σ) = η ρ⊗σ ◦ c2(ρ, σ) ◦ η −2 ρ ⊗ η −2 σ , ((c η ) (ρ, σ) = η ρ⊗σ ◦ c (ρ, σ) ◦ η −2 ρ ⊗ η −2 σ ,) c) if v is a balancing (ribbon) structure for c2 (c ) then v η := v ◦ η −2 is a balancing (ribbon) structure for c η ((c η ) ) d) v and v η correspond to the same pivotal structure under the map described in Prop. 27.18, and therefore to the same left duality and quantum traces, e) if c satisfies (27.13) then so does c η .

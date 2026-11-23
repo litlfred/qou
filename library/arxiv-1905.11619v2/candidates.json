@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1905.11619v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "f634f9ec4357d5f34d5a161a0fea1e598715b059592cfd5813b0a85d3764cd83",
   "file": "1905.11619v2.pdf"
@@ -16,151 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "recommendation": 9
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall assume that there exists a $\\sigma$-weakly dense $\\ast$-subalgebra $\\mathcal{A}$ of $M$ such that $\\mathcal{A}\\Omega_\\tau$ is contained in the domain of $\\Delta$ and moreover $\\Delta(\\mathcal{A}\\Omega_\\tau) \\subseteq \\mathcal{A}\\Omega_\\tau$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp.md",
-   "section_title": "Gradient tensoring, n-cocycles and gradient-Sp",
-   "pages": "5-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The assumption should be compared to similar assumptions and remarks made in [@CiprianiFagnola Section 5], [@JungeMei] or [@CaspersGradient].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp.md",
-   "section_title": "Gradient tensoring, n-cocycles and gradient-Sp",
-   "pages": "5-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If $P(X_1, \\ldots, X_m) = 0$ we must therefore have that $Q(X_1, \\ldots, X_m) =0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-41-q-gaussian-algebras.md",
-   "section_title": "q-Gaussian algebras",
-   "pages": "10-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "So we should consider the operator $I P_q^{s+r}$ instead.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-42-gradient-sp-estimates.md",
-   "section_title": "Gradient-Sp estimates",
-   "pages": "11-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If we treat $R_{n,k}^{\\ast}$ as a map from $H_q^{\\otimes n+k}$ to $H_q^{\\otimes n}\\otimes H_q^{\\otimes k}$, then each summand in [\\[Eqn=Tripleproduct\\]](#Eqn=Tripleproduct){reference-type=\"eqref\" reference=\"Eqn=Tripleproduct\"} should be thought of as an element of the space $H_{q}^{\\otimes n-r-s} \\otimes H_q^{\\otimes m-s-j} \\otimes H_q^{\\otimes k-j-r}$ and this norm is bounded by a constant depending on $q$ and $\\dim(H)$ (coming from the inner product pairing).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-42-gradient-sp-estimates.md",
-   "section_title": "Gradient-Sp estimates",
-   "pages": "11-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We must show that the action is weakly continuous on the unit ball.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-43-consequences-for-cartan-rigidity.md",
-   "section_title": "Consequences for Cartan rigidity",
-   "pages": "16-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In this section we show that quantum Markov semi-groups may be used to prove the Akemann-Ostrand property AO$^+$ of a von Neumann algebra.",
-   "strength": "may",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-5-derivations-and-the-akemann-ostrand-property.md",
-   "section_title": "Derivations and the Akemann-Ostrand property",
-   "pages": "17-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall assume that $\\Delta$ satisfies certain properties that are close to being a length function.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-52-von-neumann-algebras-with-filtration.md",
-   "section_title": "Von Neumann algebras with filtration",
-   "pages": "19-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "::: rmk Subexponential growth of a generator of a quantum Markov semi-group should be compared to the amenability results obtained in [@CiprianiSauvageot] and [@CaspersGradient Appendix].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-52-von-neumann-algebras-with-filtration.md",
-   "section_title": "Von Neumann algebras with filtration",
-   "pages": "19-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

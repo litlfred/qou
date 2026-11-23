@@ -1,1 +1,0 @@
-\subsubsection{The dependency graph for random character values} If $k=|\mu|$, we are interested in the non-commutative random variables $$\varSigma_{\mu,n}=\sum_{A \in \arr(n,k)} \rho_{\mu}(A) \in \C\sym(n).$$ Again, to control the cumulants, we shall exhibit a dependency graph for the families of random variables $\{\rho_{\mu}(A)\}_{A \in \arr(n,k)}$.

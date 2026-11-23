@@ -1,0 +1,1 @@
+The number of (m, n, k)-Gog trapezoids with p minima and q maxima is equal to the number of (m, n, k)-Magog trapezoids with p maxima and q minima. The case m = 0 is Conjecture 7’ in [28]. Conjecture 1 implies in particular that the number of (m, n, k)-Gog trapezoids is equal to the number of (m, n, k)-Magog trapezoids. In [32], Zeiberger proved this for m = 0.

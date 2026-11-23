@@ -1,0 +1,1 @@
+Let z0 be a small deformation of z0 pro- ducing .W; L/, and mj be a meridian of each link component Lj . Then there exist ﬂattenings f 00 for the deformed triangulation .T; b; w0/ such that the weights 2.f 00/ and .f 00/ of T 00 D .T; H; b; w0; f 00; c/ satisfy 2.f 00/ D 0 and .f 00/.mj/ D 0 for all j .

@@ -1,1 +1,0 @@
-Of course we wish to avoid minus signs, and having categorified we should speak of natural isomorphism rather than equality, so we write this as $$AA^* \cong A^* A + 1 .$$ We will not give a rigorous proof of this here; instead, we will we just sketch the proof that $AA^*F \cong A^* AF + F$ when $F$ is is a structure type.

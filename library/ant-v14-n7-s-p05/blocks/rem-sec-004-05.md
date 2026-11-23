@@ -1,0 +1,1 @@
+If we have a GL-orientation on E, we have functorial pushforward maps f∗: Ea,b W (Y) →Ea−2d,b−d Z (X) for f : Y →X a projective morphism in SmB, of relative dimension d, with W ⊂Y, Z ⊂X closed subsets with f (W) ⊂Z. All the results of this section hold in the oriented context after deleting the twist by line bundles. This follows from Remark 3.18. Marc Levine and Arpon Raksit

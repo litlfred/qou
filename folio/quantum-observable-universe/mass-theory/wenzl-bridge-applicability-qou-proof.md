@@ -41,7 +41,7 @@ normalisation $\mathrm{tr}_M(1) = 1$ pins the scale.
 
 *Step 4 (Wenzl bridge supplies the closed form).*  The
 $g$-convention isomorphism $g_i := q \sigma_i$ transports
-$\mathrm{tr}_M$ on $\sigma$-Hecke (with our $z$) to
+$\mathrm{tr}_M$ on $\sigma$-Hecke (with the framework's $z$) to
 $\mathrm{tr}_{\mathrm{GL}}$ on $g$-Hecke (with
 $z_{\mathrm{GL}} = q \cdot z$).  By Wenzl 1988, the Markov trace
 on $g$-Hecke at $z_{\mathrm{GL}} = Q^r(1 - Q)/(1 - Q^r)$ has

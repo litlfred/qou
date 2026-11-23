@@ -1,0 +1,1 @@
+(5.2) θ-dim λ/µ θ-dim λ = P ∗ µ(λ; θ) |λ|(|λ| −1) · · ·(|λ| −|µ| + 1) . This proposition can be deduced from (3.8) and [La,K] (see the remark above), but it easier to give a direct proof, which uses the very same argument as in [OO], section 9. First one proves that

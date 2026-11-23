@@ -1,0 +1,1 @@
+Consider Kac’s walk on SO(n), and let F : SO(n) →R be given such that |||F|||∞≤1. Then, F is integrable with respect to µn, and for every r ≥0, µn  F ≥ Z Fdµn + r  ≤3e−r√λ1/2 where λ1 = n+2 2(n−1)n is the spectral gap of Kac’s walk on SO(n).

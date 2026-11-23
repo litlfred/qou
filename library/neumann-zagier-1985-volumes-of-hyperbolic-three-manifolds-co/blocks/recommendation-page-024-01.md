@@ -1,1 +1,0 @@
-Computations are easier in this case if we take u as our local parameter and expand u as a power series in u, u = U(U) = f a,o”. !I=1 Thus to compute the volume of M, as a power series in u (Equation (55)) we must know the coefficients a,.

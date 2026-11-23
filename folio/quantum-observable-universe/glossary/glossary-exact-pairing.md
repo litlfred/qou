@@ -3,7 +3,3 @@
 $(\varepsilon \otimes \mathrm{id}_X) \circ (\mathrm{id}_X \otimes \eta) = \mathrm{id}_X, \qquad (\mathrm{id}_Y \otimes \varepsilon) \circ (\eta \otimes \mathrm{id}_Y) = \mathrm{id}_Y.$
 
 When an exact pairing exists, $Y$ is a right dual of $X$, and $X$ a left dual of $Y$.
-
-**Mathlib reference.**
-`CategoryTheory.ExactPairing` (class).
-Import: `Mathlib.CategoryTheory.Monoidal.Rigid.Basic`.

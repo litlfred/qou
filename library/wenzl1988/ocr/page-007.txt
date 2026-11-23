@@ -1,0 +1,58 @@
+Hecke algebras of type A, and subfactors 355
+
+additional structure are a complete invariant for a large class of subfactors
+of the hyperfinite II, factor up to conjugacy by automorphisms. We will apply
+theorem (1.1) to determine the structure of a direct summand of C, from C,_,
+and C,,—2. The following result was first mentioned by Ocneanu.
+
+Corollary 1.2. C,, contains a direct summand which is isomorphic to <C,,- 1, €c,-.>-
+
+Proof. Let e, be the projection of the basic construction for B,_,< B,_,. Let
+ae A, cEC,_, and let be B,_,. Then we have
+
+tr(aég,_,(c) b)=tr(acb)=tr(cab)=tr(ég,_,(c) ab).
+
+Hence it follows from (1.1) that eg, ,(c)EC,-2 for ceC,_,. So eg,_, and &,_,
+coincide on C,_,. Using (1.2), it is easy to check that the hypotheses of theorem
+(1.1) hold for A=C,_,, B=C,_, and e=e,. Hence it follows from that theorem
+that (C,-,, e,> contains a direct summand S which is isomorphic to the basic
+construction for C,_.<C, -,. It remains to show that S is a direct summand
+in C,,.
+
+Let z be the central projection (in<C,_,, €,>) onto S. Assume that z is
+not central in C,. Then, by Theorem (1.1), (ii) there exists a partial isometry
+v such that v*v<e, and vv*<1—z. By [PP1], Lemma 1.2, we can write v
+as v=we, with weB,_,. We can show as before that ég,_ ,(v)=éc,_,(v). On
+the other hand, it follows from (1.1) and (1.3)
+
+&,,_,(v)=1/[B: A] weC,_,.
+
+This would imply weC,-, and veS, a contradiction to vv*<1—z. Hence z
+is also central in C,,.
+
+Observe that by (1.4) any minimal projection p in S is equivalent to a projec-
+tion of the form e,p, where p is a minimal projection of C,_,. As e, Bye,
+=e, B,-2~ B,_ 2 (see (1.2)), we obtain
+
+Ae. p 0 (Brlenp = (Ap) O(Bn-2)pen = (Ap) 0 (Bn- 2)p ZC.
+
+enP
+
+Hence e, p is a minimal projection of C,, which implies that any minimal projec-
+tion in S is also a minimal projection in C,,.
+
+Next, let p,, p2 be minimal projections in C,_, with p;~p, and let beC,,.
+By (1.2), (c) e, be, =ae, for a suitable aeC,_. It follows
+
+(Cn P1) b(€n P2)=P1 4P2 &, =O.
+
+Hence also e, p;~e, Pz and any 2 projections which are not equivalent in S,
+are also not equivalent in C,,.
+
+The last 2 paragraphs show that the Bratteli diagram for S<zC, is the
+trivial one, ie. S =2zC, is a direct summand of C,. O
+
+One way of constructing subfactors with trivial relative commutants is to
+Teduce a given factor and a subfactor of it by a minimal projection of the
+telative commutant. The following proposition relates the basic constructions
+Of the reduced and of the original factors.

@@ -77,6 +77,8 @@ print("ALL W-preserving intertwiners scalar on 3(x)3 over Q(q):", allscalar)
 import os
 json.dump({"producer": "computations/eightfold/quantum_g2_braiding_on_colour_triplet_probe.py",
            "bean": "qou-cb3r", "arithmetic": "sympy DomainMatrix over QQ(q) (exact, generic q)",
+           "q0Anchor": "independent",
+           "q0AnchorReason": "exact sympy DomainMatrix over QQ(q) with q a free symbol; no substrate q0 is read or substituted",
            "commutant_dim": int(N.shape[0]), "W_preserving_dim": int(sub.shape[0]),
            "all_W_preserving_scalar_on_W": bool(allscalar)},
           open(os.path.join(os.path.dirname(os.path.abspath(__file__)),

@@ -99,4 +99,9 @@ lemma pieceA_hook_sq_eq_content_sq_add_n_sq (l : List ℕ) (hl : l.Sorted (· �
   -- trace route and the combinatorial route converge on the same identity).
   IdentityI.sumSqHooks_eq_sumSqContents_add_sq l hl
 
+/-- Subtracting the sum of squared contents and squared size from the sum of squared hooks yields zero. -/
+theorem pieceA_hook_sq_sub_content_sq_add_n_sq_eq_zero (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    IdentityI.sumSqHooks l - (IdentityI.sumSqContents l + (IdentityI.sz l : ℤ) ^ 2) = 0 := by
+  rw [pieceA_hook_sq_eq_content_sq_add_n_sq l hl, sub_self]
+
 end QOU.BraidKnot.PieceA

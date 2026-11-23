@@ -32,6 +32,8 @@ feeding GAP bean `qou-ni4b`): the remaining steps are the `Le`-stable
 splitting `span(1, e₁) ⊕ span(e₂, …, e₇)` with its `𝟏 ⊕ 𝟑` block
 structure, and — the open physics — transport to the three-strand Hecke
 state space. Base ring ℚ; nothing archimedean.
+-- Ref: [dubois-violette-todorov2018] https://arxiv.org/abs/1808.08110 (Sec. 2: 𝕆 = ℂ ⊕ ℂ³, with the
+--      colour SU(3) acting on the ℂ³ summand)
 -/
 
 namespace QOU.MathlibExt.OctonionDerivations

@@ -1,1 +1,0 @@
-The 6 pairs of q-series involve power series in integer powers of q1/2, meaning level N = 2, and so we should introduce the level of a knot, presumably the same as the one coming from the periodicity of the degree of the colored Jones polynomial [18, 19].

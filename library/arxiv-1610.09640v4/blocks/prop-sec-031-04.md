@@ -1,0 +1,1 @@
+Let A be a ring. Given a complex M ∈C(Mod A), with notation as in (3.6.1), deﬁne the DG A-module F(M) := L i∈Z M i, with diﬀerential d := P i∈Z di M. Then the functor F : C(Mod A) →DGMod A is an isomorphism of DG categories. Exercise 3.6.10. Prove this proposition. (Hint: choose good notation.)

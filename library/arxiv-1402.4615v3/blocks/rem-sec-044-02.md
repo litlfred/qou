@@ -1,0 +1,1 @@
+One can notice, that the explicit formulas for cµ with |µ| ≥k were also proved by Lassalle [Las09, Theorems 10.2 and 10.3]. Moreover, our calculations for cµ with |µ| = k−1 are consistent with Lassalle’s computer experiments [Las09, p. 2257], which provide a new evidence to Conjecture 11.2 of Lassalle [Las09].

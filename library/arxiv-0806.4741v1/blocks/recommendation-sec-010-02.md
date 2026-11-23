@@ -1,1 +1,0 @@
-On the other hand the above subsection provides us an explicit expression for $D$, the identity \begin{equation}\label{UMOINS1} D\circ U^{-1}\;=\;U^{-1}\circ F^\star \end{equation} may then be interpreted as an equation that must be satisfied by the intertwiner $U$ (or rather $U^{-1}$).

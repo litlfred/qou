@@ -1,1 +1,0 @@
-In our context, the $(\infty,1)$-categories we considered are obtained by a Dwyer-Kan localization process from standard model categories, though the results of this paper should not depend on the particular chosen approach to $(\infty,1)$-categories, see also Remark [\[R:non-unique\]](#R:non-unique){reference-type="ref" reference="R:non-unique"}.

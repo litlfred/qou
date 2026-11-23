@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006111v2/blocks/thm-page-009-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "text": "thm-page-009-01.md",
+  "derivedFrom": "library/arxiv-math-0006111v2/sections/page-009",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006111v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/page-009.md (p. 9-9) citing [0, +∞[, we see that the corresponding functions belong to Fn\nc,0 for all n, where the\nsequence (cl = Cl)l≥1, with C = supq{√q/N(q)}, therefore we can apply Theorem\n1 and 2, and Corollary 1 to see that under Πq, the sequence of cumulants of a ran-\ndom diagram converges in probability towards the sequence (0, 1, c, c2, . . . , cn, . . .),\nand the sequence of moments converges towards the corresponding moments. The\ncorrespondence between measures and diagrams given by (1.1) has the following\ncontinuity property (see [K]",
+    "claim_id": "arxiv-math-0006111v2#theorem:3",
+    "lean_status": "unformalized"
+  }
+}

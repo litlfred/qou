@@ -1,0 +1,1 @@
+Under the assumptions of Theorem 16.5.8, if the bimodule A has has weakly symmetric derived m-torsion, then there is a unique isomorphism ϵA : PA ≃ −→PAop in D(Aen, gr) such that σR m,A = σR mop,A◦ϵA as morphisms PA →A.

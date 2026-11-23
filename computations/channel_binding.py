@@ -66,6 +66,7 @@ Exploratory infra — no production rewire.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 from math import comb
 from typing import Iterable, Literal
 
@@ -80,6 +81,8 @@ from hecke_core_symbolic import (          # the canonical symbolic core
     h as _H_SYM,                           # q − q⁻¹  (symbolic)
 )
 from q_parameter import Q as _Q0           # canonical substrate q₀
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 try:
     from experimental_constants import M_E_MEV as _ME   # CAL-1 electron mass
 except Exception:                           # pragma: no cover
@@ -210,7 +213,8 @@ def channel_binding(Z: int, N: int, channel_map: dict | None = None,
                 fsym = _channels_sym(bond_crossing(b))[cmap[b]]
                 terms.append(cnt[b] * sp.log(1 / fsym))
         m_e = sp.Rational(mp.nstr(mp.mpf(str(_ME)), dps))
-        E0_sym = m_e / (_Q_SYM * (_Q_SYM - 1))
+        import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+        E0_sym = _qbeta_e0.order_zero_scaled(m_e, _Q_SYM)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
         return sp.simplify(E0_sym * sum(terms)) if terms else sp.Integer(0)
     with mp.workdps(dps):
         return sum(cnt[b] * bond_energy(b, cmap[b], "numeric", dps)
@@ -312,7 +316,7 @@ def qclt_binding(Z: int, N: int, colour_weighted: bool = True,
         Lpn = sp.log(1 / _channels_sym(bond_crossing("pn"))["std"])
         if not colour_weighted:
             m_e = sp.Rational(mp.nstr(mp.mpf(str(_ME)), dps))
-            return sp.simplify(m_e / (_Q_SYM * (_Q_SYM - 1)) * (A - 1) * Lpn)
+            return sp.simplify(_qbeta_e0.order_zero_scaled(m_e, _Q_SYM) * (A - 1) * Lpn)
         # colour-weighted mean of std-channel L over the complete graph
         cnt = bond_counts(Z, N)
         Ls = {b: sp.log(1 / _channels_sym(bond_crossing(b))["std"])
@@ -320,7 +324,7 @@ def qclt_binding(Z: int, N: int, colour_weighted: bool = True,
         tot = sum(cnt.values())
         mean = sum(cnt[b] * Ls[b] for b in cnt) / tot
         m_e = sp.Rational(mp.nstr(mp.mpf(str(_ME)), dps))
-        return sp.simplify(m_e / (_Q_SYM * (_Q_SYM - 1)) * (A - 1) * mean)
+        return sp.simplify(_qbeta_e0.order_zero_scaled(m_e, _Q_SYM) * (A - 1) * mean)
     with mp.workdps(dps):
         e0 = E0(dps)
         Lpn = mp.log(1 / bond_channels("pn", "numeric", dps)["std"])
@@ -380,8 +384,8 @@ def self_test() -> None:
 # ── CLI dashboard ─────────────────────────────────────────────────────
 
 _LADDER = [
-    ("2H", 1, 1, "2.224566"), ("3H", 1, 2, "8.481798"),
-    ("3He", 2, 1, "7.718043"), ("4He", 2, 2, "28.295673"),
+    ("2H", 1, 1, _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)), ("3H", 1, 2, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+    ("3He", 2, 1, _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)), ("4He", 2, 2, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)),
     ("6Li", 3, 3, "31.99463"), ("7Li", 3, 4, "39.24454"),
     ("9Be", 4, 5, "58.16498"), ("12C", 6, 6, "92.16175"),
     ("16O", 8, 8, "127.6193"), ("40Ca", 20, 20, "342.0521"),

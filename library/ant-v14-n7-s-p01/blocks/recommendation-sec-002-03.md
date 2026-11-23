@@ -1,1 +1,0 @@
-(Kato deﬁnes a slightly more general class of Eisenstein series F(k) α,β; we shall only use the case α = 0, so we drop it from the notation.) For the L-value calculations in the Appendix, we shall need to use the fact that this series is a specialisation of a real-analytic family.

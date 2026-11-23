@@ -1,0 +1,1 @@
+Special cases of Definition 3.6 are: (1) The case g D 0 is the symmetric group Sn. (2) For g D 1, the handlebody Coxeter group is not the Coxeter group of type CDB, but rather the extended affine Coxeter (Weyl) group of type A. For the further study of Wg;n, we use Zz;Y D ZŒz˙1; Y1; : : : ; Yg as our ground ring.

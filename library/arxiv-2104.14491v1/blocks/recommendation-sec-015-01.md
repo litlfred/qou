@@ -1,1 +1,0 @@
-In particular, one must extract an "extra" exceptional pair in ([\[ppcd-u-tor-sat\]](#ppcd-u-tor-sat){reference-type="ref" reference="ppcd-u-tor-sat"}), and our unreduced formulae are invalid for the unknot.

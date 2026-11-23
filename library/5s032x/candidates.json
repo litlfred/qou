@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "5s032x",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "17761383781f7bdc4da9f3aba337cc913bb4b438134d413ae1d8f6b22cbf75dd",
   "file": "5S032X.pdf"
@@ -11,181 +14,11 @@
   "arxiv": null,
   "doi": "10.32388/5S032X"
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
-  "by_kind": {
-   "recommendation": 11
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If our world, as is widely believed, is quantum, it is in principle representable as a single vector evolving in Hilbert space, and thus, all spatiotemporal notions must be reducible to this description.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-introduction-the-quantum-first-program.md",
-   "section_title": "Introduction: The `Quantum First'-Program",
-   "pages": "1-1",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Geometry, then, must be reconstructed from this basic picture.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-abstract.md",
-   "section_title": "Abstract",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Hence, there must be a map taking elements of S3 to S2.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-the-bloch-sphere-and-the-complex-hopf-fibration.md",
-   "section_title": "The Bloch Sphere and the Complex Hopf Fibration",
-   "pages": "6-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be noted that we are engaging in some double-counting of degrees of freedom, here: the {x1, x2, x5}- coordinates that are taken to parametrize the celestial sphere in Sec.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-spin5-and-su2u1z2.md",
-   "section_title": "Spin(5) and SU(2)U(1)/Z2",
-   "pages": "9-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "More complex states then should not be expected to bring anything fundamentally new to the table\u2014or at least, nothing that yields novel gauge symmetries in the way described here.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-the-octonionic-case-three-qubits.md",
-   "section_title": "The Octonionic Case: Three Qubits",
-   "pages": "10-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(40) Then, one must find the subgroup of Spin(9) respecting a split O \u2243C \u2295C3, that is, singling out an octonion imaginary direction.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-spin9-and-su3su2u1z6.md",
-   "section_title": "Spin(9) and SU(3)SU(2)U(1)/Z6",
-   "pages": "12-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, we must look at the transformations that do not mix these sets.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-spin9-and-su3su2u1z6.md",
-   "section_title": "Spin(9) and SU(3)SU(2)U(1)/Z6",
-   "pages": "12-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, some ambiguity still exists about the coordinates {x1, x2, x9}: if we view the octonionic spinor as spanning the 9-dimensional heavenly sphere, these coordinates should be interpreted as the spatial coordinates upon dimensional reduction by means of singling out a special complex direction; yet, they are acted upon by the SU(2)-part of the Standard Model symmetry.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-entanglement-and-massive-particles.md",
-   "section_title": "Entanglement and Massive Particles",
-   "pages": "13-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If we thus want to keep this as a symmetry of the theory, we should require that it remains invariant under such transformations.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-entanglement-and-massive-particles.md",
-   "section_title": "Entanglement and Massive Particles",
-   "pages": "13-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that, to recover K2 0 \u2212P i K2 i = 0, we must act on this from the left with D e\u03a8\u2032 AB",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-entanglement-and-massive-particles.md",
-   "section_title": "Entanglement and Massive Particles",
-   "pages": "13-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "There, it was proposed that the \u2018special\u2019 quaternion imaginary direction should be promoted to a dynamical variable, thus introducing an additional scalar degree of freedom into the theory (a move that was generalized to the octonionic case by Casalbouni, Domokos, and K\u00a8ovesi-Domokos [68]).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-conclusion.md",
-   "section_title": "Conclusion",
-   "pages": "16-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

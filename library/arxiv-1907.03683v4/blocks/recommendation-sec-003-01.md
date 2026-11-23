@@ -1,1 +1,0 @@
-Theorem [\[thmpalmbessel\]](#thmpalmbessel){reference-type="ref" reference="thmpalmbessel"} thus gives a description of the TASEP with \"frozen\" sites, i.e. sites which must always be occupied, see Theorem [\[thmpalmbessel\]](#thmpalmbessel){reference-type="ref" reference="thmpalmbessel"} and remark [\[remtasep\]](#remtasep){reference-type="ref" reference="remtasep"} below.

@@ -45,7 +45,7 @@ closer than $a_D^{(4)}$, so the near-match does not single that period out. The
 Wigner-$\mathrm{SU}(4)$ closed-shell structure cannot supply the factor either: the
 "at most four rows" restriction is satisfied by every partition of every $n \le 4$, so
 it leaves every Schur–Weyl sum below $n = 5$ unchanged and takes the same value at
-$A = 3$ and $A = 4$ (`QOU.Mass.WignerSU4RowBoundInactive`).
+$A = 3$ and $A = 4$.
 
 The deuteron sits on the Seifert-fibred Hopf link, where $\mathrm{Vol} = 0$ and any
 volume product vanishes. The **crossing structure survives** there — the Hopf link has
@@ -77,7 +77,7 @@ $$
 For a **simplex** cluster ($n_\alpha \le 4$, complete $\alpha$-graph realisable up to the
 tetrahedron) $N_{\mathrm{bonds}} = C(n_\alpha, 2)$, and the residual per bond is a
 near-constant $b_{\alpha\alpha} \approx 2.41\,\text{MeV}$ (${}^{12}\mathrm{C}$: $2.425$;
-${}^{16}\mathrm{O}$: $2.406$). These per-bond $b_{\alpha\alpha}$ values are empirical near-constants read off the AME data (not derived — the same data-selected $\alpha$-$\alpha$ coefficient honestly labelled in [`rem:alpha-cluster-model-g-closure`](#rem:alpha-cluster-model-g-closure)). The closed-shell factor $M_{\mathrm{need}}/z = 2.5189$ is likewise an AME read; the Schur–Weyl period $a_D^{(4)} = 2.5328$ it is compared against is derived, but the identification of the two is not, as recorded above. The single $\alpha$–$\alpha$ pair ${}^8\mathrm{Be}$ gives
+${}^{16}\mathrm{O}$: $2.406$). These per-bond $b_{\alpha\alpha}$ values are empirical near-constants read off the AME data (not derived — the same data-selected $\alpha$-$\alpha$ coefficient honestly labelled in [Model G: a phenomenological $\alpha$-cluster binding closure](#rem:alpha-cluster-model-g-closure)). The closed-shell factor $M_{\mathrm{need}}/z = 2.5189$ is likewise an AME read; the Schur–Weyl period $a_D^{(4)} = 2.5328$ it is compared against is derived, but the identification of the two is not, as recorded above. The single $\alpha$–$\alpha$ pair ${}^8\mathrm{Be}$ gives
 $\approx 0$, consistent with its being unbound relative to two $\alpha$-particles. For
 $n_\alpha \ge 5$ the complete graph over-counts — not all pairs can be nearest neighbours
 in three dimensions — and the per-bond residual falls, so the coordination number

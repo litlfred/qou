@@ -41,4 +41,7 @@ export default definition({
     "schrijver",
     "infrastructure",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Definition (`HasFiniteLPDuality` hypothesis class).**\n*The finite LP strong-duality and complementary-slackness theorems map into Lean via the hypothesis class:*\n\n```lean\nclass HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where\n  dualityGapZero       : lp.duality_gap = 0\n  complementarySlackness :\n    ∀ (λ : lp.Λ), λ ∈ lp.active_set ↔ lp.tight λ\n```\n\nThis isolates standard LP-theory proofs—currently awaiting a full finite-dimensional LP Mathlib module—into explicit conditional fields. Consumer proofs pull this hypothesis class instead of bare `sorry` tags. When the formal Mathlib support lands, a trivial model substitution will unconditionally discharge the class requirements without altering any downstream mathematical commitments." },
+  ],
 });

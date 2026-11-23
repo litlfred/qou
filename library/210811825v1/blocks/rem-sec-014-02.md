@@ -1,0 +1,1 @@
+Numerical calculations of the other values in the geodesic length spectrum of the Klein quartic are given in the doctoral thesis of Vogeler [81], along with multiplicities. Vogeler also gives similar length spectra calculations for many other Hurwitz surfaces, including the Macbeath surface mentioned in the introduction to this work.

@@ -1,1 +1,0 @@
-I should add that supersymmetric grand uniﬁed theories that are in accord with the observed masses and mixings of all fermions, in- cluding neutrinos, typically yield estimated proton lifetimes in the range as mentioned above (see Ref. [75] for an overview).

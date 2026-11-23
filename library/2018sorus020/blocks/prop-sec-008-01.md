@@ -1,0 +1,1 @@
+Let X be a one-dimensional component of irreducible type of X(M). Then there is a representation ρX : Γ →SL2(k(X)), called the tautological representation, deﬁned up to conjugation, whose character is χX.

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/210811825v1/blocks/thm-sec-024-03",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 153,
+  "pageEnd": 163,
+  "text": "thm-sec-024-03.md",
+  "derivedFrom": "library/210811825v1/sections/sec-024",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "G",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-024-alternative-approach-to-proving-conjecture-312.md (p. 153-163) citing [0, x0]",
+    "claim_id": "210811825v1#theorem:G",
+    "lean_status": "unformalized"
+  }
+}

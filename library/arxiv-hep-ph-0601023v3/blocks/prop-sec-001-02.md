@@ -1,0 +1,1 @@
+The basic idea of Goldhaber was that nucleon decay could leave $Th^{232}$ in an excited and fissionable state, and thus comparison of the measured lifetime to that for spontaneous fission could be used to search for nucleon decay.

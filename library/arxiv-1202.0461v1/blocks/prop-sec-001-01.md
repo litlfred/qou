@@ -1,0 +1,1 @@
+We computed the boundaries of the convective region using the Schwarzschild criterion, and we found that the inner and outer edges of the convective region are located at radii $R\approx 0.012\, R_{\sun}$, and $R \approx 0.026\, R_{\sun}$, respectively, and that the total mass inside this region is $\sim 0.24 \, M_{\sun}$ (see Fig.

@@ -47,7 +47,7 @@ for _p in ("computations", "computations/substrate", "tools/qou-substrate/python
 
 from mpmath import mpf  # noqa: E402
 
-__all__ = ["order_zero", "tower_summed", "canonical", "TOWER_FACTOR_DOC"]
+__all__ = ["order_zero", "order_zero_scaled", "tower_summed", "canonical", "TOWER_FACTOR_DOC"]
 
 TOWER_FACTOR_DOC = (
     "1/(1 - hbar_q^2), taken from qbeta_bar_branch_refuted_probe.py:88 "
@@ -72,6 +72,19 @@ def order_zero(q=None, m_e=None):
     """
     q, m_e = _inputs(q, m_e)
     return m_e / (q * (q - 1))
+
+
+def order_zero_scaled(x, q):
+    """x / (q(q-1)): the order-zero E_0 with numerator x, type-preserving.
+
+    For call sites that must keep their arithmetic exactly as it was (sympy
+    symbols, floats, an mpf at the caller's dps, or E_0 in units of m_e with
+    x = 1). Same operation order as the inline form it replaces, so the
+    result is bit-identical. Owner ruling 2026-11-20 (#8590): historical
+    reproductions and probes route their order-zero E_0 through this module,
+    labelled, rather than open-coding it. NOT canonical — see `canonical`.
+    """
+    return x / (q * (q - 1))
 
 
 def tower_summed(q=None, m_e=None):

@@ -13,9 +13,12 @@
   "pageStart": 5,
   "pageEnd": 5,
   "contains": [
-    "library/9-81/blocks/prose-page-005"
+    "library/9-81/blocks/prose-page-005",
+    "library/9-81/blocks/rem-page-005-01",
+    "library/9-81/blocks/lem-page-005-02",
+    "library/9-81/blocks/lem-page-005-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/9-81",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/9-81",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9-81/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9-81/manifest.jsonld",
   "provenance": "ingested"
 }

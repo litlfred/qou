@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-031-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 46,
+  "pageEnd": 47,
+  "text": "lem-sec-031-01.md",
+  "derivedFrom": "library/asens-1986-4-19-1-57-0/sections/sec-031",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/asens-1986-4-19-1-57-0/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.13",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-031-e-en-et.md (p. 46-47) citing [1, nj with Z/n^Z. \nIf ^, f ^ ^ let us embedd n^ copies of the matrix algebra of dimension a^i into Mgk . i\nby\n„» \n, . n\nIs, s+t——J (s, i+s) (s+f, i+s+f)?\n\"k\nwhere ^ ^ denote the matrix units in © M,, M^^^. If ?. \\is a primitive rpot of\nlC=l \n\" ' \n' \n' \n' \n' \n\"\"\norder a^ of the unity, X-=exp(27if/a^), then\n^af == — E ^^^ + p \n^ e [i, ^j]"
+  }
+}

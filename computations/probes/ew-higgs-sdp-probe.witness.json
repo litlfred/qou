@@ -1,9 +1,9 @@
 {
-  "computedAt": "2026-05-02T19:55:41.613868+00:00",
   "computation": "ew-higgs-sdp-probe",
-  "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
+  "computedAt": "2026-11-20T19:11:15.463731+00:00",
   "purpose": "Exploratory probe of the joint-tower SDP infrastructure on candidate EW/Higgs torus-knot identifications. Maps to the three remaining paths (α non-Bring genus-2; β T_{3,5} double-duty; γ non-torus) per docs/audits/2026-05-02-nv-frob-filter-conjectures.md NV-1 §Bring-surface inventory.",
-  "q_0_numeric": 1.1097,
+  "q_0_numeric": "1.10997858275138080759166909561076887987449912187360000000000",
+  "q_0_numeric_h3_solver": "float64 q_0_NUMERIC of joint_tower_sdp_solver_v2 (H_3 entries only; not changed here)",
   "registry": [
     {
       "name": "Z_T26_path_alpha",
@@ -144,16 +144,6 @@
         1
       ],
       "filtration_certificate": {
-        "0": [
-          {
-            "perm": [
-              1,
-              2
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "(q**8 - q**6 + q**4 - q**2 + 1)/q**4"
-          }
-        ],
         "1": [
           {
             "perm": [
@@ -165,11 +155,21 @@
             ],
             "coefficient_in_q": "(q**10 - q**8 + q**6 - q**4 + q**2 - 1)/q**5"
           }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "(q**8 - q**6 + q**4 - q**2 + 1)/q**4"
+          }
         ]
       },
       "filtration_shape": {
-        "0": 1,
-        "1": 1
+        "1": 1,
+        "0": 1
       },
       "max_grade": 1,
       "jet_log": [
@@ -336,8 +336,8 @@
       "path": "α: non-Bring genus-2 torus link",
       "ref": "knot-particle-generation.md",
       "sdp_feasibility": {
-        "B_2_sym_eigenvalue": 1.8673834961385016,
-        "B_2_alt_eigenvalue": 0.5355086419409112,
+        "B_2_sym_eigenvalue": "1.87019802674910801799933088389820991409849480764417306011621",
+        "B_2_alt_eigenvalue": "0.534702735056490693741653493000447880900426752232580977351882",
         "B_2_sym_psd": true,
         "B_2_alt_psd": true,
         "all_blocks_psd_or_close": true,
@@ -360,16 +360,6 @@
         1
       ],
       "filtration_certificate": {
-        "0": [
-          {
-            "perm": [
-              1,
-              2
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "(q**12 - q**10 + q**8 - q**6 + q**4 - q**2 + 1)/q**6"
-          }
-        ],
         "1": [
           {
             "perm": [
@@ -381,11 +371,21 @@
             ],
             "coefficient_in_q": "(q**14 - q**12 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/q**7"
           }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "(q**12 - q**10 + q**8 - q**6 + q**4 - q**2 + 1)/q**6"
+          }
         ]
       },
       "filtration_shape": {
-        "0": 1,
-        "1": 1
+        "1": 1,
+        "0": 1
       },
       "max_grade": 1,
       "jet_log": [
@@ -612,8 +612,8 @@
       "path": "α: non-Bring genus-3 torus link",
       "ref": "knot-particle-generation.md",
       "sdp_feasibility": {
-        "B_2_sym_eigenvalue": 2.2995596962483336,
-        "B_2_alt_eigenvalue": 0.43486585785595006,
+        "B_2_sym_eigenvalue": "2.30418206863407775108086405851231558238274918272831530941296",
+        "B_2_alt_eigenvalue": "0.433993482378239907693723547213248507434654590284957672341357",
         "B_2_sym_psd": true,
         "B_2_alt_psd": true,
         "all_blocks_psd_or_close": true,
@@ -632,16 +632,6 @@
         1
       ],
       "filtration_certificate": {
-        "0": [
-          {
-            "perm": [
-              1,
-              2
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "q**2 - 1 + q**(-2)"
-          }
-        ],
         "1": [
           {
             "perm": [
@@ -653,11 +643,21 @@
             ],
             "coefficient_in_q": "q**3 - q + 1/q - 1/q**3"
           }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q**2 - 1 + q**(-2)"
+          }
         ]
       },
       "filtration_shape": {
-        "0": 1,
-        "1": 1
+        "1": 1,
+        "0": 1
       },
       "max_grade": 1,
       "jet_log": [
@@ -764,8 +764,8 @@
       "path": "α: non-Bring genus-1 torus link (lighter than Z)",
       "ref": "knot-particle-generation.md (analog)",
       "sdp_feasibility": {
-        "B_2_sym_eigenvalue": 1.5164299180141276,
-        "B_2_alt_eigenvalue": 0.6594435971756417,
+        "B_2_sym_eigenvalue": "1.51795324981834593754711018277627363962078050951327153121135",
+        "B_2_alt_eigenvalue": "0.658781816976030318011303734540239501843453831996438870343403",
         "B_2_sym_psd": true,
         "B_2_alt_psd": true,
         "all_blocks_psd_or_close": true,
@@ -790,39 +790,19 @@
         2
       ],
       "filtration_certificate": {
-        "0": [
+        "3": [
           {
             "perm": [
-              1,
-              2,
-              3
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)"
-          }
-        ],
-        "1": [
-          {
-            "perm": [
-              1,
               3,
-              2
-            ],
-            "canonical_word": [
-              2
-            ],
-            "coefficient_in_q": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5"
-          },
-          {
-            "perm": [
               2,
-              1,
-              3
-            ],
-            "canonical_word": [
               1
             ],
-            "coefficient_in_q": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5"
+            "canonical_word": [
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**7 - 2*q**5 + 2*q**3 - q + 1/q - 2/q**3 + 2/q**5 - 1/q**7"
           }
         ],
         "2": [
@@ -851,27 +831,47 @@
             "coefficient_in_q": "q**6 - 2*q**4 + 2*q**2 - 1 + 2/q**2 - 2/q**4 + q**(-6)"
           }
         ],
-        "3": [
+        "1": [
           {
             "perm": [
+              1,
               3,
-              2,
-              1
+              2
             ],
             "canonical_word": [
-              1,
+              2
+            ],
+            "coefficient_in_q": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
               2,
+              1,
+              3
+            ],
+            "canonical_word": [
               1
             ],
-            "coefficient_in_q": "q**7 - 2*q**5 + 2*q**3 - q + 1/q - 2/q**3 + 2/q**5 - 1/q**7"
+            "coefficient_in_q": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5"
+          }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)"
           }
         ]
       },
       "filtration_shape": {
-        "0": 1,
-        "1": 2,
+        "3": 1,
         "2": 2,
-        "3": 1
+        "1": 2,
+        "0": 1
       },
       "max_grade": 3,
       "jet_log": [
@@ -1467,41 +1467,41 @@
       "ref": "unmapped-torus-knots.md:104-111",
       "sdp_feasibility": {
         "trivial_(3)": {
-          "value": 2.8317562019502427,
+          "value": 2.8388731725076672,
           "psd": true
         },
         "sign_(1,1,1)": {
-          "value": 0.3531377451601572,
+          "value": 0.3522524393425678,
           "psd": true
         },
         "standard_(2,1)": {
           "matrix": [
             [
-              -0.5518577024159386,
-              -1.1097000000000006
+              -0.5519818550262046,
+              -1.1099785827513806
             ],
             [
-              0.6782817169504014,
-              -0.4481422975840619
+              0.6781230962008206,
+              -0.4480181449737946
             ]
           ],
           "symmetric_part": [
             [
-              -0.5518577024159386,
-              -0.21570914152479959
+              -0.5519818550262046,
+              -0.21592774327528003
             ],
             [
-              -0.21570914152479959,
-              -0.4481422975840619
+              -0.21592774327528003,
+              -0.4480181449737946
             ]
           ],
           "eigenvalues_symmetric": [
-            -0.721855031579692,
-            -0.27814496842030845
+            -0.7220966086366931,
+            -0.277903391363306
           ],
           "psd_symmetric_part": false,
-          "min_eigenvalue": -0.721855031579692,
-          "max_eigenvalue": -0.27814496842030845
+          "min_eigenvalue": -0.7220966086366931,
+          "max_eigenvalue": -0.277903391363306
         },
         "all_blocks_psd_or_close": false
       },
@@ -1517,15 +1517,30 @@
         -2
       ],
       "filtration_certificate": {
-        "0": [
+        "2": [
           {
             "perm": [
-              1,
               2,
-              3
+              3,
+              1
             ],
-            "canonical_word": [],
-            "coefficient_in_q": "(q**2 - 1)**2/q**2"
+            "canonical_word": [
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q**2 + 2 - 1/q**2"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "1"
           }
         ],
         "1": [
@@ -1549,40 +1564,25 @@
             "canonical_word": [
               1
             ],
-            "coefficient_in_q": "(q**2 - 1)**3/q**3"
+            "coefficient_in_q": "q**3 - 3*q + 3/q - 1/q**3"
           }
         ],
-        "2": [
+        "0": [
           {
             "perm": [
-              2,
-              3,
-              1
-            ],
-            "canonical_word": [
               1,
-              2
-            ],
-            "coefficient_in_q": "-(q**2 - 1)**2/q**2"
-          },
-          {
-            "perm": [
-              3,
-              1,
-              2
-            ],
-            "canonical_word": [
               2,
-              1
+              3
             ],
-            "coefficient_in_q": "1"
+            "canonical_word": [],
+            "coefficient_in_q": "q**2 - 2 + q**(-2)"
           }
         ]
       },
       "filtration_shape": {
-        "0": 1,
+        "2": 2,
         "1": 2,
-        "2": 2
+        "0": 1
       },
       "max_grade": 2,
       "jet_log": [
@@ -1719,41 +1719,41 @@
       "ref": "topological-mass-trefoil.md",
       "sdp_feasibility": {
         "trivial_(3)": {
-          "value": 1,
+          "value": 1.0,
           "psd": true
         },
         "sign_(1,1,1)": {
-          "value": 1,
+          "value": 1.0,
           "psd": true
         },
         "standard_(2,1)": {
           "matrix": [
             [
-              -0.29086515473805746,
-              -1.1579668631288889
+              -0.29020609343656634,
+              -1.158491538155746
             ],
             [
-              0.7077838623904956,
-              -0.6202521620607989
+              0.7077612856540932,
+              -0.6204712568341009
             ]
           ],
           "symmetric_part": [
             [
-              -0.29086515473805746,
-              -0.22509150036919662
+              -0.29020609343656634,
+              -0.22536512625082633
             ],
             [
-              -0.22509150036919662,
-              -0.6202521620607989
+              -0.22536512625082633,
+              -0.6204712568341009
             ]
           ],
           "eigenvalues_symmetric": [
-            -0.7344674852348547,
-            -0.1766498315640016
+            -0.7347276685988395,
+            -0.1759496816718277
           ],
           "psd_symmetric_part": false,
-          "min_eigenvalue": -0.7344674852348547,
-          "max_eigenvalue": -0.1766498315640016
+          "min_eigenvalue": -0.7347276685988395,
+          "max_eigenvalue": -0.1759496816718277
         },
         "all_blocks_psd_or_close": false
       },
@@ -1771,39 +1771,19 @@
         -2
       ],
       "filtration_certificate": {
-        "0": [
+        "3": [
           {
             "perm": [
-              1,
-              2,
-              3
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
-          }
-        ],
-        "1": [
-          {
-            "perm": [
-              1,
               3,
-              2
-            ],
-            "canonical_word": [
-              2
-            ],
-            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
-          },
-          {
-            "perm": [
               2,
-              1,
-              3
-            ],
-            "canonical_word": [
               1
             ],
-            "coefficient_in_q": "q**5 - 3*q**3 + 4*q - 4/q + 3/q**3 - 1/q**5"
+            "canonical_word": [
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "q - 1/q"
           }
         ],
         "2": [
@@ -1832,27 +1812,47 @@
             "coefficient_in_q": "1"
           }
         ],
-        "3": [
+        "1": [
           {
             "perm": [
+              1,
               3,
-              2,
-              1
+              2
             ],
             "canonical_word": [
-              1,
+              2
+            ],
+            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
+          },
+          {
+            "perm": [
               2,
+              1,
+              3
+            ],
+            "canonical_word": [
               1
             ],
-            "coefficient_in_q": "q - 1/q"
+            "coefficient_in_q": "q**5 - 3*q**3 + 4*q - 4/q + 3/q**3 - 1/q**5"
+          }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
           }
         ]
       },
       "filtration_shape": {
-        "0": 1,
-        "1": 2,
+        "3": 1,
         "2": 2,
-        "3": 1
+        "1": 2,
+        "0": 1
       },
       "max_grade": 3,
       "jet_log": [
@@ -2108,41 +2108,41 @@
       "ref": "speculative",
       "sdp_feasibility": {
         "trivial_(3)": {
-          "value": 1.2314340899999998,
+          "value": 1.232052454166764,
           "psd": true
         },
         "sign_(1,1,1)": {
-          "value": 0.8120613259943127,
+          "value": 0.811653754365758,
           "psd": true
         },
         "standard_(2,1)": {
           "matrix": [
             [
-              -0.3581812671375689,
-              -1.4259598703472776
+              -0.3575491296326707,
+              -1.427322342716216
             ],
             [
-              0.5747639018102022,
-              -0.5036827931739317
+              0.5744571046958805,
+              -0.5036078250854386
             ]
           ],
           "symmetric_part": [
             [
-              -0.3581812671375689,
-              -0.4255979842685377
+              -0.3575491296326707,
+              -0.42643261901016777
             ],
             [
-              -0.4255979842685377,
-              -0.5036827931739317
+              -0.42643261901016777,
+              -0.5036078250854386
             ]
           ],
           "eigenvalues_symmetric": [
-            -0.8627031706146397,
-            0.0008391103031391289
+            -0.8632192800871514,
+            0.0020623253690421894
           ],
           "psd_symmetric_part": false,
-          "min_eigenvalue": -0.8627031706146397,
-          "max_eigenvalue": 0.0008391103031391289
+          "min_eigenvalue": -0.8632192800871514,
+          "max_eigenvalue": 0.0020623253690421894
         },
         "all_blocks_psd_or_close": false
       },
@@ -2157,16 +2157,6 @@
         1
       ],
       "filtration_certificate": {
-        "0": [
-          {
-            "perm": [
-              1,
-              2
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "q - 1/q"
-          }
-        ],
         "1": [
           {
             "perm": [
@@ -2178,11 +2168,21 @@
             ],
             "coefficient_in_q": "q**2 - 1 + q**(-2)"
           }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q - 1/q"
+          }
         ]
       },
       "filtration_shape": {
-        "0": 1,
-        "1": 1
+        "1": 1,
+        "0": 1
       },
       "max_grade": 1,
       "jet_log": [
@@ -2259,8 +2259,8 @@
       "path": "γ: trefoil (already used for electron — speculative reuse)",
       "ref": "speculative",
       "sdp_feasibility": {
-        "B_2_sym_eigenvalue": 1.3665224096729998,
-        "B_2_alt_eigenvalue": -0.7317845597858096,
+        "B_2_sym_eigenvalue": "1.36755183695138518796672402990936100071109752077284647142693",
+        "B_2_alt_eigenvalue": "-0.731233707549433674041352781095106426763989809329440199199298",
         "B_2_sym_psd": true,
         "B_2_alt_psd": false,
         "all_blocks_psd_or_close": false,
@@ -2276,7 +2276,12 @@
     "psd_fail": 4,
     "deferred": 0
   },
-  "engine": "python",
   "scriptFile": "ew_higgs_sdp_probe.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "scriptHash": "a00e24da05aa",
+  "scriptCommitSha": "cd3b5cac19b6ffd06ab36947924cf3dc95a660bb",
+  "commitSha": "b91ed56e1a514f3657f0aa3c83bcdf9eb7c54e68",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

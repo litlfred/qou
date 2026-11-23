@@ -1,1 +1,0 @@
-An analogue of this situation can be found in the random matrix theory, where the knowledge of the joint distribution of the entries of a random matrix should be enough to find the joint distribution of the eigenvalues, however the actual calculation might be quite involved.

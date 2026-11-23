@@ -150,4 +150,12 @@ theorem wstd_superexp_sq {ι : Type*} (s : Finset ι) (f g : ι → ℝ) (k : �
   exact c8_superexp_sq_lower_bound s f g (k.factorial : ℝ) (involutionNumber k : ℝ) k
     hg hkfac hIkpos hA hC hIsq
 
+/-- **Strict positivity of the Gevrey-1/2 scaled square `4^n * I(n)^2` (`b9ms`).**
+For every `n : ℕ`, `1 ≤ 4 ^ n * involutionNumber n ^ 2`, witnessed directly by
+combining `n.factorial_pos` with the lower Gevrey-1/2 sandwich `n! ≤ 4^n * I(n)^2`. -/
+theorem one_le_four_pow_mul_involution_sq (n : ℕ) :
+    1 ≤ 4 ^ n * involutionNumber n ^ 2 := by
+  have h1 : 1 ≤ n.factorial := Nat.succ_le_of_lt n.factorial_pos
+  exact le_trans h1 (factorial_le_four_pow_mul_involution_sq n)
+
 end QOU.Mass.BindingGevreyHalf

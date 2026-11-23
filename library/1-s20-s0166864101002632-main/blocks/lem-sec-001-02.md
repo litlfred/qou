@@ -1,0 +1,1 @@
+The thickness of a smooth knot is bounded by the minimum radius of curvature and half the critical self-distance. In fact, R(K) = min  MinRad(K), 1 2 critical self-distance(K)  . The next lemma is a consequence of Lemmas 1 and 2.

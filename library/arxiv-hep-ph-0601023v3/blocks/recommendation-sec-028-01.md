@@ -1,1 +1,0 @@
-Thus in Refs.~\cite{Randall:1999ee,Randall:1999vf} Randall and Sundrum proposed a metric of the form \beqn ds^2 =e^{-2k|y|} \eta_{\mu\nu} dx^{\mu}dx^{\nu} +dy^2 \eeqn where y is the coordinate of the extra dimension limited to $0\leq y\leq \pi r_c$ where $r_c$ may be considered the compactification radius for the extra dimension.

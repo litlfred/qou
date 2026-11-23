@@ -1,0 +1,1 @@
+Fix the scale of the simplices under consideration, by set- ting (1.2) r1 + r2 + r3 + r4 = 1. Then the regular simplex, for which ri = 1/4, is a critical point of the function S, and furthermore, the regular simplex cannot be conformally deformed while keeping the solid angles ﬁxed.

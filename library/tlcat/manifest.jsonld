@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/tlcat/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Temperley-Lieb Category",
+  "contains": [
+    "library/tlcat/sections/page-001",
+    "library/tlcat/sections/page-002",
+    "library/tlcat/sections/page-003",
+    "library/tlcat/sections/page-004",
+    "library/tlcat/sections/page-005",
+    "library/tlcat/sections/page-006"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "tlcat",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "The Temperley-Lieb Category",
+      "basis": "Handwritten title on page 1 (by Louis H. Kauffman); scanned document had no embedded title before OCR",
+      "extracted_title": null,
+      "corrected_on": "2026-11-18",
+      "extracted": "The Temperley-Lieb Category"
+    },
+    "source_file": "TLCat.pdf",
+    "source_sha256": "a730322ec9fe281c20846b6311cb6221e06a402ca33071267ff508bc4514601a",
+    "pages": 6,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

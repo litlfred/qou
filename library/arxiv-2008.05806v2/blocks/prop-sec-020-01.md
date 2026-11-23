@@ -1,0 +1,1 @@
+The blue lines represent the cor- responding results for the quantity Q4Sinel 1 that plays the same role in traditional analyses of the Cottingham formula (Q2 as well as ¯S and S1 are given in GeV units).

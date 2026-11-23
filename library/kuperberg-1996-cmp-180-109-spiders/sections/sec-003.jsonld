@@ -13,9 +13,11 @@
   "pageStart": 40,
   "pageEnd": 43,
   "contains": [
-    "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-003"
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-003",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-003-01",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/conj-sec-003-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kuperberg-1996-cmp-180-109-spiders",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kuperberg-1996-cmp-180-109-spiders",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kuperberg-1996-cmp-180-109-spiders/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kuperberg-1996-cmp-180-109-spiders/manifest.jsonld",
   "provenance": "ingested"
 }

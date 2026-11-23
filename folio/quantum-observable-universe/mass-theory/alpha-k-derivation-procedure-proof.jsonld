@@ -2,20 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-alpha-k-derivation-procedure",
+  "@id": "papers/quantum-observable-universe/blocks/rem-alpha-k-derivation-procedure-proof-sketch",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:alpha-k-derivation-procedure",
-  "kind": "proof",
-  "title": "Proof of alpha k derivation procedure",
+  "label": "rem:alpha-k-derivation-procedure-proof-sketch",
+  "kind": "remark",
+  "title": "Proof sketch: alpha k derivation procedure",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-alpha-k-derivation-procedure"
+    "papers/quantum-observable-universe/blocks/conj-alpha-k-derivation-procedure"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-alpha-k-derivation-procedure",
   "text": "alpha-k-derivation-procedure-proof.md",
   "provenance": "authored"
 }

@@ -1,1 +1,0 @@
-Theorem [\[T:HF=TCH\]](#T:HF=TCH){reference-type="ref" reference="T:HF=TCH"} below and Proposition [\[P:blob\]](#P:blob){reference-type="ref" reference="P:blob"} suggest that the blob complex should be closely related to Factorization algebras as well.

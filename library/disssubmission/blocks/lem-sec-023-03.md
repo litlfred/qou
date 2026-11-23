@@ -1,0 +1,1 @@
+Let d,n ∈N. Then there exists a ﬁnite set of subgroups of Gld(Λ) with the property that for every simple perverse sheaf P ∈P(X) of Euler characteristic χ(P) = d with det(ω(P))⊗n = 1, the Tannaka group G(P) is isomorphic to one of these ﬁnitely many groups. Chapter 3 – Perverse sheaves on semiabelian varieties

@@ -1,1 +1,0 @@
-Since $C_k \cup B_k = \mathbb{CP}^1$ and $C_k \cap B_k$ is exactly two points, we then must have that $C_k = \phi_k \cdot (\mathcal{H}_+\cup \overline{\mathbb{R}_+})$ and $B_k = \phi_k \cdot (\mathcal{H}_-\cup \overline{\mathbb{R}_-})$ for some $\phi_k \in \mathop{\mathrm{SL}}_2(\mathbb{C})$.

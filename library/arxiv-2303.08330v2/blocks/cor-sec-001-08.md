@@ -1,0 +1,1 @@
+For a (2w + 1, 2)-cabling of 41 where w <−3, its nonzero initial data {fm(q)} ={ f + i (q) }⨆ { f − j (q) } for a recursion relation are given by q←→ q− 1 in Conjecture 2.1. We state that the patterns in Conjecture 2.1 holds for all non zero fm(q).

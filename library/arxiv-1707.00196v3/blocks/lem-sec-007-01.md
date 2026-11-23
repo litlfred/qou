@@ -1,0 +1,1 @@
+Let R, R′ ∈R0 have rescaled Thoma parameters (a, b) and (a′, b′), re- spectively. Then the rescaled Thoma parameters of R ⊠R′ are the non-increasing arrangements of {ˆaij} = {aia′ j, bib′ j}, {ˆbij} = {aib′ j, bia′ j}. (4.16)

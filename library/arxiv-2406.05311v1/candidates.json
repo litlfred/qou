@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2406.05311v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "c431fca1503295472c64e8a979468af083bd75329242fd3d137f28ae81422b6b",
   "file": "A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf"
  },
  "provenance": {
-  "title": "Draft of June 11, 2024 A QUANTUM MURNAGHAN\u2013NAKAYAMA RULE FOR THE FLAG MANIFOLD",
+  "title": "A quantum Murnaghan\u2013Nakayama rule for the flag manifold",
   "authors": "C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE",
   "arxiv": {
    "id": "2406.05311",
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "::: proof *Proof.* For $u,w \\in S_n$, a partition $\\lambda$, $k \\in {\\mathbb N}$ with $1\\leq k$ and $\\alpha\\in {\\mathbb N}^{n-1}$, define quantum Littlewood--Richardson coefficients $C^{q^\\alpha w}_{u,v(\\lambda,k)}\\in q^\\alpha {\\mathbb N}$ by $$\\label{eq-definition-Cq} {\\mathfrak S}_u \\ast s^q_\\lambda(x_1, \\ldots, x_k) \\ =\\ \\sum_{q^\\alpha w \\in S_n[q]} C^{q^\\alpha w}_{u,v(\\lambda,k)} {\\mathfrak S}_w\\,.$$ We must prove that",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-34-the-murnaghannakayama-rule-for-qhfn.md",
-   "section_title": "The Murnaghan\u2013Nakayama rule for qH*Fn",
-   "pages": "10-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As $N^{w,\\alpha}_{u,v(\\lambda,k)}\\neq 0$, Proposition [\\[P:LL_Th1.1\\]](#P:LL_Th1.1){reference-type=\"ref\" reference=\"P:LL_Th1.1\"}(1) implies that $${\\mbox{\\rm sg}}_i(w)\\ =\\ 0\\,,\\ \\ \\ \\varpi_i(\\alpha)\\ =\\ 2\\,,\\ \\ \\mbox{and}\\ \\ {\\mbox{\\rm sg}}_i(u)\\ =\\ {\\mbox{\\rm sg}}_i(v(\\lambda,k))\\ = \\ 1\\,.$$ Since ${\\mbox{\\rm sg}}_i(v(\\lambda,k))=1$, we must have that $i=k$, as $v(\\lambda,k)$ has a unique descent at $k$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-4-quantum-equals-classical.md",
-   "section_title": "Quantum equals classical",
-   "pages": "12-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since ${\\mathbf v}_{cb}\\mathop{\\mathrm{{\\scriptstyle \\bullet}}}_{k}v\\neq{\\mathbf 0}$, not only must $c$ be left of $\\raisebox{-1pt}{\\hspace{0.55pt}\\color{magenta}\\rule{0.75pt}{11pt}}\\hspace{0.55pt}$ and $b$ right of $\\raisebox{-1pt}{\\hspace{0.55pt}\\color{magenta}\\rule{0.75pt}{11pt}}\\hspace{0.55pt}$, but every value $e$ of $v$ at a position between those of $c$ and $b$ satisfies $b<e<c$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-017-55-degree-two-relations.md",
-   "section_title": "Degree two relations",
-   "pages": "23-26",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since ${\\mathbf v}_{ba}\\mathop{\\mathrm{{\\scriptstyle \\bullet}}}_{k}v\\neq{\\mathbf 0}$, $b$ must be left of $\\raisebox{-1pt}{\\hspace{0.55pt}\\color{magenta}\\rule{0.75pt}{11pt}}\\hspace{0.55pt}$ and hence left of $c$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-017-55-degree-two-relations.md",
-   "section_title": "Degree two relations",
-   "pages": "23-26",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Similarly, if $b_1$ is an endpoint, then we must have $a_i=b_{i+1}$ for all $i$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-019-57-paths.md",
-   "section_title": "Paths",
-   "pages": "27-29",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "By Corollary [\\[T\\*vq=0\\]](#T*vq=0){reference-type=\"ref\" reference=\"T*vq=0\"}, we must have $a < a_r < \\dotsb < a_1 < b$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-019-57-paths.md",
-   "section_title": "Paths",
-   "pages": "27-29",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

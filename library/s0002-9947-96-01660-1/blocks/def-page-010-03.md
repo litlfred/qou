@@ -1,0 +1,1 @@
+Let f: M@ — N be a combinatorial isomorphism of simplicial complexes. Let e be any edge of M, labelled by a, and let b be the label of edge f(e) in N. Then f is compatible with these labellings if b = a in the case that f preserves the orientation of the edge, and b = @ in the case that f reverses the orientation.

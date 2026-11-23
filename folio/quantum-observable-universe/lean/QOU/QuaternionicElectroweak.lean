@@ -14,7 +14,7 @@ whole algebra, overclaiming the gauge structure.
 
 What is actually **proved** here is exactly the group-action content:
 
-* `IsSU2.mul` / `IsSU2.one` — the unit quaternions are closed under
+* `QOU.Tetraplectic.mul` / `QOU.Tetraplectic.one` — the unit quaternions are closed under
   multiplication and contain the identity (the `SU(2) ≅ S³` group);
 * `su2L_normSq` / `su2R_normSq` — the left and right actions are
   **norm-preserving** (isometric / unitary): the defining property of a genuine
@@ -30,7 +30,7 @@ which uses `Real.cos`/`Real.sin`, specializes to `ℝ`.
 
 The *identification* of this algebraic structure with the physical electroweak
 sector is interpretive — see `rem:tetraplectic-su2-gauge-reading` and
-`mass-theory/hoefsmit-ew-cell-content.md` (Morita 1982; Cederwall–Preitschopf).
+`knots-particles-confinement/hoefsmit-ew-cell-content.md` (Morita 1982; Cederwall–Preitschopf).
 No physical claim beyond the group-action content is asserted by this file.
 -/
 

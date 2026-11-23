@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0103325v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0103325v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-0103325v4",
+  "title": "Quantum algebras in phenomenological description of particle properties",
   "contains": [
     "library/arxiv-hep-ph-0103325v4/sections/sec-front-matter",
     "library/arxiv-hep-ph-0103325v4/sections/sec-000",
@@ -33,7 +33,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-0103325v4",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0103325v4.pdf",
     "source_sha256": "38590174ab836fa16ad0017ff8c948276206d8afd52f4c1288012ee0748bb1fb",
     "pages": 8,
@@ -44,8 +46,8 @@
       "stamp_date": "16 Oct 2002"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

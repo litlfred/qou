@@ -1,0 +1,1 @@
+Let M be a B-framed n-manifold, N an oriented k-manifold, possibly with boundary, and f : M →N a map which ﬁbers over the interior and boundary of N. For A a B-framed n-disk algebra in V, a symmetric monoidal ∞-category which is ⊗-presentable, then the canonical morphism in V Z N f∗A ≃ −−→ Z M A is an equivalence.

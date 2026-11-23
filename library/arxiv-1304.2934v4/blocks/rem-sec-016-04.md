@@ -1,0 +1,1 @@
+The main difference between Theorems 3.4 and 4.3 is the replacement of the factor ψ(h)/(1 −e−h) by ψ(h)/h; the same happens with Bahadur-Rao’s estimates when going from lattice distributions to non-lattice distributions.

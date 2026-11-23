@@ -1,11 +1,11 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
-[`conj:vorticity-lower-bound`](#conj:vorticity-lower-bound),
+[q-deformed Aubin--Lions lemma: compactness of the solution family as $q \to 1$](#conj:q-aubin-lions),
+[Counter-example to Navier--Stokes regularity via $q \to 1$ degeneration](#conj:ns-counterexample),
+[Critical exponent of the enstrophy divergence at $q = 1$](#conj:critical-exponent),
+[Blowup mechanism as Yekutieli lifting obstruction in the brane tower](#prop:blowup-yekutieli),
+[Vorticity lower bound for anti-parallel filament collision as $q \to 1$](#conj:vorticity-lower-bound),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[Regularity breakdown at $q = 1$: the classical limit as a phase transition](#conj:regularity-breakdown);
 "Root-of-unity truncation").**
 
 Let $(\mathbf{C}, A, \tau)$ be a QOU with substrate parameter $q$ not a root of unity ([QOU axiom](#def:substrate-parameter)). As $q \to 1$ through the roots of unity $q = e^{i\pi/\kappa}$, the representation category truncates to a finite modular tensor category; blowup arises only in the $\kappa \to \infty$ accumulation. For an anti-parallel vortex pair with core aspect ratio $\kappa(t)$:
@@ -38,7 +38,7 @@ The core truncation mechanism — driven exclusively by the vanishing of the $q$
 
  where $S$ acts as the modular $S$-matrix. The resulting representation category devolves directly into a **modular tensor category** — identically matching the required algebraic input driving Chern--Simons TQFT cleanly at level $\kappa$.
 3. **$q = 1$ (classical limit).**
- Spans an infinite array of simple objects evaluating $[k]_1 = k$ (strictly polynomial scaling). All truncation ceases. All exponential damping vanishes. This establishes exactly the [regularity breakdown](#conj:regularity-breakdown) regime.
+ Spans an infinite array of simple objects evaluating $[k]_1 = k$ (strictly polynomial scaling). All truncation ceases. All exponential damping vanishes.
 
 **Root-of-unity regularity is stronger than generic.**
 

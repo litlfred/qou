@@ -1,1 +1,0 @@
-One can imagine that, even in the simplest case, the index $2$ critical point of $m$ must be moved past all critical points of $p^{\times \times} $, so the path $f_t$ contains at least as many singularities as $f_{\text{upper}}$ has critical points, minus one.

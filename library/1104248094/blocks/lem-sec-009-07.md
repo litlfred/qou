@@ -1,0 +1,1 @@
+Let a,b,c,d be the generators of Ch[SL2] as in Example (3.14). There are two families of traces for Cfc[SL2], denoted by τ*,τ*, where n is an integer P. Feng and B. Tsygan and n 7^ 0 for τ s n. The following are the only non-zero values of the traces: (1) n>0 ~ + " ^O; (6.10) l-q2k+n (2) n<0 *c fc) =

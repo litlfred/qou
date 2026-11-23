@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1533v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.1533v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "The third order helicity of magnetic ﬁelds via link maps",
+  "title": "On the third order helicity of magnetic fields on invariant domains in S³",
   "contains": [
     "library/arxiv-0808.1533v3/sections/sec-front-matter",
     "library/arxiv-0808.1533v3/sections/sec-000",
@@ -48,8 +48,8 @@
       "stamp_date": "18 Jun 2009"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

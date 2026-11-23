@@ -1,1 +1,0 @@
-This implies that if $i\neq j$ that $E_{i,j}(t,a,b,q)$ has at most has simple poles at $q\in b_{j-1}^{-1}q^{\BZ}$ and must have zeros at $t\in b_{i-1}^{-1}q^{\BZ}$ and there is no such non-zero elliptic function and therefore $E_{i,j}(t,a,b,q)=0$.

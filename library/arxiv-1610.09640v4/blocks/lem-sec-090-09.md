@@ -1,0 +1,1 @@
+Let I be an A-module. The following conditions are equivalent: (i) I is injective. (ii) For every ﬁnitely generated A-module M the module Ext1 A(M, I) is zero. Exercise 13.1.26. Prove Lemma 13.1.25. (Hint: use the Baer criterion, Theorem 2.7.10.)

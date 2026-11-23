@@ -1,1 +1,0 @@
-By equitability of $\widehat{\MQ}$, we must have for all $w_1^\lambda,w_2^\lambda \in Q^\lambda$ that $\widehat{c}_{w_1^\lambda} = \widehat{c}_{w_2^\lambda}$ and $\widehat{u}_{w_1^\lambda} = \widehat{u}_{w_2^\lambda}$ hold.

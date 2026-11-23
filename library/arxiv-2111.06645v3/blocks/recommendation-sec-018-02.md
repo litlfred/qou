@@ -1,1 +1,0 @@
-More precisely, this is definitely true for the $4_1$ and $5_2$ knots, for which we have closed formulas for all of the entries of the Habiro-like matrices and can compute numerically; for other knots, we are convinced, and willing to conjecture, that the determinant is $\pm1$, but we have no really convincing reason except aesthetics that it should always be $+1$.

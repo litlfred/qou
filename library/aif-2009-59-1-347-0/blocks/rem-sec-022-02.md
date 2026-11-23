@@ -1,0 +1,1 @@
+— In particular, (4.8) and (4.7) have been studied in [15] and [23] as starting points for the corresponding summation procedures. Other kinds of q-summation are considered in [20] and [12]. Let d ∈[−π, π). We will identify d to the half line [0, ∞eid) := R+eid.

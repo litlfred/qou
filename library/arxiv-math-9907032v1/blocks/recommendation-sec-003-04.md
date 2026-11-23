@@ -1,1 +1,0 @@
-On the other hand, it is almost equally obvious that if $t_1, \dots, t_n \in F(T)$ is is some proper subset of the faces of $T$, then the sum of the dihedral angles at the edges incident to one of the $t_i$ must be strictly greater than the $n \pi$.

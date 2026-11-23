@@ -1,1 +1,0 @@
-Thus while the shortest slope of the torus must have length at least one, and therefore long narrow tori have at most one exceptional Dehn ﬁlling, we cannot determine whether fatter tori are large or small, with long or short slope lengths.

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1012.4090v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "02fe4a5eb36ff0edb291ac6917e0f7cb99e1ccd43217af8498ffc29961fb83a7",
   "file": "1012.4090v1.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The coupling constants $\\lambda_2$ and $\\lambda_4$ can be scaled as desired, by changing the units of energy and length; in what follows, we shall use the 'geometrical' choice $\\lambda_2=1/[4\\pi^2(3-\\alpha)]$ and $\\lambda_4=1/[4\\pi^2(3-2\\alpha)]$ as in [@W04].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-generalized-skyrme-system.md",
-   "section_title": "The Generalized Skyrme System",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "There are many of these, corresponding to different local minima of the energy, and we shall describe only some of them.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-crystals-in-the-generalized-skyrme-family.md",
-   "section_title": "Crystals in the Generalized Skyrme Family",
-   "pages": "2-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

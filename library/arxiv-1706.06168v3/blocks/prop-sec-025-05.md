@@ -1,0 +1,1 @@
+7. Let m ≤n. We have the following decomposition of V (n) ⊗V (m), as a representation of SL2(C), into irreducible components. V (n) ⊗V (m) ∼= M r≤m V (n + m −2r) In particular, V (n) ⊗V (n) ∼= V (2n) ⊕V (2n −2) ⊕· · · ⊕V (2) ⊕V (0).

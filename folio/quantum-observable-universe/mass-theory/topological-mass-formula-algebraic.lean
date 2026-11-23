@@ -5,7 +5,7 @@ import Mathlib.Algebra.Group.Units.Basic
 /-!
 # Topological mass formula (algebraic, ℚ(q)-side)
 
-The algebraic-side restatement of `prop:topological-mass-formula`:
+The algebraic-side restatement of `conj:topological-mass-formula`:
 the categorical mass of a closed braid factors as
 
   𝔪(β) = Φ₁(β) / ℏ_q²,    Φ₁(β) = τ_arch(Vol_q(β)),
@@ -17,7 +17,7 @@ form `m(K) = Vol(K) / ℏ_{q₀}²` is the specialisation under
 
 Refs:
   prop:topological-mass-formula-algebraic
-  prop:topological-mass-formula  (Archimedean version)
+  conj:topological-mass-formula  (Archimedean version)
   def:algebraic-quantum-volume
   lem:tower-pair-equality-fixed-level
 -/
@@ -49,7 +49,7 @@ structure AlgebraicMassData (R : Type*) [CommRing R] where
     `ℤ[q^{±1/2}]` localised at `ℏ_q`, is not a field).  Taking
     `R` a field and `u = Units.mk0 hbar_sq h` recovers the divided
     form `mass_alg = phi1 / hbar_sq`.  The Archimedean version
-    `prop:topological-mass-formula` is the specialisation under
+    `conj:topological-mass-formula` is the specialisation under
     `τ_arch` at `q = q₀`.
 
     Scope (2026-11-16): the mass formula enters as the hypothesis

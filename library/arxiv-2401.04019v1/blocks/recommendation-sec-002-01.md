@@ -1,1 +1,0 @@
-Since $n\geq 1$, we must have $\lambda\neq \emptyset$ and $$\lambda_\ell\geq \min\{R+S, 2R-S\}.$$ Define $\varphi_1(\lambda, \emptyset):=(\mu, \delta_{R-S, 1})$, where $\mu$ is the partition obtained from $\lambda$ by replacing part $\lambda_\ell$ by parts $\lambda_\ell-R, S$.

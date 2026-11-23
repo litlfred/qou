@@ -1,0 +1,1 @@
+Take X a random variable on a measurable space (X, T ). Take g and h two measurable functions from X to R such that E h g (X) eg(X)i ≤E h h (X) eg(X)i < +∞. (63) Then it holds, E h eg(X)i ≤E h eh(X)i . (64)

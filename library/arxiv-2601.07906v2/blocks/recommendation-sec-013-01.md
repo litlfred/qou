@@ -1,1 +1,0 @@
-The examples discussed above suggest a general procedure that systematically constructs a minimal set of 3-manifolds that should be summed over in the bulk, in order to satisfy the constraints imposed in section \ref{sec:2} on the moments of the CFT data.

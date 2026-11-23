@@ -1,1 +1,0 @@
-The methods of ACSV we develop are not concerned with this super-exponential regime, and if the reader encounters such a situation we recommend trying direct application of the multivariate saddle point methods described in Chapter 5.

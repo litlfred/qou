@@ -1,1 +1,0 @@
-We shall use a simpliﬁed notation for ensemble states, denoting the collective internal state population as ¯0 and ¯1, such that, e.g., |¯0L; ¯1R; ¯1A⟩denotes the state |N0L = N1R = N1A = 1; N1L = N0R = N0A = 0⟩, where both the right and the auxiliary subnodes occupy the logic state 1, while the left subnode is in state 0.

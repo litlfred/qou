@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-townsend-biot-savart-strain",
@@ -12,7 +13,10 @@
   ],
   "label": "rem:townsend-biot-savart-strain",
   "kind": "remark",
-  "title": "Townsend evolution under Biot--Savart strain: the first-order flattening $\\kappa \\to 0$",
+  "title": "Townsend evolution under Biot--Savart strain: the first-order core flattening $\\kappa \\to 0$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-core-levi-form"
+  ],
   "interprets": "papers/quantum-observable-universe/blocks/conj-levi-degeneracy",
   "cites": [
     "references/townsend1951",

@@ -1,1 +1,0 @@
-We shall see that if the observer O falls through after enough time has elapsed for the relevant quantum information to be gathered and if he is to receive the message from A before hitting the singularity, the message must be sent in quanta of energy far beyond the Planck scale.

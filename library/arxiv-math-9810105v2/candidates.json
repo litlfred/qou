@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9810105v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "0a432946234949c12a3e379e42d8f79fa646b9002810ffe97817d52aca184a7a",
+  "file": "9810105v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/9810105v2 [math.CO] 26 Mar 1999",
+  "authors": "JINHO BAIK, PERCY DEIFT, AND KURT JOHANSSON",
+  "arxiv": {
+   "id": "math/9810105",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "26 Mar 1999"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "lemma": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7.1",
+   "name": null,
+   "statement": "Using Lemma 7.1 (iii), we have, for some constant C(M6) which depends on M6, and a constant C which is independent of M6, \u03c6n(\u00b5(m) N ) = exp \u0012Z \u221e tN 2imP II 1,22(y)dy \u0013\u00001 + OM6( 1 n1/3 ) + O(e\u22121 4 M3/2 ) \u0001 Taking N \u2192\u221e, and then taking M6 \u2192\u221e, we obtain, lim N\u2192\u221e\u03c6n(\u00b5(m) N ) = exp \u0012Z \u221e t 2imP II 1,22(y)dy \u0013 . For \u03c6n(\u03bd(m) N ), we obtain the same limit by a similar calculation, lim N\u2192\u221e\u03c6n(\u03bd(m) N ) = exp \u0012Z \u221e t 2imP II 1,22(y)dy \u0013 . Thus, recalling d dx2i(mP II )22(x) = u2(x) in (2.18), integration by parts yields lim N\u2192\u221eProb \u0012lN \u22122\u221an N 1/6 \u2264t \u0013 = exp \u0012Z \u221e t 2imP II 1,22(y)dy \u0013 = F(t). \u25a1",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-004-9-proofs-of-main-theorems.md (p. 51-60)",
+   "external_refs": [],
+   "proof_excerpt": "2 Integrating by parts, EN(\u03c7m N) = Z \u221e \u2212\u221e tmdFN(t) = \u2212 Z 0 \u2212\u221e mtm\u22121FN(t)dt + Z \u221e 0 mtm\u22121(1 \u2212FN(t))dt where FN(t) \u2261Prob \u0012 lN\u22122 \u221a N N 1/6 \u2264t \u0013 as in Theorem 1.1. From Theorem 1.1, we have pointwise convergence of FN(t) to F(t). We need uniform control of FN for large N. Let M > 0 b",
+   "section_file": "sections/sec-004-9-proofs-of-main-theorems.md",
+   "section_title": "Proofs of main Theorems",
+   "pages": "51-60",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-004-9-proofs-of-main-theorems.md (p. 51-60)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-004-01",
+   "block_iri": "library/arxiv-math-9810105v2/blocks/lem-sec-004-01",
+   "claim_id": "arxiv-math-9810105v2#lemma:7.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

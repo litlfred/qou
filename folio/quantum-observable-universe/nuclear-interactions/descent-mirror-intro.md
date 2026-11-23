@@ -1,1 +1,1 @@
-
+Descending from the four-dimensional Prym variety of Bring's curve to the two-dimensional Jacobian of the hyperelliptic quotient $\mathcal{X}_5$ projects out two of the four colour-tube degrees of freedom. The following remark records the Euler-characteristic sign inversion ($\chi = -1$ on the punctured orbifold quotient) that governs the mirror-bundle orientation under this descent.

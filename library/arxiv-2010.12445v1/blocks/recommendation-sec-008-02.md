@@ -1,1 +1,0 @@
-If $V=\mathop{\mathrm{\textup{Spec}}}A\subseteq U$ is an open subset and $q\in\mathop{\mathrm{\textup{Spec}}}A$ is a minimal prime, then $A_{q}=B_{q}$ has dimension $0$ and therefore $q$ must be the generic point of $\mathop{\mathrm{\textup{Spec}}}B$.

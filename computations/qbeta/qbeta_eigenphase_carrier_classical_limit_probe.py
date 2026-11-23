@@ -406,7 +406,7 @@ def main() -> int:
             "structurally, because its leading direction is -(1 + T_1 T_0) with T_1 T_0 "
             "the S_3 three-cycle. Delta_S is hyperbolic at every real q. The S_3 character "
             "table was checked FIRST as the falsifier."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"pin": "experimental (proton)", "dps": 40,

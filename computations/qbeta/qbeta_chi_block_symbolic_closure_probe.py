@@ -74,7 +74,10 @@ CLOSED = {
 
 
 def chains(quarks, qsym):
-    """The nucleon word at symbolic q. GROUPED -- and that is FORCED.
+    """The nucleon word at symbolic q. GROUPED. The numeric tie-back kernel is
+    `chi_all_lambda_any` since 2026-10-10 (byte-identical); the symbolic object
+    below is still the grouped word, so a frame change means re-deriving it
+    (bean `qou-11l4`). History follows.
 
     `chi_monotone_transfer.chi_all_lambda`, which this probe uses, accepts only
     a monotone generator sequence, and the canonical borromean word is
@@ -241,7 +244,7 @@ def main() -> int:
         import mpmath as mpm
         mpm.mp.dps = 50
         from q_parameter import Q_50_DIGIT_STR as Q50
-        from chi_monotone_transfer import chi_all_lambda
+        from chi_general_word import chi_all_lambda_any as chi_all_lambda
         qv = mpm.mpf(str(Q50))
         wpn = chains(["u", "u", "d"], qv)
         wnn = chains(["u", "d", "d"], qv)

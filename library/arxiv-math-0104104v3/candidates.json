@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0104104v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "e2154399f783aa9beacf7ce1fb96a17c579387895a4d0d3f61a4331c846acaab",
   "file": "0104104v3.pdf"
  },
  "provenance": {
-  "title": "arXiv:math/0104104v3 [math.DG] 29 Mar 2002",
+  "title": "Geometry of Four-Vector Fields on Quaternionic Flag Manifolds",
   "authors": "Philip Foth",
   "arxiv": {
    "id": "math/0104104",
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The condition that $V^{w }:=wVw^{-1}$ is lower triangular implies in the case of $w =\\id$ that $V^{\\id}=V$ must be both upper and lower triangular hence equals the identity matrix and hence $\\dim{\\ZZ_{\\id}}=\\dim{\\BB}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-quaternionic-matrices-and-flags.md",
-   "section_title": "Quaternionic matrices and flags",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Now, as $B_i \\in \\BB$, we may write: \\begin{displaymath} B_i = \\diag{d_1^i,\\dots, d_n^i}\\diag{r_1^i,\\dots,r_n^i}, \\ \\ \\ r_j^i\\in\\R_+, \\ \\ d_j^i\\in \\Sp[1]. \\end{displaymath} But as the orbits are parametrized by $\\Sph$, we know that $d_j^1$ corresponds to $d_j^2$, which implies that $B_2 B_1^{-1}$ must be in $\\RR$ from which it follows that the $K_i$'s lie in the same orbit. \\qed",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-7-dressing-action.md",
-   "section_title": "Dressing action",
-   "pages": "10-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

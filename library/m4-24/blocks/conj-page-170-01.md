@@ -1,0 +1,1 @@
+A pair (a finitely generated abelian group H of rank 1, an element A(t) € Z[H/TorsH] = Z[t*"]) (where t is a generator of H/Tors H ) can be realized as the pair (H\(M), the Alexander polynomial Aw of M) for a closed connected oriented 3-manifold M if and only if A(t) = tkA(t-!) with even k € Z and A(1) = +|Tors HI.

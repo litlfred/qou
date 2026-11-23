@@ -78,6 +78,8 @@ def main():
     ok_b, rb = q3b()
     res = {"producer": "computations/probes/lepton_strand_chirality_probe.py", "bean": "qou-g0jn",
            "arithmetic": "exact (sympy over Q(q)); no floats", "q0_anchor": "none (symbolic in q)",
+           "q0Anchor": "independent",
+           "q0AnchorReason": "probe never reads q0: every quantity is exact over Q(q) (sympy), with q a free symbol; its import cone (w_braid_reconcile_probe) evaluates nothing at a substrate pin",
            "assumption": "leptons = second copy of doublet V (nu = K=q vector)",
            "Q3a_transfer": ra, "Q3b_chain_amplitudes": rb,
            "checks": {"Q3a_dim2_scalar_on_W_minus": ok_a, "Q3b_same_magnitude_all_four": ok_b}}

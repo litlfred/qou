@@ -1,0 +1,1 @@
+In particular, if h = IdM, then we obtain the application (6.4′) Γ (E, π, M)2 ρT −−→ Γ (E, π, M) (u, v) −→ ρT (u, v) deﬁned by: (6.5′) ρT (u, v) = ρDuv −ρDvu −[u, v]E , for any u, v ∈Γ (E, π, M) , which will be called ρ-torsion associated to linear ρ-connection ρΓ. Moreover, if ρ = IdTM, then we obtain the torsion T associated to linear connec- tion Γ.

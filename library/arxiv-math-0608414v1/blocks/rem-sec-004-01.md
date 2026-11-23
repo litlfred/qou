@@ -1,0 +1,1 @@
+Y0 ∈L1(Oǫ). As φ →±0, Y0(peiφ) →Y± 0 (p) in the sense of L1([0, 1 + ǫ]) and also in the sense of pointwise convergence for p̸ = 1, where Y± 0 :=  Y0(p) p < 1 (1 −p ± 0i)β−1a1(p) + a2(p) p > 1 (β̸ = 1) Y± 0 :=  Y0(p) p < 1 ln(1 −p ± 0i)a1(p) + a2(p) p > 1 (β = 1) (2.40) Moreover, Y± 0 are L1 loc solutions of the convolution equation (1.25) on the interval [0, 1 + ǫ].

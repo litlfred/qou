@@ -1,0 +1,1 @@
+Given a ﬁnite point x in a component of irreducible type ¯X of the augmented character variety, and v a valuation corresponding to x, we ﬁx µ a class in π1(∂M). Then the following holds : tor(M, Ad ◦ρ)(v) = τµ(M, Ad ◦¯ρ) p (Tr ¯ρ(µ))2 −4 dYµ where τµ(M, Ad ◦¯ρ) is the torsion in the sense of Porti-Dubois at the point v, rela- tively to the curve µ.

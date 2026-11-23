@@ -5,7 +5,7 @@ LP duality verification for confinement + knot operator selection.
 Checks:
 1. B₃ satisfies LP primal feasibility (net constraint + Frobenius positivity)
 2. Strong duality holds (primal = dual objective)
-3. T_{2,3} (trefoil) unconditionally selects electron channel
+3. σ₀σ₁σ₀ (closure: Hopf link) unconditionally selects electron channel
 4. Markov trace: tr_M(e⁻) = tr_M(σ₀σ₁σ₀) = hz²+z (NOT z³; corrected 2026-11-15)
 5. Gram matrix eigenstructure and min|λ| selection
 
@@ -111,7 +111,7 @@ print("\n─── 5. T_{2,3} knot operator and electron channel ───")
 
 # Build T_{2,3} action on NF basis in H₃(q)
 # Basis: {𝟙, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀}
-# T_{2,3} = σ₀σ₁σ₀: acts by left multiplication + Hecke reduction
+# σ₀σ₁σ₀ (e⁻; closure Hopf link): acts by left multiplication + Hecke reduction
 h = HA0
 
 # The 6×6 matrix of T_{2,3} acting on the NF basis (left multiplication)
@@ -156,7 +156,7 @@ if knot_table_path.exists():
         print("  T_{2,3} results not found. Keys:", list(kt.get("results", {}).keys())[:5])
 else:
     print("  knot-operator-table.witness.json not found")
-    print("  T_{2,3} · 𝟙 = σ₀σ₁σ₀ = e⁻ ← always nonzero ✓")
+    print("  σ₀σ₁σ₀ · 𝟙 = σ₀σ₁σ₀ = e⁻ ← always nonzero ✓")
 
 # ── 6. Markov trace: corrected vs vertex product ─────────────────
 print("\n─── 6. Electron Markov trace verification ───")

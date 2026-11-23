@@ -1,0 +1,1 @@
+Let K be a triangulated category, and let L α−→M β−→N γ−→ T(L) be a distinguished triangle in it. The two conditions below are equivalent. (i) The morphism γ is zero. (ii) There exists a morphism τ : M →L such that τ ◦α = idL.

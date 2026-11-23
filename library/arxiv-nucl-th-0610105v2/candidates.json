@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-nucl-th-0610105v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5f3bd6d31a419d4d5368b1a25d578c46d67ad6aa626a2cbeb5b49eb411bcda90",
   "file": "0610105v2.pdf"
  },
  "provenance": {
-  "title": "Universal Properties of the Four-Body System with Large Scattering Length Abstract",
+  "title": "Universal Properties of the Four-Body System with Large Scattering Length",
   "authors": "H.-W. Hammer\u2217",
   "arxiv": {
    "id": "nucl-th/0610105",
@@ -16,136 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 8,
-  "by_kind": {
-   "recommendation": 8
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The long-distance degrees of freedom must be included dynamically in the effective theory, while short-distance physics enters only through the values of a few coupling constants, often called low-energy constants.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore no four-body parameter should enter at leading order.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Yamashita et al. concluded that a four-body parameter should generally enter at leading order.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The leading order is given by the $\\lambda_2$ term which must be iterated to all orders, while the other terms give rise to higher-order corrections that can be included perturbatively [@Kaplan:1998tg; @vanKolck:1998bw].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-few-body-bound-state-equations-in-effective-theo.md",
-   "section_title": "Few-Body Bound State Equations in Effective Theory",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the three-body system, a momentum-independent three-body interaction term $\\lambda_3$ must be included together with $\\lambda_2$ at leading order in $l/|a|$ [@Bedaque:1998kg; @Bedaque:1998km].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-few-body-bound-state-equations-in-effective-theo.md",
-   "section_title": "Few-Body Bound State Equations in Effective Theory",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The latter can be expected since the excited three-body states are shallower by at least a factor of 515 and therefore should have little influence on the four-body states.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-bound-state-spectrum.md",
-   "section_title": "Bound State Spectrum",
-   "pages": "7-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since there are only two parameters at leading order, $a$ and $L_3$, few-body observables normalized to the scattering length $a$ must be correlated and follow a line parameterized by $L_3$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-summary-and-outlook.md",
-   "section_title": "Summary and Outlook",
-   "pages": "12-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "There are a number of directions that should be pursued in future work.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-summary-and-outlook.md",
-   "section_title": "Summary and Outlook",
-   "pages": "12-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,1 +1,0 @@
-According to the physics, the closed string state space $\textsf{C}$ should be $\mathop{\mathrm{Hom}}^\bullet_{\mathbf{D}(X\times X)}({\mathscr O}_\Delta,{\mathscr O}_\Delta)$, in other words, the Hochschild cohomology algebra $\mathop{\mathrm{HH}}^\bullet(X)$.

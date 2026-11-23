@@ -1,1 +1,0 @@
-In the notation of that corollary, take $$E_d\coloneqq \left(\L\eta_{[m/d]_q}\qOmega_{S/A}\lotimes_{A[q],\psi^d}A[q]\right)_{\Phi_d(q)}^\complete\,.$$ We must also provide $p$-adic gluing equivalences.

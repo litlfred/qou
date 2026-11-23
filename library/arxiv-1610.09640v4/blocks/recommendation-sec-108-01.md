@@ -1,1 +1,0 @@
-We should mention the well-known fact that if the commutative ring A is noetherian, then for every ideal a ⊆A the torsion functor Γa is stable (cf. [63, Lemma III.3.2]; or use the Matlis classiﬁcation of injective A-modules in Subsection 13.2).

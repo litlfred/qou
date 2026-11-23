@@ -1,0 +1,1 @@
+The cocycle relation (9.6) can alternatively be written as Q41 ⊗ ∆ ⊗ 1(Q3P3)P4 = Q4∆ ⊗ ∆(P)P4. Indeed, the computations in the last proof show that Q41 ⊗ ∆ ⊗ 1(I ⊗ P) = I ⊗ Q31 ⊗ ∆ ⊗ 1(Q3), (and a similar identity involving P4 and P3) hence multiplying on the left by Q4, this term also equals Q41 ⊗ ∆ ⊗ 1(Q3).

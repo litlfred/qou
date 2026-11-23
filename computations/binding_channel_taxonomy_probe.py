@@ -102,7 +102,8 @@ def constants():
     qb = mp.mpf(str(qb))
     z = q0**3 / (q0**2 + 1)                      # convention D
     delta = flavor_split_leading(q0)
-    E0 = me / (q0 * (q0 - 1))                    # the corpus's chosen scale
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(me, q0)                    # the corpus's chosen scale
     f = {"pp": z, "nn": z - h, "pn": z - h * (mp.mpf(1) / 2 - delta / 4)}
     # bar-conjugates, as derived_bond_graph_binding computes them under convention D
     z_bar = z - h

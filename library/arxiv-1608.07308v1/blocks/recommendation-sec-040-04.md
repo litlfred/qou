@@ -1,1 +1,0 @@
-Sending the Koszul complex of $\beta$ though the functor $j^*$ gives rise to the Koszul complex of $\alpha$, which must be sent to 0 by [\[eqn:koszul0\]](#eqn:koszul0){reference-type="eqref" reference="eqn:koszul0"}.

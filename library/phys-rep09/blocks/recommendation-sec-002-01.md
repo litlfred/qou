@@ -1,1 +1,0 @@
-As implied by the preceding paragraphs, this report is mainly addressed to a Physics audience, or close neighbors, and consequently we shall keep the treatment of its mathematical aspects within reasonable limits and refer the reader to more detailed literature where necessary.

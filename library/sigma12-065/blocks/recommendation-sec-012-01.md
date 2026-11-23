@@ -1,1 +1,0 @@
-To be explicit and referring to Table 1, α1 must go out along x > 0 with y ≫0 near 0, loop around infinity until it can come back in to x = 0 along a ray with arg x = 2π 5 and arg y = 4π 5 before looping around 0 until it can join up with the beginning again.

@@ -1,1 +1,0 @@
-In particular, these simplified rules do not depend on whether we started out with American or British traffic rules (as we should expect since we are considering the case where there are no two-way streets.)

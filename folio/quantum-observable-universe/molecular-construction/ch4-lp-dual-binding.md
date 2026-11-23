@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)).**
+**Proposition (conditional on [Seven-term atomic mass formula with $q$-integer coefficients](#conj:q-integer-mass-formula)).**
 *The LP dual of the $CH_4$ molecular braid in $H_{26}(q)$ selects the $S_4$-symmetric strand ordering as the ground state. The four C--H bond energies are equal by symmetry.*
 
 *The LP dual for $CH_4$ has the structure:*

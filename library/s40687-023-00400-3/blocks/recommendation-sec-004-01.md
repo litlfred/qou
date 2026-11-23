@@ -1,1 +1,0 @@
-There are some technical diﬃculties that one must overcome, stemmingfromthefactthatsometimesthecorrespondingchaincomplexesarenotacyclic, hence the torsion depends on a choice of peripheral curves, as well as normalization issues, since the torsion is usually well deﬁned up to a sign.

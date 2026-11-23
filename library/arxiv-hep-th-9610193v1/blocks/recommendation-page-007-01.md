@@ -1,1 +1,0 @@
-to spontaneously broken Yang-Mills-Higgs theories where stable knotlike vortices can not be excluded by scaling arguments, should have interesting physical implications in particular to early universe cosmology.

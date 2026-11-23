@@ -1,10 +1,10 @@
 **Theoretical prediction.**
-The energy difference between the chain and threaded ring is proportional to the difference in Alexander weights:
+The energy difference between the chain and threaded ring is proportional to the difference in reduced Alexander weights:
 
 $$
   \Delta E
    \propto 
-  \bigl[(N-1) - \Delta_{T(2,N)}(q)\bigr]
+  \bigl[(N-1) - \tilde\Delta_{T(2,N)}(q)\bigr]
   \cdot |q + q^{-1}|_{\mathrm{mol}}.
 $$
 

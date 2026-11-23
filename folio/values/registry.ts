@@ -524,17 +524,6 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: null,
     }),
 
-    rho_q: Object.freeze({
-      name: "rho_q",
-      description: "Hecke trace density ρ_q.",
-      symbol: "\\rho_q",
-      witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.rho_q",
-      defaultPrecision: 4,
-      units: null,
-    }),
-
     s_skein: Object.freeze({
       name: "s_skein",
       description: "Skein normalisation s = z · (q - q^{-1}).",
@@ -791,58 +780,6 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "computations/alpha-em-4pi-fixed-point-solve.witness.json",
       witnessPath: "data.CODATA_alpha_inv",
       defaultPrecision: 6,
-      units: null,
-      needsReview: true,
-    }),
-
-    c_q: Object.freeze({
-      name: "c_q",
-      description:
-        "Categorical speed of light c_q = 1/(q-1).  Canonical witness pending — derive from q-pinning.",
-      symbol: "c_q",
-      witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.q",
-      defaultPrecision: 4,
-      units: null,
-      needsReview: true,
-    }),
-
-    eta_q: Object.freeze({
-      name: "eta_q",
-      description:
-        "Operational entropy η_q = (2q-1)/q^3.  Canonical witness pending.",
-      symbol: "\\eta_q",
-      witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.q",
-      defaultPrecision: 4,
-      units: null,
-      needsReview: true,
-    }),
-
-    chi_q: Object.freeze({
-      name: "chi_q",
-      description:
-        "q-deformed Lyapunov exponent χ_q = 1/(2q-1).  Canonical witness pending.",
-      symbol: "\\chi_q",
-      witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.q",
-      defaultPrecision: 4,
-      units: null,
-      needsReview: true,
-    }),
-
-    d_H: Object.freeze({
-      name: "d_H",
-      description:
-        "Hausdorff dimension d_H(q) = (2q-1)^2/q^3.  Canonical witness pending.",
-      symbol: "d_H",
-      witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.q",
-      defaultPrecision: 4,
       units: null,
       needsReview: true,
     }),

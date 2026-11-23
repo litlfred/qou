@@ -1,1 +1,0 @@
-One puzzling aspect of the construction of Fun.(SLq(2,C)p) is that we know from general arguments that this multiplier Hopf algebra should correspond to the quantum analog of the compact supported functions on SL(2,C)g, but the precise limit q > 1 is not so easy to under-

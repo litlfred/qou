@@ -1,0 +1,1 @@
+Consider a ﬁxed set of k incoming and n outgoing points on a circle. The set of A2 freeways of nonpositive curvature having these points as endpoints is a basis for Inv(V ⊗n 1,0 ⊗V ⊗k 0,1 ). It suﬃces to show that the number of such freeways equals the coeﬃcient of the xy2 term in the polynomial: (xy + x−1 + y−1)k(x−1y−1 + x + y)n(xy2 −x−1y + x−2y−1 −x−1y−2 + xy−1 −x2y)

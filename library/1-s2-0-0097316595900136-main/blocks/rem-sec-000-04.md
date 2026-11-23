@@ -1,0 +1,1 @@
+If r >~ m + n and 7 and ( are as in Theorem 3.5, then it is not difficult to see that removing a k-rim hook from 7 is done by either removing a k-rim hook from 7 + or by removing a k-rim hook from 7-. Therefore the values X~;., (() and Z~;., (()~ are independent of r, whenever r>~m+n.

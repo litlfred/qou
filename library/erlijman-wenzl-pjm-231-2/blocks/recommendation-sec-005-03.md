@@ -1,1 +1,0 @@
-We shall make the following assumptions: We as- sume that the category T for our chosen category D = C is equivalent to the representation category of a ﬁnite abelian group G, and, moreover, that |G| = k, with k as deﬁned in Section 3A.

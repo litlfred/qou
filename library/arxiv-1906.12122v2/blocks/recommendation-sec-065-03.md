@@ -1,1 +1,0 @@
-While \textcite{Behrendt:2016nql} state that higher orders should be treated in perturbation theory if this feature is to be maintained beyond LO, from a practical point of view they still advocate a nonperturbative treatment (where the cutoff is then limited again to a finite range, argued to be larger than what is typically used with standard Weinberg counting).

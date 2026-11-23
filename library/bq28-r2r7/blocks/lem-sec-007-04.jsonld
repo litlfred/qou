@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/bq28-r2r7/blocks/lem-sec-007-04",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "Granularity for row sampling",
+  "pageStart": 11,
+  "pageEnd": 12,
+  "text": "lem-sec-007-04.md",
+  "derivedFrom": "library/bq28-r2r7/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bq28-r2r7/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-007-b-row-and-column-sampling.md (p. 11-12) citing [42]",
+    "claim_id": "bq28-r2r7#lemma:6",
+    "lean_status": "unformalized"
+  }
+}

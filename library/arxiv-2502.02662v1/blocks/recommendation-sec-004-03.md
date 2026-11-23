@@ -1,1 +1,0 @@
-As we shall review in section [\[WilsonLoops\]](#WilsonLoops){reference-type="ref" reference="WilsonLoops"} in the context of Yang-Mills theory, Wilson lines are computed by gluing manifolds with boundaries and specifying a character of the gauge group on that boundary.

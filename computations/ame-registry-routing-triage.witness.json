@@ -17,89 +17,642 @@
     "5603.05150278295": "M_LI6_ATOMIC_MEV_VALIDATION",
     "2809.43212207852": "M_T_ATOMIC_MEV_VALIDATION"
   },
+  "roles": {
+    "adjacent_vs_full_probe.py": "REVIEW",
+    "affine_count_multiplicity_refuted_probe.py": "INPUT",
+    "atom_mass_derived.py": "REVIEW",
+    "b4_1four_reeb_flow_magnitude.py": "TARGET",
+    "b4_value_cumulant_target_probe.py": "REVIEW",
+    "binding_alpha_shift_witness.py": "TARGET",
+    "binding_bring_enhancement_compare.py": "REVIEW",
+    "binding_channel_taxonomy_probe.py": "REVIEW",
+    "binding_closed_form_C_vs_D_probe.py": "REVIEW",
+    "binding_depth_stratified_knot_weighted.py": "REVIEW",
+    "binding_depth_stratified_lr.py": "REVIEW",
+    "binding_depth_stratified_rust.py": "REVIEW",
+    "binding_depth_stratified_selfconj.py": "REVIEW",
+    "binding_edge_set_selection.py": "REVIEW",
+    "binding_factor_f_sequence.py": "REVIEW",
+    "binding_fewbody_bondcount.py": "REVIEW",
+    "binding_functional_extensivity_probe.py": "REVIEW",
+    "binding_hbarq_rung_forward_test.py": "REVIEW",
+    "binding_mass_rung_derivation_probe.py": "REVIEW",
+    "binding_n3_forcing_probe.py": "REVIEW",
+    "binding_per_block_magnitude_a3_probe.py": "REVIEW",
+    "binding_row_length_stratification.py": "TARGET",
+    "binding_volume_defect_route_refuted.py": "REVIEW",
+    "binding_wn_derive_or_refute.py": "REVIEW",
+    "body_order_alternation_is_generic_probe.py": "TARGET",
+    "body_order_growth_is_the_alpha_anomaly_probe.py": "REVIEW",
+    "brng_hbarq2_saturation_genericity_probe.py": "REVIEW",
+    "brunnian_triple_exhaustion_probe.py": "REVIEW",
+    "canonical_tower.py": "REVIEW",
+    "carrier_crossing_quantisation_probe.py": "REVIEW",
+    "charge_slambda_reeb_phase_crack.py": "REVIEW",
+    "chirality_weighted_3body_cluster_probe.py": "REVIEW",
+    "codata_truncation_audit.py": "REVIEW",
+    "coefficient_quantisation_reachability_probe.py": "REVIEW",
+    "concave_deficit_non_exclusion_probe.py": "REVIEW",
+    "connected_magnitude_charge_symmetric.py": "REVIEW",
+    "delta_lambda_binding_full_evaluation.py": "REVIEW",
+    "delta_lambda_l1_ceiling_sign_prune.py": "TARGET",
+    "delta_lambda_magnitude_deficit_profile.py": "TARGET",
+    "deltalambda_bareven_b4_magnitude_probe.py": "REVIEW",
+    "deltalambda_binding_a_scaling_probe.py": "REVIEW",
+    "deltalambda_demazure_subcrystal_magnitude_probe.py": "REVIEW",
+    "deltalambda_extensivity_gap_synthesis_probe.py": "REVIEW",
+    "deltalambda_jet_filtration_magnitude_probe.py": "REVIEW",
+    "deltalambda_saturation_det_ceiling_probe.py": "REVIEW",
+    "deuteron_interface_colour_weighting_probe.py": "REVIEW",
+    "deuteron_real_sdp.py": "REVIEW",
+    "dynamic_pn_occupancy_probe.py": "REVIEW",
+    "family_1_kashaev.py": "REVIEW",
+    "framed_vs_writhe_normalised_bonds_probe.py": "REVIEW",
+    "gamma_gamma_nn_pn_selection_probe.py": "REVIEW",
+    "generate-appendix-table-v2.py": "REVIEW",
+    "hbar_q_order_of_binding_observables_probe.py": "REVIEW",
+    "he4_rho_F_cpt_mechanism_refuted.py": "REVIEW",
+    "knot_id_volume_match_adjudication.py": "REVIEW",
+    "l1_ceiling_d_frame_remeasure.py": "TARGET",
+    "light_isotope_sweep.py": "REVIEW",
+    "low_isotope_binding_sweep.py": "INPUT",
+    "manybody_sign_by_bond_topology_probe.py": "REVIEW",
+    "mass_at_3A_proper.py": "REVIEW",
+    "mu3_target_robustness_audit_probe.py": "REVIEW",
+    "multi_level_jet_sum.py": "REVIEW",
+    "pairwise_magnitude_gap_probe.py": "REVIEW",
+    "paper_six_term_isotope_sweep.py": "INPUT",
+    "path_b_habiro_mass_probe.py": "INPUT",
+    "per_atom_rho_deviation.py": "INPUT",
+    "per_braid_tower.py": "REVIEW",
+    "perknot_pn_bond_mayer_grounding_probe.py": "REVIEW",
+    "phase3c_a5_a7_knot_volume_targets.py": "REVIEW",
+    "pn_writhe_is_not_an_exponent_probe.py": "REVIEW",
+    "probe_isospin_mirror_v9_generalization.py": "TARGET",
+    "probe_q6j_jm_spectral_delta_lambda.py": "INPUT",
+    "probe_volume_wedderburn_delta_lambda.py": "INPUT",
+    "qbessel_qdeformed_reeb_scale.py": "REVIEW",
+    "qbessel_reeb_flow_radial_forced.py": "REVIEW",
+    "qbessel_reeb_order_justification.py": "REVIEW",
+    "qbessel_reeb_yweighted_gap.py": "REVIEW",
+    "qbeta_derived_w_overdetermined_test_probe.py": "TARGET",
+    "qbeta_extensivity_is_the_failure_probe.py": "REVIEW",
+    "qbeta_interface_w_deciding_test_probe.py": "TARGET",
+    "qbeta_l1_ceiling_is_one_point_of_a_family_probe.py": "TARGET",
+    "rho_binding_constancy_probe.py": "REVIEW",
+    "rho_f_vol_binding_dashboard.py": "REVIEW",
+    "the_all_pairs_closure_is_not_one_link_probe.py": "REVIEW",
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py": "REVIEW",
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py": "REVIEW",
+    "toroidal_harmonics.py": "REVIEW",
+    "two_nucleon_binding_law_comparison_probe.py": "REVIEW",
+    "type_weighted_chain_ratio_probe.py": "REVIEW",
+    "unified-mass-molecular.py": "REVIEW",
+    "unified_lift.py": "REVIEW",
+    "w3_closeability_audit.py": "REVIEW",
+    "wedderburn_beta3_vs_hA2_discrimination.py": "TARGET",
+    "witness_value_copy_audit.py": "REVIEW",
+    "wlambda_level_selection_kA_probe.py": "TARGET"
+  },
+  "site_roles": {
+    "adjacent_vs_full_probe.py:8.481821": "REVIEW",
+    "affine_count_multiplicity_refuted_probe.py:2.22457": "INPUT",
+    "atom_mass_derived.py:11177.930": "REVIEW",
+    "b4_1four_reeb_flow_magnitude.py:2.224566": "TARGET",
+    "b4_1four_reeb_flow_magnitude.py:28.29566": "TARGET",
+    "b4_value_cumulant_target_probe.py:8.48180": "REVIEW",
+    "binding_alpha_shift_witness.py:2.224566": "TARGET",
+    "binding_alpha_shift_witness.py:28.295674": "TARGET",
+    "binding_alpha_shift_witness.py:7.718058": "TARGET",
+    "binding_alpha_shift_witness.py:8.481798": "TARGET",
+    "binding_bring_enhancement_compare.py:7.718058": "REVIEW",
+    "binding_channel_taxonomy_probe.py:2.224566": "REVIEW",
+    "binding_channel_taxonomy_probe.py:28.295674": "REVIEW",
+    "binding_channel_taxonomy_probe.py:7.718043": "REVIEW",
+    "binding_channel_taxonomy_probe.py:8.481798": "REVIEW",
+    "binding_closed_form_C_vs_D_probe.py:2.224566": "REVIEW",
+    "binding_closed_form_C_vs_D_probe.py:28.295673": "REVIEW",
+    "binding_closed_form_C_vs_D_probe.py:7.718043": "REVIEW",
+    "binding_closed_form_C_vs_D_probe.py:8.481821": "REVIEW",
+    "binding_depth_stratified_knot_weighted.py:2.22456607": "REVIEW",
+    "binding_depth_stratified_lr.py:2.22456607": "REVIEW",
+    "binding_depth_stratified_rust.py:2.22456607": "REVIEW",
+    "binding_depth_stratified_selfconj.py:2.22456607": "REVIEW",
+    "binding_edge_set_selection.py:7.718058": "REVIEW",
+    "binding_edge_set_selection.py:8.481821": "REVIEW",
+    "binding_factor_f_sequence.py:2.224566": "REVIEW",
+    "binding_factor_f_sequence.py:28.295673": "REVIEW",
+    "binding_factor_f_sequence.py:31.9941": "REVIEW",
+    "binding_factor_f_sequence.py:7.718043": "REVIEW",
+    "binding_factor_f_sequence.py:8.481798": "REVIEW",
+    "binding_fewbody_bondcount.py:7.718058": "REVIEW",
+    "binding_fewbody_bondcount.py:8.481821": "REVIEW",
+    "binding_functional_extensivity_probe.py:2.224566": "REVIEW",
+    "binding_functional_extensivity_probe.py:28.295673": "REVIEW",
+    "binding_functional_extensivity_probe.py:8.481798": "REVIEW",
+    "binding_hbarq_rung_forward_test.py:28.295674": "REVIEW",
+    "binding_hbarq_rung_forward_test.py:7.718041": "REVIEW",
+    "binding_hbarq_rung_forward_test.py:8.481821": "REVIEW",
+    "binding_mass_rung_derivation_probe.py:2.224566": "REVIEW",
+    "binding_mass_rung_derivation_probe.py:28.295674": "REVIEW",
+    "binding_mass_rung_derivation_probe.py:8.481821": "REVIEW",
+    "binding_n3_forcing_probe.py:2.224566": "REVIEW",
+    "binding_n3_forcing_probe.py:28.295661": "REVIEW",
+    "binding_n3_forcing_probe.py:7.718058": "REVIEW",
+    "binding_n3_forcing_probe.py:8.481821": "REVIEW",
+    "binding_per_block_magnitude_a3_probe.py:8.4818": "REVIEW",
+    "binding_row_length_stratification.py:2.224566": "TARGET",
+    "binding_row_length_stratification.py:28.295673": "TARGET",
+    "binding_row_length_stratification.py:7.718043": "TARGET",
+    "binding_row_length_stratification.py:8.481821": "TARGET",
+    "binding_volume_defect_route_refuted.py:28.295674": "REVIEW",
+    "binding_volume_defect_route_refuted.py:7.718041": "REVIEW",
+    "binding_volume_defect_route_refuted.py:8.481821": "REVIEW",
+    "binding_wn_derive_or_refute.py:7.718058": "REVIEW",
+    "binding_wn_derive_or_refute.py:8.481821": "REVIEW",
+    "body_order_alternation_is_generic_probe.py:2.22457": "TARGET",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:2.224566": "REVIEW",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:2.22457": "REVIEW",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:28.2957": "REVIEW",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:7.718043": "REVIEW",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:8.481798": "REVIEW",
+    "brng_hbarq2_saturation_genericity_probe.py:2.224566": "REVIEW",
+    "brng_hbarq2_saturation_genericity_probe.py:28.295674": "REVIEW",
+    "brunnian_triple_exhaustion_probe.py:2.224566": "REVIEW",
+    "brunnian_triple_exhaustion_probe.py:7.718043": "REVIEW",
+    "brunnian_triple_exhaustion_probe.py:8.481798": "REVIEW",
+    "canonical_tower.py:8.481821": "REVIEW",
+    "carrier_crossing_quantisation_probe.py:2.224566": "REVIEW",
+    "carrier_crossing_quantisation_probe.py:28.295673": "REVIEW",
+    "carrier_crossing_quantisation_probe.py:7.718043": "REVIEW",
+    "carrier_crossing_quantisation_probe.py:8.481798": "REVIEW",
+    "charge_slambda_reeb_phase_crack.py:7.718058": "REVIEW",
+    "chirality_weighted_3body_cluster_probe.py:2.224566": "REVIEW",
+    "codata_truncation_audit.py:28.295673": "REVIEW",
+    "coefficient_quantisation_reachability_probe.py:2.22457": "REVIEW",
+    "coefficient_quantisation_reachability_probe.py:28.2957": "REVIEW",
+    "coefficient_quantisation_reachability_probe.py:31.994": "REVIEW",
+    "coefficient_quantisation_reachability_probe.py:39.2451": "REVIEW",
+    "coefficient_quantisation_reachability_probe.py:8.4818": "REVIEW",
+    "concave_deficit_non_exclusion_probe.py:2.224566": "REVIEW",
+    "concave_deficit_non_exclusion_probe.py:28.295673": "REVIEW",
+    "concave_deficit_non_exclusion_probe.py:7.718043": "REVIEW",
+    "concave_deficit_non_exclusion_probe.py:8.481798": "REVIEW",
+    "connected_magnitude_charge_symmetric.py:2.224566": "REVIEW",
+    "connected_magnitude_charge_symmetric.py:28.295673": "REVIEW",
+    "delta_lambda_binding_full_evaluation.py:8.48180": "REVIEW",
+    "delta_lambda_l1_ceiling_sign_prune.py:2.224566": "TARGET",
+    "delta_lambda_l1_ceiling_sign_prune.py:28.295673": "TARGET",
+    "delta_lambda_l1_ceiling_sign_prune.py:7.718043": "TARGET",
+    "delta_lambda_l1_ceiling_sign_prune.py:8.481798": "TARGET",
+    "delta_lambda_magnitude_deficit_profile.py:2.224566": "TARGET",
+    "delta_lambda_magnitude_deficit_profile.py:28.295673": "TARGET",
+    "delta_lambda_magnitude_deficit_profile.py:7.718043": "TARGET",
+    "delta_lambda_magnitude_deficit_profile.py:8.481798": "TARGET",
+    "deltalambda_bareven_b4_magnitude_probe.py:7.718058": "REVIEW",
+    "deltalambda_bareven_b4_magnitude_probe.py:8.481821": "REVIEW",
+    "deltalambda_binding_a_scaling_probe.py:28.29567": "REVIEW",
+    "deltalambda_binding_a_scaling_probe.py:7.71804": "REVIEW",
+    "deltalambda_binding_a_scaling_probe.py:8.48180": "REVIEW",
+    "deltalambda_demazure_subcrystal_magnitude_probe.py:7.718058": "REVIEW",
+    "deltalambda_demazure_subcrystal_magnitude_probe.py:8.481821": "REVIEW",
+    "deltalambda_extensivity_gap_synthesis_probe.py:8.48180": "REVIEW",
+    "deltalambda_jet_filtration_magnitude_probe.py:7.718058": "REVIEW",
+    "deltalambda_jet_filtration_magnitude_probe.py:8.481821": "REVIEW",
+    "deltalambda_saturation_det_ceiling_probe.py:7.718058": "REVIEW",
+    "deltalambda_saturation_det_ceiling_probe.py:8.481821": "REVIEW",
+    "deuteron_interface_colour_weighting_probe.py:2.224566": "REVIEW",
+    "deuteron_real_sdp.py:2.22456607": "REVIEW",
+    "dynamic_pn_occupancy_probe.py:8.481821": "REVIEW",
+    "family_1_kashaev.py:7.71804": "REVIEW",
+    "family_1_kashaev.py:8.48181": "REVIEW",
+    "framed_vs_writhe_normalised_bonds_probe.py:28.2957": "REVIEW",
+    "gamma_gamma_nn_pn_selection_probe.py:2.224566": "REVIEW",
+    "generate-appendix-table-v2.py:11177.929": "REVIEW",
+    "generate-appendix-table-v2.py:3728.401": "REVIEW",
+    "hbar_q_order_of_binding_observables_probe.py:28.29561": "REVIEW",
+    "he4_rho_F_cpt_mechanism_refuted.py:28.295674": "REVIEW",
+    "knot_id_volume_match_adjudication.py:7.718043": "REVIEW",
+    "l1_ceiling_d_frame_remeasure.py:2.224566": "TARGET",
+    "l1_ceiling_d_frame_remeasure.py:28.295673": "TARGET",
+    "l1_ceiling_d_frame_remeasure.py:7.718043": "TARGET",
+    "l1_ceiling_d_frame_remeasure.py:8.481798": "TARGET",
+    "light_isotope_sweep.py:8.48180": "REVIEW",
+    "low_isotope_binding_sweep.py:31.9941": "INPUT",
+    "low_isotope_binding_sweep.py:8.4818": "INPUT",
+    "manybody_sign_by_bond_topology_probe.py:28.295661": "REVIEW",
+    "mass_at_3A_proper.py:8.481821": "REVIEW",
+    "mu3_target_robustness_audit_probe.py:2.224566": "REVIEW",
+    "mu3_target_robustness_audit_probe.py:28.295673": "REVIEW",
+    "mu3_target_robustness_audit_probe.py:7.718058": "REVIEW",
+    "mu3_target_robustness_audit_probe.py:8.481821": "REVIEW",
+    "multi_level_jet_sum.py:8.481821": "REVIEW",
+    "pairwise_magnitude_gap_probe.py:2.224566": "REVIEW",
+    "paper_six_term_isotope_sweep.py:1876.124": "INPUT",
+    "paper_six_term_isotope_sweep.py:2809.413": "INPUT",
+    "paper_six_term_isotope_sweep.py:2809.432": "INPUT",
+    "paper_six_term_isotope_sweep.py:3728.401": "INPUT",
+    "paper_six_term_isotope_sweep.py:5603.052": "INPUT",
+    "path_b_habiro_mass_probe.py:1876.12393": "INPUT",
+    "path_b_habiro_mass_probe.py:2809.41347": "INPUT",
+    "path_b_habiro_mass_probe.py:2809.43215": "INPUT",
+    "per_atom_rho_deviation.py:2.22456612": "INPUT",
+    "per_atom_rho_deviation.py:28.2956912": "INPUT",
+    "per_atom_rho_deviation.py:7.7180375": "INPUT",
+    "per_atom_rho_deviation.py:8.4817984": "INPUT",
+    "per_braid_tower.py:2.224573": "REVIEW",
+    "perknot_pn_bond_mayer_grounding_probe.py:7.718058": "REVIEW",
+    "phase3c_a5_a7_knot_volume_targets.py:8.481821": "REVIEW",
+    "pn_writhe_is_not_an_exponent_probe.py:28.2957": "REVIEW",
+    "probe_isospin_mirror_v9_generalization.py:2.224566": "TARGET",
+    "probe_isospin_mirror_v9_generalization.py:7.71806": "TARGET",
+    "probe_isospin_mirror_v9_generalization.py:8.481798": "TARGET",
+    "probe_q6j_jm_spectral_delta_lambda.py:8.4818": "INPUT",
+    "probe_volume_wedderburn_delta_lambda.py:8.4818": "INPUT",
+    "qbessel_qdeformed_reeb_scale.py:2.224573": "REVIEW",
+    "qbessel_reeb_flow_radial_forced.py:2.224573": "REVIEW",
+    "qbessel_reeb_order_justification.py:2.224573": "REVIEW",
+    "qbessel_reeb_yweighted_gap.py:2.224573": "REVIEW",
+    "qbeta_derived_w_overdetermined_test_probe.py:2.224566": "TARGET",
+    "qbeta_derived_w_overdetermined_test_probe.py:28.295673": "TARGET",
+    "qbeta_derived_w_overdetermined_test_probe.py:7.718043": "TARGET",
+    "qbeta_derived_w_overdetermined_test_probe.py:8.481798": "TARGET",
+    "qbeta_extensivity_is_the_failure_probe.py:2.224566": "REVIEW",
+    "qbeta_extensivity_is_the_failure_probe.py:28.295673": "REVIEW",
+    "qbeta_extensivity_is_the_failure_probe.py:7.718043": "REVIEW",
+    "qbeta_extensivity_is_the_failure_probe.py:8.481798": "REVIEW",
+    "qbeta_interface_w_deciding_test_probe.py:2.224566": "TARGET",
+    "qbeta_interface_w_deciding_test_probe.py:28.295673": "TARGET",
+    "qbeta_interface_w_deciding_test_probe.py:7.718043": "TARGET",
+    "qbeta_interface_w_deciding_test_probe.py:8.481798": "TARGET",
+    "qbeta_l1_ceiling_is_one_point_of_a_family_probe.py:2.224566": "TARGET",
+    "rho_binding_constancy_probe.py:7.718058": "REVIEW",
+    "rho_binding_constancy_probe.py:8.481821": "REVIEW",
+    "rho_f_vol_binding_dashboard.py:2.224566": "REVIEW",
+    "rho_f_vol_binding_dashboard.py:28.295673": "REVIEW",
+    "rho_f_vol_binding_dashboard.py:7.718058": "REVIEW",
+    "rho_f_vol_binding_dashboard.py:8.481821": "REVIEW",
+    "the_all_pairs_closure_is_not_one_link_probe.py:28.2957": "REVIEW",
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py:2.224566": "REVIEW",
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py:28.295662": "REVIEW",
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py:7.718041": "REVIEW",
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py:8.481796": "REVIEW",
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py:2.224566": "REVIEW",
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py:28.295662": "REVIEW",
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py:7.718041": "REVIEW",
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py:8.481796": "REVIEW",
+    "toroidal_harmonics.py:28.29566": "REVIEW",
+    "two_nucleon_binding_law_comparison_probe.py:2.224566": "REVIEW",
+    "type_weighted_chain_ratio_probe.py:2.224566": "REVIEW",
+    "type_weighted_chain_ratio_probe.py:7.718043": "REVIEW",
+    "type_weighted_chain_ratio_probe.py:8.481798": "REVIEW",
+    "unified-mass-molecular.py:11177.930": "REVIEW",
+    "unified_lift.py:8.481821": "REVIEW",
+    "w3_closeability_audit.py:7.718058": "REVIEW",
+    "w3_closeability_audit.py:8.481821": "REVIEW",
+    "wedderburn_beta3_vs_hA2_discrimination.py:11177.9292": "TARGET",
+    "wedderburn_beta3_vs_hA2_discrimination.py:3728.4013": "TARGET",
+    "witness_value_copy_audit.py:2.224566": "REVIEW",
+    "wlambda_level_selection_kA_probe.py:31.994": "TARGET",
+    "wlambda_level_selection_kA_probe.py:39.245": "TARGET"
+  },
+  "rounding_sites": [
+    "affine_count_multiplicity_refuted_probe.py:2.22457",
+    "b4_1four_reeb_flow_magnitude.py:2.224566",
+    "b4_1four_reeb_flow_magnitude.py:28.29566",
+    "b4_value_cumulant_target_probe.py:8.48180",
+    "binding_alpha_shift_witness.py:2.224566",
+    "binding_channel_taxonomy_probe.py:2.224566",
+    "binding_closed_form_C_vs_D_probe.py:2.224566",
+    "binding_factor_f_sequence.py:2.224566",
+    "binding_functional_extensivity_probe.py:2.224566",
+    "binding_hbarq_rung_forward_test.py:7.718041",
+    "binding_mass_rung_derivation_probe.py:2.224566",
+    "binding_n3_forcing_probe.py:2.224566",
+    "binding_per_block_magnitude_a3_probe.py:8.4818",
+    "binding_row_length_stratification.py:2.224566",
+    "binding_volume_defect_route_refuted.py:7.718041",
+    "body_order_alternation_is_generic_probe.py:2.22457",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:2.224566",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:2.22457",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:28.2957",
+    "brng_hbarq2_saturation_genericity_probe.py:2.224566",
+    "brunnian_triple_exhaustion_probe.py:2.224566",
+    "carrier_crossing_quantisation_probe.py:2.224566",
+    "chirality_weighted_3body_cluster_probe.py:2.224566",
+    "coefficient_quantisation_reachability_probe.py:2.22457",
+    "coefficient_quantisation_reachability_probe.py:28.2957",
+    "coefficient_quantisation_reachability_probe.py:31.994",
+    "coefficient_quantisation_reachability_probe.py:39.2451",
+    "coefficient_quantisation_reachability_probe.py:8.4818",
+    "concave_deficit_non_exclusion_probe.py:2.224566",
+    "connected_magnitude_charge_symmetric.py:2.224566",
+    "delta_lambda_binding_full_evaluation.py:8.48180",
+    "delta_lambda_l1_ceiling_sign_prune.py:2.224566",
+    "delta_lambda_magnitude_deficit_profile.py:2.224566",
+    "deltalambda_binding_a_scaling_probe.py:7.71804",
+    "deltalambda_binding_a_scaling_probe.py:8.48180",
+    "deltalambda_extensivity_gap_synthesis_probe.py:8.48180",
+    "deuteron_interface_colour_weighting_probe.py:2.224566",
+    "family_1_kashaev.py:7.71804",
+    "framed_vs_writhe_normalised_bonds_probe.py:28.2957",
+    "gamma_gamma_nn_pn_selection_probe.py:2.224566",
+    "generate-appendix-table-v2.py:11177.929",
+    "generate-appendix-table-v2.py:3728.401",
+    "l1_ceiling_d_frame_remeasure.py:2.224566",
+    "light_isotope_sweep.py:8.48180",
+    "low_isotope_binding_sweep.py:8.4818",
+    "mu3_target_robustness_audit_probe.py:2.224566",
+    "pairwise_magnitude_gap_probe.py:2.224566",
+    "paper_six_term_isotope_sweep.py:1876.124",
+    "paper_six_term_isotope_sweep.py:2809.432",
+    "paper_six_term_isotope_sweep.py:3728.401",
+    "paper_six_term_isotope_sweep.py:5603.052",
+    "path_b_habiro_mass_probe.py:1876.12393",
+    "pn_writhe_is_not_an_exponent_probe.py:28.2957",
+    "probe_isospin_mirror_v9_generalization.py:2.224566",
+    "probe_q6j_jm_spectral_delta_lambda.py:8.4818",
+    "probe_volume_wedderburn_delta_lambda.py:8.4818",
+    "qbeta_derived_w_overdetermined_test_probe.py:2.224566",
+    "qbeta_extensivity_is_the_failure_probe.py:2.224566",
+    "qbeta_interface_w_deciding_test_probe.py:2.224566",
+    "qbeta_l1_ceiling_is_one_point_of_a_family_probe.py:2.224566",
+    "rho_f_vol_binding_dashboard.py:2.224566",
+    "the_all_pairs_closure_is_not_one_link_probe.py:28.2957",
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py:2.224566",
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py:28.295662",
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py:7.718041",
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py:8.481796",
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py:2.224566",
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py:28.295662",
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py:7.718041",
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py:8.481796",
+    "toroidal_harmonics.py:28.29566",
+    "two_nucleon_binding_law_comparison_probe.py:2.224566",
+    "type_weighted_chain_ratio_probe.py:2.224566",
+    "wedderburn_beta3_vs_hA2_discrimination.py:11177.9292",
+    "wedderburn_beta3_vs_hA2_discrimination.py:3728.4013",
+    "witness_value_copy_audit.py:2.224566",
+    "wlambda_level_selection_kA_probe.py:31.994",
+    "wlambda_level_selection_kA_probe.py:39.245"
+  ],
+  "divergent_sites": [
+    "adjacent_vs_full_probe.py:8.481821",
+    "atom_mass_derived.py:11177.930",
+    "binding_alpha_shift_witness.py:28.295674",
+    "binding_alpha_shift_witness.py:7.718058",
+    "binding_alpha_shift_witness.py:8.481798",
+    "binding_bring_enhancement_compare.py:7.718058",
+    "binding_channel_taxonomy_probe.py:28.295674",
+    "binding_channel_taxonomy_probe.py:7.718043",
+    "binding_channel_taxonomy_probe.py:8.481798",
+    "binding_closed_form_C_vs_D_probe.py:28.295673",
+    "binding_closed_form_C_vs_D_probe.py:7.718043",
+    "binding_closed_form_C_vs_D_probe.py:8.481821",
+    "binding_depth_stratified_knot_weighted.py:2.22456607",
+    "binding_depth_stratified_lr.py:2.22456607",
+    "binding_depth_stratified_rust.py:2.22456607",
+    "binding_depth_stratified_selfconj.py:2.22456607",
+    "binding_edge_set_selection.py:7.718058",
+    "binding_edge_set_selection.py:8.481821",
+    "binding_factor_f_sequence.py:28.295673",
+    "binding_factor_f_sequence.py:31.9941",
+    "binding_factor_f_sequence.py:7.718043",
+    "binding_factor_f_sequence.py:8.481798",
+    "binding_fewbody_bondcount.py:7.718058",
+    "binding_fewbody_bondcount.py:8.481821",
+    "binding_functional_extensivity_probe.py:28.295673",
+    "binding_functional_extensivity_probe.py:8.481798",
+    "binding_hbarq_rung_forward_test.py:28.295674",
+    "binding_hbarq_rung_forward_test.py:8.481821",
+    "binding_mass_rung_derivation_probe.py:28.295674",
+    "binding_mass_rung_derivation_probe.py:8.481821",
+    "binding_n3_forcing_probe.py:28.295661",
+    "binding_n3_forcing_probe.py:7.718058",
+    "binding_n3_forcing_probe.py:8.481821",
+    "binding_row_length_stratification.py:28.295673",
+    "binding_row_length_stratification.py:7.718043",
+    "binding_row_length_stratification.py:8.481821",
+    "binding_volume_defect_route_refuted.py:28.295674",
+    "binding_volume_defect_route_refuted.py:8.481821",
+    "binding_wn_derive_or_refute.py:7.718058",
+    "binding_wn_derive_or_refute.py:8.481821",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:7.718043",
+    "body_order_growth_is_the_alpha_anomaly_probe.py:8.481798",
+    "brng_hbarq2_saturation_genericity_probe.py:28.295674",
+    "brunnian_triple_exhaustion_probe.py:7.718043",
+    "brunnian_triple_exhaustion_probe.py:8.481798",
+    "canonical_tower.py:8.481821",
+    "carrier_crossing_quantisation_probe.py:28.295673",
+    "carrier_crossing_quantisation_probe.py:7.718043",
+    "carrier_crossing_quantisation_probe.py:8.481798",
+    "charge_slambda_reeb_phase_crack.py:7.718058",
+    "codata_truncation_audit.py:28.295673",
+    "concave_deficit_non_exclusion_probe.py:28.295673",
+    "concave_deficit_non_exclusion_probe.py:7.718043",
+    "concave_deficit_non_exclusion_probe.py:8.481798",
+    "connected_magnitude_charge_symmetric.py:28.295673",
+    "delta_lambda_l1_ceiling_sign_prune.py:28.295673",
+    "delta_lambda_l1_ceiling_sign_prune.py:7.718043",
+    "delta_lambda_l1_ceiling_sign_prune.py:8.481798",
+    "delta_lambda_magnitude_deficit_profile.py:28.295673",
+    "delta_lambda_magnitude_deficit_profile.py:7.718043",
+    "delta_lambda_magnitude_deficit_profile.py:8.481798",
+    "deltalambda_bareven_b4_magnitude_probe.py:7.718058",
+    "deltalambda_bareven_b4_magnitude_probe.py:8.481821",
+    "deltalambda_binding_a_scaling_probe.py:28.29567",
+    "deltalambda_demazure_subcrystal_magnitude_probe.py:7.718058",
+    "deltalambda_demazure_subcrystal_magnitude_probe.py:8.481821",
+    "deltalambda_jet_filtration_magnitude_probe.py:7.718058",
+    "deltalambda_jet_filtration_magnitude_probe.py:8.481821",
+    "deltalambda_saturation_det_ceiling_probe.py:7.718058",
+    "deltalambda_saturation_det_ceiling_probe.py:8.481821",
+    "deuteron_real_sdp.py:2.22456607",
+    "dynamic_pn_occupancy_probe.py:8.481821",
+    "family_1_kashaev.py:8.48181",
+    "hbar_q_order_of_binding_observables_probe.py:28.29561",
+    "he4_rho_F_cpt_mechanism_refuted.py:28.295674",
+    "knot_id_volume_match_adjudication.py:7.718043",
+    "l1_ceiling_d_frame_remeasure.py:28.295673",
+    "l1_ceiling_d_frame_remeasure.py:7.718043",
+    "l1_ceiling_d_frame_remeasure.py:8.481798",
+    "low_isotope_binding_sweep.py:31.9941",
+    "manybody_sign_by_bond_topology_probe.py:28.295661",
+    "mass_at_3A_proper.py:8.481821",
+    "mu3_target_robustness_audit_probe.py:28.295673",
+    "mu3_target_robustness_audit_probe.py:7.718058",
+    "mu3_target_robustness_audit_probe.py:8.481821",
+    "multi_level_jet_sum.py:8.481821",
+    "paper_six_term_isotope_sweep.py:2809.413",
+    "path_b_habiro_mass_probe.py:2809.41347",
+    "path_b_habiro_mass_probe.py:2809.43215",
+    "per_atom_rho_deviation.py:2.22456612",
+    "per_atom_rho_deviation.py:28.2956912",
+    "per_atom_rho_deviation.py:7.7180375",
+    "per_atom_rho_deviation.py:8.4817984",
+    "per_braid_tower.py:2.224573",
+    "perknot_pn_bond_mayer_grounding_probe.py:7.718058",
+    "phase3c_a5_a7_knot_volume_targets.py:8.481821",
+    "probe_isospin_mirror_v9_generalization.py:7.71806",
+    "probe_isospin_mirror_v9_generalization.py:8.481798",
+    "qbessel_qdeformed_reeb_scale.py:2.224573",
+    "qbessel_reeb_flow_radial_forced.py:2.224573",
+    "qbessel_reeb_order_justification.py:2.224573",
+    "qbessel_reeb_yweighted_gap.py:2.224573",
+    "qbeta_derived_w_overdetermined_test_probe.py:28.295673",
+    "qbeta_derived_w_overdetermined_test_probe.py:7.718043",
+    "qbeta_derived_w_overdetermined_test_probe.py:8.481798",
+    "qbeta_extensivity_is_the_failure_probe.py:28.295673",
+    "qbeta_extensivity_is_the_failure_probe.py:7.718043",
+    "qbeta_extensivity_is_the_failure_probe.py:8.481798",
+    "qbeta_interface_w_deciding_test_probe.py:28.295673",
+    "qbeta_interface_w_deciding_test_probe.py:7.718043",
+    "qbeta_interface_w_deciding_test_probe.py:8.481798",
+    "rho_binding_constancy_probe.py:7.718058",
+    "rho_binding_constancy_probe.py:8.481821",
+    "rho_f_vol_binding_dashboard.py:28.295673",
+    "rho_f_vol_binding_dashboard.py:7.718058",
+    "rho_f_vol_binding_dashboard.py:8.481821",
+    "type_weighted_chain_ratio_probe.py:7.718043",
+    "type_weighted_chain_ratio_probe.py:8.481798",
+    "unified-mass-molecular.py:11177.930",
+    "unified_lift.py:8.481821",
+    "w3_closeability_audit.py:7.718058",
+    "w3_closeability_audit.py:8.481821"
+  ],
+  "fixture_sites": {
+    "registry_witness_pin_validator.py": [
+      [
+        "2.2245662",
+        "AME_B_DEUTERON_MEV_VALIDATION"
+      ],
+      [
+        "7.71804132",
+        "AME_B_HE3_MEV_VALIDATION"
+      ],
+      [
+        "8.4817962",
+        "AME_B_TRITIUM_MEV_VALIDATION"
+      ]
+    ],
+    "delta_lambda_shape_probe.py": [
+      [
+        "7.718058",
+        "~near"
+      ],
+      [
+        "8.481821",
+        "~near"
+      ]
+    ],
+    "mpf_import_time_dps_audit.py": [
+      [
+        "2.22456607",
+        "~near"
+      ],
+      [
+        "28.295674",
+        "~near"
+      ],
+      [
+        "7.7180428",
+        "~near"
+      ]
+    ]
+  },
   "safe_routes": {
-    "binding_per_block_magnitude_a3_probe.py": [
+    "c_knot_tau_transfer_artifact_probe.py": [
       [
         "2.2245662",
         "AME_B_DEUTERON_MEV_VALIDATION"
       ]
     ],
-    "binding_perblock_bond_type_a3.py": [
+    "short_decimal_padding_audit.py": [
       [
         "2.2245662",
         "AME_B_DEUTERON_MEV_VALIDATION"
       ]
     ],
-    "probe_q6j_jm_spectral_delta_lambda.py": [
+    "whipple_observable_ratio_probe.py": [
       [
         "2.2245662",
         "AME_B_DEUTERON_MEV_VALIDATION"
+      ],
+      [
+        "28.2956624",
+        "AME_B_HE4_MEV_VALIDATION"
+      ],
+      [
+        "7.71804132",
+        "AME_B_HE3_MEV_VALIDATION"
+      ],
+      [
+        "8.4817962",
+        "AME_B_TRITIUM_MEV_VALIDATION"
       ]
     ],
-    "probe_volume_wedderburn_delta_lambda.py": [
+    "wlambda_binding_a3_mirror_selection.py": [
+      [
+        "7.71804132",
+        "AME_B_HE3_MEV_VALIDATION"
+      ],
+      [
+        "8.4817962",
+        "AME_B_TRITIUM_MEV_VALIDATION"
+      ]
+    ],
+    "wlambda_binding_wn_tower_domain.py": [
       [
         "2.2245662",
         "AME_B_DEUTERON_MEV_VALIDATION"
+      ],
+      [
+        "28.2956624",
+        "AME_B_HE4_MEV_VALIDATION"
+      ],
+      [
+        "8.4817962",
+        "AME_B_TRITIUM_MEV_VALIDATION"
       ]
     ]
   },
   "unsafe_near_matches": {
-    "a4_interface_kl_subpath_closure.py": [
+    "adjacent_vs_full_probe.py": [
       [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.29566",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ]
-    ],
-    "a4_option_e_color_tube_closure.py": [
-      [
-        "28.29566",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ]
-    ],
-    "atomic_chirality_residue.py": [
-      [
-        "2.22456612",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "8.481798",
+        "8.481821",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
     ],
-    "b_over_a_v5_unified.py": [
+    "affine_count_multiplicity_refuted_probe.py": [
       [
-        "31.99405",
-        "AME_B_LI6_MEV_VALIDATION",
-        "31.9939872"
+        "2.22457",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
       ]
     ],
-    "bar_pairing_binding_observable.py": [
+    "atom_mass_derived.py": [
+      [
+        "11177.930",
+        "M_C12_ATOMIC_MEV_VALIDATION",
+        "11177.92924464"
+      ]
+    ],
+    "b4_1four_reeb_flow_magnitude.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
       ],
       [
-        "28.295674",
+        "28.29566",
         "AME_B_HE4_MEV_VALIDATION",
         "28.2956624"
-      ],
+      ]
+    ],
+    "b4_value_cumulant_target_probe.py": [
       [
-        "7.718041",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
+        "8.48180",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
@@ -126,24 +679,14 @@
         "8.4817962"
       ]
     ],
-    "binding_block_multiplicative.py": [
+    "binding_bring_enhancement_compare.py": [
       [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
+        "7.718058",
         "AME_B_HE3_MEV_VALIDATION",
         "7.71804132"
       ]
     ],
-    "binding_bring_enhancement_compare.py": [
+    "binding_channel_taxonomy_probe.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
@@ -155,7 +698,7 @@
         "28.2956624"
       ],
       [
-        "7.718058",
+        "7.718043",
         "AME_B_HE3_MEV_VALIDATION",
         "7.71804132"
       ],
@@ -165,33 +708,26 @@
         "8.4817962"
       ]
     ],
-    "binding_canonical.py": [
+    "binding_closed_form_C_vs_D_probe.py": [
       [
-        "28.295674",
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.295673",
         "AME_B_HE4_MEV_VALIDATION",
         "28.2956624"
       ],
       [
-        "7.71804",
+        "7.718043",
         "AME_B_HE3_MEV_VALIDATION",
         "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
       ],
       [
         "8.481821",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
-      ]
-    ],
-    "binding_depth_stratified.py": [
-      [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
       ]
     ],
     "binding_depth_stratified_knot_weighted.py": [
@@ -199,16 +735,6 @@
         "2.22456607",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
       ]
     ],
     "binding_depth_stratified_lr.py": [
@@ -216,16 +742,6 @@
         "2.22456607",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
       ]
     ],
     "binding_depth_stratified_rust.py": [
@@ -233,16 +749,6 @@
         "2.22456607",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
       ]
     ],
     "binding_depth_stratified_selfconj.py": [
@@ -250,29 +756,9 @@
         "2.22456607",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
       ]
     ],
     "binding_edge_set_selection.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295661",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
       [
         "7.718058",
         "AME_B_HE3_MEV_VALIDATION",
@@ -280,55 +766,6 @@
       ],
       [
         "8.481821",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "binding_factor_f_decomposition.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295673",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.718043",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "binding_factor_f_pair_count.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295673",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "31.9941",
-        "AME_B_LI6_MEV_VALIDATION",
-        "31.9939872"
-      ],
-      [
-        "7.718043",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
@@ -362,6 +799,69 @@
     ],
     "binding_fewbody_bondcount.py": [
       [
+        "7.718058",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "binding_functional_extensivity_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.295673",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
+      [
+        "8.481798",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "binding_hbarq_rung_forward_test.py": [
+      [
+        "28.295674",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
+      [
+        "7.718041",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "binding_mass_rung_derivation_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.295674",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "binding_n3_forcing_probe.py": [
+      [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
@@ -378,67 +878,6 @@
       ],
       [
         "8.481821",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "binding_k_enumerator.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "binding_k_solver.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "binding_ladder_catalog.py": [
-      [
-        "2.22456612",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.29566",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "31.99405",
-        "AME_B_LI6_MEV_VALIDATION",
-        "31.9939872"
-      ],
-      [
-        "7.718058",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
@@ -450,72 +889,9 @@
         "8.4817962"
       ]
     ],
-    "binding_perblock_bond_type_a3.py": [
-      [
-        "28.29566",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "8.4818",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "binding_via_interface_knot.py": [
-      [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ]
-    ],
-    "binding_wn_derive_or_refute.py": [
+    "binding_row_length_stratification.py": [
       [
         "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295661",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.718058",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481821",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "binding_wn_multianchor_tower_refute.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295661",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.718058",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481821",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "borromean_binding_recompute.py": [
-      [
-        "2.224573",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
       ],
@@ -525,6 +901,35 @@
         "28.2956624"
       ],
       [
+        "7.718043",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "binding_volume_defect_route_refuted.py": [
+      [
+        "28.295674",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
+      [
+        "7.718041",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "binding_wn_derive_or_refute.py": [
+      [
         "7.718058",
         "AME_B_HE3_MEV_VALIDATION",
         "7.71804132"
@@ -535,62 +940,77 @@
         "8.4817962"
       ]
     ],
-    "canonical_isotope_witness.py": [
-      [
-        "28.29566",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ]
-    ],
-    "canonical_mass_table_extended.py": [
-      [
-        "39.24522",
-        "AME_B_LI7_MEV_VALIDATION",
-        "39.2450807"
-      ]
-    ],
-    "canonical_tower.py": [
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.71804",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481821",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "catalan_binding.py": [
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.71804",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481821",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "categorical_q_decay_ba_low_isotopes.py": [
+    "body_order_alternation_is_generic_probe.py": [
       [
         "2.22457",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
       ]
     ],
-    "channel_binding.py": [
+    "body_order_growth_is_the_alpha_anomaly_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "2.22457",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.2957",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
+      [
+        "7.718043",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481798",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "brng_hbarq2_saturation_genericity_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.295674",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ]
+    ],
+    "brunnian_triple_exhaustion_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "7.718043",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481798",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "canonical_tower.py": [
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "carrier_crossing_quantisation_probe.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
@@ -617,94 +1037,50 @@
         "7.718058",
         "AME_B_HE3_MEV_VALIDATION",
         "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
       ]
     ],
-    "compound_binding_via_differences.py": [
+    "chirality_weighted_3body_cluster_probe.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.718041",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481793",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
       ]
     ],
-    "connected_magnitude_charge_symmetric.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
+    "codata_truncation_audit.py": [
       [
         "28.295673",
         "AME_B_HE4_MEV_VALIDATION",
         "28.2956624"
       ]
     ],
-    "d_from_scratch.py": [
+    "coefficient_quantisation_reachability_probe.py": [
       [
-        "2.22456612",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ]
-    ],
-    "delta_lambda_binding_full_evaluation.py": [
-      [
-        "28.29567",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.71804",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.48180",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "delta_lambda_borromean_ascaling.py": [
-      [
-        "2.224573",
+        "2.22457",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
       ],
       [
-        "28.295673",
+        "28.2957",
         "AME_B_HE4_MEV_VALIDATION",
         "28.2956624"
       ],
       [
-        "7.718058",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
+        "31.994",
+        "AME_B_LI6_MEV_VALIDATION",
+        "31.9939872"
       ],
       [
-        "8.481821",
+        "39.2451",
+        "AME_B_LI7_MEV_VALIDATION",
+        "39.2450807"
+      ],
+      [
+        "8.4818",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
     ],
-    "delta_lambda_cancellation_ascaling_probe.py": [
+    "concave_deficit_non_exclusion_probe.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
@@ -726,36 +1102,21 @@
         "8.4817962"
       ]
     ],
-    "delta_lambda_categorical_verification.py": [
+    "connected_magnitude_charge_symmetric.py": [
       [
-        "2.22456",
+        "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
       ],
       [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ]
-    ],
-    "delta_lambda_k_star_variance_phase5d_5b.py": [
-      [
-        "2.224566069",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.29567400",
+        "28.295673",
         "AME_B_HE4_MEV_VALIDATION",
         "28.2956624"
-      ],
+      ]
+    ],
+    "delta_lambda_binding_full_evaluation.py": [
       [
-        "7.718042799",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
+        "8.48180",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
@@ -804,7 +1165,24 @@
         "8.4817962"
       ]
     ],
-    "delta_lambda_multi_atom_crosscheck.py": [
+    "deltalambda_bareven_b4_magnitude_probe.py": [
+      [
+        "7.718058",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "deltalambda_binding_a_scaling_probe.py": [
+      [
+        "28.29567",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
       [
         "7.71804",
         "AME_B_HE3_MEV_VALIDATION",
@@ -816,7 +1194,130 @@
         "8.4817962"
       ]
     ],
-    "delta_lambda_qdim_route_probe.py": [
+    "deltalambda_demazure_subcrystal_magnitude_probe.py": [
+      [
+        "7.718058",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "deltalambda_extensivity_gap_synthesis_probe.py": [
+      [
+        "8.48180",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "deltalambda_jet_filtration_magnitude_probe.py": [
+      [
+        "7.718058",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "deltalambda_saturation_det_ceiling_probe.py": [
+      [
+        "7.718058",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "deuteron_interface_colour_weighting_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ]
+    ],
+    "deuteron_real_sdp.py": [
+      [
+        "2.22456607",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ]
+    ],
+    "dynamic_pn_occupancy_probe.py": [
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "family_1_kashaev.py": [
+      [
+        "7.71804",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.48181",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "framed_vs_writhe_normalised_bonds_probe.py": [
+      [
+        "28.2957",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ]
+    ],
+    "gamma_gamma_nn_pn_selection_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ]
+    ],
+    "generate-appendix-table-v2.py": [
+      [
+        "11177.929",
+        "M_C12_ATOMIC_MEV_VALIDATION",
+        "11177.92924464"
+      ],
+      [
+        "3728.401",
+        "M_HE4_ATOMIC_MEV_VALIDATION",
+        "3728.40133075258"
+      ]
+    ],
+    "hbar_q_order_of_binding_observables_probe.py": [
+      [
+        "28.29561",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ]
+    ],
+    "he4_rho_F_cpt_mechanism_refuted.py": [
+      [
+        "28.295674",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ]
+    ],
+    "knot_id_volume_match_adjudication.py": [
+      [
+        "7.718043",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ]
+    ],
+    "l1_ceiling_d_frame_remeasure.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
@@ -838,7 +1339,40 @@
         "8.4817962"
       ]
     ],
-    "delta_lambda_shape_probe.py": [
+    "light_isotope_sweep.py": [
+      [
+        "8.48180",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "low_isotope_binding_sweep.py": [
+      [
+        "31.9941",
+        "AME_B_LI6_MEV_VALIDATION",
+        "31.9939872"
+      ],
+      [
+        "8.4818",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "manybody_sign_by_bond_topology_probe.py": [
+      [
+        "28.295661",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ]
+    ],
+    "mass_at_3A_proper.py": [
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "mu3_target_robustness_audit_probe.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
@@ -860,354 +1394,62 @@
         "8.4817962"
       ]
     ],
-    "deuteron_real_sdp.py": [
-      [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ]
-    ],
-    "family_1_kashaev.py": [
-      [
-        "7.71804",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.48181",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "fr_pullback_borromean_h3a_test.py": [
-      [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ]
-    ],
-    "fr_pullback_k3_test.py": [
-      [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ]
-    ],
-    "gap_a1_binding_k_sdp_feasibility.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ]
-    ],
-    "log_delta_categorical_derivation.py": [
-      [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "log_delta_full_mass_subtract.py": [
-      [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "log_delta_per_depth_binding.py": [
-      [
-        "2.22456607",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.7180428",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "magic_A_formula.py": [
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ]
-    ],
-    "mass_at_3A_proper.py": [
-      [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.71804",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481821",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "mass_formula_6term.py": [
-      [
-        "2.22456612",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "7.7180375",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.4817984",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "mass_table_comprehensive.py": [
-      [
-        "28.2957",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.71804",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481821",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
     "multi_level_jet_sum.py": [
       [
-        "28.295674",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "7.71804",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
         "8.481821",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
     ],
-    "multiterm_cost_deuteron_hopf_probe.py": [
+    "pairwise_magnitude_gap_probe.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
       ]
     ],
-    "option_e_a4_full_reconciliation.py": [
+    "paper_six_term_isotope_sweep.py": [
       [
-        "28.295660",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
+        "1876.124",
+        "M_D_ATOMIC_MEV_VALIDATION",
+        "1876.12393035366"
+      ],
+      [
+        "2809.413",
+        "M_HE3_ATOMIC_MEV_VALIDATION",
+        "2809.41353006168"
+      ],
+      [
+        "2809.432",
+        "M_T_ATOMIC_MEV_VALIDATION",
+        "2809.43212207852"
+      ],
+      [
+        "3728.401",
+        "M_HE4_ATOMIC_MEV_VALIDATION",
+        "3728.40133075258"
+      ],
+      [
+        "5603.052",
+        "M_LI6_ATOMIC_MEV_VALIDATION",
+        "5603.05150278295"
       ]
     ],
-    "option_e_canonical_reeb_v5.py": [
+    "path_b_habiro_mass_probe.py": [
       [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
+        "1876.12393",
+        "M_D_ATOMIC_MEV_VALIDATION",
+        "1876.12393035366"
       ],
       [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
+        "2809.41347",
+        "M_HE3_ATOMIC_MEV_VALIDATION",
+        "2809.41353006168"
       ],
       [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "option_e_deuteron_delta_lambda_probe_v2.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ]
-    ],
-    "option_e_deuteron_param_free_residual.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ]
-    ],
-    "option_e_multi_isotope_delta_lambda_probe_v3.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "option_e_probe1_derive_1plusq_over_2.py": [
-      [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "option_e_q_reeb_phase_probe_v4.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "option_e_v6_combined_canonical.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "option_e_v7_involution_aware.py": [
-      [
-        "2.224566",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "option_e_v8_hecke_involution_isospin_mirror.py": [
-      [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
-      ]
-    ],
-    "option_e_v9_all_symmetries.py": [
-      [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ],
-      [
-        "8.481798",
-        "AME_B_TRITIUM_MEV_VALIDATION",
-        "8.4817962"
+        "2809.43215",
+        "M_T_ATOMIC_MEV_VALIDATION",
+        "2809.43212207852"
       ]
     ],
     "per_atom_rho_deviation.py": [
@@ -1218,11 +1460,6 @@
       ],
       [
         "28.2956912",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
-        "28.2957",
         "AME_B_HE4_MEV_VALIDATION",
         "28.2956624"
       ],
@@ -1244,26 +1481,25 @@
         "2.2245662"
       ]
     ],
-    "probe_9b_perlambda_brane_tower.py": [
-      [
-        "2.224573",
-        "AME_B_DEUTERON_MEV_VALIDATION",
-        "2.2245662"
-      ],
-      [
-        "28.295673",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
+    "perknot_pn_bond_mayer_grounding_probe.py": [
       [
         "7.718058",
         "AME_B_HE3_MEV_VALIDATION",
         "7.71804132"
-      ],
+      ]
+    ],
+    "phase3c_a5_a7_knot_volume_targets.py": [
       [
         "8.481821",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
+      ]
+    ],
+    "pn_writhe_is_not_an_exponent_probe.py": [
+      [
+        "28.2957",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
       ]
     ],
     "probe_isospin_mirror_v9_generalization.py": [
@@ -1285,11 +1521,6 @@
     ],
     "probe_q6j_jm_spectral_delta_lambda.py": [
       [
-        "28.29566",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
         "8.4818",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
@@ -1297,72 +1528,115 @@
     ],
     "probe_volume_wedderburn_delta_lambda.py": [
       [
-        "28.29566",
-        "AME_B_HE4_MEV_VALIDATION",
-        "28.2956624"
-      ],
-      [
         "8.4818",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
     ],
-    "r5_full_canonical_knot_solver.py": [
+    "qbessel_qdeformed_reeb_scale.py": [
+      [
+        "2.224573",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ]
+    ],
+    "qbessel_reeb_flow_radial_forced.py": [
+      [
+        "2.224573",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ]
+    ],
+    "qbessel_reeb_order_justification.py": [
+      [
+        "2.224573",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ]
+    ],
+    "qbessel_reeb_yweighted_gap.py": [
+      [
+        "2.224573",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ]
+    ],
+    "qbeta_derived_w_overdetermined_test_probe.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
       ],
       [
-        "7.71806",
-        "AME_B_HE3_MEV_VALIDATION",
-        "7.71804132"
-      ]
-    ],
-    "rho_k_counit_defect_form.py": [
-      [
-        "28.29567",
+        "28.295673",
         "AME_B_HE4_MEV_VALIDATION",
         "28.2956624"
       ],
       [
-        "7.71804",
+        "7.718043",
         "AME_B_HE3_MEV_VALIDATION",
         "7.71804132"
       ],
       [
-        "8.48180",
+        "8.481798",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
     ],
-    "rho_k_counit_isotope_systematics.py": [
+    "qbeta_extensivity_is_the_failure_probe.py": [
       [
-        "28.29567",
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.295673",
         "AME_B_HE4_MEV_VALIDATION",
         "28.2956624"
       ],
       [
-        "7.71804",
+        "7.718043",
         "AME_B_HE3_MEV_VALIDATION",
         "7.71804132"
       ],
       [
-        "8.48180",
+        "8.481798",
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
     ],
-    "rho_w_crystal_vertex_trace.py": [
+    "qbeta_interface_w_deciding_test_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.295673",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
+      [
+        "7.718043",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481798",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "qbeta_l1_ceiling_is_one_point_of_a_family_probe.py": [
       [
         "2.224566",
         "AME_B_DEUTERON_MEV_VALIDATION",
         "2.2245662"
       ]
     ],
-    "unified_lift.py": [
+    "rho_binding_constancy_probe.py": [
       [
-        "7.71804",
+        "7.718058",
         "AME_B_HE3_MEV_VALIDATION",
         "7.71804132"
       ],
@@ -1371,22 +1645,185 @@
         "AME_B_TRITIUM_MEV_VALIDATION",
         "8.4817962"
       ]
+    ],
+    "rho_f_vol_binding_dashboard.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.295673",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
+      [
+        "7.718058",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "the_all_pairs_closure_is_not_one_link_probe.py": [
+      [
+        "28.2957",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ]
+    ],
+    "the_character_ratio_derivation_path_is_the_bond_model_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.295662",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
+      [
+        "7.718041",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481796",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "28.295662",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ],
+      [
+        "7.718041",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481796",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "toroidal_harmonics.py": [
+      [
+        "28.29566",
+        "AME_B_HE4_MEV_VALIDATION",
+        "28.2956624"
+      ]
+    ],
+    "two_nucleon_binding_law_comparison_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ]
+    ],
+    "type_weighted_chain_ratio_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "7.718043",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481798",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "unified-mass-molecular.py": [
+      [
+        "11177.930",
+        "M_C12_ATOMIC_MEV_VALIDATION",
+        "11177.92924464"
+      ]
+    ],
+    "unified_lift.py": [
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "w3_closeability_audit.py": [
+      [
+        "7.718058",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481821",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
+    "wedderburn_beta3_vs_hA2_discrimination.py": [
+      [
+        "11177.9292",
+        "M_C12_ATOMIC_MEV_VALIDATION",
+        "11177.92924464"
+      ],
+      [
+        "3728.4013",
+        "M_HE4_ATOMIC_MEV_VALIDATION",
+        "3728.40133075258"
+      ]
+    ],
+    "witness_value_copy_audit.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ]
+    ],
+    "wlambda_level_selection_kA_probe.py": [
+      [
+        "31.994",
+        "AME_B_LI6_MEV_VALIDATION",
+        "31.9939872"
+      ],
+      [
+        "39.245",
+        "AME_B_LI7_MEV_VALIDATION",
+        "39.2450807"
+      ]
     ]
   },
   "counts": {
-    "safe_routes": 4,
-    "safe_files": 4,
-    "unsafe_near_matches": 232,
-    "unsafe_files": 84
+    "safe_routes": 11,
+    "safe_files": 5,
+    "unsafe_near_matches": 200,
+    "unsafe_files": 95
   },
   "note": "Routing + per-file run-verification (the fvxq value-preservation discipline) is infra-gated in some sandboxes: many target files import pyhecke_native (buildable, ~42s) or have pre-existing runtime errors. This triage (pure string compare) runs anywhere and is the roadmap.",
   "bean": "fvxq",
   "sibling": "claude/fvxq-atomic-mass-registry-2026-06-21",
-  "scriptHash": "0871f163ad2c",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "b860526b7601f1a3fed649619dd7950ed8afc73e",
+  "scriptFile": "ame_registry_routing_triage.py",
+  "scriptHash": "bb11eb2291c7",
+  "scriptCommitSha": "f6ee5224525b1a6ffa314b20e487a7c28d7f3a10",
+  "commitSha": "010553187eeb0a50ccb9bb710560baf1376a37b2",
   "engine": "python",
-  "computedAt": "2026-07-18T18:17:57.513199+00:00",
+  "computedAt": "2026-11-20T15:46:12.880354+00:00",
   "durationMs": 0,
-  "scriptFile": "ame_registry_routing_triage.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

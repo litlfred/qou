@@ -1,1 +1,0 @@
-To do so, we must prove that the object: (5.18) 0 q.i.s. ∼= A0 = A (z, w) on FHilb2 goes to −−−→ ι∗(A0) h.e. ∼= 0 in SBim2 To compute the image of A0 under ι∗, we need to resolve this object in terms of free A modules.

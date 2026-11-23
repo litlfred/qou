@@ -4,20 +4,21 @@ export default proposition({
   label: "prop:noble-gas-characterization",
   lean: { ref: "qou:QOU.Archimedean.noble_gas_characterization", validation: "not_checked" },
   title:
-    "Noble gas characterization: full shell as full curls",
+    "Noble gas characterization: a full shell has no free linking site",
   tags: [
     "noble-gas",
     "hopf-link",
     "sub-link",
-    "trefoil",
+    "braid-word",
     "closed-shell",
-    "curl",
+    "linking-site",
     "helium",
     "neon",
     "argon",
   ],
   uses: ["rem:helium-hopf-diagram"],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Electron ruling (owner choice 2026-11-21, 'rebuild the rest on sigma_0 sigma_1 sigma_0'; issue #8822): rebuilt on the electron word sigma_0 sigma_1 sigma_0 in B_3, whose closure is the Hopf link. Photon absorption is the strand-adding curl (Markov stabilisation), so the level is n = w - 2 (QOU.BraidKnot.ElectronLevelWord). Where a statement was built on the trefoil's own geometry it is now stated as not re-derived; the trefoil is kept as the backup reading." },
     {
       kind: "caveat",
       date: "2026-06-16",

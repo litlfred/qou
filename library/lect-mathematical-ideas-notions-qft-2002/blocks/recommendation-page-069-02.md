@@ -1,1 +1,0 @@
-Although in the fermionic case we don’t need measure theory (as integration is completely algebraic), we still have trouble defining the integral: recall that by definition the integral should the top coefficient of the integrand as the element of AD(R), which makes no sense since in the exterior algebra of an infinite dimensional space there is no top component.

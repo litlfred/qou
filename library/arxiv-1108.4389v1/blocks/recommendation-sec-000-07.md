@@ -1,1 +1,0 @@
-- The partition function of $T[M,\mathfrak{g}]$ on an ellipsoid $S^3_b$, as in [@HHL], should coincide with the (analytically continued) $\mathfrak{g}$ Chern-Simons partition function on $M$.

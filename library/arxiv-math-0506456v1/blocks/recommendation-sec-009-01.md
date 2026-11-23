@@ -1,1 +1,0 @@
-The $\beta$--curve should be a piecewise smooth curve $\beta(s)$ starting at zero such that \begin{equation}\label{eq:betany} e^{2\pi i\beta(s)} = \lambda_{11}(e^{2\pi i\alpha(s)},u(s)) \end{equation} for $s \in [0,1]$.

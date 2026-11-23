@@ -3,23 +3,40 @@ import Mathlib.Data.Int.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Data.List.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import QOU.MathlibExt.OcneanuChainFactorisation
 
 /-!
 # QOU.Hecke.MarkovTraceProduct — Product factorization of the Markov trace
 
-The Markov trace of a braid β ∈ B_n factors as a product over generators:
+For any genuine Markov (Ocneanu) trace `T` and an **ascending** word with one
+affine letter `a_i σ_i + b_i` per generator, used once each in increasing
+order, the trace factors as a product over generators:
 
-  tr_M(ρ(β)) = ∏_{i=0}^{n-2} V̂_i(q)
+  tr_M((a_n σ_n + b_n) ⋯ (a_{n+k-1} σ_{n+k-1} + b_{n+k-1})) = ∏ V̂_i,
 
-where V̂_i(q) = z · a_i + b_i is the vertex volume at generator σ_i.
-This follows from the Markov property applied recursively to the
-rightmost active generator.
+where V̂_i = z · a_i + b_i is the vertex volume. This follows from the Markov
+property applied recursively to the rightmost letter
+(`QOU.MathlibExt.OcneanuTrace.MarkovTrace.tr_chainWord`).
+
+**Scope.** This holds for ascending words only. For a general braid word the
+factorisation is false: a Markov trace is not multiplicative over generators.
+
+**History (bean `qou-ltwg`, owner options 2 + 3, 2026-11-20).** Until this
+date the statement here was conditional on a class `MarkovTraceAxioms z`. That
+class's two axioms were exactly the recursion defining `chainProduct`, so
+`⟨chainProduct z, rfl, fun _ _ => rfl⟩` inhabited it and the "factorisation"
+held by definition. The record `MarkovTraceProduct`, which stored a
+`traceValue` defined as the product it then claimed equal to the product, was
+removed for the same reason. The theorems below take a real trace `T` on a real
+algebra `A` instead. The `index` field of `GeneratorChain` is not used by them:
+a chain list is placed on consecutive generators, in list order.
 
 **Pre-Archimedean (formal-chain) version.**  Lives under
 `lean/QOU/` and is compiled by `lake build`.  Polymorphic in the
 ground ring `R_q = ℤ[q^±1]` (Laurent polynomials) per
 `QOU.GroundRingAnnotations`.  The co-located documentation stub at
-`braids-and-knots/markov-trace-product.lean` mirrors this content.
+`mass-theory/markov-trace-product.lean` duplicated this content under
+`QOU.Braiding` until 2026-11-20 and was removed.
 
 LaTeX label: `thm:markov-trace-product`
 
@@ -50,85 +67,15 @@ structure GeneratorChain where
   /-- Constant term after Hecke reduction. -/
   b : R_q
 
-/-- The vertex volume at generator σ_i:
-    `V̂_i(q) = z · a_i + b_i`
-    where z = 1/(q^{1/2} + q^{-1/2}) is the Markov trace parameter. -/
+/-- The vertex volume at generator σ_i: `V̂_i = z · a_i + b_i`, for the
+    abstract Markov parameter `z` (convention-neutral). -/
 noncomputable def vertexVolume (z : R_q) (gc : GeneratorChain) : R_q :=
   z * gc.a + gc.b
 
-/-! ## Markov-trace axioms + product factorization -/
-
-/-- **Markov-trace axioms** (cons form, equivalent to the snoc form
-    under commutativity of `R_q`). -/
-class MarkovTraceAxioms (z : R_q) where
-  trace : List GeneratorChain → R_q
-  trace_nil : trace [] = 1
-  trace_cons : ∀ (c : GeneratorChain) (cs : List GeneratorChain),
-    trace (c :: cs) = vertexVolume z c * trace cs
-
-/-- The product of vertex volumes over a chain list, defined
-    recursively to mirror the cons-form Markov axiom. -/
+/-- The product of vertex volumes over a chain list. -/
 noncomputable def chainProduct (z : R_q) : List GeneratorChain → R_q
   | [] => 1
   | c :: cs => vertexVolume z c * chainProduct z cs
-
-/-! ## Product factorization theorem -/
-
-/-- The product factorization of the Markov trace as a structure
-    record (existence form). -/
-structure MarkovTraceProduct where
-  n : ℕ
-  q : R_q
-  z : R_q
-  z_ne_zero : z ≠ 0
-  chains : Fin (n - 1) → GeneratorChain
-  traceValue : R_q
-  factorization : traceValue =
-    Finset.univ.prod (fun i => vertexVolume z (chains i))
-
-/-- **Existence of the product factorization** (record-construction form). -/
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
--- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
---      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
---      DOI: 10.1007/978-1-4612-0783-2
-theorem markov_trace_product
-    (z : R_q) (hz : z ≠ 0)
-    (n : ℕ) (q : R_q)
-    (chains : Fin (n - 1) → GeneratorChain) :
-    ∃ (mtp : MarkovTraceProduct),
-      mtp.n = n ∧ mtp.q = q ∧
-      mtp.traceValue =
-        Finset.univ.prod (fun i => vertexVolume mtp.z (mtp.chains i)) :=
-  ⟨{
-    n := n
-    q := q
-    z := z
-    z_ne_zero := hz
-    chains := chains
-    traceValue := Finset.univ.prod (fun i => vertexVolume z (chains i))
-    factorization := rfl
-  }, rfl, rfl, rfl⟩
-
-/-- **Strengthened theorem (Markov-property product factorization,
-    list form).**  Under the `MarkovTraceAxioms` typeclass, the
-    trace of any chain-list factors as the product of vertex
-    volumes (computed by `chainProduct`). -/
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
-theorem markov_trace_product_recursion
-    {z : R_q} [inst : MarkovTraceAxioms z]
-    (chains : List GeneratorChain) :
-    MarkovTraceAxioms.trace (z := z) chains = chainProduct z chains := by
-  induction chains with
-  | nil =>
-    rw [MarkovTraceAxioms.trace_nil, chainProduct]
-  | cons c cs ih =>
-    rw [MarkovTraceAxioms.trace_cons, chainProduct, ih]
 
 /-- **Concatenation of chain products** (pure list lemma). -/
 theorem chainProduct_append (z : R_q) (cs ds : List GeneratorChain) :
@@ -137,6 +84,52 @@ theorem chainProduct_append (z : R_q) (cs ds : List GeneratorChain) :
   | nil => simp [chainProduct]
   | cons c cs ih =>
     simp [chainProduct, ih, mul_assoc]
+
+/-- The zero chain, used as the out-of-range default. -/
+def GeneratorChain.zero : GeneratorChain := ⟨0, 0, 0⟩
+
+/-- `chainProduct` as a product over list positions. -/
+theorem chainProduct_eq_prod_range (z : R_q) (cs : List GeneratorChain) :
+    chainProduct z cs
+      = ∏ i ∈ Finset.range cs.length, vertexVolume z (cs.getD i GeneratorChain.zero) := by
+  induction cs with
+  | nil => simp [chainProduct]
+  | cons c cs ih =>
+    rw [chainProduct, ih, List.length_cons, Finset.prod_range_succ', mul_comm]
+    simp
+
+variable {A : Type*} [Ring A] [Algebra R_q A]
+
+/-- The ascending affine word of a chain list, placed on the consecutive
+    generators `σ_n, σ_{n+1}, …` of the tower of `T`. -/
+noncomputable def chainListWord (T : QOU.MathlibExt.OcneanuTrace.MarkovTrace R_q A)
+    (cs : List GeneratorChain) (n : ℕ) : A :=
+  T.chainWord (fun m => (cs.getD (m - n) GeneratorChain.zero).a)
+    (fun m => (cs.getD (m - n) GeneratorChain.zero).b) n cs.length
+
+/-- **Product factorisation of the Markov trace** on an ascending chain word,
+    for every genuine Markov trace `T`:
+
+      `tr_M(chainListWord T cs n) = ∏_{c ∈ cs} (z · a_c + b_c) = chainProduct z cs`.
+
+    Proved from the Markov stabilisation axiom of `T`, not assumed. -/
+-- Ref: [jones1987] §5 (The Markov trace)
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+theorem markov_trace_product (T : QOU.MathlibExt.OcneanuTrace.MarkovTrace R_q A)
+    (cs : List GeneratorChain) (n : ℕ) :
+    T.tr (chainListWord T cs n) = chainProduct T.z cs := by
+  rw [chainListWord, T.tr_chainWord, chainProduct_eq_prod_range]
+  refine Finset.prod_congr rfl (fun i _ => ?_)
+  simp only [Nat.add_sub_cancel_left, vertexVolume]
+  ring
+
+/-- **Concatenation** (the real content of the removed `markov_trace_append`):
+    for two chain lists placed one after the other, the trace is the product of
+    the two chain products. -/
+theorem markov_trace_append (T : QOU.MathlibExt.OcneanuTrace.MarkovTrace R_q A)
+    (cs ds : List GeneratorChain) (n : ℕ) :
+    T.tr (chainListWord T (cs ++ ds) n) = chainProduct T.z cs * chainProduct T.z ds := by
+  rw [markov_trace_product, chainProduct_append]
 
 end
 

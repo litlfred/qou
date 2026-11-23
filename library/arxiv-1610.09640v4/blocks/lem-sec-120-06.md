@@ -1,0 +1,1 @@
+Let A, B, C be rings; let M1, M2 ∈D(A); let N1 ∈D(B); and let N2 ∈D(B ⊗C). There is a morphism θ : RHomA(M1, M2) ⊗RHomB(N1, N2) →RHomA⊗B(M1 ⊗N1, M2 ⊗N2) in D(C), which is functorial in these complexes. If M1 is derived pseudo-ﬁnite over A, N1 is derived pseudo-ﬁnite over B, and the complexes M2 and N2 have bounded below cohomologies, then θ is an isomorphism.

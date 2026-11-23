@@ -1,1 +1,0 @@
-In the graded setting (mixed perverse sheaves for example), the left and right actions of $B_W$ should be swapped by the self-Koszul duality equivalence, cf [@BerFreKhov] (and [@BeiGi Conjecture 5.18] for an analog in the equivariant case).

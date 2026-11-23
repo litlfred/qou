@@ -1,1 +1,0 @@
-\paragraph{Adding crossing transformations.} Once we have added a new topology $M$ that was obtained using cylinder surgery, such as the $\mathbf{4}_1$ handlebody-knot in \eqref{eq:4_1 from surgery}, we must also include its sum over mapping class group images in order to preserve crossing symmetry.

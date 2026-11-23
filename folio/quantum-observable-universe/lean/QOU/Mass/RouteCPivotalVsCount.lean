@@ -104,4 +104,11 @@ theorem ordinary_partial_trace_scalar_iff (q : K) (hq : q ≠ 0) :
         _ = q := by field_simp
     rw [hinv]; ring
 
+
+/-- **Agreement of `zJ` and `zD` at `q = 1` (`qou-7p7d`).**
+Over any field with `(2 : K) ≠ 0` and `(4 : K) ≠ 0`, `zJ (1 : K) = zD (1 : K)`. -/
+theorem zJ_one_eq_zD_one (h2 : (2 : K) ≠ 0) (h4 : (4 : K) ≠ 0) :
+    zJ (1 : K) = zD (1 : K) := by
+  rw [zJ_one h2 h4, zD_one]
+
 end QOU.Mass.RouteCPivotalVsCount

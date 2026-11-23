@@ -1,1 +1,0 @@
-In this case, we should think not of a single particle, but of a “continuum of particles” (e.g. a string, a membrane, a jet of fluid); so the motion is described by a classical field — a (vector) function ¢(z,t) depending on both space and time coordinates (a € R?, ¢ € R).

@@ -1,1 +1,0 @@
-We shall be dealing with functions of the form \[\Phi_\rr\colon \bH_\rr\to \bT.\] Composing with the twisted characters of $\bT$ we can equivalently consider functions \[\Phi_{\rr,\gamma}\colon \bH_\rr\to \bC^*,\qquad \Phi_{\rr,\gamma}(t)=x_\gamma(\Phi_\rr(t)).\]

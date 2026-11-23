@@ -1,1 +1,0 @@
-We should point out that this section is *not* analytically rigorous, but serves as a motivation for our definition of the all-loop invariants, and provides a glimpse into the calculus of (complex, finite dimensional) state-integrals.

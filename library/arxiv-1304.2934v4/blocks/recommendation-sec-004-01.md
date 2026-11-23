@@ -1,1 +1,0 @@
-As we shall see later, some assumptions can be removed in some of our results (\emph{e.g.}, the infinite-divisibility of the reference law), but Definition \ref{def:modphi} provides a coherent setting where all the techniques presented in the paper do apply without further verification.

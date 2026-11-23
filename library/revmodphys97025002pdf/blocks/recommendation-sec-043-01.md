@@ -1,1 +1,0 @@
-In view of the discrepancy and ongoing work seeking an explanation, the TGFC has decided not to include theoretical input for the recommended value of the muon magnetic- moment anomaly, so it is based on the experimental val- ues only.

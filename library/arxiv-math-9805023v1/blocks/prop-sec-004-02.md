@@ -1,0 +1,1 @@
+For |y| < 1, l ∈Z, we have ∞ X k=−∞ yk (aqk/b; q)∞ (qk+1; q)∞1ϕ1 aqk/b qk+1 ; q, y  (qk−l+1; q)∞1ϕ1 dqk−l+1/y qk−l+1 ; q, y  =    0, for l < 0, dl (ay/(bd); q)l(d, q, q; q)∞ (q; q)l(a/b; q)∞ , for l ≥0.

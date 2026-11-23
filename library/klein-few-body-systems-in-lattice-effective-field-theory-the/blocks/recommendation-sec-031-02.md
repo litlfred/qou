@@ -1,1 +1,0 @@
-While the aforementioned overbinding of 4He on coarse lattices results in correlation points relatively far oﬀthe Tjon band, the binding energies for triton and helium-4 should get closer to this band or already be on top of it once the lattice spacing is chosen small enough.

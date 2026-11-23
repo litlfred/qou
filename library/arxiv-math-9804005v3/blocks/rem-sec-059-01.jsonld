@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/rem-sec-059-01",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 33,
+  "pageEnd": 33,
+  "text": "rem-sec-059-01.md",
+  "derivedFrom": "library/arxiv-math-9804005v3/sections/sec-059",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.6",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-059-3-by-the-proof-of-part-2-given-a-ﬁnitely-generat.md (p. 33-33)",
+    "claim_id": "arxiv-math-9804005v3#remark:6.6"
+  }
+}

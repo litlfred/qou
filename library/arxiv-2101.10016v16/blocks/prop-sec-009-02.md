@@ -1,1 +1,1 @@
-If R is an R-matrix for A then
+If R is an R-matrix for A then a) Rop := R21 is an R-matrix for Aop, b) if A is a ∗-algebra, R˜ := R∗−1 is an R-matrix for A˜, c) if F ∈ A ⊗ A is a twist, RF := F21RF −1is an R-matrix for AF , d) R −1 21 is another R-matrix for A.

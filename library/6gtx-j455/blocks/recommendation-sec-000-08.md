@@ -1,1 +1,0 @@
-Here, we define a ’t Hooft–like coupling constant, λtH ≡λ0N =ð4πÞ2, which is the key quantity in assessing the strength of the loop corrections when N ≫1; the 1-loop approximation is under control so long as λ ≲λ0 and λtH ≲1, so λ0 must be sufficiently small at large N .

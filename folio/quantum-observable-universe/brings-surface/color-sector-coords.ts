@@ -3,6 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   authorNotes: [
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The three sectors correspond to the three copies of $S_3 \\subset S_5$ in [chirality and trefoil](#rem:chirality-trefoil): $\\mathfrak{r}$ constitutes the first, $\\mathfrak{g}$ the second, and $\\mathfrak{b}$ the third." },
   ],
   label: "def:color-sector-coords",
   lean: { ref: "qou:QOU.ColorSectorCoords", validation: "not_checked" },

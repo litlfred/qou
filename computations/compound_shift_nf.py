@@ -435,12 +435,12 @@ def _scipy_discover_active_set(t_mp, G_mp, n_target_mp,
     NUMERIC values are recomputed in mpmath; scipy here only chooses
     the active basis.
     """
-    import numpy as np
-    from scipy.optimize import linprog
-    t_f = np.array([float(v) for v in t_mp], dtype=float)
-    G_f = np.array([[float(G_mp[i, j]) for j in range(6)] for i in range(6)],
+    import numpy as np  # float64-ok: discrete active-set oracle only; numeric values recomputed in mpmath
+    from scipy.optimize import linprog  # float64-ok: discrete active-set oracle only
+    t_f = np.array([float(v) for v in t_mp], dtype=float)  # float64-ok: discrete active-set oracle input
+    G_f = np.array([[float(G_mp[i, j]) for j in range(6)] for i in range(6)],  # float64-ok: discrete active-set oracle input
                    dtype=float)
-    n_target_f = float(n_target_mp)
+    n_target_f = float(n_target_mp)  # float64-ok: discrete active-set oracle input
 
     res = linprog(
         c=t_f,
@@ -632,6 +632,14 @@ class CompoundShiftResult:
     lp_dual_obj: object
     lp_duality_gap: object
     delta_cross_lp_bound: int
+
+    @property
+    def categorical_mass(self) -> object:
+        """Backward-compatible alias for `nf_trace_pairing` (renamed 2026-09-06,
+        bean qou-zgg2); kept so probes comparing the legacy field against the
+        canonical p(3A) trace (`nf_categorical_mass_vs_canonical_trace_probe.py`)
+        continue to resolve."""
+        return self.nf_trace_pairing
 
 
 def per_component_naive_sum(Z: int, N: int) -> tuple[int, dict]:

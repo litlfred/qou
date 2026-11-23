@@ -1,1 +1,0 @@
-Consequently, our model yields charge values of +e and −e, respectively, as it should, and twist values of 0 for both, also as it should if we associate twist with isospin as discussed in the previous discussion.

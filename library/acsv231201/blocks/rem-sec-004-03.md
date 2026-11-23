@@ -1,0 +1,1 @@
+It is possible that c j = 0 for all j. For example, this will happen if gj(n) = n−j and f is exponentially decaying. In this case there is no leading term in the expansion. Otherwise, the leading term of an asymptotic expan- sion is the ﬁrst non-zero term ckgk in the expansion.

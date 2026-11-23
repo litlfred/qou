@@ -1,1 +1,0 @@
-Finally, we should prove that the relative invariant is independent of the Je, which more accurately means that it commutes with the canonical isomorphisms between Floer cohomology groups for diﬀerent Je.

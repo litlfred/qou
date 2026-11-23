@@ -53,6 +53,7 @@ from codata_constants import M_E_MEV  # noqa: E402 — CAL-1 anchor
 from canonical_mass import proton_mass_mev, neutron_mass_mev  # noqa: E402
 from hecke_core import atom_per_generator_volumes  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import M_C12_ATOMIC_MEV_VALIDATION, M_HE4_ATOMIC_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 set_compute_dps()
 
@@ -97,11 +98,11 @@ def atom_mass_graded(Z: int, N: int) -> dict:
 # formula).
 OBS_TABLE = [
     (1, "H", 1, 938.783),
-    (2, "He", 4, 3728.401),
+    (2, "He", 4, float(M_HE4_ATOMIC_MEV_VALIDATION)),
     (3, "Li", 7, 6535.367),
     (4, "Be", 9, 8394.794),
     (5, "B", 11, 10255.103),
-    (6, "C", 12, 11177.929),
+    (6, "C", 12, float(M_C12_ATOMIC_MEV_VALIDATION)),
     (7, "N", 14, 13043.782),
     (8, "O", 16, 14899.169),
     (9, "F", 19, 17696.901),

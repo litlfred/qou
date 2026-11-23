@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1011.1343v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "7d50e5e28e695191d428fcf590d6efd7a20aca17255c1eac85ea41aacd4fe8b9",
   "file": "1011.1343v1.pdf"
@@ -16,46 +19,89 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
+  "candidates": 3,
   "by_kind": {
-   "recommendation": 2
+   "proposition": 3
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 3
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "It is worth quoting from Ref. [@Rho:1981zi]: \"\\... that there must exist an intimate connection between what makes up a hadron and what induces a rich variety of interactions between hadrons. \\..., it will be rather unlikely one will gain a full understanding of one without the other.\" Only then too much emphasis was put onto the quark structure of the nucleon - as we understand now, low-energy QCD is well approximated by an hadronic effective Lagrangian.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-the-early-days-at-stony-brook.md",
-   "section_title": "The early days at Stony Brook",
-   "pages": "1-2",
+   "statement": "Right panel: Nuclear phase diagram as accessible by lattice QCD and by nuclear lattice EFT.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md (p. 13-15)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md",
+   "section_title": "Flash forward: Combining nuclear EFT with lattice simulations",
+   "pages": "13-15",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md (p. 13-15)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-008-01",
+   "block_iri": "library/arxiv-1011.1343v1/blocks/prop-sec-008-01",
+   "claim_id": "arxiv-1011.1343v1#prop-sec-008-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "He immediately realized that these must be related to the much discussed mechanism for the short-range repulsion of the nuclear forces.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-flashback-the-texas-revolution.md",
-   "section_title": "Flashback: The Texas revolution",
-   "pages": "4-7",
+   "statement": "It is important to stress that the approximate Wigner SU(4) symmetry of the nuclear interactions strongly suppresses the sign oscillations and thus makes such nuclear lattice simulations easier to handle than lattice QCD calculations.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md (p. 13-15)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md",
+   "section_title": "Flash forward: Combining nuclear EFT with lattice simulations",
+   "pages": "13-15",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md (p. 13-15)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-008-02",
+   "block_iri": "library/arxiv-1011.1343v1/blocks/prop-sec-008-02",
+   "claim_id": "arxiv-1011.1343v1#prop-sec-008-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Eventually, lattice QCD might also contribute significantly - but there are still quite a few obstacles to be overcome, see e.g [@Beane:2009mb].",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-009-6-some-final-words.md (p. 15-19)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-009-6-some-final-words.md",
+   "section_title": "Some final words",
+   "pages": "15-19",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-009-6-some-final-words.md (p. 15-19)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-009-01",
+   "block_iri": "library/arxiv-1011.1343v1/blocks/prop-sec-009-01",
+   "claim_id": "arxiv-1011.1343v1#prop-sec-009-01"
   }
  ]
 }

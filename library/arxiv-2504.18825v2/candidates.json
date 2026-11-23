@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2504.18825v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "829f97190cb1c8adcc6c5fcfa347fc73b8fb5100ad16b2b8d8e2653c0a5d78a0",
   "file": "2504.18825v2.pdf"
@@ -16,61 +19,80 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
+  "candidates": 2,
   "by_kind": {
-   "recommendation": 3
+   "lemma": 2
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
    "name": null,
-   "statement": "In this case, then each box in $\\la/\\mu$ satisfies one of the following (see Fig. \\ref{F:hv}): \\begin{enumerate}[label={(\\roman*)}] \\item There is a box of $\\la/\\mu$ immediately to the left (labeled by $h$); \\item There is a box of $\\la/\\mu$ immediately below it (labeled by $v$); \\item Neither (i) nor (ii) holds (labeled by $*$). \\end{enumerate} \\begin{figure} \\begin{tikzpicture}[scale = 0.4] \\draw [thick] (0,0) -| (1,3) -| (6,6) -| (9,7) -| (10,8) -| (15,9) -- (0,9) -- (0,0); \\draw [thick] (0,3) -- (2,3); \\draw [thick] (5,3) |- (9,7); \\draw[thick] (10,8) -- (10,9); \\begin{scope} \\clip (0,0) -| (1,3) -- (0,3) -- (0,0); \\draw [color=black!85] (0,0) grid (1,3); \\end{scope} \\begin{scope} \\clip (5,3) -| (6,6) -| (9,7) -- (5,7) -- (5,3); \\draw [color=black!85] (5,3) grid (9,7); \\end{scope} \\begin{scope} \\clip (10,8) -| (15,9) -- (10,9) -- (10,8); \\draw [color=black!85] (10,8) grid (15,9); \\end{scope} \\node [inner sep=2pt] at (0.5,0.5) { $*$}; \\node [inner sep=2pt] at (0.5,1.5) { $v$}; \\node [inner sep=2pt] at (0.5,2.5) { $v$}; \\node [inner sep=2pt] at (5.5,3.5) { $*$}; \\node [inner sep=2pt] at (5.5,4.5) { $v$}; \\node [inner sep=2pt] at (5.5,5.5) { $v$}; \\node [inner sep=2pt] at (5.5,6.5",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck.md",
-   "section_title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
-   "pages": "12-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "1. Let \u03c8\u03bb be the irreducible character of the Hecke algebra in type A indexed by \u03bb. Suppose \u03bb, \u00b5 are two multipartitions of n. Then we have \u03c7\u03bb \u00b5 = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) m Y i=1 \u03c8\u03bb(i) \u2212 \u2192c i(M), (A.1) summed over all m-multimatrices M such that the j-th row sum of M (r) equals \u00b5(r) j and |ci(M)| = |\u03bb(i)|.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md (p. 49-51)",
+   "external_refs": [],
+   "proof_excerpt": "This can be derived by the following calculations. \u03c7\u03bb \u00b5 = \u27e8q\u00b5, s\u03bb\u27e9\u2297 = * qn (q \u2212q\u22121)l(\u00b5) X M uMqM(x; q\u22122), s\u03bb + \u2297 (by (8.8)) 50 NAIHUAN JING AND NING LIU = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) * m Y i=1 q|ci(M)| (q \u2212q\u22121)l(ci(M))qci(M)(x(i); q\u22122), m Y i=1 s\u03bb(i)(x(i)) + \u2297 = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) m",
+   "section_file": "sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md",
+   "section_title": "Appendix A. An alternative proof of Corollary 6.3",
+   "pages": "49-51",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md (p. 49-51)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-01",
+   "block_iri": "library/arxiv-2504.18825v2/blocks/lem-sec-008-01",
+   "claim_id": "arxiv-2504.18825v2#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
    "name": null,
-   "statement": "A generalized $m$-multi-ribbon tableau $\\bm{\\T}$ can also be described by a tuple of tableaux, in which the cells of each partition are marked $i_j$ $(i\\geq 1, j\\geq 1)$, satisfying \\begin{enumerate}[label=(\\roman*)] \\item the numbers $i_j$ inserted in the diagram of each partition of $\\bm{\\T}$ must increase weakly down each column and along each row from left to right; \\item the cells marked same number consist of a generalized $m$-multi-ribbon. \\end{enumerate} The {\\it content} of $\\bm{\\T}$ is defined as a multicomposition $\\bm{c}=(c^{(1)},c^{(2)},\\cdots)$ such that $c^{(i)}_j$ equals the number of cells marked $i_j$ in $\\bm{\\T}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck.md",
-   "section_title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
-   "pages": "12-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be noted that his formulation is slightly different from ours, due to a distinct choice of presentation of $\\mathscr{H}_{m,n}(q,\\bm{u})$, as well as the standard elements $g(\\bm{\\mu})$. \\end{rem}",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-application-i-regev-type-formula.md",
-   "section_title": "Application I: Regev-type formula",
-   "pages": "25-34",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "2. ([JL22, Theorem 3.1],[Zha19, Theorem B]) The Regev formula for the Hecke algebra in type A states that X \u03bb\u22a2|\u00b5| \u03bb hook \u03c8\u03bb \u00b5 = 2l(\u00b5)\u22121 l(\u00b5) Y i=1 [\u00b5i]\u2212q\u22122. (A.2) Now we are ready to provide an alternative proof of Corollary 6.3.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md (p. 49-51) citing [JL22, Theorem 3.1], [Zha19, Theorem B]",
+   "external_refs": [
+    "[JL22, Theorem 3.1]",
+    "[Zha19, Theorem B]"
+   ],
+   "proof_excerpt": "X \u03bb\u22a2|\u00b5| \u03bb(i) hook 2L(\u03bb)\u03c7\u03bb \u00b5 = X \u03bb\u22a2|\u00b5| \u03bb(i) hook 2L(\u03bb) X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) m Y i=1 \u03c8\u03bb(i) \u2212 \u2192 ci (M) (by (A.1)) = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) X \u03bb\u22a2|\u00b5| \u03bb(i) hook, |\u03bb(i)|=|ci(M)| 2L(\u03bb) m Y i=1 \u03c8\u03bb(i) \u2212 \u2192 ci (M) = X M uM(q \u2212q\u22121)#M\u2212l(\u00b5) m Y i=1 21\u2212\u03b4|ci(M)|,0 X \u03c1\u22a2|ci(M)| \u03c1 hook \u03c8\u03c1 \u2212 \u2192 ci (M) ",
+   "section_file": "sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md",
+   "section_title": "Appendix A. An alternative proof of Corollary 6.3",
+   "pages": "49-51",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-appendix-a-an-alternative-proof-of-corollary-63.md (p. 49-51) citing [JL22, Theorem 3.1], [Zha19, Theorem B]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-02",
+   "block_iri": "library/arxiv-2504.18825v2/blocks/lem-sec-008-02",
+   "claim_id": "arxiv-2504.18825v2#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

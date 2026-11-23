@@ -63,6 +63,7 @@ does not touch the C-frame ladder results, which stand on their own terms.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys
 from pathlib import Path
 
@@ -95,7 +96,7 @@ F_REQ_Z1 = "0.998325241673"
 def main() -> int:
     q = mp.mpf(str(CONST.Q_50_DIGIT_STR))
     m_e = mp.mpf(str(CONST.M_E_MEV))
-    E0 = m_e / (q * (q - 1))
+    E0 = _qbeta_e0.order_zero_scaled(m_e, q)
     A = q**2 / 2 - 1 + 1 / (2 * q**2)
     B = 1 / q - q
     z_D = q**3 / (q**2 + 1)

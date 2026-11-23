@@ -1,1 +1,0 @@
-It is easy to find a formula for this extension: it must be proportional to $e^{\pi (a-z) }$, and by evaluation at $a$, we find that it is $e^{\pi (a-z)}E_{\pi}(b)$, where $b$ is any solution of the equation $b^p-b=a$.

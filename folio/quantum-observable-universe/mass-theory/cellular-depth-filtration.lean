@@ -182,6 +182,53 @@ theorem map_mem_F_comp (φ : Z →ₐ[R] Z) (τ : ι → ι) (hτ : ∀ i, τ (�
     exact gen_mem_F (by simp only [Function.comp, hτ]; exact hi)
   exact hle hx
 
+/-- **`#` transports the filtration, as an equality.** Under the hypotheses of
+`map_mem_F_comp`, the image of `F δ k` is exactly `F (δ ∘ τ) k`: the reverse
+inclusion holds because `e i = φ (e (τ i))`. -/
+theorem map_F_eq (φ : Z →ₐ[R] Z) (τ : ι → ι) (hτ : ∀ i, τ (τ i) = i)
+    (hφ : ∀ i, φ (e i) = e (τ i)) (k : ℕ) :
+    (F R e δ k).map φ.toLinearMap = F R e (δ ∘ τ) k := by
+  refine le_antisymm ?_ ?_
+  · rw [Submodule.map_le_iff_le_comap]
+    intro x hx
+    exact map_mem_F_comp φ τ hτ hφ hx
+  · refine Submodule.span_le.mpr ?_
+    rintro _ ⟨i, hi, rfl⟩
+    refine ⟨e (τ i), gen_mem_F (show δ (τ i) ≤ k from hi), ?_⟩
+    show φ (e (τ i)) = e i
+    rw [hφ, hτ]
+
+/-- With nonzero orthogonal idempotents, a generator lies in `F k` exactly when
+its depth is at most `k`: the filtration determines the depth function. -/
+theorem gen_mem_F_iff (he : OrthIdem e) (hne : ∀ i, e i ≠ 0) {i : ι} {k : ℕ} :
+    e i ∈ F R e δ k ↔ δ i ≤ k := by
+  refine ⟨fun h => ?_, gen_mem_F⟩
+  by_contra hlt
+  have := gen_mul_eq_zero_of_lt (R := R) he (not_le.mp hlt) h
+  rw [he.idem] at this
+  exact hne i this
+
+/-- **`#`-stability criterion.** For a `φ` permuting nonzero orthogonal
+idempotents by an involution `τ`, the filtration is `φ`-stable at every level
+if and only if the depth is `τ`-invariant. -/
+theorem map_F_stable_iff (he : OrthIdem e) (hne : ∀ i, e i ≠ 0)
+    (φ : Z →ₐ[R] Z) (τ : ι → ι) (hτ : ∀ i, τ (τ i) = i)
+    (hφ : ∀ i, φ (e i) = e (τ i)) :
+    (∀ k, (F R e δ k).map φ.toLinearMap = F R e δ k) ↔ ∀ i, δ (τ i) = δ i := by
+  constructor
+  · intro h i
+    have h1 : e i ∈ F R e δ (δ (τ i)) := by
+      rw [← h, map_F_eq φ τ hτ hφ]
+      exact gen_mem_F (show δ (τ i) ≤ δ (τ i) from le_refl _)
+    have h2 : e (τ i) ∈ F R e δ (δ i) := by
+      rw [← h, map_F_eq φ τ hτ hφ]
+      exact gen_mem_F (show δ (τ (τ i)) ≤ δ i by rw [hτ])
+    exact le_antisymm ((gen_mem_F_iff he hne).mp h2) ((gen_mem_F_iff he hne).mp h1)
+  · intro h k
+    rw [map_F_eq φ τ hτ hφ]
+    have : δ ∘ τ = δ := funext h
+    rw [this]
+
 /-- Orthogonal nonzero idempotents are pairwise distinct. -/
 theorem OrthIdem.injective (he : OrthIdem e) (hne : ∀ i, e i ≠ 0) :
     Function.Injective e := by

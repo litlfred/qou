@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1202.5426v2/blocks/lem-sec-002-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "Normal part",
+  "pageStart": 16,
+  "pageEnd": 32,
+  "text": "lem-sec-002-01.md",
+  "derivedFrom": "library/arxiv-1202.5426v2/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.5426v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.1",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [0, 1 2) there exists θ > 0 such that for any Br ⊂[0, 1] in sections/sec-002-3-initial-regularity-proof-of-theorem-iii.md",
+    "claim_id": "arxiv-1202.5426v2#lemma:3.1",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,1 +1,0 @@
-Since any object has $\text{FPdim}_{\mathcal C}(c_i)\ge1$, $\sum_{c_i\neq c}(\text{FPdim}_{\mathcal C}(c_i))^2\ge8$, and we must have $1<\text{FPdim}_{\mathcal C}(c)<2$, or the squared sum reaches ten.

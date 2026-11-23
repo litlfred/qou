@@ -14,7 +14,7 @@ algorithm "digests global entanglement into local coefficients"
 normal-form length by a fixed increment" placing the n-nucleon cluster at
 "jet vertical degree n" (`bond-order-eq-jet-degree-proof`), and the associated
 graded gr_n IS the n-nucleon cluster contribution (`prop:gb-spectral-sequence`
-E_2 collapse, `prop:jet-prefix-gb-filtration`). So the negative below is about
+E_2 collapse, `conj:jet-prefix-gb-filtration`). So the negative below is about
 MAGNITUDES AT A POINT and says nothing about the graded structure -- which
 this probe never looked at. The object to measure is the symbolic NF over
 Q(q, sqrt q), `hecke_core_symbolic.build_atom_nf_sym`, and its q-degree /
@@ -122,7 +122,7 @@ figures recorded in `tower_walk_h3a_magic_probe.py` (0.0802 / 20.256 and
 """
 import os
 import sys, time, argparse
-import numpy as np
+import numpy as np  # float64-ok: scope-(a) numpy Hoefsmit matrix walk (see header scope note)
 
 sys.path[:0] = ['/home/user/qou/computations',
                 '/home/user/qou/computations/_deprecated',
@@ -244,7 +244,7 @@ def walk_one(lam, ops, rank_max=1000):
         if g not in sig:
             sig[g] = sigma_sparse(lam, g)
         st = apply_fast(st, sig[g], c, d)
-    tr = float(abs(np.trace(st)))
+    tr = float(abs(np.trace(st)))  # float64-ok: scope-(a) numpy Hoefsmit matrix trace (see header scope note)
     rk = None
     if dim <= rank_max:
         s = np.linalg.svd(st, compute_uv=False)
@@ -506,8 +506,8 @@ def main():
         j = judgements[A]
         if j.get("comparable"):
             wb.add_assertion(f"both_groups_non_empty_at_A{A}",
-                             computed=f"{j['n_magic']}/{j['n_non_magic']}",
-                             expected=f"{j['n_magic']}/{j['n_non_magic']}")
+                             computed=str(j["n_magic"] > 0 and j["n_non_magic"] > 0),
+                             expected="True")
     wb.add_assertion("selftest_reproduces_A3_reference_figures",
                      computed="True", expected="True")
     out = wb.save(extra={"auditOnly": True})

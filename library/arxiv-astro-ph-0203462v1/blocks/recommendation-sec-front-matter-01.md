@@ -1,1 +1,0 @@
-However, the computed actinide production ratios should be veriﬁed by observations of daughter elements such as Pb and Bi in the same star, which are independent of the subsequent history of star formation and nucelosynthesis in the Galaxy.

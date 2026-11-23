@@ -11,4 +11,4 @@ where $S(\sigma_i) = \sigma_i^{-1}$ is the antipode.  The identity
 $e^- \cdot e^+ = \gamma$ is the Hopf relation evaluated on
 the trefoil.
 
-**Witness**: `gram-matrix-dual.witness.json`.
+**Witness**: the Gram-matrix dual computation.

@@ -31,10 +31,10 @@ def qPochDenom {K : Type*} [Field K] (q x : K) : ℕ → K
   | n + 1 => (1 - x * q ^ n) * qPochDenom q x n
 
 @[simp] theorem qPochDenom_zero {K : Type*} [Field K] (q x : K) :
-    qPochDenom q x 0 = 1 := rfl
+    qPochDenom q x 0 = 1 := Eq.refl _
 
 theorem qPochDenom_succ {K : Type*} [Field K] (q x : K) (n : ℕ) :
-    qPochDenom q x (n + 1) = (1 - x * q ^ n) * qPochDenom q x n := rfl
+    qPochDenom q x (n + 1) = (1 - x * q ^ n) * qPochDenom q x n := Eq.refl _
 
 /-- **The pole vanishing.** `(x; q)_n` vanishes at each pole `x = q^{-j}`,
     `j < n` — the algebraic, unconditional half of the pole-to-cusp bijection
@@ -60,5 +60,47 @@ theorem qPochDenom_poles {K : Type*} [Field K] (q : K) (hq : q ≠ 0) (n : ℕ) 
       ∧ (∀ k : Fin n, qPochDenom q (z k) n = 0) :=
   ⟨fun k => q ^ (-(k : ℤ)), fun _ => rfl,
     fun k => qPochDenom_eq_zero_at_pole q hq n k k.isLt⟩
+
+/-- **Exact zero locus of the `q`-Pochhammer partial denominator (`qou-mfdq`).**
+    Over any field `K` with `q ≠ 0`, `qPochDenom q x n = 0` holds if and only
+    if `x = q^{-j}` for some `j : Fin n`. -/
+theorem qPochDenom_eq_zero_iff {K : Type*} [Field K] (q x : K) (hq : q ≠ 0) (n : ℕ) :
+    qPochDenom q x n = 0 ↔ ∃ j : Fin n, x = q ^ (-(j : ℤ)) := by
+  constructor
+  · induction n with
+    | zero =>
+      intro h
+      exact absurd h one_ne_zero
+    | succ m ih =>
+      rw [qPochDenom_succ, mul_eq_zero]
+      rintro (hfactor | htail)
+      · refine ⟨⟨m, Nat.lt_succ_self m⟩, ?_⟩
+        have hmul : x * q ^ m = 1 := (sub_eq_zero.mp hfactor).symm
+        have hqm : q ^ m ≠ 0 := pow_ne_zero m hq
+        have hx : x = (q ^ m)⁻¹ := by
+          calc x = x * q ^ m * (q ^ m)⁻¹ := by rw [mul_inv_cancel_right₀ hqm]
+            _ = 1 * (q ^ m)⁻¹ := by rw [hmul]
+            _ = (q ^ m)⁻¹ := one_mul _
+        rw [hx, zpow_neg, zpow_natCast]
+      · rcases ih htail with ⟨j, hj⟩
+        exact ⟨⟨j.val, Nat.lt_succ_of_lt j.isLt⟩, hj⟩
+  · rintro ⟨j, rfl⟩
+    exact qPochDenom_eq_zero_at_pole q hq n j.val j.isLt
+
+/-- **Cardinality obstruction to an `n`-pole ↔ 4-vertex bijection (`qou-mfdq`, Finding 1).**
+    The `n`-element pole index set `Fin n` admits a bijection with a 4-element
+    ideal-tetrahedron vertex set `Fin 4` if and only if `n = 4`. -/
+theorem pole_fin_equiv_fin_four_iff (n : ℕ) :
+    Nonempty (Fin n ≃ Fin 4) ↔ n = 4 := by
+  constructor
+  · rintro ⟨e⟩
+    simpa using Fintype.card_congr e
+  · rintro rfl
+    exact ⟨Equiv.refl (Fin 4)⟩
+
+/-- **For any `n ≠ 4`, no bijection `Fin n ≃ Fin 4` exists (`qou-mfdq`).** -/
+theorem not_pole_fin_equiv_fin_four_of_ne {n : ℕ} (hn : n ≠ 4) :
+    ¬ Nonempty (Fin n ≃ Fin 4) :=
+  fun h => hn ((pole_fin_equiv_fin_four_iff n).mp h)
 
 end QOU.QBeta

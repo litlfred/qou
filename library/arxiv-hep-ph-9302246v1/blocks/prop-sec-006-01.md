@@ -1,0 +1,1 @@
+The worst results in this column, taking into account the experimental errors, are for the decays $\phi \to \eta \gamma$ and $K^{* +} \to K^+ \gamma$ which are between 4 and 6 standard deviations ($\sigma$) from the experimental value.

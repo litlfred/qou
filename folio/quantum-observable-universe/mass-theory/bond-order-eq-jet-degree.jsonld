@@ -2,23 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/lem-bond-order-eq-jet-degree",
+  "@id": "papers/quantum-observable-universe/blocks/conj-bond-order-eq-jet-degree",
   "@type": [
-    "folio-assistant-core:Lemma",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "lem:bond-order-eq-jet-degree",
-  "kind": "lemma",
+  "label": "conj:bond-order-eq-jet-degree",
+  "kind": "conjecture",
   "title": "Body order equals jet degree: the n-nucleon cluster sits at jet vertical degree n",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
-    "papers/quantum-observable-universe/blocks/prop-jet-prefix-gb-filtration"
-  ],
-  "proofs": [
-    "papers/quantum-observable-universe/blocks/prf-bond-order-eq-jet-degree"
+    "papers/quantum-observable-universe/blocks/conj-jet-prefix-gb-filtration"
   ],
   "leanRef": "qou:QOU.Mass.bodyorder_eq_jet_total",
   "text": "bond-order-eq-jet-degree.md",

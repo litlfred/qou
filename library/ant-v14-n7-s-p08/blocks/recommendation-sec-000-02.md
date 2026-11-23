@@ -1,1 +1,0 @@
-In general, for a Burgess-style result such as (1-1), which holds for a range of integers r, to assess its strength for H near the lower-bound threshold that yields a nontrivial bound for |S(N, H)|, we must compute which value of r produces maximum savings.

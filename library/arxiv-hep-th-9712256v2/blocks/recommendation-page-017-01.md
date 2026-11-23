@@ -1,1 +1,0 @@
-In order to extend this conjecture on the fusion rules to general j2, j1 one should note that the coeﬃcients appearing in the operator product expansion (44) can be meromorphically continued to general complex j2, j1.

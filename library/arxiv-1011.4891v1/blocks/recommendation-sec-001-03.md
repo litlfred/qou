@@ -1,1 +1,0 @@
-To transform this deﬁnition into a rigorous mathemat- ical one, we should replace the mechanical device by an electronic one – a smooth knot supplied with an appropriate energy functional (depending on s), and deﬁne the s-normal form(s) of the knot as its positions minimizing this functional.

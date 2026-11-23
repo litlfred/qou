@@ -1,1 +1,0 @@
-Now, let us forget for a moment that the integrals (1,2,3) are infinite dimensional and hence problematic to define, and ask ourselves the following question: why should we expect that when the parameter « or h goes to zero, we recover the usual classical mechanics or field theory?

@@ -24,11 +24,13 @@
  * Exit 0 iff every named block passes (0 hits).
  */
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { checkBaseRingMinimal } from "../folio-assistant/cat-harness-tools/pipeline/qa-checkers-voice.ts";
+import { checkBaseRingMinimal } from "../folio-assistant/folio-assistant-sci/pipeline/qa-checkers-wall.ts";
 import {
   resolveCanonicalLean,
   type LakeTreeCache,
 } from "../folio-assistant/cat-harness-tools/pipeline/qa-utils.ts";
+import { configureLeanPackages } from "../folio-assistant/folio-assistant-sci/pipeline/lean-formal-ref";
+import { LEAN_PACKAGES } from "../schemas/lean-packages";
 import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -46,6 +48,12 @@ const LAKE_CACHE: LakeTreeCache = new Map();
  *  rather than `process.cwd()`, so `resolveCanonicalLean` finds the Lake
  *  tree no matter which directory the script is invoked from. */
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+
+/** Install the lean.ref resolver layer and declare qou's Lake packages, as
+ *  run-validate.ts and preload-registry.ts do. Without it the package
+ *  registry is empty and every `lean.ref` without a sibling `.lean`
+ *  resolves to nothing (bean qou-i2ed). */
+configureLeanPackages(LEAN_PACKAGES);
 
 const argv = process.argv.slice(2);
 if (argv.length === 0) {

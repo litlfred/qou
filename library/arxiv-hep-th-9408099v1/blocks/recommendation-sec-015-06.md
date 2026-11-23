@@ -1,1 +1,0 @@
-So if the curve is correct, u′ does not exist, Im aD never vanishes on the positive u axis for u > 1/4, one can interpolate from u = 1/4 to u = ∞without jumping, and the (2, 1) state that gives the singularity at u = 1/4 must be semiclassical.

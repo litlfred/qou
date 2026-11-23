@@ -1,1 +1,0 @@
-JONES a b b« FIGURE l While investigating the index of a subfactor of a type IIi factor, the author was led to analyze certain finite-dimensional von Neumann algebras An gen- erated by an identity 1 and n projections, which we shall call ei,e2,... ,en.

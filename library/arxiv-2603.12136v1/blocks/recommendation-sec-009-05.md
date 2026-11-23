@@ -1,1 +1,0 @@
-Since $\MP_i'$ satisfies [\[def_symmetric\]](#def_symmetric){reference-type="ref" reference="def_symmetric"}[\[def_symmetric_row_bipolar\]](#def_symmetric_row_bipolar){reference-type="ref" reference="def_symmetric_row_bipolar"} by assumption, all elements of $P^{-\gamma}$ are also contained in $P'$, and must be partitioned according to their sums.

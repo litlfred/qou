@@ -1,1 +1,0 @@
-Moreover, if one restricts to curves of this type (or more generally, to general curves C without back-tracking that are isotopic through immersed curves to essential simple closed curves, i.e., C should have no “winding”), the map C 7→γ(y)(C) deﬁnes a homomorphism H 1(∂K0) →Z, and hence an element c of H1(∂K0).

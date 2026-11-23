@@ -1,1 +1,0 @@
-For example, when M is a knot complement, one can combine approaches 2 and 3 to learn that the operators bAi in (1.12) should also annihilate the polynomial invariants PG,R(K; q) computed by Chern-Simons gauge theory with compact gauge group G, bAi PG,R(K; q) = 0 .

@@ -1,0 +1,1 @@
+The symmetric Hodge correlators in weight > 2 are independent of the base point modulo the depth ﬁltration. Formally, let 푥∈퐶푇(퐻1(푋) ⊕Q[푆]). Then there exists e푥, equal to 푥modulo lower-depth terms, such that Cor푝(e푥) is independent of 푝. In terms of generating functions, this theorem implies:

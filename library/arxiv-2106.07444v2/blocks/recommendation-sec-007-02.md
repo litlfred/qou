@@ -1,1 +1,0 @@
-To prove the first statement, we must show that $$\begin{aligned} (\psi, \langle{\tilde{\beta}}\rangle_{\bm{q}})_W = \sum_{\phi \in \hat{W}} {\{\phi, \psi\}} \phi_{\bm{q}}(\tilde{\beta}) \in \bb{Q}_W(\bm{q}^{\frac{1}{2}}) \end{aligned}$$ actually belongs to $\bb{Z}[\bm{q}_0]$ for all $\psi \in \hat{W}$.

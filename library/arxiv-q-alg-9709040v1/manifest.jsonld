@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9709040v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9709040v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-q-alg-9709040v1",
+  "title": "Deformation quantization of Poisson manifolds",
   "contains": [
     "library/arxiv-q-alg-9709040v1/sections/sec-front-matter",
     "library/arxiv-q-alg-9709040v1/sections/sec-000",
@@ -98,7 +98,9 @@
   },
   "meta": {
     "doc_id": "arxiv-q-alg-9709040v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9709040v1.pdf",
     "source_sha256": "8baf650d86c5b8ab0a8b6a70f0f04b0d66e16dca69846247c8869b864180d9e8",
     "pages": 46,
@@ -109,8 +111,8 @@
       "stamp_date": "29 Sep 1997"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

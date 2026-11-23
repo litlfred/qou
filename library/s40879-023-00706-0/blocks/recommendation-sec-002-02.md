@@ -1,1 +1,0 @@
-In Sect.3 we identify geometri- cally relevant orbits of points under the action of the automorphism group, notably the Weierstrass points W, for which we construct the associated holomorphic differentials with vanishing of order 4 at W and the meromorphic functions with poles only at W; indeed we shall describe the divisors of these completely.

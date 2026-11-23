@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2203.17029v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5557f7f272cb8a438cdf7b35118d702cd0f14dd029e0a66b8e1c951b7bbf014e",
   "file": "2203.17029v1.pdf"
@@ -16,181 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 11
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "To prove modularity we must factorise the state integral as a finite sum of products of solutions of $M$ and $M^{\\vee}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-32-self-duality.md",
-   "section_title": "Self duality",
-   "pages": "25-28",
+   "statement": "Recently, it was observed that the solutions of some linear $q$-difference equations concerning quantum knot invariants ~\\cite{GZ:qseries,GZ:kashaev} or resurgence and Borel resummation of perturbative Chern--Simons theory~\\cite{GGM:peacock,GGM,GGMW:trivial}, have an improved analyticity property.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-002-12-motivation.md (p. 3-3)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-002-12-motivation.md",
+   "section_title": "Motivation",
+   "pages": "3-3",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This implies that if $i\\neq j$ that $E_{i,j}(t,a,b,q)$ has at most has simple poles at $q\\in b_{j-1}^{-1}q^{\\BZ}$ and must have zeros at $t\\in b_{i-1}^{-1}q^{\\BZ}$ and there is no such non-zero elliptic function and therefore $E_{i,j}(t,a,b,q)=0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-32-self-duality.md",
-   "section_title": "Self duality",
-   "pages": "25-28",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore, we must multiply by a $\\theta$-function to get a slope zero, \\emph{i.e.} a power series solution.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-019-41-the-q-pochhammer-symbol.md",
-   "section_title": "The q-Pochhammer symbol",
-   "pages": "30-32",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then we have \\be (q^{2k}-q^{k})\\alpha_{k}(q)-(1-q^k)\\alpha_{k-1}(q)=0 \\quad\\text{so}\\quad -q^{k}a_{k}=a_{k-1}. \\ee Therefore, normalising so that $\\alpha_{0}(q)=1$, \\be \\hat{f}^{(0)}(t,q)=\\sum_{k=0}^{\\infty}(-1)^{k}q^{-k(k+1)/2}t^{k}. \\ee This is of course divergent for $|q|<1$ so we must $q$-Borel resum.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-020-42-the-appell-lerch-sums.md",
-   "section_title": "The Appell-Lerch sums",
-   "pages": "32-37",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Now the bottom edge of slope $-1$ must be divided by a $\\theta$-function to get a zero slope.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-020-42-the-appell-lerch-sums.md",
-   "section_title": "The Appell-Lerch sums",
-   "pages": "32-37",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The edge with slope $-1$ must be divided by a $\\theta$-function to get a power series solution.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-5-a-q-difference-equation-of-the-41-knot.md",
-   "section_title": "A q-difference equation of the 41 knot",
-   "pages": "37-40",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Now notice that if we take the $(-1)$-$q$-Borel transform we see the effect on the Newton polygon is as follows. \\begin{center} \\begin{tikzpicture} \\draw[<->,thick] (-2,0) -- (2,0); \\draw[<->,thick] (0,-1) -- (0,2); \\foreach \\x in {-1,1} \\draw[thick] (\\x,-2pt) -- (\\x,2pt); \\filldraw (0,0) circle (2pt); \\filldraw (0,1) circle (2pt); \\filldraw (-1,0) circle (2pt); \\filldraw (1,2) circle (2pt); \\draw (0,0) -- (1,2) -- (-1,0) -- cycle; \\fill[blue,opacity=0.2] (0,0) -- (1,2) -- (-1,0) -- cycle; \\node at (-0.5,-0.25) {\\begin{tiny}$\\hat{f}^{(-1)}$\\end{tiny}}; \\draw[ultra thick,->] (3,0) -- (4,0); \\node at (3.5,0.4) {$\\Bor_{-1}$}; \\draw[<->,thick] (-2+7,0) -- (1+7,0); \\draw[<->,thick] (0+7,-1) -- (0+7,2); \\foreach \\x in {1} \\draw[thick] (-0.1+7,\\x) -- (0.1+7,\\x); \\filldraw (0+7,0) circle (2pt); \\filldraw (-1+7,1) circle (2pt); \\filldraw (-1+7,0) circle (2pt); \\filldraw (-1+7,2) circle (2pt); \\draw (0+7,0) -- (-1+7,2) -- (-1+7,0) -- cycle; \\fill[blue,opacity=0.2] (0+7,0) -- (-1+7,2) -- (-1+7,0) -- cycle; \\node at (-0.7+7,-0.25) {\\begin{tiny}$\\Bor_{-1}\\hat{f}^{(-1)}$\\end{tiny}}; \\end{tikzpicture} \\end{center} This means that this Borel transform will satisfy the $q$-difference equation \\be (",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-5-a-q-difference-equation-of-the-41-knot.md",
-   "section_title": "A q-difference equation of the 41 knot",
-   "pages": "37-40",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, this will then be divergent so we must take $(1/2)$-$q$-Borel resummation.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-5-a-q-difference-equation-of-the-41-knot.md",
-   "section_title": "A q-difference equation of the 41 knot",
-   "pages": "37-40",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then again noting that if $g(t_{0},q)=0$ then $g(qt_{0},q)\\neq0$ we see that $C_{0}(t,q)$ must be constant in $t$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-025-54-determinants.md",
-   "section_title": "Determinants",
-   "pages": "44-46",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "So, we must resum $\\hat{f}^{(0)}(t,q)$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-027-56-the-inhomogeneous-equation.md",
-   "section_title": "The inhomogeneous equation",
-   "pages": "47-52",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then by the definition of $m_{2,1}$ along with Lemma~\\ref{lem.41.gx} and Lemma~\\ref{lem.resf1.x} we see that $\\calE_{4}$ is holomorphic and satisfies Equation~\\eqref{41x} and therefore must be zero from Lemma~\\ref{lem.41.x.holsol}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-028-57-the-x-deformation.md",
-   "section_title": "The x-deformation",
-   "pages": "52-62",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-002-12-motivation.md (p. 3-3)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-002-01",
+   "block_iri": "library/arxiv-2203.17029v1/blocks/prop-sec-002-01",
+   "claim_id": "arxiv-2203.17029v1#prop-sec-002-01"
   }
  ]
 }

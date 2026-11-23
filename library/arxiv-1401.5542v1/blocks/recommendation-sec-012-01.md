@@ -1,1 +1,0 @@
-\begin{proposition}\label{prop:Basic} The map $\alpha^*\colon C_1\to C_0$ is basic.\qed \end{proposition} The proof will be relegated to Section~\ref{sec:AlphaStarBasic}, where we shall also give explicit basic generators. \begin{proposition}\label{prop:ReducedPtolemyVariety} Let $\varepsilon_{i_1},\dots,\varepsilon_{i_v}$ be basic generators for $\alpha^*$.

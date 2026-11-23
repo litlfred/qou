@@ -1,1 +1,0 @@
-As we shall see below, already in this relatively simple case of $M_3 = S^1 \times S^2$ the map between colored knots and links in $M_3$ and the UV line operators $W_{\lambda}$ in $T[M_3]$ is rather non-trivial.

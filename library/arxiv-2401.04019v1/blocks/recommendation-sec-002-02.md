@@ -1,1 +1,0 @@
-Since $n\neq 2R$, we must have $\ell(\lambda)\geq 4.$ Define $\varphi_2(\lambda, \delta_{R-S,1}):=(\mu, \delta_{R-S, 2})$, where $\mu$ is the partition obtained from $\lambda$ by replacing parts $\lambda_{\ell-3}$ and $R-S$ by part $\lambda_{\ell-3}-R$.

@@ -5,5 +5,6 @@ export default prose({
   meta: { position: "opening" },
   cites: [
     "wigner1960",
+    "heisenberg1958",
   ],
 });
