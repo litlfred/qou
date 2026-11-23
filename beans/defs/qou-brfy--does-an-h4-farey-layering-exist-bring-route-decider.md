@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T11:52:20Z
-updated_at: 2026-11-17T23:08:22Z
+updated_at: 2026-11-23T11:25:00Z
 parent: qou-v2om
 ---
 
@@ -186,3 +186,22 @@ Was in-progress with no bean update since 2026-09-07 and no main commit naming i
 ## 2026-11-17 sibling sweep
 Universal-triangulation thread, part B2 (the Farey layering search itself) left undone. Part B1 is its own task under qou-gwte.
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+
+## 2026-11-23: route 2 bypasses the Farey layering via commensurability (B2)
+
+Route 2 does not need an H₄ Farey layering. `computations/probes/bring_route2/` sends
+braids to Bring's surface through Γ₀(2) and the commensurability D: z ↦ z/√2 (H₄ ↔ Γ₀(2)⁺),
+not through a homomorphism B₃ → H₄. It no longer needs an H₄ word calculus built from a
+layering. What is now proved, sorry-free, on branch `claude/project-thread-gd72mx`
+(commit `6ebf7db5a48`, no PR yet):
+
+- `QOU/BringHeckeCommensurability.lean` (already on main): L1 and L2.
+- `QOU/BringHeckeNoOrderThree.lean`: L3. H₄ has no element of order 3, so every
+  homomorphism B₃ → H₄ has abelian image. This is why the homomorphism route is closed.
+- `QOU/BringTriangleTraces.lean`: the five probe words have |tr| ∈ ℤ[φ] in Δ(2,4,5), for
+  every realisation.
+
+Still open: whether an H₄ Farey layering exists at all (the face-size argument above).
+Route 2 lets the Bring route proceed without answering it. No energy has been chosen
+(preregistration §2), so this bean stays open.
