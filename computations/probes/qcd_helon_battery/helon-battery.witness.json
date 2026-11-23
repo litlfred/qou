@@ -1,0 +1,1504 @@
+{
+ "description": "Helon battery on K0 position colour (issue #9096). Exact sympy; no float; q0 unused.",
+ "prereg": "computations/probes/qcd_helon_battery/PREREG.md",
+ "source": "bilson-thompson2005 (library/arxiv-hep-ph-0503213v2) Sec. 2 table, Sec. 3, Fig. 1",
+ "scriptHash": "6aa1368f2a46",
+ "z_D": "q**3/(q**2 + 1)",
+ "K_D": "diag(q^-3, q^-1, 0)",
+ "helon_braid_b": "s0 s1^-1",
+ "checks": [
+  {
+   "id": "H0a four readings one orbit (cycle type, writhe, tr_D, P(b) = s1^-1 b s1)",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "words ['s0 s1^-1', 's1 s0^-1', 's1^-1 s0', 's0^-1 s1'], tr_D = q**2/(q**2 + 1)**2"
+  },
+  {
+   "id": "H0b b * C(b) = 1 in H3",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "{(0, 1, 2): 1}"
+  },
+  {
+   "id": "H1 Q_twist = T/3 equals BT / SM charge",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "30/30"
+  },
+  {
+   "id": "H2 Q_twist = Q_crossing (half writhe) for every fermion",
+   "pass": false,
+   "expected_pass": false,
+   "detail": "2/30 pass; per particle {'u': False, 'dbar': False, 'ubar': False, 'd': False, 'e+': False, 'e-': False, 'nubar': True, 'nu': True}"
+  },
+  {
+   "id": "H3 K0 colour is end-independent",
+   "pass": false,
+   "expected_pass": false,
+   "detail": "0/24 end-independent; pi(b) = (2, 0, 1) is a 3-cycle"
+  },
+  {
+   "id": "H4 colour index at twisted end preserved by C (u_c -> ubar_c, dbar_c -> d_c)",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "6/6 (by construction: C is a top-bottom reflection)"
+  },
+  {
+   "id": "H5(i) proton d_B+u_R+u_G, one panel: equal super-strand sums at both ends",
+   "pass": false,
+   "expected_pass": true,
+   "detail": "[s1 s0^-1|s0 s1^-1|s0 s1^-1] top [1, 0, 2] bot [1, 2, 0]; [s0^-1 s1|s1^-1 s0|s1^-1 s0] top [0, 1, 2] bot [2, 1, 0]"
+  },
+  {
+   "id": "H5(ii) all 8 handedness assignments: equal sums at both ends",
+   "pass": false,
+   "expected_pass": null,
+   "detail": "0/8; BT's own table sum (ends mixed) [1, 1, 1]"
+  },
+  {
+   "id": "H5-post (POST-HOC) all tables read at top: equal sums at top / at bottom",
+   "pass": false,
+   "expected_pass": null,
+   "detail": "top 8/8, bottom 2/8; bottom equal only when d shares u's permutation: [s1 s0^-1|s0 s1^-1|s0 s1^-1] bot [0, 2, 1]; [s1 s0^-1|s0 s1^-1|s1^-1 s0] bot [1, 2, 0]; [s1 s0^-1|s1^-1 s0|s0 s1^-1] bot [0, 1, 2]; [s1 s0^-1|s1^-1 s0|s1^-1 s0] bot [1, 1, 1]; [s0^-1 s1|s0 s1^-1|s0 s1^-1] bot [1, 1, 1]; [s0^-1 s1|s0 s1^-1|s1^-1 s0] bot [2, 1, 0]; [s0^-1 s1|s1^-1 s0|s0 s1^-1] bot [1, 0, 2]; [s0^-1 s1|s1^-1 s0|s1^-1 s0] bot [2, 0, 1]"
+  },
+  {
+   "id": "H6a all three colours related by residual U_q(gl2) x U(1)",
+   "pass": false,
+   "expected_pass": false,
+   "detail": "colour e3 orbit span = [[0, 0, 1]] (N3 = 1, D weight 0)"
+  },
+  {
+   "id": "H6b colours 1,2 related by U_q(gl2) (E1 e2 = e1, F1 e1 = e2)",
+   "pass": true,
+   "expected_pass": true,
+   "detail": ""
+  },
+  {
+   "id": "H6c D-visibility of a quark colour is end-independent",
+   "pass": false,
+   "expected_pass": false,
+   "detail": "8/24 end-independent"
+  },
+  {
+   "id": "H6d braid 3-cycle on colour labels commutes with K_D",
+   "pass": false,
+   "expected_pass": false,
+   "detail": "P K_D P^-1 = [1/q, 0, q**(-3)]"
+  },
+  {
+   "id": "H7a radical of (x,y) -> tr_D(xy) on H3 has dimension 1",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "dim 1; det G = 0"
+  },
+  {
+   "id": "H7a' radical vector spans the sign block (r s_i = -q^-1 r)",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "{(0, 1, 2): -q**3, (0, 2, 1): q**2, (1, 0, 2): q**2, (1, 2, 0): -q, (2, 0, 1): -q, (2, 1, 0): 1}"
+  },
+  {
+   "id": "H7b rho(b) lies in the D radical",
+   "pass": false,
+   "expected_pass": false,
+   "detail": "b invertible; radical a proper ideal"
+  },
+  {
+   "id": "H7c sign character chi_(1^3)(b) = 1 (nonzero radical-block component)",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "1"
+  },
+  {
+   "id": "H7d tr_D(b) recorded",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "tr_D(s0 s1^-1) = q**2/(q**2 + 1)**2 = z_D^2 - h z_D: True"
+  },
+  {
+   "id": "H8a helon electron word equals ruled electron s0 s1 s0 in B3",
+   "pass": false,
+   "expected_pass": false,
+   "detail": "helon e- ['s1 s0^-1', 's0^-1 s1']: perm [(1, 2, 0), (2, 0, 1)] cycles [1, 1] writhe 0; ruled: perm (2, 1, 0) components 2 writhe 3"
+  },
+  {
+   "id": "H8b BT fermion criterion (non-identity permutation) on ruled electron s0 s1 s0",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "perm (2, 1, 0); tr_D = q**3*(q**4 + 1)/(q**2 + 1)**2"
+  },
+  {
+   "id": "H8b' BT fermion criterion on trefoil backup s0^3 in B2",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "permutation of s0^3 in B2 = transposition (odd exponent) -> non-identity"
+  },
+  {
+   "id": "H9a helon u closure: 1 component, Markov-destabilises s0 s1^-1 ~ s0 in B2 -> unknot T(2,1)",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "agrees with 'up quark is an unknot'"
+  },
+  {
+   "id": "H9b level: helon u is a whole 3-strand triplet; ruled u is one strand of beta_Bor",
+   "pass": false,
+   "expected_pass": false,
+   "detail": "conflict of level, not of knot type"
+  },
+  {
+   "id": "H10 (coincidence, labelled in advance) b^3 = V^3 = beta_Bor; 3 components, pairwise lk 0",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "components [(0,), (1,), (2,)], lk {'01': '0', '02': '0', '12': '0'}; BT stacks in layers, NOT by composition"
+  },
+  {
+   "id": "H11 only the '1' term of the ruled photon is a BT boson (identity permutation)",
+   "pass": true,
+   "expected_pass": true,
+   "detail": "{'1': True, 's0': False, 's1': False, 's0 s1^-1': False}; photon fourth term s0 s1^-1 == helon fermion braid b: True"
+  }
+ ],
+ "battery": [
+  {
+   "particle": "u",
+   "colour_BT": "B",
+   "handedness": "left",
+   "word": "s0 s1^-1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    1,
+    1,
+    0
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    1,
+    0,
+    1
+   ],
+   "Q_twist": "2/3",
+   "Q_SM": "2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 2,
+   "colour_position_other_end": 1,
+   "colour_letter_twisted_end": "B",
+   "colour_letter_other_end": "G",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "0",
+   "D_weight_other_end": "1/q"
+  },
+  {
+   "particle": "u",
+   "colour_BT": "B",
+   "handedness": "right",
+   "word": "s1^-1 s0",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    1,
+    1,
+    0
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    0,
+    1,
+    1
+   ],
+   "Q_twist": "2/3",
+   "Q_SM": "2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 2,
+   "colour_position_other_end": 0,
+   "colour_letter_twisted_end": "B",
+   "colour_letter_other_end": "R",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "0",
+   "D_weight_other_end": "q**(-3)"
+  },
+  {
+   "particle": "u",
+   "colour_BT": "G",
+   "handedness": "left",
+   "word": "s0 s1^-1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    1,
+    0,
+    1
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    0,
+    1,
+    1
+   ],
+   "Q_twist": "2/3",
+   "Q_SM": "2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 1,
+   "colour_position_other_end": 0,
+   "colour_letter_twisted_end": "G",
+   "colour_letter_other_end": "R",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "1/q",
+   "D_weight_other_end": "q**(-3)"
+  },
+  {
+   "particle": "u",
+   "colour_BT": "G",
+   "handedness": "right",
+   "word": "s1^-1 s0",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    1,
+    0,
+    1
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    1,
+    1,
+    0
+   ],
+   "Q_twist": "2/3",
+   "Q_SM": "2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 1,
+   "colour_position_other_end": 2,
+   "colour_letter_twisted_end": "G",
+   "colour_letter_other_end": "B",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "1/q",
+   "D_weight_other_end": "0"
+  },
+  {
+   "particle": "u",
+   "colour_BT": "R",
+   "handedness": "left",
+   "word": "s0 s1^-1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    1,
+    1
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    1,
+    1,
+    0
+   ],
+   "Q_twist": "2/3",
+   "Q_SM": "2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 0,
+   "colour_position_other_end": 2,
+   "colour_letter_twisted_end": "R",
+   "colour_letter_other_end": "B",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "q**(-3)",
+   "D_weight_other_end": "0"
+  },
+  {
+   "particle": "u",
+   "colour_BT": "R",
+   "handedness": "right",
+   "word": "s1^-1 s0",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    1,
+    1
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    1,
+    0,
+    1
+   ],
+   "Q_twist": "2/3",
+   "Q_SM": "2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 0,
+   "colour_position_other_end": 1,
+   "colour_letter_twisted_end": "R",
+   "colour_letter_other_end": "G",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "q**(-3)",
+   "D_weight_other_end": "1/q"
+  },
+  {
+   "particle": "dbar",
+   "colour_BT": "B",
+   "handedness": "left",
+   "word": "s0 s1^-1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    0,
+    1
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    0,
+    1,
+    0
+   ],
+   "Q_twist": "1/3",
+   "Q_SM": "1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 2,
+   "colour_position_other_end": 1,
+   "colour_letter_twisted_end": "B",
+   "colour_letter_other_end": "G",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "0",
+   "D_weight_other_end": "1/q"
+  },
+  {
+   "particle": "dbar",
+   "colour_BT": "B",
+   "handedness": "right",
+   "word": "s1^-1 s0",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    0,
+    1
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    1,
+    0,
+    0
+   ],
+   "Q_twist": "1/3",
+   "Q_SM": "1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 2,
+   "colour_position_other_end": 0,
+   "colour_letter_twisted_end": "B",
+   "colour_letter_other_end": "R",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "0",
+   "D_weight_other_end": "q**(-3)"
+  },
+  {
+   "particle": "dbar",
+   "colour_BT": "G",
+   "handedness": "left",
+   "word": "s0 s1^-1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    1,
+    0
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    1,
+    0,
+    0
+   ],
+   "Q_twist": "1/3",
+   "Q_SM": "1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 1,
+   "colour_position_other_end": 0,
+   "colour_letter_twisted_end": "G",
+   "colour_letter_other_end": "R",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "1/q",
+   "D_weight_other_end": "q**(-3)"
+  },
+  {
+   "particle": "dbar",
+   "colour_BT": "G",
+   "handedness": "right",
+   "word": "s1^-1 s0",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    1,
+    0
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    0,
+    0,
+    1
+   ],
+   "Q_twist": "1/3",
+   "Q_SM": "1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 1,
+   "colour_position_other_end": 2,
+   "colour_letter_twisted_end": "G",
+   "colour_letter_other_end": "B",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "1/q",
+   "D_weight_other_end": "0"
+  },
+  {
+   "particle": "dbar",
+   "colour_BT": "R",
+   "handedness": "left",
+   "word": "s0 s1^-1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    1,
+    0,
+    0
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    0,
+    0,
+    1
+   ],
+   "Q_twist": "1/3",
+   "Q_SM": "1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 0,
+   "colour_position_other_end": 2,
+   "colour_letter_twisted_end": "R",
+   "colour_letter_other_end": "B",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "q**(-3)",
+   "D_weight_other_end": "0"
+  },
+  {
+   "particle": "dbar",
+   "colour_BT": "R",
+   "handedness": "right",
+   "word": "s1^-1 s0",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    1,
+    0,
+    0
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    0,
+    1,
+    0
+   ],
+   "Q_twist": "1/3",
+   "Q_SM": "1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 0,
+   "colour_position_other_end": 1,
+   "colour_letter_twisted_end": "R",
+   "colour_letter_other_end": "G",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "q**(-3)",
+   "D_weight_other_end": "1/q"
+  },
+  {
+   "particle": "ubar",
+   "colour_BT": "B",
+   "handedness": "left",
+   "word": "s1 s0^-1",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    -1,
+    -1,
+    0
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    -1,
+    0,
+    -1
+   ],
+   "Q_twist": "-2/3",
+   "Q_SM": "-2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 2,
+   "colour_position_other_end": 1,
+   "colour_letter_twisted_end": "B",
+   "colour_letter_other_end": "G",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "0",
+   "D_weight_other_end": "1/q"
+  },
+  {
+   "particle": "ubar",
+   "colour_BT": "B",
+   "handedness": "right",
+   "word": "s0^-1 s1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    -1,
+    -1,
+    0
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    0,
+    -1,
+    -1
+   ],
+   "Q_twist": "-2/3",
+   "Q_SM": "-2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 2,
+   "colour_position_other_end": 0,
+   "colour_letter_twisted_end": "B",
+   "colour_letter_other_end": "R",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "0",
+   "D_weight_other_end": "q**(-3)"
+  },
+  {
+   "particle": "ubar",
+   "colour_BT": "G",
+   "handedness": "left",
+   "word": "s1 s0^-1",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    -1,
+    0,
+    -1
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    0,
+    -1,
+    -1
+   ],
+   "Q_twist": "-2/3",
+   "Q_SM": "-2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 1,
+   "colour_position_other_end": 0,
+   "colour_letter_twisted_end": "G",
+   "colour_letter_other_end": "R",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "1/q",
+   "D_weight_other_end": "q**(-3)"
+  },
+  {
+   "particle": "ubar",
+   "colour_BT": "G",
+   "handedness": "right",
+   "word": "s0^-1 s1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    -1,
+    0,
+    -1
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    -1,
+    -1,
+    0
+   ],
+   "Q_twist": "-2/3",
+   "Q_SM": "-2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 1,
+   "colour_position_other_end": 2,
+   "colour_letter_twisted_end": "G",
+   "colour_letter_other_end": "B",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "1/q",
+   "D_weight_other_end": "0"
+  },
+  {
+   "particle": "ubar",
+   "colour_BT": "R",
+   "handedness": "left",
+   "word": "s1 s0^-1",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    -1,
+    -1
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    -1,
+    -1,
+    0
+   ],
+   "Q_twist": "-2/3",
+   "Q_SM": "-2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 0,
+   "colour_position_other_end": 2,
+   "colour_letter_twisted_end": "R",
+   "colour_letter_other_end": "B",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "q**(-3)",
+   "D_weight_other_end": "0"
+  },
+  {
+   "particle": "ubar",
+   "colour_BT": "R",
+   "handedness": "right",
+   "word": "s0^-1 s1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    -1,
+    -1
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    -1,
+    0,
+    -1
+   ],
+   "Q_twist": "-2/3",
+   "Q_SM": "-2/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 0,
+   "colour_position_other_end": 1,
+   "colour_letter_twisted_end": "R",
+   "colour_letter_other_end": "G",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "q**(-3)",
+   "D_weight_other_end": "1/q"
+  },
+  {
+   "particle": "d",
+   "colour_BT": "B",
+   "handedness": "left",
+   "word": "s1 s0^-1",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    0,
+    -1
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    0,
+    -1,
+    0
+   ],
+   "Q_twist": "-1/3",
+   "Q_SM": "-1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 2,
+   "colour_position_other_end": 1,
+   "colour_letter_twisted_end": "B",
+   "colour_letter_other_end": "G",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "0",
+   "D_weight_other_end": "1/q"
+  },
+  {
+   "particle": "d",
+   "colour_BT": "B",
+   "handedness": "right",
+   "word": "s0^-1 s1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    0,
+    -1
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    -1,
+    0,
+    0
+   ],
+   "Q_twist": "-1/3",
+   "Q_SM": "-1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 2,
+   "colour_position_other_end": 0,
+   "colour_letter_twisted_end": "B",
+   "colour_letter_other_end": "R",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "0",
+   "D_weight_other_end": "q**(-3)"
+  },
+  {
+   "particle": "d",
+   "colour_BT": "G",
+   "handedness": "left",
+   "word": "s1 s0^-1",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    -1,
+    0
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    -1,
+    0,
+    0
+   ],
+   "Q_twist": "-1/3",
+   "Q_SM": "-1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 1,
+   "colour_position_other_end": 0,
+   "colour_letter_twisted_end": "G",
+   "colour_letter_other_end": "R",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "1/q",
+   "D_weight_other_end": "q**(-3)"
+  },
+  {
+   "particle": "d",
+   "colour_BT": "G",
+   "handedness": "right",
+   "word": "s0^-1 s1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    -1,
+    0
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    0,
+    0,
+    -1
+   ],
+   "Q_twist": "-1/3",
+   "Q_SM": "-1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 1,
+   "colour_position_other_end": 2,
+   "colour_letter_twisted_end": "G",
+   "colour_letter_other_end": "B",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "1/q",
+   "D_weight_other_end": "0"
+  },
+  {
+   "particle": "d",
+   "colour_BT": "R",
+   "handedness": "left",
+   "word": "s1 s0^-1",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    -1,
+    0,
+    0
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    0,
+    0,
+    -1
+   ],
+   "Q_twist": "-1/3",
+   "Q_SM": "-1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 0,
+   "colour_position_other_end": 2,
+   "colour_letter_twisted_end": "R",
+   "colour_letter_other_end": "B",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "q**(-3)",
+   "D_weight_other_end": "0"
+  },
+  {
+   "particle": "d",
+   "colour_BT": "R",
+   "handedness": "right",
+   "word": "s0^-1 s1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    -1,
+    0,
+    0
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    0,
+    -1,
+    0
+   ],
+   "Q_twist": "-1/3",
+   "Q_SM": "-1/3",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false,
+   "colour_position_twisted_end": 0,
+   "colour_position_other_end": 1,
+   "colour_letter_twisted_end": "R",
+   "colour_letter_other_end": "G",
+   "H3_end_independent": false,
+   "D_weight_twisted_end": "q**(-3)",
+   "D_weight_other_end": "1/q"
+  },
+  {
+   "particle": "e+",
+   "colour_BT": null,
+   "handedness": "left",
+   "word": "s0 s1^-1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    1,
+    1,
+    1
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    1,
+    1,
+    1
+   ],
+   "Q_twist": "1",
+   "Q_SM": "1",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false
+  },
+  {
+   "particle": "e+",
+   "colour_BT": null,
+   "handedness": "right",
+   "word": "s1^-1 s0",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    1,
+    1,
+    1
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    1,
+    1,
+    1
+   ],
+   "Q_twist": "1",
+   "Q_SM": "1",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false
+  },
+  {
+   "particle": "e-",
+   "colour_BT": null,
+   "handedness": "left",
+   "word": "s1 s0^-1",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    -1,
+    -1,
+    -1
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    -1,
+    -1,
+    -1
+   ],
+   "Q_twist": "-1",
+   "Q_SM": "-1",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false
+  },
+  {
+   "particle": "e-",
+   "colour_BT": null,
+   "handedness": "right",
+   "word": "s0^-1 s1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    -1,
+    -1,
+    -1
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    -1,
+    -1,
+    -1
+   ],
+   "Q_twist": "-1",
+   "Q_SM": "-1",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": false
+  },
+  {
+   "particle": "nubar",
+   "colour_BT": null,
+   "handedness": "right",
+   "word": "s1^-1 s0",
+   "permutation": [
+    1,
+    2,
+    0
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    0,
+    0
+   ],
+   "twisted_end": "top",
+   "twist_at_other_end": [
+    0,
+    0,
+    0
+   ],
+   "Q_twist": "0",
+   "Q_SM": "0",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": true
+  },
+  {
+   "particle": "nu",
+   "colour_BT": null,
+   "handedness": "right",
+   "word": "s0^-1 s1",
+   "permutation": [
+    2,
+    0,
+    1
+   ],
+   "writhe": 0,
+   "twist_at_twisted_end": [
+    0,
+    0,
+    0
+   ],
+   "twisted_end": "bottom",
+   "twist_at_other_end": [
+    0,
+    0,
+    0
+   ],
+   "Q_twist": "0",
+   "Q_SM": "0",
+   "Q_crossing_half_writhe": "0",
+   "H1_pass": true,
+   "H2_pass": true
+  }
+ ],
+ "proton_H5": [
+  {
+   "d": "s1 s0^-1",
+   "u_R": "s0 s1^-1",
+   "u_G": "s0 s1^-1",
+   "top_sums": [
+    1,
+    0,
+    2
+   ],
+   "bottom_sums": [
+    1,
+    2,
+    0
+   ],
+   "BT_mixed_end_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": false,
+   "bottom_equal": false
+  },
+  {
+   "d": "s1 s0^-1",
+   "u_R": "s0 s1^-1",
+   "u_G": "s1^-1 s0",
+   "top_sums": [
+    1,
+    0,
+    2
+   ],
+   "bottom_sums": [
+    2,
+    2,
+    -1
+   ],
+   "BT_mixed_end_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": false,
+   "bottom_equal": false
+  },
+  {
+   "d": "s1 s0^-1",
+   "u_R": "s1^-1 s0",
+   "u_G": "s0 s1^-1",
+   "top_sums": [
+    1,
+    0,
+    2
+   ],
+   "bottom_sums": [
+    1,
+    1,
+    1
+   ],
+   "BT_mixed_end_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": false,
+   "bottom_equal": true
+  },
+  {
+   "d": "s1 s0^-1",
+   "u_R": "s1^-1 s0",
+   "u_G": "s1^-1 s0",
+   "top_sums": [
+    1,
+    0,
+    2
+   ],
+   "bottom_sums": [
+    2,
+    1,
+    0
+   ],
+   "BT_mixed_end_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": false,
+   "bottom_equal": false
+  },
+  {
+   "d": "s0^-1 s1",
+   "u_R": "s0 s1^-1",
+   "u_G": "s0 s1^-1",
+   "top_sums": [
+    0,
+    1,
+    2
+   ],
+   "bottom_sums": [
+    1,
+    2,
+    0
+   ],
+   "BT_mixed_end_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": false,
+   "bottom_equal": false
+  },
+  {
+   "d": "s0^-1 s1",
+   "u_R": "s0 s1^-1",
+   "u_G": "s1^-1 s0",
+   "top_sums": [
+    0,
+    1,
+    2
+   ],
+   "bottom_sums": [
+    2,
+    2,
+    -1
+   ],
+   "BT_mixed_end_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": false,
+   "bottom_equal": false
+  },
+  {
+   "d": "s0^-1 s1",
+   "u_R": "s1^-1 s0",
+   "u_G": "s0 s1^-1",
+   "top_sums": [
+    0,
+    1,
+    2
+   ],
+   "bottom_sums": [
+    1,
+    1,
+    1
+   ],
+   "BT_mixed_end_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": false,
+   "bottom_equal": true
+  },
+  {
+   "d": "s0^-1 s1",
+   "u_R": "s1^-1 s0",
+   "u_G": "s1^-1 s0",
+   "top_sums": [
+    0,
+    1,
+    2
+   ],
+   "bottom_sums": [
+    2,
+    1,
+    0
+   ],
+   "BT_mixed_end_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": false,
+   "bottom_equal": false
+  }
+ ],
+ "proton_H5_posthoc_read_at_top": [
+  {
+   "d": "s1 s0^-1",
+   "u_R": "s0 s1^-1",
+   "u_G": "s0 s1^-1",
+   "top_sums": [
+    1,
+    1,
+    1
+   ],
+   "bottom_sums": [
+    0,
+    2,
+    1
+   ],
+   "top_equal": true,
+   "bottom_equal": false
+  },
+  {
+   "d": "s1 s0^-1",
+   "u_R": "s0 s1^-1",
+   "u_G": "s1^-1 s0",
+   "top_sums": [
+    1,
+    1,
+    1
+   ],
+   "bottom_sums": [
+    1,
+    2,
+    0
+   ],
+   "top_equal": true,
+   "bottom_equal": false
+  },
+  {
+   "d": "s1 s0^-1",
+   "u_R": "s1^-1 s0",
+   "u_G": "s0 s1^-1",
+   "top_sums": [
+    1,
+    1,
+    1
+   ],
+   "bottom_sums": [
+    0,
+    1,
+    2
+   ],
+   "top_equal": true,
+   "bottom_equal": false
+  },
+  {
+   "d": "s1 s0^-1",
+   "u_R": "s1^-1 s0",
+   "u_G": "s1^-1 s0",
+   "top_sums": [
+    1,
+    1,
+    1
+   ],
+   "bottom_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": true,
+   "bottom_equal": true
+  },
+  {
+   "d": "s0^-1 s1",
+   "u_R": "s0 s1^-1",
+   "u_G": "s0 s1^-1",
+   "top_sums": [
+    1,
+    1,
+    1
+   ],
+   "bottom_sums": [
+    1,
+    1,
+    1
+   ],
+   "top_equal": true,
+   "bottom_equal": true
+  },
+  {
+   "d": "s0^-1 s1",
+   "u_R": "s0 s1^-1",
+   "u_G": "s1^-1 s0",
+   "top_sums": [
+    1,
+    1,
+    1
+   ],
+   "bottom_sums": [
+    2,
+    1,
+    0
+   ],
+   "top_equal": true,
+   "bottom_equal": false
+  },
+  {
+   "d": "s0^-1 s1",
+   "u_R": "s1^-1 s0",
+   "u_G": "s0 s1^-1",
+   "top_sums": [
+    1,
+    1,
+    1
+   ],
+   "bottom_sums": [
+    1,
+    0,
+    2
+   ],
+   "top_equal": true,
+   "bottom_equal": false
+  },
+  {
+   "d": "s0^-1 s1",
+   "u_R": "s1^-1 s0",
+   "u_G": "s1^-1 s0",
+   "top_sums": [
+    1,
+    1,
+    1
+   ],
+   "bottom_sums": [
+    2,
+    0,
+    1
+   ],
+   "top_equal": true,
+   "bottom_equal": false
+  }
+ ],
+ "D_radical_vector": {
+  "(0, 1, 2)": "-q**3",
+  "(0, 2, 1)": "q**2",
+  "(1, 0, 2)": "q**2",
+  "(1, 2, 0)": "-q",
+  "(2, 0, 1)": "-q",
+  "(2, 1, 0)": "1"
+ },
+ "tr_D_b": "q**2/(q**2 + 1)**2",
+ "tr_D_electron_s0s1s0": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+ "summary": {
+  "pass": 14,
+  "total": 25,
+  "differs_from_prereg_expectation": [
+   "H5(i) proton d_B+u_R+u_G, one panel: equal super-strand sums at both ends"
+  ]
+ }
+}

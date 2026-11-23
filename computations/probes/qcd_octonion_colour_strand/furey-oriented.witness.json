@@ -1,0 +1,736 @@
+{
+ "producer": "computations/probes/qcd_octonion_colour_strand/furey_oriented_probe.py",
+ "prereg": "computations/probes/qcd_octonion_colour_strand/PREREG.md",
+ "arithmetic": "exact Laurent polynomials over Q (fractions.Fraction); no floats",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "generic formal q (Laurent polynomials); q0 never read",
+ "checks": [
+  {
+   "check": "S2[['1', '3', '3b', '1p']] Q2a Hecke (R-q)(R+q^-1)=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['1', '3', '3b', '1p']] Q2a braid relation on (C^8)^3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['1', '3', '3b', '1p']] Q2b U_q(sl3) relations on C^8",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['1', '3', '3b', '1p']] gl_N coproduct convention for Jimbo Rc identified",
+   "pass": true,
+   "detail": "['E(x)K+1(x)E', 'E(x)1+K^-1(x)E']"
+  },
+  {
+   "check": "S2[['1', '3', '3b', '1p']] Q2c-Levi: block-separate gl3 x gl3 colour commutes with Rc",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['1', '3', '3b', '1p']] Q2c-diag: ONE U_q(sl3) on 3+3bar commutes with Jimbo Rc at generic q",
+   "pass": false,
+   "detail": "E(x)K+1(x)E: ['-1*q^-1 + 1*q^0', '-1*q^0 + 1*q^1', '1*q^-1 + -1*q^0', '1*q^0 + -1*q^1']; E(x)1+K(x)E: ['-1*q^-1 + 1*q^0', '-1*q^-2 + 1*q^0', '-1*q^0 + 1*q^1', '-1*q^0 + 1*q^2', '1*q^-1 + -1*q^0', '1*q^-1 + -1*q^1', '1*q^0 + -1*q^1']; E(x)K^-1+1(x)E: ['-1*q^-1 + 1*q^0', '-1*q^-1 + 1*q^1', '-1*q^0 + 1*q^1', '1*q^-1 + -1*q^0', '1*q^-2 + -1*q^0', '1*q^0 + -1*q^1', '1*q^0 + -1*q^2']; E(x)1+K^-1(x)E: ['-1*q^-1 + 1*q^0', '-1*q^0 + 1*q^1', '1*q^-1 + -1*q^0', '1*q^0 + -1*q^1']"
+  },
+  {
+   "check": "S2[['1', '3', '3b', '1p']] Q2e all block-union twists Markov",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['1', '3', '3b', '1p']] Q2e block-union twists Levi-colour invariant",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['1', '3', '3b', '1p']] Q2e partial-block twist NOT colour invariant",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2 Q2f photon letters s0, s1, s0 s1^-1 commute with colour (Levi E) on (C^8)^3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['3', '1', '3b', '1p']] Q2a Hecke (R-q)(R+q^-1)=0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['3', '1', '3b', '1p']] Q2a braid relation on (C^8)^3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['3', '1', '3b', '1p']] Q2b U_q(sl3) relations on C^8",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['3', '1', '3b', '1p']] gl_N coproduct convention for Jimbo Rc identified",
+   "pass": true,
+   "detail": "['E(x)K+1(x)E', 'E(x)1+K^-1(x)E']"
+  },
+  {
+   "check": "S2[['3', '1', '3b', '1p']] Q2c-Levi: block-separate gl3 x gl3 colour commutes with Rc",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['3', '1', '3b', '1p']] Q2c-diag: ONE U_q(sl3) on 3+3bar commutes with Jimbo Rc at generic q",
+   "pass": false,
+   "detail": "E(x)K+1(x)E: ['-1*q^-1 + 1*q^0', '-1*q^0 + 1*q^1', '1*q^-1 + -1*q^0', '1*q^0 + -1*q^1']; E(x)1+K(x)E: ['-1*q^-1 + 1*q^0', '-1*q^-2 + 1*q^0', '-1*q^0 + 1*q^1', '-1*q^0 + 1*q^2', '1*q^-1 + -1*q^0', '1*q^-1 + -1*q^1', '1*q^0 + -1*q^1']; E(x)K^-1+1(x)E: ['-1*q^-1 + 1*q^0', '-1*q^-1 + 1*q^1', '-1*q^0 + 1*q^1', '1*q^-1 + -1*q^0', '1*q^-2 + -1*q^0', '1*q^0 + -1*q^1', '1*q^0 + -1*q^2']; E(x)1+K^-1(x)E: ['-1*q^-1 + 1*q^0', '-1*q^0 + 1*q^1', '1*q^-1 + -1*q^0', '1*q^0 + -1*q^1']"
+  },
+  {
+   "check": "S2[['3', '1', '3b', '1p']] Q2e all block-union twists Markov",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['3', '1', '3b', '1p']] Q2e block-union twists Levi-colour invariant",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S2[['3', '1', '3b', '1p']] Q2e partial-block twist NOT colour invariant",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S5 R R^-1 = 1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S5 U_q(gl3) coproduct convention with Jimbo Rc",
+   "pass": true,
+   "detail": "['A']"
+  },
+  {
+   "check": "S5 Q5a mixed crossings intertwine the genuine U_q(gl3) coproduct (colour moves with strand)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S5 dual (antiquark) strand is a U_q(sl3) rep",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S5 Q5b mixed Yang-Baxter on VV*V, V*VV, VVV*",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S5 Q5c monodromy on V(x)V* has a degree-2 minimal polynomial (q^a, q^b)",
+   "pass": true,
+   "detail": "[((1, -6), (1, 0))]"
+  },
+  {
+   "check": "S4 Riemann-Hurwitz genus of (2,4,5) S5-cover = 4",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "check": "S4 trivial summand in H1(Bring) (needed for an equivariant unit 1 of O or H)",
+   "pass": false,
+   "detail": "S5: 0, A5: 0"
+  },
+  {
+   "check": "S4 3-dim A5 summand in H1(Bring) (needed for an equivariant Im H = (i,j,k))",
+   "pass": false,
+   "detail": "m(3a)+m(3b) = 0"
+  }
+ ],
+ "results": {
+  "S2": {
+   "1/3/3b/1p": {
+    "order": [
+     "1",
+     "3",
+     "3b",
+     "1p"
+    ],
+    "N": 8,
+    "weights_(K1,K2)_exponents": {
+     "1": [
+      [
+       0,
+       0
+      ]
+     ],
+     "3": [
+      [
+       1,
+       0
+      ],
+      [
+       -1,
+       1
+      ],
+      [
+       0,
+       -1
+      ]
+     ],
+     "3b": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       -1
+      ],
+      [
+       -1,
+       0
+      ]
+     ],
+     "1p": [
+      [
+       0,
+       0
+      ]
+     ]
+    },
+    "glN_coproduct_convention": "E(x)K+1(x)E",
+    "Q2c_diag": {
+     "E(x)K+1(x)E": {
+      "commutes": false,
+      "distinct_commutator_entries": [
+       "-1*q^-1 + 1*q^0",
+       "-1*q^0 + 1*q^1",
+       "1*q^-1 + -1*q^0",
+       "1*q^0 + -1*q^1"
+      ]
+     },
+     "E(x)1+K(x)E": {
+      "commutes": false,
+      "distinct_commutator_entries": [
+       "-1*q^-1 + 1*q^0",
+       "-1*q^-2 + 1*q^0",
+       "-1*q^0 + 1*q^1",
+       "-1*q^0 + 1*q^2",
+       "1*q^-1 + -1*q^0",
+       "1*q^-1 + -1*q^1",
+       "1*q^0 + -1*q^1"
+      ]
+     },
+     "E(x)K^-1+1(x)E": {
+      "commutes": false,
+      "distinct_commutator_entries": [
+       "-1*q^-1 + 1*q^0",
+       "-1*q^-1 + 1*q^1",
+       "-1*q^0 + 1*q^1",
+       "1*q^-1 + -1*q^0",
+       "1*q^-2 + -1*q^0",
+       "1*q^0 + -1*q^1",
+       "1*q^0 + -1*q^2"
+      ]
+     },
+     "E(x)1+K^-1(x)E": {
+      "commutes": false,
+      "distinct_commutator_entries": [
+       "-1*q^-1 + 1*q^0",
+       "-1*q^0 + 1*q^1",
+       "1*q^-1 + -1*q^0",
+       "1*q^0 + -1*q^1"
+      ]
+     }
+    },
+    "Q2c_diag_commutator_vanishes_at_q=1": true,
+    "Q2c_diag_commutator_vanishes_at_q=-1": false,
+    "partial_block_twist_example": {
+     "support": [
+      1,
+      0
+     ],
+     "markov": true,
+     "colour_invariant": false
+    },
+    "Q2e_block_union_twists": [
+     {
+      "blocks": [
+       "1"
+      ],
+      "rank": 1,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^1/[1]_q"
+     },
+     {
+      "blocks": [
+       "3"
+      ],
+      "rank": 3,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^3/[3]_q"
+     },
+     {
+      "blocks": [
+       "3b"
+      ],
+      "rank": 3,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^3/[3]_q"
+     },
+     {
+      "blocks": [
+       "1p"
+      ],
+      "rank": 1,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^1/[1]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "3"
+      ],
+      "rank": 4,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^4/[4]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "3b"
+      ],
+      "rank": 4,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^4/[4]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "1p"
+      ],
+      "rank": 2,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^2/[2]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "3b"
+      ],
+      "rank": 6,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^6/[6]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "1p"
+      ],
+      "rank": 4,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^4/[4]_q"
+     },
+     {
+      "blocks": [
+       "3b",
+       "1p"
+      ],
+      "rank": 4,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^4/[4]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "3",
+       "3b"
+      ],
+      "rank": 7,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^7/[7]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "3",
+       "1p"
+      ],
+      "rank": 5,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^5/[5]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "3b",
+       "1p"
+      ],
+      "rank": 5,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^5/[5]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "3b",
+       "1p"
+      ],
+      "rank": 7,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^7/[7]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "3",
+       "3b",
+       "1p"
+      ],
+      "rank": 8,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^8/[8]_q"
+     }
+    ],
+    "Q2e_colour_invariant_twists_with_z_D": [
+     [
+      "1",
+      "1p"
+     ]
+    ],
+    "Q2f_photon_letters_colour_neutral": true
+   },
+   "3/1/3b/1p": {
+    "order": [
+     "3",
+     "1",
+     "3b",
+     "1p"
+    ],
+    "N": 8,
+    "weights_(K1,K2)_exponents": {
+     "3": [
+      [
+       1,
+       0
+      ],
+      [
+       -1,
+       1
+      ],
+      [
+       0,
+       -1
+      ]
+     ],
+     "1": [
+      [
+       0,
+       0
+      ]
+     ],
+     "3b": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       -1
+      ],
+      [
+       -1,
+       0
+      ]
+     ],
+     "1p": [
+      [
+       0,
+       0
+      ]
+     ]
+    },
+    "glN_coproduct_convention": "E(x)K+1(x)E",
+    "Q2c_diag": {
+     "E(x)K+1(x)E": {
+      "commutes": false,
+      "distinct_commutator_entries": [
+       "-1*q^-1 + 1*q^0",
+       "-1*q^0 + 1*q^1",
+       "1*q^-1 + -1*q^0",
+       "1*q^0 + -1*q^1"
+      ]
+     },
+     "E(x)1+K(x)E": {
+      "commutes": false,
+      "distinct_commutator_entries": [
+       "-1*q^-1 + 1*q^0",
+       "-1*q^-2 + 1*q^0",
+       "-1*q^0 + 1*q^1",
+       "-1*q^0 + 1*q^2",
+       "1*q^-1 + -1*q^0",
+       "1*q^-1 + -1*q^1",
+       "1*q^0 + -1*q^1"
+      ]
+     },
+     "E(x)K^-1+1(x)E": {
+      "commutes": false,
+      "distinct_commutator_entries": [
+       "-1*q^-1 + 1*q^0",
+       "-1*q^-1 + 1*q^1",
+       "-1*q^0 + 1*q^1",
+       "1*q^-1 + -1*q^0",
+       "1*q^-2 + -1*q^0",
+       "1*q^0 + -1*q^1",
+       "1*q^0 + -1*q^2"
+      ]
+     },
+     "E(x)1+K^-1(x)E": {
+      "commutes": false,
+      "distinct_commutator_entries": [
+       "-1*q^-1 + 1*q^0",
+       "-1*q^0 + 1*q^1",
+       "1*q^-1 + -1*q^0",
+       "1*q^0 + -1*q^1"
+      ]
+     }
+    },
+    "Q2c_diag_commutator_vanishes_at_q=1": true,
+    "Q2c_diag_commutator_vanishes_at_q=-1": false,
+    "partial_block_twist_example": {
+     "support": [
+      0,
+      3
+     ],
+     "markov": true,
+     "colour_invariant": false
+    },
+    "Q2e_block_union_twists": [
+     {
+      "blocks": [
+       "3"
+      ],
+      "rank": 3,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^3/[3]_q"
+     },
+     {
+      "blocks": [
+       "1"
+      ],
+      "rank": 1,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^1/[1]_q"
+     },
+     {
+      "blocks": [
+       "3b"
+      ],
+      "rank": 3,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^3/[3]_q"
+     },
+     {
+      "blocks": [
+       "1p"
+      ],
+      "rank": 1,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^1/[1]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "1"
+      ],
+      "rank": 4,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^4/[4]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "3b"
+      ],
+      "rank": 6,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^6/[6]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "1p"
+      ],
+      "rank": 4,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^4/[4]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "3b"
+      ],
+      "rank": 4,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^4/[4]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "1p"
+      ],
+      "rank": 2,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^2/[2]_q"
+     },
+     {
+      "blocks": [
+       "3b",
+       "1p"
+      ],
+      "rank": 4,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^4/[4]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "1",
+       "3b"
+      ],
+      "rank": 7,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^7/[7]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "1",
+       "1p"
+      ],
+      "rank": 5,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^5/[5]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "3b",
+       "1p"
+      ],
+      "rank": 7,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^7/[7]_q"
+     },
+     {
+      "blocks": [
+       "1",
+       "3b",
+       "1p"
+      ],
+      "rank": 5,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^5/[5]_q"
+     },
+     {
+      "blocks": [
+       "3",
+       "1",
+       "3b",
+       "1p"
+      ],
+      "rank": 8,
+      "markov": true,
+      "levi_colour_invariant_n1": true,
+      "z": "q^8/[8]_q"
+     }
+    ],
+    "Q2e_colour_invariant_twists_with_z_D": [
+     [
+      "1",
+      "1p"
+     ]
+    ]
+   }
+  },
+  "S5": {
+   "coproduct_convention": "A",
+   "monodromy_eigen_exponents": [
+    [
+     [
+      1,
+      -6
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   ],
+   "eigenvalue_a": "1*q^-6",
+   "mult_a": "1",
+   "eigenvalue_b": "1*q^0",
+   "mult_b": "8",
+   "octet_projector": "P8 = (M - lambda_1)/(lambda_8 - lambda_1), lambda_8 the eigenvalue of multiplicity 8",
+   "Q5d_photon_letters_colour_neutral": true
+  },
+  "S4": {
+   "genus": "4",
+   "character_H1_by_cycle_type": {
+    "(1, 1, 1, 1, 1)": "8",
+    "(2, 1, 1, 1)": "-4",
+    "(3, 1, 1)": "2",
+    "(2, 2, 1)": "0",
+    "(4, 1)": "0",
+    "(3, 2)": "2",
+    "(5,)": "-2"
+   },
+   "S5_multiplicities": {
+    "triv": "0",
+    "sgn": "0",
+    "std4": "0",
+    "std4s": "2",
+    "5": "0",
+    "5s": "0",
+    "6": "0"
+   },
+   "H1_character_values_on_5cycles": [
+    "-2"
+   ],
+   "trivial_multiplicity_S5": "0",
+   "trivial_multiplicity_A5": "0",
+   "A5_multiplicity_3a_plus_3b": "0",
+   "A5_multiplicity_4": "2",
+   "A5_multiplicity_5": "0"
+  }
+ }
+}
