@@ -1,10 +1,11 @@
 ---
 # qou-w478
 title: Survey article (10-15 pp) + narrated slide deck per section, PBS Space Time style
-status: todo
+status: in-progress
 type: feature
+priority: normal
 created_at: 2026-11-23T21:33:51Z
-updated_at: 2026-11-23T21:33:51Z
+updated_at: 2026-11-23T23:53:43Z
 parent: qou-5bkr
 ---
 
