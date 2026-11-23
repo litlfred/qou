@@ -1,4 +1,5 @@
 import QOU.Mass.BridgeAStokesNBody
+import QOU.Mass.KohnoAssemblyGL
 
 /-!
 # Bridge A on colour ⊗ flavour: the transport and the monodromy split
@@ -35,15 +36,16 @@ and this form is exactly that case.
 
 ## What is still assumed
 
-* The **colour Drinfeld–Kohno step**: the hypothesis `hcol`, that the colour KZ holonomy on
-  `(ℂ³)^{⊗n}` is conjugate, after its scalar, to Jimbo's `Ř_colour`. This is Kohno's theorem for
-  `𝔤𝔩_3`; the corpus proves it only for `ℂ²`.
+* For colour `ℂ³` the colour Drinfeld–Kohno step is now proved:
+  `colourC3_flavour_monodromy_conj` discharges `hcol` with Drinfeld–Kohno for `ℂ^d`
+  (`KohnoAssemblyGL.kz_conj_jimboN_complex_σ`, at `d = 3`). It needs the colour coupling generic,
+  i.e. `e^{πiβ_c}` not a root of unity, just as the flavour step does.
 * The vanishing of the mixed `P_c P_f` term in the Lagrangian's pair residue. This is a statement
   about the Lagrangian, and it is not derived here.
 
-So `ColourTubeBraided` is reduced to Drinfeld–Kohno for `ℂ³` plus that residue condition. It
-appears here in matrix form; `ColourFlavourMirror` writes the same tensors as functions
-`Fin 3 → Fin 3 → Fin 3 → M`, and that change of notation is not formalised.
+So `ColourTubeBraided` is reduced to that residue condition (plus genericity of the two
+couplings). It appears here in matrix form; `ColourFlavourMirror` writes the same tensors as
+functions `Fin 3 → Fin 3 → Fin 3 → M`, and that change of notation is not formalised.
 
 No empirical number enters.
 
@@ -250,6 +252,32 @@ theorem colourFlavour_monodromy_conj (ρc : Equiv.Perm (Fin (m + 1)) →* Matrix
   rw [colourFlavour_generator_monodromy ρc permRep hβc hβf j (hU j), MulAction.mul_smul,
     ← Matrix.kronecker_smul, ← Matrix.smul_kronecker]
   exact kron_conj (hWc j) (hWf j)
+
+/-- **Colour `ℂ³` ⊗ flavour `ℂ²`, with no colour hypothesis.** Take colour `V_c = ℂ³` with the
+strand permutation action, and both couplings generic (`e^{πiβ_c}`, `e^{πiβ_f}` not roots of
+unity). Then the full rescaled monodromy of the colour ⊗ flavour form is conjugate, by one
+invertible matrix for all `j`, to `Ř^{𝔤𝔩_3}_{j,j+1}(q_c) ⊗ Ř^{𝔤𝔩_2}_{j,j+1}(q_f)`.
+
+The colour step `hcol` of `colourFlavour_monodromy_conj` is discharged by Drinfeld–Kohno for
+`ℂ³` (`KohnoAssemblyGL.kz_conj_jimboN_complex_σ`).
+-- Ref: [kohno1987] https://doi.org/10.5802/aif.1114 -/
+theorem colourC3_flavour_monodromy_conj (hβc : βc ≠ 0) (hβf : βf ≠ 0)
+    (hκc : GenericParameter.NotRootOfUnity (qC (βc / 2)))
+    (hκ : GenericParameter.NotRootOfUnity (qC (βf / 2)))
+    (U : Fin m → ℝ → Matrix ((Fin (m + 1) → Fin 3) × (Fin (m + 1) → Fin 2))
+      ((Fin (m + 1) → Fin 3) × (Fin (m + 1) → Fin 2)) ℂ)
+    (hU : ∀ j, IsTransport
+      (colourFlavourForm (pairResid (KohnoAssemblyGL.permRepN (d := 3)) αc βc)
+        (pairResid permRep αf βf)) (genPath j) (genPath' j) (U j)) :
+    ∃ W : (Matrix ((Fin (m + 1) → Fin 3) × (Fin (m + 1) → Fin 2))
+      ((Fin (m + 1) → Fin 3) × (Fin (m + 1) → Fin 2)) ℂ)ˣ, ∀ j : Fin m,
+      (W : Matrix _ _ ℂ) * ((Complex.exp (2 * (βc / 2) * (Real.pi * Complex.I) * (-αc / βc)) *
+          Complex.exp (2 * (βf / 2) * (Real.pi * Complex.I) * (-αf / βf))) •
+          genMonodromy (kronRep (KohnoAssemblyGL.permRepN (d := 3)) permRep) (U j) j) =
+        (QOU.IwahoriHecke.TensorEmbedGL.strandBraid (d := 3) (qC (βc / 2)) (qC (βc / 2))⁻¹ j ⊗ₖ
+          strandBraid (qC (βf / 2)) (qC (βf / 2))⁻¹ j) * (W : Matrix _ _ ℂ) :=
+  colourFlavour_monodromy_conj _ hβc hβf hκ _
+    (KohnoAssemblyGL.kz_conj_jimboN_complex_σ (d := 3) (m := m) (-αc / βc) (βc / 2) hκc) U hU
 
 end Conj
 
