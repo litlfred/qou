@@ -1,6 +1,48 @@
 # Contributing to QOU
 
-Thanks for your interest in the **Quantum Observable Universe** repository. This file is the entry point for contributors. For the deeper architecture, see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+Thanks for your interest in the **Quantum Observable Universe** repository (source: [github.com/litlfred/qou](https://github.com/litlfred/qou)). This repository is a mathematics paper with a Lean 4 formalisation and a compute layer. Contributions are welcome, but the bar is deliberately strict: every report must be checkable by someone who was not in your head when you wrote it.
+
+## Contribution policy (applies to everyone except the owner, `litlfred`)
+
+### Issues: bring evidence, or the issue is closed
+
+An issue must carry **at least one** of the following. An issue without one is closed, without discussion, by the issue-policy check and by the maintainers.
+
+| Evidence | What counts |
+|---|---|
+| **Lean counterexample** | A self-contained Lean 4 snippet that compiles against this repository's Lake workspace and proves the negation of a stated result, or shows a stated declaration is vacuous (e.g. its hypotheses are unsatisfiable, or it concludes `True`). Name the declaration (`QOU.…`). |
+| **Failing Python test** | A minimal script or `pytest` test, runnable from the repository root, that fails on `main` and shows a wrong number, a precision loss, or a broken producer. Paste the command and its output. Use `mpmath`, never float64, for any numerical claim. |
+| **Pinpoint mathematical citation** | A published source with **theorem/lemma/equation number and page**, plus the exact block it bears on (the `.md` path or the label, e.g. `prop:foo`). "See the literature" or a paper without a location is not a citation. |
+
+Use the issue forms under **New issue**; each form asks for exactly one of these. Blank issues are disabled. Questions, opinions and requests for explanation go to Discussions if enabled, not to issues.
+
+The **physics comparison points** (a model quantity set against CODATA, AME2020 or PDG) are where the empirical claims of the paper live. A report that such a comparison is wrong is welcome and still needs one of the three items above, typically a failing Python test.
+
+### Pull requests: same bar, plus validation
+
+A pull request must:
+
+1. reference an issue that meets the policy above (or open one);
+2. pass the validation the change touches, stated in the PR body with the commands you ran: `lean -DautoImplicit=false -s 65536 <file>` (exit 0, `#print axioms` shows no `sorryAx`) for Lean; `scripts/precision-gates.sh --changed` for compute; the content validator for `.ts`/`.md` blocks;
+3. introduce no new `sorry` without a `-- Ref:` citation, no `: True` placeholder, and no fitted constant (see [`AGENTS.md`](AGENTS.md), §"NO FITTING" and §"Strict Lean Discipline").
+
+The knowledge-graph tooling, schemas and the validation rules that content blocks must satisfy live in [**litlfred/folio-assistant-core**](https://github.com/litlfred/folio-assistant-core). Read its README before editing a content block.
+
+### Attribution: a merged pull request earns authorship
+
+If you are not the owner and a pull request of yours is **merged** into `main`, you will be **listed among the authors of the paper**, with the PR cited. Concretely:
+
+- your name (as you give it in the PR, or your GitHub login) is added to the author list in [`folio/quantum-observable-universe/identity.ts`](folio/quantum-observable-universe/identity.ts) and to [`CONTRIBUTORS.md`](CONTRIBUTORS.md) in the same release;
+- the authors' note of the paper describes this policy;
+- a closed-unmerged PR, an issue, or a review comment does not by itself earn authorship, but issues that lead to a merged correction are acknowledged.
+
+Tell us in the PR body how you want to be named and whether to include an affiliation or ORCID.
+
+### License of contributions
+
+The repository is licensed under **[Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE)**. By opening a pull request you agree that your contribution is released under the same license.
+
+For the deeper architecture, see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ## TL;DR
 
@@ -56,9 +98,9 @@ Re-run the setup script any time to update the platform clone or repair the syml
 
 | Package | Language | What |
 |---|---|---|
-| `tools/qou-substrate/` | Python | `WitnessBuilder` + `_precision` + `q_parameter` substrate trio — published as `qou-substrate` on PyPI |
-| `tools/pyhecke/` | Python | Pure-Python Hecke + Gram + Wedderburn-Artin canonical surface — published as `pyhecke` on PyPI (workflow #1133) |
-| `tools/pyhecke-native/` | Rust → Python (PyO3) | Native acceleration layer; published as `pyhecke-native` wheels on PyPI (workflow #1134) |
+| `tools/qou-substrate/` | Python | `WitnessBuilder` + `_precision` + `q_parameter` substrate trio (not published to PyPI; install from the repo) |
+| `tools/pyhecke/` | Python | Pure-Python Hecke + Gram + Wedderburn-Artin canonical surface (not published to PyPI; install from the repo) |
+| `tools/pyhecke-native/` | Rust → Python (PyO3) | Native acceleration layer (not published; build with `maturin build --release`) |
 | `tools/hecke-engine/` | Rust | The canonical Rust core (Gröbner-Shirshov reducer, Gram, Markov-trace, Wenzl LR, SDP backends) |
 | `tools/hecke-engine-wasm/` | Rust → WASM | `wasm-bindgen` exports of the rug-free canonical surface — published as `@litlfred/hecke-engine-wasm` on npm (when stable) |
 | `tools/hecke-engine-node/` | Rust → Node (napi-rs) | Server-side Node.js native binding — published as `@litlfred/hecke-engine-node` on npm (when stable) |
