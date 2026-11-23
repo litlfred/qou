@@ -57,10 +57,49 @@ def hbar(q):
     return 1 - 1 / q
 
 
+def y3(q):
+    return 1 - 2 / (q + 1 / q) ** 2
+
+
+def y21(q):
+    return 1 / (q + 1 / q) ** 2
+
+
+def mat(a, b, c, d):
+    return mp.matrix([[a, b], [c, d]])
+
+
+def r21a(q):  # rho_(2,1)(sigma0), as in QOU.QBeta.WeightSpaceMarkov
+    return mat(q, 1, 0, -1 / q)
+
+
+def r21b(q):  # rho_(2,1)(sigma1)
+    return mat(-1 / q, 0, 1, q)
+
+
+def inv21(q, M):  # sigma^-1 = sigma - h
+    return M - (q - 1 / q) * mp.eye(2)
+
+
+def trace_D3(q, chi3, M):
+    return y3(q) * chi3 + y21(q) * (M[0, 0] + M[1, 1])
+
+
+def tau_fig8(q):
+    """Convention-D trace of (sigma0 sigma1^-1)^2, the standard 3-braid of 4_1."""
+    a, bi = r21a(q), inv21(q, r21b(q))
+    return trace_D3(q, mp.mpf(1), a * bi * a * bi)
+
+
 def row(q):
     t = tau_e(q)
     h2 = hbar(q) ** 2
     return {
+        "R_classical_part_q3_over_2hbar2": q**3 / (2 * h2),
+        "R_quantum_part_q5(q+1)^2/(2(q^2+1)^2)": q**5 * (q + 1) ** 2 / (2 * (q**2 + 1) ** 2),
+        "y3": y3(q),
+        "tau_fig8_3braid": tau_fig8(q),
+        "trace_ratio_fig8_over_electron": tau_fig8(q) / t,
         "q": q,
         "tau_e": t,
         "hbar_sq": h2,
@@ -97,6 +136,17 @@ for r in (P, M):
     rhs = r["tau_e"] * r["q"] ** 2 * r["c_q_sq"]
     check(f"R = tau_e q^2 c_q^2 at q={mp.nstr(r['q'], 12)}",
           abs(lhs - rhs) < mp.mpf(10) ** (-(mp.mp.dps - 10)))
+
+# Exact split (QOU.Observations.ElectronUnitSplit): tau_e = q^3 y3, R = classical + quantum.
+for r in (P, M):
+    q = r["q"]
+    tol = mp.mpf(10) ** (-(mp.mp.dps - 10))
+    check(f"tau_e = q^3 y3 at q={mp.nstr(q, 12)}", abs(r["tau_e"] - q**3 * r["y3"]) < tol)
+    check(f"R = classical + quantum part at q={mp.nstr(q, 12)}",
+          abs(r["R_unit_mass_over_unit_trace"] - r["R_classical_part_q3_over_2hbar2"]
+              - r["R_quantum_part_q5(q+1)^2/(2(q^2+1)^2)"]) < tol)
+check("y3 bar-invariant at q0", abs(y3(Q_PROTON) - y3(1 / Q_PROTON)) < mp.mpf(10) ** -60)
+check("fig-8 3-braid trace at q=1 is 2^(1-3) = 1/4", abs(tau_fig8(mp.mpf(1)) - mp.mpf(1) / 4) < mp.mpf(10) ** -60)
 
 rel = abs(P["R_unit_mass_over_unit_trace"] / M["R_unit_mass_over_unit_trace"] - 1)
 print(f"\nrelative pin sensitivity of R: {mp.nstr(rel, 6)}")
