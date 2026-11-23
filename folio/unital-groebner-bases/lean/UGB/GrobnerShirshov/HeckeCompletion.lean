@@ -34,6 +34,16 @@ lines, in the algebra:
 so the rule is the same two-term shape as `yangBaxterRelation`, which it
 subsumes at `j = i − 1`.
 
+## Attribution
+
+Bokut & Shiao [bokut2001] give this family for the Coxeter group (`q = 1`).
+For the Iwahori–Hecke algebra itself, the completed system — quadratic rule,
+far commutation, and `T_{i+1,j} T_{i+1} − T_i T_{i+1,j}` (`i ≥ j`) — is proved
+to be a Gröbner–Shirshov basis by Kang, Lee, Lee & Oh [kangleeleeoh2002],
+Prop. 4.3 (pp. 275–276), in the convention `T² = (q − 1)T + q`, which matches
+`σ² = (Q − Q⁻¹)σ + 1` under `q = Q²`, `T = Qσ`.
+-- Ref: [kangleeleeoh2002] https://doi.org/10.1016/S0021-8693(02)00071-6
+
 ## Indices
 
 `bokutShiaoRelation` takes `i'`, `i`, `j` with `i'` standing for `i − 1`,
