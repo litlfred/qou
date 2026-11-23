@@ -229,3 +229,6 @@ Owner card 2026-11-22 21:56Z, option "PR plan + 3 new threads": this plan goes i
     - product rule 736/736;
     - first deviation m(1−z²)h⁶, where m counts same-receiver bond pairs. This extends the A = 3 result (#9144).
   - E_C's expected carrier is κ·Q_A·Q_B, conditional on t ↔ α_EM. No empirical E_C is imported.
+- **2026-11-23 00:32Z, W7: draft PR #9163 opened** (issue #9162, bean qou-x09k), carrying `BridgeAStokesNBody.lean`.
+  - Named assumptions still open: `StokesToBraiding`, `ColourTubeBraided` (qou-et5f), P1–P3 for n ≥ 4, and Deligne full faithfulness.
+  - The substrate HeckeMonodromy instance stays with W8.
