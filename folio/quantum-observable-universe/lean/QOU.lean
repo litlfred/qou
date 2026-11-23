@@ -1857,6 +1857,7 @@ import QOU.Mass.BridgeADeligneKZ
 import QOU.Mass.BridgeAStokesNBody
 import QOU.Mass.BridgeAColourSplit
 import QOU.Mass.KohnoAssemblyGL
+import QOU.Mass.BridgeAStokesAlgebraic
 import QOU.Mass.KZHolonomy.FlatCocycle
 import QOU.Mass.KZHolonomy.FlatGauge
 import QOU.Mass.KZHolonomy.ODETransport
