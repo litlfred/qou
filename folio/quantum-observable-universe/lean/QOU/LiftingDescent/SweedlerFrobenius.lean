@@ -30,6 +30,7 @@ No `sorry`.
 
 ## References
 - [larson-sweedler1969] f.d. Hopf algebras are Frobenius.
+- [taft1971] Taft algebras `T_N(ω)` at roots of unity (`N = 2` is Sweedler's `H₄`).
 - [lorenz2011] Nakayama automorphism of a Frobenius algebra.
 - [leitner2026] §3 Lifting and Descent
 -/
