@@ -1,8 +1,8 @@
 {
   "engine": "mpmath (80 dps) + sympy exact Slater/Racah",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-23T19:56:19.255344+00:00",
-  "commitSha": "5be409c2671eb97dad4a9b6081fe69e273eff7a7",
+  "computedAt": "2026-11-23T20:30:19.429172+00:00",
+  "commitSha": "fd42ffcfdefff5eda78987229eb7aedbe3951e71",
   "assertions": [
     {
       "name": "q0_at_80_matches_Q_MP",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 250,
+  "durationMs": 262,
   "computation": "compton-ho-mirror-slater",
   "scriptFile": "compton_ho_mirror_slater_probe.py",
   "scriptHash": "bcf81384f1fc",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "fd42ffcfdefff5eda78987229eb7aedbe3951e71",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
