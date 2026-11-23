@@ -1,6 +1,6 @@
 ## Proof
 
-Let $R$, $A$, $\tau$, $S$, and $X$ be as in the statement: $R$ an ordered field, $A$ a unital $R$-algebra with unit $1_A$, $\tau : A \to R$ an $R$-linear map with $\tau(1_A) = 1$ and $\tau(xy) = \tau(yx)$, $X \mapsto X^\dagger$ an $R$-linear map with $1_A^\dagger = 1_A$ and $\tau(X^\dagger) = \tau(X)$, the twisted form $\tau(Y \cdot Y^\dagger)$ positive-semi-definite, and $X \in A$ an element satisfying the constraint $\tau(X) = S$.
+Let $R$, $A$, $\tau$, $S$, and $X$ be as in the statement: $R$ an ordered field, $A$ a unital $R$-algebra with unit $1_A$, $\tau : A \to R$ an $R$-linear map with $\tau(1_A) = 1$ and $\tau(xy) = \tau(yx)$, $X \mapsto X^\dagger$ an $R$-linear anti-multiplicative map with $1_A^\dagger = 1_A$ and $\tau(X^\dagger) = \tau(X)$, the twisted form $\tau(Y \cdot Y^\dagger)$ positive-semi-definite, and $X \in A$ an element satisfying the constraint $\tau(X) = S$.
 
 **Step 1 — centrality of scalars.** For any $S \in R$ the element $S \cdot 1_A$ is central in $A$: the compatibility of the $R$-action with the multiplication gives $(S \cdot 1_A)\,Y = S \cdot Y = Y\,(S \cdot 1_A)$ for every $Y \in A$. In particular $S \cdot 1_A$ commutes with $X$ even when $A$ is non-commutative, and $(S \cdot 1_A)(S \cdot 1_A) = S^2 \cdot 1_A$.
 
@@ -40,7 +40,7 @@ Conversely, if $X = S \cdot 1_A$, then $X^\dagger = S \cdot 1_A$ and $X \cdot X^
 
 Therefore the lower bound $S^2$ is attained exactly at $X = S \cdot 1_A$. $\blacksquare$
 
-The cyclicity hypothesis $\tau(xy) = \tau(yx)$ is part of what makes $\tau$ a trace and the Frobenius pairing $\langle X, Y \rangle_\tau = \tau(X \cdot Y)$ symmetric; the argument above uses only the $R$-linearity of $\tau$ and $\dagger$, the normalisation, $1_A^\dagger = 1_A$, $\tau(X^\dagger) = \tau(X)$, positivity of the twisted form, and (for uniqueness) its non-degeneracy.
+The cyclicity hypothesis $\tau(xy) = \tau(yx)$ is part of what makes $\tau$ a trace and the Frobenius pairing $\langle X, Y \rangle_\tau = \tau(X \cdot Y)$ symmetric; the argument above uses only the $R$-linearity of $\tau$ and $\dagger$ (anti-multiplicativity of $\dagger$ is not used; it is assumed so that the positivity hypothesis is not automatic, since the degenerate map $X \mapsto \tau(X) \cdot 1_A$ would otherwise make $\tau(Y \cdot Y^\dagger) = \tau(Y)^2 \ge 0$ on every algebra), the normalisation, $1_A^\dagger = 1_A$, $\tau(X^\dagger) = \tau(X)$, positivity of the twisted form, and (for uniqueness) its non-degeneracy.
 
 ## Specialisations
 

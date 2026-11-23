@@ -282,17 +282,22 @@ theorem markov_frobenius_min_norm_uniqueness
 
 The positive form on `H_n(R, q)` is the twisted one, `τ(X · X†)`. The
 statements below replace `τ(X · X)` by `τ(X · X†)` for an `R`-linear
-map `† : A → A` with `1† = 1` and `τ(X†) = τ(X)`. Nothing else about
-`†` is used, so `† = id` is allowed and recovers the untwisted
+anti-multiplicative map `† : A → A` with `1† = 1` and `τ(X†) = τ(X)`.
+On a commutative `A`, `† = id` is allowed and recovers the untwisted
 statements above as a special case. For `H_n(R, q)`, `†` is the
 anti-involution fixing each `σ_i`. Positivity of `τ_M(Y Y†)` at `z_D`, `q > 1`, is proved in
 `QOU.SchurWeyl.SeminormalRep.wtrace_mul_dag_nonneg` (instance at the end of this file). -/
 
-/-- An `R`-linear map `†` on `A` that fixes `1` and preserves `τ`. -/
+/-- An `R`-linear anti-multiplicative map `†` on `A` that fixes `1` and preserves `τ`.
+
+    `dag_mul` is what makes the positivity class say something. Without it the map
+    `x ↦ τ(x) • 1` is a twist of every normalized trace, and for it `τ(X X†) = τ(X)² ≥ 0`
+    holds on every algebra, so `TwistedPSDTrace` would be automatic. -/
 structure TraceTwist (R : Type u) [CommRing R] (A : Type v) [Ring A] [Algebra R A]
     (τ : NormalizedTrace R A) where
   dag : A →ₗ[R] A
   dag_one : dag 1 = 1
+  dag_mul : ∀ x y : A, dag (x * y) = dag y * dag x
   tau_dag : ∀ x : A, τ.tau (dag x) = τ.tau x
 
 /-- Positivity of the twisted form: `0 ≤ τ(X · X†)`. -/
@@ -395,6 +400,7 @@ noncomputable def markovTraceZDTwist (q : K) (hq : 1 < q) (n : ℕ) :
     TraceTwist K (QOU.SchurWeyl.Hecke K q q⁻¹ n) (markovTraceZD q hq n) where
   dag := QOU.SchurWeyl.Hecke.dag K q q⁻¹ n
   dag_one := QOU.SchurWeyl.Hecke.dag_one K q q⁻¹ n
+  dag_mul := QOU.SchurWeyl.Hecke.dag_mul K q q⁻¹ n
   tau_dag x := wtrace_dag q hq _ _ n x
 
 /-- **`TwistedPSDTrace` for `tr_M` at `z_D`**, `q > 1`. -/
