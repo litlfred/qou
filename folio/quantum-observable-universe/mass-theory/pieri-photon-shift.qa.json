@@ -3440,6 +3440,23 @@
         "severity": "major",
         "evidence": "Full read at b7fc183094e: statement split into b <= n-1 (support in {lambda}) and b = n (support in mu ⊃ lambda, two-row part on V^{⊗(n+1)}), case a = n excluded. Photon is the ruled 1 + phi0 s_a + phi1 s_b + phi01 s_a s_b^{-1}. 7a954ae1 adds to the sibling docstring that pieri_one_box_shift cannot be closed as stated (oneBoxShift, support_after unconstrained). lean-direct exit 0; #print axioms pieri_one_box_shift [propext, sorryAx, Quot.sound]. The finding is unchanged at this head.",
         "notes": "Carried forward from the earlier agent review: Full read after #8888 commit c770c288 (C04): support_subset field deleted, pieri_one_box_shift now sorry (lean-direct exit 0; #print axioms [propext, sorryAx, Quot.sound]). Photon form is the ruled 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1. The self-assuming projection is gone. But the remaining statement is undischargeable as posed: PieriInterface.oneBoxShift and IsPieriShift.support_after are uncon"
+      },
+      {
+        "field_hash": {
+          "md": "f245638a0286",
+          "ts": "f5a95db9445f",
+          "lean": "beb4932075ce",
+          "lean_statement": "3314e7a1a286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-18",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-23T11:19:22.345Z",
+        "reviewed_sha": "5711c86a1cbcf12581ade51054871dee77743e75",
+        "evidence": "Narrative proof (two-row photon, cases b<=n-1 and b=n) matches Lean: case 1 = commute_photon_of_commute, case 2 containment mu ⊃ lam = pieri_one_box_shift (re-export of SeminormalRep.pieri_support, sorry-free, lean-direct exit 0 2026-11-23). Three-row vanishing on V^{⊗(n+1)} is the narrative Schur-Weyl step, not in Lean."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -6650,6 +6667,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T16:07:04.000Z",
+  "updated_at": "2026-11-23T11:19:22.345Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

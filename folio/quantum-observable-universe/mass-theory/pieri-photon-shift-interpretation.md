@@ -1,2 +1,2 @@
 **Remark (spectral shift).**
-Under the non-commutative Fourier transform, the degree-one element acts as a discrete finite-difference operator. It shifts the Young-diagram support up or down by exactly one box, analogous to a single-step translation on the commutative frequency lattice.
+Under the non-commutative Fourier transform, multiplying by an element of the next Hecke algebra moves the Young-diagram support up the Young lattice by exactly one box, analogous to a single-step translation on the commutative frequency lattice. For two-row partitions, read as $\mathrm{SU}_q(2)$ spins $j = (\lambda_1 - \lambda_2)/2$, the two possible added boxes raise or lower the spin by $1/2$. In both cases a box is added; neither case removes one.

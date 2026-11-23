@@ -3,8 +3,8 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:hecke-satisfies-blitvic-hypothesis",
   title:
-    "Hecke transfer matrices satisfy Blitvić's pair-partition combinatorial hypothesis for the non-commutative CLT",
-  lean: { ref: "qou:QOU.Observations.hecke_satisfies_blitvic_hypothesis", validation: "not_checked" },
+    "The Hecke generators under the Markov trace do not satisfy Blitvić's pair-partition hypothesis",
+  lean: { ref: "qou:QOU.Observations.markovTrace_centred_cube_ne_zero", validation: "not_checked" },
   uses: [
     "rem:non-commutative-probability-dictionary",
     "thm:jones-markov-trace",
@@ -16,13 +16,15 @@ export default proposition({
     "pair-partition",
     "hecke-quadratic-relation",
     "established",
+    "negative-result",
   ],
   proofs: ["prf:hecke-satisfies-blitvic-hypothesis"],
   authorNotes: [
     {
       kind: "status",
+      date: "2026-11-18",
       body:
-        "**provable.** The decomposition is a direct consequence of: (1) the Hecke quadratic relation (algebra-level, no analysis); (2) the Markov property of $\\mathrm{tr}_M$ (`thm:jones-markov-trace`); (3) Wenzl's product factorisation (`prop:trace-locality-meets-gs-non-locality`). No new mathematics introduced; the proof in `prf:hecke-satisfies-blitvic-hypothesis` is an explicit reduction.",
+        "**Rewritten as a negative result.** The earlier statement claimed that odd centred moments vanish. That claim is false: the third centred moment is $-357/250$ at $q = 2$ under convention D. Lean: `markovTrace_centred_cube_ne_zero`, sorry-free, for every Markov trace family on the Hecke tower. The earlier Lean derived odd vanishing from a Markov axiom stated for all $x$, which no Markov trace satisfies.",
     },
     {
       kind: "note",
