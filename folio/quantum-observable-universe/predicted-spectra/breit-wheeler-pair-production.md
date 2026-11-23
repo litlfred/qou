@@ -1,5 +1,3 @@
-**Definition (Breit--Wheeler pair production).**
-
 The Breit--Wheeler process models categorical pair production, $\gamma\gamma \to e^- e^+$. Two [photons](#def:photon) fuse by the product in the Iwahori--Hecke algebra $H_3(q)$:
 
 $$

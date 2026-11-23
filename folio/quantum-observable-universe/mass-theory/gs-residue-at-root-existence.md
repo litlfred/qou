@@ -1,4 +1,3 @@
-**Conjecture (cyclotomic residue exists at each level).**
 *For each filtration level $\ell \in \{0, 1, \ldots, \ell(K, q)\}$ and each primitive $\ell$-th root of unity $\zeta_\ell$, the cyclotomic projection*
 
 $$

@@ -1,4 +1,3 @@
-**Example.**
 Hydrogen $\mathcal{A}(1, 0)$ is the simplest atom: one proton, zero neutrons, one electron.
 
 $$

@@ -1,4 +1,3 @@
-**Algorithm (LP/SDP dual-emission contract).**
 *Every LP / SDP / operator-selection compute must emit both
 primal and dual variables in its witness JSON. This sidecar
 documents the canonical contract.*

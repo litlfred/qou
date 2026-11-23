@@ -1,5 +1,3 @@
-## Proof
-
 The classical Lichnerowicz formula
 $D^2 = \nabla^*\nabla + R/4$ on a spin manifold goes through three
 ingredients: (i) Clifford-multiplication structure of the Dirac

@@ -1,5 +1,3 @@
-**Remark (bar-symmetry class, categorical sectors, and the $c_5$ falsifiable prediction).**
-
 > **Bar-symmetry class** (per [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution)):
 > $c_5(q) = -b^2(q) - 1/2 = -3/2 + 1/[2]_q^2$ is **bar-symmetric** as a function of $q$. The Hoefsmit-Quantum-2 identity $b^2 = 1 - 1/[2]_q^2$ is a proved algebraic theorem. The "$-1/2$" piece is a q-independent commutative-QOU constant; $c_5(q=1) = -5/4$ is proved. The $c_5$ outlier at silver is the arithmetic sum of two clean bar-symmetric pieces landing on inert prime $11 \in \mathbb{Z}[1+\sqrt 2]$, not a quantum-deformation artifact.
 

@@ -1,4 +1,4 @@
-**Proposition.** *Let $\tau$ denote the chirality involution — the mirror /
+*Let $\tau$ denote the chirality involution — the mirror /
 $q \mapsto q^{-1}$ swap — acting on the ordered pair of leading Stokes constants
 $(\mathrm{dt}^{+}, \mathrm{dt}^{-})$ of the $5_2$ knot. Then for every
 $\tau$-symmetric integer reading $g$, that is every $g$ with

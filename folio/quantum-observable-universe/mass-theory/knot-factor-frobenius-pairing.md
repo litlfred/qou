@@ -1,4 +1,3 @@
-**Conjecture.**
 *The mass-identity Markov-trace defect replaces the empirical Bethe-Weizsäcker bulk terms. Using the single-level categorical mass identity, the bulk binding energy calculates directly as:*
 
 $$

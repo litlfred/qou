@@ -1,4 +1,3 @@
-*Proof.*
 The Markov trace $\mathrm{tr}_M$ on $H_n(R, q)$ decomposes over
 the Wedderburn blocks as
 $\mathrm{tr}_M = \sum_{\lambda \vdash n} y_\lambda(q)\, \chi^\lambda$,

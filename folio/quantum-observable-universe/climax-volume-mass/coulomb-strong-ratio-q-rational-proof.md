@@ -1,5 +1,3 @@
-## Proof
-
 The proof has two steps:
 
 1. **Algebraic identity**: for any real

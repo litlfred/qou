@@ -1,4 +1,3 @@
-**Remark (why the $\mathfrak{Q}_\beta$ odd channel resists a real-$q$ closure).**
 The precision-ladder coefficient $c_3$ splits under the bar involution
 $q \mapsto q^{-1}$ into a bar-even part (exactly measured) and a bar-odd part,
 the latter being the open channel. Its carrier is the bar-odd part of the net

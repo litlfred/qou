@@ -1,4 +1,4 @@
-**Theorem.** *Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ of any characteristic at generic $q$ ($q \neq 0$, not a root of unity), and let*
+*Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ of any characteristic at generic $q$ ($q \neq 0$, not a root of unity), and let*
 
 $$
   e_\lambda \;=\; \sum_{T \in \mathrm{SYT}(\lambda)} \; \prod_{k=1}^{n} \; \prod_{\substack{|d| \le n-1 \\ d \neq c_T(k)}} \frac{J_k - q^{2d}}{q^{2 c_T(k)} - q^{2d}}

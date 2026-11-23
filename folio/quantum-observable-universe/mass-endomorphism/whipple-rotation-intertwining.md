@@ -1,4 +1,3 @@
-**Conjecture (Whipple–rotation intertwining).**
 *The archimedean shadow of the fibre-level channel rotation
 $(x, q) \mapsto (ix, q^{-1})$ acts on the toroidal channel family
 $P^{\mu}_{\nu - 1/2}(\cosh\eta)\, e^{i\mu\theta} e^{i\nu\varphi}$ as the

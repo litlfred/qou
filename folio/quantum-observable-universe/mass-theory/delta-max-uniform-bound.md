@@ -1,4 +1,4 @@
-**Proposition.**  Let $\varrho$ have braid representative
+Let $\varrho$ have braid representative
 $\beta \in B_n$ with Hecke image $\rho(\beta) \in H_n(R, q)$ in
 the standard representation.  Let
 
@@ -166,7 +166,7 @@ subconjecture 1).  The two remaining pieces are:
 2. **Sharp constant.**  The factor $2\,L(\beta)\,\|\rho\|^2$
    is a worst-case bound; for stable atoms the effective
    $\Delta_{\max}$ is empirically within a factor of 2 of the
-   level-1 value $\Delta^{(1)}$ itself (i.e.\ near-monotone
+   level-1 value $\Delta^{(1)}$ itself (i.e. near-monotone
    decay).  A sharp constant would require a specific
    representation-theoretic analysis of the jet prolongation
    map on the Jones--Wenzl filtration.

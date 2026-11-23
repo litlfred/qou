@@ -1,5 +1,3 @@
-**Proposition ("Core Levi form").**
-
 Let $D$ be the three-dimensional flow domain, $\mathbb{R}^3$ or $\mathbb{T}^3$ with the Euclidean metric. This is a statement on $D$, not on the [state bundle](#ex:c-quantum-observable-universe) $\mathcal{S}$: the chapter also uses $\mathcal{S}$ as a surface, where a contact structure cannot exist. Let $u$ be a smooth velocity field on $D$ with vorticity $\omega = \mathrm{curl}\,u$, and on the open set $D_\omega = \{\omega \neq 0\}$ let $\xi = \omega/|\omega|$ be the vorticity direction. For a smooth scalar $f > 0$ on $D_\omega$ set
 
 $$

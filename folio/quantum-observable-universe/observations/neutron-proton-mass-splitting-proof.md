@@ -1,4 +1,3 @@
-*Proof.*
 The proton possesses quark content $\mathfrak{u}\mathfrak{u}\mathfrak{d}$;
 the neutron possesses $\mathfrak{u}\mathfrak{d}\mathfrak{d}$. At the quark
 level, the crossing types evaluate as:

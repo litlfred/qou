@@ -1,4 +1,4 @@
-### Proof on $V_{(1^p)}$ (closed-form contribution)
+**On $V_{(1^p)}$ (closed-form contribution).**
 
 The single SYT of shape $(1^p)$ fills the column with entries
 $1, 2, \ldots, p$ from top to bottom, giving cell contents

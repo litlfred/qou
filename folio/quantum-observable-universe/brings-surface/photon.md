@@ -1,4 +1,4 @@
-**Definition (photon).** Let $R$ be a commutative ring and let $H_3(R,q)$ be the Iwahori--Hecke algebra with generators $\sigma_0, \sigma_1$. The :defterm[photon]{#photon} with :defterm[colour weights]{#colour-weights} $(\varphi_0, \varphi_1, \varphi_{01}) \in R^3$ is the four-term element
+Let $R$ be a commutative ring and let $H_3(R,q)$ be the Iwahori--Hecke algebra with generators $\sigma_0, \sigma_1$. The :defterm[photon]{#photon} with :defterm[colour weights]{#colour-weights} $(\varphi_0, \varphi_1, \varphi_{01}) \in R^3$ is the four-term element
 
 $$
   \gamma(\varphi) \;=\; \mathbf{1} + \varphi_0\,\sigma_0 + \varphi_1\,\sigma_1 + \varphi_{01}\,\sigma_0\sigma_1^{-1} \;\in\; H_3(R,q).

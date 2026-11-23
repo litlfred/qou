@@ -1,6 +1,5 @@
 The **$q$-momentum** of a particle is the **braid writhe** of its *canonical* representative — the Gröbner–Shirshov normal form at the minimal level of the brane tower — weighted by the Hecke deformation parameter.
 
-**Definition.**
 Let $\beta \in B_n$ be the canonical braid representative of a particle knot $K = \hat{\beta}$ (braid closure), with generators $\sigma_{i_1}^{\epsilon_1} \cdots \sigma_{i_k}^{\epsilon_k}$ where $\epsilon_j = \pm 1$. The **$q$-momentum** is:
 
 $$

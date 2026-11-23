@@ -1,4 +1,3 @@
-*Proof.*
 (1) Assume $\forall q > a,\, P(q)$. Let $q < a^{-1}$ with $q > 0$. Then $q^{-1} > a$, so $P(q^{-1})$ holds, which implies $P(q)$ by bar-invariance. The reverse implication is dual. 
 (3) Negate (1). 
 (2) This is false in general. For example, $P(q) = \mathbf{1}_{q \in (a, a^{-1})}$ is bar-invariant on $(a, a^{-1})$ but false outside. Under continuity, every limit point of $\{q : P(q)\}$ is bar-conjugate to a limit point of $\neg P$, forcing the symmetric extension. $\square$

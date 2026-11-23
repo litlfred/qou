@@ -1,1 +1,1 @@
-**Remark.** The image $M := \pi_{\mathrm{GNS}}(H_\infty(q))''$ forms a finite type II$_1$ von Neumann algebra. This realizes the Jones–Wenzl subfactor planar algebra. The subfactor theory machinery applies directly to the QOU algebraic data.
+The image $M := \pi_{\mathrm{GNS}}(H_\infty(q))''$ forms a finite type II$_1$ von Neumann algebra. This realizes the Jones–Wenzl subfactor planar algebra. The subfactor theory machinery applies directly to the QOU algebraic data.

@@ -1,5 +1,3 @@
-*Proof.*
-
 **(1) Markov locality.** Part (1) of the proposition is the
 definition of the Markov trace. By
 [Jones–Markov trace](#thm:jones-markov-trace), the unique

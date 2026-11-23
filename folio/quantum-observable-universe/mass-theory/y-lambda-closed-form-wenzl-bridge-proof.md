@@ -1,5 +1,3 @@
-## Proof
-
 By [Wenzl 1988] (cited in [Orellana, math/9806163, Theorem on
 p.17]), the unique Markov trace on the type-A Iwahori-Hecke
 algebra in $g$-convention with parameter $z_{\mathrm{GL}} = Q^r

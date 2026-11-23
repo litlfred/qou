@@ -1,4 +1,4 @@
-**Proposition (additive Bring-surface zero-mode form for $1/\alpha_{EM}$, conditional on the additive self-consistency postulate and the $[10]_q$ tree coefficient).**
+**Conditional on the additive self-consistency postulate and the $[10]_q$ tree coefficient.**
 *Let $g = 4$ denote the genus of Bring's surface. This is the unique Riemann surface supporting the genus-$4$ torus knots $T_{2,9}$ and $T_{3,5}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). Assume that the zero-mode density of Bring's surface enters $1/\alpha_{EM}$ additively alongside the tree term, and that the tree coefficient of $T_{3,5}$ is $[10]_q$. Then*
 
 $$

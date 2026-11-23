@@ -1,4 +1,3 @@
-*Proof.*
 Eigenvalue on $\mathcal{X}_5$: the automorphism $\phi_5(x, y) = (\zeta_5 x, y)$
 pulls back the coordinate function $x$ to
 $(\phi_5^{-1})^{*}(x) = \zeta_5^{-1} x$ under the left-action convention

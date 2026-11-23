@@ -1,4 +1,3 @@
-**Conjecture (JSJ additivity of nucleon braids).**
 *Let $\mathcal{K}(Z, N)$ denote the atomic knot complement of an isotope with $Z$ protons and $N$ neutrons ([atom knot](#def:atom-knot)). The inter-nucleon braids form essential tori, the complement decomposes under the Jaco--Shalen--Johannson (JSJ) decomposition into $Z$ proton-block pieces and $N$ neutron-block pieces with isotope-independent volume quanta $\mathrm{Vol}_p$ and $\mathrm{Vol}_n$, and consequently*
 
 $$

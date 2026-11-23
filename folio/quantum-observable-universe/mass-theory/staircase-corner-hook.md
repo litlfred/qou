@@ -6,4 +6,4 @@ $$
   \;=\; 2k - 1.
 $$
 
-*The formal statement is the final arithmetic step, $(k-1) + (k-1) + 1 = 2k - 1$ in $\mathbb{N}$ for $k \geq 1$; the arm and leg values are read off the shape of $\rho_k$ and are not formalised as properties of a partition.*
+*The formal statement is the final arithmetic step, $(k-1) + (k-1) + 1 = 2k - 1$ in $\mathbb{N}$ for $k \geq 1$; the arm and leg values are read off the shape of $\rho_k$ directly from the staircase Young diagram.*

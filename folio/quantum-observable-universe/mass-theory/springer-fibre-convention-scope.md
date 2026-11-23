@@ -1,4 +1,3 @@
-**Remark (prior art: Springer's correspondence and the convention behind the sign of $\Delta_\lambda$).**
 For $G = GL_n$ and a unipotent element $x$ with Springer fibre $\mathcal{B}_x$ of dimension $d_x$, Springer's theorem identifies the top cohomology $H^{2d_x}(\mathcal{B}_x)$ with an irreducible representation $V_\lambda$ of $S_n$, where $\lambda$ is the Jordan type of $x$, under the normalisation in which $V_{(n)}$ is the trivial and $V_{(1^n)}$ the sign representation \cite[Thm 2.1 and eq. (2.1), \S 2, pp. 3--4]{shoji2019}. The same survey uses the statistic $n(\lambda) = \sum_i (i-1)\lambda_i$ \cite[eq. (6.3), \S 6]{shoji2019}, which is the grade $n(\lambda)$ of the [unification proposition](#prop:delta-lambda-dt-index-unification).
 
 What this gives here. The two factors of $\Delta_\lambda = (-1)^{n(\lambda)} \dim V_\lambda$ behave differently under the choice of convention:

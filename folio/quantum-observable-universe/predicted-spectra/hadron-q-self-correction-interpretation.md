@@ -1,4 +1,4 @@
-**Remark (Topological back-reaction).** The signed-crossing excess $\binom{p}{2} - \binom{n}{2}$ acts as a topological self-deformation of the substrate field. Nuclear linking density $\ell_{\mathrm{net}}/A^2$ drives this. This provides a geometric mechanism for nuclear self-correction.
+The signed-crossing excess $\binom{p}{2} - \binom{n}{2}$ acts as a topological self-deformation of the substrate field. Nuclear linking density $\ell_{\mathrm{net}}/A^2$ drives this. This provides a geometric mechanism for nuclear self-correction.
 
 ## Effect on beta decay: the differential shift
 

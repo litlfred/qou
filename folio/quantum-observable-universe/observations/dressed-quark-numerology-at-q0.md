@@ -1,5 +1,3 @@
-**Remark (dressed-quark numerology at $q_0$).**
-
 At $q_0 \approx 1.10998$, combining [Substrate-pure derivation of the dressed-quark mass splitting](../mass-theory/flavor-dressed-mass-from-substrate-split.md) with $\bar\mu \approx M_N / 3$ yields:
 
 $$

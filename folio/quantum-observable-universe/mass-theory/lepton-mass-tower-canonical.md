@@ -1,4 +1,3 @@
-**Conjecture (canonical lepton-mass tower).**
 *Let $\ell \in \{\mathfrak{e}, \mu, \tau\}$ be a charged lepton with canonical braid representative $K_\ell$. The lepton mass evaluates as:*
 
 $$

@@ -1,4 +1,3 @@
-**Definition.**
 *Let $\mathcal{A}_1, \ldots, \mathcal{A}_k$ be pre-computed atomic braids with strand counts $n_i = A_i + Z_i$. The **molecular braid** is the element*
 
 $$

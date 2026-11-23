@@ -1,4 +1,4 @@
-**Proof.** Multiply both sides by the strictly positive element
+Multiply both sides by the strictly positive element
 $\varepsilon$ to obtain the equivalent inequality
 
 $$

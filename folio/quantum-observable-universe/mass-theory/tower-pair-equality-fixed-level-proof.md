@@ -1,5 +1,3 @@
-## Proof
-
 By the Markov-trace factorization theorem
 ([Exact factorization of the nuclear Markov trace](#thm:markov-trace-factorization)),
 the level-$n$ Markov trace of a product of factors decomposes as a

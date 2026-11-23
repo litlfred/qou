@@ -7,8 +7,8 @@ export default proposition({
     validation: "validated",
   },
   title:
-    "The connection matrix of the ramified binding operator is p-elliptic and " +
-    "its poles are theta zeros; the q-theta vanishes exactly on −p^ℤ",
+    "The connection matrix of the ramified binding operator is $p$-elliptic and " +
+    "its poles are theta zeros; the $q$-theta vanishes on $-p^{\\mathbb{Z}}$",
   cites: ["sauloy2000"],
   uses: [
     // conj:qdifference-kernel-prolongation-symbol removed (qou-tm3c): the conjecture consumes this block's theta growth, not the reverse.

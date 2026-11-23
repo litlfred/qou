@@ -1,4 +1,3 @@
-**Proof.**
 By the $q$-analogue of Schur--Weyl duality
 ([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)(1)),
 the tensor power decomposes as

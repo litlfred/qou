@@ -1,4 +1,4 @@
-**Remark (substrate identity for the proton–neutron Skein difference).** Under the common-scale Borromean baryon mass formula, the proton–neutron Skein difference is derived from three calibration inputs:
+Under the common-scale Borromean baryon mass formula, the proton–neutron Skein difference is derived from three calibration inputs:
 
 $$
   \Delta S(n - p)

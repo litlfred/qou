@@ -1,4 +1,4 @@
-**Proposition (conditional on [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`]).**
+**Conditional on [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`].**
 *Let $\tau_{\text{arch}} = \pi_\infty \circ \tau$ be the archimedean
 realization functor of the QOU substrate
 ([archimedean realization functor](#def:archimedean-realization-functor)),

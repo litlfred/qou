@@ -1,5 +1,3 @@
-**Remark (open problems for $\alpha_{EM}$ derivation).**
-
 The bare singlet derivation ([prop:em-coupling-projection](#prop:em-coupling-projection)) gives
 
 $$

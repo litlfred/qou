@@ -1,4 +1,4 @@
-**Proposition.** *There exist a real $t$ and a complex $a$ with*
+*There exist a real $t$ and a complex $a$ with*
 
 $$
 0 < t < 1, \qquad \mathrm{Im}\,a > 0,

@@ -1,4 +1,4 @@
-*Proof.* Each factor is non-zero on the domain: $\lvert q^{-k} z\rvert
+Each factor is non-zero on the domain: $\lvert q^{-k} z\rvert
 < q^{-k} \cdot q = q^{\,1-k} \leq 1$ for $k \geq 1$, so
 $1 - q^{-k} z \neq 0$
 ([quantum dilogarithm](#cor:quantum-dilogarithm)). Writing

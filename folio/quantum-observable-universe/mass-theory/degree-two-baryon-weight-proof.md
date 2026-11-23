@@ -1,4 +1,4 @@
-*Proof sketch.*
+**Sketch.**
 The baryon has three color channels, corresponding to the three
 roots of the color-tube cubic.  The degree-2 symmetric function
 $\sigma_2 = \sum_{i<j} c_i c_j$ counts pairwise color products.

@@ -1,4 +1,3 @@
-**Proof.**
 By the ([mass identity](#def:mass-identity)), the mass of $\varrho$ is
 
 $$

@@ -1,4 +1,3 @@
-**Proof.**
 Throughout, $R$ is a field containing $\mathbb{Q}(q)$ and $q$ is
 generic: no quantum integer
 $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ vanishes for $k \geq 1$. (The

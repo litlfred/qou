@@ -1,4 +1,3 @@
-*Proof.*
 The Markov trace on $B_n$ factors through the Hecke algebra: it is the
 composite of the quotient map $B_n \to H_n(q)$, $\sigma_i \mapsto \sigma_i$,
 with the Ocneanu trace on $H_n(q)$

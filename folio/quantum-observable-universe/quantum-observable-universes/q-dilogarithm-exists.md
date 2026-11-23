@@ -1,4 +1,3 @@
-**Proposition.**
 Over any carrier $H$ with a zero, the $q$-dilogarithm structure — a
 level-2 element $\mathrm{Li}_2^q$, an evaluation map, and the pentagon
 data — is inhabited.

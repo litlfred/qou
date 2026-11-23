@@ -1,4 +1,4 @@
-### Proof chain
+**Derivation chain.**
 
 **Step 1 (Bloch group, Bloch 1978).** Define the Bloch group of $F$:
 

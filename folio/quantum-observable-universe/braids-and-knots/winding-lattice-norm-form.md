@@ -3,7 +3,7 @@ $$
   u_{m,\ell} = (\ln q_0)\,(m + \ell\,\omega).
 $$
 
-**Proposition.** *Let $s$ satisfy $s^2 = 3$ and write $\omega = (1+s)/2$. For every $c, m, \ell$ in a commutative ring,*
+*Let $s$ satisfy $s^2 = 3$ and write $\omega = (1+s)/2$. For every $c, m, \ell$ in a commutative ring,*
 $$
   \bigl(c(2m+\ell)\bigr)^2 - \bigl(c\,\ell\,s\bigr)^2 = c^2\bigl[(2m+\ell)^2 - 3\ell^2\bigr].
 $$

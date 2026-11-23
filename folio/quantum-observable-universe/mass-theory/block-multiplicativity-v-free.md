@@ -1,5 +1,3 @@
-**Conjecture (Block-Multiplicativity of $\hat V^{\text{free}}$ on the Disjoint Hecke Product).**
-
 *Let $\mathcal{B}_K^{\mathrm{vac}} = \mathcal{B}_p^{(1)} \cdots \mathcal{B}_n^{(N)} \in H_{3A}(q)$ denote the constituent vacuum—the disjoint Hecke product of $Z$ proton braids and $N$ neutron braids on disjoint 3-strand blocks, with no interface crossings. For each generator $\sigma_g$ acting only inside the $k$-th nucleon block, the Wedderburn-weighted per-generator character ratio*
 
 $$

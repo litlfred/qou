@@ -1,5 +1,3 @@
-*Proof.*
-
 $V_{\mathrm{nat}} = \mathbb{C}^{10}$ as $S_{10}$-module decomposes as
 $V_{(10)} \oplus V_{(9,1)}$ (trivial $\oplus$ standard).  Hence
 

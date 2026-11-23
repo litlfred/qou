@@ -2,7 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:explicit-alpha-k-h3",
-  title: "Explicit α_k at H_3(R, q): structural prefactors closed form",
+  title: "Explicit $\\alpha_k$ at $H_3(R, q)$: closed-form structural prefactors",
   lean: { ref: "qou:QOU.BraidsAndKnots.explicit_alpha_k_h3",
     validation: "not_checked",
   },

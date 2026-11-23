@@ -1,4 +1,4 @@
-## Proof sketch
+**Sketch.**
 
 Two ingredients:
 

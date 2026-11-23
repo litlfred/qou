@@ -1,4 +1,3 @@
-*Proof.*
 The [operator selection LP](#prop:operator-selection-lp) at
 Hecke level $k$ selects the nuclear operator
 $\Phi = \sum_i x_i b_i \in H_k(R, q)$ by:

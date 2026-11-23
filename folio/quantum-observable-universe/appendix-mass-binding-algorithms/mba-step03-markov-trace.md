@@ -1,4 +1,3 @@
-**Algorithm (Markov trace on $H_n(q)$).**
 *Compute the categorical observation
 $\mathrm{tr}_M\colon H_n(q) \to R[q, q^{-1}]$ of a braid word
 $w \in B_n$ in Hecke normal form.*

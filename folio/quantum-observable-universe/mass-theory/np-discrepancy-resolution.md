@@ -1,4 +1,3 @@
-**Remark (neutron-proton discrepancy resolution).**
 *The uncalibrated pure-tower formula undershoots the neutron mass due to a $\Phi_q$ pole-distance asymmetry. The free-neutron beta decay prediction must instead use the trace difference directly.*
 
 The raw tower prediction relies on per-generator amplitudes that sit at different distances from the $q_0$ pole. This introduces an artificial scale difference between mirror nucleons. Bypassing the per-nucleon evaluation entirely, the uncalibrated beta-decay $Q$-value emerges directly from the difference of the Markov normal forms:

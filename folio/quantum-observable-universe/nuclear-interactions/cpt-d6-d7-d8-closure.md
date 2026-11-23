@@ -1,4 +1,3 @@
-**Conjecture (CPT closure).** 
 *The three discrete symmetries close consistently: there exist actions $C$, $P$, $T$ on closed-braid representatives of $H_n(q)$ such that*
 
 1. *$C$ is the color-sheet flavor-swap $u \leftrightarrow \bar u$, $d \leftrightarrow \bar d$;*

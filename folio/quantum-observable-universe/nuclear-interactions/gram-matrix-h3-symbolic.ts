@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "The H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element normal-form basis, with the Markov weight $z$ carried symbolically: its determinant factors so that the canonical weight $z = q^3/(q^2+1)$ is a root, hence the canonical Gram is singular with the three-strand $q$-antisymmetriser as its radical.",
+    "The $H_3(q)$ Hoefsmit-seminormal Gram matrix on the 6-element normal-form basis, with the Markov weight $z$ carried symbolically: its determinant factors so that the canonical weight $z = q^3/(q^2+1)$ is a root, hence the canonical Gram is singular with the three-strand $q$-antisymmetriser as its radical.",
   // Detangler isolated-block fix (bean flus): the H_3(q) Hoefsmit Gram matrix is
   // defined "on the 6-element NF basis" (def:hecke-normal-form, braids-and-knots,
   // an earlier chapter — a backward edge, not a forward-ref). Wiring this genuine

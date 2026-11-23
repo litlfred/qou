@@ -1,4 +1,4 @@
-**Proof.** The Jones polynomial of the Borromean rings is
+The Jones polynomial of the Borromean rings is
 \cite{murasugi1996}:
 
 $$

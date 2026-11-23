@@ -1,4 +1,3 @@
-**Definition.**
 *For each $k \geq 1$, the **staircase partition** of $n_k = k(k+1)/2$ is*
 
 $$

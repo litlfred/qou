@@ -1,4 +1,3 @@
-**Conjecture.**
 *Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be the Descartes universe at substrate parameter $q = q_0$. At baryon densities $\rho > \rho_c$, the ground state of strange quark matter undergoes a topological phase transition:*
 
 *1. The Borromean linking $\mathcal{B}_3$ of each baryon is disrupted.*

@@ -1,4 +1,3 @@
-**Definition.**
 *Let $K_0(\mathrm{Var}_k)$ be the **Grothendieck ring of varieties**
 over the base field $k$ — the free abelian group on isomorphism
 classes $[X]$ of $k$-varieties modulo the scissor relations

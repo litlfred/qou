@@ -1,5 +1,3 @@
-**Remark (per-observable $100\times$ experimental status).**
-
 *The per-observable accuracy record states, for each predicted observable, whether the prediction meets its $100\times$ absolute-accuracy target against experiment, together with headline counts. **The accuracy result is the number of scoreable predictions meeting the target out of the number of scoreable predictions**, which count predictions only. A count that also includes the calibration inputs must *not* be quoted as an accuracy result: the residuals of those inputs are fixed by construction rather than measured. The remainder do not meet the target, and closing them is open.*
 
 **Target.** For each predicted observable $O$ with experimental

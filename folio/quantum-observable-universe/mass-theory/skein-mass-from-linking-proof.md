@@ -1,4 +1,3 @@
-**Proof.**
 Evaluating the mass functional $\mathfrak{m}$ on the Skein resolution
 of $H$ gives:
 

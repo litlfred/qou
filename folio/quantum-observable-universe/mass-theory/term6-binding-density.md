@@ -1,4 +1,3 @@
-**Remark.**
 *The nuclear binding energy per nucleon follows the structural decomposition:*
 
 $$

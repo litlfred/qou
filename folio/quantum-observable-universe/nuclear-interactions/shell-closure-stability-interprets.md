@@ -1,4 +1,3 @@
-**Remark.**
 *This proposition gives a categorical origin for stable dressing sequences in the confinement category.*
 
 1. ***Periodicity.** Dressing $\mathrm{dress}_{S_Z}: P^{(Z-1)} \to P^{(Z)}$ traces a chain in the confinement category. The Frobenius stability index $\sigma_F(P^{(Z)}, q)$ is monotone non-decreasing. Its marginal increment $\Delta\sigma_F(Z) = I_1(Z)$ has local maxima at the categorical shell closures $[2, 10, 28, 60, \ldots]$.*

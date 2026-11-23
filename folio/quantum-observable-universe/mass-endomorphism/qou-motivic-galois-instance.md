@@ -1,6 +1,6 @@
 # **QOU MotivicGaloisCharacter instance** via Habiro evaluation
 
-**Conjecture.** The QOU brane-tower substrate carries a concrete instance of [Motivic Galois character $\chi^{\mathrm{mot}}_A$ of the Frobenius--Hopf substrate](#def:motivic-galois-character) constructed by the Habiro evaluation map:
+The QOU brane-tower substrate carries a concrete instance of [Motivic Galois character $\chi^{\mathrm{mot}}_A$ of the Frobenius--Hopf substrate](#def:motivic-galois-character) constructed by the Habiro evaluation map:
 
 $$
   \mathrm{Frob}_p \;=\; f(u) \big|_{u = \zeta_{2p}}

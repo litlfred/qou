@@ -1,4 +1,3 @@
-*Proof.*
 Sorting deposits energy because a disordered pair sits in the
 antisymmetric eigenspace at eigenvalue $-q^{-1}$, and sorting lifts
 it to the symmetric eigenspace at eigenvalue $q$; the exchange must

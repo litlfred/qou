@@ -1,4 +1,4 @@
-**Proof.** Algebraic rearrangement of the 3-term recursion
+Algebraic rearrangement of the 3-term recursion
 `4(n+1) · a_{n+1} + 6n · a_n + (2n-1) · a_{n-1} = 0` from
 [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
 §Extension #5, dividing through by $4(n+1)$ (positive for $n \geq 0$).

@@ -1,4 +1,3 @@
-**Definition.**
 *The **$q$-Pochhammer partial product** at depth $n$ is the finite rational function:*
 
 $$

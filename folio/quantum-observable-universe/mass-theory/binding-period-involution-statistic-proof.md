@@ -1,5 +1,3 @@
-**Proof.**
-
 Write $b(\lambda) = \sum_{i \geq 1} (i-1)\lambda_i$, so that
 $\mathrm{content}(\lambda) = b(\lambda') - b(\lambda)$ with $\lambda'$ the
 conjugate partition, and let

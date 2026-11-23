@@ -1,4 +1,4 @@
-**Remark (observed in computed Habiro elements).** This remark records a computed observation that motivated the [identity $\Phi_8(X) = \Phi_4(X^2)$](#prop:cyclotomic-strand-doubling). It is an observation about computed examples, not part of the identity.
+This remark records a computed observation that motivated the [identity $\Phi_8(X) = \Phi_4(X^2)$](#prop:cyclotomic-strand-doubling). It is an observation about computed examples, not part of the identity.
 
 **Universal atomic-step cyclotomic.**
 The Habiro elements for successive atomic-step pairs—from deuteron to helium—universally extract a $\Phi_8^2$ cyclotomic prefactor. The appearance of $\Phi_8$ precedes the mechanical $m=8$ Pochhammer boundary, confirming it as a structural interference signature amongst the Habiro coefficients themselves.

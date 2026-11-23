@@ -1,4 +1,4 @@
-**Proposition.** *Let $K$ be a linearly ordered field, $\nu > 0$ a viscosity, $\delta \geq 0$ a time step, and $(k_n)_{n \geq 0}$ positive wavenumbers with $\delta\,\nu k_n^2 \leq 1$.*
+*Let $K$ be a linearly ordered field, $\nu > 0$ a viscosity, $\delta \geq 0$ a time step, and $(k_n)_{n \geq 0}$ positive wavenumbers with $\delta\,\nu k_n^2 \leq 1$.*
 
 1. *(Per-rung equilibrium.) A rung $u : \mathbb{N} \to K$ with $u(0) = 0$, forced by a constant $F \geq 0$ and damped at its own dissipation rate,*
    $$

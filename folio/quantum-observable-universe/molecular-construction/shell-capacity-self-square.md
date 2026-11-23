@@ -1,4 +1,3 @@
-**Proposition.**
 *For every principal shell level $n \in \mathbb{N}$, the number of orbital sub-states is the sum of the sub-shell multiplicities $2\ell+1$ over $\ell = 0,\ldots,n-1$,*
 
 $$

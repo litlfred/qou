@@ -1,4 +1,3 @@
-**Proof.**
 *(1) Embedding via rank-$1$ projectors.*
 Let $\rho \colon V \to V$ be a rank-$1$ projector in $\mathbf{C}$:
 an endomorphism satisfying $\rho^2 = \rho$ and

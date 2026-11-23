@@ -1,6 +1,6 @@
 Let $\mathcal{A}$ be an aeon —a connected component of $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$.
 
-**Definition.** The **boundary** $\partial\mathcal{A}$ of an aeon is the set of objects $\mathcal{S} \in \mathrm{Bun}(\mathbb{P}(V))$ that are limits of diagrams in $\mathcal{A}$ but do not themselves lie in $\mathrm{Bun}^{\circ}$:
+The **boundary** $\partial\mathcal{A}$ of an aeon is the set of objects $\mathcal{S} \in \mathrm{Bun}(\mathbb{P}(V))$ that are limits of diagrams in $\mathcal{A}$ but do not themselves lie in $\mathrm{Bun}^{\circ}$:
 $$
   \partial\mathcal{A}
   = 

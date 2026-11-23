@@ -2,7 +2,6 @@ The categorical mass descends to the Iwahori–Hecke algebra. Single-level categ
 
 ## Statement
 
-**Proposition.**
 *Let $(\mathbf{C}, A, \tau)$ form a quantum observable universe with Frobenius–Hopf object $A = H_n(R, q)$ over a commutative ring $R$. Let $\varrho \colon \mathbf{1} \to A$ form a closed cycle representing the knot $\mathcal{K}$ with braid representative $\beta_\mathcal{K} \in B_n$. The single-level categorical mass satisfies*
 
 $$

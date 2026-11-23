@@ -1,5 +1,3 @@
-### Proof
-
 **Step 1.** [Depth-2 identification of $G^{(2)}(\mathcal{H}_q)$ with $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$](#prop:depth-2-identification-bloch-suslin)
 establishes that, *over any number field $F$*, the depth-2
 grouplike image $\tau_{\mathrm{arch}}(G^{(2)}|_F) / \mathcal{P}_1$ is

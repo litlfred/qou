@@ -1,6 +1,6 @@
 The Hoefsmit scattering pipeline assigns a geometric energy $\mathrm{Geom}(L)$ to each link $L$ ([Hoefsmit scattering pipeline](#conj:hoefsmit-scattering-pipeline)). Vacuum normalisation requires $\mathrm{Geom}(\bigcirc) = 0$ on the unknot. This is a boundary case in the geometric-energy formula and represents a fine-tuned theory (zero vacuum energy). Under a surreal lift, this strict zero can be relaxed.
 
-**Conjecture.** The $\varepsilon$-relaxed vacuum axiom is:
+The $\varepsilon$-relaxed vacuum axiom is:
 $$
   \mathrm{Geom}(\bigcirc) = \varepsilon \in \mathbf{No}.
 $$

@@ -1,4 +1,3 @@
-**Definition.**
 *Let $P_{\mathrm{bare}}$ be a confined particle at level $\ell$ (typically a bare nucleus, $\ell = 2$). Let $S = (\{e_k\}, \iota, W_{\mathrm{bind}})$ be an electron shell of multiplicity $Z$ attached to it. The **dressing morphism** at $S$ is the arrow in the confinement category:*
 
 $$

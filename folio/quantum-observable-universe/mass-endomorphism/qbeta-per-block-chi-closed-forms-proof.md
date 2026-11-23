@@ -1,5 +1,3 @@
-# Proof of per-block character closed forms
-
 Each closed form is a rational expression in $q$. The vanishing at $q = 1$ follows directly from the $(q^2 - 1)$ factor present in all three forms. The antipode pairing reduces to the rational identity $-(q^2-1)(q^2+1)^2/(4q^5) = q^{-4} [-(q^2-1)(q^2+1)^2/(4q)]$, which simplifies to $1/q^5 = q^{-4} (1/q)$. All three parts are identities of rational functions on $q > 0$, where every denominator is nonzero. $\square$
 
 ## Scope and structural insight

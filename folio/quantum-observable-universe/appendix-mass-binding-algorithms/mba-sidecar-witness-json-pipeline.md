@@ -1,4 +1,3 @@
-**Algorithm (Witness-JSON pipeline).**
 *Cross-language interchange contract for `*.witness.json` files
 emitted by canonical compute scripts via the `WitnessBuilder` API.
 Maintained as a sidecar to the canonical chain because every

@@ -1,4 +1,3 @@
-**Remark (prior art: the Burau representation preserves a sesquilinear form).**
 For a matrix $M$ over $\mathbb{Z}[t, t^{-1}]$ let $M^*$ be its transpose with every entry $p(t)$ replaced by $p(t^{-1})$. Squier proves that there is a nonsingular $(n-1) \times (n-1)$ matrix $J_0$ over $\mathbb{Z}[t, t^{-1}]$ with $\beta(w)^* J_0\, \beta(w) = J_0$ for every $w \in B_n$, where $\beta$ is the reduced Burau representation \cite[Theorem, p. 199]{squier1984}. Over $\mathbb{Z}[s, s^{-1}]$ with $s^2 = t$, rescaling the basis by $s^a$ turns $J_0$ into the Hermitian matrix
 $$
 J = (s + s^{-1})\, I - \sum_a \left(e_{a-1,a} + e_{a,a+1}\right),

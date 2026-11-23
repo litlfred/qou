@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:t-beta-markov-frobenius-collapse",
   title:
-    "Min-Frobenius-norm collapse: T_β = S · 1 under the canonical Markov-trace inner product on H_n(R, q)",
+    "Minimum-Frobenius-norm collapse $T_\\beta = S \\cdot 1$ on $H_n(R, q)$",
   lean: {
     ref: "qou:QOU.QBeta.MarkovFrobeniusCollapse.t_beta_collapse",
     validation: "not_checked",

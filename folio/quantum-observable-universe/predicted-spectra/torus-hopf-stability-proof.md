@@ -1,4 +1,3 @@
-*Proof.*
 The torus knot generators $T_{m,n} \in \mathcal{G}$ have meridional winding $m \in \{2, 3\}$, forced by the genus-4 bound. For any triple $[K_1, K_2, K_3]_p \oplus \mathcal{L}_H$ drawn from $\mathcal{G}$:
 
 1. The Hopf link $\mathcal{L}_H$ contributes a negative baseline crossing energy via the strong binding term $\tfrac{1}{2}(n_+ + n_-)(q + q^{-1})$.

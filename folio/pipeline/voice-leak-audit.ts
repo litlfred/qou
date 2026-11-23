@@ -236,7 +236,7 @@ const LINK_RE = /\]\(#([^)\s]+)\)/g;
  * ("Allow banner links"): a banner may point to a later conjecture, because
  * dropping it would make a conditional result read as unconditional.
  */
-const BANNER_RE = /\*\*\s*(?:Theorem|Proposition|Lemma|Corollary|Conjecture|Definition)\b[^*]*?\(conditional on[\s\S]*?\)\s*\.?\s*\*\*/gi;
+const BANNER_RE = /\*\*\s*(?:(?:Theorem|Proposition|Lemma|Corollary|Conjecture|Definition)\b[^*]*?\(conditional on|\(?Conditional on\b|Within\b[^*]*?;\s*conditional on\b)[\s\S]*?\*\*/gi;
 
 /** 0-based line indices covered by conditional banners in `src`. */
 export function bannerLines(src: string): Set<number> {

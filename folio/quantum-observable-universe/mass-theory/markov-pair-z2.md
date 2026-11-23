@@ -4,7 +4,7 @@ and Markov axiom $\mathrm{tr}_M(x\sigma_{k-1}) = z\,\mathrm{tr}_M(x)$
 for $x \in H_{k-1}(q)$, where
 $z = q^{3}/(q^{2}+1)$ (**convention D**, [Jones--Markov trace](#thm:jones-markov-trace)).
 
-**Proposition.** For every pair of braid generators
+For every pair of braid generators
 $\sigma_i, \sigma_j$ with $0 \le i < j$, embedded in any
 $H_n(R, q)$ with $n > j$,
 

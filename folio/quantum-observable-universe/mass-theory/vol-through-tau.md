@@ -1,4 +1,4 @@
-**Proposition (conditional on the [Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)).**
+**Conditional on the [Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture).**
 *Let $(\mathbf{C}, A, \tau)$ be a QOU with fibre functor $\tau$. For every **braid** $\beta \in B_n$, with image $\rho(\beta) \in H_n(R, q)$ and closure $K_\beta$, the real-valued knot volume $\mathrm{Vol}(K_\beta)$ factors strictly through $\tau$:*
 
 The quantifier is over braids. $\rho : B_n \to H_n(R,q)$ is neither injective nor surjective, and a Hecke element outside its image has no closure, so the statement assigns no volume to such an element. In particular the atomic words $c\,\sigma_g + d\,\mathbf{1}$ are general Hecke elements, not braids, and their volume is $0$.

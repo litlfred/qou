@@ -1,4 +1,3 @@
-**Remark (numerical cross-check of CAL-2 at 50 dps: $\mathrm{Vol}(4_1)/\hbar_q^2 = m_\mu/m_e$).**
 *The CAL-2 identity*
 
 $$

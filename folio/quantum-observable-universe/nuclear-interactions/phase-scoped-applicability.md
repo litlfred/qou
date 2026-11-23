@@ -1,4 +1,3 @@
-**Remark.**
 *The phase-boundary conjecture ([conj:confinement-phase-boundaries](#conj:confinement-phase-boundaries)) proposes the scope caveat attached to every statement in the confinement framework. Any formal statement about a confined particle $P$, its electron shell, a dressing morphism, or a trace-class invariant $\mathcal{F}(P)$ includes the implicit quantifier:*
 
 $$

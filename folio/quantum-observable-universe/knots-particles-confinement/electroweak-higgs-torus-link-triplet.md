@@ -1,4 +1,3 @@
-**Conjecture (electroweak/Higgs torus-link identification).**
 *In any QOU built on Bring's surface with EM/strong sector $\{T_{2,9}, T_{3,5}\}$, the standard-model electroweak gauge bosons $W^\pm, Z$ and the Higgs scalar $H$ correspond to the three even-twist $2$-component torus links of the sub-saturating complement:*
 
 $$

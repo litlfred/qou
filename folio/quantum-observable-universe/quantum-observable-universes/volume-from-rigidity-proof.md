@@ -1,4 +1,3 @@
-
 Because $\phi$ is alternating, the pairing
 $B = \mathrm{ev}_V \circ (\mathrm{id} \otimes \phi)$ satisfies
 $B \circ \tau_{V,V} = -B$, where $\tau_{V,V}$ is the symmetry (or

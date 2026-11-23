@@ -1,4 +1,4 @@
-*Proof.*  By
+By
 ([confinement = spectral collapse](#prop:confinement-categorical)),
 the Frobenius integral factors through the centre as
 $\int_A = \mu \circ \pi_Z$ with $\pi_Z(a) = \sum_\lambda e_\lambda

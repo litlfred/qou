@@ -1,1 +1,1 @@
-**Remark.** The residual linking number $\lambda(R)$ provides a knot-theoretic metric for metallic character. This formalizes conductivity via Reidemeister transport. A rigid topological invariant replaces qualitative chemical models.
+The residual linking number $\lambda(R)$ provides a knot-theoretic metric for metallic character. This formalizes conductivity via Reidemeister transport. A rigid topological invariant replaces qualitative chemical models.

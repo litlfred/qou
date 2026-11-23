@@ -1,4 +1,3 @@
-**Remark (significance).**
 The Frobenius--Hopf antipode is trivial in the commutative QOU
 ($S = \mathrm{id}$ when the multiplication is commutative), so any
 $S$-anti-invariant degree of freedom must vanish. The chirality

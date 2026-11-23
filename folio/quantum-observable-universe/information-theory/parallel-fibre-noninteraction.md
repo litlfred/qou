@@ -1,6 +1,6 @@
 *Structural; holds over a generic commutative ring $R$.*
 
-**Proposition.** Model a one-dimensional channel by its transmitted datum, a single trace value $\mathrm{tr}_M(\mathcal{F}) \in R$, and define the parallel placement $\mathcal{F}_A \parallel \mathcal{F}_B$ as the channel whose trace is the product
+Model a one-dimensional channel by its transmitted datum, a single trace value $\mathrm{tr}_M(\mathcal{F}) \in R$, and define the parallel placement $\mathcal{F}_A \parallel \mathcal{F}_B$ as the channel whose trace is the product
 
 $$
   \mathrm{tr}_M(\mathcal{F}_A \parallel \mathcal{F}_B) \;:=\; \mathrm{tr}_M(\mathcal{F}_A)\,\mathrm{tr}_M(\mathcal{F}_B).

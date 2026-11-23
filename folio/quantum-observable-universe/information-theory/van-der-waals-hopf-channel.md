@@ -1,4 +1,4 @@
-**Definition (Hopf symmetric block $e_+$).** *In the 2-strand inter-molecular Hecke algebra $H_2(q)$, the **symmetric (Hopf) block** is the idempotent:*
+*In the 2-strand inter-molecular Hecke algebra $H_2(q)$, the **symmetric (Hopf) block** is the idempotent:*
 $$
   e_+ = \frac{\sigma + q^{-1}}{q + q^{-1}}, \qquad \sigma \mapsto q \ \ (\text{trivial rep}),
 $$

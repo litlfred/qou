@@ -1,4 +1,4 @@
-## Proof — completing the square
+**Completing the square.**
 
 Let $X \in H$ satisfy the constraint $\mathrm{tr}_M(X) = S$.  Write the
 decomposition $X = (X - S \cdot 1) + S \cdot 1$ and expand the

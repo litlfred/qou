@@ -1,6 +1,3 @@
-**Remark (where the Gram matrix fits in the spectral-sequence /
-Frobenius framework).**
-
 > **Domain of $G^{-1}$: the Temperley–Lieb quotient $H_n/\mathrm{rad} \cong \mathrm{TL}_n$.** On the full Hecke algebra $H_n$, non-degeneracy holds only under
 > **convention C**, where the antisymmetric weight
 > $y_{(1^3)} = 0.0227449\ldots$ is small but nonzero and $G$ genuinely inverts.

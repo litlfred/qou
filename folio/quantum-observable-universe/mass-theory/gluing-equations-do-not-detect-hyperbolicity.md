@@ -4,7 +4,6 @@ An ideal triangulation with shape parameters $z_1, \dots, z_N$ carries Thurston'
 
 It is tempting to treat the equations themselves as the test — to read "the gluing equations are satisfiable" as "the manifold is hyperbolic". They are not that test.
 
-**Theorem.**
 *The trefoil complement is Seifert fibred, hence not hyperbolic. Nevertheless its triangulation admits shape parameters*
 
 $$

@@ -1,6 +1,3 @@
-**Remark (figure-8 knot as the canonical algebraic / archimedean
-example).**
-
 The figure-8 knot $4_1$ is the smallest hyperbolic knot
 [`thurston1978`] and serves as the cleanest illustration of the
 dual existence forced by

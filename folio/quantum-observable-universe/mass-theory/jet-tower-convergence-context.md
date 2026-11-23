@@ -1,4 +1,4 @@
-## Remark on the hypothesis
+**On the hypothesis.**
 
 The hypothesis $|\Delta^{(n)}(\varrho)| \leq \Delta_{\max}(\varrho)$
 — uniform boundedness of per-level binding across the brane tower —

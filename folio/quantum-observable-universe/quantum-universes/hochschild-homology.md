@@ -1,6 +1,6 @@
 Let $A$ be an associative algebra over a commutative ring $R$, and write $A^{e} = A \otimes_R A^{\mathrm{op}}$ for its enveloping algebra, so that a bimodule over $A$ is the same thing as a left module over $A^{e}$; $A$ itself is one.
 
-**Definition.** The **:defterm[Hochschild homology]{#hochschild-homology}** of $A$ is the graded $R$-module
+The **:defterm[Hochschild homology]{#hochschild-homology}** of $A$ is the graded $R$-module
 
 $$
   HH_{n}(A) \;=\; \operatorname{Tor}^{A^{e}}_{n}(A, A), \qquad n \geq 0 .

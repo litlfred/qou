@@ -1,5 +1,3 @@
-**Proposition (the $q$-theta of the ramified binding module vanishes exactly on the orbit $-p^{\mathbb{Z}}$; the connection matrix's poles are theta zeros).**
-
 Let $p>1$ and let
 $$
 \theta_p(w) \;=\; \sum_{n\in\mathbb{Z}} p^{-n(n+1)/2}\,w^{n},
@@ -54,7 +52,7 @@ Then:
    first is a normalisation artifact of the $0$-side character's common
    numerator and is not connection data.
 
-For a $q$-difference system that is regular singular at $0$ and at $\infty$, the general framework is Sauloy's: canonical solutions at the two points are built from theta-quotient characters, their connection matrix has elliptic coefficients, and that matrix together with the two local data classifies the system \cite[\S0.1--0.2]{sauloy2000}.
+For a $q$-difference system that is regular singular at $0$ and at $\infty$, the general framework is Sauloy's: canonical solutions at the two points are built from theta-quotient characters, their connection matrix has elliptic coefficients, and that matrix together with the two local data classifies the system \cite[§0.1--0.2]{sauloy2000}.
 
 **Scope.** (3) determines the zero divisor of $\theta_p$, so the three loci in
 (5) are exact rather than containments and carry multiplicity one. What (5)

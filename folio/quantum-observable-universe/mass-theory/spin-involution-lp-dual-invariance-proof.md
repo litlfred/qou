@@ -1,5 +1,3 @@
-*Proof.*
-
 **Step 1 — Frobenius pairing is σ-symmetric.**
 The Frobenius pairing $\langle a, b \rangle_\tau := \tau(ab)$
 satisfies, for all $a, b \in A$:

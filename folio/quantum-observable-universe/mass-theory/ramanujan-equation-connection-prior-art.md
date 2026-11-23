@@ -1,4 +1,3 @@
-**Remark (prior art: connection formulae for the Ramanujan $q$-difference equation).**
 Morita works with $0 < |q| < 1$ \cite[\S 2, p. 7]{morita2012}. The Ramanujan function $A_q(x) = \sum_{n \ge 0} q^{n^2} (-x)^n / (q;q)_n$ solves the second-order equation
 $$
 q x\, u(q^2 x) - u(q x) + u(x) = 0,

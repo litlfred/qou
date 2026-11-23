@@ -1,5 +1,3 @@
-**Proposition.**
-
 *Fix an atom $K$ with $A = Z + N$ nucleons and nuclear-core Hecke word $\mathcal{B}_K \in H_{3A}(q)$, and let $\Lambda$ be the list of partitions $\lambda \vdash 3A$ carried by the Wedderburn decomposition. Suppose the categorical density satisfies the division-free refinement balance*
 
 $$

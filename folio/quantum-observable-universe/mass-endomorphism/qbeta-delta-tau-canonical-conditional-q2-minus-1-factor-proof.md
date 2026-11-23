@@ -1,5 +1,3 @@
-# Proof of the canonical $(q^2-1)$ factor
-
 By the [per-block character closed forms](qbeta-per-block-chi-closed-forms.md), each per-block character satisfies $\chi_\lambda(q) = (q^2 - 1) P_\lambda(q)$ for $q > 0$. Substituting these into the weighted sum and factoring out $(q^2 - 1)$ yields the claim. $\square$
 
 ## Limitations

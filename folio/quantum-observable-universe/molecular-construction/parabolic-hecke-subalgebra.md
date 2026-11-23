@@ -1,4 +1,3 @@
-**Definition.**
 *Given a strand-partition $\lambda = (n_1,\dots,n_k)$ with $\sum_i n_i = N$, the **parabolic Hecke subalgebra** is the tensor product*
 
 $$

@@ -1,4 +1,4 @@
-**Proposition (what is literature, what is measured, what is derived).** Write the sub-leading constant of the volume-conjecture asymptotic as a power law in the Dimofte–Garoufalidis 1-loop invariant,
+Write the sub-leading constant of the volume-conjecture asymptotic as a power law in the Dimofte–Garoufalidis 1-loop invariant,
 
 $$
   c_\sigma \;=\; k \cdot |\tau_{\mathrm{DG}}|^{\,p}.

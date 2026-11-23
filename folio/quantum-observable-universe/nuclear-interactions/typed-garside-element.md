@@ -1,4 +1,3 @@
-**Definition.**
 *Let $\mathcal{A}(Z, N)$ be a nucleus with $A = Z + N$ nucleons in ordering $(t_0, \ldots, t_{A-1})$ where $t_i \in \{p, n\}$. The **typed Garside element** is the element $\mathcal{G}(t_0, \ldots, t_{A-1}) \in H_A(q)$ built by the Garside staircase with typed crossings.*
 
 **Construction.**

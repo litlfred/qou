@@ -1,4 +1,4 @@
-**Proposition.** *Write $t$ for a trace ratio and $\alpha > 0$ for the energy
+*Write $t$ for a trace ratio and $\alpha > 0$ for the energy
 scale. The logarithmic functional $B = -\alpha \ln t$ is extensive,*
 $$
   -\alpha \ln(xy) \;=\; -\alpha \ln x \;+\; -\alpha \ln y

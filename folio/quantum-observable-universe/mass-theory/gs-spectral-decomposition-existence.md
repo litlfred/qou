@@ -1,4 +1,3 @@
-**Conjecture (spectral decomposition of the mass).**
 *For every closed braid $K$ with normal form $T_w \in H_n(R, q_0)$, the categorical mass decomposes as*
 
 $$

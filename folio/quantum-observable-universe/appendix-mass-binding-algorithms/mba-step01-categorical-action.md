@@ -1,4 +1,3 @@
-**Algorithm (Categorical action of the braid group).**
 *Construct the representation
 $\rho_n\colon B_n \to \mathrm{Aut}_{\mathbf{C}}(V^{\otimes n})$
 that sends each braid generator $\sigma_i$ to a categorical

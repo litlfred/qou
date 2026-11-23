@@ -1,4 +1,4 @@
-**Conjecture.** Bring's curve has first cohomology
+Bring's curve has first cohomology
 
 $$
   H^1 = 2W, \qquad \mathrm{rank}\,H^1 = 8, \qquad \dim_{\mathbb{C}} W = 4,

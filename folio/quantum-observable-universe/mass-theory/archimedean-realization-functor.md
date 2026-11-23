@@ -1,4 +1,3 @@
-**Definition.**
 *The **archimedean realization functor** $\mathcal{R}_{\mathrm{top}}$ is the composite*
 
 $$

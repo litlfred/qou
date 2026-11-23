@@ -1,4 +1,4 @@
-**Proof sketch.**
+**Sketch.**
 
 The forward direction (closed partition implies inertness) follows from the Hopf stability proposition. A closed sub-Hopf link remains stable under small perturbations of the linking matrix. No single crossing change can open or close a linking site.
 

@@ -1,4 +1,4 @@
-*Proof.* Apply the Hecke quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ and the Markov property:
+Apply the Hecke quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ and the Markov property:
 
 $$
   \mathrm{tr}_M(\sigma_i^2)

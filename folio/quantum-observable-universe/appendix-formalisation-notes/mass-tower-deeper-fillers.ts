@@ -32,7 +32,7 @@ export default remark({
   ],
   label: "rem:mass-tower-deeper-fillers",
   title:
-    "Deeper conditional-class fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon",
+    "Deeper conditional-class fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, $\\mathrm{Cl}_2$ pentagon",
   interprets: "prop:crystal-basis-resolves-mass-tower-open-problems",
   uses: [
     "prop:type-b-folded-crystal-combinatorics",

@@ -1,4 +1,3 @@
-
 Within the contact affine chart $U_\xi$
 ([contact affine chart](#def:contact-affine-chart)), let $Z$ be the
 affine coordinate of a state.

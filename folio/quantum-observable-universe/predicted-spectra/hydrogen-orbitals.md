@@ -35,7 +35,7 @@ $$
   \quad\text{for}\quad w = 3, 4, 5, \ldots
 $$
 
-This is [the shell--writhe correspondence](#conj:hydrogen-shell-writhe), item 1, proved in Lean. Where the added curls sit in the brane tower is not re-derived for the ruled electron.
+This is item 1 of [the shell--writhe correspondence](#conj:hydrogen-shell-writhe). Where the added curls sit in the brane tower is not re-derived for the ruled electron.
 
 **Backup reading.** If the electron is the trefoil $\sigma_0^3 \in B_2$, a level step adds two Reidemeister I curls on the same strand, $w \to w + 2$, and $n = (w - 1)/2$. That reading puts the ground state ($w = 3$) in the base space $\mathcal{S}_0$ and the extra curls of $w = 5$ in the blow-up $\mathcal{S}_1$. The sub-shell count below is also built on it.
 

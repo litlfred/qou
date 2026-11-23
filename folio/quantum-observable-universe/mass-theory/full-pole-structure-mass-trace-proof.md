@@ -1,5 +1,3 @@
-## Proof
-
 *Part 1.* Induct on $n$. On $H_1(q) = R$ the trace is $\mathrm{tr}_M(1) = 1$. For $w \in S_{n+1} \setminus S_n$ the coset decomposition gives $T_w = T_u\,\sigma_n\,T_v$ with $u, v \in S_n$, so the Markov property and cyclicity give
 $\mathrm{tr}_M(T_w) = z\,\mathrm{tr}_M(T_v T_u)$.
 The product $T_v T_u$ expands in the standard basis of $H_n(q)$ with coefficients in $\mathbb{Z}[h]$, because the only relation used is $\sigma_i^{2} = h\,\sigma_i + 1$. By induction each $\mathrm{tr}_M(T_x)$, $x \in S_n$, is a polynomial in $z$ of degree at most $n-1$ over $\mathbb{Z}[h]$, so $\mathrm{tr}_M(T_w)$ has degree at most $n$. For $w \in S_n$ the induction hypothesis applies directly. Since $h \in \mathbb{Z}[q^{\pm 1}]$ and $(q^{2}+1)z = q^{3}$, multiplying by $(q^{2}+1)^{n-1}$ clears every denominator.

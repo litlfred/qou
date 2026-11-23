@@ -1,4 +1,3 @@
-
 The transient trace at the $i$-th exceptional divisor
 $E_i \cong \mathbb{P}^1(\mathbb{C})$ is the geometric integration
 of the $q$-deformed expansion flow over the resolved defect.

@@ -1,4 +1,4 @@
-**Proof.** Write $R = \sum_{i<r} \lambda_i$ for the cells in the rows strictly
+Write $R = \sum_{i<r} \lambda_i$ for the cells in the rows strictly
 above the corner and $C = \sum_{j<s} \mathrm{colLen}(j)$ for the cells in the
 columns strictly left of it. The argument runs through five steps.
 

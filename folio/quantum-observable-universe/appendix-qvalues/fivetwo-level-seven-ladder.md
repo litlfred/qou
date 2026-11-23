@@ -1,4 +1,4 @@
-**Proposition.** *Let $R$ be a commutative ring, $L : R \to R$ an abstract
+*Let $R$ be a commutative ring, $L : R \to R$ an abstract
 function, and $L_1, w_2, q, r, s \in R$. Assume the four reflection relations*
 
 $$

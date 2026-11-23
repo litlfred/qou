@@ -1,4 +1,3 @@
-**Conjecture.**
 *Write $V_j$ for the $\mathrm{SU}(2)_q$ irrep of spin $j$, of $q$-dimension $[2j+1]_q$, and let* $j_n = (n-1)/2$ *be the spin of the* **angular object** *of principal shell $n$, so that $\dim_q V_{j_n} = [n]_q$. Then the orbital state space of shell $n$ is the* **self-fusion** *of that one object with itself,*
 
 $$

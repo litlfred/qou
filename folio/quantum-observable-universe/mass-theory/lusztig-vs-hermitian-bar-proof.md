@@ -1,5 +1,3 @@
-## Proof
-
 The two involutions act identically on the braid generators
 $\sigma_i$ (both send $\sigma_i \mapsto \sigma_i^{-1}$), so the
 question reduces to the parameter action. Then $\beta_L(q) = q^{-1}$

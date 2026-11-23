@@ -1,4 +1,4 @@
-*Proof.* Write $a_n := a_D^{(n)}$ and
+Write $a_n := a_D^{(n)}$ and
 $H_n = a_{n+1}^2 - \tau\,a_{n+1}a_n + a_n^2$. For the single step, substitute the
 recurrence $a_{n+2} = \tau a_{n+1} - a_n$
 ([Symplectic prolongation (det B = 1) gives a one-parameter recurrence](#prop:sl2-prolongation-recurrence)) into

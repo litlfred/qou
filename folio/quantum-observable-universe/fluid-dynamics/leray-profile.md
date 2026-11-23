@@ -14,7 +14,7 @@ Writing $\lambda = e^{P/2} > 1$, periodicity in $s$ implies the discrete scaling
 $$
 v(x, t) = \lambda\, v\bigl(x_0 + \lambda (x - x_0),\; T^* - \lambda^2 (T^* - t)\bigr),
 $$
-which for $x_0 = 0$, $T^* = 0$ is $v(x, t) = \lambda\, v(\lambda x, \lambda^2 t)$ (Lean `lerayField_discrete_scaling`). Conversely, the invariance for all $x$ and all $t < T^*$ gives back periodicity by the same change of variables; only the forward direction is formalised. A steady profile is discretely self-similar for every period.
+which for $x_0 = 0$, $T^* = 0$ is $v(x, t) = \lambda\, v(\lambda x, \lambda^2 t)$. Conversely, invariance for all $x$ and all $t < T^*$ gives back periodicity in $s$ by the inverse change of variables. A steady profile is discretely self-similar for every period.
 
 The field $v$ solves the Navier--Stokes equation with viscosity $\nu$ if and only if $V$ solves the Leray system
 $$

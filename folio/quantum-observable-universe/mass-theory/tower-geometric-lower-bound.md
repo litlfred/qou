@@ -1,4 +1,3 @@
-**Proposition (brane-tower growth; GAP-A-3).**
 *The branched brane-tower weight $w_{\mathrm{std}}(k) = \mathbb{E}_{\mathrm{Planch}}\!\left[f^{\lambda/(2,1)}\right]$ vanishes for $k < 3$, and satisfies*
 
 $$

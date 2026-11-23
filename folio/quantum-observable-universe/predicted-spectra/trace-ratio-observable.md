@@ -1,6 +1,5 @@
 The Markov trace of the nuclear braid is a link invariant that grows exponentially with $A$ ([Markov trace factorization](#thm:markov-trace-factorization)). The physical observable — the transition matrix element $|\mathcal{M}_q|^2$ — is the ratio of parent and daughter traces, where the exponential growth cancels.
 
-**Proposition.**
 *The beta-decay matrix element squared is proportional to the ratio of Markov-traced generator volumes at the affected generators:*
 
 $$

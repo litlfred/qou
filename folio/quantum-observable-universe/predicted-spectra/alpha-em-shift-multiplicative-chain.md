@@ -1,6 +1,5 @@
 <!-- Index substitution; the alpha_EM identification itself is prop:em-coupling-projection. -->
 
-**Proposition (multiplicative-chain index identity).**
 *The torus-knot shift exponents of [the shift proposition](#prop:alpha-shift-torus-knot) take the values*
 
 $$

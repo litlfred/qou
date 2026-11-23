@@ -1,4 +1,4 @@
-## Proof sketch
+**Sketch.**
 
 ### Step 1: bar involution and the averaged crossing
 

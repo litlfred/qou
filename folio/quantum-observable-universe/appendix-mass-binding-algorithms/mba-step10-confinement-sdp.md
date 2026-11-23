@@ -1,4 +1,3 @@
-**Algorithm (Confinement SDP — canonical $T_w$).**
 *Solve the LP/SDP that selects the canonical Hecke element $T_w$
 realising confinement (or gluon attachment, electron attachment,
 molecular bonding — the universal ILP of Algorithm

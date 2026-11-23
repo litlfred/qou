@@ -1,4 +1,3 @@
-**Conjecture (parity closure).**
 *Within the QOU framework, parity $P$ acts as the **mirror reflection
 of the braid diagram** — each positive crossing $\sigma_i \mapsto
 \sigma_i^{-1}$ and vice versa, with the q-parameter held fixed

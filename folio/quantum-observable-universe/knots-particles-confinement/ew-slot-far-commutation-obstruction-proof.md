@@ -1,5 +1,3 @@
-## Proof
-
 The slot indices $1, 3, 5$ are pairwise far apart. Thus $\sigma_1, \sigma_3, \sigma_5$ pairwise commute. Consequently, the subalgebra $\mathcal{A}_{\mathrm{slot}} = \langle \sigma_1, \sigma_3, \sigma_5 \rangle$ is commutative. Every commutator $\lbrack x, y \rbrack = xy - yx$ vanishes for $x, y \in \mathcal{A}_{\mathrm{slot}}$. The three carriers $W \leftrightarrow \sigma_1^{4}$, $Z \leftrightarrow \sigma_3^{6}$, $H \leftrightarrow \sigma_5^{8}$ pairwise commute.
 
 The obstruction is the incompatibility of two facts:

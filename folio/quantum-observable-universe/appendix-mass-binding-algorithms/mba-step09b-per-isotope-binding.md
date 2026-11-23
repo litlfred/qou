@@ -1,4 +1,3 @@
-**Algorithm (Per-isotope binding energy — experimental $q$-difference generating-function model; the $\Delta_\lambda$ magnitude is open).**
 *Evaluate the binding energy $B_n \propto w_n$ for multi-body nuclear clusters via the universal `CKRecursion` depth-2 discrete generating function, seeded by the topological traces of the strong mediator knots.*
 
 ### Input
@@ -41,7 +40,7 @@ the many-body binding **magnitude**: six ansätze have failed on the deuteron
 ```python
 from qou_mass.api import predict          # the .ts manifest's declared entry point
 
-# NOTE (corrected 2026-08-25, PR #5765): this block previously pointed at
+# NOTE: earlier drafts pointed at
 # `computations.mass_binding_dashboard._row`. That module HAS `_row`, but it has
 # ZERO occurrences of `B_unified` — the `B_unified` model lives in
 # `computations/probes/strong_unified_binding_probe.py`, which emits no witness.

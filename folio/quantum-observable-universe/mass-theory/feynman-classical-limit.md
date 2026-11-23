@@ -1,4 +1,4 @@
-**Proposition (conditional on [Classical-limit functor as standard-part of evaluation at $q = 1 + \varepsilon$](#conj:classical-limit-stpart) — classical limit).**
+**Conditional on [Classical-limit functor as standard-part of evaluation at $q = 1 + \varepsilon$](#conj:classical-limit-stpart).**
 *In the $q \to 1$ limit of the categorical trace, the following degenerations occur:*
 
 $$

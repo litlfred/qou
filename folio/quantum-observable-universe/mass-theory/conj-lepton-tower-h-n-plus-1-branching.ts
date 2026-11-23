@@ -7,7 +7,7 @@ export default conjecture({
     validation: "not_checked",
   },
   title:
-    "Canonical lepton-mass-tower factor ξ_m = [2m-1]_q · [m]_q / [2m]_q: matches muon (m=2 → [3]_q·[2]_q/[4]_q, 0.001%) and tau (m=3 → [5]_q·[3]_q/[6]_q, +0.79%) of CODATA. Supersedes the earlier muon-only d_q(std_rep S_{n+1})·[2]_q/[n+1]_q reading (whose tau prediction was falsified); categorical derivation of the q-bracket form remains open.",
+    "Canonical lepton-mass-tower factor $\\xi_m = [2m-1]_q \\cdot [m]_q / [2m]_q$",
   uses: [
     "prop:three-parameters-wedderburn",
     "prop:three-halves-structural-factor",

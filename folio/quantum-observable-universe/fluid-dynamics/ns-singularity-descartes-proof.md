@@ -1,4 +1,3 @@
-*Proof.*
 Item 1: by [QU-to-QOU](#thm:qu-to-qou), item 2, $e(\xi) = c_1(\xi) = \chi(\mathcal{S}) = -6$ for the unit tangent bundle. A nowhere-vanishing section would trivialise $\xi$ and force $e(\xi) = 0$.
 
 Item 2: by [QU-to-QOU](#thm:qu-to-qou), item 3, $\xi$ has an $n$-th root if and only if $n \mid \chi(\mathcal{S}) = -6$, with obstruction $-6 \bmod n$; see also the [Kummer specialisation](#prop:ns-kummer-specialisation). The positive divisors of $6$ are $1, 2, 3, 6$.

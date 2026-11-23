@@ -1,4 +1,4 @@
-## Proof obligations
+**Obligations.**
 
 1. **Holonomy–trace identification.** Show that
  $\bigl\lVert\mathrm{Hol}_{\nabla_A}(\varrho_0;\mathfrak{G})\bigr\rVert = \bigl\lVert\mathrm{tr}_{\mathrm{desc}}(\varrho_0)\bigr\rVert$

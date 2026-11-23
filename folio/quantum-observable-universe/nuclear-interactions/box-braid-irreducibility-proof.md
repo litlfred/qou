@@ -1,4 +1,4 @@
-*Proof that $c(T_{3,5}) = 10$ is irreducible.*
+**Irreducibility of $c(T_{3,5}) = 10$.**
 
 The crossing number of a torus knot $T_{m,n}$ with $\gcd(m,n) = 1$ and $2 \leq m < n$ is:
 

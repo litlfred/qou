@@ -1,4 +1,4 @@
-**Proof.** The Hecke relation $\sigma_i^2 = h\sigma_i + 1$
+The Hecke relation $\sigma_i^2 = h\sigma_i + 1$
 (where $h = q - q^{-1}$) gives each generator eigenvalues $q$
 and $-q^{-1}$ on $V_{(2,1)}$, with product $-1$; $\sigma_i^{-1}$ has
 eigenvalues $q^{-1}$ and $-q$, also with product $-1$. For a word of

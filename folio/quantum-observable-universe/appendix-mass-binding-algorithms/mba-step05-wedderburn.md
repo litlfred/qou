@@ -1,4 +1,3 @@
-**Algorithm (Wedderburn decomposition of $H_n(q)$).**
 *Decompose the Hecke algebra into its isotypic components indexed
 by partitions $\lambda \vdash n$, yielding the Frobenius pairing
 $\mathrm{tr}_M = \sum_\lambda y_\lambda(q)\, \chi^\lambda$ used by

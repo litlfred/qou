@@ -14,7 +14,7 @@ $$
   \delta_f \lambda \;=\; \lambda \circ \bigl( f \otimes \mathrm{id}_A \;-\; \mathrm{id}_{A^\vee} \otimes f^{\vee} \bigr).
 $$
 
-**Proposition.** For every $f$, every background $\lambda$ and every field $T \in \mathcal{P}$:
+For every $f$, every background $\lambda$ and every field $T \in \mathcal{P}$:
 
 $$
   S_{\eta,\varepsilon}(\delta_f\lambda) = 0,

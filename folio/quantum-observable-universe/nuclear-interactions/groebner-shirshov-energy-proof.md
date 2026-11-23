@@ -1,5 +1,3 @@
-**Proof.**
-
 *Part 1.*
 The Yang--Baxter relation $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ has the same word length on both sides ($\ell = 3$) and coefficient $1$. Applying it to a term $c \cdot w$ produces $c \cdot w'$ where $|c| = |c|$ and $\ell(w') = \ell(w)$. The same holds for far commutativity, and for every rule of the Bokut--Shiao family $\sigma_i\sigma_{i-1}\cdots\sigma_j\sigma_i \mapsto \sigma_{i-1}\sigma_i\sigma_{i-1}\cdots\sigma_j$, whose two sides have equal length and coefficient $1$. Only the Hecke relation $\sigma_i^2 \mapsto (q - q^{-1})\sigma_i + 1$ changes the word length (from $\ell$ to $\ell - 1$) and splits one coefficient into two.
 

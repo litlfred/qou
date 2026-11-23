@@ -1,4 +1,3 @@
-*Proof.*
 The space $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A))$
 is computed in the category $\mathbf{C}$, which is defined
 independently of $q$.  The substrate parameter $q$ determines

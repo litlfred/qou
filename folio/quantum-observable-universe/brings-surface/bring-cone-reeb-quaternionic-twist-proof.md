@@ -1,4 +1,4 @@
-**Proof.** The three operators are right-multiplications, so composing them
+The three operators are right-multiplications, so composing them
 multiplies on the right in the opposite order: for $p \in \mathbb{H}$,
 
 $$

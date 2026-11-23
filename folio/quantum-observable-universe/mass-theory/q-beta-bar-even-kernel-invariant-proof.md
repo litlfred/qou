@@ -1,4 +1,4 @@
-## Proof (one-line ring identity)
+*(One-line ring identity.)*
 
 The N=2 instance is the prototype. With $u = b \cdot \hbar_q^2$:
 

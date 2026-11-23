@@ -87,7 +87,7 @@ $$
   (\sigma_0\sigma_1)^5 = e^- \cdot \bigl(e^- \cdot (\sigma_0\sigma_1)^2\bigr)
 $$
 
-(`QOU.BraidKnot.WeakVertexElectronFactor.weakVertex_eq_electron_mul`). The proof is the braid relation once: $e^- \cdot e^- = \sigma_0\sigma_1\sigma_0 \cdot \sigma_1\sigma_0\sigma_1 = (\sigma_0\sigma_1)^3$, the full twist. So the electron accounts for $3$ of the $10$ crossings as an identity of braids, not only as a count. The antineutrino unknot $K_{0_1}$ accounts for $0$. The remaining $7$ crossings, $e^- \cdot (\sigma_0\sigma_1)^2$, are the weak vertex residue. They are absorbed into R2 moves during re-reduction. The mirror vertex factors the same way through the positron: $(\sigma_0^{-1}\sigma_1^{-1})^5 = e^+ \cdot \bigl(e^+ \cdot (\sigma_0^{-1}\sigma_1^{-1})^2\bigr)$.
+The proof is the braid relation once: $e^- \cdot e^- = \sigma_0\sigma_1\sigma_0 \cdot \sigma_1\sigma_0\sigma_1 = (\sigma_0\sigma_1)^3$, the full twist. So the electron accounts for $3$ of the $10$ crossings as an identity of braids, not only as a count. The antineutrino unknot $K_{0_1}$ accounts for $0$. The remaining $7$ crossings, $e^- \cdot (\sigma_0\sigma_1)^2$, are the weak vertex residue. They are absorbed into R2 moves during re-reduction. The mirror vertex factors the same way through the positron: $(\sigma_0^{-1}\sigma_1^{-1})^5 = e^+ \cdot \bigl(e^+ \cdot (\sigma_0^{-1}\sigma_1^{-1})^2\bigr)$.
 
 $$
   L_0^{-} =  e^- \sqcup T_{1,0}^{\sigma}

@@ -1,4 +1,4 @@
-**Proof.** The entries of $\varepsilon_q$ on the six permutations $(0,1,2), (0,2,1), (1,0,2), (1,2,0), (2,0,1), (2,1,0)$ are $1, -q^{-1}, -q^{-1}, q^{-2}, q^{-2}, -q^{-3}$, and all other entries vanish.
+The entries of $\varepsilon_q$ on the six permutations $(0,1,2), (0,2,1), (1,0,2), (1,2,0), (2,0,1), (2,1,0)$ are $1, -q^{-1}, -q^{-1}, q^{-2}, q^{-2}, -q^{-3}$, and all other entries vanish.
 
 Suppose $s \cdot \varepsilon_q = c\,\varepsilon_q$. At $(0,1,2)$ this reads $\varepsilon_q(1,0,2) = c$, so $c = -q^{-1}$. At $(1,0,2)$ it reads $\varepsilon_q(0,1,2) = c\,\varepsilon_q(1,0,2)$, that is $1 = q^{-2}$, so $q^2 = 1$.
 

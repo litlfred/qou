@@ -1,5 +1,3 @@
-**Proposition (weak-sector spectral completeness — Hoefsmit
-$n=6$ form).**
 *Let $R$ be a commutative ring and $A$ an $R$-algebra, and let
 $\sigma_1, \sigma_3, \sigma_5 \in A$ each satisfy the Hecke relation
 $\sigma^2 = (q - q^{-1})\sigma + 1$, with $q$ and $[2]_q = q + q^{-1}$

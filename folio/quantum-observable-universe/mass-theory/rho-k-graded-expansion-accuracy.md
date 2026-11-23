@@ -1,4 +1,4 @@
-**Remark (comparison with measured masses).** This remark records how the truncated [graded expansion](#prop:rho-k-graded-expansion) compares with measured atomic masses. Truncated at the single-generator level, the expansion reaches the empirical $0.18\%$ accuracy reported in [atomic braid mass](#thm:wedderburn-mass-formula).
+This remark records how the truncated [graded expansion](#prop:rho-k-graded-expansion) compares with measured atomic masses. Truncated at the single-generator level, the expansion reaches the empirical $0.18\%$ accuracy reported in [atomic braid mass](#thm:wedderburn-mass-formula).
 
 ### Significance
 

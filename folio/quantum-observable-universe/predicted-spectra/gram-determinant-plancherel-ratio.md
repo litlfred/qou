@@ -1,4 +1,3 @@
-**Conjecture (open).**
 *Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, let
 $\beta_s = T_{2,9}$, $\beta_w = T_{3,5}$.  Each
 admits a Wedderburn decomposition into central idempotents of the

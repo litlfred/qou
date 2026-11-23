@@ -1,4 +1,3 @@
-**Conjecture (proton Borromean mass assembly).**
 *The proton mass assembles from the Borromean categorical observable
 $F_{\mathrm{Bor}}$ ([Borromean categorical observable](../braids-and-knots/f-bor-borromean-observable.md))
 according to*

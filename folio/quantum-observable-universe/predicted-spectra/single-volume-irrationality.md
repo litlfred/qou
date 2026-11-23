@@ -1,4 +1,3 @@
-**Conjecture.**
 Each of the three non-zero QOU hyperbolic volumes is irrational:
 
 $$

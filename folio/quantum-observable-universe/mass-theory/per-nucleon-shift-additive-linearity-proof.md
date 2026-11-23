@@ -1,5 +1,3 @@
-### Proof
-
 The per-new-nucleon increment is invariant in 6 transitions
 ($A : 2 \to 3$, $A : 3 \to 4$, etc.) for both proton and neutron
 additions, regardless of starting atom (witness §1). This linearity

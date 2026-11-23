@@ -1,4 +1,3 @@
-**Remark (deprecated empirical $\alpha_{EM}$ forms).**
 The categorical fine-structure constant relies exclusively on the pre-archimedean evaluation:
 
 $$

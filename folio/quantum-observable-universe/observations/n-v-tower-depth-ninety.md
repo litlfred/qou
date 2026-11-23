@@ -1,4 +1,3 @@
-**Conjecture (Brane-tower depth from $m_e$ to $v$ equals 90).**
 *The tower depth from $\Sigma_{m_e}$ to $\Sigma_v$ is 90 Hecke generations.*
 
 ## Origin of the value 90

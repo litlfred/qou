@@ -1,5 +1,3 @@
-**Remark (K-theory $\leftrightarrow$ depth filtration — known at depths 1–2, conjectural at depths $\geq 3$).**
-
 The graded-Mikusiński depth filtration ([GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence)) on the substrate convolution algebra $\mathcal{H}_q$ admits a K-theoretic description. The depth axis matches the Beilinson–Borel regulator on the algebraic K-theory of the algebraic-number field of definition. This correspondence is a theorem at depths 1 and 2, and Beilinson's conjecture at depths $\geq 3$. It is recorded to provide the standard period-theoretic language for the framework.
 
 | Depth $n$ | Status | Reason |

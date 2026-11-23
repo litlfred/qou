@@ -1,4 +1,3 @@
-**Remark (prior art: Hochschild homology of affine Hecke algebras is independent of $q$).**
 Let $\mathcal{R}$ be a based root datum with finite Weyl group $W$, let $T = \mathrm{Hom}_{\mathbb{Z}}(X, \mathbb{C}^\times)$, and let $\mathcal{H}(\mathcal{R}, q)$ be the associated affine Hecke algebra with positive, possibly unequal, parameters $q$. Solleveld constructs families of representations $\pi(w, i, t, \epsilon)$ of $\mathcal{H}(\mathcal{R}, q^\epsilon)$ and proves that, for $\epsilon \notin \sqrt{-1}\,\mathbb{R}^\times$, two of them have the same trace exactly when they have the same $w$ and $i$ and their $t$ lie in one $Z_W(w)$-orbit \cite[Theorem 1(d), p. 3]{solleveld2022}. For the same $\epsilon$ the Hochschild homology is
 $$
 HH_*\big(\mathcal{H}(\mathcal{R}, q^\epsilon)\big) \cong \Omega^*(\widetilde{T})^W,

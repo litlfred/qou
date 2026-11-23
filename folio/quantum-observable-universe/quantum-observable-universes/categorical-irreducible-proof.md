@@ -1,4 +1,3 @@
-
 Suppose $s \colon \mathbf{1} \to \mathrm{Ad}(A)$ is a non-zero
 invariant morphism.  The following diagram commutes:
 

@@ -1,4 +1,3 @@
-**Remark (prior art: a connection formula for the Hahn--Exton $q$-Bessel function).**
 Morita defines the Hahn--Exton $q$-Bessel function as
 $$
 J^{(3)}_\nu(x; q) = \frac{(q^{\nu+1}; q)_\infty}{(q; q)_\infty}\, x^\nu\, {}_1\varphi_1\big(0; q^{\nu+1}; q, q x^2\big)

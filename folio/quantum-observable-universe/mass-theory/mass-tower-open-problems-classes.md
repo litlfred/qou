@@ -1,4 +1,3 @@
-**Remark (open mass-tower problems as hypotheses).**
 *Four structural gaps remain in the mass-tower derivation. Each is stated as a conditional hypothesis.*
 
 1. **Term 7 shell correction**. The unified mass formula underpredicts heavy isotopes. The correction coefficient $\alpha_5$ currently relies on empirical data. The hypothesis asserts a structural derivation exists from the Gröbner-Shirshov spectral sequence at height-6 partitions.

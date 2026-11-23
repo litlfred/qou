@@ -1,4 +1,3 @@
-**Conjecture.**
 *In the quotient atom model $H_{Z+1}(q)$ — where the nuclear core is a single strand $\mathcal{N}$ and each electron is a strand $e_k$ — the growth ratio $\gamma(Z) = n(Z)/n(Z-1)$ of the Gröbner–Shirshov normal form term count separates three regimes:*
 
 $$

@@ -1,4 +1,3 @@
-*Proof.*
 The triple $(\mathbf{C}, A, \tau)$ is exhibited below, together with a check of the four
 axioms of
 [quantum observable universe](#def:quantum-observable-universe).

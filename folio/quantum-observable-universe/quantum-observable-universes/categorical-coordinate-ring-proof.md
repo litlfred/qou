@@ -1,4 +1,3 @@
-*Proof.*
 Existence: $S = R[q, q^{-1}][i]/(i^2+1)$ visibly satisfies (1) by
 construction of the Laurent polynomial ring and (2) via $i = $ image
 of the polynomial generator.  The semidirect-product factorisation

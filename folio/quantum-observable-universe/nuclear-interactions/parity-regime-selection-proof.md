@@ -1,5 +1,3 @@
-## Proof
-
 Write $a = -a'$ and $b = -b'$ with $a', b' > 0$, and $N = M + 1$. Then $A - 1 = Z + M$ and
 
 $$

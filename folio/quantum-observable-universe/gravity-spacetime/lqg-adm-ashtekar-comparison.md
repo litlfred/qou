@@ -1,4 +1,3 @@
-**Remark (QOU as the categorical resolution of canonical quantum-gravity programmes).**
 The contact-geometric machinery of the QOU framework aligns structurally with the canonical quantum-gravity programmes (ADM, Ashtekar, Smolin–Rovelli LQG). The ADM 3+1 foliation reappears as the contact affine chart $H = \ker \varTheta_A$ (the spatial slice), with the Reeb flow $\phi_t = \exp(t\xi)$ in the role of lapse-and-shift. The substantive differences are not which structures appear but where they live. QOU treats them as native categorical data, whereas canonical LQG bolts them onto a continuous background and recovers algebraic data as a regularisation patch.
 
 ## Dictionary

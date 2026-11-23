@@ -1,5 +1,3 @@
-**Remark (Bring-embeddable knot table).**
-
 The QOU substrate selects the knots whose Seifert genus is bounded by Bring's surface genus ([Complete decomposition of the tensor tower](#prop:knot-eigenbasis-complete), [Exhaustiveness of the QOU knots in the Descartes space (open)](#rem:knot-exhaustiveness)):
 
 $$

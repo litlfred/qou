@@ -1,5 +1,3 @@
-**Proposition (the balanced dimension sum as an involution statistic).**
-
 *For $n \geq 1$ let $[k] = (q^k - q^{-k})/(q - q^{-1})$ denote the balanced
 quantum integer, and for a partition $\lambda \vdash n$ with hook lengths
 $h(c)$, $c \in \lambda$, set*

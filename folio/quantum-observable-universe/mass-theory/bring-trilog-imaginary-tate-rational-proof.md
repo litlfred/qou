@@ -1,4 +1,4 @@
-### Proof — via Kummer reflection formula
+**Via Kummer reflection formula.**
 
 **Kummer reflection (Lewin 1991, Eq. 6.10):** for $z \notin (0, 1)$:
 

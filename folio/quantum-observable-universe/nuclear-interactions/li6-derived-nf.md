@@ -1,4 +1,3 @@
-**Example.**
 Lithium-6 ($Z = 3$, $N = 3$, $A = 6$) is the lightest bound nucleus beyond the doubly-magic helium-4 core; no $A = 5$ nucleus is bound. Its construction demonstrates the operator transition from Regime II ($L_\pm$, whose closure in $B_3$ is the unknot) back to Regime III (bare crossing) after the He-4 magic shell closes.
 
 ## Inductive construction

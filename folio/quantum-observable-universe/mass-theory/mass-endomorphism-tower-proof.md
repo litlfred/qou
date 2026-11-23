@@ -1,4 +1,3 @@
-*Proof.*
 The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) decomposes via the
 :refterm[descent]{#descent} involution into descended and transient contributions.  The

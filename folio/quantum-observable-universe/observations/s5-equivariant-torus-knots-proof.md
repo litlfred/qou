@@ -1,4 +1,3 @@
-*Proof.*
 An equivariant embedding requires $\mathbb{Z}_s \hookrightarrow \mathrm{Aut}(\Sigma) = S_5$. The cyclic symmetry of the knot must match a symmetry of the ambient surface. An injection $\mathbb{Z}_s \hookrightarrow S_5$ exists if and only if $S_5$ contains an element of order $s$. The orders of elements in $S_5$ are the least common multiples of the parts of integer partitions of $5$.
 
 See [Table](#tbl:s5-equivariant-torus-knots-table-data).

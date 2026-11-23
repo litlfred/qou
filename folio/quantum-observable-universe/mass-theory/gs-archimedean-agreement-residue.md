@@ -1,4 +1,3 @@
-**Conjecture (archimedean agreement, proton instance).**
 *For the proton braid $T_w(Z = 1, N = 0)$, the degree-$48$ Markov-normalised Habiro polynomial trace $T_{\mathfrak{p}}(u)$ evaluates at $u_0 = \sqrt{q_0}$ to the proton GB mass:*
 
 $$

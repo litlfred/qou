@@ -1,4 +1,4 @@
-**Remark (reading for the $c_k$ ladder).** This remark records what the [classical vanishing $S(1) = 0$](#prop:q-beta-over-e0-classical-vanishing) implies for the $c_k$ ladder, and the values at $q_0$ that go with it.
+This remark records what the [classical vanishing $S(1) = 0$](#prop:q-beta-over-e0-classical-vanishing) implies for the $c_k$ ladder, and the values at $q_0$ that go with it.
 
 One reading has $c_k$ coming from the $u_{\text{ladder}}$ Taylor expansion of $S(q) = \mathfrak{Q}_\beta(q)/E_0(q)$. Taken literally, this is degenerate. The Taylor expansion of $S/S(1)$ around $q = 1$ is $0/0$. The proved $c_2 = -1$ cannot be recovered this way.
 

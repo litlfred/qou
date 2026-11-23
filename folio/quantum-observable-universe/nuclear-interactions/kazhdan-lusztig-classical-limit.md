@@ -1,4 +1,3 @@
-**Conjecture (Kazhdan–Lusztig classical limit).**
 *Let $\{b_w\} \subset H_n(R, q)$ be the KLR canonical basis associated to the anyonic Hecke substrate. Let $\{C_w\} \subset \mathbb{Z}[S_n]$ be the Kazhdan–Lusztig basis of the group algebra of the symmetric group. Define the classical-limit functor*
 
 $$

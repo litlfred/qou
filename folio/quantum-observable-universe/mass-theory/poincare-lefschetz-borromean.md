@@ -1,4 +1,3 @@
-**Conjecture (Poincaré–Lefschetz closure).**
 *The Borromean complement $\mathbf{S}^3 \setminus \mathcal{B}_3$
 is a 3-manifold with cusps (boundary = 3 disjoint tori).
 Poincaré–Lefschetz duality gives a canonical isomorphism:*

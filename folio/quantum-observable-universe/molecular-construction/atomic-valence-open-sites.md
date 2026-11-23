@@ -1,4 +1,3 @@
-**Definition.**
 *The* **valence** *of an atom (the number of open bonding sites available for covalent bonds) is*
 
 $$

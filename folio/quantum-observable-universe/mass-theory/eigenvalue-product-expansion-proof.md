@@ -1,4 +1,3 @@
-*Proof.*
 The nuclear braid has three types of pairwise crossings.  In the
 Hoefsmit seminormal basis
 ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)),

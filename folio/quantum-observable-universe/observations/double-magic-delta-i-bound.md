@@ -1,6 +1,3 @@
-## Statement
-
-**Proposition (LR-fusion adjacent-shell compatibility).**
 *Let $(i_Z, i_N) \in \{1, \ldots, 7\} \times \{1, \ldots, 7\}$ be the Bring shell indices of an isotope's proton and neutron magic numbers. Define $\Delta i := i_N - i_Z$. Then every empirically observed doubly-magic isotope has*
 
 $$
@@ -17,7 +14,7 @@ All nine observed doubly-magic isotopes have $\Delta i \in \{0, 1\}$. No empiric
 
 ## Categorical interpretation
 
-Per [Conjecture (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$](#conj:diagrammatic-double-magic-lr-fusion), double-magic stability requires the LR-fusion
+Per [diagrammatic double-magic LR-fusion rigidity](#conj:diagrammatic-double-magic-lr-fusion), double-magic stability requires the LR-fusion
 
 $$
   V_{\lambda_Z} \otimes V_{\lambda_N}

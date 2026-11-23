@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:diagrammatic-double-magic-lr-fusion",
   title:
-    "Conjecture (diagrammatic double-magic): LR-fusion rigidity at $Z, N \\in \\mathfrak{M}$",
+    "Diagrammatic double-magic LR-fusion rigidity at $Z, N \\in \\mathfrak{M}$ (refuted for genuine LR coefficients)",
   lean: {
     ref: "qou:QOU.LRFusion.DoubleMagicConjecture",
     validation: "not_checked",

@@ -1,4 +1,3 @@
-**Conjecture (Bloch-group decomposition of $2/(3\pi)$).**
 *There exists a finite multi-set $\{(K_1, n_1), \ldots, (K_m, n_m)\}$ of hyperbolic knots $K_i \subset S^3$. These knots embed in Bring's surface $X_{\mathrm{Bring}}$ respecting a finite-index sub-symmetry of the $S_5$ automorphism group. The multiplicities $n_i \in \mathbb{Z}$ satisfy*
 
 $$

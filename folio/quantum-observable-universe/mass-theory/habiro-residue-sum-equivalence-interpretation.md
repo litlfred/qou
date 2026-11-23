@@ -1,4 +1,4 @@
-**Remark.** The polynomial-ring path is **constructive** (the
+The polynomial-ring path is **constructive** (the
 Habiro coefficients $a_m(u)$ are computed by sequential cyclotomic
 division, see [Atomic-braid Habiro expansion: integrality and termination](#cor:habiro-expansion-atomic))
 while the residue path is **analytic** (it requires the quantum

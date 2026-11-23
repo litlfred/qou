@@ -1,5 +1,3 @@
-**Remark (Bloch-Wigner dilogarithm $D$ on the unit circle).**
-
 The Lean file [`bloch-wigner-mathlib-filler.lean`](bloch-wigner-mathlib-filler.lean) restricts the Bloch-Wigner dilogarithm to unit-circle shape parameters $z = e^{i\theta}$:
 
 $$

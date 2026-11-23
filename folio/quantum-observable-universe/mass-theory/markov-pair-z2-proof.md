@@ -1,5 +1,3 @@
-## Proof
-
 The argument is a **direct two-step peel**, one Markov move per
 factor. Embed $\sigma_i\sigma_j$ in $H_{j+1}(q)$, the minimal
 Hecke algebra containing both generators; higher embeddings

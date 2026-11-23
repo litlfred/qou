@@ -100,7 +100,7 @@ What the Frobenius axiom does instead is *select* a sub-algebra
 of admissible observables. An object $A$ in the monoidal
 category may only carry a Frobenius structure if it is rigid and
 self-dual; this is a strong constraint that excludes most of
-the wild functions in $C(\mathbf{No})$ (e.g.\ continuous
+the wild functions in $C(\mathbf{No})$ (e.g. continuous
 surreal-valued functions with non-well-ordered support, or
 indicator functions of order-disconnected pieces of $\mathbf{No}$).
 The QOU observable algebra is built bottom-up from

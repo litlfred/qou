@@ -76,15 +76,34 @@ BUILD_DATE=$(git -C "$ROOT" show -s --format=%cs HEAD)
   \fi}
 \renewcommand{\leanstatusmark}[2]{%
   \def\lsm@s{#1}%
-  \def\lsm@stub{stubbed}\def\lsm@comp{compiled}%
+  \def\lsm@stub{stubbed}\def\lsm@comp{compiled}\def\lsm@spec{spec}%
   \ifx\lsm@s\lsm@stub
     \def\lsm@col{leanstubcolor}\def\lsm@tag{stub}%
+  \else\ifx\lsm@s\lsm@spec
+    \def\lsm@col{leandraftcolor}\def\lsm@tag{spec}%
   \else\ifx\lsm@s\lsm@comp
     \def\lsm@col{leanokcolor}\def\lsm@tag{ok}%
   \else
     \def\lsm@col{leandraftcolor}\def\lsm@tag{draft}%
-  \fi\fi
+  \fi\fi\fi
   \folioleanhref{#2}{\textcolor{\lsm@col}{$\boldsymbol{\forall}$\,\textbf{\tiny\lsm@tag}}}%
+}
+\renewcommand{\proofstatuslegend}{%
+  \bigskip\noindent\textbf{Lean formalisation key} — the bold $\boldsymbol{\forall}$ beside each
+  block links to its Lean declaration; its colour and tag give the status:%
+  \par\smallskip\noindent
+  \begin{adjustbox}{max width=\linewidth}
+  \begin{tabular}{@{}cl@{\qquad}cl@{}}
+    \textcolor{leanstubcolor}{$\boldsymbol{\forall}$\,\textbf{\footnotesize stub}}
+      & Stub: \texttt{sorry}/placeholder, or vacuous/trivial per QA
+    & \textcolor{leandraftcolor}{$\boldsymbol{\forall}$\,\textbf{\footnotesize draft}}
+      & Drafted: statement in Lean, not yet sorry-free\\
+    \textcolor{leandraftcolor}{$\boldsymbol{\forall}$\,\textbf{\footnotesize spec}}
+      & Carrier: conjecture hypothesis class or refutation compiled
+    & \textcolor{leanokcolor}{$\boldsymbol{\forall}$\,\textbf{\footnotesize ok}}
+      & Compiled: statement proved sorry-free\\
+  \end{tabular}
+  \end{adjustbox}\bigskip
 }
 \renewcommand{\lean}[1]{%
   \global\leantaggedtrue%
@@ -118,6 +137,115 @@ s, n2 = re.subn(r"(\\begin\{titlepage\}.*?\{\\large )\d{4}-\d{2}-\d{2}(\})",
 open(p, "w", encoding="utf-8").write(s)
 print(f"==> date {d} (\\date: {n1}, title page: {n2})")
 PY2
+
+# Normalize back-matter appendix chaptering (\appendix + numbered \chapter{}),
+# strip empty compact-mode sections while keeping phantom \label anchors, and
+# mark compiled conjecture carriers as [spec] rather than [compiled] ("ok").
+python3 -I - "$ROOT/folio/$PAPER/$PAPER.ts" "$OUT/main.tex" "$OUT/chapters" <<'PY_APP'
+import pathlib, re, sys
+
+manifest_path, main_path, chapters_dir = map(pathlib.Path, sys.argv[1:4])
+manifest_src = manifest_path.read_text(encoding="utf-8")
+dirs = re.findall(r'chapterRef\(\{\s*dir:\s*"([^"]+)"', manifest_src)
+
+# Back matter starts at glossary (or first appendix-*), excluding index-of-definitions
+# (which scripts/lib/definition-glossary.py replaces with definition-glossary.tex).
+back_start = next((i for i, d in enumerate(dirs) if d == "glossary" or d.startswith("appendix-")), None)
+back_dirs = [d for d in (dirs[back_start:] if back_start is not None else []) if d != "index-of-definitions"]
+
+promoted_chapters = 0
+newly_defined_labels = set()
+for slug in back_dirs:
+    tex_file = chapters_dir / f"{slug}.tex"
+    if not tex_file.exists():
+        continue
+    t = tex_file.read_text(encoding="utf-8")
+    # Convert \chapter*{Title} (+ duplicate \addcontentsline) -> \chapter{Title}
+    t2, k = re.subn(
+        r"\\chapter\*\{([^\n]*)\}\n((?:\\label\{[^\n]*\}\n)?)\s*\\addcontentsline\{toc\}\{chapter\}\{[^\n]*\}\n?",
+        r"\\chapter{\1}\n\2",
+        t,
+        count=1,
+    )
+    if k:
+        t = t2
+        promoted_chapters += 1
+        tex_file.write_text(t, encoding="utf-8")
+    newly_defined_labels |= set(re.findall(r"\\label\{([^}]+)\}", t))
+
+main_tex = main_path.read_text(encoding="utf-8")
+if back_dirs:
+    first_input = f"\\input{{chapters/{back_dirs[0]}}}"
+    if "\\appendix\n" not in main_tex and first_input in main_tex:
+        app_banner = (
+            "% ── Appendices (scripts/build-paper-pdf.sh) ───────────────────────────────\n"
+            "\\clearpage\n"
+            "\\phantomsection\n"
+            "\\part*{Appendices}\n"
+            "\\addcontentsline{toc}{part}{Appendices}\n"
+            "\\appendix\n"
+        )
+        main_tex = main_tex.replace(first_input, app_banner + first_input, 1)
+    # Ensure every back-matter chapter (e.g. notation) is included before References
+    ref_marker = "% ── Appendix B: References"
+    for slug in back_dirs:
+        inc = f"\\input{{chapters/{slug}}}"
+        if inc not in main_tex and (chapters_dir / f"{slug}.tex").exists() and ref_marker in main_tex:
+            main_tex = main_tex.replace(ref_marker, f"{inc}\n\n{ref_marker}", 1)
+    # Drop phantom labels that are now defined for real in included back-matter chapters
+    def keep_phantom(m: re.Match) -> str:
+        return "" if m.group(1) in newly_defined_labels else m.group(0)
+    main_tex = re.sub(r"^\\phantomsection\\label\{([^}]+)\}\n", keep_phantom, main_tex, flags=re.M)
+
+# Rename hardcoded "Appendix B. References" -> "References"
+main_tex = main_tex.replace("\\chapter*{Appendix B. References}", "\\chapter*{References}")
+main_tex = main_tex.replace(
+    "\\addcontentsline{toc}{chapter}{Appendix B. References}",
+    "\\addcontentsline{toc}{chapter}{References}",
+)
+main_path.write_text(main_tex, encoding="utf-8")
+
+# Across all chapters:
+#   1. Conjecture blocks with sorry-free Lean carriers get [spec], not [compiled] ("ok").
+#   2. Strip empty compact-mode \subsection / \section headings while keeping \label anchors.
+spec_marks = 0
+dropped_secs = 0
+
+def strip_empty_headings(tex: str, cmd: str, boundary_re: str) -> tuple[str, int]:
+    pat = re.compile(
+        rf"\\{cmd}\{{[^\n]*\}}\n((?:(?!(?:{boundary_re})).)*)",
+        re.S,
+    )
+    dropped = 0
+    def repl(m: re.Match) -> str:
+        nonlocal dropped
+        body = m.group(1)
+        vis = re.sub(r"\\phantomsection\\label\{[^}]+\}(?:%[^\n]*)?", "", body)
+        vis = re.sub(r"\\(?:label|sectionannot)\{[^}]+\}", "", vis)
+        vis = re.sub(r"%[^\n]*", "", vis).strip()
+        if vis:
+            return m.group(0)
+        dropped += 1
+        anchors = []
+        for lab in re.findall(r"(?<!\\phantomsection)\\label\{([^}]+)\}", body):
+            anchors.append(f"\\phantomsection\\label{{{lab}}}% compact-mode: empty {cmd}")
+        for pline in re.findall(r"\\phantomsection\\label\{[^}]+\}(?:%[^\n]*)?", body):
+            anchors.append(pline)
+        return ("\n".join(anchors) + "\n") if anchors else ""
+    return pat.sub(repl, tex), dropped
+
+for f in sorted(chapters_dir.glob("*.tex")):
+    s = f.read_text(encoding="utf-8")
+    s2, k_spec = re.subn(r"\\blockannot\[compiled\]\{(conj:[^}]+)\}", r"\\blockannot[spec]{\1}", s)
+    spec_marks += k_spec
+    s2, d_sub = strip_empty_headings(s2, "subsection", r"\\subsection\{|\\section\{|\\chapter")
+    s2, d_sec = strip_empty_headings(s2, "section", r"\\section\{|\\chapter")
+    dropped_secs += d_sub + d_sec
+    if s2 != s:
+        f.write_text(s2, encoding="utf-8")
+
+print(f"==> appendices={len(back_dirs)} (promoted \\chapter*: {promoted_chapters}), conjecture [spec] marks={spec_marks}, empty compact sections stripped={dropped_secs}")
+PY_APP
 # Lean doc lookup: every declaration the paper links, mapped to its page in
 # the Lean visualiser published at $PAGES_BASE/lean/.
 #   1. the Lean knowledge-graph viewer (lean-kg-publish, thin page + data

@@ -1,4 +1,4 @@
-**Proposition.** *Let $R$ be a field and $a \in R$ with $a \neq 0$. Write
+*Let $R$ be a field and $a \in R$ with $a \neq 0$. Write
 $\bar q = a^{2}$ and $\tilde q = a^{-2}$, let $(\,q;q)_n = \prod_{j=1}^{n}(1-q^{j})$
 denote the $q$-Pochhammer symbol, let $[n,k]_q$ denote the Gaussian binomial
 coefficient, and let $C_n(a)$ be the $n$-th Masbaum cyclotomic coefficient of

@@ -1,4 +1,3 @@
-**Definition.**
 *An **embeddable knot operator** is a knot operator $K$ together with an embedding of its braid into the ambient $3$-manifold, carrying an **overlap weight** $w \in (0, 1]$ determined by the embedding direction relative to the bond axis. Its **binding contribution** is*
 
 $$

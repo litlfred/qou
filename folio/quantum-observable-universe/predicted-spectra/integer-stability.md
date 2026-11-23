@@ -1,6 +1,5 @@
 Physical nuclei require integer proton and neutron numbers. Stable hadrons correspond to integer solutions of a quadratic energy minimisation. The continuous optimum $p^*(A)$ defines the beta-stability line.
 
-**Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate parameter $q$. At a fixed mass number $A = Z + N$, the nuclear binding energy is a strictly convex quadratic in the proton number $p$:
 
 $$

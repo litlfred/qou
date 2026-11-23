@@ -1,5 +1,3 @@
-**Algorithm (Nucleon mass ratio at $q = q_0$).**
-
 > The name *mass identity* is deliberately not used here. It is already taken by
 > [Mass (Frobenius form of the mass integrand)](#def:mass-identity), which is a different object — inertial mass as a
 > nonabelian multiplicative integral around a vortex filament. This step computes the

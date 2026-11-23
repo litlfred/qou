@@ -1,4 +1,4 @@
-## Proof of (i): the Gram matrix has a negative eigenvalue
+**Part (i): the Gram matrix has a negative eigenvalue.**
 
 The eigenvalues of $G$ are:
 

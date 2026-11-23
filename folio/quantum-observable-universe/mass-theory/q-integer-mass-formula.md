@@ -1,4 +1,3 @@
-**Conjecture (Bethe-Weizsäcker emergence).**
 *The phenomenological Bethe-Weizsäcker liquid-drop coefficients emerge strictly as products of quantum integers $[n]_q$ evaluated at $q_0$.*
 
 *The five standard coefficients, plus two Hecke-derived extensions, take the form:*

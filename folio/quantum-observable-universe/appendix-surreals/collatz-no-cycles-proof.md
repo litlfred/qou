@@ -1,4 +1,4 @@
-*Proof.* The Skein-Collatz map is
+The Skein-Collatz map is
 **affine**, not linear: the odd branch carries an additive term,
 $\mathcal{C}_q(P) = ([3]_q P + 1)/[2]_q$, and the even branch is
 $\mathcal{C}_q(P) = P/[2]_q$. A periodic orbit of length $k$ with
@@ -101,9 +101,7 @@ once it is negative.
    $P = -q^{-2}$, which has $\operatorname{ord}_q = -2 \neq -1$. So this
    sub-case has no cycle.
 
-Formalised sorry-free as `cycle_classification` and
-`laurent_cycle_classification` in
-`QOU/AppendixSurreals/collatz_cycle_classification.lean`. This agrees with the
+This algebraic classification agrees with the
 computational census over all primitive parity words through period $18$,
 which finds only the positive $2$-cycle $\{q^{-1},\, 1 + q^{-1}\}$ and the
 negative fixed point $-q^{-2}$, the $q$-lifts of the classical $\{1, 2\}$

@@ -1,5 +1,3 @@
-## Proof.
-
 A 1-dimensional irrep $V_\lambda$ of $H_n(q)$ is determined by the
 generator-image scalar $\rho_\lambda(\sigma_i) = \lambda_\sigma$,
 which by the Iwahori-Hecke relation

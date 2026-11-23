@@ -1,6 +1,6 @@
 Let $U \subset M_0$ be an affine chart carrying a bundle initial condition $\mathcal{S}_0 = \sum_i (p_i, H_i)$ .
 
-**Definition.** A **big bang state** is a bundle initial condition with a trivial degree-$0$ algebra:
+A **big bang state** is a bundle initial condition with a trivial degree-$0$ algebra:
 $$
   \mathcal{S}_0 \text{ is a big bang state}
   \quad\Longleftrightarrow\quad

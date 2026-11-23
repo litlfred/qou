@@ -1,6 +1,5 @@
 Let $\Phi_n(K)$ denote the tower-level volume contribution from the [tower decomposition](#prop:volume-tower-decomposition). Let $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ denote the $n$-th [quantum characteristic class](#def:quantum-characteristic-classes).
 
-**Proposition.**
 The Chern--Simons evaluation map is *faithful* at each tower level. For every hyperbolic knot or link $K$ in the Descartes spectrum,
 
 $$

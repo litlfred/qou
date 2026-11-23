@@ -1,5 +1,3 @@
-## Proposition
-
 **Let $q > 1$ and let $\mathcal{N}(p, n)$ be the Gröbner--Shirshov normal form of the nuclear braid in $H_A(q)$, constructed by sequential Hopf linking with alternating $\mathfrak{p}$-$\mathfrak{n}$ filling.**
 
 **(i)** *Normal form. $\mathcal{N}(p, n)$ is in Gröbner--Shirshov normal form for every $A \geq 1$, with at most $A!$ terms (the dimension of $H_A(q)$ over $\mathbb{Z}[q^{\pm 1}]$, equal to $|S_A|$) — a finite representation for any nucleus.*

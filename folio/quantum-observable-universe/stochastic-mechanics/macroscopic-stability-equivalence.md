@@ -1,4 +1,4 @@
-**Conjecture.** Fix a substrate datum: a candidate zeta function $\zeta$, its Chebyshev-type prime-counting function $\psi$, and the Reeb spectrum $\rho$ of the same substrate. The following are equivalent:
+Fix a substrate datum: a candidate zeta function $\zeta$, its Chebyshev-type prime-counting function $\psi$, and the Reeb spectrum $\rho$ of the same substrate. The following are equivalent:
 
 1. **Macroscopic stability.** $\psi(X) = X + O(X^{1/2 + \varepsilon})$ for every $\varepsilon > 0$.
 2. **Riemann hypothesis.** Every zero of $\zeta$ in the critical strip satisfies $\mathrm{Re}(s) = 1/2$.

@@ -1,4 +1,3 @@
-**Definition.**
 *Let $H_n(R, q)$ be the Hecke algebra at substrate parameter $q$. For each Wedderburn block indexed by a partition $\lambda \vdash k$ ($k = 2, \ldots, k_{\max}(K, q)$, where $k_{\max}(K, q)$ is the per-atom truncation determined by the interaction-strand requirement of $K$ — see [confinement level](#def:confinement-level)), the **knot operator energy** of $\lambda$ at $q$ is the absolute value of its LP-dual shadow price:*
 
 $$

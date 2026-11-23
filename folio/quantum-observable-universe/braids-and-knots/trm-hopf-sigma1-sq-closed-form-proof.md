@@ -1,5 +1,3 @@
-## Proof
-
 The Hecke quadratic relation $\sigma_1^2 = (q - q^{-1})\sigma_1 + 1$
 gives $\mathrm{tr}_M(\sigma_1^2) = (q - q^{-1})\,\mathrm{tr}_M(\sigma_1) + \mathrm{tr}_M(1)$.
 The Markov axioms ([Primitive Markov-trace axioms](#rem:markov-axioms-primitive))

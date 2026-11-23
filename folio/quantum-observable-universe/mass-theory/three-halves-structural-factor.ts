@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "Lepton-tower closure structural identities — muon (3+h²)/(2+h²) = [3]_q·[2]_q/[4]_q and tau [6]_q = [2]_q·[3]_q·(1+h²) — proved over generic [CommRing R] with q : Units R, division-free.",
+    "Lepton-tower structural identities: $(3+h^2)/(2+h^2) = [3]_q[2]_q/[4]_q$ and $[6]_q = [2]_q[3]_q(1+h^2)$",
   uses: [
     "prop:lepton-bring-surface-h3-3channel",
   ],

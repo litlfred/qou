@@ -1,4 +1,3 @@
-**Proof.**
 Because $\phi$ commutes with $\iota$, it descends along $\pi$ to an automorphism $\bar\phi$ of $\mathbb{P}^1$. Faithfulness of $\phi$ and commutativity with $\iota$ force $\bar\phi$ to be an element of order $5$ in $\mathrm{PGL}_2(\mathbb{C}) = \mathrm{Aut}(\mathbb{P}^1)$. Every order-5 element of $\mathrm{PGL}_2(\mathbb{C})$ is conjugate to $x \mapsto \zeta_5 x$. This map has exactly two fixed points on $\mathbb{P}^1$, namely $\{0, \infty\}$. Under Möbius normalisation, set $\bar\phi \colon x \mapsto \zeta_5 x$.
 
 The orbits of $\bar\phi$ on $\mathbb{P}^1$ have size 1 (fixed points: $0, \infty$) or 5 (generic orbits $\{a, \zeta_5 a, \zeta_5^2 a, \zeta_5^3 a, \zeta_5^4 a\}$ for $a \notin \{0, \infty\}$).

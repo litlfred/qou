@@ -1,4 +1,3 @@
-**Definition.**
 *The **adelic substrate** of the QOU framework is the ring of adeles of $\mathbb{Q}$,*
 
 $$

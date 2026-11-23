@@ -41,7 +41,7 @@ The noble gases (He, Ne, Ar, Kr, Xe, Rn) define atoms whose electron cloud reduc
 A photon absorption event promotes a single electron between sub-Hopf links. The knot picture models this process:
 
 1. **Incoming photon**: A wavefront ([wavefront propagation](#rem:wavefront-propagation)) carries energy $E = h\nu$ specified by the categorical Lagrangian ([categorical Lagrangian](#def:categorical-lagrangian)).
-2. **Absorption**: The [photon](#def:photon) adds a strand-adding curl to the electron word, $e_n \mapsto e_n\sigma_{n+1}$. This is a Markov stabilisation, so the closure stays the Hopf link while the level rises by one ([shell--writhe correspondence](#conj:hydrogen-shell-writhe)). How this curl moves the electron to an outer sub-link is not re-derived.
+2. **Absorption**: The [photon](#def:photon) adds a strand-adding curl to the electron word, $e_n \mapsto e_n\sigma_{n+1}$. This is a Markov stabilisation, so the closure stays the Hopf link while the strand level rises by one. How this curl moves the electron to an outer sub-link is not re-derived.
 3. **Emission**: The electron decays. The curl is removed. The system re-emits a photon of identical energy.
 
 Curls that preserve the topological type of the remaining sub-links dictate the selection rules.

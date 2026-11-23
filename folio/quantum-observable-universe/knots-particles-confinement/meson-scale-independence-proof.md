@@ -1,4 +1,4 @@
-**Proof (representation-theoretic + topological).**
+*(Representation-theoretic and topological.)*
 
 The baryon mass formula uses $\mathrm{Vol}(\mathcal{B}_3) / \hbar_q^2$ as the geometric normalization. $\mathrm{Vol}(\mathcal{B}_3) = 8G > 0$ is the hyperbolic volume of the Borromean complement. The meson's binding topology is the Hopf link $L_+$. Its complement is $T^2 \times I$, a Seifert-fibred space rather than a hyperbolic one, so $\mathrm{Vol}(\text{Hopf complement}) = 0$. Without a non-zero hyperbolic volume, there is no geometric invariant to set the meson mass scale from $(m_\mathfrak{e}, q_0)$.
 

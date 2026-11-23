@@ -1,4 +1,3 @@
-*Proof.*
 The Reeb time coordinate is defined as $t = \hbar_q \cdot \mathcal{T}$ ([information-theoretic time](#def:information-theoretic-time)). Consequently, each discrete $f_q$-iteration (an increment of $\mathcal{T}$ by $1$) corresponds to a continuous time duration of $\hbar_q$. The number of iterations composing one full Reeb circuit (continuous duration $1$) is therefore exactly $1/\hbar_q = t_P(q)$. $\square$
 
 **Regime values.**
