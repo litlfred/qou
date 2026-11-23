@@ -20,3 +20,4 @@ Create and wire a dedicated monograph Appendix/Annex (`appendix-lean-libraries`)
 
 ## Updated Scope (`2026-11-23`): Community Contrib Libraries Annex
 Describe both Tier-A (`Mathlib4` core upstreaming lemmas) and Tier-B (the 6 standalone Reservoir-ready Lean 4 community contribution libraries `HeckeTemperleyLieb`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `QCalculus`, `BraidKnotOctonion`) in `appendix-lean-libraries`, including `lakefile.toml` dependency DAG, public API surface, and `Mathlib4` linter/axiom guarantees.
+- **Consolidation Note (`qou-anx0`):** Evolve and consolidate existing `folio/quantum-observable-universe/appendix-formalisation-notes/` (`25` blocks) directly into this Annex rather than creating a second Lean appendix.
