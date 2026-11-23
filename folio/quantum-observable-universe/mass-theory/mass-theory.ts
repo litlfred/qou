@@ -357,7 +357,7 @@ export default chapter({
     }),
 
     section({
-      title: "Complex-Volume Precision Ladder: $\operatorname{Re}(\mathfrak{V})$ and $\operatorname{Im}(\mathfrak{V})$",
+      title: String.raw`Complex-Volume Precision Ladder: $\operatorname{Re}(\mathfrak{V})$ and $\operatorname{Im}(\mathfrak{V})$`,
       label: "sec:mass-algebraic-complex-volume-ladder",
       blocks: [
         "complex-volume-ladder-intro",
@@ -378,7 +378,7 @@ export default chapter({
     }),
 
     section({
-      title: "$\mathfrak{Q}_\beta$ Precision Ladder: Formalize-First Gates and the $c_k$ Recursion",
+      title: String.raw`$\mathfrak{Q}_\beta$ Precision Ladder: Formalize-First Gates and the $c_k$ Recursion`,
       label: "sec:mass-algebraic-qbeta-formalize-first-gates",
       blocks: [
         "toroidal-harmonics-delta-lambda",
@@ -527,7 +527,7 @@ export default chapter({
     }),
 
     section({
-      title: "Archimedean Realization ($\tau_{\mathrm{arch}}$) and Kashaev Hyperbolic Volume",
+      title: String.raw`Archimedean Realization ($\tau_{\mathrm{arch}}$) and Kashaev Hyperbolic Volume`,
       label: "sec:archimedean-realization-kashaev",
       blocks: [
         "intro-archimedean-realization-kashaev",
@@ -1153,7 +1153,7 @@ export default chapter({
     }),
 
     section({
-      title: "Physical Spectrum: Hadron Masses, Binding ($\operatorname{Re}\mathfrak{V}$), and Decay ($\operatorname{Im}\mathfrak{V}$)",
+      title: String.raw`Physical Spectrum: Hadron Masses, Binding ($\operatorname{Re}\mathfrak{V}$), and Decay ($\operatorname{Im}\mathfrak{V}$)`,
       label: "sec:mass-physical-face",
       blocks: [
         "mass-physical-face-intro",

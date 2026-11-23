@@ -123,4 +123,4 @@ $$
   \frac{\hbar_q^2 \cdot h_q \cdot [2]_q}{3}
   \;=\;
   \frac{(q-1)^2 \, (1 - q^{-4})}{3}. \tag{5}
-$$ $\square$
+$$
