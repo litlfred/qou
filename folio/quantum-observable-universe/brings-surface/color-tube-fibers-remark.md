@@ -1,0 +1,1 @@
+As schemes, the [color tubes](#def:color-tube-fibers) satisfy $R_z \cong G_z \cong B_z$, and each is isomorphic to the color fibre over $z$ of [color elliptic curve](#prop:color-elliptic), the three roots of the color cubic, via the shift $X = \mathbf{c} + z$.

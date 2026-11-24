@@ -128,6 +128,7 @@ export default chapter({
         "observability-q-independent",
         "observability-q-independent-proof",
         "ns-obstruction",
+        "ns-obstruction-remark",
         "ns-obstruction-spectral-gap",
         "ns-classical-formulation",
         "blowup-regularity-as-lifting",
@@ -159,6 +160,7 @@ export default chapter({
         "reeb-beltrami-regular-flow-scope",
         // ── Observable MTC / anyons (Track B) ──────────────────────
         "observable-mtc",
+        "observable-mtc-remark",
         "observable-mtc-braiding",
         "bn-mtc-action",
         "bn-mtc-action-proof",

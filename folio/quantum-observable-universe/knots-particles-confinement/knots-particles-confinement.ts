@@ -79,6 +79,7 @@ export default chapter({
         "confinement-universality",
         "confinement-universality-proof",
         "derived-atom",
+        "derived-atom-normal-form",
         "confinement-layer-operator-selection",
         "nucleon-from-photons-summary",
         // `gluon-stabiliser-ledger` was here on landing (2026-08-24) and moved
@@ -183,6 +184,7 @@ export default chapter({
         "confinement-level-unique",
         "confinement-level-unique-local-constancy",
         "cemetery-group",
+        "cemetery-group-remark",
         "crystal-graph-realization",
         "confinement-grading-correspondence",
         "confinement-grading-correspondence-conditional",
@@ -314,6 +316,7 @@ export default chapter({
         "compound-beta-shell-calibration-table2-data",
         "compound-beta-shell-calibration-table1-data",
         "magic-shell-coupling-kappa",
+        "magic-shell-coupling-kappa-remark",
         "magic-shell-coupling-kappa-table-data",
         "quantum-dilogarithm-disambiguation",
       ],

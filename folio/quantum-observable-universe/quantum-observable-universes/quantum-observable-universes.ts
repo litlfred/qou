@@ -23,6 +23,7 @@ export default chapter({
       blocks: [
         "qou-definition-intro",
         "quantum-observable-universe",
+        "quantum-observable-universe-remark",
         "qou-axioms-physical-reading",
         "braiding-induced-ordering",
         "braiding-induced-ordering-proof",
@@ -241,6 +242,7 @@ export default chapter({
         "algebraic-substrate-intro",
         "substrate-preamble",
         "frobenius-hopf-substrate",
+        "frobenius-hopf-substrate-remark",
         "brings-coordinate-ring",
         "brings-coordinate-ring-remark",
         // Moved from sec:differential-structures-reeb (reading-order drain,
@@ -287,6 +289,7 @@ export default chapter({
       blocks: [
         "categorical-dirac-operator-intro",
         "categorical-dirac-operator",
+        "categorical-dirac-operator-remark",
         "categorical-dirac-operator-exists",
         "categorical-dirac-operator-exists-proof",
         "categorical-dirac-operator-unique",

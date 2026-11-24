@@ -21,6 +21,7 @@ export default chapter({
       blocks: [
         "covalent-bonding-intro",
         "covalent-bond-types",
+        "covalent-bond-types-remark",
         "carbon-valence",
       ],
     }),

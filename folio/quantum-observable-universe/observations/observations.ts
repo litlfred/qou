@@ -416,6 +416,7 @@ export default chapter({
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",
         "virtual-subword",
+        "virtual-subword-remark",
         "vacuum-polarization-virtual-pairs",
         // Detangler R3 (2026-05-23): 6-row QFT-to-QOU dictionary
         // extracted from vacuum-polarization-virtual-pairs.md.

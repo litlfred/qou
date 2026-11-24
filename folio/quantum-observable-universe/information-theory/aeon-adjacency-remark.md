@@ -1,0 +1,1 @@
+The shared boundary object simultaneously represents the terminal horizon of one aeon and the initial configuration of the next. It categorically realises one cosmological cycle handing off to the next.
