@@ -83,17 +83,34 @@ for d in "${DESTS[@]}"; do
   [ -d "$d" ] || { echo "no such destination: $d" >&2; exit 1; }
 done
 
+# Idempotent when restoring into the default trees (2026-11-24): the commit
+# last applied is recorded in .lake/lean-gap-addon.sha, so the call that
+# scripts/lean-cache-restore.sh now makes on every run costs one ls-remote.
+MARK="$ROOT/.lake/lean-gap-addon.sha"
+URL="$(git -C "$ROOT" remote get-url origin)"
+HEAD_SHA=$(git ls-remote "$URL" "refs/heads/$BRANCH" 2>/dev/null | cut -f1)
+if [ $# -eq 0 ] && [ -n "$HEAD_SHA" ] && [ -f "$MARK" ] && [ "$(cat "$MARK")" = "$HEAD_SHA" ]; then
+  echo "lean-restore-gap: $BRANCH ($HEAD_SHA) already applied."
+  exit 0
+fi
+
 TGZ=$(mktemp)
-trap 'rm -f "$TGZ"' EXIT INT TERM     # 2.3 MB, but leaking temp files is how
+trap 'rm -f "$TGZ"' EXIT INT TERM     # ~60 MB; leaking temp files is how
                                       # this container has run out of disk before
 
 git -C "$ROOT" fetch --depth=1 origin "$BRANCH"
 C=$(git -C "$ROOT" rev-parse FETCH_HEAD)
 git -C "$ROOT" show "$C:mathlib-gap-oleans.tgz" > "$TGZ"
 N=$(tar tzf "$TGZ" | wc -l)
+# --skip-old-files: the addon FILLS gaps and never replaces an olean already
+# present.  Measured 2026-11-24: 224 of its 288 entries are also in the base
+# seed (cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ 7c61a1ba876), where
+# they are Lake-built and trace-paired; overwriting them with these untraced
+# lean-direct copies gains nothing.  Only the other 64 are genuinely missing.
 for d in "${DESTS[@]}"; do
-  tar xzf "$TGZ" -C "$d"
-  echo "restored $N olean(s) into $d from $BRANCH ($C)"
+  tar xzf "$TGZ" -C "$d" --skip-old-files
+  echo "restored up to $N olean(s) into $d from $BRANCH ($C), existing files kept"
 done
+if [ $# -eq 0 ]; then mkdir -p "$ROOT/.lake"; echo "$C" > "$MARK"; fi
 echo "verify with:  source scripts/lean-direct-env.sh && \\"
 echo "  lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-theory/reeb-bundle.lean"
