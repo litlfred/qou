@@ -78,12 +78,15 @@ def main() -> int:
             name=f"roundtrip_identity_n{n}",
             computed=err,
             expected="0",
-            tolerance=1e-49,
+            tolerance="1e-49",
             source=f"F_{n}·(1−h_q·q^{n}) = 1 at 50 dps",
         )
 
-    vals = [float(canonical_resolvent(q, n)) for n in POLE_ORDERS]
-    distinct_count = len(set(round(v, 20) for v in vals))
+    # Bean qou-p77d: evaluate distinctness in mpf at 40 significant digits
+    # rather than casting canonical_resolvent(q, n) to binary64 and calling
+    # round(v, 20), which is a no-op past ~17 digits on a float64.
+    vals = [canonical_resolvent(q, n) for n in POLE_ORDERS]
+    distinct_count = len({mp.nstr(v, 40) for v in vals})
     w.add_assertion(
         name="resolvent_values_distinct",
         # NOT stringified: this is a count, already serialized as a JSON int,

@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "python"))
 from qou_substrate.witness import (  # noqa: E402
     Assertion,
     WitnessBuilder,
+    _raw_float_paths,
     _tolerance_literal,
 )
 
@@ -100,6 +101,57 @@ def test_saved_witness_carries_no_raw_float64_for_declared_tolerances(tmp_path):
                          tolerance=1025.6028557082007)
         with pytest.raises(ValueError, match="raw-float64"):
             w2.save()
+    finally:
+        if old is None:
+            os.environ.pop("QOU_WITNESS_STRICT_FLOAT64", None)
+        else:
+            os.environ["QOU_WITNESS_STRICT_FLOAT64"] = old
+
+
+def test_raw_float_locator_honors_shadow_and_carveouts(tmp_path):
+    """Bean qou-7q56: _raw_float_paths must honor the *_str shadow rule,
+    LP_DUAL_F64_FIELDS, runtime duration fields, and float64-integrator tier."""
+    # Shadowed scalar and list: 0 raw float paths
+    assert list(_raw_float_paths({
+        "y0_star": 0.012246289813934,
+        "y0_star_str": "1.224628981393451974336267854072680408e-2",
+        "vals": [0.5, 0.25],
+        "vals_str": [
+            "5.000000000000000000000000000000e-1",
+            "2.500000000000000000000000000000e-1",
+        ],
+    })) == []
+
+    # Laundering guard: short *_str (<= 17 sig digits) or disagreeing *_str still flagged
+    assert list(_raw_float_paths({"v": 0.1, "v_str": "0.1"})) == [".v"]
+    assert list(_raw_float_paths({
+        "primal_obj_x": 0.0,
+        "primal_obj_x_str": "4.203895392974451212771188749869748393840785825629547e-44",
+    })) == [".primal_obj_x"]
+
+    # LP-dual carve-out & ephemeral duration carve-out: excused
+    assert list(_raw_float_paths({
+        "y_star": [0.5, 0.25],
+        "duality_gap": 1.23456789e-9,
+        "elapsed_sec": 43.21,
+        "duration_sec": 0.75,
+    })) == []
+
+    # float64-integrator tier: excused at witness level
+    assert list(_raw_float_paths({
+        "data": {"precision_tier": "float64-integrator", "rk2_val": 1.23456789},
+    })) == []
+
+    # End-to-end save with shadowed float under QOU_WITNESS_STRICT_FLOAT64=1
+    old = os.environ.get("QOU_WITNESS_STRICT_FLOAT64")
+    os.environ["QOU_WITNESS_STRICT_FLOAT64"] = "1"
+    try:
+        w = WitnessBuilder("shadowed-float-test", output_dir=str(tmp_path))
+        w.add_data("rows", [{
+            "mass_mev": 938.27208816,
+            "mass_mev_str": "938.272088160000000000000000000000000000000000000000000000000",
+        }])
+        w.save()
     finally:
         if old is None:
             os.environ.pop("QOU_WITNESS_STRICT_FLOAT64", None)

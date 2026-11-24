@@ -335,9 +335,9 @@ def main() -> int:
         .add_data("rows", rows)
         .add_assertion(
             name="no_i8_violations",
-            computed=1.0 if "i8_violation" not in buckets else 0.0,
-            expected=1.0, tolerance=0.0,
-            unit="boolean (1.0 = no substrate-pure script leaks float64)",
+            computed="1" if "i8_violation" not in buckets else "0",
+            expected="1", tolerance="0",
+            unit="boolean (1 = no substrate-pure script leaks float64; bean qou-58zw)",
             source="Closure gate: when this passes, every substrate-pure-"
                    "banner script keeps its derived mpf values through "
                    "the final witness emit without precision loss.",

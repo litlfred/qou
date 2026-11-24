@@ -25,24 +25,29 @@ Output:
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-import json
-import math
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
-# ── Import canonical q ───────────────────────────────────────────
+import mpmath as mp
+
+# ── Import canonical q at full mpf precision (bean qou-hytc) ─────
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import (
-    Q, Q_INV, Q_ERR, HBAR_Q, HBAR_Q_SQ,
-    VOL_FIGURE_EIGHT, MASS_RATIO_MU_E,
-    HA, E_CROSS,
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()
+
+from q_parameter import (  # noqa: E402
+    MASS_RATIO_MU_E_STR,
+    Q_50_DIGIT_STR,
+    VOL_FIGURE_EIGHT_50_STR,
 )
+from witness_base import WitnessBuilder  # noqa: E402
+
 
 # ── Chebyshev recurrence for NF(σ₀ⁿ) = aₙ·𝟙 + bₙ·σ₀ ──────────
 
-def chebyshev_nf(n_max, h):
-    """Compute NF(σ₀ⁿ) for n = 0..n_max via Chebyshev recurrence.
+def chebyshev_nf(n_max: int, h: mp.mpf) -> tuple[list[mp.mpf], list[mp.mpf]]:
+    """Compute NF(σ₀ⁿ) for n = 0..n_max via Chebyshev recurrence in mpmath.mpf.
 
     Returns lists (a, b) where NF(σ₀ⁿ) = a[n]·𝟙 + b[n]·σ₀.
 
@@ -51,8 +56,8 @@ def chebyshev_nf(n_max, h):
         aₙ₊₁ = bₙ
         bₙ₊₁ = h·bₙ + aₙ
     """
-    a = [1.0]
-    b = [0.0]
+    a = [mp.mpf(1)]
+    b = [mp.mpf(0)]
     for _ in range(n_max):
         a_new = b[-1]
         b_new = h * b[-1] + a[-1]
@@ -62,7 +67,13 @@ def chebyshev_nf(n_max, h):
 
 
 def main():
-    h = HA  # q − q⁻¹
+    set_compute_dps()
+    q = mp.mpf(Q_50_DIGIT_STR)
+    qi = mp.mpf(1) / q
+    h = q - qi  # q − q⁻¹
+    hbar_q = mp.mpf(1) - qi
+    vol_4_1 = mp.mpf(VOL_FIGURE_EIGHT_50_STR)
+    mass_ratio_mu_e = mp.mpf(MASS_RATIO_MU_E_STR)
 
     # Compute NF for T_{2,n} = σ₀ⁿ, n = 0..9
     a, b = chebyshev_nf(9, h)
@@ -81,30 +92,36 @@ def main():
             "n": n,
             "knot": info["knot"],
             "symbol": info["symbol"],
-            "a_n (𝟙 coeff)": a[n],
-            "b_n (σ₀ coeff)": b[n],
-            "net": a[n] + b[n],
+            "a_n (𝟙 coeff)": fmt(a[n]),
+            "b_n (σ₀ coeff)": fmt(b[n]),
+            "net": fmt(a[n] + b[n]),
         }
 
     # ── Decay: τ⁻ → e⁻ + ν̄ₑ + ν_τ ──────────────────────────────
     # NF(ν) = 1·𝟙 + 0·σ₀  (neutrino = identity in Hecke)
     # Δ = NF(τ) − NF(e) − 2·NF(ν)
+    two = mp.mpf(2)
+    br_pdg_e = mp.mpf("0.1782")
+    br_pdg_mu = mp.mpf("0.1739")
+    delta_net_e = (a[7] + b[7]) - (a[3] + b[3]) - two
+    delta_net_mu = (a[7] + b[7]) - (a[5] + b[5]) - two
+
     tau_to_e = {
         "process": "τ⁻ → e⁻ + ν̄ₑ + ν_τ",
-        "BR_PDG": 0.1782,
-        "delta_1": a[7] - a[3] - 2.0,
-        "delta_sigma": b[7] - b[3],
-        "delta_net": (a[7] + b[7]) - (a[3] + b[3]) - 2.0,
+        "BR_PDG": fmt(br_pdg_e),
+        "delta_1": fmt(a[7] - a[3] - two),
+        "delta_sigma": fmt(b[7] - b[3]),
+        "delta_net": fmt(delta_net_e),
         "crossings_released": 7 - 3,
     }
 
     # ── Decay: τ⁻ → μ⁻ + ν̄_μ + ν_τ ─────────────────────────────
     tau_to_mu = {
         "process": "τ⁻ → μ⁻ + ν̄_μ + ν_τ",
-        "BR_PDG": 0.1739,
-        "delta_1": a[7] - a[5] - 2.0,
-        "delta_sigma": b[7] - b[5],
-        "delta_net": (a[7] + b[7]) - (a[5] + b[5]) - 2.0,
+        "BR_PDG": fmt(br_pdg_mu),
+        "delta_1": fmt(a[7] - a[5] - two),
+        "delta_sigma": fmt(b[7] - b[5]),
+        "delta_net": fmt(delta_net_mu),
         "crossings_released": 7 - 5,
     }
 
@@ -113,17 +130,20 @@ def main():
     # The Hecke NF Δ is an algebraic invariant; the physical rate
     # additionally requires the weak vertex form factor.
     # Check: ratio of Δ_net values
-    br_ratio_nf = tau_to_e["delta_net"] / tau_to_mu["delta_net"]
+    br_ratio_nf = delta_net_e / delta_net_mu
 
     # ── Mass ratios from NF net amplitudes ───────────────────────
     # The net NF amplitude is the total Hecke weight. Mass ratios
     # via the topological mass formula involve Vol(K)/ℏ_q², but for
     # torus knots (non-hyperbolic, Vol=0), mass comes through the
     # Higgs mechanism coupling at each Reeb degree.
+    net_ratio_mu_e = (a[5] + b[5]) / (a[3] + b[3])
+    net_ratio_tau_e = (a[7] + b[7]) / (a[3] + b[3])
+    net_ratio_tau_mu = (a[7] + b[7]) / (a[5] + b[5])
     mass_info = {
-        "net_ratio_mu_e": (a[5] + b[5]) / (a[3] + b[3]),
-        "net_ratio_tau_e": (a[7] + b[7]) / (a[3] + b[3]),
-        "net_ratio_tau_mu": (a[7] + b[7]) / (a[5] + b[5]),
+        "net_ratio_mu_e": fmt(net_ratio_mu_e),
+        "net_ratio_tau_e": fmt(net_ratio_tau_e),
+        "net_ratio_tau_mu": fmt(net_ratio_tau_mu),
         "note": "Torus knot mass comes from Higgs mechanism (Vol(4₁)/ℏ_q²), not directly from NF net. NF net captures algebraic weight.",
     }
 
@@ -132,9 +152,9 @@ def main():
     for n in range(10):
         nf_table.append({
             "n": n,
-            "a_n": a[n],
-            "b_n": b[n],
-            "net": a[n] + b[n],
+            "a_n": fmt(a[n]),
+            "b_n": fmt(b[n]),
+            "net": fmt(a[n] + b[n]),
         })
 
     # ── Continuant identity check ───────────────────────────────
@@ -142,22 +162,21 @@ def main():
     # (Morgan--Voyce type, NOT standard Chebyshev-U which has −bₙ₋₁).
     # Verify: bₙ₊₁ − h·bₙ − bₙ₋₁ = 0 for all n ≥ 1.
     continuant_check = []
+    cont_tol = mp.mpf("1e-50")
     for n in range(1, 9):
         residual = b[n + 1] - h * b[n] - b[n - 1]
         continuant_check.append({
             "n": n,
-            "b_{n+1}": b[n + 1],
-            "h*b_n + b_{n-1}": h * b[n] + b[n - 1],
-            "residual": residual,
-            "match": abs(residual) < 1e-12,
+            "b_{n+1}": fmt(b[n + 1]),
+            "h*b_n + b_{n-1}": fmt(h * b[n] + b[n - 1]),
+            "residual": fmt(residual),
+            "match": abs(residual) < cont_tol,
         })
 
     # ── Build witness using WitnessBuilder ─────────────────────
-    from witness_base import WitnessBuilder
-
     all_match = all(c["match"] for c in continuant_check)
 
-    w = WitnessBuilder("tau-lepton-nf", engine="python")
+    w = WitnessBuilder("tau-lepton-nf", engine="mpmath")
     w.set_description(
         "Chebyshev tower NF(T_{2,n}) in H₂(q) for the charged lepton "
         "tower n = 3, 5, 7 (electron, muon, tau). Verifies the continuant "
@@ -167,12 +186,11 @@ def main():
     w.set_content_block("rem:lepton-mass-integrals")
 
     # Parameters
-    w.add_parameter("q₀", Q)
-    w.add_parameter("q₀_err", Q_ERR)
-    w.add_parameter("h (q−q⁻¹)", h)
-    w.add_parameter("ℏ_q", HBAR_Q)
-    w.add_parameter("Vol(4₁)", VOL_FIGURE_EIGHT)
-    w.add_parameter("m_μ/m_e", MASS_RATIO_MU_E)
+    w.add_parameter("q₀", fmt(q))
+    w.add_parameter("h (q−q⁻¹)", fmt(h))
+    w.add_parameter("ℏ_q", fmt(hbar_q))
+    w.add_parameter("Vol(4₁)", fmt(vol_4_1))
+    w.add_parameter("m_μ/m_e", fmt(mass_ratio_mu_e))
 
     # Assertions
     # 1. Continuant recurrence holds
@@ -185,44 +203,28 @@ def main():
         source="Morgan--Voyce recurrence in H₂(q)",
     )
 
-    # 2. NF coefficients for leptons
-    #
-    # These read `computed=round(a[n]+b[n],10), expected=round(a[n]+b[n],10)`
-    # — the same expression on both sides under a relative tolerance, so the
-    # tolerance had nothing to measure and each passed for whatever
-    # `chebyshev_nf` returned (bean `qou-26f2`). The `source` already named
-    # the check that should have been running: the Chebyshev recurrence.
-    #
-    # It supplies an independent route to the same number. From the
-    # generator, a[n+1] = b[n] and b[n+1] = h*b[n] + a[n]; so b[n-1] = a[n]
-    # and a[n+1] = h*a[n] + a[n-1]. b inherits that recurrence, and therefore
-    # so does the net s[n] = a[n] + b[n]:
-    #
-    #     s[n] = h * s[n-1] + s[n-2]
-    #
-    # `expected` is now that right-hand side. Assertion 1 above checks the
-    # recurrence holds across all n; this checks each lepton's own amplitude
-    # sits on it, which is what the source claimed all along.
+    # 2. NF coefficients for leptons (bean qou-26f2, qou-hytc)
     net = [a[i] + b[i] for i in range(len(a))]
+    rel_scale = mp.mpf("1e-8")
     for name, info in leptons.items():
         n = info["n"]
         w.add_assertion(
             f"NF(T_{{2,{n}}}) net amplitude ({name})",
-            computed=round(net[n], 10),
-            expected=round(h * net[n - 1] + net[n - 2], 10),
-            tolerance=abs(net[n]) * 1e-8,
+            computed=fmt(net[n]),
+            expected=fmt(h * net[n - 1] + net[n - 2]),
+            tolerance=fmt(abs(net[n]) * rel_scale),
             unit="dimensionless",
             source=f"Chebyshev recurrence at n={n}: "
                    f"s[{n}] = h*s[{n - 1}] + s[{n - 2}]",
         )
 
-    # 3. BR ratio NF vs PDG
-    pdg_br_ratio = 0.1782 / 0.1739
+    # 3. BR ratio NF vs PDG (bean qou-hytc: mpf-carried computed tolerance)
+    pdg_br_ratio = br_pdg_e / br_pdg_mu
     w.add_assertion(
         "NF Δ ratio (τ→e)/(τ→μ) vs PDG BR ratio",
-        computed=round(br_ratio_nf, 6),
-        expected=round(pdg_br_ratio, 6),
-        tolerance=abs(pdg_br_ratio) * 0.25,  # 25% — NF is algebraic, not rate
+        computed=fmt(br_ratio_nf),
+        expected=fmt(pdg_br_ratio),
+        tolerance=fmt(abs(pdg_br_ratio) * mp.mpf("0.25")),
         unit="dimensionless",
         source="Algebraic NF ratio vs PDG 2024 branching fractions. "
                "NF captures crossing structure; physical rate requires "
@@ -233,7 +235,7 @@ def main():
     w.add_data("lepton_nfs", lepton_nfs)
     w.add_data("tau_to_electron_decay", tau_to_e)
     w.add_data("tau_to_muon_decay", tau_to_mu)
-    w.add_data("BR_ratio_NF", br_ratio_nf)
+    w.add_data("BR_ratio_NF", fmt(br_ratio_nf))
     w.add_data("mass_ratios_from_net", mass_info)
     w.add_data("nf_table_T2n", nf_table)
     w.add_data("continuant_check", continuant_check)
@@ -251,7 +253,7 @@ def main():
     print("=" * 70)
     print("  TAU LEPTON NF — Chebyshev tower T_{2,n} in H₂(q)")
     print("=" * 70)
-    print(f"\n  q = {Q:.10f},  h = q−q⁻¹ = {h:.10f}\n")
+    print(f"\n  q = {mp.nstr(q, 11)},  h = q−q⁻¹ = {mp.nstr(h, 10)}\n")
 
     print("  NF(T_{2,n}) = aₙ·𝟙 + bₙ·σ₀")
     print("  " + "-" * 55)
@@ -260,7 +262,7 @@ def main():
         if n == 3: label = " ← electron"
         elif n == 5: label = " ← muon"
         elif n == 7: label = " ← tau"
-        print(f"  n={n}:  a={a[n]:12.8f}  b={b[n]:12.8f}  net={a[n]+b[n]:.8f}{label}")
+        print(f"  n={n}:  a={mp.nstr(a[n], 9):>12s}  b={mp.nstr(b[n], 9):>12s}  net={mp.nstr(a[n]+b[n], 9)}{label}")
 
     print(f"\n  --- Continuant recurrence: bₙ₊₁ = h·bₙ + bₙ₋₁ ---")
     print(f"  All match: {all_match}")
@@ -268,20 +270,20 @@ def main():
     print(f"\n  --- Leptonic tau decay ---")
     for d in [tau_to_e, tau_to_mu]:
         print(f"  {d['process']}:")
-        print(f"    Δ(𝟙)  = {d['delta_1']:+.8f}")
-        print(f"    Δ(σ₀) = {d['delta_sigma']:+.8f}")
-        print(f"    Δ(net) = {d['delta_net']:+.8f}")
+        print(f"    Δ(𝟙)  = {d['delta_1']}")
+        print(f"    Δ(σ₀) = {d['delta_sigma']}")
+        print(f"    Δ(net) = {d['delta_net']}")
         print(f"    Crossings released: {d['crossings_released']}")
         print(f"    PDG BR: {d['BR_PDG']}")
 
-    print(f"\n  NF Δ ratio (τ→e)/(τ→μ) = {br_ratio_nf:.6f}")
-    print(f"  PDG BR ratio            = {pdg_br_ratio:.6f}")
+    print(f"\n  NF Δ ratio (τ→e)/(τ→μ) = {mp.nstr(br_ratio_nf, 7)}")
+    print(f"  PDG BR ratio            = {mp.nstr(pdg_br_ratio, 7)}")
     print(f"  (Lepton universality predicts ≈ 1.0)")
 
     print(f"\n  --- Net amplitude ratios ---")
-    print(f"  net(μ)/net(e) = {mass_info['net_ratio_mu_e']:.6f}")
-    print(f"  net(τ)/net(e) = {mass_info['net_ratio_tau_e']:.6f}")
-    print(f"  net(τ)/net(μ) = {mass_info['net_ratio_tau_mu']:.6f}")
+    print(f"  net(μ)/net(e) = {mp.nstr(net_ratio_mu_e, 7)}")
+    print(f"  net(τ)/net(e) = {mp.nstr(net_ratio_tau_e, 7)}")
+    print(f"  net(τ)/net(μ) = {mp.nstr(net_ratio_tau_mu, 7)}")
 
     print(f"\n  Witness: {witness_path}")
     print("=" * 70)
