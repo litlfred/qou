@@ -267,7 +267,6 @@
 | [def:typed-crossing-operator](#def:typed-crossing-operator) | Typed crossing operator | Ch 7 |
 | [def:typed-garside-element](#def:typed-garside-element) | Typed Garside element of the nuclear braid | Ch 12 |
 | [def:qns-unit-layers](#def:qns-unit-layers) | Unit layers of the $q$-NS classical limit: substrate (vanishing $\nu_q$) and physical ($c_q$-rescaled, $\nu_{\mathrm{phys}} = 1/(2q)$) | Ch 18 |
-| [def:universal-ilp-algorithm](#def:universal-ilp-algorithm) | Universal ILP algorithm for operator selection | Ch 12 |
 | [def:unstable-atom](#def:unstable-atom) | Unstable atom (failure of normal-form positivity) | Ch 7 |
 | [def:up-quark](#def:up-quark) | Up quark | Ch 7 |
 | [def:atomic-valence-open-sites](#def:atomic-valence-open-sites) | Valence and lone pairs as open bonding sites | Ch 16 |
@@ -407,7 +406,7 @@
 | [prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix) | Beta decay as a universal matrix-valued polynomial in $q$ | Ch 11 |
 | [prop:beta-stability](#prop:beta-stability) | Beta-stability line from the Skein binding Lagrangian | Ch 12 |
 | [prop:binding-alpha-shift-extension](#prop:binding-alpha-shift-extension) | Binding A≥3 via per-rep Reeb phase at a force-carrier torus knot | Ch 11 |
-| [prop:isovector-chiral-residue](#prop:isovector-chiral-residue) | Binding isovector coefficient as the $W_\lambda$ chiral residue (conditional) | Mass and Binding Algorithms |
+| [prop:isovector-chiral-residue](#prop:isovector-chiral-residue) | Binding isovector coefficient as the $W_\lambda$ chiral residue (conditional) | Ch 12 |
 | [prop:binding-error-amplification](#prop:binding-error-amplification) | Binding-energy error amplification: $\mathcal{A} = M_{\mathrm{atom}}/B$ | Ch 11 |
 | [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as Yekutieli lifting obstruction in the brane tower | Ch 4 |
 | [prop:bond-order-le-three](#prop:bond-order-le-three) | Bond order bounded by spatial dimension | Ch 16 |
@@ -681,7 +680,7 @@
 | [prop:t-beta-markov-frobenius-collapse](#prop:t-beta-markov-frobenius-collapse) | Min-Frobenius-norm collapse: T_β = S · 1 under the canonical Markov-trace inner product on H_n(R, q) | Ch 11 |
 | [prop:t-beta-markov-frobenius-collapse-general](#prop:t-beta-markov-frobenius-collapse-general) | Min-Frobenius-norm collapse: T_β = S · 1_A — general unital R-algebra lift of [prop:t-beta-markov-frobenius-collapse] | Ch 11 |
 | [prop:crossing-energy-pair-cancellation](#prop:crossing-energy-pair-cancellation) | Mirror pairing cancels the symmetric channel | Ch 15 |
-| [prop:mirror-baseline-cancellation](#prop:mirror-baseline-cancellation) | Mirror-pair cancellation of the bar-even binding baseline | Mass and Binding Algorithms |
+| [prop:mirror-baseline-cancellation](#prop:mirror-baseline-cancellation) | Mirror-pair cancellation of the bar-even binding baseline | Ch 12 |
 | [prop:molecular-bond-binding-from-trefoil-insertion](#prop:molecular-bond-binding-from-trefoil-insertion) | Molecular bond binding energy from inverse-trefoil insertion | Ch 11 |
 | [prop:pieri-photon-shift](#prop:pieri-photon-shift) | Multiplication by a degree-one Hecke element is a non-commutative Fourier shift (Pieri rule) | Ch 11 |
 | [prop:alpha-em-shift-multiplicative-chain](#prop:alpha-em-shift-multiplicative-chain) | Multiplicative-chain form: $\alpha_{EM}^{-1} = q \cdot [\alpha_{\mathrm{shift}}(T_{2,9})]_q \cdot [\alpha_{\mathrm{shift}}(T_{3,5})]_q$ | Ch 14 |

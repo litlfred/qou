@@ -146,7 +146,7 @@ export default remark({
         "$0.408267$ with no gluon at all; the min-$|\\mathrm{tr}_M|$ optimum " +
         "is a **single $\\sigma_0$ at one crossing** ($0.217525$), and under " +
         "the minimum-crossing objective that " +
-        "[`def:universal-ilp-algorithm`](#def:universal-ilp-algorithm) " +
+        "[`rem:confinement-layer-operator-selection`](#rem:confinement-layer-operator-selection) (formerly `def:universal-ilp-algorithm`) " +
         "actually states it is **zero** crossings. The same holds for the " +
         "proton ($\\sigma_0 . \\sigma_0$ ranks 10/41 at $0.615273$ against " +
         "bare $0.544370$). So the selection sentence, the 11-crossing total " +

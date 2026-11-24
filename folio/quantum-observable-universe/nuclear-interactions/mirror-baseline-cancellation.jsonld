@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-mirror-baseline-cancellation",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:mirror-baseline-cancellation",
+  "kind": "proposition",
+  "title": "Mirror-pair cancellation of the bar-even binding baseline",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-delta-lambda-dt-index-unification",
+    "papers/quantum-observable-universe/blocks/prop-bar-involution-invariance"
+  ],
+  "tags": [
+    "delta-lambda",
+    "mirror-pair",
+    "bar-parity",
+    "z-correction",
+    "writhe"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.mirror_baseline_cancels",
+  "text": "mirror-baseline-cancellation.md",
+  "provenance": "authored"
+}

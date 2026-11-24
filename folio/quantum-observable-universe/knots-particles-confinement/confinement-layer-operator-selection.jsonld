@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-confinement-layer-operator-selection",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:confinement-layer-operator-selection",
+  "kind": "remark",
+  "title": "Confinement-layer reduced-cost selection and involution-twisted $\\ast$-positivity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-derived-atom",
+    "papers/quantum-observable-universe/blocks/prop-confinement-universality"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-derived-atom",
+  "cites": [
+    "references/farkas1902",
+    "references/kantorovich1939",
+    "references/dantzig-wolfe1960"
+  ],
+  "tags": [
+    "operator-selection",
+    "confinement",
+    "gluon",
+    "reduced-cost",
+    "star-positivity"
+  ],
+  "leanRef": "qou:QOU.MathlibInfra.ConfinementLayerTower.ConfinementLayer",
+  "text": "confinement-layer-operator-selection.md",
+  "provenance": "authored"
+}

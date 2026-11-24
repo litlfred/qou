@@ -15,7 +15,7 @@ export default remark({
   ],
   uses: [
     "def:derived-atom",
-    "def:universal-ilp-algorithm",
+    "rem:confinement-layer-operator-selection",
     "rem:ilp-solution-count-unwrap",
     "fundamental-knots-operator-basis",
     "def:lepton-number-categorical",

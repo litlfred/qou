@@ -4,8 +4,8 @@ export default remark({
   label: "rem:lp-sdp-bootstrap-prior-art",
   title:
     "Prior art for symmetry-reduced bootstrap programs and machine-checked dual certificates",
-  interprets: "alg:lp-sdp-dual-emission",
-  uses: ["alg:lp-sdp-dual-emission"],
+  interprets: "alg:rationalized-dual-slack-certificate",
+  uses: ["alg:rationalized-dual-slack-certificate"],
   cites: [
     "farkas1902",
     "kantorovich1939",

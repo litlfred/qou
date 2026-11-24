@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lp-sdp-bootstrap-prior-art",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lp-sdp-bootstrap-prior-art",
+  "kind": "remark",
+  "title": "Prior art for symmetry-reduced bootstrap programs and machine-checked dual certificates",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/alg-rationalized-dual-slack-certificate"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/alg-rationalized-dual-slack-certificate",
+  "cites": [
+    "references/farkas1902",
+    "references/kantorovich1939",
+    "references/rattazzi-rychkov-tonni-vichi2008",
+    "references/elshowk2012",
+    "references/simmons-duffin2015",
+    "references/goulart-chen2024",
+    "references/cohn-elkies2003",
+    "references/viazovska2017",
+    "references/delsarte1973",
+    "references/schrijver2005",
+    "references/gijswijt-schrijver-tanaka2006",
+    "references/gatermann-parrilo2004",
+    "references/verstichel-vanaggelen2009",
+    "references/navascues-pironio-acin2007",
+    "references/kazakov-zheng2022",
+    "references/kazakov-zheng2023",
+    "references/hales2017",
+    "references/boldo-lelay-melquiond2015",
+    "references/roux2016",
+    "references/mahboubi-sibut-pinote2021",
+    "references/dvorak-kolmogorov2024"
+  ],
+  "tags": [
+    "mba",
+    "lp-dual",
+    "sdp-dual",
+    "bootstrap",
+    "prior-art",
+    "extremal-functional"
+  ],
+  "text": "lp-sdp-bootstrap-prior-art.md",
+  "provenance": "authored"
+}

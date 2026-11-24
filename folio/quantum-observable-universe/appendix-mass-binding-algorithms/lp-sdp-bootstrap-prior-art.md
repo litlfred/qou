@@ -1,4 +1,4 @@
-The dual-emission pipeline in [LP/SDP dual-emission contract (first-class infra)](#alg:lp-sdp-dual-emission) draws upon four established mathematical and computational traditions, while assembling them to solve a distinct finite-dimensional algebraic selection problem.
+The dual-certification procedure in [Solver-external rationalized dual-slack optimality and uniqueness certification](#alg:rationalized-dual-slack-certificate) draws upon four established mathematical and computational traditions, while assembling them to solve a distinct finite-dimensional algebraic selection problem.
 
 ## Conformal, sphere-packing, and interior-point bootstraps
 

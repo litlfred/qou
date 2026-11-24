@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-hecke-gs-monotone-transfer",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:hecke-gs-monotone-transfer",
+  "kind": "algorithm",
+  "title": "Completed Hecke Gröbner–Shirshov Reduction and Monotone Fine-Bratteli Transfer Sweep ($\\mathcal{L}_0\\text{--}\\mathcal{L}_2$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form",
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-trace-identity"
+  ],
+  "cites": [
+    "references/bokut2001",
+    "references/kangleeleeoh2002",
+    "references/jones1987",
+    "references/wenzl1988",
+    "references/hoefsmit1974",
+    "references/ram1991",
+    "references/ram1997",
+    "references/geck-lambropoulou-2004",
+    "references/orellana1998"
+  ],
+  "tags": [
+    "mba",
+    "groebner-shirshov",
+    "markov-trace",
+    "transfer-matrix",
+    "bratteli-diagram"
+  ],
+  "leanRef": "qou:QOU.QBeta.TemperleyLiebTower.markov_branching_general",
+  "text": "hecke-gs-monotone-transfer.md",
+  "provenance": "authored"
+}

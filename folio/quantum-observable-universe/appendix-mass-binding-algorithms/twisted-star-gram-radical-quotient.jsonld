@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-twisted-star-gram-radical-quotient",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:twisted-star-gram-radical-quotient",
+  "kind": "algorithm",
+  "title": "Involution-Twisted $\\ast$-Gram Radical Projection and Nakayama-Twisted Frobenius Verification ($\\mathcal{L}_0\\text{--}\\mathcal{L}_1$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing",
+    "papers/quantum-observable-universe/blocks/prop-gram-degeneracy-blocks-connes"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988",
+    "references/temperley-lieb1971",
+    "references/gatermann-parrilo2004"
+  ],
+  "tags": [
+    "mba",
+    "frobenius-pairing",
+    "star-gram",
+    "temperley-lieb",
+    "nakayama-twist"
+  ],
+  "leanRef": "qou:QOU.QBeta.GramSignature.markov_star_nonneg",
+  "text": "twisted-star-gram-radical-quotient.md",
+  "provenance": "authored"
+}
