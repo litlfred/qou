@@ -1,5 +1,7 @@
 {
  "description": "Leray DSS search in a log-phase trial basis (arbitrary precision; numerical exploration, NOT a proof).",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Arb Newton/continuation search for Leray self-similar Navier-Stokes profiles in a log-phase trial basis; no substrate q is read or evaluated anywhere.",
  "dps": 60,
  "radial_rule": {
   "QN": 24,
@@ -101,13 +103,13 @@
     "15.167458394787243697"
    ],
    "omega_to_zero": false,
-   "wall_s": 3903
+   "wall_s": 3178
   },
   {
    "S0": "1.2",
    "amp_scale": "1",
    "status": "time_limit",
-   "iters": 3,
+   "iters": 7,
    "history": [
     {
      "it": 0,
@@ -127,22 +129,50 @@
      "it": 2,
      "res": "3.4001e+5",
      "amp": "229.76229",
-     "S": "1.189637506314949"
+     "S": "1.189637506314949",
+     "lam": "0.003906"
+    },
+    {
+     "it": 3,
+     "res": "3.3954e+5",
+     "amp": "229.66046",
+     "S": "1.188980340972461",
+     "lam": "0.003906"
+    },
+    {
+     "it": 4,
+     "res": "3.3914e+5",
+     "amp": "229.55887",
+     "S": "1.188376357670455",
+     "lam": "0.003906"
+    },
+    {
+     "it": 5,
+     "res": "3.3880e+5",
+     "amp": "229.44519",
+     "S": "1.187840533577208",
+     "lam": "0.003906"
+    },
+    {
+     "it": 6,
+     "res": "3.3843e+5",
+     "amp": "229.30286",
+     "S": "1.187383809725334"
     }
    ],
-   "final_residual": "3.40015e+5",
-   "final_S": "1.189637506314948932206699401873115047385",
-   "final_amp": "229.7622870057475",
+   "final_residual": "3.38433e+5",
+   "final_S": "1.187383809725334373295587116629776235885",
+   "final_amp": "229.3028577733062",
    "cls": "periodic",
    "mode_norms": [
-    "207.57066149350694348",
-    "92.571626144752289929",
-    "18.881230011921758746",
-    "20.117562796447579216",
-    "19.349570293512147370"
+    "209.12955342300691076",
+    "87.442627129453178997",
+    "18.249016582774741169",
+    "20.362230284355138868",
+    "21.231354182121702242"
    ],
    "omega_to_zero": false,
-   "wall_s": 736
+   "wall_s": 1934
   }
  ],
  "verdict": "time_budget"
