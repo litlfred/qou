@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T06:34:14.889006+00:00",
-  "commitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T17:49:34.941123+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "dim_H_n_eq_factorial_n2",
@@ -126,7 +126,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n2",
-      "computed": "0.0",
+      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -134,7 +134,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n3",
-      "computed": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71",
+      "computed": "2.71670372364801371025273578726633753420475935944174145687478446698065e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -142,7 +142,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n4",
-      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
+      "computed": "2.71670372364801371025273578726633753420475935944174145687478446698065e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -150,7 +150,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n5",
-      "computed": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
+      "computed": "5.433407447296027420505471574532675068409518718883482913749568933961301e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -158,7 +158,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n6",
-      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
+      "computed": "8.150111170944041130758207361799012602614278078325224370624353400941951e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -166,11 +166,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "brundan-kleshchev-audit",
   "scriptFile": "brundan_kleshchev_audit.py",
-  "scriptHash": "c0aa62675e37",
-  "scriptCommitSha": "d4c8cceb49842afbb17884447af09db6b839bdad",
+  "scriptHash": "e064717cb061",
+  "scriptCommitSha": "e78fcf72cf2a10d34f0c07635a9affb64e504bc8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -178,14 +178,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -193,7 +193,7 @@
     ],
     "reproduce": "python3 -u computations/audits/brundan_kleshchev_audit.py"
   },
-  "description": "Empirical-evidence dossier for the Brundan–Kleshchev isomorphism H_n(R, q) ≅ R_α^Λ.  Collects necessary structural consequences (dimension matches, centre dimension via partition count, Jucys-Murphy content separation, q-dimension bar-invariance) and reports them as the empirical input feeding `CrystalGraphRealization`'s class-axiomatised instance in `thm:confinement-grading-correspondence-conditional`.",
+  "description": "Empirical-evidence dossier for the Brundan–Kleshchev isomorphism H_n(R, q) ≅ R_α^Λ.  Collects necessary structural consequences (dimension matches, centre dimension via partition count, Jucys-Murphy content separation, q-dimension bar-invariance) and reports them as the empirical input feeding `CrystalGraphRealization`'s class-axiomatised instance in `conj:confinement-grading-correspondence-conditional`.",
   "auditOnly": "docs/audits/brundan-kleshchev-audit.md",
   "data": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",

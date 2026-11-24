@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T13:02:17.456650+00:00",
-  "commitSha": "98c4eeceb4cb3b87c81e0ab23c77e42ba9a53f02",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:01:56.114109+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "operator-selection LP strong duality (gap ~ 0)",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 17,
   "computation": "molecular-frobenius-lp",
   "scriptFile": "molecular-frobenius-lp.py",
-  "scriptHash": "6bc0d58c878a",
-  "scriptCommitSha": "cd816982242e2d18d7818fddea30a2fa465625c6",
+  "scriptHash": "728d50cfbbe3",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,14 +60,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -82,11 +82,11 @@
     "E_mol_eV": 6.72932460783094,
     "gram_eigenvalues": [
       -0.7527021132519656,
-      3.074194609852911e-17,
+      -3.9898639947466563e-16,
       0.7527021132519653,
-      0.7527021132519656,
-      0.7527021132519658,
-      4.230339225030223
+      0.7527021132519653,
+      0.7527021132519653,
+      4.2303392250302245
     ]
   },
   "data": {
@@ -136,7 +136,10 @@
       ],
       "primal_obj_str": "3.5733110840282835308555104373892861347646679517851e-44",
       "dual_obj_str": "-2.6995660382469014437498133483489973960059190944449e-46",
-      "duality_gap_str": "3.6003067444107525452930085708727761087247271427296e-44"
+      "duality_gap_str": "3.6003067444107525452930085708727761087247271427296e-44",
+      "residual_primal_str": "-1.65314535351630905295577318155329863466027145452e-42",
+      "residual_dual_str": "1.6911641043246041196214068698484469630454383428114e-42",
+      "gap_recomputed_str": "3.8018750808295066665633688295148328385166888291313e-44"
     },
     "convolution": {
       "operator": "q-convolution = mate of the comultiplication Delta_q on H_q",

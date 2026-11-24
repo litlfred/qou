@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-05T06:40:46.495353+00:00",
-  "commitSha": "89f05be59c02dcf1eb747c659842f062003a8d5e",
+  "computedAt": "2026-11-24T17:58:39.161677+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "μ–p substrate tension in band (PREDICTION at the proton pin, not an identity)",
@@ -48,8 +48,8 @@
     },
     {
       "name": "𝔪(𝔅₃) ratio vs Vol/(1−1/q)² recomputed from q",
-      "computed": 746.4180075979668,
-      "expected": 746.4180075979668,
+      "computed": "746.418007597967",
+      "expected": "746.418007597967",
       "passed": true,
       "tolerance": "1e-06",
       "unit": "m_e",
@@ -66,11 +66,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37,
+  "durationMs": 52,
   "computation": "mass-from-q-symbolic",
   "scriptFile": "mass-from-q-symbolic.py",
-  "scriptHash": "99d22474063c",
-  "scriptCommitSha": "5f7dad048ff58ea5f48c67453ff03c8c1c47c792",
+  "scriptHash": "bc4d385a2835",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -78,14 +78,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -178,8 +178,8 @@
       }
     },
     "topological_mass": {
-      "borromean_mass_ratio_me": 746.4180075979668,
-      "borromean_mass_ratio_err": 1.6605655330484927e-05,
+      "borromean_mass_ratio_me": "746.418007597967",
+      "borromean_mass_ratio_err": "1.66056553304849e-5",
       "borromean_mass_MeV": "381.418818658682",
       "borromean_mass_MeV_err": 8.486312831226684e-06,
       "muon_electron_ratio": 206.7683263706738
@@ -197,7 +197,7 @@
       "dominant_uncertainty": "CODATA m_μ/m_e (2.2e-8 relative)",
       "P_p_rel_err": 2.017617114181917e-12,
       "P_n_rel_err": 1.5092861296228511e-13,
-      "borromean_mass_rel_err": 2.224712582152628e-08
+      "borromean_mass_rel_err": "2.22471258215263e-8"
     }
   },
   "caveats": [
