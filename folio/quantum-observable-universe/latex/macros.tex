@@ -23,3 +23,11 @@
 % Young-diagram stub (ytableau not loaded; renders a partition as a list)
 \providecommand{\yng}[1]{{\scriptsize[#1]}}
 \newunicodechar{𝔙}{\unimathsafe{\mathfrak{V}}}      % U+1D519 Fraktur V
+% The value resolver marks a reference it could not resolve as ⟦unresolved: …⟧
+% (cat-harness-tools/pipeline/liquid-values.ts). Typeset the marker visibly
+% rather than abort the build on its two brackets.
+\newunicodechar{⟦}{\ensuremath{[\![}}
+\newunicodechar{⟧}{\ensuremath{]\!]}}
+% notation-collisions names "\Chi" as the uppercase chi that does not exist;
+% show the glyph it would be (a Latin X) instead of an undefined macro.
+\providecommand{\Chi}{\mathrm{X}}

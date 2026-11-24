@@ -345,6 +345,22 @@ PY5
 
 python3 -I "$ROOT/scripts/lib/definition-glossary.py" "$ROOT" "$PAPER" "$OUT"
 
+# A measured value (:val[...]{format=measured}) arrives as
+# "$<v> $\\pm$ <u>$": the ± is set in its own math inside the value's math,
+# which is nested math and aborts LaTeX. Re-set it as one formula. A
+# platform formatter defect (cat-harness-tools); this keeps the build whole.
+python3 -I - "$OUT/chapters" <<'PY7'
+import pathlib, re, sys
+pat = re.compile(r"\$([-+0-9.eE ]+?) \$\\pm\$ ([-+0-9.eE ]+?)\$")
+n = 0
+for f in pathlib.Path(sys.argv[1]).glob("*.tex"):
+    s = f.read_text(encoding="utf-8")
+    t, k = pat.subn(lambda m: f"${m.group(1)} \\pm {m.group(2)}$", s)
+    if k:
+        f.write_text(t, encoding="utf-8"); n += k
+print(f"==> {n} measured value(s) re-set as one formula")
+PY7
+
 # A sentence that continues after display math ("... the composites $$...$$
 # and its mirror equal id") is written in markdown with a blank line after the
 # display, which LaTeX reads as a new, indented paragraph. Fold the blank line
