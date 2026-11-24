@@ -171,8 +171,11 @@ for i in range(6):
     print(line)
 
 print(f"\n  det(G) = {np.linalg.det(G):.10f}")
-print(f"  G is {'positive definite' if np.all(np.linalg.eigvals(G) > 0) else 'NOT positive definite'}")
-print(f"  Eigenvalues: {np.linalg.eigvals(G)}")
+# G is symmetric, so use the symmetric solver: eigvalsh returns real eigenvalues
+# in ascending order. The general eigvals returned them unsorted, and the order
+# moved between numpy builds (owner ruling 2026-11-24, decision 1 on #9395).
+print(f"  G is {'positive definite' if np.all(np.linalg.eigvalsh(G) > 0) else 'NOT positive definite'}")
+print(f"  Eigenvalues: {np.linalg.eigvalsh(G)}")
 
 # ══════════════════════════════════════════════════════════════
 #  2. INVERSE GRAM MATRIX  G⁻¹
@@ -522,7 +525,7 @@ witness = {
     "gram_radical": _radical_exact,
     "radical_is_sign_representation": True,
     "gram_determinant": float(np.linalg.det(G)),
-    "gram_eigenvalues": np.linalg.eigvals(G).real.tolist(),
+    "gram_eigenvalues": np.linalg.eigvalsh(G).tolist(),
     "particles": {
         "e_plus": {"nf": eplus_vec, "dual": frobenius_dual(eplus_vec).tolist()},
         "d_quark": {"nf": d_quark_vec, "dual": frobenius_dual(d_quark_vec).tolist()},
