@@ -1,11 +1,11 @@
 ---
 # qou-j79y
 title: 'EPIC [Q-Drain-2]: Proof Vacuity, Triviality Oracle & Blind Round-Trip Audit Remediations'
-status: todo
+status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-23T20:55:45Z
-updated_at: 2026-11-23T20:55:46Z
+updated_at: 2026-11-24T00:17:38Z
 parent: qou-hksc
 blocking:
     - qou-xip2

@@ -1,11 +1,11 @@
 ---
 # qou-nr6r
 title: 'Issues-Cluster-2: Library Ingestion, Bibliography/Attestations & Exposition/Citation Drains (16 Open GitHub Issues)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:55:54Z
-updated_at: 2026-11-23T20:55:54Z
+updated_at: 2026-11-24T00:17:38Z
 parent: qou-xip2
 ---
 

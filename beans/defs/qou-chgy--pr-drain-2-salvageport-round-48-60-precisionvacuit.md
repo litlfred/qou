@@ -1,11 +1,11 @@
 ---
 # qou-chgy
 title: 'PR-Drain-2: Salvage/Port Round 48-60 Precision/Vacuity/QA Infrastructure Fix PRs (4 PRs, #8290..#8350)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:55:52Z
-updated_at: 2026-11-23T20:55:52Z
+updated_at: 2026-11-24T00:17:38Z
 parent: qou-xip2
 ---
 
