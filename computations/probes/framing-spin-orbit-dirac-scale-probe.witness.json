@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-11-24T16:13:29.723405+00:00",
-  "commitSha": "84496e7c82e83492f612b7d06f14188342f4c407",
+  "computedAt": "2026-11-24T16:23:30.690843+00:00",
+  "commitSha": "162148cba9c0ab2c4d8e5c84323c609a815855c2",
   "assertions": [
     {
       "name": "dirac_weights_partition_and_zero_discriminant_symbolic",
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 32,
   "computation": "framing-spin-orbit-dirac-scale-probe",
   "scriptFile": "framing_spin_orbit_dirac_scale_probe.py",
   "scriptHash": "4b61c76fa771",
-  "scriptCommitSha": "84496e7c82e83492f612b7d06f14188342f4c407",
+  "scriptCommitSha": "162148cba9c0ab2c4d8e5c84323c609a815855c2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
