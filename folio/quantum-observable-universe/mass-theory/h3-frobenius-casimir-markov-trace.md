@@ -14,7 +14,9 @@ $$
 $$
 *and at $z_0 = q^3/(q^2+1)$*
 $$
-\mathrm{tr}^{z_0}(C_{\mathrm{Frob}})=\frac{(q^4+q^2+1)(q^6+q^4+q^2+5)}{(q^2+1)^2},\qquad
+\mathrm{tr}^{z_0}(C_{\mathrm{Frob}})=\frac{(q^4+q^2+1)(q^6+q^4+q^2+5)}{(q^2+1)^2},
+$$
+$$
 \mathrm{tr}^{z_0}(C_{\mathrm{Frob}})-\Bigl(2+\frac1{[2]_q}\Bigr)=\frac{q^{10}+2q^8+3q^6+5q^4-q^3+2q^2-q+3}{(q^2+1)^2}.
 $$
 *In particular $\mathrm{tr}^{z_0}(C_{\mathrm{Frob}})\ne 2+1/[2]_q$ as rational functions of $q$ (at $q=1$ the two sides are $6$ and $5/2$).*
