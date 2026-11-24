@@ -1,11 +1,11 @@
 ---
 # qou-9f1c
 title: 'Issues-Cluster-1: Precision Gates, CODATA-2022 Pin Refresh & Retired Muon c3 (4 Open GitHub Issues)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:55:54Z
-updated_at: 2026-11-23T20:55:54Z
+updated_at: 2026-11-24T00:12:28Z
 parent: qou-xip2
 ---
 

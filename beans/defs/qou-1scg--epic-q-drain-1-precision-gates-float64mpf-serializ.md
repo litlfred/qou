@@ -1,11 +1,11 @@
 ---
 # qou-1scg
 title: 'EPIC [Q-Drain-1]: Precision Gates, Float64/mpf Serialization & Witness Provenance Hygiene'
-status: todo
+status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-23T20:55:45Z
-updated_at: 2026-11-23T20:55:45Z
+updated_at: 2026-11-24T00:12:27Z
 parent: qou-hksc
 blocking:
     - qou-xip2

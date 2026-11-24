@@ -1,11 +1,11 @@
 ---
 # qou-l7cy
 title: 'PR-Drain-1: Salvage/Rebase Late-Nov Targeted Hygiene, Precision Gates, Library & Policy PRs (9 PRs, #8560..#9159)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:55:51Z
-updated_at: 2026-11-23T20:55:51Z
+updated_at: 2026-11-24T00:12:28Z
 parent: qou-xip2
 ---
 
