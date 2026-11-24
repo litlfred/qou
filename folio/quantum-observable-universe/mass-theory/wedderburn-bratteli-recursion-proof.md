@@ -14,5 +14,5 @@ since $(q^{d+1} - q^{-d-1}) + (q^{d-1} - q^{1-d}) = (q + q^{-1})(q^d - q^{-d})$.
 
 Three-row shapes carry weight $0$ at $z = q^3/(q^2+1)$, so the recursion on two-row shapes is the whole recursion. The divisions are by $[2]_q$ and $[d]_q$, non-zero at generic $q$. At $n = 3$ the weights are $([4]_q/[2]_q^3,\; 1/[2]_q^2,\; 0)$. $\square$
 
-The normalisation $\sum_{\lambda \vdash n} f^\lambda y_\lambda = 1$ follows from the restriction form and the branching rule $f^\lambda = \sum_{\mu \nearrow \lambda} f^\mu$; it is not formalised.
+The normalisation $\sum_{\lambda \vdash n} f^\lambda y_\lambda = 1$ follows by induction on $n$ from the restriction identity together with the Young branching rule $f^\lambda = \sum_{\mu \nearrow \lambda} f^\mu$.
 

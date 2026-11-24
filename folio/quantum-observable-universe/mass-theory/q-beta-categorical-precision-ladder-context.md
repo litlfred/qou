@@ -81,7 +81,7 @@ Verified at $q_0$ via the canonical formalism at 50 dps:
 See [Table 2](#tbl:q-beta-categorical-precision-ladder-table2-data).
 
 The N=4 rung is the first to beat the **7.80 ppb 100$\times$ experimental
-target** (CAL-3 σ = 0.78 ppm) — with $c_3$ at tier *near-match* (see the
+target** (experimental uncertainty $\sigma = 0.78$ ppm) — with $c_3$ at tier *near-match* (see the
 truncation-order section above). N=3 lands at 13.15 ppb, above that target.
 The **signed** column is strictly decreasing at both documented pins: with
 the live $c_5 = -(b^2 + 1/2)$ every rung factor $1 + c_k u^k$ has $c_k < 0$
@@ -89,7 +89,7 @@ and is therefore below 1. **That is not what the non-monotonicity claim is
 about.** The claim
 concerns the residual *magnitude* — whether the approximation gets worse —
 and on magnitude the signature **survives, and survives only under the live
-coefficient**. At the proton pin:
+coefficient**. At the proton-mass anchor $q_0$:
 
 | $N$ | $\lvert\text{residual}\rvert$, live $c_5$ | $\lvert\text{residual}\rvert$, superseded $c_5$ |
 |---|---|---|
@@ -102,8 +102,8 @@ signed column, where $-6.1698 \to -6.2260$ is decreasing, gives the reverse
 conclusion. The ladder therefore carries a numerical signature of its own
 inexactness on the live coefficient.
 
-**Caveat:** the crossing is only $0.91\,\%$, computed with $c_3$ at the
-recorded proton extraction and at the proton pin alone, so it is not robust
+**Caveat:** the crossing is only $0.91\,\%$, computed with $c_3$ from the
+proton-mass extraction and at the proton-mass anchor alone, so it is not robust
 to a large $c_3$ move; a full settlement re-extracts $c_3$ at both pins. The
 near-match tier of $c_{k\geq3}$ rests independently on the q$_0$-anchor swing
 recorded above and does not depend on this crossing.
@@ -129,8 +129,7 @@ See [Table 3](#tbl:q-beta-categorical-precision-ladder-table3-data).
 At $N=3$ the n−p mass-split residual is **7.96 ppb**, above the 4.74 ppb
 100$\times$-experimental Δm_pn target; **$N=4$ is the first rung below
 it**, at 4.35 ppb, with $N=5$ taking off a further 0.03 ppb. The chain does not reach
-sub-ppb precision on this observable at either documented pin — an earlier
-draft of this paragraph claimed it did, on the superseded column.
+sub-ppb precision on this observable at either documented anchor.
 
 ## Open
 
@@ -162,7 +161,7 @@ canonical basis or a Khovanov–Rozansky spectral sequence.
 ## Provenance of the tables
 
 Tables 2 and 3 above are computed
-at the muon-anchored (CAL-2) $q_0$, using the half-argument phase parameter $z = \sqrt{q}/(q+1)$, with $c_4 = c_3 b^4$ and
+at the muon-anchored $q_0$, using the half-argument phase parameter $z = \sqrt{q}/(q+1)$, with $c_4 = c_3 b^4$ and
 $c_5 = -(b^2 + 1/2)$. That producer is the first in the corpus to evaluate the
 boxed five-rung product itself: the block's previously declared producer
 stops at $N=3$, carries no $c_5$, and is
