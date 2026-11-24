@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-26T14:15:29Z
-updated_at: 2026-11-16T18:38:00Z
+updated_at: 2026-11-24T01:32:09Z
 parent: qou-rtxm
 ---
 
@@ -171,3 +171,5 @@ itself: `:173`, 26 lines above, spells out both roots (`z = q` degenerate and
 
 - Added `threeRow_eq_zero_of_conventionD` directly in `QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean` proving the converse direction `D ⟹ TL` (`z * (q + qi) = q ^ 2 ⟹ y₁₃ = 0` when `[2]_q ≠ 0` and `[3]_q = [2]_q² − 1 ≠ 0`, sorry-free via `linear_combination`) side-by-side with `markovWeights_eq_jones_of_threeRow_eq_zero` (`TL + faithful ⟹ D`).
 - Updated `docs/coordination/trace-convention-registry.json` (`:199` and `:362`) to explicitly state `FibreDimensionForcesTL.twoDimFibre_pins_h3_weights` and the faithfulness requirement (`hfaith : y_(2,1) != 0` on `TL_3`).
+
+Last live reversed citation witness regenerated on origin/claude/backlog-drain-batch3-20261123 (a1ff1d0f8fc).

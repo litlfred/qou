@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T11:34:53Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T01:32:08Z
 parent: qou-1oif
 ---
 
@@ -111,3 +111,5 @@ working over `ℤ`-forms / `𝔽_p` and only over char-0 fields.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8414, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Batch 3 audit (b0f4d4a4056): documented load-bearing [CharZero k] on SpechtIrreducible; across 25 *Specht*.lean files only 2 root decls are Category-2 proof artifacts (SpechtStandardBasisCore.transversal_sum_eq_zero:712, SpechtCrossKappa.polytabloid_ne_zero:219).

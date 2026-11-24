@@ -1,11 +1,11 @@
 ---
 # qou-1c2a
 title: 'Issues-Cluster-3: Vacuity/Triviality Audits, Sidecar Re-Triage & Platform/Tooling Hygiene (16 Open GitHub Issues)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:55:54Z
-updated_at: 2026-11-23T20:55:54Z
+updated_at: 2026-11-24T01:32:08Z
 parent: qou-xip2
 ---
 
@@ -32,3 +32,5 @@ Actionable GitHub Issues cluster (`16` open issues on `litlfred/qou`).
 - **`#7495`**: Reorganise the bean work plan into milestones, epics and stories (L2 1 ppQ programme, open-conjecture umbrella, migration)
 - **`#7449`**: `q-usage` is a second absent QA axis — seven criteria silently unregistered
 - **`#2472`**: Campaign: drain the 199 self-assuming-projection vacuity defects (/integration-backlog proof)
+
+Batch 3 Cluster-3 audit complete on origin/claude/backlog-drain-batch3-20261123 (be31f5738bf): closed 5 100%-landed issues (#9004, #8766, #7762, #7585, #7522); kept #7509, #7513, #7495, #2472 and 7 active issues + #9154 guard open.

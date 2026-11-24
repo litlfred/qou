@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T13:40:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T01:32:08Z
 parent: qou-4cu3
 ---
 
@@ -385,3 +385,5 @@ Full 41-bean triage table and the method behind it: [`docs/coordination/conventi
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8348, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-09: "consolidate(qou-qint): the Laurent twist, and closing the census at 47 of 55"). The work may be partly or fully done. Read the bean before you close it.
+
+Batch 3 audit (b0f4d4a4056): bridged TowerFibreLaplacian & T35TenLinchpinFromH3 qInt defs -> 19/20 bare qInt sites canonical/bridged; QCollatz 0-instance class preserved.

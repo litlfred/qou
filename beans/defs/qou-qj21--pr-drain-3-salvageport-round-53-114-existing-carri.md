@@ -1,11 +1,11 @@
 ---
 # qou-qj21
 title: 'PR-Drain-3: Salvage/Port Round 53-114 Existing-Carrier De-Vacuify & BraidKnot/Mass/QBeta Upgrades (51 PRs: 33 in 3A + 18 in 3B, #8142..#8490)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:55:52Z
-updated_at: 2026-11-23T20:55:52Z
+updated_at: 2026-11-24T01:32:08Z
 parent: qou-xip2
 ---
 
@@ -72,3 +72,5 @@ parent: qou-xip2
 - **`#8164`** (`feat/qou-wp3h-na-stokes-bar-parity-bond21-2026-11-16`, files=5, lean_mod=1, lean_new=0, py=1): feat(lean,probes,prose): NA-Stokes bar-parity split, Yekutieli (2,1) bond projection, and relational-mass prose (qou-ch8w, qou-quv8, qou-yczy, qou-h5aw, qou-n4u6)
 - **`#8160`** (`feat/qou-wp3h-rtxm-8gzz-0w42-tknh-bhrx-2026-11-16`, files=4, lean_mod=4, lean_new=0, py=0 | queue_overlap: `[9192]`): feat(lean): close 8gzz, qou-0w42, qou-tknh, qou-bhrx (0 sorry)
 - **`#8142`** (`fix/qou-wxhi-2002-q2oa-zuva-6gf9`, files=4, lean_mod=2, lean_new=0, py=1): fix(wxhi,2002): formalize qou-q2oa/zuva Wedderburn vs ladder phase discrepancy and add qou-6gf9 Habiro Laurent probe
+
+Full 51-PR classification ledger committed at be31f5738bf (docs/audits/2026-11-23-backlog-drain-batch3-ledger.md): 2 superseded (#8160, #8338), 3 full-PR merge candidates (#8351, #8392, #8393), 9 Lean-only salvage candidates, 37 stale/failing.
