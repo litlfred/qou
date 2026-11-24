@@ -1,7 +1,7 @@
 ---
 # qou-73kb
 title: 'CHAR-ZERO: audit which Specht CharZero hypotheses are load-bearing and which are proof artifacts'
-status: todo
+status: completed
 type: task
 priority: high
 tags:

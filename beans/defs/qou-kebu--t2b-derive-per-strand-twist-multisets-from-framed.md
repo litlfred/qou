@@ -1,7 +1,7 @@
 ---
 # qou-kebu
 title: 'T2b: derive per-strand twist multisets from framed braid words'
-status: todo
+status: completed
 type: task
 priority: high
 tags:

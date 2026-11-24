@@ -1,7 +1,7 @@
 ---
 # qou-w1u2
 title: Regenerate 4 drifted upstream dashboard witnesses, drain 4 raw-f64 fields & wire add_upstream() across all 7
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T07:31:23Z

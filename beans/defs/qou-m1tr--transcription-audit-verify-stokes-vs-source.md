@@ -1,7 +1,7 @@
 ---
 # qou-m1tr
 title: 'Transcription audit: verify the hand-typed GGM Stokes matrices / A-polynomial / 5_2 slopes against the source PDFs now that we have them all'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
