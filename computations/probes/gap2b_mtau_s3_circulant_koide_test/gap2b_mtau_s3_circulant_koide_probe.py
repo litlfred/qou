@@ -626,14 +626,17 @@ def main() -> int:
             "2. While Temperley-Lieb Convention-D Wedderburn trace weights (y_3, 2 y_21) achieve "
             "EXACT singlet-doublet equipartition (1/2 = 1/2, Q = 2/3) at the classical point q = 1, "
             "at finite q_0 = 1.10997858... they shift strictly below 2/3 by -(q_0 - q_0^-1)^2 / "
-            "(3(q_0^2 + q_0^-2)) (~ -0.71%, >1000 sigma from empirical Q_exp = 0.6666607(7)). "
+            "(3(q_0^2 + q_0^-2)) = -0.00712859 (-1.0693% relative, >10700 sigma from empirical "
+            "Q_exp = 0.66666050(66)). "
             "3. Because the empirical Brannen-Koide phase theta_exp = 0.22222205... rad lies within "
-            "0.0396 rad of the electron chiral zero pi/12 = 0.261799..., logarithmic mass-ratio "
-            "sensitivities are ~50x (|d ln(m_mu/m_e)/d theta| ~ 48.2, |d ln(m_tau/m_e)/d theta| ~ 51.0), "
+            "0.03958 rad of the electron chiral zero pi/12 = 0.26179939..., logarithmic mass-ratio "
+            "sensitivities are >50x (d ln(m_mu/m_e)/d theta = 56.14, d ln(m_tau/m_e)/d theta = 51.23), "
             "so none of the six un-tuned q_0 phase expressions simultaneously matches m_mu/m_e and "
-            "m_tau/m_e within 1% (whereas the un-derived rational literature benchmark theta = 2/9 "
-            "matches to ~8 ppm on m_mu/m_e and ~6 ppm on m_tau/m_e). Any finite-q_0 Koide closure "
-            "remains gated behind Rule-13a zero-instance class KoideCirculantEquipartitionHypothesis."
+            "m_tau/m_e within 1% (best q_0 phase 2(q_0-1) misses by -11.66% and -10.67%, whereas the "
+            "q-independent rational benchmark theta = 2/9 = 2/[3]_{q=1}^2 matches to +9.83 ppm on "
+            "m_mu/m_e and +70.41 ppm on m_tau/m_e, and feeding QOU's zero-CAL-2 Vol(4_1)/hbar_{q_0}^2 "
+            "into exact Q = 2/3 predicts m_tau/m_e = 3477.4423, +61.63 ppm). Any finite-q_0 Koide "
+            "closure remains gated behind Rule-13a zero-instance class KoideCirculantEquipartitionHypothesis."
         )
 
         out = wb.save({"q0Anchor": "proton", "q0Value": fmt(q0, dps=OUT_DPS)})
