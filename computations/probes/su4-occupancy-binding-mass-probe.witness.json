@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-24T16:17:59.583111+00:00",
-  "commitSha": "b6ba6725340bb60808c6e3403050827ff0e0afa0",
+  "computedAt": "2026-11-24T16:57:20.784606+00:00",
+  "commitSha": "b14dc589d39b69285935c6accafa489e43b34918",
   "assertions": [
     {
       "name": "he4_occupancy_binding_matches_to_10pct",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 19,
   "computation": "su4-occupancy-binding-mass-probe",
   "scriptFile": "su4_occupancy_binding_probe.py",
   "scriptHash": "8f8bca098dc6",
-  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "scriptCommitSha": "b14dc589d39b69285935c6accafa489e43b34918",
   "precisionMetadata": {
     "compute_dps": 120,
     "output_dps": 80,
