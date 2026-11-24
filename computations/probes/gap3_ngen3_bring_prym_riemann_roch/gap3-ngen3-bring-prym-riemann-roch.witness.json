@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-24T02:05:33.253537+00:00",
-  "commitSha": "315b794d12f7982943e1faa426c57659e8129ce8",
+  "computedAt": "2026-11-24T02:15:28.200997+00:00",
+  "commitSha": "416fedde5b2711d60d87686c4214a100f8189755",
   "assertions": [
     {
       "name": "q0_proton_anchor_80dps_stability",
@@ -94,11 +94,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 587,
+  "durationMs": 795,
   "computation": "gap3-ngen3-bring-prym-riemann-roch",
   "scriptFile": "gap3_ngen3_bring_prym_riemann_roch_probe.py",
   "scriptHash": "f3847d340cf4",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "5fce852e66b3c5cf3e0892d2eca1a1888ce6eab0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
