@@ -939,7 +939,7 @@ EXCLUDED_HIGHER_BRAID_CONTROLS = [
     {"knot": "7_4", "strands": 4, "crossings": 7, "word": [1, 1, 2, -1, 2, 2, 3, -2, 3]},
     {"knot": "7_6", "strands": 4, "crossings": 7, "word": [1, 1, -2, 1, 3, -2, 3]},
     {"knot": "7_7", "strands": 4, "crossings": 7, "word": [1, -2, 1, -2, 3, -2, 3]},
-    {"knot": "8_1", "strands": 5, "crossings": 8, "word": [1, 1, 2, -1, -3, 2, 3, -4, 3, -4]},
+    {"knot": "8_1", "strands": 5, "crossings": 8, "word": [1, -2, 1, -2, -3, 2, -3, -4, 3, -4]},
 ]
 
 # word-literal-ok: first-principles 8-crossing 3-braid presentations (Jones 1987 Table 15.9)
