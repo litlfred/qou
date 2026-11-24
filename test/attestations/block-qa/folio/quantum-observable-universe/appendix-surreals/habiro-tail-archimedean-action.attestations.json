@@ -1,0 +1,545 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/appendix-surreals/habiro-tail-archimedean-action",
+    "path": "folio/quantum-observable-universe/appendix-surreals/habiro-tail-archimedean-action"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. Scholarly register in the added paragraph(s)."
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No filler or hype in the added paragraph(s)."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.040Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are substantive contrast + load-bearing scope",
+        "notes": "pass-with-note"
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. 'is not a consequence of crew2023' and 'makes no statement about the real-q tail' are scope statements, not rhetorical not-X-but-Y."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.082Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no rhetorical pivot construction present."
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.122Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no load-bearing em-dash construction present."
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.163Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no compulsive triple construction present."
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.204Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no closing aphorism construction present."
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.273Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no meta-commentary construction present."
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.314Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no thesis restatement construction present."
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.356Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no performed warmth construction present."
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.395Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no superlative inflation construction present."
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1812ff7abd11",
+          "ts": "28052fbb9e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:16.457Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no non-speakable syntax construction present."
+      },
+      {
+        "field_hash": {
+          "md": "8551fdf0bf30",
+          "ts": "531ff2f76e11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:51:05.000Z",
+        "reviewed_sha": "f1dd59aff4ed174281d361c4d7533738ac1d1d9c",
+        "evidence": "Full read after PR #8818's edit to the closing paragraph of the evaluation (Li2(phi^-2) now sourced to zagier-dilogarithm §1; hakimoglu-brown2025 §1.1 said only to recall the reflection, duplication and Landen equations; its own pi^2/100 identity attributed to §6). Checked against the held copy library/arxiv-2506.10206v2: §1.1 states the duplication, Euler reflection and Landen formulas; §6 states pi^2/100 = Re Li2((3-sqrt5+i sqrt(10-2sqrt5))/4). The two em-dashes ('at different arguments — the geometric shape', 'the real-q face — as opposed to') are unchanged and parenthetical. 'related by resummation, not by term-by-term reparametrisation' and 'mathematical identity, not a physical identification' are load-bearing scope contrasts, as in the earlier review. No instance of this trap in the new text."
+      },
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. No instance in the new text; pre-existing text as judged on main."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c15b77230422",
+          "ts": "765245e4e781"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:30:28.000Z",
+        "reviewed_sha": "027d229622e6dc44603823bdd1d73544bcb7839c",
+        "evidence": "Full read at 027d2296 (rebased onto main cf14745a; main's sidecar was taken in the rebase, so entries re-made against the merged text). After the rebase the hakimoglu-brown2025 sentence appears once (main's #8818 wording: three functional equations recalled in its S1.1; its own golden-ratio result is the pi^2/100 identity in S6); this PR's crew2023 and garoufalidis-wheeler-modular paragraphs follow. The new paragraphs explicitly decline to transfer crew2023's resurgence result to 4_1 and confine Garoufalidis-Wheeler to the state-integral face. No duplicate statement remains after the conflict resolution."
+      }
+    ]
+  }
+}

@@ -19,7 +19,7 @@ export default proposition({
   // not cited in the statement or proof. A remark carries no premise; the edge only put this block
   // downstream of a conjecture.
   uses: [],
-  cites: ["bloch2000", "zagier1986"],
+  cites: ["bloch2000", "zagier1986", "zhao2010-standard-relations"],
   tags: [
     "pslq",
     "numerical-certification",

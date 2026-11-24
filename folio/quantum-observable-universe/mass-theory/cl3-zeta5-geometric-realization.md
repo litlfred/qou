@@ -72,12 +72,14 @@ $$
 $$
 
 These values lie in $\mathrm{MPV}(3,5)$, the $\mathbb{Q}$-span of the multiple
-polylogarithm values of weight $3$ and level $5$. Its dimension $d(3,5)$ has an
-upper bound (Deligne–Goncharov), but no unconditional lower bound is known, so a
-$\mathbb{Q}$-linear identification of $\mathrm{Cl}_3(2\pi/5)$ inside this span
-comes with no proved independence of the spanning values; for standard levels,
-including $N = 5$, the standard relations are conjectured to generate all
-$\mathbb{Q}$-linear relations \cite[§1.1, §6, §7.4]{zhao2010-standard-relations}.
+polylogarithm values of weight $3$ and level $5$. Its dimension $d(3,5)$ obeys the
+Deligne–Goncharov motivic upper bound $D(3,5) = 3^3 = 27$, tightened by finite and
+regularized double-shuffle standard relations to $d(3,5) \le \mathrm{SR}(3,5) = 22$,
+with no unconditional lower bound known, so a $\mathbb{Q}$-linear identification of
+$\mathrm{Cl}_3(2\pi/5)$ inside this span comes with no proved independence of the
+spanning values; for prime levels $p \ge 5$, including $N = 5$, the standard
+relations are conjectured to generate all $\mathbb{Q}$-linear relations, attaining
+$d(3,5) = 22$ \cite[§1.1, §6, §7.4, §9 Table~2, Conj.~9.2]{zhao2010-standard-relations}.
 
 **Discharge target**: write down the explicit iterated integral
 $\int_\gamma \omega$ on $\overline{\mathcal{M}}_{0, 5}$ whose

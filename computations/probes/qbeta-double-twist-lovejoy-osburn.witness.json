@@ -1,0 +1,165 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T13:36:43.196008+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
+  "assertions": [
+    {
+      "name": "eq1_2_base_case_m1_p1_recovers_4_1_habiro_tail",
+      "computed": "8.04305873354379518459211277104951401345059309567909816747876e-86",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "[lovejoy-osburn] eq. (1.2) at m=p=1: (-1)^n q^{-n(n+1)/2}(q;q)_n^2 = prod_{j=1}^n (1-q^j)(1-q^{-j})"
+    },
+    {
+      "name": "cor1_3_root_of_unity_duality_F_equals_U_inv",
+      "computed": "1.10946724245596661992793362793829773758395490496448835082150e-77",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "[lovejoy-osburn] Thm. 1.1 & Cor. 1.3 eq. (1.23): F_{m,p}(zeta_N) = U_{m,p}(-1; zeta_N^{-1})"
+    },
+    {
+      "name": "cor1_4_root_of_unity_duality_calF_equals_calU_inv",
+      "computed": "2.73908774767049340878616090732875794563934780346729424573420e-79",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "[lovejoy-osburn] Thm. 1.2 & Cor. 1.4 eq. (1.28): calF_{m,p}(zeta_N) = calU_{m,p}(-1; zeta_N^{-1})"
+    },
+    {
+      "name": "double_twist_cyclotomic_bar_conjugation_swaps_m_and_p",
+      "computed": "5.65979942426669522969319955680486986292658199883696136848913e-73",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "C_{K(m,-p),n}(q^{-1}) = C_{K(p,-m),n}(q) for (m,p) in {(1,1),(1,2),(2,1),(2,2),(3,3)}"
+    },
+    {
+      "name": "amphichiral_8_3_K2_neg2_habiro_tail_is_bar_even_at_q0",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "8_3 = K(2,-2) amphichiral diagonal satisfies S_{8_3}(q_0) = S_{8_3}(q_0^{-1})"
+    },
+    {
+      "name": "chiral_6_1_K1_neg2_carries_nonzero_bar_odd_component_at_q0",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "6_1 = K(1,-2) off-diagonal satisfies S_{6_1}(q_0) != S_{6_1}(q_0^{-1}) = S_{6_1*}(q_0)"
+    },
+    {
+      "name": "action_4_1_K1_neg1_equals_pi2_over_5",
+      "computed": "1.97392088021787172376689819997523022706273988144815812528267",
+      "expected": "1.97392088021787172376689819997523022706273988144815812528267",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "m=p=1 saddle e^{u*}=phi^2 gives A_0(4_1) = pi^2/5"
+    },
+    {
+      "name": "action_K2_neg1_pos_ray_equals_pi2_over_8_q_sqrt2_dilog",
+      "computed": "1.23370055013616982735431137498451889191421242590509882830167",
+      "expected": "1.23370055013616982735431137498451889191421242590509882830167",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "K(2,-1)=6_1* on q>1 (6_1 on q<1) has Q(sqrt(2)) saddle e^{u*}=1+1/sqrt(2), e^{v*}=sqrt(2) => A_0 = pi^2/8"
+    },
+    {
+      "name": "action_8_3_K2_neg2_distinct_from_pi2_over_5_and_irrational_rel_pi2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "Amphichiral 8_3 = K(2,-2) has A_0 = 0.9912608787... != pi^2/5 (quartic saddle leaves Q*pi^2)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qbeta-double-twist-lovejoy-osburn",
+  "scriptFile": "qbeta_double_twist_lovejoy_osburn_probe.py",
+  "scriptHash": "28bae7118354",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_double_twist_lovejoy_osburn_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_double_twist_lovejoy_osburn_probe.py"
+  },
+  "description": "80-dps cross-check of Lovejoy & Osburn [lovejoy-osburn] (library/cjdoubletwistfinal/cJdoubletwistfinal.pdf, Thms. 1.1–1.2 & Cors. 1.3–1.4) at prop:habiro-tail-archimedean-action (bean qou-9zcl). Verifies root-of-unity duality across double-twist knots, proves the bar-conjugation symmetry C_{K(m,-p),n}(1/q) = C_{K(p,-m),n}(q) making all amphichiral K(m,-m) tails strictly bar-even, and shows that A_0 = pi^2/5 is unique to m=p=1 (4_1), with K(2,-1) on q>1 yielding an exact Q(sqrt(2)) dilogarithm action pi^2/8 while K(1,-2) on q>1 (1.643323...) and amphichiral 8_3 = K(2,-2) (0.991261...) leave Q*pi^2.",
+  "contentBlock": "prop:habiro-tail-archimedean-action",
+  "data": {
+    "q0_proton_pin": "1.10997858275138080759166909561076887987449912187357873607281",
+    "duality_checks": {
+      "cor_1_3_max_abs_diff": "1.10946724245596661992793362793829773758395490496448835082150e-77",
+      "cor_1_4_max_abs_diff": "2.73908774767049340878616090732875794563934780346729424573420e-79"
+    },
+    "bar_parity_at_q0": {
+      "K2_neg2_8_3_S_opt": "0.963335940891713645089601257733991928274638701692424727285512",
+      "K2_neg2_8_3_n_star": 4,
+      "K2_neg2_8_3_bar_diff": "0.0",
+      "K1_neg2_6_1_S_opt_q0": "0.981543328484623591429483515693432277606668840687950055265146",
+      "K1_neg2_6_1_S_opt_q0_inv": "0.977597883226980628344021784526552727188764355149197924633418",
+      "K1_neg2_6_1_n_star": 8,
+      "K1_neg2_6_1_bar_odd_half_diff": "0.00197272262882148154273086558343977520895224276937606531586421"
+    },
+    "resurgent_actions_80dps": {
+      "K1_neg1_4_1": {
+        "u_star": "0.962423650119206894995517826848736846270368668771321039322036",
+        "A0": "1.97392088021787172376689819997523022706273988144815812528267",
+        "A0_over_pi2": "0.200000000000000000000000000000000000000000000000000000000000",
+        "closed_form": "pi^2/5"
+      },
+      "K2_neg1_6_1star_pos_ray": {
+        "u_star": "0.534799996739570370523993264250704024990410261081507783692956",
+        "exp_u_star": "1.70710678118654752440084436210484903928483593768847403658834",
+        "A0": "1.23370055013616982735431137498451889191421242590509882830167",
+        "A0_over_pi2": "0.125000000000000000000000000000000000000000000000000000000000",
+        "closed_form": "pi^2/8",
+        "discrete_t_010_005_0025": [
+          "0.843073700785645498128195068484683516071481932046329388865740",
+          "1.00309286041513908944060441755936060578057884693991997025169",
+          "1.10082447989111823151076377137379137082953160076271633373784"
+        ]
+      },
+      "K1_neg2_6_1_pos_ray": {
+        "u_star": "0.574317807553482440812560361025313583915369594114406616187804",
+        "A0": "1.64332316588828711216518929946594709593123958733850866159610",
+        "A0_over_pi2": "0.166503448274675036187013654631648795263466975783750406799029",
+        "pslq_vs_pi2_norm_1e4": null,
+        "geometric_vol_over_pi": "1.00712077527549239542300201298075850282741911741416944072282"
+      },
+      "K2_neg2_8_3": {
+        "u_star": "0.380615313870186513498024991053675772322199625186502534843608",
+        "A0": "0.991260878719627008884049403766826061927673834298559963397831",
+        "A0_over_pi2": "0.100435725530216437615150289004947932115080618775767947753052",
+        "pslq_vs_pi2_norm_1e4": null,
+        "discrete_t_010_005_0025": [
+          "0.623067376576612641124044773563425728740015492888037391953645",
+          "0.759080874098235800907184606138020412359387923294750549875925",
+          "0.846314797725469530044496660093342780416845620441702795186917"
+        ],
+        "geometric_vol_over_pi": "1.66491835236790487462836902770262721620659064014451223260324"
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

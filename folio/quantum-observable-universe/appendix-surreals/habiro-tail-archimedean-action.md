@@ -74,3 +74,25 @@ determinants, the associated state integral, the $x$-deformation, and an analyti
 lift of the colored Jones polynomial \cite[§1.5, Thm. 1.7, and \S§5.1--5.8]{garoufalidis-wheeler-modular}.
 That treatment concerns the state-integral face only; it makes no statement about
 the real-$q$ tail $S(q)$ of item 2.
+
+**Extension across the double-twist family.** For the double-twist knots $K(m,-p)$
+($m,p \ge 1$, with $K(1,-1) = 4_1$), the Lauridsen cyclotomic expansion and the
+$q$-hypergeometric Kontsevich--Zagier / strongly-unimodal root-of-unity dualities
+$F_{m,p}(\zeta_N) = U_{m,p}(-1;\zeta_N^{-1})$ and
+$\mathcal{F}_{m,p}(\zeta_N) = \mathcal{U}_{m,p}(-1;\zeta_N^{-1})$ of Lovejoy and
+Osburn \cite[Thms.~1.1--1.2, Cors.~1.3--1.4, eq.~(1.2)]{lovejoy-osburn} write the
+real-$q$ Habiro tail as $\sum_{n\ge 0} C_{K(m,-p),n}(q)\prod_{j=1}^n (1-q^j)(1-q^{-j})$.
+Under $q \mapsto q^{-1}$ the Gaussian $q$-binomial chains swap $m$ and $p$, giving
+$C_{K(m,-p),n}(q^{-1}) = C_{K(p,-m),n}(q)$: bar-evenness therefore holds for the
+entire amphichiral diagonal $K(m,-m)$ (including $8_3 = K(2,-2)$), whereas
+off-diagonal knots such as $6_1 = K(1,-2)$ acquire a non-zero bar-odd part and
+asymmetric $q > 1$ versus $q < 1$ optimal-truncation actions. Unlike bar-evenness,
+the golden-ratio action $\pi^2/5$ is specific to the $m = p = 1$ base case where
+$C_{K(1,-1),n}(q) = 1$: on the $q > 1$ ray of $K(2,-1) = 6_1^*$ (equivalently
+$q < 1$ of $6_1$) the $q^{n_1^2 + n_1}$ weight shifts the dilogarithm saddle to
+$\mathbb{Q}(\sqrt{2})$ at $e^{u^*} = 1 + 1/\sqrt{2}$, giving the exact octagonal
+action $\pi^2/8$, whereas the $q > 1$ ray of $6_1$ ($A_0^+ \approx 1.6433$) and
+the amphichiral knot $8_3 = K(2,-2)$ ($A_0 \approx 0.9913$, distinct from
+$\mathrm{Vol}(8_3)/\pi \approx 1.6648$) are governed by a quartic inner saddle
+whose optimal-truncation actions are $\mathbb{Q}$-linearly independent of $\pi^2$
+up to norm $10^4$.

@@ -37,11 +37,11 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 # ── Fundamental constants (CODATA 2022) ─────────────────────────
-# Single source of truth: codata_2022_source.M_E_MEV = 0.51099895069(15)
+# Single source of truth: codata_2022_source.M_E_MEV = 0.51099895069(16)
 # MeV (full 11-sig-fig CODATA-2022; same module codata_constants.py
 # imports from). READ from the registry -- this file already did so for
-# M_E_MEV and hardcoded everything else, which is how the CODATA-2018
-# values below survived under 2022 labels (drain qou-7ot6-a, 2026-08-21).
+# M_E_MEV and hardcoded everything else, which is how the prior-edition
+# values below survived under 2022 labels (drain qou-7ot6-a, qou-f0qa).
 #
 # THESE ARE mpf, NOT float (changed 2026-08-29, bean qou-p77d).
 #
@@ -89,49 +89,55 @@ del _sys, _Path, _bridge
 # on one of these values still gets binary64, with no error to notice. This
 # module's own `Q_NEUTRON_MEV_ERR` did exactly that and is fixed below; any
 # consumer wanting full precision must use `mpmath` equivalents.
-from codata_2022_source import (  # noqa: E402
-    M_E_MEV as _M_E_MEV,
-    M_E_MEV_ERR as _M_E_MEV_ERR,
-    M_P_MEV as _M_P_MEV,
-    M_P_MEV_ERR as _M_P_MEV_ERR,
-    M_N_MEV as _M_N_MEV,
-    M_N_MEV_ERR as _M_N_MEV_ERR,
-    M_N_MINUS_P_MEV as _M_N_MINUS_P_MEV,
-    M_N_MINUS_P_MEV_ERR as _M_N_MINUS_P_MEV_ERR,
-    M_MU_OVER_M_E as _M_MU_OVER_M_E,
-    M_MU_OVER_M_E_ERR as _M_MU_OVER_M_E_ERR,
-)
+import mpmath as _mpm  # noqa: E402
+with _mpm.workdps(max(80, _mpm.mp.dps)):
+    from codata_2022_source import (  # noqa: E402
+        M_E_MEV as _M_E_MEV,
+        M_E_MEV_ERR as _M_E_MEV_ERR,
+        M_P_MEV as _M_P_MEV,
+        M_P_MEV_ERR as _M_P_MEV_ERR,
+        M_N_MEV as _M_N_MEV,
+        M_N_MEV_ERR as _M_N_MEV_ERR,
+        M_N_MEV_CODATA_DIRECT as _M_N_MEV_CODATA_DIRECT,
+        M_N_MEV_CODATA_DIRECT_ERR as _M_N_MEV_CODATA_DIRECT_ERR,
+        M_N_MINUS_P_MEV as _M_N_MINUS_P_MEV,
+        M_N_MINUS_P_MEV_ERR as _M_N_MINUS_P_MEV_ERR,
+        M_MU_OVER_M_E as _M_MU_OVER_M_E,
+        M_MU_OVER_M_E_ERR as _M_MU_OVER_M_E_ERR,
+    )
 M_E_MEV     = _M_E_MEV
-M_E_MEV_ERR = _M_E_MEV_ERR   # was 0.00000000015; table says ...16
+M_E_MEV_ERR = _M_E_MEV_ERR   # CODATA 2022: 0.51099895069(16) MeV
 
-M_P_MEV     = _M_P_MEV       # was M_P_MEV_VALIDATION (CODATA-2018)
+M_P_MEV     = _M_P_MEV       # CODATA 2022: 938.27208943(29) MeV
 M_P_MEV_ERR = _M_P_MEV_ERR
 
-# NOTE: the registry's M_N_MEV is the AME-DERIVED neutron mass
-# (939.56542179), not the CODATA-direct 939.56542194. That is the corpus's
-# deliberate choice -- see codata_2022_source -- so reading the registry
-# follows it rather than the raw table. The literal here was 939.56542052,
-# the CODATA-2018 DIRECT value: wrong edition and wrong determination.
-M_N_MEV     = _M_N_MEV
-M_N_MEV_ERR = _M_N_MEV_ERR
+# NOTE: the registry's default M_N_MEV is the AME-2020-derived neutron mass
+# rebuilt on the CODATA-2022 proton (939.56542179(60) MeV), alongside the
+# direct CODATA-2022 measurement M_N_MEV_CODATA_DIRECT = 939.56542194(48) MeV
+# (see codata_2022_source; both agree within 0.16 ppb = 0.31 sigma).
+M_N_MEV                   = _M_N_MEV
+M_N_MEV_ERR               = _M_N_MEV_ERR
+M_N_MEV_CODATA_DIRECT     = _M_N_MEV_CODATA_DIRECT
+M_N_MEV_CODATA_DIRECT_ERR = _M_N_MEV_CODATA_DIRECT_ERR
 
-# ── Free neutron beta-decay Q-value (CODATA 2022) ────────────────
+# ── Free neutron beta-decay Q-value (CODATA 2022 / AME-2020) ─────
 # n → p + e⁻ + ν̄ₑ,  Q = m_n − m_p − m_e
 #
-# Derived from individual CODATA 2022 mass-energy equivalents above.
-# Cross-checked against the CODATA-listed neutron–proton mass difference:
-#   m_n − m_p = 1.2933321 ± 0.0000005 MeV/c²
+# Direct CODATA-2022 neutron–proton mass difference (`codata_2022_source`):
+#   m_n − m_p = 1.29333251 ± 0.00000038 MeV/c²
 #   Source: https://physics.nist.gov/cgi-bin/cuu/Value?mnmpm
-#   CODATA 2022, NIST Physics Laboratory, Gaithersburg MD 20899 USA
+#   CODATA 2022 (Rev. Mod. Phys. 97, 025002, p. 47)
+#   => Q_β(CODATA direct) = 1.29333251 − 0.51099895069 = 0.78233355931(38) MeV.
 #
-# Q_NEUTRON = m_n − m_p − m_e
-#           = 939.56542052 − 938.27208816 − 0.51099895000
-#           = 0.78233341 MeV
-# δQ = sqrt(δm_n² + δm_p² + δm_e²)
-#    = sqrt(5.4e-7² + 2.9e-7² + 1.5e-16²) ≈ 6.1e-7 MeV
-# Was the literal 1.2933321 labelled "direct CODATA 2022 value" -- 320 ppb
-# from the actual 2022 entry (1.29333251). Now read from the registry, where
-# codata_table_vintage_audit checks it against the NIST table.
+# Registry 3-input decomposition (using M_N_MEV = M_N_MEV_AME_DERIVED):
+#   Q_NEUTRON = m_n − m_p − m_e
+#             = 939.56542179 − 938.27208943 − 0.51099895069
+#             = 0.78233340931 MeV
+#   δQ = sqrt(δm_n² + δm_p² + δm_e²)
+#      = sqrt(6.0e-7² + 2.9e-7² + 1.6e-10²) ≈ 6.664e-7 MeV
+# Sourced from `codata_2022_source`, where `codata_table_vintage_audit.py`
+# and `experimental_constants_codata2022_crosscheck_probe.py` verify every
+# entry against the primary NIST CODATA-2022 table (bean qou-f0qa).
 M_N_MINUS_P_MEV     = _M_N_MINUS_P_MEV
 M_N_MINUS_P_MEV_ERR = _M_N_MINUS_P_MEV_ERR
 
@@ -142,7 +148,6 @@ M_N_MINUS_P_MEV_ERR = _M_N_MINUS_P_MEV_ERR
 # sum was silently the one float64 quantity left in this module the moment the
 # casts came off. `_mpm.sqrt` keeps it mpf.
 from decimal import Decimal as _Decimal  # noqa: E402
-import mpmath as _mpm  # noqa: E402
 
 
 class _FormattableMpf(_mpm.mpf):
@@ -216,20 +221,20 @@ class _FormattableMpf(_mpm.mpf):
 # across 213 importers. Exactifying a constant does not help if it is then evaluated at binary64
 # precision, and nothing in the module said which precision it was evaluated at.
 #
-# 60 dps is above `qou_substrate.precision`'s 50-dps compute floor with room to spare; an mpf is a
-# fixed binary object once built, so a lower-precision consumer rounds it in arithmetic exactly as
-# it rounds anything else.
-_CONST_DPS = 60
+# 80 dps exceeds `qou_substrate.precision`'s 50-dps compute floor and matches
+# the 80-dps probe tier; an mpf is a fixed binary object once built, so a
+# lower-precision consumer rounds it in arithmetic exactly as it rounds anything else.
+_CONST_DPS = 80
 # -----------------------------------------------------------------------------------------------
 from codata_constants import M_P_MEV_VALIDATION
 with _mpm.workdps(_CONST_DPS):
     # Energy scale for Q-values: κ = m_e / 3
     # This is E_× × μ₀ where E_× = ½(q−q⁻¹)×m_e c² and μ₀ = m_e/(3×E_×).
-    KAPPA             = _FormattableMpf(M_E_MEV / _mpm.mpf(3))  # 0.170333 MeV
+    KAPPA             = _FormattableMpf(M_E_MEV / _mpm.mpf(3))  # 0.17033298356... MeV
     # Inside the pin: at ambient dps-15 both differences below were binary64 values in an mpf
     # (measured 2026-10-05: m_n_derived_3input == mpf(float(...)) was True and it differed from
     # M_N_MEV, the value the comment below says it equals by construction).
-    Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
+    Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233340931 MeV (AME-rebuilt M_N_MEV)
     Q_NEUTRON_MEV_ERR = _mpm.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
 
 # m_n via the 3-input scheme (m_n = m_p + Q_β + m_e) — the canonical anchor
@@ -275,11 +280,11 @@ with _mpm.workdps(_CONST_DPS):
     ALPHA_EM_INV     = _mpm.mpf("137.035999084")  # noqa: P31 - CODATA 2018, Cs recoil, +/- 21e-9
     ALPHA_EM_INV_ERR = _mpm.mpf("0.000000021")
 
-MU_OVER_E        = _M_MU_OVER_M_E      # was 206.7682830 (CODATA-2018)
+MU_OVER_E        = _M_MU_OVER_M_E      # CODATA 2022: 206.7682827(46)
 MU_OVER_E_ERR    = _M_MU_OVER_M_E_ERR
 
 with _mpm.workdps(_CONST_DPS):
-    TAU_OVER_E       = _mpm.mpf("3477.23")   # ± 0.23 (CODATA 2022; m_τ = 1776.86 MeV, m_e = 0.511 MeV)
+    TAU_OVER_E       = _mpm.mpf("3477.23")   # ± 0.23 (CODATA 2022; m_τ = 1776.86(12) MeV)
     TAU_OVER_E_ERR   = _mpm.mpf("0.23")
 
     # ── Molecular bond dissociation energies (experimental comparison) ─
