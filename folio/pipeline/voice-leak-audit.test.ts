@@ -143,3 +143,24 @@ describe("owner ruling 2026-11-21 (dim_q is defined in Chapter 1)", () => {
     expect(failing("$\\dim_q(\\lambda) = [2]_q$", { premature: true })).toContain("L4:premature-q-integer");
   });
 });
+
+describe("owner ruling 2026-11-24 (L5 excised Convention C and z_C)", () => {
+  const { FENCED_CHAPTERS, CODE_BY_DESIGN } = require("./voice-leak-audit");
+  it("flags Convention C / convention C / C-convention and z_C variants", () => {
+    expect(failing("Contrast with Convention C.")).toContain("L5:convention-c");
+    expect(failing("Under the excised convention C, the weight vanishes.")).toContain("L5:convention-c");
+    expect(failing("In the convention-$C$ normalisation:")).toContain("L5:convention-c");
+    expect(failing("The $C$-convention value differs.")).toContain("L5:convention-c");
+    expect(failing("where $z_C = q^{1/2}/(q+1)$ and $z_C^2$")).toContain("L5:z-c");
+    expect(failing("evaluated at $z_{C}$ or $z_{\\mathrm{C}}$")).toContain("L5:z-c");
+  });
+  it("leaves lowercase $z_c$ (branch point / crossing modulus), Compton symbols, and ordinary English alone", () => {
+    expect(failing("around the branch point $z_c$ and crossing modulus $z_{c}$")).toEqual([]);
+    expect(failing("Compton time $t_C$, wavelength $\\lambda_{C,e}$, and center $z_{\\mathrm{CM}}$")).toEqual([]);
+    expect(failing("Conventionally, $C > 0$; by convention, $C$ denotes a constant.")).toEqual([]);
+  });
+  it("exempts authors-note and code-by-design chapters", () => {
+    expect(FENCED_CHAPTERS.has("authors-note")).toBe(true);
+    expect(CODE_BY_DESIGN.has("appendix-mass-binding-algorithms")).toBe(true);
+  });
+});
