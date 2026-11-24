@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-28T15:47:38Z
-updated_at: 2026-10-04T15:15:08Z
+updated_at: 2026-11-24T02:15:35Z
 parent: qou-5vkl
 ---
 
@@ -388,3 +388,5 @@ NOT closing this bean; only recording the correction. Status left as the owning
 agent set it.
 
 In-progress in Round 101 PR litlfred/qou#8450.
+
+6-model Delta = NF(n)-NF(p) 80-dps audit witness staged at 19f6177c368.

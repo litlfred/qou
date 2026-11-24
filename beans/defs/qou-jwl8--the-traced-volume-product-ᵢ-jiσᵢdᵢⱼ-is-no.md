@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:10:26Z
-updated_at: 2026-11-15T18:10:26Z
+updated_at: 2026-11-24T02:15:35Z
 parent: qou-avtq
 ---
 
@@ -32,3 +32,5 @@ Max |Δ log| runs from 0.18 (A = 3) to 0.73 (A = 5). At A = 3 they agree exactly
 **Consumers.** `computations/level1-qvalues.py`, `hecke_engine.markov_trace` / `ground_state_ordering`, `obs:trace-ratio-observable`, the n–p splitting block.
 
 **Open question for the owner.** Is the nuclear element *defined* as P (then say so and drop the braid reading of the flavour labels), or as a strand-tracked braid word (then the products above need re-deriving)? Nothing changes until that is ruled. Under D: P gives n–p −18.5 %; genuine half twist −69.6 %; full twist −39.6 %.
+
+TracedVolumeVsHalfTwist.lean (0972e187b02) & 80-dps audit witness (19f6177c368) staged on origin/claude/backlog-drain-batch5-20261123.

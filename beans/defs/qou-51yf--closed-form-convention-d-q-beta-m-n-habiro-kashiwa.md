@@ -1,11 +1,11 @@
 ---
 # qou-51yf
 title: Closed-Form Convention-D Q_beta / m_n Habiro-Kashiwara Rungs c_3, c_4 on Mirror-Projected alpha_D^proj + Two-Term QED
-status: todo
+status: scrapped
 type: task
 priority: high
 created_at: 2026-11-19T06:43:32Z
-updated_at: 2026-11-19T06:43:32Z
+updated_at: 2026-11-24T02:15:34Z
 parent: qou-wxhi
 ---
 
@@ -49,3 +49,5 @@ Thus the $O(1)$-coefficient Habiro ladder converges inside $1\sigma_{\mathrm{exp
 3. **Deliverables:**
    - Derive the Convention-D $c_3, c_4$ Habiro–Kashiwara coefficients and the $O(\hbar_q)$ strong-QED cross-dressing coefficient $d_1$ on $\Delta m_{\mathrm{QED}}^{\mathrm{conn}}$ from the $H_3(q_0)$ two-row Hoefsmit representation without empirical fitting.
    - Formalize the resulting closed-form $N=3,4$ identity in Lean (`folio/quantum-observable-universe/lean/QOU/QBeta/`).
+
+Form-A/KD6 base superseded on origin/main by #8794 (5a8974f71f) on gamma-gamma V^3 base; remaining Convention-D ladder tracked in qou-cds1.

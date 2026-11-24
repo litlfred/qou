@@ -1,13 +1,13 @@
 ---
 # qou-z4ba
 title: The c1 mirror asymmetry has the WRONG SIGN, 0/230 against AME -- and it is scale-free
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T02:08:08Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T02:15:33Z
 parent: qou-v2om
 ---
 
@@ -36,3 +36,5 @@ Successor to qou-pdg9 (c1 derived, PR #6492) and qou-i719 (PR #6541). The derive
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8181, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-04: "science(qou-z4ba): the derived c1 mirror asymmetry is WRONG IN SIGN — 0/230 against AME, and it is scale-free"). The work may be partly or fully done. Read the bean before you close it.
+
+Verified 100% landed on origin/main via PR #6555 (f0dab71510b, MirrorAsymmetrySign.lean EXIT=0 + c1_mirror_asymmetry_sign_probe.py 4/4) and hadron-line Coulomb formalization (#9123, #9211).

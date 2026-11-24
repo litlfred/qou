@@ -1,11 +1,11 @@
 ---
 # qou-i7r4
 title: 'PR-Drain-5: Triage & Salvage Pre-Nov-15 Legacy Migration, Molecular, TL/Hecke & Precision PRs (15 PRs, #5402..#7773)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:55:53Z
-updated_at: 2026-11-23T20:55:53Z
+updated_at: 2026-11-24T02:15:34Z
 parent: qou-xip2
 ---
 
@@ -34,3 +34,5 @@ parent: qou-xip2
 - **`#6025`** (`claude/joint-tower-f64-declaration-2026-08-29`, files=12, lean_mod=0, lean_new=0, py=2): Add witness truncation and provenance stamping for joint-tower-sdp
 - **`#5861`** (`claude/diagram-calculus-sphere-transition-ei9rdz`, files=4, lean_mod=0, lean_new=1, py=0): docs(glossary,lean): cite barrett1993 for spherical terminology; close the Barrett–Westbury referee hole
 - **`#5402`** (`claude/jet-algebraic-dependence-2026-08-21`, files=9, lean_mod=0, lean_new=0, py=1): bean qou-j4mn: jet dependence is forced (holds), but "min degree 7" is convention-C-frame — under D it is 3
+
+Batch 5 15-PR ledger committed at 75acb71b14a: 5 100%-superseded (#7763, #7481, #7477, #7123, #6025), 1 immediate clean merge candidate (#8161), 9 conflicting/draft.
