@@ -33,7 +33,8 @@
         "build": {
           "pre": [],
           "sourceSteps": [
-            "site:document"
+            "site:document",
+            "site:landing"
           ],
           "siteSteps": [
             "site:export",

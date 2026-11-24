@@ -1,0 +1,33 @@
+# Site publish: the platform's reusable folio-site-publish.yml, which runs
+# cat-harness-tools' stage-local.ts / build-instance-site.ts on the recipe
+# index.config.json declares under `site.build` (the same route the dth-hrh
+# folio publishes by). qou is a platform layer since the owner ruling of
+# 2026-11-24 ("1 qou is platform later").
+#
+# DISPATCH-ONLY, like every workflow here (owner directive 2026-06-30: Actions
+# billing). dth-hrh's caller runs on push to main; this one does not. While
+# Actions is not enabled, the agent that merges runs
+# `bash scripts/publish-main-local.sh --deploy` (skill post-merge-rebuild),
+# which builds with the same command.
+#
+# Pinned to the cat-harness-tools commit index.lock.json names; move both
+# together (`bun run cat workflow-pins`).
+name: Site publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      plan:
+        description: "Only print what would run (--plan)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  publish:
+    uses: litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml@856f1e9f909fca0a39b24617d757a3de7f46ca4f # index.lock.json
+    with:
+      plan: ${{ inputs.plan == true }}

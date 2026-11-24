@@ -12,11 +12,14 @@
 #   0b. qa-publish      scripts/qa-publish-local.sh: the QA writers qou.json
 #                       declares, published to qa-reports as main/<sha> for the
 #                       integrated QA page (with --deploy; without, writers only)
-#   1. build            scripts/build-site.sh (folio site + /accuracy/ + Lean render)
-#   2. rail             cat-harness-tools rail-standalone-pages.ts --foreign-site
-#   3. keep old root    build-site-landing.py --keep-old-root: a root index.html
-#                       the landing generator did not write is kept beside it
-#                       as index-<YYYY-MM>.html before it is replaced
+#   1. build            scripts/build-site.sh: the platform's build-instance-site.ts
+#                       on index.config.json's recipe (qou is a platform layer,
+#                       owner ruling 2026-11-24): Documents landing, papers at
+#                       en/<slug>/ with PDF/Word exports, /accuracy/, /beans/,
+#                       /qa/, /lean/, the left navbar on every page, link check
+#   3. keep old root    site-extras.py --keep-old-root: a root index.html that
+#                       is not the Documents landing is kept beside it as
+#                       index-<YYYY-MM>.html before it is replaced
 #   4. publish          cat-harness-tools publish-main-site.ts: deletes only the
 #                       files its previous publish listed in _main-site.json, so
 #                       branches/, the old lean/, drafts/ and the PDFs that
@@ -33,7 +36,8 @@
 set -euo pipefail
 ROOT=$(git rev-parse --show-toplevel)
 cd "$ROOT"
-PLAT=${PLATFORM_DIR:-folio-assistant}
+. scripts/lib/platform-root.sh
+PLAT=${PLATFORM_DIR:-$(qou_platform_root "$ROOT" || echo folio-assistant)}
 SITE=${SITE_DIR:-_site}
 PAGES=${PAGES_DIR:-$ROOT/.gh-pages-worktree}
 DEPLOY=0; [ "${1:-}" = "--deploy" ] && DEPLOY=1
@@ -54,16 +58,13 @@ python3 scripts/generate-accuracy-scorecard.py --check --qa-report
 if [ "$DEPLOY" = 1 ]; then bash scripts/qa-publish-local.sh; else bash scripts/qa-publish-local.sh --no-publish; fi
 
 rm -rf "$SITE"
-SITE_DIR="$SITE" PLATFORM_DIR="$PLAT" bash scripts/build-site.sh
-
-bun run "$PLAT/cat-harness-tools/scripts/rail-standalone-pages.ts" \
-  --site "$SITE" --built cat-harness --foreign-site --home-label qou
+SITE_DIR="$SITE" bash scripts/build-site.sh
 
 git worktree remove --force "$PAGES" 2>/dev/null || true
 git fetch -q --depth 1 origin gh-pages
 git worktree add -q -B gh-pages "$PAGES" origin/gh-pages
 
-python3 scripts/build-site-landing.py --site "$SITE" --keep-old-root "$PAGES"
+python3 scripts/site-extras.py --keep-old-root "$PAGES"
 bun run "$PLAT/cat-harness-tools/scripts/publish-main-site.ts" \
   --site "$SITE" --pages "$PAGES" --commit "$SHA"
 printf '%s\n' "{\"summary\":\"main's site published at the root (agent, Actions not enabled)\"}" \
