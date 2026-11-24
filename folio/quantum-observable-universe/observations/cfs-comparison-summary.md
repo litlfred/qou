@@ -1,9 +1,9 @@
-Finster's causal fermion systems (CFS) [`finster2021`] provide a parallel unification programme. The non-commutative probability lens places CFS and QOU on common ground.
+Finster's causal fermion systems (CFS) \cite{finster2021, finster2022, finster2024} provide a parallel unification programme. The non-commutative probability lens places CFS and QOU on common ground.
 
 ## Structural agreements
 
 1. **Same carrier algebra.** Both embed as finite type II$_1$ factors.
-2. **Same universality class.** Both occupy the free-probability universality class.
+2. **Same universality class.** Both occupy the free-probability universality class \cite{biane1998}.
 3. **Common commutative-shadow data type.** The traceful Plancherel projection maps non-commutative algebraic data to a commutative spectrum measure.
 
 ## Structural differences

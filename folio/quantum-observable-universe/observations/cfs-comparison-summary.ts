@@ -9,7 +9,6 @@ export default remark({
     "finster2021",
     "finster2022",
     "finster2024",
-    "dappiaggi2024",
     "biane1998",
   ],
   tags: [
@@ -17,5 +16,12 @@ export default remark({
     "external-comparison",
     "free-probability",
     "summary",
+  ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Adjudicated qou-0irt: removed unused `dappiaggi2024` (PDF not held in `library/`) from `cites` and wired explicit `\\cite` calls for `finster2021`, `finster2022`, `finster2024`, and `biane1998` in the block prose.",
+    },
   ],
 });
