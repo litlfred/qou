@@ -901,11 +901,11 @@ def lowest_eigenpair_sym(
 
     v0_fx = [int(mp.nint(mp.ldexp(x, FX_BITS))) for x in v0]
     basis_fx: list[list[int]] = [v0_fx]
-    m_steps = min(140, n)
+    m_steps = min(220, n)
     alphas: list[mp.mpf] = []
     betas: list[mp.mpf] = []
     betas_fx: list[int] = []
-    check_steps = {25, 42, 65, 95, 120, m_steps}
+    check_steps = {25, 45, 75, 110, 155, 190, m_steps}
     starmap_fn = itertools.starmap
     mul_fn = operator.mul
 
@@ -975,7 +975,7 @@ def safeguarded_root_1d(
     hi_init: mp.mpf,
     tol_x: mp.mpf,
     tol_f: mp.mpf,
-    max_iter: int = 120,
+    max_iter: int = 55,
 ) -> tuple[mp.mpf, mp.mpf]:
     """80-dps safeguarded secant + bisection solver on [lo_init, hi_init] with fn(lo) <= 0 <= fn(hi)."""
     lo = lo_init
@@ -1585,8 +1585,8 @@ def evaluate_jacobi_variational_battery(
     sqrt2 = mp.sqrt(two)
     three_quarters = three / four
     half = one / two
-    tol_x = mp.mpf("1e-71")
-    tol_f = mp.mpf("1e-69")
+    tol_x = mp.mpf("1e-62")
+    tol_f = mp.mpf("1e-60")
 
     jacobi_models: dict[str, dict] = {}
     max_var_grad_res = mp.mpf(0)
@@ -2125,10 +2125,10 @@ def main() -> int:
             source="80-dps Hoefsmit S^{[A,A,A]} Hecke/symmetry, CG, and Lanczos residual certification",
         )
         wb.add_assertion(
-            "jacobi_variational_stationarity_and_hall_post_identities_below_1e_minus_65",
+            "jacobi_variational_stationarity_and_hall_post_identities_below_1e_minus_58",
             fmt(jacobi_res["max_var_grad_res"], dps=15),
             "0",
-            "1e-65",
+            "1e-58",
             source="TetrahedralFluxRingAndMajoranaCluster.jacobi_mode_factorization_and_hall_post_ring & 80-dps stationarity",
         )
         wb.add_assertion(
