@@ -1,80 +1,102 @@
 {
-  "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T11:52:26.060757+00:00",
-  "commitSha": "73f8fafac4a8a7369e0d1c7e4996e13e6270e50e",
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T13:29:35.934262+00:00",
+  "commitSha": "78857b5cb7945c9ab1e5677ece49eccd49b27780",
   "assertions": [
     {
       "name": "the fixed float64 path agrees with the mpmath reference to better than 1e-14 on every partition — the cast changes speed, not value",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "chi_numpy vs rho_k_h3a_refinement.chi_numeric at substrate q0; 1e-14 is the tolerance hoefsmit_numpy's own docstring documents"
+      "source": "chi_numpy vs 95-dps rho_k_h3a_refinement.chi_numeric at proton q_at(95)"
     },
     {
-      "name": "the pre-fix path is strictly slower on every partition — the leak cost real time rather than being a theoretical concern",
+      "name": "the pre-fix path is strictly slower (>10x) on every partition — the mpf->dtype=object leak leaves BLAS for pure-Python matmul under numpy 2.x",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "same process, same machine, same inputs; the only difference between the two callers is the float() cast"
+      "source": "caller-vs-caller in one process with reconstructed pre-fix mpf d_val"
+    },
+    {
+      "name": "live canonical_braid_crossings.d_for_ctype is float-safe while un-cast mpf still promotes numpy float64 arrays to dtype=object (qou-nz8e)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "explains why pre-reconstructed benchmark skipped object-matmul after canonical_braid_crossings.py:241"
     }
   ],
   "allPassed": true,
-  "durationMs": 408402,
+  "durationMs": 517834,
   "computation": "chi-numpy-dtype-fix-benchmark",
   "scriptFile": "chi_numpy_dtype_fix_benchmark.py",
-  "scriptHash": "41e443db69f6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "21d59ccb391a",
+  "scriptCommitSha": "78857b5cb7945c9ab1e5677ece49eccd49b27780",
   "precisionMetadata": {
-    "compute_dps": 70,
-    "output_dps": 60,
+    "compute_dps": 95,
+    "output_dps": 80,
     "guard_digits": 10,
-    "truncation_bound": "1e-60"
+    "truncation_bound": "1e-80"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
-  "description": "P28 benchmark witness for the chi_numpy dtype-leak fix (0bfb2a48ab). d_for_ctype returns mpf for 'averaged_weighted' and float otherwise; one mpf promotes the accumulating numpy product to dtype=object, which drops the remaining matmuls out of BLAS into pure Python permanently. Measures fixed vs pre-fix vs mpmath reference on tritium partitions, caller-vs-caller in one process. Value is unchanged; only speed moves.",
+  "invocation": {
+    "argv": [
+      "computations/chi_numpy_dtype_fix_benchmark.py"
+    ],
+    "reproduce": "python3 -u computations/chi_numpy_dtype_fix_benchmark.py"
+  },
+  "description": "P28 80-dps benchmark witness for the chi_numpy dtype-leak fix (0bfb2a48ab, bean qou-nz8e). Verifies live d_for_ctype float-safety in canonical_braid_crossings.py:241, reconstructs the pre-fix mpf leak on 'averaged_weighted' (index 11 of 35), and measures fixed BLAS vs pre-fix dtype=object vs 95-dps mpmath reference on tritium partitions under numpy 2.x.",
   "data": {
     "atom": "tritium",
     "n_crossings": 35,
     "first_non_float_crossing_index": 11,
+    "upstream_d_for_ctype_float_safe": true,
+    "numpy_mpf_object_promotion_confirmed": true,
     "per_partition": [
       {
         "partition": "(5, 2, 2)",
-        "t_fixed_sec": "0.004297494888305664",
-        "t_prefix_sec": "66.0659441947937",
-        "speedup": "15373.129209431345",
-        "t_mpmath_reference_sec": "41.711801528930664",
-        "rel_diff_vs_mpmath": "5.3013e-15",
-        "rel_diff_fixed_vs_prefix": "0.0",
+        "t_fixed_sec": "0.0018954999977722764000000000000000000000000000000000000000000000000000000000000000",
+        "t_prefix_sec": "83.247707333066500000000000000000000000000000000000000000000000000000000000000000",
+        "speedup": "43918.600596626221592233349627986182892807196045488188277689638906595917735532536",
+        "t_mpmath_reference_sec": "67.009871167014350000000000000000000000000000000000000000000000000000000000000000",
+        "rel_diff_vs_mpmath": "0.0000000000000052322737111565100836964230002517132322605851727360628470389497403569679876408425",
+        "rel_diff_fixed_vs_prefix": "0.00000000000000052314913618753143372581562109203426875097797334782457209564191269913846408615252",
         "within_1e-14": true
       },
       {
         "partition": "(3, 3, 3)",
-        "t_fixed_sec": "0.002095937728881836",
-        "t_prefix_sec": "2.86191987991333",
-        "speedup": "1365.4603571834832",
-        "t_mpmath_reference_sec": "2.1039438247680664",
-        "rel_diff_vs_mpmath": "3.97375e-15",
-        "rel_diff_fixed_vs_prefix": "1.87944e-16",
+        "t_fixed_sec": "0.0025162909878417850000000000000000000000000000000000000000000000000000000000000000",
+        "t_prefix_sec": "5.3439054170157760000000000000000000000000000000000000000000000000000000000000000",
+        "speedup": "2123.7231476154620547406977117826086211256920906603037812587913472079961496879601",
+        "t_mpmath_reference_sec": "4.2070415830239650000000000000000000000000000000000000000000000000000000000000000",
+        "rel_diff_vs_mpmath": "0.0000000000000033599790468599405152340435463700364341357608926613535420576755585224915130041017",
+        "rel_diff_fixed_vs_prefix": "0.000000000000000095585719622765265362794181835780796382548926913420159926184268389056647851916783",
         "within_1e-14": true
       },
       {
         "partition": "(4, 3, 2)",
-        "t_fixed_sec": "0.02530670166015625",
-        "t_prefix_sec": "183.92356872558594",
-        "speedup": "7267.781127524872",
-        "t_mpmath_reference_sec": "111.67164778709412",
-        "rel_diff_vs_mpmath": "5.15103e-16",
-        "rel_diff_fixed_vs_prefix": "1.26392e-16",
+        "t_fixed_sec": "0.021857291925698520000000000000000000000000000000000000000000000000000000000000000",
+        "t_prefix_sec": "262.72844920901116000000000000000000000000000000000000000000000000000000000000000",
+        "speedup": "12020.173867015541915099910240205313572898705948132172184505913583605070930742953",
+        "t_mpmath_reference_sec": "95.233572875033130000000000000000000000000000000000000000000000000000000000000000",
+        "rel_diff_vs_mpmath": "0.0000000000000037481734812714772175789466465519716103987116495140707422029873959000974331597017",
+        "rel_diff_fixed_vs_prefix": "0.000000000000000022892644976890849498058490070367092696364729838670367983021831546387083760914868",
         "within_1e-14": true
       }
     ],
     "commit_fixed": "0bfb2a48ab",
     "tier": "benchmark"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "Evaluates tritium H_9 Hoefsmit benchmark against 95-dps mpmath reference at canonical proton pin q_at(95).",
+  "q0Value": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830"
 }
