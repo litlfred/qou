@@ -26,9 +26,17 @@ Every link is DERIVED, so nothing here names an owner, a repository or a page:
   qou-zo8u lists both among the landing's links), each with the first line of
   the file as its note.
 
+It also writes `<site>/papers/<paper>/index.html` for every paper the folio
+site built: a redirect to that paper's interactive view (owner, 2026-11-24:
+"I expected .../papers/quantum-observable-universe/ to be the interactive
+paper through the harness, not the PDF view"), keeping any `#fragment`. The
+PDF and the other files scripts/publish-paper-pdf.sh writes beside it on the
+publish branch are not touched, so `papers/<paper>/<paper>.pdf` stays where
+it is.
+
 `--keep-old-root <publish checkout>`: a root `index.html` on the publish branch
 that this script did not write (no generator meta) is copied beside it as
-`index-<month>-<year>.html` (the date of its last commit there) before the
+`index-<YYYY-MM>.html` (the date of its last commit there) before the
 publish overwrites it. The copy is written into the publish checkout, not into
 `<site>`, so the main-site manifest never lists it and a later publish never
 deletes it.
@@ -170,6 +178,30 @@ li span {{ font-size: .85rem; opacity: .7; margin-left: .5rem; }}
 """
 
 
+def paper_redirects(site: Path) -> int:
+    """`papers/<slug>/index.html` -> the paper's interactive view, for every paper."""
+    n = 0
+    for slug, title, href in papers(site):
+        out = site / "papers" / slug / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        target = "../../" + href
+        out.write_text(f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+{MARKER}
+<title>{esc(title)}</title>
+<link rel="canonical" href="{esc(target)}">
+<meta http-equiv="refresh" content="0; url={esc(target)}">
+<script>location.replace({json.dumps(target)} + location.search + location.hash);</script>
+</head>
+<body><p>{esc(title)} is at <a href="{esc(target)}">its interactive view</a>.</p></body>
+</html>
+""", encoding="utf-8")
+        n += 1
+    return n
+
+
 def find_declaration(root: Path) -> Path | None:
     """The `<name>.json` at the repository root whose `name` is its own stem and which declares `directories`."""
     for p in sorted(root.glob("*.json")):
@@ -190,7 +222,7 @@ def keep_old_root(pages: Path) -> None:
                        capture_output=True, text=True, check=False)
     stamp = r.stdout.strip()
     when = datetime.fromisoformat(stamp) if stamp else datetime.fromtimestamp(old.stat().st_mtime)
-    keep = pages / f"index-{when.strftime('%B').lower()}-{when.year}.html"
+    keep = pages / f"index-{when.strftime('%Y-%m')}.html"
     if keep.exists():
         print(f"build-site-landing: {keep.name} already kept; the old root page is overwritten by this publish")
         return
@@ -218,6 +250,7 @@ def main() -> int:
     if not a.site.is_dir():
         print(f"build-site-landing: {a.site} does not exist", file=sys.stderr)
         return 2
+    print(f"build-site-landing: {paper_redirects(a.site)} papers/<paper>/ redirect(s) to the interactive view")
     body = page(decl, a.site, root)
     (a.site / "index.html").write_text(body, encoding="utf-8")
     print(f"build-site-landing: {a.site}/index.html ({body.count('<li>')} entries, from {decl_path.name})")

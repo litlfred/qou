@@ -16,7 +16,7 @@
 #   2. rail             cat-harness-tools rail-standalone-pages.ts --foreign-site
 #   3. keep old root    build-site-landing.py --keep-old-root: a root index.html
 #                       the landing generator did not write is kept beside it
-#                       as index-<month>-<year>.html before it is replaced
+#                       as index-<YYYY-MM>.html before it is replaced
 #   4. publish          cat-harness-tools publish-main-site.ts: deletes only the
 #                       files its previous publish listed in _main-site.json, so
 #                       branches/, the old lean/, drafts/ and the PDFs that
