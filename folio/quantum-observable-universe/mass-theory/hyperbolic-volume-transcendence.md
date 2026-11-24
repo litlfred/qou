@@ -23,7 +23,7 @@ $$
 $$
 
 If the conjecture holds, the physical coefficient ring of the Descartes
-universe forms $\mathbb{Q}[q, q^{-1}][\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
+universe forms $\mathbb{Q}[q, q^{-1}][\mathrm{Vol}(4_1),\allowbreak \mathrm{Vol}(5_2),\allowbreak
 \mathrm{Vol}(\mathcal{B}_3)]$. This defines a polynomial ring in three
 transcendentals over the ground ring. The specialisation map
 $\iota \colon \mathbb{Z}[q, q^{-1}] \to \mathbb{R}$ sending
