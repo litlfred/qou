@@ -1,5 +1,8 @@
 {
   "engine": "python+fractions",
+  "auditOnly": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact Laurent-polynomial normal forms over Q (fractions.Fraction); only q-degrees and term counts are read, nothing is evaluated at any numerical q",
   "engineVersion": "python 3.11.15",
   "computedAt": "2026-08-30T21:30:57.241216+00:00",
   "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
