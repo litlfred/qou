@@ -73,9 +73,20 @@ PY
     # Every compute-QA gate (processes/tools/compute-qa.bpmn). A gate whose
     # setup is missing here (the MPFR LP binary, say) is recorded `unknown`,
     # never skipped. Writes test/results/compute-qa/<gate>.json.
+    # Several gates REWRITE their committed witness as a side effect (measured:
+    # 8 computations/*audit.witness.json, 2,422 lines). In a git checkout,
+    # every tracked file the gates changed that was clean before is put back,
+    # so a post-merge publish leaves main's tree as it found it; a file that
+    # was already modified is left alone. (No .git in the workflow's mount.)
     pydeps
+    before=$(git status --porcelain --untracked-files=no 2>/dev/null | cut -c4- || true)
     PYTHONPATH=computations:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate \
       python3 scripts/compute-qa.py --every || true
+    if git rev-parse --git-dir >/dev/null 2>&1; then
+      git diff --name-only | while IFS= read -r f; do
+        printf '%s\n' "$before" | grep -qxF "$f" || git checkout -q -- "$f"
+      done
+    fi
     ;;
   accuracy)
     # The observational accuracy scorecard (ACCURACY.md against its witnesses).
