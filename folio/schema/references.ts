@@ -2316,6 +2316,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   { id: "solleveld2022" },
 
+  { id: "solleveld2013" },
+
   { id: "terashima-yamazaki2013" },
 
   { id: "birman-menasco-II2006" },

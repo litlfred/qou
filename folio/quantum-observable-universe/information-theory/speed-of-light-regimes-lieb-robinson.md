@@ -49,7 +49,7 @@ $$
 | Regime | $q$ | $c_q = 1/(q-1)$ | Interpretation |
 | --------------- | ------------------------- | --------------------------- | ----------------------------------------------------------------- |
 | Deep-quantum | $q \to \infty$ | $\to 0$ | No spatial propagation; each fibre is isolated |
-| Deep quantum | $\varphi^2 \approx 2.618$ | $\approx 0.618 = 1/\varphi$ | Sub-luminal; spatial coupling suppressed |
+| Golden threshold | $\varphi^2 \approx 2.618$ | $\approx 0.618 = 1/\varphi$ | Sub-luminal; spatial coupling suppressed |
 | The observed universe | $q_0$ | $\approx 9.093$ | ${\sim}9$ fibres correlated per Reeb phase advance |
 | Near-classical | $1.01$ | $100$ | Fast spatial propagation; nearly continuous |
 | Classical limit | $q \to 1^+$ | $\to \infty$ | Instantaneous spatial coupling; the $q$-connection reduces to $A$ |

@@ -44,7 +44,7 @@ where $n_R(q) = 1/\hbar_q$ is the iteration count per Planck circuit ([Planck ti
 |--------|-----|----------|-----------|----------------|
 | Classical limit | $q \to 1$ | $\to 1$ | $\to 1$ | One nat per step; Julia set = unit circle |
 | The observed universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}10$ steps generates $0.89$ $q$-bits |
-| Deep quantum | $\varphi^2$ | $0.327$ | $1.000$ | $d_{H,q}$ returns to $1$ at the golden threshold |
+| Golden threshold | $\varphi^2$ | $0.327$ | $1.000$ | $d_{H,q}$ returns to $1$ at the golden threshold |
 | Deep-quantum | $q \to \infty$ | $\to 0$ | $\to 0$ | Zero information per step; Julia set collapses |
 
 **The golden crossover.**

@@ -11,7 +11,7 @@ in the framework's knot-operator basis:
  multivariable form; the single-variable $\Delta(t) = 0$ for the
  Hopf link in the literature should not be confused with this).
  In the QOU framework's reading the Hopf link is the
- *by definition-non-trivial* link — its Alexander structure carries
+ *cohomologically minimal non-trivial* link — its Alexander structure carries
  no signed information, which is the link-theoretic fact behind
  its $E^{0, *}$-only cohomological location.
 - Fundamental group: $\mathbb{Z} \oplus \mathbb{Z}$ — abelian.
