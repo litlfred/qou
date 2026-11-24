@@ -10,10 +10,18 @@ scalar eigenvalues and the `2 × 2` template, and **this file covers size `3`**.
 
 ## What a size-`3` orbit is
 
-The standard fillings of a **domino together with a disjoint cell**.  The domino's two
-cells are adjacent, which forces their relative order, so only `3!/2! = 3` of the six
-assignments are standard.  Writing the domino as `A, B` and the disjoint cell as `C`, the
-three fillings of `{k, k+1, k+2}` with `entry A < entry B` are
+The standard fillings of three cells with **exactly one comparable pair** (two cells sharing
+a row or a column, with the third cell incomparable to both): comparability forces one order
+relation between the pair, halving `3! = 6` assignments to `3!/2! = 3` (whereas two
+comparable pairs — a `3`-cell hook — give size `2`, three comparable cells — a row, column,
+or step chain — give size `1`, and three mutually incomparable cells give size `6`).  Because
+an `⟨s_k, s_{k+1}⟩`-orbit permutes **consecutive** entries `{k, k+1, k+2}` inside a standard
+Young tableau, the comparable pair cannot have an intermediate cell strictly between them
+without consuming the sole remaining value and collapsing to a size-`1` chain; hence the
+comparable pair is necessarily **adjacent** (a row- or column-**domino** of axial distance
+`±1`) together with a disjoint incomparable cell.  Writing the comparable pair (domino) as
+`A, B` and the disjoint cell as `C`, the three fillings of `{k, k+1, k+2}` with
+`entry A < entry B` are
 
   `0 : A=k,   B=k+1, C=k+2`   `1 : A=k,   B=k+2, C=k+1`   `2 : A=k+1, B=k+2, C=k`
 
@@ -98,8 +106,9 @@ noncomputable def genB : Matrix (Fin 3) (Fin 3) ℝ :=
 
 /-- **The size-`3` orbit braid identity (Yang–Baxter).**
 
-`ρ(σ_k) ρ(σ_{k+1}) ρ(σ_k) = ρ(σ_{k+1}) ρ(σ_k) ρ(σ_{k+1})` on a size-`3` orbit — a domino
-plus a disjoint cell — given that the scalar satisfies the Hecke quadratic and that the two
+`ρ(σ_k) ρ(σ_{k+1}) ρ(σ_k) = ρ(σ_{k+1}) ρ(σ_k) ρ(σ_{k+1})` on a size-`3` orbit — a single
+comparable pair (an adjacent domino for `{k, k+1, k+2}`) plus a disjoint cell — given that
+the scalar satisfies the Hecke quadratic and that the two
 block parameters satisfy the relation forced by their shared axial distance. -/
 theorem genA_genB_braid (hsc : sc * sc = c * sc + 1) (hs : sc * (sc - a₁) ≠ 0)
     (hrel : a₂ * (sc * (sc - a₁)) = a₁) :
