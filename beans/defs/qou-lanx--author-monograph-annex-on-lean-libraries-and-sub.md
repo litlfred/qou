@@ -1,14 +1,14 @@
 ---
-id: qou-lanx
-title: "Lean KG Stage 4: Author Monograph Annex Describing Reusable Mathlib-Ready Lean Libraries & QOU Formalization Subgraphs"
+# qou-lanx
+title: 'Lean KG Stage 4: Author Monograph Annex Describing Reusable Mathlib-Ready Lean Libraries & QOU Formalization Subgraphs'
 status: todo
 type: feature
 priority: high
-parent: qou-lnkg
-blocked_by:
-  - qou-lref
 created_at: 2026-11-23T20:22:30Z
-updated_at: 2026-11-23T20:22:30Z
+updated_at: 2026-11-24T08:06:19Z
+parent: qou-s028
+blocked_by:
+    - qou-lref
 ---
 
 ## Deliverables

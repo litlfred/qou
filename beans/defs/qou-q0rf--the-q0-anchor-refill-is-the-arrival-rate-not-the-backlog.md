@@ -7,8 +7,8 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-11-24T00:32:16Z
-parent: qou-cdx1
+updated_at: 2026-11-24T08:06:21Z
+parent: qou-s028
 ---
 
 `scripts/precision-gates.sh` has a **blocking** gate red on `main`. Nothing

@@ -5,8 +5,8 @@ status: completed
 type: task
 priority: high
 created_at: 2026-11-24T01:19:58Z
-updated_at: 2026-11-24T04:09:46Z
-parent: qou-slfm
+updated_at: 2026-11-24T08:06:21Z
+parent: qou-s028
 ---
 
 Owner selected Option 4B as backup behind Option 4A for a_0: test discrete Woronowicz Haar modular entanglement entropy vs Casimir area.

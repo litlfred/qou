@@ -5,8 +5,8 @@ status: completed
 type: task
 priority: high
 created_at: 2026-11-24T01:19:58Z
-updated_at: 2026-11-24T04:15:24Z
-parent: qou-sm8w
+updated_at: 2026-11-24T08:06:20Z
+parent: qou-s028
 ---
 
 Owner selected Option 3B as backup behind Option 3A for N_gen=3: test resolvent width of composite Morgan-Voyce harmonic b_9 = b_3(...).

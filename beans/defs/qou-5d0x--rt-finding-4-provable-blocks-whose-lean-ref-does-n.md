@@ -5,8 +5,8 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-22T21:35:00Z
-parent: qou-ncxf
+updated_at: 2026-11-24T08:06:24Z
+parent: qou-s028
 ---
 
 Surfaced by scripts/roundtrip-blind-sample.py during qou-ncxf pass 1 (docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md). Not a full scan: these are only the 15 lowest-hash eligible blocks.

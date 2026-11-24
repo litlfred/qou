@@ -5,8 +5,8 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-24T01:19:57Z
-updated_at: 2026-11-24T03:03:21Z
-parent: qou-v2om
+updated_at: 2026-11-24T08:06:19Z
+parent: qou-s028
 ---
 
 Owner selected Option 1B as backup behind Option 1A for 4He: cyclic 3-body and 4-body colour-flux plaquette traces on K_4 inside ConfinementLayerTower.

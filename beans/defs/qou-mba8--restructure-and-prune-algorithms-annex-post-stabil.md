@@ -5,8 +5,8 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:04:00Z
-updated_at: 2026-11-24T01:19:56Z
-parent: qou-hksc
+updated_at: 2026-11-24T08:06:18Z
+parent: qou-s028
 blocked_by:
     - qou-qzvs
     - qou-udad

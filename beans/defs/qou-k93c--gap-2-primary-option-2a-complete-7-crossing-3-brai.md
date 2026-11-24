@@ -5,8 +5,8 @@ status: completed
 type: task
 priority: high
 created_at: 2026-11-24T01:19:57Z
-updated_at: 2026-11-24T03:52:51Z
-parent: qou-sm8w
+updated_at: 2026-11-24T08:06:19Z
+parent: qou-s028
 ---
 
 Owner selected Option 2A as primary for m_tau (2026-11-23): fix Vol(6_2) literal (qou-r0dn), pre-register strict B_3 charge -1 genus <=4 selection rule, and evaluate <=7-crossing hyperbolic census + Reidemeister torsion at 80 dps.

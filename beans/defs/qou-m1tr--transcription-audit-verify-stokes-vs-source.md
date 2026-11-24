@@ -9,8 +9,8 @@ tags:
     - integrity
     - reorg-2026-10-04
 created_at: 2026-08-11T10:50:00Z
-updated_at: 2026-11-22T21:33:06Z
-parent: qou-mub3
+updated_at: 2026-11-24T08:06:22Z
+parent: qou-s028
 ---
 
 THE GAP (raised by the owner 2026-08-11: "do we have proof these are correct?"). Several

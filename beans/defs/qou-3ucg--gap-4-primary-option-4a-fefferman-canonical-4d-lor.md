@@ -5,8 +5,8 @@ status: completed
 type: task
 priority: high
 created_at: 2026-11-24T01:19:58Z
-updated_at: 2026-11-24T02:08:59Z
-parent: qou-slfm
+updated_at: 2026-11-24T08:06:21Z
+parent: qou-s028
 ---
 
 Owner selected Option 4A + 4C as active for a_0 (2026-11-23): open PR for staged qou-slfm branch and formalize Fefferman (1976)/Lee (1986) 4D Lorentzian metric on CR circle bundle + (2*pi)/(8*pi)=1/4 modular horizon cancellation.

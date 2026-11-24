@@ -7,8 +7,8 @@ priority: high
 tags:
     - needs-owner-ok
 created_at: 2026-11-23T21:31:07Z
-updated_at: 2026-11-23T23:51:44Z
-parent: qou-hksc
+updated_at: 2026-11-24T08:06:21Z
+parent: qou-s028
 ---
 
 Related beans: qou-tt2u, qou-hfwb, qou-awxv, qou-nq4h.

@@ -5,8 +5,8 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-19T06:32:38Z
-updated_at: 2026-11-22T21:59:12Z
-parent: qou-trd0
+updated_at: 2026-11-24T08:06:22Z
+parent: qou-s028
 ---
 
 
