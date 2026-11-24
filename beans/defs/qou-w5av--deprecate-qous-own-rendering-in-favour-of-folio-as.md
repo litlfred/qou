@@ -9,7 +9,7 @@ tags:
     - platform
     - reorg-2026-10-04
 created_at: 2026-09-26T11:21:37Z
-updated_at: 2026-11-24T17:54:38Z
+updated_at: 2026-11-24T19:46:52Z
 parent: qou-n4r9
 ---
 
@@ -179,3 +179,6 @@ the reading-failure post-mortem are in `qou-9olr`.
 ## 2026-11-24 — in progress (litlfred/qou#9383, owner direct request)
 
 Owner, 2026-11-24: "i expected https://litlfred.github.io/qou/ to have the use folio assistnt landing page, including LHS navbar", "(simialrt to dth-hth)". Measured: dth-hrh is built by the platform's layer pipeline — `index.config.json` {"site":{"landing":"dth-hrh"}}, `index.lock.json` mounting the layers at the repo root, and `.github/workflows/site-publish.yml` calling cat-harness-tools `folio-site-publish.yml` -> `scripts/stage-local.ts` -> `build-instance-site.ts` (Jekyll, just-the-docs, rail). qou instead consumes the platform through the `folio-assistant/` symlink and builds with `scripts/build-site.sh` (build-folio-site.ts + rail-standalone-pages --foreign-site). Adopting the dth-hrh pipeline means giving qou its own index.config.json + index.lock.json, root-mounted layers and a workspaces package.json: a structural change to how qou consumes the platform, put to the owner in #9383 rather than made. Interim on #9383: a generated root page railed with the LHS navbar, Lean KG render from its store, /papers/<slug>/ -> interactive view.
+
+## 2026-11-24 — fence crossed again on an owner ruling (litlfred/qou#9396)
+Owner ruling 2026-11-24, "1 qou is platform later" (recorded in docs/coordination/owner-rulings.md). PR #9396 makes qou a platform layer as dth-hrh is: index.config.json (site.landing "qou") + index.lock.json mounting the layers at the root, workspaces package.json, and the site built by cat-harness-tools build-instance-site.ts (Documents landing with the LHS navbar, papers at en/<slug>/, LaTeX PDF and Word as export links). It edits the fenced build-site.sh and publish-main-local.sh (both now run the platform route) and replaces #9383's build-site-landing.py with scripts/site-extras.py; README.md, CONTRIBUTING.md, CONTRIBUTORS.md and the authors' note are NOT touched. The owner ruled this directly, so the fence is crossed knowingly. #9383 is superseded (its commits are rebased into #9396); closing it is the owner's call. No gh-pages deploy was run.
