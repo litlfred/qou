@@ -1,4 +1,6 @@
 {
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact sympy polynomial arithmetic in Z[h, z] with formal h and z (specialised only to exact rational z = 1/2 at q = 1); q0 is never read",
  "description": "bond_generic_z_probe.py: the A = 2 bond, exactly over Z[h, z] with the Markov parameter z\nleft FREE (exploratory, follows bond_leading_order_probe; not preregistered).\n\nBy towerTr_disjoint (proved) block 0 factors out, so a single bond (0, 1) acts on a 4-strand\ntail: the receiving block's word on sigma_1, sigma_2, then V^3 = (sigma_0 sigma_1^-1)^3.\nLetters: S = sigma, I = sigma - h (= sigma^-1), A = sigma - h/2. Ocneanu trace with free z.\n\nMeasured: atom - free = h^4 (z^2 - h z - 1) P_p / 4 into a proton, and\nh^5 (h^2+1)(h^2+4)(h z - h^2 - 1)(z^2 - h z - 1) / 4 into a neutron. Since y = q h, the\norders in y are 4 and 5, and the leading coefficients of ratio - 1 are (1 - z^2)/2 and\n(1 - z^2)/z: 3/8 and 3/2 at z = z_D(1) = 1/2. Both vanish at z^2 - h z - 1 = 0, i.e.\nz = q or z = -1/q.",
  "engine": "sympy exact Z[h,z]",
  "exploratory": true,
