@@ -27,7 +27,7 @@ $$
   \cdot \mathrm{Li}_2^q(z_K) \bigr) \;\in\; \mathcal{P}_2 / \mathcal{P}_1.
 $$
 
-If [GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence) holds, every entry in the principled atlas must satisfy:
+Under the conjectural correspondence equating Gröbner--Shirshov filtration depth with Goncharov period depth, every entry in the principled atlas must satisfy:
 
 $$
   \mathrm{Vol}(K) \;\stackrel{!}{=}\; \tau_{\mathrm{arch}}\bigl(

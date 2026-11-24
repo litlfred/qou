@@ -4,7 +4,7 @@ The **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ is define
 
 The scope of this conjecture is as follows:
 
-- **Load-bearing claim** (already proved, not part of this conjecture): The categorical mass equals the infinite-series sum
+- **Load-bearing series** (independent of this conjecture): The categorical mass equals the infinite-series sum
 
   $$
     \mathfrak{m}(\varrho)
@@ -15,9 +15,9 @@ The scope of this conjecture is as follows:
     \Bigr).
   $$
 
-  This follows from [Unified mass formula: tower + Frobenius co-Casimir correction](#thm:knot-mass-formula-unified) and [Proton--electron mass endomorphism tower (convention D, $\mathrm{Li}_2^q$)](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream result that relies on the mass tower routes through this infinite series.
+  This series decomposition combines the single-level Markov trace with the brane-tower quantum-dilogarithm sum and Frobenius co-Casimir pairing under convention D. It does not depend on the closed-form conjecture below; every algebraic result that relies on the mass tower routes through this infinite series.
 
-- **Convenience target** (the conjectural content here): One conjectures the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
+- **Convenience target** (the conjectural content here): The conjecture posits the existence of a single finite-rank Hecke element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
 
 If this conjecture fails (no closed-form $\Phi_{\mathrm{mass}}$ exists in finite-rank $H_n(R, q)$), the algebraic mass formula remains valid as the infinite series. Compute scripts attempting to materialise $\Phi_{\mathrm{mass}}$ as a single element must truncate explicitly. Scripts that evaluate the infinite sum at $q_0$ (the dominant case) remain unaffected.
 
