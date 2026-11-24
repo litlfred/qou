@@ -17,7 +17,13 @@ export default proposition({
     "archimedean",
     "hbar-N-wall",
   ],
-  cites: ["hakimoglu-brown2025", "zagier-dilogarithm", "crew2023", "garoufalidis-wheeler-modular"],
+  cites: [
+    "hakimoglu-brown2025",
+    "zagier-dilogarithm",
+    "crew2023",
+    "garoufalidis-wheeler-modular",
+    "lovejoy-osburn",
+  ],
   uses: ["def:ecalle-borel-resummation"],
   authorNotes: [
     {
@@ -33,7 +39,10 @@ export default proposition({
         "points; `habiroAction_eq_pi_sq_div_five` then gives $A_0 = \\pi^2/5$. " +
         "Conditional on the cited (Mathlib-gap) dilog functional equations, " +
         "not on any conjecture. Probe " +
-        "`qbeta_fourone_habiro_tail_action_probe` (4/4). The PHYSICAL relevance " +
+        "`qbeta_fourone_habiro_tail_action_probe` (4/4). Double-twist family " +
+        "cross-check against [lovejoy-osburn] in " +
+        "`qbeta_double_twist_lovejoy_osburn_probe` (9/9, 80 dps; bean qou-9zcl). " +
+        "The PHYSICAL relevance " +
         "of the real-q face to the $Q_\\beta$ odd channel is the open bridge " +
         "(#3966 b3ix); this block asserts only the archimedean math fact.",
     },

@@ -1,32 +1,55 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:44:59.801517+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T13:37:51.065458+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "assertions": [
     {
       "name": "action_A_equals_Vol_over_pi",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "0.624452786188920932128604427612841710803355724450774692552745",
+      "expected": "0.646131894438901028187273021447612788144483681561174032261737",
       "passed": true,
-      "tolerance": "0.5",
-      "source": "large-order kappa ratio -> A ~ Vol(4_1)/pi=0.646 (geometric<->conjugate saddle gap, literature)"
+      "tolerance": "0.0646131894438901028187273021447612788144483681561174032261737",
+      "source": "large-order kappa ratio n=4 within 10% of Vol(4_1)/pi = 0.64613184..."
     },
     {
       "name": "borel_sum_singlevalued_smooth",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "0.0554500521688816484161921206742453367591456487583765924245191",
+      "expected": "0.0548119201318129706101836204493281648449846176668810521226343",
       "passed": true,
-      "tolerance": "0.5",
-      "source": "Borel-Pade resummed Im V=0.0555 stable vs truncation; singularity off imaginary ray => no Stokes, exact smooth, no anchor-dependent transseries"
+      "tolerance": "0.00554500521688816484161921206742453367591456487583765924245191",
+      "source": "80-dps Borel–Padé[3/3] resummed Im V = 0.0554524... stable vs kappa_1..4 truncation"
+    },
+    {
+      "name": "am2020_4_1_pade_pole_real_positive_off_imaginary_ray",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "4_1 Borel–Padé[3/3] nearest pole lies on positive real axis (arg 0 != pi/2)"
+    },
+    {
+      "name": "am2020_thm2_sigma235_borel_pole_matches_complex_cs",
+      "computed": "5.17653667577306736046094617849855275191733832596650555278100e-26",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-10",
+      "source": "[andersen-mistegard2020] Thm 2 eqs. (4)-(5): Padé[5/5] pole on Sigma(2,3,5) matches zeta_1 = i*pi/60 (CS_C^* = -1/120)"
+    },
+    {
+      "name": "am2020_thm3_sigma235_borel_laplace_matches_gppv_zhat",
+      "computed": "1.05421979432306179776710909364012033540083510544051425051414e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-65",
+      "source": "[andersen-mistegard2020] Thm 3 eqs. (6),(54): Borel–Laplace integral matches GPPV q-series Z_hat_0(Sigma(2,3,5); e^{-pi/2}) to 80 dps"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "qbeta-c3-borel-pade-resummation",
   "scriptFile": "qbeta_c3_borel_pade_resummation_probe.py",
-  "scriptHash": "8ed00f2070b0",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "be1aea6b3d04",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +57,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -49,26 +72,45 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_c3_borel_pade_resummation_probe.py"
   },
-  "description": "Borel–Padé resummation of the divergent 4₁ Ohtsuki κ-tower to the exact smooth Im 𝔙, with literature Stokes/action cross-check. (1) Large-order ratio gives action A=Vol(4₁)/π=0.646 (geometric↔conjugate saddle gap, Garoufalidis–Gu–Mariño). (2) Borel–Padé[3/3] + Laplace at the imaginary substrate x=i·t gives resummed Im 𝔙_b=0.05545 (stable vs κ₁..κ₄ truncation 0.05481). (3) DECISIVE: the Borel singularity at real ξ=A is OFF the imaginary integration ray, so the Borel sum is single-valued — no Stokes median split, no e^{−A/x} trans-series on the imaginary ray. So resurgence delivers the exact smooth Im 𝔙 + the action, but NO anchor-dependent piece: the odd-S sign-flip is the 1/u³ ladder representation (merged #3636), representational/experimental-Q_β-limited, not a resummable physical effect. Caveat: only κ₁..κ₆ (exact 1..4 from #3628); 6 terms is few for Padé. Scope-(a); C14; no c_k wired; no fit.",
+  "description": "80-dps Borel–Padé resummation of the divergent 4_1 Ohtsuki kappa-tower to the exact smooth Im V, cross-checked against Andersen & Mistegard [andersen-mistegard2020] (arXiv:1811.05376v4, Theorems 2 & 3; bean qou-r0fd). (1) Large-order kappa ratio and real Borel–Padé[3/3] pole match the 4_1 complex Chern–Simons saddle gap A = Vol(4_1)/pi = 0.64613184... (arg 0, strictly off the imaginary substrate ray arg pi/2 => single-valued Borel sum Im V_b = 0.0554524..., zero Stokes ambiguity). (2) On Sigma(2,3,5) (P=30), Borel–Padé[5/5] of Theorem 2 eq. (4) recovers the leading complex-CS pole zeta_1 = i*pi/60 (theta_1 = -1/120) to < 1e-10 and Theorem 3's Borel–Laplace contour integral reproduces GPPV Z_hat_0(q=e^{-pi/2}) to < 1e-70 at 80 dps. Scope-(a); C14; zero float64; zero fit; no c_k wired.",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
     "action": {
-      "A_literature_Vol_over_pi": "0.646131894439",
-      "A_largeorder_n4": "0.6244527862",
+      "A_literature_Vol_over_pi": "0.646131894438901028187273021447612788144483681561174032261737",
+      "A_largeorder_n4": "0.624452786188920932128604427612841710803355724450774692552745",
+      "A_largeorder_n5": "0.532051200730714095424156697578240958047369556116559047027034",
+      "pade33_nearest_real_pole": "0.816706405934040948834049287731245273002462579797557743855826",
       "cross_check_ok": true,
-      "source": "geometric<->conjugate saddle gap; #3628 kappa, fmap-resurgence audit"
+      "source": "4_1 complex-CS geometric<->conjugate saddle gap Vol(4_1)/pi; #3628 kappa, [andersen-mistegard2020] Thm 2 dictionary"
     },
     "resummation": {
-      "Im_V_resummed": "0.0554500521689",
-      "Im_V_kappa1_4_truncation": "0.0548119201318",
+      "Im_V_resummed": "0.0554500521688816484161921206742453367591456487583765924245191",
+      "Im_V_kappa1_4_truncation": "0.0548119201318129706101836204493281648449846176668810521226343",
+      "relative_diff_vs_truncation": "0.0115082315003987498490715828346762193577213315117457744541954",
       "stable": true
     },
     "stokes": {
-      "singularity_arg": "0 (real xi=A)",
-      "substrate_ray_arg": "pi/2 (imaginary x=i*t)",
+      "singularity_arg": "0 (real xi = Vol(4_1)/pi > 0)",
+      "substrate_ray_arg": "pi/2 (imaginary x = i*t)",
       "crosses": false,
       "single_valued": true,
       "verdict": "no Stokes ambiguity / no trans-series on imaginary ray => Im V smooth exact, no anchor-dependent nonperturbative piece; odd-S sign-flip is representational (#3636)"
+    },
+    "andersen_mistegard_2020_crosscheck": {
+      "P": 30,
+      "manifold": "Sigma(2, 3, 5) (Poincare homology sphere)",
+      "thm2_exact_leading_pole_re": "0.0",
+      "thm2_exact_leading_pole_im": "0.0523598775598298873077107230546583814032861566562517636829157",
+      "thm2_pade55_leading_pole_re": "3.35609825566655158561579092943388020497488500131814843548185e-79",
+      "thm2_pade55_leading_pole_im": "0.0523598775598298873077107748200251391339597612657135486684433",
+      "thm2_pade55_pole_abs_err": "5.17653667577306736046094617849855275191733832596650555278100e-26",
+      "thm3_tau": "i/4 (h = -pi/2, q = exp(-pi/2))",
+      "thm3_gppv_series_re": "0.772939578602086422495568674113002575310215393642266030722253",
+      "thm3_borel_laplace_re": "0.772939578602086422495568674113002575310215393642266030722253",
+      "thm3_abs_err": "1.05421979432306179776710909364012033540083510544051425051414e-81",
+      "comparison_with_4_1": "Closed Seifert Sigma(2,3,5) has real rational CS_C^* (-1/120 mod Z), placing Borel poles on the imaginary axis zeta_m = i*pi*m^2/60; cusped amphichiral S^3 \\ 4_1 has purely imaginary S_CS = -/+ i*Vol(4_1)/(4*pi^2), placing the -2*pi*i*Delta S_CS Borel singularity on the positive real axis xi = Vol(4_1)/pi = 0.64613184... (strictly off the imaginary substrate ray arg = pi/2)."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
