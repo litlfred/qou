@@ -1,0 +1,470 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T17:26:13.263647+00:00",
+  "commitSha": "f9c1d4936a1bec6a1848e90c3e9a505d68ff61c9",
+  "assertions": [
+    {
+      "name": "sweedler_k12_and_ew_alpha_v3_land_strictly_inside_pdg_oscillation_band",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "8.678 meV < 12.458 meV ((q^2-1)^12 m_e) < 17.567 meV (T(3,5)^2) < 28.277 meV (alpha_v^3 m_e) < 39.874 meV (T(3,5)^2 alpha_v^3 m_e) < 47.904 meV (hbar_q^7 m_e) < 50.302 meV (sqrt(dm31^2))"
+    },
+    {
+      "name": "hbar12_and_me3_over_v2_excluded_by_three_to_five_orders_of_magnitude",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "hbar_q^12 m_e = 0.00045745 meV (suppressed by [q(q+1)]^12 = 27,234x vs Sweedler-12) and m_e^3 / v_weak^2 = 0.00220097 meV (3,943x below solar sqrt(dm21^2))"
+    },
+    {
+      "name": "lower_powers_k8_sweedler_and_alpha_v2_excluded_by_planck_and_katrin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(q^2 - 1)^8 m_e = 4.296 eV and alpha_v^2 m_e = 7.420 eV both exceed Planck 0.12 eV and KATRIN 0.45 eV, uniquely selecting k=12 (Sweedler) and k=3 (alpha_v^3 m_e)"
+    },
+    {
+      "name": "unknot_stabilization_markov_chiral_split_and_jones_writhe_collapse",
+      "computed": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "tau_M(sigma_1)/q^2 == tau_M(sigma_1^-1)*q^2 == q/(q^2+1) while unnormalised ratio is q^4 != 1"
+    },
+    {
+      "name": "analytic_sweedler_log_q_elasticity_matches_cross_anchor_finite_diff",
+      "computed": "1.07717508892103480594366e-15",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-5",
+      "source": "d ln((q^2-1)^12 m_e) / d ln q = 24 q^2 / (q^2 - 1) = 127.445 matches (q_p, q_mu) finite difference"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 277,
+  "computation": "neutrino-unknot-sweedler-lift-probe",
+  "scriptFile": "neutrino_unknot_sweedler_lift_probe.py",
+  "scriptHash": "b0454d02a3f8",
+  "scriptCommitSha": "f9c1d4936a1bec6a1848e90c3e9a505d68ff61c9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/neutrino_unknot_sweedler_lift_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/neutrino_unknot_sweedler_lift_probe.py"
+  },
+  "description": "80-dps cross-anchor adjudication probe for Q-Gap-10 (qou-nu01): evaluates zero-parameter radiative & see-saw neutrino mass lifts above Vol(0_1) = 0 across proton and muon q_0 pins ((q_0^2 - 1)^k m_e, W_{T(3,5)}^2 (q_0^2 - 1)^12 m_e, hbar_{q_0}^k m_e, m_e^3 / v_weak^2, alpha_v^k m_e = m_e / N_v^k, and Weinberg v_weak^2 / M_UV scales), verifies 2-strand 0_1 stabilization Markov framing parity (Dirac vs Majorana 0nu2beta selection), and checks analytic q-elasticities and CODATA-2022 / PDG-2024 uncertainty propagation.",
+  "parameters": {
+    "working_dps": 80,
+    "zero_fitting": true,
+    "cal1_me_MeV": "0.51099895069",
+    "cal1_me_unc_MeV": "0.00000000016"
+  },
+  "data": {
+    "symbolic_identities_Q_of_q": {
+      "sweedler_over_habiro_factor": "(q * (q + 1))**k",
+      "ew_cubic_weinberg_uv_scale": "vew**5 / (me * mp**3)",
+      "me3_vew2_over_alpha_v3_me": "vew * me**2 / mp**3",
+      "unknot_stab_pos_markov_trace": "q**3/(q**2 + 1)",
+      "unknot_stab_neg_markov_trace": "1/(q**3 + q)",
+      "unknot_stab_markov_chiral_diff": "q - 1/q",
+      "unknot_stab_markov_framing_ratio": "q**4",
+      "jones_writhe_normalised_common_value": "q/(q**2 + 1)",
+      "sweedler_log_q_elasticity": "2*k*q**2/(q**2 - 1)"
+    },
+    "observational_anchors_with_uncertainties": {
+      "dm21_sq_eV2": "0.0000753",
+      "dm21_sq_unc_eV2": "0.0000018",
+      "dm31_nh_sq_eV2": "0.0025303",
+      "dm31_nh_sq_unc_eV2": "0.0000280577974901808712872702",
+      "sqrt_dm21_meV": "8.67755725996665492472929",
+      "sqrt_dm21_unc_meV": "0.103715823824302648502741",
+      "sqrt_dm31_nh_meV": "50.3020874318352717007378",
+      "sqrt_dm31_nh_unc_meV": "0.278892973658421221935068",
+      "sin2_theta12_pdg": "0.307",
+      "sin2_theta12_unc_pdg": "0.013",
+      "sin2_theta13_pdg": "0.022",
+      "sin2_theta13_unc_pdg": "0.0007",
+      "planck_sum_bound_meV": "120.0",
+      "katrin_2024_m_nue_bound_meV": "450.0"
+    },
+    "pins": {
+      "proton": {
+        "pin": "proton",
+        "q0_80dps": "1.109978582751380807591669095610768879874499121873578736072814240181798963574483",
+        "q0_sq_minus_1": "0.23205245416676393126980451353563618484968142291699980148328692616728402953079305",
+        "hbar_q0": "0.099081716044258507839177117518906063985258373389445819308881814277176935343766881",
+        "alpha_v_ew_fixed_point": "0.003810711752542020877581921707459735654506370347052842179737385759643170119937753",
+        "N_v_ew_fixed_point": "262.41816881923108883916431207783126215819974999426634492808107452004015115363074",
+        "derived_m_p_MeV": "938.27208942732424736394",
+        "derived_v_weak_GeV": "246.219643561712263584169",
+        "effective_Lambda_EWB_GeV": "2143912666026783.24728906",
+        "sweedler_over_habiro_k12_ratio": "27234.0200749971792771517",
+        "unknot_stabilization_framing": {
+          "tau_M_sigma1_pos": "0.61268803714646525159582986394589924802630839154506475972428668510419114828478759",
+          "tau_M_sigma1_neg": "0.40362773835082593616498365081622430416655089628204020434259063064521524936653769",
+          "chiral_diff_h": "0.2090602987956393154308462131296749438597574952630245553816960544589758989182499",
+          "framing_ratio_q4": "1.5179532498183459375471101827762736396207805095131552131206164135350417518304224",
+          "jones_writhe_norm_pos": "0.49729054560491555599583923166486963184819073032851397634852755507760781528969543",
+          "jones_writhe_norm_neg": "0.49729054560491555599583923166486963184819073032851397634852755507760781528969543",
+          "jones_norm_abs_diff": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82"
+        },
+        "majorana_0nu2beta_nh_m1_zero_band_meV": {
+          "m_bb_min_destructive_meV": "1.49875593357557229711404",
+          "m_bb_max_constructive_meV": "3.7120477805763242519465",
+          "dirac_prediction_meV": "0"
+        },
+        "candidates": {
+          "M0_tree_unknot": {
+            "formula": "volumeMass(m_e, Vol(0_1)=0)",
+            "m_nu_eV": "0.0",
+            "m_nu_meV": "0.0",
+            "propagated_me_unc_meV": "0.0",
+            "ratio_to_sqrt_dm21": "0",
+            "ratio_to_sqrt_dm31": "0",
+            "verdict": "TREE_LEVEL_MASSLESS_BASELINE"
+          },
+          "S_k8_sweedler_4hop": {
+            "formula": "(q_0^2 - 1)^8 * m_e",
+            "m_nu_eV": "4.2964457757922733312413778747065426933471690428673576561268109298774045150238762",
+            "m_nu_meV": "4296.44577579227333124138",
+            "propagated_me_unc_meV": "0.00000134526954154901443404101",
+            "ratio_to_sqrt_dm21": "495.121570169711930805149",
+            "ratio_to_sqrt_dm31": "85.4128724104028202081283",
+            "verdict": "EXCLUDED_TOO_HEAVY_EXCEEDS_PLANCK_120_meV"
+          },
+          "S_k10_sweedler_5hop": {
+            "formula": "(q_0^2 - 1)^10 * m_e",
+            "m_nu_eV": "0.23135647930586644989961153417564818558730513412532171681378768772863708989118247",
+            "m_nu_meV": "231.356479305866449899612",
+            "propagated_me_unc_meV": "7.24405336624559869581791e-8",
+            "ratio_to_sqrt_dm21": "26.6614753869979624661352",
+            "ratio_to_sqrt_dm31": "4.59934152075456739280178",
+            "verdict": "EXCLUDED_TOO_HEAVY_EXCEEDS_PLANCK_120_meV"
+          },
+          "S_k12_sweedler_6hop": {
+            "formula": "(q_0^2 - 1)^12 * m_e",
+            "m_nu_eV": "0.012458162702387542832236647081871273005551710867547845895051032402411854125361765",
+            "m_nu_meV": "12.4581627023875428322366",
+            "propagated_me_unc_meV": "3.90080259399838896596358e-9",
+            "ratio_to_sqrt_dm21": "1.43567623112813842316587",
+            "ratio_to_sqrt_dm31": "0.247666912814894424669374",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "S_k12_t35_2loop": {
+            "formula": "W_{T(3,5)}(q_0)^2 * (q_0^2 - 1)^12 * m_e",
+            "m_nu_eV": "0.017567382382089108877608495016250621807881416049968211194571460240075686341402245",
+            "m_nu_meV": "17.5673823820891088776085",
+            "propagated_me_unc_meV": "5.50056155171917662400505e-9",
+            "ratio_to_sqrt_dm21": "2.02446170688323579043801",
+            "ratio_to_sqrt_dm31": "0.349237641596778619355072",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "S_k14_sweedler_7hop": {
+            "formula": "(q_0^2 - 1)^14 * m_e",
+            "m_nu_eV": "0.00067085139947158838008416180289512676451884568020899675354987824602487491549288087",
+            "m_nu_meV": "0.670851399471588380084162",
+            "propagated_me_unc_meV": "2.1005175014648940709641e-10",
+            "ratio_to_sqrt_dm21": "0.0773087839554245992154066",
+            "ratio_to_sqrt_dm31": "0.013336452495747100772563",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          },
+          "H_k7_habiro": {
+            "formula": "hbar_{q_0}^7 * m_e",
+            "m_nu_eV": "0.047904316330313308187727182482857043154915679506857470976231640532062296042809777",
+            "m_nu_meV": "47.9043163303133081877272",
+            "propagated_me_unc_meV": "1.49994253461783548110486e-8",
+            "ratio_to_sqrt_dm21": "5.52048403659826603592568",
+            "ratio_to_sqrt_dm31": "0.952332572584165602440739",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "H_k8_habiro": {
+            "formula": "hbar_{q_0}^8 * m_e",
+            "m_nu_eV": "0.0047464418679344389527124513376524791450599120579506185827362470011323772530923568",
+            "m_nu_meV": "4.74644186793443895271245",
+            "propagated_me_unc_meV": "1.48616880297709762100254e-9",
+            "ratio_to_sqrt_dm21": "0.54697903174109138747387",
+            "ratio_to_sqrt_dm31": "0.0943587455364825009472222",
+            "verdict": "NEAR_OSCILLATION_SUB_PLANCK_WINDOW"
+          },
+          "H_k12_habiro": {
+            "formula": "hbar_{q_0}^12 * m_e",
+            "m_nu_eV": "0.00000045744853929314117859933118057783588449474866261363281823375874388424053185721142",
+            "m_nu_meV": "0.000457448539293141178599331",
+            "propagated_me_unc_meV": "1.4323271346853455625027e-13",
+            "ratio_to_sqrt_dm21": "0.000052716280122235575651851",
+            "ratio_to_sqrt_dm31": "0.00000909402696086982584039257",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          },
+          "E_me3_over_v2": {
+            "formula": "m_e^3 / v_weak(q_0)^2",
+            "m_nu_eV": "0.0000022009725616065461379838439013138564627259020346106903781203491090290172818261767",
+            "m_nu_meV": "0.00220097256160654613798384",
+            "propagated_me_unc_meV": "6.89151336576196408700721e-13",
+            "ratio_to_sqrt_dm21": "0.000253639647157454051891781",
+            "ratio_to_sqrt_dm31": "0.0000437550939528921186221432",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          },
+          "EW_k2_alpha_v2_me": {
+            "formula": "alpha_v(q_0)^2 * m_e = m_e / N_v^2",
+            "m_nu_eV": "7.4204835575711083540311135123572794022389513407464610819967269711334944041216154",
+            "m_nu_meV": "7420.48355757110835403111",
+            "propagated_me_unc_meV": "0.00000232344384975390082565686",
+            "ratio_to_sqrt_dm21": "855.135072609088481819351",
+            "ratio_to_sqrt_dm31": "147.51840204696594646701",
+            "verdict": "EXCLUDED_TOO_HEAVY_EXCEEDS_PLANCK_120_meV"
+          },
+          "EW_k3_alpha_v3_me": {
+            "formula": "alpha_v(q_0)^3 * m_e = m_e / N_v^3",
+            "m_nu_eV": "0.028277323902381048190328653437098525484467408796488550137718748894430256457097261",
+            "m_nu_meV": "28.2773239023810481903287",
+            "propagated_me_unc_meV": "8.85397478462866725862901e-9",
+            "ratio_to_sqrt_dm21": "3.2586732712023278421835",
+            "ratio_to_sqrt_dm31": "0.562150108396592041882619",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "EW_k3_t35_alpha_v3_me": {
+            "formula": "W_{T(3,5)}(q_0)^2 * alpha_v(q_0)^3 * m_e",
+            "m_nu_eV": "0.039874143050011286976815003976710178723553037951662364700316269419261673224013176",
+            "m_nu_meV": "39.874143050011286976815",
+            "propagated_me_unc_meV": "1.24850802127618864373101e-8",
+            "ratio_to_sqrt_dm21": "4.59508843968890278999",
+            "ratio_to_sqrt_dm31": "0.792693605489931828765531",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "EW_k4_alpha_v4_me": {
+            "formula": "alpha_v(q_0)^4 * m_e = m_e / N_v^4",
+            "m_nu_eV": "0.00010775673052524086103820055913105331843905174784455334110748674446370441313673609",
+            "m_nu_meV": "0.107756730525240861038201",
+            "propagated_me_unc_meV": "3.37399457684951704614078e-11",
+            "ratio_to_sqrt_dm21": "0.0124178645322652628241753",
+            "ratio_to_sqrt_dm31": "0.00214219202475966426583767",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          },
+          "W_seesaw_Nv6": {
+            "formula": "v_weak(q_0)^2 / (m_p * N_v^6) = alpha_v^4 * m_p",
+            "m_nu_eV": "0.19785780883356606816786611856085154614721376804513465034737228947088816280445237",
+            "m_nu_meV": "197.857808833566068167866",
+            "propagated_me_unc_meV": "6.19516916240706633276836e-8",
+            "ratio_to_sqrt_dm21": "22.801095159160767370402",
+            "ratio_to_sqrt_dm31": "3.93339161325431352684803",
+            "verdict": "EXCLUDED_TOO_HEAVY_EXCEEDS_PLANCK_120_meV"
+          },
+          "W_seesaw_Nv7": {
+            "formula": "v_weak(q_0)^2 / (m_p * N_v^7) = alpha_v^5 * m_p",
+            "m_nu_eV": "0.00075397907745428269121612610801892162536031537594324083615444808888558414957994217",
+            "m_nu_meV": "0.753979077454282691216126",
+            "propagated_me_unc_meV": "2.36080039361705153083003e-10",
+            "ratio_to_sqrt_dm21": "0.0868884012938429162837262",
+            "ratio_to_sqrt_dm31": "0.0149890216479784318955418",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          }
+        }
+      },
+      "muon": {
+        "pin": "muon",
+        "q0_80dps": "1.1099785956427390466817951293800017527000655610290115569740457699990950814290311",
+        "q0_sq_minus_1": "0.23205248278502719338811022170353795163425485014156745931324681043910946781220779",
+        "hbar_q0": "0.099081726507577699949005132121918133280071608196867556729693505707052610387369923",
+        "alpha_v_ew_fixed_point": "0.0038107115359709444252638854553733254886285946194567618614600779816408033738555642",
+        "N_v_ew_fixed_point": "262.41818373302993332360450001070282814225530010875819550510368690094619241564262",
+        "derived_m_p_MeV": "938.271860620093659330325",
+        "derived_v_weak_GeV": "246.219597511735590801046",
+        "effective_Lambda_EWB_GeV": "2143912229612932.76644746",
+        "sweedler_over_habiro_k12_ratio": "27234.0258672721285782149",
+        "unknot_stabilization_framing": {
+          "tau_M_sigma1_pos": "0.6126880506382724152208889276461106648319646313607796792710889099112902206608741",
+          "tau_M_sigma1_neg": "0.40362772848795566859008866614419077885182746213490056556734963420514252884447309",
+          "chiral_diff_h": "0.209060322150316746630800261501919885980137169225879113703739275706147691816401",
+          "framing_ratio_q4": "1.5179533203367497287188980702376418079720609855464995558174617784770707346099394",
+          "jones_writhe_norm_pos": "0.49729054500446663146090620173389108786810092966823187770295686008780486076815698",
+          "jones_writhe_norm_neg": "0.49729054500446663146090620173389108786810092966823187770295686008780486076815698",
+          "jones_norm_abs_diff": "0.0"
+        },
+        "majorana_0nu2beta_nh_m1_zero_band_meV": {
+          "m_bb_min_destructive_meV": "1.49875593357557229711404",
+          "m_bb_max_constructive_meV": "3.7120477805763242519465",
+          "dirac_prediction_meV": "0"
+        },
+        "candidates": {
+          "M0_tree_unknot": {
+            "formula": "volumeMass(m_e, Vol(0_1)=0)",
+            "m_nu_eV": "0.0",
+            "m_nu_meV": "0.0",
+            "propagated_me_unc_meV": "0.0",
+            "ratio_to_sqrt_dm21": "0",
+            "ratio_to_sqrt_dm31": "0",
+            "verdict": "TREE_LEVEL_MASSLESS_BASELINE"
+          },
+          "S_k8_sweedler_4hop": {
+            "formula": "(q_0^2 - 1)^8 * m_e",
+            "m_nu_eV": "4.2964500147259167804580956982353222159190492514335271463655466125049725022244886",
+            "m_nu_meV": "4296.4500147259167804581",
+            "propagated_me_unc_meV": "0.00000134527086881080633413012",
+            "ratio_to_sqrt_dm21": "495.122058663595227347704",
+            "ratio_to_sqrt_dm31": "85.4129566799403258519417",
+            "verdict": "EXCLUDED_TOO_HEAVY_EXCEEDS_PLANCK_120_meV"
+          },
+          "S_k10_sweedler_5hop": {
+            "formula": "(q_0^2 - 1)^10 * m_e",
+            "m_nu_eV": "0.23135676463033459294855691053337178832625502222701306807246194727543730921113692",
+            "m_nu_meV": "231.356764630334592948557",
+            "propagated_me_unc_meV": "7.2440623001024767274105e-8",
+            "ratio_to_sqrt_dm21": "26.6615082677338187853773",
+            "ratio_to_sqrt_dm31": "4.59934719297380739341267",
+            "verdict": "EXCLUDED_TOO_HEAVY_EXCEEDS_PLANCK_120_meV"
+          },
+          "S_k12_sweedler_6hop": {
+            "formula": "(q_0^2 - 1)^12 * m_e",
+            "m_nu_eV": "0.012458181139489090068545761825258991041597617734065131886313489239829476350343256",
+            "m_nu_meV": "12.4581811394890900685458",
+            "propagated_me_unc_meV": "3.9008083668796122532549e-9",
+            "ratio_to_sqrt_dm21": "1.43567835581611164976455",
+            "ratio_to_sqrt_dm31": "0.24766727934245796207845",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "S_k12_t35_2loop": {
+            "formula": "W_{T(3,5)}(q_0)^2 * (q_0^2 - 1)^12 * m_e",
+            "m_nu_eV": "0.017567413428804823435066846788593966293352419383536417183235101334442399916950258",
+            "m_nu_meV": "17.5674134288048234350668",
+            "propagated_me_unc_meV": "5.50057127282429361422745e-9",
+            "ratio_to_sqrt_dm21": "2.0244652847006773173823",
+            "ratio_to_sqrt_dm31": "0.349238258802093540511991",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "S_k14_sweedler_7hop": {
+            "formula": "(q_0^2 - 1)^14 * m_e",
+            "m_nu_eV": "0.00067085255774696134987334155504852929580987336870131085735805887681383116687097876",
+            "m_nu_meV": "0.670852557746961349873342",
+            "propagated_me_unc_meV": "2.1005211281662684069363e-10",
+            "ratio_to_sqrt_dm21": "0.0773089174348518469521806",
+            "ratio_to_sqrt_dm31": "0.0133364755221349129955974",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          },
+          "H_k7_habiro": {
+            "formula": "hbar_{q_0}^7 * m_e",
+            "m_nu_eV": "0.047904351742176553637822397490568175663470881551097646975892604853531797988253299",
+            "m_nu_meV": "47.9043517421765536378224",
+            "propagated_me_unc_meV": "1.49994364340643702742387e-8",
+            "ratio_to_sqrt_dm21": "5.520488117454454541926",
+            "ratio_to_sqrt_dm31": "0.952333276568136316120789",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "H_k8_habiro": {
+            "formula": "hbar_{q_0}^8 * m_e",
+            "m_nu_eV": "0.0047464458778411406060091140263586348470986950317672471377084459466761390237989548",
+            "m_nu_meV": "4.74644587784114060600911",
+            "propagated_me_unc_meV": "1.48617005852776244760836e-9",
+            "ratio_to_sqrt_dm21": "0.546979493841954743655913",
+            "ratio_to_sqrt_dm31": "0.0943588252529894369098838",
+            "verdict": "NEAR_OSCILLATION_SUB_PLANCK_WINDOW"
+          },
+          "H_k12_habiro": {
+            "formula": "hbar_{q_0}^12 * m_e",
+            "m_nu_eV": "0.00000045744911898833238668561226457358100118525860039644764826330121182959135915712348",
+            "m_nu_meV": "0.000457449118988332386685612",
+            "propagated_me_unc_meV": "1.43232894978164797275541e-13",
+            "ratio_to_sqrt_dm21": "0.0000527163469261959346888669",
+            "ratio_to_sqrt_dm31": "0.00000909403848514686491228983",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          },
+          "E_me3_over_v2": {
+            "formula": "m_e^3 / v_weak(q_0)^2",
+            "m_nu_eV": "0.0000022009733848939336715991740546512374449922956282882680696266302957434348642787972",
+            "m_nu_meV": "0.00220097338489393367159917",
+            "propagated_me_unc_meV": "6.89151594357512451540623e-13",
+            "ratio_to_sqrt_dm21": "0.00025363974203293143212159",
+            "ratio_to_sqrt_dm31": "0.0000437551103197553954048039",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          },
+          "EW_k2_alpha_v2_me": {
+            "formula": "alpha_v(q_0)^2 * m_e = m_e / N_v^2",
+            "m_nu_eV": "7.4204827141265391753475170974652874547305707617800975418318010215393272861694283",
+            "m_nu_meV": "7420.48271412653917534752",
+            "propagated_me_unc_meV": "0.00000232344358566112551493389",
+            "ratio_to_sqrt_dm21": "855.1349754107014345958",
+            "ratio_to_sqrt_dm31": "147.51838527938010181113",
+            "verdict": "EXCLUDED_TOO_HEAVY_EXCEEDS_PLANCK_120_meV"
+          },
+          "EW_k3_alpha_v3_me": {
+            "formula": "alpha_v(q_0)^3 * m_e = m_e / N_v^3",
+            "m_nu_eV": "0.028277319081194986609174360453875631382181913375886729819151834972396219468709631",
+            "m_nu_meV": "28.2773190811949866091744",
+            "propagated_me_unc_meV": "8.85397327505654619775418e-9",
+            "ratio_to_sqrt_dm21": "3.25867271560978985647845",
+            "ratio_to_sqrt_dm31": "0.56215001255194010543209",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "EW_k3_t35_alpha_v3_me": {
+            "formula": "W_{T(3,5)}(q_0)^2 * alpha_v(q_0)^3 * m_e",
+            "m_nu_eV": "0.039874147710293749766040152197281542977993138999634652522090554199274251547305997",
+            "m_nu_meV": "39.8741477102937497660402",
+            "propagated_me_unc_meV": "1.24850816719531294710464e-8",
+            "ratio_to_sqrt_dm21": "4.59508897673894154791726",
+            "ratio_to_sqrt_dm31": "0.79269369813583780840123",
+            "verdict": "IN_STRICT_OSCILLATION_BAND_[sqrt(dm21^2),_sqrt(|dm31^2|)]"
+          },
+          "EW_k4_alpha_v4_me": {
+            "formula": "alpha_v(q_0)^4 * m_e = m_e / N_v^4",
+            "m_nu_eV": "0.00010775670602904104237904564001643716804729430861257657977058214896677939167114226",
+            "m_nu_meV": "0.107756706029041042379046",
+            "propagated_me_unc_meV": "3.37399380984364243658938e-11",
+            "ratio_to_sqrt_dm21": "0.0124178617093279908719893",
+            "ratio_to_sqrt_dm31": "0.00214219153777788936724851",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          },
+          "W_seesaw_Nv6": {
+            "formula": "v_weak(q_0)^2 / (m_p * N_v^6) = alpha_v^4 * m_p",
+            "m_nu_eV": "0.19785771560516705414109141746184084383537102944617585743163640722963459492371619",
+            "m_nu_meV": "197.857715605167054141091",
+            "propagated_me_unc_meV": "6.19516624331225760517121e-8",
+            "ratio_to_sqrt_dm21": "22.8010844155383145253001",
+            "ratio_to_sqrt_dm31": "3.93338975988393122688357",
+            "verdict": "EXCLUDED_TOO_HEAVY_EXCEEDS_PLANCK_120_meV"
+          },
+          "W_seesaw_Nv7": {
+            "formula": "v_weak(q_0)^2 / (m_p * N_v^7) = alpha_v^5 * m_p",
+            "m_nu_eV": "0.00075397867933746844477971080780489863792777208462428850820338845601781613613534827",
+            "m_nu_meV": "0.753978679337468444779711",
+            "propagated_me_unc_meV": "2.36079914706477987904445e-10",
+            "ratio_to_sqrt_dm21": "0.0868883554149391741992573",
+            "ratio_to_sqrt_dm31": "0.0149890137334596798471813",
+            "verdict": "EXCLUDED_OVER_SUPPRESSED_BELOW_SOLAR_SCALE"
+          }
+        }
+      }
+    },
+    "cross_anchor_sensitivity": {
+      "sweedler_k12_log_q_elasticity_analytic": "127.424885577086644975718",
+      "sweedler_k12_log_q_elasticity_finite_diff": "127.424885577086782234631",
+      "sweedler_k12_proton_vs_muon_ppm": "1.47992139673235551753562",
+      "ew_alpha_v3_me_proton_vs_muon_ppb": "170.496546215789316617717"
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0AnchorReason": "evaluates Q-Gap-10 (qou-nu01) zero-parameter Sweedler, Habiro, Weinberg, and Bring-Schwinger alpha_v^3 neutrino mass lift scales and 0_1 stabilization framing traces at 80 dps across both registered q_0 pins (proton q_p and muon q_mu)"
+}
