@@ -1,7 +1,7 @@
 ---
 # qou-lnkT
 title: 'Doc fix: "no theorem covers the link case" describes proof status, not the formula reach — and Pandey-Wong contradicts it as written'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - c-sigma
     - consistency
 created_at: 2026-08-08T14:07:51Z
-updated_at: 2026-10-04T15:18:52Z
+updated_at: 2026-11-24T13:43:47Z
 parent: qou-mub3
 ---
 
@@ -65,3 +65,5 @@ either confirmed against the Pandey-Wong scope or narrowed; and the
 "nothing in library/" line is corrected.
 
 Audit: `docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md`
+
+Closed post-merge: landed on origin/main in PR #9342 (74429fd5f00).

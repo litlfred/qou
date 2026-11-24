@@ -1,13 +1,13 @@
 ---
 # dcy4
 title: 'uses[] dependency cycles: 20 independent, not 69 — 16 are mutual pairs'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T13:46:44Z
-updated_at: 2026-10-04T15:25:20Z
+updated_at: 2026-11-24T13:43:46Z
 parent: qou-hqo3
 ---
 
@@ -94,3 +94,5 @@ owner's.
 Reproduce: parse `detangler-no-dependency-cycle` evidence out of
 `folio/quantum-observable-universe/**/*.qa.json`, split each chain on `->`,
 build the digraph, run Tarjan for SCCs with more than one node.
+
+Closed post-merge: landed on origin/main in PR #9342 (74429fd5f00).

@@ -1,13 +1,13 @@
 ---
 # qou-7t9z
 title: 'Library doc-id mis-stamp: arxiv-2111.06645/ holds 2304.09377v2.pdf — two different works whose dirs differ only by a v3 suffix'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T09:03:34Z
-updated_at: 2026-10-04T15:21:15Z
+updated_at: 2026-11-24T13:43:46Z
 parent: qou-mub3
 ---
 
@@ -59,3 +59,5 @@ presumably carries a stale or cited stamp on its first page. A cheap guard:
 assert that `metadata.arxiv.id` is consistent with the PDF **filename** where
 the filename itself looks like an arXiv id, and flag the mismatch rather than
 silently preferring one. Nothing in the corpus checks this.
+
+Closed post-merge: landed on origin/main in PR #9342 (74429fd5f00).

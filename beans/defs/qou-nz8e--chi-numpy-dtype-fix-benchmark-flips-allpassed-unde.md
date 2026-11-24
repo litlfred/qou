@@ -1,14 +1,13 @@
 ---
 # qou-nz8e
 title: chi-numpy-dtype-fix-benchmark flips allPassed under numpy 2.4.6
-status: todo
-pr: 8352
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:50:31Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T13:43:45Z
 parent: qou-v2om
 ---
 
@@ -77,3 +76,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8352, closed o
 ## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
 
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). No superseded premise (a numpy dtype benchmark). Not re-run this pass; numpy here is 2.5.3.
+
+Closed post-merge: landed on origin/main in PR #9340 (14a7fdb8a34).

@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-24T13:43:05Z
+updated_at: 2026-11-24T13:45:08Z
 ---
 
 ## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)
@@ -29,7 +29,7 @@ A **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit *
 
 This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/beans` on **every routine Swarm Monitor checkin** (currently `*/10 * * * *` periodic mode, and also renderable on-demand anytime). If the active Swarm Coordinator / Merge Manager ever stalls, runs out of context, or disconnects, **any successor agent reading this single bean (`beans show qou-s028`) has 100% of the end-state criteria, work-item queues, owner rulings, fences, worktree map, and commands required to take over seamlessly in `< 60` seconds.**
 
-- **Last Heartbeat Refresh:** `2026-11-24T13:43:04Z` (`2026-11-24 08:43:04 `)
+- **Last Heartbeat Refresh:** `2026-11-24T13:45:07Z` (`2026-11-24 08:45:07 `)
 - **`litlfred/qou` `origin/main` Tip:** `74429fd5f00`
 - **Live Queue Counts (`litlfred/qou`):** Open PRs = `173` (`163` Ready / `10` Draft) · Merged Since `2026-11-23` = `102` (latest: #9342, #9340, #9339, #9337, #9335, #9333, #9331, #9329, #9327, #9325, #9323, #9321) · Open GitHub Issues = `77`
 - **Disk Health (`/`):** `/dev/disk3s1s1  927G  910G   17G  99% /`
@@ -77,17 +77,15 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 | `ws1-precision` | `claude/precision-4w7k-5le1-5rf8-58zq-20261124` @ `acb646cc6fe` (`dirty=9`) | ws1-precision (#9104): 12-Witness q0 Precision Refill (11/12 all_nuclides_sdp + gates) + idle beans qou-n2dp, qou-5d0x | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
 | `ws15-p3-p5-p6` | `claude/editorial-audit-0sq1-20d3-9rbo-73y1-20261124` @ `fab95788eda` (`dirty=0`) | ws1-precision Witness 12/12 (markov-trace-two-row-tower-rust) + idle beans qou-73kb, qou-m1tr | feat(braids-and-knots,audits): forward-interprets fix, Sniady remark & x631 |
 | `ws2-bridge-hecke` | `claude/frobenius-gram-a71h-z21-bisect-85o2-20261124` @ `33d9d30f73c` (`dirty=0`) | q0-Anchor Final 21 Consistency Drain (qou-q0rf) + idle beans qou-jdrx, qou-ke35 | precision-gates: clear new CODATA stale-edition and witness-value-copy regr |
-| `ws3-l2-physics` | `claude/prose-bib-ahys-bagd-a8rj-d93c-df74-ffkf-20261124` @ `d7e1269e1e0` (`dirty=44`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | feat(qou-1buz,qou-d8up,qou-exr5,qou-f13w,qou-fiaf,qou-ni2p): disambiguate F |
+| `ws3-l2-physics` | `claude/prose-bib-ahys-bagd-a8rj-d93c-df74-ffkf-20261124` @ `74429fd5f00` (`dirty=44`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | fix(exposition,library,scripts): resolve qou-jbbk, qou-7t9z, qou-lnkT, qou- |
 
 ---
 
 ## 3. Live Sampled Compute / Sweep Processes
 
-- `87865 0.0 2048 05:03 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws3-l2-physics && \\012OMP_NUM_THREADS=1 nice -n 15 bun run scrip`
-- `41206 0.0 1168 23:45 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_THR`
-- `41217 0.0 14608 23:44 python3 scripts/lean-library-sweep.py --package QOU --jobs 1 --shadow /tmp/ws51-codemod-shadow`
-- `5460 0.0 2528 03:42 zsh -c export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=`
-- `60048 140.4 1731552 00:22 bun run scripts/run-validate.ts folio/quantum-observable-universe`
+- `86160 90.4 62928 00:17 python3 -c \012import hashlib, json, pathlib, subprocess\012repo = pathlib.Path(".")\012\012# Collect all s`
+- `41206 0.0 1168 25:48 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_THR`
+- `41217 0.0 14704 25:47 python3 scripts/lean-library-sweep.py --package QOU --jobs 1 --shadow /tmp/ws51-codemod-shadow`
 
 ---
 
