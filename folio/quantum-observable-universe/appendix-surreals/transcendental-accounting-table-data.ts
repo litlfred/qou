@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:transcendental-accounting-table-data",
-  title: "Data table from rem:transcendental-accounting",
+  title: "Transcendental period accounting by depth",
   uses: ["rem:transcendental-accounting"],
   tags: ["extracted-table"],
   authorNotes: [
