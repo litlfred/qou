@@ -115,6 +115,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from mpmath import mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+mp.dps = max(mp.dps, 80)
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_2022_source import (  # noqa: E402
     M_E_MEV,
@@ -131,7 +134,7 @@ def main() -> int:
     # neutron-proton mass-difference energy equivalent, minus m_e.
     # mpf end to end -- these come out of `_load_mpf`, so no float64
     # enters here (AGENTS.md NO-FLOAT64).
-    with mp.workdps(50):
+    with mp.workdps(80):
         q_beta = +(M_N_MINUS_P_MEV - M_E_MEV)
     q_beta_err = M_N_MINUS_P_MEV_ERR
 
@@ -140,7 +143,7 @@ def main() -> int:
     # this is what establishes that the value does not inherit the stale
     # proton of the 2026-08-09 vintage straddle.
     route_gap = abs(q_beta - Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT)
-    if route_gap > 1e-12:
+    if route_gap > mp.mpf("1e-12"):
         raise SystemExit(
             "REFUSING: the two CODATA-2022 routes to Q_beta disagree by "
             f"{route_gap} MeV (> 1e-12). (Delta_np - m_e) and "
@@ -152,12 +155,15 @@ def main() -> int:
 
     # Separation from the AME-2020 determination, recorded so a reader can
     # see the size of the dataset choice without re-deriving it.
-    with mp.workdps(50):
+    with mp.workdps(80):
         ame_gap_ppb = (q_beta - Q_BETA_MEV_AME) / Q_BETA_MEV_AME * 10 ** 9
 
     # engine must be a witness-schema enum value; the CODATA-2022
-    # provenance is recorded as a parameter below.
+    # provenance is recorded as a parameter and upstream hash below.
     w = WitnessBuilder("cal-3-q-beta", engine="python")
+    val_masses_path = HERE / "codata-2022-validation-masses.witness.json"
+    if val_masses_path.exists():
+        w.add_upstream(val_masses_path)
     w.add_parameter(
         "source",
         "CODATA 2022 registry: neutron-proton mass difference energy "
@@ -248,7 +254,13 @@ def main() -> int:
         "m_n_pred = m_p_pred + Q_β + m_e",
     ])
 
-    out = w.save()
+    out = w.save(extra={
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Derives CAL-2 proxy Q_beta(n) = (m_n - m_p) - m_e directly from "
+            "CODATA-2022 mass-difference registry; no q0 evaluation."
+        ),
+    })
     print(f"Witness: {out}")
     return 0
 

@@ -42,11 +42,17 @@ References
 
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from decimal import Decimal as _Dec
 import json
 import sys
 from pathlib import Path
 
+import mpmath as mp
+
 sys.path.insert(0, str(Path(__file__).parent))
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+mp.mp.dps = max(mp.mp.dps, 80)
 from witness_base import WitnessBuilder  # noqa: E402
 from experimental_constants import (  # noqa: E402
     M_E_MEV,
@@ -60,17 +66,17 @@ from experimental_constants import (  # noqa: E402
 # links with high-precision SnapPy volumes currently in the repo's
 # experimental_constants table.  Composite atomic-links for
 # heavier isotopes would build from these as JSJ pieces.
-LINK_PRIMITIVES: dict[str, float] = {
+LINK_PRIMITIVES: dict[str, mp.mpf] = {
     "figure-eight (4_1)": VOL_FIGURE_EIGHT,
     "three-twist (5_2)": VOL_THREE_TWIST,
     "Borromean (6^3_2)": VOL_BORROMEAN,
 }
 
 
-def required_rho(delta_binding_mev: float, vol: float) -> float:
+def required_rho(delta_binding_mev: mp.mpf, vol: mp.mpf) -> mp.mpf:
     """ρ_F that reproduces `delta_binding = ρ_F · vol` (in MeV)."""
     if vol <= 0:
-        return float("inf")
+        return mp.inf
     return delta_binding_mev / vol
 
 
@@ -104,7 +110,7 @@ def main() -> None:
             "ame-2020-binding-energies.witness.json not found; "
             "run the AME binding-energy producer first."
         )
-    _ame = json.loads(ame_path.read_text()).get("data", {})
+    _ame = builder.add_upstream(ame_path).get("data", {})
     _AME_ISOTOPES = [  # (witness key, Z, N, isotope label)
         ("B_deuteron_MeV", 1, 1, "2H"),
         ("B_tritium_MeV", 1, 2, "3H"),
@@ -147,72 +153,60 @@ def main() -> None:
                       for _ in LINK_PRIMITIVES))
     print("-" * 110)
 
+    _d = lambda x: _Dec(mp.nstr(x, 20))  # noqa: E731
     rows_out = []
+    rows_mpf = []
     for row in rows_in:
         if row["A"] < 2:
             continue  # ¹H has zero nuclear binding (only 13.6 eV atomic).
         delta = row["delta_binding_MeV"]     # exact AME decimal, as text
-        # DELIBERATE narrowing, and the one place in this file where a float is
-        # the honest type.  `required_rho` divides by a SnapPy volume that
-        # `experimental_constants` carries as a *float64 literal* quoted ±1e-12
-        # (`VOL_FIGURE_EIGHT_ERR`, `VOL_THREE_TWIST_ERR`), so the quotient holds
-        # ~12 significant digits of real information no matter how wide the
-        # numerator is.  Widening the numerator here would not add precision; it
-        # would only let the divisor's *binary* tail print, which is the
-        # float64-padding defect the comment above refuses for `delta` itself.
-        #
-        # Related, and deliberately NOT fixed here: `M_E_MEV` is an `mpf` while
-        # this module never calls `_precision.set_compute_dps()`, so the mpf
-        # divisions below run at mpmath's default dps=15 and the serialized
-        # `required_rho_over_me_per_link` strings carry 15 significant digits —
-        # float64-grade, in string clothing the raw-float64 ratchet cannot see.
-        # Calling `set_compute_dps()` would make that WORSE, not better: at
-        # dps=70 the same quotient prints the volume's binary tail out to 60
-        # places.  The real fix is an exact high-precision source for the three
-        # volumes (`VOL_BORROMEAN_50DPS_STR` exists; 4_1 and 5_2 do not), which
-        # is a separate change with its own numeric blast radius.
-        delta_f = float(delta)
-        ratios = {
-            name: required_rho(delta_f, vol) / M_E_MEV
+        delta_m = mp.mpf(delta)
+        # Arithmetic runs at >=80 dps in mpmath; serialized strings are bounded
+        # to 15 significant digits via `mp.nstr(..., 15)` so that `VOL_THREE_TWIST`
+        # (±1e-12 SnapPy numeric uncertainty) is never padded with binary/decimal
+        # digits past its empirical ceiling.
+        ratios_mpf = {
+            name: required_rho(delta_m, vol) / M_E_MEV
             for name, vol in LINK_PRIMITIVES.items()
         }
-        print(f"{row['isotope']:>8}  {row['A']:>3}  {delta_f:>12.3f}  "
-              # float() for DISPLAY only — mpf has no __format__ for
-              # ">18.3f"; the ratios themselves stay mpf. (qou-9q4h)
-              + "  ".join(f"{float(r):>18.3f}" for r in ratios.values()))
+        ratios = {name: mp.nstr(val, 15) for name, val in ratios_mpf.items()}
+        print(f"{row['isotope']:>8}  {row['A']:>3}  {_Dec(delta):>12.3f}  "
+              + "  ".join(f"{_d(r):>18.3f}" for r in ratios_mpf.values()))
         rows_out.append({
             "isotope": row["isotope"],
             "A": row["A"], "Z": row["Z"], "N": row["N"],
             "delta_binding_MeV": delta,
             "required_rho_over_me_per_link": ratios,
         })
+        rows_mpf.append((row["isotope"], ratios_mpf))
 
     # QOU expects ρ_F ∈ {1, 2} (in units of m_e).  Find the
     # candidate (isotope, link, target_rho) tuples within ±10% of
     # 1 or 2 — these are the cases where a single link primitive
     # plausibly explains the binding.
     matches = []
-    for row in rows_out:
-        for link, rho in row["required_rho_over_me_per_link"].items():
-            for target in (1.0, 2.0):
-                if abs(rho - target) / target < 0.10:
+    for iso_lbl, ratios_mpf in rows_mpf:
+        for link, rho in ratios_mpf.items():
+            for target in (1, 2):
+                target_m = mp.mpf(target)
+                if abs(rho - target_m) / target_m < mp.mpf("0.10"):
+                    dev_pct = (rho - target_m) / target_m * 100
                     matches.append({
-                        "isotope": row["isotope"],
+                        "isotope": iso_lbl,
                         "link": link,
-                        "rho_over_me": rho,
+                        "rho_over_me": mp.nstr(rho, 15),
                         "target_rho_over_me": target,
-                        "deviation_pct": (rho - target) / target * 100,
+                        "deviation_pct": mp.nstr(dev_pct, 15),
                     })
 
     print()
     print(f"Candidate (isotope, link) pairs within ±10% of ρ_F ∈ "
           f"{{m_e, 2 m_e}}: {len(matches)}")
     for m in matches:
-        # float() for DISPLAY only, same as the table above. (qou-9q4h)
         print(f"  {m['isotope']:>5} via {m['link']:>20}  "
-              f"ρ_F = {float(m['rho_over_me']):.3f}·m_e  "
+              f"ρ_F = {_Dec(m['rho_over_me']):.3f}·m_e  "
               f"(target {m['target_rho_over_me']}·m_e, "
-              f"Δ {float(m['deviation_pct']):+.2f}%)")
+              f"Δ {_Dec(m['deviation_pct']):+.2f}%)")
 
     if not matches:
         print("  (none — every isotope's binding requires a "
@@ -259,10 +253,16 @@ def main() -> None:
         "ρ_F ∈ {m_e, 2 m_e} per prop:cpt-orbit-closure-density",
     )
     builder.add_data("link_primitives_MeV_per_unit", {
-        name: M_E_MEV * vol for name, vol in LINK_PRIMITIVES.items()
+        name: mp.nstr(M_E_MEV * vol, 15) for name, vol in LINK_PRIMITIVES.items()
     })
 
-    out_path = builder.save()
+    out_path = builder.save(extra={
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Inverts empirical AME2020 binding energies against SnapPy hyperbolic "
+            "knot volumes and m_e; no q0 evaluation."
+        ),
+    })
     print(f"\nWitness: {out_path}")
 
 

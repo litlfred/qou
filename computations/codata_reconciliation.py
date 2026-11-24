@@ -50,7 +50,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 from _precision import fmt as _fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()
+mp.mp.dps = max(mp.mp.dps, 80)
 
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from experimental_constants import (  # noqa: E402
     M_E_MEV, M_E_MEV_ERR,
@@ -82,10 +84,19 @@ def codata_uncertainty_ppb(codata: mp.mpf, codata_err: mp.mpf) -> mp.mpf:
     return mp.mpf("1e9") * codata_err_m / abs(codata_m)
 
 
-def load_witness(path: Path) -> dict | None:
+def load_witness(rel_path: str, base: Path, builder: WitnessBuilder) -> dict | None:
+    path = base / rel_path
     if not path.exists():
-        return None
-    return json.loads(path.read_text())
+        matches = [
+            m for m in sorted(base.glob(f"**/{Path(rel_path).name}"))
+            if "_deprecated" not in m.parts and "fsh-guts" not in m.parts
+        ]
+        if not matches:
+            return None
+        path = matches[0]
+    body = builder.add_upstream(path)
+    builder._upstream_hashes[-1]["path"] = path.relative_to(base).as_posix()
+    return body
 
 
 def main():
@@ -152,7 +163,7 @@ def main():
     # `max_non_anchor_delta_ppb` metric would be dominated by the
     # upstream derivation gap rather than reporting the structural
     # cross-checks that the QOU pipeline currently meets.
-    atom_w = load_witness(base / "atom-mass-derived.witness.json")
+    atom_w = load_witness("atom-mass-derived.witness.json", base, builder)
     atom_species_rows: list[dict[str, Any]] = []
     if atom_w is not None:
         for item in atom_w.get("data", {}).get("results", []):
@@ -191,7 +202,7 @@ def main():
     # 0.6126880371464652.  The alpha_2 = z^2 check below is convention-INVARIANT
     # (it compares a witness against its own z), so it passed either way and did
     # not surface the frame.  Read the producer's actual output.  [qou-q0zk]
-    h3_w = load_witness(base / "alpha" / "alpha-k-jones-markov-h3.witness.json")
+    h3_w = load_witness("alpha/alpha-k-jones-markov-h3.witness.json", base, builder)
     if h3_w is not None:
         z_val = h3_w.get("z")
         check = (h3_w.get("alpha_k_at_H3_jones_markov", {}) or {}).get(
@@ -216,6 +227,7 @@ def main():
                     "codata_unc_ppb": mp.mpf(1),
                     "predicted_source": "alpha/alpha-k-jones-markov-h3.witness.json",
                     "anchor": False,
+                    "_sig_digits": 16,
                 })
 
     # ── Structural cross-check: Markov-axiom (M3) Σ d_λ y_λ = 1 ─
@@ -225,7 +237,7 @@ def main():
     # sum Σ d_λ²/n! = 1 — and must hit machine precision (~10⁻⁵⁰ at
     # 50 dps).  See docs/audits/2026-05-11-plancherel-usage-audit.md
     # (Finding D) for the disambiguation.
-    macd_w = load_witness(base / "alpha-k-macdonald-closed-form.witness.json")
+    macd_w = load_witness("alpha/alpha-k-macdonald-closed-form.witness.json", base, builder)
     if macd_w is not None:
         # Find the largest M3-completeness assertion's computed.
         # Accept both old (`plancherel_completeness_n*`) and new
@@ -325,10 +337,17 @@ def main():
             source=row["predicted_source"],
         )
 
+    def _ser_val(v: Any, sig: int | None) -> Any:
+        if not isinstance(v, mp.mpf):
+            return v
+        return mp.nstr(v, sig) if sig is not None else _fmt(v)
+
     def _ser_row(r: dict[str, Any]) -> dict[str, Any]:
+        sig = r.get("_sig_digits")
         return {
-            k: (_fmt(v) if isinstance(v, mp.mpf) else v)
+            k: _ser_val(v, sig)
             for k, v in r.items()
+            if not k.startswith("_")
         }
 
     builder.add_data("rows", [_ser_row(r) for r in rows])
@@ -346,15 +365,22 @@ def main():
 
     # Track the maximum non-anchor deviation: this is the "1ppb readiness"
     # number — any non-anchor row exceeding this needs upstream improvement.
-    max_dev = max(
-        (r["delta_ppb"] for r in rows if not r.get("anchor")),
-        default=mp.mpf(0),
-    )
-    builder.add_data("max_non_anchor_delta_ppb", _fmt(max_dev))
+    non_anchor_rows = [r for r in rows if not r.get("anchor")]
+    if non_anchor_rows:
+        winner = max(non_anchor_rows, key=lambda r: r["delta_ppb"])
+        max_dev = winner["delta_ppb"]
+        max_dev_str = _ser_val(max_dev, winner.get("_sig_digits"))
+    else:
+        max_dev = mp.mpf(0)
+        max_dev_str = _fmt(max_dev)
+    builder.add_data("max_non_anchor_delta_ppb", max_dev_str)
     # float() for DISPLAY only — max_dev is an mpf when the Q_n row wins (qou-9q4h).
     print(f"\nMax non-anchor deviation: {float(max_dev):.3f} ppb")  # float64-ok: stdout display only (qou-9q4h)
 
-    out_path = builder.save()
+    out_path = builder.save(extra={
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
+    })
     print(f"\nWitness: {out_path}")
 
 
