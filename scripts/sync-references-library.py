@@ -109,6 +109,14 @@ def library_index() -> dict[str, dict]:
             except Exception:
                 art = {}
             stage = "structure"
+            # Public-release PDF retirement (owner ruling 2026-11-24): third-party
+            # `.pdf` binaries are removed from `library/` while `structure.json`,
+            # `sections/`, and `summary.json` remain. Preserve the canonical
+            # `source.file` provenance path when no `.pdf` binary sits on disk so
+            # existing `library.pdf` blocks stay stable across `--check` runs.
+            src_file = (art.get("source") or {}).get("file")
+            if "pdf" not in info and isinstance(src_file, str) and src_file.lower().endswith(".pdf"):
+                info["pdf"] = f"library/{doc_id}/{src_file}"
             info["pages"] = art.get("source", {}).get("pages")
             ax = (art.get("metadata") or {}).get("arxiv") or {}
             if ax.get("id"):
