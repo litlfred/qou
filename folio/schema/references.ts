@@ -2995,6 +2995,12 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "gatermann-huber2002" },
   { id: "craciun-dickenstein-shiu-sturmfels2009" },
   { id: "bilson-thompson-hackett-kauffman2009" },
+  // 2026-11-24: three-stop Leibniz relational spine and Fefferman–Lee CR Lorentzian lift (bean qou-wywz).
+  { id: "barbour-bertotti1982" },
+  { id: "rovelli1996" },
+  { id: "earman1989" },
+  { id: "fefferman1976" },
+  { id: "lee1986" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

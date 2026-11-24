@@ -1,5 +1,7 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse
+import QOU.InformationTheory.UnifiedClockScaleLayers
+import QOU.InformationTheory.FiniteRieffelQuantumMetric
 import Mathlib.Data.Real.Basic
 
 /-!

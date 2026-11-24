@@ -15,7 +15,9 @@
   "kind": "remark",
   "title": "QOU as the categorical resolution of ADM, Ashtekar, and Smolin--Rovelli",
   "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
     "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+    "papers/quantum-observable-universe/blocks/rem-rieffel-metric-quotient-faithfulness",
     "papers/quantum-observable-universe/blocks/def-categorical-instanton",
     "papers/quantum-observable-universe/blocks/prop-reeb-u1-chart-swap",
     "papers/quantum-observable-universe/blocks/def-contact-affine-chart",
@@ -29,7 +31,11 @@
   "interprets": "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
   "cites": [
     "references/ashtekar1986",
+    "references/barbour-bertotti1982",
+    "references/earman1989",
+    "references/leibniz-clarke1717",
     "references/rovelli1995",
+    "references/rovelli1996",
     "references/rovelli2004",
     "references/thiemann2007"
   ],
