@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460">
+<title>Bring's Four-Holed Surface and the Two Matching Doughnut Knots</title>
+<defs><marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/></marker><marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399"/></marker><marker id="arrow-coral" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#fb7185"/></marker><marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="960" height="460" rx="14" fill="#0d1326"/>
+<text x="480.0" y="34.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle">A Four-Holed Symmetric Surface &amp; the Only Two Matching Doughnut Knots</text>
+<text x="480.0" y="56.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">Permuting 5 balanced coordinates shapes a 4-holed surface; only 9-crossing and 10-crossing torus knots share 4 holes</text>
+<rect x="36.0" y="80.0" width="444.0" height="348.0" rx="10" fill="#131c36" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="258.0" y="108.0" fill="#a78bfa" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Bring's Four-Holed Surface (120 Symmetries)</text>
+<text x="258.0" y="128.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Five coordinates summing to zero in power 1, 2, and 3</text>
+<circle cx="258.0" cy="268.0" r="108.0" fill="#1e1b4b" stroke="#a78bfa" stroke-width="3.0"/>
+<polygon points="258.0,172.0 349.301,238.334 314.427,345.666 201.573,345.666 166.699,238.334" fill="none" stroke="#fbbf24" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+<circle cx="258.0" cy="172.0" r="6.0" fill="#fbbf24" stroke="#0d1326" stroke-width="1.0"/>
+<text x="258.0" y="160.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">z1</text>
+<circle cx="349.301" cy="238.334" r="6.0" fill="#fbbf24" stroke="#0d1326" stroke-width="1.0"/>
+<text x="364.518" y="237.39" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">z2</text>
+<circle cx="314.427" cy="345.666" r="6.0" fill="#fbbf24" stroke="#0d1326" stroke-width="1.0"/>
+<text x="323.832" y="362.61" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">z3</text>
+<circle cx="201.573" cy="345.666" r="6.0" fill="#fbbf24" stroke="#0d1326" stroke-width="1.0"/>
+<text x="192.168" y="362.61" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">z4</text>
+<circle cx="166.699" cy="238.334" r="6.0" fill="#fbbf24" stroke="#0d1326" stroke-width="1.0"/>
+<text x="151.482" y="237.39" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">z5</text>
+<ellipse cx="220.0" cy="234.0" rx="22.0" ry="13.0" fill="#0d1326" stroke="#38bdf8" stroke-width="2.0"/>
+<path d="M 205.0 236.0 Q 220.0 246.0 235.0 236.0" fill="none" stroke="#a78bfa" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="296.0" cy="234.0" rx="22.0" ry="13.0" fill="#0d1326" stroke="#38bdf8" stroke-width="2.0"/>
+<path d="M 281.0 236.0 Q 296.0 246.0 311.0 236.0" fill="none" stroke="#a78bfa" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="220.0" cy="306.0" rx="22.0" ry="13.0" fill="#0d1326" stroke="#38bdf8" stroke-width="2.0"/>
+<path d="M 205.0 308.0 Q 220.0 318.0 235.0 308.0" fill="none" stroke="#a78bfa" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="296.0" cy="306.0" rx="22.0" ry="13.0" fill="#0d1326" stroke="#38bdf8" stroke-width="2.0"/>
+<path d="M 281.0 308.0 Q 296.0 318.0 311.0 308.0" fill="none" stroke="#a78bfa" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="258.0" y="404.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Surface hole count (genus):  g = 4</text>
+<rect x="500.0" y="80.0" width="424.0" height="348.0" rx="10" fill="#131c36" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="712.0" y="108.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Which Doughnut Knots T(p, r) Have 4 Holes?</text>
+<text x="712.0" y="128.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Hole count of knot T(p, r):  g = (p − 1)(r − 1) / 2</text>
+<text x="552.0" y="162.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Knot</text>
+<text x="632.0" y="162.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Crossings</text>
+<text x="738.0" y="162.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Holes g</text>
+<text x="850.0" y="162.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Fits g = 4?</text>
+<rect x="520.0" y="176.0" width="384.0" height="32.0" rx="6" fill="#182444" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="552.0" y="197.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">T(2, 3)</text>
+<text x="632.0" y="197.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">3</text>
+<text x="738.0" y="197.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">(1 × 2)/2 = 1</text>
+<text x="850.0" y="197.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Too few</text>
+<rect x="520.0" y="214.0" width="384.0" height="32.0" rx="6" fill="#182444" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="552.0" y="235.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">T(2, 5)</text>
+<text x="632.0" y="235.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">5</text>
+<text x="738.0" y="235.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">(1 × 4)/2 = 2</text>
+<text x="850.0" y="235.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Too few</text>
+<rect x="520.0" y="252.0" width="384.0" height="32.0" rx="6" fill="#182444" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="552.0" y="273.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">T(2, 7)</text>
+<text x="632.0" y="273.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">7</text>
+<text x="738.0" y="273.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">(1 × 6)/2 = 3</text>
+<text x="850.0" y="273.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Too few</text>
+<rect x="520.0" y="290.0" width="384.0" height="32.0" rx="6" fill="#292524" stroke="#fbbf24" stroke-width="2.0"/>
+<text x="552.0" y="311.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">T(2, 9)</text>
+<text x="632.0" y="311.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">9</text>
+<text x="738.0" y="311.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">(1 × 8)/2 = 4</text>
+<text x="850.0" y="311.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Exact match</text>
+<rect x="520.0" y="328.0" width="384.0" height="32.0" rx="6" fill="#292524" stroke="#fbbf24" stroke-width="2.0"/>
+<text x="552.0" y="349.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">T(3, 5)</text>
+<text x="632.0" y="349.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">10</text>
+<text x="738.0" y="349.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">(2 × 4)/2 = 4</text>
+<text x="850.0" y="349.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Exact match</text>
+<rect x="520.0" y="366.0" width="384.0" height="32.0" rx="6" fill="#182444" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="552.0" y="387.0" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">T(3, 7)</text>
+<text x="632.0" y="387.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">14</text>
+<text x="738.0" y="387.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">(2 × 6)/2 = 6</text>
+<text x="850.0" y="387.0" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Too many</text>
+<text x="712.0" y="414.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Only 9 and 10 crossings fit g = 4 → set the strength of light</text>
+</svg>

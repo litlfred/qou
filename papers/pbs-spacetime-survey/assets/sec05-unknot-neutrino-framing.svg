@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460">
+<title>Simple Loop Neutrino Mass and Ribbon Twist</title>
+<defs><marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/></marker><marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399"/></marker><marker id="arrow-coral" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#fb7185"/></marker><marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="960" height="460" rx="14" fill="#0d1326"/>
+<text x="480.0" y="34.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Equation (7): Why a Simple Unknotted Loop Weighs 40 Million Times Less Than an Electron</text>
+<text x="480.0" y="56.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">A plain loop has zero knot volume, so neutrino mass comes only from 12 tiny weak-switch steps (q₀² − 1)¹²</text>
+<rect x="36.0" y="80.0" width="520.0" height="348.0" rx="10" fill="#131c36" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="296.0" y="108.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Plain Loop (Zero Knot Volume) + 12 Weak Steps</text>
+<circle cx="124.0" cy="208.0" r="48.0" fill="none" stroke="#38bdf8" stroke-width="6.0"/>
+<text x="124.0" y="204.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Plain Loop</text>
+<text x="124.0" y="224.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Volume = 0</text>
+<line x1="182.0" y1="208.0" x2="224.0" y2="208.0" stroke="#fbbf24" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
+<rect x="232.0" y="152.0" width="304.0" height="112.0" rx="10" fill="#182444" stroke="#fbbf24" stroke-width="2.0"/>
+<text x="384.0" y="178.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle">mₑ × (q₀² − 1)¹²</text>
+<text x="384.0" y="202.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">= 511,000 eV × (0.23205)¹²</text>
+<text x="384.0" y="228.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">= 12.5 meV  (17.6 meV with knot dressing)</text>
+<text x="384.0" y="250.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">2-step solar loop control: 9.12 meV (+5.1%)</text>
+<text x="296.0" y="296.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Comparison with Measured Neutrino Mass-Splitting Window:</text>
+<rect x="76.0" y="314.0" width="440.0" height="32.0" rx="6" fill="#182444" stroke="#2a3b68" stroke-width="1.0"/>
+<rect x="146.0" y="318.0" width="250.0" height="24.0" rx="4" fill="#064e3b" stroke="#34d399" stroke-width="1.0"/>
+<text x="271.0" y="335.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Measured window: 8.68 to 49.5 meV</text>
+<circle cx="182.0" cy="330.0" r="6.0" fill="#fbbf24" stroke="#0d1326" stroke-width="1.0"/>
+<circle cx="214.0" cy="330.0" r="6.0" fill="#38bdf8" stroke="#0d1326" stroke-width="1.0"/>
+<text x="296.0" y="376.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Total of 3 neutrinos: 0.016–0.036 eV  (safely under &lt; 0.12 eV sky limit)</text>
+<text x="296.0" y="402.0" fill="#fb7185" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">8 steps gives 4.3 eV (too heavy); 14 steps gives 0.67 meV (too light)</text>
+<rect x="576.0" y="80.0" width="348.0" height="348.0" rx="10" fill="#131c36" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="750.0" y="108.0" fill="#a78bfa" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Ribbon Twist: Distinct vs. Self-Conjugate</text>
+<rect x="600.0" y="134.0" width="300.0" height="124.0" rx="10" fill="#182444" stroke="#38bdf8" stroke-width="1.0"/>
+<text x="750.0" y="158.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Full Integer Ribbon Twist</text>
+<text x="750.0" y="182.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">+1 twist ≠ −1 twist (distinct antiparticle)</text>
+<text x="750.0" y="206.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">→ Keeps matter count strictly conserved</text>
+<text x="750.0" y="228.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">→ Rare neutrinoless nuclear decay does not occur</text>
+<rect x="600.0" y="276.0" width="300.0" height="128.0" rx="10" fill="#182444" stroke="#a78bfa" stroke-width="1.0"/>
+<text x="750.0" y="300.0" fill="#a78bfa" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Clock-of-2 Ribbon Twist (Even/Odd)</text>
+<text x="750.0" y="324.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Two full twists unwind back to zero</text>
+<text x="750.0" y="348.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">→ Neutrino acts as its own antiparticle via Higgs pair</text>
+<text x="750.0" y="372.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">→ Testable in underground double-beta detectors</text>
+</svg>
