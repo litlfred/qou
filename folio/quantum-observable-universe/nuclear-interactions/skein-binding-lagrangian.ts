@@ -15,7 +15,7 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.SkeinBindingLagrangian",
     validation: "not_checked",
   },
-  uses: ["prop:qou-canonical-action", "def:coulomb-charge", "conj:weinberg-angle-categorical"],
+  uses: ["def:categorical-hamiltonian", "prop:qou-canonical-action", "def:coulomb-charge", "conj:weinberg-angle-categorical"],
   authorNotes: [
     {
       kind: "note",

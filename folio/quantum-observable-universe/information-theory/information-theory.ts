@@ -81,6 +81,7 @@ section({
         "information-bandwidth",
         "speed-of-light-regimes-lieb-robinson",
         "mass-energy-equivalence",
+        "mass-energy-legendre-proof",
         "mass-energy-equivalence-proof",
         "mass-energy-equivalence-interpretation",
         "mass-energy-electron-check",

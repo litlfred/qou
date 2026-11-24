@@ -1,4 +1,4 @@
-The electron shows that crossing energy does not determine energy ([energy](#def:mass-energy)).
+The electron shows that crossing energy does not determine energy ([mass--energy equivalence](#prop:mass-energy)).
 
 **Electron.**
 The electron (left trefoil $T_{2,3}$) has $n_c = 3$ positive crossings, so its crossing energy is $\mathfrak{E}_{\mathrm{cross}}(e^-) = 3q \approx 3.330$ Skein units ([crossing energy](#def:crossing-energy)).
