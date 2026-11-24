@@ -11,8 +11,18 @@ Orderings fixed in advance: proton [1,1,0], neutron [1,0,0].  Phi(K) = log|tr(wo
 Report Dm = alpha*|Phi(udd)-Phi(uud)|, alpha = m_e*8G; CODATA printed for comparison only.
 Also print the H_3 channel decomposition of tr_z (w_(3), w_(21), w_(111)) to confirm w_(111)=0 at z_D.
 No outcome selects anything."""
-import sympy as sp, mpmath as mp, itertools
-from qou_substrate.constants import q_at  # proton pin, derived, not a typed copy
+import itertools
+import pathlib
+import sys
+import mpmath as mp
+import sympy as sp
+
+_ROOT = pathlib.Path(__file__).resolve().parents[3]
+for _p in (_ROOT / "tools" / "qou-substrate" / "python", _ROOT / "computations"):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
+
+from qou_substrate.constants import q_at  # noqa: E402  proton pin, derived, not a typed copy
 q,z=sp.symbols('q z',positive=True); h=q-1/q
 perms=list(itertools.permutations(range(3)))
 def comp(a,b): return tuple(a[b[i]] for i in range(3))   # (a∘b)
@@ -48,8 +58,8 @@ def word(o,gens):
         x=mul(x,gen(s,dval[(o[a],o[b])]))
         pos[s-1],pos[s]=b,a
     return x
-mp.mp.dps=40
-q0=mp.mpf(q_at(60))
+mp.mp.dps=80
+q0=mp.mpf(q_at(80))
 al=mp.mpf('0.51099895069')*8*mp.catalan; tgt=mp.mpf('1.29333378')
 zD=q0**3/(q0**2+1); zC=mp.sqrt(q0)/(q0+1)
 for name,gens in (('half twist g1g2g1',[1,2,1]),('full twist (g1g2g1)^2',[1,2,1,1,2,1])):
