@@ -13,7 +13,7 @@ The Hecke relation $T^2 = (q - q^{-1}) T + 1$ and Yang-Baxter relations define a
 The chirality cells $D_q^2 = 0$ in the q-Dirac cell scanner ($\lambda = (2, 1)$ for $H_3$ and higher-$n$ analogues) coincide with the S-fixed central elements of $A$. They produce a persistent gauge-invariant background. This is the categorical analogue of the **gluon condensate** in QCD. The volume match $\mathrm{Vol}(B_3) = 8 G$ with the gluon octet dimension $\dim \mathfrak{su}(3) = 8$ provides the operator-side identification.
 
 **Hadron mass = sum of confinement layers.**
-The unified mass formula ([unified mass formula](#prop:unified-curvature-rank-mass-formula)) reads physical hadron mass as a sum over confinement layers:
+The unified mass formula ([unified mass formula](#conj:unified-curvature-rank-mass-formula)) reads physical hadron mass as a sum over confinement layers:
 
 $$
   \mathfrak{m}_{q,\mathcal{K}}

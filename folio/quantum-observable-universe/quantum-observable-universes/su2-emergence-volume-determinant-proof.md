@@ -26,9 +26,11 @@ commutative diagram of $R$-modules
 \end{equation}
 ```
 
-The volume constraint requires a non-degenerate epimorphism
-$\epsilon \colon \Lambda^2 V \to \mathbf{1}$, which forces
-$\mathrm{rank}(V) = 2$: the epimorphism is non-degenerate only
+The volume constraint requires $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
+to be an isomorphism $\Lambda^2 V \cong \mathbf{1}$, not only an
+epimorphism (an epimorphism allows any rank $r \geq 2$; see the
+[quantum observable universe](#def:quantum-observable-universe)). This
+forces $\mathrm{rank}(V) = 2$: $\epsilon$ is an isomorphism only
 when $\Lambda^2 V$ has rank $1$, and
 $\mathrm{rank}(\Lambda^2 V) = \binom{r}{2}$ equals $1$ precisely
 for $r = 2$ (see the [fundamental object](#def:fundamental-object)). Thus

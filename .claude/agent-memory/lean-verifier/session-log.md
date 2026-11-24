@@ -421,6 +421,17 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
 - BASELINE: streamed restore of cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ a792c46d01b: fetch 1m36s, root .lake 3758 / per-paper 2703 oleans; disk 16G -> 8.8G free.
 - STABLE: cone rebuild into a `cp -al` shadow of the per-paper lib dir (7 modules, HeckeAlgebra 64 s, rest ≤6 s), LEAN_PATH = shadow + root .lake/packages/*; works with no union mirror.
 
+## 2026-11-21 — fresh container with NO `~/.elan` at all (BASELINE + TRAP)
+
+- BASELINE: toolchain from `cat/folio-assistant-sci/lake-cache/toolchain-v4-24-0`, fetched into a
+  throwaway repo and streamed into `/tmp/lean-tc-stage`: fetch 37 s. Olean seed `a792c46d01b`
+  streamed with `--transform 's,^content/,folio/,'`: fetch 1m32s, disk 15G→22G used. Re-measure.
+- `scripts/lean-direct-env.sh` needs `$HOME/.elan/toolchains/leanprover--lean4---v4.24.0`; a symlink
+  to the staged dir is enough (no elan binary needed).
+- TRAP (again): the seed's trace for `QOU/BraidKnot/FrobeniusSelfDualityForcesLPDualExtraction`
+  held source hash `11653228326155494116`, current source `15718497695842365695` — stale. A
+  dependent content block compiled against it would be certified against old source. Rebuilt it
+  lean-direct into a scratch shadow prepended to `LEAN_PATH` (2.9 s; its imports are Mathlib-only).
 ## 2026-11-15 — 4-PR merge verification (#7991/#7990/#7987/#7982), fresh container, no elan
 - STABLE: toolchain with no elan and no `zstd`: `curl -sSfL …/releases/download/v4.24.0/lean-4.24.0-linux.zip` (730 MB, ~30 s) + `python3 zipfile.extractall` + `chmod +x bin/*` → working `lean`. The `.tar.zst` downloads too but nothing here can decompress it.
 - STABLE: restore to a SEPARATE base dir (not the repo): stream `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` (head a792c46d01b, 1m49s fetch, 50 s extract, 6492 oleans) into `tar xzf - -C $BASE --transform 's,^content/,folio/,'`. Per PR: `cp -al` each package lib dir into `$SHADOW/<QOU|UGB|Fred2005>`, put the shadow roots first on LEAN_PATH, rebuild the Lake-hash dirty closure there (unlink before `lean -o`, and `mkdir -p` the parent — new module dirs like `QOU/KZ/` are absent from the cache). Each PR worktree costs ~2.5 G.

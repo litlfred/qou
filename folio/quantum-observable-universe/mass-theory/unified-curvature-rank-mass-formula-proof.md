@@ -1,4 +1,4 @@
-*Proof.*
+*Sketch (not a proof).* The argument below assumes the depth identification and does not determine the $\alpha_k$.
 
 By [spectral sequence collapse](#prop:spectral-sequence-collapse),
 $\mathrm{HH}^k(H_n(R, q)) = 0$ for $k \geq 1$ at generic $q$, so only
@@ -15,7 +15,7 @@ $\int_{A_\lambda} = \int_A \circ\, e_\lambda$
 ([Markov–Frobenius pairing](#conj:knot-factor-frobenius-pairing))
 extracts the $\lambda$-component. Wedderburn-weighted logarithms of
 those components, binned by depth, give the $\mathfrak{m}^{(k)}$
-functionals. $\square$
+functionals.
 
 **Mapping to the "six terms + Term 7" labelling.**
 *The seven named terms each map to a curvature-rank stratum or

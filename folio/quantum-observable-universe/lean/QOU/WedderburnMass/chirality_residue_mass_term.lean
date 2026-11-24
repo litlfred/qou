@@ -42,7 +42,7 @@ class ChiralityResidueMassTermContext where
 /-- **Proposition statement** (from manuscript):
 
 Per the
-[unified curvature-rank mass formula](#prop:unified-curvature-rank-mass-formula),
+[unified curvature-rank mass formula](#conj:unified-curvature-rank-mass-formula),
 the categorical mass of a knot $\mathcal{K}$ probed by test element
 $\mathcal{T} \in A = H_n(R, q)$ decomposes as a sum over GB-filtration
 strata.  This proposition refines that decomposition by splitting each

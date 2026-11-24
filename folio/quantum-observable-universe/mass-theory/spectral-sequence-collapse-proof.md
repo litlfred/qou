@@ -28,7 +28,7 @@ that does sum to $1$).  Binning by GB-depth
 gives the curvature-rank decomposition
 $\mathfrak{m}_{q,\mathcal{K}} = \sum_k \alpha_k \cdot
 \mathfrak{m}^{(k)}_{q,\mathcal{K}}(1)$
-([unified mass formula](#prop:unified-curvature-rank-mass-formula)).*
+([unified mass formula](#conj:unified-curvature-rank-mass-formula)).*
 
 **Frobenius duality of strata.**
 *The Frobenius pairing $\langle a, b \rangle = \int_A a \cdot b$ gives

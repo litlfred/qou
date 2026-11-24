@@ -890,7 +890,6 @@
 | [prop:two-filtration-bridge-small-cases](#prop:two-filtration-bridge-small-cases) | Two-filtration bridge map verified at small partitions ($n \leq 4$) | Ch 19 |
 | [prop:he4-two-row-dominance](#prop:he4-two-row-dominance) | Two-row stratum carries $\ge 80\%$ of $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ at $q_0$ (exactly $1$ empirically) | Ch 11 |
 | [prop:type-b-folded-crystal-combinatorics](#prop:type-b-folded-crystal-combinatorics) | Type-B folded crystal combinatorics: $c(\lambda) + c(\lambda^T) = 0$ summand-by-summand | Ch 14 |
-| [prop:unified-curvature-rank-mass-formula](#prop:unified-curvature-rank-mass-formula) | Unified curvature-rank mass formula (clarifies six terms + Term 7) | Ch 11 |
 | [prop:unified-iterative-correction](#prop:unified-iterative-correction) | Unified iterative LP-dual correction: per-step Wedderburn projection over all partitions $\lambda \vdash k$ for $k = 2, \ldots, K$, starting at $A = 1$ (no special cases) | Ch 11 |
 | [prop:delta-max-uniform-bound](#prop:delta-max-uniform-bound) | Uniform bound on the per-level jet residual $|\Delta^{(n)}|$ | Ch 11 |
 | [prop:nuclear-groebner-reduction](#prop:nuclear-groebner-reduction) | Unique nuclear normal form via Gröbner reduction in $H_n(q)$ | Ch 12 |
@@ -1130,6 +1129,7 @@
 | [conj:lqg-entropy-qdim-partition-pole](#conj:lqg-entropy-qdim-partition-pole) | Horizon entropy as the $q$-dimension partition-function pole | Ch 13 |
 | [conj:infinitesimal-frobenius](#conj:infinitesimal-frobenius) | Infinitesimal Frobenius pairing: $\int_A \circ \mu = \mathrm{id} + O(\varepsilon)$ | Ch 26 |
 | [conj:infinitesimal-observability](#conj:infinitesimal-observability) | Infinitesimal observability: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \leq \varepsilon$ | Ch 25 |
+| [conj:unified-curvature-rank-mass-formula](#conj:unified-curvature-rank-mass-formula) | Unified curvature-rank mass formula (clarifies six terms + Term 7) | Ch 11 |
 | [conj:vacuum-epsilon](#conj:vacuum-epsilon) | Infinitesimal vacuum: $\mathrm{Geom}(\bigcirc) = \varepsilon$ | Ch 25 |
 | [conj:inter-nucleon-channel-color-tube](#conj:inter-nucleon-channel-color-tube) | Inter-nucleon Hecke channel assignment from Bring color-tube weighting | Ch 6 |
 | [conj:single-volume-irrationality](#conj:single-volume-irrationality) | Irrationality of a single hyperbolic knot volume | Ch 14 |

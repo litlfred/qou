@@ -1,4 +1,4 @@
-*Proof.* The unified mass formula ([unified mass formula](#prop:unified-curvature-rank-mass-formula)) decomposes mass as $\sum_k \alpha_k \mathfrak{m}^{(k)}_{q,\mathcal{K}}$. For $k \geq 4$, no specific hyperbolic-knot ideal remains in the centre $Z(A)$ ([universal residue](#prop:plancherel-term-7-formulation)). The surviving structure is the dualizing-complex residue. Its normalisation is $\alpha = m_e \cdot 8 G$ by the Planck-unit convention. Solving for $G$ yields the displayed expression. $\square$
+*Proof.* The unified mass formula ([unified mass formula](#conj:unified-curvature-rank-mass-formula)) decomposes mass as $\sum_k \alpha_k \mathfrak{m}^{(k)}_{q,\mathcal{K}}$. For $k \geq 4$, no specific hyperbolic-knot ideal remains in the centre $Z(A)$ ([universal residue](#prop:plancherel-term-7-formulation)). The surviving structure is the dualizing-complex residue. Its normalisation is $\alpha = m_e \cdot 8 G$ by the Planck-unit convention. Solving for $G$ yields the displayed expression. $\square$
 
 **Connection to substrate geometry.**
 

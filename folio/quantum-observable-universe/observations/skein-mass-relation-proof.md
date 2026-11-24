@@ -13,4 +13,6 @@ $$
 
 so $1/q = 1 - {{ qou.computations.q-pinning-50-digit.derived_50_digit.hbar_q | precision: 4 }} = {{ qou.computations.q-pinning-50-digit.derived_50_digit.q_inv | precision: 4 }}$ and $q \approx {{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 6 }}$.
 
-The Skein relation acts as the mass-functional analogue of the Kauffman bracket recursion. At each crossing in the color-exchange diagram of a hadron, the three resolutions $L_+$, $L_-$, and $L_0$ satisfy $q\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) = (q^{1/2}-q^{-1/2})\mathcal{M}(L_0)$. This relation descends from the $q$-deformed $\mathrm{SU}(2)$ Chern--Simons functional on the $1$-jet bundle prolongation of the CR manifold ([Chapter](#chap:path-integrals-braiding)). $\square$
+The relation fixes $q$ only. No skein relation holds for the mass functional
+itself: see [the remark](#rem:skein-mass-relation) for the figure-eight
+counterexample. $\square$

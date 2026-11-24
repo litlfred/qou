@@ -14,7 +14,7 @@ export default proposition({
     ref: "qou:QOU.WedderburnMass.confinement_categorical",
     validation: "not_checked",
   },
-  uses: [],
+  uses: ["prop:spectral-sequence-collapse"],
   computation: {
     engine: "python",
     script: "computations/atomic_chirality_residue.py",
