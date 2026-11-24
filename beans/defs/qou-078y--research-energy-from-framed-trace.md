@@ -8,7 +8,7 @@ tags:
     - mass-energy
     - research
 created_at: 2026-11-15T20:26:03Z
-updated_at: 2026-11-17T23:08:21Z
+updated_at: 2026-11-24T21:23:53Z
 parent: qou-6qbv
 ---
 
@@ -143,3 +143,7 @@ breaker; the γγ-walk p/n χ₂₁ difference is element choice (qou-99qc). Lea
 ## 2026-11-17 sibling sweep
 Unpushed-to-PR work: branch claude/cyclic-square-cross-term-is-dressing-blind-2026-09-14 (6 commits, no PR), adds RevisitClassCrossTerm.lean. Left: lean-direct verify, open a PR (ask owner first, math repo).
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+
+## 2026-11-24T21:23:52Z — checked against 1e8db432857 (categorical Hamiltonian, E_GS reframe)
+1e8db43 reframes thm:groebner-shirshov-energy as the archimedean l^1 word-length rewriting norm E = Σ|c_w|ℓ(w). It is listed beside the traced Hamiltonian E₀Σc_w tr_M(w) and the z→1 shadow net = Σc_w, and called 'normal-form complexity rather than binding energy'. That agrees with this bean's C1 result: in E_cross = w cosh λ + ℓ sinh λ, only the writhe part can come from a trace, and the rest is gate-count (computational) cost. It also agrees with C3/C4, the cost bound |τ| ≤ M_n·heckeCost. 1e8db43 adds no crossing-additive trace-derived functional. Open items 1-4 above are unchanged. No takeover: no live backing branch, last update 2026-11-17, open research rather than a stalled claim.
