@@ -1357,6 +1357,7 @@ def evaluate_static_and_analytic_models(
 
     model_names = list(v_by_a[2].keys())
     models_out: dict[str, dict] = {}
+    a2_b_mev_by_model: dict[str, mp.mpf] = {}
     max_cg_res = mp.mpf(0)
     max_eig_res = mp.mpf(0)
 
@@ -1403,9 +1404,9 @@ def evaluate_static_and_analytic_models(
                 "delta_E_BH2_dimless": fmt(delta_bh2, dps=OUT_DPS),
                 "E_ground_exact_dimless": fmt(e_ground, dps=OUT_DPS),
                 "hidden_colour_admixture_prob": fmt(p_hid_prob, dps=OUT_DPS),
-                "bind_BH2_in_Eosc_MeV": fmt(abs(delta_bh2) * eosc_mev, dps=25),
-                "bind_exact_in_Eosc_MeV": fmt(abs(e_ground) * eosc_mev, dps=25),
-                "bind_exact_in_E0_MeV": fmt(abs(e_ground) * e0_mev, dps=25),
+                "bind_BH2_in_Eosc_MeV": fmt(abs(delta_bh2) * eosc_mev, dps=OUT_DPS),
+                "bind_exact_in_Eosc_MeV": fmt(abs(e_ground) * eosc_mev, dps=OUT_DPS),
+                "bind_exact_in_E0_MeV": fmt(abs(e_ground) * e0_mev, dps=OUT_DPS),
                 "cg_solve_inf_residual": fmt(cg_res, dps=15),
                 "lanczos_eig_inf_residual": fmt(eig_res, dps=15),
             }
@@ -1415,6 +1416,7 @@ def evaluate_static_and_analytic_models(
         b2_mev = b2_ex * eosc_mev
         b3_mev = shifts_exact[3] * eosc_mev
         b4_mev = shifts_exact[4] * eosc_mev
+        a2_b_mev_by_model[m_name] = b2_mev
 
         models_out[m_name] = {
             "per_A": per_a,
@@ -1448,8 +1450,8 @@ def evaluate_static_and_analytic_models(
     kappa3_q0 = -mp.mpf(8) / ((q2_q0**3) * (q3_q0**3))
     kappa4_q0 = mp.mpf(8) / ((q2_q0**4) * (q3_q0**4))
 
-    b2_th_dimless = abs(mp.mpf(models_out["M1_kA_2body_boundary"]["per_A"]["A=2"]["E_ground_exact_dimless"]))
-    b2_th_mev = b2_th_dimless * eosc_mev
+    b2_th_mev = a2_b_mev_by_model["M1_kA_2body_boundary"]
+    b2_th_dimless = b2_th_mev / eosc_mev
 
     v3_plaq_sq = diag_by_a[3]["v3_plaq_3cluster_norm_sq"]
     v4_plaq_sq = diag_by_a[4]["v4_plaq_4cluster_norm_sq"]
@@ -1466,11 +1468,12 @@ def evaluate_static_and_analytic_models(
                 + mp.mpf(c4_c) * (v4_sq / (mp.mpf(4) * delta8_q0))
             )
             m5_b[a_nuc] = shift_dimless * eosc_mev
+        a2_b_mev_by_model[m5_tag] = m5_b[2]
 
         models_out[m5_tag] = {
             "per_A": {
                 f"A={a_nuc}": {
-                    "bind_exact_in_Eosc_MeV": fmt(m5_b[a_nuc], dps=25),
+                    "bind_exact_in_Eosc_MeV": fmt(m5_b[a_nuc], dps=OUT_DPS),
                 }
                 for a_nuc in (2, 3, 4)
             },
@@ -1488,10 +1491,13 @@ def evaluate_static_and_analytic_models(
             },
         }
 
+    max_a2_dev_mev = max(abs(val - b2_th_mev) for val in a2_b_mev_by_model.values())
+
     summary = {
         "models": models_out,
         "b2_th_Eosc_MeV": b2_th_mev,
         "b2_th_dimless": b2_th_dimless,
+        "max_a2_deviation_mev": max_a2_dev_mev,
         "kappa3_at_q0": fmt(kappa3_q0, dps=OUT_DPS),
         "kappa4_at_q0": fmt(kappa4_q0, dps=OUT_DPS),
         "v3_plaq_3cluster_norm_sq": fmt(v3_plaq_sq, dps=OUT_DPS),
@@ -2098,36 +2104,34 @@ def main() -> int:
         )
         wb.add_assertion(
             "deuteron_2H_benchmark_preserved_identically_across_all_3body_4body_plaquette_models",
-            fmt(
-                max(
-                    abs(
-                        mp.mpf(static_res["models"][m]["per_A"]["A=2"]["bind_exact_in_Eosc_MeV"])
-                        - static_res["b2_th_Eosc_MeV"]
-                    )
-                    for m in static_res["models"]
-                ),
-                dps=15,
-            ),
+            fmt(static_res["max_a2_deviation_mev"], dps=15),
             "0",
             "1e-70",
             source="f_3(2) = 0 and c_4(2) = 0 on K_2 (zero 3-/4-body terms in deuteron)",
         )
 
         wb.add_caveat(
-            "1. At fixed spatial overlap (eta = 1), distinct nucleon clusters on K_A with Wigner "
-            "Majorana space-exchange P_{ab}^x = +1 avoid single-bag 12q quark-Pauli core quenching "
-            "(lifting 4He from 6.65 MeV in [12]_S12 to 14.33-15.49 MeV across M1..M4) while preserving "
-            "2H = 2.2648 MeV (+1.81%) identically because C(2,3) = 0 and c_4(2) = 0; however, cyclic "
-            "3-body triangular and 4-body tetrahedral colour-reconnection plaquettes are higher-order "
-            "in the colour-octet cumulant kappa_k(q_0) = (-1)^k * 8 / ([2]_{q_0}^k [3]_{q_0}^k) and "
-            "cannot by themselves supply the missing ~1.95x spatial compression factor at fixed radius. "
-            "2. Including 3D relative Jacobi variational kinematics ((A - 1) kinetic modes vs C(A,2) "
-            "Wigner-symmetric pairs, free_parameters = 0) supplies the super-pairwise Hall-Post "
-            "kinetic cancellation mechanism: in the order-zero nuclear kinetic scale E_0(q_0) = "
-            "m_e / (q_0(q_0 - 1)), the fixed-eta_2^* Hall-Post lower bound already reaches ~26.02 MeV "
-            "at 4He (-8.04% vs 28.2956 MeV), while unrestricted compression without a short-range "
-            "nucleon repulsive core overshoots via Thomas-type collapse, pinpointing the microscopic "
-            "short-range nucleon-overlap form factor F(eta) as the remaining quantitative closure target."
+            "1. Fixing #9221's reversed non-adjacent braid transport in M1_kA_2body_boundary restores "
+            "exact 1 : 3 : 6 BH2 pair scaling and lifts A=3 at fixed spatial overlap from 5.1059 MeV "
+            "to 6.9623 MeV (-9.79% vs 3He) while preserving 2H = 2.2648 MeV (+1.81%) and placing pure "
+            "pairwise 4He at 14.3267 MeV (6.326x, vs single-bag [12]_S12 Pauli-quenched 6.65 MeV). "
+            "2. Adding pre-registered positive-braid 3-interface triangular plaquettes across C(A,3) "
+            "faces and 4-interface Hamiltonian rings across c_4(A) = 3*C(A,4) tetrahedral 4-cycles "
+            "with direct holonomy sign (+, M3a_kA_plaquette_pos, free_parameters = 0) yields "
+            "2H = 2.2648 MeV (+1.81%), A=3 = 9.0140 MeV (+6.27% vs 3H), and 4He = 29.3291 MeV "
+            "(+3.65% vs 28.2956 MeV, ratio 1 : 3.980 : 12.950 vs empirical 1 : 3.813 : 12.720), while "
+            "the 2nd-order non-double-counted 3-/4-cluster cumulant sum (M5a) gives 8.5574 MeV (+0.89% "
+            "vs 3H) and 24.7943 MeV (-12.37% vs 4He); by contrast, the opposite Kogut-Susskind sign "
+            "(-, M3a_kA_plaquette_neg = 17.5360 MeV) and strictly planar cyclic cumulants without "
+            "interior braid over-crossings (M5b = 13.5965 MeV) underbind 4He, showing sign/ordering "
+            "sensitivity of non-local braid holonomies. "
+            "3. Independently, pure 2-body Wigner pairing with 3D relative Jacobi variational "
+            "compression in the order-zero nuclear kinetic scale E_0(q_0) = m_e / (q_0(q_0 - 1)) "
+            "(J_var_selfbound_E0, free_parameters = 0) brackets empirical 4He between 26.0197 MeV "
+            "(-8.04%, fixed-eta_2^* Hall-Post bound) and 30.5457 MeV (+7.95%, unrestricted eta_4^*), "
+            "confirming that 3D Jacobi kinematics and tetrahedral colour-flux ring reconnection must "
+            "be derived jointly from a single microscopic 3D spatial-braid action so their contributions "
+            "are not double-counted (as seen in J_var_breath__M3a_plaq_pos = 35.2700 MeV, +24.65%)."
         )
 
         out = wb.save({"q0Anchor": "proton", "q0Value": fmt(q0, dps=OUT_DPS)})
