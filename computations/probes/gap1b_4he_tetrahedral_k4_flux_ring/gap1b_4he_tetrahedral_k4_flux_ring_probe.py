@@ -710,12 +710,126 @@ def cg_solve_spd(
     return x, inf_res
 
 
+def tridiag_solve_gepp(
+    dl_in: list[mp.mpf], d_in: list[mp.mpf], du_in: list[mp.mpf], rhs_in: list[mp.mpf]
+) -> list[mp.mpf]:
+    """Exact O(k) tridiagonal linear solver with partial pivoting (LAPACK `dgtsv` algorithm)."""
+    k = len(d_in)
+    zero = mp.mpf(0)
+    tiny = mp.mpf("1e-150")
+    dl = list(dl_in)
+    d = list(d_in)
+    du = list(du_in)
+    du2 = [zero] * max(0, k - 2)
+    rhs = list(rhs_in)
+
+    for i in range(k - 1):
+        if abs(d[i]) >= abs(dl[i]):
+            piv = d[i] if d[i] != zero else tiny
+            d[i] = piv
+            fact = dl[i] / piv
+            d[i + 1] -= fact * du[i]
+            rhs[i + 1] -= fact * rhs[i]
+        else:
+            # Swap row i and row i + 1
+            piv = dl[i]
+            fact = d[i] / piv
+            d[i] = piv
+            temp = d[i + 1]
+            d[i + 1] = du[i] - fact * temp
+            du[i] = temp
+            if i + 1 < k - 1:
+                du2[i] = du[i + 1]
+                du[i + 1] = -fact * du[i + 1]
+            r_tmp = rhs[i]
+            rhs[i] = rhs[i + 1]
+            rhs[i + 1] = r_tmp - fact * rhs[i + 1]
+
+    if d[k - 1] == zero:
+        d[k - 1] = tiny
+    x = [zero] * k
+    x[k - 1] = rhs[k - 1] / d[k - 1]
+    if k >= 2:
+        x[k - 2] = (rhs[k - 2] - du[k - 2] * x[k - 1]) / d[k - 2]
+    for i in range(k - 3, -1, -1):
+        x[i] = (rhs[i] - du[i] * x[i + 1] - du2[i] * x[i + 2]) / d[i]
+    return x
+
+
+def tridiag_lowest_eigenpair_sturm(
+    alphas: list[mp.mpf], betas: list[mp.mpf]
+) -> tuple[mp.mpf, list[mp.mpf]]:
+    """Exact 80-dps O(k) lowest eigenpair of an unreduced symmetric tridiagonal matrix via
+    Sturm-sequence bisection (280 steps) + 3-step partial-pivoted shifted inverse iteration."""
+    k_dim = len(alphas)
+    one = mp.mpf(1)
+    if k_dim == 1:
+        return alphas[0], [one]
+
+    zero = mp.mpf(0)
+    half = one / mp.mpf(2)
+    tiny_piv = mp.mpf("1e-150")
+    b_sq = [b * b for b in betas]
+
+    lo = min(
+        alphas[i]
+        - (abs(betas[i - 1]) if i > 0 else zero)
+        - (abs(betas[i]) if i < k_dim - 1 else zero)
+        for i in range(k_dim)
+    ) - one
+    hi = min(alphas) + mp.mpf("1e-65")
+
+    def count_lt(mu: mp.mpf) -> int:
+        cnt = 0
+        d_val = alphas[0] - mu
+        if d_val <= zero:
+            cnt += 1
+            if d_val == zero:
+                d_val = -tiny_piv
+        for i in range(1, k_dim):
+            d_val = (alphas[i] - mu) - b_sq[i - 1] / d_val
+            if d_val <= zero:
+                cnt += 1
+                if d_val == zero:
+                    d_val = -tiny_piv
+        return cnt
+
+    for _ in range(280):
+        mid = half * (lo + hi)
+        if count_lt(mid) >= 1:
+            hi = mid
+        else:
+            lo = mid
+    lam_min = half * (lo + hi)
+
+    shift = lam_min - mp.mpf("1e-77")
+    d_shifted = [a - shift for a in alphas]
+    u_vec = [one / mp.mpf(i + 1) for i in range(k_dim)]
+    nrm = mp.sqrt(dot_mp(u_vec, u_vec))
+    u_vec = [x / nrm for x in u_vec]
+    for _ in range(3):
+        u_vec = tridiag_solve_gepp(betas, d_shifted, betas, u_vec)
+        nrm = mp.sqrt(dot_mp(u_vec, u_vec))
+        u_vec = [x / nrm for x in u_vec]
+
+    # Rayleigh polish on T
+    tu0 = alphas[0] * u_vec[0] + betas[0] * u_vec[1]
+    rq = u_vec[0] * tu0
+    for i in range(1, k_dim - 1):
+        rq += u_vec[i] * (betas[i - 1] * u_vec[i - 1] + alphas[i] * u_vec[i] + betas[i] * u_vec[i + 1])
+    rq += u_vec[k_dim - 1] * (betas[k_dim - 2] * u_vec[k_dim - 2] + alphas[k_dim - 1] * u_vec[k_dim - 1])
+    return rq, u_vec
+
+
 def lowest_eigenpair_sym(
-    mat: list[list[mp.mpf]], start_idx: int, perturbed_start: bool = True
+    mat: list[list[mp.mpf]],
+    start_idx: int,
+    perturbed_start: bool = True,
+    force_perturbed: bool = False,
 ) -> tuple[mp.mpf, list[mp.mpf], mp.mpf]:
     """Exact 80-dps lowest eigenpair of real-symmetric `mat`, certified by full L_inf residual."""
     n = len(mat)
-    if n <= 60:
+    if n <= 10:
         m_mp = mp.matrix(mat)
         evals, evecs = mp.eigsy(m_mp)
         min_idx = min(range(n), key=lambda idx: evals[idx])
@@ -727,7 +841,8 @@ def lowest_eigenpair_sym(
 
     zero = mp.mpf(0)
     srows = to_srows(mat)
-    if perturbed_start:
+    use_pert = force_perturbed or (perturbed_start and n <= 60)
+    if use_pert:
         v0 = [mp.mpf(1) / mp.mpf(1000 * (i + 3)) for i in range(n)]
         v0[start_idx] = mp.mpf(1)
         nrm0 = mp.sqrt(dot_mp(v0, v0))
@@ -737,25 +852,17 @@ def lowest_eigenpair_sym(
         v0[start_idx] = mp.mpf(1)
 
     basis: list[list[mp.mpf]] = [v0]
-    m_steps = min(200, n)
+    m_steps = min(140, n)
     alphas: list[mp.mpf] = []
     betas: list[mp.mpf] = []
-    check_steps = {25, 45, 70, 110, 160, m_steps}
+    check_steps = {25, 42, 65, 95, 120, m_steps}
 
     def extract_ritz() -> tuple[mp.mpf, list[mp.mpf], mp.mpf]:
         k_dim = len(alphas)
-        tri = mp.matrix(k_dim, k_dim)
-        for i in range(k_dim):
-            tri[i, i] = alphas[i]
-            if i < len(betas) and i + 1 < k_dim:
-                tri[i, i + 1] = betas[i]
-                tri[i + 1, i] = betas[i]
-        t_evals, t_evecs = mp.eigsy(tri)
-        min_idx = min(range(k_dim), key=lambda idx: t_evals[idx])
-        lam_cur = t_evals[min_idx]
+        lam_cur, t_vec = tridiag_lowest_eigenpair_sturm(alphas, betas[: k_dim - 1])
         vec_cur = [zero] * n
         for s_idx in range(k_dim):
-            coeff = t_evecs[s_idx, min_idx]
+            coeff = t_vec[s_idx]
             bs = basis[s_idx]
             for i in range(n):
                 vec_cur[i] += coeff * bs[i]
@@ -1214,6 +1321,11 @@ def evaluate_static_and_analytic_models(
             h_tot = [[g_mat[i][j] + v_mat[i][j] for j in range(dim)] for i in range(dim)]
             e_ground, psi_ground, eig_res = lowest_eigenpair_sym(h_tot, fac, perturbed_start=True)
             max_eig_res = max(max_eig_res, eig_res)
+            if a_nuc == 4 and m_name == "M1_kA_2body_boundary":
+                e_glob, _, eig_glob = lowest_eigenpair_sym(
+                    h_tot, fac, perturbed_start=True, force_perturbed=True
+                )
+                max_eig_res = max(max_eig_res, eig_glob, abs(e_glob - e_ground))
 
             p_hid_prob = mp.mpf(1) - (psi_ground[fac] ** 2)
             shifts_bh2[a_nuc] = abs(delta_bh2)
