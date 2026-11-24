@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-24T13:00:52Z
+updated_at: 2026-11-24T13:10:44Z
 ---
 
 ## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)
@@ -29,10 +29,10 @@ A **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit *
 
 This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/beans` on **every routine Swarm Monitor checkin** (currently `*/10 * * * *` periodic mode, and also renderable on-demand anytime). If the active Swarm Coordinator / Merge Manager ever stalls, runs out of context, or disconnects, **any successor agent reading this single bean (`beans show qou-s028`) has 100% of the end-state criteria, work-item queues, owner rulings, fences, worktree map, and commands required to take over seamlessly in `< 60` seconds.**
 
-- **Last Heartbeat Refresh:** `2026-11-24T13:00:51Z` (`2026-11-24 08:00:51 `)
+- **Last Heartbeat Refresh:** `2026-11-24T13:10:42Z` (`2026-11-24 08:10:42 `)
 - **`litlfred/qou` `origin/main` Tip:** `acb646cc6fe`
 - **Live Queue Counts (`litlfred/qou`):** Open PRs = `173` (`163` Ready / `10` Draft) · Merged Since `2026-11-23` = `98` (latest: #9335, #9333, #9331, #9329, #9327, #9325, #9323, #9321, #9320, #9318, #9316, #9314) · Open GitHub Issues = `77`
-- **Disk Health (`/`):** `/dev/disk3s1s1  927G  909G   18G  99% /`
+- **Disk Health (`/`):** `/dev/disk3s1s1  927G  908G   20G  98% /`
 
 ---
 
@@ -72,19 +72,21 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 | `ws6-exposition-pdf` | `claude/expo-library-hygiene-jbbk-7t9z-lnkt-pmgw-20261124` @ `acb646cc6fe` (`dirty=0`) | Q1 Staged-Branch PR Opener (Wave B, 14 branches) & Completed-Workitem Open-PR Auditor (Wave C) | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
 | `ws4-mathlib-infra` | `claude/q3-lean-reservoir-libs-codemod-20261124` @ `34948e77e33` (`dirty=1`) | Q3 Option 1: Lean 83->12 QOU.<Chapter> Subgraphs + 7 Top-Level Reservoir lean_libs + apply-lean-reservoir-migration.py --fixup-branch + skill updates | refactor(lean,qou-lref): execute Q3 Option 1 7+1 Reservoir lean_libs & 83-> |
 | `main-base` | `HEAD` @ `acb646cc6fe` (`dirty=0`) | Q2 Option 1: Three-Stop Leibniz Relational Spine (Ch. 0 intro, Ch. 2 Rieffel/Jimbo, Ch. 13 Fefferman Lorentzian) + live DOIs | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
-| `ws5-nov19-rebase` | `claude/hygiene-nz8e-ozts-7y1z-4w77-20261124` @ `acb646cc6fe` (`dirty=0`) | Q4 Option 1: Compact 9-Block L0-L4 Algorithms Annex (fixing 6 bugs) + 14->6 Annexes A-F with 80-dps Frechet-Jacobian Master Tables | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
+| `ws5-nov19-rebase` | `claude/hygiene-nz8e-ozts-7y1z-4w77-20261124` @ `acb646cc6fe` (`dirty=3`) | Q4 Option 1: Compact 9-Block L0-L4 Algorithms Annex (fixing 6 bugs) + 14->6 Annexes A-F with 80-dps Frechet-Jacobian Master Tables | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
 | `ws12-pr9180` | `claude/crosscheck-9zcl-r0fd-fls0-f0qa-cmjv-20261124` @ `acb646cc6fe` (`dirty=0`) | Gap 1B (qou-3kkz): 4He Tetrahedral K_4 Flux-Ring & 462D 3D Jacobi Variational Compression + idle beans qou-bgur, qou-kjik | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
-| `ws1-precision` | `claude/hygiene-n2dp-5d0x-refs-20261124` @ `ce3df2f8271` (`dirty=0`) | ws1-precision (#9104): 12-Witness q0 Precision Refill (11/12 all_nuclides_sdp + gates) + idle beans qou-n2dp, qou-5d0x | fix(folio,lean): resolve dangling computation.script refs and provable lean |
-| `ws15-p3-p5-p6` | `claude/drain-5c64-5pgl-2g9j-compute-20261124` @ `45e3d7137fe` (`dirty=0`) | ws1-precision Witness 12/12 (markov-trace-two-row-tower-rust) + idle beans qou-73kb, qou-m1tr | chore(witness): stamp 80-dps witnesses for qou-5pgl and qou-2g9j |
+| `ws1-precision` | `claude/precision-4w7k-5le1-5rf8-58zq-20261124` @ `acb646cc6fe` (`dirty=0`) | ws1-precision (#9104): 12-Witness q0 Precision Refill (11/12 all_nuclides_sdp + gates) + idle beans qou-n2dp, qou-5d0x | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
+| `ws15-p3-p5-p6` | `claude/editorial-audit-0sq1-20d3-9rbo-73y1-20261124` @ `acb646cc6fe` (`dirty=0`) | ws1-precision Witness 12/12 (markov-trace-two-row-tower-rust) + idle beans qou-73kb, qou-m1tr | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
 | `ws2-bridge-hecke` | `claude/frobenius-gram-a71h-z21-bisect-85o2-20261124` @ `33d9d30f73c` (`dirty=0`) | q0-Anchor Final 21 Consistency Drain (qou-q0rf) + idle beans qou-jdrx, qou-ke35 | precision-gates: clear new CODATA stale-edition and witness-value-copy regr |
-| `ws3-l2-physics` | `claude/bib-remark-bundle-1buz-d8up-exr5-f13w-20261124` @ `acb646cc6fe` (`dirty=0`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
+| `ws3-l2-physics` | `claude/bib-remark-bundle-1buz-d8up-exr5-f13w-20261124` @ `acb646cc6fe` (`dirty=18`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
 
 ---
 
 ## 3. Live Sampled Compute / Sweep Processes
 
-- `6267 0.0 14384 01:25:32 python3 scripts/lean-library-sweep.py --package BraidKnotOctonion --jobs 1 --shadow /tmp/ws51-codemod-shad`
-- `62799 0.0 1264 01:28:51 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_`
+- `18916 78.9 341648 00:53 python3 -W ignore -c \012import hashlib, json, pathlib, sys\012sys.path.insert(0, "computations")\012sys.p`
+- `19041 0.0 2416 00:13 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws3-l2-physics && \\012nice -n 15 bun run scripts/check-reference`
+- `6267 0.0 15504 01:35:23 python3 scripts/lean-library-sweep.py --package BraidKnotOctonion --jobs 1 --shadow /tmp/ws51-codemod-shad`
+- `62799 0.0 1264 01:38:42 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_`
 
 ---
 
