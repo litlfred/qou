@@ -42,6 +42,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (canonical substrate q0, 50 digits)
 from witness_base import WitnessBuilder  # noqa: E402
 
