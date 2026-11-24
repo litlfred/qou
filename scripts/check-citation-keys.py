@@ -130,6 +130,11 @@ def resolves_in_repo(tail: str) -> str | None:
         c = cand.rstrip(".,;:")
         if "/" in c and os.path.exists(os.path.join(REPO, c)):
             return c
+        # Public-release PDF retirement (2026-11-24): third-party `library/<doc-id>/<file>.pdf`
+        # binaries are removed while `library/<doc-id>/` retains `structure.json` / `sections/`.
+        m = re.match(r"^(library/[^/]+)/[^/]+\.pdf$", c, re.I)
+        if m and os.path.isdir(os.path.join(REPO, m.group(1))):
+            return c
         if re.match(r"^(QOU|UGB|Fred2005)\.", c):
             return c
     return None

@@ -28,6 +28,19 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 > disposition of an upload. The triage's verdict and proposed actions live in
 > the source ledger, `test/attestations/bib-verification/`.
 
+> **Public-repository PDF policy (owner ruling 2026-11-24).** Third-party
+> copyrighted `.pdf` binaries are **not** committed to `library/` in the public
+> repository. After local extraction (`structure.json`, `summary.json`,
+> `sections/*.md`, `ocr/`, `candidates.json`, `blocks/*.jsonld`), remove the
+> third-party `.pdf` binary (`git rm` if tracked) before opening a PR while
+> keeping 100% of the derived `library/<paper-id>/` metadata, summaries, and
+> sections intact. **Exception:** works authored or co-authored by Frederick
+> Leitner (**Leitner**, **Leitner–Pawloski**, **Foth–Leitner** — e.g.
+> `library/arxiv-math-0104104v3/0104104v3.pdf`,
+> `library/arxiv-math-0409565v2/0409565v2.pdf`, and
+> `library/arxiv-math-0602138v1/0602138v1.pdf`) retain their `.pdf` binaries in
+> `library/`.
+
 ## Overview
 
 This skill imports external mathematical papers into the content object
@@ -53,9 +66,9 @@ content objects (.ts + .md triples), ready for formalization.
 
 | Source | Action |
 |--------|--------|
-| PDF file | Store in `library/<paper-id>/original.pdf` |
+| PDF file | Place temporarily in `library/<paper-id>/<name>.pdf` for extraction; **remove third-party `.pdf` binary before committing** (retain `.pdf` only for Leitner / Leitner–Pawloski / Foth–Leitner works) |
 | LaTeX file(s) | Store in `library/<paper-id>/` preserving structure |
-| arXiv ID | Fetch metadata via API, download source tarball to `library/<paper-id>/` |
+| arXiv ID | Fetch metadata via API, extract sections/candidates to `library/<paper-id>/` |
 
 **Preferred fetch path (added 2026-05-22):** when the session
 network allows `arxiv.org`, use the `paper-search-mcp` MCP server
