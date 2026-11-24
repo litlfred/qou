@@ -1,11 +1,8 @@
 {
   "engine": "python+fractions",
-  "auditOnly": true,
-  "q0Anchor": "independent",
-  "q0AnchorReason": "exact Laurent-polynomial normal forms over Q (fractions.Fraction); only q-degrees and term counts are read, nothing is evaluated at any numerical q",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T21:30:57.241216+00:00",
-  "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T05:07:13.674779+00:00",
+  "commitSha": "f81378354c83a60e3c2c030fc0c25f6f3d8bcae1",
   "assertions": [
     {
       "name": "exact_agreement_with_build_atom_nf_sym",
@@ -129,11 +126,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5494048,
+  "durationMs": 3926377,
   "computation": "symbolic-nf-q-degree-magic",
   "scriptFile": "symbolic_nf_q_degree_magic_probe.py",
-  "scriptHash": "6afb2b0e3349",
-  "scriptCommitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
+  "scriptHash": "f9d397e93581",
+  "scriptCommitSha": "bc6e912e5ee26d8cfb3cbdf48205f8303a7ed06e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -141,14 +138,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -208,7 +205,7 @@
         ]
       ],
       "support_size": 23,
-      "wall_ms": 2,
+      "wall_ms": 1,
       "tag": "neither"
     },
     {
@@ -304,7 +301,7 @@
         ]
       ],
       "support_size": 49,
-      "wall_ms": 9,
+      "wall_ms": 7,
       "tag": "MAGIC"
     },
     {
@@ -352,7 +349,7 @@
         ]
       ],
       "support_size": 47,
-      "wall_ms": 9,
+      "wall_ms": 7,
       "tag": "neither"
     },
     {
@@ -400,7 +397,7 @@
         ]
       ],
       "support_size": 41,
-      "wall_ms": 8,
+      "wall_ms": 5,
       "tag": "MAGIC"
     },
     {
@@ -448,7 +445,7 @@
         ]
       ],
       "support_size": 77,
-      "wall_ms": 23,
+      "wall_ms": 18,
       "tag": "neither"
     },
     {
@@ -496,7 +493,7 @@
         ]
       ],
       "support_size": 75,
-      "wall_ms": 24,
+      "wall_ms": 19,
       "tag": "MAGIC"
     },
     {
@@ -544,7 +541,7 @@
         ]
       ],
       "support_size": 69,
-      "wall_ms": 23,
+      "wall_ms": 19,
       "tag": "MAGIC"
     },
     {
@@ -592,7 +589,7 @@
         ]
       ],
       "support_size": 59,
-      "wall_ms": 20,
+      "wall_ms": 16,
       "tag": "neither"
     },
     {
@@ -640,7 +637,7 @@
         ]
       ],
       "support_size": 107,
-      "wall_ms": 44,
+      "wall_ms": 36,
       "tag": "neither"
     },
     {
@@ -688,7 +685,7 @@
         ]
       ],
       "support_size": 105,
-      "wall_ms": 48,
+      "wall_ms": 38,
       "tag": "neither"
     },
     {
@@ -736,7 +733,7 @@
         ]
       ],
       "support_size": 99,
-      "wall_ms": 46,
+      "wall_ms": 38,
       "tag": "DOUBLY MAGIC"
     },
     {
@@ -784,7 +781,7 @@
         ]
       ],
       "support_size": 89,
-      "wall_ms": 47,
+      "wall_ms": 36,
       "tag": "neither"
     },
     {
@@ -832,7 +829,7 @@
         ]
       ],
       "support_size": 77,
-      "wall_ms": 39,
+      "wall_ms": 30,
       "tag": "neither"
     },
     {
@@ -880,7 +877,7 @@
         ]
       ],
       "support_size": 139,
-      "wall_ms": 78,
+      "wall_ms": 59,
       "tag": "neither"
     },
     {
@@ -928,7 +925,7 @@
         ]
       ],
       "support_size": 137,
-      "wall_ms": 82,
+      "wall_ms": 60,
       "tag": "neither"
     },
     {
@@ -976,7 +973,7 @@
         ]
       ],
       "support_size": 131,
-      "wall_ms": 77,
+      "wall_ms": 63,
       "tag": "MAGIC"
     },
     {
@@ -1024,7 +1021,7 @@
         ]
       ],
       "support_size": 121,
-      "wall_ms": 78,
+      "wall_ms": 67,
       "tag": "MAGIC"
     },
     {
@@ -1072,7 +1069,7 @@
         ]
       ],
       "support_size": 107,
-      "wall_ms": 74,
+      "wall_ms": 63,
       "tag": "neither"
     },
     {
@@ -1120,7 +1117,7 @@
         ]
       ],
       "support_size": 95,
-      "wall_ms": 65,
+      "wall_ms": 53,
       "tag": "neither"
     },
     {
@@ -1168,7 +1165,7 @@
         ]
       ],
       "support_size": 173,
-      "wall_ms": 121,
+      "wall_ms": 93,
       "tag": "neither"
     },
     {
@@ -1216,7 +1213,7 @@
         ]
       ],
       "support_size": 171,
-      "wall_ms": 133,
+      "wall_ms": 93,
       "tag": "neither"
     },
     {
@@ -1264,7 +1261,7 @@
         ]
       ],
       "support_size": 165,
-      "wall_ms": 133,
+      "wall_ms": 97,
       "tag": "MAGIC"
     },
     {
@@ -1312,7 +1309,7 @@
         ]
       ],
       "support_size": 155,
-      "wall_ms": 136,
+      "wall_ms": 104,
       "tag": "neither"
     },
     {
@@ -1360,7 +1357,7 @@
         ]
       ],
       "support_size": 137,
-      "wall_ms": 146,
+      "wall_ms": 102,
       "tag": "MAGIC"
     },
     {
@@ -1408,7 +1405,7 @@
         ]
       ],
       "support_size": 127,
-      "wall_ms": 132,
+      "wall_ms": 94,
       "tag": "neither"
     },
     {
@@ -1456,7 +1453,7 @@
         ]
       ],
       "support_size": 87,
-      "wall_ms": 105,
+      "wall_ms": 74,
       "tag": "neither"
     },
     {
@@ -1504,7 +1501,7 @@
         ]
       ],
       "support_size": 209,
-      "wall_ms": 180,
+      "wall_ms": 138,
       "tag": "neither"
     },
     {
@@ -1552,7 +1549,7 @@
         ]
       ],
       "support_size": 207,
-      "wall_ms": 183,
+      "wall_ms": 143,
       "tag": "neither"
     },
     {
@@ -1600,7 +1597,7 @@
         ]
       ],
       "support_size": 201,
-      "wall_ms": 224,
+      "wall_ms": 145,
       "tag": "MAGIC"
     },
     {
@@ -1648,7 +1645,7 @@
         ]
       ],
       "support_size": 191,
-      "wall_ms": 195,
+      "wall_ms": 145,
       "tag": "neither"
     },
     {
@@ -1696,7 +1693,7 @@
         ]
       ],
       "support_size": 177,
-      "wall_ms": 200,
+      "wall_ms": 157,
       "tag": "neither"
     },
     {
@@ -1744,7 +1741,7 @@
         ]
       ],
       "support_size": 163,
-      "wall_ms": 190,
+      "wall_ms": 149,
       "tag": "MAGIC"
     },
     {
@@ -1792,7 +1789,7 @@
         ]
       ],
       "support_size": 145,
-      "wall_ms": 182,
+      "wall_ms": 136,
       "tag": "neither"
     },
     {
@@ -1840,7 +1837,7 @@
         ]
       ],
       "support_size": 77,
-      "wall_ms": 128,
+      "wall_ms": 101,
       "tag": "neither"
     },
     {
@@ -1888,7 +1885,7 @@
         ]
       ],
       "support_size": 247,
-      "wall_ms": 252,
+      "wall_ms": 191,
       "tag": "MAGIC"
     },
     {
@@ -1936,7 +1933,7 @@
         ]
       ],
       "support_size": 245,
-      "wall_ms": 256,
+      "wall_ms": 195,
       "tag": "neither"
     },
     {
@@ -1984,7 +1981,7 @@
         ]
       ],
       "support_size": 239,
-      "wall_ms": 258,
+      "wall_ms": 205,
       "tag": "MAGIC"
     },
     {
@@ -2032,7 +2029,7 @@
         ]
       ],
       "support_size": 229,
-      "wall_ms": 265,
+      "wall_ms": 207,
       "tag": "neither"
     },
     {
@@ -2080,7 +2077,7 @@
         ]
       ],
       "support_size": 211,
-      "wall_ms": 278,
+      "wall_ms": 220,
       "tag": "neither"
     },
     {
@@ -2128,7 +2125,7 @@
         ]
       ],
       "support_size": 201,
-      "wall_ms": 277,
+      "wall_ms": 216,
       "tag": "neither"
     },
     {
@@ -2176,7 +2173,7 @@
         ]
       ],
       "support_size": 159,
-      "wall_ms": 257,
+      "wall_ms": 203,
       "tag": "MAGIC"
     },
     {
@@ -2224,7 +2221,7 @@
         ]
       ],
       "support_size": 165,
-      "wall_ms": 240,
+      "wall_ms": 186,
       "tag": "neither"
     },
     {
@@ -2272,7 +2269,7 @@
         ]
       ],
       "support_size": 73,
-      "wall_ms": 157,
+      "wall_ms": 124,
       "tag": "MAGIC"
     },
     {
@@ -2320,7 +2317,7 @@
         ]
       ],
       "support_size": 287,
-      "wall_ms": 328,
+      "wall_ms": 261,
       "tag": "neither"
     },
     {
@@ -2368,7 +2365,7 @@
         ]
       ],
       "support_size": 285,
-      "wall_ms": 340,
+      "wall_ms": 269,
       "tag": "MAGIC"
     },
     {
@@ -2416,7 +2413,7 @@
         ]
       ],
       "support_size": 279,
-      "wall_ms": 340,
+      "wall_ms": 277,
       "tag": "MAGIC"
     },
     {
@@ -2464,7 +2461,7 @@
         ]
       ],
       "support_size": 269,
-      "wall_ms": 351,
+      "wall_ms": 288,
       "tag": "neither"
     },
     {
@@ -2512,7 +2509,7 @@
         ]
       ],
       "support_size": 255,
-      "wall_ms": 406,
+      "wall_ms": 290,
       "tag": "neither"
     },
     {
@@ -2560,7 +2557,7 @@
         ]
       ],
       "support_size": 241,
-      "wall_ms": 399,
+      "wall_ms": 310,
       "tag": "neither"
     },
     {
@@ -2608,7 +2605,7 @@
         ]
       ],
       "support_size": 223,
-      "wall_ms": 384,
+      "wall_ms": 302,
       "tag": "neither"
     },
     {
@@ -2656,7 +2653,7 @@
         ]
       ],
       "support_size": 153,
-      "wall_ms": 321,
+      "wall_ms": 257,
       "tag": "MAGIC"
     },
     {
@@ -2704,7 +2701,7 @@
         ]
       ],
       "support_size": 187,
-      "wall_ms": 317,
+      "wall_ms": 255,
       "tag": "MAGIC"
     },
     {
@@ -2752,7 +2749,7 @@
         ]
       ],
       "support_size": 91,
-      "wall_ms": 189,
+      "wall_ms": 149,
       "tag": "neither"
     },
     {
@@ -2800,7 +2797,7 @@
         ]
       ],
       "support_size": 329,
-      "wall_ms": 435,
+      "wall_ms": 348,
       "tag": "neither"
     },
     {
@@ -2848,7 +2845,7 @@
         ]
       ],
       "support_size": 327,
-      "wall_ms": 433,
+      "wall_ms": 359,
       "tag": "neither"
     },
     {
@@ -2896,7 +2893,7 @@
         ]
       ],
       "support_size": 321,
-      "wall_ms": 500,
+      "wall_ms": 374,
       "tag": "DOUBLY MAGIC"
     },
     {
@@ -2944,7 +2941,7 @@
         ]
       ],
       "support_size": 311,
-      "wall_ms": 487,
+      "wall_ms": 384,
       "tag": "neither"
     },
     {
@@ -2992,7 +2989,7 @@
         ]
       ],
       "support_size": 297,
-      "wall_ms": 496,
+      "wall_ms": 395,
       "tag": "neither"
     },
     {
@@ -3040,7 +3037,7 @@
         ]
       ],
       "support_size": 283,
-      "wall_ms": 527,
+      "wall_ms": 408,
       "tag": "neither"
     },
     {
@@ -3088,7 +3085,7 @@
         ]
       ],
       "support_size": 241,
-      "wall_ms": 507,
+      "wall_ms": 408,
       "tag": "neither"
     },
     {
@@ -3136,7 +3133,7 @@
         ]
       ],
       "support_size": 247,
-      "wall_ms": 529,
+      "wall_ms": 406,
       "tag": "neither"
     },
     {
@@ -3184,7 +3181,7 @@
         ]
       ],
       "support_size": 145,
-      "wall_ms": 400,
+      "wall_ms": 327,
       "tag": "DOUBLY MAGIC"
     },
     {
@@ -3232,7 +3229,7 @@
         ]
       ],
       "support_size": 211,
-      "wall_ms": 411,
+      "wall_ms": 329,
       "tag": "neither"
     },
     {
@@ -3280,7 +3277,7 @@
         ]
       ],
       "support_size": 111,
-      "wall_ms": 214,
+      "wall_ms": 197,
       "tag": "neither"
     },
     {
@@ -3328,7 +3325,7 @@
         ]
       ],
       "support_size": 373,
-      "wall_ms": 558,
+      "wall_ms": 447,
       "tag": "neither"
     },
     {
@@ -3376,7 +3373,7 @@
         ]
       ],
       "support_size": 371,
-      "wall_ms": 591,
+      "wall_ms": 475,
       "tag": "neither"
     },
     {
@@ -3424,7 +3421,7 @@
         ]
       ],
       "support_size": 365,
-      "wall_ms": 641,
+      "wall_ms": 494,
       "tag": "MAGIC"
     },
     {
@@ -3472,7 +3469,7 @@
         ]
       ],
       "support_size": 355,
-      "wall_ms": 606,
+      "wall_ms": 497,
       "tag": "MAGIC"
     },
     {
@@ -3520,7 +3517,7 @@
         ]
       ],
       "support_size": 341,
-      "wall_ms": 648,
+      "wall_ms": 514,
       "tag": "neither"
     },
     {
@@ -3568,7 +3565,7 @@
         ]
       ],
       "support_size": 323,
-      "wall_ms": 660,
+      "wall_ms": 530,
       "tag": "neither"
     },
     {
@@ -3616,7 +3613,7 @@
         ]
       ],
       "support_size": 309,
-      "wall_ms": 724,
+      "wall_ms": 548,
       "tag": "neither"
     },
     {
@@ -3664,7 +3661,7 @@
         ]
       ],
       "support_size": 235,
-      "wall_ms": 633,
+      "wall_ms": 505,
       "tag": "neither"
     },
     {
@@ -3712,7 +3709,7 @@
         ]
       ],
       "support_size": 273,
-      "wall_ms": 639,
+      "wall_ms": 520,
       "tag": "MAGIC"
     },
     {
@@ -3760,7 +3757,7 @@
         ]
       ],
       "support_size": 131,
-      "wall_ms": 455,
+      "wall_ms": 381,
       "tag": "MAGIC"
     },
     {
@@ -3808,7 +3805,7 @@
         ]
       ],
       "support_size": 237,
-      "wall_ms": 529,
+      "wall_ms": 434,
       "tag": "neither"
     },
     {
@@ -3856,7 +3853,7 @@
         ]
       ],
       "support_size": 133,
-      "wall_ms": 291,
+      "wall_ms": 249,
       "tag": "neither"
     },
     {
@@ -3904,7 +3901,7 @@
         ]
       ],
       "support_size": 419,
-      "wall_ms": 765,
+      "wall_ms": 561,
       "tag": "neither"
     },
     {
@@ -3952,7 +3949,7 @@
         ]
       ],
       "support_size": 417,
-      "wall_ms": 761,
+      "wall_ms": 601,
       "tag": "neither"
     },
     {
@@ -4000,7 +3997,7 @@
         ]
       ],
       "support_size": 411,
-      "wall_ms": 819,
+      "wall_ms": 626,
       "tag": "MAGIC"
     },
     {
@@ -4048,7 +4045,7 @@
         ]
       ],
       "support_size": 401,
-      "wall_ms": 796,
+      "wall_ms": 695,
       "tag": "neither"
     },
     {
@@ -4096,7 +4093,7 @@
         ]
       ],
       "support_size": 387,
-      "wall_ms": 834,
+      "wall_ms": 646,
       "tag": "MAGIC"
     },
     {
@@ -4144,7 +4141,7 @@
         ]
       ],
       "support_size": 369,
-      "wall_ms": 822,
+      "wall_ms": 663,
       "tag": "neither"
     },
     {
@@ -4192,7 +4189,7 @@
         ]
       ],
       "support_size": 355,
-      "wall_ms": 861,
+      "wall_ms": 689,
       "tag": "neither"
     },
     {
@@ -4240,7 +4237,7 @@
         ]
       ],
       "support_size": 337,
-      "wall_ms": 827,
+      "wall_ms": 692,
       "tag": "neither"
     },
     {
@@ -4288,7 +4285,7 @@
         ]
       ],
       "support_size": 267,
-      "wall_ms": 791,
+      "wall_ms": 616,
       "tag": "MAGIC"
     },
     {
@@ -4336,7 +4333,7 @@
         ]
       ],
       "support_size": 301,
-      "wall_ms": 829,
+      "wall_ms": 636,
       "tag": "neither"
     },
     {
@@ -4384,7 +4381,7 @@
         ]
       ],
       "support_size": 163,
-      "wall_ms": 556,
+      "wall_ms": 438,
       "tag": "MAGIC"
     },
     {
@@ -4432,7 +4429,7 @@
         ]
       ],
       "support_size": 265,
-      "wall_ms": 668,
+      "wall_ms": 526,
       "tag": "neither"
     },
     {
@@ -4480,7 +4477,7 @@
         ]
       ],
       "support_size": 157,
-      "wall_ms": 357,
+      "wall_ms": 293,
       "tag": "neither"
     },
     {
@@ -4528,7 +4525,7 @@
         ]
       ],
       "support_size": 467,
-      "wall_ms": 884,
+      "wall_ms": 679,
       "tag": "neither"
     },
     {
@@ -4576,7 +4573,7 @@
         ]
       ],
       "support_size": 465,
-      "wall_ms": 965,
+      "wall_ms": 726,
       "tag": "neither"
     },
     {
@@ -4624,7 +4621,7 @@
         ]
       ],
       "support_size": 459,
-      "wall_ms": 984,
+      "wall_ms": 748,
       "tag": "MAGIC"
     },
     {
@@ -4672,7 +4669,7 @@
         ]
       ],
       "support_size": 449,
-      "wall_ms": 974,
+      "wall_ms": 767,
       "tag": "neither"
     },
     {
@@ -4720,7 +4717,7 @@
         ]
       ],
       "support_size": 435,
-      "wall_ms": 1013,
+      "wall_ms": 780,
       "tag": "neither"
     },
     {
@@ -4768,7 +4765,7 @@
         ]
       ],
       "support_size": 417,
-      "wall_ms": 1081,
+      "wall_ms": 791,
       "tag": "MAGIC"
     },
     {
@@ -4816,7 +4813,7 @@
         ]
       ],
       "support_size": 399,
-      "wall_ms": 1130,
+      "wall_ms": 826,
       "tag": "neither"
     },
     {
@@ -4864,7 +4861,7 @@
         ]
       ],
       "support_size": 385,
-      "wall_ms": 1106,
+      "wall_ms": 859,
       "tag": "neither"
     },
     {
@@ -4912,7 +4909,7 @@
         ]
       ],
       "support_size": 367,
-      "wall_ms": 1133,
+      "wall_ms": 857,
       "tag": "MAGIC"
     },
     {
@@ -4960,7 +4957,7 @@
         ]
       ],
       "support_size": 297,
-      "wall_ms": 980,
+      "wall_ms": 749,
       "tag": "neither"
     },
     {
@@ -5008,7 +5005,7 @@
         ]
       ],
       "support_size": 331,
-      "wall_ms": 1002,
+      "wall_ms": 782,
       "tag": "neither"
     },
     {
@@ -5056,7 +5053,7 @@
         ]
       ],
       "support_size": 193,
-      "wall_ms": 676,
+      "wall_ms": 523,
       "tag": "MAGIC"
     },
     {
@@ -5104,7 +5101,7 @@
         ]
       ],
       "support_size": 295,
-      "wall_ms": 848,
+      "wall_ms": 656,
       "tag": "neither"
     },
     {
@@ -5152,7 +5149,7 @@
         ]
       ],
       "support_size": 183,
-      "wall_ms": 447,
+      "wall_ms": 362,
       "tag": "neither"
     },
     {
@@ -5200,7 +5197,7 @@
         ]
       ],
       "support_size": 517,
-      "wall_ms": 1085,
+      "wall_ms": 821,
       "tag": "neither"
     },
     {
@@ -5248,7 +5245,7 @@
         ]
       ],
       "support_size": 515,
-      "wall_ms": 1195,
+      "wall_ms": 888,
       "tag": "neither"
     },
     {
@@ -5296,7 +5293,7 @@
         ]
       ],
       "support_size": 509,
-      "wall_ms": 1170,
+      "wall_ms": 911,
       "tag": "MAGIC"
     },
     {
@@ -5344,7 +5341,7 @@
         ]
       ],
       "support_size": 499,
-      "wall_ms": 1247,
+      "wall_ms": 938,
       "tag": "neither"
     },
     {
@@ -5392,7 +5389,7 @@
         ]
       ],
       "support_size": 485,
-      "wall_ms": 1316,
+      "wall_ms": 957,
       "tag": "neither"
     },
     {
@@ -5440,7 +5437,7 @@
         ]
       ],
       "support_size": 467,
-      "wall_ms": 1276,
+      "wall_ms": 977,
       "tag": "neither"
     },
     {
@@ -5488,7 +5485,7 @@
         ]
       ],
       "support_size": 449,
-      "wall_ms": 1384,
+      "wall_ms": 1005,
       "tag": "MAGIC"
     },
     {
@@ -5536,7 +5533,7 @@
         ]
       ],
       "support_size": 435,
-      "wall_ms": 1430,
+      "wall_ms": 1041,
       "tag": "neither"
     },
     {
@@ -5584,7 +5581,7 @@
         ]
       ],
       "support_size": 417,
-      "wall_ms": 1443,
+      "wall_ms": 1064,
       "tag": "MAGIC"
     },
     {
@@ -5632,7 +5629,7 @@
         ]
       ],
       "support_size": 399,
-      "wall_ms": 1417,
+      "wall_ms": 1056,
       "tag": "neither"
     },
     {
@@ -5680,7 +5677,7 @@
         ]
       ],
       "support_size": 329,
-      "wall_ms": 1209,
+      "wall_ms": 912,
       "tag": "neither"
     },
     {
@@ -5728,7 +5725,7 @@
         ]
       ],
       "support_size": 363,
-      "wall_ms": 1290,
+      "wall_ms": 951,
       "tag": "neither"
     },
     {
@@ -5776,7 +5773,7 @@
         ]
       ],
       "support_size": 225,
-      "wall_ms": 811,
+      "wall_ms": 621,
       "tag": "MAGIC"
     },
     {
@@ -5824,7 +5821,7 @@
         ]
       ],
       "support_size": 327,
-      "wall_ms": 1041,
+      "wall_ms": 803,
       "tag": "neither"
     },
     {
@@ -5872,7 +5869,7 @@
         ]
       ],
       "support_size": 211,
-      "wall_ms": 631,
+      "wall_ms": 447,
       "tag": "neither"
     },
     {
@@ -5920,7 +5917,7 @@
         ]
       ],
       "support_size": 569,
-      "wall_ms": 1324,
+      "wall_ms": 994,
       "tag": "neither"
     },
     {
@@ -5968,7 +5965,7 @@
         ]
       ],
       "support_size": 567,
-      "wall_ms": 1348,
+      "wall_ms": 1087,
       "tag": "neither"
     },
     {
@@ -6016,7 +6013,7 @@
         ]
       ],
       "support_size": 561,
-      "wall_ms": 1444,
+      "wall_ms": 1094,
       "tag": "MAGIC"
     },
     {
@@ -6064,7 +6061,7 @@
         ]
       ],
       "support_size": 551,
-      "wall_ms": 1502,
+      "wall_ms": 1131,
       "tag": "neither"
     },
     {
@@ -6112,7 +6109,7 @@
         ]
       ],
       "support_size": 537,
-      "wall_ms": 1475,
+      "wall_ms": 1155,
       "tag": "neither"
     },
     {
@@ -6160,7 +6157,7 @@
         ]
       ],
       "support_size": 519,
-      "wall_ms": 1593,
+      "wall_ms": 1173,
       "tag": "neither"
     },
     {
@@ -6208,7 +6205,7 @@
         ]
       ],
       "support_size": 501,
-      "wall_ms": 1619,
+      "wall_ms": 1212,
       "tag": "neither"
     },
     {
@@ -6256,7 +6253,7 @@
         ]
       ],
       "support_size": 483,
-      "wall_ms": 1648,
+      "wall_ms": 1238,
       "tag": "MAGIC"
     },
     {
@@ -6304,7 +6301,7 @@
         ]
       ],
       "support_size": 469,
-      "wall_ms": 1666,
+      "wall_ms": 1300,
       "tag": "MAGIC"
     },
     {
@@ -6352,7 +6349,7 @@
         ]
       ],
       "support_size": 451,
-      "wall_ms": 1795,
+      "wall_ms": 1300,
       "tag": "neither"
     },
     {
@@ -6400,7 +6397,7 @@
         ]
       ],
       "support_size": 433,
-      "wall_ms": 1719,
+      "wall_ms": 1274,
       "tag": "neither"
     },
     {
@@ -6448,7 +6445,7 @@
         ]
       ],
       "support_size": 363,
-      "wall_ms": 1471,
+      "wall_ms": 1103,
       "tag": "neither"
     },
     {
@@ -6496,7 +6493,7 @@
         ]
       ],
       "support_size": 397,
-      "wall_ms": 1551,
+      "wall_ms": 1157,
       "tag": "neither"
     },
     {
@@ -6544,7 +6541,7 @@
         ]
       ],
       "support_size": 259,
-      "wall_ms": 967,
+      "wall_ms": 735,
       "tag": "MAGIC"
     },
     {
@@ -6592,7 +6589,7 @@
         ]
       ],
       "support_size": 361,
-      "wall_ms": 1327,
+      "wall_ms": 982,
       "tag": "neither"
     },
     {
@@ -6640,7 +6637,7 @@
         ]
       ],
       "support_size": 241,
-      "wall_ms": 692,
+      "wall_ms": 544,
       "tag": "neither"
     },
     {
@@ -6688,7 +6685,7 @@
         ]
       ],
       "support_size": 623,
-      "wall_ms": 1600,
+      "wall_ms": 1176,
       "tag": "neither"
     },
     {
@@ -6736,7 +6733,7 @@
         ]
       ],
       "support_size": 621,
-      "wall_ms": 1703,
+      "wall_ms": 1272,
       "tag": "neither"
     },
     {
@@ -6784,7 +6781,7 @@
         ]
       ],
       "support_size": 615,
-      "wall_ms": 1731,
+      "wall_ms": 1310,
       "tag": "MAGIC"
     },
     {
@@ -6832,7 +6829,7 @@
         ]
       ],
       "support_size": 605,
-      "wall_ms": 1828,
+      "wall_ms": 1485,
       "tag": "neither"
     },
     {
@@ -6880,7 +6877,7 @@
         ]
       ],
       "support_size": 591,
-      "wall_ms": 1861,
+      "wall_ms": 1437,
       "tag": "neither"
     },
     {
@@ -6928,7 +6925,7 @@
         ]
       ],
       "support_size": 573,
-      "wall_ms": 1898,
+      "wall_ms": 1416,
       "tag": "neither"
     },
     {
@@ -6976,7 +6973,7 @@
         ]
       ],
       "support_size": 555,
-      "wall_ms": 1963,
+      "wall_ms": 1460,
       "tag": "neither"
     },
     {
@@ -7024,7 +7021,7 @@
         ]
       ],
       "support_size": 537,
-      "wall_ms": 2037,
+      "wall_ms": 1493,
       "tag": "neither"
     },
     {
@@ -7072,7 +7069,7 @@
         ]
       ],
       "support_size": 523,
-      "wall_ms": 2064,
+      "wall_ms": 1569,
       "tag": "DOUBLY MAGIC"
     },
     {
@@ -7120,7 +7117,7 @@
         ]
       ],
       "support_size": 505,
-      "wall_ms": 2109,
+      "wall_ms": 1625,
       "tag": "neither"
     },
     {
@@ -7168,7 +7165,7 @@
         ]
       ],
       "support_size": 487,
-      "wall_ms": 2076,
+      "wall_ms": 1622,
       "tag": "neither"
     },
     {
@@ -7216,7 +7213,7 @@
         ]
       ],
       "support_size": 469,
-      "wall_ms": 2072,
+      "wall_ms": 1597,
       "tag": "neither"
     },
     {
@@ -7264,7 +7261,7 @@
         ]
       ],
       "support_size": 399,
-      "wall_ms": 1783,
+      "wall_ms": 1356,
       "tag": "neither"
     },
     {
@@ -7312,7 +7309,7 @@
         ]
       ],
       "support_size": 433,
-      "wall_ms": 1884,
+      "wall_ms": 1452,
       "tag": "neither"
     },
     {
@@ -7360,7 +7357,7 @@
         ]
       ],
       "support_size": 295,
-      "wall_ms": 1203,
+      "wall_ms": 934,
       "tag": "MAGIC"
     },
     {
@@ -7408,7 +7405,7 @@
         ]
       ],
       "support_size": 397,
-      "wall_ms": 1600,
+      "wall_ms": 1237,
       "tag": "neither"
     },
     {
@@ -7456,7 +7453,7 @@
         ]
       ],
       "support_size": 273,
-      "wall_ms": 864,
+      "wall_ms": 706,
       "tag": "neither"
     },
     {
@@ -7504,7 +7501,7 @@
         ]
       ],
       "support_size": 679,
-      "wall_ms": 1888,
+      "wall_ms": 1471,
       "tag": "neither"
     },
     {
@@ -7552,7 +7549,7 @@
         ]
       ],
       "support_size": 677,
-      "wall_ms": 2095,
+      "wall_ms": 1562,
       "tag": "neither"
     },
     {
@@ -7600,7 +7597,7 @@
         ]
       ],
       "support_size": 671,
-      "wall_ms": 2094,
+      "wall_ms": 1614,
       "tag": "MAGIC"
     },
     {
@@ -7648,7 +7645,7 @@
         ]
       ],
       "support_size": 661,
-      "wall_ms": 2188,
+      "wall_ms": 1655,
       "tag": "neither"
     },
     {
@@ -7696,7 +7693,7 @@
         ]
       ],
       "support_size": 647,
-      "wall_ms": 2179,
+      "wall_ms": 1718,
       "tag": "neither"
     },
     {
@@ -7744,7 +7741,7 @@
         ]
       ],
       "support_size": 629,
-      "wall_ms": 2277,
+      "wall_ms": 1737,
       "tag": "neither"
     },
     {
@@ -7792,7 +7789,7 @@
         ]
       ],
       "support_size": 611,
-      "wall_ms": 2316,
+      "wall_ms": 1744,
       "tag": "neither"
     },
     {
@@ -7840,7 +7837,7 @@
         ]
       ],
       "support_size": 593,
-      "wall_ms": 2413,
+      "wall_ms": 1784,
       "tag": "neither"
     },
     {
@@ -7888,7 +7885,7 @@
         ]
       ],
       "support_size": 575,
-      "wall_ms": 2436,
+      "wall_ms": 1855,
       "tag": "MAGIC"
     },
     {
@@ -7936,7 +7933,7 @@
         ]
       ],
       "support_size": 561,
-      "wall_ms": 2603,
+      "wall_ms": 1939,
       "tag": "MAGIC"
     },
     {
@@ -7984,7 +7981,7 @@
         ]
       ],
       "support_size": 543,
-      "wall_ms": 2621,
+      "wall_ms": 1967,
       "tag": "neither"
     },
     {
@@ -8032,7 +8029,7 @@
         ]
       ],
       "support_size": 525,
-      "wall_ms": 2633,
+      "wall_ms": 1934,
       "tag": "neither"
     },
     {
@@ -8080,7 +8077,7 @@
         ]
       ],
       "support_size": 507,
-      "wall_ms": 2541,
+      "wall_ms": 1817,
       "tag": "neither"
     },
     {
@@ -8128,7 +8125,7 @@
         ]
       ],
       "support_size": 437,
-      "wall_ms": 2102,
+      "wall_ms": 1531,
       "tag": "neither"
     },
     {
@@ -8176,7 +8173,7 @@
         ]
       ],
       "support_size": 471,
-      "wall_ms": 2296,
+      "wall_ms": 1615,
       "tag": "neither"
     },
     {
@@ -8224,7 +8221,7 @@
         ]
       ],
       "support_size": 333,
-      "wall_ms": 1480,
+      "wall_ms": 1042,
       "tag": "MAGIC"
     },
     {
@@ -8272,7 +8269,7 @@
         ]
       ],
       "support_size": 435,
-      "wall_ms": 1898,
+      "wall_ms": 1368,
       "tag": "neither"
     },
     {
@@ -8320,7 +8317,7 @@
         ]
       ],
       "support_size": 307,
-      "wall_ms": 1093,
+      "wall_ms": 804,
       "tag": "neither"
     },
     {
@@ -8368,7 +8365,7 @@
         ]
       ],
       "support_size": 737,
-      "wall_ms": 2265,
+      "wall_ms": 1606,
       "tag": "neither"
     },
     {
@@ -8416,7 +8413,7 @@
         ]
       ],
       "support_size": 735,
-      "wall_ms": 2436,
+      "wall_ms": 1723,
       "tag": "neither"
     },
     {
@@ -8464,7 +8461,7 @@
         ]
       ],
       "support_size": 729,
-      "wall_ms": 2487,
+      "wall_ms": 1762,
       "tag": "MAGIC"
     },
     {
@@ -8512,7 +8509,7 @@
         ]
       ],
       "support_size": 719,
-      "wall_ms": 2552,
+      "wall_ms": 1823,
       "tag": "neither"
     },
     {
@@ -8560,7 +8557,7 @@
         ]
       ],
       "support_size": 705,
-      "wall_ms": 2658,
+      "wall_ms": 1898,
       "tag": "neither"
     },
     {
@@ -8608,7 +8605,7 @@
         ]
       ],
       "support_size": 687,
-      "wall_ms": 2711,
+      "wall_ms": 1905,
       "tag": "neither"
     },
     {
@@ -8656,7 +8653,7 @@
         ]
       ],
       "support_size": 669,
-      "wall_ms": 2840,
+      "wall_ms": 1950,
       "tag": "neither"
     },
     {
@@ -8704,7 +8701,7 @@
         ]
       ],
       "support_size": 651,
-      "wall_ms": 2877,
+      "wall_ms": 2018,
       "tag": "neither"
     },
     {
@@ -8752,7 +8749,7 @@
         ]
       ],
       "support_size": 633,
-      "wall_ms": 2957,
+      "wall_ms": 2057,
       "tag": "MAGIC"
     },
     {
@@ -8800,7 +8797,7 @@
         ]
       ],
       "support_size": 619,
-      "wall_ms": 3042,
+      "wall_ms": 2146,
       "tag": "neither"
     },
     {
@@ -8848,7 +8845,7 @@
         ]
       ],
       "support_size": 601,
-      "wall_ms": 3183,
+      "wall_ms": 2204,
       "tag": "MAGIC"
     },
     {
@@ -8896,7 +8893,7 @@
         ]
       ],
       "support_size": 583,
-      "wall_ms": 3100,
+      "wall_ms": 2192,
       "tag": "neither"
     },
     {
@@ -8944,7 +8941,7 @@
         ]
       ],
       "support_size": 565,
-      "wall_ms": 3072,
+      "wall_ms": 2185,
       "tag": "neither"
     },
     {
@@ -8992,7 +8989,7 @@
         ]
       ],
       "support_size": 547,
-      "wall_ms": 2995,
+      "wall_ms": 2111,
       "tag": "neither"
     },
     {
@@ -9040,7 +9037,7 @@
         ]
       ],
       "support_size": 477,
-      "wall_ms": 2556,
+      "wall_ms": 1789,
       "tag": "neither"
     },
     {
@@ -9088,7 +9085,7 @@
         ]
       ],
       "support_size": 511,
-      "wall_ms": 2707,
+      "wall_ms": 1911,
       "tag": "neither"
     },
     {
@@ -9136,7 +9133,7 @@
         ]
       ],
       "support_size": 373,
-      "wall_ms": 1726,
+      "wall_ms": 1253,
       "tag": "MAGIC"
     },
     {
@@ -9184,7 +9181,7 @@
         ]
       ],
       "support_size": 475,
-      "wall_ms": 2325,
+      "wall_ms": 1628,
       "tag": "neither"
     },
     {
@@ -9232,7 +9229,7 @@
         ]
       ],
       "support_size": 343,
-      "wall_ms": 1387,
+      "wall_ms": 982,
       "tag": "neither"
     },
     {
@@ -9280,7 +9277,7 @@
         ]
       ],
       "support_size": 797,
-      "wall_ms": 2699,
+      "wall_ms": 1873,
       "tag": "neither"
     },
     {
@@ -9328,7 +9325,7 @@
         ]
       ],
       "support_size": 795,
-      "wall_ms": 2858,
+      "wall_ms": 2010,
       "tag": "neither"
     },
     {
@@ -9376,7 +9373,7 @@
         ]
       ],
       "support_size": 789,
-      "wall_ms": 3010,
+      "wall_ms": 2070,
       "tag": "MAGIC"
     },
     {
@@ -9424,7 +9421,7 @@
         ]
       ],
       "support_size": 779,
-      "wall_ms": 3054,
+      "wall_ms": 2126,
       "tag": "neither"
     },
     {
@@ -9472,7 +9469,7 @@
         ]
       ],
       "support_size": 765,
-      "wall_ms": 3086,
+      "wall_ms": 2221,
       "tag": "neither"
     },
     {
@@ -9520,7 +9517,7 @@
         ]
       ],
       "support_size": 747,
-      "wall_ms": 3183,
+      "wall_ms": 2245,
       "tag": "neither"
     },
     {
@@ -9568,7 +9565,7 @@
         ]
       ],
       "support_size": 729,
-      "wall_ms": 3208,
+      "wall_ms": 2303,
       "tag": "neither"
     },
     {
@@ -9616,7 +9613,7 @@
         ]
       ],
       "support_size": 711,
-      "wall_ms": 3267,
+      "wall_ms": 2338,
       "tag": "neither"
     },
     {
@@ -9664,7 +9661,7 @@
         ]
       ],
       "support_size": 693,
-      "wall_ms": 3395,
+      "wall_ms": 2498,
       "tag": "MAGIC"
     },
     {
@@ -9712,7 +9709,7 @@
         ]
       ],
       "support_size": 675,
-      "wall_ms": 3584,
+      "wall_ms": 2531,
       "tag": "neither"
     },
     {
@@ -9760,7 +9757,7 @@
         ]
       ],
       "support_size": 661,
-      "wall_ms": 3683,
+      "wall_ms": 2602,
       "tag": "neither"
     },
     {
@@ -9808,7 +9805,7 @@
         ]
       ],
       "support_size": 643,
-      "wall_ms": 3764,
+      "wall_ms": 2629,
       "tag": "MAGIC"
     },
     {
@@ -9856,7 +9853,7 @@
         ]
       ],
       "support_size": 625,
-      "wall_ms": 3722,
+      "wall_ms": 2633,
       "tag": "neither"
     },
     {
@@ -9904,7 +9901,7 @@
         ]
       ],
       "support_size": 607,
-      "wall_ms": 3668,
+      "wall_ms": 2556,
       "tag": "neither"
     },
     {
@@ -9952,7 +9949,7 @@
         ]
       ],
       "support_size": 589,
-      "wall_ms": 3521,
+      "wall_ms": 2503,
       "tag": "neither"
     },
     {
@@ -10000,7 +9997,7 @@
         ]
       ],
       "support_size": 519,
-      "wall_ms": 2982,
+      "wall_ms": 2120,
       "tag": "neither"
     },
     {
@@ -10048,7 +10045,7 @@
         ]
       ],
       "support_size": 553,
-      "wall_ms": 3167,
+      "wall_ms": 2247,
       "tag": "neither"
     },
     {
@@ -10096,7 +10093,7 @@
         ]
       ],
       "support_size": 415,
-      "wall_ms": 2103,
+      "wall_ms": 1510,
       "tag": "MAGIC"
     },
     {
@@ -10144,7 +10141,7 @@
         ]
       ],
       "support_size": 517,
-      "wall_ms": 2695,
+      "wall_ms": 1933,
       "tag": "neither"
     },
     {
@@ -10192,7 +10189,7 @@
         ]
       ],
       "support_size": 381,
-      "wall_ms": 1632,
+      "wall_ms": 1190,
       "tag": "neither"
     },
     {
@@ -10240,7 +10237,7 @@
         ]
       ],
       "support_size": 859,
-      "wall_ms": 3093,
+      "wall_ms": 2193,
       "tag": "MAGIC"
     },
     {
@@ -10288,7 +10285,7 @@
         ]
       ],
       "support_size": 857,
-      "wall_ms": 3237,
+      "wall_ms": 2303,
       "tag": "neither"
     },
     {
@@ -10336,7 +10333,7 @@
         ]
       ],
       "support_size": 851,
-      "wall_ms": 3342,
+      "wall_ms": 2417,
       "tag": "MAGIC"
     },
     {
@@ -10384,7 +10381,7 @@
         ]
       ],
       "support_size": 841,
-      "wall_ms": 3509,
+      "wall_ms": 2505,
       "tag": "neither"
     },
     {
@@ -10432,7 +10429,7 @@
         ]
       ],
       "support_size": 827,
-      "wall_ms": 3693,
+      "wall_ms": 2557,
       "tag": "neither"
     },
     {
@@ -10480,7 +10477,7 @@
         ]
       ],
       "support_size": 809,
-      "wall_ms": 3603,
+      "wall_ms": 2623,
       "tag": "neither"
     },
     {
@@ -10528,7 +10525,7 @@
         ]
       ],
       "support_size": 791,
-      "wall_ms": 3760,
+      "wall_ms": 2668,
       "tag": "neither"
     },
     {
@@ -10576,7 +10573,7 @@
         ]
       ],
       "support_size": 773,
-      "wall_ms": 3935,
+      "wall_ms": 2735,
       "tag": "neither"
     },
     {
@@ -10624,7 +10621,7 @@
         ]
       ],
       "support_size": 755,
-      "wall_ms": 4029,
+      "wall_ms": 2775,
       "tag": "MAGIC"
     },
     {
@@ -10672,7 +10669,7 @@
         ]
       ],
       "support_size": 737,
-      "wall_ms": 4159,
+      "wall_ms": 2896,
       "tag": "neither"
     },
     {
@@ -10720,7 +10717,7 @@
         ]
       ],
       "support_size": 723,
-      "wall_ms": 4224,
+      "wall_ms": 3030,
       "tag": "neither"
     },
     {
@@ -10768,7 +10765,7 @@
         ]
       ],
       "support_size": 705,
-      "wall_ms": 4341,
+      "wall_ms": 3238,
       "tag": "neither"
     },
     {
@@ -10816,7 +10813,7 @@
         ]
       ],
       "support_size": 687,
-      "wall_ms": 4359,
+      "wall_ms": 3304,
       "tag": "MAGIC"
     },
     {
@@ -10864,7 +10861,7 @@
         ]
       ],
       "support_size": 669,
-      "wall_ms": 4354,
+      "wall_ms": 3125,
       "tag": "neither"
     },
     {
@@ -10912,7 +10909,7 @@
         ]
       ],
       "support_size": 651,
-      "wall_ms": 4292,
+      "wall_ms": 3054,
       "tag": "neither"
     },
     {
@@ -10960,7 +10957,7 @@
         ]
       ],
       "support_size": 633,
-      "wall_ms": 4142,
+      "wall_ms": 2919,
       "tag": "neither"
     },
     {
@@ -11008,7 +11005,7 @@
         ]
       ],
       "support_size": 563,
-      "wall_ms": 3546,
+      "wall_ms": 2552,
       "tag": "neither"
     },
     {
@@ -11056,7 +11053,7 @@
         ]
       ],
       "support_size": 597,
-      "wall_ms": 3737,
+      "wall_ms": 2698,
       "tag": "neither"
     },
     {
@@ -11104,7 +11101,7 @@
         ]
       ],
       "support_size": 459,
-      "wall_ms": 2560,
+      "wall_ms": 1823,
       "tag": "MAGIC"
     },
     {
@@ -11152,7 +11149,7 @@
         ]
       ],
       "support_size": 561,
-      "wall_ms": 3166,
+      "wall_ms": 2274,
       "tag": "neither"
     },
     {
@@ -11200,7 +11197,7 @@
         ]
       ],
       "support_size": 421,
-      "wall_ms": 2021,
+      "wall_ms": 1460,
       "tag": "MAGIC"
     }
   ],
@@ -12829,5 +12826,7 @@
     }
   },
   "any_observable_replicates": false,
-  "auditOnly": true
+  "q0Anchor": "independent",
+  "auditOnly": true,
+  "q0AnchorReason": "exact Laurent-polynomial normal forms over Q (fractions.Fraction); only q-degrees and term counts are read, nothing is evaluated at any numerical q"
 }
