@@ -56,10 +56,12 @@ A witness is **stale** when:
 Check staleness:
 ```bash
 # Single or all Python witnesses (CPU-throttled):
-nice -n 15 python3 computations/witness_staleness_tracker.py check
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+nice -n 15 python3 computations/witness_staleness_triage.py
+nice -n 15 python3 computations/witness_reproducibility_check.py
 
 # Lean static parity & best-practices hygiene:
-nice -n 15 python3 scripts/lean-static-census.py --digest
+nice -n 15 python3 scripts/lean-static-census.py
 nice -n 15 python3 scripts/lean-best-practices-lint.py --diff
 ```
 

@@ -13,9 +13,8 @@ export const ontologist: SkillDefinition = {
   ],
   routingPatterns: ["glossary", "terminology", "naming", "disambiguat"],
   scripts: [
-    { path: ".github/scripts/ontologist.py", runtime: "python", phase: "execute", args: ["scan"] },
-    { path: ".github/scripts/ontologist.py", runtime: "python", phase: "execute", args: ["generate-lean"] },
-    { path: ".github/scripts/ontologist.py", runtime: "python", phase: "execute", args: ["generate-mapping"] },
+    { path: "scripts/lean-best-practices-lint.py", runtime: "python3", phase: "execute", args: ["--diff"] },
+    { path: "folio/pipeline/block-manifest-audit.ts", runtime: "bun", phase: "execute" },
   ],
   schemas: [
     { module: "schemas/qou-types", types: ["GlossaryEntry", "GlossaryManifest", "NarrativeMapping", "MappingManifest"], access: "read-write" },

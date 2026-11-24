@@ -167,7 +167,7 @@ cross-referencing the two views.
 ### Phase 1 — Enumerate blocks with both siblings
 
 ```bash
-find "content/<paper>" -name '*.lean' -print0 | \
+find "folio/<paper>" -name '*.lean' -print0 | \
 while IFS= read -r -d '' leanfile; do
     md="${leanfile%.lean}.md"
     ts="${leanfile%.lean}.ts"
@@ -182,7 +182,7 @@ From `.lean`:
 
 - Identify the top-level `theorem` / `lemma` / `def` / `structure`
   matching the `lean.ref` URI in the `.ts` manifest (parse with
-  `parseLeanRef()` from `folio-assistant/schemas/lean-packages.ts`)
+  `parseLeanRef()` from `schemas/lean-packages.ts`)
 - Record: name, type signature, hypotheses, conclusion,
   proof-term-or-tactic-body
 
@@ -282,9 +282,12 @@ theorem <name> ... := ...
 Most Class-A stubs can be found by:
 
 ```bash
+# Fast automated check (BP007 vacuity + trivial True) on branch diff:
+nice -n 15 python3 scripts/lean-best-practices-lint.py --diff
+
 # Lean files where the only substantive line after ":=" is trivial/rfl/True.intro
-grep -rn ':= by \(rfl\|trivial\|True.intro\)' content/**/*.lean
-grep -rn ': True :=' content/**/*.lean
+grep -rn ':= by \(rfl\|trivial\|True.intro\)' folio/quantum-observable-universe/ --include='*.lean'
+grep -rn ': True :=' folio/quantum-observable-universe/ --include='*.lean'
 ```
 
 Most Class-D notation drift is reported by comparing tags:
