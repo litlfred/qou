@@ -85,6 +85,7 @@ export default chapter({
             "hecke-blitvic-pair-partition-mechanism",
             "hecke-satisfies-blitvic-hypothesis-proof",
             "hecke-satisfies-blitvic-hypothesis-interpretation",
+            "sniady-genus-grading-dimension-obstruction",
             "bar-involution",
             "bar-involution-properties",
             "bar-involution-c5-algebraic-identities",
@@ -165,10 +166,9 @@ export default chapter({
         "su2-so3-intro",
         "su2-basis",
         "first-order-taylor",
-        // su2-generators relocated to archimedean-universe/ (PR #823 fit-section-chapter audit)
+        "su2-generators",
         "so3-generators",
         "quaternion-so3-motivation",
-        "su2-generators",
       ],
     }),
 
