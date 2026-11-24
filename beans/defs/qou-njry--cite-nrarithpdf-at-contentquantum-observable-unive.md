@@ -1,14 +1,13 @@
 ---
 # qou-njry
 title: Cite nrarith.pdf at folio/quantum-observable-universe/braids-and-knots/self-dual-higgs-real-vol…
-status: todo
-pr: 8386
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:18Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T12:52:55Z
 parent: qou-19m0
 ---
 
@@ -44,3 +43,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8386, closed o
 Not cited. Mis-sourced: Neumann–Reid Prop 3.4 is a necessary condition (amphicheiral ⇒ conjugation-closed trace field), not a source that 4_1 is amphichiral. A knot-table source is the right cite. Finding F6. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+Closed post-merge: landed on origin/main in PR #9335 (acb646cc6fe).

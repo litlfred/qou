@@ -1,13 +1,13 @@
 ---
 # qou-4b6g
 title: Atlas provenance block cites two deprecated producers; 'no entry is maintained by hand' is unenforced
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T22:10:29Z
-updated_at: 2026-10-04T15:16:23Z
+updated_at: 2026-11-24T12:52:54Z
 parent: qou-mub3
 ---
 
@@ -42,3 +42,5 @@ NEXT: decide whether the fix is (i) repoint the block at the live producer and
 drop the 'no entry is maintained by hand' claim, or (ii) restore an automated
 render so the claim becomes true again. (ii) is the better end state; (i) is the
 honest interim.
+
+Closed post-merge: landed on origin/main in PR #9335 (acb646cc6fe).

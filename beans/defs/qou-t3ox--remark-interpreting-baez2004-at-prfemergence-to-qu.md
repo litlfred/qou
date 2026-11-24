@@ -1,13 +1,13 @@
 ---
 # qou-t3ox
 title: Remark interpreting [baez2004] at prf:emergence-to-quantum-flat
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:22Z
-updated_at: 2026-10-04T15:23:42Z
+updated_at: 2026-11-24T12:52:55Z
 parent: qou-vva9
 ---
 
@@ -17,3 +17,5 @@ Source: `baez2004` (bib key; PDF not committed to this repo)
 Relevance: **tangential** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+Closed post-merge: landed on origin/main in PR #9335 (acb646cc6fe).

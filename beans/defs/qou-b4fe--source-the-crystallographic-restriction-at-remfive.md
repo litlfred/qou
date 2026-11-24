@@ -1,13 +1,13 @@
 ---
 # qou-b4fe
 title: Source the crystallographic restriction at rem:fivefold-crystallographic-obstruction beyond shechtman1984 (UNVERIFIED LEAD)
-status: todo
+status: completed
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T18:29:46Z
-updated_at: 2026-10-04T15:26:00Z
+updated_at: 2026-11-24T12:52:55Z
 parent: qou-1qhv
 ---
 
@@ -28,3 +28,5 @@ UNVERIFIED LEAD. Neither has been read; they were seen cited in another
 document's bibliography. Read Patera-Twarock first and confirm it actually
 supports the block's claim. If it does not, close this bean as no-action rather
 than citing on the strength of a title.
+
+Closed post-merge: landed on origin/main in PR #9335 (acb646cc6fe).
