@@ -1962,6 +1962,7 @@ import QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling
 import QOU.Observations.DeBroglieBoostedReebPhase
 import QOU.QBeta.ChargedCurrentChiralitySelection
 import QOU.StandardModel.TorusLinkElectroweakSchurRatio
+import QOU.StandardModel.BringPrymRiemannRochGenerations
 import QOU.AtomicMass.ComptonHarmonicOscillatorSlaterRatios
 import QOU.StandardModel.BringGenerationSplitAndCKMTexture
 import QOU.Eightfold.AmphichiralHolonomyIsSelfDual
