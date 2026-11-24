@@ -1,13 +1,13 @@
 ---
 # qou-zx95
 title: 'CITE: bichon2003 / etingof-ostrik2004 metadata is still UNVERIFIED — M — egress 403 again 2026-09-04; consumed by FibreFunctorDimensionNotCategorical'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:07:37Z
-updated_at: 2026-11-22T15:45:00Z
+updated_at: 2026-11-24T12:21:04Z
 parent: qou-1qhv
 ---
 
@@ -65,3 +65,5 @@ Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.
 - bichon2003: the recorded arXiv id math/0207256 is WRONG. The arXiv page for math/0111114 (v1, 2001-11-09) carries this title. Comm. Algebra 31(10) (2003) 4831–4851 is confirmed by Aubriot, arXiv:math/0606147, ref [Bi1]. No DOI was found; the guessed 10.1081/AGB-120022455 was not used.
 - etingof-ostrik2004: DOI 10.4310/MRL.2004.v11.n1.a10 from the MaRDI record (zbMATH 1053.17010), confirming vol. 11, issue 1, year 2004. Pages 103–114 are still unconfirmed.
 - Open: Etingof–Ostrik pages; Bichon DOI; ingest of both arXiv preprints (arXiv is blocked from this container).
+
+Closed post-merge: landed on origin/main in PR #9333 (b6a2ddb1d66).
