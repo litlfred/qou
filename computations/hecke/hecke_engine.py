@@ -42,7 +42,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 import json
-import math
+from decimal import Decimal as _Dec
 from mpmath import mp  # noqa: F401
 import sys
 import time
@@ -53,6 +53,20 @@ from fractions import Fraction
 from itertools import combinations
 from pathlib import Path
 from typing import Optional
+
+
+def _comb(n: int, k: int) -> int:
+    if k < 0 or k > n:
+        return 0
+    k = min(k, n - k)
+    res = 1
+    for idx in range(k):
+        res = res * (n - idx) // (idx + 1)
+    return res
+
+
+def _frac_mpf(f: Fraction):
+    return mp.mpf(f.numerator) / mp.mpf(f.denominator)
 
 from pathlib import Path as _PathW  # noqa: E402 — witness output root
 _HERE_W = _PathW(__file__).resolve().parent
@@ -230,7 +244,7 @@ class HeckeEngine:
     def ground_state_ordering(self, p, n, max_orderings=5000):
         """Find minimum-energy ordering."""
         A = p + n
-        total = math.comb(A, p)
+        total = _comb(A, p)
 
         if total <= max_orderings:
             best_energy = None
@@ -240,7 +254,7 @@ class HeckeEngine:
                 for pos in positions:
                     ordering[pos] = 1
                 energy = sum(
-                    float(self.qr.traced_volume(i, ordering))
+                    self.qr.traced_volume(i, ordering)
                     for i in range(A - 1)
                 )
                 if best_energy is None or energy < best_energy:
@@ -286,15 +300,15 @@ class HeckeEngine:
             tr_dau = self.qr.markov_trace(ord_dau)
             tr_par_str = str(tr_par)
             tr_dau_str = str(tr_dau)
-            tr_par_f = float(tr_par)
-            tr_dau_f = float(tr_dau)
+            tr_par_f = _frac_mpf(tr_par)
+            tr_dau_f = _frac_mpf(tr_dau)
         else:
             # Log trace (sum of log|V̂_i|) to avoid overflow
             tr_par_str = "overflow:use_log"
             tr_dau_str = "overflow:use_log"
-            log_par = sum(mp.log(abs(float(self.qr.traced_volume(i, ord_par))))
+            log_par = sum(mp.log(abs(_frac_mpf(self.qr.traced_volume(i, ord_par))))
                          for i in range(A - 1))
-            log_dau = sum(mp.log(abs(float(self.qr.traced_volume(i, ord_dau))))
+            log_dau = sum(mp.log(abs(_frac_mpf(self.qr.traced_volume(i, ord_dau))))
                          for i in range(A - 1))
             tr_par_f = log_par  # store log instead of value
             tr_dau_f = log_dau
@@ -328,7 +342,7 @@ class HeckeEngine:
             k_crossings=k,
             trace_par=tr_par_str, trace_par_float=tr_par_f,
             trace_dau=tr_dau_str, trace_dau_float=tr_dau_f,
-            eIeR=str(eIeR), eIeR_float=float(eIeR),
+            eIeR=str(eIeR), eIeR_float=_frac_mpf(eIeR),
             Q_exp=Q_exp,
             generator_volumes_par=gen_vols_par,
             generator_volumes_dau=gen_vols_dau,
@@ -339,12 +353,12 @@ class HeckeEngine:
 # ── CLI ──────────────────────────────────────────────────────────
 
 VERIFICATION_NUCLEI = [
-    (1, 2, 0.01861),
-    (6, 8, 0.156),
-    (27, 33, 0.318),
-    (38, 52, 0.546),
-    (55, 82, 0.514),
-    (83, 127, 1.163),
+    (1, 2, mp.mpf("0.01861")),
+    (6, 8, mp.mpf("0.156")),
+    (27, 33, mp.mpf("0.318")),
+    (38, 52, mp.mpf("0.546")),
+    (55, 82, mp.mpf("0.514")),
+    (83, 127, mp.mpf("1.163")),
 ]
 
 
@@ -355,7 +369,7 @@ def main():
         nuclei = VERIFICATION_NUCLEI
     elif len(sys.argv) >= 3:
         p, n = int(sys.argv[1]), int(sys.argv[2])
-        Q_exp = float(sys.argv[3]) if len(sys.argv) > 3 else None
+        Q_exp = mp.mpf(sys.argv[3]) if len(sys.argv) > 3 else None
         nuclei = [(p, n, Q_exp)]
     else:
         print("Usage: python3 -m folio_assistant.computations.hecke_engine P N [Q_exp]")
@@ -369,9 +383,9 @@ def main():
         results.append(r)
 
         print(f"{r.nucleus}: N({r.p},{r.n}), A={r.A}, conv={r.conv_pos}, k={r.k_crossings}")
-        print(f"  tr(par) = {r.trace_par_float:+.8e}")
-        print(f"  tr(dau) = {r.trace_dau_float:+.8e}")
-        print(f"  e(I)/e(R) = {r.eIeR_float:.10f} [{r.eIeR}]")
+        print(f"  tr(par) = {_Dec(mp.nstr(r.trace_par_float, 20)):+.8e}")
+        print(f"  tr(dau) = {_Dec(mp.nstr(r.trace_dau_float, 20)):+.8e}")
+        print(f"  e(I)/e(R) = {_Dec(mp.nstr(r.eIeR_float, 20)):.10f} [{r.eIeR}]")
         if r.Q_exp:
             print(f"  Q_exp = {r.Q_exp:.5f}")
         print(f"  ordering: {''.join('●' if x else '○' for x in r.ordering_par)}")
