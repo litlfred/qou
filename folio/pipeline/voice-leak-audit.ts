@@ -36,17 +36,24 @@
  *       replaces the earlier scoping, in which L4a failed only in Chapter 1
  *       and L4b only in Chapters 1-2, and were advisory elsewhere.
  *
- * High-recall / agent-confirmed: a hit is a candidate. Fenced code is
- * skipped everywhere; inline math is removed for L1-L3 (L4a reads math).
+ *   leak-convention-c (L5)   excised internal Markov-trace label "Convention C"
+ *       / "convention C" / "C-convention" or parameter symbol `z_C` / `$z_C$`
+ *       in external-reader monograph prose (owner ruling 2026-11-24, bean
+ *       `qou-xu3c`). Lowercase `$z_c$` (complex branch point / crossing
+ *       modulus) is NOT matched. `authors-note` (`FENCED_CHAPTERS`) and
+ *       `CODE_BY_DESIGN` chapters are exempt.
  *
- *   bun run folio/pipeline/voice-leak-audit.ts [--json] [--quiet] [--class L1,L2,L3,L4]
+ * High-recall / agent-confirmed: a hit is a candidate. Fenced code is
+ * skipped everywhere; inline math is removed for L1-L3 (L4a and L5 read math).
+ *
+ *   bun run folio/pipeline/voice-leak-audit.ts [--json] [--quiet] [--class L1,L2,L3,L4,L5]
  *
  * Exit 1 if any non-advisory hit, else 0.
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 
-export type LeakClass = "L1" | "L2" | "L3" | "L4";
+export type LeakClass = "L1" | "L2" | "L3" | "L4" | "L5";
 export interface LeakHit {
   cls: LeakClass;
   criterion: string;
@@ -74,6 +81,8 @@ export const PREVIEW_CHAPTERS = new Set(["introduction"]);
  */
 export const CODE_BY_DESIGN = new Set(["appendix-mass-binding-algorithms", "appendix-formalisation-notes"]);
 export const REFERENCE_TABLES = new Set(["glossary", "notation", "index-of-definitions"]);
+/** Public-release / author-meta chapters exempt from L5 (`qou-xu3c`). */
+export const FENCED_CHAPTERS = new Set(["authors-note"]);
 
 // ── line preparation ────────────────────────────────────────────────
 /** Fenced code blanked; returns raw (math kept) lines. */
@@ -159,10 +168,27 @@ const Q_TOKEN_RES: { sub: string; re: RegExp }[] = [
   { sub: "q-symbol", re: /\$[^$]*(?<![\\A-Za-z])q(?![A-Za-z])[^$]*\$|\bq-(?:deform|integer|analog|number)/ },
 ];
 
+// ── L5 ──────────────────────────────────────────────────────────────
+// Owner ruling 2026-11-24 (`qou-xu3c`): "Convention C" / "convention C" and
+// `z_C` were internal project-history labels and must never appear in
+// external-reader monograph prose. Case-sensitive `C` preserves lowercase
+// `$z_c$` (complex branch point / crossing modulus).
+const L5_RES: { sub: string; re: RegExp }[] = [
+  {
+    sub: "convention-c",
+    re: /\b[Cc]onvention[-\s]+\$?C\$?(?![A-Za-z0-9])|(?<![A-Za-z0-9\\])\$?C\$?-convention\b/,
+  },
+  {
+    sub: "z-c",
+    re: /(?<![A-Za-z\\])z_(?:\{C\}|C(?![A-Za-z0-9])|\{?\\(?:mathrm|text)\{C\}\}?)/,
+  },
+];
+
 export function scanText(src: string, opts: { premature?: boolean; prematureAdvisory?: boolean } = {}): LeakHit[] {
   const hits: LeakHit[] = [];
   unfence(src).forEach((raw, i) => {
     const line = i + 1;
+    const rawNoTarget = raw.replace(/\]\([^)]*\)/g, "]");
     const noMath = stripDirectives(stripMath(raw));
     const prose = stripCode(noMath);
     for (const { sub, re } of L1_RES) {
@@ -186,6 +212,10 @@ export function scanText(src: string, opts: { premature?: boolean; prematureAdvi
         const m = raw.replace(/\\dim_q\b/g, "\\dim").match(re);
         if (m) { hits.push({ cls: "L4", criterion: "leak-reading-order", sub: `premature-${sub}`, line, text: m[0].slice(0, 60), advisory: opts.prematureAdvisory }); break; }
       }
+    for (const { sub, re } of L5_RES) {
+      const m = rawNoTarget.match(re);
+      if (m) hits.push({ cls: "L5", criterion: "leak-convention-c", sub, line, text: m[0] });
+    }
   });
   return hits;
 }
@@ -276,7 +306,8 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
     const srcLines = src.split("\n");
     let hits = scanText(src, { premature, prematureAdvisory: false })
       .filter((h) => classes.has(h.cls))
-      .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2")))
+      .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2" || h.cls === "L5")))
+      .filter((h) => !(FENCED_CHAPTERS.has(b.chapter) && h.cls === "L5"))
       .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")))
       .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && (h.cls === "L1" || h.cls === "L2") && rowFromCodeChapter(srcLines[h.line - 1] ?? "")));
     const banners = bannerLines(src);
@@ -309,7 +340,7 @@ if (import.meta.main) {
   const quiet = args.includes("--quiet");
   const ci = args.indexOf("--class");
   const classes = new Set<LeakClass>(
-    (ci >= 0 ? args[ci + 1]! : "L1,L2,L3,L4").split(",") as LeakClass[],
+    (ci >= 0 ? args[ci + 1]! : "L1,L2,L3,L4,L5").split(",") as LeakClass[],
   );
   const paperDir = args.find((a, i) => !a.startsWith("--") && args[i - 1] !== "--class") ?? "folio/quantum-observable-universe";
   const { scanned, reports } = await audit(paperDir, classes);
