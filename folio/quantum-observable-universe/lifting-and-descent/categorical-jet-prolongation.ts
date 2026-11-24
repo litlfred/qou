@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:categorical-jet-prolongation",
-  lean: { ref: "qou:QOU.LiftingDescent.jet_polynomial_no_bialgebra",
+  lean: { ref: "qou:QOU.LiftingDescent.LiftingDescentRoot.jet_polynomial_no_bialgebra",
     validation: "not_checked",
   },
   title: "Jet object splitting and the failure of Hopf inheritance",

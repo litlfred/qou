@@ -1,10 +1,10 @@
 /-
 Copyright (c) 2026 QOU contributors. All rights reserved.
 -/
-import QOU.Mass.ThetaSlopeArithmetic
-import QOU.Mass.QDifferenceConfluentObstruction
-import QOU.BraidKnot.KnotFactorFrobeniusPairing
-import QOU.SchurWeyl.MarkovTraceInstance
+import QOU.MassTheory.ThetaSlopeArithmetic
+import QCalculus.QDifferenceConfluentObstruction
+import HeckeTemperleyLieb.KnotFactorFrobeniusPairing
+import BraidKnotOctonion.MarkovTraceInstance
 
 /-!
 # Algebraic Symmetric-Square Recursion, Newton Slope Profile, and Sign-Alternation Gauge (`qou-otet`)

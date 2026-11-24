@@ -1,7 +1,7 @@
-import QOU.Basic
-import QOU.Glossary
-import QOU.QuantumObservableUniverse.CategoricalFoundations
-import QOU.QuantumObservableUniverse.GaugeTheory
+import QOU.Core.Basic
+import QOU.Core.Glossary
+import QOU.Core.CategoricalFoundations
+import QOU.Core.GaugeTheory
 import Mathlib.CategoryTheory.Monoidal.Category
 
 

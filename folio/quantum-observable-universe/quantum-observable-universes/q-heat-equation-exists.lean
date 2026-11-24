@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverses.QAnalysis
+import QOU.Core.QAnalysis
 
 
 /-!

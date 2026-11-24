@@ -16,7 +16,7 @@ export default remark({
     "dantzig-wolfe1960",
   ],
   lean: {
-    ref: "qou:QOU.MathlibInfra.ConfinementLayerTower.ConfinementLayer",
+    ref: "qou:ToricConicOpt.ConfinementLayerTower.ConfinementLayer",
     validation: "not_checked",
   },
   tags: [

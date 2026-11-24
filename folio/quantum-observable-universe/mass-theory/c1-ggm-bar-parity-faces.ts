@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:c1-ggm-bar-parity-faces",
   lean: {
-    ref: "qou:QOU.Mass.DoorVParityNoIdentity.doorV_parity_no_identity",
+    ref: "qou:QOU.MassTheory.DoorVParityNoIdentity.doorV_parity_no_identity",
     validation: "validated",
   },
   title:

@@ -2,7 +2,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.Complex.UpperHalfPlane.Basic
 import Mathlib.Tactic
-import QOU.Archimedean.BlochWignerLobachevsky
+import MathlibExt.BlochWignerLobachevsky
 
 open scoped UpperHalfPlane
 

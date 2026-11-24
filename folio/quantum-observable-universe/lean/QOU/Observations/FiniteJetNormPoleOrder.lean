@@ -1,8 +1,8 @@
 /-
 Copyright (c) 2026 QOU contributors. All rights reserved.
 -/
-import QOU.LiftingDescent.SweedlerJetIso
-import QOU.Mass.ThetaSlopeArithmetic
+import TwistedFrobeniusHopf.SweedlerJetIso
+import QOU.MassTheory.ThetaSlopeArithmetic
 import Mathlib.Data.ZMod.Basic
 
 /-!

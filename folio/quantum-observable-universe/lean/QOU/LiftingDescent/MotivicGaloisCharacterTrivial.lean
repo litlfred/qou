@@ -1,5 +1,5 @@
 import QOU.LiftingDescent.MotivicGaloisCharacter
-import QOU.AlgebraicSubstrate.MotivicSubstrateTrivial
+import QOU.BringsSurface.MotivicSubstrateTrivial
 import Mathlib.Tactic
 
 /-!

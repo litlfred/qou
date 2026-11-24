@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:lusztig-vs-hermitian-bar",
   lean: {
-    ref: "qou:QOU.BraidKnot.LusztigVsHermitianBar.lusztig_eq_hermitian_iff_real",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.LusztigVsHermitianBar.lusztig_eq_hermitian_iff_real",
     validation: "not_checked",
   },
   title:

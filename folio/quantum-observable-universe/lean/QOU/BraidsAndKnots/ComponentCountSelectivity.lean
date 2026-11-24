@@ -22,7 +22,7 @@ import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Algebra.Order.Ring.Abs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
-import QOU.BraidsAndKnots.ClosureComponentsSignInvariant
+import BraidKnotOctonion.ClosureComponentsSignInvariant
 
 namespace QOU.BraidsAndKnots.ComponentCountSelectivity
 

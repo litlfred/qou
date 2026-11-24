@@ -15,7 +15,7 @@
 -- conditional derivation.
 import Mathlib.Data.Real.Basic
 import Mathlib.CategoryTheory.Functor.Basic
-import QOU.Kashaev
+import BraidKnotOctonion.Kashaev
 
 namespace QOU.BraidsKnots
 

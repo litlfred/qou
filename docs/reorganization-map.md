@@ -475,3 +475,20 @@ Consolidated the 14 back-matter appendices (`glossary`, `notation`, `appendix-kn
 | **Annex E** (`E`) | `appendix-formalisation-notes/` (`app:formalisation-notes`) | `appendix-formalisation-notes/` (24) + `mathlib-upstreaming-laurent-pl-links` (1) + `lean-community-libraries-dag` & 6 Reservoir library specs (`qou-lanx`, 7) | Lean 4 Formalisation Architecture, `Mathlib4` Upstreaming, and Standalone Community Libraries. |
 | **Annex F** (`F`) | `notation/` (`chap:notation`) | `notation/` (13) + `glossary/` (31, consolidated into `sec:glossary-categorical-foundations` and `sec:glossary-homological-geometric`) + `index-of-definitions/` (1) | Notation Register, Categorical Glossary, and Index of Definitions. |
 
+---
+
+## 2026-11-24 — Q3 Option 1 Lean 4 Multi-`lean_lib` Isolation & `83 -> 12` `QOU.<Chapter>` Consolidation (`qou-lref`)
+
+- **Owner Decision (`2026-11-24`):** Selected **Option 1** (`Process_GraphDetanglement` Stage 3 `Isolate in-place`) from [`docs/audits/2026-11-23-lean-kg-detangler-and-reservoir-options.md`](audits/2026-11-23-lean-kg-detangler-and-reservoir-options.md).
+- **Authoritative Module Map:** [`docs/audits/2026-11-24-lean-reservoir-module-map.json`](audits/2026-11-24-lean-reservoir-module-map.json) (`3,890` library modules mapped bijectively; automated via [`scripts/apply-lean-reservoir-migration.py`](../scripts/apply-lean-reservoir-migration.py)).
+- **7 Top-Level Pure-Math `[[lean_lib]]` Roots (`folio/quantum-observable-universe/lean/<Lib>/`):**
+  1. `MathlibExt` (L1 — Tier-A `leanprover-community/mathlib4` core PR staging; `0` Tier-B and `0` `QOU.*` imports)
+  2. `QCalculus` (L2 — $q$-numbers, Gaussian binomials, $q$-Pochhammer, Thomae–Jackson $q$-calculus, dilogarithms, Habiro rings)
+  3. `TwistedFrobeniusHopf` (L3 — Nakayama-twisted Frobenius algebras, Sweedler $H_4$ & Taft Hopf algebras, Higman norm map)
+  4. `ToricConicOpt` (L4 — Sturmfels–Thomas toric Gröbner chambers, Graver bases, LP/SDP dual certificates)
+  5. `CompactQuantumMetrics` (L5 — Finite-dimensional Rieffel–Connes compact quantum metric spaces, Woronowicz $\mathcal{O}_q(\mathrm{SU}(2))$)
+  6. `HeckeTemperleyLieb` (L6 — Iwahori–Hecke $H_n(q)$, Temperley–Lieb $TL_n(q)$, Jones/Markov/Ocneanu traces, Hoefsmit/Young/SYT/Schur–Weyl)
+  7. `BraidKnotOctonion` (L7 — Artin braid groups, Burau/Krammer/Alexander invariants, PL knot topology, Kashaev/Whitehead/Borromean volume bounds, octonions/$\mathfrak{g}_2$, Bring's curve)
+- **12 Canonical Monograph `QOU/<Chapter>/` Subgraphs (`83 dirs + 106 loose -> 12 dirs + 0 loose`):**
+  `QOU/Core/`, `QOU/LiftingDescent/`, `QOU/BraidsAndKnots/`, `QOU/BringsSurface/`, `QOU/Confinement/`, `QOU/EightfoldWay/`, `QOU/MassTheory/`, `QOU/Nuclear/`, `QOU/StandardModel/`, `QOU/FluidDynamics/`, `QOU/InformationTheory/`, `QOU/Observations/`.
+- **Open-PR Fixup Command:** Run `nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch` on any branch authored against legacy `QOU/<OldSynonym>/` paths.

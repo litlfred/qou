@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Hecke branching trace decomposition: $\\mathrm{tr}_{V_\\lambda}(\\rho_\\lambda(\\beta_1 I \\beta_2)) = \\sum_{\\mu,\\nu} \\mathrm{tr}\\,A^\\lambda_{\\mu,\\nu}(I) \\cdot (\\rho_\\mu(\\beta_1) \\otimes \\rho_\\nu(\\beta_2))$",
   lean: {
-    ref: "qou:QOU.MassEndomorphism.branch_trace",
+    ref: "qou:QOU.MassTheory.MassEndomorphism.branch_trace",
     validation: "not_checked",
   },
   uses: [

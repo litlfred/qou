@@ -1,6 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
-import QOU.BraidKnot.HoefsmitV21CosSymmetrization
+import HeckeTemperleyLieb.HoefsmitV21CosSymmetrization
 
 /-!
 # QOU.BraidKnot.ck_extraction_from_algebraic_rules

@@ -1,5 +1,5 @@
 import QOU.MassTheory.ProtonQ3SchurElement
-import QOU.MathlibExt.KLCoordinateLaurent
+import MathlibExt.KLCoordinateLaurent
 
 /-!
 # Ocneanu weights of `H₃(q)` and what the derivative reading of `/q³` really uses

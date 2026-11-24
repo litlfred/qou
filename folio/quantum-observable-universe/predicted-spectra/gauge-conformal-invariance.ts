@@ -4,7 +4,7 @@ export default theorem({
   label: "thm:gauge-conformal-invariance",
   title: "Gauge conformal invariance",
   lean: {
-    ref: "qou:QOU.Archimedean.gauge_conformal_invariance",
+    ref: "qou:QOU.MassTheory.Archimedean.gauge_conformal_invariance",
     validation: "not_checked",
   },
   tags: [

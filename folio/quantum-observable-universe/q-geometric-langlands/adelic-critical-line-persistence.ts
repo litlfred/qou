@@ -16,7 +16,7 @@ export default conjecture({
   label: "conj:adelic-critical-line-persistence",
   title: "Adelic persistence of the critical line",
   lean: {
-    ref: "qou:QOU.BraidKnot.AdelicCriticalLinePersistence",
+    ref: "qou:BraidKnotOctonion.AdelicCriticalLinePersistence",
     validation: "stub",
   },
   uses: [

@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge
+import QOU.Core.CategoricalLagrangianTwoTermBridge
 
 /-!
 # The two-term Lagrangian separates the volume term from the own-sector constant

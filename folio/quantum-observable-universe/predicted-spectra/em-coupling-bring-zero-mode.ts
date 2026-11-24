@@ -28,7 +28,7 @@ export default proposition({
     "derivation-lead",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.bring_zero_mode_additive_form",
+    ref: "qou:QOU.MassTheory.Archimedean.bring_zero_mode_additive_form",
     validation: "not_checked",
   },
   authorNotes: [

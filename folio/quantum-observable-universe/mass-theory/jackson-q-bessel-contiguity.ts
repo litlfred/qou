@@ -4,7 +4,7 @@ export default proof({
   label: "prf:jackson-q-bessel-contiguity",
   of: "prop:jackson-q-bessel-contiguity-recurrence",
   lean: {
-    ref: "qou:QOU.QBeta.qbessel_first_kind_coeff_closed_form",
+    ref: "qou:QOU.Nuclear.QBeta.qbessel_first_kind_coeff_closed_form",
     validation: "validated",
   },
   computation: {

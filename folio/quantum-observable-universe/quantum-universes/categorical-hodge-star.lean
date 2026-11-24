@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.Glossary
+import QOU.Core.Basic
+import QOU.Core.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans

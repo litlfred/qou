@@ -1,4 +1,4 @@
-import QOU.BraidKnot.SeminormalDiagonalPoleOrder
+import HeckeTemperleyLieb.SeminormalDiagonalPoleOrder
 
 /-!
 # prop:crystal-r-matrix-sub-lemma — pole order of the seminormal diagonal entry

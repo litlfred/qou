@@ -37,7 +37,7 @@ export default proposition({
     requires: ["sympy"],
   },
   lean: {
-    ref: "qou:QOU.BraidKnot.markovTraceAntipodePolynomialSymmetry",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.markovTraceAntipodePolynomialSymmetry",
     validation: "not_checked",
   },
   tags: [

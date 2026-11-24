@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:stable-atom",
   title: "Stable atom (Frobenius positivity of the normal form)",
-  lean: { ref: "qou:QOU.BraidKnot.StableAtom",
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.StableAtom",
     validation: "not_checked",
   },
   uses: [

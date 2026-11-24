@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:coxeter-tits-residue-collapse",
   lean: {
-    ref: "qou:QOU.Machinery.CoxeterParabolic.isReduced_iji_iff",
+    ref: "qou:HeckeTemperleyLieb.CoxeterTitsResidueCollapse.isReduced_iji_iff",
     validation: "not_checked",
   },
   title:

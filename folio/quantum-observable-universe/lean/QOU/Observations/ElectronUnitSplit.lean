@@ -29,7 +29,7 @@ And the gap on the mass-formula side:
 
 Everything here is over a generic field (§7c). No numerical value enters.
 -/
-import QOU.QBeta.E0WeightCandidates
+import QOU.Nuclear.E0WeightCandidates
 
 namespace QOU.Observations.ElectronUnitSplit
 

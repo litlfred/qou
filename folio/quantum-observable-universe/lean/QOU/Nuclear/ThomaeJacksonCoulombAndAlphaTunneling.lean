@@ -1,4 +1,4 @@
-import QOU.MathlibInfra.ThomaeJacksonCalculus
+import QCalculus.ThomaeJacksonCalculus
 import Mathlib.Data.Real.Sqrt
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.Ring

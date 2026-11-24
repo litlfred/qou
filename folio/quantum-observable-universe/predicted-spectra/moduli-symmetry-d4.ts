@@ -14,7 +14,7 @@ export default proposition({
     "golden-octet",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.ModuliSymmetryD4.moduli_symmetry_d4",
+    ref: "qou:QOU.MassTheory.Archimedean.ModuliSymmetryD4.moduli_symmetry_d4",
     validation: "not_checked",
   },
   uses: [

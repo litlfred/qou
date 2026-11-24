@@ -18,7 +18,7 @@ export default proposition({
   title:
     "The canonical closure is a chain of $(2,\\mathrm{odd})$-torus knots: bridge number $2A+1$ and total curvature $2\\pi(2A+1)$",
   lean: {
-    ref: "qou:QOU.Mass.TorusKnotPages.curvature_floor",
+    ref: "qou:BraidKnotOctonion.TorusKnotPages.curvature_floor",
     sorryFree: true,
     validation: "not_checked",
   },

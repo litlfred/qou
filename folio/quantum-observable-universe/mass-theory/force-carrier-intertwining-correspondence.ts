@@ -26,7 +26,7 @@ import { conjecture } from "../../schema/builders";
  */
 export default conjecture({
   label: "conj:force-carrier-intertwining-correspondence",
-  lean: { ref: "qou:QOU.BraidKnot.force_carrier_intertwining_correspondence" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.force_carrier_intertwining_correspondence" },
   title:
     "Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\\lambda = (p, 1^{n-p})$",
   uses: ["conj:e-hartree-categorical-derivation"],

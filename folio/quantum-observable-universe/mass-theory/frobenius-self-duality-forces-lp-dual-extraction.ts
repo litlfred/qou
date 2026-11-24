@@ -29,7 +29,7 @@ export default proposition({
   title:
     "Frobenius self-duality of $(H_n(R,q),\\tau)$ forces $\\tau$-extraction to produce LP-dual variables",
   lean: {
-    ref: "qou:QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction",
+    ref: "qou:QOU.BraidsAndKnots.FrobeniusSelfDualityForcesLPDualExtraction",
     validation: "not_checked",
   },
   tags: [

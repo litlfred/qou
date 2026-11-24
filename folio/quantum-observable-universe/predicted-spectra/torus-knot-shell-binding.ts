@@ -14,7 +14,7 @@ export default proposition({
     "nuclear-structure",
     "inductive-construction",
   ],
-  lean: { ref: "qou:QOU.Archimedean.torus_knot_shell_binding",
+  lean: { ref: "qou:QOU.MassTheory.torus_knot_shell_binding",
     validation: "stub",
   },
   uses: ["def:inter-shell-operator", "def:chebyshev-torus-coefficients"],

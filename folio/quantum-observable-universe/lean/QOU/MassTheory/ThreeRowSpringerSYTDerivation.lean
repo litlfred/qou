@@ -1,6 +1,6 @@
 import QOU.MassTheory.ThreeRowExtensiveCumulant
 import QOU.BraidsAndKnots.DeltaLambdaDTIndexGeneralN
-import QOU.Mathlib.IdentityIHLFBridge
+import BraidKnotOctonion.IdentityIHLFBridge
 
 /-!
 # Closing the `sRow3` Derivation Seam: `≥ 3`-Row Signed Dimension Table from `dimHLF` & `nStatList` (`qou-jkmh`)

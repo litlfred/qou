@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Frobenius antipode $S\\colon \\sigma \\leftrightarrow \\sigma^{-1}$ unifies chirality (Term 5) and neutron-tower closure",
   lean: {
-    ref: "qou:QOU.BraidKnot.frobenius_antipode_unifies",
+    ref: "qou:TwistedFrobeniusHopf.frobenius_antipode_unifies",
     validation: "not_checked",
   },
   uses: [

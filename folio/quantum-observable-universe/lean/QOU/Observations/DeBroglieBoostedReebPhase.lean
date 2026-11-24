@@ -1,4 +1,4 @@
-import QOU.MathlibInfra.LorentzBoostPhase
+import MathlibExt.LorentzBoostPhase
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic.Ring

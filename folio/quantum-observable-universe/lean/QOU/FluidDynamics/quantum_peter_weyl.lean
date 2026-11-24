@@ -1,4 +1,4 @@
-import QOU.Shared.SobolevHkRegularity
+import QOU.Core.SobolevHkRegularity
 
 /-!
 # QOU.FluidDynamics.quantum_peter_weyl

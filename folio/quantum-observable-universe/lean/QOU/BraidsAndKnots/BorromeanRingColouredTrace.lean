@@ -1,5 +1,5 @@
 import QOU.BraidsAndKnots.NucleonWeightSpaceQTrace
-import QOU.QBeta.FlavourWeightSplit
+import QOU.Nuclear.FlavourWeightSplit
 
 /-!
 # The ring-coloured trace of the Borromean nucleon `V³`

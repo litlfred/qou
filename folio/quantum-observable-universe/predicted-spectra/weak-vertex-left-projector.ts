@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:weak-vertex-left-projector",
   title: "The weak vertex insertion is proportional to the left projector",
   lean: {
-    ref: "qou:QOU.QuarkState.WeakVertexLeftProjector.weakVertex_sub_letter",
+    ref: "qou:QOU.Confinement.WeakVertexLeftProjector.weakVertex_sub_letter",
     validation: "not_checked",
   },
   uses: ["rem:force-knot-identification"],

@@ -28,7 +28,7 @@ export default conjecture({
   title:
     "P vs NP in the QOU: classical-limit separation of BQP-width classes",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.PvsNPQou",
+    ref: "qou:QOU.BringsSurface.PvsNPQou",
     validation: "not_checked",
   },
   uses: [

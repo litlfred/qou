@@ -1,8 +1,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic
-import QOU.Archimedean.EmCouplingBringZeroMode
-import QOU.MathlibExt.QIntegerCanonical
+import QOU.MassTheory.EmCouplingBringZeroMode
+import HeckeTemperleyLieb.QIntegerCanonical
 
 /-!
 # QOU.StandardModel.ElectroweakBringSchwingerBridge — Electroweak Analog of the Bring Genus

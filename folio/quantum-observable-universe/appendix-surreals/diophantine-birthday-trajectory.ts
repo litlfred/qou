@@ -16,7 +16,7 @@ export default theorem({
     "dyadic-approximation",
   ],
   lean: {
-    ref: "qou:QOU.AppendixSurreals.liouvilleWith_separates",
+    ref: "qou:QOU.Observations.AppendixSurreals.liouvilleWith_separates",
     validation: "leanok",
   },
   uses: [

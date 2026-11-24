@@ -11,7 +11,7 @@ export default proposition({
     "law-of-sines",
   ],
   lean: {
-    ref: "qou:QOU.MathlibExt.IdealTetrahedron.volume_rotate",
+    ref: "qou:MathlibExt.Core.IdealTetrahedron.volume_rotate",
     validation: "leanok",
   },
   uses: ["thm:kummer-bloch-wigner-identity"],

@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:birthday-grading",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.BirthdayGrading",
+    ref: "qou:QOU.Observations.BirthdayGrading",
     validation: "not_checked",
   },
   title: "Birthday grading on a surreal-coefficient category",

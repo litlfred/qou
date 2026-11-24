@@ -16,7 +16,7 @@ export default algorithm({
     "gatermann-parrilo2004",
   ],
   lean: {
-    ref: "qou:QOU.QBeta.GramSignature.markov_star_nonneg",
+    ref: "qou:QOU.Nuclear.GramSignature.markov_star_nonneg",
     validation: "not_checked",
   },
   computation: {

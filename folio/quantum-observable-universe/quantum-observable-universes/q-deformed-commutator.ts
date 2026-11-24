@@ -6,7 +6,7 @@ export default definition({
   tags: ["heisenberg", "uncertainty", "commutator", "reeb", "fibre-coordinate"],
   uses: ["def:quantum-planck-constant", "def:substrate-parameter"],
   lean: {
-    ref: "qou:QOU.ArchimedeanUniverse.qDeformedCommutator",
+    ref: "qou:QOU.MassTheory.ArchimedeanUniverse.qDeformedCommutator",
     validation: "not_checked",
   },
 });

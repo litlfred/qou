@@ -5,7 +5,7 @@ export default corollary({
   title:
     "Borromean-$k$ composite knot factor is $a = (1 - h^2)^k$",
   lean: {
-    ref: "qou:QOU.BraidKnot.knot_factor_borromean",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.knot_factor_borromean",
     validation: "not_checked",
   },
   uses: ["cor:knot-factor-amphicheiral"],

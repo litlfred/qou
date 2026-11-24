@@ -12,7 +12,7 @@ export default definition({
     "fermion",
     "beta-decay",
   ],
-  lean: { ref: "qou:QOU.Archimedean.Antineutrino",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.Antineutrino",
     validation: "not_checked",
   },
   uses: [],

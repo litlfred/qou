@@ -6,7 +6,7 @@ export default proposition({
     "Unified iterative LP-dual correction: per-step Wedderburn " +
     "projection over all partitions $\\lambda \\vdash k$ for " +
     "$k = 2, \\ldots, K$, starting at $A = 1$ (no special cases)",
-  lean: { ref: "qou:QOU.Archimedean.ConfinedKnotBinding.Unified.unified_iterative_correction",
+  lean: { ref: "qou:QOU.MassTheory.ConfinedKnotBinding.Unified.unified_iterative_correction",
     validation: "not_checked",
   },
   uses: [

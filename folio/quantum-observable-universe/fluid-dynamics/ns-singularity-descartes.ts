@@ -2,7 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:ns-singularity-descartes",
-  lean: { ref: "qou:QOU.FluidDynamics.descartes_kummer_root_levels", validation: "not_checked" },
+  lean: { ref: "qou:QOU.FluidDynamics.ns_singularity_descartes.descartes_kummer_root_levels", validation: "not_checked" },
   title:
     "Topology of the Reeb bundle of the Descartes universe",
   // `prop:ns-kummer-specialisation` removed 2026-08-15 to break an editorial

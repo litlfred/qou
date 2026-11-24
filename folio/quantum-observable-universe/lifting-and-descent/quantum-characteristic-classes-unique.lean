@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.Core.Basic
 import QOU.LiftingDescent.QuantumCharacteristicClassDisplay
 
 

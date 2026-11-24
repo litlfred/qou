@@ -13,7 +13,7 @@ export default theorem({
   ],
   label: "thm:hasse-weil-bound",
   title: "Hasse--Weil bound for the fundamental eigenvalues",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.hasse_weil_bound",
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.hasse_weil_bound",
     validation: "not_checked",
   },
   uses: ["def:local-q-zeta-function"],

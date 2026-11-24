@@ -7,7 +7,7 @@ export default definition({
     "cmb-functor", "cmb", "horizon-functor",
     "colimit", "jet-quotient", "aeon",
   ],
-  lean: { ref: "qou:QOU.CMBFunctor",
+  lean: { ref: "qou:QOU.InformationTheory.CMBFunctor",
     validation: "not_checked",
   },
   uses: ["def:horizon-functor"],

@@ -57,7 +57,7 @@ export default proposition({
     // volume Vol(K) and never mentions mass, Vol(K)/hbar_q^2, or the formula;
     // the edge was not used by the text.
   ],
-  lean: { ref: "qou:QOU.Archimedean.VolumeTowerDecomposition",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.VolumeTowerDecomposition",
     validation: "not_checked",
   },
 });

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Multiplication by a degree-one Hecke element is a non-commutative Fourier shift (Pieri rule)",
   lean: {
-    ref: "qou:QOU.Photon.pieri_one_box_shift",
+    ref: "qou:QOU.StandardModel.Photon.pieri_one_box_shift",
     validation: "not_checked",
   },
   uses: ["lem:degree-one-braid-trivial-volume", "def:photon"],

@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:molecular-bond-binding-from-trefoil-insertion",
   title: "Molecular bond binding energy from inverse-trefoil insertion",
   lean: {
-    ref: "qou:QOU.BraidKnot.bondEnergy",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.bondEnergy",
     validation: "not_checked",
   },
   uses: ["prop:confined-knot-binding"],

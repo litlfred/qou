@@ -6,7 +6,7 @@ export default remark({
   title:
     "The channel rotation in the Askey scheme: same eigenfunctions rotated, different measures",
   lean: {
-    ref: "qou:QOU.MassEndomorphism.rotation_step",
+    ref: "qou:QOU.MassTheory.rotation_step",
     validation: "not_checked",
   },
   uses: [

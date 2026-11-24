@@ -38,7 +38,7 @@ export default remark({
   // result: two different six-parameter breaking patterns give the same
   // (vanishing) combination, so the relation selects no mechanism.
   lean: {
-    ref: "qou:QOU.Eightfold.ColemanGlashowIdentity.cg_cannot_discriminate",
+    ref: "qou:QOU.EightfoldWay.ColemanGlashowIdentity.cg_cannot_discriminate",
   },
   uses: [
     "prop:borromean-decuplet",

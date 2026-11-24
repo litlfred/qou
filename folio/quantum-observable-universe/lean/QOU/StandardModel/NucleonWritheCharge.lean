@@ -1,4 +1,4 @@
-import QOU.Mass.GammaGammaWordSelection
+import QOU.MassTheory.GammaGammaWordSelection
 import QOU.StandardModel.WritheChargeLeavesNoHypercharge
 
 /-!

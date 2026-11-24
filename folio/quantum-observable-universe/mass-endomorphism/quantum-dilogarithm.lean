@@ -1,7 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 
 /-!

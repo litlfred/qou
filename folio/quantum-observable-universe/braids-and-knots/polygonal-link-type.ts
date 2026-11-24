@@ -10,7 +10,7 @@ export default definition({
   label: "def:polygonal-link-type",
   title: "Polygonal links and link types",
   defines: ["polygonal-link", "link-type"],
-  lean: { ref: "qou:QOU.MathlibExt.PL.PolygonalLinkType" },
+  lean: { ref: "qou:MathlibExt.Core.PL.PolygonalLinkType" },
   cites: ["lickorish1997", "rolfsen"],
   tags: ["link-type", "polygonal-link", "pl-topology", "delta-move", "ambient-isotopy"],
 });

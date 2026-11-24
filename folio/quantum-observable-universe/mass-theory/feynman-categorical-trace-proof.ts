@@ -21,7 +21,7 @@ export default proof({
     },
   ],
   label: "prf:feynman-categorical-trace",
-  lean: { ref: "qou:QOU.FeynmanPathIntegrals.abs_amplitude_eq_abs_markovTrace",
+  lean: { ref: "qou:QOU.StandardModel.FeynmanPathIntegrals.abs_amplitude_eq_abs_markovTrace",
     validation: "not_checked",
   },
   title: "Proof of Feynman transition amplitude as categorical trace",

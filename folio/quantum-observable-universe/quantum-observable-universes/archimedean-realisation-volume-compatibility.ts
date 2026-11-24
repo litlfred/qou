@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Compatibility of the local archimedean realisation $\\tau_\\infty$ with the global realization $\\mathcal{R}_{\\mathrm{top}}$ on QOU volume classes",
   lean: {
-    ref: "qou:QOU.Archimedean.RealisationVolumeCompatibility.realisation_volume_compatibility"
+    ref: "qou:QOU.MassTheory.RealisationVolumeCompatibility.realisation_volume_compatibility"
   },
   tags: [
     "archimedean-realisation",

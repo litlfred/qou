@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Electron shell number from the writhe of the level word",
   tags: ["hydrogen", "shell", "writhe", "braid-word", "markov-stabilisation", "orbital"],
-  lean: { ref: "qou:QOU.BringsSurface.hydrogen_shell_writhe_ruled",
+  lean: { ref: "qou:QOU.BringsSurface.BringsSurfaceRoot.hydrogen_shell_writhe_ruled",
     validation: "not_checked",
   },
   uses: ["def:electron-knot", "conj:orbital-space-normal-bundle"],

@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.BraidKnot.CrystalGraphRealization
+import QOU.Core.Basic
+import BraidKnotOctonion.CrystalGraphRealization
 
 
 /-!

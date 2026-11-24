@@ -20,7 +20,7 @@ export default conjecture({
         "does, sorry-free, with `#print axioms` clean on all three declarations.",
     },
   ],
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.macroscopic_stability_equivalence" },
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.macroscopic_stability_equivalence" },
   uses: [
     "thm:quantum-gap-collapse",
   ],

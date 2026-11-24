@@ -11,8 +11,8 @@
   and reciprocal identities used here are archimedean. Specialise the
   substrate field to `q₀ ≈ 1.1097` for numerical evaluation.
 -/
-import QOU.QuantumObservableUniverse
-import QOU.MathConstants
+import QOU.Core.QuantumObservableUniverse
+import QOU.Core.MathConstants
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith

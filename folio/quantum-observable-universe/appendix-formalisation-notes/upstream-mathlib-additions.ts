@@ -18,7 +18,7 @@ export default proposition({
     "upstream-contribution",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.UpstreamAdditions.complexLiTwo",
+    ref: "qou:QOU.MassTheory.Archimedean.UpstreamAdditions.complexLiTwo",
     validation: "not_checked",
   },
   authorNotes: [

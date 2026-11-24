@@ -7,7 +7,7 @@ export default lemma({
   label: "lem:mi-sw-abelianisation-cartan",
   title: "Cartan reduction recovers the SW differential",
   lean: {
-    ref: "qou:QOU.ArchimedeanUniverse.mi_sw_cartan_reduction",
+    ref: "qou:QOU.MassTheory.mi_sw_cartan_reduction",
     validation: "not_checked",
   },
   uses: [

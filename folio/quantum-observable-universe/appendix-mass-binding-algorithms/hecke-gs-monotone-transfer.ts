@@ -28,7 +28,7 @@ export default algorithm({
     "orellana1998",
   ],
   lean: {
-    ref: "qou:QOU.QBeta.TemperleyLiebTower.markov_branching_general",
+    ref: "qou:HeckeTemperleyLieb.TemperleyLiebTower.markov_branching_general",
     validation: "not_checked",
   },
   computation: {

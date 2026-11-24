@@ -1,10 +1,10 @@
 import Mathlib.Tactic
-import QOU.Archimedean.MassTowerOpenProblemsClasses
-import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
-import QOU.Archimedean.ClausenFunctionMathlibFiller
-import QOU.Archimedean.BlochWignerMathlibFiller
-import QOU.Archimedean.BlochWignerLobachevsky
-import QOU.Knot.CatalanValueBounds
+import QOU.MassTheory.MassTowerOpenProblemsClasses
+import ToricConicOpt.TypeBFoldedCrystalCombinatorics
+import MathlibExt.ClausenFunctionMathlibFiller
+import QOU.MassTheory.BlochWignerMathlibFiller
+import MathlibExt.BlochWignerLobachevsky
+import BraidKnotOctonion.CatalanValueBounds
 
 
 /-!

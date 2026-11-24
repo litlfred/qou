@@ -5,7 +5,7 @@ export default corollary({
   title:
     "Knot factor for Markov-amphicheiral knots: sum of positive squares",
   lean: {
-    ref: "qou:QOU.BraidKnot.knot_factor_amphicheiral",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.knot_factor_amphicheiral",
     validation: "not_checked",
   },
   uses: ["prop:knot-factor-spectral-form"],

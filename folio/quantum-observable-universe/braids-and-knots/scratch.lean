@@ -1,7 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Topology.Algebra.Order.Field
 import Mathlib.Order.Filter.Basic
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 open Filter Topology
 open QOU.QInteger

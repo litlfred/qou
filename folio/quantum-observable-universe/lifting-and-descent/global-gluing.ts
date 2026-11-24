@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:global-gluing",
-  lean: { ref: "qou:QOU.Torsion.global_gluing",
+  lean: { ref: "qou:QOU.LiftingDescent.Torsion.global_gluing",
     validation: "not_checked",
   },
   title: "Global gluing via twisted quantization",

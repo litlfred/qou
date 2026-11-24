@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Existence of the cyclotomic residue at each filtration level",
   lean: {
-    ref: "qou:QOU.BraidKnot.ResidueAtRoot",
+    ref: "qou:BraidKnotOctonion.ResidueAtRoot",
     validation: "not_checked",
   },
   uses: [

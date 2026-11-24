@@ -13,8 +13,8 @@
 
   LaTeX label: `def:quantum-entropy`
 -/
-import QOU.QuantumObservableUniverse
-import QOU.MathConstants
+import QOU.Core.QuantumObservableUniverse
+import QOU.Core.MathConstants
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp

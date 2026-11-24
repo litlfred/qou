@@ -1,8 +1,8 @@
 import Mathlib.Tactic
 import Mathlib.LinearAlgebra.Trace
 import Mathlib.LinearAlgebra.Matrix.ToLin
-import QOU.MassTheory.TensorTraceCharacter
-import QOU.MassTheory.PiTensorMonomialBasis
+import MathlibExt.TensorTraceCharacter
+import MathlibExt.PiTensorMonomialBasis
 
 /-!
 # `LinearMap.trace` of the factor permutation on a tensor power

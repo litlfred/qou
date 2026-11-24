@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Pauli factor $F_{\\mathrm{Pauli}}$ is the alt/sym Wedderburn-block trace ratio",
   lean: {
-    ref: "qou:QOU.BraidKnot.pauli_factor_wedderburn",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.pauli_factor_wedderburn",
     validation: "not_checked",
   },
   uses: [

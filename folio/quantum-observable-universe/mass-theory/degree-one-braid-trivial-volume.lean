@@ -1,5 +1,5 @@
 import Mathlib.LinearAlgebra.Span.Basic
-import QOU.Photon
+import QOU.StandardModel.Photon
 
 /-!
 # QOU.Photon — degree-one braid words have trivial volume; volume is not linear

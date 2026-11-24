@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Polynomial.Laurent
-import QOU.ParticleInteractions.AtomicityLieRank
+import QOU.Confinement.AtomicityLieRank
 
 
 /-!

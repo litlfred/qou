@@ -9,7 +9,7 @@ export default theorem({
   title:
     "Reduced-cost fiber invariance, adiabatic gap stability, and cross-layer deconfinement flip",
   lean: {
-    ref: "qou:QOU.MathlibInfra.ConfinementLayerTower.hierarchical_confinement_of_gap_gt_perturbation",
+    ref: "qou:ToricConicOpt.ConfinementLayerTower.hierarchical_confinement_of_gap_gt_perturbation",
     validation: "not_checked",
   },
   uses: ["def:iterated-confinement-layer"],

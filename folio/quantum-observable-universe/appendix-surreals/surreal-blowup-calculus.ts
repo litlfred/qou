@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:surreal-blowup-calculus",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.BlowupCalculus",
+    ref: "qou:QOU.Observations.BlowupCalculus",
     validation: "not_checked",
   },
   title:

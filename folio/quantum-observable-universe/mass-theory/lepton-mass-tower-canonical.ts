@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:lepton-mass-tower-canonical",
   lean: {
-    ref: "qou:QOU.BraidKnot.LeptonMassTowerCanonical.lepton_mass_ratio",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.LeptonMassTowerCanonical.lepton_mass_ratio",
     validation: "not_checked",
   },
   title:

@@ -22,7 +22,7 @@ export default theorem({
     "certificates",
   ],
   lean: {
-    ref: "qou:QOU.Knot.GeneratedCertifiedHigh.Cert10100.satisfiesEdgeEquations",
+    ref: "qou:BraidKnotOctonion.GeneratedCertifiedHigh.Cert10100.satisfiesEdgeEquations",
     validation: "leanok",
   },
   uses: ["thm:gluing-equations-do-not-detect-hyperbolicity"],

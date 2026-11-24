@@ -33,7 +33,7 @@ export default definition({
   title:
     "The expression $\\kappa_{\\mathrm{closed}} = -E_0 \\log(1/h) / [3]_q!$ and its proved properties",
   lean: {
-    ref: "qou:QOU.BraidKnot.MagicShellCouplingKappa",
+    ref: "qou:QOU.BraidsAndKnots.MagicShellCouplingKappa",
     validation: "not_checked",
   },
   uses: [],

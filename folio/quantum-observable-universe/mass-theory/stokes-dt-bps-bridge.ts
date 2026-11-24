@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies (the closed-sector state-integral bridge, GGM Conjecture 3(d) + GPPV)",
   lean: {
-    ref: "qou:QOU.QBeta.StokesDTBPSBridge",
+    ref: "qou:QOU.Nuclear.StokesDTBPSBridge",
     validation: "not_checked",
   },
   computation: {

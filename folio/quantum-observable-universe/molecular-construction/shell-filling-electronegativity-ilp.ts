@@ -13,7 +13,7 @@ export default remark({
     "Electronegativity, Parr–Pearson shadow-price hardness, and ILP generator alternation",
   interprets: "prop:shell-filling-rule",
   lean: {
-    ref: "qou:QOU.MathlibInfra.ConfinementLayerTower.parr_pearson_hardness_eq_shadow_jump",
+    ref: "qou:ToricConicOpt.ConfinementLayerTower.parr_pearson_hardness_eq_shadow_jump",
     validation: "not_checked",
   },
   uses: [

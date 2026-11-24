@@ -41,7 +41,7 @@ export default conjecture({
   label: "conj:jones-birthday",
   title:
     "Birthday refinement of the Jones polynomial",
-  lean: { ref: "qou:QOU.AppendixSurreals.JonesBirthday", validation: "stub" },
+  lean: { ref: "qou:QOU.Observations.AppendixSurreals.JonesBirthday", validation: "stub" },
   tags: [
     "tier:P",
     "surreal-numbers",

@@ -1,4 +1,4 @@
-import QOU.Torsion.YekutieliTriple
+import QOU.LiftingDescent.YekutieliTriple
 
 
 /-!

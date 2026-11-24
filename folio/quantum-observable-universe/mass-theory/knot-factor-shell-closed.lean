@@ -1,4 +1,4 @@
-import QOU.BraidKnot.KnotFactorSpectralDerivation
+import BraidKnotOctonion.KnotFactorSpectralDerivation
 
 
 /-!

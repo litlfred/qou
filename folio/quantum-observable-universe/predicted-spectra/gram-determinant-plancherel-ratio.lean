@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Polynomial.Laurent
-import QOU.Archimedean.EmSpectralCompleteness
-import QOU.Archimedean.ForceCarrierBringUniqueness
+import QOU.MassTheory.EmSpectralCompleteness
+import BraidKnotOctonion.ForceCarrierBringUniqueness
 
 
 /-!

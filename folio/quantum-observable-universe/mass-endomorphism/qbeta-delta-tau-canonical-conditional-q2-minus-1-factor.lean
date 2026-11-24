@@ -5,7 +5,7 @@ import Mathlib.Tactic.Ring
 -- Resolves via the Lake-tree mirror at
 -- `folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`
 -- (added in this PR alongside the conditional theorem).
-import QOU.BraidKnot.QBetaPerBlockChiClosedForms
+import QOU.BraidsAndKnots.QBetaPerBlockChiClosedForms
 
 /-!
 # QOU.BraidKnot.DeltaTauMCanonicalConditional

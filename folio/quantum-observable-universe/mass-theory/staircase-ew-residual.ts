@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Staircase EW-residual: $q^{1/(2k-1)}$ as pairwise eigenvalue ratio of $\\beta_{\\mathrm{EW}}$ on $V_{\\rho_k}$",
   lean: {
-    ref: "qou:QOU.StaircaseCornerHook.StaircaseEWResidual",
+    ref: "qou:BraidKnotOctonion.StaircaseCornerHook.StaircaseEWResidual",
     validation: "not_checked",
   },
   uses: [

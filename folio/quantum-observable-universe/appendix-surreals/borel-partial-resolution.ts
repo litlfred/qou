@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.BorelPartialResolution.borel_partial",
+    ref: "qou:QOU.Observations.BorelPartialResolution.borel_partial",
     validation: "not_checked",
   },
   // rem:k-theory-period-rosetta dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):

@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Staircase-partition closed form for the $\\sigma_{\\mathrm{shell}}$ magnitude (identically zero at $z = q^3/(q^2+1)$)",
   lean: {
-    ref: "qou:QOU.BraidKnot.SigmaShellFromBetaChainDerivation",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.SigmaShellFromBetaChainDerivation",
     validation: "not_checked",
   },
   uses: [

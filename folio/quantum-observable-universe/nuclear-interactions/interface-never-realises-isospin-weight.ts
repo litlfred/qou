@@ -5,7 +5,7 @@ export default corollary({
   title:
     "No admissible interface element realises either isospin weight: the two mechanisms compute on disjoint sets",
   lean: {
-    ref: "qou:QOU.QBeta.GramSignature.interface_never_equals_isospin_weight",
+    ref: "qou:QOU.Nuclear.GramSignature.interface_never_equals_isospin_weight",
     validation: "not_checked",
   },
   uses: ["prop:interface-band-between-isospin-weights"],

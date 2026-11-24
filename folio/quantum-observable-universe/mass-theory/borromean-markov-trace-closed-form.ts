@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:borromean-markov-trace-closed-form",
   title:
     "Borromean Markov trace $\\mathrm{tr}_M(\\beta_{\\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$",
-  lean: { ref: "qou:QOU.BraidsAndKnots.borromean_markov_trace_closed_form" },
+  lean: { ref: "qou:BraidKnotOctonion.BorromeanMarkovTrace.borromean_markov_trace_closed_form" },
   uses: [
     "thm:jones-markov-trace",
     "def:frobenius-hopf-substrate",

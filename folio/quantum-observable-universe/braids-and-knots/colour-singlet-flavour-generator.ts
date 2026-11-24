@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:colour-singlet-flavour-generator",
   lean: {
-    ref: "qou:QOU.Braiding.HopfColourTensorBraid.singlet_rescale",
+    ref: "qou:BraidKnotOctonion.HopfColourTensorBraid.singlet_rescale",
     validation: "not_checked",
   },
   title: "On colour singlets the rescaled strand braid is the flavour Hecke generator",

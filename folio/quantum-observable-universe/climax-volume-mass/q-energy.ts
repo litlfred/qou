@@ -17,7 +17,7 @@ export default definition({
     "mass-energy",
     "kinematic",
   ],
-  lean: { ref: "qou:QOU.Archimedean.QEnergy",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.QEnergy",
     validation: "not_checked",
   },
   uses: ["def:q-angular-momentum"],

@@ -14,7 +14,7 @@ export default proposition({
     // broken-ref removed (Phase 7): def:borromean-baryon-mass-formula
     // broken-ref removed (Phase 7): prop:quaternion-from-hecke-eigenspaces
   ],
-  lean: { ref: "qou:QOU.BraidKnot.CrossedModuleEulerCharacteristic.crossed_module_euler_characteristic" },
+  lean: { ref: "qou:BraidKnotOctonion.CrossedModuleEulerCharacteristic.crossed_module_euler_characteristic" },
   computation: {
     engine: "python",
     script: "computations/hecke/hecke_crossed_module_q8.py",

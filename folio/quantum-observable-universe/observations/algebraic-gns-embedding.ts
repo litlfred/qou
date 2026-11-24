@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Markov-trace GNS embedding $H_\\infty(q)/\\mathcal{N} \\hookrightarrow L(\\mathcal{H})$ — operator-algebra route to the Archimedean side",
   lean: {
-    ref: "qou:QOU.Observations.AlgebraicGnsEmbedding.markov_gns_null_ideal",
+    ref: "qou:CompactQuantumMetrics.AlgebraicGnsEmbedding.markov_gns_null_ideal",
     validation: "not_checked",
   },
   uses: ["prop:wedderburn-weight-canonical"],

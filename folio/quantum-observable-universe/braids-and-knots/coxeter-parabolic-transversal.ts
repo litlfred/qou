@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:coxeter-parabolic-transversal",
   lean: {
-    ref: "qou:QOU.Machinery.CoxeterParabolic.braid_at_pair",
+    ref: "qou:HeckeTemperleyLieb.CoxeterParabolicTransversal.braid_at_pair",
     validation: "not_checked",
   },
   title:

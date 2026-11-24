@@ -18,7 +18,7 @@ export default proposition({
     "mass",
     "invariant",
   ],
-  lean: { ref: "qou:QOU.Archimedean.reidemeister_action_table",
+  lean: { ref: "qou:QOU.MassTheory.reidemeister_action_table",
     validation: "not_checked",
   },
   uses: ["thm:markov-trace-factorization"],

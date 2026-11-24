@@ -16,7 +16,7 @@ export default definition({
     "per-nucleon",
     "torus-knot",
   ],
-  lean: { ref: "qou:QOU.ParticleInteractions.PerNucleonChannelDecomposition",
+  lean: { ref: "qou:QOU.Confinement.PerNucleonChannelDecomposition",
     validation: "not_checked",
   },
   uses: ["def:typed-crossing-operator"],

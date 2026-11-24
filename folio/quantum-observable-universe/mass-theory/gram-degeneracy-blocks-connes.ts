@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:gram-degeneracy-blocks-connes",
   title: "A Lipschitz seminorm with nonzero kernel has no finite Connes sup",
   lean: {
-    ref: "qou:QOU.QBeta.GramSignature.lip_kernel_forces_unbounded",
+    ref: "qou:QOU.Nuclear.GramSignature.lip_kernel_forces_unbounded",
     validation: "not_checked",
   },
   uses: ["prop:markov-gram-star-positive"],

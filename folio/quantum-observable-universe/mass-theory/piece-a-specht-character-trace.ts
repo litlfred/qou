@@ -14,7 +14,7 @@ export default lemma({
   title:
     "Trace of the central element $C_2 = \\sum_i L_i^2$ on $S^\\mu$ and on the regular representation",
   lean: {
-    ref: "qou:QOU.BraidKnot.PieceA.trace_centralC2_specht_module",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.PieceA.trace_centralC2_specht_module",
     validation: "not_checked",
   },
   uses: ["prop:jucys-murphy-central-elements-qou"],

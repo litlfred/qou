@@ -37,8 +37,8 @@ numerator is q³(q⁴+1) = q⁷ + q³, an honest element of R_q — no
 q^(1/2) and hence no extension is needed. The convention-C numerator
 q + q^(1/2) - 1 was what required R_q[q^(1/2)].
 -/
-import QOU.QuantumObservableUniverse
-import QOU.GroundRingCore
+import QOU.Core.QuantumObservableUniverse
+import MathlibExt.GroundRingCore
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Sqrt

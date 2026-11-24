@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:lp-dual-stability",
-  lean: { ref: "qou:QOU.ParticleInteractions.lp_dual_stability", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Confinement.lp_dual_stability", validation: "not_checked" },
   title:
     "LP dual stability: the confined optimum is LP-stable and strongly dual",
   tags: [

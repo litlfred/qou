@@ -6,7 +6,7 @@ export default definition({
   tags: ["gram-matrix", "chern-simons", "kappa", "determinant"],
   uses: ["rem:em-coupling-chern-simons"],
   lean: {
-    ref: "qou:QOU.Archimedean.csGramDetRatio",
+    ref: "qou:QOU.MassTheory.Archimedean.csGramDetRatio",
     validation: "not_checked",
   },
 });

@@ -31,7 +31,7 @@
 import Mathlib.LinearAlgebra.Matrix.ToLin
 import Mathlib.LinearAlgebra.Dimension.Finrank
 import Mathlib.Tactic
-import QOU.Machinery.HeckeH3AlgebraLaws
+import HeckeTemperleyLieb.HeckeH3AlgebraLaws
 
 namespace QOU.BraidsAndKnots
 

@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.Core.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.Matrix.Basic

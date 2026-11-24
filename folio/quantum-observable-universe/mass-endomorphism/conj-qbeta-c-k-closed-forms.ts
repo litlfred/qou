@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:qbeta-c-k-closed-forms",
   lean: {
-    ref: "qou:QOU.BraidKnot.QBetaCKClosedForms",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.QBetaCKClosedForms",
     validation: "not_checked",
   },
   title:

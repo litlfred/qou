@@ -5,8 +5,8 @@ import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic
 import QOU.StandardModel.ThetaQcdFramingCp
-import QOU.MathlibInfra.ConfinementLayerTower
-import QOU.MathlibExt.QIntegerCanonical
+import ToricConicOpt.ConfinementLayerTower
+import HeckeTemperleyLieb.QIntegerCanonical
 
 set_option autoImplicit false
 

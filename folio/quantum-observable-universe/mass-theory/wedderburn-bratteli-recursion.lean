@@ -64,7 +64,7 @@ import Mathlib.Algebra.Field.Basic
 import Mathlib.Algebra.GroupWithZero.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 namespace QOU.BraidsAndKnots
 

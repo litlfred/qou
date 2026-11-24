@@ -14,7 +14,7 @@ export default remark({
   title: "The knot--particle--force dictionary: flavor supplement",
   interprets: "prop:schur-weyl-eightfold",
   lean: {
-    ref: "qou:QOU.Eightfold.HyperbolicMesonClaspAndDiquarkSplit.framedMesonClaspDatum_injective",
+    ref: "qou:QOU.EightfoldWay.HyperbolicMesonClaspAndDiquarkSplit.framedMesonClaspDatum_injective",
   },
   uses: [
     "rem:knot-particle-dictionary",

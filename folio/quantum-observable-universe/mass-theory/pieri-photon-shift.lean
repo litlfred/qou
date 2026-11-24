@@ -1,6 +1,6 @@
 import Mathlib.Data.Finset.Basic
-import QOU.Photon
-import QOU.SchurWeyl.PieriSupport
+import QOU.StandardModel.Photon
+import BraidKnotOctonion.PieriSupport
 
 
 /-!

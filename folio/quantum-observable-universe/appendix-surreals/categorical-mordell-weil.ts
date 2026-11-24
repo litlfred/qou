@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:categorical-mordell-weil",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.CategoricalMordellWeil",
+    ref: "qou:QOU.Observations.AppendixSurreals.CategoricalMordellWeil",
     validation: "not_checked",
   },
   title:

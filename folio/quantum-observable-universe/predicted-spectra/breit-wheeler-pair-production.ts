@@ -14,7 +14,7 @@ export default definition({
     "normal-form",
   ],
   uses: ["def:photon"],
-  lean: { ref: "qou:QOU.Archimedean.BreitWheelerPairProduction",
+  lean: { ref: "qou:QOU.MassTheory.BreitWheelerPairProduction",
     validation: "not_checked",
   },
 });

@@ -27,7 +27,7 @@ export default conjecture({
   title:
     "Computational-time identification: the binding Borel variable is the loop proper time",
   lean: {
-    ref: "qou:QOU.Archimedean.SchwingerMeasureComputationalTime.BorelProperTimeIdentification",
+    ref: "qou:QOU.MassTheory.Archimedean.SchwingerMeasureComputationalTime.BorelProperTimeIdentification",
     validation: "not_checked",
   },
   computation: {

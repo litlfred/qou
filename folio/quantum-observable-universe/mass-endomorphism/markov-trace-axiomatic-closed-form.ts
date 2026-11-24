@@ -105,7 +105,7 @@ The printed figures were the C column, 15.4 % from D. The stated denominator mat
     requires: ["sympy"],
   },
   lean: {
-    ref: "qou:QOU.BraidKnot.markovTraceAxiomaticClosedForm",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.markovTraceAxiomaticClosedForm",
     validation: "not_checked",
   },
   tags: [

@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:content-scaling-correspondence",
   title: "Box content is the $q$-Jucys--Murphy eigenvalue exponent",
-  lean: { ref: "qou:QOU.SchurWeyl.SeminormalRep.seminormalRep_qJM", validation: "not_checked" },
+  lean: { ref: "qou:HeckeTemperleyLieb.SeminormalRep.seminormalRep_qJM", validation: "not_checked" },
   uses: ["prop:knot-eigenbasis-complete", "rem:hecke-algebra-from-braiding"],
   cites: ["jimbo1986", "ram1997"],
   authorNotes: [

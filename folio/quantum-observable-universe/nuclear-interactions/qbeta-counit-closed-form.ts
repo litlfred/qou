@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:qbeta-counit-closed-form",
   lean: {
-    ref: "qou:QOU.Interactions.QBetaEnergyScale.Qbeta_closed",
+    ref: "qou:QOU.Confinement.Interactions.QBetaEnergyScale.Qbeta_closed",
     validation: "not_checked",
   },
   title:

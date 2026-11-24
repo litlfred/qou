@@ -11,7 +11,7 @@ export default proposition({
     "jet-tower",
   ],
   lean: {
-    ref: "qou:QOU.Hecke.markov_pair_z2",
+    ref: "qou:QOU.BraidsAndKnots.Hecke.markov_pair_z2",
     validation: "not_checked",
   },
   uses: ["rem:mass-endomorphism-jet-tower"],

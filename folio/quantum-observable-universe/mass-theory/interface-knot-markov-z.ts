@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Interface-knot contribution to canonical-atom Markov trace equals the Markov parameter z exactly",
   lean: {
-    ref: "qou:QOU.BraidKnot.interface_knot_markov_z",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.interface_knot_markov_z",
     validation: "not_checked",
   },
   uses: [

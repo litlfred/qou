@@ -14,7 +14,7 @@ export default proposition({
   ],
   uses: ["def:breit-wheeler-pair-production"],
   lean: {
-    ref: "qou:QOU.Archimedean.GammaGammaGeneration.gamma_gamma_span_top",
+    ref: "qou:QOU.MassTheory.Archimedean.GammaGammaGeneration.gamma_gamma_span_top",
     validation: "not_checked",
   },
   authorNotes: [

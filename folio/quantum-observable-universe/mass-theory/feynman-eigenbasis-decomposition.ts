@@ -19,7 +19,7 @@ export default lemma({
     },
   ],
   label: "lem:feynman-eigenbasis-decomposition",
-  lean: { ref: "qou:QOU.FeynmanPathIntegrals.eigenbasis_decomposition",
+  lean: { ref: "qou:QOU.StandardModel.FeynmanPathIntegrals.eigenbasis_decomposition",
     validation: "not_checked",
   },
   title: "Eigenbasis decomposition for the Feynman amplitude",

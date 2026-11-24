@@ -5,7 +5,7 @@ export default lemma({
   title:
     "Pair-contribution equality at a fixed jet level: $z^2 \\sum_{(i,j) \\in \\mathcal{P}_n} \\Phi_q(|\\hat V_i^{(n)} \\hat V_j^{(n)}|)$ is an exact identity",
   lean: {
-    ref: "qou:QOU.BraidKnot.TowerPairEqualityFixedLevel",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.TowerPairEqualityFixedLevel",
     validation: "not_checked",
   },
   uses: ["lem:vhat-pair-commutation-trace"],

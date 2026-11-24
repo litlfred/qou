@@ -11,7 +11,7 @@ export default proposition({
     },
   ],
   label: "prop:crossing-energy-pair-cancellation",
-  lean: { ref: "qou:QOU.Braiding.pair_cancellation" },
+  lean: { ref: "qou:BraidKnotOctonion.pair_cancellation" },
   title: "Mirror pairing cancels the symmetric channel",
   uses: [
     "prop:crossing-energy-decomposition",

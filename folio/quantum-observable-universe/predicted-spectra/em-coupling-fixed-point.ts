@@ -23,7 +23,7 @@ export default proposition({
     "derivation-lead",
   ],
   lean: {
-    ref: "qou:QOU.ArchimedeanUniverse.alpha_em_is_fixed_point_root",
+    ref: "qou:QOU.MassTheory.ArchimedeanUniverse.alpha_em_is_fixed_point_root",
     validation: "not_checked",
   },
   authorNotes: [

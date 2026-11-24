@@ -7,7 +7,7 @@
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 
-import QOU.FeynmanPathIntegrals
+import QOU.StandardModel.FeynmanPathIntegrals
 
 /-!
 The q → 1 degeneration of the categorical trace to standard

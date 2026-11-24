@@ -9,9 +9,9 @@ import Mathlib.GroupTheory.Perm.Sign
 import Mathlib.LinearAlgebra.Dimension.Finrank
 import Mathlib.LinearAlgebra.Dimension.RankNullity
 import Mathlib.Tactic
-import QOU.Brings.S5CharactersOnBringDeformations
-import QOU.Brings.BringDescendingTower
-import QOU.Eightfold.TrialitySelectionRule
+import BraidKnotOctonion.S5CharactersOnBringDeformations
+import BraidKnotOctonion.BringDescendingTower
+import QOU.EightfoldWay.TrialitySelectionRule
 import QOU.StandardModel.HyperchargeBatteryReduction
 
 set_option autoImplicit false

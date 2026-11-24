@@ -30,7 +30,7 @@ export default remark({
   // octet entry held fixed, any physical spectrum is realisable, so the
   // ansatz places no constraint on the mixing.
   lean: {
-    ref: "qou:QOU.Eightfold.NonetMixingUnconstrained.mixing_unconstrained",
+    ref: "qou:QOU.EightfoldWay.NonetMixingUnconstrained.mixing_unconstrained",
   },
   // NOTE (detangler): rem:decuplet-equal-spacing is the companion null
   // result and is discussed in the .md, but it lives in the LATER section

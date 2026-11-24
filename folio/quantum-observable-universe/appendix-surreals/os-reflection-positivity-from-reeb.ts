@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Osterwalder--Schrader reflection positivity from the Reeb $\\mathbb{Z}_2$",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.OSReflectionPositivity",
+    ref: "qou:QOU.Observations.AppendixSurreals.OSReflectionPositivity",
     validation: "not_checked",
   },
   uses: [

@@ -9,7 +9,7 @@ export default conjecture({
   title:
     "Uniform per-level binding bound $|\\Delta^{(n)}(\\varrho)| \\le \\Delta_{\\max}(\\varrho)$ for the brane tower",
   lean: {
-    ref: "qou:QOU.BraidKnot.JetTowerUniformDeltaMax",
+    ref: "qou:BraidKnotOctonion.JetTowerUniformDeltaMax",
     validation: "not_checked",
   },
   uses: [

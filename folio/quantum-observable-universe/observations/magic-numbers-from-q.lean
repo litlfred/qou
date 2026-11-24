@@ -1,4 +1,4 @@
-import QOU.AtomicMass.MagicNumbersFromQ
+import QOU.MassTheory.MagicNumbersFromQ
 
 
 /-!

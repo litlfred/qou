@@ -4,7 +4,7 @@ export default definition({
   label: "def:positron-knot",
   title: "Positron",
   tags: ["positron", "antiparticle", "hopf-link", "braid-word", "lepton"],
-  lean: { ref: "qou:QOU.Archimedean.Positron",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.Positron",
     validation: "not_checked",
   },
   uses: ["rem:chirality-trefoil-electron-positron"],

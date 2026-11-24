@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:quaternionic-spectral-resolvents",
-  lean: { ref: "qou:QOU.QuaternionicSpectralResolvents", validation: "not_checked" },
+  lean: { ref: "qou:QOU.StandardModel.QuaternionicSpectralResolvents", validation: "not_checked" },
   title: "Quaternionic spectral resolvents",
   authorNotes: [
     {

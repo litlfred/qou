@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:jet-convergence-classical-limit",
   title:
     "Jet-filtered knot invariant converges to classical dimension-weighted average",
-  lean: { ref: "qou:QOU.BraidKnot.jet_convergence_classical_limit",
+  lean: { ref: "qou:BraidKnotOctonion.jet_convergence_classical_limit",
     validation: "not_checked",
   },
   uses: ["conj:jet-filtered-knot-factor"],

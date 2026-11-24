@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:q-collatz",
   title:
     "The $q$-Collatz conjecture: Skein-module crossing resolution",
-  lean: { ref: "qou:QOU.AppendixSurreals.QCollatz", validation: "stub" },
+  lean: { ref: "qou:QOU.Observations.QCollatz", validation: "stub" },
   // Two entries removed 2026-08-15 to break editorial cycles.
   //
   // `rem:skein-filtration-trichotomy` synthesises across three problems of

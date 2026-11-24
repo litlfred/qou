@@ -6,7 +6,7 @@ export default proposition({
     { kind: "status", date: "2026-11-21", body: "Formalised, sorry-free (axioms: propext, Classical.choice, Quot.sound): `QOU.FormalGroups.PBW.formalGroup_of_splay`. Scope of the Lean statement. It is over any commutative ring $R$ (the paper uses a field). Each $H_i$ is one-dimensional, so $A_i$ has a divided-power basis $b_i(n)$ with $\\Delta b_i(n) = \\sum_{p+q=n} b_i(p) \\otimes b_i(q)$ and $b_i(0) = 1$, and products of basis elements do not raise weight. The hypotheses on $\\pi$ are the paper's: internal symmetry, strong filtration (a preimage of each cross-block bracket lighter than the product), and strong multiplicativity for the splay coproduct. One hypothesis is added: the splay counit kills $\\pi$. It is assumed, not derived. Conclusion: $U$ has the PBW basis $\\prod_{i\\text{ increasing}} [b_i(J_i)]$ indexed by multi-indices $J$, it carries the bialgebra structure descended from $T$, and there is a formal group law $G$ with $G.F$ the Cartier series of that basis and the product of $U$ the convolution of $G$. Not formalised: that $\\{H_i, G\\}$ is a geometric formal group, and the case of $H_i$ of dimension above one. Files: `PBWFilteredData.lean`, `PBWMultiIndex.lean`, `SplayBialgebra.lean`, `PBWFormalGroup.lean` under `QOU/FormalGroups/`." },
   ],
   label: "prop:skew-poisson-integration",
-  lean: { ref: "qou:QOU.FormalGroups.PBW.formalGroup_of_splay", validation: "not_checked" },
+  lean: { ref: "qou:QOU.LiftingDescent.PBWFormalGroup.formalGroup_of_splay", validation: "not_checked" },
   title: "Integration of skewed-Poisson structures",
   cites: ["leitner2006"],
   uses: [],

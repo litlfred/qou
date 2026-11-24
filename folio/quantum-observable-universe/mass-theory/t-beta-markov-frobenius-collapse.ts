@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Minimum-Frobenius-norm collapse $T_\\beta = S \\cdot 1$ on $H_n(R, q)$",
   lean: {
-    ref: "qou:QOU.QBeta.MarkovFrobeniusCollapse.t_beta_collapse",
+    ref: "qou:QOU.Nuclear.QBeta.MarkovFrobeniusCollapse.t_beta_collapse",
     validation: "not_checked",
   },
   uses: [

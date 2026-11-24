@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.SchurWeyl.OcneanuWeight
+import QOU.Core.Basic
+import HeckeTemperleyLieb.OcneanuWeight
 
 
 /-!

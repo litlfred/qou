@@ -4,7 +4,7 @@ export default definition({
   label: "def:quantum-observable-universe",
   title: "Quantum Observable Universe",
   tags: ["quantum", "observable", "category-theory"],
-  lean: { ref: "qou:QOU.QuantumObservableUniverse",
+  lean: { ref: "qou:QOU.Core.QuantumObservableUniverse",
     validation: "not_checked",
   },
   // def:rigid-monoidal-category + def:snake-identity added 2026-08-14:

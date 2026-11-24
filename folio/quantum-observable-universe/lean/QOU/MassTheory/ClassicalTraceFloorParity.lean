@@ -3,7 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 -/
 import Mathlib.Tactic
 import QOU.MassTheory.ClassicalTraceFloor
-import QOU.RiemannSurface.CycleCountSwap
+import MathlibExt.CycleCountSwap
 
 set_option autoImplicit false
 

@@ -1,5 +1,5 @@
-import QOU.BraidKnot.ResidueAtRoot
-import QOU.BraidKnot.QHabiroCompletion
+import BraidKnotOctonion.ResidueAtRoot
+import BraidKnotOctonion.QHabiroCompletion
 
 /-!
 # prop:residue-at-root — cyclotomic residue as projection image

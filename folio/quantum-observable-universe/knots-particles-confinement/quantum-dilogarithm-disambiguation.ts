@@ -5,7 +5,7 @@ export default definition({
   title:
     "Quantum dilogarithm disambiguation: $\\Phi_q$ (product form) vs $-\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)",
   lean: {
-    ref: "qou:QOU.BraidKnot.QuantumDilogarithm",
+    ref: "qou:QCalculus.BraidKnot.QuantumDilogarithm",
     validation: "not_checked",
   },
   uses: [

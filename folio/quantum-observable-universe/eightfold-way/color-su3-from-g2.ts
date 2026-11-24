@@ -54,7 +54,7 @@ export default proposition({
     "dubois-violette-todorov2018",
     "boyle2020",
   ],
-  lean: { ref: "qou:QOU.Eightfold.Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three" },
+  lean: { ref: "qou:QOU.EightfoldWay.Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three" },
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): and machine-verified in exact $\\mathbb{Z}[i]$ arithmetic\n(`s4_genus3_competitor_fermat.py`: element-order profile" },
   ],

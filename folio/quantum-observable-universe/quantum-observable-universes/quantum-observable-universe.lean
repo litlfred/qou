@@ -1,8 +1,8 @@
-import QOU.Basic
-import QOU.Glossary
+import QOU.Core.Basic
+import QOU.Core.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Monoidal.Braided.Basic
-import QOU.BraidKnot.KeystoneBalancedRibbon
+import BraidKnotOctonion.KeystoneBalancedRibbon
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.Limits.Shapes.ZeroMorphisms

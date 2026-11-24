@@ -13,7 +13,7 @@ import Mathlib.Tactic
 -- `unit_modulus_of_det_one_small_trace` and `figure_eight_classical_reeb` were relocated
 -- to the Lake tree (`QOU/BraidsAndKnots/…`) so the content-block resolver
 -- finds them; `figure_eight_unitary_on_standard` below still uses the former.
-import QOU.BraidsAndKnots.unit_modulus_of_det_one_small_trace
+import BraidKnotOctonion.unit_modulus_of_det_one_small_trace
 
 namespace QOU.BraidsAndKnots
 

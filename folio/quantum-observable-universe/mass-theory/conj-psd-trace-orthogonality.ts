@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:psd-trace-orthogonality",
   title:
     "Orthogonality of trace-dominant and PSD-dominant Wedderburn blocks for canonical atom braids at $q_0$",
-  lean: { ref: "qou:QOU.BraidKnot.PSDTraceOrthogonality.psd_trace_orthogonality_holds_for_all_atoms" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.PSDTraceOrthogonality.psd_trace_orthogonality_holds_for_all_atoms" },
   uses: ["conj:atom-braid-exterior-algebra"],
   cites: [],
   authorNotes: [

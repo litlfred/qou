@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
-import QOU.BraidsAndKnots.ClosureUnseen
+import BraidKnotOctonion.ClosureUnseen
 
 /-!
 # QOU.FluidDynamics.helicity_conservation — categorical helicity conservation

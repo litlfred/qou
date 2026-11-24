@@ -24,7 +24,7 @@ export default theorem({
   ],
   label: "thm:substrate-self-duality",
   title: "Self-duality of the algebraic substrate",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.SelfDualPairingData",
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.SelfDualPairingData",
     validation: "not_checked",
   },
   uses: ["def:rigid-dualizing-complex"],

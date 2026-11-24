@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:confinement-operator-selection",
-  lean: { ref: "qou:QOU.ParticleInteractions.confinement_operator_selection", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Confinement.confinement_operator_selection", validation: "not_checked" },
   title: "Confinement operator selection via topological Brunnian minimality",
   tags: [
     "confinement",

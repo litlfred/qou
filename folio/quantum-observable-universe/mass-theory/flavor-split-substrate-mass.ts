@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:flavor-split-substrate-mass",
   title: "The nucleon mass split equals the substrate flavor-split formula",
   lean: {
-    ref: "qou:QOU.FlavorDressing.FlavorSplitSubstrateMass",
+    ref: "qou:QOU.EightfoldWay.FlavorSplitSubstrateMass",
     validation: "not_checked",
   },
   tags: ["flavor-split", "u-d-splitting", "fitted-ansatz", "conjecture"],

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation — depth-$d$ linear recursion on $c_k$ from the $q$-shift kernel $R(q,\\xi)$ acting on $F(\\xi)$",
   lean: {
-    ref: "qou:QOU.QBeta.CKRecursion.CKRecursion",
+    ref: "qou:QOU.Nuclear.QBeta.CKRecursion.CKRecursion",
     validation: "not_checked",
   },
   uses: [

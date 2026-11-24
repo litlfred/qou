@@ -38,7 +38,7 @@ export default proposition({
     "Partition-sum form of $\\mathrm{tr}_M$ via Wenzl $y_\\lambda$ and " +
     "Hoefsmit $\\chi^\\lambda_q$ agrees with the canonical Markov-axiom reducer",
   lean: {
-    ref: "qou:QOU.BraidKnot.QHeckeSeminormalCharacterClosure.character_closure",
+    ref: "qou:QOU.BraidsAndKnots.QHeckeSeminormalCharacterClosure.character_closure",
     validation: "not_checked",
   },
   uses: [],

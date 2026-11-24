@@ -1,4 +1,4 @@
-import QOU.Archimedean.BorromeanVolumeCatalan
+import QOU.MassTheory.BorromeanVolumeCatalan
 
 /-!
 # `conj:borromean-bloch-group-element` — the `8G` is derived, not assumed

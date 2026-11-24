@@ -2,7 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:flavor-mass-splitting-bound",
-  lean: { ref: "qou:QOU.FlavorDressing.flavor_mass_splitting_bound",
+  lean: { ref: "qou:QOU.Confinement.FlavorDressing.flavor_mass_splitting_bound",
     validation: "not_checked",
   },
   title: "Two-sided substrate bound on the dressed-quark splitting",

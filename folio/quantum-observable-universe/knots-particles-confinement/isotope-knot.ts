@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:isotope-knot",
   title: "Isotope as a knot variant of fixed proton block",
-  lean: { ref: "qou:QOU.BraidKnot.IsotopeKnot",
+  lean: { ref: "qou:QOU.BraidsAndKnots.IsotopeKnot",
     validation: "not_checked",
   },
   uses: [

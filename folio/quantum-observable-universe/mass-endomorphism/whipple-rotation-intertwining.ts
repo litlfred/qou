@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Whipple–rotation intertwining: the channel rotation acts on the toroidal family as the degree–order (winding) exchange",
   lean: {
-    ref: "qou:QOU.MassEndomorphism.WhippleRotationIntertwining",
+    ref: "qou:QOU.MassTheory.MassEndomorphism.WhippleRotationIntertwining",
   },
   uses: ["prop:hoefsmit-toroidal-ladder-locus"],
   cites: ["whipple1917", "ismail-masson1994"],

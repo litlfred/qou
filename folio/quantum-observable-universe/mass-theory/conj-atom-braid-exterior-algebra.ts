@@ -2,7 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:atom-braid-exterior-algebra",
-  lean: { ref: "qou:QOU.BraidKnot.AtomBraidExteriorAlgebra.AtomBraidExteriorAlgebraStructure" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.AtomBraidExteriorAlgebra.AtomBraidExteriorAlgebraStructure" },
   title:
     "Canonical $3A$-strand atom braid in $H_{3A}(q)$ generates a shifted exterior subalgebra $\\Lambda^*(\\mathbb{C}^{3A-Z})$",
   uses: [],

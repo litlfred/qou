@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:polynomial-bar-involution",
   lean: {
-    ref: "qou:QOU.BraidKnot.PolynomialBarInvolution.barPoly_involutive",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.PolynomialBarInvolution.barPoly_involutive",
     validation: "not_checked",
   },
   title:

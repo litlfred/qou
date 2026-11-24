@@ -2,7 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:brane-tower-z-habiro",
-  lean: { ref: "qou:QOU.BraidKnot.BraneTowerZHabiro" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.BraneTowerZHabiro" },
   title: "Brane tower lives in the $z$-Habiro ring",
   uses: [
     "def:z-habiro-ring",

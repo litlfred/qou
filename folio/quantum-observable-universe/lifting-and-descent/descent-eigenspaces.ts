@@ -17,7 +17,7 @@ export default proposition({
   // sibling `descent-eigenspaces.lean`, and `walkBlocks` resolves the sibling
   // FIRST, so every checker audited the stub and passed while the library ref
   // sat dead. Found by the label test in `qou-szd6`, not by any gate.
-  lean: { ref: "qou:QOU.Torsion.EigenspaceDecomposition",
+  lean: { ref: "qou:QOU.LiftingDescent.Torsion.EigenspaceDecomposition",
     validation: "not_checked",
   },
   uses: [

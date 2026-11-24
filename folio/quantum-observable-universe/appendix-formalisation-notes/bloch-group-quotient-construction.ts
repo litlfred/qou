@@ -18,7 +18,7 @@ export default proposition({
     "lean-construction",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.BlochQuotient.BlochGroup",
+    ref: "qou:QOU.MassTheory.Archimedean.BlochQuotient.BlochGroup",
     validation: "not_checked",
   },
   authorNotes: [

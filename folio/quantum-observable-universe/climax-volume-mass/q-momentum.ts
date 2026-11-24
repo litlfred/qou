@@ -16,7 +16,7 @@ export default definition({
     "crossing",
     "kinematic",
   ],
-  lean: { ref: "qou:QOU.Archimedean.QMomentum",
+  lean: { ref: "qou:QOU.MassTheory.QMomentum",
     validation: "not_checked",
   },
   uses: [],

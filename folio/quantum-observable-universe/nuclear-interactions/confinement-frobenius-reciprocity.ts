@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:confinement-frobenius-reciprocity",
   renamedFrom: ["prop:confinement-frobenius-reciprocity"],
-  lean: { ref: "qou:QOU.ParticleInteractions.confinement_frobenius_reciprocity", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Confinement.confinement_frobenius_reciprocity", validation: "not_checked" },
   title:
     "Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings",
   tags: [

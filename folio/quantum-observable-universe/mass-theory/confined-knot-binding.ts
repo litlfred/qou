@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:confined-knot-binding",
   title:
     "Confined knot binding mechanism: character ratio decomposition per jet level",
-  lean: { ref: "qou:QOU.BraidKnot.confined_knot_weighted_cancellation",
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.confined_knot_weighted_cancellation",
     validation: "not_checked",
   },
   // conj:nuclear-knot-classification dropped from uses[] 2026-11-20 (bean

@@ -5,7 +5,7 @@ export default proposition({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "prop:substrate-radial-coordinate",
-  lean: { ref: "qou:QOU.substrate_radial_coordinate",
+  lean: { ref: "qou:QOU.Core.substrate_radial_coordinate",
     validation: "not_checked",
   },
   title: "Substrate parameter as the radial coordinate",

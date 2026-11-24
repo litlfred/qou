@@ -7,7 +7,7 @@ export default proof({
     "prop:mobius-energy",
     "lem:mobius-energy-frobenius-kernel",
   ],
-  lean: { ref: "qou:QOU.MobiusEnergy",
+  lean: { ref: "qou:QOU.MassTheory.MobiusEnergy",
     validation: "not_checked",
   },
 });

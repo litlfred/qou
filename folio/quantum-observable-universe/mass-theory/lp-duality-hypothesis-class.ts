@@ -29,7 +29,7 @@ export default definition({
     "schrijver1986theory",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.HasFiniteLPDuality",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.HasFiniteLPDuality",
     validation: "stub",
   },
   tags: [

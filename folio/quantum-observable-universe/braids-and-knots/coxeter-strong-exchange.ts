@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:coxeter-strong-exchange",
   lean: {
-    ref: "qou:QOU.Machinery.CoxeterParabolic.strong_exchange",
+    ref: "qou:HeckeTemperleyLieb.CoxeterReflectionCocycle.strong_exchange",
     validation: "not_checked",
   },
   title:

@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Two-filtration bridge map in full generality: bar-class determines iterated-integral depth (self-conj $\\to$ 2, chiral pair $\\to$ 3) for all partitions",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral.bridge_map_general",
+    ref: "qou:QOU.BringsSurface.TwoFiltrationBridgeGeneral.bridge_map_general",
     validation: "not_checked",
   },
   uses: ["prop:cyclotomic-cl3-orbit-sum-general", "prop:cellular-depth-filtration"],

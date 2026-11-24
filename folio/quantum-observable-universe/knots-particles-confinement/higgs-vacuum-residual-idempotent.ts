@@ -5,7 +5,7 @@ export default proposition({
   title:
     "The vacuum idempotent $e = t^{-1}\\varrho\\varrho^{*}$, its residual, and the symmetric split of $\\mathrm{id} - e \\otimes e$",
   lean: {
-    ref: "qou:QOU.QuantumObservableUniverses.PointCopoint.tensorResid_split",
+    ref: "qou:QOU.Core.HiggsVacuumResidual.tensorResid_split",
     validation: "not_checked",
   },
   uses: [],

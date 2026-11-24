@@ -20,7 +20,7 @@ export default proposition({
   title:
     "Soft sharpness of the depth correspondence is theorem-level — via Borel + polylog non-vanishing",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.B1SoftSharpnessTheorem.b1_soft_sharpness",
+    ref: "qou:QOU.Observations.B1SoftSharpnessTheorem.b1_soft_sharpness",
     validation: "not_checked",
   },
   uses: ["prop:depth-2-identification-bloch-suslin"],

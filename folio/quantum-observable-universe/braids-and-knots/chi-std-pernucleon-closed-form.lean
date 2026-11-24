@@ -21,7 +21,7 @@ import Mathlib.Data.Real.Sqrt
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 namespace QOU.ChiStdPerNucleon
 

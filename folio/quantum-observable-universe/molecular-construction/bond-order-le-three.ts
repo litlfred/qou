@@ -50,7 +50,7 @@ export default proposition({
   label: "prop:bond-order-le-three",
   title: "Bond order bounded by spatial dimension",
   lean: {
-    ref: "qou:QOU.Molecular.orthogonal_channels_le_dim",
+    ref: "qou:QOU.Observations.EmbeddableKnotOperator.orthogonal_channels_le_dim",
     validation: "not_checked",
   },
   uses: ["def:embeddable-knot-operator"],

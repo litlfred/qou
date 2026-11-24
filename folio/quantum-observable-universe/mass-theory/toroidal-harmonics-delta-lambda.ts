@@ -9,7 +9,7 @@ export default proposition({
   // (`Record<string, unknown>` on `BlockBase`), so it survives validation
   // verbatim rather than being discarded or guessed at.
   meta: { is_mathematics: true },
-  lean: { ref: "qou:QOU.QBeta.toroidal_ode_to_markov_w" },
+  lean: { ref: "qou:QOU.Nuclear.QBeta.toroidal_ode_to_markov_w" },
   computation: {
     engine: "sympy",
     script: "computations/qbeta/toroidal_harmonics.py",

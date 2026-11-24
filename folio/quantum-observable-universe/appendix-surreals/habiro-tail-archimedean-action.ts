@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:habiro-tail-archimedean-action",
   lean: {
-    ref: "qou:QOU.QBeta.HabiroTailAction.habiroAction_eq_pi_sq_div_five",
+    ref: "qou:QCalculus.HabiroTailAction.habiroAction_eq_pi_sq_div_five",
     validation: "not_checked",
   },
   title:

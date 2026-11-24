@@ -18,6 +18,6 @@ export default proposition({
     "structural",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.z_recursion_forward_form",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.z_recursion_forward_form",
   },
 });

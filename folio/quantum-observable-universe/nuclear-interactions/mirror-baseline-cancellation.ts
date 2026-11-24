@@ -8,7 +8,7 @@ export default proposition({
     "prop:bar-involution-invariance",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.mirror_baseline_cancels",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.mirror_baseline_cancels",
   },
   computation: {
     engine: "python+mpmath",

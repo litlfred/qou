@@ -21,7 +21,7 @@ export default theorem({
     "negative-control",
   ],
   lean: {
-    ref: "qou:QOU.Knot.FlatTet.edge_equations_do_not_detect_hyperbolicity",
+    ref: "qou:BraidKnotOctonion.FlatTetrahedra.edge_equations_do_not_detect_hyperbolicity",
     validation: "leanok",
   },
   uses: ["thm:flat-tetrahedron-zero-volume"],

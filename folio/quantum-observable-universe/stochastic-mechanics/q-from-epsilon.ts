@@ -4,7 +4,7 @@ export default definition({
   label: "def:q-from-epsilon",
   title: "The substrate parameter $q$ as $1 + \\varepsilon$",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.QFromEpsilon",
+    ref: "qou:QOU.BringsSurface.QFromEpsilon",
     validation: "not_checked",
   },
   uses: ["def:reeb-epsilon"],

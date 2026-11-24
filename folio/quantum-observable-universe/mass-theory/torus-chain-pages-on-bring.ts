@@ -13,7 +13,7 @@ export default remark({
   title:
     "The pages of the torus-knot components embed on Bring's surface, and their complements carry the Bring frame",
   lean: {
-    ref: "qou:QOU.Mass.TorusKnotPages.pages_embed_on_bring",
+    ref: "qou:BraidKnotOctonion.TorusKnotPages.pages_embed_on_bring",
     sorryFree: true,
     validation: "not_checked",
   },

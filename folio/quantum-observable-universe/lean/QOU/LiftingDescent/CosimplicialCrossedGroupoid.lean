@@ -2,7 +2,7 @@ import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Group.Basic
-import QOU.Torsion.YekutieliTriple
+import QOU.LiftingDescent.YekutieliTriple
 
 /-!
 # QOU.LiftingDescent.CosimplicialCrossedGroupoid

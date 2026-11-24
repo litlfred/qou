@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Exactly three calibration inputs: every observable factors through $m_e$, $m_\\pi$ and $q_0$",
   lean: {
-    ref: "qou:QOU.BraidKnot.ThreeCalibrationFactorisation",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.ThreeCalibrationFactorisation",
     validation: "not_checked",
   },
   cites: ["codata2022"],

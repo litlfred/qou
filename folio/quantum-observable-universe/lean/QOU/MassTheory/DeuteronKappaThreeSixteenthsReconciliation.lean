@@ -63,8 +63,8 @@ vs `ε = q - 1` vs `h = q - q⁻¹`), and normalizations:
 import Mathlib.Tactic
 import QOU.MassTheory.PairwiseChainLeadingOrder
 import QOU.MassTheory.LeadingOrderTraceCoefficient
-import QOU.BraidsAndKnots.BorromeanMarkovTrace
-import QOU.QBeta.YekutieliTrefoilDiscretization
+import BraidKnotOctonion.BorromeanMarkovTrace
+import QOU.Nuclear.YekutieliTrefoilDiscretization
 
 namespace QOU.MassTheory.DeuteronKappaReconciliation
 

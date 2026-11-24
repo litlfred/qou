@@ -6,7 +6,7 @@ export default conjecture({
     "Archimedean agreement (proton instance): degree-48 Habiro trace at $u_0$",
   lean: {
     ref:
-      "qou:QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample.archimedean_agreement",
+      "qou:QOU.BraidsAndKnots.HabiroResidueSumEquivalence.protonExample.archimedean_agreement",
     validation: "not_checked",
   },
   uses: ["conj:gs-archimedean-agreement-trace"],

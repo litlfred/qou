@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:cemetery-group",
   title: "Cemetery group (subcategory annihilated by $\\tau$)",
-  lean: { ref: "qou:QOU.BraidKnot.CemeteryGroup",
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.CemeteryGroup",
     validation: "not_checked",
   },
   uses: [

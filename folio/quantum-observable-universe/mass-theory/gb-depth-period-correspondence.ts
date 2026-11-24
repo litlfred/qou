@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "GS-depth $\\leftrightarrow$ Goncharov period-depth correspondence",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence",
+    ref: "qou:QOU.Core.AlgebraicSubstrate.GBDepthPeriodCorrespondence",
     validation: "not_checked",
   },
   uses: [

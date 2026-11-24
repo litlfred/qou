@@ -13,7 +13,7 @@ export default conjecture({
     "block-diagonal",
   ],
   lean: {
-    ref: "qou:QOU.AtomicMass.magic_numbers_from_q",
+    ref: "qou:QOU.MassTheory.AtomicMass.magic_numbers_from_q",
     validation: "not_checked",
   },
   uses: [],

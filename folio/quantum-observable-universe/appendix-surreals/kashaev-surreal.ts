@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:kashaev-surreal",
   title:
     "Kashaev–Murakami–Murakami volume conjecture as a surreal standard-part identity",
-  lean: { ref: "qou:QOU.AppendixSurreals.KashaevSurreal", validation: "stub" },
+  lean: { ref: "qou:QOU.Observations.AppendixSurreals.KashaevSurreal", validation: "stub" },
   tags: [
     "tier:famous",
     "surreal-numbers",

@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:rigid-dualizing-complex",
   title: "Rigid dualizing complex",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.RigidDualizingComplex",
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.RigidDualizingComplex",
     validation: "not_checked",
   },
   uses: ["def:frobenius-hopf-substrate"],

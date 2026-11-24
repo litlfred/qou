@@ -1,8 +1,8 @@
 import MassEndomorphism.MarkovTraceRecursiveReducer
-import QOU.MathlibExt.HeckeTowerWitness
+import HeckeTemperleyLieb.HeckeTowerWitness
 import Mathlib.Algebra.MonoidAlgebra.Basic
-import QOU.Hecke.IwahoriHecke
-import QOU.BraidKnot.KnotFactorFrobeniusPairing
+import HeckeTemperleyLieb.IwahoriHecke
+import HeckeTemperleyLieb.KnotFactorFrobeniusPairing
 
 /-!
 # The Markov trace as a linear functional on the Hecke tower, and the connected-sum rule

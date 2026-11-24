@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverse.Instanton
+import QOU.Core.Instanton
 
 /-!
 # QOU.categorical_irreducible — Irreducibility of categorical instantons
