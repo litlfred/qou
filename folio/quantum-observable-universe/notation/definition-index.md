@@ -1028,7 +1028,7 @@
 | [conj:electroweak-higgs-torus-link-triplet](#conj:electroweak-higgs-torus-link-triplet) | $(W^\pm, Z, H) \leftrightarrow (T(2,4), T(2,6), T(2,8))$ — non-Bring even-twist 2-component torus-link triplet | Ch 7 |
 | [conj:cp-violation-spectral-form](#conj:cp-violation-spectral-form) | $\delta_{\mathrm{CP}}$ as imaginary part of the alternating-block character | Ch 15 |
 | [conj:flavor-split-substrate-mass](#conj:flavor-split-substrate-mass) | The nucleon mass split equals the substrate flavor-split formula | Ch 15 |
-| [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{substrate}}$ (convention-C frame) | Ch 11 |
+| [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{substrate}}$ | Ch 11 |
 | [conj:p-vs-np-boundary](#conj:p-vs-np-boundary) | $\mathrm{P} \neq \mathrm{NP}$ as jet horizon opacity | Ch 20 |
 | [conj:qou-p-neq-np](#conj:qou-p-neq-np) | $\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$ | Ch 20 |
 | [conj:q-geometric-langlands](#conj:q-geometric-langlands) | $q$-Geometric Langlands correspondence | Ch 22 |
@@ -1073,7 +1073,7 @@
 | [conj:complex-chirality-rotation](#conj:complex-chirality-rotation) | Chirality as continuous phase rotation in the pre-observable sector | Ch 15 |
 | [conj:q-gl-classical-limit](#conj:q-gl-classical-limit) | Classical limit of the $q$-Geometric Langlands correspondence | Ch 22 |
 | [conj:classical-limit-stpart](#conj:classical-limit-stpart) | Classical-limit functor as standard-part of evaluation at $q = 1 + \varepsilon$ | Ch 25 |
-| [conj:qbeta-c-k-closed-forms](#conj:qbeta-c-k-closed-forms) | Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\mathfrak{Q}_\beta$ precision ladder (convention-C frame) | Ch 9 |
+| [conj:qbeta-c-k-closed-forms](#conj:qbeta-c-k-closed-forms) | Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\mathfrak{Q}_\beta$ precision ladder ($z = \sqrt{q}/(q+1)$ frame) | Ch 9 |
 | [conj:alpha-k-categorical-closure](#conj:alpha-k-categorical-closure) | Closed-form resummation of the categorical stratum prefactors $\alpha_k$ — geometric vs symmetric q-dilogarithm candidates | Ch 11 |
 | [conj:color-superconductivity-borromean](#conj:color-superconductivity-borromean) | Color superconductivity as Borromean-to-Hopf topological reconfiguration | Ch 15 |
 | [conj:sm-colour-stabilizer-action](#conj:sm-colour-stabilizer-action) | Colour stabilizer action on the state space | Toward the Standard Model |
