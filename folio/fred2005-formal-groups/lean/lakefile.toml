@@ -12,7 +12,7 @@ srcDir = "."
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
 
 # The formal-group definitions (formal group laws, Dist(G), Poisson structures on splays)
 # live in the qou package, under QOU.FormalGroups; this package re-exports them.
