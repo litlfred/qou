@@ -3939,7 +3939,60 @@ Applying the categorical trace term by term yields the gravity $+$ gauge $+$ mat
 The categorical trace factors as $\mathrm{tr} =\allowbreak{} \int_A \circ \mathrm{tr}_A$, so all three summands share the same integration. The gauge term is the Yang--Mills curvature integral. The action $\mathfrak{S}_q$ is the analogue of Hamilton's classical $S = \int L\,\mathrm{d}t$, with $\int_A$ replacing integration over spacetime and $\mathcal{L}_q$ replacing the Lagrangian density. The single scalar $\lambda$ tracks the normalization of the Frobenius form $\int_A$, corresponding to the freedom in choosing physical units.
 \end{proposition}
 
-\phantomsection\label{rem:canonical-action-obstruction}\section{Variational equations and wavefronts}
+\phantomsection\label{rem:canonical-action-obstruction}\begin{definition}[{Categorical Hamiltonian and phase-space Legendre transform}]
+  \label{def:categorical-hamiltonian}
+  \blockannot[compiled]{def:categorical-hamiltonian}{QOU.Core.CategoricalHamiltonianLegendre.canonicalHamiltonian}{quantum-observable-universe/quantum-observable-universes/categorical-hamiltonian.md}
+  \uses{def:categorical-lagrangian, def:categorical-action}
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe over a commutative ring $R$ with \hyperref[def:categorical-dirac-operator]{categorical Dirac operator} $\mathcal{D}_\nabla =\allowbreak{} q^{-1}\nabla +\allowbreak{} \hbar_q\,\iota_\xi\nabla$ ($\hbar_q = 1 - q^{-1}$, \hyperref[def:quantum-planck-constant]{quantum Planck constant}) and \hyperref[def:categorical-lagrangian]{categorical Lagrangian} $\mathcal{L}_q(\nabla, \psi) =\allowbreak{} \mathcal{D}_\nabla^2 +\allowbreak{} \psi^* \otimes \mathcal{D}_\nabla\psi \in \mathrm{End}_{\mathbf{C}}(A)$. Grouping terms by degree $(2, 1, 0)$ in the Reeb contraction $\iota_\xi\nabla$ decomposes $\mathcal{L}_q =\allowbreak{} \mathcal{L}_2 +\allowbreak{} \mathcal{L}_1 +\allowbreak{} \mathcal{L}_0$, where
+
+\[
+\begin{aligned}
+  \mathcal{L}_2 &= \hbar_q^2\,(\iota_\xi\nabla)^2, \\
+  \mathcal{L}_1 &= q^{-1}\hbar_q\,\bigl(\nabla \circ \iota_\xi\nabla + \iota_\xi\nabla \circ \nabla\bigr) + \hbar_q\,\bigl(\psi^* \otimes (\iota_\xi\nabla)\psi\bigr), \\
+  \mathcal{L}_0 &= q^{-2}\,\nabla^2 + q^{-1}\,\bigl(\psi^* \otimes \nabla\psi\bigr).
+\end{aligned}
+\]
+
+Energy in a quantum observable universe is defined as the Legendre transform of $\mathcal{L}_q$ along the Reeb clock direction at two levels:
+
+\begin{enumerate}
+  \item \textbf{Operator Reeb-velocity Legendre transform.} Over any commutative ring $R$, the directional Euler Legendre transform $D_v\mathcal{L}_q[v] - \mathcal{L}_q$ along $v = \iota_\xi\nabla$ defines the velocity-form Hamiltonian endomorphism
+\[
+  \mathcal{H}_{\mathrm{vel}}(\mathcal{L}_q)
+  = 2\,\mathcal{L}_2 + \mathcal{L}_1 - \mathcal{L}_q
+  = \mathcal{L}_2 - \mathcal{L}_0 \in \mathrm{End}_{\mathbf{C}}(A),
+\]
+which cancels the degree-$1$ gyroscopic cross-term and Reeb-matter term without dividing by $2$ or assuming that $\nabla$ and $\iota_\xi\nabla$ commute.
+  \item \textbf{Phase-space canonical Reeb-momentum Legendre transform.} Scaling $\iota_\xi\nabla \mapsto\allowbreak{} \omega\,\iota_\xi\nabla$ by a clock rate $\omega$ and applying a linear \hyperref[def:categorical-action]{categorical action} trace $\tau$ yields the clock polynomial $L_{\mathrm{clock}}(\omega) =\allowbreak{} a_2\,\omega^2 +\allowbreak{} a_1\,\omega +\allowbreak{} a_0$ with $a_k = \tau(\mathcal{L}_k)$. Over a field $K$ with $2 \neq 0$ and $a_2 \neq 0$, the canonical Reeb momentum $\Pi = 2\,a_2\,\omega + a_1$ defines the \textbf{categorical Hamiltonian}
+\[
+  H_{\mathrm{can}}(a_2, a_1, a_0; \Pi)
+  = \Pi\,\omega - L_{\mathrm{clock}}(\omega)
+  = \frac{(\Pi - a_1)^2}{4\,a_2} - a_0.
+\]
+Over an ordered field with $a_2 > 0$, $H_{\mathrm{can}}(a_2, a_1, a_0; \Pi) =\allowbreak{} \sup_{\omega \in K}\bigl(\Pi\,\omega -\allowbreak{} L_{\mathrm{clock}}(\omega)\bigr)$, attained uniquely at $\omega = (\Pi - a_1)/(2\,a_2)$. Evaluating at the unit canonical clock momentum $\Pi = 2\,a_2$ gives
+\[
+  H_{\mathrm{can}}(a_2, a_1, a_0; 2\,a_2)
+  = a_2 - a_1 + \frac{a_1^2}{4\,a_2} - a_0,
+\]
+retaining the first-order minimal Reeb coupling $-a_1$ and the second-order recoil correction $a_1^2/(4\,a_2)$ inside the canonical shift $\Pi - a_1$.
+\end{enumerate}
+
+\textbf{Three unit charts of the primitive energy.} With causal speed $c_q = q^{-1}/\hbar_q = 1/(q - 1)$ and full-circuit Reeb tick $t_P = \hbar_q^{-1} = q/(q - 1)$, every energy observable in this paper is a projection of $H_{\mathrm{can}}$ in one of three unit charts connected by exact field identities:
+
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.222\linewidth}>{\raggedright\arraybackslash}p{0.222\linewidth}>{\raggedright\arraybackslash}p{0.222\linewidth}>{\raggedright\arraybackslash}p{0.222\linewidth}}
+\toprule
+Unit chart & Clock / length normalisation & Energy observable & Exact conversion identity \\
+\midrule
+Substrate action / mass chart & Full Reeb circuit $\ell_P = \hbar_q\,t_P = 1$ & Static action $\mathfrak{S}_q$, holonomy mass $\mathfrak{m}$ & Base trace in $K$ \\
+Causal-cone / worldline chart & Per-step cone speed $c_q = 1/(q - 1)$ & Rest energy $\mathfrak{E} = \mathfrak{m}\,c_q^2$ & $\mathfrak{E} =\allowbreak{} \mathfrak{m}/(q -\allowbreak{} 1)^2$ \\
+Electronic / hadronic per-tick chart & Planck circuit tick $t_P = q/(q - 1)$ & Hadronic scale $\mathfrak{E}_0$ & $\mathfrak{E}_0 =\allowbreak{} (\mathfrak{m}_e c_q^2)/t_P =\allowbreak{} \mathfrak{m}_e c_q^2 \hbar_q =\allowbreak{} \mathfrak{m}_e/\bigl(q(q -\allowbreak{} 1)\bigr)$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{definition}
+
+\section{Variational equations and wavefronts}
 \label{sec:variational-equations}
 \sectionannot{sec:variational-equations}
 \phantomsection\label{sec:variational-equations-intro}
@@ -12945,8 +12998,8 @@ Because every interaction factors into elementary two-strand crossings, one begi
 \begin{definition}[{Crossing energy of a knot composite}]
   \label{def:crossing-energy}
   \blockannot[compiled]{def:crossing-energy}{QOU.Braiding.CrossingEnergy}{quantum-observable-universe/knots-particles-confinement/crossing-energy.md}
-  \uses{prop:nuclear-groebner-reduction, prop:pairwise-interaction-decomposition}
-Let $\mathfrak{H} =\allowbreak{} [K_1, \ldots, K_n]_p \oplus\allowbreak{} \mathcal{L}$ be a composite of knots linked by $\mathcal{L}$, with braid word $\beta \in B_n$ representing the linking. One defines the \textbf{crossing energy} of $\mathfrak{H}$ as:
+  \uses{def:categorical-hamiltonian, prop:nuclear-groebner-reduction, prop:pairwise-interaction-decomposition}
+Let $\mathfrak{H} =\allowbreak{} [K_1, \ldots, K_n]_p \oplus\allowbreak{} \mathcal{L}$ be a composite of knots linked by $\mathcal{L}$, with braid word $\beta \in B_n$ representing the linking. The \textbf{crossing energy} of $\mathfrak{H}$ is defined by
 
 \[
   \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H})
@@ -12957,14 +13010,14 @@ Let $\mathfrak{H} =\allowbreak{} [K_1, \ldots, K_n]_p \oplus\allowbreak{} \mathc
     -q^{-1} & \text{negative crossing } (L_-),
   \end{cases}
 \]
-where $q$ is the substrate parameter (\hyperref[def:substrate-parameter]{substrate parameter}). The sign convention follows the Skein relation:
+where $q$ is the substrate parameter (\hyperref[def:substrate-parameter]{substrate parameter}). The sign convention follows the Skein relation
 
 \[
-  q  L_+ -  q^{-1} L_-
-  =  (q^{1/2} - q^{-1/2}) L_0.
+  q\,L_+ - q^{-1} L_-
+  = (q^{1/2} - q^{-1/2})\,L_0.
 \]
 
-The crossing energy measures the net Skein weight of the composite. A positive $\mathfrak{E}_{\mathrm{cross}}$ indicates that repulsion dominates; a negative value indicates that binding dominates.
+The crossing energy is an un-traced, crossing-additive Skein writhe functional in dimensionless substrate units, distinct from the traced \hyperref[def:categorical-hamiltonian]{categorical Hamiltonian} (on the trivial $n$-strand braid $\mathfrak{E}_{\mathrm{cross}} = 0$, whereas the traced rest Hamiltonian is nonzero). A positive $\mathfrak{E}_{\mathrm{cross}}$ indicates that positive-crossing repulsion dominates; a negative value indicates that negative-crossing pairing dominates.
 
 \textbf{Archimedean specialisation.} What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
 \end{definition}
@@ -20511,17 +20564,17 @@ This differs from the classical $[J_+, J_-] = 2J_z$: $2J_z$ is replaced by its $
 \phantomsection\label{rem:q-angular-momentum-interpretation}\begin{definition}[{$q$-Deformed Energy}]
   \label{def:q-energy}
   \blockannot[compiled]{def:q-energy}{QOU.MassTheory.Archimedean.QEnergy}{quantum-observable-universe/climax-volume-mass/q-energy.md}
-  \uses{def:q-angular-momentum}
-The \textbf{$q$-energy} of a particle knot $K$ sums three terms derived from the categorical triple $(\mathbf{C}, A, \tau)$ and the substrate parameter $q$.
+  \uses{def:categorical-hamiltonian, def:q-angular-momentum}
+The \textbf{$q$-energy} of a particle knot $K$ evaluates the \hyperref[def:categorical-hamiltonian]{categorical Hamiltonian} in the dimensionless substrate action/mass chart ($\ell_P = \hbar_q\,t_P = 1$), summing the rotational, translational, and rest-action projections derived from $(\mathbf{C}, A, \tau)$ and the substrate parameter $q$.
 
-Let $K = \hat{\beta}$ be a particle knot with braid representative $\beta \in B_n$. The \textbf{$q$-energy} is:
+Let $K = \hat{\beta}$ be a particle knot with braid representative $\beta \in B_n$. The \textbf{$q$-energy} is
 
 \[
   \mathfrak{E}_q(K) \;=\; \underbrace{J_q^2(K) \cdot \hbar_q}_{\text{rotational}}
   \;+\;
   \underbrace{p_q(\beta)^2 \cdot \hbar_q / (2\,[n]_q)}_{\text{translational}}
   \;+\;
-  \underbrace{\mathfrak{S}_q(K)}_{\text{action (rest mass)}}
+  \underbrace{\mathfrak{S}_q(K)}_{\text{rest action / mass}},
 \]
 where:
 
@@ -20536,10 +20589,9 @@ where:
 \textbf{At rest} ($p_q = 0$, $J_q = 0$):
 
 \[
-  \mathfrak{E}_q(K)\big|_{\text{rest}} \;=\; \mathfrak{S}_q(K) \;=\; \mathfrak{m}(K) c^2
+  \mathfrak{E}_q(K)\big|_{\text{rest}} \;=\; \mathfrak{S}_q(K) \;=\; \mathfrak{m}(K)
 \]
-
-This recovers the topological mass formula.
+in the substrate mass chart, whereas converting to the causal-cone chart ($c_q = 1/(q - 1)$) rescales the rest value by $c_q^2$ to $\mathfrak{E}(K) =\allowbreak{} \mathfrak{m}(K)\,c_q^2 =\allowbreak{} \mathfrak{m}(K)/(q -\allowbreak{} 1)^2$ (\hyperref[def:categorical-hamiltonian]{categorical Hamiltonian}).
 \end{definition}
 
 \phantomsection\label{rem:q-energy-terms-and-limits}\phantomsection\label{rem:noether-theorem-callout}\section{Knot-operator energy}
@@ -20551,8 +20603,8 @@ This section proves existence, uniqueness, continuity, and local constancy of th
 \begin{definition}[{Knot operator energy (LP-dual shadow price)}]
   \label{def:knot-operator-energy}
   \blockannot[compiled]{def:knot-operator-energy}{QOU.BraidsAndKnots.BraidKnot.KnotOperatorEnergy}{quantum-observable-universe/climax-volume-mass/knot-operator-energy.md}
-  \uses{def:stable-atom, prop:operator-selection-lp}
-\emph{Let $H_n(R, q)$ be the Hecke algebra at substrate parameter $q$. For each Wedderburn block indexed by a partition $\lambda \vdash k$ ($k = 2, \ldots, k_{\max}(K, q)$, where $k_{\max}(K, q)$ is the per-atom truncation determined by the interaction-strand requirement of $K$ — see \hyperref[def:confinement-level]{confinement level}), the \textbf{knot operator energy} of $\lambda$ at $q$ is the absolute value of its LP-dual shadow price:}
+  \uses{def:categorical-hamiltonian, def:stable-atom, prop:operator-selection-lp}
+\emph{Let $H_n(R, q)$ be the Hecke algebra at substrate parameter $q$. For each Wedderburn block indexed by a partition $\lambda \vdash k$ ($k = 2, \ldots, k_{\max}(K, q)$, where $k_{\max}(K, q)$ is the per-atom truncation determined by the interaction-strand requirement of $K$ — see \hyperref[def:confinement-level]{confinement level}), the \textbf{knot operator energy} of $\lambda$ at $q$ is the magnitude of its Kantorovich--Fenchel LP-dual reduced cost (shadow price) relative to the attaining minimum sector of the \hyperref[def:categorical-hamiltonian]{categorical Hamiltonian} in dimensionless per-irrep units:}
 
 \[
   E(\lambda, q)
@@ -20566,7 +20618,7 @@ This section proves existence, uniqueness, continuity, and local constancy of th
   \right|,
 \]
 
-\emph{where $w_\lambda(q) =\allowbreak{} d_q(\lambda)^2 / [k]_q!$ is the Wedderburn weight, $d_\lambda(q) = \dim_q V_\lambda$ is the quantum dimension, and $1/[k]_q!$ is $\min_\lambda\, w_\lambda/d_\lambda$, the minimum taken across partitions of $k$ and attained by the trivial $1$-dimensional $(k)$ and $(1^k)$ representations.}
+\emph{where $w_\lambda(q) =\allowbreak{} d_q(\lambda)^2 / [k]_q!$ is the Wedderburn weight, $d_\lambda(q) = \dim_q V_\lambda$ is the quantum dimension, and $y_0 =\allowbreak{} 1/[k]_q! =\allowbreak{} \min_\lambda\, w_\lambda/d_\lambda$ is the dual threshold across partitions of $k$, attained with zero shadow price ($u_\lambda = 0$) on the $1$-dimensional $(k)$ and $(1^k)$ representations.}
 
 \textbf{Values.}
 \emph{The energy takes values in:}
@@ -20574,7 +20626,7 @@ This section proves existence, uniqueness, continuity, and local constancy of th
 \begin{itemize}
   \item \emph{Archimedean realisation $R = \mathbb{R}$: $E(\lambda, q) \in \mathbb{R}_{\geq 0}$ (totally ordered).}
   \item \emph{Non-archimedean $\mathbb{Q}_p$: $E(\lambda, q) \in \{p^{-n} : n \in \mathbb{Z}\} \cup \{0\}$ (totally ordered).}
-  \item \emph{Finite field $\mathbb{F}_p$: no archimedean absolute value exists. The energy filtration is undefined. Confinement falls back to ILP feasibility (see \hyperref[def:stable-atom]{stable atom}), which \emph{is} base-ring-independent.}
+  \item \emph{Finite field $\mathbb{F}_p$: no archimedean absolute value exists. The energy filtration is undefined. Confinement falls back to ILP feasibility (see \hyperref[def:stable-atom]{stable atom}), which is base-ring-independent.}
 \end{itemize}
 \end{definition}
 
@@ -48202,35 +48254,36 @@ $\square$
   \label{thm:groebner-shirshov-energy}
   \blockannot[compiled]{thm:groebner-shirshov-energy}{QOU.MassTheory.Archimedean.groebner_shirshov_energy}{quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.md}
   \uses{unital-groebner-bases:thm:ugb-main}
-The Gröbner--Shirshov basis theory gives a stronger result than uniqueness: the energy of the nuclear braid word is a topological invariant, computed with no path dependence. The invariance holds for a fixed word; it does not say that the word selected for a nucleus is independent of the order in which it was assembled.
+The Gröbner--Shirshov basis theory gives a stronger result than uniqueness: both the Markov trace of a nuclear braid word and the $\ell^1$ word-length norm of its normal form are computed with no reduction-path dependence. The invariance holds for a fixed word; it does not say that the word selected for a nucleus is independent of the order in which it was assembled.
 
-Define the energy functional on $H_A(q)$ by
+Define the word-length functional on normal-form expansions in $H_A(q)$ by
 
 \[
-  E(\xi) =  \sum_{w \in B} |c_w(q)| \cdot \ell(w)
+  E(\xi) = \sum_{w \in B} |c_w(q)| \cdot \ell(w)
 \]
-where $\xi$ is the normal form and $\ell(w)$ is the word length. Then:
+where $\xi = \sum_{w \in B} c_w(q)\,w$ is the normal form and $\ell(w)$ is the word length. Then:
 
 \begin{enumerate}
-  \item \textbf{Only Hecke reductions change energy.} The Yang--Baxter relation, far commutativity and the other Bokut--Shiao rules preserve coefficients and lengths. The Hecke relation is the unique energy-changing generator.
-  \item \textbf{Energy is path-independent.} Along any reduction path $\xi_0 \to\allowbreak{} \xi_1 \to\allowbreak{} \cdots \to\allowbreak{} \xi_m$ the step changes sum to $E(\xi_m) - E(\xi_0)$. By confluence every path ends at the same normal form, so the total change depends only on $\xi_0$.
-  \item \textbf{Energy change of one Hecke step.} Let $h = q - q^{-1}$. Applied to an isolated monomial $c\,w$ with $w = u\,\sigma_i\sigma_i\,v$ of length $\ell$, the replacement of $\sigma_i^2$ by $h\,\sigma_i + 1$ changes the energy by
+  \item \textbf{Only Hecke reductions change $E$.} The Yang--Baxter relation, far commutativity, and the other Bokut--Shiao rules preserve coefficients and word lengths. The Hecke relation is the unique $E$-changing generator.
+  \item \textbf{Telescoping path independence.} Along any reduction path $\xi_0 \to\allowbreak{} \xi_1 \to\allowbreak{} \cdots \to\allowbreak{} \xi_m$ the step changes sum to $E(\xi_m) - E(\xi_0)$. By confluence every path ends at the same normal form, so the total change depends only on $\xi_0$.
+  \item \textbf{Single-step word-length change.} Let $h = q - q^{-1}$. Applied to an isolated monomial $c\,w$ with $w = u\,\sigma_i\sigma_i\,v$ of length $\ell$, the replacement of $\sigma_i^2$ by $h\,\sigma_i + 1$ changes $E$ by
 \end{enumerate}
 
 \[
-  |c|\,\bigl(|h|\,(\ell - 1) - 2\bigr).
+  \bigl(|c|\,|h|\,(\ell - 1) + |c|\,(\ell - 2)\bigr) - |c|\,\ell \;=\; |c|\,\bigl(|h|\,(\ell - 1) - 2\bigr).
 \]
 
-The sign is not fixed: for $\vert h\vert \,(\ell - 1) < 2$ the step lowers the energy.
+The sign is not fixed: for $\vert h\vert \,(\ell - 1) < 2$ the step lowers $E$.
+4. \textbf{Hecke skein invariance of linear traces.} Over any commutative ring $R$, any $R$-linear functional $\tau \colon H_n(R, q) \to R$ respecting $u\,\sigma_i^2\,v =\allowbreak{} h\,u\,\sigma_i\,v +\allowbreak{} u\,v$ satisfies $\tau(u\,\sigma_i^2\,v) =\allowbreak{} h\,\tau(u\,\sigma_i\,v) +\allowbreak{} \tau(u\,v)$. Under the normalised Markov rules $\tau(1) = 1$, $\tau(\sigma_i) = z$, and $\tau(\sigma_1\sigma_2) = z^2$, a single square evaluates to $\tau(\sigma_i^2) = h\,z + 1$, and both $\sigma_1^2\sigma_2$ and the cyclically conjugate reduced word $\sigma_1\sigma_2\sigma_1$ evaluate to $\tau(\sigma_1\sigma_2\sigma_1) =\allowbreak{} z\,(1 +\allowbreak{} h\,z)$, whereas the normal-form coefficient sums are $1 + h$ and $1$.
 
-\textbf{Archimedean specialisation.} The absolute values in $E$ are taken over $\mathbb{R}$, so the functional sits on the archimedean side of the substrate wall. Near the substrate value, $h \approx 0.21$, so a Hecke step on a short word lowers the energy.
+\textbf{Archimedean specialisation.} The absolute values in $E$ are taken over $\mathbb{R}$, so the word-length functional sits on the archimedean side of the substrate wall, whereas item 4 holds over any commutative ring $R$. Near the substrate value, $h \approx 0.21$, so a Hecke step on a short word lowers $E$.
 
 \textbf{β decay in the short typed-crossing model.} In $H_3(q)$ take the short-model nucleon normal forms $p =\allowbreak{} \sigma_1\sigma_2 -\allowbreak{} (h/2)\,\sigma_1$ and $n =\allowbreak{} \sigma_1\sigma_2 -\allowbreak{} h\,\sigma_1 -\allowbreak{} (h/2)\,\sigma_2 +\allowbreak{} h^2/2$. Then
 
 \[
   E(p) - E(n) = -|h|,
 \]
-so for $q > 1$ the daughter proton has the lower energy. The statement is specific to this model. In the 11-letter typed-crossing model the nucleon-only change has the opposite sign at the substrate value, and on the common base $(\sigma_1\sigma_2^{-1})^3$ it is zero, so no model-free sign of the β-decay energy change follows from $E$.
+so for $q > 1$ the daughter proton has the lower word-length norm. The statement is specific to this model. In the 11-letter typed-crossing model the nucleon-only change has the opposite sign at the substrate value, and on the common base $(\sigma_1\sigma_2^{-1})^3$ it is zero, so no model-free sign of the β-decay energy change follows from $E$.
 \end{theorem}
 
 \begin{proof}[{Proof of groebner shirshov energy}]
@@ -48238,29 +48291,32 @@ so for $q > 1$ the daughter proton has the lower energy. The statement is specif
   \blockannot[drafted]{prf:groebner-shirshov-energy}{}{quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy-proof.md}
   \uses{thm:groebner-shirshov-energy, def:hecke-normal-form}
 \emph{Part 1.}
-The Yang--Baxter relation $\sigma_i \sigma_{i+1} \sigma_i =\allowbreak{} \sigma_{i+1} \sigma_i \sigma_{i+1}$ has the same word length on both sides ($\ell = 3$) and coefficient $1$. Applying it to a term $c \cdot w$ produces $c \cdot w'$ where $\vert c\vert  = \vert c\vert $ and $\ell(w') = \ell(w)$. The same holds for far commutativity, and for every rule of the Bokut--Shiao family $\sigma_i\sigma_{i-1}\cdots\sigma_j\sigma_i \mapsto\allowbreak{} \sigma_{i-1}\sigma_i\sigma_{i-1}\cdots\sigma_j$, whose two sides have equal length and coefficient $1$. Only the Hecke relation $\sigma_i^2 \mapsto\allowbreak{} (q -\allowbreak{} q^{-1})\sigma_i +\allowbreak{} 1$ changes the word length (from $\ell$ to $\ell - 1$) and splits one coefficient into two.
+The Yang--Baxter relation $\sigma_i \sigma_{i+1} \sigma_i =\allowbreak{} \sigma_{i+1} \sigma_i \sigma_{i+1}$ has the same word length on both sides ($\ell = 3$) and coefficient $1$. Applying it to a term $c \cdot w$ produces $c \cdot w'$ where $\vert c\vert  = \vert c\vert $ and $\ell(w') = \ell(w)$. The same holds for far commutativity, and for every rule of the Bokut--Shiao family $\sigma_i\sigma_{i-1}\cdots\sigma_j\sigma_i \mapsto\allowbreak{} \sigma_{i-1}\sigma_i\sigma_{i-1}\cdots\sigma_j$, whose two sides have equal length and coefficient $1$. Only the Hecke relation $\sigma_i^2 \mapsto\allowbreak{} (q -\allowbreak{} q^{-1})\sigma_i +\allowbreak{} 1$ changes the word length (from $\ell$ to $\ell - 1$ and $\ell - 2$) and splits one coefficient into two.
 
 \emph{Part 2.}
-The Gröbner--Shirshov basis $G$ (the Hecke relation, far commutativity and the Bokut--Shiao family; \hyperref[def:hecke-normal-form]{Hecke normal form}) satisfies the Bergman diamond lemma (the main theorem of the Gröbner--Shirshov basis theory, main theorem). For any two overlapping reductions, the results can be further reduced to the same normal form. Along a reduction path $\xi_0 \to \cdots \to \xi_m$ the step changes telescope: $\sum_{k} \bigl(E(\xi_{k+1}) -\allowbreak{} E(\xi_k)\bigr) =\allowbreak{} E(\xi_m) -\allowbreak{} E(\xi_0)$. Every path ends at the same normal form, so the total change depends only on $\xi_0$.
+The Gröbner--Shirshov basis $G$ (the Hecke relation, far commutativity, and the Bokut--Shiao family; \hyperref[def:hecke-normal-form]{Hecke normal form}) satisfies the Bergman diamond lemma (the main theorem of the Gröbner--Shirshov basis theory, main theorem). For any two overlapping reductions, the results reduce to the same normal form. Along a reduction path $\xi_0 \to \cdots \to \xi_m$ the step changes telescope: $\sum_{k} \bigl(E(\xi_{k+1}) -\allowbreak{} E(\xi_k)\bigr) =\allowbreak{} E(\xi_m) -\allowbreak{} E(\xi_0)$. Every path ends at the same normal form, so the total change depends only on $\xi_0$.
 
 \emph{Part 3.}
 Let $c\,w$ with $w = u\,\sigma_i^2\,v$ of length $\ell$ be a reducible term, and suppose no other term of $\xi$ has word $u\,\sigma_i\,v$ or $u\,v$. Write $h = q - q^{-1}$. After applying the Hecke relation:
 
 \begin{itemize}
-  \item one term has coefficient $c\,h$ and word length $\ell - 1$ (the $\sigma_i$ term);
-  \item one term has coefficient $c$ and word length $\ell - 2$ (the identity term).
+  \item one term has coefficient $c\,h$ and word length $\ell - 1$ (the $u\,\sigma_i\,v$ term);
+  \item one term has coefficient $c$ and word length $\ell - 2$ (the $u\,v$ term).
 \end{itemize}
 
-The term $c\,w$ contributed $\vert c\vert \,\ell$, so the energy changes by
+The term $c\,w$ contributed $\vert c\vert \,\ell$, so by disjoint-support additivity of the finite-support sum and direct algebraic simplification the norm changes by
 
 \[
-  |c|\,|h|\,(\ell - 1) + |c|\,(\ell - 2) - |c|\,\ell \;=\; |c|\,\bigl(|h|\,(\ell - 1) - 2\bigr).
+  \bigl(|c|\,|h|\,(\ell - 1) + |c|\,(\ell - 2)\bigr) - |c|\,\ell \;=\; |c|\,\bigl(|h|\,(\ell - 1) - 2\bigr).
 \]
 
-For $c = 1$, $h = 1/5$, $\ell = 2$ this is $-9/5$, so a Hecke step can lower the energy. When a new term merges with an existing one, the change also depends on that term's coefficient.
+For $c = 1$, $h = 1/5$, $\ell = 2$ this evaluates to $-9/5 < 0$, so a Hecke step can lower $E$. When a new term merges with an existing one, the change also depends on that term's coefficient.
+
+\emph{Part 4.}
+Over any commutative ring $R$, let $\tau \colon M \to R$ be an $R$-linear map on an $R$-module $M$. Whenever $w_{\mathrm{sq}} =\allowbreak{} h \cdot w_{\mathrm{lin}} +\allowbreak{} w_{\mathrm{id}}$, $R$-linearity gives $\tau(w_{\mathrm{sq}}) =\allowbreak{} h\,\tau(w_{\mathrm{lin}}) +\allowbreak{} \tau(w_{\mathrm{id}})$. Substituting $\tau(1) = 1$, $\tau(\sigma_i) = z$, and $\tau(\sigma_1\sigma_2) = z^2$ yields $\tau(\sigma_i^2) = h\,z + 1$ and $\tau(\sigma_1^2\sigma_2) =\allowbreak{} h\,z^2 +\allowbreak{} z =\allowbreak{} z\,(1 +\allowbreak{} h\,z)$; by trace cyclicity $\tau(\sigma_1\sigma_2\sigma_1) =\allowbreak{} \tau(\sigma_1^2\sigma_2) =\allowbreak{} z\,(1 +\allowbreak{} h\,z)$.
 
 \textbf{Substrate-internal: GS reduction over the Habiro embedding.}
-\emph{The reduction rules in $G$ (Hecke, far commutativity, and the Bokut–Shiao family, which contains Yang–Baxter) act strictly within the polynomial embedding $\mathbb{Z}[q^{\pm 1}] \hookrightarrow \widehat{\mathbb{Z}[q]}$ (\hyperref[def:habiro-ring]{Habiro ring}). Confluence (the Bergman diamond lemma) is an exact algebraic consequence of the foundational triple $(\mathbf{C}, A, \tau)$. It holds in any base ring where the Hecke relation $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ applies. In particular, it holds over the \hyperref[def:motivic-substrate]{motivic substrate} before any place-realization. The energy functional $E(\xi)$ is not part of this: its absolute values $\vert c_w(q)\vert $ are taken over $\mathbb{R}$, so $E$ is defined only after the archimedean realization $\rho_\infty$ (\hyperref[def:archimedean-realization-functor]{archimedean realization}) of the substrate. This occurs downstream of the reduction itself.}
+\emph{The reduction rules in $G$ (Hecke, far commutativity, and the Bokut--Shiao family, which contains Yang--Baxter) act strictly within the polynomial embedding $\mathbb{Z}[q^{\pm 1}] \hookrightarrow \widehat{\mathbb{Z}[q]}$ (\hyperref[def:habiro-ring]{Habiro ring}). Confluence (the Bergman diamond lemma) and the skein trace invariance of Part 4 hold over any commutative ring where the Hecke relation $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ applies, and in particular over the \hyperref[def:motivic-substrate]{motivic substrate} before any place-realization. The word-length functional $E(\xi)$ is distinct: its absolute values $\vert c_w(q)\vert $ are taken over $\mathbb{R}$, so $E$ is defined only after the archimedean realization $\rho_\infty$ (\hyperref[def:archimedean-realization-functor]{archimedean realization}) of the substrate.}
 \end{proof}
 
 \phantomsection\label{rem:groebner-shirshov-energy-interpretation}\begin{proposition}[{Inductive Gröbner--Shirshov reduction}]
@@ -51357,8 +51413,8 @@ An isotope $\mathcal{N}(Z, N)$ is $\beta$-stable if both its $\beta^-$ and $\bet
 \begin{definition}[{Skein binding Lagrangian for multi-nucleon links}]
   \label{def:skein-binding-lagrangian}
   \blockannot[compiled]{def:skein-binding-lagrangian}{QOU.Braiding.SkeinBindingLagrangian}{quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian.md}
-  \uses{prop:qou-canonical-action, def:coulomb-charge, conj:weinberg-angle-categorical}
-\emph{Let $L =\allowbreak{} Z\mathfrak{p} \oplus\allowbreak{} N\mathfrak{n}$ be a multi-nucleon Hopf link with $Z$ protons, $N$ neutrons, and $A = Z + N$. The \textbf{canonical binding Lagrangian} is the categorical action $\mathfrak{S}_q$ evaluated on $L$:}
+  \uses{def:categorical-hamiltonian, prop:qou-canonical-action, def:coulomb-charge, conj:weinberg-angle-categorical}
+\emph{Let $L =\allowbreak{} Z\mathfrak{p} \oplus\allowbreak{} N\mathfrak{n}$ be a multi-nucleon Hopf link with $Z$ protons, $N$ neutrons, and $A = Z + N$. Despite its historical name, the \textbf{canonical binding Lagrangian} is the positive binding-energy release $\mathcal{L}_{\mathrm{bind}}[L] =\allowbreak{} -\Delta H_{\mathrm{can}} >\allowbreak{} 0$ — minus the difference in the \hyperref[def:categorical-hamiltonian]{categorical Hamiltonian} between the bound link $L$ and $Z$ separated protons plus $N$ separated neutrons — evaluated in the per-tick hadronic MeV chart:}
 
 \[
   \mathcal{L}_{\mathrm{bind}}[L]
@@ -51367,22 +51423,22 @@ An isotope $\mathcal{N}(Z, N)$ is $\beta$-stable if both its $\beta^-$ and $\bet
   - \mathcal{L}_{\mathrm{Coulomb}}.
 \]
 
-\emph{Each term arises from the exact evaluation of the topological trace on the link components, without empirical liquid-drop parameters:}
+\emph{Each term is defined as follows:}
 
 \begin{enumerate}
-  \item \emph{\textbf{Strong Binding (q-CLT/JSJ volume term).} The strong force contribution evaluates strictly from the Hecke channel traces. As established in \href{../mass-theory/q-clt-jsj-mass-scaling.md}{q-CLT mass scaling}, the Jaco–Shalen–Johannson decomposition yields an additive scaling for the strong binding:}
+  \item \emph{\textbf{Strong Binding ($q$-CLT/JSJ volume term).} The strong force contribution evaluates from the Hecke channel traces. As established in \href{../mass-theory/q-clt-jsj-mass-scaling.md}{q-CLT mass scaling}, the Jaco--Shalen--Johannson decomposition yields an additive scaling for the strong binding:}
 \[
   \mathcal{L}_{\mathrm{qCLT}}
   = \alpha \sum_i \ln\lvert V_i\rvert,
 \]
-\emph{where $\alpha =\allowbreak{} \mathfrak{m}_e / (q_0(q_0-\allowbreak{}1))$ is the rigid substrate scale (built from CAL-1 $\mathfrak{m}_e$ and CAL-2 $q_0$), and $V_i$ are the two-nucleon sub-braid Markov traces for each bond type. This carries no empirical parameter beyond that calibration scale, and is \textbf{intended} to replace the empirical Bethe-Weizsäcker volume, surface, asymmetry, and pairing terms — but that replacement is \textbf{not a completed closure}: the per-isotope binding magnitude ($\Delta_\lambda$) is open, so its empirical accuracy against AME is not established here.}
+\emph{where $\alpha =\allowbreak{} \mathfrak{E}_0 =\allowbreak{} \mathfrak{m}_e / \bigl(q_0(q_0-\allowbreak{}1)\bigr) =\allowbreak{} (\mathfrak{m}_e c_{q_0}^2)/t_P(q_0)$ is the per-tick hadronic chart scale of the \hyperref[def:categorical-hamiltonian]{categorical Hamiltonian} built from the electron mass $\mathfrak{m}_e$ and substrate parameter $q_0$, and $V_i$ are the two-nucleon sub-braid Markov traces for each bond type. This carries no empirical parameter beyond that calibration scale, and is \textbf{intended} to replace the empirical Bethe--Weizsäcker volume, surface, asymmetry, and pairing terms — but that replacement is \textbf{not a completed closure}: the per-isotope binding magnitude ($\Delta_\lambda$) is open, so its empirical accuracy against AME is not established here.}
   \item \emph{\textbf{Coulomb repulsion (imported, not derived).} The term is the standard uniform-sphere Coulomb energy}
 \[
   \mathcal{L}_{\mathrm{Coulomb}} = E_C(Z, A)
   = \frac{3}{5}\,\frac{Z(Z-1)\,\alpha_{\mathrm{EM}}\,\hbar c}{R},
   \qquad R = \bar\lambda_\pi\,A^{1/3},
 \]
-\emph{with $\bar\lambda_\pi =\allowbreak{} \hbar c/\mathfrak{m}_\pi$ the CAL-3 length. It is not obtained from the categorical action. No braid element and no invariant pair coupling between two nucleon blocks produces a pair term proportional to $Q_AQ_B$ (\hyperref[def:coulomb-charge]{the Coulomb-charge definition}), and a bond graph of bounded degree, such as the nearest-neighbour bonds of the strong term above, cannot carry a term growing like $Z(Z-1)$ when the energy per bond does not grow with $Z$. A Coulomb pair term needs the electroweak mixing angle of \hyperref[conj:weinberg-angle-categorical]{the Weinberg-angle conjecture} together with a mass scale that removes the $Z$ exchange at nuclear distance, and neither is derived. The status of each input:}
+\emph{with $\bar\lambda_\pi =\allowbreak{} \hbar c/\mathfrak{m}_\pi$ the reduced pion Compton wavelength. It is not obtained from the categorical action. No braid element and no invariant pair coupling between two nucleon blocks produces a pair term proportional to $Q_AQ_B$ (\hyperref[def:coulomb-charge]{the Coulomb-charge definition}), and a bond graph of bounded degree, such as the nearest-neighbour bonds of the strong term above, cannot carry a term growing like $Z(Z-1)$ when the energy per bond does not grow with $Z$. A Coulomb pair term needs the electroweak mixing angle of \hyperref[conj:weinberg-angle-categorical]{the Weinberg-angle conjecture} together with a mass scale that removes the $Z$ exchange at nuclear distance, and neither is derived. The status of each input:}
 \begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.235\linewidth}>{\raggedright\arraybackslash}p{0.709\linewidth}}
 \toprule
@@ -51976,8 +52032,8 @@ This section defines the $\mathcal{Q}_q$-value transition functional, derives th
 \begin{definition}[{$\mathcal{Q}_q$-Value as Categorical Action Difference}]
   \label{def:Q-value-transition}
   \blockannot[compiled]{def:Q-value-transition}{QOU.MassTheory.Archimedean.QqValue.value}{quantum-observable-universe/predicted-spectra/q-value-transition.md}
-  \uses{def:categorical-action, conj:q-integer-mass-formula}
-Let $\mathcal{N}(Z,N)$ be the normal form of a nucleus with $Z$ protons and $N$ neutrons, and let $\mathfrak{S}_q(\mathcal{N})$ be its categorical action (\href{../quantum-observable-universes/categorical-action.md}{Categorical action}). For a $\beta^-$ transition $\mathcal{N}(Z,N) \to\allowbreak{} \mathcal{N}(Z{+}1,N{-}1) +\allowbreak{} e^-\allowbreak{} + \bar{\nu}_e$, the \defterm{q-value}{$\mathcal{Q}_q$-value} is the categorical action difference between the parent and the products:
+  \uses{def:categorical-hamiltonian, conj:q-integer-mass-formula}
+Let $\mathcal{N}(Z,N)$ be the normal form of a nucleus with $Z$ protons and $N$ neutrons, and let $\mathfrak{S}_q(\mathcal{N})$ be its categorical action (\hyperref[def:categorical-action]{categorical action}), which on static rest configurations ($\mathcal{L}_1 = 0$) coincides with the rest projection of the \hyperref[def:categorical-hamiltonian]{categorical Hamiltonian} in the substrate mass chart. For a $\beta^-$ transition $\mathcal{N}(Z,N) \to\allowbreak{} \mathcal{N}(Z{+}1,N{-}1) +\allowbreak{} e^-\allowbreak{} + \bar{\nu}_e$, the \defterm{q-value}{$\mathcal{Q}_q$-value} is minus the canonical Hamiltonian difference $-\Delta H_{\mathrm{can}}$ between products and parent:
 
 \[
   \mathcal{Q}_q
@@ -51989,14 +52045,14 @@ Let $\mathcal{N}(Z,N)$ be the normal form of a nucleus with $Z$ protons and $N$ 
 \]
 with $\mathfrak{S}_q(\bar{\nu}_e) = 0$ since the antineutrino is the unknot. This is the primary definition. It does not assume classical energy conservation, which is the $q = 1$ limit; the relation between $\mathcal{Q}_q$ and the kinetic energies of the products is the $q$-anomaly $\delta_q$ treated in \href{q-value-transition-properties.md}{Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\mathcal{Q}_q$}. When $q$ is fixed, $Q$ denotes $\mathcal{Q}_q$.
 
-\textbf{Mass-difference form.} In the archimedean realisation the action of a nucleus is its mass, and the same transition is evaluated as the difference of neutral atomic masses,
+\textbf{Mass-difference form.} In the archimedean neutral-atom MeV mass chart the rest Hamiltonian of a nucleus is its mass, and the same transition evaluates as the difference of neutral atomic masses,
 
 \[
   Q = M(Z, N) - M(Z{+}1, N{-}1),
   \qquad
   M(Z, N) = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e - B(Z, N),
 \]
-where $B(Z,N)$ is the binding energy at Hecke level $k$ under the Bethe–Weizsäcker emergence conjecture (\href{../mass-theory/q-integer-mass-formula.md}{Seven-term atomic mass formula with $q$-integer coefficients}). Expanding the atomic masses gives $Q =\allowbreak{} m_{\mathfrak{n}} -\allowbreak{} m_{\mathfrak{p}} -\allowbreak{} m_e -\allowbreak{} \bigl(B(Z,N) -\allowbreak{} B(Z{+}1,N{-}1)\bigr)$. This is the form in which $Q$ is compared with measured values; it is a realisation of the action difference, not a second definition, and its numerical content is conditional on the conjecture that supplies $B$.
+where $B(Z,N) = -\Delta H_{\mathrm{can}}$ is the positive binding-energy release at Hecke level $k$ under the Bethe--Weizsäcker emergence conjecture (\href{../mass-theory/q-integer-mass-formula.md}{Seven-term atomic mass formula with $q$-integer coefficients}). Expanding the atomic masses gives $Q =\allowbreak{} m_{\mathfrak{n}} -\allowbreak{} m_{\mathfrak{p}} -\allowbreak{} m_e -\allowbreak{} \bigl(B(Z,N) -\allowbreak{} B(Z{+}1,N{-}1)\bigr)$. This is the form in which $Q$ is compared with measured values; it is a chart realisation of $-\Delta H_{\mathrm{can}}$, not a second definition, and its numerical content is conditional on the conjecture that supplies $B$.
 \end{definition}
 
 \phantomsection\label{rem:Q-value-transition-properties}\begin{definition}[{Breit--Wheeler pair production (categorical)}]
@@ -66714,20 +66770,68 @@ The \textbf{information bandwidth} per Planck time quantifies the total informat
 At $q = q_0$, the bandwidth $\mathfrak{B} =\allowbreak{} q\eta_q/(q-\allowbreak{}1)^2 \approx\allowbreak{} 82$ $q$-bits per Planck time. This functions as the Bremermann-analog bit budget of the substrate. It dictates the maximum number of distinguishable $q$-bits that a single Planck step can carry across the light-cone boundary.
 \end{definition}
 
-\phantomsection\label{rem:speed-of-light-regimes-lieb-robinson}\begin{definition}[{Energy of a braid class ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$)}]
-  \label{def:mass-energy}
-  \blockannot[compiled]{def:mass-energy}{QOU.Information.energy}{quantum-observable-universe/information-theory/mass-energy-equivalence.md}
-  \uses{def:information-speed-of-light, def:mass-identity}
-\emph{Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe with substrate parameter $q > 1$ and speed of light $c_q = 1/(q-1)$ (\hyperref[def:information-speed-of-light]{speed of light}). Let $\mathfrak{m}(\beta)$ be the mass of a braid class $\beta$ (\hyperref[def:mass-identity]{mass identity}). The \textbf{energy} of $\beta$ is}
+\phantomsection\label{rem:speed-of-light-regimes-lieb-robinson}\begin{proposition}[{Mass--energy equivalence from the causal-cone Legendre transform ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$)}]
+  \label{prop:mass-energy}
+  \blockannot[compiled]{prop:mass-energy}{QOU.Information.energy}{quantum-observable-universe/information-theory/mass-energy-equivalence.md}
+  \uses{def:categorical-hamiltonian, def:information-speed-of-light, def:mass-identity}
+\emph{Let $(\mathbf{C}, A, \tau)$ be an archimedean quantum observable universe over $\mathbb{R}$ with substrate parameter $q > 1$ and causal-cone speed $c_q = q^{-1}/\hbar_q = 1/(q-1)$ (\hyperref[def:information-speed-of-light]{speed of light}).}
 
+\begin{enumerate}
+  \item \emph{For a relativistic worldline of kinematic inertia $m_{\mathrm{in}} \in \mathbb{R}$ moving at sub-cone velocity $\vert v\vert  < c_q$ with Lagrangian $L(v) =\allowbreak{} -m_{\mathrm{in}}\,c_q\sqrt{c_{q}^{2} - v^{2}}$ and conjugate momentum $p(v) =\allowbreak{} \partial L/\partial v =\allowbreak{} m_{\mathrm{in}}\,c_q\,v / \sqrt{c_{q}^{2} - v^{2}}$, the Legendre transform (\hyperref[def:categorical-hamiltonian]{categorical Hamiltonian}) gives}
+\[
+  E(v)
+  = p(v)\,v - L(v)
+  = \frac{m_{\mathrm{in}}\,c_q^2}{\sqrt{1 - v^2/c_q^2}},
+  \qquad
+  E(v)^2 - p(v)^2\,c_q^2 = \bigl(m_{\mathrm{in}}\,c_q^2\bigr)^2,
+\]
+\emph{with rest-frame energy $E(0) =\allowbreak{} m_{\mathrm{in}}\,c_q^2 =\allowbreak{} m_{\mathrm{in}}/(q -\allowbreak{} 1)^2$ and classical Galilean divergence $c_q^2 \to \infty$ as $q \to 1$.}
+  \item \emph{Conditional on boost-inertial equivalence equating the kinematic worldline inertia $m_{\mathrm{in}}(\beta)$ of a braid class $\beta$ with its static Frobenius--Hopf holonomy mass $\mathfrak{m}(\beta)$ (\hyperref[def:mass-identity]{mass identity}), the rest energy of $\beta$ is}
 \[
   \mathfrak{E}(\beta)
-  =  \mathfrak{m}(\beta) \cdot c_q^2
-  =  \frac{\mathfrak{m}(\beta)}{(q - 1)^2}.
+  = \mathfrak{m}(\beta) \cdot c_q^2
+  = \frac{\mathfrak{m}(\beta)}{(q - 1)^2}.
+\]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[{Proof of mass--energy equivalence from the causal-cone Legendre transform}]
+  \label{prf:mass-energy}
+  \blockannot[drafted]{prf:mass-energy}{}{quantum-observable-universe/information-theory/mass-energy-legendre-proof.md}
+  \uses{prop:mass-energy}
+\emph{Part 1.}
+In the \hyperref[def:categorical-dirac-operator]{categorical Dirac operator} $\mathcal{D}_\nabla =\allowbreak{} q^{-1}\nabla +\allowbreak{} \hbar_q\,\iota_\xi\nabla$ with $\hbar_q = 1 - q^{-1}$, the ratio of horizontal spatial weight to Reeb temporal weight for $q > 1$ is $q^{-1}/(1 -\allowbreak{} q^{-1}) =\allowbreak{} 1/(q -\allowbreak{} 1) =\allowbreak{} c_q >\allowbreak{} 0$. For $\vert v\vert  < c_q$, squaring gives $v^2 < c_q^2$ so $c_q^2 - v^2 > 0$. Differentiating $g(v) = c_q^2 - v^2$ yields $g'(v) = -2v$, and applying the chain rule for the square root to $L(v) =\allowbreak{} -m_{\mathrm{in}}\,c_q\sqrt{c_{q}^{2} - v^{2}}$ gives
+
+\[
+  p(v)
+  = \frac{\partial L}{\partial v}
+  = (-m_{\mathrm{in}}\,c_q)\,\frac{-2v}{2\sqrt{c_q^2 - v^2}}
+  = \frac{m_{\mathrm{in}}\,c_q\,v}{\sqrt{c_q^2 - v^2}}.
 \]
 
-The bare symbol $\mathfrak{E}$ denotes this energy. Other energies carry a subscript, for example the crossing energy $\mathfrak{E}_{\mathrm{cross}}$ (\hyperref[def:crossing-energy]{crossing energy}).
-\end{definition}
+Evaluating the Legendre transform (\hyperref[def:categorical-hamiltonian]{categorical Hamiltonian}) over $\mathbb{R}$ by clearing the non-zero radical $\sqrt{c_q^2 - v^2}$ and using $(\sqrt{c_{q}^{2} - v^{2}})^2 =\allowbreak{} c_q^2 -\allowbreak{} v^2$ gives
+
+\[
+  E(v)
+  = p(v)\,v - L(v)
+  = \frac{m_{\mathrm{in}}\,c_q\,v^2 + m_{\mathrm{in}}\,c_q\,(c_q^2 - v^2)}{\sqrt{c_q^2 - v^2}}
+  = \frac{m_{\mathrm{in}}\,c_q^3}{\sqrt{c_q^2 - v^2}}
+  = \frac{m_{\mathrm{in}}\,c_q^2}{\sqrt{1 - v^2/c_q^2}}.
+\]
+
+Setting $v = 0$ yields $E(0) =\allowbreak{} m_{\mathrm{in}}\,c_q^2 =\allowbreak{} m_{\mathrm{in}}/(q -\allowbreak{} 1)^2$. Subtracting $p(v)^2\,c_q^2$ from $E(v)^2$ over the common denominator $c_q^2 - v^2 > 0$ gives
+
+\[
+  E(v)^2 - p(v)^2\,c_q^2
+  = \frac{m_{\mathrm{in}}^2\,c_q^4\,(c_q^2 - v^2)}{c_q^2 - v^2}
+  = \bigl(m_{\mathrm{in}}\,c_q^2\bigr)^2.
+\]
+
+Finally, for every $\varepsilon > 0$, choosing $\delta = \sqrt{\varepsilon} > 0$ ensures that $0 < \vert q - 1\vert  < \delta$ implies $0 < (q - 1)^2 < \varepsilon$, whence $c_q^2 = 1/(q - 1)^2 > 1/\varepsilon$.
+
+\emph{Part 2.}
+Under the boost-invariance equivalence hypothesis $m_{\mathrm{in}}(\beta) =\allowbreak{} \mathfrak{m}(\beta)$ for each braid class $\beta$, substituting this equality into the rest-frame evaluation $E(0) = m_{\mathrm{in}}\,c_q^2$ of Part 1 yields $\mathfrak{E}(\beta) =\allowbreak{} \mathfrak{m}(\beta)\,c_q^2 =\allowbreak{} \mathfrak{m}(\beta)/(q -\allowbreak{} 1)^2$. $\square$
+\end{proof}
 
 \phantomsection\label{rem:mass-energy-not-crossing-energy}\phantomsection\label{rem:mass-energy-equivalence-interpretation}\phantomsection\label{rem:mass-energy-electron-check}\phantomsection\label{rem:mass-energy-pair-creation}\begin{proposition}[{Mass as photon threading cost}]
   \label{prop:photon-threading-mass}
@@ -78016,7 +78120,7 @@ A handful of common letters carry overloaded meanings in the literature. One enf
   \item \textbf{$b$} = generic variable (never bottom quark; bottom is $\mathfrak{b}$).
   \item \textbf{$p$} = brane point (never proton number; proton number is $Z$).
   \item \textbf{$E$} alone = not used for an exceptional divisor, energy, or elliptic curve. One uses $\mathcal{S}_p$, $\mathfrak{E}$, or $\mathcal{E}_q$ respectively. $E_{\mathfrak{H}}$ (with hadron subscript) is allowed for crossing energy.
-  \item \textbf{$\mathfrak{E}$} bare = the energy $\mathfrak{m}\,c_q^2$ of a braid class (\hyperref[def:mass-energy]{energy}). Every other energy carries a subscript: $\mathfrak{E}_{\mathrm{cross}}$ (crossing energy, which is a different quantity), $\mathfrak{E}_0$, $\mathfrak{E}_{\mathrm{bind}}$, $\mathfrak{E}_{\gamma}$, $\mathfrak{E}_{\mathrm{pole}}$. The Euler–Lagrange operator is $\mathrm{EL}$.
+  \item \textbf{$\mathfrak{E}$} bare = the energy $\mathfrak{m}\,c_q^2$ of a braid class (\hyperref[prop:mass-energy]{mass--energy equivalence}). Every other energy carries a subscript: $\mathfrak{E}_{\mathrm{cross}}$ (crossing energy, which is a different quantity), $\mathfrak{E}_0$, $\mathfrak{E}_{\mathrm{bind}}$, $\mathfrak{E}_{\gamma}$, $\mathfrak{E}_{\mathrm{pole}}$. The Euler–Lagrange operator is $\mathrm{EL}$.
   \item \textbf{$\mathfrak{E}_0$ vs $Q_\beta(n)$} — two distinct hadronic-sector scalars historically conflated in Python compute scripts. They are not interchangeable:
 \begin{itemize}
   \item $\mathfrak{E}_0$ = hadronic energy scale. One derives this as $\mathfrak{E}_0^{(N=0)} =\allowbreak{} m_e/(q_0(q_0-\allowbreak{}1)) \approx\allowbreak{} 4.186$ MeV (from $m_e$ and $q_0$ only). The tower-summed form is $\mathfrak{E}_0^{\text{full}} =\allowbreak{} \mathfrak{E}_0^{(N=0)}/(1-\allowbreak{}\hbar_q^2) \approx\allowbreak{} 4.228$ MeV. It sets the MeV-per-dimensionless-trace-unit conversion for hadronic predictions.
@@ -78609,7 +78713,7 @@ The Reeb gauge group plays six simultaneous roles, all arising from $T \subset G
 \label{sec:definition-index}
 \sectionannot{sec:definition-index}
 \phantomsection\label{prose:definition-index}
-\textbf{1320} indexed entries across 7 categories.
+\textbf{1321} indexed entries across 7 categories.
 
 \paragraph{Definitions}\mbox{}\par
 
@@ -78683,6 +78787,7 @@ Label & Title & Chapter \\
 \hyperref[def:categorical-dirac-operator]{def} & Categorical Dirac operator & Ch 2 \\
 \hyperref[def:categorical-fourier]{def} & Categorical Fourier transform & Ch 2 \\
 \hyperref[def:categorical-hodge-star]{def} & Categorical Hodge star & Ch 1 \\
+\hyperref[def:categorical-hamiltonian]{def} & Categorical Hamiltonian and phase-space Legendre transform & Ch 2 \\
 \hyperref[def:categorical-instanton]{def} & Categorical instanton & Ch 2 \\
 \hyperref[def:categorical-jet]{def} & Categorical jet object & Ch 1 \\
 \hyperref[def:categorical-lagrangian]{def} & Categorical Lagrangian & Ch 2 \\
@@ -78727,7 +78832,6 @@ Label & Title & Chapter \\
 \hyperref[def:electron-knot]{def} & Electron & Ch 14 \\
 \hyperref[def:electron-shell-braid-capacity]{def} & Electron shell as braid bonding capacity & Ch 16 \\
 \hyperref[def:embeddable-knot-operator]{def} & Embeddable knot operator with geometric overlap weight & Ch 16 \\
-\hyperref[def:mass-energy]{def} & Energy of a braid class ($\mathfrak{E} =\allowbreak{} \mathfrak{m} \cdot c_q^2$) & Ch 20 \\
 \hyperref[def:exceptional-divisor]{def} & Exceptional divisor at $p$ & Ch 2 \\
 \hyperref[def:fermion-boson-decomposition]{def} & Fermion--Boson decomposition & Ch 2 \\
 \hyperref[def:hadron-fibre-embedding]{def} & Fibre-compatible hadron embedding & Ch 7 \\
@@ -79295,6 +79399,7 @@ Label & Title & Chapter \\
 \hyperref[prop:wedderburn-trace-identity]{prop} & Markov-trace normalization for $H_n(q)$ & Ch 11 \\
 \hyperref[prop:markov-trace-frobenius-selection]{prop} & Markov-trace selection on H\_n(R, q) — the row cap, not non-degeneracy & Ch 11 \\
 \hyperref[prop:photon-threading-mass]{prop} & Mass as photon threading cost & Ch 20 \\
+\hyperref[prop:mass-energy]{prop} & Mass--energy equivalence from the causal-cone Legendre transform ($\mathfrak{E} =\allowbreak{} \mathfrak{m} \cdot c_q^2$) & Ch 20 \\
 \hyperref[prop:mass-coefficient-shadow-price]{prop} & Mass-formula coefficients as shadow prices of the Frobenius positivity constraints & Ch 11 \\
 \hyperref[prop:mass-side-kernel-formalize-first-gates]{prop} & Mass-side $\S 4$ formalize-first gates as parametric Lean classes — \texttt{Mass\allowbreak{}Side\allowbreak{}Kernel} bundles anchor-stability, q=1 shadow (open gap), and direction sanity for any \texttt{linking\_\allowbreak{}weight} candidate $w(q)$; mirrors the $\mathfrak{Q}_\beta$ \texttt{Bar\allowbreak{}Even\allowbreak{}Kernel} typeclass & Ch 27 \\
 \hyperref[prop:mass-tower-coefficient-stratification]{prop} & Mass-tower coefficients $(\lambda_V, \lambda_S, \lambda_{\mathrm{pair}}, \alpha_k)$ as Wedderburn-block projections & Ch 11 \\
@@ -81938,6 +82043,7 @@ Every definition in the text, alphabetically (275 entries). Each term links to i
 \hangindent=1em\hyperref[def:categorical-connection]{Categorical connection and curvature}\dotfill\ref{def:categorical-connection}, p.\,\pageref{def:categorical-connection}\,\folioleanhref{QOU.CategoricalConnection}{$\forall$}\par
 \hangindent=1em\hyperref[def:categorical-dirac-operator]{Categorical Dirac operator}\dotfill\ref{def:categorical-dirac-operator}, p.\,\pageref{def:categorical-dirac-operator}\,\folioleanhref{QOU.CategoricalDiracOperator}{$\forall$}\par
 \hangindent=1em\hyperref[def:categorical-fourier]{Categorical Fourier transform}\dotfill\ref{def:categorical-fourier}, p.\,\pageref{def:categorical-fourier}\,\folioleanhref{QOU.CategoricalFourier}{$\forall$}\par
+\hangindent=1em\hyperref[def:categorical-hamiltonian]{Categorical Hamiltonian and phase-space Legendre transform}\dotfill\ref{def:categorical-hamiltonian}, p.\,\pageref{def:categorical-hamiltonian}\,\folioleanhref{QOU.Core.CategoricalHamiltonianLegendre.canonicalHamiltonian}{$\forall$}\par
 \hangindent=1em\hyperref[def:categorical-hodge-star]{Categorical Hodge star}\dotfill\ref{def:categorical-hodge-star}, p.\,\pageref{def:categorical-hodge-star}\,\folioleanhref{QOU.CatHodgeInvolution}{$\forall$}\par
 \hangindent=1em\hyperref[def:categorical-instanton]{Categorical instanton}\dotfill\ref{def:categorical-instanton}, p.\,\pageref{def:categorical-instanton}\,\folioleanhref{QOU.CategoricalInstanton}{$\forall$}\par
 \hangindent=1em\hyperref[def:categorical-jet]{Categorical jet object}\dotfill\ref{def:categorical-jet}, p.\,\pageref{def:categorical-jet}\,\folioleanhref{QOU.Core.Instanton.CategoricalJet}{$\forall$}\par
@@ -81989,7 +82095,6 @@ Every definition in the text, alphabetically (275 entries). Each term links to i
 \hangindent=1em\hyperref[def:electron-knot]{Electron}\dotfill\ref{def:electron-knot}, p.\,\pageref{def:electron-knot}\,\folioleanhref{QOU.MassTheory.Archimedean.Electron}{$\forall$}\par
 \hangindent=1em\hyperref[def:electron-shell-braid-capacity]{Electron shell as braid bonding capacity}\dotfill\ref{def:electron-shell-braid-capacity}, p.\,\pageref{def:electron-shell-braid-capacity}\,\folioleanhref{QOU.Molecular.ElectronShell}{$\forall$}\par
 \hangindent=1em\hyperref[def:embeddable-knot-operator]{Embeddable knot operator with geometric overlap weight}\dotfill\ref{def:embeddable-knot-operator}, p.\,\pageref{def:embeddable-knot-operator}\,\folioleanhref{QOU.Molecular.embeddableBinding}{$\forall$}\par
-\hangindent=1em\hyperref[def:mass-energy]{Energy of a braid class ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$)}\dotfill\ref{def:mass-energy}, p.\,\pageref{def:mass-energy}\,\folioleanhref{QOU.Information.energy}{$\forall$}\par
 \hangindent=1em\hyperref[def:exceptional-divisor]{Exceptional divisor at $p$}\dotfill\ref{def:exceptional-divisor}, p.\,\pageref{def:exceptional-divisor}\,\folioleanhref{QOU.ExceptionalDivisor}{$\forall$}\par
 \par\medskip{\bfseries F}\par\nopagebreak
 \hangindent=1em\hyperref[def:fermion-boson-decomposition]{Fermion--Boson decomposition}\dotfill\ref{def:fermion-boson-decomposition}, p.\,\pageref{def:fermion-boson-decomposition}\,\folioleanhref{QOU.Fermion}{$\forall$}\par
