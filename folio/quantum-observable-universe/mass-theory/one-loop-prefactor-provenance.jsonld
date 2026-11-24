@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -14,13 +14,13 @@
   "label": "prop:one-loop-prefactor-provenance",
   "kind": "proposition",
   "title": "The 1-loop prefactor law splits: the exponent $-1/2$ is normalisation-invariant and measured, and the constant $k = 2^{-1/2}$ is forced by the saddle condition rather than calibrated on $4_1$",
-  "uses": [],
   "cites": [
     "references/dimofte-gukov-lenells-zagier-2009",
     "references/gukov-murakami-2008",
     "references/vanderveen2008",
     "references/dimofte-garoufalidis-2013",
-    "references/garoufalidis-yoon-2024"
+    "references/garoufalidis-yoon-2024",
+    "references/benard2018"
   ],
   "tags": [
     "one-loop",
@@ -37,7 +37,7 @@
     "figure-eight",
     "saddle-point"
   ],
-  "leanRef": "qou:QOU.OneLoopPrefactorInvariance.k_const_iff_exponent_neg_half",
+  "leanRef": "qou:MathlibExt.OneLoopPrefactorInvariance.k_const_iff_exponent_neg_half",
   "text": "one-loop-prefactor-provenance.md",
   "provenance": "authored"
 }

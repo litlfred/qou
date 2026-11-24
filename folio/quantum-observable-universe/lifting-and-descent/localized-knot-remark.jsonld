@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-localized-knot-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:localized-knot-remark",
+  "kind": "remark",
+  "title": "The knot sheaf and the archimedean reading of a localized knot",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-localized-knot",
+    "papers/quantum-observable-universe/blocks/def-projective-line-object",
+    "papers/quantum-observable-universe/blocks/def-categorical-point"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-localized-knot",
+  "text": "localized-knot-remark.md",
+  "provenance": "authored"
+}

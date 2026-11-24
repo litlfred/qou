@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -13,14 +13,14 @@
   ],
   "label": "conj:topological-mass-dilogarithm",
   "kind": "conjecture",
-  "title": "Quantum dilogarithm evaluation of exceptional-divisor contributions",
+  "title": "Symmetric q-dilogarithm evaluation of exceptional-divisor contributions",
   "uses": [
     "papers/quantum-observable-universe/blocks/lem-topological-mass-holonomy",
     "papers/quantum-observable-universe/blocks/lem-topological-mass-transient-localisation",
     "papers/quantum-observable-universe/blocks/def-quantum-dilogarithm-disambiguation"
   ],
   "tags": [
-    "quantum-dilogarithm",
+    "symmetric-q-dilogarithm",
     "exceptional-divisor",
     "briggs-klein",
     "spectral-coordinates"

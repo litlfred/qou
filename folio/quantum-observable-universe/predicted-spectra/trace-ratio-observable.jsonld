@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -33,7 +33,7 @@
     "generator-volume",
     "ratio"
   ],
-  "leanRef": "qou:QOU.Archimedean.trace_ratio_observable",
+  "leanRef": "qou:QOU.MassTheory.Archimedean.trace_ratio_observable",
   "text": "trace-ratio-observable.md",
   "leanSource": "trace-ratio-observable.lean",
   "provenance": "authored"

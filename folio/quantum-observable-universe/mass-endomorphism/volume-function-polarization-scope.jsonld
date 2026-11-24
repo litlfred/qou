@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-volume-function-polarization-scope",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:volume-function-polarization-scope",
+  "kind": "remark",
+  "title": "Prior art: the polarization choice in the deformed volume function away from $\\operatorname{Re} u = 0$",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume",
+  "cites": [
+    "references/murakami2006"
+  ],
+  "tags": [
+    "volume-conjecture",
+    "deformed-volume",
+    "polarization",
+    "figure-eight",
+    "prior-art"
+  ],
+  "text": "volume-function-polarization-scope.md",
+  "provenance": "authored"
+}

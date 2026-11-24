@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-torus-knot-flavour-labels-prior-art",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:torus-knot-flavour-labels-prior-art",
+  "kind": "remark",
+  "title": "Prior art: $q$-integer differences are Alexander polynomials of $(2n-1,2)$ torus knots",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-bring-trefoil-cinquefoil-channel"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-dictionary-flavor-layer",
+  "cites": [
+    "references/gavrilik2001"
+  ],
+  "tags": [
+    "torus-knot",
+    "alexander-polynomial",
+    "q-integer",
+    "flavour",
+    "prior-art"
+  ],
+  "text": "torus-knot-flavour-labels-prior-art.md",
+  "provenance": "authored"
+}

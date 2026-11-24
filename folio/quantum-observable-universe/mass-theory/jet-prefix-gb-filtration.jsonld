@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -25,7 +25,7 @@
     "term-6",
     "open-problem"
   ],
-  "leanRef": "qou:QOU.BraidKnot.jet_prefix_gb_filtration",
+  "leanRef": "qou:BraidKnotOctonion.jet_prefix_gb_filtration",
   "text": "jet-prefix-gb-filtration.md",
   "provenance": "authored"
 }

@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ch4-molecular-braid-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ch4-molecular-braid-remark",
+  "kind": "remark",
+  "title": "Staged construction of methane",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ch4-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-ch4-molecular-braid",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "ch4-molecular-braid-remark.md",
+  "provenance": "authored"
+}

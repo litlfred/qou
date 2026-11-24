@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-classical-limit-functor-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:classical-limit-functor-remark",
+  "kind": "remark",
+  "title": "Information loss in the classical limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-limit-functor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "classical-limit-functor-remark.md",
+  "provenance": "authored"
+}

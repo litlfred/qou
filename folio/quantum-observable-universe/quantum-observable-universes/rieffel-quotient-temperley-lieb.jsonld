@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
@@ -31,7 +31,7 @@
     "radical",
     "quantum-metric"
   ],
-  "leanRef": "qou:QOU.SchurWeyl.JimboKernelGeneric.traceQuotTLEquivComplex",
+  "leanRef": "qou:BraidKnotOctonion.JimboKernelGeneric.traceQuotTLEquivComplex",
   "text": "rieffel-quotient-temperley-lieb.md",
   "provenance": "authored"
 }
