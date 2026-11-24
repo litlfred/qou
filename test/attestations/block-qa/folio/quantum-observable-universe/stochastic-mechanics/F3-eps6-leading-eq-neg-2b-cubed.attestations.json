@@ -1,0 +1,480 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/stochastic-mechanics/F3-eps6-leading-eq-neg-2b-cubed",
+    "path": "folio/quantum-observable-universe/stochastic-mechanics/F3-eps6-leading-eq-neg-2b-cubed"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The branch decision code is now a defined mathematical object: the body states \"For the $F_3 = 1 - 2 b^3 \\hbar_q^6$ factor in the [`prop:q-beta-categorical-precision-ladder`] precision ladder\", and the .ts title names the identity itself (\"the $\\varepsilon^6$ leading coefficient of $(F_3 - 1)$ at $q = 1 + \\varepsilon$ equals exactly $-2 \\cdot b(1)^3 = -3\\sqrt{3}/4$\"). The remaining \"Lean stub\" refers to the sibling `.lean` file cited on the line above.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.342Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.384Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.425Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.465Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.505Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.546Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.587Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.627Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.667Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "'verified at sympy precision' and 'exactly' checked",
+        "notes": "Earned: the identity is symbolic/algebraic (sqrt3 exact), not a float64 agreement; no inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.708Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
+      }
+    ]
+  }
+}

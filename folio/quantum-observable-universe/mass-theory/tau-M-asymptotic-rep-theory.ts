@@ -36,10 +36,16 @@ export default proposition({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "computations/probe_q_beta_operator_valued_N2.py",
+    script: "computations/probe_q_beta_operator_valued_N3.py",
+    witness: "computations/q-beta-operator-valued-N3.witness.json",
     status: "experimental",
   },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Updated `computation` reference from the retired N=2 exploratory script to `computations/probe_q_beta_operator_valued_N3.py` (`computations/q-beta-operator-valued-N3.witness.json`).",
+    },
     {
       kind: "refined-framing",
       date: "2026-06-24",
