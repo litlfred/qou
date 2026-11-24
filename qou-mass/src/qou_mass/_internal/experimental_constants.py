@@ -140,21 +140,25 @@ M_N_MINUS_P_MEV_ERR = _M_N_MINUS_P_MEV_ERR
 # header: it does not raise, it returns a binary64 float. So the quadrature
 # sum was silently the one float64 quantity left in this module the moment the
 # casts came off. `_mpm.sqrt` keeps it mpf.
+from decimal import Decimal as _Decimal  # noqa: E402
 import mpmath as _mpm  # noqa: E402
 
 
 class _FormattableMpf(_mpm.mpf):
     """`mpmath.mpf` subclass that preserves full working precision across all
     arithmetic while supporting standard float format specifiers (e.g.
-    `f"{x:.6f}"`) and `round(x, n)` at display boundaries (bean qou-ke35)."""
+    `f"{x:.6f}"`) and `round(x, n)` via exact `Decimal` conversion at display
+    boundaries (bean qou-ke35)."""
 
     def __format__(self, format_spec: str) -> str:
         if not format_spec:
             return str(self)
-        return format(float(self), format_spec)
+        return format(_Decimal(str(self)), format_spec)
 
     def __round__(self, n=None):
-        return round(float(self), n)
+        if n is None:
+            return int(_mpm.nint(self))
+        return _FormattableMpf(_mpm.mpf(str(round(_Decimal(str(self)), n))))
 
     def _wrap(self, res):
         return _FormattableMpf(res) if isinstance(res, _mpm.mpf) else res
@@ -432,7 +436,7 @@ with _mpm.workdps(_CONST_DPS):
 
 def rel_err(val, err):
     """Relative error |δx/x|."""
-    return abs(err / val) if val != 0 else float('inf')
+    return abs(err / val) if val != 0 else _mpm.inf
 
 def prop_power(val, err, n):
     """Propagate through x^n: δ(x^n) = |n| × x^{n-1} × δx."""

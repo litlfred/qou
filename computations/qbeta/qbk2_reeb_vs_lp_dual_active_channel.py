@@ -76,14 +76,17 @@ def main():
     print("qbk2 (+1/2 form-B) per-block weight  vs  deuteron LP-dual shadow price")
     print("=" * 74)
     print(f"{'block':<16}{'qbk2 %':>9}{'y_star':>12}{'active?':>9}")
+    from decimal import Decimal as _Dec
+    from mpmath import mp as _mp
+    _d = lambda x: _Dec(_mp.nstr(x, 25))  # noqa: E731
     rows = []
     for lam in sorted(qbk2, key=lambda L: fabs(qbk2[L]), reverse=True):
         share = fabs(qbk2[lam]) / qtot
-        ys = ymap.get(lam, 0.0)
+        ys = mpf(str(ymap.get(lam, 0)))
         act = lam in active
-        rows.append({"block": list(lam), "qbk2_share": float(share),
-                     "y_star": float(ys), "active": act})
-        print(f"{str(list(lam)):<16}{float(share)*100:>8.1f}%{ys:>12.4f}{'YES' if act else 'no':>9}")
+        rows.append({"block": list(lam), "qbk2_share": str(share),
+                     "y_star": str(ys), "active": act})
+        print(f"{str(list(lam)):<16}{_d(share * 100):>8.1f}%{_d(ys):>12.4f}{'YES' if act else 'no':>9}")
     results["per_block"] = rows
 
     # ── multi-channel support (binding is NOT single-channel) ────────────────
@@ -92,9 +95,9 @@ def main():
     five_one = (5, 1)
     five_one_active = five_one in active
     inactive = {parts[i] for i in range(len(parts)) if i not in active_idx}
-    w_in_active = float(sum(fabs(qbk2[L]) for L in qbk2 if L in active) / qtot)
-    w_in_inactive = float(sum(fabs(qbk2[L]) for L in qbk2 if L in inactive) / qtot)
-    largest_share = float(fabs(qbk2[max(qbk2, key=lambda L: oj.dim_sn(list(L)))]) / qtot)
+    w_in_active = sum(fabs(qbk2[L]) for L in qbk2 if L in active) / qtot
+    w_in_inactive = sum(fabs(qbk2[L]) for L in qbk2 if L in inactive) / qtot
+    largest_share = fabs(qbk2[max(qbk2, key=lambda L: oj.dim_sn(list(L)))]) / qtot
     largest_block = max(qbk2, key=lambda L: oj.dim_sn(list(L)))   # [3,2,1], dim 16
     qbk2_peak = max(qbk2, key=lambda L: fabs(qbk2[L]))
     sp_peak = max(ymap, key=lambda L: ymap[L])
@@ -102,13 +105,13 @@ def main():
     print(f"  active channels: {sorted([list(a) for a in active])}")
     print(f"  inactive (y_star=0): {sorted([list(a) for a in inactive])}")
     check("(1) [5,1] is one of the LP-dual ACTIVE binding channels (y_star>0)", five_one_active)
-    print(f"      [5,1] shadow price y_star = {ymap[five_one]:.4f}")
-    check("(2) qbk2 correction is SUPPORTED on the active set (>85% of weight)", w_in_active > 0.85)
-    print(f"      qbk2 weight on the {len(active)} active channels = {w_in_active*100:.1f}%  "
-          f"(inactive {w_in_inactive*100:.1f}%)")
+    print(f"      [5,1] shadow price y_star = {_d(mpf(str(ymap[five_one]))):.4f}")
+    check("(2) qbk2 correction is SUPPORTED on the active set (>85% of weight)", w_in_active > mpf("0.85"))
+    print(f"      qbk2 weight on the {len(active)} active channels = {_d(w_in_active * 100):.1f}%  "
+          f"(inactive {_d(w_in_inactive * 100):.1f}%)")
     print(f"      largest block {list(largest_block)} (dim {oj.dim_sn(list(largest_block))}) is "
           f"{'ACTIVE' if largest_block in active else 'INACTIVE'} and carries only "
-          f"{largest_share*100:.1f}% of qbk2 — qbk2 is NOT just tracking dim")
+          f"{_d(largest_share * 100):.1f}% of qbk2 — qbk2 is NOT just tracking dim")
     print(f"  (diag) qbk2 peak {list(qbk2_peak)} vs shadow-price peak {list(sp_peak)} "
           f"(y_star={ymap[sp_peak]:.1f}, y_λ tiny): two distinct weightings of the shared")
     print(f"         active manifold — EXPECTED for multi-channel binding, not a defect.")
