@@ -129,7 +129,7 @@ def _is_exact_in_binary64(lit: str) -> bool:
     """A value a double represents exactly loses nothing at 53 bits."""
     try:
         d = Decimal(lit)
-        return Decimal(float(d)) == d
+        return Decimal(float(d)) == d  # float64-ok: tests exact IEEE-754 binary64 representability of literal
     except (InvalidOperation, OverflowError, ValueError):
         return False
 
@@ -239,20 +239,38 @@ def find_early_constants(source: str, filename: str = "<src>") -> list[dict]:
     return sorted(out, key=lambda d: d["line"])
 
 
-def scan(root: Path) -> list[dict]:
+DEFAULT_SCAN_DIRS: tuple[str, ...] = ("computations", "tools", "qou-mass")
+SKIP_PARTS: frozenset[str] = frozenset({
+    "_deprecated", "fsh-guts", "__pycache__", ".venv", "venv",
+    "target", "build", "dist", "node_modules",
+})
+
+
+def scan(root: Path, scan_roots: list[str] | None = None) -> list[dict]:
     out: list[dict] = []
-    for p in sorted((root / "computations").rglob("*.py")):
-        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
+    dirs = scan_roots if scan_roots else list(DEFAULT_SCAN_DIRS)
+    seen: set[Path] = set()
+    for d in dirs:
+        base = Path(d) if Path(d).is_absolute() else (root / d)
+        base = base.resolve()
+        if not base.exists():
             continue
-        rel = p.relative_to(root).as_posix()
-        try:
-            src = p.read_text(encoding="utf-8")
-        except Exception as e:
-            out.append({"file": rel, "line": 0, "tier": "UNPARSEABLE",
-                        "name": None, "literal": None,
-                        "source": f"unreadable: {type(e).__name__}: {e}"})
-            continue
-        out.extend(find_early_constants(src, rel))
+        for p in sorted(base.rglob("*.py")):
+            if p in seen or (set(p.parts) & SKIP_PARTS):
+                continue
+            seen.add(p)
+            try:
+                rel = p.relative_to(root).as_posix()
+            except ValueError:
+                rel = p.as_posix()
+            try:
+                src = p.read_text(encoding="utf-8")
+            except Exception as e:
+                out.append({"file": rel, "line": 0, "tier": "UNPARSEABLE",
+                            "name": None, "literal": None,
+                            "source": f"unreadable: {type(e).__name__}: {e}"})
+                continue
+            out.extend(find_early_constants(src, rel))
     return out
 
 
@@ -320,6 +338,13 @@ def self_test() -> int:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=str(ROOT))
+    ap.add_argument(
+        "--scan-root",
+        action="append",
+        dest="scan_roots",
+        default=None,
+        help="directory to scan (repeatable; default: computations, tools, qou-mass — bean qou-4w77)",
+    )
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on LOSSY constants (real precision loss)")
@@ -328,7 +353,7 @@ def main() -> int:
     if a.self_test:
         return self_test()
 
-    hits = scan(Path(a.root).resolve())
+    hits = scan(Path(a.root).resolve(), scan_roots=a.scan_roots)
     lossy = [h for h in hits if h["tier"] == "LOSSY"]
     # A file the gate could not read is a HOLE IN THE GATE, not a pass.
     blind = [h for h in hits if h["tier"] == "UNPARSEABLE"]
