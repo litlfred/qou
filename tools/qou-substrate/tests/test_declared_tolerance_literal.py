@@ -148,8 +148,8 @@ def test_raw_float_locator_honors_shadow_and_carveouts(tmp_path):
     try:
         w = WitnessBuilder("shadowed-float-test", output_dir=str(tmp_path))
         w.add_data("rows", [{
-            "mass_mev": 938.27208816,
-            "mass_mev_str": "938.272088160000000000000000000000000000000000000000000000000",
+            "mass_mev": 123.4567890123456,
+            "mass_mev_str": "123.4567890123456000000000000000000000000000000000000000000000",
         }])
         w.save()
     finally:

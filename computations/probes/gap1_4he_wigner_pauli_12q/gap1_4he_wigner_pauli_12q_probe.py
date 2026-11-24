@@ -18,6 +18,7 @@ Precision & anti-fit discipline:
 from __future__ import annotations
 
 import itertools
+import json
 import sys
 from collections import deque
 from pathlib import Path
@@ -1374,7 +1375,20 @@ def main() -> int:
         m0_4he = mp.mpf(
             part_b["models"]["M0_w4_baseline_colour_V2"]["per_A"]["A=4"]["bind_exact_in_Eosc_MeV"]
         )
-        w4_ref = mp.mpf("14.48766590495341408694101")
+        _w4_wit = json.loads(
+            (
+                _ROOT
+                / "computations"
+                / "probes"
+                / "w4_colour_reconn_stokes_aomega"
+                / "w4_colour_reconn_stokes_aomega_probe.witness.json"
+            ).read_text(encoding="utf-8")
+        )
+        w4_ref = mp.mpf(
+            _w4_wit["data"]["part_b_colour_reconnection_models"][
+                "G2_intra_casimir__V2_allpairs_fierz"
+            ]["per_A"]["A=4"]["bind_exact_in_Eosc_MeV"]
+        )
         wb.add_assertion(
             "m0_reproduces_w4_baseline_4he_14p4877_mev_exact",
             fmt(abs(m0_4he - w4_ref), dps=15),
