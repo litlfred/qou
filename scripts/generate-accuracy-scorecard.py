@@ -46,6 +46,11 @@ HUNDRED = mpf("100")
 UPSTREAM_SPECS: list[tuple[str, str]] = [
     ("computations/master-atlas-80dps.witness.json", "§1, §2, §3.1, §3.3, §3.4"),
     ("computations/per-observable-100x-status.witness.json", "§2, §3.1a, §3.4a"),
+    ("computations/alpha-em-schwinger-ladder.witness.json", "§1, §2, §3.3a, §5.1"),
+    ("computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json", "§1, §2, §3.3a, §5.1"),
+    ("computations/alpha/alpha-em-seifert-kappa-pairing.witness.json", "§3.3a, §5.1"),
+    ("computations/atom-electron-mass.witness.json", "§3.3a"),
+    ("computations/probes/electroweak-bring-schwinger-bridge.witness.json", "§2, §3.4a, §5.1"),
     ("computations/mass-table-comprehensive.witness.json", "§2, §3.1b–c, §3.2b, §3.4b, §3.5b, §4"),
     ("computations/data/ame2020.json", "§2, §3.1b–c, §3.2a–b, §3.4b, §3.5b"),
     ("computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json", "§2, §3.2a, §3.5b"),
@@ -250,7 +255,13 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
     nuc_sig_max = max(nuc_sig_ppbs)
 
     alpha_fb = obs["alpha_em_inv_form_b"]
+    alpha_fc = obs["alpha_em_inv_form_c_bloch_b3"]
+    alpha_seif = obs["alpha_em_inv_cs_seifert"]
     alpha_cs = obs["alpha_em_inv_cs"]
+    ry_fb = obs["rydberg_form_b_eV"]
+    ry_fc = obs["rydberg_form_c_eV"]
+    vew_obs = obs["v_ew_GeV"]
+    nvew_obs = obs["N_v_ew"]
     alpha_exp = _m(alpha_fb["exp"])
     alpha_exp_sig = _m(alpha_fb["sigma_exp"])
     alpha_exp_ppb = (alpha_exp_sig / alpha_exp) * TEN_9
@@ -258,6 +269,21 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
     alpha_fb_ppb = _m(alpha_fb["rel_ppb"])
     alpha_fb_ppq = abs(alpha_fb_ppb) * TEN_6
     alpha_fb_pull = _m(alpha_fb["pull_exp"])
+    alpha_fc_ppb = _m(alpha_fc["rel_ppb"])
+    alpha_fc_ppq = abs(alpha_fc_ppb) * TEN_6
+    alpha_fc_pull = _m(alpha_fc["pull_exp"])
+    alpha_seif_ppb = _m(alpha_seif["rel_ppb"])
+    alpha_seif_pull = _m(alpha_seif["pull_exp"])
+    ry_fb_ppb = _m(ry_fb["rel_ppb"])
+    ry_fb_zcomb = _m(ry_fb["z_comb"])
+    ry_fc_ppb = _m(ry_fc["rel_ppb"])
+    ry_fc_zcomb = _m(ry_fc["z_comb"])
+    vew_pred = _m(vew_obs["pred"])
+    vew_exp = _m(vew_obs["exp"])
+    vew_sig_exp = _m(vew_obs["sigma_exp"])
+    vew_ppb = _m(vew_obs["rel_ppb"])
+    vew_pull = _m(vew_obs["pull_exp"])
+    nv_pred = _m(nvew_obs["pred"])
 
     # ── Join mass-table-comprehensive with AME2020 ────────────────────────────
     mt_by_zn = {(int(r["Z"]), int(r["N"])): r for r in mt["rows"]}
@@ -497,16 +523,40 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
             f"Proved topological writhe $Q = \\tfrac{{1}}{{2}}\\operatorname{{writhe}}(H)$ |"
         ),
         (
-            f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (Schwinger Form B) | `{_fmt_fixed(_m(alpha_fb['pred']), 9)}` | "
+            f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (Schwinger Form B, 4-topology) | `{_fmt_fixed(_m(alpha_fb['pred']), 9)}` | "
             f"`{_fmt_fixed(alpha_exp, 9)} ± 2.1e-8` | `{_fmt_fixed(alpha_fb_ppb, 3, signed=True)} ppb` | "
             f"`{_fmt_ppq(alpha_fb_ppb / TEN_9)}` | `{_fmt_fixed(alpha_fb_pull, 2, signed=True)}σ` | "
-            f"Derived (within $3\\sigma_{{\\mathrm{{exp}}}}$; canonical arm selection open) |"
+            f"Derived 4-topology `(1 - h_A^2 α)` loop factor; conditional Bring zero-mode |"
         ),
         (
-            f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (Chern–Simons tower) | `{_fmt_fixed(_m(alpha_cs['pred']), 9)}` | "
+            f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (2-loop Bloch-$B_3$ Form C) | `{_fmt_fixed(_m(alpha_fc['pred']), 9)}` | "
+            f"`{_fmt_fixed(alpha_exp, 9)} ± 2.1e-8` | `{_fmt_fixed(alpha_fc_ppb, 3, signed=True)} ppb` | "
+            f"`{_fmt_ppq(alpha_fc_ppb / TEN_9)}` | **`{_fmt_fixed(alpha_fc_pull, 2, signed=True)}σ`** | "
+            f"Conditional two-loop Bloch-$B_3(\\mathbb{{C}})$ trilogarithm defect (within $1\\sigma_{{\\mathrm{{exp}}}}$!) |"
+        ),
+        (
+            f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ ($8\\times 8$ Seifert $\\kappa_{{\\mathrm{{Seifert}}}}$) | `{_fmt_fixed(_m(alpha_seif['pred']), 9)}` | "
+            f"`{_fmt_fixed(alpha_exp, 9)} ± 2.1e-8` | `{_fmt_fixed(alpha_seif_ppb, 2, signed=True)} ppb` | "
+            f"`{_fmt_ppq(alpha_seif_ppb / TEN_9)}` | `{_fmt_fixed(alpha_seif_pull, 1, signed=True)}σ` | "
+            f"Homological $b_1(\\Sigma_4)=8$ Seifert pairing (`19.1x` closer than Witten $2\\times 2$) |"
+        ),
+        (
+            f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (legacy Witten $2\\times 2$ CS) | `{_fmt_fixed(_m(alpha_cs['pred']), 9)}` | "
             f"`{_fmt_fixed(alpha_exp, 9)} ± 2.1e-8` | `{_fmt_fixed(alpha_cs_ppb, 2, signed=True)} ppb` | "
             f"`{_fmt_ppq(alpha_cs_ppb / TEN_9)}` | `{_fmt_fixed(alpha_cs_pull, 1, signed=True)}σ` | "
-            f"Derived consumer arm (`-0.468 ppm` gap vs Form B) |"
+            f"Legacy $2\\times 2$ Chern–Simons baseline (`-0.468 ppm` gap vs Form B) |"
+        ),
+        (
+            f"| Rydberg constant $R_\\infty h c$ (Schwinger Form B) | `{_fmt_fixed(_m(ry_fb['pred']), 9)} eV` | "
+            f"`{_fmt_fixed(_m(ry_fb['exp']), 9)} ± 1.5e-11 eV` | `{_fmt_fixed(ry_fb_ppb, 3, signed=True)} ppb` | "
+            f"`{_fmt_ppq(ry_fb_ppb / TEN_9)}` | `{_fmt_fixed(ry_fb_zcomb, 2, signed=True)}σ` ($z_{{\\mathrm{{comb}}}}$) | "
+            f"Derived $\\tfrac{{1}}{{2}}m_e c^2 \\alpha_{{\\mathrm{{EM}}}}^2$ ($\\sigma_{{\\mathrm{{pred}}}} = 0.313\\;\\mathrm{{ppb}}$ from $m_e$) |"
+        ),
+        (
+            f"| Rydberg constant $R_\\infty h c$ (2-loop Bloch-$B_3$ Form C) | `{_fmt_fixed(_m(ry_fc['pred']), 9)} eV` | "
+            f"`{_fmt_fixed(_m(ry_fc['exp']), 9)} ± 1.5e-11 eV` | `{_fmt_fixed(ry_fc_ppb, 3, signed=True)} ppb` | "
+            f"`{_fmt_ppq(ry_fc_ppb / TEN_9)}` | **`{_fmt_fixed(ry_fc_zcomb, 2, signed=True)}σ`** ($z_{{\\mathrm{{comb}}}}$) | "
+            f"Conditional two-loop Bloch-$B_3$ Rydberg (within $1\\sigma_{{\\mathrm{{comb}}}}$!) |"
         ),
         (
             f"| Bare topological ${{}}^3\\mathrm{{H}}\\text{{--}}{{}}^3\\mathrm{{He}}$ Coulomb | `{_fmt_fixed(coul_dhe, 4)} MeV` | "
@@ -575,8 +625,11 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
             f"`{_fmt_rel_human(rel_frac)}` | `{_fmt_ppq(rel_frac)}` | `{_fmt_fixed(pull, 1, signed=True)}σ` | {b_stat} |"
         )
     beta_bench_rows.append(
-        f"| Electroweak crossing invariant $N_v$ | $v_{{\\mathrm{{weak}}}} = N_v E_\\times \\mu_0$ ($G_F$ scale) | "
-        f"Open | `{_fmt_fixed(nv_crossing, 2)}` | Open | Open | — | Required for absolute $\\Gamma_\\beta$ rates |"
+        f"| Electroweak VEV $v_{{\\mathrm{{weak}}}}$ ($N_v = {_fmt_fixed(nv_pred, 6)}$) | "
+        f"Bring–Schwinger fixed point $1/\\alpha_v = T_{{\\mathrm{{EW}}}} - \\alpha_v H(1 - \\hbar_q^2 \\alpha_v)$ | "
+        f"`{_fmt_fixed(vew_pred, 6)} GeV` | `{_fmt_fixed(vew_exp, 6)} ± {_fmt_sci(vew_sig_exp, 2)} GeV` | "
+        f"**`{_fmt_fixed(vew_ppb, 2, signed=True)} ppb`** | `{_fmt_ppq(vew_ppb / TEN_9)}` | "
+        f"**`{_fmt_fixed(vew_pull, 2, signed=True)}σ`** | Conditional Bring–Schwinger fixed point ($G_F$ within $1\\sigma_{{\\mathrm{{exp}}}}$!) |"
     )
 
     beta_records: list[dict[str, Any]] = []
@@ -704,12 +757,13 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
     all_beta_rels = [x["rel"] for x in beta_records]
     all_alpha_rels = [x["rel"] for x in alpha_records]
 
+    mk_ppb_val = _m(obs["mk_over_mpi"]["rel_ppb"])
     exec_rows = [
         (
             f"| **1. Mass** (Elementary & Hadrons) | $m_\\mu, m_\\tau/m_e, m_K/m_\\pi, m_K, m_n$ (+ 3 pins) | `6` (+3 pins) | "
-            f"`81.1 ppm` (`136 ppb` excl. $m_n, m_\\tau$) | `30.9 ppm` (`211 ppb` $m_\\mu$) | `5.15e+07` to `4.86e+11` | "
+            f"`81.1 ppm` (`136 ppb` excl. $m_n, m_\\tau$) | `30.9 ppm` (`211 ppb` $m_\\mu$) | `5.14e+07` to `4.86e+11` | "
             f"`2 / 6` ($m_K/m_\\pi, m_K$) | `2 / 6` (`3/6` w/ NIST $m_\\tau$) | "
-            f"**High** on $m_K/m_\\pi$ (`+51.5 ppb`, `<0.002σ`) & $m_\\mu$ (`+211 ppb`); $m_n$ (`-486 ppm`) open | "
+            f"**High** on $m_K/m_\\pi$ (`{_fmt_fixed(mk_ppb_val, 3, signed=True)} ppb`, `<0.002σ`) & $m_\\mu$ (`+211 ppb`); $m_n$ (`-486 ppm`) open | "
             f"**Not at `1 ppQ`** (input floor `3.13e5 ppQ`) | Derived ($m_\\mu, m_K$); Conditional ($m_n$) |"
         ),
         (
@@ -728,20 +782,20 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
             f"**Not at `1 ppQ`** | Derived ($A \\le 4$); Open saturation ($A \\ge 5$) |"
         ),
         (
-            f"| **3. Charge, $\\alpha_{{\\mathrm{{EM}}}}$ & Geometry** | $Q$, $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$, mirror Coulomb (`8`), VSEPR (`7`) | `19` | "
-            f"`0` ($Q$), `-0.365 ppb` ($\\alpha_{{\\mathrm{{EM}}}}$), `0.62%` (VSEPR) | `0.23%` (across non-exact) | "
-            f"`0` ($Q$), `{_fmt_ppq(alpha_fb_ppb / TEN_9)}` ($\\alpha_{{\\mathrm{{EM}}}}$) | "
-            f"`{1 + mol_1s} / 19` ($Q, \\mathrm{{CH_4, CO_2}}$) | `{2 + mol_3s} / 19` (+ $\\alpha_{{\\mathrm{{EM}}}}$ Form B) | "
-            f"**Exact** $Q$; **sub-ppb** $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ Form B (`-2.38σ`); **`~1.3%`** mirror Coulomb mean | "
-            f"$Q$ exact (`0 ppQ`); $\\alpha_{{\\mathrm{{EM}}}}$ at `3.65e5 ppQ` | Proved ($Q$); Open arm selection ($\\alpha_{{\\mathrm{{EM}}}}$) |"
+            f"| **3. Charge, $\\alpha_{{\\mathrm{{EM}}}}$, $R_\\infty$ & Geometry** | $Q$, $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (Form B/C & Seifert), $R_\\infty h c$, Coulomb (`8`), VSEPR (`7`) | `22` | "
+            f"`0` ($Q$), `-0.365 ppb` (Form B) / `-0.024 ppb` (Form C), `+0.725 ppb` ($R_\\infty$) | `0.20%` (across non-exact) | "
+            f"`0` ($Q$), `{_fmt_ppq(alpha_fc_ppb / TEN_9)}` (Form C), `{_fmt_ppq(alpha_fb_ppb / TEN_9)}` (Form B) | "
+            f"`{3 + mol_1s} / 22` ($Q$, Form C $\\alpha_{{\\mathrm{{EM}}}}$, Form C $R_\\infty$, $\\mathrm{{CH_4, CO_2}}$) | `{5 + mol_3s} / 22` (+ Form B $\\alpha_{{\\mathrm{{EM}}}} \\& R_\\infty$) | "
+            f"**Exact** $Q$; **proved 4-topo Form B** (`-2.38σ`), **cond. Form C** (`-0.16σ`), **Seifert CS** (`-24.5 ppb`), **$R_\\infty$** (`+0.725 ppb`) | "
+            f"$Q$ exact (`0 ppQ`); Form B `3.65e5 ppQ`, Form C `2.41e4 ppQ` | Proved ($Q$, 1-loop $h_A^2$); Cond. (Bring / Bloch-$B_3$) |"
         ),
         (
-            f"| **4. Weak $\\beta$-Decay** | Free $n$, `6` TM skein benchmarks, `{len(beta_records) - 1}` composite $\\beta^-$ | `{len(beta_records)}` | "
-            f"`-58.4%` ($n$), `60.6%` (TM), `{_fmt_fixed(_mean(all_beta_rels) * HUNDRED, 1)}%` (table) | "
-            f"`71.7%` (TM), `{_fmt_fixed(_median(all_beta_rels) * HUNDRED, 1)}%` (table) | `{_fmt_ppq(_median(all_beta_rels))}` | "
-            f"`0 / {len(beta_records)}` | `0 / {len(beta_records)}` | "
-            f"**Order-of-magnitude keV–MeV** on TM (`-8.1%` ${{}}^{{14}}\\mathrm{{C}}$); **unclosed** on isobaric table (`0/{len(beta_records)-1}` exo.) | "
-            f"**Not at `1 ppQ`** | Conditional (`C1–C3` on $n$); Open ($N_v$, $A \\ge 2$) |"
+            f"| **4. Weak $\\beta$-Decay & $v_{{\\mathrm{{weak}}}}$** | $v_{{\\mathrm{{weak}}}}$ ($N_v$), free $n$, `6` TM skein, `{len(beta_records) - 1}` composite $\\beta^-$ | `{len(beta_records) + 1}` | "
+            f"`{_fmt_fixed(vew_ppb, 2, signed=True)} ppb` ($v_{{\\mathrm{{weak}}}}$), `-58.4%` ($n$), `{_fmt_fixed(_mean(all_beta_rels) * HUNDRED, 1)}%` (table) | "
+            f"`71.7%` (TM), `{_fmt_fixed(_median(all_beta_rels) * HUNDRED, 1)}%` (table) | `2.94e+07` ($v_{{\\mathrm{{weak}}}}$) to `{_fmt_ppq(_median(all_beta_rels))}` | "
+            f"`1 / {len(beta_records) + 1}` ($v_{{\\mathrm{{weak}}}}$, `-0.11σ`) | `1 / {len(beta_records) + 1}` ($v_{{\\mathrm{{weak}}}}$) | "
+            f"**Sub-`30 ppb` $v_{{\\mathrm{{weak}}}}$ (`-0.11σ`)**; keV–MeV TM (`-8.1%` ${{}}^{{14}}\\mathrm{{C}}$); isobaric table (`0/{len(beta_records)-1}` exo.) | "
+            f"**Not at `1 ppQ`** (`2.94e7 ppQ` on $v_{{\\mathrm{{weak}}}}$) | Cond. ($v_{{\\mathrm{{weak}}}}$, `C1–C3` on $n$); Open ($A \\ge 2$) |"
         ),
         (
             f"| **5. $\\alpha$-Decay & Fission** | `7` WKB emitters ($Q_{{\\mathrm{{exp}}}}$), $N=126$ ${{}}^{{210}}\\mathrm{{Po}}$, `{len(alpha_records)}` derived $Q_\\alpha$ | `{len(alpha_records)}` (+7 WKB) | "
@@ -778,9 +832,17 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
         "ALPHA_FORMB_ABS_PPQ": _fmt_sci(alpha_fb_ppq, 3),
         "ALPHA_FORMB_REL_PPB": _fmt_fixed(alpha_fb_ppb, 3, signed=True),
         "ALPHA_FORMB_PULL": _fmt_fixed(alpha_fb_pull, 2, signed=True),
+        "ALPHA_FORMC_ABS_PPQ": _fmt_sci(alpha_fc_ppq, 3),
+        "ALPHA_FORMC_REL_PPB": _fmt_fixed(alpha_fc_ppb, 3, signed=True),
+        "ALPHA_FORMC_PULL": _fmt_fixed(alpha_fc_pull, 2, signed=True),
+        "ALPHA_SEIFERT_REL_PPB": _fmt_fixed(alpha_seif_ppb, 2, signed=True),
+        "RY_FORMB_REL_PPB": _fmt_fixed(ry_fb_ppb, 3, signed=True),
+        "RY_FORMB_ZCOMB": _fmt_fixed(ry_fb_zcomb, 2, signed=True),
+        "RY_FORMC_REL_PPB": _fmt_fixed(ry_fc_ppb, 3, signed=True),
+        "RY_FORMC_ZCOMB": _fmt_fixed(ry_fc_zcomb, 2, signed=True),
         "EXECUTIVE_SCORECARD_ROWS": "\n".join(exec_rows),
         "ELEMENTARY_MASS_ROWS": "\n".join(elem_rows),
-        "MK_MPI_REL_PPB": _fmt_fixed(_m(obs["mk_over_mpi"]["rel_ppb"]), 2, signed=True),
+        "MK_MPI_REL_PPB": _fmt_fixed(_m(obs["mk_over_mpi"]["rel_ppb"]), 3, signed=True),
         "MK_MPI_PULL": _fmt_fixed(_m(obs["mk_over_mpi"]["pull_exp"]), 4, signed=True),
         "MMU_REL_PPB": _fmt_fixed(_m(obs["m_mu_MeV"]["rel_ppb"]), 2, signed=True),
         "MMU_PULL": _fmt_fixed(_m(obs["m_mu_MeV"]["pull_exp"]), 2, signed=True),
@@ -806,6 +868,10 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
         "BETA_BAND_ROWS": "\n".join(beta_band_rows),
         "QBETA_BASE_MEV": _fmt_fixed(qbeta_base, 6),
         "NV_CROSSING": f"{int(nint(nv_crossing)):,}",
+        "NV_PRED_6": _fmt_fixed(nv_pred, 6),
+        "VEW_PRED_6": _fmt_fixed(vew_pred, 6),
+        "VEW_REL_PPB": _fmt_fixed(vew_ppb, 2, signed=True),
+        "VEW_PULL": _fmt_fixed(vew_pull, 2, signed=True),
         "ALPHA_GAMOW_ROWS": "\n".join(alpha_gamow_rows),
         "N_ALPHA_TOTAL": f"{len(alpha_records):,}",
         "ALPHA_DERIVED_ROWS": "\n".join(alpha_derived_rows),
