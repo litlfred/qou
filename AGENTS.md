@@ -1945,7 +1945,7 @@ corpus — run the **corpus-grep checklist**:
 
    ```sh
    grep -in <topic> library/INDEX.md              # ~513 briefs (527 lines); re-count, do not trust
-   cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
+   cat library-summaries/<doc-id>.json            # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
 
@@ -1974,6 +1974,18 @@ corpus — run the **corpus-grep checklist**:
    from. Regenerate with `scripts/summarize-library.py --apply`; a
    hand-written summary marked `provenance.kind: "agent"` survives
    regeneration.
+
+   **The tier-2 summaries live BESIDE the library, not in each entry
+   (moved 2026-11-24).** They were `library/<doc-id>/summary.json`; they
+   are now `library-summaries/<doc-id>.json`, same content and schema.
+   The owner ruled ("C1 migrate", PR #9396) that qou's library passes the
+   platform's library gate `check:l1-complete`, which allows an entry only
+   the files the platform's ingestion arms produce. Do not move them back
+   into the entries, and do not rename them to `summaries.json`: that
+   name is the platform's per-prose-block narrative sidecar, a different
+   object. Audit docs dated before the move still cite the old path; read
+   them through this note. A grep over all summaries is
+   `grep -il <topic> library-summaries/*.json`.
 
    The full-text grep, for when you want it directly:
    `grep -rln <topic> library/*/sections/` — the **ingested sources**.

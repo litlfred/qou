@@ -4,7 +4,7 @@ library-orphan-audit — detect library/ documents invisible to corpus-grep path
 
 A `library/<doc-id>/` holding a PDF and nothing else — no `sections/`, no `ocr/` — is
 **invisible at every tier** of the corpus-grep path-5 checklist: no INDEX row (tier 1),
-no `summary.json` (tier 2), no `sections/` (tier 3), no `ocr/` (tier 4). That is strictly
+no summary in `library-summaries/` (tier 2), no `sections/` (tier 3), no `ocr/` (tier 4). That is strictly
 worse than not holding the paper at all, because a "has the corpus got this?" check comes
 back clean while the document sits on disk.
 

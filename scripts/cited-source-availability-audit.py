@@ -237,7 +237,7 @@ def library_index() -> tuple[dict, dict]:
             except Exception:
                 pass
         if not title:
-            sf = p / "summary.json"
+            sf = REPO / "library-summaries" / f"{p.name}.json"
             if sf.exists():
                 try:
                     title = (json.loads(sf.read_text()).get("brief") or "")[:200]

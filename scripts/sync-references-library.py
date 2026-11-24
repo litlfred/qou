@@ -111,7 +111,7 @@ def library_index() -> dict[str, dict]:
             stage = "structure"
             # Public-release PDF retirement (owner ruling 2026-11-24): third-party
             # `.pdf` binaries are removed from `library/` while `structure.json`,
-            # `sections/`, and `summary.json` remain. Preserve the canonical
+            # `sections/`, and the `library-summaries/<doc-id>.json` summary remain. Preserve the canonical
             # `source.file` provenance path when no `.pdf` binary sits on disk so
             # existing `library.pdf` blocks stay stable across `--check` runs.
             src_file = (art.get("source") or {}).get("file")
