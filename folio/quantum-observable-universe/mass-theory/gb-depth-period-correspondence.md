@@ -99,23 +99,23 @@ period theory:
    ([Uniqueness of the categorical Laplace transform](#prop:categorical-laplace-unique)).
 2. **Sharpness ($\mathcal{P}_n / \mathcal{P}_{n-1}$ non-trivial in
    image):** depth-2 case is the Bloch–Wigner regulator
-   ([bloch2000], [suslin1991]) realised by hyperbolic 3-manifolds.
+   \cite{bloch2000,suslin1991} realised by hyperbolic 3-manifolds.
    Higher depths reduce to Goncharov's motivic-Galois action on
-   multiple polylogs ([kontsevich1995], Goncharov 2001).
+   multiple polylogs \cite{kontsevich1995,deligne-goncharov2005}.
 
 **Two related open questions:**
 
-- *Cellular vs iterated-integral depth.* The cellular GB-depth on
-  $Z(H_n(q))$ — attributed here to
-  [Curvature-rank stratification of the GB spectral sequence](#conj:curvature-rank-gb-stratification),
-  though **that proposition stratifies by the curvature rank of *words* and
-  mentions no partition**; the max-hook statistic is
-  a definition, and the step joining them is
-  unestablished
-  — (max hook of partition) is a **separate** filtration from the
-  iterated-integral depth used here. Their precise relationship —
-  e.g. whether amphichiral self-conjugate cells correspond to
-  *even* iterated-integral depths — is open.
+- *Cellular vs iterated-integral depth.* Defining cellular depth on
+  $Z(H_n(q))$ directly by the partition maximum hook length
+  $\max_{\square \in \lambda} h(\square)$ gives a filtration on central
+  idempotents that is separate both from the word-level curvature-rank
+  filtration of
+  [curvature-rank stratification of the GB spectral sequence](#conj:curvature-rank-gb-stratification)
+  (which mentions no partition, leaving the word-to-partition bridge
+  unestablished) and from the iterated-integral depth $G^{(n)}$ used
+  here. Their precise relationship — e.g. whether amphichiral
+  self-conjugate cells correspond to *even* iterated-integral depths —
+  remains open.
 - *Graded Titchmarsh.* At which iterated-integral depth does the
   $*_q$-product on $\mathcal{H}_q$ first acquire zero divisors?
   This bounds where the graded field-of-fractions tower

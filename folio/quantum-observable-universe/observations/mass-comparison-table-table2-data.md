@@ -1,9 +1,9 @@
-*The LO output column is the $m_e$-scaled realization of the dimensionless mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction.*
+*The LO output column is the $m_e$-scaled realization of the dimensionless mass ratio ($m_e$ sets the MeV energy unit); absolute mass in MeV is not an independent prediction.*
 
 | Particle | Knot formula | LO output (MeV) | Observed (MeV) | Source |
 |----------|-------------|---:|---:|--------|
-| Proton | $[u,u,d]_p \oplus \mathcal{L}_H$ | $938.272$ † | $938.272$ | CODATA |
-| Neutron | $[u,d,d]_p \oplus \mathcal{L}_H$ | $939.565$ † | $939.565$ | CODATA |
-| $n$-$p$ split | | $1.293$ † | $1.293$ | CODATA |
-| $\pi^{\pm}$ | $u \oplus d^{\sigma}$ | $139.570$ | $139.570$ | PDG |
-| $K^{\pm}$ | $u \oplus s^{\sigma}$ | $493.677$ | $493.677$ | PDG |
+| Proton | $[u,u,d]_p \oplus \mathcal{L}_H$ | ${{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}$ † | ${{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}$ | CODATA |
+| Neutron | $[u,d,d]_p \oplus \mathcal{L}_H$ | ${{ qou.library.codata-2022.neutron-mass-energy-equivalent-in-mev | precision: 6 }}$ † | ${{ qou.library.codata-2022.neutron-mass-energy-equivalent-in-mev | precision: 6 }}$ | CODATA |
+| $n$-$p$ split | | ${{ qou.library.codata-2022.neutron-proton-mass-difference-energy-equivalent-in-mev | precision: 4 }}$ † | ${{ qou.library.codata-2022.neutron-proton-mass-difference-energy-equivalent-in-mev | precision: 4 }}$ | CODATA |
+| $\pi^{\pm}$ | $u \oplus d^{\sigma}$ | ${{ qou.computations.master-atlas-80dps.data.observables.m_pi_pm_MeV.pred | precision: 6 }}$ | ${{ qou.computations.master-atlas-80dps.data.observables.m_pi_pm_MeV.exp | precision: 6 }}$ | PDG |
+| $K^{\pm}$ | $u \oplus s^{\sigma}$ | ${{ qou.computations.master-atlas-80dps.data.observables.m_k_pm_MeV.pred | precision: 6 }}$ | ${{ qou.computations.master-atlas-80dps.data.observables.m_k_pm_MeV.exp | precision: 6 }}$ | PDG |
