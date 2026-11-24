@@ -65,7 +65,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 try:
@@ -92,12 +92,12 @@ def main() -> int:
     )
 
     EMPIRICAL_C3_PROTON = mp.mpf("-2.0693")
-    EMPIRICAL_C3_MUON = mp.mpf("-2.0097")
+    EMPIRICAL_C3_MUON = mp.mpf("-2.01986031187401")
 
     q_proton = q_at()
     q_muon = q_muon_at()
     delta_c3 = EMPIRICAL_C3_PROTON - EMPIRICAL_C3_MUON
-    swing_pct = float(delta_c3 / abs(EMPIRICAL_C3_PROTON) * 100)
+    swing_pct = delta_c3 / abs(EMPIRICAL_C3_PROTON) * 100
 
     print("=" * 78)
     print(" Complex c_3(q) fibre probe — diagnostic")
@@ -107,7 +107,7 @@ def main() -> int:
     print(f"|q_proton - q_muon| = {mp.nstr(abs(q_proton - q_muon), 10)}")
     print(f"empirical c_3 at q_proton: {EMPIRICAL_C3_PROTON}")
     print(f"empirical c_3 at q_muon:   {EMPIRICAL_C3_MUON}")
-    print(f"swing: {delta_c3} ({swing_pct:.4f}%)")
+    print(f"swing: {delta_c3} ({mp.nstr(swing_pct, 6)}%)")
     print()
 
     h_proton = q_proton - 1/q_proton
@@ -177,11 +177,11 @@ def main() -> int:
     sym_proton = -mp.mpf("0.01091170")
     antisym_proton = -mp.mpf("0.13116116")
     delta_tr_proton = sym_proton + antisym_proton
-    print(f"  sym(Δtr_M) at q_proton:    {sym_proton:.6f}")
-    print(f"  antisym(Δtr_M) at q_proton: {antisym_proton:.6f}")
-    print(f"  sym² + antisym² = {sym_proton**2 + antisym_proton**2:.6e}")
-    print(f"  |Δtr_M|² = {delta_tr_proton**2:.6e}")
-    print(f"  ratio = {(sym_proton**2 + antisym_proton**2)/delta_tr_proton**2:.6f}")
+    print(f"  sym(Δtr_M) at q_proton:    {mp.nstr(sym_proton, 7)}")
+    print(f"  antisym(Δtr_M) at q_proton: {mp.nstr(antisym_proton, 7)}")
+    print(f"  sym² + antisym² = {mp.nstr(sym_proton**2 + antisym_proton**2, 7)}")
+    print(f"  |Δtr_M|² = {mp.nstr(delta_tr_proton**2, 7)}")
+    print(f"  ratio = {mp.nstr((sym_proton**2 + antisym_proton**2)/delta_tr_proton**2, 7)}")
     # If sym and antisym were Re/Im of complex Δtr_M, then |Δtr_M|² = sym² + antisym²
     # The numerical sums tell us whether that interpretation is consistent
     print()
@@ -283,7 +283,7 @@ the c_3 numerical data alone.
     builder.add_data("q_anchor_gap_abs", str(abs(q_proton - q_muon)))
     builder.add_data("empirical_c3_proton", str(EMPIRICAL_C3_PROTON))
     builder.add_data("empirical_c3_muon", str(EMPIRICAL_C3_MUON))
-    builder.add_data("swing_pct", swing_pct)
+    builder.add_data("swing_pct", fmt(swing_pct))
     builder.add_data("overall_conclusion", (
         "Complex-c_3 framing PLAUSIBLE structurally but specific candidates "
         "REFUTED by data. Bar-decomposition is NOT Re/Im of complex Δtr_M "

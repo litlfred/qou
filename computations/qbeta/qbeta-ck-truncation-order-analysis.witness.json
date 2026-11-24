@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:48:41.476884+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "computedAt": "2026-11-15T17:05:02.553349+00:00",
+  "commitSha": "5d77048be19c17d5c01d7912c401a07df057e66d",
   "assertions": [
     {
       "name": "N3_beats_100x_experimental_target",
-      "computed": 13.36,
+      "computed": 601005.71,
       "expected": 6.02,
       "passed": false,
       "tolerance": "0.5",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 4,
   "computation": "qbeta-ck-truncation-order-analysis",
   "scriptFile": "qbeta_ck_truncation_order_analysis.py",
-  "scriptHash": "e0e96fd4282a",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "282c07ab87ef",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,46 +26,52 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ck_truncation_order_analysis.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ck_truncation_order_analysis.py"
   },
   "description": "Canonical reference framing the Q_β precision ladder as a TRUNCATION ORDER of a convergent series Q_β = Q_base·Π(1+c_k·u^k), u = b·ℏ_q² ≈ 0.00852. Establishes the N(ε) formula (N ≥ log10(1/ε)/2.07 − 1), per-rung term sizes, the q₀-stability floor diagnosis (c_k≥3 are q₀-dependent near-matches, not Taylor-exact), and the Habiro-element fix (parallel α_EM #1511). Written to stop the recurring c_k wire/un-wire flip-flop by separating 'N = truncation order chosen by precision' from 'c_k canonicity tier (proved/near-match/fitted)'.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "ladder_step": {
       "u_formula": "b · ℏ_q²",
-      "u_value": "0.0085172363404849214399",
-      "one_over_u": "117.408976342",
-      "digits_per_rung_log10_inv_u": "2.0697013"
+      "u_value": "0.0085172345501561421893",
+      "one_over_u": "117.409001022",
+      "digits_per_rung_log10_inv_u": "2.0697014"
     },
     "N_of_epsilon_formula": "N ≥ log10(1/ε) / log10(1/u) − 1",
     "N_of_epsilon_table": [
       {
         "target": "100× experimental (7.8 ppb)",
         "epsilon": "7.8e-9",
-        "N_lower_bound": 2.91742779074545,
+        "N_lower_bound": 2.9174276179581735,
         "N_required": 3
       },
       {
         "target": "1 ppb",
         "epsilon": "1.0e-9",
-        "N_lower_bound": 3.3484535634084334,
+        "N_lower_bound": 3.348453371609761,
         "N_required": 4
       },
       {
         "target": "1 ppt",
         "epsilon": "1.0e-12",
-        "N_lower_bound": 4.797938084544578,
+        "N_lower_bound": 4.797937828813015,
         "N_required": 5
       },
       {
         "target": "1 ppQ (10⁻¹⁵)",
         "epsilon": "1.0e-15",
-        "N_lower_bound": 6.247422605680722,
+        "N_lower_bound": 6.247422286016269,
         "N_required": 7
       }
     ],
@@ -74,25 +80,25 @@
         "k": 2,
         "c_k": "-1",
         "term_ppb": null,
-        "cumulative_residual_ppb": 1249.0942611624273
+        "cumulative_residual_ppb": 602242.185567439
       },
       {
         "k": 3,
         "c_k": "J_Hopf(q=1)=-2",
-        "term_ppb": 1235.7371155048506,
-        "cumulative_residual_ppb": 13.355602105437498
+        "term_ppb": 1235.736336246708,
+        "cumulative_residual_ppb": 601005.7050186404
       },
       {
         "k": 4,
         "c_k": "c_3·b⁴",
-        "term_ppb": 5.963085834421668,
-        "cumulative_residual_ppb": 7.392516191375227
+        "term_ppb": 5.963080811245165,
+        "cumulative_residual_ppb": 600999.7383539835
       },
       {
         "k": 5,
         "c_k": "c_3²·3+b",
-        "term_ppb": 0.5767538555777204,
-        "cumulative_residual_ppb": 7.9692700512166095
+        "term_ppb": 0.5767532493924187,
+        "cumulative_residual_ppb": 601000.3154538615
       }
     ],
     "non_monotonicity_note": "N=4 residual (+0.055 ppb) is better than N=5 (+0.63 ppb). A convergent series with EXACT c_k would be monotone; the reversal is the signature that c_k≥3 are q₀-dependent near-matches.",
@@ -100,9 +106,9 @@
       "c3_nominal_J_Hopf": "-2",
       "c3_empirical_muon_pin": "-2.0097",
       "c3_empirical_mp_pin": "-2.0693",
-      "swing_muon_pct": 0.485,
+      "swing_muon_pct": 0.9930155937005,
       "swing_mp_pct": 3.465,
-      "cross_anchor_swing_pct": 2.98,
+      "cross_anchor_swing_pct": 2.4719844062995,
       "verdict": "c_3=-2 is a STRUCTURAL NEAR-MATCH (q₀-dependent), not Taylor-exact. >>compute-precision swing ⟹ form-fitting."
     },
     "habiro_fix": "Identify the Q_β Habiro element (q-series whose Taylor coefficients ARE the c_k), parallel to the α_EM Habiro element [2]_q·(1-h²α) (PR #1511). Then c_k become exact + q₀-independent and |c_{N+1}·u^{N+1}| is a rigorous truncation bound.",

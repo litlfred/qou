@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:24:15.723640+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T17:04:57.873532+00:00",
+  "commitSha": "5d77048be19c17d5c01d7912c401a07df057e66d",
   "assertions": [
     {
       "name": "all_candidates_have_verdicts",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 19,
   "computation": "qbeta-complex-c3-fibre-probe",
   "scriptFile": "qbeta_complex_c3_fibre_probe.py",
-  "scriptHash": "d2ce11f2ed24",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "6513fda99177",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -47,10 +45,10 @@
     "candidate_1_im_delta": {
       "form": "c_3(q) = -2 + i·δ(q), δ real",
       "delta_proton": "-0.0693",
-      "delta_muon": "-0.0097",
-      "delta_ratio": "7.144329896907216",
+      "delta_muon": "-0.01986031187401",
+      "delta_ratio": "3.4893711860934453",
       "hbar_q_ratio": "0.9999998943970845",
-      "log_ratio_exponent": "-18619930.208537158",
+      "log_ratio_exponent": "-11834156.963339902",
       "verdict": "INCONCLUSIVE — q_proton and q_muon differ by only ~1e-8 in absolute terms, so the ratio test has little discriminatory power. δ(q_proton) ≈ 7× δ(q_muon) but the anchors are nearly identical — suggests δ is NOT a simple power of ℏ_q (which would give a near-unit ratio). Could be due to numerical noise in the empirical c_3 extraction at this precision."
     },
     "candidate_2_complex_q": {
@@ -74,8 +72,8 @@
     "q_muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
     "q_anchor_gap_abs": "0.00000001289135823909012603376923287282556643915543282090123152981729611559406",
     "empirical_c3_proton": "-2.0693",
-    "empirical_c3_muon": "-2.0097",
-    "swing_pct": -2.8802010341661433,
+    "empirical_c3_muon": "-2.01986031187401",
+    "swing_pct": "-2.38919867230416082733291451215386845793263422413376504131832",
     "overall_conclusion": "Complex-c_3 framing PLAUSIBLE structurally but specific candidates REFUTED by data. Bar-decomposition is NOT Re/Im of complex Δtr_M (sum-of-squares mismatch). Anchors too close to discriminate. The fibre/observable distinction (PR #1616) stays correct as discipline guard; complex-c_3 attack needs wider-spaced anchors to be testable.",
     "recommended_next_step": "Either (a) construct a third q-anchor at a different observable (e.g., m_e/m_K) for wider spacing, OR (b) examine the Habiro q-difference equation directly for Im content rather than relying on numerical c_3 extraction at near-identical anchors."
   },
