@@ -546,7 +546,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 |----------|---------|
 | `build-lean-mcp.yml` | Build Paper Assistant Image |
 | `build.yml` | build |
-| `compute-qa.yml` | compute-QA (all gates, publish to qa-reports) |
+| `compute-qa.yml` | QA publish: every writer `qou.json` declares under `qa` (accuracy, compute gates, Lean audit, rendered paper), to qa-reports, via the platform's `layer-qa-publish.yml` |
 | `kg-vocabulary-gate.yml` | kg-vocabulary-gate |
 | `lake-cache-refresh.yml` | Lake cache refresh (orphan-branch family) |
 | `lean-axiom-guard.yml` | lean-axiom-guard |
