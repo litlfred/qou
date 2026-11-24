@@ -473,3 +473,12 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
   holds it, then `rm`. The cone builder's disk guard (`--min-free-gb 1.5`) stopped cleanly; re-run resumes.
 - **STABLE** `gh api` writes (git/blobs, refs) are 403 through the proxy; a plain `git push` of a
   1-commit branch whose parent is the origin/main tip went through in seconds from the main clone.
+- **TRAP (measured 2026-11-24)** a disk-full during a lean-direct build leaves a TRUNCATED olean that
+  the cone builder then calls `up-to-date`: `CaseGpLeft.olean` was 70901760 B (exactly 17310 x 4096,
+  page-aligned) with a 0-byte `.srcsha`, and its importer failed in 0.6 s with no diagnostic. After any
+  ENOSPC, list oleans written in the window and check `size % 4096 == 0` plus `.srcsha` size 0; delete
+  the hits before re-running. (5 of 3696 QOU oleans are page-aligned by chance; the srcsha is the tell.)
+- **TRAP** base + gap (fe45a7c5b63) still lacks Mathlib oleans imported by QOU on main fed339bd1f6:
+  `Analysis.Convex.SimplicialComplex.Basic`, `CategoryTheory.Groupoid.Subgroupoid`, `Topology.Covering`,
+  `AlgebraicGeometry.EllipticCurve.Projective.Point` (cone builder errors at the import line). The
+  QOU.MathlibExt.PL* family, the KZHolonomy family and the library root `QOU` are blocked behind them.
