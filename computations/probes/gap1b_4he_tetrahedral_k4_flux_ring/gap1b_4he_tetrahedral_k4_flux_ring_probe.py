@@ -809,6 +809,7 @@ def tridiag_lowest_eigenpair_sturm(
     """Exact 80-dps O(k) lowest eigenpair of an unreduced symmetric tridiagonal matrix via
     Sturm-sequence bisection (280 steps) + 3-step partial-pivoted shifted inverse iteration."""
     k_dim = len(alphas)
+    zero = mp.mpf(0)
     one = mp.mpf(1)
     if k_dim == 1:
         return alphas[0], [one]
@@ -1044,6 +1045,7 @@ def build_gap1b_operators(
     dim = hoef.dim
     q = hoef.q
     h = hoef.h
+    zero = mp.mpf(0)
     zero = mp.mpf(0)
     one = mp.mpf(1)
     half = one / mp.mpf(2)
@@ -1438,6 +1440,7 @@ def evaluate_static_and_analytic_models(
     m1_bh_scaling_err = max(abs(m1_bh_r3 - mp.mpf(3)), abs(m1_bh_r4 - mp.mpf(6)))
 
     # M5: Closed-form analytic cluster-simplex cumulant sum
+    zero = mp.mpf(0)
     one = mp.mpf(1)
     q2_q0 = q0 + one / q0
     q3_q0 = q0**2 + one + q0 ** (-2)
@@ -1575,6 +1578,7 @@ def evaluate_jacobi_variational_battery(
     v_by_a: dict[int, dict[str, list[list[mp.mpf]]]],
 ) -> dict:
     """Evaluate §3b zero-parameter 3D Jacobi variational compression models (`free_parameters = 0`)."""
+    zero = mp.mpf(0)
     one = mp.mpf(1)
     two = mp.mpf(2)
     three = mp.mpf(3)
@@ -1604,27 +1608,19 @@ def evaluate_jacobi_variational_battery(
             fac = hoef.fac_idx
             h0_mat = h_g2_by_a[a_nuc]
             v_mat = v_by_a[a_nuc][v_key]
-            h0_red, v_red, fac_red = build_reduced_pencil(h0_mat, v_mat, fac, max_dim=220)
-            r_dim = len(h0_red)
+            v_srows = to_srows(v_mat)
 
-            def eval_breath_grad_on(
-                eta: mp.mpf,
-                h0_loc: list[list[mp.mpf]],
-                v_loc: list[list[mp.mpf]],
-                f_loc: int,
-                pert: bool,
-            ) -> tuple[mp.mpf, mp.mpf, mp.mpf]:
-                n_loc = len(h0_loc)
+            def eval_breath_grad(eta: mp.mpf) -> tuple[mp.mpf, mp.mpf, mp.mpf]:
                 eta2 = eta * eta
                 op_u = one + eta2
                 w_val = ((two * eta2) / op_u) ** (three * half)
                 dw_deta = (mp.mpf(6) * sqrt2 * eta2) / (op_u ** (mp.mpf(5) * half))
                 h_eta = [
-                    [h0_loc[i][j] + w_val * v_loc[i][j] for j in range(n_loc)]
-                    for i in range(n_loc)
+                    [h0_mat[i][j] + w_val * v_mat[i][j] for j in range(dim)]
+                    for i in range(dim)
                 ]
-                lam_e, psi_e, eig_r = lowest_eigenpair_sym(h_eta, f_loc, perturbed_start=pert)
-                v_exp = dot_mp(psi_e, matvec_dense(v_loc, psi_e))
+                lam_e, psi_e, eig_r = lowest_eigenpair_sym(h_eta, fac, perturbed_start=True)
+                v_exp = dot_mp(psi_e, matvec_srows(v_srows, psi_e))
                 t_kin = three_quarters * mp.mpf(a_nuc - 1) * eosc_mev * ((eta - one / eta) ** 2)
                 dt_kin = (
                     (three * half)
@@ -1635,29 +1631,17 @@ def evaluate_jacobi_variational_battery(
                 )
                 return t_kin + eosc_mev * lam_e, dt_kin + eosc_mev * dw_deta * v_exp, eig_r
 
+            hi_b = mp.mpf(3)
+            while eval_breath_grad(hi_b)[1] <= zero:
+                hi_b *= two
             eta_opt, _ = safeguarded_root_1d(
-                lambda x: eval_breath_grad_on(x, h0_red, v_red, fac_red, True)[1],
+                lambda x: eval_breath_grad(x)[1],
                 one,
-                mp.mpf(3),
+                hi_b,
                 tol_x=tol_x,
                 tol_f=tol_f,
             )
-            # Certify & polish if needed on the exact unreduced dim x dim matrix
-            e_min_mev, grad_opt, eig_res_f = eval_breath_grad_on(
-                eta_opt, h0_mat, v_mat, fac, True
-            )
-            if abs(grad_opt) > tol_f and r_dim < dim:
-                delta_pad = mp.mpf("1e-8")
-                eta_opt, grad_opt = safeguarded_root_1d(
-                    lambda x: eval_breath_grad_on(x, h0_mat, v_mat, fac, False)[1],
-                    eta_opt - delta_pad,
-                    eta_opt + delta_pad,
-                    tol_x=tol_x,
-                    tol_f=tol_f,
-                )
-                e_min_mev, grad_opt, eig_res_f = eval_breath_grad_on(
-                    eta_opt, h0_mat, v_mat, fac, True
-                )
+            e_min_mev, grad_opt, eig_res_f = eval_breath_grad(eta_opt)
 
             eta2_f = eta_opt * eta_opt
             w_f = ((two * eta2_f) / (one + eta2_f)) ** (three * half)
@@ -1855,55 +1839,36 @@ def evaluate_jacobi_variational_battery(
             "lanczos_eig_inf_residual": fmt(eig_fix, dps=15),
         }
 
-        # Unrestricted eta_A^* minimization
+        # Unrestricted eta_A^* minimization directly on exact unreduced (h0_mat, v_mat)
         if a_nuc == 2:
             eta_m_opt = eta2_micro_star
             grad_m_res = mp.mpf(0)
         else:
-            h0_m_red, v_m_red, fac_m_red = build_reduced_pencil(h0_mat, v_mat, fac, max_dim=220)
-            r_m_dim = len(h0_m_red)
+            v_m_srows = to_srows(v_mat)
 
-            def grad_micro_on(
-                eta: mp.mpf,
-                h0_loc: list[list[mp.mpf]],
-                v_loc: list[list[mp.mpf]],
-                f_loc: int,
-                pert: bool,
-            ) -> mp.mpf:
-                n_loc = len(h0_loc)
+            def grad_micro_exact(eta: mp.mpf) -> mp.mpf:
                 eta2 = eta * eta
                 op_u = one + eta2
                 w_loc = g_e0_locked * ((eta2 / op_u) ** (three * half))
                 dw_loc = g_e0_locked * (three * eta2) / (op_u ** (mp.mpf(5) * half))
-                h_loc = [[h0_loc[i][j] + w_loc * v_loc[i][j] for j in range(n_loc)] for i in range(n_loc)]
-                _, psi_loc, _ = lowest_eigenpair_sym(h_loc, f_loc, perturbed_start=pert)
-                v_exp = dot_mp(psi_loc, matvec_dense(v_loc, psi_loc))
+                h_loc = [[h0_mat[i][j] + w_loc * v_mat[i][j] for j in range(dim)] for i in range(dim)]
+                _, psi_loc, _ = lowest_eigenpair_sym(h_loc, fac, perturbed_start=True)
+                v_exp = dot_mp(psi_loc, matvec_srows(v_m_srows, psi_loc))
                 return two * mp.mpf(a_nuc - 1) * t_kin_e0 * eta + eosc_mev * dw_loc * v_exp
 
             lo_m = eta2_micro_star
-            while grad_micro_on(lo_m, h0_m_red, v_m_red, fac_m_red, True) >= mp.mpf(0) and lo_m > (one / four):
+            while grad_micro_exact(lo_m) >= zero and lo_m > (one / four):
                 lo_m *= mp.mpf(7) / mp.mpf(8)
             hi_m = eta2_micro_star * two
-            while grad_micro_on(hi_m, h0_m_red, v_m_red, fac_m_red, True) <= mp.mpf(0):
+            while grad_micro_exact(hi_m) <= zero:
                 hi_m *= two
-            eta_m_opt, _ = safeguarded_root_1d(
-                lambda x: grad_micro_on(x, h0_m_red, v_m_red, fac_m_red, True),
+            eta_m_opt, grad_m_res = safeguarded_root_1d(
+                grad_micro_exact,
                 lo_m,
                 hi_m,
                 tol_x=tol_x,
                 tol_f=tol_f,
             )
-            grad_m_res = grad_micro_on(eta_m_opt, h0_mat, v_mat, fac, True)
-            if abs(grad_m_res) > tol_f and r_m_dim < dim:
-                delta_pad = mp.mpf("1e-8")
-                eta_m_opt, grad_m_res = safeguarded_root_1d(
-                    lambda x: grad_micro_on(x, h0_mat, v_mat, fac, False),
-                    eta_m_opt - delta_pad,
-                    eta_m_opt + delta_pad,
-                    tol_x=tol_x,
-                    tol_f=tol_f,
-                )
-                grad_m_res = grad_micro_on(eta_m_opt, h0_mat, v_mat, fac, True)
 
         max_var_grad_res = max(max_var_grad_res, abs(grad_m_res))
         u_m_opt = eta_m_opt * eta_m_opt
