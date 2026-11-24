@@ -1,11 +1,11 @@
 ---
 # qou-7p89
 title: 'VS-3 (P1 Dashboards & Status Docs): Wire Live Wave-2 Compute and Liquid Variable Substitution Across Status Scorecards & Appendix Dashboards'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T07:06:02Z
-updated_at: 2026-11-20T08:30:00Z
+updated_at: 2026-11-24T11:10:01Z
 parent: qou-v6so
 ---
 
@@ -36,3 +36,5 @@ Grounded in `computations/audits/paper-status-variable-substitution-and-stalenes
 ## 2026-11-20 W13 (#8526, PR #8539)
 
 Corrections: docs/prediction-validation-status.md does not exist; the :::observable-dashboard fence is already gone. Producer upgrade = same owner decision as jdrx (framed ask on #8526). Not touched.
+
+Closed post-merge: landed on origin/main in PR #9303 (52823c58a80).

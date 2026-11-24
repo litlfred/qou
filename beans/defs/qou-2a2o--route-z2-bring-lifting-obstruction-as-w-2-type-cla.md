@@ -1,11 +1,11 @@
 ---
 # qou-2a2o
 title: 'Route Z/2: Bring lifting obstruction as w_2-type class (centre of SU(2))'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-10-12T19:30:20Z
-updated_at: 2026-11-24T03:25:23Z
+updated_at: 2026-11-24T11:10:02Z
 parent: qou-vo9t
 ---
 
@@ -37,3 +37,5 @@ Open PR #8150 (Antigravity, 'ready' since 2026-11-16, mergeable clean) carries t
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Unchanged since 2026-11-21. The real next step (which principal bundle the tower lifts) is still untouched; '136 % 5 = 1' still does not prove a unique S₅-fixed even theta characteristic.
 
 BringThetaCharacteristicsSymplectic.lean (08dfe533aaa) + 80-dps witness (ef51559461b) prove exact Sp(8,F_2) spin uniqueness & true BDH orbits [1,5,5,5,10,10,10,30,30,30] / [20,20,20,60]; #8150 flagged DO-NOT-MERGE.
+
+Closed post-merge: landed on origin/main in PR #9267 (9b85d847b6d).
