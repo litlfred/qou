@@ -1,13 +1,13 @@
 ---
 # qou-exr5
 title: Remark interpreting On the Garoufalidis-Kashaev State-Integral Invariant.pdf at rem:q-dilogarithm…
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:32Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:18:57Z
 parent: qou-vva9
 ---
 
@@ -28,3 +28,5 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-22 — checked: the primary Andersen–Kashaev paper (arXiv:1109.6295) is not held in library/, so no reference entry can be written from its PDF. Still open until it is uploaded.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+Closed post-merge: landed on origin/main in PR #9337 (d7e1269e1e0).

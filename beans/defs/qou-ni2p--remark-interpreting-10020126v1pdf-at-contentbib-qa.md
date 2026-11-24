@@ -1,13 +1,13 @@
 ---
 # qou-ni2p
 title: Remark interpreting 1002.0126v1.pdf at content/bib-qa-verifications.json
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:15Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:18:58Z
 parent: qou-aqfj
 ---
 
@@ -28,3 +28,5 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-22 — checked: the ledger already joins this file to [murakami-h2010], and its rationale records the mis-join to faddeev_kashaev1994. Nothing left to change in the ledger. Leaving open only for the indexer heuristic, which is platform work.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+Closed post-merge: landed on origin/main in PR #9337 (d7e1269e1e0).

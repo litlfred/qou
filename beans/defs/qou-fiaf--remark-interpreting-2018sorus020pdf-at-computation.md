@@ -1,13 +1,13 @@
 ---
 # qou-fiaf
 title: Remark interpreting 2018SORUS020.pdf at computations/whitehead_c_sigma_torsion.py
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:26Z
-updated_at: 2026-11-22T21:16:34Z
+updated_at: 2026-11-24T13:18:58Z
 parent: qou-vva9
 ---
 
@@ -35,3 +35,5 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 Not done in PR #9127. The per-cusp factor 2^{(c-1)/2} this remark targets was retracted (see prop:one-loop-prefactor-provenance), so there is no live claim for it to interpret.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+Closed post-merge: landed on origin/main in PR #9337 (d7e1269e1e0).
