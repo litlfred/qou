@@ -15,7 +15,7 @@ Retrieval systems solve this with a summary tier; this builds one.
 | Tier | Size | Where | For |
 |---|---|---|---|
 | **brief** | ≤ 200 chars (~50 tok) | `library/INDEX.md`, one line each | scanning all 341 at once — the whole index is ~17 k tokens |
-| **extended** | ~1.5–2.5 k chars (~500 tok) | `library/<id>/summary.json` | deciding whether to open this document |
+| **extended** | ~1.5–2.5 k chars (~500 tok) | `library-summaries/<id>.json` | deciding whether to open this document |
 | **sections** | the full text | `library/<id>/sections/*.md` | actually reading it |
 
 An agent walks down the tiers and stops when it knows enough, so the cost
@@ -41,9 +41,21 @@ abstract did not extract gets a structural brief instead ("N sections
 covering X, Y, Z"), which is weaker.
 
 An LLM-written summary would be better and is a per-document upgrade, not
-a replacement: `summary.json` records `provenance.kind`, so an
+a replacement: each summary records `provenance.kind`, so an
 agent-written summary can be dropped in and will not be overwritten by a
 re-run (`--keep-agent`, the default).
+
+## Where the extended summaries live
+
+`library-summaries/<doc-id>.json`, one per entry, BESIDE the library rather
+than inside each entry. They were `library/<doc-id>/summary.json` until
+2026-11-24, when the owner ruled that qou's library must pass the platform's
+library gate (`check:l1-complete`, decision "C1 migrate", PR #9396): an entry
+may hold only the files the platform's ingestion arms produce, and a
+document-level summary is not one of them. The platform's own
+`summaries.json` is a different object (one narrative per prose block), so the
+records were moved rather than renamed into it. Only the path changed; the
+`library-summary/v1` shape and the agent-written records are untouched.
 
 Usage:
     scripts/summarize-library.py --apply            # missing/changed summaries + index + injection (preserves existing)
@@ -65,6 +77,9 @@ import sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIB = os.path.join(REPO, "library")
 INDEX = os.path.join(LIB, "INDEX.md")
+# Tier 2, kept beside the library: an entry may hold only what the platform's
+# ingestion arms produce (`check:l1-complete`), see the module docstring.
+SUMMARIES = os.path.join(REPO, "library-summaries")
 
 SCHEMA = "library-summary/v1"
 BRIEF_MAX = 200
@@ -226,7 +241,7 @@ def write_index(rows: list[dict]) -> str:
         f"**{len(rows)} documents, ~{total:,} tokens for the whole index.** This is the",
         "scan tier: grep *this file* to find which document to open, rather than",
         "grepping 24.7 M characters of section text. Then read",
-        "`library/<doc-id>/summary.json` for the extended summary, and only then",
+        "`library-summaries/<doc-id>.json` for the extended summary, and only then",
         "`library/<doc-id>/sections/` for the text.",
         "",
         "Briefs are **extractive** — assembled from each document's own abstract,",
@@ -247,11 +262,11 @@ def write_index(rows: list[dict]) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description="Two-tier summaries + scan index for the library")
     ap.add_argument("--apply", action="store_true",
-                    help="write missing/stale summary.json files, inject changed doc_brief headers, and update INDEX.md")
+                    help="write missing/stale library-summaries/<doc-id>.json files, inject changed doc_brief headers, and update INDEX.md")
     ap.add_argument("--only-missing", action="store_true",
-                    help="write only missing/stale summary.json files (default behavior of --apply; implies --apply)")
+                    help="write only missing/stale summaries (default behavior of --apply; implies --apply)")
     ap.add_argument("--regenerate", action="store_true",
-                    help="rebuild existing extractive summary.json files as well (provenance.kind == 'agent' is always preserved)")
+                    help="rebuild existing extractive summaries as well (provenance.kind == 'agent' is always preserved)")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--index-only", action="store_true")
     ap.add_argument("--no-inject", action="store_true", help="skip front-matter context injection")
@@ -277,7 +292,7 @@ def main() -> int:
             continue
         expected_doc_id = art_meta.get("doc_id") or os.path.basename(d)
         expected_sha = (art_meta.get("source") or {}).get("sha256", "")[:16]
-        path = os.path.join(d, "summary.json")
+        path = os.path.join(SUMMARIES, os.path.basename(d) + ".json")
         if os.path.exists(path):
             try:
                 prev = json.load(open(path))
@@ -310,6 +325,7 @@ def main() -> int:
             continue
         rows.append(s)
         if args.apply and not args.index_only:
+            os.makedirs(SUMMARIES, exist_ok=True)
             json.dump(s, open(path, "w"), indent=1, ensure_ascii=False)
             if not args.no_inject:
                 injected += inject_context(d, s["brief"])
@@ -327,6 +343,15 @@ def main() -> int:
 
     idx = write_index(rows)
     stale = (not os.path.exists(INDEX)) or open(INDEX, encoding="utf-8").read() != idx
+
+    # A summary kept beside the library outlives its entry unless something
+    # looks: one whose entry directory is gone is reported, never deleted.
+    entries = {os.path.basename(d) for d in glob.glob(os.path.join(LIB, "*")) if os.path.isdir(d)}
+    orphans = sorted(os.path.basename(f)[:-5] for f in glob.glob(os.path.join(SUMMARIES, "*.json"))
+                     if os.path.basename(f)[:-5] not in entries)
+    if orphans:
+        print(f"  {len(orphans)} summary file(s) in library-summaries/ name no library entry: "
+              + ", ".join(orphans[:10]) + (" ..." if len(orphans) > 10 else ""))
     if args.apply or args.index_only:
         open(INDEX, "w", encoding="utf-8").write(idx)
 
@@ -342,7 +367,7 @@ def main() -> int:
               f"across {len(dup_dirs)} copies (no index line of their own)")
     if args.check:
         print("\nindex is", "STALE" if stale else "up to date")
-        return 1 if stale else 0
+        return 1 if (stale or orphans) else 0
     return 0
 
 
