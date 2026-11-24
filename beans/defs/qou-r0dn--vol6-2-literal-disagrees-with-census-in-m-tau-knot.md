@@ -1,13 +1,13 @@
 ---
 # qou-r0dn
 title: Vol(6_2) literal disagrees with census in m_tau_knot_prediction.py
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:03:20Z
-updated_at: 2026-11-16T19:28:00Z
+updated_at: 2026-11-24T03:52:51Z
 parent: qou-2002
 ---
 
@@ -44,3 +44,5 @@ The literal differs from 2*Vol(4_1) in the 9th significant figure. It agrees to 
   - `perKnotMass_ratio_and_rel_err`: proves that in `m(K) = m_e · (Vol(K)/ℏ_q²) · tr_M(K)`, the prediction ratio equals `V_sub / V_true` and the relative substitution error equals `(V_sub - V_true) / V_true` independently of `(m_e, ℏ_q, tr_M)`.
 - **50-dps AST & numerical audit** (`computations/probes/plancherel_normalisation_and_scale_bounds_probe.py`, PR `litlfred/qou#8169`, head `32d6039de208cfa3dab898932c88023a55ef3267`):
   - Confirms `KNOT_VOL_TABLE['6_2']` in `computations/m_tau_knot_prediction.py` (`4.4008325161230461014`, rel err `9.36e-21`) and `VOL_6_2` in `computations/vol_density_deuteron_perknot_probe.py` (`4.40083251612304610144120386564`, rel err `0.0`) both match the 50-dps SnapPy census, and records the exact `-7.750034%` and `+1.055306e-7` shifts of the retired literals.
+
+Verified m_tau_knot_prediction.py:104 was already updated on origin/main in 4552fa0dd5d (4.4008325161230461014), and proved exact spinor quintic x^5 - x^4 - 2x^3 + x^2 + x + 1 = 0 -> Vol(6_2) = 4.40083251612304610144... (<1e-48 match) at 1bbfc9a89d2.
