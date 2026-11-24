@@ -7,6 +7,7 @@ export default proposition({
   },
   title: "Abelianisation of the MI integral on exceptional divisors",
   authorNotes: [
+    { kind: "note", date: "2026-11-24", body: "Relocated from the block prose by the reading-order drain (qou-d4kh): of the ([mass identity](#def:mass-identity))" },
     {
       kind: "status",
       date: "2026-08-08",
