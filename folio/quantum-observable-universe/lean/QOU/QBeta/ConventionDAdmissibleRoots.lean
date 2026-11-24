@@ -28,9 +28,11 @@ here `z` is a **variable** and both roots are exhibited.
 The `(1³)`-block Ocneanu weight at `n = 3`, as a function of the Markov
 parameter `z`, is
 ```
-  y_(1³)(z) = q² · N(q, z) / (q⁴ + q² + 1),   N(q, z) = (q²+1)z² − (2q³+q)z + q⁴,
+  y_(1³)(z) = q² · N(q, z) / ((q² + 1)(q⁴ + q² + 1)),
+  N(q, z) = (q²+1)z² − (2q³+q)z + q⁴,
 ```
-with denominator `q⁴+q²+1 > 0` over `ℝ` (never vanishing). The **roots** are the
+with denominator `(q² + 1)(q⁴ + q² + 1) > 0` over `ℝ` (never vanishing; note the
+`(q² + 1)` factor from `(q⁶ + 2q⁴ + 2q² + 1) = (q² + 1)(q⁴ + q² + 1)`). The **roots** are the
 roots of the numerator `N`, and this file proves `N` factors — over **any**
 commutative ring — as
 ```
@@ -132,5 +134,40 @@ theorem conventionD_base_completeness {q : ℝ} (h1 : 1 < q)
     (∀ z : ℝ, wtNumer q z = 0 ↔ z = q ∨ z = zD q) ∧ wtNumer q 1 ≠ 0 :=
   ⟨fun z => admissible_markov_param_iff q z (q_sq_add_one_ne_zero q),
    one_not_root h1 hplastic⟩
+
+/-- For every `q > 0` over any linearly ordered field, `z_D(q) < q` since
+`q³ < q³ + q`. -/
+theorem zD_lt_q {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    {q : K} (hq : 0 < q) :
+    zD q < q := by
+  have hden : (0 : K) < q ^ 2 + 1 := by positivity
+  rw [zD, div_lt_iff₀ hden]
+  nlinarith
+
+/-- **Interval characterisation of the negative `(1³)` weight (`qou-cds1`, `#6361`).**
+Over any linearly ordered field with `q > 0`, the `(1³)` weight numerator
+`wtNumer q z = (z - q)((q² + 1)z - q³)` is strictly negative if and only if `z`
+lies strictly between the two admissible roots `z_D(q) < z < q`. Outside the
+closed interval `[z_D(q), q]` (including `z_C < 1/2 < z_D(q)` for `q > 1`),
+`wtNumer q z > 0`. -/
+theorem wtNumer_neg_iff_between_zD_and_q
+    {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    {q : K} (hq : 0 < q) (z : K) :
+    wtNumer q z < 0 ↔ zD q < z ∧ z < q := by
+  have hden : (0 : K) < q ^ 2 + 1 := by positivity
+  have hlt : zD q < q := zD_lt_q hq
+  have hfac : wtNumer q z = (q ^ 2 + 1) * ((z - q) * (z - zD q)) := by
+    rw [wtNumer_factor, zD]
+    field_simp
+  rw [hfac, mul_neg_iff]
+  have hden_not_neg : ¬ (q ^ 2 + 1 < 0) := not_lt.mpr (le_of_lt hden)
+  simp only [hden, true_and, hden_not_neg, false_and, or_false]
+  rw [mul_neg_iff]
+  constructor
+  · rintro (⟨h1, h2⟩ | ⟨h1, h2⟩)
+    · exfalso; linarith
+    · exact ⟨by linarith, by linarith⟩
+  · rintro ⟨hz1, hz2⟩
+    exact Or.inr ⟨by linarith, by linarith⟩
 
 end QOU.QBeta.AdmissibleRoots
