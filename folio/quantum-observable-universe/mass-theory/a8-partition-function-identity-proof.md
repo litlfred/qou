@@ -10,5 +10,5 @@ Coefficient-by-coefficient match in descending order of $X$-power:
 
 Each coefficient is the exact value of the integer partition
 function at the corresponding index. The identity is checked in
-$\mathbb{Z}[X]$ by `ring` after expanding
+$\mathbb{Z}[X]$ by direct polynomial expansion of
 $\sum_{n=1}^{5}$ over $\{1, 2, 3, 4, 5\}$. ∎

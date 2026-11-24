@@ -1,3 +1,5 @@
+<!-- lean-terms: context -->
+
 The Bloch group `BlochGroup F` for a field-like type `F` admits a concrete Lean construction as the quotient
 
 $$

@@ -1,1 +1,3 @@
+<!-- lean-terms: context -->
+
 The file [`upstream-mathlib-additions.lean`](upstream-mathlib-additions.lean) provides three unconditional additions for Mathlib (see [Table 1](#tbl:upstream-mathlib-additions-table1-data)): (A) a concrete `tsum`-based complex dilogarithm `complexLiTwo`, a candidate for `Real.dilog` / `Complex.dilog`; (B) `blochWigner`, built from `Complex.log` and `Complex.arg`; and (C) the Clausen reflection identity $\mathrm{Cl}_2(-\theta) = -\mathrm{Cl}_2(\theta)$, an unconditional Lean theorem.
