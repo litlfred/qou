@@ -16,8 +16,13 @@ export default conjecture({
   lean: { ref: "qou:identity_preserved_by_shell_transition",
     validation: "not_checked",
   },
-  uses: ["rem:hydrogen-orbitals", "conj:borromean-quark"],
+  uses: ["conj:borromean-quark"],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Dependency cycle cut (`dcy4`): removed forward post-wall remark `rem:hydrogen-orbitals` from `uses[]` (`predicted-spectra` applies this conjecture rather than supplying a premise).",
+    },
     {
       kind: "note",
       date: "2026-11-24",

@@ -15,7 +15,6 @@
   "kind": "conjecture",
   "title": "Reidemeister invariance of mass and binding energy",
   "uses": [
-    "papers/quantum-observable-universe/blocks/rem-hydrogen-orbitals",
     "papers/quantum-observable-universe/blocks/conj-borromean-quark"
   ],
   "tags": [
@@ -27,7 +26,7 @@
     "shell-transition",
     "writhe"
   ],
-  "leanRef": "qou:QOU.Braiding.reidemeister_mass_invariance",
+  "leanRef": "qou:identity_preserved_by_shell_transition",
   "text": "reidemeister-mass-invariance.md",
   "leanSource": "reidemeister-mass-invariance.lean",
   "provenance": "authored"
