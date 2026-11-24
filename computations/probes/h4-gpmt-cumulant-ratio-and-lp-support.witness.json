@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-24T02:19:53.755175+00:00",
-  "commitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "computedAt": "2026-11-24T08:07:02.017494+00:00",
+  "commitSha": "97ad745b327570ddb05fa254c8ad729c2d702b74",
   "assertions": [
     {
       "name": "qou_sbn9_h4_gpmt_mu4_over_mu3_closed_form_exact",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 341,
+  "durationMs": 472,
   "computation": "h4-gpmt-cumulant-ratio-and-lp-support",
   "scriptFile": "h4_gpmt_cumulant_ratio_and_lp_support_probe.py",
-  "scriptHash": "9e78f7f882ba",
-  "scriptCommitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "scriptHash": "b63ed2862860",
+  "scriptCommitSha": "97ad745b327570ddb05fa254c8ad729c2d702b74",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
