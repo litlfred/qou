@@ -103,10 +103,14 @@ C=$(git -C "$ROOT" rev-parse FETCH_HEAD)
 git -C "$ROOT" show "$C:mathlib-gap-oleans.tgz" > "$TGZ"
 N=$(tar tzf "$TGZ" | wc -l)
 # --skip-old-files: the addon FILLS gaps and never replaces an olean already
-# present.  Measured 2026-11-24: 224 of its 288 entries are also in the base
-# seed (cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ 7c61a1ba876), where
-# they are Lake-built and trace-paired; overwriting them with these untraced
-# lean-direct copies gains nothing.  Only the other 64 are genuinely missing.
+# present.  Measured 2026-11-24 against the base seed
+# (cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ 7c61a1ba876): all 224
+# oleans of the previous head fe9ce693bed are ALSO in the base, Lake-built and
+# trace-paired (its other 64 entries are .ilean files), so overwriting them
+# with these untraced lean-direct copies gains nothing.  Head fe45a7c5b63
+# adds 17 Mathlib oleans the base lacks (the MvPowerSeries.Substitution,
+# Coalgebra.TensorProduct, FreeProduct and SymmetricAlgebra cones that main
+# fed339bd1f6 imports).
 for d in "${DESTS[@]}"; do
   tar xzf "$TGZ" -C "$d" --skip-old-files
   echo "restored up to $N olean(s) into $d from $BRANCH ($C), existing files kept"
