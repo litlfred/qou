@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-24T12:01:00Z
+updated_at: 2026-11-24T12:10:49Z
 ---
 
 ## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)
@@ -29,7 +29,7 @@ A **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit *
 
 This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/beans` on **every routine Swarm Monitor checkin** (currently `*/10 * * * *` periodic mode, and also renderable on-demand anytime). If the active Swarm Coordinator / Merge Manager ever stalls, runs out of context, or disconnects, **any successor agent reading this single bean (`beans show qou-s028`) has 100% of the end-state criteria, work-item queues, owner rulings, fences, worktree map, and commands required to take over seamlessly in `< 60` seconds.**
 
-- **Last Heartbeat Refresh:** `2026-11-24T12:00:59Z` (`2026-11-24 07:00:59 `)
+- **Last Heartbeat Refresh:** `2026-11-24T12:10:48Z` (`2026-11-24 07:10:48 `)
 - **`litlfred/qou` `origin/main` Tip:** `62a45d6ca1c`
 - **Live Queue Counts (`litlfred/qou`):** Open PRs = `173` (`163` Ready / `10` Draft) · Merged Since `2026-11-23` = `95` (latest: #9329, #9327, #9325, #9323, #9321, #9320, #9318, #9316, #9314, #9311, #9309, #9307) · Open GitHub Issues = `77`
 - **Disk Health (`/`):** `/dev/disk3s1s1  927G  914G   13G  99% /`
@@ -75,17 +75,20 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 | `ws5-nov19-rebase` | `claude/borromean-recompute-derived-w-bisect-20261124` @ `1094fc99e52` (`dirty=0`) | Q4 Option 1: Compact 9-Block L0-L4 Algorithms Annex (fixing 6 bugs) + 14->6 Annexes A-F with 80-dps Frechet-Jacobian Master Tables | chore(witness): stamp 80-dps witnesses on rebased HEAD |
 | `ws12-pr9180` | `claude/crosscheck-jingliu-dubois-squier-20261124` @ `6265b5bd5a5` (`dirty=0`) | Gap 1B (qou-3kkz): 4He Tetrahedral K_4 Flux-Ring & 462D 3D Jacobi Variational Compression + idle beans qou-bgur, qou-kjik | chore(witness,qou-4py9,qou-1el8): stamp 80-dps witnesses against 1a1ad133b6 |
 | `ws1-precision` | `claude/hygiene-n2dp-5d0x-refs-20261124` @ `ce3df2f8271` (`dirty=0`) | ws1-precision (#9104): 12-Witness q0 Precision Refill (11/12 all_nuclides_sdp + gates) + idle beans qou-n2dp, qou-5d0x | fix(folio,lean): resolve dangling computation.script refs and provable lean |
-| `ws15-p3-p5-p6` | `claude/drain-5c64-5pgl-2g9j-compute-20261124` @ `df8f3281795` (`dirty=0`) | ws1-precision Witness 12/12 (markov-trace-two-row-tower-rust) + idle beans qou-73kb, qou-m1tr | docs(audits,qou-x60n): link all 30 docs/audits/*.lean evidence files to tar |
+| `ws15-p3-p5-p6` | `claude/drain-5c64-5pgl-2g9j-compute-20261124` @ `45e3d7137fe` (`dirty=1`) | ws1-precision Witness 12/12 (markov-trace-two-row-tower-rust) + idle beans qou-73kb, qou-m1tr | chore(witness): stamp 80-dps witnesses for qou-5pgl and qou-2g9j |
 | `ws2-bridge-hecke` | `claude/frobenius-gram-a71h-z21-bisect-85o2-20261124` @ `33d9d30f73c` (`dirty=0`) | q0-Anchor Final 21 Consistency Drain (qou-q0rf) + idle beans qou-jdrx, qou-ke35 | precision-gates: clear new CODATA stale-edition and witness-value-copy regr |
-| `ws3-l2-physics` | `claude/bach2013-double-slit-and-bib-1qhv-20261124` @ `f1179744f62` (`dirty=13`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | feat(observations): add 80-dps Bach 2013 Fig. 3e double-slit cross-check pr |
+| `ws3-l2-physics` | `claude/bach2013-double-slit-and-bib-1qhv-20261124` @ `6472cdb7ebc` (`dirty=13`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | feat(observations): add 80-dps Bach 2013 Fig. 3e double-slit cross-check pr |
 
 ---
 
 ## 3. Live Sampled Compute / Sweep Processes
 
-- `13204 0.0 2096 11:20 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws3-l2-physics && export PATH="/Users/litlfred/miniforge3/bin:$PA`
-- `6267 0.0 15904 25:40 python3 scripts/lean-library-sweep.py --package BraidKnotOctonion --jobs 1 --shadow /tmp/ws51-codemod-shadow`
-- `62799 0.0 1264 28:59 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_THR`
+- `19784 0.0 2240 02:34 zsh -c set -euo pipefail\012WT="/Users/litlfred/space_cats/qou-wt/ws15-p3-p5-p6"\012PY="/Users/litlfred/minif`
+- `21071 57.0 65648 00:13 python3 computations/mpf_float_source_audit.py --strict`
+- `21145 0.4 2432 00:01 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws3-l2-physics && git log --oneline -n 3 && PYTHONPATH=tools/qou-`
+- `21151 40.8 28096 00:01 /Users/litlfred/miniforge3/bin/python3 computations/observations/bach2013_double_slit_profile_crosscheck.py`
+- `6267 0.0 11072 35:29 python3 scripts/lean-library-sweep.py --package BraidKnotOctonion --jobs 1 --shadow /tmp/ws51-codemod-shadow`
+- `62799 0.0 1264 38:48 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_THR`
 
 ---
 
