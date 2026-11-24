@@ -1,0 +1,250 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T17:07:17.012027+00:00",
+  "commitSha": "f64358ad559d0ab1cdadc45cbd08bb2ec35217e2",
+  "assertions": [
+    {
+      "name": "symbolic_schur_weyl_tl_diquark_and_decuplet_identities_hold",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "BaryonOctetDiquarkGmoDerivation (Sections 1-3)"
+    },
+    {
+      "name": "uq_sl3_weyl_qdim_cube_identity_80dps",
+      "computed": "28.1973432133838594148283421429125270780009083486865708809687",
+      "expected": "28.1973432133838594148283421429125270780009083486865708809687",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "BaryonOctetDiquarkGmoDerivation.uq_sl3_weyl_qdim_cube_identity"
+    },
+    {
+      "name": "qcasimir_decuplet_second_diff_asymmetry_ratio_80dps",
+      "computed": "0.332126952290349763739354097239919891990905544370439755672273",
+      "expected": "0.332126952290349763739354097239919891990905544370439755672273",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "BaryonOctetDiquarkGmoDerivation.qCasimir_decuplet_second_differences_and_ratio"
+    },
+    {
+      "name": "qcasimir_baryon_octet_gmo_sign_negative_both_pins",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "HyperbolicMesonClaspAndDiquarkSplit.qCasimir_gmo_second_order_and_universal_ratio"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "baryon_octet_diquark_gmo_probe",
+  "scriptFile": "baryon_octet_diquark_gmo_probe.py",
+  "scriptHash": "35406e02b231",
+  "scriptCommitSha": "f64358ad559d0ab1cdadc45cbd08bb2ec35217e2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mesons/baryon_octet_diquark_gmo_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mesons/baryon_octet_diquark_gmo_probe.py"
+  },
+  "description": "80-dps SymPy + mpmath probe for qou-8fw2, qou-d7h1, qou-wyy9 (#9375): (1) exact 3-variable Schur cube s_(3) + 2 s_(2,1) + s_(1,1,1) = (x1 + x2 + x3)^3 and U_q(sl_3) Weyl quantum-dimension specialization [4]_q[5]_q/[2]_q + 2[2]_q[4]_q + 1 = [3]_q^3; (2) Temperley-Lieb (u,d) diquark exchange e_12 = q I - sigma_1 on S^{(2,1)} giving exact (0, [2]_q) eigenvalues on Sigma^0 vs Lambda^0, plus pre-committed zero-parameter QOU scale catalog against PDG 76.959(25) MeV (E_0 [3]_q^2 [2]_q = 77.9817 MeV at +1.329%, m_pi/[2]_q = 69.4070 MeV at -9.813%); (3) 2nd-order rational quantum Casimir octet GMO (-0.2105 MeV vs PDG -25.7952 MeV) and decuplet second-difference asymmetry ratio (Omega^- - 2 Xi^* + Sigma^*)/(Xi^* - 2 Sigma^* + Delta) = 1/(q + 1 + q^-1).",
+  "contentBlock": "prop:baryon-octet-decomposition",
+  "auditOnly": "docs/audits/2026-11-24-baryon-octet-diquark-lambda-sigma-gmo.md",
+  "data": {
+    "symbolic_verifications": {
+      "checks": {
+        "schur_3var_cube_identity": true,
+        "uq_sl3_weyl_qdim_s3_s21_s111_cube": true,
+        "temperley_lieb_e12_diquark_eigenvalues": true,
+        "first_order_baryon_gmo_and_decuplet_equal_spacing": true,
+        "qcasimir_decuplet_second_differences_and_ratio": true
+      },
+      "decuplet_lower_2nd_diff_closed_form": "c * ((q - 1)/(q + 1))^2 * (q + 1 + q^-1)^2",
+      "decuplet_upper_2nd_diff_closed_form": "c * ((q - 1)/(q + 1))^2 * (q + 1 + q^-1)",
+      "decuplet_upper_over_lower_ratio_closed_form": "1 / (q + 1 + q^-1)"
+    },
+    "proton_pin_evaluation": {
+      "pin": "proton",
+      "q0": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
+      "LN_Q": "0.104340720319519512315906279973072397053744280828984303250862",
+      "log_q_of_b2": "6.69518882709387482799067581791268301712196654889624287589463",
+      "E0_MeV": "4.18598136329447589694506215875900841014348689087960498278367",
+      "uq_sl3_dimensions": {
+        "dim_q_10_decuplet": "10.6690482456650189461034369655699475559995838228132573153103",
+        "dim_q_8_octet": "8.26414748385942023436245258867128976100066226293665678282918",
+        "dim_q_1_singlet": "1.00000000000000000000000000000000000000000000000000000000000",
+        "sum_10_plus_2x8_plus_1": "28.1973432133838594148283421429125270780009083486865708809687",
+        "qBracket3_cubed": "28.1973432133838594148283421429125270780009083486865708809687",
+        "cube_identity_residual": "1.34940133673350697271661747856256243298687505694316896640995e-79"
+      },
+      "precommitted_lambda_sigma0_scale_catalog": {
+        "S1_E0_b3sq_b2": {
+          "predicted_MeV": "77.9816730017953940214173510133862790408975867069916802312837",
+          "diff_vs_pdg_76p959_MeV": "1.02267300179539402141735101338627904089758670699168023128373",
+          "rel_err_pct": "1.32885432736313364443060722382863478072426448757348748201475",
+          "implied_kappa_hf_MeV": "38.7795487142469445527671622548615567959023620974932984708018"
+        },
+        "S2_E0_dimq8_b2": {
+          "predicted_MeV": "69.5640961942521242368041251375935823498152058822116507860112",
+          "diff_vs_pdg_76p959_MeV": "-7.39490380574787576319587486240641765018479411778834921398879",
+          "rel_err_pct": "-9.60888759696445609116006557050691621536765565793259945424029",
+          "implied_kappa_hf_MeV": "34.5935673509524686558221000961025483857588752066136934880182"
+        },
+        "S3_mpi_over_b2": {
+          "predicted_MeV": "69.4070353933908500674061199407662038162084010263355237994148",
+          "diff_vs_pdg_76p959_MeV": "-7.55196460660914993259388005923379618379159897366447620058523",
+          "rel_err_pct": "-9.81297133098032709961652316068789379252796810465894333422372",
+          "implied_kappa_hf_MeV": "34.5154624995990206330495943204165103509486378965459924145005"
+        },
+        "S4_mp_h_over_b3": {
+          "predicted_MeV": "64.4462474130898671742110396191416985425413786608727459457377",
+          "diff_vs_pdg_76p959_MeV": "-12.5127525869101328257889603808583014574586213391272540542623",
+          "rel_err_pct": "-16.2589854167935300949712968994637423270294849713837940387249",
+          "implied_kappa_hf_MeV": "32.0485095382448377667756906113192258709831360210549947669650"
+        },
+        "S5_mp_hbar_b2_over_b3": {
+          "predicted_MeV": "61.4199395450852193439572195057935203190395065337231838823843",
+          "diff_vs_pdg_76p959_MeV": "-15.5390604549147806560427804942064796809604934662768161176157",
+          "rel_err_pct": "-20.1913492312981985941121642617581825140145966895058617154793",
+          "implied_kappa_hf_MeV": "30.5435552473963576781470865319477149649592661376793497602808"
+        },
+        "S6_mp_V3_diquark_split": {
+          "predicted_MeV": "26.5200839793492094441375387261159382674010146486235033016798",
+          "diff_vs_pdg_76p959_MeV": "-50.4389160206507905558624612738840617325989853513764966983202",
+          "rel_err_pct": "-65.5399836544793858494295160720436358744253243303271829133957",
+          "implied_kappa_hf_MeV": "13.1881870315787484552186793114634364942654960248687738320687"
+        }
+      },
+      "baryon_octet_gmo_evaluation": {
+        "universal_qcasimir_ratio": "-0.00271681548273477320080695104119661184976907347355396486717064",
+        "pdg_2x_gmo_iso_avg_MeV": "-25.7951552966666666666666666666666666666666666666666666666667",
+        "pdg_1x_gmo_iso_avg_MeV": "-12.8975776483333333333333333333333333333333333333333333333333",
+        "pdg_2x_gmo_neutral_only_MeV": "-30.8401561200000000000000000000000000000000000000000000000000",
+        "qcasimir_predicted_2x_gmo_MeV": "-0.210473506657784703048648368462195651076176634711874694236288",
+        "qcasimir_sign_matches_pdg_negative": true,
+        "qcasimir_fraction_of_pdg_magnitude": "0.00815942002430909069953710794137582406985661302110465439376401",
+        "weighted_jm_gmo_over_xi_minus_n_order_u_d_s": "0.0185399428230609497068130677510553957236578386341436013123245",
+        "weighted_jm_gmo_over_xi_minus_n_order_s_u_d": "-0.0183853514056944333287296261142983202595352536060779750173255",
+        "pdg_gmo_over_xi_minus_n": "-0.0679953888444753644993699725412710291539968761246919235317856"
+      },
+      "baryon_decuplet_qcasimir_curvature_test": {
+        "c_octet_from_Sigma_minus_Lambda_over_b2_MeV": "38.5254300950432114000349958365652269590339013390368634237047",
+        "qcasimir_pred_lower_2nd_diff_MeV": "0.948854013339798891799401849965682137578083955838632379490215",
+        "qcasimir_pred_upper_2nd_diff_MeV": "0.315139991619014284822661680999204199837520311652407256746815",
+        "qcasimir_pred_upper_over_lower_ratio": "0.332126952290349763739354097239919891990905544370439755672273",
+        "pdg_lower_2nd_diff_MeV": "-3.75333333333333333333333333333333333333333333333333333333333",
+        "pdg_upper_2nd_diff_MeV": "-9.77333333333333333333333333333333333333333333333333333333333",
+        "pdg_upper_over_lower_ratio": "2.60390763765541740674955595026642984014209591474245115452931",
+        "breaks_classical_equal_second_diff_1": true,
+        "honest_sign_falsification_note": "With c_octet > 0 fixed by M_Sigma > M_Lambda, pure d_q(I,Y) predicts positive decuplet second differences (+0.949 MeV, +0.315 MeV), opposite in sign to PDG (-3.753 MeV, -9.773 MeV), proving non-octet chiral-loop curvature dominates the decuplet."
+      }
+    },
+    "muon_pin_evaluation": {
+      "pin": "muon",
+      "q0": "1.1099785956427390466817951293800017527000655610290115569740457699990950814290311",
+      "LN_Q": "0.104340731933579787492493769163872830029930916836723181184440",
+      "log_q_of_b2": "6.69518809343134140247082782238230216723277069234054604576690",
+      "E0_MeV": "4.18598082401017136779972443048525839338975170253696642520986",
+      "uq_sl3_dimensions": {
+        "dim_q_10_decuplet": "10.6690483981721837135994407072145094116661597449288588072419",
+        "dim_q_8_octet": "8.26414754330344227327166396921176171173157550005548546458684",
+        "dim_q_1_singlet": "1.00000000000000000000000000000000000000000000000000000000000",
+        "sum_10_plus_2x8_plus_1": "28.1973434847790682601427686456380328351293107450398297364156",
+        "qBracket3_cubed": "28.1973434847790682601427686456380328351293107450398297364156",
+        "cube_identity_residual": "1.01205100255013022953746310892192182474015629270737672480747e-79"
+      },
+      "precommitted_lambda_sigma0_scale_catalog": {
+        "S1_E0_b3sq_b2": {
+          "predicted_MeV": "77.9816635498686842504402734557405406839863421043218616064999",
+          "diff_vs_pdg_76p959_MeV": "1.02266354986868425044027345574054068398634210432186160649986",
+          "rel_err_pct": "1.32884204559399712891315304998835832584407555233547941956088",
+          "implied_kappa_hf_MeV": "38.7795439670691480211200059394166723475164496970087028624273"
+        },
+        "S2_E0_dimq8_b2": {
+          "predicted_MeV": "69.5640878166068078172075114231036505311467694372108607789105",
+          "diff_vs_pdg_76p959_MeV": "-7.39491218339319218279248857689634946885323056278913922108953",
+          "rel_err_pct": "-9.60889848281967305031573770045913989118001866291030187644009",
+          "implied_kappa_hf_MeV": "34.5935631430589766533202815089314139541266979944717364372174"
+        },
+        "S3_mpi_over_b2": {
+          "predicted_MeV": "69.4070353095859594949849483294178553512751153131576937814340",
+          "diff_vs_pdg_76p959_MeV": "-7.55196469041404050501505167058214464872488468684230621856601",
+          "rel_err_pct": "-9.81297143987583064360900176793116418966577617542107644143766",
+          "implied_kappa_hf_MeV": "34.5154624162482611691310139835294170579334688418566791344106"
+        },
+        "S4_mp_h_over_b3": {
+          "predicted_MeV": "64.4462544057883091182372385493964754148280306412458434895473",
+          "diff_vs_pdg_76p959_MeV": "-12.5127455942116908817627614506035245851719693587541565104527",
+          "rel_err_pct": "-16.2589763305288411774617152647559409363063051218884815427081",
+          "implied_kappa_hf_MeV": "32.0485129769509770635031247726174175159668218377488882937493"
+        },
+        "S5_mp_hbar_b2_over_b3": {
+          "predicted_MeV": "61.4199459083189473491684491657035426420663159658161692013328",
+          "diff_vs_pdg_76p959_MeV": "-15.5390540916810526508315508342964573579336840341838307986672",
+          "rel_err_pct": "-20.1913409629556681490554072094185960809439884018553136068130",
+          "implied_kappa_hf_MeV": "30.5435583748927896238155379298390048866497109431450333034556"
+        },
+        "S6_mp_V3_diquark_split": {
+          "predicted_MeV": "26.5200930470145086097465559005090441724995968554996017624332",
+          "diff_vs_pdg_76p959_MeV": "-50.4389069529854913902534440994909558275004031445003982375668",
+          "rel_err_pct": "-65.5399718720169069118016659513389672780316832917532689322454",
+          "implied_kappa_hf_MeV": "13.1881915249190110913980119131720007145366590553497626488076"
+        }
+      },
+      "baryon_octet_gmo_evaluation": {
+        "universal_qcasimir_ratio": "-0.00271681608645074793413243609182876723010876817214514999601533",
+        "pdg_2x_gmo_iso_avg_MeV": "-25.7951552966666666666666666666666666666666666666666666666667",
+        "pdg_1x_gmo_iso_avg_MeV": "-12.8975776483333333333333333333333333333333333333333333333333",
+        "pdg_2x_gmo_neutral_only_MeV": "-30.8401561200000000000000000000000000000000000000000000000000",
+        "qcasimir_predicted_2x_gmo_MeV": "-0.210473553428063742955862578991369149828013009474866200291305",
+        "qcasimir_sign_matches_pdg_negative": true,
+        "qcasimir_fraction_of_pdg_magnitude": "0.00815942183745107422351383012361298907318678970641781065943149",
+        "weighted_jm_gmo_over_xi_minus_n_order_u_d_s": "0.0185399469747055996381322077533464384541271590613648319305314",
+        "weighted_jm_gmo_over_xi_minus_n_order_s_u_d": "-0.0183853554907421590691790215677504215156931313723951091144626",
+        "pdg_gmo_over_xi_minus_n": "-0.0679953888444753644993699725412710291539968761246919235317856"
+      },
+      "baryon_decuplet_qcasimir_curvature_test": {
+        "c_octet_from_Sigma_minus_Lambda_over_b2_MeV": "38.5254300485260329170307107191256985045336910886843690535665",
+        "qcasimir_pred_lower_2nd_diff_MeV": "0.948854224573641517111754272293860306098847261786281641217944",
+        "qcasimir_pred_upper_2nd_diff_MeV": "0.315140061521332287780553903703319403713648749386397379912449",
+        "qcasimir_pred_upper_over_lower_ratio": "0.332126952022516874150158707651250386595154576994654840286739",
+        "pdg_lower_2nd_diff_MeV": "-3.75333333333333333333333333333333333333333333333333333333333",
+        "pdg_upper_2nd_diff_MeV": "-9.77333333333333333333333333333333333333333333333333333333333",
+        "pdg_upper_over_lower_ratio": "2.60390763765541740674955595026642984014209591474245115452931",
+        "breaks_classical_equal_second_diff_1": true,
+        "honest_sign_falsification_note": "With c_octet > 0 fixed by M_Sigma > M_Lambda, pure d_q(I,Y) predicts positive decuplet second differences (+0.949 MeV, +0.315 MeV), opposite in sign to PDG (-3.753 MeV, -9.773 MeV), proving non-octet chiral-loop curvature dominates the decuplet."
+      }
+    },
+    "epistemic_status": {
+      "fitted_parameters": 0,
+      "wired_into_production": false,
+      "preregistration": "computations/mesons/baryon_octet_diquark_gmo_preregistration.md",
+      "preregistration_commit": "ccc7d2b78a0e555e7cf069e49284ce1ee7f482b5",
+      "lean_module": "folio/quantum-observable-universe/lean/QOU/EightfoldWay/BaryonOctetDiquarkGmoDerivation.lean"
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.1099785956427390466817951293800017527000655610290115569740457699990950814290311",
+    "proton": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830"
+  },
+  "q0AnchorReason": "evaluates the pre-registered zero-parameter baryon Lambda^0-Sigma^0 diquark scale catalog, 2nd-order octet GMO, and decuplet curvature at both q_proton and q_muon"
+}
