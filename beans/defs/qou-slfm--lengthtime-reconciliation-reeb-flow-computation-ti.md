@@ -7,7 +7,7 @@ priority: high
 tags:
     - needs-owner-ok
 created_at: 2026-11-23T21:31:08Z
-updated_at: 2026-11-24T00:15:42Z
+updated_at: 2026-11-24T02:08:58Z
 parent: qou-hksc
 ---
 
@@ -27,3 +27,5 @@ Related beans: qou-mumr, qou-5uj7, qou-jfx8, qou-apma, PR #9207. Queued for acti
   `computations/probes/reeb_length_time_bh_lcq/{PREREGISTRATION.md, reeb_length_time_bh_lcq_probe.py, reeb-length-time-bh-lcq.witness.json, RESULTS.md}`.
   * Honest finding: channel counting fixes `s_Cat = ln 2 = 0.69314718...` (with `-3/2 ln N_Σ` Kaul-Majumdar subleading term), `s_TL(q_0) = ln[2]_{q_0} = 0.69858082...`, and `s_Haar(q_0) = 0.68773318...`, requiring `a_0* = 4 s_punct` (`2.7725887...` or `2.7943233...`). Every un-tuned rational/Sasakian area candidate in QOU misses `1/4` by `≥ 11.1%`, and `hbar_{q_0} = 0.0990817...` differs from LQG Immirzi poles (`0.208619`, `0.237145`, `0.274018`) by `2.11x–2.77x`.
 - **Rule 13a status:** Remains `in-progress` because `LCQHorizonPunctureAreaConjecture` (deriving Bisognano-Wichmann `2π/ℏ` + Raychaudhuri `8πG/c³` null focusing on the Lorentzian lift of QOU's twisting CR 3-manifold) is genuinely open.
+
+Phase 1 Ready PR #9240 opened (Issue #9239, 09c8703a892, held unmerged for owner OK); Phase 2 Fefferman 4D Lorentzian CR circle-bundle metric + (2*pi)/(8*pi)=1/4 modular horizon derivation staged on origin/claude/gap4-a0-fefferman-lorentzian-modular-20261123 (dc9894be61b).
