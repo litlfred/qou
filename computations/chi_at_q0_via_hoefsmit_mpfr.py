@@ -95,7 +95,7 @@ def _env_anchor() -> "str | None":
     return a if a in ("muon", "proton") else raw
 
 def build_chi_cache_at_q0(
-    atom_name: str, Z: int, N: int, q_str: str, *, dps: int = 50,
+    atom_name: str, Z: int, N: int, q_str: str, *, dps: int = 80,
     incremental: bool = True, fresh: bool = False,
 ) -> dict:
     """Return per-λ χ^λ(β_atomic(Z, N); q_0) at 50 dps.
@@ -143,44 +143,25 @@ def build_chi_cache_at_q0(
         # than anything atom-specific. A=1 atoms have no p-n crossing, never
         # touch δ, and reached ~1e-50 in the same run.
         from _li_2_q_util import flavor_split_leading
-        _qm = mp.mpf(q_str)
-        _hm = _qm - mp.mpf(1) / _qm
-        _cw_d = -_hm * (mp.mpf(1) / 2 - flavor_split_leading(_qm) / 4)
-        _cw_f64 = float(_cw_d)
-        n_colour_weighted = sum(1 for (_, d, _) in word
-                                if abs(float(d) - _cw_f64) < 1e-9)
+        with mp.workdps(dps):
+            _qm = mp.mpf(q_str)
+            _hm = _qm - mp.mpf(1) / _qm
+            _cw_d = -_hm * (mp.mpf(1) / mp.mpf(2) - flavor_split_leading(_qm) / mp.mpf(4))
+            _tol_match = mp.mpf("1e-9")
+            n_colour_weighted = sum(
+                1 for (_, d, _) in word
+                if abs(mp.mpf(str(d)) - _cw_d) < _tol_match
+            )
+            _exact = [mp.mpf(0), -_hm, -_hm / mp.mpf(2), _cw_d]
 
-        # Upgrade EVERY crossing offset to exact mpf, not just the
-        # colour-weighted one.
-        #
-        # `atom_braid_word_3A` returns `d` as a Python float, so each offset
-        # carries ~17 good digits into a 50-dps computation. This block used to
-        # replace only the colour-weighted p-n crossing, leaving the plain
-        # averaged (-h/2) and inverse (-h) crossings at float64 — and A=1 atoms,
-        # which have no p-n crossing at all, kept a wholly float64 word.
-        #
-        # That is the ~1e-16 floor (bean qou-gpwk). Measured on the proton:
-        # the word carries d = -0.10453014939781968 where -h/2 is
-        # -0.10453014939781965771542310656…, and the stored χ then sat
-        # 4.976e-17 off a native recompute that passes exact crossing codes.
-        # The dual-path cross-check bottomed out at ~1e-16 for every atom
-        # instead of the ~1e-19 the muon layer reached.
-        #
-        # Matched by nearest float64 rather than by index: the word's own
-        # values are the only statement of which crossing is which, and the
-        # three exact candidates are ~7e-5 apart, so a 1e-9 window is
-        # unambiguous. Anything unrecognised is left alone rather than snapped
-        # to a guess.
-        _exact = [(mp.mpf(0), 0.0), (-_hm, float(-_hm)),
-                  (-_hm / 2, float(-_hm / 2)), (_cw_d, _cw_f64)]
+            def _upgrade(d):
+                d_mp = mp.mpf(str(d))
+                for exact in _exact:
+                    if abs(d_mp - exact) < _tol_match:
+                        return exact
+                return d_mp
 
-        def _upgrade(d):
-            for exact, approx in _exact:
-                if abs(float(d) - approx) < 1e-9:
-                    return exact
-            return d
-
-        word = [(c, _upgrade(d), g) for (c, d, g) in word]
+            word = [(mp.mpf(str(c)), _upgrade(d), g) for (c, d, g) in word]
     except Exception:
         pass  # import miss / unexpected shape → leave word as-is
     # Derive the convention label from the word instead of asserting it. Both
@@ -207,6 +188,7 @@ def build_chi_cache_at_q0(
         return {
             "atom": atom_name,
             "Z": Z, "N": N,
+            "dps": dps,
             "n_strands": n,
             "n_partitions": result["n_partitions_used"],
             "n_partitions_total": len(list(parts_of(n))),
@@ -339,39 +321,26 @@ def build_chi_cache_at_q0(
                 # well below the inter-class gap.  Replaces the prior
                 # `round(_, 9)`-as-dict-key pattern, which would have
                 # collided in the q → 1 limit where h → 0.
-                h_f64 = float(q - mp.mpf(1) / q)
-                tol = 1e-12
+                h_mp = q - mp.mpf(1) / q
+                tol = mp.mpf("1e-12")
                 word_signed: list[tuple[int, int]] = []
-                # `sign == 0` carries a SHIFT, not just a class: a crossing
-                # is σ_g + d·I and the native path applies σ_g − shift·I. The
-                # symmetric average is shift = h/2, but this pipeline also
-                # emits the colour-weighted p–n crossing d = −h·(1/2 − δ/4)
-                # (installed above from `_avg_color_delta`), and an atomic
-                # braid contains BOTH — p–p and n–n crossings are
-                # colour-symmetric, p–n ones are not. ⁴He at H_12 carries the
-                # two together, which is why a single word-level shift was not
-                # enough and the first attempt still fell back. So the shift is
-                # per crossing: `avg_shifts[i]` for word position i, empty
-                # string meaning "h/2 here".
                 avg_shifts: list[str] = []
                 for c_, d_, g_ in word:
-                    if abs(float(c_) - 1.0) > tol:
+                    c_mp = c_ if isinstance(c_, mp.mpf) else mp.mpf(str(c_))
+                    if abs(c_mp - mp.mpf(1)) > tol:
                         raise ValueError(
-                            f"native chi path requires c==1.0, got c={c_}")
-                    d_val = float(d_)
+                            f"native chi path requires c==1, got c={c_}")
+                    d_val = d_ if isinstance(d_, mp.mpf) else mp.mpf(str(d_))
                     if abs(d_val) < tol:
                         sgn = 1
                         avg_shifts.append("")
-                    elif abs(d_val + h_f64) < tol:
+                    elif abs(d_val + h_mp) < tol:
                         sgn = -1
                         avg_shifts.append("")
                     else:
                         sgn = 0
-                        # Serialise from the mpf, never the f64: the shift
-                        # carries δ and must reach Rust at working precision,
-                        # or χ is capped near 1e-16 however high `dps` is set.
                         avg_shifts.append(
-                            mp.nstr(-mp.mpf(d_), dps + 10, strip_zeros=False))
+                            mp.nstr(-d_val, dps + 10, strip_zeros=False))
                     g1 = int(g_) + 1
                     # Pre-FFI validation — Rust panics on out-of-range gen,
                     # and pyo3 PanicException is BaseException (not catchable
@@ -487,13 +456,14 @@ def build_chi_cache_at_q0(
             }
             _save_partial(out_path, payload)
             print(f"    λ={shape_t!s:20} dim={dim:>3}  "
-                  f"+{float(entry['compute_time_sec']):>5.1f}s  "
+                  f"+{entry['compute_time_sec']:>5}s  "
                   f"({len(per_partition)}/{len(shapes)})")
 
     elapsed = time.time() - t0
     return {
         "atom": atom_name,
         "Z": Z, "N": N,
+        "dps": dps,
         "n_strands": n,
         "n_partitions": len(per_partition),
         "n_partitions_total": len(shapes),
@@ -517,12 +487,13 @@ def save_witness(record: dict) -> Path:
         record.get("q_0_50dps", Q_50_DIGIT_STR))
     _sfx = "" if _anchor in (None, "proton") else f"-{_anchor}"
     out = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps{_sfx}.witness.json"
+    rec_dps = int(record.get("dps", 80))
     payload = {
         "computation": f"chi-{atom_name}-h{n}-at-q0-50dps",
         "description": (
             f"Numerical χ^λ_q(β_atomic({record['Z']}, {record['N']})) "
             f"= {atom_name} per partition λ ⊢ {n}, evaluated at q = q_0 "
-            f"at 50 decimal places via the Hoefsmit seminormal basis. "
+            f"at {rec_dps} decimal places via the Hoefsmit seminormal basis. "
             f"Companion to the symbolic chi-{atom_name}-h{n}.witness.json "
             f"emitted by per_irrep_pole_atom.py; this numerical cache is "
             f"used by canonical_tr_m_via_chi_cache.py and the 3-way "
@@ -530,21 +501,12 @@ def save_witness(record: dict) -> Path:
             f"symbolic data is not yet available. ~100× faster to build "
             f"than the symbolic counterpart (no sympy poly arithmetic)."
         ),
-        # From the record, not recomputed: `save_witness` is a different
-        # scope and must not re-derive a label the build already established.
         "convention": record["convention"],
-        # Restored. A rebuild used to DROP these, so regenerating a witness
-        # silently shrank it — `n_partitions_total` and `partial` are how a
-        # consumer tells a complete cache from a resumed one, and `producer`
-        # is what `chi_convention_audit._producer_field` reads first. The
-        # classifier surfaced it as `field removed at n_partitions_total`
-        # rather than as churn, which is the whole reason a removal is a
-        # rejection and an addition is not.
         "producer": Path(__file__).name,
         "n_partitions_total": record["n_partitions_total"],
         "partial": record["partial"],
         "q_0_50dps": Q_50_DIGIT_STR,
-        "dps": 50,
+        "dps": rec_dps,
         "n_strands": n,
         "atom": atom_name,
         "Z": record["Z"], "N": record["N"],
@@ -579,7 +541,7 @@ def main() -> int:
         help="Atoms to build (default: tritium, helium-3 — the ones with "
              "partial symbolic caches). One of: " + ", ".join(ATOMS),
     )
-    parser.add_argument("--dps", type=int, default=50)
+    parser.add_argument("--dps", type=int, default=80)
     parser.add_argument(
         "--fresh", action="store_true",
         help="Ignore any cached partitions and recompute from scratch. Use "
@@ -598,7 +560,7 @@ def main() -> int:
     # f64-quantised `repr(Q_FLOAT)` (which truncates to ~16 digits).
     q_str = Q_50_DIGIT_STR
     print("=" * 80)
-    print(f" Building numerical χ^λ caches at q_0 (50 dps)")
+    print(f" Building numerical χ^λ caches at q_0 ({args.dps} dps)")
     print(f" q_0 = {Q_50_DIGIT_STR}")
     print("=" * 80)
     print(f"  {'atom':>9}  {'n':>3}  {'n_partitions':>14}  {'tr_M(q_0)':>22}  {'time':>10}")
@@ -620,7 +582,7 @@ def main() -> int:
         tr_m_short = record["tr_M_at_q0"][:22]
         print(f"  {atom_name:>9}  {record['n_strands']:>3}  "
               f"{n_parts:>14}  {tr_m_short:>22}  "
-              f"{float(record['compute_time_sec']):>9.2f}s")
+              f"{record['compute_time_sec']:>9}s")
     print()
     return 0
 
