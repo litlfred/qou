@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:49:42.758677+00:00",
-  "commitSha": "a8ded878ea6343dcbe96ce9cfaf63e9b71634f51",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:06:54.412266+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "denominator_factors_as_cyclotomic_product",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2164,
+  "durationMs": 2046,
   "computation": "y-lambda-cyclotomic-factorization-probe",
   "scriptFile": "y_lambda_cyclotomic_factorization_probe.py",
-  "scriptHash": "565407fdbb26",
-  "scriptCommitSha": "440038755f17461f5597233a7397068e42081cba",
+  "scriptHash": "e028e7712d30",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,14 +45,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -239,5 +239,6 @@
     ]
   },
   "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "payload carries the proton 50-digit pin"
 }
