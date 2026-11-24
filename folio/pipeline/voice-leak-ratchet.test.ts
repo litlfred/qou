@@ -26,4 +26,8 @@ describe("voice-leak-ratchet", () => {
     const s = shrink(base, { "a.md": { "L3:we": 5 }, "c.md": { "L3:our": 4 } });
     expect(s).toEqual({ "a.md": { "L3:we": 2 } });
   });
+  test("L5 convention-c and z-c sub-kinds fail against empty baseline", () => {
+    const v = compare({}, { "d.md": { "L5:convention-c": 1, "L5:z-c": 2 } });
+    expect(v.grown).toEqual(["d.md  L5:convention-c: 0 -> 1", "d.md  L5:z-c: 0 -> 2"]);
+  });
 });

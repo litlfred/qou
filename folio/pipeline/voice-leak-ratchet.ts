@@ -39,7 +39,7 @@ const PAPER = "folio/quantum-observable-universe";
 export type Counts = Record<string, Record<string, number>>; // file -> "L2:block-id" -> n
 
 export async function liveCounts(paperDir = PAPER): Promise<Counts> {
-  const { reports } = await audit(paperDir, new Set<LeakClass>(["L1", "L2", "L3", "L4"]));
+  const { reports } = await audit(paperDir, new Set<LeakClass>(["L1", "L2", "L3", "L4", "L5"]));
   const out: Counts = {};
   for (const r of reports)
     for (const h of r.hits) {

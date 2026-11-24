@@ -81,7 +81,7 @@ export const PREVIEW_CHAPTERS = new Set(["introduction"]);
  */
 export const CODE_BY_DESIGN = new Set(["appendix-mass-binding-algorithms", "appendix-formalisation-notes"]);
 export const REFERENCE_TABLES = new Set(["glossary", "notation", "index-of-definitions"]);
-/** Public-release / author-meta chapters exempt from L5 (`qou-xu3c`). */
+/** Public-release / author-meta front-matter chapters (Lean/compute provenance by design), exempt from L1–L5. */
 export const FENCED_CHAPTERS = new Set(["authors-note"]);
 
 // ── line preparation ────────────────────────────────────────────────
@@ -299,6 +299,7 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
   for (const b of order) {
     if (!existsSync(b.md)) continue;
     scanned++;
+    if (FENCED_CHAPTERS.has(b.chapter)) continue;
     const src = readFileSync(b.md, "utf8");
     // An outro may name what the next chapter introduces.
     const preview = PREVIEW_CHAPTERS.has(b.chapter);
@@ -307,7 +308,6 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
     let hits = scanText(src, { premature, prematureAdvisory: false })
       .filter((h) => classes.has(h.cls))
       .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2" || h.cls === "L5")))
-      .filter((h) => !(FENCED_CHAPTERS.has(b.chapter) && h.cls === "L5"))
       .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")))
       .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && (h.cls === "L1" || h.cls === "L2") && rowFromCodeChapter(srcLines[h.line - 1] ?? "")));
     const banners = bannerLines(src);
