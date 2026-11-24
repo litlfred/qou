@@ -44,7 +44,7 @@ This is a *precision substitution within one overdetermined datum*, not a fourth
 
 Two consequences follow:
 
-- **An $m_\mu$ reproduced at the muon pin is not an accuracy result.** It is the calibration restated. Quoting it as a prediction double-counts the input.
+- **An $m_\mu$ reproduced at the muon-anchored $q_0$ is not an accuracy result.** It is the calibration restated. Quoting it as a prediction double-counts the input.
 - **The two layers must never be mixed inside a single computed quantity.** A number built from an ideal-layer input and an experimental-layer input carries the $11.6$ ppb tension as a silent error term, regardless of how small the final discrepancy looks.
 
 ## CAL-3 ($P_{\mathrm{avg}}^{\pi}$, proxy $m_\pi$) and CAL-2 proxy $\mathfrak{Q}_\beta$
@@ -53,7 +53,7 @@ CAL-3 is the pion-sector bar-even channel $P_{\mathrm{avg}}^{\pi}$ (proxy $m_\pi
 
 The derived $\mathfrak{Q}_\beta$ fixes the hadronic scale $\mathfrak{E}_0$ via $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$.
 
-- The leading-order base $\mathfrak{Q}_\beta = |\varepsilon(\Delta)| \cdot \mathfrak{E}_0$ is evaluated with $\varepsilon$ as the canonical Convention-D Markov trace at $z_D = q^3/(q^2+1)$. With the tower-summed $\mathfrak{E}_0$ this gives $0.4491$ MeV, a $-42.59\%$ miss ($0.4447$ MeV with the order-zero $\mathfrak{E}_0$), pending the convention-D $c_k$ ladder. The scored value is not the $\Delta$ trace. It applies the $T^3$ weight split of the same $z_D$ trace to the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$ and gives $\mathfrak{Q}_\beta \approx 0.3254$ MeV ($-58.40\%$) ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)). The $\Delta$ value is kept as an unscored comparison.
+- The leading-order $\Delta$ base $\mathfrak{Q}_\beta = |\varepsilon(\Delta)| \cdot \mathfrak{E}_0$ evaluates $\varepsilon$ as the Markov trace at $z = q^3/(q^2+1)$. With the tower-summed $\mathfrak{E}_0$ this gives $0.4491$ MeV, a $-42.59\%$ residual ($0.4447$ MeV with the order-zero $\mathfrak{E}_0$), with the $z = q^3/(q^2+1)$ $c_k$ ladder still open. The scored value applies the $T^3$ weight split of the $z = q^3/(q^2+1)$ trace to the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$ and gives $\mathfrak{Q}_\beta \approx 0.3254$ MeV ($-58.40\%$) ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)). The $\Delta$ value is kept as an unscored comparison.
 - The +0.17% match of the retired Form A ($\varepsilon$ weighting every basis element by $1$, the trace at $z = 1$) is either a truncation residual or a substrate artefact. It is kept only as a historical cross-check.
 - Higher-order corrections correspond to traces over Khovanov-Rozansky strata.
 

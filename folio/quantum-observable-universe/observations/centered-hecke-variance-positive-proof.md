@@ -20,7 +20,7 @@ $$
 
 This is the variance. Both steps are convention-independent: they use only the quadratic relation and $\mathrm{tr}_M(\sigma_i) = z$.
 
-**Closed form.** Substituting the production convention D, $z = q^3/(q^2+1)$, and $q - q^{-1} = (q^2-1)/q$:
+**Closed form.** Substituting $z = q^3/(q^2+1)$ and $q - q^{-1} = (q^2-1)/q$:
 
 $$
   (q - q^{-1})\,z \;=\; \frac{q^2(q^2-1)}{q^2+1},
@@ -60,6 +60,4 @@ $$
   \;=\; \frac{q^4+q^2+1}{(q^2+1)^2},
 $$
 
-so $\mathrm{Var}(\sigma_i) = y_{(3)} + y_{(2,1)} = \mu_+$ identically in $q$ — the centred second moment of a single Hecke generator is exactly the isospin-triplet Wenzl weight.
-
-**Comparison with Convention C.** Unlike the Convention-C identity $(q-q^{-1})z_C = q^{1/2} - q^{-1/2}$ (which lower-bounded the variance by $3/4$ for $q \neq 1$), the rational Convention-D derivation above is unconditional for all $q > 0$ and achieves the sharp lower bound $\mathrm{Var}(\sigma_i) = 1$ at $q = 1$.
+so $\mathrm{Var}(\sigma_i) = y_{(3)} + y_{(2,1)} = \mu_+$ identically in $q$ — the centred second moment of a single Hecke generator is the isospin-triplet Wenzl weight.

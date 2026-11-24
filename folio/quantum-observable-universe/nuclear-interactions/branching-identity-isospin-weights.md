@@ -9,7 +9,7 @@ $$
   \mu_- \;=\; y_{(2,1)} + y_{(1^3)},
 $$
 
-*identically in $z$ and in $q$. Under convention D, where $y_{(1^3)} = 0$, the singlet
+*identically in $z$ and in $q$. At $z = q^3/(q^2+1)$, where $y_{(1^3)} = 0$, the singlet
 weight is therefore $\mu_- = y_{(2,1)}$ exactly.*
 
 ## Where the two sums come from
@@ -40,7 +40,7 @@ Any Markov trace whatever satisfies it.
 
 ## The radical is observationally inert
 
-Under convention D the antisymmetric weight vanishes identically, so the second sum
+At $z = q^3/(q^2+1)$ the antisymmetric weight vanishes identically, so the second sum
 collapses to a single term and the isospin singlet draws its entire weight from the
 mixed-symmetry block. Quotienting $H_3(q)$ by its radical deletes a summand that was
 already contributing zero. More generally a term with $y_\lambda = 0$ can be removed
@@ -56,7 +56,7 @@ physics.
 
 ## The isospin weights are the two-strand weights
 
-One further identification falls out of the same branching. Under convention D the
+One further identification falls out of the same branching. At $z = q^3/(q^2+1)$ the
 two isospin scalars are the Wedderburn weights of $H_2(q)$ itself,
 
 $$

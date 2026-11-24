@@ -1,5 +1,5 @@
 *Let $\mu = z + d$ with $d \in [-h,\,0]$ be an admissible interface scalar, so that
-$\mu$ ranges over the band $[z-h,\,z]$. Under convention D, whenever the two reduced
+$\mu$ ranges over the band $[z-h,\,z]$. At $z = q^3/(q^2+1)$, whenever the two reduced
 inequalities*
 
 $$
@@ -22,7 +22,7 @@ $z = q^{3}/(q^{2}+1)$, equivalent to $q^{5} < q^{2}+1$ and therefore holds for
 $q < 1.193859$.
 
 The lower separation says the singlet weight lies below the band's floor,
-$\mu_- < z-h$. Its reduced form is $q - z < (z-h)(q+q^{-1})$, which under convention D
+$\mu_- < z-h$. Its reduced form is $q - z < (z-h)(q+q^{-1})$, which at $z = q^3/(q^2+1)$
 holds for $q < 1.465571$.
 
 The substrate parameter clears both, with $7.56\,\%$ of margin on the tighter of the
@@ -31,23 +31,17 @@ moving $q$ upward past $1.193859$ closes the upper separation only by moving $\m
 into the band, which is not the same as reaching it from inside.
 
 Both hypotheses are carried explicitly rather than folded into the statement, because
-they are convention-dependent and one of them fails elsewhere. The band lies strictly
-between the two isospin weights *given* the reduced inequalities; establishing them is
-a separate, per-convention obligation.
+they depend on the loop parameter $z$: the band lies strictly between the two isospin
+weights *given* the reduced inequalities, which must be verified for the chosen $z$.
 
-## Convention-dependence, stated rather than buried
+## Dependence on the loop parameter $z$
 
-Under convention C the lower separation **fails**. There $\mu_- = 0.303675$ sits
-*inside* the band $[0.290260,\, 0.499320]$, and only the upper separation survives.
-The strict betweenness is a phenomenon of convention D, and quoting it without the
-convention would be a misstatement of the same kind the trace-convention registry
-exists to prevent.
-
-Convention D trades one agreement for another here. It gains the deuteron --- the band
-now contains $B_{\mathrm{AME}}({}^2\mathrm{H})$, reached at $d = -0.11923\,h$, where
-under convention C the entire band sat $30.69\,\%$ above it --- and it loses the
-singlet's reachability. That trade is a fact about the two conventions and is recorded
-as such, not resolved here.
+At $z = q^3/(q^2+1)$ both reduced inequalities hold at $q_0$: the band $[z-h,\,z]$
+contains the empirical deuteron point $B_{\mathrm{AME}}({}^2\mathrm{H})$ (attained at
+$d = -0.11923\,h$), while $\mu_-$ lies strictly below the floor $z - h$ (by contrast,
+at the smaller auxiliary parameter $z_{\mathrm{aux}} = 1/(q^{1/2}+q^{-1/2}) \approx 0.499320$,
+$\mu_- \approx 0.303675$ sits inside $[0.290260,\, 0.499320]$ while the entire band sits
+$30.69\,\%$ above $B_{\mathrm{AME}}({}^2\mathrm{H})$).
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the
 substrate wall: it invokes real- or complex-analytic constructs --- real-valued
@@ -55,7 +49,7 @@ physical observables, real-analytic bounds, transcendental constants, or numeric
 evaluation at the substrate parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
 only their archimedean realisation is specialised here. At
-$q_0 = 1.10997858275138080759$ under convention D:
+$q_0 = 1.10997858275138080759$ with $z = q^3/(q^2+1)$:
 
 | quantity | value at $q_0$ | position |
 |----------|---------------:|----------|

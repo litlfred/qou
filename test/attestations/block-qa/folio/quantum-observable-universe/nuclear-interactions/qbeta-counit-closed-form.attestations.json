@@ -1,0 +1,968 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Drifted Lean file found via module path components. Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T01:05:41.000Z",
+        "reviewed_sha": "150027a6d84e5f98eba54dcf37e09e7dbbba2bc0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' presents substantial mathematical content: Let $\\Delta = \\mathrm{NF}(n) - \\mathrm{NF}(p)$ be the single-wrap normal-form difference of the neutron and proton ty...",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' is appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.lean is missing, leading to complete divergence.",
+        "severity": "minor",
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.lean is missing, leading to complete divergence."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f5730b234842",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.272133Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.272133Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.lean is missing entirely, preventing formal verification of the claims in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.lean is missing."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:43.952Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:43.996Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:44.037Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:44.093Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:44.152Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:44.198Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:44.238Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:44.278Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:44.320Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "43edcc1c6577",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:44.363Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~1.1kB). Verified the closed form algebraically: eps(Delta)=h^2/2-h with h=(q^2-1)/q times E_0=m_e/(q(q-1)) reduces exactly to m_e(q+1)(q^2-2q-1)/(2q^3); at proton q0 this is -0.78365 MeV, matching the documented Q_beta ~ 0.784. c_q^2 * hbar_q^E = 1/((q-1)q) also checks. No trap construction in any of the ten categories; the closing 'distinct from the Hecke parameter h' is load-bearing symbol disambiguation (h vs hbar_q^E), kept per the false-positive class."
+      }
+    ]
+  }
+}
