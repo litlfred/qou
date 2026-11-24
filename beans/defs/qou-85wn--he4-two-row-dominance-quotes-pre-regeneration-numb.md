@@ -1,13 +1,13 @@
 ---
 # qou-85wn
 title: he4-two-row-dominance quotes pre-regeneration numbers — thesis survives, every table value is stale, one contribution flips sign
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T12:44:43Z
-updated_at: 2026-11-22T21:54:18Z
+updated_at: 2026-11-24T11:20:32Z
 parent: qou-10v9
 ---
 
@@ -321,3 +321,5 @@ untouched.
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+Verified on origin/main (8ec51e68547): he4-two-row-dominance.{md,ts,lean} (leading_ne_largest, dominant_ne_trivial_rep, 0 sorry) and he4-canonical-tr-m-block-fingerprint.witness.json (allPassed: true) landed in b96fa3bce03 & 94ffdc25364.

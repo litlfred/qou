@@ -1,15 +1,13 @@
 ---
 # qou-k12x
 title: 'DERIVED: the canonical braid fixes the bonded-pair linking number — non-uniformly, and undefined for p-n'
-status: todo
-pr: 8321
-branch: feat/qou-ai7v-cgyn-k12x-u8ji-y2np
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T07:31:08Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:45Z
 parent: qou-v2om
 ---
 
@@ -28,3 +26,5 @@ Formalized in Lean 4 (`v4.24.0`, zero `sorry`) under `QOU.MassTheory` (`Fallback
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8321, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-30: "correct(qou-k12x): the bond-set "finding" was already resolved in the corpus"). The work may be partly or fully done. Read the bean before you close it.
+
+Verified on origin/main (8ec51e68547): bonded-pair linking derivation and corpus reconciliation landed in docs/audits/2026-08-30-bonded-pair-linking-is-derived-and-not-uniform.md & interface_classicalisation_and_bondset_probe.py (ce53e90e3d0).

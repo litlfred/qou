@@ -1,13 +1,13 @@
 ---
 # qou-vu19
 title: AGENTS.md's y_lambda_at layer-straddle warning is stale — the cache path is dead
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T21:40:25Z
-updated_at: 2026-10-04T15:16:18Z
+updated_at: 2026-11-24T11:20:43Z
 parent: qou-5vkl
 ---
 
@@ -149,3 +149,5 @@ Regenerated with `--apply` (42 modules), never hand-edited. `--check` **does**
 exit 1 on drift, so it can gate — it simply is not wired into
 `precision-gates.sh` or `staleness-gates.sh`, which is why two merged PRs left
 the mirror behind without anything objecting.
+
+Verified on origin/main (8ec51e68547): stale y_lambda_at warning retired in AGENTS.md (ca9f086a9a2), cached_accessor_shape_audit.py landed (e563c491d9c), and qou-mass vendor mirror synced.

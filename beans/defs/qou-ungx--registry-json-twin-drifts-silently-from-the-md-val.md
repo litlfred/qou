@@ -1,13 +1,13 @@
 ---
 # qou-ungx
 title: Registry JSON twin drifts silently from the .md — validator never compares them
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T04:32:25Z
-updated_at: 2026-11-16T20:10:00Z
+updated_at: 2026-11-24T11:20:50Z
 parent: qou-trd0
 ---
 
@@ -111,3 +111,5 @@ Was in-progress with no bean update since 2026-08-15 and no main commit naming i
   - Verified R6 (`R6a`, `R6b`, `R6c` in `check_twin_drift`) is live in `docs/coordination/kernel_constraints_registry_validate.py` (`22 rows, 0 error(s), 0 R6 warning(s)`).
   - Added `--self-test` / `--selftest` to `docs/coordination/kernel_constraints_registry_validate.py` regression-testing `check_twin_drift` on reconstructed pre-#5074 `KC21`/`KC22` drift cases, `R6c` idiom warning, quoted-withdrawal exemption, and the live registry, and excluded `.claude` from `docs_dir.rglob("*.md")`.
 - **Status:** Kept `in-progress` pending PR #8161 merge and owner review.
+
+Verified on origin/main (8ec51e68547): R6a/R6b/R6c twin-drift validator and --self-test landed in docs/coordination/kernel_constraints_registry_validate.py (b9416b82d03; live --self-test exits 0).

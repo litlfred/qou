@@ -1,13 +1,13 @@
 ---
 # qou-tqr9
 title: Agent-adjudicated QA axes are silently lost by "regenerate rather than merge" conflict resolution
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T21:20:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:39Z
 parent: qou-trd0
 ---
 
@@ -186,3 +186,5 @@ Was in-progress with no bean update since 2026-08-22 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8411, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-22: "qa: pre-resolve the two sidecar conflicts with main — script from main, agent unioned [qou-tqr9]"). The work may be partly or fully done. Read the bean before you close it.
+
+Verified on origin/main (8ec51e68547): scripts/qa-sidecar-agent-union.py + local merge/audit skills + hash-less entry fix landed in 851ebdaf4ef, 325164034ea, c43a49c0aed.

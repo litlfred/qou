@@ -1,13 +1,13 @@
 ---
 # qou-uyud
 title: Cite [jones1987] and [kimlee2018] at thm:jones-markov-trace — the block titled '(Jones, 1987)' cites nothing
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T18:29:45Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T11:20:48Z
 parent: qou-mub3
 ---
 
@@ -50,3 +50,5 @@ Done on branch `claude/expo-chapter-drain-2026-11-21` (bd9168d5a): `cites: ["jon
 
 
 2026-11-21 (expo-chapter, 36f528e0e, PR #8889): Lean residue done. TemperleyLiebTower.lean carries `-- Ref: [jones1987]` and `[kimlee2018]`; markov-trace-frobenius-selection now cites kimlee2018 for dim TL_n = Catalan(n). Sum-of-squares step still needs semisimplicity (not in Kim-Lee). Fan 1997 still unregistered. Stays todo until #8889 merges.
+
+Verified on origin/main (8ec51e68547): cites ['jones1987', 'kimlee2018'] added on braids-and-knots/jones-markov-trace.ts (491ce1e7414) and -- Ref lines added on QOU/QBeta/TemperleyLiebTower.lean (00c382ce62c).

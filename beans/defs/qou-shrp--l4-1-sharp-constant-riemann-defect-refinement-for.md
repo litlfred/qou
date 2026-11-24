@@ -1,13 +1,13 @@
 ---
 # qou-shrp
 title: 'L4-1 sharp constant: Riemann-defect refinement for phi (the 1/2 the antitone squeeze cannot pin)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T12:00:00Z
-updated_at: 2026-11-22T21:33:08Z
+updated_at: 2026-11-24T11:20:44Z
 parent: qou-n4nr
 ---
 
@@ -225,3 +225,5 @@ No change. The latest note above points at batch PR #8238, which is still open a
 ## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
 
 **Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.
+
+Verified on origin/main (8ec51e68547): kashaev_log_sum_asymptotic proved sorry-free in QOU/Knot/KashaevAsymptotic.lean alongside Euler-Maclaurin modules (6750aba80ed, dd59d9402c6).

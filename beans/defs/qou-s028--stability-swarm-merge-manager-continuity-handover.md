@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-24T11:10:55Z
+updated_at: 2026-11-24T11:21:06Z
 ---
 
 ## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)
@@ -30,9 +30,9 @@ A **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit *
 
 This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/beans` on **every routine Swarm Monitor checkin** (currently `*/10 * * * *` periodic mode, and also renderable on-demand anytime). If the active Swarm Coordinator / Merge Manager ever stalls, runs out of context, or disconnects, **any successor agent reading this single bean (`beans show qou-s028`) has 100% of the end-state criteria, work-item queues, owner rulings, fences, worktree map, and commands required to take over seamlessly in `< 60` seconds.**
 
-- **Last Heartbeat Refresh:** `2026-11-24T11:10:54Z` (`2026-11-24 06:10:54 `)
-- **`litlfred/qou` `origin/main` Tip:** `8ec51e68547`
-- **Live Queue Counts (`litlfred/qou`):** Open PRs = `181` (`171` Ready / `10` Draft) · Merged Since `2026-11-23` = `83` (latest: #9316, #9314, #9309, #9307, #9305, #9303, #9300, #9298, #9296, #9292, #9290, #9288) · Open GitHub Issues = `83`
+- **Last Heartbeat Refresh:** `2026-11-24T11:21:05Z` (`2026-11-24 06:21:05 `)
+- **`litlfred/qou` `origin/main` Tip:** `41699a4e7b9`
+- **Live Queue Counts (`litlfred/qou`):** Open PRs = `181` (`171` Ready / `10` Draft) · Merged Since `2026-11-23` = `84` (latest: #9316, #9314, #9309, #9307, #9305, #9303, #9300, #9298, #9296, #9292, #9290, #9288) · Open GitHub Issues = `83`
 - **Disk Health (`/`):** `/dev/disk3s1s1  927G  913G   15G  99% /`
 
 ---
@@ -69,39 +69,38 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 
 | Worktree | Checked-Out Branch & HEAD | Assigned Track & Responsibility | Latest Commit Subject |
 | :--- | :--- | :--- | :--- |
-| `merge-runner` | `mt-local/8393` @ `43690ea36e3` (`dirty=0`) | Serial prepare-merge-auto Runner onto origin/main (Wave A -> Wave B -> Wave C) | test(qou): add 80-dps witness for Round 84 probe (scriptCommitSha 02a557115 |
-| `ws6-exposition-pdf` | `HEAD` @ `8ec51e68547` (`dirty=0`) | Q1 Staged-Branch PR Opener (Wave B, 14 branches) & Completed-Workitem Open-PR Auditor (Wave C) | test(qou): add 80-dps witness for Round 84 probe (scriptCommitSha 02a557115 |
+| `merge-runner` | `mt-local/9318` @ `f0586c85efc` (`dirty=0`) | Serial prepare-merge-auto Runner onto origin/main (Wave A -> Wave B -> Wave C) | chore(bib): regenerate references.bib from folio/schema/references.ts |
+| `ws6-exposition-pdf` | `claude/link-audit-refutations-x60n-20261124` @ `2cbc2bef72f` (`dirty=0`) | Q1 Staged-Branch PR Opener (Wave B, 14 branches) & Completed-Workitem Open-PR Auditor (Wave C) | docs(audits,qou-x60n): link all 30 docs/audits/*.lean evidence files to tar |
 | `ws4-mathlib-infra` | `claude/q3-lean-reservoir-libs-codemod-20261124` @ `2896ccb1a7f` (`dirty=1`) | Q3 Option 1: Lean 83->12 QOU.<Chapter> Subgraphs + 7 Top-Level Reservoir lean_libs + apply-lean-reservoir-migration.py --fixup-branch + skill updates | refactor(lean,qou-lref): execute Q3 Option 1 7+1 lean_lib isolation & 83->1 |
 | `main-base` | `HEAD` @ `8ec51e68547` (`dirty=0`) | Q2 Option 1: Three-Stop Leibniz Relational Spine (Ch. 0 intro, Ch. 2 Rieffel/Jimbo, Ch. 13 Fefferman Lorentzian) + live DOIs | test(qou): add 80-dps witness for Round 84 probe (scriptCommitSha 02a557115 |
-| `ws5-nov19-rebase` | `claude/borromean-recompute-derived-w-bisect-20261124` @ `8ec51e68547` (`dirty=0`) | Q4 Option 1: Compact 9-Block L0-L4 Algorithms Annex (fixing 6 bugs) + 14->6 Annexes A-F with 80-dps Frechet-Jacobian Master Tables | test(qou): add 80-dps witness for Round 84 probe (scriptCommitSha 02a557115 |
-| `ws12-pr9180` | `claude/crosscheck-jingliu-dubois-squier-20261124` @ `a922c21d1ae` (`dirty=13`) | Gap 1B (qou-3kkz): 4He Tetrahedral K_4 Flux-Ring & 462D 3D Jacobi Variational Compression + idle beans qou-bgur, qou-kjik | docs(results,gap3): record Bring Z_3 Kummer-Prym N_gen=3 theorems, F_3[S_5] |
-| `ws1-precision` | `claude/hygiene-n2dp-5d0x-refs-20261124` @ `8ec51e68547` (`dirty=5`) | ws1-precision (#9104): 12-Witness q0 Precision Refill (11/12 all_nuclides_sdp + gates) + idle beans qou-n2dp, qou-5d0x | test(qou): add 80-dps witness for Round 84 probe (scriptCommitSha 02a557115 |
+| `ws5-nov19-rebase` | `claude/borromean-recompute-derived-w-bisect-20261124` @ `9582394fda8` (`dirty=1`) | Q4 Option 1: Compact 9-Block L0-L4 Algorithms Annex (fixing 6 bugs) + 14->6 Annexes A-F with 80-dps Frechet-Jacobian Master Tables | docs(qou-02g1): bisect derived-w witness shift to 2026-09-05 intra-ordering |
+| `ws12-pr9180` | `claude/crosscheck-jingliu-dubois-squier-20261124` @ `a922c21d1ae` (`dirty=22`) | Gap 1B (qou-3kkz): 4He Tetrahedral K_4 Flux-Ring & 462D 3D Jacobi Variational Compression + idle beans qou-bgur, qou-kjik | docs(results,gap3): record Bring Z_3 Kummer-Prym N_gen=3 theorems, F_3[S_5] |
+| `ws1-precision` | `claude/hygiene-n2dp-5d0x-refs-20261124` @ `8ec51e68547` (`dirty=36`) | ws1-precision (#9104): 12-Witness q0 Precision Refill (11/12 all_nuclides_sdp + gates) + idle beans qou-n2dp, qou-5d0x | test(qou): add 80-dps witness for Round 84 probe (scriptCommitSha 02a557115 |
 | `ws15-p3-p5-p6` | `claude/drain-5c64-5pgl-2g9j-compute-20261124` @ `ba5be11d5aa` (`dirty=0`) | ws1-precision Witness 12/12 (markov-trace-two-row-tower-rust) + idle beans qou-73kb, qou-m1tr | fix(witness): sync scriptHash and scriptCommitSha on lp-confinement-nf-forc |
 | `ws2-bridge-hecke` | `claude/frobenius-gram-a71h-z21-bisect-85o2-20261124` @ `ba5be11d5aa` (`dirty=0`) | q0-Anchor Final 21 Consistency Drain (qou-q0rf) + idle beans qou-jdrx, qou-ke35 | fix(witness): sync scriptHash and scriptCommitSha on lp-confinement-nf-forc |
-| `ws3-l2-physics` | `claude/commentary-audit-ch12-16-and-l5-ratchet-20261124` @ `7722b615baa` (`dirty=3`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | feat(pipeline): wire L5 Convention C check into voice-leak-ratchet & exempt |
+| `ws3-l2-physics` | `claude/bach2013-double-slit-and-bib-1qhv-20261124` @ `8ec51e68547` (`dirty=0`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | test(qou): add 80-dps witness for Round 84 probe (scriptCommitSha 02a557115 |
 
 ---
 
 ## 3. Live Sampled Compute / Sweep Processes
 
-- `7461 77.9 89200 00:45 python3 -c \012import sys\012sys.path.insert(0, "computations")\012sys.path.insert(0, "computations/hecke")\`
-- `19287 0.0 2496 00:01 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws3-l2-physics && \\012nice -n 10 bun run folio/pipeline/voice-le`
-- `17716 0.0 2576 00:09 zsh -c export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS`
-- `19295 0.0 1488 00:01 zsh -c export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS`
-- `23534 0.0 6128 01:21:36 python3 scripts/lean-library-sweep.py --package HeckeTemperleyLieb --jobs 1 --shadow /tmp/ws51-codemod-sha`
-- `77153 0.0 1184 01:47:29 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_`
+- `7854 0.0 2448 00:03 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws5-nov19-rebase && \\012git add computations/probes/qbeta-derived`
+- `7867 86.5 79248 00:03 python3 computations/audits/docstring_label_carrier_audit.py --self-test`
+- `56279 0.0 1136 06:48 zsh -c export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS`
+- `23534 0.0 13904 01:31:47 python3 scripts/lean-library-sweep.py --package HeckeTemperleyLieb --jobs 1 --shadow /tmp/ws51-codemod-sh`
+- `77153 0.0 1088 01:57:40 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_`
 
 ---
 
 ## 4. Highest-Numbered Active Ready PRs on `litlfred/qou` (Merge-Runner Queue)
 
+- #9323 (`claude/link-audit-refutations-x60n-20261124`): docs(audits,qou-x60n): link all 30 docs/audits/*.lean evidence files t
 - #9321 (`claude/witness-repair-g5oz-q3f7-20261124`): fix(qbeta,mass-table): resolve red qou-g5oz level-k probe & refresh 80
 - #9320 (`claude/pauli-lock-inst-d6-nu-o43i-1a69-20261124`): feat(qou-o43i,qou-1a69): formalize Pauli-lock spin/isospin diagnostic 
 - #9318 (`claude/commentary-final2-and-bib-2joi-5sg8-20261124`): feat(pipeline,bib): exempt authors-note in paper-commentary-audit & ve
 - #9311 (`claude/commentary-audit-ch12-16-and-l5-ratchet-20261124`): prose(physics,dynamics,pipeline): drain 20 paper-commentary-audit hits
 - #9302 (`claude/ws1-final-3-q0-witnesses-20261124`): fix(precision): regenerate final 3 q0-anchor refill witnesses & restor
 - #9293 (`claude/q0-anchor-final-21-drain-20261124`): fix(precision,q0-anchor): drain remaining 18 in-scope q0-anchor witnes
-- #9269 (`claude/backlog-drain-batch9-10-20261123`): feat(qou-7igi,qou-mr7s): Backlog Drain Batches 9-10 ClassicalTraceFloo
 - #9243 (`claude/prior-art-doi-verified-pkg-20261123`): bib,intro,qou: add live-DOI-verified consolidated prior-art package (q
 - #9217 (`claude/project-thread-di0nax`): Public release prep: CITATION.cff
 - #9178 (`claude/exposition-statement-rulings-2026-11-16`): Exposition: owner rulings on false or under-derived statements

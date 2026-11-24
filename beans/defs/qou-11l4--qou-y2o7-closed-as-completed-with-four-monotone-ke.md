@@ -1,14 +1,13 @@
 ---
 # qou-11l4
 title: 'qou-y2o7 closed as completed with four monotone-kernel consumers unlisted: four qbeta probes are locked to the grouped ordering and its blast radius never named them'
-status: in-progress
-pr: 8250
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T09:49:46Z
-updated_at: 2026-10-10T10:40:00Z
+updated_at: 2026-11-24T11:20:53Z
 parent: qou-avtq
 ---
 
@@ -103,3 +102,5 @@ Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-u
 - **PR:** https://github.com/litlfred/qou/pull/8250 (head `6ee51e358507527bd6866f4cac2f3d6f10b8818b`, Commit 1 `ee378949fa465d0b0bd6d825c653bded4b4ca1c9`)
 - **Lean 4 Module & Theorems:** `QOU/QBeta/MonotoneKernelLockGSFiltrationAndPipelineTolerance.lean` (`grouped_vs_borromean_word_monotone_lock`)
 - **80-dps Witness:** `computations/probes/round54-tau-functor-borromean-monotone-gs-pipeline.witness.json` (`scriptHash: de41a1d3c1e1`, `allPassed: true`, `0` raw `float64`)
+
+Verified on origin/main (8ec51e68547): all 4 qbeta probes migrated at AST import level to chi_general_word.chi_all_lambda_any with byte-identical allPassed: true witnesses in 426ba3bd64f.

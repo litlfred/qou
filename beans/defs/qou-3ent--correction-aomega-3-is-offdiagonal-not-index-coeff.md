@@ -1,7 +1,7 @@
 ---
 # qou-3ent
 title: 'CORRECTION: A_omega = 3 is the OFF-DIAGONAL Stokes constant, NOT a 3d-index coefficient — eq (21) is diagonal-only'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - correction
     - reorg-2026-10-04
 created_at: 2026-08-11T11:20:00Z
-updated_at: 2026-11-24T03:03:21Z
+updated_at: 2026-11-24T11:20:47Z
 parent: qou-avtq
 ---
 
@@ -66,3 +66,5 @@ The Lean (`QOU.QBeta.aomega_fourOne_dt_count`, conditional on `[StokesDTBPSBridg
 - [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).
 
 4_1 vs 5_2 docstring & GGM eq (21) diagonal-only scope synced at 8bddf72a4dd.
+
+Verified on origin/main (8ec51e68547): GGM eq. (21) diagonal-only vs off-diagonal A_omega = 3 scope synced across mass-theory/aomega-fourone-dt-count.{md,ts}, stokes-dt-bps-bridge.md, and QOU/QBeta/StokesDTBPSBridge.lean (0 sorry, 46bfcd16c43).

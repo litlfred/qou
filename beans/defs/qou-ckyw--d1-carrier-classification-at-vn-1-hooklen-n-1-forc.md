@@ -1,13 +1,13 @@
 ---
 # qou-ckyw
 title: 'D1: carrier classification at v=n-1 — hookLen = n-1 forces two-corner (a,2,1^c) at (0,0), row (n) at (0,1), or column (1^n) at (1,0)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T00:45:17Z
-updated_at: 2026-11-22T21:54:25Z
+updated_at: 2026-11-24T11:20:48Z
 parent: qou-10v9
 ---
 
@@ -26,3 +26,5 @@ Was in-progress with no bean update since 2026-08-07 and no main commit naming i
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+Verified on origin/main (8ec51e68547): D1 depth-1 hook carrier classification proved sorry-free in QOU/BraidsAndKnots/DepthOneHookClassification.lean (5d1201ee647).

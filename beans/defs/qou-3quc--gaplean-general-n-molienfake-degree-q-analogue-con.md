@@ -1,13 +1,13 @@
 ---
 # qou-3quc
 title: 'GAP(lean): general-n Molien/fake-degree q-analogue -- concrete n<=4 proved, general blocked on #SYT + coinvariant grading'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:36Z
 parent: qou-1oif
 ---
 
@@ -254,3 +254,5 @@ lean-direct run on NormalizedSumUnconditional.lean, then close. AGENTS.md update
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8340, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-03: "chore(beans): qou-3quc -- Lean side CLOSED, normalizedSum n q = 1 unconditional (PR #6447)"). The work may be partly or fully done. Read the bean before you close it.
+
+Verified on origin/main (8ec51e68547): general-n Molien/fake-degree identity molienSum_eq_qFactorial and normalizedSum_eq_one proved sorry-free in QOU/MathlibExt/NormalizedSumUnconditional.lean (a347c0e7a4f, 1f602bd22b6, 2e7823052a6).

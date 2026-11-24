@@ -1,13 +1,13 @@
 ---
 # qou-omiu
 title: 'check-sidecars JUST regex: bare ≤/≥ make ℕ index comparisons read as archimedean (§7c false positive)'
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T21:56:07Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:43Z
 parent: qou-trd0
 ---
 
@@ -198,3 +198,5 @@ Left alone.
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8403, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-24: "beans(qou-omiu): §7c half closed on main — and their fix beats mine by 45 files"). The work may be partly or fully done. Read the bean before you close it.
+
+Verified on origin/main (8ec51e68547): scripts/check-sidecars.sh §7c Nat-index false positive fixed (31fc4481cd3) and _probe/_audit suffix exclusion measured and declined (df18b193b45).

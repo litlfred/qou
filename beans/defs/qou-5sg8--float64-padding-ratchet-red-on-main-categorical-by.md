@@ -1,13 +1,13 @@
 ---
 # qou-5sg8
 title: 'float64-padding ratchet RED on main: categorical-bypass-volmatch-demo carries 4 padded binary64 after the mpf lift'
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:03:14Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:32Z
 parent: qou-9nnz
 ---
 
@@ -285,3 +285,5 @@ Was in-progress with no bean update since 2026-08-26 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8282, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Verified on origin/main (8ec51e68547): categorical_bypass_volmatch_demo.py + mass_table_ppb.py + categorical-bypass-volmatch-demo.witness.json (allPassed: true) landed in b06e9354694 (#5204) & bbb18e6ff3f; live witness_float64_padding_audit.py --strict reports 0 padded occurrences across 0 live files.

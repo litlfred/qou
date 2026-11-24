@@ -1,13 +1,13 @@
 ---
 # qou-rutm
 title: 'Source a charge lattice for the 5_2 sigma: T[5_2] flavour lattice from 3d-3d (D1-b arrow test)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T07:37:09Z
-updated_at: 2026-10-04T15:13:58Z
+updated_at: 2026-11-24T11:20:38Z
 parent: b9cj
 ---
 
@@ -427,3 +427,5 @@ Was in-progress with no bean update since 2026-09-05 and no main commit naming i
 - **Status:** `in-progress` (opened `litlfred/qou#8316`, branch `claude/round59-devacuify-6qbv-b9cj`, HEAD `53b4a670e74a8018b8da97a71f572d818338e732`, C1 `76d4ce5f89f2c26a87c0da074bf6c76b37e0ea03`).
 - **Target:** `folio/quantum-observable-universe/lean/QOU/QBeta/BarParityZeta4Swap.lean` + 80-dps witness `computations/probes/round59-devacuify-6qbv-b9cj.witness.json` (`scriptHash = 80c9bce8d43a`, `allPassed = true`, `0` `float64`).
 - **Updated at:** `2026-11-17T10:55:34Z`.
+
+Verified on origin/main (8ec51e68547): 5_2 charge-lattice sourcing closed as scope-(b) negative with QOU/QBeta/BarParityZeta4Swap.lean (0 sorry) and all 4 d1b-52-*.witness.json (allPassed: true) in 22c51c1fdd1, de844bc593e, c371d929c81, 1ab5d171cb1.

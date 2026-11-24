@@ -1,13 +1,13 @@
 ---
 # qou-21oc
 title: 'Drop the UIC Pass-2 sign gate: enacted; the ungated total is ALSO wrong-signed'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T22:56:10Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:40Z
 parent: qou-trd0
 ---
 
@@ -207,3 +207,5 @@ here — is unaffected and was re-verified on a second full run.)*
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8396, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Verified on origin/main (8ec51e68547): UIC Pass-2 sign gate dropped per owner ruling + uic-sign-decomposition.witness.json (allPassed: true) + AME registry fix landed in 7c2cf8dacef, 314b1abaec4.

@@ -1,13 +1,13 @@
 ---
 # qou-kok7
 title: Formalize bond-frustration sign-change window κ∈(3/2,3) (Lean, sorry-free)
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-26T01:05:25Z
-updated_at: 2026-11-22T21:54:15Z
+updated_at: 2026-11-24T11:20:49Z
 parent: qou-10v9
 ---
 
@@ -20,3 +20,5 @@ parent: qou-10v9
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+Verified on origin/main (8ec51e68547): bond-frustration sign-change window kappa in (3/2, 3) formalized sorry-free in QOU/MassTheory/AdditiveSignChangingTerm.lean (64464eb1b2f).

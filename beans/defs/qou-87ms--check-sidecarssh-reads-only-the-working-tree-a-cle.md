@@ -1,13 +1,13 @@
 ---
 # qou-87ms
 title: check-sidecars.sh reads only the working tree — a clean run on a committed branch proves nothing
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T21:20:58Z
-updated_at: 2026-10-04T15:16:55Z
+updated_at: 2026-11-24T11:20:35Z
 parent: qou-5vkl
 ---
 
@@ -64,3 +64,5 @@ that anything else complies*:
   (e.g. `braids-and-knots/chi-std-pernucleon-closed-form.lean`, red on main).
 
 - **Round 97 (`litlfred/qou#8432`)**: Advanced in `feat/round97-monotone-multbound-ncpart-nonuniform-onebody-43c1` (Commit 1 `e883e42fdde30a6d22e385b72041c6f52899312f`, Commit 2 `56d66b28962228fdc58ad152218bdd3754f7c059`, probe sha256 `e41a92695f7287bc24947a7f23e2cb1aff6e02fcb3b0e34fb76f50f0c076b259`).
+
+Verified on origin/main (8ec51e68547): scripts/check-sidecars.sh (via scripts/lib/changed-files.sh, 5731038f3bc & #5495) unions merge-base diff origin/main...HEAD with working-tree diffs and reports explicit scope.

@@ -1,13 +1,13 @@
 ---
 # qou-m6gp
 title: 'Evaluate observable C for the first time: SnapPy volume of the DERIVED braid closures (binding_volume_difference_probe leg C never ran)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:06:40Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:42Z
 parent: qou-v2om
 ---
 
@@ -45,3 +45,5 @@ Was in-progress with no bean update since 2026-09-07 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8339, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Verified on origin/main (8ec51e68547): Observable C evaluated with SnapPy 3.3.2 (_snappy_leg_c) + binding-volume-difference-probe.witness.json (allPassed: true) landed in 0fcb280ca19, 2bcc28dee79, ec645c5a538.

@@ -1,13 +1,13 @@
 ---
 # qou-b9c3
 title: 22 PDFs sit in library/ never sectioned — a third un-ingested population, invisible to every path-5 tier
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T09:42:46Z
-updated_at: 2026-10-04T15:11:43Z
+updated_at: 2026-11-24T11:20:37Z
 parent: qou-mub3
 ---
 
@@ -255,3 +255,5 @@ So the drain's one caveat is retired: all 23 carry real greppable text.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+Verified on origin/main (8ec51e68547): all 23 unsectioned library/ PDFs ingested and scanned PDF OCR'd in 9614a1058c1, f9105d42c92, 2610f744076.

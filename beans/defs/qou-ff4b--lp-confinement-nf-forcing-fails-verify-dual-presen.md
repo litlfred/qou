@@ -1,13 +1,13 @@
 ---
 # qou-ff4b
 title: 'lp-confinement-nf-forcing FAILS verify_dual_present: 6 records where active_set is empty but y_star has tight constraints'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T04:46:25Z
-updated_at: 2026-11-16T20:10:00Z
+updated_at: 2026-11-24T11:20:51Z
 parent: qou-trd0
 ---
 
@@ -94,3 +94,5 @@ here and is the only thing that caught it.
   - Updated `_finish` in `tools/pyhecke/python/pyhecke/lp_dual_solver.py` and `computations/lp_confinement_nf_forcing.py` to always derive `active_set` from `y_star` / `y0_star`, and updated all 6 records in `computations/lp-confinement-nf-forcing.witness.json` from their committed 167-bit `lp_y_star_str` / `lp_y0_star_str` (`active_set` `[1, 2]`, `[1, 2]`, `[0, 2]`, `[1, 2, 3, 4]`, `[1, 2, 3, 4]`, `[1, 2, 3, 4]`; `maximizer_in_active_set: true` on 6/6 compounds).
   - Added `--self-test` / `--selftest` to `computations/lp_confinement_nf_forcing.py` and regression test `test_lp_confinement_nf_forcing_witness_passes_verify_dual_present` in `tools/pyhecke/tests/test_lp_dual_null_hardening.py` (`9 passed`).
 - **Status:** Kept `in-progress` pending PR #8161 merge and owner review.
+
+Verified on origin/main (8ec51e68547): lp_confinement_nf_forcing.py and lp-confinement-nf-forcing.witness.json (allPassed: true) fixed + --self-test passing verify_dual_present (b9416b82d03, exit 0).

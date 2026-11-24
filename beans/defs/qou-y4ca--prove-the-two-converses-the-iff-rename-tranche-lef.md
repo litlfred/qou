@@ -1,11 +1,11 @@
 ---
 # qou-y4ca
 title: Prove the two converses the iff-rename tranche left one-directional
-status: in-progress
+status: completed
 type: task
 priority: low
 created_at: 2026-10-10T07:29:24Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-24T11:20:39Z
 parent: b9cj
 ---
 
@@ -304,3 +304,5 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 
 ## Round 57 Progress (PR litlfred/qou#8286)
 - Status updated to `in-progress` (`litlfred/qou#8286`, C1 `6c7a20f3289e7e0671ce65ef402e1a06fd77c443`, C2 `dce9c51d4a6cd8f2253c078180b4b77a6f7c1ed0`).
+
+Verified on origin/main (8ec51e68547): both converses proved sorry-free: denomPoly_eq_zero_iff in mass-theory/q-pochhammer-partial-product.lean (570ee7fdb66) and offDiag_eq_zero_iff_eq_neg_one in QOU/SchurWeyl/OffDiagNonvanishing.lean (ded29018b8e, 6243c068932).

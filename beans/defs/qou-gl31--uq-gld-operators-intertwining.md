@@ -1,14 +1,14 @@
 ---
 # qou-gl31
 title: 'G3.1: U_q(gl_d) Cartan and E_i/F_i on (R^d)^{⊗n}; [Ř_t, Δ(X)] = 0 (image ⊆ commutant)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T10:10:00Z
-updated_at: 2026-11-22T21:59:12Z
+updated_at: 2026-11-24T11:20:52Z
 parent: qou-qs0e
 ---
 
@@ -24,3 +24,5 @@ Cartan product weight, for every d. This is the inclusion image ⊆ commutant. I
 ## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
 
 Parent set to `qou-qs0e`: old parent `qou-gld3` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.
+
+Verified on origin/main (8ec51e68547): G3.1 U_q(gl_d) Cartan and E_i/F_i action + Hecke intertwining (image subseteq commutant) proved sorry-free in QOU/SchurWeyl/QuantumGLAction.lean & QuantumGLIntertwine.lean (41e408eb41f).

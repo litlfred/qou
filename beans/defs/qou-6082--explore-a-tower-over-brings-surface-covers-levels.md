@@ -1,11 +1,11 @@
 ---
 # qou-6082
 title: Explore a tower over Bring's surface (covers / levels)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-12T18:48:35Z
-updated_at: 2026-11-22T21:59:12Z
+updated_at: 2026-11-24T11:20:52Z
 parent: qou-gwte
 ---
 
@@ -34,3 +34,5 @@ Extended `QOU/Brings/BringCoverTower.lean` (`lean -DautoImplicit=false -s 65536`
 ## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
 
 Parent set to `qou-gwte`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.
+
+Verified on origin/main (8ec51e68547): Bring cover and derived descending tower (QOU/Brings/BringCoverTower.lean, BringDescendingTower.lean, 0 sorry) + bring-descending-tower.witness.json (allPassed: true) + Hurwitz (2,4,5) PSL2/PGL2 family landed (dde282b8e74, 4b67f926262).

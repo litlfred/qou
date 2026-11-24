@@ -1,13 +1,13 @@
 ---
 # qou-hlp5
 title: 'Pre-existing RED: raw-float64 ratchet (new_not_baselined=4) + 2 stale q0 audit witnesses on main'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:28:22Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:34Z
 parent: qou-9nnz
 ---
 
@@ -56,3 +56,5 @@ its producer, (4) commit the regenerated audits naming which counts moved.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8349, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Verified on origin/main (8ec51e68547): stale q0/provenance audit witnesses refreshed in full-dependency environment in 426749c2733 and live witness_raw_float64_audit.py exits 0 with new_not_baselined = 0 and REGRESSED = 0.

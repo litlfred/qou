@@ -1,13 +1,13 @@
 ---
 # qou-drag
 title: The value-fingerprint audit swept only the ordering axis; the colour ruling of 2026-08-15 was invisible to it
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T20:16:14Z
-updated_at: 2026-10-04T15:25:01Z
+updated_at: 2026-11-24T11:20:41Z
 parent: qou-5vkl
 ---
 
@@ -66,3 +66,5 @@ unwatched one.
 
 The +4 files and +2 reflections are real detections the previous version could
 not make; they are simply all accounted for.
+
+Verified on origin/main (8ec51e68547): colour-ruling axis (20 -> 32 live fingerprints) wired into computations/audits/intra_ordering_value_fingerprint_audit.py + .witness.json (allPassed: true, 62290293290).

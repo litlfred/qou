@@ -1,13 +1,13 @@
 ---
 # qou-xbh4
 title: qbeta_ohtsuki_sixone_kappa_series VOL_6_1 is built at mp.dps=15 — two blocking precision gates red on main
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T16:38:15Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:34Z
 parent: qou-9nnz
 ---
 
@@ -69,3 +69,5 @@ has an owner.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8391, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Verified on origin/main (8ec51e68547): computations/qbeta/qbeta_ohtsuki_sixone_kappa_series.py calls set_compute_dps() before VOL_6_1; both mpf_import_time_dps_audit.py (proven lossy = 0) and module_const_precision_audit.py (LOSSY = 0) exit 0.

@@ -1,13 +1,13 @@
 ---
 # qou-35du
 title: 'Triage: the 5_2 survey''s R2/R3 bibliography recommendations are much weaker than presented — corpus-grepped'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-18T21:47:15Z
-updated_at: 2026-10-04T15:25:12Z
+updated_at: 2026-11-24T11:20:40Z
 parent: qou-mub3
 ---
 
@@ -52,3 +52,5 @@ there is no such proposition; for R2 the machinery is already present under a
 different citation.
 
 Scope doc: `docs/scope/2026-08-18-5two-survey-r2-r3-triage.md`
+
+Verified on origin/main (8ec51e68547): 5_2 survey R2/R3 bibliography triage completed in docs/scope/2026-08-18-5two-survey-r2-r3-triage.md (c4214231261).

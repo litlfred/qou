@@ -1,13 +1,13 @@
 ---
 # qou-7kq3
 title: 'raw-float64 ratchet is RED on main: 4 new dirty witnesses + 1 regressed'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T17:05:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:20:33Z
 parent: qou-9nnz
 ---
 
@@ -146,3 +146,5 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8292, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Verified on origin/main (8ec51e68547): gswz_epsm_*, qbeta-g3-aomega-route-a-newton-polygon, owner-approved float64-integrator carve-out (511a8b8949f), and #9303 (52823c58a80) landed; live witness_raw_float64_audit.py exits 0 with NEW dirty witnesses = 0 and REGRESSED = 0.

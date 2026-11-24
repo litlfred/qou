@@ -1,13 +1,13 @@
 ---
 # qou-nok3
 title: 'Unrecorded argv provenance: 4 confirmed producers whose flag changes the payload'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T23:15:31Z
-updated_at: 2026-10-04T15:25:17Z
+updated_at: 2026-11-24T11:20:38Z
 parent: qou-5vkl
 ---
 
@@ -265,3 +265,5 @@ The probe's CONCLUSION is unaffected — `allPassed` still true, no assertion
 flipped, the negative result (the 3.213 length-scale is not a cusp-geometry
 ratio) stands. A 1e-6 correction cannot move a 3.2-vs-1.1 comparison. But the
 number in the corpus was wrong and now is not.
+
+Verified on origin/main (8ec51e68547): argv provenance wired in tools/qou-substrate/python/qou_substrate/witness.py + test_invocation_provenance.py (c53fe8218e8), --n12 witness regenerated (b342ef1a3e1), and 5 undeterminable cases resolved (143cdca3d4e).

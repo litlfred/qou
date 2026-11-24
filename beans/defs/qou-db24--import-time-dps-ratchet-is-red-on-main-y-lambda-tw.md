@@ -1,13 +1,13 @@
 ---
 # qou-db24
 title: 'import-time dps ratchet is RED on main: y_lambda_two_row_cap_gate.py builds mpf(''1e-30'') before dps is raised'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-28T15:18:36Z
-updated_at: 2026-11-17T11:48:14Z
+updated_at: 2026-11-24T11:20:34Z
 parent: qou-9nnz
 ---
 
@@ -95,3 +95,5 @@ run's per-gate counts were unreliable. Both reds were then re-established by
 running the two audits individually against a tree whose only change was one
 unrelated file, and each named its offending file explicitly — which is the
 evidence quoted above, not the racing run.
+
+Verified on origin/main (8ec51e68547): computations/audits/y_lambda_two_row_cap_gate.py calls set_compute_dps() before CAP_RATIO_MAX (mpf_import_time_dps_audit.py exit 0, proven lossy = 0) and witness_raw_float64_audit.py --scan-root docs/audits --no-write exits 0 (NEW = 0, REGRESSED = 0).

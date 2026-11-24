@@ -1,13 +1,13 @@
 ---
 # qou-nial
 title: 'ROOT CAUSE: the bond rule is a centred SUM of charges where Coulomb needs a PRODUCT — one substitution explains the whole arc'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T13:00:13Z
-updated_at: 2026-10-04T15:24:13Z
+updated_at: 2026-11-24T11:20:46Z
 parent: qou-v2om
 ---
 
@@ -245,3 +245,5 @@ re-tuning of the letters. Tracking there: `qou-556v`.
 - **PR**: [`litlfred/qou#8267`](https://github.com/litlfred/qou/pull/8267) (branch `feat/round65-radical-branching-bond-habiro-cusp-43c1`, Commit 1 `20143712c434683951cbe6f568953fd4a98454bc`, Commit 2 / Head `1ee46ede72413597113d706dd733554a25e327d5`).
 - **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/MassTheory/BondChargeRule.lean (`sumRule_sub_prodRule_and_total_deficit`)` (0 sorry, 0 findings across all 6 static vacuity audits).
 - **80-dps Witness**: `computations/probes/radical_branching_bond_habiro_cusp_probe.py` (`scriptHash: 949a90321cd5`) + `test/results/witnesses/radical-branching-bond-habiro-cusp.witness.json` (`allPassed: true`).
+
+Verified on origin/main (8ec51e68547): sum-vs-product bond-charge diagnosis proved sorry-free in QOU/MassTheory/BondChargeRule.lean + QOU/Hecke/BoundedDegreeCoulomb.lean and verified in level3_bond_charge_rule_probe.py & bond_rule_dashboard_comparison_probe.py (6bfbf0b533a).

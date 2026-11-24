@@ -1,14 +1,13 @@
 ---
 # qou-vvy7
 title: Remark interpreting [koornwinderswarttouw1992] at QOU.BraidKnot.Keystone
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:47Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T11:20:47Z
 parent: qou-vva9
 ---
 
@@ -36,3 +35,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8425, closed o
 ## 2026-11-22 — fixed in PR #9116: KeystoneSelfDualSpectralNarrowing: the E_q(2) reading is attributed to Vaksman–Korogodskiĭ.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+Verified on origin/main (8ec51e68547): QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean updated in eb70284b32c (#9115/#9116) attributing the E_q(2) q-Hankel setting to Vaksman-Korogodskii.
