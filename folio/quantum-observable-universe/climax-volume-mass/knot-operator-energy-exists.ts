@@ -8,4 +8,7 @@ export default proposition({
   },
   uses: ["def:knot-operator-energy"],
   tags: ["existence", "knot-operator", "shadow-price", "lp-dual"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-24", body: "Relocated from the block prose by the reading-order drain (qou-d4kh): by [mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)" },
+  ],
 });
