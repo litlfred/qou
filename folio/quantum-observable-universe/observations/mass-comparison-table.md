@@ -18,7 +18,7 @@ The electron mass is an input: it fixes the MeV scale (CAL-1). At the proton-pin
 
 *Hadrons (from pair Skein masses).*
 
-The proton and neutron rows derive from the LO $\rho_K$ assembly. This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula does not yet extend to the nucleon scale. The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV under the ruled convention-D base, against CODATA $1.2933$ MeV).
+The proton and neutron rows derive from the LO $\rho_K$ assembly. This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula does not yet extend to the nucleon scale. The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV on the $z = q_0^3/(q_0^2+1)$ $\Delta$ base, against CODATA $1.2933$ MeV).
 
 See [Table 2](#tbl:mass-comparison-table-table2-data).
 
@@ -30,17 +30,15 @@ Per [Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-q
 
 $$
 \boxed{
-\mathfrak{Q}_\beta^{\text{pred}} = \mathfrak{Q}_\beta^{z_D} = \Bigl|\tfrac{h^2}{2} - h\,z_D\Bigr|\,\frac{m_e}{q_0(q_0-1)(1-\hbar_q^2)} \approx 0.4491 \text{ MeV}
+\mathfrak{Q}_\beta^{\Delta} = \Bigl|\tfrac{h^2}{2} - h\,z\Bigr|\,\frac{m_e}{q_0(q_0-1)(1-\hbar_q^2)} \approx 0.4491 \text{ MeV}
 }
 $$
 
-with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. The energy scale is the tower-summed $E_0$; the order-zero form $m_e/(q_0(q_0-1))$ gives $0.4447$ MeV. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$. It compares to the CODATA value of $0.7823$ MeV at $-42.59\%$ ($-333.2$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
+with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$, and $z = q_0^3/(q_0^2+1)$. Using the tower-summed $E_0$ (the order-zero form $m_e/(q_0(q_0-1))$ gives $0.4447$ MeV), this Markov-trace $\Delta$ evaluation sits at $-42.59\%$ ($-333.2$ keV) relative to CODATA $0.7823$ MeV; no $c_k$ correction ladder at $z = q^3/(q^2+1)$ has yet been derived, and a cosine factor cannot exceed $1$ ([cos-resummation](#prop:q-beta-cos-resummation)).
 
-The value scored on the L2 scorecard is a different functional on a different element: the $T^3$ weight split of the same $z_D$ trace on the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$, $\mathfrak{Q}_\beta^{\mathrm{scored}} = |\varepsilon_{\mathrm{flavour}}(V^3)|\,E_0 \approx 0.3254$ MeV ($-58.40\%$), which gives $\mathfrak{m}_n - \mathfrak{m}_p \approx 0.8364$ MeV ($-35.3\%$). The $0.4491$ MeV above is kept as an unscored comparison.
+The scored evaluation applies the $T^3$ weight split of the $z = q_0^3/(q_0^2+1)$ trace to the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$, giving $\mathfrak{Q}_\beta^{\mathrm{scored}} = |\varepsilon_{\mathrm{flavour}}(V^3)|\,E_0 \approx 0.3254$ MeV ($-58.40\%$) and $\mathfrak{m}_n - \mathfrak{m}_p \approx 0.8364$ MeV ($-35.3\%$). On the $\Delta$ evaluation above ($0.4491$ MeV), $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV ($-26.11\%$ relative to CODATA $1.2933$ MeV).
 
-The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV. This compares to the CODATA value of $1.2933$ MeV ($-26.11\%$ error, no CODATA $m_n - m_p$ input).
-
-*Retired Form A (historical cross-check only).* The earlier closed form $m_e\,|q_0^2 - 2q_0 - 1|\,(q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$, giving $m_n - m_p \approx 1.295$ MeV) evaluates $\varepsilon$ at $z = 1$, which is not an admissible Markov parameter under convention D. It is kept for comparison and is not the prediction.
+*Coordinate-sum Form A ($z = 1$ comparison).* Evaluating $\varepsilon$ at $z = 1$ gives $m_e\,|q_0^2 - 2q_0 - 1|\,(q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$, $m_n - m_p \approx 1.295$ MeV); because $z = 1$ does not satisfy $y_{(1^3)}(z) = 0$, it serves only as an algebraic comparison.
 
 *Light nuclei (from multi-body Skein).* 
 

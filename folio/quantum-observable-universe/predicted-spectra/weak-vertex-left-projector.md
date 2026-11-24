@@ -24,15 +24,15 @@ $$
 
 So the choice of which crossing carries the weight, left open in [the force-carrier identification](#rem:force-knot-identification), is the same choice as the left line.
 
-**Scope at the level of a knot.** The statement is about one crossing. It does not extend to the trace of the weak knot $T_{3,5}$, the closure of $(\sigma_1\sigma_2)^5$ in $H_3(q)$. Under the convention-D Markov trace $\tau_D$, the part of that trace on the right line of $\sigma_1$ is
+**Scope at the level of a knot.** The statement is about one crossing. It does not extend to the trace of the weak knot $T_{3,5}$, the closure of $(\sigma_1\sigma_2)^5$ in $H_3(q)$. Under the Markov trace $\mathrm{tr}_M$ at $z = q^3/(q^2+1)$, the part of that trace on the right line of $\sigma_1$ is
 
 $$
-\tau_D\bigl((\sigma_1\sigma_2)^5\, P_R\bigr) \;=\; -\frac{q^2}{(q^2+1)^3} \;\neq\; 0 .
+\mathrm{tr}_M\bigl((\sigma_1\sigma_2)^5\, P_R\bigr) \;=\; -\frac{q^2}{(q^2+1)^3} \;\neq\; 0 .
 $$
 
-At the proton parameter $q_0$ this is $-9.33\,\%$ of $\tau_D\bigl((\sigma_1\sigma_2)^5\bigr)$. All of it comes from the two-dimensional block of $H_3(q)$, because convention D gives the sign block weight zero. For the torus words $(\sigma_1\sigma_2)^N$ the right-line part repeats with period $3$ in $N$ and is never zero.
+At the proton-anchored $q_0$ this is $-9.33\,\%$ of $\mathrm{tr}_M\bigl((\sigma_1\sigma_2)^5\bigr)$. All of it comes from the two-dimensional block of $H_3(q)$, since $y_{(1^3)} = 0$ at $z = q^3/(q^2+1)$. For the torus words $(\sigma_1\sigma_2)^N$ the right-line part repeats with period $3$ in $N$ and is never zero.
 
-This is a property of every trace of this shape, not only of convention D. Write a trace on $H_3(q)$ as $\tau = y_{(3)}\chi_{(3)} + y_{(2,1)}\chi_{(2,1)} + y_{(1^3)}\chi_{(1^3)}$. Assume $|q| > 1$, so that $P_R = P_-$, and $[3]_q \neq 0$. Then $\tau(x P_R) = 0$ for every $x$ if and only if $y_{(2,1)} = y_{(1^3)} = 0$. With $\tau(1) = 1$, such a trace is the augmentation $\sigma_i \mapsto q$. It already suffices that $\tau$ vanish on $P_R$ and on $\sigma_2 P_R$. Convention D has $y_{(2,1)} \neq 0$, so no word-level one-sidedness is available under it.
+This holds for every trace with $y_{(2,1)} \neq 0$, not only at $z = q^3/(q^2+1)$. Write a trace on $H_3(q)$ as $\tau = y_{(3)}\chi_{(3)} + y_{(2,1)}\chi_{(2,1)} + y_{(1^3)}\chi_{(1^3)}$. Assume $|q| > 1$, so that $P_R = P_-$, and $[3]_q \neq 0$. Then $\tau(x P_R) = 0$ for every $x$ if and only if $y_{(2,1)} = y_{(1^3)} = 0$. With $\tau(1) = 1$, such a trace is the augmentation $\sigma_i \mapsto q$; it already suffices that $\tau$ vanish on $P_R$ and on $\sigma_2 P_R$. Since $y_{(2,1)} = q^2/(q^2+1)^2 \neq 0$ at $z = q^3/(q^2+1)$, no word-level one-sidedness holds.
 
 **Where the weak vertex comes from.** The definition of $W$ rests on two inputs that are chosen, not derived.
 

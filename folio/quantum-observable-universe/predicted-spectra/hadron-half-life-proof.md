@@ -28,7 +28,7 @@ The parameter $q$ fixes every factor:
 
    Here $Q = \sum_{i<j} Q_i Q_j$ is the all-pairs charge insertion, $E$ its expectation onto the commutant of $H_3(q)$ on $W_m$, and $E(Q)^{\mathrm{conn}}$ its part with the scalar $\mathrm{Tr}_{W_m}Q/\dim W_m$ removed.
 
-   - **One-term part.** $t_1$ is the convention-D Markov trace, $t_1 = \mathcal{W}(q) = q^2(q^{12} + q^8 - 1)/(q^2+1)^2$, with $\mathcal{W}(1) = 1/4$. The vanishing of the rate in the classical limit $q \to 1$ is carried by the $q$-prefactor of the rate, which is zero at $q = 1$, and not by the vertex factor.
+   - **One-term part.** $t_1$ is the Markov trace at $z = q^3/(q^2+1)$, $t_1 = \mathcal{W}(q) = q^2(q^{12} + q^8 - 1)/(q^2+1)^2$, with $\mathcal{W}(1) = 1/4$. The vanishing of the rate in the classical limit $q \to 1$ is carried by the $q$-prefactor of the rate, which is zero at $q = 1$, and not by the vertex factor.
    - **Connected part.** $W_{\pm 3}$ are one-dimensional, so they contribute nothing to $t_2$. On $W_{\pm 1}$ the trivial isotypic idempotent is $P_{(3)} = v v^{\mathsf T}/(q^4+q^2+1)$ with $v = (1, q, q^2)$. For any diagonal insertion $Q$ the connected expectation is $\kappa\,(\tfrac32 P_{(3)} - \tfrac12)$, where $\kappa = \sum_b Q_b\,(d_b - \tfrac13)$ and $d = (1, q^2, q^4)/(q^4+q^2+1)$. Since $\mathrm{Tr}(P_{(3)}\rho(X)) = q^{10}$ and $\mathrm{Tr}_{W_{\pm 1}}\rho(X) = q^{10} - 1$,
 
      $$

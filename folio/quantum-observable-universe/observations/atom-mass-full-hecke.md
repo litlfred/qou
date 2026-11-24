@@ -17,16 +17,14 @@ $$
 
 where $\hat y_\lambda$ are the $q$-deformed Jones--Markov weights. The classical Wedderburn--Artin values are heavily deformed.
 
-These weights depend on the Markov parameter $z$, and the values below differ between the two conventions:
+These weights depend on the loop parameter $z$:
 
-| | $\hat y_{\mathrm{sym}}$ | $\hat y_{\mathrm{std}}$ | $\hat y_{\mathrm{alt}}$ |
+| Parameter evaluation | $\hat y_{\mathrm{sym}}$ | $\hat y_{\mathrm{std}}$ | $\hat y_{\mathrm{alt}}$ |
 |:---|---:|---:|---:|
-| convention D, $z = q^{3}/(q^{2}+1)$ (canonical) | $0.5054$ | $0.4946$ | $0$ |
-| convention C, $z = \sqrt{q}/(q+1)$ (excised) | $0.42$ | $0.56$ | $0.02$ |
+| Markov parameter $z = q^{3}/(q^{2}+1)$ | $0.5054$ | $0.4946$ | $0$ |
+| Auxiliary parameter $z_{\mathrm{aux}} = \sqrt{q}/(q+1)$ | $0.42$ | $0.56$ | $0.02$ |
 
-The alternating weight is **exactly zero** under the canonical convention, not merely small. Any statement that the alternating block is *suppressed* describes convention C; under convention D that channel does not contribute at all, and a nonzero $\hat y_{\mathrm{alt}}$ is itself a convention-C signature.
-
-The convention-C row is retained because the results tabulated below were computed in it and have not been recomputed under D. They are reported as measured, in the frame that produced them.
+At $z = q^3/(q^2+1)$ the alternating weight $\hat y_{\mathrm{alt}}$ is **identically zero** rather than merely small. The $Z = 1\text{--}10$ numerical table below was evaluated at $z_{\mathrm{aux}} = \sqrt{q}/(q+1)$ ($q = 111/100$) and has not yet been regenerated at $z = q^3/(q^2+1)$; both rows above are shown so the tabulated channel weights are explicit.
 
 ## Mass decomposition
 

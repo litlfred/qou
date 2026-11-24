@@ -5,6 +5,6 @@ $$
 $$
 *This realises the pre-Archimedean substrate as a concrete operator algebra.*
 
-**Note (the quotient is not cosmetic).** Under the canonical convention D the trace ideal is non-trivial: $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$ with $y_\lambda = 0$ exactly when $\ell(\lambda) \geq 3$, so $\mathcal{N}$ is the Temperley–Lieb radical and $H_\infty(q)/\mathcal{N} \cong \mathrm{TL}_\infty(q)$. Faithfulness therefore holds on the quotient and *not* on $H_\infty(q)$ itself. Under the excised convention C every $y_\lambda$ was non-zero, $\mathcal{N}$ collapsed to $0$, and the two statements coincided.
+**Note (the quotient is non-trivial).** At $z = q^3/(q^2+1)$ the trace ideal is non-zero: $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$ with $y_\lambda = 0$ precisely when $\ell(\lambda) \geq 3$, so $\mathcal{N}$ is the Temperley–Lieb radical and $H_\infty(q)/\mathcal{N} \cong \mathrm{TL}_\infty(q)$. Faithfulness therefore holds on the quotient rather than on $H_\infty(q)$ itself.
 
-**Positivity domain.** Under Convention D, trace positivity on the Temperley–Lieb quotient holds unconditionally for every real $q > 0$ (whereas the inequality $q^{1/2} + q^{-1/2} > 2$, equivalent to $(q^{1/4} - q^{-1/4})^2 > 0$, only excludes $q = 1$).
+**Positivity domain.** Because $[2]_q = q + q^{-1} \geq 2$ for every real $q > 0$, trace positivity on the Temperley–Lieb quotient holds unconditionally for all $q > 0$.

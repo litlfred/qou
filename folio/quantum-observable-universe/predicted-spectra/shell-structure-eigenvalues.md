@@ -113,7 +113,7 @@ $$
        {\lambda_+ - \lambda_-}
 $$
 
-where $z = q^{3}/(q^{2}+1)$ is the Markov parameter (**convention D**).
+where $z = q^{3}/(q^{2}+1)$ is the Markov parameter.
 
 Define:
 

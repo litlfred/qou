@@ -1,4 +1,4 @@
-| Quantity at $q_0 = 1.109978582751381$ (proton pin, **convention D**) | Value |
+| Quantity at $q_0 = 1.109978582751381$ (proton-anchored $q_0$, $z = q^3/(q^2+1)$) | Value |
 |---|---|
 | $h = q - q^{-1}$ | $0.2090602987956393$ |
 | $z = q^3/(q^2+1)$ | $0.6126880371464653$ |

@@ -77,7 +77,7 @@ $$
 
 These are distinct when $\mu_a \neq \mu_b$. The asymmetry $\mathcal{S}_{ab} - \mathcal{S}_{ba} = (q - q^{-1})(\mu_a - \mu_b)/(q^{1/2} + q^{-1/2})$ is the weak asymmetry. This drives the $Q$-value.
 
-The pair Skein formula uses the excised convention-C Markov weight $1/(q^{1/2}+q^{-1/2})$. The identification $\mathcal{S}_{ba}(q) = \mathcal{S}_{ab}(q^{-1})$ also relies on that convention: the C denominator is invariant under $q \leftrightarrow q^{-1}$, but the canonical weight $z = q^3/(q^2+1)$ is not. Both statements are convention-C results until the pair-Skein formula is re-derived under the canonical weight.
+Note that the pair-Skein expression above uses the bar-symmetric denominator $q^{1/2}+q^{-1/2}$ rather than the reciprocal of the Markov parameter $z = q^3/(q^2+1)$: the symmetry $\mathcal{S}_{ba}(q) = \mathcal{S}_{ab}(q^{-1})$ relies on the $q \leftrightarrow q^{-1}$ invariance of $q^{1/2}+q^{-1/2}$, which $z = q^3/(q^2+1)$ does not satisfy. Re-deriving the pair-Skein weighting at $z = q^3/(q^2+1)$ remains open.
 
 ## The lepton pair from $T_{3,5}$ decomposition
 

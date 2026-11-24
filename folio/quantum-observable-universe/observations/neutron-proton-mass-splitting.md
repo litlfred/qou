@@ -14,7 +14,7 @@ $$
 is the quantum dilogarithm volume.*
 
 The volumes are the traced-volume closed forms evaluated at the canonical
-Markov parameter $z_D = q^3/(q^2+1) = 0.6126880371$ at $q_0$, pairing each
+Markov parameter $z = q^3/(q^2+1) = 0.6126880371$ at $q_0$, pairing each
 strand with every later strand. This gives
 $\Phi(\mathfrak{u}\mathfrak{u}\mathfrak{d}) \approx -0.614886$,
 $\Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d}) \approx -0.896395$ and
@@ -23,14 +23,10 @@ value is $\Delta m \approx 1.0541$ MeV.
 
 **Comparison with measurement.** The CODATA splitting is
 $m_{\mathfrak{n}} - m_{\mathfrak{p}} \approx 1.29333$ MeV, so the model value
-is about $18.5\%$ below it. This comparison is the empirical claim of the
-block. For historical comparison only: the earlier value used the retired
-convention-C parameter $z = 4993/10000$ (the rounded $\sqrt{q}/(q+1)$) and gave
-$1.302$ MeV, about $0.64\%$ above the measured value. That figure is not the
-model's value, and a closer residual is not evidence for a convention.
+is about $18.5\%$ below it. This comparison is the empirical claim of the block.
 
 **A second model value.** The corpus has a second, independent route to the
-splitting. The T³ weight split of the $z_D$ trace on the $\gamma\gamma$
+splitting. The $T^3$ weight split of the $z = q^3/(q^2+1)$ trace on the $\gamma\gamma$
 nucleon gives $Q_\beta = \lvert t_{\mathfrak n} - t_{\mathfrak p}\rvert \cdot E_0
 \approx 0.3254$ MeV, where $E_0 = m_e/(q(q-1))$ (tower-summed) is the corpus's
 derived hadronic scale. The decay kinematics
@@ -51,4 +47,4 @@ shows a quark-ordering volume cannot carry the splitting.
 
 So the keV, ppm and ppb values recorded with these files describe selected combinations, are not predictions, and are not scored. The splitting still requires a quantity the framework does not yet derive.
 
-**Canonical quantum-trace weighting.** On the three-strand tensor cube, the quantum trace $\mathrm{Tr}(K^{\otimes 3}\,\cdot\,)/[2]_q^3$ reproduces the convention-D Markov parameter and fixes the canonical weighting without free choice; the plain, $K_n/K_p$, $K_p^3$, and $q$ weightings serve only as labelled comparisons. For the covariant insertion $Q_{12}+Q_{23}+Q_{13}$ summed over all three pairs, the connected part vanishes on $V^3$, so the resulting two-term contribution to $m_{\mathfrak{n}} - m_{\mathfrak{p}}$ is zero. Figures such as $M_{\mathfrak{p}}^{\mathrm{QED,conn}} \approx +0.2201$ keV, $\Delta m^{\mathrm{QED,conn}} \approx -0.3317$ keV, and a $\mu$–$p$ tension of $8.06$ ppb ($0.37\sigma$) arise only from the $1/3$-normalised plain weighting restricted to adjacent pairs; they do not hold for the covariant quantum-trace form and do not resolve the $\mu$–$p$ tension.
+**Canonical quantum-trace weighting.** On the three-strand tensor cube, the quantum trace $\mathrm{Tr}(K^{\otimes 3}\,\cdot\,)/[2]_q^3$ reproduces the Markov parameter $z = q^3/(q^2+1)$ and fixes the canonical weighting without free choice; the plain, $K_n/K_p$, $K_p^3$, and $q$ weightings serve only as labelled comparisons. For the covariant insertion $Q_{12}+Q_{23}+Q_{13}$ summed over all three pairs, the connected part vanishes on $V^3$, so the resulting two-term contribution to $m_{\mathfrak{n}} - m_{\mathfrak{p}}$ is zero. Figures such as $M_{\mathfrak{p}}^{\mathrm{QED,conn}} \approx +0.2201$ keV, $\Delta m^{\mathrm{QED,conn}} \approx -0.3317$ keV, and a $\mu$–$p$ tension of $8.06$ ppb ($0.37\sigma$) arise only from the $1/3$-normalised plain weighting restricted to adjacent pairs; they do not hold for the covariant quantum-trace form and do not resolve the $\mu$–$p$ tension.

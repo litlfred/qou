@@ -31,17 +31,17 @@ The $L_+$ and $L_-$ contributions cancel exactly because both nucleons share the
 
 ## $Q$-value from two inputs
 
-The energy scale $E_0 = m_e / \bigl(q_0(q_0 - 1)(1 - \hbar_q^2)\bigr)$, with $\hbar_q = 1 - q_0^{-1}$, converts dimensionless differences to MeV. This tower-summed form is the canonical energy scale, though the first-principles derivation of its geometric series remains open. The order-zero form $m_e/(q_0(q_0-1))$ is $0.98\%$ smaller. The functional applied to $\Delta = \mathrm{net}(n) - \mathrm{net}(p) = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ is the Markov trace at $z_D = q^3/(q^2+1)$ (convention D), which sends $\gamma \mapsto 1$ and $\sigma_i \mapsto z_D$:
+The energy scale $E_0 = m_e / \bigl(q_0(q_0 - 1)(1 - \hbar_q^2)\bigr)$, with $\hbar_q = 1 - q_0^{-1}$, converts dimensionless differences to MeV. This tower-summed form is the canonical energy scale, though the first-principles derivation of its geometric series remains open. The order-zero form $m_e/(q_0(q_0-1))$ is $0.98\%$ smaller. The functional applied to $\Delta = \mathrm{net}(n) - \mathrm{net}(p) = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ is the Markov trace at $z = q^3/(q^2+1)$, which sends $\gamma \mapsto 1$ and $\sigma_i \mapsto z$:
 
 $$
   \mathfrak{Q}_\beta
   =
-  \bigl|\mathrm{tr}_{z_D}(\Delta)\bigr| \times E_0
+  \bigl|\mathrm{tr}_M(\Delta)\bigr| \times E_0
   =
-  \Bigl|\frac{h^2}{2} - h\,z_D\Bigr|\,\frac{m_e}{q(q-1)(1-\hbar_q^2)}.
+  \Bigl|\frac{h^2}{2} - h\,z\Bigr|\,\frac{m_e}{q(q-1)(1-\hbar_q^2)}.
 $$
 
-Under convention D the sign block $(1^3)$ has trace weight $0$, so $\mathrm{tr}_{z_D}$ sees $\Delta$ only modulo the radical of the trace. $\Delta$ does have a sign-block part: every $\sigma_i$ acts there by $-q^{-1}$, so $\Delta$ acts by $\tfrac{h^2}{2} + \tfrac{h}{q} = \tfrac12(q^2 - q^{-2})$. That part is invisible to $\mathrm{tr}_{z_D}$, and every element with the same image on the surviving blocks gives the same value, so no number depends on the choice of lift.
+At $z = q^3/(q^2+1)$ the sign block $(1^3)$ has trace weight $0$, so $\mathrm{tr}_M$ evaluates $\Delta$ modulo the trace radical. Although $\Delta$ has a non-zero sign-block projection (every $\sigma_i$ acts there by $-q^{-1}$, giving $\tfrac{h^2}{2} + \tfrac{h}{q} = \tfrac12(q^2 - q^{-2})$), that component lies in the radical and every representative with the same two-row projection yields the same value.
 
 ## Numerical evaluation
 
@@ -56,9 +56,9 @@ $$
   \quad -42.59\%).
 $$
 
-The $-333.2$ keV miss is reported as it stands. With the order-zero $E_0$ the same trace gives $0.4447$ MeV ($-43.16\%$). The convention-D $c_k$ ladder that would correct this base is not yet derived, and a cosine phase cannot close it, because $\cos\alpha \le 1$ while the base needs a factor above $1$ ([cos-resummation](#prop:q-beta-cos-resummation)).
+The $-333.2$ keV miss is reported as it stands. With the order-zero $E_0$ the same trace gives $0.4447$ MeV ($-43.16\%$). The $z = q^3/(q^2+1)$ $c_k$ ladder that would correct this base is not yet derived, and a cosine phase cannot close it, because $\cos\alpha \le 1$ while the base needs a factor above $1$ ([cos-resummation](#prop:q-beta-cos-resummation)).
 
-The value scored on the L2 scorecard is not this one. The scored $\mathfrak{Q}_\beta$ applies the $T^3$ weight split of the same $z_D$ trace to the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$:
+The value scored on the L2 scorecard is not this one. The scored $\mathfrak{Q}_\beta$ applies the $T^3$ weight split of the $z = q^3/(q^2+1)$ trace to the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$:
 
 $$
   \mathfrak{Q}_\beta^{\mathrm{scored}}
@@ -85,7 +85,7 @@ $$
   \approx 0.7836 \text{ MeV} \quad (+0.17\%).
 $$
 
-The algebraic identity is exact, but $z = 1$ is not an admissible Markov parameter under convention D. The $+0.17\%$ figure is therefore kept for comparison only and is not the prediction.
+The algebraic identity is exact, but $z = 1$ does not satisfy the two-row Markov condition $y_{(1^3)}(z) = 0$. The $+0.17\%$ figure is therefore kept for comparison only and is not the prediction.
 
 ## Relation to the transfer-matrix eigenfunction form
 
@@ -97,4 +97,4 @@ $$
   \mathfrak{Q}_\beta^{\mathrm{B}} \cdot \Bigl(1 + \tfrac{(z-1)\,h}{2} + O(h^2)\Bigr).
 $$
 
-This relates the two forms to each other. It does not make either one the ruled base, which is the trace at $z_D$ above.
+This relates the two forms to each other. It does not make either one the canonical base, which is the Markov trace at $z = q^3/(q^2+1)$ above.

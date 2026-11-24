@@ -34,10 +34,9 @@ where $\delta_{\mathrm{CS}} = (\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})) \cdo
 | ------ | --------------- | --------------------------------- |
 | $G^{q}_{\mathrm{CS}}$ (this block) | $35.21703297433989011$ | no |
 | $G^{\mathrm{cl}}_{\mathrm{CS}}$ (this block) | $60.630144110670241284$ | no |
-| Markov--Gram, trace convention C (excised) | $-0.18920521914403668$ | yes |
-| Markov--Gram, trace convention D (production) | $0$ exactly --- the form is **singular**, $G^{-1}$ does not exist | yes |
+| Markov--Gram $G$ on $H_3(q)$ ($z = q^3/(q^2+1)$) | $0$ exactly --- the form is **singular**, $G^{-1}$ does not exist on $H_3(q)$ | yes |
 
-$G_{\mathrm{CS}}$ is built from $\pi$, the torus-knot data $(m_i, n_i)$ and the quantum integers $[2]_q, [3]_q, [5]_q, [9]_q$ alone; no Markov parameter $z$ enters it, and none enters $\hbar_q = 1 - q^{-1}$ either. **The $\alpha^{-1}$ figure above therefore does not sit downstream of the Markov--Gram determinant and is independent of the choice between trace conventions C and D.** At 60 digits: bare $136.82320885358258431$, $\delta_{\mathrm{CS}} = 0.0015506021328500969$, $\kappa = 1.721614201708788213$, resummed $\alpha^{-1} = 137.03593509397560466$, i.e. $-0.4676\;\mathrm{ppm}$ against CODATA 2022 --- matching every published digit in this block.
+$G_{\mathrm{CS}}$ is built from $\pi$, the torus-knot data $(m_i, n_i)$, and the quantum integers $[2]_q, [3]_q, [5]_q, [9]_q$ alone; neither the Markov parameter $z$ nor the $H_3(q)$ Gram matrix enters $G_{\mathrm{CS}}$ or $\hbar_q = 1 - q^{-1}$. **The $\alpha^{-1}$ figure above is therefore completely independent of the Markov--Gram determinant and of $z$.** At 60 digits: bare $136.82320885358258431$, $\delta_{\mathrm{CS}} = 0.0015506021328500969$, $\kappa = 1.721614201708788213$, resummed $\alpha^{-1} = 137.03593509397560466$, i.e. $-0.4676\;\mathrm{ppm}$ against CODATA 2022 --- matching every published digit in this block.
 
 The tower is geometric with ratio $\delta_{\mathrm{CS}}\kappa \approx 2.7 \times 10^{-3}$, so it sums in closed form: there is no truncation order, and the closed form is exact to all orders.
 

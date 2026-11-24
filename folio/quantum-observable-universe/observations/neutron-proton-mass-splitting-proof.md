@@ -13,7 +13,7 @@ $\Delta\Phi = \Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d}) - \Phi(\mathfrak{u}\mat
 The ground-state configurations are $\mathfrak{u}\mathfrak{u}\mathfrak{d}$
 (proton) and $\mathfrak{u}\mathfrak{d}\mathfrak{d}$ (neutron). Each $\Phi$ is
 the traced volume, with each strand paired with every later strand, evaluated at
-the canonical Markov parameter $z_D = q^3/(q^2+1)$ at $q_0$:
+the Markov parameter $z = q^3/(q^2+1)$ at $q_0$:
 $\Phi_{\mathfrak{p}} \approx -0.614886$ and $\Phi_{\mathfrak{n}} \approx -0.896395$.
 This yields $|\Delta\Phi| \approx 0.281509$.
 
@@ -34,13 +34,4 @@ $(\mathrm{H}_\alpha)$ is an assumption of this block; no derivation of it is on 
 $\square$
 
 **Comparison with measurement.** The CODATA value is
-$m_{\mathfrak{n}} - m_{\mathfrak{p}} \approx 1.2933$ MeV, so the model value is
-about $18.5\%$ below it.
-
-> **Earlier values (historical comparison only).** The previous version of
-> this proof quoted $\Phi_{\mathfrak{p}} = -0.8785$, $\Phi_{\mathfrak{n}} = -1.2261$
-> and $1.302$ MeV ($+0.63\%$). Those values use the retired convention-C
-> parameter $z = 4993/10000$ with the all-pairs strand pairing, which reproduces
-> both of them. Pairing adjacent strands only reproduces the proton value but not
-> the neutron value; under convention D that reading gives $-2.87\%$. The
-> all-pairs reading is the one stated above.
+$m_{\mathfrak{n}} - m_{\mathfrak{p}} \approx 1.2933$ MeV, so the all-pairs model value at $z = q^3/(q^2+1)$ sits about $18.5\%$ below measurement (pairing adjacent strands only at $z = q^3/(q^2+1)$ gives a $-2.87\%$ residual instead; the all-pairs pairing is the construction stated above).
