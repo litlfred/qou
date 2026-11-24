@@ -1028,7 +1028,7 @@ def render_annex_a_tables(res: dict[str, Any]) -> None:
         t4_md = (
             "**Archimedean specialisation.** Benchmark nuclide binding energies and propagated "
             "$(m_e, \\mathfrak{D}_\\beta)$ calibration floors ($80$-digit precision) across $Z = 0\\ldots 92$ "
-            "(full $Z = 0\\ldots 118$ isotope tables follow in [Atlas registry](#rem:recursive-atom-knot-atlas-registry)). "
+            "(full $Z = 0\\ldots 118$ isotope tables follow in the nuclide registry section below). "
             "Historical knot-volume matches (${}^2\\mathrm{H} \\leftrightarrow 6_2$, ${}^3\\mathrm{H} \\leftrightarrow 8_{11}$, "
             "${}^3\\mathrm{He} \\leftrightarrow L_{6a4}$, and the magic-$A$ ${}^4\\mathrm{He}$ $29.9557\\;\\mathrm{MeV}$ ansatz) "
             "are quarantined from prediction columns as circular; first-principles many-body nuclear binding magnitudes remain open.\n\n"
