@@ -6,7 +6,7 @@ $$
 
 *if and only if it is the evaluation map of a $q$-dilogarithm datum with those arguments.*
 
-The equivalence holds because a $q$-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of $\mathbf{C}$ force $\mathrm{Li}_2^q$; that would need the categorical-to-scalar reduction marked below as not formalised. Together with the uniqueness of the level-2 primitive ([inhabitation of the $q$-dilogarithm structure](#prop:q-dilogarithm-exists)), the pentagon axiom names $\mathrm{Li}_2^q$.
+The equivalence holds because a $q$-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of $\mathbf{C}$ force $\mathrm{Li}_2^q$; that requires the categorical-to-scalar reduction stated in the scope boundary below. Together with the uniqueness of the level-2 primitive ([inhabitation of the $q$-dilogarithm structure](#prop:q-dilogarithm-exists)), the pentagon axiom names $\mathrm{Li}_2^q$.
 
 ## Two guises of the one pentagon
 

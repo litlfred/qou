@@ -1,0 +1,785 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/knots-particles-confinement/c-equals-bar-iff-all-1dim-proof",
+    "path": "folio/quantum-observable-universe/knots-particles-confinement/c-equals-bar-iff-all-1dim-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). Scholarly register; the fix adds plain mathematical prose."
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No filler or hype."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). Belongs with the C/bar material in knots-particles-confinement."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). Recomputed sigma_0^{-1} = [[-q, q],[0, 1/q]], sigma_1^{-1} = [[1/q, 0],[1/q, -q]]; P sigma_i^{-1}(q) = sigma_i(1/q) P holds for both; the second intertwining relation is the inverse of the first. The one-dimensional check is correct. The remark's bar-twist/Tits argument is standard and labelled not formalised."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). The general-n identity is confined to a remark marked not formalised; the proof claims only what the proposition states."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.570Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "critical",
+        "evidence": "(S↔P column of prop:c-equals-bar-iff-all-1dim row) Lean ref `two_only_unit_squares` is a fact about ℕ (a²+b² = 2 ⇒ a = b = 1); C, bar and characters are absent. The statement is false: with (σ−q)(σ+q⁻¹) = 0, C: σ ↦ σ⁻¹ together with q ↦ q⁻¹ is a ring involution, and Tits deformation gives χ^λ(C(β)) = bar(χ^λ(β)) for every λ and n. Exact sympy over ℚ(q) on the (2,1) rep of H₃ (q·reduced Burau at t = q⁻²): 35 words, 0 mismatches. For the meson word (σ₁σ₂)²σ₂σ₁: χ = χ(C·) = bar χ = −(q⁴−q²+1)/q². The proof's \"χ^(2,1)(π⁻,q₀) ≈ +1.892\" is wrong; the exact value equals the π⁺ value, ≈ −1.044. The numerics at the calibrated q₀ are empirical content inside the proof"
+      },
+      {
+        "field_hash": {
+          "md": "6055043f4f3e",
+          "ts": "f42de49e2450"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:43:54.045Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21, plus a ruling check] Diff read since the 2026-11-15 review: voice edits ('we have' to 'one has') and one 'leptons' replaced by a dash. The earlier finding stands. The statement is false: C (sigma to sigma^-1 with q to q^-1) is a ring involution, and chi^lambda(C(beta)) = bar(chi^lambda(beta)) for every lambda and n, checked over Q(q) on the (2,1) representation of H_3 (35 words, 0 mismatches). The proof's chi^(2,1)(pi^-, q0) ~ +1.892 is wrong; the exact value equals the pi^+ value, about -1.044, and it is a numeric at the calibrated q0 inside a proof. Ruling check (owner-rulings.md, 2026-11-21): the closing paragraphs still call H_2 'the lepton sector' and say leptons are the only level where C = bar. Under the current ruling the electron is sigma_0 sigma_1 sigma_0 in B_3, with Hopf-link closure (the trefoil in B_2 is only the backup), so the electron is not in H_2 and that reading is out of date."
+      },
+      {
+        "field_hash": {
+          "md": "6c7c8d3bdace",
+          "ts": "a9253ee27ece"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:44:48.000Z",
+        "reviewed_sha": "fbd57e3a7e3e6d5338bee15d283b7e35b988b7c6",
+        "evidence": "Full read of the rewritten proof. ι (q ↦ q⁻¹, σᵢ ↦ σᵢ⁻¹) preserves σ² = hσ + 1 (σ⁻² = 1 − hσ⁻¹ with h̄ = −h) and the palindromic braid relation; ρ' = bar∘ρ∘ι is K-linear and irreducible; Tits deformation at q = 1 identifies χ' = χ^λ, giving χ^λ(Cβ)(q) = χ^λ(β)(q⁻¹). Each step follows. Independently re-checked with sympy over ℚ(q): both 2×2 matrices satisfy the quadratic and braid relations, P = diag(1, q²) gives P σᵢ⁻¹(q) = σᵢ(q⁻¹) P for both generators, and tr(σ₀σ₁⁻¹) = tr(σ₀⁻¹σ₁) = −(q⁴−q²+1)/q², matching the corrected value. The earlier finding (false statement, wrong +1.892 numeric at q₀) is resolved.",
+        "notes": "Voice (minor, advisory): the closing paragraph 'Consequence for the earlier reading. An earlier version of this block claimed …' narrates the block's revision history inside the paper; that belongs in authorNotes."
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). Induction on word length from the two intertwining relations gives P rho_q(C beta) P^{-1} = rho_{1/q}(beta); traces follow. The remark's conclusion follows from rho' = rho by Tits deformation."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). The proof's (2,1) argument is the Lean's (P_genInv, P_gen, P_eval_conj, trace_conj_eq_trace_bar); 'over any field with q != 0' matches the Lean hypotheses. The general-n remark is stated as not in Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:54.000Z",
+        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.210Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-negation-contrast construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No instance."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.251Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-rhetorical-pivot construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No instance."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.289Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-em-dash construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No instance."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.330Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "'three structural features' numbered list — three distinct proved consequences, substantive",
+        "notes": "pass-with-note"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No instance."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.371Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-closing-aphorism construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No instance."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.410Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-meta-commentary construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). The closing paragraph 'Consequence for the earlier reading. An earlier version of this block claimed ...' narrates revision history in the paper (pre-existing in this PR, not introduced by the fix; it belongs in authorNotes).",
+        "severity": "minor"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.449Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-thesis-restatement construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No instance."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.486Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-performed-warmth construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No instance."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.524Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-superlative construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No instance."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "be6c87f4826b",
+          "ts": "5b40ca67f6a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:47.561Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-nonspeakable construction present"
+      },
+      {
+        "field_hash": {
+          "md": "2929becbfa1d",
+          "ts": "81433a237bda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:18:37.000Z",
+        "reviewed_sha": "9c43cdd0c038721f7a2df71ff6deeac806917dd9",
+        "evidence": "Full re-read of the proof at 9c43cdd0 (one-dimensional characters, explicit (2,1) intertwiner, not-formalised remark for general n, consequence paragraph). No instance."
+      }
+    ]
+  }
+}
