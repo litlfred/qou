@@ -1,13 +1,13 @@
 ---
 # qou-580o
 title: 'UNDISCLOSED C->D FLIP: the PSLQ probe''s z was switched to convention D inside a Lambda-Cl2 naming commit, and its witness was never regenerated'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-18T08:21:15Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T16:29:02Z
 parent: qou-cdx1
 ---
 
@@ -270,3 +270,8 @@ convention-D `c_k` ladder derivation.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8273, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-24 — Resolved in PR #9371 (issue #9370)
+
+- Upgraded `computations/probes/qbeta_ck_basis_constrained_pslq.py` and `computations/probes/qbeta-ck-basis-constrained-pslq.witness.json` to `mp.mp.dps = 80` (`0` `probe-float64-guard` hits, witness raw `float64` fields reduced `17 -> 0`, `M_E_MEV` routed via `codata_constants`, upstream reference witnesses loaded dynamically via `record_upstream` reducing witness-value copies `2 -> 0`).
+- Evaluated Stage-1 PSLQ effective digits consistently under the canonical two-strand Markov trace `z = q^3/(q^2 + 1)` alongside the historical `z = sqrt(q)/(1 + q)` cache reference (`D_eff <= 4.89 < 9.20` even at 100x-optimistic `7.8 ppb`), confirming `ENTROPY-BLOCKED` (`allPassed: true`, `3/3` assertions pass) with explicit sensitivity labelling (`-974.382...` not proposed and not wired) and zero external-reader jargon leaks.

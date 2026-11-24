@@ -1,13 +1,13 @@
 ---
 # qou-4e5k
 title: The paper claims three tr_M paths agree to machine epsilon; two committed witnesses disagree at 1.4e-4 on the deuteron
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T21:29:48Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T16:29:02Z
 parent: qou-10v9
 ---
 
@@ -295,3 +295,8 @@ frame is that tranche's call.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8253, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-24 — Resolved in PR #9371 (issue #9370)
+
+- Recorded `pn_convention = "bring_color_weighted"` and `intra_ordering_frame = "borromean"` explicitly across `atomic-tr-m-mpfr-50dps(-proton).witness.json`, `canonical-mass-table-extended.witness.json`, and `low-isotope-mass-table.witness.json`.
+- Reconciled `computations/isotope_record_schema.py` (`build_knot_operator_catalogue` / `CANONICAL_INTERFACE_PN`) to emit `averaged_weighted` matching `braid_word_canonical`, synced `qou-mass` vendor mirrors (`0` drift), refreshed `low-isotope-mass-table.witness.json` (eliminating its stale `2.27e-17` binary64 residue so all 4 proton-anchored routes agree to `1.4e-50 .. 9.8e-49` across `{p, n, D, T, 3He}`), and updated `folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.ts` + `.qa.json` (`0` QA findings).

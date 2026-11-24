@@ -1,7 +1,7 @@
 ---
 # qou-brkp
 title: Verify & regenerate chi-*-at-q0-50dps family (--fresh 0.15197 vs cached 0.57517 deuteron tr_M discrepancy, qou-49vn)
-status: todo
+status: completed
 type: bug
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - precision
     - probes
 created_at: 2026-08-08T09:40:00Z
-updated_at: 2026-11-24T00:32:17Z
+updated_at: 2026-11-24T16:29:02Z
 parent: qou-9nnz
 ---
 
@@ -502,3 +502,8 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8324, closed o
 ## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
 - **Landed on `origin/main`:** Both broken Aug-7 producers parse cleanly (`0` `SyntaxError`s across all `5,062` `computations/**/*.py`), all 6 NO-FLOAT64 gate parse-failure blind spots were fixed in `a663b4f8382`, `mpf_import_time_dps_audit.py --strict` is wired blocking and GREEN in `scripts/precision-gates.sh:73` (`13d3acb955e`), and item 2's 2026-08-10 `y_\lambda` regeneration mechanism is established (`0488e5dcd58`).
 - **Surviving open sub-problem:** Item 1 (`chi_at_q0_via_hoefsmit_mpfr.py` cached `0.575172...` vs `--fresh` / markov-peel / Wenzl `0.151968...` across the `chi-*-at-q0-50dps` witness family, paired with `qou-49vn`).
+
+## 2026-11-24 — Resolved in PR #9371 (issue #9370)
+
+- Upgraded `computations/chi_at_q0_via_hoefsmit_mpfr.py`, `computations/option_e_multi_isotope_delta_lambda_probe_v3.py`, and `computations/tier_2_hyperbolic_bridge3_pslq.py` to `80` dps working precision (`0` `probe-float64-guard` hits across all three; `M_E_MEV` routed via `codata_constants`; `option-e` raw `float64` fields reduced `1 -> 0`; `tier-2` stamped `q0Anchor: "independent"`).
+- Regenerated `--fresh` 80-dps `chi-*-at-q0-50dps(-muon).witness.json` caches across `p, n, D, nn, pp, T, 3He` at both proton (`0.15196833920423160759...`) and muon (`0.15196834576094227586...`) anchors (plus refreshed `He-4` provenance stamps), regenerated `option-e-multi-isotope-delta-lambda-probe-v3.witness.json` and `tier-2-hyperbolic-bridge3-pslq.witness.json`, and verified `trm_provenance_chain_probe.py` (`14/14` pass) and `bar_pairing_binding_observable._self_test()` (`8/8` pass).
