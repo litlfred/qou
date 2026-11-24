@@ -1,11 +1,11 @@
 ---
 # qou-kjik
 title: strong_unified_binding_probe inverts all three AME anchors and its verdict claims 1ppq; mba-step09b cites it as where B_unified lives
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-19T06:32:38Z
-updated_at: 2026-11-24T08:06:22Z
+updated_at: 2026-11-24T09:44:23Z
 parent: qou-s028
 ---
 

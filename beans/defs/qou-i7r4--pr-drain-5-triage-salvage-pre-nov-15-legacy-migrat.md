@@ -1,11 +1,11 @@
 ---
 # qou-i7r4
 title: 'PR-Drain-5: Triage & Salvage Pre-Nov-15 Legacy Migration, Molecular, TL/Hecke & Precision PRs (15 PRs, #5402..#7773)'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:55:53Z
-updated_at: 2026-11-24T02:15:34Z
+updated_at: 2026-11-24T09:44:28Z
 parent: qou-xip2
 ---
 

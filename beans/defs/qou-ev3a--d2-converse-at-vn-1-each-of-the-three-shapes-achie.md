@@ -1,13 +1,13 @@
 ---
 # qou-ev3a
 title: 'D2: converse at v=n-1 — each of the three shapes achieves hookLen = n-1 at its stated cell'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T00:45:18Z
-updated_at: 2026-11-16T18:02:18Z
+updated_at: 2026-11-24T09:44:24Z
 parent: qou-wp3h
 ---
 
