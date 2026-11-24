@@ -1,0 +1,214 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T02:03:38.139275+00:00",
+  "commitSha": "ca3e49e4f99b82815c9b735e20375885ec9b22d9",
+  "assertions": [
+    {
+      "name": "f1_fefferman_lorentzian_3_1_signature_congruence_and_null_pairing_exact",
+      "computed": "2.108439588646104644869714810254003801541992276473701510015552605021629e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "FeffermanLorentzianHorizonEntropy §1: det G_Feff = -ell_1 ell_2 < 0, SL_4 congruence P^T G_Feff P = diag(-1, 1, ell_1, ell_2), eigenvalues (3+, 1-), and nullity g(partial_sigma, partial_sigma) = g(k_+, k_+) = 0 across M0..M3."
+    },
+    {
+      "name": "f2_lee_conformal_flatness_weyl_zero_and_rank1_einstein_wave_exact",
+      "computed": "2.266572557794562493234943421023054086657641697209229123266719050398251e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "FeffermanLorentzianHorizonEntropy §2: Cartan moving-frame Weyl W_{abcd} = 0 at Lee lock c_R = R_W/6, Einstein + (R_W/4) g = (1/2) xi (x) xi, and null-cone Ric(k,k) = (1/2)(k_1 - (R_W/2) k_0)^2 across S^3, H^1, and Bring UT(Sigma_4)."
+    },
+    {
+      "name": "f2_sparling_graham_vacuum_obstruction_and_unshifted_weyl_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Sparling-Graham vacuum obstruction: Ric(K,K) = 1/2 != 0 along null Killing fibre K = partial_sigma (ruling out vacuum Ric = Lambda g), and omitting Lee's c_R = R_W/6 shift yields nonzero Weyl curvature (> 0.15 on S^3, UT(Sigma_4), M3)."
+    },
+    {
+      "name": "f3_modular_raychaudhuri_quarter_cancellation_and_dual_q0_split_exact",
+      "computed": "7.906648457422892418261430538452514255782471036776380662558322268831108e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "FeffermanLorentzianHorizonEntropy §3: (dQ/T_U)/dA = 1/(4 ell_grav^2) with Arm N1 = 1/4 = 0.25 exact and Arm N2 = 1/(4 q_0) = 0.22522957..., relative shift -(1 - q_0^-1) = -hbar_{q_0} = -9.90817160%."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "gap4-fefferman-lorentzian-bh-quarter",
+  "scriptFile": "gap4_fefferman_lorentzian_bh_quarter_probe.py",
+  "scriptHash": "0a18a0a30a94",
+  "scriptCommitSha": "ca3e49e4f99b82815c9b735e20375885ec9b22d9",
+  "precisionMetadata": {
+    "compute_dps": 80,
+    "output_dps": 70,
+    "guard_digits": 10,
+    "truncation_bound": "1e-70"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap4_fefferman_lorentzian_bh_quarter/gap4_fefferman_lorentzian_bh_quarter_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap4_fefferman_lorentzian_bh_quarter/gap4_fefferman_lorentzian_bh_quarter_probe.py"
+  },
+  "description": "Pre-registered 80-dps (70-dps serialized) evaluation of the canonical Fefferman-Lee 4D Lorentzian CR circle-bundle metric g_theta (signature (3,1), SL_4 Sylvester congruence, null pairing), full Cartan moving-frame Riemann/Ricci/Einstein/Weyl curvature on S^3, Heisenberg H^1, and Bring UT(Sigma_4) (confirming Weyl = 0 under Lee's c_R = R_W/6 lock, Sparling-Graham vacuum obstruction Ric(K,K) = 1/2, and rank-1 null-energy positivity Ric(k,k) >= 0), and the (2*pi)/(8*pi) = 1/4 modular horizon law across both QOU gravitational normalizations (Arm N1: 1/4 = 0.25 vs Arm N2: 1/(4*q_0) = 0.22522957..., shift -hbar_{q_0} = -9.908%).",
+  "contentBlock": "cr-structure-lorentzian-lift",
+  "parameters": {
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "q0_pin": "proton (qou_substrate.constants.q_at)",
+    "work_dps": 80,
+    "output_dps": 70,
+    "preregistration_commit": "edf9f174ae4decbb7a8f702d554ab3fcf8f592b6",
+    "selectedCandidate": "none"
+  },
+  "data": {
+    "battery_f1_fefferman_lorentzian_signature": {
+      "normalised_reeb_circuit_ell_P": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+      "bring_surface_genus": 4,
+      "bring_surface_euler_characteristic": -6,
+      "bring_surface_hyperbolic_area_12pi": "37.69911184307751886155172059935403461036603279250126985169933510769380",
+      "models": {
+        "M0_heisenberg_flat": {
+          "description": "Webster-flat CR Heisenberg H^1 (R_W = 0, c_R = 0, ell_1 = ell_2 = 1)",
+          "R_W": "0.0",
+          "c_R_lee_shift": "0.0",
+          "det_fefferman_gram": "-1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "det_sylvester_P": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "sylvester_congruence_max_res": "0.0",
+          "eigenvalue_timelike_neg": "-1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "eigenvalue_spacelike_1": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "eigenvalue_spacelike_2": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "eigenvalue_spacelike_3": "1.000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "M1_cr_three_sphere_S3": {
+          "description": "Round CR 3-sphere S^3 subset C^2 (R_W = +2, c_R = +1/3, ell_1 = ell_2 = 1)",
+          "R_W": "2.000000000000000000000000000000000000000000000000000000000000000000000",
+          "c_R_lee_shift": "0.3333333333333333333333333333333333333333333333333333333333333333333333",
+          "det_fefferman_gram": "-1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "det_sylvester_P": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "sylvester_congruence_max_res": "5.271098971615261612174287025635009503854980691184253775038881512554072e-82",
+          "eigenvalue_timelike_neg": "-0.7207592200561264439996311814775728445731850464417389422858349509308648",
+          "eigenvalue_spacelike_1": "1.387425886722793110666297848144239511239851713108405608952501617597531",
+          "eigenvalue_spacelike_2": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "eigenvalue_spacelike_3": "1.000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "M2_bring_ut_sigma4": {
+          "description": "Hyperbolic / Bring contact link UT(Sigma_4) (R_W = -2, c_R = -1/3, chi = -6)",
+          "R_W": "-2.000000000000000000000000000000000000000000000000000000000000000000000",
+          "c_R_lee_shift": "-0.3333333333333333333333333333333333333333333333333333333333333333333333",
+          "det_fefferman_gram": "-1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "det_sylvester_P": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "sylvester_congruence_max_res": "5.271098971615261612174287025635009503854980691184253775038881512554072e-82",
+          "eigenvalue_timelike_neg": "-1.387425886722793110666297848144239511239851713108405608952501617597531",
+          "eigenvalue_spacelike_1": "0.7207592200561264439996311814775728445731850464417389422858349509308648",
+          "eigenvalue_spacelike_2": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "eigenvalue_spacelike_3": "1.000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "M3_substrate_anisotropic_q0": {
+          "description": "D_nabla q_0^-1 horizontal rescaled CR metric (R_W = -2 q_0^-2, ell_1 = ell_2 = q_0^-2)",
+          "R_W": "-1.623307508731516116264429644283504249837065075593012615105327741376013",
+          "c_R_lee_shift": "-0.2705512514552526860440716073805840416395108459321687691842212902293354",
+          "det_fefferman_gram": "-0.6587818169760303180113037345402395018434538319964893516366646120494738",
+          "det_sylvester_P": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "sylvester_congruence_max_res": "0.0",
+          "eigenvalue_timelike_neg": "-1.306503943263137979241907410003053701623638094894707009643271438854708",
+          "eigenvalue_spacelike_1": "0.7654014403526326071537641952418856183446164030303694712748288583960375",
+          "eigenvalue_spacelike_2": "0.8116537543657580581322148221417521249185325377965063075526638706880063",
+          "eigenvalue_spacelike_3": "0.8116537543657580581322148221417521249185325377965063075526638706880063"
+        }
+      },
+      "max_algebraic_signature_residual": "2.108439588646104644869714810254003801541992276473701510015552605021629e-81"
+    },
+    "battery_f2_sparling_graham_lee_curvature": {
+      "canonical_lee_lambda0": "0.3333333333333333333333333333333333333333333333333333333333333333333333",
+      "models": {
+        "M0_heisenberg_flat": {
+          "R_W": "0.0",
+          "scalar_curvature_3RW_over_2": "0.0",
+          "Ric_00_reeb_null": "0.0",
+          "Ric_01_mixed": "0.0",
+          "Ric_11_fibre_killing": "0.5000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_22_levi_horiz": "0.0",
+          "weyl_linf_with_lee_lock": "0.0",
+          "weyl_linf_without_lee_shift_cR0": "0.0",
+          "einstein_rank1_wave_decomp_max_res": "0.0",
+          "null_cone_raychaudhuri_max_res": "0.0"
+        },
+        "M1_cr_three_sphere_S3": {
+          "R_W": "2.000000000000000000000000000000000000000000000000000000000000000000000",
+          "scalar_curvature_3RW_over_2": "3.000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_00_reeb_null": "0.5000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_01_mixed": "0.5000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_11_fibre_killing": "0.5000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_22_levi_horiz": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "weyl_linf_with_lee_lock": "0.0",
+          "weyl_linf_without_lee_shift_cR0": "0.222222222222222222222222222222",
+          "einstein_rank1_wave_decomp_max_res": "0.0",
+          "null_cone_raychaudhuri_max_res": "1.686751670916883715895771848203203041233593821178961208012442084017303e-80"
+        },
+        "M2_bring_ut_sigma4": {
+          "R_W": "-2.000000000000000000000000000000000000000000000000000000000000000000000",
+          "scalar_curvature_3RW_over_2": "-3.000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_00_reeb_null": "0.5000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_01_mixed": "-0.5000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_11_fibre_killing": "0.5000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_22_levi_horiz": "-1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "weyl_linf_with_lee_lock": "0.0",
+          "weyl_linf_without_lee_shift_cR0": "0.222222222222222222222222222222",
+          "einstein_rank1_wave_decomp_max_res": "0.0",
+          "null_cone_raychaudhuri_max_res": "8.433758354584418579478859241016015206167969105894806040062210420086515e-81"
+        },
+        "M3_substrate_anisotropic_q0": {
+          "R_W": "-1.623307508731516116264429644283504249837065075593012615105327741376013",
+          "scalar_curvature_3RW_over_2": "-2.434961263097274174396644466425256374755597613389518922657991612064019",
+          "Ric_00_reeb_null": "0.3293909084880151590056518672701197509217269159982446758183323060247369",
+          "Ric_01_mixed": "-0.4058268771828790290661074110708760624592662688982531537763319353440031",
+          "Ric_11_fibre_killing": "0.5000000000000000000000000000000000000000000000000000000000000000000000",
+          "Ric_22_levi_horiz": "-0.8116537543657580581322148221417521249185325377965063075526638706880063",
+          "weyl_linf_with_lee_lock": "1.581329691484578483652286107690502851156494207355276132511664453766222e-81",
+          "weyl_linf_without_lee_shift_cR0": "0.180367500970168457362714404920",
+          "einstein_rank1_wave_decomp_max_res": "2.108439588646104644869714810254003801541992276473701510015552605021629e-81",
+          "null_cone_raychaudhuri_max_res": "2.266572557794562493234943421023054086657641697209229123266719050398251e-80"
+        }
+      },
+      "min_unshifted_weyl_norm_for_nonzero_RW": "0.180367500970168457362714404920",
+      "max_weyl_and_rank1_decomposition_residual": "2.266572557794562493234943421023054086657641697209229123266719050398251e-80"
+    },
+    "battery_f3_modular_raychaudhuri_dual_normalizations": {
+      "arm_N1_native_planck_ell_grav_sq": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+      "arm_N1_entropy_density_dS_over_dA_sub": "0.2500000000000000000000000000000000000000000000000000000000000000000000",
+      "arm_N1_rel_diff_vs_quarter": "0.0",
+      "arm_N1_required_a0_catalan_4ln2": "2.772588722239781237668928485832706272302000537441021016482720037973574",
+      "arm_N1_required_a0_tl_4ln_q2": "2.794323299576695504153450909763066969351690118074342695131791134385415",
+      "arm_N1_required_a0_haar_4s_haar": "2.750932706000862919074630031702850470356947266059599087276283926963598",
+      "arm_N2_relativistic_ell_grav_sq_hbar_G_over_c3": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+      "arm_N2_entropy_density_per_relativistic_cell": "0.2500000000000000000000000000000000000000000000000000000000000000000000",
+      "arm_N2_entropy_density_per_unit_reeb_cell_1_over_4q0": "0.2252295709889353730402057206202734840036854066526385451727795464307058",
+      "arm_N2_over_arm_N1_ratio_hbar_q0_mul_c_q0": "0.9009182839557414921608228824810939360147416266105541806911181857228231",
+      "arm_N2_rel_diff_vs_quarter_minus_hbar_q0": "-0.09908171604425850783917711751890606398525837338944581930888181427717694",
+      "arm_N2_sub_required_a0_catalan_4q0_ln2": "3.077514100464174195414042961815361327987162123672179389199251091207460",
+      "arm_N2_sub_required_a0_tl_4q0_ln_q2": "3.101639015813302573454177517034153850747397695003373524065164715243004",
+      "arm_N2_sub_required_a0_haar_4q0_s_haar": "3.053476386251258751956102583840431936894377173011131850032891521188850",
+      "max_modular_cancellation_and_dual_split_residual": "7.906648457422892418261430538452514255782471036776380662558322268831108e-82"
+    }
+  },
+  "caveats": [
+    "Fefferman's canonical CR circle-bundle metric g_theta constructs an explicit, zero-parameter 4D Lorentzian (3,1) metric lift on C(M^3) -> M^3 with conformally flat geometry (W_{abcd} = 0 on S^3, H^1, and Bring UT(Sigma_4)) and universal null-focusing sign Ric(k,k) = (1/2)(k_1 - (R_W/2) k_0)^2 >= 0, closing the kinematical Lorentzian-lift gap in cr-structure-lorentzian-lift.md. Two dynamical/normalization items remain open in Rule-13a class FeffermanDynamicalEinsteinHorizonConjecture: (1) g_theta has intrinsic twist curvature Ric(K,K) = 1/2 (not vacuum Ricci-flat), so Jacobson's dynamical perturbation law delta R_{kk} = (8*pi*G/c^4) delta T_{kk} still requires an induced-Einstein / spectral-action derivation from QOU's q-Yang-Mills-Levi action; and (2) QOU's two substrate Planck normalizations give exact 1/4 = 0.25 under Arm N1 (G_q(hbar_q/c_q)^2 = 1) vs 1/(4*q_0) = 0.22522957... (-9.9082% = -hbar_{q_0}) per unit Reeb-circuit area cell under Arm N2 (hbar_q*G_q/c_q^3 = q_0)."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "workdps": 80
+}
