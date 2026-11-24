@@ -184,10 +184,10 @@ theorem S24_eq : (∑ i ∈ Finset.range 24, cl2Term i)
   field_simp
   ring
 
-theorem sqrt_three_gt : (1.7320508 : ℝ) < Real.sqrt 3 := by
+theorem sqrt_three_gt : ((17320508 : ℝ) / 10 ^ 7) < Real.sqrt 3 := by
   nlinarith [Real.sq_sqrt (by norm_num : (0:ℝ) ≤ 3), Real.sqrt_nonneg 3]
 
-theorem sqrt_three_lt : Real.sqrt 3 < 1.7320509 := by
+theorem sqrt_three_lt : Real.sqrt 3 < (17320509 : ℝ) / 10 ^ 7 := by
   nlinarith [Real.sq_sqrt (by norm_num : (0:ℝ) ≤ 3), Real.sqrt_nonneg 3]
 
 /-- **Certified bound on the Clausen value.** The exact rational-times-`√3`
@@ -215,7 +215,7 @@ theorem abs_VOL_4_1_sub_decimal_lt :
   have hV : FigureEightVolume.VOL_4_1
       = 2 * QOU.Archimedean.Cl_2 (π / 3) := rfl
   have hD : FigureEightVolume.VOL_4_1_decimal
-      = 2.029883212819307250042405108549 := rfl
+      = (2029883212819307250042405108549 : ℝ) / 10 ^ 30 := rfl
   rw [hV, hD, abs_lt]
   constructor <;> nlinarith [h.1, h.2]
 

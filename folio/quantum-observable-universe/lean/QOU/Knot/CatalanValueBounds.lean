@@ -147,10 +147,10 @@ theorem abs_Catalan_sub_le :
   rw [catalan_eq_tsum, ← hsplit, catS24_eq, add_sub_cancel_left]
   exact cat_tail_le
 
-/-- `|G − 0.9159655942| < 1/20` — the Catalan carrier meets its standard
-    decimal. -/
+/-- `|G − 9159655942 / 10^10| < 1/20` — the Catalan carrier meets its standard
+    10-digit rational approximation. -/
 theorem abs_Catalan_sub_decimal_lt :
-    |QOU.Archimedean.Catalan_constant - 0.9159655942| < 1 / 20 := by
+    |QOU.Archimedean.Catalan_constant - (9159655942 : ℝ) / 10 ^ 10| < 1 / 20 := by
   have h := abs_Catalan_sub_le
   rw [abs_le] at h
   rw [abs_lt]
@@ -167,11 +167,11 @@ theorem Cl_2_pi_div_two_pos : 0 < QOU.Archimedean.Cl_2 (π / 2) := by
   rw [hC] at h
   linarith [h.1]
 
-/-- `|Vol(𝓑₃) − 7.3277247534| < 2/5` — the Borromean-volume carrier
-    `Vol_Borromean = 8·Cl₂(π/2)` meets the `8G` binding-scale decimal.
+/-- `|Vol(𝓑₃) − 73277247534 / 10^10| < 2/5` — the Borromean-volume carrier
+    `Vol_Borromean = 8·Cl₂(π/2)` meets the `8G` rational approximation.
     (bean qou-8gv9) -/
 theorem abs_Vol_Borromean_sub_lt :
-    |QOU.Archimedean.Vol_Borromean - 7.3277247534| < 2 / 5 := by
+    |QOU.Archimedean.Vol_Borromean - (73277247534 : ℝ) / 10 ^ 10| < 2 / 5 := by
   have h := abs_Catalan_sub_le
   rw [abs_le] at h
   have hV : QOU.Archimedean.Vol_Borromean

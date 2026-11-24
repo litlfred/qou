@@ -115,7 +115,7 @@ Known family, partially drained: bean `qou-jgew` found **seven** wrong hand-type
 fixed one `.py` probe. Those drains never reached this Lean carrier. **Still live:** six
 `computations/` sites carry the sibling variant `2.0298832128193072500115970029`, one of
 them a committed witness that needs a producer re-run. -/
-noncomputable def VOL_4_1_decimal : ℝ := 2.029883212819307250042405108549
+noncomputable def VOL_4_1_decimal : ℝ := (2029883212819307250042405108549 : ℝ) / 10 ^ 30
 
 /-- **Volume conjecture for the figure-eight** (Kashaev–Murakami–Murakami),
     a PROVED theorem for `4_1` (Andersen–Hansen; Ohtsuki) whose saddle-point /

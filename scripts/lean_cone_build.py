@@ -44,7 +44,21 @@ from lean_freshness import (  # noqa: E402
     sidecar_path,
 )
 
-IMPORT_RE = re.compile(r"^import\s+(QOU(?:\.[A-Za-z0-9_'À-￿]+)*)")
+ALL_LOCAL_LIB_ROOTS: tuple[str, ...] = (
+    "QOU",
+    "MathlibExt",
+    "QCalculus",
+    "TwistedFrobeniusHopf",
+    "ToricConicOpt",
+    "CompactQuantumMetrics",
+    "HeckeTemperleyLieb",
+    "BraidKnotOctonion",
+)
+IMPORT_RE = re.compile(
+    r"^import\s+((?:"
+    + "|".join(ALL_LOCAL_LIB_ROOTS)
+    + r")(?:\.[A-Za-z0-9_'\u00c0-\uffff]+)*)"
+)
 
 
 def qou_imports(text: str) -> list[str]:
@@ -96,9 +110,16 @@ def module_of(leandir: Path, path: Path) -> str:
 
 
 def scan(leandir: Path) -> dict[str, dict]:
-    """Map module name -> {src, imports}. Includes the root QOU.lean aggregator."""
+    """Map module name -> {src, imports}. Includes QOU and any isolated Reservoir lean_lib roots."""
     mods: dict[str, dict] = {}
-    roots = [leandir / "QOU.lean", *sorted((leandir / "QOU").rglob("*.lean"))]
+    roots: list[Path] = []
+    for lb in ALL_LOCAL_LIB_ROOTS:
+        root_file = leandir / f"{lb}.lean"
+        if root_file.is_file():
+            roots.append(root_file)
+        root_dir = leandir / lb
+        if root_dir.is_dir():
+            roots.extend(sorted(root_dir.rglob("*.lean")))
     for p in roots:
         if not p.is_file():
             continue

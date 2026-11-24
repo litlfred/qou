@@ -64,6 +64,16 @@ def _load_detangler():
 
 SEVERITY_ORDER = {"critical": 3, "major": 2, "minor": 1, "info": 0}
 
+COMMUNITY_TOP_DIRS: frozenset[str] = frozenset({
+    "MathlibExt",
+    "HeckeTemperleyLieb",
+    "TwistedFrobeniusHopf",
+    "ToricConicOpt",
+    "CompactQuantumMetrics",
+    "QCalculus",
+    "BraidKnotOctonion",
+})
+
 PRE_WALL_CHAPTERS = {
     "quantum-universes",
     "quantum-observable-universes",
@@ -194,14 +204,25 @@ def lint_file(
         detangler_mod.parse_header_imports_and_doc_order(raw)
     )
 
-    # Determine whether file is inside a pre-wall chapter
+    # Determine whether file is inside a pre-wall chapter or an isolated community lean_lib dir
     is_pre_wall_sibling = False
+    in_isolated_comm_dir = False
     parts = Path(rel_path).parts
     if len(parts) >= 3 and parts[0] == "folio" and parts[1] == "quantum-observable-universe":
         if parts[2] in PRE_WALL_CHAPTERS:
             is_pre_wall_sibling = True
+        elif len(parts) >= 4 and parts[2] == "lean":
+            top_entry = parts[3].removesuffix(".lean")
+            if top_entry in COMMUNITY_TOP_DIRS:
+                in_isolated_comm_dir = True
+                strict_zero_qou_prefix = True
+                if not community_partition:
+                    community_partition = (
+                        "TierA.MathlibExt" if top_entry == "MathlibExt" else f"TierB.{top_entry}"
+                    )
 
     # BP009: Block new ad-hoc synonym directories under folio/quantum-observable-universe/lean/QOU/
+    # and unapproved top-level directories under folio/quantum-observable-universe/lean/
     if (
         len(parts) >= 6
         and parts[:4] == ("folio", "quantum-observable-universe", "lean", "QOU")
@@ -220,6 +241,24 @@ def lint_file(
                     f"place modules into one of the 12 canonical subgraphs or Tier-A/B targets."
                 ),
             ))
+    elif (
+        len(parts) >= 5
+        and parts[:3] == ("folio", "quantum-observable-universe", "lean")
+        and parts[3] not in ("QOU", ".lake", "blocks-shadow")
+        and parts[3] not in COMMUNITY_TOP_DIRS
+        and is_newly_added_in_diff
+    ):
+        findings.append(Finding(
+            rule="BP009",
+            severity="critical",
+            path=rel_path,
+            line=1,
+            declaration="<directory>",
+            message=(
+                f"New unapproved top-level directory 'lean/{parts[3]}/'; allowed top-level "
+                f"lean_lib roots are QOU and {sorted(COMMUNITY_TOP_DIRS)}."
+            ),
+        ))
 
     # BP001: autoImplicit compliance
     m_true = detangler_mod.AUTO_IMPLICIT_TRUE_RE.search(code)
@@ -290,9 +329,10 @@ def lint_file(
         ))
 
     # BP003 & BP008: Import hygiene & zero forbidden `QOU.*` upward imports
-    for idx, raw_ln in enumerate(raw_lines, 1):
-        s = raw_ln.strip()
-        m_imp = detangler_mod.IMPORT_LINE_RE.match(s)
+    # Scan comment-stripped `blanked` lines without `.strip()` so indented docstring examples
+    # (e.g. `GroundRingCore.lean:18`) are never mistaken for header `import` statements.
+    for idx, code_ln in enumerate(blanked.splitlines(), 1):
+        m_imp = detangler_mod.IMPORT_LINE_RE.match(code_ln)
         if not m_imp:
             continue
         imp = m_imp.group(1)
@@ -315,8 +355,8 @@ def lint_file(
                 message="Broad `import Mathlib.Tactic` pulls ~3,000 modules; prefer targeted `Mathlib.Tactic.<Name>`.",
             ))
 
-        if community_mode and (imp == "QOU" or imp.startswith("QOU.")):
-            if strict_zero_qou_prefix:
+        if (community_mode or in_isolated_comm_dir) and (imp == "QOU" or imp.startswith("QOU.")):
+            if strict_zero_qou_prefix or in_isolated_comm_dir:
                 findings.append(Finding(
                     rule="BP008",
                     severity="critical",
@@ -706,35 +746,18 @@ def main(argv: list[str] | None = None) -> int:
                 )
                 return 2
 
+            audit = detangler.analyze_corpus(qou_root)
+            mig_map = audit.get("module_migration_map", {})
             allowed_comm_mods = set()
-            for p in sorted(lean_root.rglob("*.lean")):
-                if ".lake" in p.parts:
-                    continue
-                rel = p.relative_to(lean_root)
-                mod_name = ".".join(rel.with_suffix("").parts)
-                if mod_name in ("QOU", "scratch_lean"):
-                    continue
-                subdir = (
-                    "<QOU-root-loose>"
-                    if (len(rel.parts) == 2 and rel.parts[0] == "QOU")
-                    else (rel.parts[1] if rel.parts[0] == "QOU" else rel.parts[0])
-                )
-                raw_txt = p.read_text(encoding="utf-8", errors="replace")
-                code = detangler.strip_comments_and_strings(raw_txt)
-                has_decl = bool(detangler.DECL_KW_RE.search(code))
-                if not has_decl and subdir == "<QOU-root-loose>" and mod_name != "QOU.MathlibExt":
-                    continue
-                if mod_name in detangler.EXPLICIT_PURE_OVERRIDES:
-                    purity = "pure_math"
-                else:
-                    purity, _ = detangler.classify_intrinsic_purity(code, mod_name, raw_txt)
-                if purity == "pure_math":
-                    part = detangler.classify_pure_math_target(mod_name, subdir, code)
-                    if part in all_comm_parts:
-                        allowed_comm_mods.add(mod_name)
-                    if part in wanted_parts:
+            for mod_name, minfo in sorted(mig_map.items()):
+                part = minfo["target_partition"]
+                if part in all_comm_parts:
+                    allowed_comm_mods.add(mod_name)
+                    allowed_comm_mods.add(minfo["new_module"])
+                if part in wanted_parts:
+                    p = REPO_ROOT / minfo["old_repo_rel_path"]
+                    if p.is_file():
                         targets.append((p, True, part, False))
-                        preloaded_cache[p] = (raw_txt, code)
     elif args.diff is not None:
         base = None if args.diff == "__AUTO__" else args.diff
         diff_files, added_files = _git_diff_lean_files(base)

@@ -38,7 +38,9 @@ allowed-tools: Read Edit Write Bash Grep Glob
 
 Full script index: [`scripts/lean/README.md`](../../scripts/lean/README.md).
 
-### A. Editing an existing library module (`folio/quantum-observable-universe/lean/QOU/...`)
+### A. Editing an existing library module (`folio/quantum-observable-universe/lean/{MathlibExt,<TierBLib>,QOU/<Chapter>}/...`)
+
+`folio/quantum-observable-universe/lean/` hosts **`7 + 1` top-level `[[lean_lib]]` targets** sharing the single `.lake/build/lib/lean/` root (`MathlibExt`, `QCalculus`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `HeckeTemperleyLieb`, `BraidKnotOctonion`, plus `QOU` consolidated into its `12` canonical `QOU/<Chapter>/` subgraphs). If rebasing an open PR authored against legacy `QOU/<OldSynonym>/` paths, run `nice -n 15 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch` first.
 
 When you edit a library `.lean` file, any downstream importer reading the shared `.lake` tree would silently load the **stale** `.olean`. Use the private symlink-farm overlay ([`scripts/lean-overlay-env.sh`](../../scripts/lean-overlay-env.sh)):
 
@@ -49,8 +51,8 @@ export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
 # 1. Initialize complete symlink farm once per session (~seconds)
 nice -n 15 bash scripts/lean-overlay-env.sh init
 
-# 2. Compile your edited module into the private overlay (unlinks symlink safely)
-nice -n 15 bash scripts/lean-overlay-env.sh build QOU/<Subgraph>/<Module>.lean
+# 2. Compile your edited module into the private overlay (e.g. HeckeTemperleyLieb/Foo.lean or QOU/MassTheory/Bar.lean)
+nice -n 15 bash scripts/lean-overlay-env.sh build <LibOrQOU>/<Path>.lean
 
 # 3. Check downstream importers or content-block siblings against your rebuilt .olean
 nice -n 15 bash scripts/lean-overlay-env.sh check folio/quantum-observable-universe/<chapter>/<block>.lean
