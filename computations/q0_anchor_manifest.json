@@ -1,6 +1,6 @@
 {
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 P_skew^\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides.",
+  "_convention": "ideal=muon (CAL-2 P_skew^β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides.",
   "ideal_muon": [
     "atomic_tr_m_mpfr_50dps",
     "cross_check_trM_1ppb",
@@ -1507,7 +1507,6 @@
     "sw_period_residue",
     "sw_prolongation_symbol",
     "symbolic_character_table_probe",
-    "symbolic_nf_q_degree_magic_probe",
     "symmetrized_constituent_general",
     "symmetrizer_eigenvalue_verification_50dps",
     "t25_cinquefoil_deltalambda_sign_probe",

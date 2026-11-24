@@ -19,6 +19,10 @@ for _p in ("computations", "computations/qbeta", "computations/substrate",
            "tools/qou-substrate/python", "computations/probes/qbeta_gg_lepton_pair"):
     sys.path.insert(0, str(_ROOT / _p))
 
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
+
 from qbeta_gg_lepton_pair_probe import (apply_crossing, gg_word, inv,  # noqa: E402
                                          strand_data)
 
@@ -208,28 +212,28 @@ def reduced_real_search(qv, trials=400, want=3, seed=1):
         eqs += [sp.numer(sp.together(e)) for e in (g(a, b, c) * g(A, B, C) - lam * E)]
     v6 = [a, b, c, B, C, lam]
     random.seed(seed)
-    mp.mp.dps = 40
     found = []
-    for _ in range(trials):
-        zv = sp.Rational(random.randint(-30, 30), 10)
-        Av = sp.Rational(random.randint(-30, 30), 10)
-        es = [e.subs({z: zv, A: Av}) for e in eqs]
-        f = sp.lambdify(v6, es, "mpmath")
-        x0 = [mp.mpf(random.uniform(-3, 3)) for _ in range(6)]
-        try:
-            r = mp.findroot(lambda *x: f(*x), x0, tol=mp.mpf(10) ** -32, maxsteps=80)
-        except Exception:  # noqa: BLE001  (non-convergence is a miss, not a result)
-            continue
-        r = [r[i] for i in range(6)]
-        if any(abs(mp.im(v)) > mp.mpf(10) ** -25 for v in r) or abs(r[5]) < mp.mpf(10) ** -6:
-            continue
-        r = [mp.re(v) for v in r]
-        res = max(abs(e) for e in f(*r))
-        if res < mp.mpf(10) ** -30:
-            found.append({"z": str(zv), "A": str(Av), "residual": mp.nstr(res, 3),
-                          **{str(k): mp.nstr(v, 15) for k, v in zip(v6, r)}})
-            if len(found) >= want:
-                break
+    with mp.workdps(80):
+        for _ in range(trials):
+            zv = sp.Rational(random.randint(-30, 30), 10)
+            Av = sp.Rational(random.randint(-30, 30), 10)
+            es = [e.subs({z: zv, A: Av}) for e in eqs]
+            f = sp.lambdify(v6, es, "mpmath")
+            x0 = [mp.mpf(random.randint(-3000000, 3000000)) / mp.mpf(1000000) for _ in range(6)]
+            try:
+                r = mp.findroot(lambda *x: f(*x), x0, tol=mp.mpf(10) ** -32, maxsteps=80)
+            except Exception:  # noqa: BLE001  (non-convergence is a miss, not a result)
+                continue
+            r = [r[i] for i in range(6)]
+            if any(abs(mp.im(v)) > mp.mpf(10) ** -25 for v in r) or abs(r[5]) < mp.mpf(10) ** -6:
+                continue
+            r = [mp.re(v) for v in r]
+            res = max(abs(e) for e in f(*r))
+            if res < mp.mpf(10) ** -30:
+                found.append({"z": str(zv), "A": str(Av), "residual": mp.nstr(res, 3),
+                              **{str(k): mp.nstr(v, 15) for k, v in zip(v6, r)}})
+                if len(found) >= want:
+                    break
     return found
 
 
@@ -392,26 +396,27 @@ def main() -> int:
                        - trs["hopf_photon_s0^2 s1^-1 (3 strands)"]
                        * trs["crossing_photon_s^-1 (2 strands)"]) == 0
     zcheck = sp.simplify(trD([(0, 1)], 2) - zD) == 0
-    mp.mp.dps = 70
-    q0 = q_at(70)
-    E0 = qbeta_e0.canonical(q=q0)
-    mev = {k: mp.nstr(abs(mp.mpf(str(sp.N(v.subs(qg, sp.Float(str(q0), 70)), 70)))) * E0, 15)
-           for k, v in trs.items()}
-    check("P3_zD_trace_comparison", mult and zcheck,
-          f"Jimbo quantum trace / [2]^n is the convention-D Markov trace (tr(s) = z_D, checked); "
-          f"exact traces { {k: str(v) for k, v in trs.items()} }; tr(pair) = tr(Hopf photon) * "
-          f"tr(crossing photon) (Markov factorisation, checked). |tr| x E0 (canonical, proton q0), "
-          f"COMPARISON ONLY, not proposed as Q_beta: {mev} MeV. CODATA Q_beta = 0.78233 MeV.")
-    # same trace for every matching gamma-gamma word? (all have writhe 0)
-    qf = mp.mpf(q0)
-    by = {}
-    for r in hits:
-        w = gg_word(r["verts"])
-        tot = mp.mpf(0)
-        for bb in range(2 ** N):
-            d = _act({bb: mp.mpf(1)}, w, qf, N).get(bb, 0)
-            tot += qf ** (N - 2 * bin(bb).count("1")) * d
-        by.setdefault(r["match"], set()).add(mp.nstr(abs(tot / (qf + 1 / qf) ** N) * E0, 30))
+    with mp.workdps(80):
+        q0 = q_at(80)
+        q0_80_str = mp.nstr(q0, 80, strip_zeros=False)
+        E0 = qbeta_e0.canonical(q=q0)
+        mev = {k: mp.nstr(abs(mp.mpf(str(sp.N(v.subs(qg, sp.Float(q0_80_str, 80)), 80)))) * E0, 15)
+               for k, v in trs.items()}
+        check("P3_zD_trace_comparison", mult and zcheck,
+              f"Jimbo quantum trace / [2]^n is the convention-D Markov trace (tr(s) = z_D, checked); "
+              f"exact traces { {k: str(v) for k, v in trs.items()} }; tr(pair) = tr(Hopf photon) * "
+              f"tr(crossing photon) (Markov factorisation, checked). |tr| x E0 (canonical, proton q0), "
+              f"COMPARISON ONLY, not proposed as Q_beta: {mev} MeV. CODATA Q_beta = 0.78233 MeV.")
+        # same trace for every matching gamma-gamma word? (all have writhe 0)
+        qf = mp.mpf(q0)
+        by = {}
+        for r in hits:
+            w = gg_word(r["verts"])
+            tot = mp.mpf(0)
+            for bb in range(2 ** N):
+                d = _act({bb: mp.mpf(1)}, w, qf, N).get(bb, 0)
+                tot += qf ** (N - 2 * bin(bb).count("1")) * d
+            by.setdefault(r["match"], set()).add(mp.nstr(abs(tot / (qf + 1 / qf) ** N) * E0, 30))
     check("P3_trace_same_for_every_match", all(len(v) == 1 for v in by.values()),
           f"every one of the {len(hits)} matching gamma-gamma words gives the same |tr_D| x E0 "
           f"per orientation (gamma-gamma words have writhe 0, so the Markov trace is a link "
@@ -424,6 +429,8 @@ def main() -> int:
     allp = all(o for _, o, _ in RESULTS)
     print(f"  {sum(o for _, o, _ in RESULTS)}/{len(RESULTS)} checks passed")
     wb = WitnessBuilder("six-strand-photon-pair", engine="fractions+sympy+mpmath", output_dir=_HERE)
+    wb.add_parameter("workdps", 80)
+    wb.add_parameter("q0", q0_80_str)
     for nm, o, det in RESULTS:
         wb.add_assertion(nm, computed="PASS" if o else "FAIL", expected="PASS",
                          tolerance="exact", source=det)

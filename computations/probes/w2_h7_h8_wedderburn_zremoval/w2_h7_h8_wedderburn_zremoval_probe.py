@@ -412,6 +412,7 @@ def main() -> int:
         )
         wb.add_parameter("workdps", 80)
         wb.add_parameter("q0Anchor", "proton")
+        wb.add_parameter("q0", fmt80(q0))
         wb.add_parameter("q0_proton_80dps", fmt80(q0))
         wb.add_parameter("z_D_80dps", fmt80(z_d))
         wb.add_parameter("z_D_bar_80dps", fmt80(z_d_bar))

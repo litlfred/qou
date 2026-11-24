@@ -67,5 +67,8 @@ checks["neutron_h5_3/2"] = out["into_neutron"]["h_order"] == 5 and out["into_neu
 print(checks)
 assert all(checks.values())
 with open(os.path.join(HERE, "bond-generic-z.witness.json"), "w") as fh:
-    json.dump({"description": __doc__.strip(), "engine": "sympy exact Z[h,z]", "exploratory": True,
+    json.dump({"q0Anchor": "independent",
+               "q0AnchorReason": "exact sympy polynomial arithmetic in Z[h, z] with formal h and z "
+                                 "(specialised only to exact rational z = 1/2 at q = 1); q0 is never read",
+               "description": __doc__.strip(), "engine": "sympy exact Z[h,z]", "exploratory": True,
                "results": out, "checks": checks}, fh, indent=1)
