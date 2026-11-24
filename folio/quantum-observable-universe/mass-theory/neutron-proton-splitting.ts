@@ -53,6 +53,12 @@ export default proposition({
     },
   ],
   lean: { ref: "qou:QOU.Torsion.neutron_proton_splitting", validation: "not_checked" },
+  computation: {
+    engine: "python",
+    script: "computations/markov_free_energy_qvalues.py",
+    witness: "computations/markov-free-energy-qvalues.witness.json",
+    status: "verified",
+  },
   title: "Neutron--proton mass splitting",
   uses: ["thm:wedderburn-mass-formula"],
 });

@@ -10,8 +10,11 @@ export default proposition({
   cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000", "riera-rodriguez-1992"],
   computation: {
     engine: "mpmath",
-    script: "computations/q_pinning_50_digit.py",
-    witness: "computations/q-pinning-50-digit.witness.json",
+    script: "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py",
+    witness: [
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.witness.json",
+    ],
     status: "verified",
   },
   tags: [

@@ -6,8 +6,13 @@ export default remark({
   title: "Mass predictions from knot formulas vs. CODATA/PDG values",
   computation: {
     engine: "mpmath",
-    script: "computations/q_pinning_50_digit.py",
-    witness: ["computations/q-pinning-50-digit.witness.json", "computations/codata-masses.witness.json"],
+    script: "computations/master_atlas_jacobian_80dps.py",
+    witness: [
+      "computations/master-atlas-80dps.witness.json",
+      "computations/per-observable-100x-status.witness.json",
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/codata-masses.witness.json",
+    ],
     status: "verified",
   },
   tags: [

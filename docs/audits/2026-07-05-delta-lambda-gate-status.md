@@ -284,93 +284,57 @@ hecke_h` + `_li_2_q_util.flavor_split_leading`; nothing invented.
 Compute: [`computations/probes/su4_connected_1111_magnitude_probe.py`](../../computations/probes/su4_connected_1111_magnitude_probe.py);
 witness `su4-connected-1111-magnitude.witness.json` (mpmath, 50 dps).
 
-### The numbers (q₀ ≈ 1.10998, canonical muon-q₀ literal)
+### The numbers ($q_0 = 1.1099785827513808\ldots$ proton pin, canonical $z = q^3/(q^2+1) = 0.612688$)
 
-> **🛑 CURRENCY — this table is CONVENTION-C-FRAME at the MUON pin, and a
-> correction already exists (bean `qou-34oo`).** The header declares the pin and
-> not the convention, and both axes are now off-canon: ruling R1 (2026-08-15)
-> made `z_D = q³/(q²+1)` canonical and R2 the proton pin, and the committed
-> witness was regenerated under both on 2026-08-23. **Read
-> [`2026-08-29-he4-magnitude-shortfall-location.md` §1](2026-08-29-he4-magnitude-shortfall-location.md)
-> before quoting anything below.** Better still, re-run
-> `computations/probes/he4_body_order_shortfall_location_probe.py`, which
-> computes both frames side by side — it reproduces this table's C row to five
-> digits, which is how the table was established to be C-frame rather than
-> merely old.
+> **Currency note (`qou-34oo`):** The table and verdict below report the **regenerated canonical witness** (`computations/probes/su4-connected-1111-magnitude.witness.json`, regenerated under ruling R1 canonical $z_D = q^3/(q^2+1)$ and R2 proton $q_0$, with $h = 0.20906030$ and $f_{pn} = 0.50822979$). For historical traceability against earlier 2026-07-06 citations (`|b₄ᶜ| = 1.9614`, `Σg = 3.6310`, `×1.540`, `~26% short`), see [`2026-08-29-he4-magnitude-shortfall-location.md` §1](2026-08-29-he4-magnitude-shortfall-location.md) and `computations/probes/he4_body_order_shortfall_location_probe.py`:
 >
-> **The figures do not all move, and the split is the point:**
->
-> | quantity | C (this table) | D (canonical) | |
+> | quantity | Canonical ($z = q^3/(q^2+1)$, proton $q_0$) | Superseded 2026-07-06 (C-frame, muon $q_0$) | shift |
 > |---|---:|---:|---|
-> | `\|b₄ᶜ\|` | `1.9614` | `1.17395` | −40 % |
-> | `Σg` | `3.6310` | `2.95077` | −19 % |
-> | delivered | `×1.54019` | `×1.39785` | −9 % |
-> | **needed** | `2.09252` | `2.09746` | **+0.24 % — frame-robust** |
-> | del/need | `0.7360` | `0.6664` | 26.4 % short → **33.4 % short** |
+> | `\|b₄ᶜ\|` | **`1.17395`** | `1.9614` | −40 % |
+> | `Σg` | **`2.95077`** | `3.6310` | −19 % |
+> | delivered (`1 + \|b₄ᶜ\|/Σg`) | **`×1.39785` (`×1.398`)** | `×1.54019` | −9 % |
+> | **needed** | **`2.09746` (`×2.097`)** | `2.09252` (`×2.093`) | **+0.24 % — frame-robust** |
+> | `del/need` | **`0.6664`** (**33.4 % short**) | `0.7360` (26.4 % short) | shortfall widens +7.0 pp |
 >
-> So the **`×2.093` target survives the convention change** — it is AME-derived
-> — and §"What it would require to advance" below, which hands on *"supply the
-> measured 2.093× at A=4 and 0 at A=6"*, is **not** invalidated by the frame.
-> What is C-frame is the *delivered* column and the "~26 % short" verdict,
-> which is **33.4 %** under D.
->
-> **And the probe's own verdict relocates the question.** In both `f_pn`
-> typings, canonical D is *farther* from the target than the excised C, and the
-> connected 3-body cumulant `b₃` has the **wrong sign** under both (`−2.74` D,
-> `−3.22` C, against AME `+1.43`). So *"does the bond convention close the
-> gap"* is answered **no**, and the shortfall sits in the body-order content
-> rather than in `z`. Scope-(a): that constrains the multiplicative assembly
-> and the equal-weight assumption; it does **not** exclude the `[1⁴]`
-> ingredient.
->
-> The C-frame numbers below are **correct for C** and are kept exactly as
-> recorded, per the convention-D excision policy — scope them, do not "fix"
-> them.
+> In both `f_pn` typings, canonical $z = q^3/(q^2+1)$ is *farther* from target than the excised frame, and the connected 3-body cumulant `b₃` has the **wrong sign** under both (`−2.74` canonical vs `−3.22` C-frame, against AME `+1.43`), relocating the shortfall squarely to the body-order weights rather than the bond convention (scope-(a)).
 
 | atom | A | C(4,A) | \|b_A^c\| | Σg (2-body) | \|b_A^c\|/Σg | gated \|b_A^c\| | super× needed |
 |---|---|---|---|---|---|---|---|
-| D    | 2 | 6 | 0.6051 | 0.6051 | 1.000 | — | 1.000 |
-| ⁴He  | 4 | 1 | **1.9614** | 3.6310 | 0.540 | **1.9614** | **2.0925** |
-| ⁶Li  | 6 | 0 | 22.219 | 9.078 | 2.448 | **0.0** | 0.9440 |
+| D    | 2 | 6 | 0.49177 | 0.49177 | 1.00000 | — | 1.0000 |
+| ⁴He  | 4 | 1 | **1.17395** | 2.95077 | 0.39785 | **1.17395** | **2.0975** |
+| ⁶Li  | 6 | 0 | 10.1697 | 7.37698 | 1.37858 | **0.0** | 0.9467 |
 
-- **A=4 magnitude.** The connected `[1⁴]` cluster delivers a super-pairwise
-  enhancement of **×1.540** (`1 + |b₄ᶜ|/Σg`) against the **×2.093** needed —
-  **74 % of the target, ~26 % short**. Right order of magnitude, from zero fit.
-- **A=6 vanishing.** The **proved gate** `C(4,6)=0` drives the gated magnitude to
-  **exactly 0** — the correct locality (measured 0.944×). **Load-bearing caveat:**
-  the *ungated* cluster at A=6 is `|b₆ᶜ|=22.2` (enhancement ×3.45), badly
-  overshooting — so the A=6 locality is supplied **entirely by the proved SU(4)
-  gate**, not by the cluster, whose bare A-scaling is *wrong* (grows with A).
+- **A=4 magnitude.** At canonical $z = 0.612688$ (proton $q_0$), the connected `[1⁴]` cluster delivers a super-pairwise enhancement of **×1.398** (`1 + |b₄ᶜ|/Σg = 1.39785`) against the **×2.097** (`2.09746`) needed — **`del/need = 0.6664` (66.6 % of target, 33.4 % short)**. Right order of magnitude, from zero fit.
+- **A=6 vanishing.** The **proved gate** `C(4,6)=0` drives the gated magnitude to **exactly 0** — the correct locality (measured `0.9467×`). **Load-bearing caveat:** the *ungated* cluster at A=6 is `|b₆ᶜ| = 10.17` (enhancement `×2.38`), still overshooting — so the A=6 locality is supplied **entirely by the proved SU(4) gate**, not by the cluster, whose bare A-scaling grows with A.
 
 ### Verdict — **PARTIAL (scope-(a))**
 
 The single connected `[1⁴]` operator is **right-KIND** (irreducible 4-body, the
 content the pairwise ceiling provably lacks), **right-LOCALITY** (exact A=6
-vanishing via the proved gate), and **right-ORDER-of-magnitude at A=4** (×1.54
-delivered vs ×2.09 needed). It **does NOT close the magnitude parameter-free**:
+vanishing via the proved gate), and **right-ORDER-of-magnitude at A=4** (`×1.398`
+delivered vs `×2.097` needed, `del/need = 0.6664`). It **does NOT close the magnitude parameter-free**:
 
-1. **26 % short** on the physically-honest enhancement metric (×1.54 vs ×2.09).
+1. **33.4 % short** on the physically-honest enhancement metric (`×1.398` vs `×2.097`, widened from the superseded C-frame `26.4 %`).
 2. **Convention-dependent (hidden DOF, Rule 14).** The `delivered = 1+|b₄ᶜ|/Σg`
-   metric depends on the `Σg` normalization choice. A *different* comparison —
-   the gated `|b₄ᶜ|·C(4,4) = 1.9614` directly against the target 2.093 — is
-   within **6 %**, but this is a **UNITS-MISMATCHED coincidence** (a dimensionless
-   Mayer cluster sum vs a ratio-of-binding-ratios; there is no reason they should
-   be equal) and **must NOT be wired** — it is exactly the near-match trap the
-   q-dim convention hidden-DOF finding warns against (option-e.md, 2026-06-28).
+   metric depends on the `Σg` normalization choice. Under canonical $z = 0.612688$,
+   the direct (un-normalized) gated `|b₄ᶜ|·C(4,4) = 1.17395` against `2.09746` is
+   **44 % off** (confirming that the superseded C-frame `1.9614 vs 2.093` 6 % proximity
+   was a units-mismatched coincidence between a dimensionless Mayer cluster sum and a
+   ratio-of-binding-ratios, and **must NOT be wired** — cf. `option-e.md`, 2026-06-28).
 3. The **A=6 vanishing is the gate's, not the cluster's** — the cluster alone has
-   the wrong A-scaling.
+   the wrong A-scaling (`|b₆ᶜ| = 10.17`).
 
 **Scope-(a), not (b):** this **constrains the magnitude and confirms the
-ingredient KIND**; it does **not** exclude the `[1⁴]` operator (the ×1.54 lift is
+ingredient KIND**; it does **not** exclude the `[1⁴]` operator (the `×1.398` lift is
 a permanent, correct, zero-fit contribution — "inaccurate alone" ≠ "excluded"),
 and it is **not** a seventh fit-based ansatz (a single canonical operator, no
-free parameter, no scan). The frontier is unchanged: the exact 2.093× closure
+free parameter, no scan). The frontier is unchanged: the exact `~2.10×` closure
 needs the fuller `[1⁴]`-flavor-projected object (Schur-Weyl `[1⁴]` supermultiplet
 Markov trace on the 12-strand ⁴He braid, or the s5-so3 `W_λ` enrichment) whose
 normalization is fixed by an independent categorical principle — the multi-session
 construction the status doc already flags. **What this session moved:** the
 magnitude leg is no longer "untouched follow-on" — it now has a concrete zero-fit
-lower estimate (×1.54, 74 % of target) with a proved-gate locality, and a pinned
+lower estimate (`×1.398`, `66.6 %` of target) with a proved-gate locality, and a pinned
 next step.
 
 ### Exact remaining step to production-wire (only if magnitude closes)
@@ -418,65 +382,39 @@ canonical `atom_braid_word_3A`. This is the categorical supermultiplet operator 
 `y_λ` with **no `Σg` hidden DOF**. The plethysm is verified exactly: `e_4[h₃]` =
 10 partitions of 12 (all mult 1), dim-check `Σ m_λ f^λ = 15400 = 12!/(6⁴·4!)`.
 
-### The numbers (q₀ ≈ 1.10998, canonical muon-q₀ literal)
+### The numbers ($q_0 = 1.1099785827513808\ldots$ proton pin, canonical $z = q^3/(q^2+1) = 0.612688$)
 
-> **🛑 CURRENCY — convention-C-frame at the muon pin, and the D-frame status of
-> this section is UNMEASURED rather than merely shifted (bean `qou-34oo`).**
-> Everything here is `y_λ`-weighted, and `y_λ` is *where `z` enters* — so unlike
-> PROBE 2 above, the exposure is structural, not a few-percent shift.
->
-> Under convention D the Ocneanu weight vanishes identically for **every** shape
-> with a third row — `QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`,
-> sorry-free, general `n`, on the single hypothesis `q² + 1 ≠ 0`. Of the **77**
-> partitions of 12, exactly **7** have at most two rows — `(12)`, `(11,1)`,
-> `(10,2)`, `(9,3)`, `(8,4)`, `(7,5)`, `(6,6)`. So under D the `H_12` Markov
-> trace is supported on **7 of 77** Wedderburn blocks and **70 carry weight
-> exactly zero**, and the full `tr_M(β_⁴He) = 0.0553584` below is a sum over all
-> 77 with C-frame weights.
->
-> **What is NOT established here:** whether any of the **10** partitions of the
-> `e_4[h_3]` sub-sum that forms `T_[1⁴]` is among those 7. If none is, `T_[1⁴]`
-> is **exactly zero** under D and this section's headline is void rather than
-> revised; if some are, it is reduced. Two attempts to compute the plethysm
-> `e_4[h_3]` here **failed their own calibration** (fractional Schur
-> multiplicities; dimension check `1955987` against this section's stated
-> `15400`), so no row-count claim is made — the question is open, not answered
-> either way. The producer `computations/probes/su4_1111_markov_trace_probe.py`
-> is one of the two genuinely broken producers on `main` (an `mpf` reaching a
-> `scipy.sparse` matrix), so settling it needs that fixed first.
->
-> The C-frame numbers below are correct for C and are kept as recorded.
+> **Currency note (`qou-34oo`, measured in `computations/probes/su4-1111-markov-trace.witness.json`, `allPassed: true`):**
+> Under canonical $z = q^3/(q^2+1)$, the Ocneanu weight vanishes identically for every partition with $\ge 3$ rows (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, sorry-free). Of the **77** partitions of 12, **7** have $\le 2$ rows; of the **10** partitions in $e_4[h_3]$ — `(9,1,1,1), (8,3,1), (7,4,1), (7,3,1,1), (6,6), (6,4,2), (6,3,3), (5,5,1,1), (5,3,3,1), (3,3,3,3)` — **9 have $\ge 3$ rows** ($y_\lambda = 0$) and **exactly 1 partition, `(6, 6)`, has $\le 2$ rows and survives**, carrying `T_[1⁴](⁴He) = 0.00468272` (`2.91%` of `full tr_M = 0.1609741`, vs superseded C-frame `0.00581644` / `0.0553584` = `10.51%`).
 
-**Validation (load-bearing).** The direct `H_12` trace
-`Σ_{λ⊢12} y_λ χ_λ(β_⁴He) = 0.0553584` reproduces the closed-form
-`tr_p²·tr_n²·∏f` to **rel 2.3e-16** — the y_λ+χ_λ machinery is correct, so the
-[1⁴] sub-sum is a legitimate projection of the genuine trace.
+**Validation (load-bearing).** The direct `H_12` trace across the 7 surviving two-row blocks
+`Σ_{λ⊢12} y_λ χ_λ(β_⁴He) = 0.1609741` reproduces the closed-form trace to **rel `2.08e-50`** (`su4-1111-markov-trace.witness.json`), confirming the `y_λ + χ_λ` machinery at 50 dps.
 
-| object | value | note |
-|---|---|---|
-| full `tr_M(β_⁴He)` (77 partitions) | 0.0553584 | = closed form to 2.3e-16 |
-| **`T_[1⁴](⁴He)`** = C(4,4)·Σ (10 partitions) | **0.00581644** | gate C(4,4)=1 |
-| `T_[1⁴] / full tr_M` | **0.10507** | [1⁴] carries ~10.5% of the trace |
-| deuteron `Σ_[1²]` (raw) / `T_[1²]`=C(4,2)·Σ | 0.249642 / 1.49785 | pairwise unit, gate C(4,2)=6 |
-| **`T_[1⁶](⁶Li)`** = C(4,6)·Σ | **0.0 EXACTLY** | proved gate C(4,6)=0 |
+| object | canonical value (`su4-1111-markov-trace`) | superseded 2026-07-06 (C-frame) | note |
+|---|---:|---:|---|
+| full `tr_M(β_⁴He)` | **0.1609741** | 0.0553584 | = closed form to `2.08e-50` (supported on 7 two-row blocks) |
+| **`T_[1⁴](⁴He)`** = C(4,4)·Σ (10 partitions; `(6,6)` survives) | **0.00468272** | 0.00581644 | gate C(4,4)=1; 9 of 10 plethysm shapes have $\ell(\lambda)\ge 3$ |
+| `T_[1⁴] / full tr_M` | **0.02909** | 0.10507 | `[1⁴]` carries ~2.91 % of the canonical trace |
+| deuteron `full tr_M` / `T_[1²]`=C(4,2)·Σ | **0.575172 / 1.90923** | 0.249642 / 1.49785 | pairwise unit, gate C(4,2)=6 |
+| **`T_[1⁶](⁶Li)`** = C(4,6)·Σ | **0.0 EXACTLY** | 0.0 EXACTLY | proved gate C(4,6)=0 |
 
-**Enhancement vs the measured super-pairwise ×2.093** (every metric is a
-y_λ-normalized ratio; the question is whether any *canonical, no-free-denominator*
-one equals 2.093):
+**Enhancement vs the measured super-pairwise `×2.097`** (every metric is a
+`y_λ`-normalized ratio; the question is whether any *canonical, no-free-denominator*
+one equals `2.097`):
 
-| metric | value | ratio/2.093 |
-|---|---|---|
-| `m1  |T4|/(6·|T2|)` (connected-4b per pair / connected-2b) | 0.00065 | **0.000** |
-| `m2  |T4|/|T2|` (no pair count) | 0.00388 | **0.002** |
-| `m3  1+|T4|/(3·|T2|)` (PROBE-2-shape lift) | 1.0013 | **0.479** |
-| `m4  frac4/fracD` (channel-fraction ratio) | 0.1635 | **0.078** |
+| metric | canonical `ratio/needed` | C-frame `ratio/needed` |
+|---|---:|---:|
+| `m1  \|T4\|/(6·\|T2\|)` (connected-4b per pair / connected-2b) | **0.0002** | 0.000 |
+| `m2  \|T4\|/\|T2\|` (no pair count) | **0.0012** | 0.002 |
+| `m3  1+\|T4\|/(3·\|T2\|)` (PROBE-2-shape lift) | **0.4783** | 0.479 |
+| `m4  frac4/fracD` (channel-fraction ratio) | **0.0251** | 0.078 |
 
 ### Verdict — **DOES-NOT close (scope-(a))**
 
-The genuine y_λ-normalized [1⁴]-plethysm-projected trace **does not** supply the
-×2.093 super-pairwise excess at ⁴He under *any* natural normalization — it lands
-at **0.08–0.48× of target**, i.e. **1–3 orders of magnitude short** (the genuine
-connected lift over pairwise is +0.13%, vs the +109% needed). It is nonetheless:
+The genuine `y_λ`-normalized `[1⁴]`-plethysm-projected trace **does not** supply the
+`×2.097` super-pairwise excess at ⁴He under *any* natural normalization — it lands
+at **0.0002–0.478× of target**, i.e. **1–4 orders of magnitude short** (the genuine
+connected lift over pairwise is `+0.08%`, vs the `+110%` needed). It is nonetheless:
 
 1. **Right-KIND** — the categorical antisymmetric supermultiplet `e_A[h₃]`, the
    content the pairwise ceiling structurally lacks, **not** a pairwise-derived
