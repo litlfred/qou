@@ -1,11 +1,11 @@
 ---
 # qou-br4t
 title: Closed-Form 4x4 Hankel/Cauchy Determinant Identity for 4-Row SU(4) q-Plancherel Normalization Z_{3A}^{(4)}(q)
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-19T06:42:10Z
-updated_at: 2026-11-19T06:42:10Z
+updated_at: 2026-11-24T15:35:54Z
 parent: qou-v2om
 ---
 
