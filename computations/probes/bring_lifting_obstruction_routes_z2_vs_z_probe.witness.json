@@ -1,0 +1,475 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T18:34:30.308868+00:00",
+  "commitSha": "8c91729eaab7feeb07daf453be483c1b1c04787f",
+  "assertions": [
+    {
+      "name": "w2_tangent_vanishes_all_genera_0_to_10",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "w2_tangent_vanishes_all_genera (BringLiftingObstructionRoutes.lean)"
+    },
+    {
+      "name": "w2_odd_degree_bundles_equal_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "w2_odd_degree_bundle_one (BringLiftingObstructionRoutes.lean)"
+    },
+    {
+      "name": "bring_g4_spin_structure_total_256",
+      "computed": 256,
+      "expected": 256,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bring_theta_counts_and_s5_orbits (BringLiftingObstructionRoutes.lean)"
+    },
+    {
+      "name": "bring_g4_even_theta_count_136",
+      "computed": 136,
+      "expected": 136,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bring_theta_counts_and_s5_orbits (BringLiftingObstructionRoutes.lean)"
+    },
+    {
+      "name": "bring_g4_odd_theta_tritangent_count_120",
+      "computed": 120,
+      "expected": 120,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bring_theta_counts_and_s5_orbits (BringLiftingObstructionRoutes.lean)"
+    },
+    {
+      "name": "bring_g4_s5_invariant_even_spin_mod5_eq_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bring_theta_counts_and_s5_orbits (136 = 1 + 15 + 60 + 60)"
+    },
+    {
+      "name": "integral_euler_zero_exclusively_at_torus_g1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "integral_euler_zero_iff_torus (BringLiftingObstructionRoutes.lean)"
+    },
+    {
+      "name": "bring_integral_euler_class_minus_6",
+      "computed": -6,
+      "expected": -6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bring_integral_euler_nonzero (BringLiftingObstructionRoutes.lean)"
+    },
+    {
+      "name": "bring_admissible_kummer_levels_1_2_3_6",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bring_admissible_kummer_levels (BringLiftingObstructionRoutes.lean)"
+    },
+    {
+      "name": "hecke_content_sum_transpose_antisymmetry_n1_to_4",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "hecke_content_sum_transpose_antisymmetry (BringLiftingObstructionRoutes.lean)"
+    },
+    {
+      "name": "su2_mtc_modular_relations_50dps_satisfied",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "SL2(Z) / Verlinde modular relations (ST)^3 = p_+ S^2, S^2 = C, S_{0,a} = d_a / D"
+    },
+    {
+      "name": "root_of_unity_truncation_vs_real_q_non_truncation",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "one_sub_mul_qIntegerPoly & qIntegerPoly_at_one (BringLiftingObstructionRoutes.lean)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "bring_lifting_obstruction_routes_z2_vs_z_probe",
+  "scriptFile": "bring_lifting_obstruction_routes_z2_vs_z_probe.py",
+  "scriptHash": "524d4fd3d966",
+  "scriptCommitSha": "8c91729eaab7feeb07daf453be483c1b1c04787f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_lifting_obstruction_routes_z2_vs_z_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_lifting_obstruction_routes_z2_vs_z_probe.py"
+  },
+  "description": "Exact integer and 50-dps verification of (I) Route Z/2Z Stiefel-Whitney w_2 reduction and 256 = 136 + 120 theta characteristics on Bring's genus-4 surface (`qou-2a2o`), (II) Route Z integral Euler / Chern obstruction kappa_0 = -6 != 0 and Kummer n-th root divisibility set {1, 2, 3, 6} (`qou-n2aa`), and (III) Hecke Modular Tensor Category (S, T) relations and root-of-unity truncation vs real q_0 > 1 non-truncation (`hkmt`).",
+  "auditOnly": "Beans qou-2a2o, qou-n2aa (parent qou-lx8f), and hkmt (parent rtep / bwhk); companion Lean module QOU/Brings/BringLiftingObstructionRoutes.lean.",
+  "data": {
+    "route_z2_stiefel_whitney_and_theta_table": [
+      {
+        "genus": 0,
+        "euler_char_chi": 2,
+        "canonical_degree_2g_minus_2": -2,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 1,
+        "even_theta_N_plus": 1,
+        "odd_theta_N_minus": 0
+      },
+      {
+        "genus": 1,
+        "euler_char_chi": 0,
+        "canonical_degree_2g_minus_2": 0,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 4,
+        "even_theta_N_plus": 3,
+        "odd_theta_N_minus": 1
+      },
+      {
+        "genus": 2,
+        "euler_char_chi": -2,
+        "canonical_degree_2g_minus_2": 2,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 16,
+        "even_theta_N_plus": 10,
+        "odd_theta_N_minus": 6
+      },
+      {
+        "genus": 3,
+        "euler_char_chi": -4,
+        "canonical_degree_2g_minus_2": 4,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 64,
+        "even_theta_N_plus": 36,
+        "odd_theta_N_minus": 28
+      },
+      {
+        "genus": 4,
+        "euler_char_chi": -6,
+        "canonical_degree_2g_minus_2": 6,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 256,
+        "even_theta_N_plus": 136,
+        "odd_theta_N_minus": 120
+      },
+      {
+        "genus": 5,
+        "euler_char_chi": -8,
+        "canonical_degree_2g_minus_2": 8,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 1024,
+        "even_theta_N_plus": 528,
+        "odd_theta_N_minus": 496
+      },
+      {
+        "genus": 6,
+        "euler_char_chi": -10,
+        "canonical_degree_2g_minus_2": 10,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 4096,
+        "even_theta_N_plus": 2080,
+        "odd_theta_N_minus": 2016
+      },
+      {
+        "genus": 7,
+        "euler_char_chi": -12,
+        "canonical_degree_2g_minus_2": 12,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 16384,
+        "even_theta_N_plus": 8256,
+        "odd_theta_N_minus": 8128
+      },
+      {
+        "genus": 8,
+        "euler_char_chi": -14,
+        "canonical_degree_2g_minus_2": 14,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 65536,
+        "even_theta_N_plus": 32896,
+        "odd_theta_N_minus": 32640
+      },
+      {
+        "genus": 9,
+        "euler_char_chi": -16,
+        "canonical_degree_2g_minus_2": 16,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 262144,
+        "even_theta_N_plus": 131328,
+        "odd_theta_N_minus": 130816
+      },
+      {
+        "genus": 10,
+        "euler_char_chi": -18,
+        "canonical_degree_2g_minus_2": 18,
+        "w2_mod2": 0,
+        "spin_structures_2_pow_2g": 1048576,
+        "even_theta_N_plus": 524800,
+        "odd_theta_N_minus": 523776
+      }
+    ],
+    "route_z_bring_summary": {
+      "genus": 4,
+      "euler_characteristic_kappa_0": -6,
+      "canonical_degree": 6,
+      "mod2_reduction_w2": 0,
+      "admissible_kummer_root_levels_1_to_6": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "obstructed_kummer_levels_1_to_6": [
+        4,
+        5
+      ],
+      "fibre_torsion_orders_on_admissible_covers": {
+        "1": 6,
+        "2": 3,
+        "3": 2,
+        "6": 1
+      }
+    },
+    "hecke_partition_content_sums": [
+      {
+        "n": 1,
+        "partition": [
+          1
+        ],
+        "conjugate": [
+          1
+        ],
+        "content_sum": 0,
+        "conjugate_content_sum": 0
+      },
+      {
+        "n": 2,
+        "partition": [
+          2
+        ],
+        "conjugate": [
+          1,
+          1
+        ],
+        "content_sum": 1,
+        "conjugate_content_sum": -1
+      },
+      {
+        "n": 2,
+        "partition": [
+          1,
+          1
+        ],
+        "conjugate": [
+          2
+        ],
+        "content_sum": -1,
+        "conjugate_content_sum": 1
+      },
+      {
+        "n": 3,
+        "partition": [
+          3
+        ],
+        "conjugate": [
+          1,
+          1,
+          1
+        ],
+        "content_sum": 3,
+        "conjugate_content_sum": -3
+      },
+      {
+        "n": 3,
+        "partition": [
+          2,
+          1
+        ],
+        "conjugate": [
+          2,
+          1
+        ],
+        "content_sum": 0,
+        "conjugate_content_sum": 0
+      },
+      {
+        "n": 3,
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "conjugate": [
+          3
+        ],
+        "content_sum": -3,
+        "conjugate_content_sum": 3
+      },
+      {
+        "n": 4,
+        "partition": [
+          4
+        ],
+        "conjugate": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "content_sum": 6,
+        "conjugate_content_sum": -6
+      },
+      {
+        "n": 4,
+        "partition": [
+          3,
+          1
+        ],
+        "conjugate": [
+          2,
+          1,
+          1
+        ],
+        "content_sum": 2,
+        "conjugate_content_sum": -2
+      },
+      {
+        "n": 4,
+        "partition": [
+          2,
+          2
+        ],
+        "conjugate": [
+          2,
+          2
+        ],
+        "content_sum": 0,
+        "conjugate_content_sum": 0
+      },
+      {
+        "n": 4,
+        "partition": [
+          2,
+          1,
+          1
+        ],
+        "conjugate": [
+          3,
+          1
+        ],
+        "content_sum": -2,
+        "conjugate_content_sum": 2
+      },
+      {
+        "n": 4,
+        "partition": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "conjugate": [
+          4
+        ],
+        "content_sum": -6,
+        "conjugate_content_sum": 6
+      }
+    ],
+    "su2_mtc_50dps_modular_verification": {
+      "SU2_level_2_k4": {
+        "k": 4,
+        "rank": 3,
+        "quantum_dimensions_50dps": [
+          "1.0",
+          "1.4142135623730950488016887242096980785696718753769",
+          "1.0"
+        ],
+        "global_dimension_D_sq_50dps": "4.0",
+        "global_dimension_D_50dps": "2.0",
+        "vacuum_row_max_err": "0.0",
+        "S_squared_eq_I_max_err": "4.6222405338020819392598274833609516263363113807155e-67",
+        "ST_cubed_eq_p_plus_S_squared_max_err": "1.3597041796597094004930960805131705331717581587534e-66"
+      },
+      "SU2_level_3_k5": {
+        "k": 5,
+        "rank": 4,
+        "quantum_dimensions_50dps": [
+          "1.0",
+          "1.6180339887498948482045868343656381177203091798058",
+          "1.6180339887498948482045868343656381177203091798058",
+          "1.0"
+        ],
+        "global_dimension_D_sq_50dps": "7.2360679774997896964091736687312762354406183596115",
+        "global_dimension_D_50dps": "2.6899940478558293078402358755429950235071324441702",
+        "vacuum_row_max_err": "1.1869459682199748434341552836952446442776207292025e-66",
+        "S_squared_eq_I_max_err": "5.9347298410998742171707764184762232213881036460125e-66",
+        "ST_cubed_eq_p_plus_S_squared_max_err": "7.5709715491035405217742830518199887159587131022497e-66"
+      }
+    },
+    "root_of_unity_vs_real_q_truncation": [
+      {
+        "k": 2,
+        "abs_q_integer_at_primitive_kth_root_50dps": "9.244481067604163878519654966721903252672622761431e-67",
+        "q_integer_at_q_eq_1": 2,
+        "q_integer_at_q_eq_2": 3
+      },
+      {
+        "k": 3,
+        "abs_q_integer_at_primitive_kth_root_50dps": "2.373891936439949686868310567390489288555241458405e-66",
+        "q_integer_at_q_eq_1": 3,
+        "q_integer_at_q_eq_2": 7
+      },
+      {
+        "k": 4,
+        "abs_q_integer_at_primitive_kth_root_50dps": "1.3866721601406245817779482450082854879008934142146e-66",
+        "q_integer_at_q_eq_1": 4,
+        "q_integer_at_q_eq_2": 15
+      },
+      {
+        "k": 5,
+        "abs_q_integer_at_primitive_kth_root_50dps": "4.7847321645466081280160660041841539980878305392833e-66",
+        "q_integer_at_q_eq_1": 5,
+        "q_integer_at_q_eq_2": 31
+      },
+      {
+        "k": 6,
+        "abs_q_integer_at_primitive_kth_root_50dps": "5.3081837411183376085189145248925095167435723248145e-66",
+        "q_integer_at_q_eq_1": 6,
+        "q_integer_at_q_eq_2": 63
+      },
+      {
+        "k": 7,
+        "abs_q_integer_at_primitive_kth_root_50dps": "6.9210248424712521077932632479065811639662376597897e-66",
+        "q_integer_at_q_eq_1": 7,
+        "q_integer_at_q_eq_2": 127
+      }
+    ]
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Exact integer cohomology (H^2(Sigma_g, Z) vs H^2(Sigma_g, Z/2Z)), theta-characteristic combinatorics, partition content sums, and root-of-unity SU(2)_k modular S, T identities; no substrate q_0 read."
+}
