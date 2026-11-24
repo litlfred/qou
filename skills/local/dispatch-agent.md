@@ -102,11 +102,9 @@ guessing. Deviating from the marker or the four keys breaks the monitor.
 1. **Scope each front** to one independent agent (no shared files between
    agents — worktree isolation makes parallel file writes safe; use
    `isolation: "worktree"` whenever agents mutate the tree).
-2. **Assign each a `<LABEL>`** and paste the §1 contract block into its
-   prompt, plus the task-specific brief (verification recipe, discipline,
-   git/branch/PR rules — do not re-derive these; reuse the project's
-   standing lean-direct recipe and "push branch, parent PRs+merges"
-   convention).
+2. **Assign each a `<LABEL>`** and paste **both**:
+   - the §1 progress contract block above, **AND**
+   - the **Mandatory Sibling Launch Briefing** from [`swarm-sibling-launch.md`](swarm-sibling-launch.md) (Template A for the single `merge-steward`, Template B for every `Coding / Proof / Prose / Compute Sibling` — injecting `.claude/skills/local/*.md`, `continual-progress.md`, `idle-backlog.md`, `merge-queue.md` sibling-side submission with zero self-merging, `one-voice` external-reader hygiene, two-step witness SHA stamping, reverting the 9 `qou-v0t8` contended audit witnesses, CPU throttling, and branch/public-release fences).
 3. **Launch all agents in a single message** (multiple `Agent` tool calls)
    so they run concurrently. Record each returned `agentId` ↔ `<LABEL>`
    mapping in a scratch note (`/tmp/<session>-dispatch-map.txt`) so the
