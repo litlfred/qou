@@ -353,10 +353,14 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
 
     # ── Elementary / Hadron table (3.1a) ──────────────────────────────────────
     r2a = g2["part_a_quadratic_resolvent"]["R2a_qou_bare_vol41"]
+    g2_emp = g2["empirical_benchmarks"]
     mtau_pred = _m(r2a["pred_m_tau_over_m_e"])
-    mtau_exp = mpf("3477.228")
-    mtau_rel = _m(r2a["rel_err_vs_pdg"])
-    mtau_pull_pdg = _m(r2a["sigma_pull_vs_pdg_0_023"])
+    mtau_exp_cod = _m(g2_emp["m_tau_over_m_e_codata_2022"])
+    mtau_sig_cod = _m(g2_emp["m_tau_over_m_e_codata_uncert"])
+    mtau_rel_cod = _m(r2a["rel_err_vs_codata_2022"])
+    mtau_pull_cod = _m(r2a["sigma_pull_vs_codata_2022"])
+    mtau_rel_p24 = _m(r2a["rel_err_vs_pdg_2024"])
+    mtau_pull_p24 = _m(r2a["sigma_pull_vs_pdg_2024"])
 
     def _elem_row(label: str, key: str, po_key: str | None, status_txt: str) -> str:
         o = obs[key]
@@ -384,9 +388,12 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
         _elem_row("Electron $m_e$", "m_e_MeV", "m_e", "Calibration input 1"),
         _elem_row("Muon $m_\\mu$", "m_mu_MeV", "m_mu", "Derived (proton $q_0$)"),
         (
-            f"| Tau/electron $m_\\tau / m_e$ | `{_fmt_fixed(mtau_pred, 6)}` | `3477.228000 ± 2.3e-2` | "
-            f"`—` | `{_fmt_rel_human(mtau_rel)}` | `{_fmt_ppq(mtau_rel)}` | "
-            f"`+{_fmt_fixed(mtau_pull_pdg, 2)}σ` (`0.92σ` NIST) | No | Quadratic Koide resolvent (`gap2b`) |"
+            f"| Tau/electron $m_\\tau / m_e$ | `{_fmt_fixed(mtau_pred, 6)}` | "
+            f"`{_fmt_fixed(mtau_exp_cod, 2)} ± {_fmt_fixed(mtau_sig_cod, 2)}` | "
+            f"`—` | `{_fmt_rel_human(mtau_rel_cod)}` (`{_fmt_rel_human(mtau_rel_p24)}` PDG-24) | "
+            f"`{_fmt_ppq(mtau_rel_cod)}` | "
+            f"**`{_fmt_fixed(mtau_pull_cod, 2, signed=True)}σ`** (`{_fmt_fixed(mtau_pull_p24, 2, signed=True)}σ` PDG-24) | "
+            f"No | Conditional (`KoideTopologicalProtectionHypothesis`, `< 1σ`) |"
         ),
         _elem_row("Charged pion $m_{\\pi^\\pm}$", "m_pi_pm_MeV", None, "Calibration input 3"),
         _elem_row("Meson ratio $m_{K^\\pm}/m_{\\pi^\\pm}$", "mk_over_mpi", "m_K/m_pi", "Derived (`< 0.002σ`, beats $100\\times$!)"),
@@ -758,13 +765,14 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
     all_alpha_rels = [x["rel"] for x in alpha_records]
 
     mk_ppb_val = _m(obs["mk_over_mpi"]["rel_ppb"])
+    elem_med_ppm = (abs(_m(obs["m_mu_MeV"]["rel_ppb"])) / TEN_3 + abs(mtau_rel_cod) * TEN_6) / mpf(2)
     exec_rows = [
         (
             f"| **1. Mass** (Elementary & Hadrons) | $m_\\mu, m_\\tau/m_e, m_K/m_\\pi, m_K, m_n$ (+ 3 pins) | `6` (+3 pins) | "
-            f"`81.1 ppm` (`136 ppb` excl. $m_n, m_\\tau$) | `30.9 ppm` (`211 ppb` $m_\\mu$) | `5.14e+07` to `4.86e+11` | "
-            f"`2 / 6` ($m_K/m_\\pi, m_K$) | `2 / 6` (`3/6` w/ NIST $m_\\tau$) | "
-            f"**High** on $m_K/m_\\pi$ (`{_fmt_fixed(mk_ppb_val, 3, signed=True)} ppb`, `<0.002σ`) & $m_\\mu$ (`+211 ppb`); $m_n$ (`-486 ppm`) open | "
-            f"**Not at `1 ppQ`** (input floor `3.13e5 ppQ`) | Derived ($m_\\mu, m_K$); Conditional ($m_n$) |"
+            f"`81.1 ppm` (`136 ppb` excl. $m_n, m_\\tau$) | `{_fmt_fixed(elem_med_ppm, 1)} ppm` (`211 ppb` $m_\\mu$) | `5.14e+07` to `4.86e+11` | "
+            f"**`3 / 6`** ($m_K/m_\\pi, m_K, m_\\tau/m_e$) | **`3 / 6`** ($m_K/m_\\pi, m_K, m_\\tau/m_e$) | "
+            f"**High** on $m_K/m_\\pi$ (`{_fmt_fixed(mk_ppb_val, 3, signed=True)} ppb`, `<0.002σ`), $m_\\mu$ (`+211 ppb`), & cond. $m_\\tau/m_e$ (`{_fmt_fixed(mtau_pull_cod, 2, signed=True)}σ` / `{_fmt_fixed(mtau_pull_p24, 2, signed=True)}σ` PDG-24); $m_n$ (`-486 ppm`) open | "
+            f"**Not at `1 ppQ`** (input floor `3.13e5 ppQ`) | Derived ($m_\\mu, m_K$); Conditional ($m_\\tau/m_e, m_n$) |"
         ),
         (
             f"| **1. Mass** (Nuclear Rest Mass $A \\ge 2$) | Symbolic Q-CLT `m_symbolic_MeV` vs AME2020 | `{len(nuclide_records)}` | "
@@ -848,6 +856,10 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
         "MMU_PULL": _fmt_fixed(_m(obs["m_mu_MeV"]["pull_exp"]), 2, signed=True),
         "DQ_MU_P_PPB": _fmt_fixed(_m(anc["dq_muon_minus_proton_ppb"]), 2, signed=True),
         "MTAU_ME_PRED": _fmt_fixed(mtau_pred, 4),
+        "MTAU_CODATA_PPM": _fmt_fixed(mtau_rel_cod * TEN_6, 2, signed=True),
+        "MTAU_CODATA_PULL": _fmt_fixed(mtau_pull_cod, 2, signed=True),
+        "MTAU_PDG24_PPM": _fmt_fixed(mtau_rel_p24 * TEN_6, 2, signed=True),
+        "MTAU_PDG24_PULL": _fmt_fixed(mtau_pull_p24, 2, signed=True),
         "MN_REL_PPM": _fmt_fixed(_m(obs["m_n_MeV"]["rel_ppb"]) / TEN_3, 1, signed=True),
         "N_MEAS_NUCLIDES": f"{len(nuclide_records):,}",
         "NUCLEAR_MASS_BAND_ROWS": "\n".join(mass_band_rows),
