@@ -37,6 +37,8 @@ if [ ! -f cat-harness-tools/scripts/build-instance-site.ts ]; then
   bash .github/mount-from-lock.sh --root "$ROOT"
 fi
 [ -d node_modules ] || bun install
+# One platform: folio-assistant/ names the root mounts (scripts/lib/platform-root.sh).
+. scripts/lib/platform-root.sh && qou_platform_shim "$ROOT"
 
 rm -rf "$WORK/_site"
 bun run cat-harness-tools/scripts/build-instance-site.ts --root . --instance qou \

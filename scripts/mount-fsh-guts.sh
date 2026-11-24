@@ -31,6 +31,7 @@ if command -v bun >/dev/null 2>&1; then
   STATE=""
   if [ -f cat-harness-tools/scripts/state-mount.ts ] && [ -d node_modules ]; then
     STATE=cat-harness-tools/scripts/state-mount.ts
+    . scripts/lib/platform-root.sh && qou_platform_shim "$ROOT"
   elif [ ! -d folio-assistant/cat-harness-tools/scripts ]; then
     # Light install (about 20 s, 165 MB), not the full setup (1.7 GB, which
     # timed out or filled the disk in two sessions on 2026-11-15).
