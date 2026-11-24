@@ -4,6 +4,8 @@
   "description": "Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories",
   "repository": "litlfred/qou",
   "canonicalUrl": "https://litlfred.github.io/qou",
+  "iriBase": "https://litlfred.github.io/qou/",
+  "version": "0.1.0",
   "_needs_comment": "Added 2026-10-04 (bean qou-n4r9, story S1): the stack this paper folio is built on. Names only; the fetchable edge (git + ref) is authored in qou.config.json `dependencies.folioAssistant`, because a name carries no URL or version. `dependents` was removed from every directory entry: the platform retired the key on 2026-09-30 (inheritance is automatic).",
   "needs": [
     "folio-assistant-sci"
@@ -47,7 +49,7 @@
       "coverage": {
         "visualiser": [
           {
-            "ref": "_site/accuracy/index.html",
+            "ref": "accuracy/index.html",
             "title": "Accuracy",
             "writer": [
               "scripts/generate-accuracy-scorecard.py"
@@ -86,10 +88,10 @@
       "coverage": {
         "visualiser": [
           {
-            "ref": "_site/qa/index.html",
+            "ref": "qa/index.html",
             "title": "QA",
             "writer": [
-              "folio-assistant/cat-harness-tools/scripts/qa-page-standalone.ts"
+              "cat-harness-tools/scripts/qa-page-standalone.ts"
             ]
           }
         ]
@@ -207,10 +209,10 @@
       "coverage": {
         "visualiser": [
           {
-            "ref": "_site/beans/index.html",
+            "ref": "beans/index.html",
             "title": "Work plan",
             "writer": [
-              "folio-assistant/cat-harness-tools/scripts/beans-board.ts"
+              "cat-harness-tools/scripts/beans-board.ts"
             ]
           }
         ]
@@ -241,14 +243,11 @@
       "coverage": {
         "visualiser": [
           {
-            "ref": "_site/lean/index.html",
-            "title": "Lean",
-            "writer": [
-              "folio-assistant/folio-assistant-sci/adapters/paper/lean/lean-docs-build.sh",
-              "folio-assistant/folio-assistant-sci/adapters/paper/lean/lean-render.ts"
-            ]
+            "ref": "lean/index.html",
+            "title": "Lean"
           }
-        ]
+        ],
+        "_visualiser_comment": "One declared slot for the Lean library render, written by `scripts/site-step.sh lean` (package script site:lean). Owner ruling 2026-11-24, \"2 verso\": the render moves to the Verso tool being built in folio-assistant-sci; until then the slot copies the stored render mounted at lean/ (directory lean-docs), and no Lean is built. It declares no writer, so the landing lists it exactly when lean/index.html is present, i.e. when the store is mounted. `ref` is repository-relative and is the site path (cat-harness-tools SubgraphCoverageSchema)."
       }
     }
   ],
@@ -258,7 +257,9 @@
         "id": "accuracy-scorecard",
         "axis": "domain",
         "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" accuracy",
-        "writes": ["compute-qa/accuracy-scorecard.json"],
+        "writes": [
+          "compute-qa/accuracy-scorecard.json"
+        ],
         "title": "Accuracy against measurement",
         "because": "ACCURACY.md set against CODATA, PDG and AME2020: the comparison boundary where the model's physical claims are made."
       },
@@ -266,25 +267,37 @@
         "id": "compute-qa",
         "axis": "compute",
         "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" compute",
-        "writes": ["compute-qa/**"],
+        "writes": [
+          "compute-qa/**"
+        ],
         "title": "Compute gates"
       },
       {
         "id": "lean-vacuity-axiom-audit",
         "axis": "lean",
         "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" lean",
-        "writes": ["lean/**"],
+        "writes": [
+          "lean/**"
+        ],
         "title": "Lean vacuity and axiom audit"
       },
       {
         "id": "paper-render-qa",
         "axis": "rendering",
         "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" rendering",
-        "writes": ["rendering/**"],
+        "writes": [
+          "rendering/**"
+        ],
         "title": "Rendered paper"
       }
     ],
-    "axes": ["rendering", "lean", "compute", "domain", "kg"]
+    "axes": [
+      "rendering",
+      "lean",
+      "compute",
+      "domain",
+      "kg"
+    ]
   },
   "_qa_comment": "The integrated QA page (cat-harness-tools scripts/qa-page.ts, schemas/sdlc/qa-axis.ts) draws one section per axis from what the writers above publish to the qa-reports branch. Each `run` is executed from the index checkout by layer-qa-publish.yml (INSTANCE=qou, QA_HOME=qou/test/results) and from qou's root by scripts/qa-publish-local.sh; scripts/qa-writer.sh resolves both. Owner decision 2026-11-24 (\"4y\").",
   "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."
