@@ -12,6 +12,11 @@ Usage:
     python3 scripts/generate-accuracy-scorecard.py --print
     python3 scripts/generate-accuracy-scorecard.py --check [--qa-report] [--html-out _site/accuracy/index.html]
     python3 scripts/generate-accuracy-scorecard.py --self-test
+
+`--write` also emits the authors'-note content block
+`folio/quantum-observable-universe/authors-note/accuracy-dashboard.{md,ts}` from
+`scripts/templates/accuracy-dashboard.md.tmpl`, built from the same computed
+values; `--check` fails when that block drifts.
 """
 from __future__ import annotations
 
@@ -36,6 +41,9 @@ TEMPLATE_REL = "scripts/templates/accuracy-scorecard.md.tmpl"
 ACCURACY_REL = "ACCURACY.md"
 README_REL = "README.md"
 QA_OUT_REL = "test/results/compute-qa/accuracy-scorecard.json"
+DASHBOARD_TEMPLATE_REL = "scripts/templates/accuracy-dashboard.md.tmpl"
+DASHBOARD_MD_REL = "folio/quantum-observable-universe/authors-note/accuracy-dashboard.md"
+DASHBOARD_TS_REL = "folio/quantum-observable-universe/authors-note/accuracy-dashboard.ts"
 
 TEN_3 = mpf("1e3")
 TEN_6 = mpf("1e6")
@@ -183,14 +191,29 @@ def load_and_validate_upstream(root: Path) -> tuple[dict[str, dict[str, Any]], d
 
 
 def render_scorecard(root: Path) -> tuple[str, list[str]]:
+    """Render ACCURACY.md only (kept for callers that need the scorecard alone)."""
+    scorecard, _dashboard, errors = render_all(root)
+    return scorecard, errors
+
+
+def render_all(root: Path) -> tuple[str, str, list[str]]:
+    """Render ACCURACY.md and the authors'-note accuracy-dashboard block.
+
+    Both come from one pass over the same witnesses, so the dashboard can never
+    quote a number the scorecard does not.
+    """
     loaded, hashes, errors = load_and_validate_upstream(root)
     tmpl_path = root / TEMPLATE_REL
     if not tmpl_path.is_file():
         errors.append(f"missing scorecard template: {TEMPLATE_REL}")
+    dash_tmpl_path = root / DASHBOARD_TEMPLATE_REL
+    if not dash_tmpl_path.is_file():
+        errors.append(f"missing dashboard template: {DASHBOARD_TEMPLATE_REL}")
     if errors:
-        return "", errors
+        return "", "", errors
 
     tmpl = tmpl_path.read_text(encoding="utf-8")
+    dash_tmpl = dash_tmpl_path.read_text(encoding="utf-8")
 
     ma = loaded["computations/master-atlas-80dps.witness.json"]["data"]
     po = loaded["computations/per-observable-100x-status.witness.json"]["data"]
@@ -899,7 +922,97 @@ def render_scorecard(root: Path) -> tuple[str, list[str]]:
     if unreplaced:
         errors.append(f"unreplaced template placeholders: {', '.join(sorted(set(unreplaced)))}")
 
-    return rendered, errors
+    # ── Authors'-note accuracy dashboard (compact, PDF-width) ────────────────
+    # Five columns, short cells, rendered from the values computed above.
+    def _pct(frac: mpf, places: int = 1) -> str:
+        return f"${_fmt_fixed(frac * HUNDRED, places, signed=True)}\\%$"
+
+    def _rel(frac: mpf) -> str:
+        aval = abs(frac)
+        if aval < mpf("1e-6"):
+            places = 2 if aval < mpf("1e-9") else 0
+            return f"${_fmt_fixed(frac * TEN_9, places, signed=True)}$ ppb"
+        if aval < mpf("1e-3"):
+            return f"${_fmt_fixed(frac * TEN_6, 0, signed=True)}$ ppm"
+        return _pct(frac)
+
+    def _sig(pull: mpf) -> str:
+        return f" (${_fmt_fixed(abs(pull), 1)}\\sigma$)"
+
+    def _obs_row(label: str, key: str, places: int, status: str, with_pull: bool = True) -> str:
+        o = obs[key]
+        frac = _m(o["rel_ppb"]) / TEN_9
+        pull = _sig(_m(o["pull_exp"])) if with_pull else ""
+        return (
+            f"| {label} | ${_fmt_fixed(_m(o['pred']), places)}$ | ${_fmt_fixed(_m(o['exp']), places)}$ | "
+            f"{_rel(frac)}{pull} | {status} |"
+        )
+
+    def _bind_row(label: str, b_pred: mpf, b_ref: mpf, places: int, status: str) -> str:
+        return (
+            f"| {label} | ${_fmt_fixed(b_pred, places)}$ | ${_fmt_fixed(b_ref, places)}$ | "
+            f"{_pct((b_pred - b_ref) / b_ref)} | {status} |"
+        )
+
+    b56_pred = _m(mt_by_zn[(26, 30)]["B_pred_MeV"])
+    b56_ame = _m(ame_by_zn[(26, 30)]["binding_energy_total_keV"]) / TEN_3
+    n_beta_comp = len(beta_records) - 1
+    n_beta_comp_exo = sum(1 for x in beta_records if x["exo"] and x["A"] >= 2)
+    beta_comp_med = _median([x["rel"] for x in beta_records if x["A"] >= 2])
+    dash_rows = [
+        _obs_row("Muon mass (MeV)", "m_mu_MeV", 7, "Derived"),
+        (
+            f"| Tau-to-electron mass ratio | ${_fmt_fixed(mtau_pred, 2)}$ | ${_fmt_fixed(mtau_exp_cod, 2)}$ | "
+            f"{_rel(mtau_rel_cod)}{_sig(mtau_pull_cod)} | Conditional |"
+        ),
+        _obs_row("Kaon-to-pion mass ratio", "mk_over_mpi", 7, "Derived", with_pull=False),
+        _obs_row("Inverse fine-structure constant", "alpha_em_inv_form_b", 9, "Conditional"),
+        _obs_row("Electroweak scale (GeV)", "v_ew_GeV", 5, "Conditional"),
+        _obs_row("Neutron mass (MeV)", "m_n_MeV", 4, "Conditional", with_pull=False),
+        _obs_row("Neutron–proton mass difference (MeV)", "delta_m_np_MeV", 4, "Conditional", with_pull=False),
+        _obs_row("Neutron $\\beta$-decay $Q$-value (MeV)", "q_beta_base_MeV", 4, "Conditional", with_pull=False),
+        (
+            f"| $\\beta^-$ decays of nuclei, exothermic | ${n_beta_comp_exo}$ of ${n_beta_comp}$ | "
+            f"${n_beta_comp}$ of ${n_beta_comp}$ | median ${_fmt_fixed(beta_comp_med * HUNDRED, 0)}\\%$ in $Q$ | Open |"
+        ),
+        _bind_row("Deuteron binding (MeV)", b2_m3a, b2_ame, 3, "Few-body model"),
+        _bind_row("Helium-4 binding (MeV)", b4_m3a, b4_ame, 2, "Few-body model"),
+        _bind_row("Iron-56 binding (MeV)", b56_pred, b56_ame, 1, "Open"),
+        (
+            f"| Binding, all ${len(nuclide_records)}$ nuclides with $A \\ge 2$ | chain proxy | AME2020 | "
+            f"median ${_fmt_fixed(_median(all_b_rels) * HUNDRED, 0)}\\%$ low | Open |"
+        ),
+    ]
+    dash_replacements: dict[str, str] = {
+        "DASHBOARD_ROWS": "\n".join(dash_rows),
+        "BINDING_MEDIAN_PCT": _fmt_fixed(_median(all_b_rels) * HUNDRED, 0),
+    }
+    dashboard = dash_tmpl
+    for key, val in dash_replacements.items():
+        dashboard = dashboard.replace("{{" + key + "}}", val)
+    unreplaced_d = re.findall(r"\{\{[A-Z0-9_]+\}\}", dashboard)
+    if unreplaced_d:
+        errors.append(f"unreplaced dashboard placeholders: {', '.join(sorted(set(unreplaced_d)))}")
+
+    return rendered, dashboard, errors
+
+
+def dashboard_manifest() -> str:
+    """The `.ts` manifest of the dashboard block (fixed; written alongside the `.md`)."""
+    return (
+        'import { prose } from "../../schema/builders";\n'
+        "\n"
+        "/**\n"
+        " * GENERATED by scripts/generate-accuracy-scorecard.py --write from the\n"
+        " * same 80-dps witness values as ACCURACY.md. Do not edit the .md by hand;\n"
+        " * edit scripts/templates/accuracy-dashboard.md.tmpl or the generator.\n"
+        " * `--check` fails when either file drifts from the render.\n"
+        " */\n"
+        "export default prose({\n"
+        '  label: "prose:accuracy-dashboard",\n'
+        '  title: "Accuracy dashboard",\n'
+        "});\n"
+    )
 
 
 def check_hygiene(text: str, label: str = "ACCURACY.md") -> list[str]:
@@ -1101,14 +1214,21 @@ def markdown_to_standalone_html(md_text: str) -> str:
 
 def run_check(root: Path, qa_report: bool = False, html_out: Path | None = None) -> int:
     t0_ns = time.monotonic_ns()
-    rendered, errors = render_scorecard(root)
+    rendered, dashboard, errors = render_all(root)
     if rendered:
         errors.extend(check_hygiene(rendered, ACCURACY_REL))
+        errors.extend(check_hygiene(dashboard, DASHBOARD_MD_REL))
         acc_path = root / ACCURACY_REL
         if not acc_path.is_file():
             errors.append(f"{ACCURACY_REL} does not exist on disk (run `--write`)")
         elif acc_path.read_text(encoding="utf-8") != rendered:
             errors.append(f"{ACCURACY_REL} is out of date with upstream witnesses/template (run `python3 scripts/generate-accuracy-scorecard.py --write`)")
+        for rel, want in ((DASHBOARD_MD_REL, dashboard), (DASHBOARD_TS_REL, dashboard_manifest())):
+            p = root / rel
+            if not p.is_file():
+                errors.append(f"{rel} does not exist on disk (run `--write`)")
+            elif p.read_text(encoding="utf-8") != want:
+                errors.append(f"{rel} is out of date with upstream witnesses/template (run `python3 scripts/generate-accuracy-scorecard.py --write`)")
         if html_out is not None and not errors:
             html_doc = markdown_to_standalone_html(rendered)
             errors.extend(check_hygiene(html_doc, str(html_out)))
@@ -1128,7 +1248,7 @@ def run_check(root: Path, qa_report: bool = False, html_out: Path | None = None)
         code = 1
     else:
         msg = (
-            f"PASS accuracy-scorecard: {ACCURACY_REL} byte-identical to 80-dps render "
+            f"PASS accuracy-scorecard: {ACCURACY_REL} and the accuracy-dashboard block byte-identical to 80-dps render "
             f"({len(UPSTREAM_SPECS)} upstream inputs verified, 0 hygiene leaks, {README_REL} linked, {seconds_dec}s)"
         )
         print(msg)
@@ -1159,9 +1279,9 @@ def run_check(root: Path, qa_report: bool = False, html_out: Path | None = None)
 
 def run_selftest() -> int:
     """Verify `--check` passes on a valid fixture and fails on all 4 defect classes."""
-    rendered, errs = render_scorecard(REPO_ROOT)
+    rendered, dashboard, errs = render_all(REPO_ROOT)
     if errs:
-        print("SELFTEST FAIL: live repository failed render_scorecard: " + "; ".join(errs), file=sys.stderr)
+        print("SELFTEST FAIL: live repository failed render_all: " + "; ".join(errs), file=sys.stderr)
         return 1
 
     with tempfile.TemporaryDirectory() as td_raw:
@@ -1174,7 +1294,12 @@ def run_selftest() -> int:
         tmpl_dst = td / TEMPLATE_REL
         tmpl_dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(REPO_ROOT / TEMPLATE_REL, tmpl_dst)
+        shutil.copy2(REPO_ROOT / DASHBOARD_TEMPLATE_REL, td / DASHBOARD_TEMPLATE_REL)
         (td / ACCURACY_REL).write_text(rendered, encoding="utf-8")
+        dash_md = td / DASHBOARD_MD_REL
+        dash_md.parent.mkdir(parents=True, exist_ok=True)
+        dash_md.write_text(dashboard, encoding="utf-8")
+        (td / DASHBOARD_TS_REL).write_text(dashboard_manifest(), encoding="utf-8")
         (td / README_REL).write_text(
             "# QOU\n\n| **Observational scorecard** | [ACCURACY.md](ACCURACY.md) |\n",
             encoding="utf-8",
@@ -1191,6 +1316,13 @@ def run_selftest() -> int:
             print("SELFTEST FAIL: drifted ACCURACY.md was not caught", file=sys.stderr)
             return 1
         (td / ACCURACY_REL).write_text(rendered, encoding="utf-8")
+
+        # 2b. Drifted accuracy-dashboard content block must fail
+        dash_md.write_text(dashboard.replace("|", "| ", 1), encoding="utf-8")
+        if run_check(td) == 0:
+            print("SELFTEST FAIL: drifted accuracy-dashboard block was not caught", file=sys.stderr)
+            return 1
+        dash_md.write_text(dashboard, encoding="utf-8")
 
         # 3. Forbidden internal token in template+render must fail
         bad_tok = "Conven" + "tion C"
@@ -1228,7 +1360,7 @@ def run_selftest() -> int:
             print("SELFTEST FAIL: `allPassed: false` witness was not caught", file=sys.stderr)
             return 1
 
-    print("SELFTEST PASS: clean fixture + 4 defect classes (drift, hygiene, README link, witness failure) verified.")
+    print("SELFTEST PASS: clean fixture + 5 defect classes (scorecard drift, dashboard drift, hygiene, README link, witness failure) verified.")
     return 0
 
 
@@ -1251,12 +1383,12 @@ def main() -> int:
     html_path = Path(args.html_out) if args.html_out else None
 
     if args.write or args.do_print or (html_path is not None and not args.check):
-        rendered, errors = render_scorecard(REPO_ROOT)
+        rendered, dashboard, errors = render_all(REPO_ROOT)
         if errors:
             for e in errors:
                 print(f"ERROR: {e}", file=sys.stderr)
             return 1
-        hyg = check_hygiene(rendered, ACCURACY_REL)
+        hyg = check_hygiene(rendered, ACCURACY_REL) + check_hygiene(dashboard, DASHBOARD_MD_REL)
         if hyg:
             for e in hyg:
                 print(f"ERROR: {e}", file=sys.stderr)
@@ -1265,6 +1397,9 @@ def main() -> int:
             out_path = REPO_ROOT / ACCURACY_REL
             out_path.write_text(rendered, encoding="utf-8")
             print(f"wrote {ACCURACY_REL} ({len(rendered.splitlines())} lines, {len(rendered)} bytes)")
+            (REPO_ROOT / DASHBOARD_MD_REL).write_text(dashboard, encoding="utf-8")
+            (REPO_ROOT / DASHBOARD_TS_REL).write_text(dashboard_manifest(), encoding="utf-8")
+            print(f"wrote {DASHBOARD_MD_REL} and {DASHBOARD_TS_REL}")
         if html_path is not None and not args.check:
             html_doc = markdown_to_standalone_html(rendered)
             html_hyg = check_hygiene(html_doc, str(html_path))

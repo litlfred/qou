@@ -1,0 +1,7 @@
+The model takes three measured inputs: the electron mass, the proton-to-electron mass ratio (which fixes $q_0$), and the charged-pion mass. Every other entry below is computed from those three and compared with experiment. The full scorecard, with every observable, its uncertainty and its source, is [ACCURACY.md](https://github.com/litlfred/qou/blob/main/ACCURACY.md) in the repository; this table is generated from the same computations and changes when they do.
+
+| Quantity | Model | Experiment | Difference | Status |
+|---|---|---|---|---|
+{{DASHBOARD_ROWS}}
+
+*Derived* means computed from the three inputs with no unproved hypothesis; *conditional* means the value rests on a stated conjecture or an unproved step; *open* means the model does not yet reproduce the quantity. Two of the close agreements carry further qualifications: the fine-structure value is conditional on an open step in the Lean formalisation, and the kaon-to-pion ratio includes a truncated correction series. The deuteron and helium-4 binding energies come from one of several few-body models compared in the full scorecard. Beyond the lightest nuclei the binding energies come from a chain proxy whose saturation is open, and they fall short by a median of ${{BINDING_MEDIAN_PCT}}\%$. The $\beta$-decay values and the binding energies are the clearest places where the model, as it stands, does not yet work.
