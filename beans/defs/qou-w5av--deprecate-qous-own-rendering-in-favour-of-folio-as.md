@@ -1,7 +1,7 @@
 ---
 # qou-w5av
 title: Deprecate qou's own rendering in favour of folio-assistant justthepages
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - platform
     - reorg-2026-10-04
 created_at: 2026-09-26T11:21:37Z
-updated_at: 2026-10-04T15:15:53Z
+updated_at: 2026-11-24T17:54:38Z
 parent: qou-n4r9
 ---
 
@@ -175,3 +175,7 @@ the reading-failure post-mortem are in `qou-9olr`.
 
 **Your PDF/`uses:`-line analysis is unaffected and remains the live framing**;
 `build.yml:27` is confirmed pinned to `37a36ce9296`, so `qou-pwp9` landed.
+
+## 2026-11-24 — in progress (litlfred/qou#9383, owner direct request)
+
+Owner, 2026-11-24: "i expected https://litlfred.github.io/qou/ to have the use folio assistnt landing page, including LHS navbar", "(simialrt to dth-hth)". Measured: dth-hrh is built by the platform's layer pipeline — `index.config.json` {"site":{"landing":"dth-hrh"}}, `index.lock.json` mounting the layers at the repo root, and `.github/workflows/site-publish.yml` calling cat-harness-tools `folio-site-publish.yml` -> `scripts/stage-local.ts` -> `build-instance-site.ts` (Jekyll, just-the-docs, rail). qou instead consumes the platform through the `folio-assistant/` symlink and builds with `scripts/build-site.sh` (build-folio-site.ts + rail-standalone-pages --foreign-site). Adopting the dth-hrh pipeline means giving qou its own index.config.json + index.lock.json, root-mounted layers and a workspaces package.json: a structural change to how qou consumes the platform, put to the owner in #9383 rather than made. Interim on #9383: a generated root page railed with the LHS navbar, Lean KG render from its store, /papers/<slug>/ -> interactive view.
