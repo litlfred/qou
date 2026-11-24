@@ -84,46 +84,35 @@ seven. Arithmetic confirmation, independent of the numerics:
 
 **588 of 720 dimensions are the TL KERNEL** (see the banner: they act as zero on
 the N = 2 physical space, they are not a hidden sector), and the binding
-character is large in them — chi_(3,2,1) = -9.598, the largest of any block,
-against chi_(6) = +0.009 in the one-dimensional visible block. That is a fact
-about the algebra; it is NOT a measurement of hidden information, and (second
-correction, same day) NOT a measurement of what an N = 3 extension would carry
-either — see the banner.
+character remains largest in a kernel block under the canonical Borromean
+intra-nucleon ordering (`qou-hu1f`, 2026-09-05): `chi_(3,1,1,1) = +2.4581026`,
+against `chi_(6) = +0.0085637314` in the one-dimensional visible block (`287x`
+larger). (Prior to the 2026-09-05 ordering ruling, the superseded grouped word
+gave `chi_(3,2,1) = -9.597856`; `chi_(6)` is strictly order-invariant across
+both.) That is a fact about the algebra; it is NOT a measurement of hidden
+information, and NOT a measurement of what an N = 3 extension would carry — see
+the banner.
 
-*** WHAT IS IN THE BLIND SECTOR ***
+*** EIGENPHASES IN THE BLIND SECTOR (RETIRED BY CANONICAL ORDERING, qou-g5oz) ***
 
-The first SMALL eigenphases found anywhere in this arc, and they are all in
-kernel blocks (unphysical at N = 2; see the banner for the N_min reading):
+Under the canonical Borromean intra-nucleon ordering (`intra_order="borromean"`,
+ruled 2026-09-05 in `qou-hu1f`), `Delta_bind` has **ZERO sub-unit eigenphases**
+(`|arg lambda| < 1 rad`) in ANY of the 11 blocks of H_6 — neither visible nor
+TL-kernel.
 
-    lambda        dim   visible?   small eigenphase
-    (3,2,1)        16   NO         0.0252506
-    (2,2,1,1)       9   NO         0.0195531
-    (4,2)           9   yes        (only 3.1220, i.e. near pi)
+The two small eigenphases previously reported here (`0.0252506` in `(3,2,1)` and
+`0.0195531` in `(2,2,1,1)`) existed ONLY on the superseded `grouped` intra-nucleon
+word (`intra_order="grouped"`), which is retained below solely as an 80-dps
+historical control (`grouped_ordering_control`) to prove provenance.
 
-Every previous candidate was ABOVE the required ladder phase — Step 25's smallest
-species-pair eigenphase was 4.41x too large, Step 26's cyclotomic minimum 24.8x.
-These are the first BELOW it.
+*** THE 0.13 % COINCIDENCE — UNCONDITIONALLY RETIRED ***
 
-*** THE COINCIDENCE, AND WHY IT IS NOT A RESULT ***
-
-At q_0 the two small phases sum to 0.0448038 against the required 0.0447444 —
-agreement to 0.13 %. **That is recorded as a target, not a finding**, and the
-falsification test says it is a wall artefact:
-
-  * Both blocks are simultaneously elliptic only on a narrow window,
-    q in (~1.0925, 1.1121238). The (2,2,1,1) pair collides on the real axis at
-    the upper wall, so theta_2 -> 0 there and the SUM sweeps down through every
-    value below it. A crossing with theta_req is guaranteed to exist; only its
-    location is informative.
-  * It is at q* = 1.109988469, which is 9.89e-6 above q_0 —
-    **1.07e7 sigma_q0** on the substrate pin. Four orders of magnitude closer
-    than Step 26's 3e11, and still ten million sigma.
-  * q* sits 0.19200 % below the wall and q_0 sits 0.19289 % below it. The
-    agreement is that both are hard against the same degeneracy, which is the
-    same structure Step 26 found for Delta_L — not a new phenomenon.
-  * And "sum of two block eigenphases" has NO derivation behind it. It was
-    chosen because two numbers added up, which is exactly what the corpus's
-    anti-fit rule forbids searching on.
+On the superseded grouped word, those two grouped-only kernel phases summed to
+`0.0448038` against the required `0.0447444` (`0.13 %`), which was already
+falsified as a `(2,2,1,1)` degeneracy-wall artefact (`1.07e7 sigma_q0` from the
+pin, with no derivation for summing two block phases). Under the canonical
+Borromean word the two sub-unit phases do not exist at all (`small == {}`),
+retiring the coincidence unconditionally rather than merely as a wall artefact.
 
 *** HOW FAR THIS REACHES, AND WHERE IT STOPS ***
 
@@ -156,7 +145,6 @@ about the operator, never as criteria. Anchor: experimental (proton) pin.
 """
 
 import json
-import math  # float64-ok: only comb/factorial, exact integer arithmetic
 import os
 import subprocess
 import sys
@@ -170,20 +158,40 @@ ROOT = HERE.parent.parent
 sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate"),
                 str(HERE.parent / "hecke"), str(HERE.parent / "markov")]
 import _path_bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+mp.mp.dps = max(mp.mp.dps, 80)
 
 import qou_substrate.constants as CONST  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 from hecke_characters import build_seminormal_matrices_mp, partitions_of  # noqa: E402
 from mass_at_3A_proper import (atom_braid_word_3A,  # noqa: E402
                                chi_lambda_of_word, _cached_seminormal)
 from pyhecke.atom import nucleon_word_letters  # noqa: E402
 from ocneanu_weights import omega_lambda_via_inversion  # noqa: E402
 
-mp.mp.dps = 30
-Q0 = mp.mpf(str(CONST.Q_50_DIGIT_STR))
+Q0 = q_at(80)
 SIGMA_Q0 = mp.mpf(str(CONST.Q_ERR))
 Z_D0 = Q0 ** 3 / (Q0 ** 2 + 1)
 SHAPES = list(partitions_of(6))
 BLIND_EPS = mp.mpf("1e-10")
+
+
+def _factorial(n: int) -> int:
+    res = 1
+    for k in range(2, n + 1):
+        res *= k
+    return res
+
+
+def _comb(n: int, k: int) -> int:
+    if k < 0 or k > n:
+        return 0
+    k = min(k, n - k)
+    res = 1
+    for idx in range(k):
+        res = res * (n - idx) // (idx + 1)
+    return res
 
 
 def rho(sigmas, dim, word):
@@ -198,20 +206,20 @@ def bump(x):
     """Keep a swept q carrying more than float64 information, so
     `reject_float64_q` passes without an `allow_float64` override that would
     silently cap the word at ~17 digits."""
-    return mp.mpf(mp.nstr(x, 28)) * (1 + mp.mpf("1e-27"))
+    return mp.mpf(mp.nstr(x, 76)) * (1 + mp.mpf("1e-75"))
 
 
 _CACHE = {}
 
 
-def binding_block(shape, qq):
+def binding_block(shape, qq, intra_order="borromean"):
     """Delta_bind = rho(beta_atom) - rho(beta_free) in irrep `shape`."""
-    key = (shape, mp.nstr(qq, 26))
+    key = (shape, intra_order, mp.nstr(qq, 76))
     if key in _CACHE:
         return _CACHE[key]
     sig, dim, _ = build_seminormal_matrices_mp(shape, qq)
-    d = (rho(sig, dim, atom_braid_word_3A(1, 1, include_inter=True, q=qq))
-         - rho(sig, dim, atom_braid_word_3A(1, 1, include_inter=False, q=qq)))
+    d = (rho(sig, dim, atom_braid_word_3A(1, 1, include_inter=True, intra_order=intra_order, q=qq))
+         - rho(sig, dim, atom_braid_word_3A(1, 1, include_inter=False, intra_order=intra_order, q=qq)))
     _CACHE[key] = (d, dim)
     return d, dim
 
@@ -230,12 +238,12 @@ def eigvals(m):
     return mp.eig(m, left=False, right=False)
 
 
-def small_phase(shape, qq):
+def small_phase(shape, qq, intra_order="borromean"):
     """The smallest eigenphase below 1 rad, or None if the block has no such
     complex-conjugate pair at this q."""
-    d, _ = binding_block(shape, qq)
+    d, _ = binding_block(shape, qq, intra_order=intra_order)
     ev = eigvals(d)
-    ph = [abs(mp.arg(z)) for z in ev if abs(mp.im(z)) >= mp.mpf("1e-18")]
+    ph = [abs(mp.arg(z)) for z in ev if abs(mp.im(z)) >= mp.mpf("1e-35")]
     return min([p for p in ph if p < 1], default=None)
 
 
@@ -247,7 +255,7 @@ def theta_required(qq):
 
 
 def catalan(n):
-    return math.comb(2 * n, n) // (n + 1)
+    return _comb(2 * n, n) // (n + 1)
 
 
 def chain_word(order, qq, include_inter=True):
@@ -391,22 +399,31 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     print(f"       are not a hidden sector. N_min(lambda) = l(lambda).")
     big = max(SHAPES, key=lambda s: abs(chis[s]))
     print(f"    largest |chi(binding)| is {str(big)} at "
-          f"{mp.nstr(chis[big], 8)} — an l = 3 block, so it measures what an")
-    print(f"    an l = 3 block — but the N = 3 reading is WITHDRAWN too (qou-fvzm is")
-    print(f"    COMPLETED and closes it: the route is UNAVAILABLE and the missing")
-    print(f"    additive term is not a Hecke-trace object at all)")
+          f"{mp.nstr(chis[big], 8)} — an l = {len(big)} TL-kernel block (not visible at N=2).")
+
+    # [3b] historical grouped-word control (qou-g5oz provenance, NOT selected) -
+    chis_grp, small_grp = {}, {}
+    for sh in SHAPES:
+        d_grp, dim_g = binding_block(sh, Q0, intra_order="grouped")
+        chis_grp[sh] = sum(d_grp[i, i] for i in range(dim_g))
+        ev_g = eigvals(d_grp)
+        ph_g = [abs(mp.arg(z)) for z in ev_g if abs(mp.im(z)) >= mp.mpf("1e-35") and abs(mp.arg(z)) < 1]
+        if ph_g:
+            small_grp[sh] = min(ph_g)
+    big_grp = max(SHAPES, key=lambda s: abs(chis_grp[s]))
+    chi6_invariance_err = abs(chis[(6,)] - chis_grp[(6,)])
 
     # [4] the spectra ----------------------------------------------------------
-    print(f"\n[4] eigenphases of Delta_bind, block by block")
+    print(f"\n[4] eigenphases of Delta_bind (canonical Borromean), block by block")
     print(f"    {'lambda':>18s} {'dim':>4s} {'vis':>4s} {'#real':>6s} "
           f"{'pairs':>6s}  eigenphases")
     spectra, small = {}, {}
     for sh in SHAPES:
         d_blk, dim = binding_block(sh, Q0)
         ev = eigvals(d_blk)
-        nreal = sum(1 for z in ev if abs(mp.im(z)) < mp.mpf("1e-18"))
-        ph = sorted({mp.mpf(mp.nstr(abs(mp.arg(z)), 12))
-                     for z in ev if abs(mp.im(z)) >= mp.mpf("1e-18")})
+        nreal = sum(1 for z in ev if abs(mp.im(z)) < mp.mpf("1e-35"))
+        ph = sorted({mp.mpf(mp.nstr(abs(mp.arg(z)), 24))
+                     for z in ev if abs(mp.im(z)) >= mp.mpf("1e-35")})
         spectra[sh] = ph
         sm = [p for p in ph if p < 1]
         if sm:
@@ -416,12 +433,11 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
               f"{[mp.nstr(p, 10) for p in ph]}")
     th_req0 = theta_required(Q0)
     print(f"\n    required ladder phase (z_D) : {mp.nstr(th_req0, 12)}")
-    print(f"    small phases found          : "
+    print(f"    small phases found (borromean): "
           f"{ {str(s): mp.nstr(v, 10) for s, v in small.items()} }")
-    print(f"    every one of them is in a TL-KERNEL block (zero at N=2): "
-          f"{all(not vis[s] for s in small)}")
-    print(f"    and they are the first phases in this arc BELOW the required one")
-    print(f"    (Step 25's smallest was 4.41x too large; Step 26's cyclotomic 24.8x)")
+    print(f"    grouped-control small phases  : "
+          f"{ {str(s): mp.nstr(v, 10) for s, v in small_grp.items()} }")
+    print(f"    chi_(6) borromean vs grouped  : |diff| = {mp.nstr(chi6_invariance_err, 4)}")
 
     # [5] the coincidence, and the falsification test --------------------------
     s1, s2_ = (3, 2, 1), (2, 2, 1, 1)
@@ -494,8 +510,8 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     share = []
     for a_num in range(1, 7):
         n = 3 * a_num
-        tot, vis_n = math.factorial(n), catalan(n)   # NOT `vis` — that is the
-        share.append((a_num, n, tot, vis_n))          # per-block visibility map
+        tot, vis_n = _factorial(n), catalan(n)   # NOT `vis` — that is the
+        share.append((a_num, n, tot, vis_n))     # per-block visibility map
         print(f"    {a_num:>3d} {n:>5d} {tot:>18d} {vis_n:>16d} "
               f"{mp.nstr(mp.mpf(vis_n) / tot * 100, 6):>12s} "
               f"{mp.nstr((1 - mp.mpf(vis_n) / tot) * 100, 8):>10s}")
@@ -552,11 +568,11 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     # ------------------------------------------------------------- assertions
     a = [
         {"name": "level_k_operator_exists_and_is_genuinely_H6_valued",
-         "passed": bool(fact_err < mp.mpf("1e-25") and len(i_w) == 1
+         "passed": bool(fact_err < mp.mpf("1e-70") and len(i_w) == 1
                         and sorted({g for _, _, g in w_free}) == [0, 1, 3, 4]),
          "detail": f"Delta_bind = beta_atom - beta_free factors exactly as P.(I-1).N to "
-                   f"{mp.nstr(fact_err, 3)} in all 11 blocks; beta_free uses only gens "
-                   f"{{0,1,3,4}} and is H_3 (x) H_3, while I - 1 carries sigma_2 with "
+                   f"{mp.nstr(fact_err, 3)} in all 11 blocks at 80 dps; beta_free uses only "
+                   f"gens {{0,1,3,4}} and is H_3 (x) H_3, while I - 1 carries sigma_2 with "
                    f"coefficient 1. So Delta_bind is genuinely H_6-valued and Step 24's "
                    f"branching argument does not reach it. CORRECTS Step 25's 'the "
                    f"level-k avenue is not instantiated'"},
@@ -568,31 +584,34 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                    f"not a re-derivation of it"},
         {"name": "trace_is_blind_to_every_partition_with_more_than_two_rows",
          "passed": bool(vis_is_two_row and two_row == 132 and tot_dim == 720),
-         "detail": "convention D is the SU(2)/Temperley-Lieb trace, so it factors "
+         "detail": "the SU(2)/Temperley-Lieb Markov trace factors "
                    "through TL_6: measured omega is ~1e-1 on the four <=2-row shapes and "
-                   "< 2e-16 on the other seven, and the dimension arithmetic confirms it "
+                   "< 1e-70 on the other seven at 80 dps, and the dimension arithmetic confirms it "
                    "independently — sum d^2 over all 11 is 720 = 6!, over the visible 4 "
                    "is 132 = Catalan(6) = dim TL_6"},
         {"name": "binding_character_is_largest_in_a_tl_kernel_block",
-         "passed": bool(not vis[big] and abs(chis[big]) > 5),
-         "detail": f"the largest binding character of any block is {str(big)} at "
-                   f"{mp.nstr(chis[big], 8)}, against {mp.nstr(chis[(6,)], 8)} in the "
-                   f"one-dimensional visible block — and it contributes nothing to the "
-                   f"observable. {tot_dim - vis_dim} of {tot_dim} dimensions are the TL "
-                   f"KERNEL — they act as ZERO on the N = 2 physical space (qou-i9gk), not "
-                   f"a hidden sector; and (3,2,1) is an l = 3 block, so this measures what "
-                   f"a fact about the algebra. The 'measures an N = 3 extension' reading "
-                   f"is WITHDRAWN (same day): it cited qou-fvzm's reopened paragraph, which "
-                   f"that COMPLETED bean closes — the route is unavailable and the missing "
-                   f"additive term is not a Hecke-trace object at all"},
+         "passed": bool(not vis[big] and big == (3, 1, 1, 1)
+                        and abs(chis[big]) > 2
+                        and abs(chis[big]) > 200 * abs(chis[(6,)])
+                        and chi6_invariance_err < mp.mpf("1e-70")),
+         "detail": f"under canonical Borromean intra-ordering (qou-hu1f), the largest "
+                   f"binding character of any block is {str(big)} (l={len(big)}>2, TL kernel) "
+                   f"at {mp.nstr(chis[big], 10)}, against {mp.nstr(chis[(6,)], 10)} in the "
+                   f"1D visible block (>287x larger; chi_(6) is strictly order-invariant to "
+                   f"{mp.nstr(chi6_invariance_err, 3)} vs superseded grouped {str(big_grp)} at "
+                   f"{mp.nstr(chis_grp[big_grp], 8)}). {tot_dim - vis_dim} of {tot_dim} "
+                   f"dimensions are the TL KERNEL and act as ZERO on the N = 2 physical space "
+                   f"(qou-i9gk); the N >= 3 extension reading remains closed (qou-fvzm)"},
         {"name": "the_only_small_eigenphases_are_in_blind_blocks",
-         "passed": bool(small and all(not vis[s] for s in small)
-                        and all(v < th_req0 for v in small.values())),
-         "detail": f"small eigenphases appear only in {sorted(map(str, small))}, both "
-                   f"TL-kernel blocks, at {mp.nstr(t1, 8)} and {mp.nstr(t2, 8)} against a "
-                   f"required {mp.nstr(th_req0, 8)}. These are the first phases in this "
-                   f"arc BELOW the required one — Step 25's smallest species-pair phase "
-                   f"was 4.41x too large and Step 26's cyclotomic minimum 24.8x"},
+         "passed": bool(len(small) == 0
+                        and set(small_grp.keys()) == {(3, 2, 1), (2, 2, 1, 1)}
+                        and all(not vis[s] for s in small_grp)),
+         "detail": f"under canonical Borromean intra-ordering (qou-hu1f), Delta_bind has "
+                   f"ZERO sub-unit eigenphases in any block (small={sorted(map(str, small))}); "
+                   f"the previously reported sub-unit phases in {sorted(map(str, small_grp))} "
+                   f"({ {str(k): mp.nstr(v, 8) for k, v in small_grp.items()} } vs required "
+                   f"{mp.nstr(th_req0, 8)}) were exclusively artefacts of the superseded "
+                   f"grouped intra-nucleon word (qou-g5oz)"},
         {"name": "the_sum_coincidence_is_a_degeneracy_wall_artefact",
          # Under the ruling neither shape carries a sub-unit phase, so the
          # coincidence does not arise and there is nothing to explain away --
@@ -602,10 +621,9 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                         else (mp.fabs(ratio - 1) < mp.mpf("0.01")
                               and mp.fabs(n_sigma) > mp.mpf("1e6")
                               and (wall - q_star) / wall < mp.mpf("0.01"))),
-         "detail": (f"NOT APPLICABLE under this word convention: neither {s1} nor "
-                    f"{s2_} carries a sub-unit phase, so the 0.13 % coincidence "
-                    f"does not arise at all. Stronger than the artefact finding "
-                    f"this assertion was written for."
+         "detail": (f"NOT APPLICABLE under canonical Borromean ordering: neither {s1} nor "
+                    f"{s2_} carries a sub-unit phase, so the grouped-only 0.13 % coincidence "
+                    f"does not arise at all. Stronger than the wall-artefact falsification."
                     if not coincidence_exists else
                     f"the two small phases sum to {mp.nstr(t1 + t2, 10)} against the "
                    f"required {mp.nstr(th_req0, 10)} — 0.13 %. But theta_2 collapses to "
@@ -616,9 +634,9 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                    f"Recorded as a target, never as a criterion: 'sum of two block "
                     f"eigenphases' has no derivation behind it")},
         {"name": "observable_share_collapses_super_exponentially_with_A",
-         "passed": bool(all(catalan(3 * k) < math.factorial(3 * k) for k in range(2, 7))
-                        and catalan(9) == 4862 and math.factorial(9) == 362880
-                        and mp.mpf(catalan(18)) / math.factorial(18) < mp.mpf("1e-7")),
+         "passed": bool(all(catalan(3 * k) < _factorial(3 * k) for k in range(2, 7))
+                        and catalan(9) == 4862 and _factorial(9) == 362880
+                        and mp.mpf(catalan(18)) / _factorial(18) < mp.mpf("1e-7")),
          "detail": "the trace sees C_n of n! dimensions, n = 3A: 83.3 % at A=1, 18.3 % at "
                    "A=2, 1.34 % at A=3 (4862 of 362880), 7.5e-6 % at A=6. C_n/n! ~ 4^n/n!, "
                    "so the heavier the nucleus the smaller the fraction of it any corpus "
@@ -646,55 +664,50 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
         "computation": "qbeta-level-k-binding-operator",
         "engine": "mpmath",
         "description": (
-            "qou-cds1 Step 27. CORRECTS Step 25's 'the level-k avenue is not "
-            "instantiated'. `build_atom_nf` returning a 6-vector at every A is not "
-            "evidence that the atom lives in H_3 — it is evidence that the production "
-            "chain reduces to H_3 after every crossing (bean qou-tower), i.e. that H_3 is "
-            "where the atom can be OBSERVED. The faithful object is `atom_braid_word_3A`, "
-            "whose `include_inter` switch is exactly composite-vs-constituents. Binding is "
-            "a DIFFERENCE of observations, so the level-k operator is the same difference "
-            "taken on the OPERATORS: Delta_bind = beta_atom - beta_free. For the deuteron "
-            "it factors exactly as P.(I-1).N (2.1e-40 in all 11 blocks of H_6), and since "
-            "I - 1 carries sigma_2 while beta_free lives in H_3 (x) H_3, Delta_bind is "
-            "genuinely H_6-valued and Step 24's branching argument does not reach it. "
-            "Validated against the corpus's own `chi_lambda_of_word` to 5.4e-15. THE "
-            "FINDING: convention D is the SU(2)/Temperley-Lieb trace, so omega_lambda "
-            "vanishes on every partition with more than two rows — measured < 2e-16 on "
-            "seven of eleven shapes, and confirmed by dimension arithmetic (720 = 6! "
-            "total, 132 = Catalan(6) = dim TL_6 visible). READING CORRECTED 2026-09-01 "
-            "(qou-i9gk): those 588 dimensions are the TL KERNEL and act as ZERO on the "
-            "N = 2 physical space — the Schur-Weyl row cap, not a hidden sector — and the "
-            "reading contradicts convention D, which is forced by the same open premise "
-            "(qou-n1dj) that empties them. The binding character is LARGEST in a kernel "
-            "block (chi_(3,2,1) = -9.598), an l = 3 block, so it measures what an N = 3 "
-            "extension would carry. The only small eigenphases in the "
-            "corpus live there: 0.0252506 in (3,2,1) and 0.0195531 in (2,2,1,1), the "
-            "first values in this arc BELOW the required 0.0447444. They sum to it within "
-            "0.13 %, but that is a wall artefact: theta_2 collapses at the (2,2,1,1) "
-            "ellipticity wall q_w = 1.1121238, the crossing is at q* = 1.109988469 = "
-            "1.07e7 sigma_q0 from the pin, and 'sum of two block eigenphases' has no "
-            "derivation behind it."),
+            "qou-cds1 Step 27 (updated at 80 dps for canonical Borromean intra-ordering, "
+            "qou-hu1f / qou-g5oz). CORRECTS Step 25's 'the level-k avenue is not "
+            "instantiated'. `build_atom_nf` returning a 6-vector at every A is evidence "
+            "that the production chain reduces to H_3 after every crossing (qou-tower). "
+            "The faithful object is `atom_braid_word_3A`, and the level-k binding operator "
+            "Delta_bind = beta_atom - beta_free factors for the deuteron as P.(I-1).N "
+            "(< 1e-75 across all 11 blocks of H_6 at 80 dps), making Delta_bind genuinely "
+            "H_6-valued outside H_3 (x) H_3. Under the SU(2)/Temperley-Lieb Markov trace "
+            "z = q^3/(q^2+1), omega_lambda vanishes (< 1e-70) on the 7 partitions with "
+            "l(lambda) > 2 (588 of 720 = 6! dimensions; visible <=2-row subspace = 132 = "
+            "Catalan(6) = dim TL_6). READING CORRECTED (qou-i9gk, qou-g5oz): those 588 TL-"
+            "kernel dimensions act as ZERO at N = 2; the largest binding character on the "
+            "canonical Borromean word is chi_(3,1,1,1) = +2.45810264 vs chi_(6) = "
+            "+0.0085637314 (order-invariant), and canonical Delta_bind has ZERO sub-unit "
+            "eigenphases in any block — retiring the superseded grouped-word (3,2,1)/(2,2,1,1) "
+            "phases and their 0.13 % sum coincidence unconditionally."),
         "contentBlock": "prop:three-calibration-inputs",
         "assertions": a,
         "allPassed": ok,
-        "parameters": {"pin": "experimental (proton)", "dps": 30, "nucleus": "2H (Z=N=1)",
-                       "strands": 6, "trace_convention": "D (SU(2)/Temperley-Lieb)",
+        "parameters": {"pin": "experimental (proton)", "dps": 80, "nucleus": "2H (Z=N=1)",
+                       "strands": 6, "intra_order": "borromean",
                        "word": "atom_braid_word_3A, pn_convention=bring_color_weighted"},
         "data": {
-            "q0": mp.nstr(Q0, 20), "sigma_q0": mp.nstr(SIGMA_Q0, 12),
-            "z_D_at_q0": mp.nstr(Z_D0, 18),
+            "q0": mp.nstr(Q0, 52), "sigma_q0": mp.nstr(SIGMA_Q0, 12),
+            "z_D_at_q0": mp.nstr(Z_D0, 52),
             "letters_atom": len(w_atom), "letters_free": len(w_free),
             "factorisation_max_err": mp.nstr(fact_err, 6),
             "chi_validation_max_rel_err": mp.nstr(chi_err, 6),
             "dim_H6": tot_dim, "dim_TL6_visible": two_row,
             "tl_kernel_dimensions": tot_dim - vis_dim,
             "blocks": [{"partition": list(s), "rows": len(s), "dim": dims[s],
-                        "omega_abs": mp.nstr(mp.fabs(om.get(s, mp.mpf(0))), 8),
-                        "visible": vis[s], "chi_binding": mp.nstr(chis[s], 12),
-                        "eigenphases": [mp.nstr(p, 12) for p in spectra[s]]}
+                        "omega_abs": mp.nstr(mp.fabs(om.get(s, mp.mpf(0))), 12),
+                        "visible": vis[s], "chi_binding": mp.nstr(chis[s], 20),
+                        "eigenphases": [mp.nstr(p, 20) for p in spectra[s]]}
                        for s in SHAPES],
-            "theta_required_z_D": mp.nstr(th_req0, 14),
-            "small_phases": {str(s): mp.nstr(v, 14) for s, v in small.items()},
+            "theta_required_z_D": mp.nstr(th_req0, 20),
+            "small_phases": {str(s): mp.nstr(v, 20) for s, v in small.items()},
+            "grouped_ordering_control": {
+                "note": "Historical audit control ONLY (superseded intra_order='grouped', retired 2026-09-05 by qou-hu1f); never selected.",
+                "largest_chi_block": list(big_grp),
+                "largest_chi_binding": mp.nstr(chis_grp[big_grp], 20),
+                "small_phases": {str(s): mp.nstr(v, 20) for s, v in small_grp.items()},
+                "chi_6_abs_diff_vs_borromean": mp.nstr(chi6_invariance_err, 6),
+            },
             # Recorded as an explicit NOT APPLICABLE rather than omitted, so a
             # reader can tell "did not arise" from "was not measured".
             **({"sum_over_required": mp.nstr(ratio, 12),
@@ -705,7 +718,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                 "q0_pct_below_wall": mp.nstr((wall - Q0) / wall * 100, 8)}
                if coincidence_exists else
                {"sum_coincidence": f"NOT APPLICABLE — no sub-unit phase for {s1} "
-                                   f"or {s2_} under this word convention"}),
+                                   f"or {s2_} under canonical Borromean word"}),
             "observable_share": [{"A": a_, "n": n_, "dim_Hn": t_, "dim_TLn": v_,
                                   "visible_pct": mp.nstr(mp.mpf(v_) / t_ * 100, 8)}
                                  for a_, n_, t_, v_ in share],
@@ -716,25 +729,23 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
             "ordering_max_relative_spread": mp.nstr(ord_spread, 10),
         },
         "context": {
-            "axis": "qou-cds1: construct the genuinely level-k operator the corpus does "
-                    "not have, and ask whether the ladder phase lives in the blocks the "
-                    "convention-D trace annihilates.",
+            "axis": "qou-cds1 / qou-g5oz: construct the genuinely H_6-valued binding operator "
+                    "Delta_bind = beta_atom - beta_free at 80 dps under canonical Borromean "
+                    "intra-ordering and audit its Temperley-Lieb kernel spectrum.",
             "answer": (
-                "The operator exists and is BINDING — composite minus constituents, taken "
-                "on the operators rather than the numbers. 588 of the 720 dimensions it "
-                "lives in are the TL kernel (reading corrected 2026-09-01, qou-i9gk: they "
-                "act as zero at N = 2, they are not hidden), and 588 of "
-                "the 720 dimensions it lives in, structurally, because convention D "
-                "factors through Temperley-Lieb. The first small eigenphases in this "
-                "entire arc are in that blind sector. Their sum matches the required "
-                "phase to 0.13 % at q_0, but the crossing is a degeneracy-wall artefact "
-                "1.07e7 sigma from the pin and the combination is unmotivated, so it is "
-                "recorded as a target rather than a result."),
+                "The operator exists and factors as P.(I-1).N (< 1e-75 at 80 dps); 588 of "
+                "the 720 dimensions of H_6 lie in the TL kernel (acting as zero at N = 2, "
+                "qou-i9gk), where the largest binding character lives (chi_(3,1,1,1) = "
+                "+2.45810264 vs order-invariant chi_(6) = +0.0085637314). Under canonical "
+                "Borromean intra-ordering (qou-hu1f), Delta_bind has ZERO sub-unit "
+                "eigenphases in any block; the previously reported (3,2,1) and (2,2,1,1) "
+                "sub-unit phases and their 0.13 % sum coincidence were exclusively "
+                "artefacts of the retired grouped intra-nucleon word."),
             "corrects": (
-                "Step 25's 'the corpus is H_3-valued at every A, so the level-k avenue is "
-                "not instantiated'. The 6-vector is the observation, not the object."),
-            "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted. q* and "
-                     "the 0.13 % ratio are facts about the operator, never criteria.",
+                "Step 25's 'the corpus is H_3-valued at every A' and the pre-qou-hu1f "
+                "grouped-word sub-unit eigenphase claims recorded before 2026-09-05."),
+            "scope": "Scope-(a). Audit-only; canonical Borromean word evaluated with "
+                     "superseded grouped word recorded strictly as provenance control.",
         },
         "gitCommit": _head_sha(),
         # int ms, not float sec (NO-FLOAT64 discipline; ephemeral meta).
@@ -746,7 +757,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
         witness.setdefault("scriptFile", os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="mpmath",
-            q0_anchor="proton", q0_value=mp.nstr(Q0, 30))
+            q0_anchor="proton", q0_value=mp.nstr(Q0, 52))
         # ensure_ascii=False: the corpus convention is UTF-8 witnesses, and
         # `witness_shape_guard` flags a witness that gains \uXXXX escapes.
         json.dump(witness, f, indent=2, ensure_ascii=False)

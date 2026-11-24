@@ -58,8 +58,9 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
+mp.mp.dps = max(mp.mp.dps, 80)
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_at  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_E_MEV,
     M_D_MEV_VALIDATION, M_T_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
@@ -133,30 +134,31 @@ def _fmt_or_none(x):
 
 # AME 2020 binding energies (MeV) — used for comparison only.
 # Source: Wang et al., Chinese Physics C 45 (2021) 030003.
-AME_BINDING = {
-    "p": 0.0, "n": 0.0,
-    "D": 2.22452, "T": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION),
-    "4He": float(AME_B_HE4_MEV_VALIDATION), "6Li": float(AME_B_LI6_MEV_VALIDATION), "7Li": 39.2445,
-    "9Be": 58.165, "10B": 64.751, "11B": 76.205,
-    "12C": 92.162, "13C": 97.108, "14N": 104.659, "15N": 115.492,
-    "16O": 127.619, "17O": 131.763, "18O": 139.808,
-    "19F": 147.801, "20Ne": 160.645, "21Ne": 167.406, "22Ne": 177.770,
-    "23Na": 186.564, "24Mg": 198.257, "25Mg": 205.588, "26Mg": 216.681,
-    "27Al": 224.952, "28Si": 236.537, "29Si": 245.011, "30Si": 255.620,
-    "31P": 262.917, "32S": 271.781, "33S": 280.422, "34S": 291.839,
-    "36S": 308.714, "35Cl": 298.210, "37Cl": 317.100,
-    "36Ar": 306.716, "38Ar": 327.343, "40Ar": 343.810,
-    "39K": 333.723, "41K": 351.619,
-    "40Ca": 342.052, "42Ca": 361.895, "43Ca": 369.828,
-    "44Ca": 380.960, "46Ca": 398.769, "48Ca": 416.001,
-    "45Sc": 387.849,
-    "46Ti": 398.194, "47Ti": 407.073, "48Ti": 418.699,
-    "49Ti": 426.841, "50Ti": 437.780,
-    "50V": 434.794, "51V": 445.842,
-    "50Cr": 435.049, "52Cr": 456.345, "53Cr": 464.287, "54Cr": 474.008,
-    "55Mn": 482.071,
-    "54Fe": 471.764, "56Fe": 492.254, "57Fe": 499.900, "58Fe": 509.946,
-}
+with mp.workdps(80):
+    AME_BINDING = {
+        "p": mp.mpf(0), "n": mp.mpf(0),
+        "D": mp.mpf("2.22452"), "T": +AME_B_TRITIUM_MEV_VALIDATION, "3He": +AME_B_HE3_MEV_VALIDATION,
+        "4He": +AME_B_HE4_MEV_VALIDATION, "6Li": +AME_B_LI6_MEV_VALIDATION, "7Li": mp.mpf("39.2445"),
+        "9Be": mp.mpf("58.165"), "10B": mp.mpf("64.751"), "11B": mp.mpf("76.205"),
+        "12C": mp.mpf("92.162"), "13C": mp.mpf("97.108"), "14N": mp.mpf("104.659"), "15N": mp.mpf("115.492"),
+        "16O": mp.mpf("127.619"), "17O": mp.mpf("131.763"), "18O": mp.mpf("139.808"),
+        "19F": mp.mpf("147.801"), "20Ne": mp.mpf("160.645"), "21Ne": mp.mpf("167.406"), "22Ne": mp.mpf("177.770"),
+        "23Na": mp.mpf("186.564"), "24Mg": mp.mpf("198.257"), "25Mg": mp.mpf("205.588"), "26Mg": mp.mpf("216.681"),
+        "27Al": mp.mpf("224.952"), "28Si": mp.mpf("236.537"), "29Si": mp.mpf("245.011"), "30Si": mp.mpf("255.620"),
+        "31P": mp.mpf("262.917"), "32S": mp.mpf("271.781"), "33S": mp.mpf("280.422"), "34S": mp.mpf("291.839"),
+        "36S": mp.mpf("308.714"), "35Cl": mp.mpf("298.210"), "37Cl": mp.mpf("317.100"),
+        "36Ar": mp.mpf("306.716"), "38Ar": mp.mpf("327.343"), "40Ar": mp.mpf("343.810"),
+        "39K": mp.mpf("333.723"), "41K": mp.mpf("351.619"),
+        "40Ca": mp.mpf("342.052"), "42Ca": mp.mpf("361.895"), "43Ca": mp.mpf("369.828"),
+        "44Ca": mp.mpf("380.960"), "46Ca": mp.mpf("398.769"), "48Ca": mp.mpf("416.001"),
+        "45Sc": mp.mpf("387.849"),
+        "46Ti": mp.mpf("398.194"), "47Ti": mp.mpf("407.073"), "48Ti": mp.mpf("418.699"),
+        "49Ti": mp.mpf("426.841"), "50Ti": mp.mpf("437.780"),
+        "50V": mp.mpf("434.794"), "51V": mp.mpf("445.842"),
+        "50Cr": mp.mpf("435.049"), "52Cr": mp.mpf("456.345"), "53Cr": mp.mpf("464.287"), "54Cr": mp.mpf("474.008"),
+        "55Mn": mp.mpf("482.071"),
+        "54Fe": mp.mpf("471.764"), "56Fe": mp.mpf("492.254"), "57Fe": mp.mpf("499.900"), "58Fe": mp.mpf("509.946"),
+    }
 
 # CODATA masses (MeV) for cross-check
 # The five `M_*_MEV_VALIDATION` constants are already `mpf`; `float(...)`
@@ -204,13 +206,17 @@ ELEMENTS = [
 ISOTOPES = [("p", 1, 0), ("n", 0, 1), ("D", 1, 1), ("T", 1, 2)]
 # Add grid of theoretical isotopes up to Z=118, roughly spanning from proton to neutron drip line
 for z in range(2, 119):
-    n_min = max(0, int(0.5 * z) - 2)
-    n_max = int(2.5 * z) + 5
+    n_min = max(0, (z // 2) - 2)
+    n_max = ((5 * z) // 2) + 5
     for n in range(n_min, n_max + 1):
         a = z + n
         if a > 4:  # Avoid duplicates with explicitly added H, He isotopes
             sym = f"{a}{ELEMENTS[z]}"
             ISOTOPES.append((sym, z, n))
+
+_CANONICAL_PN_CACHE: tuple[mp.mpf, mp.mpf] | None = None
+_VOL_WITNESS_CACHE: dict | None = None
+_VOL_WITNESS_LOADED = False
 
 
 def borromean_mass_prediction(
@@ -237,22 +243,29 @@ def borromean_mass_prediction(
     m_p ≈ 406, −57%); per the guardrail `per_knot_density_per_block` is valid
     for binding *ratios*, where the scale cancels.
     """
+    global _CANONICAL_PN_CACHE, _VOL_WITNESS_CACHE, _VOL_WITNESS_LOADED
     m_e = mp.mpf(str(M_E_MEV))
 
     # Canonical nucleon masses via the single facade — the muon-anchored Hecke
     # energy m_p = 2(m_μ·F_Bor − 6·m_e) (substrate-identity, ≈938.27/939.56).
     # The λ_A Family-A fallback (m_e·Vol(𝓑₃)·ρ/ℏ_q²) is a FIT and was removed
     # 2026-06-24 (owner ruling) — see docs/canonical-mass-formula-guardrail.md.
-    _mp_can, _mn_can = proton_neutron_mass_mev()
-    m_p_pred = mp.mpf(str(_mp_can))
-    m_n_pred = mp.mpf(str(_mn_can))
+    if _CANONICAL_PN_CACHE is None:
+        _mp_can, _mn_can = proton_neutron_mass_mev()
+        _CANONICAL_PN_CACHE = (mp.mpf(str(_mp_can)), mp.mpf(str(_mn_can)))
+        for _up_name in (
+            "m-p-substrate-identity-50dps.witness.json",
+            "codata-2022-validation-masses.witness.json",
+            "cal-3-q-beta.witness.json",
+        ):
+            _up_p = HERE / _up_name
+            if _up_p.exists():
+                record_upstream(_up_p, _UPSTREAM_RECORDS)
+    m_p_pred, m_n_pred = _CANONICAL_PN_CACHE
     _source = "canonical_mass facade (muon-anchored Hecke energy)"
     linking_weight = linking_weight_family_a(q)   # reported for diagnostics only
 
-    # Base definition (q-CLT statistical average). The two operands are mpf
-    # by construction three lines up; `float(...)` on each of them collapsed
-    # them to binary64 immediately after the `mp.mpf(str(...))` that had just
-    # parsed them faithfully, so the sum was a double for no reason.
+    # Base definition (q-CLT statistical average).
     m_nucleus_unbound_approx = Z * m_p_pred + N * m_n_pred
 
     # TRUTH-TRACKING OVERRIDE (per-knot VolDensity, symbolic top-down)
@@ -260,11 +273,13 @@ def borromean_mass_prediction(
     vol_K_used = None
     if atom_name is not None:
         try:
-            # (no `import json` here: `record_upstream` parses the file itself
-            # and returns the body, so the local alias was dead.)
-            vol_witness = HERE / "per-atom-hyperbolic-volume.witness.json"
-            if vol_witness.exists():
-                vol_data = record_upstream(vol_witness, _UPSTREAM_RECORDS)["data"]
+            if not _VOL_WITNESS_LOADED:
+                vol_witness = HERE / "per-atom-hyperbolic-volume.witness.json"
+                if vol_witness.exists():
+                    _VOL_WITNESS_CACHE = record_upstream(vol_witness, _UPSTREAM_RECORDS)["data"]
+                _VOL_WITNESS_LOADED = True
+            if _VOL_WITNESS_CACHE is not None:
+                vol_data = _VOL_WITNESS_CACHE
                 vol_key = f"Vol_{atom_name}"
                 if vol_key in vol_data:
                     from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M
@@ -308,7 +323,7 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
     results for comparison."""
     A = Z + N
     if A < 2:
-        return {"B_pred_MeV": 0.0, "B_E0_MeV": 0.0, "method": "no binding (single nucleon)"}
+        return {"B_pred_MeV": mp.mpf(0), "B_E0_MeV": mp.mpf(0), "method": "no binding (single nucleon)"}
 
     # If A>12 and alpha cluster, try alpha_cluster_binding first
     if A > 12 and Z == N and A % 4 == 0:
@@ -316,9 +331,10 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
             from alpha.alpha_cluster_recursion import alpha_cluster_binding
             r = alpha_cluster_binding(Z, N)
             if r.get("applicable"):
+                b_ac = mp.mpf(str(r["B_pred_MeV"]))
                 return {
-                    "B_pred_MeV": float(r["B_pred_MeV"]),
-                    "B_E0_MeV": float(r["B_pred_MeV"]),  # same scale
+                    "B_pred_MeV": b_ac,
+                    "B_E0_MeV": b_ac,  # same scale
                     "method": "alpha_cluster_recursion (recursive-on-⁴He)",
                     "formula": r.get("formula"),
                 }
@@ -377,7 +393,6 @@ def try_binding_symbolic_log_trace(Z: int, N: int) -> dict | None:
         return None
     try:
         from binding_canonical import binding_canonical
-        import math
         import mpmath as mp
         from codata_constants import M_E_MEV
         
@@ -417,7 +432,6 @@ def try_binding_q_clt_proxy(Z: int, N: int) -> dict | None:
         return None
     try:
         from hecke_core import atom_per_generator_volumes
-        import math
         import mpmath as mp
         from codata_constants import M_E_MEV
         
@@ -483,7 +497,7 @@ def main() -> int:
     # dps is captured authoritatively in precisionMetadata.compute_dps;
     # not duplicated here (see Copilot review #1756, witness-line 23/40).
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = q_at(80)
 
     # Compute nucleon masses once
     nucleon = borromean_mass_prediction(q, 1, 0)
@@ -494,9 +508,9 @@ def main() -> int:
     print("COMPREHENSIVE MASS TABLE — QOU framework at current production tier")
     print(f"  q₀ = {Q_50_DIGIT_STR[:25]}...")
     print(f"  source: {nucleon.get('source', 'Family A')}")
-    print(f"  linking_weight (Family A, PROVED) = {float(nucleon['linking_weight_family_a']):.10f}")
-    print(f"  m_p^pred = {float(m_p_pred):.6f} MeV   (CODATA: {float(M_P_MEV_VALIDATION):.6f})")
-    print(f"  m_n^pred = {float(m_n_pred):.6f} MeV   (CODATA: {float(M_N_MEV_VALIDATION):.6f})")
+    print(f"  linking_weight (Family A, PROVED) = {_dp(nucleon['linking_weight_family_a'], 10)}")
+    print(f"  m_p^pred = {_dp(m_p_pred, 6)} MeV   (CODATA: {_dp(M_P_MEV_VALIDATION, 6)})")
+    print(f"  m_n^pred = {_dp(m_n_pred, 6)} MeV   (CODATA: {_dp(M_N_MEV_VALIDATION, 6)})")
     print("=" * 120)
     print()
     print(f"\n{'Atom':>5s} {'Z':>2s} {'N':>2s} {'A':>2s}  "
@@ -523,18 +537,18 @@ def main() -> int:
         m_unbound_symbolic = nucleon.get("m_nucleus_unbound_symbolic_MeV")
 
         # Binding energies
-        B_pred = 0.0
-        B_qCLT = 0.0
+        B_pred = mp.mpf(0)
+        B_qCLT = mp.mpf(0)
         B_method = "n/a"
         if A >= 2:
             sym_binding = try_binding_symbolic_log_trace(Z, N)
             if sym_binding:
-                B_pred = sym_binding.get("B_pred_MeV", 0.0)
+                B_pred = sym_binding.get("B_pred_MeV", mp.mpf(0))
                 B_method = sym_binding.get("method", "?")
                 
             qclt_binding = try_binding_q_clt_proxy(Z, N)
             if qclt_binding:
-                B_qCLT = qclt_binding.get("B_pred_MeV", 0.0)
+                B_qCLT = qclt_binding.get("B_pred_MeV", mp.mpf(0))
                 if not sym_binding:
                     B_pred = B_qCLT
                     B_method = qclt_binding.get("method", "?")
@@ -542,12 +556,12 @@ def main() -> int:
             # Fallback for nucleon
             binding = try_binding_canonical(Z, N, Q_50_DIGIT_STR)
             if binding is not None:
-                B_pred = binding.get("B_pred_MeV") or 0.0
+                B_pred = binding.get("B_pred_MeV") or mp.mpf(0)
                 B_method = binding.get("method", "?")
 
         m_symbolic = (m_unbound_approx - B_pred) if (m_unbound_approx is not None and (B_pred > 0 or A == 1)) else None
         m_approx = (m_unbound_approx - B_qCLT) if (m_unbound_approx is not None and (B_qCLT > 0 or A == 1)) else None
-        B_AME = AME_BINDING.get(name, 0.0)
+        B_AME = AME_BINDING.get(name, mp.mpf(0))
 
         # CODATA/AME observed mass for comparison
         m_observed = CODATA_MASS.get(name)
@@ -556,7 +570,7 @@ def main() -> int:
             m_observed = (
                 Z * M_P_MEV_VALIDATION
                 + N * M_N_MEV_VALIDATION
-                - mp.mpf(repr(B_AME))
+                - B_AME
             )
 
         # Errors against Observed
@@ -609,21 +623,20 @@ def main() -> int:
         }
         rows.append(row)
 
-        # Print row
-        m_sym_s = f"{float(m_symbolic):14.6f}" if m_symbolic else "           n/a"
-        m_app_s = f"{float(m_approx):14.6f}" if m_approx else "           n/a"
-        m_obs_s = f"{float(m_observed):14.6f}" if m_observed else "           n/a"
-        B_pred_s = f"{float(B_pred):12.6f}" if B_pred else "         n/a"
-        B_qCLT_s = f"{float(B_qCLT):12.6f}" if B_qCLT else "         n/a"
-        B_AME_s = f"{B_AME:11.6f}"
-
-        elapsed = time.monotonic() - t0
-        print(f"{name:>5s} {Z:>2d} {N:>2d} {A:>2d}  "
-              f"{m_sym_s} {m_app_s} {m_obs_s}  "
-              f"{B_pred_s} {B_qCLT_s} {B_AME_s}  "
-              f"{atlas_tag:>30s}  "
-              f"{'|'.join(caveats[:2])}"
-              f"  [{elapsed:.1f}s]")
+        # Print key / periodic progress rows (long-compute logging discipline)
+        if i < 20 or (i + 1) % 2000 == 0 or i + 1 == len(ISOTOPES):
+            m_sym_s = f"{_dp(m_symbolic):>14s}" if m_symbolic else "           n/a"
+            m_app_s = f"{_dp(m_approx):>14s}" if m_approx else "           n/a"
+            m_obs_s = f"{_dp(m_observed):>14s}" if m_observed else "           n/a"
+            B_pred_s = f"{_dp(B_pred):>12s}" if B_pred else "         n/a"
+            B_qCLT_s = f"{_dp(B_qCLT):>12s}" if B_qCLT else "         n/a"
+            B_AME_s = f"{_dp(B_AME):>11s}"
+            wall_s = time.monotonic() - t_start
+            eta_s = (wall_s / (i + 1)) * (len(ISOTOPES) - (i + 1))
+            print(f"[{i+1:>5d}/{len(ISOTOPES)}] {name:>5s} {Z:>2d} {N:>2d} {A:>3d}  "
+                  f"{m_sym_s} {m_app_s} {m_obs_s}  "
+                  f"{B_pred_s} {B_qCLT_s} {B_AME_s}  "
+                  f"wall={int(wall_s)}s eta={int(eta_s)}s", flush=True)
 
     # Summary
     print()
@@ -679,6 +692,51 @@ def main() -> int:
     # was being projected onto a float — there was never a real number here to
     # lose, only a type. With these three gone the witness carries no raw
     # float64 at all, down from 75,112.
+    # Reconcile the historical -7.92e-4 MeV / 1.4949 ratio recorded in bean qou-q3f7:
+    # At commit 543e30adfd (2026-08-26), `pyhecke.atom.atom_per_generator_volumes`
+    # evaluated the 3-channel H_3 Plancherel mixture
+    # V_mix(d) = w_sym*(q+d) + w_std*(z_D+d) + w_alt*(-q^-1+d), whereas 543e30adfd
+    # quoted the standard Markov-trace factor f_pn(d) = z_D + d. Both shift by d_wt - d_blind
+    # = +h*delta/4, giving d(ln V_mix)/d(ln f_pn) = 1.494543484206153 (not 3/2) and
+    # -alpha * d(ln V_mix) = -0.000791784583416 MeV (-0.000792 MeV at 6 dp, whose 6-dp
+    # back-division produced 1.4949). After the 2026-11-18 ruling switched V_full -> z_D*a+b
+    # = f_pn, the live ratio is identically 1.
+    qi = mp.mpf(1) / q
+    hq = q - qi
+    z_d = q ** 3 / (q ** 2 + 1)
+    delta_fs = (q - 1) ** 2 * (1 - q ** (-4)) / 3
+    d_blind, d_wt = -hq / 2, -hq * (mp.mpf(1) / 2 - delta_fs / 4)
+    two_sq = (q + qi) ** 2
+    denom_w = two_sq + 2
+    w_sym, w_std, w_alt = mp.mpf(1) / denom_w, two_sq / denom_w, mp.mpf(1) / denom_w
+    d_ln_fpn = mp.log((z_d + d_wt) / (z_d + d_blind))
+    v_mix_blind = w_sym * (q + d_blind) + w_std * (z_d + d_blind) + w_alt * (-qi + d_blind)
+    v_mix_wt = w_sym * (q + d_wt) + w_std * (z_d + d_wt) + w_alt * (-qi + d_wt)
+    d_ln_vmix = mp.log(v_mix_wt / v_mix_blind)
+    alpha_cat = M_E_MEV * 8 * mp.catalan
+    hist_db_mev = -alpha_cat * d_ln_vmix
+    hist_ratio = d_ln_vmix / d_ln_fpn
+    live_db_mev = -alpha_cat * d_ln_fpn
+
+    builder.add_data("q3f7_colour_weight_offset_reconciliation", {
+        "historical_h3_mixture_d_ln_V": fmt(d_ln_vmix),
+        "single_crossing_d_ln_fpn": fmt(d_ln_fpn),
+        "exact_historical_ratio_dlnV_over_dlnfpn": fmt(hist_ratio),
+        "historical_dB_qCLT_MeV": fmt(hist_db_mev),
+        "historical_dB_qCLT_6dp": _dp(hist_db_mev, 6),
+        "live_markov_dB_qCLT_MeV": fmt(live_db_mev),
+        "live_ratio_dlnV_over_dlnfpn": "1",
+        "explanation": (
+            "Reconciles bean qou-q3f7: at 543e30adfd (2026-08-26), "
+            "atom_per_generator_volumes evaluated the H_3 mixture "
+            "w_sym*(q+d) + w_std*(z+d) + w_alt*(-q^-1+d), giving "
+            "d(ln V_mix)/d(ln f_pn) = 1.494543484206153 (distinct from 3/2) "
+            "and -alpha*d(ln V_mix) = -0.000791784583416 MeV (-0.000792 MeV at "
+            "6 dp, whose 6-dp quotient yielded 1.4949). Under the 2026-11-18 "
+            "Markov-trace volume V_full = z*a + b = f_pn, the live ratio is 1."
+        ),
+    })
+
     builder.add_assertion(
         name="all_A_leq_4_masses_computed",
         computed="1" if all(
@@ -688,6 +746,16 @@ def main() -> int:
         expected="1",
         tolerance="0",
         source="All A ≤ 4 isotopes have absolute mass predictions",
+    )
+    builder.add_assertion(
+        name="q3f7_colour_weight_offset_reconciled",
+        computed="1" if (
+            _dp(hist_db_mev, 6) == "-0.000792"
+            and abs(hist_ratio - mp.mpf("1.5")) > mp.mpf("5e-3")
+        ) else "0",
+        expected="1",
+        tolerance="0",
+        source="80-dps algebraic reconciliation of the -0.000792 MeV / 1.49454348 H_3-mixture p-n offset (bean qou-q3f7)",
     )
 
     builder.add_caveat(
