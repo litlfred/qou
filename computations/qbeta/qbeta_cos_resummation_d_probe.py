@@ -55,6 +55,9 @@ from codata_constants import M_E_MEV, Q_BETA_MEV               # noqa: E402
 from witness_base import WitnessBuilder                        # noqa: E402
 
 # Values as printed in the block .md / table-data (10 sig. figs, ppm to 0.1).
+# The ppm figures are against the CODATA-2022 reference 0.78233355931 MeV
+# (owner ruling 2026-11-20, a887b738d50); against the former AME2020 value
+# 0.78233341 every eps_Q read 0.19 ppm higher (bean qou-h1h5).
 PUBLISHED = {
     "z_D": "0.6126880371",
     "h": "0.2090602988",
@@ -66,10 +69,10 @@ PUBLISHED = {
     "Q_formA_cos_D_MeV": "0.7830036789",
 }
 PUBLISHED_PPM = {
-    "ruled": "-431571.8",
-    "ruled_cos": "-432037.5",
-    "formA": "1677.6",
-    "formA_cos_D": "856.8",
+    "ruled": "-431571.9",
+    "ruled_cos": "-432037.7",
+    "formA": "1677.4",
+    "formA_cos_D": "856.6",
 }
 PPM = mp.mpf(10) ** 6
 
