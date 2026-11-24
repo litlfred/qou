@@ -1196,7 +1196,7 @@ def _mk_over_mpi_at(qq: mpf) -> mpf:
     _qcg_strong = (qq ** 2 + 1 + qq ** -2) * (
         (qq ** 4 - qq ** -4) / (qq - qq ** -1)
     )  # [3]_q · [4]_q
-    _alpha_em_inv = alpha_em_inv_derived(qq)
+    _alpha_em_inv = _alpha_em_inv_form_b_at(qq)
     return mp.sqrt(_qcg_strong + (1 / _alpha_em_inv) / mp.pi * _hbar_factor)
 
 
@@ -1523,8 +1523,8 @@ def main() -> dict:
                     f"({qbeta_anchor['cache_q0'][:22]}…) but the dashboard "
                     f"evaluates at the proton pin "
                     f"({qbeta_anchor['producer_q0'][:22]}…). Induced Q_β error "
-                    f"≈ {float(qbeta_anchor['induced_qbeta_error_ppb']):.2f} ppb "
-                    f"= {float(qbeta_anchor['anchor_error_over_target']):.2f}× the "
+                    f"≈ {mp.nstr(mpf(str(qbeta_anchor['induced_qbeta_error_ppb'])), 4)} ppb "
+                    f"= {mp.nstr(mpf(str(qbeta_anchor['anchor_error_over_target'])), 3)}× the "
                     f"L2 target. Immaterial against today's 1248 ppb residual, "
                     f"but it alone exceeds the target — so no 100× PASS can be "
                     f"credited to this row until the layers agree "
@@ -1643,45 +1643,38 @@ def main() -> dict:
             "(cubic form with the derived Schwinger factor (1-h^2 alpha), proton pin)",
         )
         _row["note"] = (
-            "CANONICAL FORM OPEN (qou-aemx): see `arms` for the CS tower and the "
-            "additive A/B arms; compute consumers use the CS tower. The additive "
-            "form rests on an unproved postulate, the [10]_q coefficient, the "
-            "one-loop normalisation and c (docs/audits/2026-11-21-alpha-em-which-"
-            "form-is-canonical.md); of the three classes once listed here, two are "
-            "settled on main and the third is not load-bearing. The Schwinger factor is NOT "
-            "FITTED and this is measured, not asserted: parametrising it as "
-            "(1 - c*h^2*alpha), the c that hits CODATA exactly is 0.7312340272 "
-            "and the 1-sigma window is [0.61846303, 0.84400502], so the "
-            "published c = 1 lies OUTSIDE it, at 2.383 sigma -- a fitter would "
-            "have taken 0.731. But it is NOT DERIVED either: the exact "
-            "vertex-moment check (docs/audits/2026-07-14-alpha-em-phase3-"
-            "schwinger-coefficient-exact-check.md) gives +0.1281 against the "
-            "claimed -h^2 = -0.0437, wrong order and wrong sign, ratio -2.93, "
-            "and recommends the tier 'structurally-motivated / "
-            "empirically-anchored'. That is the honest label. Second-best scoreable row: 238x, against 970x (m_mu) and "
-            "152-177x (the Q_beta trio). NOTE the residual's SIGN depends on the "
-            "CODATA edition (the 2018->2022 shift is 2.2x the residual); the "
-            "reference is read from the registry so the edition is not a choice."
+            "CANONICAL FORM OPEN (qou-aemx): see `arms` for the CS tower, 8x8 "
+            "Seifert CS, Form A, Form B, and conditional two-loop Bloch-B_3 Form C "
+            "arms. 1-LOOP SCHWINGER FACTOR NOW DERIVED (#9360, `0 sorry`): "
+            "`QOU.Archimedean.EmFermionLoopFourTopology` proves symbolically over "
+            "Q(q) that summing all 4 signed chiral 2-vertex crossing topologies "
+            "(eps1, eps2) in {+,-}^2 on U_q(sl_2) `EmFermionLoop` cancels the "
+            "+/-h*m(sigma_2) chiral tadpoles identically (which caused the 1-topology "
+            "2026-07-14 check to give +0.1281) and yields -1 * h^2, making `(1 - h^2 alpha)` "
+            "in Form B derived (`137.03599912695`, `-0.3652 ppb`, `-2.383 sigma`, "
+            "238.3x L2 100x bar), with the Bring zero-mode classes "
+            "(`ArchimedeanLimit`, `BlochSuslinUniqueness`, `BringZeroModeBlochClass`) "
+            "and un-averaged U(1) skein vertex normalization carried as named "
+            "`§3b-cond` inputs. Conditional two-loop Bloch-B_3(C) Form C "
+            "(`QOU.Archimedean.AlphaEmTwoLoopBlochSchwinger`, #9360, `§3b-cond "
+            "AlphaEmTwoLoopBlochSchwingerClass`) evaluates c2_bloch_b3 = "
+            "H*(zeta(3) - Li_3(q^-2))/(8*pi) to `137.035999173696...` "
+            "(`-0.0241 ppb`, `-0.157 sigma`, within 1 sigma_exp; 15.7x L2 bar). "
+            "CODATA 2022 reference read from `qou_substrate.codata`."
         )
-        # ── Two labelled arms (owner card choice 2026-11-21, bean qou-aemx) ──
-        # The canonical alpha_em form is OPEN. Every alpha consumer in compute
-        # (pyhecke.constants, the m_K/m_pi EM term, coulomb_energy,
-        # atom_electron_mass) uses the CS tower, while this row's headline was
-        # Form B: two different objects. The row now carries every arm, each
-        # scored the same way. The headline stays Form B only so existing
-        # readers of `pred_MeV` keep working; it is NOT a canonical choice.
-        # Every arm misses the 100x target, so the scoreable counts do not
-        # depend on which arm is the headline.
         from meson_em_sinh_closed_form import alpha_em_inv_derived as _a_cs
         from q_parameter import Q_50_DIGIT_STR as _q50_for_cs  # noqa: E402
         _arms = {
             "cs_tower": (_a_cs(mpf(_q50_for_cs)),
-                         "meson_em_sinh_closed_form.alpha_em_inv_derived (exact resummation); "
-                         "the form every alpha consumer in compute uses"),
+                         "meson_em_sinh_closed_form.alpha_em_inv_derived (legacy Witten 2x2 CS resummation)"),
             "additive_A_c0": (_alpha_w["data"]["ladder_proton"].get("form_A_alpha_inv"),
                               "alpha-em-schwinger-ladder.witness.json :: form_A_alpha_inv"),
             "additive_B_c1": (_alpha_inv_pred,
-                              "alpha-em-schwinger-ladder.witness.json :: form_B_alpha_inv (c = 1 is a choice)"),
+                              "alpha-em-schwinger-ladder.witness.json :: form_B_alpha_inv "
+                              "(4-topology EmFermionLoopFourTopology -1*h^2 proved, #9360)"),
+            "additive_C_bloch_b3": (_alpha_w["data"]["ladder_proton"].get("form_C_alpha_inv"),
+                                    "alpha-em-schwinger-ladder.witness.json :: form_C_alpha_inv "
+                                    "(conditional §3b-cond AlphaEmTwoLoopBlochSchwingerClass, #9360)"),
         }
         _row["arms"] = {}
         for _k, (_v, _src) in _arms.items():
@@ -2299,10 +2292,10 @@ if __name__ == "__main__":
         print(f"    dashboard evaluates at     : proton q₀ "
               f"= {_al['producer_q0'][:24]}…")
         print(f"    pin difference             : "
-              f"{float(_al['pin_diff_ppb']):.3f} ppb")
+              f"{mp.nstr(mpf(str(_al['pin_diff_ppb'])), 5)} ppb")
         print(f"    induced Q_β error          : "
-              f"{float(_al['induced_qbeta_error_ppb']):.2f} ppb "
-              f"= {float(_al['anchor_error_over_target']):.2f}× the L2 target")
+              f"{mp.nstr(mpf(str(_al['induced_qbeta_error_ppb'])), 4)} ppb "
+              f"= {mp.nstr(mpf(str(_al['anchor_error_over_target'])), 3)}× the L2 target")
         print("    => immaterial vs today's 1248 ppb residual, but it alone")
         print("       exceeds the target, so no 100× PASS can be credited to")
         print("       this row until the layers agree (bean tnjb).")
@@ -2381,6 +2374,7 @@ if __name__ == "__main__":
         COMPUTE_DIR / "codata-2022-validation-masses.witness.json",
         COMPUTE_DIR / "cal-3-q-beta.witness.json",
         COMPUTE_DIR / "meson-kaon-pion-derivation.witness.json",
+        COMPUTE_DIR / "alpha-em-schwinger-ladder.witness.json",
     ]:
         w.add_upstream(upstream)
     w.save()
