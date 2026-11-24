@@ -1,13 +1,13 @@
 ---
 # qou-85o2
 title: canonical-isotope-witness Z21-Z99 (98 shards) predate the C-excision; a spot re-run moved 2.19x and the cause is NOT isolated
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T08:08:03Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T15:24:41Z
 parent: qou-v2om
 ---
 
@@ -145,3 +145,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8296, closed o
 ## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
 
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** the shards are the pre-C-excision (convention C) records. Re-running 98 shards is a mass witness refresh (ask-owner) in the precision thread's area. Not touched.
+
+Closed post-merge: landed on origin/main in PR #9354 (e2ef7af524a).
