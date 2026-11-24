@@ -1,6 +1,6 @@
 This remark is where the formula of [the flavor-split identity](#prop:flavor-split-substrate) is compared with measurement. The identity itself makes no empirical claim; the claim compared here is [the conjectured mass split](#conj:flavor-split-substrate-mass).
 
-At the proton pin $q = q_0 \approx 1.1099785827513808$, evaluated at 40 digits:
+At the proton-anchored $q = q_0 \approx 1.1099785827513808$, evaluated to $40$ digits:
 
 $$
   (q_0 - 1)^2 \cdot (1 - q_0^{-4}) / 3

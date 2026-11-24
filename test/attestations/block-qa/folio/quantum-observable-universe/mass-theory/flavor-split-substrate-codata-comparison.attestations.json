@@ -1,0 +1,542 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/flavor-split-substrate-codata-comparison",
+    "path": "folio/quantum-observable-universe/mass-theory/flavor-split-substrate-codata-comparison"
+  },
+  "criteria": {
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:20:00.000Z",
+        "reviewed_sha": "8e1db9fdd0de1228744ce32b1cc2750ca8b166a6",
+        "evidence": "QA re-refresh of #8917 at 8e1db9fdd0d. The remark marks itself as the comparison point (\"This remark is where the formula ... is compared with measurement. The identity itself makes no empirical claim.\") and is tagged comparison-boundary. No Lean, so no empirical value enters a formal proof. It also states that the Step 2 ansatz was chosen partly for this agreement."
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:20:00.000Z",
+        "reviewed_sha": "8e1db9fdd0de1228744ce32b1cc2750ca8b166a6",
+        "severity": "minor",
+        "evidence": "QA re-refresh of #8917 at 8e1db9fdd0d. The remark evaluates at the muon pin q0 = 1.109978595642739 (16 dps). The default evaluation pin is the proton one (AGENTS.md q0 anchor convention), and the cited witness used q0 = 1.10997858275138 (the proton value, though its q0_source string says muon-anchored). The difference is invisible at 4 significant figures, but the remark and its witness disagree on which pin they use. Not fixed here."
+      },
+      {
+        "field_hash": {
+          "ts": "340a34fc77ec",
+          "md": "88e9676913b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "b87258043bb80d4c49a88acc2e29b32b1ab31865",
+        "evidence": "QA re-check of #8917 at b87258043bb. Resolves the earlier minor warn: the remark now evaluates at the proton pin, the same q0 value the witness records. Residual note on the witness, not the block: its q0_source string still says \"muon-anchored canonical q0\" over a proton value, and its masses are CODATA 2018."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:20:00.000Z",
+        "reviewed_sha": "8e1db9fdd0de1228744ce32b1cc2750ca8b166a6",
+        "severity": "major",
+        "evidence": "QA re-refresh of #8917 at 8e1db9fdd0d. The comparison numbers do not match a 30-dps recomputation or the block's own witness (computations/probes/flavor-split-substrate-probe.witness.json, relative error 1.277e-3). At q0 = 1.1099785956 (and equally at the proton pin): (q0-1)^2(1-q0^-4)/3 = 1.37571e-3 against CODATA 1.29333251/938.918756 = 1.37747e-3, residual -0.128%, not -0.10%. Intermediate: q0^-4 = 0.65878 and 1-q0^-4 = 0.34122, not 0.6585 and 0.3415. Row 3: M_N times the formula = 1.2917 MeV (1.29168 with M_N = 938.92), residual -0.13%, not 1.287 MeV and -0.52%. Row 2: with mu_avg = M_N/3 (Step 6 of the proof) the CODATA value is 4.1324e-3 and the residual -0.13%; the stated 4.148e-3 implies mu_avg = 311.75 MeV, the fitted dressed masses, which contradicts Step 6. The same numbers stood in the statement block on main, unflagged there; they now sit at the comparison point this PR creates, which is where the empirical claim lives. Not fixed here."
+      },
+      {
+        "field_hash": {
+          "ts": "340a34fc77ec",
+          "md": "88e9676913b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "b87258043bb80d4c49a88acc2e29b32b1ab31865",
+        "evidence": "QA re-check of #8917 at b87258043bb. Recomputed independently with mpmath at 50 dps, proton pin q0 = 1.10997858275138080759166909561 (qou_substrate.constants.q_at), CODATA 2022 from qou_substrate.codata (m_p 938.27208943, m_n 939.56542194, M_N = 938.918755685 MeV): (q0-1)^2 = 0.0120953, 1-q0^-4 = 0.341218, formula = 1.37571e-3 against (m_n-m_p)/M_N = 1.37747e-3, residual -0.12772 %; row 2 with mu_avg = M_N/3 (Step 6): 4.12713e-3 against 4.13241e-3, -0.12772 %; row 3: 1.29168 MeV against 1.29333 MeV, -0.12772 %. Every figure in the remark matches to the digits shown. The block witness (computations/probes/flavor-split-substrate-probe.witness.json) records the same q0, delta_pred 1.375711e-3 and rel_error -0.127708 %; it uses CODATA-2018 masses (938.27208816 / 939.56542052), which moves the residual only in the fifth digit. Resolves the earlier major fail. The statement that the three rows carry one residual is correct (they differ by the factors 3 and M_N)."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). No instance."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). No instance."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). No instance."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). No instance."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). No instance."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. 'This remark is where the formula ... is compared with measurement' marks the comparison boundary, which the model-vs-comparison rule asks for; it is not narration of the writing."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). 'This remark is where the formula ... is compared with measurement' marks the comparison boundary, which the model-vs-comparison rule asks for."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). No instance."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). No instance."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). No instance."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). No instance."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. Last block of the flavor-split group, after the interpretation remark."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). Last block of the flavor-split group, after the interpretation remark."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. uses[] is the proposition; computation points at the existing probe and witness."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). uses[] is the proposition; computation points at the existing probe and witness, whose q0 is the proton value used here."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. Gives q0, the evaluation, the CODATA value and the residual in that order."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). Gives q0, the evaluation, the CODATA value, the residual, then says the three table rows are one comparison."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "3ea5d592f939",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:39:33.000Z",
+        "reviewed_sha": "49a9beb1b7e63827a33c2267b8e3a454ce036a3f",
+        "evidence": "Full read of the new comparison remark. One evaluation, one table, one closing caveat."
+      },
+      {
+        "field_hash": {
+          "md": "88e9676913b5",
+          "ts": "340a34fc77ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v3"
+        },
+        "reviewed_at": "2026-11-21T19:05:16.000Z",
+        "reviewed_sha": "6c09c4566366570185ccd75150e1fe6d17607475",
+        "evidence": "Full read of the rewritten comparison remark (proton pin, numbers recomputed at 40 digits with mpmath). One evaluation, one table, two closing sentences."
+      }
+    ]
+  }
+}

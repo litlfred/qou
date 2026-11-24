@@ -46,7 +46,7 @@ $$
 ([The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum)), with no free
 parameter and no anchor input. That object grows **super-exponentially**, while any
 depth-$2$ recurrence with $\det = 1$ grows geometrically, at a ratio tending to the
-larger root of $R$. The two cannot agree for large $n$. Evaluated at the proton pin
+larger root of $R$. The two cannot agree for large $n$. Evaluated at the proton-anchored $q_0$
 with $\tau \approx 2.6423863$, iterating from the true $a_D^{(2)}, a_D^{(3)}$:
 
 | $n$ | recurrence | closed form $S(n)/n$ | deviation |

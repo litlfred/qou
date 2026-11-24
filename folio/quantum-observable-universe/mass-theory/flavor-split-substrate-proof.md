@@ -38,7 +38,7 @@ $$
 This is the minimal substrate-atom combination satisfying three conditions:
 (a) Bar-involution antisymmetry under $q \mapsto q^{-1}$ (consistent with the antisymmetry of the splitting under flavor exchange $\mathfrak{u} \leftrightarrow \mathfrak{d}$).
 (b) Leading order $(q-1)^3$ at the classical limit.
-(c) Numerical agreement to $-0.13\%$ at the proton pin $q = q_0$.
+(c) Numerical agreement to $-0.13\%$ at the proton-anchored $q = q_0$.
 
 **Scope of Step 2.** Equation (2) is a phenomenological ansatz rather than a derived identity: Condition (c) chooses the form because it agrees with experiment, which is selection against the target. Conditions (a) and (b) do not single it out:
 

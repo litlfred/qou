@@ -23,9 +23,7 @@ $$
 $$
 
 In $H_2$, $\#(e_{(2)}) = (-\sigma + h + q^{-1})/(q + q^{-1}) = (q - \sigma)/(q + q^{-1}) = e_{(1,1)}$.
-The earlier version of this step wrote $\mathrm{bar}(e_\lambda) = e_{\lambda'}$,
-which is false. Steps 2 and 3 below use the transposing involution, so read
-"bar" there as $\#$ on the Hecke side.
+In particular, $\mathrm{bar}(e_\lambda) \neq e_{\lambda'}$ whenever $\lambda \neq \lambda'$. Steps 2 and 3 below require the cell-transposing involution, so on the Hecke side orientation reversal pairs with $\#$ rather than $\mathrm{bar}$.
 
 **Step 2 (period-class bar-action).** Under the archimedean
 realization functor $\tau_{\mathrm{arch}}$

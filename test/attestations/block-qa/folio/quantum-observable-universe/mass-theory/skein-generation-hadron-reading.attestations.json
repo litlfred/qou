@@ -1,0 +1,198 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/skein-generation-hadron-reading",
+    "path": "folio/quantum-observable-universe/mass-theory/skein-generation-hadron-reading"
+  },
+  "criteria": {
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the first paragraph after the electron correction. Resolved: the trefoil is no longer called the electron; the electron is sigma_0 sigma_1 sigma_0 in B_3 with Hopf-link closure and the trefoil is the backup, per docs/coordination/owner-rulings.md (2026-11-21)."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "36fad09a7f7f",
+          "ts": "ed3db1795349"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Full read of the three paragraphs. No instance."
+      }
+    ]
+  }
+}

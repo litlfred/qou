@@ -14,7 +14,7 @@ $$
 *$\square$*
 
 **$C_{\dim_q}$ is not forced by its trace.**
-*An earlier version claimed that $C_{\dim_q}$ is the unique central element with trace $\sum_\lambda 1/\dim_q(\lambda)$. That is false whenever $A$ has at least two blocks: $\tau$ is one linear functional on $Z(A)$, which has dimension $|\widehat{A}| = p(n) \geq 2$ for $n \geq 2$, so every $z = \sum_\lambda c_\lambda p_\lambda$ with $\sum_\lambda c_\lambda\,\tau(p_\lambda) = \sum_\lambda 1/\dim_q(\lambda)$ has the same trace. The coefficients $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$ are a choice, not a consequence.*
+*The element $C_{\dim_q}$ is not the unique central element with trace $\sum_\lambda 1/\dim_q(\lambda)$ whenever $A$ has at least two blocks: $\tau$ is a single linear functional on $Z(A)$, which has dimension $|\widehat{A}| = p(n) \geq 2$ for $n \geq 2$, so every $z = \sum_\lambda c_\lambda p_\lambda$ with $\sum_\lambda c_\lambda\,\tau(p_\lambda) = \sum_\lambda 1/\dim_q(\lambda)$ has the same trace. The coefficients $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$ are a block-by-block definition, not forced by the trace.*
 
 *$C_{\dim_q}$ is categorical in three distinct senses:*
 
