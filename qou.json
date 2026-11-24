@@ -1,6 +1,7 @@
 {
   "_comment": "This repository's CatHarness instance DECLARATION. Renamed from `harness.json` on 2026-09-26: platform main composes both filenames from the instance's own name (`instanceDeclarationFilename(name) = <name>.json`, `instanceConfigFilename(name) = <name>.config.json` in cat-harness/schemas/cat-harness.ts), and `findDeclarationFile` accepts a file ONLY when its filename stem equals its own `name` field. Stem `harness` against name `qou` failed that test -- the platform's own words for the state are 'the rename-half-done case check:instance-config already reports'. Stem `qou` now agrees. Paired with `qou.config.json` (what this instance IS); this file is WHERE its tree is.",
   "name": "qou",
+  "title": "Quantum Observable Universe",
   "description": "Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories",
   "repository": "litlfred/qou",
   "canonicalUrl": "https://litlfred.github.io/qou",
