@@ -31,4 +31,4 @@ permissions:
 
 jobs:
   publish:
-    uses: litlfred/cat-harness-tools/.github/workflows/layer-qa-publish.yml@7d477b54ba29ccb8b719df6771973fefd1e0ef3e
+    uses: litlfred/cat-harness-tools/.github/workflows/layer-qa-publish.yml@856f1e9f909fca0a39b24617d757a3de7f46ca4f # index.lock.json
