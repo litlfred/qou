@@ -1,4 +1,6 @@
 {
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact polynomial arithmetic in Q[h, z] with h and the Markov parameter z left free; q0 is never read",
  "description": "a4_product_rule_probe.py: locality and the product rule for gamma-gamma bonds at A = 4,\nwith the Markov parameter z left FREE (exploratory; follows bond_structure_probe (d), which\nfound both rules at A = 3; not preregistered).\n\nPredictions, written before this probe was run, extrapolated from A = 3:\n\n(L) Locality. A single bond (i, j) inside the A = 4 word changes the trace by exactly the\n    A = 2 ratio for the type of nucleon j: (single - free) f2 = d2 free, at every order.\n(P) Product rule. For a bond set S, X = atom free^(|S|-1) - prod_{b in S} single_b is\n    exactly 0 when no two bonds of S go into the same nucleon. Otherwise X starts at h^6\n    and X / free^|S| has leading coefficient m (1 - z^2), m = number of unordered pairs\n    of bonds in S with the same receiving nucleon j.\n\nTested as polynomial identities in z on all 16 orders, over and under transport, for all\n15 two-bond sets, the chain, the three-into-one set, two disjoint-receiver sets, and the\nfour all-pairs formation routes of he4_all_pairs_exact_probe. Exact over Q[h, z].",
  "engine": "python-flint exact Q[h, z]",
  "exploratory": true,
