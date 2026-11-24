@@ -15,7 +15,7 @@ Retrieval systems solve this with a summary tier; this builds one.
 | Tier | Size | Where | For |
 |---|---|---|---|
 | **brief** | ≤ 200 chars (~50 tok) | `library/INDEX.md`, one line each | scanning all 341 at once — the whole index is ~17 k tokens |
-| **extended** | ~1.5–2.5 k chars (~500 tok) | `library-summaries/<id>.json` | deciding whether to open this document |
+| **extended** | ~1.5–2.5 k chars (~500 tok) | `narrative` of `library/<id>/manifest.jsonld` | deciding whether to open this document |
 | **sections** | the full text | `library/<id>/sections/*.md` | actually reading it |
 
 An agent walks down the tiers and stops when it knows enough, so the cost
@@ -41,21 +41,30 @@ abstract did not extract gets a structural brief instead ("N sections
 covering X, Y, Z"), which is weaker.
 
 An LLM-written summary would be better and is a per-document upgrade, not
-a replacement: each summary records `provenance.kind`, so an
-agent-written summary can be dropped in and will not be overwritten by a
-re-run (`--keep-agent`, the default).
+a replacement: each summary records who drafted it (`drafted_by`), so an
+agent- or human-written summary can be dropped in and will not be
+overwritten by a re-run. Only a summary this script drafted
+(`drafted_by.kind == "script"`) is ever rebuilt.
 
-## Where the extended summaries live
+## Where the summaries live: the document's own KG node
 
-`library-summaries/<doc-id>.json`, one per entry, BESIDE the library rather
-than inside each entry. They were `library/<doc-id>/summary.json` until
-2026-11-24, when the owner ruled that qou's library must pass the platform's
-library gate (`check:l1-complete`, decision "C1 migrate", PR #9396): an entry
-may hold only the files the platform's ingestion arms produce, and a
-document-level summary is not one of them. The platform's own
-`summaries.json` is a different object (one narrative per prose block), so the
-records were moved rather than renamed into it. Only the path changed; the
-`library-summary/v1` shape and the agent-written records are untouched.
+Since 2026-11-24 each document's summary is the `narrative` of its library
+entry's KG node, `library/<doc-id>/manifest.jsonld`: a `NarrativeSchema`
+record (`text`, `lang`, `state`, `drafted_by`, `drafted_at`), the platform's
+form for an account of a library component, reviewed through
+`bun run cat narratives` like an image description or a block summary. The
+`text` is the brief, a blank line, then the extended summary, so the brief is
+its first paragraph.
+
+Until then they were `library/<doc-id>/summary.json` (`library-summary/v1`),
+a file the platform's library gate (`check:l1-complete`) does not allow in an
+entry. Owner, 2026-11-24 (PR #9399): summaries "should be like ingested KG
+for library components in other parts of the harness". The old records'
+`sections` and `tokens` are derived here from `structure.json`; their
+`provenance.from` / `note` were not carried (git history keeps them).
+
+Usage, tier 2: `scripts/summarize-library.py --show <doc-id>`, or
+`jq -r ".narrative[0].text" library/<doc-id>/manifest.jsonld`.
 
 Usage:
     scripts/summarize-library.py --apply            # missing/changed summaries + index + injection (preserves existing)
@@ -63,11 +72,13 @@ Usage:
     scripts/summarize-library.py --apply --regenerate  # rebuild all extractive summaries (still keeps provenance.kind == 'agent')
     scripts/summarize-library.py --index-only
     scripts/summarize-library.py --check            # exit 1 if stale
+    scripts/summarize-library.py --show <doc-id>    # tier 2 for one document
 """
 
 from __future__ import annotations
 
 import argparse
+import datetime
 import glob
 import json
 import os
@@ -77,9 +88,6 @@ import sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIB = os.path.join(REPO, "library")
 INDEX = os.path.join(LIB, "INDEX.md")
-# Tier 2, kept beside the library: an entry may hold only what the platform's
-# ingestion arms produce (`check:l1-complete`), see the module docstring.
-SUMMARIES = os.path.join(REPO, "library-summaries")
 
 SCHEMA = "library-summary/v1"
 BRIEF_MAX = 200
@@ -241,7 +249,8 @@ def write_index(rows: list[dict]) -> str:
         f"**{len(rows)} documents, ~{total:,} tokens for the whole index.** This is the",
         "scan tier: grep *this file* to find which document to open, rather than",
         "grepping 24.7 M characters of section text. Then read",
-        "`library-summaries/<doc-id>.json` for the extended summary, and only then",
+        "`scripts/summarize-library.py --show <doc-id>` (the `narrative` of",
+        "`library/<doc-id>/manifest.jsonld`) for the extended summary, and only then",
         "`library/<doc-id>/sections/` for the text.",
         "",
         "Briefs are **extractive** — assembled from each document's own abstract,",
@@ -259,18 +268,112 @@ def write_index(rows: list[dict]) -> str:
     return "\n".join(out)
 
 
+MANIFEST = "manifest.jsonld"
+
+
+def manifest_of(docdir: str) -> dict | None:
+    """The entry's KG node, or None when it has none (or it will not parse)."""
+    path = os.path.join(docdir, MANIFEST)
+    try:
+        return json.load(open(path, encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def english(slot) -> dict | None:
+    """The English narrative of a slot (a list, one per language), else the first."""
+    if isinstance(slot, dict):
+        return slot if slot.get("text") else None
+    if isinstance(slot, list) and slot:
+        return next((n for n in slot if isinstance(n, dict) and n.get("lang") == "en"), slot[0])
+    return None
+
+
+def row_from_narrative(doc_id: str, docdir: str, nar: dict) -> dict:
+    """An index row from the manifest's `narrative`: brief = first paragraph."""
+    text = (nar.get("text") or "").strip()
+    brief, _, extended = text.partition("\n\n")
+    sj = os.path.join(docdir, "structure.json")
+    try:
+        secs = (json.load(open(sj)).get("sections") or []) if os.path.exists(sj) else []
+    except Exception:
+        secs = []
+    return {
+        "doc_id": doc_id,
+        "brief": brief,
+        "extended": extended,
+        "tokens": {"brief": tok(brief), "extended": tok(extended)},
+        "sections": [
+            {"id": s.get("id"), "title": s.get("title"),
+             "pages": f"{s.get('page_start')}-{s.get('page_end')}"}
+            for s in secs
+        ],
+        "drafted_by": nar.get("drafted_by"),
+        "state": nar.get("state"),
+    }
+
+
+def write_narrative(docdir: str, s: dict) -> bool:
+    """Set the manifest's `narrative` to this script's draft of `s`, in place.
+
+    The key goes after `provenance`; every other field and the file's
+    formatting (2-space JSON, trailing newline, as gen-library-jsonld writes
+    it) are kept. Returns False when the entry has no manifest to carry it.
+    """
+    path = os.path.join(docdir, MANIFEST)
+    man = manifest_of(docdir)
+    if man is None:
+        return False
+    nar = [{
+        "text": s["brief"].strip() + "\n\n" + s["extended"].strip(),
+        "lang": "en",
+        "state": "draft",
+        "drafted_by": {"kind": "script", "id": "scripts/summarize-library.py"},
+        "drafted_at": datetime.date.today().isoformat(),
+    }]  # a list, one per language: the platform's narrative slot (NarrativeSlotSchema)
+    out: dict = {}
+    for k, v in man.items():
+        if k == "narrative":
+            continue
+        out[k] = v
+        if k == "provenance":
+            out["narrative"] = nar
+    out.setdefault("narrative", nar)
+    open(path, "w", encoding="utf-8").write(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    return True
+
+
+def show(doc_id: str) -> int:
+    """Tier 2 for one document: its brief, extended summary and who drafted it."""
+    d = os.path.join(LIB, doc_id)
+    man = manifest_of(d)
+    nar = english((man or {}).get("narrative"))
+    if not nar:
+        print(f"{doc_id}: no summary (library/{doc_id}/{MANIFEST} carries no `narrative`)", file=sys.stderr)
+        return 1
+    r = row_from_narrative(doc_id, d, nar)
+    by = r["drafted_by"] or {}
+    print(r["brief"] + "\n\n" + r["extended"])
+    print(f"\n[{r['state']}, drafted by {by.get('kind')} {by.get('id')}"
+          + (f", {by['session']}" if by.get("session") else "") + "]")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Two-tier summaries + scan index for the library")
     ap.add_argument("--apply", action="store_true",
-                    help="write missing/stale library-summaries/<doc-id>.json files, inject changed doc_brief headers, and update INDEX.md")
+                    help="write missing/stale summaries (each entry's manifest.jsonld `narrative`), inject changed doc_brief headers, and update INDEX.md")
     ap.add_argument("--only-missing", action="store_true",
                     help="write only missing/stale summaries (default behavior of --apply; implies --apply)")
     ap.add_argument("--regenerate", action="store_true",
-                    help="rebuild existing extractive summaries as well (provenance.kind == 'agent' is always preserved)")
+                    help="rebuild this script's own summaries as well (one drafted by an agent or a person is always preserved)")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--index-only", action="store_true")
     ap.add_argument("--no-inject", action="store_true", help="skip front-matter context injection")
+    ap.add_argument("--show", metavar="DOC_ID", help="print one document's summary (tier 2) and exit")
     args = ap.parse_args()
+    if args.show:
+        return show(args.show)
     if args.only_missing:
         args.apply = True
 
@@ -291,30 +394,27 @@ def main() -> int:
             dup_dirs.append((d, dup))
             continue
         expected_doc_id = art_meta.get("doc_id") or os.path.basename(d)
-        expected_sha = (art_meta.get("source") or {}).get("sha256", "")[:16]
-        path = os.path.join(SUMMARIES, os.path.basename(d) + ".json")
-        if os.path.exists(path):
-            try:
-                prev = json.load(open(path))
-            except Exception:
-                prev = {}
-            prov_kind = (prev.get("provenance") or {}).get("kind")
-            if prov_kind == "agent":
-                # Keep the summary, and ensure its brief is present in chunks
-                # (`inject_context` is a no-op when sections are already current).
+        expected_sha = (art_meta.get("source") or {}).get("sha256", "")
+        man = manifest_of(d)
+        nar = english((man or {}).get("narrative"))
+        if nar and nar.get("text"):
+            prev = row_from_narrative(expected_doc_id, d, nar)
+            if (nar.get("drafted_by") or {}).get("kind") != "script":
+                # Written by an agent or a person: never rebuilt. Ensure its
+                # brief is present in chunks (`inject_context` is a no-op when
+                # sections are already current).
                 rows.append(prev)
                 kept += 1
                 if args.apply and not args.index_only and not args.no_inject:
                     injected += inject_context(d, prev.get("brief", ""))
                 continue
             if (not args.regenerate
-                    and prev.get("_schema") == SCHEMA
-                    and prev.get("doc_id") == expected_doc_id
-                    and prev.get("source_sha256") == expected_sha
+                    and ((man or {}).get("meta") or {}).get("source_sha256") == expected_sha
                     and prev.get("brief")):
-                # Preserve existing up-to-date extractive summary on disk so
-                # ingesting one new paper does not clobber ~740 existing entries
-                # (`qou-pmgw`). Pass `--regenerate` when extractor rules change.
+                # Preserve this script's existing summary while the manifest
+                # still describes the same source bytes, so ingesting one new
+                # paper does not clobber ~740 existing entries (`qou-pmgw`).
+                # Pass `--regenerate` when extractor rules change.
                 rows.append(prev)
                 preserved_extractive += 1
                 if args.apply and not args.index_only and not args.no_inject:
@@ -325,8 +425,9 @@ def main() -> int:
             continue
         rows.append(s)
         if args.apply and not args.index_only:
-            os.makedirs(SUMMARIES, exist_ok=True)
-            json.dump(s, open(path, "w"), indent=1, ensure_ascii=False)
+            if not write_narrative(d, s):
+                print(f"  {os.path.basename(d)}: no {MANIFEST} to carry its summary; "
+                      "run gen-library-jsonld for the entry first", file=sys.stderr)
             if not args.no_inject:
                 injected += inject_context(d, s["brief"])
 
@@ -343,21 +444,12 @@ def main() -> int:
 
     idx = write_index(rows)
     stale = (not os.path.exists(INDEX)) or open(INDEX, encoding="utf-8").read() != idx
-
-    # A summary kept beside the library outlives its entry unless something
-    # looks: one whose entry directory is gone is reported, never deleted.
-    entries = {os.path.basename(d) for d in glob.glob(os.path.join(LIB, "*")) if os.path.isdir(d)}
-    orphans = sorted(os.path.basename(f)[:-5] for f in glob.glob(os.path.join(SUMMARIES, "*.json"))
-                     if os.path.basename(f)[:-5] not in entries)
-    if orphans:
-        print(f"  {len(orphans)} summary file(s) in library-summaries/ name no library entry: "
-              + ", ".join(orphans[:10]) + (" ..." if len(orphans) > 10 else ""))
     if args.apply or args.index_only:
         open(INDEX, "w", encoding="utf-8").write(idx)
 
     bt = sum(r["tokens"]["brief"] for r in rows)
     et = sum(r["tokens"]["extended"] for r in rows)
-    print(f"{len(rows)} documents ({kept} agent-written kept, {preserved_extractive} existing extractive preserved)")
+    print(f"{len(rows)} documents ({kept} agent- or person-written kept, {preserved_extractive} existing extractive preserved)")
     print(f"  index (scan tier)   ~{bt:,} tokens total")
     print(f"  extended summaries  ~{et:,} tokens total, ~{et//max(len(rows),1)} each")
     if injected:
@@ -367,7 +459,7 @@ def main() -> int:
               f"across {len(dup_dirs)} copies (no index line of their own)")
     if args.check:
         print("\nindex is", "STALE" if stale else "up to date")
-        return 1 if (stale or orphans) else 0
+        return 1 if stale else 0
     return 0
 
 

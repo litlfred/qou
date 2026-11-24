@@ -33,6 +33,18 @@
     "library/arxiv-1211.1525v2/sections/sec-018"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS — We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum\n\n**PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS**\n\n*MOTOHISA FUKUDA AND PIOTR ŚNIADY*\n\n31 pp, 20 sections.\n\n**Abstract.** We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum state. The limiting distribution was previously investigated via Wishart random matrices indirectly (by approximating the matrix of trace 1 by the Wishart matrix of random trace) and shown to be the semicircular distribution or the free difference of two free Poisson distributions, de- pending on how dimensions of the concerned spaces grow. Our use of Wishart matrices gives exact combinatorial formulas for the moments of the partial transpose of the random state. We ﬁnd three natural asymp- totic regimes in terms of geodesics on the permutation groups. Two of them correspond to the above two cases; the third one turns out to be a new matrix model for the meander polynomials.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Free probability, noncrossing partitions a; 2.2 Meanders; 2.3 Our model; 2.4 Moments of; 3 The case when dimensions of environment and ; 3.1 Limiting eigenvalues; 3.2 Behavior of extreme eigenvalues; 4 The case when the environment space is fixed; 4.1 Our model; 4.2 Random pure states; 4.3 Meander polynomials with our model; 5 The case when one of the system parts is fix; 6 Concluding remark; Appendix A. Lemmas for Section ??; Appendix B. Measure concentration",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-1211.1525v2",

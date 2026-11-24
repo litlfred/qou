@@ -45,6 +45,18 @@
     "library/arxiv-2104.14491v1/sections/sec-030"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia\n\n**Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia**\n\n20 pp, 32 sections.\n\n**Abstract.** We compute explicitly the Khovanov polynomials (using the computer program from katlas.org) for the two simplest families of the satellite knots, which are the twisted Whitehead doubles and the two- strand cables. We ﬁnd that a quantum group decomposition for the HOMFLY polynomial of a satellite knot can be extended to the Khovanov polynomial, whose quantum group properties are not manifest. Namely, the Khovanov polynomial of a twisted Whitehead double or two-strand cable (the two simplest satellite families) can be presented as a naively deformed linear combination of the pattern and companion invariants. For a given companion, the satellite polynomial “smoothly” depends on the pattern but for the “jump” at one critical point deﬁned by the s-invariant of the companion knot. A similar phenomenon is known for the knot Floer homology and τ-invariant for the same kind of satellites\n\n**Outline.** Front matter; 1 Introduction; 2 The knots we study and the questions we ask; 2.1 Coloured decompositions for the simplest s; 2.2 The pattern decomposition; 2.3 How to get the satellite class from a knot; 2.4 Summary of Jones formulae; 3 Khovanov-evolution formulae for satellite fa; 3.1 Preliminaries; 3.2 Positive pattern-companion decompositions; 3.3 False adjoint Khovanov polynomials; 4 Explicit form of the pattern and companion i; 4.1 The pattern-defining polynomial; 4.2 AAK for the simplest prime knots; 4.3 AAK for the two-strand torus knots; 4.3.1 General formulae; 4.3.2 Reduced vs unreduced polynomials; 4.3.3 Mirror symmetry",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

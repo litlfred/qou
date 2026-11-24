@@ -21,6 +21,18 @@
     "library/agt-v3-n1-p17-p/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Skein-theoretical derivation of some formulas of Habiro — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol\n\n**Skein-theoretical derivation of some formulas of Habiro**\n\n*Gregor Masbaum*\n\n20 pp, 8 sections.\n\n**Abstract.** We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres. Habiro originally derived these formulas using the quantum group Uqsl2. As an application, we give a formula for the colored Jones polynomial of twist knots, generalizing formulas of Habiro and Le for the trefoil and the ﬁgure eight knot.\n\n**Outline.** Front matter; Introduction; 1 Habiro’s formula for ω; 2 A proof using orthogonal polynomials; 3 Graphical calculus and a formula for ωp; 4 Another formula for the coeﬃcients of ωp; 5 The colored Jones polynomial of twist knots; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "agt-v3-n1-p17-p",

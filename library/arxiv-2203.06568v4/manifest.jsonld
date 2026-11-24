@@ -27,6 +27,18 @@
     "library/arxiv-2203.06568v4/sections/sec-012"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d.\n\n**Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra**\n\n*Pin-Chieh Tseng, Ching-Yi Lai, and Wei-Hsuan Yu*\n\n15 pp, 14 sections.\n\n**Abstract.** We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d. Schrijver studied the Terwilliger algebra of the Hamming scheme and proposed a semideﬁnite program to bound A(n, d). We derive more sophisticated matrix inequalities based on a split Terwilliger algebra to improve Schrijver’s semideﬁnite programming bounds on A(n, d). In particular, we improve the semideﬁnite programming bounds on A(18, 4) to 6551. I. INTRODUCTION In coding theory, one of the classical problems is to determine A(n, d), the maximum size of a binary (n, d) code with length n and minimum distance at least d. The (Hamming) distance distribution of a code is considered since the MacWilliams identities provide a linear relation between the distance distribution and its transform [MS77].\n\n**Outline.** Front matter; Introduction; Terwilliger algebra and Schrijver's SDP; Split Terwilliger algebra of the Hamming schem; Semidefinite program; linear constraints; Semidefinite program for binary codes; The correctness of computer computational resu; computational results; Generalization; Semidefinite constraints from –split Terwillig; Underlying structure; Conclusion; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

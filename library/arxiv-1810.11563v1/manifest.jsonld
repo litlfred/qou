@@ -64,6 +64,18 @@
     "library/arxiv-1810.11563v1/sections/sec-049"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The\n\n**Three Lectures on Complexity and Black Holes**\n\n*Leonard Susskind*\n\n84 pp, 51 sections.\n\n**Abstract.** This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The ﬁrst lecture describes the meaning of quantum complexity, the analogy between entropy and complexity, and the second law of complexity. Lecture two reviews the connection between the second law of complexity and the interior of black holes. I discuss how ﬁrewalls are related to periods of non-increasing complexity which typically only occur after an exponentially long time. The ﬁnal lecture is about the thermodynamics of complexity, and “uncomplexity” as a resource for doing computational work. I explain the remarkable power of “one clean qubit,” in both computational terms and in space-time terms. The lectures can also be found online at https://static.ias.edu/pitp/2018/ node/1796.html . arXiv:1810.11563v1 [hep-th] 27 Oct 2018\n\n**Outline.** Front matter; I Lecture I: Hilbert Space is Huge; 1 Preface; 2 How Huge?; 3 Volume of CP(N); 4 Relative Complexity; 5 Dual Role of Unitaries; 6 Volume of SU(2K); 7 Exploring SU(2K); 7.1 Relative Complexity of Unitaries; 7.2 Complexity is Discontinuous; 8 Graph Theory Perspective; 8.1 Collisions and Loops; 9 The Second Law of Quantum Complexity; 9.1 Hamiltonian Evolution; II Lecture II: Black Holes and the Second Law ; 10 Preface; 11 The Black Hole-Quantum Circuit Corresponden",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

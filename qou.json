@@ -31,14 +31,6 @@
       "description": "L1 source content: one directory per ingested document, and reference DATASETS (e.g. CODATA) whose values are addressable as {{ qou.library.<entry>.<slug> }}."
     },
     {
-      "id": "library-summaries",
-      "path": "library-summaries/",
-      "graphTypologies": [
-        "library-summary"
-      ],
-      "description": "One document-level summary per library entry, `library-summaries/<doc-id>.json` (`library-summary/v1`: a brief, an extended summary of about 500 tokens, the section outline and its provenance), written by scripts/summarize-library.py, which also writes the one-line-per-document scan index library/INDEX.md from them. Tier 2 of the corpus-grep library walk (AGENTS.md path 5). Moved out of the entries (they were library/<doc-id>/summary.json) so the library passes the platform's library gate, owner decision 2026-11-24 \"C1 migrate\". The kind is typologies/library-summary.json."
-    },
-    {
       "id": "references",
       "path": "folio/references/",
       "graphTypologies": [
@@ -147,7 +139,7 @@
       "graphTypologies": [
         "typologies"
       ],
-      "description": "The graph typologies qou owns, one folio-graph-typology/v1 node per file. There is no central registry for subgraph types (owner, 2026-10-04): a harness declares its own. It holds the kinds of qou's cache directories (`wheel-cache`, `trace-cache`, `mn-chi-cache`, `xbot-relaxation-ckpt`) and `library-summary`, the kind of `library-summaries/`."
+      "description": "The graph typologies qou owns, one folio-graph-typology/v1 node per file. There is no central registry for subgraph types (owner, 2026-10-04): a harness declares its own. Today it holds `wheel-cache`, the kind of the directory above."
     },
     {
       "id": "fsh-guts",

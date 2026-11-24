@@ -62,6 +62,18 @@
     "library/arxiv-math-0304010v1/sections/page-049"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Kerov's central limit theorem for the Plancherel measure on Young diagrams — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn.\n\n**Kerov's central limit theorem for the Plancherel measure on Young diagrams**\n\n*Vladimir Ivanov and Grigori Olshanski*\n\n49 pp, 49 sections.\n\n**Abstract.** Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(λ) of a diagram λ equals dim2 λ/n!, where dim λ denotes the dimension of the irreducible representation of the symmetric group Sn indexed by λ. As n →∞, the boundary of the (appropriately rescaled) random shape λ concentrates near a curve Ω(Logan– Shepp 1977, Vershik–Kerov 1977). In 1993, Kerov announced a remarkable theorem describing Gaussian ﬂuctuations around the limit shape Ω. Here we propose a re- construction of his proof. It is largely based on Kerov’s unpublished work notes, 1999.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {

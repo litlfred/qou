@@ -21,6 +21,18 @@
     "library/arxiv-0903.1376v1/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Particle Topology, Braids and Braided Belts — Recent work [1, 2] suggests that topological features of certain quantum gravity theories can be interpreted as particles, matching the known fermions\n\n**Particle Topology, Braids and Braided Belts**\n\n*Sundance Bilson-Thompson*\n\n21 pp, 8 sections.\n\n**Abstract.** Recent work [1, 2] suggests that topological features of certain quantum gravity theories can be interpreted as particles, matching the known fermions and bosons of the ﬁrst generation in the Standard Model. This is achieved by identifying topological structures with elements of the framed Artin braid group on three strands, and demonstrating a correspondence between the invariants used to characterise these braids (a braid is a set of non-intersecting curves, that connect one set of N points with another set of N points), and quantities like electric charge, colour charge, and so on [1, 3]. In this paper we show how to manipulate a modiﬁed form of framed braids to yield an invariant standard form for sets of isomorphic braids, characterised by a vector of real numbers. This will serve as a basis for more complete discussions of quantum numbers in future work.\n\n**Outline.** Front matter; Introduction; The Artin Braid Group; Braided Belts; Framed braid multiplication; Making 3-belts; Algebra; Conclusions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-0903.1376v1",

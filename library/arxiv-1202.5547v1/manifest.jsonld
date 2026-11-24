@@ -15,6 +15,18 @@
     "library/arxiv-1202.5547v1/sections/sec-000"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Markov property and Khovanov-Rozansky homology: Coxeter Case — In [2] Khovanov gave a construction of Khovanov-Rozansky homology, new triple-graded link invariant, taking the Hochschild homology of\n\n**Markov property and Khovanov-Rozansky homology: Coxeter Case**\n\n*Trafim LASY*\n\n4 pp, 2 sections.\n\n**Abstract.** In [2] Khovanov gave a construction of Khovanov-Rozansky homology, new triple-graded link invariant, taking the Hochschild homology of the terms in Rouquier complexes. Its bigraded Euler characteristic provides the Markov trace of type An, which, in its turn, induces the well-known HOMFLY polynomial. Gomi [1, (3.3)] has extended the deﬁnition of Markov trace on a Hecke algebra to all Coxeter groups. One can see that Khovanov’s and Rouquier’s constructions can be directly extended to these groups. We give a detailed proof that the corresponding Euler characteristic provides a Markov trace in the sense of Gomi for any Coxeter group. Let (W, S) be a Coxeter system with |S| = n < ∞. Let V be the C-vector space with the basis {es}s∈S carrying the geometric representation of W.\n\n**Outline.** Front matter; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

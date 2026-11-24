@@ -39,6 +39,21 @@
     "library/proctor1988/sections/page-026"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Proctor, Odd symplectic groups (Invent. Math. 92, 307–332, 1988) — symplectic groups on odd-dimensional spaces (not reductive), with a Weyl-type character formula whose denominator is a product over the positive roots of type BC_n.\n\n**Odd symplectic groups** — Robert A. Proctor. Inventiones mathematicae 92, 307–332 (1988).\n\nDefines symplectic groups Sp_{2n+1} on odd-dimensional vector spaces; they are neither simple nor reductive. For certain tensor representations it proves a character formula of the same shape as the Weyl character formula, and shows that the odd symplectic groups fill the gaps left by the even symplectic and the odd and even orthogonal groups. The opening section (§0) treats the classical Vandermonde/denominator identities independently of Lie theory; the denominator of the new character formula is a product over the positive roots of type BC_n. Later sections: main results (§2), character identities (§3), combinatorial identities (§4), the complete decomposition of the tensor space and Schensted's algorithm (§5), other occurrences (§6), three connections with orthogonal characters (§7), proofs (§8), and the Gelfand–Zelevinsky definition (§9).\n\n**Why it may bear here.** Added on the owner's request from the same Inventiones vol. 92 scan as wenzl1988 and turaev1988. A source on BC_n-type character and denominator identities and on Schensted-type decompositions of tensor space; no use in the corpus is asserted.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt5hLUvnWio7T8h6yz9",
+        "date": "2026-11-15"
+      },
+      "drafted_at": "2026-11-15"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "proctor1988",

@@ -19,6 +19,18 @@
     "library/arxiv-math-9810105v2/sections/sec-004"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS — The authors consider the length, lN, of the length of the longest increasing subsequence of a random\n\n**ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS**\n\n*JINHO BAIK, PERCY DEIFT, AND KURT JOHANSSON*\n\n60 pp, 57 sections.\n\n**Abstract.** The authors consider the length, lN, of the length of the longest increasing subsequence of a random permutation of N numbers. The main result in this paper is a proof that the distribution function for lN, suitably centered and scaled, converges to the Tracy-Widom distribution [TW1] of the largest eigenvalue of a random GUE matrix. The authors also prove con- vergence of moments. The proof is based on the steepest decent method for Riemann-Hilbert problems, introduced by Deift and Zhou in 1993 [DZ1] in the context of integrable systems. The applicability of the Riemann-Hilbert technique depends, in turn, on the determinantal formula of Gessel [Ge] for the Poissonization of the distribution function of lN.\n\n**Outline.** 1 Introduction; 2 Riemann-Hilbert Theory; 0 (the dashed lines), and a contour ΣP II,2 co; 3 Connection to the Toda Lattice and the Painl; 2 (z−z−1)adσ3z−q; 11 (0; q) which are related to; 4 Equilibrium Measure and g-function; 2 (z+z−1); 2 (z+z−1) on the unit circle (see [Sz1],; 2 This gives us F ′(φ) =; 2 (z + z−1) on the unit circle is deﬁned by th; 21 (0)eqleqg(0) = −(−1)qm(1); 21 (0)eql,; 1 If 0 ≤γ ≤1, then; 2 If γ > 1, then; 2 (s + s−1))ds; 2 (z + z−1) = 0; 4 (1 −z−2) + γ",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {

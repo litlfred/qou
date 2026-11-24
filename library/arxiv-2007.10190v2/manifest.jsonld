@@ -32,6 +32,18 @@
     "library/arxiv-2007.10190v2/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS — The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series.\n\n**THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS**\n\n*STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARIÑO*\n\n25 pp, 19 sections.\n\n**Abstract.** The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series. We conjecture that these series are resurgent functions whose Stokes automorphism is given by a pair of matrices of q-series with integer coeﬃcients, which are determined explicitly by the fundamental solutions of a pair of linear q-diﬀerence equations. We further conjecture that for a hyperbolic knot, a dis- tinguished entry of those matrices equals to the Dimofte-Gaiotto-Gukov 3D-index, and thus is given by a counting of BPS states. We illustrate our conjectures explicitly by matching theoretically and numerically computed integers for the cases of the 41 and the 52 knots.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Asymptotic expansions in perturbative quan; 1.2 Resurgence in complex Chern-Simons theory; 2 The equation (1-x)(1-x-1)=1 and the 41 knot; 3 The equation x-2(1-x)3=1 and the 52 knot; 4 Descendants; 4.1 The Kashaev invariant and its descendants; 4.2 The q-series (G00,G10) and their descendan; 4.3 The state integral and its descendants; 5 Computations; 5.1 Resurgent analysis; 5.2 The 41 knot; 5.3 The 52 knot; 6 Open questions; Acknowledgements; Appendix A. q-series associated with the 52 kn; A.1. The state integral of the 52 knot",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

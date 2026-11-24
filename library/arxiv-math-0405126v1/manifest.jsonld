@@ -17,6 +17,18 @@
     "library/arxiv-math-0405126v1/sections/sec-002"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT — We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O.\n\n**ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT**\n\n*HITOSHI MURAKAMI*\n\n7 pp, 4 sections.\n\n**Abstract.** We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O. Tirkkonen, Y. Yokota, and the author, they do not seem to give the volumes or the Chern–Simons invariants of the three-manifolds obtained by Dehn surgeries. On the other hand it is proved that in some cases the limits give the inverse of the Alexander polynomial. Let K be a knot in the three-sphere and JN(K; t) the colored Jones polynomial corresponding to the N-dimensional representation of sl2(C) normalized so that JN(unknot; t) = 1 [8, 12]. R. Kashaev found a series of link invariants parameterized by positive integers [9] and proposed a conjecture that the asymptotic behavior of his invariants would determine the hyperbolic volume of the knot complement for any hyperbolic knot [10].\n\n**Outline.** Front matter; 1 Statement of the result; 2 Proof; 3 Comments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",

@@ -21,6 +21,21 @@
     "library/1172-4/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm.\n\n**Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function** — Kazuhiro Hikami. RIMS Kôkyûroku proceedings.\n\nConstruction of knot invariants from the quantum dilogarithm, following the line from the Jones polynomial through the quantum-group invariants (HOMFLY, colored Jones, Kauffman) to the dilogarithmic ones.\n\n**Why it may bear here.** The quantum dilogarithm is the object this corpus's Φ_q / Li₂^q material is written in, and Kashaev's original link invariant (kashaev1995) is the paper this one builds on.\n\n**Extraction caveat.** The held scan is a RIMS volume with a broken text encoding — Japanese runs render as mojibake and TeX escapes appear literally, so the body is not reliably machine-readable and grep over its sections will miss things.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "1172-4",

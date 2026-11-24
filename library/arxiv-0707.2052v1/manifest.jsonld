@@ -45,6 +45,18 @@
     "library/arxiv-0707.2052v1/sections/sec-030"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3\n\n**The Mukai pairing, I: a categorical approach**\n\n*Andrei C˘ald˘araru∗and Simon Willerton†*\n\n39 pp, 32 sections.\n\n**Abstract.** We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3 surfaces. We show that integral transforms between derived categories of spaces induce, functorially, linear maps on homol- ogy. Adjoint functors induce adjoint linear maps with respect to the Mukai pairing. We deﬁne a Chern character with values in Hochschild homology, and we discuss analogues of the Hirzebruch-Riemann-Roch theorem and the Cardy Condition from physics. This is done in the context of a 2-category which has spaces as its objects and integral kernels as its 1-morphisms.\n\n**Outline.** Front matter; Introduction; The 2-category of kernels; A reminder on 2-categories.; The 2-category Var.; Serre functors; The Serre functor on D(X).; Serre kernels and the Serre functor for D(XY).; Adjoint kernels; Adjunctions in 2-categories.; Left and right adjoints of kernels.; Partial traces.; Adjunction as a 2-functor.; Induced maps on homology; Hochschild cohomology.; Hochschild homology.; Push-forward and pull-back.; The Mukai pairing and adjoint kernels",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
