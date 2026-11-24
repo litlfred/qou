@@ -7,7 +7,9 @@
 # `publish-main` job of the platform's folio-staging.yml (which build.yml
 # calls), so the result is the same whichever route ran:
 #
-#   1. build            scripts/build-site.sh (folio site + Lean render)
+#   0. qa-gate          scripts/generate-accuracy-scorecard.py --check --qa-report
+#                       (fail-fast if ACCURACY.md drifted or an upstream witness failed)
+#   1. build            scripts/build-site.sh (folio site + /accuracy/ + Lean render)
 #   2. rail             cat-harness-tools rail-standalone-pages.ts --foreign-site
 #   3. publish          cat-harness-tools publish-main-site.ts: deletes only the
 #                       files its previous publish listed in _main-site.json, so
@@ -39,6 +41,9 @@ git fetch -q origin main
 if [ "$SHA" != "$(git rev-parse origin/main)" ]; then
   echo "publish-main-local: HEAD $SHA is not origin/main; pull first." >&2; exit 2
 fi
+
+echo "== publish-main-local: accuracy scorecard pre-publish QA gate"
+python3 scripts/generate-accuracy-scorecard.py --check --qa-report
 
 rm -rf "$SITE"
 SITE_DIR="$SITE" PLATFORM_DIR="$PLAT" bash scripts/build-site.sh

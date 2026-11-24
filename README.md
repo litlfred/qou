@@ -23,6 +23,7 @@ platform for browsing, reviewing, and exploring the work.
 | **Status and accuracy** | [Authors' Note: a work in progress](folio/quantum-observable-universe/authors-note/authors-note-status.md) |
 | **How to contribute** | [CONTRIBUTING.md](CONTRIBUTING.md) · [Contributors](CONTRIBUTORS.md) |
 | **License** | [CC BY 4.0](LICENSE) |
+| **Observational scorecard** | [ACCURACY.md](ACCURACY.md) (`1 ppQ` floor & CODATA / PDG / AME2020 comparison) |
 
 The published site and PDF currently lag the source: they were last built in
 July 2026, and a rebuild is pending. The source in this repository is current.

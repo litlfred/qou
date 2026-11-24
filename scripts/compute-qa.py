@@ -81,6 +81,9 @@ GATES = [
       selftest=[PY, "computations/witness_raw_float64_audit.py", "--self-test"]),
     g("q0-value-drift", "Task_Staleness", "q0-value drift ratchet",
       [[PY, "computations/q0_value_drift_audit.py", "--strict"]]),
+    g("accuracy-scorecard", "Task_Staleness", "Observational accuracy scorecard drift & witness gate",
+      [[PY, "scripts/generate-accuracy-scorecard.py", "--check"]],
+      selftest=[PY, "scripts/generate-accuracy-scorecard.py", "--self-test"]),
     # ── qou-mass vendor drift (TOOLS T14, bean qou-ll3i): report-only. The fix,
     # `sync-qou-mass-vendor.py --apply`, regenerates `_internal/` and waits on the
     # owner, so this gate warns and never regenerates anything.

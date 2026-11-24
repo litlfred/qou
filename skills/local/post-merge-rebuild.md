@@ -29,9 +29,15 @@ bash scripts/publish-main-local.sh --deploy
 `publish-main` job of the platform's `folio-staging.yml`, which `build.yml`
 calls when someone dispatches it:
 
-1. `scripts/build-site.sh`, the folio site plus the Lean library render
-   (folio-assistant-sci skill `lean-html-docs`), staged at `_site/lean/`;
-2. the harness rail (`rail-standalone-pages.ts --foreign-site`);
+0. `python3 scripts/generate-accuracy-scorecard.py --check --qa-report` (skill
+   `accuracy-scorecard`), failing fast before the site build if `ACCURACY.md`
+   drifted from its 12 upstream witnesses, failed public-reader hygiene, or lost
+   its `README.md` link;
+1. `scripts/build-site.sh`, the folio site plus `_site/accuracy/index.html`
+   (`/accuracy/`) plus the Lean library render (folio-assistant-sci skill
+   `lean-html-docs`), staged at `_site/lean/`;
+2. the harness rail (`rail-standalone-pages.ts --foreign-site`), which rails
+   both standalone harness pages and `/accuracy/`;
 3. `publish-main-site.ts`, which deletes only the files its previous publish
    listed in `_main-site.json`, so `branches/`, the July `lean/`, `drafts/` and
    the PDFs README links are left alone;
