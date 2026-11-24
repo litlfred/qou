@@ -1,13 +1,13 @@
 ---
 # b9ms
 title: 9b binding-side Lean formalization campaign — prove everything tractable around Step 9b
-status: in-progress
+status: completed
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T11:15:00Z
-updated_at: 2026-11-18T07:45:11Z
+updated_at: 2026-11-24T11:22:00Z
 parent: qou-v2om
 ---
 
@@ -23,3 +23,5 @@ Was in-progress with no bean update since 2026-07-05 and no main commit naming i
 - Branch: `feat/round82-confdiff-gevreypos-hyproot-tracesq-normchain-43c1`
 - Commit 1 (code + probe): `9fc5597f0f6558c185cf46ffd6acdc86ad1d4b21`
 - Commit 2 (witness): `4a084d4105014f8457a64297f35613ebb0f95d6b` (`scriptSha256 = 0b271ed473fcb7e2f06260119e75930af659f57c2419e9542b05b4df69271355`)
+
+Verified on origin/main (8ec51e68547): all 9 child beans (b9c3, b9cw, b9lp, b9pi, b9q1, b9ra, b9sp, b9tc, b9z8) are completed/scrapped and all in-scope deliverables are landed on origin/main.

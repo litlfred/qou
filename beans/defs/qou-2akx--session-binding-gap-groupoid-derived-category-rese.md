@@ -1,13 +1,13 @@
 ---
 # qou-2akx
 title: 'Session: binding-gap groupoid / derived-category research survey (full tower)'
-status: in-progress
+status: completed
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T17:47:03Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-24T11:22:00Z
 parent: qou-v2om
 ---
 
@@ -32,3 +32,5 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - **PR**: [`litlfred/qou#8263`](https://github.com/litlfred/qou/pull/8263) (branch `feat/round64-hooksum-formality-charge-ocneanu-coupling-43c1`, Commit 1 `30d0d4f4e437e19904cd4438468a9ecf56eadd3a`, Commit 2 / Head `545135545dc8e721846ea1fb0e54556f69a5a166`).
 - **Lean 4 Artifact**: `folio/quantum-observable-universe/lean/QOU/Mass/FormalityBridgeF1.lean (`additive_map_pow_and_mul_three`)` (0 sorry, 0 findings across all 6 static vacuity audits).
 - **80-dps Witness**: `computations/probes/hooksum_formality_charge_ocneanu_coupling_probe.py` (`scriptHash: dae747aae6b4`) + `test/results/witnesses/hooksum-formality-charge-ocneanu-coupling.witness.json` (`allPassed: true`).
+
+Verified on origin/main (8ec51e68547): all 17 child beans (qou-0fxk, qou-20bk, qou-212w, qou-2re6, qou-3pck, qou-6cu7, qou-74ip, qou-amw3, qou-ba73, qou-c50n, qou-dchj, qou-fvsq, qou-rs6t, qou-s6ff, qou-smw9, qou-xipk, qou-ywbd) are completed/scrapped and all in-scope deliverables are landed on origin/main.
