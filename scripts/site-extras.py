@@ -25,6 +25,13 @@ scripts/site-step.sh:
   --contributing MD --out HTML
                          CONTRIBUTING.md as a page (pandoc when present, else
                          preformatted), for the rail pass to frame.
+  --relink SITE          the papers' own links that the page cannot serve, made
+                         to resolve: a link to a block's .md becomes that block's
+                         anchor on the page (its label); an image beside a block is
+                         copied next to the page; a simulator page is copied to
+                         /simulators/; any other repository file (a witness .json,
+                         a .lean, a .py) links to it on GitHub at this commit.
+                         What none of these covers is left for the link check.
   --keep-old-root PAGES  a root index.html on the publish checkout that the
                          platform did not write is kept as index-<YYYY-MM>.html
                          before the publish replaces it.
@@ -115,6 +122,88 @@ def redirects(site: Path) -> int:
     return 0
 
 
+ATTR = re.compile(r'(\s(?:href|src)=")([^"#?]*)([^"]*)(")')
+
+
+def block_labels(slug: str) -> dict[str, list[str]]:
+    """block file stem -> its label(s), from folio/<slug>/**/<stem>.ts."""
+    out: dict[str, list[str]] = {}
+    for ts in (ROOT / "folio" / slug).rglob("*.ts"):
+        m = re.search(r'\blabel:\s*["\']([^"\']+)["\']', ts.read_text(encoding="utf-8", errors="replace"))
+        if m:
+            out.setdefault(ts.stem, []).append(m.group(1))
+    return out
+
+
+def commit_sha() -> str:
+    import os
+    sha = os.environ.get("SITE_COMMIT")
+    if sha:
+        return sha
+    return subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip() or "main"
+
+
+def relink(site: Path) -> int:
+    import os
+    repo = declaration().get("repository", "")
+    sha = commit_sha()
+    blob = f"https://github.com/{repo}/blob/{sha}/"
+    counts = {"anchor": 0, "copied": 0, "github": 0, "left": 0}
+    for slug, _title in built_papers(site):
+        labels = block_labels(slug)
+        chapters = [d for d in (ROOT / "folio" / slug).iterdir() if d.is_dir()]
+        page_dir = site / "en" / slug
+        for page in sorted(page_dir.glob("index*.html")):
+            text = page.read_text(encoding="utf-8")
+
+            def fix(m: re.Match) -> str:
+                pre, path, rest, post = m.groups()
+                if not path or re.match(r"^[a-z][a-z0-9+.-]*:", path) or path.startswith("//"):
+                    return m.group(0)
+                if path.startswith("/"):
+                    name = path.lstrip("/")
+                    src = ROOT / "simulators" / name
+                    if src.is_file():
+                        dst = site / "simulators" / name
+                        dst.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copyfile(src, dst)
+                        counts["copied"] += 1
+                        return f"{pre}../../simulators/{name}{rest}{post}"
+                    counts["left"] += 1
+                    return m.group(0)
+                if (page_dir / path).exists():
+                    return m.group(0)
+                if path.endswith(".md"):
+                    lab = labels.get(Path(path).stem, [])
+                    if len(lab) == 1:
+                        counts["anchor"] += 1
+                        return f"{pre}#{lab[0]}{post}"
+                for base in [*chapters, ROOT / "folio" / slug]:
+                    repo_path = Path(os.path.normpath(base / path))
+                    if not repo_path.is_file():
+                        continue
+                    try:
+                        rel = repo_path.relative_to(ROOT).as_posix()
+                    except ValueError:
+                        continue
+                    if repo_path.suffix.lower() in {".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp"} and ".." not in path:
+                        dst = page_dir / path
+                        dst.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copyfile(repo_path, dst)
+                        counts["copied"] += 1
+                        return m.group(0)
+                    counts["github"] += 1
+                    return f"{pre}{blob}{rel}{rest}{post}"
+                counts["left"] += 1
+                return m.group(0)
+
+            new = ATTR.sub(fix, text)
+            if new != text:
+                page.write_text(new, encoding="utf-8")
+    print(f"site-extras: relinked papers' own links: {counts}")
+    return 0
+
+
 def human(n: int) -> str:
     for unit in ("B", "KB", "MB", "GB"):
         if n < 1024 or unit == "GB":
@@ -152,6 +241,16 @@ def contributing(md: Path, out: Path) -> int:
             body = r.stdout
     if body is None:
         body = f"<pre>{esc(md.read_text(encoding='utf-8'))}</pre>"
+    repo = declaration().get("repository", "")
+    blob = f"https://github.com/{repo}/blob/main/"
+
+    def gh(m: re.Match) -> str:
+        pre, path, rest, post = m.groups()
+        if not path or re.match(r"^[a-z][a-z0-9+.-]*:", path) or path.startswith(("/", "//")):
+            return m.group(0)
+        return f"{pre}{blob}{path}{rest}{post}"
+
+    body = ATTR.sub(gh, body)
     out.write_text(f"""<!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><title>Contributing | qou</title></head>
@@ -190,6 +289,7 @@ def main() -> int:
     ap.add_argument("--contributing", type=Path)
     ap.add_argument("--out", type=Path)
     ap.add_argument("--keep-old-root", type=Path)
+    ap.add_argument("--relink", type=Path)
     a = ap.parse_args()
     if a.landing_source:
         return landing_source(a.landing_source)
@@ -201,6 +301,8 @@ def main() -> int:
         return contributing(a.contributing, a.out)
     if a.keep_old_root:
         return keep_old_root(a.keep_old_root)
+    if a.relink:
+        return relink(a.relink)
     ap.print_help()
     return 2
 

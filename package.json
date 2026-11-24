@@ -13,7 +13,8 @@
     "site:papers": "bash scripts/site-step.sh papers",
     "site:repo-files": "bash scripts/site-step.sh repo-files",
     "site:build": "bash scripts/build-site.sh",
-    "site:landing": "bash scripts/site-step.sh landing"
+    "site:landing": "bash scripts/site-step.sh landing",
+    "site:relink": "bash scripts/site-step.sh relink"
   },
   "_workspaces_comment": "The layers mounted at the root from index.lock.json (gitignored), as dth-hrh lists them: they import each other by package name (@litlfred/cat-harness-tools, ...), which only one hoisted root node_modules resolves (bunfig.toml).",
   "workspaces": [

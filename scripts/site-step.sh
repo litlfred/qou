@@ -31,6 +31,9 @@
 #   papers     (site) /papers/<slug>/ -> the paper's page en/<slug>/, keeping
 #              ?query#fragment. Files already on gh-pages under papers/ are
 #              not this build's to touch.
+#   relink     (site) the papers' own links the page cannot serve: a block's
+#              .md -> its anchor, an image or simulator copied in, any other
+#              repository file -> GitHub at this commit (site-extras.py --relink).
 #   repo-files (site) CONTRIBUTING (/contributing/) and LICENSE (/LICENSE.txt).
 set -euo pipefail
 STEP=${1:?step}; DIR=${2:?site or source dir}
@@ -116,6 +119,9 @@ lean)
   ;;
 papers)
   python3 -I scripts/site-extras.py --redirects "$DIR"
+  ;;
+relink)
+  python3 -I scripts/site-extras.py --relink "$DIR"
   ;;
 repo-files)
   mkdir -p "$DIR/contributing"
