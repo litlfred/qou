@@ -72,7 +72,7 @@ from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 from codata_constants import AME_B_LI7_MEV_VALIDATION  # noqa: E402  (AME registry)
 
-set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
+set_compute_dps(max(COMPUTE_DPS, 80))
 
 
 #: Columns exposed in the nuclide-keyed view — the scalars a witnessed-value
@@ -774,6 +774,8 @@ def main() -> int:
         )
         .add_parameter("q_0", Q_50_DIGIT_STR)
         .add_parameter("method", args.method)
+        .add_parameter("pn_convention", "bring_color_weighted")
+        .add_parameter("intra_ordering_frame", "borromean")
         # `precision` reflects what the dispatcher actually does, not
         # the raw CLI flag (which only governs the rust_f64/rust_mpfr
         # branches). For laurent_q / laurent_q_rust / markov_peel the
