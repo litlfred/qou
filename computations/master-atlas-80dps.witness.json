@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-24T11:43:32.042358+00:00",
-  "commitSha": "bcae8c9e27ac0878e21187b23cfbc8266f5f4a5c",
+  "computedAt": "2026-11-24T11:49:49.168210+00:00",
+  "commitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
   "assertions": [
     {
       "name": "proton_pin_roundtrip_80dps",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "master-atlas-80dps",
   "scriptFile": "master_atlas_jacobian_80dps.py",
-  "scriptHash": "a4de8f861711",
-  "scriptCommitSha": "bcae8c9e27ac0878e21187b23cfbc8266f5f4a5c",
+  "scriptHash": "fe2e0bea8208",
+  "scriptCommitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
   "precisionMetadata": {
     "compute_dps": 95,
     "output_dps": 80,

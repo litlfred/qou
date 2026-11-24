@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-24T11:43:11.988500+00:00",
-  "commitSha": "bcae8c9e27ac0878e21187b23cfbc8266f5f4a5c",
+  "computedAt": "2026-11-24T11:49:32.073861+00:00",
+  "commitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
   "assertions": [
     {
       "name": "borromean_tau_strictly_inside_unit_disc",
@@ -34,7 +34,7 @@
   "computation": "borromean-binding-recompute",
   "scriptFile": "borromean_binding_recompute.py",
   "scriptHash": "2bcb4922de27",
-  "scriptCommitSha": "bcae8c9e27ac0878e21187b23cfbc8266f5f4a5c",
+  "scriptCommitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
   "precisionMetadata": {
     "compute_dps": 95,
     "output_dps": 80,
