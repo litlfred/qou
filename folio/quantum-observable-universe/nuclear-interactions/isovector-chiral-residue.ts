@@ -9,7 +9,7 @@ export default proposition({
     "rem:archimedean-chirality",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.binding_isovector_mirror_from_chiral",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.binding_isovector_mirror_from_chiral",
   },
   tags: [
     "delta-lambda",

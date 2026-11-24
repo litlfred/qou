@@ -5,7 +5,7 @@ export default proposition({
   title:
     "The depth correspondence is theorem-level at the torus-knot rows (Bloch--Suslin + Garoufalidis--Lê)",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.B1TorusKnotRowsTheorem.b1_torus_knot_rows",
+    ref: "qou:QOU.Observations.B1TorusKnotRowsTheorem.b1_torus_knot_rows",
     validation: "not_checked",
   },
   uses: ["prop:b1-figure-8-row-theorem"],

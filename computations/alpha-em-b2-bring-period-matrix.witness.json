@@ -1,40 +1,72 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:53:34.340462+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-11-24T15:45:27.460275+00:00",
+  "commitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
   "assertions": [
     {
       "name": "C_isogeny_eigenvalue_gate",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": "0.5",
+      "tolerance": 0,
       "source": "C symmetric {4,±1}; eigenvalues (1,5,5,5) = corpus isogeny tuple (convention-independent cross-gate)"
     },
     {
-      "name": "riemann_relations",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "bdh2022_j_tau0_printed_factor_identity",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": "0.5",
-      "source": "Z = tau*C symmetric, Im Z positive-definite"
+      "tolerance": "1e-78",
+      "source": "[braden-disney-hogg-2022] printed -29^3*5/2^5 equals -121945/32 identically"
+    },
+    {
+      "name": "bdh2022_j_tau0_exact_80dps",
+      "computed": "1.295425456e-77",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "standard j(tau0) = -29^3*5/2^5 at 5-isogenous tau0 = (tau_E - 3)/5 on Re(tau0) = -1/2"
+    },
+    {
+      "name": "bdh2022_j_5tau0_exact_80dps",
+      "computed": "1.349401343e-79",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "standard j(5*tau0) = -25/2 at 80 dps"
+    },
+    {
+      "name": "bdh2022_tau0_matches_printed_6dp",
+      "computed": "4.624628099e-7",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "5e-7",
+      "source": "[braden-disney-hogg-2022] printed tau0 = -0.5 + 0.186676i (6 d.p. rounding)"
+    },
+    {
+      "name": "riemann_relations",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Z = tau0*C symmetric, Im Z positive-definite"
     },
     {
       "name": "c_candidates_parametric_emitted",
-      "computed": 0.0,
-      "expected": 1.0,
-      "passed": false,
-      "tolerance": "0.5",
-      "source": "Markov regression vs sibling witness; |c| table parametric in Im tau; tau0 numeric honestly flagged open; nothing wired"
+      "computed": "2.027924118e-31",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-28",
+      "source": "Markov norm w_(4,1)(q0) matches live sibling alpha-em-b2-scalar-c.witness.json; |c| table conditional on sub-piece (ii); nothing wired"
     }
   ],
-  "allPassed": false,
-  "durationMs": 19,
+  "allPassed": true,
+  "durationMs": 14,
   "computation": "alpha-em-b2-bring-period-matrix",
   "scriptFile": "alpha_em_b2_bring_period_matrix_probe.py",
-  "scriptHash": "13a765c16101",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "11d7098433ac",
+  "scriptCommitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +74,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -57,12 +89,18 @@
     ],
     "reproduce": "python3 -u computations/alpha_em_b2_bring_period_matrix_probe.py"
   },
-  "description": "Bring period matrix Z = tau*C for B2 input (a): C extracted from the uploaded Riera-Rodriguez + Braden-Northover papers and isogeny-gated (eigenvalues (1,5,5,5) = corpus tuple, convention-independent); Riemann relations verified; the numeric tau0 flagged as an unresolved j-convention residual (NOT fitted); |c| candidate table emitted parametric in Im tau, conditional on sub-piece (ii).",
+  "description": "Bring period matrix Z = tau0*C for B2 input (a) at 80 dps: C isogeny-gated with eigenvalues (1,5,5,5); tau0 cross-checked against [braden-disney-hogg-2022] printed j(tau0) = -29^3*5/2^5 = -121945/32, j(5*tau0) = -25/2, and 6 d.p. -0.5 + 0.186676i (resolving the earlier reflowed-PDF glyph misread); Riemann relations verified; |c| candidate table conditional on sub-piece (ii). Nothing wired; scope-(a).",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "qou_substrate.constants.Q_50_DIGIT_STR (package pin, 50 dps)",
+    "compute_dps": 80
+  },
   "data": {
     "sources_in_uploads": [
       "pjm-v154-n1-p09-s.pdf (riera-rodriguez-1992)",
-      "1206.6004v2.pdf (braden-northover-2012)"
+      "1206.6004v2.pdf (braden-northover-2012)",
+      "2208.13692v1.pdf (braden-disney-hogg-2022)"
     ],
     "C_matrix": [
       [
@@ -102,45 +140,89 @@
       "convention_independent": true,
       "sign_class_size": 8
     },
+    "braden_disney_hogg_2022_crosscheck": {
+      "source": "library/arxiv-2208.13692v1/2208.13692v1.pdf",
+      "j_tau0_printed_expr": "-29^3 * 5 / 2^5",
+      "j_tau0_rational": "-121945/32",
+      "j_tau0_decimal_exact": "-3810.78125",
+      "j_5tau0_printed": "-25/2",
+      "tau0_printed_6dp": "-0.5 + 0.186676i",
+      "tau0_80dps": "(-0.5 + 0.186676462462809923206162881363124029463695252218833623562690920489622532477j)",
+      "re_tau0_exact": "-1/2",
+      "im_tau0_80dps": "0.186676462462809923206162881363124029463695252218833623562690920489622532477",
+      "im_tau0_direct_j_solve_80dps": "0.186676462462809923206162881363124029463695252218833623562690920489622532477",
+      "direct_vs_5isogeny_im_diff": "0.0",
+      "j_tau0_residual_80dps": "1.29542545593e-77",
+      "j_5tau0_residual_80dps": "1.34940134254e-79",
+      "diff_vs_printed_6dp": "4.62462809923e-7",
+      "riera_rodriguez_swap_confirmed": true,
+      "braden_northover_ocr_resolved": "Earlier glyph read -29^3*25/2^5 and 0.185576i misread factor 5 as 25 and digits 66 as 55; standard j(i)=1728 closes identically at [braden-disney-hogg-2022]'s published values."
+    },
     "tau0_convention_resolution": {
-      "printed": "(-0.5 + 0.185576j)",
+      "printed": "(-0.5 + 0.186676j)",
+      "bn2012_ocr_misread": "(-0.5 + 0.185576j)",
       "j_targets": [
-        "-29^3*25/2^5",
+        "-29^3*5/2^5",
         "-25/2"
       ],
-      "j_at_printed": "-4039.61804011",
-      "im_tau_from_j_solve": "0.158781266955198",
-      "j5_at_printed": "-9.763907546",
-      "standard_5isogenous_pair": false,
-      "isogeny_best_k": -4,
-      "isogeny_im_tau0": "0.18667646246281",
+      "j_at_printed": "-3810.87444514341",
+      "j_at_bn2012_ocr": "-4039.61804011",
+      "im_tau_from_j_solve": "0.18667646246280992320616288136312402946369525221883",
+      "im_tau_from_bn2012_ocr_j_solve": "0.158781266955198",
+      "j5_at_bn2012_ocr": "-9.763907546",
+      "standard_5isogenous_pair": true,
+      "isogeny_best_k": -3,
+      "isogeny_im_tau0": "0.18667646246280992320616288136312402946369525221883",
+      "isogeny_j_tau0_closes": "-3810.78125",
       "isogeny_j5_closes": "-12.5",
       "methods_tried": [
         "direct-eval",
         "j-inversion",
         "5-isogeny-coset-forward",
-        "5-isogeny-coset-reverse"
+        "braden-disney-hogg-2022-crosscheck"
       ],
-      "status": "standard-j reconciliation RULED OUT (4 methods); j(5tau0)=-25/2 sub-relation closes at tau0=(tau_E-2)/5 (Im 0.18668 ~ printed 0.18558, 0.6%); paired j(tau0)=-29^3*25/2^5 does not close under standard j -> B-N sec4 non-standard normalization, glyph-unrecoverable, recorded not fitted"
+      "status": "RESOLVED at 80 dps via [braden-disney-hogg-2022]: standard j(i)=1728 closes BOTH j(tau0) = -29^3*5/2^5 = -121945/32 and j(5*tau0) = -25/2 at tau0 = (tau_E - 3)/5 = -1/2 + 0.18667646246281...i (matching printed -0.5 + 0.186676i to 6 d.p.)"
     },
     "c_candidates_parametric": {
-      "printed_0.185576": {
-        "im_tau": "0.185576",
-        "c_det": "0.207280862271117",
-        "c_tr": "0.173271333813703"
+      "bdh2022_exact_tau0": {
+        "im_tau": "0.186676462462809923206162881363",
+        "c_det": "0.206058936350843334334560954098",
+        "c_tr": "0.172249894922975132193639695506"
       },
       "isogeny_tau_E_over_5": {
-        "im_tau": "0.18667646246281",
-        "c_det": "0.206058936350843",
-        "c_tr": "0.172249894922975"
+        "im_tau": "0.186676462462809923206162881363",
+        "c_det": "0.206058936350843334334560954098",
+        "c_tr": "0.172249894922975132193639695506"
+      },
+      "bdh2022_printed_0.186676": {
+        "im_tau": "0.186676",
+        "c_det": "0.206059446832076672300329832606",
+        "c_tr": "0.172250321647194716157742311669"
+      },
+      "printed_0.185576": {
+        "im_tau": "0.185576",
+        "c_det": "0.207280862271116657748503965122",
+        "c_tr": "0.173271333813702853997622018866"
       },
       "j_solved_0.15878": {
-        "im_tau": "0.158781266955198",
-        "c_det": "0.242260022447601",
-        "c_tr": "0.202511301619005"
+        "im_tau": "0.158781266955197627148579635495",
+        "c_det": "0.242260022447601257212711814941",
+        "c_tr": "0.202511301619004637840708237126"
       }
     },
-    "markov_norm": "0.128620004175246883333850815092",
-    "verdict": "INCOMPLETE (honest): P1=True P3=True P4=False — gate data recorded. Nothing wired; scope-(a)."
-  }
+    "markov_norm": "0.12862000417524688333385081509220279241180740968725",
+    "verdict": "B2 INPUT (a) — STRUCTURE AND τ₀ CERTIFIED AT 80 DPS (discipline-compliant, bean qou-1twx): C = {4,±1} has eigenvalues (1,5,5,5) matching the E⁴ isogeny tuple (True), Z = τ₀·C satisfies the Riemann relations (True), and [braden-disney-hogg-2022] resolves the earlier Braden–Northover reflowed-PDF glyph misread (−29³·25/2⁵ → −29³·5/2⁵ = −121945/32; 0.185576 → 0.186676): at τ₀ = (τ_E − 3)/5 = −1/2 + 0.186676462462809923i, BOTH standard j(τ₀) = −29³·5/2⁵ (residual 1.3e-77) and j(5τ₀) = −25/2 (residual 1.35e-79) hold to >74 digits and match the printed 6 d.p. −0.5 + 0.186676i within 4.625e-7. Sub-piece (ii) (S₅-equivariant τ-intertwiner basis match) remains open; nothing wired; 1/(8π) stays phase-4; scope-(a). Sources: riera-rodriguez-1992, braden-northover-2012, braden-disney-hogg-2022.",
+    "upstream_witness_hashes": [
+      {
+        "path": "alpha-em-b2-scalar-c.witness.json",
+        "sha256": "bab8ca6e0c5cc4060b9e28e1507e4ba9c69f255955c6e2efa8ba9cc60096f874",
+        "size_bytes": 4619,
+        "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
+        "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+        "computedAt": "2026-09-03T16:17:41.053892+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.Core.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Algebra.Group.Invertible.Defs
 import Mathlib.Data.Int.Basic

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:c1-theta-zero-locus-and-pole-divisor",
   lean: {
-    ref: "qou:QOU.QBeta.C1Poles.qThetaC_eq_zero_iff",
+    ref: "qou:QOU.Nuclear.QBeta.C1Poles.qThetaC_eq_zero_iff",
     validation: "validated",
   },
   title:

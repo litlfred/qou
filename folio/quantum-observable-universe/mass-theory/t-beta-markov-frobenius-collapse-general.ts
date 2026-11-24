@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Min-Frobenius-norm collapse: T_β = S · 1_A — general unital R-algebra lift of [prop:t-beta-markov-frobenius-collapse]",
   lean: {
-    ref: "qou:QOU.QBeta.MarkovFrobeniusCollapse.General.markov_frobenius_min_norm_twisted",
+    ref: "qou:QOU.Nuclear.QBeta.MarkovFrobeniusCollapse.General.markov_frobenius_min_norm_twisted",
     validation: "not_checked",
   },
   uses: [

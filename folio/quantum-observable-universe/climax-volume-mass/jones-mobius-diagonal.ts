@@ -3,7 +3,7 @@ import { lemma } from "../../schema/builders";
 export default lemma({
   label: "lem:jones-mobius-diagonal",
   lean: {
-    ref: "qou:QOU.Braiding.JonesMobiusDiagonal.markov_eq_mobius_contact",
+    ref: "qou:BraidKnotOctonion.JonesMobiusDiagonal.markov_eq_mobius_contact",
     validation: "not_checked",
   },
   title: "Jones polynomial as the diagonal of the categorical Möbius kernel",

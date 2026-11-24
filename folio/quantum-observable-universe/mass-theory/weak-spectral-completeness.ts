@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:weak-spectral-completeness",
-  lean: { ref: "qou:QOU.Conjectures.weak_spectral_completeness" },
+  lean: { ref: "qou:QOU.Core.WeakSpectralCompleteness.weak_spectral_completeness" },
   title:
     "Spectral completeness and exhaustion for the EW/Higgs $\\{T(2,4), T(2,6), T(2,8)\\}$ idempotent decomposition",
   uses: [

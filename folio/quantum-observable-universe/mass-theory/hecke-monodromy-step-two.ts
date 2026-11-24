@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "The Hecke quadratic is the q-deformed branch-point monodromy of the colour cubic (Step 2 of the canonical chain as a conjecture)",
   lean: {
-    ref: "qou:QOU.Mass.HeckeMonodromy",
+    ref: "qou:HeckeTemperleyLieb.HeckeMonodromy",
     validation: "not_checked",
   },
   computation: {

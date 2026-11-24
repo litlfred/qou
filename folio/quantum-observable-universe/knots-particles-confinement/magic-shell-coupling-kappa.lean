@@ -1,5 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 
 /-!

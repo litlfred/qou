@@ -5,7 +5,7 @@ export default proposition({
   title:
     "The binding multiplier is the unsigned coordination count, not a Gauss linking number: forced by Brunnian topology and bar-parity",
   lean: {
-    ref: "qou:QOU.Mass.BrunnianBindingChannel.brunnian_energy_is_count_channel",
+    ref: "qou:BraidKnotOctonion.BrunnianBindingChannel.brunnian_energy_is_count_channel",
     validation: "not_checked",
   },
   uses: ["def:crossing-energy"],

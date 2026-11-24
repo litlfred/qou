@@ -25,7 +25,7 @@ export default proposition({
     "electron",
     "recurrence",
   ],
-  lean: { ref: "qou:QOU.Archimedean.shell_structure_eigenvalues",
+  lean: { ref: "qou:QOU.MassTheory.shell_structure_eigenvalues",
     validation: "not_checked",
   },
   uses: [

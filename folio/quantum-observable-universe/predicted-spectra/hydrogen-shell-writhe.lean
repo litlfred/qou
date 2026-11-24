@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
-import QOU.BraidKnot.ElectronLevelWord
+import QOU.BraidsAndKnots.ElectronLevelWord
 
 
 /-!

@@ -25,7 +25,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
-import QOU.Mass.QHookDimension
+import HeckeTemperleyLieb.QHookDimension
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring

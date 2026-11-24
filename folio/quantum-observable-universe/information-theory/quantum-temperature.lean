@@ -10,8 +10,8 @@ content stays generic to any commutative ring carrying the same
 `q`-data, but the inequalities (`0 < q`, `q < 1`) and the division
 identities below are archimedean and so live over `ℝ`.
 -/
-import QOU.QuantumObservableUniverse
-import QOU.MathConstants
+import QOU.Core.QuantumObservableUniverse
+import QOU.Core.MathConstants
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith

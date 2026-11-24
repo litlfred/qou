@@ -9,7 +9,7 @@ export default lemma({
     },
   ],
   label: "lem:su2-emergence-dagger-unitarity",
-  lean: { ref: "qou:QOU.su2_emergence_dagger_unitarity",
+  lean: { ref: "qou:QOU.StandardModel.su2_emergence_dagger_unitarity",
     validation: "not_checked",
   },
   title: "Inner-product-preserving $2 \\times 2$ matrices lie in $\\mathrm{U}(2)$",

@@ -24,7 +24,7 @@
 -- resolves to the genuine object, and adds the two constructions the
 -- library file does not carry.
 
-import QOU.QBirchSwinnertonDyer
+import QOU.InformationTheory.QBirchSwinnertonDyer
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Group.Subgroup.Ker
 

@@ -229,13 +229,16 @@ CANONICAL_INTRA_NEUTRON = (
 #     `content_keyed_interface_refuted` (an interface keyed on nucleon content
 #     gives the ³S₁ deuteron and the ¹S₀ pn virtual state the same energy;
 #     bean qou-kj4v).
-#   * pn: the label says −h/2 (averaged), but production
-#     (`mass_at_3A_proper.atom_braid_word_3A`, bring_color_weighted) uses
-#     d = −h·(1/2 − δ/4) with δ = flavor_split_leading(q), and that δ is
-#     FITTED to Δm_np = m_n − m_p (bean qou-vls6); the /4 has no derivation.
+#   * pn: production (`mass_at_3A_proper.atom_braid_word_3A`,
+#     `pn_convention="bring_color_weighted"`, owner ruling R3) uses
+#     d = −h·(1/2 − δ/4) with δ = flavor_split_leading(q) (`averaged_weighted`
+#     in `braid_word_canonical`); updated from the stale colour-blind −h/2
+#     label so `knot_operators` matches `braid_word_canonical` (bean qou-4e5k).
 CANONICAL_INTERFACE_PP = "pp coupling: σ at gen 3k+2 (positive)"
 CANONICAL_INTERFACE_NN = "nn coupling: σ + (-h)·𝟙 at gen 3k+2"
-CANONICAL_INTERFACE_PN = "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)"
+CANONICAL_INTERFACE_PN = (
+    "pn coupling: σ + (-h·(1/2 - δ/4))·𝟙 at gen 3k+2 (bring_color_weighted)"
+)
 
 # NOTE (PR #1089 follow-up, 2026-05-24): the three labels above realise
 # the *uniform-flavor* channel assignment (one Hecke generator per
@@ -326,7 +329,11 @@ def build_knot_operator_catalogue(Z: int, N: int) -> list[KnotOperatorCatalogue]
             elif nuc == "n" and next_nuc == "n":
                 channel, ctype, label = "nn", CrossingType.SIGMA_INV, CANONICAL_INTERFACE_NN
             else:
-                channel, ctype, label = "pn", CrossingType.AVERAGED, CANONICAL_INTERFACE_PN
+                channel, ctype, label = (
+                    "pn",
+                    CrossingType.AVERAGED_WEIGHTED,
+                    CANONICAL_INTERFACE_PN,
+                )
             ops.append(KnotOperatorCatalogue(
                 op_type=KnotOperatorType.INTER_NUCLEON,
                 gen_index=3 * k + 2,

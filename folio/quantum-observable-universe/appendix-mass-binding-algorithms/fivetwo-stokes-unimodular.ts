@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:fivetwo-stokes-unimodular",
   lean: {
-    ref: "qou:QOU.QBeta.FiveTwoStokes.Splus0_transpose_mul_Sminus0",
+    ref: "qou:QOU.Nuclear.QBeta.FiveTwoStokes.Splus0_transpose_mul_Sminus0",
     validation: "not_checked",
   },
   title:

@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Reverse limit $q \\to \\infty$ — symmetric counterpart of Kashiwara crystal $q \\to 0$ via bar involution (algebraic fragment)",
   lean: {
-    ref: "qou:QOU.IwahoriHecke.TypeA.ReverseLimitQToInfinity",
+    ref: "qou:HeckeTemperleyLieb.TypeA.ReverseLimitQToInfinity",
     validation: "not_checked",
   },
   uses: [

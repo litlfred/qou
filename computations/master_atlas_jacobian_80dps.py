@@ -113,11 +113,65 @@ def _alpha_em_inv_form_b_at(q: mpf) -> mpf:
     return mpf(1) / a_val
 
 
+def _alpha_em_inv_form_c_bloch_b3_at(q: mpf) -> mpf:
+    """Conditional Form-C two-loop Bloch-B_3(C) inverse fine-structure cubic (#9360, §3b-cond):
+    (c2_bloch_b3 - H*h^2)*a^3 + H*a^2 + T*a - 1 = 0, c2_bloch_b3 = H*(zeta(3) - Li_3(q^-2))/(8*pi)."""
+    h2: mpf = (q - mpf(1) / q) ** 2
+    t_term: mpf = q * _q_int(9, q) * _q_int(10, q) + mpf(8) / (mpf(12) * mp.pi)
+    h_term: mpf = _q_int(2, q) / (mpf(8) * mp.pi)
+    delta_b3: mpf = mp.zeta(3) - mp.polylog(3, q ** (-2))
+    c2_bloch: mpf = h_term * delta_b3 / (mpf(8) * mp.pi)
+    c3: mpf = c2_bloch - h_term * h2
+    a_val: mpf = mpf(1) / t_term
+    for _ in range(30):
+        f_val: mpf = c3 * (a_val ** 3) + h_term * (a_val ** 2) + t_term * a_val - mpf(1)
+        fp_val: mpf = mpf(3) * c3 * (a_val ** 2) + mpf(2) * h_term * a_val + t_term
+        step: mpf = f_val / fp_val
+        a_val -= step
+        if abs(step) < mpf("1e-90"):
+            break
+    return mpf(1) / a_val
+
+
+def _alpha_em_inv_cs_seifert_at(q: mpf) -> mpf:
+    """8x8 homological Seifert pairing Chern-Simons resummation (#9359):
+    kappa_Seifert(q) = q^8 / (Delta_{T(2,9)}(q) * Delta_{T(3,5)}(q)) on H_1(Sigma_4; Z) ~= Z^8."""
+    bare_val: mpf = q * _q_int(9, q) * _q_int(10, q)
+    hbar_q: mpf = mpf(1) - mpf(1) / q
+    cs_sum: mpf = (mp.pi ** 2) * (mpf(240) / mpf(216) + mpf(192) / mpf(180))
+    d_cs: mpf = cs_sum * (_q_int(2, q) / mpf(2)) * (hbar_q ** 2) / bare_val
+    inv_q: mpf = mpf(1) / q
+    d29: mpf = (q - mpf(1) + inv_q) * (q ** 3 - mpf(1) + inv_q ** 3)
+    d35: mpf = (q ** 4) - (q ** 3) + q - mpf(1) + inv_q - (inv_q ** 3) + (inv_q ** 4)
+    kappa_seifert: mpf = (q ** 8) / (d29 * d35)
+    return bare_val * (mpf(1) + d_cs / (mpf(1) - d_cs * kappa_seifert))
+
+
+def _n_v_ew_at(q: mpf) -> mpf:
+    """Conditional Bring-Schwinger electroweak crossing fixed point N_v = v / m_p
+    (QOU.StandardModel.ElectroweakBringSchwingerBridge):
+    1/alpha_v = T_EW(q) - alpha_v * H(q) * (1 - hbar_q^2 * alpha_v)."""
+    hbar_q: mpf = mpf(1) - mpf(1) / q
+    q2: mpf = _q_int(2, q)
+    t_ew: mpf = q * _q_int(4, q) * _q_int(6, q) * _q_int(8, q) * (q2 / mpf(2)) + mpf(1) / mp.pi
+    h_hab: mpf = q2 / (mpf(8) * mp.pi)
+    c3: mpf = (hbar_q ** 2) * h_hab
+    a_val: mpf = mpf(1) / t_ew
+    for _ in range(30):
+        f_val: mpf = c3 * (a_val ** 3) - h_hab * (a_val ** 2) + t_ew * a_val - mpf(1)
+        fp_val: mpf = mpf(3) * c3 * (a_val ** 2) - mpf(2) * h_hab * a_val + t_ew
+        step: mpf = f_val / fp_val
+        a_val -= step
+        if abs(step) < mpf("1e-90"):
+            break
+    return mpf(1) / a_val
+
+
 def _mk_over_mpi_at(q: mpf) -> mpf:
-    """Meson mass ratio m_K / m_pi = sqrt([3]_q*[4]_q + (alpha_em(q)/pi)*(1 + ln(1+hbar_q)))."""
+    """Meson mass ratio m_K / m_pi = sqrt([3]_q*[4]_q + (alpha_em_form_b(q)/pi)*(1 + ln(1+hbar_q)))."""
     hbar_q: mpf = mpf(1) - mpf(1) / q
     strong_core: mpf = _q_int(3, q) * _q_int(4, q)
-    em_inv: mpf = alpha_em_inv_derived(q)
+    em_inv: mpf = _alpha_em_inv_form_b_at(q)
     return mp.sqrt(strong_core + (mpf(1) / em_inv) / mp.pi * (mpf(1) + mp.log(mpf(1) + hbar_q)))
 
 
@@ -420,12 +474,75 @@ def compute_master_atlas() -> dict[str, Any]:
             sigma_alpha_inv,
             None,
         )
+        obs["alpha_em_inv_form_c_bloch_b3"] = eval_obs(
+            "alpha_em_inv_form_c_bloch_b3",
+            lambda me, q, mpi: _alpha_em_inv_form_c_bloch_b3_at(q),
+            alpha_inv_exp,
+            sigma_alpha_inv,
+            None,
+        )
+        obs["alpha_em_inv_cs_seifert"] = eval_obs(
+            "alpha_em_inv_cs_seifert",
+            lambda me, q, mpi: _alpha_em_inv_cs_seifert_at(q),
+            alpha_inv_exp,
+            sigma_alpha_inv,
+            None,
+        )
         obs["alpha_em_inv_cs"] = eval_obs(
             "alpha_em_inv_cs",
             lambda me, q, mpi: alpha_em_inv_derived(q),
             alpha_inv_exp,
             sigma_alpha_inv,
             None,
+        )
+        ry_entry = _codata.codata("Rydberg constant times hc in eV")
+        ry_exp: mpf = mpf(ry_entry.value_str)
+        sigma_ry_exp: mpf = mpf(ry_entry.uncertainty_str)
+        obs["rydberg_form_b_eV"] = eval_obs(
+            "rydberg_form_b_eV",
+            lambda me, q, mpi: mpf("0.5") * (me * mpf("1e6")) / (_alpha_em_inv_form_b_at(q) ** 2),
+            ry_exp,
+            sigma_ry_exp,
+            "eV",
+        )
+        obs["rydberg_form_c_eV"] = eval_obs(
+            "rydberg_form_c_eV",
+            lambda me, q, mpi: mpf("0.5") * (me * mpf("1e6")) / (_alpha_em_inv_form_c_bloch_b3_at(q) ** 2),
+            ry_exp,
+            sigma_ry_exp,
+            "eV",
+        )
+        obs["rydberg_seifert_cs_eV"] = eval_obs(
+            "rydberg_seifert_cs_eV",
+            lambda me, q, mpi: mpf("0.5") * (me * mpf("1e6")) / (_alpha_em_inv_cs_seifert_at(q) ** 2),
+            ry_exp,
+            sigma_ry_exp,
+            "eV",
+        )
+        gf_entry = _codata.codata("Fermi coupling constant")
+        gf_exp: mpf = mpf(gf_entry.value_str)
+        sigma_gf_exp: mpf = mpf(gf_entry.uncertainty_str)
+        v_ew_exp: mpf = mpf(1) / mp.sqrt(mp.sqrt(mpf(2)) * gf_exp)
+        sigma_vew_exp: mpf = v_ew_exp * sigma_gf_exp / (mpf(2) * gf_exp)
+        mp_gev_exp: mpf = m_p_exp / mpf(1000)
+        sigma_mp_gev_exp: mpf = sigma_mp_exp / mpf(1000)
+        nv_ew_exp: mpf = v_ew_exp / mp_gev_exp
+        sigma_nvew_exp: mpf = nv_ew_exp * mp.sqrt(
+            (sigma_vew_exp / v_ew_exp) ** 2 + (sigma_mp_gev_exp / mp_gev_exp) ** 2
+        )
+        obs["N_v_ew"] = eval_obs(
+            "N_v_ew",
+            lambda me, q, mpi: _n_v_ew_at(q),
+            nv_ew_exp,
+            sigma_nvew_exp,
+            None,
+        )
+        obs["v_ew_GeV"] = eval_obs(
+            "v_ew_GeV",
+            lambda me, q, mpi: (me * _proton_ratio_at(q, vol41) / mpf(1000)) * _n_v_ew_at(q),
+            v_ew_exp,
+            sigma_vew_exp,
+            "GeV",
         )
         obs["m_pi_pm_MeV"] = eval_obs(
             "m_pi_pm_MeV",

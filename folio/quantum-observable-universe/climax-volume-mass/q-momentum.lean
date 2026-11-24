@@ -1,6 +1,5 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
-import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith

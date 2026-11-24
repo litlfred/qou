@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Joint mass-tower confinement SDP at $q_0$ with GB-filtration + jet-order tracking",
   lean: {
-    ref: "qou:QOU.BraidKnot.JointTowerSdp",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.JointTowerSdp",
     validation: "not_checked",
   },
   uses: ["conj:atom-knot-mass-derivation"],

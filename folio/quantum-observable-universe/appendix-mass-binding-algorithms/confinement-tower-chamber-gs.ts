@@ -20,7 +20,7 @@ export default algorithm({
     "parr-pearson1983",
   ],
   lean: {
-    ref: "qou:QOU.MathlibInfra.ConfinementLayerTower.reduced_cost_decomposition",
+    ref: "qou:ToricConicOpt.ConfinementLayerTower.reduced_cost_decomposition",
     validation: "not_checked",
   },
   computation: {

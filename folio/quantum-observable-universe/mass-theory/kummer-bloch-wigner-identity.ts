@@ -12,7 +12,7 @@ export default theorem({
     "hyperbolic-volume",
   ],
   lean: {
-    ref: "qou:QOU.Knot.KummerRadial.kummer",
+    ref: "qou:BraidKnotOctonion.KummerRadial.kummer",
     validation: "leanok",
   },
   uses: ["thm:flat-tetrahedron-zero-volume"],

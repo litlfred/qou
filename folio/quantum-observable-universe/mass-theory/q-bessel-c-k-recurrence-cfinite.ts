@@ -4,7 +4,7 @@ export default proof({
   label: "prf:q-bessel-c-k-recurrence-cfinite",
   of: "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   lean: {
-    ref: "qou:QOU.QBeta.qbessel_coeff_closed_form",
+    ref: "qou:QOU.Nuclear.QBeta.qbessel_coeff_closed_form",
     validation: "validated",
   },
   computation: {

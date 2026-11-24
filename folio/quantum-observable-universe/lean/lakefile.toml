@@ -1,34 +1,70 @@
 name = "qou"
-defaultTargets = ["QOU"]
+defaultTargets = ["MathlibExt", "QCalculus", "TwistedFrobeniusHopf", "ToricConicOpt", "CompactQuantumMetrics", "HeckeTemperleyLieb", "BraidKnotOctonion", "QOU"]
 
 [leanOptions]
 autoImplicit = false
 profiler = true          # report per-declaration elaboration times
 
+################################################################################
+# Tier-A (`Mathlib4` Core Staging) & Tier-B (6 Standalone Lean Reservoir Libraries)
+#
+# Strict zero-`QOU.*` upward import boundary (`BP008`, `community_to_qou_cut_edges == 0`)
+# and strict inter-library DAG order (`MathlibExt` -> `QCalculus` -> `TwistedFrobeniusHopf`
+# -> `ToricConicOpt` -> `CompactQuantumMetrics` -> `HeckeTemperleyLieb` -> `BraidKnotOctonion`).
+# All 7 community libraries share `srcDir = "."` (0 extra `.lake/build` roots).
+################################################################################
+
+[[lean_lib]]
+name = "MathlibExt"
+srcDir = "."
+globs = ["MathlibExt", "MathlibExt.+"]
+moreLeanArgs = ["-s", "65536"]
+
+[[lean_lib]]
+name = "QCalculus"
+srcDir = "."
+globs = ["QCalculus", "QCalculus.+"]
+moreLeanArgs = ["-s", "65536"]
+
+[[lean_lib]]
+name = "TwistedFrobeniusHopf"
+srcDir = "."
+globs = ["TwistedFrobeniusHopf", "TwistedFrobeniusHopf.+"]
+moreLeanArgs = ["-s", "65536"]
+
+[[lean_lib]]
+name = "ToricConicOpt"
+srcDir = "."
+globs = ["ToricConicOpt", "ToricConicOpt.+"]
+moreLeanArgs = ["-s", "65536"]
+
+[[lean_lib]]
+name = "CompactQuantumMetrics"
+srcDir = "."
+globs = ["CompactQuantumMetrics", "CompactQuantumMetrics.+"]
+moreLeanArgs = ["-s", "65536"]
+
+[[lean_lib]]
+name = "HeckeTemperleyLieb"
+srcDir = "."
+globs = ["HeckeTemperleyLieb", "HeckeTemperleyLieb.+"]
+moreLeanArgs = ["-s", "65536"]
+
+[[lean_lib]]
+name = "BraidKnotOctonion"
+srcDir = "."
+globs = ["BraidKnotOctonion", "BraidKnotOctonion.+"]
+moreLeanArgs = ["-s", "65536"]
+
+################################################################################
+# Monograph QOU Library (12 Canonical Chapter Subgraphs under `QOU/`)
+################################################################################
+
 [[lean_lib]]
 name = "QOU"
 srcDir = "."
-# WIDEN THE BUILD TO THE WHOLE TREE (bean qou-rc7b).
-#
-# Lake's `lean_lib` defaults `globs := roots.map Glob.one`
-# (Lake/Config/LeanLibConfig.lean:45) — a library with no explicit `globs`
-# builds ONLY its root module plus whatever that root transitively imports.
-# `srcDir = "."` widens where Lake *looks for* sources; it does not widen what
-# gets *built*. Measured before this change: 870 of 1655 modules reachable from
-# `QOU.lean`, so 785 (47%) were never compiled by `lake build` and could carry
-# arbitrary breakage — including files that had never compiled at all.
 globs = ["QOU", "QOU.+"]
-# `AllKnownIsotopesUniqueness` is machine-generated: one `abbrev` per
-# isotope for Z = 1..118, ~12800 declarations in a single module. Lean's
-# default elaboration-thread stack overflows on it and aborts with
-# SIGABRT ("Stack overflow detected"), which surfaces only as a bare
-# `Lean exited with code 134`, not as a source error.
-#
-# Raising the thread stack is the whole fix — verified: that file
-# compiles clean under `lean -s 65536`. A shell `ulimit -s` does NOT
-# help, because Lean sizes its own worker stacks independently.
 moreLeanArgs = ["-s", "65536"]
-
 # NOTE: Fred2005 has moved to folio/fred2005-formal-groups/lean/
 # NOTE: GrobnerShirshov (formerly QOU.GrobnerShirshov) has moved to
 #       folio/unital-groebner-bases/lean/

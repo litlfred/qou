@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:q-beta-spectral-bridge",
   renamedFrom: ["prop:q-beta-spectral-bridge"],
   lean: {
-    ref: "qou:QOU.Interactions.q_beta_spectral_bridge",
+    ref: "qou:QOU.Confinement.Interactions.q_beta_spectral_bridge",
     validation: "not_checked",
   },
   title:

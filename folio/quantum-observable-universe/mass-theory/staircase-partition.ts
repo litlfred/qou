@@ -4,7 +4,7 @@ export default definition({
   label: "def:staircase-partition",
   title: "Staircase partition $\\rho_k = (k, k-1, \\ldots, 1)$",
   lean: {
-    ref: "qou:QOU.Hecke.staircasePartition",
+    ref: "qou:QOU.BraidsAndKnots.Hecke.staircasePartition",
     validation: "not_checked",
   },
   uses: [],

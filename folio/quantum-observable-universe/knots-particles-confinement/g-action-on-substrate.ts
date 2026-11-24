@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:g-action-on-substrate",
   title:
     "Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate",
-  lean: { ref: "qou:QOU.QuantumObservableUniverses.GActionOnSubstrate", validation: "stub" },
+  lean: { ref: "qou:QOU.Core.GActionOnSubstrate", validation: "stub" },
   uses: [
     "prop:lepton-meson-torus-knot-dictionary",
     "thm:ew-triplet-charge-spin-from-involution",

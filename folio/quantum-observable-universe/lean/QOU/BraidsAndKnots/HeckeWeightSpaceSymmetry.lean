@@ -3,7 +3,7 @@ import Mathlib.Data.Matrix.Mul
 import Mathlib.Algebra.FreeAlgebra
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.FinCases
-import QOU.Photon
+import QOU.StandardModel.Photon
 import QOU.BraidsAndKnots.NucleonWeightSpaceTraces
 
 /-!

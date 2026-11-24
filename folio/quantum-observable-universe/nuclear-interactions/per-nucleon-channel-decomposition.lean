@@ -11,7 +11,7 @@
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 namespace QOU.ParticleInteractions
 

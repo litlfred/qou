@@ -1,4 +1,4 @@
-import QOU.Archimedean.GramDetRatioCongruence
+import QOU.MassTheory.GramDetRatioCongruence
 
 /-!
 # QOU.Archimedean.csGramDetRatio

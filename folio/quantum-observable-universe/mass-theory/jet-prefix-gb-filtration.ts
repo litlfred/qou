@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)",
   lean: {
-    ref: "qou:QOU.BraidKnot.jet_prefix_gb_filtration",
+    ref: "qou:BraidKnotOctonion.jet_prefix_gb_filtration",
     validation: "not_checked",
   },
   uses: [

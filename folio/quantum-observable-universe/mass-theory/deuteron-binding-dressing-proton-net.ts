@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:deuteron-binding-dressing-proton-net",
   lean: {
-    ref: "qou:QOU.Mass.binding_dressing_eq_qbeta_over_h",
+    ref: "qou:QOU.MassTheory.DeuteronBindingDressing.binding_dressing_eq_qbeta_over_h",
     validation: "not_checked",
   },
   title:

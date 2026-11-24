@@ -1,4 +1,4 @@
-import QOU.MathlibExt.QPartitionCombinatorics
+import HeckeTemperleyLieb.QPartitionCombinatorics
 
 /-!
 # QOU.BraidsAndKnots.KeystoneChiralityInvolution

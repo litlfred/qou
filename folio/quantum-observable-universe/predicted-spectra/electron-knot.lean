@@ -1,5 +1,5 @@
-import QOU.Archimedean.ParticleKnots
-import QOU.BraidKnot.ElectronWordCandidates
+import QOU.MassTheory.ParticleKnots
+import QOU.BraidsAndKnots.ElectronWordCandidates
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 

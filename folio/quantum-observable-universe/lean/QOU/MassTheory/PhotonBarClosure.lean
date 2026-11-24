@@ -23,7 +23,7 @@
 
   -- Ref: [leitner2026] def:photon; audit Round 6
 -/
-import QOU.Photon
+import QOU.StandardModel.Photon
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
 
 namespace QOU.MassTheory.PhotonBarClosure

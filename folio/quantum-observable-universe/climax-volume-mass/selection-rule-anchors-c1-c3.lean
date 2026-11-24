@@ -39,7 +39,7 @@
 -/
 
 import Mathlib.Algebra.Field.Basic
-import QOU.Mass.QHookDimension
+import HeckeTemperleyLieb.QHookDimension
 import Mathlib.Algebra.Order.Ring.Cast
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring

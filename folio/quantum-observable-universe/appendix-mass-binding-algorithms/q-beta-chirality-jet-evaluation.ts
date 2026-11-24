@@ -19,7 +19,7 @@ export default algorithm({
     "ame2020",
   ],
   lean: {
-    ref: "qou:QOU.QBeta.decayLadder_zC_threeRow_ne_zero",
+    ref: "qou:QOU.Nuclear.QBeta.decayLadder_zC_threeRow_ne_zero",
     validation: "not_checked",
   },
   computation: {

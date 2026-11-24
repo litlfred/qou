@@ -14,7 +14,7 @@ export default definition({
     "recurrence",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.chebyshevTorusCoefficients",
+    ref: "qou:QOU.MassTheory.Archimedean.chebyshevTorusCoefficients",
     validation: "not_checked",
   },
 });

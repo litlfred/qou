@@ -27,7 +27,7 @@ export default proposition({
   ],
   label: "prop:coxeter-geometric-representation",
   lean: {
-    ref: "qou:QOU.Machinery.CoxeterParabolic.simple_injective",
+    ref: "qou:HeckeTemperleyLieb.CoxeterGeometricRepresentationFull.simple_injective",
     validation: "not_checked",
   },
   title:

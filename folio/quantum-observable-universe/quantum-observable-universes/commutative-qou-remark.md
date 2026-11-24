@@ -1,0 +1,1 @@
+Strict commutativity isolates the classical limit $q \to 1$: it restricts the gauge group to $\mathrm{SU}(2)$ and turns $\mathrm{Rep}(\mathbf{C})$ into a symmetric category. A strictly commutative quantum observable universe hosts the classical hyperelliptic quintic, but cannot support anyonic structure.

@@ -1,4 +1,4 @@
-import QOU.Shared.MarkovTraceClaim
+import QOU.Core.MarkovTraceClaim
 
 /-!
 # `QOU.BraidsAndKnots.explicit_alpha_k_h4` — intentionally empty; the formalisation lives in the content-block sibling

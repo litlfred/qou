@@ -21,7 +21,7 @@ export default proposition({
     "splitting-field",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.GoldenQuartetGalois.golden_quartet_galois",
+    ref: "qou:QOU.MassTheory.Archimedean.GoldenQuartetGalois.golden_quartet_galois",
     validation: "not_checked",
   },
   uses: [

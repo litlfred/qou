@@ -1,0 +1,1061 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T17:02:00.300629+00:00",
+  "commitSha": "e7c8948c79b6ad63d48a8ad84a3d8b6fa11b9dc6",
+  "assertions": [
+    {
+      "name": "sympy_legendre_two_channel_and_all_pairs_identities_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "proton_eps_flavour_eq_neg3_q2_sub_1_mul_dt_all_pairs_raw",
+      "computed": "0.076980534601364172432262695812444751363707592135473",
+      "expected": "0.076980534601364172432262695812444751363707592135473",
+      "passed": true,
+      "tolerance": "1e-72"
+    },
+    {
+      "name": "proton_connected_all_pairs_V3_trace_identically_zero",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "muon_eps_flavour_eq_neg3_q2_sub_1_mul_dt_all_pairs_raw",
+      "computed": "0.076980542854938324545811840040094957740823953586119",
+      "expected": "0.076980542854938324545811840040094957740823953586119",
+      "passed": true,
+      "tolerance": "1e-72"
+    },
+    {
+      "name": "muon_connected_all_pairs_V3_trace_identically_zero",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "proton_cartan_qtrace_self_minus_pair_eq_neg_eps_flavour",
+      "computed": "-0.076980534601364172432262695812444751363707592135473",
+      "expected": "-0.076980534601364172432262695812444751363707592135473",
+      "passed": true,
+      "tolerance": "1e-72"
+    },
+    {
+      "name": "proton_cds1_z_two_row_bar_defect_exact",
+      "computed": "0.20906029879563931543084621312967494385975749526302",
+      "expected": "0.20906029879563931543084621312967494385975749526302",
+      "passed": true,
+      "tolerance": "1e-72"
+    },
+    {
+      "name": "proton_cds1_N2_factor_less_than_one_while_F_req_exceeds_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "proton_all_pairs_V3_alphaB_mp_cottingham_sign_and_window",
+      "computed": "-0.757125074322804016556378195443",
+      "expected": "-0.757125074322804017",
+      "passed": true,
+      "tolerance": "0.05"
+    },
+    {
+      "name": "zero_parameter_120_catalog_honest_no_closure_under_1digit_entropy_bar",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "cross_anchor_proton_vs_muon_stability_sub_ppm",
+      "computed": "3.3933391300510881218e-7",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 451,
+  "computation": "np-splitting-qbeta-legendre-coulomb",
+  "scriptFile": "np_splitting_qbeta_legendre_coulomb_probe.py",
+  "scriptHash": "f6989c4ee7ed",
+  "scriptCommitSha": "e7c8948c79b6ad63d48a8ad84a3d8b6fa11b9dc6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/np_splitting_qbeta_legendre_coulomb_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/np_splitting_qbeta_legendre_coulomb_probe.py"
+  },
+  "description": "80-dps first-principles SymPy + mpmath adjudication of free-neutron Q_beta and Delta m_np = m_n - m_p across qou-cds1, qou-15sj, and qou-37y0 at both proton and muon q_0 anchors: Legendre Hamiltonian two-channel sign structure H_can(2a_2), all-3-pairs (12, 23, 13) Borromean V^3 quantum-trace identities, two-row Markov z = q^3/(q^2+1) F_req > 1 exclusion, derived Form-B alpha_EM(q_0) intra-nucleon Coulomb scale, Thomae-Jackson q^{-2} own-sector shift, and 10x12 zero-parameter operator catalog with CODATA discrete-search entropy audit.",
+  "data": {
+    "lean_module": "QOU.MassTheory.NucleonSplittingLegendreCoulomb",
+    "beans_referenced": [
+      "qou-cds1",
+      "qou-15sj",
+      "qou-37y0"
+    ],
+    "codata_2022_validation": {
+      "m_e_MeV": "0.5109989506900000000000000",
+      "m_p_MeV": "938.2720894300000000000000",
+      "m_n_MeV": "939.5654219400000000000000",
+      "dm_np_MeV": "1.293332510000000000000000",
+      "dm_np_unc_MeV": "5.60802995712e-7",
+      "qbeta_MeV": "0.7823335593100000000000000",
+      "qbeta_unc_MeV": "5.60803018537e-7"
+    },
+    "symbolic_identities": {
+      "H_can_at_2a2": "-a0 + a1**2/(4*a2) - a1 + a2",
+      "delta_H_can": "-a0_n + a0_p + a1_n**2/(4*a2_n) - a1_n - a1_p**2/(4*a2_p) + a1_p + a2_n - a2_p",
+      "own_sector_horiz_shift": "(1 - 1/q**2)*c",
+      "cartan_self_minus_pair_np": "-(q - 1/q)",
+      "eps_flavour_over_deltaT_allPairs_raw": "-3*(q**2 - 1)",
+      "deltaT_allPairs_connected": "0",
+      "z_two_row_bar_ratio": "q**(-4)",
+      "z_two_row_minus_bar": "q - 1/q",
+      "N2_b_squared": "[3]_q / [2]_q**2"
+    },
+    "q0_comparison": {
+      "proton": {
+        "q0": "1.10997858275138080759166909561076887987449912187357873607281424018179896357",
+        "alpha_inv_form_a": "137.0359993131690075022036578649181983715",
+        "alpha_inv_form_b_derived": "137.0359991269509124201727004964200067400",
+        "alpha_inv_form_c_bloch_b3": "137.0359991736957606848708288816549009370",
+        "E0_ord0_MeV": "4.185981363294475896945062158759008410143",
+        "E0_twr_MeV": "4.227483355629030550268056026587211153615",
+        "m_p_model_MeV": "938.2720894273242473639400000000000000000",
+        "m_mu_model_MeV": "105.6583978113418139261706788652251516296",
+        "v3_traces": {
+          "tr_V3": "2.99418581297996408672819936801871670008913958",
+          "qdim3": "8.13147614462218576126555274528005587514280958",
+          "eps_flavour_V3": "0.0769805346013641724322626958124447513637075921",
+          "dt_all_pairs_raw": "-0.110579214913254481456268730745582839539965249",
+          "dt_all_pairs_connected": "0.0",
+          "dt_self_charge_raw": "-0.187559749514618653888531426558027590903672841",
+          "dt_tot_charge_sq_raw": "-0.408718179341127616801068888049193269983603338",
+          "dt_adjacent_pair13_omitted_raw": "-0.0734705048628237085575427420477579251984583586",
+          "dt_adjacent_pair13_omitted_connected": "0.000248971746012612413303078449297301161518473743"
+        },
+        "cds1_two_row_ladder": {
+          "z_two_row": "0.612688037146465251595829863945899248026308392",
+          "z_two_row_bar": "0.403627738350825936164983650816224304166550896",
+          "bar_ratio_q_pow_neg4": "-1.05421979432305232243485740512700190077099614e-81",
+          "bar_diff_minus_hq": "5.27109897161526161217428702563500950385498069e-82",
+          "b2_hoefsmit": "0.752702113251965401593779351620236137830175599",
+          "u_ladder": "0.00851723455015614218925557360330920296919422161",
+          "N2_factor": "0.999927456715617626498201895199068388200910825",
+          "N2_shift_ppm": "-72.5432843823735017981048009316117990891751710",
+          "qbeta_scored_MeV": "0.325433928734691707290965643899700432308723968",
+          "dm_np_scored_MeV": "0.836432879424691707290965643899700432308723968",
+          "F_req_on_V3_base": "2.40397048442909376221430533652881414982089201"
+        },
+        "legendre_recoil_constituent_MeV": "0.000308421355798773866360751278457",
+        "strong_catalog_MeV": {
+          "S01_V3_qtrace_twr_plus_me": {
+            "value_MeV": "0.83643287942469170729096564389970043",
+            "status": "scored_baseline",
+            "formula": "|eps_flavour(V^3)| * E_0^twr + m_e"
+          },
+          "S02_V3_qtrace_ord0_plus_me": {
+            "value_MeV": "0.83323803386775597215141713230310870",
+            "status": "order_zero_E0_variant",
+            "formula": "|eps_flavour(V^3)| * E_0^ord0 + m_e"
+          },
+          "S03_Legendre_own_sector_12me": {
+            "value_MeV": "1.1549368066259835099363144551987962",
+            "status": "derived_operator_candidate",
+            "formula": "(1 - q^{-2}) * 12 * m_e  [-Delta a_0 on proton 12*m_e constant]"
+          },
+          "S04_V3_twr_plus_me_plus_Legendre_12me": {
+            "value_MeV": "1.9913696860506752172272800990984967",
+            "status": "derived_operator_candidate",
+            "formula": "|eps_flavour(V^3)| * E_0^twr + m_e + (1 - q^{-2}) * 12 * m_e"
+          },
+          "S05_V3_twr_no_me_plus_Legendre_12me": {
+            "value_MeV": "1.4803707353606752172272800990984967",
+            "status": "derived_operator_candidate",
+            "formula": "|eps_flavour(V^3)| * E_0^twr + (1 - q^{-2}) * 12 * m_e"
+          },
+          "S06_substrate_skein_linear": {
+            "value_MeV": "1.2907910533570638367501034634434765",
+            "status": "conditional_conjecture_ansatz",
+            "formula": "m_p(q_0) * (q_0 - 1)^2 * (1 - q_0^{-4}) / 3  [conj:flavor-split-substrate-mass]"
+          },
+          "S07_substrate_skein_cayley": {
+            "value_MeV": "1.2916795421097119075555029574617044",
+            "status": "conditional_conjecture_ansatz",
+            "formula": "m_p(q_0) * X / (1 - X/2), X = (q_0 - 1)^2 * (1 - q_0^{-4}) / 3"
+          },
+          "S08_Jackson_qinv2_E0_twr_plus_me": {
+            "value_MeV": "1.3072295692039747698211691038649521",
+            "status": "derived_operator_candidate",
+            "formula": "(1 - q_0^{-2}) * E_0^twr + m_e"
+          },
+          "S09_Jackson_qinv2_E0_ord0_plus_me": {
+            "value_MeV": "1.2994128247614203129108565582078130",
+            "status": "derived_operator_candidate",
+            "formula": "(1 - q_0^{-2}) * E_0^ord0 + m_e"
+          },
+          "S10_retired_counit_DeltaS_ord0_plus_me": {
+            "value_MeV": "1.2946447780646212130749397513413969",
+            "status": "retired_z_eq_1_counit_excluded_by_two_row_ruling",
+            "formula": "m_e * (q_0 + 1) * |q_0^2 - 2*q_0 - 1| / (2*q_0^3) + m_e"
+          }
+        },
+        "em_catalog_all_pairs_MeV": {
+          "E01_zero_connected_all_pairs": {
+            "value_MeV": "0.0",
+            "formula": "0  [connected Q_12+Q_23+Q_13 vanishes identically on V^3]"
+          },
+          "E02_me_qtrace_Qpair_raw": {
+            "value_MeV": "-0.056505862788797039397093384533650972",
+            "formula": "m_e * Delta t_raw(Q_12+Q_23+Q_13, V^3)"
+          },
+          "E03_E0twr_qtrace_Qpair_raw": {
+            "value_MeV": "-0.46747179052430879364062631336710999",
+            "formula": "E_0^twr * Delta t_raw(Q_12+Q_23+Q_13, V^3)"
+          },
+          "E04_alphaB_mp_Qpair_unweighted_div3": {
+            "value_MeV": "-2.2823007467745847831393919727754065",
+            "formula": "-alpha_EM^FormB(q_0) * m_p(q_0) * (1/3)  [whole-baryon Compton]"
+          },
+          "E05_alphaB_mp_constituent_div9": {
+            "value_MeV": "-0.76076691559152826104646399092513550",
+            "formula": "-alpha_EM^FormB(q_0) * (m_p(q_0)/3) * (1/3)  [constituent Compton 1/9]"
+          },
+          "E06_alphaB_mp_coherent_div6": {
+            "value_MeV": "-1.1411503733872923915696959863877033",
+            "formula": "-alpha_EM^FormB(q_0) * m_p(q_0) * (1/6)  [coherent self+pair 1/6]"
+          },
+          "E07_alphaB_mp_qtrace_Qpair_raw": {
+            "value_MeV": "-0.75712507432280401655637819544323745",
+            "formula": "alpha_EM^FormB(q_0) * m_p(q_0) * Delta t_raw(Q_12+Q_23+Q_13, V^3)"
+          },
+          "E08_alphaB_mp_qtrace_Qself_raw": {
+            "value_MeV": "-1.2842032691462046587363119335778038",
+            "formula": "alpha_EM^FormB(q_0) * m_p(q_0) * Delta t_raw(Q_1^2+Q_2^2+Q_3^2, V^3)"
+          },
+          "E09_alphaB_mp_Jackson_qinv2_div9": {
+            "value_MeV": "-0.61747932323712167341344642710894314",
+            "formula": "-alpha_EM^FormB(q_0) * m_p(q_0) * q_0^{-2} / 9  [Jackson bwd step]"
+          },
+          "E10_alphaB_mmu_Qpair_div3": {
+            "value_MeV": "-0.25700886016444794683070820416261270",
+            "formula": "-alpha_EM^FormB(q_0) * m_mu(q_0) * (1/3)"
+          },
+          "E11_hadron_line_2lnt_E0twr": {
+            "value_MeV": "-0.030849436517134935009081674589215823",
+            "formula": "(2 ln t) * E_0^twr * (Q_n^2 - Q_p^2) = -alpha_EM^FormB(q_0) * E_0^twr"
+          },
+          "E12_hadron_line_2lnt_me": {
+            "value_MeV": "-0.0037289395045502439657313681284087082",
+            "formula": "(2 ln t) * m_e * (Q_n^2 - Q_p^2) = -alpha_EM^FormB(q_0) * m_e"
+          }
+        },
+        "catalog_entropy": {
+          "N_strong": 10,
+          "N_em": 12,
+          "N_total": 120,
+          "log10_N_total_digits": "2.07918124604762",
+          "one_digit_net_ppm_threshold": "416.666666666667",
+          "any_cell_passes_1digit_bar": false
+        },
+        "top_10_all_rows": [
+          {
+            "strong_id": "S10_retired_counit_DeltaS_ord0_plus_me",
+            "strong_status": "retired_z_eq_1_counit_excluded_by_two_row_ruling",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29464477806462121307493975134",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29464477806462121307493975134",
+            "qbeta_pred_MeV": "0.783645827374621213074939751341",
+            "residual_MeV": "0.00131226806462121307493975134140",
+            "residual_ppm": "1014.64090206872869",
+            "sigma_exp": "2339.98048272587315",
+            "net_digits_after_entropy": "0.613476392733",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S07_substrate_skein_cayley",
+            "strong_status": "conditional_conjecture_ansatz",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29167954210971190755550295746",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29167954210971190755550295746",
+            "qbeta_pred_MeV": "0.780680591419711907555502957462",
+            "residual_MeV": "-0.00165296789028809244449704253830",
+            "residual_ppm": "-1278.06877002426270",
+            "sigma_exp": "-2947.50189090608851",
+            "net_digits_after_entropy": "0.513234535422",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29941282476142031291085655821",
+            "dm_em_MeV": "-0.00372893950455024396573136812841",
+            "dm_pred_MeV": "1.29568388525687006894512519008",
+            "qbeta_pred_MeV": "0.784684934566870068945125190079",
+            "residual_MeV": "0.00235137525687006894512519007940",
+            "residual_ppm": "1818.07480960180066",
+            "sigma_exp": "4192.87214021222338",
+            "net_digits_after_entropy": "0.360177008815",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S10_retired_counit_DeltaS_ord0_plus_me",
+            "strong_status": "retired_z_eq_1_counit_excluded_by_two_row_ruling",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29464477806462121307493975134",
+            "dm_em_MeV": "-0.00372893950455024396573136812841",
+            "dm_pred_MeV": "1.29091583856007096910920838321",
+            "qbeta_pred_MeV": "0.779916887870070969109208383213",
+            "residual_MeV": "-0.00241667143992903089079161678701",
+            "residual_ppm": "-1868.56158122015420",
+            "sigma_exp": "-4309.30551085785453",
+            "net_digits_after_entropy": "0.348281343048",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S06_substrate_skein_linear",
+            "strong_status": "conditional_conjecture_ansatz",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29079105335706383675010346344",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29079105335706383675010346344",
+            "qbeta_pred_MeV": "0.779792102667063836750103463443",
+            "residual_MeV": "-0.00254145664293616324989653655652",
+            "residual_ppm": "-1965.04504702828761",
+            "sigma_exp": "-4531.81716639674030",
+            "net_digits_after_entropy": "0.326416247622",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S07_substrate_skein_cayley",
+            "strong_status": "conditional_conjecture_ansatz",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29167954210971190755550295746",
+            "dm_em_MeV": "-0.00372893950455024396573136812841",
+            "dm_pred_MeV": "1.28795060260516166358977158933",
+            "qbeta_pred_MeV": "0.776951651915161663589771589333",
+            "residual_MeV": "-0.00538190739483833641022841066670",
+            "residual_ppm": "-4161.27125331314560",
+            "sigma_exp": "-9596.78788448981620",
+            "net_digits_after_entropy": "0.000562731998576",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29941282476142031291085655821",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29941282476142031291085655821",
+            "qbeta_pred_MeV": "0.788413874071420312910856558208",
+            "residual_MeV": "0.00608031476142031291085655820781",
+            "residual_ppm": "4701.27729289068355",
+            "sigma_exp": "10842.1581337959511",
+            "net_digits_after_entropy": "-0.0524271094114",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S06_substrate_skein_linear",
+            "strong_status": "conditional_conjecture_ansatz",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29079105335706383675010346344",
+            "dm_em_MeV": "-0.00372893950455024396573136812841",
+            "dm_pred_MeV": "1.28706211385251359278437209532",
+            "qbeta_pred_MeV": "0.776063163162513592784372095315",
+            "residual_MeV": "-0.00627039614748640721562790468493",
+            "residual_ppm": "-4848.24753031717050",
+            "sigma_exp": "-11181.1031599804680",
+            "net_digits_after_entropy": "-0.0657960266129",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.30722956920397476982116910386",
+            "dm_em_MeV": "-0.00372893950455024396573136812841",
+            "dm_pred_MeV": "1.30350062969942452585543773574",
+            "qbeta_pred_MeV": "0.792501679009424525855437735737",
+            "residual_MeV": "0.0101681196994245258554377357365",
+            "residual_ppm": "7861.95322610774383",
+            "sigma_exp": "18131.3576731304388",
+            "net_digits_after_entropy": "-0.275741697412",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.30722956920397476982116910386",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.30722956920397476982116910386",
+            "qbeta_pred_MeV": "0.796230618513974769821169103865",
+            "residual_MeV": "0.0138970592039747698211691038650",
+            "residual_ppm": "10745.1557093966267",
+            "sigma_exp": "24780.6436667141665",
+            "net_digits_after_entropy": "-0.411423955000",
+            "passes_1digit_entropy_bar": false
+          }
+        ],
+        "top_10_first_principles_rows": [
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29941282476142031291085655821",
+            "dm_em_MeV": "-0.00372893950455024396573136812841",
+            "dm_pred_MeV": "1.29568388525687006894512519008",
+            "qbeta_pred_MeV": "0.784684934566870068945125190079",
+            "residual_MeV": "0.00235137525687006894512519007940",
+            "residual_ppm": "1818.07480960180066",
+            "sigma_exp": "4192.87214021222338",
+            "net_digits_after_entropy": "0.360177008815",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29941282476142031291085655821",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29941282476142031291085655821",
+            "qbeta_pred_MeV": "0.788413874071420312910856558208",
+            "residual_MeV": "0.00608031476142031291085655820781",
+            "residual_ppm": "4701.27729289068355",
+            "sigma_exp": "10842.1581337959511",
+            "net_digits_after_entropy": "-0.0524271094114",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.30722956920397476982116910386",
+            "dm_em_MeV": "-0.00372893950455024396573136812841",
+            "dm_pred_MeV": "1.30350062969942452585543773574",
+            "qbeta_pred_MeV": "0.792501679009424525855437735737",
+            "residual_MeV": "0.0101681196994245258554377357365",
+            "residual_ppm": "7861.95322610774383",
+            "sigma_exp": "18131.3576731304388",
+            "net_digits_after_entropy": "-0.275741697412",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.30722956920397476982116910386",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.30722956920397476982116910386",
+            "qbeta_pred_MeV": "0.796230618513974769821169103865",
+            "residual_MeV": "0.0138970592039747698211691038650",
+            "residual_ppm": "10745.1557093966267",
+            "sigma_exp": "24780.6436667141665",
+            "net_digits_after_entropy": "-0.411423955000",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E11_hadron_line_2lnt_E0twr",
+            "dm_strong_MeV": "1.30722956920397476982116910386",
+            "dm_em_MeV": "-0.0308494365171349350090816745892",
+            "dm_pred_MeV": "1.27638013268683983481208742928",
+            "qbeta_pred_MeV": "0.765381181996839834812087429276",
+            "residual_MeV": "-0.0169523773131601651879125707243",
+            "residual_ppm": "-13107.5165760428965",
+            "sigma_exp": "-30228.7566984645943",
+            "net_digits_after_entropy": "-0.497731657316",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E11_hadron_line_2lnt_E0twr",
+            "dm_strong_MeV": "1.29941282476142031291085655821",
+            "dm_em_MeV": "-0.0308494365171349350090816745892",
+            "dm_pred_MeV": "1.26856338824428537790177488362",
+            "qbeta_pred_MeV": "0.757564437554285377901774883619",
+            "residual_MeV": "-0.0247691217557146220982251163814",
+            "residual_ppm": "-19151.3949925488397",
+            "sigma_exp": "-44167.2422313828098",
+            "net_digits_after_entropy": "-0.662411655290",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E02_me_qtrace_Qpair_raw",
+            "dm_strong_MeV": "1.30722956920397476982116910386",
+            "dm_em_MeV": "-0.0565058627887970393970933845337",
+            "dm_pred_MeV": "1.25072370641517773042407571933",
+            "qbeta_pred_MeV": "0.739724755725177730424075719331",
+            "residual_MeV": "-0.0426088035848222695759242806687",
+            "residual_ppm": "-32944.9721980794170",
+            "sigma_exp": "-75978.2025249268552",
+            "net_digits_after_entropy": "-0.898000387099",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E02_me_qtrace_Qpair_raw",
+            "dm_strong_MeV": "1.29941282476142031291085655821",
+            "dm_em_MeV": "-0.0565058627887970393970933845337",
+            "dm_pred_MeV": "1.24290696197262327351376317367",
+            "qbeta_pred_MeV": "0.731908011282623273513763173674",
+            "residual_MeV": "-0.0504255480273767264862368263258",
+            "residual_ppm": "-38988.8506145853602",
+            "sigma_exp": "-89916.6880578450707",
+            "net_digits_after_entropy": "-0.971151674153",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S04_V3_twr_plus_me_plus_Legendre_12me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E07_alphaB_mp_qtrace_Qpair_raw",
+            "dm_strong_MeV": "1.99136968605067521722728009910",
+            "dm_em_MeV": "-0.757125074322804016556378195443",
+            "dm_pred_MeV": "1.23424461172787120067090190366",
+            "qbeta_pred_MeV": "0.723245661037871200670901903655",
+            "residual_MeV": "-0.0590878982721287993290980963447",
+            "residual_ppm": "-45686.5483665363050",
+            "sigma_exp": "-105363.021816722614",
+            "net_digits_after_entropy": "-1.03999958992",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S04_V3_twr_plus_me_plus_Legendre_12me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E05_alphaB_mp_constituent_div9",
+            "dm_strong_MeV": "1.99136968605067521722728009910",
+            "dm_em_MeV": "-0.760766915591528261046463990925",
+            "dm_pred_MeV": "1.23060277045914695618081610817",
+            "qbeta_pred_MeV": "0.719603819769146956180816108173",
+            "residual_MeV": "-0.0627297395408530438191838918266",
+            "residual_ppm": "-48502.4068101814311",
+            "sigma_exp": "-111856.997948390649",
+            "net_digits_after_entropy": "-1.06597453162",
+            "passes_1digit_entropy_bar": false
+          }
+        ],
+        "cottingham_scale_pair_S04_E07": {
+          "strong_id": "S04_V3_twr_plus_me_plus_Legendre_12me",
+          "strong_status": "derived_operator_candidate",
+          "em_id": "E07_alphaB_mp_qtrace_Qpair_raw",
+          "dm_strong_MeV": "1.99136968605067521722728009910",
+          "dm_em_MeV": "-0.757125074322804016556378195443",
+          "dm_pred_MeV": "1.23424461172787120067090190366",
+          "qbeta_pred_MeV": "0.723245661037871200670901903655",
+          "residual_MeV": "-0.0590878982721287993290980963447",
+          "residual_ppm": "-45686.5483665363050",
+          "sigma_exp": "-105363.021816722614",
+          "net_digits_after_entropy": "-1.03999958992",
+          "passes_1digit_entropy_bar": false
+        },
+        "cottingham_scale_pair_S04_E05": {
+          "strong_id": "S04_V3_twr_plus_me_plus_Legendre_12me",
+          "strong_status": "derived_operator_candidate",
+          "em_id": "E05_alphaB_mp_constituent_div9",
+          "dm_strong_MeV": "1.99136968605067521722728009910",
+          "dm_em_MeV": "-0.760766915591528261046463990925",
+          "dm_pred_MeV": "1.23060277045914695618081610817",
+          "qbeta_pred_MeV": "0.719603819769146956180816108173",
+          "residual_MeV": "-0.0627297395408530438191838918266",
+          "residual_ppm": "-48502.4068101814311",
+          "sigma_exp": "-111856.997948390649",
+          "net_digits_after_entropy": "-1.06597453162",
+          "passes_1digit_entropy_bar": false
+        }
+      },
+      "muon": {
+        "q0": "1.10997859564273904668179512938000175270006556102901155697404576999909508143",
+        "alpha_inv_form_a": "137.0360101888136448128120210628658300613",
+        "alpha_inv_form_b_derived": "137.0360100025955374577875499382579932211",
+        "alpha_inv_form_c_bloch_b3": "137.0360100493403826849606044220646097644",
+        "E0_ord0_MeV": "4.185980824010171367799724430485258393390",
+        "E0_twr_MeV": "4.227482819850349871542277045668884623156",
+        "m_p_model_MeV": "938.2718606200936593303250157968175405286",
+        "m_mu_model_MeV": "105.6583754956732800630000000000000000000",
+        "v3_traces": {
+          "tr_V3": "2.99418581036323740913656373060256326968864975",
+          "qdim3": "8.13147617407701550333137455523930992583748375",
+          "eps_flavour_V3": "0.0769805428549383245458118400400949577408239536",
+          "dt_all_pairs_raw": "-0.110579213131788087705194273797672475186244690",
+          "dt_all_pairs_connected": "0.0",
+          "dt_self_charge_raw": "-0.187559755986726412251006113837767432927068643",
+          "dt_tot_charge_sq_raw": "-0.408718182250302587661394661433112383299558023",
+          "dt_adjacent_pair13_omitted_raw": "-0.0734705035625978706649401300864591107567563855",
+          "dt_adjacent_pair13_omitted_connected": "0.000248971858594187805189385778655872700740074255"
+        },
+        "cds1_two_row_ladder": {
+          "z_two_row": "0.612688050638272415220888927646110664831964631",
+          "z_two_row_bar": "0.403627728487955668590088666144190778851827462",
+          "bar_ratio_q_pow_neg4": "0.0",
+          "bar_diff_minus_hq": "0.0",
+          "b2_hoefsmit": "0.752702113849160547812963666695139154816910171",
+          "u_ladder": "0.00851723635242482310735822116750811832077898606",
+          "N2_factor": "0.999927456684916933094469497445299542452058412",
+          "N2_shift_ppm": "-72.5433150830669055305025547004575479415882091",
+          "qbeta_scored_MeV": "0.325433922382005371050017089520127856436081546",
+          "dm_np_scored_MeV": "0.836432873072005371050017089520127856436081546",
+          "F_req_on_V3_base": "2.40397053135619446941357941564839492669574724"
+        },
+        "legendre_recoil_constituent_MeV": "0.000308421231632351425775460196745",
+        "strong_catalog_MeV": {
+          "S01_V3_qtrace_twr_plus_me": {
+            "value_MeV": "0.83643287307200537105001708952012786",
+            "status": "scored_baseline",
+            "formula": "|eps_flavour(V^3)| * E_0^twr + m_e"
+          },
+          "S02_V3_qtrace_ord0_plus_me": {
+            "value_MeV": "0.83323802690266503766625689817442502",
+            "status": "order_zero_E0_variant",
+            "formula": "|eps_flavour(V^3)| * E_0^ord0 + m_e"
+          },
+          "S03_Legendre_own_sector_12me": {
+            "value_MeV": "1.1549369222335135276907815282811801",
+            "status": "derived_operator_candidate",
+            "formula": "(1 - q^{-2}) * 12 * m_e  [-Delta a_0 on proton 12*m_e constant]"
+          },
+          "S04_V3_twr_plus_me_plus_Legendre_12me": {
+            "value_MeV": "1.9913697953055188987407986178013080",
+            "status": "derived_operator_candidate",
+            "formula": "|eps_flavour(V^3)| * E_0^twr + m_e + (1 - q^{-2}) * 12 * m_e"
+          },
+          "S05_V3_twr_no_me_plus_Legendre_12me": {
+            "value_MeV": "1.4803708446155188987407986178013080",
+            "status": "derived_operator_candidate",
+            "formula": "|eps_flavour(V^3)| * E_0^twr + (1 - q^{-2}) * 12 * m_e"
+          },
+          "S06_substrate_skein_linear": {
+            "value_MeV": "1.2907911569632804249630469930492896",
+            "status": "conditional_conjecture_ansatz",
+            "formula": "m_p(q_0) * (q_0 - 1)^2 * (1 - q_0^{-4}) / 3  [conj:flavor-split-substrate-mass]"
+          },
+          "S07_substrate_skein_cayley": {
+            "value_MeV": "1.2916796460754241720956896876832752",
+            "status": "conditional_conjecture_ansatz",
+            "formula": "m_p(q_0) * X / (1 - X/2), X = (q_0 - 1)^2 * (1 - q_0^{-4}) / 3"
+          },
+          "S08_Jackson_qinv2_E0_twr_plus_me": {
+            "value_MeV": "1.3072295479936129627571715764016714",
+            "status": "derived_operator_candidate",
+            "formula": "(1 - q_0^{-2}) * E_0^twr + m_e"
+          },
+          "S09_Jackson_qinv2_E0_ord0_plus_me": {
+            "value_MeV": "1.2994128021083423592057362255676095",
+            "status": "derived_operator_candidate",
+            "formula": "(1 - q_0^{-2}) * E_0^ord0 + m_e"
+          },
+          "S10_retired_counit_DeltaS_ord0_plus_me": {
+            "value_MeV": "1.2946447544307488374581770075818439",
+            "status": "retired_z_eq_1_counit_excluded_by_two_row_ruling",
+            "formula": "m_e * (q_0 + 1) * |q_0^2 - 2*q_0 - 1| / (2*q_0^3) + m_e"
+          }
+        },
+        "em_catalog_all_pairs_MeV": {
+          "E01_zero_connected_all_pairs": {
+            "value_MeV": "0.0",
+            "formula": "0  [connected Q_12+Q_23+Q_13 vanishes identically on V^3]"
+          },
+          "E02_me_qtrace_Qpair_raw": {
+            "value_MeV": "-0.056505861878469581500795963973207196",
+            "formula": "m_e * Delta t_raw(Q_12+Q_23+Q_13, V^3)"
+          },
+          "E03_E0twr_qtrace_Qpair_raw": {
+            "value_MeV": "-0.46747172374720434320443600492578688",
+            "formula": "E_0^twr * Delta t_raw(Q_12+Q_23+Q_13, V^3)"
+          },
+          "E04_alphaB_mp_Qpair_unweighted_div3": {
+            "value_MeV": "-2.2823000090811222389401838279218446",
+            "formula": "-alpha_EM^FormB(q_0) * m_p(q_0) * (1/3)  [whole-baryon Compton]"
+          },
+          "E05_alphaB_mp_constituent_div9": {
+            "value_MeV": "-0.76076666969370741298006127597394820",
+            "formula": "-alpha_EM^FormB(q_0) * (m_p(q_0)/3) * (1/3)  [constituent Compton 1/9]"
+          },
+          "E06_alphaB_mp_coherent_div6": {
+            "value_MeV": "-1.1411500045405611194700919139609223",
+            "formula": "-alpha_EM^FormB(q_0) * m_p(q_0) * (1/6)  [coherent self+pair 1/6]"
+          },
+          "E07_alphaB_mp_qtrace_Qpair_raw": {
+            "value_MeV": "-0.75712481740458991231545632082717608",
+            "formula": "alpha_EM^FormB(q_0) * m_p(q_0) * Delta t_raw(Q_12+Q_23+Q_13, V^3)"
+          },
+          "E08_alphaB_mp_qtrace_Qself_raw": {
+            "value_MeV": "-1.2842028983752762857051802742225742",
+            "formula": "alpha_EM^FormB(q_0) * m_p(q_0) * Delta t_raw(Q_1^2+Q_2^2+Q_3^2, V^3)"
+          },
+          "E09_alphaB_mp_Jackson_qinv2_div9": {
+            "value_MeV": "-0.61747910931035283675713164034124785",
+            "formula": "-alpha_EM^FormB(q_0) * m_p(q_0) * q_0^{-2} / 9  [Jackson bwd step]"
+          },
+          "E10_alphaB_mmu_Qpair_div3": {
+            "value_MeV": "-0.25700878548558648264271321893819750",
+            "formula": "-alpha_EM^FormB(q_0) * m_mu(q_0) * (1/3)"
+          },
+          "E11_hadron_line_2lnt_E0twr": {
+            "value_MeV": "-0.030849430159052930831925522563244036",
+            "formula": "(2 ln t) * E_0^twr * (Q_n^2 - Q_p^2) = -alpha_EM^FormB(q_0) * E_0^twr"
+          },
+          "E12_hadron_line_2lnt_me": {
+            "value_MeV": "-0.0037289392086089006722119458644350026",
+            "formula": "(2 ln t) * m_e * (Q_n^2 - Q_p^2) = -alpha_EM^FormB(q_0) * m_e"
+          }
+        },
+        "catalog_entropy": {
+          "N_strong": 10,
+          "N_em": 12,
+          "N_total": 120,
+          "log10_N_total_digits": "2.07918124604762",
+          "one_digit_net_ppm_threshold": "416.666666666667",
+          "any_cell_passes_1digit_bar": false
+        },
+        "top_10_all_rows": [
+          {
+            "strong_id": "S10_retired_counit_DeltaS_ord0_plus_me",
+            "strong_status": "retired_z_eq_1_counit_excluded_by_two_row_ruling",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29464475443074883745817700758",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29464475443074883745817700758",
+            "qbeta_pred_MeV": "0.783645803740748837458177007582",
+            "residual_MeV": "0.00131224443074883745817700758184",
+            "residual_ppm": "1014.62262844443418",
+            "sigma_exp": "2339.93833981195096",
+            "net_digits_after_entropy": "0.613484214422",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S07_substrate_skein_cayley",
+            "strong_status": "conditional_conjecture_ansatz",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29167964607542417209568968768",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29167964607542417209568968768",
+            "qbeta_pred_MeV": "0.780680695385424172095689687683",
+            "residual_MeV": "-0.00165286392457582790431031231672",
+            "residual_ppm": "-1277.98838411309084",
+            "sigma_exp": "-2947.31650367909542",
+            "net_digits_after_entropy": "0.513261851836",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29941280210834235920573622557",
+            "dm_em_MeV": "-0.00372893920860890067221194586444",
+            "dm_pred_MeV": "1.29568386289973345853352427970",
+            "qbeta_pred_MeV": "0.784684912209733458533524279703",
+            "residual_MeV": "0.00235135289973345853352427970317",
+            "residual_ppm": "1818.05752314496334",
+            "sigma_exp": "4192.83227391910201",
+            "net_digits_after_entropy": "0.360181138154",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S10_retired_counit_DeltaS_ord0_plus_me",
+            "strong_status": "retired_z_eq_1_counit_excluded_by_two_row_ruling",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29464475443074883745817700758",
+            "dm_em_MeV": "-0.00372893920860890067221194586444",
+            "dm_pred_MeV": "1.29091581522213993678596506172",
+            "qbeta_pred_MeV": "0.779916864532139936785965061717",
+            "residual_MeV": "-0.00241669477786006321403493828259",
+            "residual_ppm": "-1868.57962602367678",
+            "sigma_exp": "-4309.34712606178666",
+            "net_digits_after_entropy": "0.348277149062",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S06_substrate_skein_linear",
+            "strong_status": "conditional_conjecture_ansatz",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29079115696328042496304699305",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29079115696328042496304699305",
+            "qbeta_pred_MeV": "0.779792206273280424963046993049",
+            "residual_MeV": "-0.00254135303671957503695300695071",
+            "residual_ppm": "-1964.96493907786717",
+            "sigma_exp": "-4531.63242020711519",
+            "net_digits_after_entropy": "0.326433952636",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S07_substrate_skein_cayley",
+            "strong_status": "conditional_conjecture_ansatz",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29167964607542417209568968768",
+            "dm_em_MeV": "-0.00372893920860890067221194586444",
+            "dm_pred_MeV": "1.28795070686681527142347774182",
+            "qbeta_pred_MeV": "0.776951756176815271423477741819",
+            "residual_MeV": "-0.00538180313318472857652225818116",
+            "residual_ppm": "-4161.19063858120181",
+            "sigma_exp": "-9596.60196955283304",
+            "net_digits_after_entropy": "0.000571145502584",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29941280210834235920573622557",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29941280210834235920573622557",
+            "qbeta_pred_MeV": "0.788413851418342359205736225568",
+            "residual_MeV": "0.00608029210834235920573622556761",
+            "residual_ppm": "4701.25977761307431",
+            "sigma_exp": "10842.1177397928396",
+            "net_digits_after_entropy": "-0.0524254913825",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S06_substrate_skein_linear",
+            "strong_status": "conditional_conjecture_ansatz",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29079115696328042496304699305",
+            "dm_em_MeV": "-0.00372893920860890067221194586444",
+            "dm_pred_MeV": "1.28706221775467152429083504718",
+            "qbeta_pred_MeV": "0.776063267064671524290835047185",
+            "residual_MeV": "-0.00627029224532847570916495281515",
+            "residual_ppm": "-4848.16719354597814",
+            "sigma_exp": "-11180.9178860808528",
+            "net_digits_after_entropy": "-0.0657888301764",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.30722954799361296275717157640",
+            "dm_em_MeV": "-0.00372893920860890067221194586444",
+            "dm_pred_MeV": "1.30350060878500406208495963054",
+            "qbeta_pred_MeV": "0.792501658095004062084959630537",
+            "residual_MeV": "0.0101680987850040620849596305372",
+            "residual_ppm": "7861.93705515379188",
+            "sigma_exp": "18131.3203794272602",
+            "net_digits_after_entropy": "-0.275740804128",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.30722954799361296275717157640",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.30722954799361296275717157640",
+            "qbeta_pred_MeV": "0.796230597303612962757171576402",
+            "residual_MeV": "0.0138970379936129627571715764017",
+            "residual_ppm": "10745.1393096219028",
+            "sigma_exp": "24780.6058453009979",
+            "net_digits_after_entropy": "-0.411423292159",
+            "passes_1digit_entropy_bar": false
+          }
+        ],
+        "top_10_first_principles_rows": [
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.29941280210834235920573622557",
+            "dm_em_MeV": "-0.00372893920860890067221194586444",
+            "dm_pred_MeV": "1.29568386289973345853352427970",
+            "qbeta_pred_MeV": "0.784684912209733458533524279703",
+            "residual_MeV": "0.00235135289973345853352427970317",
+            "residual_ppm": "1818.05752314496334",
+            "sigma_exp": "4192.83227391910201",
+            "net_digits_after_entropy": "0.360181138154",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.29941280210834235920573622557",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.29941280210834235920573622557",
+            "qbeta_pred_MeV": "0.788413851418342359205736225568",
+            "residual_MeV": "0.00608029210834235920573622556761",
+            "residual_ppm": "4701.25977761307431",
+            "sigma_exp": "10842.1177397928396",
+            "net_digits_after_entropy": "-0.0524254913825",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E12_hadron_line_2lnt_me",
+            "dm_strong_MeV": "1.30722954799361296275717157640",
+            "dm_em_MeV": "-0.00372893920860890067221194586444",
+            "dm_pred_MeV": "1.30350060878500406208495963054",
+            "qbeta_pred_MeV": "0.792501658095004062084959630537",
+            "residual_MeV": "0.0101680987850040620849596305372",
+            "residual_ppm": "7861.93705515379188",
+            "sigma_exp": "18131.3203794272602",
+            "net_digits_after_entropy": "-0.275740804128",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E01_zero_connected_all_pairs",
+            "dm_strong_MeV": "1.30722954799361296275717157640",
+            "dm_em_MeV": "0.0",
+            "dm_pred_MeV": "1.30722954799361296275717157640",
+            "qbeta_pred_MeV": "0.796230597303612962757171576402",
+            "residual_MeV": "0.0138970379936129627571715764017",
+            "residual_ppm": "10745.1393096219028",
+            "sigma_exp": "24780.6058453009979",
+            "net_digits_after_entropy": "-0.411423292159",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E11_hadron_line_2lnt_E0twr",
+            "dm_strong_MeV": "1.30722954799361296275717157640",
+            "dm_em_MeV": "-0.0308494301590529308319255225632",
+            "dm_pred_MeV": "1.27638011783456003192524605384",
+            "qbeta_pred_MeV": "0.765381167144560031925246053838",
+            "residual_MeV": "-0.0169523921654399680747539461616",
+            "residual_ppm": "-13107.5280597717041",
+            "sigma_exp": "-30228.7831824169206",
+            "net_digits_after_entropy": "-0.497732037809",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E11_hadron_line_2lnt_E0twr",
+            "dm_strong_MeV": "1.29941280210834235920573622557",
+            "dm_em_MeV": "-0.0308494301590529308319255225632",
+            "dm_pred_MeV": "1.26856337194928942837381070300",
+            "qbeta_pred_MeV": "0.757564421259289428373810703004",
+            "residual_MeV": "-0.0247691380507105716261892969956",
+            "residual_ppm": "-19151.4075917805326",
+            "sigma_exp": "-44167.2712879250788",
+            "net_digits_after_entropy": "-0.662411941002",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S08_Jackson_qinv2_E0_twr_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E02_me_qtrace_Qpair_raw",
+            "dm_strong_MeV": "1.30722954799361296275717157640",
+            "dm_em_MeV": "-0.0565058618784695815007959639732",
+            "dm_pred_MeV": "1.25072368611514338125637561243",
+            "qbeta_pred_MeV": "0.739724735425143381256375612428",
+            "residual_MeV": "-0.0426088238848566187436243875715",
+            "residual_ppm": "-32944.9878939922563",
+            "sigma_exp": "-75978.2387230829000",
+            "net_digits_after_entropy": "-0.898000594009",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S09_Jackson_qinv2_E0_ord0_plus_me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E02_me_qtrace_Qpair_raw",
+            "dm_strong_MeV": "1.29941280210834235920573622557",
+            "dm_em_MeV": "-0.0565058618784695815007959639732",
+            "dm_pred_MeV": "1.24290694022987277770494026159",
+            "qbeta_pred_MeV": "0.731907989539872777704940261594",
+            "residual_MeV": "-0.0504255697701272222950597384056",
+            "residual_ppm": "-38988.8674260010848",
+            "sigma_exp": "-89916.7268285910582",
+            "net_digits_after_entropy": "-0.971151861414",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S04_V3_twr_plus_me_plus_Legendre_12me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E07_alphaB_mp_qtrace_Qpair_raw",
+            "dm_strong_MeV": "1.99136979530551889874079861780",
+            "dm_em_MeV": "-0.757124817404589912315456320827",
+            "dm_pred_MeV": "1.23424497790092898642534229697",
+            "qbeta_pred_MeV": "0.723246027210928986425342296974",
+            "residual_MeV": "-0.0590875320990710135746577030259",
+            "residual_ppm": "-45686.2652428577811",
+            "sigma_exp": "-105362.368872532613",
+            "net_digits_after_entropy": "-1.03999689855",
+            "passes_1digit_entropy_bar": false
+          },
+          {
+            "strong_id": "S04_V3_twr_plus_me_plus_Legendre_12me",
+            "strong_status": "derived_operator_candidate",
+            "em_id": "E05_alphaB_mp_constituent_div9",
+            "dm_strong_MeV": "1.99136979530551889874079861780",
+            "dm_em_MeV": "-0.760766669693707412980061275974",
+            "dm_pred_MeV": "1.23060312561181148576073734183",
+            "qbeta_pred_MeV": "0.719604174921811485760737341827",
+            "residual_MeV": "-0.0627293843881885142392626581726",
+            "residual_ppm": "-48502.1322074309523",
+            "sigma_exp": "-111856.364655296202",
+            "net_digits_after_entropy": "-1.06597207280",
+            "passes_1digit_entropy_bar": false
+          }
+        ],
+        "cottingham_scale_pair_S04_E07": {
+          "strong_id": "S04_V3_twr_plus_me_plus_Legendre_12me",
+          "strong_status": "derived_operator_candidate",
+          "em_id": "E07_alphaB_mp_qtrace_Qpair_raw",
+          "dm_strong_MeV": "1.99136979530551889874079861780",
+          "dm_em_MeV": "-0.757124817404589912315456320827",
+          "dm_pred_MeV": "1.23424497790092898642534229697",
+          "qbeta_pred_MeV": "0.723246027210928986425342296974",
+          "residual_MeV": "-0.0590875320990710135746577030259",
+          "residual_ppm": "-45686.2652428577811",
+          "sigma_exp": "-105362.368872532613",
+          "net_digits_after_entropy": "-1.03999689855",
+          "passes_1digit_entropy_bar": false
+        },
+        "cottingham_scale_pair_S04_E05": {
+          "strong_id": "S04_V3_twr_plus_me_plus_Legendre_12me",
+          "strong_status": "derived_operator_candidate",
+          "em_id": "E05_alphaB_mp_constituent_div9",
+          "dm_strong_MeV": "1.99136979530551889874079861780",
+          "dm_em_MeV": "-0.760766669693707412980061275974",
+          "dm_pred_MeV": "1.23060312561181148576073734183",
+          "qbeta_pred_MeV": "0.719604174921811485760737341827",
+          "residual_MeV": "-0.0627293843881885142392626581726",
+          "residual_ppm": "-48502.1322074309523",
+          "sigma_exp": "-111856.364655296202",
+          "net_digits_after_entropy": "-1.06597207280",
+          "passes_1digit_entropy_bar": false
+        }
+      },
+      "cross_anchor_rel_shift_scored_dm_np": "7.5949744354985188172e-9",
+      "cross_anchor_rel_shift_all_pairs_em": "3.3933391300510881218e-7"
+    }
+  },
+  "q0Anchor": "comparison"
+}

@@ -93,6 +93,7 @@ export default chapter({
             "lp-dual-stability-confinement-reading",
             "lp-dual-stability-table-data",
             "algebraic-primality",
+            "algebraic-primality-remark",
             "n-equals-1-vacuous-magic",
             "n-equals-1-vacuous-magic-context",
             "n-equals-1-vacuous-magic-proof",
@@ -242,7 +243,10 @@ export default chapter({
       blocks: [
         "branching-qvalue-intro",
         "per-nucleon-channel-decomposition",
+        "per-nucleon-channel-decomposition-example",
+        "per-nucleon-channel-decomposition-remark",
         "spectator-normalization",
+        "spectator-normalization-remark",
         "branching-qvalue-factorization",
         "branching-qvalue-factorization-proof",
         "parity-regime-selection",

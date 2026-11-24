@@ -33,7 +33,7 @@ export default lemma({
     "combinatorial-lemma",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.PieceACornerRemoval.corner_removal",
+    ref: "qou:BraidKnotOctonion.PieceACornerRemoval.corner_removal",
   },
   computation: {
     engine: "python",

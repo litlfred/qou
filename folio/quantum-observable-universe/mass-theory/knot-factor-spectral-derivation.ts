@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Knot factor $a_K$ as a central Gram pairing",
   lean: {
-    ref: "qou:QOU.BraidKnot.knot_factor_spectral_form",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.knot_factor_spectral_form",
     validation: "not_checked",
   },
   // rem:gram-matrix-spectral-connection dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):

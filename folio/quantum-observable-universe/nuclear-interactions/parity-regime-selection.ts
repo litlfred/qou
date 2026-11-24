@@ -12,7 +12,7 @@ export default theorem({
     "q-value",
     "mass-number",
   ],
-  lean: { ref: "qou:QOU.ParticleInteractions.parity_regime_selection",
+  lean: { ref: "qou:QOU.Confinement.parity_regime_selection",
     validation: "not_checked",
   },
   uses: [

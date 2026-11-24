@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:vacuum-epsilon",
   title:
     "Infinitesimal vacuum: $\\mathrm{Geom}(\\bigcirc) = \\varepsilon$",
-  lean: { ref: "qou:QOU.AppendixSurreals.VacuumEpsilon", validation: "stub" },
+  lean: { ref: "qou:QOU.Observations.VacuumEpsilon", validation: "stub" },
   tags: [
     "tier:P",
     "surreal-numbers",

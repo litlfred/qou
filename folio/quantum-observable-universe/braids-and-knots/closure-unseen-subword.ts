@@ -6,7 +6,7 @@ export default proposition({
     "No closure distinguishes two elements exactly when they differ by a commutator; " +
     "closure is a Bell pairing",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.ClosureUnseen.unseen_iff",
+    ref: "qou:BraidKnotOctonion.ClosureUnseen.unseen_iff",
   },
   uses: ["def:hochschild-homology", "thm:jones-markov-trace"],
   cites: ["loday-1998", "kassel1995"],

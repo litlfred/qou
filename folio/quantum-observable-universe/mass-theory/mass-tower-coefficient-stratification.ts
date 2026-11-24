@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Mass-tower coefficients $(\\lambda_V, \\lambda_S, \\lambda_{\\mathrm{pair}}, \\alpha_k)$ as Wedderburn-block projections",
   lean: {
-    ref: "qou:QOU.BraidKnot.mass_tower_coefficient_stratification",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.mass_tower_coefficient_stratification",
     validation: "not_checked",
   },
   uses: [

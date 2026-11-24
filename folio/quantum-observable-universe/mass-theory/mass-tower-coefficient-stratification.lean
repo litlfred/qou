@@ -1,4 +1,4 @@
-import QOU.BraidKnot.PlancherelWeightBoundedness
+import HeckeTemperleyLieb.PlancherelWeightBoundedness
 
 
 /-!

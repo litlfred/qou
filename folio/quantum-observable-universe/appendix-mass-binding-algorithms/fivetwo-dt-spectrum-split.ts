@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:fivetwo-dt-spectrum-split",
   lean: {
-    ref: "qou:QOU.QBeta.FiveTwoDTSpectrumSplit.symmetric_scalar_blind_to_chirality",
+    ref: "qou:QOU.Nuclear.FiveTwoDTSpectrumSplit.symmetric_scalar_blind_to_chirality",
     validation: "not_checked",
   },
   title:

@@ -31,7 +31,7 @@ export default proposition({
     "kashiwara1991",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.CrystalRMatrix.seminormalDiag_of_le_neg_one",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.CrystalRMatrix.seminormalDiag_of_le_neg_one",
   },
   computation: {
     engine: "python",

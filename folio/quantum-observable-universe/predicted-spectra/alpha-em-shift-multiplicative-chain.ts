@@ -59,7 +59,7 @@ export default proposition({
     status: "verified",
     requires: ["mpmath", "sympy"],
   },
-  lean: { ref: "qou:QOU.Archimedean.AlphaEmShiftChain.alpha_em_shift_chain" },
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.AlphaEmShiftChain.alpha_em_shift_chain" },
   uses: ["prop:alpha-shift-torus-knot", "prop:em-coupling-projection"],
   tags: [
     "alpha-em",

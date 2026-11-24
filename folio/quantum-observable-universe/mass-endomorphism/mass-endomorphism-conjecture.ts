@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:mass-endomorphism",
   title: "Mass endomorphism conjecture",
   lean: {
-    ref: "qou:QOU.MassEndomorphism.MassEndomorphism",
+    ref: "qou:QOU.MassTheory.MassEndomorphism.MassEndomorphism",
     validation: "not_checked",
   },
   // conj:hecke-mass-trace and conj:brane-tower-z-habiro removed from

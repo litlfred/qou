@@ -1,4 +1,4 @@
-import QOU.BraidKnot.KnotIndexedConvolutionGrid
+import QOU.BraidsAndKnots.KnotIndexedConvolutionGrid
 
 namespace QOU.BraidKnot.KnotIndexedConvolutionGrid
 

@@ -11,7 +11,7 @@ export default proposition({
   label: "prop:jet-filtration-binding-extensive",
   title: "The jet-filtration binding is extensive (monotone in body order)",
   lean: {
-    ref: "qou:QOU.Mass.jetBinding_mono",
+    ref: "qou:QOU.MassTheory.JetFiltrationExtensive.jetBinding_mono",
     validation: "not_checked",
   },
   uses: [

@@ -1,4 +1,4 @@
-**1320** indexed entries across 7 categories.
+**1321** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -69,6 +69,7 @@
 | [def:categorical-dirac-operator](#def:categorical-dirac-operator) | Categorical Dirac operator | Ch 2 |
 | [def:categorical-fourier](#def:categorical-fourier) | Categorical Fourier transform | Ch 2 |
 | [def:categorical-hodge-star](#def:categorical-hodge-star) | Categorical Hodge star | Ch 1 |
+| [def:categorical-hamiltonian](#def:categorical-hamiltonian) | Categorical Hamiltonian and phase-space Legendre transform | Ch 2 |
 | [def:categorical-instanton](#def:categorical-instanton) | Categorical instanton | Ch 2 |
 | [def:categorical-jet](#def:categorical-jet) | Categorical jet object | Ch 1 |
 | [def:categorical-lagrangian](#def:categorical-lagrangian) | Categorical Lagrangian | Ch 2 |
@@ -113,7 +114,6 @@
 | [def:electron-knot](#def:electron-knot) | Electron | Ch 14 |
 | [def:electron-shell-braid-capacity](#def:electron-shell-braid-capacity) | Electron shell as braid bonding capacity | Ch 16 |
 | [def:embeddable-knot-operator](#def:embeddable-knot-operator) | Embeddable knot operator with geometric overlap weight | Ch 16 |
-| [def:mass-energy](#def:mass-energy) | Energy of a braid class ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$) | Ch 20 |
 | [def:exceptional-divisor](#def:exceptional-divisor) | Exceptional divisor at $p$ | Ch 2 |
 | [def:fermion-boson-decomposition](#def:fermion-boson-decomposition) | Fermion--Boson decomposition | Ch 2 |
 | [def:hadron-fibre-embedding](#def:hadron-fibre-embedding) | Fibre-compatible hadron embedding | Ch 7 |
@@ -350,7 +350,7 @@
 | [prop:qbeta-c8-c10-silver-rationals](#prop:qbeta-c8-c10-silver-rationals) | $\mathfrak{Q}_\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2 | Ch 11 |
 | [prop:q-beta-categorical-precision-ladder](#prop:q-beta-categorical-precision-ladder) | $\mathfrak{Q}_\beta$ categorical-derivation precision ladder | Ch 11 |
 | [prop:q-beta-cos-resummation](#prop:q-beta-cos-resummation) | $\mathfrak{Q}_\beta$ cos-resummation at canonical Markov weight: $\mathfrak{Q}_\beta^{\cos} = \mathfrak{Q}_\beta^{\mathrm{base}} \cdot \cos((z-1)h/2)$ (conditional on the transfer-matrix eigenphase identification) | Ch 12 |
-| [prop:q-beta-bar-even-kernel-typeclass](#prop:q-beta-bar-even-kernel-typeclass) | $\mathfrak{Q}_\beta$ formalize-first unified typeclass — `BarEvenKernel` bundles all four $\S 4$ invariants (bar-even, radius-of-convergence, q=1 shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt | Ch 27 |
+| [prop:q-beta-bar-even-kernel-typeclass](#prop:q-beta-bar-even-kernel-typeclass) | $\mathfrak{Q}_\beta$ formalize-first unified typeclass — bundling the four §4 invariants (bar-even, radius-of-convergence, $q=1$ shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt | Ch 27 |
 | [prop:q-beta-bar-even-kernel-invariant](#prop:q-beta-bar-even-kernel-invariant) | $\mathfrak{Q}_\beta$ precision-ladder $\bar{}$-even discriminant — the kernel $R(q,\xi)$ produces a clean integer-$u$ ladder $\prod_k(1+c_k\,u^k)$ if and only if $R$ is even under $t \mapsto -t$ ($t = q-1$); $(1-u^2)$ at N=2 is the prototype | Ch 11 |
 | [prop:q-beta-q-eq-one-shadow-gate](#prop:q-beta-q-eq-one-shadow-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \to -1$ (the structural N=2 anchor) and $c_3 \to J_{\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED | Ch 11 |
 | [conj:q-beta-spectral-bridge](#conj:q-beta-spectral-bridge) | $\mathfrak{Q}_\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases | Ch 12 |
@@ -669,8 +669,9 @@
 | [prop:wedderburn-trace-identity](#prop:wedderburn-trace-identity) | Markov-trace normalization for $H_n(q)$ | Ch 11 |
 | [prop:markov-trace-frobenius-selection](#prop:markov-trace-frobenius-selection) | Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy | Ch 11 |
 | [prop:photon-threading-mass](#prop:photon-threading-mass) | Mass as photon threading cost | Ch 20 |
+| [prop:mass-energy](#prop:mass-energy) | Mass--energy equivalence from the causal-cone Legendre transform ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$) | Ch 20 |
 | [prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price) | Mass-formula coefficients as shadow prices of the Frobenius positivity constraints | Ch 11 |
-| [prop:mass-side-kernel-formalize-first-gates](#prop:mass-side-kernel-formalize-first-gates) | Mass-side $\S 4$ formalize-first gates as parametric Lean classes — `MassSideKernel` bundles anchor-stability, q=1 shadow (open gap), and direction sanity for any `linking_weight` candidate $w(q)$; mirrors the $\mathfrak{Q}_\beta$ `BarEvenKernel` typeclass | Ch 27 |
+| [prop:mass-side-kernel-formalize-first-gates](#prop:mass-side-kernel-formalize-first-gates) | Mass-side $\S 4$ formalize-first gates as parametric Lean classes — anchor-stability, $q=1$ shadow, and direction sanity for linking-weight candidates $w(q)$ | Ch 27 |
 | [prop:mass-tower-coefficient-stratification](#prop:mass-tower-coefficient-stratification) | Mass-tower coefficients $(\lambda_V, \lambda_S, \lambda_{\mathrm{pair}}, \alpha_k)$ as Wedderburn-block projections | Ch 11 |
 | [prop:double-slit-massive-pattern](#prop:double-slit-massive-pattern) | Massive-particle interference pattern | Ch 15 |
 | [prop:meridian-holonomy-boost](#prop:meridian-holonomy-boost) | Meridian holonomy is a boost: $\mathrm{barEven}(q)^2 - \mathrm{barOdd}(q)^2 = 4$ | Ch 5 |

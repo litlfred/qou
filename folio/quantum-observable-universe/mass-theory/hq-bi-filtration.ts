@@ -5,7 +5,7 @@ export default definition({
   title:
     "Knot-indexed bi-filtration $\\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.HqBiFiltration.BiFiltration",
+    ref: "qou:QOU.BringsSurface.HqBiFiltration.BiFiltration",
     validation: "not_checked",
   },
   uses: [

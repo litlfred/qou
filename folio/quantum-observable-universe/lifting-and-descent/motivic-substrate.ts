@@ -15,7 +15,7 @@ export default definition({
   uses: ["def:frobenius-hopf-substrate", "def:adelic-substrate"],
   cites: ["kontsevich1995", "denef-loeser2001", "tate1967"],
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
+    ref: "qou:QOU.BringsSurface.MotivicSubstrate",
     validation: "not_checked",
   },
   authorNotes: [

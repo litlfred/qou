@@ -19,7 +19,7 @@ export default proposition({
     "groebner-basis",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.sequential_build_always_normal_form",
+    ref: "qou:QOU.MassTheory.Archimedean.sequential_build_always_normal_form",
     validation: "not_checked",
   },
   uses: ["prop:skein-polynomial-transfer-matrix"],

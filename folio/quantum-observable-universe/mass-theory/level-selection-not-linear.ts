@@ -14,7 +14,7 @@ export default proposition({
   label: "prop:level-selection-not-linear",
   title: "Linear level-selection is excluded (exponential beats linear)",
   lean: {
-    ref: "qou:QOU.Mass.LevelSelection.no_linear_selection",
+    ref: "qou:QOU.MassTheory.LevelSelectionLogarithmic.no_linear_selection",
     validation: "not_checked",
   },
   uses: ["prop:tower-geometric-lower-bound"],

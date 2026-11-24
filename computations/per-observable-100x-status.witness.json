@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-22T15:06:19.540051+00:00",
-  "commitSha": "5ff5816dee7d6c44e6fe19f391401f072171f70f",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T16:16:37.496832+00:00",
+  "commitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "0b9457863ae7",
-  "scriptCommitSha": "b4b480205a01fd50ebdad7e2580428b6bbcf66db",
+  "scriptHash": "d863ff9da980",
+  "scriptCommitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,15 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "8094096a28948d48"
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -389,7 +388,7 @@
         "miss_factor": "238.3",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
-        "note": "CANONICAL FORM OPEN (qou-aemx): see `arms` for the CS tower and the additive A/B arms; compute consumers use the CS tower. The additive form rests on an unproved postulate, the [10]_q coefficient, the one-loop normalisation and c (docs/audits/2026-11-21-alpha-em-which-form-is-canonical.md); of the three classes once listed here, two are settled on main and the third is not load-bearing. The Schwinger factor is NOT FITTED and this is measured, not asserted: parametrising it as (1 - c*h^2*alpha), the c that hits CODATA exactly is 0.7312340272 and the 1-sigma window is [0.61846303, 0.84400502], so the published c = 1 lies OUTSIDE it, at 2.383 sigma -- a fitter would have taken 0.731. But it is NOT DERIVED either: the exact vertex-moment check (docs/audits/2026-07-14-alpha-em-phase3-schwinger-coefficient-exact-check.md) gives +0.1281 against the claimed -h^2 = -0.0437, wrong order and wrong sign, ratio -2.93, and recommends the tier 'structurally-motivated / empirically-anchored'. That is the honest label. Second-best scoreable row: 238x, against 970x (m_mu) and 152-177x (the Q_beta trio). NOTE the residual's SIGN depends on the CODATA edition (the 2018->2022 shift is 2.2x the residual); the reference is read from the registry so the edition is not a choice.",
+        "note": "CANONICAL FORM OPEN (qou-aemx): see `arms` for the CS tower, 8x8 Seifert CS, Form A, Form B, and conditional two-loop Bloch-B_3 Form C arms. 1-LOOP SCHWINGER FACTOR NOW DERIVED (#9360, `0 sorry`): `QOU.Archimedean.EmFermionLoopFourTopology` proves symbolically over Q(q) that summing all 4 signed chiral 2-vertex crossing topologies (eps1, eps2) in {+,-}^2 on U_q(sl_2) `EmFermionLoop` cancels the +/-h*m(sigma_2) chiral tadpoles identically (which caused the 1-topology 2026-07-14 check to give +0.1281) and yields -1 * h^2, making `(1 - h^2 alpha)` in Form B derived (`137.03599912695`, `-0.3652 ppb`, `-2.383 sigma`, 238.3x L2 100x bar), with the Bring zero-mode classes (`ArchimedeanLimit`, `BlochSuslinUniqueness`, `BringZeroModeBlochClass`) and un-averaged U(1) skein vertex normalization carried as named `§3b-cond` inputs. Conditional two-loop Bloch-B_3(C) Form C (`QOU.Archimedean.AlphaEmTwoLoopBlochSchwinger`, #9360, `§3b-cond AlphaEmTwoLoopBlochSchwingerClass`) evaluates c2_bloch_b3 = H*(zeta(3) - Li_3(q^-2))/(8*pi) to `137.035999173696...` (`-0.0241 ppb`, `-0.157 sigma`, within 1 sigma_exp; 15.7x L2 bar). CODATA 2022 reference read from `qou_substrate.codata`.",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "alpha-em-schwinger-ladder.witness.json :: data.ladder_proton.form_B_alpha_inv (cubic form with the derived Schwinger factor (1-h^2 alpha), proton pin)",
@@ -402,7 +401,7 @@
             "err_ppb": "467.6",
             "target_100x_ppb": "0.001532",
             "miss_factor": "3.052e+5",
-            "source_witness": "meson_em_sinh_closed_form.alpha_em_inv_derived (exact resummation); the form every alpha consumer in compute uses"
+            "source_witness": "meson_em_sinh_closed_form.alpha_em_inv_derived (legacy Witten 2x2 CS resummation)"
           },
           "additive_A_c0": {
             "pred_MeV": "137.035999313",
@@ -416,7 +415,14 @@
             "err_ppb": "0.3652",
             "target_100x_ppb": "0.001532",
             "miss_factor": "238.3",
-            "source_witness": "alpha-em-schwinger-ladder.witness.json :: form_B_alpha_inv (c = 1 is a choice)"
+            "source_witness": "alpha-em-schwinger-ladder.witness.json :: form_B_alpha_inv (4-topology EmFermionLoopFourTopology -1*h^2 proved, #9360)"
+          },
+          "additive_C_bloch_b3": {
+            "pred_MeV": "137.035999174",
+            "err_ppb": "0.02411",
+            "target_100x_ppb": "0.001532",
+            "miss_factor": "15.73",
+            "source_witness": "alpha-em-schwinger-ladder.witness.json :: form_C_alpha_inv (conditional §3b-cond AlphaEmTwoLoopBlochSchwingerClass, #9360)"
           }
         },
         "headline_arm": "additive_B_c1",
@@ -471,13 +477,13 @@
       {
         "obs": "m_K/m_pi",
         "role": "validation (meson ratio)",
-        "pred_MeV": "3.53711862102",
+        "pred_MeV": "3.53711862085",
         "codata_MeV": "3.53711843895",
         "sigma_exp_MeV": "9.32546e-5",
-        "err_ppb": "51.48",
+        "err_ppb": "51.43",
         "sigma_exp_ppb": "2.636e+4",
         "target_100x_ppb": "263.6",
-        "miss_factor": "0.1952",
+        "miss_factor": "0.1951",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": null,
@@ -488,9 +494,9 @@
         "compute_truncation_ppb": "2.827e-52",
         "compute_output_dps": 60,
         "one_term": {
-          "pred_MeV": "3.53711862102",
-          "err_ppb": "51.48",
-          "miss_factor": "0.1952",
+          "pred_MeV": "3.53711862085",
+          "err_ppb": "51.43",
+          "miss_factor": "0.1951",
           "beats_1x_experimental": true,
           "beats_100x_experimental": true
         },
@@ -505,13 +511,13 @@
         "two_term_alternatives_not_scored": {
           "q0_two_term_adjacent_derived_weighting": {
             "q0_comparison_pin": "1.10997858782912318193491643900",
-            "pred": "3.5371186274146212699",
-            "err_ppb": "53.2829"
+            "pred": "3.5371186272467449191",
+            "err_ppb": "53.2354"
           },
           "q0_two_term_adjacent_plain_weighting_8554": {
             "q0_comparison_pin": "1.10997859515088599908756520360",
-            "pred": "3.5371186366331864186",
-            "err_ppb": "55.8891"
+            "pred": "3.5371186364653777360",
+            "err_ppb": "55.8417"
           }
         }
       }
@@ -684,11 +690,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "0b89a5f78fa8110ea9a14bc25361a234b3ad64b92ea20296559f1afd25b968d6",
-        "size_bytes": 11520,
-        "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
-        "scriptCommitSha": "945b2edf2fb8d11552720c7e2aa3a1944797dfe4",
-        "computedAt": "2026-08-29T09:30:54.473879+00:00"
+        "sha256": "815cac817eff0309894e6332f0a53fd7c55fc9c98bae71dc3b22dc71b065b7b2",
+        "size_bytes": 12331,
+        "commitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "scriptCommitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "computedAt": "2026-11-24T09:34:49.561308+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
@@ -708,11 +714,11 @@
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "0b754e3a300e7a1640eef296a2f7e565fc1f5773fa328af29f5247a5e154e27d",
-        "size_bytes": 4675,
-        "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
-        "scriptCommitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
-        "computedAt": "2026-11-20T17:25:27.522062+00:00"
+        "sha256": "7b198a3577e88b39f0d877d0080fa3c717f3732c7d57c2be99f08f63320e9248",
+        "size_bytes": 5235,
+        "commitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "scriptCommitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "computedAt": "2026-11-24T09:34:49.944728+00:00"
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",
@@ -721,6 +727,14 @@
         "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
         "scriptCommitSha": "de0a31477159c7d0667f1ba8b5fe62ddd9223e78",
         "computedAt": "2026-08-29T10:52:02.091600+00:00"
+      },
+      {
+        "path": "alpha-em-schwinger-ladder.witness.json",
+        "sha256": "ea2dde2dea79436a409297d04f4abb40fbc0e9c94d321e5d0ec685bc54fd03bc",
+        "size_bytes": 7198,
+        "commitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
+        "scriptCommitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
+        "computedAt": "2026-11-24T16:16:04.491940+00:00"
       }
     ]
   },

@@ -9,7 +9,7 @@ export default conjecture({
     // The two secondary formalisation artifacts —
     // `QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly` and
     // `QOU.QBeta.StageC.StageCSigma3Lift` — are named in the authorNotes below.
-    ref: "qou:QOU.MassEndomorphism.ComplexVolumeMatch",
+    ref: "qou:QOU.MassTheory.MassEndomorphism.ComplexVolumeMatch",
     validation: "not_checked",
   },
   uses: [

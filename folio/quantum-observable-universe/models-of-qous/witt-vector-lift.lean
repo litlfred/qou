@@ -1,4 +1,4 @@
-import QOU.FormalGroups.FormalGroupLaw
+import QOU.LiftingDescent.FormalGroupLaw
 
 /-!
 # QOU.WittVectorLift

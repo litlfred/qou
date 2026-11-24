@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Empirical double-magic isotopes satisfy $|\\Delta i| \\leq 1$ across Bring shell indices",
   lean: {
-    ref: "qou:QOU.Interactions.DoubleMagicDeltaI.DeltaIBoundConjecture",
+    ref: "qou:QOU.Confinement.DoubleMagicDeltaI.DeltaIBoundConjecture",
     validation: "not_checked",
   },
   uses: [

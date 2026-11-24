@@ -11,7 +11,7 @@ $$
 \;=\; 1 - u_{\text{ladder}}^2.
 $$
 
-This is a one-line `ring` identity in any commutative ring containing
+This is a polynomial identity in any commutative ring containing
 $b$ and $\hbar_q$. Comparing to the ladder ansatz
 $1 + c_2 \cdot u_{\text{ladder}}^2 + O(u_{\text{ladder}}^3)$ at order $u_{\text{ladder}}^2$
 forces $c_2 = -1$. $\blacksquare$

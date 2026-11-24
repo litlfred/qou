@@ -5,7 +5,7 @@ export default remark({
   title:
     "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(d)$ formalize-first gate — any candidate Habiro element $F(q_0)$ must have magnitude consistent with the target observable's order of magnitude; the $z(q_0) \\approx 0.6127 < 1$ direction obstruction is the canonical refutation precedent",
   lean: {
-    ref: "qou:QOU.QBeta.DirectionSanityGate.qbeta_direction_sanity_magnitude_match",
+    ref: "qou:QOU.Nuclear.QBeta.DirectionSanityGate.qbeta_direction_sanity_magnitude_match",
     validation: "not_checked",
   },
   interprets: "prop:q-beta-q-eq-one-shadow-gate",

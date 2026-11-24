@@ -11,7 +11,7 @@ export default proposition({
     "independence",
     "strong-force",
   ],
-  lean: { ref: "qou:QOU.Interactions.confinementUniversality",
+  lean: { ref: "qou:QOU.Confinement.confinementUniversality",
     validation: "not_checked",
   },
   uses: ["def:quark-antiquark-production", "def:photon"],

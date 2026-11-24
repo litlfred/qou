@@ -1,5 +1,5 @@
-import QOU.MathlibExt.MarkovTrace
-import QOU.Machinery.HeckeH3AlgebraInstance
+import QOU.Core.MarkovTrace
+import HeckeTemperleyLieb.HeckeH3AlgebraInstance
 
 /-!
 # QOU.BraidsAndKnots.TFromTraceCyclicity — time reversal as word reversal

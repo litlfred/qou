@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-chain-convergence-mechanisms",
   lean: {
-    ref: "qou:QOU.BraidKnot.categorical_chain_convergence_mechanisms",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.categorical_chain_convergence_mechanisms",
     validation: "not_checked",
   },
   title:

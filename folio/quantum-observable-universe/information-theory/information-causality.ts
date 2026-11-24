@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:mass-energy",
+  interprets: "prop:mass-energy",
   label: "rem:information-causality",
   title: "Information causality and the light cone",
   tags: [
@@ -12,7 +12,7 @@ export default remark({
     "margolus-levitin",
     "bekenstein-bound",
   ],
-  uses: ["def:mass-energy"],
+  uses: ["prop:mass-energy"],
   cites: [
     "margolus1998",
     "lloyd2000",

@@ -21,7 +21,7 @@ export default remark({
   // that names ℘_q — this block's headline is a Definition, so the def is the
   // right target. The block's differential equation is the separate
   // `weierstrass_diff_eq` in the same module.
-  lean: { ref: "qou:QOU.Archimedean.WeierstrassProjection.weierstrassProjection",
+  lean: { ref: "qou:QOU.MassTheory.WeierstrassProjection.weierstrassProjection",
     validation: "not_checked",
   },
   uses: [

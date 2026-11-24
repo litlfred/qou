@@ -1,6 +1,6 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.SpecificLimits.Normed
-import QOU.Mass.ConstantKernelGrowthBound
+import QOU.MassTheory.ConstantKernelGrowthBound
 
 /-!
 # Factorial growth is super-exponential — the bridge #6101 withdrew

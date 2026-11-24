@@ -14,7 +14,7 @@ export default proposition({
     "lp-duality",
   ],
   lean: {
-    ref: "qou:QOU.Interactions.lp_achieves_zero_trace",
+    ref: "qou:QOU.Confinement.Interactions.lp_achieves_zero_trace",
     validation: "not_checked",
   },
   uses: ["prop:confinement-operator-selection"],

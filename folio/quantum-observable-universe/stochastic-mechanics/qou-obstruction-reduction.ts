@@ -4,7 +4,7 @@ export default theorem({
   label: "thm:qou-obstruction-reduction",
   title:
     "Conditional on the Wigner-axiom inputs: the obstruction is a single integer $\\chi_A$",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction",
+  lean: { ref: "qou:QOU.BringsSurface.qou_obstruction_reduction",
     validation: "not_checked",
   },
   uses: [

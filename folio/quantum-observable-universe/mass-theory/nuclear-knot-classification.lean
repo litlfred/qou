@@ -8,8 +8,8 @@
   Ref: [leitner2026] §5.8, conj:nuclear-knot-classification
 -/
 
-import QOU.Torsion.HeckeMassElement
-import QOU.Torsion.TopologicalMass
+import HeckeTemperleyLieb.HeckeMassElement
+import QOU.LiftingDescent.TopologicalMass
 
 namespace QOU.BraidKnot
 

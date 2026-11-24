@@ -6,7 +6,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 /-!
 # QOU.FluidDynamics.surreal_enstrophy_finite_modes — the surreal enstrophy at

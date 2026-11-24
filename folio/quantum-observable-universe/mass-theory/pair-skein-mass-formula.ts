@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:pair-skein-mass-formula",
-  lean: { ref: "qou:QOU.HadronicMass.pair_skein_mass_formula",
+  lean: { ref: "qou:QOU.MassTheory.pair_skein_mass_formula",
     validation: "not_checked",
   },
   title: "Pair Skein mass and crossing-by-crossing recursion",

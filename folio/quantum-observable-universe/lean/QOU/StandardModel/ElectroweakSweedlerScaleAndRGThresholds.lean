@@ -1,10 +1,10 @@
 import Mathlib.Tactic
-import QOU.QBeta.SweedlerWeakDegreeCount
-import QOU.LiftingDescent.SweedlerFrobenius
+import QOU.Nuclear.SweedlerWeakDegreeCount
+import TwistedFrobeniusHopf.SweedlerFrobenius
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.StandardModel.ElectroweakVevGaps
-import QOU.BraidKnot.HiggsCategoricalMassFormula
-import QOU.QuantumObservableUniverses.CategoricalHiggsIdempotent
+import QOU.BraidsAndKnots.HiggsCategoricalMassFormula
+import QOU.Core.CategoricalHiggsIdempotent
 
 /-!
 # QOU.StandardModel.ElectroweakSweedlerScaleAndRGThresholds — Sweedler `(q² - 1)^k` EWSB Scale

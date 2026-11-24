@@ -4,7 +4,7 @@ export default definition({
   label: "def:algebraic-primality",
   title: "Algebraic primality of a strand count",
   lean: {
-    ref: "qou:QOU.Interactions.AlgebraicPrimality.IsAlgebraicallyPrime",
+    ref: "qou:QOU.Confinement.AlgebraicPrimality.IsAlgebraicallyPrime",
     validation: "not_checked",
   },
   uses: [],

@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:two-filtration-bridge",
   title:
     "Two-filtration bridge: iterated-integral depth $\\leftrightarrow$ partition-cellular GB-depth via $e_\\lambda$",
-  lean: { ref: "qou:QOU.BraidKnot.TwoFiltrationBridge", validation: "stub" },
+  lean: { ref: "qou:BraidKnotOctonion.TwoFiltrationBridge", validation: "stub" },
   uses: ["prop:explicit-central-idempotent", "prop:cellular-depth-filtration"],
   cites: ["bloch2000"],
   tags: [

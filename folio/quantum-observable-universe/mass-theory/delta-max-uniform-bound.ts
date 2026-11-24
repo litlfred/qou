@@ -13,7 +13,7 @@ export default proposition({
     "legacy-phi-q-tower",
   ],
   lean: {
-    ref: "qou:QOU.MassEndomorphism.delta_max_uniform_bound",
+    ref: "qou:QOU.MassTheory.MassEndomorphism.delta_max_uniform_bound",
     validation: "not_checked",
   },
   uses: [

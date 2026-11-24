@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Set.Basic
-import QOU.Common.MagicNumbers
+import MathlibExt.MagicNumbers
 
 /-!
 # QOU.LiftingDescent.HomologicalCondensation — magic-number condensation

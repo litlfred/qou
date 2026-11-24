@@ -5,7 +5,7 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
-import QOU.KnotTheory
+import QOU.BraidsAndKnots.KnotTheory
 
 
 /-!

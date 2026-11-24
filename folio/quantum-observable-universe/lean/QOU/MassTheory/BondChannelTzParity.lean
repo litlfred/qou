@@ -1,5 +1,5 @@
 import QOU.MassTheory.DeuteronTwoBodyKernel
-import QOU.MathlibExt.QIntegerFactorial
+import HeckeTemperleyLieb.QIntegerFactorial
 
 /-!
 # The bond channel is odd in `T_z`; the multiplet channel is even

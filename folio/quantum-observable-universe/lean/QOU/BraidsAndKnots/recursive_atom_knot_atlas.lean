@@ -1,15 +1,15 @@
-import QOU.BraidKnot.NucleusEmptySDPUniqueness
-import QOU.BraidKnot.AppliedHelium3Uniqueness
-import QOU.BraidKnot.AppliedHelium4Uniqueness
-import QOU.BraidKnot.AppliedDeuteronUniqueness
-import QOU.BraidKnot.AppliedTritiumUniqueness
-import QOU.BraidKnot.AppliedLithium6Uniqueness
-import QOU.BraidKnot.AppliedBeryllium9Uniqueness
-import QOU.BraidKnot.AppliedBoron11Uniqueness
-import QOU.BraidKnot.AppliedCarbon12Uniqueness
-import QOU.BraidKnot.AppliedNitrogen14Uniqueness
-import QOU.BraidKnot.AppliedOxygen16Uniqueness
-import QOU.BraidKnot.PeriodicTableUniqueness
+import QOU.BraidsAndKnots.NucleusEmptySDPUniqueness
+import QOU.BraidsAndKnots.AppliedHelium3Uniqueness
+import QOU.BraidsAndKnots.AppliedHelium4Uniqueness
+import QOU.BraidsAndKnots.AppliedDeuteronUniqueness
+import QOU.BraidsAndKnots.AppliedTritiumUniqueness
+import QOU.BraidsAndKnots.AppliedLithium6Uniqueness
+import QOU.BraidsAndKnots.AppliedBeryllium9Uniqueness
+import QOU.BraidsAndKnots.AppliedBoron11Uniqueness
+import QOU.BraidsAndKnots.AppliedCarbon12Uniqueness
+import QOU.BraidsAndKnots.AppliedNitrogen14Uniqueness
+import QOU.BraidsAndKnots.AppliedOxygen16Uniqueness
+import QOU.BraidsAndKnots.PeriodicTableUniqueness
 
 /-!
 # QOU.BraidsAndKnots.recursive_atom_knot_atlas — concrete consumer

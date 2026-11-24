@@ -2,8 +2,8 @@
 Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under Apache 2.0 license.
 -/
-import QOU.QBeta.WenzlWeightVanishing
-import QOU.BraidsAndKnots.FibreDimensionForcesTL
+import HeckeTemperleyLieb.WenzlWeightVanishing
+import BraidKnotOctonion.FibreDimensionForcesTL
 
 /-!
 # The mass channel's two-row cap, derived rather than posited

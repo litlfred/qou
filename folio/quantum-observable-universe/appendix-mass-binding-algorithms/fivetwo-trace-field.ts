@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:fivetwo-trace-field",
   lean: {
-    ref: "qou:QOU.QBeta.FiveTwo.disc_eq_neg_23",
+    ref: "qou:QOU.Nuclear.QBeta.FiveTwo.disc_eq_neg_23",
     validation: "not_checked",
   },
   title:

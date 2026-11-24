@@ -16,7 +16,7 @@ export default proposition({
   ],
   label: "prop:unstable-atom-decay-channel",
   title: "Uniqueness of the decay channel off the boundary variety",
-  lean: { ref: "qou:QOU.BraidKnot.UnstableAtom.decay_channel",
+  lean: { ref: "qou:BraidKnotOctonion.UnstableAtom.decay_channel",
     validation: "not_checked",
   },
   uses: ["def:unstable-atom", "prop:mass-coefficient-shadow-price"],

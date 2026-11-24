@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverse.SubstrateParameter
+import QOU.Core.SubstrateParameter
 
 /-!
 # Uniqueness of the substrate parameter

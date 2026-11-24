@@ -1,5 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import QOU.Shared.OperatorSelectionLP
+import QOU.Core.OperatorSelectionLP
 
 /-!
 # `QOU.BraidsAndKnots.demazure_fiber_markov_trace` — intentionally empty; the formalisation lives in the content-block sibling

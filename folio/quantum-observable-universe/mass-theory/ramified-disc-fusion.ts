@@ -12,7 +12,7 @@ export default proposition({
   // C₃, Galois closure S₃) are NOT formalised; the module supplies only
   // `galois_group_order : Fintype.card S₃ = 6` alongside them.
   lean: {
-    ref: "qou:QOU.BraidsKnots.RamifiedDiscFusion.resolvent_agreement",
+    ref: "qou:BraidKnotOctonion.RamifiedDiscFusion.resolvent_agreement",
     validation: "not_checked",
   },
   title: "Ramified-disc fusion at the foundry boundary",

@@ -14,7 +14,7 @@ export default proposition({
     "euler-characteristic",
     "crossing-energy",
   ],
-  lean: { ref: "qou:QOU.Archimedean.torus_hopf_stability",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.torus_hopf_stability",
     validation: "not_checked",
   },
 });

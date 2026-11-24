@@ -8,7 +8,7 @@ export default definition({
   label: "def:categorical-neutron",
   title: "Neutron (categorical)",
   tags: ["neutron", "hadron", "baryon", "color-tube", "knot", "categorical"],
-  lean: { ref: "qou:QOU.Torsion.CategoricalNeutron",
+  lean: { ref: "qou:QOU.LiftingDescent.Torsion.CategoricalNeutron",
     validation: "not_checked",
   },
   uses: ["def:categorical-proton"],

@@ -1,9 +1,9 @@
 import QOU.BraidsAndKnots.NucleonWeightSpaceTraces
 import QOU.BraidsAndKnots.NucleonWeightSpaceSecondOrder
-import QOU.Machinery.MarkovTraceOnHecke
-import QOU.Machinery.HeckeH3Characters
-import QOU.Machinery.HeckeH3BlockRep
-import QOU.Machinery.HeckeH3BlockCharacter
+import HeckeTemperleyLieb.MarkovTraceOnHecke
+import HeckeTemperleyLieb.HeckeH3Characters
+import HeckeTemperleyLieb.HeckeH3BlockRep
+import HeckeTemperleyLieb.HeckeH3BlockCharacter
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.NormNum

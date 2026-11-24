@@ -19,6 +19,6 @@ export default remark({
       body: "Lean status (#8902): $\\Delta$-equivalence $\\Rightarrow$ PL ambient isotopy is proved (`DeltaEquiv.plAmbientIsotopic`); the converse, PL ambient isotopy $\\Rightarrow$ $\\Delta$-equivalence, is being formalised on PR #9067 and is cited (Reidemeister, Lickorish Ch. 1) until it lands. `MoiseBing` is a named hypothesis, not an axiom.",
     },
   ],
-  lean: { ref: "qou:QOU.MathlibExt.PL.AmbientIsotopic.linkType_eq_of_moiseBing" },
+  lean: { ref: "qou:MathlibExt.Core.PL.AmbientIsotopic.linkType_eq_of_moiseBing" },
   tags: ["link-type", "tame-link", "moise", "ambient-isotopy", "pl-topology"],
 });

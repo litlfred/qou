@@ -5,7 +5,7 @@ import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
-import QOU.Knot.BraidClosure
+import BraidKnotOctonion.BraidClosure
 import QOU.StandardModel.ComponentFraming
 import QOU.StandardModel.SignCoherentTwist
 

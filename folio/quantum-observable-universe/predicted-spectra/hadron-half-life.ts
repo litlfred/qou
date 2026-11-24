@@ -19,7 +19,7 @@ export default proposition({
     "substrate-parameter",
     "valley-of-stability",
   ],
-  lean: { ref: "qou:QOU.Archimedean.hadron_half_life",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.hadron_half_life",
     validation: "not_checked",
   },
   uses: ["prop:integer-stability"],

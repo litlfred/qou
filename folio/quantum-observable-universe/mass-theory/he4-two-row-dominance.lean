@@ -28,7 +28,7 @@ Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
 -/
 
 import Mathlib.Tactic.Linarith
-import QOU.BraidKnot.TwoRowStratum
+import BraidKnotOctonion.TwoRowStratum
 import QOU.MassTheory.TwoRowCapDerived
 
 namespace QOU.BraidKnot.He4TwoRowDominance

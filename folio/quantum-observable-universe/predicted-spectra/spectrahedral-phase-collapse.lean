@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
-import QOU.Interactions.GramMatrixH3Symbolic
+import QOU.Confinement.GramMatrixH3Symbolic
 
 /-!
 # QOU.Archimedean.spectrahedral_phase_collapse

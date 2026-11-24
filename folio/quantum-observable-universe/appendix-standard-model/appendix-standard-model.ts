@@ -35,6 +35,7 @@ export default chapter({
       label: "sec:sm-truncation",
       blocks: [
         "strand-twist-datum",
+        "strand-twist-datum-remark",
         "sm-colour-stabilizer-action",
         "su5-hypercharge-n3-gate",
         "cal2-higgs-knot-coupling",

@@ -114,7 +114,7 @@ It also does not touch magnitude. `qou-brng` is untouched.
 -/
 
 import QOU.MassTheory.UrsellPartitionFunctionB3
-import QOU.QBeta.InterfaceScalar
+import QOU.Nuclear.InterfaceScalar
 import Mathlib.Tactic
 
 namespace QOU.MassTheory.B3SignOneRoot

@@ -5,7 +5,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:benzene-threading-emergence",
-  lean: { ref: "qou:QOU.Molecular.benzene_threading_emergence", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Observations.benzene_threading_emergence", validation: "not_checked" },
   title: "Threading link $T(2,6)$ emerges as the LP-optimal $\\pi$ configuration",
   uses: [
     "conj:q-integer-mass-formula",

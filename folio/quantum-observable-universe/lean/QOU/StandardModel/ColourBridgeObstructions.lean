@@ -1,5 +1,5 @@
-import QOU.MathlibExt.OctonionColourActionBaseModule
-import QOU.MathlibExt.OctonionComplexStructure
+import QOU.Core.OctonionColourActionBaseModule
+import QOU.Core.OctonionComplexStructure
 import Mathlib.LinearAlgebra.Determinant
 import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:gram-matrix-h3-symbolic",
   lean: {
-    ref: "qou:QOU.Interactions.GramMatrixH3Symbolic.gramMatrix",
+    ref: "qou:QOU.Confinement.GramMatrixH3Symbolic.gramMatrix",
     validation: "not_checked",
   },
   title:

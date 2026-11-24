@@ -18,7 +18,7 @@ export default definition({
     "universal",
     "interaction",
   ],
-  lean: { ref: "qou:QOU.Archimedean.TransferMatrixOperator",
+  lean: { ref: "qou:QOU.MassTheory.TransferMatrixOperator",
     validation: "not_checked",
   },
   uses: [],

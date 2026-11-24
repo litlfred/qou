@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:jet-prolongation-categorical-jet",
-  lean: { ref: "qou:QOU.LiftingDescent.jetRetract_comp_jetSection" },
+  lean: { ref: "qou:QOU.LiftingDescent.LiftingDescentRoot.jetRetract_comp_jetSection" },
   title: "The base object is a direct summand of the jet object $J^1(S)$",
   tags: ["kahler-differential", "jet-bundle", "direct-summand"],
   uses: ["def:categorical-jet"],

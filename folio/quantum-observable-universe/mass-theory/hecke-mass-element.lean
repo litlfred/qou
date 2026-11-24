@@ -1,4 +1,4 @@
-import QOU.Torsion.HeckeMassElement
+import HeckeTemperleyLieb.HeckeMassElement
 
 /-!
 Sibling Lean file for `def:hecke-mass-element`.

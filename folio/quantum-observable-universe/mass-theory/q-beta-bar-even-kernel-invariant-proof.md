@@ -8,7 +8,7 @@ $$
 \;=\; 1 - b^2 \cdot \hbar_q^4.
 $$
 
-This is a `ring` identity in any commutative ring containing $b$ and
+This is a polynomial identity in any commutative ring containing $b$ and
 $\hbar_q$. Both factors are bar-even at the Taylor level: $b^2(q)$ is a
 manifest q-rational that satisfies $b^2(q^{-1}) = b^2(q)$ exactly
 (verified in the canonical formalism

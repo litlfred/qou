@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:qbeta-trace-counit-convergence",
   lean: {
-    ref: "qou:QOU.Interactions.QBetaConvergence.QBetaTraceCounitConvergence",
+    ref: "qou:QOU.Confinement.Interactions.QBetaConvergence.QBetaTraceCounitConvergence",
     validation: "not_checked",
   },
   title:

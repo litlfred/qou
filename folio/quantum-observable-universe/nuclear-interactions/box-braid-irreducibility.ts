@@ -23,7 +23,7 @@ export default proposition({
     "photon",
     "virtual-particles",
   ],
-  lean: { ref: "qou:QOU.Archimedean.photon_neutrino_requires_T35",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.photon_neutrino_requires_T35",
     validation: "not_checked",
   },
   // rem:electron-immortality dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):

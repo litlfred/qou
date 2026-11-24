@@ -22,7 +22,7 @@ export default definition({
     "q-dependent",
     "cohomology",
   ],
-  lean: { ref: "qou:QOU.SkeinResolutionObstruction",
+  lean: { ref: "qou:QOU.BraidsAndKnots.SkeinResolutionObstruction",
     validation: "not_checked",
   },
   // Detangler forward-ref demote (bean foxn): def:computational-horizon

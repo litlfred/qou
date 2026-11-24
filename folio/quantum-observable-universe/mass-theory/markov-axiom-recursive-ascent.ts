@@ -6,7 +6,7 @@ export default definition({
     "Markov-axiom recursive ascent for atomic $\\mathrm{tr}_M$",
   defines: ["markov-axiom-recursive-ascent"],
   lean: {
-    ref: "qou:QOU.Interactions.markov_peel",
+    ref: "qou:QOU.Confinement.Interactions.markov_peel",
     validation: "not_checked",
   },
   uses: [

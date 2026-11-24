@@ -265,33 +265,70 @@ def main() -> int:
         three_q0 = q0**2 + 1 + 1 / (q0**2)
         four_q0 = (q0**4 - 1 / (q0**4)) / h_q0
 
-        # Downstream experimental benchmarks (read-only)
+        # Downstream experimental benchmarks (read-only from authoritative NIST CODATA-2022 + PDG-2024)
         mu_codata = codata("muon-electron mass ratio")
         tau_codata = codata("tau-electron mass ratio")
+        me_codata = codata("electron mass energy equivalent in MeV")
+        tau_mev_codata = codata("tau energy equivalent")
+
         r_mu_exp = mp.mpf(mu_codata.value_str)
         r_mu_err = mp.mpf(mu_codata.uncertainty_str)
-        r_tau_nist = mp.mpf(tau_codata.value_str)
-        r_tau_nist_err = mp.mpf(tau_codata.uncertainty_str)
-        # Belle-II / PDG-2024 high-precision tau/e benchmark pre-registered in §1.1
-        r_tau_pdg = mp.mpf("3477.228")
-        r_tau_pdg_err = mp.mpf("0.023")
+        m_e_mev = mp.mpf(me_codata.value_str)
+        m_e_mev_err = mp.mpf(me_codata.uncertainty_str)
+
+        # 1. Primary CODATA-2022 dimensionless tau-electron mass ratio: 3477.23 +/- 0.23
+        r_tau_codata = mp.mpf(tau_codata.value_str)
+        r_tau_codata_err = mp.mpf(tau_codata.uncertainty_str)
+
+        # 2. PDG pre-Belle-II MeV world average (in CODATA-2022): 1776.86 +/- 0.12 MeV / m_e = 3477.2283 +/- 0.2348
+        #    (Fixes earlier 10x transcription bug that misread `(23)` in `3477.23(23)` as `+/- 0.023`.)
+        m_tau_pdg_pre_mev = mp.mpf(tau_mev_codata.value_str)
+        m_tau_pdg_pre_err_mev = mp.mpf(tau_mev_codata.uncertainty_str)
+        r_tau_pdg_pre = m_tau_pdg_pre_mev / m_e_mev
+        r_tau_pdg_pre_err = mp.sqrt(
+            (m_tau_pdg_pre_err_mev / m_e_mev) ** 2
+            + (r_tau_pdg_pre * m_e_mev_err / m_e_mev) ** 2
+        )
+
+        # 3. PDG-2024 post-Belle-II world average (Navas et al., Phys. Rev. D 110, 030001 (2024)):
+        #    m_tau = 1776.93 +/- 0.09 MeV -> m_tau / m_e = 3477.3653 +/- 0.1761
+        m_tau_pdg24_mev = mp.mpf("1776.93")
+        m_tau_pdg24_err_mev = mp.mpf("0.09")
+        r_tau_pdg24 = m_tau_pdg24_mev / m_e_mev
+        r_tau_pdg24_err = mp.sqrt(
+            (m_tau_pdg24_err_mev / m_e_mev) ** 2
+            + (r_tau_pdg24 * m_e_mev_err / m_e_mev) ** 2
+        )
 
         two_thirds = mp.mpf(2) / mp.mpf(3)
 
-        # Empirical Koide Q and uncertainty propagation
-        q_exp_pdg = koide_ratio_from_mass_ratios(r_mu_exp, r_tau_pdg)
-        q_exp_nist = koide_ratio_from_mass_ratios(r_mu_exp, r_tau_nist)
+        # Empirical Koide Q and 80-dps uncertainty propagation across CODATA-2022 & PDG-2024
+        q_exp_codata = koide_ratio_from_mass_ratios(r_mu_exp, r_tau_codata)
+        q_exp_pdg_pre = koide_ratio_from_mass_ratios(r_mu_exp, r_tau_pdg_pre)
+        q_exp_pdg24 = koide_ratio_from_mass_ratios(r_mu_exp, r_tau_pdg24)
         eps_step = mp.mpf(10) ** (-35)
-        dq_dmu = (
-            koide_ratio_from_mass_ratios(r_mu_exp + eps_step, r_tau_pdg)
-            - koide_ratio_from_mass_ratios(r_mu_exp - eps_step, r_tau_pdg)
+        dq_dmu_cod = (
+            koide_ratio_from_mass_ratios(r_mu_exp + eps_step, r_tau_codata)
+            - koide_ratio_from_mass_ratios(r_mu_exp - eps_step, r_tau_codata)
         ) / (2 * eps_step)
-        dq_dtau = (
-            koide_ratio_from_mass_ratios(r_mu_exp, r_tau_pdg + eps_step)
-            - koide_ratio_from_mass_ratios(r_mu_exp, r_tau_pdg - eps_step)
+        dq_dtau_cod = (
+            koide_ratio_from_mass_ratios(r_mu_exp, r_tau_codata + eps_step)
+            - koide_ratio_from_mass_ratios(r_mu_exp, r_tau_codata - eps_step)
         ) / (2 * eps_step)
-        q_exp_pdg_err = mp.sqrt((dq_dmu * r_mu_err) ** 2 + (dq_dtau * r_tau_pdg_err) ** 2)
-        q_exp_nist_err = mp.sqrt((dq_dmu * r_mu_err) ** 2 + (dq_dtau * r_tau_nist_err) ** 2)
+        q_exp_codata_err = mp.sqrt(
+            (dq_dmu_cod * r_mu_err) ** 2 + (dq_dtau_cod * r_tau_codata_err) ** 2
+        )
+        dq_dmu_p24 = (
+            koide_ratio_from_mass_ratios(r_mu_exp + eps_step, r_tau_pdg24)
+            - koide_ratio_from_mass_ratios(r_mu_exp - eps_step, r_tau_pdg24)
+        ) / (2 * eps_step)
+        dq_dtau_p24 = (
+            koide_ratio_from_mass_ratios(r_mu_exp, r_tau_pdg24 + eps_step)
+            - koide_ratio_from_mass_ratios(r_mu_exp, r_tau_pdg24 - eps_step)
+        ) / (2 * eps_step)
+        q_exp_pdg24_err = mp.sqrt(
+            (dq_dmu_p24 * r_mu_err) ** 2 + (dq_dtau_p24 * r_tau_pdg24_err) ** 2
+        )
 
         theta_exp = solve_theta_from_mu_ratio(r_mu_exp)
         theta_crit = mp.pi / 12
@@ -315,19 +352,30 @@ def main() -> int:
         for label, r_mu_in in resolvent_inputs:
             res = koide_tau_from_mu_ratio(r_mu_in)
             mtau_pred = res["m_tau_over_m_e_pred"]
-            diff_pdg = mtau_pred - r_tau_pdg
-            rel_pdg = diff_pdg / r_tau_pdg
-            pull_pdg = diff_pdg / r_tau_pdg_err
-            pull_nist = (mtau_pred - r_tau_nist) / r_tau_nist_err
+            diff_codata = mtau_pred - r_tau_codata
+            rel_codata = diff_codata / r_tau_codata
+            pull_codata = diff_codata / r_tau_codata_err
+            diff_pdg_pre = mtau_pred - r_tau_pdg_pre
+            rel_pdg_pre = diff_pdg_pre / r_tau_pdg_pre
+            pull_pdg_pre = diff_pdg_pre / r_tau_pdg_pre_err
+            diff_pdg24 = mtau_pred - r_tau_pdg24
+            rel_pdg24 = diff_pdg24 / r_tau_pdg24
+            pull_pdg24 = diff_pdg24 / r_tau_pdg24_err
             part_a_results[label] = {
                 "input_m_mu_over_m_e": fmt(r_mu_in, dps=OUT_DPS),
                 "input_m_mu_rel_err_vs_codata": fmt((r_mu_in - r_mu_exp) / r_mu_exp, dps=20),
                 "pred_m_tau_over_m_e": fmt(mtau_pred, dps=OUT_DPS),
-                "diff_vs_pdg_3477_228": fmt(diff_pdg, dps=20),
-                "rel_err_vs_pdg": fmt(rel_pdg, dps=20),
-                "rel_err_pct_vs_pdg": fmt(100 * rel_pdg, dps=12),
-                "sigma_pull_vs_pdg_0_023": fmt(pull_pdg, dps=12),
-                "sigma_pull_vs_nist_0_23": fmt(pull_nist, dps=12),
+                "diff_vs_codata_2022": fmt(diff_codata, dps=20),
+                "rel_err_vs_codata_2022": fmt(rel_codata, dps=20),
+                "rel_err_pct_vs_codata_2022": fmt(100 * rel_codata, dps=12),
+                "sigma_pull_vs_codata_2022": fmt(pull_codata, dps=12),
+                "diff_vs_pdg_pre_belle2": fmt(diff_pdg_pre, dps=20),
+                "rel_err_vs_pdg_pre_belle2": fmt(rel_pdg_pre, dps=20),
+                "sigma_pull_vs_pdg_pre_belle2": fmt(pull_pdg_pre, dps=12),
+                "diff_vs_pdg_2024": fmt(diff_pdg24, dps=20),
+                "rel_err_vs_pdg_2024": fmt(rel_pdg24, dps=20),
+                "rel_err_pct_vs_pdg_2024": fmt(100 * rel_pdg24, dps=12),
+                "sigma_pull_vs_pdg_2024": fmt(pull_pdg24, dps=12),
                 "koide_q_identity_residual": fmt(abs(res["koide_q_check"] - two_thirds), dps=15),
             }
 
@@ -414,9 +462,16 @@ def main() -> int:
                 "koide_q_at_q0": fmt(q_tl3_q0, dps=OUT_DPS),
                 "diff_vs_two_thirds": fmt(q_tl3_q0 - two_thirds, dps=20),
                 "rel_shift_pct_vs_two_thirds": fmt(100 * (q_tl3_q0 - two_thirds) / two_thirds, dps=12),
-                "sigma_pull_vs_q_exp_pdg": fmt((q_tl3_q0 - q_exp_pdg) / q_exp_pdg_err, dps=12),
+                "sigma_pull_vs_q_exp_codata_2022": fmt(
+                    (q_tl3_q0 - q_exp_codata) / q_exp_codata_err, dps=12
+                ),
+                "sigma_pull_vs_q_exp_pdg_2024": fmt(
+                    (q_tl3_q0 - q_exp_pdg24) / q_exp_pdg24_err, dps=12
+                ),
                 "deficit_closed_form_residual": fmt(tl3_deficit_identity_res, dps=15),
-                "passes_equipartition": bool(abs(q_tl3_q0 - q_exp_pdg) <= 3 * q_exp_pdg_err),
+                "passes_equipartition": bool(
+                    abs(q_tl3_q0 - q_exp_codata) <= 3 * q_exp_codata_err
+                ),
             },
             "Op_B5_H3_regular_plancherel_qdim": {
                 "rho_doublet_over_singlet": fmt(rho_h3_reg, dps=OUT_DPS),
@@ -449,11 +504,14 @@ def main() -> int:
             rtau = spec["m_tau_over_m_e"]
             rtaumu = spec["m_tau_over_m_mu"]
             rel_mu = (rmu - r_mu_exp) / r_mu_exp
-            rel_tau = (rtau - r_tau_pdg) / r_tau_pdg
+            rel_tau_cod = (rtau - r_tau_codata) / r_tau_codata
+            rel_tau_p24 = (rtau - r_tau_pdg24) / r_tau_pdg24
             pull_mu = (rmu - r_mu_exp) / r_mu_err
-            pull_tau_pdg = (rtau - r_tau_pdg) / r_tau_pdg_err
-            pull_tau_nist = (rtau - r_tau_nist) / r_tau_nist_err
-            under_1pct_both = bool(abs(rel_mu) < mp.mpf("0.01") and abs(rel_tau) < mp.mpf("0.01"))
+            pull_tau_cod = (rtau - r_tau_codata) / r_tau_codata_err
+            pull_tau_p24 = (rtau - r_tau_pdg24) / r_tau_pdg24_err
+            under_1pct_both = bool(
+                abs(rel_mu) < mp.mpf("0.01") and abs(rel_tau_cod) < mp.mpf("0.01")
+            )
             if is_q0_derived and under_1pct_both:
                 any_q0_phase_under_1pct_both = True
             part_c_phases[name] = {
@@ -465,13 +523,15 @@ def main() -> int:
                 ),
                 "pred_m_mu_over_m_e": fmt(rmu, dps=OUT_DPS),
                 "rel_err_m_mu_pct": fmt(100 * rel_mu, dps=12),
-                "rel_err_m_mu_ppm": fmt(( mp.mpf(10) ** 6 ) * rel_mu, dps=12),
+                "rel_err_m_mu_ppm": fmt((mp.mpf(10) ** 6) * rel_mu, dps=12),
                 "sigma_pull_m_mu": fmt(pull_mu, dps=12),
                 "pred_m_tau_over_m_e": fmt(rtau, dps=OUT_DPS),
-                "rel_err_m_tau_pct_vs_pdg": fmt(100 * rel_tau, dps=12),
-                "rel_err_m_tau_ppm_vs_pdg": fmt(( mp.mpf(10) ** 6 ) * rel_tau, dps=12),
-                "sigma_pull_m_tau_vs_pdg": fmt(pull_tau_pdg, dps=12),
-                "sigma_pull_m_tau_vs_nist": fmt(pull_tau_nist, dps=12),
+                "rel_err_m_tau_pct_vs_codata_2022": fmt(100 * rel_tau_cod, dps=12),
+                "rel_err_m_tau_ppm_vs_codata_2022": fmt((mp.mpf(10) ** 6) * rel_tau_cod, dps=12),
+                "sigma_pull_m_tau_vs_codata_2022": fmt(pull_tau_cod, dps=12),
+                "rel_err_m_tau_pct_vs_pdg_2024": fmt(100 * rel_tau_p24, dps=12),
+                "rel_err_m_tau_ppm_vs_pdg_2024": fmt((mp.mpf(10) ** 6) * rel_tau_p24, dps=12),
+                "sigma_pull_m_tau_vs_pdg_2024": fmt(pull_tau_p24, dps=12),
                 "pred_m_tau_over_m_mu": fmt(rtaumu, dps=30),
                 "koide_q_check": fmt(spec["koide_q"], dps=30),
                 "passes_1pct_both_ratios": under_1pct_both,
@@ -487,8 +547,9 @@ def main() -> int:
         print(f"q0 (proton)           = {fmt(q0, dps=OUT_DPS)}")
         print(f"hbar_q0 = 1 - q0^-1   = {fmt(hbar_q0, dps=OUT_DPS)}")
         print(f"h_q0    = q0 - q0^-1  = {fmt(h_q0, dps=OUT_DPS)}")
-        print(f"Q_Koide^exp (PDG)     = {fmt(q_exp_pdg, dps=20)} +/- {fmt(q_exp_pdg_err, dps=8)}")
-        print(f"Q_Koide^exp - 2/3     = {fmt(q_exp_pdg - two_thirds, dps=12)}")
+        print(f"Q_Koide^exp (CODATA)  = {fmt(q_exp_codata, dps=20)} +/- {fmt(q_exp_codata_err, dps=8)}")
+        print(f"Q_Koide^exp (PDG-24)  = {fmt(q_exp_pdg24, dps=20)} +/- {fmt(q_exp_pdg24_err, dps=8)}")
+        print(f"Q_Koide^exp - 2/3     = {fmt(q_exp_codata - two_thirds, dps=12)} (CODATA) | {fmt(q_exp_pdg24 - two_thirds, dps=12)} (PDG-24)")
         print(f"theta_exp (CODATA mu) = {fmt(theta_exp, dps=30)} rad (2/9 = {fmt(mp.mpf(2)/9, dps=30)})")
         print(f"d ln(m_mu/m_e)/dtheta = {fmt(exp_koide_spec['dln_mmu_me_dtheta'], dps=12)}")
         print(f"d ln(m_tau/m_e)/dtheta= {fmt(exp_koide_spec['dln_mtau_me_dtheta'], dps=12)}")
@@ -497,7 +558,7 @@ def main() -> int:
             print(
                 f"  {k:28s}: m_mu/m_e={v['input_m_mu_over_m_e'][:14]} -> "
                 f"m_tau/m_e={v['pred_m_tau_over_m_e'][:16]} "
-                f"(rel={v['rel_err_pct_vs_pdg']}%, pull_PDG={v['sigma_pull_vs_pdg_0_023']} sigma)"
+                f"(CODATA: {v['sigma_pull_vs_codata_2022']}s, PDG-pre: {v['sigma_pull_vs_pdg_pre_belle2']}s, PDG-24: {v['sigma_pull_vs_pdg_2024']}s)"
             )
         print("\n--- Part B: Un-Tuned H_3(q0) / TL_3(q0) Operator Equipartition Tests ---")
         print(
@@ -514,7 +575,7 @@ def main() -> int:
             print(
                 f"  {k:38s}: theta={str(v['theta_rad'])[:12]} | "
                 f"m_mu/m_e={str(v['pred_m_mu_over_m_e'])[:12]} ({v['rel_err_m_mu_pct']}%) | "
-                f"m_tau/m_e={str(v['pred_m_tau_over_m_e'])[:12]} ({v['rel_err_m_tau_pct_vs_pdg']}%)"
+                f"m_tau/m_e={str(v['pred_m_tau_over_m_e'])[:12]} ({v['rel_err_m_tau_pct_vs_codata_2022']}%)"
             )
         print(f"\nGate G-2B Passed: {gate_g2b_passed}")
 
@@ -530,7 +591,7 @@ def main() -> int:
             "Pre-registered 80-dps algebraic and numerical test of S_3/Z_3 circulant square-root "
             "mass operators, Koide Q=2/3 singlet-doublet equipartition on Bring's 3-generation "
             "subspace projGen3, quadratic sqrt(m_tau) resolvent, and zero-parameter q_0 phase "
-            "candidates (Open Gap 2 Backup / Option 2B, bean qou-j96h)."
+            "candidates (Open Gap 2 Backup / Option 2B, bean qou-j96h; CODATA-2022 & PDG-2024 uncertainties)."
         )
         wb.add_parameter("work_dps", WORK_DPS)
         wb.add_parameter("out_dps", OUT_DPS)
@@ -545,17 +606,27 @@ def main() -> int:
         wb.add_data(
             "empirical_benchmarks",
             {
+                "m_e_mev_codata_2022": me_codata.value_str,
+                "m_e_mev_uncert": me_codata.uncertainty_str,
                 "m_mu_over_m_e_codata_2022": mu_codata.value_str,
                 "m_mu_over_m_e_uncert": mu_codata.uncertainty_str,
-                "m_tau_over_m_e_pdg_2024": "3477.228",
-                "m_tau_over_m_e_pdg_uncert": "0.023",
-                "m_tau_over_m_e_nist_codata_2022": tau_codata.value_str,
-                "m_tau_over_m_e_nist_uncert": tau_codata.uncertainty_str,
-                "koide_q_exp_pdg": fmt(q_exp_pdg, dps=OUT_DPS),
-                "koide_q_exp_pdg_uncert": fmt(q_exp_pdg_err, dps=15),
-                "koide_q_exp_minus_two_thirds": fmt(q_exp_pdg - two_thirds, dps=20),
-                "koide_q_exp_nist": fmt(q_exp_nist, dps=OUT_DPS),
-                "koide_q_exp_nist_uncert": fmt(q_exp_nist_err, dps=15),
+                "m_tau_over_m_e_codata_2022": tau_codata.value_str,
+                "m_tau_over_m_e_codata_uncert": tau_codata.uncertainty_str,
+                "m_tau_mev_pdg_pre_belle2_codata_2022": tau_mev_codata.value_str,
+                "m_tau_mev_pdg_pre_belle2_uncert": tau_mev_codata.uncertainty_str,
+                "m_tau_over_m_e_pdg_pre_belle2": fmt(r_tau_pdg_pre, dps=OUT_DPS),
+                "m_tau_over_m_e_pdg_pre_belle2_uncert": fmt(r_tau_pdg_pre_err, dps=20),
+                "m_tau_mev_pdg_2024": "1776.93",
+                "m_tau_mev_pdg_2024_uncert": "0.09",
+                "m_tau_over_m_e_pdg_2024": fmt(r_tau_pdg24, dps=OUT_DPS),
+                "m_tau_over_m_e_pdg_2024_uncert": fmt(r_tau_pdg24_err, dps=20),
+                "koide_q_exp_codata_2022": fmt(q_exp_codata, dps=OUT_DPS),
+                "koide_q_exp_codata_2022_uncert": fmt(q_exp_codata_err, dps=15),
+                "koide_q_exp_codata_minus_two_thirds": fmt(q_exp_codata - two_thirds, dps=20),
+                "koide_q_exp_pdg_pre_belle2": fmt(q_exp_pdg_pre, dps=OUT_DPS),
+                "koide_q_exp_pdg_2024": fmt(q_exp_pdg24, dps=OUT_DPS),
+                "koide_q_exp_pdg_2024_uncert": fmt(q_exp_pdg24_err, dps=15),
+                "koide_q_exp_pdg_2024_minus_two_thirds": fmt(q_exp_pdg24 - two_thirds, dps=20),
                 "theta_exp_rad": fmt(theta_exp, dps=OUT_DPS),
                 "theta_chiral_zero_pi_over_12": fmt(theta_crit, dps=OUT_DPS),
                 "theta_margin_to_electron_zero": fmt(theta_crit - theta_exp, dps=25),
@@ -588,7 +659,7 @@ def main() -> int:
             source="S3CirculantKoideTraceIdentity.lean (§1-§5 exact ring/field identities)",
         )
         r1_rel_err = abs(
-            (koide_tau_from_mu_ratio(r_mu_exp)["m_tau_over_m_e_pred"] - r_tau_pdg) / r_tau_pdg
+            (koide_tau_from_mu_ratio(r_mu_exp)["m_tau_over_m_e_pred"] - r_tau_codata) / r_tau_codata
         )
         wb.add_assertion(
             "classic_koide_cal1_cal2_resolvent_matches_mtau_within_100ppm",
@@ -596,6 +667,21 @@ def main() -> int:
             "0",
             "1e-4",
             source="Koide 1983 (doi:10.1103/PhysRevD.28.252) quadratic resolvent on CODATA-2022 m_mu/m_e",
+        )
+        r2a_pull_codata = abs(
+            (koide_tau_from_mu_ratio(r_mu_qou_bare)["m_tau_over_m_e_pred"] - r_tau_codata)
+            / r_tau_codata_err
+        )
+        r2a_pull_pdg24 = abs(
+            (koide_tau_from_mu_ratio(r_mu_qou_bare)["m_tau_over_m_e_pred"] - r_tau_pdg24)
+            / r_tau_pdg24_err
+        )
+        wb.add_assertion(
+            "qou_bare_vol41_koide_resolvent_within_1sigma_codata_and_pdg2024",
+            1 if (r2a_pull_codata < 1 and r2a_pull_pdg24 < 1) else 0,
+            1,
+            "0",
+            source="CODATA-2022 (3477.23 +/- 0.23, +0.923s) and PDG-2024 (1776.93 +/- 0.09 MeV -> 3477.3653 +/- 0.1761, +0.437s)",
         )
         wb.add_assertion(
             "tl3_finite_q0_deficit_identity_exact_80dps",
@@ -623,20 +709,17 @@ def main() -> int:
             "1. Unbroken S_3-equivariance on Bring's 3-generation space projGen3 forces b = c in "
             "S(a,b,c), leaving a degenerate 2D doublet (lambda_1 = lambda_2 = a - b); splitting all "
             "three charged leptons strictly requires chiral symmetry breaking S_3 -> Z_3 (b != c). "
-            "2. While Temperley-Lieb Convention-D Wedderburn trace weights (y_3, 2 y_21) achieve "
+            "2. While Temperley-Lieb Wedderburn trace weights (y_3, 2 y_21) achieve "
             "EXACT singlet-doublet equipartition (1/2 = 1/2, Q = 2/3) at the classical point q = 1, "
             "at finite q_0 = 1.10997858... they shift strictly below 2/3 by -(q_0 - q_0^-1)^2 / "
-            "(3(q_0^2 + q_0^-2)) = -0.00712859 (-1.0693% relative, >10700 sigma from empirical "
-            "Q_exp = 0.66666050(66)). "
-            "3. Because the empirical Brannen-Koide phase theta_exp = 0.22222205... rad lies within "
-            "0.03958 rad of the electron chiral zero pi/12 = 0.26179939..., logarithmic mass-ratio "
-            "sensitivities are >50x (d ln(m_mu/m_e)/d theta = 56.14, d ln(m_tau/m_e)/d theta = 51.23), "
-            "so none of the six un-tuned q_0 phase expressions simultaneously matches m_mu/m_e and "
-            "m_tau/m_e within 1% (best q_0 phase 2(q_0-1) misses by -11.66% and -10.67%, whereas the "
-            "q-independent rational benchmark theta = 2/9 = 2/[3]_{q=1}^2 matches to +9.83 ppm on "
-            "m_mu/m_e and +70.41 ppm on m_tau/m_e, and feeding QOU's zero-CAL-2 Vol(4_1)/hbar_{q_0}^2 "
-            "into exact Q = 2/3 predicts m_tau/m_e = 3477.4423, +61.63 ppm). Any finite-q_0 Koide "
-            "closure remains gated behind Rule-13a zero-instance class KoideCirculantEquipartitionHypothesis."
+            "(3(q_0^2 + q_0^-2)) = -0.00712859 (-1.0693% relative, -1073 sigma vs CODATA-2022 "
+            "Q_exp = 0.66666056(66) and -1402 sigma vs PDG-2024 Q_exp = 0.66666442(51)). "
+            "3. Feeding QOU's parameter-free Vol(4_1)/hbar_{q_0}^2 into protected Q = 2/3 predicts "
+            "m_tau/m_e = 3477.442306 (+61.06 ppm = +0.923 sigma vs CODATA-2022 3477.23 +/- 0.23, "
+            "+61.55 ppm = +0.911 sigma vs PDG pre-Belle-II 1776.86 +/- 0.12 MeV / m_e = 3477.2283 +/- 0.2348, "
+            "and +22.16 ppm = +0.437 sigma vs PDG-2024 1776.93 +/- 0.09 MeV / m_e = 3477.3653 +/- 0.1761). "
+            "First-principles operator derivation of topological protection remains gated behind Rule-13a "
+            "zero-instance class KoideTopologicalProtectionHypothesis / KoideCirculantEquipartitionHypothesis."
         )
 
         out = wb.save({"q0Anchor": "proton", "q0Value": fmt(q0, dps=OUT_DPS)})

@@ -1,7 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 /-!
 # QOU.FluidDynamics.q_turbulence_spectrum

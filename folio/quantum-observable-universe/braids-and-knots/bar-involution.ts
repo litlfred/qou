@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:bar-involution",
   lean: {
-    ref: "qou:QOU.BraidKnot.BarInvolution",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.BarInvolution",
     validation: "not_checked",
   },
   title:

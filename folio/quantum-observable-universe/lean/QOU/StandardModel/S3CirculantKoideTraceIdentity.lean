@@ -5,7 +5,7 @@ import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
 import QOU.Observations.InhomogeneousLeptonLoopResolvent
-import QOU.Photon
+import QOU.StandardModel.Photon
 
 set_option autoImplicit false
 

@@ -20,7 +20,7 @@ export default proposition({
   uses: ["prop:markov-trace-recursive-reducer"],
   cites: ["jones1987"],
   lean: {
-    ref: "qou:QOU.BraidKnot.HeckeFunctional.towerTr_connectedSum",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.HeckeFunctional.towerTr_connectedSum",
     validation: "not_checked",
   },
   tags: ["markov-trace", "connected-sum", "linear-functional", "knot-factor"],

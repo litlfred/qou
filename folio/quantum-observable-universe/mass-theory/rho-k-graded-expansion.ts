@@ -36,7 +36,7 @@ export default proposition({
     requires: ["numpy", "sympy", "mpmath"],
   },
   lean: {
-    ref: "qou:QOU.BraidKnot.rhoKGradedExpansion",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.rhoKGradedExpansion",
     validation: "not_checked",
   },
   uses: [

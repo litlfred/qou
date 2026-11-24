@@ -13,7 +13,7 @@ export default proposition({
     { kind: "caveat", date: "2026-11-21", body: "**Axiom removed.** `wigner_coefficient_axiom` (the 3 % bound against the fitted 68.896 MeV at the retired CODATA-2018 muon pin $q_0 = 1.109978595554181$) is deleted. `wigner_coefficient` now proves only the product expansion $[5]_q!\\,m_e = [1]_q[2]_q[3]_q[4]_q[5]_q\\,m_e$, sorry-free. The identification with the Bethe--Weizsäcker Wigner term stays conjectural, and the proof's step from the Casimir trace to $[5]_q!$ is asserted, not derived. Round-trip audit pass 2, C12." },
   ],
   title: "Wigner coefficient $[5]_q! \\cdot m_e$ from Frobenius reciprocity",
-  lean: { ref: "qou:QOU.BraidKnot.wigner_coefficient", validation: "not_checked" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.wigner_coefficient", validation: "not_checked" },
   uses: [
     // Declared by the .md banner and bound in the Lean (wigner_coefficient_conditional at :81 binds [inst : QIntegerMassFormula]),
     // but absent here and unreachable in the uses[] graph at any depth

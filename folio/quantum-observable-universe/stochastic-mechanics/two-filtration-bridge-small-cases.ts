@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Two-filtration bridge map verified at small partitions ($n \\leq 4$)",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases.bridge_small_cases",
+    ref: "qou:QOU.BringsSurface.TwoFiltrationBridgeSmallCases.bridge_small_cases",
     validation: "not_checked",
   },
   uses: ["prop:b1-torus-knot-rows-theorem"],

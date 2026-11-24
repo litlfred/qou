@@ -12,7 +12,7 @@ export default conjecture({
     "open-problem",
   ],
   uses: [],
-  lean: { ref: "qou:QOU.Archimedean.HyperbolicVolumeIndependence",
+  lean: { ref: "qou:QOU.MassTheory.HyperbolicVolumeIndependence",
     validation: "not_checked",
   },
   authorNotes: [

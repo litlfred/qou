@@ -1,6 +1,4 @@
-Let $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$ denote the observable subcategory . Let $\pi_0(\mathrm{Bun}^{\circ})$ denote its set of connected components (the aeons, [aeon](#def:aeon)).
-
-The **horizon functor** is the map
+Let $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$ be the observable subcategory, and let $\pi_0(\mathrm{Bun}^{\circ})$ be its set of connected components (the [aeons](#def:aeon)). The **horizon functor** is the map
 
 $$
   \partial \colon 
@@ -10,10 +8,10 @@ $$
     \mathrm{Bun}(\mathbb{P}(V))
     \setminus
     \mathrm{Bun}^{\circ}(\mathbb{P}(V))
-  \bigr).
+  \bigr)
 $$
 
-It sends each aeon $\mathcal{A}$ to its boundary. This boundary comprises configurations $\mathcal{S}$ that appear as limits of diagrams in $\mathcal{A}$ but have $A_0|_{\mathcal{S}} = 0$:
+sending each aeon $\mathcal{A}$ to its boundary, the set of configurations $\mathcal{S}$ that appear as limits of diagrams in $\mathcal{A}$ but have $A_0|_{\mathcal{S}} = 0$:
 
 $$
   \partial(\mathcal{A})
@@ -25,11 +23,3 @@ $$
     \text{ for some directed diagram } D \subset \mathcal{A}
   \bigr\}.
 $$
-
-Every element of $\partial(\mathcal{A})$ defines a jet horizon .
-
-**Functoriality.**
-If $\mathcal{A} \hookrightarrow \mathcal{A}'$ is an inclusion of connected components, then $\mathcal{A} = \mathcal{A}'$ by maximality, and $\partial$ acts as the identity. For adjacent aeons $\mathcal{A}$ and $\mathcal{A}'$ , the intersection $\partial(\mathcal{A}) \cap \partial(\mathcal{A}') \neq \varnothing$. These shared boundary objects specify the loci where the CCC transition occurs.
-
-**Relation to the torsion flow.**
-The torsion flow $\Phi_t^q$  provides an endofunctor of $\mathrm{Bun}(\mathbb{P}(V))$. Within an aeon, $\Phi_t^q$ restricts to an endofunctor of $\mathrm{Bun}^{\circ}$ (preserving $A_0 \neq 0$). The horizon $\partial(\mathcal{A})$ constitutes the set of fixed points of the limiting behaviour $\Phi_t^q \to \partial$ as $t$ approaches the aeon boundary.

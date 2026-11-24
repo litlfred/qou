@@ -696,11 +696,13 @@ restore for every other agent and every later run.
 Use [`scripts/lean-overlay-env.sh`](../../scripts/lean-overlay-env.sh):
 
 ```bash
-scripts/lean-overlay-env.sh init                                  # once
-scripts/lean-overlay-env.sh build QOU/SchurWeyl/Edited.lean       # your version
-scripts/lean-overlay-env.sh check /tmp/importer.lean              # now sees it
-scripts/lean-overlay-env.sh selftest                              # invariant holds
+scripts/lean-overlay-env.sh init                                      # once (links all 7 Reservoir libs + QOU)
+scripts/lean-overlay-env.sh build HeckeTemperleyLieb/Edited.lean      # or QOU/<Chapter>/Edited.lean
+scripts/lean-overlay-env.sh check /tmp/importer.lean                  # now sees it
+scripts/lean-overlay-env.sh selftest                                  # invariant holds
 ```
+
+> **Q3 Option 1 Multi-`lean_lib` Layout (`2026-11-24`, `qou-lref`):** All `7 + 1` `[[lean_lib]]` targets (`MathlibExt`, `QCalculus`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `HeckeTemperleyLieb`, `BraidKnotOctonion`, and `QOU` with its `12` canonical `QOU/<Chapter>/` subgraphs) share `srcDir = "."` inside `folio/quantum-observable-universe/lean/` and emit `.olean`s under the single root `folio/quantum-observable-universe/lean/.lake/build/lib/lean/`. If rebasing an open branch authored before `qou-lref` (with files under legacy `QOU/<OldSynonym>/`), run `nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch`.
 
 > **🟥 An overlay is NOT a shadowing layer, and a PARTIAL overlay is worse than
 > none.** Lean resolves a module by taking the **first `LEAN_PATH` root that

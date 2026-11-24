@@ -10,7 +10,7 @@ export default definition({
   // declaration is `QOU.Torsion.MassIdentity`, which carries this block's own
   // LaTeX label `\label{def:mass-identity}`, and whose siblings back
   // `mass-identity-C.ts`, `mass-identity-exists.ts` and `mass-identity-unique.ts`.
-  lean: { ref: "qou:QOU.Torsion.MassTraceIdentity.massIntegrand", validation: "not_checked" },
+  lean: { ref: "qou:QOU.LiftingDescent.MassTraceIdentity.massIntegrand", validation: "not_checked" },
   title: "Mass (Frobenius form of the mass integrand)",
   tags: ["mass", "categorical-trace", "frobenius-hopf"],
   uses: [

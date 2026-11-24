@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-beta-cos-resummation",
   lean: {
-    ref: "qou:QOU.Interactions.q_beta_cos_resummation",
+    ref: "qou:QOU.Confinement.Interactions.q_beta_cos_resummation",
     validation: "not_checked",
   },
   title:

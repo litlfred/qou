@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:six-term-per-derivation-weights",
   title: "Per-derivation weights for the six-term mass formula",
   lean: {
-    ref: "qou:QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly",
+    ref: "qou:BraidKnotOctonion.SixTermPerDerivationWeights.binding_assembly",
     validation: "not_checked",
   },
   uses: [

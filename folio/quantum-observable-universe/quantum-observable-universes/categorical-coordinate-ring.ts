@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-coordinate-ring",
   lean: {
-    ref: "qou:QOU.QuantumObservableUniverse.CategoricalCoordinateRing",
+    ref: "qou:QOU.Core.QuantumObservableUniverse.CategoricalCoordinateRing",
     validation: "not_checked",
   },
   title:

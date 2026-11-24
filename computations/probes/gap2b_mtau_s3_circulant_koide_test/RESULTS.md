@@ -27,9 +27,9 @@
      $$\frac{2}{3} - Q_{\mathrm{TL3}}(q) = \frac{(q - q^{-1})^2}{3(q^2 + q^{-2})} > 0.$$
 
 2. **Pre-Registered `Gate G-2B` Numerical Outcome (`mp.dps = 80`, `q0Anchor = "proton"`)**:
-   - **Equipartition at $q_0$ (`Part B`)**: **Falsified** for un-dressed finite-$q_0$ weights. At $q_0 = 1.1099785827513808...$, $Q_{\mathrm{TL3}}(q_0) = 0.6595380803186473...$, which lies $-0.00712859$ (`-1.0693%`, $-10{,}734\sigma$) below empirical $Q_{\mathrm{Koide}}^{\mathrm{exp}} = 0.66666050(66)$.
-   - **Zero-Parameter $q_0$ Phases (`Part C`)**: **Falsified** across all six $q_0$-derived expressions $\{\theta_1, \theta_2, \theta_3, \theta_4, \theta_6, \theta_7\}$. Because $\theta_{\mathrm{exp}} = 0.222222047073...$ rad sits within $0.03958$ rad of the electron chiral zero $\theta_{\mathrm{crit}} = \pi/12 = 0.2617993878...$, logarithmic mass-ratio sensitivities exceed $50\times$ ($\frac{d\ln(m_\mu/m_e)}{d\theta} = +56.14$, $\frac{d\ln(m_\tau/m_e)}{d\theta} = +51.23$). Even the closest $q_0$ expression $\theta_3 = 2(q_0 - 1) = 0.21995717$ (`-1.02%` in $\theta$) misses $m_\mu / m_e$ by `-11.66%` and $m_\tau / m_e$ by `-10.67%`, and $q_0$-deforming Brannen's rational $\theta_5 = 2/9 = 2/[3]_{q=1}^2$ (`+9.83 ppm` on $m_\mu/m_e$, `+70.41 ppm` on $m_\tau/m_e$) to $\theta_6 = 2/[3]_{q_0}^2$ degrades the prediction to `-28.30%` and `-26.02%`.
-   - **Hybrid Classical-$Q=2/3$ + QOU Zero-`CAL-2` Muon Resolvent (`R2a` in `Part A`)**: Feeding QOU's proton-anchored bare figure-eight muon prediction $(m_\mu / m_e)_{\mathrm{QOU}} = \mathrm{Vol}(4_1)/\hbar_{q_0}^2 = 206.76832637...$ into the exact $q = 1$ Koide resolvent $Q = 2/3$ yields **$m_\tau / m_e = 3477.44230642$** (`+0.006163% = +61.63 ppm`, $+0.923\sigma$ vs NIST CODATA-2022 $3477.23 \pm 0.23$, $+9.318\sigma$ vs Belle-II/PDG-2024 $3477.228 \pm 0.023$), virtually identical to classic `CAL-1 + CAL-2` Koide (`3477.44163628`, `+61.44 ppm`), but **conditional** on an unproved $q$-undeformed ($q \to 1$) Koide equipartition mechanism (`KoideCirculantEquipartitionHypothesis`, Rule 13a).
+   - **Equipartition at $q_0$ (`Part B`)**: **Falsified** for un-dressed finite-$q_0$ weights. At $q_0 = 1.1099785827513808...$, $Q_{\mathrm{TL3}}(q_0) = 0.6595380803186473...$, which lies $-0.00712859$ (`-1.0693%`, $-1073\sigma$ vs CODATA-2022, $-1402\sigma$ vs PDG-2024) below empirical $Q_{\mathrm{Koide}}^{\mathrm{exp}} = 0.66666056(66)$ (CODATA-2022) / $0.66666442(51)$ (PDG-2024).
+   - **Zero-Parameter $q_0$ Phases (`Part C`)**: **Falsified** across all six $q_0$-derived expressions $\{\theta_1, \theta_2, \theta_3, \theta_4, \theta_6, \theta_7\}$. Because $\theta_{\mathrm{exp}} = 0.222222047073...$ rad sits within $0.03958$ rad of the electron chiral zero $\theta_{\mathrm{crit}} = \pi/12 = 0.2617993878...$, logarithmic mass-ratio sensitivities exceed $50\times$ ($\frac{d\ln(m_\mu/m_e)}{d\theta} = +56.14$, $\frac{d\ln(m_\tau/m_e)}{d\theta} = +51.23$). Even the closest $q_0$ expression $\theta_3 = 2(q_0 - 1) = 0.21995717$ (`-1.02%` in $\theta$) misses $m_\mu / m_e$ by `-11.66%` and $m_\tau / m_e$ by `-10.67%`, and $q_0$-deforming Brannen's rational $\theta_5 = 2/9 = 2/[3]_{q=1}^2$ (`+9.83 ppm` on $m_\mu/m_e$, `+69.83 ppm` vs CODATA-2022 on $m_\tau/m_e$) to $\theta_6 = 2/[3]_{q_0}^2$ degrades the prediction to `-28.30%` and `-26.02%`.
+   - **Hybrid Classical-$Q=2/3$ + QOU Zero-`CAL-2` Muon Resolvent (`R2a` in `Part A`)**: Feeding QOU's proton-anchored bare figure-eight muon prediction $(m_\mu / m_e)_{\mathrm{QOU}} = \mathrm{Vol}(4_1)/\hbar_{q_0}^2 = 206.76832637...$ into the exact $q = 1$ Koide resolvent $Q = 2/3$ yields **$m_\tau / m_e = 3477.44230642$** (`+61.06 ppm = +0.923σ` vs NIST CODATA-2022 `3477.23 ± 0.23`, `+61.55 ppm = +0.911σ` vs PDG pre-Belle-II `1776.86 ± 0.12 MeV / m_e = 3477.2283 ± 0.2348`, and **`+22.16 ppm = +0.437σ`** vs PDG-2024 post-Belle-II `1776.93 ± 0.09 MeV / m_e = 3477.3653 ± 0.1761` — within `< 1σ` across all three benchmarks; earlier version misread `(23)` in `3477.23(23)` as `±0.023`, `10x` too small), virtually identical to classic `CAL-1 + CAL-2` Koide (`3477.44163628`), while **conditional** on topological protection of $q \to 1$ Koide equipartition (`KoideTopologicalProtectionHypothesis` / `KoideCirculantEquipartitionHypothesis`, Rule 13a).
 
 ---
 
@@ -43,20 +43,21 @@
 | $\hbar_{q_0} = 1 - q_0^{-1}$ | `0.099081716044258507839177117518906063985258373389446` | Semi-classical expansion parameter |
 | $h_{q_0} = q_0 - q_0^{-1}$ | `0.20906029879563931543084621312967494385975749526302` | Hecke skein parameter |
 | $(m_\mu / m_e)_{\mathrm{CODATA-2022}}$ | `206.7682827 ± 0.0000046` | NIST `allascii.txt` (`10.1103/RevModPhys.97.025002`) |
-| $(m_\tau / m_e)_{\mathrm{PDG-2024}}$ | `3477.228 ± 0.023` | Belle-II / PDG-2024 (`10.1103/PhysRevD.110.030001`) |
-| $(m_\tau / m_e)_{\mathrm{NIST-2022}}$ | `3477.23 ± 0.23` | NIST `allascii.txt` (`10.1103/RevModPhys.97.025002`) |
-| $Q_{\mathrm{Koide}}^{\mathrm{exp}}$ (PDG-2024) | `0.66666050352627157727 ± 6.6355e-7` | $Q_{\mathrm{exp}} - 2/3 = -6.16314 \times 10^{-6}$ (`-9.29σ`) |
+| $(m_\tau / m_e)_{\mathrm{CODATA-2022}}$ | `3477.23 ± 0.23` | NIST `allascii.txt` (`10.1103/RevModPhys.97.025002`) |
+| $(m_\tau / m_e)_{\mathrm{PDG\text{-}pre\text{-}Belle\text{-}II}}$ | `3477.22828 ± 0.23483` | `1776.86 ± 0.12 MeV / m_e` (CODATA-2022 `tau energy equivalent`) |
+| $(m_\tau / m_e)_{\mathrm{PDG-2024}}$ | `3477.36526 ± 0.17613` | `1776.93 ± 0.09 MeV / m_e` (Navas et al., `10.1103/PhysRevD.110.030001`) |
+| $Q_{\mathrm{Koide}}^{\mathrm{exp}}$ (CODATA-2022 / PDG-2024) | `0.66666056 ± 6.64e-6` / `0.66666442 ± 5.08e-6` | $Q_{\mathrm{exp}} - 2/3 = -6.11 \times 10^{-6}$ (`-0.92σ`) / $-2.25 \times 10^{-6}$ (`-0.44σ`) |
 | $\theta_{\mathrm{exp}}$ (from CODATA $m_\mu/m_e$) | `0.22222204707308784876 rad` | Margin to $\pi/12$ zero: `0.03957734 rad` |
 
 ---
 
 ### 2.2 Part A — Quadratic Resolvent $m_\tau / m_e$ Predictions under Exact $Q_{\mathrm{Koide}} = 2/3$
 
-| Model | Input $m_\mu / m_e$ | Predicted $m_\tau / m_e = x_+^2$ | Diff vs PDG `3477.228` | Rel. Error | Pull vs PDG (`±0.023`) | Pull vs NIST (`±0.23`) |
+| Model | Input $m_\mu / m_e$ | Predicted $m_\tau / m_e = x_+^2$ | Rel. Err (CODATA-2022) | Pull vs CODATA (`±0.23`) | Pull vs PDG pre-Belle-II (`±0.235`) | Pull vs PDG-2024 (`±0.176`) |
 |---|---:|---:|---:|---:|---:|---:|
-| **`R1_codata_cal1_cal2`** | `206.76828270` | `3477.44163628` | `+0.21364` | `+0.006144%` (`+61.4 ppm`) | `+9.29σ` | `+0.92σ` |
-| **`R2a_qou_bare_vol41`** (zero `CAL-2`) | `206.76832637` | `3477.44230642` | `+0.21431` | `+0.006163%` (`+61.6 ppm`) | `+9.32σ` | `+0.92σ` |
-| **`R2b_qou_inhomogeneous_9213`** | `207.17372167` | `3483.66286778` | `+6.43487` | `+0.185057%` (`+1851 ppm`) | `+279.78σ` | `+27.97σ` |
+| **`R1_codata_cal1_cal2`** | `206.76828270` | `3477.44163628` | `+60.86 ppm` | **`+0.920σ`** | **`+0.909σ`** | **`+0.434σ`** |
+| **`R2a_qou_bare_vol41`** (zero `CAL-2`) | `206.76832637` | `3477.44230642` | `+61.06 ppm` | **`+0.923σ`** | **`+0.911σ`** | **`+0.437σ`** |
+| **`R2b_qou_inhomogeneous_9213`** | `207.17372167` | `3483.66286778` | `+1850 ppm` | `+27.97σ` | `+27.40σ` | `+35.76σ` |
 
 ---
 
@@ -67,7 +68,7 @@
 | **`Op_B1_identity`** ($I_3$) | `0` | `0.33333333` | `0.33333333` | `-0.333333` | Fails ($m_e = m_\mu = m_\tau$) |
 | **`Op_B2_democratic_D3`** ($\frac{1}{3} D_3$) | `2` | `1.00000000` | `1.00000000` | `+0.333333` | Fails ($m_e = m_\mu = 0$) |
 | **`Op_B3_isotropic_Z3` / `projGen3` DOF** | `2` | `1.00000000` | `1.00000000` | `+0.333333` | Fails ($1:2$ DOF ratio $\neq 1:1$) |
-| **`Op_B4_TL3_convD_wedderburn_norm`** (`y3` vs `2y21`) | `0.97861424` | **`0.66666667` (`2/3` exact)** | `0.65953808` | `-0.007129` (`-1.069%`) | Exact at $q=1$; **fails at $q_0$** (`-10734σ`) |
+| **`Op_B4_TL3_convD_wedderburn_norm`** (`y3` vs `2y21`) | `0.97861424` | **`0.66666667` (`2/3` exact)** | `0.65953808` | `-0.007129` (`-1.069%`) | Exact at $q=1$; **fails at $q_0$** (`-1073σ` CODATA / `-1402σ` PDG-24) |
 | **`Op_B5_H3_regular_plancherel_qdim`** | `4.02179373` | `1.66666667` | `1.67393124` | `+1.007265` | Fails ($Q > 1$, non-positive roots) |
 | **`Op_B6_chiral_vertex_Mplus1`** ($\kappa = 1$) | — | — | `0.51761243` | `-0.149054` | Fails ($m_\mu/m_e = 4.99, m_\tau/m_e = 45.7$) |
 | **`Op_B6_chiral_vertex_Mplus1`** ($\kappa = 1/\sqrt{2}$) | — | — | `0.42468007` | `-0.241987` | Fails ($m_\mu/m_e = 2.29, m_\tau/m_e = 11.6$) |

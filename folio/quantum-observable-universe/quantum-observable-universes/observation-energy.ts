@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:observation-energy",
-  lean: { ref: "qou:QOU.QuantumObservableUniverse.observation_energy", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Core.observation_energy", validation: "not_checked" },
   title:
     "Observation increases quantum energy and deforms the action",
   tags: [

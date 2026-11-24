@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Joint Galois $\\times$ braid action commutes on the figure-8 bi-filtration cell — verified directly",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.JointGaloisBraidFigure8.figure_8_joint_action",
+    ref: "qou:QOU.BringsSurface.JointGaloisBraidFigure8.figure_8_joint_action",
     validation: "not_checked",
   },
   uses: [

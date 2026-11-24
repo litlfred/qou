@@ -20,7 +20,7 @@ export default definition({
   defines: ["octonion-algebra"],
   // Points at the canonical product in the library tree; no sibling .lean,
   // per the no-shadowing-stubs rule (AGENTS.md §0a).
-  lean: { ref: "qou:QOU.MathlibExt.OctonionDerivations.octMul" },
+  lean: { ref: "qou:BraidKnotOctonion.OctonionDerivations.octMul" },
   cites: ["baez2002", "albuquerque-majid1999"],
   tags: ["octonion", "division-algebra", "G2", "color", "eightfold"],
   authorNotes: [

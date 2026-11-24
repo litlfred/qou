@@ -13,8 +13,8 @@ export default theorem({
     "division-algorithm",
     "topological-invariant",
   ],
-  lean: { ref: "qou:QOU.Archimedean.groebner_shirshov_energy",
-    validation: "not_checked",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.groebner_shirshov_energy",
+    validation: "validated",
   },
   uses: ["unital-groebner-bases:thm:ugb-main"],
   authorNotes: [

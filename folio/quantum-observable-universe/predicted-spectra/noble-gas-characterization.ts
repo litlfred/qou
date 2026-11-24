@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:noble-gas-characterization",
-  lean: { ref: "qou:QOU.Archimedean.noble_gas_characterization", validation: "not_checked" },
+  lean: { ref: "qou:QOU.MassTheory.noble_gas_characterization", validation: "not_checked" },
   title:
     "Noble gas characterization: a full shell has no free linking site",
   tags: [

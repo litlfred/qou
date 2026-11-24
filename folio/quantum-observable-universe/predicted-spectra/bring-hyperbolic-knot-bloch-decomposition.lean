@@ -1,7 +1,7 @@
 import Mathlib.Data.Nat.Totient
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
-import QOU.Archimedean.EmCouplingBringZeroMode
+import QOU.MassTheory.EmCouplingBringZeroMode
 
 
 /-!

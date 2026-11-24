@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:qou-exists-axiom-1",
-  lean: { ref: "qou:QOU.QuantumObservableUniverse.exists_axiom_1_frobenius",
+  lean: { ref: "qou:QOU.Core.exists_axiom_1_frobenius",
     validation: "not_checked",
   },
   title: "Axiom 1 — Haar state gives a non-degenerate Frobenius pairing",

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Restricted-product structure of the Reeb $\\omega$-order: additivity over places and local--global squeeze",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.adelic_reeb_order_additive",
+    ref: "qou:QOU.Core.AlgebraicSubstrate.adelic_reeb_order_additive",
     validation: "not_checked",
   },
   uses: ["def:reeb-epsilon"],

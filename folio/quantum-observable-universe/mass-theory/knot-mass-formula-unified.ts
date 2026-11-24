@@ -5,7 +5,7 @@ export default theorem({
   title:
     "Unified mass formula: tower + Frobenius co-Casimir correction",
   lean: {
-    ref: "qou:QOU.BraidKnot.knot_mass_unified",
+    ref: "qou:BraidKnotOctonion.knot_mass_unified",
     validation: "not_checked",
   },
   uses: [

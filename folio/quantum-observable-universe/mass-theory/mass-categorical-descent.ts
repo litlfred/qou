@@ -24,7 +24,7 @@ export default conjecture({
     "wedderburn",
     "quantum-dilogarithm",
   ],
-  lean: { ref: "qou:QOU.ParticleInteractions.mass_categorical_descent",
+  lean: { ref: "qou:QOU.Confinement.mass_categorical_descent",
     validation: "not_checked",
   },
   uses: ["thm:wedderburn-mass-formula", "thm:centre-cocentre-descent", "def:descent-involution"],

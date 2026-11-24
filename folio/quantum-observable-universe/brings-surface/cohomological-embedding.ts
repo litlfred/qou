@@ -17,7 +17,7 @@ export default proposition({
     "magic-numbers",
     "shell-model",
   ],
-  lean: { ref: "qou:QOU.Archimedean.cohomological_embedding",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.cohomological_embedding",
     validation: "not_checked",
   },
   uses: ["rem:fivefold-symmetry"],

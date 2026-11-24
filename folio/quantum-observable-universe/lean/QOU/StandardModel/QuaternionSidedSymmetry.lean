@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.BringCone
+import QOU.BringsSurface.BringCone
 
 /-!
 # Left vs right quaternion multiplication: a one-sided symmetry, and where it stops

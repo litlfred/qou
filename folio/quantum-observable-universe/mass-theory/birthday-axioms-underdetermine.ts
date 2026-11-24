@@ -13,7 +13,7 @@ export default theorem({
     "limit-transfer",
   ],
   lean: {
-    ref: "qou:QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le",
+    ref: "qou:QOU.Observations.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le",
     validation: "leanok",
   },
   uses: ["prop:ideal-tetrahedron-relabelling-invariance"],

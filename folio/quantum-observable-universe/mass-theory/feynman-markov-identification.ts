@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:feynman-markov-identification",
-  lean: { ref: "qou:QOU.FeynmanPathIntegrals.markov_identification_of_markovTrace",
+  lean: { ref: "qou:QOU.StandardModel.FeynmanPathIntegrals.markov_identification_of_markovTrace",
     validation: "not_checked",
   },
   title: "Markov-weighted eigenbasis sum equals the Markov trace",

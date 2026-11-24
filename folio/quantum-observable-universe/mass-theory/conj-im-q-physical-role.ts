@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:im-q-physical-role",
   lean: {
-    ref: "qou:QOU.BraidKnot.ImQPhysicalRole",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.ImQPhysicalRole",
     validation: "not_checked",
   },
   title:

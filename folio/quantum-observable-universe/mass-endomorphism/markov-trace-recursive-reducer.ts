@@ -74,7 +74,7 @@ export default proposition({
     requires: ["sympy"],
   },
   lean: {
-    ref: "qou:QOU.BraidKnot.markovTrace_disjointProduct",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.markovTrace_disjointProduct",
     validation: "not_checked",
   },
   tags: [

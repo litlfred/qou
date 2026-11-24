@@ -48,6 +48,7 @@ export default chapter({
       blocks: [
         "q-hecke-correspondences-intro",
         "q-hecke-operator",
+        "q-hecke-operator-remark",
         "q-hecke-eigensheaf",
         "q-hecke-eigenvalue",
         "q-hecke-eigenvalue-proof",
@@ -61,7 +62,9 @@ export default chapter({
       blocks: [
         "q-gl-conjecture-intro",
         "q-langlands-dual",
+        "q-langlands-dual-remark",
         "q-oper",
+        "q-oper-remark",
         "q-gl-conjecture",
         "q-gl-obstruction-calc",
         "q-gl-obstruction-calc-proof",
@@ -108,6 +111,7 @@ export default chapter({
         "spectral-trace-intro",
         "q-von-mangoldt-function",
         "q-chebyshev-function",
+        "q-chebyshev-function-remark",
         "tannaka-krein-isomorphism",
         "tannaka-krein-su2",
         "explicit-formula",
@@ -125,6 +129,7 @@ export default chapter({
       blocks: [
         "weil-bound-intro",
         "local-q-zeta-function",
+        "local-q-zeta-function-remark",
         "hasse-weil-bound",
         "hasse-weil-bound-proof",
         "spectral-half-line",

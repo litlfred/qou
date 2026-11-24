@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:fivetwo-discriminant-vanishes",
   lean: {
-    ref: "qou:QOU.QBeta.FiveTwoDiscriminant.exists_unit_circle_disc_zero",
+    ref: "qou:QOU.Nuclear.FiveTwoDiscriminant.exists_unit_circle_disc_zero",
     validation: "not_checked",
   },
   title:

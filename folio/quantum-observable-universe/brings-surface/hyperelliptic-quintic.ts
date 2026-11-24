@@ -13,7 +13,7 @@ export default definition({
   // `Zeta5MonodromyContext` in the SAME namespace, but nothing imports Scratch
   // and this file is the fuller one (124 lines, incl. the monodromy content).
   lean: {
-    ref: "qou:QOU.HyperellipticQuintic.zeta5_residue_monodromy.HyperellipticQuintic",
+    ref: "qou:QOU.BringsSurface.zeta5_residue_monodromy.HyperellipticQuintic",
     validation: "not_checked",
   },
   title: "The hyperelliptic quintic $\\mathcal{X}_5 \\colon y^2 = x^5 - 1$",

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$S(q) = \\mathfrak{Q}_\\beta(q)/E_0(q)$ vanishes at the classical point $q = 1$ — the SDP-constraint scalar is not the $c_k$ ladder normalization",
   lean: {
-    ref: "qou:QOU.QBeta.OverE0ClassicalVanishing.qbeta_over_e0_numerator_at_one_eq_zero",
+    ref: "qou:QOU.Nuclear.QBeta.OverE0ClassicalVanishing.qbeta_over_e0_numerator_at_one_eq_zero",
     validation: "not_checked",
   },
   uses: [

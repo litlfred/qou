@@ -1,5 +1,5 @@
 import Mathlib.Analysis.SpecificLimits.Basic
-import QOU.Shared.ArchimedeanEval
+import QOU.Core.ArchimedeanEval
 
 /-!
 # QOU.Observations.brane_tower_q_laplacian_decay

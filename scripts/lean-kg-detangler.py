@@ -603,6 +603,21 @@ EXPLICIT_PURE_OVERRIDES: dict[str, str] = {
     "QOU.QuantumObservableUniverse.NakayamaTwist": "TierB.TwistedFrobeniusHopf",
     "QOU.QuantumObservableUniverse.HigmanNormMap": "TierB.TwistedFrobeniusHopf",
     "QOU.AlgebraicSubstrate.TwistedAmbidextrousAdjunction": "TierB.TwistedFrobeniusHopf",
+    # Post-isolation canonical module names
+    "ToricConicOpt.SymmetryReducedDualCertificate": "TierB.ToricConicOpt",
+    "ToricConicOpt.NuclearChamberGS": "TierB.ToricConicOpt",
+    "ToricConicOpt.ConfinementLayerTower": "TierB.ToricConicOpt",
+    "QCalculus.ThomaeJacksonCalculus": "TierB.QCalculus",
+    "CompactQuantumMetrics.FiniteRieffelQuantumMetric": "TierB.CompactQuantumMetrics",
+    "CompactQuantumMetrics.OqSU2ModularNakayama": "TierB.CompactQuantumMetrics",
+    "CompactQuantumMetrics.UniversalDifferentials": "TierB.CompactQuantumMetrics",
+    "CompactQuantumMetrics.Bicommutant": "TierB.CompactQuantumMetrics",
+    "CompactQuantumMetrics.FrobeniusInnerProduct": "TierB.CompactQuantumMetrics",
+    "CompactQuantumMetrics.DerivationIterateLeibniz": "TierB.CompactQuantumMetrics",
+    "CompactQuantumMetrics.DerivationRankNullity": "TierB.CompactQuantumMetrics",
+    "TwistedFrobeniusHopf.NakayamaTwist": "TierB.TwistedFrobeniusHopf",
+    "TwistedFrobeniusHopf.HigmanNormMap": "TierB.TwistedFrobeniusHopf",
+    "TwistedFrobeniusHopf.TwistedAmbidextrousAdjunction": "TierB.TwistedFrobeniusHopf",
 }
 
 
@@ -1219,16 +1234,45 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
                 subtail = m
         cand_groups[(target_prefix, subtail)].append((m, orig_sub))
 
+    existing_map_entries: dict[str, dict[str, str]] = {}
+    default_map_file = REPO_ROOT / "docs" / "audits" / "2026-11-24-lean-reservoir-module-map.json"
+    if default_map_file.is_file():
+        try:
+            existing_map_entries = json.loads(default_map_file.read_text(encoding="utf-8")).get("modules", {})
+        except Exception:
+            existing_map_entries = {}
+
     module_migration_map: dict[str, dict[str, str]] = {}
     used_new_mods: set[str] = set()
-    for (target_prefix, subtail), grp in sorted(cand_groups.items()):
+    # First pass: preserve exact new_module for pre-mapped modules whose target_partition is unchanged
+    for m in qou_library_mods:
+        prev = existing_map_entries.get(m)
+        part = modules[m]["target_partition"]
+        if prev and prev.get("target_partition") == part:
+            prev_new = prev.get("new_module", "")
+            if prev_new and prev_new not in used_new_mods:
+                target_lib = PARTITION_TO_LEAN_LIB.get(part, "QOU")
+                used_new_mods.add(prev_new)
+                module_migration_map[m] = {
+                    "old_module": m,
+                    "new_module": prev_new,
+                    "target_partition": part,
+                    "target_lean_lib": target_lib,
+                    "old_repo_rel_path": modules[m]["path"],
+                    "new_lean_rel_path": prev_new.replace(".", "/") + ".lean",
+                }
+                modules[m]["new_module"] = prev_new
+
+    for (target_prefix, subtail), full_grp in sorted(cand_groups.items()):
+        grp = [(m, osb) for (m, osb) in full_grp if m not in module_migration_map]
+        if not grp:
+            continue
         target_leaf = target_prefix.split(".")[-1]
-        if len(grp) == 1:
+        if len(grp) == 1 and f"{target_prefix}.{subtail}" not in used_new_mods:
             m, _orig_sub = grp[0]
             new_mod = f"{target_prefix}.{subtail}"
             part = modules[m]["target_partition"]
             target_lib = PARTITION_TO_LEAN_LIB.get(part, "QOU")
-            assert new_mod not in used_new_mods, f"Duplicate target module: {new_mod}"
             used_new_mods.add(new_mod)
             module_migration_map[m] = {
                 "old_module": m,

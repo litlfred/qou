@@ -18,7 +18,7 @@ export default proposition({
     "partial-closure",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.PartialClosures.partial_closures_at_boundary",
+    ref: "qou:QOU.MassTheory.Archimedean.PartialClosures.partial_closures_at_boundary",
     validation: "not_checked",
   },
   authorNotes: [

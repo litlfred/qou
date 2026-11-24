@@ -1,5 +1,5 @@
-import QOU.BraidsAndKnots.HydrogenCaptureWeightSpace
-import QOU.QuarkState.OverStrandWeight
+import BraidKnotOctonion.HydrogenCaptureWeightSpace
+import QOU.Confinement.OverStrandWeight
 
 /-!
 # Where the electron sits in the hydrogen capture braid: the reflection symmetry

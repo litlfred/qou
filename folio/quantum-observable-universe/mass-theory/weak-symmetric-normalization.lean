@@ -36,7 +36,7 @@
 
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Tactic.Ring
-import QOU.Conjectures.WeakSpectralCompleteness
+import QOU.Core.WeakSpectralCompleteness
 
 namespace QOU.BraidsAndKnots
 

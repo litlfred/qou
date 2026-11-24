@@ -36,7 +36,7 @@ export default definition({
   uses: ["prop:flavor-split-substrate"],
   cites: [],
   lean: {
-    ref: "qou:QOU.BraidKnot.InterfaceComposition",
+    ref: "qou:QOU.BraidsAndKnots.InterfaceComposition",
     validation: "stub",
   },
   tags: [

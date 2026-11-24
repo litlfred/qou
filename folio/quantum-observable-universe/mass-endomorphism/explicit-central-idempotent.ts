@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Explicit central primitive idempotents $e_\\lambda$ via Jucys–Murphy elements",
   lean: {
-    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem",
+    ref: "qou:BraidKnotOctonion.ExplicitCentralIdempotentGeneral.centralIdem_idem",
     validation: "not_checked",
   },
   uses: [

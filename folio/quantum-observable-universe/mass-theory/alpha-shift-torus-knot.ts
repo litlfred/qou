@@ -51,7 +51,7 @@ export default proposition({
     status: "verified",
     requires: ["sympy", "numpy"],
   },
-  lean: { ref: "qou:QOU.BraidKnot.AlphaShiftTorus.alpha_shift_torus_knot" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.AlphaShiftTorus.alpha_shift_torus_knot" },
   tags: [
     "alpha-shift",
     "torus-knot",

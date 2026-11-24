@@ -12,7 +12,7 @@ export default remark({
   title: "Open problems",
   interprets: "prop:schur-weyl-eightfold",
   lean: {
-    ref: "qou:QOU.Eightfold.HyperbolicMesonClaspAndDiquarkSplit.quantum_cube_3x3x3_and_decuplet_10",
+    ref: "qou:QOU.EightfoldWay.HyperbolicMesonClaspAndDiquarkSplit.quantum_cube_3x3x3_and_decuplet_10",
   },
   cites: ["jimbo1986", "bichon2003", "baez2002", "kleinkreisler1996"],
   computation: {

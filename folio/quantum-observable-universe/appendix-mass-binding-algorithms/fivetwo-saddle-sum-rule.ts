@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:fivetwo-saddle-sum-rule",
   lean: {
-    ref: "qou:QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule",
+    ref: "qou:QCalculus.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule",
     validation: "not_checked",
   },
   title:

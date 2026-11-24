@@ -1,5 +1,5 @@
-import QOU.FormalGroups.FormalGroupLaw
-import QOU.FormalGroups.SplayPoisson
+import QOU.LiftingDescent.FormalGroupLaw
+import MathlibExt.SplayPoisson
 
 /-!
 # Non-commutative formal groups in positive characteristic

@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverse.Structures
+import QOU.Core.Structures
 
 
 /-!

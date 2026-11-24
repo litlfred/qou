@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverse.CategoricalFoundations
+import QOU.Core.CategoricalFoundations
 
 /-!
 # With coevaluation `η ≫ Δ`, the counit is the Frobenius form

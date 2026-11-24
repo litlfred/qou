@@ -10,8 +10,8 @@ Bean `qou-jfx8`, session `qou-0nrt`.
 -/
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.FieldSimp
-import QOU.MassTheory.BlockMeasureFromFrobeniusPairing
-import QOU.MassTheory.BranchingPushforwardMultiplicativity
+import TwistedFrobeniusHopf.BlockMeasureFromFrobeniusPairing
+import HeckeTemperleyLieb.BranchingPushforwardMultiplicativity
 
 namespace QOU.MassTheory.BlockMeasure
 

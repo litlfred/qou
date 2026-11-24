@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:geom-universality",
   title:
     "Universality of $\\mathrm{Geom}(K)$: the categorical volume form yields $\\mathrm{Vol}(K)$ and $\\mathrm{CS}(K)$",
-  lean: { ref: "qou:QOU.BraidKnot.geom_universality",
+  lean: { ref: "qou:QOU.BraidsAndKnots.geom_universality",
     validation: "not_checked",
   },
   uses: ["conj:geom-yekutieli-alignment"],

@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:mobius-energy-frobenius-kernel",
-  lean: { ref: "qou:QOU.BraidsKnots.mobius_frobenius_kernel",
+  lean: { ref: "qou:QOU.BraidsAndKnots.mobius_frobenius_kernel",
     validation: "not_checked",
   },
   title: "Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$",

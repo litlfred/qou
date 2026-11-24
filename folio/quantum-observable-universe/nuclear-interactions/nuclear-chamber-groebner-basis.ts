@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Physical cluster chamber, drip-line monomer reduction, and the Hoyle triple-alpha bottleneck",
   lean: {
-    ref: "qou:QOU.MathlibInfra.gPhys_strict_cost_decrease_of_chamber",
+    ref: "qou:ToricConicOpt.NuclearChamberGS.gPhys_strict_cost_decrease_of_chamber",
     validation: "validated",
   },
   proofs: ["prf:nuclear-chamber-groebner-basis"],

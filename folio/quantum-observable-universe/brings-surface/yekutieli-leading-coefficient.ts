@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:yekutieli-leading-coefficient",
-  lean: { ref: "qou:QOU.Archimedean.yekutieli_leading_coefficient",
+  lean: { ref: "qou:QOU.MassTheory.yekutieli_leading_coefficient",
     validation: "not_checked",
   },
   title: "Obstruction equals the leading Chebyshev coefficient",

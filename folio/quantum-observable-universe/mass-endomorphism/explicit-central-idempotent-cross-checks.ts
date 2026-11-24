@@ -5,7 +5,7 @@ export default theorem({
   title:
     "The Murphy–Lagrange elements $e_\\lambda$ are the central primitive idempotents of $H_n(q)$: sum to one, orthogonality, bar-invariance, conjugate pairing",
   lean: {
-    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks",
+    ref: "qou:BraidKnotOctonion.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks",
     validation: "not_checked",
   },
   uses: [

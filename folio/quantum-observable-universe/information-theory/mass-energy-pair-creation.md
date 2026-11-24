@@ -1,4 +1,4 @@
-The energy $\mathfrak{E} = \mathfrak{m} \cdot c_q^2$ ([energy](#def:mass-energy)) restates the pair-production threshold.
+The energy $\mathfrak{E} = \mathfrak{m} \cdot c_q^2$ ([mass--energy equivalence](#prop:mass-energy)) restates the pair-production threshold.
 
 **Pair creation reinterpreted.**
 The pair production threshold ([pair creation energy](#rem:pair-creation-energy)) becomes:

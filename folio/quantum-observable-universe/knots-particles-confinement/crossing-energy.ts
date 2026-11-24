@@ -13,6 +13,7 @@ export default definition({
   // without it, "sum over crossings" would be an assumption rather than a
   // consequence of the braiding being binary.
   uses: [
+    "def:categorical-hamiltonian",
     "prop:nuclear-groebner-reduction",
     "prop:pairwise-interaction-decomposition",
   ],

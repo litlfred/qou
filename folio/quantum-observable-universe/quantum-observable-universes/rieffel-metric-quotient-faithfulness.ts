@@ -6,7 +6,7 @@ export default remark({
     "Rieffel Lipschitz seminorms, trace-radical descent, and quotient metric faithfulness",
   interprets: "def:categorical-dirac-operator",
   lean: {
-    ref: "qou:QOU.InformationTheory.FiniteRieffelQuantumMetric.isDualBound_zero_iff_eq",
+    ref: "qou:CompactQuantumMetrics.FiniteRieffelQuantumMetric.isDualBound_zero_iff_eq",
     validation: "not_checked",
   },
   uses: [

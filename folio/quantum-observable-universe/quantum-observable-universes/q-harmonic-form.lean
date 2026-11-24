@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverse.Particles
+import QOU.Core.Particles
 import Mathlib.Data.Real.Basic
 
 

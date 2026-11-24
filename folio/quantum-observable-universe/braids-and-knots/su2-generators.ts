@@ -5,7 +5,7 @@ export default definition({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "def:su2-generators",
-  lean: { ref: "qou:QOU.Su2Generators", validation: "not_checked" },
+  lean: { ref: "qou:QOU.StandardModel.Su2Generators", validation: "not_checked" },
   title: "$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$",
   tags: ["su2", "binary-dihedral", "dic3"],
   uses: ["def:su2-basis"],

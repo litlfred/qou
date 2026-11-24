@@ -76,6 +76,6 @@ export default conjecture({
     // it now carries the interior hypothesis `dualSlack.PosDef` and
     // is axiom-free.  This manifest cites the proven concrete
     // instance either way.
-    ref: "qou:QOU.BraidKnot.CanonicalKnotIdSDP",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.CanonicalKnotIdSDP",
   },
 });

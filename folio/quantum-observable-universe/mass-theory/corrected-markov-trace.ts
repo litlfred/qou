@@ -11,7 +11,7 @@ export default proposition({
     "yang-baxter",
     "adjacent-generators",
   ],
-  lean: { ref: "qou:QOU.ParticleInteractions.corrected_markov_trace" },
+  lean: { ref: "qou:HeckeTemperleyLieb.corrected_markov_trace" },
   cites: ["jones1987"],
   uses: [
     "thm:jones-markov-trace",

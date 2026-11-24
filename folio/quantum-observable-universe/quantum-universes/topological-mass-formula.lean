@@ -1,6 +1,6 @@
-import QOU.QuantumObservableUniverse
-import QOU.Torsion
-import QOU.MathlibExt.ManifoldVolumePositive
+import QOU.Core.QuantumObservableUniverse
+import QOU.LiftingDescent.Torsion
+import BraidKnotOctonion.ManifoldVolumePositive
 import Mathlib.Data.Real.Basic
 
 /-!

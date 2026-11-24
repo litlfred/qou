@@ -18,7 +18,7 @@ export default algorithm({
     "dvorak-kolmogorov2024",
   ],
   lean: {
-    ref: "qou:QOU.MathlibInfra.unique_primal_of_strict_dual_slack",
+    ref: "qou:ToricConicOpt.SymmetryReducedDualCertificate.unique_primal_of_strict_dual_slack",
     validation: "not_checked",
   },
   computation: {

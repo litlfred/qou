@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:isotope-knot-equivalence",
   title: "A reflexive, symmetric, transitive isotope relation is an equivalence",
-  lean: { ref: "qou:QOU.BraidKnot.IsotopeKnot.equivalence",
+  lean: { ref: "qou:QOU.BraidsAndKnots.IsotopeKnot.equivalence",
     validation: "not_checked",
   },
   uses: ["def:isotope-knot"],

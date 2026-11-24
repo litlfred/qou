@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:habiro-tail-star-identity",
   lean: {
-    ref: "qou:QOU.QBeta.HabiroTailStar.star",
+    ref: "qou:QCalculus.HabiroTailStar.star",
     validation: "not_checked",
   },
   title:

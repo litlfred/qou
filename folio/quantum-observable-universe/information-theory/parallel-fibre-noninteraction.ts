@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:parallel-fibre-noninteraction",
   title: "Parallel placement of one-dimensional channels forms a commutative monoid",
   lean: {
-    ref: "qou:QOU.Information.OneDimChannel.ParallelNonInteraction.parallel_noninteraction",
+    ref: "qou:QOU.InformationTheory.OneDimChannel.ParallelNonInteraction.parallel_noninteraction",
     validation: "not_checked",
   },
   uses: ["def:one-dim-qou-channel"],

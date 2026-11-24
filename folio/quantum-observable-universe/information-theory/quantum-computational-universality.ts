@@ -16,7 +16,7 @@ export default conjecture({
     "path-integral",
   ],
   lean: {
-    ref: "qou:QOU.QuantumComputationalUniversality.QuantumComputationalUniversality",
+    ref: "qou:QOU.InformationTheory.QuantumComputationalUniversality",
     validation: "not_checked",
   },
   uses: [

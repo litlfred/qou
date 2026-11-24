@@ -1,5 +1,5 @@
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
-import QOU.PhotonWeightsForced
+import QOU.StandardModel.PhotonWeightsForced
 
 /-!
 # `1, V, V²` are linearly independent on the proton weight space, for every `q ≠ 0`

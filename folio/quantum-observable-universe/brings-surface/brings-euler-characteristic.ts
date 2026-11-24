@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:brings-euler-characteristic",
-  lean: { ref: "qou:QOU.ArchimedeanUniverse.brings_euler_characteristic",
+  lean: { ref: "qou:QOU.MassTheory.brings_euler_characteristic",
     validation: "not_checked",
   },
   title: "Euler characteristic of Bring's surface",

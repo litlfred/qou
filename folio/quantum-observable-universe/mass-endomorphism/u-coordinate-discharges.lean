@@ -1,7 +1,7 @@
 import Mathlib.Tactic
-import QOU.BraidKnot.QBetaCategoricalPrecisionLadder
-import QOU.BraidKnot.HoefsmitV21CosSymmetrization
-import QOU.BraidKnot.H3HeckeIdempotents
+import QOU.BraidsAndKnots.QBetaCategoricalPrecisionLadder
+import HeckeTemperleyLieb.HoefsmitV21CosSymmetrization
+import HeckeTemperleyLieb.H3HeckeIdempotents
 
 /-!
 # QOU.BraidKnot.u_coordinate_discharges

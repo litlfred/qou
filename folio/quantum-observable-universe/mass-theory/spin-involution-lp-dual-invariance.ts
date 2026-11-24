@@ -73,7 +73,7 @@ export default proposition({
   title:
     "Spin involutions on Frobenius algebras leave the LP-dual shadow price invariant: $\\sigma(c) = c \\Rightarrow y_0^*(\\sigma(\\beta)^*) = y_0^*(\\beta)$",
   lean: {
-    ref: "qou:QOU.BraidKnot.SpinInvolutionLPDualInvariance",
+    ref: "qou:QOU.BraidsAndKnots.SpinInvolutionLPDualInvariance",
     validation: "not_checked",
   },
   uses: ["prop:jucys-murphy-central-elements-qou", "def:spin-involution"],

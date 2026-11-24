@@ -10,8 +10,3 @@ $$
   \mathcal{Z}_n \;:=\; \ker \tau
   \;=\; \{\, M \in \mathcal{K}_n : \tau(M) = 0 \,\}.
 $$
-
-*Its objects are the homologically acyclic complexes. Physically, these are the decoupled or non-observable interaction channels.*
-
-**Remark.**
-*The cemetery group is emergent. It is defined as the kernel of $\tau$ rather than postulated. One uses $\mathcal{Z}_n$ computationally as a homological filter on crystal-graph traversals.*

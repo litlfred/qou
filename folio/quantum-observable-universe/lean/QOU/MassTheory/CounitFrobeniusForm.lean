@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverse.CategoricalFoundations
+import QOU.Core.CategoricalFoundations
 import Mathlib.CategoryTheory.Monoidal.Linear
 
 /-!

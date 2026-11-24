@@ -1,4 +1,4 @@
-import QOU.ParticleInteractions.delta_pre_archimedean
+import QOU.Confinement.delta_pre_archimedean
 
 /-!
 Sibling Lean file for [`prop:delta-pre-archimedean`](delta-pre-archimedean.md).

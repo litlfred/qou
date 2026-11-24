@@ -5,7 +5,7 @@ export default proposition({
   examples: ["ex:vacuum-state-su2"],
   title: "Existence and Uniqueness of the Vacuum State",
   tags: ["vacuum-state", "invariant", "frobenius-trace"],
-  lean: { ref: "qou:QOU.Torsion.invariant_functional_unique",
+  lean: { ref: "qou:QOU.LiftingDescent.Torsion.invariant_functional_unique",
     validation: "not_checked",
   },
   uses: [

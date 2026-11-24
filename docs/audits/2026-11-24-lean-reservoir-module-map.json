@@ -109,7 +109,7 @@
     "AppendixSurreals": "QOU.Observations",
     "Optimization": "QOU.Observations"
   },
-  "total_modules": 3864,
+  "total_modules": 3889,
   "modules": {
     "QOU.AlgebraicSubstrate": {
       "old_module": "QOU.AlgebraicSubstrate",
@@ -1063,6 +1063,14 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Archimedean.lean",
       "new_lean_rel_path": "QOU/MassTheory/Archimedean.lean"
     },
+    "QOU.Archimedean.AlphaEmTwoLoopBlochSchwinger": {
+      "old_module": "QOU.Archimedean.AlphaEmTwoLoopBlochSchwinger",
+      "new_module": "QOU.MassTheory.AlphaEmTwoLoopBlochSchwinger",
+      "target_partition": "QOU.MassTheory",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Archimedean/AlphaEmTwoLoopBlochSchwinger.lean",
+      "new_lean_rel_path": "QOU/MassTheory/AlphaEmTwoLoopBlochSchwinger.lean"
+    },
     "QOU.Archimedean.ArchimedeanLimitDomain": {
       "old_module": "QOU.Archimedean.ArchimedeanLimitDomain",
       "new_module": "QOU.MassTheory.ArchimedeanLimitDomain",
@@ -1742,6 +1750,14 @@
       "target_lean_lib": "QOU",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingProjection.lean",
       "new_lean_rel_path": "QOU/MassTheory/EmCouplingProjection.lean"
+    },
+    "QOU.Archimedean.EmFermionLoopFourTopology": {
+      "old_module": "QOU.Archimedean.EmFermionLoopFourTopology",
+      "new_module": "QOU.MassTheory.EmFermionLoopFourTopology",
+      "target_partition": "QOU.MassTheory",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Archimedean/EmFermionLoopFourTopology.lean",
+      "new_lean_rel_path": "QOU/MassTheory/EmFermionLoopFourTopology.lean"
     },
     "QOU.Archimedean.EmMeasureGaussBonnet": {
       "old_module": "QOU.Archimedean.EmMeasureGaussBonnet",
@@ -4751,6 +4767,14 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BraidKnot/HeckePresentationBridge.lean",
       "new_lean_rel_path": "QOU/BraidsAndKnots/HeckePresentationBridge.lean"
     },
+    "QOU.BraidKnot.HeckeRealVsRootOfUnityModularity": {
+      "old_module": "QOU.BraidKnot.HeckeRealVsRootOfUnityModularity",
+      "new_module": "HeckeTemperleyLieb.HeckeRealVsRootOfUnityModularity",
+      "target_partition": "TierB.HeckeTemperleyLieb",
+      "target_lean_lib": "HeckeTemperleyLieb",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BraidKnot/HeckeRealVsRootOfUnityModularity.lean",
+      "new_lean_rel_path": "HeckeTemperleyLieb/HeckeRealVsRootOfUnityModularity.lean"
+    },
     "QOU.BraidKnot.HeckeReebHolonomyLaplacian": {
       "old_module": "QOU.BraidKnot.HeckeReebHolonomyLaplacian",
       "new_module": "QOU.BraidsAndKnots.HeckeReebHolonomyLaplacian",
@@ -6414,6 +6438,14 @@
       "target_lean_lib": "BraidKnotOctonion",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BraidKnot/SpechtCentralC2Scalar.lean",
       "new_lean_rel_path": "BraidKnotOctonion/SpechtCentralC2Scalar.lean"
+    },
+    "QOU.BraidKnot.SpechtCharFreeStandardBasis": {
+      "old_module": "QOU.BraidKnot.SpechtCharFreeStandardBasis",
+      "new_module": "HeckeTemperleyLieb.SpechtCharFreeStandardBasis",
+      "target_partition": "TierB.HeckeTemperleyLieb",
+      "target_lean_lib": "HeckeTemperleyLieb",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BraidKnot/SpechtCharFreeStandardBasis.lean",
+      "new_lean_rel_path": "HeckeTemperleyLieb/SpechtCharFreeStandardBasis.lean"
     },
     "QOU.BraidKnot.SpechtClassification": {
       "old_module": "QOU.BraidKnot.SpechtClassification",
@@ -8111,6 +8143,14 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/ThreeRowSignCrossing.lean",
       "new_lean_rel_path": "BraidKnotOctonion/ThreeRowSignCrossing.lean"
     },
+    "QOU.BraidsAndKnots.TracedVolumeVsHalfTwist": {
+      "old_module": "QOU.BraidsAndKnots.TracedVolumeVsHalfTwist",
+      "new_module": "BraidKnotOctonion.TracedVolumeVsHalfTwist",
+      "target_partition": "TierB.BraidKnotOctonion",
+      "target_lean_lib": "BraidKnotOctonion",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/TracedVolumeVsHalfTwist.lean",
+      "new_lean_rel_path": "BraidKnotOctonion/TracedVolumeVsHalfTwist.lean"
+    },
     "QOU.BraidsAndKnots.TransposeSymmetricWeightsForceHalfH": {
       "old_module": "QOU.BraidsAndKnots.TransposeSymmetricWeightsForceHalfH",
       "new_module": "BraidKnotOctonion.TransposeSymmetricWeightsForceHalfH",
@@ -8222,6 +8262,14 @@
       "target_lean_lib": "BraidKnotOctonion",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/YoungDiagramTailFirstInstance.lean",
       "new_lean_rel_path": "BraidKnotOctonion/YoungDiagramTailFirstInstance.lean"
+    },
+    "QOU.BraidsAndKnots.YoungDiagramTailSecondInstance": {
+      "old_module": "QOU.BraidsAndKnots.YoungDiagramTailSecondInstance",
+      "new_module": "BraidKnotOctonion.YoungDiagramTailSecondInstance",
+      "target_partition": "TierB.BraidKnotOctonion",
+      "target_lean_lib": "BraidKnotOctonion",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/YoungDiagramTailSecondInstance.lean",
+      "new_lean_rel_path": "BraidKnotOctonion/YoungDiagramTailSecondInstance.lean"
     },
     "QOU.BraidsAndKnots.YoungDiagramTranspose": {
       "old_module": "QOU.BraidsAndKnots.YoungDiagramTranspose",
@@ -8606,6 +8654,14 @@
       "target_lean_lib": "BraidKnotOctonion",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BringsSurface/BranchPointSixNotForced.lean",
       "new_lean_rel_path": "BraidKnotOctonion/BranchPointSixNotForced.lean"
+    },
+    "QOU.BringsSurface.BringThetaCharacteristicsSymplectic": {
+      "old_module": "QOU.BringsSurface.BringThetaCharacteristicsSymplectic",
+      "new_module": "BraidKnotOctonion.BringThetaCharacteristicsSymplectic",
+      "target_partition": "TierB.BraidKnotOctonion",
+      "target_lean_lib": "BraidKnotOctonion",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/BringsSurface/BringThetaCharacteristicsSymplectic.lean",
+      "new_lean_rel_path": "BraidKnotOctonion/BringThetaCharacteristicsSymplectic.lean"
     },
     "QOU.BringsSurface.CharacterBound": {
       "old_module": "QOU.BringsSurface.CharacterBound",
@@ -10086,6 +10142,22 @@
       "target_lean_lib": "QOU",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/GradedFrobeniusHopf.lean",
       "new_lean_rel_path": "QOU/Core/GradedFrobeniusHopf.lean"
+    },
+    "QOU.GravitySpacetime.FeffermanLorentzianHorizonEntropy": {
+      "old_module": "QOU.GravitySpacetime.FeffermanLorentzianHorizonEntropy",
+      "new_module": "QOU.Core.FeffermanLorentzianHorizonEntropy",
+      "target_partition": "QOU.Core",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/GravitySpacetime/FeffermanLorentzianHorizonEntropy.lean",
+      "new_lean_rel_path": "QOU/Core/FeffermanLorentzianHorizonEntropy.lean"
+    },
+    "QOU.GravitySpacetime.OqSU2HaarModularEntanglement": {
+      "old_module": "QOU.GravitySpacetime.OqSU2HaarModularEntanglement",
+      "new_module": "CompactQuantumMetrics.OqSU2HaarModularEntanglement",
+      "target_partition": "TierB.CompactQuantumMetrics",
+      "target_lean_lib": "CompactQuantumMetrics",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/GravitySpacetime/OqSU2HaarModularEntanglement.lean",
+      "new_lean_rel_path": "CompactQuantumMetrics/OqSU2HaarModularEntanglement.lean"
     },
     "QOU.GravitySpacetime.ReebLengthTimeAndLightConeEntropy": {
       "old_module": "QOU.GravitySpacetime.ReebLengthTimeAndLightConeEntropy",
@@ -15495,6 +15567,14 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Mass/FormalityBridgeF1.lean",
       "new_lean_rel_path": "QOU/MassTheory/FormalityBridgeF1.lean"
     },
+    "QOU.Mass.FourOneAPolynomialFromGluing": {
+      "old_module": "QOU.Mass.FourOneAPolynomialFromGluing",
+      "new_module": "QOU.MassTheory.FourOneAPolynomialFromGluing",
+      "target_partition": "QOU.MassTheory",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Mass/FourOneAPolynomialFromGluing.lean",
+      "new_lean_rel_path": "QOU/MassTheory/FourOneAPolynomialFromGluing.lean"
+    },
     "QOU.Mass.FreeCumulants": {
       "old_module": "QOU.Mass.FreeCumulants",
       "new_module": "QOU.MassTheory.FreeCumulants",
@@ -17687,6 +17767,14 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/MassTheory/ClassicalTraceFloor.lean",
       "new_lean_rel_path": "QOU/MassTheory/ClassicalTraceFloor.lean"
     },
+    "QOU.MassTheory.ClassicalTraceFloorParity": {
+      "old_module": "QOU.MassTheory.ClassicalTraceFloorParity",
+      "new_module": "QOU.MassTheory.ClassicalTraceFloorParity",
+      "target_partition": "QOU.MassTheory",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/MassTheory/ClassicalTraceFloorParity.lean",
+      "new_lean_rel_path": "QOU/MassTheory/ClassicalTraceFloorParity.lean"
+    },
     "QOU.MassTheory.CoCasimirDimQNotForced": {
       "old_module": "QOU.MassTheory.CoCasimirDimQNotForced",
       "new_module": "BraidKnotOctonion.CoCasimirDimQNotForced",
@@ -17854,6 +17942,14 @@
       "target_lean_lib": "QOU",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/MassTheory/DeltaBarOddnessAndInterfaceAnchorGap.lean",
       "new_lean_rel_path": "QOU/MassTheory/DeltaBarOddnessAndInterfaceAnchorGap.lean"
+    },
+    "QOU.MassTheory.DeltaLambdaRStarOrderBounds": {
+      "old_module": "QOU.MassTheory.DeltaLambdaRStarOrderBounds",
+      "new_module": "QOU.MassTheory.DeltaLambdaRStarOrderBounds",
+      "target_partition": "QOU.MassTheory",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/MassTheory/DeltaLambdaRStarOrderBounds.lean",
+      "new_lean_rel_path": "QOU/MassTheory/DeltaLambdaRStarOrderBounds.lean"
     },
     "QOU.MassTheory.DeltaNPMatrixIdentity": {
       "old_module": "QOU.MassTheory.DeltaNPMatrixIdentity",
@@ -18974,6 +19070,14 @@
       "target_lean_lib": "QOU",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/MassTheory/ThreeRowExtensiveCumulant.lean",
       "new_lean_rel_path": "QOU/MassTheory/ThreeRowExtensiveCumulant.lean"
+    },
+    "QOU.MassTheory.ThreeRowSpringerFintypeAndBraidTwist": {
+      "old_module": "QOU.MassTheory.ThreeRowSpringerFintypeAndBraidTwist",
+      "new_module": "QOU.MassTheory.ThreeRowSpringerFintypeAndBraidTwist",
+      "target_partition": "QOU.MassTheory",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/MassTheory/ThreeRowSpringerFintypeAndBraidTwist.lean",
+      "new_lean_rel_path": "QOU/MassTheory/ThreeRowSpringerFintypeAndBraidTwist.lean"
     },
     "QOU.MassTheory.ThreeRowSpringerSYTDerivation": {
       "old_module": "QOU.MassTheory.ThreeRowSpringerSYTDerivation",
@@ -23743,6 +23847,22 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Nuclear/K2TensorSquareGGMGauge.lean",
       "new_lean_rel_path": "QOU/Nuclear/K2TensorSquareGGMGauge.lean"
     },
+    "QOU.Nuclear.PauliLockSpinIsospinDiagnostic": {
+      "old_module": "QOU.Nuclear.PauliLockSpinIsospinDiagnostic",
+      "new_module": "QOU.Nuclear.PauliLockSpinIsospinDiagnostic",
+      "target_partition": "QOU.Nuclear",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Nuclear/PauliLockSpinIsospinDiagnostic.lean",
+      "new_lean_rel_path": "QOU/Nuclear/PauliLockSpinIsospinDiagnostic.lean"
+    },
+    "QOU.Nuclear.TetrahedralFluxRingAndMajoranaCluster": {
+      "old_module": "QOU.Nuclear.TetrahedralFluxRingAndMajoranaCluster",
+      "new_module": "QOU.Nuclear.TetrahedralFluxRingAndMajoranaCluster",
+      "target_partition": "QOU.Nuclear",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Nuclear/TetrahedralFluxRingAndMajoranaCluster.lean",
+      "new_lean_rel_path": "QOU/Nuclear/TetrahedralFluxRingAndMajoranaCluster.lean"
+    },
     "QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling": {
       "old_module": "QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling",
       "new_module": "QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling",
@@ -23750,6 +23870,14 @@
       "target_lean_lib": "QOU",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Nuclear/ThomaeJacksonCoulombAndAlphaTunneling.lean",
       "new_lean_rel_path": "QOU/Nuclear/ThomaeJacksonCoulombAndAlphaTunneling.lean"
+    },
+    "QOU.Nuclear.TwelveQuarkWignerPauliBinding": {
+      "old_module": "QOU.Nuclear.TwelveQuarkWignerPauliBinding",
+      "new_module": "QOU.Nuclear.TwelveQuarkWignerPauliBinding",
+      "target_partition": "QOU.Nuclear",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Nuclear/TwelveQuarkWignerPauliBinding.lean",
+      "new_lean_rel_path": "QOU/Nuclear/TwelveQuarkWignerPauliBinding.lean"
     },
     "QOU.ObservableSubcategory": {
       "old_module": "QOU.ObservableSubcategory",
@@ -24942,6 +25070,14 @@
       "target_lean_lib": "BraidKnotOctonion",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/QBeta/BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge.lean",
       "new_lean_rel_path": "BraidKnotOctonion/BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge.lean"
+    },
+    "QOU.QBeta.C1ConnectionAlgebraicIdentities": {
+      "old_module": "QOU.QBeta.C1ConnectionAlgebraicIdentities",
+      "new_module": "QOU.Nuclear.C1ConnectionAlgebraicIdentities",
+      "target_partition": "QOU.Nuclear",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/QBeta/C1ConnectionAlgebraicIdentities.lean",
+      "new_lean_rel_path": "QOU/Nuclear/C1ConnectionAlgebraicIdentities.lean"
     },
     "QOU.QBeta.C1ConnectionPoles": {
       "old_module": "QOU.QBeta.C1ConnectionPoles",
@@ -30231,6 +30367,14 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/BringGenerationSplitAndCKMTexture.lean",
       "new_lean_rel_path": "QOU/StandardModel/BringGenerationSplitAndCKMTexture.lean"
     },
+    "QOU.StandardModel.BringPrymRiemannRochGenerations": {
+      "old_module": "QOU.StandardModel.BringPrymRiemannRochGenerations",
+      "new_module": "QOU.StandardModel.BringPrymRiemannRochGenerations",
+      "target_partition": "QOU.StandardModel",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/BringPrymRiemannRochGenerations.lean",
+      "new_lean_rel_path": "QOU/StandardModel/BringPrymRiemannRochGenerations.lean"
+    },
     "QOU.StandardModel.BringRealStructureTransport": {
       "old_module": "QOU.StandardModel.BringRealStructureTransport",
       "new_module": "QOU.StandardModel.BringRealStructureTransport",
@@ -30327,6 +30471,14 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/ComponentFraming.lean",
       "new_lean_rel_path": "QOU/StandardModel/ComponentFraming.lean"
     },
+    "QOU.StandardModel.CompositeT29ThresholdInstability": {
+      "old_module": "QOU.StandardModel.CompositeT29ThresholdInstability",
+      "new_module": "QOU.StandardModel.CompositeT29ThresholdInstability",
+      "target_partition": "QOU.StandardModel",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/CompositeT29ThresholdInstability.lean",
+      "new_lean_rel_path": "QOU/StandardModel/CompositeT29ThresholdInstability.lean"
+    },
     "QOU.StandardModel.ElectroweakBringSchwingerBridge": {
       "old_module": "QOU.StandardModel.ElectroweakBringSchwingerBridge",
       "new_module": "QOU.StandardModel.ElectroweakBringSchwingerBridge",
@@ -30359,6 +30511,14 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/ElectroweakVevGaps.lean",
       "new_lean_rel_path": "QOU/StandardModel/ElectroweakVevGaps.lean"
     },
+    "QOU.StandardModel.FramedBraidTwistMonodromy": {
+      "old_module": "QOU.StandardModel.FramedBraidTwistMonodromy",
+      "new_module": "QOU.StandardModel.FramedBraidTwistMonodromy",
+      "target_partition": "QOU.StandardModel",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/FramedBraidTwistMonodromy.lean",
+      "new_lean_rel_path": "QOU/StandardModel/FramedBraidTwistMonodromy.lean"
+    },
     "QOU.StandardModel.FramingIsAChoice": {
       "old_module": "QOU.StandardModel.FramingIsAChoice",
       "new_module": "QOU.StandardModel.FramingIsAChoice",
@@ -30374,6 +30534,14 @@
       "target_lean_lib": "QOU",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/Gen1QuarkRays.lean",
       "new_lean_rel_path": "QOU/StandardModel/Gen1QuarkRays.lean"
+    },
+    "QOU.StandardModel.HopfFramingAndHirzebruchDefect": {
+      "old_module": "QOU.StandardModel.HopfFramingAndHirzebruchDefect",
+      "new_module": "QOU.StandardModel.HopfFramingAndHirzebruchDefect",
+      "target_partition": "QOU.StandardModel",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/HopfFramingAndHirzebruchDefect.lean",
+      "new_lean_rel_path": "QOU/StandardModel/HopfFramingAndHirzebruchDefect.lean"
     },
     "QOU.StandardModel.HyperchargeBatteryReduction": {
       "old_module": "QOU.StandardModel.HyperchargeBatteryReduction",
@@ -30398,6 +30566,14 @@
       "target_lean_lib": "QOU",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/LeptonNumberGradingObstruction.lean",
       "new_lean_rel_path": "QOU/StandardModel/LeptonNumberGradingObstruction.lean"
+    },
+    "QOU.StandardModel.LowCrossingThreeBraidTauSelection": {
+      "old_module": "QOU.StandardModel.LowCrossingThreeBraidTauSelection",
+      "new_module": "QOU.StandardModel.LowCrossingThreeBraidTauSelection",
+      "target_partition": "QOU.StandardModel",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/LowCrossingThreeBraidTauSelection.lean",
+      "new_lean_rel_path": "QOU/StandardModel/LowCrossingThreeBraidTauSelection.lean"
     },
     "QOU.StandardModel.NeutrinoUnknotSweedlerMassLift": {
       "old_module": "QOU.StandardModel.NeutrinoUnknotSweedlerMassLift",
@@ -30463,6 +30639,14 @@
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/RibbonPantBernKosowerGluonVertex.lean",
       "new_lean_rel_path": "QOU/StandardModel/RibbonPantBernKosowerGluonVertex.lean"
     },
+    "QOU.StandardModel.S3CirculantKoideTraceIdentity": {
+      "old_module": "QOU.StandardModel.S3CirculantKoideTraceIdentity",
+      "new_module": "QOU.StandardModel.S3CirculantKoideTraceIdentity",
+      "target_partition": "QOU.StandardModel",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/S3CirculantKoideTraceIdentity.lean",
+      "new_lean_rel_path": "QOU/StandardModel/S3CirculantKoideTraceIdentity.lean"
+    },
     "QOU.StandardModel.SecondCrossingInvariant": {
       "old_module": "QOU.StandardModel.SecondCrossingInvariant",
       "new_module": "QOU.StandardModel.SecondCrossingInvariant",
@@ -30494,6 +30678,14 @@
       "target_lean_lib": "QOU",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/StrongCPWritheCancellationAndStringTension.lean",
       "new_lean_rel_path": "QOU/StandardModel/StrongCPWritheCancellationAndStringTension.lean"
+    },
+    "QOU.StandardModel.Su3Su2U1Z6GroupAndCommutant": {
+      "old_module": "QOU.StandardModel.Su3Su2U1Z6GroupAndCommutant",
+      "new_module": "QOU.StandardModel.Su3Su2U1Z6GroupAndCommutant",
+      "target_partition": "QOU.StandardModel",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.lean",
+      "new_lean_rel_path": "QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.lean"
     },
     "QOU.StandardModel.ThetaQcdFramingCp": {
       "old_module": "QOU.StandardModel.ThetaQcdFramingCp",
@@ -30766,6 +30958,14 @@
       "target_lean_lib": "BraidKnotOctonion",
       "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Torsion/MassTraceMarkovClass.lean",
       "new_lean_rel_path": "BraidKnotOctonion/MassTraceMarkovClass.lean"
+    },
+    "QOU.Torsion.MultiplicativeIntegralCurvature": {
+      "old_module": "QOU.Torsion.MultiplicativeIntegralCurvature",
+      "new_module": "QOU.LiftingDescent.MultiplicativeIntegralCurvature",
+      "target_partition": "QOU.LiftingDescent",
+      "target_lean_lib": "QOU",
+      "old_repo_rel_path": "folio/quantum-observable-universe/lean/QOU/Torsion/MultiplicativeIntegralCurvature.lean",
+      "new_lean_rel_path": "QOU/LiftingDescent/MultiplicativeIntegralCurvature.lean"
     },
     "QOU.Torsion.TopologicalMass": {
       "old_module": "QOU.Torsion.TopologicalMass",

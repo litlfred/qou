@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.PachnerPentagonBorromean",
+    ref: "qou:BraidKnotOctonion.PachnerPentagonBorromean",
     validation: "not_checked",
   },
   uses: [

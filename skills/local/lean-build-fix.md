@@ -71,13 +71,16 @@ When the MCP server is unavailable, run single-threaded `lean`-direct verificati
 export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
        OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
 
-# Single library file + downstream importers (isolated write overlay):
+# Single library file + downstream importers (isolated write overlay; supports all 7 Reservoir libs + 12 QOU/<Chapter> dirs):
 nice -n 15 bash scripts/lean-overlay-env.sh init
-nice -n 15 bash scripts/lean-overlay-env.sh build QOU/<Subgraph>/<Module>.lean
+nice -n 15 bash scripts/lean-overlay-env.sh build HeckeTemperleyLieb/<Module>.lean   # or QOU/<Chapter>/<Module>.lean
 nice -n 15 bash scripts/lean-overlay-env.sh check folio/quantum-observable-universe/<chapter>/<block>.lean
 
 # Topological import cone of a target module (single worker):
-nice -n 15 bash scripts/lean-direct-cone.sh -j 1 QOU.<Subgraph>.<Module>
+nice -n 15 bash scripts/lean-direct-cone.sh -j 1 HeckeTemperleyLieb.<Module>
+
+# Fix up an open PR branch authored against pre-Option-1 legacy QOU/<OldSynonym>/ paths:
+nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch
 ```
 
 Parse the output for lines matching:

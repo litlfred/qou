@@ -4,7 +4,7 @@ export default lemma({
   label: "lem:crossing-application-chains",
   title: "Closed chains of crossing applications on words and on states",
   lean: {
-    ref: "qou:QOU.Chronology.not_closedChainAt_tick",
+    ref: "qou:QOU.Core.NoClosedCausalChains.not_closedChainAt_tick",
     sorryFree: true,
     validation: "not_checked",
   },

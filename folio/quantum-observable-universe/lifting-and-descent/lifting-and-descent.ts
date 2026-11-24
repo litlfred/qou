@@ -77,6 +77,7 @@ export default chapter({
         "yekutieli-lifting-condition",
         "yekutieli-lifting-condition-su2",
         "quantum-characteristic-classes",
+        "quantum-characteristic-classes-remark",
         "quantum-characteristic-classes-exists",
         "quantum-characteristic-classes-exists-proof",
         "quantum-characteristic-classes-unique",
@@ -107,6 +108,7 @@ export default chapter({
         // qou-motivic-galois-instance (its consumers). Detangler
         // P34 (2026-05-22).
         "motivic-galois-character",
+        "motivic-galois-character-remark",
         "motivic-perpetual-obstruction",
         "kummer-tower-motivic-galois",
       ],
@@ -119,6 +121,7 @@ export default chapter({
       blocks: [
         "direct-limit-intro",
         "direct-limit-algebra",
+        "direct-limit-algebra-remark",
         "direct-limit-algebra-su2",
         "direct-limit-lusztig",
         "jet-shell",
@@ -176,6 +179,7 @@ export default chapter({
         "descent-eigenspaces-su2",
         "descent-eigenspaces-proof",
         "brane-boundary",
+        "brane-boundary-remark",
         "brane-boundary-su2",
         "brane-boundary-structure",
         "descent-reduction-zero",
@@ -194,8 +198,10 @@ export default chapter({
       blocks: [
         "cosimplicial-intro",
         "yekutieli-triple",
+        "yekutieli-triple-remark",
         "cosimplicial-crossed-groupoid",
         "ccg-cosimplicial-identities",
+        "ccg-cosimplicial-identities-remark",
         "ccg-crossed-module-structure",
         "ccg-crossed-module-structure-proof",
         "cosimplicial-crossed-groupoid-proof",
@@ -220,6 +226,7 @@ export default chapter({
       blocks: [
         "localized-knot-intro",
         "localized-knot",
+        "localized-knot-remark",
       ],
     }),
 

@@ -14,7 +14,7 @@ export default proposition({
     "nitrogen-14",
     "statistics",
   ],
-  lean: { ref: "qou:QOU.Archimedean.nuclear_spin_parity",
+  lean: { ref: "qou:QOU.MassTheory.nuclear_spin_parity",
     validation: "not_checked",
   },
 });

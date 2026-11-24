@@ -4,7 +4,7 @@ export default definition({
   label: "def:up-quark",
   title: "Up quark",
   tags: ["quark", "up", "unknot", "borromean", "fermion", "color-tube"],
-  lean: { ref: "qou:QOU.Archimedean.UpQuark",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.UpQuark",
     validation: "not_checked",
   },
   uses: ["conj:borromean-quark"],

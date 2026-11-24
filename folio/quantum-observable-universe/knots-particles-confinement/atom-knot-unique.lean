@@ -1,4 +1,4 @@
-import QOU.ParticleInteractions.AtomKnot
+import QOU.Confinement.AtomKnot
 
 
 /-!

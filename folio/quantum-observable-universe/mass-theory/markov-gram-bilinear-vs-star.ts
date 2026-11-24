@@ -6,7 +6,7 @@ export default remark({
     "Two pairings, two signatures: $\\mathrm{tr}_M(b_ib_j)$ versus $\\mathrm{tr}_M(b_ib_j^{*})$",
   interprets: "prop:markov-gram-star-positive",
   lean: {
-    ref: "qou:QOU.QBeta.GramSignature.traceform_M2",
+    ref: "qou:QOU.Nuclear.GramSignature.traceform_M2",
     validation: "not_checked",
   },
   uses: ["prop:markov-gram-star-positive"],

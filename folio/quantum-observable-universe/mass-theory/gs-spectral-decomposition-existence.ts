@@ -14,7 +14,7 @@ export default conjecture({
   // the ref also resolves by module path to
   // `lean/QOU/BraidKnot/GBResidueSpectralSum.lean`. Nothing to fix.
   lean: {
-    ref: "qou:QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition",
+    ref: "qou:QOU.BraidsAndKnots.GBResidueSpectralSum.spectral_decomposition",
     validation: "not_checked",
   },
   uses: [

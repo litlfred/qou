@@ -632,8 +632,8 @@ def lint_file(
     return findings
 
 
-def _git_diff_lean_files(base_ref: str | None) -> tuple[list[Path], set[Path]]:
-    """Return (changed_or_added_lean_files, newly_added_lean_files) vs base_ref + working tree."""
+def _git_diff_lean_files(base_ref: str | None) -> tuple[list[Path], set[Path], dict[Path, set[int]]]:
+    """Return (changed_or_added_lean_files, newly_added_lean_files, changed_lines_by_file)."""
     if base_ref is None:
         mb = subprocess.run(
             ["git", "merge-base", "origin/main", "HEAD"],
@@ -676,7 +676,30 @@ def _git_diff_lean_files(base_ref: str | None) -> tuple[list[Path], set[Path]]:
                 if status.startswith("A"):
                     added.add(p.resolve())
 
-    return sorted(changed), added
+    changed_lines: dict[Path, set[int]] = {}
+    hunk_re = re.compile(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@")
+    for ucmd in (
+        ["git", "diff", "-U0", "-M", f"{base}...HEAD", "--", "*.lean"],
+        ["git", "diff", "-U0", "-M", "HEAD", "--", "*.lean"],
+    ):
+        uproc = subprocess.run(ucmd, cwd=REPO_ROOT, capture_output=True, text=True)
+        if uproc.returncode != 0:
+            continue
+        cur_p: Path | None = None
+        for ln in uproc.stdout.splitlines():
+            if ln.startswith("+++ b/"):
+                cand = REPO_ROOT / ln[6:]
+                cur_p = cand.resolve() if cand.is_file() else None
+            elif cur_p is not None and ln.startswith("@@ "):
+                mh = hunk_re.match(ln)
+                if mh:
+                    start = int(mh.group(1))
+                    cnt = int(mh.group(2)) if mh.group(2) is not None else 1
+                    s = changed_lines.setdefault(cur_p, set())
+                    for k in range(start, start + max(cnt, 1)):
+                        s.add(k)
+
+    return sorted(changed), added, changed_lines
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -722,6 +745,7 @@ def main(argv: list[str] | None = None) -> int:
     preloaded_cache: dict[Path, tuple[str, str]] = {}
     allowed_comm_mods: set[str] | None = None
 
+    diff_changed_lines: dict[Path, set[int]] | None = None
     if args.package:
         key = args.package.strip().lower()
         cand_dir = Path(args.package)
@@ -760,7 +784,7 @@ def main(argv: list[str] | None = None) -> int:
                         targets.append((p, True, part, False))
     elif args.diff is not None:
         base = None if args.diff == "__AUTO__" else args.diff
-        diff_files, added_files = _git_diff_lean_files(base)
+        diff_files, added_files, diff_changed_lines = _git_diff_lean_files(base)
         for p in diff_files:
             targets.append((p, False, None, p in added_files))
     elif args.files:
@@ -781,19 +805,30 @@ def main(argv: list[str] | None = None) -> int:
     all_findings: list[Finding] = []
     for p, comm_mode, comm_part, is_added in targets:
         pre = preloaded_cache.get(p)
-        all_findings.extend(
-            lint_file(
-                p,
-                detangler_mod=detangler,
-                community_mode=comm_mode,
-                community_partition=comm_part,
-                allowed_community_modules=allowed_comm_mods,
-                strict_zero_qou_prefix=args.strict_isolated,
-                is_newly_added_in_diff=is_added,
-                preloaded_raw=pre[0] if pre else None,
-                preloaded_code=pre[1] if pre else None,
-            )
+        file_findings = lint_file(
+            p,
+            detangler_mod=detangler,
+            community_mode=comm_mode,
+            community_partition=comm_part,
+            allowed_community_modules=allowed_comm_mods,
+            strict_zero_qou_prefix=args.strict_isolated,
+            is_newly_added_in_diff=is_added,
+            preloaded_raw=pre[0] if pre else None,
+            preloaded_code=pre[1] if pre else None,
         )
+        if diff_changed_lines is not None and not is_added:
+            # For modified/renamed existing files in --diff mode, header/import/dir rules
+            # (`BP001`, `BP002*`, `BP003*`, `BP008`, `BP009`) apply whole-file, while
+            # body-level `BP006*`/`BP007*` gate lines touched by the diff (unless in an
+            # isolated community library directory, where 100% of rules remain whole-file).
+            in_comm = any(seg in COMMUNITY_TOP_DIRS for seg in p.parts)
+            if not in_comm:
+                clines = diff_changed_lines.get(p, set())
+                file_findings = [
+                    f for f in file_findings
+                    if not f.rule.startswith(("BP006", "BP007")) or f.line in clines
+                ]
+        all_findings.extend(file_findings)
 
     all_findings.sort(
         key=lambda f: (-SEVERITY_ORDER[f.severity], f.path, f.line, f.rule)

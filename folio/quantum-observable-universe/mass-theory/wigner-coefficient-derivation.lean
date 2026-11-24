@@ -9,8 +9,8 @@
   Ref: [leitner2026] §5.7, prop:wigner-coefficient-derivation
 -/
 
-import QOU.Torsion.HeckeMassElement
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.HeckeMassElement
+import HeckeTemperleyLieb.QIntegerCanonical
 
 namespace QOU.BraidKnot
 

@@ -6,7 +6,7 @@ import Mathlib.Data.Matrix.Basic
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
-import QOU.MathlibExt.QPartitionCombinatorics
+import HeckeTemperleyLieb.QPartitionCombinatorics
 import QOU.Nuclear.ColourReconnectionStokesAssembly
 
 /-!

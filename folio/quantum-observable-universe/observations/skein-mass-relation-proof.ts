@@ -28,7 +28,7 @@ export default proof({
         "resolved here.",
     },
   ],
-  lean: { ref: "qou:QOU.HadronicMass.SkeinMassRelation",
+  lean: { ref: "qou:QOU.MassTheory.HadronicMass.SkeinMassRelation",
     validation: "leanok",
   },
   computation: {

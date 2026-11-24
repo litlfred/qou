@@ -1,7 +1,7 @@
 import Mathlib.Tactic
-import QOU.Archimedean.ClausenFunctionMathlibFiller
-import QOU.Archimedean.ThreeSubstantiveMathlibFillers
-import QOU.Archimedean.DilogarithmArchimedeanLimit
+import MathlibExt.ClausenFunctionMathlibFiller
+import QOU.MassTheory.ThreeSubstantiveMathlibFillers
+import MathlibExt.DilogarithmArchimedeanLimit
 
 
 /-!

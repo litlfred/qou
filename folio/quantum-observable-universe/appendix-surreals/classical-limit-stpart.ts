@@ -23,7 +23,7 @@ export default conjecture({
   ],
   cites: ["robinson1966", "berarducci-mantova2018"],
   lean: {
-    ref: "qou:QOU.AppendixSurreals.ClassicalLimitStpart",
+    ref: "qou:QOU.Observations.ClassicalLimitStpart",
     validation: "not_checked",
   },
 });

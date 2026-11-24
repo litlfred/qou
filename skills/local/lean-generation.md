@@ -25,11 +25,11 @@ Content-object triples (`.ts` + `.md` + `.lean`) under `folio/<paper>/<chapter>/
 Before creating a new `.lean` file, classify its home (see [`lean-mathlibext-curator.md`](lean-mathlibext-curator.md) and [`content-graph.md`](content-graph.md)):
 
 1. **General-purpose non-QOU mathematics (`0` QOU model/physics coupling):**
-   - **Tier A (`MathlibExt`):** small general `mathlib4` core PR candidates (`-- TODO upstream: Mathlib.<Path>`).
-   - **Tier B (6 Lean Reservoir `lean_lib` packages):** `HeckeTemperleyLieb`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `QCalculus`, `BraidKnotOctonion` (plus [`folio/unital-groebner-bases/lean/`](../../folio/unital-groebner-bases/lean/) `UGB`).
+   - **Tier A (`MathlibExt/`):** top-level `[[lean_lib]]` root `folio/quantum-observable-universe/lean/MathlibExt/` for small general `mathlib4` core PR candidates (`-- TODO upstream: Mathlib.<Path>`).
+   - **Tier B (6 top-level Lean Reservoir `[[lean_lib]]` roots under `folio/quantum-observable-universe/lean/<Lib>/`):** `QCalculus/`, `TwistedFrobeniusHopf/`, `ToricConicOpt/`, `CompactQuantumMetrics/`, `HeckeTemperleyLieb/`, `BraidKnotOctonion/` (in strict DAG order `L1 -> L7`, plus [`folio/unital-groebner-bases/lean/`](../../folio/unital-groebner-bases/lean/) `UGB`).
    - **Hard rule (`BP008`):** Tier-A and Tier-B modules have **zero `QOU.*` model imports**, **zero `sorry`**, and **zero custom `axiom`s**.
 2. **QOU model / chapter formalization:**
-   - Library declarations shared by ≥2 blocks go in the single canonical chapter subgraph (`QOU.Core`, `QOU.LiftingDescent`, `QOU.BraidsAndKnots`, `QOU.BringsSurface`, `QOU.Confinement`, `QOU.EightfoldWay`, `QOU.MassTheory`, `QOU.Nuclear`, `QOU.StandardModel`, `QOU.FluidDynamics`, `QOU.InformationTheory`, `QOU.Observations`). **Never** create new synonym folders (`BP009`).
+   - Library declarations shared by ≥2 blocks go in one of the **12 canonical chapter subgraphs** under `folio/quantum-observable-universe/lean/QOU/<Chapter>/`: `QOU.Core`, `QOU.LiftingDescent`, `QOU.BraidsAndKnots`, `QOU.BringsSurface`, `QOU.Confinement`, `QOU.EightfoldWay`, `QOU.MassTheory`, `QOU.Nuclear`, `QOU.StandardModel`, `QOU.FluidDynamics`, `QOU.InformationTheory`, `QOU.Observations`. **Never** create loose `QOU/*.lean` files or synonym folders (`BP009`); if rebasing an older branch, run `nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch`.
    - Block-specific formalizations live as `folio/<paper>/<chapter>/<block>.lean` siblings paired with `<block>.ts` and `<block>.md` (and **never** shadow a real library declaration with `: True := trivial`!).
 
 ---

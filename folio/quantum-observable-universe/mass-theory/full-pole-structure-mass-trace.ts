@@ -10,7 +10,7 @@ export default proposition({
   title:
     "Cyclotomic expansion of the cleared mass trace",
   lean: {
-    ref: "qou:QOU.BraidKnot.HabiroCompletion",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.HabiroCompletion",
     validation: "not_checked",
   },
   cites: ["habiro2004cyclotomic", "habiro2008", "jones1987"],

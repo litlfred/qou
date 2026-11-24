@@ -5,6 +5,6 @@ export default remark({
   title: "The comultiplication does not restrict to the Kähler differentials",
   interprets: "lem:jet-prolongation-categorical-jet",
   uses: ["lem:jet-prolongation-categorical-jet"],
-  lean: { ref: "qou:QOU.LiftingDescent.kahlerOmega_eq_bot_of_comul_restricts" },
+  lean: { ref: "qou:QOU.LiftingDescent.LiftingDescentRoot.kahlerOmega_eq_bot_of_comul_restricts" },
   tags: ["kahler-differential", "jet-bundle", "bialgebra", "counterexample"],
 });

@@ -1,6 +1,7 @@
-Fix an infinitesimal $\varepsilon = 1/\omega \in \mathbf{No}$. Equivalently, $\omega = 1/\varepsilon$ is the first infinite ordinal regarded as a surreal. See [Table](#tbl:surreal-blowup-calculus-table-data) for named surreals; every name corresponds to a unique element under Conway's recursive construction.
+Let $\omega \in \mathbf{No}$ be the first infinite ordinal regarded as a surreal, and $\varepsilon = 1/\omega$.
 
-A **surreal blow-up** of a divergent expression evaluates the expression at a named infinite surreal, then takes the standard part of a renormalised version:
-1. Write the divergent expression $X$ as a function of a parameter that becomes a named surreal: $X = X(\Lambda)$ with $\Lambda \to \omega$.
-2. Identify a counterterm $C(\Lambda)$ such that $X(\Lambda) - C(\Lambda)$ is a finite surreal.
-3. Define the renormalised value: $X_{\mathrm{ren}} := \mathrm{st}(X(\omega) - C(\omega)) \in \mathbb{R}$.
+Let $X = X(\Lambda)$ be a divergent expression in a parameter $\Lambda \to \omega$, and let $C(\Lambda)$ be a counterterm such that $X(\Lambda) - C(\Lambda)$ is a finite surreal. The **surreal blow-up** (renormalised value) of $X$ is
+
+$$
+  X_{\mathrm{ren}} := \mathrm{st}(X(\omega) - C(\omega)) \in \mathbb{R}.
+$$

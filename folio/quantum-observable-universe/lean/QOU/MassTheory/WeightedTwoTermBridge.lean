@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge
+import QOU.Core.CategoricalLagrangianTwoTermBridge
 
 /-!
 # The concrete two-term bridge with Cartan-weighted matter traces

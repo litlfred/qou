@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 
 /-!

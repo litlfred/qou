@@ -11,7 +11,7 @@ export default remark({
     "The five-layer iterated confinement tower as zero-counterterm algebraic renormalization",
   interprets: "thm:adiabatic-confinement-gap-stability",
   lean: {
-    ref: "qou:QOU.MathlibInfra.ConfinementLayerTower.neutron_star_electron_capture_threshold",
+    ref: "qou:ToricConicOpt.ConfinementLayerTower.neutron_star_electron_capture_threshold",
     validation: "not_checked",
   },
   uses: [

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "The admissible interface band $[z-h,\\,z]$ lies strictly between $\\mu_-$ and $\\mu_+$",
   lean: {
-    ref: "qou:QOU.QBeta.GramSignature.band_strictly_between",
+    ref: "qou:QOU.Nuclear.GramSignature.band_strictly_between",
     validation: "not_checked",
   },
   uses: ["prop:isospin-singlet-binds-more"],

@@ -1,18 +1,18 @@
-*Let $L = Z\mathfrak{p} \oplus N\mathfrak{n}$ be a multi-nucleon Hopf link with $Z$ protons, $N$ neutrons, and $A = Z + N$. The **canonical binding Lagrangian** is the categorical action $\mathfrak{S}_q$ evaluated on $L$:*
+*Let $L = Z\mathfrak{p} \oplus N\mathfrak{n}$ be a multi-nucleon Hopf link with $Z$ protons, $N$ neutrons, and $A = Z + N$. Despite its historical name, the **canonical binding Lagrangian** is the positive binding-energy release $\mathcal{L}_{\mathrm{bind}}[L] = -\Delta H_{\mathrm{can}} > 0$ — minus the difference in the [categorical Hamiltonian](#def:categorical-hamiltonian) between the bound link $L$ and $Z$ separated protons plus $N$ separated neutrons — evaluated in the per-tick hadronic MeV chart:*
 $$
   \mathcal{L}_{\mathrm{bind}}[L]
   = 
   \mathcal{L}_{\mathrm{qCLT}}
   - \mathcal{L}_{\mathrm{Coulomb}}.
 $$
-*Each term arises from the exact evaluation of the topological trace on the link components, without empirical liquid-drop parameters:*
+*Each term is defined as follows:*
 
-1. ***Strong Binding (q-CLT/JSJ volume term).** The strong force contribution evaluates strictly from the Hecke channel traces. As established in [q-CLT mass scaling](../mass-theory/q-clt-jsj-mass-scaling.md), the Jaco–Shalen–Johannson decomposition yields an additive scaling for the strong binding:*
+1. ***Strong Binding ($q$-CLT/JSJ volume term).** The strong force contribution evaluates from the Hecke channel traces. As established in [q-CLT mass scaling](../mass-theory/q-clt-jsj-mass-scaling.md), the Jaco--Shalen--Johannson decomposition yields an additive scaling for the strong binding:*
    $$
      \mathcal{L}_{\mathrm{qCLT}}
      = \alpha \sum_i \ln\lvert V_i\rvert,
    $$
-   *where $\alpha = \mathfrak{m}_e / (q_0(q_0-1))$ is the rigid substrate scale (built from CAL-1 $\mathfrak{m}_e$ and CAL-2 $q_0$), and $V_i$ are the two-nucleon sub-braid Markov traces for each bond type. This carries no empirical parameter beyond that calibration scale, and is **intended** to replace the empirical Bethe-Weizsäcker volume, surface, asymmetry, and pairing terms — but that replacement is **not a completed closure**: the per-isotope binding magnitude ($\Delta_\lambda$) is open, so its empirical accuracy against AME is not established here.*
+   *where $\alpha = \mathfrak{E}_0 = \mathfrak{m}_e / \bigl(q_0(q_0-1)\bigr) = (\mathfrak{m}_e c_{q_0}^2)/t_P(q_0)$ is the per-tick hadronic chart scale of the [categorical Hamiltonian](#def:categorical-hamiltonian) built from the electron mass $\mathfrak{m}_e$ and substrate parameter $q_0$, and $V_i$ are the two-nucleon sub-braid Markov traces for each bond type. This carries no empirical parameter beyond that calibration scale, and is **intended** to replace the empirical Bethe--Weizsäcker volume, surface, asymmetry, and pairing terms — but that replacement is **not a completed closure**: the per-isotope binding magnitude ($\Delta_\lambda$) is open, so its empirical accuracy against AME is not established here.*
 
 2. ***Coulomb repulsion (imported, not derived).** The term is the standard uniform-sphere Coulomb energy*
    $$
@@ -20,7 +20,7 @@ $$
      = \frac{3}{5}\,\frac{Z(Z-1)\,\alpha_{\mathrm{EM}}\,\hbar c}{R},
      \qquad R = \bar\lambda_\pi\,A^{1/3},
    $$
-   *with $\bar\lambda_\pi = \hbar c/\mathfrak{m}_\pi$ the CAL-3 length. It is not obtained from the categorical action. No braid element and no invariant pair coupling between two nucleon blocks produces a pair term proportional to $Q_AQ_B$ ([the Coulomb-charge definition](#def:coulomb-charge)), and a bond graph of bounded degree, such as the nearest-neighbour bonds of the strong term above, cannot carry a term growing like $Z(Z-1)$ when the energy per bond does not grow with $Z$. A Coulomb pair term needs the electroweak mixing angle of [the Weinberg-angle conjecture](#conj:weinberg-angle-categorical) together with a mass scale that removes the $Z$ exchange at nuclear distance, and neither is derived. The status of each input:*
+   *with $\bar\lambda_\pi = \hbar c/\mathfrak{m}_\pi$ the reduced pion Compton wavelength. It is not obtained from the categorical action. No braid element and no invariant pair coupling between two nucleon blocks produces a pair term proportional to $Q_AQ_B$ ([the Coulomb-charge definition](#def:coulomb-charge)), and a bond graph of bounded degree, such as the nearest-neighbour bonds of the strong term above, cannot carry a term growing like $Z(Z-1)$ when the energy per bond does not grow with $Z$. A Coulomb pair term needs the electroweak mixing angle of [the Weinberg-angle conjecture](#conj:weinberg-angle-categorical) together with a mass scale that removes the $Z$ exchange at nuclear distance, and neither is derived. The status of each input:*
 
    | input | status |
    |---|---|

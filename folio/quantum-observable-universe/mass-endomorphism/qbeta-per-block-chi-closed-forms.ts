@@ -17,7 +17,7 @@ export default proposition({
     "closed-form",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.chi_block_antipode_pairing",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.chi_block_antipode_pairing",
   },
   authorNotes: [
     {

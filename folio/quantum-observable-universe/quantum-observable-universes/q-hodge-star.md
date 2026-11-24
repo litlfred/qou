@@ -14,5 +14,3 @@ $$
 \end{tikzcd}
 \end{equation}
 ```
-
-The extra factor $q$ scales the inner product, coupling Hodge duality directly to the deformation.

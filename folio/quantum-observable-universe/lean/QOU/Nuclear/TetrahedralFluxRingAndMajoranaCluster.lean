@@ -17,7 +17,7 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
-import QOU.Braiding.JimboGl3Singlet
+import BraidKnotOctonion.JimboGl3Singlet
 
 set_option autoImplicit false
 

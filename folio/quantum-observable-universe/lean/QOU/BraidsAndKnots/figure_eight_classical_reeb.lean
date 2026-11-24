@@ -12,7 +12,7 @@
   same `-- Ref:` citations.
 -/
 
-import QOU.BraidsAndKnots.unit_modulus_of_det_one_small_trace
+import BraidKnotOctonion.unit_modulus_of_det_one_small_trace
 
 namespace QOU.BraidsAndKnots
 

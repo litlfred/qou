@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Finiteness of the GS residue spectral sum",
   lean: {
-    ref: "qou:QOU.BraidKnot.spectral_sum_finite",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.spectral_sum_finite",
     validation: "not_checked",
   },
   uses: ["conj:gs-residue-at-root-existence"],

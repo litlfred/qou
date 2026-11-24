@@ -4,8 +4,8 @@ import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.Tactic
-import QOU.Brings.S5CharactersOnBringDeformations
-import QOU.BraidsAndKnots.QIntegerAlexanderTorus
+import BraidKnotOctonion.S5CharactersOnBringDeformations
+import QCalculus.QIntegerAlexanderTorus
 
 set_option autoImplicit false
 
