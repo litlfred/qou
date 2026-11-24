@@ -44,6 +44,7 @@ were live defects rather than refinements.
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 import time
 from collections import Counter
@@ -101,7 +102,51 @@ def _analyse(rows):
     }
 
 
+def _lp_batch_worker(a_values: list[int]) -> int:
+    """Solve operator-selection LP for a small batch of A values and exit.
+
+    `solve_operator_selection_lp(t, G, str(A))` depends ONLY on `A = Z + N`
+    (neither `Z`, `N`, nor `nf` enters the LP), and Clarabel's in-process
+    `MpfrFloat: Copy` arena retains ~16-20 MB per solve. Running 8 A-values per
+    short-lived child process caps child RSS at ~135 MB and reclaims the arena
+    on exit instead of leaking ~46 GB across ~4,500 redundant per-(Z,N) solves.
+    """
+    mp.dps = DPS + 10
+    t = gram.tr_m_mp_strings()
+    G = gram.gram_matrix_mp_strings()
+    out: dict[str, dict] = {}
+    for a_val in a_values:
+        try:
+            lp = solve_operator_selection_lp(t, G, str(a_val), backend="auto")
+            out[str(a_val)] = lp.to_dict()
+        except Exception as e:
+            out[str(a_val)] = {"_lp_error": str(e)[:120]}
+    sys.stdout.write(json.dumps(out) + "\n")
+    return 0
+
+
+def _precompute_lp_by_a(distinct_a: list[int], batch_size: int = 8) -> dict[int, dict]:
+    """Precompute LP dual dicts keyed by A in bounded-memory subprocess batches."""
+    lp_by_a: dict[int, dict] = {}
+    script = str(Path(__file__).resolve())
+    for idx in range(0, len(distinct_a), batch_size):
+        chunk = distinct_a[idx:idx + batch_size]
+        proc = subprocess.run(
+            [sys.executable, script, "--lp-batch", *(str(a) for a in chunk)],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        batch_out = json.loads(proc.stdout)
+        for k, v in batch_out.items():
+            lp_by_a[int(k)] = v
+    return lp_by_a
+
+
 def main() -> int:
+    if sys.argv[1:2] == ["--lp-batch"]:
+        return _lp_batch_worker([int(x) for x in sys.argv[2:]])
+
     zmax = int(sys.argv[1]) if len(sys.argv) > 1 else 92
     nmax = int(sys.argv[2]) if len(sys.argv) > 2 else 146
 
@@ -114,10 +159,18 @@ def main() -> int:
     # solver intact. `n_target` goes through the same `_s()`, so it is passed
     # as a string too. Handing over `float(x)` here would have reintroduced
     # exactly the defect this producer exists to remove.
-    t = gram.tr_m_mp_strings()
-    G = gram.gram_matrix_mp_strings()
+    t0 = time.time()
+    distinct_a = sorted({
+        Z + N
+        for Z in range(0, zmax + 1)
+        for N in range(0, nmax + 1)
+        if 0 < (Z + N) <= 260 and (Z in MAGIC or N in MAGIC or (Z + N) % 4 == 0)
+    })
+    lp_by_a = _precompute_lp_by_a(distinct_a)
+    print(f"  LP precomputed for {len(lp_by_a)} distinct A values in {time.time()-t0:.1f}s",
+          flush=True)
 
-    rows, t0 = [], time.time()
+    rows = []
     n_overflow = n_fail = 0
     for Z in range(0, zmax + 1):
         for N in range(0, nmax + 1):
@@ -144,9 +197,10 @@ def main() -> int:
                    # 1e+499 is the whole reason this producer exists.
                    "nf_net_log10_abs_str": (mp.nstr(mp.log10(abs(net)), 20)
                                             if net != 0 else None)}
-            try:
-                lp = solve_operator_selection_lp(t, G, str(A), backend="auto")
-                d = lp.to_dict()
+            d = lp_by_a[A]
+            if "_lp_error" in d:
+                row["lp_error"] = d["_lp_error"]
+            else:
                 ys = d.get("y_star") or []
                 act = [i for i, y in enumerate(ys) if y > 1e-9]
                 row["lp_active_count"] = len(act)
@@ -164,8 +218,6 @@ def main() -> int:
                         "solver returned no MPFR decimals; backend="
                         f"{d.get('backend')} — dual is f64, not carried")
                 row["backend"] = d.get("backend")
-            except Exception as e:
-                row["lp_error"] = str(e)[:120]
             rows.append(row)
         if Z % 10 == 0:
             print(f"  Z={Z:3d}  rows={len(rows):5d}  {time.time()-t0:6.1f}s", flush=True)
