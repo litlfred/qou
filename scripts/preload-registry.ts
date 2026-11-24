@@ -8,18 +8,26 @@
  * package registry. Run via `bun run --preload ../scripts/preload-registry.ts ...`
  * from `content/`; ES-module imports below resolve relative to this
  * file (repo `scripts/`), so the in-repo `folio-assistant/` symlink is
- * reached via `../folio-assistant/`.
+ * reached via `../folio-assistant/`, and the root-mounted layers via `../`.
  */
 
-import { configureValueRegistry } from "../folio-assistant/cat-harness-tools/pipeline/value-registry-di";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../folio/values/registry";
-import { configureLeanPackages } from "../folio-assistant/folio-assistant-sci/pipeline/lean-formal-ref";
 import { LEAN_PACKAGES } from "../schemas/lean-packages";
 
-configureValueRegistry({
-  WITNESSED_VALUES,
-  lookupValue,
-  verifiedNames,
-});
-
-configureLeanPackages(LEAN_PACKAGES);
+// qou reaches the platform two ways while the layer layout is adopted (owner
+// ruling 2026-11-24, "1 qou is platform later"): the layers mounted at the
+// repository root from index.lock.json, and the older `folio-assistant/` link.
+// Each is its own module instance, so the registry is configured in every one
+// that is on disk: a caller importing either finds it configured.
+const ROOT = join(import.meta.dir, "..");
+for (const base of [ROOT, join(ROOT, "folio-assistant")]) {
+  const di = join(base, "cat-harness-tools/pipeline/value-registry-di.ts");
+  const lean = join(base, "folio-assistant-sci/pipeline/lean-formal-ref.ts");
+  if (!existsSync(di) || !existsSync(lean)) continue;
+  const { configureValueRegistry } = await import(di);
+  const { configureLeanPackages } = await import(lean);
+  configureValueRegistry({ WITNESSED_VALUES, lookupValue, verifiedNames });
+  configureLeanPackages(LEAN_PACKAGES);
+}
