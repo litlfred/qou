@@ -1,7 +1,7 @@
 ---
 # qou-gbsa
 title: 'GAP: alpha_EM Chern-Simons kappa — no parameter-free q-deformed Gram pairing G_q reproduces 1/alpha (ChernSimonsCorrectionConjecture carries G_q as a parameter, no instance)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-11-16T19:56:51Z
+updated_at: 2026-11-24T16:42:46Z
 parent: qou-3l2l
 ---
 
@@ -27,3 +27,5 @@ Note (2026-09-03, session qou-ggdk): computations/alpha_em_lean_vs_compute_diver
 - **50-dps Witness:** `computations/probes/round50-zeta4-bridge-and-alpha-em-cs-tower.witness.json` (`scriptHash: e7bf4a93b887`, `scriptCommitSha: cf283b8e199f4643fb9e0259ec0a2702096bdd9b`).
 - **PR:** `litlfred/qou#8177` (`https://github.com/litlfred/qou/pull/8177`, head SHA `3fdbeeb87a6b1821ff8d57a95f95d4d20cf72628`).
 - **Status:** Kept at `status: in-progress` per reviewer-separated closure discipline.
+
+Closed post-merge: landed on origin/main in PR #9362 (a4e574d1382).

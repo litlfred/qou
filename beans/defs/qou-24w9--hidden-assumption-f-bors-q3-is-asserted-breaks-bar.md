@@ -1,13 +1,13 @@
 ---
 # qou-24w9
 title: 'HIDDEN ASSUMPTION: F_Bor''s /q^3 is asserted, breaks bar-symmetry, and carries 37% of m_p'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-18T20:45:53Z
-updated_at: 2026-11-16T19:28:00Z
+updated_at: 2026-11-24T16:42:46Z
 parent: qou-2002
 ---
 
@@ -475,3 +475,5 @@ Scope-(a). Does not refute F_Bor; does not touch the Lean-proved |tr_M|.
   - `wenzl_weights_trace_normalised`, `wenzl_standard_block_inv_eq_two_bracket_sq`, & `wenzl_reconstructs_borromean_trM`: proves exact trace normalisation `1·y_{(3)}^Wenzl + 2·y_{(2,1)}^Wenzl + 1·y_{(1,1,1)}^Wenzl = 1`, `(y_{(2,1)}^Wenzl(q))⁻¹ = (q + q⁻¹)² = [2]_q²`, and exact algebraic reconstruction `y_{(3)}^Wenzl(q)·1 + y_{(2,1)}^Wenzl(q)·χ^{(2,1)}(β_Bor, q) + y_{(1,1,1)}^Wenzl(q)·1 = tr_M(β_Bor, q)`.
   - `net_bar_asymmetry_mmu_fbor`: proves `(1/ℏ_q²)([3]_q!^bal / q³) = [3]_q!^bal / (q² ℏ_sym²)`.
 - **50-dps probe & witness**: `computations/probes/plancherel_normalisation_and_scale_bounds_probe.py` and `computations/probes/plancherel-normalisation-and-scale-bounds-probe.witness.json` (PR `litlfred/qou#8169`, head `32d6039de208cfa3dab898932c88023a55ef3267`).
+
+Closed post-merge: landed on origin/main in PR #9362 (a4e574d1382).
