@@ -1,0 +1,19 @@
+{
+ "$schema": "folio-site-qa/v1",
+ "blocks": 3744,
+ "findings": [
+  {
+   "block": "eightfold-way/borromean-decuplet-derivation",
+   "class": "stray-dollar",
+   "excerpt": "Ocneanu weights at to ($10.6690 + 2 \\times 8.2641 1 = 28.1973 = [3]_{"
+  }
+ ],
+ "counts": {
+  "raw-tex": 0,
+  "raw-directive": 0,
+  "stray-dollar": 1,
+  "katex": 0,
+  "missing-image": 0
+ },
+ "unknown": []
+}

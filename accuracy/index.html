@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observational Accuracy &amp; Precision Scorecard — Quantum Observable Universe</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+  <style>
+    :root {
+      --bg: #ffffff; --fg: #1b1f24; --muted: #57606a; --border: #d0d7de;
+      --surface: #f6f8fa; --accent: #0969da;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --border: #30363d;
+        --surface: #161b22; --accent: #58a6ff;
+      }
+    }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    main.qou-scorecard { max-width: 1240px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    h1, h2, h3, h4 { line-height: 1.25; margin-top: 2rem; margin-bottom: 0.75rem; }
+    h1 { font-size: 1.9rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-top: 0.5rem; }
+    h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+    h3 { font-size: 1.15rem; }
+    h4 { font-size: 1.0rem; color: var(--muted); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em; background: var(--surface); padding: 0.12em 0.35em; border-radius: 4px; }
+    pre { background: var(--surface); padding: 0.9rem 1rem; border-radius: 6px; overflow-x: auto; border: 1px solid var(--border); }
+    pre code { background: none; padding: 0; }
+    hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+    .table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; border: 1px solid var(--border); border-radius: 6px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th, td { padding: 0.45rem 0.65rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { background: var(--surface); font-weight: 600; white-space: nowrap; }
+    tr:last-child td { border-bottom: 0; }
+    .math-display { margin: 1rem 0; overflow-x: auto; }
+  </style>
+<link rel="stylesheet" href="../assets/css/navbar.css"><script src="../assets/navbar/rail-21yz3qlmwox.js" defer></script><script src="../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../assets/page-layout.css" data-fa-page-layout><script src="../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-platform-base" content="https://litlfred.github.io/folio-assistant" data-fa-platform-ui><link rel="stylesheet" href="../assets/css/docs-ui.css" data-fa-platform-ui><script src="../assets/js/docs-ui.js" defer data-fa-platform-ui></script><meta name="fa-pinned-data" content=".."></head>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="..">{"data":"rail-21yz3qlmwox","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#1-calibration-baseline-the-1-ppq-10-15-precision-floor","label":"Calibration Baseline & the 1 ppQ (\\(10^{-15}\\)) Precision Floor","icon":"1","children":[{"href":"#implications-for-1-ppq-comparisons","label":"Implications for 1 ppQ Comparisons","depth":1}],"fold":"1 sub-section"},{"href":"#2-executive-scorecard-across-all-five-categories","label":"Executive Scorecard Across All Five Categories","icon":"2"},{"href":"#3-category-by-category-detailed-tables-low-a-vs-high-a","label":"Category-by-Category Detailed Tables (Low-\\(A\\) vs High-\\(A\\))","icon":"3","children":[{"href":"#3-1-category-1-particle-nuclear-masses","label":"Category 1 — Particle & Nuclear Masses","icon":"3.1","depth":1},{"href":"#3-2-category-2-nuclear-binding-energy-b-z-n","label":"Category 2 — Nuclear Binding Energy (\\(B(Z, N)\\))","icon":"3.2","depth":1},{"href":"#3-3-category-3-charge-hypercharge-alpha-mathrm-em-coulomb-splits-molecular-geometry","label":"Category 3 — Charge, Hypercharge, \\(\\alpha_{\\mathrm{EM}}\\), Coulomb Splits & Molecular Geometry","icon":"3.3","depth":1},{"href":"#3-4-category-4-weak-beta-decay-q-beta-weak-scale","label":"Category 4 — Weak \\(\\beta\\)-Decay (\\(Q_{\\beta^-}\\) & Weak Scale)","icon":"3.4","depth":1},{"href":"#3-5-category-5-alpha-decay-heavy-composite-fission","label":"Category 5 — \\(\\alpha\\)-Decay & Heavy / Composite Fission","icon":"3.5","depth":1}],"fold":"5 sub-sections"},{"href":"#4-symbolic-q-clt-proxy-justification-formal-scope-boundary","label":"Symbolic Q-CLT Proxy Justification & Formal Scope Boundary","icon":"4"},{"href":"#5-open-mathematical-derivations-deterministic-witness-provenance","label":"Open Mathematical Derivations & Deterministic Witness Provenance","icon":"5","children":[{"href":"#5-1-ranked-frontier-of-open-derivations","label":"Ranked Frontier of Open Derivations","icon":"5.1","depth":1},{"href":"#5-2-redisplay-regeneration-qa-gate-commands","label":"Redisplay, Regeneration & QA Gate Commands","icon":"5.2","depth":1},{"href":"#5-3-deterministic-upstream-witness-provenance","label":"Deterministic Upstream Witness Provenance","icon":"5.3","depth":1}],"fold":"3 sub-sections"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../">qou</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../">qou</a><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+<main class="qou-scorecard">
+<h1 id="observational-accuracy-precision-scorecard">Observational Accuracy &amp; Precision Scorecard</h1>
+<p>Every object in <em>On the Mechanics of Quantum Observable Universes</em> (QOU) is a mathematical construction evaluated in arbitrary-precision arithmetic (<code>80</code> decimal places, <code>mp.dps = 80</code>). Empirical physics enters strictly at the comparison boundary where a derived model quantity is set against experimental metrology (CODATA 2022, PDG 2024, NIST, and AME2020).</p>
+<p>This scorecard is deterministically generated from the repository&#x27;s machine-verified computation witnesses by <a href="https://github.com/litlfred/qou/blob/main/scripts/generate-accuracy-scorecard.py"><code>scripts/generate-accuracy-scorecard.py</code></a> and gated in continuous quality assurance (<code>compute-qa</code>, site rendering, and post-merge publishing).</p>
+<ul>
+<li><strong>Anti-fit discipline:</strong> Only <strong>three physical calibration inputs</strong> enter the model — the electron mass \(m_e\) (fixing the overall MeV energy unit), the proton-to-electron mass ratio \(m_p / m_e\) (fixing the deformation parameter \(q_0 &gt; 1\)), and the charged-pion mass \(m_{\pi^\pm}\) (fixing the meson-sector scale). All nuclear, electroweak, Coulomb, and molecular expressions are evaluated without free or fitted parameters, using the canonical Markov trace parameter \(z = q^3/(q^2+1)\).</li>
+<li><strong>Full-spectrum reporting:</strong> Both sub-part-per-billion successes and large multi-percent structural deficits are reported side by side so that open mathematical derivations remain visible and falsifiable.</li>
+</ul>
+<hr>
+<h2 id="1-calibration-baseline-the-1-ppq-10-15-precision-floor">1. Calibration Baseline &amp; the <code>1 ppQ</code> (\(10^{-15}\)) Precision Floor</h2>
+<p>One <strong>part per quadrillion</strong> (<code>1 ppQ</code>) denotes a fractional residual of \[1\;\mathrm{ppQ} = 10^{-15} = 10^{-6}\;\mathrm{ppb} = 10^{-9}\;\mathrm{ppm} = 10^{-13}\%.\]</p>
+<p>Because every dimensional mass prediction \(O(m_e, q_0, m_{\pi^\pm})\) scales linearly with \(m_e\) or \(m_{\pi^\pm}\) and depends smoothly on \(q_0\), experimental input uncertainties propagate into every model prediction via the 80-dps Fréchet–Jacobian covariance law \(\Sigma_O = J\,\Sigma_\theta\,J^\top\):</p>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Quantity</th>
+<th style="text-align:left">Symbol</th>
+<th style="text-align:right">Value (<code>80-dps</code> truncated)</th>
+<th style="text-align:right">Experimental \(1\sigma\)</th>
+<th style="text-align:right">Relative Floor (<code>ppb</code>)</th>
+<th style="text-align:right">Relative Floor (<code>ppQ</code>)</th>
+<th style="text-align:left">Structural Role</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">Electron mass</td>
+<td style="text-align:left">\(m_e\)</td>
+<td style="text-align:right"><code>0.51099895069 MeV</code></td>
+<td style="text-align:right"><code>1.60e-10 MeV</code></td>
+<td style="text-align:right"><code>0.3131</code></td>
+<td style="text-align:right"><code>3.131e+5</code></td>
+<td style="text-align:left">Calibration input 1 (overall MeV unit)</td>
+</tr>
+<tr>
+<td style="text-align:left">Proton/electron ratio</td>
+<td style="text-align:left">\(m_p / m_e\)</td>
+<td style="text-align:right"><code>1836.152673426</code></td>
+<td style="text-align:right"><code>3.20e-8</code></td>
+<td style="text-align:right"><code>0.01743</code></td>
+<td style="text-align:right"><code>1.743e+4</code></td>
+<td style="text-align:left">Calibration input 2 (dimensionless baryon ratio)</td>
+</tr>
+<tr>
+<td style="text-align:left">Charged-pion mass</td>
+<td style="text-align:left">\(m_{\pi^\pm}\)</td>
+<td style="text-align:right"><code>139.57039 MeV</code></td>
+<td style="text-align:right"><code>0.00018 MeV</code></td>
+<td style="text-align:right"><code>1289.7</code></td>
+<td style="text-align:right"><code>1.290e+9</code></td>
+<td style="text-align:left">Calibration input 3 (meson-sector scale)</td>
+</tr>
+<tr>
+<td style="text-align:left">Deformation parameter</td>
+<td style="text-align:left">\(q_0\)</td>
+<td style="text-align:right"><code>1.109978582751380808</code></td>
+<td style="text-align:right"><code>9.213e-13</code></td>
+<td style="text-align:right"><code>0.000830</code></td>
+<td style="text-align:right"><code>830.0</code></td>
+<td style="text-align:left">Solved from \(m_p / m_e\) (tightest framework anchor)</td>
+</tr>
+<tr>
+<td style="text-align:left">Canonical Markov weight</td>
+<td style="text-align:left">\(z = q_0^3/(q_0^2+1)\)</td>
+<td style="text-align:right"><code>0.612688037146465252</code></td>
+<td style="text-align:right"><code>9.642e-13</code></td>
+<td style="text-align:right"><code>0.001574</code></td>
+<td style="text-align:right"><code>1573.7</code></td>
+<td style="text-align:left">Derived Hecke–Markov trace parameter</td>
+</tr>
+<tr>
+<td style="text-align:left">Quantum Planck &amp; Hecke step</td>
+<td style="text-align:left">\(\hbar_q,\; h_A\)</td>
+<td style="text-align:right"><code>0.099081716044, 0.209060298796</code></td>
+<td style="text-align:right"><code>7.48e-13, 1.67e-12</code></td>
+<td style="text-align:right"><code>0.0075</code></td>
+<td style="text-align:right"><code>7547.0</code></td>
+<td style="text-align:left">\(\hbar_q = 1 - q_0^{-1},\; h_A = q_0 - q_0^{-1}\)</td>
+</tr>
+</tbody></table></div>
+<h3 id="implications-for-1-ppq-comparisons">Implications for <code>1 ppQ</code> Comparisons</h3>
+<ol>
+<li><strong>Internal mathematical identities (<code>&lt; 1 ppQ</code>):</strong> Exact algebraic and numerical round-trip identities (such as the proton mass-identity root inversion at \(q_0\), Koide resolvent polynomial identities, and Lanczos/CG eigensolver residuals in few-body \(K_A\) plaquettes) hold to <code>&lt; 10^{-50} ppb</code> (<code>&lt; 10^{-44} ppQ</code>), well beyond <code>1 ppQ</code>.</li>
+<li><strong>Empirical comparison floor (<code>830 ppQ</code> to <code>1.29e9 ppQ</code>):</strong> The tightest dimensionless anchor in the framework is \(q_0\) itself, whose propagated CODATA uncertainty is <code>830.0 ppQ</code> (<code>0.000830 ppb</code>). Every dimensional mass expressed in MeV inherits at minimum the CODATA electron-mass uncertainty floor of <code>3.131e+5 ppQ</code> (<code>0.3131 ppb</code>), confirmed across \(A = 1\text{--}238\) (<code>0.313–0.316 ppb</code>). Even the most precisely measured non-anchor quantity in physics used here — the fine-structure constant \(\alpha_{\mathrm{EM}}^{-1}\) — has a CODATA \(1\sigma\) uncertainty of <code>1.532e+5 ppQ</code> (<code>0.1532 ppb</code>).</li>
+<li><strong>Bottom-line <code>1 ppQ</code> verdict:</strong> <strong>Zero non-anchor observables are empirically testable at or close to <code>1 ppQ</code> today.</strong> Current experimental metrology sits \(10^5\text{--}10^9\times\) above <code>1 ppQ</code> on dimensional observables; in the additive Schwinger Form B arm (where the 1-loop <code>(1 - h_A^2 α)</code> factor is proved over \(\mathbb{Q}(q)\) by the 4-topology <code>EmFermionLoop</code> skein sum), \(\alpha_{\mathrm{EM}}^{-1}\) stands at <code>3.65e+5 ppQ</code> (<code>-0.365 ppb</code>, <code>-2.38</code>\(\sigma_{\mathrm{exp}}\)), while the conditional two-loop Bloch-\(B_3(\mathbb{C})\) Form C evaluation stands at <code>2.41e+4 ppQ</code> (<code>-0.024 ppb</code>, <code>-0.16</code>\(\sigma_{\mathrm{exp}}\)).</li>
+</ol>
+<hr>
+<h2 id="2-executive-scorecard-across-all-five-categories">2. Executive Scorecard Across All Five Categories</h2>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Category</th>
+<th style="text-align:left">Regime / Observable Scope</th>
+<th style="text-align:right">\(N\)</th>
+<th style="text-align:right">Mean $</th>
+<th style="text-align:right">\Delta</th>
+<th style="text-align:right">/O_{\mathrm{exp}}$</th>
+<th style="text-align:right">Median $</th>
+<th style="text-align:right">\Delta</th>
+<th style="text-align:left">/O_{\mathrm{exp}}$</th>
+<th style="text-align:left">Typical <code>ppQ</code> Error Scale</th>
+<th style="text-align:left">Within \(\le 1\sigma_{\mathrm{exp}}\)</th>
+<th style="text-align:left">Within \(\le 3\sigma_{\mathrm{exp}}\)</th>
+<th style="text-align:left">Observational Verdict</th>
+<th style="text-align:left"><code>1 ppQ</code> (\(10^{-15}\)) Verdict</th>
+<th style="text-align:left">Epistemic Status</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left"><strong>1. Mass</strong> (Elementary &amp; Hadrons)</td>
+<td style="text-align:left">\(m_\mu, m_\tau/m_e, m_K/m_\pi, m_K, m_n\) (+ 3 pins)</td>
+<td style="text-align:right"><code>6</code> (+3 pins)</td>
+<td style="text-align:right"><code>81.1 ppm</code> (<code>136 ppb</code> excl. \(m_n, m_\tau\))</td>
+<td style="text-align:right"><code>30.9 ppm</code> (<code>211 ppb</code> \(m_\mu\))</td>
+<td style="text-align:right"><code>5.14e+07</code> to <code>4.86e+11</code></td>
+<td style="text-align:right"><code>2 / 6</code> (\(m_K/m_\pi, m_K\))</td>
+<td style="text-align:right"><code>2 / 6</code> (<code>3/6</code> w/ NIST \(m_\tau\))</td>
+<td style="text-align:left"><strong>High</strong> on \(m_K/m_\pi\) (<code>+51.428 ppb</code>, <code>&lt;0.002σ</code>) &amp; \(m_\mu\) (<code>+211 ppb</code>); \(m_n\) (<code>-486 ppm</code>) open</td>
+<td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong> (input floor <code>3.13e5 ppQ</code>)</td>
+<td style="text-align:left">Derived (\(m_\mu, m_K\)); Conditional (\(m_n\))</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>1. Mass</strong> (Nuclear Rest Mass \(A \ge 2\))</td>
+<td style="text-align:left">Symbolic Q-CLT <code>m_symbolic_MeV</code> vs AME2020</td>
+<td style="text-align:right"><code>2542</code></td>
+<td style="text-align:right"><code>0.569%</code></td>
+<td style="text-align:right"><code>0.578%</code></td>
+<td style="text-align:right"><code>5.78e+12</code></td>
+<td style="text-align:right"><code>0 / 2542</code></td>
+<td style="text-align:right"><code>0 / 2542</code></td>
+<td style="text-align:left"><strong><code>~99.4%</code> bulk accuracy</strong> (constituent \(Z m_p + N m_n\)); <code>~0.57%</code> residual from binding</td>
+<td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong> (<code>~5.8e12 ppQ</code>)</td>
+<td style="text-align:left">Principled 1D Q-CLT proxy</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>2. Binding Energy</strong> (\(A = 2\text{--}4\) &amp; \(A \ge 2\))</td>
+<td style="text-align:left">3D \(K_A\) plaquette (\(A \le 4\)) &amp; 1D Q-CLT (\(A \ge 2\))</td>
+<td style="text-align:right"><code>4</code> (\(K_A\)) / <code>2542</code> (Q-CLT)</td>
+<td style="text-align:right"><code>7.13%</code> (\(K_A\)) / <code>68.6%</code> (Q-CLT)</td>
+<td style="text-align:right"><code>4.96%</code> (\(K_A\)) / <code>68.9%</code> (Q-CLT)</td>
+<td style="text-align:right"><code>3.65e+13</code> (\(K_4\)) to <code>6.89e+14</code></td>
+<td style="text-align:right"><code>0 / 2542</code></td>
+<td style="text-align:right"><code>0 / 2542</code></td>
+<td style="text-align:left"><strong>Few-body \(K_4\) strong</strong> (<code>+1.8%</code> \({}^2\mathrm{H}\), <code>+3.65%</code> \({}^4\mathrm{He}\)); <strong>\(A \ge 5\) underbound <code>~69%</code></strong></td>
+<td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong></td>
+<td style="text-align:left">Derived (\(A \le 4\)); Open saturation (\(A \ge 5\))</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>3. Charge, \(\alpha_{\mathrm{EM}}\), \(R_\infty\) &amp; Geometry</strong></td>
+<td style="text-align:left">\(Q\), \(\alpha_{\mathrm{EM}}^{-1}\) (Form B/C &amp; Seifert), \(R_\infty h c\), Coulomb (<code>8</code>), VSEPR (<code>7</code>)</td>
+<td style="text-align:right"><code>22</code></td>
+<td style="text-align:right"><code>0</code> (\(Q\)), <code>-0.365 ppb</code> (Form B) / <code>-0.024 ppb</code> (Form C), <code>+0.725 ppb</code> (\(R_\infty\))</td>
+<td style="text-align:right"><code>0.20%</code> (across non-exact)</td>
+<td style="text-align:right"><code>0</code> (\(Q\)), <code>24112.2</code> (Form C), <code>365225.8</code> (Form B)</td>
+<td style="text-align:right"><code>5 / 22</code> (\(Q\), Form C \(\alpha_{\mathrm{EM}}\), Form C \(R_\infty\), \(\mathrm{CH_4, CO_2}\))</td>
+<td style="text-align:right"><code>7 / 22</code> (+ Form B \(\alpha_{\mathrm{EM}} \&amp; R_\infty\))</td>
+<td style="text-align:left"><strong>Exact</strong> \(Q\); <strong>proved 4-topo Form B</strong> (<code>-2.38σ</code>), <strong>cond. Form C</strong> (<code>-0.16σ</code>), <strong>Seifert CS</strong> (<code>-24.5 ppb</code>), <strong>\(R_\infty\)</strong> (<code>+0.725 ppb</code>)</td>
+<td style="text-align:left">\(Q\) exact (<code>0 ppQ</code>); Form B <code>3.65e5 ppQ</code>, Form C <code>2.41e4 ppQ</code></td>
+<td style="text-align:left">Proved (\(Q\), 1-loop \(h_A^2\)); Cond. (Bring / Bloch-\(B_3\))</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>4. Weak \(\beta\)-Decay &amp; \(v_{\mathrm{weak}}\)</strong></td>
+<td style="text-align:left">\(v_{\mathrm{weak}}\) (\(N_v\)), free \(n\), <code>6</code> TM skein, <code>1009</code> composite \(\beta^-\)</td>
+<td style="text-align:right"><code>1011</code></td>
+<td style="text-align:right"><code>-29.37 ppb</code> (\(v_{\mathrm{weak}}\)), <code>-58.4%</code> (\(n\)), <code>255.5%</code> (table)</td>
+<td style="text-align:right"><code>71.7%</code> (TM), <code>142.4%</code> (table)</td>
+<td style="text-align:right"><code>2.94e+07</code> (\(v_{\mathrm{weak}}\)) to <code>1.42e+15</code></td>
+<td style="text-align:right"><code>1 / 1011</code> (\(v_{\mathrm{weak}}\), <code>-0.11σ</code>)</td>
+<td style="text-align:right"><code>1 / 1011</code> (\(v_{\mathrm{weak}}\))</td>
+<td style="text-align:left"><strong>Sub-<code>30 ppb</code> \(v_{\mathrm{weak}}\) (<code>-0.11σ</code>)</strong>; keV–MeV TM (<code>-8.1%</code> \({}^{14}\mathrm{C}\)); isobaric table (<code>0/1009</code> exo.)</td>
+<td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong> (<code>2.94e7 ppQ</code> on \(v_{\mathrm{weak}}\))</td>
+<td style="text-align:left">Cond. (\(v_{\mathrm{weak}}\), <code>C1–C3</code> on \(n\)); Open (\(A \ge 2\))</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>5. \(\alpha\)-Decay &amp; Fission</strong></td>
+<td style="text-align:left"><code>7</code> WKB emitters (\(Q_{\mathrm{exp}}\)), \(N=126\) \({}^{210}\mathrm{Po}\), <code>1051</code> derived \(Q_\alpha\)</td>
+<td style="text-align:right"><code>1051</code> (+7 WKB)</td>
+<td style="text-align:right"><code>0.35 dex</code> (WKB @ \(Q_{\mathrm{exp}}\)); <code>584.5%</code> (\(Q_\alpha\))</td>
+<td style="text-align:right"><code>0.27 dex</code> (<code>+0.044 dex</code> \({}^{210}\mathrm{Po}\) MJ); <code>320.3%</code> (\(Q_\alpha\))</td>
+<td style="text-align:right"><code>3.20e+15</code></td>
+<td style="text-align:right"><code>0 / 1051</code></td>
+<td style="text-align:right"><code>0 / 1051</code></td>
+<td style="text-align:left"><strong>Strong WKB + \(N=126\) preformation</strong> (<code>10.6%</code> \(T_{1/2}\)); <strong>derived heavy \(Q_\alpha\) open</strong> (<code>3–48 dex</code>)</td>
+<td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong></td>
+<td style="text-align:left">Derived WKB/MJ; Open heavy \(Q_\alpha\)</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="3-category-by-category-detailed-tables-low-a-vs-high-a">3. Category-by-Category Detailed Tables (Low-\(A\) vs High-\(A\))</h2>
+<h3 id="3-1-category-1-particle-nuclear-masses">3.1 Category 1 — Particle &amp; Nuclear Masses</h3>
+<h4 id="table-3-1a-elementary-leptons-mesons-and-baryons-proton-anchored-q-0">Table 3.1a: Elementary Leptons, Mesons, and Baryons (Proton-Anchored \(q_0\))</h4>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Observable</th>
+<th style="text-align:right">Predicted (<code>80-dps</code> trunc.)</th>
+<th style="text-align:right">Experimental Reference</th>
+<th style="text-align:right">\(\sigma_{\mathrm{pred}}\) (from inputs)</th>
+<th style="text-align:right">Relative Error</th>
+<th style="text-align:right">$\</th>
+<th style="text-align:right">\Delta\</th>
+<th style="text-align:left">/O_{\mathrm{exp}}$ (<code>ppQ</code>)</th>
+<th style="text-align:left">Pull \(z_{\mathrm{exp}}\)</th>
+<th style="text-align:left">Beats \(100\times\,\sigma_{\mathrm{exp}}\)?</th>
+<th style="text-align:left">Status</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">Electron \(m_e\)</td>
+<td style="text-align:right"><code>0.510998951 MeV</code></td>
+<td style="text-align:right"><code>0.510998951 ± 1.6e-10 MeV</code></td>
+<td style="text-align:right"><code>1.60e-10 MeV</code></td>
+<td style="text-align:right"><code>0</code></td>
+<td style="text-align:right"><code>0</code></td>
+<td style="text-align:right"><code>0.00σ</code></td>
+<td style="text-align:left">Anchor (input)</td>
+<td style="text-align:left">Calibration input 1</td>
+</tr>
+<tr>
+<td style="text-align:left">Muon \(m_\mu\)</td>
+<td style="text-align:right"><code>105.658397811 MeV</code></td>
+<td style="text-align:right"><code>105.658375496 ± 2.3e-6 MeV</code></td>
+<td style="text-align:right"><code>3.31e-8 MeV</code></td>
+<td style="text-align:right"><code>+211.206 ppb</code></td>
+<td style="text-align:right"><code>2.11e+8</code></td>
+<td style="text-align:right"><code>9.70σ</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Derived (proton \(q_0\))</td>
+</tr>
+<tr>
+<td style="text-align:left">Tau/electron \(m_\tau / m_e\)</td>
+<td style="text-align:right"><code>3477.442306</code></td>
+<td style="text-align:right"><code>3477.228000 ± 2.3e-2</code></td>
+<td style="text-align:right"><code>—</code></td>
+<td style="text-align:right"><code>+61.63 ppm</code></td>
+<td style="text-align:right"><code>6.16e+10</code></td>
+<td style="text-align:right"><code>+9.32σ</code> (<code>0.92σ</code> NIST)</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Quadratic Koide resolvent (<code>gap2b</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left">Charged pion \(m_{\pi^\pm}\)</td>
+<td style="text-align:right"><code>139.570390000 MeV</code></td>
+<td style="text-align:right"><code>139.570390000 ± 1.8e-4 MeV</code></td>
+<td style="text-align:right"><code>1.80e-4 MeV</code></td>
+<td style="text-align:right"><code>0</code></td>
+<td style="text-align:right"><code>0</code></td>
+<td style="text-align:right"><code>0.00σ</code></td>
+<td style="text-align:left">Anchor (input)</td>
+<td style="text-align:left">Calibration input 3</td>
+</tr>
+<tr>
+<td style="text-align:left">Meson ratio \(m_{K^\pm}/m_{\pi^\pm}\)</td>
+<td style="text-align:right"><code>3.537118621</code></td>
+<td style="text-align:right"><code>3.537118439 ± 9.3e-5</code></td>
+<td style="text-align:right"><code>1.16e-12</code></td>
+<td style="text-align:right"><code>+51.428 ppb</code></td>
+<td style="text-align:right"><code>5.14e+7</code></td>
+<td style="text-align:right"><code>0.00σ</code></td>
+<td style="text-align:left">Yes (<code>0.20x</code>)</td>
+<td style="text-align:left">Derived (<code>&lt; 0.002σ</code>, beats \(100\times\)!)</td>
+</tr>
+<tr>
+<td style="text-align:left">Charged kaon \(m_{K^\pm}\)</td>
+<td style="text-align:right"><code>493.677025389 MeV</code></td>
+<td style="text-align:right"><code>493.677000000 ± 0.013 MeV</code></td>
+<td style="text-align:right"><code>6.37e-4 MeV</code></td>
+<td style="text-align:right"><code>+51.428 ppb</code></td>
+<td style="text-align:right"><code>5.14e+7</code></td>
+<td style="text-align:right"><code>0.00σ</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Derived (<code>&lt; 0.002σ</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left">Proton \(m_p\)</td>
+<td style="text-align:right"><code>938.272089427 MeV</code></td>
+<td style="text-align:right"><code>938.272089430 ± 2.9e-7 MeV</code></td>
+<td style="text-align:right"><code>2.94e-7 MeV</code></td>
+<td style="text-align:right"><code>0</code></td>
+<td style="text-align:right"><code>0</code></td>
+<td style="text-align:right"><code>0.00σ</code></td>
+<td style="text-align:left">Anchor (input)</td>
+<td style="text-align:left">Calibration input 2 (\(q_0\) pin)</td>
+</tr>
+<tr>
+<td style="text-align:left">Neutron \(m_n\)</td>
+<td style="text-align:right"><code>939.108522307 MeV</code></td>
+<td style="text-align:right"><code>939.565421940 ± 4.8e-7 MeV</code></td>
+<td style="text-align:right"><code>2.95e-7 MeV</code></td>
+<td style="text-align:right"><code>-486.29 ppm</code></td>
+<td style="text-align:right"><code>4.86e+11</code></td>
+<td style="text-align:right"><code>-951874.24σ</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Conditional (\(m_p + m_e + Q_{\beta^-}\))</td>
+</tr>
+<tr>
+<td style="text-align:left">Nucleon split \(\Delta m_{np}\)</td>
+<td style="text-align:right"><code>0.836432879 MeV</code></td>
+<td style="text-align:right"><code>1.293332510 ± 3.8e-7 MeV</code></td>
+<td style="text-align:right"><code>2.62e-10 MeV</code></td>
+<td style="text-align:right"><code>-35.33%</code></td>
+<td style="text-align:right"><code>3.53e+14</code></td>
+<td style="text-align:right"><code>-1202367.45σ</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Conditional (<code>C1–C3</code>)</td>
+</tr>
+</tbody></table></div>
+<p><em>Assessment (Elementary &amp; Hadron Sector):</em> Holding \(q_0\) fixed at the proton-to-electron anchor reproduces the charged-kaon to charged-pion ratio \(m_{K^\pm}/m_{\pi^\pm}\) to <code>+51.428 ppb</code> (<code>+0.0020</code>\(\sigma_{\mathrm{exp}}\), beating the \(100\times\) experimental precision target of <code>263.6 ppb</code>) and the muon mass \(m_\mu\) to <code>+211.21 ppb</code> (<code>+9.70</code>\(\sigma_{\mathrm{exp}}\); equivalent to an <code>+11.61 ppb</code> shift between muon-pinned and proton-pinned \(q_0\)). The quadratic Koide resolvent applied to \((m_e, m_\mu^{\mathrm{QOU}})\) yields \(m_\tau / m_e = 3477.4423\) (<code>+61.63 ppm</code> vs PDG 2024, \(0.92\sigma\) vs NIST), while an untuned \(q_0\)-phase operator closure for \(S_3\) generational equipartition is falsified and left open. The free neutron mass \(m_n\) (<code>-486.3 ppm</code>) inherits the <code>-0.4569 MeV</code> shortfall of the conditional \(Q_{\beta^-}\) weight-trace split.</p>
+<h4 id="table-3-1b-nuclear-rest-masses-m-mathrm-nuc-z-n-across-mass-number-bands-a-ge-2">Table 3.1b: Nuclear Rest Masses \(M_{\mathrm{nuc}}(Z, N)\) Across Mass-Number Bands (\(A \ge 2\))</h4>
+<p>Comparison joins <code>computations/mass-table-comprehensive.witness.json</code> (<code>m_symbolic_MeV</code>, zero-fit symbolic 1D Q-CLT proxy) against all <code>2,542</code> non-estimated \(A \ge 2\) nuclides in AME2020 (\(M_{\mathrm{nuc}}^{\mathrm{exp}} = Z m_p + N m_n - B_{\mathrm{AME}}\)):</p>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Mass-Number Band</th>
+<th style="text-align:right">Nuclides \(N\)</th>
+<th style="text-align:right">Mean $\</th>
+<th style="text-align:right">\Delta M\</th>
+<th style="text-align:right">/M_{\mathrm{exp}}$</th>
+<th style="text-align:right">Median $\</th>
+<th style="text-align:right">\Delta M\</th>
+<th style="text-align:left">/M_{\mathrm{exp}}$</th>
+<th style="text-align:left">Median Error (<code>ppQ</code>)</th>
+<th style="text-align:left">Min / Max $\</th>
+<th style="text-align:left">\Delta M\</th>
+<th style="text-align:left">/M_{\mathrm{exp}}$</th>
+<th style="text-align:left">Within \(\le 1\sigma_{\mathrm{exp}}\) / \(\le 3\sigma_{\mathrm{exp}}\)</th>
+<th style="text-align:left">Regime Behaviour</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">Very Low-\(A\) (\(2\text{--}16\))</td>
+<td style="text-align:right"><code>65</code></td>
+<td style="text-align:right"><code>0.332%</code></td>
+<td style="text-align:right"><code>0.346%</code></td>
+<td style="text-align:right"><code>3.46e+12</code></td>
+<td style="text-align:right"><code>0.013% / 0.594%</code></td>
+<td style="text-align:right"><code>0 / 0</code></td>
+<td style="text-align:left">Light cluster regime; 1D chain misses 3D plaquettes</td>
+</tr>
+<tr>
+<td style="text-align:left">Low/Mid-\(A\) (\(17\text{--}56\))</td>
+<td style="text-align:right"><code>327</code></td>
+<td style="text-align:right"><code>0.575%</code></td>
+<td style="text-align:right"><code>0.603%</code></td>
+<td style="text-align:right"><code>6.03e+12</code></td>
+<td style="text-align:right"><code>0.106% / 0.659%</code></td>
+<td style="text-align:right"><code>0 / 0</code></td>
+<td style="text-align:left">Approach to iron peak (\(B_{\mathrm{AME}}/A \to 8.79\;\mathrm{MeV}\))</td>
+</tr>
+<tr>
+<td style="text-align:left">High-\(A\) Med (\(57\text{--}150\))</td>
+<td style="text-align:right"><code>1083</code></td>
+<td style="text-align:right"><code>0.610%</code></td>
+<td style="text-align:right"><code>0.609%</code></td>
+<td style="text-align:right"><code>6.09e+12</code></td>
+<td style="text-align:right"><code>0.541% / 0.659%</code></td>
+<td style="text-align:right"><code>0 / 0</code></td>
+<td style="text-align:left">Shell-saturated plateau; nucleonic rest mass dominates \(M\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Very High-\(A\) (\(\ge 151\))</td>
+<td style="text-align:right"><code>1067</code></td>
+<td style="text-align:right"><code>0.539%</code></td>
+<td style="text-align:right"><code>0.542%</code></td>
+<td style="text-align:right"><code>5.42e+12</code></td>
+<td style="text-align:right"><code>0.474% / 0.584%</code></td>
+<td style="text-align:right"><code>0 / 0</code></td>
+<td style="text-align:left">Coulomb-softened heavy regime (\(B_{\mathrm{AME}}/A \approx 7.6\;\mathrm{MeV}\))</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>All Measured (\(A \ge 2\))</strong></td>
+<td style="text-align:right"><code>2542</code></td>
+<td style="text-align:right"><code>0.569%</code></td>
+<td style="text-align:right"><code>0.578%</code></td>
+<td style="text-align:right"><code>5.78e+12</code></td>
+<td style="text-align:right"><code>0.013% / 0.659%</code></td>
+<td style="text-align:right"><code>0 / 0</code></td>
+<td style="text-align:left">Uniform <code>~0.57%</code> mass accuracy from constituent \((m_p, m_n)\)</td>
+</tr>
+</tbody></table></div>
+<h4 id="table-3-1c-representative-nuclide-mass-binding-benchmarks-a-2-to-238">Table 3.1c: Representative Nuclide Mass &amp; Binding Benchmarks (\(A = 2 \to 238\))</h4>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Nuclide</th>
+<th style="text-align:left">\((Z, N, A)\)</th>
+<th style="text-align:right">\(M_{\mathrm{pred}}\) (MeV)</th>
+<th style="text-align:right">\(M_{\mathrm{exp}}\) (MeV)</th>
+<th style="text-align:right">Mass Error (<code>%</code>)</th>
+<th style="text-align:right">Input Floor \(\sigma_{\mathrm{pred}}\) (<code>ppb</code>)</th>
+<th style="text-align:right">\(B_{\mathrm{pred}}^{\mathrm{Q\text{-}CLT}}\) (MeV)</th>
+<th style="text-align:right">\(B_{\mathrm{AME}}\) (MeV)</th>
+<th style="text-align:right">Binding Error (<code>%</code>)</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">\({}^2\mathrm{H}\)</td>
+<td style="text-align:left"><code>(1, 1, 2)</code></td>
+<td style="text-align:right"><code>1875.3096</code></td>
+<td style="text-align:right"><code>1875.6129</code></td>
+<td style="text-align:right"><code>-0.016%</code></td>
+<td style="text-align:right"><code>0.3139</code></td>
+<td style="text-align:right"><code>2.071</code></td>
+<td style="text-align:right"><code>2.225</code></td>
+<td style="text-align:right"><code>-6.90%</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^3\mathrm{H}\)</td>
+<td style="text-align:left"><code>(1, 2, 3)</code></td>
+<td style="text-align:right"><code>2810.9747</code></td>
+<td style="text-align:right"><code>2808.9211</code></td>
+<td style="text-align:right"><code>+0.073%</code></td>
+<td style="text-align:right"><code>0.3144</code></td>
+<td style="text-align:right"><code>5.514</code></td>
+<td style="text-align:right"><code>8.482</code></td>
+<td style="text-align:right"><code>-34.99%</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^4\mathrm{He}\) (\(K_4\) <code>M3a</code>)</td>
+<td style="text-align:left"><code>(2, 2, 4)</code></td>
+<td style="text-align:right"><code>3725.4322</code></td>
+<td style="text-align:right"><code>3727.3794</code></td>
+<td style="text-align:right"><code>-0.052%</code></td>
+<td style="text-align:right"><code>0.3159</code></td>
+<td style="text-align:right"><code>29.329</code></td>
+<td style="text-align:right"><code>28.296</code></td>
+<td style="text-align:right"><code>+3.65%</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{12}\mathrm{C}\)</td>
+<td style="text-align:left"><code>(6, 6, 12)</code></td>
+<td style="text-align:right"><code>11238.3712</code></td>
+<td style="text-align:right"><code>11174.8633</code></td>
+<td style="text-align:right"><code>+0.568%</code></td>
+<td style="text-align:right"><code>0.3161</code></td>
+<td style="text-align:right"><code>25.912</code></td>
+<td style="text-align:right"><code>92.162</code></td>
+<td style="text-align:right"><code>-71.88%</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{16}\mathrm{O}\)</td>
+<td style="text-align:left"><code>(8, 8, 16)</code></td>
+<td style="text-align:right"><code>14983.5958</code></td>
+<td style="text-align:right"><code>14895.0808</code></td>
+<td style="text-align:right"><code>+0.594%</code></td>
+<td style="text-align:right"><code>0.3162</code></td>
+<td style="text-align:right"><code>35.449</code></td>
+<td style="text-align:right"><code>127.619</code></td>
+<td style="text-align:right"><code>-72.22%</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{40}\mathrm{Ca}\)</td>
+<td style="text-align:left"><code>(20, 20, 40)</code></td>
+<td style="text-align:right"><code>37454.9437</code></td>
+<td style="text-align:right"><code>37214.6980</code></td>
+<td style="text-align:right"><code>+0.646%</code></td>
+<td style="text-align:right"><code>0.3164</code></td>
+<td style="text-align:right"><code>92.669</code></td>
+<td style="text-align:right"><code>342.052</code></td>
+<td style="text-align:right"><code>-72.91%</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{56}\mathrm{Fe}\)</td>
+<td style="text-align:left"><code>(26, 30, 56)</code></td>
+<td style="text-align:right"><code>52433.2782</code></td>
+<td style="text-align:right"><code>52089.7770</code></td>
+<td style="text-align:right"><code>+0.659%</code></td>
+<td style="text-align:right"><code>0.3165</code></td>
+<td style="text-align:right"><code>135.052</code></td>
+<td style="text-align:right"><code>492.260</code></td>
+<td style="text-align:right"><code>-72.56%</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{120}\mathrm{Sn}\)</td>
+<td style="text-align:left"><code>(50, 70, 120)</code></td>
+<td style="text-align:right"><code>112346.6161</code></td>
+<td style="text-align:right"><code>111662.6454</code></td>
+<td style="text-align:right"><code>+0.613%</code></td>
+<td style="text-align:right"><code>0.3164</code></td>
+<td style="text-align:right"><code>304.585</code></td>
+<td style="text-align:right"><code>1020.539</code></td>
+<td style="text-align:right"><code>-70.15%</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{208}\mathrm{Pb}\)</td>
+<td style="text-align:left"><code>(82, 126, 208)</code></td>
+<td style="text-align:right"><code>194726.1736</code></td>
+<td style="text-align:right"><code>193687.1243</code></td>
+<td style="text-align:right"><code>+0.536%</code></td>
+<td style="text-align:right"><code>0.3162</code></td>
+<td style="text-align:right"><code>539.812</code></td>
+<td style="text-align:right"><code>1636.430</code></td>
+<td style="text-align:right"><code>-67.01%</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{238}\mathrm{U}\)</td>
+<td style="text-align:left"><code>(92, 146, 238)</code></td>
+<td style="text-align:right"><code>222808.9482</code></td>
+<td style="text-align:right"><code>221695.8938</code></td>
+<td style="text-align:right"><code>+0.502%</code></td>
+<td style="text-align:right"><code>0.3160</code></td>
+<td style="text-align:right"><code>621.928</code></td>
+<td style="text-align:right"><code>1801.690</code></td>
+<td style="text-align:right"><code>-65.48%</code></td>
+</tr>
+</tbody></table></div>
+<p>* Note on \({}^3\mathrm{He}\) and \({}^4\mathrm{He}\): <code>mass-table-comprehensive.witness.json</code> omits six light proton-rich/closed-cluster rows (<code>4H, 5H, 6H, 3He, 4He, 4Li</code>); \({}^4\mathrm{He}\) is evaluated directly in the exact \(K_4\) tetrahedral plaquette model below (<code>Table 3.2a</code>), and constituent uncertainty propagation covers all \(A = 1\text{--}238\) benchmarks in <code>master-atlas-80dps.witness.json</code>.</p>
+<hr>
+<h3 id="3-2-category-2-nuclear-binding-energy-b-z-n">3.2 Category 2 — Nuclear Binding Energy (\(B(Z, N)\))</h3>
+<h4 id="table-3-2a-few-body-complete-graph-k-a-plaquette-variational-models-a-2-3-4">Table 3.2a: Few-Body Complete-Graph \(K_A\) Plaquette &amp; Variational Models (\(A = 2, 3, 4\))</h4>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Model / Formulation</th>
+<th style="text-align:right">\({}^2\mathrm{H}\) \(B\) (MeV) [Err]</th>
+<th style="text-align:right">\({}^3\mathrm{H}\) \(B\) (MeV) [Err]</th>
+<th style="text-align:right">\({}^3\mathrm{He}\) \(B\) (MeV) [Err]</th>
+<th style="text-align:right">\({}^4\mathrm{He}\) \(B\) (MeV) [Err]</th>
+<th style="text-align:right">Scaling \(B_3 / B_2\)</th>
+<th style="text-align:right">Scaling \(B_4 / B_2\)</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">AME2020 Experimental Reference</td>
+<td style="text-align:right"><code>2.22457</code></td>
+<td style="text-align:right"><code>8.48180</code></td>
+<td style="text-align:right"><code>7.71804</code></td>
+<td style="text-align:right"><code>28.29566</code></td>
+<td style="text-align:right"><code>3.813</code> (<code>3H</code>)</td>
+<td style="text-align:right"><code>12.720</code></td>
+</tr>
+<tr>
+<td style="text-align:left">1D Symbolic Hecke Chain (<code>mass-table</code>)</td>
+<td style="text-align:right"><code>2.071</code> (<code>-6.90%</code>)</td>
+<td style="text-align:right"><code>5.514</code> (<code>-34.99%</code>)</td>
+<td style="text-align:right"><code>—</code> (omitted)</td>
+<td style="text-align:right"><code>—</code> (omitted)</td>
+<td style="text-align:right"><code>2.663</code></td>
+<td style="text-align:right"><code>3.000</code> (asymptotic)</td>
+</tr>
+<tr>
+<td style="text-align:left">3D \(K_A\) Plaquette Exact (<code>M3a</code>, \(E_{\mathrm{osc}}\))</td>
+<td style="text-align:right"><code>2.265</code> (<code>+1.81%</code>)</td>
+<td style="text-align:right"><code>9.014</code> (<code>+6.27%</code>)</td>
+<td style="text-align:right"><code>9.014</code> (<code>+16.79%</code>)</td>
+<td style="text-align:right"><code>29.329</code> (<code>+3.65%</code>)</td>
+<td style="text-align:right"><code>3.980</code></td>
+<td style="text-align:right"><code>12.950</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Analytic Hoefsmit Plaquette Cumulant (<code>M5a</code>)</td>
+<td style="text-align:right"><code>2.265</code> (<code>+1.81%</code>)</td>
+<td style="text-align:right"><code>8.557</code> (<code>+0.89%</code>)</td>
+<td style="text-align:right"><code>8.557</code> (<code>+10.87%</code>)</td>
+<td style="text-align:right"><code>24.794</code> (<code>-12.37%</code>)</td>
+<td style="text-align:right"><code>3.778</code></td>
+<td style="text-align:right"><code>10.948</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Self-Bound Jacobi Variational (Hall–Post \(\eta_2\))</td>
+<td style="text-align:right"><code>2.265</code> (<code>+1.81%</code>)</td>
+<td style="text-align:right"><code>10.938</code> (<code>+28.96%</code>)</td>
+<td style="text-align:right"><code>10.938</code> (<code>+41.72%</code>)</td>
+<td style="text-align:right"><code>26.020</code> (<code>-8.04%</code>)</td>
+<td style="text-align:right"><code>4.830</code></td>
+<td style="text-align:right"><code>11.489</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Self-Bound Jacobi Variational (Unrestricted \(\eta_A^*\))</td>
+<td style="text-align:right"><code>2.265</code> (<code>+1.81%</code>)</td>
+<td style="text-align:right"><code>11.833</code> (<code>+39.51%</code>)</td>
+<td style="text-align:right"><code>11.833</code> (<code>+53.31%</code>)</td>
+<td style="text-align:right"><code>30.546</code> (<code>+7.95%</code>)</td>
+<td style="text-align:right"><code>5.225</code></td>
+<td style="text-align:right"><code>13.487</code></td>
+</tr>
+</tbody></table></div>
+<h4 id="table-3-2b-symbolic-1d-q-clt-binding-proxy-across-mass-number-bands-a-ge-2">Table 3.2b: Symbolic 1D Q-CLT Binding Proxy Across Mass-Number Bands (\(A \ge 2\))</h4>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Mass-Number Band</th>
+<th style="text-align:right">Nuclides \(N\)</th>
+<th style="text-align:right">Bound (\(B_{\mathrm{pred}} &gt; 0\))</th>
+<th style="text-align:right">Mean $\</th>
+<th style="text-align:right">\Delta B\</th>
+<th style="text-align:right">/B_{\mathrm{AME}}$</th>
+<th style="text-align:right">Median $\</th>
+<th style="text-align:right">\Delta B\</th>
+<th style="text-align:left">/B_{\mathrm{AME}}$</th>
+<th style="text-align:left">Median Error (<code>ppQ</code>)</th>
+<th style="text-align:left">Mean \(B_{\mathrm{pred}}/A\) (MeV)</th>
+<th style="text-align:left">Mean \(B_{\mathrm{AME}}/A\) (MeV)</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">Very Low-\(A\) (\(2\text{--}16\))</td>
+<td style="text-align:right"><code>65</code></td>
+<td style="text-align:right"><code>65/65 (100%)</code></td>
+<td style="text-align:right"><code>57.16%</code></td>
+<td style="text-align:right"><code>63.00%</code></td>
+<td style="text-align:right"><code>6.30e+14</code></td>
+<td style="text-align:right"><code>2.173</code></td>
+<td style="text-align:right"><code>5.510</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Low/Mid-\(A\) (\(17\text{--}56\))</td>
+<td style="text-align:right"><code>327</code></td>
+<td style="text-align:right"><code>327/327 (100%)</code></td>
+<td style="text-align:right"><code>69.44%</code></td>
+<td style="text-align:right"><code>71.19%</code></td>
+<td style="text-align:right"><code>7.12e+14</code></td>
+<td style="text-align:right"><code>2.420</code></td>
+<td style="text-align:right"><code>8.026</code></td>
+</tr>
+<tr>
+<td style="text-align:left">High-\(A\) Med (\(57\text{--}150\))</td>
+<td style="text-align:right"><code>1083</code></td>
+<td style="text-align:right"><code>1083/1083 (100%)</code></td>
+<td style="text-align:right"><code>70.28%</code></td>
+<td style="text-align:right"><code>70.22%</code></td>
+<td style="text-align:right"><code>7.02e+14</code></td>
+<td style="text-align:right"><code>2.509</code></td>
+<td style="text-align:right"><code>8.446</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Very High-\(A\) (\(\ge 151\))</td>
+<td style="text-align:right"><code>1067</code></td>
+<td style="text-align:right"><code>1067/1067 (100%)</code></td>
+<td style="text-align:right"><code>67.38%</code></td>
+<td style="text-align:right"><code>67.58%</code></td>
+<td style="text-align:right"><code>6.76e+14</code></td>
+<td style="text-align:right"><code>2.557</code></td>
+<td style="text-align:right"><code>7.844</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>All Measured (\(A \ge 2\))</strong></td>
+<td style="text-align:right"><code>2542</code></td>
+<td style="text-align:right"><code>2542/2542 (100%)</code></td>
+<td style="text-align:right"><code>68.62%</code></td>
+<td style="text-align:right"><code>68.93%</code></td>
+<td style="text-align:right"><code>6.89e+14</code></td>
+<td style="text-align:right"><code>2.509</code></td>
+<td style="text-align:right"><code>8.064</code></td>
+</tr>
+</tbody></table></div>
+<p><em>Assessment (Low-\(A\) vs High-\(A\) Binding):</em> In the few-body regime (\(A \le 4\)), replacing the 1D chain with the 3D complete-graph \(K_A\) colour-flux plaquette (<code>M3a</code> exact Lanczos ground state in the \(E_{\mathrm{osc}}\) chart) captures the tetrahedral jump from deuteron to \(\alpha\)-particle (\(B_4/B_2 = 12.950\) vs AME2020 <code>12.720</code>, giving \(B({}^4\mathrm{He}) = 29.329\;\mathrm{MeV}\), <code>+3.65%</code>). Across \(A \ge 5\), the production mass table falls back to the 1D factorized symbolic Q-CLT chain, whose per-nucleon binding approaches \(b_2 \approx 2.071\;\mathrm{MeV}\) asymptotically rather than the empirical \(\sim 7.5\text{--}8.8\;\mathrm{MeV}\) nuclear saturation curve, producing a uniform <code>-67%</code> to <code>-70%</code> binding deficit across medium and heavy nuclei.</p>
+<hr>
+<h3 id="3-3-category-3-charge-hypercharge-alpha-mathrm-em-coulomb-splits-molecular-geometry">3.3 Category 3 — Charge, Hypercharge, \(\alpha_{\mathrm{EM}}\), Coulomb Splits &amp; Molecular Geometry</h3>
+<h4 id="table-3-3a-electroweak-electromagnetic-couplings-mirror-nuclei-coulomb-systematics">Table 3.3a: Electroweak / Electromagnetic Couplings &amp; Mirror-Nuclei Coulomb Systematics</h4>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Observable / Test</th>
+<th style="text-align:right">Predicted Value</th>
+<th style="text-align:right">Experimental Reference</th>
+<th style="text-align:right">Relative Error</th>
+<th style="text-align:right"><code>ppQ</code> Error Scale</th>
+<th style="text-align:right">Pull / Scatter</th>
+<th style="text-align:left">Status &amp; Scope</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">Electric charge quantization \(Q(p), Q(n)\)</td>
+<td style="text-align:right"><code>+1, 0</code> (\(c = 1/2\))</td>
+<td style="text-align:right"><code>+1, 0</code> ($\</td>
+<td style="text-align:right">Q_p + Q_e\</td>
+<td style="text-align:right">/e &lt; 10^{-21}$)</td>
+<td style="text-align:right"><code>0</code> (exact)</td>
+<td style="text-align:left"><code>0</code></td>
+<td style="text-align:left">Exact</td>
+<td style="text-align:left">Proved topological writhe \(Q = \tfrac{1}{2}\operatorname{writhe}(H)\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Fine-structure \(\alpha_{\mathrm{EM}}^{-1}\) (Schwinger Form B, 4-topology)</td>
+<td style="text-align:right"><code>137.035999127</code></td>
+<td style="text-align:right"><code>137.035999177 ± 2.1e-8</code></td>
+<td style="text-align:right"><code>-0.365 ppb</code></td>
+<td style="text-align:right"><code>365225.8</code></td>
+<td style="text-align:right"><code>-2.38σ</code></td>
+<td style="text-align:left">Derived 4-topology <code>(1 - h_A^2 α)</code> loop factor; conditional Bring zero-mode</td>
+</tr>
+<tr>
+<td style="text-align:left">Fine-structure \(\alpha_{\mathrm{EM}}^{-1}\) (2-loop Bloch-\(B_3\) Form C)</td>
+<td style="text-align:right"><code>137.035999174</code></td>
+<td style="text-align:right"><code>137.035999177 ± 2.1e-8</code></td>
+<td style="text-align:right"><code>-0.024 ppb</code></td>
+<td style="text-align:right"><code>24112.2</code></td>
+<td style="text-align:right"><strong><code>-0.16σ</code></strong></td>
+<td style="text-align:left">Conditional two-loop Bloch-\(B_3(\mathbb{C})\) trilogarithm defect (within \(1\sigma_{\mathrm{exp}}\)!)</td>
+</tr>
+<tr>
+<td style="text-align:left">Fine-structure \(\alpha_{\mathrm{EM}}^{-1}\) (\(8\times 8\) Seifert \(\kappa_{\mathrm{Seifert}}\))</td>
+<td style="text-align:right"><code>137.035995815</code></td>
+<td style="text-align:right"><code>137.035999177 ± 2.1e-8</code></td>
+<td style="text-align:right"><code>-24.53 ppb</code></td>
+<td style="text-align:right"><code>2.45e+7</code></td>
+<td style="text-align:right"><code>-160.1σ</code></td>
+<td style="text-align:left">Homological \(b_1(\Sigma_4)=8\) Seifert pairing (<code>19.1x</code> closer than Witten \(2\times 2\))</td>
+</tr>
+<tr>
+<td style="text-align:left">Fine-structure \(\alpha_{\mathrm{EM}}^{-1}\) (legacy Witten \(2\times 2\) CS)</td>
+<td style="text-align:right"><code>137.035935094</code></td>
+<td style="text-align:right"><code>137.035999177 ± 2.1e-8</code></td>
+<td style="text-align:right"><code>-467.64 ppb</code></td>
+<td style="text-align:right"><code>4.68e+8</code></td>
+<td style="text-align:right"><code>-3051.6σ</code></td>
+<td style="text-align:left">Legacy \(2\times 2\) Chern–Simons baseline (<code>-0.468 ppm</code> gap vs Form B)</td>
+</tr>
+<tr>
+<td style="text-align:left">Rydberg constant \(R_\infty h c\) (Schwinger Form B)</td>
+<td style="text-align:right"><code>13.605693133 eV</code></td>
+<td style="text-align:right"><code>13.605693123 ± 1.5e-11 eV</code></td>
+<td style="text-align:right"><code>+0.725 ppb</code></td>
+<td style="text-align:right"><code>724872.2</code></td>
+<td style="text-align:right"><code>+2.31σ</code> (\(z_{\mathrm{comb}}\))</td>
+<td style="text-align:left">Derived \(\tfrac{1}{2}m_e c^2 \alpha_{\mathrm{EM}}^2\) (\(\sigma_{\mathrm{pred}} = 0.313\;\mathrm{ppb}\) from \(m_e\))</td>
+</tr>
+<tr>
+<td style="text-align:left">Rydberg constant \(R_\infty h c\) (2-loop Bloch-\(B_3\) Form C)</td>
+<td style="text-align:right"><code>13.605693124 eV</code></td>
+<td style="text-align:right"><code>13.605693123 ± 1.5e-11 eV</code></td>
+<td style="text-align:right"><code>+0.043 ppb</code></td>
+<td style="text-align:right"><code>42644.9</code></td>
+<td style="text-align:right"><strong><code>+0.14σ</code></strong> (\(z_{\mathrm{comb}}\))</td>
+<td style="text-align:left">Conditional two-loop Bloch-\(B_3\) Rydberg (within \(1\sigma_{\mathrm{comb}}\)!)</td>
+</tr>
+<tr>
+<td style="text-align:left">Bare topological \({}^3\mathrm{H}\text{--}{}^3\mathrm{He}\) Coulomb</td>
+<td style="text-align:right"><code>0.2213 MeV</code></td>
+<td style="text-align:right"><code>0.7638 MeV</code></td>
+<td style="text-align:right"><code>-71.03%</code> (<code>29.0%</code> covered)</td>
+<td style="text-align:right"><code>7.10e+14</code></td>
+<td style="text-align:right"><code>3.45x</code> short</td>
+<td style="text-align:left">Zero-fit \(\tanh(\ln q_0) B_{pp}\); nuclear-geometry factor open</td>
+</tr>
+<tr>
+<td style="text-align:left">Mirror-nuclei Coulomb systematics (\(N=8\), \(A=3\text{--}39\))</td>
+<td style="text-align:right">Ratio <code>0.9868</code></td>
+<td style="text-align:right"><code>1.0000</code> (AME2020 splits)</td>
+<td style="text-align:right"><code>-1.32%</code> mean</td>
+<td style="text-align:right"><code>1.32e+13</code></td>
+<td style="text-align:right"><code>±6.94%</code> RMS</td>
+<td style="text-align:left">Canonical nuclear-radius Coulomb scaling across mirror doublets</td>
+</tr>
+</tbody></table></div>
+<h4 id="table-3-3b-q-weighted-vsepr-molecular-geometry-condensed-matter-benchmarks">Table 3.3b: \(q\)-Weighted VSEPR Molecular Geometry &amp; Condensed-Matter Benchmarks</h4>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Molecule / Observable</th>
+<th style="text-align:left">Symmetry / Weighting</th>
+<th style="text-align:right">Predicted</th>
+<th style="text-align:right">Experimental</th>
+<th style="text-align:right">Residual</th>
+<th style="text-align:right">Relative Error</th>
+<th style="text-align:right"><code>ppQ</code> Error Scale</th>
+<th style="text-align:right">Pull \(z_{\mathrm{exp}}\)</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">\(\theta(\mathrm{CH_4})\)</td>
+<td style="text-align:left">Exact \(T_d\) tetrahedral (\(4\) single bonds)</td>
+<td style="text-align:right"><code>109.4712°</code></td>
+<td style="text-align:right"><code>109.4712°</code></td>
+<td style="text-align:right"><code>0.0000°</code></td>
+<td style="text-align:right"><code>+5.796 ppb</code></td>
+<td style="text-align:right"><code>5.80e+6</code></td>
+<td style="text-align:right"><code>0.00σ</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\(\theta(\mathrm{CO_2})\)</td>
+<td style="text-align:left">Exact \(D_{\infty h}\) linear (\(2\) double bonds)</td>
+<td style="text-align:right"><code>180.0000°</code></td>
+<td style="text-align:right"><code>180.0000°</code></td>
+<td style="text-align:right"><code>0.0000°</code></td>
+<td style="text-align:right"><code>0</code></td>
+<td style="text-align:right"><code>0</code></td>
+<td style="text-align:right"><code>0.00σ</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\(\theta(\mathrm{NH_3})\)</td>
+<td style="text-align:left">\(C_{3v}\) \(AX_3E_1\) (\(q\) bond vs \(q^3\) lone pair)</td>
+<td style="text-align:right"><code>106.8802°</code></td>
+<td style="text-align:right"><code>106.6700°</code></td>
+<td style="text-align:right"><code>+0.2102°</code></td>
+<td style="text-align:right"><code>+0.20%</code></td>
+<td style="text-align:right"><code>1.97e+12</code></td>
+<td style="text-align:right"><code>+4.20σ</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\(\theta(\mathrm{H_2O})\)</td>
+<td style="text-align:left">\(C_{2v}\) \(AX_2E_2\) (\(2\times q\) vs \(2\times q^3\))</td>
+<td style="text-align:right"><code>104.7195°</code></td>
+<td style="text-align:right"><code>104.4776°</code></td>
+<td style="text-align:right"><code>+0.2419°</code></td>
+<td style="text-align:right"><code>+0.23%</code></td>
+<td style="text-align:right"><code>2.31e+12</code></td>
+<td style="text-align:right"><code>+24.19σ</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\(\theta(\mathrm{C_2H_4})\)</td>
+<td style="text-align:left">\(C_{2v}\) planar \(AX_3\) (\(q^2\) double vs \(q\) single)</td>
+<td style="text-align:right"><code>117.2322°</code></td>
+<td style="text-align:right"><code>116.6000°</code></td>
+<td style="text-align:right"><code>+0.6322°</code></td>
+<td style="text-align:right"><code>+0.54%</code></td>
+<td style="text-align:right"><code>5.42e+12</code></td>
+<td style="text-align:right"><code>+6.32σ</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\(\theta(\mathrm{H_2S})\)</td>
+<td style="text-align:left">Orthogonal \(p\)-orbital baseline</td>
+<td style="text-align:right"><code>90.0000°</code></td>
+<td style="text-align:right"><code>92.1100°</code></td>
+<td style="text-align:right"><code>-2.1100°</code></td>
+<td style="text-align:right"><code>-2.29%</code></td>
+<td style="text-align:right"><code>2.29e+13</code></td>
+<td style="text-align:right"><code>-42.20σ</code></td>
+</tr>
+<tr>
+<td style="text-align:left">\(L_{\mathrm{vap}}(\mathrm{H_2O})\)</td>
+<td style="text-align:left">Hydrogen-bond \(q\)-plaquette enthalpy</td>
+<td style="text-align:right"><code>40.1136 kJ/mol</code></td>
+<td style="text-align:right"><code>40.6570 kJ/mol</code></td>
+<td style="text-align:right"><code>-0.5434 kJ/mol</code></td>
+<td style="text-align:right"><code>-1.34%</code></td>
+<td style="text-align:right"><code>1.34e+13</code></td>
+<td style="text-align:right"><code>-27.17σ</code></td>
+</tr>
+</tbody></table></div>
+<p><em>Assessment (Charge &amp; EM Sector):</em> Electric charge quantization is exact (\(0\;\mathrm{ppQ}\)) from topological writhe \(Q(H) = \tfrac{1}{2}\operatorname{writhe}(H)\). In the additive Schwinger Form B cubic, <code>QOU.Archimedean.EmFermionLoopFourTopology</code> proves symbolically over \(\mathbb{Q}(q)\) that summing all four signed chiral 2-vertex crossing topologies \((\epsilon_1,\epsilon_2)\in\{+,-\}^2\) on \(U_q(\mathfrak{sl}_2)\) <code>EmFermionLoop</code> cancels the \(\pm h_A m(\sigma_2)\) chiral tadpoles identically to \(-1\cdot h_A^2\), reproducing \(\alpha_{\mathrm{EM}}^{-1}\) to <code>-0.365 ppb</code> (<code>-2.38</code>\(\sigma_{\mathrm{exp}}\)) and the hydrogenic Rydberg constant \(R_\infty h c = \tfrac{1}{2}m_e c^2 \alpha_{\mathrm{EM}}^2\) to <code>+0.725 ppb</code> (\(z_{\mathrm{comb}} = +2.31\sigma\) once the <code>0.313 ppb</code> CODATA \(m_e\) uncertainty is propagated). Adding the zero-parameter weight-3 Bloch-\(B_3(\mathbb{C})\) trilogarithm defect \(c_2^{\mathrm{Bloch}} = H(q_0)(\zeta(3)-\operatorname{Li}_3(q_0^{-2}))/(8\pi)\) (<code>QOU.Archimedean.AlphaEmTwoLoopBlochSchwinger</code>, conditional on <code>AlphaEmTwoLoopBlochSchwingerClass</code>) brings \(\alpha_{\mathrm{EM}}^{-1}\) to <code>-0.024 ppb</code> (<code>-0.16</code>\(\sigma_{\mathrm{exp}}\)) and \(R_\infty h c\) to <code>+0.043 ppb</code> (\(z_{\mathrm{comb}} = +0.14\sigma\)). On the Chern–Simons arm, replacing Witten&#x27;s legacy \(2\times 2\) baseline (<code>-467.64 ppb</code>) with the \(8\times 8\) homological Seifert pairing \(\kappa_{\mathrm{Seifert}}(q_0) = q_0^8/(\Delta_{2,9}(q_0)\Delta_{3,5}(q_0))\) on \(H_1(\Sigma_4;\mathbb{Z})\cong\mathbb{Z}^8\) narrows the residual \(19.1\times\) to <code>-24.53 ppb</code>. In nuclear isospin doublets, the bare topological ratio \(\tanh(\ln q_0) = 0.103964\) accounts for <code>29.0%</code> of the \({}^3\mathrm{H}\text{–}{}^3\mathrm{He}\) split without nuclear-radius input, while canonical nuclear-radius Coulomb across \(8\) mirror pairs (\(A = 3\text{--}39\)) matches AME2020 splits with mean ratio <code>0.9868</code> (\(\pm 6.94\%\) RMS). Molecular bond angles are exact (<code>0–5.8 ppb</code>) where tetrahedral/linear symmetry dominates (\(\mathrm{CH_4}, \mathrm{CO_2}\)) and accurate to <code>0.20%–2.29%</code> under \(q\)-weighted lone-pair and double-bond repulsion (\(\mathrm{NH_3}, \mathrm{H_2O}, \mathrm{C_2H_4}, \mathrm{H_2S}\)).</p>
+<hr>
+<h3 id="3-4-category-4-weak-beta-decay-q-beta-weak-scale">3.4 Category 4 — Weak \(\beta\)-Decay (\(Q_{\beta^-}\) &amp; Weak Scale)</h3>
+<h4 id="table-3-4a-free-neutron-conditional-split-bare-monotone-transfer-matrix-benchmarks-weak-scale">Table 3.4a: Free-Neutron Conditional Split, Bare Monotone Transfer-Matrix Benchmarks, &amp; Weak Scale</h4>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Transition / Observable</th>
+<th style="text-align:left">Formulation</th>
+<th style="text-align:right">Predicted</th>
+<th style="text-align:right">Experimental</th>
+<th style="text-align:right">Relative Error</th>
+<th style="text-align:right"><code>ppQ</code> Error Scale</th>
+<th style="text-align:right">Pull \(z_{\mathrm{exp}}\)</th>
+<th style="text-align:left">Status</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">Free neutron \(n \to p e^- \bar\nu_e\)</td>
+<td style="text-align:left">Conditional \(T^3\) weight-trace split (<code>V^3</code>)</td>
+<td style="text-align:right"><code>0.32543 MeV</code></td>
+<td style="text-align:right"><code>0.78233 MeV</code></td>
+<td style="text-align:right"><code>-58.40%</code></td>
+<td style="text-align:right"><code>5.84e+14</code></td>
+<td style="text-align:right"><code>-1202367.3σ</code></td>
+<td style="text-align:left">Conditional (<code>C1–C3</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^3\mathrm{H} \to {}^3\mathrm{He}\)</td>
+<td style="text-align:left">Bare monotone transfer-matrix skein shift</td>
+<td style="text-align:right"><code>0.03675 MeV</code></td>
+<td style="text-align:right"><code>0.01861 MeV</code></td>
+<td style="text-align:right"><code>+97.50%</code></td>
+<td style="text-align:right"><code>9.75e+14</code></td>
+<td style="text-align:right"><code>+1814.4σ</code></td>
+<td style="text-align:left">Zero-fit TM proxy</td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{14}\mathrm{C} \to {}^{14}\mathrm{N}\)</td>
+<td style="text-align:left">Bare monotone transfer-matrix skein shift</td>
+<td style="text-align:right"><code>0.14379 MeV</code></td>
+<td style="text-align:right"><code>0.15648 MeV</code></td>
+<td style="text-align:right"><code>-8.11%</code></td>
+<td style="text-align:right"><code>8.11e+13</code></td>
+<td style="text-align:right"><code>-317.3σ</code></td>
+<td style="text-align:left">Zero-fit TM proxy (<code>-8.11%</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{60}\mathrm{Co} \to {}^{60}\mathrm{Ni}\)</td>
+<td style="text-align:left">Bare monotone transfer-matrix skein shift</td>
+<td style="text-align:right"><code>0.08553 MeV</code></td>
+<td style="text-align:right"><code>0.31817 MeV</code></td>
+<td style="text-align:right"><code>-73.12%</code></td>
+<td style="text-align:right"><code>7.31e+14</code></td>
+<td style="text-align:right"><code>-1789.5σ</code></td>
+<td style="text-align:left">Zero-fit TM proxy</td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{90}\mathrm{Sr} \to {}^{90}\mathrm{Y}\)</td>
+<td style="text-align:left">Bare monotone transfer-matrix skein shift</td>
+<td style="text-align:right"><code>0.05482 MeV</code></td>
+<td style="text-align:right"><code>0.54590 MeV</code></td>
+<td style="text-align:right"><code>-89.96%</code></td>
+<td style="text-align:right"><code>9.00e+14</code></td>
+<td style="text-align:right"><code>-7015.4σ</code></td>
+<td style="text-align:left">Zero-fit TM proxy</td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{137}\mathrm{Cs} \to {}^{137}\mathrm{Ba}\)</td>
+<td style="text-align:left">Bare monotone transfer-matrix skein shift</td>
+<td style="text-align:right"><code>0.15314 MeV</code></td>
+<td style="text-align:right"><code>0.51400 MeV</code></td>
+<td style="text-align:right"><code>-70.21%</code></td>
+<td style="text-align:right"><code>7.02e+14</code></td>
+<td style="text-align:right"><code>-1718.4σ</code></td>
+<td style="text-align:left">Zero-fit TM proxy</td>
+</tr>
+<tr>
+<td style="text-align:left">\({}^{210}\mathrm{Bi} \to {}^{210}\mathrm{Po}\)</td>
+<td style="text-align:left">Bare monotone transfer-matrix skein shift</td>
+<td style="text-align:right"><code>0.52314 MeV</code></td>
+<td style="text-align:right"><code>1.16270 MeV</code></td>
+<td style="text-align:right"><code>-55.01%</code></td>
+<td style="text-align:right"><code>5.50e+14</code></td>
+<td style="text-align:right"><code>-10659.3σ</code></td>
+<td style="text-align:left">Zero-fit TM proxy</td>
+</tr>
+<tr>
+<td style="text-align:left">Electroweak VEV \(v_{\mathrm{weak}}\) (\(N_v = 262.418169\))</td>
+<td style="text-align:left">Bring–Schwinger fixed point \(1/\alpha_v = T_{\mathrm{EW}} - \alpha_v H(1 - \hbar_q^2 \alpha_v)\)</td>
+<td style="text-align:right"><code>246.219644 GeV</code></td>
+<td style="text-align:right"><code>246.219651 ± 6.3e-5 GeV</code></td>
+<td style="text-align:right"><strong><code>-29.37 ppb</code></strong></td>
+<td style="text-align:right"><code>2.94e+7</code></td>
+<td style="text-align:right"><strong><code>-0.11σ</code></strong></td>
+<td style="text-align:left">Conditional Bring–Schwinger fixed point (\(G_F\) within \(1\sigma_{\mathrm{exp}}\)!)</td>
+</tr>
+</tbody></table></div>
+<h4 id="table-3-4b-isobaric-mass-difference-q-beta-m-z-n-m-z-1-n-1-m-e-across-measured-beta-emitters">Table 3.4b: Isobaric Mass-Difference \(Q_{\beta^-} = M(Z, N) - M(Z+1, N-1) - m_e\) Across Measured \(\beta^-\) Emitters</h4>
+<p>Evaluated across all <code>1,010</code> non-estimated exothermic \(\beta^-\) transitions (\(Q_{\beta^-}^{\mathrm{AME}} &gt; 10\;\mathrm{keV}\)) present in <code>mass-table-comprehensive.witness.json</code>:</p>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Mass-Number Band</th>
+<th style="text-align:right">Transitions \(N\)</th>
+<th style="text-align:right">Predicted Exothermic (\(Q_{\mathrm{pred}} &gt; 0\))</th>
+<th style="text-align:right">Mean $\</th>
+<th style="text-align:right">\Delta Q\</th>
+<th style="text-align:right">/Q_{\mathrm{AME}}$</th>
+<th style="text-align:left">Median $\</th>
+<th style="text-align:left">\Delta Q\</th>
+<th style="text-align:left">/Q_{\mathrm{AME}}$</th>
+<th style="text-align:left">Median Error (<code>ppQ</code>)</th>
+<th style="text-align:left">Physical Diagnosis</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">Free Neutron (\(A = 1\))</td>
+<td style="text-align:right"><code>1</code></td>
+<td style="text-align:right"><code>1/1</code></td>
+<td style="text-align:right"><code>58.4%</code></td>
+<td style="text-align:right"><code>58.4%</code></td>
+<td style="text-align:right"><code>5.84e+14</code></td>
+<td style="text-align:left">Exothermic (<code>0.325</code> vs <code>0.782 MeV</code>, <code>-58.4%</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left">Very Low-\(A\) (\(2\text{--}16\))</td>
+<td style="text-align:right"><code>27</code></td>
+<td style="text-align:right"><code>0/27</code></td>
+<td style="text-align:right"><code>167.1%</code></td>
+<td style="text-align:right"><code>111.2%</code></td>
+<td style="text-align:right"><code>1.11e+15</code></td>
+<td style="text-align:left">Missing 3D cluster + symmetry energy</td>
+</tr>
+<tr>
+<td style="text-align:left">Low/Mid-\(A\) (\(17\text{--}56\))</td>
+<td style="text-align:right"><code>175</code></td>
+<td style="text-align:right"><code>0/175</code></td>
+<td style="text-align:right"><code>157.6%</code></td>
+<td style="text-align:right"><code>120.7%</code></td>
+<td style="text-align:right"><code>1.21e+15</code></td>
+<td style="text-align:left">Missing Pauli asymmetry + Coulomb shift</td>
+</tr>
+<tr>
+<td style="text-align:left">High-\(A\) Med (\(57\text{--}150\))</td>
+<td style="text-align:right"><code>514</code></td>
+<td style="text-align:right"><code>0/514</code></td>
+<td style="text-align:right"><code>210.2%</code></td>
+<td style="text-align:right"><code>134.5%</code></td>
+<td style="text-align:right"><code>1.34e+15</code></td>
+<td style="text-align:left">Isobaric parabola absent in 1D Q-CLT chain</td>
+</tr>
+<tr>
+<td style="text-align:left">Very High-\(A\) (\(\ge 151\))</td>
+<td style="text-align:right"><code>293</code></td>
+<td style="text-align:right"><code>0/293</code></td>
+<td style="text-align:right"><code>402.3%</code></td>
+<td style="text-align:right"><code>191.7%</code></td>
+<td style="text-align:right"><code>1.92e+15</code></td>
+<td style="text-align:left">Large \(Z\) Coulomb gradient omitted</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>All Measured (\(A \ge 1\))</strong></td>
+<td style="text-align:right"><code>1010</code></td>
+<td style="text-align:right"><code>1/1010</code></td>
+<td style="text-align:right"><code>255.5%</code></td>
+<td style="text-align:right"><code>142.4%</code></td>
+<td style="text-align:right"><code>1.42e+15</code></td>
+<td style="text-align:left">Only \(A=1\) exothermic without 3D/Coulomb closure</td>
+</tr>
+</tbody></table></div>
+<p><em>Assessment (\(\beta\)-Decay &amp; Weak Scale):</em> On the single-nucleon baseline, the \(T^3\) weight-trace split on the cost-minimal \(\gamma\gamma\)-reachable Borromean braid \(V^3 = (\sigma_1 \sigma_2^{-1})^3\) (conditional on conjectures <code>C1–C3</code>) gives \(Q_{\beta^-}(n) = 0.325434\;\mathrm{MeV}\) (<code>-58.40%</code> vs <code>0.782334 MeV</code>). For composite nuclei (\(A \ge 2\)), bare monotone transfer-matrix skein shifts (<code>Table 3.4a</code>) land in the physical keV–MeV window (best at \({}^{14}\mathrm{C}\), <code>-8.11%</code>), whereas direct mass-table subtraction \(M(Z,N) - M(Z+1,N-1) - m_e\) (<code>Table 3.4b</code>) predicts <code>0 / 1,009</code> exothermic composite transitions because the 1D chain omits Coulomb repulsion \(\propto Z(Z-1)/A^{1/3}\) and Pauli neutron-excess pressure \(\propto (N-Z)^2/A\). On the electroweak scale fixing \(G_F\), the Bring–Schwinger fixed point \(1/\alpha_v = T_{\mathrm{EW}}(q_0) - \alpha_v H(q_0)(1 - \hbar_{q_0}^2 \alpha_v)\) (<code>QOU.StandardModel.ElectroweakBringSchwingerBridge</code>) yields \(N_v = 262.418169\) and \(v_{\mathrm{weak}} = 246.219644\;\mathrm{GeV}\) (<code>-29.37 ppb</code>, <code>-0.11</code>\(\sigma_{\mathrm{exp}}\) vs PDG \(G_F\), within \(1\sigma_{\mathrm{exp}}\)), leaving discharge of its conditional hypothesis class and nuclear Fermi / Gamow–Teller matrix elements for unconditional \(\Gamma_\beta\) half-lives.</p>
+<hr>
+<h3 id="3-5-category-5-alpha-decay-heavy-composite-fission">3.5 Category 5 — \(\alpha\)-Decay &amp; Heavy / Composite Fission</h3>
+<h4 id="table-3-5a-gamow-wkb-alpha-tunneling-at-experimental-q-alpha-n-126-shell-preformation">Table 3.5a: Gamow WKB \(\alpha\)-Tunneling at Experimental \(Q_\alpha\) &amp; \(N = 126\) Shell Preformation</h4>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Emitter / Mechanism</th>
+<th style="text-align:left">\((Z, N, A)\)</th>
+<th style="text-align:right">\(Q_\alpha^{\mathrm{AME}}\) (MeV)</th>
+<th style="text-align:right">\(T_{1/2}^{\mathrm{exp}}\) (s)</th>
+<th style="text-align:right">\(T_{1/2}^{\mathrm{model}}\) (s)</th>
+<th style="text-align:right">\(\log_{10}(T_{\mathrm{model}}/T_{\mathrm{exp}})\) (dex)</th>
+<th style="text-align:right">Factor Error</th>
+<th style="text-align:left">Notes</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left"><code>8Be</code> (bare WKB, \(S_\alpha=1\))</td>
+<td style="text-align:left"><code>(4, 4, 8)</code></td>
+<td style="text-align:right"><code>0.0918</code></td>
+<td style="text-align:right"><code>8.19e-17</code></td>
+<td style="text-align:right"><code>6.29e-16</code></td>
+<td style="text-align:right"><code>+0.885</code></td>
+<td style="text-align:right"><code>7.68x</code></td>
+<td style="text-align:left">81.9 as (resonance)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>212Po</code> (bare WKB, \(S_\alpha=1\))</td>
+<td style="text-align:left"><code>(84, 128, 212)</code></td>
+<td style="text-align:right"><code>8.9542</code></td>
+<td style="text-align:right"><code>2.94e-7</code></td>
+<td style="text-align:right"><code>1.32e-7</code></td>
+<td style="text-align:right"><code>-0.350</code></td>
+<td style="text-align:right"><code>2.24x</code></td>
+<td style="text-align:left">294.4 ns (open shell, N=128)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>214Po</code> (bare WKB, \(S_\alpha=1\))</td>
+<td style="text-align:left"><code>(84, 130, 214)</code></td>
+<td style="text-align:right"><code>7.8335</code></td>
+<td style="text-align:right"><code>1.64e-4</code></td>
+<td style="text-align:right"><code>1.19e-4</code></td>
+<td style="text-align:right"><code>-0.139</code></td>
+<td style="text-align:right"><code>1.38x</code></td>
+<td style="text-align:left">163.6 us (open shell, N=130)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>222Rn</code> (bare WKB, \(S_\alpha=1\))</td>
+<td style="text-align:left"><code>(86, 136, 222)</code></td>
+<td style="text-align:right"><code>5.5904</code></td>
+<td style="text-align:right"><code>3.30e+5</code></td>
+<td style="text-align:right"><code>4.60e+5</code></td>
+<td style="text-align:right"><code>+0.144</code></td>
+<td style="text-align:right"><code>1.39x</code></td>
+<td style="text-align:left">3.8215 d (open shell, N=136)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>210Po</code> (bare WKB, \(S_\alpha=1\))</td>
+<td style="text-align:left"><code>(84, 126, 210)</code></td>
+<td style="text-align:right"><code>5.4075</code></td>
+<td style="text-align:right"><code>1.20e+7</code></td>
+<td style="text-align:right"><code>6.61e+5</code></td>
+<td style="text-align:right"><code>-1.257</code></td>
+<td style="text-align:right"><code>18.08x</code></td>
+<td style="text-align:left">Closed \(N=126\) shell (\(S_\alpha^{\mathrm{emp}} = 0.0553\))</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>226Ra</code> (bare WKB, \(S_\alpha=1\))</td>
+<td style="text-align:left"><code>(88, 138, 226)</code></td>
+<td style="text-align:right"><code>4.8707</code></td>
+<td style="text-align:right"><code>5.05e+10</code></td>
+<td style="text-align:right"><code>7.81e+10</code></td>
+<td style="text-align:right"><code>+0.189</code></td>
+<td style="text-align:right"><code>1.55x</code></td>
+<td style="text-align:left">1600 y (open shell, N=138)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>238U</code> (bare WKB, \(S_\alpha=1\))</td>
+<td style="text-align:left"><code>(92, 146, 238)</code></td>
+<td style="text-align:right"><code>4.2699</code></td>
+<td style="text-align:right"><code>1.41e+17</code></td>
+<td style="text-align:right"><code>3.58e+17</code></td>
+<td style="text-align:right"><code>+0.405</code></td>
+<td style="text-align:right"><code>2.54x</code></td>
+<td style="text-align:left">4.468 Gy (open shell, N=146)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>210Po</code> + Mayer–Jensen \(S_\alpha^{\mathrm{MJ}}=1/20\)</strong></td>
+<td style="text-align:left"><code>(84, 126, 210)</code></td>
+<td style="text-align:right"><code>5.4075</code></td>
+<td style="text-align:right"><code>1.20e+7</code></td>
+<td style="text-align:right"><code>1.32e+7</code></td>
+<td style="text-align:right"><strong><code>+0.044</code></strong></td>
+<td style="text-align:right"><strong><code>1.11x</code></strong></td>
+<td style="text-align:left">Parameter-free \((1h_{9/2}, 3p_{1/2}/2g_{9/2})\) shell preformation</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li><strong>Composite Generation Fission Threshold (<code>gap3b</code>):</strong> Machine-checked Hecke algebra identities prove \(\sigma_1^9 = P_6(h_0)\sigma_1^3 + h_3 \cdot 1\) and strict super-additivity \(Q_3 = E(9) - 3E(3) &gt; 0\) for all \(q &gt; 1\) across all four subtracted torus functionals, opening the 3-body decay cut \(T(2,9) \to 3\,T(2,3)\) on the second Riemann sheet (\(\operatorname{Im} z_{\mathrm{pole}} = -\Gamma_9/2 &lt; 0\)) and algebraically excluding a stable fourth odd-torus generation at winding \(n = 9\) (Fock-space continuum embedding carried as explicit hypothesis <code>CompositeT29DecayExclusionHypothesis</code>).</li>
+</ul>
+<h4 id="table-3-5b-fully-derived-q-alpha-across-measured-exothermic-alpha-emitters-n-1-051-heavy-emitter-sensitivity">Table 3.5b: Fully Derived \(Q_\alpha\) Across Measured Exothermic \(\alpha\)-Emitters (\(N = 1,051\)) &amp; Heavy-Emitter Sensitivity</h4>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Regime / Model</th>
+<th style="text-align:left">Sample / Nuclide</th>
+<th style="text-align:right">Exothermic (\(Q_\alpha^{\mathrm{pred}} &gt; 0\))</th>
+<th style="text-align:right">\(Q_\alpha^{\mathrm{pred}}\) vs \(Q_\alpha^{\mathrm{AME}}\)</th>
+<th style="text-align:right">Relative / <code>dex</code> Error</th>
+<th style="text-align:right">Median Error (<code>ppQ</code>)</th>
+<th style="text-align:left">Tunneling Assessment</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left">High-\(A\) Med (\(57\text{--}150\), Q-CLT + \(K_4\) \(\alpha\))</td>
+<td style="text-align:left"><code>N = 178</code></td>
+<td style="text-align:right"><code>178/178 (100%)</code></td>
+<td style="text-align:right">Med <code>19.79</code> vs <code>1.73 MeV</code></td>
+<td style="text-align:right">Med <code>1043.2%</code> (Mean <code>1265.2%</code>)</td>
+<td style="text-align:right"><code>1.04e+16</code></td>
+<td style="text-align:left">1D chain underbinds parent/daughter slope \(\Delta B/\Delta A\)</td>
+</tr>
+<tr>
+<td style="text-align:left">Very High-\(A\) (\(\ge 151\), Q-CLT + \(K_4\) \(\alpha\))</td>
+<td style="text-align:left"><code>N = 873</code></td>
+<td style="text-align:right"><code>873/873 (100%)</code></td>
+<td style="text-align:right">Med <code>19.79</code> vs <code>5.41 MeV</code></td>
+<td style="text-align:right">Med <code>265.7%</code> (Mean <code>445.7%</code>)</td>
+<td style="text-align:right"><code>2.66e+15</code></td>
+<td style="text-align:left">Over-exothermic (\(Q_\alpha^{\mathrm{pred}} \approx 21\;\mathrm{MeV}\)) without shell/Coulomb</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>All Measured Exothermic (\(A \ge 6\))</strong></td>
+<td style="text-align:left"><code>N = 1051</code></td>
+<td style="text-align:right"><code>1051/1051 (100%)</code></td>
+<td style="text-align:right">Med <code>19.79</code> vs <code>4.71 MeV</code></td>
+<td style="text-align:right">Med <code>320.3%</code> (Mean <code>584.5%</code>)</td>
+<td style="text-align:right"><code>3.20e+15</code></td>
+<td style="text-align:left">All <code>1,051</code> exothermic, but multi-MeV \(Q_\alpha\) offset dominates</td>
+</tr>
+<tr>
+<td style="text-align:left">FCC \(k=12\) cluster model (<code>H2_FCC_k12_std</code>)</td>
+<td style="text-align:left"><code>210Po</code></td>
+<td style="text-align:right"><code>Yes</code></td>
+<td style="text-align:right"><code>2.18</code> vs <code>5.41 MeV</code></td>
+<td style="text-align:right"><code>-59.7%</code> (<code>+32.80 dex</code> in \(T_{1/2}\))</td>
+<td style="text-align:right"><code>5.97e+14</code></td>
+<td style="text-align:left">Gamow sensitivity <code>-5.37 dex/MeV</code></td>
+</tr>
+<tr>
+<td style="text-align:left">FCC \(k=12\) cluster model (<code>H2_FCC_k12_std</code>)</td>
+<td style="text-align:left"><code>212Po</code></td>
+<td style="text-align:right"><code>Yes</code></td>
+<td style="text-align:right"><code>2.09</code> vs <code>8.95 MeV</code></td>
+<td style="text-align:right"><code>-76.6%</code> (<code>+48.24 dex</code> in \(T_{1/2}\))</td>
+<td style="text-align:right"><code>7.66e+14</code></td>
+<td style="text-align:left">Gamow sensitivity <code>-2.39 dex/MeV</code></td>
+</tr>
+<tr>
+<td style="text-align:left">FCC \(k=12\) cluster model (<code>H2_FCC_k12_std</code>)</td>
+<td style="text-align:left"><code>238U</code></td>
+<td style="text-align:right"><code>Yes</code></td>
+<td style="text-align:right"><code>3.97</code> vs <code>4.27 MeV</code></td>
+<td style="text-align:right"><code>-7.1%</code> (<code>+3.15 dex</code> in \(T_{1/2}\))</td>
+<td style="text-align:right"><code>7.13e+13</code></td>
+<td style="text-align:left">Gamow sensitivity <code>-8.52 dex/MeV</code></td>
+</tr>
+</tbody></table></div>
+<p><em>Assessment (\(\alpha\)-Decay):</em> The barrier-penetration kinematics are quantitatively sound: parameter-free Gamow WKB tunneling with FCC touching radii reproduces half-lives across <strong>24 orders of magnitude</strong> (\(10^{-17}\;\mathrm{s}\) to \(10^{17}\;\mathrm{s}\)) within <code>0.14–0.89 dex</code> on open-shell emitters, and the \(N=126\) magic-shell suppression in \({}^{210}\mathrm{Po}\) (<code>-1.26 dex</code> bare) is closed to <strong><code>+0.044 dex</code> (<code>10.6%</code> in \(T_{1/2}\))</strong> by the parameter-free Mayer–Jensen combinatorial preformation factor \(S_\alpha^{\mathrm{MJ}} = \tfrac{1}{10}\times\tfrac{2}{10} = \tfrac{1}{20}\). Conversely, when \(Q_\alpha\) is computed purely from unclosed heavy-nuclide Q-CLT masses (<code>Table 3.5b</code>), multi-MeV parent/daughter binding errors are exponentially amplified by the Gamow sensitivity \(|\partial \log_{10} T_{1/2}/\partial Q_\alpha| \approx 2.4\text{--}10\;\mathrm{dex/MeV}\), yielding <code>3.15–48.2 dex</code> half-life offsets until \(A \ge 5\) binding saturation is derived.</p>
+<hr>
+<h2 id="4-symbolic-q-clt-proxy-justification-formal-scope-boundary">4. Symbolic Q-CLT Proxy Justification &amp; Formal Scope Boundary</h2>
+<p>Why does the comprehensive nuclear table achieve <code>~0.57%</code> rest-mass accuracy across <code>2,542</code> measured nuclides while missing <code>~68.6%</code> of total nuclear binding energy and failing isobaric \(Q_\beta\) / \(Q_\alpha\) differences? Both the justification of the symbolic proxy and the exact mathematical reason for its \(A \ge 5\) saturation deficit are <strong>machine-checked theorems in Lean 4</strong>:</p>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Lean 4 Module</th>
+<th style="text-align:left">Key Machine-Checked Declarations</th>
+<th style="text-align:left">Mathematical Statement &amp; Physical Consequence</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left"><code>QOU.CategoricalMassMarkov</code></td>
+<td style="text-align:left"><code>CategoricalMassMarkov.ofHecke</code>, <code>ofHecke_Φ_apply</code>, <code>ofHecke_φ_zero</code>, <code>ofHecke_φ_succ</code></td>
+<td style="text-align:left">Constructs the exact categorical mass endomorphism and proves compatibility of the canonical Markov trace \(z = q^3/(q^2+1)\) across inductive Hecke tower inclusions \(H_n(q) \hookrightarrow H_{n+1}(q)\). Justifies evaluating composite braid traces algebraically without free parameters.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>QOU.Observations.QCltNonCommutative</code></td>
+<td style="text-align:left"><code>class QCltNonCommutative</code></td>
+<td style="text-align:left">Formalizes the non-commutative \(q\)-Central Limit Theorem interface governing factorized symbolic trace asymptotics (`Exact symbolic (-alpha * ln</td>
+<td style="text-align:left">tau_M</td>
+<td style="text-align:left">)<code>), enabling exact $O(A)$ evaluation across all </code>14,972` chart-of-nuclides entries with zero fitting.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>QOU.MassTheory.AmeBindingNotPairwise</code></td>
+<td style="text-align:left"><code>ame_b3_ne_zero</code>, <code>ame_not_isPairwise</code></td>
+<td style="text-align:left">Proves from \(B({}^2\mathrm{H}), B({}^3\mathrm{H}), B({}^4\mathrm{He})\) that the irreducible 3-body cumulant is strictly nonzero (\(b_3 \neq 0\)): <strong>no pairwise two-body graph Hamiltonian can reproduce light-nuclear binding.</strong> Explains why higher-order \(K_A\) plaquette cumulants (<code>Table 3.2a</code>) are mathematically mandatory.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>QOU.MassTheory.ChainBindingNoSaturationPeak</code></td>
+<td style="text-align:left"><code>chainPerNucleon_eq_hyperbola</code>, <code>chain_no_saturation_peak</code></td>
+<td style="text-align:left">Proves that any 1D nearest-neighbor chain satisfies \(B_{\mathrm{chain}}(A)/A = b_2(1 - 1/A)\), which is strictly increasing and bounded above by \(b_2 \approx 2.071\;\mathrm{MeV}\) with <strong>no local maximum at \(A \approx 56\)</strong>. Certifies that <code>mass-table-comprehensive</code> (<code>principled-derivation (Q-CLT proxy)</code>) is a rigorous 1D baseline, not a complete 3D nuclear shell/cluster theory.</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="5-open-mathematical-derivations-deterministic-witness-provenance">5. Open Mathematical Derivations &amp; Deterministic Witness Provenance</h2>
+<h3 id="5-1-ranked-frontier-of-open-derivations">5.1 Ranked Frontier of Open Derivations</h3>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:right">Priority</th>
+<th style="text-align:left">Open Problem</th>
+<th style="text-align:left">Current Quantitative Gap</th>
+<th style="text-align:left">Downstream Impact When Closed</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:right"><strong>1</strong></td>
+<td style="text-align:left"><strong>Muon–Proton \(q_0\) Residual (\(\Delta_{\mu p}\))</strong></td>
+<td style="text-align:left">\(m_\mu\) residual <code>+211.21 ppb</code> (\(9.70\sigma_{\mathrm{exp}}\)), equivalent to \(\Delta q_0 / q_0 = +11.61\;\mathrm{ppb}\) between muon and proton pins</td>
+<td style="text-align:left">Unifies lepton and baryon \(q_0\) anchors below CODATA \(1\sigma\) (<code>21.8 ppb</code>) and sharpens \(m_\tau/m_e\) resolvent inputs.</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>2</strong></td>
+<td style="text-align:left"><strong>Discharge Conditional Bring / Bloch-\(B_3\) Coupling Classes &amp; \(\alpha_{\mathrm{EM}}^{-1}\) Arm Selection</strong></td>
+<td style="text-align:left">4-topology <code>(1 - h_A^2 α)</code> Form B is at <code>-0.365 ppb</code> (<code>-2.38</code>\(\sigma_{\mathrm{exp}}\)), conditional 2-loop Bloch-\(B_3\) Form C is at <code>-0.024 ppb</code> (<code>-0.16</code>\(\sigma_{\mathrm{exp}}\)), and \(8\times 8\) Seifert CS is at <code>-24.53 ppb</code></td>
+<td style="text-align:left">Unconditionally closes the Bring zero-mode / Bloch-\(B_3\) physical coupling classes and selects a unique parameter-free electromagnetic coupling across QED, Rydberg, and hadron sectors.</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>3</strong></td>
+<td style="text-align:left"><strong>Unconditional Free-Neutron \(Q_{\beta^-}\) &amp; \(\Delta m_{np}\) Sign</strong></td>
+<td style="text-align:left">Conditional \(T^3\) weight-trace split gives <code>0.3254 MeV</code> vs <code>0.7823 MeV</code> (<code>-58.40%</code>); \(m_n - m_p\) underpredicts by <code>-0.4569 MeV</code></td>
+<td style="text-align:left">Discharges conjectures <code>C1–C3</code>, fixes \(m_n\) to sub-ppm accuracy, and anchors the \(A=1\) weak-decay threshold.</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>4</strong></td>
+<td style="text-align:left"><strong>\(A \ge 5\) 3D Cluster, Pauli &amp; Coulomb Saturation</strong></td>
+<td style="text-align:left">1D Q-CLT proxy underbinds \(A \ge 5\) by <code>~68.6%</code> (<code>2.07</code> vs <code>~8.5 MeV/A</code>), inverting composite \(Q_{\beta^-}\) and shifting \(Q_\alpha\) by <code>3–45 MeV</code></td>
+<td style="text-align:left">Simultaneously closes medium/heavy nuclear binding \(B(Z,N)\), composite \(\beta\)-stability valleys, and derived heavy-emitter \(\alpha\) half-lives.</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>5</strong></td>
+<td style="text-align:left"><strong>Discharge Conditional Bring–Schwinger Fixed-Point Class for \(N_v\) &amp; \(\beta\)-Rate Matrix Elements</strong></td>
+<td style="text-align:left">Conditional Bring–Schwinger fixed point gives \(N_v = 262.418169\), \(v_{\mathrm{weak}} = 246.219644\;\mathrm{GeV}\) (<code>-29.37 ppb</code>, <code>-0.11</code>\(\sigma_{\mathrm{exp}}\) vs PDG \(G_F\)); nuclear Fermi / Gamow–Teller matrix elements remain open</td>
+<td style="text-align:left">Discharges the conditional electroweak fixed-point class and enables unconditional first-principles prediction of weak decay rates (\(\Gamma_\beta, \tau_n, \tau_\mu\)) from \((m_e, q_0)\) alone.</td>
+</tr>
+</tbody></table></div>
+<h3 id="5-2-redisplay-regeneration-qa-gate-commands">5.2 Redisplay, Regeneration &amp; QA Gate Commands</h3>
+<pre><code class="language-bash"># Redisplay the rendered scorecard to stdout (no file writes):
+python3 scripts/generate-accuracy-scorecard.py --print
+
+# Regenerate ACCURACY.md after upstream witness updates:
+python3 scripts/generate-accuracy-scorecard.py --write
+
+# Run the strict QA gate (witness health + drift check + hygiene + README link):
+python3 scripts/generate-accuracy-scorecard.py --check --qa-report
+
+# Run via the unified compute-QA harness:
+python3 scripts/compute-qa.py --gate accuracy-scorecard</code></pre>
+<h3 id="5-3-deterministic-upstream-witness-provenance">5.3 Deterministic Upstream Witness Provenance</h3>
+<p><code>ACCURACY.md</code> intentionally omits transient git <code>HEAD</code> commit hashes and wall-clock timestamps so that the document changes <strong>if and only if</strong> an upstream witness or reference dataset moves:</p>
+<div class="table-wrap"><table><thead><tr>
+<th style="text-align:left">Upstream Witness / Dataset</th>
+<th style="text-align:right">SHA-256 (<code>[:12]</code>)</th>
+<th style="text-align:left">Gate Status</th>
+<th style="text-align:left">Scorecard Sections Fed</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/master-atlas-80dps.witness.json"><code>computations/master-atlas-80dps.witness.json</code></a></td>
+<td style="text-align:right"><code>6046a80c1f13</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§1, §2, §3.1, §3.3, §3.4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/per-observable-100x-status.witness.json"><code>computations/per-observable-100x-status.witness.json</code></a></td>
+<td style="text-align:right"><code>68ea5bed9677</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.1a, §3.4a</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/alpha-em-schwinger-ladder.witness.json"><code>computations/alpha-em-schwinger-ladder.witness.json</code></a></td>
+<td style="text-align:right"><code>ea2dde2dea79</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§1, §2, §3.3a, §5.1</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json"><code>computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json</code></a></td>
+<td style="text-align:right"><code>a0c07ac36abe</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§1, §2, §3.3a, §5.1</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/alpha/alpha-em-seifert-kappa-pairing.witness.json"><code>computations/alpha/alpha-em-seifert-kappa-pairing.witness.json</code></a></td>
+<td style="text-align:right"><code>5ddbb194b6c7</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§3.3a, §5.1</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/atom-electron-mass.witness.json"><code>computations/atom-electron-mass.witness.json</code></a></td>
+<td style="text-align:right"><code>f58f4af4309f</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§3.3a</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/probes/electroweak-bring-schwinger-bridge.witness.json"><code>computations/probes/electroweak-bring-schwinger-bridge.witness.json</code></a></td>
+<td style="text-align:right"><code>912abf598c79</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.4a, §5.1</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/mass-table-comprehensive.witness.json"><code>computations/mass-table-comprehensive.witness.json</code></a></td>
+<td style="text-align:right"><code>28a5344181a1</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.1b–c, §3.2b, §3.4b, §3.5b, §4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/data/ame2020.json"><code>computations/data/ame2020.json</code></a></td>
+<td style="text-align:right"><code>a74f4204c189</code></td>
+<td style="text-align:left">Reference dataset (<code>3558</code> entries)</td>
+<td style="text-align:left">§2, §3.1b–c, §3.2a–b, §3.4b, §3.5b</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json"><code>computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json</code></a></td>
+<td style="text-align:right"><code>63f0971cb24d</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.2a, §3.5b</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/probes/gap2b_mtau_s3_circulant_koide_test/gap2b-mtau-s3-circulant-koide-probe.witness.json"><code>computations/probes/gap2b_mtau_s3_circulant_koide_test/gap2b-mtau-s3-circulant-koide-probe.witness.json</code></a></td>
+<td style="text-align:right"><code>c0d6c0a4784e</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.1a</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json"><code>computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json</code></a></td>
+<td style="text-align:right"><code>61d781bdf3d8</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.5a</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/u1-hypercharge-assignment.witness.json"><code>computations/u1-hypercharge-assignment.witness.json</code></a></td>
+<td style="text-align:right"><code>f00e0c3d4ed5</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.3a</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/charge-coulomb-tn3he-derived.witness.json"><code>computations/charge-coulomb-tn3he-derived.witness.json</code></a></td>
+<td style="text-align:right"><code>0b254a046dd6</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.3a</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/mirror-nuclei-coulomb-systematics.witness.json"><code>computations/mirror-nuclei-coulomb-systematics.witness.json</code></a></td>
+<td style="text-align:right"><code>1b11035996c1</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.3a</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/beta-decay-from-q.witness.json"><code>computations/beta-decay-from-q.witness.json</code></a></td>
+<td style="text-align:right"><code>6845cc311b6b</code></td>
+<td style="text-align:left">Audit witness (<code>verified</code>)</td>
+<td style="text-align:left">§2, §3.4a, §5.1</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json"><code>computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json</code></a></td>
+<td style="text-align:right"><code>7b152b846217</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.5a–b</td>
+</tr>
+</tbody></table></div>
+</main>
+</body>
+</html>
