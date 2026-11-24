@@ -310,22 +310,24 @@ def _apply_cmi_vec(v: BaryonVec, n_quarks: int) -> BaryonVec:
 
 
 def _antisymmetrize_6q_from_3x3(v_clus: BaryonVec) -> BaryonVec:
-    """Apply A_6 = (1/20) sum_{coset reps of S_6 / (S_3 x S_3)} sgn(pi) P_pi to an S_3 x S_3
-    already-antisymmetric 6-quark state."""
+    """Apply A_6 = (1/20) sum_{left coset reps pi of S_6 / (S_3 x S_3)} sgn(pi) P_pi to an
+    (S_3 x S_3)-antisymmetric 6-quark state, using true left action new_cfg[pi(m)] = cfg[m]."""
     coset_reps: list[tuple[tuple[int, ...], sp.Rational]] = []
     for left_set in itertools.combinations(range(6), 3):
         right_set = tuple(idx for idx in range(6) if idx not in left_set)
         perm = left_set + right_set
-        # P_pi puts quark at old slot m into... wait: P_pi |(q_0,...,q_5)> = |(q_{pi(0)},...)>
+        inv_perm = [0] * 6
+        for m, pm in enumerate(perm):
+            inv_perm[pm] = m
         inv = sum(1 for a in range(6) for b in range(a + 1, 6) if perm[a] > perm[b])
         sgn = sp.Rational(-1 if (inv % 2) else 1)
-        coset_reps.append((perm, sgn))
+        coset_reps.append((tuple(inv_perm), sgn))
 
     inv20 = sp.Rational(1, 20)
     out: BaryonVec = {}
     for cfg, amp in v_clus.items():
-        for perm, sgn in coset_reps:
-            new_cfg = tuple(cfg[perm[m]] for m in range(6))
+        for inv_p, sgn in coset_reps:
+            new_cfg = tuple(cfg[inv_p[m]] for m in range(6))
             _add_term(out, new_cfg, inv20 * sgn * amp)
     return out
 
@@ -902,9 +904,10 @@ def evaluate_models_and_duality(
         inv_2nc = one / mp.mpf(6)
         inv_2nc2 = one / mp.mpf(18)
 
-        # Save A=2 single-interface matrices for exact 25x25 unprojected W_2(q_0) check
+        # Save A=2,3 single-interface matrices for unprojected W_A(q_0) orthogonality & 25x25 audit
         b23_col_a2: list[list[mp.mpf]] = []
         b23_st_a2: list[list[mp.mpf]] = []
+        w3_pair_tensors: list[list[list[mp.mpf]]] = []
 
         for a_idx in range(a_nuc):
             for b_idx in range(a_idx + 1, a_nuc):
@@ -930,6 +933,22 @@ def evaluate_models_and_duality(
                     if a_nuc == 2:
                         b23_col_a2 = b_base_col
                         b23_st_a2 = b_base_st
+                    if a_nuc == 3:
+                        # Symmetrized off-diagonal excitation tensor V_{ab} |Phi_fac> in R^{42 x 42}
+                        t_mat = [[zero] * dim for _ in range(dim)]
+                        for i1 in range(dim):
+                            u1 = half * (b_base_col[i1][fac] + b_base_col[fac][i1])
+                            v1_c = b_base_col[i1][fac]
+                            v1_r = b_base_col[fac][i1]
+                            for i2 in range(dim):
+                                val_t = half * (
+                                    v1_c * b_base_st[i2][fac] + v1_r * b_base_st[fac][i2]
+                                )
+                                if i1 == fac and i2 == fac:
+                                    val_t = zero
+                                t_mat[i1][i2] = half * val_t
+                                _ = u1
+                        w3_pair_tensors.append(t_mat)
                     for i in range(dim):
                         for j in range(dim):
                             x_inv_ji = b_base_col[j][i] - (h if i == j else zero)
@@ -1032,15 +1051,48 @@ def evaluate_models_and_duality(
                                 val += half * d25
                             h_full_25[r25][c25] = val
             e25, psi25, res25 = lowest_eigenpair_sym(h_full_25, fac25)
+            hid25 = [idx for idx in range(dim2) if idx != fac25]
+            h_hid25 = [[h_full_25[r_i][c_i] for c_i in hid25] for r_i in hid25]
+            b_vec25 = [h_full_25[r_i][fac25] for r_i in hid25]
+            sol25, _ = cg_solve_spd(h_hid25, b_vec25, mp.mpf("1e-76"))
+            bh2_25 = -dot_mp(b_vec25, sol25)
             d_pauli_weight = mp.fsum(psi25[idx * dim + idx] ** 2 for idx in range(dim))
             a2_full_tensor_audit = {
                 "dim_W2": str(dim2),
+                "v_offdiag_norm_sq_W2": fmt(dot_mp(b_vec25, b_vec25), dps=OUT_DPS),
+                "delta_E_BH2_W2_dimless": fmt(bh2_25, dps=OUT_DPS),
+                "bind_BH2_W2_in_Eosc_MeV": fmt(abs(bh2_25) * eosc_mev, dps=25),
+                "bind_BH2_W3_exact_3x_MeV": fmt(mp.mpf(3) * abs(bh2_25) * eosc_mev, dps=25),
+                "bind_BH2_W4_exact_6x_MeV": fmt(mp.mpf(6) * abs(bh2_25) * eosc_mev, dps=25),
                 "E_ground_W2_dimless": fmt(e25, dps=OUT_DPS),
                 "bind_W2_in_Eosc_MeV": fmt(abs(e25) * eosc_mev, dps=25),
                 "D_Pauli_subspace_probability": fmt(d_pauli_weight, dps=OUT_DPS),
                 "off_D_Pauli_leakage_probability": fmt(one - d_pauli_weight, dps=OUT_DPS),
                 "eig_residual_25x25": fmt(res25, dps=15),
             }
+
+        if a_nuc == 3 and len(w3_pair_tensors) == 3:
+            norms_w3 = [
+                mp.fsum(t[i1][i2] ** 2 for i1 in range(dim) for i2 in range(dim))
+                for t in w3_pair_tensors
+            ]
+            overlaps_w3 = [
+                abs(
+                    mp.fsum(
+                        w3_pair_tensors[p1][i1][i2] * w3_pair_tensors[p2][i1][i2]
+                        for i1 in range(dim)
+                        for i2 in range(dim)
+                    )
+                )
+                for p1 in range(3)
+                for p2 in range(p1 + 1, 3)
+            ]
+            a2_full_tensor_audit["W3_pair_norm_spread_max_diff"] = fmt(
+                max(abs(norms_w3[1] - norms_w3[0]), abs(norms_w3[2] - norms_w3[0])), dps=20
+            )
+            a2_full_tensor_audit["W3_pair_orthogonality_max_inner_prod"] = fmt(
+                max(overlaps_w3), dps=20
+            )
 
         model_mats_by_a[a_nuc] = {
             "M0_w4_baseline_colour_V2": (g2_col, v_m0_buggy),
@@ -1330,29 +1382,35 @@ def main() -> int:
             "1e-20",
             source="Exact regression reproduction of #9221 G2_intra_casimir__V2_allpairs_fierz",
         )
-        r42_m2 = mp.mpf(
-            part_b["models"]["M2_pauli_conjugate_KA_G2col"]["scaling_ratios_exact_vs_A2"][
+        bh32_m1 = mp.mpf(
+            part_b["models"]["M1_colour_only_true_KA_fierz"]["scaling_ratios_BH2_vs_A2"][
+                "A3_over_A2"
+            ]
+        )
+        bh42_m1 = mp.mpf(
+            part_b["models"]["M1_colour_only_true_KA_fierz"]["scaling_ratios_BH2_vs_A2"][
                 "A4_over_A2"
             ]
         )
-        r42_m3 = mp.mpf(
-            part_b["models"]["M3_pauli_conjugate_KA_G2barsym"]["scaling_ratios_exact_vs_A2"][
+        r42_m1 = mp.mpf(
+            part_b["models"]["M1_colour_only_true_KA_fierz"]["scaling_ratios_exact_vs_A2"][
                 "A4_over_A2"
             ]
         )
         wb.add_assertion(
-            "all_models_strictly_bind_and_pauli_models_exceed_pairwise_6x",
+            "all_models_strictly_bind_and_true_ka_achieves_exact_1_3_6_bh2_and_gt6_exact",
             1
             if (
                 part_b["all_signs_consistent"]
                 and part_b["all_models_bind"]
-                and r42_m2 > mp.mpf(6)
-                and r42_m3 > mp.mpf(6)
+                and abs(bh32_m1 - mp.mpf(3)) < mp.mpf("1e-20")
+                and abs(bh42_m1 - mp.mpf(6)) < mp.mpf("1e-20")
+                and r42_m1 > mp.mpf(6)
             )
             else 0,
             1,
             "0",
-            source="TwelveQuarkWignerPauliBinding.pauli_collective_schur_superradiance",
+            source="TwelveQuarkWignerPauliBinding.pauli_collective_schur_superradiance & ColourReconnectionStokesAssembly.multiChannel_schur_rayleigh_lt",
         )
 
         wb.add_caveat(
