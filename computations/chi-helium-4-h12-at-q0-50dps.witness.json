@@ -12,8 +12,9 @@
   "Z": 2,
   "N": 2,
   "n_partitions": 77,
-  "compute_time_sec": "507.66",
+  "compute_time_sec": "0.00",
   "tr_M_at_q0": "0.011237417659767421564199549374410607269662696081262",
+  "weight_family": "markov_y_lambda_convention_D",
   "by_partition": [
     {
       "partition": [
@@ -1108,13 +1109,14 @@
       "compute_time_sec": "0.00"
     }
   ],
-  "scriptHash": "815a026e9591",
-  "scriptCommitSha": "d151898dd6581235f2db8412f58c7bf968373810",
-  "commitSha": "a5f85e3117bd5195ecce50a86d70ca92e03f987f",
+  "scriptFile": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "scriptHash": "d7540cfcaa57",
+  "scriptCommitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
+  "commitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
   "engine": "python+mpmath",
-  "computedAt": "2026-09-06T03:24:25.092009+00:00",
+  "computedAt": "2026-11-24T15:45:53.601110+00:00",
   "durationMs": 0,
-  "engineVersion": "python 3.11 + mpmath 1.4.1",
+  "engineVersion": "python 3.13 + mpmath 1.4.1",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

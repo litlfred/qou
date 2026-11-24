@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-13T11:51:19.730501+00:00",
-  "commitSha": "b1b7e4b259ecfe514ded4b0c52c5b415f7196cdb",
+  "computedAt": "2026-11-24T15:47:19.436915+00:00",
+  "commitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-tr-m-mpfr-50dps-proton",
   "scriptFile": "atomic_tr_m_mpfr_50dps.py",
-  "scriptHash": "0df5835c3ad0",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptHash": "7804975edc0d",
+  "scriptCommitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -48,6 +48,7 @@
   "precision_caveat": "None affecting these values: y_λ is recomputed live at q_str (50 dps), not read from y-lambda-mpfr-witness.json. Bridge results agree with the prop-table canonical values to ~1e-15.",
   "precision_caveat_superseded": "2026-08-14 regeneration; see qou-fq0f",
   "intra_ordering_frame": "borromean",
+  "pn_convention": "bring_color_weighted",
   "results": [
     {
       "atom": "proton",
@@ -60,15 +61,15 @@
       "n_crossings_canonical": null,
       "tr_M_at_q0_50dps": "0.629328402202921918165345746778485927600219400634359762811677",
       "term1_b_pred_mev_50dps": "0.321586153165107384634493726524860756870643423537938559156724",
-      "bridge_elapsed_sec": "0.0114",
+      "bridge_elapsed_sec": "0.0027",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000022",
-      "python_hoefsmit_elapsed_sec": "0.0114",
+      "rust_canonical_chi_elapsed_sec": "0.000031",
+      "python_hoefsmit_elapsed_sec": "0.0027",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "0.0253",
+        "elapsed_sec": "0.0117",
         "tr_M_at_q0_50dps": "0.629328402202921918165345746778485927600219400634370000000000",
         "abs_diff_vs_bridge": "1.02371883227503704128644329164112556577855375311207562610910e-50"
       },
@@ -85,15 +86,15 @@
       "n_crossings_canonical": null,
       "tr_M_at_q0_50dps": "0.475133517155682212506090232675005799558407634708751231268857",
       "term1_b_pred_mev_50dps": "0.242792728704202723961709704131385915364010766703456702938632",
-      "bridge_elapsed_sec": "0.0072",
+      "bridge_elapsed_sec": "0.0037",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000035",
-      "python_hoefsmit_elapsed_sec": "0.0072",
+      "rust_canonical_chi_elapsed_sec": "0.000023",
+      "python_hoefsmit_elapsed_sec": "0.0037",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "0.0098",
+        "elapsed_sec": "0.0080",
         "tr_M_at_q0_50dps": "0.475133517155682212506090232675005799558407634708720000000000",
         "abs_diff_vs_bridge": "3.12312688574894958093596046014538048120031960154654856933347e-50"
       },
@@ -110,15 +111,15 @@
       "n_crossings_canonical": null,
       "tr_M_at_q0_50dps": "0.151968339204231607592665697751066141271240964655261151310301",
       "term1_b_pred_mev_50dps": "0.0776556618714643410875840084907514910183914356129818259074850",
-      "bridge_elapsed_sec": "0.0041",
+      "bridge_elapsed_sec": "0.0140",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000032",
-      "python_hoefsmit_elapsed_sec": "0.0041",
+      "rust_canonical_chi_elapsed_sec": "0.000022",
+      "python_hoefsmit_elapsed_sec": "0.0140",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "0.7084",
+        "elapsed_sec": "0.6659",
         "tr_M_at_q0_50dps": "0.151968339204231607592665697751066141271240964655260000000000",
         "abs_diff_vs_bridge": "1.15131030079840486004321710082635326902003457787551290121462e-51"
       },
@@ -139,19 +140,19 @@
       "rho_factor": 1,
       "word_length_3A": 35,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.0291440423609720653572542187918698440658388035647413094897483",
-      "term1_b_pred_mev_50dps": "0.0148925750653216356059590057822211698206975518962678406305579",
-      "bridge_elapsed_sec": "0.2643",
+      "tr_M_at_q0_50dps": "0.0291440423609720653572542187918698440658388035647412259658511",
+      "term1_b_pred_mev_50dps": "0.0148925750653216356059590057822211698206975518962677979499341",
+      "bridge_elapsed_sec": "0.9706",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000055",
-      "python_hoefsmit_elapsed_sec": "0.2643",
+      "rust_canonical_chi_elapsed_sec": "0.000025",
+      "python_hoefsmit_elapsed_sec": "0.9706",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "11.5212",
+        "elapsed_sec": "11.7411",
         "tr_M_at_q0_50dps": "0.0291440423609720653572542187918698440658388035647380000000000",
-        "abs_diff_vs_bridge": "3.30948974830119053923095055911481734929604465082535121089205e-51"
+        "abs_diff_vs_bridge": "3.22596585111080942528905879451633354058306974832206843908074e-51"
       },
       "historical_K_comparison": null
     },
@@ -164,19 +165,19 @@
       "rho_factor": 1,
       "word_length_3A": 35,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.0585962536544363802189567154521302568308771072841873080383315",
-      "term1_b_pred_mev_50dps": "0.0299426241317820681552487540425674701657784066145622700370032",
-      "bridge_elapsed_sec": "0.2165",
+      "tr_M_at_q0_50dps": "0.0585962536544363802189567154521302568308771072841874750861259",
+      "term1_b_pred_mev_50dps": "0.0299426241317820681552487540425674701657784066145623553982509",
+      "bridge_elapsed_sec": "0.8809",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000065",
-      "python_hoefsmit_elapsed_sec": "0.2165",
+      "rust_canonical_chi_elapsed_sec": "0.000052",
+      "python_hoefsmit_elapsed_sec": "0.8809",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "4.8973",
+        "elapsed_sec": "4.8997",
         "tr_M_at_q0_50dps": "0.0585962536544363802189567154521302568308771072841830000000000",
-        "abs_diff_vs_bridge": "4.30803833153428720470994671318078504266872776022189474720842e-51"
+        "abs_diff_vs_bridge": "4.47508612591504943259373024237775266009467756522846029083104e-51"
       },
       "historical_K_comparison": null
     }
