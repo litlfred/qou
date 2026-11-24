@@ -134,7 +134,7 @@ R_NUM = (_q**22 + _q**20 + 2*_q**18 + 2*_q**16 + 3*_q**14 + 2*_q**12
 R_DEN = 4*_q**6*(_q**6 + 3*_q**4 + 3*_q**2 + 1)
 
 T_P = mp.mpf("1.1457596924573008697")
-T_N = mp.mpf("0.98774368811580957163")
+T_N = mp.mpf(json.loads((Path(__file__).resolve().parents[1] / "cross-check-trM-wenzl-lr-1ppb.witness.json").read_text())["rows"][7]["value_a"])
 # measured on pure-proton chains, n = 3, 6, 9
 # A = 1 and A = 2 are what r(q) was DERIVED from; A = 3 and A = 4 are
 # out-of-sample predictions. A = 4 cost 1958.9 s (33 min) by the matrix route.

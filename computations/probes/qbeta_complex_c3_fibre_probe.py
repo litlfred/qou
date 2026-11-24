@@ -92,7 +92,8 @@ def main() -> int:
     )
 
     EMPIRICAL_C3_PROTON = mp.mpf("-2.0693")
-    EMPIRICAL_C3_MUON = mp.mpf("-2.01986031187401")
+    from qbeta.qbeta_utils import c3_muon_extracted
+    EMPIRICAL_C3_MUON = c3_muon_extracted()
 
     q_proton = q_at()
     q_muon = q_muon_at()

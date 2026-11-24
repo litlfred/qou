@@ -118,7 +118,7 @@ Z_MARKOV = Q0**3 / (Q0**2 + 1)                     # convention D
 # witnesses should be read in the grouped frame instead, is a call for whoever
 # owns that derivation. Flagged rather than changed.
 T_P = mp.mpf("1.1457596924573008697")
-T_N = mp.mpf("0.98774368811580957163")
+T_N = mp.mpf(json.loads((Path(__file__).resolve().parents[1] / "cross-check-trM-wenzl-lr-1ppb.witness.json").read_text())["rows"][7]["value_a"])
 R_HOMOG = mp.mpf("0.7019932570132013577923154")    # derived symbolically earlier
 
 PURE_P = {2: "0.804315578262543954", 3: "0.56462411245097933",
