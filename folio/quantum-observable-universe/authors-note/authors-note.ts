@@ -16,6 +16,11 @@ export default chapter({
       blocks: ["authors-note-status"],
     }),
     section({
+      title: "Accuracy dashboard",
+      label: "sec:authors-note-accuracy-dashboard",
+      blocks: ["accuracy-dashboard"],
+    }),
+    section({
       title: "Verification and source",
       label: "sec:authors-note-verification",
       blocks: ["authors-note-verification"],
