@@ -20,6 +20,7 @@ Precision & anti-fit discipline:
 from __future__ import annotations
 
 import itertools
+import operator
 import sys
 from pathlib import Path
 from typing import Callable
@@ -41,6 +42,9 @@ from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 WORK_DPS = 80
 OUT_DPS = 50
+FX_BITS = 340  # 2^340 ~ 2.24e102 (> 102 decimal digits: 22+ guard digits above WORK_DPS = 80)
+FX_ONE = 1 << FX_BITS
+FX_HALF = 1 << (FX_BITS - 1)
 set_compute_dps(WORK_DPS)
 
 SyTableau = tuple[tuple[int, ...], tuple[int, ...], tuple[int, ...]]
@@ -527,15 +531,32 @@ class SparseHoefsmitGenerators:
             self.gen_rows.append(rows_k)
             self.inv_gen_rows.append(inv_rows_k)
 
+        self.gen_rows_fx: list[list[list[tuple[int, int]]]] = [
+            [[(j, int(mp.nint(mp.ldexp(val, FX_BITS)))) for j, val in row] for row in rows_k]
+            for rows_k in self.gen_rows
+        ]
+        self.inv_gen_rows_fx: list[list[list[tuple[int, int]]]] = [
+            [[(j, int(mp.nint(mp.ldexp(val, FX_BITS)))) for j, val in row] for row in rows_k]
+            for rows_k in self.inv_gen_rows
+        ]
+
     def apply_gen(self, k: int, vec: list[mp.mpf], inverse: bool = False) -> list[mp.mpf]:
         rows = self.inv_gen_rows[k] if inverse else self.gen_rows[k]
         zero = mp.mpf(0)
         out = [zero] * self.dim
-        # R_k and R_k^{-1} are real-symmetric (`rows[j]` == column `j`), so skip zero entries of `vec`!
         for j, vj in enumerate(vec):
             if vj != zero:
                 for i, val in rows[j]:
                     out[i] += val * vj
+        return out
+
+    def apply_gen_fx(self, k: int, vec_fx: list[int], inverse: bool = False) -> list[int]:
+        rows = self.inv_gen_rows_fx[k] if inverse else self.gen_rows_fx[k]
+        out = [0] * self.dim
+        for j, vj in enumerate(vec_fx):
+            if vj:
+                for i, val in rows[j]:
+                    out[i] += (val * vj + FX_HALF) >> FX_BITS
         return out
 
     def apply_word(self, word: BraidWord, vec: list[mp.mpf]) -> list[mp.mpf]:
@@ -545,12 +566,23 @@ class SparseHoefsmitGenerators:
             cur = self.apply_gen(k, cur, inverse=inv)
         return cur
 
+    def apply_word_fx(self, word: BraidWord, vec_fx: list[int]) -> list[int]:
+        cur = list(vec_fx)
+        for k, inv in reversed(word):
+            cur = self.apply_gen_fx(k, cur, inverse=inv)
+        return cur
+
     def apply_sym_word(self, word: BraidWord, vec: list[mp.mpf]) -> list[mp.mpf]:
         """Apply 1/2 * (U(word) + U(word)^T) using exact symmetry R_k^T = R_k."""
         half = mp.mpf(1) / mp.mpf(2)
         u_vec = self.apply_word(word, vec)
         ut_vec = self.apply_word(list(reversed(word)), vec)
         return [half * (u_vec[i] + ut_vec[i]) for i in range(self.dim)]
+
+    def apply_sym_word_fx(self, word: BraidWord, vec_fx: list[int]) -> list[int]:
+        u_vec = self.apply_word_fx(word, vec_fx)
+        ut_vec = self.apply_word_fx(list(reversed(word)), vec_fx)
+        return [(u_vec[i] + ut_vec[i] + 1) >> 1 for i in range(self.dim)]
 
     def build_dense_from_op(self, op_fn: Callable[[list[mp.mpf]], list[mp.mpf]]) -> list[list[mp.mpf]]:
         zero = mp.mpf(0)
@@ -562,8 +594,23 @@ class SparseHoefsmitGenerators:
             cols.append(op_fn(ej))
         return [[cols[j][i] for j in range(self.dim)] for i in range(self.dim)]
 
+    def build_dense_from_fx_op(self, op_fx: Callable[[list[int]], list[int]]) -> list[list[mp.mpf]]:
+        cols_fx: list[list[int]] = []
+        for j in range(self.dim):
+            ej = [0] * self.dim
+            ej[j] = FX_ONE
+            cols_fx.append(op_fx(ej))
+        zero = mp.mpf(0)
+        return [
+            [
+                mp.ldexp(mp.mpf(cols_fx[j][i]), -FX_BITS) if cols_fx[j][i] else zero
+                for j in range(self.dim)
+            ]
+            for i in range(self.dim)
+        ]
+
     def build_dense_from_word(self, word: BraidWord) -> list[list[mp.mpf]]:
-        return self.build_dense_from_op(lambda v: self.apply_word(word, v))
+        return self.build_dense_from_fx_op(lambda v: self.apply_word_fx(word, v))
 
     def verify_relations_and_symmetry_residual(self) -> mp.mpf:
         max_res = mp.mpf(0)
@@ -841,6 +888,7 @@ def lowest_eigenpair_sym(
 
     zero = mp.mpf(0)
     srows = to_srows(mat)
+    mat_fx = [[int(mp.nint(mp.ldexp(val, FX_BITS))) for val in row] for row in mat]
     use_pert = force_perturbed or (perturbed_start and n <= 60)
     if use_pert:
         v0 = [mp.mpf(1) / mp.mpf(1000 * (i + 3)) for i in range(n)]
@@ -851,44 +899,59 @@ def lowest_eigenpair_sym(
         v0 = [zero] * n
         v0[start_idx] = mp.mpf(1)
 
-    basis: list[list[mp.mpf]] = [v0]
+    v0_fx = [int(mp.nint(mp.ldexp(x, FX_BITS))) for x in v0]
+    basis_fx: list[list[int]] = [v0_fx]
     m_steps = min(140, n)
     alphas: list[mp.mpf] = []
     betas: list[mp.mpf] = []
+    betas_fx: list[int] = []
     check_steps = {25, 42, 65, 95, 120, m_steps}
+    starmap_fn = itertools.starmap
+    mul_fn = operator.mul
+
+    def fx_dot(u_fx: list[int], w_fx: list[int]) -> int:
+        return (sum(starmap_fn(mul_fn, zip(u_fx, w_fx))) + FX_HALF) >> FX_BITS
 
     def extract_ritz() -> tuple[mp.mpf, list[mp.mpf], mp.mpf]:
         k_dim = len(alphas)
-        lam_cur, t_vec = tridiag_lowest_eigenpair_sturm(alphas, betas[: k_dim - 1])
-        vec_cur = [zero] * n
+        _, t_vec = tridiag_lowest_eigenpair_sturm(alphas, betas[: k_dim - 1])
+        t_fx = [int(mp.nint(mp.ldexp(c, FX_BITS))) for c in t_vec]
+        vec_fx = [0] * n
         for s_idx in range(k_dim):
-            coeff = t_vec[s_idx]
-            bs = basis[s_idx]
-            for i in range(n):
-                vec_cur[i] += coeff * bs[i]
+            cf = t_fx[s_idx]
+            if cf:
+                bs = basis_fx[s_idx]
+                for i in range(n):
+                    vec_fx[i] += (cf * bs[i] + FX_HALF) >> FX_BITS
+        vec_cur = [mp.ldexp(mp.mpf(x), -FX_BITS) for x in vec_fx]
         vn = mp.sqrt(dot_mp(vec_cur, vec_cur))
         vec_cur = [x / vn for x in vec_cur]
+        # Exact Rayleigh quotient and residual certified in pure 80-dps mp.mpf:
         mv = matvec_srows(srows, vec_cur)
+        lam_cur = dot_mp(vec_cur, mv)
         res_cur = max(abs(mv[i] - lam_cur * vec_cur[i]) for i in range(n))
         return lam_cur, vec_cur, res_cur
 
     for step in range(m_steps):
-        w = matvec_srows(srows, basis[step])
+        cur_fx = basis_fx[step]
+        w_fx = [(sum(starmap_fn(mul_fn, zip(row_fx, cur_fx))) + FX_HALF) >> FX_BITS for row_fx in mat_fx]
         if step > 0:
-            b_prev = betas[step - 1]
-            prev_vec = basis[step - 1]
+            b_prev_fx = betas_fx[step - 1]
+            prev_fx = basis_fx[step - 1]
             for i in range(n):
-                w[i] -= b_prev * prev_vec[i]
-        a_cur = dot_mp(basis[step], w)
-        alphas.append(a_cur)
+                w_fx[i] -= (b_prev_fx * prev_fx[i] + FX_HALF) >> FX_BITS
+        a_fx = fx_dot(cur_fx, w_fx)
+        alphas.append(mp.ldexp(mp.mpf(a_fx), -FX_BITS))
         for i in range(n):
-            w[i] -= a_cur * basis[step][i]
+            w_fx[i] -= (a_fx * cur_fx[i] + FX_HALF) >> FX_BITS
         for _ in range(2):
-            for qv in basis:
-                ov = dot_mp(qv, w)
-                for i in range(n):
-                    w[i] -= ov * qv[i]
-        b_next = mp.sqrt(dot_mp(w, w))
+            for qv_fx in basis_fx:
+                ov_fx = fx_dot(qv_fx, w_fx)
+                if ov_fx:
+                    for i in range(n):
+                        w_fx[i] -= (ov_fx * qv_fx[i] + FX_HALF) >> FX_BITS
+        b_sq_fx = sum(starmap_fn(mul_fn, zip(w_fx, w_fx)))
+        b_next = mp.ldexp(mp.sqrt(mp.mpf(b_sq_fx)), -FX_BITS)
         if b_next < mp.mpf("1e-74"):
             return extract_ritz()
         if step + 1 in check_steps:
@@ -896,8 +959,12 @@ def lowest_eigenpair_sym(
             if res_c < mp.mpf("1e-75") or step + 1 == m_steps:
                 return lam_c, vec_c, res_c
         if step + 1 < m_steps:
+            b_fx = int(mp.nint(mp.ldexp(b_next, FX_BITS)))
+            inv_b = mp.mpf(1) / b_next
+            inv_b_fx = int(mp.nint(mp.ldexp(inv_b, FX_BITS)))
             betas.append(b_next)
-            basis.append([x / b_next for x in w])
+            betas_fx.append(b_fx)
+            basis_fx.append([(x * inv_b_fx + FX_HALF) >> FX_BITS for x in w_fx])
 
     return extract_ritz()
 
@@ -1110,31 +1177,32 @@ def build_gap1b_operators(
 
     # M2: Canonical Tait 3-matching strand assignment phi(a, b) (12 quarks <-> 12 half-edges on K_4)
     v_m2 = [[zero] * dim for _ in range(dim)]
-    tait_fierz_ops: dict[tuple[int, int], Callable[[list[mp.mpf]], list[mp.mpf]]] = {}
+    tait_fierz_fx_ops: dict[tuple[int, int], Callable[[list[int]], list[int]]] = {}
     for a_idx in range(a_nuc):
         for b_idx in range(a_idx + 1, a_nuc):
             s_left, s_right = TAIT_EDGE_STRANDS[(a_idx, b_idx)]
             w_tait = transport_crossing_word(s_left, s_right)
             f_mat = sym_centered_from_word(hoef, w_tait)
             add_scaled_inplace(v_m2, f_mat, one)
-            # Note: f_mat has diagonal = half * (sym_diag - fac_diag); recover 1/2 * fac_diag directly:
-            # Using sparse generator word action (2 nonzeros/row) is 4x faster than 127-nonzero f_mat!
-            u_fac_col = hoef.apply_word(
-                w_tait, [one if i == hoef.fac_idx else zero for i in range(dim)]
+            u_fac_col_fx = hoef.apply_word_fx(
+                w_tait, [FX_ONE if i == hoef.fac_idx else 0 for i in range(dim)]
             )
-            fac_d = u_fac_col[hoef.fac_idx]
+            fac_d_fx = u_fac_col_fx[hoef.fac_idx]
 
-            def make_fierz_op(
-                w_loc: BraidWord = w_tait, fd: mp.mpf = fac_d
-            ) -> Callable[[list[mp.mpf]], list[mp.mpf]]:
-                def _op(v: list[mp.mpf]) -> list[mp.mpf]:
-                    sv = hoef.apply_sym_word(w_loc, v)
-                    return [half * (sv[i] - fd * v[i]) for i in range(dim)]
+            def make_fierz_fx_op(
+                w_loc: BraidWord = w_tait, fd_fx: int = fac_d_fx
+            ) -> Callable[[list[int]], list[int]]:
+                def _op_fx(v_fx: list[int]) -> list[int]:
+                    sv_fx = hoef.apply_sym_word_fx(w_loc, v_fx)
+                    return [
+                        (sv_fx[i] - ((fd_fx * v_fx[i] + FX_HALF) >> FX_BITS) + 1) >> 1
+                        for i in range(dim)
+                    ]
 
-                return _op
+                return _op_fx
 
-            tait_fierz_ops[(a_idx, b_idx)] = make_fierz_op()
-            tait_fierz_ops[(b_idx, a_idx)] = tait_fierz_ops[(a_idx, b_idx)]
+            tait_fierz_fx_ops[(a_idx, b_idx)] = make_fierz_fx_op()
+            tait_fierz_fx_ops[(b_idx, a_idx)] = tait_fierz_fx_ops[(a_idx, b_idx)]
 
     # Triangular 3-interface plaquette holonomies P_triangle across all C(A, 3) faces
     plaq_3_sum = [[zero] * dim for _ in range(dim)]
@@ -1156,11 +1224,10 @@ def build_gap1b_operators(
         p_tri = sym_centered_from_word(hoef, w_tri)
         add_scaled_inplace(plaq_3_sum, p_tri, one)
 
-        fab = tait_fierz_ops[(a_idx, b_idx)]
-        fbc = tait_fierz_ops[(b_idx, c_idx)]
-        fca = tait_fierz_ops[(c_idx, a_idx)]
-        # Since F_ab, F_bc, F_ca are real-symmetric, (F_ab F_bc F_ca)^T = F_ca F_bc F_ab!
-        f3_prod = hoef.build_dense_from_op(lambda v, f1=fab, f2=fbc, f3=fca: f1(f2(f3(v))))
+        fab = tait_fierz_fx_ops[(a_idx, b_idx)]
+        fbc = tait_fierz_fx_ops[(b_idx, c_idx)]
+        fca = tait_fierz_fx_ops[(c_idx, a_idx)]
+        f3_prod = hoef.build_dense_from_fx_op(lambda v, f1=fab, f2=fbc, f3=fca: f1(f2(f3(v))))
         f3_diag = f3_prod[hoef.fac_idx][hoef.fac_idx]
         f3_raw = [[half * (f3_prod[i][j] + f3_prod[j][i]) for j in range(dim)] for i in range(dim)]
         for i in range(dim):
@@ -1203,11 +1270,11 @@ def build_gap1b_operators(
             p_ring4 = sym_centered_from_word(hoef, w_ring4)
             add_scaled_inplace(plaq_4_sum, p_ring4, one)
 
-            f01 = tait_fierz_ops[(v0, v1)]
-            f12 = tait_fierz_ops[(v1, v2)]
-            f23 = tait_fierz_ops[(v2, v3)]
-            f30 = tait_fierz_ops[(v3, v0)]
-            f4_prod = hoef.build_dense_from_op(
+            f01 = tait_fierz_fx_ops[(v0, v1)]
+            f12 = tait_fierz_fx_ops[(v1, v2)]
+            f23 = tait_fierz_fx_ops[(v2, v3)]
+            f30 = tait_fierz_fx_ops[(v3, v0)]
+            f4_prod = hoef.build_dense_from_fx_op(
                 lambda v, g1=f01, g2=f12, g3=f23, g4=f30: g1(g2(g3(g4(v))))
             )
             f4_diag = f4_prod[hoef.fac_idx][hoef.fac_idx]
@@ -1446,40 +1513,54 @@ def build_reduced_pencil(
     if dim <= max_dim:
         return h0_mat, v_mat, fac_idx
 
-    zero = mp.mpf(0)
-    v0 = [zero] * dim
-    v0[fac_idx] = mp.mpf(1)
-    q_basis: list[list[mp.mpf]] = [v0]
+    starmap_fn = itertools.starmap
+    mul_fn = operator.mul
+    h0_fx = [[int(mp.nint(mp.ldexp(val, FX_BITS))) for val in row] for row in h0_mat]
+    v_fx = [[int(mp.nint(mp.ldexp(val, FX_BITS))) for val in row] for row in v_mat]
+
+    def mv_fx(m_fx: list[list[int]], x_fx: list[int]) -> list[int]:
+        return [(sum(starmap_fn(mul_fn, zip(row_fx, x_fx))) + FX_HALF) >> FX_BITS for row_fx in m_fx]
+
+    def dot_fx(u_fx: list[int], w_fx: list[int]) -> int:
+        return (sum(starmap_fn(mul_fn, zip(u_fx, w_fx))) + FX_HALF) >> FX_BITS
+
+    v0_fx = [0] * dim
+    v0_fx[fac_idx] = FX_ONE
+    q_fx_basis: list[list[int]] = [v0_fx]
     q_idx = 0
     cutoff = mp.mpf("1e-74")
 
-    while q_idx < len(q_basis) and len(q_basis) < max_dim:
-        cur = q_basis[q_idx]
+    while q_idx < len(q_fx_basis) and len(q_fx_basis) < max_dim:
+        cur_fx = q_fx_basis[q_idx]
         q_idx += 1
-        for cand_raw in (matvec_dense(v_mat, cur), matvec_dense(h0_mat, cur)):
-            if len(q_basis) >= max_dim:
+        for cand_fx in (mv_fx(v_fx, cur_fx), mv_fx(h0_fx, cur_fx)):
+            if len(q_fx_basis) >= max_dim:
                 break
-            w = list(cand_raw)
+            w_fx = list(cand_fx)
             for _ in range(2):
-                for qv in q_basis:
-                    ov = dot_mp(qv, w)
-                    for i in range(dim):
-                        w[i] -= ov * qv[i]
-            nrm = mp.sqrt(dot_mp(w, w))
+                for qv_fx in q_fx_basis:
+                    ov_fx = dot_fx(qv_fx, w_fx)
+                    if ov_fx:
+                        for i in range(dim):
+                            w_fx[i] -= (ov_fx * qv_fx[i] + FX_HALF) >> FX_BITS
+            nrm = mp.ldexp(mp.sqrt(mp.mpf(sum(starmap_fn(mul_fn, zip(w_fx, w_fx))))), -FX_BITS)
             if nrm > cutoff:
-                q_basis.append([x / nrm for x in w])
+                inv_nrm_fx = int(mp.nint(mp.ldexp(mp.mpf(1) / nrm, FX_BITS)))
+                q_fx_basis.append([(x * inv_nrm_fx + FX_HALF) >> FX_BITS for x in w_fx])
 
-    r_dim = len(q_basis)
-    hq_cols = [matvec_dense(h0_mat, q_basis[j]) for j in range(r_dim)]
-    vq_cols = [matvec_dense(v_mat, q_basis[j]) for j in range(r_dim)]
-    half = mp.mpf(1) / mp.mpf(2)
+    r_dim = len(q_fx_basis)
+    hq_fx_cols = [mv_fx(h0_fx, q_fx_basis[j]) for j in range(r_dim)]
+    vq_fx_cols = [mv_fx(v_fx, q_fx_basis[j]) for j in range(r_dim)]
+    zero = mp.mpf(0)
     h0_red = [[zero] * r_dim for _ in range(r_dim)]
     v_red = [[zero] * r_dim for _ in range(r_dim)]
     for i in range(r_dim):
-        qi = q_basis[i]
+        qi_fx = q_fx_basis[i]
         for j in range(i, r_dim):
-            hij = half * (dot_mp(qi, hq_cols[j]) + dot_mp(q_basis[j], hq_cols[i]))
-            vij = half * (dot_mp(qi, vq_cols[j]) + dot_mp(q_basis[j], vq_cols[i]))
+            hij_fx = (dot_fx(qi_fx, hq_fx_cols[j]) + dot_fx(q_fx_basis[j], hq_fx_cols[i]) + 1) >> 1
+            vij_fx = (dot_fx(qi_fx, vq_fx_cols[j]) + dot_fx(q_fx_basis[j], vq_fx_cols[i]) + 1) >> 1
+            hij = mp.ldexp(mp.mpf(hij_fx), -FX_BITS)
+            vij = mp.ldexp(mp.mpf(vij_fx), -FX_BITS)
             h0_red[i][j] = hij
             h0_red[j][i] = hij
             v_red[i][j] = vij
