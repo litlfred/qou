@@ -1,8 +1,7 @@
 ---
 # qou-ukqh
 title: 'GAP: categorical Higgs mechanism — Goldstone-eating linking, post-breaking Markov traces and the E_x·mu_0 scale are not derived (CategoricalHiggsMechanism has no instance)'
-status: todo
-pr: 8211
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -11,7 +10,7 @@ tags:
     - gap
     - 8f-ew
 created_at: 2026-09-03T09:08:31Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T17:03:04Z
 parent: qou-20sx
 ---
 
@@ -31,3 +30,5 @@ Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are groupe
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8211, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Claimed 2026-11-24 by Worker 53 on branch `claude/electroweak-mw-mz-weinberg-higgs-thresholds-20261124` (first-principles 80-dps , M_Z, \sin^2\theta_W(M_Z), m_H$ evaluation atop QOU-derived {\mathrm{weak}}$ & $\alpha_{\mathrm{EM}}$ + `QOU/StandardModel/ElectroweakBosonThresholdsAndWeinberg.lean`).
