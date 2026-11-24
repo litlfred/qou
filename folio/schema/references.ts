@@ -749,6 +749,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   { id: "habiro2004" },
 
+  { id: "habiro2008" },
+
   { id: "habiro2004cyclotomic" },
 
   // ── Nuclear shell model (Mayer–Jensen) ──────────────────────────
@@ -2165,6 +2167,8 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "garoufalidis-goerner-zickert2012" },
 
   { id: "dusenbury2025" },
+
+  { id: "andersen-kashaev2014" },
 
   { id: "mcmullen2009" },
 

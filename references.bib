@@ -4,7 +4,7 @@
 % Key convention:  <firstauthorlastname><year>  (all lower-case)
 % Source of truth: references/ or schema/references.ts (CSL-JSON)
 % Generator:       pipeline/export-bibtex.ts
-% Generated:       2026-11-24T12:45:09.762Z
+% Generated:       2026-11-24T13:10:31.506Z
 @article{garoufalidis2004,
   author     = {Garoufalidis, Stavros},
   title      = {{On the characteristic and deformation varieties of a knot}},
@@ -1706,16 +1706,15 @@
   annotation = {[Partial] 18 fixes by agent (claude-opus-4-7) 2026-05-19},
 }
 
-@article{faddeev1994,
-  author     = {Faddeev, Ludwig D. and Kashaev, Rinat M.},
+@incollection{faddeev1994,
+  author     = {Faddeev, Ludwig D.},
   title      = {{Current-like variables in massive and massless integrable models}},
-  journal    = {Communications in Mathematical Physics},
-  year       = {1994},
-  volume     = {169},
-  pages      = {1--20},
-  doi        = {10.1007/BF02101594},
+  booktitle  = {Quantum Groups and Their Applications in Physics (Proceedings of the International School of Physics "Enrico Fermi", Course CXXVII, Varenna, 1994)},
+  year       = {1996},
+  pages      = {117--135},
+  publisher  = {IOS Press},
   url        = {https://arxiv.org/abs/hep-th/9408041},
-  note       = {Introduces the quantum dilogarithm},
+  note       = {arXiv:hep-th/9408041 (1994 Varenna Course CXXVII lectures; IOS Press 1996, pp. 117-135), treating the compact q-Pochhammer dilogarithm S(w) = (w; q)_infty in integrable lattice models. Disambiguated 2026-11-24 (bean qou-1buz): the earlier record grafted co-author R. M. Kashaev from faddeev_kashaev1994 and DOI 10.1007/BF02101594 (Commun. Math. Phys. 169, 1-23, 1995, which is Krob-Leclerc on quasideterminants). Four works were conflated across inline Lean `-- Ref: [faddeev1994]` comments: (1) compact pentagon (x;q)_infty: faddeev_kashaev1994 (Mod. Phys. Lett. A 9(5), 427-434, 1994, DOI 10.1142/S0217732394000447; note 10.1142/S0217732394002793 on QOU/Archimedean/DilogPart* is spurious); (2) compact S(w) Varenna lectures: this entry (faddeev1994, hep-th/9408041); (3) modular double and noncompact integral quantum dilogarithm Phi_b: faddeev1995 (Lett. Math. Phys. 34, 249-254, 1995, DOI 10.1007/BF01872779, hep-th/9504111 — the true source for QOU/Archimedean/DilogPart* and QOU/MathlibExt/*Dilogarithm*); (4) Liouville modular-double Phi_b: faddeev-kashaev-volkov2000 (Commun. Math. Phys. 219, 199-219, 2001, hep-th/0006107).},
   annotation = {[Verified] 4 fixes by agent (claude-opus-4-7) 2026-05-19},
 }
 
@@ -1878,8 +1877,21 @@
   pages      = {1--81},
   doi        = {10.1007/s00222-007-0071-0},
   url        = {https://arxiv.org/abs/math/0605314},
-  note       = {PDF library/arxiv-math-0605314v1/ — identified 2026-08-16 by title match; the entry previously claimed library/habiro2004.pdf, which was never committed. Preprint 2004; introduces the Habiro ring cyclotomic expansion.},
+  note       = {PDF library/arxiv-math-0605314v1/ — Invent. Math. 171(1) (2008), 1-81, DOI 10.1007/s00222-007-0071-0, arXiv:math/0605314. Legacy key alias for habiro2008 (retained so existing Lean `-- Ref: [habiro2004]` comments resolve; bean qou-f13w). Does NOT introduce the Habiro ring: the cyclotomic completion Z-hat[q] is introduced in habiro2004cyclotomic (Publ. RIMS 40(4), 1127-1146, 2004, DOI 10.2977/prims/1145475444; note inline DOI 10.2140/gt.2004.8.1127 on CyclotomicValueTruncates.lean is a page-1127 mis-paste of de Carvalho-Hall 2004).},
   annotation = {[unreviewed]},
+}
+
+@article{habiro2008,
+  author  = {Habiro, Kazuo},
+  title   = {{A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres}},
+  journal = {Inventiones Mathematicae},
+  year    = {2008},
+  volume  = {171},
+  number  = {1},
+  pages   = {1--81},
+  doi     = {10.1007/s00222-007-0071-0},
+  url     = {https://arxiv.org/abs/math/0605314},
+  note    = {Invent. Math. 171(1) (2008), 1-81; arXiv:math/0605314. Canonical publication-year key for Habiro's unified WRT invariant in the Habiro ring (bean qou-f13w); legacy key habiro2004 is retained as an alias for existing Lean `-- Ref: [habiro2004]` sites, while the Habiro ring definition itself is habiro2004cyclotomic (Publ. RIMS 40(4), 1127-1146, 2004, DOI 10.2977/prims/1145475444).},
 }
 
 @article{habiro2004cyclotomic,
@@ -5760,7 +5772,7 @@
   pages      = {249--254},
   doi        = {10.1007/BF01872779},
   url        = {https://doi.org/10.1007/BF01872779},
-  note       = {Verified 2026-06-23 (doth): L. D. Faddeev, 'Discrete Heisenberg–Weyl group and modular group', Lett. Math. Phys. 34, 249 (1995), DOI 10.1007/BF01872779 — confirmed via ADS bibcode 1995LMaPh..34..249F + arXiv hep-th/9504111. (The earlier note's 'modular quantum dilogarithm' description was a wrong title-guess; entry data is correct.) Distinct from faddeev1994 / faddeev_kashaev1994. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A.},
+  note       = {Verified 2026-06-23 (doth) and disambiguated 2026-11-24 (bean qou-1buz): L. D. Faddeev, 'Discrete Heisenberg–Weyl group and modular group', Lett. Math. Phys. 34, 249-254 (1995), DOI 10.1007/BF01872779, arXiv hep-th/9504111. Introduces the modular double and the integral noncompact quantum dilogarithm Phi_b (the primary source intended by noncompact archimedean DilogPart* / FaddeevQuantumDilogarithm sites that inline-cited faddeev1994). Distinct from faddeev1994 (Varenna 1994 compact S(w) lectures, hep-th/9408041) and faddeev_kashaev1994 (Mod. Phys. Lett. A 9(5), 427-434, 1994, compact q-Pochhammer pentagon).},
   annotation = {[unreviewed]},
 }
 
@@ -6849,8 +6861,21 @@
   title      = {{On the Garoufalidis-Kashaev state-integral invariant}},
   year       = {2025},
   school     = {Boise State University},
-  note       = {PDF library/on-the-garoufalidis-kashaev-state-integral-invariant/ — advisor Uwe Kaiser. An expository treatment of the Garoufalidis-Kashaev state-integral, which this corpus cites via garoufalidis-kashaev2015; useful as a worked account rather than a source of new results.},
+  note       = {PDF library/on-the-garoufalidis-kashaev-state-integral-invariant/ — advisor Uwe Kaiser. An expository MS-thesis treatment of the Andersen-Kashaev / Garoufalidis-Kashaev state-integral invariant; primary sources are andersen-kashaev2014 (Commun. Math. Phys. 330, 887-934, 2014, DOI 10.1007/s00220-014-2073-2) and garoufalidis-kashaev2015 (bean qou-exr5).},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
+}
+
+@article{andersen-kashaev2014,
+  author  = {Andersen, Jørgen Ellegaard and Kashaev, Rinat M.},
+  title   = {{A TQFT from Quantum Teichm{\"u}ller Theory}},
+  journal = {Communications in Mathematical Physics},
+  year    = {2014},
+  volume  = {330},
+  number  = {3},
+  pages   = {887--934},
+  doi     = {10.1007/s00220-014-2073-2},
+  url     = {https://arxiv.org/abs/1109.6295},
+  note    = {Commun. Math. Phys. 330(3) (2014), 887-934; arXiv:1109.6295. Primary construction of the Andersen-Kashaev state-integral TQFT from Faddeev's noncompact quantum dilogarithm on ideally triangulated 3-manifolds (bean qou-exr5; see dusenbury2025 for an expository MS-thesis account).},
 }
 
 @article{mcmullen2009,
@@ -7402,7 +7427,7 @@
   title      = {{An introduction to the volume conjecture}},
   year       = {2010},
   url        = {https://arxiv.org/abs/1002.0126},
-  note       = {PDF library/arxiv-1002.0126v1/},
+  note       = {PDF library/arxiv-1002.0126v1/ — Hitoshi Murakami, 'An introduction to the volume conjecture' (arXiv:1002.0126 [math.GT], 2010; published in Interactions Between Hyperbolic Geometry, Quantum Topology and Number Theory, Contemp. Math. 541, AMS, 2011, pp. 1-40). Recorded per bean qou-ni2p: an earlier automated intake heuristic mis-joined this survey onto faddeev_kashaev1994 (which already held its true 1993/1994 Mod. Phys. Lett. A upload); `scripts/sync-references-library.py` now warns whenever two non-duplicate library directories claim the same reference id.},
   annotation = {[unreviewed] by agent (claude-opus-5) 2026-09-03},
 }
 

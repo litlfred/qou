@@ -134,7 +134,7 @@ def library_index() -> dict[str, dict]:
     return out
 
 
-def ref_to_doc() -> dict[str, str]:
+def ref_to_doc(index: dict[str, dict] | None = None) -> dict[str, str]:
     """entry id -> doc-id, via the ledger's source.file."""
     led, note = bib_ledger.read_source_ledger(REPO)
     print(note, file=sys.stderr)
@@ -157,7 +157,34 @@ def ref_to_doc() -> dict[str, str]:
             continue
         m = re.match(r"library/([^/]+)/", path)
         if m:
-            out[rid] = m.group(1)
+            doc_id = m.group(1)
+            prev = out.get(rid)
+            if prev and not prev.startswith(MISSING) and prev != doc_id:
+                # Bean qou-ni2p: two distinct non-duplicate uploads pointing at
+                # one key (e.g. 1002.0126v1 mis-joined onto faddeev_kashaev1994)
+                # silently clobbered the earlier upload. Warn when both held
+                # library directories exist and are neither duplicate-linked
+                # nor versions of the same arXiv preprint.
+                idx = index or {}
+                if prev in idx and doc_id in idx:
+                    prev_info = idx[prev]
+                    curr_info = idx[doc_id]
+                    prev_ax = re.sub(r"v\d+$", "", prev_info.get("arxiv") or "")
+                    curr_ax = re.sub(r"v\d+$", "", curr_info.get("arxiv") or "")
+                    same_work = (
+                        doc_id in (prev_info.get("alternates") or [])
+                        or prev in (curr_info.get("alternates") or [])
+                        or prev_info.get("duplicateOf") == doc_id
+                        or curr_info.get("duplicateOf") == prev
+                        or (bool(prev_ax) and prev_ax == curr_ax)
+                    )
+                    if not same_work:
+                        print(
+                            f"WARNING: multiple non-duplicate uploads claim reference {rid!r}: "
+                            f"{prev} vs {doc_id} (check for mis-join, bean qou-ni2p)",
+                            file=sys.stderr,
+                        )
+            out[rid] = doc_id
         elif path.startswith("library/") and not os.path.exists(os.path.join(REPO, path)):
             # The ledger claims `kind: "upload"` for a file that is not in
             # the repo and, per git history, never was. Record the claim as
@@ -321,7 +348,7 @@ def main() -> int:
     order = references_dir.order(REPO)
     order += [rid for rid in sorted(files) if rid not in set(order)]
     mapping = notes_to_doc(files)
-    mapping.update(ref_to_doc())        # ledger is authoritative where both exist
+    mapping.update(ref_to_doc(index))   # ledger is authoritative where both exist
     kept: list[str] = []
     unreachable: list[str] = []
     changed, added, updated = sync(files, order, mapping, index, kept, unreachable)
