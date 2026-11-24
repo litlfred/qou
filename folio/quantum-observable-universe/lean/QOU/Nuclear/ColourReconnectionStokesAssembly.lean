@@ -729,6 +729,14 @@ theorem multiChannel_schur_rayleigh_lt
     div_pos hnum_pos hden_pos
   linarith [heq]
 
+/-- Archimedean `ℝ` specialisation of `multiChannel_schur_rayleigh_lt` (prescribed `§7c` `_real` bridge). -/
+theorem multiChannel_schur_rayleigh_lt_real {M : ℕ}
+    (E₀ : ℝ) (Δ v : Fin M → ℝ) (hΔ : ∀ k, 0 < Δ k) (hv : ∃ k, v k ≠ 0) :
+    schurTrialRayleigh E₀ Δ v =
+      E₀ - (∑ k : Fin M, v k ^ 2 / Δ k) / (1 + ∑ k : Fin M, (v k / Δ k) ^ 2) ∧
+    schurTrialRayleigh E₀ Δ v < E₀ :=
+  multiChannel_schur_rayleigh_lt (K := ℝ) E₀ Δ v hΔ hv
+
 /-- Exact lowest eigenvalue `E_-(E₀, Δ₈, v) = E₀ + (Δ₈ - √(Δ₈² + 4 v²)) / 2` of the coupled `2 × 2`
 nucleon–hidden-colour Hamiltonian `[[E₀, v], [v, E₀ + Δ₈]]` over `ℝ`. -/
 noncomputable def reconnGroundEnergy (E₀ Δ₈ v : ℝ) : ℝ :=
