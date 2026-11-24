@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:02:43.070122+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T21:05:31.908607+00:00",
+  "commitSha": "dd5f163edbddf8601e4c32f0a7557244ca9c33df",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "b-over-a",
   "scriptFile": "b_over_a_evaluator.py",
-  "scriptHash": "637cf3956815",
-  "scriptCommitSha": "5dd5f65c39e72b13a29f8213e1ebd27e40cba59f",
+  "scriptHash": "d10b27b78192",
+  "scriptCommitSha": "da68fa0a320bc317646524d4948f4bd03d9f2c62",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -44,7 +45,7 @@
     "w_alt": 0.16338322805625738,
     "E_0_MeV": "4.18598136329447",
     "m_e_MeV": "0.51099895069",
-    "alpha_EM": 0.0072973525692838015,
+    "alpha_EM": "0.0072973525692838",
     "r_0_fm": 1.2,
     "hbar_c_MeV_fm": 197.3269804
   },
@@ -81,7 +82,7 @@
         "alt": 0.021734577336914244
       },
       "B_over_A_spectral_only_MeV": "0.00743234680414085",
-      "coulomb_correction_MeV": 0.22678020554817568,
+      "coulomb_correction_MeV": "0.226780205548176",
       "surface_correction_MeV": "-7.29326205874403",
       "c_S": "-509.002580778107",
       "B_over_A_predicted_MeV": "7.0739142",
@@ -116,7 +117,7 @@
         "alt": -0.06520373201074328
       },
       "B_over_A_spectral_only_MeV": "-0.00743234680414091",
-      "coulomb_correction_MeV": 0.7862030615819098,
+      "coulomb_correction_MeV": "0.78620306158191",
       "surface_correction_MeV": "-5.0568654752239",
       "c_S": "-509.002580778107",
       "B_over_A_predicted_MeV": "4.26323006683785",
@@ -151,7 +152,7 @@
         "alt": -1.7387661869531434
       },
       "B_over_A_spectral_only_MeV": "-0.0594587744331269",
-      "coulomb_correction_MeV": 1.9999788925379636,
+      "coulomb_correction_MeV": "1.99997889253796",
       "surface_correction_MeV": "-3.38523237324781",
       "c_S": "-509.002580778107",
       "B_over_A_predicted_MeV": "1.32579470627672",

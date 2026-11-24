@@ -52,6 +52,7 @@ Usage:
 Output:
     nf-qvalues.witness.json
 """
+import mpmath  # display-only: mpmath.nstr in f-strings (mpf has no float __format__ on mpmath 1.3.0)
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
@@ -145,7 +146,7 @@ print("Stage 1 — Free neutron β⁻ decay  n→p e⁻ ν̄  (quark level, H₃
 print(sep)
 print()
 print("  CODATA 2022 reference:")
-print(f"    Q(n→p e⁻ ν̄) = m_n − m_p − m_e = {Q_NEUTRON_MEV:.8f} ± {Q_NEUTRON_MEV_ERR:.2e} MeV")
+print(f"    Q(n→p e⁻ ν̄) = m_n − m_p − m_e = {mpmath.nstr(Q_NEUTRON_MEV, 12)} ± {mpmath.nstr(Q_NEUTRON_MEV_ERR, 3)} MeV")
 print(f"    URL  : https://physics.nist.gov/cgi-bin/cuu/Value?mnmpm")
 print(f"    Cite : CODATA 2022, NIST PL Gaithersburg MD 20899 USA")
 print()
@@ -178,13 +179,13 @@ print()
 print(f"  Δ_q = net(n) − net(p) = {delta_q:+.10f}")
 print()
 print(f"  Quark-level energy scale:")
-print(f"    E_q = Q_NEUTRON / Δ_q = {Q_NEUTRON_MEV:.8f} / ({delta_q:.10f})")
-print(f"    E_q = {E_q:.6f} MeV")
-print(f"    E_q / m_e = {E_q/M_E_MEV:.6f}")
-print(f"    m_e / E_q = {M_E_MEV/E_q:.6f}")
+print(f"    E_q = Q_NEUTRON / Δ_q = {mpmath.nstr(Q_NEUTRON_MEV, 12)} / ({mpmath.nstr(delta_q, 14)})")
+print(f"    E_q = {mpmath.nstr(E_q, 10)} MeV")
+print(f"    E_q / m_e = {mpmath.nstr(E_q/M_E_MEV, 10)}")
+print(f"    m_e / E_q = {mpmath.nstr(M_E_MEV/E_q, 10)}")
 print()
 print(f"  ✓ Free neutron validation (exact by construction):")
-print(f"      Q_pred = Δ_q × E_q = {delta_q * E_q:.8f} MeV  =  Q_NEUTRON  ✓")
+print(f"      Q_pred = Δ_q × E_q = {mpmath.nstr(delta_q * E_q, 12)} MeV  =  Q_NEUTRON  ✓")
 print()
 
 
@@ -239,7 +240,7 @@ for Z, N, name, Q_exp, Q_exp_err in ISOTOPES:
 
     print(f"    Δ_A   = {delta_A:+.8f}")
     print(f"    r = Δ_A/Δ_q = {r:+.6f}")
-    print(f"    Q_pred = Δ_A × E_q = {Q_pred:.5f} MeV")
+    print(f"    Q_pred = Δ_A × E_q = {mpmath.nstr(Q_pred, 9)} MeV")
     print(f"    Q_obs  = {Q_exp:.5f} ± {Q_exp_err:.5f} MeV")
     print(f"    Error  = {err_pct:+.1f}%")
     print()
@@ -262,12 +263,12 @@ print()
 print(f"  {'Decay':>14}  {'Q_pred':>9}  {'Q_obs':>9}  {'r=Δ_A/Δ_q':>10}  {'error':>7}")
 print(f"  {'-'*14}  {'-'*9}  {'-'*9}  {'-'*10}  {'-'*7}")
 for r in iso_results:
-    print(f"  {r['name']:>14}  {r['Q_pred_MeV']:9.5f}  {r['Q_exp_MeV']:9.5f}"
+    print(f"  {r['name']:>14}  {mpmath.nstr(r['Q_pred_MeV'], 9):9}  {mpmath.nstr(r['Q_exp_MeV'], 9):9}"
           f"  {r['r_suppression']:10.4f}  {r['error_pct']:+6.1f}%")
 print()
 print("  Diagnosis:")
 print(f"    • Δ_q (free neutron, quark level) = {delta_q:+.6f}")
-print(f"    • For ³H:  Δ_A ≈ Δ_q → r ≈ 1 → Q_pred ≈ Q_NEUTRON = {Q_NEUTRON_MEV:.4f} MeV")
+print(f"    • For ³H:  Δ_A ≈ Δ_q → r ≈ 1 → Q_pred ≈ Q_NEUTRON = {mpmath.nstr(Q_NEUTRON_MEV, 8)} MeV")
 print(f"      But observed Q(³H) = {Q_TRITIUM_MEV:.5f} MeV — factor {Q_NEUTRON_MEV/Q_TRITIUM_MEV:.0f}× too large.")
 print()
 print("  Root cause:")
