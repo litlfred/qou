@@ -27,6 +27,7 @@ export default conjecture({
     "kucharski-reineke-stosic-sulkowski2017",
     "singh-physrevd108106023",
     "garoufalidis-kashaev2015",
+    "garoufalidis-zagier2023",
     "mario2023",
   ],
   tags: [
