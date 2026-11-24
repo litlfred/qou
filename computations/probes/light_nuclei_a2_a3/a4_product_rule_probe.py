@@ -104,6 +104,8 @@ if __name__ == "__main__":
         print("MISS", r["order"], r["variant"], r["set"], r["m_same_receiver_pairs"],
               r["h_order"], r["relative_lead"])
     with open(os.path.join(HERE, "a4-product-rule.witness.json"), "w") as fh:
-        json.dump({"description": __doc__.strip(), "engine": "python-flint exact Q[h, z]",
+        json.dump({"q0Anchor": "independent",
+                   "q0AnchorReason": "exact polynomial arithmetic in Q[h, z] with h and the Markov parameter z left free; q0 is never read",
+                   "description": __doc__.strip(), "engine": "python-flint exact Q[h, z]",
                    "exploratory": True, "checks": checks, "rows": rows}, fh, indent=1,
                   default=lambda o: int(o) if hasattr(o, "bit_length") or type(o).__name__ == "fmpz" else list(o))
