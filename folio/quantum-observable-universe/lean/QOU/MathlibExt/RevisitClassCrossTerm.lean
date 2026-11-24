@@ -217,4 +217,218 @@ theorem cyclicSquare_cross_term_neg_convD (q : ℝ) (hq : 0 < q) :
     linarith
   · positivity
 
+/-! ## Dressed letters: the cross term is BLIND to the square's own dressings
+
+Every statement above is about bare generators `gᵢ`.  The production bonds are
+**charge-dressed** letters `bᵢ = gᵢ + dᵢ·1` (`QOU.MathlibExt.MarkovBondRule.sigmaPlus`),
+so the question a downstream reader actually has is whether the cross term sees the
+dressing.  `cyclicSquare_cross_term_dressed` answers it: **it does not** — the dressed
+difference is the same `z² − h z − 1`, with `s` and `t` absent from the result.
+
+The mechanism is `dressed_difference_expand`, and each of its four brackets is settled
+here:
+
+| bracket | coefficient | value | by |
+|---|---|---|---|
+| `acac − a²c²` | `1` | `(z² − hz − 1)·tr x` | `cyclicSquare_cross_term` |
+| `aca − a²c` | `t` | `0` | `oneStepRevisit_eq_monotone` |
+| `cac − ac²` | `s` | `0` | `mirrorRevisit_eq_monotone` |
+| `ca − ac` | `s·t` | `0` | `tr_bondCommutator` |
+
+So the three brackets that *could* have carried the dressing are exactly the three the
+revisit-class table above already lists as cross-term-free.  The blindness is not a
+coincidence of one computation; it is that table, read one degree down.
+
+**Downstream.**  The `n = 4` interleaved word is this square stabilised once
+(`interleaved_eq_stab_cyclicSquare`), so its dressed cross term is `(z + d)·(z² − hz − 1)`
+with `d` the *stabilising* letter's dressing only: the square's own two dressings drop out,
+the stabiliser's survives.  That is the structural reason the interleaved pair is
+charge-blind.  Added 2026-09-14, bean `qou-vwu3`. -/
+
+/-- The charge-dressed letter `bᵢ = gᵢ + dᵢ·1`. -/
+noncomputable def dressed (m : ℕ) (d : R) : A := T.g m + d • (1 : A)
+
+/-- **The dressed difference decomposes into four brackets.**  A pure ring identity —
+scalars are central, so expanding `(a+s)(c+t)(a+s)(c+t) − (a+s)²(c+t)²` leaves the degree-4
+bracket plus one bracket per lower degree, with no `s²`, `t²`, `s²t` or `st²` term surviving:
+those cancel between the two words because they multiply the *same* monomial in `a, c`. -/
+theorem dressed_difference_expand (m : ℕ) (s t : R) :
+    dressed T m s * dressed T (m + 1) t * dressed T m s * dressed T (m + 1) t
+      - dressed T m s * dressed T m s * (dressed T (m + 1) t * dressed T (m + 1) t)
+    = (T.g m * T.g (m + 1) * T.g m * T.g (m + 1)
+        - T.g m * T.g m * (T.g (m + 1) * T.g (m + 1)))
+      + t • (T.g m * T.g (m + 1) * T.g m - T.g m * T.g m * T.g (m + 1))
+      + s • (T.g (m + 1) * T.g m * T.g (m + 1) - T.g m * T.g (m + 1) * T.g (m + 1))
+      + (s * t) • (T.g (m + 1) * T.g m - T.g m * T.g (m + 1)) := by
+  simp only [dressed, add_mul, mul_add, mul_assoc, smul_mul_assoc, mul_smul_comm,
+    one_mul, mul_one]
+  module
+
+/-- **The bond commutator is trace-invisible.**  `tr(x gₘ₊₁ gₘ) = tr(x gₘ gₘ₊₁)` whenever the
+prefix commutes with `gₘ₊₁`: rotate `gₘ₊₁` to the front, commute it past `x`, rotate back.
+Cyclicity only — no Markov move, no braid relation, no quadratic. -/
+theorem tr_bondCommutator (m : ℕ) (x : A) (hxc : x * T.g (m + 1) = T.g (m + 1) * x) :
+    T.tr (x * (T.g (m + 1) * T.g m)) = T.tr (x * (T.g m * T.g (m + 1))) := by
+  have e : x * (T.g (m + 1) * T.g m) = T.g (m + 1) * (x * T.g m) := by
+    rw [← mul_assoc, hxc, mul_assoc]
+  rw [e, T.tr_mul_comm (T.g (m + 1)) (x * T.g m), mul_assoc]
+
+/-- **The mirror revisit is trace-monotone too.**  `tr(x gₘ₊₁ gₘ gₘ₊₁) = tr(x gₘ gₘ₊₁²)`.
+This is `oneStepRevisit_eq_monotone` read through the braid relation: braid the left word
+back to `x gₘ gₘ₊₁ gₘ`, apply the one-step identity, then collapse the doubled letter on each
+side with its Hecke quadratic.  Both sides equal `h z² · tr x + z · tr x`. -/
+theorem mirrorRevisit_eq_monotone (m : ℕ) (h : R) (x : A) (hx : x ∈ T.H m)
+    (hq0 : T.g m * T.g m = h • T.g m + 1)
+    (hq1 : T.g (m + 1) * T.g (m + 1) = h • T.g (m + 1) + 1)
+    (hbraid : T.g m * T.g (m + 1) * T.g m = T.g (m + 1) * T.g m * T.g (m + 1)) :
+    T.tr (x * (T.g (m + 1) * T.g m * T.g (m + 1)))
+      = T.tr (x * (T.g m * T.g (m + 1) * T.g (m + 1))) := by
+  have hx1 : x ∈ T.H (m + 1) := T.H_mono (Nat.le_succ m) hx
+  have hxa : x * T.g m ∈ T.H (m + 1) := (T.H (m + 1)).mul_mem hx1 (T.g_mem m)
+  have hL1 : T.tr (x * (T.g (m + 1) * T.g m * T.g (m + 1)))
+      = T.tr (x * T.g m * T.g m * T.g (m + 1)) := by
+    rw [← hbraid]
+    have e : x * (T.g m * T.g (m + 1) * T.g m) = x * T.g m * T.g (m + 1) * T.g m := by
+      simp only [mul_assoc]
+    rw [e, oneStepRevisit_eq_monotone T m x hx]
+  have hA : T.tr (x * T.g m * T.g m * T.g (m + 1))
+      = h * (T.z * (T.z * T.tr x)) + T.z * T.tr x := by
+    have e : x * T.g m * T.g m * T.g (m + 1)
+        = h • (x * T.g m * T.g (m + 1)) + x * T.g (m + 1) := by
+      rw [mul_assoc x, hq0, mul_add, mul_one, mul_smul_comm, add_mul, smul_mul_assoc]
+    rw [e, map_add, map_smul, smul_eq_mul, T.markov (m + 1) _ hxa, T.markov m x hx,
+      T.markov (m + 1) x hx1]
+  have hB : T.tr (x * (T.g m * T.g (m + 1) * T.g (m + 1)))
+      = h * (T.z * (T.z * T.tr x)) + T.z * T.tr x := by
+    have e : x * (T.g m * T.g (m + 1) * T.g (m + 1))
+        = h • (x * T.g m * T.g (m + 1)) + x * T.g m := by
+      rw [mul_assoc (T.g m), hq1, mul_add, mul_one, mul_smul_comm, mul_add, mul_smul_comm,
+        ← mul_assoc]
+    rw [e, map_add, map_smul, smul_eq_mul, T.markov (m + 1) _ hxa, T.markov m x hx]
+  rw [hL1, hA, hB]
+
+/-- **THE CROSS TERM IS BLIND TO THE SQUARE'S OWN DRESSINGS.**  For dressed letters
+`b₀ = gₘ + s·1` and `b₁ = gₘ₊₁ + t·1`,
+
+`tr(x b₀b₁b₀b₁) − tr(x b₀² b₁²) = (z² − h z − 1) · tr x`,
+
+*the same value as for bare generators* — `s` and `t` do not appear.  Under the same
+hypotheses as `cyclicSquare_cross_term`, which is the `s = t = 0` case.
+
+Consequence for the production word: a cyclically braided triple contributes the identical
+cross term whatever charges sit on its two alternating letters, so this class of word cannot
+distinguish `pp` from `nn` and cannot be the carrier of a charge-antisymmetric term. -/
+theorem cyclicSquare_cross_term_dressed (m : ℕ) (h s t : R) (x : A) (hx : x ∈ T.H m)
+    (hq0 : T.g m * T.g m = h • T.g m + 1) (hq1 : T.g (m + 1) * T.g (m + 1) = h • T.g (m + 1) + 1)
+    (hbraid : T.g m * T.g (m + 1) * T.g m = T.g (m + 1) * T.g m * T.g (m + 1))
+    (hxc : x * T.g (m + 1) = T.g (m + 1) * x) :
+    T.tr (x * (dressed T m s * dressed T (m + 1) t * dressed T m s * dressed T (m + 1) t))
+        - T.tr (x * (dressed T m s * dressed T m s
+            * (dressed T (m + 1) t * dressed T (m + 1) t)))
+      = (T.z ^ 2 - h * T.z - 1) * T.tr x := by
+  have hD4 : T.tr (x * (T.g m * T.g (m + 1) * T.g m * T.g (m + 1)
+      - T.g m * T.g m * (T.g (m + 1) * T.g (m + 1)))) = (T.z ^ 2 - h * T.z - 1) * T.tr x := by
+    rw [mul_sub, map_sub]
+    have e1 : x * (T.g m * T.g (m + 1) * T.g m * T.g (m + 1))
+        = x * T.g m * T.g (m + 1) * T.g m * T.g (m + 1) := by simp only [mul_assoc]
+    have e2 : x * (T.g m * T.g m * (T.g (m + 1) * T.g (m + 1)))
+        = x * T.g m * T.g m * (T.g (m + 1) * T.g (m + 1)) := by simp only [mul_assoc]
+    rw [e1, e2, cyclicSquare_cross_term T m h x hx hq0 hq1 hbraid hxc]
+  have hB2 : T.tr (x * (T.g m * T.g (m + 1) * T.g m - T.g m * T.g m * T.g (m + 1))) = 0 := by
+    rw [mul_sub, map_sub]
+    have e1 : x * (T.g m * T.g (m + 1) * T.g m) = x * T.g m * T.g (m + 1) * T.g m := by
+      simp only [mul_assoc]
+    have e2 : x * (T.g m * T.g m * T.g (m + 1)) = x * T.g m * T.g m * T.g (m + 1) := by
+      simp only [mul_assoc]
+    rw [e1, e2, oneStepRevisit_eq_monotone T m x hx, sub_self]
+  have hB3 : T.tr (x * (T.g (m + 1) * T.g m * T.g (m + 1)
+      - T.g m * T.g (m + 1) * T.g (m + 1))) = 0 := by
+    rw [mul_sub, map_sub, mirrorRevisit_eq_monotone T m h x hx hq0 hq1 hbraid, sub_self]
+  have hB4 : T.tr (x * (T.g (m + 1) * T.g m - T.g m * T.g (m + 1))) = 0 := by
+    rw [mul_sub, map_sub, tr_bondCommutator T m x hxc, sub_self]
+  have hsub : T.tr (x * (dressed T m s * dressed T (m + 1) t * dressed T m s
+        * dressed T (m + 1) t))
+        - T.tr (x * (dressed T m s * dressed T m s
+            * (dressed T (m + 1) t * dressed T (m + 1) t)))
+      = T.tr (x * (dressed T m s * dressed T (m + 1) t * dressed T m s * dressed T (m + 1) t
+          - dressed T m s * dressed T m s
+            * (dressed T (m + 1) t * dressed T (m + 1) t))) := by
+    rw [mul_sub, map_sub]
+  rw [hsub, dressed_difference_expand T m s t]
+  simp only [mul_add, mul_smul_comm, map_add, map_smul, smul_eq_mul]
+  rw [hD4, hB2, hB3, hB4]
+  ring
+
+/-- A dressed letter lies in any level of the tower above its own. -/
+theorem dressed_mem (m n : ℕ) (d : R) (hmn : m + 1 ≤ n) : dressed T m d ∈ T.H n :=
+  (T.H n).add_mem (T.H_mono hmn (T.g_mem m)) ((T.H n).smul_mem (T.H n).one_mem d)
+
+/-- **A dressed letter peels LINEARLY at the top of the tower.**  `tr(a · bₙ) = (z + d)·tr a`
+for any `a ∈ H n` and `bₙ = gₙ + d·1`.
+
+This is the one thing the `n = 4, 5, 6` dressed-defect probes record as generalising
+(`qou-vwu3`: *"what DOES generalise, now 3-for-3: the Markov-peeled bond factors out
+linearly"*).  Here it is a theorem rather than a 3-for-3 pattern: it holds for every `n`,
+every dressing, and every `a` in the tower, and it is immediate from `markov` (T3) plus
+linearity of `tr`.  Nothing about interleaving is used. -/
+theorem tr_dressed_stab (n : ℕ) (d : R) (a : A) (ha : a ∈ T.H n) :
+    T.tr (a * dressed T n d) = (T.z + d) * T.tr a := by
+  rw [dressed, mul_add, mul_smul_comm, mul_one, map_add, map_smul, smul_eq_mul,
+    T.markov n a ha]
+  ring
+
+/-- **The `n = 4` dressed cross term, derived: `(z + d₂)·(z² − h z − 1)`.**
+
+The charge dependence of the whole interleaved-vs-sequential defect at `n = 4` is the
+*stabilising* letter's dressing **alone**: `d₀` and `d₁` — the dressings of the two letters
+that actually alternate — cancel, by `cyclicSquare_cross_term_dressed`, and the surviving
+`(z + d₂)` is the linear peel of `tr_dressed_stab`.
+
+This is the closed form measured exactly in
+`computations/probes/dressed-interleaved-cross-term-charge-parity.witness.json`
+(`Delta(d0,d1,d2) = (z + d2) * (z^2 - h*z - 1)`, sympy over `ℚ(q,d₀,d₁,d₂)`), reported
+there without a mechanism.  The mechanism is that the `n = 4` word is the three-strand
+cyclic square stabilised once, and the square is dressing-blind. -/
+theorem interleaved_cross_term_dressed (h d0 d1 d2 : R)
+    (hq0 : T.g 0 * T.g 0 = h • T.g 0 + 1) (hq1 : T.g 1 * T.g 1 = h • T.g 1 + 1)
+    (hbraid : T.g 0 * T.g 1 * T.g 0 = T.g 1 * T.g 0 * T.g 1) :
+    T.tr (dressed T 0 d0 * dressed T 1 d1 * dressed T 0 d0 * dressed T 2 d2 * dressed T 1 d1)
+        - T.tr (dressed T 0 d0 * dressed T 0 d0 * dressed T 1 d1 * dressed T 1 d1
+            * dressed T 2 d2)
+      = (T.z + d2) * (T.z ^ 2 - h * T.z - 1) := by
+  set b0 := dressed T 0 d0 with hb0
+  set b1 := dressed T 1 d1 with hb1
+  have m0 : b0 ∈ T.H 2 := dressed_mem T 0 2 d0 (by omega)
+  have m1 : b1 ∈ T.H 2 := dressed_mem T 1 2 d1 (by omega)
+  have mI : b1 * b0 * b1 * b0 ∈ T.H 2 :=
+    (T.H 2).mul_mem ((T.H 2).mul_mem ((T.H 2).mul_mem m1 m0) m1) m0
+  have mS : b0 * b0 * b1 * b1 ∈ T.H 2 :=
+    (T.H 2).mul_mem ((T.H 2).mul_mem ((T.H 2).mul_mem m0 m0) m1) m1
+  -- interleaved: rotate the trailing `b1` to the front, then peel `b2`
+  have hI : T.tr (b0 * b1 * b0 * dressed T 2 d2 * b1)
+      = (T.z + d2) * T.tr (b1 * b0 * b1 * b0) := by
+    rw [T.tr_mul_comm (b0 * b1 * b0 * dressed T 2 d2) b1]
+    have e : b1 * (b0 * b1 * b0 * dressed T 2 d2)
+        = b1 * b0 * b1 * b0 * dressed T 2 d2 := by simp only [mul_assoc]
+    rw [e, tr_dressed_stab T 2 d2 _ mI]
+  -- sequential: peel `b2` directly
+  have hS : T.tr (b0 * b0 * b1 * b1 * dressed T 2 d2)
+      = (T.z + d2) * T.tr (b0 * b0 * b1 * b1) :=
+    tr_dressed_stab T 2 d2 _ mS
+  -- the three-strand bracket, with trivial prefix
+  have hone : (1 : A) ∈ T.H 0 := (T.H 0).one_mem
+  have hxc : (1 : A) * T.g 1 = T.g 1 * (1 : A) := by rw [one_mul, mul_one]
+  have hsq := cyclicSquare_cross_term_dressed T 0 h d0 d1 1 hone hq0 hq1 hbraid hxc
+  rw [one_mul, one_mul, T.tr_one, mul_one] at hsq
+  -- rotate the cyclic square so it matches `hsq`, and reassociate the Hopf chain
+  have hrot : T.tr (b1 * b0 * b1 * b0) = T.tr (b0 * b1 * b0 * b1) := by
+    rw [T.tr_mul_comm (b1 * b0 * b1) b0]
+    congr 1
+    simp only [mul_assoc]
+  have hassoc : T.tr (b0 * b0 * b1 * b1) = T.tr (b0 * b0 * (b1 * b1)) := by
+    congr 1
+    simp only [mul_assoc]
+  rw [hI, hS, hrot, hassoc, ← mul_sub, hsq]
+
 end QOU.MathlibExt.RevisitClass
+
