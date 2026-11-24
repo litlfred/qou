@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-22T15:06:17.787423+00:00",
-  "commitSha": "5ff5816dee7d6c44e6fe19f391401f072171f70f",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T15:47:46.529629+00:00",
+  "commitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 59984,
+  "durationMs": 26480,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "69007caf50ed",
-  "scriptCommitSha": "7d0af73553aa5b427a2f4cbf3e425ca717631771",
+  "scriptHash": "85e66df09904",
+  "scriptCommitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,26 +17,29 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "8094096a28948d48"
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
-      "computations/canonical_mass_table_extended.py"
+      "computations/canonical_mass_table_extended.py",
+      "--method",
+      "auto"
     ],
-    "reproduce": "python3 -u computations/canonical_mass_table_extended.py"
+    "reproduce": "python3 -u computations/canonical_mass_table_extended.py --method auto"
   },
   "description": "Extended canonical mass table via per-atom route: A<2 -> direct H_3 Hoefsmit (laurent_q_rust, falling back to laurent_q when pyhecke_native is absent); A>=2 -> operator-valued Wenzl branching combiner; + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "method": "auto",
+    "pn_convention": "bring_color_weighted",
+    "intra_ordering_frame": "borromean",
     "precision": "mpfr",
     "dps": 50,
     "compute_dps": 70,
@@ -370,10 +373,10 @@
           {
             "op_type": "inter-nucleon",
             "gen_index": 2,
-            "crossing_type": "averaged",
+            "crossing_type": "averaged_weighted",
             "nucleon_type": null,
             "interface_channel": "pn",
-            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "canonical_form_label": "pn coupling: σ + (-h·(1/2 - δ/4))·𝟙 at gen 3k+2 (bring_color_weighted)",
             "witness_ref": null
           },
           {
@@ -591,10 +594,10 @@
           {
             "op_type": "inter-nucleon",
             "gen_index": 2,
-            "crossing_type": "averaged",
+            "crossing_type": "averaged_weighted",
             "nucleon_type": null,
             "interface_channel": "pn",
-            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "canonical_form_label": "pn coupling: σ + (-h·(1/2 - δ/4))·𝟙 at gen 3k+2 (bring_color_weighted)",
             "witness_ref": null
           },
           {
@@ -866,10 +869,10 @@
           {
             "op_type": "inter-nucleon",
             "gen_index": 5,
-            "crossing_type": "averaged",
+            "crossing_type": "averaged_weighted",
             "nucleon_type": null,
             "interface_channel": "pn",
-            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "canonical_form_label": "pn coupling: σ + (-h·(1/2 - δ/4))·𝟙 at gen 3k+2 (bring_color_weighted)",
             "witness_ref": null
           },
           {
@@ -1162,10 +1165,10 @@
           {
             "op_type": "inter-nucleon",
             "gen_index": 5,
-            "crossing_type": "averaged",
+            "crossing_type": "averaged_weighted",
             "nucleon_type": null,
             "interface_channel": "pn",
-            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "canonical_form_label": "pn coupling: σ + (-h·(1/2 - δ/4))·𝟙 at gen 3k+2 (bring_color_weighted)",
             "witness_ref": null
           },
           {
@@ -1560,10 +1563,10 @@
           {
             "op_type": "inter-nucleon",
             "gen_index": 8,
-            "crossing_type": "averaged",
+            "crossing_type": "averaged_weighted",
             "nucleon_type": null,
             "interface_channel": "pn",
-            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "canonical_form_label": "pn coupling: σ + (-h·(1/2 - δ/4))·𝟙 at gen 3k+2 (bring_color_weighted)",
             "witness_ref": null
           },
           {
@@ -2006,10 +2009,10 @@
           {
             "op_type": "inter-nucleon",
             "gen_index": 8,
-            "crossing_type": "averaged",
+            "crossing_type": "averaged_weighted",
             "nucleon_type": null,
             "interface_channel": "pn",
-            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "canonical_form_label": "pn coupling: σ + (-h·(1/2 - δ/4))·𝟙 at gen 3k+2 (bring_color_weighted)",
             "witness_ref": null
           },
           {
@@ -2527,10 +2530,10 @@
           {
             "op_type": "inter-nucleon",
             "gen_index": 8,
-            "crossing_type": "averaged",
+            "crossing_type": "averaged_weighted",
             "nucleon_type": null,
             "interface_channel": "pn",
-            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "canonical_form_label": "pn coupling: σ + (-h·(1/2 - δ/4))·𝟙 at gen 3k+2 (bring_color_weighted)",
             "witness_ref": null
           },
           {
@@ -2807,11 +2810,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "0b89a5f78fa8110ea9a14bc25361a234b3ad64b92ea20296559f1afd25b968d6",
-        "size_bytes": 11520,
-        "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
-        "scriptCommitSha": "945b2edf2fb8d11552720c7e2aa3a1944797dfe4",
-        "computedAt": "2026-08-29T09:30:54.473879+00:00"
+        "sha256": "815cac817eff0309894e6332f0a53fd7c55fc9c98bae71dc3b22dc71b065b7b2",
+        "size_bytes": 12331,
+        "commitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "scriptCommitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "computedAt": "2026-11-24T09:34:49.561308+00:00"
       }
     ]
   },

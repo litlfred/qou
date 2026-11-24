@@ -1,28 +1,29 @@
 {
   "computation": "chi-neutron-h3-at-q0-50dps",
-  "description": "Numerical χ^λ_q(β_atomic(0, 1)) = neutron per partition λ ⊢ 3, evaluated at q = q_0 at 50 decimal places via the Hoefsmit seminormal basis. Companion to the symbolic chi-neutron-h3.witness.json emitted by per_irrep_pole_atom.py; this numerical cache is used by canonical_tr_m_via_chi_cache.py and the 3-way 1ppb cross-check (cross_check_trM_1ppb.py) when full symbolic data is not yet available. ~100× faster to build than the symbolic counterpart (no sympy poly arithmetic).",
+  "description": "Numerical χ^λ_q(β_atomic(0, 1)) = neutron per partition λ ⊢ 3, evaluated at q = q_0 at 80 decimal places via the Hoefsmit seminormal basis. Companion to the symbolic chi-neutron-h3.witness.json emitted by per_irrep_pole_atom.py; this numerical cache is used by canonical_tr_m_via_chi_cache.py and the 3-way 1ppb cross-check (cross_check_trM_1ppb.py) when full symbolic data is not yet available. ~100× faster to build than the symbolic counterpart (no sympy poly arithmetic).",
   "convention": "averaged-crossings",
   "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
   "n_partitions_total": 3,
   "partial": false,
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
-  "dps": 50,
+  "dps": 80,
   "n_strands": 3,
   "atom": "neutron",
   "Z": 0,
   "N": 1,
   "n_partitions": 3,
   "compute_time_sec": "0.00",
-  "tr_M_at_q0": "0.47513351715568221250609023267500579955840763470875",
+  "tr_M_at_q0": "0.47513351715568221250609023267500579955840763470872371949524352178907814718801968",
+  "weight_family": "markov_y_lambda_convention_D",
   "by_partition": [
     {
       "partition": [
         3
       ],
       "dim": 1,
-      "y_lambda": "0.50540422650393080318755870324047227566035119774981",
-      "chi_lambda": "1.1221068216024720738277212759029981741187093477827",
-      "contribution": "0.56711753022678167003188672809761373418145978684587",
+      "y_lambda": "0.5054042265039308031875587032404722756603511977498113327646320125191877",
+      "chi_lambda": "1.1221068216024720738277212759029981741187093477826458482929290235060085976783506",
+      "contribution": "0.56711753022678167003188672809761373418145978684584584829292902350600859626004811",
       "compute_time_sec": "0.00"
     },
     {
@@ -31,9 +32,9 @@
         1
       ],
       "dim": 2,
-      "y_lambda": "0.24729788674803459840622064837976386216982440112509",
-      "chi_lambda": "-0.37195632474134153141629884205128506411028151416031",
-      "contribution": "-0.091984013071099457525796495422607934623052152137123",
+      "y_lambda": "0.2472978867480345984062206483797638621698244011250943336176839937404062",
+      "chi_lambda": "-0.37195632474134153141629884205128506411028151416030862722064269888112362521795098",
+      "contribution": "-0.091984013071099457525796495422607934623052152137122128797685501716930449072028428",
       "compute_time_sec": "0.00"
     },
     {
@@ -43,19 +44,20 @@
         1
       ],
       "dim": 1,
-      "y_lambda": "3.5003166174815342380107344013862909374450688435081e-72",
-      "chi_lambda": "-0.91076221455307436648866691041701579466699304610602",
-      "contribution": "-3.1879561141744086224508123915136636676497720350027e-72",
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.91076221455307436648866691041701579466699304610602851067221703262170850730008334",
+      "contribution": "0.0",
       "compute_time_sec": "0.00"
     }
   ],
-  "scriptHash": "815a026e9591",
-  "scriptCommitSha": "d151898dd6581235f2db8412f58c7bf968373810",
-  "commitSha": "de0658a6f13817609b36d08cbcf44647b8bff178",
+  "scriptFile": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "scriptHash": "d7540cfcaa57",
+  "scriptCommitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
+  "commitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
   "engine": "python+mpmath",
-  "computedAt": "2026-09-06T03:15:55.863373+00:00",
+  "computedAt": "2026-11-24T15:45:50.960935+00:00",
   "durationMs": 0,
-  "engineVersion": "python 3.11 + mpmath 1.4.1",
+  "engineVersion": "python 3.13 + mpmath 1.4.1",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
