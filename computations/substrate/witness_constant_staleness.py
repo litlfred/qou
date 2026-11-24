@@ -124,10 +124,20 @@ def _tolerance_for(recorded: str, max_sig: Optional[int] = None) -> Decimal:
 
 def matches_live_q0(recorded: str, live: str = Q_50_DIGIT_STR,
                     max_sig: Optional[int] = None) -> bool:
-    """True when `recorded` is the live q₀ to the precision it states."""
+    """True when `recorded` is the live q₀ to the precision BOTH sides state.
+
+    The comparison runs at the coarser of the two precisions. A witness that
+    records q₀ to 60–70 digits is compared against a ~50-significant-digit
+    live string; at the recorded value's own 1e-70 ulp the live string's own
+    rounding (~5e-50) reads as drift, so every full-precision witness was
+    reported stale against a value it agrees with to every digit the live
+    string carries. Capping at the live string's ulp cannot blunt the gate:
+    the tolerance stays ≥ 100x tighter than the muon/proton separation
+    (`_assert_tolerance_cannot_mask_a_pin_flip`).
+    """
     try:
-        return (abs(Decimal(recorded) - Decimal(live))
-                <= _tolerance_for(recorded, max_sig))
+        tol = max(_tolerance_for(recorded, max_sig), _tolerance_for(live))
+        return abs(Decimal(recorded) - Decimal(live)) <= tol
     except ArithmeticError:
         return False
 
