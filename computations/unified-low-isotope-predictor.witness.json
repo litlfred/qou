@@ -1,15 +1,15 @@
 {
-  "engine": "python+numpy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:23:20.323838+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:09:13.887927+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 66,
+  "durationMs": 18,
   "computation": "unified-low-isotope-predictor",
   "scriptFile": "unified_low_isotope_predictor.py",
-  "scriptHash": "eba70b193ab6",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "4dc8e765eb22",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,21 +17,30 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/unified_low_isotope_predictor.py"
+    ],
+    "reproduce": "python3 -u computations/unified_low_isotope_predictor.py"
   },
   "description": "Unified low-isotope binding predictor — applies all 6 derived terms uniformly, with derivable rules for term applicability (no special-casing). T1 = descended Markov trace binding via free-vs-atom subtraction. T4 = universal Frobenius co-Casimir (Lean-proved). T5 = BW + chirality, applied only where BW is structurally valid (A ≥ 3). T6 = Habiro residue (placeholder, deferred Laurent expansion). k≥3 = entanglement-orders tail in subtractive form. Δm_shell = σ_shell ILP-derived. SINGLE β-decay calibration throughout.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
-    "q_0": 1.1099785827513808,
-    "m_e_MeV": 0.51099895069,
-    "Q_beta_n_MeV": 0.7823334093100222,
-    "E_0_MeV_per_cat": 7.390664894220538,
-    "tr_M_proton_at_q_0": 0.7022506773529952,
-    "tr_M_neutron_at_q_0": 0.5963964111256355
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "m_e_MeV": "0.51099895069",
+    "Q_beta_n_MeV": "0.78233340931",
+    "E_0_MeV_per_cat": "7.667562637895819068019155690950609521490744451213238398726699613062218",
+    "tr_M_proton_at_q_0": "0.01256718186404071624189796055398690545063574845045491178189484576742306",
+    "tr_M_neutron_at_q_0": "-0.0894643823051817567531264222962564057201441966019259336805486203651917"
   },
   "data": {
     "isotopes": [
@@ -40,45 +49,45 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "T1_descended": 3.1858965180868237,
-        "T4_frobenius": 1.0475478489145,
+        "T1_descended": "0.01347444632923155984416523744979989025655830813982207317011370715705649",
+        "T4_frobenius": "1.636287114593083509095956881996398718065319628176340886626032",
         "T5_BW_chirality": 0.0,
         "T6_habiro": 0.0,
-        "k3_plus_tail": -10575.102337746954,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": -10570.825368453634,
+        "k3_plus_tail": "-160056.3360838069243441033718164658989508087090021656731698241717908523",
+        "delta_m_shell": "0.04515562586559275050514892735716403766598967370773891300165507027614312",
+        "B_pred_MeV": "-160054.6411666201364362839265454190955881627211345556492679513739900749",
         "B_AME_MeV": 2.2245662,
-        "err_pct": -475285.9202236209
+        "err_pct": "-7194969.775807082787237571909986281617375733370243886226120901300737576"
       },
       {
         "sym": "T",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "T1_descended": 2.126370478187458,
-        "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "8.75008974974357",
+        "T1_descended": "0.0007290445262834218970723799345338720398799043156080048360808266648931538",
+        "T4_frobenius": "1.299921976484767797016885074229569695045597950751635967246424",
+        "T5_BW_chirality": "8.750089749743567744990892440536590416749822855987753277180873536744182",
         "T6_habiro": 0.0,
-        "k3_plus_tail": -14521.125110617564,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "-14509.1575776144",
+        "k3_plus_tail": "-286118.1656282515249437272944018543069621010943517779487703674342907028",
+        "delta_m_shell": "0.04515562586559275050514892735716403766598967370773891300165507027614312",
+        "B_pred_MeV": "-286108.0697318549047320128844030322491040795930613931860342051692572691",
         "B_AME_MeV": 8.4817962,
-        "err_pct": "-171162.322596414"
+        "err_pct": "-3373301.418490282895022154419513155977344135745206335485825443676172911"
       },
       {
         "sym": "3He",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "T1_descended": 2.510446422740093,
-        "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "8.24294524226905",
+        "T1_descended": "0.00009411102349131945710444055725098694572830849511493037643732377280727255",
+        "T4_frobenius": "1.299921976484767797016885074229569695045597950751635967246424",
+        "T5_BW_chirality": "8.242945242269053058134752278788706847956525212086722645738972620485079",
         "T6_habiro": 0.0,
-        "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "11.8444644402427",
+        "k3_plus_tail": "0.0",
+        "delta_m_shell": "0.04515562586559275050514892735716403766598967370773891300165507027614312",
+        "B_pred_MeV": "9.588116955642904925113890720932691567613841145041212456363489014534029",
         "B_AME_MeV": 7.71804132,
-        "err_pct": "53.4646414699777"
+        "err_pct": "24.22992515985784681545515919021438791311284240541477361153076411212587"
       },
       {
         "sym": "4He",
@@ -86,14 +95,14 @@
         "N": 2,
         "A": 4,
         "T1_descended": 0.0,
-        "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "22.546675175696",
+        "T4_frobenius": "1.150735935571024715021175520011528658391888882819424998347787",
+        "T5_BW_chirality": "22.54667517569599432378942636158217836174028347168107648775907487534495",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "23.6377479509296",
+        "delta_m_shell": "0.04515562586559275050514892735716403766598967370773891300165507027614312",
+        "B_pred_MeV": "23.74256673713261178931575080895087105779816202820824039910851694562109",
         "B_AME_MeV": 28.2956624,
-        "err_pct": "-16.4615847589078"
+        "err_pct": "-16.09114357707133666044639495428712852033066224025287398722723435124113"
       },
       {
         "sym": "6Li",
@@ -101,14 +110,14 @@
         "N": 3,
         "A": 6,
         "T1_descended": 0.0,
-        "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "30.884038444499",
+        "T4_frobenius": "1.06701215648483046351563563390264224165762391208614658059572",
+        "T5_BW_chirality": "30.88403844449895227613892122831039660598043861854437188460737990604621",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "31.9751112197325",
-        "B_AME_MeV": 31.993987199999996,
-        "err_pct": "-0.0589985241584785"
+        "delta_m_shell": "0.04515562586559275050514892735716403766598967370773891300165507027614312",
+        "B_pred_MeV": "31.99620622684937549015970578957020288530405220433825737820475497632236",
+        "B_AME_MeV": 31.9939872,
+        "err_pct": "0.00693576213400524723341069247501935599766320490645584339132927318331945"
       },
       {
         "sym": "7Li",
@@ -116,14 +125,14 @@
         "N": 4,
         "A": 7,
         "T1_descended": 0.0,
-        "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "44.4540953400198",
+        "T4_frobenius": "1.052600758835487061860357807191014478566024342685906363429295",
+        "T5_BW_chirality": "44.45409534001982398670614247016011235121943174246950114777570159655638",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "45.5451681152534",
+        "delta_m_shell": "0.04515562586559275050514892735716403766598967370773891300165507027614312",
+        "B_pred_MeV": "45.55185172472090379907164920470829086745144575886314642420665166683253",
         "B_AME_MeV": 39.24453,
-        "err_pct": "16.0548186339687"
+        "err_pct": "16.07184931179174966250531751452932898287916209593356186665002072383855"
       },
       {
         "sym": "9Be",
@@ -131,14 +140,14 @@
         "N": 5,
         "A": 9,
         "T1_descended": 0.0,
-        "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "63.4208390122793",
+        "T4_frobenius": "1.0475478489145",
+        "T5_BW_chirality": "63.4208390122793160514064561334500325547173452062728335021607282097709",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "64.5119117875129",
+        "delta_m_shell": "0.04515562586559275050514950431426271884100202364119647856385325509208786",
+        "B_pred_MeV": "64.51354248705940880191160563776429527355834722991402998072458146486298",
         "B_AME_MeV": 58.16498,
-        "err_pct": "10.911946995448"
+        "err_pct": "10.91475057166599027083272878427909880741182007455817482515117887038775"
       },
       {
         "sym": "11B",
@@ -146,14 +155,14 @@
         "N": 6,
         "A": 11,
         "T1_descended": 0.0,
-        "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "82.9161334833823",
+        "T4_frobenius": "1.0475478489145",
+        "T5_BW_chirality": "82.91613348338227939146609582553828569141514097926951021496968718408659",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "84.0072062586159",
+        "delta_m_shell": "0.04515562586559275050514950431426271884100202364119647856385325509208786",
+        "B_pred_MeV": "84.00883695816237214197124532985254841025614300291070669353354043917868",
         "B_AME_MeV": 76.20548,
-        "err_pct": "10.2377496455844"
+        "err_pct": "10.239889517344918486611384437807911057272213337245461550538927651586"
       },
       {
         "sym": "12C",
@@ -161,14 +170,14 @@
         "N": 6,
         "A": 12,
         "T1_descended": 0.0,
-        "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "95.8203041012445",
+        "T4_frobenius": "1.0475478489145",
+        "T5_BW_chirality": "95.82030410124450617919765664761649210546913416374759723298148614191429",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "96.9113768764781",
+        "delta_m_shell": "0.04515562586559275050514950431426271884100202364119647856385325509208786",
+        "B_pred_MeV": "96.91300757602459892970280615193075482431013618738879371154533939700638",
         "B_AME_MeV": 92.16175,
-        "err_pct": "5.15357713636959"
+        "err_pct": "5.155346525022149862725893532321673645649922905044561743837774836723969"
       },
       {
         "sym": "16O",
@@ -176,22 +185,23 @@
         "N": 8,
         "A": 16,
         "T1_descended": 0.0,
-        "T4_frobenius": 1.0475478489145,
-        "T5_BW_chirality": "135.311360675041",
+        "T4_frobenius": "1.0475478489145",
+        "T5_BW_chirality": "135.3113606750409809157795099552934201699197271647163654146439633127938",
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
-        "delta_m_shell": 0.04352492631908613,
-        "B_pred_MeV": "136.402433450275",
+        "delta_m_shell": "0.04515562586559275050514950431426271884100202364119647856385325509208786",
+        "B_pred_MeV": "136.4040641498210736662846594596076828887607291883575618932078165678858",
         "B_AME_MeV": 127.61929,
-        "err_pct": "6.8823008263677"
+        "err_pct": "6.883578610898921830265758403771453803525020172162154901846445261637516"
       }
     ],
     "stats": {
-      "mean_abs_err_pct": "64656.7468438026",
-      "max_abs_err_pct": 475285.9202236209
+      "mean_abs_err_pct": "1056836.078771640146917856240554694728072195529475665722996467515058557",
+      "max_abs_err_pct": "7194969.775807082787237571909986281617375733370243886226120901300737576"
     }
   },
   "caveats": [
+    "PRECISION, measured 2026-08-26 (bean qou-syit): 57 payload fields are raw float64. 33 originate in this producer; 24 are INHERITED from light_isotope_sweep.tr_M_at_q0, whose pipeline is numpy + BlockCache(float(Q0), H_VAL) end to end. Because B_pred_MeV sums T1_descended, EVERY headline number here is float64-derived no matter what this producer does locally — so the 33 were deliberately NOT cosmetically converted. Per AGENTS.md a float64 input poisons the whole result, and dressing the survivors in mpf would hide that rather than fix it. Only the two provenance parameters with exact sources (q_0, m_e_MeV) are recorded exactly. Making this witness genuinely clean means porting light_isotope_sweep off numpy/BlockCache — a real tranche, with 3 module-importers (NOT the 118 a bare-name grep for tr_M_at_q0 returns; that name is shared across modules).",
     "T6 Habiro Laurent expansion deferred — placeholder = 0. k≥3 tail subtractive form only for atoms with entanglement-orders data (D, T, ³He). ⁴He+ k≥3 = 0 (data not yet in witness).",
     "Term 5 = 0 for A < 3 is STRUCTURAL not special-casing: BW formula's bulk/surface ratio inverts at A < 3 (volume subdominant), so BW formula is mathematically invalid there."
   ],

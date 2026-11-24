@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-14T15:51:17.834255+00:00",
-  "commitSha": "202cacdfc863a5b965fe89fb3e291dce6c086688",
+  "computedAt": "2026-11-24T18:02:05.199421+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "symbolic_derivative_matches_pi2_over_240_d4",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 60,
   "computation": "casimir-epsilon-vacuum-probe",
   "scriptFile": "casimir_epsilon_vacuum_probe.py",
-  "scriptHash": "a5f7188be84f",
-  "scriptCommitSha": "320d9339725f528ed863a509653f1651c5e42242",
+  "scriptHash": "c60a958feb58",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -45,9 +45,9 @@
   "description": "Conditional verification of conj:casimir-epsilon-vacuum.  Step 1: sympy-symbolic verification that d/dd[-π²/(720 d³)] = π²/(240 d⁴), discharging the calculus step of the §3b-cond conditional theorem.  Step 2: numerical evaluation of the standard-physics Casimir force per area at four sample plate separations (0.1–5 µm), matching Mohideen–Roy 1998 / Lamoreaux 1997 experimental geometries.  Step 3: explicit enumeration of the three open sub-problems that the conjecture's actual content requires (existence + scaling + prefactor of N_⊙(A, d) as a categorical object).  The conditional implication is rigorous modulo the PlateModeCount class hypothesis; the witness exists to document the rigorous chain and tabulate the numerical targets that any closure must reproduce.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "HBAR_J_S": "1.054571817646156391262428003302280744722826330020413122421923634161456e-34",
+    "HBAR_J_S": "1.054571817646156391262428003302280744722826330020413122421923470598436e-34",
     "C_M_S": "299792458.0",
-    "HBAR_C_J_M": "3.161526773496689987889730141580228614665266341839388401463233993735558e-26",
+    "HBAR_C_J_M": "3.161526773496689987889730141580228614665266341839388401463233503385958e-26",
     "class_axiom_energy_per_area": "-pi**2/(720*d**3)",
     "expected_derivative": "pi**2/(240*d**4)"
   },
@@ -106,7 +106,7 @@
     ],
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
