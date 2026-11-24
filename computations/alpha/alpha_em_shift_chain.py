@@ -56,13 +56,21 @@ from _precision import set_compute_dps  # noqa: E402
 # literal rounded there cannot be recovered by raising dps afterwards.
 set_compute_dps()
 
-# CODATA 2022 1/α, read from the ingested dataset (library/codata-2022,
+# CODATA 2022 1/α, read from the ingested dataset (folio-assistant-sci's
+# library/codata-2022, mounted at the repository root or under folio-assistant/;
 # bean qou-rbdi) rather than typed: the literal here was 137.035999084 — the
 # CODATA-2018 value, labelled 2022. Kept as the exact decimal string, so the
 # mpf carries every published digit.
-_CODATA_2022 = json.loads(
-    (Path(__file__).resolve().parents[2] / "library" / "codata-2022" / "values.json").read_text()
+_REPO = Path(__file__).resolve().parents[2]
+_CODATA_2022_FILE = next(
+    (p for p in (_REPO / "folio-assistant-sci/library/codata-2022/values.json",
+                 _REPO / "folio-assistant/folio-assistant-sci/library/codata-2022/values.json")
+     if p.is_file()),
+    None,
 )
+if _CODATA_2022_FILE is None:
+    raise FileNotFoundError("folio-assistant-sci/library/codata-2022/values.json: mount the platform layers (index.lock.json)")
+_CODATA_2022 = json.loads(_CODATA_2022_FILE.read_text())
 CODATA_ALPHA_INV = mp.mpf(_CODATA_2022["inverse-fine-structure-constant"]["value"])
 
 

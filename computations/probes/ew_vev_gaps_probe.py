@@ -14,7 +14,7 @@ pick among rules by agreement. Rules are fixed in the source before the
 comparison is printed; the comparison is printed last.
 
 Exact arithmetic: mpmath at 60 dps. Inputs: proton-pinned q0 (q_parameter.Q_50_DIGIT_STR),
-G_F and m_p from library/codata-2022/values.json, m_W (PDG 2024, used only for
+G_F and m_p from folio-assistant-sci's library/codata-2022/values.json, m_W (PDG 2024, used only for
 the alpha_2 reading of the loop coupling, an imported measured value, not fit).
 No witness is written.
 """
@@ -33,8 +33,19 @@ sys.path[:0] = [str(ROOT / "computations"), str(ROOT / "computations" / "substra
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
+def codata_values_file() -> Path:
+    """folio-assistant-sci's CODATA 2022 table, at the root mount or under folio-assistant/."""
+    # qou's own copy was dropped 2026-11-24 (owner, "compare, drop qou's if same"):
+    # its values.json and tabular.jsonld were byte-identical to folio-assistant-sci's.
+    for p in (ROOT / "folio-assistant-sci/library/codata-2022/values.json",
+              ROOT / "folio-assistant/folio-assistant-sci/library/codata-2022/values.json"):
+        if p.is_file():
+            return p
+    raise FileNotFoundError("folio-assistant-sci/library/codata-2022/values.json: mount the platform layers")
+
+
 def codata(key: str) -> tuple[mpf, mpf]:
-    vals = json.loads((ROOT / "library/codata-2022/values.json").read_text())
+    vals = json.loads(codata_values_file().read_text())
     e = vals[key]
     return mpf(e["value"]), mpf(e["uncertainty"])
 
@@ -51,7 +62,7 @@ def main() -> int:
         return (x ** n - x ** -n) / (x - 1 / x)
 
     G_F, G_F_sig = codata("fermi-coupling-constant")
-    vals = json.loads((ROOT / "library/codata-2022/values.json").read_text())
+    vals = json.loads(codata_values_file().read_text())
     pkey = next(k for k, e in vals.items()
                 if e.get("quantity") == "proton mass energy equivalent in MeV")
     m_p = mpf(vals[pkey]["value"]) / 1000
