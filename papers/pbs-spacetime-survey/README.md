@@ -1,54 +1,53 @@
-# Quantum Observable Universe: A *PBS Space Time*-Style Survey & Narrated Visual Storyboard Suite
+# Quantum Observable Universe: General-Audience Survey & Illustrated Storyboard Suite
 
-> **Work-in-Progress Status & License:** This survey accompanies the open formal-mathematics monograph *Quantum Observable Universe* ([`litlfred/qou`](https://github.com/litlfred/qou)), released under **CC BY 4.0**. Many algebraic and topological theorems in the monograph are machine-checked in Lean 4 (`0 sorry`), several physical identifications remain conditional on stated conjectures, and multiple empirical comparisons still miss experiment by large margins. Every claim below separates **mathematical constructions inside the model** from **comparisons with physical measurement**.
+> **Scope and License:** This folder accompanies the open mathematics monograph *Quantum Observable Universe* ([`github.com/litlfred/qou`](https://github.com/litlfred/qou)), released under **CC BY 4.0**. Inside the model, names such as *photon*, *electron*, *proton*, *mass*, and *binding energy* refer to defined mathematical shapes built from braided strands; physical science enters where pure unit-free ratios computed from those shapes are compared with laboratory measurements (**CODATA**, **Particle Data Group**, and the **Atomic Mass Evaluation**). Several ratios match experiment closely, several depend on unproved steps, and several miss measurement by wide margins.
 
----
-
-## 1. Purpose & Audience
-
-What happens if you throw away the background stage of three-dimensional space and flowing time, keep only Gottfried Wilhelm Leibniz's relational rules for how observations compose side by side and one after another, and deform classical permutation symmetry by a single real number $q_0 > 1$?
-
-This folder presents a self-contained **12-page (~6,800-word) accessible survey article** paired one-to-one with **nine narrated slide decks and visual storyboards** (~68 slides total). Written in the conceptual, geometry-first, hype-free spirit of *PBS Space Time* (curious, science-literate viewers who appreciate real equations when every symbol is explained in plain English, and who want honest answers about where a theoretical model succeeds and where it breaks), the suite walks from pre-geometric braid strands up through particle physics, nuclear stability chambers, and chemical stoichiometry.
+![The scoreboard: how close model numbers come to measurement](assets/sec09-unified-comparison-chart.svg)
 
 ---
 
-## 2. Two Non-Negotiable Rules of the Game
+## 1. Purpose and Audience
 
-Every page of [`survey-article.md`](survey-article.md) and every narrated slide in [`slides/`](slides/) enforces two foundational disciplines of the repository:
+What happens if you set aside the assumption of an empty four-dimensional coordinate box, keep only the rules for how events follow one another and how neighboring strands cross over or under each other, and control that crossing difference with a single number $q_0 > 1$?
 
-1. **Model vs. Measurement Boundary:** Inside the Quantum Observable Universe (QOU) formalism, words such as *photon*, *electron*, *proton*, *neutron*, *mass*, and *binding energy* name defined algebraic and topological objects in a braided monoidal category, just as a topologist names a three-crossing knot *the trefoil*. Physics enters strictly at the comparison boundary, where dimensionless ratios computed from the algebra are set side by side against experimental tables (**CODATA 2022**, **PDG 2024**, and **AME2020**).
-2. **Zero Curve-Fitting (`NO FITTING EXCEPT CAL-1/2/3`):** Apart from **three calibration inputs** aligning with the three cohomological degrees of freedom of Bring's genus-$4$ surface—the electron mass unit $m_e$ (`CAL-1`), the weak decay scale $\mathcal{D}_\beta$ whose dimensionless substrate parameter $q_0 = 1.1099785827513808\dots$ is pinned from the proton-to-electron mass ratio $m_p / m_e$ (`CAL-2`, making $m_p/m_e$ an **input pin**, never an output prediction), and the orthogonal pion scale $\mathcal{D}_\pi / m_\pi$ (`CAL-3`, which drops out altogether on self-consistent Route-1 electromagnetic hadron splittings)—no continuous or discrete parameter is tuned to match data. Where a parameter-free calculation misses experiment by $211\;\mathrm{ppb}$ or by $69\%$, the miss is left in plain view so the mathematics can be diagnosed rather than patched.
-
----
-
-## 3. Contents & Master Map
-
-### Primary Survey Monograph
-
-- **[`survey-article.md`](survey-article.md)** — Complete 9-section accessible survey (~6,800 words, 11 display equations with plain-English symbol guides, carrying both the live monograph cover-status accuracy table from `sec:authors-note-status` and the November 2026 formal/80-dps multi-scale ledger).
-
-### Per-Section Narrated Slide Decks & Visual Storyboards (`slides/`)
-
-Every section of [`survey-article.md`](survey-article.md) has a dedicated companion deck containing **(a)** minimal on-screen titles and equations, **(b)** full word-for-word host narration written for spoken cadence, and **(c)** frame-by-frame 2D/3D/Manim visual and camera storyboards:
-
-| Sec. | Survey Section | Companion Slide Deck | Slides | Key Formula(s) | Signature Visual / Animation Motif |
-|:----:|:---------------|:---------------------|:------:|:--------------:|:-----------------------------------|
-| **1** | [Space, Time, and Indiscernibles](survey-article.md#1-space-time-and-indiscernibles-replacing-the-background-stage) | [`slides/section-01-relational-space-and-hecke-algebra.md`](slides/section-01-relational-space-and-hecke-algebra.md) | 7 | Eq. (1): Hecke skein $\sigma_i - \sigma_i^{-1} = (q - q^{-1})\,\mathbf{1}$ | Dissolving Newton's 3D coordinate grid into braided world-strands, GNS trace-radical quotienting to $TL_n(q)$, and Nakayama twist loops |
-| **2** | [The Rules of the Game & the Three Calibrations](survey-article.md#2-the-rules-of-the-game-model-versus-measurement-and-the-three-calibrations) | [`slides/section-02-rules-of-the-game-and-three-calibrations.md`](slides/section-02-rules-of-the-game-and-three-calibrations.md) | 7 | Eqs. (2)–(3): $\mathrm{Vol}(4_1)/\hbar_q^2$ & Borromean proton pin $q_0$ | Two ideal hyperbolic tetrahedra gluing into the figure-eight knot $4_1$ complement; pinning $q_0$ on $m_p/m_e$ vs. the $211\;\mathrm{ppb}$ $\mu\text{–}p$ tension |
-| **3** | [Knots, Photons, and Bring's Genus-4 Surface](survey-article.md#3-knots-photons-and-brings-genus-4-surface) | [`slides/section-03-knots-photons-and-brings-surface.md`](slides/section-03-knots-photons-and-brings-surface.md) | 8 | Eq. (4): Chiral photon $\gamma(\varphi)$ & Borromean $V^3 = \gamma_+\gamma_-$ | 4-term photon braid with chiral vertex $\sigma_0\sigma_1^{-1}$, $\gamma\gamma$ pair production into Hopf-link electrons and Borromean baryons, and Bring's $S_5$ surface |
-| **4** | [The Fine-Structure Constant and the Electroweak Architecture](survey-article.md#4-the-fine-structure-constant-and-the-electroweak-architecture) | [`slides/section-04-fine-structure-and-electroweak.md`](slides/section-04-fine-structure-and-electroweak.md) | 8 | Eqs. (5)–(6): $[n]_q$ & Bring–Schwinger $\alpha_{\mathrm{EM}}^{-1}$ fixed point | Torus knots $T(2,9)$ and $T(3,5)$ wrapping a genus-$4$ surface, $2\ln t = -\alpha_{\mathrm{EM}}$, $\sin^2\theta_W^0 = 3/8$ RG flow, and Higgs $125.23\;\mathrm{GeV}$ radial potential |
-| **5** | [Ghost Particles on an Unknot: Neutrinos and Mixing](survey-article.md#5-ghost-particles-on-an-unknot-sweedlers-algebra-neutrinos-and-generations) | [`slides/section-05-neutrinos-sweedler-and-generations.md`](slides/section-05-neutrinos-sweedler-and-generations.md) | 7 | Eq. (7): Sweedler $k=12$ lift $m_e(q_0^2-1)^{12}$ & $\sin^2\theta_{13}$ | Unknot $0_1$ gaining $12.5\text{–}17.6\;\mathrm{meV}$ mass via 12 nilpotent Sweedler hops, $\mathbb{Z}$ vs. $\mathbb{Z}/2$ framing, and Bring $S_4$ branching $4 = 3 \oplus 1$ |
-| **6** | [Inside the Nucleon and Beta Decay](survey-article.md#6-inside-the-nucleon-and-beta-decay-how-honest-failures-drive-discovery) | [`slides/section-06-nucleons-and-beta-decay.md`](slides/section-06-nucleons-and-beta-decay.md) | 7 | Eq. (8): Signed log $Q_\beta$ & Route-1 $p\text{–}n$ EM splitting | 9-strand left-coupled $\gamma\gamma + V^3$ chiral crossing $\sigma_5^{-1}$ (`C2_neg`), spectator cancellation ($0.33 \to 0.764\;\mathrm{MeV}$), and $m_\pi$-free Borromean Coulomb energy |
-| **7** | [Building Atomic Nuclei: Chambers, the Hoyle State, and Alpha Tunneling](survey-article.md#7-building-atomic-nuclei-hidden-colour-toric-chambers-the-hoyle-state-and-alpha-tunneling) | [`slides/section-07-nuclear-chambers-hoyle-and-alpha-decay.md`](slides/section-07-nuclear-chambers-hoyle-and-alpha-decay.md) | 8 | Eq. (9): $\mathcal{C}_{\mathrm{phys}}$ facets & ${}^{210}\mathrm{Po}$ preformation $1/20$ | 6q–12q hidden-colour reconnection, the 73-chamber Gröbner fan zooming into $\mathcal{C}_{\mathrm{phys}}$ (${}^5\mathrm{He}$ drip + Hoyle $3\alpha \to {}^{12}\mathrm{C}$), and ${}^{210}\mathrm{Po}$ WKB barrier |
-| **8** | [The Five-Layer Confinement Tower, Chemistry, and Horizons](survey-article.md#8-the-five-layer-confinement-tower-from-strands-to-chemistry-and-horizons) | [`slides/section-08-five-layer-confinement-tower-and-chemistry.md`](slides/section-08-five-layer-confinement-tower-and-chemistry.md) | 8 | Eqs. (10)–(11): Adiabatic ratio $\eta_k < 1$ & horizon pole $Z_1(s_\star)=1$ | Five-floor algebraic RG elevator ($\eta_2 = 1.8 \times 10^{-6}$ locking nuclei in chemistry), neutron-star $\eta_2 \to 1$ flip, and black-hole jet horizons |
-| **9** | [The Honest Scoreboard and How to Break the Model](survey-article.md#9-the-honest-scoreboard-where-the-math-hits-where-it-fails-and-how-to-break-it) | [`slides/section-09-the-honest-scoreboard-and-open-frontiers.md`](slides/section-09-the-honest-scoreboard-and-open-frontiers.md) | 8 | Full Scoreboard Tables 1–3 (no new equations) | Split-screen precision bullseyes vs. glaring red open gaps (${}^4\mathrm{He}$ Wigner $\mathrm{SU}(4)$, $m_\tau$, $N_{\mathrm{gen}}=3$, $a_0$), plus Lean 4 + 80-dps verification pipeline |
+This suite presents a **nine-section general-audience survey article** paired one-to-one with **nine illustrated slide decks and visual storyboards** (~66 slides total) and **twenty vector diagrams (`assets/*.svg`)**. Written for curious readers who know everyday physics words—*atoms, protons, neutrons, electrons, light, waves, knots, symmetry, energy, and ratios*—without assuming specialist mathematics, every section builds from simple physical pictures first and explains every symbol in plain English.
 
 ---
 
-## 4. Production Notes & Format Roadmap (`qou-w478` / `qou-kdmr`)
+## 2. Two Ground Rules
 
-To keep the repository lightweight, diffable, and free of binary merge conflicts, all slide decks in [`slides/`](slides/) are authored in structured GitHub-Flavored Markdown with explicit `[SLIDE]`, `[ON-SCREEN]`, `[HOST NARRATION]`, and `[VISUAL & ANIMATION STORYBOARD]` blocks. Downstream production teams can compile this source along three independent tracks without modifying the mathematical text:
+Every page of [`survey-article.md`](survey-article.md) and every slide deck in [`slides/`](slides/) follows two strict rules:
 
-- **Visual Rendering Track:** Direct translation of the `[VISUAL & ANIMATION STORYBOARD]` specifications into **Manim Community** Python scenes (for 2D/3D braid isotopes, Gröbner fan cones, and RG plots), **Blender** geometry nodes (for hyperbolic ideal tetrahedra and Bring's genus-$4$ surface), or **Reveal.js / PowerPoint (`.pptx`)** lecture decks.
-- **Audio Track:** Word-for-word human host recording (~55–65 minutes across all nine episodes at 145 words/minute, or a single condensed 25-minute flagship video from Sections 1–4 and 7–9), with optional text-to-speech animatic timing tests during storyboarding.
-- **Verification Provenance:** Every numerical figure cited in the prose and narration is traceable to 80-decimal-place `mpmath` witnesses (`computations/**/*.witness.json`, zero `float64`) and Lean 4.24.0 modules (`folio/quantum-observable-universe/lean/QOU/`).
+1. **Mathematical Model vs. Laboratory Comparison:** Calling a specific three-strand braid "the electron" or "the proton" defines a mathematical object inside the model. Empirical claims live strictly at the comparison boundary where unit-free ratios output by the model are placed beside experimental tables.
+2. **Zero Curve-Fitting (Three Calibration Inputs Only):** Apart from **three measured inputs**—the electron mass $m_e$ (setting the mega-electronvolt energy unit), the proton-to-electron mass ratio $m_p / m_e$ (used as an **input pin** to solve for $q_0 = 1.10997858275\dots$, never claimed as a prediction), and the pion mass $m_\pi$ (setting the nuclear contact distance, which drops out altogether on pure proton–neutron electric differences)—no exponent, cutoff, or knot choice is tuned to fit data. Where a calculation misses measurement by $211$ parts per billion or by $69\%$, the discrepancy is shown directly so missing steps remain visible.
+
+---
+
+## 3. Contents and Illustrated Deck Map
+
+### General-Audience Survey Article
+
+- **[`survey-article.md`](survey-article.md)** — Complete 9-section survey with 11 plain-English equations, 20 inline vector diagrams, a unified experimental comparison table, and 6 major unsolved mathematical questions.
+
+### Per-Section Illustrated Slide Decks & Storyboards (`slides/`)
+
+Each section of [`survey-article.md`](survey-article.md) has a companion deck containing **(a)** concise on-screen titles and equations, **(b)** rendered inline `.svg` visuals from [`assets/`](assets/), **(c)** full word-for-word host narration written for spoken clarity, and **(d)** 2D/3D animation directions:
+
+| Sec. | Survey Section | Illustrated Slide Deck | Slides | Key Visuals |
+|:----:|:---------------|:-----------------------|:------:|:------------|
+| **1** | [Space, Time, and Indiscernibles](survey-article.md#1-space-time-and-indiscernibles-replacing-the-background-stage) | [`slides/section-01-relational-space-and-hecke-algebra.md`](slides/section-01-relational-space-and-hecke-algebra.md) | 7 | [`sec01-grid-to-braids.svg`](assets/sec01-grid-to-braids.svg), [`sec01-skein-relation.svg`](assets/sec01-skein-relation.svg), [`sec01-loop-quotient.svg`](assets/sec01-loop-quotient.svg) |
+| **2** | [The Rules of the Game and the Three Calibrations](survey-article.md#2-the-rules-of-the-game-model-versus-measurement-and-the-three-calibrations) | [`slides/section-02-rules-of-the-game-and-three-calibrations.md`](slides/section-02-rules-of-the-game-and-three-calibrations.md) | 7 | [`sec02-model-vs-measurement.svg`](assets/sec02-model-vs-measurement.svg), [`sec02-figure-eight-tetrahedra.svg`](assets/sec02-figure-eight-tetrahedra.svg) |
+| **3** | [Knots, Photons, and a Four-Holed Symmetric Surface](survey-article.md#3-knots-photons-and-a-four-holed-symmetric-surface) | [`slides/section-03-knots-photons-and-brings-surface.md`](slides/section-03-knots-photons-and-brings-surface.md) | 8 | [`sec03-photon-and-borromean.svg`](assets/sec03-photon-and-borromean.svg), [`sec03-brings-surface-pentagons.svg`](assets/sec03-brings-surface-pentagons.svg) |
+| **4** | [The Fine-Structure Constant and the Electroweak Forces](survey-article.md#4-the-fine-structure-constant-and-the-electroweak-forces) | [`slides/section-04-fine-structure-and-electroweak.md`](slides/section-04-fine-structure-and-electroweak.md) | 8 | [`sec04-torus-knots-alpha.svg`](assets/sec04-torus-knots-alpha.svg), [`sec04-electroweak-higgs-rg.svg`](assets/sec04-electroweak-higgs-rg.svg) |
+| **5** | [Ghost Particles on a Simple Loop: Neutrinos and Matter Families](survey-article.md#5-ghost-particles-on-a-simple-loop-neutrinos-and-matter-families) | [`slides/section-05-neutrinos-sweedler-and-generations.md`](slides/section-05-neutrinos-sweedler-and-generations.md) | 7 | [`sec05-unknot-neutrino-framing.svg`](assets/sec05-unknot-neutrino-framing.svg), [`sec05-generations-and-pmns.svg`](assets/sec05-generations-and-pmns.svg) |
+| **6** | [Inside the Nucleon and Beta Decay](survey-article.md#6-inside-the-nucleon-and-beta-decay-how-honest-failures-drive-discovery) | [`slides/section-06-nucleons-and-beta-decay.md`](slides/section-06-nucleons-and-beta-decay.md) | 7 | [`sec06-beta-decay-nine-strand.svg`](assets/sec06-beta-decay-nine-strand.svg), [`sec06-proton-neutron-em.svg`](assets/sec06-proton-neutron-em.svg) |
+| **7** | [Building Atomic Nuclei: Shared Colour, 73 Regions, and Alpha Decay](survey-article.md#7-building-atomic-nuclei-shared-colour-the-73-stability-regions-stellar-carbon-and-alpha-decay) | [`slides/section-07-nuclear-chambers-hoyle-and-alpha-decay.md`](slides/section-07-nuclear-chambers-hoyle-and-alpha-decay.md) | 8 | [`sec07-hidden-colour-deuteron.svg`](assets/sec07-hidden-colour-deuteron.svg), [`sec07-nuclear-chambers-hoyle.svg`](assets/sec07-nuclear-chambers-hoyle.svg), [`sec07-po210-alpha-tunneling.svg`](assets/sec07-po210-alpha-tunneling.svg) |
+| **8** | [Five Layers of Matter: Chemistry and Horizons](survey-article.md#8-five-layers-of-matter-why-chemistry-exists-and-what-happens-at-horizons) | [`slides/section-08-five-layer-confinement-tower-and-chemistry.md`](slides/section-08-five-layer-confinement-tower-and-chemistry.md) | 8 | [`sec08-five-layer-tower.svg`](assets/sec08-five-layer-tower.svg), [`sec08-horizon-punctures.svg`](assets/sec08-horizon-punctures.svg) |
+| **9** | [The Scoreboard: Where the Model Hits, Fails, and Can Be Tested](survey-article.md#9-the-scoreboard-where-the-model-hits-where-it-fails-and-how-to-test-it) | [`slides/section-09-the-honest-scoreboard-and-open-frontiers.md`](slides/section-09-the-honest-scoreboard-and-open-frontiers.md) | 7 | [`sec09-unified-comparison-chart.svg`](assets/sec09-unified-comparison-chart.svg), [`sec09-unsolved-questions-map.svg`](assets/sec09-unsolved-questions-map.svg) |
+
+---
+
+## 4. Reproducing the Visuals and Adapting the Decks
+
+- **Vector Visual Generator:** Run `python3 papers/pbs-spacetime-survey/scripts/render_storyboard_visuals.py` (`mpmath` at 60 decimal places, zero floating-point rounding) to regenerate all 20 `.svg` frames in [`assets/`](assets/).
+- **Presentation Formats:** Each Markdown file in [`slides/`](slides/) is structured with `[On-Screen]`, `[Visual Frame]`, `[Host Narration]`, and `[Animation Notes]` blocks so it can be viewed directly on GitHub, exported to slide decks (`.pptx` / Reveal.js), or animated in Manim and Blender.
