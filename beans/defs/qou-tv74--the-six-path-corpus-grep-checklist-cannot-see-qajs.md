@@ -1,10 +1,11 @@
 ---
 # qou-tv74
 title: The six-path corpus-grep checklist cannot see .qa.json agent verdicts — a prior analysis of the UIC table sat there for four weeks
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-19T07:18:29Z
-updated_at: 2026-11-22T21:59:12Z
+updated_at: 2026-11-24T09:03:20Z
 parent: qou-nu9d
 ---
 

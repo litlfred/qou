@@ -1,10 +1,11 @@
 ---
 # qou-nq4h
 title: 'Citation hygiene rules: all authors for ≤5-author papers; verify before adding'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-11-23T16:24:49Z
-updated_at: 2026-11-23T16:24:49Z
+updated_at: 2026-11-24T09:03:19Z
 parent: qou-tt2u
 ---
 

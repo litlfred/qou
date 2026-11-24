@@ -1,13 +1,13 @@
 ---
 # qou-bgur
 title: 'Orbit3Braid docstring: size-3 orbit characterised by ADJACENCY, should be COMPARABILITY'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T02:59:25Z
-updated_at: 2026-11-24T08:06:22Z
+updated_at: 2026-11-24T09:03:22Z
 parent: qou-s028
 ---
 
