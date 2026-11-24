@@ -1,14 +1,13 @@
 ---
 # qou-coyy
 title: 'GAP: witness-reproducibility-check reports allPassed true while recording 4 drifting builders'
-status: in-progress
-pr: 8350
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T14:28:41Z
-updated_at: 2026-10-04T15:20:34Z
+updated_at: 2026-11-24T09:20:39Z
 parent: qou-5vkl
 ---
 
@@ -90,3 +89,5 @@ Re-measure first: the recorded verdicts are from 2026-07-07.
 
 ## Round 57 Implementation (PR #8350)
 - Implemented on branch `claude/round57-trd0-9nnz-fixes` (commit `35175f892e4827e826a23a3d007073dd800ff733`, https://github.com/litlfred/qou/pull/8350).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

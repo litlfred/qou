@@ -1,13 +1,13 @@
 ---
 # qou-dq2q
 title: 'T2: closed-form the sibling''s cyclotomic-coefficient-asymmetry odd datum — run it over the trace field (cubic disc −23) / its ℚ(√−23) resolvent, NOT the ℚ(√−7) ladders [corrected 2026-08-11, qou-ynff]'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T00:05:02Z
-updated_at: 2026-11-15T23:50:00Z
+updated_at: 2026-11-24T09:21:01Z
 parent: qou-avtq
 ---
 
@@ -30,3 +30,5 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
   For the 1-loop invariant $P_1 = (-139 + 178\xi - 65\xi^2)/(4\cdot 23)$, a factor of $23$ cancels in the numerator, yielding $\Delta_{\mathrm{odd}}(P_1) = \frac{11(-10 + 7\xi_0 - 8\xi_0^2)}{4\cdot 23^2}\sqrt{-23} \approx -0.2111457559i$.
 - **Masbaum Cyclotomic Coefficient Asymmetry:** For $C_{5_2,1}(q) = -(q^2+q^4)$, the normalized bar-odd/bar-even ratio is $\rho_1(q) = O_1(q)/E_1(q) = \frac{q^3-q^{-3}}{q^3+q^{-3}} = \tanh(3\ln q) \approx 0.30318397$ at $q_0$, identically equal to the $H_3$ bare content asymmetry $x(c=3)$. Neither matches `S_muon`, `S_proton`, `Im_Vb`, or `X_req` without fitting.
 - **Lean 4 Formalization:** Added 8 sorry-free theorems to `folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoSumRuleIntegrand.lean` (`fiveTwo_cubic_x_of_z_factorization`, `fiveTwo_deriv_bezout_identity`, `fiveTwo_resolvent_sq_poly_identity`, `fiveTwo_saddle_diff_sq`, `fiveTwo_saddle_diff_mul_deriv_sq_eq_neg_23`, `fiveTwo_barOdd_resolvent_basis`, `fiveTwo_oneLoop_barOdd_factorization`, `masbaum_c52_one_barOdd_ratio`, `disc_neg23_neg7_not_int_sq`). Held at `status: in-progress` pending PR #8063 merge and owner closure review.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8063 (50b246419cd).

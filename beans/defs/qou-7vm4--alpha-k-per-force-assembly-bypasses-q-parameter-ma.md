@@ -1,14 +1,14 @@
 ---
 # qou-7vm4
 title: 'alpha_k_per_force_assembly bypasses q_parameter: manifest says ideal_muon, code imports q_at directly (proton), and the except-fallback silently picks muon if the import fails'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-11T10:31:47Z
-updated_at: 2026-10-04T15:11:51Z
+updated_at: 2026-11-24T09:20:59Z
 parent: qou-2002
 ---
 
@@ -203,3 +203,5 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 - **Verified on `main` & Completed in PR #8082 (`1076c65f2a`):**
   1. Verified on `main` (`7e6851f95b`, `0616923f37`, `fd81264865`): `alpha_k_per_force_assembly` is listed under `physical_proton` in `computations/q0_anchor_manifest.json`, `_manifest_tag()` reads the manifest dynamically, and the retired muon fallback raises `RuntimeError`.
   2. Closed the remaining latent bypass (item `(b)`) in `computations/alpha_k_per_force_assembly.py` in PR [`litlfred/qou#8082`](https://github.com/litlfred/qou/pull/8082) (`1076c65f2a`): `alpha_k_per_force_assembly.py` now routes anchor resolution through `qou_substrate.witness.resolve_q0_anchor(__file__)`, dispatching `q_muon_at()` when resolved to `muon` and `q_at()` when resolved to `proton` (leaving `Q0`, `Q0_SOURCE`, and `Q0_ANCHOR` unchanged under `physical_proton`).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8082 (2211d71b8eb).

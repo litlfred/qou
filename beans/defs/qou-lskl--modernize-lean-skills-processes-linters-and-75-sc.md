@@ -1,11 +1,11 @@
 ---
 # qou-lskl
 title: 'Lean KG Stage 1b: Modernize All 18 Lean/KG Skills, CI Processes, `#lint` Gates & Consolidate the 75 `scripts/*lean*` Tools for Mathlib4 / Reservoir Best Practices'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:27:30Z
-updated_at: 2026-11-24T00:25:56Z
+updated_at: 2026-11-24T09:20:35Z
 parent: qou-lnkg
 ---
 
@@ -36,3 +36,5 @@ parent: qou-lnkg
 - Created `skills/local/lean-build-hygiene.{md,ts}` and `scripts/lean/README.md` helper router.
 - Modernized 25 Lean/proof/KG skills + 6 `.ts` `SkillDefinition` manifests (`0` broken relative links, `0` broken script paths; purged `True := by trivial` vacuity advice in `proof-triage.md`, inline `sorry` in `lean-q-substitution.md`, and stale `.tex` / `content/` / `.github/scripts/*` / `proof-objects.json` / bare `lake build` guidance; wired `lean-kg-detangler.py` and `lean-best-practices-lint.py`).
 - Ready PR: https://github.com/litlfred/qou/pull/9236 (holding merge for owner OK).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9236 (e54c69cdd49).

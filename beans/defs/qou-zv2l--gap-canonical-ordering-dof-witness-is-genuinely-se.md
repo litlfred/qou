@@ -1,14 +1,13 @@
 ---
 # qou-zv2l
 title: 'GAP: canonical-ordering-dof witness is genuinely self-stale on scriptHash (producer re-run needed)'
-status: in-progress
-pr: 8333
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T12:56:59Z
-updated_at: 2026-11-22T21:18:22Z
+updated_at: 2026-11-24T09:20:42Z
 parent: qou-5vkl
 ---
 
@@ -96,3 +95,5 @@ Was in-progress with no bean update since 2026-08-10 and no main commit naming i
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The drift this bean was filed for was drained by PR #4935. Measured today it has drifted again: `computations/probes/canonical-ordering-dof.witness.json` records `scriptHash 90067a088722`, the live `canonical_ordering_dof_probe.py` hashes to `ae5c62009a63`. Not refreshed here (witness refreshes are outside this hygiene pass; see AGENTS.md "diff the producer first"). Left open because the title is true again.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

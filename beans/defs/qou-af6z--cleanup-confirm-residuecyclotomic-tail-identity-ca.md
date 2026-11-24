@@ -1,7 +1,7 @@
 ---
 # qou-af6z
 title: 'Cleanup: confirm residue↔cyclotomic-tail identity carries OPEN banner (not ''proved'') in all siblings; add missing where absent'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-18T17:09:31Z
-updated_at: 2026-11-22T21:58:00Z
+updated_at: 2026-11-24T09:20:49Z
 parent: qou-j5ch
 ---
 
@@ -46,3 +46,5 @@ Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"
 ## 2026-11-22T22:05:00Z: PR #9135 merged
 
 Merged by rebase on the owner instruction "Merge those that are ready" (main 5167911a6).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9135 (5167911a6db).

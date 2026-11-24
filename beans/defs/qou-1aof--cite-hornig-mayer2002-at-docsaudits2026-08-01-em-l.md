@@ -1,13 +1,13 @@
 ---
 # qou-1aof
 title: Cite [hornig-mayer2002] at docs/audits/2026-08-01-em-linking-reads-round1.md
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:09Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T09:20:54Z
 parent: qou-mub3
 ---
 
@@ -32,3 +32,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8475, closed o
 ## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
 
 Done on branch `claude/expo-chapter-drain-2026-11-21` (6aed9705a): `[hornig-mayer2002]` written where Round 4 of `docs/audits/2026-08-01-em-linking-reads-round1.md` quotes the antisymmetry sentence. Key resolves to `library/arxiv-physics-0203048v1`. Page locator: the audit says p. 11 (PDF), the bean says pp. 715–716 (journal); both left as written.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8889 (a4bdf12e089).

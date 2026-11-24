@@ -1,13 +1,13 @@
 ---
 # qou-37mj
 title: Cite [bugeaud2011] at folio/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterfa…
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:49Z
-updated_at: 2026-11-22T21:00:00Z
+updated_at: 2026-11-24T09:20:50Z
 parent: qou-mub3
 ---
 
@@ -29,3 +29,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8475, closed o
 ## 2026-11-22 — done in draft PR #9116 (issue #9115)
 
 Citation added on branch `claude/library-cites-2026-11-22`, locator read from the held PDF. Close when #9116 merges.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9116 (3885f1e31ec).

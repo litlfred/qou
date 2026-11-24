@@ -1,14 +1,13 @@
 ---
 # qou-chx8
 title: Cite 2412.04241v2.pdf at folio/quantum-observable-universe/lean/QOU/Machinery/HabiroZetaFamily.…
-status: in-progress
-pr: 8335
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:43Z
-updated_at: 2026-11-22T21:00:00Z
+updated_at: 2026-11-24T09:20:51Z
 parent: qou-ysb7
 ---
 
@@ -33,3 +32,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8335, closed o
 ## 2026-11-22 — done in draft PR #9116 (issue #9115)
 
 Citation added on branch `claude/library-cites-2026-11-22`, locator read from the held PDF. Close when #9116 merges.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9116 (3885f1e31ec).

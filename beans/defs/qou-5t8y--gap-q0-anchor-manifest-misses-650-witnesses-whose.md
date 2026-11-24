@@ -1,14 +1,13 @@
 ---
 # qou-5t8y
 title: 'GAP: q0_anchor_manifest misses 650 witnesses whose producer filename is SUFFIXED (_probe/_derivation/_test) — _producer_stem matches the witness stem exactly, so fbor-normalisation-barsymmetry.witness.json never finds fbor_normalisation_barsymmetry_probe.py. Fix must re-key the manifest on the PRODUCER filename (q_parameter matches Path(sys.argv[0]).stem), and needs a disambiguation policy: a prefix match is ambiguous (stem ''foo'' would match ''foo_bar_probe.py'').'
-status: in-progress
-pr: 8333
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T14:46:06Z
-updated_at: 2026-10-04T15:20:19Z
+updated_at: 2026-11-24T09:20:39Z
 parent: qou-5vkl
 ---
 
@@ -58,3 +57,5 @@ as muon at all**. Same shape as blind spot 1, which hid 108 such producers.
 
 ## Round 56 Implementation (PR #8333)
 - Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

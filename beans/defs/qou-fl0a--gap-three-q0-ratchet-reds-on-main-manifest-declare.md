@@ -1,14 +1,13 @@
 ---
 # qou-fl0a
 title: 'GAP: three q0-ratchet REDs on main — manifest declared, WitnessBuilder has no script path, declaration inert'
-status: in-progress
-pr: 8307
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T18:04:28Z
-updated_at: 2026-11-17T10:37:00Z
+updated_at: 2026-11-24T09:20:40Z
 parent: qou-5vkl
 ---
 
@@ -221,3 +220,5 @@ into #6062, whose body states these five are excluded.
 ## Round 55 Update (2026-11-17, PR #8307)
 
 Stamped `q0_comparison` on `computations/probes/tau_dictionary_fricke_spin_probe.py` and `computations/probes/qbeta_habiro_integrality_kill_test.py`, drained raw float64 assertion/print arguments to `mpf`/`mp.nstr`, and regenerated both witnesses with `q0Anchor: "comparison"` and `0` raw float64 numbers (PR #8307, commit `cf8ca11962518083f27bc0a2ce60447359b28381`).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

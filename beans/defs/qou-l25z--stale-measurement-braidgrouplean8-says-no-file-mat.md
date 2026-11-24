@@ -1,13 +1,13 @@
 ---
 # qou-l25z
 title: 'STALE MEASUREMENT: BraidGroup.lean:8 says no file matches *braid* in Mathlib — four do (braided monoidal categories); verdict correct, evidence wrong'
-status: in-progress
+status: completed
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-11-22T22:05:00Z
+updated_at: 2026-11-24T09:20:49Z
 parent: qou-o9ge
 ---
 
@@ -61,3 +61,5 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F6, §U3.
 **Verdict: APPLIES.** Corpus-derived comment fix.
 
 Fixed on `claude/qft-math-cores-2026-11-22` (ec47dde8f): BraidGroup.lean now says 0 files match `BraidGroup` and names the four `*braid*` category files. Re-measured 2026-11-22. Completes when merged.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9148 (47bc8300cac).

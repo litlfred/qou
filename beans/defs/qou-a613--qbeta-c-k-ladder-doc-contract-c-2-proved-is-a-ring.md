@@ -1,13 +1,13 @@
 ---
 # qou-a613
 title: 'qbeta c_k ladder doc contract: mba sidecar names a canonical c_k compute that records no c_k (F1/F2 superseded by the red-team audit; F3a RETRACTED)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T16:47:05Z
-updated_at: 2026-11-15T17:33:08Z
+updated_at: 2026-11-24T09:21:01Z
 parent: qou-wxhi
 ---
 
@@ -183,3 +183,5 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 
 - **Ruling executed (`Q-WXHI-1 = 1`)**: Repointed `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-ck-truncation-ladder.md` and `mba-sidecar-ck-truncation-ladder.ts` to the canonical tiered $c_k$ producer `computations/qbeta/qbeta_ck_cache.py` (`computations/qbeta/qbeta-ck-cache.witness.json`, explicitly noting `markov_convention: "C"` pending `qou-cds1` / `qou-wxhi`) with `computations/q_beta_predicted.py` (`computations/q-beta-predicted.witness.json`) as the downstream $N=2$ consumer.
 - **PR**: [`litlfred/qou#8058`](https://github.com/litlfred/qou/pull/8058) (`cc8046889bb857a933d60f20c74e29d4c8739d8a`). Status kept `in-progress` pending PR merge.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8058 (54cc56151ab).

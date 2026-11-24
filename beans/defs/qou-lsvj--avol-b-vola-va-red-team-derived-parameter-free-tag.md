@@ -1,13 +1,13 @@
 ---
 # qou-lsvj
 title: 'avol B_vol=a_V*A red-team: DERIVED-parameter-free tag is dishonest (contradicts own 2026-08-08 deprecation banner)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T19:38:38Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T09:20:56Z
 parent: qou-q4oa
 ---
 
@@ -38,3 +38,5 @@ Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/pa
 Ruling check: the dashboard is EXPLORATORY and B_gate/B_vol are deprecated; whether its trace is the two-term Lagrangian trace was not checked and does not affect the legend finding.
 
 Fix applied on owner card (2026-11-21) in PR #8825 (branch claude/paper-structure-drain-2026-11-21). Close when it merges.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8825 (eff74b7212b).

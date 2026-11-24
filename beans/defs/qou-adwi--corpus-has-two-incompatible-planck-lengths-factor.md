@@ -1,14 +1,14 @@
 ---
 # qou-adwi
 title: Corpus has TWO incompatible Planck lengths (factor t_P ~ 10.1); the Lean hardened a prose '~' into '='
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-09T11:10:54Z
-updated_at: 2026-11-22T21:54:26Z
+updated_at: 2026-11-24T09:20:47Z
 parent: qou-10v9
 ---
 
@@ -71,3 +71,5 @@ forbids.
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9207 (5a350c1a535).

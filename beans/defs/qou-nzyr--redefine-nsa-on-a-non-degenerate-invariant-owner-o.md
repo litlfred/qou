@@ -1,11 +1,11 @@
 ---
 # qou-nzyr
 title: Redefine NS(A) on a non-degenerate invariant (owner option 2)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-13T00:10:17Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T09:21:05Z
 parent: qou-vo9t
 ---
 
@@ -23,3 +23,5 @@ Redefined `NS(A)` in `def:ns-regular-qou` (`fluid-dynamics/ns-regular-qou.{md,ts
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 The redefinition landed with PR #7982 (merged 2026-11-15). Nothing further pending in this bean except confirmation; candidate for completion (owner's call).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #7982 (03a6a610c6f).

@@ -1,14 +1,13 @@
 ---
 # qou-i2q5
 title: 13 references to computations/_deprecated/hecke_core_legacy.py — a path that never existed, from a split blocked on owner OK since 2026-05-24
-status: in-progress
-pr: 8307
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:51:30Z
-updated_at: 2026-11-17T10:37:00Z
+updated_at: 2026-11-24T09:20:40Z
 parent: qou-5vkl
 ---
 
@@ -73,3 +72,5 @@ touch the classification question.
 ## Round 55 Update (2026-11-17, PR #8307)
 
 Updated the module docstrings and comments in `tools/pyhecke/python/pyhecke/{partition,tower,trace,wedderburn}.py` from the nonexistent `_deprecated/hecke_core_legacy.py` path to `computations/hecke_core_legacy.py` (PR #8307, commit `cf8ca11962518083f27bc0a2ce60447359b28381`).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

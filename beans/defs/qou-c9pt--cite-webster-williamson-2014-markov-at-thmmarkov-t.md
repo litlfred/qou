@@ -1,13 +1,13 @@
 ---
 # qou-c9pt
 title: Cite [webster-williamson-2014-markov] at thm:markov-trace-factorization
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:55Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T09:20:55Z
 parent: qou-mub3
 ---
 
@@ -30,3 +30,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8486, closed o
 
 
 2026-11-21 (expo-chapter, eb40e384e, PR #8889): moved to markov-trace-frobenius-selection (the block stating tr_M = sum y_lambda chi_lambda) with locator Cor. 13, p. 13 of the held arXiv:0911.4494v2, verified by pdftotext. Removed from hecke-markov-interpretation cites. NOT placed at thm:markov-trace-factorization: that block is the product factorisation of a grouped word, not a character expansion. Stays todo until #8889 merges.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8889 (a4bdf12e089).

@@ -1,14 +1,13 @@
 ---
 # qou-i3wb
 title: 'pyhecke.atom: nucleon_gen_chains'' docstring claims it matches build_nucleon_nf, and it does not'
-status: in-progress
-pr: 8290
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T18:28:14Z
-updated_at: 2026-11-21T14:33:40Z
+updated_at: 2026-11-24T09:20:41Z
 parent: qou-5vkl
 ---
 
@@ -89,3 +88,5 @@ Updated `nucleon_gen_chains` and `build_nucleon_nf` docstrings in `tools/pyhecke
 ## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
 
 Still open on main: `tools/pyhecke/python/pyhecke/atom.py` `nucleon_gen_chains` docstring at `2ae54ab401` still says "matching build_nucleon_nf". The docstring fix is on open PR #8290 (not merged). Not duplicated here.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

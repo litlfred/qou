@@ -1,14 +1,13 @@
 ---
 # qou-58zw
 title: 'Two untrustworthiness classes no existing audit covers: tolerance-below-arithmetic-floor, and producers that SHRANK'
-status: in-progress
-pr: 8350
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T18:12:32Z
-updated_at: 2026-10-04T15:14:16Z
+updated_at: 2026-11-24T09:20:38Z
 parent: qou-5vkl
 ---
 
@@ -709,3 +708,5 @@ Was in-progress with no bean update since 2026-08-30 and no main commit naming i
 
 ## Round 57 Implementation (PR #8350)
 - Implemented on branch `claude/round57-trd0-9nnz-fixes` (commit `35175f892e4827e826a23a3d007073dd800ff733`, https://github.com/litlfred/qou/pull/8350).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

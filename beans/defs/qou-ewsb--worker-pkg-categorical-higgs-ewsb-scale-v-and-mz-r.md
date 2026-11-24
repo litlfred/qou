@@ -1,11 +1,11 @@
 ---
 # qou-ewsb
 title: 'SM/Eightfold Worker Pkg 3 (Q-Gap-9): Categorical Higgs Mechanism, EWSB Scale v_EW & m_H, and UV-to-M_Z RG Thresholds (sin^2 theta_W, alpha_s)'
-status: in-progress
+status: completed
 type: feature
 priority: high
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T23:28:45Z
+updated_at: 2026-11-24T09:20:43Z
 parent: qou-sm8w
 ---
 
@@ -25,3 +25,5 @@ parent: qou-sm8w
   - Remediated `QOU.BraidKnot.catalanG` decimal literal in `HiggsCategoricalMassFormula.lean` to exact `QOU.Archimedean.Catalan_constant = Cl_2 (Real.pi / 2)` + certified rational bracket `(87/100, 96/100)` (`qou-3nva`).
   - Added `QOU/StandardModel/ElectroweakSweedlerScaleAndRGThresholds.lean` proving Sweedler `(q^2-1)^k` ↔ `(G_F, v_EW)` bridges, `EwVevGaps` loop compatibility (`0 < (q^2-1)^4 < 1/256 < 1/30`) vs tree non-coincidence (`ewDressedTreeComplexity q < 287 < 300 < (q^2-1)^{-4}`), `su(2)_L + u(1)_Y -> u(1)_EM` Goldstone rank `3`, Higgs potential stability (`lambda_H > 0, m_H^2 = 2 lambda_H v^2`), representation-derived 1-loop `(41/10, -19/6, -7)` & 2-loop `b_{ij}` matrix, and `sin^2 theta_W^0 = 3/8` Georgi-Quinn-Weinberg / coupling-triangle RG theorems.
 - **80-dps Probe & Stamped Witness**: `computations/probes/sm8w_ewsb_vew_mh_mz_rg/sm8w_ewsb_vew_mh_mz_rg_probe.{py,witness.json}` (`5/5` assertions passed, `scriptCommitSha = 9f5084e881b`, synced `sm-params-higgs.{md,ts}`). Held `in-progress` per reviewer-separated closure discipline pending owner merge of #9227.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9227 (7e2ce8e1918).

@@ -1,13 +1,13 @@
 ---
 # qou-o001
 title: Cite [komendarczyk2008] at docs/audits/2026-08-01-em-linking-reads-round1.md
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:11Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T09:20:55Z
 parent: qou-mub3
 ---
 
@@ -30,3 +30,5 @@ Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-v
 ## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
 
 Done on branch `claude/expo-chapter-drain-2026-11-21` (6aed9705a): `[komendarczyk2008]` written at the Round 3 heading of `docs/audits/2026-08-01-em-linking-reads-round1.md`, where Thm 6.1 / Rem 2.6 are stated. Key resolves to `library/arxiv-0808.1533v3`.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8889 (a4bdf12e089).

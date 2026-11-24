@@ -1,7 +1,7 @@
 ---
 # qou-vsho
 title: Cite [sauloy2004] at QOU/MathlibExt/RSZIsoformalInterface.lean — Prop 4.1 gives the algebraic 'one slope ⇒ End^{>0}(M0)=0 ⇒ trivial Stokes sheaf' behind rszIsoformalDim_one
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - qdiff-stokes
     - reorg-2026-10-04
 created_at: 2026-09-07T08:36:01Z
-updated_at: 2026-11-22T21:00:00Z
+updated_at: 2026-11-24T09:20:53Z
 parent: qou-mub3
 ---
 
@@ -28,3 +28,5 @@ Not claimed: anything about C1's global connection matrix (qou-wgnx), which is n
 ## 2026-11-22 — done in draft PR #9116 (issue #9115)
 
 Citation added on branch `claude/library-cites-2026-11-22`, locator read from the held PDF. Close when #9116 merges.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9116 (3885f1e31ec).

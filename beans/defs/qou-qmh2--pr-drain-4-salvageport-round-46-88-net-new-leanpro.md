@@ -1,11 +1,11 @@
 ---
 # qou-qmh2
 title: 'PR-Drain-4: Salvage/Port Round 46-88 Net-New Lean+Probe Batches — QBeta, Dilog/Stokes, MassTheory & Foundations (91 PRs: 29 in 4A + 62 in 4B, #8139..#8512)'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:55:52Z
-updated_at: 2026-11-24T02:28:18Z
+updated_at: 2026-11-24T09:20:37Z
 parent: qou-xip2
 ---
 
@@ -114,3 +114,5 @@ parent: qou-xip2
 - **`#8139`** (`claude/r46-ni4b-tqcp-colour-tower-cp`, files=4, lean_mod=0, lean_new=1, py=1): feat(sm): formalize 3-strand Hecke colour obstruction (qou-ni4b) & full-tower CP parity (tqcp)
 
 All 91 legacy PRs in PR-Drain-4 triaged at b11dd7654d5: 6 salvaged into PR #9241 (13 Lean modules, 93 theorems, 7 80-dps witnesses), 85 classified in ledger.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9241 (a053f8c64bb).

@@ -1,13 +1,13 @@
 ---
 # qou-0e66
 title: 'c3-borel #5 (diagrammatic route): test whether the QOU braid-word -> (m,ℓ)/Stokes-entry selection IS the McPhail-Snyder (arXiv:2601.05136) per-edge integer state-sum k∈Z^E over crossings, specialised at q₀. This is the DIAGRAMMATIC realisation of the qnnq braid->data map (complement to Fantini-Wheeler''s NZ-datum route): k attached to the knot diagram, (µ,λ)=cusp holonomy, worked for the 5₂ Kashaev invariant. Ref mcphail-snyder2026 + McPhail-Snyder–Reshetikhin holonomy R-matrices. Parent qou-wmkb; bears on qou-qnnq. No fit, nothing wired.'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T18:47:21Z
-updated_at: 2026-11-15T23:50:00Z
+updated_at: 2026-11-24T09:20:59Z
 parent: qou-avtq
 ---
 
@@ -44,3 +44,5 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
   3. **Habiro / $q$-Pochhammer real-locus divergence (`qPoch_not_tendsto_zero_of_one_lt`):** At the archimedean pin $q_0 > 1$, the cyclotomic $q$-Pochhammer factor $(q_0; q_0)_n$ does not tend to $0$, ruling out naive real-locus series continuation of the root-of-unity state sum.
   4. **Modular-double dual suppression (`modular_reciprocity`, `dual_lt_of_y_lt_one`):** Under Faddeev's modular double ($b^2 = (\ln q_0)/(2\pi i)$), the dual parameter $\tilde{q} = \exp(-4\pi^2/\ln q_0) \approx 5.93 \times 10^{-165}$ is non-perturbatively suppressed.
 - Held at `status: in-progress` pending PR #8063 merge and owner closure review.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8063 (50b246419cd).

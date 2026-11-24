@@ -1,14 +1,13 @@
 ---
 # qou-7q56
 title: the raw-float64 LOCATOR in witness.py lacks the shadow rule its own GATE has -- it now cries wolf on a correctly-drained witness
-status: in-progress
-pr: 8290
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T23:35:32Z
-updated_at: 2026-11-17T08:47:00Z
+updated_at: 2026-11-24T09:20:39Z
 parent: qou-9nnz
 ---
 
@@ -74,3 +73,5 @@ enough to be safe if option 1 stalls.
 ## Progress 2026-11-17 (PR #8290)
 
 Implemented the full-precision `*_str` shadow rule, `LP_DUAL_F64_FIELDS` carve-out, `_EPHEMERAL_META_FIELDS` timing carve-out, `float64-integrator` / deprecated `float64` tier carve-outs, and exact integral float handling in `qou_substrate.witness._raw_float_paths` (with unit tests in `tools/qou-substrate/tests/test_declared_tolerance_literal.py`) on PR #8290 (`1c907342f24ac048c99eb24f30832b0b87b024b0`).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

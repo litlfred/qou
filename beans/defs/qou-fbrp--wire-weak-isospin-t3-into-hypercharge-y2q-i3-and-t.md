@@ -1,14 +1,14 @@
 ---
 # qou-fbrp
 title: 'Wire weak-isospin T3 into hypercharge Y=2(Q-I3) and the sin^2theta_W normalization. Consumes #4597 Milnor mu-bar_123=Y + #4561 writhe->I3. Closes the electroweak-mixing leg of the convergence.'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-08-02T19:10:32Z
-updated_at: 2026-11-23T21:39:57Z
+updated_at: 2026-11-24T09:20:44Z
 parent: qou-20sx
 ---
 
@@ -38,3 +38,5 @@ Claimed by claude/w2-h7-h8-hypercharge-zremoval-20261123 (Worker 15)
 - **Lean (`QOU/QBeta/CrossNucleonPairWedderburnZRemoval.lean`):** 35 theorems, `0 sorry`, `0` custom axioms (`[propext, Classical.choice, Quot.sound]` only, `§7c` generic, zero empirical constants in `.lean`). Proves Convention-D two-row Wedderburn collapse on `H_7(q)` (`C_7 = 429`, corank `4,611`) and `H_8(q)` (`C_8 = 1,430`, corank `38,890`), quantum Schur–Weyl character decompositions, right-spectator `z_D`/`z_D_bar` factorization (`L7e`, `L8e`), inductive left-spectator weight-counting operator `L_{m+1}(q)` with `L_2(q) = (q^2+1) L_1(q) - q^2 I_2` (`L8s` vs `L7s`), all-`q` pinned pair identity `alpha_6(q) + beta_6(q) = 1` excluding pure Coulomb on Hecke insertions, split-bundle `F = V_2 (+) W_3^*` Killing norms (`Tr_F((2 T_3)^2) = 2`, `Tr_F((Y/2)^2) = 5/6`, `Tr_G(T_3^2) = 2`, `Tr_G((Y/2)^2) = 10/3`, `sin^2 theta_W^0 = 3/8`) fixing GMN slope `1/2` (`(q_u, q_d) = (2/3, -1/3)`, chiral anomaly cancellation), and separated-hadron `Z`-channel Yukawa suppression `< 10^-280` for `x >= 653`.
 - **80-dps Probe & Witness (`computations/probes/w2_h7_h8_wedderburn_zremoval/w2-h7-h8-wedderburn-zremoval.witness.json`):** `19/19` assertions passed (`< 10^-78` agreement on `H_7(q_0)` and `H_8(q_0)` Hoefsmit character traces across `pp`, `pn`, `nn` dressings; `x(r_{pi+-}) = 653.34488... => lambda(r_{pi+-}) = 1.8027e-284 < 10^-280`).
 - **Status:** Kept `in-progress` per Rule 13a / reviewer-separated closure discipline.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9216 (a9cd4483fe5).

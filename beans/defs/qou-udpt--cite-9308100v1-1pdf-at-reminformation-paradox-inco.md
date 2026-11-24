@@ -1,14 +1,13 @@
 ---
 # qou-udpt
 title: Cite 9308100v1 (1).pdf at rem:information-paradox-incompleteness
-status: in-progress
-pr: 8412
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:10Z
-updated_at: 2026-11-22T21:00:00Z
+updated_at: 2026-11-24T09:20:53Z
 parent: qou-19m0
 ---
 
@@ -49,3 +48,5 @@ Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in
 ## 2026-11-22 — done in draft PR #9116 (issue #9115)
 
 Citation added on branch `claude/library-cites-2026-11-22`, locator read from the held PDF. Close when #9116 merges.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9116 (3885f1e31ec).

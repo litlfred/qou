@@ -1,11 +1,11 @@
 ---
 # qou-143e
 title: 'EPIC [Q-Drain-4]: Nuclear Binding, H_4(q) GPMT Cumulants & 3D alpha-Simplex Compute/Lean'
-status: in-progress
+status: completed
 type: epic
 priority: high
 created_at: 2026-11-23T20:55:47Z
-updated_at: 2026-11-24T02:28:18Z
+updated_at: 2026-11-24T09:20:36Z
 parent: qou-hksc
 blocking:
     - qou-xip2
@@ -35,3 +35,5 @@ blocking:
 - Enforce single-thread CPU caps (`LEAN_NUM_THREADS=1`, `nice -n 15`), zero float64 (`mpmath` >= 50-80 dps), and zero fitting.
 
 Batch 4 Q-Drain-4 complete on PR #9241 (b11dd7654d5): qou-5lct & qou-h6ef closed; qou-sbn9/qou-ndsa/qou-s7ld upgrades staged in PR #9241.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9241 (a053f8c64bb).

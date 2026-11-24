@@ -1,13 +1,13 @@
 ---
 # qou-15sj
 title: 'GAP: alpha_em [10]_q linchpin — delta_q(T_3,5)=q^10-q^-10 asserted not derived'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T20:56:46Z
-updated_at: 2026-11-23T20:59:23Z
+updated_at: 2026-11-24T09:20:45Z
 parent: qou-3l2l
 ---
 
@@ -48,3 +48,5 @@ class still has no instance.
 Claimed by claude/w1-hadron-alpha-em-linchpin-20261123 (2026-11-23)
 
 PR #9211 opened on claude/w1-hadron-alpha-em-linchpin-20261123 (cd2f8298c5e)
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9211 (cf39d247932).

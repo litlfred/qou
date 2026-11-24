@@ -1,13 +1,13 @@
 ---
 # qou-j1e5
 title: 'c1: the six values are GROUPED-word — re-derive under Borromean, or scope them (blocks the probe going green)'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T03:58:42Z
-updated_at: 2026-11-15T22:26:00Z
+updated_at: 2026-11-24T09:21:03Z
 parent: qou-10v9
 ---
 
@@ -184,3 +184,5 @@ Was in-progress with no bean update since 2026-09-06 and no main commit naming i
 3. **Probe & witness repair in PR `#8047` (`6d9ff92721d94595fab26f3d397f766c7e38044d`):**
    - PR `#6931` step 1 (`26f0988191`) had regenerated `c1-leading-coefficient-derived-probe.witness.json` before `RECORDED` and `closed_form` in `c1_leading_coefficient_derived_probe.py` were updated to Borromean, leaving `c1-leading-coefficient-derived-probe.witness.json` on `main` with `allPassed: false`, and had not re-run `binding_chain_floor_corrected_probe.py`.
    - PR `#8047` updates `c1_leading_coefficient_derived_probe.py` (`RECORDED` = Borromean `c₁`, `closed_form` = `(3Z - 2N)`, `EXACT_C2_BORROMEAN`, `EXACT_C3_BORROMEAN`, `EXACT_C4_BORROMEAN`) and `c1-leading-coefficient-derived-probe.witness.json` (`allPassed: true`, 8/8 assertions passing), updates `binding_chain_floor_corrected_probe.py` and `binding-chain-floor-corrected-probe.witness.json` to the canonical Borromean word (`allPassed: true`, 3/3 assertions passing), fills in the `⁴He` `439/512` (`1.5535`) row and `c₃` cross-reference in `docs/audits/2026-09-06-the-c1-c2-crossover-is-grouped-specific.md`, and syncs the `[★]` docstrings in `LeadingOrderTraceCoefficient.lean`. Kept `status: in-progress` per owner rule (no unilateral bean closure).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8047 (6c6c9c9cd44).

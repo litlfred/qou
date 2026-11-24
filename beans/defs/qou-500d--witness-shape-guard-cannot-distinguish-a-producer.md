@@ -1,14 +1,13 @@
 ---
 # qou-500d
 title: witness shape guard cannot distinguish a producer speedup from an interrupted write
-status: in-progress
-pr: 8333
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-27T07:19:03Z
-updated_at: 2026-10-04T15:25:39Z
+updated_at: 2026-11-24T09:20:38Z
 parent: qou-5vkl
 ---
 
@@ -83,3 +82,5 @@ committed and the gate went green on its own.
 
 ## Round 56 Implementation (PR #8333)
 - Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

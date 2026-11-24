@@ -1,13 +1,13 @@
 ---
 # qou-itdn
 title: 'Interface is SELECTIVE: V_L(1)=(-2)^{c-1} so leptons trivialise at q=1 but Borromean/Hopf do not — does a q=1 surface separate charge?'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T12:53:38Z
-updated_at: 2026-11-23T20:59:23Z
+updated_at: 2026-11-24T09:20:45Z
 parent: qou-10v9
 ---
 
@@ -25,3 +25,5 @@ In-progress only through an untouched batch PR / no live branch (applicability r
 Claimed by claude/w1-hadron-alpha-em-linchpin-20261123 (2026-11-23)
 
 PR #9211 opened on claude/w1-hadron-alpha-em-linchpin-20261123 (cd2f8298c5e)
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9211 (cf39d247932).

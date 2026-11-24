@@ -1,14 +1,13 @@
 ---
 # qou-e9le
 title: three producers compute 70 provably-zero characters — the two-row cap is proved in Lean and unused in compute
-status: in-progress
-pr: 8307
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T06:46:25Z
-updated_at: 2026-11-17T10:37:00Z
+updated_at: 2026-11-24T09:20:40Z
 parent: qou-5vkl
 ---
 
@@ -129,3 +128,5 @@ move no number; the defect is only that they defeat a `None`/truthiness prune.
 ## Round 55 Update (2026-11-17, PR #8307)
 
 Applied the Convention-D two-row partition filter (`len(shape_t) <= 2` per `QOU.MassTheory.TwoRowCapDerived.traceSum_eq_twoRow_of_wenzl`) in `computations/chi_4he_via_rust_lossless.py` and `computations/chi_via_rust_lossless.py` (matching `computations/block_swap_binding.py`), and replaced `int(float(...))` with `int(mp.nint(mp.mpf(str(...))))` in `chi_via_rust_lossless.py` (PR #8307, commit `cf8ca11962518083f27bc0a2ce60447359b28381`).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

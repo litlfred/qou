@@ -1,11 +1,11 @@
 ---
 # qou-chgy
 title: 'PR-Drain-2: Salvage/Port Round 48-60 Precision/Vacuity/QA Infrastructure Fix PRs (4 PRs, #8290..#8350)'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:55:52Z
-updated_at: 2026-11-24T00:50:03Z
+updated_at: 2026-11-24T09:20:37Z
 parent: qou-xip2
 ---
 
@@ -31,3 +31,5 @@ parent: qou-xip2
   - **Consolidated all 4/4 net-new payloads into PR #9238** (`615ddf76c21`, 35 files: 26 code + 8 regenerated 50-80 dps witnesses + additive `q0_anchor_manifest.json`), fixing two latent regressions caught by verification: (1) `#8333` `witness_shape_guard.py` `isinstance(b, float)` bug on integer JSON `durationMs` (`12/12` self-tests green), and (2) `#8333` `gen_q0_anchor_manifest.py` dropping 17 curated `ideal_muon` entries (now additive: `ideal_muon` `18->19`, `physical_proton` `988->1635`, `ambiguous` `15->24`, `-0` removals).
   - Verified `JetOrderIndependence.lean` with single-thread `lean -DautoImplicit=false -s 65536` (`exit 0`, `0` `sorry`, `0` vacuity); held for owner/coordinator OK before merge.
   - Per `qou-chgy` Rule 3, `#8290`, `#8307`, `#8333`, `#8350` remain open (with cross-link comments to #9238 and all branches preserved intact) until #9238 merges onto `main`.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

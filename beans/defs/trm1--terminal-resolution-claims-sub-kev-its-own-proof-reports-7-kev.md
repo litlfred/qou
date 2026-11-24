@@ -1,13 +1,13 @@
 ---
 # trm1
 title: prop:terminal-resolution claims sub-keV; its own proof reports ~7 keV
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T12:40:00Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T09:20:57Z
 parent: qou-q4oa
 ---
 
@@ -97,3 +97,5 @@ Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/pa
 Ruling check: the finding (p/n rows reproduce the M_N input) is about the table's honesty, not about which trace or knot is used; the formula column's Hopf-link wording predates the electron ruling and is a separate label question, not relied on here.
 
 Fix applied on owner card (2026-11-21) in PR #8825 (branch claude/paper-structure-drain-2026-11-21). Close when it merges.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8825 (eff74b7212b).

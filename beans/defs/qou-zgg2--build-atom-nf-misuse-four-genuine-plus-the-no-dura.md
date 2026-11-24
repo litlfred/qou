@@ -1,13 +1,13 @@
 ---
 # qou-zgg2
 title: 'build_atom_nf misuse: four genuine, plus the no-durable-home claim that hid two'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T06:26:13Z
-updated_at: 2026-11-16T19:43:00Z
+updated_at: 2026-11-24T09:20:58Z
 parent: qou-v2om
 ---
 
@@ -179,3 +179,5 @@ narrow: one serialised field, A = 2..6.
   - Added backward-compatible `CompoundShiftResult.categorical_mass` `@property` alias for `nf_trace_pairing` in `computations/compound_shift_nf.py` and updated `computations/probes/nf_categorical_mass_vs_canonical_trace_probe.py` so it resolves cleanly after the 2026-09-06 rename.
   - Removed unused `build_atom_nf` and `math` imports in `computations/jet_knot_invariants.py` and `computations/hadron_knot_table.py`, and added explicit `H_3`-quotient vs full-tower `H_{3A}` (`canonical_braid_crossings.py`, `markov/markov_peel.py`, `tr_m_atom_via_transfer.py`) scope notes in `computations/hadron_knot_table.py`, `computations/jet_knot_invariants.py`, and `computations/qbeta/qbeta_level_k_operator_and_real_decays_probe.py`.
 - **Status:** Kept `in-progress` pending PR #8152 merge and owner review.
+
+Closed via post-merge reconciliation: landed on origin/main in commit bc6e912e5ee (port #8152).

@@ -1,13 +1,13 @@
 ---
 # qou-vuaj
 title: 'GAP: the mass-channel two-row cap is transferred to the DECAY channel, and its own source forbids that'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T12:16:30Z
-updated_at: 2026-11-15T17:33:09Z
+updated_at: 2026-11-24T09:21:01Z
 parent: qou-wxhi
 ---
 
@@ -101,3 +101,5 @@ Full 41-bean triage table and the method behind it: [`docs/coordination/conventi
   3. **Regime 3 (general 2-simplex abandoning both $z = z_D$ and the Ocneanu Markov relation)**: feasible for $t = y_{(1^3)} \in [0, 0.0554370948]$.
 - Regenerated `computations/qbeta/qbeta-d-frame-terminus.witness.json` (`4/4` assertions pass, `0` raw float64s).
 - **PR**: [`litlfred/qou#8058`](https://github.com/litlfred/qou/pull/8058) (`cc8046889bb857a933d60f20c74e29d4c8739d8a`). Status kept `in-progress` pending PR merge.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8058 (54cc56151ab).

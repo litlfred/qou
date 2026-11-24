@@ -1,13 +1,13 @@
 ---
 # qou-utb3
 title: MarkovTrace general-n instance — Ocneanu tower route (unblocks TauFunctorReduction F-laws)
-status: in-progress
+status: completed
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T13:00:16Z
-updated_at: 2026-11-17T08:12:13Z
+updated_at: 2026-11-24T09:20:58Z
 parent: qou-rtxm
 ---
 
@@ -20,3 +20,5 @@ Former title (before 2026-10-04, when this became a story under a programme epic
 - **Module:** `QOU.Foundations.OcneanuTowerConventionDRibbonClebschGordan` (`folio/quantum-observable-universe/lean/QOU/Foundations/OcneanuTowerConventionDRibbonClebschGordan.lean`), wired into `QOU.lean`.
 - **Theorem:** `tower_peel_two_step_and_tensor_flaw` — proves two-step strand-tower peel reduction `tr((x · g_{n+1}) · g_n) = z² · tr(x)` and tensor F-law multiplicativity `tr(x · g_n) · tr(y · g_m) = z² · (tr(x) · tr(y))` over generic `GenericRingOps R`, verified at 80 dps in `ocneanu-tower-convention-d-ribbon-clebsch-gordan.witness.json`.
 - **Status:** Kept at `in-progress` pending Merge Manager merge and full dependency verification.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8689 (f54876aadbc).

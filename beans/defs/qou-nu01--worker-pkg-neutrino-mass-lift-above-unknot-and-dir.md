@@ -1,11 +1,11 @@
 ---
 # qou-nu01
 title: 'SM/Eightfold Worker Pkg 4 (Q-Gap-10): Non-Zero Neutrino Mass Lift Above Unknot Vol(0_1)=0 & Dirac vs. Majorana Framing Test'
-status: in-progress
+status: completed
 type: feature
 priority: medium
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T23:51:20Z
+updated_at: 2026-11-24T09:20:43Z
 parent: qou-sm8w
 ---
 
@@ -29,3 +29,5 @@ parent: qou-sm8w
 - **Pre-Registered `80`-dps Probe & Witness (`computations/probes/sm8w_neutrino_unknot_sweedler_lift/`):**
   - `PREREGISTRATION.md` committed first (`17eb2cb7635`); `sm8w-neutrino-unknot-sweedler-lift.witness.json` (`7/7` assertions passed, `q0Anchor = "proton"`, `stale: False`, `0` float64).
   - Key `80`-dps findings: `k = 12` Sweedler (`12.46 meV`) and `T(3,5)^2`-dressed (`17.57 meV`) land inside the PDG `[8.68, 49.53] meV` window (`sum m_nu(NH) = 0.0157-0.0221 eV < 0.12 eV`); `C_Nv_r6` (`M_UV = m_p N_v^6 = 3.064e14 GeV`) gives `197.9 meV`; `D_M4_k4_control` gives `9.123 meV` (`+5.14%` vs `sqrt(dm21^2)`), while compounding `(alpha_W/pi)^2` with `k >= 8` double-counts weak loop suppression (`<= 0.0265 meV`); `S_3 -> S_2` spurion `2*eps/b = q_0^2 - 1` (`0.05691`) and `hbar_q` (`0.00991`) bracket PDG `dm21^2/|dm32^2| = 0.03070`.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9230 (d33a9b58054).

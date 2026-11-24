@@ -1,14 +1,14 @@
 ---
 # qou-p3ay
 title: 'references.bib is stale: 512 entries committed, 889 in references.ts'
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
     - bibliography
 created_at: 2026-09-29T21:12:39Z
-updated_at: 2026-10-04T15:15:50Z
+updated_at: 2026-11-24T09:21:06Z
 parent: qou-mub3
 ---
 
@@ -41,3 +41,5 @@ stale" and fixed it by hand.
   and needs a look at LaTeX output for new or changed entries.
 - Something (a gate, or a check in `run-validate`) fails when the `.bib`
   and `references.ts` disagree, so this cannot silently recur.
+
+Closed via post-merge reconciliation: landed on origin/main in commit 5bdcfc24a17 (check-references-bib.ts).

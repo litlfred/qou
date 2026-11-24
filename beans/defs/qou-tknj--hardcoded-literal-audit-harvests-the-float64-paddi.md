@@ -1,14 +1,13 @@
 ---
 # qou-tknj
 title: hardcoded_literal_audit harvests the float64-padding audit's own fixture, turning a blocking gate red
-status: in-progress
-pr: 8307
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T10:09:44Z
-updated_at: 2026-11-22T21:19:32Z
+updated_at: 2026-11-24T09:20:42Z
 parent: qou-9nnz
 ---
 
@@ -73,3 +72,5 @@ Excluded `witness_float64_padding_audit.py` and `strip_float64_padding.py` in `c
 Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. Checked against main `3c4c98fccf3`.
 
 The Round 55 entry cites PR #8307 (commit `cf8ca11962`), a batch PR. `computations/audits/hardcoded_literal_audit.py` on main does not mention `witness_float64_padding_audit.py` or `strip_float64_padding.py`, so the exclusion did not land. Left open.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9238 (169287f3063).

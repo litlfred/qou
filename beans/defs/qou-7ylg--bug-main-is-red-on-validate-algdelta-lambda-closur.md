@@ -1,13 +1,13 @@
 ---
 # qou-7ylg
 title: 'BUG: main is RED on validate — alg:delta-lambda-closure cites only a remark'
-status: in-progress
+status: completed
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T10:49:35Z
-updated_at: 2026-11-15T22:26:00Z
+updated_at: 2026-11-24T09:21:03Z
 parent: qou-9nnz
 ---
 
@@ -121,3 +121,5 @@ getting its scope subtly wrong would be worse than the citation above.
   2. Retired the stale `NOTE:` comment in `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.ts` (`alg:delta-lambda-closure`) and linked `[prop:delta-lambda-dt-index-unification](#prop:delta-lambda-dt-index-unification)` in `mba-sidecar-delta-lambda-closure.md`.
   3. Added `"prop:delta-lambda-dt-index-unification"` to `uses[]` on `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.ts` (`alg:per-isotope-binding`) and its `.jsonld` companion, and linked `[prop:delta-lambda-dt-index-unification](#prop:delta-lambda-dt-index-unification)` in `mba-step09b-per-isotope-binding.md`.
 - **Status:** Kept `in-progress` pending merge of `litlfred/qou#8048` and owner sign-off.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8048 (47627a8a27b).

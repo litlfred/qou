@@ -1,7 +1,7 @@
 ---
 # qou-1aqc
 title: 'Prior art & finite-A phase-kink gap closure: spectrahedral collapse, Sturmfels-Thomas Grobner chambers, Laurent-Bachoc-Vinzant rank drops & Perdew-Parr magic-shell shadow-price jumps'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - spectrahedron
     - magic-numbers
 created_at: 2026-11-23T19:29:24Z
-updated_at: 2026-11-23T20:54:28Z
+updated_at: 2026-11-24T09:20:46Z
 parent: qou-qzvs
 ---
 
@@ -47,3 +47,5 @@ parent: qou-qzvs
 
 Claimed by claude/lp-bootstrap-prior-art-dual-gaps-20261123 (2026-11-23)
 PR #9210 opened on claude/lp-bootstrap-prior-art-dual-gaps-20261123 (f89375881ae6)
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9210 (9ce8d04d27a).

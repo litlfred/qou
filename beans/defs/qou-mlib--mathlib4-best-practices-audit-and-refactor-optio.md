@@ -1,11 +1,11 @@
 ---
 # qou-mlib
 title: 'Lean KG Stage 2: Mathlib4 Best-Practices Audit (`#lint`, Naming, Minimal Imports, §7c Generality) & Present Subgraph Refactor Options'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:22:30Z
-updated_at: 2026-11-24T00:25:56Z
+updated_at: 2026-11-24T09:20:36Z
 parent: qou-lnkg
 blocked_by:
     - qou-kgdt
@@ -27,3 +27,5 @@ Present structured `AskUserQuestion` options comparing:
 - Implemented `scripts/lean-best-practices-lint.py` (`BP001`–`BP009`: `autoImplicit false`, copyright/module header + Lean 4.24+ import order, minimal imports, `snake_case`/`UpperCamelCase` naming, §7c ring/universe generality, empirical/decimal literal ban, `: True`/projection vacuity ban, strict zero-`QOU.*` upward import boundary, synonym-dir blocklist) + `pytest` suite (`7/7` green in `0.21s`).
 - Quantified Tier-A (`321` modules, `312` cone-pure) and 6 Tier-B Reservoir `lean_lib` packages (`HeckeTemperleyLieb` `635`, `TwistedFrobeniusHopf` `38`, `ToricConicOpt` `33`, `CompactQuantumMetrics` `10` [0 cut-edges!], `QCalculus` `58`, `BraidKnotOctonion` `585`; `1,489` cone-pure immediately extractable, `191` cut-blocked by `188` edges).
 - Ready PR: https://github.com/litlfred/qou/pull/9236 (Stage 2 directory moves gated on owner `AskUserQuestion` per `qou-lref`).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9236 (e54c69cdd49) and PR #9274 (25716ea95b4).

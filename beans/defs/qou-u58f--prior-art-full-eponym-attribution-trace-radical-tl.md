@@ -1,7 +1,7 @@
 ---
 # qou-u58f
 title: 'Prior art & full-eponym attribution: trace-radical TL_n(q) quotient (Orellana, Geck-Lambropoulou, Jones, BHMV, Barrett-Westbury), Leibniz PII / GNS null ideal, and Rieffel-Connes-Kantorovich-Rubinstein metric finiteness'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - connes-distance
     - temperley-lieb
 created_at: 2026-11-23T18:30:19Z
-updated_at: 2026-11-23T18:30:19Z
+updated_at: 2026-11-24T09:20:47Z
 ---
 
 ## Summary & Purpose
@@ -72,3 +72,5 @@ Bundles cleanly onto queued branch `claude/leibniz-relational-scales-20261123` a
   2. Chapter 5 Hecke/Temperley–Lieb radical block (`hecke-radical-is-temperley-lieb` or adjacent remark, crediting Rosa C. Orellana 1999 & Meinolf Geck and Sofia Lambropoulou 1997 alongside Vaughan F. R. Jones 1987, Hans Wenzl 1988, Harold Neville Vazeille Temperley & Elliott H. Lieb 1971).
   3. Chapter 0 Overview (`introduction/intro.md`, paired with Leibniz relational-space framing, avoiding `introduction.ts` touched by `#9194`).
 - [ ] Pass `voice-leak-ratchet.ts`, `run-validate.ts`, and `run-validate-references.ts` (`0` errors).
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9207 (5a350c1a535).

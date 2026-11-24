@@ -1,13 +1,13 @@
 ---
 # qou-ay84
 title: 'T3c: Borromean 3-cusp deformation — proton/neutron effective κ and ϑ'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-30T16:59:40Z
-updated_at: 2026-11-15T23:50:00Z
+updated_at: 2026-11-24T09:21:00Z
 parent: qou-avtq
 ---
 
@@ -34,3 +34,5 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
   $$\frac{\partial^3 v_i}{\partial u_i^3}(0) = +\frac{i}{2}, \qquad \frac{\partial^3 v_i}{\partial u_i \partial u_j^2}(0) = -\frac{i}{2}\quad (j \neq i),$$
   flipping the cubic longitude coefficient from $+\frac{i}{12}$ on the single-cusp slice $(u,0,0)$ to $\frac{i}{12} - \frac{i}{2} = -\frac{5i}{12}$ on the symmetric locus $(u,u,u)$ (`borromeanCubicSymCoeff_eq_neg_five_twelfths`, confirmed at 60 dps to $5.21 \times 10^{-43}$).
 - **Lean 4 Formalization:** `folio/quantum-observable-universe/lean/QOU/QBeta/BorromeanThreeCuspNZHessian.lean` (12 sorry-free theorems, wired into `QOU.lean`, compiled with `0` errors / `0` warnings / `0` `sorry`). Held at `status: in-progress` pending PR #8063 merge and owner closure review.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #8063 (50b246419cd).

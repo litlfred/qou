@@ -1,13 +1,13 @@
 ---
 # qou-08xc
 title: Wire Lean-proved kappa=3/16 correction into Deuteron gap compute
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-20T02:21:41Z
-updated_at: 2026-11-15T21:40:00Z
+updated_at: 2026-11-24T09:21:04Z
 parent: qou-10v9
 ---
 
@@ -24,3 +24,4 @@ Added `QOU/MassTheory/DeuteronKappaThreeSixteenthsReconciliation.lean` (wired in
 3. **Route 3 — Discretized Yekutieli surface 2-form on the deuteron `pn` braid `σ₁³` (`YekutieliTrefoilDiscretization`, `qou-prjo`):**
    - The right-handed trefoil Seifert matrix `V = [[-1, 1], [0, -1]]` has unit skew intersection `V_{01} - V_{10} = 1` (`route3_trefoil_seifert_skew_unit`), supplying the framing- and color-dressing-invariant operator carrier `1 · ⁅A_0, A_1⁆` (`route3_trefoil_operator_carrier`).
 
+Closed via post-merge reconciliation: landed on origin/main in PR #7991 (a729482cb28).

@@ -1,13 +1,13 @@
 ---
 # qou-puwe
 title: def:mass-identity — Lean formalises multiplicative integration, prose defines a categorical trace; and MassIdentity is ℝ-valued inside a generic-k tree
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:47:59Z
-updated_at: 2026-11-15T20:40:00Z
+updated_at: 2026-11-24T09:21:04Z
 parent: qou-ywyq
 ---
 
@@ -224,3 +224,5 @@ Open, recorded not fixed: the functional `x ↦ ∫_A(u x c)` is the categorical
   - `QOU/Torsion/MassTraceMarkov.lean` (sorry-free, generic `[CommRing R]` with `q * qi = 1`): defined `tlProjector`, proved `tlProjector_sq` ($e_a^2 = (q + q^{-1}) e_a$) and `transport_eq_lead_sub_tlProjector` ($T(a, \varepsilon) = \mathrm{letterLeadScalar}(q, qi, (a, \varepsilon)) \cdot 1 - e_a$), proved the algebra-level bridge `hol_eq_tlStateSum` between Option 1 and Option 3, the Markov-trace state sum `braidTrace_wordBraid_eq_tlStateSum`, the leading $s \equiv \mathrm{false}$ scalar product isolation `braidTrace_wordBraid_eq_leadProd_add_tlStates`, and the framing-corrected state sum `jonesFn_wordBraid_eq_tlStateSum`.
   - `QOU/Torsion/MassTraceMarkovClass.lean` (sorry-free): added `massClass_wordBraid_eq_tlStateSum`.
 - **Prose / TS parity:** updated `mass-identity.md` with the `**Non-abelian holonomy and Temperley–Lieb state sum.**` paragraph (preserving `**Archimedean specialisation.**` §7c verbatim) and updated `mass-identity.ts` `authorNotes`. Kept `status: in-progress` for owner review.
+
+Closed via post-merge reconciliation: landed on origin/main in PR #7990 (7a404ff23c4).

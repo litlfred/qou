@@ -1,11 +1,11 @@
 ---
 # qou-mk7u
 title: 'GAP: muon carrier at the Murakami real deformation xi = 2 pi i + u of the 4_1 colored Jones (does a derived u exist?)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-20T16:00:00Z
-updated_at: 2026-11-23T21:14:59Z
+updated_at: 2026-11-24T09:20:44Z
 parent: qou-2002
 ---
 
@@ -44,3 +44,5 @@ Parent set to `qou-2002`: old parent `qou-6gf9` is not an epic/milestone/feature
 Claimed by claude/w6-joint-lepton-resolvent-20261123 (2026-11-23)
 
 PR #9213 opened on claude/w6-joint-lepton-resolvent-20261123 (01ca9a6e9a9; Murakami real-q deformation excluded on sign, 29 theorems in InhomogeneousLeptonLoopResolvent.lean)
+
+Closed via post-merge reconciliation: landed on origin/main in PR #9213 (a7e7b4bb5a1).
