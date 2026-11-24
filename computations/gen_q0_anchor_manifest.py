@@ -146,14 +146,34 @@ def main() -> int:
             ambiguous[prod] = w  # both signatures — manual ruling
         # neither: no q₀ field — omit (anchor-insensitive or non-derivation)
 
+    # Preserve manually curated entries already recorded in q0_anchor_manifest.json
+    # (e.g. PR #5958, 2211d71b8eb, 34a8be2a6c4) so re-running the scanner adds
+    # newly resolved suffixed producers without dropping or flipping curated pins.
+    manifest_path = HERE / "q0_anchor_manifest.json"
+    curated_ideal: set[str] = set()
+    curated_phys: set[str] = set()
+    curated_ambig: set[str] = set()
+    if manifest_path.exists():
+        try:
+            existing = json.loads(manifest_path.read_text(encoding="utf-8"))
+            curated_ideal = set(existing.get("ideal_muon", ()))
+            curated_phys = set(existing.get("physical_proton", ()))
+            curated_ambig = set(existing.get("ambiguous", ()))
+        except Exception:
+            pass
+    curated_all = curated_ideal | curated_phys | curated_ambig
+    final_ideal = sorted(curated_ideal | (set(ideal) - curated_all))
+    final_phys = sorted(curated_phys | (set(physical) - curated_all))
+    final_ambig = sorted(curated_ambig | (set(ambiguous) - curated_all))
+
     manifest = {
         "_schema": "q0-anchor-manifest/v1",
         "_convention": "ideal=muon (CAL-2 P_skew^β); physical=proton (m_p/m_e). "
                        "q_parameter auto-selects by the running producer's stem; "
                        "QOU_Q0_ANCHOR env var overrides.",
-        "ideal_muon": sorted(ideal),
-        "physical_proton": sorted(physical),
-        "ambiguous": sorted(ambiguous),
+        "ideal_muon": final_ideal,
+        "physical_proton": final_phys,
+        "ambiguous": final_ambig,
     }
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
@@ -166,11 +186,11 @@ def main() -> int:
     manifest.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         manifest, script_path=__file__, engine=None, q0_anchor=None)
-    (HERE / "q0_anchor_manifest.json").write_text(
+    manifest_path.write_text(
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(f"ideal/muon:      {len(ideal)}")
-    print(f"physical/proton: {len(physical)}")
-    print(f"ambiguous:       {len(ambiguous)}")
+    print(f"ideal/muon:      {len(final_ideal)}")
+    print(f"physical/proton: {len(final_phys)}")
+    print(f"ambiguous:       {len(final_ambig)}")
     return 0
 
 
