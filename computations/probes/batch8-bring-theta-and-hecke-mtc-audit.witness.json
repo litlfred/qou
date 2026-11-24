@@ -1,8 +1,8 @@
 {
   "engine": "mpmath-80dps+exact-F2-Sp8",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-24T03:16:00.982600+00:00",
-  "commitSha": "08dfe533aaa053f5cc96c01723f0192fd0a32583",
+  "computedAt": "2026-11-24T03:17:08.597433+00:00",
+  "commitSha": "590e06aee0135ac0a319dd8fb4c05c182dd80244",
   "assertions": [
     {
       "name": "s5_acts_symplectically_and_preserves_q0",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "batch8-bring-theta-and-hecke-mtc-audit",
   "scriptFile": "batch8_bring_theta_and_hecke_mtc_audit_probe.py",
   "scriptHash": "d1eba36b5158",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "590e06aee0135ac0a319dd8fb4c05c182dd80244",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
