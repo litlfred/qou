@@ -1,14 +1,13 @@
 ---
 # qou-qh3w
 title: Remark interpreting [hakimoglu-brown2025] at prop:habiro-tail-archimedean-action
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:49Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:47Z
 parent: qou-vva9
 ---
 
@@ -35,3 +34,9 @@ PR #8828 merged 2026-11-21 (content half). Still open: the Lean docstring at Hab
 ## 2026-11-22 — fixed in PR #9116: HabiroTailAction docstrings: hakimoglu-brown2025 only recalls the relations (§1.1); the source named is zagier-dilogarithm Ch. I §1–§2.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): HabiroTailAction docstrings updated to credit [zagier-dilogarithm] Ch. I §1-§2 rather than hakimoglu-brown2025 in merged PR #9116 (e3178c250b0 / 3885f1e31ec).

@@ -1,14 +1,13 @@
 ---
 # qou-lyct
 title: Remark interpreting [murakami2004] at QOU.Knot.FigureEightComplexVolume
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:13Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:47Z
 parent: qou-aqfj
 ---
 
@@ -26,3 +25,9 @@ Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-v
 ## 2026-11-22 — fixed in PR #9116: murakami2004.json corrected from the PDF (title, authors Murakami & Yokota); references.bib regenerated.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): murakami2004.json corrected from held v3 PDF (Murakami & Yokota) and references.bib regenerated in merged PR #9116 (0abc267a149 / 3885f1e31ec).

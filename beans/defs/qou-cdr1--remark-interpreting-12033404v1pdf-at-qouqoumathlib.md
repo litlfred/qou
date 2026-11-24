@@ -1,13 +1,13 @@
 ---
 # qou-cdr1
 title: Remark interpreting 1203.3404v1.pdf at qou:QOU.MathlibExt.QBorelKernelLevel
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:29Z
-updated_at: 2026-11-22T21:16:34Z
+updated_at: 2026-11-24T13:03:53Z
 parent: qou-vva9
 ---
 
@@ -35,3 +35,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 Remark block written on branch claude/library-remarks-2026-11-22, draft PR https://github.com/litlfred/qou/pull/9127 (issue #9121). Locators read from the held PDF. Stays open until the PR merges.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): ramanujan-equation-connection-prior-art.{md,ts} (Morita q-Borel-Laplace connection scope) landed in mass-theory in merged PR #9184 (6da2e4832de / dc8919ec7a3).

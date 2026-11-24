@@ -1,7 +1,7 @@
 ---
 # qou-86p5
 title: Cite [vanderput2006] at QOU/Mass/BindingScalarKernelParityExclusion.lean — fix the E(r,d,b) pointer (crmath-2011 is Bugeaud, not van der Put–Reversat); Thm 3.4/3.5 state it in English
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - qdiff-stokes
     - reorg-2026-10-04
 created_at: 2026-09-07T08:36:06Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T13:03:44Z
 parent: qou-mub3
 ---
 
@@ -34,3 +34,9 @@ Was in-progress with no bean update since 2026-09-07 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8486, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): [vanderput-reversat2007], [vanderput2006] Thm 3.4-3.5 & §5 (1),(2),(5), and [bugeaud2011] cited across BindingScalarKernelParityExclusion.lean, QAlienBridgeEquation.lean, and both .md blocks (90d196fabed, 0 sorry).

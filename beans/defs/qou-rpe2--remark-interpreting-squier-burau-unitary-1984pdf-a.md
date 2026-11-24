@@ -1,13 +1,13 @@
 ---
 # qou-rpe2
 title: Remark interpreting squier-burau-unitary-1984.pdf at QOU.Machinery.HeckeMonodromyJordan
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:19Z
-updated_at: 2026-11-22T21:16:34Z
+updated_at: 2026-11-24T13:03:56Z
 parent: qou-aqfj
 ---
 
@@ -35,3 +35,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 Remark block written on branch claude/library-remarks-2026-11-22, draft PR https://github.com/litlfred/qou/pull/9127 (issue #9121). Locators read from the held PDF. Stays open until the PR merges.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): burau-invariant-form-prior-art.{md,ts} (Squier invariant form scoped at t = -1) landed in braids-and-knots in merged PR #9184 (0c5d908c3ff / dc8919ec7a3).

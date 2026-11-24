@@ -1,14 +1,13 @@
 ---
 # qou-gbvs
 title: Remark interpreting centsim.pdf at docs/workplans/2026-06-08-uploaded-paper-results-ingestion-bac…
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:35Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:46Z
 parent: qou-aqfj
 ---
 
@@ -29,3 +28,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-22 — fixed in PR #9116: Ingestion backlog now identifies centsim (Geck–Rouquier, image-only scan, vision path) and 6gtx-j455 (Liu–Quintin–Afshordi).
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): ingestion backlog updated to identify centsim (Geck-Rouquier) and 6gtx-j455 (Liu-Quintin-Afshordi) in merged PR #9116 (58ffccb4d16 / 3885f1e31ec).

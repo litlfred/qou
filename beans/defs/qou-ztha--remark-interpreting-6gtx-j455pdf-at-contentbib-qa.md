@@ -1,14 +1,13 @@
 ---
 # qou-ztha
 title: Remark interpreting 6gtx-j455.pdf at content/bib-qa-verifications.json
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:36Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:50Z
 parent: qou-aqfj
 ---
 
@@ -33,3 +32,9 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8445, closed o
 ## 2026-11-22 — fixed in PR #9116: Join already corrected to [liu-quintin-afshordi]. The three wald1984 citation sites now say the locator is unchecked because the book is not held.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): [liu-quintin-afshordi] join and wald1984 unchecked locator notes landed in merged PR #9116 (141f80e54f6 / 3885f1e31ec).

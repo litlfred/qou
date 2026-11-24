@@ -1,13 +1,13 @@
 ---
 # qou-25nb
 title: Remark interpreting 0103325v4.pdf at rem:dictionary-flavor-layer
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:43Z
-updated_at: 2026-11-22T21:16:34Z
+updated_at: 2026-11-24T13:03:51Z
 parent: qou-aqfj
 ---
 
@@ -43,3 +43,9 @@ Not worked. Superseded premise found: the bean asks to interpret the source at r
 Remark block written on branch claude/library-remarks-2026-11-22, draft PR https://github.com/litlfred/qou/pull/9127 (issue #9121). Locators read from the held PDF. Stays open until the PR merges.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): Gavrilik 2001 torus-knot Alexander identity and flavour-label comparison remark landed in merged PR #9184 (185d2ca7a26, 06f2d5bcab5 / dc8919ec7a3).

@@ -1,14 +1,13 @@
 ---
 # qou-urt1
 title: Remark interpreting 0110001v3.pdf at computations/gap2_borromean_triple_count.py
-status: in-progress
-pr: 8412
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:03Z
-updated_at: 2026-11-22T21:16:34Z
+updated_at: 2026-11-24T13:03:57Z
 parent: qou-aqfj
 ---
 
@@ -46,3 +45,9 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8412, closed o
 Remark block written on branch claude/library-remarks-2026-11-22, draft PR https://github.com/litlfred/qou/pull/9127 (issue #9121). Locators read from the held PDF. Stays open until the PR merges.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): Mellor-Melvin Seifert-surface triple-point form of mu-bar remark landed in merged PR #9184 (d03be3181ff / dc8919ec7a3).

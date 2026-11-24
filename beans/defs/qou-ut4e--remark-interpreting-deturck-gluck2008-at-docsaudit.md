@@ -1,14 +1,13 @@
 ---
 # qou-ut4e
 title: Remark interpreting [deturck-gluck2008] at docs/audits/2026-08-01-em-linking-reads-round1.md
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:10Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:49Z
 parent: qou-aqfj
 ---
 
@@ -40,3 +39,9 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8420, closed o
 ## 2026-11-22 — fixed in PR #9116: Audit em-linking-reads-round1 now carries a correction: 0510388v1 reads cleanly and is the full DeTurck–Gluck paper; no re-upload needed.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): DeTurck-Gluck 0510388v1 audit note corrected in docs/audits/2026-08-01-em-linking-reads-round1.md in merged PR #9116 (58ffccb4d16 / 3885f1e31ec).

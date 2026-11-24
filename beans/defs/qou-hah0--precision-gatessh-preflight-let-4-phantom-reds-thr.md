@@ -1,13 +1,13 @@
 ---
 # qou-hah0
 title: 'precision-gates.sh: preflight let 4 phantom REDs through; the 6 real reds diagnosed'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T09:30:50Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T13:03:43Z
 parent: qou-9nnz
 ---
 
@@ -139,3 +139,9 @@ Was in-progress with no bean update since 2026-08-30 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8345, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): preflight check (#6160, 2b768409987), float64-padding (#6176), raw-float64 (#6182/#9303), hadron-knot-table deprecation (#9104, 17f014416ed), and q0-anchor/drift ratchets (#9293, #9302) all green (exit 0 in precision-gates.sh).

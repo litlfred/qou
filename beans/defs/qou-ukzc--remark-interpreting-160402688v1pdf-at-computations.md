@@ -1,14 +1,13 @@
 ---
 # qou-ukzc
 title: Remark interpreting 1604.02688v1.pdf at computations/probes/figure_eight_3d_index.py
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:23Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:48Z
 parent: qou-aqfj
 ---
 
@@ -45,3 +44,9 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8412, closed o
 ## 2026-11-22 — fixed in PR #9116: Audit 2026-08-01 arrow-a: Rmk 1.13 attributed to GHRS arXiv:1303.5278, with a correction note.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): Rmk 1.13 attribution corrected to GHRS arXiv:1303.5278 in 2026-08-01 arrow-a audit in merged PR #9116 (beeaccf58dd / 3885f1e31ec).

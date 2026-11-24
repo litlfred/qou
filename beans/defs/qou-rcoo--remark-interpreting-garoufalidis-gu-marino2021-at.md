@@ -1,14 +1,13 @@
 ---
 # qou-rcoo
 title: Remark interpreting [garoufalidis-gu-marino2021] at qou:QOU.QBeta.StokesQZeroDTCount
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:32Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:47Z
 parent: qou-aqfj
 ---
 
@@ -26,3 +25,9 @@ Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-v
 ## 2026-11-22 — fixed in PR #9116: Same peacock re-key as qou-41qf.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): StokesQZeroDTCount / QBeta -- Ref: lines re-keyed to [garoufalidis-gu-marino2023peacock] in merged PR #9116 (3c533e1b19d / 3885f1e31ec).

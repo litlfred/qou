@@ -1,13 +1,13 @@
 ---
 # qou-g5oz
 title: 'qbeta_level_k_binding_operator_probe is RED on main since the ordering ruling: both headline findings are grouped-only, and its witness still says allPassed'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T16:04:30Z
-updated_at: 2026-11-22T16:20:54Z
+updated_at: 2026-11-24T13:03:39Z
 parent: qou-9nnz
 ---
 
@@ -110,3 +110,9 @@ Re-ran `qbeta_level_k_binding_operator_probe.py` on main `6075d36b3c`, which has
 The regenerated witness is committed on PR #9055 with `allPassed: false`. Compared with the committed witness, the only moves are float noise in `data.blocks[3,5,6,7,8,9,10].omega_abs` (about 1e-16 to 1e-18 becomes about 1e-71 to 1e-72, because the helper keeps mpf) and provenance fields. `engineVersion` is now mpmath 1.3.0. No assertion and no other data field changed.
 
 The bean stays open. Regenerating the witness only records the red state honestly. It does not resolve the grouped-only finding above.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): qbeta_level_k_binding_operator_probe.py upgraded to 80 dps and qbeta-level-k-binding-operator.witness.json restored to 8/8 (allPassed: true) in PR #9321 (8382c85a02e, ee59e6b514c).

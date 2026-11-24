@@ -1,13 +1,13 @@
 ---
 # qou-d4hq
 title: 'Eponym fixes: full names for truncated theorem/structure names (verified sites)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - needs-owner-ok
 created_at: 2026-11-23T16:24:48Z
-updated_at: 2026-11-23T23:52:44Z
+updated_at: 2026-11-24T13:03:42Z
 parent: qou-tt2u
 ---
 
@@ -29,3 +29,9 @@ NOT changed: Möbius energy titles already sit on blocks citing ohara1991 and fr
 2026-11-23: #9196 merged 460f4a8. Next: new references (Saavedra Rivano, Greenberg, Han-Nambu, Tanaka, Webster, Belavin), each checked against its DOI.
 
 2026-11-23 (Worker 24): DOI-verified bibliography entries and scholarly positioning wired on branch `claude/prior-art-doi-verified-pkg-20261123` (commit `63446514c77`), gated on owner OK before opening PR (`qou-cvu9`).
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): Ch. 8/11 Ocneanu, Haagerup, Popa & subfactor/braided-fusion prior-art citations landed by owner in PR #9243 (a27d2544abd, 72434abd670).

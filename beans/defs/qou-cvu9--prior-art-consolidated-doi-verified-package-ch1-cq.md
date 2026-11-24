@@ -1,13 +1,13 @@
 ---
 # qou-cvu9
 title: 'Prior-Art Consolidated DOI-Verified Package: Ch.1 CQM/DHR, Ch.2 O_q(SU(2)) Geometry, & Remaining qou-tt2u Bibs (Owner OK Before PR)'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - needs-owner-ok
 created_at: 2026-11-23T21:31:07Z
-updated_at: 2026-11-24T08:06:21Z
+updated_at: 2026-11-24T13:03:41Z
 parent: qou-s028
 ---
 
@@ -24,3 +24,9 @@ Gate: present verified bibliography + diff summary and obtain owner OK before op
 - Updated 14 existing `folio/references/*.json` entries (the 7 unverified `#9180` refs + `larson-sweedler1969`, `woronowicz1988`, `woronowicz1989`, `gunaydin-gursey1973`, `finkelstein2008`, `dubois-violette-todorov2018`, `todorov2018`) and added 34 new DOI-verified entries.
 - Wired Ch. 0/1 CQM/DHR (`abramsky-coecke2004`, `selinger2007`) and all 4 non-claims in `intro-particles-as-knots.md`; Ch. 2 `O_q(SU(2))` geometry precedent + explicit `nu = id` vs Woronowicz modular automorphism distinction in `substrate-preamble.md` and `categorical-dirac-operator-intro.md`; `-- Ref:` keys in `CalculusDimensionObstruction.lean`, `SelfDualityDegree.lean`, `TwistedFrobeniusTower.lean`, `JonesIndexConventionD.lean` (`lean-direct-cone -j 1` green); and remaining `qou-tt2u` items (`qou-dy2z`, `qou-d4hq`, `qou-9ehj`, `qou-3dh1`, `qou-8jd0`, `qou-6pns`, `qou-t7de`).
 - Gates: `check-references-bib` exit 0; `run-validate-references` 0 errors; `qa-sweep --ci` exit 0 (0 critical, 0 new major, 0 minor); `paper-commentary-audit` 0 fail / 0 advisory. Ready for owner OK to open PR.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): authored and merged by owner litlfred in PR #9243 (a27d2544abd, 72434abd670), landing 50/50 verified reference entries and Ch. 0/1/2/8/11/12 prior-art positioning blocks.

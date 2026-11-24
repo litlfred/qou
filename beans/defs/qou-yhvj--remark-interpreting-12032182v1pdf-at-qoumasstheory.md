@@ -1,14 +1,13 @@
 ---
 # qou-yhvj
 title: Remark interpreting 1203.2182v1.pdf at QOU.MassTheory.WhiteheadHH
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:18Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:50Z
 parent: qou-vva9
 ---
 
@@ -33,3 +32,9 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8438, closed o
 ## 2026-11-22 — fixed in PR #9116: spectral-sequence-collapse: cartan1956 and weibel1994 locators marked unchecked (neither book is held).
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): spectral-sequence-collapse cartan1956 and weibel1994 locators marked unchecked in merged PR #9116 (ee82aea8ccb / 3885f1e31ec).

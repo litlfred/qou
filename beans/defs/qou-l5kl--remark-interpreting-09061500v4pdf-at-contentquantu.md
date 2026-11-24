@@ -1,13 +1,13 @@
 ---
 # qou-l5kl
 title: Remark interpreting 0906.1500v4.pdf at folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLa…
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:01Z
-updated_at: 2026-11-22T21:16:34Z
+updated_at: 2026-11-24T13:03:55Z
 parent: qou-aqfj
 ---
 
@@ -35,3 +35,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 Remark block written on branch claude/library-remarks-2026-11-22, draft PR https://github.com/litlfred/qou/pull/9127 (issue #9121). Locators read from the held PDF. Stays open until the PR merges.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): adjoint-torsion-derivative-duality-prior-art.{md,ts} (Dubois-Yamaguchi derivative & signed duality scope) landed in mass-theory in merged PR #9184 (0e24284364a / dc8919ec7a3).

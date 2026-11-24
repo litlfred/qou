@@ -1,14 +1,13 @@
 ---
 # qou-sf0s
 title: Cite [bilsonthompson2007] at def:strand-twist-datum
-status: todo
-pr: 8397
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:49Z
-updated_at: 2026-11-21T12:54:01Z
+updated_at: 2026-11-24T13:03:38Z
 parent: qou-1qhv
 ---
 
@@ -40,3 +39,9 @@ Status stays in-progress until PR #8818 merges.
 ## 2026-11-21 — PR #8818 merged
 
 The cite-intake work above landed on main. The verdict was done-partial, so the residual named in the note stays open: status set to todo.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): [bilsonthompson2007] cited at def:strand-twist-datum (#8818, afb6bc04976) and rem:flavor-charge-assignments (#9333, b6a2ddb1d66).

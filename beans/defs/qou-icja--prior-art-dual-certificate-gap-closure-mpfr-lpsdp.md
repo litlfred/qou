@@ -1,7 +1,7 @@
 ---
 # qou-icja
 title: 'Prior art & dual-certificate gap closure: MPFR LP/SDP bootstrap (Kantorovich, Gatermann-Parrilo, Viazovska, van Aggelen, Boldo-Mahboubi, Goulart-Chen, Dvorak-Kolmogorov) + extremal-functional uniqueness in Lean'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - lp-duality
     - compute-closure
 created_at: 2026-11-23T19:27:02Z
-updated_at: 2026-11-23T20:54:28Z
+updated_at: 2026-11-24T13:03:40Z
 parent: qou-qzvs
 ---
 
@@ -48,3 +48,9 @@ parent: qou-qzvs
 
 Claimed by claude/lp-bootstrap-prior-art-dual-gaps-20261123 (2026-11-23)
 PR #9210 opened on claude/lp-bootstrap-prior-art-dual-gaps-20261123 (f89375881ae6)
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): lp-sdp-bootstrap-prior-art.{md,ts}, 36 reference JSONs, NuclearChamberGS.lean & SymmetryReducedDualCertificate.lean (0 sorry), and lp-bootstrap-dual-gaps / chamber-gs-model-a-b witnesses (allPassed: true) landed in PR #9210 (9ce8d04d27a).

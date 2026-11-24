@@ -1,14 +1,13 @@
 ---
 # qou-2g9j
 title: 'Delta=2 Milnor residual: the mod-delta formula is HELD (Mellor-Melvin), so the residual is not blocked'
-status: todo
-pr: 8283
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T10:58:08Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T13:03:39Z
 parent: b9cj
 ---
 
@@ -283,3 +282,9 @@ Was in-progress with no bean update since 2026-09-14 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8281, #8283, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-04: "beans(qou-2g9j): mubar vanishes on every triple -- residual closed, and my Seifert-surface obstacle disproved"). The work may be partly or fully done. Read the bean before you close it.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): Mellor-Melvin Delta=2 Milnor audit (docs/audits/2026-11-24-milnor-delta2-mellor-melvin-2g9j.md) and milnor-mubar-delta2-mellor-melvin.witness.json (allPassed: true) landed in PR #9331 (8eea176e093, 5ef57e59be9).

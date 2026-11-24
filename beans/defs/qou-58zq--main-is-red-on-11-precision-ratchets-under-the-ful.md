@@ -1,13 +1,13 @@
 ---
 # qou-58zq
 title: main is red on 11 precision ratchets under the FULL precision-gates family (measured 2026-09-16 at 67f52ddf58); --changed on a branch cannot see it
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T02:43:56Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T13:03:43Z
 parent: qou-9nnz
 ---
 
@@ -16,3 +16,9 @@ Measured by the merge-coordinator agent during the 2026-09-16 pass (its report, 
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8280, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): full scripts/precision-gates.sh family exits 0 across all 12/12 blocking precision ratchets following PRs #9237, #9293, #9302, and #9303.

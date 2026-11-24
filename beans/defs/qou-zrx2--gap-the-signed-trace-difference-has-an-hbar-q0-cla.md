@@ -1,13 +1,13 @@
 ---
 # qou-zrx2
 title: 'GAP: the signed trace difference has an hbar_q^0 classical floor -- it is not a pure deformation observable'
-status: in-progress
+status: completed
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-11-24T03:18:17Z
+updated_at: 2026-11-24T13:03:40Z
 parent: qou-v2om
 ---
 
@@ -690,3 +690,9 @@ Was in-progress with no bean update since 2026-09-06 and no main commit naming i
 - **Verified in `computations/probes/low_isotope_binding_substrate_probe.py` (`low-isotope-binding-substrate-probe.witness.json`):** assertions `qou_zrx2_interface_parity_formula_A2_to_6`, `qou_zrx2_deuteron_borromean_floor_share_gt_85pct`, and `qou_zrx2_deuteron_grouped_floor_share_22_46pct` all PASS at 50-dps `mpmath`.
 
 Follow-up (5) cycle-merge parity & 80-dps shares proved at 891eef314f7 / 90b9a30e666.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): QOU/MassTheory/ClassicalTraceFloorParity.lean (0 sorry) and classical-floor-and-rstar-d-band-80dps.witness.json (allPassed: true) landed in PR #9269 (7394efad773, fdf96e2c9f8).

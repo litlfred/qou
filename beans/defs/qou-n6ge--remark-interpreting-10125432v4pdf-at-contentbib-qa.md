@@ -1,14 +1,13 @@
 ---
 # qou-n6ge
 title: Remark interpreting 1012.5432v4.pdf at content/bib-qa-verifications.json
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:29Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:47Z
 parent: qou-aqfj
 ---
 
@@ -29,3 +28,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-22 — fixed in PR #9116: Join already corrected to [thompson-fluxtubes]. First-pass triage recorded in the ledger: tangential (D(H) quantum doubles; the folio uses none).
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): [thompson-fluxtubes] first-pass triage recorded in content/bib-qa-verifications.json in merged PR #9116 (3885f1e31ec).

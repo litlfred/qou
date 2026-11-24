@@ -1,13 +1,13 @@
 ---
 # qou-k0ff
 title: Remark interpreting 1311.6841v1.pdf at folio/quantum-observable-universe/observations/cfs-compa…
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:31Z
-updated_at: 2026-11-22T21:16:34Z
+updated_at: 2026-11-24T13:03:55Z
 parent: qou-aqfj
 ---
 
@@ -39,3 +39,9 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8508, closed o
 Remark block written on branch claude/library-remarks-2026-11-22, draft PR https://github.com/litlfred/qou/pull/9127 (issue #9121). Locators read from the held PDF. Stays open until the PR merges.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): Dupuis-Girelli U_q(su(2)) / E_q(2) LQG comparison remark landed in gravity-spacetime in merged PR #9184 (ca4360044b5 / dc8919ec7a3).

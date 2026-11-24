@@ -1,13 +1,13 @@
 ---
 # qou-5pgl
 title: 'AUDIT: hecke_core.z flipped C->D under every importer — 8 files carry constants calibrated before it'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T13:23:16Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T13:03:39Z
 parent: qou-cdx1
 ---
 
@@ -398,3 +398,9 @@ python3 -c "from mpmath import mp,mpf,catalan; mp.dps=30; me=mpf('0.51099895069'
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8273, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): 8-file hecke_core.z importer audit (docs/audits/2026-11-24-hecke-core-z-importer-audit-5pgl.md) and 3 regenerated 80-dps witnesses (allPassed: true) landed in PR #9331 (8eea176e093, 5ef57e59be9).

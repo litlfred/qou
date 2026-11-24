@@ -1,13 +1,12 @@
 ---
 # qou-agtw
 title: 'Antigravity: re-run the three two-row Markov tower witnesses (about 7 h) so they carry q0Anchor'
-status: todo
+status: completed
 type: task
 priority: normal
-owner: Antigravity
-parent: qou-c20n
 created_at: 2026-11-21T07:45:00Z
-updated_at: 2026-11-21T07:45:00Z
+updated_at: 2026-11-24T13:03:44Z
+parent: qou-c20n
 ---
 
 Owner ruling 2026-11-21: work that fails here on time or resource limits goes
@@ -35,3 +34,9 @@ already carry it. `cargo check --features mpfr` passes.
    `markov-trace-two-row-tower.witness.json`.
 3. Confirm every `tr_markov_d` is unchanged against the committed values
    (they are pin-identical; only the stamp should move), then commit.
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): markov-trace-two-row-tower{-rust,-colwise,}.witness.json all carry q0Anchor='proton' (#9104, 15b3481ab06 & 7d9d4799d08) and q0_anchor_ratchet.py --strict exits 0 (NEW: 0).

@@ -1,13 +1,13 @@
 ---
 # qou-16yn
 title: 'MAIN IS BROKEN: 70ae502091 gutted the deuteron chi witness 2h ago -- consumer crashes, values match nothing'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T20:28:09Z
-updated_at: 2026-10-04T15:21:23Z
+updated_at: 2026-11-24T13:03:44Z
 parent: qou-5vkl
 ---
 
@@ -102,3 +102,9 @@ it does not fix.
    kernel is canonical.
 
 - **Round 91 (`https://github.com/litlfred/qou/pull/8413`, head `1d95d75db1b41a96e3b4987d5771f9fd945187c9`)**: Formalized theorem + 80-dps witness (`status: in-progress`).
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): computations/chi-deuteron-h6-at-q0-50dps.witness.json restored with full top-level (tr_M_at_q0, N, Z, convention, producer, description, engineVersion, q_0_50dps) and per-partition (dim, y_lambda, contribution, compute_time_sec) schema (dc12b128ccc).

@@ -1,14 +1,13 @@
 ---
 # qou-7srp
 title: Remark interpreting MonodromyHitchinY.pdf at qou:QOU.MassDerivation.quantum_planck_approx
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:35Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:45Z
 parent: qou-aqfj
 ---
 
@@ -29,3 +28,9 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-22 — fixed in PR #9116: MassDerivation and Calculations: witten1988 removed; ħ_q = 1 − 1/q is attributed to [leitner2026] as the framework definition.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): decorative witten1988 removed from MassDerivation and Calculations; hbar_q = 1 - 1/q attributed to [leitner2026] in merged PR #9116 (3261766cc51 / 3885f1e31ec).

@@ -1,14 +1,13 @@
 ---
 # qou-bivd
 title: Remark interpreting [habiro2008] at folio/quantum-observable-universe/lean/QOU/BraidKnot/Keysto…
-status: in-progress
-pr: 9116
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:57Z
-updated_at: 2026-11-22T20:51:34Z
+updated_at: 2026-11-24T13:03:46Z
 parent: qou-vva9
 ---
 
@@ -26,3 +25,9 @@ Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-v
 ## 2026-11-22 — fixed in PR #9116: KeystoneHabiroInfiniteRigidity: the docstring now states Habiro rigidity correctly and says the Lean mirrors it rather than using it.
 
 Session: https://claude.ai/code/session_01Qmmkt5c8TSSh1GGk4PoPDu
+
+
+
+## 2026-11-24 — Tranche 3 origin/main reconciliation
+
+Verified on origin/main (acb646cc6fe): KeystoneHabiroInfiniteRigidity docstring updated to state Habiro rigidity accurately in merged PR #9116 (910439abbeb / 3885f1e31ec).
