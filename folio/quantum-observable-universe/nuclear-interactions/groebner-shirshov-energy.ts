@@ -14,7 +14,7 @@ export default theorem({
     "topological-invariant",
   ],
   lean: { ref: "qou:QOU.MassTheory.Archimedean.groebner_shirshov_energy",
-    validation: "not_checked",
+    validation: "validated",
   },
   uses: ["unital-groebner-bases:thm:ugb-main"],
   authorNotes: [

@@ -1,12 +1,12 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:mass-energy",
+  interprets: "prop:mass-energy",
   label: "rem:mass-energy-equivalence-interpretation",
   title:
-    "Regime behaviour, the electron, and pair creation",
+    "Legendre origin, boost-inertia hypothesis, and regime behaviour",
   uses: [
-    "def:mass-energy",
+    "prop:mass-energy",
     "cor:mass-identity-C",
     "rem:mass-energy-electron-check",
     "rem:mass-energy-pair-creation",

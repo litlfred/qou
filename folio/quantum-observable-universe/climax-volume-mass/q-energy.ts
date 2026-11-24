@@ -20,5 +20,5 @@ export default definition({
   lean: { ref: "qou:QOU.MassTheory.Archimedean.QEnergy",
     validation: "not_checked",
   },
-  uses: ["def:q-angular-momentum"],
+  uses: ["def:categorical-hamiltonian", "def:q-angular-momentum"],
 });

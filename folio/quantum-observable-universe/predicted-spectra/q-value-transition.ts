@@ -22,7 +22,7 @@ export default definition({
   },
   defines: ["q-value"],
   uses: [
-    "def:categorical-action",
+    "def:categorical-hamiltonian",
     "conj:q-integer-mass-formula",
   ],
 });

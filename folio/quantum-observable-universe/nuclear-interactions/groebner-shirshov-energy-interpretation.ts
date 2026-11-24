@@ -3,13 +3,17 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:groebner-shirshov-energy-interpretation",
   title:
-    "Physical interpretation of the Gröbner--Shirshov energy: Hecke steps as crossing resolution",
+    "Role of Gröbner--Shirshov reduction: Markov-trace evaluation engine, flat coefficient shadow, and word-length norm",
   tags: [
     "groebner-shirshov",
     "hecke-algebra",
     "energy",
-    "crossing-asymmetry",
-    "skein-binding-energy",
+    "markov-trace",
+    "normal-form",
   ],
   interprets: "thm:groebner-shirshov-energy",
+  uses: [
+    "thm:groebner-shirshov-energy",
+    "def:categorical-hamiltonian",
+  ],
 });

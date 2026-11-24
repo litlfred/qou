@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:mass-energy",
+  interprets: "prop:mass-energy",
   label: "rem:mass-energy-pair-creation",
   title: "Pair-creation threshold in terms of energy",
   tags: [
@@ -12,7 +12,7 @@ export default remark({
     "information-theory",
   ],
   uses: [
-    "def:mass-energy",
+    "prop:mass-energy",
     "rem:pair-creation-energy",
   ],
 });

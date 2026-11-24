@@ -1,4 +1,4 @@
-**1320** indexed entries across 7 categories.
+**1321** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -69,6 +69,7 @@
 | [def:categorical-dirac-operator](#def:categorical-dirac-operator) | Categorical Dirac operator | Ch 2 |
 | [def:categorical-fourier](#def:categorical-fourier) | Categorical Fourier transform | Ch 2 |
 | [def:categorical-hodge-star](#def:categorical-hodge-star) | Categorical Hodge star | Ch 1 |
+| [def:categorical-hamiltonian](#def:categorical-hamiltonian) | Categorical Hamiltonian and phase-space Legendre transform | Ch 2 |
 | [def:categorical-instanton](#def:categorical-instanton) | Categorical instanton | Ch 2 |
 | [def:categorical-jet](#def:categorical-jet) | Categorical jet object | Ch 1 |
 | [def:categorical-lagrangian](#def:categorical-lagrangian) | Categorical Lagrangian | Ch 2 |
@@ -113,7 +114,6 @@
 | [def:electron-knot](#def:electron-knot) | Electron | Ch 14 |
 | [def:electron-shell-braid-capacity](#def:electron-shell-braid-capacity) | Electron shell as braid bonding capacity | Ch 16 |
 | [def:embeddable-knot-operator](#def:embeddable-knot-operator) | Embeddable knot operator with geometric overlap weight | Ch 16 |
-| [def:mass-energy](#def:mass-energy) | Energy of a braid class ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$) | Ch 20 |
 | [def:exceptional-divisor](#def:exceptional-divisor) | Exceptional divisor at $p$ | Ch 2 |
 | [def:fermion-boson-decomposition](#def:fermion-boson-decomposition) | Fermion--Boson decomposition | Ch 2 |
 | [def:hadron-fibre-embedding](#def:hadron-fibre-embedding) | Fibre-compatible hadron embedding | Ch 7 |
@@ -669,6 +669,7 @@
 | [prop:wedderburn-trace-identity](#prop:wedderburn-trace-identity) | Markov-trace normalization for $H_n(q)$ | Ch 11 |
 | [prop:markov-trace-frobenius-selection](#prop:markov-trace-frobenius-selection) | Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy | Ch 11 |
 | [prop:photon-threading-mass](#prop:photon-threading-mass) | Mass as photon threading cost | Ch 20 |
+| [prop:mass-energy](#prop:mass-energy) | Mass--energy equivalence from the causal-cone Legendre transform ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$) | Ch 20 |
 | [prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price) | Mass-formula coefficients as shadow prices of the Frobenius positivity constraints | Ch 11 |
 | [prop:mass-side-kernel-formalize-first-gates](#prop:mass-side-kernel-formalize-first-gates) | Mass-side $\S 4$ formalize-first gates as parametric Lean classes — `MassSideKernel` bundles anchor-stability, q=1 shadow (open gap), and direction sanity for any `linking_weight` candidate $w(q)$; mirrors the $\mathfrak{Q}_\beta$ `BarEvenKernel` typeclass | Ch 27 |
 | [prop:mass-tower-coefficient-stratification](#prop:mass-tower-coefficient-stratification) | Mass-tower coefficients $(\lambda_V, \lambda_S, \lambda_{\mathrm{pair}}, \alpha_k)$ as Wedderburn-block projections | Ch 11 |

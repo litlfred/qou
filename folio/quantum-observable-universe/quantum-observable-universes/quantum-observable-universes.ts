@@ -314,6 +314,7 @@ export default chapter({
         "categorical-action-notation-su2",
         "qou-canonical-action",
         "canonical-action-obstruction",
+        "categorical-hamiltonian",
       ],
     }),
 
