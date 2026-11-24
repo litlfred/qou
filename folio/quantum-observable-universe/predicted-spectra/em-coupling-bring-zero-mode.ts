@@ -14,6 +14,8 @@ export default proposition({
     witness: [
       "computations/q-pinning-50-digit.witness.json",
       "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.witness.json",
+      "computations/alpha-em-form-ladder.witness.json",
+      "computations/alpha-em-no-pi-correction-probe.witness.json",
     ],
     status: "verified",
   },
