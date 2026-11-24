@@ -19,7 +19,7 @@ platform for browsing, reviewing, and exploring the work.
 | **Web view** | [litlfred.github.io/qou](https://litlfred.github.io/qou/) |
 | **PDF** | [Full paper](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/quantum-observable-universe.pdf) (per-chapter PDFs in [Contents](#contents)) |
 | **Lean library** | [Rendered declarations and source](https://litlfred.github.io/qou/lean/) |
-| **QA reports** | [`qa-reports` branch](https://github.com/litlfred/qou/tree/cat/cat-harness/qa-reports), one report per commit |
+| **QA report** | [Latest report for `main`](https://github.com/litlfred/qou/tree/cat/cat-harness/qa-reports/main/a9abaf023c29a29da7b4a6587907d35a7cdaa892) (20 Nov 2026) · [all reports](https://github.com/litlfred/qou/tree/cat/cat-harness/qa-reports), one per commit. The reports are JSON files; a rendered QA page is not built yet. |
 | **Status and accuracy** | [Authors' Note: a work in progress](folio/quantum-observable-universe/authors-note/authors-note-status.md) |
 | **How to contribute** | [CONTRIBUTING.md](CONTRIBUTING.md) · [Contributors](CONTRIBUTORS.md) |
 | **License** | [CC BY 4.0](LICENSE) |

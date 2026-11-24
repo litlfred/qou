@@ -109,6 +109,12 @@ Re-run the setup script any time to update the platform clone or repair the syml
 
 ## Where to start
 
+> Given enough eyeballs, all bugs are shallow.
+>
+> (Linus's law, as Eric S. Raymond put it in *The Cathedral and the Bazaar*, 1999.)
+
+That is the spirit of this project: the more careful readers check the work, the sooner its mistakes are found.
+
 The easiest way in is to fork the repository and explore it with the language model of your choice. Ask it what the paper claims, how a result is proved, or where a number comes from, and let it walk you through the files.
 
 
