@@ -49,10 +49,21 @@ import argparse
 import json
 import sys
 import time
+from pathlib import Path
 
-import mpmath as mp
+_ROOT = Path(__file__).resolve().parents[2]
+for _p in ("computations", "computations/substrate", "tools/qou-substrate/python"):
+    if str(_ROOT / _p) not in sys.path:
+        sys.path.insert(0, str(_ROOT / _p))
 
-Q0_STR = "1.1099785827513808075916690956107688798744991218736"
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
+
+import mpmath as mp  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, q_at  # noqa: E402
+
+Q0_STR = Q_50_DIGIT_STR
 
 
 # ---------- two-row standard tableaux, as GT paths -----------------------
@@ -261,32 +272,32 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("z", type=int)
     ap.add_argument("n", type=int, help="largest neutron count in the chain")
-    ap.add_argument("--dps", type=int, default=70)
+    ap.add_argument("--dps", type=int, default=80)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
-    mp.mp.dps = args.dps
-    q = mp.mpf(Q0_STR)
-    t0 = time.time()
-    worst = check_reps(q)
-    print(f"self-check (Hecke, braid, Markov, sigma0 sigma1 sigma0): worst residual {mp.nstr(worst, 3)}",
-          flush=True)
-    assert worst < mp.mpf(10) ** (-(args.dps - 15)), "representation self-check failed"
-    res = walk(args.z, args.n, q, log=lambda s: print(s, flush=True))
-    rows = []
-    for m, (val, pn) in sorted(res.items()):
-        if m <= args.z:
-            continue  # pure-proton prefix: not a nucleus of this chain
-        N = m - args.z
-        rows.append({"isotope": f"{m}{SYM.get(args.z, '?')}", "z": args.z, "n": N, "a": m,
-                     "pn": pn, "tr_markov_d": mp.nstr(val, 60)})
-    for r in rows:
-        print(r["isotope"], r["tr_markov_d"][:40])
-    print(f"elapsed {time.time() - t0:.1f}s")
-    if args.out:
-        json.dump({"q0": Q0_STR, "q0Anchor": "proton", "q0Value": Q0_STR,
-                   "z": "q^3/(q^2+1)", "dps": args.dps,
-                   "self_check_worst_residual": mp.nstr(worst, 5), "rows": rows},
-                  open(args.out, "w"), indent=1)
+    with mp.workdps(args.dps):
+        q = q_at(args.dps)
+        t0 = time.time()
+        worst = check_reps(q)
+        print(f"self-check (Hecke, braid, Markov, sigma0 sigma1 sigma0): worst residual {mp.nstr(worst, 3)}",
+              flush=True)
+        assert worst < mp.mpf(10) ** (-(args.dps - 15)), "representation self-check failed"
+        res = walk(args.z, args.n, q, log=lambda s: print(s, flush=True))
+        rows = []
+        for m, (val, pn) in sorted(res.items()):
+            if m <= args.z:
+                continue  # pure-proton prefix: not a nucleus of this chain
+            N = m - args.z
+            rows.append({"isotope": f"{m}{SYM.get(args.z, '?')}", "z": args.z, "n": N, "a": m,
+                         "pn": pn, "tr_markov_d": mp.nstr(val, 60)})
+        for r in rows:
+            print(r["isotope"], r["tr_markov_d"][:40])
+        print(f"elapsed {time.time() - t0:.1f}s")
+        if args.out:
+            json.dump({"q0": Q0_STR, "q0Anchor": "proton", "q0Value": Q0_STR,
+                       "z": "q^3/(q^2+1)", "dps": args.dps,
+                       "self_check_worst_residual": mp.nstr(worst, 5), "rows": rows},
+                      open(args.out, "w"), indent=1)
 
 
 if __name__ == "__main__":
