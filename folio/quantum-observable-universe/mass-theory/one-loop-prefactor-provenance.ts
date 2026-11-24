@@ -32,6 +32,11 @@ export default proposition({
         "its logarithm.",
       see: "folio/quantum-observable-universe/lean/QOU/OneLoopPrefactorInvariance.lean",
     },
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Bean qou-fiaf: anchored Léo Bénard's doctoral thesis (`benard2018`, Ch. 2, §2.3.1, §2.4, held at `library/2018sorus020/2018SORUS020.pdf`) at the general-c character-variety adjoint Reidemeister torsion normalisation discussion.",
+    },
   ],
   label: "prop:one-loop-prefactor-provenance",
   title:
@@ -49,6 +54,7 @@ export default proposition({
     "vanderveen2008",
     "dimofte-garoufalidis-2013",
     "garoufalidis-yoon-2024",
+    "benard2018",
   ],
   tags: [
     "one-loop",
