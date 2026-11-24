@@ -3,7 +3,14 @@ $$
   F_{\mathrm{Bor}}(q) \;:=\;
     \frac{\bigl|\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)\bigr| \cdot [3]_q!}{q^3}.
 $$
-The normaliser $[3]_q!/q^3 = 1 + 2q^{-2} + 2q^{-4} + q^{-6}$ is the Schur element $c_{\mathrm{sign}}$ of the sign character of $H_3(q)$, with $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$. For $w \in S_3$ write $\sigma_w$ for its positive braid lift in $H_3(q)$. The Schur elements $c_\chi$ are the constants in the decomposition $\tau = \sum_\chi \chi / c_\chi$ of the symmetrising trace $\tau(\sigma_w) = \delta_{w,1}$. They are
+The normaliser $[3]_q!/q^3 = 1 + 2q^{-2} + 2q^{-4} + q^{-6}$ is the Schur element $c_{\mathrm{sign}}$ of the sign character of $H_3(q)$, with $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$. At the horizontal Dirac square scale $q^{-2}$, it equals the Poincaré polynomial of the symmetric group $\mathfrak{S}_3$:
+$$
+  \frac{[3]_q!}{q^3}
+  \;=\; (1 + q^{-2})(1 + q^{-2} + q^{-4})
+  \;=\; \sum_{w \in \mathfrak{S}_3} (q^{-2})^{\ell(w)}
+  \;=\; P_{\mathfrak{S}_3}(q^{-2}).
+$$
+For $w \in S_3$ write $\sigma_w$ for its positive braid lift in $H_3(q)$. The Schur elements $c_\chi$ are the constants in the decomposition $\tau = \sum_\chi \chi / c_\chi$ of the symmetrising trace $\tau(\sigma_w) = \delta_{w,1}$. They are
 $$
   c_{\mathrm{triv}} = q^3\,[3]_q!, \qquad c_{\mathrm{sign}} = [3]_q!/q^3, \qquad c_{\mathrm{refl}} = [3]_q .
 $$
@@ -24,4 +31,4 @@ $$
   \;=\; 6 \;-\; 9h \;+\; \tfrac{19}{2}h^2 \;-\; \tfrac{57}{8}h^3
         \;-\; \tfrac{1}{2}h^4 \;+\; \tfrac{649}{128}h^5 \;-\; 7h^6 \;+\; \cdots
 $$
-The observable attaches two structural integers: $2$ (the classical dimension of the standard irrep of $S_3$) and $12$ (the order of $S_3$ scaled by this dimension). These integers carry no archimedean information and are available over any base ring.
+The observable attaches two structural integers: $2 = \dim V_{(2,1)}$ (the dimension of the standard irreducible representation of $\mathfrak{S}_3$) and $12 = 2 \cdot 6 = \dim V_{(2,1)} \cdot |\mathfrak{S}_3|$ (the classical limit $P_{\mathfrak{S}_3}(1) = |\mathfrak{S}_3|$ scaled by $\dim V_{(2,1)}$). These integers carry no archimedean information and are available over any base ring.

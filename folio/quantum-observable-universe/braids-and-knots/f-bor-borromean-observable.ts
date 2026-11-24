@@ -61,4 +61,11 @@ export default definition({
     "lean-proved-building-blocks",
     "h-expansion-rational",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "External-reader provenance note (consolidated after retirement of `appendix-qvalues/proton-borromean-assembly` in `52721aa56f3`): the integer $12 = 2 \\cdot 6 = \\dim V_{(2,1)} \\cdot |\\mathfrak{S}_3|$ is purely categorical (standard irrep dimension times group order, classical limit $P_{\\mathfrak{S}_3}(1) = 6$), and not the inverse of an Ocneanu leading-pole coefficient $-1/12$. Deriving the linear proton-assembly law and the Wenzl-vs-$q$-Schur Poincaré factor $[3]_q!/q^3 = (1 + q^{-2})(1 + q^{-2} + q^{-4}) = P_{\\mathfrak{S}_3}(q^{-2})$ from first principles remains open.",
+    },
+  ],
 });
