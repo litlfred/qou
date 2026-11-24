@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-24T12:40:59Z
+updated_at: 2026-11-24T12:50:31Z
 ---
 
 ## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)
@@ -29,10 +29,10 @@ A **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit *
 
 This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/beans` on **every routine Swarm Monitor checkin** (currently `*/10 * * * *` periodic mode, and also renderable on-demand anytime). If the active Swarm Coordinator / Merge Manager ever stalls, runs out of context, or disconnects, **any successor agent reading this single bean (`beans show qou-s028`) has 100% of the end-state criteria, work-item queues, owner rulings, fences, worktree map, and commands required to take over seamlessly in `< 60` seconds.**
 
-- **Last Heartbeat Refresh:** `2026-11-24T12:40:58Z` (`2026-11-24 07:40:58 `)
+- **Last Heartbeat Refresh:** `2026-11-24T12:50:30Z` (`2026-11-24 07:50:30 `)
 - **`litlfred/qou` `origin/main` Tip:** `b6a2ddb1d66`
-- **Live Queue Counts (`litlfred/qou`):** Open PRs = `173` (`163` Ready / `10` Draft) · Merged Since `2026-11-23` = `97` (latest: #9333, #9331, #9329, #9327, #9325, #9323, #9321, #9320, #9318, #9316, #9314, #9311) · Open GitHub Issues = `77`
-- **Disk Health (`/`):** `/dev/disk3s1s1  927G  908G   20G  98% /`
+- **Live Queue Counts (`litlfred/qou`):** Open PRs = `174` (`164` Ready / `10` Draft) · Merged Since `2026-11-23` = `97` (latest: #9333, #9331, #9329, #9327, #9325, #9323, #9321, #9320, #9318, #9316, #9314, #9311) · Open GitHub Issues = `78`
+- **Disk Health (`/`):** `/dev/disk3s1s1  927G  908G   19G  98% /`
 
 ---
 
@@ -71,27 +71,26 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 | `merge-runner` | `mt-local/9333` @ `4a9fd3e8be2` (`dirty=0`) | Serial prepare-merge-auto Runner onto origin/main (Wave A -> Wave B -> Wave C) | feat(observations,bib): wire Bach 2013 Fig. 3e witness and resolve 1qhv cit |
 | `ws6-exposition-pdf` | `claude/link-audit-refutations-x60n-20261124` @ `2cbc2bef72f` (`dirty=0`) | Q1 Staged-Branch PR Opener (Wave B, 14 branches) & Completed-Workitem Open-PR Auditor (Wave C) | docs(audits,qou-x60n): link all 30 docs/audits/*.lean evidence files to tar |
 | `ws4-mathlib-infra` | `claude/q3-lean-reservoir-libs-codemod-20261124` @ `34948e77e33` (`dirty=1`) | Q3 Option 1: Lean 83->12 QOU.<Chapter> Subgraphs + 7 Top-Level Reservoir lean_libs + apply-lean-reservoir-migration.py --fixup-branch + skill updates | refactor(lean,qou-lref): execute Q3 Option 1 7+1 Reservoir lean_libs & 83-> |
-| `main-base` | `HEAD` @ `b6a2ddb1d66` (`dirty=9`) | Q2 Option 1: Three-Stop Leibniz Relational Spine (Ch. 0 intro, Ch. 2 Rieffel/Jimbo, Ch. 13 Fefferman Lorentzian) + live DOIs | feat(observations,bib): wire Bach 2013 Fig. 3e witness and resolve 1qhv cit |
+| `main-base` | `HEAD` @ `b6a2ddb1d66` (`dirty=0`) | Q2 Option 1: Three-Stop Leibniz Relational Spine (Ch. 0 intro, Ch. 2 Rieffel/Jimbo, Ch. 13 Fefferman Lorentzian) + live DOIs | feat(observations,bib): wire Bach 2013 Fig. 3e witness and resolve 1qhv cit |
 | `ws5-nov19-rebase` | `claude/borromean-recompute-derived-w-bisect-20261124` @ `1094fc99e52` (`dirty=0`) | Q4 Option 1: Compact 9-Block L0-L4 Algorithms Annex (fixing 6 bugs) + 14->6 Annexes A-F with 80-dps Frechet-Jacobian Master Tables | chore(witness): stamp 80-dps witnesses on rebased HEAD |
 | `ws12-pr9180` | `claude/crosscheck-jingliu-dubois-squier-20261124` @ `6265b5bd5a5` (`dirty=0`) | Gap 1B (qou-3kkz): 4He Tetrahedral K_4 Flux-Ring & 462D 3D Jacobi Variational Compression + idle beans qou-bgur, qou-kjik | chore(witness,qou-4py9,qou-1el8): stamp 80-dps witnesses against 1a1ad133b6 |
 | `ws1-precision` | `claude/hygiene-n2dp-5d0x-refs-20261124` @ `ce3df2f8271` (`dirty=0`) | ws1-precision (#9104): 12-Witness q0 Precision Refill (11/12 all_nuclides_sdp + gates) + idle beans qou-n2dp, qou-5d0x | fix(folio,lean): resolve dangling computation.script refs and provable lean |
 | `ws15-p3-p5-p6` | `claude/drain-5c64-5pgl-2g9j-compute-20261124` @ `45e3d7137fe` (`dirty=0`) | ws1-precision Witness 12/12 (markov-trace-two-row-tower-rust) + idle beans qou-73kb, qou-m1tr | chore(witness): stamp 80-dps witnesses for qou-5pgl and qou-2g9j |
 | `ws2-bridge-hecke` | `claude/frobenius-gram-a71h-z21-bisect-85o2-20261124` @ `33d9d30f73c` (`dirty=0`) | q0-Anchor Final 21 Consistency Drain (qou-q0rf) + idle beans qou-jdrx, qou-ke35 | precision-gates: clear new CODATA stale-edition and witness-value-copy regr |
-| `ws3-l2-physics` | `claude/atlas-provenance-4b6g-and-cite-19m0-20261124` @ `b6a2ddb1d66` (`dirty=0`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | feat(observations,bib): wire Bach 2013 Fig. 3e witness and resolve 1qhv cit |
+| `ws3-l2-physics` | `claude/atlas-provenance-4b6g-and-cite-19m0-20261124` @ `9f621f6a4d2` (`dirty=0`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
 
 ---
 
 ## 3. Live Sampled Compute / Sweep Processes
 
-- `25260 0.0 1184 06:14 zsh -c cd /Users/litlfred/space_cats/qou-wt/main-base && \\012PYTHONPATH=tools/qou-substrate/python:tools/pyh`
-- `26458 79.2 44576 00:08 python3 computations/mpf_mixed_arithmetic_audit.py --strict`
-- `6267 0.0 5424 01:05:39 python3 scripts/lean-library-sweep.py --package BraidKnotOctonion --jobs 1 --shadow /tmp/ws51-codemod-shado`
-- `62799 0.0 1264 01:08:58 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_`
+- `6267 0.0 15040 01:15:11 python3 scripts/lean-library-sweep.py --package BraidKnotOctonion --jobs 1 --shadow /tmp/ws51-codemod-shad`
+- `62799 0.0 1264 01:18:30 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_`
 
 ---
 
 ## 4. Highest-Numbered Active Ready PRs on `litlfred/qou` (Merge-Runner Queue)
 
+- #9335 (`claude/atlas-provenance-4b6g-and-cite-19m0-20261124`): feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): Annex A p
 - #9217 (`claude/project-thread-di0nax`): Public release prep: CITATION.cff
 - #9178 (`claude/exposition-statement-rulings-2026-11-16`): Exposition: owner rulings on false or under-derived statements
 - #9174 (`claude/convention-c-ledger-2026-11-21`): convention-C ledger: adjudicate the 8 unadjudicated comparison sites
@@ -101,7 +100,6 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 - #8741 (`claude/gg-internucleon-bond-2026-11-21`): γγ inter-nucleon bond: which bond words does reading 3 admit in a nucl
 - #8560 (`claude/uic-scoping-kjik-banner-reland-2026-11-20`): Re-land #7439's three items, then close the q-precision input ceiling 
 - #8512 (`cat/round88-triangulation3dindex-helicityparity-blochk3torsion-immirzihorizontower-strangeidentityscope-bridge`): feat(qou): formalize 1-efficient 3d-index invariance, helicity parity,
-- #8493 (`cat/round85-stateintegral-habiro-apoly-voldeg-qairy-bridge`): feat(qbeta): Round 85 state-integral factorization, Habiro prime-power
 
 ---
 
