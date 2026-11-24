@@ -58,6 +58,7 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 # reduction would silently round to float64 precision -- the defect this
 # module was just fixed for, one layer down.
 set_compute_dps()
+mp.mp.dps = max(mp.mp.dps, 80)
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -98,20 +99,25 @@ def _promote_lp_full_precision(entry: dict) -> dict:
     return out
 
 
-def load(name: str) -> dict | None:
+def load(name: str, builder: WitnessBuilder) -> dict | None:
     base = Path(__file__).parent
     path = base / name
     if path.exists():
-        return json.loads(path.read_text())
+        return builder.add_upstream(path)
     # Phase-6 subdirectory refactor (2026-06-02): several witnesses were
     # relocated out of the flat `computations/` root into cluster subdirs
     # (e.g. audits/, alpha/).  Their producers still exist and the witness
     # files are current — they are NOT dead inventory.  Fall back to a
     # recursive search for the basename so relocated witnesses resolve and
     # are not misreported as "missing".
-    matches = sorted(base.glob(f"**/{name}"))
+    matches = [
+        m for m in sorted(base.glob(f"**/{name}"))
+        if "_deprecated" not in m.parts and "fsh-guts" not in m.parts
+    ]
     if matches:
-        return json.loads(matches[0].read_text())
+        body = builder.add_upstream(matches[0])
+        builder._upstream_hashes[-1]["path"] = matches[0].relative_to(base).as_posix()
+        return body
     return None
 
 
@@ -133,25 +139,25 @@ def main() -> None:
     sources = {
         # Structural prediction layer (LP dual + GB NF)
         "lp_confinement_nf_forcing":
-            load("lp-confinement-nf-forcing.witness.json"),
+            load("lp-confinement-nf-forcing.witness.json", builder),
         "confinement_operator_selection":
-            load("confinement-operator-selection.witness.json"),
+            load("confinement-operator-selection.witness.json", builder),
         "cross_check_trM_1ppb":
-            load("cross-check-trM-1ppb.witness.json"),
+            load("cross-check-trM-1ppb.witness.json", builder),
         # Structural-identity audits
         "codata_reconciliation":
-            load("codata-reconciliation.witness.json"),
+            load("codata-reconciliation.witness.json", builder),
         "brundan_kleshchev_audit":
-            load("brundan-kleshchev-audit.witness.json"),
+            load("brundan-kleshchev-audit.witness.json", builder),
         "alpha_k_macdonald":
-            load("alpha-k-macdonald-closed-form.witness.json"),
+            load("alpha-k-macdonald-closed-form.witness.json", builder),
         "y_lambda_macdonald_telescope":
-            load("y-lambda-macdonald-telescope.witness.json"),
+            load("y-lambda-macdonald-telescope.witness.json", builder),
         "demazure_markov_trace":
-            load("demazure-markov-trace.witness.json"),
+            load("demazure-markov-trace.witness.json", builder),
         # Empirical AME data (informational; NOT a QOU prediction)
         "rho_f_volume_binding_gap":
-            load("rho-f-volume-binding-gap.witness.json"),
+            load("rho-f-volume-binding-gap.witness.json", builder),
     }
 
     # ── Layer 1: structural prediction (LP dual + GB NF) ───────────
@@ -198,14 +204,7 @@ def main() -> None:
         raw.get("parameters", {}).get("tolerance_relative")
         if isinstance(raw.get("parameters"), dict)
         else None
-    ) or trm.get("tolerance_relative", 1e-9)
-    # Normalise to float — the witness may store this as a decimal
-    # string (parameters.tolerance_relative) or as a numeric literal
-    # (legacy top-level); downstream tooling expects float-comparable.
-    try:
-        tolerance_float = float(tolerance)
-    except (TypeError, ValueError):
-        tolerance_float = 1e-9
+    ) or trm.get("tolerance_relative", "1e-9")
     # Per-atom relative delta.  L1 GATES ON THE COLOR-WEIGHTED EXACT METHODS
     # (`exact_method_rel_delta` = markov_peel vs chi-cache) — the two float-clean
     # methods the 1 ppQ certification explicitly rests on.  It must NOT gate on
@@ -525,7 +524,16 @@ def main() -> None:
                      "experimental data, not a prediction target — "
                      "QOU does not fit against it.")
 
-    out_path = builder.save()
+    out_path = builder.save(extra={
+        "q0Anchor": "ambiguous",
+        "q0AnchorReason": (
+            "Aggregator dashboard reading upstream structural witnesses without "
+            "evaluating q0 directly; declared upstreams currently span "
+            "proton-anchored (lp-confinement-nf-forcing, confinement-operator-selection, "
+            "alpha-k-macdonald-closed-form, brundan-kleshchev-audit) and "
+            "muon-anchored (cross-check-trM-1ppb) witnesses."
+        ),
+    })
     print(f"\nWitness: {out_path}")
 
 

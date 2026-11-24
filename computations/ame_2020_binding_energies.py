@@ -152,13 +152,14 @@ def main(argv: list[str] | None = None) -> int:
     a = ap.parse_args(argv)
 
     set_compute_dps()
-    getcontext().prec = 50
+    mp.mp.dps = max(mp.mp.dps, 80)
+    getcontext().prec = 80
     values = {key: _binding_mev_exact(Z, A) for key, Z, A, _ in NUCLIDES}
     routes = {key: _mass_excess_route_mev(Z, A) for key, Z, A, _ in NUCLIDES}
 
     # The canonical mpf accessor must agree with the exact-decimal read; this
     # guards against the two ever drifting apart (they are the same column).
-    with mp.workdps(max(50, mp.mp.dps)):
+    with mp.workdps(max(80, mp.mp.dps)):
         for key, Z, A, label in NUCLIDES:
             gap = abs(ame_binding_mev(Z, A) - mp.mpf(str(values[key])))
             if gap > mp.mpf("1e-30"):
@@ -197,6 +198,8 @@ def main(argv: list[str] | None = None) -> int:
         )
         .add_parameter("supersedes_manual_entry", True)
     )
+    local_ame_table = HERE / "data" / "ame2020.json"
+    w.add_upstream(local_ame_table if local_ame_table.exists() else _TABLE_PATH)
 
     max_dev = Decimal(0)
     for key, Z, A, label in NUCLIDES:
