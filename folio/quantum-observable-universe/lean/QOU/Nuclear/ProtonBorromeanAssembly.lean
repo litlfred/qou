@@ -18,8 +18,7 @@ integers enter linearly:
 
 * the constituent multiplicity is `dim V_(2,1) = 2` (the trace-dominant Hecke
   irrep dimension), and
-* the per-constituent electron-binding count is `|S₃| = 6` (the Ocneanu −1/12
-  leading-pole inverse; `12 = 2 · 6`),
+* the per-constituent electron-binding count is `|S₃| = 6` (`12 = 2 · 6`),
 
 assembled as `m_p = multiplicity · (m_μ · F_Bor − bindingCount · m_e)`.
 
@@ -56,7 +55,7 @@ class ProtonBorromeanAssembly (R : Type*) [CommRing R] where
   multiplicity : R
   multiplicity_eq_two : multiplicity = 2
   /-- Conjectural input 2 — the per-constituent electron-binding count is
-      `|S₃| = 6` (the Ocneanu −1/12 leading-pole inverse). -/
+      `|S₃| = 6` (order of the three-strand permutation group). -/
   bindingCount : R
   bindingCount_eq_six : bindingCount = 6
   /-- Conjectural assembly law — the proton mass is the multiplicity times the
