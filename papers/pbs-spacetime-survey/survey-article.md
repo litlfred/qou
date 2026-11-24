@@ -229,7 +229,7 @@ When you try to compute neutron decay by looking *only* at the three strands of 
 Why did the isolated three-strand calculation miss more than half the decay energy? Because **neutron beta decay is not a solo act on three strands**: the outgoing electron and antineutrino (plus a closed neutral loop required to balance strand count) occupy **six additional strands**, making beta decay a coupled **nine-strand interaction** (Equation 8):
 
 $$
-Q_\beta^{\mathrm{coupled}} = -E_0\,\ln\!\left(\frac{\mathrm{loop}(W_n)}{\mathrm{loop}(W_p)}\right) + \Delta E_{\mathrm{spin}} \approx +0.764\;\mathrm{MeV}, \qquad \Delta E_{\mathrm{EM}}(p - n) = \frac{1}{9}\,\alpha\,m_{\mathrm{proton}} \approx 0.761\;\mathrm{MeV}.
+Q_\beta^{\mathrm{coupled}} = -E_0\,\ln\left(\frac{\mathrm{loop}(W_n)}{\mathrm{loop}(W_p)}\right) + \Delta E_{\mathrm{spin}} \approx +0.764\;\mathrm{MeV}, \qquad \Delta E_{\mathrm{EM}}(p - n) = \frac{1}{9}\,\alpha\,m_{\mathrm{proton}} \approx 0.761\;\mathrm{MeV}.
 $$
 
 Both halves of Equation (8) have simple physical meanings:
