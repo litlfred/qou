@@ -1,5 +1,7 @@
 {
  "description": "Leray DSS Galerkin search -- mpmath verification stage (numerical exploration, NOT a proof).",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Numerical Galerkin search for Leray self-similar Navier-Stokes profiles over exact rational harmonics in mpmath; no substrate q is read or evaluated anywhere.",
  "dps": 60,
  "alpha_test": "0.25",
  "trial_tail": "(1+rho)^-p, n=0 member ~ |y|^-1 (weak-L3)",
@@ -27,7 +29,8 @@
      60
     ]
    },
-   "candidates": []
+   "candidates": [],
+   "periodic_candidates": []
   },
   {
    "L": 2,
@@ -197,6 +200,30 @@
       "-20.971948720127853897987208598663071816584600289039"
      ]
     }
+   ],
+   "periodic_candidates": [
+    {
+     "source": "periodic B: L2N2, seeded from complex eigenmode of steady class 2, K-refined 2->12 (float S=0.830271)",
+     "K": 6,
+     "final_residual": "1.6445e-56",
+     "period_S": "0.8302728310216947307233614927373644726319",
+     "scale_lambda": "1.51457733844150045505825668294",
+     "mode_norms": [
+      "57.8000955262",
+      "41.9950912144",
+      "5.36172791696",
+      "1.37573297483",
+      "0.303347872481",
+      "0.0406234435107",
+      "0.0123312058956"
+     ],
+     "newton_history": [
+      "3.27e-10",
+      "8.93e-22",
+      "5.41e-44",
+      "1.64e-56"
+     ]
+    }
    ]
   },
   {
@@ -341,6 +368,31 @@
       "8.2295382190482181946661635468330774310792332669724",
       "-27.138115279801069482690395925145199997968276299396",
       "8.848634430592375476007659111392641266632544254165"
+     ]
+    }
+   ],
+   "periodic_candidates": [
+    {
+     "source": "periodic C: L2N3, seeded from complex eigenmode of steady class 0 (L2N3), K-refined 2->8 (float S=0.471208)",
+     "K": 6,
+     "final_residual": "2.862e-55",
+     "period_S": "0.4712079740182250727698216224084388093942",
+     "scale_lambda": "1.26567298796293020095611333089",
+     "mode_norms": [
+      "109.241215934",
+      "38.3802964496",
+      "4.38738255231",
+      "0.423042885453",
+      "0.0689420630456",
+      "0.00465340586534",
+      "0.000806570918582"
+     ],
+     "newton_history": [
+      "4.2e-9",
+      "1.32e-18",
+      "7.7e-36",
+      "1.26e-47",
+      "2.86e-55"
      ]
     }
    ]
@@ -521,6 +573,31 @@
       "-137.74693927065533682939815922196801874635788013188"
      ]
     }
+   ],
+   "periodic_candidates": [
+    {
+     "source": "periodic D: L2N4, continued from periodic C (L2N3) at K=6 (float S=1.072030)",
+     "K": 6,
+     "final_residual": "3.5069e-53",
+     "period_S": "1.072029947543649874055909371942404608631",
+     "scale_lambda": "1.70918213721695250202420108437",
+     "mode_norms": [
+      "644.761390691",
+      "145.190011593",
+      "66.2240401076",
+      "36.7519510647",
+      "10.5238713736",
+      "1.76414882879",
+      "2.5224235982"
+     ],
+     "newton_history": [
+      "1.53e-7",
+      "6.61e-16",
+      "6.39e-32",
+      "7.28e-43",
+      "3.51e-53"
+     ]
+    }
    ]
   },
   {
@@ -636,7 +713,8 @@
       "356.69920767495143378341867296794605635736778494571"
      ]
     }
-   ]
+   ],
+   "periodic_candidates": []
   }
  ]
 }
