@@ -1,0 +1,172 @@
+{
+  "engine": "mpmath-80dps+exact-F2-Sp8",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T03:16:00.982600+00:00",
+  "commitSha": "08dfe533aaa053f5cc96c01723f0192fd0a32583",
+  "assertions": [
+    {
+      "name": "s5_acts_symplectically_and_preserves_q0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "BringThetaCharacteristicsSymplectic.{Phi_preserves_omega, Phi_preserves_q0}"
+    },
+    {
+      "name": "bring_theta_arf_counts_136_even_120_odd",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "BringThetaCharacteristicsSymplectic.even_and_odd_counts_bdh"
+    },
+    {
+      "name": "bdh2024_even_theta_S5_orbits_1_5x3_10x3_30x3",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "Braden-Disney-Hogg 2024 Thm 5.9; BringThetaCharacteristicsSymplectic.even_orbit_partition_bdh"
+    },
+    {
+      "name": "bdh2024_odd_theta_S5_orbits_20x3_60",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "Braden-Disney-Hogg 2024 Cor 5.7; BringThetaCharacteristicsSymplectic.odd_orbit_partition_bdh"
+    },
+    {
+      "name": "bdh2024_five_cycle_unique_fixed_spin_structure",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "Braden-Disney-Hogg 2024 Footnote 29; unique_fiveCycle_invariant_quadRefinement + fiveCycle_fixed_points_bdh"
+    },
+    {
+      "name": "bring_kummer_admissible_levels_1_2_3_6",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "CechGenus4Good.genus4_kummer_trivial_iff (#8862 / qou-n2aa)"
+    },
+    {
+      "name": "real_q0_symqint_chebyshev_matches_closed_form_and_grows_unboundedly",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "HeckeRealVsRootOfUnityModularity.{natCast_lt_symQInt_of_one_lt, globalDimSq_prefix_ge}"
+    },
+    {
+      "name": "root_of_unity_truncation_and_global_dim_formula_80dps",
+      "computed": "1.34940133673351e-78",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "HeckeRealVsRootOfUnityModularity.symQInt_eq_zero_iff_pow_two_mul_eq_one + Verlinde D^2"
+    },
+    {
+      "name": "root_of_unity_interior_qdims_positive_and_S_sq_identity_80dps",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "SU(2)_{ell-2} MTC unitarity & self-duality S^2 = I (ell = 3,4,5,7,10)"
+    },
+    {
+      "name": "root_of_unity_modular_ST_cubed_anomaly_relation_80dps",
+      "computed": "9.27608882598562e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "Bakalov-Kirillov 2001 (S*T)^3 = exp(2*pi*i*c/8)*S^2 across ell = 3,4,5,7,10"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "batch8-bring-theta-and-hecke-mtc-audit",
+  "scriptFile": "batch8_bring_theta_and_hecke_mtc_audit_probe.py",
+  "scriptHash": "d1eba36b5158",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/batch8_bring_theta_and_hecke_mtc_audit_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/batch8_bring_theta_and_hecke_mtc_audit_probe.py"
+  },
+  "description": "Batch 8 (qou-tw5j) 80-dps & exact F_2[S_5] diagnostic verifying BringThetaCharacteristicsSymplectic (unique S_5-invariant even spin structure and Braden-Disney-Hogg 2024 orbit decompositions) and HeckeRealVsRootOfUnityModularity (real q_0 > 1 non-truncation vs root-of-unity SU(2)_{ell-2} MTC modular relations).",
+  "parameters": {
+    "work_dps": 80,
+    "q0_proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "bring_theta_symplectic": {
+      "even_count": 136,
+      "odd_count": 120,
+      "even_S5_orbits": [
+        1,
+        5,
+        5,
+        5,
+        10,
+        10,
+        10,
+        30,
+        30,
+        30
+      ],
+      "odd_S5_orbits": [
+        20,
+        20,
+        20,
+        60
+      ],
+      "even_fiveCycle_fixed_count": 1,
+      "odd_fiveCycle_fixed_count": 0,
+      "kummer_admissible_levels_1_to_12": [
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    "hecke_modularity_split": {
+      "prefix_qdim_sq_sum_N30_at_q0": "62192.228124007691003379460837033736467828639091284",
+      "classical_sum_k_sq_N30": 9455,
+      "levels_tested": [
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "max_chebyshev_vs_closed_diff": "1.12000310948881e-77",
+      "max_root_truncation_err": "7.59038251912598e-80",
+      "max_modular_st3_err": "9.27608882598562e-80"
+    }
+  },
+  "caveats": [
+    "1. On qou-2a2o / qou-9l0d: uniqueness of the S_5-invariant even theta characteristic (Szego/Burns spin structure) and the orbit decompositions 136 = 1+5+5+5+10+10+10+30+30+30 and 120 = 20+20+20+60 are classical algebraic-geometry theorems (Braden & Disney-Hogg 2024), not QOU predictions; which principal bundle the brane tower lifts remains open. 2. On hkmt / rtep: at generic real q_0 > 1 all [k]_{q_0} > 0 so the full Hecke/TL category has infinitely many non-negligible objects and is not modular without either a root-of-unity semisimplified quotient (q^{2*ell} = 1) or an explicit finite block set (KeystoneHeckeMTC.heckeMTC); whether hkmt scopes to the root-of-unity quotient is an open owner question, and bwse / bwhk stays open."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
