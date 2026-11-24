@@ -1,0 +1,191 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T12:10:48.935769+00:00",
+  "commitSha": "6472cdb7ebca1b0efeef5e3fd57652a74123f314",
+  "assertions": [
+    {
+      "name": "digitized_fig3e_fringe_spacing_matches_lambda_over_d",
+      "computed": "0.176855",
+      "expected": "0.178764069860",
+      "passed": true,
+      "tolerance": "0.003",
+      "source": "Bach et al. (2013) Fig. 3e 5-order digitized peak spacing / 5 vs lambda_dB^rel(600 eV) / 280 nm"
+    },
+    {
+      "name": "qlocal_compton_saturating_pointwise_indistinguishable_from_fraunhofer",
+      "computed": "8.06043685410822e-6",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "3e-5",
+      "source": "max_{150 bins} |I_{1 + <q_local - 1>_a}(theta) - I_{q=1}(theta)| across [-0.5117, +0.5117] mrad"
+    },
+    {
+      "name": "magnification_invariant_m2_envelope_matches_fig3e_peaks",
+      "computed": "0.644816120754",
+      "expected": "0.6552",
+      "passed": true,
+      "tolerance": "0.015",
+      "source": "sinc^2(2*pi*50/280) = sinc^2(5*pi/14) vs Fig. 3e mean m = +-2 peak height (0.7971 + 0.5133)/2"
+    },
+    {
+      "name": "five_order_peak_position_rms_favors_qlocal_over_uniform_q0",
+      "computed": "0.00708307428731",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0.010",
+      "source": "5-order (m = -2..+2) interference peak RMS error [mrad] for q_local -> 1 (vs 0.0299 mrad at uniform q0)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "bach2013_double_slit_profile_crosscheck",
+  "scriptFile": "bach2013_double_slit_profile_crosscheck.py",
+  "scriptHash": "8f47ed219b8f",
+  "scriptCommitSha": "6472cdb7ebca1b0efeef5e3fd57652a74123f314",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/observations/bach2013_double_slit_profile_crosscheck.py"
+    ],
+    "reproduce": "python3 -u computations/observations/bach2013_double_slit_profile_crosscheck.py"
+  },
+  "description": "80-dps (50-dps serialized) zero-parameter cross-check of prop:double-slit-massive-pattern against the 150-bin digitized Figure 3e single-electron buildup profile (N = 6,235 electrons at E = 600 eV, a = 50 nm, d = 280 nm) of Roger Bach, Damian Pope, Sy-Hwang Liou, and Herman Batelaan, New J. Phys. 15 (2013) 033018 (arXiv:1210.6243v1; Bean qou-4qxj).",
+  "contentBlock": "prop:double-slit-massive-pattern",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (qou_substrate.constants.q_at)",
+    "work_dps": 80,
+    "output_dps": 50,
+    "beam_kinetic_energy_eV": "600",
+    "slit_width_a_nm": "50",
+    "slit_separation_d_nm": "280",
+    "fig3e_electron_count": 6235,
+    "digitized_bin_count": 150,
+    "lambda_dB_600eV_rel_pm": "50.053939560917645322817021961149401196114261677981",
+    "alpha_EM_inv_FormB": "137.03599912695091242017270049642000673995567550572",
+    "r_pi_CAL3_fm": "1.4138169310790238094570807398605500665195994008728",
+    "lambda_bar_Ce_CAL1_fm": "386.15926743656239593566693092529900073617092259993"
+  },
+  "data": {
+    "digitization_calibration_audit": {
+      "simulator_axis_half_span_mrad": "2.5584",
+      "physical_axis_scale_divisor": 5,
+      "physical_axis_half_span_mrad": "0.51168",
+      "digitized_mean_fringe_spacing_phys_mrad": "0.176855",
+      "fraunhofer_fringe_spacing_mrad": "0.17876406986042016186720364986124786141469379170708",
+      "fringe_spacing_rel_diff": "0.010679270515102798437505048788895399274685339330407",
+      "observed_order_m1_mean_peak": "0.9446",
+      "observed_order_m2_mean_peak": "0.6552",
+      "unrescaled_5x_axis_fraunhofer_rms_residual": "0.54613379517726982712155834005710483706423964283218",
+      "unrescaled_5x_axis_fraunhofer_pearson_r": "0.29313612210938673535132771187002915879578782698468"
+    },
+    "regimes_zero_parameter": {
+      "R0_fraunhofer_q_eq_1": {
+        "pearson_shape_correlation_150_bins": "0.76770919980598128233793652704536375830307033214060",
+        "peak_position_rms_5orders_mrad": "0.0070830742873103177053342801268067441831616876120825",
+        "rms_residual_zero_trough_150_bins": "0.27789150619340900720793428779308148030287592212282",
+        "l1_residual_zero_trough_150_bins": "0.22847531715206185528761660174690340350909831645737",
+        "fringe_spacing_mrad": "0.17876406986042016186720364986124786141469379170708",
+        "envelope_halfwidth_mrad": "1.0010787912183529064563404392229880239222852335596",
+        "envelope_to_fringe_ratio": "5.6000000000000000000000000000000000000000000000000",
+        "envelope_at_order_m2": "0.64481612075391790181086860708928460953986084255221"
+      },
+      "R1a_qlocal_pion_yukawa_saturating": {
+        "pearson_shape_correlation_150_bins": "0.76770921411602123441684155121457677557000398248571",
+        "peak_position_rms_5orders_mrad": "0.0070830745629736855297944164486116183679252082489395",
+        "rms_residual_zero_trough_150_bins": "0.27789150219054620266020294823140019429386444893587",
+        "l1_residual_zero_trough_150_bins": "0.22847531490911702148815648615129469928991874952658",
+        "fringe_spacing_mrad": "0.17876407097225818433836217104765270555592294686184",
+        "envelope_halfwidth_mrad": "1.0010788036709387968582633416006015972187148990161",
+        "envelope_to_fringe_ratio": "5.6000000348296664463949994171142411921657454345115",
+        "envelope_at_order_m2": "0.64481612444095594540174072716306644954943384662243",
+        "max_abs_diff_vs_fraunhofer": "0.000000029511128922238249353633572030146023896091794116944",
+        "rms_diff_vs_fraunhofer": "0.000000014314409470765003460312497596179659278804855854030"
+      },
+      "R1b_qlocal_electron_compton_saturating": {
+        "pearson_shape_correlation_150_bins": "0.76771310830032293005494831345304128029857167936960",
+        "peak_position_rms_5orders_mrad": "0.0070831495924918509801121961803185470832844139764384",
+        "rms_residual_zero_trough_150_bins": "0.27789041288906669403810031290668157097776798983957",
+        "l1_residual_zero_trough_150_bins": "0.22847470451666376563324031846076034195660612614701",
+        "fringe_spacing_mrad": "0.17876437353945160330132822662386428409332631894208",
+        "envelope_halfwidth_mrad": "1.0010821924263939830851952012870033794743594374735",
+        "envelope_to_fringe_ratio": "5.6000095131117645725435646442092237284555603083778",
+        "envelope_at_order_m2": "0.64481712780167117714605801411125632523205340900962",
+        "max_abs_diff_vs_fraunhofer": "0.0000080604368541082201171510529649330061054647375341633",
+        "rms_diff_vs_fraunhofer": "0.0000039097304375164929942542202016086794651504280575800"
+      },
+      "R1c_qlocal_electron_compton_em_vertex": {
+        "pearson_shape_correlation_150_bins": "0.76770920000858552375608079089776280948272439841287",
+        "peak_position_rms_5orders_mrad": "0.0070830742912132090851894475088765424123094065112072",
+        "rms_residual_zero_trough_150_bins": "0.27789150613673572236368190582072721478530718257434",
+        "l1_residual_zero_trough_150_bins": "0.22847531712030582373125575790190708640427253029370",
+        "fringe_spacing_mrad": "0.17876406987616177343180462492508013494639966291902",
+        "envelope_halfwidth_mrad": "1.0010787913946589559876339415077286528416053139935",
+        "envelope_to_fringe_ratio": "5.6000000004931249597897148035628794586487902890853",
+        "envelope_at_order_m2": "0.64481612080611967935273072639509288320767053456334",
+        "max_abs_diff_vs_fraunhofer": "0.00000000041782410835022246951509488965382423104500528891598",
+        "rms_diff_vs_fraunhofer": "0.00000000020266609787762368964255833184469179456736783387268"
+      },
+      "R2a_uniform_q0_linear_envelope": {
+        "pearson_shape_correlation_150_bins": "0.80838068233599304597462034107983217009350630785799",
+        "peak_position_rms_5orders_mrad": "0.029870898057230492390241293235318361019733608859115",
+        "rms_residual_zero_trough_150_bins": "0.25666249776620209641843649263624993495726882719115",
+        "l1_residual_zero_trough_150_bins": "0.21034564844025232371933867772222726804465357495776",
+        "fringe_spacing_mrad": "0.19842428891053800037366523370307760743188160956224",
+        "envelope_halfwidth_mrad": "1.1111760178990128020925253087372346016185370135485",
+        "envelope_to_fringe_ratio": "5.6000000000000000000000000000000000000000000000000",
+        "envelope_at_order_m2": "0.64481612075391790181086860708928460953986084255221",
+        "max_abs_diff_vs_fraunhofer": "0.41904171730941979498180540406893901172981246355461",
+        "rms_diff_vs_fraunhofer": "0.22063889019077182850691810333050859000236074351906"
+      },
+      "R2b_uniform_q0_hodge_envelope": {
+        "pearson_shape_correlation_150_bins": "0.79082552037317017550382421737628453941243953521781",
+        "peak_position_rms_5orders_mrad": "0.029870898057230492390241293235318361019733608859115",
+        "rms_residual_zero_trough_150_bins": "0.25475538465286498147226824711447606224473660770464",
+        "l1_residual_zero_trough_150_bins": "0.20641520442909781961595036793069618300460572575987",
+        "fringe_spacing_mrad": "0.19842428891053800037366523370307760743188160956224",
+        "envelope_halfwidth_mrad": "1.2333815815348691829719630683055652666558710970511",
+        "envelope_to_fringe_ratio": "6.2158800634077325225133469354203057272971950824920",
+        "envelope_at_order_m2": "0.70257247431908018954410584098185341723857931463952",
+        "max_abs_diff_vs_fraunhofer": "0.47199724788671390430952366967171466329465331724719",
+        "rms_diff_vs_fraunhofer": "0.23259642693365715627392507336234803178207055888413"
+      }
+    },
+    "aperture_averaged_q_local_minus_1_a50nm": {
+      "pion_yukawa_saturating": "0.0000000062195832939991070387704002128867402561627637476669",
+      "electron_compton_saturating": "0.0000016987699579593827794007516470943670643407817505763",
+      "electron_compton_em_vertex": "0.000000000088058028533877643493371331901569694479521910709641"
+    },
+    "uniform_q0_vs_qlocal_comparison": {
+      "fringe_stretch_fraction_q0_minus_1": "0.10997858275138080759166909561076887987449912187358",
+      "hodge_envelope_broadening_q0_sq_minus_1": "0.23205245416676393126980451353563618484968142291700",
+      "order_m2_peak_outward_shift_mrad": "0.039320438100235677012923167683659492034375635710321",
+      "peak_position_rms_ratio_uniform_q0_over_q1": "4.2172221899106299289027093656206091275925724644233",
+      "pearson_correlation_drop_uniform_q0_below_q1": "-0.023116320567188893165887690330920781109369203077208",
+      "order_m2_envelope_abs_err_fraunhofer": "0.010383879246082098189131392910715390460139157447791",
+      "order_m2_envelope_abs_err_uniform_q0_hodge": "0.047372474319080189544105840981853417238579314639519",
+      "raw_zero_trough_rms_diff_uniform_q0_minus_q1": "-0.023136121540544025735666040678605418058139314418173"
+    }
+  },
+  "caveats": [
+    "Bach, Pope, Liou & Batelaan (2013) Fig. 3e images the central five diffraction orders through an electrostatic quadrupole zoom lens without an independent screen-angle calibration bar and compiles 6,235 single-electron hits via finite-size blob localization (elevating trough minima to 0.24-0.49). In simulators/double_slit_simulator.html, BACH_DATA stores horizontal coordinates with a 5x scale factor (+/-2.5584 instead of +/-0.51168 mrad). No visibility, background, slit-geometry, or q parameter is fitted here: parameter-free exterior q_local(y) -> 1 matches q = 1 Fraunhofer to < 1.9e-5 pointwise, whereas naive uniform exterior q = q0 shifts m = +-2 fringes by +11.00% and lifts the magnification-invariant m = +-2 sinc^2 envelope from 0.6448 to 0.7042."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

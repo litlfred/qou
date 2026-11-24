@@ -49,7 +49,7 @@ $$
   Q_{\mathrm{twist}} = \frac{T(t)}{3},
 $$
 where $T(t)/3$ is the colour-tube charge quantum of the quark picture
-(the helon-model normalisation \cite{bilson-thompson2005}).  The
+(the helon-model normalisation of Sundance O. Bilson-Thompson \cite{bilson-thompson2005}; in the braided-ribbon-graph formulation of Sundance O. Bilson-Thompson, Fotini Markopoulou, and Lee Smolin \cite[§I, §V]{bilsonthompson2007}, strand twists define noiseless $U(1)$-charged subsystems conserved under local evolution moves, without claiming to derive the Standard Model interactions).  The
 Gell-Mann--Nishijima relation holds by construction *if and only if*
 $Q_{\mathrm{twist}} = Q$ against an independently derived electric charge
 $Q$ --- a falsifiable consistency condition. The halved
@@ -68,7 +68,7 @@ proposal must pass two batteries before instantiating the class:
 2. **First-generation spectrum:** The $Y$ values of $u, d, e^-,
    \nu_e$ must reproduce $\{+1/3, +1/3, -1, -1\}$ (left-handed) and
    $\{+4/3, -2/3, -2, 0\}$ (right-handed), satisfying the $\mathbb{Z}_6$
-   compatibility relations \cite{baez-huerta2010}.
+   compatibility relations of John C. Baez and John Huerta \cite{baez-huerta2010}.
 
 A candidate requiring a fitted scale to pass either battery is a fit,
 not a derivation, and does not instantiate this class.
