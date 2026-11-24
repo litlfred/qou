@@ -20,13 +20,15 @@ platform for browsing, reviewing, and exploring the work.
 | **PDF** | [Full paper](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/quantum-observable-universe.pdf) (per-chapter PDFs in [Contents](#contents)) |
 | **Lean library** | [Rendered declarations and source](https://litlfred.github.io/qou/lean/) |
 | **QA reports** | [`qa-reports` branch](https://github.com/litlfred/qou/tree/cat/cat-harness/qa-reports), one report per commit |
+| **Workplan** | [Plans and work (beans)](../../tree/cat/cat-harness/beans): the open work items, on the `cat/cat-harness/beans` branch |
 | **Status and accuracy** | [Authors' Note: a work in progress](folio/quantum-observable-universe/authors-note/authors-note-status.md) |
 | **How to contribute** | [CONTRIBUTING.md](CONTRIBUTING.md) · [Contributors](CONTRIBUTORS.md) |
 | **License** | [CC BY 4.0](LICENSE) |
 | **Observational scorecard** | [ACCURACY.md](ACCURACY.md) (`1 ppQ` floor & CODATA / PDG / AME2020 comparison) |
 
-The published site and PDF currently lag the source: they were last built in
-July 2026, and a rebuild is pending. The source in this repository is current.
+The PDF was rebuilt from `main` on 2026-11-24. The web view's front page and
+the Lean library render still date from July 2026; a rebuild of both is pending.
+The source in this repository is current.
 
 ## Content-Object Architecture
 
