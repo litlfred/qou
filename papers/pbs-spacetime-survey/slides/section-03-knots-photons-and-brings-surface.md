@@ -1,157 +1,148 @@
-# Section 3 Slide Deck & Storyboard: Knots, Photons, and Bring's Genus-4 Surface
+# Section 3 Illustrated Storyboard: Knots, Photons, and a Four-Holed Symmetric Surface
 
-**Companion to:** [Survey Article §3](../survey-article.md#3-knots-photons-and-brings-genus-4-surface) | [Suite Index](../README.md)  
-**Target Runtime:** ~7 minutes 45 seconds (8 slides)  
-**Visual Style Palette:** Photon terms in incandescent white-gold (`#FDE047`) with chiral vertex $V = \sigma_0\sigma_1^{-1}$ in ultraviolet-indigo (`#818CF8`); RGB QCD colour-tube sheets in ruby (`#EF4444`), emerald (`#22C55E`), and cobalt (`#3B82F6`) blending to white singlet light; Bring's genus-$4$ surface rendered as an iridescent porcelain-indigo 4-holed surface (`#312E81` to `#A5B4FC`).
+**Companion to:** [Survey Article §3](../survey-article.md#3-knots-photons-and-a-four-holed-symmetric-surface) | [Suite Index](../README.md)  
+**Target Runtime:** ~7 minutes (8 slides)  
+**Audience Level:** Curious general viewer (everyday physics words only; zero specialist algebra jargon)
 
 ---
 
-## Slide 3.1 — Light Without Virtual Particles
+## Slide 3.1 — Light Without Invisible "Virtual Particles"
 
-### On-Screen Text & Formula
-- **Title:** Equation (4): What Is a Photon in $H_3(q)$?
-- **Key Formula:**
+![Light, the two-ring electron, and the three-ring proton core](../assets/sec03-photon-and-borromean.svg)
+
+### On-Screen Text
+- **Title:** Equation (4): How Light Moves on Three Strands
 
 $$
 \gamma(\varphi) = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}
 $$
 
-- **No Virtual Photons:** Interactions run via real $\gamma\gamma$ algebra & Gröbner–Shirshov reduction
+- **Four Simple Moves:** Straight ahead ($\mathbf{1}$), left pair over ($\sigma_0$), right pair over ($\sigma_1$), and over-then-under ($\sigma_0\sigma_1^{-1}$)
 
-### Host Narration (Word-for-Word)
-"In standard textbook quantum electrodynamics, forces are pictured through Feynman diagrams full of 'virtual photons'—off-shell book-keeping particles that pop out of nothing, violate energy-momentum relations, and vanish before any detector can see them. Inside the QOU mathematical model, virtual photons do not exist at all. Instead, interactions come from multiplying actual three-strand photon elements inside the Hecke algebra. Look at Equation four: a photon gamma is a sum of four three-strand operations—straight propagation one, horizontal polarization sigma-zero, vertical polarization sigma-one, and a crucial fourth term: the chiral vertex sigma-zero times sigma-one-inverse."
+### Host Narration
+"In textbook physics diagrams, forces are often drawn as invisible 'virtual photons'—short-lived bookkeeping particles that pop out of empty space and vanish before any detector can see them. Inside this braided model, virtual photons do not exist. Instead, a photon of light is a direct combination of four simple moves on three side-by-side strands: running straight ahead, crossing the left pair over, crossing the right pair over, and a handed two-step move where the left strand passes *over* the middle strand and then *under* the right strand."
 
-### Visual & Animation Storyboard
-- **0:00–0:18 (Crossing Out Off-Shell Loops):** Briefly sketch a wavy QED virtual-photon exchange line labeled $q^2 \neq 0$; fade it out cleanly (`No Off-Shell Virtual Quanta in QOU`).
-- **0:18–0:50 (Four-Tile Photon Anatomy):** Display four glowing 3-strand braid tiles side by side summing to $\gamma(\varphi)$:
-  1. `1`: three straight parallel luminous white strands;
-  2. `φ₀ σ₀`: left pair twists *over* (horizontal polarization vector arrow);
-  3. `φ₁ σ₁`: right pair twists *over* (vertical polarization vector arrow);
-  4. `φ₀₁ σ₀σ₁⁻¹`: strand 0 crosses *over* strand 1, then *under* strand 2—glowing ultraviolet-indigo (`Chiral Vertex V = σ₀σ₁⁻¹`).
+### Animation Notes
+- Highlight the four top boxes of `sec03-photon-and-borromean.svg` from left to right: straight white bars (`1`), left over-crossing (`φ₀ σ₀`), right over-crossing (`φ₁ σ₁`), and the violet over-then-under vertex (`φ₀₁ σ₀σ₁⁻¹`).
 
 ---
 
-## Slide 3.2 — Colliding Two Photons: Pair-Producing the Electron Word
+## Slide 3.2 — Two Colliding Photons Form the Two-Ring Electron
 
-### On-Screen Text & Formula
-- **Title:** From $\gamma\gamma$ Collision to the Electron Braid
-- **Algebraic Reduction:**
+### On-Screen Text
+- **Title:** Colliding Two Photons Into an Electron Braid
+- **Simplification:**
 
 $$
-\sigma_1 \cdot (\sigma_0\sigma_1^{-1}) \;=\; \sigma_1\sigma_0\sigma_1 - h\,\sigma_1\sigma_0 \;=\; \underbrace{\sigma_0\sigma_1\sigma_0}_{e^-\text{ (Hopf closure)}} - h\,L_-
+\sigma_1 \cdot (\sigma_0\sigma_1^{-1}) \;=\; \underbrace{\sigma_0\sigma_1\sigma_0}_{\text{two linked rings (electron)}} - h\,\sigma_1\sigma_0
 $$
 
-- **Status Note:** Hopf link closure (`σ₀σ₁σ₀ ∈ B₃`) is ruled; trefoil (`σ₀³ ∈ B₂`) kept as backup; fermionic statistics open.
+- **Scope Note:** Three-crossing trefoil knot kept as a secondary candidate; electron swap-sign proof still unsolved.
 
-### Host Narration (Word-for-Word)
-"Now collide two photons by multiplying their braid elements end to end and simplifying with our Hecke skein rule! Watch what happens when the vertical polarization sigma-one from one photon hits the chiral vertex sigma-zero-sigma-one-inverse of the other. Using Equation one to flip that inverse crossing splits the product into a residual link minus h, plus sigma-one-sigma-zero-sigma-one—which by the classic braid relation equals sigma-zero-sigma-one-sigma-zero, the half-twist of three strands! When you close its ends, it forms the two-component Hopf link: the model's primary candidate for the electron, with the two-strand trefoil kept as a backup and the Hopf electron's fermion exchange sign honestly marked as an open problem."
+### Host Narration
+"Watch what happens when two photons meet end to end and simplify using our strand-swapping rule from Section one. When the right-pair crossing of the first photon meets the over-then-under move of the second, the crossing rule splits the product into a remainder plus a clean half-twist of all three strands: sigma-zero, sigma-one, sigma-zero. Close the top and bottom ends of that half-twist, and two strands join into one ring linked once through the third strand's ring. That two-ring link is the model's primary shape for the electron—with a three-crossing knot kept as a backup, and the proof of why swapping two electrons flips their quantum sign still unsolved."
 
-### Visual & Animation Storyboard
-- **0:00–0:24 (3D Braid Collision & Yang–Baxter Slide):** Stack tile `σ₁` above `V = σ₀σ₁⁻¹`. Animate the bottom crossing splitting via Equation (1) into `-h L₋` (drifting aside) and `σ₁σ₀σ₁`. Then smoothly slide the middle strand across the crossing (`Reidemeister III / Braid Relation`) so `σ₁σ₀σ₁` morphs visibly into `σ₀σ₁σ₀`.
-- **0:24–0:50 (Closing Into the Hopf Link):** Loop the top three strands of `σ₀σ₁σ₀` back to the bottom: two strands merge into one long outer ring while the remaining strand closes into a linked inner ring—forming a shimmering two-component **Hopf link**, accompanied by a crisp amber `Backup: Trefoil T(2,3) | Open: Fermion Statistics` status pill.
+### Animation Notes
+- Animate the right-pair crossing `σ₁` meeting `σ₀σ₁⁻¹`, sliding smoothly into the three-strand half-twist `σ₀σ₁σ₀`.
+- Loop the ends around to form the cyan-and-amber two-ring link in the lower-left panel of `sec03-photon-and-borromean.svg`.
 
 ---
 
-## Slide 3.3 — Linking Neutrality & the Borromean Baryon Core
+## Slide 3.3 — Two Photons Also Build the Proton's Six-Crossing Core
 
-### On-Screen Text & Formula
-- **Title:** How Two Photons Factor the Proton's Borromean Core
-- **Exact Identity (Eq. 4b):**
+### On-Screen Text
+- **Title:** Equation (4b): Balanced Collisions Build the Proton Core
 
 $$
-V^3 = (\sigma_0\sigma_1^{-1})^3 = \gamma(0, 0, +qh)\,\gamma(0, 0, -q^{-1}h)
+V^3 = (\sigma_0\sigma_1^{-1})^3 = \gamma(0, 0, qh)\,\gamma(0, 0, -h/q)
 $$
 
-- **Selection:** Unique crossing-energy minimizer among nontrivial linking-neutral 3-strand words!
+- **Why This Shape:** Lowest crossing cost among twist-balanced three-strand braids
 
-### Host Narration (Word-for-Word)
-"What about protons, neutrons, and quarks? Suppose we ask for a pure three-strand state built from photon collisions that satisfies *whole-word linking neutrality*: every individual loop has zero self-twist, and every pair of loops has zero net linking number. Among all three-strand words up to ten crossings in the two-photon grammar, linking neutrality and crossing-energy minimization single out *one unique braid*: V-cubed, repeating that chiral vertex sigma-zero-sigma-one-inverse three times in a row! Remarkably, inside the Hecke algebra, V-cubed factors *identically* as the product of just two opposite-signed pure-vertex photons!"
+### Host Narration
+"What about protons, neutrons, and quarks? Suppose we collide two photons and keep only three-strand states that are completely balanced in twist—meaning no single ring twists around itself, and no pair of rings links directly on its own. Checking every balanced three-strand braid up to ten crossings singles out one lowest-energy winner: repeating that over-then-under move three times in a row, V-cubed. Even better, multiplying two opposite-signed pure-vertex photons produces V-cubed with zero leftover terms."
 
-### Visual & Animation Storyboard
-- **0:00–0:25 (Factorization Unpack):** Place two pure-vertex photon blocks $\gamma(0,0,+qh)$ and $\gamma(0,0,-q^{-1}h)$ on screen; multiply them using $\sigma_i^2 = h\sigma_i + 1$ and watch the quadratic cross-terms cancel algebraically line by line until three clean copies of $V = \sigma_0\sigma_1^{-1}$ lock into a 6-crossing alternating column ($V^3$).
-- **0:25–0:48 (Energy Landscape Funnel):** Show a discrete bar chart of linking-neutral 3-strand braids ordered by crossing energy; $V^3$ sits alone at the bottom of the funnel at `6 crossings, writhe = 0, pairwise linking = (0, 0, 0)`.
+### Animation Notes
+- Multiply two violet vertex blocks `+qh V` and `-h/q V` alongside their straight terms (`1`); watch the middle terms cancel step by step until three stacked copies of `V = σ₀σ₁⁻¹` lock into a six-crossing column.
 
 ---
 
-## Slide 3.4 — Topological Confinement: Cut One Ring, Free Them All
+## Slide 3.4 — Why You Can Never Pull One Quark Out Alone
 
-### On-Screen Text & Formula
-- **Title:** Why You Never See an Isolated Quark
-- **Borromean Closure ($6_3^3$):**
-  - 3 unknotted loops (e.g., an **up quark** = 1 unknot strand inside the link)
-  - Pairwise linking $= 0$, yet triple Milnor invariant $\bar{\mu}_{123}^2 = 1 \neq 0$
+### On-Screen Text
+- **Title:** Three Interlocked Rings Explain Quark Confinement
+- **Borromean Rings:**
+  - Each individual quark (such as an up quark) is just $1$ plain unknotted circle
+  - No two rings link each other, yet cutting *any* $1$ ring frees the other $2$
 
-### Host Narration (Word-for-Word)
-"Close the top and bottom ends of V-cubed, and look at the 3D object you get: the famous Borromean rings! Notice what each individual quark is here: an up quark isn't some exotic standalone knot—it is simply a single unknotted circle inside the three-ring link. No two rings pass through each other; every pairwise linking number is zero. Yet you cannot pull the three rings apart! And if you try to yank one quark ring out by cutting it, the remaining two rings immediately fall completely free—giving an instant, visceral geometric picture of why quarks exist only inside confined composites."
+### Host Narration
+"Now close the top and bottom ends of that six-crossing braid, and look at the three-dimensional shape in the lower-right panel: the Borromean rings. Notice that an individual up quark isn't a complicated knot at all—it is just one plain unknotted circle inside the trio. No two circles pass through each other; every pair has zero direct link. Yet all three rings are locked together tightly—and if you snip *any* one ring to pull a quark out on its own, the remaining two rings immediately fall completely apart. That gives an instant geometric picture of why isolated quarks are never seen in nature."
 
-### Visual & Animation Storyboard
-- **0:00–0:25 (3D Borromean Rings Rotation):** Smoothly close the 6-crossing braid $V^3$ into three interlocking orthogonal 3D rings (ruby, emerald, cobalt). Tug outward on all three simultaneously—they tighten into a rigid symmetric trefoil-like core and refuse to separate (`Triple Link μ̄₁₂₃ = ±1`).
-- **0:25–0:48 (Snip Test):** Animate glowing laser shears snipping the ruby ring; the emerald and cobalt rings effortlessly pass right through each other without touching and drift apart as plain unknots (`Pairwise Link = 0`).
-
----
-
-## Slide 3.5 — Three Sheets of Colour ($\mathcal{U}_q(\mathfrak{gl}_3)$)
-
-### On-Screen Text & Formula
-- **Title:** True Quantum-Group Colour on Three Sheets
-- **Tensor Braiding:** $\check{R}_{\mathrm{total}} = \check{R}_{\mathrm{colour}} \otimes \check{R}_{\mathrm{flavour}}$
-- **Baryon Singlet Rule:** Rescaled generator $-q\cdot X = b_{\mathrm{flavour}}$ blends 3 sheets to white
-
-### Host Narration (Word-for-Word)
-"How does quantum chromodynamics' three-fold colour symmetry fit onto those strands? In the QOU model, over every point along a baryon tube sits a three-sheeted algebraic cover—the roots of a colour cubic—so a strand's colour is literally which of the three sheets it rides on. When two strands braid, they carry the tensor product of true quantum-group gl-three colour braiding and flavour braiding. Projecting onto the colour-neutral baryon singlet—where red, green, and blue combine to white—rescales the generator cleanly back onto our familiar flavour Hecke braiding!"
-
-### Visual & Animation Storyboard
-- **0:00–0:24 (Three-Sheeted Branched Cover):** Slice across a baryon tube to reveal three stacked translucent ribbons (ruby sheet 1, emerald sheet 2, cobalt sheet 3). Three quark strands ride one on each sheet, permuting sheets as they braid via $\check{R}_{\mathrm{colour}} \otimes \check{R}_{\mathrm{flavour}}$.
-- **0:24–0:46 (Singlet White-Light Convergence):** Zoom back slightly as the antisymmetric $(1^3)_c$ combination merges the ruby, emerald, and cobalt glow into a brilliant pure-white baryon core (`Colour Singlet`), displaying `Lean-Proved: HopfColourTensorBraid`.
+### Animation Notes
+- Focus on the lower-right panel of `sec03-photon-and-borromean.svg`: tug outward on the red, green, and blue rings so they lock tightly at the center; then snip the red ring and animate the green and blue rings sliding apart effortlessly without touching.
 
 ---
 
-## Slide 3.6 — Meet Bring's Curve ($\Sigma_{\mathrm{Bring}}$): The Genus-4 Switchboard
+## Slide 3.5 — Three Layers of Strong-Force "Colour"
 
-### On-Screen Text & Formula
-- **Title:** Bring's Surface: Maximum Symmetry at Genus $g = 4$
-- **Defining Equations in $\mathbb{CP}^4$:**
+### On-Screen Text
+- **Title:** Red, Green, and Blue as Three Stacked Strand Layers
+- **Proton & Neutron Rule:** One quark rides on each of the three layers, blending to neutral "white"
 
-$$
-\sum_{i=1}^5 z_i \;=\; \sum_{i=1}^5 z_i^2 \;=\; \sum_{i=1}^5 z_i^3 \;=\; 0 \qquad \bigl(g = 4,\;\; \chi = -6,\;\; \mathrm{Aut} \cong S_5\bigr)
-$$
+### Host Narration
+"In nuclear physics, the strong force carries three charges whimsically called red, green, and blue, which must combine into neutral white inside every proton or neutron. In our strand picture, a baryon tube carries three stacked layers—so a quark's colour simply records which of the three layers it rides on. When three strands combine one on each layer into a balanced white group, their combined swapping rule reproduces the exact same three-strand braid behavior we started with."
 
-### Host Narration (Word-for-Word)
-"Now zoom out from individual braids to the complex Riemann surface where their branched coverings meet. Following the six Weierstrass branch points of the three-strand representation chain lands on one of the crown jewels of nineteenth-century geometry: Bring's curve, discovered by Erland Samuel Bring and studied by Felix Klein. Topologically, it's a compact surface with *four holes*—genus four, Euler characteristic minus six—tiled by hyperbolic pentagons so symmetrically that it admits all one hundred and twenty permutations of five coordinates, S-five, the absolute maximum symmetry group Hurwitz's theorem allows at genus four."
-
-### Visual & Animation Storyboard
-- **0:00–0:28 (Hyperbolic Polygon Tiling to 3D Genus-4 Surface):** Start on the Poincaré hyperbolic disk tiled by regular right-angled pentagons (`{5, 4}` tiling, 20 pentagons highlighted in indigo and gold). Fold and glue opposite boundary edges smoothly in 3D space until they seal into a breathtaking symmetric 4-holed porcelain-indigo surface ($\Sigma_{\mathrm{Bring}}$).
-- **0:28–0:50 ($S_5$ Symmetry Orbit):** Rotate $\Sigma_{\mathrm{Bring}}$ through $72^\circ$ five-fold and $120^\circ$ three-fold symmetries—the surface snaps onto itself identically every time (`|Aut(Σ_Bring)| = 5! = 120`).
+### Animation Notes
+- Slice across a three-strand bundle to show three stacked translucent ribbons (red, green, blue), one quark riding on each layer, merging into a single bright white proton core as the camera pulls back.
 
 ---
 
-## Slide 3.7 — A Pure Number-Theory Miracle at Genus 4
+## Slide 3.6 — A Four-Holed Surface With Maximum Symmetry
 
-### On-Screen Text & Formula
-- **Title:** Which Torus Knots Fit Bring's Genus $g = 4$?
-- **Diophantine Equation ($\gcd(p, r) = 1$, $2 \le p < r$):**
+![A four-holed symmetric surface and the two matching doughnut knots](../assets/sec03-brings-surface-pentagons.svg)
+
+### On-Screen Text
+- **Title:** Bring's Four-Holed Surface ($120$ Symmetries)
+- **Balanced Five-Coordinate Shape:**
 
 $$
-g\bigl(T(p, r)\bigr) = \frac{(p - 1)(r - 1)}{2} = 4 \quad \Longleftrightarrow \quad (p, r) \in \bigl\{(2, 9),\; (3, 5)\bigr\}
+z_1 + z_2 + z_3 + z_4 + z_5 = 0, \qquad \sum_{i=1}^5 z_i^2 = 0, \qquad \sum_{i=1}^5 z_i^3 = 0
 $$
 
-### Host Narration (Word-for-Word)
-"Ask a pure grade-school whole-number question about that four-holed surface. A torus knot T-of-p-comma-r winds p times around a doughnut's tube and r times through its hole, with p and r sharing no common factors, and its topological Seifert genus is p-minus-one times r-minus-one divided by two. Which torus knots in all of mathematics have genus *equal* to Bring's genus four? That means p-minus-one times r-minus-one must equal eight! The only coprime factorizations are one times eight and two times four—handing us *exclusively* T-two-nine, with nine crossings, and T-three-five, with ten crossings!"
+### Host Narration
+"When we trace how three-strand braids wrap over smooth two-dimensional surfaces, the branching rules point to a classic shape from nineteenth-century geometry called Bring's surface, shown on the left. Think of a smooth closed surface shaped like a four-holed doughnut, defined by five coordinates whose sum, sum of squares, and sum of cubes all equal zero. Because you can shuffle those five coordinates in all five-times-four-times-three-times-two-times-one—one hundred and twenty—possible ways without changing the equations, it is the most symmetric four-holed surface mathematics allows."
 
-### Visual & Animation Storyboard
-- **0:00–0:25 (2D Lattice Scan):** Display a grid of coprime pairs $(p, r)$ for $2 \le p < r \le 11$. Light up meson knots $(2,3) \to g=1$, $(2,5) \to g=2$, $(2,7) \to g=3$ in muted teal (`Below Genus 4`); then flash bright gold on **$(2,9) \to g = 4$ (`9 crossings`)** and **$(3,5) \to g = 4$ (`10 crossings`)**, while every higher cell grays out (`g > 4`).
-- **0:25–0:50 (3D Torus Knots Side by Side):** Render 3D spinning gold knots $T(2,9)$ (9 crossings) on the left and $T(3,5)$ (10 crossings, Seifert surface spanning genus 4) on the right, stamped `Lean-Proved: genus_four_coprime_torus_knot_iff`.
+### Animation Notes
+- Highlight the left panel of `sec03-brings-surface-pentagons.svg`: rotate the five golden pentagon vertices (`z₁..z₅`) by $72^\circ$ steps around the four interior holes, showing the surface mapping cleanly onto itself every time.
 
 ---
 
-## Slide 3.8 — Setting Up the $1/137$ Showdown
+## Slide 3.7 — Which Doughnut Knots Match Four Holes?
 
-### On-Screen Text & Formula
-- **Title:** Two Forced Knots ($9$ and $10$), Zero Free Knobs
-- **Next Up (§4):** Evaluate $[9]_{q_0} \cdot [10]_{q_0}$ on Bring's $g = 4$ surface $\longrightarrow$ $\alpha_{\mathrm{EM}}^{-1} \approx 137.035999\dots$?
+### On-Screen Text
+- **Title:** Counting Holes Selects Only Two Knots ($9$ and $10$ Crossings)
 
-### Host Narration (Word-for-Word)
-"Let that sink in before we turn the page. Nobody picked the integers nine and ten out of a hat to aim at one hundred and thirty-seven. Genus four of Bring's surface forced nine and ten by elementary arithmetic: nine times ten is ninety in flat space—nowhere near one-thirty-seven! Yet remember: our universe isn't sitting at q equals one; it's pinned by the proton-to-electron mass ratio at q-naught equals 1.10997858. What happens when we stretch nine and ten into quantum integers at that exact q-naught? That's Section four."
+$$
+\text{Hole count } g = \frac{(p - 1)(r - 1)}{2} = 4 \quad \Longrightarrow \quad T(2, 9)\text{ and }T(3, 5)
+$$
 
-### Visual & Animation Storyboard
-- **0:00–0:25 (Classical vs. Quantum Preview):** Show `1 × 9 × 10 = 90` at `q = 1.000` sitting far to the left of a glowing target beacon at `137.035999...`. Begin sliding `q` smoothly toward `q₀ = 1.10997858...`: watch `[9]_q` and `[10]_q` expand like nonlinear springs pushing the needle rapidly past `110`, `125`, `135`... and freeze the frame right before impact as a cliffhanger into Section 4!
+### Host Narration
+"Now ask a simple whole-number question on the right-hand chart. A doughnut knot, written T-of-p-comma-r, winds p times around a doughnut's tube and r times through its center hole, with no common factor shared between p and r. The simplest smooth surface spanning that knot has p-minus-one times r-minus-one divided by two holes. Which doughnut knots have *four* holes, matching our four-holed surface? We need p-minus-one times r-minus-one to equal eight. Only one-times-eight and two-times-four qualify—leaving just two knots in all of mathematics: T-two-nine, with nine crossings, and T-three-five, with ten crossings."
+
+### Animation Notes
+- Step down the six rows on the right side of `sec03-brings-surface-pentagons.svg`: dim the 1-, 2-, and 3-hole rows, light up the two golden rows `T(2, 9) -> 9 crossings` and `T(3, 5) -> 10 crossings`, and dim `T(3, 7) -> 6 holes`.
+
+---
+
+## Slide 3.8 — From $9 \times 10 = 90$ to $137.036$
+
+### On-Screen Text
+- **Title:** Next Up: Stretching $9$ and $10$ at $q_0 = 1.10997858$
+- **Flat Arithmetic ($q = 1$):** $1 \times 9 \times 10 = 90$
+- **Curved Braid Arithmetic ($q_0$):** What happens to $9$ and $10$?
+
+### Host Narration
+"Notice how clean that setup is. Nobody picked the numbers nine and ten by trial and error to aim at one hundred and thirty-seven. Matching four holes forced nine and ten by elementary multiplication—and in flat q-equals-one arithmetic, nine times ten is ninety, nowhere near one-thirty-seven. Yet our universe doesn't sit at q equals one; the proton-to-electron ratio pinned q-naught at 1.10997858. In Section four, let's plug q-naught into nine and ten and watch what happens to the strength of light."
+
+### Animation Notes
+- Show `1 × 9 × 10 = 90` on a horizontal scale far below `137.035999...`; begin moving the slider from `q = 1` toward `q₀ = 1.10997858`, pausing just as the indicator sweeps past `135` into Section 4.
