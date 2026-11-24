@@ -55,14 +55,12 @@ A witness is **stale** when:
 
 Check staleness:
 ```bash
-# Single witness
-python3 witness_base.py check-stale my-computation.witness.json
+# Single or all Python witnesses (CPU-throttled):
+nice -n 15 python3 computations/witness_staleness_tracker.py check
 
-# All witnesses
-python3 witness_base.py check-all
-
-# Unified audit (Lean + Python)
-bun run scripts/witness-audit.ts
+# Lean static parity & best-practices hygiene:
+nice -n 15 python3 scripts/lean-static-census.py --digest
+nice -n 15 python3 scripts/lean-best-practices-lint.py --diff
 ```
 
 ### Legacy witness migration
@@ -138,8 +136,9 @@ computation script, migrate it to `witness_base.py`:
   - `theorem <name>_is_groebner_nf : is_groebner_nf (<name>_nf) := by ...`
   - `theorem <name>_markov_trace : markov_trace n <name>_nf = <value> := by ...`
 
-- [ ] **Types match.** The Lean declarations must use types from
-  `QOU.Descartes.TransferMatrix` and `QOU.Descartes.BetaDecay`.
+- [ ] **Types match.** Generated Lean declarations must import real types from
+  `UGB.GrobnerShirshov.*`, `HeckeTemperleyLieb` / `QOU.BraidsAndKnots`, or `QOU.Nuclear`
+  (never standalone `Int`/`Bool` proxy records per [`lean-proof-vacuity-audit.md`](lean-proof-vacuity-audit.md) §7).
 
 - [ ] **Witness JSON structure.** The `.witness.json` must have:
   - `computation`: string identifier
