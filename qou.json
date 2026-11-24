@@ -83,7 +83,18 @@
         "branch": "cat/cat-harness/qa-reports",
         "keyedBy": "commit"
       },
-      "description": "What a QA process produced about this folio, published to the qa-reports branch keyed by commit and never committed (owner ruling 2026-10-04, decision 11: QA results go to the cat-harness qa-reports store). Today it holds the compute-QA verdicts, one qou-compute-qa/v1 file per gate under compute-qa/, written by scripts/compute-qa.py (TOOLS T7, bean qou-4dj1) and published by .github/workflows/compute-qa.yml. The directory is gitignored except for a .gitkeep, so it is present in every checkout and a reader never mistakes an absent directory for a clean run. Story S3, bean qou-4rhu."
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "_site/qa/index.html",
+            "title": "QA",
+            "writer": [
+              "folio-assistant/cat-harness-tools/scripts/qa-page-standalone.ts"
+            ]
+          }
+        ]
+      },
+      "description": "What a QA process produced about this folio, published to the qa-reports branch keyed by commit and never committed (owner ruling 2026-10-04, decision 11: QA results go to the cat-harness qa-reports store). It holds what the writers declared under `qa.writers` produce (owner decision 2026-11-24, the integrated QA page): the compute-QA verdicts, one qou-compute-qa/v1 file per gate under compute-qa/ (scripts/compute-qa.py, TOOLS T7, bean qou-4dj1), the Lean vacuity/axiom audit under lean/, and the rendered-paper record under rendering/. Published by .github/workflows/compute-qa.yml (a caller of the platform's layer-qa-publish.yml) and, after a merge, by scripts/qa-publish-local.sh. The directory is gitignored except for a .gitkeep, so it is present in every checkout and a reader never mistakes an absent directory for a clean run. Story S3, bean qou-4rhu."
     },
     {
       "id": "attestations",
@@ -227,5 +238,40 @@
       }
     }
   ],
+  "qa": {
+    "writers": [
+      {
+        "id": "accuracy-scorecard",
+        "axis": "domain",
+        "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" accuracy",
+        "writes": ["compute-qa/accuracy-scorecard.json"],
+        "title": "Accuracy against measurement",
+        "because": "ACCURACY.md set against CODATA, PDG and AME2020: the comparison boundary where the model's physical claims are made."
+      },
+      {
+        "id": "compute-qa",
+        "axis": "compute",
+        "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" compute",
+        "writes": ["compute-qa/**"],
+        "title": "Compute gates"
+      },
+      {
+        "id": "lean-vacuity-axiom-audit",
+        "axis": "lean",
+        "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" lean",
+        "writes": ["lean/**"],
+        "title": "Lean vacuity and axiom audit"
+      },
+      {
+        "id": "paper-render-qa",
+        "axis": "rendering",
+        "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" rendering",
+        "writes": ["rendering/**"],
+        "title": "Rendered paper"
+      }
+    ],
+    "axes": ["rendering", "lean", "compute", "domain", "kg"]
+  },
+  "_qa_comment": "The integrated QA page (cat-harness-tools scripts/qa-page.ts, schemas/sdlc/qa-axis.ts) draws one section per axis from what the writers above publish to the qa-reports branch. Each `run` is executed from the index checkout by layer-qa-publish.yml (INSTANCE=qou, QA_HOME=qou/test/results) and from qou's root by scripts/qa-publish-local.sh; scripts/qa-writer.sh resolves both. Owner decision 2026-11-24 (\"4y\").",
   "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."
 }

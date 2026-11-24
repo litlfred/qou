@@ -21,7 +21,10 @@ Every link is DERIVED, so nothing here names an owner, a repository or a page:
   directory, whose `ref` is under `_site/`: Lean, the work plan, the accuracy
   scorecard, QA, in declaration order. A declared page this build did not
   produce is listed as "not in this build" rather than linked or left out;
-- the source repository, from the declaration's `repository`.
+- the source repository, from the declaration's `repository`, and beside it
+  the repository's CONTRIBUTING.md and LICENSE* files, when it has them (bean
+  qou-zo8u lists both among the landing's links), each with the first line of
+  the file as its note.
 
 `--keep-old-root <publish checkout>`: a root `index.html` on the publish branch
 that this script did not write (no generator meta) is copied beside it as
@@ -89,6 +92,13 @@ def visualisers(decl: dict, site: Path) -> list[tuple[str, str | None]]:
     return out
 
 
+def default_branch(root: Path) -> str:
+    """origin's HEAD, else "main" (scripts/lib/paper-env.sh's DEFAULT_BRANCH rule)."""
+    r = subprocess.run(["git", "-C", str(root), "symbolic-ref", "--quiet", "--short", "refs/remotes/origin/HEAD"],
+                       capture_output=True, text=True, check=False)
+    return r.stdout.strip().removeprefix("origin/") or "main"
+
+
 def lead_paper(root: Path) -> str | None:
     """The first `dir:` in folio/folio.ts (scripts/lib/paper-env.sh's DEFAULT_PAPER)."""
     try:
@@ -121,7 +131,15 @@ def page(decl: dict, site: Path, root: Path) -> str:
             items.append(f'<li><a href="{esc(href)}">{esc(title)}</a></li>')
     repo = decl.get("repository")
     if repo:
-        items.append(f'<li><a href="https://github.com/{esc(repo)}">Source</a> <span>{esc(repo)}</span></li>')
+        web = f"https://github.com/{repo}"
+        items.append(f'<li><a href="{esc(web)}">Source</a> <span>{esc(repo)}</span></li>')
+        files = [("How to contribute", root / "CONTRIBUTING.md")] + [("License", p) for p in sorted(root.glob("LICENSE*")) if p.is_file()]
+        for label, f in files:
+            if not f.is_file():
+                continue
+            first = next((ln.strip(" #") for ln in f.read_text(encoding="utf-8", errors="replace").splitlines() if ln.strip()), "")
+            note = f" <span>{esc(first)}</span>" if label == "License" and first else ""
+            items.append(f'<li><a href="{esc(web)}/blob/{esc(default_branch(root))}/{esc(f.name)}">{label}</a>{note}</li>')
     return f"""<!doctype html>
 <html lang="en">
 <head>

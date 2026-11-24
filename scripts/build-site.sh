@@ -6,7 +6,7 @@
 # build step of scripts/publish-main-local.sh, which agents run after a merge
 # to main when GitHub Actions is not enabled (owner, 2026-11-23).
 #
-# Five parts:
+# Six parts:
 #   1. The folio site: folio-assistant-core's build-folio-site.ts.
 #   2. The 80-dps observational accuracy scorecard QA gate + standalone HTML
 #      render (`scripts/generate-accuracy-scorecard.py --check --qa-report
@@ -21,7 +21,12 @@
 #      qou.json: folio-assistant-sci's lean-docs-build.sh (doc-gen4, restores
 #      the warm lake cache first) and lean-render.ts (stages it at <site>/lean/
 #      with the harness navbar). Skill: folio-assistant-sci `lean-html-docs`.
-#   5. The root landing page, <site>/index.html: scripts/build-site-landing.py,
+#   5. The QA page, the `qa` directory's visualiser: cat-harness-tools
+#      qa-page-standalone.ts (cat-harness-tools#2512, on #2510) writes the
+#      platform's integrated QA panel at <site>/qa/, reading what qou.json's
+#      `qa.writers` published to the qa-reports branch for this commit.
+#      SKIPPED, and said, on a platform without it.
+#   6. The root landing page, <site>/index.html: scripts/build-site-landing.py,
 #      a short list of links (paper, PDF, and every coverage.visualiser that
 #      qou.json declares under _site/), derived, never hand-written. Last, so
 #      it can say which declared pages this build produced.
@@ -73,6 +78,14 @@ else
     --site "$SITE" --route lean --modules QOU,UGB,Fred2005 --home-label qou \
     --platform "$PLAT"
 fi
+QAPAGE="$PLAT/cat-harness-tools/scripts/qa-page-standalone.ts"
+if [ -f "$QAPAGE" ]; then
+  echo "== build-site: QA page -> $SITE/qa"
+  bun run "$QAPAGE" --repo . --out "$SITE/qa"
+else
+  echo "== build-site: QA page SKIPPED: the platform at $PLAT has no cat-harness-tools/scripts/qa-page-standalone.ts (cat-harness-tools#2512; re-pin), so $SITE has no qa/."
+fi
+
 echo "== build-site: landing page -> $SITE/index.html"
 python3 scripts/build-site-landing.py --site "$SITE"
 echo "== build-site: done ($SITE)"
