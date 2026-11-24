@@ -1,0 +1,568 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/dilog-pentagon-is-associator",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/dilog-pentagon-is-associator"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. \"The same Mac Lane coherence already appears in the corpus in two formalized guises\" is now \"has already appeared above in two formalized guises\". Both guises, their Lean names and the sorry-free status are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.001Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Three negative constructions present, each falling in a documented false-positive class: (a) 'does not merely constrain Li_2^q - being a solution ... is equivalent' is a strengthening and IS the block's mathematical content (constrains vs characterises); (b) 'a genuine equivalence, not a self-assuming projection' is load-bearing disambiguation against the section-3b-cond degeneracy rule; (c) 'Two things remain genuinely open and are not discharged here' is temporal/scope status. No manufactured negation-contrast.",
+        "notes": "Concentration noted (3 in ~450 words) but each is substantive; no edit."
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. 'the pentagon coherence … does not merely *constrain* Li₂^q — being a solution of the pentagon is equivalent to being a q-dilogarithm' is a not-merely-X-but-Y frame, and the Y it promotes is the claim the new caveat withdraws."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. The 'does not merely constrain ... —' frame is gone; 'It does not show that ...' is a scope statement."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.042Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No setup-then-reframe. The 'This is the precise sense in which...' sentence names the strength of an already-stated iff and then adds new content (uniqueness of the level-2 primitive naming Li_2^q); the Scope boundary section states genuine open items rather than pivoting."
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. No instance."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.084Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "Three spaced em-dashes doing sentence-structure work in ~450 words: (1) 'Fix the monoidal argument operations - the product ..., the complement ..., and division.' introduces an enumeration; (2) 'does not merely constrain Li_2^q - being a solution of the pentagon is equivalent to being a q-dilogarithm.' substitutes for a colon; (3) 'reads the datum's five-term field - a genuine equivalence, not a self-assuming projection.' appends an afterthought clause. Two of the three dodge the colon-vs-full-stop choice.",
+        "notes": "NOT FIXED (structural / math-adjacent: dash 1 sits inside the italicised formal Proposition statement, dash 2 inside a bolded interpretive claim). PROPOSED: (1) '...argument operations: the product x,y -> xy, the complement x -> 1-x, and division.'; (2) '...does not merely constrain Li_2^q: being a solution of the pentagon is equivalent to being a q-dilogarithm.'; (3) split into two sentences - '...reads the datum's five-term field. This is a genuine equivalence rather than a self-assuming projection.'"
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. Unchanged: three spaced em-dashes doing sentence structure (argument-operations enumeration in the statement; 'does not merely constrain Li₂^q — being a solution…'; 'its operator form…')."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. One spaced em dash left, introducing the list of argument operations in the statement."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.124Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "One three-item list ('the product, the complement, and division'). Substantive: all three operations appear in the five-term relation as printed (xy, 1-y and 1-x, and the two quotients), so the count is set by the mathematics."
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. No instance."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.164Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Block ends on the Scope boundary paragraph, which names two specific undischarged items (categorical-to-scalar descent; the analytic q != 1 five-term as the QRogersAnalyticContinuation conjecture class). Concrete scope statement, not a quotable closer."
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. No instance."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.203Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'This is the precise sense in which...' and 'which this proposition records as one law' narrate the result's scope rather than announcing emphasis; both carry mathematical content (which reading of 'forced' is meant; that two formalised guises are one law). No 'we emphasize' / 'note the framing' construction."
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. No instance."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.246Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "The italicised 'being a solution of the pentagon is equivalent to being a q-dilogarithm' does echo the displayed iff, but it is mid-block and the sentence containing it adds new content (with prop:q-dilogarithm-exists, the pentagon axiom names Li_2^q). No block-final restatement."
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. No instance."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.298Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No personal register; institutional throughout."
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. No instance."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.343Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'the precise sense', 'genuine equivalence', 'honest conjecture class', 'sorry-free and axiom-free' are all scoped and checkable (the last is a #print axioms claim), not maximum-strength inflation."
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. No instance."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.385Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Noun chains stay short ('the additive twist associator', 'the classical shuffle-associator identification'); every sentence parses aloud.",
+        "notes": "MATH VERIFIED (not a trap): the displayed five-term relation f(y)+f(x) = f(xy)+f(x(1-y)/(1-xy))+f(y(1-x)/(1-xy)) is the classical Rogers/Abel five-term identity - recomputed with mpmath at 60 dps for (x,y) = (0.3,0.4), (0.11,0.77), (0.9,0.05) using L(x) = Li_2(x) + log(x)log(1-x)/2; residual 3.1e-61, i.e. exact. The Faddeev-Kashaev operator pentagon Phi(P)Phi(Q) = Phi(Q)Phi(P+Q)Phi(P) is also as published. uses[] carries no conj: label, so no section-3b propagation violation."
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. No instance."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93",
+          "lean": "2b4dad95379e",
+          "lean_statement": "7eea4804eb89"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 5,
+          "max": 16,
+          "rubric": {
+            "H1": 0,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 0,
+            "H6": 2,
+            "H7": 0,
+            "H8": 0
+          }
+        },
+        "evidence": "H5/H8: the 'if and only if' (L1-7) holds because a '$q$-dilogarithm datum' is defined as something satisfying the five-term relation (L20 'the reverse reads the datum's five-term field') — a tautology presented as 'the precise sense in which the $q$-dilogarithm is forced by the rigid-monoidal axioms' (L9), which L24 then says is not proved. The five-term functional equation is called 'the Mac Lane pentagon' (L1). L9 cites prop:q-dilogarithm-exists for uniqueness. L18-20 is a Lean section in prose. | Also: proof-no-lean-mention-in-prose: L15, L18-20 name `QOU.BringsSurface.PentagonTwist.assoc_pentagon`, `pentagon_iff_isDilog`, `#print axioms`, Mathlib, `QRogersAnalyticContinuation`.",
+        "notes": "Milnor H1-H8 = [0, 1, 1, 1, 0, 2, 0, 0] (T=5/16, fail); weakest: H1, H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Restate as what it is: 'By definition, a $q$-dilogarithm is a solution of the five-term relation. That this relation is the image of the Mac Lane pentagon is the Faddeev–Kashaev identification [cite], not proved here.' Remove the Lean section; fix the uniqueness citation. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
+        "field_hash": {
+          "md": "a0ba1e9026c5",
+          "ts": "78e790d04538"
+        },
+        "result": "fail",
+        "severity": "major",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read at da84b06. .md unchanged; .ts change: the 2026-10-11 status note loses the clause 'a genuine equivalence rather than a self-assuming projection', and a 2026-11-21 caveat says the biconditional holds by definition of QDilogData and 'does not show that the rigid-monoidal axioms force Li₂^q'. Lean docstring of pentagon_iff_isDilog changed to match. lean-direct exit 0, no axioms. The rendered prose still says 'This is the precise sense in which the q-dilogarithm is **forced by the rigid-monoidal axioms**'. The PR's own new caveat says the opposite (true by definition; does not show the axioms force Li₂^q), but the caveat is in authorNotes, which the default render skips. So the published text still carries the overclaim the PR documents. Also the edited 2026-10-11 status note now reads '(`#print axioms` reports no dependency), The categorical → scalar descent…': a comma splice with a capital after the comma."
+      },
+      {
+        "field_hash": {
+          "md": "73b3306de922",
+          "ts": "78e790d04538"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:15:00.000Z",
+        "reviewed_sha": "85c994b4d891a5975521c1761a995390eb48a623",
+        "evidence": "Re-read at 85c994b. The paragraph after the statement now reads: 'The equivalence holds because a q-dilogarithm datum is defined by this pentagon, so it restates that definition. It does not show that the rigid-monoidal axioms of C force Li_2^q; that would need the categorical-to-scalar descent marked below as not formalised.' This agrees with the 2026-11-21 caveat and the Lean docstring of pentagon_iff_isDilog. The rendered overclaim 'forced by the rigid-monoidal axioms' is gone. The comma splice in the unrendered 2026-10-11 status note in the .ts ('(`#print axioms` reports no dependency), The categorical → scalar descent ...') is still there."
+      }
+    ]
+  }
+}

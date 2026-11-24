@@ -7,13 +7,13 @@ the brane tower fits this setup.
 **Step 1 (jet prolongation is a gerbe).** By
 [jet prolongation](#prop:jet-prolongation), the assignment
 $(\mathbf{C}, A, \tau) \mapsto (\mathbf{C}, J^1(A), \tau', q)$ sends
-a QOU at level $n$ to a QOU at level $n+1$. The stack of QOU-lifts
+a QOU at level $n$ to a QOU at level $n+1$. The stack of QOU lifts
 over a fixed base QOU is a gerbe: non-empty (constructed from
 $J^1(A)$), and two lifts differing by an automorphism of $J^1(A)$
 over $A$ are 2-isomorphic.
 
 **Step 2 (banding by $\mathcal{B}$).** The automorphisms of a
-QOU-lift over a fixed base are parameterised by the abelian sheaf
+QOU lift over a fixed base are parameterised by the abelian sheaf
 $\mathcal{B}$ of
 [quantum characteristic classes](#def:quantum-characteristic-classes):
 an automorphism of $J^1(A)$ compatible with the Frobenius--Hopf

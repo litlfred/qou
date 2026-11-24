@@ -4,7 +4,7 @@ $$
   J^1(A) := (A \otimes A)/I^2 .
 $$
 
-The section $\ell(a) = [a \otimes 1]$ and the retraction $r \colon J^1(A) \to A$ induced by $\mu$ satisfy $r \circ \ell = \mathrm{id}_A$, and $\ker r = I/I^2$, which is the module $\Omega^1_{A/R}$ of Kähler differentials. The jet object therefore fits into the split extension
+The section $\ell(a) = [a \otimes 1]$ and the left inverse $r \colon J^1(A) \to A$ induced by $\mu$ satisfy $r \circ \ell = \mathrm{id}_A$, and $\ker r = I/I^2$, which is the module $\Omega^1_{A/R}$ of Kähler differentials. The jet object therefore fits into the split extension
 
 ```tex
 \begin{equation}\label{eq:jet-ses}
