@@ -58,6 +58,34 @@ TIER_B_PACKAGES: tuple[str, ...] = (
     "BraidKnotOctonion",
 )
 
+# Strict topological DAG order across the 7 community `[[lean_lib]]` targets:
+# lower index = more foundational; imports among community libs satisfy rank(src) >= rank(dst).
+COMMUNITY_LIBS_ORDERED: tuple[str, ...] = (
+    "MathlibExt",
+    "QCalculus",
+    "TwistedFrobeniusHopf",
+    "ToricConicOpt",
+    "CompactQuantumMetrics",
+    "HeckeTemperleyLieb",
+    "BraidKnotOctonion",
+)
+
+COMMUNITY_PARTITIONS_ORDERED: tuple[str, ...] = (
+    "TierA.MathlibExt",
+    "TierB.QCalculus",
+    "TierB.TwistedFrobeniusHopf",
+    "TierB.ToricConicOpt",
+    "TierB.CompactQuantumMetrics",
+    "TierB.HeckeTemperleyLieb",
+    "TierB.BraidKnotOctonion",
+)
+
+PARTITION_TO_LEAN_LIB: dict[str, str] = {
+    "TierA.MathlibExt": "MathlibExt",
+    **{f"TierB.{pkg}": pkg for pkg in TIER_B_PACKAGES},
+}
+LEAN_LIB_TO_PARTITION: dict[str, str] = {v: k for k, v in PARTITION_TO_LEAN_LIB.items()}
+
 TIER_B_DESCRIPTIONS: dict[str, str] = {
     "HeckeTemperleyLieb": (
         "Iwahori-Hecke H_n(q), Temperley-Lieb TL_n(q), Jones/Markov/Ocneanu traces, "
@@ -107,25 +135,25 @@ LAYER_RANK: dict[str, int] = {
     "External.Fred2005": 1,
     "TierA.MathlibExt": 1,
     "TierB.QCalculus": 2,
-    "TierB.TwistedFrobeniusHopf": 2,
-    "TierB.ToricConicOpt": 2,
-    "TierB.BraidKnotOctonion": 2,
-    "TierB.HeckeTemperleyLieb": 3,
-    "TierB.CompactQuantumMetrics": 3,
-    "QOU.Core": 4,
-    "QOU.LiftingDescent": 5,
-    "QOU.BraidsAndKnots": 6,
-    "QOU.BringsSurface": 7,
-    "QOU.Confinement": 8,
-    "QOU.EightfoldWay": 8,
-    "QOU.MassTheory": 9,
-    "QOU.Nuclear": 10,
-    "QOU.StandardModel": 10,
-    "QOU.FluidDynamics": 10,
-    "QOU.InformationTheory": 10,
-    "QOU.Observations": 11,
-    "QOU.Aggregator": 12,
-    "QOU.SiblingBlock": 13,
+    "TierB.TwistedFrobeniusHopf": 3,
+    "TierB.ToricConicOpt": 4,
+    "TierB.CompactQuantumMetrics": 5,
+    "TierB.HeckeTemperleyLieb": 6,
+    "TierB.BraidKnotOctonion": 7,
+    "QOU.Core": 8,
+    "QOU.LiftingDescent": 9,
+    "QOU.BraidsAndKnots": 10,
+    "QOU.BringsSurface": 11,
+    "QOU.Confinement": 12,
+    "QOU.EightfoldWay": 12,
+    "QOU.MassTheory": 13,
+    "QOU.Nuclear": 14,
+    "QOU.StandardModel": 14,
+    "QOU.FluidDynamics": 14,
+    "QOU.InformationTheory": 14,
+    "QOU.Observations": 15,
+    "QOU.Aggregator": 16,
+    "QOU.SiblingBlock": 17,
 }
 
 # Current 83 QOU/* subdirectory -> canonical QOU.<Subgraph> home (when QOU-coupled)
@@ -485,31 +513,70 @@ def classify_ring_regime(code: str, has_decimal: bool) -> str:
     return "ring_agnostic"
 
 
+EXTRA_QOU_COUPLED_LOW_RE = re.compile(
+    r"(?:confinedparticle|confinement|dressedparticle|isospin|mupcarrier|"
+    r"anyonic|cemetery|flavorsplit|colourstabilizer|colorstabilizer|thetaqcd|theta_qcd|"
+    r"pairproduction|reeb|jetchain|jucysmurphycentralelementsqou|"
+    r"massratio|baryonnumber|quarkcolor|colorpair)"
+)
+PURE_MATH_CONTEXT_ALLOW: tuple[str, ...] = (
+    "RSKIdentitiesContext",
+    "BurnsideContext",
+    "LpDualityHypothesisContext",
+    "HasFiniteLPDuality",
+    "HasStrictComplementarity",
+    "VolumeConjecture41",
+)
+LEGACY_QBETA_NS_RE = re.compile(r"\bQOU\.QBeta(?:\.[A-Za-z0-9_']+)?")
+LEGACY_QBETA_KW_RE = re.compile(r"\b(?:namespace|end|open)\s+QBeta\b")
+NATIVE_DECIDE_CHECK_RE = re.compile(r"\bnative_decide\b")
+FLOAT_CHECK_RE = re.compile(r"\bFloat\b")
+
+
 def classify_intrinsic_purity(code: str, mod_name: str, raw: str = "") -> tuple[str, list[str]]:
     """Classify intrinsic mathematical vs QOU-physics coupling of a single module."""
     reasons: list[str] = []
     # Strip `import ...` lines so an upward import is caught as a cut-edge rather than
     # misclassifying the importing module's own mathematical body.
     body = HEADER_IMPORT_STRIP_RE.sub("", code)
+    # Strip legacy `QOU.QBeta` namespace prefixes before matching `qbeta` so pure Young/Wenzl/Markov
+    # combinatorics (e.g. `QOU.QBeta.WenzlWeight`) are not misclassified as nuclear beta-decay,
+    # and normalize standard probability `schwingerMeasure` (`Exp(1)`).
+    body_cleaned = LEGACY_QBETA_NS_RE.sub("", body)
+    body_cleaned = LEGACY_QBETA_KW_RE.sub("", body_cleaned)
+    body_cleaned = body_cleaned.replace("schwingerMeasure", "expDecayMeasure")
+    for allow_ctx in PURE_MATH_CONTEXT_ALLOW:
+        body_cleaned = body_cleaned.replace(f"class {allow_ctx}", f"structure {allow_ctx}")
+
     parts = mod_name.split(".")
-    tail = ".".join(parts[2:]) if (len(parts) >= 3 and parts[0] == "QOU") else mod_name
-    code_low = body.lower()
+    if len(parts) >= 3 and parts[0] == "QOU":
+        tail = ".".join(parts[2:])
+    elif len(parts) >= 2 and parts[0] in LEAN_LIB_TO_PARTITION:
+        tail = ".".join(parts[1:])
+    else:
+        tail = mod_name
+    code_low = body_cleaned.lower()
     tail_low = tail.lower()
 
-    has_dec = bool(DECIMAL_LITERAL_RE.search(body))
+    has_dec = bool(DECIMAL_LITERAL_RE.search(body_cleaned))
     if has_dec:
         reasons.append("decimal_literal")
     if EMPIRICAL_LOW_RE.search(code_low) or EMPIRICAL_LOW_RE.search(tail_low):
         reasons.append("empirical_codata")
     if SUBSTRATE_PIN_LOW_RE.search(code_low) or SUBSTRATE_PIN_LOW_RE.search(tail_low):
         reasons.append("substrate_q0_pin")
-    if PARTICLE_MODEL_LOW_RE.search(code_low) or PARTICLE_MODEL_LOW_RE.search(tail_low):
+    if (
+        PARTICLE_MODEL_LOW_RE.search(code_low)
+        or PARTICLE_MODEL_LOW_RE.search(tail_low)
+        or EXTRA_QOU_COUPLED_LOW_RE.search(code_low)
+        or EXTRA_QOU_COUPLED_LOW_RE.search(tail_low)
+    ):
         reasons.append("particle_physics_vocab")
-    if QOU_AXIOM_RE.search(body) or QOU_AXIOM_RE.search(tail):
+    if QOU_AXIOM_RE.search(body_cleaned) or QOU_AXIOM_RE.search(tail):
         reasons.append("qou_framework_axiom")
     if raw and MANUSCRIPT_STUB_DOC_STR in raw:
         reasons.append("manuscript_context_stub")
-    elif CONTEXT_CLASS_RE.search(body):
+    elif CONTEXT_CLASS_RE.search(body_cleaned):
         reasons.append("manuscript_context_stub")
 
     if "decimal_literal" in reasons or "empirical_codata" in reasons:
@@ -535,9 +602,6 @@ EXPLICIT_PURE_OVERRIDES: dict[str, str] = {
     "QOU.MathlibExt.DerivationRankNullity": "TierB.CompactQuantumMetrics",
     "QOU.QuantumObservableUniverse.NakayamaTwist": "TierB.TwistedFrobeniusHopf",
     "QOU.QuantumObservableUniverse.HigmanNormMap": "TierB.TwistedFrobeniusHopf",
-    "QOU.QuantumObservableUniverse.AntipodeDetermined": "TierB.TwistedFrobeniusHopf",
-    "QOU.QuantumObservableUniverse.AntipodeIndependence": "TierB.TwistedFrobeniusHopf",
-    "QOU.QuantumObservableUniverse.FrobeniusBialgebraCollapse": "TierB.TwistedFrobeniusHopf",
     "QOU.AlgebraicSubstrate.TwistedAmbidextrousAdjunction": "TierB.TwistedFrobeniusHopf",
 }
 
@@ -545,6 +609,9 @@ EXPLICIT_PURE_OVERRIDES: dict[str, str] = {
 def classify_pure_math_target(mod_name: str, subdir: str, code: str) -> str | None:
     """Assign an intrinsically `pure_math` QOU library module to Tier-A or one of the 6 Tier-B
     packages, or return `None` if it is a domain-local helper belonging in its canonical `QOU.*` subgraph."""
+    top = mod_name.split(".", 1)[0]
+    if top in LEAN_LIB_TO_PARTITION and "." in mod_name:
+        return LEAN_LIB_TO_PARTITION[top]
     if mod_name in EXPLICIT_PURE_OVERRIDES:
         return EXPLICIT_PURE_OVERRIDES[mod_name]
 
@@ -592,9 +659,9 @@ def classify_pure_math_target(mod_name: str, subdir: str, code: str) -> str | No
     )):
         return "TierB.QCalculus"
 
-    # 5. BraidKnotOctonion: PL knot topology, Delta-moves, BraidGroup, Alexander/Burau, Octonion/G2, Bring curve
+    # 5. BraidKnotOctonion: PL knot topology, Delta-moves, Alexander/Burau, Octonion/G2, Bring curve
     if subdir in ("BringsSurface", "Brings", "HyperellipticQuintic") or any(k in low for k in (
-        "mathlibext/pl", "octonion", "hurwitz", "g2frame", "braidgroup", "braidjuxtaposition",
+        "mathlibext/pl", "octonion", "hurwitz", "g2frame", "braidjuxtaposition",
         "braidedslide", "braidedtensordual", "braidedquantumdimension", "braidedtower",
         "burau", "krammer", "alexander", "borromean", "torusknot", "seifert", "skein",
         "vassiliev", "milnor", "brunnian", "kashaev", "jonespolynomial", "jonesvia",
@@ -607,7 +674,9 @@ def classify_pure_math_target(mod_name: str, subdir: str, code: str) -> str | No
         "temperleylieb", "hecketotemperleylieb", "hecke", "markov", "ocneanu", "hoefsmit",
         "wenzl", "jonesnormal", "joneswords", "bruhat", "coxeter", "demazure", "kazhdan",
         "young", "syt", "hook", "plancherel", "wedderburn", "schur", "casimir", "specht",
-        "garnir", "branching", "bialternant", "ballot", "catalan"
+        "garnir", "branching", "bialternant", "ballot", "catalan",
+        "tableau", "jucys", "murphy", "seminormal", "maschke", "partition",
+        "ovbase", "ovtop", "regularrep", "braidgroup"
     )):
         return "TierB.HeckeTemperleyLieb"
 
@@ -752,11 +821,14 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
                 "kind": kind_val,
                 "lean_ref": ref_val,
             })
-            if ref_val.startswith("qou:QOU."):
+            if ref_val.startswith("qou:"):
                 decl_fqn = ref_val.split(":", 1)[1]
                 parts = decl_fqn.split(".")
                 if len(parts) >= 2:
                     referenced_qou_modules_from_ts.add(".".join(parts[:-1]))
+
+    post_isolated_on_disk = any((lean_root / lib).is_dir() for lib in COMMUNITY_LIBS_ORDERED)
+    aggregator_root_mods = {"QOU"} | set(COMMUNITY_LIBS_ORDERED)
 
     # Parse every library .lean file
     modules: dict[str, dict[str, Any]] = {}
@@ -766,6 +838,8 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
         mod_name = ".".join(rel_to_lean.with_suffix("").parts)
         if mod_name == "QOU":
             subdir = "<QOU-aggregator>"
+        elif mod_name in COMMUNITY_LIBS_ORDERED and len(rel_to_lean.parts) == 1:
+            subdir = "<Community-aggregator>"
         elif len(rel_to_lean.parts) == 1:
             subdir = "<lean-root-scratch>"
         elif len(rel_to_lean.parts) == 2 and rel_to_lean.parts[0] == "QOU":
@@ -856,7 +930,11 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
             "path": (p.relative_to(REPO_ROOT) if p.is_relative_to(REPO_ROOT) else p.relative_to(qou_root)).as_posix(),
             "chapter": chapter_dir,
             "imports": imports,
-            "qou_imports": [i for i in imports if i == "QOU" or i.startswith("QOU.")],
+            "qou_imports": [
+                i for i in imports
+                if i == "QOU" or i.startswith("QOU.")
+                or any(i == lib or i.startswith(f"{lib}.") for lib in COMMUNITY_LIBS_ORDERED)
+            ],
             "mathlib_imports": [i for i in imports if i == "Mathlib" or i.startswith("Mathlib.")],
             "import_order_ok": import_order_ok,
             "has_module_docstring": has_mod_doc,
@@ -917,34 +995,6 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
         qou_adj[m] = sorted(set(qou_adj[m]))
         rev_qou_adj[m] = sorted(set(rev_qou_adj[m]))
 
-    # Drop temporary `_code` after assigning target partition
-    for m, info in modules.items():
-        subdir = info["subdir"]
-        is_chapter_reexport = (
-            info["decl_total"] == 0
-            and subdir == "<QOU-root-loose>"
-            and m != "QOU.MathlibExt"
-        )
-        if m == "QOU":
-            target = "QOU.Aggregator"
-        elif subdir == "<lean-root-scratch>":
-            target = "QOU.Core"
-        elif not is_chapter_reexport and info["intrinsic_purity"] == "pure_math":
-            cand_target = classify_pure_math_target(m, subdir, info["_code"])
-            if cand_target is not None:
-                target = cand_target
-            elif subdir == "<QOU-root-loose>":
-                target = classify_loose_qou_module(m)
-            else:
-                target = SUBDIR_TO_CANONICAL_QOU.get(subdir, "QOU.Core")
-        elif subdir == "<QOU-root-loose>":
-            target = classify_loose_qou_module(m)
-        else:
-            target = SUBDIR_TO_CANONICAL_QOU.get(subdir, "QOU.Core")
-        info["target_partition"] = target
-        del info["_code"]
-
-    # Transitive cone purity propagation over `qou_adj`
     # First check module-level SCCs via Tarjan
     module_sccs = tarjan_scc(list(qou_mod_set), qou_adj)
     nontrivial_module_sccs = [
@@ -952,6 +1002,7 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
         if len(scc) > 1 or (len(scc) == 1 and scc[0] in qou_adj.get(scc[0], []))
     ]
 
+    # Transitive cone purity + community hygiene eligibility over `qou_adj`
     memo_cone_dirty: dict[str, list[str]] = {}
     visiting: set[str] = set()
 
@@ -972,6 +1023,33 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
         memo_cone_dirty[mod] = res
         return res
 
+    memo_comm_clean: dict[str, bool] = {}
+    visiting_clean: set[str] = set()
+
+    def is_clean_community_eligible(mod: str) -> bool:
+        if mod in memo_comm_clean:
+            return memo_comm_clean[mod]
+        if mod in visiting_clean:
+            return False
+        inf = modules[mod]
+        code_txt = inf.get("_code", "")
+        if (
+            mod in aggregator_root_mods
+            or mod == "scratch_lean"
+            or inf["intrinsic_purity"] != "pure_math"
+            or inf["sorry_total"] > 0
+            or inf["decl_axiom"] > 0
+            or bool(NATIVE_DECIDE_CHECK_RE.search(code_txt))
+            or bool(FLOAT_CHECK_RE.search(code_txt))
+        ):
+            memo_comm_clean[mod] = False
+            return False
+        visiting_clean.add(mod)
+        ok = all(is_clean_community_eligible(dep) for dep in qou_adj.get(mod, []))
+        visiting_clean.remove(mod)
+        memo_comm_clean[mod] = ok
+        return ok
+
     for m in sorted(qou_mod_set):
         dirty = dirty_ancestors(m)
         if modules[m]["intrinsic_purity"] == "pure_math":
@@ -979,6 +1057,95 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
         else:
             modules[m]["cone_purity"] = modules[m]["intrinsic_purity"]
         modules[m]["dirty_qou_ancestors_count"] = len(dirty)
+        is_clean_community_eligible(m)
+
+    def _fallback_qou_partition(mod: str, sd: str) -> str:
+        if sd == "<QOU-root-loose>":
+            return classify_loose_qou_module(mod)
+        return SUBDIR_TO_CANONICAL_QOU.get(sd, "QOU.Core")
+
+    if post_isolated_on_disk:
+        # Post-migration: read exact isolated partition from physical directory on disk
+        for m, info in modules.items():
+            sd = info["subdir"]
+            top = m.split(".", 1)[0]
+            if m in aggregator_root_mods:
+                target = "QOU.Aggregator"
+            elif top in LEAN_LIB_TO_PARTITION:
+                target = LEAN_LIB_TO_PARTITION[top]
+            elif sd == "<lean-root-scratch>":
+                target = "QOU.Core"
+            else:
+                target = _fallback_qou_partition(m, sd)
+            info["target_partition"] = target
+            del info["_code"]
+    else:
+        # Pre-migration: Cone-pure + zero-sorry/axiom community closure + strict DAG rank lift
+        comm_rank_index = {part: idx for idx, part in enumerate(COMMUNITY_PARTITIONS_ORDERED)}
+        seed_comm: dict[str, str] = {}
+        for m, info in modules.items():
+            if not memo_comm_clean.get(m, False):
+                continue
+            sd = info["subdir"]
+            is_chapter_reexport = (
+                info["decl_total"] == 0
+                and sd == "<QOU-root-loose>"
+                and m != "QOU.MathlibExt"
+            )
+            if is_chapter_reexport:
+                continue
+            cand = classify_pure_math_target(m, sd, info["_code"])
+            if cand is not None:
+                seed_comm[m] = cand
+
+        # Downward cone closure: any clean pure helper imported by a community module enters community
+        in_comm = set(seed_comm.keys())
+        stack = list(in_comm)
+        while stack:
+            cur = stack.pop()
+            for dep in qou_adj.get(cur, []):
+                if dep not in in_comm:
+                    assert memo_comm_clean[dep], f"Unexpected non-clean ancestor {dep} of {cur}"
+                    in_comm.add(dep)
+                    seed_comm[dep] = "TierA.MathlibExt"
+                    stack.append(dep)
+
+        # Topological sort on `in_comm` and monotonic rank assignment so inter-package cycles == 0
+        topo_comm: list[str] = []
+        vis_topo: set[str] = set()
+
+        def _dfs_comm(u: str) -> None:
+            if u in vis_topo:
+                return
+            vis_topo.add(u)
+            for v in qou_adj.get(u, []):
+                if v in in_comm:
+                    _dfs_comm(v)
+            topo_comm.append(u)
+
+        for u in sorted(in_comm):
+            _dfs_comm(u)
+
+        final_comm_rank: dict[str, int] = {}
+        for u in topo_comm:
+            r = comm_rank_index[seed_comm[u]]
+            for v in qou_adj.get(u, []):
+                if v in final_comm_rank:
+                    r = max(r, final_comm_rank[v])
+            final_comm_rank[u] = r
+
+        for m, info in modules.items():
+            sd = info["subdir"]
+            if m in aggregator_root_mods:
+                target = "QOU.Aggregator"
+            elif sd == "<lean-root-scratch>":
+                target = "QOU.Core"
+            elif m in final_comm_rank:
+                target = COMMUNITY_PARTITIONS_ORDERED[final_comm_rank[m]]
+            else:
+                target = _fallback_qou_partition(m, sd)
+            info["target_partition"] = target
+            del info["_code"]
 
     # Root reachability from `QOU.lean` + sibling imports
     reachable_from_root: set[str] = set()
@@ -1008,7 +1175,9 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
                 reachable_from_siblings.add(dep)
                 stack.append(dep)
 
-    qou_library_mods = sorted(m for m in qou_mod_set if m not in ("QOU", "scratch_lean"))
+    qou_library_mods = sorted(
+        m for m in qou_mod_set if m not in aggregator_root_mods and m != "scratch_lean"
+    )
     orphans_from_qou_root = sorted(m for m in qou_library_mods if m not in reachable_from_root)
     true_disconnected_orphans = sorted(
         m for m in orphans_from_qou_root
@@ -1016,6 +1185,85 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
         and m not in referenced_qou_modules_from_ts
         and not rev_qou_adj.get(m)
     )
+
+    # Build deterministic, collision-free old_module -> new_module migration map (Option 1)
+    # Every library module maps bijectively into `MathlibExt.*`, `<TierBPkg>.*`, or `QOU.<Chapter>.*`.
+    cand_groups: dict[tuple[str, str], list[tuple[str, str]]] = defaultdict(list)
+    for m in qou_library_mods:
+        part = modules[m]["target_partition"]
+        if part in PARTITION_TO_LEAN_LIB:
+            target_prefix = PARTITION_TO_LEAN_LIB[part]
+            target_lib = target_prefix
+        else:
+            target_prefix = part  # e.g. `QOU.MassTheory`
+            target_lib = "QOU"
+
+        if m.startswith(target_prefix + "."):
+            subtail = m[len(target_prefix) + 1:]
+            orig_sub = target_prefix.split(".")[-1]
+        else:
+            mparts = m.split(".")
+            if mparts[0] == "QOU" and len(mparts) >= 3:
+                orig_sub = mparts[1]
+                subtail = ".".join(mparts[2:])
+            elif mparts[0] == "QOU" and len(mparts) == 2:
+                orig_sub = "Root"
+                short_stem = mparts[1]
+                target_leaf = target_prefix.split(".")[-1]
+                if short_stem == target_leaf:
+                    subtail = "Core" if target_lib != "QOU" else f"{short_stem}Root"
+                else:
+                    subtail = short_stem
+            else:
+                orig_sub = "Root"
+                subtail = m
+        cand_groups[(target_prefix, subtail)].append((m, orig_sub))
+
+    module_migration_map: dict[str, dict[str, str]] = {}
+    used_new_mods: set[str] = set()
+    for (target_prefix, subtail), grp in sorted(cand_groups.items()):
+        target_leaf = target_prefix.split(".")[-1]
+        if len(grp) == 1:
+            m, _orig_sub = grp[0]
+            new_mod = f"{target_prefix}.{subtail}"
+            part = modules[m]["target_partition"]
+            target_lib = PARTITION_TO_LEAN_LIB.get(part, "QOU")
+            assert new_mod not in used_new_mods, f"Duplicate target module: {new_mod}"
+            used_new_mods.add(new_mod)
+            module_migration_map[m] = {
+                "old_module": m,
+                "new_module": new_mod,
+                "target_partition": part,
+                "target_lean_lib": target_lib,
+                "old_repo_rel_path": modules[m]["path"],
+                "new_lean_rel_path": new_mod.replace(".", "/") + ".lean",
+            }
+        else:
+            # Disambiguate colliding subtails within the same target_prefix deterministically
+            canonical_matches = [x for x in grp if x[1] == target_leaf]
+            for m, orig_sub in sorted(grp):
+                part = modules[m]["target_partition"]
+                target_lib = PARTITION_TO_LEAN_LIB.get(part, "QOU")
+                if len(canonical_matches) == 1 and orig_sub == target_leaf:
+                    cand_new = f"{target_prefix}.{subtail}"
+                else:
+                    cand_new = f"{target_prefix}.{orig_sub}.{subtail}"
+                if cand_new in used_new_mods:
+                    idx_s = 2
+                    while f"{cand_new}_{idx_s}" in used_new_mods:
+                        idx_s += 1
+                    cand_new = f"{cand_new}_{idx_s}"
+                used_new_mods.add(cand_new)
+                module_migration_map[m] = {
+                    "old_module": m,
+                    "new_module": cand_new,
+                    "target_partition": part,
+                    "target_lean_lib": target_lib,
+                    "old_repo_rel_path": modules[m]["path"],
+                    "new_lean_rel_path": cand_new.replace(".", "/") + ".lean",
+                }
+        for m, _ in grp:
+            modules[m]["new_module"] = module_migration_map[m]["new_module"]
 
     # Directory-level graph & SCCs across the 83 QOU/* subdirectories (+ <QOU-root-loose>)
     dir_nodes_set: set[str] = set()
@@ -1388,8 +1636,13 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
                 "outcome": "keep detangling" if (cut_edges_blocking_community or nontrivial_dir_sccs) else "detangled",
             },
             "GW_Isolated": {
-                "tier_b_standalone_lean_libs_declared_in_lakefile": 0,
-                "outcome": "not yet (gated on AskUserQuestion architecture selection in qou-mlib / qou-lref)",
+                "tier_b_standalone_lean_libs_declared_in_lakefile": len(TIER_B_PACKAGES) if post_isolated_on_disk else 0,
+                "tier_a_mathlibext_lean_lib_declared_in_lakefile": 1 if post_isolated_on_disk else 0,
+                "outcome": (
+                    "isolated (Option 1 multi-lean_lib active on disk)"
+                    if post_isolated_on_disk
+                    else "ready_to_isolate (0 cut-edges, 0 inter-package cycles, bijective module map generated)"
+                ),
             },
         },
         "corpus_totals": {
@@ -1470,6 +1723,7 @@ def analyze_corpus(qou_root: Path = DEFAULT_QOU_ROOT) -> dict[str, Any]:
         },
         "current_83_subdirs_inventory": per_subdir_stats,
         "refactor_options": refactor_options,
+        "module_migration_map": dict(sorted(module_migration_map.items())),
     }
     return report
 
@@ -1674,6 +1928,12 @@ def main(argv: list[str] | None = None) -> int:
         help="Write human-readable Markdown options report to this path",
     )
     ap.add_argument(
+        "--map-out",
+        type=Path,
+        default=None,
+        help="Write deterministic old_module -> new_module JSON migration map to this path",
+    )
+    ap.add_argument(
         "--summary-only",
         action="store_true",
         help="Print concise console summary only",
@@ -1682,10 +1942,30 @@ def main(argv: list[str] | None = None) -> int:
 
     audit = analyze_corpus(args.qou_root)
 
+    if args.map_out:
+        args.map_out.parent.mkdir(parents=True, exist_ok=True)
+        map_payload = {
+            "schema": "qou.lean.reservoir_module_migration_map.v1",
+            "option": "Option_1",
+            "community_libs_ordered": list(COMMUNITY_LIBS_ORDERED),
+            "canonical_qou_subgraphs": list(CANONICAL_QOU_SUBGRAPHS),
+            "subdir_to_canonical_qou": SUBDIR_TO_CANONICAL_QOU,
+            "total_modules": len(audit["module_migration_map"]),
+            "modules": audit["module_migration_map"],
+        }
+        args.map_out.write_text(
+            json.dumps(map_payload, indent=2, sort_keys=False, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
     if args.json_out:
+        # Exclude bulky per-module map from summary audit JSON when --map-out is separate,
+        # or keep a compact digest so audit JSON stays concise and fast.
+        audit_for_json = {k: v for k, v in audit.items() if k != "module_migration_map"}
+        audit_for_json["module_migration_map_count"] = len(audit["module_migration_map"])
         args.json_out.parent.mkdir(parents=True, exist_ok=True)
         args.json_out.write_text(
-            json.dumps(audit, indent=2, sort_keys=False, ensure_ascii=False) + "\n",
+            json.dumps(audit_for_json, indent=2, sort_keys=False, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
 

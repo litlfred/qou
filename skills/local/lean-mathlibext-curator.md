@@ -96,8 +96,13 @@ nice -n 15 python3 scripts/lean-kg-detangler.py --summary-only
 
 # 4. Type-check in the isolated symlink-farm overlay (NEVER bare `lake build`):
 nice -n 15 bash scripts/lean-overlay-env.sh init
-nice -n 15 bash scripts/lean-overlay-env.sh build QOU/<Path>/<Module>.lean
+nice -n 15 bash scripts/lean-overlay-env.sh build <LibOrQOU>/<Module>.lean
+
+# 5. Fix up an open PR branch authored against legacy `QOU/<OldSynonym>/` paths:
+nice -n 15 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch
 ```
+
+All `7` community libraries (`MathlibExt`, `QCalculus`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `HeckeTemperleyLieb`, `BraidKnotOctonion`) live as top-level `[[lean_lib]]` roots inside `folio/quantum-observable-universe/lean/` (`srcDir = "."`, `0` extra `.lake/build` roots, strict topological DAG order, `community_to_qou_cut_edges == 0`), alongside the `12` canonical monograph subgraphs under `folio/quantum-observable-universe/lean/QOU/<Chapter>/`.
 
 ---
 

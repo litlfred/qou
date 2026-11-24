@@ -47,8 +47,11 @@ and broken at once. That is not hypothetical — `descartesWtrace` recorded
 `exit 0` and landed on `main` red (#6751).
 
 ```bash
+# If rebasing a pre-Q3 branch that still places/imports modules under legacy `QOU/<OldSynonym>/`:
+nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch
+
 scripts/lean-content-sweep.sh <changed content-block .lean ...>   # or no args
-scripts/lean-library-sweep.py                                     # dirty closure
+scripts/lean-library-sweep.py                                     # unified dirty closure across MathlibExt + 6 Tier-B libs + QOU
 ```
 
 Both rebuild from source only the modules whose own olean predates their own

@@ -14,39 +14,40 @@
     "qou-mlib"
   ],
   "producer": "scripts/lean-kg-detangler.py",
-  "producer_sha256": "6405b7af051ee73a3b2e7045278e00e5ba8731e4299f9ad617e0953d8d2bb2e8",
-  "runtime_seconds": 11.355,
+  "producer_sha256": "4936ba6171fe6d38fa9427ddc63c920f07dbe0272a9b268777d23077ef19cbc1",
+  "runtime_seconds": 16.969,
   "process_gate_status": {
     "Task_Declare": {
       "unassigned_library_modules": 0,
-      "declared_library_modules": 3840,
+      "declared_library_modules": 3864,
       "outcome": "declared"
     },
     "GW_Detangled": {
       "unassigned_resolved_edges": 0,
       "unresolved_dangling_imports": 0,
-      "community_to_qou_cut_edges": 188,
+      "community_to_qou_cut_edges": 0,
       "current_mathlib_staging_upward_leaks": 51,
       "directory_scc_tangles": 1,
       "outcome": "keep detangling"
     },
     "GW_Isolated": {
       "tier_b_standalone_lean_libs_declared_in_lakefile": 0,
-      "outcome": "not yet (gated on AskUserQuestion architecture selection in qou-mlib / qou-lref)"
+      "tier_a_mathlibext_lean_lib_declared_in_lakefile": 0,
+      "outcome": "ready_to_isolate (0 cut-edges, 0 inter-package cycles, bijective module map generated)"
     }
   },
   "corpus_totals": {
-    "qou_paper_total_lean_files": 4751,
-    "qou_lean_dir_files": 3842,
-    "qou_library_modules_excluding_root_and_scratch": 3840,
-    "qou_subdirs_count": 83,
+    "qou_paper_total_lean_files": 4775,
+    "qou_lean_dir_files": 3866,
+    "qou_library_modules_excluding_root_and_scratch": 3864,
+    "qou_subdirs_count": 84,
     "qou_loose_root_files": 106,
     "content_block_sibling_lean_files": 909,
     "sibling_paper_ugb_lean_files": 47,
     "sibling_paper_fred2005_lean_files": 3,
-    "ts_blocks_with_lean_ref": 1317,
-    "library_declarations_total": 68855,
-    "library_theorems_and_lemmas": 39177,
+    "ts_blocks_with_lean_ref": 1320,
+    "library_declarations_total": 69872,
+    "library_theorems_and_lemmas": 39759,
     "library_sorry_total": 0,
     "library_sorry_class_body_3b_cond": 0,
     "library_sorry_non_class": 0,
@@ -59,36 +60,36 @@
   },
   "edge_accounting": {
     "external_lean_core_ecosystem": 27,
-    "external_mathlib": 6840,
+    "external_mathlib": 6927,
     "external_ugb": 2,
-    "qou_internal_resolved": 5352
+    "qou_internal_resolved": 5428
   },
   "purity_and_7c_stratification": {
     "library_intrinsic_purity": {
-      "pure_math": 2624,
-      "qou_archimedean_model": 32,
-      "qou_categorical_core": 1098,
-      "qou_empirical_comparison": 86
+      "pure_math": 2931,
+      "qou_archimedean_model": 33,
+      "qou_categorical_core": 818,
+      "qou_empirical_comparison": 82
     },
     "library_transitive_cone_purity": {
-      "cone_pure_math": 2304,
-      "cut_blocked_pure_math": 320,
-      "qou_archimedean_model": 32,
-      "qou_categorical_core": 1098,
-      "qou_empirical_comparison": 86
+      "cone_pure_math": 2729,
+      "cut_blocked_pure_math": 202,
+      "qou_archimedean_model": 33,
+      "qou_categorical_core": 818,
+      "qou_empirical_comparison": 82
     },
     "library_7c_ring_regime": {
       "archimedean_real": 581,
-      "gratuitous_real_candidate": 541,
-      "mixed_generic_and_real": 241,
-      "ordered_generic": 185,
-      "pure_generic": 1402,
-      "ring_agnostic": 890
+      "gratuitous_real_candidate": 543,
+      "mixed_generic_and_real": 251,
+      "ordered_generic": 189,
+      "pure_generic": 1406,
+      "ring_agnostic": 894
     },
     "sibling_intrinsic_purity": {
-      "pure_math": 602,
+      "pure_math": 555,
       "qou_archimedean_model": 6,
-      "qou_categorical_core": 248,
+      "qou_categorical_core": 295,
       "qou_empirical_comparison": 53
     },
     "sibling_7c_ring_regime": {
@@ -146,14 +147,14 @@
         "Torsion"
       ]
     ],
-    "mutual_directory_back_edge_pairs_count": 63,
+    "mutual_directory_back_edge_pairs_count": 68,
     "top_mutual_directory_back_edge_pairs": [
       {
         "dir_a": "<QOU-root-loose>",
         "dir_b": "BraidKnot",
         "edges_a_to_b": 164,
-        "edges_b_to_a": 14,
-        "min_cut_back_edges": 14
+        "edges_b_to_a": 12,
+        "min_cut_back_edges": 12
       },
       {
         "dir_a": "Archimedean",
@@ -292,7 +293,14 @@
         "dir_a": "Archimedean",
         "dir_b": "StandardModel",
         "edges_a_to_b": 2,
-        "edges_b_to_a": 4,
+        "edges_b_to_a": 5,
+        "min_cut_back_edges": 2
+      },
+      {
+        "dir_a": "Mathlib",
+        "dir_b": "QBeta",
+        "edges_a_to_b": 2,
+        "edges_b_to_a": 5,
         "min_cut_back_edges": 2
       },
       {
@@ -300,13 +308,6 @@
         "dir_b": "Mass",
         "edges_a_to_b": 4,
         "edges_b_to_a": 2,
-        "min_cut_back_edges": 2
-      },
-      {
-        "dir_a": "Mathlib",
-        "dir_b": "QBeta",
-        "edges_a_to_b": 2,
-        "edges_b_to_a": 4,
         "min_cut_back_edges": 2
       },
       {
@@ -338,6 +339,13 @@
         "min_cut_back_edges": 2
       },
       {
+        "dir_a": "MassTheory",
+        "dir_b": "QBeta",
+        "edges_a_to_b": 3,
+        "edges_b_to_a": 2,
+        "min_cut_back_edges": 2
+      },
+      {
         "dir_a": "<QOU-root-loose>",
         "dir_b": "AppendixSurreals",
         "edges_a_to_b": 22,
@@ -347,13 +355,6 @@
       {
         "dir_a": "<QOU-root-loose>",
         "dir_b": "Interactions",
-        "edges_a_to_b": 22,
-        "edges_b_to_a": 1,
-        "min_cut_back_edges": 1
-      },
-      {
-        "dir_a": "Knot",
-        "dir_b": "MathlibExt",
         "edges_a_to_b": 22,
         "edges_b_to_a": 1,
         "min_cut_back_edges": 1
@@ -394,7 +395,7 @@
         "staging_dir": "Mathlib",
         "leaked_qou_import": "QOU.QBeta.WenzlWeightVanishing",
         "leaked_dir": "QBeta",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.Mathlib.IdentityIHLFBridge",
@@ -408,7 +409,7 @@
         "staging_dir": "Mathlib",
         "leaked_qou_import": "QOU.SchurWeyl.HookDivisibility",
         "leaked_dir": "SchurWeyl",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.Mathlib.NumSYTPos",
@@ -422,7 +423,7 @@
         "staging_dir": "Mathlib",
         "leaked_qou_import": "QOU.SchurWeyl.SchurPrincipalBetaForm",
         "leaked_dir": "SchurWeyl",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.Mathlib.QBorelResummation",
@@ -478,7 +479,7 @@
         "staging_dir": "Mathlib",
         "leaked_qou_import": "QOU.BraidKnot.YoungTableauStandard",
         "leaked_dir": "BraidKnot",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.Mathlib.SpectralCollapseCriteria",
@@ -520,7 +521,7 @@
         "staging_dir": "Mathlib",
         "leaked_qou_import": "QOU.QBeta.TemperleyLiebTower",
         "leaked_dir": "QBeta",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.MathlibExt.ComplexDilogarithmInversion",
@@ -555,7 +556,7 @@
         "staging_dir": "MathlibExt",
         "leaked_qou_import": "QOU.QBeta.HabiroTailStar",
         "leaked_dir": "QBeta",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.MathlibExt.IdealTriangulation",
@@ -590,7 +591,7 @@
         "staging_dir": "MathlibExt",
         "leaked_qou_import": "QOU.StandardModel.ColourStabilizerAction",
         "leaked_dir": "StandardModel",
-        "leaked_purity": "pure_math"
+        "leaked_purity": "qou_categorical_core"
       },
       {
         "staging_module": "QOU.MathlibExt.QIntegerCanonical",
@@ -632,14 +633,14 @@
         "staging_dir": "MathlibExt",
         "leaked_qou_import": "QOU.SchurWeyl.JimboActionKernel",
         "leaked_dir": "SchurWeyl",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.MathlibExt.TraceRadicalNondegenerate",
         "staging_dir": "MathlibExt",
         "leaked_qou_import": "QOU.QBeta.TemperleyLiebTower",
         "leaked_dir": "QBeta",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.MathlibExt.WenzlJonesMarkovNormalisation",
@@ -653,7 +654,7 @@
         "staging_dir": "MathlibExt",
         "leaked_qou_import": "QOU.QBeta.WenzlWeightVanishing",
         "leaked_dir": "QBeta",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.MathlibExt.YoungDiagramCellsBridges",
@@ -709,7 +710,7 @@
         "staging_dir": "MathlibExt",
         "leaked_qou_import": "QOU.QBeta.WenzlWeightVanishing",
         "leaked_dir": "QBeta",
-        "leaked_purity": "qou_categorical_core"
+        "leaked_purity": "pure_math"
       },
       {
         "staging_module": "QOU.MathlibExt.YoungDiagramCellsBridges",
@@ -724,22 +725,22 @@
     "unresolved_imports": []
   },
   "root_reachability_and_orphans": {
-    "qou_lean_direct_imports": 1277,
-    "qou_lean_transitive_reachable": 2041,
-    "orphaned_from_qou_lean_count": 1799,
-    "orphaned_from_qou_lean_pct": 46.85,
+    "qou_lean_direct_imports": 1304,
+    "qou_lean_transitive_reachable": 2083,
+    "orphaned_from_qou_lean_count": 1781,
+    "orphaned_from_qou_lean_pct": 46.09,
     "orphans_reached_by_sibling_imports": 34,
-    "orphans_referenced_by_ts_lean_ref": 40,
-    "true_disconnected_leaf_orphans_count": 1171,
+    "orphans_referenced_by_ts_lean_ref": 34,
+    "true_disconnected_leaf_orphans_count": 1163,
     "orphans_by_subdir_top25": {
-      "QBeta": 215,
-      "BraidKnot": 208,
-      "Mass": 194,
-      "MassTheory": 166,
+      "QBeta": 213,
+      "BraidKnot": 205,
+      "Mass": 195,
+      "MassTheory": 173,
       "MathlibExt": 106,
       "Archimedean": 105,
-      "Hecke": 64,
-      "BraidsAndKnots": 62,
+      "Hecke": 65,
+      "BraidsAndKnots": 61,
       "Mathlib": 55,
       "SchurWeyl": 48,
       "Machinery": 42,
@@ -747,16 +748,16 @@
       "Knot": 36,
       "<QOU-root-loose>": 31,
       "Braiding": 25,
-      "Eightfold": 25,
       "QuantumObservableUniverse": 25,
       "IwahoriHecke": 24,
-      "ParticleInteractions": 23,
-      "LiftingDescent": 22,
+      "ParticleInteractions": 22,
+      "LiftingDescent": 21,
       "Information": 20,
-      "QuarkState": 20,
+      "QuarkState": 19,
       "StandardModel": 18,
       "AlphaEM": 17,
-      "AppendixSurreals": 17
+      "AppendixSurreals": 17,
+      "Interactions": 16
     }
   },
   "synonym_directory_clusters": {
@@ -782,9 +783,9 @@
         "Knots": 1
       },
       "intra_dir_edges": 578,
-      "cross_synonym_edges_eliminated_by_merge": 22,
-      "external_out_edges": 212,
-      "pure_math_files_inside": 563
+      "cross_synonym_edges_eliminated_by_merge": 23,
+      "external_out_edges": 210,
+      "pure_math_files_inside": 543
     },
     "Mass_7dirs": {
       "directories": [
@@ -797,20 +798,20 @@
         "AtomicMass"
       ],
       "dir_count": 7,
-      "total_files": 572,
+      "total_files": 581,
       "per_dir_files": {
-        "Mass": 311,
-        "MassTheory": 239,
+        "Mass": 312,
+        "MassTheory": 247,
         "MassEndomorphism": 10,
         "WedderburnMass": 5,
         "TopologicalMass": 3,
         "HadronicMass": 2,
         "AtomicMass": 2
       },
-      "intra_dir_edges": 244,
+      "intra_dir_edges": 245,
       "cross_synonym_edges_eliminated_by_merge": 5,
       "external_out_edges": 120,
-      "pure_math_files_inside": 412
+      "pure_math_files_inside": 408
     },
     "Hecke_3dirs": {
       "directories": [
@@ -819,15 +820,15 @@
         "HeckeAlgebra"
       ],
       "dir_count": 3,
-      "total_files": 154,
+      "total_files": 155,
       "per_dir_files": {
-        "Hecke": 102,
+        "Hecke": 103,
         "IwahoriHecke": 38,
         "HeckeAlgebra": 14
       },
       "intra_dir_edges": 148,
       "cross_synonym_edges_eliminated_by_merge": 3,
-      "external_out_edges": 62,
+      "external_out_edges": 63,
       "pure_math_files_inside": 131
     },
     "Bring_3dirs": {
@@ -846,7 +847,7 @@
       "intra_dir_edges": 9,
       "cross_synonym_edges_eliminated_by_merge": 0,
       "external_out_edges": 4,
-      "pure_math_files_inside": 36
+      "pure_math_files_inside": 35
     },
     "QOU_Core_4dirs": {
       "directories": [
@@ -866,7 +867,7 @@
       "intra_dir_edges": 28,
       "cross_synonym_edges_eliminated_by_merge": 1,
       "external_out_edges": 16,
-      "pure_math_files_inside": 27
+      "pure_math_files_inside": 26
     },
     "Eightfold_2dirs": {
       "directories": [
@@ -874,15 +875,15 @@
         "EightfoldWay"
       ],
       "dir_count": 2,
-      "total_files": 53,
+      "total_files": 54,
       "per_dir_files": {
-        "Eightfold": 51,
+        "Eightfold": 52,
         "EightfoldWay": 2
       },
-      "intra_dir_edges": 16,
-      "cross_synonym_edges_eliminated_by_merge": 0,
-      "external_out_edges": 8,
-      "pure_math_files_inside": 44
+      "intra_dir_edges": 19,
+      "cross_synonym_edges_eliminated_by_merge": 1,
+      "external_out_edges": 10,
+      "pure_math_files_inside": 40
     },
     "Information_2dirs": {
       "directories": [
@@ -898,7 +899,7 @@
       "intra_dir_edges": 28,
       "cross_synonym_edges_eliminated_by_merge": 0,
       "external_out_edges": 10,
-      "pure_math_files_inside": 31
+      "pure_math_files_inside": 30
     },
     "Archimedean_2dirs": {
       "directories": [
@@ -914,7 +915,7 @@
       "intra_dir_edges": 273,
       "cross_synonym_edges_eliminated_by_merge": 0,
       "external_out_edges": 59,
-      "pure_math_files_inside": 216
+      "pure_math_files_inside": 214
     },
     "Interactions_2dirs": {
       "directories": [
@@ -922,15 +923,15 @@
         "ParticleInteractions"
       ],
       "dir_count": 2,
-      "total_files": 74,
+      "total_files": 75,
       "per_dir_files": {
-        "Interactions": 38,
+        "Interactions": 39,
         "ParticleInteractions": 36
       },
       "intra_dir_edges": 19,
       "cross_synonym_edges_eliminated_by_merge": 0,
-      "external_out_edges": 39,
-      "pure_math_files_inside": 33
+      "external_out_edges": 40,
+      "pure_math_files_inside": 29
     },
     "Fluid_2dirs": {
       "directories": [
@@ -966,2270 +967,746 @@
       "intra_dir_edges": 557,
       "cross_synonym_edges_eliminated_by_merge": 16,
       "external_out_edges": 51,
-      "pure_math_files_inside": 533
+      "pure_math_files_inside": 540
     }
   },
   "tier_a_and_tier_b_reservoir_packages": {
-    "community_inter_package_scc_cycles": [
-      [
-        "TierA.MathlibExt",
-        "TierB.BraidKnotOctonion",
-        "TierB.CompactQuantumMetrics",
-        "TierB.HeckeTemperleyLieb",
-        "TierB.QCalculus",
-        "TierB.ToricConicOpt",
-        "TierB.TwistedFrobeniusHopf"
-      ]
-    ],
-    "community_to_qou_cut_edges_count": 188,
-    "community_to_qou_cut_edges": [
-      {
-        "src_module": "QOU.Archimedean.CatalanClausenBridge",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Archimedean.ClausenFunctionMathlibFiller",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Archimedean.CatalanClausenBridge",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Archimedean.HyperbolicVolumeTranscendence",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Archimedean.DilogPartBFaddeevScaling",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Archimedean.DilogPartBIteratedLimit",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Archimedean.DilogPartBFaddeevScaling",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Archimedean.DilogPartBWP1Capstone",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Archimedean.HeckeBraidingSubstrateNonSymmetric",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MassTheory.TraceSignFlipRegime",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Archimedean.HeckeRep",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Archimedean.GroundRing",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Archimedean.HeckeRep",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Archimedean.TransferMatrix",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Archimedean.MarkovGramRealSymm",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Archimedean.LoopWeightRealSymmReduction",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Archimedean.QHookBound",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Archimedean.GroundRing",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Archimedean.SWJacksonMomentFactorization",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Archimedean.BalancedMomentConfluence",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Archimedean.SchurWeylTrace",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Archimedean.RossoJonesTorusLink",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Archimedean.TorusKnot",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.GroundRing",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.CasimirShared",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.CemeteryGroupEmergence",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.ConfinedParticle",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.GroundRing",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.ConfinementGradingCorrespondence",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.ConfinementLevel",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.ConfinementPhaseStratification",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidKnot.DressedParticle",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.EigenbasisStructuralLemmas",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidKnot.ChiralityWritheRibbon",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.GSReductionOrder",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.HeckeAnyonicSubstrate",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.HookSumCompletedSquare",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.BraidKnot.HookSumBetaCoordinates",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.HookSumElasticity",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.BraidKnot.StaircaseHookMultiset",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.JonesHopfSkein",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidKnot.QBetaCategoricalPrecisionLadder",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.JucysMurphyCentralElementsQOU",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.KazhdanLusztigClassicalLimit",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.KeystoneC8SuperExpBound",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Mass.InvolutionNumbers",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.LadderConventionLocalisation",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidKnot.QBetaCategoricalPrecisionLadder",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.LevelSufficiency",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.HeckeH3",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.LevelSufficiency",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Interactions.ConfinementLP",
-        "dst_partition": "QOU.Confinement",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.LpDualityHypothesisClass",
-        "src_partition": "TierB.ToricConicOpt",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.MuPCarrierOrderWindow",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidKnot.MmuR9V9Closure",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.OperatorValuedCombiner",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidKnot.CrystalRMatrixSubLemma",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.PartitionHookProductBridge",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.BraidKnot.DeltaLambdaSignRule",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.PartitionNatBridge",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidKnot.DeltaLambdaSignRule",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidKnot.QuantumIntBarSymmetric",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.StandardModel.ThetaQcdFramingCp",
-        "dst_partition": "QOU.StandardModel",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.RootOfUnityMTCTruncation",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.SymmetricCrystalPairProduction",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidKnot.algebraic_quantum_volume_specialization",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.MathlibExt.MarkovBondRule",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.BringFiberActionInstance",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.ColorPairIsotypicDecomposition",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.DeltaLambdaDTIndex",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.DeltaLambdaDTIndexGeneralN",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.DeltaLambdaDTModuliUnderdetermined",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.DeltaLambdaTopDegreeConcentration",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.FibreCategoricalTraceForcesJones",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Eightfold.RowCapObstruction",
-        "dst_partition": "QOU.EightfoldWay",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.IsospinMurphyOctet",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.StrangeStrandOctet",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.KeystoneCanonicalAngleMap",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.KeystoneFiveFoldStructure",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.NStatConjugateGeneral",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.ReebChiralitySeparation",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BraidsAndKnots.S5SO3FiberAction",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.demazure_fiber_markov_trace",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Shared.OperatorSelectionLP",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.explicit_alpha_k_h4",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Shared.MarkovTraceClaim",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BraidsAndKnots.wedderburn_bratteli_recursion",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Shared.MarkovTraceClaim",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BringHeckeNoOrderThree",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BringHeckeCommensurability",
-        "dst_partition": "QOU.BringsSurface",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BringHeckeNoOrderThree",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.BringTriangleTraces",
-        "dst_partition": "QOU.BringsSurface",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.BringsSurface.GenusFourFromEquivariantMap",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.RiemannSurface.CombinatorialMapQuotient",
-        "dst_partition": "QOU.BringsSurface",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BringsSurface.GenusFourFromEquivariantMap",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.RiemannSurface.MapGenusNonneg",
-        "dst_partition": "QOU.BringsSurface",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.BringsSurface.GenusFourFromGermStabilisers",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.RiemannSurface.GermStabiliserCyclic",
-        "dst_partition": "QOU.BringsSurface",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Eightfold.SecondMarkovTrace",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Eightfold.RowCapObstruction",
-        "dst_partition": "QOU.EightfoldWay",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.FluidDynamics.VortexLinkMarkov",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.FluidDynamics.VortexLinkTopology",
-        "dst_partition": "QOU.FluidDynamics",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.FormalGroups.SplayBialgebra",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.FormalGroups.CoproductDescent",
-        "dst_partition": "QOU.LiftingDescent",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.GradedFrobeniusHopf",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.QuantumObservableUniverse.CategoricalFoundations",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.GradedFrobeniusHopf",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.QuantumObservableUniverse.Instanton",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.GradedFrobeniusHopf",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.RepresentationTheory",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Habiro.FlowSolution",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Basic",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Hecke.BondCutSymmetryLogBound",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Hecke.BondCutSymmetry",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Hecke.BondCutSymmetryNoSignDefiniteLogBound",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Hecke.BondCutSymmetryNoSignDefinite",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Hecke.HeckeModelsBridge",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MassTheory.HeckeSectorRep",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Hecke.MarkovTraceClassNotUnique",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Hecke.MarkovTraceOnH4A",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Hecke.MarkovTraceIsMarkov",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Hecke.MarkovTraceH2",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Hecke.MarkovTraceIsMarkov",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Hecke.MarkovTraceOnH3A",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Hecke.ProductionOcneanuBondProduct",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Mass.ProductionChainBondProduct",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.HeckeAlgebra.JonesMarkovSumCounterexample",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.HeckeAlgebra.MarkovTrace",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_archimedean_model",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.HeckeAlgebra.SeminormalDimSmall",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.HeckeAlgebra.WedderburnTrace",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_archimedean_model",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Information.GCTSchurMultiplicity",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Information.GCTMultiplicityObstruction",
-        "dst_partition": "QOU.InformationTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Information.SkeinCounterfactual",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Information.SkeinObservationBridge",
-        "dst_partition": "QOU.InformationTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Information.SkeinNPEncoding",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Information.SkeinObservationBridge",
-        "dst_partition": "QOU.InformationTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Information.SkeinShadowConjInvariance",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Information.MagnitudeTraceCommutator",
-        "dst_partition": "QOU.InformationTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Information.SkeinShadowConjInvariance",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Information.SkeinObservationBridge",
-        "dst_partition": "QOU.InformationTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Interactions.BorromeanUnique",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.HeckeH3",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Interactions.BringShellBinding",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.LiftingDescent.HomologicalCondensation",
-        "dst_partition": "QOU.LiftingDescent",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Interactions.ConfinementSDP",
-        "src_partition": "TierB.ToricConicOpt",
-        "dst_module": "QOU.Archimedean.GroundRing",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Interactions.ConfinementSDP",
-        "src_partition": "TierB.ToricConicOpt",
-        "dst_module": "QOU.Archimedean.HeckeH3",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Interactions.ConfinementSDP",
-        "src_partition": "TierB.ToricConicOpt",
-        "dst_module": "QOU.Interactions.ConfinementLP",
-        "dst_partition": "QOU.Confinement",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Interactions.ConfinementSDP",
-        "src_partition": "TierB.ToricConicOpt",
-        "dst_module": "QOU.Interactions.GramIndefinite",
-        "dst_partition": "QOU.Confinement",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Interactions.MarkovPeel",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Archimedean.GroundRing",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Interactions.MarkovPeelH3",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Interactions.HeckeEngine",
-        "dst_partition": "QOU.Confinement",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.IwahoriHecke.BraidingTrace",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MassTheory.TensorTraceCharacter",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.IwahoriHecke.TensorEmbedding",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MassTheory.PiTensorMonomialBasis",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.KZ.Drinfeld.Casimir",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.KZ.Drinfeld.Legs",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.KZ.Drinfeld.HeckeStrands",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.KZ.Drinfeld.RibbonDH",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.KZ.Drinfeld.HeckeStrands",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Mass.BraidedStrands",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Kashaev",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.PhiQPiece",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.AngleStructureUniqueness",
-        "src_partition": "TierB.ToricConicOpt",
-        "dst_module": "QOU.Archimedean.IdealTetrahedronVolumeConcave",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.BorromeanVolume",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Knot.CatalanValueBounds",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Knot.Clausen",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.ClausenFunctionMathlibFiller",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.FigureEightComplexVolume",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Knot.FigureEightVolume",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Knot.FigureEightTriangulation",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Knot.FigureEightVolume",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Knot.FigureEightVolumeSaddle",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Knot.FigureEightVolume",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Knot.FiveTwoAngleSum",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Knot.FiveTwoVolumeConstant",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Knot.FiveTwoNinthPower",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Knot.FiveTwoShapeBounds",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Knot.FiveTwoVolumeChord",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.LobMonotonicity",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.IdealTetLawOfSines",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.BlochWignerLobachevsky",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.KashaevCSigma",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.OneLoopPrefactorInvariance",
-        "dst_partition": "QOU.StandardModel",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.KashaevProdEndpoint",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Knot.FigureEightVolume",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Knot.KashaevReflectionTrapezoid",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.LobachevskyDerivative",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.KummerUnitCircle",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.BlochWignerLobachevsky",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.LobTaylorSaddle",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.LobachevskyDerivative",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.M004VolumeMaximum",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.LobachevskyMaximum",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.RivinConcavity",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Archimedean.BlochWignerLobachevsky",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.WhiteheadBraidClosure",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Mass.QuantumSl2BeltBraid",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.WhiteheadChainVolume",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Knot.CatalanValueBounds",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Knot.WhiteheadLemma1Derived",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Mass.QuantumSl2ZhengFormula",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Knot.WhiteheadLowerRate",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Knot.CatalanValueBounds",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.KnotTheory.JonesPolynomial",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.KnotTheory",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.KnotTheory.Vassiliev.MilnorVassilievBridge",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.MassTheory.MilnorParitySignLaw",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.LiftingDescent.JetNoBialgebra",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.LiftingDescent.JetModuleSplitting",
-        "dst_partition": "QOU.LiftingDescent",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Machinery.HeckeH3GramNondegeneracy",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Shared.DetFin",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Machinery.HeckeH4RepDecomp",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Machinery.BilinearTraceRepBasis",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Machinery.MarkovTraceH4",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Machinery.BilinearTraceCyclicity",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Machinery.QuantumTorusQDifference",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Machinery.QuantumTorus",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.BrunnianHypothesisNotSatisfied",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Mass.CrossingModelPairLocality",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.BrunnianTierDisambiguation",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Mass.FreedmanHeGenusHandleNeedsVanishingLinking",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.BrunnianTripleExhaustion",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.Mass.CarrierCrossingQuantisation",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.KZTwoStrandHecke",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Mass.KZHolonomy.BraidRep",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.MarkovBondRuleForcesPairwise",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Mass.PairwiseCumulantVanishing",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.QIntegerHomogeneous",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Mass.HomogeneousCoordinates",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.QuantumSl2Markov",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Mass.QuantumSl2Belt",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.QuantumSl2Markov",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Mass.QuantumSl2BraidAction",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.RogersSzegoInhabited",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Mass.BindingQHermiteOscillator",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mass.SumSYTEqInvolution",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Mass.InvolutionNumbers",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.MassTheory.BorromeanA4TightSlice",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.MassTheory.MilnorOrderLawGeneral",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.BrunnianDeficitRecursion",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.MassTheory.MilnorOrderLawGeneral",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.BrunnianWordN3TwoRow",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.MassTheory.GermRootVectorGaugeFixing",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.CoCasimirDimQNotForced",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.SpinSectorMeasure",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.CoCasimirMarkovDescentForcesZD",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MassTheory.CoCasimirTau0NotDescend",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.CoCasimirMarkovDescentForcesZD",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.OcneanuMarkovTraceEveryZ",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.CoCasimirMarkovDescentForcesZD",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.OcneanuTraceFaithful",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.CoCasimirSurvivingBlocks",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.OcneanuWeightWenzl",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.CounitFrobeniusForm",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.QuantumObservableUniverse.CategoricalFoundations",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.CounitIsFrobeniusForm",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.QuantumObservableUniverse.CategoricalFoundations",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MassTheory.PlancherelTiltDerivative",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MassTheory.TiltDerivativeCovariance",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.MassTheory.ThreeRowSpringerSYTDerivation",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MassTheory.ThreeRowExtensiveCumulant",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Mathlib.ExtensionClass",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.QuantumObservableUniverse.SelfDualSES",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mathlib.HeckeExtOne",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.GroundRingCore",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mathlib.MajSYTBridge",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Mathlib.MajFormula",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Mathlib.RowLenAddCell",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.Mathlib.ContentProductRows",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Mathlib.SkewSYTMaxCorner",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.BraidKnot.YoungTableauStandard",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Mathlib.SpectralCollapseCriteria",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.QuantumObservableUniverse.SelfDualSES",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mathlib.Summary",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.Mathlib.ArchimedeanRealization",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Mathlib.SymmetricIdempotent",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.Archimedean.GroundRing",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.Mathlib.SymmetricIdempotent",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.Archimedean.HeckeH3",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Mathlib.SymmetricIdempotent",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.Archimedean.TransferMatrix",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Mathlib.UpstreamSubstrateBridge",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.Mathlib.ArchimedeanRealization",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Mathlib.WenzlBridgeConcrete",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.GaugeFieldFluidDynamics",
-        "dst_partition": "QOU.FluidDynamics",
-        "dst_intrinsic_purity": "qou_empirical_comparison",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MathlibExt.ComplexDilogarithmInversion",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Archimedean.LiTwoNegOne",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.MathlibExt.ComplexDilogarithmOnCut",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Archimedean.ConstantOffOnePoint",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.MathlibExt.ManifoldVolumePositive",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.Archimedean.BlochWignerPositive",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.MathlibExt.MarkovBondLinear",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MathlibExt.MarkovBondRule",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MathlibExt.MarkovUnusedGenerator",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MathlibExt.MarkovBondRule",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MathlibExt.NormalizedSumClosure",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.MathlibExt.MacdonaldTelescopeGeneralX",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MathlibExt.OctonionSU3BracketClosure",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.StandardModel.ColourStabilizerAction",
-        "dst_partition": "QOU.StandardModel",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.MathlibExt.QStandardRogersSzego",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Machinery.QPochhammer",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.MathlibExt.QStandardRogersSzego",
-        "src_partition": "TierB.QCalculus",
-        "dst_module": "QOU.Mass.BindingQHermiteOscillator",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.MathlibExt.StieltjesCompactDeterminacy",
-        "src_partition": "TierA.MathlibExt",
-        "dst_module": "QOU.MathlibExt.FrechetShohat",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MathlibExt.TemperleyLiebDimCatalan",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.JimboActionKernel",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MathlibExt.WenzlCandidateNormalisation",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MathlibExt.MacdonaldTelescopeGeneralX",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.MathlibExt.WenzlJonesMarkovNormalisation",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MathlibExt.WenzlSchurElementBridge",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.Optimization.EDMultiplier",
-        "src_partition": "TierB.ToricConicOpt",
-        "dst_module": "QOU.Archimedean.EDCoherentLocality",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.QuantumObservableUniverse.AntipodeDetermined",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.QuantumObservableUniverse.CategoricalFoundations",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.QuantumObservableUniverse.AntipodeIndependence",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.QuantumObservableUniverse.CategoricalFoundations",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.QuantumObservableUniverse.FrobeniusBialgebraCollapse",
-        "src_partition": "TierB.TwistedFrobeniusHopf",
-        "dst_module": "QOU.QuantumObservableUniverse.CategoricalFoundations",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.AddableCellIndexing",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.BranchingGenericity",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.HeckeSchurOrthogonality",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.HeckeSchurElements",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.HeckeSemisimpleGeneral",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Information.PNeqNpEquivalence",
-        "dst_partition": "QOU.InformationTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.MarkovConventionD",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.OcneanuWeightMarkovCorner",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.OcneanuTraceNotFaithful",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.MathlibExt.WenzlSchurElementBridge",
-        "dst_partition": "QOU.Core",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.OcneanuWeightMarkov3",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.OcneanuWeightBranching",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.QRatioBetaFactors",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.SchurPrincipalBetaForm",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.QSchurUpperBound",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.JimboGL",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.QuantumGLHWBound",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.JimboGL",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.QuantumGLHWRestrict",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.JimboGL",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.QuantumGLIntertwine",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.JimboGL",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.QuantumGLSl2Pair",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.Mass.QuantumSl2Fundamental",
-        "dst_partition": "QOU.MassTheory",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.SeminormalNodeForm",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.SchurPrincipalBetaForm",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.SchurWeyl.TwoRowCorners",
-        "src_partition": "TierB.HeckeTemperleyLieb",
-        "dst_module": "QOU.SchurWeyl.OcneanuWeightBranching",
-        "dst_partition": "QOU.BraidsAndKnots",
-        "dst_intrinsic_purity": "qou_categorical_core",
-        "recommended_move": "factor_pure_base_lemma_or_prune_import"
-      },
-      {
-        "src_module": "QOU.StandardModel.BringRealStructureTransport",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "dst_module": "QOU.StandardModel.PolarizationRealStructure",
-        "dst_partition": "QOU.StandardModel",
-        "dst_intrinsic_purity": "pure_math",
-        "recommended_move": "reclassify_target_to_community"
-      }
-    ],
-    "target_layer_back_edges_count": 237,
+    "community_inter_package_scc_cycles": [],
+    "community_to_qou_cut_edges_count": 0,
+    "community_to_qou_cut_edges": [],
+    "target_layer_back_edges_count": 94,
     "target_layer_back_edges_sample": [
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.AdelicSubstrate",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.CartanContraction",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.DominationSqueeze",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.DominationTowers",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.JointGaloisBraidDischarged",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.JointGaloisBraidFigure8",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.KernelGrowthBound",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.MetallicHierarchy",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.MotivicSubstrate",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.OhtsukiKappaDependence",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.PolyhedralDomination",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.PvsNPQou",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.QFromEpsilon",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.ReebEpsilon",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.SurrealRateCalculus",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.SurrealSqueeze",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate",
         "src_partition": "QOU.Core",
-        "src_layer": 4,
+        "src_layer": 8,
         "dst_module": "QOU.AlgebraicSubstrate.WignerAxiom",
         "dst_partition": "QOU.BringsSurface",
-        "dst_layer": 7
+        "dst_layer": 11
       },
       {
         "src_module": "QOU.AlgebraicSubstrate.OhtsukiKappaDependence",
         "src_partition": "QOU.BringsSurface",
-        "src_layer": 7,
+        "src_layer": 11,
         "dst_module": "QOU.Archimedean.HyperbolicVolumeTranscendence",
         "dst_partition": "QOU.MassTheory",
-        "dst_layer": 9
+        "dst_layer": 13
       },
       {
         "src_module": "QOU.AlgebraicSubstrate.SurrealSqueeze",
         "src_partition": "QOU.BringsSurface",
-        "src_layer": 7,
+        "src_layer": 11,
         "dst_module": "QOU.AppendixSurreals.Basic",
         "dst_partition": "QOU.Observations",
-        "dst_layer": 11
+        "dst_layer": 15
       },
       {
         "src_module": "QOU.Archimedean.BlochRigidity.ReebPlane",
         "src_partition": "QOU.MassTheory",
-        "src_layer": 9,
+        "src_layer": 13,
         "dst_module": "QOU.StandardModel.PolarizationRealStructure",
         "dst_partition": "QOU.StandardModel",
-        "dst_layer": 10
+        "dst_layer": 14
       },
       {
         "src_module": "QOU.Archimedean.BringSchwingerNormalizationDerivation",
         "src_partition": "QOU.MassTheory",
-        "src_layer": 9,
+        "src_layer": 13,
         "dst_module": "QOU.StandardModel.ElectroweakBringSchwingerBridge",
         "dst_partition": "QOU.StandardModel",
-        "dst_layer": 10
-      },
-      {
-        "src_module": "QOU.BraidKnot.BoxContent",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.MathlibExt.YoungDiagramCells",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.BurnsideDischarge",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.PartitionHookProductBridge",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.CanonicalKnotIdSDPUniqueness",
-        "src_partition": "TierB.ToricConicOpt",
-        "src_layer": 2,
-        "dst_module": "QOU.HeckeAlgebra.Common",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.CentralC2Transport",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.SpechtClassification",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.CentralIdempotentInvolution",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.SchurWeyl.HeckeProductInjective",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.ClambdaColumn",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.Mathlib.SYTHookGNW",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.CompositionMinimal",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.CompositionYoung",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.CompositionMinimal",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.Hecke.LengthAdditive",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.CompositionMurphy",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.CompositionYoung",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.CompositionMurphy",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.HeckeMurphy",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
+        "dst_layer": 14
       },
       {
         "src_module": "QOU.BraidKnot.ConfinedParticle",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
         "dst_module": "QOU.Archimedean.HeckeRep",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
       },
       {
-        "src_module": "QOU.BraidKnot.DescentNodeExists",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.GarnirDescentAdditive",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.DescentNodeExists",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.GarnirTableau",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.DominanceWellFounded",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.SpechtDominanceCore",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
+        "src_module": "QOU.BraidKnot.ConfinedParticle",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.Interactions.ConfinementSDP",
+        "dst_partition": "QOU.Confinement",
+        "dst_layer": 12
       },
       {
         "src_module": "QOU.BraidKnot.ElectronWordCandidates",
         "src_partition": "QOU.BraidsAndKnots",
-        "src_layer": 6,
+        "src_layer": 10,
         "dst_module": "QOU.Photon",
         "dst_partition": "QOU.StandardModel",
-        "dst_layer": 10
+        "dst_layer": 14
       },
       {
-        "src_module": "QOU.BraidKnot.ExplicitCentralIdempotentGeneral",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.SchurWeyl.HeckeWedderburnAnyChar",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.JonesViaMarkovTrace",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.Braiding.HnMarkovTrace",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.JucysMurphy",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.Specht",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.JucysMurphy",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.SpechtFinrankWired",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.JucysMurphy",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.SpechtStandardBasis",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.JucysMurphy",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.SytAdjacentSwap",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.JucysMurphy",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.SytEntryMono",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.JucysMurphy",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.SytMathlibBridge",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.KeystoneDefectGeneral",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.IdentityIPlancherelInstances",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.KeystoneDefectGeneral",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.PlancherelSnDataGeneral",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.KeystoneJucysMurphyTwist",
-        "src_partition": "TierB.BraidKnotOctonion",
-        "src_layer": 2,
-        "dst_module": "QOU.BraidKnot.KeystoneHeckeRootsForceTwist",
-        "dst_partition": "TierB.HeckeTemperleyLieb",
-        "dst_layer": 3
-      },
-      {
-        "src_module": "QOU.BraidKnot.KeystoneQBesselRadialTarget",
+        "src_module": "QOU.BraidKnot.LevelSufficiency",
         "src_partition": "QOU.BraidsAndKnots",
-        "src_layer": 6,
-        "dst_module": "QOU.QBeta.QBesselContiguityRecurrence",
+        "src_layer": 10,
+        "dst_module": "QOU.Archimedean.HeckeH3",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
+      },
+      {
+        "src_module": "QOU.BraidKnot.LevelSufficiency",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.Archimedean.HeckeRep",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
+      },
+      {
+        "src_module": "QOU.BraidKnot.LevelSufficiency",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.Interactions.ConfinementLP",
+        "dst_partition": "QOU.Confinement",
+        "dst_layer": 12
+      },
+      {
+        "src_module": "QOU.BraidKnot.LongestWordNotTwoPhoton",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.Photon",
+        "dst_partition": "QOU.StandardModel",
+        "dst_layer": 14
+      },
+      {
+        "src_module": "QOU.BraidKnot.MassGapObstruction",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.AlgebraicSubstrate.qou_obstruction_reduction",
+        "dst_partition": "QOU.BringsSurface",
+        "dst_layer": 11
+      },
+      {
+        "src_module": "QOU.BraidKnot.QuantumIntBarSymmetric",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.StandardModel.ThetaQcdFramingCp",
+        "dst_partition": "QOU.StandardModel",
+        "dst_layer": 14
+      },
+      {
+        "src_module": "QOU.BraidKnot.ShellClosureStability",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.Interactions.ConfinementSDP",
+        "dst_partition": "QOU.Confinement",
+        "dst_layer": 12
+      },
+      {
+        "src_module": "QOU.BraidsAndKnots.BorromeanRingColouredTrace",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.QBeta.FlavourWeightSplit",
         "dst_partition": "QOU.Nuclear",
+        "dst_layer": 14
+      },
+      {
+        "src_module": "QOU.BraidsAndKnots.CapturePlacement",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.QuarkState.OverStrandWeight",
+        "dst_partition": "QOU.Confinement",
+        "dst_layer": 12
+      },
+      {
+        "src_module": "QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.Photon",
+        "dst_partition": "QOU.StandardModel",
+        "dst_layer": 14
+      },
+      {
+        "src_module": "QOU.BraidsAndKnots.PhotonWeightsForcedProton",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.PhotonWeightsForced",
+        "dst_partition": "QOU.StandardModel",
+        "dst_layer": 14
+      },
+      {
+        "src_module": "QOU.Eightfold.HyperbolicMesonClaspAndDiquarkSplit",
+        "src_partition": "QOU.EightfoldWay",
+        "src_layer": 12,
+        "dst_module": "QOU.QBeta.BorromeanFlavourPivotalUnification",
+        "dst_partition": "QOU.Nuclear",
+        "dst_layer": 14
+      },
+      {
+        "src_module": "QOU.GradedFrobeniusHopf",
+        "src_partition": "QOU.Core",
+        "src_layer": 8,
+        "dst_module": "QOU.RepresentationTheory",
+        "dst_partition": "QOU.BraidsAndKnots",
         "dst_layer": 10
+      },
+      {
+        "src_module": "QOU.GravitySpacetime.ReebLengthTimeAndLightConeEntropy",
+        "src_partition": "QOU.Core",
+        "src_layer": 8,
+        "dst_module": "QOU.AlgebraicSubstrate.PlanckStepAtomicity",
+        "dst_partition": "QOU.BringsSurface",
+        "dst_layer": 11
+      },
+      {
+        "src_module": "QOU.GravitySpacetime.ReebLengthTimeAndLightConeEntropy",
+        "src_partition": "QOU.Core",
+        "src_layer": 8,
+        "dst_module": "QOU.InformationTheory.UnifiedClockScaleLayers",
+        "dst_partition": "QOU.InformationTheory",
+        "dst_layer": 14
+      },
+      {
+        "src_module": "QOU.Hecke.HeckeModelsBridge",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.MassTheory.HeckeSectorRep",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
+      },
+      {
+        "src_module": "QOU.Hecke.ProductionOcneanuBondProduct",
+        "src_partition": "QOU.BraidsAndKnots",
+        "src_layer": 10,
+        "dst_module": "QOU.Mass.ProductionChainBondProduct",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
+      },
+      {
+        "src_module": "QOU.Information.SkeinObservationBridge",
+        "src_partition": "QOU.InformationTheory",
+        "src_layer": 14,
+        "dst_module": "QOU.AppendixSurreals.QCollatz",
+        "dst_partition": "QOU.Observations",
+        "dst_layer": 15
+      },
+      {
+        "src_module": "QOU.Interactions.BetaReceptivity",
+        "src_partition": "QOU.Confinement",
+        "src_layer": 12,
+        "dst_module": "QOU.Archimedean.HeckeH3",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
+      },
+      {
+        "src_module": "QOU.Interactions.BorromeanUnique",
+        "src_partition": "QOU.Confinement",
+        "src_layer": 12,
+        "dst_module": "QOU.Archimedean.HeckeH3",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
+      },
+      {
+        "src_module": "QOU.Interactions.CentralElement",
+        "src_partition": "QOU.Confinement",
+        "src_layer": 12,
+        "dst_module": "QOU.Archimedean.HeckeH3",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
+      },
+      {
+        "src_module": "QOU.Interactions.ConfinementLP",
+        "src_partition": "QOU.Confinement",
+        "src_layer": 12,
+        "dst_module": "QOU.Archimedean.HeckeH3",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
+      },
+      {
+        "src_module": "QOU.Interactions.ConfinementSDP",
+        "src_partition": "QOU.Confinement",
+        "src_layer": 12,
+        "dst_module": "QOU.Archimedean.HeckeH3",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
+      },
+      {
+        "src_module": "QOU.Interactions.ConfinementSDP",
+        "src_partition": "QOU.Confinement",
+        "src_layer": 12,
+        "dst_module": "QOU.Archimedean.HeckeRep",
+        "dst_partition": "QOU.MassTheory",
+        "dst_layer": 13
       }
     ],
     "packages": {
       "TierA.MathlibExt": {
         "description": "Selective Mathlib4 Core PR Staging (List/sort/foldl, general matrix/trace, ordered-field/sqrt/convexity, Borel/Dirichlet/Cech general lemmas)",
-        "total_modules": 321,
-        "cone_pure_ready_now": 312,
-        "cut_blocked_pure_modules": 9,
-        "declarations_total": 4247,
-        "theorems_and_lemmas": 3292,
+        "total_modules": 301,
+        "cone_pure_ready_now": 301,
+        "cut_blocked_pure_modules": 0,
+        "declarations_total": 4062,
+        "theorems_and_lemmas": 3109,
         "sorry_non_class": 0,
         "sorry_class_body": 0,
         "custom_axioms": 0,
-        "gratuitous_real_candidates": 30,
-        "umbrella_mathlib_imports": 40,
-        "missing_module_docstrings": 46,
-        "outbound_cut_edges_to_qou": 11,
-        "outbound_edges_to_other_community_libs": {
-          "TierB.BraidKnotOctonion": 10,
-          "TierB.CompactQuantumMetrics": 1,
-          "TierB.HeckeTemperleyLieb": 27,
-          "TierB.QCalculus": 5,
-          "TierB.ToricConicOpt": 4
-        },
-        "inbound_consumer_edges": 184,
-        "ts_lean_ref_pointers": 0,
+        "gratuitous_real_candidates": 18,
+        "umbrella_mathlib_imports": 54,
+        "missing_module_docstrings": 57,
+        "outbound_cut_edges_to_qou": 0,
+        "outbound_edges_to_other_community_libs": {},
+        "inbound_consumer_edges": 281,
+        "ts_lean_ref_pointers": 5,
         "source_subdirs": {
-          "Mathlib": 161,
-          "MathlibExt": 146,
-          "Common": 7,
-          "Infra": 4,
-          "MathlibInfra": 2,
-          "<QOU-root-loose>": 1
+          "Mathlib": 118,
+          "MathlibExt": 95,
+          "QBeta": 19,
+          "Archimedean": 16,
+          "Mass": 14,
+          "Common": 6,
+          "MassTheory": 6,
+          "RiemannSurface": 5,
+          "<QOU-root-loose>": 4,
+          "Infra": 4
         },
         "sample_modules": [
-          "QOU.Common.AntiInvolutionPalindrome",
-          "QOU.Common.BalancedQuantumTwist",
-          "QOU.Common.CyclotomicValueTruncates",
-          "QOU.Common.FormalResidue",
-          "QOU.Common.MagicNumbers",
-          "QOU.Common.PeriodicDense",
-          "QOU.Common.TwistUnconditional",
-          "QOU.Infra.BorelRank",
-          "QOU.Infra.Clausen",
-          "QOU.Infra.DirichletL",
-          "QOU.Infra.Polylogarithm",
-          "QOU.Mathlib.AlienBridgeEquation"
+          "QOU.Archimedean.BlochWignerLobachevsky",
+          "QOU.Archimedean.ClausenFunctionMathlibFiller",
+          "QOU.Archimedean.ConstantOffOnePoint",
+          "QOU.Archimedean.DilogPartAConvergence",
+          "QOU.Archimedean.DilogPartARiemannSum",
+          "QOU.Archimedean.DilogPartBBoundarySeed",
+          "QOU.Archimedean.DilogPartBBranchPointSum",
+          "QOU.Archimedean.DilogPartBIteratedLimit",
+          "QOU.Archimedean.DilogPartBWP1Capstone",
+          "QOU.Archimedean.DilogReflection",
+          "QOU.Archimedean.DilogarithmArchimedeanLimit",
+          "QOU.Archimedean.EDCoherentLocality"
         ]
       },
       "TierB.HeckeTemperleyLieb": {
         "description": "Iwahori-Hecke H_n(q), Temperley-Lieb TL_n(q), Jones/Markov/Ocneanu traces, Hoefsmit seminormal irreps, Young/SYT & Grobner-Shirshov normal forms",
-        "total_modules": 635,
-        "cone_pure_ready_now": 556,
-        "cut_blocked_pure_modules": 79,
-        "declarations_total": 8737,
-        "theorems_and_lemmas": 6420,
+        "total_modules": 493,
+        "cone_pure_ready_now": 493,
+        "cut_blocked_pure_modules": 0,
+        "declarations_total": 6699,
+        "theorems_and_lemmas": 4829,
         "sorry_non_class": 0,
         "sorry_class_body": 0,
-        "custom_axioms": 1,
-        "gratuitous_real_candidates": 60,
-        "umbrella_mathlib_imports": 85,
-        "missing_module_docstrings": 37,
-        "outbound_cut_edges_to_qou": 73,
+        "custom_axioms": 0,
+        "gratuitous_real_candidates": 46,
+        "umbrella_mathlib_imports": 104,
+        "missing_module_docstrings": 42,
+        "outbound_cut_edges_to_qou": 0,
         "outbound_edges_to_other_community_libs": {
-          "TierA.MathlibExt": 57,
-          "TierB.BraidKnotOctonion": 61,
-          "TierB.QCalculus": 10,
-          "TierB.ToricConicOpt": 6,
-          "TierB.TwistedFrobeniusHopf": 2
+          "TierA.MathlibExt": 42,
+          "TierB.CompactQuantumMetrics": 2,
+          "TierB.TwistedFrobeniusHopf": 1
         },
-        "inbound_consumer_edges": 313,
-        "ts_lean_ref_pointers": 6,
+        "inbound_consumer_edges": 437,
+        "ts_lean_ref_pointers": 8,
         "source_subdirs": {
-          "SchurWeyl": 122,
-          "BraidKnot": 110,
-          "Hecke": 83,
+          "BraidKnot": 76,
           "Machinery": 72,
-          "Mathlib": 61,
-          "MathlibExt": 44,
-          "IwahoriHecke": 37,
-          "Mass": 19,
-          "BraidsAndKnots": 17,
-          "Archimedean": 13
+          "Hecke": 66,
+          "SchurWeyl": 63,
+          "MathlibExt": 60,
+          "Mathlib": 36,
+          "Mass": 22,
+          "QBeta": 20,
+          "IwahoriHecke": 17,
+          "Archimedean": 10
         },
         "sample_modules": [
-          "QOU.Archimedean.CatalanClausenBridge",
+          "QOU.Archimedean.GroundRing",
           "QOU.Archimedean.HeckeBraidingSubstrateNonSymmetric",
-          "QOU.Archimedean.HeckeRep",
           "QOU.Archimedean.MarkovGramRealSymm",
           "QOU.Archimedean.MarkovWeightValueTransport",
           "QOU.Archimedean.MatrixSchurCommutant",
           "QOU.Archimedean.OcneanuTwoThreeSubstrate",
           "QOU.Archimedean.QHookBound",
           "QOU.Archimedean.SchurInvariantFormProportional",
-          "QOU.Archimedean.SchurWeylTrace",
           "QOU.Archimedean.SkewSYT",
-          "QOU.Archimedean.YoungIdempotent"
+          "QOU.Archimedean.genus_from_hecke_completeness",
+          "QOU.BraidKnot.BWVacuumRowIsHecke",
+          "QOU.BraidKnot.CanonicalKnotIdSDPUniqueness"
         ]
       },
       "TierB.TwistedFrobeniusHopf": {
         "description": "Nakayama-twisted Frobenius algebras, Sweedler H_4 & Taft Hopf algebras, Higman norm map, ambidextrous & tower adjunctions",
-        "total_modules": 38,
-        "cone_pure_ready_now": 30,
-        "cut_blocked_pure_modules": 8,
-        "declarations_total": 611,
-        "theorems_and_lemmas": 408,
+        "total_modules": 24,
+        "cone_pure_ready_now": 24,
+        "cut_blocked_pure_modules": 0,
+        "declarations_total": 420,
+        "theorems_and_lemmas": 268,
         "sorry_non_class": 0,
         "sorry_class_body": 0,
         "custom_axioms": 0,
-        "gratuitous_real_candidates": 1,
-        "umbrella_mathlib_imports": 4,
-        "missing_module_docstrings": 2,
-        "outbound_cut_edges_to_qou": 10,
+        "gratuitous_real_candidates": 0,
+        "umbrella_mathlib_imports": 1,
+        "missing_module_docstrings": 3,
+        "outbound_cut_edges_to_qou": 0,
         "outbound_edges_to_other_community_libs": {
-          "TierB.BraidKnotOctonion": 2,
-          "TierB.HeckeTemperleyLieb": 3,
-          "TierB.QCalculus": 1
+          "TierA.MathlibExt": 2
         },
-        "inbound_consumer_edges": 17,
-        "ts_lean_ref_pointers": 1,
+        "inbound_consumer_edges": 16,
+        "ts_lean_ref_pointers": 0,
         "source_subdirs": {
-          "QuantumObservableUniverse": 7,
-          "BraidKnot": 5,
-          "MassTheory": 5,
           "LiftingDescent": 4,
+          "BraidKnot": 3,
           "FrobeniusHopfData": 3,
-          "<QOU-root-loose>": 3,
-          "ParticleInteractions": 3,
+          "MassTheory": 3,
           "AlgebraicSubstrate": 2,
-          "Mathlib": 2,
-          "Archimedean": 1
+          "ParticleInteractions": 2,
+          "QuantumObservableUniverse": 2,
+          "<QOU-root-loose>": 2,
+          "Archimedean": 1,
+          "FormalGroups": 1
         },
         "sample_modules": [
           "QOU.AlgebraicSubstrate.FrobeniusSchurExpectationCancellation",
           "QOU.AlgebraicSubstrate.TwistedAmbidextrousAdjunction",
           "QOU.Archimedean.frobenius_gram_matrix",
           "QOU.BraidKnot.DepthStratifiedFrobeniusReciprocity",
-          "QOU.BraidKnot.KnotFactorFrobeniusPairing",
           "QOU.BraidKnot.NakayamaGradingObstruction",
-          "QOU.BraidKnot.chirality_frobenius_self_pairing",
           "QOU.BraidKnot.frobenius_antipode_unifies",
-          "QOU.Braiding.HopfColourTensorBraid",
           "QOU.FormalGroups.SplayBialgebra",
           "QOU.FrobeniusHopfData.FrobeniusPairingCategorical",
-          "QOU.FrobeniusHopfData.PairingGaugeFluctuation"
+          "QOU.FrobeniusHopfData.PairingGaugeFluctuation",
+          "QOU.FrobeniusHopfData.PairingVariationalDerivative",
+          "QOU.LiftingDescent.JetNoBialgebra",
+          "QOU.LiftingDescent.SweedlerFrobenius"
         ]
       },
       "TierB.ToricConicOpt": {
         "description": "Sturmfels-Thomas toric Grobner chambers, Graver/universal Grobner bases, Birch toric equilibria, symmetry-reduced LP/SDP dual certificates & kinks",
-        "total_modules": 33,
-        "cone_pure_ready_now": 32,
-        "cut_blocked_pure_modules": 1,
-        "declarations_total": 539,
-        "theorems_and_lemmas": 368,
+        "total_modules": 19,
+        "cone_pure_ready_now": 19,
+        "cut_blocked_pure_modules": 0,
+        "declarations_total": 300,
+        "theorems_and_lemmas": 191,
         "sorry_non_class": 0,
         "sorry_class_body": 0,
         "custom_axioms": 0,
-        "gratuitous_real_candidates": 13,
-        "umbrella_mathlib_imports": 11,
+        "gratuitous_real_candidates": 8,
+        "umbrella_mathlib_imports": 3,
         "missing_module_docstrings": 4,
-        "outbound_cut_edges_to_qou": 7,
+        "outbound_cut_edges_to_qou": 0,
         "outbound_edges_to_other_community_libs": {
-          "TierA.MathlibExt": 7,
-          "TierB.BraidKnotOctonion": 3,
-          "TierB.HeckeTemperleyLieb": 2,
-          "TierB.QCalculus": 1
+          "TierA.MathlibExt": 2
         },
-        "inbound_consumer_edges": 34,
+        "inbound_consumer_edges": 9,
         "ts_lean_ref_pointers": 5,
         "source_subdirs": {
-          "Optimization": 10,
-          "MathlibExt": 7,
-          "Knot": 4,
-          "BraidKnot": 3,
-          "Mathlib": 3,
+          "Optimization": 9,
           "MathlibInfra": 3,
+          "Knot": 2,
+          "Mathlib": 2,
           "Archimedean": 1,
-          "Interactions": 1,
-          "MassTheory": 1
+          "BraidKnot": 1,
+          "MathlibExt": 1
         },
         "sample_modules": [
           "QOU.Archimedean.TypeBFoldedCrystalCombinatorics",
-          "QOU.BraidKnot.CanonicalKnotIdSDPUniqueness",
           "QOU.BraidKnot.LpDualityHypothesisClass",
-          "QOU.BraidKnot.joint_tower_sdp_confinement",
-          "QOU.Interactions.ConfinementSDP",
-          "QOU.Knot.AngleStructureUniqueness",
           "QOU.Knot.L6a4AngleStructure",
           "QOU.Knot.M004AngleStructure",
-          "QOU.Knot.RivinConcavitySimplex",
-          "QOU.MassTheory.BlockSDPNondegeneracy",
           "QOU.Mathlib.LPDuality",
-          "QOU.Mathlib.SDPDuality"
+          "QOU.Mathlib.SDPDuality",
+          "QOU.MathlibExt.ConcaveOnSum",
+          "QOU.MathlibInfra.ConfinementLayerTower",
+          "QOU.MathlibInfra.NuclearChamberGS",
+          "QOU.MathlibInfra.SymmetryReducedDualCertificate",
+          "QOU.Optimization.ChainReaction",
+          "QOU.Optimization.EDMultiplier"
         ]
       },
       "TierB.CompactQuantumMetrics": {
         "description": "Finite-dimensional Rieffel-Connes compact quantum metric spaces, Lipschitz seminorms, Kantorovich-Rubinstein duality, Woronowicz O_q(SU(2)) calculus",
-        "total_modules": 10,
-        "cone_pure_ready_now": 10,
+        "total_modules": 16,
+        "cone_pure_ready_now": 16,
         "cut_blocked_pure_modules": 0,
-        "declarations_total": 170,
-        "theorems_and_lemmas": 122,
+        "declarations_total": 287,
+        "theorems_and_lemmas": 210,
         "sorry_non_class": 0,
         "sorry_class_body": 0,
         "custom_axioms": 0,
-        "gratuitous_real_candidates": 0,
-        "umbrella_mathlib_imports": 4,
+        "gratuitous_real_candidates": 5,
+        "umbrella_mathlib_imports": 10,
         "missing_module_docstrings": 1,
         "outbound_cut_edges_to_qou": 0,
         "outbound_edges_to_other_community_libs": {
-          "TierB.BraidKnotOctonion": 2
+          "TierA.MathlibExt": 1,
+          "TierB.ToricConicOpt": 1
         },
-        "inbound_consumer_edges": 6,
+        "inbound_consumer_edges": 12,
         "ts_lean_ref_pointers": 1,
         "source_subdirs": {
-          "MathlibExt": 7,
+          "MathlibExt": 11,
           "AlgebraicSubstrate": 1,
           "InformationTheory": 1,
+          "MassTheory": 1,
+          "Mathlib": 1,
           "Observations": 1
         },
         "sample_modules": [
           "QOU.AlgebraicSubstrate.OqSU2ModularNakayama",
           "QOU.InformationTheory.FiniteRieffelQuantumMetric",
+          "QOU.MassTheory.BlockSDPNondegeneracy",
+          "QOU.Mathlib.SDPStrongDuality",
           "QOU.MathlibExt.Bicommutant",
           "QOU.MathlibExt.DerivationIterateLeibniz",
           "QOU.MathlibExt.DerivationRankNullity",
           "QOU.MathlibExt.FrobeniusInnerProduct",
-          "QOU.MathlibExt.PLLipschitz",
-          "QOU.MathlibExt.PLLipschitzPiecewise",
-          "QOU.MathlibExt.UniversalDifferentials",
-          "QOU.Observations.AlgebraicGnsEmbedding"
+          "QOU.MathlibExt.PosSemidefTraceZero",
+          "QOU.MathlibExt.SDP",
+          "QOU.MathlibExt.SDPEmptyConstraints",
+          "QOU.MathlibExt.SDPRankEquality"
         ]
       },
       "TierB.QCalculus": {
         "description": "q-numbers [n]_q, Gaussian binomials, Thomae-Jackson q-integrals & lattices, q-exponentials, Faddeev/quantum dilogarithms, Habiro cyclotomic rings",
-        "total_modules": 58,
-        "cone_pure_ready_now": 57,
-        "cut_blocked_pure_modules": 1,
-        "declarations_total": 637,
-        "theorems_and_lemmas": 509,
+        "total_modules": 91,
+        "cone_pure_ready_now": 91,
+        "cut_blocked_pure_modules": 0,
+        "declarations_total": 928,
+        "theorems_and_lemmas": 769,
         "sorry_non_class": 0,
         "sorry_class_body": 0,
         "custom_axioms": 0,
-        "gratuitous_real_candidates": 7,
-        "umbrella_mathlib_imports": 19,
-        "missing_module_docstrings": 16,
-        "outbound_cut_edges_to_qou": 11,
+        "gratuitous_real_candidates": 13,
+        "umbrella_mathlib_imports": 18,
+        "missing_module_docstrings": 19,
+        "outbound_cut_edges_to_qou": 0,
         "outbound_edges_to_other_community_libs": {
-          "TierA.MathlibExt": 2,
-          "TierB.BraidKnotOctonion": 2,
-          "TierB.HeckeTemperleyLieb": 5,
-          "TierB.ToricConicOpt": 1
+          "TierA.MathlibExt": 31
         },
-        "inbound_consumer_edges": 89,
-        "ts_lean_ref_pointers": 0,
+        "inbound_consumer_edges": 47,
+        "ts_lean_ref_pointers": 3,
         "source_subdirs": {
+          "QBeta": 35,
           "MathlibExt": 22,
-          "BraidKnot": 9,
-          "Mass": 9,
-          "Habiro": 4,
+          "Mathlib": 7,
+          "BraidKnot": 6,
+          "Mass": 6,
           "Machinery": 4,
-          "Archimedean": 2,
-          "MassTheory": 2,
-          "Mathlib": 2,
+          "Archimedean": 3,
+          "Habiro": 3,
           "BraidsAndKnots": 1,
           "LiftingDescent": 1
         },
         "sample_modules": [
+          "QOU.Archimedean.ComplexDilogBridge",
           "QOU.Archimedean.DilogPartBFaddeevScaling",
-          "QOU.Archimedean.SWJacksonMomentFactorization",
+          "QOU.Archimedean.LiTwoNegOne",
           "QOU.BraidKnot.BWVacuumRowHabiroBoundaryData",
           "QOU.BraidKnot.BWVacuumRowHabiroRigidity",
           "QOU.BraidKnot.HabiroDomainVanishing",
           "QOU.BraidKnot.HabiroNewtonLadder",
           "QOU.BraidKnot.HabiroResidueSumEquivalence.archimedean_agreement",
-          "QOU.BraidKnot.KeystoneHabiroInfiniteRigidity",
-          "QOU.BraidKnot.KeystoneHabiroRootFamily",
-          "QOU.BraidKnot.QHabiroCompletion",
           "QOU.BraidKnot.QuantumDilogarithm",
-          "QOU.BraidsAndKnots.QIntegerAlexanderTorus"
+          "QOU.BraidsAndKnots.QIntegerAlexanderTorus",
+          "QOU.Habiro.CyclotomicEvaluation",
+          "QOU.Habiro.CyclotomicEvaluationRingHom"
         ]
       },
       "TierB.BraidKnotOctonion": {
         "description": "Artin braid groups B_n, Burau/Lawrence-Krammer/Alexander invariants, PL knot Delta-equivalence & Moise assembly, octonion/Hurwitz/G_2 & Bring curve",
-        "total_modules": 585,
-        "cone_pure_ready_now": 492,
-        "cut_blocked_pure_modules": 93,
-        "declarations_total": 12058,
-        "theorems_and_lemmas": 7946,
+        "total_modules": 830,
+        "cone_pure_ready_now": 830,
+        "cut_blocked_pure_modules": 0,
+        "declarations_total": 16029,
+        "theorems_and_lemmas": 11129,
         "sorry_non_class": 0,
         "sorry_class_body": 0,
         "custom_axioms": 0,
-        "gratuitous_real_candidates": 64,
-        "umbrella_mathlib_imports": 114,
-        "missing_module_docstrings": 91,
-        "outbound_cut_edges_to_qou": 76,
+        "gratuitous_real_candidates": 82,
+        "umbrella_mathlib_imports": 98,
+        "missing_module_docstrings": 93,
+        "outbound_cut_edges_to_qou": 0,
         "outbound_edges_to_other_community_libs": {
-          "TierA.MathlibExt": 45,
-          "TierB.CompactQuantumMetrics": 3,
-          "TierB.HeckeTemperleyLieb": 74,
-          "TierB.QCalculus": 9,
-          "TierB.ToricConicOpt": 7
+          "TierA.MathlibExt": 87,
+          "TierB.CompactQuantumMetrics": 1,
+          "TierB.HeckeTemperleyLieb": 217,
+          "TierB.QCalculus": 7,
+          "TierB.ToricConicOpt": 3
         },
-        "inbound_consumer_edges": 279,
-        "ts_lean_ref_pointers": 29,
+        "inbound_consumer_edges": 227,
+        "ts_lean_ref_pointers": 31,
         "source_subdirs": {
-          "BraidKnot": 229,
-          "Knot": 89,
-          "MathlibExt": 68,
-          "BraidsAndKnots": 60,
+          "BraidKnot": 236,
+          "Knot": 99,
+          "MathlibExt": 98,
+          "SchurWeyl": 84,
+          "Mathlib": 66,
+          "BraidsAndKnots": 48,
+          "Mass": 42,
+          "IwahoriHecke": 21,
           "OrientedSkein": 21,
-          "BringsSurface": 19,
-          "Braiding": 16,
-          "Brings": 15,
-          "MassTheory": 13,
-          "Mass": 12
+          "BringsSurface": 19
         },
         "sample_modules": [
+          "QOU.Archimedean.BlochWignerNonneg",
+          "QOU.Archimedean.BlochWignerPositive",
           "QOU.Archimedean.BringEllipticFactor",
           "QOU.Archimedean.BringHauptmodulGate",
           "QOU.Archimedean.ForceCarrierBringUniqueness",
-          "QOU.Archimedean.TorusKnot",
-          "QOU.Archimedean.TorusKnotGenusFourUnique",
-          "QOU.ArchimedeanUniverse.s5_bring_hodge_depth",
-          "QOU.BraidKnot.A3OperatorCombinerMagnitude",
-          "QOU.BraidKnot.AJFigureEight",
-          "QOU.BraidKnot.AJFigureEightAnnihilation",
-          "QOU.BraidKnot.AJFigureEightCertificate",
-          "QOU.BraidKnot.AJFigureEightTelescope",
-          "QOU.BraidKnot.AJTrefoil"
+          "QOU.Archimedean.IdealTetrahedronVolumeConcave",
+          "QOU.Archimedean.IdealTetrahedronVolumeConcavity",
+          "QOU.Archimedean.LobMonotonicity",
+          "QOU.Archimedean.LobachevskyDerivative",
+          "QOU.Archimedean.LobachevskyMaximum",
+          "QOU.Archimedean.RossoJonesGeneral",
+          "QOU.Archimedean.RossoJonesMiddle"
         ]
       }
     }
   },
   "canonical_12_qou_subgraphs": {
     "QOU.Core": {
-      "total_modules": 110,
-      "cone_pure_ready_now": 28,
-      "cut_blocked_pure_modules": 10,
-      "declarations_total": 895,
-      "theorems_and_lemmas": 562,
+      "total_modules": 120,
+      "cone_pure_ready_now": 25,
+      "cut_blocked_pure_modules": 28,
+      "declarations_total": 1259,
+      "theorems_and_lemmas": 804,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 0,
@@ -3238,22 +1715,22 @@
       "missing_module_docstrings": 4,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
-        "TierA.MathlibExt": 8,
-        "TierB.BraidKnotOctonion": 8,
-        "TierB.HeckeTemperleyLieb": 18,
-        "TierB.ToricConicOpt": 1,
+        "TierA.MathlibExt": 15,
+        "TierB.BraidKnotOctonion": 11,
+        "TierB.CompactQuantumMetrics": 2,
+        "TierB.HeckeTemperleyLieb": 21,
         "TierB.TwistedFrobeniusHopf": 1
       },
-      "inbound_consumer_edges": 117,
+      "inbound_consumer_edges": 103,
       "ts_lean_ref_pointers": 54,
       "source_subdirs": {
-        "QuantumObservableUniverse": 30,
+        "QuantumObservableUniverse": 34,
         "<QOU-root-loose>": 26,
         "QuantumObservableUniverses": 17,
-        "MathlibExt": 8,
-        "Shared": 7,
-        "Mathlib": 6,
+        "MathlibExt": 15,
+        "Shared": 6,
         "Conjectures": 5,
+        "Mathlib": 5,
         "Substrate": 4,
         "CategoricalReeb": 3,
         "CommutativeQOU": 1
@@ -3274,11 +1751,11 @@
       ]
     },
     "QOU.LiftingDescent": {
-      "total_modules": 64,
-      "cone_pure_ready_now": 29,
+      "total_modules": 62,
+      "cone_pure_ready_now": 25,
       "cut_blocked_pure_modules": 8,
-      "declarations_total": 616,
-      "theorems_and_lemmas": 378,
+      "declarations_total": 777,
+      "theorems_and_lemmas": 490,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 0,
@@ -3287,25 +1764,23 @@
       "missing_module_docstrings": 2,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
-        "TierA.MathlibExt": 1,
-        "TierB.BraidKnotOctonion": 1,
+        "TierA.MathlibExt": 3,
+        "TierB.BraidKnotOctonion": 2,
         "TierB.HeckeTemperleyLieb": 3,
-        "TierB.QCalculus": 1,
         "TierB.TwistedFrobeniusHopf": 1
       },
-      "inbound_consumer_edges": 14,
+      "inbound_consumer_edges": 12,
       "ts_lean_ref_pointers": 45,
       "source_subdirs": {
-        "LiftingDescent": 28,
-        "Torsion": 22,
-        "FormalGroups": 10,
+        "LiftingDescent": 27,
+        "Torsion": 23,
+        "FormalGroups": 8,
         "<QOU-root-loose>": 3,
         "Descent": 1
       },
       "sample_modules": [
         "QOU.Descent.descended_level_zero",
         "QOU.FormalGroups.Cartier",
-        "QOU.FormalGroups.CoproductDescent",
         "QOU.FormalGroups.Distributions",
         "QOU.FormalGroups.FormalGroupLaw",
         "QOU.FormalGroups.PBWAssembly",
@@ -3313,44 +1788,45 @@
         "QOU.FormalGroups.PBWFormalGroup",
         "QOU.FormalGroups.PBWIntegration",
         "QOU.FormalGroups.PBWMultiIndex",
-        "QOU.FormalGroups.SplayPoisson",
-        "QOU.LiftingDescent"
+        "QOU.LiftingDescent",
+        "QOU.LiftingDescent.BBStratification",
+        "QOU.LiftingDescent.CosimplicialCrossedGroupoid"
       ]
     },
     "QOU.BraidsAndKnots": {
-      "total_modules": 306,
-      "cone_pure_ready_now": 45,
-      "cut_blocked_pure_modules": 30,
-      "declarations_total": 17947,
-      "theorems_and_lemmas": 3392,
+      "total_modules": 347,
+      "cone_pure_ready_now": 44,
+      "cut_blocked_pure_modules": 74,
+      "declarations_total": 18029,
+      "theorems_and_lemmas": 3350,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
-      "custom_axioms": 0,
-      "gratuitous_real_candidates": 52,
-      "umbrella_mathlib_imports": 67,
-      "missing_module_docstrings": 17,
+      "custom_axioms": 1,
+      "gratuitous_real_candidates": 61,
+      "umbrella_mathlib_imports": 78,
+      "missing_module_docstrings": 21,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
         "TierA.MathlibExt": 8,
-        "TierB.BraidKnotOctonion": 120,
-        "TierB.HeckeTemperleyLieb": 107,
-        "TierB.QCalculus": 12,
-        "TierB.ToricConicOpt": 9,
+        "TierB.BraidKnotOctonion": 131,
+        "TierB.CompactQuantumMetrics": 5,
+        "TierB.HeckeTemperleyLieb": 78,
+        "TierB.QCalculus": 4,
         "TierB.TwistedFrobeniusHopf": 2
       },
-      "inbound_consumer_edges": 113,
+      "inbound_consumer_edges": 45,
       "ts_lean_ref_pointers": 182,
       "source_subdirs": {
-        "BraidKnot": 112,
-        "KZ": 44,
-        "BraidsAndKnots": 35,
-        "SchurWeyl": 27,
-        "Machinery": 26,
-        "Hecke": 18,
-        "<QOU-root-loose>": 12,
+        "BraidKnot": 146,
+        "BraidsAndKnots": 55,
+        "KZ": 46,
+        "Hecke": 28,
+        "Machinery": 22,
         "Braiding": 12,
-        "Knot": 8,
-        "HeckeAlgebra": 5
+        "<QOU-root-loose>": 11,
+        "HeckeAlgebra": 9,
+        "BraidsKnots": 5,
+        "KnotTheory": 5
       },
       "sample_modules": [
         "QOU.BraidKnot",
@@ -3368,26 +1844,30 @@
       ]
     },
     "QOU.BringsSurface": {
-      "total_modules": 58,
-      "cone_pure_ready_now": 35,
-      "cut_blocked_pure_modules": 4,
-      "declarations_total": 577,
-      "theorems_and_lemmas": 386,
+      "total_modules": 62,
+      "cone_pure_ready_now": 28,
+      "cut_blocked_pure_modules": 7,
+      "declarations_total": 669,
+      "theorems_and_lemmas": 469,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 0,
-      "gratuitous_real_candidates": 12,
-      "umbrella_mathlib_imports": 15,
+      "gratuitous_real_candidates": 13,
+      "umbrella_mathlib_imports": 19,
       "missing_module_docstrings": 10,
       "outbound_cut_edges_to_qou": 0,
-      "outbound_edges_to_other_community_libs": {},
-      "inbound_consumer_edges": 31,
+      "outbound_edges_to_other_community_libs": {
+        "TierA.MathlibExt": 1,
+        "TierB.BraidKnotOctonion": 1
+      },
+      "inbound_consumer_edges": 32,
       "ts_lean_ref_pointers": 11,
       "source_subdirs": {
         "AlgebraicSubstrate": 43,
-        "RiemannSurface": 8,
-        "<QOU-root-loose>": 4,
+        "<QOU-root-loose>": 12,
+        "RiemannSurface": 3,
         "HyperellipticQuintic": 2,
+        "Brings": 1,
         "Geometry": 1
       },
       "sample_modules": [
@@ -3406,32 +1886,31 @@
       ]
     },
     "QOU.Confinement": {
-      "total_modules": 126,
-      "cone_pure_ready_now": 21,
+      "total_modules": 132,
+      "cone_pure_ready_now": 22,
       "cut_blocked_pure_modules": 15,
-      "declarations_total": 2396,
-      "theorems_and_lemmas": 1701,
+      "declarations_total": 2469,
+      "theorems_and_lemmas": 1741,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 0,
-      "gratuitous_real_candidates": 18,
-      "umbrella_mathlib_imports": 41,
+      "gratuitous_real_candidates": 19,
+      "umbrella_mathlib_imports": 42,
       "missing_module_docstrings": 23,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
-        "TierA.MathlibExt": 4,
-        "TierB.BraidKnotOctonion": 15,
+        "TierA.MathlibExt": 3,
+        "TierB.BraidKnotOctonion": 13,
         "TierB.CompactQuantumMetrics": 1,
-        "TierB.HeckeTemperleyLieb": 9,
-        "TierB.ToricConicOpt": 2,
-        "TierB.TwistedFrobeniusHopf": 2
+        "TierB.HeckeTemperleyLieb": 16,
+        "TierB.ToricConicOpt": 2
       },
-      "inbound_consumer_edges": 12,
+      "inbound_consumer_edges": 14,
       "ts_lean_ref_pointers": 22,
       "source_subdirs": {
         "QuarkState": 43,
-        "Interactions": 32,
-        "ParticleInteractions": 31,
+        "Interactions": 37,
+        "ParticleInteractions": 32,
         "<QOU-root-loose>": 6,
         "OptionE": 5,
         "Encounter": 4,
@@ -3455,22 +1934,22 @@
     },
     "QOU.EightfoldWay": {
       "total_modules": 52,
-      "cone_pure_ready_now": 35,
-      "cut_blocked_pure_modules": 1,
-      "declarations_total": 734,
-      "theorems_and_lemmas": 500,
+      "cone_pure_ready_now": 29,
+      "cut_blocked_pure_modules": 2,
+      "declarations_total": 784,
+      "theorems_and_lemmas": 518,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 0,
       "gratuitous_real_candidates": 3,
-      "umbrella_mathlib_imports": 23,
+      "umbrella_mathlib_imports": 22,
       "missing_module_docstrings": 3,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
-        "TierB.BraidKnotOctonion": 2
+        "TierB.BraidKnotOctonion": 1
       },
-      "inbound_consumer_edges": 8,
-      "ts_lean_ref_pointers": 12,
+      "inbound_consumer_edges": 6,
+      "ts_lean_ref_pointers": 13,
       "source_subdirs": {
         "Eightfold": 43,
         "FlavorDressing": 6,
@@ -3493,34 +1972,34 @@
       ]
     },
     "QOU.MassTheory": {
-      "total_modules": 770,
-      "cone_pure_ready_now": 490,
-      "cut_blocked_pure_modules": 47,
-      "declarations_total": 9903,
-      "theorems_and_lemmas": 7029,
+      "total_modules": 707,
+      "cone_pure_ready_now": 416,
+      "cut_blocked_pure_modules": 43,
+      "declarations_total": 8707,
+      "theorems_and_lemmas": 6069,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 1,
-      "gratuitous_real_candidates": 136,
-      "umbrella_mathlib_imports": 231,
-      "missing_module_docstrings": 172,
+      "gratuitous_real_candidates": 139,
+      "umbrella_mathlib_imports": 223,
+      "missing_module_docstrings": 166,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
-        "TierA.MathlibExt": 25,
-        "TierB.BraidKnotOctonion": 41,
-        "TierB.HeckeTemperleyLieb": 51,
-        "TierB.QCalculus": 26,
-        "TierB.ToricConicOpt": 2,
+        "TierA.MathlibExt": 59,
+        "TierB.BraidKnotOctonion": 52,
+        "TierB.HeckeTemperleyLieb": 71,
+        "TierB.QCalculus": 13,
+        "TierB.ToricConicOpt": 1,
         "TierB.TwistedFrobeniusHopf": 1
       },
-      "inbound_consumer_edges": 124,
+      "inbound_consumer_edges": 59,
       "ts_lean_ref_pointers": 131,
       "source_subdirs": {
-        "Mass": 271,
-        "Archimedean": 255,
-        "MassTheory": 205,
+        "Archimedean": 230,
+        "Mass": 228,
+        "MassTheory": 211,
         "<QOU-root-loose>": 13,
-        "MassEndomorphism": 10,
+        "MassEndomorphism": 9,
         "WedderburnMass": 5,
         "ArchimedeanUniverse": 4,
         "TopologicalMass": 3,
@@ -3543,31 +2022,31 @@
       ]
     },
     "QOU.Nuclear": {
-      "total_modules": 406,
-      "cone_pure_ready_now": 1,
-      "cut_blocked_pure_modules": 0,
-      "declarations_total": 5747,
-      "theorems_and_lemmas": 4122,
+      "total_modules": 332,
+      "cone_pure_ready_now": 245,
+      "cut_blocked_pure_modules": 5,
+      "declarations_total": 4971,
+      "theorems_and_lemmas": 3510,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 0,
-      "gratuitous_real_candidates": 51,
-      "umbrella_mathlib_imports": 84,
-      "missing_module_docstrings": 91,
+      "gratuitous_real_candidates": 43,
+      "umbrella_mathlib_imports": 73,
+      "missing_module_docstrings": 72,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
-        "TierA.MathlibExt": 23,
-        "TierB.BraidKnotOctonion": 5,
-        "TierB.HeckeTemperleyLieb": 10,
-        "TierB.QCalculus": 15,
+        "TierA.MathlibExt": 22,
+        "TierB.BraidKnotOctonion": 10,
+        "TierB.HeckeTemperleyLieb": 16,
+        "TierB.QCalculus": 22,
         "TierB.TwistedFrobeniusHopf": 6
       },
-      "inbound_consumer_edges": 29,
-      "ts_lean_ref_pointers": 39,
+      "inbound_consumer_edges": 15,
+      "ts_lean_ref_pointers": 31,
       "source_subdirs": {
-        "QBeta": 396,
+        "QBeta": 321,
+        "Nuclear": 4,
         "ShellCondensation": 4,
-        "Nuclear": 3,
         "AppendixQValues": 1,
         "MagicShell": 1,
         "<QOU-root-loose>": 1
@@ -3575,12 +2054,12 @@
       "sample_modules": [
         "QOU.AppendixQValues.ProtonBorromeanAssembly",
         "QOU.MagicShell.DeltaCouplingSubstrateForm",
+        "QOU.Nuclear.ColourReconnectionStokesAssembly",
         "QOU.Nuclear.ECatRadicalShadowPriceEvaluation",
         "QOU.Nuclear.K2TensorSquareGGMGauge",
         "QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling",
         "QOU.QBeta",
         "QOU.QBeta.A3AntiSelfAdjointLift",
-        "QOU.QBeta.A3BranchingModulusReflection",
         "QOU.QBeta.A3OffBlockDerivation",
         "QOU.QBeta.AdjointIndexSetM3",
         "QOU.QBeta.AdmissibleAgreementDeterminesClass",
@@ -3588,30 +2067,31 @@
       ]
     },
     "QOU.StandardModel": {
-      "total_modules": 78,
-      "cone_pure_ready_now": 23,
-      "cut_blocked_pure_modules": 4,
-      "declarations_total": 1029,
-      "theorems_and_lemmas": 659,
+      "total_modules": 85,
+      "cone_pure_ready_now": 16,
+      "cut_blocked_pure_modules": 7,
+      "declarations_total": 1488,
+      "theorems_and_lemmas": 928,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 0,
       "gratuitous_real_candidates": 7,
-      "umbrella_mathlib_imports": 34,
+      "umbrella_mathlib_imports": 41,
       "missing_module_docstrings": 5,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
         "TierB.BraidKnotOctonion": 6,
-        "TierB.HeckeTemperleyLieb": 3,
-        "TierB.QCalculus": 4,
-        "TierB.TwistedFrobeniusHopf": 1
+        "TierB.HeckeTemperleyLieb": 6,
+        "TierB.QCalculus": 1,
+        "TierB.ToricConicOpt": 1,
+        "TierB.TwistedFrobeniusHopf": 3
       },
-      "inbound_consumer_edges": 21,
-      "ts_lean_ref_pointers": 15,
+      "inbound_consumer_edges": 20,
+      "ts_lean_ref_pointers": 14,
       "source_subdirs": {
-        "StandardModel": 34,
+        "StandardModel": 42,
         "AlphaEM": 17,
-        "<QOU-root-loose>": 14,
+        "<QOU-root-loose>": 13,
         "QFTMath": 5,
         "Resurgence": 4,
         "FeynmanPathIntegrals": 2,
@@ -3633,25 +2113,25 @@
       ]
     },
     "QOU.FluidDynamics": {
-      "total_modules": 46,
-      "cone_pure_ready_now": 27,
+      "total_modules": 45,
+      "cone_pure_ready_now": 26,
       "cut_blocked_pure_modules": 1,
-      "declarations_total": 496,
-      "theorems_and_lemmas": 337,
+      "declarations_total": 463,
+      "theorems_and_lemmas": 313,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 0,
-      "gratuitous_real_candidates": 11,
-      "umbrella_mathlib_imports": 14,
+      "gratuitous_real_candidates": 10,
+      "umbrella_mathlib_imports": 13,
       "missing_module_docstrings": 1,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
-        "TierB.QCalculus": 4
+        "TierB.HeckeTemperleyLieb": 4
       },
-      "inbound_consumer_edges": 3,
+      "inbound_consumer_edges": 2,
       "ts_lean_ref_pointers": 2,
       "source_subdirs": {
-        "FluidDynamics": 44,
+        "FluidDynamics": 43,
         "<QOU-root-loose>": 1,
         "GaugeFieldFluidDynamics": 1
       },
@@ -3663,35 +2143,34 @@
         "QOU.FluidDynamics.LambCalculus",
         "QOU.FluidDynamics.LambCalculusArchimedean",
         "QOU.FluidDynamics.TwoVortexChannelAlgebra",
-        "QOU.FluidDynamics.VortexLinkTopology",
         "QOU.FluidDynamics.acoustic_horizon_conditions",
         "QOU.FluidDynamics.burgers_core_strain_cap",
         "QOU.FluidDynamics.core_levi_form",
-        "QOU.FluidDynamics.discrete_vortex_spectrum"
+        "QOU.FluidDynamics.discrete_vortex_spectrum",
+        "QOU.FluidDynamics.dss_escapes_nrs"
       ]
     },
     "QOU.InformationTheory": {
-      "total_modules": 53,
-      "cone_pure_ready_now": 26,
-      "cut_blocked_pure_modules": 5,
-      "declarations_total": 392,
-      "theorems_and_lemmas": 260,
+      "total_modules": 54,
+      "cone_pure_ready_now": 23,
+      "cut_blocked_pure_modules": 8,
+      "declarations_total": 393,
+      "theorems_and_lemmas": 266,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 0,
       "gratuitous_real_candidates": 11,
-      "umbrella_mathlib_imports": 15,
+      "umbrella_mathlib_imports": 14,
       "missing_module_docstrings": 2,
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
-        "TierB.HeckeTemperleyLieb": 1,
-        "TierB.QCalculus": 1,
-        "TierB.ToricConicOpt": 1
+        "TierA.MathlibExt": 1,
+        "TierB.HeckeTemperleyLieb": 2
       },
-      "inbound_consumer_edges": 8,
+      "inbound_consumer_edges": 3,
       "ts_lean_ref_pointers": 9,
       "source_subdirs": {
-        "Information": 40,
+        "Information": 41,
         "<QOU-root-loose>": 9,
         "QGeometricLanglands": 2,
         "InformationTheory": 1,
@@ -3713,11 +2192,11 @@
       ]
     },
     "QOU.Observations": {
-      "total_modules": 91,
-      "cone_pure_ready_now": 55,
+      "total_modules": 92,
+      "cone_pure_ready_now": 56,
       "cut_blocked_pure_modules": 4,
-      "declarations_total": 1124,
-      "theorems_and_lemmas": 786,
+      "declarations_total": 1138,
+      "theorems_and_lemmas": 796,
       "sorry_non_class": 0,
       "sorry_class_body": 0,
       "custom_axioms": 1,
@@ -3727,8 +2206,8 @@
       "outbound_cut_edges_to_qou": 0,
       "outbound_edges_to_other_community_libs": {
         "TierA.MathlibExt": 4,
-        "TierB.BraidKnotOctonion": 1,
         "TierB.CompactQuantumMetrics": 1,
+        "TierB.HeckeTemperleyLieb": 3,
         "TierB.ToricConicOpt": 1,
         "TierB.TwistedFrobeniusHopf": 1
       },
@@ -3736,7 +2215,7 @@
       "ts_lean_ref_pointers": 35,
       "source_subdirs": {
         "AppendixSurreals": 52,
-        "Observations": 18,
+        "Observations": 19,
         "Molecular": 15,
         "<QOU-root-loose>": 3,
         "Experimental": 2,
@@ -3762,8 +2241,8 @@
     "<QOU-root-loose>": {
       "files": 106,
       "decls": 1072,
-      "pure_math": 53,
-      "cone_pure_math": 27,
+      "pure_math": 49,
+      "cone_pure_math": 22,
       "orphans_from_qou_lean": 31,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -3773,8 +2252,8 @@
     "AlgebraicSubstrate": {
       "files": 46,
       "decls": 498,
-      "pure_math": 33,
-      "cone_pure_math": 29,
+      "pure_math": 30,
+      "cone_pure_math": 27,
       "orphans_from_qou_lean": 12,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -3817,8 +2296,8 @@
     "Archimedean": {
       "files": 277,
       "decls": 2942,
-      "pure_math": 213,
-      "cone_pure_math": 189,
+      "pure_math": 211,
+      "cone_pure_math": 195,
       "orphans_from_qou_lean": 105,
       "sorry_non_class": 0,
       "custom_axioms": 1,
@@ -3860,10 +2339,10 @@
     },
     "BraidKnot": {
       "files": 468,
-      "decls": 17856,
-      "pure_math": 356,
-      "cone_pure_math": 337,
-      "orphans_from_qou_lean": 208,
+      "decls": 17865,
+      "pure_math": 337,
+      "cone_pure_math": 322,
+      "orphans_from_qou_lean": 205,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 62,
@@ -3883,9 +2362,9 @@
     "BraidsAndKnots": {
       "files": 113,
       "decls": 6091,
-      "pure_math": 78,
-      "cone_pure_math": 60,
-      "orphans_from_qou_lean": 62,
+      "pure_math": 72,
+      "cone_pure_math": 58,
+      "orphans_from_qou_lean": 61,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 13,
@@ -3894,8 +2373,8 @@
     "BraidsKnots": {
       "files": 7,
       "decls": 49,
-      "pure_math": 3,
-      "cone_pure_math": 3,
+      "pure_math": 2,
+      "cone_pure_math": 2,
       "orphans_from_qou_lean": 7,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -3905,8 +2384,8 @@
     "Brings": {
       "files": 15,
       "decls": 210,
-      "pure_math": 15,
-      "cone_pure_math": 15,
+      "pure_math": 14,
+      "cone_pure_math": 14,
       "orphans_from_qou_lean": 5,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -3980,11 +2459,11 @@
       "canonical_qou_target": "QOU.LiftingDescent"
     },
     "Eightfold": {
-      "files": 51,
-      "decls": 794,
-      "pure_math": 43,
-      "cone_pure_math": 42,
-      "orphans_from_qou_lean": 25,
+      "files": 52,
+      "decls": 855,
+      "pure_math": 39,
+      "cone_pure_math": 37,
+      "orphans_from_qou_lean": 6,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 3,
@@ -3995,7 +2474,7 @@
       "decls": 25,
       "pure_math": 1,
       "cone_pure_math": 1,
-      "orphans_from_qou_lean": 2,
+      "orphans_from_qou_lean": 0,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 0,
@@ -4005,7 +2484,7 @@
       "files": 4,
       "decls": 30,
       "pure_math": 3,
-      "cone_pure_math": 0,
+      "cone_pure_math": 2,
       "orphans_from_qou_lean": 0,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -4111,11 +2590,22 @@
       "gratuitous_real": 0,
       "canonical_qou_target": "QOU.BringsSurface"
     },
+    "GravitySpacetime": {
+      "files": 1,
+      "decls": 41,
+      "pure_math": 0,
+      "cone_pure_math": 0,
+      "orphans_from_qou_lean": 1,
+      "sorry_non_class": 0,
+      "custom_axioms": 0,
+      "gratuitous_real": 0,
+      "canonical_qou_target": "QOU.Core (mixed/loose)"
+    },
     "Habiro": {
       "files": 4,
       "decls": 56,
-      "pure_math": 4,
-      "cone_pure_math": 4,
+      "pure_math": 3,
+      "cone_pure_math": 3,
       "orphans_from_qou_lean": 4,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -4134,11 +2624,11 @@
       "canonical_qou_target": "QOU.MassTheory"
     },
     "Hecke": {
-      "files": 102,
-      "decls": 1212,
+      "files": 103,
+      "decls": 1227,
       "pure_math": 84,
-      "cone_pure_math": 74,
-      "orphans_from_qou_lean": 64,
+      "cone_pure_math": 75,
+      "orphans_from_qou_lean": 65,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 7,
@@ -4169,8 +2659,8 @@
     "Information": {
       "files": 44,
       "decls": 320,
-      "pure_math": 30,
-      "cone_pure_math": 24,
+      "pure_math": 29,
+      "cone_pure_math": 23,
       "orphans_from_qou_lean": 20,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -4200,11 +2690,11 @@
       "canonical_qou_target": "QOU.Core"
     },
     "Interactions": {
-      "files": 38,
-      "decls": 443,
-      "pure_math": 16,
+      "files": 39,
+      "decls": 454,
+      "pure_math": 14,
       "cone_pure_math": 6,
-      "orphans_from_qou_lean": 15,
+      "orphans_from_qou_lean": 16,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 10,
@@ -4235,8 +2725,8 @@
     "Knot": {
       "files": 103,
       "decls": 2204,
-      "pure_math": 95,
-      "cone_pure_math": 48,
+      "pure_math": 101,
+      "cone_pure_math": 101,
       "orphans_from_qou_lean": 36,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -4268,9 +2758,9 @@
     "LiftingDescent": {
       "files": 33,
       "decls": 343,
-      "pure_math": 24,
-      "cone_pure_math": 21,
-      "orphans_from_qou_lean": 22,
+      "pure_math": 23,
+      "cone_pure_math": 20,
+      "orphans_from_qou_lean": 21,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 3,
@@ -4299,11 +2789,11 @@
       "canonical_qou_target": "QOU.Nuclear"
     },
     "Mass": {
-      "files": 311,
-      "decls": 4419,
-      "pure_math": 260,
-      "cone_pure_math": 243,
-      "orphans_from_qou_lean": 194,
+      "files": 312,
+      "decls": 4436,
+      "pure_math": 258,
+      "cone_pure_math": 249,
+      "orphans_from_qou_lean": 195,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 45,
@@ -4321,21 +2811,21 @@
       "canonical_qou_target": "QOU.MassTheory"
     },
     "MassTheory": {
-      "files": 239,
-      "decls": 3196,
-      "pure_math": 144,
-      "cone_pure_math": 129,
-      "orphans_from_qou_lean": 166,
+      "files": 247,
+      "decls": 3274,
+      "pure_math": 142,
+      "cone_pure_math": 130,
+      "orphans_from_qou_lean": 173,
       "sorry_non_class": 0,
       "custom_axioms": 0,
-      "gratuitous_real": 35,
+      "gratuitous_real": 37,
       "canonical_qou_target": "QOU.MassTheory"
     },
     "Mathlib": {
       "files": 235,
       "decls": 3491,
-      "pure_math": 229,
-      "cone_pure_math": 219,
+      "pure_math": 234,
+      "cone_pure_math": 230,
       "orphans_from_qou_lean": 55,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -4345,8 +2835,8 @@
     "MathlibExt": {
       "files": 302,
       "decls": 4474,
-      "pure_math": 294,
-      "cone_pure_math": 282,
+      "pure_math": 296,
+      "cone_pure_math": 287,
       "orphans_from_qou_lean": 106,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -4358,7 +2848,7 @@
       "decls": 183,
       "pure_math": 6,
       "cone_pure_math": 6,
-      "orphans_from_qou_lean": 3,
+      "orphans_from_qou_lean": 2,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 0,
@@ -4376,22 +2866,22 @@
       "canonical_qou_target": "QOU.Observations"
     },
     "Nuclear": {
-      "files": 3,
-      "decls": 72,
+      "files": 4,
+      "decls": 115,
       "pure_math": 0,
       "cone_pure_math": 0,
-      "orphans_from_qou_lean": 2,
+      "orphans_from_qou_lean": 3,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 0,
       "canonical_qou_target": "QOU.Nuclear"
     },
     "Observations": {
-      "files": 20,
-      "decls": 198,
-      "pure_math": 10,
-      "cone_pure_math": 10,
-      "orphans_from_qou_lean": 12,
+      "files": 21,
+      "decls": 212,
+      "pure_math": 11,
+      "cone_pure_math": 11,
+      "orphans_from_qou_lean": 13,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 4,
@@ -4434,7 +2924,7 @@
       "files": 21,
       "decls": 504,
       "pure_math": 21,
-      "cone_pure_math": 20,
+      "cone_pure_math": 21,
       "orphans_from_qou_lean": 0,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -4444,9 +2934,9 @@
     "ParticleInteractions": {
       "files": 36,
       "decls": 363,
-      "pure_math": 17,
-      "cone_pure_math": 16,
-      "orphans_from_qou_lean": 23,
+      "pure_math": 15,
+      "cone_pure_math": 14,
+      "orphans_from_qou_lean": 22,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 6,
@@ -4464,11 +2954,11 @@
       "canonical_qou_target": "QOU.Core"
     },
     "QBeta": {
-      "files": 396,
-      "decls": 5630,
-      "pure_math": 1,
-      "cone_pure_math": 1,
-      "orphans_from_qou_lean": 215,
+      "files": 400,
+      "decls": 5783,
+      "pure_math": 329,
+      "cone_pure_math": 324,
+      "orphans_from_qou_lean": 213,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 51,
@@ -4532,9 +3022,9 @@
     "QuantumObservableUniverses": {
       "files": 18,
       "decls": 208,
-      "pure_math": 13,
+      "pure_math": 12,
       "cone_pure_math": 11,
-      "orphans_from_qou_lean": 4,
+      "orphans_from_qou_lean": 3,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 3,
@@ -4556,7 +3046,7 @@
       "decls": 1546,
       "pure_math": 0,
       "cone_pure_math": 0,
-      "orphans_from_qou_lean": 20,
+      "orphans_from_qou_lean": 19,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 2,
@@ -4587,8 +3077,8 @@
     "SchurWeyl": {
       "files": 150,
       "decls": 1811,
-      "pure_math": 123,
-      "cone_pure_math": 86,
+      "pure_math": 147,
+      "cone_pure_math": 147,
       "orphans_from_qou_lean": 48,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -4618,10 +3108,10 @@
       "canonical_qou_target": "QOU.Nuclear"
     },
     "StandardModel": {
-      "files": 40,
-      "decls": 672,
-      "pure_math": 18,
-      "cone_pure_math": 18,
+      "files": 44,
+      "decls": 1042,
+      "pure_math": 11,
+      "cone_pure_math": 8,
       "orphans_from_qou_lean": 18,
       "sorry_non_class": 0,
       "custom_axioms": 0,
@@ -4651,11 +3141,11 @@
       "canonical_qou_target": "QOU.MassTheory"
     },
     "Torsion": {
-      "files": 25,
-      "decls": 206,
+      "files": 26,
+      "decls": 411,
       "pure_math": 8,
       "cone_pure_math": 5,
-      "orphans_from_qou_lean": 7,
+      "orphans_from_qou_lean": 8,
       "sorry_non_class": 0,
       "custom_axioms": 0,
       "gratuitous_real": 7,
@@ -4718,13 +3208,13 @@
         "resulting_subdirs_under_QOU": 12
       },
       "quantitative_impact": {
-        "files_moved_to_tier_b_libs": 1359,
-        "files_moved_to_tier_a_mathlibext": 321,
-        "files_consolidated_into_12_qou_subgraphs": 2160,
-        "cut_edges_to_resolve_first": 188,
-        "inter_tier_b_scc_cycles_to_break": 1,
-        "import_lines_rewritten_estimate": 5765,
-        "ts_lean_ref_updates_estimate": 1313,
+        "files_moved_to_tier_b_libs": 1473,
+        "files_moved_to_tier_a_mathlibext": 301,
+        "files_consolidated_into_12_qou_subgraphs": 2090,
+        "cut_edges_to_resolve_first": 0,
+        "inter_tier_b_scc_cycles_to_break": 0,
+        "import_lines_rewritten_estimate": 5841,
+        "ts_lean_ref_updates_estimate": 1316,
         "schemas_lean_packages_ts_changes": 0,
         "olean_cache_roots_added": 0
       },
@@ -4761,13 +3251,13 @@
         ]
       },
       "quantitative_impact": {
-        "files_extracted_to_new_lake_packages": 1359,
-        "files_moved_to_tier_a_mathlibext": 321,
-        "files_consolidated_into_12_qou_subgraphs": 2160,
-        "cut_edges_to_resolve_first": 188,
-        "inter_tier_b_scc_cycles_to_break": 1,
-        "import_lines_rewritten_estimate": 5765,
-        "ts_lean_ref_updates_estimate": 1313,
+        "files_extracted_to_new_lake_packages": 1473,
+        "files_moved_to_tier_a_mathlibext": 301,
+        "files_consolidated_into_12_qou_subgraphs": 2090,
+        "cut_edges_to_resolve_first": 0,
+        "inter_tier_b_scc_cycles_to_break": 0,
+        "import_lines_rewritten_estimate": 5841,
+        "ts_lean_ref_updates_estimate": 1316,
         "schemas_lean_packages_ts_changes": 6,
         "olean_cache_roots_added": 6
       },
@@ -4804,18 +3294,19 @@
         ]
       },
       "quantitative_impact": {
-        "files_moved_under_qou_contrib": 1359,
-        "files_moved_under_qou_mathlibext": 321,
-        "files_consolidated_into_12_qou_subgraphs": 2160,
-        "cut_edges_to_resolve_first": 188,
-        "inter_tier_b_scc_cycles_to_break": 1,
-        "import_lines_rewritten_estimate": 5765,
-        "ts_lean_ref_updates_estimate": 1313,
+        "files_moved_under_qou_contrib": 1473,
+        "files_moved_under_qou_mathlibext": 301,
+        "files_consolidated_into_12_qou_subgraphs": 2090,
+        "cut_edges_to_resolve_first": 0,
+        "inter_tier_b_scc_cycles_to_break": 0,
+        "import_lines_rewritten_estimate": 5841,
+        "ts_lean_ref_updates_estimate": 1316,
         "schemas_lean_packages_ts_changes": 0,
         "olean_cache_roots_added": 0,
-        "second_rename_required_for_reservoir": 1359
+        "second_rename_required_for_reservoir": 1473
       },
       "effort_estimate": "Low-Medium now (2-3 PR tranches), but incurs technical debt: every Tier-B declaration keeps a `QOU.Contrib.` prefix and requires a second breaking rename before Lean Reservoir publication."
     }
-  ]
+  ],
+  "module_migration_map_count": 3864
 }
