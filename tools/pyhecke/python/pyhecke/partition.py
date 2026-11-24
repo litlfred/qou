@@ -3,7 +3,7 @@
 Re-exports the partition-specific functionals: spectral rates, LP
 shadow prices, Laplacian eigenvalues, resolvent weights.  These all
 live on the Phase-5 EXPLORATORY surface
-(`_deprecated/hecke_core_legacy.py`) — not on the canonical derivation
+(`computations/hecke_core_legacy.py`) — not on the canonical derivation
 chain.  The canonical-vs-exploratory split is documented in
 `docs/audits/2026-05-24-hecke-core-canonical-audit.md`.
 """

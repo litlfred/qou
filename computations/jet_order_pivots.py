@@ -97,12 +97,24 @@ def main() -> int:
     w.set_content_block("conj:three-knot-jet-order-independence")
     w.add_assertion(
         "jet_order_independence_base_case",
-        computed=1 if det != 0 else 0,
-        expected=1,
+        computed="1" if det != 0 else "0",
+        expected="1",
+        tolerance="0",
         source=(
             "h-jet expansion of canonical Markov traces tr_M(4_1/5_2/"
             "Borromean) about q=1 has non-singular 3x3 jet-Jacobian "
-            "(det = 1/16) ⇒ jet-order independent at order 2"
+            "(det = -11/4, LU pivots [1/4, 1, -11]) ⇒ jet-order "
+            "independent at order 2 (bean qou-381n)"
+        ),
+    )
+    w.add_assertion(
+        "elimination_det_matches_lean_jetJacobianBase_det",
+        computed=str(det),
+        expected="-11/4",
+        tolerance="0",
+        source=(
+            "QOU.Archimedean.JetOrderIndependence.jetJacobianBase_det "
+            "pins det(jetJacobianBase) = -11/4 (bean qou-381n)"
         ),
     )
     out = w.save()
