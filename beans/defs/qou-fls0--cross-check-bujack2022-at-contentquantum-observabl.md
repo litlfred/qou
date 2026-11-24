@@ -1,13 +1,13 @@
 ---
 # qou-fls0
 title: Cross-check [bujack2022] at folio/quantum-observable-universe/predicted-spectra/schrodinger-col…
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:07Z
-updated_at: 2026-10-04T15:18:24Z
+updated_at: 2026-11-24T13:58:30Z
 parent: qou-1qhv
 ---
 
@@ -17,3 +17,5 @@ Source: `library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/bu
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+Closed post-merge: landed on origin/main in PR #9346 (f40b4a133f1).
