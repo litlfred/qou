@@ -1,14 +1,13 @@
 ---
 # qou-1el8
 title: Cross-check 0906.1500v4.pdf at computations/whitehead_c_sigma_torsion.py
-status: todo
-pr: 8335
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:01Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T11:41:06Z
 parent: qou-mukd
 ---
 
@@ -37,3 +36,5 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8335, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Closed post-merge: landed on origin/main in PR #9329 (e25ad4b47a3).

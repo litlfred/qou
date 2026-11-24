@@ -1,14 +1,13 @@
 ---
 # qou-1rgm
 title: Cite squier-burau-unitary-1984.pdf at folio/quantum-observable-universe/information-theory/q-ga…
-status: todo
-pr: 8449
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:37:20Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T11:41:07Z
 parent: qou-19m0
 ---
 
@@ -39,3 +38,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8449, closed o
 Not cited. Premise stale: q-game-of-life-proof.md now asserts invertibility, not unitarity, and that σ_i is not unitary for any inner product when q≠1 (correct for positive-definite forms at real q). Squier's result is unitarity for a bar-Hermitian indefinite form; citing it needs a new contrast sentence (owner's call). Finding F5. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+Closed post-merge: landed on origin/main in PR #9329 (e25ad4b47a3).

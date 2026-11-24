@@ -1,11 +1,11 @@
 ---
 # qou-n2dp
 title: Five content blocks cite computation scripts that are not in the tree
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-21T00:00:00Z
-updated_at: 2026-11-24T08:06:23Z
+updated_at: 2026-11-24T11:41:05Z
 parent: qou-s028
 ---
 
@@ -40,3 +40,5 @@ Owner decision needed for any block whose kind or claims change.
 ## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
 
 Parent set to `qou-trd0`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.
+
+Closed post-merge: landed on origin/main in PR #9327 (30a2089744e).

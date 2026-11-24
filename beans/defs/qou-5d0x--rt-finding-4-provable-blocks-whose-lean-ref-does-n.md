@@ -1,11 +1,11 @@
 ---
 # qou-5d0x
 title: 'RT finding: 4 provable blocks whose lean.ref does not name a proof of the block (module name, structure, Prop def, def-as-proof)'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-24T08:06:24Z
+updated_at: 2026-11-24T11:41:05Z
 parent: qou-s028
 ---
 
@@ -35,3 +35,5 @@ Pass 3 window (offset 40) skipped five more decl-not-found refs: prop:local-subs
 
 ## 2026-11-22 applicability review (owner instruction 2026-11-22; wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e)
 **APPLIES**: all 4 pass-1 cases are still on main (wave-1 --ref-audit: 148 of 717 refs do not name a theorem). The repoint of centered-hecke-variance-positive is now carried by qou-g7nn; the full sweep still needs an owner yes. Premise check against docs/coordination/owner-rulings.md on main: the bean rests on no retired premise (photon form, trefoil electron, convention C, z=1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges).
+
+Closed post-merge: landed on origin/main in PR #9327 (30a2089744e).
