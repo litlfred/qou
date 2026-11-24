@@ -1,0 +1,272 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T16:25:39.729258+00:00",
+  "commitSha": "8f122280d1f47d4b0c1da4fdbe1bd14e3fd0aac2",
+  "assertions": [
+    {
+      "name": "coupled_repinning_shifts_q_p_neg_10p12_ppb",
+      "computed": "-10.1246032693978602994287040321068124334422038491543568653945",
+      "expected": "-10.12460327",
+      "passed": true,
+      "tolerance": "0.000001",
+      "source": "Coupled Borromean re-pinning 2 M_mu(q)(1 - delta_*) F_Bor(q) - 12 = m_p/m_e"
+    },
+    {
+      "name": "coupled_repinning_leaves_mmu_at_pos_184p12_ppb",
+      "computed": "184.119571587797004886451149998253176327002083929403854985935",
+      "expected": "184.1195717",
+      "passed": true,
+      "tolerance": "0.00001",
+      "source": "87.18% of universal muon dressing re-absorbed into q_p via Borromean constituent"
+    },
+    {
+      "name": "coupled_repinning_pulls_formB_alpha_inv_neg_69p19_ppb",
+      "computed": "-69.1853611301899773017554892831302245416355633340040679523259",
+      "expected": "-69.18536117",
+      "passed": true,
+      "tolerance": "0.00001",
+      "source": "Form-B 1/alpha_EM evaluated at coupled vs uncoupled proton pin"
+    },
+    {
+      "name": "proton_static_all_pairs_QPairP_vanishes_exactly",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "NucleonWeightSpaceTwoTerm.QPairP = 0 on proton (2,1) weight space"
+    },
+    {
+      "name": "proton_adjacent_em_trace_has_opposite_sign_neg_0p53588_keV",
+      "computed": "-0.535879685299976210711424798047044601560956173691820723651145",
+      "expected": "-0.5358796853",
+      "passed": true,
+      "tolerance": "0.0000001",
+      "source": "E_0(q_p)(1 - q_p^-1) tr((Q12p + Q23p) V_p^3) vs needed +0.22881 keV (+705.86 ppb)"
+    },
+    {
+      "name": "worldline_qed_1loop_asymptotic_quad_vs_symbolic_lt_1e25",
+      "computed": "1.37739379888718589475881156800413106392179219057648304395203e-28",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0.0000000000000000000000001",
+      "source": "4D Euclidean worldline QED 1-loop self-energy at u = 1e-30 vs (3/2)(ln(1/u)-gamma_E)+(1-3/2 ln 2)"
+    },
+    {
+      "name": "worldline_single_clock_finite_part_is_5_over_4_alpha_over_pi",
+      "computed": "1.25000000000000000000000000000000000000000000000000000000000",
+      "expected": "1.25000000000000000000000000000000000000000000000000000000000",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "(1/2) int_0^1 -(1+y) ln(y^2) dy = 5/4"
+    },
+    {
+      "name": "lean_group1_trm_41_and_t25_ratio_exact_at_q_p",
+      "computed": "5.27109897161526161217428702563500950385498069118425377503888e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "y_3 + y_21 chi_21(4_1) = (q^5 + q^-5)/(q + q^-1)^3"
+    },
+    {
+      "name": "lean_group2_fbor_poincare_s3_identity_exact_at_q_p",
+      "computed": "8.43375835458441857947885924101601520616796910589480604006221e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "[3]_q! / q^3 = 1 + 2 q^-2 + 2 q^-4 + q^-6 = P_{S_3}(q^-2)"
+    },
+    {
+      "name": "lean_group3_seifert_balanced_alexander_exact_at_q_p",
+      "computed": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "(t^2-t+1)(t^6-t^3+1) Phi_15(t)|_{t=q^-1} = q^-8 Delta_{T(2,9)}(q) Delta_{T(3,5)}(q)"
+    },
+    {
+      "name": "lean_group3_kappa_seifert_reciprocal_exact_at_q_p",
+      "computed": "2.10843958864610464486971481025400380154199227647370151001555e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "kappa_Seifert(q) = q^8 / (Delta_{T(2,9)}(q) Delta_{T(3,5)}(q)) = 1.905155328..."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "muon-fbor-poincare-and-worldline-loop",
+  "scriptFile": "muon_fbor_poincare_and_worldline_loop_probe.py",
+  "scriptHash": "366320c94d4c",
+  "scriptCommitSha": "30a217ed2efe47f5c298ed21c074c0da9f4701d0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/muon_fbor_poincare_and_worldline_loop_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/muon_fbor_poincare_and_worldline_loop_probe.py"
+  },
+  "description": "80-dps working-assumption probe and algebraic verification for MuonFigureEightFBorPoincareIdentities.lean (qou-1ozb, qou-6gf9, qou-24w9, qou-gbsa): coupled-vs-uncoupled re-pinning theorem, Track 2/4 and 5-counterterm proton exclusions, 4D worldline QED 1-loop self-energy asymptotic, and unwired bar-even candidates at q_p and q_mu.",
+  "data": {
+    "codata_2022_inputs": {
+      "proton_electron_mass_ratio": "1836.152673426",
+      "proton_electron_mass_ratio_uncertainty": "0.000000032",
+      "muon_electron_mass_ratio": "206.7682827",
+      "muon_electron_mass_ratio_uncertainty": "0.0000046",
+      "inverse_fine_structure_constant": "137.035999177",
+      "inverse_fine_structure_constant_uncertainty": "0.000000021",
+      "electron_mass_keV": "510.998950690000000000000000000000000000000000000000000000000",
+      "sigma_mu_ppb": "22.2471258160717896217261565523463139929632931076232225243509",
+      "sigma_alpha_inv_ppb": "0.153244403850959925635161700558525347789386447580672570411377",
+      "entropy_sigma_over_residual_fraction": "0.105333867370656936115121964461459181207016137136297151502399",
+      "significant_digits_on_residual": "0.977431970244851959236905704657669798631544951633758742437684"
+    },
+    "coupled_repinning_theorem": {
+      "delta_required": "0.000000211205819850769245433262427459419704085911784599575802299445",
+      "q_p_coupled": "1.10997857151328801970543554551138303253842991352962815200913",
+      "shift_q_p_ppb": "-10.1246032693978602994287040321068124334422038491543568653945",
+      "post_coupled_mmu_resid_ppb": "184.119571587797004886451149998253176327002083929403854985935",
+      "reabsorbed_fraction_exact": "0.871754068286396911412704543412352039460653960048316999803136",
+      "reabsorbed_fraction_linear_slope_ratio": "0.871754074800083791822241282269816132609117003552726536142077",
+      "shift_alpha_formB_inv_ppb": "-69.1853611301899773017554892831302245416355633340040679523259"
+    },
+    "exclusions_track2_track4_and_proton_counterterms": {
+      "track2_murakami_h2011_real_u_4_1_torsion_ppb": {
+        "u_eq_hbar_q_sq": "48190.1231073526657999721181904401915344105534250491555886474",
+        "u_eq_w_bar_even": "59373.2020902952450549454753509282066515563978862395895610628",
+        "u_eq_hbar_q": "4924736.77218446133524044484367269431584399039493747539397853",
+        "u_eq_ln_q_p": "5463357.49109892323679326237565314986488193388317420541918451",
+        "u_eq_q_p_minus_1": "6072178.13078080643184873553911333774220531406162822713469015"
+      },
+      "track4_instantons_ppb": {
+        "figure_eight_exp_neg_vol_over_hbar_q": "1.26656085182359739470833864048255888996085227824130412280170",
+        "figure_eight_exp_neg_vol_over_ln_q": "3.55691500513481602124349635887017231198255169146333460336777",
+        "figure_eight_exp_neg_2vol_over_h_q": "3.68455119430363876847644233979390470048044572665725165705201",
+        "figure_eight_saddle_prefactor_hbar_q": "5.82315844551716144223758939925696507581978897524592609316154",
+        "sigma_235_exp_neg_pi2_over_60_hbar_q": "190104905.245460491873676907967006574252874961125754903839754",
+        "sigma_235_exp_neg_pi2_over_60_ln_q": "206696756.882833498145534172015214349183487294700786793889161"
+      },
+      "five_canonical_proton_counterterms": {
+        "needed_proton_shift_live_q_mu_keV": "0.228807230588033614984203182459471360326479664793760538777359",
+        "needed_proton_shift_frozen_q_mu_keV": "0.227291399310825258569184726272439690081818315599260669536016",
+        "ct1_static_all_pairs_QPairP_keV": "0.0",
+        "ct2_diagonal_self_energy_QSelfP_trace_ratio": "1.00000000000000000000000000000000000000000000000000000000000",
+        "ct3_adjacent_crossing_unprojected_keV": "-0.535879685299976210711424798047044601560956173691820723651145",
+        "ct3_induced_mu_p_residual_ppb": "705.861629943864430887070320694962325306773969418243279136104",
+        "ct4_e21_projected_adjacent_crossing_keV": "-3.20393098385898434368959028039550733366860444627933574990302",
+        "ct5_modulus_flipped_two_term_q_p_shift_ppb": "11.1709409390227905169310114569608029362965624416383144319418",
+        "ct5_modulus_flipped_formB_alpha_inv_resid_ppb": "75.9701790753879162708688881067151248121974773719236763275760"
+      }
+    },
+    "worldline_qed_1loop_and_hecke_correlators": {
+      "u_probe": "1.00000000000000000000000000000000000000000000000000000000000e-30",
+      "worldline_coeff_quad": "102.710784916539838525773999143623260223261796372320396798910",
+      "worldline_coeff_symbolic": "102.710784916539838525773999143485520843373077782844515642110",
+      "worldline_quad_minus_symbolic_abs": "1.37739379888718589475881156800413106392179219057648304395203e-28",
+      "single_clock_subtracted_finite_alpha_over_pi_coeff": "1.25000000000000000000000000000000000000000000000000000000000",
+      "compton_clock_ue_eq_umu_cancellation_diff": "0.0",
+      "hecke_photon_projector_4_1_correlators_at_q_p": {
+        "one_vertex_e1": "-0.547621759419215007164550957615363862074415614940554425145838",
+        "two_vertex_e1_sep": "0.116705638566625560284270355600029654747453788688597963149676",
+        "two_vertex_e1_e2": "-0.446064743028042845528043750531145351515308387021232602196457",
+        "commutator_sq_e1_s2inv": "0.604987914509952609789306360506066592676826592900575627839915"
+      },
+      "unwired_working_assumption_status": "STRICTLY UNWIRED WORKING ASSUMPTION: zero production rewire of m_mu/m_e; CODATA-2022 m_mu/m_e uncertainty (22.25 ppb) is ~10.5% of the 211.21 ppb residual (~1 significant digit), so coefficients must be derived from a complete 4D->1D worldline-braid reduction prior to wiring."
+    },
+    "pin_comparison_bundles": {
+      "proton_pin": {
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "hbar_q": "0.0990817160442585078391771175189060639852583733894458193088818",
+        "w_bar_even": "0.0108968667071222997524919780918628158892407484841329167639324",
+        "alpha_formB_inv": "137.035999126950912420172700496420006739955675505718045793752",
+        "kappa_seifert": "1.90515532823217110093519233406033655292641775677401476194603",
+        "m_mu_bare": "206.768326370673890289609586409902675938458204551029986085254",
+        "bare_overshoot_ppb": "211.205864458677005718585013309386344313585721849617381865171",
+        "ow1_naive_1loop_ppb": "18983.5905714676014436617080537647804985855089357999532220612",
+        "unwired_cand_bring_schwinger_2loop_ppb": "-186.218888500810625422509917793682723605513030533099789018011",
+        "unwired_cand_bring_schwinger_2loop_codata_alpha_ppb": "-186.218888364786726390620016735688713712218962352706981997731",
+        "unwired_cand_bring_schwinger_post_resid_ppb": "24.9869366273450559483800669792711717364956987608984534395772",
+        "unwired_cand_bring_schwinger_post_sigma": "1.12315347312388414756129702091627753860260707581032415799723",
+        "unwired_cand_double_comm_1loop_ppb": "-206.861656079866098728881939260473444697575766642362893022929",
+        "unwired_cand_double_comm_1loop_codata_alpha_ppb": "-206.861656004314877121216886848203534541340818580486272780781",
+        "unwired_cand_double_comm_post_resid_ppb": "4.34416468841601128804567900539231076203897365675365472597108",
+        "unwired_cand_double_comm_post_sigma": "0.195268580954295486350656540674002638272071072495107053182126",
+        "chi21_delta3_abs_err": "0.0",
+        "trm_41_matrix_minus_closed_abs_err": "5.27109897161526161217428702563500950385498069118425377503888e-82",
+        "ratio_41_to_t25_abs_err": "2.10843958864610464486971481025400380154199227647370151001555e-81",
+        "poincare_s3_abs_err": "8.43375835458441857947885924101601520616796910589480604006221e-81",
+        "seifert_alexander_abs_err": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+        "seifert_kappa_reciprocal_abs_err": "2.10843958864610464486971481025400380154199227647370151001555e-81"
+      },
+      "muon_pin": {
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "hbar_q": "0.0990817265075776999490051321219181332800716081968675567296935",
+        "w_bar_even": "0.0108968691351613467327899972580836194199939528321440002443523",
+        "alpha_formB_inv": "137.036010002595537457787549938257993221059212060635350551344",
+        "kappa_seifert": "1.90515542693417122818795166813033839253985569011580673315521",
+        "m_mu_bare": "206.768282700000000000000000000000000000000000000000000000000",
+        "bare_overshoot_ppb": "-1.82732268872000431021934919807464977913812801591782679440316e-71",
+        "ow1_naive_1loop_ppb": "18983.5932947871125050888071377584855077815235242312283267917",
+        "unwired_cand_bring_schwinger_2loop_ppb": "-186.218900773731451846649026444170305814032711043872162721907",
+        "unwired_cand_bring_schwinger_2loop_codata_alpha_ppb": "-186.218930195643838970418090857747589046982549977134563570406",
+        "unwired_cand_bring_schwinger_post_resid_ppb": "-186.218900773731451846649026444170305814032711043872162721907",
+        "unwired_cand_bring_schwinger_post_sigma": "-8.37047006940568555854551368423651773032638461394929814007469",
+        "unwired_cand_double_comm_1loop_ppb": "-206.861731848421583407202752823276947849013750537728301746282",
+        "unwired_cand_double_comm_1loop_codata_alpha_ppb": "-206.861748190123432689747494248125355533466299853418403396908",
+        "unwired_cand_double_comm_post_resid_ppb": "-206.861731848421583407202752823276947849013750537728301746282",
+        "unwired_cand_double_comm_post_sigma": "-9.29835761970565815363524521999598936809522436682006141549262",
+        "chi21_delta3_abs_err": "0.0",
+        "trm_41_matrix_minus_closed_abs_err": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+        "ratio_41_to_t25_abs_err": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+        "poincare_s3_abs_err": "3.37350334183376743179154369640640608246718764235792241602488e-80",
+        "seifert_alexander_abs_err": "3.16265938296915696730457221538100570231298841471055226502333e-81",
+        "seifert_kappa_reciprocal_abs_err": "6.32531876593831393460914443076201140462597682942110453004666e-81"
+      },
+      "exact_rational_3_over_2_check": {
+        "q": "1.50000000000000000000000000000000000000000000000000000000000",
+        "hbar_q": "0.333333333333333333333333333333333333333333333333333333333333",
+        "w_bar_even": "0.166666666666666666666666666666666666666666666666666666666667",
+        "alpha_formB_inv": "4783.90289028435492307432343070136612175721392241386501541408",
+        "kappa_seifert": "2.98453290998039348777312549603006086900272053443640273227935",
+        "m_mu_bare": "18.2689489153737652503816459769413651469504075355453962563148",
+        "bare_overshoot_ppb": "-911645303.250498171060248178107341000095512194648868183222983",
+        "ow1_naive_1loop_ppb": "8317.21226067964638171042813946102420765092015132925998291353",
+        "unwired_cand_bring_schwinger_2loop_ppb": "-2.61592350228363021226518203612771889638140674439934013470112",
+        "unwired_cand_bring_schwinger_2loop_codata_alpha_ppb": "-3188.01538564556554309728903995892368868198272088216838895970",
+        "unwired_cand_bring_schwinger_post_resid_ppb": "-911645303.481627298824413080616508526053886579584562050746017",
+        "unwired_cand_bring_schwinger_post_sigma": "-40978116.0505253059955138307640200272178413773307123423183357",
+        "unwired_cand_double_comm_1loop_ppb": "-1386.20204344660773028507135657683736794182002522154333048559",
+        "unwired_cand_double_comm_1loop_codata_alpha_ppb": "-48392.0721707360186633626699101129806823910140945456422470290",
+        "unwired_cand_double_comm_post_resid_ppb": "-911645425.727959353325033261948624136617981922046818899721011",
+        "unwired_cand_double_comm_post_sigma": "-40978121.5454522941005260135855426670339718060785360897593950",
+        "chi21_delta3_abs_err": "0.0",
+        "trm_41_matrix_minus_closed_abs_err": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+        "ratio_41_to_t25_abs_err": "5.27109897161526161217428702563500950385498069118425377503888e-82",
+        "poincare_s3_abs_err": "4.21687917729220928973942962050800760308398455294740302003111e-81",
+        "seifert_alexander_abs_err": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+        "seifert_kappa_reciprocal_abs_err": "4.21687917729220928973942962050800760308398455294740302003111e-81"
+      }
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.10997859564273904668179512938000175270006556102901155697405",
+    "proton": "1.10997858275138080759166909561076887987449912187357873607281"
+  },
+  "q0AnchorReason": "evaluates coupled-vs-uncoupled Borromean re-pinning, proton counterterms, and unwired bar-even worldline loop candidates across both registered pins (q_p proton pin and q_mu live muon pin) to adjudicate the mu-p offset"
+}
