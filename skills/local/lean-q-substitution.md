@@ -84,10 +84,10 @@ have h_amgm : q + q⁻¹ - 2 ≥ 0 := by
 set s := q + q⁻¹ with hs_def
 have hs_ge : s ≥ 2 := by linarith [h_amgm]
 have hs_le : s ≤ 13/6 := by
-  -- f(q) = q + 1/q is monotone on (1, 3/2]; max 13/6 at q = 3/2.
-  -- Standard subgoal — see QOU/Descartes/QHookBound.lean for the
-  -- full discharge.
-  sorry
+  -- Since (q - 3/2) * (q - 2/3) ≤ 0 on (1, 3/2) and q > 0:
+  have h_prod : (2 * q - 3) * (3 * q - 2) ≤ 0 :=
+    mul_nonpos_of_nonpos_of_nonneg (by linarith) (by linarith)
+  nlinarith [hs_def, h_qq_inv, hq_pos, h_prod]
 have h_diff_sq : (q - q⁻¹)^2 = s^2 - 4 := by
   nlinarith [h_qq_inv]
 have h_lhs_in_s : <LHS in q,q⁻¹> = <poly in s> := by
@@ -138,8 +138,7 @@ this hint set.
 
 ## Cross-references
 
-- `lean-substrate-numerics.md` — for the `Real.sqrt substrate_q`
-  brackets that close `q^(±1/2)` denominators.
-- `lean-mathlibext-curator.md` — for `MathlibExt` companion lemmas
-  (`Real.lt_sqrt_of_sq_lt`, `q_half_denom`).
-- `formalizer.md` §"QOU tactic ladder (QS18)".
+- **§7c Generality (`QCalculus` / `HeckeTemperleyLieb`):** Pure polynomial/rational $q$-identities and ordered-field AM-GM bounds belong in Tier-B `QCalculus` or `HeckeTemperleyLieb` over `{K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]` (zero `ℝ` lock-in; `BP005`).
+- [`lean-substrate-numerics.md`](lean-substrate-numerics.md) — for post-wall `Real.sqrt substrate_q` brackets that close `q^(±1/2)` denominators.
+- [`lean-mathlibext-curator.md`](lean-mathlibext-curator.md) — for Two-Tier `MathlibExt` & `QCalculus` curation.
+- [`formalizer.md`](formalizer.md) §"QOU tactic ladder (QS18)" & [`lean-build-hygiene.md`](lean-build-hygiene.md).

@@ -83,14 +83,17 @@ have hrcp_lt : 1 / Real.sqrt substrate_q < 1 / 1.05341 := by
 -- ... etc; close with `linarith`.
 ```
 
-## Mathlib-version drift check
+## Mathlib-version drift check (CPU-throttled `lean`-direct — NEVER bare `lake build`)
 
-This skill must be re-run after every `lake update` of Mathlib:
+Re-verify after any Mathlib bump using single-threaded `lean`-direct (see [`lean-build-hygiene.md`](lean-build-hygiene.md)):
 
 ```bash
-cd folio/quantum-observable-universe/lean
-lake build QOU.MassDerivation
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+       OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+nice -n 15 bash scripts/lean-direct-cone.sh -j 1 QOU.MassDerivation
 ```
+
+> **Subgraph boundary (`BP006d`, `BP008`):** Any module referencing `substrate_q` belongs post-wall in `QOU.MassTheory` / `QOU.Observations` — **never** in Tier-A (`MathlibExt`) or Tier-B (`QCalculus`, `HeckeTemperleyLieb`). Pure `Real.sqrt` / `Real.rpow` inequalities free of `substrate_q` belong in Tier-A `MathlibExt`.
 
 If the brackets fail to close, it is almost always one of:
 
