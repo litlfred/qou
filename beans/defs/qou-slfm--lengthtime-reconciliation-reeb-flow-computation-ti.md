@@ -7,7 +7,7 @@ priority: high
 tags:
     - needs-owner-ok
 created_at: 2026-11-23T21:31:08Z
-updated_at: 2026-11-24T08:06:20Z
+updated_at: 2026-11-24T21:20:05Z
 parent: qou-s028
 ---
 
@@ -29,3 +29,7 @@ Related beans: qou-mumr, qou-5uj7, qou-jfx8, qou-apma, PR #9207. Queued for acti
 - **Rule 13a status:** Remains `in-progress` because `LCQHorizonPunctureAreaConjecture` (deriving Bisognano-Wichmann `2π/ℏ` + Raychaudhuri `8πG/c³` null focusing on the Lorentzian lift of QOU's twisting CR 3-manifold) is genuinely open.
 
 Phase 1 Ready PR #9240 opened (Issue #9239, 09c8703a892, held unmerged for owner OK); Phase 2 Fefferman 4D Lorentzian CR circle-bundle metric + (2*pi)/(8*pi)=1/4 modular horizon derivation staged on origin/claude/gap4-a0-fefferman-lorentzian-modular-20261123 (dc9894be61b).
+
+
+## 2026-11-24T21:20:05Z — STALLED-CLAIM TAKEOVER (compute/derivation child session, owner ruling 2026-11-24 '>1 h')
+Backing branch origin/claude/reeb-length-time-bh-lcq-20261123 last commit 9fda5b0af02 at 2026-11-24T07:35:52Z (~14 h idle), no PR, no swarm activity in the last hour. Taking over: rebase onto main (post-1e8db432857 categorical Hamiltonian), re-check the energy/speed definitions against QOU.Core.CategoricalHamiltonianLegendre (lightconeSpeed, worldlineEnergy_rest, planckTickChart), re-run the 80-dps probe, lean-direct verify. Math-PR gate (needs-owner-ok) respected: branch is pushed, no PR opened without owner OK.
