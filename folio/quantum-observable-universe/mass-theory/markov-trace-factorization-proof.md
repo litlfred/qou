@@ -43,11 +43,10 @@ the product formula.  $\square$
 exact by construction** — the product formula and the direct
 trace compute the same algebraic object.  The canonical
 verification confirms code correctness, not an approximation.
-The values below were computed under the excised convention-C weight
-$z = \sqrt q/(q+1)$; they
-are not the canonical traces (for ${}^{2}\mathrm{H}$ the convention-D value is
-$z = q^3/(q^2+1) \approx 0.61269$). The ratio column does not depend on the
-convention, because the factorization is an algebraic identity in $z$.
+The numerical entries below were evaluated at the specialization
+$z = \sqrt q/(q+1)$ rather than the canonical Markov parameter $z = q^3/(q^2+1)$ (at which ${}^{2}\mathrm{H}$ has trace
+$z(q_0) \approx 0.61269$). The ratio column is independent of the choice of
+$z$, because the factorization is an algebraic identity in $z$.
 
 | Nucleus | $A$ | $\binom{A}{2}$ | $\prod_i \hat{V}_i$ | Direct trace | Ratio |
 |---------|-----|:-:|------|------|:-----:|

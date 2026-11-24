@@ -1,4 +1,4 @@
-*Under convention D the three interface letters are $\sigma + d$ with*
+*At the Markov parameter $z = q^3/(q^2+1)$, the three interface letters are $\sigma + d$ with*
 
 $$
   d_{pp} = 0, \qquad d_{nn} = -h, \qquad d_{pn} = -h\,(1 - \delta/2)/2,

@@ -6,6 +6,6 @@ $$
   \mathrm{tr}_M\!\bigl(\rho(\beta)\bigr) = \prod_{i=0}^{n-2} \hat{V}_i(q), \qquad \hat{V}_i(q) = z \cdot a_i + b_i,
 $$
 
-where $z = q^{3}/(q^{2}+1)$ is the Markov parameter (**convention D**). Each $\hat{V}_i$ is the vertex volume at generator $\sigma_i$, representing the evaluation of the vertex operator at the $i$-th insertion point on the exceptional divisor.
+where $z = q^{3}/(q^{2}+1)$ is the Markov parameter. Each $\hat{V}_i$ is the vertex volume at generator $\sigma_i$, representing the evaluation of the vertex operator at the $i$-th insertion point on the exceptional divisor.
 
 The monotone hypothesis cannot be dropped: for the interleaved word $\sigma_0\sigma_1\sigma_0\sigma_1 \in B_3$, grouping the letters by generator gives $(hz + 1)^2$, while the Markov trace is $h^2 z^2 + hz + z^2$; the two differ by $-(q^4 + q^2 + 1)/(q^2 + 1)^2$.

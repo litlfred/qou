@@ -1,16 +1,12 @@
-> **Domain of $G^{-1}$: the Temperley–Lieb quotient $H_n/\mathrm{rad} \cong \mathrm{TL}_n$.** On the full Hecke algebra $H_n$, non-degeneracy holds only under
-> **convention C**, where the antisymmetric weight
-> $y_{(1^3)} = 0.0227449\ldots$ is small but nonzero and $G$ genuinely inverts.
-> Under the production **convention D** the pin $z(q^2+1) = q^3$ forces
-> $y_{(1^3)} = 0$ *exactly*, so the $(1^3)$ block **is** the radical of the trace
-> form and $\det G = 0$. Not "numerically singular" — zero. A $G^{-1}$ computed
-> under C is therefore not an approximation to one under D; the D one does not
-> exist.
+> **Domain of $G^{-1}$: the Temperley–Lieb quotient $H_n/\mathrm{rad} \cong \mathrm{TL}_n$.** At the Markov parameter $z = q^3/(q^2+1)$, the relation $z(q^2+1) = q^3$ forces
+> $y_{(1^3)} = 0$ *exactly*, so on the full Hecke algebra $H_n$ ($n \ge 3$) the $(1^3)$ block lies in the radical of the trace
+> form, $\det G = 0$ identically — not "numerically singular", zero — and $G^{-1}$ does not
+> exist on $H_n$.
 >
-> **This remark already contains its own refutation.** The Wedderburn paragraph
+> **Block-diagonal verification.** The Wedderburn paragraph
 > below derives $G_{\lambda\mu} = \delta_{\lambda\mu}\,\tau(e_\lambda)$ — block
 > diagonal with the *weights themselves* on the diagonal. So
-> $\det G = \prod_\lambda \tau(e_\lambda)^{\,\cdot}$, and convention D sends one
+> $\det G = \prod_\lambda \tau(e_\lambda)^{\,\cdot}$, and $z = q^3/(q^2+1)$ sends every $\ell(\lambda) \ge 3$
 > factor to zero. The very next line then writes down
 > $G^{-1}_{\lambda\mu} = \delta_{\lambda\mu}\,[n]_q!/(\dim_q(\lambda)\dim(\lambda))$,
 > which for that block is a division by zero.
@@ -33,11 +29,9 @@ algebraic object that encodes:*
    $H_n(R, q)/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$: the pairing
    $\langle x, y \rangle_\tau := \tau(x \cdot y)$ is non-degenerate
    iff $\det G \neq 0$
-   ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)). Under **convention
-   D** that holds on the quotient and **fails on $H_n$ itself**, where
-   $\det G = 0$ exactly — see the correction above.*
-2. *The **inverse** $G^{-1}$ — which exists on that quotient, **not** on $H_n$
-   (**convention D**) — enters the **Frobenius co-Casimir**
+   ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)). At $z = q^3/(q^2+1)$ that holds on the quotient and **fails on $H_n$ itself**, where
+   $\det G = 0$ exactly — see the note above.*
+2. *The **inverse** $G^{-1}$ — which exists on that quotient, **not** on $H_n$ at $z = q^3/(q^2+1)$ — enters the **Frobenius co-Casimir**
    ([Frobenius universal](#thm:frobenius-codim-universal)):
    $C_{\dim_q} = \sum_{i, j} (G^{-1})_{ij} \cdot b_i \cdot b_j$
    in a non-central-idempotent basis (standard Frobenius
@@ -58,7 +52,7 @@ algebraic object that encodes:*
 |---|---|
 | Term 1 (descended) | $G_{T_w, \mathbf{1}} = \tau(T_w)$ — single matrix entry |
 | Term 2, 3 (brane tower) | $G_{\sigma_i, \sigma_i} = \tau(\sigma_i^2) = hz + 1$; pair $G_{\sigma_i \sigma_j, \sigma_j \sigma_i}$ |
-| Term 4 (Frobenius co-Casimir) | $\tau(C_{\dim_q}) = \mathrm{tr}(G^{-1} \cdot D)$ where $D_{ij} = \delta_{ij}/\dim_q$ per block basis — on the non-degenerate quotient $H_n/\mathrm{rad} \cong \mathrm{TL}_n$ (**convention D**; $G$ is singular on $H_n$) |
+| Term 4 (Frobenius co-Casimir) | $\tau(C_{\dim_q}) = \mathrm{tr}(G^{-1} \cdot D)$ where $D_{ij} = \delta_{ij}/\dim_q$ per block basis — on the non-degenerate quotient $H_n/\mathrm{rad} \cong \mathrm{TL}_n$ ($G$ is singular on $H_n$ at $z = q^3/(q^2+1)$) |
 | Term 5 (chirality) | $a_K = G_{\beta, \beta^*} / G_{\mathbf{1}, \mathbf{1}}$ |
 | Term 6 (jet-prefix) | $G$ restricted to higher filtration strata |
 
@@ -94,8 +88,7 @@ $$
 
 *with off-diagonal entries computed via Hecke relations.*
 
-*Under
-the production convention D, $\det G = 0$ at $q = q_0$ and at every generic $q$:
+*At $z = q^3/(q^2+1)$, $\det G = 0$ at $q = q_0$ and at every generic $q$:
 the vanishing is forced by the pin $z(q^2+1) = q^3$, not by a coincidence at a
 special point, so "generically" does not rescue it. $H_3$ is **not** a Frobenius
 algebra under $\mathrm{tr}_M$; the $5$-dimensional quotient
@@ -106,7 +99,7 @@ $H_3/\mathrm{rad} \cong \mathrm{TL}_3$ is.*
 is **block-diagonal**: $G_{\lambda, \mu} = \delta_{\lambda \mu}
 \cdot \tau(e_\lambda^2) = \delta_{\lambda \mu} \cdot \tau(e_\lambda)
 = \delta_{\lambda \mu} \cdot \frac{\dim_q(\lambda) \cdot \dim(\lambda)}{[n]_q!}$.
-The inverse — on the surviving blocks only, since under **convention D** the
+The inverse — on the surviving blocks only, since at $z = q^3/(q^2+1)$ the
 radical blocks have $\tau(e_\lambda) = 0$ — is
 $G^{-1}_{\lambda, \mu} = \delta_{\lambda \mu} \cdot \frac{[n]_q!}{\dim_q(\lambda) \cdot \dim(\lambda)}$.
 Summing $G^{-1}$ diagonal times $1/\dim_q$ gives exactly the Frobenius
@@ -115,10 +108,9 @@ co-Casimir trace $\sum_\lambda 1/\dim_q(\lambda)$ — recovering
 
 ***The inversion in the previous sentence is only valid block-by-block on the
 surviving blocks.** The block-diagonal form $G_{\lambda\mu} =
-\delta_{\lambda\mu}\tau(e_\lambda)$ is correct under either convention and is the
+\delta_{\lambda\mu}\tau(e_\lambda)$ holds for any trace and is the
 sharpest statement in this remark: it shows $\det G$ is a product of the
-Wedderburn weights, so $G$ inverts **iff every weight is nonzero**. Under the
-excised convention C that held. Under convention D it does not — $y_\lambda = 0$
+Wedderburn weights, so $G$ inverts **iff every weight is nonzero**. At $z = q^3/(q^2+1)$ that fails for $n \geq 3$ — $y_\lambda = 0$
 for every $\lambda$ with $\ell(\lambda) \geq 3$, since the fibre is the
 two-dimensional fundamental of $\mathrm{SU}_q(2)$ and no three-row partition
 survives Schur–Weyl. For those $\lambda$ the displayed $G^{-1}_{\lambda\lambda}$

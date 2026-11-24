@@ -25,4 +25,4 @@ $$
   w_\lambda \;:=\; \tau(e_\lambda) \;=\; y_\lambda\, d_\lambda ,
 $$
 
-*and the weights satisfy $\sum_\lambda w_\lambda = 1$. Taking $\beta_\mathcal{K} = \mathbf{1}$ gives $a_\mathbf{1} = 1$. Under convention D, $w_\lambda = 0$ for every $\lambda$ with three or more rows, so only the two-row blocks contribute. The identity holds exactly in $R$.*
+*and the weights satisfy $\sum_\lambda w_\lambda = 1$. Taking $\beta_\mathcal{K} = \mathbf{1}$ gives $a_\mathbf{1} = 1$. At $z = q^3/(q^2+1)$, $w_\lambda = 0$ for every $\lambda$ with three or more rows, so only the two-row blocks contribute. The identity holds exactly in $R$.*

@@ -1,7 +1,7 @@
 *For a braid word $T_w$ write $u = q^{1/2}$ and
 $\mathrm{tr}_M(T_w, q) = p_w(u)/d_w(u)$ in lowest terms, with
 $p_w, d_w \in \mathbb{Z}[u]$. The trace itself is not a polynomial in $u$:
-under convention D, $\mathrm{tr}_M(\sigma_1) = z = u^6/(u^4+1)$. The
+at $z = q^3/(q^2+1)$, $\mathrm{tr}_M(\sigma_1) = z = u^6/(u^4+1)$. The
 denominator-cleared numerator $p_w$ admits a finite Habiro expansion with
 integer coefficients,*
 
@@ -17,8 +17,8 @@ It is an exact, finite rational evaluation, not a truncated series.*
 
 *For the neutron–proton difference the expansion is applied to the
 numerator of $\mathrm{tr}_M(\beta_n) - \mathrm{tr}_M(\beta_p)$ over a common
-denominator. Subtracting the two coefficient lists is not valid under
-convention D, because the denominators differ: $d_p = 4u^{18}(u^4+1)^2$ and
+denominator. Subtracting the two coefficient lists directly is not valid at
+$z = q^3/(q^2+1)$, because the denominators differ: $d_p = 4u^{18}(u^4+1)^2$ and
 $d_n = 4u^{18}$.*
 
 *Under the archimedean evaluation $u \mapsto u_0$ at the substrate

@@ -129,7 +129,6 @@ is bounded by $\approx 1.30 \times 10^{-6}$ in categorical
 units, i.e. **sub-ppm binding precision** when calibrated by
 $E_0 \approx m_e \cdot 8G \approx 3.744$ MeV.
 
-For comparison, under the alternative Convention-C parameter $z_C = 1/(q^{1/2} + q^{-1/2}) \approx 0.49932$, the corresponding quantities evaluate to $1.109$ and $1.07 \times 10^{-6}$.
 
 ## Corollary for the binding energy
 

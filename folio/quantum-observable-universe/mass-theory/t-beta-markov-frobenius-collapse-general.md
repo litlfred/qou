@@ -12,7 +12,7 @@ This proposition lifts [Min-Frobenius-norm collapse: T_β = S · 1 under the can
 
 ## Application to the Iwahori–Hecke algebra
 
-For $A = H_n(R, q)$ with $\tau = \mathrm{tr}_M$, take $\dagger$ to be the $R$-linear anti-involution fixing each $\sigma_i$. In the orthogonal seminormal form $\mathrm{tr}_M(Y \cdot Y^\dagger) = \sum_\lambda y_\lambda \,\|Y_\lambda\|_F^2 \ge 0$, so the positivity hypothesis holds. The untwisted choice $\dagger = \mathrm{id}$ does not work for $n \ge 3$: $\mathrm{tr}_M(X \cdot X) < 0$ at $X = \sigma_1\sigma_2 - \sigma_2\sigma_1 \in H_3$. Under convention D the twisted form is degenerate, with radical the sum of the Wedderburn blocks of shapes with three or more rows, so the minimiser
+For $A = H_n(R, q)$ with $\tau = \mathrm{tr}_M$, take $\dagger$ to be the $R$-linear anti-involution fixing each $\sigma_i$. In the orthogonal seminormal form $\mathrm{tr}_M(Y \cdot Y^\dagger) = \sum_\lambda y_\lambda \,\|Y_\lambda\|_F^2 \ge 0$, so the positivity hypothesis holds. The untwisted choice $\dagger = \mathrm{id}$ does not work for $n \ge 3$: $\mathrm{tr}_M(X \cdot X) < 0$ at $X = \sigma_1\sigma_2 - \sigma_2\sigma_1 \in H_3$. At $z = q^3/(q^2+1)$ the twisted form is degenerate, with radical the sum of the Wedderburn blocks of shapes with three or more rows, so the minimiser
 $$
 T_\beta^{\mathrm{Markov}} \;=\; S \cdot 1_H
 $$

@@ -35,8 +35,8 @@ $$
 $$
 
 with equality iff $\| X - S \cdot 1 \|^2_\tau = 0$, i.e. iff
-$X - S \cdot 1$ vanishes on every block with $y_\lambda > 0$. Under
-convention D the blocks with $y_\lambda = 0$ are exactly the shapes with
+$X - S \cdot 1$ vanishes on every block with $y_\lambda > 0$. At
+$z = q^3/(q^2+1)$ the blocks with $y_\lambda = 0$ are exactly the shapes with
 three or more rows, so the minimiser is $S \cdot 1$ up to that radical.
 (The untwisted form $\mathrm{tr}_M(X \cdot X)$ cannot be used: it is
 negative on $\sigma_1\sigma_2 - \sigma_2\sigma_1 \in H_3$.)

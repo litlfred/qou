@@ -21,8 +21,7 @@ $$
 Three squares enter with a plus sign and one with a minus, and the symmetric and
 antisymmetric parts are orthogonal, so $\mathrm{tr}(AB)$ on $M_d$ has signature
 $\bigl(\tfrac{d(d+1)}{2},\, \tfrac{d(d-1)}{2}\bigr)$. Summing over the blocks with
-$y_\lambda > 0$ reproduces the whole signature of $G$: convention C gives $(5,1,0)$
-and convention D gives $(4,1,1)$.
+$y_\lambda > 0$ reproduces the whole signature of $G$: at $z = q^3/(q^2+1)$ on $H_3(q)$, where $y_{(1^3)} = 0$, the signature is $(4,1,1)$.
 
 The negative direction is identified rather than measured. It is the antisymmetric
 element $E_{12} - E_{21}$ of the $M_2$ sitting in the $(2,1)$ block --- the rotation
@@ -52,7 +51,6 @@ physical observables, real-analytic bounds, transcendental constants, or numeric
 evaluation at the substrate parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
 only their archimedean realisation is specialised here. Under the bilinear pairing at
-$q_0$ the eigenvalues are $-0.855067,\, 0.101797,\, 0.855067^{\times 3},\, 3.476950$
-for convention C and $-0.752702,\, 0,\, 0.752702^{\times 3},\, 4.230339$ for
-convention D, where $\det G = 2.89 \times 10^{-51}$, i.e. zero at $50$ decimal places.
+$q_0$ for $z = q^3/(q^2+1)$, the eigenvalues are $-0.752702,\, 0,\, 0.752702^{\times 3},\, 4.230339$,
+where $\det G = 2.89 \times 10^{-51}$, i.e. zero at $50$ decimal places.
 Under the star pairing every one of those magnitudes recurs with a positive sign.

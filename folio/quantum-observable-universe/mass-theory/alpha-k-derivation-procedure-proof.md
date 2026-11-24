@@ -62,7 +62,7 @@ are tabulated by the formal derivation.  Each table records:*
 
 - *partition $\lambda \vdash n$ and curvature-rank
   $\mathrm{depth}(\lambda)$;*
-- *Jones–Markov weight $y_\lambda$: under convention D it vanishes on
+- *Jones–Markov weight $y_\lambda$: at $z = q^{3}/(q^{2}+1)$ it vanishes on
   every shape with three or more rows and equals
   $[a-b+1]_q/[2]_q^{a+b}$ on the two-row shape $(a, b)$, exactly and for
   generic $q$ ([Wedderburn–Bratteli recursion](#conj:wedderburn-bratteli-recursion));

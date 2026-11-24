@@ -1,4 +1,4 @@
-*Work over a field of characteristic not $3$ containing $q^{1/2}$, with $q^{1/2} \neq 0$, $q^{1/2} + q^{-1/2} \neq 0$ and $[2]_q = q + q^{-1} \neq 0$. Under the [pair Skein mass formula](#lem:pair-skein-mass-formula), in its convention-C frame, write $\mathcal{S}_{ab} = (q\mu_a + q^{-1}\mu_b)/(q^{1/2} + q^{-1/2})$ and take the nucleon masses to be*
+*Work over a field of characteristic not $3$ containing $q^{1/2}$, with $q^{1/2} \neq 0$, $q^{1/2} + q^{-1/2} \neq 0$ and $[2]_q = q + q^{-1} \neq 0$. Under the [pair Skein mass formula](#lem:pair-skein-mass-formula), write $\mathcal{S}_{ab} = (q\mu_a + q^{-1}\mu_b)/(q^{1/2} + q^{-1/2})$ and take the nucleon masses to be*
 
 $$
   m_p = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}},

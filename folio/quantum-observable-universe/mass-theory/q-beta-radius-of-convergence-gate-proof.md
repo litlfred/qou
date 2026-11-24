@@ -44,7 +44,7 @@ Both consequences are statements about the limit $k \to \infty$.
 They identify a unique simple dominant pole at $u = \rho$ only when
 the whole sequence is known.
 
-**Step 3 — what the window shows.** The pinned convention-C
+**Step 3 — what the window shows.** The extracted ladder
 coefficients $c_2, \ldots, c_{10}$ show the simple-pole signature at
 $\rho = u_0$ (table below). The ratio $c_{k+1}/c_k$ approaches
 $1/u_0 \approx 117.4$ by $k = 10$. The normalised magnitudes
@@ -82,9 +82,9 @@ one-decade window used by the $\S 4(d)$
 that fails it is inconsistent with this conjecture, which is a
 scope-limited negative, not a structural refutation.
 
-## Measured window (convention-C frame)
+## Measured window
 
-From the SDP extraction (convention C) at $q_0 = 1.10997858\ldots$:
+From the SDP ladder extraction at $q_0 = 1.10997858\ldots$:
 
 | quantity | value |
 |---|---|

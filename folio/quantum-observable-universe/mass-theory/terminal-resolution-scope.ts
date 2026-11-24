@@ -8,5 +8,5 @@ export default remark({
     "prop:terminal-resolution",
     "conj:flavor-split-substrate-mass",
   ],
-  tags: ["mass", "hadronic", "pair-skein", "convention-c", "scope"],
+  tags: ["mass", "hadronic", "pair-skein", "scope"],
 });

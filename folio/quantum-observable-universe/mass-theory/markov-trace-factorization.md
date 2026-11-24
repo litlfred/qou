@@ -1,4 +1,4 @@
-*Let $\mathcal{N}(Z, N)$ be the nuclear braid word in $H_A(q)$, presented with its crossings grouped by generator in increasing order, $\mathcal{N} = X_0 X_1 \cdots X_{A-2}$ with each $X_i$ a product of factors $c\,\sigma_i + d$ at the single generator $\sigma_i$. At each generator, let $(a_i, b_i)$ be the transfer-matrix-reduced chain coefficients, so $X_i = a_i \sigma_i + b_i$. Let $z = q^{3}/(q^{2}+1)$ (**convention D**) be the Markov trace parameter. The Markov trace factors exactly:*
+*Let $\mathcal{N}(Z, N)$ be the nuclear braid word in $H_A(q)$, presented with its crossings grouped by generator in increasing order, $\mathcal{N} = X_0 X_1 \cdots X_{A-2}$ with each $X_i$ a product of factors $c\,\sigma_i + d$ at the single generator $\sigma_i$. At each generator, let $(a_i, b_i)$ be the transfer-matrix-reduced chain coefficients, so $X_i = a_i \sigma_i + b_i$. Let $z = q^{3}/(q^{2}+1)$ be the Markov trace parameter. The Markov trace factors exactly:*
 
 $$
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(

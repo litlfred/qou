@@ -162,7 +162,7 @@ canonical basis or a Khovanov–Rozansky spectral sequence.
 ## Provenance of the tables
 
 Tables 2 and 3 above are computed
-at the muon-pin (CAL-2) $q_0$, in convention C, with $c_4 = c_3 b^4$ and
+at the muon-anchored (CAL-2) $q_0$, using the half-argument phase parameter $z = \sqrt{q}/(q+1)$, with $c_4 = c_3 b^4$ and
 $c_5 = -(b^2 + 1/2)$. That producer is the first in the corpus to evaluate the
 boxed five-rung product itself: the block's previously declared producer
 stops at $N=3$, carries no $c_5$, and is

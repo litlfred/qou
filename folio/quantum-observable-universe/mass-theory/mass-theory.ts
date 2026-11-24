@@ -101,7 +101,7 @@ export default chapter({
     }),
 
     section({
-      title: "Transfer Matrices, Skein Mass, and Convention-D Markov Corrections",
+      title: "Transfer Matrices, Skein Mass, and Two-Row Markov Corrections",
       label: "sec:mass-algebraic-consolidated",
       blocks: [
         "mass-algebraic-consolidated-intro",

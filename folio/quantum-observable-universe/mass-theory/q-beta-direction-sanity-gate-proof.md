@@ -115,7 +115,7 @@ $$
 which, at the retired $z = 1$ base target $\approx 0.998$, exceeds
 $10$ first at $m = 5$ (where it is $\approx 11.6$; at $m = 4$ it is
 $\approx 7.1$). The first rejected $m$ depends on the target: it is
-$m = 4$ at the convention-D target $\approx 1.76$. Repeated stabilisation can only
+$m = 4$ at the $z = q^3/(q^2+1)$ target $\approx 1.76$. Repeated stabilisation can only
 shrink the magnitude — it can never climb to a target of order unity,
 let alone to the linking-weight scale $\approx 2.5$ of the precedent —
 and, at that target, the gate screens out every member with $m \ge 5$
@@ -124,8 +124,3 @@ $m \le 4$ are not caught by the decade threshold; their exclusion
 rests on the direction argument itself, not on this gate.
 $\blacksquare$
 
-Under the alternative Convention-C weight
-$z = 1/(q^{1/2} + q^{-1/2})$. That weight satisfies $0 < z < 1/2$ for
-every $q > 1$ by AM–GM, which made the obstruction hold at all $q > 1$
-with first exceedance at $m = 4$ (ratio $\approx 16$). Neither holds
-at the canonical weight.

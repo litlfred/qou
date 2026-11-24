@@ -1,4 +1,4 @@
-*Let $q$ be real, not a root of unity, with $q^2 + 1 \neq 0$, and let $\mathrm{tr}_M$ be a Markov trace on the Hecke tower at the convention-D parameter $z = q^3/(q^2+1)$. For $x \in H_n(R, q)$, the transition amplitude on the eigenbasis is the Markov-weighted sum of partial traces:*
+*Let $q$ be real, not a root of unity, with $q^2 + 1 \neq 0$, and let $\mathrm{tr}_M$ be a Markov trace on the Hecke tower at the parameter $z = q^3/(q^2+1)$. For $x \in H_n(R, q)$, the transition amplitude on the eigenbasis is the Markov-weighted sum of partial traces:*
 
 $$
   \langle\psi_f|\psi_i\rangle_{\mathrm{eigenbasis}}

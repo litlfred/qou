@@ -1,4 +1,4 @@
-*The Markov trace under convention D is a* **state sum**. *On $H_2$ the two
+*The Markov trace at $z = q^{3}/(q^{2}+1)$ is a* **state sum**. *On $H_2$ the two
 Wedderburn blocks $(2)$ and $(1,1)$ carry Wenzl weights*
 
 $$
@@ -32,7 +32,7 @@ in $(0,1)$ at $q_0$.*
 
 ## This part is settled
 
-$L$ is exact, canonical to convention D, and correct wherever it appears. The
+The bond log-ratio $L$ is exact for $z = q^{3}/(q^{2}+1)$ and applies wherever the canonical Markov trace appears. The
 three constants are closed forms:
 
 | bond | $d$ | $z + d$ | $L = -\log(z+d)$ |

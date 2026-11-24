@@ -22,7 +22,7 @@ For an $A$-nucleon system constructed sequentially through quark, nucleon, and n
 
 The product "across all levels" needs the three character ratios to be ratios of
 the *same* functional. They are not. The quark and nucleon levels are Markov
-traces — weights $y_\lambda$, convention D (Wenzl $r = 2$), which admits only
+traces — weights $y_\lambda$ at $z = q^3/(q^2+1)$ (Wenzl level $r = 2$), which admits only
 $\le 2$-row shapes. The nuclear-jet level uses the conjectural classical-limit jet weight
 $\tilde w_\lambda = \dim_q(\lambda)^2/[n]_q!$
 summed over **all** partitions, and those two weight systems form
@@ -36,7 +36,7 @@ summed over **all** partitions, and those two weight systems form
 
 $\sum_\lambda \dim(\lambda)\,y_\lambda = 1$ exactly, as a normalised trace must;
 $\sum_\lambda \tilde w_\lambda = 0.98744$ at $q_0$. The $(1,1,1)$ row is
-structural — convention D is the $\mathfrak{sl}_2$ point of the Ocneanu family,
+structural — $z = q^3/(q^2+1)$ is the $\mathfrak{sl}_2$ point of the Ocneanu family,
 so $y_\lambda = 0$ once $\lambda$ has more than two rows, while $\tilde w$ is a
 ratio of positive quantum integers. **The jet measure charges a block the Markov
 trace annihilates.**

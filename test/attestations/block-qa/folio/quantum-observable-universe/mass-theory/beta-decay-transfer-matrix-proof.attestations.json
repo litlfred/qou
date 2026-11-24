@@ -1,0 +1,515 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix-proof",
+    "path": "folio/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix-proof"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:23.889Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "md:43 'All three matrices live in M_2(ℤ[q^{±1}])' is false: md:36-40 T_mix has entries ½(q−q⁻¹) ∉ ℤ[q^{±1}]; md:1 'governs every beta transition in every nucleus' is never proved; proof:75-77 'normalization required to map ... onto MeV'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
+      },
+      {
+        "field_hash": {
+          "md": "d29a84b9c207",
+          "ts": "a4547f5513d5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:26.197Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: a parenthetical gloss and a remark on the Form A / Form B bridge identity removed from the proof's closing commentary; the proof steps and the earlier findings (T_mix entries outside Z[q^{+-1}], 'every nucleus' unproved, MeV normalisation at proof.md:75-76) are unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: md:43 'All three matrices live in M_2(ℤ[q^{±1}])' is false: md:36-40 T_mix has entries ½(q−q⁻¹) ∉ ℤ[q^{±1}]; md:1 'governs every beta transition in every nucleus' is never proved; proof:75-77 'normalization required to map ... onto MeV'"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.633Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'the $1/z$ factor is **not a calibration knob** - it is the normalization required to map the eigenfunction observable onto MeV'; 'Form B is **not a separate observable** from the NF-counit form'.",
+        "notes": "Both are anti-laundering statements the repo's fit-vs-derivation discipline requires (no hidden knob; not a second independent observable). False-positive class 'substantive mathematical contrast'."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.682Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no setup-then-reframe pivot found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.723Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One appending dash: '**not a calibration knob** - it is the normalization required ...'.",
+        "notes": "Single instance in 2.7 kB, carrying the justification for the preceding denial. Kept."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.769Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no compulsive three-item cadence found."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.826Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Form B is the natural basis for $N \\geq 1$ brane-tower truncation analysis ...; Form A is canonical at $N = 0$ free neutron ...'",
+        "notes": "A factual division of labour between two established forms, each with its stated reason. Not a manufactured closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.890Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no narration of own emphasis found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.956Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no block-final restatement of what is already established found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.999Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no personal / warm register in institutional prose found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.052Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no unqualified maximum-strength claim found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.097Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The $\\mathfrak{Q}_\\beta^{B}$ paragraph runs one sentence across the sum range, the definition of $z$, and the normalisation caveat.",
+        "notes": "Long, but comma-delimited and verb-linked rather than a noun pile. Borderline; kept. NOTE (not a language trap): the $z$ defined here is convention C - recorded as anomaly 1 in the batch report."
+      }
+    ]
+  }
+}

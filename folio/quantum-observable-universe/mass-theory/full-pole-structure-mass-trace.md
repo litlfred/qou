@@ -1,4 +1,4 @@
-*Let $T_w \in H_n(q)$ be a standard basis element, with the Markov trace in convention D, $z = q^{3}/(q^{2}+1)$, and $h = q - q^{-1}$. Then:*
+*Let $T_w \in H_n(q)$ be a standard basis element, with the Markov trace at $z = q^{3}/(q^{2}+1)$ and $h = q - q^{-1}$. Then:*
 
 1. *$\mathrm{tr}_M(T_w)$ is a polynomial in $z$ of degree at most $n-1$ with coefficients in $\mathbb{Z}[h]$. Hence the cleared numerator*
 

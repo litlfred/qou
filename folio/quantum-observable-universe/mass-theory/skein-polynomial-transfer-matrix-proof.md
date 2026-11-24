@@ -106,10 +106,6 @@ topological invariant to the physical energy.
 | ${}^{56}\mathrm{Fe}$ | 56 | 1540 | 3245 |
 | ${}^{210}\mathrm{Bi}$ | 210 | 21945 | 44517 |
 
-Under the alternative Convention-C parameter
-$z = 1/(q^{1/2} + q^{-1/2})$, which cancels against the numerator and
-gives a polynomial in $q^{1/2}$ of degree $\leq A^2 - 1$ (table values
-$3, 8, 15, 195, 3135, 44099$).
 
 All evaluated in milliseconds.
 

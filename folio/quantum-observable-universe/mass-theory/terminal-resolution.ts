@@ -34,5 +34,5 @@ export default proposition({
     "lem:pair-skein-mass-formula",
   ],
   proofs: ["prf:terminal-resolution"],
-  tags: ["mass", "hadronic", "pair-skein", "convention-c"],
+  tags: ["mass", "hadronic", "pair-skein"],
 });
