@@ -17,7 +17,13 @@
 #      It needs the bean store mounted (state-mount.ts, which this runs when
 #      beans/defs is absent) and a platform that carries beans-board.ts
 #      (cat-harness-tools#2511); without either it is SKIPPED and says so.
-#   4. The Lean library render, the folio's `lean` visualiser declared in
+#   4. The Lean library render. FIRST the mounted Lean store (qou.json
+#      `lean-docs`: the Lean knowledge-graph viewer kept on
+#      cat/folio-assistant-sci/lean-docs, mounted at lean/ by state:mount),
+#      copied to <site>/lean/ with no Lean toolchain (skill lean-html-docs §3;
+#      the rail is added by the publish's rail pass). Only when the store is
+#      not mounted, the doc-gen4 build below.
+#      The doc-gen4 build: the folio's `lean` visualiser declared in
 #      qou.json: folio-assistant-sci's lean-docs-build.sh (doc-gen4, restores
 #      the warm lake cache first) and lean-render.ts (stages it at <site>/lean/
 #      with the harness navbar). Skill: folio-assistant-sci `lean-html-docs`.
@@ -64,7 +70,12 @@ else
   fi
 fi
 
-if [ "$LEAN" = 0 ]; then
+[ -f lean/data/index.json ] || bun "$PLAT/cat-harness-tools/scripts/state-mount.ts" >/dev/null || true
+if [ "$LEAN" != 1 ] && [ -f lean/index.html ] && [ -f lean/data/index.json ]; then
+  echo "== build-site: Lean render -> $SITE/lean (the mounted Lean KG store, lean/)"
+  rm -rf "$SITE/lean" && mkdir -p "$SITE/lean"
+  cp -a lean/. "$SITE/lean/"
+elif [ "$LEAN" = 0 ]; then
   echo "== build-site: Lean render skipped (QOU_LEAN_DOCS=0)"
 elif ! command -v lake >/dev/null 2>&1; then
   if [ "$LEAN" = 1 ]; then echo "build-site: QOU_LEAN_DOCS=1 but lake is not on PATH" >&2; exit 3; fi

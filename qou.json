@@ -218,6 +218,20 @@
       "_comment": "Same shape as the platform's own beans declaration (`scope: repository`, which dependents do not inherit, so qou declares its own) and as qou's fsh-guts entry above. The branch name is the owner's choice over the documented folio convention `cat/qou/beans`; the declaration names it explicitly, so no tool needs to compose it."
     },
     {
+      "id": "lean-docs",
+      "path": "lean/",
+      "scope": "repository",
+      "source": {
+        "kind": "branch",
+        "branch": "cat/folio-assistant-sci/lean-docs",
+        "keyedBy": "tip"
+      },
+      "graphTypologies": [
+        "lean"
+      ],
+      "description": "The rendered Lean library: the Lean knowledge-graph viewer (one thin page plus data/ shards loaded on demand) made by folio-assistant-sci's lean-kg-publish from doc-gen4's declaration data, kept on its own branch and mounted here by state:mount, never committed to main (skill lean-html-docs). scripts/build-site.sh copies the mount to _site/lean/, the route the `lean` entry below declares as its visualiser, so a site build needs no Lean toolchain."
+    },
+    {
       "id": "lean",
       "path": "folio/quantum-observable-universe/lean/",
       "graphTypologies": [
