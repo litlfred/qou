@@ -29,6 +29,7 @@ from __future__ import annotations
 import hashlib
 import os
 import pathlib
+import re
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
@@ -62,6 +63,20 @@ def duplicate_pdfs_in_doc_dirs() -> list[tuple[str, list[str]]]:
     return out
 
 
+def mismatched_arxiv_doc_dirs() -> list[tuple[str, str]]:
+    """`library/arxiv-<X>/` holding `<YYYY.NNNNN>[vN].pdf` where `<YYYY.NNNNN> != <X>` (bean qou-7t9z)."""
+    out = []
+    if not LIBRARY.is_dir():
+        return out
+    for d in sorted(p for p in LIBRARY.iterdir() if p.is_dir() and p.name.startswith("arxiv-")):
+        dir_base = re.sub(r"v\d+$", "", d.name[len("arxiv-"):])
+        for pdf in sorted(d.glob("*.pdf")):
+            m = re.match(r"^(\d{4}\.\d{4,5})(?:v\d+)?\.pdf$", pdf.name)
+            if m and m.group(1) != dir_base:
+                out.append((d.name, pdf.name))
+    return out
+
+
 def main() -> int:
     if not os.path.isdir(references_dir.references_dir(REPO)):
         print("cannot find folio/references/ -- run from the repo root", file=sys.stderr)
@@ -73,6 +88,12 @@ def main() -> int:
     for p in dangling:
         print(f"  DANGLING  {p}")
 
+    misstamped = mismatched_arxiv_doc_dirs()
+    if misstamped:
+        print(f"\nlibrary/  arxiv-<X>/ dirs with mismatched arXiv PDF stem: {len(misstamped)}")
+        for doc, pdf_name in misstamped:
+            print(f"  MISSTAMPED  library/{doc}/{pdf_name}")
+
     dups = duplicate_pdfs_in_doc_dirs()
     if dups:
         print(f"\nlibrary/  doc-id dirs with byte-identical PDF copies: {len(dups)}")
@@ -83,7 +104,7 @@ def main() -> int:
             for n in names:
                 print(f"      {n}")
 
-    return 1 if dangling else 0
+    return 1 if (dangling or misstamped) else 0
 
 
 if __name__ == "__main__":

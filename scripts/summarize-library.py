@@ -46,7 +46,9 @@ agent-written summary can be dropped in and will not be overwritten by a
 re-run (`--keep-agent`, the default).
 
 Usage:
-    scripts/summarize-library.py --apply            # summaries + index + injection
+    scripts/summarize-library.py --apply            # missing/changed summaries + index + injection (preserves existing)
+    scripts/summarize-library.py --only-missing     # explicit alias: generate only missing/changed summaries + update index
+    scripts/summarize-library.py --apply --regenerate  # rebuild all extractive summaries (still keeps provenance.kind == 'agent')
     scripts/summarize-library.py --index-only
     scripts/summarize-library.py --check            # exit 1 if stale
 """
@@ -206,8 +208,10 @@ def inject_context(docdir: str, brief: str, duplicate_of: str = "") -> int:
         fm += f'\ndoc_brief: "{esc}"'
         if duplicate_of:
             fm += f'\nduplicate_of: "{duplicate_of}"'
-        open(f, "w", encoding="utf-8").write("---\n" + fm + "\n---\n" + body)
-        n += 1
+        new_raw = "---\n" + fm + "\n---\n" + body
+        if new_raw != raw:
+            open(f, "w", encoding="utf-8").write(new_raw)
+            n += 1
     return n
 
 
@@ -242,38 +246,62 @@ def write_index(rows: list[dict]) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Two-tier summaries + scan index for the library")
-    ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--apply", action="store_true",
+                    help="write missing/stale summary.json files, inject changed doc_brief headers, and update INDEX.md")
+    ap.add_argument("--only-missing", action="store_true",
+                    help="write only missing/stale summary.json files (default behavior of --apply; implies --apply)")
+    ap.add_argument("--regenerate", action="store_true",
+                    help="rebuild existing extractive summary.json files as well (provenance.kind == 'agent' is always preserved)")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--index-only", action="store_true")
     ap.add_argument("--no-inject", action="store_true", help="skip front-matter context injection")
     args = ap.parse_args()
+    if args.only_missing:
+        args.apply = True
 
-    rows, injected, kept = [], 0, 0
+    rows, injected, kept, preserved_extractive = [], 0, 0, 0
     dup_dirs: list[tuple[str, str]] = []
     for d in sorted(glob.glob(os.path.join(LIB, "*"))):
         if not os.path.isdir(d):
             continue
+        sj_path = os.path.join(d, "structure.json")
         try:
-            dup = json.load(open(os.path.join(d, "structure.json"))).get("duplicate_of")
+            art_meta = json.load(open(sj_path)) if os.path.exists(sj_path) else {}
         except Exception:
-            dup = None
+            art_meta = {}
+        if art_meta.get("container"):
+            continue
+        dup = art_meta.get("duplicate_of")
         if dup:
             dup_dirs.append((d, dup))
             continue
+        expected_doc_id = art_meta.get("doc_id") or os.path.basename(d)
+        expected_sha = (art_meta.get("source") or {}).get("sha256", "")[:16]
         path = os.path.join(d, "summary.json")
         if os.path.exists(path):
             try:
                 prev = json.load(open(path))
             except Exception:
                 prev = {}
-            if (prev.get("provenance") or {}).get("kind") == "agent":
-                # Keep the summary, but still push its brief into the chunks:
-                # an agent-written brief is the one most worth having there,
-                # and an earlier version of this skipped injection along with
-                # regeneration, leaving the best briefs out of the sections
-                # that most needed them.
+            prov_kind = (prev.get("provenance") or {}).get("kind")
+            if prov_kind == "agent":
+                # Keep the summary, and ensure its brief is present in chunks
+                # (`inject_context` is a no-op when sections are already current).
                 rows.append(prev)
                 kept += 1
+                if args.apply and not args.index_only and not args.no_inject:
+                    injected += inject_context(d, prev.get("brief", ""))
+                continue
+            if (not args.regenerate
+                    and prev.get("_schema") == SCHEMA
+                    and prev.get("doc_id") == expected_doc_id
+                    and prev.get("source_sha256") == expected_sha
+                    and prev.get("brief")):
+                # Preserve existing up-to-date extractive summary on disk so
+                # ingesting one new paper does not clobber ~740 existing entries
+                # (`qou-pmgw`). Pass `--regenerate` when extractor rules change.
+                rows.append(prev)
+                preserved_extractive += 1
                 if args.apply and not args.index_only and not args.no_inject:
                     injected += inject_context(d, prev.get("brief", ""))
                 continue
@@ -304,7 +332,7 @@ def main() -> int:
 
     bt = sum(r["tokens"]["brief"] for r in rows)
     et = sum(r["tokens"]["extended"] for r in rows)
-    print(f"{len(rows)} documents ({kept} agent-written kept)")
+    print(f"{len(rows)} documents ({kept} agent-written kept, {preserved_extractive} existing extractive preserved)")
     print(f"  index (scan tier)   ~{bt:,} tokens total")
     print(f"  extended summaries  ~{et:,} tokens total, ~{et//max(len(rows),1)} each")
     if injected:
