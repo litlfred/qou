@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-24T08:11:15Z
+updated_at: 2026-11-24T08:21:23Z
 ---
 
 ## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)
@@ -28,10 +28,10 @@ A **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit *
 
 This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/beans` on **every routine Swarm Monitor checkin** (currently `*/10 * * * *` periodic mode, and also renderable on-demand anytime). If the active Swarm Coordinator / Merge Manager ever stalls, runs out of context, or disconnects, **any successor agent reading this single bean (`beans show qou-s028`) has 100% of the end-state criteria, work-item queues, owner rulings, fences, worktree map, and commands required to take over seamlessly in `< 60` seconds.**
 
-- **Last Heartbeat Refresh:** `2026-11-24T08:11:14Z` (`2026-11-24 03:11:14 `)
-- **`litlfred/qou` `origin/main` Tip:** `a053f8c64bb`
-- **Live Queue Counts (`litlfred/qou`):** Open PRs = `198` (`188` Ready / `10` Draft) · Merged Since `2026-11-23` = `44` (latest: #9241, #9240, #9238, #9237, #9236, #9232, #9221, #9219, #9216, #9213, #9212, #9211) · Open GitHub Issues = `95`
-- **Disk Health (`/`):** `/dev/disk3s1s1  927G  912G   15G  99% /`
+- **Last Heartbeat Refresh:** `2026-11-24T08:21:22Z` (`2026-11-24 03:21:22 `)
+- **`litlfred/qou` `origin/main` Tip:** `d33a9b58054`
+- **Live Queue Counts (`litlfred/qou`):** Open PRs = `196` (`186` Ready / `10` Draft) · Merged Since `2026-11-23` = `46` (latest: #9241, #9240, #9238, #9237, #9236, #9234, #9232, #9230, #9221, #9219, #9216, #9213) · Open GitHub Issues = `93`
+- **Disk Health (`/`):** `/dev/disk3s1s1  927G  913G   14G  99% /`
 
 ---
 
@@ -64,9 +64,9 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 
 | Worktree | Checked-Out Branch & HEAD | Assigned Track & Responsibility | Latest Commit Subject |
 | :--- | :--- | :--- | :--- |
-| `merge-runner` | `claude/sm8w-strong-cp-theta-qcd-string-tension-20261123` @ `31ff72203cc` (`dirty=0`) | Serial prepare-merge-auto Runner onto origin/main (Wave A -> Wave B -> Wave C) | chore(sm8w): stamp 80-dps witness for qou-tcpx Strong-CP & Wilson string te |
-| `ws6-exposition-pdf` | `claude/gap2b-mtau-s3-circulant-koide-test-20261123` @ `3465c90bf3f` (`dirty=0`) | Q1 Staged-Branch PR Opener (Wave B, 14 branches) & Completed-Workitem Open-PR Auditor (Wave C) | docs(gap2b): document 80-dps S3/Z3 circulant Koide & q0 phase test results  |
-| `ws4-mathlib-infra` | `claude/q3-lean-reservoir-libs-isolate-20261124` @ `edaa9286445` (`dirty=4`) | Q3 Option 1: Lean 83->12 QOU.<Chapter> Subgraphs + 7 Top-Level Reservoir lean_libs + apply-lean-reservoir-migration.py --fixup-branch + skill updates | docs(probes): add qou-slfm Reeb length/time & LCQ Bekenstein-Hawking analys |
+| `merge-runner` | `claude/w7-chen-mult-integral-masstrace-20261123` @ `fc8eefbee82` (`dirty=3`) | Serial prepare-merge-auto Runner onto origin/main (Wave A -> Wave B -> Wave C) | chore(witness): add 80-dps w7-chen-multiplicative-integral witness (qou-9sj |
+| `ws6-exposition-pdf` | `claude/salvage-8143-jekutieli-d2-20261124` @ `1a22157fe81` (`dirty=11`) | Q1 Staged-Branch PR Opener (Wave B, 14 branches) & Completed-Workitem Open-PR Auditor (Wave C) | chore(sm8w): stamp 80-dps witness for qou-tcpx Strong-CP & Wilson string te |
+| `ws4-mathlib-infra` | `claude/q3-lean-reservoir-libs-isolate-20261124` @ `edaa9286445` (`dirty=6`) | Q3 Option 1: Lean 83->12 QOU.<Chapter> Subgraphs + 7 Top-Level Reservoir lean_libs + apply-lean-reservoir-migration.py --fixup-branch + skill updates | docs(probes): add qou-slfm Reeb length/time & LCQ Bekenstein-Hawking analys |
 | `main-base` | `claude/q2-leibniz-relational-spine-20261124` @ `169287f3063` (`dirty=0`) | Q2 Option 1: Three-Stop Leibniz Relational Spine (Ch. 0 intro, Ch. 2 Rieffel/Jimbo, Ch. 13 Fefferman Lorentzian) + live DOIs | chore(manifest): stamp additive q0_anchor_manifest with suffixed producers  |
 | `ws5-nov19-rebase` | `claude/q4a-mba-9block-algorithms-annex-20261124` @ `a053f8c64bb` (`dirty=0`) | Q4 Option 1: Compact 9-Block L0-L4 Algorithms Annex (fixing 6 bugs) + 14->6 Annexes A-F with 80-dps Frechet-Jacobian Master Tables | chore(witness): refresh SHA-stamped h4-gpmt-cumulant-ratio-and-lp-support w |
 | `ws12-pr9180` | `claude/gap1b-4he-tetrahedral-k4-flux-ring-20261123` @ `9e1b128756e` (`dirty=0`) | Gap 1B (qou-3kkz): 4He Tetrahedral K_4 Flux-Ring & 462D 3D Jacobi Variational Compression + idle beans qou-bgur, qou-kjik | fix(probes): compare unrounded 80-dps A=2 energies in assertion 6 & update  |
@@ -79,9 +79,14 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 
 ## 3. Live Sampled Compute / Sweep Processes
 
-- `58921 0.0 1200 17:24 zsh -c WT=/Users/litlfred/space_cats/qou-wt/ws2-bridge-hecke\012cd "$WT" && \\012git status --short && \\012g`
-- `61190 93.7 70928 17:00 python3 -u computations/probes/six_strand_photon_pair/six_strand_pair_probe.py`
-- `80760 92.8 784464 07:36 python3 -u computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b_4he_tetrahedral_k4_flux_ring_probe`
+- `44601 0.0 2544 02:51 zsh -c set -euo pipefail\012export LEAN_NUM_THREADS=1 OMP_NUM_THREADS=1 RAYON_NUM_THREADS=1 LEAN_NO_TREE_SYNC`
+- `44988 89.7 56144 00:11 python3 computations/mpf_context_dps_audit.py --strict`
+- `58921 0.0 1200 27:32 zsh -c WT=/Users/litlfred/space_cats/qou-wt/ws2-bridge-hecke\012cd "$WT" && \\012git status --short && \\012g`
+- `61190 92.8 70400 27:08 python3 -u computations/probes/six_strand_photon_pair/six_strand_pair_probe.py`
+- `25963 0.0 1264 05:31 zsh -c WT=/Users/litlfred/space_cats/qou-wt/ws15-p3-p5-p6\012cd "$WT/tools/hecke-engine" && \\012OMP_NUM_THRE`
+- `25966 0.0 512 05:31 /usr/bin/time -l nice -n 10 /tmp/ws15-cargo-target/release/hecke-tower-trace --chain 9:10 --chain 10:11 --comp`
+- `25968 92.7 83984 05:31 /tmp/ws15-cargo-target/release/hecke-tower-trace --chain 9:10 --chain 10:11 --compare ../../computations/pr`
+- `80760 92.5 723856 17:44 python3 -u computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b_4he_tetrahedral_k4_flux_ring_probe`
 
 ---
 
@@ -102,9 +107,9 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 - #9247 (`claude/gap2-mtau-hyperbolic-census-torsion-20261123`): feat(sm,lean,probes): Gap 2A <=8x 3-braid hyperbolic census, torsion t
 - #9245 (`claude/gap1-4he-wigner-pauli-12q-20261123`): feat(nuclear,lean,probes): Gap 1A 4He 12q Pauli antisymmetrizer & Wign
 - #9243 (`claude/prior-art-doi-verified-pkg-20261123`): bib,intro,qou: add live-DOI-verified consolidated prior-art package (q
-- #9234 (`claude/sm8w-strong-cp-theta-qcd-string-tension-20261123`): feat(sm8w): Strong-CP theta_QCD=0 writhe/det cancellation & SU(3)_c Wi
-- #9230 (`claude/sm8w-neutrino-unknot-sweedler-lift-20261123`): feat(sm): Non-zero unknot 0_1 neutrino Sweedler mass lift, Dirac/Major
 - #9228 (`claude/w7-chen-mult-integral-masstrace-20261123`): feat(lean,probes): W7 Chen multiplicative integral, KZ monodromy & Mas
+- #9227 (`claude/sm8w-ewsb-vew-mh-mz-rg-20261123`): feat(sm,lean,probes): formalize EWSB Sweedler scale, Higgs stability, 
+- #9225 (`claude/sm8w-bring-ngen3-ckm-tau-20261123`): feat(sm8w): qou-gen3 Bring N_gen=3 zero-mode branching, CKM/PMNS algeb
 
 ---
 
