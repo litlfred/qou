@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-24T13:22:01Z
+updated_at: 2026-11-24T13:30:36Z
 ---
 
 ## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)
@@ -29,10 +29,10 @@ A **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit *
 
 This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/beans` on **every routine Swarm Monitor checkin** (currently `*/10 * * * *` periodic mode, and also renderable on-demand anytime). If the active Swarm Coordinator / Merge Manager ever stalls, runs out of context, or disconnects, **any successor agent reading this single bean (`beans show qou-s028`) has 100% of the end-state criteria, work-item queues, owner rulings, fences, worktree map, and commands required to take over seamlessly in `< 60` seconds.**
 
-- **Last Heartbeat Refresh:** `2026-11-24T13:22:00Z` (`2026-11-24 08:22:00 `)
+- **Last Heartbeat Refresh:** `2026-11-24T13:30:35Z` (`2026-11-24 08:30:35 `)
 - **`litlfred/qou` `origin/main` Tip:** `d7e1269e1e0`
 - **Live Queue Counts (`litlfred/qou`):** Open PRs = `173` (`163` Ready / `10` Draft) · Merged Since `2026-11-23` = `99` (latest: #9337, #9335, #9333, #9331, #9329, #9327, #9325, #9323, #9321, #9320, #9318, #9316) · Open GitHub Issues = `77`
-- **Disk Health (`/`):** `/dev/disk3s1s1  927G  908G   20G  98% /`
+- **Disk Health (`/`):** `/dev/disk3s1s1  927G  909G   19G  99% /`
 
 ---
 
@@ -69,13 +69,13 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 | Worktree | Checked-Out Branch & HEAD | Assigned Track & Responsibility | Latest Commit Subject |
 | :--- | :--- | :--- | :--- |
 | `merge-runner` | `mt-local/9337` @ `8e2fba336ce` (`dirty=0`) | Serial prepare-merge-auto Runner onto origin/main (Wave A -> Wave B -> Wave C) | feat(qou-1buz,qou-d8up,qou-exr5,qou-f13w,qou-fiaf,qou-ni2p): disambiguate F |
-| `ws6-exposition-pdf` | `claude/expo-library-hygiene-jbbk-7t9z-lnkt-pmgw-20261124` @ `acb646cc6fe` (`dirty=154`) | Q1 Staged-Branch PR Opener (Wave B, 14 branches) & Completed-Workitem Open-PR Auditor (Wave C) | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
+| `ws6-exposition-pdf` | `claude/expo-library-hygiene-jbbk-7t9z-lnkt-pmgw-20261124` @ `acb646cc6fe` (`dirty=525`) | Q1 Staged-Branch PR Opener (Wave B, 14 branches) & Completed-Workitem Open-PR Auditor (Wave C) | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
 | `ws4-mathlib-infra` | `claude/q3-lean-reservoir-libs-codemod-20261124` @ `0c54179d3b6` (`dirty=0`) | Q3 Option 1: Lean 83->12 QOU.<Chapter> Subgraphs + 7 Top-Level Reservoir lean_libs + apply-lean-reservoir-migration.py --fixup-branch + skill updates | refactor(lean,qou-lref): execute Q3 Option 1 7+1 Reservoir lean_libs & 83-> |
 | `main-base` | `HEAD` @ `acb646cc6fe` (`dirty=0`) | Q2 Option 1: Three-Stop Leibniz Relational Spine (Ch. 0 intro, Ch. 2 Rieffel/Jimbo, Ch. 13 Fefferman Lorentzian) + live DOIs | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
-| `ws5-nov19-rebase` | `claude/hygiene-nz8e-ozts-7y1z-4w77-20261124` @ `78857b5cb79` (`dirty=4`) | Q4 Option 1: Compact 9-Block L0-L4 Algorithms Annex (fixing 6 bugs) + 14->6 Annexes A-F with 80-dps Frechet-Jacobian Master Tables | fix(qou-nz8e,qou-ozts,qou-7y1z,qou-4w77): 80-dps chi_numpy benchmark, apply |
-| `ws12-pr9180` | `claude/crosscheck-9zcl-r0fd-fls0-f0qa-cmjv-20261124` @ `acb646cc6fe` (`dirty=9`) | Gap 1B (qou-3kkz): 4He Tetrahedral K_4 Flux-Ring & 462D 3D Jacobi Variational Compression + idle beans qou-bgur, qou-kjik | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
-| `ws1-precision` | `claude/precision-4w7k-5le1-5rf8-58zq-20261124` @ `acb646cc6fe` (`dirty=9`) | ws1-precision (#9104): 12-Witness q0 Precision Refill (11/12 all_nuclides_sdp + gates) + idle beans qou-n2dp, qou-5d0x | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
-| `ws15-p3-p5-p6` | `claude/editorial-audit-0sq1-20d3-9rbo-73y1-20261124` @ `acb646cc6fe` (`dirty=0`) | ws1-precision Witness 12/12 (markov-trace-two-row-tower-rust) + idle beans qou-73kb, qou-m1tr | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
+| `ws5-nov19-rebase` | `claude/hygiene-nz8e-ozts-7y1z-4w77-20261124` @ `311ddfc7c45` (`dirty=1`) | Q4 Option 1: Compact 9-Block L0-L4 Algorithms Annex (fixing 6 bugs) + 14->6 Annexes A-F with 80-dps Frechet-Jacobian Master Tables | chore(witness): stamp 80-dps witnesses for qou-nz8e, qou-ozts, qou-7y1z, qo |
+| `ws12-pr9180` | `claude/crosscheck-9zcl-r0fd-fls0-f0qa-cmjv-20261124` @ `acb646cc6fe` (`dirty=16`) | Gap 1B (qou-3kkz): 4He Tetrahedral K_4 Flux-Ring & 462D 3D Jacobi Variational Compression + idle beans qou-bgur, qou-kjik | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
+| `ws1-precision` | `claude/precision-4w7k-5le1-5rf8-58zq-20261124` @ `acb646cc6fe` (`dirty=7`) | ws1-precision (#9104): 12-Witness q0 Precision Refill (11/12 all_nuclides_sdp + gates) + idle beans qou-n2dp, qou-5d0x | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
+| `ws15-p3-p5-p6` | `claude/editorial-audit-0sq1-20d3-9rbo-73y1-20261124` @ `acb646cc6fe` (`dirty=12`) | ws1-precision Witness 12/12 (markov-trace-two-row-tower-rust) + idle beans qou-73kb, qou-m1tr | feat(qou-4b6g,qou-njry,qou-1l6l,qou-b4fe,qou-t3ox,qou-vfl4): atlas provenan |
 | `ws2-bridge-hecke` | `claude/frobenius-gram-a71h-z21-bisect-85o2-20261124` @ `33d9d30f73c` (`dirty=0`) | q0-Anchor Final 21 Consistency Drain (qou-q0rf) + idle beans qou-jdrx, qou-ke35 | precision-gates: clear new CODATA stale-edition and witness-value-copy regr |
 | `ws3-l2-physics` | `claude/prose-bib-ahys-bagd-a8rj-d93c-df74-ffkf-20261124` @ `d7e1269e1e0` (`dirty=0`) | One-Voice Final 31->0 Monograph Commentary-Audit Drain (paper-commentary-audit.ts ratchet -> 0) | feat(qou-1buz,qou-d8up,qou-exr5,qou-f13w,qou-fiaf,qou-ni2p): disambiguate F |
 
@@ -83,12 +83,12 @@ This **Stability** Swarm epic is updated and pushed to `origin/cat/cat-harness/b
 
 ## 3. Live Sampled Compute / Sweep Processes
 
-- `27841 0.0 1216 06:19 zsh -c export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS`
-- `71856 76.9 100048 00:17 python3 computations/audits/docstring_label_carrier_audit.py --max 0`
-- `58376 0.0 2496 01:26 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws5-nov19-rebase && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_THRE`
-- `63157 72.1 97776 01:03 python3 computations/chi_numpy_dtype_fix_benchmark.py`
-- `41206 0.0 1216 02:41 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_THR`
-- `41217 0.0 26272 02:40 python3 scripts/lean-library-sweep.py --package QOU --jobs 1 --shadow /tmp/ws51-codemod-shadow`
+- `42222 51.0 302672 00:13 python3 computations/audits/witness_value_copy_audit.py --baseline`
+- `58376 0.0 1936 10:01 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws5-nov19-rebase && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_THRE`
+- `41206 0.0 1200 11:16 zsh -c cd /Users/litlfred/space_cats/qou-wt/ws4-mathlib-infra && \\012export LEAN_NUM_THREADS=1 RAYON_NUM_THR`
+- `41217 0.0 14368 11:15 python3 scripts/lean-library-sweep.py --package QOU --jobs 1 --shadow /tmp/ws51-codemod-shadow`
+- `42681 0.0 2416 00:07 zsh -c export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS`
+- `42974 58.9 36864 00:01 python3 /Users/litlfred/space_cats/qou-wt/ws5-nov19-rebase/computations/audits/tools_qou_mass_precision_aud`
 
 ---
 
