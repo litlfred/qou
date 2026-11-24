@@ -46,12 +46,11 @@
             "site:papers",
             "site:repo-files"
           ],
-          "links": "report",
+          "links": "refuse",
           "coverage": "report"
         }
       },
-      "_site_comment": "The recipe (cat-harness-tools build-instance-site.ts): site:document writes the Documents landing and one interactive page per paper at en/<slug>/ (folio-assistant-core build-document-site.ts; qou, ugb, fred2005, bach2013). The site steps run on the built site: the LaTeX PDF as each paper's export (en/<slug>/export/<slug>-latest.pdf), the accuracy scorecard (/accuracy/), the work plan (/beans/), the integrated QA panel (/qa/), the Lean library render (/lean/: the stored render for now; owner ruling 2026-11-24 \"2 verso\" moves it to the Verso tool, so it is one declared slot, scripts/site-step.sh lean), the /papers/<slug>/ redirects, and CONTRIBUTING and LICENSE. coverage is `report` because the work plan and QA writers ship in cat-harness-tools#2511/#2512, not yet on the pinned platform; flip it to `refuse` once they are.",
-      "_links_comment": "links is `report`, not `refuse`, for one reason: the paper's own text carries links to files that are not in the repository (measured 2026-11-24 after site:relink: 6 targets on en/quantum-observable-universe/, e.g. ../braids-and-knots/ew-interface-knot.md and ../lean/QOU/Mass/CoordinationSaturation.lean, which moved to QOU/MassTheory/). Those are content fixes, put to the owner on PR #9396; flip this to `refuse` once they are made, so a dead link the BUILD makes refuses the publish again."
+      "_site_comment": "The recipe (cat-harness-tools build-instance-site.ts): site:document writes the Documents landing and one interactive page per paper at en/<slug>/ (folio-assistant-core build-document-site.ts; qou, ugb, fred2005, bach2013). The site steps run on the built site: the LaTeX PDF as each paper's export (en/<slug>/export/<slug>-latest.pdf), the accuracy scorecard (/accuracy/), the work plan (/beans/), the integrated QA panel (/qa/), the Lean library render (/lean/: the stored render for now; owner ruling 2026-11-24 \"2 verso\" moves it to the Verso tool, so it is one declared slot, scripts/site-step.sh lean), the /papers/<slug>/ redirects, and CONTRIBUTING and LICENSE. coverage is `report` because the work plan and QA writers ship in cat-harness-tools#2511/#2512, not yet on the pinned platform; flip it to `refuse` once they are."
     },
     {
       "name": "folio-assistant-sci",

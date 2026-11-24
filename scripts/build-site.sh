@@ -46,5 +46,5 @@ bun run cat-harness-tools/scripts/build-instance-site.ts --root . --instance qou
 
 rm -rf "$SITE"
 mkdir -p "$(dirname "$SITE")"
-cp -a "$WORK/_site" "$SITE"
+mv "$WORK/_site" "$SITE"
 echo "== build-site: done ($SITE)"
