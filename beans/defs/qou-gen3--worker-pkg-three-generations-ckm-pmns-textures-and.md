@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: high
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T23:25:19Z
+updated_at: 2026-11-24T02:18:47Z
 parent: qou-sm8w
 ---
 
@@ -24,3 +24,5 @@ parent: qou-sm8w
   - Seifert-Torres / reduced-Burau factorisation for `(2, 2n+1)`-cabled figure-eight satellites, degree-10 palindromicity & `Delta_{C_{2,7}(4_1)}(-1) = 7`, and golden-ratio sign node across `phi^2`.
 - **Pre-registered 80-dps Probe & Stamped Witness (`q0Anchor = "proton"`, `stale: False`, `14/14` assertions):** `computations/probes/sm8w_bring_ngen3_ckm_tau/` (`PREREGISTRATION.md` committed first in `b79c58b664d`).
   - Honest hits & misses: `PMNS-P1b` gives `sin^2(theta_13) = h^2/2 = 0.021853` (`-0.67%`), `sin^2(theta_12) = 0.297722` (`-3.02%`), `sin^2(theta_23) = 0.488829` (`-10.47%`); `CKM-C1a` gives `|V_us|` `-6.79%`, `|V_cb|` `+3.57%`, `|V_ub|` `-23.81%`, `J_CP` `-17.25%`; all parameter-free satellite `T(2,7)--4_1` and bare `5_2` / `T(2,7)` `tau/e` candidates miss CODATA `3477.23` (closest bare `Vol(5_2)/hbar_{q_0}^3 = 2907.49` at `-16.39%`, cabled Alexander ratio `2390.74` at `-31.25%`, `H_6(q_0)` cabled Markov bend `1.01703` vs observed `12.2952`), leaving `m_tau` and unconditional chiral selection open.
+
+Follow-up Gap 3 primary derivation (qou-hlea) staged at ff3ae6c8158 on origin/claude/gap3-ngen3-bring-prym-riemann-roch-20261123.
