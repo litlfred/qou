@@ -3,5 +3,3 @@
 $$
   \mathfrak{u} =  \nu \big|_{\mathcal{B}_3, +}
 $$
-
-*The up quark is not a distinct knot type. It is the unknot distinguished by its environment. It is threaded through a color tube and Borromean-linked with two other unknots.*

@@ -1,0 +1,1 @@
+The measurability conditions $c_1(\mathcal{F}) = 0$ and $c_2(\mathcal{F}) = 0$ ensure that the surface integral defining $S_q(U)$ is independent of the choice of bounding surface, via the Yekutieli non-abelian Stokes theorem.

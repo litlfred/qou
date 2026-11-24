@@ -62,6 +62,7 @@ export default chapter({
       blocks: [
         "brings-surface-qou-intro",
         "brings-surface-def",
+        "brings-surface-def-remark",
         "brings-surface-example",
         "brings-realisations",
         "brings-physics-interpretations",
@@ -118,6 +119,7 @@ export default chapter({
         "brings-smoothness-resolution",
         "brings-smoothness-chart-regularity",
         "briggs-klein-chart",
+        "briggs-klein-chart-remark",
         "brings-smoothness",
         "colour-ratio-mobius-matrix",
         "colour-ratio-branch-point",
@@ -135,6 +137,7 @@ export default chapter({
       blocks: [
         "spectral-gauge-intro",
         "quaternionic-spectral-resolvents",
+        "quaternionic-spectral-resolvents-remark",
         "omega-constraints",
         "spectral-dynamics",
         // Tetraplectic layer, incorporated 2026-08-24 from the unregistered
@@ -147,6 +150,7 @@ export default chapter({
         // bean `qou-8p1g` ride on the blocks as authorNotes rather than
         // being dropped.
         "bring-cone-tetraplectic-structure",
+        "bring-cone-tetraplectic-structure-remark",
         "bring-cone-reeb-quaternionic-twist",
         "bring-cone-reeb-quaternionic-twist-proof",
         "tetraplectic-su2-gauge-reading",
@@ -255,9 +259,13 @@ export default chapter({
       blocks: [
         "cohomological-defect-intro",
         "levi-form-defect",
+        "levi-form-defect-remark",
         "maximal-ideal-defect",
+        "maximal-ideal-defect-remark",
         "local-cohomology-group",
+        "local-cohomology-group-remark",
         "unit-particle-state",
+        "unit-particle-state-remark",
         "topological-charge-quantization",
         "defect-legendrian-knot",
       ],

@@ -122,6 +122,7 @@ export default chapter({
         "observability-independent-motivation",
         "observability-independent-motivation-table-data",
         "substrate-line-bundle",
+        "substrate-line-bundle-remark",
         "substrate-line-bundle-base-not-fibre",
         "substrate-gm-torsion",
         "observability-q-independent",

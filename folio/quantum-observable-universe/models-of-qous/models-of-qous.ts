@@ -137,6 +137,7 @@ export default chapter({
         // chapter and shouldn't host this depth of content.
         "observation-archimedean",
         "spatial-realization-functor",
+        "spatial-realization-functor-remark",
         "spatial-realization-base-generality",
         "categorical-archimedean-bridge",
         "categorical-archimedean-bridge-proof",

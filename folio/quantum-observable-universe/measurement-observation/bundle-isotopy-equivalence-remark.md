@@ -1,0 +1,1 @@
+The physical content of a bundle initial condition depends only on which hadron types are placed where, not on the index labels or the particular representative of each ambient isotopy class; isotopy equivalence identifies exactly the conditions with the same content.
