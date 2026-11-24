@@ -19,12 +19,12 @@ export default remark({
     "story-B-canonical",
     "1ppb-roadmap",
   ],
-  computation: {
-    engine: "python+mpmath",
-    script: "computations/probe_q_beta_high_precision_ck.py",
-    status: "experimental",
-  },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Removed dangling `computation` reference to the retired exploratory script `computations/probe_q_beta_high_precision_ck.py`; the categorical derivation steps summarized here are carried by `prop:hoefsmit-V21-cos-symmetrization`, `prop:markov-trace-frobenius-selection`, `prop:hecke-1d-irrep-closed-form-character`, `prop:tau-M-asymptotic-rep-theory`, and `prop:q-beta-categorical-precision-ladder`.",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The ambiguity, left open by [`probe_q_beta_high_precision_ck.py`](../../computations/probe_q_beta_high_precision_ck.py), is settled\n\n[`probe_q_beta_gamma_gamma_derivation.py`](../../computations/probe_q_beta_gamma_gamma_derivation.py) runs the categorical-derivation chain end-to-end. The N=2\n\nA Lean-level proof requires formalising the 3-fold Markov closure" },
     {
       kind: "status",

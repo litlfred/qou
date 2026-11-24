@@ -15,8 +15,9 @@ export default remark({
     "scaffolding",
   ],
   computation: {
-    engine: "sympy",
-    script: "computations/probe_per_wedderburn_block_ck.py",
+    engine: "python+mpmath",
+    script: "computations/qbeta/qbeta_per_block_paper_closed_forms.py",
+    witness: "computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json",
     status: "experimental",
   },
   authorNotes: [
