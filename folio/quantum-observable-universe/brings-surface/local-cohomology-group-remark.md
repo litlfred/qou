@@ -1,0 +1,1 @@
+The [local cohomology group](#def:local-cohomology-group) $H^1_{\mathfrak{m}_1}(A)$ measures the algebraic obstruction to extending sections across the defect at $z = 1$. In this non-commutative setting, the derived category framework generalizes the commutative concept of principal parts supported at the singularity.

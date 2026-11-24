@@ -32,6 +32,7 @@ export default chapter({
       blocks: [
         "rigid-monoidal-intro",
         "snake-identity",
+        "snake-identity-remark",
         "rigid-monoidal-category",
         "monoidal-justification",
         "rigid-monoidal-vect",
@@ -90,6 +91,7 @@ export default chapter({
         "frobenius-relation-proof",
         "frobenius-relation-su2",
         "involutive-structure",
+        "involutive-structure-example",
         "positive-definite-dagger",
         "positive-definite-dagger-proof",
         "positive-dagger-su2",
@@ -105,6 +107,7 @@ export default chapter({
       blocks: [
         "qu-structures-intro",
         "categorical-connection",
+        "categorical-connection-remark",
         "categorical-connection-exists",
         "categorical-connection-exists-proof",
         "categorical-connection-unique",
@@ -112,6 +115,7 @@ export default chapter({
         "categorical-connection-su2",
         "categorical-jet",
         "categorical-hodge-star",
+        "categorical-hodge-star-remark",
         "categorical-hodge-star-exists",
         "categorical-hodge-star-exists-proof",
         "categorical-hodge-star-unique",

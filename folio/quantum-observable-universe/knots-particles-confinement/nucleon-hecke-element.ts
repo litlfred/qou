@@ -16,4 +16,5 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:typed-crossing-operator"],
+  examples: ["ex:nucleon-hecke-element-examples"],
 });

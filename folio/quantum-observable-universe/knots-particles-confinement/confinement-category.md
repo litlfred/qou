@@ -11,5 +11,3 @@
 
 - ***Composition:** concatenation of Hecke-algebra embeddings. One right-composes $\mathrm{dress}$ with $\uparrow_\ell$ and $\downarrow_\ell$.*
 - ***Identity:** the identity embedding $\mathrm{id}_P: H_{n_0}(q) \hookrightarrow H_{n_0}(q)$.*
-
-*Unfolding and folding are mutually inverse when restricted to particles whose coarse representation captures the full partition content. The morphism $\mathrm{dress}$ is generally not invertible because the binding subword may not be uniquely reversible.*

@@ -73,6 +73,7 @@ export default chapter({
       blocks: [
         "surreal-construction-grading-intro",
         "birthday-grading",
+        "birthday-grading-remark",
         "birthday-grading-archimedean",
         "birthday-grading-substrate",
         "sign-sequence-of-braid",

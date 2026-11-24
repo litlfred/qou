@@ -106,6 +106,7 @@ export default chapter({
         "knot-factorization",
         "localized-hadron",
         "hadron-fibre-embedding",
+        "hadron-fibre-embedding-remark",
       ],
     }),
 
@@ -153,7 +154,9 @@ export default chapter({
         "brunnian-property-of-borromean",
         "figure-8-muon-mass-cross-check",
         "typed-crossing-operator",
+        "typed-crossing-operator-motivation",
         "nucleon-hecke-element",
+        "nucleon-hecke-element-examples",
         "nucleon-hecke-element-normal-form",
         "hadron-proton-example",
         "fermion-boson-knot-link",
@@ -218,6 +221,7 @@ export default chapter({
       label: "sec:electroweak-higgs-torus-link-triplet",
       blocks: [
         "spin-involution",
+        "spin-involution-isospin",
         "electroweak-triplet-bring-embedding",
         "electroweak-triplet-far-commuting-minimal",
         "electroweak-triplet-far-commuting-minimal-proof",
@@ -253,6 +257,7 @@ export default chapter({
         "confined-particle",
         "confined-particle-examples",
         "confinement-category",
+        "confinement-category-invertibility",
         "confinement-category-markov-functor",
         "confinement-category-atomic-chain",
         "dressed-particle",
@@ -268,6 +273,7 @@ export default chapter({
       blocks: [
         "intro-atom-isotope-knots",
         "atom-knot",
+        "atom-knot-remark",
         "atom-knot-exists",
         "atom-knot-exists-proof",
         "atom-knot-unique",

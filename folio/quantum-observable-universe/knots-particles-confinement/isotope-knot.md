@@ -7,5 +7,3 @@ $$
 $$
 
 *with identical $w_{q^Z}$.*
-
-*The isotope relation is an equivalence on $\{\text{atom-knots with fixed } Z\}$. The relation is reflexive, symmetric, and transitive. The isotope class of $K$ at fixed $Z$ is parameterized by the neutron-quark block $w_{\bar q^N}$ and the inter-nucleon connector $w_{\mathrm{inter}}$.*

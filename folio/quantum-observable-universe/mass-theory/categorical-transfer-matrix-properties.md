@@ -5,6 +5,12 @@ structure, and the two levels at which a braiding operation may act.
 The well-definedness of the equivalence class, and its categorification
 to a Lusztig canonical-basis vector, are spelled out below.
 
+**Well-definedness.** The equivalence class is well-defined because the vertex volume $\hat{V}_i(q)$
+depends only on the Markov trace of the Hecke-reduced element.
+It does not depend on the specific braid representative, the
+decomposition of $\mathfrak{H}$ into constituents, or the path of
+braiding operations within $\mathcal{S}_p$.
+
 **Insertion points and the configuration space.**
 The constituent knots $K_i$ are simple objects in $\mathbf{C}$,
 each factoring through a tensor power of $V$

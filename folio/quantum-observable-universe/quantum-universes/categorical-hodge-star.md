@@ -17,4 +17,4 @@ $$
 \end{equation}
 ```
 
-where $\int_A \colon A \to \mathbf{1}$ is the Frobenius form, $\alpha^* = S(\alpha)$ is the antipode-conjugate, and $\mathrm{vol} \in \Omega^n(A)$ is the volume form (the unique invariant top form normalised by $\int_A(\mathrm{vol}) = 1$). That $\star^2 = \mathrm{id}$ follows from the non-degeneracy of $\int_A$ and the involutivity of the antipode. The extension to $\Omega^k(A)$ follows from the graded Leibniz rule for $S$.
+where $\int_A \colon A \to \mathbf{1}$ is the Frobenius form, $\alpha^* = S(\alpha)$ is the antipode-conjugate, and $\mathrm{vol} \in \Omega^n(A)$ is the volume form (the unique invariant top form normalised by $\int_A(\mathrm{vol}) = 1$).

@@ -18,8 +18,8 @@ The proton mass derives from the muon-anchored Hecke energy of the Borromean bra
 
 $$
   \mathfrak{m}_{\mathfrak{p}} =
-  2\,\bigl(\mathfrak{m}_\mu F_{\mathrm{Bor}} - 6\, m_e\bigr)
-  + \text{Skein corrections},
+  2\,\bigl(\mathfrak{m}_\mu F_{\mathrm{Bor}} - 6\, m_e\bigr) +
+  \text{Skein corrections},
   \qquad
   \mathfrak{m}_\mu = m_e\,\frac{\mathrm{Vol}(4_1)}{\hbar_q^2},
   \quad
@@ -29,3 +29,5 @@ $$
 The hyperbolic-volume dependence enters through the muon anchor $\mathrm{Vol}(4_1)$, dressed by the dimensionless Borromean factor $F_{\mathrm{Bor}}$.
 
 The Skein corrections isolate the crossing asymmetry between the $\mathfrak{u}$ and $\mathfrak{d}$ components. The pair Skein formula dictates $\mathfrak{m}_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)$.
+
+**Gluon content and colour symmetry.** The Borromean braid $\mathcal{B}_3$ natively carries Hopf link content; this constitutes the intrinsic gluon field binding the components. The $S_3$ permutation symmetry of the color tubes guarantees the invariant structure across all color assignments.

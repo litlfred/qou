@@ -1,0 +1,1 @@
+Closure of a shell is indicated by a palindromic histogram. The [inter-shell operator](#def:inter-shell-operator) is the torus-knot transfer matrix of $T_{2,n_s}$; it encodes the crossing of a new nucleon, which starts shell $\ell + 1$, with the closed shell $\ell$.

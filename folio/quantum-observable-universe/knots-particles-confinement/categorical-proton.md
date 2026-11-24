@@ -7,5 +7,3 @@ $$
 *where:*
 
 - *$\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is the Borromean braid of three unknots threaded through color tubes $(r,g,b)$. Two unknots bear positive crossing orientation ($\mathfrak{u}$) and one bears negative orientation ($\mathfrak{d}$).*
-- *$\mathcal{B}_3$ natively carries Hopf link content. This constitutes the intrinsic gluon field binding the components.*
-- *The $S_3$ permutation symmetry of the color tubes guarantees the invariant structure across all color assignments.*

@@ -32,4 +32,4 @@ Let $(\mathbf{C}, \otimes, \mathbf{1})$ be a :refterm[monoidal category]{#monoid
 \end{equation}
 ```
 
-The pair forms an :defterm[exact pairing]{#exact-pairing}. In graphical calculus, the composites trace an S-shaped curve that straightens to a vertical line.
+The pair forms an :defterm[exact pairing]{#exact-pairing}.

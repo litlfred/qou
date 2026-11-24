@@ -39,5 +39,3 @@ Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal category
    \end{tikzcd}
    \end{equation}
    ```
-
-For the Hopf algebra $A$ in a quantum universe, the antipode $S$ provides an involutive structure via $f^{\dagger} = \int_A \circ \mu(S(f) \otimes -)$.

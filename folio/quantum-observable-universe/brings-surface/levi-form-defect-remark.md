@@ -1,0 +1,1 @@
+The [matter locus](#def:levi-form-defect) defines matter as the failure of the Frobenius structure. The Levi form $\mathcal{L}_p$ measures the non-degeneracy of the contact structure at $p$. When $\mathcal{L}_p \neq 0$, the Frobenius form $\lambda$ cannot extend smoothly through $p$, creating a topological defect.
