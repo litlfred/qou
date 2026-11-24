@@ -414,5 +414,8 @@ if __name__ == "__main__":
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
     witness["scriptFile"] = Path(__file__).name
     out = Path(__file__).parent / "q-pinning-50-digit.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out.write_text(
+        json.dumps(witness, indent=2, default=str, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
     print(f"\nWitness: {out}")
