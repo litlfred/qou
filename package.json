@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "cat": "bun .github/cat.ts",
-    "site:document": "bun run folio-assistant-core/scripts/build-document-site.ts --landing-layout default --document-layout default --downloads --out",
+    "site:document": "bash scripts/site-step.sh document",
     "site:export": "bash scripts/site-step.sh export",
     "site:accuracy": "bash scripts/site-step.sh accuracy",
     "site:beans": "bash scripts/site-step.sh beans",

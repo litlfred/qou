@@ -12,6 +12,11 @@
 # skipped and why; none is silently empty.
 #
 # Steps:
+#   document   (source) the Documents landing and one interactive page per
+#              paper at en/<slug>/ (folio-assistant-core build-document-site.ts).
+#              Stages the Lean sub-KGs first (below) and passes them as
+#              --lean-docs-index, so each block's ∀ panel links into its own
+#              paper's sub-KG.
 #   landing    (source) the rest of the root landing: the declared pages
 #              (Accuracy, QA, Work plan, Lean), CONTRIBUTING, LICENSE, source,
 #              appended under the Documents list site:document writes.
@@ -23,13 +28,14 @@
 #   accuracy   (site) the 80-dps accuracy scorecard QA gate + HTML, /accuracy/.
 #   beans      (site) the work plan, /beans/ (cat-harness-tools beans-board.ts).
 #   qa         (site) the integrated QA panel, /qa/ (qa-page-standalone.ts).
-#   lean       (site) the Lean library render: one sub-KG per Lake package at
-#              /lean/<package>/ when doc-gen4 doc-data is given, and the combined
-#              stored render at /lean/. A declared slot with a
-#              renderer chosen by QOU_LEAN_RENDERER: `store` (default) copies
-#              the stored render mounted at lean/ (qou.json `lean-docs`);
-#              `verso` runs folio-assistant-sci's Verso tool once it exists
-#              (owner ruling 2026-11-24, "2 verso"). Never builds Lean.
+#   lean       (site) the Lean library render, one sub-KG per Lake package
+#              (owner, 2026-11-24, "separate qou, UGB and Fred2005 into own
+#              lean sub-KGs"): /lean/qou/, /lean/ugb/, /lean/fred2005/, and
+#              /lean/ a page listing them. Each is folio-assistant-sci
+#              lean-kg-publish --from-kg over the Lean store mounted at lean/
+#              (qou.json `lean-docs`), so the site never builds Lean. With
+#              QOU_LEAN_RENDERER=verso, the Verso tool once it exists (owner
+#              ruling 2026-11-24, "2 verso"; route verso/<package>/).
 #   papers     (site) /papers/<slug>/ -> the paper's page en/<slug>/, keeping
 #              ?query#fragment. Files already on gh-pages under papers/ are
 #              not this build's to touch.
@@ -44,13 +50,52 @@ cd "$ROOT"
 . scripts/lib/platform-root.sh
 PLAT=$(qou_platform_root "$ROOT") || { echo "site-step: no platform (mount the layers: bash .github/mount-from-lock.sh)" >&2; exit 2; }
 TOOLS="$PLAT/cat-harness-tools/scripts"
+mkdir -p "$DIR"
 DIR=$(cd "$DIR" && pwd)
+LEAN_PACKAGES="qou:quantum-observable-universe ugb:unital-groebner-bases fred2005:fred2005-formal-groups"
+
+# Stage the Lean sub-KGs under $1/lean/<package>/ from the mounted Lean store.
+# Returns 1 (and says so) when the store is not mounted.
+lean_subkgs() {
+  local dest=$1 kg="$PLAT/folio-assistant-sci/adapters/paper/lean/lean-kg-publish.ts"
+  [ -f lean/data/index.json ] || bun "$TOOLS/state-mount.ts" >/dev/null 2>&1 || true
+  if [ ! -f lean/data/index.json ]; then
+    echo "== site-step: Lean sub-KGs SKIPPED: the Lean store is not mounted at lean/ (state-mount)"
+    return 1
+  fi
+  grep -q -- '--from-kg' "$kg" || { echo "site-step: $kg has no --from-kg (re-pin folio-assistant-sci)" >&2; exit 2; }
+  local repo ref pkg paper o roots sib
+  repo=$(python3 -I -c 'import json;print(json.load(open("qou.json"))["repository"])')
+  ref=${SITE_COMMIT:-$(git rev-parse HEAD)}
+  for pair in $LEAN_PACKAGES; do
+    pkg=${pair%%:*}; paper=${pair#*:}
+    roots=$(python3 -I scripts/site-extras.py --lean-roots "folio/$paper/lean/lakefile.toml")
+    sib=()
+    for other in $LEAN_PACKAGES; do
+      o=${other%%:*}; [ "$o" = "$pkg" ] && continue
+      sib+=(--sibling "$(python3 -I scripts/site-extras.py --lean-roots "folio/${other#*:}/lean/lakefile.toml" | tr , '\n' | sed "s#^#$o/#" | paste -sd,)")
+    done
+    bun run "$kg" --from-kg lean --site "$dest" --route "lean/$pkg" --modules "$roots" "${sib[@]}" \
+      --repo "$repo" --ref "$ref" --content-prefix folio/ --no-rail | grep -v 'NOT railed' || true
+    [ -f "$dest/lean/$pkg/data/index.json" ] || { echo "site-step: the $pkg sub-KG was not written" >&2; exit 1; }
+  done
+}
 
 papers() {  # every document the site builds: folio/<slug>/<slug>.ts
   for d in folio/*/; do s=$(basename "$d"); [ -f "folio/$s/$s.ts" ] && echo "$s"; done
 }
 
 case "$STEP" in
+document)
+  # The sub-KGs are staged beside the Jekyll source (never in it: Jekyll would
+  # copy 225 MB of JSON), read here for the ∀ links, and moved into the site by
+  # the lean step.
+  STAGE="$(dirname "$DIR")/lean-subkg"
+  rm -rf "$STAGE"
+  LEAN_INDEX=()
+  if lean_subkgs "$STAGE"; then LEAN_INDEX=(--lean-docs-index "$STAGE"); fi
+  bun run "$PLAT/folio-assistant-core/scripts/build-document-site.ts" --landing-layout default --document-layout default --downloads "${LEAN_INDEX[@]}" --out "$DIR"
+  ;;
 landing)
   python3 -I scripts/site-extras.py --landing-source "$DIR"
   ;;
@@ -101,38 +146,32 @@ qa)
   bun run "$QAPAGE" --repo . --out "$DIR/qa"
   ;;
 lean)
-  # Owner ruling 2026-11-24, "separate qou, UGB and Fred2005 into own lean
-  # sub-KGs": one sub-KG per Lake package at lean/<package>/ (qou.json
-  # directories lean, lean-ugb, lean-fred2005). Each is folio-assistant-sci's
-  # lean-kg-publish over doc-gen4's doc-data, kept to that package's module
-  # roots (read from its lakefile) and with its own paper as content root, so
-  # a block's lean.ref resolves in its own paper's sub-KG. That needs doc-data
-  # (QOU_LEAN_DOC_DATA), i.e. a doc-gen4 build; this step never builds Lean.
-  # Without it the site carries the combined stored render at lean/
-  # (directory lean-docs) and says the sub-KGs were SKIPPED.
   case "${QOU_LEAN_RENDERER:-store}" in
   store)
-    if [ -n "${QOU_LEAN_DOC_DATA:-}" ]; then
-      KG="$PLAT/folio-assistant-sci/adapters/paper/lean/lean-kg-publish.ts"
-      REPO=$(python3 -I -c 'import json;print(json.load(open("qou.json"))["repository"])')
-      for pair in qou:quantum-observable-universe ugb:unital-groebner-bases fred2005:fred2005-formal-groups; do
-        pkg=${pair%%:*}; paper=${pair#*:}
-        mods=$(python3 -I scripts/site-extras.py --lean-roots "folio/$paper/lean/lakefile.toml")
-        bun run "$KG" --doc-data "$QOU_LEAN_DOC_DATA" --site "$DIR" --route "lean/$pkg" --modules "$mods" \
-          --content-root "folio/$paper" --repo "$REPO" --ref "${SITE_COMMIT:-$(git rev-parse HEAD)}" --content-prefix "folio/$paper/" --no-rail
-        echo "== site-step lean: sub-KG $pkg ($mods) -> /lean/$pkg/"
-      done
-    else
-      echo "== site-step lean: per-package sub-KGs (lean/qou, lean/ugb, lean/fred2005) SKIPPED: no doc-gen4 doc-data (QOU_LEAN_DOC_DATA), and the Lean store keeps one combined render."
+    # The sub-KGs site:document staged; staged here when it did not run.
+    STAGE="$(dirname "$DIR")/lean-subkg"
+    if [ ! -f "$STAGE/lean/qou/data/index.json" ]; then
+      rm -rf "$STAGE"
+      lean_subkgs "$STAGE" || { echo "== site-step lean SKIPPED: no sub-KGs"; exit 0; }
     fi
-    [ -f lean/data/index.json ] || bun "$TOOLS/state-mount.ts" >/dev/null || true
-    if [ -f lean/index.html ] && [ -f lean/data/index.json ]; then
-      mkdir -p "$DIR/lean"
-      for f in lean/*; do [ -e "$f" ] && cp -a "$f" "$DIR/lean/"; done
-      echo "== site-step lean: the combined stored render (lean/, cat/folio-assistant-sci/lean-docs) -> /lean/"
-    else
-      echo "== site-step lean SKIPPED: the Lean store is not mounted at lean/ (state-mount), so the site has no combined lean/."
-    fi
+    mkdir -p "$DIR/lean"
+    LIST=""
+    for pair in $LEAN_PACKAGES; do
+      pkg=${pair%%:*}; paper=${pair#*:}
+      rm -rf "$DIR/lean/$pkg"; mv "$STAGE/lean/$pkg" "$DIR/lean/$pkg"
+      n=$(python3 -I -c 'import json,sys;t=json.load(open(sys.argv[1]))["totals"];print("{:,} modules, {:,} declarations".format(t["modules"],t["decls"]))' "$DIR/lean/$pkg/data/index.json")
+      title=$(python3 -I -c 'import json,sys;d=json.load(open("qou.json"));print(next((x["coverage"]["visualiser"][0]["title"] for x in d["directories"] if x["path"]==f"folio/{sys.argv[1]}/lean/"),sys.argv[1]))' "$paper")
+      LIST="$LIST<li><a href=\"$pkg/\">$title</a> — Lake package <code>$pkg</code>, <a href=\"../en/$paper/\">its paper</a>; $n</li>"
+      echo "== site-step lean: sub-KG $pkg -> /lean/$pkg/ ($n)"
+    done
+    rm -rf "$STAGE"
+    cat > "$DIR/lean/index.html" <<HTML
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lean | Quantum Observable Universe</title></head>
+<body><main><h1>Lean</h1>
+<p>One Lean knowledge graph per Lake package. A declaration one package uses from another links to that package's graph.</p>
+<ul>$LIST</ul></main></body></html>
+HTML
     ;;
   verso)
     VERSO="$PLAT/folio-assistant-sci/tools/verso-render/verso-render.ts"

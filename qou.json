@@ -237,10 +237,13 @@
         "visualiser": [
           {
             "ref": "lean/index.html",
-            "title": "Lean (all packages, stored render)"
+            "title": "Lean (by package)",
+            "writer": [
+              "scripts/site-step.sh"
+            ]
           }
         ],
-        "_visualiser_comment": "The combined stored render of all three packages (cat/folio-assistant-sci/lean-docs, mounted at lean/), served at /lean/ until the per-package sub-KGs (lean, lean-ugb, lean-fred2005) can be built; listed when the store is mounted."
+        "_visualiser_comment": "The Lean store: the combined render of all three packages (cat/folio-assistant-sci/lean-docs, mounted at lean/), which the per-package sub-KGs (lean, lean-ugb, lean-fred2005) are cut from. The site does not publish the combined render; /lean/ is a page listing the three sub-KGs, written by scripts/site-step.sh lean."
       }
     },
     {
@@ -254,10 +257,13 @@
         "visualiser": [
           {
             "ref": "lean/qou/index.html",
-            "title": "Lean: QOU"
+            "title": "Lean: QOU",
+            "writer": [
+              "scripts/site-step.sh"
+            ]
           }
         ],
-        "_visualiser_comment": "Written by `scripts/site-step.sh lean` from doc-gen4 doc-data (QOU_LEAN_DOC_DATA) with folio-assistant-sci lean-kg-publish, --module per root of this package's lakefile and --route lean/qou. No writer is declared, so the landing lists it only when the page is built; until a doc-gen4 build (or a per-package Lean store) is available the site carries only the combined stored render at lean/. Ruling \"2 verso\" later moves the renderer to Verso."
+        "_visualiser_comment": "Built at publish by `scripts/site-step.sh` (never committed): folio-assistant-sci lean-kg-publish --from-kg cuts this package's sub-KG out of the mounted Lean store (lean-docs, cat/folio-assistant-sci/lean-docs) with --modules the roots of its lakefile and --sibling the other packages' roots, at route lean/qou/, so no Lean is built for the site. It is staged before the document pages (site:document passes it as --lean-docs-index, so each block's ∀ links into its own paper's sub-KG) and moved into the site by site:lean. Ruling \"2 verso\" later adds the Verso render at verso/qou/."
       }
     },
     {
@@ -271,10 +277,13 @@
         "visualiser": [
           {
             "ref": "lean/ugb/index.html",
-            "title": "Lean: UGB"
+            "title": "Lean: UGB",
+            "writer": [
+              "scripts/site-step.sh"
+            ]
           }
         ],
-        "_visualiser_comment": "Written by `scripts/site-step.sh lean` from doc-gen4 doc-data (QOU_LEAN_DOC_DATA) with folio-assistant-sci lean-kg-publish, --module per root of this package's lakefile and --route lean/ugb. No writer is declared, so the landing lists it only when the page is built; until a doc-gen4 build (or a per-package Lean store) is available the site carries only the combined stored render at lean/. Ruling \"2 verso\" later moves the renderer to Verso."
+        "_visualiser_comment": "Built at publish by `scripts/site-step.sh` (never committed): folio-assistant-sci lean-kg-publish --from-kg cuts this package's sub-KG out of the mounted Lean store (lean-docs, cat/folio-assistant-sci/lean-docs) with --modules the roots of its lakefile and --sibling the other packages' roots, at route lean/ugb/, so no Lean is built for the site. It is staged before the document pages (site:document passes it as --lean-docs-index, so each block's ∀ links into its own paper's sub-KG) and moved into the site by site:lean. Ruling \"2 verso\" later adds the Verso render at verso/ugb/."
       }
     },
     {
@@ -288,10 +297,13 @@
         "visualiser": [
           {
             "ref": "lean/fred2005/index.html",
-            "title": "Lean: Fred2005"
+            "title": "Lean: Fred2005",
+            "writer": [
+              "scripts/site-step.sh"
+            ]
           }
         ],
-        "_visualiser_comment": "Written by `scripts/site-step.sh lean` from doc-gen4 doc-data (QOU_LEAN_DOC_DATA) with folio-assistant-sci lean-kg-publish, --module per root of this package's lakefile and --route lean/fred2005. No writer is declared, so the landing lists it only when the page is built; until a doc-gen4 build (or a per-package Lean store) is available the site carries only the combined stored render at lean/. Ruling \"2 verso\" later moves the renderer to Verso."
+        "_visualiser_comment": "Built at publish by `scripts/site-step.sh` (never committed): folio-assistant-sci lean-kg-publish --from-kg cuts this package's sub-KG out of the mounted Lean store (lean-docs, cat/folio-assistant-sci/lean-docs) with --modules the roots of its lakefile and --sibling the other packages' roots, at route lean/fred2005/, so no Lean is built for the site. It is staged before the document pages (site:document passes it as --lean-docs-index, so each block's ∀ links into its own paper's sub-KG) and moved into the site by site:lean. Ruling \"2 verso\" later adds the Verso render at verso/fred2005/."
       }
     }
   ],
