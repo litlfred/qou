@@ -1895,6 +1895,7 @@ import QOU.BraidsAndKnots.StrangeStrandOctet
 import QOU.BraidsAndKnots.IsospinMurphyOctet
 import QOU.Core.CategoricalLagrangianTwoTermBridge
 import QOU.Core.CategoricalHamiltonianLegendre
+import QOU.Core.ReebHamiltonianChartBridge
 import QOU.MassTheory.GPMTThreeRowCumulantBridge
 import QOU.MassTheory.ThreeRowSpringerSYTDerivation
 import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
