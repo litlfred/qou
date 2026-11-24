@@ -25,7 +25,6 @@ Verifies the Lean-backed theorems across:
 
 from __future__ import annotations
 
-import math
 import sys
 import time
 from fractions import Fraction
@@ -168,7 +167,7 @@ def main() -> int:
     support_ok = True
     for A_i in range(2, 7):
         chain_sup = 6**A_i
-        sym_card = math.factorial(3 * A_i)
+        sym_card = int(sp.factorial(3 * A_i))
         if not (chain_sup < sym_card and sym_card % chain_sup == 0):
             support_ok = False
         support_ratios[f"A={A_i}"] = str(sym_card // chain_sup)
