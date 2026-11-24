@@ -11,28 +11,35 @@ result downstream of a **citeable published conjecture**, exactly as
 ## Which published bridge — and the honest non-degeneracy result
 
 The mandated non-degeneracy gate asks whether the BPS count of `4₁` reproduces
-the GGM resurgent-Stokes / DT spectrum `{3, 4}` (reduced-Stokes `3`) *through*
-the bridge. The answer depends on **which BPS sector**:
+the GGM off-diagonal resurgent-Stokes constant `3` *through* the bridge (earlier
+prose quoted `{3, 4}`, where the companion `4` is `5₂` data from GGM §3.2 eqs.
+96/98, not `4₁`). The answer depends on **which BPS sector**:
 
 * **Gukov–Stošić `1112.0030` (OPEN sector) — FAILS.** There "knot homology =
   space of *open* BPS states" (M5-brane on the conormal Lagrangian
   `L_K ⊂ T*S³`; colored HOMFLY homology). The knots–quivers correspondence
   (`1707.02991`) makes the `4₁` open-BPS count `det(4₁) = 5` (five HOMFLY
   generators = five quiver nodes; calibrated against that paper's trefoil = 3 =
-  `det 3₁`). `5 ∉ {3, 4}`. So the *open-HOMFLY* Gukov–Stošić bridge does **not**
-  license `A_ω = 3`; it is a different BPS sector.
+  `det 3₁`). `5 ≠ 3` (and `5 ∉ {3, 4}`). So the *open-HOMFLY* Gukov–Stošić
+  bridge does **not** license `A_ω = 3`; it is a different BPS sector.
 
 * **GPPV `1701.06567` + GGM peacock `2012.00062` Conjecture 3(d) (CLOSED
   sector) — PASSES.** GGM peacock Conjecture 3(d): *"the Stokes constants are
   integers corresponding to the Donaldson–Thomas invariants … and the BPS
   degeneracies."* GPPV realise that DT/BPS count as the graded dimension of the
-  BPS Hilbert space of `T[M₃]` (the state-integral / `Ẑ` / 3d–3d sector). This
-  reproduces `{3, 4}` (reduced-Stokes `3`); the `q → 0` anchor is machine-checked
-  unconditionally in `StokesQZeroDTCount` (`S⁺(0)₀₁ = 3`).
+  BPS Hilbert space of `T[M₃]` (the state-integral / `Ẑ` / 3d–3d sector). Note
+  that GGM eq. (21) (`S⁺_{σ₁σ₁}(x; q) = Ind^rot(0, x; q) = 1 - 8q - 9q² - …`)
+  is **diagonal-only**; the `3` is the **off-diagonal** `(σ₁, σ₂)` Stokes entry
+  (`S⁺(0) = [[1, 3], [0, 1]]` in GGM §3.1 eq. 60, `S⁺(x; 0) = [[1, x⁻¹+1+x],
+  [0, 1]]` in eq. 188), proved unconditionally in `StokesQZeroDTCount` and as a
+  universal `2 × 2` bilinear Wronskian identity `S̃₀₁(W) + S̃₁₀(W) = 3 · S̃₀₀(W)`
+  in `QOU.Nuclear.ColourReconnectionStokesAssembly.ggm_stokes_symmetry_three`.
 
 This file therefore axiomatises the **closed-sector** bridge and derives
-`A_ω(4₁) = 3` conditional on it — a **theorem for `4₁`** (GGM proved Conjecture 3
-for `4₁`), conjectural in general. It is **not** the open-HOMFLY Gukov–Stošić
+`A_ω(4₁) = 3` conditional on it — **conditional for every knot, `4₁` included**
+(GGM prove Theorem 6 = Conjecture 5 for `4₁` and `5₂` and verify Conjecture 4
+computationally in §5.2/§6.2, whereas Conjecture 3(d) remains unproved; corrected
+per bean `qou-3ent` / `#7592`). It is **not** the open-HOMFLY Gukov–Stošić
 bridge, which the check excludes.
 
 ## §3b-cond non-degeneracy (anti-laundering)
@@ -74,8 +81,8 @@ The two class fields are the conjecture's *content* (its inputs). There is **no*
 field asserting any particular value of any of these integers — in particular no
 `A_ω = 3` field; that value is *derived* downstream, only for `4₁`, from the
 bridge-independent certified Stokes datum. An instance of this class is the
-conjecture holding; none is provided (the general conjecture is open — it is a
-theorem for `4₁`). -/
+conjecture holding; none is provided (GGM Conjecture 3(d) is open for every
+knot, `4₁` included). -/
 class StokesDTBPSBridge (Knot : Type*) where
   /-- Resurgent Stokes constant of the state integral, geometric Borel ray. -/
   stokesConstant : Knot → ℤ
