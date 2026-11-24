@@ -1,13 +1,13 @@
 ---
 # qou-slvl
 title: slope = q-Gevrey level in general; and the two recursions still defined-to-match
-status: in-progress
+status: completed
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T08:05:00Z
-updated_at: 2026-11-24T03:03:20Z
+updated_at: 2026-11-24T09:50:37Z
 parent: qou-frzo
 ---
 
@@ -90,3 +90,5 @@ Relates: `qou-slpd`, `qou-c1ln` (row 3).
 - [ ] Awaiting Merge Manager merge of PR #8195 (`4d59250dbada4070a6545f88b8d6f14fb94d89f6`).
 
 RSZ §1.3.2 bound-form IsQGevreyOrderLE & lacunary L_k proved sorry-free at 8bddf72a4dd.
+
+Closed post-merge: landed on origin/main in Batch 6 PR #9263 (5431ea4a839 / 46bfcd16c43).

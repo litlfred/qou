@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T02:08:08Z
-updated_at: 2026-11-24T02:15:33Z
+updated_at: 2026-11-24T09:50:36Z
 parent: qou-v2om
 ---
 
@@ -38,3 +38,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8181, closed o
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-04: "science(qou-z4ba): the derived c1 mirror asymmetry is WRONG IN SIGN — 0/230 against AME, and it is scale-free"). The work may be partly or fully done. Read the bean before you close it.
 
 Verified 100% landed on origin/main via PR #6555 (f0dab71510b, MirrorAsymmetrySign.lean EXIT=0 + c1_mirror_asymmetry_sign_probe.py 4/4) and hadron-line Coulomb formalization (#9123, #9211).
+
+Closed post-merge: verified 100% landed on origin/main in PR #6555 (f0dab71510b) & Batch 5 PR #9261 (1a1c18ecb56).

@@ -1,13 +1,13 @@
 ---
 # qou-fadg
 title: frobenius_admissibility_diagnostic reasons from a rank-6 Gram that is rank 5
-status: todo
+status: completed
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-11-24T01:32:09Z
+updated_at: 2026-11-24T09:50:35Z
 parent: qou-v2om
 ---
 
@@ -101,3 +101,5 @@ The measurements above are the input a correct rewrite needs.
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8284, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 100-dps rank-5 Gram diagnostic staged on origin/claude/backlog-drain-batch3-20261123 (a1ff1d0f8fc).
+
+Closed post-merge: landed on origin/main in PR #9259 (807970855e4).

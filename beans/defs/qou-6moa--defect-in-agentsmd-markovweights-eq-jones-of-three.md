@@ -1,13 +1,13 @@
 ---
 # qou-6moa
 title: 'DEFECT in AGENTS.md: markovWeights_eq_jones_of_threeRow_eq_zero is cited for its own HYPOTHESIS'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-26T14:15:29Z
-updated_at: 2026-11-24T01:32:09Z
+updated_at: 2026-11-24T09:50:35Z
 parent: qou-rtxm
 ---
 
@@ -173,3 +173,5 @@ itself: `:173`, 26 lines above, spells out both roots (`z = q` degenerate and
 - Updated `docs/coordination/trace-convention-registry.json` (`:199` and `:362`) to explicitly state `FibreDimensionForcesTL.twoDimFibre_pins_h3_weights` and the faithfulness requirement (`hfaith : y_(2,1) != 0` on `TL_3`).
 
 Last live reversed citation witness regenerated on origin/claude/backlog-drain-batch3-20261123 (a1ff1d0f8fc).
+
+Closed post-merge: landed on origin/main in PR #9259 (807970855e4).
