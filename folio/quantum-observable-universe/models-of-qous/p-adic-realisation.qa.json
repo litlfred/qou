@@ -8,7 +8,7 @@
   },
   "source_hashes": {
     "md": "38f31e708b5d",
-    "ts": "809baf97c2e9"
+    "ts": "f4af90b9bdd8"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -80,24 +80,8 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "bbc03dd9670f",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -105,11 +89,12 @@
           "id": "pipeline/qa-checkers-voice.ts",
           "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "5af6856733f3",
+          "script_hash": "f93c058febd4",
           "script_commit_sha": "unknown",
           "def_hash": "e7148867194b"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "voice-emoji-content": [
@@ -294,6 +279,36 @@
           "ts": "eccdb1f51ecc"
         },
         "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "809baf97c2e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "9b8d96ae7159",
+          "ts": "eccdb1f51ecc"
+        },
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -303,21 +318,6 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
-      },
-      {
-        "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
-        "reviewed_at": "2026-07-19T17:19:09.000Z",
-        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-audit",
-          "version": "gemini-3.1-pro"
-        }
       },
       {
         "field_hash": {
@@ -335,44 +335,13 @@
           "def_hash": "90af5388e1e9"
         },
         "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:qa-refresh-2026-11-21",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-11-21T20:30:00.000Z",
-        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
-        "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
       }
     ],
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "dbe50250022f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -380,30 +349,15 @@
           "id": "pipeline/qa-checkers-extended.ts",
           "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "9566207ee882",
+          "script_hash": "d8b8f090555d",
           "script_commit_sha": "unknown",
           "def_hash": "a88562c76c07"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d57f31bc95cf",
-          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
-      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -426,6 +380,37 @@
         },
         "result": "pass",
         "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
+        "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "9b8d96ae7159",
+          "ts": "eccdb1f51ecc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d57f31bc95cf",
+          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
+        },
+        "reviewed_at": "2026-07-13T00:59:15.685Z",
+        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "809baf97c2e9"
+        },
+        "result": "pass",
+        "reviewer": {
           "kind": "script",
           "id": "pipeline/qa-checkers-voice.ts",
           "actor": "local-sweep",
@@ -435,21 +420,6 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:qa-refresh-2026-11-21",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-11-21T20:30:00.000Z",
-        "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
-        "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -490,24 +460,8 @@
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:20.895Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -515,11 +469,12 @@
           "id": "pipeline/qa-checkers-voice.ts",
           "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "5b0082576ba9",
+          "script_hash": "c5ea8e77a0b3",
           "script_commit_sha": "unknown",
           "def_hash": "2cfefc829099"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "framework-canonical": [
@@ -560,25 +515,8 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "n/a",
         "reviewer": {
@@ -590,7 +528,8 @@
           "script_commit_sha": "unknown",
           "def_hash": "2ff53167ead5"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -749,24 +688,8 @@
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c58bf6bca27b",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -778,30 +701,15 @@
           "script_commit_sha": "unknown",
           "def_hash": "e7148867194b"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "3050ae1775d6",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -813,30 +721,15 @@
           "script_commit_sha": "unknown",
           "def_hash": "5d8325c49fea"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "89bcd82bd3ff",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -848,30 +741,15 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "a065b3633f0f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -883,7 +761,8 @@
           "script_commit_sha": "unknown",
           "def_hash": "5d8325c49fea"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -924,24 +803,8 @@
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "47384e4fd1b4",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -953,30 +816,15 @@
           "script_commit_sha": "unknown",
           "def_hash": "bcd452a1177c"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "772b3e8dc930",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -988,109 +836,126 @@
           "script_commit_sha": "unknown",
           "def_hash": "bcd452a1177c"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8",
+          "graph": "f2aa089f5241"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8",
+          "graph": "f2aa089f5241"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "696ee4c80040",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
         },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8",
+          "graph": "f2aa089f5241"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b01f61430d2a",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8",
+          "graph": "f2aa089f5241"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "3edb7220507a",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
         },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "notes": "block has no .lean sibling"
       }
     ],
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8",
+          "graph": "f2aa089f5241"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "ac7512959351",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
           "tanglement_score": 0,
           "out_degree": 2,
           "in_degree": 4,
-          "cone_size": 29,
-          "depth": 17,
-          "pagerank": 0.000216,
-          "edge_span_max": 15,
-          "edge_span_mean": 15,
+          "cone_size": 27,
+          "depth": 16,
+          "pagerank": 0.000226,
+          "edge_span_max": 16,
+          "edge_span_mean": 16,
           "worst_target": ""
         }
       }
@@ -1098,19 +963,22 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8",
+          "graph": "f2aa089f5241"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "aacb0bf5d4b9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1121,37 +989,43 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8",
+          "graph": "f2aa089f5241"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "280aea9a61d8",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8",
+          "graph": "f2aa089f5241"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "39dfc0abf653",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1333,21 +1207,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1357,6 +1216,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2. Resolved: the replaced claim ('integrable iff unit-root') conflicted with the standard picture; the new text states it correctly."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-vacuous": [
@@ -1378,21 +1253,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1402,6 +1262,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-circular": [
@@ -1423,21 +1299,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1447,6 +1308,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -1468,21 +1345,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1492,6 +1354,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-hidden-dof": [
@@ -1513,21 +1391,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1537,6 +1400,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-non-sequitur": [
@@ -1558,21 +1437,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1582,6 +1446,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1603,21 +1483,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1627,6 +1492,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-citation-misuse": [
@@ -1648,21 +1529,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1672,6 +1538,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2. Resolved: the claim the PR left unattributed (integrable iff unit-root) is gone, and both new statements match andre-baldassarri2002 8.4 (library sec-036). Minor: the .ts authorNote names the source as 'André, Period mappings ...'; the reference has two authors (André, Baldassarri)."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1693,21 +1575,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1717,6 +1584,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-empirical-fragility": [
@@ -1738,21 +1621,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1762,6 +1630,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-physical-implausibility": [
@@ -1783,21 +1667,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1807,6 +1676,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-reproducibility": [
@@ -1828,21 +1713,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1852,6 +1722,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-referee-verdict": [
@@ -1873,21 +1759,6 @@
           "md": "38f31e708b5d",
           "ts": "809baf97c2e9"
         },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "pipeline/qa-sweep.ts",
-          "actor": "local-sweep",
-          "version": "v1"
-        },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
-          "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
@@ -1897,6 +1768,22 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "expo-milnor-clarity": [
@@ -2067,30 +1954,8 @@
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
-          "version": "v1",
-          "script_hash": "1d50b09b0497",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "c7f602946422"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "metrics": {
-          "uses_count": 2,
-          "broken_edges": 0,
-          "redundant_edges": 0
-        }
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -2100,10 +1965,11 @@
           "version": "v1",
           "script_hash": "63814f2a6677",
           "script_commit_sha": "unknown",
-          "deps_hash": "34af1d8a2365",
+          "deps_hash": "03b88f610b1f",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "metrics": {
           "uses_count": 2,
           "broken_edges": 0,
@@ -2114,26 +1980,8 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
-          "version": "v1",
-          "script_hash": "b7b208d4a0c4",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "f9b547e15cfd"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "n/a",
         "reviewer": {
@@ -2146,32 +1994,16 @@
           "deps_hash": "794eb6c16a59",
           "def_hash": "ce2b8102b97f"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
-          "version": "v1",
-          "script_hash": "b1c323c3439c",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "c7f602946422"
-        },
-        "reviewed_at": "2026-08-09T13:01:14.762Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      },
-      {
-        "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "n/a",
         "reviewer": {
@@ -2184,27 +2016,11 @@
           "deps_hash": "c378066449c5",
           "def_hash": "d292915cbf8a"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "trap-negation-contrast": [
-      {
-        "field_hash": {
-          "md": "9b8d96ae7159",
-          "ts": "eccdb1f51ecc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/language-trap-audit.ts",
-          "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
-        },
-        "reviewed_at": "2026-08-15T10:31:01.097Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "no negation-contrast constructions"
-      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2234,9 +2050,7 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
-      }
-    ],
-    "trap-rhetorical-pivot": [
+      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2252,8 +2066,10 @@
         },
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "no rhetorical pivots"
-      },
+        "evidence": "no negation-contrast constructions"
+      }
+    ],
+    "trap-rhetorical-pivot": [
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2283,9 +2099,7 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
-      }
-    ],
-    "trap-em-dash": [
+      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2301,8 +2115,10 @@
         },
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "dash density acceptable (0 in 197 words)"
-      },
+        "evidence": "no rhetorical pivots"
+      }
+    ],
+    "trap-em-dash": [
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2332,9 +2148,7 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
-      }
-    ],
-    "trap-triples": [
+      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2350,8 +2164,10 @@
         },
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "triple density acceptable (0 in 197 words)"
-      },
+        "evidence": "dash density acceptable (0 in 197 words)"
+      }
+    ],
+    "trap-triples": [
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2381,9 +2197,7 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
-      }
-    ],
-    "trap-closing-aphorism": [
+      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2399,8 +2213,10 @@
         },
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "closer is content, not aphorism"
-      },
+        "evidence": "triple density acceptable (0 in 197 words)"
+      }
+    ],
+    "trap-closing-aphorism": [
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2430,9 +2246,7 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
-      }
-    ],
-    "trap-meta-commentary": [
+      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2448,8 +2262,10 @@
         },
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "no meta-commentary on the block's own rhetoric"
-      },
+        "evidence": "closer is content, not aphorism"
+      }
+    ],
+    "trap-meta-commentary": [
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2479,9 +2295,7 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
-      }
-    ],
-    "trap-thesis-restatement": [
+      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2497,8 +2311,10 @@
         },
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "no thesis restatement"
-      },
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      }
+    ],
+    "trap-thesis-restatement": [
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2528,9 +2344,7 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
-      }
-    ],
-    "trap-performed-warmth": [
+      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2546,8 +2360,10 @@
         },
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "register is institutional"
-      },
+        "evidence": "no thesis restatement"
+      }
+    ],
+    "trap-performed-warmth": [
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2577,9 +2393,7 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
-      }
-    ],
-    "trap-superlative": [
+      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2595,8 +2409,10 @@
         },
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "superlative density acceptable (0)"
-      },
+        "evidence": "register is institutional"
+      }
+    ],
+    "trap-superlative": [
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2626,9 +2442,7 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
-      }
-    ],
-    "trap-nonspeakable": [
+      },
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2644,8 +2458,10 @@
         },
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "sentence lengths speakable"
-      },
+        "evidence": "superlative density acceptable (0)"
+      }
+    ],
+    "trap-nonspeakable": [
       {
         "field_hash": {
           "md": "9b8d96ae7159",
@@ -2675,6 +2491,23 @@
         "reviewed_at": "2026-11-21T20:30:00.000Z",
         "reviewed_sha": "7e202a6abc24f53aa06380d3e7a20da116551c7a",
         "evidence": "Re-read at 7e202a6abc2 (cd1ad6037b). The unsourced 'integrable iff unit-root F-crystal' claim is replaced by: crystals = modules with integrable topologically nilpotent connection, and unit-root F-crystals = continuous Z_p-representations (Katz), cited to andre-baldassarri2002. Checked against library arxiv-math-0203194v1 sec-036 (8.4 Crystals and connections) lines 19-45. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "9b8d96ae7159",
+          "ts": "eccdb1f51ecc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.097Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2757,7 +2590,7 @@
       {
         "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "n/a",
         "reviewer": {
@@ -2766,7 +2599,8 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2774,7 +2608,7 @@
       {
         "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "n/a",
         "reviewer": {
@@ -2783,7 +2617,8 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "notes": "criterion applies to dak; block kind \"example\" is document"
       }
     ],
@@ -2825,7 +2660,7 @@
       {
         "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "n/a",
         "reviewer": {
@@ -2834,7 +2669,8 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "notes": "criterion applies to dak; block kind \"example\" is document"
       }
     ],
@@ -2842,7 +2678,7 @@
       {
         "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "n/a",
         "reviewer": {
@@ -2851,7 +2687,8 @@
           "actor": "local-sweep",
           "version": "v1"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4",
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4",
         "notes": "criterion applies to dak; block kind \"example\" is document"
       }
     ],
@@ -2859,7 +2696,7 @@
       {
         "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -2871,14 +2708,15 @@
           "script_commit_sha": "unknown",
           "def_hash": "bcd452a1177c"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ],
     "id-stable": [
       {
         "field_hash": {
           "md": "38f31e708b5d",
-          "ts": "809baf97c2e9"
+          "ts": "f4af90b9bdd8"
         },
         "result": "pass",
         "reviewer": {
@@ -2890,10 +2728,32 @@
           "script_commit_sha": "unknown",
           "def_hash": "f0a866b13629"
         },
-        "reviewed_tree": "72d9d11b8fe258e9f2be56c4c6ada6979f2d14d4"
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "38f31e708b5d",
+          "ts": "f4af90b9bdd8",
+          "graph": "f2aa089f5241"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_at": "2026-11-24T13:38:54.636Z",
+        "reviewed_tree": "2ccc9865d15f4921c9f5358ae52febfd3c2f82a4"
       }
     ]
   },
-  "updated_at": "2026-11-21T20:30:00.000Z",
+  "updated_at": "2026-11-24T13:38:54.636Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

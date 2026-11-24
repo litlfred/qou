@@ -8,7 +8,7 @@
 
 2. **Finite blow-up locus.** Prove that the brane boundary
  $\partial A$ has only finitely many exceptional divisors
- $\{D_i\}_{i=1}^N$ contributing non-by definition to $\mathfrak{m}(\varrho)$.
+ $\{D_i\}_{i=1}^N$ contributing non-trivially to $\mathfrak{m}(\varrho)$.
  (For a vortex, $N$ is determined by the genus of $\varrho$'s brane.)
 
 3. **Quantum-dilogarithm evaluation.** Show that the transient

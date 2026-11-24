@@ -7,4 +7,11 @@ export default remark({
   title: "TQFT context",
   tags: ["tqft", "cobordism"],
   uses: ["ex:c-quantum-observable-universe"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Bean qou-ffkf: anchored Daniel S. Freed, Michael J. Hopkins, Jacob Lurie, and Constantin Teleman (`freed2010`) in prose on the compact-Lie-group extended TQFT side; the earlier `-- Ref: [freed2010]` miscitation on `QOU.Glossary.FIsocrystal` was already retired when `QOU/Glossary.lean` replaced `FIsocrystal` with Mathlib's `WittVector.Isocrystal`.",
+    },
+  ],
 });

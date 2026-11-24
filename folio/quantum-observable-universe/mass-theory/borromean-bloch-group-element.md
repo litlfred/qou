@@ -1,11 +1,4 @@
-*The Borromean rings complement $\mathbf{S}^3 \setminus \mathcal{B}_3$
-defines a non-trivial element $[\mathcal{B}_3] \in K_3(\mathbb{C})$
-(equivalently, an element of the Bloch group $B(\mathbb{C})$) whose
-**Beilinson regulator $r_2: K_3(\mathbb{C}) \to \mathbb{R}$ evaluates
-to** $\mathrm{Vol}(\mathcal{B}_3) = 8G$.  The Markov-trace coefficient
-$h^4 = -3/4$ of $\mathrm{tr}_M(\mathcal{B}_3, q)$ has a K-theoretic
-shadow as the next-order regulator term: $r_2[\mathcal{B}_3] \cdot
-(h^4\text{-coefficient}) = (8G)(-3/4) = -6G$.*
+*Because the Borromean rings complement $M_{\mathcal{B}_3} = \mathbf{S}^3 \setminus \mathcal{B}_3$ is a complete finite-volume hyperbolic $3$-manifold, the extended Bloch-group theorem of Walter D. Neumann \cite[§1, §14]{neumann2004} assigns to it a canonical class $\widehat{\beta}(M_{\mathcal{B}_3}) \in \widehat{\mathcal{B}}(\mathbb{C}) \cong H_3(\mathrm{PSL}(2,\mathbb{C})^\delta; \mathbb{Z})$ whose Cheeger–Chern–Simons evaluation gives $i\bigl(\mathrm{Vol}(\mathcal{B}_3) + i\,\mathrm{CS}(\mathcal{B}_3)\bigr)$ and whose **Beilinson regulator $r_2: K_3(\mathbb{C}) \to \mathbb{R}$ evaluates to** $\mathrm{Vol}(\mathcal{B}_3) = 8G$. **Conjecture:** the Markov-trace coefficient $h^4 = -3/4$ of $\mathrm{tr}_M(\mathcal{B}_3, q)$ arises as the next-order regulator shadow of this class, $r_2^{(2)}[\mathcal{B}_3] = r_2[\mathcal{B}_3]\cdot(-3/4) = -6G$.*
 
 ## The K-theoretic structure
 
@@ -21,7 +14,7 @@ $$
 
 which IS the Bloch-Wigner / Rogers Pentagon identity for the
 dilogarithm \cite[§1.1.4, §2.3.1]{kirillov1995}.  Bloch–Suslin showed $B(\mathbb{C}) \otimes \mathbb{Q}
-\cong K_3^{\text{ind}}(\mathbb{C}) \otimes \mathbb{Q}$. The extended Bloch group $\widehat{B}(\mathbb{C})$ of Neumann, which refines $B(\mathbb{C})$ so that the complexified volume (volume plus $i$ times the Chern--Simons invariant, valued in $\mathbb{C}/4\pi^2\mathbb{Z}$) of a hyperbolic $3$-manifold is defined on it, is surveyed in \cite[§3]{arxiv-2304.12545v1}.
+\cong K_3^{\text{ind}}(\mathbb{C}) \otimes \mathbb{Q}$. Walter D. Neumann \cite[§1, §14]{neumann2004} lifts the Bloch–Wigner map to an isomorphism $\lambda : H_3(\mathrm{PSL}(2,\mathbb{C})^\delta; \mathbb{Z}) \xrightarrow{\sim} \widehat{\mathcal{B}}(\mathbb{C})$ onto the extended Bloch group, proves that the Rogers-dilogarithm homomorphism $R : \widehat{\mathcal{B}}(\mathbb{C}) \to \mathbb{C}/\pi^2\mathbb{Z}$ satisfies $(R \circ \lambda)([M]) = i\bigl(\mathrm{Vol}(M) + i\,\mathrm{CS}(M)\bigr)$ as the universal Cheeger–Chern–Simons class, and constructs the fundamental class $[M] \in H_3(\mathrm{PSL}(2,\mathbb{C})^\delta; \mathbb{Z})$ for every complete finite-volume non-compact hyperbolic $3$-manifold (§14; surveyed in \cite[§3]{arxiv-2304.12545v1}).
 
 The **Beilinson regulator** $r_2: B(\mathbb{C}) \to \mathbb{R}$ is
 given by the Bloch-Wigner dilogarithm:
@@ -153,11 +146,7 @@ also closes the loop:
    extending the Bloch-Wigner regulator to order $h^2$ via the
    $\Phi_q$ formal expansion; the right side is already in
    [the Borromean Markov-trace closed form](#prop:borromean-markov-trace-closed-form).
-2. Closing the conjecture needs a proof of the regulator identities
-   above ($[\mathcal{B}_3] = 8 \cdot [i]$, $r_2[\mathcal{B}_3] = 8G$,
-   $r_2^{(2)}[\mathcal{B}_3] = -6G$) and of the resulting $h^4$
-   coefficient $-3/4$ from the regulator, which would rest on the
-   Bloch–Suslin theorem.
+2. With the existence of the extended Bloch class $\widehat{\beta}(M_{\mathcal{B}_3}) \in \widehat{\mathcal{B}}(\mathbb{C})$ and its leading regulator evaluation $r_2[\mathcal{B}_3] = 8G$ established by Walter D. Neumann \cite[§1, §14]{neumann2004} for the complete finite-volume hyperbolic Borromean complement, closing the conjecture reduces solely to proving the next-order regulator identity $r_2^{(2)}[\mathcal{B}_3] = -6G$ and its identification with the $h^4$ Markov-trace coefficient $-3/4$.
 3. **Cross-validation.** The Pachner–Pentagon state-sum
    and the K-theoretic regulator should both give $h^4 = -3/4$ —
    a triple cross-validation of the topological coefficient.
