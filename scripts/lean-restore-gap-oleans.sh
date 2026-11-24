@@ -110,7 +110,14 @@ N=$(tar tzf "$TGZ" | wc -l)
 # with these untraced lean-direct copies gains nothing.  Head fe45a7c5b63
 # adds 17 Mathlib oleans the base lacks (the MvPowerSeries.Substitution,
 # Coalgebra.TensorProduct, FreeProduct and SymmetricAlgebra cones that main
-# fed339bd1f6 imports).
+# fed339bd1f6 imports).  Head fd6c1e47a21 (2026-11-24, 305 -> 324 entries,
+# parent fe45a7c5b63) adds 19 more: the Convex.SimplicialComplex.Basic,
+# Groupoid.Subgroupoid (+Basic, VertexGroup), Topology.Covering,
+# Matrix.FixedDetMatrices, EllipticCurve.Projective.Point (12-module cone) and
+# FreeGroup.Reduce cones, all built lean-direct exit 0; a fresh restore was
+# checked byte-identical against the built oleans.  The tarball is now 75 MB,
+# past GitHub's 50 MB warning and three quarters of its 100 MB hard limit: the
+# next additions should go in a second tarball, not this one.
 for d in "${DESTS[@]}"; do
   tar xzf "$TGZ" -C "$d" --skip-old-files
   echo "restored up to $N olean(s) into $d from $BRANCH ($C), existing files kept"

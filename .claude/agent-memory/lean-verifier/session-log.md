@@ -482,3 +482,11 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
   `Analysis.Convex.SimplicialComplex.Basic`, `CategoryTheory.Groupoid.Subgroupoid`, `Topology.Covering`,
   `AlgebraicGeometry.EllipticCurve.Projective.Point` (cone builder errors at the import line). The
   QOU.MathlibExt.PL* family, the KZHolonomy family and the library root `QOU` are blocked behind them.
+- **STABLE (2026-11-24, gap head fd6c1e47a21)** the 4 Mathlib modules above plus
+  `LinearAlgebra.Matrix.FixedDetMatrices` and `GroupTheory.FreeGroup.Reduce` (19 oleans with cones)
+  are now on the gap branch; built in ~95 s total with `lean-build-mathlib-gap-cone.py`. Scaffold it
+  needs: `folio/quantum-observable-universe/lean/.lake/packages/<pkg>` symlinked to the root
+  `.lake/packages/<pkg>` (root mathlib has the source after `lake-restore-package-git.sh`). Seed by
+  appending a commit (parent = old head) with git hash-object/mktree/commit-tree; no force-push.
+- **TRAP** `mathlib-gap-oleans.tgz` is 75 MB at fd6c1e47a21 (GitHub warns at 50 MB, rejects at
+  100 MB). Put the next additions in a second tarball.
