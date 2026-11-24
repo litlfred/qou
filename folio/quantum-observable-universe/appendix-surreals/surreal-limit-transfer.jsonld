@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-surreal-limit-transfer",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:surreal-limit-transfer",
+  "kind": "conjecture",
+  "title": "Surreal limit transfer: limits as standard-part equalities via an $\\omega$-evaluation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-standard-part-functor",
+    "papers/quantum-observable-universe/blocks/rem-st-is-median-resummation"
+  ],
+  "cites": [
+    "references/robinson1966",
+    "references/berarducci-mantova2018"
+  ],
+  "tags": [
+    "archimedean-bridge",
+    "surreal-numbers",
+    "standard-part",
+    "nonstandard-analysis",
+    "limits",
+    "inequality-to-equality",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.SurrealLimitTransfer",
+  "text": "surreal-limit-transfer.md",
+  "provenance": "authored"
+}

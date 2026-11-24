@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-collatz-hausdorff-comparison",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:collatz-hausdorff-comparison",
+  "kind": "remark",
+  "title": "The Lyapunov function $\\Phi = \\log_q |P|$ and the Hausdorff phase transition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-collatz-no-cycles",
+    "papers/quantum-observable-universe/blocks/rem-hausdorff-dimension-recurrence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-collatz-contact-boundary",
+  "tags": [
+    "archimedean-bridge",
+    "collatz",
+    "lyapunov",
+    "hausdorff-dimension",
+    "entropy",
+    "contraction-mapping",
+    "phase-transition",
+    "superattraction"
+  ],
+  "text": "collatz-hausdorff-comparison.md",
+  "provenance": "authored"
+}

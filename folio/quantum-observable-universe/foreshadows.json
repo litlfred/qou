@@ -5,9 +5,9 @@
   "note": "GENERATED — do not hand-edit. Rebuild with `bun run cat-harness-tools/pipeline/build-foreshadows.ts <paper>`. The QA checkers derive the same data from source on every run and never read this file, so it cannot go stale in a way that changes a verdict.",
   "totals": {
     "blocks": 204,
-    "derived": 338,
+    "derived": 340,
     "declared": 40,
-    "effective": 378
+    "effective": 380
   },
   "blocks": {
     "conj:algebraic-geometric-dilog-equivalence": {
@@ -103,15 +103,6 @@
       "effective": [
         "tbl:palindromicity-orbital-type-table1-data",
         "tbl:palindromicity-orbital-type-table2-data"
-      ]
-    },
-    "conj:proton-mass-substrate-identity": {
-      "derived": [
-        "rem:proton-mass-substrate-identity-derivation"
-      ],
-      "declared": [],
-      "effective": [
-        "rem:proton-mass-substrate-identity-derivation"
       ]
     },
     "conj:qou-infra-discharges-goncharov-zeta5": {
@@ -432,15 +423,6 @@
         "ex:su2-characters-and-quantum-dimension",
         "prop:braiding-induced-ordering",
         "tbl:quantum-universe-su2-table1-data"
-      ]
-    },
-    "ex:qvalue-benchmark-table": {
-      "derived": [
-        "tbl:qvalue-benchmark-table-table-data"
-      ],
-      "declared": [],
-      "effective": [
-        "tbl:qvalue-benchmark-table-table-data"
       ]
     },
     "ex:su2-characters-and-quantum-dimension": {
@@ -1135,6 +1117,19 @@
         "def:substrate-parameter",
         "prop:heisenberg-commutator",
         "prose:pre-archimedean-derivation-chain"
+      ]
+    },
+    "prose:master-atlas-calibration-jacobian": {
+      "derived": [
+        "rem:per-observable-100x-status-dashboard",
+        "tbl:master-atlas-molecules",
+        "tbl:master-atlas-particles"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:per-observable-100x-status-dashboard",
+        "tbl:master-atlas-molecules",
+        "tbl:master-atlas-particles"
       ]
     },
     "prose:notation-register": {
@@ -2083,6 +2078,15 @@
       "declared": [],
       "effective": [
         "tbl:beta-decay-simulator-table-data"
+      ]
+    },
+    "tbl:master-atlas-nuclides-summary": {
+      "derived": [
+        "rem:recursive-atom-knot-atlas-registry"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:recursive-atom-knot-atlas-registry"
       ]
     },
     "thm:hoefsmit-ew-cell-content": {

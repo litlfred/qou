@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-master-atlas-decays",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:master-atlas-decays",
+  "kind": "table",
+  "title": "Table A.3: Weak and nuclear $\\beta^-$ decay $Q$-values ($\\mathcal{L}_1\\text{--}\\mathcal{L}_3$, 80-digit Fréchet--Jacobian atlas)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prose-master-atlas-calibration-jacobian"
+  ],
+  "cites": [
+    "references/codata2022",
+    "references/nndc2024"
+  ],
+  "tags": [
+    "archimedean-bridge",
+    "atlas",
+    "q-value",
+    "beta-decay",
+    "extracted-table"
+  ],
+  "text": "master-atlas-decays.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lean-lib-hecke-temperley-lieb",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lean-lib-hecke-temperley-lieb",
+  "kind": "remark",
+  "title": "Community Library 1 (HeckeTemperleyLieb): Iwahori--Hecke rewriting, Markov radicals, and Young--Hoefsmit representations",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag",
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988",
+    "references/kangleeleeoh2002",
+    "references/hoefsmit1974",
+    "references/ram1991"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "reservoir",
+    "hecke-algebra",
+    "temperley-lieb",
+    "appendix"
+  ],
+  "text": "lean-lib-hecke-temperley-lieb.md",
+  "provenance": "authored"
+}

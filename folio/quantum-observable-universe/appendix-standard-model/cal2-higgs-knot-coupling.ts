@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "rem:epistemic-status-of-calibrations",
   label: "rem:cal2-higgs-knot-coupling",
-  title: "The CAL-2 proxy as a Higgs-knot volume coupling",
+  title: "The muon-ratio substrate proxy as a Higgs-knot volume coupling",
   tags: ["appendix", "standard-model", "higgs", "calibration", "mass"],
   uses: ["rem:epistemic-status-of-calibrations"],
   authorNotes: [
