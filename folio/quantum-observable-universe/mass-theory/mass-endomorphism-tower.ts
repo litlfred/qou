@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:mass-endomorphism-tower",
   title:
-    "Proton--electron mass endomorphism tower (convention D, $\\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm",
+    "Proton--electron mass endomorphism tower ($z = q^3/(q^2+1)$, $\\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm",
   lean: { ref: "qou:QOU.MassEndomorphism.mass_endomorphism_positive",
     validation: "validated",
   },

@@ -7,7 +7,7 @@
      \boxed{\; X \;:=\; Q^{r} \;=\; q^{4}. \;}
    $$
 
-   *Equivalently $X = z_W/(1 - Q + z_W)$ for the Wenzl-normalised convention-D parameter $z_W = q\,z_D = q^4/(q^2+1)$ — the relation that pins the level.*
+   *Equivalently $X = z_W/(1 - Q + z_W)$ for the Wenzl-normalised parameter $z_W = q\,z = q^4/(q^2+1)$ at $z = q^3/(q^2+1)$ — the relation that pins the level.*
 3. *Form the Schur principal-specialisation:*
 
    $$
@@ -25,19 +25,11 @@
 
 This deterministic process produces the exact $y_\lambda(q)$ closed form in $O(|\lambda| \cdot \max h)$ steps — the cost of one Schur specialisation, the normaliser being closed-form.
 
-**Convention.** The substitution above uses the canonical Convention-D parameter $z_D = q^3/(q^2+1)$. By contrast, the Convention-C parameterization sets
+**Properties at $r = 2$.** With the Markov parameter $z = q^3/(q^2+1)$, the Wenzl parameter $z_W = q\,z = q^4/(q^2+1)$ sits directly on the integer level $r = 2$ of the Wenzl lattice, yielding three structural simplifications:
 
-$$
-  X \;=\; \frac{q^{3/2}}{1 + q - q^2 - q^3 + q^{3/2}},
-$$
-
-which is convention C: inverting the lattice relation gives exactly $z_W = q\,z_C = q^{3/2}/(q+1)$. That value is *off* the Wenzl lattice — at the substrate anchor it corresponds to an effective level $r \approx 2.5995$, not an integer — which is why it carried a formal square root and why the level never appeared explicitly.
-
-**Consequences of the migration.** All three are simplifications:
-
-- No square root. The recipe lives over $\mathbb{Q}(q)$, not $\mathbb{Q}(\sqrt q)$.
-- $Z_n$ is closed-form, so step 4 costs nothing.
-- $y_\lambda = 0$ whenever $\lambda$ has more than $r = 2$ rows, so only the one- and two-row partitions contribute at all.
+- No square root: the recipe lives over $\mathbb{Q}(q)$ rather than $\mathbb{Q}(\sqrt q)$.
+- $Z_n = (1 + q^2)^n$ is closed-form, so step 4 requires no partition sum.
+- $y_\lambda = 0$ whenever $\lambda$ has more than $r = 2$ rows, so only the one- and two-row partitions contribute.
 
 **Worked example** ($n = 2$, both partitions of dimension one):
 

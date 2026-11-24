@@ -18,7 +18,7 @@ $$
 
 This is a change of variables and holds for every choice of what $w$ is later identified with; it is independent of any Markov-trace convention.
 
-## Identifying $w$ with a Markov loop value (convention D)
+## Identifying $w$ with a Markov loop value
 
 Write $q = e^{\eta}$, so $\eta = \ln q$ and $[2]_q = q + q^{-1} = 2\cosh\eta$. The canonical Markov parameter is
 
@@ -45,10 +45,10 @@ Whether this $w$ is the variable of the generating function of the Markov-parame
 > the substrate modulus $q_0 \approx 1.110$. Nothing here determines
 > $\Delta_\lambda$, which stays open under the three-calibration discipline.
 
-The comparison target is the ${}^4\text{He}$ shell-filling fraction $c_\lambda^{\text{exp}} = B_{\text{AME}}/E_{\text{gate}} \approx 0.943503$, which contains the experimental binding and is therefore not an independent quantity. Under the convention-D identification $x = \cosh 2\eta$, the Fibonacci anchor $q = 1/\phi$ gives $x = \cosh(2\ln\phi) = \frac{3}{2}$ and
+The comparison target is the ${}^4\text{He}$ shell-filling fraction $c_\lambda^{\text{exp}} = B_{\text{AME}}/E_{\text{gate}} \approx 0.943503$, which contains the experimental binding and is therefore not an independent quantity. Under the identification $x = \cosh 2\eta$ induced by $z = q^3/(q^2+1)$, the Fibonacci anchor $q = 1/\phi$ gives $x = \cosh(2\ln\phi) = \frac{3}{2}$ and
 
 $$
 \frac{P_{-1/2}\left(\frac{3}{2}\right)}{P_{1/2}\left(\frac{3}{2}\right)} \approx 0.804485,
 $$
 
-which is $14.7\,\%$ below $c_\lambda^{\text{exp}}$. At the substrate itself, $x = \cosh 2\eta_0$ gives $P_{-1/2}/P_{1/2} \approx 0.989206$, $4.8\,\%$ above it. Neither is a match. The earlier $0.1\,\%$ near-match at $x = \frac{\sqrt5}{2}$ arose only through the convention-C identification $x = \cosh\eta$ and does not survive under the canonical weight.
+which is $14.7\,\%$ below $c_\lambda^{\text{exp}}$. At the substrate itself, $x = \cosh 2\eta_0$ gives $P_{-1/2}/P_{1/2} \approx 0.989206$, $4.8\,\%$ above it. Neither is a match.

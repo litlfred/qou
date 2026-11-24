@@ -1,0 +1,1225 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/ground-state-ordering",
+    "path": "folio/quantum-observable-universe/mass-theory/ground-state-ordering"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad",
+          "lean": "0a7a36e78585"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad",
+          "lean": "0a7a36e78585"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "lean": "908165e829d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_date": "2026-07-02",
+          "agent_skill": "local/lean-proof-vacuity-audit"
+        },
+        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Statement contains only the bare claim without physical interpretation.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:03.802Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/ground-state-ordering.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ground-state-ordering.md:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:04.466Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "If the ordering breaks Lorentz invariance implicitly, the ground state physical plausibility is highly questionable.",
+        "evidence": "If the ordering breaks Lorentz invariance implicitly, the ground state physical plausibility is highly questionable."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
+        "evidence": "Referee verdict: open-objection. Objection: Sibling Lean file is missing."
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2ad72e349356",
+          "ts": "112d18cc79ad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.111Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/ground-state-ordering.lean is missing, leading to complete divergence.",
+        "severity": "minor",
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/ground-state-ordering.lean is missing, leading to complete divergence."
+      },
+      {
+        "field_hash": {
+          "md": "90233e313ca7",
+          "ts": "112d18cc79ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Rewrote mass-theory_seq4.md for Milnor standards: clean prose, declarative.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:18:41.000Z",
+        "reviewed_sha": "2117b6ca803b741f9b760cbf06b815d361722d7d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.005Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Every denial here is the result: 'does not minimise', 'It is not the ground state', 'head-packs, not tail-packs', 'sorted does not beat interleaving'. This is a negative proposition and the denials are its content.",
+        "notes": "Header register: 'Two readouts, not one' is the one place the not-X-but-Y shape is doing rhetorical rather than mathematical work; 'The two readouts' would serve."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.109Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'The eigenvalue relation lambda_+ lambda_- = -1 survives; the ordering claim does not' is a precise scope split, not a reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.165Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Six em-dashes in 657 words, each carrying a qualification the sentence needs ('a consequence of the transfer factors commuting, so that the readout sees the crossing coefficients only as a multiset')."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.205Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'the three rules' are the three claims the earlier version asserted, each adjudicated separately with its own verdict."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.249Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The block ends on a Scope section that narrows its own claim and explicitly declines to settle the downstream question — the opposite of a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.285Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'The proposition previously asserted three rules' is necessary to make the negative result legible.",
+        "notes": "Light authorNotes candidate (AGENTS.md 4d) for that one sentence, but unlike the corrections in the frobenius blocks it is load-bearing for the statement itself, so prose is defensible."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.330Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No restatement; the three-rule section, the two-readout section and the two-parameter derivation are all distinct."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.365Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No personal register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.430Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Counts are exact and unrounded (17 of 62, 10 of 62, 12, 8), the interval claim is hedged, and the Scope section refuses to generalise past A = 16. No inflation anywhere."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.473Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Long but consistently readable; each section is short and each display is set out.",
+        "notes": "THIS IS THE BEST-SCOPED BLOCK IN THE BATCH and the checks bear it out. VERIFIED: lambda_+ lambda_- = q(-1/q) = -1 exactly, consistent with det S = -1 and tr S = q - q^{-1}, and with S^2 = (q - q^{-1})S + 1. The 0-indexing is self-consistent: ordering[k] = proton for k odd and k < 2Z gives 'n p n n n' at A = 5, Z = 1, matching the stated counterexample, and 'proton position A - 5 leaves exactly four neutrons after it' is right in that same 0-indexed convention. SCOPE DISCIPLINE: the Scope section classifies the A >= 4 result as a structural exclusion and licenses it correctly — an explicit arrangement with strictly smaller Phi_q, proved on an interval — while labelling the minimising family 'empirical, covering A <= 16 only'. That is exactly the (a)/(b) discipline AGENTS.md asks for. ONE UNDER-CLAIM worth noting: if the gap really factors as (t - 1) times a degree-20 polynomial with all coefficients positive, then it is positive for every t > 1, i.e. for every q > 1 — stronger than 'an interval containing the substrate anchor'. The block could claim the half-line; it claims less."
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-*Let $W \in H_n(q)$ be a knot operator representing a confined state. The **algebraic quantum volume** of $W$ is its full canonical Markov trace, an element of $\mathbb{Z}[q^{\pm 1}][(q^{2}+1)^{-1}]$ under convention D:*
+*Let $W \in H_n(q)$ be a knot operator representing a confined state. The **algebraic quantum volume** of $W$ is its full canonical Markov trace, an element of $\mathbb{Z}[q^{\pm 1}][(q^{2}+1)^{-1}]$ at $z = q^{3}/(q^{2}+1)$:*
 
 $$
   \mathrm{Vol}_{\mathrm{alg}}(W)

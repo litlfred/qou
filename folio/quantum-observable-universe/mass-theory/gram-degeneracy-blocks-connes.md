@@ -29,7 +29,7 @@ statement inside an ordered field, with no top element adjoined.
 
 The natural candidate for a derived metric on the state space is the Gram form of the
 Markov trace: build a Lipschitz seminorm from it, take the Connes supremum, and read
-off a distance. Under convention D that route is blocked before it starts. The star
+off a distance. At the Markov parameter $z = q^3/(q^2+1)$ that route is blocked before it starts. The star
 form is positive semidefinite with a one-dimensional kernel --- the block killed by
 the row cap --- and a kernel of the form is a kernel of the seminorm. Any state pair
 separating that direction supplies the $k$ above.
@@ -37,9 +37,6 @@ separating that direction supplies the $k$ above.
 The obstruction is a fact about the *method*, and it names its own repair: quotient by
 the radical, or choose a different seminorm.
 
-Under convention C the question does not arise. Every Wedderburn weight is strictly
-positive there, the star form is definite, and no kernel element exists to exploit.
-The blocker is specific to the convention that imposes the row cap.
 
 ## Prior art and structural synthesis
 
@@ -77,7 +74,7 @@ Vazeille Temperley and Elliott H. Lieb \cite{temperley-lieb1971}. Second, spectr
 Standard Model geometries \cite{chamseddine-connes-1997} posit a semisimple finite
 algebra $\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ with a faithful trace by
 stipulation; here the derivation starts on $H_n(q)$ at real $q_0 > 1$, proves that
-convention D forces $\det G = 0$ for $n \ge 3$, and uses Rieffel's kernel criterion so
+the Markov parameter $z = q^3/(q^2+1)$ forces $\det G = 0$ for $n \ge 3$, and uses Rieffel's kernel criterion so
 that state-space metric finiteness dynamically forces the projection
 $H_n(q) \twoheadrightarrow TL_n(q)$.
 
@@ -86,6 +83,6 @@ substrate wall: it invokes real- or complex-analytic constructs --- real-valued
 physical observables, real-analytic bounds, transcendental constants, or numerical
 evaluation at the substrate parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
-only their archimedean realisation is specialised here. At $q_0$ under convention D
+only their archimedean realisation is specialised here. At $q_0$ for $z = q^3/(q^2+1)$
 the star-form spectrum is $0,\, 0.752702^{\times 3},\, 4.230339$: exactly one null
 direction, and it is the braid-symmetric one.

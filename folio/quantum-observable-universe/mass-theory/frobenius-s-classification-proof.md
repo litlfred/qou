@@ -17,9 +17,7 @@ underlying field of fractions and acts on each coefficient:
   value $\mathrm{tr}_M(\sigma^{-1})$. So $z$ is not an $S$-eigenvector: $S$
   exchanges the two loop values. Equivalently, the Markov trace commutes with
   $S$, $\mathrm{tr}_M(S(X)) = S(\mathrm{tr}_M(X))$, and the relation
-  $z(q^{-1}) = z(q) - h_{\mathrm{A}}$ is exactly the condition for this. (The
-  excised convention-C weight $1/(q^{1/2}+q^{-1/2})$ is fixed by $S$, but its
-  trace does not commute with $S$.)
+  $z(q^{-1}) = z(q) - h_{\mathrm{A}}$ is exactly the condition for this.
 - Catalan's constant $G$, Borromean volume $8G$, electron mass
   $m_e$, and binding scale $\alpha$ are real canonical constants
   unaffected by the algebraic action.

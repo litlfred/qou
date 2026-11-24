@@ -1,0 +1,497 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/wedderburn-mass-formula-proof",
+    "path": "folio/quantum-observable-universe/mass-theory/wedderburn-mass-formula-proof"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "275d5f22b44f",
+          "ts": "2feb6750b979"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:25.926Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "proof:65-67 'Chaining within a single crossing algebra is the defining Level-0 transfer-matrix reduction' — products of distinct σ_i are not in R[σ]; proof:117-131 β₂ = −2[3]_q 'factor 2 by the pn crossing-doubling convention', h² 'minimal even power compatible' — chosen weights vs md:65-66 'zero fitted parameters'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "efe61205ff7e",
+          "ts": "6e6d6bfb728b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:22.097Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: the phrase 'is the degree-two baryon weight (degree-2 weight):' reworded to 'has a direct count:'; the factor-2 convention and minimal-h^2 choice cited in the earlier finding are unchanged (proof.md:117-125). No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: proof:65-67 'Chaining within a single crossing algebra is the defining Level-0 transfer-matrix reduction' — products of distinct σ_i are not in R[σ]; proof:117-131 β₂ = −2[3]_q 'factor 2 by the pn crossing-doubling convention', h² 'minimal even power compatible' — chosen weights vs md:65-66 'zero fitted parameters'"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7d9a82b3c2a4",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "0ce6861dccba",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "0ce6861dccba",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean: the closing sentence is a data-availability caveat — the certifying witness `atom-mass-complete-wedderburn.witness.json` is recorded as absent from `computations/` — not a deferral to a PR or work item.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "68f6504ead7d",
+          "ts": "f88c54fb27d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.748Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + assembly + provenance note). \"no more and no fewer\" (Step 3) states exact completeness, which is the claim being made, so it is content rather than flourish. The closing provenance note about the absent witness is honest scope reporting - verified: computations/atom-mass-complete-wedderburn.witness.json is indeed absent from the tree."
+      }
+    ]
+  }
+}

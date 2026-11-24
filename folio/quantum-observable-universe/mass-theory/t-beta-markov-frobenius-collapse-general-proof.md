@@ -44,4 +44,4 @@ The cyclicity hypothesis $\tau(xy) = \tau(yx)$ is part of what makes $\tau$ a tr
 
 ## Specialisations
 
-With $X^\dagger = X$ this is the untwisted statement, and for $A = R$, $\tau = \mathrm{id}$ it reduces to the scalar identity $x^2 = (x - S)^2 + 2 S x - S^2$. For $A = H_n(R, q)$ with $\tau = \mathrm{tr}_M$, the untwisted choice fails for $n \ge 3$ ($\mathrm{tr}_M(X \cdot X) < 0$ at $X = \sigma_1\sigma_2 - \sigma_2\sigma_1$); the anti-involution fixing each $\sigma_i$ gives a positive twisted form, degenerate under convention D, so $T_\beta = S \cdot 1_H$ holds up to its radical.
+With $X^\dagger = X$ this is the untwisted statement, and for $A = R$, $\tau = \mathrm{id}$ it reduces to the scalar identity $x^2 = (x - S)^2 + 2 S x - S^2$. For $A = H_n(R, q)$ with $\tau = \mathrm{tr}_M$, the untwisted choice fails for $n \ge 3$ ($\mathrm{tr}_M(X \cdot X) < 0$ at $X = \sigma_1\sigma_2 - \sigma_2\sigma_1$); the anti-involution fixing each $\sigma_i$ gives a positive twisted form, degenerate at $z = q^3/(q^2+1)$, so $T_\beta = S \cdot 1_H$ holds up to its radical.

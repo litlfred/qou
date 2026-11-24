@@ -10,19 +10,19 @@ $$
 
 This establishes the central canonicity of the weight $\tilde w_\lambda(q)$. The LP form multiplies this weight by $h/2$. The Markov coefficient $y_\lambda$, given by Wenzl's hook-content closed form, is a distinct family on every stratum.
 
-> **Failure of the Wenzl-bridge premise on the $\kappa_\lambda = 0$ stratum.** The identity $y_\lambda = \tilde w_\lambda$ for $\kappa_\lambda = \sum_x c(x) = 0$ fails at **every** such partition with $n \leq 6$ except the trivial one-cell $\lambda = (1)$ — in the production convention D *and* in the excised convention C, so it is not a convention-scoping issue:
+> **Failure of the Wenzl-bridge premise on the $\kappa_\lambda = 0$ stratum.** The identity $y_\lambda = \tilde w_\lambda$ for $\kappa_\lambda = \sum_x c(x) = 0$ fails at **every** such partition with $n \leq 6$ except the trivial one-cell $\lambda = (1)$:
 >
-> | $\lambda$ | $\kappa$ | $y^{\mathrm D}(q_0)$ | $y^{\mathrm C}(q_0)$ | $\tilde w(q_0)$ |
-> |---|---:|---:|---:|---:|
-> | $(1)$ | 0 | 1.00000000 | 1.00000000 | 1.00000000 |
-> | $(2,1)$ | 0 | 0.24729789 | 0.28092963 | 0.66067377 |
-> | $(2,2)$ | 0 | 0.06115624 | 0.06947330 | 0.16604895 |
-> | $(3,1,1)$ | 0 | **0** | 0.01676661 | 0.29466896 |
-> | $(3,2,1)$ | 0 | **0** | 0.00731845 | 0.35863564 |
+> | $\lambda$ | $\kappa$ | $y_\lambda(q_0)$ | $\tilde w(q_0)$ |
+> |---|---:|---:|---:|
+> | $(1)$ | 0 | 1.00000000 | 1.00000000 |
+> | $(2,1)$ | 0 | 0.24729789 | 0.66067377 |
+> | $(2,2)$ | 0 | 0.06115624 | 0.16604895 |
+> | $(3,1,1)$ | 0 | **0** | 0.29466896 |
+> | $(3,2,1)$ | 0 | **0** | 0.35863564 |
 >
 > $(2,2)$ and $(3,2,1)$ are precisely the two partitions this block's cited script is said to have verified.
 >
-> **The last two rows are a scope-(b) structural exclusion**, not a numerical near-miss. Convention D is the $\mathfrak{sl}_2$ point of the Ocneanu family ([Reconciliation of the Markov parameter $z$](../mass-endomorphism/markov-z-reconciliation.md)), so $y_\lambda = 0$ identically once $\lambda$ has more than two rows — such a $\lambda$ has a cell of content $-2$, whose Ocneanu numerator factor vanishes. Meanwhile $\tilde w_\lambda$ is a ratio of products of positive quantum integers, hence strictly positive for $q > 0$. The identity there asserts $0 = \text{positive}$, and no choice of parameter reconciles it. The other two rows are scope (a): measured non-equality under six readings of $\dim_q(\lambda)^2/[n]_q!$ (symmetric vs unbalanced quantum integer, $q$-deformed vs ordinary dimension, squared vs unsquared), none of which matches.
+> **The last two rows are a scope-(b) structural exclusion**, not a numerical near-miss. The Markov parameter $z = q^3/(q^2+1)$ is the $\mathfrak{sl}_2$ point of the Ocneanu family ([Reconciliation of the Markov parameter $z$](../mass-endomorphism/markov-z-reconciliation.md)), so $y_\lambda = 0$ identically once $\lambda$ has more than two rows — such a $\lambda$ has a cell of content $-2$, whose Ocneanu numerator factor vanishes. Meanwhile $\tilde w_\lambda$ is a ratio of products of positive quantum integers, hence strictly positive for $q > 0$. The identity there asserts $0 = \text{positive}$, and no choice of parameter reconciles it. The other two rows are scope (a): measured non-equality under six readings of $\dim_q(\lambda)^2/[n]_q!$ (symmetric vs unbalanced quantum integer, $q$-deformed vs ordinary dimension, squared vs unsquared), none of which matches.
 >
 > **What this does *not* invalidate, which is most of the block.** The identity $y_\lambda = \tilde w_\lambda$ on self-conjugate partitions was only ever assumed, never proved, so no proved statement is made wrong by its falsity; results conditional on it were vacuous at the intended weights rather than false. The BW and LP scalings $\beta_\lambda = -\tfrac12 \tilde w_\lambda$ and $C_\lambda = \tilde w_\lambda \cdot h/2$ stand as definitional, and the relation $\beta_\lambda h = -C_\lambda$ follows from them alone, without the identity. The block's own off-stratum statement, that $y_\lambda$ and $\tilde w_\lambda$ are genuinely distinct families, is correct — and on this evidence correct on the stratum too.
 >

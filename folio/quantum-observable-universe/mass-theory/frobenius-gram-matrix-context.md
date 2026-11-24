@@ -5,16 +5,11 @@ basis encodes all interaction pairings, and its inverse
 $G^{-1}$ gives the explicit dual construction
 $K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j$.
 
-> **$G$ is singular on $H_3$ under Convention D — read $G^{-1}$ on the
-> Temperley–Lieb quotient.** The dual
-> construction it defines, presuppose $\det G \neq 0$. That holds under the
-> excised **convention C**, where the antisymmetric weight
-> $y_{(1^3)} = 0.0227449\ldots$ is small but nonzero. It fails under the
-> production **convention D**: the pin $z(q^2+1) = q^3$ forces
-> $y_{(1^3)} = 0$ exactly, so the $(1^3)$ block **is** the radical of the trace
-> form and $\det G = 0$ — not "numerically singular", zero. A $G^{-1}$ computed
-> under C is therefore not an approximation to one under D; the latter does not
-> exist, and at $n = 3$ the corank is exactly $1$.
+> **$G$ is singular on $H_3$ — read $G^{-1}$ on the
+> Temperley–Lieb quotient.** Writing $G^{-1}$ on all of $H_3(q)$
+> presupposes $\det G \neq 0$. At the Markov parameter $z = q^3/(q^2+1)$, the relation $z(q^2+1) = q^3$ forces
+> $y_{(1^3)} = 0$ identically, so the $(1^3)$ block **is** the radical of the trace
+> form, $\det G = 0$ — not "numerically singular", zero — and no inverse exists on $H_3(q)$; at $n = 3$ the corank is $1$.
 >
 > The Frobenius structure itself is not lost, only relocated: the radical is a
 > two-sided ideal, so $\mathrm{tr}_M$ descends to
@@ -28,7 +23,7 @@ $K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j$.
 
 ## Markov trace of NF basis elements
 
-Write $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$ (**convention D**).
+Write $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$.
 
 See [Table 1](#tbl:frobenius-gram-matrix-table1-data).
 
@@ -46,7 +41,7 @@ $\sigma_0 \in H_1$).
 
 At the proton-pinned $q_0 \approx 1.1099785828$ with $z = q^3/(q^2+1)$,
 $hz^2 + z \approx 0.6912$, and the naive $z^3 \approx 0.2300$ is off by a
-factor of 3.0 (compared with $0.5514$ and $0.1245$ under Convention C at the muon anchor).
+factor of 3.0.
 
 ## Operator identification via the dual
 

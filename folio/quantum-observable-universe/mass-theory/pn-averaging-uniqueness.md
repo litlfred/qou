@@ -1,4 +1,4 @@
-*Let $R$ be a field, $q \in R$ with $q \neq 0$ and $q^{2}+1 \neq 0$, and write $z = q^{3}/(q^{2}+1)$ (convention D) and $h = q - q^{-1}$. For a function $c$, consider the p-n interface averaging $\sigma_{c} = z - c\,h$. Then $\sigma_c$ is bar-invariant at $q$,*
+*Let $R$ be a field, $q \in R$ with $q \neq 0$ and $q^{2}+1 \neq 0$, and write $z = q^{3}/(q^{2}+1)$ and $h = q - q^{-1}$. For a function $c$, consider the p-n interface averaging $\sigma_{c} = z - c\,h$. Then $\sigma_c$ is bar-invariant at $q$,*
 
 $$
   \sigma_{c}(q) = \sigma_{c}(q^{-1}),
@@ -49,7 +49,7 @@ The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from B
 - $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$. For $T(3,5)$, $\alpha_{\text{shift}}(T(3,5)) = 10$. This specifies the pole order of $\sigma$.
 - The Bring color-tube weight inherits this derived pole order $q^{10}$.
 
-All statements above are proved: $\overline{z} = z - h$ under convention D,
+All statements above are proved: $\overline{z} = z - h$ for $z = q^{3}/(q^{2}+1)$,
 the bar-invariance criterion, the uniqueness among constant coefficients, and
 the bar-invariance of $z - h/2$. In addition, two averagings with the same
 9-pair colour weight agree. Choosing that weight is open.

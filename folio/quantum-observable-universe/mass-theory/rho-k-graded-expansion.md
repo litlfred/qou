@@ -18,7 +18,7 @@ $$
   }
 $$
 
-where $\alpha = m_e \cdot 8G$ and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter (**convention D**). Its comparison with measured masses is recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy).
+where $\alpha = m_e \cdot 8G$ and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter. Its comparison with measured masses is recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy).
 
 ## Proof
 

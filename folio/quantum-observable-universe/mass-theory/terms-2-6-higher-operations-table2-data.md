@@ -6,4 +6,4 @@
 | 4 | $+1.305$ | $+205.82$ | $+0.006$ |
 | 5 | $+1.121$ | $-300.52$ | $-0.004$ |
 
-Values at the proton-pinned $q_0$ with the canonical weight $z = q^3/(q^2+1)$, from $\mathrm{tr}_M(\sigma_0) = z$ and $\sigma_0^2 = h\,\sigma_0 + 1$. Under the excised convention C the second and fourth columns took the values $+0.499$, $+1.104$, $+0.730$, $+1.257$, $+0.993$; the $1/(q;q)_k$ column does not depend on $z$.
+Values at the proton-anchored $q_0$ with the canonical Markov parameter $z = q^3/(q^2+1)$, from $\mathrm{tr}_M(\sigma_0) = z$ and $\sigma_0^2 = h\,\sigma_0 + 1$; the $1/(q;q)_k$ column does not depend on $z$.

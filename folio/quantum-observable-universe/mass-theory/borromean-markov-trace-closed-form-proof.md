@@ -194,7 +194,7 @@ The argument needs three conditions on $\beta \in B_n$:
 Conditions 1 and 2 alone do not suffice, even at $H_3$. The pure,
 writhe-zero braid $\sigma_1^2 \sigma_2^{-2}$ has
 $\chi^{(2,1)} = 2 + 3h^2 + h^4$ and
-$\mathrm{tr}_M = 1 + \tfrac34 h^2 + O(h^4)$ under convention D.
+$\mathrm{tr}_M = 1 + \tfrac34 h^2 + O(h^4)$ at $z = q^{3}/(q^{2}+1)$.
 
 Cross-isotope verification: the deuteron ($H_6$), tritium ($H_9$),
 and ${}^3\mathrm{He}$ ($H_9$) atom braids have $h^2 \ne 0$

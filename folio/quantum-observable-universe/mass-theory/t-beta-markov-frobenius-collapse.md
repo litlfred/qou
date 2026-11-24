@@ -2,7 +2,7 @@
 $$
 \boxed{\; T_\beta = S \cdot 1_H \;}
 $$
-*with $\| T_\beta \|^2_\tau = S^2$. The minimiser is unique up to the radical of $\langle\,\cdot\,,\cdot\,\rangle_\tau$, which under convention D is the sum of the Wedderburn blocks of shapes with three or more rows.*
+*with $\| T_\beta \|^2_\tau = S^2$. The minimiser is unique up to the radical of $\langle\,\cdot\,,\cdot\,\rangle_\tau$, which at $z = q^3/(q^2+1)$ is the sum of the Wedderburn blocks of shapes with three or more rows.*
 
 ## Why the twist $Y^\dagger$ is needed
 

@@ -87,7 +87,7 @@ $$
 
 *Status.* The argument that stood here fails at its first step.
 It asserted that $\tau$ is $S$-invariant for the antipode
-$S(\sigma_i) = \sigma_i^{-1}$. Under convention D,
+$S(\sigma_i) = \sigma_i^{-1}$. At the Markov parameter $z = q^3/(q^2+1)$,
 $\tau(\sigma_i) = z = q^3/(q^2+1)$, while
 $\tau(\sigma_i^{-1}) = \tau(\sigma_i) - (q - q^{-1}) = 1/\bigl(q(q^2+1)\bigr)$;
 at $q_0$ these are $0.6127$ and $0.4036$. Moreover $\sigma_i \mapsto

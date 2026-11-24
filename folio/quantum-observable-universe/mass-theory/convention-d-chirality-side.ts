@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:convention-d-chirality-side",
-  title: "Convention D weighs the two eigenlines of a crossing unequally",
+  title: "The two-row Markov trace weighs the two eigenlines of a crossing unequally",
   interprets: "prop:markov-trace-frobenius-selection",
   uses: ["prop:convention-d-kills-antisymmetriser"],
   cites: ["jones1987", "wenzl1988"],

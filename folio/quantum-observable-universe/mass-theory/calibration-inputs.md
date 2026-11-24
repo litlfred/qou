@@ -14,7 +14,7 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 > hadronic energy scale $\mathfrak{E}_0$ is framework-derived from
 > $(m_e, q_0)$; $\mathfrak{Q}_\beta$ computed from $q_0$ is scored at
 > $0.3254$ MeV ($-58.40\%$), the $T^3$ weight split of the Markov trace at
-> $z_D$ on the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$
+> $z = q_0^3/(q_0^2+1)$ on the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$
 > ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)).
 > The same trace on the nucleon difference $\Delta$ gives $0.4491$ MeV
 > ($-42.59\%$; $0.4447$ MeV with the order-zero $\mathfrak{E}_0$), kept as

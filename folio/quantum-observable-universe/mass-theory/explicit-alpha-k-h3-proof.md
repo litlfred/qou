@@ -66,7 +66,6 @@ $$
   \alpha_3 \;=\; z\,(1 + hz) \;=\; \frac{q^3}{q^2+1}\Bigl(1 + \frac{q^2(q^2-1)}{q^2+1}\Bigr).
 $$
 
-(By contrast, the special factorization $z(1 + q^{1/2} - q^{-1/2})$ holds only for the Convention-C weight $z_C = \sqrt q/(q+1)$.)
 
 $\square$
 
@@ -78,7 +77,7 @@ forms above to $\sim 10^{-16}$.
 By [Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge),
 $y_\lambda(q)$ at $H_3$ admits the closed form
 $y_\lambda = s_{\lambda, r}(Q) / \sum_\mu d_\mu s_{\mu, r}(Q)$ with
-$Q = q^2$ and $X = Q^r = q^{3/2}/(1 + q - q^2 - q^3 + q^{3/2})$. The
+$Q = q^2$ and $r = 2$ ($X = Q^2 = q^4$). The
 Markov pairings $\alpha_k = \langle \mathrm{tr}_M, r_k \rangle$ on the
 four $E_\infty$ classes inherit this $q$-rational structure
 automatically; the per-class derivations below can be replaced by a

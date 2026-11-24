@@ -16,7 +16,7 @@ m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)| \cdot \left(\rho_K^{\text{LO}} + \rho_K
 \;+\; O(\hbar_q^{6})
 $$
 
-*matches CODATA to sub-percent accuracy across $Z = 1..20$. Here, $\hat V_i^{\text{full}}$ denotes the Wedderburn-traced per-generator volumes, and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter (**convention D**).*
+*matches CODATA to sub-percent accuracy across $Z = 1..20$. Here, $\hat V_i^{\text{full}}$ denotes the Wedderburn-traced per-generator volumes, and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter.*
 
 ## Empirical evidence
 

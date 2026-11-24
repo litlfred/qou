@@ -23,8 +23,8 @@ $H_n(R, q)$-summand under the decomposition of Step 1, satisfies the
 Markov property
 $\mathrm{tr}(x \cdot \sigma_n) = z \cdot \mathrm{tr}(x)$ for
 $x \in H_n$ — a direct consequence of the braided monoidal partial-trace
-identity for right-hand closure.  Under the integer-power Hecke presentation $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ on the rank-$2$ fundamental $V$ of quantum dimension $[2]_q = q + q^{-1}$ ($r = 2$, $Q = q^2$), the partial trace fixes the Convention-D parameter
-$z = z_D = q^3/(q^2 + 1) = q^2/[2]_q$ (matching $z_{\mathrm{GL}} = q\,z_D = Q^2(1 - Q)/(1 - Q^2)$ in Step 4 below; the superseded convention C instead wrote $1/(\sqrt{q} + 1/\sqrt{q})$).
+identity for right-hand closure.  Under the integer-power Hecke presentation $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ on the rank-$2$ fundamental $V$ of quantum dimension $[2]_q = q + q^{-1}$ ($r = 2$, $Q = q^2$), the partial trace fixes the Markov parameter
+$z = q^3/(q^2 + 1) = q^2/[2]_q$ (matching $z_{\mathrm{GL}} = q\,z = Q^2(1 - Q)/(1 - Q^2)$ in Step 4 below).
 
 *Step 3 (uniqueness of the trace).*  By Chlouveraki HDR Theorem 6.20
 (equivalently Juyumaya's Theorem 12 at $d = 1$), the type-$A$
@@ -66,4 +66,4 @@ $\square$
 | Self-dual fundamental object                                          | $A$ as the [fundamental confined particle](#def:confined-particle), self-dual via $A^* \cong A$ from the antipode                |
 | Fibre functor                                                         | [$\tau \colon \mathbf{C} \to R\text{-mod}$](#prop:fibre-functor-atlas) realising the state bundle                                |
 | Tannaka--Krein Hopf algebra                                           | $H = U_q(\mathfrak{sl}_2)$ in the running QOU example                                                                             |
-| $V = \tau(A)$ has $q$-dimension $[2]_q = q + q^{-1}$ ($r = 2$)        | direct from $A$ being the spin-$\tfrac{1}{2}$ representation, fixing $z_D = q^2/[2]_q = q^3/(q^2 + 1)$                            |
+| $V = \tau(A)$ has $q$-dimension $[2]_q = q + q^{-1}$ ($r = 2$)        | direct from $A$ being the spin-$\tfrac{1}{2}$ representation, fixing $z = q^2/[2]_q = q^3/(q^2 + 1)$                            |

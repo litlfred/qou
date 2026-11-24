@@ -23,15 +23,14 @@ $$
 - $g_{55} = (h^3+h)e + 2h^2z^2 + 2hz + 1 = (h^4 + 3h^2)z^2 + (h^3 + 3h)z + 1$ (from $e^- \cdot e^- = (h^3+h)e^- + h^2L_+ + h^2L_- + h\sigma_1 + h\sigma_0 + \gamma$)
 
 *The matrix is **symmetric** ($G_{ij} = G_{ji}$, by cyclicity of the
-Markov trace), with determinant $\det G(q, z) = -(z - q)^5(qz + 1)^5\bigl((q^2 + 1)z - q^3\bigr)(q^3 z + qz + 1)/q^8$. Under Convention D ($z = q^3/(q^2 + 1)$), the $(1^3)$ Wedderburn block carries $y_{(1^3)} = 0$ symbolically, so that block lies in the radical of the form, $\det G = 0$ identically, and $G^{-1}$ does not exist on $H_3(q)$ (the induced pairing is non-degenerate on the $5$-dimensional Temperley--Lieb quotient $\mathrm{TL}_3(q)$; for contrast, under the superseded convention C, $z_C = \sqrt{q}/(q+1)$, $\det G \approx -0.18920522$). Any statement about the **signature** must name its pairing. On the
+Markov trace), with determinant $\det G(q, z) = -(z - q)^5(qz + 1)^5\bigl((q^2 + 1)z - q^3\bigr)(q^3 z + qz + 1)/q^8$. At the Markov parameter $z = q^3/(q^2 + 1)$, the $(1^3)$ Wedderburn block carries $y_{(1^3)} = 0$ symbolically, so that block lies in the radical of the form, $\det G = 0$ identically, and $G^{-1}$ does not exist on $H_3(q)$ (the induced pairing is non-degenerate on the $5$-dimensional Temperley--Lieb quotient $\mathrm{TL}_3(q)$). Any statement about the **signature** must name its pairing. On the
 bilinear pairing $\mathrm{tr}_M(b_i b_j)$ above, the spectrum
-at $q_0$ is $(-0.75270211,\ 0,\ +0.75270211^{\times 3},\ +4.23033923)$ under Convention D
-(compared with $(-0.85506726,\ +0.10179667,\ +0.85506726^{\times 3},\ +3.47694980)$ under
-C). On the **star** pairing $\mathrm{tr}_M(b_i b_j^*)$ — where
+at $q_0$ is $(-0.75270211,\ 0,\ +0.75270211^{\times 3},\ +4.23033923)$.
+On the **star** pairing $\mathrm{tr}_M(b_i b_j^*)$ — where
 the Hecke star $T_w^* = T_{w^{-1}}$ exchanges $L_+ \leftrightarrow L_-$
-on this basis — the form is positive semidefinite of signature $(5,0,1)$ under Convention D (and $(6,0,0)$ under C).
+on this basis — the form is positive semidefinite of signature $(5,0,1)$.
 An indefinite signature appears
-only on the untwisted bilinear pairing; what survives both pairings under Convention D is the single null
+only on the untwisted bilinear pairing; what survives both pairings at $z = q^3/(q^2 + 1)$ is the single null
 direction.*
 
 The Markov-trace computation of the NF basis elements, the
