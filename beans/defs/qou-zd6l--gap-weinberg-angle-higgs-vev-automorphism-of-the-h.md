@@ -1,7 +1,7 @@
 ---
 # qou-zd6l
 title: 'GAP: Weinberg angle — Higgs-vev automorphism of the Hoefsmit decomposition and the corrected trace ratio are not formalised (WeinbergAngleCategorical has no instance)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
@@ -10,7 +10,7 @@ tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-09-03T09:08:29Z
-updated_at: 2026-11-24T17:03:05Z
+updated_at: 2026-11-24T17:36:20Z
 parent: qou-20sx
 ---
 
@@ -36,3 +36,5 @@ Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are groupe
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8211, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 Claimed 2026-11-24 by Worker 53 on branch `claude/electroweak-mw-mz-weinberg-higgs-thresholds-20261124` (first-principles 80-dps , M_Z, \sin^2\theta_W(M_Z), m_H$ evaluation atop QOU-derived {\mathrm{weak}}$ & $\alpha_{\mathrm{EM}}$ + `QOU/StandardModel/ElectroweakBosonThresholdsAndWeinberg.lean`).
+
+Progress 2026-11-24 (https://github.com/litlfred/qou/pull/9390, commits 05766e3c573 / 749a28f2775): landed QOU/StandardModel/ElectroweakBosonThresholdsAndWeinberg.lean (0 sorry, [Field K] zero-spread W/Z-anchor Higgs unification, v-independent Higgs quartic lambda_H, ordered-field 0 < sin^2 theta_W^Planch < 1, non-vacuous §3b-cond ElectroweakBosonThresholdSystemClass + def trivialModel) and 80-dps self-consistent threshold probe computations/probes/electroweak_mw_mz_weinberg_higgs_probe.py (L2a M_W = 80.2471 GeV [-0.152%], M_Z = 91.0650 GeV [-0.134%]; L2b M_W = 80.5362 GeV [+0.208%], M_Z = 91.3931 GeV [+0.225%]; reconciled m_H = 125.3007 GeV [+0.92 sigma] / 125.0816 GeV [-1.08 sigma] with |m_H^(W) - m_H^(Z)| = 0). Categorical functor / H_6 Hoefsmit automorphism instance intentionally kept open (status -> todo).
