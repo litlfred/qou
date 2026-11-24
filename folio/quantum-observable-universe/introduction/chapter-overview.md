@@ -11,7 +11,7 @@ comprising a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf object $A$
 $$
   (\mathbf{C}, \varTheta, G, \mathcal{S}).
 $$
-In this language, a Lagrangian forms a categorical trace. Every action equals the trace of a single *Lagrangian endomorphism* $\Phi$ dictating the dynamics:
+In this language, a Lagrangian forms a categorical trace. Every [categorical action](#def:categorical-action) equals the trace of a single *Lagrangian endomorphism* $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ dictating the dynamics:
 $$
   \mathfrak{S} = \mathrm{tr}(\Phi).
 $$
@@ -19,7 +19,11 @@ The dynamics enters through the categorical **Dirac operator**, blending the con
 $$
   \mathcal{D}_\nabla = q^{-1}\nabla + (1 - q^{-1})\,\iota_\xi\nabla.
 $$
-This reduces to the standard covariant derivative at $q = 1$. Its square decomposes—forced by the Frobenius–Hopf structure—into two curvature terms: spatial curvature (Ricci) and internal gauge curvature (Yang–Mills). Coupling a matter state $\psi$ introduces the third. The categorical action $\mathfrak{S}_q = \mathrm{tr}(\Phi)$ sums these three components:
+This reduces to the standard covariant derivative at $q = 1$. Coupling the Dirac operator to a state $\psi \colon \mathbf{1} \to A$ gives the Lagrangian endomorphism of a QOU, the **[categorical Lagrangian](#def:categorical-lagrangian)**
+$$
+  \mathcal{L}_q(\nabla, \psi) = \mathcal{D}_\nabla^{2} + \psi^{\ast} \otimes \mathcal{D}_\nabla\psi \in \mathrm{End}_{\mathbf{C}}(A),
+$$
+where $\psi^{\ast} = \int_A \circ S(\psi)$ is the adjoint section. It exists and is unique once $\nabla$, $\psi$, $q$ and $\xi$ are chosen. Its first summand is bosonic: the square $\mathcal{D}_\nabla^{2}$ decomposes—forced by the Frobenius–Hopf structure—into two curvature terms, spatial curvature (Ricci) and internal gauge curvature (Yang–Mills). Its second summand, the coupling of the matter state $\psi$, supplies the third. The categorical action $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$ sums these three components:
 $$
   \mathfrak{S}_q = \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl(q \cdot R_{\int}\bigr)}_{\text{gravity}} + \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl( F_\nabla \wedge_q \star_q F_\nabla \bigr)}_{\text{gauge}} + \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl(\psi^{\ast} \otimes \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}}.
 $$
