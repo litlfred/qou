@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-15T17:05:02.553349+00:00",
-  "commitSha": "5d77048be19c17d5c01d7912c401a07df057e66d",
+  "computedAt": "2026-11-24T00:45:13.307266+00:00",
+  "commitSha": "9f4ec266a1ebe4134525dfc7e975e73a539faa23",
   "assertions": [
     {
       "name": "N3_beats_100x_experimental_target",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 32,
   "computation": "qbeta-ck-truncation-order-analysis",
   "scriptFile": "qbeta_ck_truncation_order_analysis.py",
-  "scriptHash": "282c07ab87ef",
-  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
+  "scriptHash": "8b5ecd19915f",
+  "scriptCommitSha": "60124c9b7b0411716b8e39d452d327cf3fbb1193",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "cvxpy": "absent"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -106,9 +108,9 @@
       "c3_nominal_J_Hopf": "-2",
       "c3_empirical_muon_pin": "-2.0097",
       "c3_empirical_mp_pin": "-2.0693",
-      "swing_muon_pct": 0.9930155937005,
+      "swing_muon_pct": 0.9930155937002731,
       "swing_mp_pct": 3.465,
-      "cross_anchor_swing_pct": 2.4719844062995,
+      "cross_anchor_swing_pct": 2.4719844062997267,
       "verdict": "c_3=-2 is a STRUCTURAL NEAR-MATCH (q₀-dependent), not Taylor-exact. >>compute-precision swing ⟹ form-fitting."
     },
     "habiro_fix": "Identify the Q_β Habiro element (q-series whose Taylor coefficients ARE the c_k), parallel to the α_EM Habiro element [2]_q·(1-h²α) (PR #1511). Then c_k become exact + q₀-independent and |c_{N+1}·u^{N+1}| is a rigorous truncation bound.",

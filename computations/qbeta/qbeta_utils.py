@@ -524,6 +524,46 @@ def c3_proton_extracted(dps: int | None = None) -> mpf:
         return +c3
 
 
+def c3_extracted_at_q(q_anchor: mpf | str, dps: int | None = None) -> mpf:
+    """Recompute the historical convention-C `c_3` target at a given `q_anchor`
+    against the `Q_codata` recorded in `qbeta-ck-cache.witness.json`, with 15
+    guard digits (avoids typed 15-digit literals that trip `witness_value_copy_audit`).
+    """
+    import json
+    import sys
+    from pathlib import Path
+    from mpmath import mp
+
+    _here = Path(__file__).resolve().parent
+    _comp = str(_here.parent)
+    if _comp not in sys.path:
+        sys.path.insert(0, _comp)
+    import _path_bridge  # noqa: F401
+    from codata_constants import M_E_MEV
+
+    ck_wit = json.loads((_here / "qbeta-ck-cache.witness.json").read_text())
+    d = mp.dps if dps is None else dps
+    with mp.workdps(d + 15):
+        q_val = mpf(str(q_anchor))
+        q_cod = mpf(ck_wit["data"]["Q_codata"])
+        c3 = c3_target_at(q_val, q_cod, mpf(str(M_E_MEV)), convention="C")
+    with mp.workdps(d):
+        return +c3
+
+
+def c3_muon_extracted(dps: int | None = None) -> mpf:
+    """Recompute the historical convention-C `c_3` target at the live CODATA-2022
+    muon pin `q_muon_at(d + 15)` against `qbeta-ck-cache.witness.json`'s `Q_codata`.
+    """
+    from mpmath import mp
+    from qou_substrate.constants import q_muon_at
+
+    d = mp.dps if dps is None else dps
+    with mp.workdps(d + 15):
+        qm = q_muon_at(d + 15)
+    return c3_extracted_at_q(qm, dps=d)
+
+
 # ── Route 1 Two-Term Connected Borromean V³ QED & Ladder Helpers ──
 # Canonical source: `QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean` (§6–§9),
 # theorems `trace_QAdjp_borromeanV3`, `trace_QAdjn_borromeanV3_connected`,

@@ -392,7 +392,7 @@ def main() -> int:
         # Weighted path graph: vertex 0 = (3) <--cost 1/grad_w = q_0--> vertex 1 = (2,1)_+
         #                      vertex 1 = (2,1)_+ <--cost 1/hbar_{q_0} = t_P(q_0)--> vertex 2 = (2,1)_-
         # Shortest-path distance matrix D_graph:
-        c01 = 1 / grad_w   # = q_0 ~ 1.10997858
+        c01 = 1 / grad_w   # = q_0 (proton substrate pin)
         c12 = 1 / hbar_q0  # = t_P(q_0) ~ 10.09267946
         D_graph = [
             [mp.mpf(0), c01, c01 + c12],

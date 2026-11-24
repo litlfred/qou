@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-23T20:04:46.946958+00:00",
-  "commitSha": "7965080c97aaed153cf3d06240fa8dac2e0722af",
+  "computedAt": "2026-11-24T00:45:13.664917+00:00",
+  "commitSha": "9f4ec266a1ebe4134525dfc7e975e73a539faa23",
   "assertions": [
     {
       "name": "layer1_convex_and_circuit_identities_exact",
@@ -44,11 +44,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "finite-rieffel-tl3-metric",
   "scriptFile": "finite_rieffel_tl3_metric_probe.py",
-  "scriptHash": "5576a145e0e5",
-  "scriptCommitSha": "4f40d0e4ed68746e4c1d9e0c982a7569d100bda3",
+  "scriptHash": "cc71742599b6",
+  "scriptCommitSha": "a62506a5c91c21c997c6b47e3619321ce4e955a3",
   "precisionMetadata": {
     "compute_dps": 80,
     "output_dps": 70,
