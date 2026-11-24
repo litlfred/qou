@@ -6,7 +6,7 @@ This derives the Breit--Wheeler categorical pair production with the [photon](#d
 
 The bare photon is $\gamma(0) = \mathbf{1}$, so two bare photons give $\gamma(0)\gamma(0) = \mathbf{1}$. A bare pair carries no crossing.
 
-An earlier version of this derivation took a bare photon to be the single crossing $\sigma_0$, and so took the bare pair to be $\sigma_0^2 = (q - q^{-1})\sigma_0 + \mathbf{1}$, with net valuation $1 + (q - q^{-1}) \approx 1.209$ and pair energy $\approx 1.006$ MeV. Under [the photon definition](#def:photon) $\sigma_0$ is one term of a photon, not a photon, so that computation is about the $\sigma_0$ term squared, not about a photon pair.
+By contrast, the single crossing $\sigma_0$ gives $\sigma_0^2 = (q - q^{-1})\sigma_0 + \mathbf{1}$, with net valuation $1 + (q - q^{-1}) \approx 1.209$ and energy $\approx 1.006$ MeV; under [the photon definition](#def:photon), $\sigma_0$ is a single colour-plane generator rather than the bare photon $\gamma(0) = \mathbf{1}$, so $\sigma_0^2$ evaluates the squared crossing term rather than a bare photon pair.
 
 #### Colored photon
 
