@@ -1,0 +1,356 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T03:59:09.362619+00:00",
+  "commitSha": "8b31016fca17fb589929752f3e0bda558dcf1195",
+  "assertions": [
+    {
+      "name": "sympy_exact_circulant_koide_resolvent_and_tl3_identities",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "S3CirculantKoideTraceIdentity.lean (§1-§5 exact ring/field identities)"
+    },
+    {
+      "name": "classic_koide_cal1_cal2_resolvent_matches_mtau_within_100ppm",
+      "computed": "6.14386758212654e-5",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-4",
+      "source": "Koide 1983 (doi:10.1103/PhysRevD.28.252) quadratic resolvent on CODATA-2022 m_mu/m_e"
+    },
+    {
+      "name": "tl3_finite_q0_deficit_identity_exact_80dps",
+      "computed": "8.56553582887480e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "S3CirculantKoideTraceIdentity.tl3KoideNormRatio_closed_form_and_deficit"
+    },
+    {
+      "name": "tl3_strict_departure_below_two_thirds_at_q0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "S3CirculantKoideTraceIdentity.tl3_strict_departure_from_two_thirds"
+    },
+    {
+      "name": "untuned_q0_operators_falsify_simultaneous_koide_gate_g2b",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "Pre-registered Gate G-2B honest refutation check (PREREGISTRATION.md §5)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "gap2b-mtau-s3-circulant-koide-probe",
+  "scriptFile": "gap2b_mtau_s3_circulant_koide_probe.py",
+  "scriptHash": "7395cec9b379",
+  "scriptCommitSha": "8b31016fca17fb589929752f3e0bda558dcf1195",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap2b_mtau_s3_circulant_koide_test/gap2b_mtau_s3_circulant_koide_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap2b_mtau_s3_circulant_koide_test/gap2b_mtau_s3_circulant_koide_probe.py"
+  },
+  "description": "Pre-registered 80-dps algebraic and numerical test of S_3/Z_3 circulant square-root mass operators, Koide Q=2/3 singlet-doublet equipartition on Bring's 3-generation subspace projGen3, quadratic sqrt(m_tau) resolvent, and zero-parameter q_0 phase candidates (Open Gap 2 Backup / Option 2B, bean qou-j96h).",
+  "parameters": {
+    "work_dps": 80,
+    "out_dps": 50,
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "hbar_q0": "0.099081716044258507839177117518906063985258373389446",
+    "h_q0": "0.20906029879563931543084621312967494385975749526302",
+    "vol_4_1": "2.0298832128193072500424051085490405718833786150606",
+    "preregistration": "computations/probes/gap2b_mtau_s3_circulant_koide_test/PREREGISTRATION.md",
+    "lean_module": "folio/quantum-observable-universe/lean/QOU/StandardModel/S3CirculantKoideTraceIdentity.lean"
+  },
+  "data": {
+    "symbolic_verification": {
+      "all_symbolic_identities_verified": true,
+      "hermitian_circulant_koide_poly_zero": true,
+      "s3_symmetric_min_poly_zero": true,
+      "bring_ambient_f5_stretch_factor_4_exact": true,
+      "koide_quadratic_resolvent_exact": true,
+      "step_plus_q1_is_cyclic_shift": true,
+      "tl3_finite_q_deficit_exact": true
+    },
+    "empirical_benchmarks": {
+      "m_mu_over_m_e_codata_2022": "206.7682827",
+      "m_mu_over_m_e_uncert": "0.0000046",
+      "m_tau_over_m_e_pdg_2024": "3477.228",
+      "m_tau_over_m_e_pdg_uncert": "0.023",
+      "m_tau_over_m_e_nist_codata_2022": "3477.23",
+      "m_tau_over_m_e_nist_uncert": "0.23",
+      "koide_q_exp_pdg": "0.66666050352627157727335053951838472470185895786465",
+      "koide_q_exp_pdg_uncert": "6.63545665629520e-7",
+      "koide_q_exp_minus_two_thirds": "-6.1631403950893933161e-6",
+      "koide_q_exp_nist": "0.66666056122560570163478337222851948398687337540338",
+      "koide_q_exp_nist_uncert": "6.63542572347368e-6",
+      "theta_exp_rad": "0.22222204707308784875891571901046161890588917400202",
+      "theta_chiral_zero_pi_over_12": "0.26179938779914943653855361527329190701643078328126",
+      "theta_margin_to_electron_zero": "0.03957734072606158777963790",
+      "dln_mmu_me_dtheta_at_exp": "56.143660553327318575",
+      "dln_mtau_me_dtheta_at_exp": "51.226569950949075635"
+    },
+    "part_a_quadratic_resolvent": {
+      "R1_codata_cal1_cal2": {
+        "input_m_mu_over_m_e": "206.76828270000000000000000000000000000000000000000",
+        "input_m_mu_rel_err_vs_codata": "0.0",
+        "pred_m_tau_over_m_e": "3477.4416362838486270268766482851619380118882667487",
+        "diff_vs_pdg_3477_228": "0.21363628384862702688",
+        "rel_err_vs_pdg": "0.000061438675821265394986",
+        "rel_err_pct_vs_pdg": "0.00614386758213",
+        "sigma_pull_vs_pdg_0_023": "9.28853408038",
+        "sigma_pull_vs_nist_0_23": "0.920157755864",
+        "koide_q_identity_residual": "0.0"
+      },
+      "R2a_qou_bare_vol41": {
+        "input_m_mu_over_m_e": "206.76832637067389028960958640990267593845820455103",
+        "input_m_mu_rel_err_vs_codata": "2.1120586445867700572e-7",
+        "pred_m_tau_over_m_e": "3477.4423064158730225498913589145330526823157603419",
+        "diff_vs_pdg_3477_228": "0.21430641587302254989",
+        "rel_err_vs_pdg": "0.000061631396006538124590",
+        "rel_err_pct_vs_pdg": "0.00616313960065",
+        "sigma_pull_vs_pdg_0_023": "9.31767025535",
+        "sigma_pull_vs_nist_0_23": "0.923071373361",
+        "koide_q_identity_residual": "1.05421979432305e-81"
+      },
+      "R2b_qou_inhomogeneous_9213": {
+        "input_m_mu_over_m_e": "207.17372167129404457753183582218729598912338659387",
+        "input_m_mu_rel_err_vs_codata": "0.0019608373489385496431",
+        "pred_m_tau_over_m_e": "3483.6628677759080017687791515768786154159791985234",
+        "diff_vs_pdg_3477_228": "6.4348677759080017688",
+        "rel_err_vs_pdg": "0.0018505740135268673118",
+        "rel_err_pct_vs_pdg": "0.185057401353",
+        "sigma_pull_vs_pdg_0_023": "279.776859822",
+        "sigma_pull_vs_nist_0_23": "27.9689903300",
+        "koide_q_identity_residual": "1.05421979432305e-81"
+      }
+    },
+    "part_b_operator_equipartition": {
+      "Op_B1_identity": {
+        "rho_doublet_over_singlet": "0",
+        "koide_q": "0.33333333333333333333333333333333333333333333333333",
+        "diff_vs_two_thirds": "-0.33333333333333333333",
+        "passes_equipartition": false
+      },
+      "Op_B2_democratic_D3": {
+        "rho_doublet_over_singlet": "2",
+        "koide_q": "1",
+        "diff_vs_two_thirds": "0.33333333333333333333",
+        "passes_equipartition": false
+      },
+      "Op_B3_isotropic_Z3_plancherel_or_projGen3_dof": {
+        "rho_doublet_over_singlet": "2",
+        "koide_q": "1",
+        "diff_vs_two_thirds": "0.33333333333333333333",
+        "passes_equipartition": false
+      },
+      "Op_B4_TL3_convD_wedderburn_norm": {
+        "y3_q0": "0.50540422650393080318755870324047227566035119774981",
+        "two_y21_q0": "0.49459577349606919681244129675952772433964880225019",
+        "schur_weyl_check_2_twoq_over_fourq_diff": "2.10843958864610e-81",
+        "rho_doublet_over_singlet": "0.97861424095594194013868488950408335654849037083705",
+        "koide_q_at_q1_exact": "0.66666666666666666666666666666666666666666666666667",
+        "koide_q_at_q0": "0.65953808031864731337956162983469445218283012361235",
+        "diff_vs_two_thirds": "-0.0071285863480193532871",
+        "rel_shift_pct_vs_two_thirds": "-1.06928795220",
+        "sigma_pull_vs_q_exp_pdg": "-10733.8855132",
+        "deficit_closed_form_residual": "8.56553582887480e-82",
+        "passes_equipartition": false
+      },
+      "Op_B5_H3_regular_plancherel_qdim": {
+        "rho_doublet_over_singlet": "4.0217937334142445995049839561837256317784814969683",
+        "koide_q_at_q0": "1.6739312444714148665016613187279085439261604989894",
+        "diff_vs_two_thirds": "1.0072645778047481998",
+        "passes_equipartition": false
+      },
+      "Op_B6_chiral_photon_vertex_Mplus1": {
+        "kappa_1": {
+          "eigenvalues": [
+            "0.295781288873608806737111600128",
+            "0.660512502593869203860869064195",
+            "2.00000000000000000000000000000"
+          ],
+          "all_positive": true,
+          "koide_q": "0.51761242629127476847014550735817312743481968979364",
+          "diff_vs_two_thirds": "-0.14905424037539189820",
+          "m_mu_over_m_e_if_positive": "4.9867855358296971474",
+          "m_tau_over_m_e_if_positive": "45.721302838144559578"
+        },
+        "kappa_inv_sqrt2": {
+          "eigenvalues": [
+            "0.502042173924078381987748468602",
+            "0.759946088456074450870940124065",
+            "1.70710678118654752440084436210"
+          ],
+          "all_positive": true,
+          "koide_q": "0.42468007336100763322758128226803904495583515862132",
+          "diff_vs_two_thirds": "-0.24198659330565903344",
+          "m_mu_over_m_e_if_positive": "2.2913169351379033993",
+          "m_tau_over_m_e_if_positive": "11.562213168886674617"
+        }
+      }
+    },
+    "part_c_zero_parameter_phases": {
+      "theta_1_two_hbar": {
+        "is_q0_derived": true,
+        "theta_rad": "0.19816343208851701567835423503781212797051674677889",
+        "theta_minus_theta_exp": "-0.024058614984570833081",
+        "theta_rel_diff_vs_theta_exp_pct": "-10.8263852761",
+        "pred_m_mu_over_m_e": "69.707996190342460909735163542488483257081778336667",
+        "rel_err_m_mu_pct": "-66.2869008341",
+        "rel_err_m_mu_ppm": "-662869.008341",
+        "sigma_pull_m_mu": "-29795714.4586",
+        "pred_m_tau_over_m_e": "1322.8248014160295714696757551776781786679696871363",
+        "rel_err_m_tau_pct_vs_pdg": "-61.9574902360",
+        "rel_err_m_tau_ppm_vs_pdg": "-619574.902360",
+        "sigma_pull_m_tau_vs_pdg": "-93669.7042863",
+        "sigma_pull_m_tau_vs_nist": "-9366.97912428",
+        "pred_m_tau_over_m_mu": "18.9766579691082468327919655834",
+        "koide_q_check": "0.666666666666666666666666666667",
+        "passes_1pct_both_ratios": false
+      },
+      "theta_2_two_ln_q0": {
+        "is_q0_derived": true,
+        "theta_rad": "0.20868144063903902463181255994614479410748856165797",
+        "theta_minus_theta_exp": "-0.013540606434048824127",
+        "theta_rel_diff_vs_theta_exp_pct": "-6.09327769787",
+        "pred_m_mu_over_m_e": "106.30913874423054871318227024357491182560419164155",
+        "rel_err_m_mu_pct": "-48.5853742382",
+        "rel_err_m_mu_ppm": "-485853.742382",
+        "sigma_pull_m_mu": "-21838944.3382",
+        "pred_m_tau_over_m_e": "1912.4709536353340145902440828440179670125438376612",
+        "rel_err_m_tau_pct_vs_pdg": "-45.0001278710",
+        "rel_err_m_tau_ppm_vs_pdg": "-450001.278710",
+        "sigma_pull_m_tau_vs_pdg": "-68032.9150593",
+        "sigma_pull_m_tau_vs_nist": "-6803.30020159",
+        "pred_m_tau_over_m_mu": "17.9897135488657581714651035045",
+        "koide_q_check": "0.666666666666666666666666666667",
+        "passes_1pct_both_ratios": false
+      },
+      "theta_3_two_q0_minus_1": {
+        "is_q0_derived": true,
+        "theta_rad": "0.21995716550276161518333819122153775974899824374716",
+        "theta_minus_theta_exp": "-0.0022648815703262335756",
+        "theta_rel_diff_vs_theta_exp_pct": "-1.01919750995",
+        "pred_m_mu_over_m_e": "182.65038239561838977089678326993759459086773103278",
+        "rel_err_m_mu_pct": "-11.6642165759",
+        "rel_err_m_mu_ppm": "-116642.165759",
+        "sigma_pull_m_mu": "-5243021.80530",
+        "pred_m_tau_over_m_e": "3106.2917881832151035871385951136347833373082904170",
+        "rel_err_m_tau_pct_vs_pdg": "-10.6675838288",
+        "rel_err_m_tau_ppm_vs_pdg": "-106675.838288",
+        "sigma_pull_m_tau_vs_pdg": "-16127.6613833",
+        "sigma_pull_m_tau_vs_nist": "-1612.77483399",
+        "pred_m_tau_over_m_mu": "17.0067631254941851732019111832",
+        "koide_q_check": "0.666666666666666666666666666667",
+        "passes_1pct_both_ratios": false
+      },
+      "theta_4_hecke_h": {
+        "is_q0_derived": true,
+        "theta_rad": "0.20906029879563931543084621312967494385975749526302",
+        "theta_minus_theta_exp": "-0.013161748277448533328",
+        "theta_rel_diff_vs_theta_exp_pct": "-5.92279139302",
+        "pred_m_mu_over_m_e": "108.07608630384927154294804836377797117565647466145",
+        "rel_err_m_mu_pct": "-47.7308197889",
+        "rel_err_m_mu_ppm": "-477308.197889",
+        "sigma_pull_m_mu": "-21454825.3035",
+        "pred_m_tau_over_m_e": "1940.5564361496543118440813536009854540745927468798",
+        "rel_err_m_tau_pct_vs_pdg": "-44.1924304029",
+        "rel_err_m_tau_ppm_vs_pdg": "-441924.304029",
+        "sigma_pull_m_tau_vs_pdg": "-66811.8071239",
+        "sigma_pull_m_tau_vs_nist": "-6681.18940804",
+        "pred_m_tau_over_m_mu": "17.9554654735914400848932260150",
+        "koide_q_check": "0.666666666666666666666666666667",
+        "passes_1pct_both_ratios": false
+      },
+      "theta_5_rational_two_ninths": {
+        "is_q0_derived": false,
+        "theta_rad": "0.22222222222222222222222222222222222222222222222222",
+        "theta_minus_theta_exp": "1.7514913437346330650e-7",
+        "theta_rel_diff_vs_theta_exp_pct": "7.88171725895e-5",
+        "pred_m_mu_over_m_e": "206.77031597272938861255033931777507746217879491003",
+        "rel_err_m_mu_pct": "0.000983358135415",
+        "rel_err_m_mu_ppm": "9.83358135415",
+        "sigma_pull_m_mu": "442.015810737",
+        "pred_m_tau_over_m_e": "3477.4728371045985323130012255226483445993318601992",
+        "rel_err_m_tau_pct_vs_pdg": "0.00704115762897",
+        "rel_err_m_tau_ppm_vs_pdg": "70.4115762897",
+        "sigma_pull_m_tau_vs_pdg": "10.6450915043",
+        "sigma_pull_m_tau_vs_nist": "1.05581349825",
+        "pred_m_tau_over_m_mu": "16.8180467333775170565339113256",
+        "koide_q_check": "0.666666666666666666666666666667",
+        "passes_1pct_both_ratios": true
+      },
+      "theta_6_q_triality_casimir": {
+        "is_q0_derived": true,
+        "theta_rad": "0.21588602766574319437655352151085617478066740015245",
+        "theta_minus_theta_exp": "-0.0063360194073446543824",
+        "theta_rel_diff_vs_theta_exp_pct": "-2.85121098055",
+        "pred_m_mu_over_m_e": "148.24843549527046851288506709069472063155155903164",
+        "rel_err_m_mu_pct": "-28.3021392065",
+        "rel_err_m_mu_ppm": "-283021.392065",
+        "sigma_pull_m_mu": "-12721705.9141",
+        "pred_m_tau_over_m_e": "2572.5776764557967169470680152581441629326361931659",
+        "rel_err_m_tau_pct_vs_pdg": "-26.0164223785",
+        "rel_err_m_tau_ppm_vs_pdg": "-260164.223785",
+        "sigma_pull_m_tau_vs_pdg": "-39332.6227628",
+        "sigma_pull_m_tau_vs_nist": "-3933.27097193",
+        "pred_m_tau_over_m_mu": "17.3531522802334665923481701194",
+        "koide_q_check": "0.666666666666666666666666666667",
+        "passes_1pct_both_ratios": false
+      },
+      "theta_7_chiral_vertex_eigenphase_shift": {
+        "is_q0_derived": true,
+        "theta_rad": "0.025423100322699597812096318308281134087449778151739",
+        "theta_minus_theta_exp": "-0.19679894675038825095",
+        "theta_rel_diff_vs_theta_exp_pct": "-88.5595958378",
+        "pred_m_mu_over_m_e": "1.5318285888762480182429159245206334824603772580302",
+        "rel_err_m_mu_pct": "-99.2591568838",
+        "rel_err_m_mu_ppm": "-992591.568838",
+        "sigma_pull_m_mu": "-44616620.4589",
+        "pred_m_tau_over_m_e": "84.883497397925669572646504675934277436957598603128",
+        "rel_err_m_tau_pct_vs_pdg": "-97.5588745576",
+        "rel_err_m_tau_ppm_vs_pdg": "-975588.745576",
+        "sigma_pull_m_tau_vs_pdg": "-147493.239244",
+        "sigma_pull_m_tau_vs_nist": "-14749.3326200",
+        "pred_m_tau_over_m_mu": "55.4131826591618474762551055010",
+        "koide_q_check": "0.666666666666666666666666666667",
+        "passes_1pct_both_ratios": false
+      }
+    },
+    "gate_g2b_verdict": {
+      "gate_g2b_passed": false,
+      "any_untuned_q0_operator_passes_equipartition": false,
+      "any_q0_phase_passes_1pct_both_ratios": false,
+      "selected_q0_operator": "none",
+      "disposition": "honest_falsification_of_untuned_q0_koide_closure_rule13a"
+    }
+  },
+  "caveats": [
+    "1. Unbroken S_3-equivariance on Bring's 3-generation space projGen3 forces b = c in S(a,b,c), leaving a degenerate 2D doublet (lambda_1 = lambda_2 = a - b); splitting all three charged leptons strictly requires chiral symmetry breaking S_3 -> Z_3 (b != c). 2. While Temperley-Lieb Convention-D Wedderburn trace weights (y_3, 2 y_21) achieve EXACT singlet-doublet equipartition (1/2 = 1/2, Q = 2/3) at the classical point q = 1, at finite q_0 = 1.10997858... they shift strictly below 2/3 by -(q_0 - q_0^-1)^2 / (3(q_0^2 + q_0^-2)) = -0.00712859 (-1.0693% relative, >10700 sigma from empirical Q_exp = 0.66666050(66)). 3. Because the empirical Brannen-Koide phase theta_exp = 0.22222205... rad lies within 0.03958 rad of the electron chiral zero pi/12 = 0.26179939..., logarithmic mass-ratio sensitivities are >50x (d ln(m_mu/m_e)/d theta = 56.14, d ln(m_tau/m_e)/d theta = 51.23), so none of the six un-tuned q_0 phase expressions simultaneously matches m_mu/m_e and m_tau/m_e within 1% (best q_0 phase 2(q_0-1) misses by -11.66% and -10.67%, whereas the q-independent rational benchmark theta = 2/9 = 2/[3]_{q=1}^2 matches to +9.83 ppm on m_mu/m_e and +70.41 ppm on m_tau/m_e, and feeding QOU's zero-CAL-2 Vol(4_1)/hbar_{q_0}^2 into exact Q = 2/3 predicts m_tau/m_e = 3477.4423, +61.63 ppm). Any finite-q_0 Koide closure remains gated behind Rule-13a zero-instance class KoideCirculantEquipartitionHypothesis."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
