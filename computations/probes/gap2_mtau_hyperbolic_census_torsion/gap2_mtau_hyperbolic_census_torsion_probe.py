@@ -939,7 +939,7 @@ EXCLUDED_HIGHER_BRAID_CONTROLS = [
     {"knot": "7_4", "strands": 4, "crossings": 7, "word": [1, 1, 2, -1, 2, 2, 3, -2, 3]},
     {"knot": "7_6", "strands": 4, "crossings": 7, "word": [1, 1, -2, 1, 3, -2, 3]},
     {"knot": "7_7", "strands": 4, "crossings": 7, "word": [1, -2, 1, -2, 3, -2, 3]},
-    {"knot": "8_1", "strands": 5, "crossings": 8, "word": [1, 1, 2, -1, -3, 2, -3, -4, 3, -4]},
+    {"knot": "8_1", "strands": 5, "crossings": 8, "word": [1, 1, 2, -1, -3, 2, 3, -4, 3, -4]},
 ]
 
 # word-literal-ok: first-principles 8-crossing 3-braid presentations (Jones 1987 Table 15.9)
@@ -1671,6 +1671,16 @@ def main() -> int:
             expected="0.0",
             tolerance="1e-72",
             source="Exact SL(2,C) product relation invariance across all 3 Fox relation-block drops",
+        )
+        from knot_volumes import vol_at as _registry_vol_at  # noqa: E402
+        rec_62 = next(r for r in primary_results if r["base_knot"] == "6_2")
+        vol_62_registry = _registry_vol_at("6_2", dps=WORK_DPS)
+        wb.add_assertion(
+            "qou_r0dn_vol62_exact_quintic_matches_registry_50dps",
+            computed=rec_62["vol_80dps"],
+            expected=fmt50(vol_62_registry),
+            tolerance="1e-48",
+            source="qou-r0dn: exact Z[x] quintic x^5-x^4-2x^3+x^2+x+1 Bloch-Wigner vs substrate/knot_volumes.py (refuting legacy 2*Vol(4_1)=4.0597664...)",
         )
         wb.add_assertion(
             "exact_z_spinor_polynomial_verification_count",
