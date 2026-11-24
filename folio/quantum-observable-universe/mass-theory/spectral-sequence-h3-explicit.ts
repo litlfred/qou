@@ -18,6 +18,12 @@ export default conjecture({
   authorNotes: [
     {
       kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits `SpectralSequenceH3ExplicitContext` via `True`/`trivial` on its three `Prop`-valued differential fields.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+    {
+      kind: "caveat",
       date: "2026-11-20",
       body: "**Measured pages (W8, 2026-11-20, bean `qou-6qbv`, PR to follow).** Exact computation of the Hochschild spectral sequence of $H_3(q)$ (`computations/probes/gb_spectral_sequence_h3_probe.py`; integers mod two primes, $q = 2, 3$, all four runs agree; $d \\circ d = 0$ checked; $\\mathrm{HH}^{0,1,2} = 3, 0, 0$). Under the Coxeter-length filtration (weight $\\sum \\ell(w_i) - \\ell(v)$), the only filtration under which the complex is filtered: $d_1 = 0$; $d_2$ has rank 1, from degree 1 weight 0 to degree 2 weight 2; $d_3 = 0$; $d_4$ has rank 1, from degree 1 weight $-2$ to degree 2 weight 2; $E_5 = E_\\infty$. Degree 0 is untouched from $E_1$ on: three classes at weights $0, -2, -3$, the leading terms of the centre $Z(H_3)$. So the statement's \"$d_1$ acts through the Hecke relation\" is false for this filtration ($d_1 = 0$), and the cancellation happens at $d_2$ and $d_4$. Under the confinement filtration the sequence does not exist (see `prop:gb-spectral-sequence`).",
     },

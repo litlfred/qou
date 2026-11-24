@@ -17,6 +17,12 @@ export default remark({
     status: "verified",
   },
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation refutation guard (`qou-x60n`, `qou-z9ws`): `2026-08-30-skein-mass-relation-is-false.lean` proves the exact literal equality `q·m_p − q⁻¹·m_n = (√q − 1/√q)·m_d` formerly carried in `QOU.HadronicMass.SkeinMassRelationHolds` fails by 0.41% (`194.5164` vs `195.3202`).",
+      see: "docs/audits/2026-08-30-skein-mass-relation-is-false.lean",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "caveat",

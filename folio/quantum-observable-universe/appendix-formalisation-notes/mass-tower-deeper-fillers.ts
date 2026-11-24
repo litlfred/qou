@@ -3,6 +3,12 @@ import { remark } from "../../schema/builders";
 export default remark({
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-are-inhabited-by-zero.lean` shows `Term7ShellCorrectionClass` in `MassTowerOpenProblemsClasses` encodes only the literal sign `-1 < 0` (`alpha5_value := -1`), not the open magnitude.",
+      see: "docs/audits/2026-08-30-context-classes-are-inhabited-by-zero.lean",
+    },
+    {
       kind: "note",
       date: "2026-08-09",
       body:

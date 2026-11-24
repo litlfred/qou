@@ -26,6 +26,12 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-gate-classes-admit-zero.lean` proves `MassDirectionSanityGateClass` is non-vacuous but its additive `10 * target` band `[-22.14, 27.06]` admits zero.",
+      see: "docs/audits/2026-08-30-gate-classes-admit-zero.lean",
+    },
+    {
       kind: "note",
       date: "2026-06-06",
       body: [

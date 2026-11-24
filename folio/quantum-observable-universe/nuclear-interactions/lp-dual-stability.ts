@@ -24,6 +24,12 @@ export default proposition({
   },
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits unparameterised `LpDualStabilityContext` on one channel with `x_star = 1`, `x_partial = -1`.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+    {
       kind: "status",
       date: "2026-11-21",
       body:

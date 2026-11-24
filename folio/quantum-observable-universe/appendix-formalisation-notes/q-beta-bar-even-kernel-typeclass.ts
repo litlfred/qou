@@ -27,6 +27,12 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation verification (`qou-x60n`, `qou-z9ws`): `2026-08-30-gate-classes-admit-zero.lean` (`GateProbe3`) instantiates `BarEvenKernel` at its intended substrate pole and shadow values while noting `direction_match` uses the additive `10 * target` band.",
+      see: "docs/audits/2026-08-30-gate-classes-admit-zero.lean",
+    },
+    {
       kind: "status",
       body:
         "**Theorem (this proposition).** Sorry-free Lean class definition " +

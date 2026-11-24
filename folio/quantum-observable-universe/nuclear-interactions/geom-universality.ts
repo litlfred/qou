@@ -19,4 +19,12 @@ export default conjecture({
     "rigid-dualizing",
     "frobenius-pairing",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-08-24-vacuous-prop-carrier-probe.lean` (`Cand22`) records that the pre-repair `PLCorrectnessHypotheses` field `(0 : ℝ) ≤ 0` was trivially inhabited.",
+      see: "docs/audits/2026-08-24-vacuous-prop-carrier-probe.lean",
+    },
+  ],
 });

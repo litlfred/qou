@@ -1,0 +1,1026 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/atomic-lp-stability",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/atomic-lp-stability"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f3ee91dab23f",
+          "ts": "2b29d6d77a77",
+          "lean": "6ed32c0f40e8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f3ee91dab23f",
+          "ts": "2b29d6d77a77",
+          "lean": "6ed32c0f40e8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59",
+          "lean": "9bf52a2d96c4",
+          "lean_statement": "c7e96852551a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T04:49:02.166Z",
+        "reviewed_sha": "40f165304b5679c8738dcc8b3f2757541f6f9cd4",
+        "severity": "critical",
+        "evidence": "lean/QOU/ParticleInteractions/atomic_lp_stability.lean did not establish either annihilator-existence claim, and its docstring asserted the opposite: \"Carries the genuine inputs ... but not the conclusion\" and \"Those two facts are therefore stated faithfully and end in sorry (disposition B)\". AtomicLPStabilityContext carried BOTH conclusions as the fields bare_unstable and dressed_stable, each the theorem statement verbatim, and both theorems ended in the projection with no sorry anywhere in the file. Fourth file in this drain with that shape (AGENTS.md 3b-cond item 5).",
+        "notes": "Repaired to 1a disposition 3. The class was inhabitable by junk and that is now PROVED rather than argued: atomic_lp_stability_of_junk_data exhibits Candidate := Unit, normalised := fun _ => True, bareVolume := fun _ => 0, dressedVolume := fun _ => 1, satisfying both conclusions with data unrelated to hydrogen, H2(q) or any Markov trace. not_atomic_lp_stability_of_junk_data gives the other half. Satisfiable AND refutable at free data is the exact measure of what the claim constrains without the Hecke content - nothing - and is why a sorry would have been unsound. Verdict stays fail: nothing constructs sigma_0, the 2x2 Markov pairing, or the normalisation. Two side fixes: bare_ne_dressed_ratio generalises the sorry-free mechanism to every q > 1.1, removing a hardcoded CODATA-2018 muon literal from the statement (the proof never used more than q > 1.1, so the result is pin-independent); and six .md paths in the file pointed at particle-interactions/, a chapter that does not exist - the block is in nuclear-interactions/. Bean qou-z9ws."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59",
+          "lean": "9bf52a2d96c4",
+          "lean_statement": "c7e96852551a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T04:49:01.680Z",
+        "reviewed_sha": "40f165304b5679c8738dcc8b3f2757541f6f9cd4",
+        "notes": "Repaired on this branch. AtomicLPStabilityContext is deleted; atomic_lp_stability is a Prop-valued def over parameters. bare_is_lp_unstable and dressed_is_lp_stable now destructure a hypothesis the CALLER supplied (h.1 / h.2), which is the legitimate accessor idiom, not a projection of a field an instance chose. Verified lean-direct exit 0, no warnings, sorry-free. Bean qou-z9ws."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'LP stability of the atomic braid': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'LP stability of the atomic braid' presents substantial mathematical content: $H_2(q)$ is LP-unstable: there exists a Markov-normalised operator $X^ = \\alpha \\cdot \\mathbf{1} + \\beta \\cdot \\sigma...",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'LP stability of the atomic braid'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'LP stability of the atomic braid' is appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'LP stability of the atomic braid'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'LP stability of the atomic braid' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing, leading to complete divergence.",
+        "severity": "minor",
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing, leading to complete divergence."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'LP stability of the atomic braid', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'LP stability of the atomic braid' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'LP stability of the atomic braid' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'LP stability of the atomic braid' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'LP stability of the atomic braid' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c20acb9d95a9",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.342816Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.342816Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing entirely, preventing formal verification of the claims in 'LP stability of the atomic braid'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq9"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:18.698Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:18.741Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:18.782Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:18.822Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:18.863Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:18.905Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:18.947Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:18.989Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:19.030Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:19.071Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-lp-stability (single italic statement sentence) plus its .ts authorNotes. No prose beyond the statement; all ten categories judged over it. Checked the cited Lean sibling QOU/ParticleInteractions/atomic_lp_stability.lean for the numerics behind the statement (see anomaly report: bareAnnihilationRatio := 0.537 is an underived literal, and the Lean's q_0 literal 1.109978595554181 is the OLD muon pin).",
+        "notes": "No trap of this category; the block is a bare proposition statement."
+      }
+    ]
+  }
+}

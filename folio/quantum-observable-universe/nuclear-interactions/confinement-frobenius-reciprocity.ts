@@ -26,6 +26,12 @@ export default conjecture({
   },
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits `ConfinementFrobeniusReciprocityContext` with zero pairing and zero expectation (and notes `strong_duality` is carried as a field).",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+    {
       kind: "status",
       date: "2026-11-21",
       body:

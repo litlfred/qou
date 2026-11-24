@@ -19,6 +19,12 @@ export default conjecture({
     "pipeline",
   ],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-08-24-vacuous-prop-carrier-probe.lean` (`Cand13`) records the pre-repair `QOU.BraidKnot.PLCorrectnessHypotheses` vacuity check on `QOU.BraidKnot.ConditionalClasses`.",
+      see: "docs/audits/2026-08-24-vacuous-prop-carrier-probe.lean",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): and `rem:baryon-period-ratio`).**" },
   ],
 });

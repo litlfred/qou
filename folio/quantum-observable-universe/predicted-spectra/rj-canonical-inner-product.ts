@@ -25,6 +25,12 @@ export default proposition({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation regression guard (`qou-x60n`): `2026-08-29-rosso-jones-index-set-probe.lean` proves universally quantifying `partitions_of_r : Finset P` collapsed `jonesPoly` to zero at `∅` and verifies the data-carried repair.",
+      see: "docs/audits/2026-08-29-rosso-jones-index-set-probe.lean",
+    },
+    {
+      kind: "note",
       date: "2026-10-10",
       body:
         "Until 2026-10-10 this proposition used the excised convention-C parameter $z = (q^{1/2} + q^{-1/2})^{-1}$, with values in $\\mathbb{Q}(q^{1/2})$, half-integer $q$-integers and the quantum dimension $\\prod [h(\\Box)]_q/[h'(\\Box)]_q$; under that convention the form had no radical. The same revision corrected two statements. Part (iii) previously read $J(\\tau(r,s)) = \\sum_{\\lambda \\vdash r} d_\\lambda(q)\\, q^{c_\\lambda s}$: that sum runs over all partitions rather than the hooks, omits the Adams-operation signs, and uses the exponent $c_\\lambda s$ in place of $2 c_\\lambda s / r$. In exact arithmetic over $\\mathbb{Q}(q)$ it agrees with the directly computed trace only for $r = 2$ with $s$ even, that is, for two-component torus links, while the formula above agrees for every coprime pair tested ($r = 2, 3, 4$). Part (ii) previously asserted that every diagonal form compatible with $\\mathrm{tr}_M(1) = 1$ is a scalar multiple of $\\langle -, - \\rangle_{\\mathrm{RJ}}$, which is false as stated; the uniqueness is that of the Markov trace.",

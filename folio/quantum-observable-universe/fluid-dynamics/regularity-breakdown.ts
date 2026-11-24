@@ -31,6 +31,24 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-08-24-undecided-carrier-witnesses.lean` records that the earlier existential `RegularityBreakdown` carrier (`∃ Re_c > 0`) was trivially inhabited at `1`.",
+      see: "docs/audits/2026-08-24-undecided-carrier-witnesses.lean",
+    },
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-hjf4`): `2026-08-30-conditional-cone-binders-unused-probe.lean` exposed degenerate `0 ≤ μ ≤ 0` bounds and unused binders in pre-repair `ConditionalCorollaries.lean`.",
+      see: "docs/audits/2026-08-30-conditional-cone-binders-unused-probe.lean",
+    },
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation refutability witness (`qou-x60n`, `qou-rq9n`): `2026-08-30-qns-carriers-are-refutable.lean` proves `¬ RegularityBreakdown (Set.Ioo 0 1)` and `RegularityBreakdown ∅`.",
+      see: "docs/audits/2026-08-30-qns-carriers-are-refutable.lean",
+    },
+    {
       kind: "note",
       date: "2026-11-21",
       body:

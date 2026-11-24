@@ -23,6 +23,12 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` records the `rankOneMarkov` witness for the retired `QOU.BraidsAndKnots.explicit_alpha_k_h4` context wrapper.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+    {
       kind: "status",
       date: "2026-11-20",
       body: "**Table derived; floats removed (W8b, 2026-11-20, gap 2 of `qou-w8cg`).** The Lean sibling carried one row of the table as float literals and range-checked them by `norm_num`; the `lean.ref` name `explicit_alpha_k_h4` did not exist. It now carries the whole table exactly (denominators cleared, generic commutative ring) and proves, sorry-free, that it is a dual basis: $\\chi_\\mu(r_\\lambda) = \\delta_{\\lambda\\mu}\\kappa_\\lambda$ with $\\kappa_\\lambda \\neq 0$ at generic $q$, and that any Frobenius-basis trace gives $\\mathrm{tr}(r_\\lambda) = y_\\lambda\\kappa_\\lambda$. The $H_4$ characters are input data, computed from Young's seminormal form in sympy. Consequence: $\\alpha_3(H_4) = \\mathrm{tr}(r_{(1^4)}) = y_{(1^4)}\\kappa_{(1^4)}$, which is $0$ under convention D (three-row shapes carry weight $0$). The recorded $+0.003463$ was the convention-C value.",
