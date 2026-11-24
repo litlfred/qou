@@ -65,6 +65,22 @@ and are converted to MeV via `#9221`'s harmonic-oscillator Compton scale $E_{\ma
 6. **`M4_kA_cyclic_quark_ring`:** $V_{\mathrm{M2}}^{(A)}(q_0)$ plus single-quark-per-cluster cyclic $3$-cycle braids $C_{\triangle} = U_{3a+2, 3b+2} U_{3b+2, 3c+2}$ ($\binom{A}{3}$ faces) and $4$-cycle braids $C_{\square} = U_{3a+2, 3b+2} U_{3b+2, 3c+2} U_{3c+2, 3d+2}$ ($c_4(A)$ 4-cycles), centered by $\frac{1}{2}(\overline{C} - \langle\overline{C}\rangle I)$ (both raw `+` and orthogonal-cumulant projected onto $k$-cluster hidden channels so 2-body edges are not double-counted).
 7. **`M5_analytic_simplex_cumulant`:** Closed-form analytic cluster-simplex sum using exact `#9221` deuteron pair energy $b_2(q_0) = |E_-(A=2)| E_{\mathrm{osc}}(q_0)$ across $\binom{A}{2}$ Majorana bonds plus 2nd-order Bloch–Horowitz cyclic $3$- and $4$-cluster shifts $\binom{A}{3} \frac{v_3(q_0)^2}{3\Delta_8(q_0)} E_{\mathrm{osc}}(q_0) + c_4(A) \frac{v_4(q_0)^2}{4\Delta_8(q_0)} E_{\mathrm{osc}}(q_0)$.
 
+### §3b. Pre-Registered Zero-Parameter 3D Jacobi Variational Compression Battery (`J_var`, Cross-Worker Gap 1A Synthesis)
+
+At fixed spatial overlap ($\eta = 1$), internal finite-dimensional operators on $S^{[A,A,A]}_{H_{3A}(q_0)}$ are bounded near $\binom{A}{2} \in \{1, 3, 6\}$ (`~6.3x` at $A = 4$) because they hold the nucleon-pair overlap integral constant across $A = 2, 3, 4$. In 3D relative Jacobi coordinates $\vec{\xi}_1, \dots, \vec{\xi}_{A-1}$, $A$ nucleons possess **$A - 1$ relative kinetic modes** competing against **$\binom{A}{2} = \frac{1}{2}A(A - 1)$ attractive Wigner-symmetric pairs**:
+$$E_{\mathrm{Jacobi}}^{(A)}(\eta) = (A - 1)\, t_{\mathrm{kin}}\, \phi_{\mathrm{kin}}(\eta) - \binom{A}{2}\, U_{\mathrm{pair}}(\eta) = (A - 1)\left[t_{\mathrm{kin}}\,\phi_{\mathrm{kin}}(\eta) - \frac{A}{2}\, U_{\mathrm{pair}}(\eta)\right],$$
+so $(A - 1)$ factors out of $\partial_\eta E_{\mathrm{Jacobi}}^{(A)}(\eta) = 0$ and the effective pair-to-kinetic coupling per Jacobi mode doubles from $A/2 = 1$ (${}^2\mathrm{H}$) to $3/2$ (${}^3\mathrm{H}/{}^3\mathrm{He}$) and **$2$ (${}^4\mathrm{He}$)**, satisfying the exact Hall–Post algebraic lower bound $B(A) \ge \binom{A}{2} b_2 + \binom{A - 1}{2} T_2$.
+
+We pre-register three zero-parameter 3D Jacobi variational models (all with intrinsic bag-to-oscillator range ratio $r_c / b_0 = 1$, `free_parameters = 0`, committed prior to numerical evaluation):
+1. **`J_var_breath` (Monopole Breathing Variational Oscillator around $\eta = 1$):**
+   $$\min_{\eta > 0}\left[\frac{3}{4}(A - 1) E_{\mathrm{osc}}(q_0)\left(\eta - \frac{1}{\eta}\right)^2 + E_{\mathrm{osc}}(q_0)\, E_-\!\left(H_{\mathrm{G2}}^{(A)}(q_0) + \left(\frac{2\eta^2}{1 + \eta^2}\right)^{3/2} V_{\mathrm{inter}}^{(A)}(q_0)\right)\right],$$
+   evaluated for both pure 2-body $V_{\mathrm{M1}}^{(A)}$ / $V_{\mathrm{M2}}^{(A)}$ and $2+3+4$-body plaquette $V_{\mathrm{M3a}}^{(A)}$.
+2. **`J_var_selfbound_Eosc` (Self-Bound 3D Jacobi Kinetic $\frac{3}{4}(A-1) E_{\mathrm{osc}}(q_0)\eta^2$ with Theoretical $A=2$ Saddle Lock):**
+   $$E_{\mathrm{self,osc}}^{(A)}(\eta; q_0) = \frac{3}{4}(A - 1) E_{\mathrm{osc}}(q_0)\,\eta^2 - \binom{A}{2} V_{0,\mathrm{osc}}(q_0)\left(\frac{\eta^2}{1 + \eta^2}\right)^{3/2},$$
+   where $V_{0,\mathrm{osc}}(q_0)$ is uniquely fixed (zero empirical nuclear input) by requiring $-\min_{\eta > 0} E_{\mathrm{self,osc}}^{(2)}(\eta; q_0) = b_2^{\mathrm{th}}(q_0) := |E_-(H_{\mathrm{G2}}^{(2)} + \mathcal{F}_{01})|\, E_{\mathrm{osc}}(q_0)$ (`#9221`'s theoretical $q_0$ deuteron energy), reporting both the fixed-$\eta_2^*$ Hall–Post energy $\binom{A}{2} b_2^{\mathrm{th}} + \binom{A-1}{2} T_2^{\mathrm{th}}$ and the unrestricted $\eta_A^*$ minimum (testing directly for short-range Thomas over-compression).
+3. **`J_var_selfbound_E0` (Self-Bound 3D Jacobi Kinetic $\frac{3}{4}(A-1) E_0(q_0)\eta^2$ in Order-Zero Nuclear Chart $E_0(q_0) = \frac{m_e}{q_0(q_0-1)}$):**
+   Same zero-parameter $A=2$ theoretical $b_2^{\mathrm{th}}(q_0)$ saddle lock with long-range kinetic scale $t_{\mathrm{kin}}(q_0) = \frac{3}{4} E_0(q_0)$ (plus coupled microscopic saturation $E_-(H_{\mathrm{G2}}^{(A)} + g_{\mathrm{E0}}(q_0)(\frac{\eta^2}{1+\eta^2})^{3/2} V_{\mathrm{M1}}^{(A)})$ as `J_var_micro_E0`), reporting both fixed-$\eta_2^*$ Hall–Post and full $\eta_A^*$-minimized energies across $A = 2, 3, 4$.
+
 ---
 
 ## 4. Precision, Anti-Fit & Verdict Rules
