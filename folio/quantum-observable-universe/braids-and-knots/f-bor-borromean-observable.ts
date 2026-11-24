@@ -43,6 +43,7 @@ export default definition({
   label: "def:f-bor-borromean-observable",
   title:
     "Borromean categorical observable",
+  lean: { ref: "qou:QOU.BraidsAndKnots.F_Bor" },
   uses: [
     "prop:borromean-markov-trace-closed-form",
     "prop:y-lambda-closed-form-wenzl-bridge",
