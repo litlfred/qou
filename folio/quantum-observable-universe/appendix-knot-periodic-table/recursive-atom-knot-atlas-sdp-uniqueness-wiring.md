@@ -14,7 +14,7 @@ demonstration level is certified by the single parameterised
 statement
 
 $$
-\texttt{nucleus\_uniqueness\_closed}\ (3A)\ : \ \text{(axiom-free)}
+\mathrm{UniqueOptimal}\bigl(T_w,\; H_{3A}(q)\bigr)
 $$
 
 instantiated at $3A = 12$. The same parameterised statement covers any nucleus

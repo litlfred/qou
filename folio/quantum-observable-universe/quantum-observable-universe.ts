@@ -128,22 +128,12 @@ export default paper({
     chapterRef({ dir: "measurement-observation" }),            // [NEW Ch 20 — Phase 6 scaffold] Quantum measurement as fibre-functor behaviour
     chapterRef({ dir: "q-geometric-langlands" }),              // q-Geometric Langlands (incl. Tannaka–Krein, Hasse–Weil)
 
-    // ── Back matter ─────────────────────────────────────────────────
-    chapterRef({ dir: "glossary" }),
-
-    chapterRef({ dir: "appendix-knot-periodic-table" }),
-    chapterRef({ dir: "appendix-knot-operations" }),
-    chapterRef({ dir: "appendix-knot-operations-archimedean" }),  // Archimedean lobe (particle NF + gluon-model) — split per q-usage Policy A
-    chapterRef({ dir: "appendix-transfer-matrices" }),
-    chapterRef({ dir: "appendix-mass-binding-algorithms" }),    // Bridge: canonical chain steps → propositions → Python API
-    chapterRef({ dir: "appendix-standard-model" }),             // Toward the Standard Model: gauge action groupoid → Hecke realization → SM truncation, with honest open-problems ledger
-    chapterRef({ dir: "appendix-nf-witnesses" }),               // Normal Form Witnesses: exact Pauli witnesses for light and medium nuclei via inductive Gröbner reduction
-    chapterRef({ dir: "appendix-qvalues" }),
-    chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift (categorical lobe) + Millennium-problem surreal bounds
-    chapterRef({ dir: "appendix-surreals-archimedean" }),      // Surreal-number lift (archimedean lobe) — substrate-q_0-pinned content split out per q-usage audit
-    chapterRef({ dir: "appendix-formalisation-notes" }),       // Formalisation notes: Lean/Mathlib infrastructure blocks moved out of the chapters (owner ruling 2026-11-20, qou-d4kh)
-    chapterRef({ dir: "index-of-definitions" }),
-    chapterRef({ dir: "notation" }),                          // Symbol register — moved out of the front matter to its own appendix (too long for the front). Forward refs ignored by the detangler (preview chapter).
-
+    // ── Back matter (6 Consolidated Annexes A–F, beans qou-anx0 & qou-lanx) ──
+    chapterRef({ dir: "appendix-knot-periodic-table" }),       // Annex A: Master Braid-Operator, Particle, Nuclear, and Molecular Reference Atlas (80-dps Jacobian Tables A.1–A.5)
+    chapterRef({ dir: "appendix-mass-binding-algorithms" }),   // Annex B: L_0..L_4 Computational, Dual-Certificate, and Transfer-Matrix Algorithms
+    chapterRef({ dir: "appendix-standard-model" }),            // Annex C: Standard Model Parameter and Categorical Gauge Ledger
+    chapterRef({ dir: "appendix-surreals" }),                  // Annex D: Surreal and Non-Archimedean Substrate Lift and Continuum Boundary
+    chapterRef({ dir: "appendix-formalisation-notes" }),       // Annex E: Lean 4 Formalization Architecture and Reusable Community Libraries (qou-lanx)
+    chapterRef({ dir: "notation" }),                           // Annex F: Notation Register, Categorical Glossary, and Index of Definitions
   ],
 });

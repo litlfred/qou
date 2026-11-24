@@ -1,6 +1,6 @@
 This registry records the full derivation of [Recursive atom-knot atlas at $q_0$ — particles to atoms via Markov-NF braids and hyperbolic-knot closures](#prop:recursive-atom-knot-atlas): the methodology classification, notation legend, braid-closure gallery, the per-level atlas, and the per-element AME 2020 cross-reference. It carries no logical content beyond the proposition it supports.
 
-This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (CAL-1, set by fiat), not an independent absolute-mass prediction; the framework's predictive content is the ratio, the binding energy, and the mass splitting. The precise identification mechanics are detailed below; a layered extension then applies this machinery to every isotope.
+This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (the leptonic mass calibration unit $m_e$), not an independent absolute-mass prediction; the framework's predictive content is the ratio, the binding energy, and the mass splitting. The precise identification mechanics are detailed below; a layered extension then applies this machinery to every isotope.
 
 ## Methodology classification (STRICT)
 
@@ -62,7 +62,7 @@ Word: $\sigma_1^2$. Closure: two circles linked once. Hyperbolic volume: $0$ (to
 
 ### $\widehat{\mathbf{1}_{B_4}}$ — **photon ($\gamma$)**
 
-Word: $\mathbf{1}_{B_4}$ (identity, no crossings). Closure: 4 disjoint unknots. The 4 strands carry polarisation $\times$ chirality components on the exceptional divisor $\mathcal{S}_p$. Used for: the **photon** (vacuum-flux carrier).
+Word: chiral 3-strand superposition $1 + \phi_0\sigma_0 + \phi_1\sigma_1 + \phi_{01}\sigma_0\sigma_1^{-1} \in H_3(q_0)$ (with bare identity sector $\mathbf{1}$ carrying zero crossings). Used for: the **photon** (massless gauge carrier).
 
 ### Hyperbolic atom-knots inventory
 
@@ -266,15 +266,15 @@ not a binding prediction.
 |---|---|---|---|---|---|---|---|
 | $\mathfrak{p}$ | 1 | 0 | — | — | — | 938.2721 | -0.00 $\pm$ 0.01 ppb |
 | $\mathfrak{n}$ | 1 | 1 | — | — | — | 939.1085 | -486288.26 $\pm$ 0.47 ppb |
-| D | 2 | 1 | 2.2488 | 2.2246 | +1.09 $\pm$ 0.0000 % | — | — |
-| T | 3 | 2 | 8.4686 | 8.4818 | -0.16 $\pm$ 0.0000 % | — | — |
-| ${}^3$He | 3 | 1 | 7.4889 | 7.7180 | -2.97 $\pm$ 0.0000 % | — | — |
-| ${}^4$He | 4 | 2 | 29.9557 | 28.2957 | +5.87 $\pm$ 0.0000 % | — | — |
+| D | 2 | 1 | *Open (census retired)* | 2.2246 | *Open* | — | — |
+| T | 3 | 2 | *Open (census retired)* | 8.4818 | *Open* | — | — |
+| ${}^3$He | 3 | 1 | *Open (census retired)* | 7.7180 | *Open* | — | — |
+| ${}^4$He | 4 | 2 | *Open (magic-$A$ retired)* | 28.2957 | *Open* | — | — |
 | ${}^5$Li | 5 | 2 | — | 26.3280 | — | — | — |
 | ${}^6$Li | 6 | 3 | — | 31.9940 | — | — | — |
 | ${}^7$Li | 7 | 4 | — | 39.2451 | — | — | — |
 
-_Computed by the extended canonical mass-table computation (method: auto); nucleon masses (m_p, m_n) from the canonical nucleon-mass routine. Paper hard floor (CAL-2 propagation): ~780 ppb._
+_Computed by the extended canonical mass-table computation (method: auto); nucleon masses (m_p, m_n) from the canonical nucleon-mass routine. Constituent calibration floor from $(m_e, \mathfrak{D}_\beta)$ Fréchet--Jacobian propagation: $\ge 0.31\;\mathrm{ppb}$ (proton) to $\sim 0.45\;\mathrm{ppb}$ (heavy nuclei)._
 
 <!-- AUTO:canonical-tr-m-table END -->
 
@@ -383,13 +383,13 @@ _This table summarizes element stability: predicted neutron count $N_{\mathrm{pr
 
 ## Per-element coverage (AME 2020 cross-reference)
 
-_Rendered from the per-element isotope computations. Each row carries the framework value, the AME 2020 reference, and the residual. For free nucleons (p, n) the entry is the $m_e$-scaled rendering of the mass ratio conditional on the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula). For D and up, the prediction is the binding energy; the AME 2020 reference is the total binding energy. $M_{\mathrm{atom}}$ is the composite atomic mass $N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$. The **CAL-3 Bound (ppb)** column represents the theoretical error floor propagated strictly from the empirical observation uncertainty of the neutron beta-decay $Q_\beta$ value (the CAL-3 anchor, $± 0.61$ eV). Because the theoretical neutron mass ratio $m_n/m_e$ is conditionally anchored on $Q_\beta$, each of the $N$ neutrons adds an unavoidable $± 0.61$ eV of experimental uncertainty to the rendered total atomic mass.
+_Rendered from the per-element isotope computations. Each row carries the framework value, the AME 2020 reference, and the residual. For free nucleons (p, n) the entry is the $m_e$-scaled rendering of the mass ratio conditional on the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula). For D and up, the prediction is the binding energy; the AME 2020 reference is the total binding energy. $M_{\mathrm{atom}}$ is the composite atomic mass $N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$. The **Calibration $\sigma_{\mathrm{pred}}$ (ppb)** column records the 80-dps Fréchet--Jacobian uncertainty propagated from the physical calibration inputs $(m_e, \mathfrak{D}_\beta)$ across the constituent mass sum $Z(m_{\mathfrak{p}} + m_e) + N m_{\mathfrak{n}}$ (including the $0.31\;\mathrm{ppb}$ electron-mass scale uncertainty even at $N = 0$).
 
 ### neutron (Z = 0)
 
 _0 of 1 isotopes with a framework prediction; 1 of 1 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | $\mathfrak{n}$ | 1 | 1 | — | — | 939.5654 | 939.5654 | +1.04 ± 0.47 | ±0.65 |
 
@@ -397,11 +397,11 @@ _0 of 1 isotopes with a framework prediction; 1 of 1 with $M_{\mathrm{atom}}$ $M
 
 _2 of 7 isotopes with a framework prediction; 3 of 7 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
-| $\mathfrak{p}$ | 1 | 0 | — | — | 938.7831 | 938.7831 | +14.47 ± 0.01 | ±0.00 |
-| ${}^{2}$H | 2 | 1 | 2.2488 | +10903.07 ± 0.1798 | 1876.0997 | 1876.1239 | -12920.26 ± 0.01 | ±0.33 |
-| ${}^{3}$H | 3 | 2 | 8.4686 | -1556.02 ± 0.1061 | 2809.4453 | 2809.4321 | +4703.24 ± 0.03 | ±0.43 |
+| $\mathfrak{p}$ | 1 | 0 | — | — | 938.7831 | 938.7831 | +14.47 ± 0.01 | ±0.31 |
+| ${}^{2}$H | 2 | 1 | *Open* | *Open* | — | 1876.1239 | — | ±0.31 |
+| ${}^{3}$H | 3 | 2 | *Open* | *Open* | — | 2809.4321 | — | ±0.31 |
 | ${}^{4}$H | 4 | 3 | — | — | — | 3750.5975 | — | ±0.49 |
 | ${}^{5}$H | 5 | 4 | — | — | — | 4690.3630 | — | ±0.52 |
 | ${}^{6}$H | 6 | 5 | — | — | — | 5630.8403 | — | ±0.54 |
@@ -411,10 +411,10 @@ _2 of 7 isotopes with a framework prediction; 3 of 7 with $M_{\mathrm{atom}}$ $M
 
 _2 of 8 isotopes with a framework prediction; 2 of 8 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
-| ${}^{3}$He | 3 | 1 | 7.4889 | -29686.55 ± 0.0583 | 2809.6427 | 2809.4135 | +81565.12 ± 0.02 | ±0.22 |
-| ${}^{4}$He | 4 | 2 | 28.2957 | -0.08 ± 0.0283 | 3728.4014 | 3728.4013 | +8.46 ± 0.04 | ±0.33 |
+| ${}^{3}$He | 3 | 1 | *Open* | *Open* | — | 2809.4135 | — | ±0.31 |
+| ${}^{4}$He | 4 | 2 | *Open* | *Open* | — | 3728.4013 | — | ±0.31 |
 | ${}^{5}$He | 5 | 3 | — | — | — | 4668.7018 | — | ±0.39 |
 | ${}^{6}$He | 6 | 4 | — | — | — | 5606.5567 | — | ±0.44 |
 | ${}^{7}$He | 7 | 5 | — | — | — | 6546.5319 | — | ±0.47 |
@@ -426,9 +426,9 @@ _2 of 8 isotopes with a framework prediction; 2 of 8 with $M_{\mathrm{atom}}$ $M
 
 _2 of 11 isotopes with a framework prediction; 0 of 11 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
-| ${}^{3}$Li | 3 | 0 | — | — | — | 2823.1490 | — | ±0.00 |
+| ${}^{3}$Li | 3 | 0 | — | — | — | 2823.1490 | — | ±0.31 |
 | ${}^{4}$Li | 4 | 1 | — | — | — | 3751.2996 | — | ±0.16 |
 | ${}^{5}$Li | 5 | 2 | — | — | — | 4669.1494 | — | ±0.26 |
 | ${}^{6}$Li | 6 | 3 | 43.6570 | +364537.17 ± 0.0563 | — | 5603.0515 | — | ±0.33 |
@@ -444,7 +444,7 @@ _2 of 11 isotopes with a framework prediction; 0 of 11 with $M_{\mathrm{atom}}$ 
 
 _3 of 12 isotopes with a framework prediction; 1 of 12 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{5}$Be | 5 | 1 | — | — | — | 4694.6092 | — | ±0.13 |
 | ${}^{6}$Be | 6 | 2 | — | — | — | 5607.3397 | — | ±0.22 |
@@ -463,7 +463,7 @@ _3 of 12 isotopes with a framework prediction; 1 of 12 with $M_{\mathrm{atom}}$ 
 
 _2 of 16 isotopes with a framework prediction; 0 of 16 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{6}$B | 6 | 1 | — | — | — | 5636.2845 | — | ±0.11 |
 | ${}^{7}$B | 7 | 2 | — | — | — | 6548.1353 | — | ±0.19 |
@@ -486,7 +486,7 @@ _2 of 16 isotopes with a framework prediction; 0 of 16 with $M_{\mathrm{atom}}$ 
 
 _2 of 16 isotopes with a framework prediction; 1 of 16 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{8}$C | 8 | 2 | — | — | — | 7487.0171 | — | ±0.16 |
 | ${}^{9}$C | 9 | 3 | — | — | — | 8412.3579 | — | ±0.22 |
@@ -509,7 +509,7 @@ _2 of 16 isotopes with a framework prediction; 1 of 16 with $M_{\mathrm{atom}}$ 
 
 _2 of 16 isotopes with a framework prediction; 0 of 16 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{10}$N | 10 | 3 | — | — | — | 9353.7411 | — | ±0.20 |
 | ${}^{11}$N | 11 | 4 | — | — | — | 10270.8008 | — | ±0.24 |
@@ -532,7 +532,7 @@ _2 of 16 isotopes with a framework prediction; 0 of 16 with $M_{\mathrm{atom}}$ 
 
 _3 of 18 isotopes with a framework prediction; 1 of 18 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{11}$O | 11 | 3 | — | — | — | 10294.1741 | — | ±0.18 |
 | ${}^{12}$O | 12 | 4 | — | — | — | 11209.9426 | — | ±0.22 |
@@ -557,7 +557,7 @@ _3 of 18 isotopes with a framework prediction; 1 of 18 with $M_{\mathrm{atom}}$ 
 
 _1 of 19 isotopes with a framework prediction; 0 of 19 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{13}$F | 13 | 4 | — | — | — | 12151.4533 | — | ±0.20 |
 | ${}^{14}$F | 14 | 5 | — | — | — | 13072.8819 | — | ±0.23 |
@@ -583,7 +583,7 @@ _1 of 19 isotopes with a framework prediction; 0 of 19 with $M_{\mathrm{atom}}$ 
 
 _3 of 20 isotopes with a framework prediction; 1 of 20 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{15}$Ne | 15 | 5 | — | — | — | 14012.6269 | — | ±0.22 |
 | ${}^{16}$Ne | 16 | 6 | — | — | — | 14927.8924 | — | ±0.25 |
@@ -610,7 +610,7 @@ _3 of 20 isotopes with a framework prediction; 1 of 20 with $M_{\mathrm{atom}}$ 
 
 _20 of 20 isotopes with a framework prediction; 20 of 20 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{241}$Fm | 241 | 141 | -146.6045 | -1081554.81 ± 134.0662 | 226503.6379 | 224559.2993 | +8658464.28 ± 1335.69 | ±0.38 |
 | ${}^{242}$Fm | 242 | 142 | -139.9027 | -1077442.80 ± 267.9169 | 227436.5016 | 225489.9727 | +8632441.03 ± 1776.32 | ±0.38 |
@@ -637,7 +637,7 @@ _20 of 20 isotopes with a framework prediction; 20 of 20 with $M_{\mathrm{atom}}
 
 _19 of 19 isotopes with a framework prediction; 19 of 19 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{244}$Md | 244 | 143 | -151.8827 | -1083687.83 ± 268.8895 | 229326.8301 | 227360.1586 | +8650026.97 ± 1646.99 | ±0.38 |
 | ${}^{245}$Md | 245 | 144 | -145.1750 | -1079633.28 ± 134.3905 | 230259.6878 | 228291.3798 | +8621911.61 ± 1138.40 | ±0.38 |
@@ -663,7 +663,7 @@ _19 of 19 isotopes with a framework prediction; 19 of 19 with $M_{\mathrm{atom}}
 
 _17 of 17 isotopes with a framework prediction; 17 of 17 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{248}$No | 248 | 146 | -150.5659 | -1081778.11 ± 134.6983 | 233082.9927 | 231091.2265 | +8618960.42 ± 971.43 | ±0.39 |
 | ${}^{249}$No | 249 | 147 | -143.8604 | -1077843.27 ± 134.7346 | 234015.8526 | 232023.8189 | +8585470.85 ± 1204.39 | ±0.39 |
@@ -687,7 +687,7 @@ _17 of 17 isotopes with a framework prediction; 17 of 17 with $M_{\mathrm{atom}}
 
 _16 of 16 isotopes with a framework prediction; 16 of 16 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{251}$Lr | 251 | 148 | -156.0750 | -1084028.75 ± 135.1351 | 235906.4157 | 233892.8497 | +8608924.97 ± 856.25 | ±0.39 |
 | ${}^{252}$Lr | 252 | 149 | -149.3635 | -1080096.26 ± 135.1351 | 236839.2696 | 234825.0508 | +8577529.57 ± 785.42 | ±0.39 |
@@ -710,7 +710,7 @@ _16 of 16 isotopes with a framework prediction; 16 of 16 with $M_{\mathrm{atom}}
 
 _16 of 16 isotopes with a framework prediction; 16 of 16 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{253}$Rf | 253 | 149 | -168.4273 | -1090206.05 ± 271.0027 | 237797.1165 | 235761.6495 | +8633579.88 ± 1738.44 | ±0.39 |
 | ${}^{254}$Rf | 254 | 150 | -161.7019 | -1086216.35 ± 135.4280 | 238729.9565 | 236692.7030 | +8607166.41 ± 1196.38 | ±0.39 |
@@ -733,7 +733,7 @@ _16 of 16 isotopes with a framework prediction; 16 of 16 with $M_{\mathrm{atom}}
 
 _16 of 16 isotopes with a framework prediction; 16 of 16 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{255}$Db | 255 | 150 | -180.9170 | -1096409.61 ± 135.8880 | 239687.9547 | 237630.5909 | +8657823.83 ± 1191.66 | ±0.39 |
 | ${}^{256}$Db | 256 | 151 | -174.1776 | -1092455.65 ± 135.8880 | 240620.7807 | 238562.7882 | +8626628.01 ± 784.83 | ±0.39 |
@@ -756,7 +756,7 @@ _16 of 16 isotopes with a framework prediction; 16 of 16 with $M_{\mathrm{atom}}
 
 _16 of 16 isotopes with a framework prediction; 16 of 16 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{258}$Sg | 258 | 152 | -186.7901 | -1098609.76 ± 272.4053 | 242511.7418 | 240430.7749 | +8655160.41 ± 1716.30 | ±0.39 |
 | ${}^{259}$Sg | 259 | 153 | -180.0448 | -1094707.60 ± 136.2398 | 243444.5619 | 241363.4920 | +8622140.22 ± 748.70 | ±0.39 |
@@ -779,7 +779,7 @@ _16 of 16 isotopes with a framework prediction; 16 of 16 with $M_{\mathrm{atom}}
 
 _19 of 19 isotopes with a framework prediction; 19 of 19 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{260}$Bh | 260 | 153 | -199.5392 | -1104930.05 ± 136.7241 | 244402.8393 | 242301.5904 | +8672039.26 ± 811.16 | ±0.39 |
 | ${}^{261}$Bh | 261 | 154 | -192.7800 | -1100941.27 ± 94.1463 | 245335.6456 | 243233.0405 | +8644405.72 ± 739.22 | ±0.39 |
@@ -805,7 +805,7 @@ _19 of 19 isotopes with a framework prediction; 19 of 19 with $M_{\mathrm{atom}}
 
 _18 of 18 isotopes with a framework prediction; 18 of 18 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{263}$Hs | 263 | 155 | -205.6512 | -1107189.00 ± 137.0802 | 247226.8653 | 245102.6267 | +8666731.17 ± 805.69 | ±0.39 |
 | ${}^{264}$Hs | 264 | 156 | -198.8862 | -1103222.51 ± 14.9896 | 248159.6657 | 246034.0065 | +8639696.37 ± 117.39 | ±0.39 |
@@ -830,7 +830,7 @@ _18 of 18 isotopes with a framework prediction; 18 of 18 with $M_{\mathrm{atom}}
 
 _18 of 18 isotopes with a framework prediction; 18 of 18 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{265}$Mt | 265 | 156 | -218.6580 | -1113465.97 ± 275.0275 | 249118.2206 | 246972.5620 | +8687841.97 ± 1776.45 | ±0.39 |
 | ${}^{266}$Mt | 266 | 157 | -211.8792 | -1109553.66 ± 49.8847 | 250051.0072 | 247905.1043 | +8656146.63 ± 389.15 | ±0.39 |
@@ -855,7 +855,7 @@ _18 of 18 isotopes with a framework prediction; 18 of 18 with $M_{\mathrm{atom}}
 
 _0 of 23 isotopes with a framework prediction; 0 of 23 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{17}$Na | 17 | 6 | — | — | — | 15870.1193 | — | ±0.23 |
 | ${}^{18}$Na | 18 | 7 | — | — | — | 16791.9319 | — | ±0.25 |
@@ -885,7 +885,7 @@ _0 of 23 isotopes with a framework prediction; 0 of 23 with $M_{\mathrm{atom}}$ 
 
 _18 of 18 isotopes with a framework prediction; 18 of 18 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{267}$Ds | 267 | 157 | -231.8000 | -1119779.89 ± 137.9691 | 251009.7110 | 248842.8056 | +8707928.80 ± 819.78 | ±0.38 |
 | ${}^{268}$Ds | 268 | 158 | -225.0074 | -1115772.19 ± 137.8930 | 251942.4839 | 249774.0678 | +8681510.38 ± 1208.31 | ±0.39 |
@@ -910,7 +910,7 @@ _18 of 18 isotopes with a framework prediction; 18 of 18 with $M_{\mathrm{atom}}
 
 _15 of 15 isotopes with a framework prediction; 15 of 15 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{272}$Rg | 272 | 161 | -224.6816 | -1114298.48 ± 138.3700 | 255699.6374 | 253509.1691 | +8640588.17 ± 922.27 | ±0.39 |
 | ${}^{273}$Rg | 273 | 162 | -217.8988 | -1110396.14 ± 138.3126 | 256632.4201 | 254440.7750 | +8613576.61 ± 1570.55 | ±0.39 |
@@ -932,7 +932,7 @@ _15 of 15 isotopes with a framework prediction; 15 of 15 with $M_{\mathrm{atom}}
 
 _13 of 13 isotopes with a framework prediction; 13 of 13 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{276}$Cn | 276 | 164 | -224.4665 | -1112815.17 ± 277.4310 | 259456.9018 | 257242.7325 | +8607315.01 ± 1944.51 | ±0.39 |
 | ${}^{277}$Cn | 277 | 165 | -217.6855 | -1109072.62 ± 138.7925 | 260389.6861 | 258176.1986 | +8573553.80 ± 595.32 | ±0.39 |
@@ -952,7 +952,7 @@ _13 of 13 isotopes with a framework prediction; 13 of 13 with $M_{\mathrm{atom}}
 
 _13 of 13 isotopes with a framework prediction; 13 of 13 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{278}$Nh | 278 | 165 | -237.9434 | -1119191.14 ± 139.2564 | 261348.7272 | 259114.3902 | +8622975.36 ± 862.78 | ±0.39 |
 | ${}^{279}$Nh | 279 | 166 | -231.1488 | -1115340.43 ± 278.4352 | 262281.4980 | 260046.3146 | +8595327.92 ± 2306.83 | ±0.39 |
@@ -972,7 +972,7 @@ _13 of 13 isotopes with a framework prediction; 13 of 13 with $M_{\mathrm{atom}}
 
 _8 of 8 isotopes with a framework prediction; 8 of 8 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{284}$Fl | 284 | 170 | -224.3666 | -1110292.25 ± 279.2126 | 266971.7606 | 264713.1047 | +8532467.05 ± 2477.29 | ±0.39 |
 | ${}^{285}$Fl | 285 | 171 | -217.5885 | -1106644.55 ± 139.6843 | 267904.5478 | 265646.7515 | +8499243.11 ± 1518.32 | ±0.39 |
@@ -987,7 +987,7 @@ _8 of 8 isotopes with a framework prediction; 8 of 8 with $M_{\mathrm{atom}}$ $M
 
 _6 of 6 isotopes with a framework prediction; 6 of 6 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{287}$Mc | 287 | 172 | -231.2648 | -1112873.07 ± 280.1513 | 269796.5727 | 267516.5555 | +8522901.51 ± 1653.95 | ±0.39 |
 | ${}^{288}$Mc | 288 | 173 | -224.4806 | -1109242.68 ± 280.3083 | 270729.3539 | 268449.9675 | +8490916.91 ± 1995.19 | ±0.39 |
@@ -1000,7 +1000,7 @@ _6 of 6 isotopes with a framework prediction; 6 of 6 with $M_{\mathrm{atom}}$ $M
 
 _5 of 5 isotopes with a framework prediction; 5 of 5 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{289}$Lv | 289 | 173 | -245.0742 | -1119118.93 ± 280.9383 | 271688.7306 | 269386.2532 | +8547122.76 ± 1867.23 | ±0.39 |
 | ${}^{290}$Lv | 290 | 174 | -238.2765 | -1115399.34 ± 280.8989 | 272621.4984 | 270318.3174 | +8520254.83 ± 2043.43 | ±0.39 |
@@ -1012,7 +1012,7 @@ _5 of 5 isotopes with a framework prediction; 5 of 5 with $M_{\mathrm{atom}}$ $M
 
 _4 of 4 isotopes with a framework prediction; 4 of 4 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{291}$Ts | 291 | 174 | -259.0162 | -1125400.11 ± 281.7695 | 273581.0211 | 271256.4372 | +8569691.05 ± 2197.76 | ±0.39 |
 | ${}^{292}$Ts | 292 | 175 | -252.2051 | -1121735.90 ± 281.8887 | 274513.7755 | 272189.8996 | +8537700.64 ± 2457.15 | ±0.39 |
@@ -1023,7 +1023,7 @@ _4 of 4 isotopes with a framework prediction; 4 of 4 with $M_{\mathrm{atom}}$ $M
 
 _3 of 3 isotopes with a framework prediction; 3 of 3 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{293}$Og | 293 | 175 | -273.0904 | -1131682.54 ± 282.5657 | 275473.4438 | 273126.5747 | +8592606.29 ± 2595.38 | ±0.39 |
 | ${}^{294}$Og | 294 | 176 | -266.2660 | -1127937.07 ± 282.5258 | 276406.1848 | 274058.5867 | +8566044.79 ± 2018.94 | ±0.39 |
@@ -1033,7 +1033,7 @@ _3 of 3 isotopes with a framework prediction; 3 of 3 with $M_{\mathrm{atom}}$ $M
 
 _2 of 23 isotopes with a framework prediction; 2 of 23 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{19}$Mg | 19 | 7 | — | — | — | 17730.2264 | — | ±0.24 |
 | ${}^{20}$Mg | 20 | 8 | — | — | — | 18647.3598 | — | ±0.26 |
@@ -1063,7 +1063,7 @@ _2 of 23 isotopes with a framework prediction; 2 of 23 with $M_{\mathrm{atom}}$ 
 
 _3 of 23 isotopes with a framework prediction; 3 of 23 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{21}$Al | 21 | 8 | — | — | — | 19588.4659 | — | ±0.25 |
 | ${}^{22}$Al | 22 | 9 | — | — | — | 20511.0717 | — | ±0.27 |
@@ -1093,7 +1093,7 @@ _3 of 23 isotopes with a framework prediction; 3 of 23 with $M_{\mathrm{atom}}$ 
 
 _5 of 24 isotopes with a framework prediction; 5 of 24 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{22}$Si | 22 | 8 | — | — | — | 20526.5103 | — | ±0.24 |
 | ${}^{23}$Si | 23 | 9 | — | — | — | 21448.3140 | — | ±0.26 |
@@ -1124,7 +1124,7 @@ _5 of 24 isotopes with a framework prediction; 5 of 24 with $M_{\mathrm{atom}}$ 
 
 _7 of 24 isotopes with a framework prediction; 7 of 24 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{24}$P | 24 | 9 | — | — | — | 22389.8785 | — | ±0.25 |
 | ${}^{25}$P | 25 | 10 | — | — | — | 23307.5427 | — | ±0.26 |
@@ -1155,7 +1155,7 @@ _7 of 24 isotopes with a framework prediction; 7 of 24 with $M_{\mathrm{atom}}$ 
 
 _9 of 24 isotopes with a framework prediction; 9 of 24 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{26}$S | 26 | 10 | — | — | — | 24246.5270 | — | ±0.25 |
 | ${}^{27}$S | 27 | 11 | — | — | — | 25167.8315 | — | ±0.27 |
@@ -1186,7 +1186,7 @@ _9 of 24 isotopes with a framework prediction; 9 of 24 with $M_{\mathrm{atom}}$ 
 
 _12 of 25 isotopes with a framework prediction; 12 of 25 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{28}$Cl | 28 | 11 | — | — | — | 26110.1048 | — | ±0.26 |
 | ${}^{29}$Cl | 29 | 12 | — | — | — | 27027.3508 | — | ±0.27 |
@@ -1218,7 +1218,7 @@ _12 of 25 isotopes with a framework prediction; 12 of 25 with $M_{\mathrm{atom}}
 
 _14 of 26 isotopes with a framework prediction; 14 of 26 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{29}$Ar | 29 | 11 | — | — | — | 27051.2976 | — | ±0.25 |
 | ${}^{30}$Ar | 30 | 12 | — | — | — | 27966.8939 | — | ±0.26 |
@@ -1251,7 +1251,7 @@ _14 of 26 isotopes with a framework prediction; 14 of 26 with $M_{\mathrm{atom}}
 
 _19 of 29 isotopes with a framework prediction; 19 of 29 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{31}$K | 31 | 12 | — | — | — | 28910.5776 | — | ±0.25 |
 | ${}^{32}$K | 32 | 13 | — | — | — | 29829.8011 | — | ±0.27 |
@@ -1287,7 +1287,7 @@ _19 of 29 isotopes with a framework prediction; 19 of 29 with $M_{\mathrm{atom}}
 
 _22 of 29 isotopes with a framework prediction; 22 of 29 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{33}$Ca | 33 | 13 | — | — | — | 30770.3354 | — | ±0.26 |
 | ${}^{34}$Ca | 34 | 14 | — | — | — | 31685.6895 | — | ±0.27 |
@@ -1323,7 +1323,7 @@ _22 of 29 isotopes with a framework prediction; 22 of 29 with $M_{\mathrm{atom}}
 
 _23 of 29 isotopes with a framework prediction; 23 of 29 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{35}$Sc | 35 | 14 | — | — | — | 32629.3936 | — | ±0.26 |
 | ${}^{36}$Sc | 36 | 15 | — | — | — | 33549.9380 | — | ±0.27 |
@@ -1359,7 +1359,7 @@ _23 of 29 isotopes with a framework prediction; 23 of 29 with $M_{\mathrm{atom}}
 
 _25 of 29 isotopes with a framework prediction; 25 of 29 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{37}$Ti | 37 | 15 | — | — | — | 34490.4517 | — | ±0.27 |
 | ${}^{38}$Ti | 38 | 16 | — | — | — | 35408.1458 | — | ±0.28 |
@@ -1395,7 +1395,7 @@ _25 of 29 isotopes with a framework prediction; 25 of 29 with $M_{\mathrm{atom}}
 
 _27 of 29 isotopes with a framework prediction; 27 of 29 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{39}$V | 39 | 16 | — | — | — | 36350.8401 | — | ±0.27 |
 | ${}^{40}$V | 40 | 17 | — | — | — | 37272.2341 | — | ±0.28 |
@@ -1431,7 +1431,7 @@ _27 of 29 isotopes with a framework prediction; 27 of 29 with $M_{\mathrm{atom}}
 
 _30 of 30 isotopes with a framework prediction; 30 of 30 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{41}$Cr | 41 | 17 | 35.6653 | -877756.26 ± 1405.2839 | 38467.7410 | 38211.6682 | +6701428.04 ± 10457.83 | ±0.27 |
 | ${}^{42}$Cr | 42 | 18 | 41.6320 | -867055.04 ± 938.8412 | 39401.3397 | 39129.8122 | +6939149.06 ± 7665.28 | ±0.28 |
@@ -1468,7 +1468,7 @@ _30 of 30 isotopes with a framework prediction; 30 of 30 with $M_{\mathrm{atom}}
 
 _31 of 31 isotopes with a framework prediction; 31 of 31 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{43}$Mn | 43 | 18 | 35.5361 | -885426.30 ± 1247.7471 | 40346.2188 | 40071.6160 | +6852798.86 ± 9972.42 | ±0.27 |
 | ${}^{44}$Mn | 44 | 19 | 41.5248 | -873441.61 ± 938.7153 | 41279.7954 | 40993.2009 | +6991269.69 ± 7316.85 | ±0.28 |
@@ -1506,7 +1506,7 @@ _31 of 31 isotopes with a framework prediction; 31 of 31 with $M_{\mathrm{atom}}
 
 _32 of 32 isotopes with a framework prediction; 32 of 32 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{45}$Fe | 45 | 19 | 35.1906 | -892860.15 ± 822.0304 | 42224.9127 | 41931.6421 | +6994017.13 ± 6753.23 | ±0.28 |
 | ${}^{46}$Fe | 46 | 20 | 41.2011 | -882194.33 ± 920.6892 | 43158.4676 | 42849.9388 | +7200216.88 ± 6999.80 | ±0.28 |
@@ -1545,7 +1545,7 @@ _32 of 32 isotopes with a framework prediction; 32 of 32 with $M_{\mathrm{atom}}
 
 _32 of 32 isotopes with a framework prediction; 32 of 32 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{47}$Co | 47 | 20 | 34.6317 | -900372.48 ± 1757.7069 | 44103.8201 | 43790.8428 | +7147094.21 ± 13698.80 | ±0.28 |
 | ${}^{48}$Co | 48 | 21 | 40.6636 | -888458.36 ± 1316.6557 | 45037.3536 | 44713.4468 | +7244059.79 ± 11187.07 | ±0.29 |
@@ -1584,7 +1584,7 @@ _32 of 32 isotopes with a framework prediction; 32 of 32 with $M_{\mathrm{atom}}
 
 _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{48}$Ni | 48 | 20 | 27.7866 | -919999.03 ± 1243.7811 | 45049.4484 | 44729.8951 | +7144064.73 ± 9475.31 | ±0.27 |
 | ${}^{49}$Ni | 49 | 21 | 33.8620 | -907240.22 ± 1610.7383 | 45982.9384 | 45651.7408 | +7254873.87 ± 13140.40 | ±0.28 |
@@ -1626,7 +1626,7 @@ _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}
 
 _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{52}$Cu | 52 | 23 | 38.9576 | -902335.58 ± 1564.3332 | 48795.7567 | 48435.8136 | +7431341.96 ± 12385.10 | ±0.29 |
 | ${}^{53}$Cu | 53 | 24 | 45.0101 | -892377.66 ± 1140.5399 | 49729.2696 | 49356.0478 | +7561823.62 ± 10134.77 | ±0.30 |
@@ -1666,7 +1666,7 @@ _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}
 
 _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{54}$Zn | 54 | 24 | 37.7939 | -909598.76 ± 516.6624 | 50675.2689 | 50294.9799 | +7561172.27 ± 4296.78 | ±0.29 |
 | ${}^{55}$Zn | 55 | 25 | 43.8672 | -899090.89 ± 885.6275 | 51608.7610 | 51217.9061 | +7631215.20 ± 7802.17 | ±0.30 |
@@ -1706,7 +1706,7 @@ _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}
 
 _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{56}$Ga | 56 | 25 | 36.4261 | -915600.50 ± 1167.7696 | 52554.9852 | 52159.8302 | +7575848.51 ± 9589.99 | ±0.29 |
 | ${}^{57}$Ga | 57 | 26 | 42.5200 | -905764.96 ± 884.2850 | 53488.4567 | 53079.7542 | +7699782.15 ± 7528.50 | ±0.30 |
@@ -1746,7 +1746,7 @@ _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}
 
 _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{58}$Ge | 58 | 26 | 34.8566 | -922654.36 ± 1158.3012 | 54434.9032 | 54019.0784 | +7697739.31 ± 9259.92 | ±0.29 |
 | ${}^{59}$Ge | 59 | 27 | 40.9707 | -912365.23 ± 883.3922 | 55368.3546 | 54941.7820 | +7764082.76 ± 7273.35 | ±0.30 |
@@ -1786,7 +1786,7 @@ _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}
 
 _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{60}$As | 60 | 27 | 33.0873 | -928706.56 ± 904.9774 | 56315.0210 | 55884.0060 | +7712672.21 ± 7150.72 | ±0.29 |
 | ${}^{61}$As | 61 | 28 | 39.2213 | -918918.92 ± 630.5170 | 57248.4524 | 56803.9403 | +7825374.70 ± 5280.29 | ±0.30 |
@@ -1826,7 +1826,7 @@ _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}
 
 _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{63}$Se | 63 | 29 | 37.2741 | -925268.15 ± 1010.4838 | 59128.7482 | 58667.2787 | +7865874.40 ± 8526.26 | ±0.30 |
 | ${}^{64}$Se | 64 | 30 | 43.4086 | -916005.02 ± 990.7121 | 60062.1791 | 59588.7630 | +7944720.64 ± 8394.41 | ±0.31 |
@@ -1866,7 +1866,7 @@ _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}
 
 _34 of 34 isotopes with a framework prediction; 34 of 34 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{65}$Br | 65 | 30 | 35.1308 | -931620.20 ± 1012.1457 | 61009.2400 | 60530.6265 | +7906963.73 ± 8263.79 | ±0.30 |
 | ${}^{66}$Br | 66 | 31 | 41.2851 | -921945.19 ± 748.6898 | 61942.6511 | 61455.0413 | +7934416.39 ± 6502.49 | ±0.31 |
@@ -1907,7 +1907,7 @@ _34 of 34 isotopes with a framework prediction; 34 of 34 with $M_{\mathrm{atom}}
 
 _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{67}$Kr | 67 | 31 | 32.7934 | -937910.23 ± 761.1315 | 62889.9259 | 62394.5537 | +7939350.57 ± 6792.74 | ±0.30 |
 | ${}^{68}$Kr | 68 | 32 | 38.9672 | -928672.31 ± 871.2970 | 63823.3175 | 63315.9727 | +8012904.14 ± 7900.26 | ±0.31 |
@@ -1949,7 +1949,7 @@ _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}
 
 _34 of 34 isotopes with a framework prediction; 34 of 34 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{71}$Rb | 71 | 34 | 42.6317 | -926035.25 ± 739.0983 | 66637.5670 | 66103.7911 | +8074814.78 ± 6045.21 | ±0.31 |
 | ${}^{72}$Rb | 72 | 35 | 48.7889 | -917383.07 ± 853.4504 | 67570.9751 | 67029.2454 | +8081990.42 ± 7462.60 | ±0.32 |
@@ -1990,7 +1990,7 @@ _34 of 34 isotopes with a framework prediction; 34 of 34 with $M_{\mathrm{atom}}
 
 _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{73}$Sr | 73 | 35 | 39.9497 | -932454.15 ± 617.1316 | 68518.5974 | 67967.1193 | +8113895.59 ± 5893.18 | ±0.31 |
 | ${}^{74}$Sr | 74 | 36 | 46.1264 | -924178.37 ± 121.6397 | 69451.9862 | 68889.7363 | +8161591.70 ± 1446.80 | ±0.32 |
@@ -2032,7 +2032,7 @@ _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}
 
 _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{75}$Y | 75 | 36 | 37.0785 | -938882.41 ± 494.4987 | 70399.8172 | 69830.2379 | +8156627.15 ± 4295.29 | ±0.31 |
 | ${}^{76}$Y | 76 | 37 | 43.2744 | -930331.62 ± 489.4164 | 71333.1867 | 70755.3019 | +8167370.58 ± 4239.13 | ±0.32 |
@@ -2074,7 +2074,7 @@ _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}
 
 _37 of 37 isotopes with a framework prediction; 37 of 37 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{77}$Zr | 77 | 37 | 34.0197 | -945286.22 ± 619.1950 | 72281.2245 | 71693.4460 | +8198497.48 ± 5573.88 | ±0.31 |
 | ${}^{78}$Zr | 78 | 38 | 40.2345 | -937048.15 ± 610.2026 | 73214.5751 | 72615.6903 | +8247318.29 ± 5503.09 | ±0.32 |
@@ -2118,7 +2118,7 @@ _37 of 37 isotopes with a framework prediction; 37 of 37 with $M_{\mathrm{atom}}
 
 _38 of 38 isotopes with a framework prediction; 38 of 38 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{79}$Nb | 79 | 38 | 30.7748 | -951704.21 ± 743.8631 | 74162.8179 | 73556.3839 | +8244478.79 ± 6800.39 | ±0.32 |
 | ${}^{80}$Nb | 80 | 39 | 37.0085 | -943245.50 ± 613.4217 | 75096.1496 | 74481.1079 | +8257687.95 ± 5365.27 | ±0.32 |
@@ -2163,7 +2163,7 @@ _38 of 38 isotopes with a framework prediction; 38 of 38 with $M_{\mathrm{atom}}
 
 _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{81}$Mo | 81 | 39 | 27.3453 | -958083.36 ± 744.9714 | 76044.5959 | 75419.5621 | +8287422.23 ± 6632.40 | ±0.32 |
 | ${}^{82}$Mo | 82 | 40 | 33.5977 | -949806.67 ± 612.5199 | 76977.9089 | 76342.1465 | +8327803.97 ± 5234.47 | ±0.32 |
@@ -2209,7 +2209,7 @@ _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}
 
 _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{83}$Tc | 83 | 40 | 23.7329 | -964448.84 ± 745.9903 | 77926.5569 | 77282.6910 | +8331307.66 ± 6472.50 | ±0.32 |
 | ${}^{84}$Tc | 84 | 41 | 30.0037 | -956011.40 ± 615.7635 | 78859.8514 | 78207.8044 | +8337365.36 ± 5109.60 | ±0.32 |
@@ -2256,7 +2256,7 @@ _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{85}$Ru | 85 | 41 | 19.9388 | -970776.90 ± 747.4773 | 79808.6994 | 79146.3685 | +8368431.33 ± 6320.09 | ±0.32 |
 | ${}^{86}$Ru | 86 | 42 | 26.2280 | -962501.30 ± 614.7793 | 80741.9756 | 80068.7228 | +8408437.52 ± 4990.85 | ±0.32 |
@@ -2304,7 +2304,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{88}$Rh | 88 | 43 | 22.2719 | -968715.70 ± 618.0470 | 82624.2802 | 81934.6210 | +8417189.89 ± 4877.19 | ±0.32 |
 | ${}^{89}$Rh | 89 | 44 | 28.5631 | -960809.22 ± 488.4601 | 83557.5545 | 82857.3246 | +8451032.57 ± 4350.71 | ±0.32 |
@@ -2352,7 +2352,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{90}$Pd | 90 | 44 | 18.1368 | -975160.83 ± 493.0359 | 84506.7639 | 83794.7597 | +8497000.43 ± 4768.93 | ±0.32 |
 | ${}^{91}$Pd | 91 | 45 | 24.4461 | -967171.16 ± 611.0229 | 85440.0200 | 84719.7939 | +8501272.55 ± 4991.73 | ±0.32 |
@@ -2401,7 +2401,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{92}$Ag | 92 | 45 | 13.8240 | -981403.33 ± 495.0495 | 86389.4252 | 85659.9276 | +8516205.09 ± 4665.09 | ±0.32 |
 | ${}^{93}$Ag | 93 | 46 | 20.1513 | -973494.73 ± 489.2966 | 87322.6633 | 86582.5521 | +8548041.42 ± 4626.13 | ±0.32 |
@@ -2450,7 +2450,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{94}$Cd | 94 | 46 | 9.3348 | -987742.96 ± 617.1316 | 88272.2629 | 87520.0059 | +8595257.78 ± 5715.41 | ±0.32 |
 | ${}^{95}$Cd | 95 | 47 | 15.6799 | -979800.26 ± 734.3042 | 89205.4832 | 88444.8836 | +8599701.54 ± 6392.87 | ±0.32 |
@@ -2499,7 +2499,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{96}$In | 96 | 47 | 4.6704 | -993970.71 ± 619.6555 | 90155.2758 | 89385.3442 | +8613621.63 ± 5596.13 | ±0.32 |
 | ${}^{97}$In | 97 | 48 | 11.0333 | -986069.17 ± 489.8959 | 91088.4783 | 90307.5383 | +8647562.03 ± 4435.32 | ±0.32 |
@@ -2548,7 +2548,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{99}$Sn | 99 | 49 | 6.2125 | -992310.64 ± 735.2040 | 92971.6476 | 92169.9397 | +8698149.74 ± 6316.42 | ±0.32 |
 | ${}^{100}$Sn | 100 | 50 | 12.5775 | -984757.57 ± 290.8639 | 93904.8481 | 93092.2622 | +8728822.66 ± 2578.19 | ±0.33 |
@@ -2597,7 +2597,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{102}$Sb | 102 | 51 | 7.6014 | -990890.71 ± 488.9378 | 95788.1727 | 94961.2987 | +8707484.52 ± 4208.15 | ±0.33 |
 | ${}^{103}$Sb | 103 | 52 | 13.9688 | -983529.38 ± 364.3430 | 96721.3707 | 95887.2224 | +8699264.20 ± 3128.06 | ±0.33 |
@@ -2645,7 +2645,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{104}$Te | 104 | 52 | 2.4533 | -997108.15 ± 374.3752 | 97671.6692 | 96825.7600 | +8736407.43 ± 3280.21 | ±0.33 |
 | ${}^{105}$Te | 105 | 53 | 8.8382 | -989718.43 ± 349.0115 | 98604.8498 | 97754.0694 | +8703273.47 ± 3069.12 | ±0.33 |
@@ -2694,7 +2694,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{106}$I | 106 | 53 | -2.8655 | -1003341.89 ± 494.4987 | 99555.3365 | 98695.0754 | +8716353.04 ± 4048.95 | ±0.33 |
 | ${}^{107}$I | 107 | 54 | 3.5368 | -995942.29 ± 368.2789 | 100488.4997 | 99620.4394 | +8713677.29 ± 3010.84 | ±0.33 |
@@ -2743,7 +2743,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{108}$Xe | 108 | 54 | -8.3539 | -1009579.21 ± 435.1639 | 101439.1735 | 100558.7308 | +8755507.01 ± 3773.88 | ±0.33 |
 | ${}^{109}$Xe | 109 | 55 | -1.9344 | -1002189.03 ± 339.6072 | 102372.3195 | 101486.6878 | +8726580.02 ± 2957.11 | ±0.33 |
@@ -2793,7 +2793,7 @@ _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{111}$Cs | 111 | 56 | -7.5744 | -1008455.73 ± 247.8315 | 104256.3079 | 103352.9456 | +8740557.56 ± 1937.74 | ±0.33 |
 | ${}^{112}$Cs | 112 | 57 | -1.1523 | -1001269.87 ± 123.4263 | 105189.4513 | 104280.9251 | +8712294.56 ± 1107.64 | ±0.33 |
@@ -2842,7 +2842,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{113}$Ba | 113 | 57 | -13.3820 | -1014738.64 ± 373.3665 | 106140.4641 | 105219.1241 | +8756392.39 ± 2850.63 | ±0.33 |
 | ${}^{114}$Ba | 114 | 58 | -6.9429 | -1007528.40 ± 111.3393 | 107073.5903 | 106144.4224 | +8753808.58 ± 967.32 | ±0.33 |
@@ -2891,7 +2891,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{116}$La | 116 | 59 | -12.9002 | -1013845.71 ± 373.5060 | 108957.8962 | 108013.2664 | +8745497.51 ± 2975.24 | ±0.33 |
 | ${}^{117}$La | 117 | 60 | -6.4582 | -1006826.45 ± 247.3411 | 109891.0197 | 108938.5391 | +8743283.71 ± 1838.39 | ±0.34 |
@@ -2940,7 +2940,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{119}$Ce | 119 | 61 | -12.5645 | -1013102.98 ± 496.4011 | 111775.4744 | 110803.9781 | +8767702.55 ± 4514.39 | ±0.34 |
 | ${}^{120}$Ce | 120 | 62 | -6.1194 | -1006289.49 ± 493.3399 | 112708.5948 | 111729.5628 | +8762515.20 ± 4476.99 | ±0.34 |
@@ -2988,7 +2988,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{121}$Pr | 121 | 62 | -18.8356 | -1019378.34 ± 497.9460 | 113660.0940 | 112669.2354 | +8794402.80 ± 4439.65 | ±0.34 |
 | ${}^{122}$Pr | 122 | 63 | -12.3737 | -1012583.62 ± 496.2779 | 114593.1976 | 113597.5009 | +8765128.01 ± 4403.37 | ±0.34 |
@@ -3036,7 +3036,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{124}$Nd | 124 | 64 | -18.7921 | -1018816.62 ± 496.6476 | 116477.9644 | 115460.4388 | +8812764.04 ± 4332.33 | ±0.34 |
 | ${}^{125}$Nd | 125 | 65 | -12.3270 | -1012204.91 ± 371.2871 | 117411.0647 | 116388.6932 | +8784113.83 ± 3433.42 | ±0.34 |
@@ -3083,7 +3083,7 @@ _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}
 
 _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{126}$Pm | 126 | 65 | -25.3736 | -1025147.05 ± 499.5005 | 118362.8944 | 117328.5074 | +8816161.14 ± 4263.35 | ±0.34 |
 | ${}^{127}$Pm | 127 | 66 | -18.8918 | -1018474.19 ± 372.5782 | 119295.9781 | 118254.4414 | +8807590.00 ± 3379.25 | ±0.34 |
@@ -3130,7 +3130,7 @@ _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{128}$Sm | 128 | 66 | -32.1173 | -1031372.38 ± 500.1250 | 120247.9867 | 119192.0955 | +8858734.71 ± 4196.69 | ±0.34 |
 | ${}^{129}$Sm | 129 | 67 | -25.6189 | -1024753.36 ± 498.5666 | 121181.0537 | 120120.4095 | +8829841.90 ± 4164.26 | ±0.34 |
@@ -3178,7 +3178,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{130}$Eu | 130 | 67 | -39.0223 | -1037757.44 ± 503.1447 | 122133.2402 | 121060.7202 | +8859355.98 ± 4447.38 | ±0.34 |
 | ${}^{131}$Eu | 131 | 68 | -32.5075 | -1031034.09 ± 375.1876 | 123066.2908 | 121986.2639 | +8853676.13 ± 3275.87 | ±0.34 |
@@ -3226,7 +3226,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{133}$Gd | 133 | 69 | -39.5566 | -1037335.90 ± 502.1341 | 124951.6884 | 123852.6558 | +8873710.35 ± 4038.77 | ±0.34 |
 | ${}^{134}$Gd | 134 | 70 | -33.0384 | -1030788.65 ± 374.6254 | 125884.7357 | 124778.6802 | +8864138.68 ± 3202.56 | ±0.34 |
@@ -3273,7 +3273,7 @@ _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}
 
 _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{135}$Tb | 135 | 70 | -46.7653 | -1043633.96 ± 377.8813 | 126837.2457 | 125718.6509 | +8897604.38 ± 3178.61 | ±0.34 |
 | ${}^{136}$Tb | 136 | 71 | -40.2309 | -1037158.08 ± 502.4494 | 127770.2767 | 126647.2983 | +8866974.30 ± 3949.65 | ±0.34 |
@@ -3320,7 +3320,7 @@ _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}
 
 _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{138}$Dy | 138 | 72 | -47.5823 | -1043370.98 ± 503.1447 | 129655.9766 | 128511.2553 | +8907556.67 ± 3914.11 | ±0.34 |
 | ${}^{139}$Dy | 139 | 73 | -41.0445 | -1037044.76 ± 501.8191 | 130589.0041 | 129439.9801 | +8876887.10 ± 3864.43 | ±0.34 |
@@ -3366,7 +3366,7 @@ _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}
 
 _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{140}$Ho | 140 | 73 | -55.0918 | -1049773.97 ± 505.9449 | 131541.8346 | 130379.8567 | +8912250.36 ± 3836.58 | ±0.34 |
 | ${}^{141}$Ho | 141 | 74 | -48.5378 | -1043338.74 ± 377.6910 | 132474.8460 | 131306.3039 | +8899359.87 ± 3050.44 | ±0.34 |
@@ -3412,7 +3412,7 @@ _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}
 
 _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{142}$Er | 142 | 74 | -62.7586 | -1055994.21 ± 506.7782 | 133427.8499 | 132244.2328 | +8950236.25 ± 3782.49 | ±0.34 |
 | ${}^{143}$Er | 143 | 75 | -56.1885 | -1049630.76 ± 378.9314 | 134360.8452 | 133172.4965 | +8923379.70 ± 3000.70 | ±0.34 |
@@ -3458,7 +3458,7 @@ _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}
 
 _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{144}$Tm | 144 | 75 | -70.5820 | -1062439.83 ± 382.1656 | 135314.0218 | 134112.9916 | +8955360.36 ± 2979.66 | ±0.34 |
 | ${}^{145}$Tm | 145 | 76 | -63.9959 | -1055945.09 ± 126.7588 | 136247.0011 | 135039.0626 | +8945104.49 ± 1448.57 | ±0.34 |
@@ -3504,7 +3504,7 @@ _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}
 
 _38 of 38 isotopes with a framework prediction; 38 of 38 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{148}$Yb | 148 | 78 | -65.3695 | -1055867.17 ± 379.4586 | 139066.2887 | 137830.8976 | +8963092.55 ± 2899.28 | ±0.35 |
 | ${}^{149}$Yb | 149 | 79 | -58.7923 | -1049776.61 ± 252.3023 | 139999.2769 | 138759.2917 | +8936231.95 ± 2161.59 | ±0.35 |
@@ -3549,7 +3549,7 @@ _38 of 38 isotopes with a framework prediction; 38 of 38 with $M_{\mathrm{atom}}
 
 _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{150}$Lu | 150 | 79 | -73.4719 | -1062269.57 ± 254.2588 | 140952.7395 | 139699.3443 | +8972090.83 ± 2147.05 | ±0.34 |
 | ${}^{151}$Lu | 151 | 80 | -66.8788 | -1056035.65 ± 253.0364 | 141885.7119 | 140625.3091 | +8962844.48 ± 2132.91 | ±0.35 |
@@ -3595,7 +3595,7 @@ _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}
 
 _38 of 38 isotopes with a framework prediction; 38 of 38 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{153}$Hf | 153 | 81 | -75.1197 | -1062291.12 ± 253.7427 | 143772.3013 | 142491.2976 | +8990048.60 ± 2104.98 | ±0.35 |
 | ${}^{154}$Hf | 154 | 82 | -68.5229 | -1056195.24 ± 252.5890 | 144705.2699 | 143417.3621 | +8980139.18 ± 2091.39 | ±0.35 |
@@ -3640,7 +3640,7 @@ _38 of 38 isotopes with a framework prediction; 38 of 38 with $M_{\mathrm{atom}}
 
 _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{155}$Ta | 155 | 82 | -83.5144 | -1068567.41 ± 254.5177 | 145659.0445 | 144357.5982 | +9015433.32 ± 2077.76 | ±0.35 |
 | ${}^{156}$Ta | 156 | 83 | -76.9019 | -1062622.03 ± 254.0650 | 146591.9974 | 145287.0794 | +8981652.13 ± 2064.47 | ±0.35 |
@@ -3687,7 +3687,7 @@ _40 of 40 isotopes with a framework prediction; 40 of 40 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{157}$W | 157 | 83 | -92.0621 | -1074908.42 ± 383.2397 | 147545.9408 | 146224.8844 | +9034415.86 ± 2732.85 | ±0.35 |
 | ${}^{158}$W | 158 | 84 | -85.4339 | -1068837.79 ± 254.6149 | 148478.8779 | 147152.3758 | +9014479.75 ± 2038.30 | ±0.35 |
@@ -3735,7 +3735,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{159}$Re | 159 | 84 | -100.7622 | -1081298.84 ± 256.5747 | 149432.9893 | 148092.7573 | +9049949.68 ± 2056.81 | ±0.35 |
 | ${}^{160}$Re | 160 | 85 | -94.1183 | -1075318.77 ± 256.0819 | 150365.9109 | 149022.1779 | +9016999.95 ± 2012.73 | ±0.35 |
@@ -3783,7 +3783,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{161}$Os | 161 | 85 | -109.6138 | -1087679.50 ± 257.5660 | 151320.1895 | 149960.3546 | +9067962.90 ± 2664.78 | ±0.35 |
 | ${}^{162}$Os | 162 | 86 | -102.9545 | -1081539.82 ± 256.6076 | 152253.0955 | 150887.5452 | +9050119.84 ± 1987.85 | ±0.35 |
@@ -3833,7 +3833,7 @@ _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}
 
 _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{163}$Ir | 163 | 86 | -118.6164 | -1094092.09 ± 258.5984 | 153207.5406 | 151828.2285 | +9084688.40 ± 2631.99 | ±0.35 |
 | ${}^{164}$Ir | 164 | 87 | -111.9416 | -1088073.64 ± 258.0645 | 154140.4312 | 152757.5494 | +9052788.56 ± 2067.17 | ±0.35 |
@@ -3883,7 +3883,7 @@ _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}
 
 _44 of 44 isotopes with a framework prediction; 44 of 44 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{165}$Pt | 165 | 87 | -127.7693 | -1100526.99 ± 259.6391 | 155095.0420 | 153696.2085 | +9101287.87 ± 2600.01 | ±0.35 |
 | ${}^{166}$Pt | 166 | 88 | -121.0791 | -1094322.00 ± 258.6318 | 156027.9172 | 154623.2389 | +9084522.19 ± 1939.82 | ±0.35 |
@@ -3934,7 +3934,7 @@ _44 of 44 isotopes with a framework prediction; 44 of 44 with $M_{\mathrm{atom}}
 
 _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{168}$Au | 168 | 89 | -130.3662 | -1100935.16 ± 260.1457 | 157915.5528 | 156493.5394 | +9086723.21 ± 2553.53 | ±0.35 |
 | ${}^{169}$Au | 169 | 90 | -123.6725 | -1094840.56 ± 259.2017 | 158848.4245 | 157420.7151 | +9069387.32 ± 1893.51 | ±0.35 |
@@ -3984,7 +3984,7 @@ _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}
 
 _47 of 47 isotopes with a framework prediction; 47 of 47 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{170}$Hg | 170 | 90 | -139.8024 | -1107204.69 ± 260.7222 | 159803.3375 | 158359.4133 | +9118019.38 ± 1905.82 | ±0.35 |
 | ${}^{171}$Hg | 171 | 91 | -133.0934 | -1101265.14 ± 260.2134 | 160736.1939 | 159288.8311 | +9086404.71 ± 1923.94 | ±0.35 |
@@ -4038,7 +4038,7 @@ _47 of 47 isotopes with a framework prediction; 47 of 47 with $M_{\mathrm{atom}}
 
 _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{176}$Tl | 176 | 95 | -122.5590 | -1090342.96 ± 61.2226 | 165422.7043 | 163943.5470 | +9022357.83 ± 506.62 | ±0.35 |
 | ${}^{177}$Tl | 177 | 96 | -115.8802 | -1084671.06 ± 15.8041 | 166355.5910 | 164871.1163 | +9003849.56 ± 131.18 | ±0.36 |
@@ -4088,7 +4088,7 @@ _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}
 
 _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{178}$Pb | 178 | 96 | -132.2307 | -1096591.48 ± 16.9292 | 167310.7245 | 165809.5238 | +9053766.53 ± 139.82 | ±0.35 |
 | ${}^{179}$Pb | 179 | 97 | -125.5368 | -1091063.56 ± 58.9239 | 168243.5960 | 166739.4962 | +9020657.21 ± 487.16 | ±0.35 |
@@ -4138,7 +4138,7 @@ _43 of 43 isotopes with a framework prediction; 43 of 43 with $M_{\mathrm{atom}}
 
 _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{184}$Bi | 184 | 101 | -115.2788 | -1081239.03 ± 129.6680 | 172930.3829 | 171396.1698 | +8951268.03 ± 711.95 | ±0.36 |
 | ${}^{185}$Bi | 185 | 102 | -108.6129 | -1075930.74 ± 0.0000 | 173863.2823 | 172324.1736 | +8931473.01 ± 470.28 | ±0.36 |
@@ -4186,7 +4186,7 @@ _41 of 41 isotopes with a framework prediction; 41 of 41 with $M_{\mathrm{atom}}
 
 _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{186}$Po | 186 | 102 | -125.1844 | -1087453.10 ± 12.7730 | 174818.6370 | 173262.0048 | +8984267.26 ± 105.49 | ±0.36 |
 | ${}^{187}$Po | 187 | 103 | -118.5034 | -1082248.56 ± 22.6483 | 175751.5213 | 174192.2212 | +8951605.95 ± 187.32 | ±0.36 |
@@ -4235,7 +4235,7 @@ _42 of 42 isotopes with a framework prediction; 42 of 42 with $M_{\mathrm{atom}}
 
 _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{191}$At | 191 | 106 | -115.1793 | -1078286.28 ± 10.9439 | 179505.6767 | 177919.2377 | +8916623.98 ± 90.51 | ±0.36 |
 | ${}^{192}$At | 192 | 107 | -108.5142 | -1073307.12 ± 18.8333 | 180438.5769 | 178849.7937 | +8883338.51 ± 155.84 | ±0.36 |
@@ -4281,7 +4281,7 @@ _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}
 
 _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{193}$Rn | 193 | 107 | -125.3323 | -1084601.70 ± 16.9493 | 181394.1781 | 179787.4049 | +8937073.24 ± 139.67 | ±0.36 |
 | ${}^{194}$Rn | 194 | 108 | -118.6521 | -1079481.39 ± 11.1631 | 182327.0634 | 180715.5807 | +8917231.45 ± 92.18 | ±0.36 |
@@ -4327,7 +4327,7 @@ _39 of 39 isotopes with a framework prediction; 39 of 39 with $M_{\mathrm{atom}}
 
 _37 of 37 isotopes with a framework prediction; 37 of 37 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{197}$Fr | 197 | 110 | -122.2506 | -1080867.94 ± 37.3350 | 185148.5758 | 183514.5924 | +8903833.64 ± 307.52 | ±0.37 |
 | ${}^{198}$Fr | 198 | 111 | -115.5755 | -1076012.58 ± 20.4709 | 186081.4661 | 184445.4102 | +8870136.22 ± 168.77 | ±0.37 |
@@ -4371,7 +4371,7 @@ _37 of 37 isotopes with a framework prediction; 37 of 37 with $M_{\mathrm{atom}}
 
 _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{201}$Ra | 201 | 113 | -119.2941 | -1077385.73 ± 13.1692 | 188903.0986 | 187242.2517 | +8870043.80 ± 108.42 | ±0.37 |
 | ${}^{202}$Ra | 202 | 114 | -112.6237 | -1072544.15 ± 9.6675 | 189835.9937 | 188170.8839 | +8848923.82 ± 79.81 | ±0.37 |
@@ -4413,7 +4413,7 @@ _35 of 35 isotopes with a framework prediction; 35 of 35 with $M_{\mathrm{atom}}
 
 _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{205}$Ac | 205 | 116 | -116.4616 | -1074137.60 ± 37.7666 | 192657.7455 | 190970.3980 | +8835649.83 ± 310.62 | ±0.37 |
 | ${}^{206}$Ac | 206 | 117 | -109.7955 | -1069509.41 ± 41.2110 | 193590.6449 | 191901.2701 | +8803353.58 ± 339.17 | ±0.37 |
@@ -4453,7 +4453,7 @@ _33 of 33 isotopes with a framework prediction; 33 of 33 with $M_{\mathrm{atom}}
 
 _32 of 32 isotopes with a framework prediction; 32 of 32 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{208}$Th | 208 | 118 | -120.4235 | -1075655.52 ± 20.0194 | 195479.6214 | 193767.4616 | +8836157.25 ± 164.45 | ±0.37 |
 | ${}^{209}$Th | 209 | 119 | -113.7521 | -1071090.44 ± 0.0000 | 196412.5154 | 194698.6629 | +8802589.77 ± 531.06 | ±0.37 |
@@ -4492,7 +4492,7 @@ _32 of 32 isotopes with a framework prediction; 32 of 32 with $M_{\mathrm{atom}}
 
 _31 of 31 isotopes with a framework prediction; 31 of 31 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{211}$Pa | 211 | 120 | -124.5090 | -1077344.27 ± 43.1620 | 198301.6208 | 196567.3081 | +8822996.39 ± 353.42 | ±0.37 |
 | ${}^{212}$Pa | 212 | 121 | -117.8322 | -1072810.99 ± 54.1289 | 199234.5094 | 197498.3465 | +8790771.53 ± 443.57 | ±0.37 |
@@ -4530,7 +4530,7 @@ _31 of 31 isotopes with a framework prediction; 31 of 31 with $M_{\mathrm{atom}}
 
 _29 of 29 isotopes with a framework prediction; 29 of 29 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{215}$U | 215 | 123 | -122.0352 | -1074481.29 ± 63.5630 | 202056.6263 | 200296.1216 | +8789509.85 ± 519.91 | ±0.37 |
 | ${}^{216}$U | 216 | 124 | -115.3621 | -1069985.87 ± 17.0482 | 202989.5186 | 201225.7928 | +8764909.13 ± 139.60 | ±0.38 |
@@ -4566,7 +4566,7 @@ _29 of 29 isotopes with a framework prediction; 29 of 29 with $M_{\mathrm{atom}}
 
 _27 of 27 isotopes with a framework prediction; 27 of 27 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{219}$Np | 219 | 126 | -119.6821 | -1071862.87 ± 55.2160 | 205811.7526 | 204026.6457 | +8749381.32 ± 450.77 | ±0.38 |
 | ${}^{220}$Np | 220 | 127 | -113.0123 | -1067572.65 ± 18.3634 | 206744.6482 | 204959.1778 | +8711346.39 ± 149.87 | ±0.38 |
@@ -4600,7 +4600,7 @@ _27 of 27 isotopes with a framework prediction; 27 of 27 with $M_{\mathrm{atom}}
 
 _27 of 27 isotopes with a framework prediction; 27 of 27 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{221}$Pu | 221 | 127 | -130.8085 | -1078127.44 ± 131.9958 | 207701.2275 | 205896.1265 | +8767046.67 ± 1456.76 | ±0.38 |
 | ${}^{222}$Pu | 222 | 128 | -124.1242 | -1073742.79 ± 131.8913 | 208634.1086 | 206826.7506 | +8738511.74 ± 1450.20 | ±0.38 |
@@ -4634,7 +4634,7 @@ _27 of 27 isotopes with a framework prediction; 27 of 27 with $M_{\mathrm{atom}}
 
 _27 of 27 isotopes with a framework prediction; 27 of 27 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{223}$Am | 223 | 128 | -142.0765 | -1084419.55 ± 132.5030 | 209590.8440 | 207765.8848 | +8783728.84 ± 1443.65 | ±0.38 |
 | ${}^{224}$Am | 224 | 129 | -135.3777 | -1080090.76 ± 265.0411 | 210523.7107 | 208697.9397 | +8748390.09 ± 1914.78 | ±0.38 |
@@ -4668,7 +4668,7 @@ _27 of 27 isotopes with a framework prediction; 27 of 27 with $M_{\mathrm{atom}}
 
 _22 of 22 isotopes with a framework prediction; 22 of 22 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{231}$Cm | 231 | 135 | -113.3376 | -1065054.25 ± 132.5908 | 217077.8462 | 215222.4076 | +8621029.11 ± 1393.63 | ±0.38 |
 | ${}^{232}$Cm | 232 | 136 | -106.6763 | -1060918.33 ± 132.4854 | 218010.7503 | 216152.9646 | +8594773.06 ± 930.83 | ±0.38 |
@@ -4697,7 +4697,7 @@ _22 of 22 isotopes with a framework prediction; 22 of 22 with $M_{\mathrm{atom}}
 
 _22 of 22 isotopes with a framework prediction; 22 of 22 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{233}$Bk | 233 | 136 | -124.8013 | -1071236.61 ± 132.9964 | 218967.6584 | 217090.8972 | +8645048.03 ± 1072.70 | ±0.38 |
 | ${}^{234}$Bk | 234 | 137 | -118.1256 | -1067137.97 ± 132.9964 | 219900.5481 | 218023.0154 | +8611626.41 ± 700.68 | ±0.38 |
@@ -4726,7 +4726,7 @@ _22 of 22 isotopes with a framework prediction; 22 of 22 with $M_{\mathrm{atom}}
 
 _20 of 20 isotopes with a framework prediction; 20 of 20 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{237}$Cf | 237 | 139 | -123.0338 | -1069186.44 ± 54.7355 | 222723.3703 | 220822.0408 | +8610233.96 ± 440.84 | ±0.38 |
 | ${}^{238}$Cf | 238 | 140 | -116.3605 | -1065109.83 ± 133.1735 | 223656.2624 | 221752.8743 | +8583375.08 ± 1344.19 | ±0.39 |
@@ -4753,7 +4753,7 @@ _20 of 20 isotopes with a framework prediction; 20 of 20 with $M_{\mathrm{atom}}
 
 _20 of 20 isotopes with a framework prediction; 20 of 20 with $M_{\mathrm{atom}}$ $M = N \cdot m_n + Z \cdot m_p + Z \cdot m_e - B$._
 
-| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | Calibration $\sigma_{\mathrm{pred}}$ (ppb) |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{239}$Es | 239 | 140 | -134.7494 | -1075364.93 ± 133.6720 | 224613.4343 | 222690.7212 | +8634006.76 ± 1346.90 | ±0.38 |
 | ${}^{240}$Es | 240 | 141 | -128.0618 | -1071326.16 ± 267.3439 | 225546.3122 | 223622.8105 | +8601545.24 ± 1637.03 | ±0.38 |

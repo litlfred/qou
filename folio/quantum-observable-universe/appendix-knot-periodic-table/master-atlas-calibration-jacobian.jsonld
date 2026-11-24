@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-master-atlas-calibration-jacobian",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:master-atlas-calibration-jacobian",
+  "kind": "prose",
+  "title": "Archimedean calibration protocol and 80-digit Fréchet--Jacobian error propagation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/rem-epistemic-status-of-calibrations",
+    "papers/quantum-observable-universe/blocks/def-confined-particle"
+  ],
+  "cites": [
+    "references/codata2022",
+    "references/pdg2024",
+    "references/ame2020",
+    "references/ame2020tables",
+    "references/nubase2020"
+  ],
+  "tags": [
+    "archimedean-bridge",
+    "atlas",
+    "calibration",
+    "error-propagation",
+    "jacobian",
+    "q0",
+    "appendix"
+  ],
+  "text": "master-atlas-calibration-jacobian.md",
+  "provenance": "authored"
+}

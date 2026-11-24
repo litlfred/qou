@@ -1,48 +1,38 @@
 import { chapter } from "../../schema/builders";
 
+/**
+ * Annex D: Surreal and Non-Archimedean Substrate Lift and Continuum Boundary.
+ *
+ * Unifies the pre-Archimedean categorical surreal-number lift (Conway normal
+ * form, birthday grading, Goncharov depth correspondence, Millennium surreal
+ * bounds) with the post-wall Archimedean standard-part and Écalle–Borel
+ * resummation blocks evaluated at q_0.
+ */
 export default chapter({
+  tabLabel: "D",
   label: "app:surreals",
-  title: "Surreal-number lift of QOU",
+  title: "Surreal and Non-Archimedean Substrate Lift and Continuum Boundary",
   sections: [
     {
-      title: "Motivation and scope",
-      label: "sec:surreal-motivation",
-      blocks: [
-        "surreal-appendix-intro",
-      ],
-    },
-    {
-      title: "What survives and what breaks",
+      title: "Motivation, scope, and survival across the lift",
       label: "sec:surreal-survives-breaks",
       blocks: [
+        "surreal-appendix-intro",
         "surreal-survives-breaks-intro",
       ],
-      // Over-weight split (P4): 24-block survival analysis broken into
-      // 3 reading-order sub-arcs. Order preserved; parent keeps the intro.
       subsections: [
         {
           title: "Transcendental accounting and discharge",
           label: "sec:surreal-transcendental-discharge",
           blocks: [
-            // Dual ledger: every transcendental in the paper, indexed
-            // by Goncharov period-depth.
             "transcendental-accounting",
             "transcendental-accounting-table-data",
-            // K-theory ↔ depth filtration Rosetta: Beilinson regulator
-            // matches iterated-integral grading on H_q.
             "k-theory-period-rosetta",
-            // Borel's theorem partial-discharges the keystone's
-            // sharpness target with explicit Borel-rank dimensions.
             "borel-partial-resolution",
             "borel-partial-resolution-table2-data",
             "borel-partial-resolution-table1-data",
-            // Depth-2 identification of G^(2) with K_3^ind ⊗ Q via
-            // Bloch–Suslin — theorem-level discharge of the keystone
-            // at depth 2 over every Bring-natural number field.
             "depth-2-identification-bloch-suslin",
             "depth-2-identification-bloch-suslin-proof",
-            // QOU infra (Hecke NF + Bring S_5) potentially discharges
-            // Goncharov's conjecture at F = Q(ζ_5) for depth 3.
             "qou-infra-discharges-goncharov-zeta5",
             "qou-infra-discharges-goncharov-zeta5-table2-data",
             "qou-infra-discharges-goncharov-zeta5-table1-data",
@@ -52,17 +42,13 @@ export default chapter({
           title: "Theorem-level rows of the depth correspondence",
           label: "sec:surreal-b1-theorem-rows",
           blocks: [
-            // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
             "b1-soft-sharpness-theorem",
             "b1-soft-sharpness-theorem-proof",
             "b1-soft-sharpness-significance",
-            // B1 at the figure-8 row is theorem (Bloch-Suslin + Murakami-Murakami).
             "b1-figure-8-row-theorem",
             "b1-figure-8-row-theorem-proof",
-            // B1 at torus-knot rows is theorem (Bloch-Suslin + Garoufalidis-Lê).
             "b1-torus-knot-rows-theorem",
             "b1-torus-knot-rows-theorem-table-data",
-            // B1 at additional hyperbolic-knot rows (Borromean, Whitehead).
             "b1-hyperbolic-rows-theorem",
             "b1-hyperbolic-rows-theorem-table2-data",
             "b1-hyperbolic-rows-theorem-table1-data",
@@ -72,7 +58,6 @@ export default chapter({
           title: "Status of the depth correspondence",
           label: "sec:surreal-b1-status",
           blocks: [
-            // Canonical B1 current-status synthesis (rounds 1-11).
             "b1-current-status",
             "b1-current-status-table1-data",
             "b1-current-status-table2-data",
@@ -131,8 +116,6 @@ export default chapter({
       blocks: [
         "surreal-blowup-literal",
         "surreal-blowup-examples",
-        // Möbius energy renormalization as a difference of infinite surreals
-        // (the surreal-essential showcase; interprets prop:mobius-energy).
         "mobius-surreal-renormalization",
         "bigbang-heatdeath",
         "cosmological-cone-visualization",
@@ -144,13 +127,7 @@ export default chapter({
       blocks: [
         "infinitesimal-observability",
         "vacuum-epsilon",
-        // Conditional consequence of the ε-relaxed vacuum: the
-        // Casimir force is the st-image of the ε·(unknot-mode-count)
-        // product, with surreal-infinite mode-count gradient.
         "casimir-epsilon-vacuum",
-        // First substrate correction to the Casimir force: carried by
-        // the figure-eight knot 4_1 (the minimal hyperbolic mode);
-        // weight J_{4_1} = 1 + (3/4)h² + O(h⁴), the 3/4 Lean-proved.
         "casimir-first-q-correction",
       ],
     },
@@ -162,8 +139,6 @@ export default chapter({
         "local-infinitesimal-field",
         "spectral-normal-form",
         "kashaev-surreal",
-        // ε^ω = the perpetual obstruction as a single surreal grade
-        // (narrowing of thm:motivic-perpetual-obstruction).
         "perpetual-obstruction-depth-omega",
       ],
     },
@@ -186,24 +161,18 @@ export default chapter({
       blocks: [
         "millennium-bounds-via-surreals-intro",
       ],
-      // Over-weight (P4, advisory — within the 3-18 band but heavy vs the
-      // appendix's small peers) split: 17-block section organised by
-      // millennium problem. Order preserved; parent keeps the intro.
       subsections: [
         {
           title: "BSD, RH, and Yang-Mills bounds",
           label: "sec:millennium-bsd-rh-ym",
           blocks: [
-            // RH
             "rh-surreal-bound",
-            // BSD
             "categorical-mordell-weil",
             "categorical-sha-local-global",
             "q-birch-swinnerton-dyer",
             "q-bsd-rank-zero",
             "q-bsd-classical-limit",
             "bsd-surreal-bound",
-            // Yang-Mills
             "yang-mills-surreal-bound",
             "os-reflection-positivity-from-reeb",
           ],
@@ -212,18 +181,11 @@ export default chapter({
           title: "P vs NP and the Collatz family",
           label: "sec:millennium-pnp-collatz",
           blocks: [
-            // P vs NP
             "p-vs-np-conjecture",
             "p-vs-np-surreal-bound",
-            // Collatz family
             "q-collatz-conjecture",
             "two-q-adic-valuation",
             "collatz-contact-boundary-defn",
-            // Swapped 2026-08-15: `collatz-parity-to-divisor` declares
-            // `interprets: "conj:collatz-contact-boundary"` and was listed
-            // immediately BEFORE it, so the remark interpreted a result the
-            // reader had not met yet. Adjacent, one section — a listing-order
-            // slip rather than a structural question.
             "collatz-contact-boundary",
             "collatz-parity-to-divisor",
             "collatz-no-cycles",
@@ -245,9 +207,42 @@ export default chapter({
       ],
     },
     {
-      title: "Outlook",
-      label: "sec:surreal-outlook",
+      title: "Archimedean specialisation: Écalle--Borel resummation and standard-part functor at $q_0$",
+      label: "sec:surreals-archimedean-algebraic",
       blocks: [
+        "algebraic-core-survives",
+        "ecalle-borel-resummation",
+        "analytic-obstructions",
+        "analytic-obstructions-table1-data",
+        "analytic-obstructions-table2-data",
+        "ecalle-borel-resurgence-vocabulary",
+        "habiro-tail-archimedean-action",
+        "standard-part-functor",
+        "st-is-median-resummation",
+        "standard-part-classical-limit",
+        "archimedean-functor-trace-commutativity",
+      ],
+    },
+    {
+      title: "Archimedean specialisation: Diophantine birthday and characteristic-$p$ companions",
+      label: "sec:surreals-archimedean-speculative",
+      blocks: [
+        "diophantine-birthday",
+        "diophantine-birthday-trajectory",
+        "infinitesimal-frobenius",
+        "surreal-limit-transfer",
+        "on-p-modular-hecke",
+        "on-p-modular-hecke-table-data",
+        "on-p-modular-hecke-significance",
+      ],
+    },
+    {
+      title: "Archimedean specialisation: Wenzl positivity, Hausdorff comparison, and outlook",
+      label: "sec:surreals-archimedean-millennium",
+      blocks: [
+        "wenzl-positivity-implies-substrate-positivity",
+        "collatz-hausdorff-comparison",
+        "collatz-hausdorff-comparison-table-data",
         "surreal-appendix-conclusion",
       ],
     },

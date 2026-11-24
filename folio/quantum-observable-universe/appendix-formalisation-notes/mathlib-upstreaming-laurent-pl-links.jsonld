@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-mathlib-upstreaming-laurent-pl-links",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:mathlib-upstreaming-laurent-pl-links",
+  "kind": "remark",
+  "title": "Tier-A Mathlib4 upstreaming additions: Laurent units and piecewise-linear polygonal links",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-upstream-mathlib-additions"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-upstream-mathlib-additions",
+  "cites": [
+    "references/lickorish1997",
+    "references/rolfsen"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "mathlib-upstreaming",
+    "laurent-polynomials",
+    "pl-links",
+    "appendix"
+  ],
+  "text": "mathlib-upstreaming-laurent-pl-links.md",
+  "provenance": "authored"
+}

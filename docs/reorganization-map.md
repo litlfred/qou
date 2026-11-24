@@ -459,3 +459,19 @@ Rebuilt `folio/quantum-observable-universe/appendix-mass-binding-algorithms/` fr
 - **Chapter 7 & Chapter 12 procedural cleanup:**
   - Replaced `knots-particles-confinement/universal-ilp-algorithm` (`def:universal-ilp-algorithm`, `status: "error"`) with forward-clean `knots-particles-confinement/confinement-layer-operator-selection` (`rem:confinement-layer-operator-selection`, `sec:nucleon-derivation`).
   - Retired zero-caller procedural remarks in `nuclear-interactions/`: `nuclear-reduction-algorithm`, `groebner-reduction-methods`, `atomic-nf-witness-procedure`, and `step-lp-verification`.
+
+---
+
+## 2026-11-24 — Back-Matter Consolidation (`14 -> 6` Annexes `A–F`) and 80-dps Jacobian Master Atlas (`qou-anx0`, `qou-lanx`)
+
+Consolidated the 14 back-matter appendices (`glossary`, `notation`, `appendix-knot-operations`, `appendix-knot-operations-archimedean`, `appendix-knot-periodic-table`, `appendix-transfer-matrices`, `appendix-nf-witnesses`, `appendix-qvalues`, `appendix-mass-binding-algorithms`, `appendix-standard-model`, `appendix-surreals`, `appendix-surreals-archimedean`, `appendix-formalisation-notes`, `index-of-definitions`) into six crisp, non-overlapping Annexes `A–F`:
+
+| Annex (`tabLabel`) | Directory & Manifest Label | Consolidated Sources | Summary |
+|---|---|---|---|
+| **Annex A** (`A`) | `appendix-knot-periodic-table/` (`app:knot-periodic-table`) | `appendix-knot-operations/` (12) + `appendix-knot-operations-archimedean/` (3, tagged `archimedean-bridge`) + `appendix-knot-periodic-table/` (16) + 6 new 80-dps Fréchet–Jacobian Master Atlas tables | Knot Operations, Periodic Atlas, and 80-dps Master Empirical Reference Tables (`computations/master_atlas_jacobian_80dps.py` + `master-atlas-80dps.witness.json`, uniform 6-column schema with propagated $(m_e, \mathfrak{D}_\beta, m_\pi)$ uncertainties). |
+| **Annex B** (`B`) | `appendix-mass-binding-algorithms/` (`app:mass-binding-algorithms`) | `appendix-mass-binding-algorithms/` (9 $\mathcal{L}_0\text{--}\mathcal{L}_4$ algorithms) + `appendix-transfer-matrices/` (45) + `appendix-nf-witnesses/` (4) + `appendix-qvalues/` (11 Lean-backed $5_2$/Habiro blocks; 7 stale/duplicate blocks retired) | Computational Procedures, Transfer Matrices, and Normal-Form Certificates. |
+| **Annex C** (`C`) | `appendix-standard-model/` (`app:standard-model`) | `appendix-standard-model/` (22 blocks; eight 1-block parameter micro-sections consolidated into `sec:sm-parameters`, preserving `sec:sm-open-problems`) | Standard Model Correspondence and Open Structural Problems. |
+| **Annex D** (`D`) | `appendix-surreals/` (`app:surreals`) | `appendix-surreals/` (100) + `appendix-surreals-archimedean/` (21, tagged `archimedean-bridge` with Archimedean specialisation banners) | Surreal Numbers, Ordered Realisations, and Archimedean Limits. |
+| **Annex E** (`E`) | `appendix-formalisation-notes/` (`app:formalisation-notes`) | `appendix-formalisation-notes/` (24) + `mathlib-upstreaming-laurent-pl-links` (1) + `lean-community-libraries-dag` & 6 Reservoir library specs (`qou-lanx`, 7) | Lean 4 Formalisation Architecture, `Mathlib4` Upstreaming, and Standalone Community Libraries. |
+| **Annex F** (`F`) | `notation/` (`chap:notation`) | `notation/` (13) + `glossary/` (31, consolidated into `sec:glossary-categorical-foundations` and `sec:glossary-homological-geometric`) + `index-of-definitions/` (1) | Notation Register, Categorical Glossary, and Index of Definitions. |
+

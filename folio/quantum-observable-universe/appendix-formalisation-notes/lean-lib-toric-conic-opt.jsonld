@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lean-lib-toric-conic-opt",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lean-lib-toric-conic-opt",
+  "kind": "remark",
+  "title": "Community Library 3 (ToricConicOpt): Ordered-field conic duality, symmetry-reduced certificates, and toric Gröbner bases",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag",
+    "papers/quantum-observable-universe/blocks/rem-lean-lib-hecke-temperley-lieb"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag",
+  "cites": [
+    "references/gatermann-parrilo2004",
+    "references/conti-traverso1991",
+    "references/sturmfels-thomas1997"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "reservoir",
+    "convex-optimization",
+    "toric-ideals",
+    "appendix"
+  ],
+  "text": "lean-lib-toric-conic-opt.md",
+  "provenance": "authored"
+}

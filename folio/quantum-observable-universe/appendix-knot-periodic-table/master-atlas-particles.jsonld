@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-master-atlas-particles",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:master-atlas-particles",
+  "kind": "table",
+  "title": "Table A.1: Elementary particles and gauge couplings ($\\mathcal{L}_0\\text{--}\\mathcal{L}_1$, 80-digit Fréchet--Jacobian atlas)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prose-master-atlas-calibration-jacobian"
+  ],
+  "cites": [
+    "references/codata2022",
+    "references/pdg2024"
+  ],
+  "tags": [
+    "archimedean-bridge",
+    "atlas",
+    "particles",
+    "couplings",
+    "extracted-table"
+  ],
+  "text": "master-atlas-particles.md",
+  "provenance": "authored"
+}
