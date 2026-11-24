@@ -1,10 +1,11 @@
 ---
 # qou-02g1
 title: 'GAP: explain the derived-w witness move between 2026-09-05 and 2026-11-22'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-11-22T16:40:02Z
-updated_at: 2026-11-22T21:59:12Z
+updated_at: 2026-11-24T11:54:26Z
 parent: qou-trd0
 ---
 
@@ -13,3 +14,5 @@ The derived-w probe (computations/qbeta/qbeta_derived_w_overdetermined_test_prob
 ## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
 
 Parent set to `qou-trd0`: no parent (fell into roadmap Miscellaneous). No change to this bean's scope or status.
+
+Closed post-merge: landed on origin/main in PR #9325 (62a45d6ca1c).

@@ -1,13 +1,13 @@
 ---
 # qou-5t68
 title: 'GAP: borromean-binding-recompute.witness.json is 17-23% stale — and the assertion that should catch it passes because both sides are'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T10:01:14Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T11:54:26Z
 parent: qou-v2om
 ---
 
@@ -149,3 +149,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8282, closed o
 ## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
 
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** the witness and its producer straddle the convention-C excision. Regeneration is a witness refresh that the brief routes through the precision gates and the precision thread. Not touched.
+
+Closed post-merge: landed on origin/main in PR #9325 (62a45d6ca1c).
