@@ -67,11 +67,12 @@ that doesn't require a full `lake build` between attempts.
 
 ## Prerequisites
 
-- `lake build` should be run once before starting (to populate oleans)
-- paper-assistant MCP server configured (`.mcp.json`)
-- Mathlib4 and any project-specific libraries are in `lakefile.toml`
-  (per-paper) and aggregated in the root `/lakefile.toml`
-- The Lean files follow QOU naming conventions
+- **NEVER run bare `lake build` locally** (see [`lean-build-hygiene.md`](lean-build-hygiene.md)):
+  always source `scripts/lean-overlay-env.sh` and compile targeted files single-threaded via
+  `LEAN_NUM_THREADS=1 nice -n 15 ./scripts/lean-direct-cone.sh -j 1 <file.lean>`
+- paper-assistant / `lean-lsp` MCP server configured (`.mcp.json`)
+- Mathlib4 and sibling libraries (`UGB`, `Fred2005`, plus future Reservoir `lean_lib` targets) are configured in `folio/quantum-observable-universe/lean/lakefile.toml`
+- All Lean files pass `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff` (`BP001`–`BP009`)
 
 ## Workflow
 
@@ -138,10 +139,10 @@ For each sorry site, in priority order:
    - For positivity: `by positivity` or `by linarith` with explicit bounds
    - For approximation: `by norm_num` or `by native_decide`
    - For algebraic: `by ring` or `by field_simp; ring`
-   - Fallback: edit + `lake build` cycle
+   - Fallback: edit + `LEAN_NUM_THREADS=1 nice -n 15 ./scripts/lean-direct-cone.sh -j 1 <file.lean>`
 5. **Test the proof**:
    - **`lean_diagnostic_messages`** on the file (fast, per-file)
-   - Fallback: `lake build` on the specific file
+   - Fallback: `LEAN_NUM_THREADS=1 nice -n 15 ./scripts/lean-direct-cone.sh -j 1 <file.lean>`
 6. **Record the outcome**:
    - **Success**: mark as resolved, move to next
    - **Failure**: capture the error message, proceed to Phase 4
@@ -165,14 +166,15 @@ When a proof attempt fails:
    - Any missing hypotheses that would make the proof go through
 4. **Iterate**: incorporate proof writer feedback, retry, repeat
 
-### Phase 5 — Build Verification
+### Phase 5 — Build & Lint Verification
 
 After each batch of resolved sorries:
 
-1. Run `lake build` on the modified files
+1. Run `LEAN_NUM_THREADS=1 nice -n 15 ./scripts/lean-direct-cone.sh -j 1 <modified-files>` and `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff`
 2. Check for:
    - New type errors introduced by proof changes
-   - Sorry warnings (expected for remaining stubs)
+   - `BP001`–`BP009` style/vacuity/import-boundary regressions
+   - Sorry warnings (expected only for remaining `-- Ref:`-cited stubs)
    - Successful compilation of resolved proofs
 3. If a previously-resolved proof breaks:
    - Add it back to the work list
@@ -190,7 +192,7 @@ After each batch of resolved sorries:
    | `error_nonneg` | KnotTheory | Resolved | `linarith` | — |
    | `main_commutative_diagram` | QOU | Deferred | — | Ch.11 |
 
-3. Update any tracking files (proof-objects.json if present)
+3. Refresh per-block `.qa.json` sidecars if proof-axis criteria changed.
 
 ## Tactic Cheat Sheet
 
@@ -223,26 +225,19 @@ theorem self_dual_curvature ... : inst.self_dual hn := by sorry
 ```
 When the goal is to *prove* a proposition, the conclusion IS the proposition,
 not `proposition = True`.  Before resolving any sorry, verify the statement
-is well-typed by checking that `lake build` produces a sorry warning (not a
-type error).
+is well-typed via `lean_diagnostic_messages` or `./scripts/lean-direct-cone.sh -j 1`.
 
-### 2. Placeholder field axioms: prefer `True := by trivial`
+### 2. NEVER use `True := by trivial` or `holds : Prop` placeholder fields (`BP007` / Vacuity Ban)
 
-**Wrong:**
+**FORBIDDEN (Class-A vacuity / `true-class-field`):**
 ```lean
-q_laplacian_vanishes : ∀ (p : M), (0 : ℝ) = 0  -- placeholder for Δ_q α = 0
+q_laplacian_vanishes : True := by trivial          -- ❌ FORBIDDEN vacuous field
+q_laplacian_vanishes : ∀ (p : M), (0 : ℝ) = 0     -- ❌ FORBIDDEN tautology
+holds : Prop := True                                -- ❌ FORBIDDEN opaque True field
 ```
-This is technically provable but semantically misleading — it universally
-quantifies over an unused variable and states a tautology unrelated to the
-real axiom.
-
-**Right:**
-```lean
-q_laplacian_vanishes : True := by trivial  -- placeholder for Δ_q α = 0
-```
-Use `True := by trivial` for placeholder axioms.  It's immediately discharged,
-clearly marks itself as a placeholder, and is consistent with other axiom
-placeholders in the codebase (e.g. `FrobeniusHopfData`, `QuantumObservableUniverse`).
+Per [`lean-proof-vacuity-audit.md`](lean-proof-vacuity-audit.md) and `scripts/lean-best-practices-lint.py` (`BP007`), replacing a `sorry` or deferred axiom with `: True := by trivial` or a trivial tautology launders an unproved claim into a silently passing build. Instead:
+- State the **real typed mathematical proposition**;
+- If it is a genuinely open conjecture, encode it as a `§3b-cond` hypothesis class (`[ConjectureClass ...]`) with typed mathematical fields (never `: True`), or demote the content block to `conjecture`!
 
 ### 3. Pin external dependencies to commit hashes
 
@@ -280,10 +275,11 @@ Pull the current inventory at the start of each triage pass:
 
 | Source | Command |
 |--------|---------|
-| All sorry sites with file/line/category | `lean_diagnostic_messages` per file (MCP), or `grep -rn 'sorry' content/<paper>/lean/` as fallback |
-| Per-block formalization status | Read `proof-objects.json` (CI artefact, derived from Lean diagnostics) |
-| Axiom dependencies for any theorem | `lean_verify` |
-| Bibliographic backing of each sorry | `grep -B2 'sorry' <file>.lean` — every sorry must carry a `-- Ref: [key]` line per AGENTS.md §1 |
+| All sorry & axiom sites across corpus | `nice -n 15 python3 scripts/lean-static-census.py` or `lean_diagnostic_messages` per file (MCP) |
+| Import DAG, orphans, & Reservoir `lean_lib` readiness | `nice -n 15 python3 scripts/lean-kg-detangler.py --summary-only` |
+| Per-block formalization & QA status | Read `<block>.qa.json` sidecars (`nice -n 15 bun run folio/pipeline/qa-evidence-audit.ts`) |
+| Axiom dependencies for any theorem | `lean_verify` or `LEAN_NUM_THREADS=1 nice -n 15 ./scripts/lean-verify.sh <Decl>` |
+| Bibliographic backing of each sorry | `grep -B6 'sorry' <file>.lean` — every sorry must carry a `-- Ref: [key]` line per AGENTS.md §1 |
 
 When triaging, classify each live sorry into the four categories from
 Phase 1 (type stub / proof stub / field stub / axiom placeholder) and
@@ -303,11 +299,8 @@ Update them after each triage pass.
   the sorry lives in the structure definition but must be resolved per-instance.
   The fix is usually to remove the default and provide explicit proofs at each
   construction site.  This is a **refactoring task**, not a single proof.
-- **Axiom placeholders** (`True := by trivial` with `-- axiom placeholder`
-  comment) are sorry-free by design.  Do not count them in the sorry inventory.
-- **`axiom` declarations** (if any remain) are intentionally unproved — they
-  represent physical conjectures or mathematical assumptions.  Note:
-  `topological_mass_conjecture` was promoted to a theorem (`topological_mass_formula`).
+- **§3b-cond conditional classes** (`[ConjectureClass ...]`) carry typed mathematical propositions as class fields so downstream theorems state honest conditional dependencies without `sorryAx` or vacuous `: True` fields.
+- **`axiom` declarations** (if any remain) must carry `-- Ref:` citations per AGENTS.md §1 and are audited by `folio/pipeline/lean-vacuity-axiom-audit.ts`.
 
 ### Common Proof Patterns
 
@@ -348,10 +341,9 @@ Update them after each triage pass.
 
 Each formalizable item lives as a **triple**: `block.ts` (typed manifest with
 `kind`, `label`, and `lean.ref` URI), `block.md` (narrative), and
-`block.lean` (formalization). The `.ts` manifest is authoritative — it
-determines whether a block requires Lean. Formalization status is **not**
-stored in `.ts`; it is derived at build time and written to
-`proof-objects.json`.
+`block.lean` (formalization, or a library declaration under `folio/<paper>/lean/`). The `.ts` manifest is authoritative — it
+determines whether a block requires Lean. Formalization QA status is **not**
+stored in `.ts`; it lives in per-block `<block>.qa.json` sidecars and live static censuses (`scripts/lean-static-census.py`).
 
 **Kind-aware filtering.** Only triage blocks whose `kind` requires Lean:
 - `definition`: `.lean` required — always triage if sorry present.
@@ -361,26 +353,23 @@ stored in `.ts`; it is derived at build time and written to
 - `prose` / `equation` / `diagram`: no Lean — **skip entirely**.
 
 **Dependency-driven prioritization.** Use the `uses[]` field in `.ts`
-manifests to order the work list: blocks depended on by many others should
-be resolved first. This replaces or supplements the DAG built from Lean
-imports in Phase 2.
+manifests (plus `scripts/lean-kg-detangler.py`) to order the work list: blocks depended on by many others should
+be resolved first. This supplements the DAG built from Lean imports in Phase 2.
 
-**Source of truth.** Formalization status is derived at build time from
-`.lean` file content and Lean build output, then written to
-`proof-objects.json`. It is not stored in `.ts` manifests.
+**Source of truth.** Formalization QA status is recorded in `<block>.qa.json` sidecars and verified against live `.lean` content via `scripts/lean-static-census.py` and `folio/pipeline/lean-vacuity-axiom-audit.ts`. It is not stored in `.ts` manifests.
 
 ## Checklist
 
-- [ ] All `.lean` files grepped for `sorry`
-- [ ] Each sorry classified (type / proof / field / axiom-placeholder)
+- [ ] Live sorry inventory pulled via `scripts/lean-static-census.py` / `lean_diagnostic_messages`
+- [ ] Each sorry classified (type / proof / field / §3b-cond candidate)
 - [ ] Theorem statements checked for well-typedness (no `= True` anti-pattern)
-- [ ] Placeholder axioms use `True := by trivial` consistently
+- [ ] Zero vacuous `: True := by trivial` or `holds : Prop` placeholders (`BP007` clean)
 - [ ] Dependency order established
 - [ ] Easy proofs attempted first (positivity, ring, classical limits)
 - [ ] `noncomputable def` values unfolded before `norm_num`
 - [ ] Mathlib searched for similar lemmas on failed attempts
 - [ ] Failed proofs documented with similar-lemma suggestions
-- [ ] `lake build` passes (sorry warnings OK, errors not OK)
+- [ ] `./scripts/lean-direct-cone.sh -j 1` and `scripts/lean-best-practices-lint.py --diff` pass
 - [ ] External deps pinned to commit hashes in `lakefile.toml`
 - [ ] Resolved proofs committed with descriptive messages
 - [ ] Summary table generated

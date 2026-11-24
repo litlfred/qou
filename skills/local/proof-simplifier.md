@@ -74,10 +74,10 @@ When the MCP server is available, use it for analysis and alternatives:
 
    ```bash
    # Block cited many times under the same hypothesis suffix
-   grep -l '#def:foo' content/<paper>/<chapter>/*-proof.md \
+   grep -l '#def:foo' folio/<paper>/<chapter>/*-proof.md \
      | xargs grep -l "at q = q_0"
    # Recurring distinctive phrase
-   grep -l "by faithfulness of $\\\\tau$" content/<paper>/<chapter>/*-proof.md
+   grep -l "by faithfulness of $\\\\tau$" folio/<paper>/<chapter>/*-proof.md
    ```
 
    This heuristic is also flagged by `proof-gap-audit` §J as an
@@ -147,7 +147,7 @@ simplification:
 |-------|-------------|
 | `formalizer` | After simplifying LaTeX, update Lean stubs if formalised |
 | `lean-proof-review` | Re-review any Lean proofs affected by the simplification |
-| `proof-status-tracking` | Update `proof-objects.json` if declarations are added or removed |
+| `proof-status-tracking` | Update per-block `<block>.qa.json` sidecars if declarations are added or removed |
 | `category-theory` | Consult for categorical simplifications (adjunction/naturality shortcuts) |
 | `proof-triage` | Feeds clusters to this skill based on complexity scores |
 | `chapter-complexity-review` | Provides the block-ordering heuristics (backward edges, graph energy, span) reused above |
@@ -160,10 +160,10 @@ Simplified proofs live within **content object triples** (`.ts` + `.md` +
 `.lean`). After simplifying a `.lean` file, ensure the content object
 stays consistent.
 
-**Post-simplification validation.** Run content object validation
-(`content_validate`) after changes to verify:
+**Post-simplification validation.** Run manifest & lint checks
+(`nice -n 15 bun run folio/pipeline/block-manifest-audit.ts` and `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff`) after changes to verify:
 - The `.ts` manifest's `lean.ref` (URI form `pkg:Decl`, parsed via
-  `parseLeanRef()` from `folio-assistant/schemas/lean-packages.ts`) still
+  `parseLeanRef()` from `schemas/lean-packages.ts`) still
   matches the (possibly renamed) Lean declaration.
 - The `uses[]` dependencies are still correct — if a shared lemma was
   extracted or a dependency removed, update `uses[]` accordingly.

@@ -36,7 +36,7 @@ export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
 | **5. Content `.ts` `lean.ref` resolution & dead pointers** | [`scripts/dead-lean-pointer-audit.py`](../../scripts/dead-lean-pointer-audit.py) | `nice -n 15 python3 scripts/dead-lean-pointer-audit.py` |
 | **6. Semantic vacuity & review-ledger freshness** | [`folio/pipeline/lean-vacuity-axiom-audit.ts`](../../folio/pipeline/lean-vacuity-axiom-audit.ts) | `nice -n 15 bun run folio/pipeline/lean-vacuity-axiom-audit.ts folio/quantum-observable-universe --check-ledger docs/audits/lean-vacuity-review-ledger.json` |
 | **7. Keystone `#print axioms` regression guard** | [`scripts/lean-axiom-guard.py`](../../scripts/lean-axiom-guard.py) | `nice -n 15 python3 scripts/lean-axiom-guard.py` |
-| **8. Python computation `.witness.json` staleness** | [`computations/witness_staleness_tracker.py`](../../computations/witness_staleness_tracker.py) | `nice -n 15 python3 computations/witness_staleness_tracker.py check` |
+| **8. Python computation `.witness.json` staleness** | [`computations/witness_staleness_triage.py`](../../computations/witness_staleness_triage.py) | `nice -n 15 python3 computations/witness_staleness_triage.py` |
 
 > **Historical traps (do NOT use):**
 > - `proof-objects.json` is frozen since the April 2026 content-object migration ([`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md)).
@@ -67,4 +67,4 @@ export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
 - [ ] `dead-lean-pointer-audit.py` and `scripts/run-validate.ts` pass cleanly
 - [ ] `lean-best-practices-lint.py --diff` reports `critical=0` (`BP001`–`BP009`)
 - [ ] `lean-kg-detangler.py` reports `0` module-level SCC cycles and non-increasing `community_to_qou_cut_edges`
-- [ ] `lean-vacuity-axiom-audit.ts --check-ledger` and `witness_staleness_tracker.py check` are clean
+- [ ] `lean-vacuity-axiom-audit.ts --check-ledger` and `computations/witness_staleness_triage.py` are clean

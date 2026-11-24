@@ -3,7 +3,7 @@ import type { SkillDefinition } from "../framework/types.js";
 export const leanGeneration: SkillDefinition = {
   id: "lean-generation",
   name: "Lean Generation",
-  description: "Stub extraction from LaTeX, cross-reference sync between content objects and Lean files.",
+  description: "Lean module authoring from Folio content object triples and cross-reference sync between .ts/.md/.lean siblings.",
   roles: ["collaborator", "owner"],
   requiredCapabilities: [
     { capabilityId: "lean-toolchain", degradation: "fallback", fallbackCapabilityId: "lean-mcp" },
@@ -14,7 +14,7 @@ export const leanGeneration: SkillDefinition = {
   mcpServices: ["lean-lsp"],
   routingPatterns: ["extract.*stub", "from\\s+latex", "generate.*lean"],
   scripts: [
-    { path: ".github/scripts/generate_lean_stubs.py", runtime: "python", phase: "execute" },
+    { path: "scripts/lean-best-practices-lint.py", runtime: "python3", phase: "execute", args: ["--diff"] },
   ],
   schemas: [
     { module: "schemas/types", types: ["Block", "LeanRef", "DefinitionBlock"], access: "read" },

@@ -39,9 +39,15 @@ export const contentGraph: SkillDefinition = {
   ],
   scripts: [
     {
-      path: "content/pipeline/content-graph-analysis.py",
+      path: "computations/forward_ref_classifier.py",
       runtime: "python3",
       phase: "execute",
+    },
+    {
+      path: "scripts/lean-kg-detangler.py",
+      runtime: "python3",
+      phase: "execute",
+      args: ["--summary-only"],
     },
   ],
   tags: ["analysis", "editorial", "graph", "organisation", "dependencies"],

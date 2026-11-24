@@ -73,14 +73,14 @@ Build the candidate set:
 1. **All blocks added after the proof's last edit**
    ```bash
    git log --diff-filter=A --name-only --pretty=format: \
-       --since="<last-proof-edit-date>" content/<paper>/ \
+       --since="<last-proof-edit-date>" folio/<paper>/ \
      | grep '\.ts$' | sort -u
    ```
 2. **Blocks sharing tags with the target**
    ```bash
    # $TARGET_TS resolves to the absolute path of the block's .ts manifest
    grep -l "$(bun -e "import(\"$TARGET_TS\").then(m => console.log(m.default.tags.join(\"|\")))")" \
-       content/<paper>/**/*.ts
+       folio/<paper>/**/*.ts
    ```
 3. **Propositions that interpret or generalize what the proof does**
    (same keywords in title; same labels in other blocks' `uses[]`)

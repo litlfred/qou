@@ -92,7 +92,7 @@ file. Flag any of the following:
 Beyond *what kind* of gap (A–E), every `sorry` / deferred step is also
 classified by *how much of the result's content it defers*. Adopted from
 the AlphaProof Nexus rater rubric (arXiv:2605.22763; see
-[`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)):
+[`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)):
 an honest sketch that defers only *routine* steps is healthier than one
 that hides the key idea — and a gap that *is* the target is not a proof at
 all.
@@ -181,7 +181,7 @@ sub-derivation should be promoted to its own block.
 
 | Pattern | Detection | Remediation |
 |---------|-----------|-------------|
-| Block `def:foo` is cited in 3+ proof `.md` files in one chapter, each time with the same restriction (e.g. always at $q = q_0$, always for the rank-2 case) | `grep -l '#def:foo' content/<paper>/<chapter>/*-proof.md` then check the surrounding context for shared hypotheses | Extract a **specialisation lemma** (`lem:foo-at-q0`) that bundles the cited block plus the recurring hypotheses; replace each repeated invocation with a citation of the new lemma |
+| Block `def:foo` is cited in 3+ proof `.md` files in one chapter, each time with the same restriction (e.g. always at $q = q_0$, always for the rank-2 case) | `grep -l '#def:foo' folio/<paper>/<chapter>/*-proof.md` then check the surrounding context for shared hypotheses | Extract a **specialisation lemma** (`lem:foo-at-q0`) that bundles the cited block plus the recurring hypotheses; replace each repeated invocation with a citation of the new lemma |
 | The same 3-5 line argument ("by faithfulness of $\tau$ and the spectral splitting...") appears verbatim or near-verbatim in multiple proofs | `grep -l "<distinctive phrase>"` across `*-proof.md` | Promote the shared argument to a **proposition** (or remark with `interprets`) and reference it from each proof |
 | Two proofs construct the same auxiliary object (same Sweedler-style decomposition, same Reeb extension, etc.) before doing different things with it | Compare proof prefaces; look for matching display-math blocks | Factor the construction into a **definition** block, cite it from both |
 | A definite-article phrase ("the canonical $X$ associated to $Y$") is reused across proofs without a single source | `grep -E "the canonical|the unique|the standard <X>"` | Add a **definition** block fixing the named object; replace each occurrence with a hyperref to it |
@@ -216,7 +216,7 @@ math / questions / gaps"):
 1. `grep -rln <topic> docs/audits/` — owner-authorised resolutions
    land as audit docs ahead of the source file's status note being
    updated.
-2. `grep -rln <topic> content/` (full tree) — related conjectures
+2. `grep -rln <topic> folio/` (full tree) — related conjectures
    often live in adjacent chapters (e.g.
    `brings-surface/inter-nucleon-channel-color-tube` answers a
    `mass-theory/` p/n question).
@@ -241,7 +241,7 @@ found in subsequent reanalysis to be already implemented. Source
 file status notes lag the corpus by weeks; the corpus is the
 source of truth. Post-mortem in
 [`docs/audits/2026-05-31-binding-magic-A-wireup.md` §"Why was the
-resolution missed?"](../../../docs/audits/2026-05-31-binding-magic-A-wireup.md).
+resolution missed?"](../../docs/audits/2026-05-31-binding-magic-A-wireup.md).
 
 This check applies to every gap class A-J above when the gap
 candidate is large enough that a categorical resolution could
@@ -272,8 +272,8 @@ full-paper run produced a ~56% false-positive rate). Every finding
    Include the line count in the finding header.
 
 4. **Cross-reference resolution.** When a proof cites a label like
-   `prop:foo`, run `find content -name 'foo*'` (or `grep -rl
-   "label.*\"prop:foo\""`) before claiming the cited block is
+   `prop:foo`, run `find folio -name 'foo*'` (or `grep -rl
+   "label.*\"prop:foo\"" folio/`) before claiming the cited block is
    missing. Many "missing bridging lemma" findings turn out to
    reference blocks that already exist.
 
@@ -290,8 +290,8 @@ report. Better to report 3 verified gaps than 18 with hallucinations.
 
 Identify the audit target:
 
-1. Single block: `content/<paper>/<chapter>/<block>.{ts,md,lean}`
-2. Chapter: all proof blocks in `content/<paper>/<chapter>/`
+1. Single block: `folio/<paper>/<chapter>/<block>.{ts,md,lean}`
+2. Chapter: all proof blocks in `folio/<paper>/<chapter>/`
 3. Paper: full DAG walk
 4. Branch diff: only blocks touched on the current branch
 
@@ -307,11 +307,11 @@ with:
 
 ### Phase 3 — Inter-proof sweep
 
-Build the local dependency slice:
+Inspect the narrative & Lean dependency graphs:
 
 ```bash
-cd content
-bun run pipeline/content-graph.ts --block <label> --depth 2
+nice -n 15 python3 computations/forward_ref_classifier.py
+nice -n 15 python3 scripts/lean-kg-detangler.py --summary-only
 ```
 
 For each edge, verify:
@@ -350,7 +350,7 @@ Each finding **must** include the Phase-0 verification metadata
 #### Missing bridging lemmas
 - `thm:lifting-exists` proof uses "pullback preserves monos" —
   not stated as a proposition.
-  **Cited-block existence check**: `find content -name 'pullback-mono*'`
+  **Cited-block existence check**: `find folio -name 'pullback-mono*'`
   → no match. Candidate: `prop:pullback-mono` (immediate from Mathlib
   `CategoryTheory.Limits.pullback_mono`).
 

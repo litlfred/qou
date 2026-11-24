@@ -22,8 +22,8 @@ export const formalizer: SkillDefinition = {
     "formalize",
   ],
   scripts: [
-    { path: ".github/scripts/formalizer.py", runtime: "python", phase: "execute", args: ["all"] },
-    { path: ".github/scripts/generate_lean_stubs.py", runtime: "python", phase: "execute" },
+    { path: "scripts/lean-best-practices-lint.py", runtime: "python3", phase: "execute", args: ["--diff"] },
+    { path: "scripts/lean-static-census.py", runtime: "python3", phase: "execute" },
   ],
   schemas: [
     { module: "schemas/types", types: ["Block", "LeanRef", "FormalizationStatus", "DefinitionBlock"], access: "read-write" },
