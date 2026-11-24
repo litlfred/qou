@@ -126,7 +126,7 @@ Keep the two halves of `Z(Z-1)/A^{1/3}` apart — one is open, one is closed.
 
 ```sh
 grep -in <topic> library/INDEX.md              # 320 one-line briefs, ~14k tokens total
-cat library-summaries/<doc-id>.json            # ~300 tokens: worth opening? (moved out of the entry 2026-11-24)
+scripts/summarize-library.py --show <doc-id>   # ~300 tokens: worth opening? (manifest narrative since 2026-11-24)
 grep -rln <topic> library/<doc-id>/sections/   # the text itself
 ```
 

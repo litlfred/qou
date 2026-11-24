@@ -1945,7 +1945,7 @@ corpus — run the **corpus-grep checklist**:
 
    ```sh
    grep -in <topic> library/INDEX.md              # ~513 briefs (527 lines); re-count, do not trust
-   cat library-summaries/<doc-id>.json            # ~300 tokens: is it worth opening?
+   scripts/summarize-library.py --show <doc-id>   # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
 
@@ -1972,20 +1972,23 @@ corpus — run the **corpus-grep checklist**:
    document's own abstract, section titles and extracted claims, nothing
    written by a model — so a brief is only as good as the abstract it came
    from. Regenerate with `scripts/summarize-library.py --apply`; a
-   hand-written summary marked `provenance.kind: "agent"` survives
-   regeneration.
+   hand-written summary (`narrative.drafted_by.kind` `agent` or `human`)
+   survives regeneration.
 
-   **The tier-2 summaries live BESIDE the library, not in each entry
-   (moved 2026-11-24).** They were `library/<doc-id>/summary.json`; they
-   are now `library-summaries/<doc-id>.json`, same content and schema.
-   The owner ruled ("C1 migrate", PR #9396) that qou's library passes the
-   platform's library gate `check:l1-complete`, which allows an entry only
-   the files the platform's ingestion arms produce. Do not move them back
-   into the entries, and do not rename them to `summaries.json`: that
-   name is the platform's per-prose-block narrative sidecar, a different
-   object. Audit docs dated before the move still cite the old path; read
-   them through this note. A grep over all summaries is
-   `grep -il <topic> library-summaries/*.json`.
+   **The tier-2 summary is the `narrative` of the entry's KG node,
+   `library/<doc-id>/manifest.jsonld` (since 2026-11-24).** It was
+   `library/<doc-id>/summary.json`, a file the platform's library gate
+   (`check:l1-complete`) does not allow in an entry. The owner ruled that
+   summaries are held as library components are elsewhere in the harness
+   (PR #9399), so each is now a platform narrative record: the brief, a
+   blank line, then the extended summary as `text`, with `state` and
+   `drafted_by` (`script` for the extractive ones, `agent` for the
+   hand-written ones). Read one with
+   `scripts/summarize-library.py --show <doc-id>` or
+   `jq -r ".narrative[0].text" library/<doc-id>/manifest.jsonld`; grep them all
+   with `grep -il <topic> library/*/manifest.jsonld` (that also matches
+   titles). Audit docs dated before the move cite the old path; read them
+   through this note.
 
    The full-text grep, for when you want it directly:
    `grep -rln <topic> library/*/sections/` — the **ingested sources**.

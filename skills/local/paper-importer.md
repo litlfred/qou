@@ -30,7 +30,7 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 
 > **Public-repository PDF policy (owner ruling 2026-11-24).** Third-party
 > copyrighted `.pdf` binaries are **not** committed to `library/` in the public
-> repository. After local extraction (`structure.json`, the summary in `library-summaries/<doc-id>.json`,
+> repository. After local extraction (`structure.json`, `manifest.jsonld` with its summary `narrative`,
 > `sections/*.md`, `ocr/`, `candidates.json`, `blocks/*.jsonld`), remove the
 > third-party `.pdf` binary (`git rm` if tracked) before opening a PR while
 > keeping 100% of the derived `library/<paper-id>/` metadata, summaries, and

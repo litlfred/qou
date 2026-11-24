@@ -236,13 +236,15 @@ def library_index() -> tuple[dict, dict]:
                 title = json.loads(mf.read_text()).get("title") or ""
             except Exception:
                 pass
-        if not title:
-            sf = REPO / "library-summaries" / f"{p.name}.json"
-            if sf.exists():
-                try:
-                    title = (json.loads(sf.read_text()).get("brief") or "")[:200]
-                except Exception:
-                    pass
+        if not title and mf.exists():
+            # The summary's brief: the first paragraph of the manifest's
+            # `narrative` (scripts/summarize-library.py, since 2026-11-24).
+            try:
+                slot = json.loads(mf.read_text()).get("narrative") or []
+                nar = slot[0] if isinstance(slot, list) and slot else {}
+                title = ((nar.get("text") or "").split("\n\n", 1)[0])[:200]
+            except Exception:
+                pass
         titles[p.name] = title
     return by_slug, titles
 
