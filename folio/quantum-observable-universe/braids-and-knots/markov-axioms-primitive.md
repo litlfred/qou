@@ -2,7 +2,7 @@ Let $R$ be a commutative ring and $q \in R^{\times}$ an invertible element with 
 
 1. **Normalisation:** $\mathrm{tr}_M(1) = 1$.
 2. **Cyclicity:** $\mathrm{tr}_M(xy) = \mathrm{tr}_M(yx)$ for all $x, y$.
-3. **Stabilisation by $\sigma_n$:** $\mathrm{tr}_M(x \sigma_n) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_n(R, q)$, where $z = q^3/(q^2+1)$ is the Markov-trace loop value (**convention D**; forced, see below).
+3. **Stabilisation by $\sigma_n$:** $\mathrm{tr}_M(x \sigma_n) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_n(R, q)$, where $z = q^3/(q^2+1)$ is the Markov-trace loop value (forced, see below).
 
 Stabilisation by $\sigma_n^{-1}$ — often listed as a fourth axiom — is not an independent condition. Substituting the Hecke quadratic relation $\sigma_n^{-1} = \sigma_n - (q - q^{-1})$ into axiom 3 and using linearity of the trace (with $x \cdot 1 = x$) forces
 $$
@@ -15,16 +15,10 @@ so the negative-crossing loop value $z_{-}$ differs from $z$ whenever $q \neq \p
 Axioms 1–2 with an unspecified stabilisation parameter admit a **one-parameter
 family**; axiom 3 selects one member of it, and which member is *not* free.
 
-Given $y_{(1^3)} = 0$, the faithful normalised Markov trace is **unique** and equals
-  $z = q^3/(q^2+1)$ — **convention D**. The competing root $z = q$ is real but
+Given $y_{(1^3)} = 0$, the faithful normalised Markov trace is **unique** and has loop parameter
+  $z = q^3/(q^2+1)$. The competing root $z = q$ is real but
   degenerate ($y_{(2,1)} = 0$, not faithful on $\mathrm{TL}_3$), which is why the
-  faithfulness hypothesis is load-bearing.
-
-Convention D has $y_{(1^3)} = 0$, so it **is** the trace whose braid closure is
-the Jones polynomial: under D the "Jones–Markov" name is accurate, and under
-convention C,
-$z = 1/(q^{1/2}+q^{-1/2})$, where the loop value is stipulated rather than
-derived, it is not.
+  faithfulness hypothesis is load-bearing. Because $y_{(1^3)} = 0$, $\mathrm{tr}_M$ factors through the Temperley–Lieb quotient and evaluates braid closures to the Jones polynomial.
 
  Because $\mathrm{tr}_M$ is compatible with the tower inclusions and evaluates disjoint generators by iterated application of axiom 3, the joint Markov trace of two braids acting on disjoint strand sets is strictly multiplicative:
 $$

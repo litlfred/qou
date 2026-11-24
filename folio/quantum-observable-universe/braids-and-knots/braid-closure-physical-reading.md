@@ -15,7 +15,7 @@ return arc is the entangled partner of its strand.
    of item 1 of [the proposition](#prop:closure-unseen-subword), and it keeps every character
    $\chi_\lambda$ separately.
 2. *Forgetting the axis* sends each block to its quantum dimension. The result is the Markov
-   trace at $z_D$, which
+   trace at $z = q^3/(q^2+1)$, which
    averages the blocks.
 
 **What an unseen intermediate is.** A process that emits $u$, runs $w$, and reabsorbs $u^{-1}$

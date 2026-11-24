@@ -1,4 +1,4 @@
-| $n$ | framework $c_n$ at $q=1$ | bare-Markov $\varepsilon^{2n}$ (convention D) |
+| $n$ | framework $c_n$ at $q=1$ | bare-Markov $[\varepsilon^{2n}](\mathrm{tr}_M(\sigma_1^2)-1)$ |
 |---:|---:|---:|
 | 2 | $b^2(1) = 3/4 = 0.7500$ | $-1/4 = -0.2500$ |
 | 3 | $-2 b^3(1) = -3\sqrt{3}/4 \approx -1.2990$ | $-1/8 = -0.1250$ |
