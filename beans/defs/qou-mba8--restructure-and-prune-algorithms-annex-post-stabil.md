@@ -1,11 +1,11 @@
 ---
 # qou-mba8
 title: Post-Stabilization Algorithms Annex Overhaul & Prior-Art Pruning (app:mass-binding-algorithms + Scattered Algorithm Blocks)
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:04:00Z
-updated_at: 2026-11-23T20:55:42Z
+updated_at: 2026-11-24T01:19:56Z
 parent: qou-hksc
 blocked_by:
     - qou-qzvs
@@ -39,3 +39,5 @@ Once the in-flight derivation wave (`qou-qzvs`, `qou-udad`, `qou-h6ef`, `qou-5lc
      * **Relocate Obstructions:** Move non-algorithmic physics obstructions (`mba-sidecar-*`) out of the algorithms annex to their proper home chapters or retire superseded ones.
 2. **Present Structured Options (`AskUserQuestion`) Before Editing:**
    - Present 3-4 concrete structural options (e.g., compact 5-page QOU-Delta Annex organized by `L_0..L_4` + Witness Verification vs. folding into Ch. 12/13 and retiring `app:mass-binding-algorithms` vs. unified Computational Specification Appendix merging `MBA` + `NF-witnesses`), with exact line/page savings, cross-reference blast radius, and uniform Input/Output/Complexity/Precision algorithm templates.
+
+Read-only audit & 6-part AskUserQuestion options brief completed on origin/claude/annex-mba-consolidation-options-20261123 (196f34d7152); caught ram1991 & hoefsmit1974 DOI/author bugs.

@@ -1,11 +1,11 @@
 ---
 # qou-anx0
 title: 'EPIC: Consolidate All 14 Monograph Appendices/Annexes & Build Dense Witness-Backed Master Reference Tables (Braid Words, Predictions, Propagated Calibration Bounds & CODATA/PDG/AME2020 Errors)'
-status: todo
+status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-23T20:30:00Z
-updated_at: 2026-11-23T20:55:42Z
+updated_at: 2026-11-24T01:19:56Z
 parent: qou-hksc
 blocked_by:
     - qou-qzvs
@@ -48,3 +48,5 @@ Audit and consolidate QOU's currently fragmented **14 back-matter appendices (`3
      4. **Predicted Value $\pm \sigma_{\mathrm{pred}}$ (with Propagated Calibration Uncertainty!)**: exact 80-dps Jacobian propagation $\sigma_{\mathrm{pred}} = \sqrt{\sum_{a \in \{m_e, \mathcal{D}_\beta, m_\pi\}} (\partial O / \partial C_a)^2 \sigma_{C_a}^2 + \varepsilon_{\mathrm{trunc}}^2}$ from the experimental uncertainties of the three calibration observables $(m_e, \mathcal{D}_\beta, m_\pi)$ (respecting `qou-nmjd`: name the physical calibration observables $(m_e, \mathcal{D}_\beta, m_\pi)$ in prose/headers rather than internal `CAL-1/2/3` repo codes!), plus showing both proton-pinned and muon-pinned $q_0$ sensitivity where relevant;
      5. **Experimental Value $\pm \sigma_{\mathrm{exp}}$** (CODATA-2022 / PDG-2024 / AME2020 / NUBASE2020);
      6. **Residual & Pulls** ($\Delta = O_{\mathrm{pred}} - O_{\mathrm{exp}}$, relative ppm/ppb, $\Delta/\sigma_{\mathrm{exp}}$, and combined pull $\Delta/\sqrt{\sigma_{\mathrm{pred}}^2 + \sigma_{\mathrm{exp}}^2}$).
+
+14-appendix inventory (332 blocks) & error-propagation options brief completed on origin/claude/annex-mba-consolidation-options-20261123 (196f34d7152).

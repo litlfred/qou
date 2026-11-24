@@ -1,11 +1,11 @@
 ---
 # qou-w478
 title: Survey article (10-15 pp) + narrated slide deck per section, PBS Space Time style
-status: in-progress
+status: completed
 type: feature
 priority: normal
 created_at: 2026-11-23T21:33:51Z
-updated_at: 2026-11-24T00:03:40Z
+updated_at: 2026-11-24T01:19:56Z
 parent: qou-5bkr
 ---
 
@@ -16,3 +16,5 @@ Must stay honest: label model vs comparison-with-experiment, and carry the accur
 Open: format (Slides artifact type vs .pptx), whether narration is text-to-speech or a script only, venue.
 
 Active implementation coordinated with `qou-kdmr` on branch `claude/outreach-pbs-spacetime-survey-slides-20261123` (2026-11-23, owner override); linked Issue #9231, PR #9232.
+
+Completed on PR #9232 (b714b750bac, Issue #9231): 9 illustrated slide decks (67 slides) with 20 inline SVG storyboard frames & lay narration; merge held for owner OK.
