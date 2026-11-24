@@ -1,11 +1,11 @@
 ---
 # qou-txc1
 title: 'QFT-1 (math): S(U(3)×U(2)) ≅ (SU(3)×SU(2)×U(1))/Z₆ and sin²θ_W = 3/8 as a hypercharge trace ratio; Bring pushforward producing the embedding as a conjecture'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-22T22:05:00Z
+updated_at: 2026-11-24T03:35:27Z
 parent: qou-3fjn
 ---
 
@@ -33,3 +33,5 @@ Target: (a) the group isomorphism S(U(3)×U(2)) ≅ (SU(3)×SU(2)×U(1))/Z₆; (
 **Verdict: RESCOPE / NEEDS-OWNER.** Part (b), the 3/8 trace ratio on 5̄⊕10, fixes the hypercharge normalisation by the SM charge assignment; under the 2026-11-22 ruling (quark charges derived, not adopted) and with U(1)_em grading owned by PR #9123, it should be restated as a statement about the commutant of su(3)⊕su(2) in su(5) with the normalisation left as a parameter. Part (a) (S(U(3)×U(2)) ≅ (SU(3)×SU(2)×U(1))/Z₆) is pure group theory and APPLIES.
 
 Not worked this pass (boundary with the charge threads). Part (a) is the next math-only step.
+
+Parts (a) & (b) proved sorry-free in Su3Su2U1Z6GroupAndCommutant.lean (83a784c4bdd); Part (c) isolated in BringKummerSU5EmbeddingHypothesis.

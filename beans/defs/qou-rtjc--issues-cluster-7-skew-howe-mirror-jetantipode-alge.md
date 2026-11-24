@@ -1,11 +1,11 @@
 ---
 # qou-rtjc
 title: 'Issues-Cluster-7: Skew-Howe Mirror, Jet/Antipode Algebra, PL Knot Topology & Hecke/REV_n (7 Open GitHub Issues)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:55:56Z
-updated_at: 2026-11-23T20:55:56Z
+updated_at: 2026-11-24T03:35:25Z
 parent: qou-xip2
 ---
 
@@ -23,3 +23,5 @@ Actionable GitHub Issues cluster (`7` open issues on `litlfred/qou`).
 - **`#7808`**: Lean: Jimbo kernel = trace radical over ℂ (H_n/rad ≅ TL_n), q not a root of unity
 - **`#7801`**: REV_n: lower bound M_n >= A sqrt(2n) - O(1)
 - **`#7424`**: The antipode package: is it over-specified, and it still under-determines S on a commutative A
+
+Batch 7 Cluster-7 audit complete (615959eeda2): closed #7808 & #7801; kept #9129, #9008, #9006, #8902, #7424 and #9154 guard open.

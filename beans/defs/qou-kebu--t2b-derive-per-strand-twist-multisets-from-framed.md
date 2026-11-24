@@ -9,7 +9,7 @@ tags:
     - 8f-tseries
     - 8f-open
 created_at: 2026-08-04T10:16:22Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T03:35:27Z
 parent: qou-8lxd
 blocked_by:
     - qou-qvpl
@@ -191,3 +191,5 @@ on `qou-8lxd`.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8149, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+Post-2026-11-21 Hopf-link electron framing & SignCoherentTwist window proved sorry-free in HopfFramingAndHirzebruchDefect.lean (83a784c4bdd).

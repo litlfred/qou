@@ -1,7 +1,7 @@
 ---
 # qou-qvpl
 title: 'T2: second crossing invariant (hypercharge) via ribbon twist'
-status: todo
+status: in-progress
 type: task
 priority: critical
 tags:
@@ -9,7 +9,7 @@ tags:
     - 8f-tseries
     - 8f-open
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-11-20T16:40:00Z
+updated_at: 2026-11-24T03:35:27Z
 parent: qou-8lxd
 ---
 
@@ -97,3 +97,5 @@ The work for sub-items B and C existed on PR #8149 (branch `qou-8lxd-uq5x-qvpl-k
 - C (Z6 check): correct but a consistency check only. Given the CANDIDATE formula Y = 2(T/3 − I3), `6 | 2τ+3w+3Y` follows from `3 | τ+T` and `2 | w−2I3` by an Int identity; all 8 first-generation states and the 4 battery survivors pass. It does not bear on sub-item A.
 - B (Asselmeyer–Maluga): the PR refutes `Q = σ(K)/3` with σ(K) the Seifert signature of a knot (even, so odd numerators impossible). That is not the paper's proposal: arXiv 1910.09966 §5.2 uses the Hirzebruch defect `h = 3σ(M) − p1(M,Σ)` of a 4-manifold M bounding the 3-manifold Σ = C(K) ∪ (D²×S¹). The parity argument does not apply. B stays open.
 - A (is Y_t derived) untouched. Not ported.
+
+Open Checks B & C proved sorry-free in HopfFramingAndHirzebruchDefect.lean (83a784c4bdd); Open Check A isolated in CategoricalRibbonHyperchargeDerivationHypothesis.
