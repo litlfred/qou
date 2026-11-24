@@ -20,6 +20,9 @@ Proved here, sorry-free:
 
 * it satisfies all six `SurrealField` birthday axioms;
 * it **is** `BirthdayFaithful` (`birthday n = n` for every natural `n`);
+* it supports `SurrealLimitTransfer ℝ*` (`surrealLimitTransferHyperrealDyadic`), rebasing
+  `HyperrealTransfer.surrealLimitTransferHyperreal` off the degenerate two-valued
+  `flatBirthday` onto a `BirthdayFaithful` carrier;
 * it **fails** `ConwaySimplicity`, at `x = ω`, `z = ω + 1`: both are born on day `ω`,
   and every element born earlier is a standard real lying below both.
 
@@ -308,5 +311,46 @@ theorem birthdayFaithful_not_imp_conwaySimplicity :
       (∀ n : ℕ, S.birthday ((n : ℕ) : ℝ*) = (n : Ordinal)) ∧ ¬ @ConwaySimplicity ℝ* S :=
   ⟨surrealFieldHyperrealDyadic, dyBirthday_natCast,
     fun h => dyBirthday_not_simple h.simplicity⟩
+
+/-! ## §5 — `SurrealLimitTransfer ℝ*` rebased onto the faithful dyadic structure (`hypr`) -/
+
+section DyadicLimitTransfer
+
+attribute [local instance] surrealFieldHyperrealDyadic
+
+/-- Under `surrealFieldHyperrealDyadic`, `IsClose` to an embedded standard real `r` is
+definitionally Mathlib's `Hyperreal.IsSt`. -/
+theorem isClose_iff_isSt_dyadic (x : ℝ*) (r : ℝ) :
+    IsClose x (SurrealField.ofReal r) ↔ Hyperreal.IsSt x r := by
+  rw [Hyperreal.isSt_iff_abs_sub_lt_delta]
+  rfl
+
+/-- **`SurrealLimitTransfer ℝ*` on the `BirthdayFaithful` dyadic structure (`hypr`).**
+Rebases `HyperrealTransfer.surrealLimitTransferHyperreal` off the two-valued `flatBirthday`
+onto `surrealFieldHyperrealDyadic`. Kept as a `def` (never a global `instance`) per
+AGENTS.md Rule 13a so `SurrealLimitTransfer` remains an uninstantiated conjecture class for
+Conway's `𝐍𝐨`. -/
+noncomputable def surrealLimitTransferHyperrealDyadic : SurrealLimitTransfer ℝ* where
+  evalOmega := Hyperreal.ofSeq
+  evalOmega_const _ := rfl
+  evalOmega_add _ _ := rfl
+  evalOmega_mul _ _ := rfl
+  evalOmega_le_of_eventuallyLE _ _ h := HyperrealTransfer.ofSeq_le_ofSeq_of_eventuallyLE h
+  evalOmega_isClose_of_tendstoReal a L h :=
+    (isClose_iff_isSt_dyadic (Hyperreal.ofSeq a) L).2
+      (HyperrealTransfer.isSt_ofSeq_of_tendstoReal h)
+
+end DyadicLimitTransfer
+
+/-- **Combined witness on `ℝ*` (`hypr`, `qou-dx7g`).** One `SurrealField` structure on `ℝ*`
+(`surrealFieldHyperrealDyadic`) simultaneously satisfies `BirthdayFaithful` and
+`SurrealLimitTransfer` while failing `ConwaySimplicity`. -/
+theorem faithful_limitTransfer_not_simple_witnessed :
+    ∃ S : SurrealField.{0, 0} ℝ*,
+      Nonempty (@BirthdayFaithful ℝ* S) ∧
+        Nonempty (@SurrealLimitTransfer ℝ* S) ∧
+        ¬ @ConwaySimplicity ℝ* S :=
+  ⟨surrealFieldHyperrealDyadic, ⟨birthdayFaithfulDyadic⟩,
+    ⟨surrealLimitTransferHyperrealDyadic⟩, fun h => dyBirthday_not_simple h.simplicity⟩
 
 end QOU.AppendixSurreals.DyadicBirthday
