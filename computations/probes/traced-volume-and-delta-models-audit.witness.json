@@ -1,0 +1,249 @@
+{
+  "engine": "mpmath-80dps",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T02:09:12.114650+00:00",
+  "commitSha": "efb1df6d060654cb4d8cb009913c237561d83e07",
+  "assertions": [
+    {
+      "name": "sym_a3_product_minus_halftwist_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "TracedVolumeVsHalfTwist.trTracedVolumeA3_sub_trHalfTwistA3"
+    },
+    {
+      "name": "sym_quad_factor_at_zD_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "TracedVolumeVsHalfTwist.heckeQuadFactor_at_zD"
+    },
+    {
+      "name": "sym_a4_uniform_product_minus_halftwist_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "TracedVolumeVsHalfTwist.trTracedVolumeA4Uniform_sub_trHalfTwistA4Uniform"
+    },
+    {
+      "name": "a3_agreement_iff_o0_eq_o1_all_8_orderings",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "TracedVolumeVsHalfTwist.trTracedVolumeA3_eq_trHalfTwistA3_at_zD_iff"
+    },
+    {
+      "name": "a4_14_of_16_and_a5_32_of_32_orderings_differ",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-jwl8 blast-radius enumeration A=4,5 at 80 dps"
+    },
+    {
+      "name": "lean_closed_forms_match_80dps_traces",
+      "computed": "2.10843958864610e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "TracedVolumeVsHalfTwist.{heckeQuadFactor_at_zD, trTracedVolumeA4Uniform_sub_trHalfTwistA4Uniform}"
+    },
+    {
+      "name": "delta_S_chi21_vanishes_and_d1_affine_unique",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-bg3w: chi_(2,1)(Delta_S)=0 and z^2 coeff nonzero on all 9-/11-crossing models"
+    },
+    {
+      "name": "pyhecke_interleaved_and_grouped_both_11_crossings_match_symbolic",
+      "computed": "1.05421979432305e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "pyhecke.atom.{build_nucleon_nf_mp@Q50, grouped_word_from_chains@q0} == M3, M4 to 80 dps"
+    },
+    {
+      "name": "pyhecke_m3_q50_matches_80dps_q0_to_50str_precision",
+      "computed": "4.41124589061947e-50",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-48",
+      "source": "build_nucleon_nf_mp (Q_50_DIGIT_STR) vs M3(q_at(80)) 50-digit string boundary"
+    },
+    {
+      "name": "pyhecke_both_builders_have_11_crossings_post_1qsw_and_differ_by_ordering",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-bg3w: post-qou-1qsw both builders emit 11 crossings; gap 0.006038 is intra-order"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "traced-volume-and-delta-models-audit",
+  "scriptFile": "traced_volume_and_delta_models_audit_probe.py",
+  "scriptHash": "4550cd222140",
+  "scriptCommitSha": "efb1df6d060654cb4d8cb009913c237561d83e07",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/traced_volume_and_delta_models_audit_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/traced_volume_and_delta_models_audit_probe.py"
+  },
+  "description": "80-dps diagnostic & symbolic verification for beans qou-jwl8 (QOU/BraidsAndKnots/TracedVolumeVsHalfTwist.lean: traced_volume product P_A vs strand-tracked half-twist Delta_A across A=3,4,5) and qou-bg3w (complete 6-model nucleon-word Delta = NF(n) - NF(p) inventory at proton q_0 vs q=111/100 and live pyhecke.atom builders).",
+  "parameters": {
+    "work_dps": 80,
+    "out_dps": 50,
+    "q0_proton": "1.1099785827513808075916690956107688798744991218736",
+    "z_D_proton": "0.61268803714646525159582986394589924802630839154506"
+  },
+  "data": {
+    "part_a_traced_volume_vs_half_twist": {
+      "hecke_quad_factor_at_zD": "-0.75270211325196540159377935162023613783017559887490",
+      "a3_udd_product_minus_halftwist": "-0.078680064350282515027015107916530436876093922298039",
+      "a4_uniform_product_trace": "0.58647314679441529071930531676172065662242050370842",
+      "a4_uniform_halftwist_trace": "0.49006047841575095082337511484142333377124299669488",
+      "a4_uniform_product_minus_halftwist": "0.096412668378664339895930201920297322851177507013539",
+      "blast_radius_by_A": {
+        "A=3": {
+          "total_orderings": 8,
+          "differing_orderings": 4,
+          "agreeing_orderings": [
+            "111",
+            "110",
+            "001",
+            "000"
+          ],
+          "max_abs_delta_log": "0.176324725655714068215353690936"
+        },
+        "A=4": {
+          "total_orderings": 16,
+          "differing_orderings": 14,
+          "agreeing_orderings": [
+            "1000",
+            "0111"
+          ],
+          "max_abs_delta_log": "0.593257690979004275777465620997"
+        },
+        "A=5": {
+          "total_orderings": 32,
+          "differing_orderings": 32,
+          "agreeing_orderings": [],
+          "max_abs_delta_log": "0.729361900118859198284426863022"
+        }
+      }
+    },
+    "part_b_delta_nucleon_word_inventory": {
+      "pyhecke_nucleon_braid_word_len": 11,
+      "pyhecke_nucleon_gen_chains_len": 11,
+      "m3_vs_m4_ordering_net_gap": "0.00603799955008913107367043822337",
+      "m2_nuc9_q0_vs_111_100_pin_gap": "0.0000310132504899387413792837419086",
+      "d1_affine_models": [
+        "M1_Delta_S_short_1_2_crossings",
+        "M6_gg_V3_ruled_canonical_core"
+      ],
+      "models": [
+        {
+          "model": "M1_Delta_S_short_1_2_crossings",
+          "crossings": 2,
+          "intra_order": "short_factorized",
+          "post_2026_11_22_status": "unscored_history_cell",
+          "net_at_proton_q0": "-0.18720719452937832072983654529098078897565051490627",
+          "net_at_q_111_100": "-0.187237882477071666260855450045",
+          "tr_D_at_proton_q0": "-0.10623563984809279089214198716055189439937583839846",
+          "chi_21_at_proton_q0": "0.0",
+          "tr_z_quad_coeff_at_q0": "0.0",
+          "d1_affine_in_z": true
+        },
+        {
+          "model": "M2_nuc9_interleaved_pre_1qsw",
+          "crossings": 9,
+          "intra_order": "interleaved",
+          "post_2026_11_22_status": "retired_pre_2026_08_30",
+          "net_at_proton_q0": "-0.18829060147138277044173722012645065841676538327118",
+          "net_at_q_111_100": "-0.188321614721872709183116503868",
+          "tr_D_at_proton_q0": "-0.12907543817031928055829685348414535286473438658630",
+          "chi_21_at_proton_q0": "-0.0900168651316554375079485838117",
+          "tr_z_quad_coeff_at_q0": "-0.109298442811119092400208479448",
+          "d1_affine_in_z": false
+        },
+        {
+          "model": "M3_nuc11_interleaved_build_nucleon_nf_mp",
+          "crossings": 11,
+          "intra_order": "interleaved",
+          "post_2026_11_22_status": "unscored_history_gluon_open",
+          "net_at_proton_q0": "-0.22715971176556957096639359510130341195942028389948",
+          "net_at_q_111_100": "-0.227204142028555969441888759036",
+          "tr_D_at_proton_q0": "-0.15419488504723970565925551410348012804181176592561",
+          "chi_21_at_proton_q0": "-0.0913629738378694766905079844548",
+          "tr_z_quad_coeff_at_q0": "-0.111890993544034725895719569993",
+          "d1_affine_in_z": false
+        },
+        {
+          "model": "M4_nuc11_grouped_nucleon_gen_chains",
+          "crossings": 11,
+          "intra_order": "gen_grouped",
+          "post_2026_11_22_status": "legacy_marshalled_frame",
+          "net_at_proton_q0": "-0.23319771131565870204006403332467653433582328203333",
+          "net_at_q_111_100": "-0.233245896071564625253449212543",
+          "tr_D_at_proton_q0": "-0.15801600434149129805506143027282432388867930288070",
+          "chi_21_at_proton_q0": "-0.106814457651578049623631258921",
+          "tr_z_quad_coeff_at_q0": "-0.106814457651578049623631258921",
+          "d1_affine_in_z": false
+        },
+        {
+          "model": "M5_categorical_Lminus_11_crossings",
+          "crossings": 11,
+          "intra_order": "interleaved_Lminus",
+          "post_2026_11_22_status": "excluded_scope_b_Lpm_retired",
+          "net_at_proton_q0": "-0.23194657334293510119370610595075636308755455743848",
+          "net_at_q_111_100": "-0.231994263327111891889017977900",
+          "tr_D_at_proton_q0": "-0.16137637856584670831343416980788632285029515389445",
+          "chi_21_at_proton_q0": "-0.120402823765596680050889000484",
+          "tr_z_quad_coeff_at_q0": "-0.102350043157194223883774156260",
+          "d1_affine_in_z": false
+        },
+        {
+          "model": "M6_gg_V3_ruled_canonical_core",
+          "crossings": 6,
+          "intra_order": "borromean_V3",
+          "post_2026_11_22_status": "canonical_2026_11_20_bare_word_zero_split_on_T3",
+          "net_at_proton_q0": "0.0",
+          "net_at_q_111_100": "0.0",
+          "tr_D_at_proton_q0": "0.0",
+          "chi_21_at_proton_q0": "0.0",
+          "tr_z_quad_coeff_at_q0": "0.0",
+          "d1_affine_in_z": true
+        }
+      ]
+    }
+  },
+  "caveats": [
+    "1. Scope (a) definitional & naming audit only: selects neither P_A nor Delta_A as the nuclear operator (an open owner question on qou-jwl8, alongside the 2026-11-21 rulings superseding single-crossing interface letters in favour of ruled gamma-gamma bonds). 2. On qou-bg3w, post-2026-11-20..22 owner rulings fix the scored Q_beta base to the gamma-gamma V^3 T_3 weight-space split (0.3254 MeV), relax R3 p-n colour weighting to a working conjecture, and keep step-4 gluon choices open; Models M1-M5 remain documented historical/comparison cells."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
