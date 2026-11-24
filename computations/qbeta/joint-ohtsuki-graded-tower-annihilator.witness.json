@@ -1,0 +1,92 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T02:19:54.331053+00:00",
+  "commitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "assertions": [
+    {
+      "name": "grade0_chirality_parity_blocker_verified",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.QBeta.JointOhtsukiGradedTower.chiral_grade0_parity_blocker"
+    },
+    {
+      "name": "five_two_cubic_field_discriminant_23_verified",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.QBeta.JointOhtsukiGradedTower.fiveTwo_cubic_mod2_no_root"
+    },
+    {
+      "name": "joint_3x3_grade_matrix_nonsingular",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.QBeta.JointOhtsukiGradedTower.joint_three_complement_annihilator_trivial"
+    },
+    {
+      "name": "amphicheiral_2x2_subsystems_and_lattice_scan_nonsingular",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.QBeta.JointOhtsukiGradedTower.amphicheiral_two_rung_annihilator_trivial"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 319,
+  "computation": "joint-ohtsuki-graded-tower-annihilator",
+  "scriptFile": "joint_ohtsuki_graded_tower_annihilator_probe.py",
+  "scriptHash": "97f57760eeea",
+  "scriptCommitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/joint_ohtsuki_graded_tower_annihilator_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/joint_ohtsuki_graded_tower_annihilator_probe.py"
+  },
+  "description": "80-dps mpmath + exact algebraic verification of the joint graded Ohtsuki complex-volume tower over (4_1, 5_2, B_3), proving grade-0 chirality parity exclusion of 5_2 and pairwise trace-field / 3x3 rank annihilator triviality (qou-7jok).",
+  "parameters": {
+    "workdps": 80,
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "towers": {
+      "Vol_0_41": "2.0298832128193072500424051085490405718833786150606",
+      "Vol_0_52": "2.8281220883307831627638988092766349427709813173006",
+      "CS_0_52": "-3.0241283765093016597199512216946009939844502422707",
+      "Vol_0_B3": "7.3277247534177521204368281194590728861931949942534",
+      "V_41_trunc4_re": "2.0234760128244848755897301788690067820801887423853",
+      "V_41_trunc4_im": "0.054811920131812970610183620449328164844984617666890",
+      "V_52_trunc2_re": "2.8207278140311552710441328720316602375673472931661",
+      "V_B3_trunc2_re": "7.2829538183681648026011936640801222423096749427665",
+      "det_3x3_M_joint": "-0.77839840961961135916599063206387749496017809638151",
+      "det_2x2_41_B3_vol_k1": "-2.4668792163336559166300251947314350971944974571875",
+      "det_2x2_41_B3_k1_k2": "1.7049335807737335163050236906904588871793350839386",
+      "min_lattice_norm_box10": "0.0440108262266773906788081118060",
+      "min_lattice_triple": [
+        -1,
+        0,
+        1
+      ]
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
