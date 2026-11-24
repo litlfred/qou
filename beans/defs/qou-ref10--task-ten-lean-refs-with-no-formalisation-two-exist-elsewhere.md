@@ -2,7 +2,6 @@
 # qou-ref10
 title: 'TASK: ten lean.refs with no formalisation — and two of them DO exist elsewhere'
 status: in-progress
-pr: 8259
 type: task
 priority: medium
 tags:
@@ -10,7 +9,7 @@ tags:
     - lean-ref
     - reorg-2026-10-04
 created_at: 2026-08-08T13:00:00Z
-updated_at: 2026-10-04T15:26:09Z
+updated_at: 2026-11-24T00:28:33Z
 parent: qou-6qbv
 ---
 
@@ -87,3 +86,8 @@ the block claims** (#4739 §3): `recursive-atom-knot-atlas` (its only theorem is
 of four stated properties formalised). Those need formalisation, not a repoint.
 
 - **Round 55 update (in-progress):** De-vacuified in PR `litlfred/qou#8259` (HEAD `1be723e4c3e702d48db833cb3bedc75e89004822`), verified with Lean 4.24.0 (`0` `sorry`, `0` vacuity hits) and 80-dps `mpmath` witness.
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **Audited against `origin/main` (`cfd526231ce`):** All 9 primary `lean.ref` targets resolve on `origin/main`: `knots-particles-confinement/jsj-decomposition-linearity.ts` -> `qou:QOU.BraidsKnots.LinearJSJVolume.JSJ_volume_additivity` (de-vacuified in `06378846e71`, port of #8259), `glossary/glossary-weierstrass-projection.ts` -> `qou:QOU.Archimedean.WeierstrassProjection.weierstrassProjection`, and `QOU.Eightfold.{Sym2Gate,WeylInvarianceQDeformation,RowCapObstruction,GellMannOkuboIdentity}`, `chirality_frobenius_self_pairing`, `GBResidueSpectralSum` (strengthened in `35203efbc72`, port of #8274), and `RamifiedDiscFusion`.
+- **Narrowed remaining open sub-problem (Rule 13a guard — stays `in-progress`):** (1) `class GBResidueSpectralSum` (`lean/QOU/BraidKnot/GBResidueSpectralSum.lean:67`) remains a 0-instance class on `origin/main`; (2) weak-ref follow-ups on `appendix-knot-periodic-table/recursive-atom-knot-atlas.ts` (`qou:QOU.BraidsAndKnots.atomKnotAtlas`) and `climax-volume-mass/q-momentum-properties.ts` (`qou:QOU.Archimedean.qMomentumP_additive`), both still `validation: "not_checked"`.

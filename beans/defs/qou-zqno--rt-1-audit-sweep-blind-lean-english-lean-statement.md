@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: critical
 created_at: 2026-11-19T16:50:59Z
-updated_at: 2026-11-22T21:35:00Z
+updated_at: 2026-11-24T00:28:34Z
 parent: qou-ncxf
 ---
 
@@ -32,3 +32,8 @@ Pass 3 done: 20 blocks at --offset 40 (population 408), four blind legs + my adj
 
 ## 2026-11-22 applicability review (owner instruction 2026-11-22; wave 2, session_01Qmmkt63qmS4AFFfqMq2Z2e)
 **APPLIES**: same reason as qou-ncxf; next cursor --offset 60, 348 blocks left. Premise check against docs/coordination/owner-rulings.md on main: the bean rests on no retired premise (photon form, trefoil electron, convention C, z=1 Q_β base, census selection, absolute mass, muon pin A, virtual photons, adopted quark charges).
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **Audited against `origin/main` (`cfd526231ce`, including #9180..#9219):** Pass 1 (`--offset 0`, 10 blocks, PR #8528), sampler dotted-decl/`--offset` fixes (`24c44167e`), and Pass 3 (`--offset 40`, 20 blocks, `35a56274abb`, `docs/audits/2026-11-22-roundtrip-blind-audit-pass3.md`) are landed on `origin/main`.
+- **Narrowed remaining open sub-problem (`in-progress`):** Blind round-trip passes on `--offset 15..39` (25 blocks skipped between Pass 1 and Pass 3) and `--offset 60..407` (`348` remaining eligible provable blocks).

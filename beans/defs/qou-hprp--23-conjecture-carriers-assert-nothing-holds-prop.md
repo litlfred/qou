@@ -7,7 +7,7 @@ priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T18:10:00Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-24T00:28:33Z
 parent: qou-5p7n
 ---
 
@@ -376,3 +376,8 @@ Was in-progress with no bean update since 2026-09-05 and no main commit naming i
 ## 2026-11-21 honesty-audits (bean-drain wave 1, session_01Qmmkt97DGEiUfDvuBj8sVr; issue #8813, branch claude/honesty-audits-2026-11-21)
 - Measured: PR #8471 / #8474 / #8481 (2026-11-18, `QOU/Foundations/*` new files) do **not** resolve this bean. Each adds a standalone Lean file whose structures hold the bean's own audit counts as `Int` fields, with a `canonical…` def filling in the counts and theorems such as `x*x = 0 ↔ x = 0`. No corpus file named by this bean is touched, so the defect it tracks is unchanged by those PRs. Read from the PR patches; not merged.
 - Superseded-premise check (owner 2026-11-21, against docs/coordination/owner-rulings.md on main 2ae54ab40; list: L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, single-term trace, trefoil-primary electron, 'c_2 = −1 PROVED', χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean's premises or in the files it names.
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **Re-measured live on `origin/main` (`cfd526231ce`):** Running `python3 scripts/lean-overclaim-audit.py` across `folio/` shows `contentless-carrier` has been drained from `39` -> **`1`**! Only **1** `holds : Prop` carrier remains in `folio/`: `HigherStrandCharacterBifurcation` (`folio/quantum-observable-universe/lean/QOU/KnotTheory/MetallicPiecewise.lean:70`), alongside `9` `empty-carrier` declarations (`QuantumDilogarithm`, `Saturated`, `Unknot`, `FigureEight`, `Knot5_2`, `DerivedAtom`, `LinkComplement`, `GBCategory`, `UGB.UnitalGroebnerBasis`) and the D11 ref mismatch (`WignerSu4` vs `WignerSU4`). (Unmerged PR #8474 remains hollow scalar counts.)
+- **Narrowed remaining open sub-problem (Rule 13a guard — stays `in-progress`):** (1) Encode or retire the single remaining `contentless-carrier` `HigherStrandCharacterBifurcation` (`QOU/KnotTheory/MetallicPiecewise.lean:70`) and resolve the D11 `lean.ref` mismatch; (2) Rule 13a 0-instance conjecture classes `CrystalBasisCorrespondence`, `KazhdanLusztigClassicalLimit`, `ModularSTransformQQTilde`, `QuantumLanglandsDual` (`0` instances on `origin/main`).

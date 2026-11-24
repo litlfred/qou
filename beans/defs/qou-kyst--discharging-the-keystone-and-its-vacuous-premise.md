@@ -2,14 +2,12 @@
 # qou-kyst
 title: Discharging the keystone conjecture and its one vacuous premise
 status: in-progress
-pr: 8235
-updated_at: 2026-11-22T22:50:00Z
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T08:10:00Z
-updated_at: 2026-11-22T22:50:00Z
+updated_at: 2026-11-24T00:28:34Z
 parent: qou-r9ih
 ---
 
@@ -153,3 +151,8 @@ Status left unchanged: resetting the claim and closing the PR are the owner's ca
 ## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
 
 **APPLIES.** pure mathematics; no retired premise found (grep for photon/trefoil/convention C/census/muon pin/virtual photon: none); claim is hollow (vacuous brick PR, see note above), the open work stands.
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **Audited against `origin/main` (`cfd526231ce`, including #9180..#9219):** F2/F3 keystone split (`conj:qdifference-kernel-prolongation-symbol` + `conj:c1-ggm-bar-parity-faces` + `newtonSlopes_c1_ne_ggm`), `[MISWAbelianisation]` de-vacuification (`lean/QOU/BringsSurface.lean`), and W4 GGM `A_ω = 3` Stokes assembly (`fe4f1320214`, `cbcc435344f`) are on `origin/main`; open PR #8235 remains unmerged hollow scalar algebra.
+- **Narrowed remaining open sub-problem (Rule 13a guard — stays `in-progress`):** Non-vacuous instantiation of `QDifferenceKernelIsProlongationSymbol` (`mass-theory/qdifference-kernel-prolongation-symbol.lean`, `0` instances on `origin/main`) and constructive principal-bundle/multiplicative-integral proof of `MISWAbelianisation`.

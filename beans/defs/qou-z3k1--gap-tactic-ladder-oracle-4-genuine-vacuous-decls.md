@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-11-22T21:23:48Z
+updated_at: 2026-11-24T00:28:33Z
 parent: qou-6qbv
 ---
 
@@ -284,3 +284,8 @@ re-work item 1. The file is also candid about it in its own docstring
 Session https://claude.ai/code/session_01Qmmkt5vgAD2YAm4VcqJgrF.
 
 Fixed on main: hadron_operations_closure, cp_violation. Still open: (1) `QOU/BraidKnot/LevelSufficiency.lean` still projects the class field `LevelSufficient.trace_eq` (self-assuming; needs a real Markov trace, M4). (2) `mass-theory/mass-tower-coefficient-stratification.lean:61` proves `stratumDepth term ≤ 4` by `cases term <;> decide`, which is vacuous: it checks a finite enum, not the stratification claim.
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **Audited against `origin/main` (`cfd526231ce`):** Landed items: `hadron_operations_closure` (`b67ed293ec6` / `dc257cfe444`, PR #8001), `cp_violation_spectral_form` (`237c6aab718`, PR #6782), `markovTrace` particle-keying (`0bfb673e14e`), and `cases-decide` triviality rung + 156-skip re-probe (`a63d9f40a0c`, `d7bf4e59930`, PR #8994).
+- **Narrowed remaining open sub-problem (Rule 13a guard — stays `in-progress`):** (1) 0-instance classes `CPViolationSpectralForm`, `ConfinementLevel`, and `LevelSufficient` (`0` instances each on `origin/main`); (2) self-assuming projection `LevelSufficiency` (`lean/QOU/BraidKnot/LevelSufficiency.lean:112`, awaiting constructive Hecke character-tower Markov trace); (3) finite-enum `cases term <;> decide` proof in `mass-theory/mass-tower-coefficient-stratification.lean:61` and definitional restatements `strangelet_double_beta` / `borel_partial`.

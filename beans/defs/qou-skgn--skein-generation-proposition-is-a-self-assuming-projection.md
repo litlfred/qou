@@ -8,9 +8,8 @@ tags:
     - reorg-2026-10-04
     - 8f-decide
 created_at: 2026-08-30T08:20:00Z
-updated_at: 2026-10-10T07:40:12Z
+updated_at: 2026-11-24T00:28:34Z
 parent: qou-8lxd
-pr: 8229
 ---
 
 Found on `origin/main` while diffing the `qou-scrx` collision pairs. Not a
@@ -191,3 +190,8 @@ corpus's only hadron-restricted statement of the claim.
 
 ## Implementation Note (PR #8229)
 - Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/SkeinResolutionQuarkWritheBalanceWorpitzkyDecupletOrderedContentAndGenerationFilters.lean` and `computations/probes/skein_resolution_quark_writhe_balance_worpitzky_decuplet_ordered_content_and_generation_filters_probe.py` (witness `computations/probes/skein-resolution-quark-writhe-balance-worpitzky-decuplet-ordered-content-and-generation-filters.witness.json`, `f1cdc284e299c69db7b5cdefc55f5ba3d747a9ab`).
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **Audited against `origin/main` (`cfd526231ce`):** Route-(2) strong-induction de-vacuification (`skein_generation` / `skein_generation_top` over `complexity`/`base`/`resolve` in `folio/quantum-observable-universe/lean/QOU/Torsion/skein_generation.lean`, `dc12b128ccc`) is on `origin/main` (`QOU/scratch_skein.lean` is already removed on `origin/main`; unmerged PR #8229 does not touch `SkeinGenerationContext`).
+- **Narrowed remaining open sub-problem (Rule 13a guard — stays `in-progress`):** (1) 0-instance class `SkeinGenerationContext` (`0` instances on `origin/main`); (2) owner-gated route-(3) hadron restriction + `ℤ[q^{±1}]` coefficient ring specialization of `prop:skein-generation`.

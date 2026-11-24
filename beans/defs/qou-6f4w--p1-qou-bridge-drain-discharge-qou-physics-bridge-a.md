@@ -10,7 +10,7 @@ tags:
     - axiom-field-audit
     - de-vacuification
 created_at: 2026-11-19T08:19:51Z
-updated_at: 2026-11-19T08:19:51Z
+updated_at: 2026-11-24T00:28:33Z
 parent: qou-dxbw
 ---
 
@@ -98,3 +98,8 @@ parent: qou-dxbw
 - `opaque QOU.BraidKnot.confined` (`knots-particles-confinement/confinement-phase-stratification.lean:42`)
 - `opaque QOU.BraidKnot.mu` (`knots-particles-confinement/confinement-phase-stratification.lean:49`)
 - `opaque QOU.BraidKnot.sigmaF` (`knots-particles-confinement/confinement-phase-stratification.lean:52`)
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **Audited against `origin/main` (`cfd526231ce`, including #9180..#9219):** Concrete LP/SDP, ChamberGS, and confinement-tower foundations landed on `origin/main` in `06253f4b4b4` (`lean/QOU/QBeta/ECatLPDualRadical.lean`), `e5e181fad21` (`lean/QOU/MathlibInfra/SymmetryReducedDualCertificate.lean`), `9ce8d04d27a` (`lean/QOU/MathlibInfra/NuclearChamberGS.lean`), `70e23fed87a` (5-layer confinement tower `qou-5lct`), and `ff6256eeed0` (`brings_euler_characteristic.lean` port); `BarInvolution` and `BigBangHeatDeath` each carry 1 instance declaration on `origin/main`.
+- **Narrowed remaining open sub-problem (Rule 13a guard — stays open):** `TwoTermPhotonGPMTConfinementSDP.lean` is not on `origin/main`, and 0-instance bridge/conjecture classes `BringZeroModeBlochClass`, `BringsEulerCharacteristicContext`, `CemeteryGroupEmergence`, `ClassicalLimitStpart`, `ConfinementSDPData`, and `QouPNeqNp` (`0` instances on `origin/main`) plus toy-only carriers (`ConfinementGradingCorrespondence`, `TowerSummandRealization`) remain open.

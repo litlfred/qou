@@ -1,7 +1,7 @@
 ---
 # qou-nbz9
 title: Adjudicate the 38 projections de-exempted by the isDefProof narrowing
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - issue-2472
     - reorg-2026-10-04
 created_at: 2026-08-10T01:50:40Z
-updated_at: 2026-11-16T19:22:00Z
+updated_at: 2026-11-24T00:28:32Z
 parent: qou-6qbv
 ---
 
@@ -66,3 +66,8 @@ Each needs the standard self-assuming adjudication: is the carrier inhabited, an
 
 - Verified all 38 declarations from the `isDefProof` narrowing: 30 were retired/refactored to `Prop`-valued definitions or removed, and the remaining 8 (`LevelSufficiency`, `algebraic_quantum_volume_specialization`, `e_infinity_identifications`, `spectral_sequence_h3_explicit`, `terms_2_6_higher_operations`, `ew_interface_knot`, `toffoli_transfer_matrix`, `strong_duality`) are adjudicated as `genuine` in `docs/audits/lean-vacuity-review-ledger.json` (`0` `needs-agent` entries) and carry explicit §3b-conditional disclosures.
 - Opened PR `litlfred/qou#8165` (`cf010d07bb34f2e3118733212559b61ede4b8cc4`) with `ready-to-merge` + `release` labels.
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **100% landed on `origin/main` (`cfd526231ce`):** PR #8165 was ported to `origin/main` in commit `9dd5e021cb67e6f1a12f7caeec1ed09982ca60b5`, and the review ledger `docs/audits/lean-vacuity-review-ledger.json` (`ef11adcb395`) carries fresh verdicts for every remaining live `proof-no-self-assuming-projection` hit among the 38 `isDefProof`-narrowed declarations.
+- Verified live via `bun run folio/pipeline/lean-vacuity-axiom-audit.ts --check-ledger docs/audits/lean-vacuity-review-ledger.json` across all 34 `.lean` files naming the 38 declarations: `35/38` are refactored/no longer flagged as `proof-no-self-assuming-projection`, and all `3/38` remaining live `proof-no-self-assuming-projection` hits (`LevelSufficiency` at `lean/QOU/BraidKnot/LevelSufficiency.lean:112`, `toffoli_transfer_matrix` at `lean/QOU/Information/toffoli_transfer_matrix.lean:126`, `strong_duality` at `mass-theory/confinement-nf-partial-proof.lean:144`, plus `complementary_slackness` `advisory`) carry fresh `genuine` / `advisory` verdicts (`0/38` `needs-agent` in the live gate; downstream proof work on those individual theorems continues under their own conjecture-guarded beans such as `qou-z3k1`). Marking adjudication task `completed`.

@@ -9,7 +9,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-11-20T09:30:00Z
+updated_at: 2026-11-24T00:28:34Z
 parent: qou-d8c7
 ---
 
@@ -109,3 +109,8 @@ Still open, NOT closeable: the transient norm-equality conjecture TransientLocal
 ## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
 
 No change. The vacuity fix and the owner picks landed 2026-10-10. The open subject is the conjecture class `TransientLocalisationNormEquality` (no instance), plus the under-specified `TopologicalDecompositionMass` carrier noted above. Stays open (rule 13a).
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **Audited against `origin/main` (`cfd526231ce`):** Parametric de-vacuification of all 3 modules (`294c4d6f896`, `3cba876af1a`), inequality restatement of `lem:topological-mass-transient-localisation` (`9af208a54c7`, `e0e3512c8bc`), and demotion of global `instance trivialVortex` -> `def flatVortex` (`84855b132db`) are all on `origin/main`.
+- **Narrowed remaining open sub-problem (Rule 13a guard — stays open):** 0-instance conjecture class `TransientLocalisationNormEquality` (`lean/QOU/LiftingDescent/tm_transient_localisation.lean`, `0` instances on `origin/main`) and owner-gated external-mass parameterization of `TopologicalDecompositionMass`.

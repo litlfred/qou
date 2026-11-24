@@ -10,7 +10,7 @@ tags:
     - lean
     - soundness
 created_at: 2026-08-08T13:30:00Z
-updated_at: 2026-11-16T18:38:00Z
+updated_at: 2026-11-24T00:28:32Z
 parent: qou-rtxm
 ---
 
@@ -126,3 +126,8 @@ real. Read each before acting.
 6. `folio/quantum-observable-universe/lean/QOU/Observations/strangelet_crossing_energy.lean`: extends `QOU.Shared.ArchimedeanEval`, deriving `q_real := eval q` via `eval : R →+* ℝ`.
 7. `folio/quantum-observable-universe/lean/QOU/Observations/brane_tower_q_laplacian_decay.lean`: migrated `BraneTowerQLaplacianDecayContext` in PR #8151 to extend `QOU.Shared.ArchimedeanEval` so `q_real := eval q` is derived from the inherited `q : R` rather than posited as an independent `ℝ` field.
 8. `folio/quantum-observable-universe/mass-theory/conj-im-q-physical-role.lean`: updated `default_q_real (q : ℂ) : ℂ := ((q.re : ℝ) : ℂ)` in PR #8151 so it projects `q : ℂ` onto the real axis rather than taking an untied `q_real : ℝ` parameter.
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **Mechanical `q_real` tie 100% landed on `origin/main`:** PR #8151 was ported in commit `cecac49f8ef` (`QOU/Shared/ArchimedeanEval.lean`, `mobius_energy.lean`, `wedderburn_bratteli_recursion.lean`, `antiparticle_crossing_reversal.lean`, `reeb_operations_per_planck.lean`, `toffoli_transfer_matrix.lean`, `strangelet_crossing_energy.lean`, `brane_tower_q_laplacian_decay.lean`, `mass-theory/conj-im-q-physical-role.lean`); corpus grep confirms zero untied `q_real : ℝ` fields remain in `folio/`.
+- **Narrowed remaining open sub-problem (Rule 13a guard — stays `in-progress`):** `QOU.Observations.BraneTowerQLaplacianDecayContext` (`folio/quantum-observable-universe/lean/QOU/Observations/brane_tower_q_laplacian_decay.lean:53`) remains a 0-instance conditional class on `origin/main` (`cfd526231ce`). Do not close until instantiated by a non-vacuous proof.

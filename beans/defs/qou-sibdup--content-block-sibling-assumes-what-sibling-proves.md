@@ -1,13 +1,13 @@
 ---
 # qou-sibdup
 title: 'Detector: a content-block theorem assuming what a sibling block proves'
-status: in-progress
+status: completed
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T04:40:00Z
-updated_at: 2026-11-21T18:00:00Z
+updated_at: 2026-11-24T00:28:32Z
 parent: qou-5vkl
 ---
 
@@ -71,3 +71,8 @@ Measure before quoting a number.
 ## 2026-11-21 (thread: Design the remaining Lean vacuity detectors)
 
 Advisory script scripts/lean-sibling-hypothesis-audit.py in PR #8919, with specificity filter; corpus 0 matches (232 with --unfiltered), worked hasse_weil_bound case pinned in --selftest. No ledger category, per owner ruling 2026-11-21. Open until #8919 merges.
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-j79y, claude/backlog-drain-batch2-20261123)
+- **100% landed on `origin/main` (`cfd526231ce`):** `scripts/lean-sibling-hypothesis-audit.py` landed in commit `a6850a0cc0e` (merged via PR #8919, merge commit `4adbb646d0b7c91bcb06e2af7394fafac4a0776d`), implementing the specificity-filtered sibling-hypothesis detector with no ledger category per owner ruling 2026-11-21 (`docs/coordination/owner-rulings.md`).
+- Verified live on `origin/main`: `python3 scripts/lean-sibling-hypothesis-audit.py --selftest` passes (`worked case (hw = hasse_weil_bound) caught`), and corpus scan across `909` content-block `.lean` files (`5752` explicit hypotheses, `3635` conclusions) exits `0`. Marking `completed`.
