@@ -1,0 +1,3235 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable",
+    "path": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "7da1940c002c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "severity": "minor",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). The bold 'Status of the normaliser: asserted, not derived.' is a status label in scholarly prose (cf. AGENTS.md §4d / one-voice Category H). Consider stating it as mathematics ('The exponent k = -3 is a choice: ...') or moving the status to authorNotes."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). The bold status label is gone; 'The normaliser is asserted, not derived.' is plain prose."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "7da1940c002c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No filler, hedging or hype."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No filler."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). A definition of a braid observable with a Hecke-algebra normaliser belongs in braids-and-knots."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Fits braids-and-knots."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). The defining display is the generic observable; the q > 1 admissibility sentences are ordered-field commentary, consistent with the Lean (ordered Field K, not R)."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Defining display generic; q > 1 statements are ordered-field commentary matching the Lean."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".ts cites 'chlouveraki2016hdr' but references.ts registers 'chlouveraki2016-hdr' (with hyphen); no chlouveraki2016hdr exists. wenzl1988c DOI is a self-declared 'PLACEHOLDER — resolve before publication'.",
+        "rebuttal": "minor — both target entries exist (key typo + unresolved DOI); neither affects the math. A pre-publication fixit, not a soundness defect (auto-dischargeable).",
+        "evidence": [
+          {
+            "text": "f-bor-borromean-observable.ts:46 vs references.ts:4800"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). cites chlouveraki2016-hdr (Schur elements of Hecke algebras) and wenzl1988c; appropriate, though the .md carries no inline citation for the Schur-element statement."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). cites unchanged and appropriate."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "[3]_q!/q^3 looks reverse-engineered to convert tr_M~0.9986 into F_Bor~4.469 to hit 938.27.",
+        "rebuttal": "rebutted — the factor IS 1/y_{(3)} with q^3 forced by content-sum (q-Schur convention, Lean-proved F_Bor_eq_trM_over_y_3); the witness independently reproduces m_p=938.2721 (0.24 ppm) and PREDICTS m_n=939.564 (2 ppm) — a fitted normalization could not deliver a second observable.",
+        "evidence": [
+          {
+            "text": "f-bor-borromean-observable.md:30-42; YLambdaQSchur.lean:260,218"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). The block now states the exponent k as a free discrete choice among {3,0,-3}, which is the honest accounting of the degree of freedom."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). k stated as a free choice."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "'Lean-proved' claims could mask stubs.",
+        "rebuttal": "rebutted — trM_borromean_abs, qFact_three, F_Bor are genuine noncomputable defs over R, not :True; the block honestly labels the dim-V_{(2,1)}->linear-factor bridge an open structural step (no overclaim).",
+        "evidence": [
+          {
+            "text": "f-bor-borromean-observable.lean:51-68"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "severity": "minor",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). The block's sibling .lean (unchanged by the PR) still calls F_Bor 'The natural categorical observable ... shifted by content q^3 (the content sum of the partition (3))', the reading the .md now retracts; the .ts keeps the 'content-shift' tag. Also 'In the variable q^-1 the trivial and sign characters swap': the Lean lemma is schurSign_relabel under q -> -q^-1 (q -> q^-1 swaps the Schur elements as numbers, but only q -> -q^-1 swaps the characters)."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "severity": "major",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). 'These identities are proved in QOU/MassTheory/ProtonQ3SchurElement.lean' follows the sentence giving x_-^2 = c_sign x_-, which is not in that file (or any file in the PR); only the Schur elements and F_Bor = |tr_M|*c_sign are. Also the last sentence ('applied to the sign element as well selects [3]_q!') rests on bar(x_-) = q^6 x_-, which ProtonQ3OcneanuSlopes states is argued, not formalised; the .md does not say so. Previous minor (sibling docstring, q -> -q^-1) resolved."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Fixed: the prior major (x_-^2 = c_sign x_- attributed to the Lean file, which does not prove it) is reworded; the Lean file proves the Schur-element identities named."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "|tr_M| (abs of a Laurent poly) is regime-ambiguous; beta_Bor closure / base ring.",
+        "rebuttal": "rebutted — tr_M is a rational function (4+h^2-3h^4-h^6)/(h^2+4) over R; at q_0 it is +0.9986 so |.| is unambiguous for q>1; beta_Bor=(s1^-1 s2)^3 closure + Jones normalization cited.",
+        "evidence": [
+          {
+            "text": "borromean-markov-trace-closed-form.md:1-50"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). c_chi is defined by tau = sum chi/c_chi with tau stated; unambiguous."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). c_chi, tau, sigma_w, z_D defined."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "The [3]_q!/q^3 normalization is exactly 1/y_{(3)}(q) (the q-Schur Markov weight of the trivial partition), with the q^3 denominator forced by content-sum c((3))=3 (Lean-proved) — not tuned; the only defect is a citation-key typo + a placeholder DOI.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "severity": "minor",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). Sound and honest: /q^3 is identified (sign Schur element), not derived, which matches the Lean verdict. A referee would ask for the scope-(a) rewording of 'nothing selects it', a link to the Lean, and definitions of T_w, V^3, z_D."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "severity": "major",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Honest and much improved; a referee would object to the false 'proved in Lean' attribution of x_-^2 = c_sign x_- and to the derivative sign slip."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "severity": "minor",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Accept with minor revision: only the milnor-brevity duplication remains."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'Cleaner form' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). Checked by hand and in Lean: [3]_q!/q^3 = 1+2q^-2+2q^-4+q^-6 = P(q^-1) = c_sign; c_triv = q^3[3]_q!, c_refl = [3]_q are the Schur elements for tau(T_w)=delta_{w,1} with (T-q)(T+q^-1)=0 (schur_inverse_unique, isSchurInverse_schur); z_D w_D = [2]_q^-2 (zD_mul_wD); y_(3) = (q^4+1)/(q^2+1)^2 under y_(1^3)=0 re-derived; V^3 writhe 0 and pure (v3_writhe_zero, v3_pure). x_-^2 = c_sign x_- is standard but not in the Lean."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "severity": "minor",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Sign slip: after 'd_z t(z_D) = -q^-3' the text says that in the coordinate c = tr(b) 'the derivative becomes u^-1 q^-3'; d_c t = -u^-1 q^-3 (it is -d_c t that equals u^-1 q^-3, as the conj block states). Other claims re-checked: Schur elements, y_(3) = (q^4+1)/(q^2+1)^2, z_D w_D = [2]^-2, units of Z[q,q^-1] = +-q^m, KL classification."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). Fixed: d_c t = -u^-1 q^-3 now matches d_z t(z_D) = -q^-3 divided by dc/dz = u. Schur elements, z_D, units of Z[q,q^-1] re-checked."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:f-bor-borromean-observable'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). The new Lean content is non-vacuous (uniqueness of the Schur elements, iff-admissibility in k). Two lemmas are thin: no_symmetric_framing_total_two is 3f != +-2 and length_not_invariant compares list lengths without a braid group; their topological reading is docstring-only. The .md does not rely on either."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Non-vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies ['prop:borromean-markov-trace-closed-form', 'prop:y-lambda-closed-form-wenzl-bridge'] for 'def:f-bor-borromean-observable' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No circularity; the Schur elements are derived from the three trace conditions."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). The block itself records that the derivative reading is circular (it returns the chosen scaling)."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'def:f-bor-borromean-observable' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "severity": "minor",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). 'Nothing in the Markov axioms selects it' is a universal negative supported by two routes (Markov normaliser, writhe/framing). It is broader than the evidence (AGENTS.md 'Before declaring refuted': scope (a) phrasing), and the PR's own Lean records a candidate route through the Markov parameter z (hasDerivAt_trXMinus_zD: -d/dz tr_z(x_-) at z_D = q^-3) that the .md does not mention. Suggest 'Neither of the following routes selects it'. The block does not claim to derive /q^3; good."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Previous minor resolved: now 'Two routes checked in Lean do not produce it' (scope a)."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'Cleaner form' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). Each step follows."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Follows."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'def:f-bor-borromean-observable' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No empirical value enters; 'no number changes' holds (no witness or producer in the diff)."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No empirical value; no number moves in the block."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'def:f-bor-borromean-observable' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). Pure algebra; no physical claim added."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Pure algebra."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All backing computations and proofs are fully reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). Every algebraic claim reproduces from the Lean file (exit 0, standard axioms only)."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Reproduces from the Lean files."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten per Milnor standards. Shortened prose, eliminated forward refs, un-cluttered Lean notation while keeping core structural claims. Preserved math.",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). Definition, identification of the normaliser, status, then the h-expansion: one line of argument."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Definition, Schur identification, status, routes, tension, modified-trace reading, h-expansion: one argument."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). The block's definition (F_Bor) and its sibling Lean definition are unchanged and agree. The new narrative claims are matched by ProtonQ3SchurElement.lean (schur_inverse_unique, fBor_normaliser_eq_schurSign, qpow_fact_eq_schurSign_iff, qpow_fact_eq_schurTriv_iff, qpow_fact_bar_symmetric_iff, zD_mul_wD, v3_writhe_zero, v3_pure); x_-^2 = c_sign x_- and the y_(3) formula are not in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). F_Bor definition and sibling Lean agree; sibling docstring now matches the .md (Schur element, asserted)."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "severity": "minor",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). Symbols used before introduction: T_w (the standard basis of H_3(q); also AGENTS.md §7a reserves sigma_i and says never T), V^3 (not identified with beta_Bor in this block; the Lean sibling PoincareCentering writes beta_Bor = (sigma_1^-1 sigma_2)^3), and z_D (convention-D Markov parameter, not defined here)."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). sigma_w, z_D and V^3 are now introduced before use (previous minor resolved)."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). Each paragraph carries a distinct claim."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "severity": "minor",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). The new modified-trace paragraph restates most of conj:proton-normaliser-kl-coordinate; a one-sentence pointer would do."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "severity": "minor",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). The modified-trace paragraph still restates most of conj:proton-normaliser-kl-coordinate; a one-sentence pointer would do."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). Fixed: the duplicated paragraph is now a one-sentence pointer."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.350Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no negation-contrast construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.393Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no rhetorical-pivot construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.435Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no load-bearing em-dash construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.487Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no compulsive-triple construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.530Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no closing-aphorism construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.573Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no meta-commentary construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.618Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no thesis-restatement construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.660Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no performed-warmth construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.705Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no superlative-inflation construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9d936d7ea7a4",
+          "ts": "b61803baab6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:03.751Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no non-speakable syntax construction present."
+      },
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). No instance. (No em-dash in the .md; 'asserted, not derived' is a status label, not a contrast device.)"
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). No instance; no em-dash."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "severity": "minor",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). The block's main new content (the Schur elements and their uniqueness, the admissibility of k in {3,0,-3}, the Markov/writhe routes) is proved in the library file QOU/MassTheory/ProtonQ3SchurElement.lean, which has no content block; neither uses[] nor the text links it. uses[] still carries prop:y-lambda-closed-form-wenzl-bridge, which the .md now cites only to say the y_(3) reading fails."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). The Lean files and conj:proton-normaliser-kl-coordinate are linked in the prose (the conj cannot enter uses[], since it uses this definition). uses[] keeps prop:y-lambda-closed-form-wenzl-bridge, which now backs the stated y_(3) formula."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "98b5edad577a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "4d716da7221b",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:42:37.000Z",
+        "reviewed_sha": "e9ca3e042ddb0bdee4812be8d91d3498b310c965",
+        "evidence": "Full read of def:f-bor-borromean-observable at e9ca3e042dd (.md rewritten by #8964; .ts docblock and tags) against QOU/MassTheory/ProtonQ3SchurElement.lean (lean-direct exit 0). Schur elements, Markov weights and the convention-D normaliser are kept distinct; the y_(1^3)=0 vs c_sign tension is stated as such."
+      },
+      {
+        "field_hash": {
+          "md": "8b84f0b89c1b",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:32:08.000Z",
+        "reviewed_sha": "661ce411ae90621f772145abfd427aea588c3076",
+        "evidence": "Full re-read of def:f-bor-borromean-observable at 661ce411ae (.md edited again; sibling .lean docstring updated) against ProtonQ3SchurElement.lean, ProtonQ3OcneanuSlopes.lean, KLCoordinateLaurent.lean, LaurentUnits.lean (all lean-direct exit 0, standard axioms). Schur elements, Ocneanu weights and coordinate derivatives kept distinct."
+      },
+      {
+        "field_hash": {
+          "md": "0bbf488cdd33",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:42:46.000Z",
+        "reviewed_sha": "15a21d1173d5418d819974d77ccc5218b11b3e2d",
+        "evidence": "Re-read of def:f-bor-borromean-observable at 15a21d1173 (.md edited: x_-^2 = c_sign x_- now stated as standard and not formalised in ProtonQ3SchurElement.lean; coordinate derivative corrected to -u^-1 q^-3). Lean unchanged since 1da25adb4a (ProtonQ3SchurElement, ProtonQ3OcneanuSlopes, KLCoordinateLaurent, LaurentUnits, both block siblings: lean-direct exit 0, standard axioms only). No instance."
+      },
+      {
+        "field_hash": {
+          "md": "56246e33a35a",
+          "ts": "21bc5fe8a9a1",
+          "lean": "86329d43c396",
+          "lean_statement": "0e2a3867cc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:45:15.000Z",
+        "reviewed_sha": "c9a999cbd340aba9864b8500b8b368e47c2279fc",
+        "evidence": "Re-read of def:f-bor-borromean-observable at c9a999cbd3 (modified-trace paragraph replaced by a one-line pointer to conj:proton-normaliser-kl-coordinate). No .lean changed since 1da25adb4a; earlier lean-direct results stand (exit 0, standard axioms). No instance."
+      }
+    ]
+  }
+}

@@ -60,7 +60,7 @@ where $C_i$ is the product of unchanged transfer matrices between the converting
 
 ## 6. Toffoli transfer matrix (information-theoretic)
 
-On $3$ strands with nucleon types $[\mathfrak{p}, \mathfrak{p}, \mathfrak{n}]$, the Toffoli gate selects the target strand whose control--control pair has unit crossing coefficient ($c = 1$). The target-flip amplitude is, under the canonical convention $z_D = q^3/(q^2+1)$,
+On $3$ strands with nucleon types $[\mathfrak{p}, \mathfrak{p}, \mathfrak{n}]$, the Toffoli gate selects the target strand whose control--control pair has unit crossing coefficient ($c = 1$). At the Markov parameter $z = q^3/(q^2+1)$, the target-flip amplitude is
 
 $$
   P_{7,6}(q) = -\frac{(q-1)(q+1)(q^6+q^4+2q^2+1)}{2q(q^2+1)^2}
@@ -68,7 +68,7 @@ $$
 
 The full $2 \times 2$ Toffoli transfer matrix $\mathbf{M}(q)$ is in [Table 2](#tbl:tm-interactions-table2-data).
 
-**Two withdrawn statements.** The factorisation $P_{\mathrm{flip}} = c_{k_1k_2}(q)\cdot\Phi(q)$ with the universal $\Phi(q) = (q-1)(q^{3/2}+q^{1/2}-1)(q^{3/2}+q+1)/2(q+1)^2$ is retired: $\Phi$ is not in the image of the Toffoli construction under any indexing or convention ([Toffoli transfer matrix](#prop:toffoli-transfer-matrix)). And $\hat V_1 = z$ *does* depend on crossing type — the traced volume at $\sigma_1$ is $\hat V_1(k_1,k_2) = z(q)\,c_{k_1k_2} + d_{k_1k_2}$, which reduces to $z$ only for the crossings with $(c,d) = (1,0)$.
+**Non-factorisation and crossing-type dependence.** No control-independent factor $\Phi(q)$ satisfies $P_{\mathrm{flip}} = c_{k_1k_2}(q)\cdot\Phi(q)$ across all three control pairs ([Toffoli transfer matrix](#prop:toffoli-transfer-matrix)). Moreover, the traced volume at $\sigma_1$ is $\hat V_1(k_1,k_2) = z(q)\,c_{k_1k_2} + d_{k_1k_2}$, which depends on crossing type through $d_{k_1k_2}$ and reduces to $z(q)$ only for crossings with $(c,d) = (1,0)$.
 
 ## 7. Catalogue of all $\Delta$ operators
 

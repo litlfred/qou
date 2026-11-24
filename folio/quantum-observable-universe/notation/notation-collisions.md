@@ -96,7 +96,7 @@ A handful of common letters carry overloaded meanings in the literature. One enf
   The $y_\lambda$ vector $(1/2, 1/4, 0)$ is not uniform and $y_{(1^3)} = 0$ identically (Temperley–Lieb quotient — Jones factors through TL). The Wenzl-bridge $y_\lambda = w_\lambda(q)$ fails at $\lambda = (2,1)$ here ($1/4 \neq 2/3$) because the bridge identity uses a different (non-Jones, Schur-element) normalisation of $y_\lambda$. They coincide on the self-conjugate stratum after matching normalisation conventions. When in doubt, one cites the source proposition.
 - **$\check{q}$** (q-háček, meaning "little hook" in Czech) = spinor information rate, $\check{q} = q^{1/2}$, $\check{q}^2 = q$. This is the eigenvalue of the elementary half-twist on the spin-½ fundamental rep of $\mathrm{SU}_q(2)$. One reserves it exclusively for this purpose. The háček diacritic encodes the relation $\check{q}^2 = q$ in the glyph, making every occurrence self-documenting. The relation to $q$ is exactly analogous to $i$ vs $-1$. The spinor rate $\check{q}$ opens up the 2-D spinor (spin-½) representation from the 1-D adjoint (spin-1) representation. Older text writes $r$ for this; one reserves $r$ for radius / generic-real contexts. One never uses $r$ or $t$ for $q^{1/2}$ ($t$ clashes with the $V_K(t)$ knot variable and with time-like usage). One reserves $\iota$ for involution / inclusion.
 - **$u$** = LP shadow-price $u_\lambda, u_0$ (Schrijver convention for operator-selection LP dual variables, see Table 3 row 15) or the $Q_\beta$ precision-ladder step variable $u_{\text{ladder}} = b\,\hbar_q^2$ with $Q_\beta = Q_{\text{base}} \prod_k (1 + c_k\,u_{\text{ladder}}^k)$, $b$ the Hoefsmit coupling and $\hbar_q = (q-1)/q$. At $q_0$, $u_{\text{ladder}} \approx 0.00852$. The Habiro convention $u = q^{1/2}$ is not used. The Habiro-ring expansion is written as $\mathrm{tr}_M = \sum_m a_m(\check{q})\,(\check{q};\check{q})_m / D(\check{q})$ with $\check{q}$ the spinor rate above. When a computation uses both the ladder step and either the LP shadow-price $u_\lambda$ or the older Habiro $u$, the ladder variable is written $u_{\text{ladder}}$ to keep contexts unambiguous.
-- **"Borel"** = three unrelated senses, never to be cross-linked: (i) the Lie-theoretic **Borel subalgebra** (Armand Borel) of the $q$-oper chapter ([$q$-Oper](../q-geometric-langlands/q-oper.md)); (ii) the K-theoretic **Borel regulator** (Armand Borel, 1977) of [Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](../appendix-surreals/borel-partial-resolution.md) and [Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)](../predicted-spectra/borel-zagier-qou-volumes.md) — the only "Borel" in the definition index in earlier drafts; (iii) **Écalle–Borel resummation** (Émile Borel) — the Borel transform $\mathcal{B}$, lateral/median Laplace–Borel sums, alien derivatives $\Delta_\omega$ ([Écalle–Borel resummation: the Borel transform $\mathcal{B}$ and its lateral and median sums](../appendix-surreals-archimedean/ecalle-borel-resummation.md)). Resummation statements bear neither on regulator transcendence (ℚ-linear independence of volumes) nor on flag/oper data; conflating the senses is a notation violation.
+- **"Borel"** = three unrelated senses, never to be cross-linked: (i) the Lie-theoretic **Borel subalgebra** (Armand Borel) of the $q$-oper chapter ([$q$-Oper](../q-geometric-langlands/q-oper.md)); (ii) the K-theoretic **Borel regulator** (Armand Borel, 1977) of [Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](../appendix-surreals/borel-partial-resolution.md) and [Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)](../predicted-spectra/borel-zagier-qou-volumes.md) — historically the sole "Borel" in the definition index; (iii) **Écalle–Borel resummation** (Émile Borel) — the Borel transform $\mathcal{B}$, lateral/median Laplace–Borel sums, alien derivatives $\Delta_\omega$ ([Écalle–Borel resummation: the Borel transform $\mathcal{B}$ and its lateral and median sums](../appendix-surreals-archimedean/ecalle-borel-resummation.md)). Resummation statements bear neither on regulator transcendence (ℚ-linear independence of volumes) nor on flag/oper data; conflating the senses is a notation violation.
 - **$\ell$** = Wenzl principal-specialisation length (number of points in $s_\lambda(1, q^2, \ldots, q^{2(\ell-1)})$). Older text writes $r_W$ for this quantity.
 - **$\mathcal{A}$ vs $\mathcal{B}_K$ — two different braids, historically both called "the atomic braid" and both written $\mathcal{A}$.** $\mathcal{A} \in H_{A+Z}(q)$ is the **neutral atom**: $Z$ protons, $N$ neutrons and $Z$ **electrons** on $A + Z$ strands, with the six crossing types of [Atomic braid $H_{A+Z}(q)$](../knots-particles-confinement/atomic-braid.md) including the three electronic ones ($\mathfrak{p}e$, $\mathfrak{n}e$, $ee$). $\mathcal{B}_K \in H_{3A}(q)$ is the **electron-free nuclear core** — three quark strands per nucleon, no electron content — and keeps the entry it already has in Table 3. They are not two conventions for one object: $H_{A+Z}$ cannot hold the $3A$ word at any $A$ (the proton's word needs $3$ strands and $A+Z$ gives it $2$), and $A+Z < 3A$ strictly for every $Z \geq 1$. **Convention: $\mathcal{A}$ denotes the $A+Z$ neutral-atom braid; a $3A$ nuclear-core element is written $\mathcal{B}_K$ and never $\mathcal{A}$.** On the recorded $\Phi_3$ column of the $Z=1$–$20$ mass table, the $A+Z$ strand count reproduces all $19$ rows parameter-free whereas the nucleon-only, $3A$, and $3A+Z$ counts reproduce none. **Note on $3A+Z$:** [Atomic mass as Markov trace of the Gröbner–Shirshov normal form](../mass-endomorphism/atomic-mass-gb-nf.md) had written $\mathcal{B}_K \in B_{3A+Z}$ while citing the [atomic braid $H_{A+Z}(q)$](#def:atomic-braid). It now states $\mathcal{B}_K$ on $3A$ strands, the count its own producer uses, and names $\mathcal{A}$ only as the object $\mathcal{B}_K$ is the core of.
 - One does not use numerical $q \approx 1.110$ (or any specific value of the substrate parameter) outside the introduction, Chapter 8 (Information Theory, for falsifiability computations), and Chapter 11 (Observations). Geometry chapters use symbolic $q$.
@@ -187,7 +187,7 @@ third is the observable.
   **The Schur–Weyl arrow is a surjection, not an isomorphism, unless $N \ge n$.**
   Below that it has kernel the blocks with more than $N$ rows, so an element of
   the kernel maps to the zero endomorphism and the identification is not
-  faithful. This framework runs at $N = 2$ (convention D) with $n = 3A$, where
+  faithful. This framework runs at $N = 2$ ($z = q^3/(q^2+1)$) with $n = 3A$, where
   the image is $\mathrm{TL}_n(q) = \mathrm{End}_{U_q\mathfrak{sl}_2}(V^{\otimes n})$
   of dimension $C_n$, against $\dim H_n = n!$ — a kernel of dimension
   $n! - C_n$, i.e. $1, 10, 78, 588, 4611, 38890$ at $n = 3,\dots,8$. Only the
@@ -322,9 +322,8 @@ exactly this slip: the crossing-energy channels and the $V_\lambda
 \leftrightarrow V_{\lambda'}$ intertwiner (which is the sign twist $\sigma_i
 \mapsto -\sigma_i^{-1}$, not the bar involution) are corrected here, and the
 argument from bar-invariance for the Markov parameter $z$ is withdrawn — its
-bar-partner is $z - h$, not $z$, because M3 contains $\sigma_n$. (The $z$
-*convention* is settled independently of this: convention D, $z = q^3/(q^2+1)$,
-is canonical and C is excised; see
+bar-partner is $z - h$, not $z$, because M3 contains $\sigma_n$. (The Markov
+parameter $z = q^3/(q^2+1)$ is fixed independently of this by two-row faithfulness; see
 [Primitive Markov-trace axioms](../braids-and-knots/markov-axioms-primitive.md).)
 When the object being graded lies in the algebra, use both halves.
 
@@ -334,8 +333,7 @@ Every collision above is **internal** — two objects inside this framework
 wearing one glyph. This section records a different hazard: five terms that
 carry a standard meaning in QCD and a *different*, unrelated meaning in this
 corpus. The risk is not that an author confuses two of the paper's own objects, but
-that a reader — or an agent asked whether the framework speaks to some
-measurement — greps for the QCD term, finds hundreds of files, and concludes
+that a keyword search for the QCD term finds hundreds of files and suggests
 the topic is covered.
 
 | Term | Standard QCD meaning | What it means in this corpus |
@@ -371,7 +369,7 @@ what it denotes.
 
 A word collision rather than a glyph collision, and the reason it is recorded
 here is the reverse of the usual one: the corpus is mostly *already*
-unambiguous, and the hazard is an agent concluding otherwise from a raw count.
+unambiguous, and the hazard is concluding otherwise from a raw count.
 
 Four unrelated senses share the phrase.
 

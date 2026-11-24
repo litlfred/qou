@@ -11,10 +11,10 @@ So $F_{\mathrm{Bor}}(q) = |\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)| \cdot c_{\mat
 
 The normaliser is asserted, not derived. Every normaliser $q^k [3]_q!$ equals $|S_3| = 6$ at $q = 1$, so the classical limit does not fix $k$. For $q > 1$, $q^k [3]_q!$ is the Schur element of a linear character only for $k = 3$ (trivial) or $k = -3$ (sign), and it is invariant under $q \mapsto q^{-1}$ only for $k = 0$. The observable uses $k = -3$. Two candidate algebraic routes do not produce it:
 
-- Let $z_D = q^3/(q^2+1)$ be the convention-D Markov parameter, $\mathrm{tr}_M(\sigma_i) = z_D$. The convention-D normalisation of a writhe-zero three-strand closure is $[2]_q^2$, since $z_D \cdot \mathrm{tr}_M(\sigma_i^{-1}) = [2]_q^{-2}$.
+- Let $z = q^3/(q^2+1)$ be the Markov parameter, $\mathrm{tr}_M(\sigma_i) = z$. The Jones–Markov normalisation of a writhe-zero three-strand closure is $[2]_q^2$, since $z \cdot \mathrm{tr}_M(\sigma_i^{-1}) = [2]_q^{-2}$.
 - The braid word of the Borromean rings is $V^3 = (\sigma_0 \sigma_1^{-1})^3$. It has writhe zero and is a pure braid, so every framing correction is $1$.
 
-Convention D also gives the sign block weight $y_{(1^3)} = 0$, while this normaliser is that block's Schur element. That tension is open. Under convention D the Markov weight of the trivial partition is $y_{(3)} = (q^4+1)/(q^2+1)^2$, so $q^3/[3]_q!$ is not $y_{(3)}$. Relabelling the root $q \mapsto -q^{-1}$ swaps the trivial and sign characters, and only in that relabelled frame is $q^3/[3]_q!$ attached to the trivial partition.
+At $z = q^3/(q^2+1)$, the sign block weight is $y_{(1^3)} = 0$, while this normaliser is that block's Schur element. That tension is open. The Markov weight of the trivial partition is $y_{(3)} = (q^4+1)/(q^2+1)^2$, so $q^3/[3]_q!$ is not $y_{(3)}$. Relabelling the root $q \mapsto -q^{-1}$ swaps the trivial and sign characters, and only in that relabelled frame is $q^3/[3]_q!$ attached to the trivial partition.
 
 A modified-trace reading of the factor $q^{-3}$, as a derivative in an integral, bar-invariant coordinate, is recorded with its negative result in [the Kazhdan–Lusztig coordinate conjecture](proton-normaliser-kl-coordinate.md); it does not derive the normaliser.
 

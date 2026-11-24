@@ -5,4 +5,4 @@
 | $q > 1$ | positive | **negative** | mixed |
 | $q = q_0 \approx 1.110$ | $\approx 0.6912$ | $\approx -0.1438$ | mixed (substrate) |
 
-Convention $D$ throughout. The sign pattern above is the inverse, on $q > 1$, of the one this table carried while it quoted the retired $\Phi$. Whether the mixed pattern is compatible with LP feasibility is **open** — see item 4 of the parent proposition; no physicality verdict is asserted per regime.
+Evaluated at $z = q^3/(q^2+1)$ throughout. Whether the mixed amplitude sign pattern on $q > 1$ reduces to LP feasibility via a linear factorisation is addressed in item 4 of the parent proposition; no physicality verdict is asserted from the amplitude signs alone.
