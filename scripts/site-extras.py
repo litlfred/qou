@@ -32,6 +32,8 @@ scripts/site-step.sh:
                          /simulators/; any other repository file (a witness .json,
                          a .lean, a .py) links to it on GitHub at this commit.
                          What none of these covers is left for the link check.
+  --lean-roots LAKEFILE  the module roots of one Lake package, comma-separated, for
+                         lean-kg-publish --modules (one Lean sub-KG per package).
   --keep-old-root PAGES  a root index.html on the publish checkout that the
                          platform did not write is kept as index-<YYYY-MM>.html
                          before the publish replaces it.
@@ -204,6 +206,19 @@ def relink(site: Path) -> int:
     return 0
 
 
+def lean_roots(lakefile: Path) -> int:
+    """The module roots of one Lake package: every lean_lib name and the first segment of its globs/roots."""
+    import tomllib
+    d = tomllib.loads(lakefile.read_text(encoding="utf-8"))
+    roots: set[str] = set()
+    for lib in d.get("lean_lib", []):
+        roots.add(lib["name"])
+        for g in [*lib.get("globs", []), *lib.get("roots", [])]:
+            roots.add(g.split(".")[0].rstrip("+"))
+    print(",".join(sorted(roots)))
+    return 0
+
+
 def human(n: int) -> str:
     for unit in ("B", "KB", "MB", "GB"):
         if n < 1024 or unit == "GB":
@@ -290,6 +305,7 @@ def main() -> int:
     ap.add_argument("--out", type=Path)
     ap.add_argument("--keep-old-root", type=Path)
     ap.add_argument("--relink", type=Path)
+    ap.add_argument("--lean-roots", type=Path)
     a = ap.parse_args()
     if a.landing_source:
         return landing_source(a.landing_source)
@@ -303,6 +319,8 @@ def main() -> int:
         return keep_old_root(a.keep_old_root)
     if a.relink:
         return relink(a.relink)
+    if a.lean_roots:
+        return lean_roots(a.lean_roots)
     ap.print_help()
     return 2
 

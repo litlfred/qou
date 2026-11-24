@@ -232,7 +232,16 @@
       "graphTypologies": [
         "lean"
       ],
-      "description": "The rendered Lean library: the Lean knowledge-graph viewer (one thin page plus data/ shards loaded on demand) made by folio-assistant-sci's lean-kg-publish from doc-gen4's declaration data, kept on its own branch and mounted here by state:mount, never committed to main (skill lean-html-docs). scripts/build-site.sh copies the mount to _site/lean/, the route the `lean` entry below declares as its visualiser, so a site build needs no Lean toolchain."
+      "description": "The rendered Lean library: the Lean knowledge-graph viewer (one thin page plus data/ shards loaded on demand) made by folio-assistant-sci's lean-kg-publish from doc-gen4's declaration data, kept on its own branch and mounted here by state:mount, never committed to main (skill lean-html-docs). scripts/build-site.sh copies the mount to _site/lean/, the route the `lean` entry below declares as its visualiser, so a site build needs no Lean toolchain.",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "lean/index.html",
+            "title": "Lean (all packages, stored render)"
+          }
+        ],
+        "_visualiser_comment": "The combined stored render of all three packages (cat/folio-assistant-sci/lean-docs, mounted at lean/), served at /lean/ until the per-package sub-KGs (lean, lean-ugb, lean-fred2005) can be built; listed when the store is mounted."
+      }
     },
     {
       "id": "lean",
@@ -240,15 +249,49 @@
       "graphTypologies": [
         "lean"
       ],
-      "description": "The qou Lake package (library QOU). Its doc-gen4 render is the folio's Lean visualiser, built at publish by folio-assistant-sci (skill lean-html-docs, process lean-docs-publish) and never committed.",
+      "description": "Lean sub-KG of the qou Lake package (libraries QOU, QOUBlocks and the chapter libraries in its lakefile). Owner ruling 2026-11-24, \"separate qou, UGB and Fred2005 into own lean sub-KGs\": one graph per Lake package, each with its own visualiser route lean/qou/ (folio-assistant-sci typology `lean`: one graph per declared package path).",
       "coverage": {
         "visualiser": [
           {
-            "ref": "lean/index.html",
-            "title": "Lean"
+            "ref": "lean/qou/index.html",
+            "title": "Lean: QOU"
           }
         ],
-        "_visualiser_comment": "One declared slot for the Lean library render, written by `scripts/site-step.sh lean` (package script site:lean). Owner ruling 2026-11-24, \"2 verso\": the render moves to the Verso tool being built in folio-assistant-sci; until then the slot copies the stored render mounted at lean/ (directory lean-docs), and no Lean is built. It declares no writer, so the landing lists it exactly when lean/index.html is present, i.e. when the store is mounted. `ref` is repository-relative and is the site path (cat-harness-tools SubgraphCoverageSchema)."
+        "_visualiser_comment": "Written by `scripts/site-step.sh lean` from doc-gen4 doc-data (QOU_LEAN_DOC_DATA) with folio-assistant-sci lean-kg-publish, --module per root of this package's lakefile and --route lean/qou. No writer is declared, so the landing lists it only when the page is built; until a doc-gen4 build (or a per-package Lean store) is available the site carries only the combined stored render at lean/. Ruling \"2 verso\" later moves the renderer to Verso."
+      }
+    },
+    {
+      "id": "lean-ugb",
+      "path": "folio/unital-groebner-bases/lean/",
+      "graphTypologies": [
+        "lean"
+      ],
+      "description": "Lean sub-KG of the ugb Lake package (libraries UGB and UGBBlocks). Owner ruling 2026-11-24, \"separate qou, UGB and Fred2005 into own lean sub-KGs\": one graph per Lake package, each with its own visualiser route lean/ugb/ (folio-assistant-sci typology `lean`: one graph per declared package path).",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "lean/ugb/index.html",
+            "title": "Lean: UGB"
+          }
+        ],
+        "_visualiser_comment": "Written by `scripts/site-step.sh lean` from doc-gen4 doc-data (QOU_LEAN_DOC_DATA) with folio-assistant-sci lean-kg-publish, --module per root of this package's lakefile and --route lean/ugb. No writer is declared, so the landing lists it only when the page is built; until a doc-gen4 build (or a per-package Lean store) is available the site carries only the combined stored render at lean/. Ruling \"2 verso\" later moves the renderer to Verso."
+      }
+    },
+    {
+      "id": "lean-fred2005",
+      "path": "folio/fred2005-formal-groups/lean/",
+      "graphTypologies": [
+        "lean"
+      ],
+      "description": "Lean sub-KG of the fred2005 Lake package (libraries Fred2005 and Fred2005Blocks; it requires qou, so its imports of QOU are cross-subgraph links). Owner ruling 2026-11-24, \"separate qou, UGB and Fred2005 into own lean sub-KGs\": one graph per Lake package, each with its own visualiser route lean/fred2005/ (folio-assistant-sci typology `lean`: one graph per declared package path).",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "lean/fred2005/index.html",
+            "title": "Lean: Fred2005"
+          }
+        ],
+        "_visualiser_comment": "Written by `scripts/site-step.sh lean` from doc-gen4 doc-data (QOU_LEAN_DOC_DATA) with folio-assistant-sci lean-kg-publish, --module per root of this package's lakefile and --route lean/fred2005. No writer is declared, so the landing lists it only when the page is built; until a doc-gen4 build (or a per-package Lean store) is available the site carries only the combined stored render at lean/. Ruling \"2 verso\" later moves the renderer to Verso."
       }
     }
   ],

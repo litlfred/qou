@@ -23,7 +23,9 @@
 #   accuracy   (site) the 80-dps accuracy scorecard QA gate + HTML, /accuracy/.
 #   beans      (site) the work plan, /beans/ (cat-harness-tools beans-board.ts).
 #   qa         (site) the integrated QA panel, /qa/ (qa-page-standalone.ts).
-#   lean       (site) the Lean library render, /lean/. ONE declared slot with a
+#   lean       (site) the Lean library render: one sub-KG per Lake package at
+#              /lean/<package>/ when doc-gen4 doc-data is given, and the combined
+#              stored render at /lean/. A declared slot with a
 #              renderer chosen by QOU_LEAN_RENDERER: `store` (default) copies
 #              the stored render mounted at lean/ (qou.json `lean-docs`);
 #              `verso` runs folio-assistant-sci's Verso tool once it exists
@@ -99,14 +101,37 @@ qa)
   bun run "$QAPAGE" --repo . --out "$DIR/qa"
   ;;
 lean)
+  # Owner ruling 2026-11-24, "separate qou, UGB and Fred2005 into own lean
+  # sub-KGs": one sub-KG per Lake package at lean/<package>/ (qou.json
+  # directories lean, lean-ugb, lean-fred2005). Each is folio-assistant-sci's
+  # lean-kg-publish over doc-gen4's doc-data, kept to that package's module
+  # roots (read from its lakefile) and with its own paper as content root, so
+  # a block's lean.ref resolves in its own paper's sub-KG. That needs doc-data
+  # (QOU_LEAN_DOC_DATA), i.e. a doc-gen4 build; this step never builds Lean.
+  # Without it the site carries the combined stored render at lean/
+  # (directory lean-docs) and says the sub-KGs were SKIPPED.
   case "${QOU_LEAN_RENDERER:-store}" in
   store)
+    if [ -n "${QOU_LEAN_DOC_DATA:-}" ]; then
+      KG="$PLAT/folio-assistant-sci/adapters/paper/lean/lean-kg-publish.ts"
+      REPO=$(python3 -I -c 'import json;print(json.load(open("qou.json"))["repository"])')
+      for pair in qou:quantum-observable-universe ugb:unital-groebner-bases fred2005:fred2005-formal-groups; do
+        pkg=${pair%%:*}; paper=${pair#*:}
+        mods=$(python3 -I scripts/site-extras.py --lean-roots "folio/$paper/lean/lakefile.toml")
+        bun run "$KG" --doc-data "$QOU_LEAN_DOC_DATA" --site "$DIR" --route "lean/$pkg" --modules "$mods" \
+          --content-root "folio/$paper" --repo "$REPO" --ref "${SITE_COMMIT:-$(git rev-parse HEAD)}" --content-prefix "folio/$paper/" --no-rail
+        echo "== site-step lean: sub-KG $pkg ($mods) -> /lean/$pkg/"
+      done
+    else
+      echo "== site-step lean: per-package sub-KGs (lean/qou, lean/ugb, lean/fred2005) SKIPPED: no doc-gen4 doc-data (QOU_LEAN_DOC_DATA), and the Lean store keeps one combined render."
+    fi
     [ -f lean/data/index.json ] || bun "$TOOLS/state-mount.ts" >/dev/null || true
     if [ -f lean/index.html ] && [ -f lean/data/index.json ]; then
-      rm -rf "$DIR/lean" && mkdir -p "$DIR/lean" && cp -a lean/. "$DIR/lean/"
-      echo "== site-step lean: the stored render (lean/, cat/folio-assistant-sci/lean-docs) -> /lean/"
+      mkdir -p "$DIR/lean"
+      for f in lean/*; do [ -e "$f" ] && cp -a "$f" "$DIR/lean/"; done
+      echo "== site-step lean: the combined stored render (lean/, cat/folio-assistant-sci/lean-docs) -> /lean/"
     else
-      echo "== site-step lean SKIPPED: the Lean store is not mounted at lean/ (state-mount), so the site has no lean/."
+      echo "== site-step lean SKIPPED: the Lean store is not mounted at lean/ (state-mount), so the site has no combined lean/."
     fi
     ;;
   verso)
