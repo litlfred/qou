@@ -4,6 +4,7 @@
 - **Parent Epic:** `qou-xip2` (Repo Backlog Drain Batch 4 — Worker 39)
 - **Base `origin/main` SHA Audited:** `e330ab6aa048abefe34a93474f667f3284483d71`
 - **Consolidating Branch:** `claude/backlog-drain-batch4-20261123`
+- **Consolidating PR:** `#9241` (`https://github.com/litlfred/qou/pull/9241`)
 - **Code & Probe Commit SHA:** `0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23`
 - **License:** CC BY 4.0
 
@@ -178,9 +179,9 @@
 ### 2.3 Post-Merge Supersede Commands (Run ONLY After Consolidating PR Merges; NEVER Pass `--delete-branch`)
 
 ```bash
-# After consolidating PR merges onto main (replace <CONSOLIDATED_PR> and <MERGE_SHA>):
+# After consolidating PR #9241 merges onto main (replace <MERGE_SHA>):
 for pr in 8144 8154 8158 8169 8260 8268; do
-  gh pr close "$pr" --repo litlfred/qou --comment "Salvaged and upgraded in consolidated Batch 4 PR #<CONSOLIDATED_PR> (merged at <MERGE_SHA>; see docs/audits/2026-11-23-backlog-drain-batch4-ledger.md). Head branch preserved intact."
+  gh pr close "$pr" --repo litlfred/qou --comment "Salvaged and upgraded in consolidated Batch 4 PR #9241 (merged at <MERGE_SHA>; see docs/audits/2026-11-23-backlog-drain-batch4-ledger.md). Head branch preserved intact."
 done
 ```
 
