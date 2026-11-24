@@ -1,11 +1,11 @@
 ---
 # qou-awxv
 title: 'PR #9180: CFT/holography review — Frobenius tower, Jones index, charge Cartan; next L_cal route 1'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-23T21:14:34Z
-updated_at: 2026-11-23T23:52:44Z
+updated_at: 2026-11-24T11:28:14Z
 ---
 
 Thread: CFT/holography review (owner ofri, 2026-11-23). Branch claude/project-thread-p6bqaz, PR #9180, issue #9179. Head ae490aa67e (main merged). NOT merged: owner's explicit go required.
@@ -40,3 +40,5 @@ Item 1 (L_cal Route 1: Delta_EM = alpha * m_model * f, no m_pi unit) pre-registe
 EOS 2026-11-23 (PR #9219, HEAD 23ab7c141ec): Executed item 1 (L_cal Route 1: Delta_EM = alpha_q(q_0) * m_model(q_0) * f, NO m_pi unit, pre-registered in 68df40f7a41 prior to evaluation; alpha_q*m_model = 6.846931 MeV, empirical target f_emp ~ 0.111-0.146). Full 80-dps results across all 11 pre-registered shapes f: f_R1_1a=1/9=0.11111 (0.76077 MeV, matches Cottingham 0.76 MeV), f_R1_1b=1/(3[3]_q)=0.10952 (0.74985 MeV), f_R1_1c=1/6=0.16667 (1.14116 MeV, +0.88 sigma vs BMW 1.00(16) MeV), f_R1_2c=Vol(4_1)/(24G)=0.09234 (0.63223 MeV), Compton-HO f_R1_3a..c=0.05644-0.08465 (0.38641-0.57962 MeV), pure Borromean O2/volume f_R1_2a,2b=0.04549-0.04584 (0.31146-0.31385 MeV), Planck-defect hbar_q/3=0.03303 (0.22614 MeV), and O(hbar_q^4) connected Hecke trace f_R1_3d=0.000431 (0.00295 MeV, 250x miss).
 
 2026-11-23 (Worker 24): Items 3 and 5 prepared on `claude/prior-art-doi-verified-pkg-20261123` (`63446514c77`, awaiting owner OK per `qou-cvu9`): all 7 `#9180` DOIs live-verified on Crossref + `doi.org`, and `kadison1999` (10.1090/ulect/014) + `jones1983` (10.1007/BF01389127) added and wired into `TwistedFrobeniusTower.lean`, `JonesIndexConventionD.lean`, and Ch. 2 `substrate-preamble`.
+
+Closed post-merge: landed on origin/main in PR #9243 (72434abd670).

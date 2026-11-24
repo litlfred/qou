@@ -1,11 +1,11 @@
 ---
 # qou-ke35
 title: Complete mpf migration of experimental_constants.py (72 float assigns) & drain never_raises_dps_audit baseline
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-09-13T16:24:39Z
-updated_at: 2026-11-24T08:06:23Z
+updated_at: 2026-11-24T11:28:11Z
 parent: qou-s028
 ---
 
@@ -223,3 +223,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8357, closed o
   2. `computations/per_atom_rho_deviation.py` now calls `set_compute_dps()`.
   3. `computations/substrate/codata_constants.py` has `0` top-level float assignments (`11` `mpf`), and `q_parameter.py`/`hecke_core.py` have `0` top-level float assignments.
 - **Surviving open sub-problem:** `computations/substrate/experimental_constants.py` (and `qou-mass/src/qou_mass/_internal/experimental_constants.py`) still carries `72` top-level `float` assignments, and the baselined `never_raises_dps_audit.py` consumer backlog remains to be drained.
+
+Closed post-merge: landed on origin/main in PR #9293 (3919ec27381).

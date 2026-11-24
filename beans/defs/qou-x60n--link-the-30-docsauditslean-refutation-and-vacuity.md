@@ -1,14 +1,15 @@
 ---
 # qou-x60n
 title: Link the 30 docs/audits/*.lean refutation and vacuity results to the blocks they concern
-status: todo
+status: completed
 type: task
+priority: normal
 tags:
     - reorg-2026-10-04
     - orphan-census
     - needs-owner
 created_at: 2026-10-04T15:31:23Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-24T11:28:13Z
 parent: qou-n4r9
 ---
 
@@ -22,3 +23,5 @@ Found by the orphaned-content census 2026-10-04 (inventory: 3,383 rows). Report 
 Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
 
 - Measured: **30** `docs/audits/**/*.lean` files on main, matching the count here. No links added yet. Same work as `qou-y8zf` (LEANNODES L5); do them as one.
+
+Closed post-merge: landed on origin/main in PR #9323 (df8f3281795).

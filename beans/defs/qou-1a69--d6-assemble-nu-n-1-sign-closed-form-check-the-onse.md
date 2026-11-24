@@ -1,13 +1,13 @@
 ---
 # qou-1a69
 title: 'D6: assemble nu_{n-1} sign + closed form; check the onset n1=8 against the probe witness'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T00:45:22Z
-updated_at: 2026-11-22T21:54:24Z
+updated_at: 2026-11-24T11:28:10Z
 parent: qou-10v9
 ---
 
@@ -20,3 +20,5 @@ parent: qou-10v9
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+Closed post-merge: landed on origin/main in PR #9320 (8295bb26dbb).

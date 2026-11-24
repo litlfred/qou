@@ -1,13 +1,13 @@
 ---
 # qou-o43i
 title: 'qou-brng: the Pauli-lock closure has ZERO instantiation sites — its equal-scalars hypothesis is not a corpus claim a D9 witness could settle'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T20:22:33Z
-updated_at: 2026-11-22T21:54:26Z
+updated_at: 2026-11-24T11:28:10Z
 parent: qou-10v9
 ---
 
@@ -270,3 +270,5 @@ Was in-progress with no bean update since 2026-09-06 and no main commit naming i
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+Closed post-merge: landed on origin/main in PR #9320 (8295bb26dbb).

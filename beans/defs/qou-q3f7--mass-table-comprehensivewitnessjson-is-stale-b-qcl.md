@@ -1,14 +1,13 @@
 ---
 # qou-q3f7
 title: 'mass-table-comprehensive.witness.json is stale: B_qCLT is off by a constant -7.92e-4 MeV vs its own producer on main'
-status: todo
-pr: 8336
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-28T20:01:37Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T11:28:10Z
 parent: qou-v2om
 ---
 
@@ -149,3 +148,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8336, closed o
 ## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
 
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). Premise: the B_qCLT channel is the colour-weighted q-CLT route, not the interface letters, so the γγ rescope does not obviously apply; the offset was traced to a deferred regeneration (see Disposition). Remaining: reconcile the 1.4949, owned with qou-cblw. Not touched.
+
+Closed post-merge: landed on origin/main in PR #9321 (ee59e6b514c).

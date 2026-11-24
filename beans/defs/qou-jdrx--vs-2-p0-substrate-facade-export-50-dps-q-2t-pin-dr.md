@@ -1,11 +1,11 @@
 ---
 # qou-jdrx
 title: 'VS-2 (P0 Substrate & Facade): refresh stale muon-stamped q-pinning-50-digit.witness.json & align canonical_mass.py _from_witness'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T07:06:02Z
-updated_at: 2026-11-24T08:06:23Z
+updated_at: 2026-11-24T11:28:11Z
 parent: qou-s028
 ---
 
@@ -46,3 +46,5 @@ Measured float64 surface: derived_masses 0, coulomb_energy 0, hecke_core 2 (inf 
   2. **Do NOT switch `coulomb_energy.py` default to Form-B:** Owner ruled (2026-11-21, `qou-aemx`) that consumers stay on the CS tower (labelled) and Form-B is a labelled comparison arm only.
   3. **Tower-summed `E_0`:** Canonical via `computations/qbeta/qbeta_e0.py` (#8590).
 - **Surviving open sub-problem:** Resolve the muon/proton stamp & consumer straddle on `q-pinning-50-digit.witness.json` (28 Liquid bindings + 19 `ValueRegistry` entries, pending owner sign-off on #8526) and excise the remaining `_from_witness` float64 cast in `canonical_mass.py`.
+
+Closed post-merge: landed on origin/main in PR #9293 (3919ec27381).

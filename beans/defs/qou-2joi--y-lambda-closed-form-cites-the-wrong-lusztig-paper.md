@@ -1,13 +1,13 @@
 ---
 # qou-2joi
 title: y_lambda closed form cites the wrong Lusztig paper; BLM is absent and the DOI contradicts itself
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T13:20:20Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T11:28:09Z
 parent: qou-q4oa
 ---
 
@@ -217,3 +217,5 @@ blm1990 registered and refs added on main. Left: lusztig1990 DOI conflict (refer
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
 
 Ruling check (owner-rulings.md on main 2ae54ab401, 2026-11-21): no superseded premise (photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ = 2 − h⁴, fitted values in proofs) is used by this bean's finding.
+
+Closed post-merge: landed on origin/main in PR #9318 (7413a02e71e).

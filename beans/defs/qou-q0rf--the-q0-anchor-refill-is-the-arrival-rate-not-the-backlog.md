@@ -1,13 +1,13 @@
 ---
 # qou-q0rf
 title: Prevent unstamped q0Anchor inflow at WitnessBuilder/producer level & finish draining q0_anchor_ratchet NEW arrivals
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-11-24T08:06:21Z
+updated_at: 2026-11-24T11:28:12Z
 parent: qou-s028
 ---
 
@@ -209,3 +209,5 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8384, closed o
 ## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
 - **Measured live on `origin/main` (`e330ab6aa04`):** `computations/audits/q0_anchor_ratchet.py --strict` reports `unstamped: 1501`, `baseline: 1463`, `drained: 25`, `NEW: 63` (down from `147`; Batch 1 salvage of PR `#9105` drains ~30+ more of those `63` at their producers).
 - **Surviving open sub-problem:** Finish the remaining long Leray Arb jobs (`random-L2`, `seed1-C4`, `arcB/arcC`) and `two-row` tower runs (`qou-agtw`) to reach `NEW = 0`, and enforce `q0Anchor` emission in `WitnessBuilder` / pre-commit so unstamped inflow stops while GitHub Actions remains `workflow_dispatch`-only.
+
+Closed post-merge: landed on origin/main in PR #9293 (3919ec27381).
