@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-03T09:48:44.477362+00:00",
-  "commitSha": "601760607ab0af80685f2308f2753c862fe33e76",
+  "engineVersion": "numpy 2.5.0",
+  "computedAt": "2026-11-24T13:49:59.823759+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "assertions": [
     {
       "name": "A1_chain_attachment_is_exactly_rank_one",
@@ -10,7 +10,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "spread 3.886e-16 over 20 prefixes; matches F_pp to 2.3e-13"
+      "source": "spread 4.441e-16 over 20 prefixes; matches F_pp to 2.3e-13"
     },
     {
       "name": "A2_allpairs_attachment_is_not_rank_one",
@@ -18,7 +18,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "spread 1.469282 against 3.886e-16 at k=1"
+      "source": "spread 1.469282 against 4.441e-16 at k=1"
     },
     {
       "name": "A3_three_body_term_is_negative_everywhere",
@@ -34,7 +34,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "reversal exact (8.9e-16); permutation 4.1686-5.0477%"
+      "source": "reversal exact (4.4e-16); permutation 4.1686-5.0477%"
     },
     {
       "name": "A5_no_decay_and_subadditivity_are_one_fact",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 7,
   "computation": "three_body_term_has_the_wrong_sign_probe",
   "scriptFile": "three_body_term_has_the_wrong_sign_probe.py",
-  "scriptHash": "355af504c37c",
-  "scriptCommitSha": "2bbb6115c57cb29042b0bcd090826343b6514f41",
+  "scriptHash": "9b46e7611d5a",
+  "scriptCommitSha": "884e4ab20d628ae6f6261536cbbfb7bd043e5083",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -84,7 +84,7 @@
   "description": "Locates the many-body term, measures its sign, and derives an alpha-free ceiling that puts 4He out of reach of the bond graph. The chain (k=1) attachment functional P -> tr(P.A)/tr(P) is exactly rank one — one constant over 20 random prefixes to <1e-12, independently reproducing the arc's recorded F_pp = 0.385581983466. The all-pairs (k=2) attachment is not: the same prefixes give 0.196..0.696. The mechanism is the band generator (T5 T4 T3)(T2+d)(T3 T4 T5)^-1, which routes strand 2 through strands 3-5 — the middle nucleon — so a non-adjacent bond does not commute past the prefix. That failure to commute IS the three-body term. It is NEGATIVE in all eight A=3 flavour orderings (-9.04% to -15.04% of the naive sum), i.e. it REMOVES binding. It also privileges the middle nucleon: reversal is exact (pnn vs nnp, 0.0) but permutation is not (pnp vs ppn 4.17%, npn vs nnp 5.05% on identical bond multisets), a labelling artifact of embedding the bond graph in a line. This explains rather than contradicts no-distance-decay: the bond's own invariant is routing-independent while its commutator with what it passes through is not. Ceiling: B(2H) is exact at A=2 (single bond, no many-body term possible) and the naive B(4He) contains no many-body term at all, giving B(4He)/B(2H) <= 6.0643 against AME 12.7196 — short by 2.0975x with alpha cancelling, so no normalisation fixes it, and closing it would need large POSITIVE many-body terms where all eight measured are negative.",
   "data": {
     "attachment_rank": {
-      "k1_chain_spread": "3.886e-16",
+      "k1_chain_spread": "4.441e-16",
       "k1_constant": "0.385581983466",
       "k1_matches_recorded_F_pp": "2.3e-13",
       "k2_allpairs_min": "0.094533702101",
@@ -143,7 +143,7 @@
       }
     },
     "labelling": {
-      "reversal_pnn_vs_nnp": "8.882e-16",
+      "reversal_pnn_vs_nnp": "4.441e-16",
       "permute_pnp_vs_ppn_pct": "4.1686",
       "permute_npn_vs_nnp_pct": "5.0477"
     },

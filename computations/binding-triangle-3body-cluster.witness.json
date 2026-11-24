@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T12:59:17.978383+00:00",
-  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
+  "computedAt": "2026-11-24T13:49:10.023120+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "assertions": [
     {
       "name": "beyond_pairwise_3body_never_shares_sign_with_empirical_b3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 463,
+  "durationMs": 483,
   "computation": "binding-triangle-3body-cluster",
   "scriptFile": "binding_triangle_3body_cluster_probe.py",
-  "scriptHash": "08bd6400aa22",
-  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "scriptHash": "d97829706a22",
+  "scriptCommitSha": "884e4ab20d628ae6f6261536cbbfb7bd043e5083",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -41,10 +43,10 @@
   },
   "description": "CORRECTED: product-model 3-body content. The full beyond-pairwise (2-bond + 3-bond) clusters sum to -4.7..-7.0 MeV (destructive), opposite empirical b3 > 0. Closing the triangle does NOT flip the sign; the prior '+u3 matches b3' claim cherry-picked the top cluster term and is retracted. The sign candidate is the chirality involution (|chi| vs signed trace).",
   "parameters": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "E0_MeV": "4.1859813632944758969450621587590084101434868908797",
-    "tau_p": "0.62932840220292191816534574677848592760021940063433",
-    "tau_n": "0.47513351715568221250609023267500579955840763470872",
+    "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "E0_MeV": "4.185981363294475896945062158759008410143486890879650999772224232747828",
+    "tau_p": "0.6293284022029219181653457467784859276002194006343338457443273293752123",
+    "tau_n": "0.4751335171556822125060902326750057995584076347087231365662840180330637",
     "free_parameters": 0
   },
   "data": {

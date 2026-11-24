@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T18:12:50.780047+00:00",
-  "commitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T13:49:12.430817+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "assertions": [
     {
       "name": "det_three_forms_agree",
@@ -60,11 +60,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 22,
   "computation": "a4-interface-magnitude-one-scalar-gate",
   "scriptFile": "a4_interface_magnitude_one_scalar_gate.py",
-  "scriptHash": "dd801bfc5c51",
-  "scriptCommitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
+  "scriptHash": "65ddd2db1940",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,14 +72,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -225,7 +225,7 @@
       }
     },
     "lean": {
-      "file": "content/quantum-observable-universe/lean/QOU/MassTheory/A4InterfaceMagnitude.lean",
+      "file": "folio/quantum-observable-universe/lean/QOU/MassTheory/A4InterfaceMagnitude.lean",
       "package_ref": "qou:QOU.MassTheory.A4InterfaceMagnitude",
       "sorry_free": true,
       "declarations_in_file": 21,

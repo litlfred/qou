@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T06:56:16.541859+00:00",
-  "commitSha": "16bc3e426dc067422b8901cebceb70ccf366dbbc",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T13:49:16.808156+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "habiro-exact-mass-endomorphism",
   "scriptFile": "habiro_exact_mass_endomorphism.py",
-  "scriptHash": "196b71aa8a78",
-  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "scriptHash": "51ad806a09ec",
+  "scriptCommitSha": "e5dfad62ada1c5d6099540f90efa326bc9ed708e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -37,7 +37,8 @@
   "parameters": {
     "q_0_mpf50": "1.1099785956427390391632225954426977052808226110852",
     "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
-    "mpmath_dps": 70
+    "mpmath_dps": 70,
+    "vhat_weights": "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
   },
   "data": {
     "particles": {

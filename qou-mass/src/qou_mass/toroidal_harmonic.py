@@ -1,29 +1,45 @@
-import numpy as np
-import scipy.special as sp
+from __future__ import annotations
 
-def toroidal_harmonic_P(m, n, cosh_eta):
-    """
-    Computes the toroidal harmonic P_{n - 1/2}^m(cosh(eta))
-    which is the associated Legendre function of the first kind with half-integer degree.
-    """
-    degree = n - 0.5
-    # scipy.special.lpmv computes P_v^m(x)
-    return sp.lpmv(m, degree, cosh_eta)
+from pathlib import Path
 
-def toroidal_harmonic_Q(m, n, cosh_eta):
-    """
-    Computes the toroidal harmonic Q_{n - 1/2}^m(cosh(eta))
-    (Not directly in scipy.special with half-integer degree easily, placeholder)
-    """
-    pass
+import mpmath as mp
+
+
+def _canonical_q0() -> mp.mpf:
+    try:
+        from ._internal.q_parameter import Q_50_DIGIT_STR  # noqa: PLC0415
+    except ImportError:
+        import sys  # noqa: PLC0415
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        from qou_mass._internal.q_parameter import Q_50_DIGIT_STR  # noqa: PLC0415
+    with mp.workdps(max(80, mp.mp.dps)):
+        return mp.mpf(Q_50_DIGIT_STR)
+
+
+def toroidal_harmonic_P(m, n, cosh_eta) -> mp.mpf:
+    """Computes the toroidal harmonic P_{n - 1/2}^m(cosh(eta)) at >= 80 dps."""
+    with mp.workdps(max(80, mp.mp.dps)):
+        degree = mp.mpf(n) - mp.mpf(1) / mp.mpf(2)
+        x = cosh_eta if isinstance(cosh_eta, mp.mpf) else mp.mpf(str(cosh_eta))
+        val = mp.legenp(degree, m, x, type=3)
+        return val.real if isinstance(val, mp.mpc) else val
+
+
+def toroidal_harmonic_Q(m, n, cosh_eta) -> mp.mpf:
+    """Computes the toroidal harmonic Q_{n - 1/2}^m(cosh(eta)) at >= 80 dps."""
+    with mp.workdps(max(80, mp.mp.dps)):
+        degree = mp.mpf(n) - mp.mpf(1) / mp.mpf(2)
+        x = cosh_eta if isinstance(cosh_eta, mp.mpf) else mp.mpf(str(cosh_eta))
+        val = mp.legenq(degree, m, x, type=3)
+        return val.real if isinstance(val, mp.mpc) else val
+
 
 if __name__ == "__main__":
-    q0 = 1.10997858
-    # Test a basic toroidal harmonic evaluation at cosh(eta) = q0
-    # or perhaps q0 + 1/q0
-    cosh_eta = (q0 + 1.0/q0) / 2.0
-    print("Testing Toroidal Harmonic P_{n-1/2}^m at cosh(eta) =", cosh_eta)
+    mp.mp.dps = 80
+    q0 = _canonical_q0()
+    cosh_eta = (q0 + mp.mpf(1) / q0) / mp.mpf(2)
+    print("Testing Toroidal Harmonic P_{n-1/2}^m at cosh(eta) =", mp.nstr(cosh_eta, 12))
     for n in range(1, 4):
         for m in range(0, 2):
             val = toroidal_harmonic_P(m, n, cosh_eta)
-            print(f"  n={n}, m={m}: P_{n-0.5}^{m} = {val:.5f}")
+            print(f"  n={n}, m={m}: P_{n-1/2}^{m} = {mp.nstr(val, 12)}")
