@@ -183,7 +183,11 @@ def run_gate(gate: dict, files: list[str] | None) -> dict:
 
 def emit(res: dict) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / f"{res['gate']}.json").write_text(json.dumps({"$schema": "qou-compute-qa/v1", **res}, indent=2) + "\n")
+    # `counts`: the verdict in the shared QA vocabulary (pass / warn / fail /
+    # unknown), one check per record, so the integrated QA page counts it
+    # rather than listing it as "not counted" (cat-harness-tools qa-axis.ts).
+    counts = {res["verdict"]: 1}
+    (OUT / f"{res['gate']}.json").write_text(json.dumps({"$schema": "qou-compute-qa/v1", **res, "counts": counts}, indent=2) + "\n")
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:
         with open(summary, "a") as f:
