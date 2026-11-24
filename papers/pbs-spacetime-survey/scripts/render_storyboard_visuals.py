@@ -643,27 +643,27 @@ def build_sec05_unknot_neutrino_framing():
 def build_sec05_generations_and_pmns():
     c = SvgCanvas(960, 450, "Three Matter Copies and Neutrino Mixing Angles")
     c.header(
-        "Why Three Matter Families? (Unsolved) & Neutrino Mixing Angles",
-        "Four surface waves split into 3 + 1 under 4-way symmetry, while strand crossing strength h sets mixing",
+        "Three Matter Families (Conditional Twist) & Neutrino Mixing Angles",
+        "A 3-fold quark-colour twist gives 3 families (vacuum twist open), while crossing strength h sets mixing",
     )
     c.rect(36, 80, 440, 338, fill=PANEL)
-    c.text(256, 108, "Why 3 Families of Matter? (Unsolved Filter)", size=15, fill=CORAL, weight="600")
+    c.text(256, 108, "Why 3 Matter Families? (Proved Twist vs. Open Vacuum)", size=14, fill=GOLD, weight="600")
     c.rect(136, 132, 240, 44, fill=PANEL_ALT, stroke=VIOLET, sw=2)
     c.text(256, 159, "4 Natural Wave Modes on the 4-Holed Surface", size=12, fill=VIOLET, weight="600")
     c.line(206, 176, 152, 220, stroke=GREEN, sw=2, marker_end="arrow-green")
-    c.line(306, 176, 356, 220, stroke=CORAL, sw=2, marker_end="arrow-coral")
-    c.rect(60, 226, 190, 96, fill=PANEL_ALT, stroke=GREEN, sw=2)
-    c.text(155, 250, "4-Way Symmetry Split", size=13, fill=GREEN, weight="600")
-    c.text(155, 276, "4  =  3  +  1", size=16, fill=TEXT, weight="600")
-    c.text(155, 300, "3-family group + 1 solo", size=12, fill=MUTED)
+    c.line(306, 176, 356, 220, stroke=GOLD, sw=2, marker_end="arrow-amber")
+    c.rect(56, 226, 198, 96, fill=PANEL_ALT, stroke=GREEN, sw=2)
+    c.text(155, 250, "3-Fold Colour Twist", size=13, fill=GREEN, weight="600")
+    c.text(155, 276, "3 Quark + 3 Net Lepton", size=14, fill=TEXT, weight="600")
+    c.text(155, 300, "(& 9-crossing splits 3+3+3)", size=11, fill=MUTED)
 
-    c.rect(268, 226, 188, 96, fill=PANEL_ALT, stroke=CORAL, sw=2)
-    c.text(362, 250, "Other Symmetry Slices", size=13, fill=CORAL, weight="600")
-    c.text(362, 276, "Give 4, 3, or 2", size=15, fill=TEXT, weight="600")
-    c.text(362, 300, "Why nature picks 3 is unproved", size=11, fill=CORAL)
+    c.rect(266, 226, 194, 96, fill=PANEL_ALT, stroke=GOLD, sw=2)
+    c.text(363, 250, "Open Vacuum Step", size=13, fill=GOLD, weight="600")
+    c.text(363, 276, "Select Twist ≠ 0", size=14, fill=TEXT, weight="600")
+    c.text(363, 300, "& 4th lepton-pair mass", size=11, fill=CORAL)
 
-    c.text(256, 356, "Also unsolved: Heavy tau electron cousin (m_τ / mₑ = 3477.2)", size=12, fill=CORAL, weight="600")
-    c.text(256, 380, "(Tested knot candidates land at 2391 to 5854: −31% to +68%)", size=12, fill=MUTED)
+    c.text(256, 354, "Heavy tau (m_τ / mₑ = 3477.23): q = 1 wave balance → 3477.44 (+61.6 ppm)", size=11, fill=GOLD, weight="600")
+    c.text(256, 378, "Simple 3-strand knots jump 2907 (−16%) to 4524 (+30%); q → 1 lock open", size=11, fill=MUTED)
 
     c.rect(496, 80, 428, 338, fill=PANEL)
     c.text(710, 108, "Neutrino Wave Mixing (Zero Free Knobs)", size=15, fill=GREEN, weight="600")
@@ -785,8 +785,8 @@ def build_sec06_proton_neutron_em():
 def build_sec07_hidden_colour_deuteron():
     c = SvgCanvas(960, 460, "Shared Quark Colour Pairings and Nuclear Binding")
     c.header(
-        "Sharing Colour Strands Between Neighboring Protons and Neutrons",
-        "Re-pairing 6 quarks binds heavy hydrogen at 2.265 MeV (+1.8%), while helium-4 still misses half its binding",
+        "Shared Colour, Four-Cluster Pyramid Rings & 3D Wave Compression",
+        "Heavy hydrogen hits 2.265 MeV (+1.8%); pyramid rings (29.33 MeV) & 3D compression (26.02–30.55 MeV) bracket ⁴He",
     )
     c.rect(36, 80, 440, 348, fill=PANEL)
     c.text(256, 108, "Ways Quarks Can Form a Balanced White Group", size=15, fill=CYAN, weight="600")
@@ -804,18 +804,19 @@ def build_sec07_hidden_colour_deuteron():
 
     c.rect(496, 80, 428, 348, fill=PANEL)
     c.text(710, 108, "Nuclear Binding Energy: Model vs. Lab", size=15, fill=TEXT, weight="600")
-    c.rect(520, 132, 380, 112, fill=PANEL_ALT, stroke=GREEN, sw=2)
-    c.text(710, 156, "Deuteron ²H (1 Proton + 1 Neutron)", size=14, fill=GREEN, weight="600")
-    c.text(710, 182, "6-quark shared-colour model:  2.265 MeV", size=13, fill=TEXT, weight="600")
-    c.text(710, 204, "Measured in laboratory:       2.225 MeV  (+1.81%)", size=13, fill=GREEN)
-    c.text(710, 226, "(Older unshared formula gave 2.86 MeV, +29%)", size=11, fill=MUTED)
+    c.rect(520, 128, 380, 106, fill=PANEL_ALT, stroke=GREEN, sw=2)
+    c.text(710, 152, "Deuteron ²H (1 Proton + 1 Neutron)", size=14, fill=GREEN, weight="600")
+    c.text(710, 176, "6-quark shared-colour model:  2.265 MeV", size=13, fill=TEXT, weight="600")
+    c.text(710, 198, "Measured in laboratory:       2.225 MeV  (+1.81%)", size=13, fill=GREEN)
+    c.text(710, 218, "(Unchanged by 3- & 4-cluster colour rings)", size=11, fill=MUTED)
 
-    c.rect(520, 262, 380, 142, fill=PANEL_ALT, stroke=CORAL, sw=2)
-    c.text(710, 286, "Helium-4 ⁴He (2 Protons + 2 Neutrons — Unsolved)", size=14, fill=CORAL, weight="600")
-    c.text(710, 312, "Unshared baseline formula:   8.77 MeV  (−69%)", size=12, fill=MUTED)
-    c.text(710, 334, "12-quark shared colour only: 14.49 MeV (−49%)", size=13, fill=GOLD, weight="600")
-    c.text(710, 356, "Measured in laboratory:      28.30 MeV", size=13, fill=GREEN, weight="600")
-    c.text(710, 384, "Missing: 4-way spin & proton/neutron swap symmetry", size=11, fill=CORAL)
+    c.rect(520, 248, 380, 162, fill=PANEL_ALT, stroke=GOLD, sw=2)
+    c.text(710, 272, "Helium-4 ⁴He (Measured: 28.30 MeV — Bridge Open)", size=13, fill=GOLD, weight="600")
+    c.text(710, 296, "Fixed-spacing pairs + 4-way sym.:  14.33 MeV (−49.4%)", size=12, fill=MUTED)
+    c.text(710, 318, "Pyramid 3-/4-cluster rings (+):    29.33 MeV (+3.65%)", size=12, fill=CYAN, weight="600")
+    c.text(710, 340, "3D relative-motion compression:  26.02–30.55 MeV (±8%)", size=12, fill=GREEN, weight="600")
+    c.text(710, 364, "(Opposite ring sign gives 17.54 MeV; A = 3: 6.96 to 9.01 MeV)", size=11, fill=MUTED)
+    c.text(710, 390, "Open: derive single 3D braid rule without double-counting", size=11, fill=CORAL)
     c.save("sec07-hidden-colour-deuteron.svg")
 
 
@@ -964,10 +965,10 @@ def build_sec08_five_layer_tower():
 
 
 def build_sec08_horizon_punctures():
-    c = SvgCanvas(960, 440, "Black-Hole Horizon Strand Punctures and Unsolved Area Unit")
+    c = SvgCanvas(960, 440, "Black-Hole Horizon Strand Punctures and 4D Quarter-Area Lift")
     c.header(
-        "Equation (11): Strands Piercing a Black-Hole Horizon & the Unsolved Area Unit",
-        "Counting strand punctures sets entropy per puncture, while the absolute area unit a₀ is still unproved",
+        "Equation (11): Horizon Strand Punctures, 4D Spacetime Lift & the 1/4 Area Law",
+        "Phase-circle lift builds (3+1)D spacetime with (2π)/(8π) = 1/4 ratio; dynamical field equations stay open",
     )
     c.rect(40, 80, 520, 326, fill=PANEL)
     c.text(300, 108, "Black-Hole Horizon Pierced by Braided Strands", size=15, fill=CYAN, weight="600")
@@ -984,19 +985,20 @@ def build_sec08_horizon_punctures():
         c.text(485, py + 4, f"{lab} puncture", size=12, fill=col)
 
     c.rect(580, 80, 340, 326, fill=PANEL)
-    c.text(750, 108, "Proved vs. Unsolved at Horizon", size=15, fill=TEXT, weight="600")
-    c.rect(604, 130, 292, 114, fill=PANEL_ALT, stroke=GREEN, sw=1)
-    c.text(750, 154, "State-Counting Balance (Proved)", size=13, fill=GREEN, weight="600")
-    c.text(750, 178, "Unique balance point Z₁(s_⋆) = 1", size=12, fill=TEXT)
-    c.text(750, 200, "determines entropy per puncture", size=12, fill=MUTED)
-    c.text(750, 222, "and closed loops balance total flux.", size=12, fill=MUTED)
+    c.text(750, 108, "Proved vs. Open at the Horizon", size=15, fill=TEXT, weight="600")
+    c.rect(604, 128, 292, 124, fill=PANEL_ALT, stroke=GREEN, sw=1)
+    c.text(750, 150, "4D Lift & 1/4 Cancellation (Proved)", size=13, fill=GREEN, weight="600")
+    c.text(750, 174, "Singlet pairs give ln 2 ≈ 0.693 / puncture;", size=12, fill=TEXT)
+    c.text(750, 196, "(3+1)D circle lift cancels (2π)/(8π) = 1/4", size=12, fill=GREEN)
+    c.text(750, 218, "in unit cells (0.2252 = 1/(4q₀) in q₀ cells).", size=11, fill=MUTED)
+    c.text(750, 238, "(Discrete strand counts alone miss ≥ 11%)", size=11, fill=MUTED)
 
-    c.rect(604, 262, 292, 122, fill=PANEL_ALT, stroke=CORAL, sw=2)
-    c.text(750, 286, "Unsolved Gravitational Step", size=13, fill=CORAL, weight="600")
-    c.text(750, 310, "Converting puncture count to area", size=12, fill=TEXT)
-    c.text(750, 332, "currently matches S = A / 4ℓ_P² by hand;", size=12, fill=MUTED)
-    c.text(750, 354, "deriving the area unit a₀ from", size=12, fill=CORAL, weight="600")
-    c.text(750, 372, "first principles is not yet done.", size=11, fill=CORAL)
+    c.rect(604, 266, 292, 120, fill=PANEL_ALT, stroke=GOLD, sw=2)
+    c.text(750, 290, "Open Gravitational Bridge", size=13, fill=GOLD, weight="600")
+    c.text(750, 314, "Derive dynamical matter-to-curvature", size=12, fill=TEXT)
+    c.text(750, 336, "field equations from the braid action", size=12, fill=MUTED)
+    c.text(750, 358, "and fix unit (1) vs. q₀ area cell", size=12, fill=CORAL, weight="600")
+    c.text(750, 376, "(9.9% normalization split).", size=11, fill=CORAL)
     c.save("sec08-horizon-punctures.svg")
 
 
@@ -1025,16 +1027,16 @@ def build_sec09_unified_comparison_chart():
         ("Strength of light 1/α (conditional)", mp.mpf("3.7e-10"), "0.37 ppb", GREEN),
         ("Kaon / pion mass ratio (series)", mp.mpf("5.1e-8"), "51 ppb", GREEN),
         ("Muon / electron mass ratio", mp.mpf("2.11e-7"), "211 ppb (9.5σ)", GOLD),
+        ("Tau / electron (q = 1 norm balance)", mp.mpf("6.16e-5"), "+61.6 ppm (cond.)", GOLD),
         ("Higgs boson mass m_H", mp.mpf("2.4e-4"), "+0.024%", GREEN),
         ("Strong force α_s at Z pole", mp.mpf("4.1e-3"), "+0.41%", GREEN),
         ("Reactor neutrino angle sin²θ₁₃", mp.mpf("6.7e-3"), "−0.67%", GREEN),
         ("Deuteron ²H (6-quark shared colour)", mp.mpf("1.81e-2"), "+1.81%", CYAN),
         ("Neutron decay Q_β (9-strand coupled)", mp.mpf("2.37e-2"), "−2.37%", CYAN),
+        ("Helium-4 ⁴He (pyramid rings / 3D)", mp.mpf("3.65e-2"), "+3.65% / ±8.0% (cond.)", GOLD),
         ("²¹⁰Po α-cluster chance (N = 126)", mp.mpf("9.6e-2"), "0.050 vs 0.055", CYAN),
-        ("Neutron–proton split (3-strand alone)", mp.mpf("0.35"), "−35%", CORAL),
         ("Weak angle sin²θ_W (short 4-step run)", mp.mpf("0.479"), "+48%", CORAL),
-        ("Neutron decay Q_β (3-strand alone)", mp.mpf("0.58"), "−58%", CORAL),
-        ("Helium-4 ⁴He binding (unshared / 12q)", mp.mpf("0.69"), "−69% / −49%", CORAL),
+        ("Helium-4 ⁴He (fixed-spacing pairs)", mp.mpf("0.494"), "−49.4% (pairs only)", CORAL),
     ]
     for idx, (label, err, note, col) in enumerate(items):
         ry = 122 + idx * 26
@@ -1043,24 +1045,24 @@ def build_sec09_unified_comparison_chart():
         c.text(290, ry + 5, label, size=12, fill=TEXT, anchor="end")
         c.line(x_min, ry, bx, ry, stroke=col, sw=6)
         c.circle(bx, ry, 5, fill=col, stroke=BG, sw=1)
-        c.text(min(bx + 10, mp.mpf(820)), ry + 4, note, size=11, fill=col, anchor="start", weight="600")
-    c.text(480, 474, "Green/Cyan: < 10% difference   |   Gold: 211 ppb (9.5σ tension)   |   Coral: large unsolved gaps", size=12, fill=MUTED)
+        c.text(min(bx + 10, mp.mpf(790)), ry + 4, note, size=11, fill=col, anchor="start", weight="600")
+    c.text(480, 474, "Green/Cyan: unconditional < 10%   |   Gold: conditional bridge or 9.5σ tension   |   Coral: open baseline gap", size=12, fill=MUTED)
     c.save("sec09-unified-comparison-chart.svg")
 
 
 def build_sec09_unsolved_questions_map():
-    c = SvgCanvas(960, 460, "Six Unsolved Questions and Formal Checking")
+    c = SvgCanvas(960, 460, "Six Open Bridge Questions and Formal Checking")
     c.header(
-        "Six Unsolved Questions Where the Model Can Succeed or Fail",
-        "Proved theorems are machine-checked in Lean 4; numerical checks use 50–80 digits with zero curve-fitting",
+        "Six Open Bridge Questions Where Assumptions Stay Clearly Labeled",
+        "Proved theorems are machine-checked; numerical checks use 50–80 digits with zero curve-fitting",
     )
     cards = [
-        ("1. Why Three Matter Families?", "Prove why waves on the 4-holed surface pick the 3-member slice rather than 4 or 2.", CORAL),
-        ("2. Tau Mass & Quark Mixing", "Find a parameter-free braid for the heavy tau (m_τ / mₑ = 3477.2) and quark mixing.", CORAL),
-        ("3. Helium-4 Binding Strength", "Combine 12-quark colour sharing with spin-and-proton/neutron swap symmetry.", CORAL),
+        ("1. Three Families Vacuum Twist", "3-fold colour twist gives 3 families; prove why vacuum selects twist ≠ 0 & 4th mass.", GOLD),
+        ("2. Tau Norm Lock & Quark Mixing", "q = 1 norm balance gives 3477.44 (+61.6 ppm); prove q → 1 lock & quark angles.", GOLD),
+        ("3. Unified 3D Helium-4 Operator", "Unify pyramid colour rings (29.33 MeV) & 3D compression (26.02–30.55 MeV) once.", GOLD),
         ("4. The 211 ppb Muon–Proton Split", "Close the tiny q₀ gap via joint radiative loops and prove the proton 1/q³ factor.", GOLD),
-        ("5. Weak Angle Evolution & Loop Step", "Connect sin²θ_W = 3/8 to M_Z without tuned thresholds; complete the 1/α loop proof.", GOLD),
-        ("6. Black-Hole Area Unit & Spin Sign", "Derive the horizon puncture area a₀ from scratch and prove electron exchange sign.", CORAL),
+        ("5. Weak Angle Evolution & Loop Step", "Connect sin²θ_W = 3/8 to M_Z without tuned thresholds; complete the 1/α loop proof.", CORAL),
+        ("6. Gravity Field Law & Spin Sign", "4D lift gives (2π)/(8π) = 1/4; derive field equations, 1 vs q₀ cell & electron sign.", GOLD),
     ]
     for i, (title, body, col) in enumerate(cards):
         col_idx = i % 2

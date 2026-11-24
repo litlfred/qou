@@ -75,33 +75,38 @@ $$
 
 ---
 
-## Slide 5.5 — Unsolved Question 1: Why Are There Three Matter Families?
+## Slide 5.5 — Open Bridge 1: Why Are There Three Matter Families?
 
 ### On-Screen Text
-- **Title:** Splitting Four Surface Waves Into $3 + 1$
-- **What Works:** Requiring $4$-way coordinate symmetry splits the $4$ surface waves into **$3 + 1$**
-- **What Is Unproved:** Other natural symmetry slices give $4$, $3$, or $2$—why nature picks $3$ has no proof yet
+- **Title:** Three-Fold Colour Twist & Nine-Crossing Breakup on the Four-Holed Surface
+- **Proved Math:**
+  - $3$-fold quark-colour twist drops $4$ surface waves to **$4 - 1 = 3$ quark families** & **$4 - 1 = 3$ net lepton families**
+  - $9$-crossing doughnut knot sits at the **$3 + 3 + 3 = 9$ breakup threshold**, whereas $3, 5, 7$ stay algebraically prime
+- **Unproved Link:** Showing why the braid vacuum picks a non-zero $3$-fold twist and gives the paired $4\text{th}$ lepton a mass
 
 ### Host Narration
-"Now look at the coral warning panel on the left: one of the biggest unsolved puzzles in all of physics. Why did nature photocopy the electron and up-down quarks into *three* matter families rather than two or four? Remember that our symmetric surface from Section three has four holes—and therefore supports four natural smooth wave patterns. If you require symmetry among four of its five coordinates, those four wave patterns split into three plus one: a three-family group plus one solo wave. Yet checking other symmetry slices on the exact same surface gives four, three, or two. Until a proof shows why left-handed matter waves must pick that three-wave slice, the number three is not derived unconditionally."
+"Now look at the left panel: why did nature copy the electron and up-down quarks into *three* matter families rather than two or four? Two proved results point straight to three on our four-holed surface. First, among odd two-strand doughnut knots—three, five, seven, and nine crossings—the first three cannot split into three odd knots, whereas the nine-crossing knot sits right at the three-plus-three-plus-three threshold and splits into a three-crossing core plus a scalar piece. Second, twisting the four smooth surface waves by a three-fold phase from the three quark colours drops the count from four to three exact quark families, while charge balance across quarks and leptons leaves four minus one equals three net lepton families. What is still unproved is showing from the braid rules alone why empty space picks that three-fold twist and gives the extra paired lepton mode a non-zero mass."
 
 ### Animation Notes
-- Focus on the upper-left diagram of `sec05-generations-and-pmns.svg`, showing `4 Surface Wave Modes` branching left into green `4 = 3 + 1` and right into coral `Other Symmetry Slices Give 4, 3, or 2`.
+- Focus on the upper-left diagram of `sec05-generations-and-pmns.svg`, showing `4 Surface Wave Modes` under a `3-Fold Colour Twist` dropping to green `3 Quark + 3 Net Lepton Families` alongside the amber `Unproved Vacuum Twist & 4th-Pair Mass` badge.
 
 ---
 
-## Slide 5.6 — Unsolved Question 2: The Heavy Tau Mass ($3477.2 \times m_e$)
+## Slide 5.6 — Open Bridge 2: The Heavy Tau Mass ($3477.23 \times m_e$)
 
 ### On-Screen Text
-- **Title:** Where Knot Candidates Miss Badly: The Tau Lepton
+- **Title:** Low-Crossing Three-Strand Knots Miss, While Flat-Limit Wave Balance Hits $+61.6\;\mathrm{ppm}$
 - **Measured Ratio ($m_\tau / m_e$):** $3477.23 \pm 0.23$
-- **Tested Parameter-Free Candidates:** $2391$ ($-31\%$), $2907$ ($-16\%$), $5854$ ($+68\%$) $\longrightarrow$ **Unsolved**
+- **Proved Census & Wave Test:**
+  - Simple $3$-strand knots jump across the target: **$2907$** ($-16.4\%$) to **$4524$** ($+30.1\%$)
+  - Equal wave-norm sharing at $q = 1$ + figure-eight muon ($206.7683$) gives **$3477.44$** (**$+61.6\;\mathrm{ppm}$**)
+- **Unproved Link:** At $q_0 \approx 1.110$, un-dressed strand weights drift by $-1.07\%$—why $q \to 1$ norm balance holds is open
 
 ### Host Narration
-"Right underneath sits a second wide-open gap: the mass of the tau, the heaviest cousin of the electron, weighing 3,477.2 times an electron. Every parameter-free knot candidate tested so far—wrapping cables around the figure-eight knot or testing five-crossing knots—misses by sixteen to sixty-eight percent, landing at 2,391, 2,907, or 5,854. Rather than inventing an adjustable weight to split the difference and land on 3,477, the model records every miss openly and leaves the tau mass—and the four quark-mixing angles—unsolved."
+"Right underneath sits the heavy cousin of the electron and muon: the tau lepton, weighing 3,477.23 times an electron. Checking every prime knot up to eight crossings proves that no simple low-crossing three-strand knot hits that target—their volumes jump straight from 2,907, sixteen percent low, to 4,524, thirty percent high. On the three-family wave space itself, balanced norm sharing between the symmetric wave and the two-wave doublet holds at the flat q-equals-one limit: feeding in the model's parameter-free figure-eight muon ratio gives 3,477.44, within 61.6 parts per million of experiment. Yet at finite q-naught, un-dressed strand weights drift away from that balance by one percent, so proving why the mass-root rule stays locked to the flat equal-norm point—along with deriving the four quark-mixing angles—is still unsolved."
 
 ### Animation Notes
-- Plot a horizontal target line at `3477.23` with three coral candidate markers landing wide to the left (`2391`, `2907`) and right (`5854`), labeled `Zero Tuning = Honest Miss`.
+- Plot a horizontal target line at `3477.23` showing coral markers where simple 3-strand knots jump (`2907` and `4524`) beside an amber conditional marker at `3477.44 (+61.6 ppm, q = 1 wave balance)`.
 
 ---
 
@@ -112,7 +117,7 @@ $$
 - **Next Up (§6):** Why a free neutron decays in $15\;\mathrm{minutes}$—and how a $58\%$ failure revealed a nine-strand interaction
 
 ### Host Narration
-"Look at the contrast we just saw: parameter-free weak steps put simple-loop neutrinos right inside the milli-electronvolt window and hit the reactor mixing angle within one percent, while leaving the heavy tau mass wide open. Next, in Section six, we step inside protons and neutrons to watch a fifteen-minute radioactive clock—and see how refusing to patch a fifty-eight percent error revealed that beta decay takes nine strands working together."
+"Look at the distinction we just saw: parameter-free weak steps put simple-loop neutrinos inside the milli-electronvolt window and hit the reactor mixing angle within one percent, while isolating the exact unproved assumptions behind three matter families and the heavy tau mass. Next, in Section six, we step inside protons and neutrons to watch a fifteen-minute radioactive clock—and see how refusing to patch a fifty-eight percent error revealed that beta decay takes nine strands working together."
 
 ### Animation Notes
 - Transition from the single plain neutrino loop to three interlocked quark strands meeting an outgoing electron-antineutrino pair (`sec06-beta-decay-nine-strand.svg`).

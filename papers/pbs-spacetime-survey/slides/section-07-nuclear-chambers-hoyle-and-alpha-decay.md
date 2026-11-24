@@ -15,7 +15,7 @@
   2. **How tightly do they bind in MeV?** (Gentle $2.22\;\mathrm{MeV}$ deuteron vs. tight $28.30\;\mathrm{MeV}$ helium-4)
 
 ### Host Narration
-"When protons and neutrons pack together into atomic nuclei, any fundamental model faces two distinct tests. First are grouping questions: why does heavy hydrogen hold together gently, why does no stable mass-five atom exist anywhere in nature, and how do dying stars jump past unstable beryllium-eight to fuse three helium cores into carbon-twelve? Second are strength questions: does the math reproduce the actual mega-electronvolt binding totals? As we'll see, this model hits the grouping rules, heavy hydrogen, and radioactive tunneling cleanly, while falling roughly half short on helium-four's binding total."
+"When protons and neutrons pack together into atomic nuclei, any fundamental model faces two distinct tests. First are grouping questions: why does heavy hydrogen hold together gently, why does no stable mass-five atom exist anywhere in nature, and how do dying stars jump past unstable beryllium-eight to fuse three helium cores into carbon-twelve? Second are strength questions: does the math reproduce the actual mega-electronvolt binding totals? As we'll see, this model hits the grouping rules, heavy hydrogen, and radioactive tunneling cleanly, while showing why fixed-spacing pairs give half of helium-four's binding and how four-cluster colour rings and three-dimensional wave compression reach the 28.3 MeV scale."
 
 ### Animation Notes
 - Split screen: on the left, nuclear cluster icons (`²H`, `⁴He`, `⁵He -> ⁴He + n`, `3 ⁴He -> ¹²C`) light up green; on the right, a vertical energy thermometer shows `²H = 2.22 MeV` near the bottom and `⁴He = 28.30 MeV` near the top.
@@ -41,18 +41,21 @@
 
 ---
 
-## Slide 7.3 — Heavy Hydrogen Hits ($+1.81\%$) While Helium-4 Stays Half-Open
+## Slide 7.3 — Heavy Hydrogen ($+1.81\%$), Pyramid Colour Rings, and 3D Compression
 
 ### On-Screen Text
-- **Title:** Six-Quark Deuteron vs. Twelve-Quark Helium-4
-- **Deuteron (${}^2\mathrm{H}$):** Model **$2.265\;\mathrm{MeV}$** vs. Measured **$2.225\;\mathrm{MeV}$** (**$+1.81\%$**)
-- **Helium-4 (${}^4\mathrm{He}$):** Shared colour gives **$14.49\;\mathrm{MeV}$** (unshared baseline $8.77\;\mathrm{MeV}$) vs. Measured **$28.30\;\mathrm{MeV}$** (**Unsolved**)
+- **Title:** Pairwise Ceiling vs. Four-Cluster Colour Rings & Wave Compression
+- **Deuteron (${}^2\mathrm{H}$):** Model **$2.265\;\mathrm{MeV}$** vs. Measured **$2.225\;\mathrm{MeV}$** (**$+1.81\%$**, unchanged by $3$-/$4$-body rings)
+- **Helium-4 (${}^4\mathrm{He}$, Measured $28.30\;\mathrm{MeV}$):**
+  - Fixed-spacing pairs + $4$-way spin/charge symmetry: **$14.33\;\mathrm{MeV}$** ($-49.4\%$; $A = 3$: **$6.96\;\mathrm{MeV}$**)
+  - Pyramid $3$-/$4$-cluster colour rings (`+` sign): **$29.33\;\mathrm{MeV}$** (**$+3.65\%$**; opposite `-` sign $17.54\;\mathrm{MeV}$)
+  - $3\mathrm{D}$ relative-motion wave compression: **brackets $[26.02,\; 30.55]\;\mathrm{MeV}$** ($-8.0\%$ to $+8.0\%$; unified operator open)
 
 ### Host Narration
-"Allowing quarks to share colour across neighbors always lowers the ground-state energy. Look at the green upper-right box: for heavy hydrogen—one proton and one neutron, six quarks total—shared colour gives a binding energy of 2.265 MeV, within 1.81 percent of the measured 2.225 MeV. Now look at the coral box below it for twelve-quark helium-four: shared colour lifts binding from 8.77 MeV up to 14.49 MeV, which is still only half of the measured 28.30 MeV. What's missing is combining colour sharing with the four-way symmetry that swaps spins and proton-neutron labels together."
+"Allowing quarks to share colour across neighboring protons and neutrons lowers the energy at every step. Look at the green upper-right box: for heavy hydrogen—one proton and one neutron—shared colour gives 2.265 MeV, within 1.81 percent of the measured 2.225 MeV. Now look at the lower-right box for four-particle helium-four, arranged as a three-dimensional pyramid with six pair bonds, four triangular faces, and three four-corner rings. Pairing colour sharing with four-way spin-and-proton-neutron symmetry at fixed spacing gives 6.96 MeV at mass three and 14.33 MeV at helium-four—roughly six times heavy hydrogen, or half of the measured 28.30 MeV. Two zero-parameter effects close that factor of two while leaving heavy hydrogen untouched: closed three- and four-cluster colour rings reach 29.33 MeV, within 3.65 percent, and three-dimensional wave compression across six pairs sharing three relative coordinates brackets 26.02 to 30.55 MeV. What is still open is deriving one unified spatial-braid rule that fixes the loop sign and combines both effects without double-counting."
 
 ### Animation Notes
-- Highlight the upper-right green deuteron card (`2.265 vs 2.225 MeV`) and lower-right coral helium-4 card (`14.49 vs 28.30 MeV`) of `sec07-hidden-colour-deuteron.svg`.
+- Highlight the upper-right green deuteron card (`2.265 vs 2.225 MeV`) and lower-right amber helium-4 card (`Fixed-spacing pairs 14.33 MeV | Pyramid colour rings 29.33 MeV | 3D compression 26.02–30.55 MeV vs 28.30 MeV`) of `sec07-hidden-colour-deuteron.svg`.
 
 ---
 
@@ -70,7 +73,7 @@ $$
 - **Result:** Both model $q_0$ and laboratory nuclear masses sit inside the same single region ($\mathcal{C}_{\mathrm{phys}}$)
 
 ### Host Narration
-"Even before that overall helium-four multiplier is finished, what about the relative stability rules that decide *which* nuclei hold together? Track the six basic light clusters—proton, neutron, deuteron, three-particle triton and helion, and four-particle helium-four—while conserving total protons and neutrons. Whole-number rearrangement math divides all possible nuclear universes into seventy-three distinct stability regions, sketched on the left. With zero tuned parameters, the model's binding ratios at q-naught land strictly inside the exact same green central region occupied by real laboratory nuclei."
+"Even before that unified three-dimensional helium-four operator is finished, what about the relative stability rules that decide *which* nuclei hold together? Track the six basic light clusters—proton, neutron, deuteron, three-particle triton and helion, and four-particle helium-four—while conserving total protons and neutrons. Whole-number rearrangement math divides all possible nuclear universes into seventy-three distinct stability regions, sketched on the left. With zero tuned parameters, the model's binding ratios at q-naught land strictly inside the exact same green central region occupied by real laboratory nuclei."
 
 ### Animation Notes
 - Zoom into the 73-cell polygon fan on the left of `sec07-nuclear-chambers-hoyle.svg`, lighting up the central green pentagon `Region 1 of 73` containing both the cyan model dot and gold laboratory dot.
@@ -107,7 +110,7 @@ $$
 "Now move all the way up to heavy radioactive elements like polonium, radon, radium, and uranium, which decay by quantum-tunneling a helium-four cluster through the electric repulsion hill on the left. Using the model's own fine-structure constant alpha and pion touch radius—with zero fitted nuclear radii—bare tunneling tracks open-shell half-lives across twenty-four powers of ten. Better yet, it tests empty space itself: if the core value q-naught persisted across the empty space outside the nucleus, uranium-238's half-life would be off by a factor of twenty-six hundred—confirming directly that q relaxes back to one in empty vacuum."
 
 ### Animation Notes
-- Focus on the left barrier plot of `sec07-po210-alpha-tunneling.svg`: animate the coral wave attenuating exponentially through the gold `1/r` hill from `R_touch` out to `R_turn` where `q → 1`.
+- Focus on the left barrier plot of `sec07-po210-alpha-tunneling.svg`: animate the coral wave attenuating exponentially through the gold `1/r` hill from $R_{\mathrm{touch}}$ out to $R_{\mathrm{turn}}$ where `q → 1`.
 
 ---
 
