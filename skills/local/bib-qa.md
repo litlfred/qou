@@ -372,32 +372,36 @@ folio-assistant/
 
 ## Adding a New Reference (checklist)
 
-When authoring adds a `ref()` entry:
+When authoring adds a `folio/references/<id>.json` entry (and registers `{ id: "<id>" }` in `folio/schema/references.ts`):
 
-1. **Required fields**: `id`, `type`, `title`, `author`, `issued`
-2. **DOI**: Include if available (validates format automatically;
+1. **Required fields**: `id`, `type`, `title`, `author`, `issued` (plus `container-title`, `volume`, and `page` for published `article-journal` items).
+2. **Primary-source verification before adding (`qou-nq4h`)**: Never add a bibliography entry from memory or an unverified AI-generated list without checking its **DOI** (`doi.org` / CrossRef) or **arXiv** record (`arxiv.org/abs/…`) — verify exact title, full author list, publication year, and journal/volume/pages against the primary record before writing `folio/references/<id>.json`. If an unverified scan has no identifiable author or imprint, record that explicitly in `_comment` / `note` rather than guessing.
+3. **Complete author lists — no `et al.` / `others` truncation (`qou-nq4h`)**:
+   - **In `folio/references/<id>.json` (`author[]`)**: List **all** individual authors explicitly as `{ "family": "...", "given": "..." }` entries (using UTF-8 diacritics, never LaTeX escapes like `Pe\~{n}a`), never truncating with `{ "literal": "et al." }` or `{ "literal": "others" }`. Institutional/experimental collaborations with hundreds of authors (e.g. ATLAS, STAR, CODATA) use `{ "literal": "<Collaboration Name>" }` (or `{ "family": "<Collaboration Name>" }`).
+   - **In paper prose (`.md`)**: For any cited work with **$\leq 5$ authors**, the first prose mention should name all author surnames explicitly rather than abbreviating with `et al.`. Reserve `et al.` in prose for works with $> 5$ authors (or subsequent mentions where appropriate).
+4. **DOI**: Include if available (validates format automatically;
    `validate-bib --doi` confirms it resolves)
-3. **URL**: Include direct link to article page (prefer arxiv,
+5. **URL**: Include direct link to article page (prefer arxiv,
    numdam, archive.org, or faculty pages — these are the patterns
    `gen-bib-papers-list.py` can auto-extract for intake)
-4. **Run QA**: `cd content && bun run pipeline/bib-qa.ts`
-5. **Cross-check description**: When adding `-- Ref: [<id>] <desc>`
+6. **Run QA**: `bun run scripts/run-validate-references.ts` (and `cd content && bun run pipeline/bib-qa.ts` where mounted)
+7. **Cross-check description**: When adding `-- Ref: [<id>] <desc>`
    to a .lean file, include the author surname or a significant title
    word in `<desc>` so `validate-bib --cross-check` confirms the
    description anchors the entry. Bare theorem/section refs
    ("Theorem 3.2") will warn; ideally write
    "Smith, Theorem 3.2 — uniqueness of …".
-6. **Run validate-bib**: `cd content && bun run validate-bib --cross-check`
+8. **Run validate-bib**: `cd content && bun run validate-bib --cross-check`
    to confirm no anchor mismatch; pair with `--strict` in CI.
-7. **Local PDF intake** (optional but recommended for theorem-citing
+9. **Local PDF intake** (optional but recommended for theorem-citing
    references): add the paper to `scripts/bib-papers-list.txt` or
    place the PDF in `library/<id>.pdf` directly via
    `bash scripts/upload-to-uploads.sh <url-or-local-path>`.
-8. **Screenshot** (Optional): For theorem/result citations, capture
-   the relevant page to `folio/bib-qa-images/<id>.png`.
-9. **Cross-check citation site**: Ensure `\cite{<id>}` appears in
-   the relevant `.md` file or `-- Ref: [<id>]` in the relevant
-   `.lean` file.
+10. **Screenshot** (Optional): For theorem/result citations, capture
+    the relevant page to `folio/bib-qa-images/<id>.png`.
+11. **Cross-check citation site**: Ensure `\cite{<id>}` appears in
+    the relevant `.md` file or `-- Ref: [<id>]` in the relevant
+    `.lean` file.
 
 ## Investigating wrong-work resolutions
 
