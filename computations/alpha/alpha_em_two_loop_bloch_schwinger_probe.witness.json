@@ -1,0 +1,279 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T15:41:55.546279+00:00",
+  "commitSha": "f5b977655c9ca9e8170f60d5c606dba16a0252ad",
+  "assertions": [
+    {
+      "name": "four_topology_emfermionloop_cancels_tadpole_to_neg_h_sq",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "AlphaEmTwoLoopBlochSchwinger.four_topology_bar_hermitian_moment_sum"
+    },
+    {
+      "name": "two_loop_bloch_b3_tiling_measure_64pi2_exact",
+      "computed": "0.000877818935976949070099788761123439075678688845964788263403589",
+      "expected": "0.000877818935976949070099788761123439075678688845964788263403589",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "AlphaEmTwoLoopBlochSchwinger.twoLoop_blochB3_tiling_measure"
+    },
+    {
+      "name": "bloch_b3_defect_vanishes_at_classical_limit_q_eq_1",
+      "computed": "1.20205690315959428539973816151144999076498629234049888179227",
+      "expected": "1.20205690315959428539973816151144999076498629234049888179227",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "Delta_B3(1) = zeta(3) - Li_3(1) = 0"
+    },
+    {
+      "name": "c2_residual_is_entropy_bounded_no_pslq_fit_permitted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "alpha_em_two_loop_structure_probe entropy bound (|c2_req|/sigma_c2 = 2.38 < 5)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "alpha_em_two_loop_bloch_schwinger_probe",
+  "scriptFile": "alpha_em_two_loop_bloch_schwinger_probe.py",
+  "scriptHash": "353cb48893c3",
+  "scriptCommitSha": "f5b977655c9ca9e8170f60d5c606dba16a0252ad",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.py"
+  },
+  "description": "80-dps working-assumption probe for qou-l4t2 & qou-9y43: (1) exact symbolic proof in U_q(sl_2) V^{x3} and V^{x4} that summing all four signed chiral 2-vertex crossing topologies (-eps_1*eps_2)*sigma^{eps_1}*sigma^{eps_2} on the H_1 EmFermionLoop cancels the order-(q-1)^1 chiral tadpoles (+/- h*m_1) identically and yields -1*h^2 (resolving the 2026-07-14 phase-3b single-chirality gap); (2) pre-registered zero-fit evaluation of seven parameter-free two-loop operators (including Bloch-B_3 defect H(q)*(zeta(3)-Li_3(q^-2))/(8*pi) = [2]_q*Delta_B3/(pi*b_1)^2) across q_proton and q_muon against CODATA 2022 and CODATA 2018 alongside Form A and CS arms.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "auditOnly": "docs/audits/2026-11-24-alpha-em-two-loop-bloch-schwinger-l4t2-9y43.md",
+  "data": {
+    "symbolic_four_topology_emfermionloop": {
+      "EmFermionLoop_qTr_E3": "(q**2 + 1)/q",
+      "m_sigma2_chiral_tadpole": "q**3/(q**2 + 1)",
+      "m_sigma2_inv_chiral_tadpole": "1/(q**3 + q)",
+      "topology_pp_excess_m_sig2_sq_sub_1": "(q**4 - q**2)/(q**2 + 1)",
+      "topology_mm_excess_m_sig2_inv_sq_sub_1": "(1 - q**2)/(q**4 + q**2)",
+      "four_topology_bar_hermitian_sum": "(-q**4 + 2*q**2 - 1)/q**2",
+      "h4_cross_position_four_topology_sum": "(-q**4 + 2*q**2 - 1)/q**2",
+      "vertex_normalization_note": "Un-averaged skein vertex S = sigma - sigma^-1 gives -S*S_bar = -1 * h^2 (EM Form B); half-averaged S/2 = (sigma - sigma^-1)/2 gives -(1/4)*h^2 = -((q+1)/2)^2 * hbar_q^2 (matching EW hbar_q^2 at q -> 1). Choice of un-averaged S on U(1) EmFermionLoop is recorded explicitly as a §3b-cond hypothesis.",
+      "checks": {
+        "skein_diff_central": true,
+        "emfermionloop_qdim_eq_qint2": true,
+        "singlet_tadpole_eq_z_markov": true,
+        "over_over_excess_eq_phase3b_finding1": true,
+        "under_under_excess_eq_phase3b_finding2": true,
+        "four_topology_sum_eq_neg_one_mul_h_sq": true,
+        "h4_cross_position_four_topology_eq_neg_h_sq": true
+      }
+    },
+    "proton_pin_evaluation": {
+      "pin": "proton",
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "Delta_B3_zeta3_sub_Li3_q_inv2": "0.275736886236308582822653582537284329719256560345375864786633",
+      "Petermann_Sommerfield_C_PS": "-0.328478965579193784582172816964892392411119298679627821894528",
+      "arms_baseline": {
+        "Form_A_quadratic_alpha_inv": "137.035999313169007502203657864918198371507442685533058031976",
+        "Form_A_err_codata2022_ppb": "0.993673256078670915800697350152378658607524256881173164578743",
+        "Form_B_cubic_alpha_inv": "137.035999126950912420172700496420006739955675505718045793752",
+        "Form_B_err_codata2022_ppb": "-0.365225837593100819074564109857341041090469883999131563857889",
+        "CS_tower_order2_alpha_inv": "137.035933577995534986378652814456879171105662229630049995136",
+        "CS_tower_order2_err_codata2022_ppb": "-478.699063450355750071720755347901835934306174464657792381200",
+        "CS_tower_all_orders_alpha_inv": "137.035935093975604658795689994226849580386867151104275013002",
+        "CS_tower_all_orders_err_codata2022_ppb": "-467.636422401456405224936473996193199098892981285034016283962"
+      },
+      "diagnostic_falsification_windows_not_fitted": {
+        "c2_add_req_codata2022": "0.000939865061873622472790352722579666633700852521745380276139106",
+        "c2_add_req_codata2018": "-0.000806569388401494811696021475001745122243748929478139354107462",
+        "c2_1sigma_codata2022": "0.000394356166191155515851761915582899428761684198663375400378257",
+        "ladder_sign_convention_note": "alpha_em_schwinger_ladder_probe defines c2_ladder = (1/a_B - CODATA)/a_B^2 = -c2_add_req (-9.39865e-4 vs CODATA 2022); here c2_add multiplies +alpha^2 in 1/alpha."
+      },
+      "precommitted_two_loop_candidates": {
+        "C0_FormB_baseline": {
+          "label": "Form B baseline (c2 = 0)",
+          "c2_add": "0.0",
+          "alpha_inv": "137.035999126950912420172700496420006739955675505718045793752",
+          "err_vs_codata2022_ppb": "-0.365225837593100819074564109857341041090469883999131563857889",
+          "err_vs_codata2022_sigma": "-2.38328988475368092874190444095449164258485496220229897397831",
+          "err_vs_codata2018_ppb": "0.313427951102430775170368346974613104107414468870540405673477",
+          "err_vs_codata2018_sigma": "2.04528154381774764268666698761693692884371646636912959745026"
+        },
+        "C1_BlochB3_EmFermionLoop": {
+          "label": "H(q) * (zeta(3) - Li_3(q^-2)) / (8*pi) = [2]_q * Delta_B3 / (pi * b_1)^2",
+          "c2_add": "0.000877818935976949070099788761123439075678688845964788263403589",
+          "alpha_inv": "137.035999173695760684870828881654900936967455230097130529064",
+          "err_vs_codata2022_ppb": "-0.0241121992394225684666063874532940369243400410086993573620508",
+          "err_vs_codata2022_sigma": "-0.157344729291865291349766622049168798566803308139822446919354",
+          "err_vs_codata2018_ppb": "0.654541589687607088907316284597253071610240696780730661036829",
+          "err_vs_codata2018_sigma": "4.27122669927956328007880480652225977286176812043160612450922"
+        },
+        "C2_BlochB3_bare_64pi2": {
+          "label": "(zeta(3) - Li_3(q^-2)) / (8*pi)^2 = Delta_B3 / (pi * b_1)^2",
+          "c2_add": "0.000436531057614303440227339306094255802523002363353247107344560",
+          "alpha_inv": "137.035999150196683525915824450802591088151558929750206179570",
+          "err_vs_codata2022_ppb": "-0.195593250204744887968872790436314162696928907148508108734369",
+          "err_vs_codata2022_sigma": "-1.27634840352781788329511471008802100334522827716335555263337",
+          "err_vs_codata2018_ppb": "0.483060538605908504435438725232883557919609046045793948835682",
+          "err_vs_codata2018_sigma": "3.15222302504361068813345671848340756808334315140807301879520"
+        },
+        "C3_JostLuttinger_QED_3over4pi_H": {
+          "label": "H(q) * 3 / (4*pi) (4D QED beta_1 / beta_0 ratio)",
+          "c2_add": "0.0191012297547594335531939966277907358162471306459297874830349",
+          "alpha_inv": "137.036000144112923075369573759521130399302001695492732939419",
+          "err_vs_codata2022_ppb": "7.05736396920210835410298247048991925412808516803491854405282",
+          "err_vs_codata2022_sigma": "46.0529963369223606552152919237762857950234634733056668719088",
+          "err_vs_codata2018_ppb": "7.73601776293500864450209469601579689458217321270826401201768",
+          "err_vs_codata2018_sigma": "50.4815677654937892266438633523477143664520349018770954433374"
+        },
+        "C4_PetermannSommerfield_H_CPS_over_pi": {
+          "label": "H(q) * C_PS / pi (C_PS in Q-span{1, pi^2, pi^2 ln 2, zeta(3)})",
+          "c2_add": "-0.00836580292151186147916288202627080992097968761846438821752286",
+          "alpha_inv": "137.035998681462469461743341806492602411008704816165739323425",
+          "err_vs_codata2022_ppb": "-3.61611206919580906580503122352178983728558405647137220115370",
+          "err_vs_codata2022_sigma": "-23.5970252637265075330241617899519664373254409845988229753028",
+          "err_vs_codata2018_ppb": "-2.93745828270650373006118694594879110359998038160890066869372",
+          "err_vs_codata2018_sigma": "-19.1684538351550789615955903613805378658968695560273944038743"
+        },
+        "C5_BringZeroMode_h2": {
+          "label": "(2 / (3*pi)) * h^2 (Bring zero-mode h^2 dressing)",
+          "c2_add": "0.00927474550900806343707460288643603311824762532071972402831566",
+          "alpha_inv": "137.035999620841566761622118113847757899242375319477574858058",
+          "err_vs_codata2022_ppb": "3.23886839536480054510550954873957743900982082929405668523283",
+          "err_vs_codata2022_sigma": "21.1353127029343865768498932332972559675941702313360861623123",
+          "err_vs_codata2018_ppb": "3.91752218650626434625635525752403595559921852788276059538491",
+          "err_vs_codata2018_sigma": "25.5638841315058151482784646618686845390227416599075147337408"
+        },
+        "C6_ThetaGraph_residual": {
+          "label": "-[3]_q / (8*pi)^2 + H(q)*h^2 (total theta(1,1,2) replacement)",
+          "c2_add": "-0.00132164430476881340560796040755409575673899563301002903433717",
+          "alpha_inv": "137.035999056571862641336699521789660408958645606153977050097",
+          "err_vs_codata2022_ppb": "-0.878806576971898722423910418765285246487607495907675521027235",
+          "err_vs_codata2022_sigma": "-5.73467320755539526086715902814482639970695347380491683654625",
+          "err_vs_codata2018_ppb": "-0.200152788624910642886748653458238134224526065410323779760995",
+          "err_vs_codata2018_sigma": "-1.30610177898396668943858759957339782827838204523348826511767"
+        }
+      }
+    },
+    "muon_pin_evaluation": {
+      "pin": "muon",
+      "q0": "1.10997859564273904668179512938000175270006556102901155697405",
+      "Delta_B3_zeta3_sub_Li3_q_inv2": "0.275736911752379941169984056731352996645563166203526271275616",
+      "Petermann_Sommerfield_C_PS": "-0.328478965579193784582172816964892392411119298679627821894528",
+      "arms_baseline": {
+        "Form_A_quadratic_alpha_inv": "137.036010188813644812812021062865830061343081802803459345343",
+        "Form_A_err_codata2022_ppb": "80.3570865389145497722462731882135053248965114403162108323801",
+        "Form_B_cubic_alpha_inv": "137.036010002595537457787549938257993221059212060635350551344",
+        "Form_B_err_codata2022_ppb": "78.9981873556824173477399184915716463602564311935723982433029",
+        "CS_tower_order2_alpha_inv": "137.035944499060742486903909363197836858473838549342762792699",
+        "CS_tower_order2_err_codata2022_ppb": "-399.004200253171085692785878807789956071848208385667824677569",
+        "CS_tower_all_orders_alpha_inv": "137.035946015042149327277514413577188646984724612180624215142",
+        "CS_tower_all_orders_err_codata2022_ppb": "-387.941549446485724043639435617416378094234351172974465875451"
+      },
+      "diagnostic_falsification_windows_not_fitted": {
+        "c2_add_req_codata2022": "-0.203292430024526739711933491933445549206325302229335029054254",
+        "c2_add_req_codata2018": "-0.205038864752007865881979977821658083228221528595089113265301",
+        "c2_1sigma_codata2022": "0.000394356228786060748075012942499604456557212405170277079913910",
+        "ladder_sign_convention_note": "alpha_em_schwinger_ladder_probe defines c2_ladder = (1/a_B - CODATA)/a_B^2 = -c2_add_req (-9.39865e-4 vs CODATA 2022); here c2_add multiplies +alpha^2 in 1/alpha."
+      },
+      "precommitted_two_loop_candidates": {
+        "C0_FormB_baseline": {
+          "label": "Form B baseline (c2 = 0)",
+          "c2_add": "0.0",
+          "alpha_inv": "137.036010002595537457787549938257993221059212060635350551344",
+          "err_vs_codata2022_ppb": "78.9981873556824173477399184915716463602564311935723982433029",
+          "err_vs_codata2022_sigma": "515.504549402751788092297999677193295812411207169111633017104",
+          "err_vs_codata2018_ppb": "79.6768411982382300090813850487434536669899800746823173601695",
+          "err_vs_codata2018_sigma": "519.933120831323216663726571105764724383839778597683061588532"
+        },
+        "C1_BlochB3_EmFermionLoop": {
+          "label": "H(q) * (zeta(3) - Li_3(q^-2)) / (8*pi) = [2]_q * Delta_B3 / (pi * b_1)^2",
+          "c2_add": "0.000877819018268253863727187852537749318928256655492970246820613",
+          "alpha_inv": "137.036010049340382684960604422064609764444622039163886639939",
+          "err_vs_codata2022_ppb": "79.3393009718702042110922872492877567077482388359025345772062",
+          "err_vs_codata2022_sigma": "517.730494413569552591526886179259267716150661268568531732107",
+          "err_vs_codata2018_ppb": "80.0179548146575149205197778464094189070769112169239458323111",
+          "err_vs_codata2018_sigma": "522.159065842140981162955457607830696287579232697139960303536"
+        },
+        "C2_BlochB3_bare_64pi2": {
+          "label": "(zeta(3) - Li_3(q^-2)) / (8*pi)^2 = Delta_B3 / (pi * b_1)^2",
+          "c2_add": "0.000436531098009905814135227757049264666190447152896474069063446",
+          "alpha_inv": "137.036010025841307024930278890453386112058752383720203502865",
+          "err_vs_codata2022_ppb": "79.1678199318430637408950556413547501767322426147399274219503",
+          "err_vs_codata2022_sigma": "516.611490810710965661450161243431369161129533500136429631592",
+          "err_vs_codata2018_ppb": "79.8464737745139981927761736382777795983987150503231852094301",
+          "err_vs_codata2018_sigma": "521.040062239282394232878732672002797732558104928707858203020"
+        },
+        "C3_JostLuttinger_QED_3over4pi_H": {
+          "label": "H(q) * 3 / (4*pi) (4D QED beta_1 / beta_0 ratio)",
+          "c2_add": "0.0191012297778230388816181431975273368936626363144535988640316",
+          "alpha_inv": "137.036011019757387890954689377822364326349873584044430597465",
+          "err_vs_codata2022_ppb": "86.4207759932809869804144505765451611115379318237045940452840",
+          "err_vs_codata2022_sigma": "563.940827994807366160848684015540470170668782409403088508603",
+          "err_vs_codata2018_ppb": "87.0994298408741675444303674583654402160511666168038579619443",
+          "err_vs_codata2018_sigma": "568.369399423378794732277255444111898742097353837974517080031"
+        },
+        "C4_PetermannSommerfield_H_CPS_over_pi": {
+          "label": "H(q) * C_PS / pi (C_PS in Q-span{1, pi^2, pi^2 ln 2, zeta(3)})",
+          "c2_add": "-0.00836580293161307377357294282962404636983152710132360069498365",
+          "alpha_inv": "137.036009557107164672117395204292714007415679235498490114167",
+          "err_vs_codata2022_ppb": "75.7473016361550734242090993763062586906765331193332678985299",
+          "err_vs_codata2022_sigma": "494.290817365338923581156795905115032344547547148293663930079",
+          "err_vs_codata2018_ppb": "76.4259554765046601745713639767271744790973927505719570189992",
+          "err_vs_codata2018_sigma": "498.719388793910352152585367333686460915976118576865092501508"
+        },
+        "C5_BringZeroMode_h2": {
+          "label": "(2 / (3*pi)) * h^2 (Bring zero-mode h^2 dressing)",
+          "c2_add": "0.00927474758122075007498275381341343901809193306947574289099974",
+          "alpha_inv": "137.036010496486223753525809523193771573332388709361885412912",
+          "err_vs_codata2022_ppb": "82.6022818218220303342386288030278459207892749220824104843690",
+          "err_vs_codata2022_sigma": "539.023153512072657596342560551111066129017232638710092488675",
+          "err_vs_codata2018_ppb": "83.2809356668237753607356607169444350785958756633784848500895",
+          "err_vs_codata2018_sigma": "543.451724940644086167771131979682494700445804067281521060103"
+        },
+        "C6_ThetaGraph_residual": {
+          "label": "-[3]_q / (8*pi)^2 + H(q)*h^2 (total theta(1,1,2) replacement)",
+          "c2_add": "-0.00132164353469230248030155814185091068893840883773713449813470",
+          "alpha_inv": "137.036009932216539857382456233691031797250858133135466761425",
+          "err_vs_codata2022_ppb": "78.4846069970680260283478535065788135529897181826086789403871",
+          "err_vs_codata2022_sigma": "512.153168564637259820651953895107183720625498417210707761330",
+          "err_vs_codata2018_ppb": "79.1632608392752954333887565952111262686193929246095097779434",
+          "err_vs_codata2018_sigma": "516.581739993208688392080525323678612292054069845782136332759"
+        }
+      }
+    },
+    "epistemic_status": {
+      "fitted_parameters": 0,
+      "wired_into_production": false,
+      "preregistration": "computations/alpha/alpha_em_two_loop_bloch_schwinger_preregistration.md",
+      "lean_module": "folio/quantum-observable-universe/lean/QOU/Archimedean/AlphaEmTwoLoopBlochSchwinger.lean",
+      "owner_ruling_respected": "qou-aemx (no form is chosen by its residual; all arms reported side by side)"
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.1099785956427390466817951293800017527000655610290115569740457699990950814290311",
+    "proton": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830"
+  },
+  "q0AnchorReason": "audits the pre-registered zero-parameter two-loop Bloch-B_3 / Bring / QED operators across Form B, Form A, and CS-tower arms at both q_proton and q_muon"
+}
