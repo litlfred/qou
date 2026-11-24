@@ -10,6 +10,12 @@ export default proposition({
   uses: ["def:atomic-braid"],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits `AtomicLPStabilityContext` on `Unit` with `bareVolume := 0` and `dressedVolume := 1`.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+    {
       kind: "note",
       date: "2026-08-08",
       body:

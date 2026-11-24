@@ -18,4 +18,12 @@ export default proposition({
     "sdp-duality",
     "spectral-gap",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` shows `HasBindingMultiplicity` (`ElectronShell.lean`) carries unconstrained data (`mu := fun _ => 2`), making `NobleGasMultiOperator` jointly vacuous.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+  ],
 });

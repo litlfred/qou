@@ -33,6 +33,12 @@ export default remark({
     "draft",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation regression guard (`qou-x60n`): `2026-08-23-trivial-global-instance-probe.lean` guards against silent `PUnit` instance synthesis for `IwahoriHeckeAlgebra` in the upstream import closure.",
+      see: "docs/audits/2026-08-23-trivial-global-instance-probe.lean",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (`pages_embed_on_bring`, machine-checked)." },
   ],
 });

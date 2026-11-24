@@ -23,6 +23,12 @@ export default theorem({
     "phase-2-sprint-5-discharge",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` records the degenerate literal witness for the former `EwInterfaceKnotContext` in `QOU.BraidsAndKnots.ew_interface_knot` (since replaced in `qou-6qbv`).",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
     { kind: "note", date: "2026-11-21", body: "Moved out of the prose by the voice-leak drain (qou-d4kh, W14b, 2026-11-21): the counts are computed by the tableau and eigenvalue-class routines in `computations/probes/ew_interface_knot_probe.py`." },
     {
       kind: "status",

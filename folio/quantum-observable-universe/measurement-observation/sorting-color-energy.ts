@@ -16,4 +16,12 @@ export default proposition({
     "observation",
   ],
   uses: ["rem:observation-braid"],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits `SortingColorEnergyContext ℚ` on `Unit` with `sigma := id`.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+  ],
 });

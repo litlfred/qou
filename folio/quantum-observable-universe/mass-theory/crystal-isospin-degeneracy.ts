@@ -27,6 +27,12 @@ export default proposition({
   authorNotes: [
     {
       kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): conditioned on `QOU.BraidKnot.CrystalGraphRealization`, which `2026-09-04-conjecture-carriers-round-two.lean` (`C1`) inhabits on `PUnit`.",
+      see: "docs/audits/2026-09-04-conjecture-carriers-round-two.lean",
+    },
+    {
+      kind: "caveat",
       date: "2026-11-16",
       body: "The proof previously derived $\\sigma_i^{-1} = \\sigma_i$ on each SYT line from the Hecke relation at $q = 0$. That step was false: $q^{-1}$ is undefined at $q = 0$, and at generic $q$ the eigenvalues of $\\sigma_i$ and $\\sigma_i^{-1}$ differ. The equality is an input of the crystal model (the `abs(i)` reduction), so the proposition is a statement about that model, not about $H_n(q)$. The statement previously said the limit cannot distinguish proton from neutron 'inside the bare Hecke algebra'; corrected to 'inside the crystal model'. The bridge `CrystalGraphRealization ⟹ CrystalEigenlineSignBlind` is not proved.",
     },

@@ -18,6 +18,12 @@ export default theorem({
   ],
   uses: ["prop:braid-action-tensor", "prop:braiding-eigenvalue-extraction"],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` constructs `rankOneMarkov` (`q = 1` over `ℚ`) inhabiting `QOU.Hecke.MarkovTrace` and `QOU.Shared.MarkovTraceContext`.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Loop-reciprocal identity tr_M(e_i) = 1/δ: (`loop_reciprocal`, [`TemperleyLiebTower.lean`](../lean/QOU/QBeta/TemperleyLiebTower.lean)).\n\nCatalan count of the Temperley–Lieb quotient: ([`TemperleyLiebTower.lean`](../lean/QOU/QBeta/TemperleyLiebTower.lean))." },
   ],
 });

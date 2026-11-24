@@ -22,4 +22,12 @@ export default conjecture({
     "computational-shortcut",
     "audit-flag-13a",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-04-conjecture-carriers-round-two.lean` (`C1`) inhabits `QOU.BraidKnot.CrystalGraphRealization` on `PUnit` with `raising := fun _ _ => none`.",
+      see: "docs/audits/2026-09-04-conjecture-carriers-round-two.lean",
+    },
+  ],
 });

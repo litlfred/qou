@@ -1,0 +1,1501 @@
+{
+  "$schema": "qou-lean-audit-evidence/v1",
+  "generatedAt": "2026-11-24",
+  "beans": [
+    "qou-x60n",
+    "qou-y8zf"
+  ],
+  "description": "Machine-readable evidence ledger linking all 30 standalone refutation, vacuity-probe, statement-strength, twin-equivalence, and regression-guard Lean files under docs/audits/ to the library declarations, Lean modules, and folio/quantum-observable-universe/ content blocks they concern (LEANNODES L5). Uncontended target blocks also carry back-links in their .ts manifest authorNotes (`see: \"docs/audits/...\"`).",
+  "totalAuditFiles": 30,
+  "entries": [
+    {
+      "auditFile": "docs/audits/2026-08-23-free-prop-field-triviality-probe.lean",
+      "sha256": "17cb46eefd9fdc5256b7f6a1b4b9afde3f01cbca600242e9be03640637180639",
+      "lines": 39,
+      "category": "vacuity-probe",
+      "disposition": "mixed-live-and-repaired",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-tsnp"
+      ],
+      "summary": "Demonstrates that three carriers typed with bare `Prop` fields (`DimMasterPentagon`, `BringSurfaceSmoothness`, `HabiroFlowSolution`) are trivially inhabited by `True` / `trivial`, rendering downstream `[C]`-conditional theorems unconditional until fields are typed by concrete propositions.",
+      "targetDeclarations": [
+        "QOU.BraidsAndKnots.DimMasterPentagon",
+        "QOU.BringsSurface.BringSurfaceSmoothness",
+        "QOU.Habiro.HabiroFlowSolution"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/mass-theory/dim-master-pentagon.lean",
+        "folio/quantum-observable-universe/brings-surface/brings-smoothness-resolution.lean",
+        "folio/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:dim-master-pentagon",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/dim-master-pentagon.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:brings-smoothness-resolution",
+          "tsPath": "folio/quantum-observable-universe/brings-surface/brings-smoothness-resolution.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "rem:generating-functions-solve-reeb-flow",
+          "tsPath": "folio/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.ts",
+          "joinKind": "module-docstring",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-23-free-prop-real-module-probe.lean",
+      "sha256": "90b59d92307d9a8a8c0f68981db221147a5ed648cb4cad1aba36007d76727cb0",
+      "lines": 64,
+      "category": "vacuity-probe",
+      "disposition": "mixed-live-and-repaired",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Imports live library modules `QOU.Habiro.FlowSolution` and `QOU.Mathlib.HeckeAlgebra`: exhibits trivial inhabitation of `QOU.Habiro.HabiroFlowSolution` (part 1, live) and serves as regression guard (`zero_generators_rejected`) confirming `IwahoriHeckeAlgebra`'s Hecke/braid/far-commute fields now reject zero generators (part 2, closed 2026-09-07).",
+      "targetDeclarations": [
+        "QOU.Habiro.HabiroFlowSolution",
+        "QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean",
+        "folio/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "rem:generating-functions-solve-reeb-flow",
+          "tsPath": "folio/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.ts",
+          "joinKind": "module-docstring",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "rem:hecke-algebra-from-braiding",
+          "tsPath": "folio/quantum-observable-universe/braids-and-knots/hecke-algebra-from-braiding.ts",
+          "joinKind": "domain-module",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:canonical-closure-torus-chain",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/canonical-closure-torus-chain.ts",
+          "joinKind": "import-closure",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-23-trivial-global-instance-probe.lean",
+      "sha256": "d4870b8f692dae303c9c3b561d9a6125e0c2597c5ec3aedd4dca2cdc1ccc4483",
+      "lines": 77,
+      "category": "regression-guard",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Regression guard on `QOU.Mathlib.HeckeAlgebra` verifying that `triv_hecke` and `triv_wedderburn` remain explicit `def`s rather than global `instance`s over `PUnit`, so `[IwahoriHeckeAlgebra R n q]` hypotheses are never silently discharged.",
+      "targetDeclarations": [
+        "QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra",
+        "QOU.Mathlib.HeckeAlgebra.WedderburnDecomposition",
+        "QOU.Mathlib.HeckeAlgebra.triv_hecke",
+        "QOU.Mathlib.HeckeAlgebra.triv_wedderburn"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "rem:hecke-algebra-from-braiding",
+          "tsPath": "folio/quantum-observable-universe/braids-and-knots/hecke-algebra-from-braiding.ts",
+          "joinKind": "domain-module",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "rem:torus-chain-pages-on-bring",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/torus-chain-pages-on-bring.ts",
+          "joinKind": "import-closure",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-24-core-levi-form-vacuous-classes-probe.lean",
+      "sha256": "2debcbd94ee6adbcc27ca463da4abb28cd4138946c4601d778453712a4521b0a",
+      "lines": 34,
+      "category": "vacuity-probe",
+      "disposition": "historical-baseline",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Exhibits zero-witness inhabitations (`aubin`, `ns`, `crit`, `blowup`, `breakdown`) for the five pre-repair local `Prop` classes in `fluid-dynamics/core-levi-form.lean` (`∃ K ≥ 0, K ≤ 2E`, `(3*4 : ℕ) = 12`, etc.).",
+      "targetDeclarations": [
+        "QOU.FluidDynamics.QAubinLions",
+        "QOU.FluidDynamics.NSCounterexample",
+        "QOU.FluidDynamics.CriticalExponent",
+        "QOU.FluidDynamics.BlowupYekutieli",
+        "QOU.FluidDynamics.RegularityBreakdown"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "prop:core-levi-form",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "evidence-ledger-only-preexisting-attestation-conflict"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-24-parallelogram-axioms-inconsistent.lean",
+      "sha256": "174655f2cf2db7d70e578119c2e2e7e93babc66a00c740b90026edd5abdf1974",
+      "lines": 102,
+      "category": "refutation",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Records two independent proofs of `False` against the former unguarded axioms in `QOU.Mathlib.ParallelogramContour` (missing `Differentiable ℂ f` and missing positive orientation `0 < (ω₂ / ω₁).im` at `ω₁ = ω₂ = 0`), and verifies the repaired theorems remain usable.",
+      "targetDeclarations": [
+        "parallelogramIntegral",
+        "parallelogramIntegral_eq_zero_of_differentiable",
+        "parallelogramIntegral_inv_sub_eq_two_pi_i"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/Mathlib/ParallelogramContour.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "prop:upstream-mathlib-additions",
+          "tsPath": "folio/quantum-observable-universe/appendix-formalisation-notes/upstream-mathlib-additions.ts",
+          "joinKind": "mathlib-infra-note",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-24-qintegermassformula-vacuity-probe.lean",
+      "sha256": "6d8ec2a4c276884bbc57bcbc6b4e03f7ccf2d19842e675076d90579bdb3ce862",
+      "lines": 37,
+      "category": "vacuity-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Probes `QOU.Interactions.QIntegerMassFormula`: shows a global `canonical` instance sets `f_magic = fun _ => 0` and `tolerance = 1 / 100`, and that `fits_AME_conditional` projects `IsAMEValue.fits_bound` directly without constraining `B` to measured AME entries.",
+      "targetDeclarations": [
+        "QOU.Interactions.QIntegerMassFormula",
+        "QOU.Interactions.IsAMEValue",
+        "QOU.Interactions.fits_AME_conditional",
+        "QOU.Interactions.canonical"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:q-integer-mass-formula",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/q-integer-mass-formula.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-24-undecided-carrier-witnesses.lean",
+      "sha256": "60cf2290144b754ea2fb0058b4f614c3a6a29e2a99f0a99bf6b20d4f7331fadc",
+      "lines": 69,
+      "category": "vacuity-probe",
+      "disposition": "mixed-live-and-repaired",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Constructs explicit hand witnesses (`1` or constant functions) inhabiting six self-contained `Prop` carriers left undecided by the zero-only prober (`QAubinLions`, `RegularityBreakdown`, `PvsNPQou`, `ClassicalLimitStpart`, `CrystalGraphRealization`, `QIntegerMassFormula`), and confirms the seventh (`SeparateLambdaScale_Antipattern`) is deliberately uninhabitable (`is_antipattern : False`).",
+      "targetDeclarations": [
+        "QOU.FluidDynamics.QAubinLions",
+        "QOU.FluidDynamics.RegularityBreakdown",
+        "QOU.AlgebraicSubstrate.PvsNPQou",
+        "QOU.FeynmanClassicalLimit.ConditionalAudit.ClassicalLimitStpart",
+        "QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit.CrystalGraphRealization",
+        "QOU.BraidKnot.WignerCoefficient.ConditionalAudit.QIntegerMassFormula",
+        "QOU.Machinery.SeparateLambdaScale_Antipattern"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean",
+        "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean",
+        "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean",
+        "folio/quantum-observable-universe/mass-theory/feynman-classical-limit.lean",
+        "folio/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean",
+        "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean",
+        "folio/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:q-aubin-lions",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:regularity-breakdown",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:p-vs-np-qou",
+          "tsPath": "folio/quantum-observable-universe/appendix-surreals/p-vs-np-conjecture.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:feynman-classical-limit",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/feynman-classical-limit.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:transfer-matrix-level-independence",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:wigner-coefficient-derivation",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:lambda-scale-substrate-form",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.ts",
+          "joinKind": "machinery-guard",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-24-vacuous-prop-carrier-probe.lean",
+      "sha256": "22196263335c7fbba20162e68bf70b73f4bcda4e7d865c8eccef84f90be06834",
+      "lines": 335,
+      "category": "vacuity-probe",
+      "disposition": "mixed-live-and-repaired",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Machine-generated sweep (`scripts/vacuous-prop-carrier-probe.py`) testing 23 `Prop` carriers (`Cand0..Cand22`) across fluid dynamics, `ConditionalClasses`, `PvsNPQou`, `MarkovTraceOnHecke`, `FMapStructuralPaths`, mass theory, and `geom-universality` for zero-witness inhabitability.",
+      "targetDeclarations": [
+        "QOU.FluidDynamics.QAubinLions",
+        "QOU.FluidDynamics.NSCounterexample",
+        "QOU.FluidDynamics.CriticalExponent",
+        "QOU.FluidDynamics.BlowupYekutieli",
+        "QOU.FluidDynamics.RegularityBreakdown",
+        "QOU.AlgebraicSubstrate.PvsNPQou",
+        "QOU.BraidKnot.PLCorrectnessHypotheses",
+        "QOU.Machinery.SeparateLambdaScale_Antipattern",
+        "QOU.Machinery.ResidueACompositeIdentification",
+        "QOU.QBeta.FMapFaddeevModular",
+        "QOU.QBeta.FMapHexagonCharacter",
+        "QOU.QBeta.FMapCyclotomicDirect"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.lean",
+        "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean",
+        "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean",
+        "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean",
+        "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalClasses.lean",
+        "folio/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean",
+        "folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean",
+        "folio/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean",
+        "folio/quantum-observable-universe/mass-theory/feynman-classical-limit.lean",
+        "folio/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean",
+        "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean",
+        "folio/quantum-observable-universe/nuclear-interactions/geom-universality.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:geom-universality",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/geom-universality.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:hoefsmit-scattering-pipeline",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.ts",
+          "joinKind": "sibling-import",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:core-levi-form",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "evidence-ledger-only-preexisting-attestation-conflict"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean",
+      "sha256": "b6f2839fb218866d9262957da1185f8b6dade20c922049a04b22535e3f6477da",
+      "lines": 99,
+      "category": "statement-strength-probe",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Shows the pre-2026-08-29 `CriticalExponent` and `NSCounterexample` carriers admitted regular counter-witnesses (`enstrophy q = max q 0` bounded near `q = 1`, `velocityProfile t x = max (-t) 0` vanishing near `T* = 1`), and proves both witnesses are excluded by the punctured-neighbourhood repair.",
+      "targetDeclarations": [
+        "QOU.FluidDynamics.CriticalExponent",
+        "QOU.FluidDynamics.NSCounterexample"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean",
+        "folio/quantum-observable-universe/fluid-dynamics/p5-counterexample.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:critical-exponent",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:ns-counterexample",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-29-qplancherel-clt-uninhabitable-probe.lean",
+      "sha256": "6ec231036c35a5d7c769dae7da1c907a81214a82e67a1ccd8a5c6025bc036164",
+      "lines": 49,
+      "category": "refutation",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Proves `old_bound_shape_is_refutable` showing the pre-2026-08-29 `HasQPlancherelCLT` field (quantifying universally over arbitrary `f : ℕ → ℝ` and `f_inf : ℝ` after fixing `Cq`) was uninhabitable, and exhibits an inhabitant of the repaired existential shape.",
+      "targetDeclarations": [
+        "QOU.MathlibExt.QPlancherel.HasQPlancherelCLT"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:alpha-k-categorical-closure",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/alpha-k-categorical-closure.ts",
+          "joinKind": "sibling-import",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-29-rosso-jones-index-set-probe.lean",
+      "sha256": "c20591537647c5c663d7ce20080849cbaab74a4855fdf006fe5b5c21eb7d3b74",
+      "lines": 56,
+      "category": "statement-strength-probe",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Proves `quantified_index_forces_zero`: universally quantifying `partitions_of_r : Finset P` in `QOU.Archimedean.rj_canonical_inner_product` forced `jonesPoly r s = 0` upon instantiating at `∅`; verifies carrying `partitionsOf` as structure data admits non-vanishing models.",
+      "targetDeclarations": [
+        "QOU.Archimedean.rj_canonical_inner_product",
+        "jonesPoly_eq_eval"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/Archimedean/rj_canonical_inner_product.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "prop:rj-canonical-inner-product",
+          "tsPath": "folio/quantum-observable-universe/predicted-spectra/rj-canonical-inner-product.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean",
+      "sha256": "9452388394af413baa169223086fb270e6c4818042e64ba3785323795ccc36c9",
+      "lines": 73,
+      "category": "regression-guard",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-rq9n",
+        "qou-88nf"
+      ],
+      "summary": "Imports `QOU.AlgebraicSubstrate.ConditionalClasses` and documents the complete closure of all five q-NS carriers (`QAubinLions`, `NSCounterexample`, `CriticalExponent`, `RegularityBreakdown`, and the replacement of `BlowupYekutieli` by the obstruction-vanishing criterion of `prop:blowup-yekutieli`).",
+      "targetDeclarations": [
+        "QOU.AlgebraicSubstrate.QAubinLions",
+        "QOU.AlgebraicSubstrate.NSCounterexample",
+        "QOU.AlgebraicSubstrate.CriticalExponent",
+        "QOU.AlgebraicSubstrate.BlowupYekutieli",
+        "QOU.AlgebraicSubstrate.RegularityBreakdown"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "prop:blowup-yekutieli",
+          "tsPath": "folio/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.ts",
+          "joinKind": "header-citation",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:q-aubin-lions",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts",
+          "joinKind": "conditional-class",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-30-conditional-cone-binders-unused-probe.lean",
+      "sha256": "207fb046eea3800fe7afb5faef3051f7844313f65732c71a1038b966960134aa",
+      "lines": 53,
+      "category": "vacuity-probe",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-hjf4"
+      ],
+      "summary": "Proves the pre-2026-08-30 theorems in `QOU.AlgebraicSubstrate.ConditionalCorollaries` (`reeb_period_bound`, `enstrophy_cube_bound`, `rogue_zero_cost`, `critical_exponent_identity`) with all `[QAubinLions]`-family binders deleted, exposing unused hypothesis binders and `(3 * 4 : ℕ) = 12`.",
+      "targetDeclarations": [
+        "QOU.AlgebraicSubstrate.qAubinLions_zero_energy",
+        "QOU.AlgebraicSubstrate.qAubinLions_monotone",
+        "QOU.AlgebraicSubstrate.critical_exponent_identity",
+        "QOU.AlgebraicSubstrate.regularity_breakdown_measure_exists"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalCorollaries.lean",
+        "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:critical-exponent",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts",
+          "joinKind": "corollary-cone",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:regularity-breakdown",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts",
+          "joinKind": "corollary-cone",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-30-context-classes-are-inhabited-by-zero.lean",
+      "sha256": "f4e657dc80caa5f4589a44178ba01449a5629e23986abbe1244ed2329f444d24",
+      "lines": 157,
+      "category": "vacuity-probe",
+      "disposition": "mixed-live-and-repaired",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-z9ws"
+      ],
+      "summary": "First gate of bean `qou-z9ws`: inhabits `SixTermMassFormulaContext`, `JetPrefixGbFiltrationContext`, `ReidemeisterMassInvarianceContext` (since retired), `RMatrixBraidingContext` (since retired; commutative witness retained), and `KnotFactorSpectralContext` with `Unit`/zero/one models, and proves `Term7ShellCorrectionClass` asserts only the literal sign `-1 < 0` (`alpha5_value := -1`).",
+      "targetDeclarations": [
+        "QOU.BraidKnot.SixTermMassFormulaContext",
+        "QOU.BraidKnot.JetPrefixGbFiltrationContext",
+        "QOU.Braiding.ReidemeisterMassInvarianceContext",
+        "QOU.Braiding.RMatrixBraidingContext",
+        "QOU.BraidKnot.KnotFactorSpectralContext",
+        "QOU.Archimedean.OpenProblems.Term7ShellCorrectionClass"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/six_term_mass_formula_complete.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/jet_prefix_gb_filtration.lean",
+        "folio/quantum-observable-universe/lean/QOU/Braiding/reidemeister_mass_invariance.lean",
+        "folio/quantum-observable-universe/lean/QOU/Braiding/r_matrix_braiding_structure.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/knot_factor_spectral_derivation.lean",
+        "folio/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:six-term-mass-formula-complete",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:jet-prefix-gb-filtration",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:reidemeister-mass-invariance",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts",
+          "joinKind": "module-stem",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:r-matrix-braiding-structure",
+          "tsPath": "folio/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:knot-factor-spectral-form",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "evidence-ledger-only-inflight-pr",
+          "inflightPRs": [
+            9296,
+            9305
+          ]
+        },
+        {
+          "label": "rem:mass-tower-deeper-fillers",
+          "tsPath": "folio/quantum-observable-universe/appendix-formalisation-notes/mass-tower-deeper-fillers.ts",
+          "joinKind": "sibling-import",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+      "sha256": "04164ec2f1ae7c3d94d50b37ca343030de8cc3ef210551bcba80fdd0dfb56a23",
+      "lines": 776,
+      "category": "vacuity-probe",
+      "disposition": "mixed-live-and-repaired",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-z9ws"
+      ],
+      "summary": "Per-class hand adjudication across 33 `QOU.*` modules: constructs hypothesis-free witnesses for unparameterised context classes (`EwInterfaceKnotContext`, `AtomicLPStabilityContext`, `ZHabiroConvergenceClass`, `SpectralSequenceH3ExplicitContext`, `Terms26HigherOperationsContext`, `SortingColorEnergyContext`, `DecayChannelContext`, `ConfinementFrobeniusReciprocityContext`, `EInfinityIdentificationsContext`, `MarkovTraceContext`/`QmnRecursiveMemoizedContext`/`ToffoliTransferMatrixContext`, `NobleGasMultiOperator`, `LevelSufficient`, `ShellClosureMonotone` via trivial `LE R_q`, `LpDualStabilityContext`, `ParityRegimeSelectionContext`, `FourTermPairNucleonContext`, `SkeinMassFromLinkingContext`) while certifying `MatrixChainEqBuildChains`, `HasFiniteLPDuality`, `ConvergenceBound`, and `QIntRatioBoundSmall` as non-vacuous.",
+      "targetDeclarations": [
+        "QOU.BraidsAndKnots.EwInterfaceKnotContext",
+        "QOU.ParticleInteractions.AtomicLPStabilityContext",
+        "QOU.Archimedean.OpenProblems.ZHabiroConvergenceClass",
+        "QOU.BraidKnot.SpectralSequenceH3ExplicitContext",
+        "QOU.BraidKnot.Terms26HigherOperationsContext",
+        "QOU.BraidKnot.SortingColorEnergyContext",
+        "QOU.BraidKnot.UnstableAtom.DecayChannelContext",
+        "QOU.ParticleInteractions.ConfinementFrobeniusReciprocityContext",
+        "QOU.BraidKnot.EInfinityIdentificationsContext",
+        "QOU.Shared.MarkovTraceContext",
+        "QOU.BraidsAndKnots.QmnRecursiveMemoizedContext",
+        "QOU.Shared.OperatorSelectionLPContext",
+        "QOU.Information.ToffoliTransferMatrixContext",
+        "QOU.BraidKnot.NobleGasMultiOperator",
+        "QOU.BraidKnot.LevelSufficient",
+        "QOU.BraidKnot.ShellClosureMonotone",
+        "QOU.TMCorrespondence.MatrixChainEqBuildChains",
+        "QOU.ParticleInteractions.LpDualStabilityContext",
+        "QOU.BraidKnot.HasFiniteLPDuality",
+        "QOU.ParticleInteractions.ParityRegimeSelectionContext",
+        "QOU.ParticleInteractions.FourTermPairNucleonContext",
+        "QOU.BraidsKnots.SkeinMassFromLinkingContext",
+        "QOU.Archimedean.SkewSYT.ConvergenceBound",
+        "QOU.Archimedean.QHookBound.QIntRatioBoundSmall"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/ew_interface_knot.lean",
+        "folio/quantum-observable-universe/lean/QOU/Braiding/fermion_boson_knot_link.lean",
+        "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean",
+        "folio/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/terms_2_6_higher_operations.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/sorting_color_energy.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/UnstableAtom/decay_channel.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/schur_weyl_mass_decomposition.lean",
+        "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean",
+        "folio/quantum-observable-universe/lean/QOU/Hecke/InstanceH2.lean",
+        "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTrace.lean",
+        "folio/quantum-observable-universe/lean/QOU/Shared/MarkovTraceClaim.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/explicit_alpha_k_h4.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/qmn_recursive_memoized.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/wedderburn_bratteli_recursion.lean",
+        "folio/quantum-observable-universe/lean/QOU/Shared/OperatorSelectionLP.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/demazure_fiber_markov_trace.lean",
+        "folio/quantum-observable-universe/lean/QOU/Shared/ArchimedeanEval.lean",
+        "folio/quantum-observable-universe/lean/QOU/Information/toffoli_transfer_matrix.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/ElectronShell.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/LevelSufficiency.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean",
+        "folio/quantum-observable-universe/lean/QOU/Archimedean/TMCorrespondence.lean",
+        "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/LpDualityHypothesisClass.lean",
+        "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean",
+        "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidsKnots/skein_mass_from_linking.lean",
+        "folio/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean",
+        "folio/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean",
+        "folio/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "thm:hoefsmit-ew-cell-content",
+          "tsPath": "folio/quantum-observable-universe/knots-particles-confinement/hoefsmit-ew-cell-content.ts",
+          "joinKind": "module-docstring",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:fermion-boson-knot-link",
+          "tsPath": "folio/quantum-observable-universe/knots-particles-confinement/fermion-boson-knot-link.ts",
+          "joinKind": "module-stem",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:atomic-lp-stability",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/atomic-lp-stability.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:brane-tower-z-habiro",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/brane-tower-z-habiro.ts",
+          "joinKind": "module-docstring",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:spectral-sequence-h3-explicit",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/spectral-sequence-h3-explicit.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:terms-2-6-higher-operations",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/terms-2-6-higher-operations.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:sorting-color-energy",
+          "tsPath": "folio/quantum-observable-universe/measurement-observation/sorting-color-energy.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:unstable-atom-decay-channel",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:schur-weyl-mass-decomposition",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:confinement-frobenius-reciprocity",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:e-infinity-page-identifications",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/e-infinity-page-identifications.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "thm:jones-markov-trace",
+          "tsPath": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts",
+          "joinKind": "module-docstring",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:explicit-alpha-k-h4",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h4.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:qmn-recursive-memoized",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/qmn-recursive-memoized.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:wedderburn-bratteli-recursion",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "evidence-ledger-only-inflight-pr",
+          "inflightPRs": [
+            9296,
+            9305
+          ]
+        },
+        {
+          "label": "prop:demazure-fiber-markov-trace",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:toffoli-transfer-matrix",
+          "tsPath": "folio/quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:confinement-sdp",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/confinement-sdp.ts",
+          "joinKind": "module-docstring",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:level-sufficiency",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/level-sufficiency.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:shell-closure-stability",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/shell-closure-stability.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:lp-dual-stability",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "def:lp-duality-hypothesis-class",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "thm:parity-regime-selection",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/parity-regime-selection.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:four-term-pair-nucleon",
+          "tsPath": "folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "lem:skein-mass-from-linking",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "lem:feynman-markov-identification",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/feynman-markov-identification.ts",
+          "joinKind": "module-docstring",
+          "linkStatus": "evidence-ledger-only-inflight-pr",
+          "inflightPRs": [
+            9296,
+            9305
+          ]
+        },
+        {
+          "label": "conj:jet-convergence-classical-limit",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/jet-convergence-classical-limit.ts",
+          "joinKind": "module-docstring",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-30-gate-classes-admit-zero.lean",
+      "sha256": "647ea570981cafbc694486b5533eb0193e5e13be8b35a83759ce8665210eae40",
+      "lines": 140,
+      "category": "statement-strength-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-z9ws"
+      ],
+      "summary": "Adjudicates four formalize-first gate classes (`MassAnchorStableGateClass`, `MassDirectionSanityGateClass`, `DirectionSanityGateClass`, `BarEvenKernel`): confirms all four are refutable (not vacuous), but proves the additive `10 * target` band on both direction-sanity gates admits `0` and every `m ∈ [0, 1]` (`admits_everything_below_one`).",
+      "targetDeclarations": [
+        "QOU.Mass.MassSideKernelFormalize.MassAnchorStableGateClass",
+        "QOU.Mass.MassSideKernelFormalize.MassDirectionSanityGateClass",
+        "QOU.QBeta.DirectionSanityGate.DirectionSanityGateClass",
+        "QOU.QBeta.BarEvenKernelTypeclass.BarEvenKernel"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/appendix-formalisation-notes/mass-side-kernel-formalize-first-gates.lean",
+        "folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean",
+        "folio/quantum-observable-universe/appendix-formalisation-notes/q-beta-bar-even-kernel-typeclass.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "prop:mass-side-kernel-formalize-first-gates",
+          "tsPath": "folio/quantum-observable-universe/appendix-formalisation-notes/mass-side-kernel-formalize-first-gates.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "rem:q-beta-direction-sanity-gate",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "evidence-ledger-only-inflight-pr",
+          "inflightPRs": [
+            9296,
+            9305
+          ]
+        },
+        {
+          "label": "prop:q-beta-bar-even-kernel-typeclass",
+          "tsPath": "folio/quantum-observable-universe/appendix-formalisation-notes/q-beta-bar-even-kernel-typeclass.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-30-qns-carriers-are-refutable.lean",
+      "sha256": "bde1d50443508fa60666c8dc227044bfc8eaa8e39dda66edcba86bba06a481ad",
+      "lines": 173,
+      "category": "refutation",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-rq9n",
+        "qou-4670",
+        "qou-88nf"
+      ],
+      "summary": "Proves concrete parameter refutations for all five re-encoded q-NS carriers in `QOU.AlgebraicSubstrate.ConditionalClasses` (`¬ QAubinLions 0`, `¬ NSCounterexample 0`, `¬ RegularityBreakdown (Ioo 0 1)`, `¬ CriticalExponent e (-1)`, `¬ CriticalExponent 0 α`, `¬ BlowupYekutieli 0 False`) plus non-trivial satisfiability witnesses for four.",
+      "targetDeclarations": [
+        "QOU.AlgebraicSubstrate.QAubinLions",
+        "QOU.AlgebraicSubstrate.NSCounterexample",
+        "QOU.AlgebraicSubstrate.RegularityBreakdown",
+        "QOU.AlgebraicSubstrate.CriticalExponent",
+        "QOU.AlgebraicSubstrate.BlowupYekutieli"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:q-aubin-lions",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts",
+          "joinKind": "conditional-class",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:ns-counterexample",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts",
+          "joinKind": "conditional-class",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:regularity-breakdown",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts",
+          "joinKind": "conditional-class",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:critical-exponent",
+          "tsPath": "folio/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts",
+          "joinKind": "conditional-class",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:blowup-yekutieli",
+          "tsPath": "folio/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.ts",
+          "joinKind": "conditional-class",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-30-skein-mass-relation-is-false.lean",
+      "sha256": "53e0eedb7527d6d44d3ff75a8725beabca02d2dc102cc7d5f8b76c39c0625f5a",
+      "lines": 103,
+      "category": "refutation",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-z9ws"
+      ],
+      "summary": "Proves (`skein_pnd_identity_false_guard`) that the exact proton/neutron/deuteron skein equality `q · m_p − q⁻¹ · m_n = (√q − 1/√q) · m_d` formerly asserted by `QOU.HadronicMass.SkeinMassRelationHolds` is false by 0.41% (`194.5164` vs `195.3202`), guarding removal of the false hypothesis class.",
+      "targetDeclarations": [
+        "QOU.HadronicMass.SkeinMassRelationHolds",
+        "QOU.HadronicMass.skein_pnd_identity_false",
+        "QOU.HadronicMass.SkeinMassRelation"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/HadronicMass.lean",
+        "folio/quantum-observable-universe/observations/skein-mass-relation.lean",
+        "folio/quantum-observable-universe/observations/skein-mass-relation-proof.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "rem:skein-mass-relation",
+          "tsPath": "folio/quantum-observable-universe/observations/skein-mass-relation.ts",
+          "joinKind": "sibling-stem",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prf:skein-mass-relation",
+          "tsPath": "folio/quantum-observable-universe/observations/skein-mass-relation-proof.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "lem:nucleon-borromean-topology",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/nucleon-borromean-topology.ts",
+          "joinKind": "sibling-import",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-31-double-magic-conjecture-is-false.lean",
+      "sha256": "79a13301aaf6e596ffa0be9692464757d0c911a5a094e7a96d05ede84c36fa49",
+      "lines": 109,
+      "category": "refutation",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-z9ws"
+      ],
+      "summary": "Refutes the former `DoubleMagicConjecture.magic_iff_double_magic` field in `QOU.Interactions.LRFusion` (both at `emptyComposite` where `0 ∉ magicLadder` and across all `7 × 7` magic pairs where only `8 + 20 = 28` has a magic sum, excluding ⁴He, ¹⁶O, ⁴⁰Ca, ⁵⁶Ni, ²⁰⁸Pb), and guards the saturation fix `emptyComposite_not_isDoubleMagic`.",
+      "targetDeclarations": [
+        "QOU.Interactions.LRFusion.DoubleMagicConjecture",
+        "QOU.Interactions.LRFusion.IsDoubleMagic"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/Interactions/LRFusion.lean",
+        "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:diagrammatic-double-magic-lr-fusion",
+          "tsPath": "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-08-31-h2s-and-the-inert-radius-gate.lean",
+      "sha256": "d2c15cd569688b2b538ff1e51eb825197aa137ba28440d5a03cb1a50141983de",
+      "lines": 96,
+      "category": "statement-strength-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-z9ws"
+      ],
+      "summary": "Certifies `QOU.Molecular.H2SAngleS3HolonomyConjecture` as parametric and refutable (`¬ ... ⟨1, 0⟩`) while noting `d : H2SChiralData` is unpinned to the geometric angle/holonomy; and shows `RadiusOfConvergenceGateClass` (`q-beta-radius-of-convergence-gate.lean`) is inert because `axiom qBetaCandidatePoleLocation : ℝ` is an unconstrained global constant.",
+      "targetDeclarations": [
+        "QOU.Molecular.H2SAngleS3HolonomyConjecture",
+        "RadiusOfConvergenceGateClass",
+        "qBetaCandidatePoleLocation"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean",
+        "folio/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:h2s-angle-s3-braid-holonomy",
+          "tsPath": "folio/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:q-beta-radius-of-convergence-gate",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.ts",
+          "joinKind": "identifier-join",
+          "linkStatus": "evidence-ledger-only-inflight-pr",
+          "inflightPRs": [
+            9296,
+            9305
+          ]
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-09-04-borromean-quark-carriers-trivial.lean",
+      "sha256": "372c84b8bed5c85cc1b89429b59c5c3c2ad339263c352481499d99d1b031c52a",
+      "lines": 132,
+      "category": "vacuity-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Replicates all ten `class BorromeanQuark` declarations across the corpus (`T1..T10`) and constructs hypothesis-free trivial instances for every one, showing `[BorromeanQuark]` binders over unparameterised data fields do not constrain external objects.",
+      "targetDeclarations": [
+        "QOU.ParticleInteractions.BorromeanQuark",
+        "BorromeanQuark"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean",
+        "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean",
+        "folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean",
+        "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean",
+        "folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean",
+        "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean",
+        "folio/quantum-observable-universe/lean/QOU/Conjectures/ShellTransitionKnot.lean",
+        "folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean",
+        "folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean",
+        "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:orbital-fourier-decomposition",
+          "tsPath": "folio/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:orbital-space-normal-bundle",
+          "tsPath": "folio/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:borromean-quark",
+          "tsPath": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:reidemeister-mass-invariance",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:hecke-1d-irrep-closed-form-character",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:neutron-qvalue-symbolic",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/neutron-qvalue-symbolic.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "evidence-ledger-only-inflight-pr",
+          "inflightPRs": [
+            9311
+          ]
+        },
+        {
+          "label": "conj:shell-transition-knot",
+          "tsPath": "folio/quantum-observable-universe/knots-particles-confinement/shell-transition-knot.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:shell-structure-eigenvalues",
+          "tsPath": "folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "evidence-ledger-only-inflight-pr",
+          "inflightPRs": [
+            9311
+          ]
+        },
+        {
+          "label": "conj:hydrogen-shell-writhe",
+          "tsPath": "folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:q-beta-spectral-bridge",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-09-04-conjecture-carriers-round-two.lean",
+      "sha256": "88b71ceb1f08b569623db967f5f449c6b482371876bfa9db981ac6480481f9c7",
+      "lines": 101,
+      "category": "vacuity-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Round-two conjecture-carrier audit (`C1..C5`): exhibits trivial instances for `CrystalGraphRealization` (`PUnit` with `raising = none`, and `0` in `transfer-matrix-level-independence`), `CanonicalMarkovWeightsH3` (`y3 = 1, y21 = y111 = 0`), and `wigner-coefficient-derivation`'s `QIntegerMassFormula`; and proves `C5.not_inhabited : ¬ Nonempty QIntegerMassFormula` for the unrestricted `∀ B_AME : ℝ` copy in `mass-theory/q-integer-mass-formula.lean`.",
+      "targetDeclarations": [
+        "QOU.BraidKnot.CrystalGraphRealization",
+        "QOU.BraidKnot.CanonicalMarkovWeightsH3",
+        "QIntegerMassFormula"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/CrystalGraphRealization.lean",
+        "folio/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean",
+        "folio/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean",
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean",
+        "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean",
+        "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean",
+        "folio/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean",
+        "folio/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:crystal-graph-realization",
+          "tsPath": "folio/quantum-observable-universe/knots-particles-confinement/crystal-graph-realization.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:crystal-r-matrix-sub-lemma",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:crystal-isospin-degeneracy",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.ts",
+          "joinKind": "sibling-import",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:qbeta-per-block-chi-closed-forms",
+          "tsPath": "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor",
+          "tsPath": "folio/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts",
+          "joinKind": "sibling-import",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "conj:q-integer-mass-formula",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/q-integer-mass-formula.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-09-04-item5-carriers-inhabitability.lean",
+      "sha256": "1ab73573981a90c486a215958b0a902a844dda6ca18100d774ecb4f647a208f5",
+      "lines": 45,
+      "category": "vacuity-probe",
+      "disposition": "mixed-live-and-repaired",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-7yj0"
+      ],
+      "summary": "Applies the replicate-and-inhabit test (`qou-7yj0`) to two §3b-cond item-5 violations: inhabits `GBResidueSpectralSum` (`levelBound = 0`, `mass = 0`) and `MarkovTraceRecursiveReducerContext` (`Braid = Unit`, `reduce = id`), and uses parametric `BrunnianDecoupling` (`¬ BrunnianDecoupling 2 3 5`) as the negative control.",
+      "targetDeclarations": [
+        "QOU.BraidKnot.GBResidueSpectralSum",
+        "MarkovTraceRecursiveReducerContext",
+        "BrunnianDecoupling"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean",
+        "folio/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean",
+        "folio/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.lean",
+        "folio/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "conj:gs-spectral-decomposition-existence",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/gs-spectral-decomposition-existence.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "prop:gb-residue-spectral-sum",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "evidence-ledger-only-preexisting-attestation-conflict"
+        },
+        {
+          "label": "prop:markov-trace-recursive-reducer",
+          "tsPath": "folio/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "evidence-ledger-only-preexisting-attestation-conflict"
+        },
+        {
+          "label": "cor:knot-factor-borromean-composite",
+          "tsPath": "folio/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.ts",
+          "joinKind": "identifier-join",
+          "linkStatus": "evidence-ledger-only-preexisting-attestation-conflict"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-09-05-archimedean-twin-is-the-generic-at-R-probe.lean",
+      "sha256": "c031f4d7d393046c4006eea74f7a6014d762ed78cd15833178be24d0a1a1abf1",
+      "lines": 29,
+      "category": "twin-equivalence-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Proves `arch_is_generic_at_R` showing the library's `ℝ`-valued `speedOfLight` (`1 / (q - 1)`) equals the generic unit-typed sibling `speedOfLightGeneric` wherever `q - 1` is invertible, and `arch_is_junk_at_one` showing the library version silently returns `0` at `q = 1` where `speedOfLight` is documented to diverge.",
+      "targetDeclarations": [
+        "QOU.Information.speedOfLight"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/information-theory/information-speed-of-light.lean",
+        "folio/quantum-observable-universe/lean/QOU/MathConstants.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "def:information-speed-of-light",
+          "tsPath": "folio/quantum-observable-universe/information-theory/information-speed-of-light.ts",
+          "joinKind": "lean.ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-09-05-archimedean-twins-are-instantiations-probe.lean",
+      "sha256": "6c5352049a2cb2d6d27429ef68ff8f85cf6421b305d44f55ce307ac028d6331e",
+      "lines": 158,
+      "category": "twin-equivalence-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Proves across five generic-sibling vs `ℝ`-library twin pairs (`operationalEntropy`, `informationBandwidth`, `gravitationalConstant`/`cellEntropy`, `qReebVectorField`, `IsAlgebraicallyPrime`) that each archimedean definition is an instantiation of its generic sibling, while identifying division-by-zero junk points where unit hypotheses were dropped (`q = 0`, `q = 1`, and `q = 1/2` in `cellEntropyArch`).",
+      "targetDeclarations": [
+        "QOU.Information.operationalEntropy",
+        "QOU.Information.informationBandwidth",
+        "QOU.Information.gravitationalConstant",
+        "QOU.qReebVectorField",
+        "QOU.Interactions.AlgebraicPrimality.IsAlgebraicallyPrime"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/information-theory/operational-entropy.lean",
+        "folio/quantum-observable-universe/information-theory/information-bandwidth.lean",
+        "folio/quantum-observable-universe/information-theory/gravitational-constant.lean",
+        "folio/quantum-observable-universe/quantum-observable-universes/q-reeb-vector-field.lean",
+        "folio/quantum-observable-universe/nuclear-interactions/algebraic-primality.lean",
+        "folio/quantum-observable-universe/lean/QOU/MathConstants.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "def:operational-entropy",
+          "tsPath": "folio/quantum-observable-universe/information-theory/operational-entropy.ts",
+          "joinKind": "manuscript-ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "def:information-bandwidth",
+          "tsPath": "folio/quantum-observable-universe/information-theory/information-bandwidth.ts",
+          "joinKind": "manuscript-ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "def:gravitational-constant",
+          "tsPath": "folio/quantum-observable-universe/information-theory/gravitational-constant.ts",
+          "joinKind": "manuscript-ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "ex:q-reeb-vector-field",
+          "tsPath": "folio/quantum-observable-universe/quantum-observable-universes/q-reeb-vector-field.ts",
+          "joinKind": "decl-shape",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "def:algebraic-primality",
+          "tsPath": "folio/quantum-observable-universe/nuclear-interactions/algebraic-primality.ts",
+          "joinKind": "decl-shape",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-09-05-markov-disjoint-stabilisation-probe.lean",
+      "sha256": "3b45e0f0c2d8e0604278ab5cf9468d16e90db4c2b72fd880345e43f6e105256a",
+      "lines": 18,
+      "category": "vacuity-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Imports `QOU.BraidKnot.MarkovAxiomsPrimitive` and proves `probe_no_instance_needed` and `probe_holds_for_any_function`: the existential conclusion `∀ τ_x, ∃ τ_x_stab, τ_x_stab = τ_x * markovZax u` of `MarkovTraceAxioms_implies_disjoint_stabilisation` holds by `rfl` without using `[MarkovTraceAxioms u]`.",
+      "targetDeclarations": [
+        "QOU.BraidKnot.MarkovTraceAxioms",
+        "QOU.BraidKnot.MarkovTraceAxioms_implies_disjoint_stabilisation"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "rem:markov-trace-inductive-limit",
+          "tsPath": "folio/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.ts",
+          "joinKind": "sibling-import",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-09-05-markov-trace-axioms-triviality-probe.lean",
+      "sha256": "4e1c5629acf9417d62eff14e2034b696e6126079de7a2323de9dadd3e4e8fa44",
+      "lines": 18,
+      "category": "vacuity-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Imports `QOU.BraidKnot.MarkovAxiomsPrimitive` and proves `probe_trivially_inhabited`: `MarkovTraceAxioms u` is inhabited for any field element `u` by `⟨1, rfl, markovZax u, rfl⟩`, making downstream theorems such as `disjoint_product_factorisation` unconditional.",
+      "targetDeclarations": [
+        "QOU.BraidKnot.MarkovTraceAxioms",
+        "QOU.BraidKnot.disjoint_product_factorisation"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "rem:markov-trace-inductive-limit",
+          "tsPath": "folio/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.ts",
+          "joinKind": "sibling-import",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-09-05-two-of-the-four-junk-points-are-unreachable-probe.lean",
+      "sha256": "c1ea6b0c8a629751eeab2ac2ace2ce09dc6e94edab4046c883decb4eb210302e",
+      "lines": 87,
+      "category": "twin-equivalence-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf"
+      ],
+      "summary": "Refines `2026-09-05-archimedean-twins-are-instantiations-probe.lean`: proves that `field_ge_one : 1 ≤ field p` on `QOU.ArchimedeanSubstrateField` (`SubstrateParameter.lean`) makes `q = 0` (`operationalEntropy`) and `q = 1/2` (`gravitationalConstant`/`S_cell`) unreachable, while `q = 1` IS reachable (`classicalSubstrate`) so `speedOfLight` and `informationBandwidth` returning `0` at `q = 1` remain live boundary defects.",
+      "targetDeclarations": [
+        "QOU.ArchimedeanSubstrateField",
+        "QOU.Information.speedOfLight",
+        "QOU.Information.informationBandwidth",
+        "QOU.Information.operationalEntropy",
+        "QOU.Information.gravitationalConstant"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/SubstrateParameter.lean",
+        "folio/quantum-observable-universe/lean/QOU/MathConstants.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "def:information-speed-of-light",
+          "tsPath": "folio/quantum-observable-universe/information-theory/information-speed-of-light.ts",
+          "joinKind": "manuscript-ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "def:information-bandwidth",
+          "tsPath": "folio/quantum-observable-universe/information-theory/information-bandwidth.ts",
+          "joinKind": "manuscript-ref",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        },
+        {
+          "label": "def:substrate-parameter",
+          "tsPath": "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter.ts",
+          "joinKind": "module-docstring",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/2026-09-12-prop-universe-carrier-shape.lean",
+      "sha256": "311356add997397cff38efea7b9b300dba56153b6e57e4f352fd6ca96ba8dbf1",
+      "lines": 76,
+      "category": "vacuity-probe",
+      "disposition": "live-finding",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-tsnp"
+      ],
+      "summary": "Abstract companion to `2026-08-23-free-prop-field-triviality-probe.lean` and `QOU.ProofHygiene.SelfAssumingContexts`: proves `Nonempty PropUniverseContext ∧ ¬ Nonempty (PropFieldContext False)` and shows adding an `all_hold : p ∧ q` conjunction over `Prop`-typed fields (`PropUniverseWithConjunction`, as in `HabiroFlowSolution`) remains trivially inhabited.",
+      "targetDeclarations": [
+        "ProbePropUniverse.PropUniverseContext",
+        "ProbePropUniverse.PropUniverseWithConjunction",
+        "QOU.Habiro.HabiroFlowSolution"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/lean/QOU/ProofHygiene/SelfAssumingContexts.lean",
+        "folio/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "rem:generating-functions-solve-reeb-flow",
+          "tsPath": "folio/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.ts",
+          "joinKind": "companion-probe",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    },
+    {
+      "auditFile": "docs/audits/artifacts/2026-08-28-eigenvalue-norm-sq-axiom-refutation.lean",
+      "sha256": "056b4f89743978e003bfbae2185f01bba0fc256a911fba1652d1fe59a684a8cc",
+      "lines": 86,
+      "category": "refutation",
+      "disposition": "repaired-guard",
+      "beans": [
+        "qou-x60n",
+        "qou-y8zf",
+        "qou-lsib"
+      ],
+      "summary": "Machine-checked refutation (`axiom_is_false : False`) of the former `eigenvalue_norm_sq_axiom` in `q-geometric-langlands/hasse-weil-bound.lean`: omitting `eigenvalues_ne_zero` allowed the all-zeros Frobenius eigenvalue witness to satisfy `(q : ℂ) / 0 = 0` and derive `0 = q` against `0 < q` (since repaired by adding `eigenvalues_ne_zero` and discharging the axiom).",
+      "targetDeclarations": [
+        "QOU.AlgebraicSubstrate.LocalQZetaFunction",
+        "eigenvalue_norm_sq_axiom",
+        "QOU.AlgebraicSubstrate.hasse_weil_bound"
+      ],
+      "targetLeanFiles": [
+        "folio/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean"
+      ],
+      "targetBlocks": [
+        {
+          "label": "thm:hasse-weil-bound",
+          "tsPath": "folio/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.ts",
+          "joinKind": "sibling-path",
+          "linkStatus": "authorNotes-and-evidence-ledger"
+        }
+      ]
+    }
+  ]
+}

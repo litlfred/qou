@@ -50,4 +50,12 @@ export default proposition({
     "axial-distance",
     "hecke-branching",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-04-conjecture-carriers-round-two.lean` (`C1`) inhabits the sibling `CrystalGraphRealization` copy on `PUnit`.",
+      see: "docs/audits/2026-09-04-conjecture-carriers-round-two.lean",
+    },
+  ],
 });

@@ -10,6 +10,12 @@ export default conjecture({
   },
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-04-borromean-quark-carriers-trivial.lean` (`T3`) shows the canonical `BorromeanQuark` class is inhabited outright via `is_baryon_realisation := True`.",
+      see: "docs/audits/2026-09-04-borromean-quark-carriers-trivial.lean",
+    },
+    {
       kind: "note",
       date: "2026-07-04",
       body:

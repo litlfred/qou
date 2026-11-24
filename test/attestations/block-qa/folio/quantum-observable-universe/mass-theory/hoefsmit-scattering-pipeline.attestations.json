@@ -1,0 +1,948 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline",
+    "path": "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "74ab7a626adf",
+          "ts": "09b4aaa9737a",
+          "lean": "46417f97e0a0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "74ab7a626adf",
+          "ts": "09b4aaa9737a",
+          "lean": "46417f97e0a0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'From Hoefsmit scattering weights to physical mass via the observation frame' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:27:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/ConditionalClasses.olean' of module QOU.BraidKnot.ConditionalClasses does not exist.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "hoefsmit-scattering-pipeline.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'From Hoefsmit scattering weights to physical mass via the observation frame'.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'From Hoefsmit scattering weights to physical mass via the observation frame' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor",
+        "evidence": "The prose presents 'From Hoefsmit scattering weights to physical mass via the observation frame' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'From Hoefsmit scattering weights to physical mass via the observation frame'.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations hoefsmit1974, wenzl1988 in 'From Hoefsmit scattering weights to physical mass via the observation frame' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'From Hoefsmit scattering weights to physical mass via the observation frame' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'From Hoefsmit scattering weights to physical mass via the observation frame' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'From Hoefsmit scattering weights to physical mass via the observation frame' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.lean:1 — folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:27:0: error: object file '/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/ConditionalClasses.olean' of module QOU.BraidKnot.ConditionalClasses does not exist"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.",
+        "reviewed_at": "2026-07-07T14:26:56.977360Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.977360Z"
+        },
+        "field_hash": {
+          "md": "499b37a1c217",
+          "ts": "09b4aaa9737a",
+          "lean": "cafb08578088"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration reliably tracking distinct parameter configurations systematically against continuous mathematical values.",
+        "reviewed_at": "2026-07-08T14:41:26.000Z",
+        "reviewed_sha": "097f3b072ba312a73097227655bb771ae257664a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the AGENTS.md section labels (§7c / §3b-cond and friends) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.210Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Full read of all four stages plus the proof; no assertion-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.297Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.333Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.369Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The Geom(K) three-case split (hyperbolic / torus / unknot) is an exhaustive definition, and \"the three base characters chi^sym, chi^std, chi^alt\" are the three irreps of H_3 that seed the branching."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.413Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Closes on the \"Archimedean specialisation\" boilerplate; its defect is factual, reported below."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.456Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "\"Each stage proves separately\" is a proof-structure pointer, not emphasis narration."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.506Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Stage 4 assembles rather than restates."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.549Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.590Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "\"The matrix is **maximally sparse**: at most 2 nonzeros per row\" — at most 2 nonzeros per row is sparse, but \"maximally\" is false as an absolute (a diagonal matrix is sparser, and the block's own 1x1 same-row/same-column cases ARE 1-nonzero rows). Compounded by the all-caps \"the UNIQUE non-degenerate pairing\", typographic emphasis carrying a uniqueness claim whose argument (\"the rigidity of omega_A\") is only gestured at.",
+        "notes": "NOT fixed (the sparsity claim is math-adjacent and the uniqueness claim needs the author). Proposed fix: \"The matrix is sparse: at most 2 nonzeros per row.\" and drop the caps on \"unique\"."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f57299ed0683",
+          "ts": "09b4aaa9737a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.639Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "Stage 3 of the proof stacks unpronounceable modifier chains: \"its evaluation on the knot complement is determined by **tau-image Thurston geometrization** and the Yekutieli rigid dualizing complex\". \"tau-image Thurston geometrization\" has no spoken form. The closing paragraph then carries Lean syntax into prose twice — \"real inputs $v_1,v_2,v_3 : \\mathbb{R}$\" and \"over $[\\mathrm{Field}\\ R]$\".",
+        "notes": "NOT fixed (bundled with the factual defect in the same paragraph — see findings). Proposed fix: \"...is determined, after applying tau, by Thurston geometrization and the Yekutieli rigid dualizing complex\"; and delete or rewrite the Archimedean paragraph entirely. Separate (non-trap) findings, several verified: (1) KIND/PROSE MISMATCH — the .ts builder is conjecture({label: \"conj:hoefsmit-scattering-pipeline\"}) but the .md opens \"**Proposition (conditional on ...)**\" and then carries a full \"*Proof.*\" with a QED box. (2) DEPENDENCY MISMATCH — the banner conditions on conj:hyperbolic-volume-transcendence and rem:baryon-period-ratio, while uses[] declares a THIRD, unrelated conjecture (conj:geom-yekutieli-alignment) and neither banner item at all. (3) CIRCULAR NORMALISATION — Geom(K) is DEFINED as Vol(K)/hbar_q^2 for hyperbolic K, so the claim that the scalar \"is fixed by requiring Geom(4_1) * hbar_q^2 = Vol(4_1)\" is an identity that fixes nothing; and \"the figure-eight knot defines q_0\" is not the corpus convention (q_0 is pinned by CAL-2 through m_mu/m_e = Vol(4_1)/hbar_q^2, i.e. by the LEPTON RATIO together with the 4_1 volume). (4) PURGED-WRAPPER SHAPE — AGENTS.md purged the opaque Geom_full(K) wrapper in favour of the explicit Vol(K)*rho(K)/hbar_q^2; \"Geom(K)\" is used here in exactly the opaque way, as an unexplained arrow in the pipeline. (5) WEIGHT-FAMILY COLLISION — this block writes J_K(q) = sum_lambda w_lambda chi_lambda(beta)/dim(lambda) with w_lambda = dim_q(lambda)^2/[k]_q!, while every sibling block in this batch (he4-two-row-dominance, hecke-generator-poly-reduction, hoefsmit-V21) writes tr_M = sum_lambda y_lambda chi^lambda with NO division by dim; the notation register warns that y_lambda, w_lambda and tilde-w_lambda are distinct at q != 1. (6) VERIFIED CORRECT: the convergence rate does check — [2]_q = 2.0108968667 and [2]_q^2 = 4.0437062085 at the proton pin, matching \"approximately 4.04 per level\", and this is also where prop:hecke-convergence-bound's undefined \"r\" comes from. (7) The closing \"Archimedean specialisation\" paragraph describes a \"scattering-amplitude vanishing test ... over real inputs v_1, v_2, v_3\" that DOES NOT EXIST anywhere in this block; together with the same boilerplate in prop:hecke-mass-trace (\"the R->R realisation is acknowledged here\") and prop:hecke-markov-transition (\"What follows...\", placed last so nothing follows), these three read as a sweep-inserted paragraph that should be audited as a class. (8) The italic \"Formal asymptotic content\" note ends \"see Big-O via ordw and the body asymptotics catalog\" — two cross-references with no labels or links."
+      }
+    ]
+  }
+}

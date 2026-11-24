@@ -2,6 +2,12 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-08-24-undecided-carrier-witnesses.lean` exhibits an unconditional real witness (`s := eps`, `s0 := 1`) inhabiting `QOU.AlgebraicSubstrate.PvsNPQou`.",
+      see: "docs/audits/2026-08-24-undecided-carrier-witnesses.lean",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): It is formulated in the Reeb--surreal framework but lacks a Lean formalisation. A formal proof would ..." },
     {
       kind: "note",

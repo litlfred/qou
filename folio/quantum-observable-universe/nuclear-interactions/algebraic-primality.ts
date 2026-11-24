@@ -15,4 +15,12 @@ export default definition({
     "confinement-sdp",
     "naming",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation twin-audit (`qou-x60n`): `2026-09-05-archimedean-twins-are-instantiations-probe.lean` (`algPrime_arch_iff_generic`) proves equivalence of the `n ≥ 1` and `n ≠ 0` formulations of `IsAlgebraicallyPrime`.",
+      see: "docs/audits/2026-09-05-archimedean-twins-are-instantiations-probe.lean",
+    },
+  ],
 });

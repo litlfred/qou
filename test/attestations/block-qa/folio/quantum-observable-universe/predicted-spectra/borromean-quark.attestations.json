@@ -1,0 +1,1484 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/borromean-quark",
+    "path": "folio/quantum-observable-universe/predicted-spectra/borromean-quark"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "d7932768cbe0",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "d7932768cbe0",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f183bbd16534",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:53.466Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. Conjecture on quark structure sits in predicted-spectra with the T(2,n) spectrum table; placement unchanged by the edit."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false claims identified in 'Quarks as Borromean-linked unknots in the exceptional divisor': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Only the skein-consistency paragraph changed; it now states the decomposition as conditional and claims nothing the cited blocks do not supply."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The claims in 'Quarks as Borromean-linked unknots in the exceptional divisor' are non-vacuous as they make concrete conjectures about 'Quarks are not fundamental knots.  A quark is a **neutrino (...'.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. The conjecture names concrete objects (B_3 of three unknots in colour tubes, Hopf binding) and is falsifiable; unchanged."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. No step of the skein paragraph assumes its conclusion; the decomposition is now an explicit hypothesis."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The prose in 'Quarks as Borromean-linked unknots in the exceptional divisor' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor",
+        "evidence": "The prose in 'Quarks as Borromean-linked unknots in the exceptional divisor' presents the result as established, but the Lean formalization is incomplete (has sorry)."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. Resolved: the unknot/Hopf decomposition is now stated as conditional on the specialisation that rem:skein-generation-hadron-reading says prop:skein-generation does not fix."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. The edit adds no parameter; the open specialisation (a = 1 vs a = q) is now named rather than hidden."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "severity": "minor",
+        "evidence": "Independent QA of #8908 at f60933ebae. The displayed mass decomposition is presented as following from the cited skein resolution. The cited remark leaves the required specialisation (a = 1 vs a = q) open, so the step from module resolution to a mass polynomial is not supplied by the citation. It was not supplied by the previous target prop:terminal-resolution either."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. Resolves the #8908 warn: the paragraph now says the skein reading needs a specialisation in which the Hopf link is not identified with the unknot, that prop:skein-generation does not fix one, and that the displayed decomposition is conditional on that choice. The inference is no longer presented as following from the citation."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean uses a class-conjecture pattern, matching the conjectural nature of 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Lean carrier QOU.ParticleInteractions.BorromeanQuark is partial by its own authorNote (net-coefficient sub-aspect only); the md edit does not touch that scope. Unchanged."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No citations are present in 'Quarks as Borromean-linked unknots in the exceptional divisor', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "severity": "minor",
+        "evidence": "Independent QA of #8908 at f60933ebae. The retargeted paragraph says the hadron reading of skein generation 'writes the mass of a hadronic link as a polynomial in unknot and Hopf-link masses' and displays sum_j P_j(q) m(nu) + sum_k Q_k(q) m(L_H). rem:skein-generation-hadron-reading gives the mass reading as Q(q) m(L_Hopf) + sum_i Vol(K_i)/hbar_q^2 via lem:skein-mass-from-linking, and says the specialisation in which it holds 'is not fixed by the proposition'. prop:skein-generation resolves every link to a multiple of the unknot alone. The cited pair supports the decomposition only conditionally, and in a different form. Conjecture block, so minor."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. The #8908 issue is resolved: the citation of rem:skein-generation-hadron-reading now matches the remark, which itself says the specialisation is not fixed. Residual, minor: the remark gives the mass reading as Q(q) m(L_Hopf) + sum Vol(K_i)/hbar_q^2, while this paragraph displays sum_j P_j(q) m(nu) + sum_k Q_k(q) m(L_H). The two agree only after Vol(unknot) = 0 and m(nu) ~ 0, which the paragraph applies one sentence later."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "071d159a6d32",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Key terms and symbols in 'Quarks as Borromean-linked unknots in the exceptional divisor' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "file:103: This explains why quarks are never observed in isolation... Pulling a quark out... unlinks the remaining two",
+        "notes": "While the Borromean unlinking property is mathematically exact, mapping it 1:1 to QCD color confinement and hadronization is a significant interpretative leap that relies on equating topological breakage with particle pair-production thresholds."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Carried over: \"re-confines\" and the extraction/pair-creation sentence in the habitat section remain informal; not touched by this PR."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The algebraic and logical relations in 'Quarks as Borromean-linked unknots in the exceptional divisor' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. No numeric comparison changed. The 99 % / 10 MeV QCD sentence is unchanged context."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The physical concepts described in 'Quarks as Borromean-linked unknots in the exceptional divisor' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. No change to physical content beyond scoping the skein decomposition."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean:1 — folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean:35:16: error(lean.unknownIdentifier): Unknown constant `Finset.univ.sum`"
+      },
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'borromean-quark.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. No computation or Lean statement changed for this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations in 'Quarks as Borromean-linked unknots in the exceptional divisor' remain unproven and are represented as sorry stubs in the formalization.",
+        "severity": "minor",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Conjecture remains open; Lean carrier is partial. The PR made the skein paragraph more honest. Observation for the owner: the electron ruling gives the electron a Hopf-link closure, and this block names the gluon as the Hopf link T(2,2); two particles share a closure link type. Not a ruling violation, but a referee would ask."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote observations_seq1.md. Eliminated 'we establish' passivity where possible, replaced 'this chapter' with 'we', simplified structural signposting.",
+        "reviewed_at": "2026-07-07T14:26:56.688728Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.688728Z"
+        },
+        "field_hash": {
+          "md": "44ccc8f39b34",
+          "ts": "cfa37e0d3c3e",
+          "lean": "be105ada9166"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. The rewritten paragraph is one sentence longer but reads in order: premise, missing choice, conditional decomposition."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:57:25.000Z",
+        "reviewed_sha": "31e536b4ef4ec3a488f6abb959dcfccd04fc3190",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:53.945Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "'not fundamental knots', 'Mass from linking, not from constituents', 'T(2,2), not T(2,7)' are substantive framework contrasts; 'Crossing orientation is not writhe' is load-bearing disambiguation"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:53.981Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no rhetorical pivot construction found"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.072Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no load-bearing em-dash construction found"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.123Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no compulsive triple construction found"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.168Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no closing aphorism construction found"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.211Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no meta-commentary construction found"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.252Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "final Skein-section sentence restated the preceding two sentences; replaced by a one-line consistency claim (same edit as trap-superlative)"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.300Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no performed warmth construction found"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.354Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "'perfectly aligns' was unqualified maximum-strength; removed in closer rewrite",
+        "notes": "fixed: 'The assertion that the vast majority of hadronic mass ... perfectly aligns with the Borromean volume contributing through the Skein resolution.' -> 'This is consistent with the Borromean volume entering the hadronic mass through the Skein resolution.'"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "61798d4c5983",
+          "ts": "cfa37e0d3c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:54.407Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "nested-gerund closer ('assertion that ... derives ... multiplying ... aligns with ... contributing') resolved by the same closer rewrite"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-citations-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:55:08.000Z",
+        "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. Added prop:skein-generation and rem:skein-generation-hadron-reading to uses[]."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. uses[] lists prop:skein-generation and rem:skein-generation-hadron-reading, the two blocks the paragraph cites."
+      }
+    ]
+  }
+}

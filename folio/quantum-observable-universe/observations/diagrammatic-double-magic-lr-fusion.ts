@@ -35,6 +35,12 @@ export default conjecture({
     "open-problem",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation refutation & regression guard (`qou-x60n`, `qou-z9ws`): `2026-08-31-double-magic-conjecture-is-false.lean` proves `emptyComposite_not_isDoubleMagic` and `magic_sum_is_almost_never_magic`, guarding the removal of `magic_iff_double_magic` and the saturation condition on `IsDoubleMagic`.",
+      see: "docs/audits/2026-08-31-double-magic-conjecture-is-false.lean",
+    },
     { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh; Lean talk out of prose): The Lean carrier proves this (`not_doubleMagicConjecture`), with the conjugation symmetry kept as a hypothesis of the class because it is not yet formalised there." },
   ],
 });

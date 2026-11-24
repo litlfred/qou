@@ -21,4 +21,12 @@ export default proposition({
     "frobenius-stability",
     "multi-operator-binding",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` (`shellClosureMonotone_always`) shows `local instance : LE R_q := ⟨fun _ _ => True⟩` makes `ShellClosureMonotone` hold trivially for all `(D_prev, D, q)`.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+  ],
 });

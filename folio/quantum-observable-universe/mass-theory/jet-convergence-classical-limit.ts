@@ -24,6 +24,12 @@ export default conjecture({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation verification (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` (`HandAdjudicated7`) certifies `ConvergenceBound` (`SkewSYT`) and `QIntRatioBoundSmall` (`QHookBound`) are non-vacuous and refutable.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+    {
+      kind: "note",
       date: "2026-08-07",
       body:
         "**§7c base-ring note (archimedean specialisation).** " +

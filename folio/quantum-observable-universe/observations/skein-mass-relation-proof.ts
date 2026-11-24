@@ -6,6 +6,12 @@ export default proof({
   uses: ["rem:skein-mass-relation"],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation refutation guard (`qou-x60n`, `qou-z9ws`): `2026-08-30-skein-mass-relation-is-false.lean` (`skein_pnd_identity_false_guard`) guards removal of the false `SkeinMassRelationHolds` class from `QOU.HadronicMass`.",
+      see: "docs/audits/2026-08-30-skein-mass-relation-is-false.lean",
+    },
+    {
       kind: "refined-framing",
       date: "2026-11-21",
       body:

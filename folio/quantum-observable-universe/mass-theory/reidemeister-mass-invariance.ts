@@ -19,6 +19,18 @@ export default conjecture({
   uses: ["rem:hydrogen-orbitals", "conj:borromean-quark"],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-are-inhabited-by-zero.lean` records the zero-witness against the retired library `ReidemeisterMassInvarianceContext` wrapper.",
+      see: "docs/audits/2026-08-30-context-classes-are-inhabited-by-zero.lean",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-04-borromean-quark-carriers-trivial.lean` (`T4`) inhabits the local `BorromeanQuark` `Prop` carrier with `V = 1`.",
+      see: "docs/audits/2026-09-04-borromean-quark-carriers-trivial.lean",
+    },
+    {
       kind: "status",
       date: "2026-06-07",
       body:

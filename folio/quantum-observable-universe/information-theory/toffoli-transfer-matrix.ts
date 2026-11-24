@@ -20,6 +20,12 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits `ToffoliTransferMatrixContext` at `q_real = 1` with `P_flip = 0` and `P_7_7 = 1/2`.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
+    {
       kind: "note",
       date: "2026-08-07",
       body:

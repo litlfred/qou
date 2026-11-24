@@ -1,0 +1,1572 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation",
+    "path": "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "0bbea5c7c9d6",
+          "lean": "62ad689f3763",
+          "lean_statement": "c1de1b155598"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:32.872Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "wigner-coefficient-derivation.lean:39-42 `axiom wigner_coefficient_axiom ... (hq : q₀ = 1.109978595554181) (hme : m_e = 0.51099895069) : |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03` (exact check: 67.1008, rel 0.026056 — true, so not inconsistent, but a data comparison, not the .md:2-8 claim); :74-75 `∃ r : ℝ, 0 ≤ r ∧ ∃ value : ℝ, value = r * m_e` is trivially inhabited; ℝ gratuitous for the algebraic [5]_q!",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "0bbea5c7c9d6",
+          "lean": "62ad689f3763",
+          "lean_statement": "c1de1b155598"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:24.270Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: a label conj:q-integer-mass-formula replaced by its title. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: wigner-coefficient-derivation.lean:39-42 `axiom wigner_coefficient_axiom ... (hq : q₀ = 1.109978595554181) (hme : m_e = 0.51099895069) : |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03` (exact check: 67.1008, rel 0.026056 — true, so not inconsistent, but a data comparison, not the .md:2-8 claim); :74-75 `∃ r : ℝ, 0 ≤ r ∧ ∃ value : ℝ, value = r * m_e` is trivially inhabited; ℝ gratuitous for the algebraic [5]_q!"
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). Removing the empirical axiom is correct. The Lean now proves only the definitional unfolding of qFactorial 5 (true by unfold + Finset.prod_range_succ), which says nothing about the Wigner term; the .md claims the Wigner term coefficient IS [5]_q! m_e conditional on conj:q-integer-mass-formula, but the Lean neither carries that conjecture as a class hypothesis (section 3b-cond) nor mentions the Wigner term. Disclosed in the new authorNote. Separately, the 2026-10-11 authorNote still says in the present tense that the theorem \"is discharged by wigner_coefficient_axiom\", now false. qFactorial / wignerCoefficient stay over R for an algebraic identity (section 7c, pre-existing).",
+        "severity": "major"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free.",
+        "notes": "Consistent with proof-narrative-lean-equiv fail/major on this block: the Lean does not derive the .md claim (structure extensionality / rfl on a definition / weaker statement / unfolding / unconstrained context, as recorded there). Disclosed in the block's authorNotes or Lean docstring."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free.",
+        "notes": "Consistent with proof-narrative-lean-equiv fail/major on this block: the Lean does not derive the .md claim (structure extensionality / rfl on a definition / weaker statement / unfolding / unconstrained context, as recorded there). Disclosed in the block's authorNotes or Lean docstring."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract definition securely structuring categorical bounds practically within distinct defined boundaries.",
+        "reviewed_at": "2026-07-08T14:47:30.000Z",
+        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "8828e3428f42",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). Declarative scholarly register."
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "8828e3428f42",
+          "ts": "b0ceb4547e7d",
+          "lean": "67c7d554307f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No filler, hype or stock AI phrasing."
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the AGENTS.md section labels (§7c / §3b-cond and friends) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.757Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.758Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.758Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.758Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.758Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.758Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.758Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.758Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.758Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "66aeaaa16380",
+          "ts": "b0ceb4547e7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.758Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. Conditional-on-conjecture banner present and correct; terminal Archimedean-specialisation paragraph is the corpus template and is not scored."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "720927539a62",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:01.000Z",
+        "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
+        "evidence": "Full read after #8888 commit 2ec8e9db (C12): wigner_coefficient_axiom and the 68.896 MeV bound at q0 = 1.109978595554181 deleted; wigner_coefficient now proves [5]_q! m_e = [1]..[5] m_e (lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound]). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance at this head; the earlier verdict stands."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "f41276ca130c",
+          "ts": "743bc6816bba",
+          "lean": "0d124394d86f",
+          "lean_statement": "88bb5f3396f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Re-read at b7fc183094e: ced00016 fixes the 2026-10-11 authorNote (axiom discharged the theorem only until 2026-11-21). .md unchanged; Lean wigner_coefficient is the unfolding of qFactorial 5, sorry-free. No instance."
+      }
+    ]
+  }
+}

@@ -22,6 +22,12 @@ export default proposition({
     validation: "not_checked",
   },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation regression guard (`qou-x60n`): `2026-08-24-parallelogram-axioms-inconsistent.lean` records the two `0 = 2πi` refutation routes against pre-repair `QOU.Mathlib.ParallelogramContour` and verifies usability of the repaired entire/positively-oriented contour theorems.",
+      see: "docs/audits/2026-08-24-parallelogram-axioms-inconsistent.lean",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",

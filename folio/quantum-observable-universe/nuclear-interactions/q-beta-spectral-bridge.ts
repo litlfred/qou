@@ -31,6 +31,12 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-04-borromean-quark-carriers-trivial.lean` (`T10`) inhabits the local `BorromeanQuark` carrier with `Q_beta_A = Q_beta_B = 0`.",
+      see: "docs/audits/2026-09-04-borromean-quark-carriers-trivial.lean",
+    },
+    {
       kind: "status",
       date: "2026-11-21",
       body:

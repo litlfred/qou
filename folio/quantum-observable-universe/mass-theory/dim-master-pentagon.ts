@@ -29,4 +29,12 @@ export default conjecture({
     "axiom-class",
     "open-problem",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-08-23-free-prop-field-triviality-probe.lean` records that bare `Prop`-valued fields on `DimMasterPentagon` were trivially inhabited by `⟨True⟩`.",
+      see: "docs/audits/2026-08-23-free-prop-field-triviality-probe.lean",
+    },
+  ],
 });
