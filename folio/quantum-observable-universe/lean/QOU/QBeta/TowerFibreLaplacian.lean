@@ -44,6 +44,7 @@ import Mathlib.Algebra.Field.Basic
 import Mathlib.Algebra.GroupWithZero.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import QOU.MathlibExt.QIntegerCanonical
 import QOU.QBeta.TowerGeometricSum
 
 namespace QOU.QBeta.TowerFibre
@@ -54,6 +55,11 @@ variable {R : Type*} [Field R]
 
 /-- The balanced `q`-integer `[k]_q = (qᵏ - q⁻ᵏ) / (q - q⁻¹)`, for `k : ℤ`. -/
 def qInt (q : R) (k : ℤ) : R := (q ^ k - q⁻¹ ^ k) / (q - q⁻¹)
+
+/-- **Bridge to the canonical `ℤ`-indexed balanced bracket** (`qou-qint`). -/
+theorem qInt_eq_canonical (q : R) (k : ℤ) :
+    qInt q k = QOU.QInteger.qIntBalZ q k := by
+  simp [qInt, QOU.QInteger.qIntBalZ, zpow_neg]
 
 /-- The symmetric `q`-derivative `D_q f (z) = (f(qz) - f(q⁻¹z)) / ((q - q⁻¹) z)`. -/
 def qDeriv (q : R) (f : R → R) (z : R) : R :=

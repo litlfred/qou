@@ -1080,6 +1080,12 @@ brick-2 contract in `Specht.specht_isSimple`.  That stub has since been deleted
 is gone: the statement holds for the empty diagram too.  Dropping it matters
 downstream — `isCompl_specht_perp` below could not be stated for every `μ` while
 its input demanded a nonemptiness proof that `μ = ∅` cannot supply.
+
+**`[CharZero k]` is load-bearing — DO NOT WEAKEN (bean `qou-73kb`, Category 1).**
+The statement is **false** in positive characteristic `p ≤ n`: the Specht Gram
+determinant is a product of hook lengths, which vanishes mod `p` whenever `μ` is
+not `p`-core, giving `S^μ ⊓ (S^μ)ᗮ ≠ ⊥` (the radical quotiented out in James's
+`D^μ = S^μ / (S^μ ∩ (S^μ)ᗮ)` theory).
 -/
 theorem specht_form_nondegenerate {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     SpechtSubmodule (k := k) μ ⊓ spechtPerp (k := k) μ = ⊥ := by
@@ -1182,7 +1188,11 @@ Mathlib supplies the implication
 (`LinearMap.BilinForm.isCompl_orthogonal_of_restrict_nondegenerate`); what was
 missing until §4.4 was its hypothesis, non-degeneracy of the form restricted to
 `S^μ`, which over a general characteristic-zero field is exactly
-`specht_form_nondegenerate`. -/
+`specht_form_nondegenerate`.
+
+**`[CharZero k]` is load-bearing — DO NOT WEAKEN (bean `qou-73kb`, Category 1).**
+False in positive characteristic `p ≤ n`: when a hook length of `μ` is divisible
+by `p`, `S^μ ⊓ (S^μ)ᗮ ≠ ⊥` and `M^μ` does not split as `S^μ ⊕ (S^μ)ᗮ`. -/
 theorem isCompl_specht_perp {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     IsCompl (SpechtSubmodule (k := k) μ) (spechtPerp (k := k) μ) := by
   -- `BilinForm.orthogonal` and `Submodule.orthogonalBilin` are the same submodule
@@ -1280,7 +1290,13 @@ Reduces to the two cores above, both of which are now sorry-free:
 `[propext, Classical.choice, Quot.sound]`.
 
 Reproduces the brick-2 statement `QOU.BraidKnot.Specht.specht_isSimple`
-verbatim; that one is still a stub, because brick 2 cannot import this file. -/
+verbatim; that one is still a stub, because brick 2 cannot import this file.
+
+**`[CharZero k]` is load-bearing — DO NOT WEAKEN (bean `qou-73kb`, Category 1).**
+Specht modules are **not** simple in general in positive characteristic `p ≤ n`
+(e.g. `S^{(2)}` over `𝔽₂` has the 1D trivial/sign submodule `S^{(2)} ∩ (S^{(2)})ᗮ`);
+James's `D^μ = S^μ / (S^μ ∩ (S^μ)ᗮ)` theory exists precisely because `CharZero`
+cannot be dropped here. -/
 theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     ∀ N : Submodule k (Mtab (k := k) μ),
       N ≤ SpechtSubmodule (k := k) μ →

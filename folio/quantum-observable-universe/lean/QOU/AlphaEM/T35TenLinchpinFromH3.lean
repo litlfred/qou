@@ -4,6 +4,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # The `[10]_q` linchpin of `T(3,5)`, from the actual `H₃(q)` representations
@@ -96,6 +97,43 @@ theorem ext_char_T35 (q : K) : ((-q⁻¹) * (-q⁻¹)) ^ 5 = (q ^ 10)⁻¹ := by
 
 /-- `[n]_q = q^{n−1} + q^{n−3} + ⋯ + q^{1−n}`, written as a sum over `k < n`. -/
 def qInt (n : ℕ) (q : K) : K := ∑ k ∈ Finset.range n, q ^ k * (q⁻¹) ^ (n - 1 - k)
+
+/-- Telescoping identity `(q − q⁻¹) · qInt n q = qⁿ − q⁻ⁿ` for every `n : ℕ`. -/
+theorem sub_inv_mul_qInt (n : ℕ) (q : K) :
+    (q - q⁻¹) * qInt n q = q ^ n - q⁻¹ ^ n := by
+  induction n with
+  | zero => simp [qInt]
+  | succ m ih =>
+    rcases m with _ | m
+    · simp [qInt]
+    · have hstep : qInt (m + 2) q = q⁻¹ * qInt (m + 1) q + q ^ (m + 1) := by
+        unfold qInt
+        rw [Finset.sum_range_succ, Finset.mul_sum]
+        have hzero : m + 2 - 1 - (m + 1) = 0 := by omega
+        rw [hzero, pow_zero, mul_one]
+        congr 1
+        refine Finset.sum_congr rfl fun k hk => ?_
+        have hkm : k ≤ m := Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)
+        have hexp : m + 2 - 1 - k = (m - k) + 1 := by omega
+        have hexp2 : m + 1 - 1 - k = m - k := by omega
+        rw [hexp, hexp2, pow_succ]
+        ring
+      calc
+        (q - q⁻¹) * qInt (m + 2) q
+            = q⁻¹ * ((q - q⁻¹) * qInt (m + 1) q) + (q - q⁻¹) * q ^ (m + 1) := by
+              rw [hstep]; ring
+        _ = q⁻¹ * (q ^ (m + 1) - q⁻¹ ^ (m + 1)) + (q - q⁻¹) * q ^ (m + 1) := by
+              rw [ih]
+        _ = q * q ^ (m + 1) - q⁻¹ * q⁻¹ ^ (m + 1) := by ring
+        _ = q ^ (m + 2) - q⁻¹ ^ (m + 2) := by
+              rw [pow_succ' q (m + 1), pow_succ' q⁻¹ (m + 1)]
+
+/-- **Bridge to the canonical balanced bracket** (`qou-qint`): off the singular locus
+`q - q⁻¹ = 0`, the homogeneous sum `qInt n q` equals `QOU.QInteger.qIntBal q n`. -/
+theorem qInt_eq_canonical (n : ℕ) (q : K) (hsing : q - q⁻¹ ≠ 0) :
+    qInt n q = QOU.QInteger.qIntBal q n := by
+  rw [QOU.QInteger.qIntBal_def, eq_div_iff hsing, mul_comm]
+  exact sub_inv_mul_qInt n q
 
 /-- `(q − q⁻¹)·[10]_q = q¹⁰ − q⁻¹⁰`. -/
 theorem binomial_eq_qInt_ten (q : K) (hq : q ≠ 0) :

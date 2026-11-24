@@ -19,7 +19,9 @@ namespace QOU.Torsion
 
 /-! ## §11  Topological Mass Decomposition -/
 
-/-- **Quantum dilogarithm**: `Φ_q(z) = ∫₀ᶻ ln_q(1+t)/t dt`. -/
+/-- **Guarded geometric `q`-number** `[n]_q = (qⁿ − 1)/(q − 1)` (`n` at `q = 1`),
+consolidated with `QOU.QInteger.qIntGeoCl` via `qNumber_eq_canonical` below
+(formerly carried a copy-pasted quantum-dilogarithm docstring; bean `qou-qint`). -/
 noncomputable def qNumber (q : ℝ) (n : ℕ) : ℝ :=
   if q = 1 then n
   else (q ^ n - 1) / (q - 1)

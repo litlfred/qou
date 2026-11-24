@@ -77,10 +77,11 @@ available in `CompositionCoset*` if 3.9 at basis level turns out to need it.
 `refTab_dOf_bruhatLe` is **sorry-free** and is the orientation fact in its own right: the
 reference tableau sits at the **bottom** of Bruhat while being the **top** of dominance.
 
-`dominance_iff_bruhatLe` is **stated, not proved** — the honest state-and-queue marker of
-`AGENTS.md` §1, with its `-- Ref:` citation.  It is a published theorem (Dipper–James, via
-Mathas 3.7), not an open problem, and it is confirmed by exhaustive measurement to `n = 6`;
-what is missing is the formalisation.
+`dominance_iff_bruhatLe` is **PROVED, sorry-free** (`[propext, Classical.choice, Quot.sound]` in
+both halves): the converse half via easy Ehresmann (`BruhatRank.rk_le_of_bruhatLe`) + row-cut
+specialisation, and the forward half via row-block interpolation (`rk_le_of_rankAt_le`) + hard
+Ehresmann (`BruhatRank.bruhatLe_of_rk_le`), bypassing Mathas' broken transposition selection rule
+(bean `qou-f3mc`).
 
 ## 🛑 What discharging that `sorry` ACTUALLY needs — measured, not guessed
 
@@ -683,13 +684,12 @@ theorem bruhatLe_to_dominance (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
   rw [rankAt_eq_rk hn, rankAt_eq_rk hn]
   exact QOU.Machinery.BruhatRank.rk_le_of_bruhatLe hbr _ m
 
-/-- **Dipper–James 3.7**, assembled from its two halves.
+/-- **Dipper–James 3.7**, assembled from its two halves — **PROVED, sorry-free.**
 
-This declaration itself contains **no `sorry`** — it is the conjunction of
-`dominance_to_bruhatLe` and `bruhatLe_to_dominance`, and inherits exactly their status.
-**The converse half is proved; the forward half is not**, so a consumer that needs only
-`d(s) ≤ d(t) → s ⊵ t` should cite `bruhatLe_to_dominance` directly rather than this `iff`,
-which is `sorry`-carrying through its other half.  See each half's own docstring. -/
+Conjunction of `dominance_to_bruhatLe` (forward half, via `rk_le_of_rankAt_le` +
+`BruhatRank.bruhatLe_of_rk_le`) and `bruhatLe_to_dominance` (converse half, via
+`BruhatRank.rk_le_of_bruhatLe` + `rankAt_eq_rk`); `#print axioms` reports
+`[propext, Classical.choice, Quot.sound]` with **no `sorryAx`** on both halves. -/
 theorem dominance_iff_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
     {s t : QOU.BraidKnot.Specht.Tableau μ}
     (hs : QOU.BraidKnot.RowStandardTableau.IsRowStandard s)
