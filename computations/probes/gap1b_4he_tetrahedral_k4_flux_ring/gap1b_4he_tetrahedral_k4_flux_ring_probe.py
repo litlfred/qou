@@ -529,12 +529,13 @@ class SparseHoefsmitGenerators:
 
     def apply_gen(self, k: int, vec: list[mp.mpf], inverse: bool = False) -> list[mp.mpf]:
         rows = self.inv_gen_rows[k] if inverse else self.gen_rows[k]
-        out = [mp.mpf(0)] * self.dim
-        for i, entries in enumerate(rows):
-            acc = mp.mpf(0)
-            for j, val in entries:
-                acc += val * vec[j]
-            out[i] = acc
+        zero = mp.mpf(0)
+        out = [zero] * self.dim
+        # R_k and R_k^{-1} are real-symmetric (`rows[j]` == column `j`), so skip zero entries of `vec`!
+        for j, vj in enumerate(vec):
+            if vj != zero:
+                for i, val in rows[j]:
+                    out[i] += val * vj
         return out
 
     def apply_word(self, word: BraidWord, vec: list[mp.mpf]) -> list[mp.mpf]:
@@ -572,7 +573,6 @@ class SparseHoefsmitGenerators:
             rk2 = self.apply_gen(k, rk)
             for i in range(self.dim):
                 max_res = max(max_res, abs(rk2[i] - self.h * rk[i] - probe[i]))
-            # Check exact symmetry R_k^T = R_k on sparse entries
             row_map = {
                 (i, j): val for i, entries in enumerate(self.gen_rows[k]) for j, val in entries
             }
@@ -589,11 +589,7 @@ class SparseHoefsmitGenerators:
 def transport_crossing_word(s_strand: int, t_strand: int) -> BraidWord:
     """Corrected positive-braid transport word U_{p,q}(q_0) for 0 <= s != t < 3A:
     With p = min(s, t), q = max(s, t):
-      U_{p,q} = (R_p^{-1} ... R_{q-2}^{-1}) R_{q-1} (R_{q-2} ... R_p).
-    Under `apply_word` (which applies `reversed(word)` so the rightmost tuple acts FIRST on `vec`),
-    `right_fwd = [(q-2, False), ..., (p, False)]` applies R_p FIRST, then R_{p+1}, ..., R_{q-2},
-    transporting strand p -> q-1; `(q-1, False)` crosses (q-1, q); and `left_undo = [(p, True), ..., (q-2, True)]`
-    applies R_{q-2}^{-1}, ..., R_p^{-1} to return strand q-1 -> p."""
+      U_{p,q} = (R_p^{-1} ... R_{q-2}^{-1}) R_{q-1} (R_{q-2} ... R_p)."""
     if s_strand == t_strand:
         raise ValueError("transport_crossing_word requires distinct strands")
     p_idx = min(s_strand, t_strand)
@@ -612,21 +608,61 @@ def legacy_w4_reversed_pair_word(a_idx: int, b_idx: int) -> BraidWord:
     return prefix + [(target_gen, False)] + suffix
 
 
+def to_srows(mat: list[list[mp.mpf]]) -> list[list[tuple[int, mp.mpf]]]:
+    zero = mp.mpf(0)
+    return [[(j, val) for j, val in enumerate(row) if val != zero] for row in mat]
+
+
+def matvec_srows(srows: list[list[tuple[int, mp.mpf]]], vec: list[mp.mpf]) -> list[mp.mpf]:
+    zero = mp.mpf(0)
+    out = [zero] * len(srows)
+    for i, entries in enumerate(srows):
+        if entries:
+            acc = zero
+            for j, val in entries:
+                acc += val * vec[j]
+            out[i] = acc
+    return out
+
+
+def matvec_srows_colskip(srows: list[list[tuple[int, mp.mpf]]], vec: list[mp.mpf]) -> list[mp.mpf]:
+    """Symmetric sparse matvec skipping zero entries of `vec` (when `srows` is symmetric)."""
+    zero = mp.mpf(0)
+    out = [zero] * len(srows)
+    for j, vj in enumerate(vec):
+        if vj != zero:
+            for i, val in srows[j]:
+                out[i] += val * vj
+    return out
+
+
 def matvec_dense(mat: list[list[mp.mpf]], vec: list[mp.mpf]) -> list[mp.mpf]:
-    return [mp.fsum(row[j] * vec[j] for j in range(len(vec))) for row in mat]
+    zero = mp.mpf(0)
+    out = [zero] * len(mat)
+    for i, row in enumerate(mat):
+        acc = zero
+        for j, val in enumerate(row):
+            if val != zero:
+                acc += val * vec[j]
+        out[i] = acc
+    return out
 
 
 def dot_mp(u: list[mp.mpf], v: list[mp.mpf]) -> mp.mpf:
-    return mp.fsum(u[i] * v[i] for i in range(len(u)))
+    acc = mp.mpf(0)
+    for x, y in zip(u, v):
+        acc += x * y
+    return acc
 
 
 def sym_centered_from_word(hoef: SparseHoefsmitGenerators, word: BraidWord) -> list[list[mp.mpf]]:
     """Build 1/2 * (1/2 * (U + U^T) - <T_fac | 1/2 * (U + U^T) | T_fac> I) via sparse word action."""
+    quarter = mp.mpf(1) / mp.mpf(4)
     half = mp.mpf(1) / mp.mpf(2)
-    sym_mat = hoef.build_dense_from_op(lambda v: hoef.apply_sym_word(word, v))
-    fac_diag = sym_mat[hoef.fac_idx][hoef.fac_idx]
+    u_mat = hoef.build_dense_from_word(word)
+    fac_diag = u_mat[hoef.fac_idx][hoef.fac_idx]
     dim = hoef.dim
-    out = [[half * sym_mat[i][j] for j in range(dim)] for i in range(dim)]
+    out = [[quarter * (u_mat[i][j] + u_mat[j][i]) for j in range(dim)] for i in range(dim)]
     for i in range(dim):
         out[i][i] -= half * fac_diag
     return out
@@ -648,6 +684,7 @@ def cg_solve_spd(
 ) -> tuple[list[mp.mpf], mp.mpf]:
     n = len(rhs)
     zero = mp.mpf(0)
+    srows = to_srows(mat)
     x = [zero] * n
     r = list(rhs)
     p = list(r)
@@ -655,7 +692,7 @@ def cg_solve_spd(
     if rs_old == zero:
         return x, zero
     for _ in range(max_iter):
-        ap = matvec_dense(mat, p)
+        ap = matvec_srows(srows, p)
         pap = dot_mp(p, ap)
         alpha = rs_old / pap
         for i in range(n):
@@ -668,7 +705,7 @@ def cg_solve_spd(
         for i in range(n):
             p[i] = r[i] + beta * p[i]
         rs_old = rs_new
-    ax = matvec_dense(mat, x)
+    ax = matvec_srows(srows, x)
     inf_res = max(abs(ax[i] - rhs[i]) for i in range(n))
     return x, inf_res
 
@@ -676,10 +713,7 @@ def cg_solve_spd(
 def lowest_eigenpair_sym(
     mat: list[list[mp.mpf]], start_idx: int, perturbed_start: bool = True
 ) -> tuple[mp.mpf, list[mp.mpf], mp.mpf]:
-    """Exact 80-dps lowest eigenpair of real-symmetric `mat`, certified by full L_inf residual.
-    Uses `mp.eigsy` for dim <= 60, and adaptive full-reorthogonalized Lanczos for dim = 462
-    that checks the true R^462 eigen-residual at milestones (25, 45, 70, 110, 200) and stops early
-    as soon as `max_i |(H v)_i - lam v_i| < 1e-75`."""
+    """Exact 80-dps lowest eigenpair of real-symmetric `mat`, certified by full L_inf residual."""
     n = len(mat)
     if n <= 60:
         m_mp = mp.matrix(mat)
@@ -692,6 +726,7 @@ def lowest_eigenpair_sym(
         return lam, vec, res
 
     zero = mp.mpf(0)
+    srows = to_srows(mat)
     if perturbed_start:
         v0 = [mp.mpf(1) / mp.mpf(1000 * (i + 3)) for i in range(n)]
         v0[start_idx] = mp.mpf(1)
@@ -726,12 +761,12 @@ def lowest_eigenpair_sym(
                 vec_cur[i] += coeff * bs[i]
         vn = mp.sqrt(dot_mp(vec_cur, vec_cur))
         vec_cur = [x / vn for x in vec_cur]
-        mv = matvec_dense(mat, vec_cur)
+        mv = matvec_srows(srows, vec_cur)
         res_cur = max(abs(mv[i] - lam_cur * vec_cur[i]) for i in range(n))
         return lam_cur, vec_cur, res_cur
 
     for step in range(m_steps):
-        w = matvec_dense(mat, basis[step])
+        w = matvec_srows(srows, basis[step])
         if step > 0:
             b_prev = betas[step - 1]
             prev_vec = basis[step - 1]
@@ -888,63 +923,63 @@ def build_gap1b_operators(
         proj_sing_rows.append(s_rows)
         proj_exc_rows.append(e_rows)
 
-    def apply_sparse_rows(
-        rows: list[list[tuple[int, mp.mpf]]], vec: list[mp.mpf]
+    def apply_cluster_projector_vec(
+        exc_clusters: set[int], vec: list[mp.mpf]
     ) -> list[mp.mpf]:
-        out = [zero] * dim
-        for i, entries in enumerate(rows):
-            if entries:
-                out[i] = mp.fsum(val * vec[j] for j, val in entries)
+        cur = list(vec)
+        for cl in range(a_nuc):
+            srows = proj_exc_rows[cl] if (cl in exc_clusters) else proj_sing_rows[cl]
+            cur = matvec_srows_colskip(srows, cur)
+        return cur
+
+    def apply_left_srows_mat(
+        srows: list[list[tuple[int, mp.mpf]]], mat: list[list[mp.mpf]]
+    ) -> list[list[mp.mpf]]:
+        """Compute S * mat where each row of S has <= 3 nonzeros."""
+        out: list[list[mp.mpf]] = []
+        for entries in srows:
+            if not entries:
+                out.append([zero] * dim)
+            elif len(entries) == 1:
+                idx0, w0 = entries[0]
+                row0 = mat[idx0]
+                out.append([w0 * x for x in row0])
+            else:
+                acc_row = [zero] * dim
+                for idx_k, wk in entries:
+                    if wk != zero:
+                        rk = mat[idx_k]
+                        for j in range(dim):
+                            vj = rk[j]
+                            if vj != zero:
+                                acc_row[j] += wk * vj
+                out.append(acc_row)
         return out
 
-    def compose_cluster_projector_rows(
-        exc_clusters: set[int],
-    ) -> list[list[tuple[int, mp.mpf]]]:
-        """Build sparse rows of prod_{cl in exc} Pi_{cl}^{exc} * prod_{cl not in exc} Pi_{cl}^1."""
-        # Represent current matrix as sparse dict per row; multiply cluster-by-cluster cleanly
-        cur_rows: list[dict[int, mp.mpf]] = [{i: one} for i in range(dim)]
-        for cl in range(a_nuc):
-            factor_rows = proj_exc_rows[cl] if (cl in exc_clusters) else proj_sing_rows[cl]
-            nxt_rows: list[dict[int, mp.mpf]] = []
-            for i in range(dim):
-                acc_map: dict[int, mp.mpf] = {}
-                for mid, v_im in cur_rows[i].items():
-                    for col, v_mc in factor_rows[mid]:
-                        acc_map[col] = acc_map.get(col, zero) + v_im * v_mc
-                nxt_rows.append(
-                    {col: val for col, val in acc_map.items() if abs(val) > sparse_cutoff}
-                )
-            cur_rows = nxt_rows
-        return [sorted(rmap.items()) for rmap in cur_rows]
-
     def build_cumulant_projected_mat(
-        c_mat: list[list[mp.mpf]], p_rows: list[list[tuple[int, mp.mpf]]]
+        c_mat: list[list[mp.mpf]], exc_clusters: set[int]
     ) -> list[list[mp.mpf]]:
-        """Compute P C Pi_0 + Pi_0 C P + P C P using sparse rows of symmetric projector P
-        and Pi_0 = |T_fac><T_fac|."""
+        """Compute P C Pi_0 + Pi_0 C P + P C P by factored ultra-sparse cluster multiplication:
+        P C P = P * (P * (P * C)^T)^T since C and each cluster projector factor are symmetric."""
         fac = hoef.fac_idx
-        out = [[zero] * dim for _ in range(dim)]
-        c_fac_col = [c_mat[k][fac] for k in range(dim)]
-        p_cfac = apply_sparse_rows(p_rows, c_fac_col)
+        p_cfac = apply_cluster_projector_vec(exc_clusters, [c_mat[k][fac] for k in range(dim)])
+
+        # Step 1: M1 = P * C
+        cur_m = c_mat
+        for cl in range(a_nuc):
+            srows = proj_exc_rows[cl] if (cl in exc_clusters) else proj_sing_rows[cl]
+            cur_m = apply_left_srows_mat(srows, cur_m)
+
+        # Step 2: M2 = P * (M1^T) = (M1 * P)^T = P * C * P (symmetric!)
+        cur_mt = [[cur_m[j][i] for j in range(dim)] for i in range(dim)]
+        for cl in range(a_nuc):
+            srows = proj_exc_rows[cl] if (cl in exc_clusters) else proj_sing_rows[cl]
+            cur_mt = apply_left_srows_mat(srows, cur_mt)
+
+        out = [[half * (cur_mt[i][j] + cur_mt[j][i]) for j in range(dim)] for i in range(dim)]
         for i in range(dim):
             out[i][fac] += p_cfac[i]
             out[fac][i] += p_cfac[i]
-
-        active = [idx for idx, entries in enumerate(p_rows) if entries]
-        # t_cols[j][k] = (C P)_{k, j} for j in active
-        t_cols: dict[int, list[mp.mpf]] = {}
-        for j in active:
-            entries_j = p_rows[j]
-            t_cols[j] = [
-                mp.fsum(c_mat[k][l_idx] * p_jl for l_idx, p_jl in entries_j)
-                for k in range(dim)
-            ]
-        for i in active:
-            entries_i = p_rows[i]
-            row_out = out[i]
-            for j in active:
-                t_col_j = t_cols[j]
-                row_out[j] += mp.fsum(p_ik * t_col_j[k_idx] for k_idx, p_ik in entries_i)
         return out
 
     h_g2 = [[zero] * dim for _ in range(dim)]
@@ -975,9 +1010,12 @@ def build_gap1b_operators(
             w_tait = transport_crossing_word(s_left, s_right)
             f_mat = sym_centered_from_word(hoef, w_tait)
             add_scaled_inplace(v_m2, f_mat, one)
-            fac_d = hoef.apply_sym_word(
+            # Note: f_mat has diagonal = half * (sym_diag - fac_diag); recover 1/2 * fac_diag directly:
+            # Using sparse generator word action (2 nonzeros/row) is 4x faster than 127-nonzero f_mat!
+            u_fac_col = hoef.apply_word(
                 w_tait, [one if i == hoef.fac_idx else zero for i in range(dim)]
-            )[hoef.fac_idx]
+            )
+            fac_d = u_fac_col[hoef.fac_idx]
 
             def make_fierz_op(
                 w_loc: BraidWord = w_tait, fd: mp.mpf = fac_d
@@ -1014,12 +1052,10 @@ def build_gap1b_operators(
         fab = tait_fierz_ops[(a_idx, b_idx)]
         fbc = tait_fierz_ops[(b_idx, c_idx)]
         fca = tait_fierz_ops[(c_idx, a_idx)]
-        f3_raw = hoef.build_dense_from_op(
-            lambda v, f1=fab, f2=fbc, f3=fca: [
-                half * (x + y) for x, y in zip(f1(f2(f3(v))), f3(f2(f1(v))))
-            ]
-        )
-        f3_diag = f3_raw[hoef.fac_idx][hoef.fac_idx]
+        # Since F_ab, F_bc, F_ca are real-symmetric, (F_ab F_bc F_ca)^T = F_ca F_bc F_ab!
+        f3_prod = hoef.build_dense_from_op(lambda v, f1=fab, f2=fbc, f3=fca: f1(f2(f3(v))))
+        f3_diag = f3_prod[hoef.fac_idx][hoef.fac_idx]
+        f3_raw = [[half * (f3_prod[i][j] + f3_prod[j][i]) for j in range(dim)] for i in range(dim)]
         for i in range(dim):
             f3_raw[i][i] -= f3_diag
         add_scaled_inplace(fierz_ring_3_sum, f3_raw, one)
@@ -1030,16 +1066,15 @@ def build_gap1b_operators(
         c3_mat = sym_centered_from_word(hoef, w_cyc3)
         add_scaled_inplace(cyc_quark_3_raw, c3_mat, one)
 
-        p_tri3_rows = compose_cluster_projector_rows({a_idx, b_idx, c_idx})
-        c3_cum = build_cumulant_projected_mat(c3_mat, p_tri3_rows)
+        c3_cum = build_cumulant_projected_mat(c3_mat, {a_idx, b_idx, c_idx})
         add_scaled_inplace(cyc_quark_3_cum, c3_cum, one)
 
         if a_nuc == 3 and (a_idx, b_idx, c_idx) == (0, 1, 2):
-            p_tri_3exc = apply_sparse_rows(
-                p_tri3_rows, [p_tri[k][hoef.fac_idx] for k in range(dim)]
+            p_tri_3exc = apply_cluster_projector_vec(
+                {0, 1, 2}, [p_tri[k][hoef.fac_idx] for k in range(dim)]
             )
-            c3_3exc = apply_sparse_rows(
-                p_tri3_rows, [c3_mat[k][hoef.fac_idx] for k in range(dim)]
+            c3_3exc = apply_cluster_projector_vec(
+                {0, 1, 2}, [c3_mat[k][hoef.fac_idx] for k in range(dim)]
             )
             diagnostics["v3_plaq_3cluster_norm_sq"] = dot_mp(p_tri_3exc, p_tri_3exc)
             diagnostics["v3_cyc_3cluster_norm_sq"] = dot_mp(c3_3exc, c3_3exc)
@@ -1051,7 +1086,6 @@ def build_gap1b_operators(
     cyc_quark_4_cum = [[zero] * dim for _ in range(dim)]
 
     if a_nuc == 4:
-        p_quad4_rows = compose_cluster_projector_rows({0, 1, 2, 3})
         for cyc_idx, (v0, v1, v2, v3) in enumerate(K4_UNORIENTED_4CYCLES):
             w_ring4 = (
                 transport_crossing_word(3 * v0 + 2, 3 * v1)
@@ -1066,13 +1100,11 @@ def build_gap1b_operators(
             f12 = tait_fierz_ops[(v1, v2)]
             f23 = tait_fierz_ops[(v2, v3)]
             f30 = tait_fierz_ops[(v3, v0)]
-            f4_raw = hoef.build_dense_from_op(
-                lambda v, g1=f01, g2=f12, g3=f23, g4=f30: [
-                    half * (x + y)
-                    for x, y in zip(g1(g2(g3(g4(v)))), g4(g3(g2(g1(v)))))
-                ]
+            f4_prod = hoef.build_dense_from_op(
+                lambda v, g1=f01, g2=f12, g3=f23, g4=f30: g1(g2(g3(g4(v))))
             )
-            f4_diag = f4_raw[hoef.fac_idx][hoef.fac_idx]
+            f4_diag = f4_prod[hoef.fac_idx][hoef.fac_idx]
+            f4_raw = [[half * (f4_prod[i][j] + f4_prod[j][i]) for j in range(dim)] for i in range(dim)]
             for i in range(dim):
                 f4_raw[i][i] -= f4_diag
             add_scaled_inplace(fierz_ring_4_sum, f4_raw, one)
@@ -1085,18 +1117,18 @@ def build_gap1b_operators(
             c4_mat = sym_centered_from_word(hoef, w_cyc4)
             add_scaled_inplace(cyc_quark_4_raw, c4_mat, one)
 
-            c4_cum = build_cumulant_projected_mat(c4_mat, p_quad4_rows)
-            add_scaled_inplace(cyc_quark_4_cum, c4_cum, one)
-
             if cyc_idx == 0:
-                p_ring4_4exc = apply_sparse_rows(
-                    p_quad4_rows, [p_ring4[k][hoef.fac_idx] for k in range(dim)]
+                p_ring4_4exc = apply_cluster_projector_vec(
+                    {0, 1, 2, 3}, [p_ring4[k][hoef.fac_idx] for k in range(dim)]
                 )
-                c4_4exc = apply_sparse_rows(
-                    p_quad4_rows, [c4_mat[k][hoef.fac_idx] for k in range(dim)]
+                c4_4exc = apply_cluster_projector_vec(
+                    {0, 1, 2, 3}, [c4_mat[k][hoef.fac_idx] for k in range(dim)]
                 )
                 diagnostics["v4_plaq_4cluster_norm_sq"] = dot_mp(p_ring4_4exc, p_ring4_4exc)
                 diagnostics["v4_cyc_4cluster_norm_sq"] = dot_mp(c4_4exc, c4_4exc)
+
+        # Single factored projection of the summed 4-cycles onto {0, 1, 2, 3} all-excited subspace:
+        cyc_quark_4_cum = build_cumulant_projected_mat(cyc_quark_4_raw, {0, 1, 2, 3})
 
     def combine_mats(
         base: list[list[mp.mpf]],
@@ -1760,9 +1792,11 @@ def main() -> int:
 
         part1_comb = verify_part1_combinatorics_and_wigner()
         part1_sympy = verify_part1_sympy_9q_12q_plaquettes()
+        print("  [stage 1/3] Part 1 combinatorics, Wigner & SymPy 9q/12q checks complete.", flush=True)
         static_res, hoef_by_a, h_g2_by_a, v_by_a = evaluate_static_and_analytic_models(
             q0, e0_mev, eosc_mev, b_ame
         )
+        print("  [stage 2/3] Part 2A Hoefsmit 5D/42D/462D static & analytic models complete.", flush=True)
         jacobi_res = evaluate_jacobi_variational_battery(
             e0_mev,
             eosc_mev,
@@ -1772,6 +1806,7 @@ def main() -> int:
             h_g2_by_a,
             v_by_a,
         )
+        print("  [stage 3/3] Part 2B 3D Jacobi variational battery complete.", flush=True)
 
         print("\n[Part 1] Exact Combinatorial, Wigner SU(4) & SymPy Q(q) Plaquette Verifications:")
         print(f"  K_A simplices, Tait 12q & Wigner [1^A] pass : {part1_comb['all_combinatorics_and_wigner_pass']}")
