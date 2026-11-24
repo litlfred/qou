@@ -185,6 +185,7 @@ export default chapter({
         // (accepted §5).
         "lagrange-resolvent-transform",
         "braid-twist-flip",
+        "braid-twist-flip-relations",
         "holonomy-trefoil",
         "rho-s3-holonomy-exposition",
       ],

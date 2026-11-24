@@ -7,3 +7,5 @@ $$
   \;\in\;
   R^{|\,\mathrm{Par}(n)\,|}.
 $$
+
+*Its codomain is the [$q$-dimension layer](#def:q-dimension-layer).*

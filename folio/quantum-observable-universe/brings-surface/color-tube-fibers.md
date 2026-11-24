@@ -16,5 +16,3 @@ $$
   \mathbf{r}_z = w_2 - z, \qquad \mathbf{g}_z = w_3 - z, \qquad
   \mathbf{b}_z = w_4 - z.
 $$
-
-As schemes, $R_z \cong G_z \cong B_z$ is isomorphic to the color fibre over $z$ of [color elliptic curve](#prop:color-elliptic), the three roots of the color cubic, via the shift $X = \mathbf{c} + z$.

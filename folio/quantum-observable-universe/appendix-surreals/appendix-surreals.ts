@@ -77,6 +77,7 @@ export default chapter({
         "birthday-grading-archimedean",
         "birthday-grading-substrate",
         "sign-sequence-of-braid",
+        "sign-sequence-of-braid-remark",
         "sign-sequence-of-braid-invariant",
         "hoefsmit-is-surreal-construction",
         "jones-birthday",

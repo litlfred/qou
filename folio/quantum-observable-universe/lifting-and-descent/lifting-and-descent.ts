@@ -108,6 +108,7 @@ export default chapter({
         // qou-motivic-galois-instance (its consumers). Detangler
         // P34 (2026-05-22).
         "motivic-galois-character",
+        "motivic-galois-character-remark",
         "motivic-perpetual-obstruction",
         "kummer-tower-motivic-galois",
       ],
@@ -200,6 +201,7 @@ export default chapter({
         "yekutieli-triple-remark",
         "cosimplicial-crossed-groupoid",
         "ccg-cosimplicial-identities",
+        "ccg-cosimplicial-identities-remark",
         "ccg-crossed-module-structure",
         "ccg-crossed-module-structure-proof",
         "cosimplicial-crossed-groupoid-proof",

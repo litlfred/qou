@@ -116,6 +116,7 @@ export default chapter({
         "topological-mass-categorical-proof",
         "categorical-mass-markov",
         "kz-connection-sl2",
+        "kz-connection-sl2-remark",
         "categorical-mass-markov-proof",
         "markov-trace-gibbs-free-energy",
         "atomic-mass-gb-nf",

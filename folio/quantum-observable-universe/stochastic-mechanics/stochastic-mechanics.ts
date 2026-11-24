@@ -96,6 +96,7 @@ export default chapter({
         "reeb-epsilon",
         "reeb-epsilon-remark",
         "q-from-epsilon",
+        "q-from-epsilon-remark",
         "q-from-epsilon-rationale",
         "joint-galois-braid-figure-8-verified",
         "joint-galois-braid-figure-8-verified-proof",

@@ -6,7 +6,6 @@ export default definition({
   title: "The $\\mathfrak{sl}_2$ Knizhnik--Zamolodchikov connection and its flatness",
   tags: ["kz-connection", "flat-connection", "braid-group", "drinfeld-kohno"],
   uses: ["prop:categorical-mass-markov"],
-  cites: ["kohno1987", "drinfeld1991"],
   authorNotes: [
     {
       kind: "status",

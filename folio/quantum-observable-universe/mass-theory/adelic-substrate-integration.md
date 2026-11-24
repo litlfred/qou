@@ -1,3 +1,11 @@
+Each non-archimedean place $p$ corresponds to a localized quantum
+geometric state of the substrate: a specific $q$-deformation
+evaluated at a primitive root of unity, equivalently a Kummer level
+in the Habiro / cyclotomic completion
+([algebraic quantum volume](#def:algebraic-quantum-volume)).
+The archimedean place $\infty$ — the $\mathbb{R}$ component — is
+the laboratory continuum.
+
 **Motivation for the adelic substrate.** Replacing $\mathbb{R}$ by $\mathbb{A}$ resolves a
 structural tension: the
 local $q$-geometries at each prime do not assemble into a continuous
