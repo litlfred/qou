@@ -2,6 +2,8 @@
  "recipe": "computations/probes/gg_ntower/preregistration.md (4544d19380)",
  "issue": 7727,
  "q0": "1.1099785827513808075916690956107688798744991218736",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
  "checks": {
   "C1_hecke_braid_relations": true,
   "C2_markov_weights": true,
@@ -9475,5 +9477,5 @@
    }
   }
  },
- "wall_seconds": 8421
+ "wall_seconds": 3530
 }
