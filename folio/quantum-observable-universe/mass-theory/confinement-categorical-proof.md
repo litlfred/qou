@@ -24,9 +24,7 @@ $(3)$ If $x$ is central, each $x_\lambda$ commutes with all of
 $\mathrm{Mat}_{f^\lambda}(K)$ and is therefore a scalar $s_\lambda\, 1$.
 Then $\mathrm{tr}(x_\lambda)/f^\lambda = s_\lambda$ and $\pi_Z(x) = x$. $\square$
 
-The Lean `confinement_categorical` follows exactly this route
-(`trace_unique`, `eq_scalar_of_commute`, `centreProj_central`,
-`trace_eq_residue_sum`). Reading $Z(A)$ as the $E_\infty^{0,0}$ page of
+Reading $Z(A)$ as the $E_\infty^{0,0}$ page of
 the GB-filtration spectral sequence additionally uses
 $\mathrm{HH}^k(A) = 0$ for $k \geq 1$
 ([spectral sequence collapse](#prop:spectral-sequence-collapse)); that
@@ -53,12 +51,12 @@ extracting an isolated quark.*
 
 **Curvature-rank as confinement layer.**
 
-*The strata $J^k / J^{k+1}$ index "confinement layers": deeper $k$ =
-more commutator load = harder to extract.  At $k = 0$ (the centre)
-elements carry no commutator load; at $k \geq 1$ they lie in the
-$k$-th commutator stratum.  The chirality channel $D_q^2 = 0$
-(q-Dirac cell scanner witness) supplies the persistent
-gauge-invariant background analogous to the gluon condensate.*
+*The strata $J^k / J^{k+1}$ index confinement layers: higher $k$
+corresponds to greater commutator depth and stronger obstruction to
+extraction. At $k = 0$ (the centre) elements carry no commutator load;
+at $k \geq 1$ they lie in the $k$-th commutator stratum. The chirality
+channel $D_q^2 = 0$ supplies the persistent gauge-invariant background
+analogous to the gluon condensate.*
 
 **Predictive consequence.**
 
@@ -67,9 +65,8 @@ gauge-invariant background analogous to the gluon condensate.*
 $\mathfrak{m}_{q,\mathcal{K}} = \sum_k \alpha_k \cdot
 \mathfrak{m}^{(k)}_{q,\mathcal{K}}(1)$
 is, read through this proposition, a sum over confinement
-layers.  Term $k$ of the formula is the contribution of the
-curvature-rank-$k$ confinement stratum.  The rank-3 chirality residue
+layers. Term $k$ of the formula is the contribution of the
+curvature-rank-$k$ confinement stratum. The rank-3 chirality residue
 ($\mathrm{Vol}(6_1) \cdot |(q;q)_3|$) and the rank-$\geq 4$ universal
 Pochhammer tail in the structural $\mathfrak{Q}_\beta$ derivation
-(Q-beta path A extended witness) are confinement residues, not
-independent ingredients.*
+are confinement residues, not independent ingredients.*

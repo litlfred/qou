@@ -23,9 +23,9 @@ For an $A$-nucleon system constructed sequentially through quark, nucleon, and n
 The product "across all levels" needs the three character ratios to be ratios of
 the *same* functional. They are not. The quark and nucleon levels are Markov
 traces — weights $y_\lambda$, convention D (Wenzl $r = 2$), which admits only
-$\le 2$-row shapes. The nuclear-jet level is specified by
-[$\tilde w_\lambda = \dim_q(\lambda)^2/[n]_q!$](#conj:jet-convergence-classical-limit),
-over **all** partitions, and those are
+$\le 2$-row shapes. The nuclear-jet level uses the conjectural classical-limit jet weight
+$\tilde w_\lambda = \dim_q(\lambda)^2/[n]_q!$
+summed over **all** partitions, and those two weight systems form
 [distinct families on every stratum](#prop:wedderburn-weight-canonical). On $H_3$:
 
 | $\lambda$ | $y_\lambda$ (D) | $\tilde w_\lambda$ |
