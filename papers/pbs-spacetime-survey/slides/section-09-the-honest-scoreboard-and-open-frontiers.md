@@ -58,19 +58,19 @@
 
 ---
 
-## Slide 9.4 — Where the Model Currently Fails or Stays Incomplete
+## Slide 9.4 — Conditional Bridges and Open Discrepancies
 
-![Six unsolved questions and formal checking](../assets/sec09-unsolved-questions-map.svg)
+![Six open bridge questions and formal checking](../assets/sec09-unsolved-questions-map.svg)
 
 ### On-Screen Text
-- **Title:** Large Misses Are Diagnostic Clues, Not Embarrassments
-- **Clear Gaps:**
-  - **Helium-4 (${}^4\mathrm{He}$) binding:** $14.49\;\mathrm{MeV}$ ($12q$ colour) / $8.77\;\mathrm{MeV}$ (baseline) vs. **$28.30\;\mathrm{MeV}$** ($-49\%$ / $-69\%$)
-  - **Tau lepton mass ($m_\tau / m_e$):** Candidates miss $3477.2$ by **$-31\%$ to $+68\%$**
-  - **Short $4$-step weak-angle run:** Stops at **$0.342$** vs. **$0.23122$** ($+48\%$)
+- **Title:** Proved Pieces vs. Open Physical Bridges
+- **Conditional Bridges & Clear Gaps:**
+  - **Helium-4 (${}^4\mathrm{He}$, $28.30\;\mathrm{MeV}$):** Fixed-spacing pairs give $14.33\;\mathrm{MeV}$ ($-49\%$); $4$-cluster rings (**$29.33\;\mathrm{MeV}$, $+3.65\%$**) & $3\mathrm{D}$ compression (**$26.02\text{–}30.55\;\mathrm{MeV}$**) need one unified spatial operator
+  - **Tau lepton ($3477.23\,m_e$) & $3$ families:** Flat-limit wave balance gives **$3477.44$** (**$+61.6\;\mathrm{ppm}$**, $q \to 1$ lock unproved; simple $3$-braids miss by $-16\%$ to $+30\%$); $3$-fold colour twist gives $3$ families (vacuum twist unproved)
+  - **Horizons & weak angle:** 4D lift cancels $(2\pi)/(8\pi) = \mathbf{1/4}$ ($-9.9\%$ in $q_0$ cell; dynamical field law open); short $4$-step weak-angle run stops at **$0.342$** vs. **$0.23122$** ($+48\%$)
 
 ### Host Narration
-"Now look squarely at the coral bars and the six unsolved cards on this map—the places where the model as it stands today falls short. Helium-four's binding energy is still roughly half of the measured 28.30 MeV because four-way spin-and-proton-neutron swap symmetry hasn't been combined with twelve-quark colour sharing yet. Every tested knot candidate for the heavy tau lepton misses by thirty to seventy percent. Short four-step evolution of the weak mixing angle stops at 0.342 instead of 0.2312. And why left-handed waves pick three matter families out of four surface modes—along with the elementary area unit of a black-hole puncture—still awaits a proof."
+"Now look squarely at the conditional bars and the six open-bridge cards on this map. For helium-four, fixed-spacing pairs stop at 14.33 MeV, whereas four-cluster pyramid colour rings give 29.33 MeV and three-dimensional wave compression brackets 26.02 to 30.55 MeV—leaving one unified spatial-braid operator and loop sign still to be derived. For the heavy tau lepton, simple three-strand knots miss by sixteen to thirty percent, while flat-limit equal-norm wave balance fed by the figure-eight muon lands within 61.6 parts per million, leaving its protection against finite-q-naught drift open. Twisting the four-holed surface by a three-fold quark-colour phase yields three quark and three net lepton families once empty space selects that twist; the four-dimensional spacetime lift cancels two-pi over eight-pi to one-quarter while leaving dynamical gravity equations open; and short four-step evolution of the weak mixing angle still misses 0.2312 by forty-eight percent."
 
 ### Animation Notes
 - Step through the six cards of `sec09-unsolved-questions-map.svg`, keeping coral and gold borders sharp and legible.

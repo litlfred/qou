@@ -120,15 +120,17 @@ $$
 
 ---
 
-## Slide 8.8 — Honest Scope at the Horizon: The Unsolved Area Unit $a_0$
+## Slide 8.8 — Honest Scope at the Horizon: The $1/4$ Area Law and Open Gravity Dynamics
 
 ### On-Screen Text
-- **Title:** What Gravity Still Needs From First Principles
-- **Proved:** Unique puncture-entropy balance point $Z_1(s_\star) = 1$ & closed-loop flux balance
-- **Unsolved:** Elementary puncture area $a_0$ (currently matched to $S = A / 4\ell_P^2$) & Einstein's field equations
+- **Title:** How $(2\pi)/(8\pi) = 1/4$ Emerges—and What Gravity Still Needs
+- **Proved:**
+  - Spin-$1/2$ puncture counting gives $\ln 2 \approx 0.693$ entropy per pair & exact modular entanglement balance
+  - Lifting 3D twisted strand geometry over its phase circle builds a $(3+1)\mathrm{D}$ curved spacetime where thermal boost ($2\pi$) divided by light-sheet focusing ($8\pi$) gives **$1/4 = 0.2500$** in unit cells ($0.2252 = 1/(4q_0)$ in $q_0$ cells)
+- **Unsolved:** Deriving dynamical matter-to-curvature field equations & choosing between the $1$ vs. $q_0$ area cell ($9.9\%$ split)
 
 ### Host Narration
-"And right on the right-hand side of that horizon diagram sits our strict honesty boundary for gravity. Counting states per puncture is proved, yet converting puncture *count* into physical square meters of horizon area still requires matching one constant by hand to Jacob Bekenstein and Stephen Hawking's quarter-area law—because the elementary area unit a-naught of a single puncture, along with Einstein's gravitational equations themselves, has not yet been derived from the braid rules. Let's bring every success and every unsolved gap together on one final scoreboard in Section nine."
+"And right on the right-hand side of that horizon diagram sits the exact boundary between what is proved and what is still open for gravity. Purely discrete strand counting fixes the entropy per puncture—0.693 for singlet pairs, or 0.688 for single modular strands—yet testing twenty-one discrete ratios shows that strand counting by itself never produces one-quarter. Instead, lifting the three-dimensional twisted strand geometry over its phase circle builds a parameter-free four-dimensional spacetime with three space directions, one time direction, and inward light-ray focusing: dividing thermal horizon periodicity, two pi, by gravitational light-sheet focusing, eight pi, cancels cleanly to one-quarter in unit circuit-area cells, or one over four q-naught—about ten percent lower—in direct q-naught cells. What is still unsolved is deriving the full dynamical gravitational field equations from the braid action and settling that ten-percent cell-unit choice. Let's bring every result together on one final scoreboard in Section nine."
 
 ### Animation Notes
-- Contrast the green `State-Counting Balance (Proved)` card and coral `Unsolved Gravitational Step (area unit a₀)` card on the right of `sec08-horizon-punctures.svg`, then transition to the full comparison chart of Section 9.
+- Contrast the green `4D Spacetime Lift & (2π)/(8π) = 1/4 Cancellation (Proved)` card and amber `Open Gravity Bridge (Dynamical Field Law & 1 vs q₀ Cell)` card on the right of `sec08-horizon-punctures.svg`, then transition to the full comparison chart of Section 9.
