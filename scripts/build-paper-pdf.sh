@@ -127,7 +127,13 @@ echo "==> content -> LaTeX"
     "$FA/cat-harness-tools/pipeline/build.ts" \
     "folio/$PAPER/$PAPER.ts" \
     --out-dir "$OUT/chapters" --generate-main --main-out "$OUT/main.tex" \
-    --preamble "$PRE" ) | tee "$OUT/content-build.log" | grep -E 'Issues:|preflight' || true
+    --preamble "$PRE" ) | tee "$OUT/content-build.log" | grep -E 'Issues:|preflight|^ +\[[a-z-]+\] ' || true
+# The preflight's issue lines are printed above, not only its count. Its
+# allowlist (folio-assistant-sci/pipeline/latex-known-macros.json) lacks TeX
+# primitives and amsmath/amssymb/LaTeX-kernel commands this preamble uses
+# (\csname, \linespread, \AtBeginDocument, \ominus, \tbinom, ...), so on
+# 2026-11-24 all 25 issues were false positives: latexmk ran with 0 errors.
+# The fix is a platform allowlist entry, not a content change.
 # The generator writes the manifest's fixed date both into \date and as a
 # literal on the title page; both become the commit date.
 python3 -I - "$OUT/main.tex" "$BUILD_DATE" <<'PY2'
@@ -137,8 +143,15 @@ s = open(p, encoding="utf-8").read()
 s, n1 = re.subn(r"\\date\{[^}]*\}", lambda m: "\\date{%s}" % d, s, count=1)
 s, n2 = re.subn(r"(\\begin\{titlepage\}.*?\{\\large )\d{4}-\d{2}-\d{2}(\})",
                 lambda m: m.group(1) + d + m.group(2), s, count=1, flags=re.S)
+# The template reads the per-render flag with \IfFileExists{print-mode.tex}
+# {\input{print-mode.tex}}{}. latexpand (publish-paper-pdf.sh,
+# paper-diff-pdf.sh) does not understand the test, tries to inline the
+# \input, and warns "Could not find file [print-mode.tex]". The kernel's
+# \InputIfFileExists does the same thing and latexpand leaves it alone.
+s, n3 = re.subn(r"\\IfFileExists\{print-mode\.tex\}\{\\input\{print-mode\.tex\}\}\{\}",
+                lambda m: r"\InputIfFileExists{print-mode.tex}{}{}", s)
 open(p, "w", encoding="utf-8").write(s)
-print(f"==> date {d} (\\date: {n1}, title page: {n2})")
+print(f"==> date {d} (\\date: {n1}, title page: {n2}); print-mode read: {n3}")
 PY2
 
 # Normalize back-matter appendix chaptering (\appendix + numbered \chapter{}),
