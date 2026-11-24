@@ -7,7 +7,7 @@ priority: high
 tags:
     - needs-owner-ok
 created_at: 2026-11-23T21:31:08Z
-updated_at: 2026-11-24T21:20:05Z
+updated_at: 2026-11-24T21:22:50Z
 parent: qou-s028
 ---
 
@@ -33,3 +33,7 @@ Phase 1 Ready PR #9240 opened (Issue #9239, 09c8703a892, held unmerged for owner
 
 ## 2026-11-24T21:20:05Z — STALLED-CLAIM TAKEOVER (compute/derivation child session, owner ruling 2026-11-24 '>1 h')
 Backing branch origin/claude/reeb-length-time-bh-lcq-20261123 last commit 9fda5b0af02 at 2026-11-24T07:35:52Z (~14 h idle), no PR, no swarm activity in the last hour. Taking over: rebase onto main (post-1e8db432857 categorical Hamiltonian), re-check the energy/speed definitions against QOU.Core.CategoricalHamiltonianLegendre (lightconeSpeed, worldlineEnergy_rest, planckTickChart), re-run the 80-dps probe, lean-direct verify. Math-PR gate (needs-owner-ok) respected: branch is pushed, no PR opened without owner OK.
+
+
+## 2026-11-24T21:22:50Z — takeover result
+All 5 commits of the old branch are already on main (the Lean file was moved to QOU/Core/ReebLengthTimeAndLightConeEntropy.lean by 559a7210bf5, the reservoir refactor), so there was no code to carry over. Follow-up: PR #9402 (draft) adds QOU/Core/ReebHamiltonianChartBridge.lean, which identifies causalSpeed/planckTick/categoricalEnergy with 1e8db432857's lightconeSpeed/planckTickChart and with worldlineEnergy at rest. The bean stays in-progress because the conjecture LCQHorizonPunctureAreaConjecture is still open (Rule 13a).
