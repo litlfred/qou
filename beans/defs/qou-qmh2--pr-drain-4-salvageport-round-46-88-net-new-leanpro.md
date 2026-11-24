@@ -1,11 +1,11 @@
 ---
 # qou-qmh2
 title: 'PR-Drain-4: Salvage/Port Round 46-88 Net-New Lean+Probe Batches — QBeta, Dilog/Stokes, MassTheory & Foundations (91 PRs: 29 in 4A + 62 in 4B, #8139..#8512)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:55:52Z
-updated_at: 2026-11-23T20:55:52Z
+updated_at: 2026-11-24T02:28:18Z
 parent: qou-xip2
 ---
 
@@ -112,3 +112,5 @@ parent: qou-xip2
 - **`#8141`** (`claude/qou-3l2l-mxnu-vbz4-2026-11-16`, files=4, lean_mod=0, lean_new=1, py=1): Formalize (4,1) Hoefsmit/Markov Gram and Schur reduction (qou-mxnu, qou-vbz4)
 - **`#8140`** (`qou-8lxd-q6lw-tekm-probes-lean`, files=6, lean_mod=0, lean_new=1, py=2): feat(eightfold): color-vs-charm sector Lean/probe (qou-q6lw) and Boyle EOS probe (qou-tekm)
 - **`#8139`** (`claude/r46-ni4b-tqcp-colour-tower-cp`, files=4, lean_mod=0, lean_new=1, py=1): feat(sm): formalize 3-strand Hecke colour obstruction (qou-ni4b) & full-tower CP parity (tqcp)
+
+All 91 legacy PRs in PR-Drain-4 triaged at b11dd7654d5: 6 salvaged into PR #9241 (13 Lean modules, 93 theorems, 7 80-dps witnesses), 85 classified in ledger.

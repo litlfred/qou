@@ -1,11 +1,11 @@
 ---
 # qou-rilj
 title: 'Issues-Cluster-4: Q_beta Ladder, n-p Splitting, Lepton Normalisation & Octet/Weak Braids (15 Open GitHub Issues)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:55:55Z
-updated_at: 2026-11-23T20:55:55Z
+updated_at: 2026-11-24T02:28:17Z
 parent: qou-xip2
 ---
 
@@ -31,3 +31,5 @@ Actionable GitHub Issues cluster (`15` open issues on `litlfred/qou`).
 - **`#7711`**: qou-h0zz: the braid-word blocker is mis-scoped — the lepton half is derived, and coherence carries only 2 of 4 fermions
 - **`#7678`**: Route 2 option 1c: where do braid words collapse, and does the q-length tell braids apart? (qou-99qc, qou-pzsi)
 - **`#7602`**: Lean: χ_(2,1)(Δ_S) = 0 — the single-wrap element is invisible to the two-row block (qou-cds1)
+
+Batch 4 Cluster-4 audit complete (b11dd7654d5): closed #7602 (100% merged via PR #7603 dc12b128ccc) and posted status + bean linkage comments on remaining 14 open issues.

@@ -1,11 +1,11 @@
 ---
 # qou-5lct
 title: 5-Layer Iterated Confinement Tower (ConfinementLayer RG), Adiabatic Gap Stability, & Layer-4 Chemical Toric/Diophantine Gröbner Stoichiometry
-status: in-progress
+status: completed
 type: feature
 priority: critical
 created_at: 2026-11-23T19:58:00Z
-updated_at: 2026-11-23T21:03:56Z
+updated_at: 2026-11-24T02:28:17Z
 parent: qou-hksc
 ---
 
@@ -31,3 +31,5 @@ Formalize and Lean-prove (`0 sorry`, `0 axiom`) QOU's 5-Layer Iterated Confineme
 Claimed by claude/iterated-confinement-tower-chem-gb-20261123 (2026-11-23)
 
 PR #9212 opened on claude/iterated-confinement-tower-chem-gb-20261123 (4d6fd5439e37)
+
+Verified 100% merged on origin/main in PR #9212 (86ea08a2ed7): ConfinementLayerTower.lean (856 lines, 0 sorry) + 80-dps probe/witness + 6 molecular-construction blocks.
