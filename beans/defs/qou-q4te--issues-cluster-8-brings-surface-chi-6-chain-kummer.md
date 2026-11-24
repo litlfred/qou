@@ -1,11 +1,11 @@
 ---
 # qou-q4te
 title: 'Issues-Cluster-8: Bring''s Surface chi=-6 Chain, Kummer/Yekutieli Gerbes & Axiom-1..4 Volume Form (13 Open GitHub Issues)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:55:56Z
-updated_at: 2026-11-23T20:55:56Z
+updated_at: 2026-11-24T03:25:23Z
 parent: qou-xip2
 ---
 
@@ -29,3 +29,5 @@ Actionable GitHub Issues cluster (`13` open issues on `litlfred/qou`).
 - **`#7414`**: Derive the branch-point count 6 from the QOU axioms — the one missing step in the χ(A) = −6 chain
 - **`#6583`**: Prove the prose-tier assertions: the contact volume form, ker Θ's rank, and dimension 7
 - **`#6545`**: Does anything in axioms 1–4 supply a degree-3 volume form? (W derived, not postulated)
+
+Batch 8 Cluster-8 audit complete (74473932759): closed 5 100%-landed issues (#8862, #7944, #7958, #7746, #6583); kept #7425, #7735, #7783 and 5 residual issues + #9154 guard open.

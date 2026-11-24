@@ -11,7 +11,7 @@ tags:
     - conjecture-discharge
     - reorg-2026-10-04
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-11-22T21:58:00Z
+updated_at: 2026-11-24T03:25:23Z
 parent: qou-3kkl
 ---
 
@@ -205,3 +205,5 @@ Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"
 ## 2026-11-22T22:05:00Z: PR #9135 merged
 
 Merged by rebase on the owner instruction "Merge those that are ready" (main 5167911a6).
+
+2026-11-22 R* dyadic-birthday rebase item completed at 08dfe533aaa (surrealLimitTransferHyperrealDyadic); 0 global instances preserved per Rule 13a.

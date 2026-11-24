@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-11-22T22:05:00Z
+updated_at: 2026-11-24T03:25:24Z
 parent: qou-rtxm
 ---
 
@@ -30,3 +30,5 @@ the identification bwhk becomes "BW output = THIS explicit MTC". Does NOT close 
 **Verdict: NEEDS-OWNER.** Critical point: a modular tensor category has finitely many simples; at generic real q₀ > 1 the Hecke category has infinitely many ([k]_q > 0 for all k, the bean's own Part III note), so it is not modular there. Only a root-of-unity semisimplified quotient can be. The bean should be restated as "the semisimplified quotient at q = e^{2πi/ℓ} is modular, with S, T from the Markov trace", or scrapped if the root-of-unity side is off the derivation chain. The Part III module it cites (`Brings/BringLiftingObstructionRoutes.lean`) is not on main.
 
 Not worked.
+
+HeckeRealVsRootOfUnityModularity.lean (08dfe533aaa) + 80-dps witness (ef51559461b) staged.

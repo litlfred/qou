@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-04T17:32:49Z
-updated_at: 2026-11-22T21:54:34Z
+updated_at: 2026-11-24T03:25:24Z
 parent: qou-8lxd
 ---
 
@@ -57,3 +57,5 @@ TWO unexplored structures from the Braden-DH paper:
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+WARNING: title's 1+15+60+60 / 60+60 split is FALSE; zero-axiom kernel proof in BringThetaCharacteristicsSymplectic.lean (08dfe533aaa) matching Braden-Disney-Hogg 2024 proves even [1,5,5,5,10,10,10,30,30,30] & odd [20,20,20,60]. Do NOT merge #8150.
