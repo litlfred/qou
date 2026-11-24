@@ -1,10 +1,11 @@
 ---
 # qou-xj4p
 title: 'GAP: probe_d_dressing_is_proton_net fails its own assertion after refresh'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-11-24T20:49:37Z
-updated_at: 2026-11-24T20:49:37Z
+updated_at: 2026-11-24T21:02:22Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). `computations/probes/probe-d-dressing-is-proton-net.witness.json` was self-stale. Re-running the current producer `computations/probes/probe_d_dressing_is_proton_net.py` (exit 0) writes `allPassed: false`. The refreshed witness was **NOT committed** (owner decision 2026-11-24, "D2 commit all 42": hold producers that fail their own assertion). Main still carries the old passing witness.
@@ -23,3 +24,6 @@ The deuteron candidate falls from a 0.29 % hit to a 75 % miss. The driver is `De
 Log: `/tmp/claude-0/-home-user/ab2f8fab-d324-5bfe-8e05-335069a715bd/scratchpad/logs/probe_d_dressing_is_proton_net.py.log`. It is in session scratchpad and may not survive; re-run with `PYTHONPATH=computations:tools/qou-substrate/python:tools/pyhecke/python python3 -u computations/probes/probe_d_dressing_is_proton_net.py`.
 
 Next honest step: trace where `Delta_tr` comes from and which upstream change moved it, then decide whether the probe's conclusion is withdrawn or its input is wrong.
+
+## 2026-11-24 root cause (agent, session 01Eucf, claimed)
+Delta_tr = tr_free - tr_atom from tr_m_atom_zn(1,1). Live (borromean word) gives 0.147046678; with atom_braid_word_3A(intra_order='grouped') it gives 0.556544660, against the old witness value 0.5952. About 93% of the move is the 2026-09-05 word ruling (7db032fb482, qou-hu1f); the remaining ~7% is unattributed (the old witness, 2026-07-04, predates the convention-D cascade). The input is correct per the corpus, so the 0.29% deuteron hit was a property of the superseded word: an honest negative, and the probe's conclusion should be withdrawn.

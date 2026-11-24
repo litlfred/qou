@@ -1,10 +1,11 @@
 ---
 # qou-mi15
 title: 'GAP: m_qclt_approx fails its own assertion after refresh'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-11-24T20:49:37Z
-updated_at: 2026-11-24T20:49:37Z
+updated_at: 2026-11-24T21:16:58Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). The witness `computations/m-qclt-approx.witness.json` was self-stale (scriptHash drift). Re-running the current producer `computations/m_qclt_approx.py` (exit 0, Python 3.13.18, mpmath 1.3.0, sympy 1.14.0) writes `allPassed: false`. The refreshed witness was **NOT committed** (owner decision 2026-11-24, "D2 commit all 42": hold the producers that fail their own assertion). The committed witness on main still says `allPassed: true` and is stale.
@@ -25,3 +26,9 @@ So the miss comes from an upstream input (the factorized q-CLT source witness wa
 Log: `/tmp/claude-0/-home-user/ab2f8fab-d324-5bfe-8e05-335069a715bd/scratchpad/logs/m_qclt_approx.py.log`. It is in session scratchpad and may not survive; re-run with `PYTHONPATH=computations:tools/qou-substrate/python:tools/pyhecke/python python3 -u computations/m_qclt_approx.py`.
 
 Next honest step: find which producer regenerated the factorized-qCLT source on 2026-11-21 and why `L_nn` moved. Then decide whether the 1.25x bound or the new input is wrong. Do not widen the tolerance to the new miss.
+
+## 2026-11-24 root cause (agent, session 01Eucf, claimed)
+The upstream bond witness binding-single-pipeline-comparison was regenerated in ca6b5d6dd94 (2026-11-21) on the convention-D + beta_Bor word regime (owner ruling 7db032fb482, qou-hu1f). L_pp/pn/nn went from 0.6945/0.9292/1.2370 to 0.4899/0.6768/0.9073. The new input is correct per the corpus, so the 1.25x claim honestly fails (1.5002x). This is an honest negative; do not widen the tolerance. WARNING: the same commit widened the sibling assertion B_sym_E0_within_1p25x_T_3He from 0.25 to 0.60 so that it passes at 1.58x, which is a tolerance sized to its own miss. Flagged to the owner on #9395 (https://github.com/litlfred/qou/pull/9395#issuecomment-7144386562).
+
+## 2026-11-24 owner ruling 3 applied in PR https://github.com/litlfred/qou/pull/9401 (f35683512a2)
+Owner card 'A: revert, fail honestly'. B_sym_E0_within_1p25x_T_3He tolerance restored 0.60 -> 0.25; it now FAILS at 1.5803. m_qclt_approx's factorized_binding_within_1p25x_T_3He fails the same way (1.5002). OPEN GAP: the beta_Bor + convention-D bond traces put the A=3 log-trace binding at 1.28-1.58x of AME, outside the 1.25x claim. Not fixable by tolerance. The sibling B_qCLT_fac_chain_within_1p25x_T_3He (widened the same way, passes at 1.5002 vs 0.60) is put back to the owner. Stays open; do not close while the 1.25x claim is unmet.
