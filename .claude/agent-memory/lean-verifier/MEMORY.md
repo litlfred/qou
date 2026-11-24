@@ -6,6 +6,7 @@ Entry types: **STABLE** (trust it) · **TRAP** (durable failure mode) ·
 Seeded 2026-08-29 from `AGENTS.md` + the skill (governs where they disagree).
 NOTHING is auto-injected here (measured) — read this yourself. Sibling files:
 
+- 2026-11-24: standard restore = base + gap + refresh addons (`lean-cache-restore.sh` apply_addons); base reseed has no `.srcsha` — `session-log.md`
 - 2026-11-22: cache branch is now `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`; restored UGB oleans STALE (5/8 of HeckeCompletion cone) — `session-log.md`
 
 - `verification-harness.md` — false greens, partial overlays, exit-139, cone triage, FQN guards

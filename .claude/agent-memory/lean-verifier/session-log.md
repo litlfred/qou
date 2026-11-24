@@ -451,3 +451,25 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
   Basic down in place (`rm -f` then `lean -DautoImplicit=false -o … -i …`, cwd = UGB package root):
   1.5–4.2 s each; HeckeCompletion **1m29s wall / 4m20s user**, exit 0, zero output.
 - **BASELINE** autoImplicit control reproduced (bare exit 0, `-DautoImplicit=false` exit 1).
+
+## 2026-11-24 — consolidate the local lean-direct build into the cache branches (branch claude/lean-cache-consolidate-2026-11-24)
+- **STABLE** the standard restore is now base + addons: `lean-cache-restore.sh` calls
+  `lean-restore-gap-oleans.sh` then `lean-restore-refresh-oleans.sh` (`apply_addons`), both
+  idempotent via `.lake/lean-{gap,refresh}-addon.sha`; markers cleared when the base is re-extracted.
+  Opt out `LEAN_CACHE_NO_ADDONS=1`.
+- **TRAP (measured)** the Nov-21 base reseed `7c61a1ba876` (Lake build of main 9428c3511c) carries
+  `.trace` but **no `.srcsha`**, so `lean_freshness` (conservative, used by `lean-direct-cone.sh`)
+  calls every base QOU olean stale on a fresh checkout. The refresh addon's `.srcsha` stamps are what
+  make an incremental lean-direct rebuild possible; without it the cone tool rebuilds everything.
+- **TRAP (corrected same session)** the gap branch's 288 entries are 224 oleans + 64 `.ilean`; all
+  224 oleans were already in the Nov-21 base. Count `\.olean$`, not tar lines.
+- **TRAP** Mathlib SOURCE is absent in this container (root `.lake/packages/mathlib` is oleans only,
+  no per-paper packages tree). `lean-build-mathlib-gap-cone.py` hardcodes the per-paper path: clone
+  mathlib4 at the manifest rev (`git fetch --depth=1 origin <sha>`, 8 s, 99 MB) and scaffold
+  `folio/quantum-observable-universe/lean/.lake/packages/` with symlinks (mathlib -> clone whose
+  `.lake/build/lib/lean` -> root mathlib lib; the other packages -> root). Remove it afterwards.
+- **TRAP** disk filled TWICE from orphaned `tmp_pack_*` of dead fetches: 10.4 G in qou `.git`, 15.7 G
+  in `/home/user/folio-assistant/.git` (SessionStart platform fetch). Check `/proc/*/fd` that nothing
+  holds it, then `rm`. The cone builder's disk guard (`--min-free-gb 1.5`) stopped cleanly; re-run resumes.
+- **STABLE** `gh api` writes (git/blobs, refs) are 403 through the proxy; a plain `git push` of a
+  1-commit branch whose parent is the origin/main tip went through in seconds from the main clone.
