@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-23T20:27:30Z
-updated_at: 2026-11-23T23:30:34Z
+updated_at: 2026-11-24T00:25:56Z
 parent: qou-lnkg
 ---
 
@@ -29,3 +29,10 @@ parent: qou-lnkg
      * Single-threaded `nice -n 10` overlay cone verification (`lean-direct-cone.sh`, never `lake build` from scratch) + §7c generic base-ring discipline.
 2. **Build `scripts/lean-best-practices-lint.py` & Rationalize `scripts/*lean*`:**
    - Add a fast static + `#lint` gate checking: (a) zero `import Mathlib` umbrella imports, (b) zero `QOU.*` imports inside Tier-A/Tier-B community subgraphs, (c) `set_option autoImplicit false` & module/public-decl docstrings on community subgraphs, (d) synonym-directory creation blocklist, and (e) clear `README`/router index over `scripts/*lean*` deprecating redundant wrappers into canonical entry points.
+
+
+
+## Worker 27 Delivery (2026-11-23 — Issue #9235, Ready PR #9236)
+- Created `skills/local/lean-build-hygiene.{md,ts}` and `scripts/lean/README.md` helper router.
+- Modernized 25 Lean/proof/KG skills + 6 `.ts` `SkillDefinition` manifests (`0` broken relative links, `0` broken script paths; purged `True := by trivial` vacuity advice in `proof-triage.md`, inline `sorry` in `lean-q-substitution.md`, and stale `.tex` / `content/` / `.github/scripts/*` / `proof-objects.json` / bare `lake build` guidance; wired `lean-kg-detangler.py` and `lean-best-practices-lint.py`).
+- Ready PR: https://github.com/litlfred/qou/pull/9236 (holding merge for owner OK).
