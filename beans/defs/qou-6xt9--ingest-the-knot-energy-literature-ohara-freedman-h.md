@@ -1,13 +1,13 @@
 ---
 # qou-6xt9
 title: Ingest the knot-energy literature (O'Hara, Freedman-He-Wang, survey)
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T11:56:16Z
-updated_at: 2026-10-04T15:13:08Z
+updated_at: 2026-11-24T00:59:36Z
 parent: qou-mub3
 ---
 
@@ -321,3 +321,7 @@ the characterisation survives on realisable distance triples only.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-11-23 Backlog Drain Batch 2 Audit (qou-nr6r, claude/backlog-drain-batch2-20261123)
+- **100% landed on `origin/main`:** O'Hara 1991 (`library/1-s20-0040938391900102-main`), Freedman–He–Wang 1993 Bull. AMS announcement (`library/arxiv-math-9301212v1`), and `folio/references/ohara1991.json` DOI verification (`10.1016/0040-9383(91)90010-2`) merged in PR #7311 (`58941e013677a2b79bc370681ada23baa6353bb4`), supplemented by Bryson–Freedman–He–Wang 1993 crossing bound ingestion in PRs #7315 (`712b506a11df5d337463e776c8cd7070c1e6895c`) & #7316 (`d2924e6f6bc9d904e0ac40987504ff6940fab233`). Closed paired GitHub issue #7298 and marking mechanical intake bean `completed`.
