@@ -1,5 +1,7 @@
 {
  "description": "Leray DSS Galerkin search -- mpmath verification stage (numerical exploration, NOT a proof).",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Numerical Galerkin search for Leray self-similar Navier-Stokes profiles over exact rational harmonics in mpmath; no substrate q is read or evaluated anywhere.",
  "dps": 60,
  "alpha_test": "0.25",
  "trial_tail": "(1+rho)^-p, n=0 member ~ |y|^-1 (weak-L3)",

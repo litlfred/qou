@@ -24,7 +24,8 @@ res["G2_abs_mu"] = "2 sin(theta/2) = h^2 sqrt([3]_q)" if res["G2_equals_h4_[3]q_
 res["G2_abs_mu_sq_eq_2_plus_c1"] = True  # identity from lam*lam_bar = 1, recorded for G1 range
 res["G2_abs_mu_sq"] = str(sp.factor(sp.simplify(2 + c1)))
 # numbers at the pin
-q0 = mpf('1.1099785956427390466817951294')
+from qou_substrate.constants import q_muon_at  # live muon pin (CODATA 2022), not a typed copy
+q0 = q_muon_at(mp.dps)
 c1n = (q0**12 - 3*q0**10 + 3*q0**8 - 4*q0**6 + 3*q0**4 - 3*q0**2 + 1)/q0**6
 theta = acos(-c1n/2)
 lam = mpc(-c1n/2, msqrt(1 - (c1n/2)**2))

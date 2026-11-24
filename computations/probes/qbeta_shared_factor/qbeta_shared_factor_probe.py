@@ -149,7 +149,10 @@ def main() -> int:
     wb.save({"description": ("U_q(sl2) intertwining explains why every gluon word multiplies "
                              "eps_p and eps_n by one factor: exact checks at q = 2, 3/2."),
              "q_values": [str(q) for q in QS], "family": [list(x) for x in FAMILY],
-             "words": nwords, "counterexamples": bad})
+             "words": nwords, "counterexamples": bad,
+             "q0Anchor": "independent",
+             "q0AnchorReason": ("exact Fraction arithmetic at q = 2 and q = 3/2 only; the imported "
+                                "gluon-strand module is used for its word builder, never its q0")})
     return 0 if allp else 1
 
 

@@ -845,7 +845,11 @@ def main():
     mode = sys.argv[1]
     tag = os.environ.get("LERAY_TAG", "")
     outf = os.path.join(HERE, f"leray-dss-logphase-{mode}{tag}.witness.json")
-    out = dict(description=__doc__.strip().splitlines()[0], dps=DPS, radial_rule=dict(QN=QN, phase_per_panel=s40(PHASE_PER_PANEL, 4)),
+    out = dict(description=__doc__.strip().splitlines()[0],
+               q0Anchor='independent',
+               q0AnchorReason='Arb Newton/continuation search for Leray self-similar Navier-Stokes profiles in a '
+                              'log-phase trial basis; no substrate q is read or evaluated anywhere.',
+               dps=DPS, radial_rule=dict(QN=QN, phase_per_panel=s40(PHASE_PER_PANEL, 4)),
                trial_tail='(1+rho)^-(p + i theta m w); theta=1: mode m decays like |y|^(-1-2imw)', mode=mode)
     def save(): json.dump(out, open(outf, 'w'), indent=1)
     if mode == 'validate':

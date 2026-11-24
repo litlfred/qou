@@ -1,5 +1,6 @@
 """H6 eigenvalue phases of gamma-gamma words. Pre-registered 857ea510990. mpmath 30 dps."""
 import json, itertools, mpmath as mp
+from qou_substrate.constants import Q_50_DIGIT_STR  # proton pin, not a typed copy
 mp.mp.dps = 30
 N = 6
 def partitions(n, m=None):
@@ -60,7 +61,7 @@ def phases(M):
                 ev = mp.polyroots(c, maxsteps=400, extraprec=400)
     return sorted(mp.mpf(mp.nstr(mp.arg(e)/(2*mp.pi), 12)) for e in ev), [mp.nstr(abs(e), 8) for e in ev]
 out = {"preregistration": "857ea510990", "results": {}}
-for label, q in (("q0", mp.mpf('1.1099785827513808076')), ("q~1", 1 + mp.mpf('1e-25'))):
+for label, q in (("q0", mp.mpf(Q_50_DIGIT_STR)), ("q~1", 1 + mp.mpf('1e-25'))):
     res = {}
     for lam in partitions(N):
         g = rep(lam, q); e = check(g, q)

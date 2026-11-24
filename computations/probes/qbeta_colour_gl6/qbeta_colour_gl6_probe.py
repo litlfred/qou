@@ -13,6 +13,7 @@ mpmath at the proton pin; exact Fractions for G1. Nothing is selected.
 from __future__ import annotations
 
 import itertools
+import json
 import sys
 from fractions import Fraction as Fr
 from pathlib import Path
@@ -31,6 +32,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 mp.mp.dps = 60
 Q0 = mp.mpf(Q_50_DIGIT_STR)
 F_REQ = mp.mpf("2.40397")
+# The ruled D1 cell (eps_p, eps_n at q0), READ from the energy-map witness that
+# computes it, rather than typed here.
+_EMAP = json.loads((_ROOT / "computations/probes/qbeta_energy_map/"
+                    "qbeta-energy-map.witness.json").read_text(encoding="utf-8"))["numbers"]
+RULED_EPS_P = mp.mpf(_EMAP["eps_p"])
+RULED_EPS_N = mp.mpf(_EMAP["eps_n"])
 RESULTS: list[tuple[str, bool, str]] = []
 
 
@@ -127,8 +134,8 @@ def main() -> int:
 
     # G2: one colour reduces to the ruled cell
     r1 = eps(vword(3), "isospin-major", "K6", "summed", Q0, ncol=1)
-    ok2 = abs(r1["p"] - mp.mpf("0.408718179341")) < mp.mpf("1e-11") and \
-        abs(r1["n"] - mp.mpf("0.331737644740")) < mp.mpf("1e-11")
+    ok2 = abs(r1["p"] - RULED_EPS_P) < mp.mpf("1e-11") and \
+        abs(r1["n"] - RULED_EPS_N) < mp.mpf("1e-11")
     ruled_flav = r1["n"] - r1["p"]
     check("G2_one_colour_is_the_ruled_cell", ok2,
           f"ncol = 1: eps_p = {mp.nstr(r1['p'], 12)}, eps_n = {mp.nstr(r1['n'], 12)}, "

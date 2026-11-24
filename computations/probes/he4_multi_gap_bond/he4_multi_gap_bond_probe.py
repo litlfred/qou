@@ -24,6 +24,10 @@ _ROOT = _HERE.parents[2]
 sys.path.insert(0, str(_ROOT / "computations" / "probes" / "he4_bond_both_nucleons"))
 import he4_bond_both_nucleons_probe as base  # noqa: E402  (sets its own sys.path)
 from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+sys.path.insert(0, str(_ROOT / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()  # the dps 40 the base module sets is a side effect of an import, not a declaration here
 import mpmath as mp  # noqa: E402
 
 Markov = base.Markov
