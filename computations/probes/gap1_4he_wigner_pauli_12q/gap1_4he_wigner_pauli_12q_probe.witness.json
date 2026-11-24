@@ -1,0 +1,599 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T03:23:04.617367+00:00",
+  "commitSha": "4d5b8baebab4a66c67c2882f3d6019085589b099",
+  "assertions": [
+    {
+      "name": "su4_weyl_dims_20_50_20_1_0_and_a5_pauli_shell_closure_exact",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "TwelveQuarkWignerPauliBinding.conjugate_rectThree_eq_colThree & su4WeylDim_light_nuclei_and_shell_closure"
+    },
+    {
+      "name": "microscopic_6q_cmi_pauli_norm_1_over_9_and_harvey_weights_exact",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "TwelveQuarkWignerPauliBinding.pauli_cmi_operator_identity & cmi_spectrum_and_pauli_norm"
+    },
+    {
+      "name": "hoefsmit_q0_conjugate_duality_and_pauli_rowsum_1_below_1e_minus_74",
+      "computed": "3.58434730069838e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "TwelveQuarkWignerPauliBinding.hecke_conjugate_duality_and_pauli_invariance"
+    },
+    {
+      "name": "cg_and_lanczos_eigen_residuals_below_1e_minus_70",
+      "computed": "1.81366952912046e-79",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "80-dps Hoefsmit CG and full-reorthogonalized Lanczos certification across A=2,3,4"
+    },
+    {
+      "name": "m0_reproduces_w4_baseline_4he_14p4877_mev_exact",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "Exact regression reproduction of #9221 G2_intra_casimir__V2_allpairs_fierz"
+    },
+    {
+      "name": "all_models_strictly_bind_and_true_ka_achieves_exact_1_3_6_bh2_and_gt6_exact",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "TwelveQuarkWignerPauliBinding.pauli_collective_schur_superradiance & ColourReconnectionStokesAssembly.multiChannel_schur_rayleigh_lt"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "gap1_4he_wigner_pauli_12q_probe",
+  "scriptFile": "gap1_4he_wigner_pauli_12q_probe.py",
+  "scriptHash": "f1a7db8bb83e",
+  "scriptCommitSha": "4d5b8baebab4a66c67c2882f3d6019085589b099",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap1_4he_wigner_pauli_12q/gap1_4he_wigner_pauli_12q_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap1_4he_wigner_pauli_12q/gap1_4he_wigner_pauli_12q_probe.py"
+  },
+  "description": "Pre-registered 80-dps (50-dps serialized) evaluation closing Open Gap 1 (Option 1A): conjugate Young-diagram pairing [A,A,A]' = [3^A], Wigner SU(4)_{sigma tau} multiplicity (20, 50, 20, 1, 0) & 12-quark Pauli 1s-shell closure at A >= 5, microscopic 6q chromomagnetic O_CM & Matveev-Sorba/Harvey (1/9, 4/45, 4/5) verification over Q, q_0-deformed Hoefsmit conjugate duality, and 6 zero-parameter colour-spin-isospin Hamiltonians (M0-M5) across 2H, 3H/3He, and 4He.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (qou_substrate.constants.q_at)",
+    "work_dps": 80,
+    "output_dps": 50,
+    "E0_MeV": "4.1859813632944758969450621587590084101434868908796",
+    "E_osc_MeV": "42.247768109149953770466711560743542994359111037430",
+    "m_e_MeV": "0.51099895069000000000000000000000000000000000000000",
+    "free_parameters": 0
+  },
+  "data": {
+    "lean_module": "folio/quantum-observable-universe/lean/QOU/Nuclear/TwelveQuarkWignerPauliBinding.lean",
+    "preregistration": "computations/probes/gap1_4he_wigner_pauli_12q/PREREGISTRATION.md",
+    "codata_2022_nuclear_binding_MeV": {
+      "2H": "2.2245663700000000000000000000000000000000000000000",
+      "3H": "8.4817966300000000000000000000000000000000000000000",
+      "3He": "7.7179896800000000000000000000000000000000000000000",
+      "4He": "28.295610940000000000000000000000000000000000000000"
+    },
+    "codata_2022_binding_ratios_vs_2H": {
+      "3H_over_2H": "3.812786502746600453193042",
+      "3He_over_2H": "3.469435564648943245509910",
+      "4He_over_2H": "12.71960743522343188169297"
+    },
+    "part_a1_combinatorics_and_shell_closure": {
+      "all_combinatorics_pass": true,
+      "by_A": {
+        "A=1": {
+          "n_quarks": 3,
+          "specht_dim_colour_and_spin_isospin": 1,
+          "hidden_channel_dim": 0,
+          "su4_weyl_dim_colThree": 20,
+          "su4_content_numerator": 120,
+          "nucleon_exterior_dim_choose_4_A": 4,
+          "content_sum_colThree": 3,
+          "content_sum_rectThree": -3,
+          "eight_times_C2_SU4_colThree": 63,
+          "pauli_hidden_fraction_rational": "0/1"
+        },
+        "A=2": {
+          "n_quarks": 6,
+          "specht_dim_colour_and_spin_isospin": 5,
+          "hidden_channel_dim": 4,
+          "su4_weyl_dim_colThree": 50,
+          "su4_content_numerator": 7200,
+          "nucleon_exterior_dim_choose_4_A": 6,
+          "content_sum_colThree": 3,
+          "content_sum_rectThree": -3,
+          "eight_times_C2_SU4_colThree": 84,
+          "pauli_hidden_fraction_rational": "4/5"
+        },
+        "A=3": {
+          "n_quarks": 9,
+          "specht_dim_colour_and_spin_isospin": 42,
+          "hidden_channel_dim": 41,
+          "su4_weyl_dim_colThree": 20,
+          "su4_content_numerator": 172800,
+          "nucleon_exterior_dim_choose_4_A": 4,
+          "content_sum_colThree": 0,
+          "content_sum_rectThree": 0,
+          "eight_times_C2_SU4_colThree": 63,
+          "pauli_hidden_fraction_rational": "41/42"
+        },
+        "A=4": {
+          "n_quarks": 12,
+          "specht_dim_colour_and_spin_isospin": 462,
+          "hidden_channel_dim": 461,
+          "su4_weyl_dim_colThree": 1,
+          "su4_content_numerator": 1036800,
+          "nucleon_exterior_dim_choose_4_A": 1,
+          "content_sum_colThree": -6,
+          "content_sum_rectThree": 6,
+          "eight_times_C2_SU4_colThree": 0,
+          "pauli_hidden_fraction_rational": "461/462"
+        },
+        "A=5": {
+          "n_quarks": 15,
+          "specht_dim_colour_and_spin_isospin": 6006,
+          "hidden_channel_dim": 6005,
+          "su4_weyl_dim_colThree": 0,
+          "su4_content_numerator": 0,
+          "nucleon_exterior_dim_choose_4_A": 0,
+          "content_sum_colThree": -15,
+          "content_sum_rectThree": 15,
+          "eight_times_C2_SU4_colThree": -105,
+          "pauli_hidden_fraction_rational": "6005/6006"
+        }
+      }
+    },
+    "part_a2_sympy_6q_microscopic_cmi_and_pauli": {
+      "all_exact_sympy_microscopic_pass": true,
+      "single_nucleon_cmi": "-8",
+      "nn_P23_col_expectation": "1/3",
+      "nn_P23_spin_isospin_expectation": "-1/27",
+      "pauli_antisymmetrizer_norm_6q": "1/9",
+      "harvey_6q_probabilities": {
+        "P_NN": "1/9",
+        "P_DeltaDelta": "4/45",
+        "P_hidden_88": "4/5",
+        "P_colour_singlet_sum": "1/5"
+      },
+      "microscopic_6q_cmi_eigenvalues": {
+        "S1_T0_deuteron_bag": "8/3",
+        "S1_T0_repulsive_core_vs_2N": "56/3",
+        "S0_T1_dinucleon_bag": "8",
+        "S0_T1_repulsive_core_vs_2N": "24",
+        "dinucleon_minus_deuteron_core_excess": "16/3"
+      },
+      "closed_form_cmi_spectrum_3q_to_12q": {
+        "N_3q": "-8",
+        "Delta_3q": "8",
+        "6q_deuteron_S1_T0": "8/3",
+        "6q_dinucleon_S0_T1": "8",
+        "9q_triton_helion_S1half_T1half": "40",
+        "12q_alpha_S0_T0": "96"
+      }
+    },
+    "part_a3_hoefsmit_conjugate_duality_residuals": {
+      "all_yamanouchi_signs_consistent": true,
+      "max_hecke_braid_residual": "4.2168791772922092897e-81",
+      "max_generator_conjugate_duality_residual": "5.2710989716152616122e-82",
+      "max_braid_transposition_duality_residual": "3.6897692801306831285e-81",
+      "max_pauli_proj_rowsum_and_sym_residual": "3.5843473006983778963e-80",
+      "max_sparse_conjugation_shortcut_residual": "1.0542197943230523224e-80"
+    },
+    "part_b_a2_full_tensor_W2_audit": {
+      "dim_W2": "25",
+      "v_offdiag_norm_sq_W2": "0.25683418360624752217269022002780948465763220022949",
+      "delta_E_BH2_W2_dimless": "-0.047220459120940178500369788151513797567631026570229",
+      "bind_BH2_W2_in_Eosc_MeV": "1.994959006949075533233044",
+      "bind_BH2_W3_exact_3x_MeV": "5.984877020847226599699133",
+      "bind_BH2_W4_exact_6x_MeV": "11.96975404169445319939827",
+      "E_ground_W2_dimless": "-0.046745831663880138218516173687138565045566381700794",
+      "bind_W2_in_Eosc_MeV": "1.974907056204967424338341",
+      "D_Pauli_subspace_probability": "0.99447622667239132853248913761593323340986571753601",
+      "off_D_Pauli_leakage_probability": "0.0055237733276086714675108623840667665901342824639876",
+      "eig_residual_25x25": "1.70075302756024e-81",
+      "W3_pair_norm_spread_max_diff": "3.6897692801306831285e-81",
+      "W3_pair_orthogonality_max_inner_prod": "2.6704619267390141619e-83"
+    },
+    "part_b_models_M0_to_M5": {
+      "M0_w4_baseline_colour_V2": {
+        "per_A": {
+          "A=2": {
+            "dim_carrier": 5,
+            "v_offdiag_norm_sq": "0.22301424654178210070293080981114297815241657498094",
+            "delta_E_BH2_dimless": "-0.050100686733425977664901142038362306136740419026524",
+            "E_ground_exact_dimless": "-0.053607213188945459436914273227397952214226768530052",
+            "hidden_channel_admixture_prob": "0.012721939909432176934710277340534672170164893340398",
+            "bind_BH2_in_Eosc_MeV": "2.116642195222946190382006",
+            "bind_exact_in_Eosc_MeV": "2.264785111784332776281115",
+            "bind_exact_in_E0_MeV": "0.2243987953470795230129355",
+            "bind_exact_in_me_MeV": "0.02739322968896625847990315",
+            "cg_solve_inf_residual": "5.34979295769295e-82",
+            "lanczos_eig_inf_residual": "5.68769460800358e-82"
+          },
+          "A=3": {
+            "dim_carrier": 42,
+            "v_offdiag_norm_sq": "0.44369821856688104049143303757211871193773462293448",
+            "delta_E_BH2_dimless": "-0.099677871693428903326387395904558125311919853275698",
+            "E_ground_exact_dimless": "-0.12085507723527205155936299723315197435111282513593",
+            "hidden_channel_admixture_prob": "0.032831913549820135794507905841089788504671732774063",
+            "bind_BH2_in_Eosc_MeV": "4.211167608917586519503920",
+            "bind_exact_in_Eosc_MeV": "5.105857277849181144320134",
+            "bind_exact_in_E0_MeV": "0.5058971009663632813314901",
+            "bind_exact_in_me_MeV": "0.06175681765278292460351807",
+            "cg_solve_inf_residual": "5.34979295769295e-82",
+            "lanczos_eig_inf_residual": "5.56759828876862e-81"
+          },
+          "A=4": {
+            "dim_carrier": 462,
+            "v_offdiag_norm_sq": "1.1229140744556514977773540493957942730256789537720",
+            "delta_E_BH2_dimless": "-0.25226534692400197571166503497358267966622292425107",
+            "E_ground_exact_dimless": "-0.34292145013491727321105783136973766478588911264737",
+            "hidden_channel_admixture_prob": "0.10093743442164757672857900437624384881426484613259",
+            "bind_BH2_in_Eosc_MeV": "10.65764787881950005605362",
+            "bind_exact_in_Eosc_MeV": "14.48766590495341408694101",
+            "bind_exact_in_E0_MeV": "1.435462799338679642818448",
+            "bind_exact_in_me_MeV": "0.1752325011880358855408066",
+            "cg_solve_inf_residual": "1.05421979432305e-81",
+            "lanczos_eig_inf_residual": "4.87576654874412e-81"
+          }
+        },
+        "scaling_ratios_BH2_vs_A2": {
+          "A3_over_A2": "1.989551006032941577137079",
+          "A4_over_A2": "5.035167447229751864489435"
+        },
+        "scaling_ratios_exact_vs_A2": {
+          "A3_over_A2": "2.254455511598838744708418",
+          "A4_over_A2": "6.396927385989025194814407"
+        },
+        "ame_comparison_in_Eosc_chart": {
+          "2H_MeV": "2.2647851117843327763",
+          "2H_rel_diff_pct": "1.80793624891",
+          "3H_MeV": "5.1058572778491811443",
+          "3H_rel_diff_pct": "-39.8021728110",
+          "3He_MeV": "5.1058572778491811443",
+          "3He_rel_diff_pct": "-33.8447252517",
+          "4He_MeV": "14.487665904953414087",
+          "4He_rel_diff_pct": "-48.7988934550"
+        }
+      },
+      "M1_colour_only_true_KA_fierz": {
+        "per_A": {
+          "A=2": {
+            "dim_carrier": 5,
+            "v_offdiag_norm_sq": "0.22301424654178210070293080981114297815241657498094",
+            "delta_E_BH2_dimless": "-0.050100686733425977664901142038362306136740419026524",
+            "E_ground_exact_dimless": "-0.053607213188945459436914273227397952214226768530052",
+            "hidden_channel_admixture_prob": "0.012721939909432176934710277340534672170164893340398",
+            "bind_BH2_in_Eosc_MeV": "2.116642195222946190382006",
+            "bind_exact_in_Eosc_MeV": "2.264785111784332776281115",
+            "bind_exact_in_E0_MeV": "0.2243987953470795230129355",
+            "bind_exact_in_me_MeV": "0.02739322968896625847990315",
+            "cg_solve_inf_residual": "5.34979295769295e-82",
+            "lanczos_eig_inf_residual": "5.68769460800358e-82"
+          },
+          "A=3": {
+            "dim_carrier": 42,
+            "v_offdiag_norm_sq": "0.66904273962534630210879242943342893445724972494283",
+            "delta_E_BH2_dimless": "-0.15030206020027793299470342611508691841022125707957",
+            "E_ground_exact_dimless": "-0.16479644334716244566115466398328402099224408762881",
+            "hidden_channel_admixture_prob": "0.039248908503611731932091897133136386088175228318217",
+            "bind_BH2_in_Eosc_MeV": "6.349926585668838571146017",
+            "bind_exact_in_Eosc_MeV": "6.962281923743586635485186",
+            "bind_exact_in_E0_MeV": "0.6898348405884359169391054",
+            "bind_exact_in_me_MeV": "0.08421080962784404112182418",
+            "cg_solve_inf_residual": "3.16265938296916e-81",
+            "lanczos_eig_inf_residual": "3.92861595228200e-81"
+          },
+          "A=4": {
+            "dim_carrier": 462,
+            "v_offdiag_norm_sq": "1.3380854792506926042175848588668578689144994498857",
+            "delta_E_BH2_dimless": "-0.30060412040055586598940685223017383682044251415915",
+            "E_ground_exact_dimless": "-0.33911034214694816802237146316050936833248145156082",
+            "hidden_channel_admixture_prob": "0.080890128238307851201440561998038391085020767156626",
+            "bind_BH2_in_Eosc_MeV": "12.69985317133767714229203",
+            "bind_exact_in_Eosc_MeV": "14.32665509843876627906071",
+            "bind_exact_in_E0_MeV": "1.419509572327538260835709",
+            "bind_exact_in_me_MeV": "0.1732850290052173956452496",
+            "cg_solve_inf_residual": "3.42621433154992e-81",
+            "lanczos_eig_inf_residual": "6.85242866309984e-81"
+          }
+        },
+        "scaling_ratios_BH2_vs_A2": {
+          "A3_over_A2": "3.000000000000000000000000",
+          "A4_over_A2": "6.000000000000000000000000"
+        },
+        "scaling_ratios_exact_vs_A2": {
+          "A3_over_A2": "3.074146808682562261129004",
+          "A4_over_A2": "6.325834192344797335911535"
+        },
+        "ame_comparison_in_Eosc_chart": {
+          "2H_MeV": "2.2647851117843327763",
+          "2H_rel_diff_pct": "1.80793624891",
+          "3H_MeV": "6.9622819237435866355",
+          "3H_rel_diff_pct": "-17.9150099035",
+          "3He_MeV": "6.9622819237435866355",
+          "3He_rel_diff_pct": "-9.79151032314",
+          "4He_MeV": "14.326655098438766279",
+          "4He_rel_diff_pct": "-49.3679244855"
+        }
+      },
+      "M2_pauli_conjugate_KA_G2col": {
+        "per_A": {
+          "A=2": {
+            "dim_carrier": 5,
+            "v_offdiag_norm_sq": "0.19894141664239507865059285488993427369674530673458",
+            "delta_E_BH2_dimless": "-0.044692667612323410843383006110756079479543414585407",
+            "E_ground_exact_dimless": "-0.044252729886879472668691902543110096620021390073568",
+            "hidden_channel_admixture_prob": "0.0097476696093986520747135008619058419255779101357518",
+            "bind_BH2_in_Eosc_MeV": "1.888165457464756006043865",
+            "bind_exact_in_Eosc_MeV": "1.869579070457733626639081",
+            "bind_exact_in_E0_MeV": "0.1852411025813819331441186",
+            "bind_exact_in_me_MeV": "0.02261309853736341293220210",
+            "cg_solve_inf_residual": "5.05281356315154e-82",
+            "lanczos_eig_inf_residual": "5.02401620732080e-82"
+          },
+          "A=3": {
+            "dim_carrier": 42,
+            "v_offdiag_norm_sq": "0.45604848964997264341304159673015657809229325804685",
+            "delta_E_BH2_dimless": "-0.098230185430930642100750863968496821416557557393488",
+            "E_ground_exact_dimless": "-0.099398265553084167225967662657602488095839975603501",
+            "hidden_channel_admixture_prob": "0.021540732648884196785302990893733954066191542277240",
+            "bind_BH2_in_Eosc_MeV": "4.150006095404757990214007",
+            "bind_exact_in_Eosc_MeV": "4.199354873538407671419596",
+            "bind_exact_in_E0_MeV": "0.4160792871490056045818040",
+            "bind_exact_in_me_MeV": "0.05079240939803198194572196",
+            "cg_solve_inf_residual": "1.81194027149275e-82",
+            "lanczos_eig_inf_residual": "5.40287644590564e-81"
+          },
+          "A=4": {
+            "dim_carrier": 462,
+            "v_offdiag_norm_sq": "0.73016179312224025092283639124571991277096202049413",
+            "delta_E_BH2_dimless": "-0.15366640659056964662217849655657921740825696491696",
+            "E_ground_exact_dimless": "-0.15737023165924650554229703214396001091931950542641",
+            "hidden_channel_admixture_prob": "0.033727458419126847337125250546410253126799784619948",
+            "bind_BH2_in_Eosc_MeV": "6.492062711804738593770199",
+            "bind_exact_in_Eosc_MeV": "6.648541054423054931416072",
+            "bind_exact_in_E0_MeV": "0.6587488568629401789432404",
+            "bind_exact_in_me_MeV": "0.08041602324771718196816305",
+            "cg_solve_inf_residual": "5.27109897161526e-82",
+            "lanczos_eig_inf_residual": "2.47082764294465e-81"
+          }
+        },
+        "scaling_ratios_BH2_vs_A2": {
+          "A3_over_A2": "2.197903832525874337791563",
+          "A4_over_A2": "3.438291218674048700893883"
+        },
+        "scaling_ratios_exact_vs_A2": {
+          "A3_over_A2": "2.246149916788632707592765",
+          "A4_over_A2": "3.556170027510671868924169"
+        },
+        "ame_comparison_in_Eosc_chart": {
+          "2H_MeV": "1.8695790704577336266",
+          "2H_rel_diff_pct": "-15.9575953467",
+          "3H_MeV": "4.1993548735384076714",
+          "3H_rel_diff_pct": "-50.4897953025",
+          "3He_MeV": "4.1993548735384076714",
+          "3He_rel_diff_pct": "-45.5900429043",
+          "4He_MeV": "6.6485410544230549314",
+          "4He_rel_diff_pct": "-76.5032779518"
+        }
+      },
+      "M3_pauli_conjugate_KA_G2barsym": {
+        "per_A": {
+          "A=2": {
+            "dim_carrier": 5,
+            "v_offdiag_norm_sq": "0.19894141664239507865059285488993427369674530673458",
+            "delta_E_BH2_dimless": "-0.031142567304280375398058257630482793735202520387196",
+            "E_ground_exact_dimless": "-0.030992206651017491179750618855472572516500927275420",
+            "hidden_channel_admixture_prob": "0.0048049403835552341005316799286371483378319765489195",
+            "bind_BH2_in_Eosc_MeV": "1.315703961794832488325924",
+            "bind_exact_in_Eosc_MeV": "1.309351559783041854507461",
+            "bind_exact_in_E0_MeV": "0.1297327994485303209173181",
+            "bind_exact_in_me_MeV": "0.01583698507823757701368890",
+            "cg_solve_inf_residual": "5.27109897161526e-82",
+            "lanczos_eig_inf_residual": "2.80027132867061e-82"
+          },
+          "A=3": {
+            "dim_carrier": 42,
+            "v_offdiag_norm_sq": "0.45604848964997264341304159673015657809229325804685",
+            "delta_E_BH2_dimless": "-0.069587470849311671316207021687423916134974727185243",
+            "E_ground_exact_dimless": "-0.071199436686485443207176514836524018025258872867073",
+            "hidden_channel_admixture_prob": "0.011040392925553145878933641176179808701152190001555",
+            "bind_BH2_in_Eosc_MeV": "2.939915331743951675665438",
+            "bind_exact_in_Eosc_MeV": "3.008017290632740962807127",
+            "bind_exact_in_E0_MeV": "0.2980395150466930572162718",
+            "bind_exact_in_me_MeV": "0.03638283743651315198282679",
+            "cg_solve_inf_residual": "5.27109897161526e-82",
+            "lanczos_eig_inf_residual": "4.57926723159076e-81"
+          },
+          "A=4": {
+            "dim_carrier": 462,
+            "v_offdiag_norm_sq": "0.73016179312224025092283639124571991277096202049413",
+            "delta_E_BH2_dimless": "-0.10981309748001204159143047212617922745556267638141",
+            "E_ground_exact_dimless": "-0.11417999853278742334002655081464010336881512059845",
+            "hidden_channel_admixture_prob": "0.017701233579587060919560255603169117382498840738623",
+            "bind_BH2_in_Eosc_MeV": "4.639358277683027883696174",
+            "bind_exact_in_Eosc_MeV": "4.823850100716285015952931",
+            "bind_exact_in_E0_MeV": "0.4779553459192387560232708",
+            "bind_exact_in_me_MeV": "0.05834585944004011288758238",
+            "cg_solve_inf_residual": "5.27109897161526e-82",
+            "lanczos_eig_inf_residual": "3.64035272727179e-81"
+          }
+        },
+        "scaling_ratios_BH2_vs_A2": {
+          "A3_over_A2": "2.234480868882869986688893",
+          "A4_over_A2": "3.526141451572582215212737"
+        },
+        "scaling_ratios_exact_vs_A2": {
+          "A3_over_A2": "2.297333568022912191209469",
+          "A4_over_A2": "3.684151948859015213981269"
+        },
+        "ame_comparison_in_Eosc_chart": {
+          "2H_MeV": "1.3093515597830418545",
+          "2H_rel_diff_pct": "-41.1412679145",
+          "3H_MeV": "3.0080172906327409628",
+          "3H_rel_diff_pct": "-64.5356117123",
+          "3He_MeV": "3.0080172906327409628",
+          "3He_rel_diff_pct": "-61.0258964400",
+          "4He_MeV": "4.8238501007162850160",
+          "4He_rel_diff_pct": "-82.9519492937"
+        }
+      },
+      "M4_pauli_all9_baryon_norm_G2sum": {
+        "per_A": {
+          "A=2": {
+            "dim_carrier": 5,
+            "v_offdiag_norm_sq": "0.44762980795318962294508115303283219437911670058916",
+            "delta_E_BH2_dimless": "-0.035036297762578547711741219869555430877399422806448",
+            "E_ground_exact_dimless": "-0.037900855932899342808201588624090578605602539153072",
+            "hidden_channel_admixture_prob": "0.0031988043920833045196089483685242904245360848243136",
+            "bind_BH2_in_Eosc_MeV": "1.480205383276547846576329",
+            "bind_exact_in_Eosc_MeV": "1.601226572591431675250451",
+            "bind_exact_in_E0_MeV": "0.1586522765880255160959060",
+            "bind_exact_in_me_MeV": "0.01936729761196442522438161",
+            "cg_solve_inf_residual": "5.27109897161526e-82",
+            "lanczos_eig_inf_residual": "3.01235070135669e-81"
+          },
+          "A=3": {
+            "dim_carrier": 42,
+            "v_offdiag_norm_sq": "1.0261357402833349202405070897164629847817002357549",
+            "delta_E_BH2_dimless": "-0.078287937066965466948386738968582300327654847212394",
+            "E_ground_exact_dimless": "-0.089561932642457411746892129468753379716516071276984",
+            "hidden_channel_admixture_prob": "0.0077823343356639580189269723471280294927232952228790",
+            "bind_BH2_in_Eosc_MeV": "3.307490610948882223291599",
+            "bind_exact_in_Eosc_MeV": "3.783791761685848488881053",
+            "bind_exact_in_E0_MeV": "0.3749045809019618985407286",
+            "bind_exact_in_me_MeV": "0.04576605360206419634567516",
+            "cg_solve_inf_residual": "5.27109897161526e-82",
+            "lanczos_eig_inf_residual": "1.81366952912046e-79"
+          },
+          "A=4": {
+            "dim_carrier": 462,
+            "v_offdiag_norm_sq": "1.6429066845219891587794136895584145423350362341080",
+            "delta_E_BH2_dimless": "-0.12354294185026793471550221445995725262388128589350",
+            "E_ground_exact_dimless": "-0.14664434484864407331794087184595235387176714047987",
+            "hidden_channel_admixture_prob": "0.013022512922142514629882029348099127640855850825816",
+            "bind_BH2_in_Eosc_MeV": "5.219413558812316835323886",
+            "bind_exact_in_Eosc_MeV": "6.195396275683733385041235",
+            "bind_exact_in_E0_MeV": "0.6138504945689523717105315",
+            "bind_exact_in_me_MeV": "0.07493510634227962833475521",
+            "cg_solve_inf_residual": "1.05421979432305e-81",
+            "lanczos_eig_inf_residual": "1.74605153434756e-81"
+          }
+        },
+        "scaling_ratios_BH2_vs_A2": {
+          "A3_over_A2": "2.234480868882869986688893",
+          "A4_over_A2": "3.526141451572582215212737"
+        },
+        "scaling_ratios_exact_vs_A2": {
+          "A3_over_A2": "2.363058311955280837499640",
+          "A4_over_A2": "3.869156546444940989257486"
+        },
+        "ame_comparison_in_Eosc_chart": {
+          "2H_MeV": "1.6012265725914316753",
+          "2H_rel_diff_pct": "-28.0207327511",
+          "3H_MeV": "3.7837917616858484889",
+          "3H_rel_diff_pct": "-55.3892656622",
+          "3He_MeV": "3.7837917616858484889",
+          "3He_rel_diff_pct": "-50.9743868732",
+          "4He_MeV": "6.1953962756837333850",
+          "4He_rel_diff_pct": "-78.1047446234"
+        }
+      },
+      "M5_pauli_all9_pair_avg_G2barsym": {
+        "per_A": {
+          "A=2": {
+            "dim_carrier": 5,
+            "v_offdiag_norm_sq": "0.049736645328132180327231239225870243819901855621018",
+            "delta_E_BH2_dimless": "-0.0077858439472396772692758266376789846394220939569885",
+            "E_ground_exact_dimless": "-0.0082049537127149371985691708828214114232432344064760",
+            "hidden_channel_admixture_prob": "0.0013517251058418327668606358871456244921417419415138",
+            "bind_BH2_in_Eosc_MeV": "0.3289345296170106325725175",
+            "bind_exact_in_Eosc_MeV": "0.3466409818010896353313749",
+            "bind_exact_in_E0_MeV": "0.03434578332811854434887043",
+            "bind_exact_in_me_MeV": "0.004192722737657352619558094",
+            "cg_solve_inf_residual": "1.31777474290382e-82",
+            "lanczos_eig_inf_residual": "4.03311137134820e-82"
+          },
+          "A=3": {
+            "dim_carrier": 42,
+            "v_offdiag_norm_sq": "0.11401508225370388002672300996849588719796669286166",
+            "delta_E_BH2_dimless": "-0.017397319348214548210752608659684955628367743824976",
+            "E_ground_exact_dimless": "-0.018976315118954197036330793283211963780372358878584",
+            "hidden_channel_admixture_prob": "0.0031553357753712504685043989845097132522046338485369",
+            "bind_BH2_in_Eosc_MeV": "0.7349979135441960496203553",
+            "bind_exact_in_Eosc_MeV": "0.8017069607117332369848500",
+            "bind_exact_in_E0_MeV": "0.07943450143194546426007672",
+            "bind_exact_in_me_MeV": "0.009696877113748377215736543",
+            "cg_solve_inf_residual": "3.95332422871145e-82",
+            "lanczos_eig_inf_residual": "1.63846758072767e-81"
+          },
+          "A=4": {
+            "dim_carrier": 462,
+            "v_offdiag_norm_sq": "0.18254518716910990653104596550649050470389291490089",
+            "delta_E_BH2_dimless": "-0.027453987077837318825667158768879389471973619087445",
+            "E_ground_exact_dimless": "-0.030588609025983202856788412498713520445194529118331",
+            "hidden_channel_admixture_prob": "0.0051209988005782664537780642215741903135891764694942",
+            "bind_BH2_in_Eosc_MeV": "1.159869679736070407849752",
+            "bind_exact_in_Eosc_MeV": "1.292300460911189587279481",
+            "bind_exact_in_E0_MeV": "0.1280433473118668779887929",
+            "bind_exact_in_me_MeV": "0.01563074711534407960538429",
+            "cg_solve_inf_residual": "3.95332422871145e-82",
+            "lanczos_eig_inf_residual": "1.23850235602601e-81"
+          }
+        },
+        "scaling_ratios_BH2_vs_A2": {
+          "A3_over_A2": "2.234480868882869986688893",
+          "A4_over_A2": "3.526141451572582215212737"
+        },
+        "scaling_ratios_exact_vs_A2": {
+          "A3_over_A2": "2.312787589471376064263723",
+          "A4_over_A2": "3.728066007073394905900525"
+        },
+        "ame_comparison_in_Eosc_chart": {
+          "2H_MeV": "0.34664098180108963533",
+          "2H_rel_diff_pct": "-84.4175931779",
+          "3H_MeV": "0.80170696071173323698",
+          "3H_rel_diff_pct": "-90.5479110655",
+          "3He_MeV": "0.80170696071173323698",
+          "3He_rel_diff_pct": "-89.6124898587",
+          "4He_MeV": "1.2923004609111895873",
+          "4He_rel_diff_pct": "-95.4328589559"
+        }
+      }
+    }
+  },
+  "caveats": [
+    "1. All 6 pre-registered Hamiltonians (M0-M5) have zero tunable or per-isotope parameters (CAL-1/2/3 only: proton-pinned q_0 and electron mass m_e in the documented E_osc(q_0) = m_e / (q_0 - 1)^2 and E_0(q_0) = m_e / (q_0(q_0 - 1)) charts). 2. Strong-sector models M0-M5 are strictly SU(2)_tau isospin-symmetric, so 3H and 3He receive identical strong binding before electromagnetic pp Coulomb + (m_n - m_p) core-breaking (~0.764 MeV empirical splitting). 3. Short-range (0s)^{3A} single-bag collapse is proved repulsive under O_CM (+56/3, +64, +128 for A=2,3,4), confirming that physical light-nuclei binding arises via virtual Bloch-Horowitz tunnelling from the factorized A-nucleon cluster channel into Pauli-conjugate [A,A,A] (x) [3^A] hidden-colour-spin-isospin channels rather than static 12-quark bag collapse."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
