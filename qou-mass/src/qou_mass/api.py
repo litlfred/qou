@@ -241,7 +241,7 @@ def predict(
         # mp.nstr at an explicit width — `str(mpf)` renders at the AMBIENT
         # mp.dps and would silently truncate. U_MEV is 11 published digits, so
         # 20 is comfortably clear of it and adds no invented precision.
-        with mp.workdps(60):
+        with mp.workdps(80):
             _u_mev = Decimal(mp.nstr(U_MEV, 20, strip_zeros=True))
         m_pred_pred = predict(atom, "mass", precision_dps=precision_dps).value
         A = Z + N

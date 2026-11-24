@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T17:59:17.427540+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-24T13:49:12.885052+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "assertions": [
     {
       "name": "guard_fourthdiff_kills_1body_linear",
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "b4-multiplicative-cumulant",
   "scriptFile": "b4_multiplicative_cumulant_probe.py",
-  "scriptHash": "02247f47b65d",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "8a3122ef40ba",
+  "scriptCommitSha": "884e4ab20d628ae6f6261536cbbfb7bd043e5083",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
