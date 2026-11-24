@@ -182,6 +182,17 @@
         "beans"
       ],
       "description": "The bean work-plan (beans/beans.json + beans/defs/, the layout the `beans` CLI reads through .beans.yml). Kept on its own branch, `cat/cat-harness/beans`, not on main (owner, 2026-10-10, re-confirmed 2026-11-15; issue #7642). The session-start hook installs the platform if it is absent and mounts it at `beans/` (`state:mount`); there is no read-only fallback (owner, 2026-11-15). An edit is pushed back with `bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push --id beans`, a splice with `expect` that never forces, so a bean edit is no longer a commit in a PR.",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "_site/beans/index.html",
+            "title": "Work plan",
+            "writer": [
+              "folio-assistant/cat-harness-tools/scripts/beans-board.ts"
+            ]
+          }
+        ]
+      },
       "_comment": "Same shape as the platform's own beans declaration (`scope: repository`, which dependents do not inherit, so qou declares its own) and as qou's fsh-guts entry above. The branch name is the owner's choice over the documented folio convention `cat/qou/beans`; the declaration names it explicitly, so no tool needs to compose it."
     },
     {
