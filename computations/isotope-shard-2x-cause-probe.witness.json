@@ -1,0 +1,163 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T15:18:20.408507+00:00",
+  "commitSha": "d0a7dc717b790032016a0dd1e962c5fb9383d0b9",
+  "assertions": [
+    {
+      "name": "stable_3_runs",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "cf_matches_live",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "stage_mismatch_explains_2_19",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "qclt_ratio_matches_pn_prediction_within_1pct",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "all_3243_L4_rows_reproduced_under_1_ulp",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "z00_z20_also_carries_91_pre_excision_L4_rows",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "isotope-shard-2x-cause-probe",
+  "scriptFile": "isotope_shard_2x_cause_probe.py",
+  "scriptHash": "00ccacf5d6d1",
+  "scriptCommitSha": "d0a7dc717b790032016a0dd1e962c5fb9383d0b9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/isotope_shard_2x_cause_probe.py"
+    ],
+    "reproduce": "python3 -u computations/isotope_shard_2x_cause_probe.py"
+  },
+  "description": "80-dps verification probe for qou-85o2: 3-run reproducibility at Z=26,N=19, exact proof that 2.191048078 = qclt_post / L4_pre is a pre- vs post-Coulomb stage mismatch while like-for-like qclt moves by x0.72379115 (single cause: a24fdac8a1a6 in hecke_core_symbolic.py), and exhaustive 3,243/3,243 L4-row verification across all 119 canonical-isotope-witness shards Z00..Z118.",
+  "auditOnly": "docs/audits/2026-11-24-canonical-isotope-z21-z99-bisect-85o2.md",
+  "parameters": {
+    "spot_nuclide": {
+      "Z": 26,
+      "N": 19,
+      "A": 45
+    },
+    "cause_commit": "a24fdac8a1a6 (2026-08-24T11:04:30Z)",
+    "channel_binding_q0_float64_truncation": "7.5916691e-18"
+  },
+  "data": {
+    "spot_Z26_N19": {
+      "Z": 26,
+      "N": 19,
+      "A": 45,
+      "qclt_post_MeV": "120.7011740021478585985088464697731429118",
+      "qclt_pre_MeV": "166.7624615024304764179472922155058129123",
+      "coulomb_MeV": "111.6741340440589905433608355207346172917",
+      "L4_post_MeV": "9.027039958088868055148010949038525620105",
+      "L4_pre_MeV": "55.08832745837148587458645669477119562064",
+      "recorded_shard_L4_MeV": "55.08832745837149250792384648490922731279",
+      "rel_diff_pre_vs_recorded": "1.2041276e-16",
+      "closed_form_vs_live_diff_MeV": "3.47738e-69",
+      "stage_mismatch_qclt_post_over_L4_pre": "2.19104807808",
+      "like_for_like_qclt_ratio": "0.723791031355",
+      "pn_only_log_ratio_prediction": "0.728386561565",
+      "like_for_like_L4_ratio": "0.163864839878",
+      "hecke_core_symbolic_contribution_MeV": "46.06128750028262",
+      "channel_binding_contribution_MeV": "0"
+    },
+    "exhaustive_L4_census": {
+      "Z00_Z20_reproduced": 91,
+      "Z00_Z20_total": 91,
+      "Z21_Z99_reproduced": 2892,
+      "Z21_Z99_total": 2892,
+      "Z100_Z118_reproduced": 260,
+      "Z100_Z118_total": 260,
+      "all_shards_reproduced": 3243,
+      "all_shards_total": 3243,
+      "max_error_in_qclt_float64_ulps": "0.98874529",
+      "worst_ulp_row": [
+        100,
+        147,
+        247,
+        "0.98874529"
+      ],
+      "max_rel_error_vs_residual": "1.1470065e-12",
+      "worst_rel_residual_row": [
+        111,
+        164,
+        275,
+        "1.1470065e-12"
+      ],
+      "post_update_negative_L4_rows": 1634,
+      "worst_negative_post_L4_MeV": "-379.502346647",
+      "worst_negative_post_nuclide": [
+        118,
+        175,
+        293
+      ]
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "canonical-isotope-witness-Z20.witness.json",
+        "sha256": "0fe8a78bcc59116dfc25d27d41ab69ccacdaf91473469366d9040062e92a1e44",
+        "size_bytes": 51430,
+        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+        "scriptCommitSha": "e005856e181805935eb2e6f17662b5a11c4e9508",
+        "computedAt": "2026-08-24T14:40:41.619498+00:00"
+      },
+      {
+        "path": "canonical-isotope-witness-Z26.witness.json",
+        "sha256": "de38b86a4be23d92a5fe9317a9d458daa036c1d0b224e6f760a730f31f6b8581",
+        "size_bytes": 60016,
+        "commitSha": "35d18af5f783dc2e7ec449a94da4f9037c50d671",
+        "scriptCommitSha": "e005856e181805935eb2e6f17662b5a11c4e9508",
+        "computedAt": "2026-08-23T17:15:59.759305+00:00"
+      },
+      {
+        "path": "canonical-isotope-witness-Z99.witness.json",
+        "sha256": "65f76343209cadd1a1d0fe828a5440a00905b0362072206ab5ac5110540999ea",
+        "size_bytes": 38845,
+        "commitSha": "35d18af5f783dc2e7ec449a94da4f9037c50d671",
+        "scriptCommitSha": "e005856e181805935eb2e6f17662b5a11c4e9508",
+        "computedAt": "2026-08-23T17:16:11.939671+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814240181798963574483"
+}
