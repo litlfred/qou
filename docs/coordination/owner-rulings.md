@@ -68,6 +68,8 @@ carrier), then try to prove and derive it.
 
 | date | instruction |
 |---|---|
+| 2026-11-22 | **Clearing unlabelled q0 witnesses: re-run, never hand-label; repair broken producers rather than retire them.** Owner card choice "As recommended, but fix group 3": long re-runs go ahead; re-runs whose numbers moved are committed with failing checks left visible; producers broken by upstream changes are repaired and re-run; witnesses no producer writes (hand-transcribed) are retired to `computations/_deprecated/`. Issue #9104, PR #9105. |
+| 2026-11-22 | **A witness computed at a retired pin whose producer cannot be re-run is retired, not re-pinned by hand.** Owner card choice "Retire it as a deprecated record" (project thread "Fix red precision gates on main"): `hadron-knot-table.witness.json` moved byte-for-byte to `computations/_deprecated/`; its block keeps status failed and points at the retired path. Issue #9104, PR #9105. |
 | 2026-11-22 | **Read the block's own `.qa.json` agent verdicts before declaring an item open.** Owner card choice *"Both"* (with the tracker cleanup below). Added as path 7 of the corpus-grep checklist in `AGENTS.md` §"Before declaring open". | bean `qou-tv74` |
 | 2026-11-22 | **Bean tracker cleanup approved: malformed bean ids are renamed to `qou-xxxx`, and illegal parent links are re-pointed to the nearest legal ancestor.** Owner card choice *"Both"*. Each changed bean carries a dated note naming its old id or old parent. | bean `qou-w3yy` |
 | 2026-11-20 | **No phone / push notifications.** Leave push off when creating scheduled tasks or sessions. |

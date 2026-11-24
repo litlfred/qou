@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T16:59:28.757359+00:00",
-  "commitSha": "21a8d76250d2c826430ebb0e65b697ccce0adbfd",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-22T19:35:48.673919+00:00",
+  "commitSha": "b0a57bfb1278482db74a60983c9e18bf92e63652",
   "assertions": [
     {
       "name": "the table's directly-recomputable rows reproduce at the PROTON pin, as the table's own prose states",
@@ -24,9 +24,9 @@
     },
     {
       "name": "the producer the TABLE names emits no witness at all, so six of the seven rows have no machine-readable provenance",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true
+      "passed": false
     },
     {
       "name": "the STRUCTURED fields are correct: q0Anchor says proton and q0Value is the proton pin",
@@ -89,12 +89,12 @@
       "passed": true
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 3,
   "computation": "the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe",
   "scriptFile": "the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py",
-  "scriptHash": "02bca6fad446",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3aef70da4b28",
+  "scriptCommitSha": "619bf86767da7208e60bc834c992620ead90a557",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -102,11 +102,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1"
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -147,5 +148,7 @@
   "caveats": [
     "Says nothing about whether the Chern-Simons dressing is the right model of alpha_EM. rem:em-coupling-chern-simons is open, kappa is still a sorry, and the named producer's own output records that the smallest residual belongs to a RULED-OUT PSLQ-empirical form -- the signature of a fit, not evidence for one.",
     "Says nothing about which pin either block SHOULD take. That is the owner ruling qou-i229 holds. No published figure is changed here."
-  ]
+  ],
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "comparison by design: evaluates the block's quantity q[9]_q[10]_q at three registered pins (proton 1.10997858275138..., live CODATA-2022 muon 1.10997859564273..., retired CODATA-2018 muon 1.10997859555418...) to find which one the published figures come from"
 }

@@ -15,7 +15,8 @@ V = s0*s1i
 detV = sp.simplify(V.det())
 trV = sp.factor(sp.simplify(V.trace()))
 # eigenvalue phase: cos(theta) = tr/2
-Q0 = mp.mpf('1.1099785827513808076')
+from qou_substrate.constants import Q_50_DIGIT_STR  # proton pin, not a typed copy
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 tr0 = mp.mpf(str(sp.N(trV.subs(q, sp.Rational(str(Q0))), 40)))
 theta0 = mp.acos(tr0/2)
 V3 = V**3

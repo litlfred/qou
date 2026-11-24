@@ -1,5 +1,7 @@
 {
  "description": "Leray DSS search in a log-phase trial basis (arbitrary precision; numerical exploration, NOT a proof).",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Arb Newton/continuation search for Leray self-similar Navier-Stokes profiles in a log-phase trial basis; no substrate q is read or evaluated anywhere.",
  "dps": 60,
  "radial_rule": {
   "QN": 24,
@@ -45,7 +47,7 @@
     "16.748821024268059465"
    ],
    "omega_to_zero": false,
-   "wall_s": 826
+   "wall_s": 775
   },
   {
    "S0": "0.6",
@@ -72,7 +74,7 @@
     "16.748821024268059465"
    ],
    "omega_to_zero": false,
-   "wall_s": 934
+   "wall_s": 863
   },
   {
    "S0": "0.8",
@@ -99,7 +101,7 @@
     "16.748821024268059465"
    ],
    "omega_to_zero": false,
-   "wall_s": 749
+   "wall_s": 706
   },
   {
    "S0": "0.7",
@@ -126,7 +128,7 @@
     "16.748821024268059465"
    ],
    "omega_to_zero": false,
-   "wall_s": 819
+   "wall_s": 768
   }
  ],
  "verdict": "completed"

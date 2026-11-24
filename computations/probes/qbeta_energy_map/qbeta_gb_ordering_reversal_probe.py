@@ -197,6 +197,8 @@ for n, ab_ in Abar.items():
     v = ev(ab_) * E0
     OUT["comparison"][f"{n}|mean8"] = {"A_E0_MeV": mp.nstr(v, 12), "abs_vs_Q_beta_pct": mp.nstr(100 * (abs(v) / Qb - 1), 6)}
 OUT["ok"] = not FAILED
+from q0_stamp import stamp_q0_anchor  # noqa: E402
+stamp_q0_anchor(OUT, __file__)
 (_HERE / "qbeta-gb-ordering-reversal.witness.json").write_text(json.dumps(OUT, indent=2, ensure_ascii=False) + "\n")
 print(f"{len(OUT['checks']) - len(FAILED)}/{len(OUT['checks'])} checks passed")
 sys.exit(1 if FAILED else 0)

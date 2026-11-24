@@ -72,4 +72,6 @@ tD = sp.simplify(z * (h * z + 1))
 print(f"electron t(Delta) at q=1: {sp.limit(tD, q, 1)}; at q0: {mp.nstr(sp.lambdify(q, tD, 'mpmath')(q0), 12)}")
 
 print("\nComparison (CODATA, outside any proof): Q_beta/m_e = 1.530988; scored cell c = 3/4")
-(_HERE / "qbeta-interaction-q1.witness.json").write_text(json.dumps({"rows": out, "electron_tDelta_q1": str(sp.limit(tD, q, 1))}, indent=1, ensure_ascii=False) + "\n")
+from q0_stamp import stamp_q0_anchor  # noqa: E402
+OUT = stamp_q0_anchor({"rows": out, "electron_tDelta_q1": str(sp.limit(tD, q, 1))}, __file__)
+(_HERE / "qbeta-interaction-q1.witness.json").write_text(json.dumps(OUT, indent=1, ensure_ascii=False) + "\n")

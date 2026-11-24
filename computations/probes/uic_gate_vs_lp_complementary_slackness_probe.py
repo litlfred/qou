@@ -144,7 +144,9 @@ def _gate_measurement(Z, N, k_exact=4):
         for lam, rec in row.get("partitions", {}).items():
             cumul[lam] = cumul.get(lam, mp.mpf(0)) + _as_mpf(rec["delta_MeV"])
 
-    gated = _as_mpf(last["gated_total_MeV"])
+    # Renamed upstream by owner ruling 2026-09-12 (bean qou-21oc): the gated
+    # sum is a disproved selection, and the key now says so (#9104).
+    gated = _as_mpf(last["gated_total_DISPROVED_SELECTION_MeV"])
     raw = _as_mpf(last["raw_total_MeV"])
     n_keep = int(last["n_tight_final"])
     n_blocks = int(last["n_active_exact"])
@@ -171,7 +173,7 @@ def _gate_measurement(Z, N, k_exact=4):
         "n_blocks": n_blocks,
         "n_kept_by_gate": n_keep,
         "ungated_total_MeV": mp.nstr(raw, 17),
-        "gated_total_MeV": mp.nstr(gated, 17),
+        "gated_total_DISPROVED_SELECTION_MeV": mp.nstr(gated, 17),
         "gated_over_ungated": mp.nstr(gated / raw, 12) if raw != 0 else None,
         "per_block_cumul_MeV": {k: mp.nstr(v, 17) for k, v in sorted(cumul.items())},
         "n_subset_matches": len(matches),
@@ -261,7 +263,7 @@ def main() -> int:
         gate[label] = _gate_measurement(Z, N)
         g = gate[label]
         print(f"[gate] {label}: keeps {g['n_kept_by_gate']} of {g['n_blocks']}; "
-              f"ungated {g['ungated_total_MeV']} -> gated {g['gated_total_MeV']}; "
+              f"ungated {g['ungated_total_MeV']} -> gated {g['gated_total_DISPROVED_SELECTION_MeV']}; "
               f"non-zero kept blocks {g['nonzero_kept_blocks']}", flush=True)
 
     lp = {}
@@ -349,7 +351,7 @@ def main() -> int:
     # 5. The gate changes the answer materially, so it is load-bearing.
     for label in ("2H", "4He"):
         g = gate[label]
-        moved = 1 if abs(mp.mpf(g["gated_total_MeV"])
+        moved = 1 if abs(mp.mpf(g["gated_total_DISPROVED_SELECTION_MeV"])
                          - mp.mpf(g["ungated_total_MeV"])) > mp.mpf("1e-6") else 0
         w.add_assertion(f"gate materially changes the returned value [{label}]",
                         str(moved), "1")

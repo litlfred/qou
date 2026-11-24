@@ -1,4 +1,6 @@
 {
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact sympy normal forms over Q(q, phi) with q symbolic; q0 is never read or substituted",
  "probe": "photon_excitation_gs",
  "exact": "sympy Q(q,phi)",
  "convention": "D, z=q^3/(q^2+1)",

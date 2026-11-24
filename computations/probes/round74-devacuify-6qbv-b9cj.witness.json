@@ -1,12 +1,14 @@
 {
+  "q0Anchor": "independent",
+  "q0AnchorReason": "mpmath checks of Lean lemmas (Euler characteristic, CAL-1 m_e/m_mu mass deficit identity, cluster ordering, truth table, polynomial growth); no q appears and q0 is never read",
   "probe": "round74_devacuify_6qbv_b9cj_probe",
   "scriptPath": "computations/probes/round74_devacuify_6qbv_b9cj_probe.py",
-  "scriptCommitSha": "4565067775d08914818c2a92b2f9190b9a6513d9",
-  "scriptHash": "eb31ca2387ecd5f25e7ee0ae6f76ac81c125b00246665750395ef1dd48782690",
-  "scriptSha256": "eb31ca2387ecd5f25e7ee0ae6f76ac81c125b00246665750395ef1dd48782690",
+  "scriptCommitSha": "b0a57bfb1278482db74a60983c9e18bf92e63652",
+  "scriptHash": "0bd186c7547f57a345573f4802d54ca7795a2fdd3265d02619dfdb88624d4722",
+  "scriptSha256": "0bd186c7547f57a345573f4802d54ca7795a2fdd3265d02619dfdb88624d4722",
   "dps": 80,
   "mpmathDps": 80,
-  "generatedAt": "2026-11-21T18:34:58.385605+00:00",
+  "generatedAt": "2026-11-22T19:35:46.800805+00:00",
   "allPassed": true,
   "checks": [
     {

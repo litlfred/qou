@@ -312,7 +312,10 @@ check("chi(NF(beta)) = q^writhe(beta) for all 341 signed words of length <= 4 in
 
 npass = sum(ok for _, ok in checks)
 print(f"\n{npass}/{len(checks)} checks pass")
-res = {"probe": "photon_excitation_gs", "exact": "sympy Q(q,phi)", "convention": "D, z=q^3/(q^2+1)",
+res = {"q0Anchor": "independent",
+       "q0AnchorReason": "exact sympy normal forms over Q(q, phi) with q symbolic; q0 is never read "
+                         "or substituted",
+       "probe": "photon_excitation_gs", "exact": "sympy Q(q,phi)", "convention": "D, z=q^3/(q^2+1)",
        "photon": "1 + phi0 s_a + phi1 s_b + phi01 s_a s_b^-1",
        "checks": [{"name": n, "pass": o} for n, o in checks], "results": out}
 Path(__file__).with_name("excitation_gs_probe.witness.json").write_text(json.dumps(res, indent=1) + "\n")

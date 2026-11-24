@@ -16,7 +16,7 @@ did not ask.
 
 `library/physrevd108106023` (Singh et al., "Knot-quiver correspondence for
 double twist knots", Phys. Rev. D 108, 106023) prints, in
-`sections/sec-005-1-u2-r2.md`, the explicit quiver form of the figure-eight:
+`sections/sec-004-iii-knot-quiver-correspondence.md`, the explicit quiver form of the figure-eight:
 
     Jr(4_1, q) = SUM over d1 + ... + d5 = r  of  q^{...} * (q^2;q^2)-ratio
 
@@ -87,7 +87,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 
 DOC = REPO / "library" / "physrevd108106023"
-SEC = DOC / "sections" / "sec-005-1-u2-r2.md"
+# The library re-ingest 1c92efb917 (#8515) renamed the section that holds the
+# passage; it was sections/sec-005-1-u2-r2.md (#9104).
+SEC = DOC / "sections" / "sec-004-iii-knot-quiver-correspondence.md"
 
 # ── C_41, transcribed from the OCR rows quoted verbatim below ───────────────
 #

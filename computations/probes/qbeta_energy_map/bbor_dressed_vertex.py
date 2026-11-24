@@ -49,9 +49,12 @@ for name,M,ini,fi in [('D1',beta,init,fin),('D1_mirror',betaM,init,fin),('D1_rev
                       ('D2',Y*beta,init,fin),('D2_mirror',Y*betaM,init,fin),('D2_rev',Y*betaR,initR,finR),('D2_rev_mirror',Y*betaRM,initR,finR)]:
     Wi,Wf,r=ratio(M,ini,fi); out[name]=r
     print(name,'\n  Wi =',Wi,'\n  Wf =',Wf,'\n  ratio =',r,'\n  at q=1:',sp.simplify(r.subs(q,1)))
+import sys, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / 'substrate'))
 import mpmath as mp
+from q_parameter import Q_MP  # canonical proton q0 (70-digit mpf)
 mp.mp.dps=40
-q0=mp.mpf('1.1099785827513808'); me=mp.mpf('0.51099895069'); E0=me/(q0*(q0-1))
+q0=Q_MP; me=mp.mpf('0.51099895069'); E0=me/(q0*(q0-1))
 for k,r in out.items():
     v=sp.lambdify(q,r,'mpmath')(q0); lg=mp.log(v)
     print(k,'ln ratio =',mp.nstr(lg,12),' dE =',mp.nstr(E0*lg,10),'MeV')

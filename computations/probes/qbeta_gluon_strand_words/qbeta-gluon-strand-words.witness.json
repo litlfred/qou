@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-21T15:57:28.814625+00:00",
-  "commitSha": "d1c37b5d2eccff3128b009db52e998d6f8ae01e1",
+  "computedAt": "2026-11-22T19:49:19.444341+00:00",
+  "commitSha": "e1bbc9d1326b7cd2e204996aa27b71078ce0d860",
   "assertions": [
     {
       "name": "W1_ruled_cell",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 7,
   "computation": "qbeta-gluon-strand-words",
   "scriptFile": "qbeta_gluon_strand_words_probe.py",
-  "scriptHash": "ce76c1ce04f4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a9d1e66303f1",
+  "scriptCommitSha": "1a191ecb0c5f91aa6be818420055532412a19617",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,8 +52,10 @@
   "environment": {
     "python": "3.13.18",
     "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent"
   },
   "invocation": {
@@ -62,6 +64,8 @@
     ],
     "reproduce": "python3 -u computations/probes/qbeta_gluon_strand_words/qbeta_gluon_strand_words_probe.py"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "Nucleon word V0^3 with gamma-gamma-attached gluon strands on 4 and 5 strands; F = eps_flavour(W)/eps_flavour(V0^3) under the derived normalisation; reading-3 filter. Nothing selected.",
   "q0": "1.1099785827513808075916690956107688798744991218736",
   "F_required": "2.40397",
