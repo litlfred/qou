@@ -26,10 +26,15 @@ from __future__ import annotations
 import importlib.util
 import json
 import pathlib
+import sys
 
 from mpmath import mpf, fabs
 
 HERE = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 SDP = HERE.parent / "deuteron-real-sdp.witness.json"
 
 # import the order-justification probe's machinery (main() is __main__-guarded)

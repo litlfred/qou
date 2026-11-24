@@ -236,7 +236,7 @@ def main() -> None:
         out.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             out, script_path=__file__, engine=None, q0_anchor=None)
-        json.dump(out, f, indent=2)
+        json.dump(out, f, indent=2, default=str, ensure_ascii=False)
     print(f"\nWitness: {out_path}\nCandidate clean closures: {len(candidates)}")
     for c in candidates:
         nr = c["nearest_rational"]
