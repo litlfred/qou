@@ -41,7 +41,11 @@ calculus of `NucleonWeightSpaceTwoTerm.lean`:
    crossing `A₂(q)` to the Convention-D Markov trace parameter `z_D`.
 
 Conventions: generic `[Field K]` per `AGENTS.md` §7c — pure field and matrix algebra with no
-ordering, no `ℝ`, and no archimedean content.
+ordering, no `ℝ`, and no archimedean content. Scope note per `owner-rulings.md` row 59
+(`2026-11-22`): individual doublet magnitudes in Sections 1–2 use the adopted SM charges
+`(+2/3, -1/3, -1/3)` and are conditional on deriving `qᵢ`; the charge-value-free Coleman–Glashow
+identity holding for arbitrary `(q_u, q_d, q_s)` with `q_d = q_s` is proved in
+`QOU.StandardModel.HopfFramingAndHirzebruchDefect.coleman_glashow_borromeanV3_any_charges`.
 
 -- Ref: [colemanglashow1961] Coleman & Glashow, Phys. Rev. Lett. 6 (1961) 423.
 -- Ref: [gellmann1962] Gell-Mann, Phys. Rev. 125 (1962) 1067.

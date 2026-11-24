@@ -46,14 +46,14 @@ no `q₀`, per §7c)
   - `forward_ratio_two : ν₄ = −2 · ν₃` — the forward 4-body/3-body magnitude ratio
     is exactly `2`, not the derived `≈ 9.75`.
 
-**Derivation seam (sorry-free ≠ derived).** `sRow3` below is a *hand-entered table*
-of the values `s_k`; the identity `sRow3 k = Σ_{λ⊢k, ℓ(λ)≥3} (−1)^{n(λ)}·f^λ` is
-verified in the companion Python probe (exact integer hook-length arithmetic), **not
-proved in Lean**.  Every theorem here is therefore Lean-proved *for this table*.  A
-citing block must say "the ≥3-row table `sRow3` gives the (−,+) order", not "Lean
-proves the ≥3-row Δ_λ stratum has (−,+) order".  This does not weaken the scope-(a)
-negative (a negative is not strengthened by formalising the table), and closing the
-seam would need SYT/hook-length combinatorics in Lean — out of scope here.
+**Derivation seam closed (`qou-jkmh`).** `sRow3` below is written as a lookup table of
+the values `s_k` so this module stays import-light (`Mathlib.Tactic` only); the exact
+hook-length / Springer-grade sum identity
+`sRow3Derived k = Σ_{λ⊢k, ℓ(λ)≥3} (−1)^{n(λ)}·f^λ = sRow3 k` for all `k ≤ 5` (together
+with `dimSYT p = dimHLF` via Frame–Robinson–Thrall) is proved sorry-free in
+`QOU.MassTheory.ThreeRowSpringerSYTDerivation` (`sRow3Derived_eq_sRow3`,
+`BextDerived_eq_Bext`, `derived_cumulants_sign_and_ratio`), matching the companion
+Python probe `computations/deltalambda/threerow_extensive_cumulant_forward_probe.py`.
 
 **Anti-fit (STRICT).** No AME value and no `q₀` appears in any statement or proof.
 The AME binding ratios enter only the companion probe/audit as fixed *targets*,
