@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-24T11:43:19.441194+00:00",
-  "commitSha": "bcae8c9e27ac0878e21187b23cfbc8266f5f4a5c",
+  "computedAt": "2026-11-24T11:49:37.589600+00:00",
+  "commitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
   "assertions": [
     {
       "name": "pipeline_tau_is_jones_tl_decomposition",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 35,
+  "durationMs": 18,
   "computation": "probe-9b-perlambda-brane-tower",
   "scriptFile": "probe_9b_perlambda_brane_tower.py",
   "scriptHash": "bed7c528445a",
-  "scriptCommitSha": "bcae8c9e27ac0878e21187b23cfbc8266f5f4a5c",
+  "scriptCommitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
   "precisionMetadata": {
     "compute_dps": 95,
     "output_dps": 80,
@@ -442,11 +442,11 @@
     "upstream_witness_hashes": [
       {
         "path": "borromean-binding-recompute.witness.json",
-        "sha256": "de567c53bd0e4ecceeb727f539b628940683a637f8c49bf109d39cb0fcfd63ac",
+        "sha256": "19c8e8f223543afa4535cd4f7ee673799627b99c481d1d8919345929a6354c6f",
         "size_bytes": 6040,
-        "commitSha": "bcae8c9e27ac0878e21187b23cfbc8266f5f4a5c",
-        "scriptCommitSha": "bcae8c9e27ac0878e21187b23cfbc8266f5f4a5c",
-        "computedAt": "2026-11-24T11:43:11.988500+00:00"
+        "commitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
+        "scriptCommitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
+        "computedAt": "2026-11-24T11:49:32.073861+00:00"
       }
     ]
   },

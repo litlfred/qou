@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-24T11:20:36.389580+00:00",
-  "commitSha": "9582394fda8e9d6ad95dcebd40112d16d9243e6b",
+  "computedAt": "2026-11-24T11:49:31.379769+00:00",
+  "commitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
   "assertions": [
     {
       "name": "h3_factorisation_matches_full_h6_seminormal_2h",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 33,
+  "durationMs": 19,
   "computation": "qbeta-derived-w-witness-bisect",
   "scriptFile": "qbeta_derived_w_witness_bisect_probe.py",
   "scriptHash": "ece089d41ad6",
-  "scriptCommitSha": "9582394fda8e9d6ad95dcebd40112d16d9243e6b",
+  "scriptCommitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
   "precisionMetadata": {
     "compute_dps": 95,
     "output_dps": 80,
