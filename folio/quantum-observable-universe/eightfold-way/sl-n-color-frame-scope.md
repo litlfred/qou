@@ -2,7 +2,7 @@
 $\sigma_i^{\mathfrak{sl}} = q^{-1/N}\sigma_i$ of
 [Proposition](#prop:sl-n-color-framing). Every other observable keeps the
 Hecke normalisation $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$. The rescaling is not
-applied to the Markov parameter $z$, to convention D, or to the writhe-normalised
+applied to the Markov parameter $z = q^3/(q^2+1)$ or to the writhe-normalised
 Markov trace. A uniform rescaling would multiply an unnormalised trace
 $\mathrm{tr}_M(w)$ by $q^{-\mathrm{wr}(w)/N}$, where $\mathrm{wr}(w)$ is the
 writhe of the word $w$, and would send $z$ to $q^{-1/N} z$. Words of writhe zero

@@ -28,22 +28,19 @@ a record of that cell, not as a prediction.
 Two scopings apply, and neither was present when those figures were first
 written:
 
-1. **Convention.** The ladder was built with the Markov parameter
-   $z_C = \sqrt{q}/(q+1)$ (convention **C**), which is excised; the canonical
-   parameter is $z_D = q^3/(q^2+1)$. No convention-D counterpart exists to
-   compare against, so the figure is *unreproducible* under the canonical
-   convention.
-2. **Functional.** The published form rests on $z = 1$, which is
-   **inadmissible**: it is the coordinate sum, and provably not a Markov root
-   under convention D.
+1. **Loop parameter.** The ladder above was built with the auxiliary loop parameter
+   $z_{\mathrm{aux}} = \sqrt{q}/(q+1)$, whereas the canonical Markov parameter is
+   $z = q^3/(q^2+1)$. No counterpart of the $c_k$ ladder at $z = q^3/(q^2+1)$ has
+   yet been derived.
+2. **Functional.** The single-wrap baseline underlying that ladder evaluates at
+   $z = 1$ (the coordinate sum), which is not a root of the two-row Markov
+   faithfulness condition $y_{(1^3)}(z) = 0$.
 
-Against the same $7.797$ ppb target, the live per-observable dashboard scores
-$\mathfrak{Q}_\beta$ on the ruled base at $1.668\times10^{8}$ ppb — a miss of
-$2.139\times10^{7}$, the largest in the table. That figure and the $+6.02$ ppb
-above are *different objects*: the dashboard evaluates the ruled $z_D$ base with
-**zero** $c_k$ rungs, while the figure above is the five-rung ladder on the
-retired $z = 1$ cell. The comparison is stated so a reader meets both, not to
-present either as the other's correction.
+Against the $7.797$ ppb target, the bare Markov-trace evaluation at $z = q^3/(q^2+1)$
+with **zero** $c_k$ rungs sits at $1.668\times10^{8}$ ppb — a miss of
+$2.139\times10^{7}$ relative to target — whereas the $+6.02$ ppb figure above
+evaluates the five-rung $z_{\mathrm{aux}}$ ladder on the $z = 1$ coordinate-sum cell.
+The two numbers evaluate distinct functionals and must not be conflated.
 
 Under the three-calibration discipline, the higher rungs are calibration-anchored
 fits: they encode the CODATA datum they are matched to, so they are a calibration
@@ -53,34 +50,26 @@ declare that dependency.
 
 ## Evidence
 
-A direct SDP-$T_\beta$ extraction at 50 decimal places was recorded as
-reproducing the conjectured $c_k$. **The table is a historical record and is
-reproduced with its provenance, because one entry is superseded and the rest have
-no live producer.**
+A 50-decimal-place SDP-$T_\beta$ sweep at $z_{\mathrm{aux}} = \sqrt{q}/(q+1)$ recorded the following numerical extractions:
 
 ```text
 c_2 extracted = -1.0171   (vs framework -1)
-c_3 extracted = -2.0098   ← SUPERSEDED; see below
-c_4 extracted = -1.1435   (matches empirical sweep exactly)
-c_5 extracted = -1.2229   (matches empirical sweep exactly)
-c_6 extracted = +3.4976   (matches empirical sweep exactly)
-c_7 extracted = +57.149   (matches empirical sweep exactly)
+c_3 extracted = -2.0098   (pre-reanchoring value; see anchor table below)
+c_4 extracted = -1.1435   (empirical sweep)
+c_5 extracted = -1.2229   (empirical sweep)
+c_6 extracted = +3.4976   (empirical sweep)
+c_7 extracted = +57.149   (empirical sweep)
 ```
 
-**$c_3$: the recorded $-2.0098$ matches no value the corpus now carries.** It is
-a superseded figure, retired when the substrate anchors were re-derived. The
-live convention-C extractions are
+**Anchor dependence of $c_3$.** At $z_{\mathrm{aux}} = \sqrt{q}/(q+1)$, re-evaluating $c_3$ across the substrate anchors gives:
 
-| anchor | $c_3$ |
+| anchor | $c_3$ at $z_{\mathrm{aux}} = \sqrt{q}/(q+1)$ |
 |---|---|
-| proton (the canonical compute pin) | $-2.06934257711516783787971951725$ |
+| proton ($m_{\mathfrak{p}}/m_e$ anchor) | $-2.06934257711516783787971951725$ |
 | muon, CODATA 2022 | $-2.019860311874005$ |
 | muon, CODATA 2018 | $-2.020200233$ |
 
-Since this block states no anchor, the proton value is the one to read here: it
-is the pin all production compute defaults to. All
-three are convention **C**; under convention D the same extraction gives
-$-974.43$, which is the scoping the previous section describes.
+With the eigenphase evaluated instead at $z = q^3/(q^2+1)$ on the proton anchor, the same ratio gives $-974.43$, reflecting the loop-parameter sensitivity quantified in the previous section.
 
 **The other five entries are recorded, not verified.** No current computation publishes $-1.1435$, $-1.2229$, $+3.4976$ or $+57.149$ today —
 the canonical extraction stops after one rung by design, because
