@@ -1,14 +1,14 @@
 ---
 # qou-d7h1
 title: 'GAP: Eightfold Way flavor SU(3) from QOU components — distinguish from colour SU(3), then derive octet/decuplet organization'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-02T17:29:24Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T17:21:22Z
 parent: qou-8lxd
 ---
 
@@ -467,3 +467,5 @@ Was in-progress with no bean update since 2026-09-05 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8155, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-25: "content(qou-d7h1): wire the proved gate scope into the chapter; inventory overturns the recorded gap list"). The work may be partly or fully done. Read the bean before you close it.
+
+Closed post-merge: landed on origin/main in PR #9382 (4313168d6a8).
