@@ -2,33 +2,32 @@
 name: content-graph
 roles: [reader, collaborator, owner]
 description: >
-  Editorial graph analysis skill — builds a content graph from uses[],
-  interprets, proofs, and examples relationships; builds a chapter/section
-  topology graph; and applies heuristics to identify forward references,
-  cross-section/cross-chapter coupling, and sections that are too sparse or
-  too dense. Produces actionable reorganisation suggestions and can implement
-  approved moves.
+  Editorial & Lean Knowledge-Graph organisation skill — analyses (1) the
+  prose/content block graph (`uses[]`, `interprets`, `proofs`, `examples`),
+  (2) the chapter/section reading-order graph (`H1..H7`), and (3) the Lean 4
+  module & Two-Tier Reservoir `lean_lib` import DAG (`L1..L6` via
+  `scripts/lean-kg-detangler.py` and `scripts/lean-best-practices-lint.py`).
+  Produces actionable reorganisation suggestions and implements approved moves.
 allowed-tools: Read Edit Write Bash Grep Glob Agent
 ---
 
-# Content Graph — Editorial Organisation Skill
+# Content & Lean Subgraph Graph — Editorial & KG Organisation Skill
 
 ## Overview
 
-This skill analyses the **full content graph** of the paper at two levels:
+This skill analyses the **full knowledge graph** of the monograph at three coupled levels:
 
-1. **Block graph** — Every content block is a node. Edges represent
+1. **Block graph** — Every content block under `folio/quantum-observable-universe/` is a node. Edges represent
    relationships: `uses[]` (dependency), `interprets` (remark → statement),
    `proofs[]` (proof → statement), `examples[]` (example → statement).
    The block graph captures the logical argument structure.
 
-2. **Chapter/section graph** — Chapters and sections are nodes. A
+2. **Chapter/section graph** — Chapters and sections in [`quantum-observable-universe.ts`](../../folio/quantum-observable-universe/quantum-observable-universe.ts) are nodes. A
    directed edge from section S₁ to section S₂ exists whenever a block in
    S₁ uses a block in S₂. The section graph captures the pedagogical
-   reading order.
+   reading order (`H1..H7`).
 
-These two graphs are used together to apply heuristics and generate
-ranked reorganisation suggestions.
+3. **Lean 4 module & Reservoir `lean_lib` subgraph DAG** — Every `.lean` module in `folio/quantum-observable-universe/lean/` and chapter `.lean` sibling is a node (`L1..L6`, audited by [`scripts/lean-kg-detangler.py`](../../scripts/lean-kg-detangler.py) and [`scripts/lean-best-practices-lint.py`](../../scripts/lean-best-practices-lint.py)), stratified strictly from `Mathlib4` → Tier-A `MathlibExt` → Tier-B 6 Lean Reservoir community `lean_lib` packages → 12 canonical chapter-aligned `QOU.<Subgraph>` modules → chapter `.lean` siblings.
 
 ## When to Use This Skill
 
@@ -124,38 +123,70 @@ Sections where `remark + example` blocks outnumber provable blocks
 by more than 2:1 may have too much interpretation and too little formal
 content — or vice versa.
 
+## Lean 4 Subgraph Heuristics (`L1..L6` — `Process_GraphDetanglement`)
+
+In addition to prose heuristics `H1..H7`, [`scripts/lean-kg-detangler.py`](../../scripts/lean-kg-detangler.py) and [`scripts/lean-best-practices-lint.py`](../../scripts/lean-best-practices-lint.py) enforce six Lean subgraph invariants derived from `Process_GraphDetanglement`:
+
+### L1 — Unassigned-first completeness (severity: CRITICAL)
+Every library `.lean` module and every resolved `import` edge must be classified (`unassigned_library_modules == 0`, `unassigned_resolved_edges == 0`) BEFORE evaluating cross-edge or cut-edge counts. Zero cross-edges over an unjudged subset is never read as clean.
+
+### L2 — Strict zero-`QOU.*` boundary on Tier-A & Tier-B Reservoir libraries (severity: CRITICAL, `BP008`)
+Pure-mathematics modules in Tier-A (`MathlibExt`) and the 6 Tier-B Lean Reservoir community `lean_lib` packages (`HeckeTemperleyLieb`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `QCalculus`, `BraidKnotOctonion`) MUST have **zero** upward `import QOU.<Model>` edges into QOU physics/framework modules. Resolve any `community_to_qou_cut_edges` via the four detanglement moves: **prune** an unused import, **merge** mutually-defining helpers, **factor** the pure base definition downward, or **reclassify** a misbucketed target.
+
+### L3 — Subgraph condensation acyclicity (severity: HIGH)
+Both the module-level `import` graph and the directory-level condensation graph across subgraphs must be strictly acyclic (`0` Tarjan SCCs of size > 1; imports point monotonically toward lower architectural layers `L0 Mathlib → L1 MathlibExt/UGB → L2..L3 Tier-B Reservoir → L4..L11 QOU.<Subgraph>`).
+
+### L4 — Synonym-directory anti-sprawl (severity: CRITICAL, `BP009`)
+Never create ad-hoc synonym directories under `folio/quantum-observable-universe/lean/QOU/` (historically 83 folders including 7 Braid/Knot dirs, 7 Mass dirs, 3 Hecke dirs, 3 Bring dirs). New pure math goes to Tier-A/Tier-B (see [`lean-mathlibext-curator.md`](lean-mathlibext-curator.md)); new QOU model Lean goes to the canonical chapter subgraph below.
+
+### L5 — §7c Base-ring & empirical wall alignment (severity: HIGH, `BP005` / `BP006`)
+Tier-A/Tier-B community libraries and pre-wall chapters stay over generic `{R : Type*} [CommRing R]` / `[Field R]` / `[LinearOrderedField R]` with zero decimal literals, `Float`, `CODATA`, or `substrate_q`. Concrete `(R := ℝ)` evaluations live exclusively post-wall.
+
+### L6 — Root & `lean.ref` reachability (severity: MEDIUM)
+Every `.lean` module should be reachable either from its `lean_lib` root aggregator (`QOU.lean` / Tier-B root) or from a live `.ts` `lean.ref` / chapter sibling import (`scripts/lean-root-coverage-audit.py` + `scripts/dead-lean-pointer-audit.py`).
+
 ## Placement Principles for New/Changed Content
 
-The heuristics above detect problems **post-hoc**.  The placement
+The heuristics above detect problems **post-hoc**. The placement
 principles below are **proactive**: agents must follow them when
-creating new blocks or significantly changing existing ones.
+creating new blocks or `.lean` modules, or significantly changing existing ones.
 
-### PR1 — Topical home chapter
+### PR1 — Topical home chapter & canonical Lean subgraph
 
-Every block belongs in the chapter whose topic it primarily addresses.
-Use this map to decide:
+Every prose block belongs in the chapter whose topic it primarily addresses (matching [`quantum-observable-universe.ts`](../../folio/quantum-observable-universe/quantum-observable-universe.ts)), and every new `.lean` library module belongs either in Tier-A/Tier-B (if pure math with 0 QOU coupling) or in the paired canonical `QOU.<Subgraph>`:
 
-| Chapter directory | Primary topic scope |
-|-------------------|---------------------|
-| `quantum-universes` | Abstract QU axioms, fibre functors, monoidal dagger categories |
-| `quantum-observable-universes` | QOU axioms, state bundles, jet bundles, q-codifferentials |
-| `lifting-and-descent` | Torsion lifting, descent, brane tower, prolongation |
-| `braids-and-knots` | Braid groups, Hecke algebra, skein relations, knot invariants, vertex operators |
-| `models-of-qous` | Archimedean/non-archimedean models, Calabi-Yau, ALE, Reeb |
-| `algebraic-substrate` | Algebraic number theory, substrates, Collatz, classical limits |
-| `fluid-dynamics` | q-NS equation, vortices, turbulence, regularity |
-| `information-theory` | Entropy, Planck scale, gravitational constant, horizons, CMB |
-| `descartes-universe` | Bring's surface, colour tubes, particles, nuclear physics, shells |
-| `observations` | CODATA comparison, predictions, experimental proposals |
-| `organic-chemistry` | Molecular knots, benzene, covalent bonds |
+| Part | Chapter directory (`folio/quantum-observable-universe/<dir>/`) | Canonical `QOU.<Subgraph>` | Primary topic scope |
+|---|---|---|---|
+| Front | `introduction`, `authors-note` | *(no new Lean)* | Framing motivation & contribution/open-problems note (preview chapter) |
+| **I: Foundations** | `quantum-universes` | `QOU.Core` | Abstract QU axioms, fibre functors, rigid braided monoidal dagger categories |
+| I | `quantum-observable-universes` | `QOU.Core` | QOU axioms, state/jet bundles, $q$-codifferentials, categorical Reeb |
+| I | `models-of-qous` | `QOU.Core` / `QOU.MassTheory` | 5-step arc framing gallery, Archimedean wall (`sec:archimedean-models`), non-Archimedean models |
+| I | `lifting-and-descent` | `QOU.LiftingDescent` *(pure Hopf/Sweedler → `TwistedFrobeniusHopf`)* | Yekutieli torsion lifting, descent, brane tower, Gröbner–Shirshov filtration |
+| **II: Structural Mechanics** | `braids-and-knots` | `QOU.BraidsAndKnots` *(pure → `HeckeTemperleyLieb` / `BraidKnotOctonion`)* | Braid groups, Iwahori–Hecke $H_n(q)$, Temperley–Lieb, Jones–Markov trace |
+| II | `brings-surface` | `QOU.BringsSurface` *(pure → `BraidKnotOctonion`)* | Bring's surface $\Sigma_4$ ($\chi = -6$), $S_5/A_5$ action, cohomological defect |
+| II | `knots-particles-confinement` | `QOU.Confinement` | Knot–particle dictionary, hadron algebra, Borromean nucleons, confinement hierarchy |
+| II | `eightfold-way` | `QOU.EightfoldWay` *(pure octonion/$\mathfrak{g}_2$ → `BraidKnotOctonion`)* | $A_2$ from 3-strand braiding, $\mathrm{SU}(3)$ flavour multiplets, octonionic colour |
+| II | `mass-endomorphism` | `QOU.MassTheory` | Categorical mass identity, topological mass decomposition, complex volume, $\chi$-characters |
+| II | `climax-volume-mass` | `QOU.MassTheory` | $q$-hyperbolic geometry, Möbius/crossing energy, Lagrange resolvents, spectral filter |
+| II | `mass-theory` | `QOU.MassTheory` | Geometric & Archimedean mass pipeline across elementary particles, gauge bosons, and nuclei |
+| II | `nuclear-interactions` | `QOU.Nuclear` *(pure LP/Graver → `ToricConicOpt`; pure $q$-calc → `QCalculus`)* | Many-body Gröbner–Shirshov reduction, LP/SDP operator selection, $\beta$-decay, $Q$-values |
+| II | `gravity-spacetime` | `QOU.MassTheory` / `QOU.FluidDynamics` | Contact-geometric gravity emergence, geodesic Madelung bridge |
+| **III: Physical Realization** | `predicted-spectra` | `QOU.StandardModel` / `QOU.MassTheory` | Fundamental fermion, meson/nucleon, atomic shell, and $\alpha_{\mathrm{EM}}$ spectra |
+| III | `observations` | `QOU.Observations` | CODATA comparisons, experimental falsifiers, astrophysical/laboratory tests |
+| III | `molecular-construction` | `QOU.Observations` | Molecular braids ($\mathrm{H}_2$ through benzene), stoichiometry |
+| III | `organic-chemistry` | `QOU.Observations` | Covalent / Hopf-ring organic chemistry |
+| **IV: Dynamics & Information** | `fluid-dynamics` | `QOU.FluidDynamics` | $q$-Navier–Stokes brane fluid dynamics, vorticity, Kelvin waves |
+| IV | `stochastic-mechanics` | `QOU.FluidDynamics` | Markov-trace stochastic mechanics, Nelson/Itô diffusion |
+| IV | `information-theory` | `QOU.InformationTheory` *(pure Rieffel/KR → `CompactQuantumMetrics`)* | Complexity barriers, Bekenstein/Planck horizons, CMB |
+| IV | `measurement-observation` | `QOU.InformationTheory` | Internalised quantum measurement via fibre-functor behaviour |
+| IV | `q-geometric-langlands` | `QOU.InformationTheory` | $q$-Geometric Langlands, Tannaka–Krein, Hasse–Weil |
+| Back | `glossary`, `appendix-*`, `index-of-definitions`, `notation` | `QOU.Observations` / `QOU.Core` | Ch 8 Mathlib glossary, knot/NF/Q-value/SM/surreal/Lean-library appendices, symbol register |
 
 If a block spans two chapters' topics, split it (see PR5).
 
-### PR2 — Forward-reference avoidance
+### PR2 — Forward-reference & upward-leak avoidance
 
-A new block should appear **after** all blocks it `uses[]`.  Run
-`content-graph-analysis.py` after placement and verify zero new forward
-references.
+A new prose block must appear **after** all blocks it `uses[]`, and a new `.lean` module must import only same-or-lower architectural layers (`BP008`). Run `computations/forward_ref_classifier.py` (prose) and `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff` + `scripts/lean-kg-detangler.py --summary-only` (Lean) after placement.
 
 ### PR3 — Section density bounds
 
@@ -339,35 +370,34 @@ Before: energy=142, backward_edges=12, sparse_sections=3
 After:  energy=87,  backward_edges=4,  sparse_sections=1
 ```
 
-## Python implementation
+## Python CLI Tools (Prose + Lean KG)
 
-The core algorithm is a standalone Python script:
+1. **Lean 4 Module & Reservoir Subgraph Detangler (`L1..L6`):**
+   - [`scripts/lean-kg-detangler.py`](../../scripts/lean-kg-detangler.py) (`< 15s` deterministic analyzer across all ~4,750 `.lean` files)
+   - [`scripts/lean-best-practices-lint.py`](../../scripts/lean-best-practices-lint.py) (`--diff` and `--package` Mathlib4/Reservoir linter)
+   ```bash
+   export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+          OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
 
-```
-content/pipeline/content-graph-analysis.py
-```
+   # Concise DAG + Reservoir cut-edge summary:
+   nice -n 15 python3 scripts/lean-kg-detangler.py --summary-only
 
-**Usage:**
-```bash
-# Full heuristic report
-cd content && python3 pipeline/content-graph-analysis.py
+   # Regenerate full JSON-LD + Markdown architecture options audit:
+   nice -n 15 python3 scripts/lean-kg-detangler.py \
+     --json-out docs/audits/2026-11-23-lean-kg-detangler-and-reservoir-audit.json \
+     --md-out docs/audits/2026-11-23-lean-kg-detangler-and-reservoir-options.md
 
-# Write report to /tmp/content-graph-report.md
-cd content && python3 pipeline/content-graph-analysis.py --md
+   # Lint branch .lean changes for upward leaks (BP008) and synonym-dir sprawl (BP009):
+   nice -n 15 python3 scripts/lean-best-practices-lint.py --diff
+   ```
 
-# Generate concrete, implementable reorganisation proposals
-cd content && python3 pipeline/content-graph-analysis.py --proposals
-# → output also written to /tmp/content-graph-proposals.md
-
-# Specific chapter only
-cd content && python3 pipeline/content-graph-analysis.py --chapter braids-and-knots
-
-# Generate visualisations
-cd content && python3 pipeline/content-graph-analysis.py --visualise
-
-# Export graph as JSON (for MCP consumption)
-cd content && python3 pipeline/content-graph-analysis.py --json > /tmp/content-graph.json
-```
+2. **Prose Forward-Reference Classifier & Manifest Validator:**
+   - [`computations/forward_ref_classifier.py`](../../computations/forward_ref_classifier.py) (`logical` vs `storytelling` vs `structural` forward-ref discriminator)
+   - [`scripts/run-validate.ts`](../../scripts/run-validate.ts) & [`folio/pipeline/block-manifest-audit.ts`](../../folio/pipeline/block-manifest-audit.ts)
+   ```bash
+   nice -n 15 python3 computations/forward_ref_classifier.py
+   nice -n 15 bun run scripts/run-validate.ts
+   ```
 
 ### Proposal kinds (--proposals output)
 
