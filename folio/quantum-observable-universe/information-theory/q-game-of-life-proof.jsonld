@@ -17,6 +17,14 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-q-game-of-life"
   ],
+  "cites": [
+    "references/squier1984",
+    "references/bennett1973",
+    "references/toffoli1980",
+    "references/fredkin1982",
+    "references/shi2002",
+    "references/aharonov2003"
+  ],
   "text": "q-game-of-life-proof.md",
   "provenance": "authored"
 }
