@@ -375,14 +375,14 @@ noncomputable def toMA (f : AlgElement G k) : MA G k :=
   ∑ m ∈ f.support, MonoidAlgebra.single (FreeMonoid.ofList m) (f.coeff m)
 
 theorem toMA_apply (f : AlgElement G k) (m : Monomial G) :
-    toMA f (FreeMonoid.ofList m) = f.coeff m := by
+    (toMA f).coeff (FreeMonoid.ofList m) = f.coeff m := by
   classical
   unfold toMA
-  rw [Finsupp.finset_sum_apply]
-  have : ∀ m' ∈ f.support, (MonoidAlgebra.single (FreeMonoid.ofList m') (f.coeff m'))
+  rw [MonoidAlgebra.coeff_sum, Finsupp.finset_sum_apply]
+  have : ∀ m' ∈ f.support, (MonoidAlgebra.single (FreeMonoid.ofList m') (f.coeff m')).coeff
       (FreeMonoid.ofList m) = if m' = m then f.coeff m' else 0 := by
     intro m' _
-    rw [MonoidAlgebra.single_apply]
+    rw [MonoidAlgebra.coeff_single_apply]
     by_cases h : m' = m
     · subst h; simp
     · rw [if_neg (fun h' => h (FreeMonoid.ofList.injective h')), if_neg h]
@@ -391,10 +391,11 @@ theorem toMA_apply (f : AlgElement G k) (m : Monomial G) :
   · rfl
   · exact (f.support_spec m h).symm
 
-theorem toMA_ext {F H : MA G k} (h : ∀ m : Monomial G, F (FreeMonoid.ofList m) = H (FreeMonoid.ofList m)) :
+theorem toMA_ext {F H : MA G k}
+    (h : ∀ m : Monomial G, F.coeff (FreeMonoid.ofList m) = H.coeff (FreeMonoid.ofList m)) :
     F = H := by
   apply MonoidAlgebra.ext
-  intro x
+  ext x
   rw [← FreeMonoid.ofList_toList x]
   exact h _
 
@@ -416,9 +417,9 @@ theorem toMA_sub (f g : AlgElement G k) : toMA (sub f g) = toMA f - toMA g := by
   intro m; simp
 
 theorem ofW_apply (w m : Monomial G) :
-    (ofW w : MA G k) (FreeMonoid.ofList m) = if w = m then 1 else 0 := by
+    (ofW w : MA G k).coeff (FreeMonoid.ofList m) = if w = m then 1 else 0 := by
   classical
-  rw [ofW, MonoidAlgebra.single_apply]
+  rw [ofW, MonoidAlgebra.coeff_single_apply]
   by_cases h : w = m
   · simp [h]
   · rw [if_neg (fun h' => h (FreeMonoid.ofList.injective h')), if_neg h]
@@ -443,8 +444,8 @@ theorem toMA_contextMul (a b : Monomial G) (f : AlgElement G k) :
 
 /-- The element with a given monoid-algebra coefficient function. -/
 noncomputable def ofMA (F : MA G k) : AlgElement G k where
-  coeff := fun m => F (FreeMonoid.ofList m)
-  support := F.support.image FreeMonoid.toList
+  coeff := fun m => F.coeff (FreeMonoid.ofList m)
+  support := F.coeff.support.image FreeMonoid.toList
   support_spec := by
     intro m hm
     by_contra h
@@ -455,7 +456,7 @@ theorem toMA_ofMA (F : MA G k) : toMA (ofMA F) = F :=
   toMA_ext (fun m => by rw [toMA_apply]; rfl)
 
 theorem ceq_ofMA_toMA (f : AlgElement G k) : CoeffEq f (ofMA (toMA f)) := by
-  intro m; show f.coeff m = toMA f (FreeMonoid.ofList m); rw [toMA_apply]
+  intro m; show f.coeff m = (toMA f).coeff (FreeMonoid.ofList m); rw [toMA_apply]
 
 theorem ofMA_add (F H : MA G k) : CoeffEq (ofMA (F + H)) (add (ofMA F) (ofMA H)) :=
   ceq_of_toMA_eq (by rw [toMA_add, toMA_ofMA, toMA_ofMA, toMA_ofMA])
@@ -593,14 +594,14 @@ theorem toMA_of_isZero {f : AlgElement G k} (hf : f.isZero) : toMA f = 0 :=
   toMA_ext (fun m => by rw [toMA_apply, hf m]; rfl)
 
 theorem tail_support (r : ReductionRule G k) (hu : IsUnit (r.lc ord))
-    {p : FreeMonoid G} (hp : p ∈ (tail ord r).support) :
+    {p : FreeMonoid G} (hp : p ∈ (tail ord r).coeff.support) :
     ord.lt (FreeMonoid.toList p) (r.lm ord) := by
   rw [Finsupp.mem_support_iff, ← FreeMonoid.ofList_toList p] at hp
   set q := FreeMonoid.toList p
-  have hval : (tail ord r) (FreeMonoid.ofList q) =
+  have hval : (tail ord r).coeff (FreeMonoid.ofList q) =
       Ring.inverse (r.lc ord) * r.relation.coeff q - (if r.lm ord = q then 1 else 0) := by
     unfold tail rho
-    rw [Finsupp.sub_apply, ofW_apply]
+    rw [MonoidAlgebra.coeff_sub, Finsupp.sub_apply, ofW_apply]
     simp [toMA_apply]
   rw [hval] at hp
   by_cases hq : r.lm ord = q
@@ -615,19 +616,19 @@ theorem tail_support (r : ReductionRule G k) (hu : IsUnit (r.lc ord))
 
 /-- Every element of the monoid algebra is the sum of its terms. -/
 theorem ma_eq_sum (F : MA G k) :
-    F = ∑ p ∈ F.support, F p • (ofW (FreeMonoid.toList p) : MA G k) := by
-  conv_lhs => rw [← Finsupp.sum_single F]
+    F = ∑ p ∈ F.coeff.support, F.coeff p • (ofW (FreeMonoid.toList p) : MA G k) := by
+  conv_lhs => rw [← MonoidAlgebra.sum_coeff_single F]
   unfold Finsupp.sum ofW
   refine Finset.sum_congr rfl (fun p _ => ?_)
   rw [MonoidAlgebra.smul_single', mul_one, FreeMonoid.ofList_toList]
 
 theorem JM_left {r : ReductionRule G k} (hr : r ∈ sys.rules) {v x m y : Monomial G} (F : MA G k)
-    (hF : ∀ p ∈ F.support, ord.lt (x ++ FreeMonoid.toList p ++ m ++ r.lm ord ++ y) v) :
+    (hF : ∀ p ∈ F.coeff.support, ord.lt (x ++ FreeMonoid.toList p ++ m ++ r.lm ord ++ y) v) :
     JM ord sys v (ofW x * F * ofW m * rho ord r * ofW y) := by
   rw [ma_eq_sum F, Finset.mul_sum, Finset.sum_mul, Finset.sum_mul, Finset.sum_mul]
   refine JM.sum _ _ (fun p hp => ?_)
-  have e : ofW x * (F p • (ofW (FreeMonoid.toList p) : MA G k)) * ofW m * rho ord r * ofW y
-      = (F p * Ring.inverse (r.lc ord)) •
+  have e : ofW x * (F.coeff p • (ofW (FreeMonoid.toList p) : MA G k)) * ofW m * rho ord r * ofW y
+      = (F.coeff p * Ring.inverse (r.lc ord)) •
           (ofW (x ++ FreeMonoid.toList p ++ m) * toMA r.relation * ofW y) := by
     simp only [rho, mul_smul_comm, smul_mul_assoc, smul_smul, ofW_append, mul_assoc]
     rw [mul_comm (Ring.inverse _)]
@@ -636,12 +637,12 @@ theorem JM_left {r : ReductionRule G k} (hr : r ∈ sys.rules) {v x m y : Monomi
   simpa [Site.word, List.append_assoc] using hF p hp
 
 theorem JM_right {r : ReductionRule G k} (hr : r ∈ sys.rules) {v x m y : Monomial G} (F : MA G k)
-    (hF : ∀ p ∈ F.support, ord.lt (x ++ r.lm ord ++ m ++ FreeMonoid.toList p ++ y) v) :
+    (hF : ∀ p ∈ F.coeff.support, ord.lt (x ++ r.lm ord ++ m ++ FreeMonoid.toList p ++ y) v) :
     JM ord sys v (ofW x * rho ord r * ofW m * F * ofW y) := by
   rw [ma_eq_sum F, Finset.mul_sum, Finset.sum_mul]
   refine JM.sum _ _ (fun p hp => ?_)
-  have e : ofW x * rho ord r * ofW m * (F p • (ofW (FreeMonoid.toList p) : MA G k)) * ofW y
-      = (F p * Ring.inverse (r.lc ord)) •
+  have e : ofW x * rho ord r * ofW m * (F.coeff p • (ofW (FreeMonoid.toList p) : MA G k)) * ofW y
+      = (F.coeff p * Ring.inverse (r.lc ord)) •
           (ofW x * toMA r.relation * ofW (m ++ FreeMonoid.toList p ++ y)) := by
     simp only [rho, mul_smul_comm, smul_mul_assoc, smul_smul, ofW_append, mul_assoc]
   rw [e]
