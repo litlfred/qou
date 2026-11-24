@@ -1,8 +1,8 @@
 {
   "engine": "mpmath (80 dps)",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-23T21:35:37.513943+00:00",
-  "commitSha": "a9bdf696a8dd32b7555e6e602e430e6257543f69",
+  "computedAt": "2026-11-24T08:44:00.527698+00:00",
+  "commitSha": "66c36334581383a59f7797ceb92aab60aac6d317",
   "assertions": [
     {
       "name": "q0_at_80_matches_Q_MP",
@@ -158,11 +158,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14100,
+  "durationMs": 8718,
   "computation": "w2-h7-h8-wedderburn-zremoval",
   "scriptFile": "w2_h7_h8_wedderburn_zremoval_probe.py",
   "scriptHash": "b7a26ba42179",
-  "scriptCommitSha": "a9bdf696a8dd32b7555e6e602e430e6257543f69",
+  "scriptCommitSha": "7d03d5ec262318cbe8317158bcbc92252c518c7a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -174,10 +174,10 @@
     "numpy": "2.5.0",
     "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "cvxpy": "absent",
-    "pyhecke_native_build": "a9f23cb94545f585"
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -367,5 +367,7 @@
       "max_rel_Z_contamination_phys_1p418fm": "5.8475687723379774840322172149246875827265308733768632929406911566441104999601989e-285",
       "M_Z_tree_FormB_onshell_MeV_50dps": "89553.711099667510247438937506801419469499484210108"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
