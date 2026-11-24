@@ -1,0 +1,192 @@
+# Observational Accuracy & Precision Scorecard
+
+Every object in *On the Mechanics of Quantum Observable Universes* (QOU) is a mathematical construction evaluated in arbitrary-precision arithmetic (`80` decimal places, `mp.dps = 80`). Empirical physics enters strictly at the comparison boundary where a derived model quantity is set against experimental metrology (CODATA 2022, PDG 2024, NIST, and AME2020).
+
+This scorecard is deterministically generated from the repository's machine-verified computation witnesses by [`scripts/generate-accuracy-scorecard.py`](scripts/generate-accuracy-scorecard.py) and gated in continuous quality assurance (`compute-qa`, site rendering, and post-merge publishing).
+
+- **Anti-fit discipline:** Only **three physical calibration inputs** enter the model — the electron mass $m_e$ (fixing the overall MeV energy unit), the proton-to-electron mass ratio $m_p / m_e$ (fixing the deformation parameter $q_0 > 1$), and the charged-pion mass $m_{\pi^\pm}$ (fixing the meson-sector scale). All nuclear, electroweak, Coulomb, and molecular expressions are evaluated without free or fitted parameters, using the canonical Markov trace parameter $z = q^3/(q^2+1)$.
+- **Full-spectrum reporting:** Both sub-part-per-billion successes and large multi-percent structural deficits are reported side by side so that open mathematical derivations remain visible and falsifiable.
+
+---
+
+## 1. Calibration Baseline & the `1 ppQ` ($10^{-15}$) Precision Floor
+
+One **part per quadrillion** (`1 ppQ`) denotes a fractional residual of
+$$1\;\mathrm{ppQ} = 10^{-15} = 10^{-6}\;\mathrm{ppb} = 10^{-9}\;\mathrm{ppm} = 10^{-13}\%.$$
+
+Because every dimensional mass prediction $O(m_e, q_0, m_{\pi^\pm})$ scales linearly with $m_e$ or $m_{\pi^\pm}$ and depends smoothly on $q_0$, experimental input uncertainties propagate into every model prediction via the 80-dps Fréchet–Jacobian covariance law $\Sigma_O = J\,\Sigma_\theta\,J^\top$:
+
+| Quantity | Symbol | Value (`80-dps` truncated) | Experimental $1\sigma$ | Relative Floor (`ppb`) | Relative Floor (`ppQ`) | Structural Role |
+|---|---|---:|---:|---:|---:|---|
+{{CALIBRATION_BASELINE_ROWS}}
+
+### Implications for `1 ppQ` Comparisons
+
+1. **Internal mathematical identities (`< 1 ppQ`):** Exact algebraic and numerical round-trip identities (such as the proton mass-identity root inversion at $q_0$, Koide resolvent polynomial identities, and Lanczos/CG eigensolver residuals in few-body $K_A$ plaquettes) hold to `< 10^{-50} ppb` (`< 10^{-44} ppQ`), well beyond `1 ppQ`.
+2. **Empirical comparison floor (`830 ppQ` to `1.29e9 ppQ`):** The tightest dimensionless anchor in the framework is $q_0$ itself, whose propagated CODATA uncertainty is `{{Q0_FLOOR_PPQ}} ppQ` (`{{Q0_FLOOR_PPB}} ppb`). Every dimensional mass expressed in MeV inherits at minimum the CODATA electron-mass uncertainty floor of `{{ME_FLOOR_PPQ}} ppQ` (`{{ME_FLOOR_PPB}} ppb`), confirmed across $A = 1\text{--}238$ (`{{NUCLIDE_SIGMA_MIN_PPB}}–{{NUCLIDE_SIGMA_MAX_PPB}} ppb`). Even the most precisely measured non-anchor quantity in physics used here — the fine-structure constant $\alpha_{\mathrm{EM}}^{-1}$ — has a CODATA $1\sigma$ uncertainty of `{{ALPHA_EXP_PPQ}} ppQ` (`{{ALPHA_EXP_PPB}} ppb`).
+3. **Bottom-line `1 ppQ` verdict:** **Zero non-anchor observables are empirically testable at or close to `1 ppQ` today.** Current experimental metrology sits $10^5\text{--}10^9\times$ above `1 ppQ` on dimensional observables, and the closest derived QOU prediction ($\alpha_{\mathrm{EM}}^{-1}$ in the additive Schwinger Form B arm) stands at `{{ALPHA_FORMB_ABS_PPQ}} ppQ` (`{{ALPHA_FORMB_REL_PPB}} ppb`, `{{ALPHA_FORMB_PULL}}`$\sigma_{\mathrm{exp}}$).
+
+---
+
+## 2. Executive Scorecard Across All Five Categories
+
+| Category | Regime / Observable Scope | $N$ | Mean $|\Delta|/O_{\mathrm{exp}}$ | Median $|\Delta|/O_{\mathrm{exp}}$ | Typical `ppQ` Error Scale | Within $\le 1\sigma_{\mathrm{exp}}$ | Within $\le 3\sigma_{\mathrm{exp}}$ | Observational Verdict | `1 ppQ` ($10^{-15}$) Verdict | Epistemic Status |
+|---|---|---:|---:|---:|---:|---:|---:|---|---|---|
+{{EXECUTIVE_SCORECARD_ROWS}}
+
+---
+
+## 3. Category-by-Category Detailed Tables (Low-$A$ vs High-$A$)
+
+### 3.1 Category 1 — Particle & Nuclear Masses
+
+#### Table 3.1a: Elementary Leptons, Mesons, and Baryons (Proton-Anchored $q_0$)
+
+| Observable | Predicted (`80-dps` trunc.) | Experimental Reference | $\sigma_{\mathrm{pred}}$ (from inputs) | Relative Error | $\|\Delta\|/O_{\mathrm{exp}}$ (`ppQ`) | Pull $z_{\mathrm{exp}}$ | Beats $100\times\,\sigma_{\mathrm{exp}}$? | Status |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+{{ELEMENTARY_MASS_ROWS}}
+
+*Assessment (Elementary & Hadron Sector):* Holding $q_0$ fixed at the proton-to-electron anchor reproduces the charged-kaon to charged-pion ratio $m_{K^\pm}/m_{\pi^\pm}$ to `{{MK_MPI_REL_PPB}} ppb` (`{{MK_MPI_PULL}}`$\sigma_{\mathrm{exp}}$, beating the $100\times$ experimental precision target of `263.6 ppb`) and the muon mass $m_\mu$ to `{{MMU_REL_PPB}} ppb` (`{{MMU_PULL}}`$\sigma_{\mathrm{exp}}$; equivalent to an `{{DQ_MU_P_PPB}} ppb` shift between muon-pinned and proton-pinned $q_0$). The quadratic Koide resolvent applied to $(m_e, m_\mu^{\mathrm{QOU}})$ yields $m_\tau / m_e = {{MTAU_ME_PRED}}$ (`+61.63 ppm` vs PDG 2024, $0.92\sigma$ vs NIST), while an untuned $q_0$-phase operator closure for $S_3$ generational equipartition is falsified and left open. The free neutron mass $m_n$ (`{{MN_REL_PPM}} ppm`) inherits the `-0.4569 MeV` shortfall of the conditional $Q_{\beta^-}$ weight-trace split.
+
+#### Table 3.1b: Nuclear Rest Masses $M_{\mathrm{nuc}}(Z, N)$ Across Mass-Number Bands ($A \ge 2$)
+
+Comparison joins `computations/mass-table-comprehensive.witness.json` (`m_symbolic_MeV`, zero-fit symbolic 1D Q-CLT proxy) against all `{{N_MEAS_NUCLIDES}}` non-estimated $A \ge 2$ nuclides in AME2020 ($M_{\mathrm{nuc}}^{\mathrm{exp}} = Z m_p + N m_n - B_{\mathrm{AME}}$):
+
+| Mass-Number Band | Nuclides $N$ | Mean $\|\Delta M\|/M_{\mathrm{exp}}$ | Median $\|\Delta M\|/M_{\mathrm{exp}}$ | Median Error (`ppQ`) | Min / Max $\|\Delta M\|/M_{\mathrm{exp}}$ | Within $\le 1\sigma_{\mathrm{exp}}$ / $\le 3\sigma_{\mathrm{exp}}$ | Regime Behaviour |
+|---|---:|---:|---:|---:|---:|---:|---|
+{{NUCLEAR_MASS_BAND_ROWS}}
+
+#### Table 3.1c: Representative Nuclide Mass & Binding Benchmarks ($A = 2 \to 238$)
+
+| Nuclide | $(Z, N, A)$ | $M_{\mathrm{pred}}$ (MeV) | $M_{\mathrm{exp}}$ (MeV) | Mass Error (`%`) | Input Floor $\sigma_{\mathrm{pred}}$ (`ppb`) | $B_{\mathrm{pred}}^{\mathrm{Q\text{-}CLT}}$ (MeV) | $B_{\mathrm{AME}}$ (MeV) | Binding Error (`%`) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+{{REPRESENTATIVE_NUCLIDE_ROWS}}
+
+* Note on ${}^3\mathrm{He}$ and ${}^4\mathrm{He}$: `mass-table-comprehensive.witness.json` omits six light proton-rich/closed-cluster rows (`4H, 5H, 6H, 3He, 4He, 4Li`); ${}^4\mathrm{He}$ is evaluated directly in the exact $K_4$ tetrahedral plaquette model below (`Table 3.2a`), and constituent uncertainty propagation covers all $A = 1\text{--}238$ benchmarks in `master-atlas-80dps.witness.json`.
+
+---
+
+### 3.2 Category 2 — Nuclear Binding Energy ($B(Z, N)$)
+
+#### Table 3.2a: Few-Body Complete-Graph $K_A$ Plaquette & Variational Models ($A = 2, 3, 4$)
+
+| Model / Formulation | ${}^2\mathrm{H}$ $B$ (MeV) [Err] | ${}^3\mathrm{H}$ $B$ (MeV) [Err] | ${}^3\mathrm{He}$ $B$ (MeV) [Err] | ${}^4\mathrm{He}$ $B$ (MeV) [Err] | Scaling $B_3 / B_2$ | Scaling $B_4 / B_2$ |
+|---|---:|---:|---:|---:|---:|---:|
+{{FEWBODY_BINDING_ROWS}}
+
+#### Table 3.2b: Symbolic 1D Q-CLT Binding Proxy Across Mass-Number Bands ($A \ge 2$)
+
+| Mass-Number Band | Nuclides $N$ | Bound ($B_{\mathrm{pred}} > 0$) | Mean $\|\Delta B\|/B_{\mathrm{AME}}$ | Median $\|\Delta B\|/B_{\mathrm{AME}}$ | Median Error (`ppQ`) | Mean $B_{\mathrm{pred}}/A$ (MeV) | Mean $B_{\mathrm{AME}}/A$ (MeV) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+{{BINDING_BAND_ROWS}}
+
+*Assessment (Low-$A$ vs High-$A$ Binding):* In the few-body regime ($A \le 4$), replacing the 1D chain with the 3D complete-graph $K_A$ colour-flux plaquette (`M3a` exact Lanczos ground state in the $E_{\mathrm{osc}}$ chart) captures the tetrahedral jump from deuteron to $\alpha$-particle ($B_4/B_2 = {{M3A_B4_B2}}$ vs AME2020 `12.720`, giving $B({}^4\mathrm{He}) = {{M3A_B4_MEV}}\;\mathrm{MeV}$, `+3.65%`). Across $A \ge 5$, the production mass table falls back to the 1D factorized symbolic Q-CLT chain, whose per-nucleon binding approaches $b_2 \approx 2.071\;\mathrm{MeV}$ asymptotically rather than the empirical $\sim 7.5\text{--}8.8\;\mathrm{MeV}$ nuclear saturation curve, producing a uniform `-67%` to `-70%` binding deficit across medium and heavy nuclei.
+
+---
+
+### 3.3 Category 3 — Charge, Hypercharge, $\alpha_{\mathrm{EM}}$, Coulomb Splits & Molecular Geometry
+
+#### Table 3.3a: Electroweak / Electromagnetic Couplings & Mirror-Nuclei Coulomb Systematics
+
+| Observable / Test | Predicted Value | Experimental Reference | Relative Error | `ppQ` Error Scale | Pull / Scatter | Status & Scope |
+|---|---:|---:|---:|---:|---:|---|
+{{CHARGE_EM_ROWS}}
+
+#### Table 3.3b: $q$-Weighted VSEPR Molecular Geometry & Condensed-Matter Benchmarks
+
+| Molecule / Observable | Symmetry / Weighting | Predicted | Experimental | Residual | Relative Error | `ppQ` Error Scale | Pull $z_{\mathrm{exp}}$ |
+|---|---|---:|---:|---:|---:|---:|---:|
+{{MOLECULAR_ROWS}}
+
+*Assessment (Charge & EM Sector):* Electric charge quantization is exact ($0\;\mathrm{ppQ}$) from topological writhe $Q(H) = \tfrac{1}{2}\operatorname{writhe}(H)$. The additive Schwinger Form B series reproduces $\alpha_{\mathrm{EM}}^{-1}$ to `{{ALPHA_FORMB_REL_PPB}} ppb` (`{{ALPHA_FORMB_PULL}}`$\sigma_{\mathrm{exp}}$, within $3\sigma_{\mathrm{exp}}$), whereas the Chern–Simons tower arm stands at `{{ALPHA_CS_REL_PPB}} ppb`; deriving a unique canonical selection between the two arms remains open. In nuclear isospin doublets, the bare topological ratio $\tanh(\ln q_0) = {{TANH_LN_Q0}}$ accounts for `29.0%` of the ${}^3\mathrm{H}\text{–}{}^3\mathrm{He}$ split without nuclear-radius input, while canonical nuclear-radius Coulomb across $8$ mirror pairs ($A = 3\text{--}39$) matches AME2020 splits with mean ratio `{{MIRROR_MEAN_RATIO}}` ($\pm {{MIRROR_RMS_PCT}}\%$ RMS). Molecular bond angles are exact (`0–5.8 ppb`) where tetrahedral/linear symmetry dominates ($\mathrm{CH_4}, \mathrm{CO_2}$) and accurate to `0.20%–2.29%` under $q$-weighted lone-pair and double-bond repulsion ($\mathrm{NH_3}, \mathrm{H_2O}, \mathrm{C_2H_4}, \mathrm{H_2S}$).
+
+---
+
+### 3.4 Category 4 — Weak $\beta$-Decay ($Q_{\beta^-}$ & Weak Scale)
+
+#### Table 3.4a: Free-Neutron Conditional Split, Bare Monotone Transfer-Matrix Benchmarks, & Weak Scale
+
+| Transition / Observable | Formulation | Predicted | Experimental | Relative Error | `ppQ` Error Scale | Pull $z_{\mathrm{exp}}$ | Status |
+|---|---|---:|---:|---:|---:|---:|---|
+{{BETA_BENCHMARK_ROWS}}
+
+#### Table 3.4b: Isobaric Mass-Difference $Q_{\beta^-} = M(Z, N) - M(Z+1, N-1) - m_e$ Across Measured $\beta^-$ Emitters
+
+Evaluated across all `{{N_BETA_TOTAL}}` non-estimated exothermic $\beta^-$ transitions ($Q_{\beta^-}^{\mathrm{AME}} > 10\;\mathrm{keV}$) present in `mass-table-comprehensive.witness.json`:
+
+| Mass-Number Band | Transitions $N$ | Predicted Exothermic ($Q_{\mathrm{pred}} > 0$) | Mean $\|\Delta Q\|/Q_{\mathrm{AME}}$ | Median $\|\Delta Q\|/Q_{\mathrm{AME}}$ | Median Error (`ppQ`) | Physical Diagnosis |
+|---|---:|---:|---:|---:|---:|---|
+{{BETA_BAND_ROWS}}
+
+*Assessment ($\beta$-Decay):* On the single-nucleon baseline, the $T^3$ weight-trace split on the cost-minimal $\gamma\gamma$-reachable Borromean braid $V^3 = (\sigma_1 \sigma_2^{-1})^3$ (conditional on conjectures `C1–C3`) gives $Q_{\beta^-}(n) = {{QBETA_BASE_MEV}}\;\mathrm{MeV}$ (`-58.40%` vs `0.782334 MeV`). For composite nuclei ($A \ge 2$), bare monotone transfer-matrix skein shifts (`Table 3.4a`) land in the physical keV–MeV window (best at ${}^{14}\mathrm{C}$, `-8.11%`), whereas direct mass-table subtraction $M(Z,N) - M(Z+1,N-1) - m_e$ (`Table 3.4b`) predicts `0 / {{N_BETA_COMPOSITE}}` exothermic composite transitions because the 1D chain omits Coulomb repulsion $\propto Z(Z-1)/A^{1/3}$ and Pauli neutron-excess pressure $\propto (N-Z)^2/A$. Absolute $\beta$ half-lives additionally require deriving the electroweak topological crossing count $N_v \approx {{NV_CROSSING}}$ fixing $v_{\mathrm{weak}}$ ($G_F$).
+
+---
+
+### 3.5 Category 5 — $\alpha$-Decay & Heavy / Composite Fission
+
+#### Table 3.5a: Gamow WKB $\alpha$-Tunneling at Experimental $Q_\alpha$ & $N = 126$ Shell Preformation
+
+| Emitter / Mechanism | $(Z, N, A)$ | $Q_\alpha^{\mathrm{AME}}$ (MeV) | $T_{1/2}^{\mathrm{exp}}$ (s) | $T_{1/2}^{\mathrm{model}}$ (s) | $\log_{10}(T_{\mathrm{model}}/T_{\mathrm{exp}})$ (dex) | Factor Error | Notes |
+|---|---|---:|---:|---:|---:|---:|---|
+{{ALPHA_GAMOW_ROWS}}
+
+- **Composite Generation Fission Threshold (`gap3b`):** Machine-checked Hecke algebra identities prove $\sigma_1^9 = P_6(h_0)\sigma_1^3 + h_3 \cdot 1$ and strict super-additivity $Q_3 = E(9) - 3E(3) > 0$ for all $q > 1$ across all four subtracted torus functionals, opening the 3-body decay cut $T(2,9) \to 3\,T(2,3)$ on the second Riemann sheet ($\operatorname{Im} z_{\mathrm{pole}} = -\Gamma_9/2 < 0$) and algebraically excluding a stable fourth odd-torus generation at winding $n = 9$ (Fock-space continuum embedding carried as explicit hypothesis `CompositeT29DecayExclusionHypothesis`).
+
+#### Table 3.5b: Fully Derived $Q_\alpha$ Across Measured Exothermic $\alpha$-Emitters ($N = {{N_ALPHA_TOTAL}}$) & Heavy-Emitter Sensitivity
+
+| Regime / Model | Sample / Nuclide | Exothermic ($Q_\alpha^{\mathrm{pred}} > 0$) | $Q_\alpha^{\mathrm{pred}}$ vs $Q_\alpha^{\mathrm{AME}}$ | Relative / `dex` Error | Median Error (`ppQ`) | Tunneling Assessment |
+|---|---|---:|---:|---:|---:|---|
+{{ALPHA_DERIVED_ROWS}}
+
+*Assessment ($\alpha$-Decay):* The barrier-penetration kinematics are quantitatively sound: parameter-free Gamow WKB tunneling with FCC touching radii reproduces half-lives across **24 orders of magnitude** ($10^{-17}\;\mathrm{s}$ to $10^{17}\;\mathrm{s}$) within `0.14–0.89 dex` on open-shell emitters, and the $N=126$ magic-shell suppression in ${}^{210}\mathrm{Po}$ (`-1.26 dex` bare) is closed to **`+0.044 dex` (`10.6%` in $T_{1/2}$)** by the parameter-free Mayer–Jensen combinatorial preformation factor $S_\alpha^{\mathrm{MJ}} = \tfrac{1}{10}\times\tfrac{2}{10} = \tfrac{1}{20}$. Conversely, when $Q_\alpha$ is computed purely from unclosed heavy-nuclide Q-CLT masses (`Table 3.5b`), multi-MeV parent/daughter binding errors are exponentially amplified by the Gamow sensitivity $|\partial \log_{10} T_{1/2}/\partial Q_\alpha| \approx 2.4\text{--}10\;\mathrm{dex/MeV}$, yielding `3.15–48.2 dex` half-life offsets until $A \ge 5$ binding saturation is derived.
+
+---
+
+## 4. Symbolic Q-CLT Proxy Justification & Formal Scope Boundary
+
+Why does the comprehensive nuclear table achieve `~0.57%` rest-mass accuracy across `{{N_MEAS_NUCLIDES}}` measured nuclides while missing `~68.6%` of total nuclear binding energy and failing isobaric $Q_\beta$ / $Q_\alpha$ differences? Both the justification of the symbolic proxy and the exact mathematical reason for its $A \ge 5$ saturation deficit are **machine-checked theorems in Lean 4**:
+
+| Lean 4 Module | Key Machine-Checked Declarations | Mathematical Statement & Physical Consequence |
+|---|---|---|
+| `QOU.CategoricalMassMarkov` | `CategoricalMassMarkov.ofHecke`, `ofHecke_Φ_apply`, `ofHecke_φ_zero`, `ofHecke_φ_succ` | Constructs the exact categorical mass endomorphism and proves compatibility of the canonical Markov trace $z = q^3/(q^2+1)$ across inductive Hecke tower inclusions $H_n(q) \hookrightarrow H_{n+1}(q)$. Justifies evaluating composite braid traces algebraically without free parameters. |
+| `QOU.Observations.QCltNonCommutative` | `class QCltNonCommutative` | Formalizes the non-commutative $q$-Central Limit Theorem interface governing factorized symbolic trace asymptotics (`Exact symbolic (-alpha * ln|tau_M|)`), enabling exact $O(A)$ evaluation across all `{{N_TOTAL_ISOTOPES}}` chart-of-nuclides entries with zero fitting. |
+| `QOU.MassTheory.AmeBindingNotPairwise` | `ame_b3_ne_zero`, `ame_not_isPairwise` | Proves from $B({}^2\mathrm{H}), B({}^3\mathrm{H}), B({}^4\mathrm{He})$ that the irreducible 3-body cumulant is strictly nonzero ($b_3 \neq 0$): **no pairwise two-body graph Hamiltonian can reproduce light-nuclear binding.** Explains why higher-order $K_A$ plaquette cumulants (`Table 3.2a`) are mathematically mandatory. |
+| `QOU.MassTheory.ChainBindingNoSaturationPeak` | `chainPerNucleon_eq_hyperbola`, `chain_no_saturation_peak` | Proves that any 1D nearest-neighbor chain satisfies $B_{\mathrm{chain}}(A)/A = b_2(1 - 1/A)$, which is strictly increasing and bounded above by $b_2 \approx 2.071\;\mathrm{MeV}$ with **no local maximum at $A \approx 56$**. Certifies that `mass-table-comprehensive` (`principled-derivation (Q-CLT proxy)`) is a rigorous 1D baseline, not a complete 3D nuclear shell/cluster theory. |
+
+---
+
+## 5. Open Mathematical Derivations & Deterministic Witness Provenance
+
+### 5.1 Ranked Frontier of Open Derivations
+
+| Priority | Open Problem | Current Quantitative Gap | Downstream Impact When Closed |
+|---:|---|---|---|
+| **1** | **Muon–Proton $q_0$ Residual ($\Delta_{\mu p}$)** | $m_\mu$ residual `+211.21 ppb` ($9.70\sigma_{\mathrm{exp}}$), equivalent to $\Delta q_0 / q_0 = +11.61\;\mathrm{ppb}$ between muon and proton pins | Unifies lepton and baryon $q_0$ anchors below CODATA $1\sigma$ (`21.8 ppb`) and sharpens $m_\tau/m_e$ resolvent inputs. |
+| **2** | **Canonical $\alpha_{\mathrm{EM}}^{-1}$ Arm Selection** | Schwinger Form B is at `-0.365 ppb` ($-2.38\sigma_{\mathrm{exp}}$) vs Chern–Simons tower at `-467.64 ppb` | Establishes a single parameter-free electromagnetic coupling across QED radiative corrections and meson/Coulomb sectors. |
+| **3** | **Unconditional Free-Neutron $Q_{\beta^-}$ & $\Delta m_{np}$ Sign** | Conditional $T^3$ weight-trace split gives `0.3254 MeV` vs `0.7823 MeV` (`-58.40%`); $m_n - m_p$ underpredicts by `-0.4569 MeV` | Discharges conjectures `C1–C3`, fixes $m_n$ to sub-ppm accuracy, and anchors the $A=1$ weak-decay threshold. |
+| **4** | **$A \ge 5$ 3D Cluster, Pauli & Coulomb Saturation** | 1D Q-CLT proxy underbinds $A \ge 5$ by `~68.6%` (`2.07` vs `~8.5 MeV/A`), inverting composite $Q_{\beta^-}$ and shifting $Q_\alpha$ by `3–45 MeV` | Simultaneously closes medium/heavy nuclear binding $B(Z,N)$, composite $\beta$-stability valleys, and derived heavy-emitter $\alpha$ half-lives. |
+| **5** | **Electroweak Brane-Tower Crossing Count $N_v$** | Empirical $G_F$ requires $N_v = v_{\mathrm{weak}}/(E_\times \mu_0) \approx {{NV_CROSSING}}$ (currently uncomputed from tower topology) | Enables first-principles prediction of absolute weak decay rates ($\Gamma_\beta, \tau_n, \tau_\mu$) from $(m_e, q_0)$ alone. |
+
+### 5.2 Redisplay, Regeneration & QA Gate Commands
+
+```bash
+# Redisplay the rendered scorecard to stdout (no file writes):
+python3 scripts/generate-accuracy-scorecard.py --print
+
+# Regenerate ACCURACY.md after upstream witness updates:
+python3 scripts/generate-accuracy-scorecard.py --write
+
+# Run the strict QA gate (witness health + drift check + hygiene + README link):
+python3 scripts/generate-accuracy-scorecard.py --check --qa-report
+
+# Run via the unified compute-QA harness:
+python3 scripts/compute-qa.py --gate accuracy-scorecard
+```
+
+### 5.3 Deterministic Upstream Witness Provenance
+
+`ACCURACY.md` intentionally omits transient git `HEAD` commit hashes and wall-clock timestamps so that the document changes **if and only if** an upstream witness or reference dataset moves:
+
+| Upstream Witness / Dataset | SHA-256 (`[:12]`) | Gate Status | Scorecard Sections Fed |
+|---|---:|---|---|
+{{WITNESS_PROVENANCE_ROWS}}

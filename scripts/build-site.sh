@@ -6,9 +6,12 @@
 # build step of scripts/publish-main-local.sh, which agents run after a merge
 # to main when GitHub Actions is not enabled (owner, 2026-11-23).
 #
-# Two parts:
+# Three parts:
 #   1. The folio site: folio-assistant-core's build-folio-site.ts.
-#   2. The Lean library render, the folio's `lean` visualiser declared in
+#   2. The 80-dps observational accuracy scorecard QA gate + standalone HTML
+#      render (`scripts/generate-accuracy-scorecard.py --check --qa-report
+#      --html-out $SITE/accuracy/index.html`), railed at `/accuracy/`.
+#   3. The Lean library render, the folio's `lean` visualiser declared in
 #      qou.json: folio-assistant-sci's lean-docs-build.sh (doc-gen4, restores
 #      the warm lake cache first) and lean-render.ts (stages it at <site>/lean/
 #      with the harness navbar). Skill: folio-assistant-sci `lean-html-docs`.
@@ -27,6 +30,10 @@ LEAN=${QOU_LEAN_DOCS:-auto}
 
 echo "== build-site: folio site -> $SITE"
 bun run "$PLAT/folio-assistant-core/scripts/build-folio-site.ts" --out "$SITE"
+
+echo "== build-site: accuracy scorecard QA gate & HTML -> $SITE/accuracy"
+python3 -c "import mpmath" >/dev/null 2>&1 || python3 -m pip install --quiet mpmath
+python3 scripts/generate-accuracy-scorecard.py --check --qa-report --html-out "$SITE/accuracy/index.html"
 
 if [ "$LEAN" = 0 ]; then
   echo "== build-site: Lean render skipped (QOU_LEAN_DOCS=0)"
