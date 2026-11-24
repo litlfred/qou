@@ -1,13 +1,13 @@
 ---
 # qou-slpd
 title: 'ROAST: slope ½ is a definition, not a derivation — and the two ½s are order vs level'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T03:03:19Z
 parent: qou-q4oa
 ---
 
@@ -298,3 +298,5 @@ Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/pa
 Ruling check (owner-rulings.md on main 2ae54ab401, 2026-11-21): no superseded premise (photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ = 2 − h⁴, fitted values in proofs) is used by this bean's finding.
 
 Fix applied on owner card (2026-11-21) in PR #8825 (branch claude/paper-structure-drain-2026-11-21). Close when it merges.
+
+Verified 100% merged on origin/main in PR #8825 (314ce7c5120 / 50e0af4c79a, QGevreyOrder.lean theta_eq_half_gs_bridge).

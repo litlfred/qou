@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T22:20:00Z
-updated_at: 2026-10-04T15:14:56Z
+updated_at: 2026-11-24T03:03:21Z
 parent: b9cj
 ---
 
@@ -284,3 +284,5 @@ already landed. Both are *summaries that went stale against work recorded
 elsewhere in the same corpus*, and both were read as current by a later agent
 (PR #4790, then this one). The per-bean fixes are in; the pattern is worth a
 systemic look — a stale-summary check has no owner today.
+
+Algebraic layer of Rows 4 & 6 proved sorry-free in C1ConnectionAlgebraicIdentities.lean (8bddf72a4dd).

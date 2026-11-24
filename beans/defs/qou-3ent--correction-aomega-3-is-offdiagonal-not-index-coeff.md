@@ -2,7 +2,6 @@
 # qou-3ent
 title: 'CORRECTION: A_omega = 3 is the OFF-DIAGONAL Stokes constant, NOT a 3d-index coefficient — eq (21) is diagonal-only'
 status: in-progress
-pr: 8236
 type: task
 priority: high
 tags:
@@ -10,7 +9,7 @@ tags:
     - correction
     - reorg-2026-10-04
 created_at: 2026-08-11T11:20:00Z
-updated_at: 2026-11-17T06:55:00Z
+updated_at: 2026-11-24T03:03:21Z
 parent: qou-avtq
 ---
 
@@ -65,3 +64,5 @@ The Lean (`QOU.QBeta.aomega_fourOne_dt_count`, conditional on `[StokesDTBPSBridg
 
 - [x] PR #8236 (`62b8fce5d1e824cf9dd59a1d9845d15631382086`): corrected stale docstring lines in `QOU/QBeta/StokesDTBPSBridge.lean` (`{3,4}` vs `3` for `4_1` and conditional status of GGM Conj 3(d)) and formalized `stokes_diagonal_vs_offdiagonal_qzero_separation`, `meridian_poly_s_evaluates_to_three_and_four`, and `stokes_offdiagonal_tower_divisible_by_three` in `QOU/QBeta/StokesDiagonalVsOffDiagonalAndCrossKnotSplit.lean` (`0 sorry`, `0 axiom`, `0 vacuity`), backed by 80-dps witness `round52-stokes-offdiag-crossknot-behrend-bring-nz.witness.json`.
 - [ ] Awaiting Merge Manager integration and owner review (kept `in-progress` per no-unilateral-closure policy).
+
+4_1 vs 5_2 docstring & GGM eq (21) diagonal-only scope synced at 8bddf72a4dd.

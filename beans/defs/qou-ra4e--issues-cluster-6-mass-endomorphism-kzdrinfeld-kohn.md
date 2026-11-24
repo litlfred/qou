@@ -1,11 +1,11 @@
 ---
 # qou-ra4e
 title: 'Issues-Cluster-6: Mass Endomorphism, KZ/Drinfeld-Kohno Holonomy, Proton -12 & alpha_em Linchpin (12 Open GitHub Issues)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-23T20:55:55Z
-updated_at: 2026-11-23T20:55:55Z
+updated_at: 2026-11-24T03:03:20Z
 parent: qou-xip2
 ---
 
@@ -28,3 +28,5 @@ Actionable GitHub Issues cluster (`12` open issues on `litlfred/qou`).
 - **`#7400`**: Pole-to-cusp arc: one block disagrees with its own witness and its own carrier, and `n` is four different things
 - **`#7092`**: Is the duality/σ ratio a coboundary? — the falsifiable form of qou-qjhc
 - **`#6897`**: Route-E follow-through: Sym² gate on the L6a4 class-1 representations, class 2–13 sweep, GGZ hypotheses in Lean, categorical_mass rename
+
+Batch 6 Cluster-6 audit complete (5d406fc68a3): closed 3 100%-landed issues (#7710, #7704, #7703); kept 9 remaining issues + #9154 guard open.

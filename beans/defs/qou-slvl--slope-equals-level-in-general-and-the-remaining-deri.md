@@ -2,13 +2,12 @@
 # qou-slvl
 title: slope = q-Gevrey level in general; and the two recursions still defined-to-match
 status: in-progress
-pr: 8195
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T08:05:00Z
-updated_at: 2026-10-04T15:26:09Z
+updated_at: 2026-11-24T03:03:20Z
 parent: qou-frzo
 ---
 
@@ -89,3 +88,5 @@ Relates: `qou-slpd`, `qou-c1ln` (row 3).
 - [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/C1SingularLocusAndSlopeLevelBridge.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
 - [x] Verified exact rational witness in `computations/probes/c1-singular-locus-and-slope-level-bridge.witness.json` (`scriptHash: fc315c730706`, `scriptCommitSha: 17c1b41227b6c499979110fb6c31637514935ccf`, `allPassed: true`, `0` raw `float64` fields).
 - [ ] Awaiting Merge Manager merge of PR #8195 (`4d59250dbada4070a6545f88b8d6f14fb94d89f6`).
+
+RSZ §1.3.2 bound-form IsQGevreyOrderLE & lacunary L_k proved sorry-free at 8bddf72a4dd.

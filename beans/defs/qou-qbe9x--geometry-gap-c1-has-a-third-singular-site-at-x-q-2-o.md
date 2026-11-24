@@ -2,13 +2,12 @@
 # qou-qbe9x
 title: 'Geometry gap: C1 has a THIRD singular site at x = q^-2 (orbit [1] on E_q) that no analysis has examined'
 status: in-progress
-pr: 8195
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T10:10:00Z
-updated_at: 2026-10-04T15:10:59Z
+updated_at: 2026-11-24T03:03:20Z
 parent: qou-frzo
 ---
 
@@ -140,3 +139,5 @@ Was in-progress with no bean update since 2026-08-08 and no main commit naming i
 - [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/C1SingularLocusAndSlopeLevelBridge.lean` (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 advisory` across all 7 static vacuity/borrowed-name audits) and wired into `QOU.lean`.
 - [x] Verified exact rational witness in `computations/probes/c1-singular-locus-and-slope-level-bridge.witness.json` (`scriptHash: fc315c730706`, `scriptCommitSha: 17c1b41227b6c499979110fb6c31637514935ccf`, `allPassed: true`, `0` raw `float64` fields).
 - [ ] Awaiting Merge Manager merge of PR #8195 (`4d59250dbada4070a6545f88b8d6f14fb94d89f6`).
+
+Third singular site x = q^-2 gauge-invariant torus degree -1 proved sorry-free at 8bddf72a4dd.
