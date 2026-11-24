@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T06:09:07.969644+00:00",
-  "commitSha": "c9cee1158806ca016924837e635a8d65d83c65fb",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T09:34:50.847387+00:00",
+  "commitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
   "assertions": [
     {
       "name": "codata_m_e",
@@ -30,6 +30,15 @@
       "tolerance": "0.000000000000200000000000000000000000000000000000000000000000000000000000",
       "unit": "dimensionless",
       "source": "alpha/alpha-k-jones-markov-h3.witness.json"
+    },
+    {
+      "name": "codata_Σ_d_λ_y_λ_-_1__Markov_M3,_max_over_n=2..6",
+      "computed": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "2.00000000000000000000000000000000000000000000000000000000000e-40",
+      "unit": "dimensionless",
+      "source": "alpha-k-macdonald-closed-form.witness.json"
     },
     {
       "name": "codata_Q_n__β-decay",
@@ -69,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 11,
   "computation": "codata-reconciliation",
   "scriptFile": "codata_reconciliation.py",
-  "scriptHash": "92836eebc228",
-  "scriptCommitSha": "0e2e79981ae8e6f9e8ffead212a3fda0e8ad72fe",
+  "scriptHash": "1e9ea7c9acaf",
+  "scriptCommitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,14 +90,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -126,12 +135,23 @@
       {
         "quantity": "α_2 − z² (Markov axiom)",
         "unit": "dimensionless",
-        "predicted": "0.0000000000000000555111512312578300000000000000000000000000000000000000000000",
+        "predicted": "5.551115123125783e-17",
         "codata_value": "0.0",
-        "codata_err": "0.000000000000100000000000000000000000000000000000000000000000000000000000",
-        "delta_ppb": "0.0000000555111512312578300000000000000000000000000000000000000000000",
-        "codata_unc_ppb": "1.00000000000000000000000000000000000000000000000000000000000",
+        "codata_err": "1.0e-13",
+        "delta_ppb": "5.551115123125783e-8",
+        "codata_unc_ppb": "1.0",
         "predicted_source": "alpha/alpha-k-jones-markov-h3.witness.json",
+        "anchor": false
+      },
+      {
+        "quantity": "Σ d_λ y_λ - 1 (Markov M3, max over n=2..6)",
+        "unit": "dimensionless",
+        "predicted": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+        "codata_value": "0.0",
+        "codata_err": "1.00000000000000000000000000000000000000000000000000000000000e-40",
+        "delta_ppb": "9.05567907882671236750911929088779178068253119813913818958261e-63",
+        "codata_unc_ppb": "1.00000000000000000000000000000000000000000000000000000000000e-31",
+        "predicted_source": "alpha-k-macdonald-closed-form.witness.json",
         "anchor": false
       },
       {
@@ -140,7 +160,7 @@
         "predicted": "0.782333409310000000000000000000000000000000000000000000000000",
         "codata_value": "0.782333409310000000000000000000000000000000000000000000000000",
         "codata_err": "0.000000666408302469289468560497761249533160304081412493672051410504",
-        "delta_ppb": "5.37606323610267327202275962920435550756157183886056809681308e-53",
+        "delta_ppb": "5.37606339249111949961473294997937733150158817826847895579191e-53",
         "codata_unc_ppb": "851.821352046113180149516886352456572048068926529469846770111",
         "predicted_source": "experimental_constants.py arithmetic",
         "anchor": false
@@ -180,7 +200,7 @@
       }
     ],
     "anchor_count": 5,
-    "derived_count": 2,
+    "derived_count": 3,
     "atom_species_informational": [
       {
         "element": "Hydrogen",
@@ -294,6 +314,34 @@
       }
     ],
     "atom_species_note": "Atomic-mass derivation chain is upstream-incomplete; deviations exceed 50% for hydrogen and are negative for helium.  Surfaced as `data` only — not asserted, so `max_non_anchor_delta_ppb` tracks structural cross-checks rather than the upstream derivation gap.  Resolving these rows is a separate workplan.",
-    "max_non_anchor_delta_ppb": "0.0000000555111512312578300000000000000000000000000000000000000000000"
-  }
+    "max_non_anchor_delta_ppb": "5.551115123125783e-8",
+    "upstream_witness_hashes": [
+      {
+        "path": "atom-mass-derived.witness.json",
+        "sha256": "b6f26ae34f104508b39571f7833e2c7c3d50276939c1b89f58c34e46e3aeef78",
+        "size_bytes": 7865,
+        "commitSha": "83d57ef17b144b626ca8620bde87377647aecf1f",
+        "scriptCommitSha": "83d57ef17b144b626ca8620bde87377647aecf1f",
+        "computedAt": "2026-09-04T10:58:56.310747+00:00"
+      },
+      {
+        "path": "alpha/alpha-k-jones-markov-h3.witness.json",
+        "sha256": "cbe671ce8ecd04f2ca29911ddcef6f2ee397859377cc09760d3d141875333176",
+        "size_bytes": 1699,
+        "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+        "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+        "computedAt": "2026-08-24T10:50:02.778125+00:00"
+      },
+      {
+        "path": "alpha/alpha-k-macdonald-closed-form.witness.json",
+        "sha256": "8d8c5590d68771e7aa06d423553ed06e8fad9d2b20d4f19df6f563ef5352883b",
+        "size_bytes": 11169,
+        "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+        "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+        "computedAt": "2026-08-23T08:49:01.828050+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
