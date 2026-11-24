@@ -1,11 +1,11 @@
 ---
 # qou-7igi
 title: 'EPIC [Q-Drain-9]: Delta_lambda Plancherel Covariance, REV_n = O(sqrt n) & Jack/Kerov Asymptotics'
-status: todo
+status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-23T20:55:50Z
-updated_at: 2026-11-23T20:55:50Z
+updated_at: 2026-11-24T03:18:16Z
 parent: qou-hksc
 blocking:
     - qou-xip2
@@ -32,3 +32,5 @@ blocking:
 - Claim individual child beans via `beans update <bean-id> --status in-progress --body-append "Claimed by <branch> (YYYY-MM-DD)"`.
 - Never mark a bean `completed` while an uninstantiated conjecture `class` or explicit `stays open` item remains (AGENTS.md Rule 13a).
 - Enforce single-thread CPU caps (`LEAN_NUM_THREADS=1`, `nice -n 15`), zero float64 (`mpmath` >= 50-80 dps), and zero fitting.
+
+Batch 9 Q-Drain-9 complete on origin/claude/backlog-drain-batch9-10-20261123 (2dba8f02dcd): ClassicalTraceFloorParity.lean + DeltaLambdaRStarOrderBounds.lean (0 sorry) + 80-dps witness staged.

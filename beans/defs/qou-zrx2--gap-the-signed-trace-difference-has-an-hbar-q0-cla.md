@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-11-16T19:46:00Z
+updated_at: 2026-11-24T03:18:17Z
 parent: qou-v2om
 ---
 
@@ -688,3 +688,5 @@ Was in-progress with no bean update since 2026-09-06 and no main commit naming i
 - **Updated `folio/quantum-observable-universe/lean/QOU/MassTheory/ClassicalTraceFloor.lean` & `computations/derivation_chain.py`:**
   - Documented the canonical Borromean classical floor shares **85.01%** for D ($0.125 / 0.14704668$) and **9.61%** for ${}^4\mathrm{He}$ ($0.4375 / 4.55297954$) alongside the historical grouped-word shares (22.46% / 4.88%), and wired both `QOU.MassTheory.ClassicalTraceFloor` and `QOU.MassTheory.ClassicalTraceFloorParity` into `QOU.lean`.
 - **Verified in `computations/probes/low_isotope_binding_substrate_probe.py` (`low-isotope-binding-substrate-probe.witness.json`):** assertions `qou_zrx2_interface_parity_formula_A2_to_6`, `qou_zrx2_deuteron_borromean_floor_share_gt_85pct`, and `qou_zrx2_deuteron_grouped_floor_share_22_46pct` all PASS at 50-dps `mpmath`.
+
+Follow-up (5) cycle-merge parity & 80-dps shares proved at 891eef314f7 / 90b9a30e666.

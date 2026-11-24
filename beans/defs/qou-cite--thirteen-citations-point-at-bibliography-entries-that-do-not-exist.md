@@ -1,13 +1,13 @@
 ---
 # qou-cite
 title: 13 citations point at bibliography entries that do not exist — the check had never run
-status: todo
+status: completed
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T09:55:00Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T03:18:16Z
 parent: qou-mub3
 ---
 
@@ -466,3 +466,5 @@ Re-measured on main 2ae54ab40 by importing `folio/schema/references.ts` (973 ent
 
 
 2026-11-21 (expo-chapter, 68ebfb21a, PR #8889): step 4 DONE on branch. Full platform installed (pin 82b3899): --strict reports 0 cites-resolve issues; registry call moved out of if (strict). Default run Valid 6 before and after (identical lines); planted key zz-bogus-key-9999 gives Invalid 7. manuscript/leitner2026 already resolved on main (owner ruling 2026-11-15). Stays todo until #8889 merges.
+
+Verified 100% live on origin/main (e330ab6aa04): configureReferenceRegistry runs unconditionally in scripts/run-validate.ts:146 across 1,109 bib entries with 0 cites-resolve errors.
