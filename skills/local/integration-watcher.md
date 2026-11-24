@@ -1098,19 +1098,31 @@ Per prepared PR:
    CI run. Before each fix-push, run `git fetch origin main` and
    check the delta per coordinate §8c. If main moved ≥ 3 commits
    and any touch your PR's diff scope, rebase first (per §5f).
-5. **Done check + merge via `/prepare-merge-auto`.** When (a)
-   every open review thread is resolved or replied to AND one-voice
-   has been applied or noted n/a (§5h), (b) every CI check is
-   green OR documented as a flake (§5f), (c) the diff still
-   reflects the original intent — invoke `/prepare-merge-auto`.
-   The skill handles sibling coordination, final rebase, review-
-   comment resolution, structured user questions (if blocked), and
-   merge. See
-   [`.claude/skills/local/prepare-merge-auto.md`](prepare-merge-auto.md)
-   for the full workflow.
-6. **Stop on merge.** Once merged (or closed), call
-   `mcp__github__unsubscribe_pr_activity`. Record outcome in
-   ledger.
+5. **Done check + handoff to `merge-steward` via `/prepare-merge-auto`.**
+   When (a) every open review thread is resolved or replied to AND
+   one-voice has been applied or noted n/a (§5h), (b) every CI check is
+   green OR documented as a flake (§5f), (c) the diff still reflects the
+   original intent — invoke `/prepare-merge-auto` to prepare and hand off
+   to the active **`merge-steward`** (`merge-manager-watcher`). Siblings
+   and domain watchers NEVER self-merge; all landings onto `main` flow
+   through `Process_MergeTrain` (`merge-overlap` batching) /
+   `Process_MergeToMain`. See:
+   - [`.claude/skills/local/prepare-merge-auto.md`](prepare-merge-auto.md)
+   - `folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-manager-watcher.md` (`merge-steward`)
+   - `folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-queue.md` (`Process_MergeTrain` + `merge-overlap`)
+   - `folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-to-main.md` (`Process_MergeToMain` + mandatory post-merge bean closure)
+6. **Reconcile beans & stop on merge (MANDATORY).** Because `beans`
+   lives on orphan branch `origin/cat/cat-harness/beans` rather than
+   `origin/main`, merging a PR to `main` does **not** automatically close
+   its beans. Once a watched PR transitions to `MERGED` on `origin/main`,
+   verify or run the post-merge bean reconciler before unsubscribing:
+   ```bash
+   nice -n 10 python3 scripts/close-merged-pr-beans.py --pr <N>
+   # Or after a Merge Train lands multiple PRs:
+   nice -n 10 python3 scripts/close-merged-pr-beans.py --prs <N1>,<N2>,...
+   ```
+   Then call `mcp__github__unsubscribe_pr_activity` and record the
+   outcome in the ledger.
 
 7. **Rebase spawned PRs on main movement.** Every time a new
    commit lands on `origin/main` and the §3 / §4 per-event triage
@@ -1625,7 +1637,13 @@ queues the violation as `critical`, and asks the author.
 ## 8. Integration
 
 - **Built on**: `local/watch` (Monitor scaffolding),
-  `local/coordinate` (PR triage helpers).
+  `local/coordinate` (PR triage helpers),
+  `local/bean-coordination` + [`scripts/close-merged-pr-beans.py`](../../scripts/close-merged-pr-beans.py) (post-merge bean closure on `origin/cat/cat-harness/beans`).
+- **Merge & Sibling Stewardship (`cat-harness/sdlc` upstream)**:
+  - `folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-manager-watcher.md` (`merge-steward` lane)
+  - `folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-queue.md` (`Process_MergeTrain` + `merge-overlap`)
+  - `folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-to-main.md` (`Process_MergeToMain` + work-item closure)
+  - `local/swarm-sibling-launch` (mandatory Turn-0 sibling launch briefing & fence/CPU hygiene when spawning workers)
 - **Dispatches**: see each child's Slot C.
 - **Produces**: `.beans/${NAME}-queue.json` (live state) +
   `.beans/${NAME}-ledger.md` (event log).
