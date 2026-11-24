@@ -69,10 +69,10 @@ and `AGENTS.md §7c` base-ring generality:
   beyond pairwise `C(A, 2)` Majorana additivity.
 
 -- Ref: [wigner1937] https://doi.org/10.1103/PhysRev.51.106
--- Ref: [hall-post1967] https://doi.org/10.1088/0370-1328/90/2/309
 -- Ref: [jimbo1986] https://doi.org/10.1007/BF00704588
--- Ref: [kogut-susskind1975] https://doi.org/10.1103/PhysRevD.11.395
 -- Ref: [bloch-horowitz1958] https://doi.org/10.1016/0029-5582(58)90136-6
+-- Ref: [probe] computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b_4he_tetrahedral_k4_flux_ring_probe.py
+-- Literature: Hall & Post (1967) https://doi.org/10.1088/0370-1328/90/2/309; Kogut & Susskind (1975) https://doi.org/10.1103/PhysRevD.11.395
 -/
 
 namespace QOU.Nuclear.TetrahedralFluxRingAndMajoranaCluster
