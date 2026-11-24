@@ -55,7 +55,7 @@ symplectic intersection form `ω`:
   remains open.
 
 -- Ref: [braden-disney-hogg-2022] Braden & Disney-Hogg, "Bring's curve: old and new," Eur. J. Math. 10 (2024), Cor. 5.7, Thm. 5.9, Cor. 5.10 (`library/s40879-023-00706-0`).
--- Ref: [atiyah1971] Atiyah, "Riemann surfaces and spin structures," Ann. Sci. ÉNS 4 (1971), 47–62.
+-- Ref: [farkas-kra1992] Farkas & Kra, "Riemann Surfaces," 2nd ed., Springer (1992), Ch. III.11 & VI.3 (theta characteristics & spin parity; cf. Atiyah, Ann. Sci. ÉNS 4 (1971), 47–62).
 -/
 
 namespace QOU.BringsSurface.ThetaSymplectic

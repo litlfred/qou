@@ -37,7 +37,7 @@ Resolves the mathematical bifurcation identified in the applicability review of 
   quotients vs finite block truncations (owner scope question on `hkmt`).
 
 -- Ref: [bakalovkirillov2001] Ch. 1–3 (semisimplified `U_q(𝔰𝔩₂)` MTC at `q = e^{iπ/ℓ}`).
--- Ref: [turaev1994] Ch. XII (Temperley–Lieb / Jones–Wenzl negligible ideal at `[ℓ]_q = 0`).
+-- Ref: [turaev2010] Ch. XII (Temperley–Lieb / Jones–Wenzl negligible ideal at `[ℓ]_q = 0`).
 -/
 
 namespace QOU.BraidKnot.HeckeModularitySplit
