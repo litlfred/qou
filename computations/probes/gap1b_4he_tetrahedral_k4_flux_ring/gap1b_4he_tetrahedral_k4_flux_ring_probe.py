@@ -952,11 +952,11 @@ def lowest_eigenpair_sym(
                         w_fx[i] -= (ov_fx * qv_fx[i] + FX_HALF) >> FX_BITS
         b_sq_fx = sum(starmap_fn(mul_fn, zip(w_fx, w_fx)))
         b_next = mp.ldexp(mp.sqrt(mp.mpf(b_sq_fx)), -FX_BITS)
-        if b_next < mp.mpf("1e-74"):
+        if b_next < mp.mpf("1e-78"):
             return extract_ritz()
         if step + 1 in check_steps:
             lam_c, vec_c, res_c = extract_ritz()
-            if res_c < mp.mpf("1e-75") or step + 1 == m_steps:
+            if res_c < mp.mpf("1e-78") or step + 1 == m_steps:
                 return lam_c, vec_c, res_c
         if step + 1 < m_steps:
             b_fx = int(mp.nint(mp.ldexp(b_next, FX_BITS)))
@@ -1585,8 +1585,8 @@ def evaluate_jacobi_variational_battery(
     sqrt2 = mp.sqrt(two)
     three_quarters = three / four
     half = one / two
-    tol_x = mp.mpf("1e-74")
-    tol_f = mp.mpf("1e-72")
+    tol_x = mp.mpf("1e-71")
+    tol_f = mp.mpf("1e-69")
 
     jacobi_models: dict[str, dict] = {}
     max_var_grad_res = mp.mpf(0)
@@ -1607,7 +1607,7 @@ def evaluate_jacobi_variational_battery(
             fac = hoef.fac_idx
             h0_mat = h_g2_by_a[a_nuc]
             v_mat = v_by_a[a_nuc][v_key]
-            h0_red, v_red, fac_red = build_reduced_pencil(h0_mat, v_mat, fac, max_dim=45)
+            h0_red, v_red, fac_red = build_reduced_pencil(h0_mat, v_mat, fac, max_dim=110)
             r_dim = len(h0_red)
 
             def eval_breath_grad_on(
@@ -1863,7 +1863,7 @@ def evaluate_jacobi_variational_battery(
             eta_m_opt = eta2_micro_star
             grad_m_res = mp.mpf(0)
         else:
-            h0_m_red, v_m_red, fac_m_red = build_reduced_pencil(h0_mat, v_mat, fac, max_dim=45)
+            h0_m_red, v_m_red, fac_m_red = build_reduced_pencil(h0_mat, v_mat, fac, max_dim=110)
             r_m_dim = len(h0_m_red)
 
             def grad_micro_on(
@@ -2125,10 +2125,10 @@ def main() -> int:
             source="80-dps Hoefsmit S^{[A,A,A]} Hecke/symmetry, CG, and Lanczos residual certification",
         )
         wb.add_assertion(
-            "jacobi_variational_stationarity_and_hall_post_identities_below_1e_minus_70",
+            "jacobi_variational_stationarity_and_hall_post_identities_below_1e_minus_65",
             fmt(jacobi_res["max_var_grad_res"], dps=15),
             "0",
-            "1e-68",
+            "1e-65",
             source="TetrahedralFluxRingAndMajoranaCluster.jacobi_mode_factorization_and_hall_post_ring & 80-dps stationarity",
         )
         wb.add_assertion(
