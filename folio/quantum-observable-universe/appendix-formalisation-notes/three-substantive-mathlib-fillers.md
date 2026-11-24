@@ -1,4 +1,4 @@
-The file [`three-substantive-mathlib-fillers.lean`](three-substantive-mathlib-fillers.lean) addresses three Mathlib gaps:
+The file [`QOU/MassTheory/ThreeSubstantiveMathlibFillers.lean`](../lean/QOU/MassTheory/ThreeSubstantiveMathlibFillers.lean) addresses three Mathlib gaps:
 
 | # | Gap | Lean piece | Status |
 |---|---|---|---|

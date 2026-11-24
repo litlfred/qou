@@ -1,4 +1,4 @@
-The Lean file [`bloch-wigner-mathlib-filler.lean`](bloch-wigner-mathlib-filler.lean) restricts the Bloch-Wigner dilogarithm to unit-circle shape parameters $z = e^{i\theta}$:
+The Lean file [`QOU/MassTheory/BlochWignerMathlibFiller.lean`](../lean/QOU/MassTheory/BlochWignerMathlibFiller.lean) restricts the Bloch-Wigner dilogarithm to unit-circle shape parameters $z = e^{i\theta}$:
 
 $$
   D(z) \;:=\; \mathrm{Im}(\mathrm{Li}_2(z))\;+\; \log|z| \cdot \arg(1 - z),
