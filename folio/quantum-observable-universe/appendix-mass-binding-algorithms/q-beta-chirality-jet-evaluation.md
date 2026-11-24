@@ -1,0 +1,12 @@
+**Prior-art reduction.** Truncated $(q - 1)^N$ Laurent-jet arithmetic follows standard $I$-adic power-series evaluation at $q = 1 + \delta$, while empirical weak-decay $Q$-value benchmarks follow CODATA-2022 \cite{codata2022} and AME2020 (**W. J. Huang**, **Meng Wang**, **F. G. Kondev**, **Georges Audi**, and **Sarah Naimi** \cite{ame2020}) ([$\mathfrak{Q}_\beta$ precision ladder](#prop:q-beta-categorical-precision-ladder), [Jet-prefix filtration](#conj:jet-prefix-gb-filtration)).
+
+- **Input:** Substrate modulus $q_0 > 1$ and leptonic unit $m_e$ from the physical calibration triple $(m_e, \mathfrak{D}_\beta, m_\pi)$ ([Three-calibration discipline](#def:three-calibration-discipline)), parent-to-daughter nuclear transition $(Z,N) \to (Z\pm 1, N\mp 1)$, and target jet truncation order $N \ge 2$.
+- **Output:** Parameter-free second-order weak-decay scale $\mathfrak{Q}_\beta^{(2)}$ in $\mathrm{MeV}$ (feeding $m_{\mathfrak{n}} = m_{\mathfrak{p}} + \mathfrak{Q}_\beta^{(2)} + m_e$), together with the $(q_0 - 1)^N$ jet remainder bound and per-order coefficient epistemic tier $(k, c_k, \mathrm{tier})$.
+- **QOU delta (two-term chirality trace and tiered Kashiwara $b^2$ truncation):** With $\hbar_{q_0} = 1 - q_0^{-1}$, $b(q_0) = \sqrt{(q_0^4 + q_0^2 + 1)/(q_0^2 + 1)^2}$, and expansion parameter $u = b(q_0)\,\hbar_{q_0}^2$, the parameter-free second-order evaluation contracts the two-term chiral Lagrangian trace on $TL_3(q_0)$ ($z = q_0^3/(q_0^2+1)$) with the partial resummation
+
+$$
+  \mathfrak{Q}_\beta^{(2)}(q_0) \;=\; Q_A(q_0)\,\cos\!\left(\alpha - \frac{b(q_0)\,\hbar_{q_0}^2}{2}\right)\bigl(1 - u^2\bigr).
+$$
+
+  In the multiplicative expansion $\prod_{k=2}^{N}(1 + c_k u^k)$, the quadratic coefficient $c_2 = -1$ (equivalently $\tilde{c}_2 = -9/8$ when the cosine factor is expanded inside the normalized series) is fixed structurally by $(1 - u^2)$ with zero fitted parameters. Higher jet coefficients $c_k$ ($k \ge 3$) are recorded strictly with their epistemic tier (*structural* for $k = 2$; *open* or *exploratory* for $k \ge 3$, since three-row vanishing on $TL_3(q_0)$ precludes transferring legacy non-quotiented eigenphase ansatz coefficients without an independent derivation on $TL_3(q_0)$), preventing unproved higher-order terms from entering scored predictions.
+- **Complexity and precision:** $\mathcal{O}(N)$ operations at 80 decimal digits, with truncation order $N \ge \lceil \log_{10}(1/\varepsilon) / |\log_{10} u| \rceil$ bounding the algebraic tail when higher derived rungs are tested.

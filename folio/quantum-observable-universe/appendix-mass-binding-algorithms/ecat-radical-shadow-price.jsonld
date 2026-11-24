@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-ecat-radical-shadow-price",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:ecat-radical-shadow-price",
+  "kind": "algorithm",
+  "title": "Solver-Free $(1^3)$ Radical Shadow-Price Extraction on $H_3(q_0)$ ($\\mathcal{L}_0\\text{--}\\mathcal{L}_1$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-gram-star-positive",
+    "papers/quantum-observable-universe/blocks/prop-operator-selection-lp"
+  ],
+  "cites": [
+    "references/farkas1902",
+    "references/kantorovich1939",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "mba",
+    "shadow-price",
+    "radical",
+    "lp-dual",
+    "solver-free"
+  ],
+  "leanRef": "qou:QOU.Nuclear.ECatRadicalShadowPriceEvaluation.inner_coxeterSymmetric_radicalVec3",
+  "text": "ecat-radical-shadow-price.md",
+  "provenance": "authored"
+}

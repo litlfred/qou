@@ -738,6 +738,8 @@ export default chapter({
         "term6-binding-density",
         "term6-binding-density-table2-data",
         "term6-binding-density-table1-data",
+        "delta-lambda-value-vs-magnitude",
+        "tjon-universality-external",
         "habiro-residue-sum-equivalence",
         "habiro-residue-sum-equivalence-interpretation",
         "borromean-h4-categorical-derivation",

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-q-beta-chirality-jet-evaluation",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:q-beta-chirality-jet-evaluation",
+  "kind": "algorithm",
+  "title": "Two-Term Lagrangian Chirality Trace and Tiered $\\mathfrak{Q}_\\beta$ Jet Evaluation ($\\mathcal{L}_1\\text{--}\\mathcal{L}_2$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder",
+    "papers/quantum-observable-universe/blocks/conj-jet-prefix-gb-filtration",
+    "papers/quantum-observable-universe/blocks/def-three-calibration-discipline"
+  ],
+  "cites": [
+    "references/codata2022",
+    "references/ame2020"
+  ],
+  "tags": [
+    "mba",
+    "q-beta",
+    "chirality",
+    "jet-truncation",
+    "precision-ladder"
+  ],
+  "leanRef": "qou:QOU.QBeta.decayLadder_zC_threeRow_ne_zero",
+  "text": "q-beta-chirality-jet-evaluation.md",
+  "provenance": "authored"
+}

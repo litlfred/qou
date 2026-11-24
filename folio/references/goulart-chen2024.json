@@ -1,7 +1,7 @@
 {
   "$schema": "folio-reference/v1",
   "id": "goulart-chen2024",
-  "type": "article",
+  "type": "article-journal",
   "title": "Clarabel: An interior-point solver for conic programs with quadratic objectives",
   "author": [
     {
@@ -13,6 +13,7 @@
       "given": "Yuwen"
     }
   ],
+  "container-title": "Mathematical Programming Computation",
   "issued": {
     "date-parts": [
       [
@@ -20,6 +21,7 @@
       ]
     ]
   },
+  "DOI": "10.1007/s12532-026-00320-7",
   "URL": "https://arxiv.org/abs/2405.12762",
-  "note": "arXiv:2405.12762"
+  "note": "arXiv:2405.12762 (DOI 10.48550/arXiv.2405.12762); published in Math. Program. Comput. (DOI 10.1007/s12532-026-00320-7)"
 }

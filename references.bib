@@ -4,7 +4,7 @@
 % Key convention:  <firstauthorlastname><year>  (all lower-case)
 % Source of truth: references/ or schema/references.ts (CSL-JSON)
 % Generator:       pipeline/export-bibtex.ts
-% Generated:       2026-11-24T09:40:20.524Z
+% Generated:       2026-11-24T10:09:26.997Z
 @article{garoufalidis2004,
   author     = {Garoufalidis, Stavros},
   title      = {{On the characteristic and deformation varieties of a knot}},
@@ -3408,10 +3408,12 @@
 }
 
 @phdthesis{hoefsmit1974,
-  author = {Hoefsmit, Philippus Nicolaas},
+  author = {Hoefsmit, Peter Norbert},
   title  = {{Representations of Hecke algebras of finite groups with BN-pairs of classical type}},
   year   = {1974},
   school = {University of British Columbia},
+  doi    = {10.14288/1.0080112},
+  url    = {https://doi.library.ubc.ca/10.14288/1.0080112},
 }
 
 @article{wenzl1987,
@@ -4262,8 +4264,8 @@
   volume     = {106},
   number     = {1},
   pages      = {461--488},
-  doi        = {10.1007/BF01243922},
-  url        = {https://doi.org/10.1007/BF01243922},
+  doi        = {10.1007/BF01243921},
+  url        = {https://doi.org/10.1007/BF01243921},
   note       = {PDF library/ram1991-frobenius-formula/ — cut from the GDZ G{\"o}ttingen scan of Invent. Math. vol. 106 (PDF pp. 468-495); OCR text only. GDZ terms: reproductions may not be donated to other repositories.},
   annotation = {[Partial] 1 fix by agent (claude-opus-4-7) 2026-05-19},
 }
@@ -4854,11 +4856,13 @@
 }
 
 @article{goulart-chen2024,
-  author = {Goulart, Paul J. and Chen, Yuwen},
-  title  = {{Clarabel: An interior-point solver for conic programs with quadratic objectives}},
-  year   = {2024},
-  url    = {https://arxiv.org/abs/2405.12762},
-  note   = {arXiv:2405.12762},
+  author  = {Goulart, Paul J. and Chen, Yuwen},
+  title   = {{Clarabel: An interior-point solver for conic programs with quadratic objectives}},
+  journal = {Mathematical Programming Computation},
+  year    = {2024},
+  doi     = {10.1007/s12532-026-00320-7},
+  url     = {https://arxiv.org/abs/2405.12762},
+  note    = {arXiv:2405.12762 (DOI 10.48550/arXiv.2405.12762); published in Math. Program. Comput. (DOI 10.1007/s12532-026-00320-7)},
 }
 
 @article{cohn-elkies2003,
@@ -5793,6 +5797,7 @@
   year       = {1999},
   volume     = {508},
   pages      = {157--178},
+  doi        = {10.1515/crll.1999.508.157},
   url        = {https://arxiv.org/abs/math/9806163},
   note       = {Verified 2026-06-28 (bib-cite-resolves): Orellana, 'Weights of Markov traces on Hecke algebras', Crelle's J. 508 (1999), 157–178; arXiv:math/9806163 (1998). Computes Markov-trace weights for Hecke algebras of type B and D. The id 'orellana1998' (arXiv submission year) is retained for cross-ref stability though the journal version is 1999. Journal DOI not captured in sandbox; arXiv URL is authoritative. GLYPH-COLLISION WARNING (added 2026-08-16, S1/PR #5187): this paper's 'type D' is the Coxeter type D_n, which is NOT the repo's Markov-trace 'convention D' (z_D = q³/(q²+1)); the two are unrelated and must not be conflated. Relevant to S1/S2 as the published treatment of the weight-vs-trace-parameter dependence that the corpus's y_λ Frobenius-pairing weights instantiate; the method is representations of type-B Hecke onto a reduced type-A Hecke algebra, plus the inclusion H(D_n) ⊂ H(B_n).},
   annotation = {[Verified] by agent (claude-opus-4-7) 2026-05-19},
@@ -6721,7 +6726,10 @@
   journal = {Communications in Algebra},
   year    = {2001},
   volume  = {29},
+  number  = {9},
   pages   = {4305--4319},
+  doi     = {10.1081/AGB-100106002},
+  url     = {https://doi.org/10.1081/AGB-100106002},
   note    = {NOT READ — metadata only, reconciled from three agreeing bibliographies (see comment above). TWO SCOPE CAVEATS, both established from other documents rather than from this one. (1) COXETER GROUPS, NOT H_n(q): every document that cites it describes it as constructing GS bases for Coxeter groups W = sgp⟨Σ | (ss′)^m = 1⟩ at q = 1; none mentions the Iwahori–Hecke deformation. The q-deformed type-A statement is [kangleeleeoh2002] §4, Prop. 4.3 (pp. 275–276), held and read 2026-11-23. (2) NOT GENERAL COXETER: [chenliu2009] Example 3.2 refutes the Bokut–Shiao conjecture that a GS basis of an arbitrary Coxeter group follows from S = {(1),(2),(3′)} with commuting relations; the positive results are for finite Coxeter groups, which does cover type A_{n-1}. It is cited in this folio for the COMPLETION family $\sigma_i\sigma_{i-1}\cdots\sigma_j\sigma_i \to \sigma_{i-1}\sigma_i\sigma_{i-1}\cdots\sigma_j$ that HeckeGS.lean §4e names as missing from `heckeRewritingSystem`; the axiom `hecke_is_gs_basis` that formerly cited 'Bokut \& Shiao 2001, Thm 3.5' was deleted as FALSE for the uncompleted system (NotAGSBasis.hecke_not_gs_basis_four).},
 }
 
@@ -11327,4 +11335,16 @@
   doi     = {10.1090/S0002-9947-1986-0837820-2},
   url     = {https://doi.org/10.1090/S0002-9947-1986-0837820-2},
   note    = {Gives the intrinsic contact-form formula for the Fefferman Lorentzian metric on the canonical circle bundle of an abstract strictly pseudoconvex CR manifold.},
+}
+
+@article{buchberger2006,
+  author  = {Buchberger, Bruno},
+  title   = {{Bruno Buchberger's PhD thesis 1965: An algorithm for finding the basis elements of the residue class ring of a zero dimensional polynomial ideal}},
+  journal = {Journal of Symbolic Computation},
+  year    = {2006},
+  volume  = {41},
+  number  = {3-4},
+  pages   = {475--511},
+  doi     = {10.1016/j.jsc.2005.09.007},
+  url     = {https://doi.org/10.1016/j.jsc.2005.09.007},
 }

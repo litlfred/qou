@@ -12,7 +12,7 @@ export default definition({
   },
   uses: [
     "def:hecke-normal-form",
-    "def:universal-ilp-algorithm",
+    "rem:confinement-layer-operator-selection",
   ],
   tags: [
     "molecular",

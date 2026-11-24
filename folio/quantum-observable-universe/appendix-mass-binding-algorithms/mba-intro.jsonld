@@ -13,12 +13,16 @@
   ],
   "label": "prose:mba-intro",
   "kind": "prose",
-  "title": "Scope and conventions",
+  "title": "Scope, Confinement-Layer Architecture, and Certification Contract",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prose-pre-archimedean-derivation-chain",
+    "papers/quantum-observable-universe/blocks/def-three-calibration-discipline"
+  ],
   "tags": [
     "appendix",
     "algorithms",
-    "compute-bridge",
-    "canonical-chain"
+    "confinement-layers",
+    "dual-certificate"
   ],
   "text": "mba-intro.md",
   "provenance": "authored"

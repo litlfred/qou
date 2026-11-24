@@ -434,3 +434,28 @@ The colocated per-block `.lean` files are **not** in the Lake source path —
 `folio/quantum-observable-universe/lean/` — so on inspection no move can
 affect compilation. Not confirmed by a build: the orchestrator held a QOU build
 in this checkout and `lake` was not run.
+
+---
+
+## 2026-11-24 — Compact 9-Block $\mathcal{L}_0\text{--}\mathcal{L}_4$ Algorithms Annex Overhaul (`qou-mba8`, `qou-nmjd`)
+
+Rebuilt `folio/quantum-observable-universe/appendix-mass-binding-algorithms/` from 22 sprawling blocks (4 sections, 1,527 `.md` lines) and 5 scattered procedural blocks in Chapters 7 and 12 into a single cohesive 9-block section (`sec:mba-canonical-chain`, `"Multi-Layer Computational and Dual-Certificate Procedures"`) organized across the five discrete confinement layers $\mathcal{L}_0\text{--}\mathcal{L}_4$:
+
+- **Retained/standardized 9 blocks in `appendix-mass-binding-algorithms/`:**
+  1. `mba-intro` (`prose:mba-intro`, absorbing `mba-chain-map`): 2-paragraph scope, $\mathcal{L}_0\text{--}\mathcal{L}_4$ architecture, and 80-dps certification contract.
+  2. `hecke-gs-monotone-transfer` (`alg:hecke-gs-monotone-transfer`, consolidating `mba-step01..05`): Kang–Lee–Lee–Oh completed Hecke Gröbner–Shirshov reduction (`NotAGSBasis.hecke_not_gs_basis_four` for $n \ge 4$) + QOU monotone fine-Bratteli $2\times 2$ transfer sweep.
+  3. `twisted-star-gram-radical-quotient` (`alg:twisted-star-gram-radical-quotient`, replacing `mba-step06-frobenius-pairing`): involution-twisted $\ast$-Gram radical projection onto $TL_n(q) = H_n(q)/\mathrm{rad}\,\tau_q$ and Nakayama-twisted Frobenius verification on non-involutory Hopf models.
+  4. `ecat-radical-shadow-price` (`alg:ecat-radical-shadow-price`, replacing `mba-step10-confinement-sdp`): solver-free algebraic $(1^3)$ radical shadow-price extraction on $H_3(q_0)$.
+  5. `confinement-tower-chamber-gs` (`alg:confinement-tower-chamber-gs`, replacing `mba-step07-gb-filtration`): five-layer `ConfinementLayer` ($\mathcal{L}_0 \to \mathcal{L}_4$) promotion, 11-rule physical nuclear cluster chamber $\mathcal{G}_{\mathrm{phys}}$, Mayer–Jensen shells, and chemical toric stoichiometry.
+  6. `substrate-period-mass-resolvent` (`alg:substrate-period-mass-resolvent`, renamed from `alg:mass-identity` in `mba-step09a-mass-identity`): 80-dps Clausen/Borromean ratio root (marking $q^{-3}$ asserted) and inhomogeneous $4_1$ lepton loop resolvent from $(m_e, \mathfrak{D}_\beta, m_\pi)$.
+  7. `q-beta-chirality-jet-evaluation` (`alg:q-beta-chirality-jet-evaluation`, consolidating `mba-step08-jet-prefix`, `mba-step11-q-beta-truncation`, `mba-sidecar-ck-truncation-ladder`): two-term chiral trace and tiered $\mathfrak{Q}_\beta$ jet evaluation.
+  8. `rationalized-dual-slack-certificate` (`alg:rationalized-dual-slack-certificate`, replacing `mba-sidecar-lp-sdp-dual-emission` and retiring `mba-sidecar-witness-json-pipeline`): solver-external rationalized dual-slack optimality and support-uniqueness certification.
+  9. `lp-sdp-bootstrap-prior-art` (`rem:lp-sdp-bootstrap-prior-art`): retained intact alongside `alg:rationalized-dual-slack-certificate`.
+- **Relocated 4 non-algorithmic mathematical/physics blocks to body chapters (labels preserved):**
+  - `mba-sidecar-delta-lambda-closure` + scope note of `mba-step09b-per-isotope-binding` $\to$ `mass-theory/delta-lambda-value-vs-magnitude` (`rem:delta-lambda-value-vs-magnitude`, `sec:phi-q-markov-residue-habiro`).
+  - `mba-remark-tjon-universality-external` $\to$ `mass-theory/tjon-universality-external` (`rem:tjon-universality-external`, `sec:phi-q-markov-residue-habiro`).
+  - `mba-sidecar-mirror-cancellation` $\to$ `nuclear-interactions/mirror-baseline-cancellation` (`prop:mirror-baseline-cancellation`, `sec:atomic-braid-mass-crossing-locality-cpt`).
+  - `mba-sidecar-isovector-chiral-residue` $\to$ `nuclear-interactions/isovector-chiral-residue` (`prop:isovector-chiral-residue`, `sec:atomic-braid-mass-crossing-locality-cpt`).
+- **Chapter 7 & Chapter 12 procedural cleanup:**
+  - Replaced `knots-particles-confinement/universal-ilp-algorithm` (`def:universal-ilp-algorithm`, `status: "error"`) with forward-clean `knots-particles-confinement/confinement-layer-operator-selection` (`rem:confinement-layer-operator-selection`, `sec:nucleon-derivation`).
+  - Retired zero-caller procedural remarks in `nuclear-interactions/`: `nuclear-reduction-algorithm`, `groebner-reduction-methods`, `atomic-nf-witness-procedure`, and `step-lp-verification`.
