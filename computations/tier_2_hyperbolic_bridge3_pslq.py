@@ -44,6 +44,7 @@ Ref: [manuscript] tier-1-hyperbolic-3braid-pslq.witness.json (negative)
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import json
 import sys
 from pathlib import Path
 
@@ -122,14 +123,30 @@ mp.dps = 50
 # Provenance: snappy 3.3.2 `Manifold(k).volume(bits_prec=2000)` at 50 dps,
 # each confirmed against a randomized re-triangulation of the same
 # manifold.
-TIER2_LITERATURE = {
-    "8_5":  mpf("6.9971891477922154788005778791455176889638409556479"),
-    "8_10": mpf("8.6511485580170819661711202663143702421843667756045"),
-    "8_15": mpf("9.9306482937961829810021321555831152804819325499403"),
-    "8_16": mpf("10.579021916899270325808684550088672898504885279597"),
-    "8_17": mpf("10.985907606284820303688439759183069403959794127785"),
-    "8_18": mpf("12.350906209158200174736304438426152014199256704120"),
-}
+def _load_tier2_literature() -> dict[str, mpf]:
+    """Load 8-crossing 3-braid hyperbolic volumes from the committed census
+    witness (80 dps), keeping only the 4-braid 8_15 fallback inline."""
+    census_path = (
+        Path(__file__).resolve().parent
+        / "probes"
+        / "gap2_mtau_hyperbolic_census_torsion"
+        / "gap2-mtau-hyperbolic-census-torsion.witness.json"
+    )
+    census_rows = json.loads(census_path.read_text(encoding="utf-8"))["data"][
+        "control_eight_crossing_three_braids"
+    ]
+    by_knot = {r["knot"]: mpf(r["vol_80dps"]) for r in census_rows}
+    return {
+        "8_5": by_knot["8_5"],
+        "8_10": by_knot["8_10"],
+        "8_15": mpf("9.9306482937961829810021321555831152804819325499403"),
+        "8_16": by_knot["8_16"],
+        "8_17": by_knot["8_17"],
+        "8_18": by_knot["8_18"],
+    }
+
+
+TIER2_LITERATURE = _load_tier2_literature()
 
 
 def _tier2_basis() -> tuple[tuple[mpf, ...], str]:
