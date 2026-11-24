@@ -5,7 +5,7 @@
 **Pre-Registration:** [`alpha_em_two_loop_bloch_schwinger_preregistration.md`](../../computations/alpha/alpha_em_two_loop_bloch_schwinger_preregistration.md)  
 **80-dps Probe:** [`alpha_em_two_loop_bloch_schwinger_probe.py`](../../computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.py)  
 **Witness:** [`alpha_em_two_loop_bloch_schwinger_probe.witness.json`](../../computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json)  
-**Lean 4 Formalization:** [`AlphaEmTwoLoopBlochSchwinger.lean`](../../folio/quantum-observable-universe/lean/QOU/Archimedean/AlphaEmTwoLoopBlochSchwinger.lean)
+**Lean 4 Formalization (`§7c` Split):** [`EmFermionLoopFourTopology.lean`](../../folio/quantum-observable-universe/lean/QOU/Archimedean/EmFermionLoopFourTopology.lean) (generic `[CommRing]` / `[Field]`) & [`AlphaEmTwoLoopBlochSchwinger.lean`](../../folio/quantum-observable-universe/lean/QOU/Archimedean/AlphaEmTwoLoopBlochSchwinger.lean) (archimedean `ℝ`)
 
 ---
 
