@@ -282,6 +282,8 @@ export default chapter({
         "categorical-dirac-operator-exists-proof",
         "categorical-dirac-operator-unique",
         "categorical-dirac-operator-unique-proof",
+        "rieffel-metric-quotient-faithfulness",
+        "rieffel-quotient-temperley-lieb",
       ],
     }),
 

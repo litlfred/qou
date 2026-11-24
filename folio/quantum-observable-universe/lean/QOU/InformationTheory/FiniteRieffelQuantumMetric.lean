@@ -91,6 +91,7 @@ theorem one_isLipOne (L : LipSeminorm K A) : IsLipOne L 1 := by
   exact zero_le_one
 
 /-- Unital `K`-linear functional (algebraic state carrier). -/
+@[ext]
 structure UnitalState (K : Type*) [CommSemiring K] (A : Type*) [Semiring A] [Algebra K A] where
   toLinear : A →ₗ[K] K
   map_one : toLinear 1 = 1
@@ -169,6 +170,48 @@ theorem hasScalarKernel_of_state_bounded (L : LipSeminorm K A)
     exact lt_irrefl M (lt_of_lt_of_le hgt (hM b hb))
   · rintro ⟨c, rfl⟩
     exact L.map_algebraMap c
+
+/-- **Metric Identity of Indiscernibles (`d_L(φ, ψ) = 0 ↔ φ = ψ`):**
+Zero Connes–Rieffel dual bound equates unital states on `A` over any
+strictly ordered field `K` (zero `ℝ`). -/
+theorem isDualBound_zero_iff_eq (L : LipSeminorm K A)
+    (φ ψ : UnitalState K A) :
+    IsDualBound L φ ψ 0 ↔ φ = ψ := by
+  constructor
+  · intro h0
+    ext x
+    rcases eq_or_lt_of_le (L.nonneg x) with hx0 | hxpos
+    · have hlip : IsLipOne L x := by
+        rw [IsLipOne, ← hx0]
+        exact zero_le_one
+      have habs : |φ.toLinear x - ψ.toLinear x| ≤ 0 := h0 x hlip
+      exact sub_eq_zero.mp (abs_nonpos_iff.mp habs)
+    · set t : K := (L.toFun x)⁻¹
+      have htpos : 0 < t := inv_pos.mpr hxpos
+      have htne : t ≠ 0 := ne_of_gt htpos
+      have hlip : IsLipOne L (t • x) := by
+        rw [IsLipOne, L.homog, abs_of_pos htpos, inv_mul_cancel₀ (ne_of_gt hxpos)]
+      have habs : |φ.toLinear (t • x) - ψ.toLinear (t • x)| ≤ 0 := h0 (t • x) hlip
+      have hsub : φ.toLinear (t • x) - ψ.toLinear (t • x) = 0 :=
+        abs_nonpos_iff.mp habs
+      simp only [LinearMap.map_smul, smul_eq_mul, ← mul_sub] at hsub
+      exact sub_eq_zero.mp ((mul_eq_zero.mp hsub).resolve_left htne)
+  · rintro rfl
+    exact isDualBound_self L φ
+
+/-- **Trace-Radical Descent of Finite-Distance States:**
+Whenever `L` vanishes on the null radical `{r | ∀ b, tr (r * b) = 0}` of a trace
+functional `tr : A → K`, any state pair admitting a finite Connes–Rieffel dual bound
+agrees identically on that radical and therefore descends to the quotient `A / rad(tr)`. -/
+theorem finite_dualBound_eq_on_traceRadical (L : LipSeminorm K A)
+    (tr : A → K) (hrad : ∀ r : A, (∀ b : A, tr (r * b) = 0) → L.toFun r = 0)
+    (φ ψ : UnitalState K A) (hbdd : ∃ M : K, IsDualBound L φ ψ M)
+    (r : A) (hr : ∀ b : A, tr (r * b) = 0) :
+    φ.toLinear r = ψ.toLinear r := by
+  by_contra hne
+  obtain ⟨M, hM⟩ := hbdd
+  obtain ⟨b, hb, hgt⟩ := unbounded_of_nonscalar_kernel L φ ψ (hrad r hr) hne M
+  exact lt_irrefl M (lt_of_lt_of_le hgt (hM b hb))
 
 end LipSeminormTheory
 

@@ -87,23 +87,45 @@ a **quantum observable universe** (QOU)
 thesis is that the observations *determine* the ingredients; nothing
 else is added by hand.
 
-This relational starting point fulfills the programme Gottfried Wilhelm
+This starting point is relational in the sense Gottfried Wilhelm
 Leibniz set out in his 1715--1716 correspondence with Samuel Clarke
-\cite{leibniz-clarke1717}, where time is the chronological order of
-successions, space is the order of coexistences, and the Principle of
-the Identity of Indiscernibles equates states that agree on every
-observable relation. In a braided monoidal category equipped with a
-trace, sequential composition ($\circ$) encodes the order of
-successions, the monoidal product and braiding ($\otimes, \sigma$)
-encode the order of coexistences, and passing from the Iwahori--Hecke
-algebra to its Temperley--Lieb quotient modulo the trace radical
-($H_n(q)/\mathrm{rad} \cong TL_n(q)$) enforces indiscernibility in the
-algebraic sense of Israel M. Gelfand, Mark A. Naimark, and Irving E.
-Segal \cite{gelfand-naimark1943,segal1947}: combinations annihilated by
-every closed trace pairing coalesce into one observable class. Because
-relational order and trace quotienting state the axioms in full, a
-quantum observable universe posits no background manifold at the outset
-and recovers differential, contact, and metric geometry downstream.
+\cite{leibniz-clarke1717,earman1989}: sequential composition ($\circ$)
+records the chronological order of successions, the monoidal product
+and braiding ($\otimes, \sigma$) record the order of coexistences, and
+the Principle of the Identity of Indiscernibles equates processes that
+agree on every closed trace pairing. On the $n$-strand Iwahori--Hecke
+braid algebra $H_n(q)$ equipped with the Jones--Markov trace $\tau_q$
+at parameter $z = q^3/(q^2 + 1)$, the trace radical
+$\mathrm{rad}\,\tau_q = \{a \in H_n(q) : \tau_q(a b) = 0 \text{ for all } b\}$
+vanishes for $n \le 2$ and is nonzero for every $n \ge 3$, where
+three-strand antisymmetrisation annihilates all trace pairings and
+blocks any finite spectral distance on $H_n(q)$
+([Gram degeneracy](#prop:gram-degeneracy-blocks-connes)). Quotienting
+by that null ideal in the algebraic sense of Israel M. Gelfand, Mark A.
+Naimark, and Irving E. Segal \cite{gelfand-naimark1943,segal1947} yields,
+for nonzero $q \in \mathbb{C}$ with $q^k \neq 1$ ($k \ge 1$), the
+planar Temperley--Lieb algebra
+$H_n(q)/\mathrm{rad}\,\tau_q \cong TL_n(q + q^{-1})$
+([Temperley--Lieb trace-radical quotient](#ex:rieffel-quotient-temperley-lieb)),
+on whose faithful state space Marc A. Rieffel's compact quantum metric
+seminorms \cite{rieffel1999} induce a finite Kantorovich--Rubinstein
+transport metric
+([Rieffel quotient faithfulness](#rem:rieffel-metric-quotient-faithfulness)).
+Unlike the classical relational mechanics of Julian B. Barbour and
+Bruno Bertotti \cite{barbour-bertotti1982}, which quotients a
+pre-existing Euclidean configuration space $\mathbb{R}^{3N}$ by rigid
+motions, and unlike Carlo Rovelli's relational quantum mechanics
+\cite{rovelli1996}, which indexes Hilbert-space state vectors to pairs
+of observers while leaving the spacetime metric external, a quantum
+observable universe posits no spatial manifold at the outset and
+enforces inter-observer consistency through the shared fibre functor
+$\tau$. Downstream, this relational chain yields strictly pseudoconvex
+contact Cauchy--Riemann three-manifolds whose canonical circle bundle
+carries Charles L. Fefferman's kinematic $(3, 1)$ Lorentzian metric,
+while dynamical Einstein field equations on that four-manifold remain
+conjectural
+([Lorentzian circle-bundle lift](#prose:cr-structure-lorentzian-lift),
+[Gravity and Spacetime Emergence](#chap:gravity-spacetime-emergence)).
 
 The categorical language then recovers, as internal pieces of the
 structure, the concepts that describe a universe's mechanics. The

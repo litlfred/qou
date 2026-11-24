@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-rieffel-metric-quotient-faithfulness",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:rieffel-metric-quotient-faithfulness",
+  "kind": "remark",
+  "title": "Rieffel Lipschitz seminorms, trace-radical descent, and quotient metric faithfulness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+  "cites": [
+    "references/connes1989",
+    "references/connes1994",
+    "references/rieffel1999",
+    "references/rieffel2004",
+    "references/kantorovich1942",
+    "references/rubinstein1957",
+    "references/gelfand-naimark1943",
+    "references/segal1947"
+  ],
+  "tags": [
+    "dirac",
+    "connes-distance",
+    "quantum-metric",
+    "radical"
+  ],
+  "leanRef": "qou:QOU.InformationTheory.FiniteRieffelQuantumMetric.isDualBound_zero_iff_eq",
+  "text": "rieffel-metric-quotient-faithfulness.md",
+  "provenance": "authored"
+}
