@@ -1,13 +1,13 @@
 ---
 # qou-sogb
-title: 'r5-full-canonical-knot-solver: scriptHash MATCHES and 733 fields move deterministically — the documented ''diff the producer first'' check says safe and is wrong'
+title: 'r5-full-canonical-knot-solver: regenerate 637-f64 witness once R5/SDP & gamma-gamma atom-word premise settles (cause=import-cone)'
 status: todo
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T12:41:19Z
-updated_at: 2026-10-04T15:14:37Z
+updated_at: 2026-11-24T00:32:17Z
 parent: qou-5vkl
 ---
 
@@ -225,3 +225,8 @@ have flagged.
 
 Both original candidates stand. Producer restored byte-identical; all witnesses
 the run touched reverted.
+
+
+## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
+- **Landed on `origin/main`:** Root cause established in `841f2073655` and `aa181ffe1fc` — deterministic import-cone drift shifted the LP braid-word search winner (`L: 4 -> 6`, `rank_in_full_search: 990 -> 1013`), while missing `set_compute_dps()` was experimentally excluded; `witness_import_cone_staleness_audit.py` and `local_import_resolution_audit.py` now track cone drift.
+- **Surviving open sub-problem (Rule 13a / owner gate):** Regenerating `r5-full-canonical-knot-solver.witness.json` (and draining its 637 raw-float64 fields) remains gated on the R5/SDP & `\gamma\gamma`-selected atom-word arc.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T16:48:46Z
-updated_at: 2026-11-20T16:40:00Z
+updated_at: 2026-11-24T00:32:15Z
 parent: qou-10v9
 ---
 
@@ -18,3 +18,8 @@ Eliminate the `0.002852 ppb` (`2,852 ppQ`) anchor round-trip residual on `m_p` i
 
 ## Reopened (owner instruction 2026-11-20, via W12)
 This bean was set to completed by local commits on `cat/cat-harness/beans` (e223ed1 / 4fcd2cb / 89bb5e0, 2026-11-19, `litlfred@fenugreek.home`, no session trailer). The Lean / probe / witness files its resolution names are not on main, on any branch, or in any PR found by the bean id (measured 2026-11-20). See GAP bean qou-w12g.
+
+
+## 2026-11-23 — Q-Drain-1 Audit against origin/main (`e330ab6aa04`)
+- Verified still unlanded on `origin/main`: `computations/per_observable_100x_status.py:145` still scores `m_p` against independently rounded 11-sig-fig `codata_constants.M_P_MEV_VALIDATION` rather than `M_E_MEV * MASS_RATIO_P_E`, and `computations/probes/q0_q2t_80dps_anchor_roundtrip_probe.py` is absent on `origin/main`.
+- Applicability check against `docs/coordination/owner-rulings.md`: one-term proton pin is canonical default and `q_2t` is a named comparison only (#8554); under derived `K^{\otimes 3}/[2]_q^3` two-term weighting (#8591) the connected part vanishes on `V^3`. Surviving scope: align `OBSERVABLES["m_p"]` anchor round-trip comparison in `per_observable_100x_status.py` and add 80-dps `q_at(95)` round-trip probe.

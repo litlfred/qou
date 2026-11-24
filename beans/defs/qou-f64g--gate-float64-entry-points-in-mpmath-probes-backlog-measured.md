@@ -1,6 +1,6 @@
 ---
 # qou-f64g
-title: 'INFRA (gated + measured): float64 entry points in mpmath probes — 17546 hits, 4 prior beans, no gate until now'
+title: 'INFRA: drain f64_into_mpmath_audit F64_CAST/LAUNDERED/F64_ENGINE_ENTRY backlog to flip advisory gate blocking'
 status: in-progress
 type: task
 priority: high
@@ -11,7 +11,7 @@ tags:
     - ci
     - reorg-2026-10-04
 created_at: 2026-08-08T09:10:00Z
-updated_at: 2026-10-04T15:11:00Z
+updated_at: 2026-11-24T00:32:15Z
 parent: qou-9nnz
 ---
 
@@ -157,3 +157,10 @@ saying why.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
+- **Landed on `origin/main`:**
+  1. Both unparseable `.py` files are fixed (`ast.parse` across all `5,062` `computations/**/*.py` files on `e330ab6aa04` reports `0` `SyntaxError`s).
+  2. Blocking gates wired in `scripts/precision-gates.sh`: `mpf_float_source_audit.py --strict` (line 72), `numpy_mpmath_dtype_leak_audit.py` (line 233), `mpf_mixed_arithmetic_audit.py --strict` (line 398), plus advisory `f64_into_mpmath_audit.py` (line 241, which already separates benign `F64_DISPLAY` print/format casts from `F64_CAST`/`LAUNDERED`/`F64_ENGINE_ENTRY`).
+- **Surviving open sub-problem:** Drain the real `LAUNDERED`, `F64_CAST`, and `F64_ENGINE_ENTRY` tiers in `computations/f64_into_mpmath_audit.py` and flip the high-precision tiers to blocking in `scripts/precision-gates.sh`.

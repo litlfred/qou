@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-23T20:55:45Z
-updated_at: 2026-11-24T00:12:27Z
+updated_at: 2026-11-24T00:32:18Z
 parent: qou-hksc
 blocking:
     - qou-xip2
@@ -34,3 +34,9 @@ blocking:
 - Claim individual child beans via `beans update <bean-id> --status in-progress --body-append "Claimed by <branch> (YYYY-MM-DD)"`.
 - Never mark a bean `completed` while an uninstantiated conjecture `class` or explicit `stays open` item remains (AGENTS.md Rule 13a).
 - Enforce single-thread CPU caps (`LEAN_NUM_THREADS=1`, `nice -n 15`), zero float64 (`mpmath` >= 50-80 dps), and zero fitting.
+
+
+## 2026-11-23 — Worker 31 Q-Drain-1 Audit Completed against origin/main (`e330ab6aa04`)
+Audited all 13 child beans against `origin/main` (`e330ab6aa04`) and `docs/coordination/owner-rulings.md` (strictly enforcing Rule 13a):
+- **Completed (1/13):** `qou-j540` (100% landed via PR `#8048` `47627a8a27b` / `3a4601493f4` in `demand-stability.{ts,md}`).
+- **Narrowed & updated with exact `origin/main` provenance & applicability rescopes (12/13):** `qou-y7ek`, `qou-f64g`, `qou-ke35`, `qou-lz8f`, `qou-qrsp`, `qou-w3dm`, `qou-q0rf`, `qou-sogb`, `qou-5c64`, `qou-brkp`, `qou-jdrx` (rescoped against #8554/#8591/`qou-aemx` rulings), `qou-w1u2` (3/7 `scriptHash` in sync, 4/7 drifted + `add_upstream()` measured).

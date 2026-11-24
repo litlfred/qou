@@ -1,13 +1,13 @@
 ---
 # qou-w3dm
-title: 'MAIN-SIDE: ~508 of 2749 witnesses carry a drifted scriptHash (18%)'
+title: 'MAIN-SIDE: drain witness_provenance_audit PROV_MISSING advisory backlog & dashboard-consumed scriptHash drift'
 status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T07:40:00Z
-updated_at: 2026-10-04T15:14:57Z
+updated_at: 2026-11-24T00:32:16Z
 parent: qou-5vkl
 ---
 
@@ -131,3 +131,8 @@ is the durable fix; regeneration alone just resets the clock.
 Do NOT mass-regenerate. Some producers run for hours (see `qou-p2ka`, where A2
 exceeded the container restart interval twice). Regeneration is a scoped compute
 sweep needing sign-off, not an idle-time drain.
+
+
+## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
+- **Landed on `origin/main`:** `computations/witness_provenance_audit.py --strict` (P30 `scriptFile` producer-write verification) is wired **blocking** and GREEN in `scripts/precision-gates.sh:463`; `computations/audits/witness_provenance_audit.py --strict` (`engine/scriptFile/commitSha` completeness) is wired **advisory** in `scripts/precision-gates.sh:513`.
+- **Surviving open sub-problem:** Drain `PROV_MISSING` in `computations/audits/witness_provenance_audit.py` so it can flip to blocking, and cross-reference drifted `scriptHash` witnesses against active L2/dashboard consumers (respecting the GUARD against blind mass-regeneration).

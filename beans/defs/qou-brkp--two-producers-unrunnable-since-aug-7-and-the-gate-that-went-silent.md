@@ -1,6 +1,6 @@
 ---
 # qou-brkp
-title: 'BUG (fixed) + stale witness: a dps remediation broke 2 producers, and its own gate reported them clean'
+title: Verify & regenerate chi-*-at-q0-50dps family (--fresh 0.15197 vs cached 0.57517 deuteron tr_M discrepancy, qou-49vn)
 status: todo
 type: bug
 priority: high
@@ -11,7 +11,7 @@ tags:
     - precision
     - probes
 created_at: 2026-08-08T09:40:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T00:32:17Z
 parent: qou-9nnz
 ---
 
@@ -497,3 +497,8 @@ Was in-progress with no bean update since 2026-09-04 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8324, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
+- **Landed on `origin/main`:** Both broken Aug-7 producers parse cleanly (`0` `SyntaxError`s across all `5,062` `computations/**/*.py`), all 6 NO-FLOAT64 gate parse-failure blind spots were fixed in `a663b4f8382`, `mpf_import_time_dps_audit.py --strict` is wired blocking and GREEN in `scripts/precision-gates.sh:73` (`13d3acb955e`), and item 2's 2026-08-10 `y_\lambda` regeneration mechanism is established (`0488e5dcd58`).
+- **Surviving open sub-problem:** Item 1 (`chi_at_q0_via_hoefsmit_mpfr.py` cached `0.575172...` vs `--fresh` / markov-peel / Wenzl `0.151968...` across the `chi-*-at-q0-50dps` witness family, paired with `qou-49vn`).

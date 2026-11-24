@@ -1,13 +1,13 @@
 ---
 # qou-q0rf
-title: The q0-anchor refill ratchet is RED on main (NEW 147) — and the arrival rate, not the backlog, is the thing to fix
+title: Prevent unstamped q0Anchor inflow at WitnessBuilder/producer level & finish draining q0_anchor_ratchet NEW arrivals
 status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T00:32:16Z
 parent: qou-cdx1
 ---
 
@@ -204,3 +204,8 @@ was `qou-m7py` (called satisfied off one grepped line), the second was the
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8384, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
+- **Measured live on `origin/main` (`e330ab6aa04`):** `computations/audits/q0_anchor_ratchet.py --strict` reports `unstamped: 1501`, `baseline: 1463`, `drained: 25`, `NEW: 63` (down from `147`; Batch 1 salvage of PR `#9105` drains ~30+ more of those `63` at their producers).
+- **Surviving open sub-problem:** Finish the remaining long Leray Arb jobs (`random-L2`, `seed1-C4`, `arcB/arcC`) and `two-row` tower runs (`qou-agtw`) to reach `NEW = 0`, and enforce `q0Anchor` emission in `WitnessBuilder` / pre-commit so unstamped inflow stops while GitHub Actions remains `workflow_dispatch`-only.

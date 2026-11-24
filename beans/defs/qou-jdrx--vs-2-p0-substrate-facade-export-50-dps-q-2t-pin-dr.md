@@ -1,11 +1,11 @@
 ---
 # qou-jdrx
-title: 'VS-2 (P0 Substrate & Facade): Export 50-dps q_2t Pin, Drain Muon/Proton Pin Straddle, and Excise Float64 Constants in Core Facades'
+title: 'VS-2 (P0 Substrate & Facade): refresh stale muon-stamped q-pinning-50-digit.witness.json & align canonical_mass.py _from_witness'
 status: todo
 type: task
 priority: high
 created_at: 2026-11-19T07:06:02Z
-updated_at: 2026-11-20T08:30:00Z
+updated_at: 2026-11-24T00:32:17Z
 parent: qou-v6so
 ---
 
@@ -37,3 +37,12 @@ Grounded in `computations/audits/paper-status-variable-substitution-and-stalenes
 ## 2026-11-20 W13 (#8526, PR #8539)
 
 Measured float64 surface: derived_masses 0, coulomb_energy 0, hecke_core 2 (inf sentinels), canonical_mass 1 real (_from_witness line 56; 20 importers; W2 scope, offered on #8526, not touched). q_2t pin + default changes = owner decision, framed ask on #8526. Stays todo.
+
+
+## 2026-11-23 — Q-Drain-1 Applicability & Scope Narrowing against origin/main (`e330ab6aa04`) and owner-rulings.md
+- **Measured on `origin/main` (`e330ab6aa04`):** `computations/q-pinning-50-digit.witness.json` is still stamped `q0Anchor: "muon"` with stale `scriptHash: 58f994b46a01` (vs live `q_pinning_50_digit.py` `e6f6426e55c7`), and `canonical_mass.py` retains 1 float64 site (`_from_witness`).
+- **CRITICAL Applicability Rescope (`docs/coordination/owner-rulings.md`):**
+  1. **Do NOT promote retired `KnKp` `q_2t`:** Owner ruled (#8554, #8591, 2026-11-20) that the one-term proton pin is canonical default, `q_2t` is a named comparison only, and under derived `K^{\otimes 3}/[2]_q^3` weighting the connected part vanishes on `V^3` (the `+11.17 ppb` / `96.18%` figure in this bean's original text was an artifact of the retired `1/3` `KnKp` normalisation).
+  2. **Do NOT switch `coulomb_energy.py` default to Form-B:** Owner ruled (2026-11-21, `qou-aemx`) that consumers stay on the CS tower (labelled) and Form-B is a labelled comparison arm only.
+  3. **Tower-summed `E_0`:** Canonical via `computations/qbeta/qbeta_e0.py` (#8590).
+- **Surviving open sub-problem:** Resolve the muon/proton stamp & consumer straddle on `q-pinning-50-digit.witness.json` (28 Liquid bindings + 19 `ValueRegistry` entries, pending owner sign-off on #8526) and excise the remaining `_from_witness` float64 cast in `canonical_mass.py`.

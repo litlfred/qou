@@ -1,13 +1,13 @@
 ---
 # qou-qrsp
-title: 'PRODUCER FIX: 37 of 45 measured producers re-pad float64 on re-run (qou-gqt5 follow-up)'
+title: 'PRODUCER FIX: drain remaining option_e_* / qbeta_* float64 re-padding producers on fresh re-run (qou-gqt5 follow-up)'
 status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-10-04T15:11:05Z
+updated_at: 2026-11-24T00:32:16Z
 parent: qou-9nnz
 ---
 
@@ -849,3 +849,8 @@ Was in-progress with no bean update since 2026-09-14 and no main commit naming i
 
 ### Progress (Round 73 — PR litlfred/qou#8318)
 - Formalized in PR `litlfred/qou#8318` (`feat/round73-symsquare-fibretl-mu3slot-sleak-deuteronz-43c1`, Commit 1 `d5360fac6f1464f5fd03c06ef76e726e30c785fd`, Head `e58aca150b7054a3222889e8bb9937602e515ca4`, `scriptHash: 19f0b8589c79`).
+
+
+## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
+- **Landed on `origin/main`:** Mechanizable anchor slice (12 sites fixed, 6 adjudicated deliberate in `5aba37ae9c3`, `96b9f3548fd`, `5061528adc1`), `casimir-hoefsmit-additivity` (`0a34b360add`, `740b75df68c`), downstream convention-C drain (`b9ab5cece01`, `57b271dbc66`, `a9ff9ca0bf0`), and Lean ports (`7fe6c19d613`). Both `witness_float64_padding_audit.py --strict` and `mpf_mixed_arithmetic_audit.py --strict` pass GREEN on `origin/main` (`e330ab6aa04`).
+- **Surviving open sub-problem:** Per-producer remediation of the remaining un-drained `option_e_*` / `qbeta_*` producers from the 37/45 empirical sweep (`computations/producer_repad_sweep.py`) that still promote local `float` intermediates into `mpf` on fresh re-run.

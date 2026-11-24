@@ -1,11 +1,11 @@
 ---
 # qou-ke35
-title: The mpf migration of the constant modules is HALF DONE, and a consumer that never raises mp.dps now records 15 digits where it used to record 17
+title: Complete mpf migration of experimental_constants.py (72 float assigns) & drain never_raises_dps_audit baseline
 status: todo
 type: task
 priority: high
 created_at: 2026-09-13T16:24:39Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T00:32:15Z
 parent: qou-9nnz
 ---
 
@@ -215,3 +215,11 @@ Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bea
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8357, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-14: "beans(qou-ke35, qou-sogb): the constant modules' mpf migration is half done — and my r5 lead from it is ruled out, teste"). The work may be partly or fully done. Read the bean before you close it.
+
+
+## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
+- **Landed on `origin/main`:**
+  1. `computations/never_raises_dps_audit.py --strict` (`ca6b5d6dd94`) is wired as a blocking ratchet in `scripts/precision-gates.sh:74` to block any new consumer importing `mpf` constants without `set_compute_dps()`.
+  2. `computations/per_atom_rho_deviation.py` now calls `set_compute_dps()`.
+  3. `computations/substrate/codata_constants.py` has `0` top-level float assignments (`11` `mpf`), and `q_parameter.py`/`hecke_core.py` have `0` top-level float assignments.
+- **Surviving open sub-problem:** `computations/substrate/experimental_constants.py` (and `qou-mass/src/qou_mass/_internal/experimental_constants.py`) still carries `72` top-level `float` assignments, and the baselined `never_raises_dps_audit.py` consumer backlog remains to be drained.

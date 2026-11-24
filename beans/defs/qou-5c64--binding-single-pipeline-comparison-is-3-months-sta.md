@@ -1,13 +1,13 @@
 ---
 # qou-5c64
-title: binding-single-pipeline-comparison is 3 months stale and RED when re-run — 2 assertions flip, one column moves 69x, and the float64 drain is blocked behind it
+title: 'binding-single-pipeline-comparison: redo & drain 299 raw-f64 fields once gamma-gamma nuclear bond word lands (qou-k54t)'
 status: todo
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-24T00:32:17Z
 parent: qou-v2om
 ---
 
@@ -889,3 +889,8 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8280, closed o
 ## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
 
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** this bean's numbers are computed on the pre-2026-11-15 interface letters of `atom_braid_word_3A`, which the γγ ruling superseded (`docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`; redo waits on the γγ-selected nucleon word, PR #7876). (The bean's own 2026-11-15 section already says so.) Not reworked: the regeneration it asks for would be on a superseded word. Recommend: mark superseded once the γγ word lands, and re-measure on that word.
+
+
+## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
+- **Landed on `origin/main`:** Root cause established (`0e564deabe0`: 2026-09-05 intra-nucleon ordering ruling; superseded grouped-word ratio `1.81362` closed), and `q0_anchor_ratchet.py` lists `binding-single-pipeline-comparison.witness.json` among the 25 `q0Anchor`-drained witnesses.
+- **Surviving open sub-problem (Rule 13a / `qou-k54t` gate):** Re-running on pre-2026-11-15 single-crossing `atom_braid_word_3A` interface letters is superseded by the `\gamma\gamma` bond ruling (`docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`); redo and 299-field float64 drain wait on the `\gamma\gamma` inter-nucleon bond word (`qou-k54t`).

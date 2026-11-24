@@ -1,11 +1,11 @@
 ---
 # qou-lz8f
-title: A producer that cannot serialize an mpf DESTROYS its witness on every run — 38 candidates, and qou-geqa's crash class refills
+title: Wire mpf_json_encoder_audit.py (--self-test + _ser recognizer) into precision-gates.sh & guard atomic witness writes
 status: in-progress
 type: task
 priority: high
 created_at: 2026-09-13T17:29:26Z
-updated_at: 2026-11-16T20:10:00Z
+updated_at: 2026-11-24T00:32:16Z
 parent: qou-9nnz
 ---
 
@@ -308,3 +308,8 @@ Parent `(none)` → `qou-9nnz`. The old parent was missing or absent, so the bea
 - **Action taken:**
   - Updated `computations/audits/mpf_json_encoder_audit.py` so `_analyse_source` recognises sanitizer-wrapped payloads (`json.dumps(_ser(witness), ...)` / `json.dump(_ser(wit), ...)`, the repair idiom across the 5 confirmed producers in `qou-lz8f`), excludes `.claude`/`.lake` worktrees, and supports `--self-test` / `--selftest`.
 - **Status:** Kept `in-progress` pending PR #8161 merge and owner review.
+
+
+## 2026-11-23 — Q-Drain-1 Audit & Narrowing against origin/main (`e330ab6aa04`)
+- **Landed on `origin/main`:** All 5 confirmed witness-destroying producers among the 38 static candidates (`a12aee299b0`, `5b9a15d6e67`, `6c9fbbfb64b`, `41d3d523391`) plus `brane_tower_isospin_diagnosis.py` (`47d61f4b857`) are fixed on `origin/main`, and `computations/audits/mpf_json_encoder_audit.py` is committed.
+- **Surviving open sub-problem:** Land the `_ser(...)` sanitizer recognizer + `--self-test` in `computations/audits/mpf_json_encoder_audit.py` (open PR `#8161`), wire it into `scripts/precision-gates.sh`, and route raw `open(out, 'w') + json.dump` callers through atomic write-then-rename so serialization errors cannot truncate committed witnesses.
