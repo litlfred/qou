@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0602138v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0602138v1",
+  "contains": [
+    "library/arxiv-math-0602138v1/sections/sec-front-matter",
+    "library/arxiv-math-0602138v1/sections/sec-000",
+    "library/arxiv-math-0602138v1/sections/sec-001",
+    "library/arxiv-math-0602138v1/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0602138v1",
+    "title_source": "slug",
+    "source_file": "0602138v1.pdf",
+    "source_sha256": "ed9ade66a774c93eda90044c46a7b3fb40f436ccc1424e548aaef4846c1fd40e",
+    "pages": 24,
+    "arxiv": {
+      "id": "math/0602138",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "7 Feb 2006"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

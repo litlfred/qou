@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.1376v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Particle Topology, Braids and Braided Belts",
+  "contains": [
+    "library/arxiv-0903.1376v1/sections/sec-front-matter",
+    "library/arxiv-0903.1376v1/sections/sec-000",
+    "library/arxiv-0903.1376v1/sections/sec-001",
+    "library/arxiv-0903.1376v1/sections/sec-002",
+    "library/arxiv-0903.1376v1/sections/sec-003",
+    "library/arxiv-0903.1376v1/sections/sec-004",
+    "library/arxiv-0903.1376v1/sections/sec-005",
+    "library/arxiv-0903.1376v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-0903.1376v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0903.1376v1.pdf",
+    "source_sha256": "c106071c1a3110e8cccbe03ca16b64ef5884148f48115e097ae80e0fe1e556d7",
+    "pages": 21,
+    "arxiv": {
+      "id": "0903.1376",
+      "version": "1",
+      "primary_class": "math.AT",
+      "stamp_date": "7 Mar 2009"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

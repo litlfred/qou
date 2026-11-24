@@ -1,0 +1,1 @@
+In order to keep the discussion in this paper relevant to the work in [2], we shall henceforth treat the ordering of generators in a braid word as indicative of a “top end” which is free to be trinion-ﬂipped, and a “bottom end” which is attached to a larger network (which for all practical purposes is ﬁxed and static).

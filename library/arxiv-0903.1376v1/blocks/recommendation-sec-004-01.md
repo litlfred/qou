@@ -1,0 +1,1 @@
+For the remainder of this paper we shall be mostly interested in classifying braided, twisted 3-belts by their pure twist numbers, rather than inducing twists and crossings on an initially trivial 3-belt.
