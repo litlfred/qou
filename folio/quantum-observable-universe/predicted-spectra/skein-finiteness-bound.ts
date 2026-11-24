@@ -13,7 +13,7 @@ export default proposition({
     "drip-line",
     "nuclear-chart",
   ],
-  lean: { ref: "qou:QOU.Archimedean.skein_finiteness_bound",
+  lean: { ref: "qou:QOU.MassTheory.skein_finiteness_bound",
     validation: "not_checked",
   },
   uses: ["prop:shell-closure-normal-form"],

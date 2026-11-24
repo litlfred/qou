@@ -5,7 +5,7 @@ export default proposition({
   title:
     "The depth correspondence is theorem-level at the figure-8 row (Bloch--Suslin + Murakami--Murakami)",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.B1Figure8RowTheorem.b1_figure_8_row",
+    ref: "qou:QOU.Observations.B1Figure8RowTheorem.b1_figure_8_row",
     validation: "not_checked",
   },
   uses: ["prop:b1-soft-sharpness-theorem"],

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$",
   lean: {
-    ref: "qou:QOU.BraidKnot.gb_spectral_sequence",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.gb_spectral_sequence",
     validation: "not_checked",
   },
   uses: ["def:hecke-normal-form"],

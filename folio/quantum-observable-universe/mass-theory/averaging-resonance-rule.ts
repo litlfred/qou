@@ -5,7 +5,7 @@ export default theorem({
   title:
     "Averaging-resonant rung selection: $k_{\\mathrm{res}}(n_{\\mathrm{total}}) = \\lfloor n_{\\mathrm{total}}/2 \\rfloor + \\mathbb{1}_{\\mathrm{wrap}}$",
   lean: {
-    ref: "qou:QOU.BraidKnot.AveragingResonanceRule",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.AveragingResonanceRule",
     validation: "not_checked",
   },
   uses: [

@@ -11,7 +11,7 @@ export default proposition({
     "negative-eigenvalue",
     "borromean",
   ],
-  lean: { ref: "qou:QOU.Interactions.gram_indefinite_witness",
+  lean: { ref: "qou:QOU.Confinement.Interactions.gram_indefinite_witness",
     validation: "not_checked",
   },
   uses: ["prop:confinement-lp"],

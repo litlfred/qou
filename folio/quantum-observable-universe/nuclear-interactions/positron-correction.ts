@@ -11,7 +11,7 @@ export default proposition({
     "action-difference",
     "parity",
   ],
-  lean: { ref: "qou:QOU.ParticleInteractions.positron_correction",
+  lean: { ref: "qou:QOU.Confinement.positron_correction",
     validation: "not_checked",
   },
   uses: ["thm:parity-regime-selection"],

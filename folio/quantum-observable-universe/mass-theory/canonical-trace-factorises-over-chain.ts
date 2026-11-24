@@ -17,7 +17,7 @@ export default remark({
   title:
     "The canonical mass trace factorises over the chain: the bond constants are $-\\log(z+d)$ and the canonical closure carries no many-body binding",
   lean: {
-    ref: "qou:QOU.Mass.ChainTraceFactor.twoStrandTrace_eq",
+    ref: "qou:QOU.MassTheory.ChainTraceFactor.twoStrandTrace_eq",
     sorryFree: true,
     validation: "not_checked",
   },

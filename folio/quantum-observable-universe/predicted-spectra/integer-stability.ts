@@ -12,7 +12,7 @@ export default proposition({
     "coulomb",
     "magic-numbers",
   ],
-  lean: { ref: "qou:QOU.Archimedean.integer_stability",
+  lean: { ref: "qou:QOU.MassTheory.integer_stability",
     validation: "not_checked",
   },
   uses: ["def:stable-nucleus", "prop:beta-stability"],

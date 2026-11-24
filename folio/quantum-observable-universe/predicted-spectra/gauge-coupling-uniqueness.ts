@@ -5,7 +5,7 @@ export default corollary({
   title:
     "Uniqueness of the scalar gauge coupling on $A \\otimes A$",
   lean: {
-    ref: "qou:QOU.Archimedean.gauge_coupling_uniqueness",
+    ref: "qou:QOU.MassTheory.Archimedean.gauge_coupling_uniqueness",
     validation: "leanok",
   },
   uses: ["thm:em-spectral-completeness"],

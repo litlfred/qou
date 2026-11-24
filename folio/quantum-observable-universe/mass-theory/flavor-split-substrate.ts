@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:flavor-split-substrate",
-  lean: { ref: "qou:QOU.HadronicMass.flavor_split_substrate",
+  lean: { ref: "qou:QOU.MassTheory.HadronicMass.flavor_split_substrate",
     validation: "not_checked",
   },
   title: "Closed and factored forms of the substrate flavor split",

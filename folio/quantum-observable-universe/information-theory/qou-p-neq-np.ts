@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:qou-p-neq-np",
   title:
     "$\\mathrm{P} \\neq \\mathrm{NP}$ at non-torsion $q \\in \\mathbb{G}_m$",
-  lean: { ref: "qou:QOU.Information.QouPNeqNp", validation: "stub" },
+  lean: { ref: "qou:QOU.InformationTheory.QouPNeqNp", validation: "stub" },
   tags: [
     "tier:famous",
     "P-vs-NP",

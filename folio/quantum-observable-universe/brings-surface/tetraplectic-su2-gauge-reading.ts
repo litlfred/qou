@@ -13,7 +13,7 @@ export default remark({
   label: "rem:tetraplectic-su2-gauge-reading",
   title: "The Reeb triad as an internal $\\mathrm{SU}(2)$, and what it is not",
   lean: {
-    ref: "qou:QOU.Tetraplectic.su2L_su2R_commute",
+    ref: "qou:QOU.StandardModel.QuaternionicElectroweak.su2L_su2R_commute",
     sorryFree: true,
     validation: "not_checked",
   },

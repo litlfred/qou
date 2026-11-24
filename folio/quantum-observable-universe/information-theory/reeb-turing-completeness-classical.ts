@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Classical Turing-completeness of steady Euler / Reeb flows (Cardona–Miranda–Peralta-Salas–Presas)",
   lean: {
-    ref: "qou:QOU.Information.ReebTuringClassical",
+    ref: "qou:QOU.InformationTheory.ReebTuringClassical",
     validation: "not_checked",
   },
   uses: [],

@@ -1,4 +1,4 @@
-import QOU.Archimedean.GroundRing
+import HeckeTemperleyLieb.GroundRing
 
 
 /-!

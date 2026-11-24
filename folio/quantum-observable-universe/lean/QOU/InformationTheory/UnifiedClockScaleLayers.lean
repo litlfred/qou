@@ -4,7 +4,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
-import QOU.AlgebraicSubstrate.PlanckStepAtomicity
+import QOU.BringsSurface.PlanckStepAtomicity
 
 /-!
 # Unified Layer-I Grain, Thomae–Jackson UV Ceiling, and Atomic Clock Scaling

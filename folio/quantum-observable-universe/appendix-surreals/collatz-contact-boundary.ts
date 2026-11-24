@@ -2,7 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:collatz-contact-boundary",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.collatz_contact_boundary", validation: "not_checked" },
+  lean: { ref: "qou:QOU.BringsSurface.collatz_contact_boundary", validation: "not_checked" },
   title:
     "The $[2]_q$-contact boundary on the Reeb bundle",
   uses: [

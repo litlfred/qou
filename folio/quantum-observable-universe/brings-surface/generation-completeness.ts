@@ -13,7 +13,7 @@ export default theorem({
     "spectral-filter",
     "embeddability",
   ],
-  lean: { ref: "qou:QOU.Archimedean.generation_completeness",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.generation_completeness",
     validation: "not_checked",
   },
 });

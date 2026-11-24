@@ -1,5 +1,5 @@
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
-import QOU.QuarkState.PairwiseChargeEnergyBeta
+import QOU.Confinement.PairwiseChargeEnergyBeta
 
 /-!
 # The neutron identity with a lepton strand (four strands, choice C-lep)

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$\\mathfrak{Q}_\\beta$ formalize-first unified typeclass — bundling the four §4 invariants (bar-even, radius-of-convergence, $q=1$ shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt",
   lean: {
-    ref: "qou:QOU.QBeta.BarEvenKernelTypeclass.BarEvenKernel",
+    ref: "qou:QOU.Nuclear.QBeta.BarEvenKernelTypeclass.BarEvenKernel",
     validation: "not_checked",
   },
   uses: [

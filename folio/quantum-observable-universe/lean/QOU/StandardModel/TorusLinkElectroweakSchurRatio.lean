@@ -1,4 +1,4 @@
-import QOU.Braiding.WeakVertexT35TraceClosedForm
+import QOU.BraidsAndKnots.WeakVertexT35TraceClosedForm
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination

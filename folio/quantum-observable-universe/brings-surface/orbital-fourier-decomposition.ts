@@ -22,7 +22,7 @@ export default conjecture({
     "laplacian",
     "trefoil",
   ],
-  lean: { ref: "qou:QOU.orbital_fourier_decomposition",
+  lean: { ref: "qou:QOU.Core.orbital_fourier_decomposition",
     validation: "not_checked",
   },
   uses: ["conj:orbital-space-normal-bundle"],

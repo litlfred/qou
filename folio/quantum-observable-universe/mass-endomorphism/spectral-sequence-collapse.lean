@@ -2,7 +2,7 @@ import Mathlib.Algebra.Algebra.Basic
 import Mathlib.RingTheory.Ideal.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic.NoncommRing
-import QOU.MathlibExt.UniversalDifferentials
+import CompactQuantumMetrics.UniversalDifferentials
 
 
 /-!

@@ -37,7 +37,7 @@ export default conjecture({
     "structural-sub-conjecture",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.bring_hyperbolic_decomposition",
+    ref: "qou:QOU.MassTheory.Archimedean.bring_hyperbolic_decomposition",
     validation: "not_checked",
   },
   authorNotes: [

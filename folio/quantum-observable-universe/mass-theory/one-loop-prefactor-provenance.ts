@@ -42,7 +42,7 @@ export default proposition({
   title:
     "The 1-loop prefactor law splits: the exponent $-1/2$ is normalisation-invariant and measured, and the constant $k = 2^{-1/2}$ is forced by the saddle condition rather than calibrated on $4_1$",
   lean: {
-    ref: "qou:QOU.OneLoopPrefactorInvariance.k_const_iff_exponent_neg_half",
+    ref: "qou:MathlibExt.OneLoopPrefactorInvariance.k_const_iff_exponent_neg_half",
     validation: "validated",
   },
   uses: [

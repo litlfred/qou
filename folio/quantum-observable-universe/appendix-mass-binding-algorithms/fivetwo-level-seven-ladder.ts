@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:fivetwo-level-seven-ladder",
   lean: {
-    ref: "qou:QOU.QBeta.FiveTwoLevelSevenLadder.sum_of_numerators",
+    ref: "qou:MathlibExt.FiveTwoLevelSevenLadder.sum_of_numerators",
     validation: "not_checked",
   },
   title:

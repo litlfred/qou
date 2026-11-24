@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Block-multiplicativity of per-generator $\\hat{V}$ on the disjoint Hecke product",
   lean: {
-    ref: "qou:QOU.BraidKnot.BlockMultiplicativityVFree",
+    ref: "qou:QOU.BraidsAndKnots.BlockMultiplicativityVFree",
     validation: "not_checked",
   },
   uses: [

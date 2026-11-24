@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Surreal limit transfer: limits as standard-part equalities via an $\\omega$-evaluation",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.SurrealLimitTransfer",
+    ref: "qou:QOU.Observations.SurrealLimitTransfer",
     validation: "not_checked",
   },
   tags: [

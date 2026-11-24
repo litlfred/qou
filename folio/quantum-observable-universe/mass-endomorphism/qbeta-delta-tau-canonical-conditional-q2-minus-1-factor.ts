@@ -18,7 +18,7 @@ export default proposition({
   ],
   lean: {
     ref:
-      "qou:QOU.BraidKnot.delta_tau_M_canonical_has_q2_minus_1_factor",
+      "qou:QOU.BraidsAndKnots.BraidKnot.delta_tau_M_canonical_has_q2_minus_1_factor",
   },
   authorNotes: [
     {

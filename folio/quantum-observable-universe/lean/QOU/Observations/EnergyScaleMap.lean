@@ -67,7 +67,7 @@ Items 1–4 and 7 are field identities and would hold over any field.
 
 Ref: [leitner2026] observations/three-calibration-discipline; bean qou-91w7; bean qou-6gf9.
 -/
-import QOU.QBeta.E0WeightAllWords
+import QOU.Nuclear.E0WeightAllWords
 import Mathlib.Algebra.Polynomial.Roots
 import Mathlib.Tactic
 

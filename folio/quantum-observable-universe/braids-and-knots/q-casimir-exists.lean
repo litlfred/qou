@@ -1,4 +1,4 @@
-import QOU.BraidKnot.CasimirShared
+import HeckeTemperleyLieb.CasimirShared
 import Mathlib.Algebra.RingQuot
 import Mathlib.Algebra.FreeAlgebra
 import Mathlib.Tactic

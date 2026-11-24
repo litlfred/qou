@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:ecalle-borel-resummation",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.EcalleBorelResummation.borelCoeff",
+    ref: "qou:QOU.Observations.AppendixSurreals.EcalleBorelResummation.borelCoeff",
     validation: "not_checked",
   },
   title:

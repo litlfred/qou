@@ -4,7 +4,7 @@ import Mathlib.Tactic.IntervalCases
 import Mathlib.Tactic.Ring
 import QOU.BraidsAndKnots.DeltaLambdaGeneralNUnconditional
 import QOU.MassTheory.ThreeRowSpringerSYTDerivation
-import QOU.Mathlib.PartitionsOfBridge
+import BraidKnotOctonion.PartitionsOfBridge
 
 /-
 Copyright (c) 2026 QOU contributors. All rights reserved.

@@ -12,7 +12,7 @@ export default remark({
     "Gröbner test sets, Sturmfels–Thomas enthalpy normal forms, and Birch mass-action toric equilibria",
   interprets: "thm:toric-diophantine-stoichiometry",
   lean: {
-    ref: "qou:QOU.MathlibInfra.ConfinementLayerTower.toric_hom_vanishes_on_binomial_of_kernel",
+    ref: "qou:ToricConicOpt.ConfinementLayerTower.toric_hom_vanishes_on_binomial_of_kernel",
     validation: "not_checked",
   },
   uses: [

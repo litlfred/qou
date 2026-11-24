@@ -1,5 +1,5 @@
 import Mathlib.Data.Real.Basic
-import QOU.Shared.MarkovTraceClaim
+import QOU.Core.MarkovTraceClaim
 
 /-!
 # `QOU.BraidsAndKnots.wedderburn_bratteli_recursion` — intentionally empty; the formalisation lives in the content-block sibling

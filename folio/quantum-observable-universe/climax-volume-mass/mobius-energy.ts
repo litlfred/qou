@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:mobius-energy",
-  lean: { ref: "qou:QOU.Braiding.mobius_energy",
+  lean: { ref: "qou:QOU.BraidsAndKnots.mobius_energy",
     validation: "not_checked",
   },
   title: "Categorical recovery of Möbius energy",

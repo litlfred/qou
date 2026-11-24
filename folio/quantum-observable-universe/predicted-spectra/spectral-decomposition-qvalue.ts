@@ -23,7 +23,7 @@ export default corollary({
     "self-duality",
     "hilbert-space-completeness",
   ],
-  lean: { ref: "qou:QOU.Archimedean.spectral_decomposition_qvalue",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.spectral_decomposition_qvalue",
     validation: "not_checked",
   },
   computation: {

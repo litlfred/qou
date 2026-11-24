@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:hecke-satisfies-blitvic-hypothesis",
   title:
     "The Hecke generators under the Markov trace do not satisfy Blitvić's pair-partition hypothesis",
-  lean: { ref: "qou:QOU.Observations.markovTrace_centred_cube_ne_zero", validation: "not_checked" },
+  lean: { ref: "qou:HeckeTemperleyLieb.hecke_satisfies_blitvic_hypothesis.markovTrace_centred_cube_ne_zero", validation: "not_checked" },
   uses: [
     "rem:non-commutative-probability-dictionary",
     "thm:jones-markov-trace",

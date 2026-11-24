@@ -12,7 +12,7 @@ export default remark({
   interprets: "def:quantum-universe",
   title: "The q-generic ground ring",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.IsQGeneric",
+    ref: "qou:QOU.Core.AlgebraicSubstrate.IsQGeneric",
     validation: "not_checked",
   },
   uses: ["def:quantum-universe", "def:substrate-parameter"],

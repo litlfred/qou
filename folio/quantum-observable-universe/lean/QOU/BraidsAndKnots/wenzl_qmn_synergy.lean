@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
-import QOU.Shared.MarkovTraceClaim
+import QOU.Core.MarkovTraceClaim
 
 /-!
 # QOU.BraidsAndKnots.wenzl_qmn_synergy

@@ -95,7 +95,7 @@ import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Data.List.Sort
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
-import QOU.BraidKnot.IdentityIContentDecomposition
+import BraidKnotOctonion.IdentityIContentDecomposition
 
 namespace QOU.BraidsAndKnots
 

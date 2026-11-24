@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Casimir force as $\\mathrm{st}$-image of $\\varepsilon$-vacuum density gradient",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.CasimirEpsilonVacuum",
+    ref: "qou:QOU.Observations.CasimirEpsilonVacuum",
     validation: "stub",
   },
   uses: [

@@ -21,7 +21,7 @@ export default proposition({
     "number-field",
   ],
   lean: {
-    ref: "qou:QOU.Knot.GeneratedGluing.K61.edge_0",
+    ref: "qou:BraidKnotOctonion.GeneratedGluing.K61.edge_0",
     validation: "leanok",
   },
   uses: ["prop:thurston-volume-additivity"],

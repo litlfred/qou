@@ -1,5 +1,5 @@
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
-import QOU.BraidsAndKnots.BorromeanMarkovTrace
+import BraidKnotOctonion.BorromeanMarkovTrace
 
 /-!
 # The neutron's own identity: the convention-D proton identity is isospin-blind

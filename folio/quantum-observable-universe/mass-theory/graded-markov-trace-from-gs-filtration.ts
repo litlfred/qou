@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Graded Markov trace as the induced trace on $J^\\ell / J^{\\ell+1}$",
   lean: {
-    ref: "qou:QOU.BraidKnot.GradedMarkovTraceFromGSFiltration",
+    ref: "qou:QOU.BraidsAndKnots.GradedMarkovTraceFromGSFiltration",
     validation: "not_checked",
   },
   cites: [

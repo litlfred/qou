@@ -5,7 +5,7 @@ export default theorem({
   title:
     "Two-strand spectral completeness over a commutative ring $R$",
   lean: {
-    ref: "qou:QOU.Archimedean.em_spectral_completeness",
+    ref: "qou:QOU.MassTheory.Archimedean.em_spectral_completeness",
     validation: "not_checked",
   },
   uses: ["prop:wedderburn-trace-identity"],

@@ -16,7 +16,7 @@ export default proposition({
   title:
     "No interface keyed on nucleon content can work: the two $pn$ channels share content and differ in boundness",
   lean: {
-    ref: "qou:QOU.QBeta.InterfaceScalar.content_keyed_interface_refuted",
+    ref: "qou:QOU.Nuclear.InterfaceScalar.content_keyed_interface_refuted",
     validation: "not_checked",
   },
   uses: ["prop:isospin-singlet-binds-more"],

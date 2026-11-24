@@ -46,7 +46,7 @@ export default proposition({
   title: "The baryon octet and the degeneracy of its weight diagram",
   // The ref names the OPERATIVE declaration -- the exclusion, not the table.
   lean: {
-    ref: "qou:QOU.Eightfold.OctetWeightDegeneracy.weight_function_cannot_separate_lambda_sigma0",
+    ref: "qou:QOU.EightfoldWay.OctetWeightDegeneracy.weight_function_cannot_separate_lambda_sigma0",
   },
   // IMMEDIATE NEIGHBOURS ONLY (AGENTS.md: uses[] is not the transitive cone).
   // The first draft listed all five of schur-weyl / borromean-decuplet /

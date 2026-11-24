@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:shell-schur-weyl-self-duality",
   title:
     "Schur-Weyl justification of shell-operator self-duality",
-  lean: { ref: "qou:QOU.BraidKnot.ShellSchurWeylSelfDuality.fixed_iff_coeff_symm",
+  lean: { ref: "qou:QOU.BraidsAndKnots.ShellSchurWeylSelfDuality.fixed_iff_coeff_symm",
     validation: "not_checked",
   },
   cites: [

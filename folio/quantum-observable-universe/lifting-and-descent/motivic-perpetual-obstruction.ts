@@ -44,7 +44,7 @@ export default theorem({
     // the question. `_frobenius` supplies the missing link — the trace is the
     // image of the Frobenius family under a realization, and the conclusion is
     // about `hχ.frobenius_at p` itself.
-    ref: "qou:QOU.LiftingDescent.motivic_perpetual_obstruction_frobenius",
+    ref: "qou:QOU.LiftingDescent.LiftingDescentRoot.motivic_perpetual_obstruction_frobenius",
     validation: "not_checked",
   },
   authorNotes: [

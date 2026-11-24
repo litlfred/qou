@@ -1,4 +1,4 @@
-import QOU.BraidsAndKnots.HydrogenCaptureWeightSpace
+import BraidKnotOctonion.HydrogenCaptureWeightSpace
 import Mathlib.Algebra.FreeAlgebra
 import Mathlib.LinearAlgebra.Span.Defs
 

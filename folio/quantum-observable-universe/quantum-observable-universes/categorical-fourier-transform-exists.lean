@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverses.QIntegralTransforms
+import QOU.Core.QIntegralTransforms
 
 
 /-!

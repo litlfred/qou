@@ -77,6 +77,8 @@ def _find_src() -> str:
         os.path.expanduser("~/mathlib-src"),
         "/home/user/mathlib-src",
         os.path.join(repo, ".lake/packages/mathlib"),      # if sources present
+        "/Users/litlfred/space_cats/qou/folio/quantum-observable-universe/lean/.lake/packages/mathlib",
+        "/Users/litlfred/space_cats/qou/.lake/packages/mathlib",
     ):
         if os.path.isdir(os.path.join(cand, "Mathlib")):
             return cand
@@ -146,10 +148,28 @@ def main() -> int:
             for dep in IMPORT_RE.findall(fh.read()):
                 ensure(dep)
         os.makedirs(os.path.dirname(op), exist_ok=True)
-        # cwd is a common parent of both trees so `lean` accepts the input path.
-        common = os.path.commonpath([os.path.abspath(SRC), os.path.abspath(OUT)])
-        r = subprocess.run([lean_bin, sp, "-o", op], capture_output=True,
-                           text=True, cwd=common, timeout=3600)
+        # Pass `-R <SRC>` (`cwd=SRC`) so Lean computes the exact module name
+        # `Mathlib.Foo.Bar` (required for anonymous `instance` auto-naming like
+        # `instTopologicalSpace` in `MvPowerSeries.PiTopology`) while writing `-o`
+        # to `OUT`, and match mathlib's `mathlibLeanOptions`.
+        abs_src = os.path.abspath(SRC)
+        abs_op = os.path.abspath(op)
+        r = subprocess.run(
+            [
+                lean_bin,
+                f"--root={abs_src}",
+                "-Dpp.unicode.fun=true",
+                "-DautoImplicit=false",
+                "-DmaxSynthPendingDepth=3",
+                os.path.abspath(sp),
+                "-o",
+                abs_op,
+            ],
+            capture_output=True,
+            text=True,
+            cwd=abs_src,
+            timeout=3600,
+        )
         if r.returncode != 0:
             failed.append((mod, (r.stdout + r.stderr)[:400]))
             print(f"  FAIL  {mod}", flush=True)

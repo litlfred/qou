@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.QuantumObservableUniverse.Structures
+import QOU.Core.Basic
+import QOU.Core.Structures
 
 
 /-!

@@ -12,7 +12,7 @@ export default definition({
     "hecke-algebra",
     "colored-photon",
   ],
-  lean: { ref: "qou:QOU.Archimedean.QuarkAntiquarkProduction",
+  lean: { ref: "qou:QOU.MassTheory.QuarkAntiquarkProduction",
     validation: "not_checked",
   },
   // Detangler forward-ref demote (bean foxn): def:breit-wheeler-pair-production

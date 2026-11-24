@@ -7,7 +7,7 @@ import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.FinCases
-import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidsAndKnots.ElectronWordCandidates
 import QOU.StandardModel.ComponentFraming
 import QOU.Observations.InhomogeneousLeptonLoopResolvent
 

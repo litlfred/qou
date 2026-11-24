@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.BringConeIcosahedral
+import QOU.BringsSurface.BringConeIcosahedral
 
 /-!
 # The chirality unit `u` as a point of the polarization line ℙ¹(ℂ)

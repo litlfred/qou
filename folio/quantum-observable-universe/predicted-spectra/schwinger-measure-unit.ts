@@ -21,7 +21,7 @@ export default definition({
   label: "def:schwinger-measure-unit",
   title: "Schwinger proper-time measure and its unit $\\varsigma$",
   lean: {
-    ref: "qou:QOU.Archimedean.SchwingerMeasureUnit.density",
+    ref: "qou:QOU.MassTheory.Archimedean.SchwingerMeasureUnit.density",
     validation: "not_checked",
   },
   uses: [

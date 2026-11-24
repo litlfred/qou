@@ -1,6 +1,6 @@
 import QOU.StandardModel.ComponentFraming
 import QOU.StandardModel.SignCoherentTwist
-import QOU.Eightfold.USpinColemanGlashowLambdaSigma
+import QOU.EightfoldWay.USpinColemanGlashowLambdaSigma
 import Mathlib.Data.Int.ModEq
 import Mathlib.Tactic
 

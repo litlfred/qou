@@ -6,7 +6,7 @@ export default theorem({
   ],
   label: "thm:quantum-gap-collapse",
   title: "Collapse of the quantum gap",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.quantum_gap_collapse",
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.quantum_gap_collapse",
     validation: "not_checked",
   },
   uses: [

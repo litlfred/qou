@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:figure-eight-branching-rule",
   title:
     "Figure-eight character from Young's lattice branching multiplicities",
-  lean: { ref: "qou:QOU.BraidKnot.figure_eight_branching_rule",
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.figure_eight_branching_rule",
     validation: "not_checked",
   },
   uses: ["prop:hoefsmit-seminormal-form"],

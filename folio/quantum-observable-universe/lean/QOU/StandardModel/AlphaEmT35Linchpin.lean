@@ -4,12 +4,12 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic
-import QOU.MathlibExt.QIntegerCanonical
-import QOU.Braiding.WeakVertexT35TraceClosedForm
-import QOU.QBeta.HadronChargeLineCoulomb
-import QOU.QBeta.WeakVertexTwoTerm
-import QOU.Archimedean.EmCouplingBringZeroMode
-import QOU.Archimedean.BringSchwingerNormalizationDerivation
+import HeckeTemperleyLieb.QIntegerCanonical
+import QOU.BraidsAndKnots.WeakVertexT35TraceClosedForm
+import QOU.Nuclear.HadronChargeLineCoulomb
+import QOU.Nuclear.WeakVertexTwoTerm
+import QOU.MassTheory.EmCouplingBringZeroMode
+import QOU.MassTheory.BringSchwingerNormalizationDerivation
 
 /-!
 # Unconditional `[10]_q` `T(3,5)` Linchpin, Cartan-Commutant Inner Derivation, and `2 ln t = -α_EM(q)` Hadron-Line Bridge

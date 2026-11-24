@@ -1,4 +1,4 @@
-import QOU.HadronicMass
+import QOU.MassTheory.HadronicMass
 
 
 /-!

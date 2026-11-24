@@ -15,7 +15,7 @@ export default proposition({
     "murakami-murakami2001",
   ],
   lean: {
-    ref: "qou:QOU.Knot.SelfDuality.higgs_complex_volume_real",
+    ref: "qou:QOU.BraidsAndKnots.FigureEightSelfDuality.higgs_complex_volume_real",
   },
   authorNotes: [
     {

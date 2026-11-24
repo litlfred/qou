@@ -13,7 +13,7 @@ export default proposition({
     "brane-tower",
   ],
   lean: {
-    ref: "qou:QOU.QuantumBloch.pentagon_uv_commutation",
+    ref: "qou:QOU.StandardModel.pentagon_uv_commutation",
     validation: "not_checked",
   },
   uses: [

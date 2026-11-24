@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:tau-assignment-tower-square",
   lean: {
-    ref: "qou:QOU.Machinery.HeckeGeneral.tauAssignment_tower_natural",
+    ref: "qou:HeckeTemperleyLieb.HeckeTauAssignmentTower.tauAssignment_tower_natural",
     validation: "not_checked",
   },
   title:

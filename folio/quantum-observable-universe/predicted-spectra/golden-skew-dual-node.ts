@@ -16,7 +16,7 @@ export default proposition({
     "substrate-parameter",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.golden_skew_dual_node",
+    ref: "qou:QOU.MassTheory.Archimedean.golden_skew_dual_node",
     validation: "not_checked",
   },
   uses: ["rem:golden-ratio-degeneration"],

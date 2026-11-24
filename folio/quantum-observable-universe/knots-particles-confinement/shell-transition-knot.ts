@@ -22,7 +22,7 @@ export default conjecture({
     "shell-transition",
     "crossing-number",
   ],
-  lean: { ref: "qou:QOU.Conjectures.ShellTransitionKnot",
+  lean: { ref: "qou:QOU.Core.ShellTransitionKnot",
     validation: "not_checked",
   },
   uses: ["conj:orbital-fourier-decomposition"],

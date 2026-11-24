@@ -33,7 +33,7 @@ export default proposition({
     "def:lp-duality-hypothesis-class",
   ],
   cites: ["schrijver1986theory", "macdonald1995"],
-  lean: { ref: "qou:QOU.BraidKnot.ConfinementNFPartial.theorem_3_strong_duality" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.ConfinementNFPartial.theorem_3_strong_duality" },
   tags: [
     "lp-duality",
     "complementary-slackness",

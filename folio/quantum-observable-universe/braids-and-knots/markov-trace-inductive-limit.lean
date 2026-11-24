@@ -1,6 +1,6 @@
 import Mathlib.Tactic
-import QOU.BraidKnot.BraidGroupNStrand
-import QOU.BraidKnot.MarkovAxiomsPrimitive
+import BraidKnotOctonion.BraidGroupNStrand
+import HeckeTemperleyLieb.MarkovAxiomsPrimitive
 
 /-!
 # QOU.BraidKnot.markov_trace_inductive_limit

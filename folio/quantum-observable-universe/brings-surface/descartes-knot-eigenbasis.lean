@@ -4,9 +4,9 @@ import Mathlib.Data.Fin.VecNotation
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
-import QOU.SchurWeyl.HoefsmitRep
-import QOU.SchurWeyl.GenericParameter
-import QOU.SchurWeyl.MarkovTraceInstance
+import HeckeTemperleyLieb.HoefsmitRep
+import HeckeTemperleyLieb.GenericParameter
+import BraidKnotOctonion.MarkovTraceInstance
 
 
 /-!

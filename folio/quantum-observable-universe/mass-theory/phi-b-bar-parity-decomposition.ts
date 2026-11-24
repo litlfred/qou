@@ -7,6 +7,6 @@ export default proposition({
   // schema field, so as a top-level key it was silently stripped. `meta` is
   // the declared escape hatch and keeps the declaration.
   meta: { is_mathematics: true },
-  lean: { ref: "qou:QOU.QBeta.bar_parity_decomposition" },
+  lean: { ref: "qou:QOU.Nuclear.QBeta.bar_parity_decomposition" },
   uses: []
 });

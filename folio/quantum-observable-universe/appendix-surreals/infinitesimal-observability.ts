@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:infinitesimal-observability",
   title:
     "Infinitesimal observability: $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) \\leq \\varepsilon$",
-  lean: { ref: "qou:QOU.AppendixSurreals.InfinitesimalObservability", validation: "stub" },
+  lean: { ref: "qou:QOU.Observations.AppendixSurreals.InfinitesimalObservability", validation: "stub" },
   tags: [
     "tier:P",
     "surreal-numbers",

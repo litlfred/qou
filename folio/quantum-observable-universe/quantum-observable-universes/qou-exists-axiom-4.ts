@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:qou-exists-axiom-4",
-  lean: { ref: "qou:QOU.QuantumObservableUniverse.exists_axiom_4_volume",
+  lean: { ref: "qou:QOU.Core.exists_axiom_4_volume",
     validation: "not_checked",
   },
   title: "Axiom 4 — categorical volume constraint via the quantum determinant",

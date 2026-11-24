@@ -1,6 +1,6 @@
 import Mathlib.RingTheory.RootsOfUnity.Basic
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 /-!
 # Level-2 SU(2) Verlinde witness at a primitive 8th root of unity

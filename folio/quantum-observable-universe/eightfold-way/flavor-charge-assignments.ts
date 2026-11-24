@@ -17,7 +17,7 @@ export default remark({
   title: "Flavor charge assignments and the hypercharge gap",
   interprets: "prop:a2-from-three-strands",
   lean: {
-    ref: "qou:QOU.Eightfold.HyperbolicMesonClaspAndDiquarkSplit.antiUp_down_same_weakSign_yet_distinct_charge",
+    ref: "qou:QOU.EightfoldWay.HyperbolicMesonClaspAndDiquarkSplit.antiUp_down_same_weakSign_yet_distinct_charge",
   },
   uses: [
     "prop:a2-from-three-strands",

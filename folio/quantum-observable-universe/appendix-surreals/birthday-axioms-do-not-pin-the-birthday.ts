@@ -13,7 +13,7 @@ export default theorem({
     "mixin",
   ],
   lean: {
-    ref: "qou:QOU.AppendixSurreals.birthdayFaithful_independent_witnessed",
+    ref: "qou:QOU.Observations.AppendixSurreals.birthdayFaithful_independent_witnessed",
     validation: "leanok",
   },
   uses: ["thm:hyperreal-limit-transfer"],

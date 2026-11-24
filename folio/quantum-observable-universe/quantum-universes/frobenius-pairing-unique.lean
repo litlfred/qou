@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.QuantumObservableUniverse.CategoricalFoundations
+import QOU.Core.Basic
+import QOU.Core.CategoricalFoundations
 import Mathlib.CategoryTheory.Simple
 import Mathlib.CategoryTheory.Preadditive.Schur
 import Mathlib.CategoryTheory.Monoidal.Preadditive

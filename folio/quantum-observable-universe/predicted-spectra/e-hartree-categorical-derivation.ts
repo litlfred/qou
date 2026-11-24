@@ -32,7 +32,7 @@ export default conjecture({
   title:
     "Conjectured categorical derivation of $E_h = m_e c_q^2 \\alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual",
   lean: {
-    ref: "qou:QOU.Archimedean.EHartreeCategoricalDerivation",
+    ref: "qou:QOU.MassTheory.Archimedean.EHartreeCategoricalDerivation",
     validation: "not_checked",
   },
   uses: [

@@ -6,7 +6,7 @@ export default proof({
     "Proof: elimination, factorisation, and the exclusion of the trivial branch",
   of: "prop:convention-d-kills-antisymmetriser",
   lean: {
-    ref: "qou:QOU.QBeta.TemperleyLiebTower.z_eq_q_forces_trivial",
+    ref: "qou:HeckeTemperleyLieb.TemperleyLiebTower.z_eq_q_forces_trivial",
     validation: "not_checked",
   },
   uses: ["prop:convention-d-kills-antisymmetriser"],

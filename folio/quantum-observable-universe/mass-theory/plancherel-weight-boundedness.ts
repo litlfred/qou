@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Plancherel weights define a probability distribution: $\\sum_\\lambda w_\\lambda = 1$, $0 \\leq w_\\lambda \\leq 1$",
   lean: {
-    ref: "qou:QOU.BraidKnot.plancherel_weight_boundedness",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.plancherel_weight_boundedness",
     validation: "not_checked",
   },
   uses: ["prop:unified-curvature-rank-mass-formula"],

@@ -7,7 +7,7 @@ export default proposition({
   // The proof lives in the library file PhiQConvergence.lean (sorry-free);
   // ref the library decl directly — no sibling stub (AGENTS.md no-shadowing).
   lean: {
-    ref: "qou:QOU.MassEndomorphism.PhiQConvergence.quantumDilog_multipliable",
+    ref: "qou:QOU.MassTheory.PhiQConvergence.quantumDilog_multipliable",
     validation: "not_checked",
   },
   uses: ["cor:quantum-dilogarithm"],

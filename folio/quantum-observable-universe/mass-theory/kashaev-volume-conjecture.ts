@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:kashaev-volume-conjecture",
   title: "Kashaev–Murakami–Murakami volume conjecture",
   lean: {
-    ref: "qou:QOU.Kashaev.VolumeConjecture",
+    ref: "qou:BraidKnotOctonion.Kashaev.VolumeConjecture",
     validation: "not_checked",
   },
   uses: [

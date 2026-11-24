@@ -51,8 +51,8 @@
 -/
 
 import Mathlib.Algebra.Algebra.Basic
-import QOU.Conjectures.WeakSpectralCompleteness
-import QOU.Knot.BraidClosure
+import QOU.Core.WeakSpectralCompleteness
+import BraidKnotOctonion.BraidClosure
 
 namespace QOU.BraidsAndKnots
 

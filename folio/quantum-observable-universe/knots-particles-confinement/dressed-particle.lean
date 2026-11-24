@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.BraidKnot.DressedParticle
+import QOU.Core.Basic
+import QOU.BraidsAndKnots.DressedParticle
 
 /-!
 # QOU.BraidKnot.DressedParticle

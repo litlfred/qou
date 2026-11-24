@@ -25,7 +25,7 @@ export default proposition({
   title:
     "The $\\alpha$-cluster activation gate: Milnor indeterminacy, sign-rep obstruction, and $\\mathrm{Vol}=0$ annihilation",
   lean: {
-    ref: "qou:QOU.Mass.MilnorIndeterminacyGate.gate_open_iff_brunnian",
+    ref: "qou:BraidKnotOctonion.MilnorIndeterminacyGate.gate_open_iff_brunnian",
     validation: "not_checked",
   },
   cites: ["milnor1954"],

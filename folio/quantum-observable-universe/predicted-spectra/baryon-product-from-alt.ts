@@ -37,7 +37,7 @@ export default conjecture({
     "archimedean-universe",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.baryonProductFromAlt",
+    ref: "qou:QOU.MassTheory.Archimedean.baryonProductFromAlt",
     validation: "not_checked",
   },
   authorNotes: [

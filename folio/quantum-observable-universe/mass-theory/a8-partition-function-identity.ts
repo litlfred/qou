@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Habiro coefficient $a_8(X)$ partition-function identity: $a_8(X) = \\sum_{n=1}^{5} p(n)\\,X^{5-n}$",
   lean: {
-    ref: "qou:QOU.BraidKnot.A8Partition.a_8_eq_partition_sum",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.A8Partition.a_8_eq_partition_sum",
   },
   uses: [
     "prop:cyclotomic-strand-doubling",

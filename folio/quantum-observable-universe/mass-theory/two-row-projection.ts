@@ -22,7 +22,7 @@ export default definition({
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): from [Canonical q-deformed Wedderburn-block weight $\\tilde w_\\lambda$ and named scalings (BW, LP for all $\\lambda$)](#prop:wedderburn-weight-canonical)" },
   ],
-  lean: { ref: "qou:QOU.BraidKnot.TwoRowStratum.HasTwoRowProjection" },
+  lean: { ref: "qou:BraidKnotOctonion.TwoRowStratum.HasTwoRowProjection" },
   tags: [
     "wedderburn-decomposition",
     "su2-schur-weyl",

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Crystal-limit isospin degeneracy: $S_{\\mathrm{crystal}}$ is invariant under $\\sigma_i \\leftrightarrow \\sigma_i^{-1}$",
   lean: {
-    ref: "qou:QOU.BraidKnot.crystal_isospin_degeneracy",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.crystal_isospin_degeneracy",
     validation: "not_checked",
   },
   uses: [

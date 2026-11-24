@@ -34,7 +34,7 @@ export default definition({
     witness: "computations/delta-q-decoration.witness.json",
     status: "verified",
   },
-  lean: { ref: "qou:QOU.BraidKnot.delta_q" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.delta_q" },
   tags: [
     "delta-q",
     "q-dimension",

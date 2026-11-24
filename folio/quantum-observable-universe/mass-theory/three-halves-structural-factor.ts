@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:three-halves-structural-factor",
   lean: {
-    ref: "qou:QOU.BraidKnot.ThreeHalvesStructuralFactor.three_halves_factor_eq_q_brackets",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.ThreeHalvesStructuralFactor.three_halves_factor_eq_q_brackets",
     validation: "not_checked",
   },
   title:

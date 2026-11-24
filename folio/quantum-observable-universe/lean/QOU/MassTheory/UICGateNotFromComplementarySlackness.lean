@@ -1,4 +1,4 @@
-import QOU.ParticleInteractions.operator_selection_lp
+import QOU.Confinement.operator_selection_lp
 import Mathlib.Algebra.Order.Ring.Int
 import Mathlib.Data.Fin.VecNotation
 import Mathlib.Tactic.NormNum

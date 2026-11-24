@@ -27,7 +27,7 @@
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.LinearAlgebra.Span.Basic
 import Mathlib.Tactic
-import QOU.QuarkState.PhotonPairNormalForm
+import QOU.Confinement.PhotonPairNormalForm
 
 namespace QOU.Archimedean.GammaGammaGeneration
 

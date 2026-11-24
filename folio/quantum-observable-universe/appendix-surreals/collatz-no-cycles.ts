@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:collatz-no-cycles",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.balanced_holonomy_excluded", validation: "leanok" },
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.balanced_holonomy_excluded", validation: "leanok" },
   title:
     "Balanced-holonomy cycle exclusion: coprimality of $[2]_q$ and $[3]_q$",
   uses: [],

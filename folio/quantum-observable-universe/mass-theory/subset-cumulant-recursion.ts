@@ -16,7 +16,7 @@ export default proposition({
   title:
     "Subset cumulants of the bond model: reconstruction, the $c_k$-only recursion, and vanishing across a split",
   lean: {
-    ref: "qou:QOU.Mass.SubsetCumulantRecursion.cum_eq_sizeCum",
+    ref: "qou:QOU.MassTheory.SubsetCumulantRecursion.cum_eq_sizeCum",
     sorryFree: true,
     validation: "not_checked",
   },

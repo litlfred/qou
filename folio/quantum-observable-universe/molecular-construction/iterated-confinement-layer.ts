@@ -9,7 +9,7 @@ export default definition({
   title:
     "Confinement layer, confined motif, and functorial column promotion",
   lean: {
-    ref: "qou:QOU.MathlibInfra.ConfinementLayerTower.ConfinementLayer",
+    ref: "qou:ToricConicOpt.ConfinementLayerTower.ConfinementLayer",
     validation: "not_checked",
   },
   uses: [

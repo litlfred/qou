@@ -44,8 +44,8 @@
   -- Ref: [leitner2026] PR #1511 (Habiro deformation (1 − h²α))
 -/
 
-import QOU.Archimedean.EmCouplingBringZeroMode
-import QOU.MathlibExt.QIntegerCanonical
+import QOU.MassTheory.EmCouplingBringZeroMode
+import HeckeTemperleyLieb.QIntegerCanonical
 
 namespace QOU.ArchimedeanUniverse
 

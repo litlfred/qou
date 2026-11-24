@@ -8,7 +8,7 @@ export default proposition({
     "prop:borromean-markov-trace-closed-form",
     "prop:hoefsmit-binding-amplitude",
   ],
-  lean: { ref: "qou:QOU.BraidsAndKnots.borromean_trace_standard" },
+  lean: { ref: "qou:BraidKnotOctonion.UnitModulusEigenvalue.borromean_trace_standard" },
   tags: [
     "eigenvalue",
     "unit-modulus",

@@ -13,7 +13,7 @@ export default proposition({
     "markov-trace",
     "uniqueness",
   ],
-  lean: { ref: "qou:QOU.Archimedean.rj_canonical_inner_product",
+  lean: { ref: "qou:QOU.MassTheory.rj_canonical_inner_product",
     validation: "not_checked",
   },
   uses: [

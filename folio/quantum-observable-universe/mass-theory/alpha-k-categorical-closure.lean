@@ -1,5 +1,5 @@
 import Mathlib.Data.Real.Basic
-import QOU.MathlibExt.QPlancherel
+import HeckeTemperleyLieb.QPlancherel
 
 /-!
 # QOU.BraidKnot.AlphaKCategoricalClosure

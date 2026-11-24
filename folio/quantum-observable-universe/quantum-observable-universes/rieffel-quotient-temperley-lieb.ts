@@ -6,7 +6,7 @@ export default example({
     "Temperley--Lieb trace-radical quotient on two-dimensional strands",
   interprets: "def:categorical-dirac-operator",
   lean: {
-    ref: "qou:QOU.SchurWeyl.JimboKernelGeneric.traceQuotTLEquivComplex",
+    ref: "qou:BraidKnotOctonion.JimboKernelGeneric.traceQuotTLEquivComplex",
     validation: "not_checked",
   },
   uses: [

@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.BringConeGauge
+import QOU.BringsSurface.BringConeGauge
 import QOU.StandardModel.ChiralityGradingConstruction
 
 /-!

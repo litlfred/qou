@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(a)$ gate — the log-correction generating function $g(u) = \\sum_{k \\ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\\text{substrate}}$",
   lean: {
-    ref: "qou:QOU.QBeta.RadiusOfConvergenceGate.qbeta_g_simple_pole_at_u_substrate",
+    ref: "qou:QOU.Nuclear.QBeta.RadiusOfConvergenceGate.qbeta_g_simple_pole_at_u_substrate",
     validation: "not_checked",
   },
   uses: [

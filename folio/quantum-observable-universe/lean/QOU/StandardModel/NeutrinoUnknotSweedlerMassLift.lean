@@ -2,14 +2,14 @@
 Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under Apache 2.0 license.
 -/
-import QOU.Archimedean.ParticleKnots
-import QOU.QuarkState.WeakScaleFactorisation
-import QOU.Braiding.WeakVertexT35TraceClosedForm
-import QOU.LiftingDescent.SweedlerJet
-import QOU.LiftingDescent.SweedlerFrobenius
-import QOU.QBeta.SweedlerWeakDegreeCount
+import QOU.MassTheory.ParticleKnots
+import QOU.Confinement.WeakScaleFactorisation
+import QOU.BraidsAndKnots.WeakVertexT35TraceClosedForm
+import TwistedFrobeniusHopf.SweedlerJet
+import TwistedFrobeniusHopf.SweedlerFrobenius
+import QOU.Nuclear.SweedlerWeakDegreeCount
 import QOU.StandardModel.LeptonNumberCarrierChirality
-import QOU.QuarkState.YukawaVacuumPairing
+import QOU.Confinement.YukawaVacuumPairing
 import Mathlib.Data.ZMod.Basic
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace

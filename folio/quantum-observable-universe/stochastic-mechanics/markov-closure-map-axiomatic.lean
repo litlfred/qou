@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.BraidKnot.BraidLinkTypes
+import BraidKnotOctonion.BraidLinkTypes
 
 /-!
 # QOU.BraidKnot.markov_closure_map_axiomatic

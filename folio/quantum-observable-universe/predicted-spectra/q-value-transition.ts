@@ -17,7 +17,7 @@ export default definition({
     "kinetic-energy",
     "skein",
   ],
-  lean: { ref: "qou:QOU.Archimedean.QqValue.value",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.QqValue.value",
     validation: "not_checked",
   },
   defines: ["q-value"],

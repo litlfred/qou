@@ -35,7 +35,7 @@ export default proposition({
   title:
     "General orbit-sum identity: $\\sum_k \\mathrm{Cl}_3(2\\pi k/N) = -(N^2-1)/N^2 \\cdot \\zeta(3)$ at every $N \\geq 2$",
   lean: {
-    ref: "qou:QOU.BraidKnot.CyclotomicCl3OrbitSum.cl3_orbit_sum",
+    ref: "qou:BraidKnotOctonion.CyclotomicCl3OrbitSum.cl3_orbit_sum",
     validation: "not_checked",
   },
   computation: {

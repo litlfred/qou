@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:hoefsmit-V21-cos-symmetrization",
   lean: {
-    ref: "qou:QOU.BraidKnot.hoefsmit_V21_cos_symmetrization",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.hoefsmit_V21_cos_symmetrization",
     validation: "not_checked",
   },
   title:

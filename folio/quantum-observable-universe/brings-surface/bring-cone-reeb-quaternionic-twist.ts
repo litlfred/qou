@@ -27,7 +27,7 @@ export default lemma({
   title:
     "Reeb quaternionic twist on the Bring-cone model: $[M_i, M_j] = 2M_k$ and cyclic",
   lean: {
-    ref: "qou:QOU.Tetraplectic.reeb_twist_ij",
+    ref: "qou:QOU.BringsSurface.BringCone.reeb_twist_ij",
     sorryFree: true,
     validation: "not_checked",
   },

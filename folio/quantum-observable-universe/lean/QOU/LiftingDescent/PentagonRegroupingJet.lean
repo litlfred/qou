@@ -3,7 +3,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import Mathlib.RingTheory.Kaehler.Basic
-import QOU.BraidKnot.PhiQTowerAlgebraicStratification
+import BraidKnotOctonion.PhiQTowerAlgebraicStratification
 
 /-!
 # The residual of pentagon ascension lives in a power of the diagonal ideal

@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity",
+    ref: "qou:QOU.Observations.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity",
     validation: "not_checked",
   },
   uses: [

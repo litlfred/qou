@@ -24,7 +24,7 @@
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Tactic
-import QOU.Photon
+import QOU.StandardModel.Photon
 
 namespace QOU.Archimedean
 

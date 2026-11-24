@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
-import QOU.KnotTheory
+import QOU.BraidsAndKnots.KnotTheory
 
 
 /-!

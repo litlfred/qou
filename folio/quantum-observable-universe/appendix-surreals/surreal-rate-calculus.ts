@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:surreal-rate-calculus",
   title: "Surreal rate calculus for the classical-limit scaling laws",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.SurrealRateCalculus",
+    ref: "qou:QOU.BringsSurface.SurrealRateCalculus",
     validation: "not_checked",
   },
   uses: ["lem:surreal-squeeze"],

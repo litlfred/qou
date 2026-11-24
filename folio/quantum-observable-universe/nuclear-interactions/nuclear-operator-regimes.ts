@@ -13,7 +13,7 @@ export default proposition({
     "shell-closure",
     "regime-transition",
   ],
-  lean: { ref: "qou:QOU.Interactions.nuclearOperatorRegimes",
+  lean: { ref: "qou:QOU.Confinement.Interactions.nuclearOperatorRegimes",
     validation: "not_checked",
   },
   uses: [

@@ -12,7 +12,7 @@ export default remark({
   ],
   cites: ["springer1976", "shoji2019", "garoufalidis-gu-marino2021"],
   lean: {
-    ref: "qou:QOU.MassTheory.exchangeDet_pow_two_le_four",
+    ref: "qou:QOU.MassTheory.BindingSaturationCapA4.exchangeDet_pow_two_le_four",
     validation: "not_checked",
   },
   computation: {

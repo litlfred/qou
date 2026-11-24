@@ -1,4 +1,4 @@
-import QOU.QBeta.ECatLPDualRadical
+import QOU.Nuclear.ECatLPDualRadical
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Fintype.Fin
 import Mathlib.Algebra.Order.Ring.Defs

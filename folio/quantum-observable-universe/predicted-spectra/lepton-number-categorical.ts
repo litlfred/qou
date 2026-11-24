@@ -15,7 +15,7 @@ export default definition({
     "categorical",
     "weak-force",
   ],
-  lean: { ref: "qou:QOU.Archimedean.LeptonNumber",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.LeptonNumber",
     validation: "not_checked",
   },
   uses: ["def:beta-decay-skein"],

@@ -6,10 +6,10 @@ import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.Tactic
-import QOU.Braiding.JimboGl3Singlet
-import QOU.MathlibExt.QPartitionCombinatorics
-import QOU.QBeta.DeltaLambdaBindingAssembly
-import QOU.QBeta.StokesSymmetryConstant
+import BraidKnotOctonion.JimboGl3Singlet
+import HeckeTemperleyLieb.QPartitionCombinatorics
+import QOU.Nuclear.DeltaLambdaBindingAssembly
+import QOU.Nuclear.StokesSymmetryConstant
 
 set_option autoImplicit false
 

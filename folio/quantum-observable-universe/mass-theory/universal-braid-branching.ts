@@ -7,7 +7,7 @@ export default proposition({
   label: "prop:universal-braid-branching",
   title:
     "Universal braid character formula via Young's lattice branching",
-  lean: { ref: "qou:QOU.BraidKnot.universal_braid_branching",
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.universal_braid_branching",
     validation: "not_checked",
   },
   // rem:body-asymptotics-catalog dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "The Markov--Gram star form is positive semidefinite; positivity reduces to $y_\\lambda \\ge 0$",
   lean: {
-    ref: "qou:QOU.QBeta.GramSignature.markov_star_nonneg",
+    ref: "qou:QOU.Nuclear.GramSignature.markov_star_nonneg",
     validation: "not_checked",
   },
   uses: [

@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverse.SubstrateParameter
+import QOU.Core.SubstrateParameter
 
 /-!
 # QOU.qLieBracket

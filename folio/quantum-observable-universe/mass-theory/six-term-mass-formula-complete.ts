@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Six-term mass formula: derivation + computation index",
   lean: {
-    ref: "qou:QOU.BraidKnot.six_term_mass_formula_complete",
+    ref: "qou:BraidKnotOctonion.six_term_mass_formula_complete",
     validation: "not_checked",
   },
   uses: [

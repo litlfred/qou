@@ -13,7 +13,7 @@ export default theorem({
     "law-of-sines",
   ],
   lean: {
-    ref: "qou:QOU.Knot.IdealTet.norm_eq_sin_div_sin",
+    ref: "qou:BraidKnotOctonion.IdealTetLawOfSines.norm_eq_sin_div_sin",
     validation: "leanok",
   },
   uses: ["thm:rivin-concavity-one-tetrahedron"],

@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Brunnian property of $\\mathcal{B}_3$: every two-component sub-link is the unlink",
   lean: {
-    ref: "qou:QOU.KnotTheory.Brunnian.borromean_brunnian",
+    ref: "qou:QOU.BraidsAndKnots.Brunnian.borromean_brunnian",
     validation: "stub",
   },
   uses: [

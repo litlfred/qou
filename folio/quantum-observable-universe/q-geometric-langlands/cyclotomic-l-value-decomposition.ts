@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\\beta(3) = \\pi^3/32$ as a corollary",
   lean: {
-    ref: "qou:QOU.BraidKnot.CyclotomicLValueDecomposition.beta_3_from_jonquiere",
+    ref: "qou:BraidKnotOctonion.CyclotomicLValueDecomposition.beta_3_from_jonquiere",
     validation: "not_checked",
   },
   computation: {

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:fivetwo-envelope-transport",
   lean: {
-    ref: "qou:QOU.QBeta.FiveTwoDeformedSaddle.envelopeS_total",
+    ref: "qou:QOU.Nuclear.FiveTwoDeformedSaddle.envelopeS_total",
     validation: "not_checked",
   },
   title:

@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:confinement-phase-stratification",
   title:
     "The confinement locus is open, and the active support is constant on a strictly complementary phase",
-  lean: { ref: "qou:QOU.BraidKnot.ConfinementPhaseStratification",
+  lean: { ref: "qou:QOU.BraidsAndKnots.ConfinementPhaseStratification",
     validation: "not_checked",
   },
   uses: ["def:confined-particle", "prop:confinement-sdp"],

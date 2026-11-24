@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$\\mathfrak{Q}_\\beta$ precision-ladder $\\bar{}$-even discriminant — the kernel $R(q,\\xi)$ produces a clean integer-$u$ ladder $\\prod_k(1+c_k\\,u^k)$ if and only if $R$ is even under $t \\mapsto -t$ ($t = q-1$); $(1-u^2)$ at N=2 is the prototype",
   lean: {
-    ref: "qou:QOU.QBeta.BarEvenInvariant.bar_even_quadratic_term_in_t_squared",
+    ref: "qou:QOU.Nuclear.QBeta.BarEvenInvariant.bar_even_quadratic_term_in_t_squared",
     validation: "not_checked",
   },
   uses: [

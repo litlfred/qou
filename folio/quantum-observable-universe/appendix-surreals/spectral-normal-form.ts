@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:spectral-normal-form",
   title:
     "Spectral gap closure and singularity formation as $q \\to 1$ read from normal-form exponents",
-  lean: { ref: "qou:QOU.AppendixSurreals.SpectralNormalForm", validation: "stub" },
+  lean: { ref: "qou:QOU.Observations.SpectralNormalForm", validation: "stub" },
   tags: [
     "tier:P",
     "surreal-numbers",

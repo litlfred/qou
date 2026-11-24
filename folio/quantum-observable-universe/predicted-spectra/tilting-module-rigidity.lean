@@ -1,5 +1,5 @@
 import Mathlib.Data.Real.Basic
-import QOU.BraidKnot.CemeteryGroupEmergence
+import QOU.BraidsAndKnots.CemeteryGroupEmergence
 
 /-!
 # QOU.Archimedean.tilting_module_rigidity

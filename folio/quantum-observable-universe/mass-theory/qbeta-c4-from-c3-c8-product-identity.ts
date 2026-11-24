@@ -14,7 +14,7 @@ export default proposition({
     "lean",
   ],
   lean: {
-    ref: "qou:QOU.QBeta.c4_eq_c8_div_c3_at_silver",
+    ref: "qou:QOU.Nuclear.QBeta.c4_eq_c8_div_c3_at_silver",
     validation: "not_checked",
   },
   computation: {

@@ -11,7 +11,7 @@ export default proposition({
     "exact",
     "branching",
   ],
-  lean: { ref: "qou:QOU.ParticleInteractions.branching_qvalue_factorization",
+  lean: { ref: "qou:HeckeTemperleyLieb.branching_qvalue_factorization",
     validation: "not_checked",
   },
   uses: ["def:spectator-normalization"],

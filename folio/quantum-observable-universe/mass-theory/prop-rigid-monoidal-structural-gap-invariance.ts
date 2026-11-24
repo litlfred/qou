@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Convention-independence of the structural gap: the brane-tower factors through the rigid monoidal Markov trace on the Type-B-folded Hecke category",
   lean: {
-    ref: "qou:QOU.BraidKnot.RigidMonoidalStructuralGapInvariance",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.RigidMonoidalStructuralGapInvariance",
     validation: "not_checked",
   },
   uses: [

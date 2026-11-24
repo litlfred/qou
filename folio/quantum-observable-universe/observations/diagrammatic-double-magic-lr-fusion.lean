@@ -1,8 +1,8 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
-import QOU.Common.MagicNumbers
+import MathlibExt.MagicNumbers
 import Mathlib.Combinatorics.Young.YoungDiagram
-import QOU.Mathlib.LittlewoodRichardson
+import MathlibExt.LittlewoodRichardson
 
 
 /-!

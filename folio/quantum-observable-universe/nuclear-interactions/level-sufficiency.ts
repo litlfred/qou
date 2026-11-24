@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:level-sufficiency",
   title:
     "Level sufficiency: Markov trace computable in the coarsest confinement algebra",
-  lean: { ref: "qou:QOU.BraidKnot.LevelSufficiency",
+  lean: { ref: "qou:QOU.BraidsAndKnots.LevelSufficiency",
     validation: "not_checked",
   },
   tags: [

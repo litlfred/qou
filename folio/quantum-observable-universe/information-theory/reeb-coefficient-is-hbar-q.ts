@@ -5,7 +5,7 @@ export default proposition({
   title:
     "The Reeb coefficient of $D_\\nabla$ is the quantum Planck constant: $1 - q^{-1} = (q-1)/q$",
   lean: {
-    ref: "qou:QOU.QBeta.GramSignature.reeb_coefficient_eq_hbar_q",
+    ref: "qou:QOU.Nuclear.GramSignature.reeb_coefficient_eq_hbar_q",
     validation: "not_checked",
   },
   // def:quantum-planck-constant is deliberately NOT listed: def:planck-time

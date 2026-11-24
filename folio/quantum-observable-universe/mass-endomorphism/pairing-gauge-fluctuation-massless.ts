@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Pure-gauge fluctuations of a pairing are zero modes of the contraction action",
   lean: {
-    ref: "qou:QOU.Variational.coevaluation_contractionAction_massless",
+    ref: "qou:TwistedFrobeniusHopf.PairingGaugeFluctuation.coevaluation_contractionAction_massless",
     validation: "not_checked",
   },
   uses: [

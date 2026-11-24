@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.Core.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
 import Mathlib.CategoryTheory.Monoidal.Types.Basic

@@ -23,7 +23,7 @@ export default remark({
   // (a,b,c) and (a',b',c') both satisfy GMO, so the relation cannot select
   // between mechanisms.
   lean: {
-    ref: "qou:QOU.Eightfold.GellMannOkuboIdentity.gmo_cannot_discriminate",
+    ref: "qou:QOU.EightfoldWay.GellMannOkuboIdentity.gmo_cannot_discriminate",
   },
   uses: [
     "prop:a2-from-three-strands",

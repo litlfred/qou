@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-beta-categorical-precision-ladder",
   lean: {
-    ref: "qou:QOU.BraidKnot.q_beta_categorical_precision_ladder",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.q_beta_categorical_precision_ladder",
     validation: "not_checked",
   },
   title:

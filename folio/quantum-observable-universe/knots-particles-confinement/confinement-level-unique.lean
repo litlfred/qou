@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.BraidKnot.ConfinementLevel
+import QOU.Core.Basic
+import QOU.BraidsAndKnots.ConfinementLevel
 
 /-!
 # QOU.BraidKnot.ConfinementLevel.unique — uniqueness of the confinement level

@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:grothendieck-group-of-a-qou",
   title: "The Grothendieck group of a quantum universe",
-  lean: { ref: "qou:QOU.GrothendieckChern.K0", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Core.GrothendieckChern.K0", validation: "not_checked" },
   uses: ["def:quantum-universe", "rem:simple-objects-V", "def:rigid-monoidal-category"],
   defines: ["grothendieck-group"],
   foreshadows: ["def:chern-character", "ex:su2-characters-and-quantum-dimension"],

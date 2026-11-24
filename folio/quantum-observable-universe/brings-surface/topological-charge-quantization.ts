@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:topological-charge-quantization",
   title: "Quantization of topological charge",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.topological_charge_quantization",
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.topological_charge_quantization",
     validation: "stub",
   },
   uses: [

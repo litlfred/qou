@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:topological-mass-eigenspace-decomp",
-  lean: { ref: "qou:QOU.LiftingDescent.tm_eigenspace_decomp_norm_le",
+  lean: { ref: "qou:QOU.LiftingDescent.LiftingDescentRoot.tm_eigenspace_decomp_norm_le",
     validation: "not_checked",
   },
   title: "Eigenspace decomposition of the mass integrand (descent involution)",

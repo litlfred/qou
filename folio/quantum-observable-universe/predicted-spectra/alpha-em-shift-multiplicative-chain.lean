@@ -21,7 +21,7 @@ a generic q-integer / q-power presentation.
 -/
 
 import Mathlib.Data.Nat.Basic
-import QOU.BraidKnot.AlphaShiftTorus.AlphaShiftTorusKnot
+import BraidKnotOctonion.AlphaShiftTorus.AlphaShiftTorusKnot
 
 namespace QOU.Archimedean.AlphaEmShiftChain
 

@@ -28,7 +28,7 @@ export default conjecture({
   title:
     "Closed-form resummation of the categorical stratum prefactors $\\alpha_k$ — geometric vs symmetric q-dilogarithm candidates",
   lean: {
-    ref: "qou:QOU.BraidKnot.AlphaKCategoricalClosure",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.AlphaKCategoricalClosure",
     validation: "not_checked",
   },
   uses: [

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:tau-M-asymptotic-rep-theory",
   lean: {
-    ref: "qou:QOU.BraidKnot.tau_M_asymptotic_rep_theory",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.tau_M_asymptotic_rep_theory",
     validation: "not_checked",
   },
   title:

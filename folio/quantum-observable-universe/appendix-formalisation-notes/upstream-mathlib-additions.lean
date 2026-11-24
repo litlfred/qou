@@ -3,8 +3,8 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.PSeries
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
-import QOU.Archimedean.ClausenFunctionMathlibFiller
-import QOU.Archimedean.ClausenDoubleAngleSeries
+import MathlibExt.ClausenFunctionMathlibFiller
+import QOU.MassTheory.ClausenDoubleAngleSeries
 
 
 /-!

@@ -1,4 +1,4 @@
-import QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction
+import QOU.BraidsAndKnots.FrobeniusSelfDualityForcesLPDualExtraction
 
 /-!
 # Spin involution + LP-dual invariance (generic theorem)

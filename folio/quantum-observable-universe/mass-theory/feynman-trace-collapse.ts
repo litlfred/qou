@@ -19,7 +19,7 @@ export default lemma({
     },
   ],
   label: "lem:feynman-trace-collapse",
-  lean: { ref: "qou:QOU.FeynmanPathIntegrals.trace_collapse",
+  lean: { ref: "qou:QOU.StandardModel.FeynmanPathIntegrals.trace_collapse",
     validation: "not_checked",
   },
   title: "Path integral collapses to a finite sum on the eigenbasis",

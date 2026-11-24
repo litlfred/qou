@@ -16,7 +16,7 @@ export default proposition({
     "hecke-algebra",
     "adjoint-character",
   ],
-  lean: { ref: "qou:QOU.Archimedean.gram_weighted_qvalue",
+  lean: { ref: "qou:QOU.MassTheory.gram_weighted_qvalue",
     validation: "not_checked",
   },
   uses: ["def:typed-garside-element"],

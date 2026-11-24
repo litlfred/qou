@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.BraidKnot.BraidLinkTypes
+import BraidKnotOctonion.BraidLinkTypes
 
 /-!
 # QOU.BraidKnot.multi_link_jones_q1_extension

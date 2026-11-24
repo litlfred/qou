@@ -1,7 +1,7 @@
 /-
 Copyright (c) 2026 Frederick Carl Leitner. All rights reserved.
 -/
-import QOU.MathlibExt.KLCoordinateLaurent
+import MathlibExt.KLCoordinateLaurent
 
 /-!
 # QOU.BraidsAndKnots.ProtonNormaliserKLCoordinate

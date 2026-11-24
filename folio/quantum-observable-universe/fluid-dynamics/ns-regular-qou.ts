@@ -16,7 +16,7 @@ export default definition({
   // the real declaration went unchecked. A sibling stub MASKS a broken library
   // ref — see bean `qou-2u26`.
   lean: {
-    ref: "qou:QOU.GaugeFieldFluidDynamics.BoundaryObservability",
+    ref: "qou:QOU.FluidDynamics.GaugeFieldFluidDynamics.BoundaryObservability",
     validation: "not_checked",
   },
   uses: ["def:q-navier-stokes"],

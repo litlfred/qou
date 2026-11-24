@@ -23,7 +23,7 @@ export default proposition({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "prop:skein-generation",
-  lean: { ref: "qou:QOU.Torsion.skein_generation",
+  lean: { ref: "qou:QOU.LiftingDescent.skein_generation",
     validation: "not_checked",
   },
   title: "The skein module of the 3-sphere is free on the unknot",

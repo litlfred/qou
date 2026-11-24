@@ -120,24 +120,17 @@ def _load_detangler() -> Any:
     return mod
 
 
-def _git_mv_or_move(src: Path, dst: Path, repo_root: Path) -> None:
+def _git_mv_or_move(src: Path, dst: Path, _repo_root: Path) -> None:
     dst.parent.mkdir(parents=True, exist_ok=True)
-    proc = subprocess.run(
-        ["git", "mv", str(src.relative_to(repo_root)), str(dst.relative_to(repo_root))],
-        cwd=repo_root,
-        capture_output=True,
-        text=True,
-    )
-    if proc.returncode != 0:
-        shutil.move(str(src), str(dst))
+    os.replace(src, dst)
 
 
 def _prune_empty_dirs(root_dir: Path, keep_top: frozenset[str] | None = None) -> int:
     removed = 0
     if not root_dir.is_dir():
         return 0
-    for dirpath, _dirnames, _filenames in sorted(os.walk(root_dir, topdown=False)):
-        p = Path(dirpath)
+    all_dirs = [Path(dp) for dp, _dn, _fn in os.walk(root_dir)]
+    for p in sorted(all_dirs, key=lambda d: (-len(d.parts), d.as_posix())):
         if p == root_dir:
             continue
         if keep_top and p.parent == root_dir and p.name in keep_top:

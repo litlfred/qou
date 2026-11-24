@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:color-elliptic",
-  lean: { ref: "qou:QOU.Brings.color_elliptic",
+  lean: { ref: "qou:BraidKnotOctonion.color_elliptic",
     validation: "not_checked",
   },
   title: "Color cubic and its elliptic curves",

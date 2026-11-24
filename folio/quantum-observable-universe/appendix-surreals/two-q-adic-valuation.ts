@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:two-q-adic-valuation",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.TwoQAdicValuation",
+    ref: "qou:QOU.Core.AlgebraicSubstrate.TwoQAdicValuation",
     validation: "not_checked",
   },
   title:

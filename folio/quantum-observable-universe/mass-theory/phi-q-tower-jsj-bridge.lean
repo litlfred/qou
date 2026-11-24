@@ -1,4 +1,4 @@
-import QOU.PhiQJSJ
+import QOU.BraidsAndKnots.PhiQJSJ
 -- brings in: without this the tactic is unknown and the lemma is unproved.
 import Mathlib.Tactic.Linarith
 

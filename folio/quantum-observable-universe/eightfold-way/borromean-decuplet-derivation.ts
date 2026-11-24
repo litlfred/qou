@@ -35,5 +35,5 @@ export default proposition({
   // topological realisation by the Borromean baryon (that is def:borromean-
   // baryon + the weight table) nor quantum Schur-Weyl duality itself
   // (chapter open problem, bean qou-8pl3); this backs the dimension shadow.
-  lean: { ref: "qou:QOU.Eightfold.RowCapObstruction.eightfold_channels_at_three" },
+  lean: { ref: "qou:MathlibExt.RowCapObstruction.eightfold_channels_at_three" },
 });

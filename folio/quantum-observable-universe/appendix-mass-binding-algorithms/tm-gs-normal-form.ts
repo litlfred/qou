@@ -44,7 +44,7 @@ export default proposition({
     },
   ],
   lean: {
-    ref: "qou:QOU.TransferMatrices.GSNormalForm.hecke_linear_mul",
+    ref: "qou:QOU.BraidsAndKnots.GSNormalForm.hecke_linear_mul",
     validation: "not_checked",
   },
   uses: [

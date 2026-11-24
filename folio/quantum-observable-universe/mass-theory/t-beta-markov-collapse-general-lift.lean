@@ -56,7 +56,7 @@ import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Module.LinearMap.Defs
 import Mathlib.Tactic.Abel
-import QOU.SchurWeyl.WtraceTwistedPositivity
+import BraidKnotOctonion.WtraceTwistedPositivity
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith

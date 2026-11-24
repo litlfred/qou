@@ -11,7 +11,7 @@ export default proposition({
     "binding",
   ],
   lean: {
-    ref: "qou:QOU.Braiding.hecke_gen_poly_reduction",
+    ref: "qou:HeckeTemperleyLieb.HeckeGenPolyReduction.hecke_gen_poly_reduction",
     validation: "not_checked",
   },
   uses: ["def:hecke-normal-form"],

@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:nuclear-knot-classification",
   title:
     "Nuclear knot classification: braid closure type determines binding scale",
-  lean: { ref: "qou:QOU.BraidKnot.nuclear_knot_classification",
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.nuclear_knot_classification",
     validation: "not_checked",
   },
   uses: ["def:hecke-mass-element"],
