@@ -1,13 +1,13 @@
 ---
 # msc1
 title: mis-aimed citations, a phantom attribution, and a weight-family collision in the Phi_q pair
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T14:05:00Z
-updated_at: 2026-10-04T15:21:36Z
+updated_at: 2026-11-24T15:33:25Z
 parent: qou-mub3
 ---
 
@@ -257,3 +257,6 @@ Merging them would collapse a lemma into its application and lose the `α_k` /
 divisor-sum content. The shared "open uniform-bound note" that made them look
 alike is one gap appearing in both, which is what a lemma and its application
 should look like.
+
+## Closed in PR #9356 (a2ad9a3b3d73, 2026-11-24)
+Resolved remaining live prose/citation/notation defects across non-fenced Phi_q and depth-filtration blocks (quantum-dilogarithm-stratified-partial-argument.md, two-filtration-bridge.md, gb-depth-period-correspondence.md): defined Z^(k)(A) directly from depth_GB(lambda) := max h(box) without phantom-attributing partition depth to #conj:curvature-rank-gb-stratification, corrected proposition -> conjecture references, made Step 3(c) explicit w_lambda(q)^(-1) per notation-collisions.md, removed two-voice self-retraction + phantom Step 3 citation, and fixed bare [bloch2000], [suslin1991], [kontsevich1995] brackets to \cite{...}. (phi-q-categorical-truncation-proof.md and spectral-sequence-collapse-proof.md were intentionally untouched to preserve 0 overlap with fenced PR #9178; notation-collisions.md already standardized bare w_lambda = w_lambda(q).)

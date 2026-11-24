@@ -1,13 +1,13 @@
 ---
 # qou-34oo
 title: 2026-07-05 delta-lambda gate-status PROBE 2 table is convention-C-frame and is being quoted as current
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T07:05:14Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-24T15:33:25Z
 parent: qou-cdx1
 ---
 
@@ -137,3 +137,6 @@ PROBE 2b's `y_λ` support under D, which is blocked on the broken producer.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8273, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## Closed in PR #9356 (a2ad9a3b3d73, 2026-11-24)
+Updated docs/audits/2026-07-05-delta-lambda-gate-status.md PROBE 2 and PROBE 2b tables, headers, and verdicts to report the regenerated canonical proton-pinned witnesses (su4-connected-1111-magnitude.witness.json: z=0.612688, |b4c|=1.17395, sum-g=2.95077, delivered x1.398, needed x2.097, del/need = 0.6664 / 33.4% short; and su4-1111-markov-trace.witness.json: unique surviving two-row partition (6,6) out of 10 in e_4[h_3], full tr_M = 0.1609741, T_[1^4] = 0.00468272 = 2.91%) alongside compact historical C-frame cross-references.
