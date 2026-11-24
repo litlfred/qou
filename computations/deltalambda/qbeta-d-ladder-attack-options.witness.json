@@ -1,6 +1,6 @@
 {
  "q0Anchor": "proton",
- "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. A manifest entry would be inert here -- the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build() -- so the declaration is made producer-side, the only route that reaches the file.",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
  "probe": "qbeta_d_ladder_attack_options",
  "bean": [
   "qou-cds1",
@@ -21,7 +21,7 @@
   {
    "name": "ASSET 2: at z_D the trefoil trace COLLAPSES to one closed-form term",
    "pass": true,
-   "detail": "Two of three terms die for INDEPENDENT reasons: chi^(2,1) = 0 exactly (a character fact, convention-free, PR #1873), and y_(1^3) = 0 under D -- which is precisely the Lean characterisation cds1 already cites, markovWeights_eq_jones_of_threeRow_eq_zero (y_(1^3) = 0 iff z = z_D), here verified against the live bridge. What remains is tr_M(trefoil)|_D = q**3*(q**4 + 1)/(q**2 + 1)**2. Under C, decayLadder_zC_threeRow_ne_zero forces y_(1^3) != 0 for every s = sqrt(q) > 1, so the C trace carries TWO terms: the C->D move changes the trace's RANK, not a parameter value. That is cds1's 'not a z-swap', and it cuts the helpful way -- the object to be re-derived under D is SMALLER than the one under C."
+   "detail": "Two of three terms die for INDEPENDENT reasons: chi^(2,1) = 0 exactly (a character fact, convention-free, PR #1873), and y_(1^3) = 0 under D -- the direction used here is D ==> TL, which is threeRow_eq_zero_of_jones_ocneanu; markovWeights_eq_jones_of_threeRow_eq_zero is its CONVERSE (TL ==> D, plus hfaith), so the iff needs both. Verified here against the live bridge. What remains is tr_M(trefoil)|_D = q**3*(q**4 + 1)/(q**2 + 1)**2. Under C, decayLadder_zC_threeRow_ne_zero forces y_(1^3) != 0 for every s = sqrt(q) > 1, so the C trace carries TWO terms: the C->D move changes the trace's RANK, not a parameter value. That is cds1's 'not a z-swap', and it cuts the helpful way -- the object to be re-derived under D is SMALLER than the one under C."
   },
   {
    "name": "OBSTRUCTION: the Habiro divisibility structure is C-specific",
@@ -31,5 +31,5 @@
  ],
  "passed": 3,
  "total": 3,
- "ms": 287
+ "ms": 228
 }
