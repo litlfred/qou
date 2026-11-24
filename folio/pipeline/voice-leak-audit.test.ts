@@ -86,14 +86,43 @@ describe("owner rulings 2a/3a/1b (exemption sets)", () => {
 });
 
 describe("owner ruling 2026-11-20 (every chapter is strict)", () => {
+  const { mkdtempSync, mkdirSync, rmSync, writeFileSync } = require("node:fs");
+  const { join, relative } = require("node:path");
   const { audit } = require("./voice-leak-audit");
-  it("no L4 hit in any chapter is advisory", async () => {
+  it("no L4 hit in any chapter is advisory (live corpus + multi-chapter fixture)", async () => {
     const { reports } = await audit("folio/quantum-observable-universe", new Set(["L4"]));
     const advisory = reports.flatMap((r: any) => r.hits).filter((h: any) => h.advisory);
     expect(advisory).toEqual([]);
     const chapters = new Set(reports.map((r: any) => r.chapter));
-    expect(chapters.size).toBeGreaterThan(2);
     expect(chapters.has("introduction")).toBe(false);
+
+    // Synthetic 3-chapter fixture so draining the live corpus to <=1 (or 0) chapters never makes this check vacuous.
+    const tmp = mkdtempSync(join(process.cwd(), "folio/.tmp-l4-test-"));
+    try {
+      for (const ch of ["introduction", "ch-early", "ch-late"]) mkdirSync(join(tmp, ch), { recursive: true });
+      const base = tmp.split("/").pop()!;
+      writeFileSync(join(tmp, `${base}.ts`), `export default { chapters: [{ dir: "introduction" }, { dir: "ch-early" }, { dir: "ch-late" }] };\n`);
+      writeFileSync(join(tmp, "introduction/introduction.ts"), `export default { sections: [{ label: "sec:intro", blocks: ["b0"] }] };\n`);
+      writeFileSync(join(tmp, "introduction/b0.ts"), `export default { label: "prose:b0" };\n`);
+      writeFileSync(join(tmp, "introduction/b0.md"), `Preview of $q$ and [later](#thm:b3).\n`);
+      writeFileSync(join(tmp, "ch-early/ch-early.ts"), `export default { sections: [{ label: "sec:pre", blocks: ["b1"] }, { label: "sec:substrate-parameter", blocks: ["b2"] }] };\n`);
+      writeFileSync(join(tmp, "ch-early/b1.ts"), `export default { label: "def:b1" };\n`);
+      writeFileSync(join(tmp, "ch-early/b1.md"), `Premature $q$ before introduction section.\n`);
+      writeFileSync(join(tmp, "ch-early/b2.ts"), `export default { label: "def:b2" };\n`);
+      writeFileSync(join(tmp, "ch-early/b2.md"), `Forward [later](#thm:b3).\n`);
+      writeFileSync(join(tmp, "ch-late/ch-late.ts"), `export default { sections: [{ label: "sec:late", blocks: ["b3", "b4"] }] };\n`);
+      writeFileSync(join(tmp, "ch-late/b3.ts"), `export default { label: "thm:b3" };\n`);
+      writeFileSync(join(tmp, "ch-late/b3.md"), `Forward [same-sec](#thm:b4).\n`);
+      writeFileSync(join(tmp, "ch-late/b4.ts"), `export default { label: "thm:b4" };\n`);
+      writeFileSync(join(tmp, "ch-late/b4.md"), `Clean block.\n`);
+      const syn = await audit(relative(process.cwd(), tmp), new Set(["L4"]));
+      expect(syn.reports.flatMap((r: any) => r.hits).filter((h: any) => h.advisory)).toEqual([]);
+      const synChapters = new Set(syn.reports.map((r: any) => r.chapter));
+      expect(synChapters.has("introduction")).toBe(false);
+      expect(synChapters.size).toBe(2);
+    } finally {
+      rmSync(tmp, { recursive: true, force: true });
+    }
   });
 });
 
