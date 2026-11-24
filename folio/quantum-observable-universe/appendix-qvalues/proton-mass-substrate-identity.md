@@ -24,6 +24,6 @@ $$
 are the categorical invariants of $H_3(q)$ recorded in
 [Borromean categorical observable](../braids-and-knots/f-bor-borromean-observable.md).*
 
-The comparison has two qualifications. First, the normaliser $[3]_q!/q^3$ in $F_{\mathrm{Bor}}$ is asserted, not derived ([normaliser conjecture](../braids-and-knots/proton-normaliser-kl-coordinate.md)). Replacing it by the bar-symmetric $[3]_q!$ moves $m_p$ by $+37\,\%$, and none of the normalisers supplied by a convention-D closure reproduces $m_p$. The identity is therefore fitted in that factor. Second, the $0.24\,\mathrm{ppm}$ residual is evaluated at the muon-pinned $q_0$. At the proton-pinned $q_0$ the identity holds exactly, because that $q_0$ is solved from it.
+The comparison has two qualifications. First, the normaliser $[3]_q!/q^3$ in $F_{\mathrm{Bor}}$ is asserted, not derived ([normaliser conjecture](../braids-and-knots/proton-normaliser-kl-coordinate.md)). Replacing it by the bar-symmetric $[3]_q!$ moves $m_p$ by $+37\,\%$, and none of the normalisers supplied by a closure at $z = q^3/(q^2+1)$ reproduces $m_p$. The identity is therefore fitted in that factor. Second, the $0.24\,\mathrm{ppm}$ residual is evaluated at the muon-pinned $q_0$. At the proton-pinned $q_0$ the identity holds exactly, because that $q_0$ is solved from it.
 
 The numerical verification, the per-order $h$-expansion, the combined nucleon-mass derivation, and the sub-ppm precision frontier are recorded in the [derivation note](#rem:proton-mass-substrate-identity-derivation).

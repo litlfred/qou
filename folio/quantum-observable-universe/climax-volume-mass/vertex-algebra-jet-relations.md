@@ -63,7 +63,7 @@ $$
   \bigr).
 $$
 
-Under Convention D ($z_D = q^3/(q^2 + 1)$), $\det G^{(n)} = 0$ identically on the full $m$-strand Hecke algebra $H_m^{(n)}(q)$ for $m \geq 3$ (the Young diagrams with at least three rows forming $\mathrm{rad}\,\mathrm{tr}_M^{(n)}$); non-degeneracy holds on the level-$n$ Temperley--Lieb quotient $\mathrm{TL}_m^{(n)}(q) := H_m^{(n)}(q)/\mathrm{rad}\,\mathrm{tr}_M^{(n)}$ of dimension $C_m$, where $\det G^{(n)}\big|_{\mathrm{TL}_m^{(n)}(q)} \neq 0$ at every brane level.
+At the Markov parameter $z = q^3/(q^2 + 1)$, $\det G^{(n)} = 0$ identically on the full $m$-strand Hecke algebra $H_m^{(n)}(q)$ for $m \geq 3$ (the Young diagrams with at least three rows forming $\mathrm{rad}\,\mathrm{tr}_M^{(n)}$); non-degeneracy holds on the level-$n$ Temperley--Lieb quotient $\mathrm{TL}_m^{(n)}(q) := H_m^{(n)}(q)/\mathrm{rad}\,\mathrm{tr}_M^{(n)}$ of dimension $C_m$, where $\det G^{(n)}\big|_{\mathrm{TL}_m^{(n)}(q)} \neq 0$ at every brane level.
 
 ### J-3: Markov trace at level $n$
 
@@ -76,19 +76,19 @@ $$
   \qquad \forall w \in H^{(n)}(q).
 $$
 
-**(J-3b) Stabilisation (Convention D)**:
+**(J-3b) Stabilisation**:
 
 $$
   \mathrm{tr}_M^{(n)}(w \cdot \sigma_m^{(n)})
   = 
-  z_D\,\mathrm{tr}_M^{(n)}(w),
+  z\,\mathrm{tr}_M^{(n)}(w),
   \qquad
   \mathrm{tr}_M^{(n)}(w \cdot \sigma_m^{(n)-1})
   = 
   z_-\,\mathrm{tr}_M^{(n)}(w),
 $$
 
-with $z_D = \dfrac{q^3}{q^2 + 1}$ and $z_- = \dfrac{1}{q(q^2 + 1)}$.
+with $z = \dfrac{q^3}{q^2 + 1}$ and $z_- = \dfrac{1}{q(q^2 + 1)}$.
 
 **(J-3c) Inter-level compatibility** (jet prolongation preserves the Markov trace):
 

@@ -12,7 +12,7 @@ This explicitly constructs weights satisfying the canonical Markov-weight hypoth
 
 - The hypothesis is satisfiable.
 - The conditional results stated under it (specifically the [canonical $(q^2-1)$ factor of the Markov trace difference](qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.md) and its corollary, vanishing at $q = 1$) are not vacuous.
-- The hypothesis accommodates the archimedean $\sqrt q$ parametrization of this auxiliary choice alongside the rational convention-D production weights.
+- The hypothesis accommodates the archimedean $\sqrt q$ parametrization of this auxiliary choice alongside the rational Wenzl–Markov weights at $z = q^3/(q^2+1)$.
 
 It does not establish:
 
@@ -32,11 +32,9 @@ $$
   y_{(1^3)} = 0 .
 $$
 
-These are exactly the convention-D values this block already quotes below.
+**Why these weights are canonical.** The Markov parameter $z = q^3/(q^2+1)$ is the $N=2$ member of the Ocneanu family $z_N = q^N/[N]_q$ — its framing ratio $a^2 = z/z_-$ is the *monomial* $q^4$, which collapses every Ocneanu numerator into quantum integers and turns the weight product into the hook-content formula $w_\lambda = \dim_q(V_\lambda^{\mathfrak{sl}_N})/[N]_q^{\,n}$ (see [Reconciliation of the Markov parameter $z$](markov-z-reconciliation.md)). Thus the three values are **derived from the trace rather than chosen to satisfy the normalisation**, and the vanishing $y_{(1^3)} = 0$ is the $\mathfrak{sl}_2$ **row bound** ($[0]_q = 0$ at content $-2$).
 
-**Why they are the canonical ones, rather than merely another solution.** Convention D is the $N=2$ member of the Ocneanu family $z_N = q^N/[N]_q$ — its framing ratio $a^2 = z/z_-$ is the *monomial* $q^4$, which collapses every Ocneanu numerator into quantum integers and turns the weight product into the hook-content formula $w_\lambda = \dim_q(V_\lambda^{\mathfrak{sl}_N})/[N]_q^{\,n}$ (see [Reconciliation of the Markov parameter $z$](markov-z-reconciliation.md)). So the three values are **derived from the trace, not chosen to satisfy the normalisation** — and the vanishing $y_{(1^3)} = 0$ is the $\mathfrak{sl}_2$ **row bound**, since a partition with more than $N$ rows has a cell of content $-N$ whose numerator factor carries $[0]_q = 0$.
-
-**Derived, not merely checked.** The three values are proved equal to the $n = 3$ Markov weights *solved* from $\mathrm{tr}_M(1) = 1$, $\mathrm{tr}_M(\sigma_1) = z$ and the Markov relation, and hence to the $n = 3$ slice of the general-$n$ Ocneanu weight at $z_D$. The family and the hook-content identification invoked in the previous paragraph are prior results; see [Reconciliation of the Markov parameter $z$](markov-z-reconciliation.md).
+**Derived from the Markov axioms.** The three values equal the unique $n = 3$ Markov weights solved from $\mathrm{tr}_M(1) = 1$, $\mathrm{tr}_M(\sigma_1) = q^3/(q^2+1)$, and the Markov relation, matching the $n = 3$ slice of the general-$n$ Ocneanu formula ([Reconciliation of the Markov parameter $z$](markov-z-reconciliation.md)).
 
 **The normalisation is an identity, not a constraint that had to be arranged.** The normalisation $y_{(3)} + 2y_{(2,1)} + y_{(1^3)} = 1$ reduces to $(q^4+1) + 2q^2 = (q^2+1)^2$, which holds for every $q$ with no positivity hypothesis — equivalently $[4]_q = ([2]_q^2 - 2)[2]_q$, so $[4]_q/[2]_q^3 = 1 - 2/[2]_q^2$.
 
@@ -44,8 +42,8 @@ These are exactly the convention-D values this block already quotes below.
 
 ## Numerical sanity check
 
-At the substrate parameter $q = q_0 \approx 1.10998$, this explicit choice's own parameter is $z(q_0) = \sqrt{q_0} / (1 + q_0) \approx 0.499$. Note that this is $1/(q^{1/2}+q^{-1/2})$, the **excised convention C** value, not the framework's production $z = q^3/(q^2+1) \approx 0.6127$; the explicit choice is a formal witness and is free to carry it, but the symbol $z$ here does not mean what it means elsewhere in the paper. The value is close to $1/2$ by accident, since $\sqrt{q_0} \approx 1.054$ and $(1 + q_0)/2 \approx 1.055$. This choice gives $y_{(3)}(q_0) \approx 0.499$, $y_{(2,1)}(q_0) \approx 0.001$, and $y_{(1,1,1)}(q_0) \approx 0.499$. The sum is $0.499 + 2(0.001) + 0.499 = 1.000$, satisfying normalisation.
+At the substrate parameter $q = q_0 \approx 1.10998$, the auxiliary function evaluates to $\sqrt{q_0} / (1 + q_0) \approx 0.499$ (distinct from the Markov parameter $q_0^3/(q_0^2+1) \approx 0.6127$), yielding $y_{(3)}(q_0) \approx 0.499$, $y_{(2,1)}(q_0) \approx 0.001$, and $y_{(1,1,1)}(q_0) \approx 0.499$, with $0.499 + 2(0.001) + 0.499 = 1.000$.
 
-The canonical Wenzl weights at $q_0$ are $y_{(3)} = [4]_q/[2]_q^3 \approx 0.5054042$, $y_{(2,1)} = 1/[2]_q^2 \approx 0.2472979$, and $y_{(1^3)} = 0$ — **convention D**, the production trace. They satisfy the normalisation $\sum_\lambda y_\lambda d_\lambda = 1$ with $d = (1, 2, 1)$ and no truncation residue. By contrast, the triple $(0.4154,\ 0.2809,\ 0.0227)$ obtained by solving the $n = 3$ Markov weights symbolically belongs to the excised **convention C** ([trace-convention registry](../../../docs/coordination/trace-convention-registry.md)).
+By contrast, the canonical Wenzl–Markov weights at $q_0$ (for $z = q^3/(q^2+1)$) are $y_{(3)} = [4]_q/[2]_q^3 \approx 0.5054042$, $y_{(2,1)} = 1/[2]_q^2 \approx 0.2472979$, and $y_{(1^3)} = 0$, satisfying $\sum_\lambda y_\lambda d_\lambda = 1$ with $d = (1, 2, 1)$ and zero truncation residue.
 
-The discrepancy between the explicit choice and the canonical Convention-D weights is concentrated on the mixed and alternating blocks: while on the symmetric block $(3)$ the auxiliary value $y_{(3)} = z(q_0) \approx 0.4993$ differs from the canonical $\approx 0.5054$ by $\approx 1.2\,\%$, on the remaining blocks the explicit choice gives $y_{(2,1)} \approx 0.0007$ against the canonical $\approx 0.2473$, and $y_{(1,1,1)} \approx 0.4993$ where the canonical weight vanishes identically. The hypothesis admits infinitely many algebraic solutions; the explicit choice witnesses its non-vacuity over $\mathbb{R}$, whereas the canonical choice supplies the unique Wenzl–Ocneanu weights of the production trace.
+The difference between the auxiliary witness and the canonical Wenzl–Markov weights is concentrated on the mixed and alternating blocks: while on the symmetric block $(3)$ the auxiliary value $y_{(3)} = z(q_0) \approx 0.4993$ differs from the canonical $\approx 0.5054$ by $\approx 1.2\,\%$, on the remaining blocks the explicit choice gives $y_{(2,1)} \approx 0.0007$ against the canonical $\approx 0.2473$, and $y_{(1,1,1)} \approx 0.4993$ where the canonical weight vanishes identically. The hypothesis admits infinitely many algebraic solutions; the explicit choice witnesses its non-vacuity over $\mathbb{R}$, whereas the canonical choice supplies the unique Wenzl–Ocneanu weights of the production trace.

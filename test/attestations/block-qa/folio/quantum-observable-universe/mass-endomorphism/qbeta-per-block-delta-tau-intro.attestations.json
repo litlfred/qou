@@ -1,0 +1,684 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro",
+    "path": "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the bare `§3b-cond` AGENTS.md tag was removed; the intro now runs from the per-block closed forms to the canonical-weight vanishing with no branch tag.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f1c6382e1f2e",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f1c6382e1f2e",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies milnor-brevity. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract calculation securely factoring local limits consistently inside defined representation traces.",
+        "reviewed_at": "2026-07-08T14:21:54.000Z",
+        "reviewed_sha": "cbd47e5031c1ea1eb0fda42aa55439007de3d4e7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.531Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.572Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.613Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.653Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.695Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.736Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.775Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.815Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.858Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "76a2185b1099",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.897Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a three-paragraph section intro (prose block, no label prefix required). Every forward reference resolves to a block in this batch and each characterisation is accurate: the per-block chi_lambda closed forms do vanish at q=1 (shared (q^2-1) factor, verified); the (q^2-1) factor of Delta tr_M IS conditional on canonical weights and is correctly described as such; the explicit sqrt(q)-bearing instance does inhabit the class. The closing 'In contrast, the downstream extraction itself relies on calibration anchoring' is a substantive and honest scope statement, not a rhetorical pivot -- it concedes that the c_k extraction is anchor-dependent, which matches the corpus. No em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain. Only cosmetic: trailing whitespace after 'through the T_beta endomorphism.'",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ]
+  }
+}

@@ -350,7 +350,7 @@
 | [prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification) | $\mathbb{Z}_5$-weight identification: $x$ on $\mathcal{X}_5$ matches $w_1$ on Bring | Ch 6 |
 | [prop:qbeta-c8-c10-silver-rationals](#prop:qbeta-c8-c10-silver-rationals) | $\mathfrak{Q}_\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2 | Ch 11 |
 | [prop:q-beta-categorical-precision-ladder](#prop:q-beta-categorical-precision-ladder) | $\mathfrak{Q}_\beta$ categorical-derivation precision ladder | Ch 11 |
-| [prop:q-beta-cos-resummation](#prop:q-beta-cos-resummation) | $\mathfrak{Q}_\beta$ cos-resummation in convention D: $\mathfrak{Q}_\beta^{\cos} = \mathfrak{Q}_\beta^{\mathrm{base}} \cdot \cos((z_D-1)h/2)$ (conditional on the transfer-matrix eigenphase identification) | Ch 12 |
+| [prop:q-beta-cos-resummation](#prop:q-beta-cos-resummation) | $\mathfrak{Q}_\beta$ cos-resummation at $z = q^3/(q^2+1)$: $\mathfrak{Q}_\beta^{\cos} = \mathfrak{Q}_\beta^{\mathrm{base}} \cdot \cos((z-1)h/2)$ (conditional on the transfer-matrix eigenphase identification) | Ch 12 |
 | [prop:q-beta-bar-even-kernel-typeclass](#prop:q-beta-bar-even-kernel-typeclass) | $\mathfrak{Q}_\beta$ formalize-first unified typeclass — `BarEvenKernel` bundles all four $\S 4$ invariants (bar-even, radius-of-convergence, q=1 shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt | Ch 27 |
 | [prop:q-beta-bar-even-kernel-invariant](#prop:q-beta-bar-even-kernel-invariant) | $\mathfrak{Q}_\beta$ precision-ladder $\bar{}$-even discriminant — the kernel $R(q,\xi)$ produces a clean integer-$u$ ladder $\prod_k(1+c_k\,u^k)$ if and only if $R$ is even under $t \mapsto -t$ ($t = q-1$); $(1-u^2)$ at N=2 is the prototype | Ch 11 |
 | [prop:q-beta-q-eq-one-shadow-gate](#prop:q-beta-q-eq-one-shadow-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \to -1$ (the structural N=2 anchor) and $c_3 \to J_{\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED | Ch 11 |
@@ -358,8 +358,8 @@
 | [prop:tau-M-asymptotic-rep-theory](#prop:tau-M-asymptotic-rep-theory) | $\mathrm{tr}_M^{V_\lambda}(\beta) = \mathrm{Tr}\,\rho_\lambda(\beta) \cdot \cos(\alpha_\lambda - b_\lambda\hbar_q^2/2) \cdot \prod_k(1 + c_k^{(\lambda)} u_\lambda^k)$: canonical $u$-ladder of the Markov-traced character | Ch 9 |
 | [prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction) | $\mathrm{U}(1)$-equivariant reduction of the exceptional divisor | Ch 2 |
 | [prop:vol-through-tau](#prop:vol-through-tau) | $\mathrm{Vol}(K)$ factors strictly through the fibre functor $\tau$ | Ch 11 |
-| [prop:isospin-singlet-binds-more](#prop:isospin-singlet-binds-more) | $\mu_- < \mu_+$ for every $q>0$ under convention D: the isospin singlet is always the more strongly bound channel | Ch 12 |
-| [prop:branching-identity-isospin-weights](#prop:branching-identity-isospin-weights) | $\mu_+ = y_{(3)} + y_{(2,1)}$, $\mu_- = y_{(2,1)} + y_{(1^3)}$ --- hence under convention D the singlet draws nothing from the radical | Ch 12 |
+| [prop:isospin-singlet-binds-more](#prop:isospin-singlet-binds-more) | $\mu_- < \mu_+$ for every $q>0$ at $z = q^3/(q^2+1)$: the isospin singlet is always the more strongly bound channel | Ch 12 |
+| [prop:branching-identity-isospin-weights](#prop:branching-identity-isospin-weights) | $\mu_+ = y_{(3)} + y_{(2,1)}$, $\mu_- = y_{(2,1)} + y_{(1^3)}$ --- hence at $z = q^3/(q^2+1)$ the singlet draws nothing from the radical | Ch 12 |
 | [prop:phi-q-aj-machinery-identification](#prop:phi-q-aj-machinery-identification) | $\Phi_q$ / $\mathrm{Li}_2^q$ machinery is the AJ-conjecture machinery | Ch 19 |
 | [prop:he4-channel-active-set](#prop:he4-channel-active-set) | $^4\mathrm{He}$ operator-selection LP: primal $\mathrm{T} \oplus p$, active set $\{\mathrm{D} \oplus \mathrm{D},\,{}^3\mathrm{He} \oplus n\}$ | Ch 11 |
 | [prop:a-8-partition-function-identity](#prop:a-8-partition-function-identity) | $a_8$ partition-function identity: $a_8(X) = \sum_{n=1}^{5} p(n)\,X^{5-n}$ | Ch 11 |
@@ -734,7 +734,7 @@
 | [prop:p-bandwidth-bound](#prop:p-bandwidth-bound) | Polynomial computation as sub-horizon bandwidth | Ch 20 |
 | [prop:q-rogers-pentagon-archimedean](#prop:q-rogers-pentagon-archimedean) | Post-τ pentagon = pre-τ pentagon + q-log² Rogers correction | Ch 11 |
 | [prop:habiro-precision-ladder-equivalence](#prop:habiro-precision-ladder-equivalence) | Precision-ladder coefficients are Habiro integer evaluations | Ch 11 |
-| [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass endomorphism tower (convention D, $\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm | Ch 11 |
+| [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass endomorphism tower ($z = q^3/(q^2+1)$, $\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm | Ch 11 |
 | [prop:cl3-zeta5-pslq-independence](#prop:cl3-zeta5-pslq-independence) | PSLQ certifies Cl$_3$(2$\pi$/5) $-$ Cl$_3$(4$\pi$/5) is independent of standard depth-3 periods up to coefficient norm 10$^8$ | Ch 11 |
 | [prop:pairing-gauge-fluctuation-massless](#prop:pairing-gauge-fluctuation-massless) | Pure-gauge fluctuations of a pairing are zero modes of the contraction action | Ch 9 |
 | [prop:meson-qcg-fusion-identity](#prop:meson-qcg-fusion-identity) | q-Clebsch–Gordan fusion identity $[3]_q\cdot[4]_q = [2]_q + [4]_q + [6]_q$ | Ch 5 |
@@ -1030,7 +1030,7 @@
 | [conj:electroweak-higgs-torus-link-triplet](#conj:electroweak-higgs-torus-link-triplet) | $(W^\pm, Z, H) \leftrightarrow (T(2,4), T(2,6), T(2,8))$ — non-Bring even-twist 2-component torus-link triplet | Ch 7 |
 | [conj:cp-violation-spectral-form](#conj:cp-violation-spectral-form) | $\delta_{\mathrm{CP}}$ as imaginary part of the alternating-block character | Ch 15 |
 | [conj:flavor-split-substrate-mass](#conj:flavor-split-substrate-mass) | The nucleon mass split equals the substrate flavor-split formula | Ch 15 |
-| [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{substrate}}$ (convention-C frame) | Ch 11 |
+| [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{substrate}}$ ($z = \sqrt{q}/(q+1)$ frame) | Ch 11 |
 | [conj:p-vs-np-boundary](#conj:p-vs-np-boundary) | $\mathrm{P} \neq \mathrm{NP}$ as jet horizon opacity | Ch 20 |
 | [conj:qou-p-neq-np](#conj:qou-p-neq-np) | $\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$ | Ch 20 |
 | [conj:q-geometric-langlands](#conj:q-geometric-langlands) | $q$-Geometric Langlands correspondence | Ch 22 |
@@ -1076,7 +1076,7 @@
 | [conj:complex-chirality-rotation](#conj:complex-chirality-rotation) | Chirality as continuous phase rotation in the pre-observable sector | Ch 15 |
 | [conj:q-gl-classical-limit](#conj:q-gl-classical-limit) | Classical limit of the $q$-Geometric Langlands correspondence | Ch 22 |
 | [conj:classical-limit-stpart](#conj:classical-limit-stpart) | Classical-limit functor as standard-part of evaluation at $q = 1 + \varepsilon$ | Ch 25 |
-| [conj:qbeta-c-k-closed-forms](#conj:qbeta-c-k-closed-forms) | Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\mathfrak{Q}_\beta$ precision ladder (convention-C frame) | Ch 9 |
+| [conj:qbeta-c-k-closed-forms](#conj:qbeta-c-k-closed-forms) | Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\mathfrak{Q}_\beta$ precision ladder ($z = \sqrt{q}/(q+1)$ frame) | Ch 9 |
 | [conj:alpha-k-categorical-closure](#conj:alpha-k-categorical-closure) | Closed-form resummation of the categorical stratum prefactors $\alpha_k$ — geometric vs symmetric q-dilogarithm candidates | Ch 11 |
 | [conj:color-superconductivity-borromean](#conj:color-superconductivity-borromean) | Color superconductivity as Borromean-to-Hopf topological reconfiguration | Ch 15 |
 | [conj:sm-colour-stabilizer-action](#conj:sm-colour-stabilizer-action) | Colour stabilizer action on the state space | Toward the Standard Model |
@@ -1201,7 +1201,7 @@
 | [conj:spin-from-so3-fiber](#conj:spin-from-so3-fiber) | Spin $\mathrm{SU}(2)_S$ from full $\mathrm{SO}(3)$ fiber action on color-sheet rotations | Ch 12 |
 | [conj:shell-transition-knot](#conj:shell-transition-knot) | Stability pairs from Borromean spin-orbit shell-transition knots | Ch 7 |
 | [conj:staircase-ew-residual](#conj:staircase-ew-residual) | Staircase EW-residual: $q^{1/(2k-1)}$ as pairwise eigenvalue ratio of $\beta_{\mathrm{EW}}$ on $V_{\rho_k}$ | Ch 11 |
-| [conj:sigma-shell-from-beta-chain-derivation](#conj:sigma-shell-from-beta-chain-derivation) | Staircase-partition closed form for the $\sigma_{\mathrm{shell}}$ magnitude (convention C; identically zero under convention D) | Ch 11 |
+| [conj:sigma-shell-from-beta-chain-derivation](#conj:sigma-shell-from-beta-chain-derivation) | Staircase-partition closed form for the $\sigma_{\mathrm{shell}}$ magnitude (at $z = \sqrt{q}/(q+1)$; identically zero at $z = q^3/(q^2+1)$) | Ch 11 |
 | [conj:sm-gauge-truncation](#conj:sm-gauge-truncation) | Standard-Model truncation: $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ in the archimedean gauge image | Toward the Standard Model |
 | [conj:rho-prefactor-structural](#conj:rho-prefactor-structural) | Structural prefactor rule: $\rho(\mathfrak{H}) = \dim_q(\lambda^*(T_w))$ | Ch 11 |
 | [conj:composite-crossing-parity](#conj:composite-crossing-parity) | Sublimation from shell-filling representation theory | Ch 20 |

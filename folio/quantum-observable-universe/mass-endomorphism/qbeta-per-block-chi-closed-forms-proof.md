@@ -23,12 +23,12 @@ This identity is an equality of rational functions. This surrogate is not the ca
 
 **Extension 3.** The invariant that $\Delta\mathrm{tr}_M$ lacks $\sqrt q$ terms holds automatically here: once $\Delta\mathrm{tr}_M^{\text{surr}} : \mathbb{R} \to \mathbb{R}$ is built from polynomial inputs, it is rational by construction.
 
-**Extension 4: Canonical trace (conditional class and its canonical instance).** The Wenzl–Markov weights are taken as a hypothesis, subject to the single dimension-normalisation condition $y_{(3)} + 2y_{(2,1)} + y_{(1^3)} = 1$. The canonical trace difference is defined conditionally on these weights, and its vanishing at $q = 1$ reduces to the vanishing of the block characters at $q = 1$. The hypothesis is satisfied by the convention-D weights, at the Markov parameter $z = q^3/(q^2+1)$:
+**Extension 4: Canonical trace (conditional class and its canonical instance).** The Wenzl–Markov weights are taken as a hypothesis, subject to the single dimension-normalisation condition $y_{(3)} + 2y_{(2,1)} + y_{(1^3)} = 1$. The canonical trace difference is defined conditionally on these weights, and its vanishing at $q = 1$ reduces to the vanishing of the block characters at $q = 1$. The hypothesis is satisfied by the canonical Wenzl–Markov weights at $z = q^3/(q^2+1)$:
 
 $$
 y_{(3)}(q) = \frac{q^4+1}{(q^2+1)^2}, \qquad y_{(2,1)}(q) = \frac{q^2}{(q^2+1)^2}, \qquad y_{(1^3)}(q) = 0.
 $$
 
-These weights are rational in $q$, so no $\sqrt q$ appears. The normalisation is the identity $(q^4+1) + 2q^2 = (q^2+1)^2$. These weights are exactly the solved Markov weights at $z_D$. The earlier archimedean parameter $z(q) = \sqrt q/(1+q) = 1/(\sqrt q + 1/\sqrt q)$ is the convention-C value; it is retained only as a historical identity and does not enter the canonical weights.
+These weights are rational in $q$, so no $\sqrt q$ appears. The normalisation is the identity $(q^4+1) + 2q^2 = (q^2+1)^2$. These weights are the unique solved Markov weights at $z = q^3/(q^2+1)$.
 
 **Extension 5: $z$-recursion class.** Consider the three-term recursion $4(n+1)a_{n+1} + 6na_n + (2n-1)a_{n-1} = 0$ on the Taylor coefficients of $z(q)$ at $q = 1$, with seeds $a_0 = 1/2$ and $a_1 = 0$. Strong induction with a linear-solve step proves that its solution is unique. This auxiliary recursion supports the general $c_k$ ladder recursion ([$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)).

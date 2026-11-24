@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: the LP strong-duality row no longer carries \"(**§3b-cond**)\", so the index no longer inherits an agent-instruction section number from the definition title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: the LP strong-duality row no longer carries \"(**\u00a73b-cond**)\", so the index no longer inherits an agent-instruction section number from the definition title.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -49,6 +49,36 @@
         "reviewed_at": "2026-11-20T17:44:34.630Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. No instance in the header line; table titles are reviewed on their own blocks."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -81,6 +111,36 @@
         "reviewed_at": "2026-11-20T17:44:34.654Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. No instance in the header line; table titles are reviewed on their own blocks."
       }
     ],
     "trap-em-dash": [
@@ -113,6 +173,36 @@
         "reviewed_at": "2026-11-20T17:44:34.678Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. No instance in the header line; table titles are reviewed on their own blocks."
       }
     ],
     "trap-triples": [
@@ -145,6 +235,36 @@
         "reviewed_at": "2026-11-20T17:44:34.705Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. No instance in the header line; table titles are reviewed on their own blocks."
       }
     ],
     "trap-closing-aphorism": [
@@ -177,6 +297,36 @@
         "reviewed_at": "2026-11-20T17:44:34.729Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. No instance in the header line; table titles are reviewed on their own blocks."
       }
     ],
     "trap-meta-commentary": [
@@ -209,6 +359,36 @@
         "reviewed_at": "2026-11-20T17:44:34.754Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. No instance in the header line; table titles are reviewed on their own blocks."
       }
     ],
     "trap-thesis-restatement": [
@@ -241,6 +421,36 @@
         "reviewed_at": "2026-11-20T17:44:34.778Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. No instance in the header line; table titles are reviewed on their own blocks."
       }
     ],
     "trap-performed-warmth": [
@@ -273,6 +483,36 @@
         "reviewed_at": "2026-11-20T17:44:34.801Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. No instance in the header line; table titles are reviewed on their own blocks."
       }
     ],
     "trap-superlative": [
@@ -305,6 +545,36 @@
         "reviewed_at": "2026-11-20T17:44:34.829Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. No instance in the header line; table titles are reviewed on their own blocks."
       }
     ],
     "trap-nonspeakable": [
@@ -353,6 +623,36 @@
         "reviewed_at": "2026-11-20T17:44:34.854Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Generated index table; the only authored sentence is the entry count. Row titles belong to their own blocks."
+      },
+      {
+        "field_hash": {
+          "md": "e3e3638b87be",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the two rows this PR changed (prop:terminal-resolution -> 'Nucleon masses under the pair Skein formula'; ex:terminal-resolution-cz -> 'Lepton mass ratios in C[z]'). Both titles match the restated blocks and are neutral noun phrases; no trap pattern in the changed rows. Rest of the index unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "a760daf91273",
+          "ts": "7fee11b7a7b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:10:00.000Z",
+        "reviewed_sha": "10cde9ff4e98930b24cf5f88d4ef90ad6a0dfe00",
+        "evidence": "Generated index prose:definition-index at 10cde9ff4e9. The only line that differs from origin/main is the header count (1320 -> 1321); the table rows are titles of other blocks. minor, not a voice issue: after the main merge the header says 1321 but the file has 1322 '| [' rows (main added conj:confinement-phase-boundaries; main itself reads 1320 against 1322)."
       }
     ],
     "does_not_default_to_float": [

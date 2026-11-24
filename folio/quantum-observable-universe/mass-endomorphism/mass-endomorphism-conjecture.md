@@ -15,7 +15,7 @@ The scope of this conjecture is as follows:
     \Bigr).
   $$
 
-  This series decomposition combines the single-level Markov trace with the brane-tower quantum-dilogarithm sum and Frobenius co-Casimir pairing under convention D. It does not depend on the closed-form conjecture below; every algebraic result that relies on the mass tower routes through this infinite series.
+  This series decomposition combines the single-level Markov trace with the brane-tower quantum-dilogarithm sum and Frobenius co-Casimir pairing at $z = q^3/(q^2+1)$. It does not depend on the closed-form conjecture below; every algebraic result that relies on the mass tower routes through this infinite series.
 
 - **Convenience target** (the conjectural content here): The conjecture posits the existence of a single finite-rank Hecke element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
 

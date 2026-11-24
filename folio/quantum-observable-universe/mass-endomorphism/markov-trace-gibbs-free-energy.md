@@ -24,8 +24,8 @@ formal. The second prerequisite is positivity, and it fails outright.
 
 A partition function is a sum of **positive** Boltzmann factors, and that
 positivity is what makes $F$ a Legendre transform — hence what makes "energy and
-information appear Legendre-dual" a structure rather than a picture. Under
-convention D the $H_2$ state sum is
+information appear Legendre-dual" a structure rather than a picture. At
+$z = q^3/(q^2+1)$ the $H_2$ state sum is
 $w_+(q + d) + w_-(-q^{-1} + d)$, and its second summand is **negative** for every
 bond and every $q > 0$: positivity would need $d > q^{-1} > 0$, while the
 interface letters are $d \in \{0, -h/2, d_{pn}, -h\}$, all non-positive. So the

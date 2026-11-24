@@ -16,4 +16,4 @@ $$
 c_5^{\mathrm{dec}}(q) \;=\; -\tfrac{3}{2} + \frac{1}{[2]_q^{2}} .
 $$
 
-*This statement does not identify $c_5^{\mathrm{dec}}$ with the rung-5 coefficient $c_5$ of the [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder); that identification is a separate, unproved claim, and the ladder itself is to be re-derived under convention D. At the silver ratio $q = 1+\sqrt2$ the pure-$\sigma$ part evaluates to $-b^2 = -7/8$ ([**Silver-ratio trace degeneracy**](#prop:silver-ratio-beta-decay-null)).*
+*This statement does not identify $c_5^{\mathrm{dec}}$ with the rung-5 coefficient $c_5$ of the [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder); that identification is a separate, unproved claim, and the ladder itself requires re-derivation at $z = q^3/(q^2+1)$. At the silver ratio $q = 1+\sqrt2$ the pure-$\sigma$ part evaluates to $-b^2 = -7/8$ ([**Silver-ratio trace degeneracy**](#prop:silver-ratio-beta-decay-null)).*
