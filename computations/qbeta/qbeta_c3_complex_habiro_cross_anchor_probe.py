@@ -95,7 +95,7 @@ _Q_MUON_VALIDATION   = mp.mpf("1.10997859555")
 # comparison targets for the candidate complex-Habiro forms tested below.
 # Not a substrate input.
 _C3_PROTON_EMP_VALIDATION = mp.mpf("-2.0693")
-_C3_MUON_EMP_VALIDATION   = mp.mpf("-2.0097")
+_C3_MUON_EMP_VALIDATION   = mp.mpf("-2.02021628175615")
 
 
 def candidate_A(q, q_pole):

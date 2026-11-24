@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T04:47:16.966155+00:00",
-  "commitSha": "6dfcfa444fbc7abf75b5dd82b93000cbfb52bd7d",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-15T17:05:03.354490+00:00",
+  "commitSha": "5d77048be19c17d5c01d7912c401a07df057e66d",
   "assertions": [
     {
       "name": "c3_habiro_3rung_tracks_empirical_across_anchors",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 10,
   "computation": "qbeta-c3-habiro-3rung-crossanchor-rigidity",
   "scriptFile": "qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py",
-  "scriptHash": "41ab5866c578",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "d6e9db01475e",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -47,15 +45,15 @@
     "c3_formula_proton": "-2.06934806247249333267102942082213995621957576140770579731599",
     "c3_formula_muon": "-2.06934807535463397766669417726357003562651681533097609842468",
     "c3_empirical_proton": "-2.0693",
-    "c3_empirical_muon": "-2.0097",
+    "c3_empirical_muon": "-2.01986031187401",
     "err_proton_pct": -0.0023226440097295063,
-    "err_muon_pct": -2.9680089244481254,
+    "err_muon_pct": -2.450058708996051,
     "formula_swing_pct": 6.225216955336096e-07,
-    "empirical_swing_pct": -2.8802010341661433,
-    "swing_ratio_formula_over_empirical": -2.1613827928988226e-07,
-    "mismatch_factor_empirical_over_formula": 4626667.720708608,
+    "empirical_swing_pct": -2.3891986723041607,
+    "swing_ratio_formula_over_empirical": -2.6055668904806695e-07,
+    "mismatch_factor_empirical_over_formula": 3837936.3955439352,
     "tracks_across_anchors": false,
-    "interpretation": "The real-q 3-rung [3]_q/25 c_3 closure swings +6.23e-07% across the two anchors while empirical c_3 swings -2.88% (ratio -2.16e-07). The formula is RIGID; it reproduces empirical c_3 only at the proton anchor (miss -2.97% at muon). This CONFIRMS [3]_q/25 is a proton-anchor NEAR-MATCH, not a real-q fibre element — consistent with the known impossibility of a real-q c_3=f(q) matching multiple anchors (AGENTS.md). The genuine Habiro element, if it exists, is complex-analytic / root-of-unity. Falsification test; no fit, no production change."
+    "interpretation": "The real-q 3-rung [3]_q/25 c_3 closure swings +6.23e-07% across the two anchors while empirical c_3 swings -2.39% (ratio -2.61e-07). The formula is RIGID; it reproduces empirical c_3 only at the proton anchor (miss -2.45% at muon). This CONFIRMS [3]_q/25 is a proton-anchor NEAR-MATCH, not a real-q fibre element — consistent with the known impossibility of a real-q c_3=f(q) matching multiple anchors (AGENTS.md). The genuine Habiro element, if it exists, is complex-analytic / root-of-unity. Falsification test; no fit, no production change."
   },
   "q0Anchor": "comparison",
   "q0Values": {

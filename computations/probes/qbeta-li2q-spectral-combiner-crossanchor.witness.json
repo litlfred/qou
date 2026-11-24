@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:23:18.729107+00:00",
-  "commitSha": "d8cdeb5f5d0ee218277c97986eeb4c8f37162ca4",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T17:05:04.252266+00:00",
+  "commitSha": "5d77048be19c17d5c01d7912c401a07df057e66d",
   "assertions": [
     {
       "name": "spectral_measure_normalised_at_both_anchors",
@@ -14,11 +14,11 @@
     },
     {
       "name": "candidate_swing_is_q_independent",
-      "computed": "2.705425e-09",
+      "computed": "3.261414e-09",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-4",
-      "source": "|candidate swing / empirical swing| = 2.7054e-09; the candidate moves -7.79e-09% between the anchors while the empirical c_3 moves -2.8802%. Above the pre-registered 1e-4 the verdict switches to anchor-precision-limited"
+      "source": "|candidate swing / empirical swing| = 3.2614e-09; the candidate moves -7.79e-09% between the anchors while the empirical c_3 moves -2.3892%. Above the pre-registered 1e-4 the verdict switches to anchor-precision-limited"
     },
     {
       "name": "c3_candidate_miss_at_proton_anchor_pct",
@@ -26,15 +26,15 @@
       "expected": "13.14",
       "passed": true,
       "tolerance": "0.01",
-      "source": "(c_3 candidate − c_3 empirical)/|c_3 empirical| at q_proton = +13.1356%; the '13% miss' the structural refutation rests on, and 4.6× the whole proton-to-muon anchor swing"
+      "source": "(c_3 candidate − c_3 empirical)/|c_3 empirical| at q_proton = +13.1356%; the '13% miss' the structural refutation rests on, and 5.5× the whole proton-to-muon anchor swing"
     }
   ],
   "allPassed": true,
-  "durationMs": 62,
+  "durationMs": 61,
   "computation": "qbeta-li2q-spectral-combiner-crossanchor",
   "scriptFile": "qbeta_li2q_spectral_combiner_crossanchor_probe.py",
-  "scriptHash": "a7ed01aa4c69",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "ae01be88d136",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -95,17 +93,17 @@
         "(1,1,1)": "0.3204482618513663962588332577849084040502813396694373333291912326593379"
       },
       "c3_candidate": "-1.797484591078785698031075940207843222851412142153080089881687319541802",
-      "c3_empirical": "-2.0097",
-      "err_pct": 10.559556596567363
+      "c3_empirical": "-2.01986031187401",
+      "err_pct": 11.009460381391717
     },
     "cross_anchor_analysis": {
       "candidate_swing_abs": "-0.0000000001400630013043713624264169782409248307106771449070315760788704464032485",
       "candidate_swing_pct": -7.792167008752861e-09,
-      "empirical_swing_abs": "-0.05959999999999999999999999999999999999999999999999999999999999999999999",
-      "empirical_swing_pct": -2.8802010341661433,
-      "swing_ratio_candidate_to_empirical": 2.7054246965121303e-09,
+      "empirical_swing_abs": "-0.04943968812598999999999999999999999999999999999999999999999999999999999",
+      "empirical_swing_pct": -2.3891986723041607,
+      "swing_ratio_candidate_to_empirical": 3.2614144227855436e-09,
       "interpretation_pre_stated": "If swing_ratio << 1: candidate q-independent ⟹ structural refutation strong (13% mismatch is real). If swing_ratio ≈ 1: anchor-precision-limited (extraction noise). If swing_ratio >> 1: candidate has wrong q-dependence direction.",
-      "verdict": "STRUCTURAL REFUTATION CONFIRMED — candidate is essentially q-independent (swing 7.79e-09% << empirical -2.8802%). The 13% miss at q_proton reflects a TRUE structural mismatch, not extraction noise. Refutation stands strong."
+      "verdict": "STRUCTURAL REFUTATION CONFIRMED — candidate is essentially q-independent (swing 7.79e-09% << empirical -2.3892%). The 13% miss at q_proton reflects a TRUE structural mismatch, not extraction noise. Refutation stands strong."
     },
     "upstream_witness_hashes": [
       {
