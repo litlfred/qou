@@ -624,7 +624,7 @@ as it works.
 | agent | owns |
 |---|---|
 | `lean-verifier` | olean cache restore, `lean`-direct verification, sorry/axiom status |
-| `corpus-grepper` | the six-path checklist before anything is declared open / refuted |
+| `corpus-grepper` | the seven-path checklist before anything is declared open / refuted |
 | `compute-precision-auditor` | the NO-FLOAT64 gate family, witness staleness, producer health |
 | `convention-auditor` | convention C vs D, the muon/proton q₀ pin, Λ vs Cl₂, layer straddles |
 | `merge-coordinator` | branch/PR policy, sibling coordination, drive-to-green |
@@ -2095,10 +2095,34 @@ corpus — run the **corpus-grep checklist**:
    The trail to it ran `qou-8pl3` → `qou-8p1i` (scrapped) → `qou-dwsh`,
    i.e. through exactly the two statuses this note says to read.
 
-Only after **all six** grep paths return empty (modulo the
-originating file itself) may you declare the item open. Step 0 is not a
-seventh gate — it is the step that most often stops you needing the other
-six, and an empty result from it is not by itself a licence to declare
+7. **The block's own QA sidecar — read it before any grep (owner-approved
+   2026-11-22, bean `qou-tv74`).** When the item is about a specific content
+   block, open `<block>.qa.json` beside its `.md` and read every entry whose
+   `reviewer.kind` is `"agent"`:
+
+   ```sh
+   jq -r '.criteria | to_entries[] | .key as $k | .value[]
+          | select(.reviewer.kind=="agent")
+          | "\($k) [\(.result)] \(.reviewed_at): \(.evidence // .notes // "")"' \
+     folio/<paper>/<chapter>/<block>.qa.json
+   ```
+
+   Paths 1–6 cannot reach these verdicts. The sidecar sits under `folio/`,
+   but its analysis is one escaped JSON string keyed by a criterion name
+   (`trap-superlative`, `voice-branch-jargon`), not by the topic, and an
+   agent verdict is filed under whichever criterion invoked it, not the one
+   its content belongs to. Worked case: the sidecar of
+   `unified-iterative-correction-table-data` held, under the voice criterion
+   `trap-superlative`, a numerical analysis of that table's unexplained
+   fourth column, written four weeks before a hunt for the table's producer
+   ran paths 1–6 to completion and came back empty. Treat a verdict as a
+   prior agent's analysis: check its `field_hash` against the current block
+   before relying on it, since a changed block may have outdated it.
+
+Only after **all seven** paths return empty (modulo the
+originating file itself) may you declare the item open. Step 0 is not an
+eighth gate — it is the step that most often stops you needing the other
+seven, and an empty result from it is not by itself a licence to declare
 anything, because a graph that was never generated is silently empty. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
