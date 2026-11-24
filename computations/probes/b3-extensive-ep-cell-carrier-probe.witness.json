@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-24T16:31:06.831801+00:00",
-  "commitSha": "742bffc214164a6be7bafa1ed783bc5ab5b6ad68",
+  "computedAt": "2026-11-24T16:32:53.697909+00:00",
+  "commitSha": "0db7c4f867fba8da49dabf15a9562aa7107210e5",
   "assertions": [
     {
       "name": "route_a_nonbraid_hecke_and_layered_b3_neg_26",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2624,
+  "durationMs": 2212,
   "computation": "b3-extensive-ep-cell-carrier-probe",
   "scriptFile": "b3_extensive_ep_cell_carrier_probe.py",
   "scriptHash": "2e781ca7cd9c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "0db7c4f867fba8da49dabf15a9562aa7107210e5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
