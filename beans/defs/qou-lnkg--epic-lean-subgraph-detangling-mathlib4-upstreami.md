@@ -1,11 +1,11 @@
 ---
 # qou-lnkg
 title: 'EPIC: Lean Topical Subgraph Detangling, Mathlib4 Upstreaming Preparation, KG Detangler Skill Upgrade, & Lean Libraries Annex'
-status: in-progress
+status: completed
 type: epic
 priority: high
 created_at: 2026-11-23T20:22:30Z
-updated_at: 2026-11-23T23:30:34Z
+updated_at: 2026-11-24T16:19:36Z
 parent: qou-hksc
 ---
 
@@ -42,3 +42,5 @@ Target is **NOT** forcing every specialized mathematical theorem directly into m
    - `QCalculus` (Thomae-Jackson `q`-calculus, `q`-IBP, quantum dilogarithms)
    - `BraidKnotOctonion` (PL knot topology & `Delta`-moves, braid invariants, Milnor `mu_123`, octonions `O` & `g_2`, Bring curve)
 All Tier-A and Tier-B subgraphs enforce `Mathlib4` naming, docstring, minimal-import, `#lint`, and §7c typeclass-generality standards, and are documented in the Lean Libraries Annex (`qou-lanx`).
+
+Closed post-merge: landed on origin/main in PR #9364 (559a7210bf5).
