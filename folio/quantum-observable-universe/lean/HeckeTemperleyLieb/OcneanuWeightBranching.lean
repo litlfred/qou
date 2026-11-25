@@ -56,7 +56,7 @@ open YoungDiagram Finset QOU.QBeta.WenzlWeight
 variable {m k : ℕ}
 
 def twoRow (m k : ℕ) (h : k ≤ m) : YoungDiagram :=
-  ofRowLens [m, k] (by simp [List.Sorted]; omega)
+  ofRowLens [m, k] (by rw [List.sortedGE_iff_pairwise]; simpa using h)
 
 theorem mem_twoRow (h : k ≤ m) (i j : ℕ) :
     ((i, j) ∈ twoRow m k h) ↔ (i = 0 ∧ j < m) ∨ (i = 1 ∧ j < k) := by
@@ -68,11 +68,11 @@ theorem mem_twoRow (h : k ≤ m) (i j : ℕ) :
   · rintro (⟨rfl, h2⟩ | ⟨rfl, h2⟩) <;> exact ⟨by simp, by simpa using h2⟩
 
 theorem rowLen_twoRow_zero (h : k ≤ m) : (twoRow m k h).rowLen 0 = m := by
-  have := YoungDiagram.rowLen_ofRowLens (w := [m,k]) (hw := by simp [List.Sorted]; omega) ⟨0, by simp⟩
+  have := YoungDiagram.rowLen_ofRowLens (w := [m,k]) (hw := by rw [List.sortedGE_iff_pairwise]; simpa using h) ⟨0, by simp⟩
   simpa [twoRow] using this
 
 theorem rowLen_twoRow_one (h : k ≤ m) : (twoRow m k h).rowLen 1 = k := by
-  have := YoungDiagram.rowLen_ofRowLens (w := [m,k]) (hw := by simp [List.Sorted]; omega) ⟨1, by simp⟩
+  have := YoungDiagram.rowLen_ofRowLens (w := [m,k]) (hw := by rw [List.sortedGE_iff_pairwise]; simpa using h) ⟨1, by simp⟩
   simpa [twoRow] using this
 
 theorem colLen_twoRow (h : k ≤ m) (j : ℕ) :

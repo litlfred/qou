@@ -57,7 +57,7 @@ variable {n : ℕ}
 /-- The Coxeter system's simple reflections are the adjacent transpositions. -/
 @[simp] theorem permCox_simple (i : Fin n) :
     (permCoxeterSystem n).simple i = s n i := by
-  show toPerm n (CoxeterMatrix.simple (CoxeterMatrix.Aₙ n) i) = s n i
+  show toPerm n (CoxeterMatrix.simple (CoxeterMatrix.A n) i) = s n i
   exact toPerm_simple n i
 
 /-- A permutation that is not the identity has an adjacent descent. -/
@@ -125,8 +125,8 @@ theorem invCount_wordProd_le (ω : List (Fin n)) :
 
 theorem invCount_le_length (w : Perm (Fin (n + 1))) :
     invCount w ≤ (permCoxeterSystem n).length w := by
-  obtain ⟨ω, hlen, hw⟩ := (permCoxeterSystem n).exists_reduced_word w
-  rw [← hlen, hw]
+  obtain ⟨ω, hred, hw⟩ := (permCoxeterSystem n).exists_isReduced w
+  rw [hw, hred.eq]
   exact invCount_wordProd_le ω
 
 /-- **Coxeter length is the inversion count.** -/
