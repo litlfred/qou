@@ -99,6 +99,24 @@ What does transfer:
   labels by these elements are not trace-observable data. Cited from #9415, not
   re-proved here.
 
+- *Non-abelian replacement (owner question, 2026-11-25: Yekutieli's non-abelian
+  Stokes instead).* Put group- or Hecke-valued holonomies on edges, with an
+  edge reversed giving the inverse, and take path-ordered face holonomies (as in
+  `QOU.MathlibExt.YekutieliIntegration.holonomy`). This map **is**
+  well-defined. A vertex gauge conjugates each closed face holonomy
+  (`gaugeHol_closed`). Any class function, Markov traces included, of a face
+  holonomy is gauge-invariant and basepoint-independent
+  (`classFun_gaugeHol_closed`, `classFun_basepoint`). What does **not** survive
+  the trace is the Stokes relation: non-abelian Stokes relates *products* of
+  face holonomies, and the trace of a product is not a function of the traces
+  of its factors (`perm3_fixCount_product_not_determined`, S₃: factor traces
+  (1, 1) give product traces 3 or 0). So the result is per-face trace
+  observables with no linear "Π₂ = dΠ₁" among them. Only the abelian shadow
+  gives back discrete Stokes. Lean: `QOU/BringsSurface/NonabelianStokesTrace.lean`
+  (lean-direct exit 0, no `sorryAx`). Still open (`qou-b7fc`): the explicit
+  closed-surface identity ∏_f (conjugated face holonomies) = ∏_{i=1}^{4} [A_i, B_i]
+  on the Bring map, which needs a fundamental-polygon spanning tree.
+
 ### 4. "Bring's triangulation prevents Navier–Stokes blow-up."
 
 **Scope (a). The parts that are true are generic; the part that is specific is false.**
