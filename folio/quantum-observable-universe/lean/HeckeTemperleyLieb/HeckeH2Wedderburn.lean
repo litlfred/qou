@@ -1,5 +1,6 @@
 import HeckeTemperleyLieb.HeckeH2AlgebraInstance
 import Mathlib.RingTheory.SimpleModule.Basic
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # QOU.Machinery.HeckeH2Wedderburn — explicit Wedderburn decomposition of H₂(q)
