@@ -29,6 +29,8 @@ import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 import Mathlib.LinearAlgebra.Basis.Basic
 import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
 
 namespace QOU.QBeta.SubstratePeriods
 
