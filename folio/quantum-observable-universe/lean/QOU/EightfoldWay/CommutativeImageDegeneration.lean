@@ -68,7 +68,7 @@ def HeckeQuad (q qi s : R) : Prop := s * s = (q - qi) * s + 1
 `s * (s - (q - qi)) = 1`. This is what makes the cancellation in
 `braid_forces_eq` legitimate without any domain hypothesis. -/
 theorem isUnit_of_heckeQuad {q qi s : R} (h : HeckeQuad q qi s) : IsUnit s :=
-  isUnit_of_mul_eq_one s (s - (q - qi)) <| by
+  IsUnit.of_mul_eq_one (a := s) (s - (q - qi)) <| by
     have h' : s * s = (q - qi) * s + 1 := h
     linear_combination h'
 
