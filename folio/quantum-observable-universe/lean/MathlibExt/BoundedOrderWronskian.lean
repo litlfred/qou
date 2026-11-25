@@ -37,6 +37,8 @@
 import MathlibExt.MvGenWronskian
 import Mathlib.RingTheory.MvPolynomial.MonomialOrder.DegLex
 import Mathlib.RingTheory.Polynomial.UniqueFactorization
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Algebra.MvPolynomial.NoZeroDivisors
 
 namespace MvPolynomial
 
@@ -57,8 +59,8 @@ theorem totalDegree_pderiv_lt [DecidableEq σ] {k : σ} {p : MvPolynomial σ R}
     (hp : pderiv k p ≠ 0) : totalDegree (pderiv k p) < totalDegree p := by
   have hstep : ∀ t ∈ (pderiv k p).support, (t.sum fun _ e => e) + 1 ≤ totalDegree p := by
     intro t ht
-    rw [mem_support_iff, coeff_pderiv] at ht
-    have hne : coeff (t + Finsupp.single k 1) p ≠ 0 := fun h => ht (by rw [h, mul_zero])
+    rw [mem_support_iff, coeff_pderiv'] at ht
+    have hne : p.coeff (t + Finsupp.single k 1) ≠ 0 := fun h => ht (by rw [h, mul_zero])
     have hle := le_totalDegree (mem_support_iff.mpr hne)
     rwa [sum_add_single_one] at hle
   obtain ⟨t, ht⟩ := support_nonempty.mpr hp
@@ -104,9 +106,9 @@ theorem exists_const_dependence_of_forall_wronskian_eq_zero
     have hlt := totalDegree_pderiv_lt hne
     omega
   obtain ⟨a0, hpc⟩ : ∃ a0 : K, p = C a0 :=
-    ⟨coeff 0 p, eq_C_of_pderiv_eq_zero (hkill p q hp hrel hpq)⟩
+    ⟨p.coeff 0, eq_C_of_pderiv_eq_zero (hkill p q hp hrel hpq)⟩
   obtain ⟨b0, hqc⟩ : ∃ b0 : K, q = C b0 :=
-    ⟨coeff 0 q, eq_C_of_pderiv_eq_zero (hkill q p hq hrel.symm (fun k => (hpq k).symm))⟩
+    ⟨q.coeff 0, eq_C_of_pderiv_eq_zero (hkill q p hq hrel.symm (fun k => (hpq k).symm))⟩
   refine ⟨b0, -a0, Or.inl ?_, ?_⟩
   · intro h0
     rw [h0, map_zero] at hqc
