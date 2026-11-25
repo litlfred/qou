@@ -100,8 +100,25 @@ trap 'rm -f "$TGZ"' EXIT INT TERM     # ~60 MB; leaking temp files is how
 
 git -C "$ROOT" fetch --depth=1 origin "$BRANCH"
 C=$(git -C "$ROOT" rev-parse FETCH_HEAD)
-git -C "$ROOT" show "$C:mathlib-gap-oleans.tgz" > "$TGZ"
-N=$(tar tzf "$TGZ" | wc -l)
+# One or more tarballs.  `mathlib-gap-oleans.tgz` is the original (80.6 MB at
+# 91643168ca5, past GitHub's 50 MB warning and near its 100 MB refusal), and it
+# is never rewritten, so a restore script from before this change still gets
+# everything it got before.  Later additions go in NEW files
+# `mathlib-gap-oleans-02.tgz`, `-03`, ... each a complete gzip tar, so each
+# stays far below the limit.  ORDER MATTERS: with --skip-old-files the FIRST
+# tarball to supply a path wins, so the original goes first and the numbered
+# parts follow in numeric order.  A plain `sort` gets this backwards, because
+# '-' (0x2d) sorts before '.' (0x2e): measured, it applied -02 first and its
+# copy of an overlapping path won.
+TREE=$(git -C "$ROOT" ls-tree --name-only "$C")
+PARTS=$( { echo "$TREE" | grep -xF 'mathlib-gap-oleans.tgz';
+           echo "$TREE" | grep -E '^mathlib-gap-oleans-[0-9]+\.tgz$' | sort -t- -k4,4n; } || true)
+[ -n "$PARTS" ] || { echo "lean-restore-gap: no mathlib-gap-oleans*.tgz on $BRANCH ($C)" >&2; exit 1; }
+N=0
+for p in $PARTS; do
+  git -C "$ROOT" show "$C:$p" > "$TGZ"
+  N=$((N + $(tar tzf "$TGZ" | wc -l)))
+done
 # --skip-old-files: the addon FILLS gaps and never replaces an olean already
 # present.  Measured 2026-11-24 against the base seed
 # (cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ 7c61a1ba876): all 224
@@ -128,8 +145,11 @@ N=$(tar tzf "$TGZ" | wc -l)
 # correctly leaves in place.  A diff against a restored tree therefore is NOT
 # a corruption signal for files with a .trace beside them.
 for d in "${DESTS[@]}"; do
-  tar xzf "$TGZ" -C "$d" --skip-old-files
-  echo "restored up to $N olean(s) into $d from $BRANCH ($C), existing files kept"
+  for p in $PARTS; do
+    git -C "$ROOT" show "$C:$p" > "$TGZ"
+    tar xzf "$TGZ" -C "$d" --skip-old-files
+  done
+  echo "restored up to $N file(s) from $(echo $PARTS | wc -w) tarball(s) into $d from $BRANCH ($C), existing files kept"
 done
 if [ $# -eq 0 ]; then mkdir -p "$ROOT/.lake"; echo "$C" > "$MARK"; fi
 echo "verify with:  source scripts/lean-direct-env.sh && \\"
