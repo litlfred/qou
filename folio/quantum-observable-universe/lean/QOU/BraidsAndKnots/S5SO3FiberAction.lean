@@ -287,9 +287,9 @@ theorem icos_branching_dim_check :
     (see audit: the h⁴ lives in the 3-strand H₃ algebra, a different
     representation ring). -/
 theorem ell2_yields_one_copy_of_H :
-    (icosBranchingMult 2).get! 4 = 1 ∧
-    (icosBranchingMult 0).get! 4 = 0 ∧
-    (icosBranchingMult 1).get! 4 = 0 := by
+    (icosBranchingMult 2)[4]! = 1 ∧
+    (icosBranchingMult 0)[4]! = 0 ∧
+    (icosBranchingMult 1)[4]! = 0 := by
   decide
 
 /-- **The S₃-rotation-subgroup branching (corrects the source-file premise).**
@@ -310,8 +310,8 @@ def s3RotBranchingMult : ℕ → List ℕ
     Therefore "S₃ sees only ℓ≤1" is false — h⁴ cannot be attributed to "ℓ=2
     only". -/
 theorem s3_std_appears_at_ell1_and_ell2 :
-    (s3RotBranchingMult 1).get! 2 = 1 ∧
-    (s3RotBranchingMult 2).get! 2 = 2 := by
+    (s3RotBranchingMult 1)[2]! = 1 ∧
+    (s3RotBranchingMult 2)[2]! = 2 := by
   decide
 
 /-- **SU(2) double cover: spin ℤ₂ ≠ sign ℤ₂.**  The binary icosahedral group
@@ -355,9 +355,9 @@ def s5_to_s3_restriction_mults : PartitionOf5 → List ℕ
     the spherical-harmonic generation tower to the mass trace. -/
 theorem restriction_functor_yields_h4_irrep :
     -- Electron block (ℓ=1):
-    (s5_to_s3_restriction_mults .threeOneOne).get! 2 = 2 ∧
+    (s5_to_s3_restriction_mults .threeOneOne)[2]! = 2 ∧
     -- Muon block (ℓ=2):
-    (s5_to_s3_restriction_mults .threeTwo).get! 2 = 2 := by
+    (s5_to_s3_restriction_mults .threeTwo)[2]! = 2 := by
   decide
 
 /-- Dimensions of the 3 irreps of S_3, in the order
@@ -568,8 +568,8 @@ theorem restriction_intertwines_conjugation (p : PartitionOf5) :
     part of every restriction, matching the Reeb fiber shared by conjugate
     partitions. -/
 theorem std_irrep_conjugation_fixed (p : PartitionOf5) :
-    (s5_to_s3_restriction_mults p.conjugate).get! 2
-      = (s5_to_s3_restriction_mults p).get! 2 := by
+    (s5_to_s3_restriction_mults p.conjugate)[2]!
+      = (s5_to_s3_restriction_mults p)[2]! := by
   cases p <;> rfl
 
 /-- **Reeb-thread = restriction functor (scaffold capstone, residual ii).**
@@ -589,8 +589,8 @@ theorem reeb_eq_restriction_scaffold [bfa : BringFiberAction] (p : PartitionOf5)
     bfa.irrepToRotation p.conjugate.toA5Irrep = bfa.irrepToRotation p.toA5Irrep ∧
     s5_to_s3_restriction_mults p.conjugate
       = s3SignTwist (s5_to_s3_restriction_mults p) ∧
-    (s5_to_s3_restriction_mults p.conjugate).get! 2
-      = (s5_to_s3_restriction_mults p).get! 2 :=
+    (s5_to_s3_restriction_mults p.conjugate)[2]!
+      = (s5_to_s3_restriction_mults p)[2]! :=
   ⟨by rw [PartitionOf5.conjugate_same_a5_irrep],
    restriction_intertwines_conjugation p,
    std_irrep_conjugation_fixed p⟩
@@ -707,10 +707,10 @@ theorem hopf_generation_selection :
     hopfGenerationSelect 1 = A5Irrep.T₁ ∧
     hopfGenerationSelect 2 = A5Irrep.H ∧
     -- the selected slots are exactly the first appearances (separation by ℓ):
-    (icosBranchingMult 1).get! 1 = 1 ∧   -- ℓ=1: T₁ present
-    (icosBranchingMult 1).get! 4 = 0 ∧   -- ℓ=1: H absent
-    (icosBranchingMult 2).get! 4 = 1 ∧   -- ℓ=2: H present
-    (icosBranchingMult 2).get! 1 = 0 := by  -- ℓ=2: T₁ absent
+    (icosBranchingMult 1)[1]! = 1 ∧   -- ℓ=1: T₁ present
+    (icosBranchingMult 1)[4]! = 0 ∧   -- ℓ=1: H absent
+    (icosBranchingMult 2)[4]! = 1 ∧   -- ℓ=2: H present
+    (icosBranchingMult 2)[1]! = 0 := by  -- ℓ=2: T₁ absent
   refine ⟨rfl, rfl, ?_, ?_, ?_, ?_⟩ <;> decide
 
 /-- **The selected irrep has the expected dimension.** The electron generation
