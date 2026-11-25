@@ -155,8 +155,6 @@ theorem mem_of_locally (S : Subgroupoid (FundamentalGroupoid X)) {ι : Sort*} (R
       have heq : pathHom (subPath f 0 s) ≫
             pathHom (subPath f s t) =
           pathHom (subPath f 0 t) := by
-        simp only [pathHom]
-        rw [FundamentalGroupoid.comp_eq, ← Path.Homotopic.comp_lift]
         exact Quotient.sound (subPath_trans f 0 s t)
       rw [← heq]
       exact S.mul (ih s hs1) (hlocal s t hst)
