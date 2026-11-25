@@ -89,3 +89,17 @@ this value is a fit.
 - On the ruled γγ word: the deuteron is unbound (`μ_pn > 1`, proved). That is the live problem, bean `qou-brng`.
 - The scale inconsistency between producers (order-zero against the ruled tower form) is a separate defect, worth
   0.99 %. It cannot close the gap and needs an owner decision.
+
+## 4. Locus (a) under the corpus's own premises: one scale is forced
+
+`QOU/Nuclear/BondScaleUniversality.lean`: if the energy of a composite is a function of its trace product alone,
+`a·log ε₁ + b·log ε₂ = G(ε₁ε₂)`, then `a = b` (`scales_equal_of_trace_only`). The converse also holds
+(`trace_only_of_scales_equal`). The spectator audit (`docs/audits/2026-11-21-qbeta-energy-map-spectator.md` §1, §10)
+derives trace-only dependence, and route T (§8–9) fixes the common scale as `k_B T = E₀`, at order zero. On those
+premises a nucleon–nucleon bond scale that differs from E₀ is excluded, so the deuteron's locus is `μ`, the bond word.
+
+Two caveats. Route T derives the **order-zero** E₀. The tower factor is ruled (2026-09-03, 2026-09-05) but not derived.
+And an energy map that is not a function of the trace alone is not covered.
+
+Verification: `lean -DautoImplicit=false -s 65536` exits 0 on both files. Axioms on all seven theorems are
+`propext, Classical.choice, Quot.sound`; no `sorryAx`.
