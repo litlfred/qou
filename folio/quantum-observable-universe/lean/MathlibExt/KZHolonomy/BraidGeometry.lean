@@ -3,6 +3,7 @@ import Mathlib.Analysis.Convex.Star
 import Mathlib.Analysis.Calculus.Deriv.Pi
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Complex.RealDeriv
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 /-!
 # A star-shaped region of configuration space carrying the braid generators
@@ -172,7 +173,7 @@ lemma genPath_zero (j : Fin m) : genPath j 0 = basePt 1 := by
 lemma genPath_one (j : Fin m) : genPath j 1 = basePt (Equiv.swap j.castSucc j.succ) := by
   ext1 k
   simp only [genPath, basePt, eArc_one]
-  have hne : j.castSucc ≠ j.succ := Fin.castSucc_lt_succ j |>.ne
+  have hne : j.castSucc ≠ j.succ := (Fin.castSucc_lt_succ (i := j)) |>.ne
   split_ifs with h1 h2
   · subst h1; simp; ring
   · subst h2; simp [Equiv.swap_apply_right]; ring
@@ -186,7 +187,7 @@ lemma genPath_re_mem (j : Fin m) (t : ℝ) (k : Fin (m + 1))
     ((j : ℕ) : ℝ) ≤ (genPath j t k).re ∧ (genPath j t k).re ≤ (j : ℕ) + 1 := by
   have h1 := Real.neg_one_le_cos (Real.pi * t)
   have h2 := Real.cos_le_one (Real.pi * t)
-  have hne : j.castSucc ≠ j.succ := (Fin.castSucc_lt_succ j).ne
+  have hne : j.castSucc ≠ j.succ := ((Fin.castSucc_lt_succ (i := j))).ne
   rcases hk with rfl | rfl
   · simp only [genPath]; simp [eArc_re]; constructor <;> linarith
   · simp only [genPath, if_neg hne.symm]; simp [eArc_re]; constructor <;> linarith
@@ -199,7 +200,7 @@ lemma genPath_re_fixed (j : Fin m) (t : ℝ) (k : Fin (m + 1)) (h1 : k ≠ j.cas
 lemma goodDiff_genPath (j : Fin m) {t : ℝ} (ht : t ∈ Icc (0:ℝ) 1) (x y : Fin (m + 1))
     (hxy : x ≠ y) (hrev : ¬ (x = j.succ ∧ y = j.castSucc)) :
     GoodDiff (genPath j t y - genPath j t x) := by
-  have hne : j.castSucc ≠ j.succ := (Fin.castSucc_lt_succ j).ne
+  have hne : j.castSucc ≠ j.succ := ((Fin.castSucc_lt_succ (i := j))).ne
   have hcs : ((j.castSucc : Fin (m+1)) : ℕ) = j := rfl
   have hsu : ((j.succ : Fin (m+1)) : ℕ) = j + 1 := rfl
   by_cases hxm : x = j.castSucc ∨ x = j.succ <;> by_cases hym : y = j.castSucc ∨ y = j.succ
