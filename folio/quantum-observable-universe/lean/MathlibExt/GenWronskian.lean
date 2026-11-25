@@ -42,6 +42,8 @@ import Mathlib.LinearAlgebra.Matrix.Nondegenerate
 import Mathlib.RingTheory.Polynomial.Wronskian
 import Mathlib.RingTheory.EuclideanDomain
 import Mathlib.RingTheory.Polynomial.Content
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 namespace Polynomial
 

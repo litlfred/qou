@@ -1,4 +1,6 @@
 import Mathlib.LinearAlgebra.Lagrange
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # QOU.Mathlib.LagrangeCoeffSum — coefficient extraction as a sum over interpolation nodes
