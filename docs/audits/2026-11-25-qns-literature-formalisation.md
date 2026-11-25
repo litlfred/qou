@@ -184,3 +184,31 @@ and the energy identities of #9434 no longer apply verbatim.
 that the ordered, conjugated product of the 24 face holonomies equals the
 product of commutators of the 8 generators. It needs a spanning tree and a face
 order of the Bring map in Lean.
+
+## Addendum: does non-commutative vorticity give the gap? (owner question 2026-11-25)
+
+Owner, verbatim: *"can we use non-commutative vorticity? does that give the gap
+neede?"*
+
+**No, if the twist is flat; possibly, if it is curved, but then the q-NS energy
+identities change.** Lean: `QOU/FluidDynamics/TwistedHarmonicBound.lean`
+(lean-direct exit 0; axioms `propext`, `Classical.choice`, `Quot.sound`).
+
+- A flat G-connection in a rank-r representation gives a twisted cochain complex
+  (flatness is d₁d₀ = 0). By rank–nullity, dim H¹ ≥ dim C¹ − dim C⁰ − dim C²
+  (`finrank_H1_lower`). On Bring this is 60r − 30r − 24r = 6r
+  (`bring_twisted_H1_pos`). So every flat twist, abelian or not, leaves at least
+  6r harmonic velocity modes that viscosity does not damp. The abelian case
+  (r = 1, trivial ρ) has 8. An irreducible twist removes H⁰ and H² but
+  *raises* H¹ to exactly 6r. **Scope (b):** the invariant is the Euler
+  characteristic χ(Bring) = −6 < 0.
+- A curved (non-flat) connection can open a gap in the section Laplacian (the
+  magnetic / Landau-level mechanism: on a line bundle with flux B the
+  Laplacian on sections is bounded below by |B|). But then d₁d₀ = F ≠ 0. There
+  is no cochain complex, and the energy and vorticity identities of
+  `DECNavierStokes.lean` no longer hold verbatim. This route is not formalised.
+  It would need a definition of the q-NS system on a curved connection, which
+  the paper does not give.
+- Neither bears on 3D regularity. The vorticity on Bring is already gapped
+  (λ₁(Δ₂) = 5 − √5). The only ungapped modes are harmonic velocities, and those
+  are what χ protects.
