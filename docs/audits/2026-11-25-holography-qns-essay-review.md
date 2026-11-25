@@ -159,6 +159,19 @@ term of an inviscid (Madelung) fluid, so the match would still need an argument.
 In fluid/gravity, η/s = 1/4π is fixed by the horizon. The corpus has no
 analogue.
 
+**Follow-up from the ν_q child (PR #9434, bean `qou-0nqs`).** Generic Lean there
+proves `energy_equality` (dE/dt = −νΩ), `lap1_harmonic` (harmonic fields are
+steady) and `harmonic_circulation` (only advection changes harmonic
+circulation). These match the DEC probe `bring54-dec-qns`. On ν it tested three
+regularity conditions (`ViscosityRegularityRoutes.lean`):
+- dissipation positivity leaves ν free;
+- explicit-step stability on the q-ladder forces ν = 0;
+- Habiro integrality excludes ℏ_q/2.
+
+None forces ℏ_q/2, so item 5's verdict (a renaming, not a derivation) stands.
+`TwistedHarmonicBound.lean` shows that any flat rank-r twist on Bring keeps
+dim H¹ ≥ 6r.
+
 ### 6. "Bredberg–Keeler–Lysov–Strominger give holographic fluid dynamics without a metric."
 
 **Overstated, scope (a).** Their bulk is flat Rindler space with a finite cutoff
