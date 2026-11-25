@@ -112,7 +112,7 @@ theorem isCompact {K : SimplicialComplex ℝ E} {P : Set E} (h : Triangulates K 
   have : K.space = ⋃ s ∈ K.faces, convexHull ℝ (s : Set E) := by
     ext x; simp [SimplicialComplex.mem_space_iff]
   rw [this]
-  exact hfin.isCompact_biUnion fun s _ => s.finite_toSet.isCompact_convexHull
+  exact hfin.isCompact_biUnion fun s _ => s.finite_toSet.isCompact_convexHull ℝ
 
 end Triangulates
 
