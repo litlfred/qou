@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Algebra.Lie.OfAssociative
 import Mathlib.LinearAlgebra.TensorProduct.Basic
+import Mathlib.Algebra.CharZero.Infinite
 
 /-!
 # Bridge A, step A3 — infinitesimal pure braid relations and flatness for every `n`
