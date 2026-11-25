@@ -68,7 +68,10 @@ inductive Channel
   | sym    -- λ = (3)
   | mixed  -- λ = (2,1)
   | anti   -- λ = (1³)
-  deriving DecidableEq, Fintype, Repr
+  deriving DecidableEq, Repr
+
+instance : Fintype Channel :=
+  Fintype.ofList [Channel.sym, Channel.mixed, Channel.anti] (by intro x; cases x <;> simp)
 
 open Channel
 

@@ -90,7 +90,7 @@ theorem iwahori_hom_ext {A : Type*} [Ring A] [Algebra K A]
   have key : φ.comp (IwahoriHecke.mk K q n) = ψ.comp (IwahoriHecke.mk K q n) := by
     apply FreeAlgebra.hom_ext
     funext i
-    simpa only [AlgHom.comp_apply, IwahoriHecke.σ] using h i
+    exact h i
   ext z
   obtain ⟨x, rfl⟩ := RingQuot.mkAlgHom_surjective K (QOU.Hecke.HeckeRel K q n) z
   exact AlgHom.congr_fun key x

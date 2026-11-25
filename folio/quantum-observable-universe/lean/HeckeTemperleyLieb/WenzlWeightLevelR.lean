@@ -181,7 +181,7 @@ theorem level_unique_of_wenzlMarkovParam_eq {q : R} (hq0 : q ≠ 0)
   rw [e r, e s] at h
   have key : (q ^ 2) ^ r / levelBracket r (q ^ 2) = (q ^ 2) ^ s / levelBracket s (q ^ 2) := by
     have h2 := congrArg (fun x : R => x * q) h
-    simp only at h2
+    beta_reduce at h2
     rwa [div_mul_cancel₀ _ hq0, div_mul_cancel₀ _ hq0] at h2
   refine QOU.QBeta.WenzlWeight.level_unique_of_markovParameter (pow_ne_zero 2 hq0) hgen
     (wenzlMarkovParam_spec hbr) ?_
