@@ -49,9 +49,13 @@ variable {K A}
     (sorry-free).**  Restates the B3d keystone through `regTraceBilin`,
     so that Mathlib's `nondegenerate_iff_det_ne_zero` — applied to
     `regTraceBilin` — turns semisimplicity into a Gram-determinant
-    condition on any chosen basis. -/
+    condition on any chosen basis.
+
+    Port note (Mathlib 56a0058): `BilinForm.Nondegenerate` now means left- *and*
+    right-separating; the hypothesis used to be the left-separating condition alone, so it
+    is now spelled `SeparatingLeft` to keep the statement unchanged. -/
 theorem isSemisimpleRing_of_regTraceBilin_nondegenerate
-    (h : (regTraceBilin K A).Nondegenerate) : IsSemisimpleRing A :=
+    (h : (regTraceBilin K A).SeparatingLeft) : IsSemisimpleRing A :=
   isSemisimpleRing_of_regTraceForm_nondegenerate fun x hx =>
     h x fun y => (regTraceBilin_apply x y).trans (hx y)
 
@@ -72,7 +76,7 @@ theorem isSemisimpleRing_of_regTraceGram_det_ne_zero
     (h : (BilinForm.toMatrix b (regTraceBilin K A)).det ≠ 0) :
     IsSemisimpleRing A :=
   isSemisimpleRing_of_regTraceBilin_nondegenerate
-    ((BilinForm.nondegenerate_iff_det_ne_zero b).mpr h)
+    ((BilinForm.nondegenerate_iff_det_ne_zero b).mpr h).1
 
 /-- **Gram entries are the observable regular-trace values (sorry-free).**
     Records that the `(i, j)` entry of the Gram matrix in a basis `b` is
