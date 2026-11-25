@@ -568,7 +568,8 @@ theorem sRow3GPMT_H4_four_both_terms_pos [LinearOrder R] [IsStrictOrderedRing R]
     0 < sRow3GPMT_H4 q 4 := by
   have hd211 : dMod211 q < 0 := dMod211_neg_of_pos q hq
   have hd1111 : 0 < dMod1111 q := dMod1111_pos_of_pos q hq
-  unfold sRow3GPMT_H4
+  have h4 : sRow3GPMT_H4 q 4 = -3 * dMod211 q + dMod1111 q := rfl
+  rw [h4]
   refine ⟨by linarith, hd1111, by linarith⟩
 
 /-- Exact rational closed form of the per-partition GPMT-weighted `A = 4` stratum:
