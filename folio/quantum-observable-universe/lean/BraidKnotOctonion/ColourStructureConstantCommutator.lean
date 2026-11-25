@@ -116,10 +116,10 @@ theorem permOp_mul (σ τ : Equiv.Perm Idx3) :
     (permOp σ : Matrix Idx3 Idx3 R) * permOp τ = permOp (σ * τ) := by
   ext x y
   simp only [permOp, mul_apply, mul_ite, mul_one, mul_zero, Equiv.Perm.mul_apply]
-  rw [Finset.sum_ite_eq']; simp
+  rw [Finset.sum_ite_eq']; simp; congr
 
 theorem permOp_one : (permOp 1 : Matrix Idx3 Idx3 R) = 1 := by
-  ext x y; simp [permOp, one_apply]
+  ext x y; simp [permOp, one_apply]; congr
 
 end Perm
 
@@ -379,7 +379,8 @@ theorem s1_mul_s1inv (q : K) (hq : q ≠ 0) : s1 q * s1inv q = 1 := by
       simp [hbc, hlt, s1_bvec, mulVec_sub, mulVec_smul, hcb, Ne.symm hbc]
     · have hcb : c < b := lt_of_le_of_ne (not_lt.mp hlt) (Ne.symm hbc)
       simp [hbc, hlt, s1_bvec, hcb, Ne.symm hbc]) x
-  simpa [mulVec_bvec] using this
+  simp only [mulVec_bvec, one_mulVec] at this
+  rw [this]; simp only [bvec, one_apply]
 
 set_option maxHeartbeats 4000000 in
 theorem hs_fOp_s0s1 (q : K) (hq : q ≠ 0) (h2 : (2 : K) ≠ 0) :
@@ -424,13 +425,11 @@ theorem hs_fOp_permOp_swap23 : hs fOp (permOp swap23 : Matrix Idx3 Idx3 K) = 0 :
   rw [hs_fOp, mul_eq_zero]; right
   simp only [mulVec_bvec, Fintype.sum_prod_type, Fin.sum_univ_three]
   simp [permOp, swap12, swap23]
-  ring
 
 theorem hs_fOp_permOp_swap13 : hs fOp (permOp swap13 : Matrix Idx3 Idx3 K) = 0 := by
   rw [hs_fOp, mul_eq_zero]; right
   simp only [mulVec_bvec, Fintype.sum_prod_type, Fin.sum_univ_three]
   simp [permOp, swap12, swap23, swap13]
-  ring
 
 theorem hs_fOp_cyc_add_cyc_sq :
     hs fOp (permOp (swap12 * swap23) + permOp ((swap12 * swap23) * (swap12 * swap23)) :
