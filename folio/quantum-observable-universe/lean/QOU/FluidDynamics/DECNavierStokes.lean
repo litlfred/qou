@@ -70,10 +70,12 @@ variable {V E F : Type*} [Fintype V] [Fintype E] [Fintype F]
 
 /-- A 2-complex `C⁰ →d₀ C¹ →d₁ C²` over `R` with unit Hodge stars
 (`δ := dᵀ`). `dd : d₁ d₀ = 0` is the cochain-complex axiom. -/
-structure Complex2 (R V E F : Type*) [CommRing R] where
+structure Complex2 (R V E F : Type*) [CommRing R] [Fintype E] where
   d0 : Matrix E V R
   d1 : Matrix F E R
   dd : d1 * d0 = 0
+
+namespace Complex2
 
 variable (C : Complex2 R V E F)
 
@@ -111,10 +113,17 @@ theorem exact_orth_coexact (p : V → R) (w : F → R) :
 /-- The Dirichlet form of `Δ₁`: `⟨v, Δ₁ v⟩ = |δ v|² + |d₁ v|²`. -/
 theorem dirichlet_form (v : E → R) :
     v ⬝ᵥ (C.lap1 *ᵥ v) = C.divg v ⬝ᵥ C.divg v + C.vort v ⬝ᵥ C.vort v := by
-  simp only [lap1, add_mulVec, dotProduct_add, divg, vort]
-  rw [← mulVec_mulVec, ← mulVec_mulVec, dotProduct_comm v (C.d0 *ᵥ _),
-    pairing_adjoint, dotProduct_comm v (C.d1ᵀ *ᵥ _), pairing_adjoint,
-    transpose_transpose, dotProduct_comm (C.d0ᵀ *ᵥ v)]
+  have h1 : v ⬝ᵥ (C.d0 *ᵥ (C.d0ᵀ *ᵥ v)) = (C.d0ᵀ *ᵥ v) ⬝ᵥ (C.d0ᵀ *ᵥ v) := by
+    rw [dotProduct_comm, pairing_adjoint]
+  have h2 : v ⬝ᵥ (C.d1ᵀ *ᵥ (C.d1 *ᵥ v)) = (C.d1 *ᵥ v) ⬝ᵥ (C.d1 *ᵥ v) := by
+    rw [dotProduct_comm, pairing_adjoint, transpose_transpose]
+  rw [lap1, add_mulVec, dotProduct_add, ← mulVec_mulVec, ← mulVec_mulVec, h1, h2]
+  rfl
+
+/-- The quadratic form of `Δ₂`: `⟨w, Δ₂ w⟩ = |d₁ᵀ w|²`. -/
+theorem lap2_form (w : F → R) :
+    w ⬝ᵥ (C.lap2 *ᵥ w) = (C.d1ᵀ *ᵥ w) ⬝ᵥ (C.d1ᵀ *ᵥ w) := by
+  rw [lap2, ← mulVec_mulVec, dotProduct_comm, pairing_adjoint]
 
 /-- **Energy equality** for the semi-discrete q-NS system
 `v̇ = −B − d₀ p − ν Δ₁ v` with skew advection `⟨v, B⟩ = 0` and `δ v = 0`:
@@ -182,13 +191,14 @@ theorem mass_conservation (hconst : C.d0 *ᵥ (fun _ => (1 : R)) = 0)
 /-- **Enstrophy equality** under the linear (Stokes) part:
 `⟨ω, ω̇⟩ = −ν |d₁ᵀ ω|²` when `B = 0`. -/
 theorem enstrophy_equality_stokes (v vdot : E → R) (p : V → R) (ν : R)
-    (hNS : vdot = -C.d0 *ᵥ p - ν • (C.lap1 *ᵥ v)) :
+    (hNS : vdot = -(C.d0 *ᵥ p) - ν • (C.lap1 *ᵥ v)) :
     C.vort v ⬝ᵥ C.vort vdot = -ν * ((C.d1ᵀ *ᵥ C.vort v) ⬝ᵥ (C.d1ᵀ *ᵥ C.vort v)) := by
   have h := C.vorticity_equation v vdot 0 p ν (by rw [hNS]; simp)
   simp only [vort, mulVec_zero, neg_zero, zero_sub] at h ⊢
-  rw [h, dotProduct_neg, dotProduct_smul, lap2, ← mulVec_mulVec, dotProduct_comm,
-    pairing_adjoint, transpose_transpose, smul_eq_mul, dotProduct_comm (C.d1ᵀ *ᵥ _)]
+  rw [h, dotProduct_neg, dotProduct_smul, C.lap2_form, smul_eq_mul]
   ring
+
+end Complex2
 
 end Algebraic
 
@@ -196,11 +206,13 @@ section Ordered
 
 variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
 variable {V E F : Type*} [Fintype V] [Fintype E] [Fintype F]
-variable (C : Complex2 K V E F)
-
 theorem dotProduct_self_nonneg' {n : Type*} [Fintype n] (w : n → K) : 0 ≤ w ⬝ᵥ w := by
   simp only [dotProduct]
   exact Finset.sum_nonneg (fun i _ => mul_self_nonneg (w i))
+
+namespace Complex2
+
+variable (C : Complex2 K V E F)
 
 /-- Energy is non-increasing for `ν ≥ 0` (from `energy_equality`). -/
 theorem energy_nonincreasing (v vdot B : E → K) (p : V → K) (ν : K) (hν : 0 ≤ ν)
@@ -221,15 +233,14 @@ theorem enstrophy_decay_of_spectral_gap (gap ν : K) (hν : 0 ≤ ν)
     (hgap : ∀ w : F → K, (fun _ => (1 : K)) ⬝ᵥ w = 0 →
       gap * (w ⬝ᵥ w) ≤ w ⬝ᵥ (C.lap2 *ᵥ w))
     (v vdot : E → K) (p : V → K)
-    (hNS : vdot = -C.d0 *ᵥ p - ν • (C.lap1 *ᵥ v)) :
+    (hNS : vdot = -(C.d0 *ᵥ p) - ν • (C.lap1 *ᵥ v)) :
     C.vort v ⬝ᵥ C.vort vdot ≤ -(ν * gap) * (C.vort v ⬝ᵥ C.vort v) := by
   have hg := hgap (C.vort v) (C.total_circulation_zero hclosed v)
-  have hq : C.vort v ⬝ᵥ (C.lap2 *ᵥ C.vort v)
-      = (C.d1ᵀ *ᵥ C.vort v) ⬝ᵥ (C.d1ᵀ *ᵥ C.vort v) := by
-    rw [lap2, ← mulVec_mulVec, dotProduct_comm, pairing_adjoint, transpose_transpose,
-      dotProduct_comm]
+  have hq := C.lap2_form (C.vort v)
   rw [C.enstrophy_equality_stokes v vdot p ν hNS, ← hq]
   nlinarith [mul_le_mul_of_nonneg_left hg hν]
+
+end Complex2
 
 end Ordered
 
@@ -255,9 +266,9 @@ Madelung coefficient is `2D²`. So `ν_q` is the *same* number as the Nelson
 diffusion constant the corpus's `Q_q` already fixes. This is consistency of one
 parameter between two terms, not a derivation that `D` acts as a viscosity: in
 Nelson's theory `D` drives an osmotic term of an inviscid fluid. -/
-theorem nelson_consistency {K : Type*} [Field K] (q : K) :
+theorem nelson_consistency {K : Type*} [Field K] (q : K) (h2 : (2 : K) ≠ 0) :
     hbarQ q ^ 2 / 2 = 2 * nuQ q ^ 2 := by
-  unfold hbarQ nuQ; ring
+  unfold hbarQ nuQ; field_simp
 
 /-- In the substrate layer `ν_q` is `O(q − 1)`: for `q = 1 + ε`, `ε ≥ 0`,
 `ν_q ≤ ε/2`. Under the Bredberg–Keeler–Lysov–Strominger scaling
