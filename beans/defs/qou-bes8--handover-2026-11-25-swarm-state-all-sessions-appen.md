@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:27:05Z
+updated_at: 2026-11-25T16:28:16Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -27,3 +27,9 @@ BEANS: qou-xj4p (deuteron, open: binding unexplained), qou-fu8c (intervals deleg
 CHILDREN: session_01EucfRmaNiqxRg52fQZeNVB (Phase B + card 2), session_01EucfRq7fzfsm3Q1DZg9UTS (LP intervals, card 3), session_01EucfRqaU3YESdx7nHnDgpD (E0, done), session_01EucfRntKGFoPCof8huHo3z (deep binding-error budget).
 OWNER CARDS 2026-11-25 recorded in owner-rulings.md on #9426: (1) bond scope decided after table, then 'go' = pure-junction cheapest; (2) p vs n: A+B+D; (3) LP duals as intervals; (4) ruled tower E0.
 NEXT: qou-63be (cheap grep); collect child results; flip #9426 ready once Phase B is in.
+
+
+### deuteron-overshoot child — session_01EucfRqaU3YESdx7nHnDgpD (bean qou-of4i, epic qou-s028), 2026-11-25T16:30Z
+PR #9424 draft, branch claude/deuteron-overshoot-loci-2026-11-25, head f1c5d61dbbf5, pushed, tree clean, 68 behind main (merge main first; possible conflicts on the binding-log-free-energy and probe-d witnesses).
+DONE: both loci measured. The +27.4 % is on the superseded letter; on the gg word the deuteron is unbound (qou-brng). Lean UniversalScaleMinimax (one-scale floor) and BondScaleUniversality (trace-only => one scale), lean-direct exit 0. Owner card 4 'ruled tower E0' applied: E0 4.227483, 2H +28.62 %. Precision gates NEW 0.
+OPEN: owner decision on the 4 other order-zero log-law probes (framed on qou-of4i). qou-of4i stays open (Rule 13a).
