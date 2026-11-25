@@ -4,6 +4,7 @@ Released under Apache 2.0 license.
 -/
 import Mathlib.LinearAlgebra.FreeProduct.Basic
 import Mathlib.Algebra.RingQuot
+import Mathlib.Tactic.NoncommRing
 
 /-!
 # Poisson structures on splays
