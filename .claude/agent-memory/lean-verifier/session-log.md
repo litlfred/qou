@@ -490,3 +490,16 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
   appending a commit (parent = old head) with git hash-object/mktree/commit-tree; no force-push.
 - **TRAP** `mathlib-gap-oleans.tgz` is 75 MB at fd6c1e47a21 (GitHub warns at 50 MB, rejects at
   100 MB). Put the next additions in a second tarball.
+- **STABLE (2026-11-25, gap head 91643168ca5, 335 entries)** +11 Mathlib oleans: the
+  `FundamentalGroupoid.SimplyConnected` cone (9), `Topology.Homotopy.Lifting`, `Analysis.Convex.Join`,
+  which the full cone reported missing (MathlibExt.PathLebesgue, MathlibExt.LocalCocycleTransport,
+  BraidKnotOctonion.PLCone). Tarball 80.6 MB.
+- **TRAP (measured 2026-11-25)** `lean-direct-cone.sh --all` builds QOU only; it treats UGB as a
+  prebuilt path package. The restored UGB oleans were STALE (`Basic.olean` still had
+  `rules : List`; source has `Set`), so `QOU.LiftingDescent.PBWIntegration` errored at the
+  `import UGB...SplayIntegration` line (olean absent) and a naive UGB build failed in
+  `QuadraticPBW` with a List/Set type mismatch that reads like a source error. Fix: rebuild the UGB
+  cone with `lean_freshness.olean_is_current(conservative=True)` + stale-dependency propagation;
+  16 UGB modules (incl. HeckeGS) rebuilt, all exit 0.
+- **TRAP** a background Bash running the whole cone is killed at the 2 h tool limit (it was, at
+  2577/3908). Run it detached (`setsid nohup ... &`) and wait with a separate until-loop.
