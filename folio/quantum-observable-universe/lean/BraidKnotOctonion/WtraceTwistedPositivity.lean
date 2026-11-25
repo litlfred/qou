@@ -7,7 +7,7 @@ import HeckeTemperleyLieb.OcneanuWeightTwoRowPositive
 
 `wtrace` (`MarkovTraceInstance`) is the Markov trace on `H_{n+1}(q)` at convention D,
 `z_D = q³/(q²+1)`. The untwisted form `wtrace(X·X)` is **not** positive for `n + 1 ≥ 3`
-(`t-beta-markov-collapse-general-lift.lean`, bean `qou-baov`). This file proves that the twisted
+(`t-beta-markov-frobenius-collapse-general.lean`, bean `qou-baov`). This file proves that the twisted
 form is:
 
   `0 ≤ wtrace(X · X†)`   for every `X`, whenever `1 < q`,
