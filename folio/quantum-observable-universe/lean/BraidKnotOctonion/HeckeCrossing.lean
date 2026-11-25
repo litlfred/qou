@@ -162,9 +162,11 @@ theorem gen_comm : ∀ (n : ℕ) (i j : Fin n), (j : ℕ) + 2 ≤ (i : ℕ) →
       obtain ⟨k, rfl⟩ : ∃ k, i = k + 1 := ⟨i - 1, by simp at h; omega⟩
       exact H.leftCross_comm_whisker _ _ _
   | n + 1, ⟨i + 1, hi⟩, ⟨j + 1, hj⟩, h => by
+      have ih := gen_comm n ⟨i, Nat.lt_of_succ_lt_succ hi⟩ ⟨j, Nat.lt_of_succ_lt_succ hj⟩
+        (by simp at h ⊢; omega)
       simp only [gen_succ]
-      rw [← whiskerLeft_comp, ← whiskerLeft_comp,
-        gen_comm n ⟨i, Nat.lt_of_succ_lt_succ hi⟩ ⟨j, Nat.lt_of_succ_lt_succ hj⟩ (by simp at h ⊢; omega)]
+      exact (whiskerLeft_comp X _ _).symm.trans
+        ((congrArg (X ◁ ·) ih).trans (whiskerLeft_comp X _ _))
 
 /-- The structural map `X ⊗ (X ⊗ (X ⊗ P)) ⟶ (X ⊗ (X ⊗ X)) ⊗ P`. -/
 def reassoc3 (P : C) : X ⊗ (X ⊗ (X ⊗ P)) ⟶ (X ⊗ (X ⊗ X)) ⊗ P :=
@@ -207,29 +209,32 @@ theorem gen_braid : ∀ (n : ℕ) (i : Fin n) (hi : (i : ℕ) + 1 < n),
       obtain ⟨m, rfl⟩ : ∃ m, n = m + 1 := ⟨n - 1, by simp at hi; omega⟩
       exact H.leftCross_braid _
   | n + 1, ⟨i + 1, h⟩, hi => by
+      have ih := gen_braid n ⟨i, Nat.lt_of_succ_lt_succ h⟩ (by simp at hi ⊢; omega)
       simp only [gen_succ]
-      rw [← whiskerLeft_comp, ← whiskerLeft_comp, ← whiskerLeft_comp, ← whiskerLeft_comp,
-        gen_braid n ⟨i, Nat.lt_of_succ_lt_succ h⟩ (by simp at hi ⊢; omega)]
+      have := congrArg (X ◁ ·) ih
+      simp only [whiskerLeft_comp] at this
+      exact this
 
 /-- **The Hecke action.**  A Hecke crossing on `X` gives an `R`-algebra map
 `H_{n+1}(q) →ₐ[R] End (X^{⊗(n+1)})`, `σ_i ↦` the crossing on strands `i, i+1`.  This is Brundan's
 `ι_r` (§1.4 of arXiv 1712.08953) for an arbitrary `R`-linear monoidal category. -/
 noncomputable def heckeAction (n : ℕ) : Hecke R q qi n →ₐ[R] End (tpow X (n + 1)) :=
-  Hecke.lift R q qi n (fun i => H.gen n i)
+  Hecke.lift R q qi n (fun i => End.of (H.gen n i))
     (fun i => by
       have := H.gen_quad n i
       unfold IsHeckeQuad at this
-      rw [End.mul_def, this, End.one_def])
+      ext
+      exact this)
     (fun i hi => by
-      simp only [End.mul_def]
+      ext
       exact H.gen_braid n i hi)
     (fun i j h => by
-      simp only [End.mul_def]
+      ext
       exact H.gen_comm n i j h)
 
 @[simp] theorem heckeAction_σ (n : ℕ) (i : Fin n) :
-    H.heckeAction n (Hecke.σ R q qi n i) = H.gen n i := by
-  simp [heckeAction]
+    H.heckeAction n (Hecke.σ R q qi n i) = End.of (H.gen n i) := by
+  exact Hecke.lift_σ _ _ _ _ _ _ _ _ _
 
 /-- **Non-vacuity.** `S = q • 𝟙` is a Hecke crossing on every object (the trivial,
 "symmetric-channel" representation `σ_i ↦ q`). -/
