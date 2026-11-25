@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.LinearAlgebra.FiniteDimensional.Defs
+import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 import Mathlib.Tactic
 
 /-!

@@ -103,7 +103,7 @@ theorem tsum_gaussian_sub_sum_Icc_le {a c : ℝ} (ha : 0 < a) (W : ℕ) :
         push_cast at h2
         exact h2
       have hcast : ((n.natAbs : ℕ) : ℝ) = |(n : ℝ)| := by
-        rw [Int.cast_natAbs]; push_cast; ring
+        rw [Nat.cast_natAbs]; push_cast; ring
       have hpow : Real.exp (-a / 4) ^ n.natAbs
           = Real.exp (|(n : ℝ)| * (-a / 4)) := by
         rw [← hcast]; exact (Real.exp_nat_mul _ _).symm
