@@ -77,7 +77,7 @@ theorem index_le_index_pderivList_add [DecidableEq σ] (d : σ → ℕ) (α : σ
           ≤ (index d α (pderiv j (pderivList l' P))
               + (((1 : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ))
             + (((l'.map (fun j => (1 : ℚ) / (d j : ℚ))).sum : ℚ) : WithTop ℚ) :=
-            add_le_add_right h2 _
+            add_le_add_left h2 _
         _ = index d α (pderiv j (pderivList l' P))
               + ((((1 : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ)
                 + (((l'.map (fun j => (1 : ℚ) / (d j : ℚ))).sum : ℚ) : WithTop ℚ)) :=
@@ -113,7 +113,7 @@ theorem sum_index_le_index_mvGenWronskian_add [DecidableEq σ] {m : ℕ}
     intro i
     rw [mvWronskianMatrix_apply]
     refine le_trans (index_le_index_pderivList_add d α (D (p₀ i)) (f i)) ?_
-    exact add_le_add_left (WithTop.coe_le_coe.mpr (hC (p₀ i))) _
+    exact add_le_add_right (WithTop.coe_le_coe.mpr (hC (p₀ i))) _
   calc ∑ i : Fin m, index d α (f i)
       ≤ ∑ i : Fin m, (index d α (mvWronskianMatrix D f (p₀ i) i) + ((C : ℚ) : WithTop ℚ)) :=
         Finset.sum_le_sum (fun i _ => hterm i)
@@ -122,7 +122,7 @@ theorem sum_index_le_index_mvGenWronskian_add [DecidableEq σ] {m : ℕ}
         rw [Finset.sum_add_distrib, Finset.sum_const, Finset.card_univ, Fintype.card_fin,
           nsmul_coe_withTop]
     _ ≤ index d α (mvGenWronskian D f) + (((m : ℚ) * C : ℚ) : WithTop ℚ) :=
-        add_le_add_right hdet _
+        add_le_add_left hdet _
 
 /-- **The differentiation cost of a list is at most its length over the smallest degree.**
 
@@ -173,14 +173,14 @@ theorem sum_index_le_index_det_pderivList_add [DecidableEq σ] {r : ℕ}
     have h : M (p₀ i) i = pderivList (D (p₀ i) i) P := rfl
     rw [h]
     exact le_trans (index_le_index_pderivList_add d α (D (p₀ i) i) P)
-      (add_le_add_left (WithTop.coe_le_coe.mpr (hC _ _)) _)
+      (add_le_add_right (WithTop.coe_le_coe.mpr (hC _ _)) _)
   calc ∑ _i : Fin r, index d α P
       ≤ ∑ i : Fin r, (index d α (M (p₀ i) i) + ((C : ℚ) : WithTop ℚ)) :=
         Finset.sum_le_sum (fun i _ => hterm i)
     _ = (∑ i : Fin r, index d α (M (p₀ i) i)) + (((r : ℚ) * C : ℚ) : WithTop ℚ) := by
         rw [Finset.sum_add_distrib, Finset.sum_const, Finset.card_univ, Fintype.card_fin,
           nsmul_coe_withTop]
-    _ ≤ index d α M.det + (((r : ℚ) * C : ℚ) : WithTop ℚ) := add_le_add_right hdet _
+    _ ≤ index d α M.det + (((r : ℚ) * C : ℚ) : WithTop ℚ) := add_le_add_left hdet _
 
 /-! ### Validation — the bound is attained
 
@@ -285,7 +285,7 @@ theorem sum_max_le_index_det [DecidableEq σ] {r : ℕ} (d : σ → ℕ) (α : �
         ≤ index d α (M (p₀ j) j) + (((t + (j : ℚ) / rr : ℚ)) : WithTop ℚ) := by
       rw [hentry]
       exact le_trans (index_le_index_pderivList_add d α (D (p₀ j) j) P)
-        (add_le_add_left (WithTop.coe_le_coe.mpr (hc _ _)) _)
+        (add_le_add_right (WithTop.coe_le_coe.mpr (hc _ _)) _)
     have h2 := le_trans hθ h1
     rcases le_or_gt (θ - t - (j : ℚ) / rr) 0 with hle | hlt
     · rw [max_eq_left hle]

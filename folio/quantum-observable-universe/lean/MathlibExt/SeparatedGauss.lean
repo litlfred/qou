@@ -24,7 +24,7 @@
   ═══ THE DISJOINT CASE IS MUCH EASIER THAN THE GENERAL ONE ═══
 
   General Gauss needs unique factorisation.  In *disjoint* variable groups it needs neither:
-  `coeff (i ⊞ j) (U·V) = uᵢ·vⱼ` exactly, so if `U` is scaled to be primitive and integral, the
+  `(U·V).coeff (i ⊞ j) = uᵢ·vⱼ` exactly, so if `U` is scaled to be primitive and integral, the
   denominator of every `vⱼ` divides every coefficient of `U`, hence divides their gcd, hence
   is `1`.  No Bézout, no factorisation — one gcd argument.
 -/
@@ -73,7 +73,8 @@ theorem exists_int_scaling (U : MvPolynomial σ ℚ) :
     · rw [notMem_support_iff.mp hi, mul_zero]
       simp
   refine ⟨(b : ℤ), hb0,
-    Finsupp.mapRange (fun q : ℚ => (((b : ℤ) : ℚ) * q).num) (by simp) U, ?_⟩
+    AddMonoidAlgebra.ofCoeff
+      (Finsupp.mapRange (fun q : ℚ => (((b : ℤ) : ℚ) * q).num) (by simp) U.coeff), ?_⟩
   ext i
   rw [coeff_map, coeff_C_mul]
   show ((((((b : ℤ) : ℚ) * U.coeff i).num) : ℤ) : ℚ) = ((b : ℤ) : ℚ) * U.coeff i
@@ -114,16 +115,17 @@ theorem exists_primitive_part (p : MvPolynomial σ ℤ) (hp : p ≠ 0) :
       ∀ n : ℤ, (∀ i, n ∣ q.coeff i) → IsUnit n := by
   classical
   have hc : intContent p ≠ 0 := intContent_ne_zero hp
-  refine ⟨Finsupp.mapRange (fun a : ℤ => a / intContent p) (by simp) p, ?_, ?_⟩
+  refine ⟨AddMonoidAlgebra.ofCoeff
+    (Finsupp.mapRange (fun a : ℤ => a / intContent p) (by simp) p.coeff), ?_, ?_⟩
   · ext i
     rw [coeff_C_mul]
     show intContent p * (p.coeff i / intContent p) = p.coeff i
     exact Int.mul_ediv_cancel' (intContent_dvd_coeff p i)
   · intro n hn
-    have hcoe : ∀ i, MvPolynomial.coeff i
-        (Finsupp.mapRange (fun a : ℤ => a / intContent p) (by simp) p :
-            MvPolynomial σ ℤ) = p.coeff i / intContent p :=
-      fun i => Finsupp.mapRange_apply
+    have hcoe : ∀ i, (AddMonoidAlgebra.ofCoeff
+        (Finsupp.mapRange (fun a : ℤ => a / intContent p) (by simp) p.coeff) :
+            MvPolynomial σ ℤ).coeff i = p.coeff i / intContent p :=
+      fun i => Finsupp.mapRange_apply (hf := by simp)
     have hdvd : ∀ i, intContent p * n ∣ p.coeff i := by
       intro i
       obtain ⟨k, hk⟩ := hn i
@@ -138,7 +140,7 @@ theorem exists_primitive_part (p : MvPolynomial σ ℤ) (hp : p ≠ 0) :
       rw [mul_one]
       conv_lhs => rw [hk]
       ring
-    exact isUnit_of_mul_eq_one n k (mul_left_cancel₀ hc heq).symm
+    exact IsUnit.of_mul_eq_one (a := n) k (mul_left_cancel₀ hc heq).symm
 
 /-- **A rational polynomial has a primitive integral scaling.** -/
 theorem exists_primitive_scaling (U : MvPolynomial σ ℚ) (hU : U ≠ 0) :
@@ -177,7 +179,7 @@ theorem exists_primitive_scaling (U : MvPolynomial σ ℚ) (hU : U ≠ 0) :
 /-! ### The disjoint-groups Gauss step
 
 ⚠ From here the module is **not** Mathlib-only: it uses `coeff_sumElim_rename_mul` from
-`QOU/Mathlib/SeparatedHeight.lean`, the identity `coeff (i ⊞ j) (U·V) = uᵢ·vⱼ` that makes the
+`QOU/Mathlib/SeparatedHeight.lean`, the identity `(U·V).coeff (i ⊞ j) = uᵢ·vⱼ` that makes the
 disjoint case elementary. -/
 
 /-- If an integer multiple of a rational is an integer, the rational's denominator divides
@@ -200,7 +202,7 @@ If `W` has integer coefficients and, over `ℚ`, factors as a product of a polyn
 rational `l` to become integral.
 
 ⚠ The proof needs neither unique factorisation nor Bézout, and that is a consequence of the
-groups being **disjoint**: `coeff (i ⊞ j) (U·V) = uᵢ·vⱼ` exactly, so once `U` is scaled to be
+groups being **disjoint**: `(U·V).coeff (i ⊞ j) = uᵢ·vⱼ` exactly, so once `U` is scaled to be
 primitive and integral, the denominator of each `vⱼ` divides *every* coefficient of `U'`,
 hence divides their gcd, hence is `1`.  In shared variables the coefficients mix and none of
 this is available. -/
@@ -221,10 +223,10 @@ theorem exists_integral_separated_factors {τ : Type*}
       intro i
       refine den_dvd_of_mul_int (m := W.coeff (Finsupp.sumElim i j)) ?_
       have hcU : ((U'.coeff i : ℤ) : ℚ) = l * U.coeff i := by
-        have := congrArg (coeff i) hU'
+        have := congrArg (fun p => p.coeff i) hU'
         rwa [coeff_map, coeff_C_mul] at this
       have hcW : ((W.coeff (Finsupp.sumElim i j) : ℤ) : ℚ) = U.coeff i * V.coeff j := by
-        have := congrArg (coeff (Finsupp.sumElim i j)) hW
+        have := congrArg (fun p => p.coeff (Finsupp.sumElim i j)) hW
         rwa [coeff_map, coeff_sumElim_rename_mul] at this
       rw [hcU, hcW, mul_comm l (U.coeff i), mul_assoc, ← mul_assoc l, mul_inv_cancel₀ hl,
         one_mul]
@@ -234,7 +236,8 @@ theorem exists_integral_separated_factors {τ : Type*}
     rcases Int.isUnit_iff.mp this with h1 | h1
     · exact_mod_cast h1
     · omega
-  refine ⟨l, U', Finsupp.mapRange (fun q : ℚ => (l⁻¹ * q).num) (by simp) V, hl, hU', ?_⟩
+  refine ⟨l, U', AddMonoidAlgebra.ofCoeff
+    (Finsupp.mapRange (fun q : ℚ => (l⁻¹ * q).num) (by simp) V.coeff), hl, hU', ?_⟩
   ext j
   rw [coeff_map, coeff_C_mul]
   show ((((l⁻¹ * V.coeff j).num) : ℤ) : ℚ) = l⁻¹ * V.coeff j
@@ -396,8 +399,8 @@ the argument — "a non-zero coefficient has absolute value at least 1" — is f
 theorem abs_coeff_integral_wronskian_factor_le {τ : Type*}
     {U' : MvPolynomial σ ℤ} {V' : MvPolynomial τ ℤ} {W : MvPolynomial (σ ⊕ τ) ℤ}
     (hfact : (rename Sum.inl U' : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr V' = W)
-    (hV' : V' ≠ 0) {B : ℤ} (hB : ∀ n, |coeff n W| ≤ B) (i : σ →₀ ℕ) :
-    |coeff i U'| ≤ B :=
+    (hV' : V' ≠ 0) {B : ℤ} (hB : ∀ n, |W.coeff n| ≤ B) (i : σ →₀ ℕ) :
+    |U'.coeff i| ≤ B :=
   abs_coeff_le_of_mul_separated hV' (by rw [hfact]; exact hB) i
 
 
@@ -407,8 +410,8 @@ non-vanishing hypothesis swaps sides, because the argument picks a non-zero coef
 theorem abs_coeff_integral_wronskian_factor_le_right {τ : Type*}
     {U' : MvPolynomial σ ℤ} {V' : MvPolynomial τ ℤ} {W : MvPolynomial (σ ⊕ τ) ℤ}
     (hfact : (rename Sum.inl U' : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr V' = W)
-    (hU' : U' ≠ 0) {B : ℤ} (hB : ∀ n, |coeff n W| ≤ B) (j : τ →₀ ℕ) :
-    |coeff j V'| ≤ B :=
+    (hU' : U' ≠ 0) {B : ℤ} (hB : ∀ n, |W.coeff n| ≤ B) (j : τ →₀ ℕ) :
+    |V'.coeff j| ≤ B :=
   abs_coeff_le_of_mul_separated_right hU' (by rw [hfact]; exact hB) j
 
 

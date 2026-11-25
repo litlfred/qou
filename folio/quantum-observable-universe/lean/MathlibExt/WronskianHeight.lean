@@ -63,9 +63,9 @@ does not grow under differentiation, so the degree bound assumed for `g` is inhe
 intermediate derivative.  Without that the bound would degrade along the list. -/
 theorem abs_coeff_pderivList_le [DecidableEq σ] {g : MvPolynomial σ ℤ} {d B : ℤ}
     (hd1 : 1 ≤ d) (hB0 : 0 ≤ B)
-    (hd : ∀ j, (degreeOf j g : ℤ) ≤ d) (hB : ∀ n, |coeff n g| ≤ B)
+    (hd : ∀ j, (degreeOf j g : ℤ) ≤ d) (hB : ∀ n, |g.coeff n| ≤ B)
     (l : List σ) (n : σ →₀ ℕ) :
-    |coeff n (pderivList l g)| ≤ d ^ l.length * B := by
+    |(pderivList l g).coeff n| ≤ d ^ l.length * B := by
   induction l generalizing n with
   | nil => simpa [pderivList] using hB n
   | cons j l' ih =>
@@ -103,10 +103,10 @@ theorem abs_coeff_mvGenWronskian_le [DecidableEq σ] {m L : ℕ} {S d B : ℤ}
     (D : Fin m → List σ) (f : Fin m → MvPolynomial σ ℤ)
     (hS : ∀ j, ((f j).support.card : ℤ) ≤ S)
     (hd : ∀ i j, (degreeOf i (f j) : ℤ) ≤ d)
-    (hB : ∀ j n, |coeff n (f j)| ≤ B)
+    (hB : ∀ j n, |(f j).coeff n| ≤ B)
     (hL : ∀ i, (D i).length ≤ L)
     (n : σ →₀ ℕ) :
-    |coeff n (mvGenWronskian D f)| ≤ (m.factorial : ℤ) * (S * (d ^ L * B)) ^ m := by
+    |(mvGenWronskian D f).coeff n| ≤ (m.factorial : ℤ) * (S * (d ^ L * B)) ^ m := by
   classical
   have hd0 : (0 : ℤ) ≤ d := le_trans zero_le_one hd1
   have hentryS : ∀ i j, ((mvWronskianMatrix D f i j).support.card : ℤ) ≤ S := by
@@ -114,7 +114,7 @@ theorem abs_coeff_mvGenWronskian_le [DecidableEq σ] {m L : ℕ} {S d B : ℤ}
     rw [mvWronskianMatrix_apply]
     refine le_trans ?_ (hS j)
     exact_mod_cast card_support_pderivList_le (D i) (f j)
-  have hentryB : ∀ i j, ∀ n, |coeff n (mvWronskianMatrix D f i j)| ≤ d ^ L * B := by
+  have hentryB : ∀ i j, ∀ n, |(mvWronskianMatrix D f i j).coeff n| ≤ d ^ L * B := by
     intro i j n
     rw [mvWronskianMatrix_apply]
     refine le_trans (abs_coeff_pderivList_le hd1 hB0 (fun k => hd k j) (hB j) (D i) n) ?_
@@ -131,8 +131,8 @@ once — `m = 1`, `f = X`, `D = ![[]]`, `S = d = B = 1`, `L = 0` — so the theo
 true merely because its premises are unsatisfiable. -/
 
 example (n : Unit →₀ ℕ) :
-    |coeff n (mvGenWronskian (fun _ : Fin 1 => ([] : List Unit))
-        (fun _ => (X () : MvPolynomial Unit ℤ)))|
+    |(mvGenWronskian (fun _ : Fin 1 => ([] : List Unit))
+        (fun _ => (X () : MvPolynomial Unit ℤ))).coeff n|
       ≤ ((1 : ℕ).factorial : ℤ) * (1 * (1 ^ 0 * 1)) ^ 1 := by
   refine abs_coeff_mvGenWronskian_le (S := 1) (d := 1) (B := 1) (L := 0)
     le_rfl le_rfl zero_le_one _ _ ?_ ?_ ?_ (fun _ => le_rfl) n
@@ -164,10 +164,10 @@ theorem abs_coeff_det_pderivList_le [DecidableEq σ] {r L : ℕ} {S d B : ℤ}
     (D : Fin r → Fin r → List σ) (P : MvPolynomial σ ℤ)
     (hS : ((P.support.card : ℕ) : ℤ) ≤ S)
     (hd : ∀ j, (degreeOf j P : ℤ) ≤ d)
-    (hB : ∀ n, |coeff n P| ≤ B)
+    (hB : ∀ n, |P.coeff n| ≤ B)
     (hL : ∀ i j, (D i j).length ≤ L)
     (n : σ →₀ ℕ) :
-    |coeff n (Matrix.of fun i j => pderivList (D i j) P).det|
+    |(Matrix.of fun i j => pderivList (D i j) P).det.coeff n|
       ≤ (r.factorial : ℤ) * (S * (d ^ L * B)) ^ r := by
   have hdL : (0 : ℤ) ≤ d ^ L * B :=
     mul_nonneg (pow_nonneg (by linarith) L) hB0
@@ -200,10 +200,10 @@ theorem abs_coeff_det_sepFamily_le {τ : Type*} [DecidableEq σ] [DecidableEq τ
     (P : MvPolynomial (σ ⊕ τ) ℤ)
     (hS : ((P.support.card : ℕ) : ℤ) ≤ S)
     (hd : ∀ j, (degreeOf j P : ℤ) ≤ d)
-    (hB : ∀ n, |coeff n P| ≤ B)
+    (hB : ∀ n, |P.coeff n| ≤ B)
     (n : (σ ⊕ τ) →₀ ℕ) :
-    |coeff n (Matrix.of fun i j =>
-        pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det|
+    |(Matrix.of fun i j =>
+        pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det.coeff n|
       ≤ (r.factorial : ℤ) * (S * (d ^ (2 * r) * B)) ^ r := by
   refine abs_coeff_det_pderivList_le hS1 hd1 hB0
     (fun i j => (Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P hS hd hB (fun i j => ?_) n
@@ -249,20 +249,20 @@ first was `map_pUnitAlgEquiv`, already present as `pUnitAlgEquiv_map`).  The `be
 
 /-- **The coefficient of an iterated partial derivative**, exactly:
 
-    coeff n (∂ⱼ^k g) = (n_j + 1)(n_j + 2)⋯(n_j + k) · coeff (n + k·eⱼ) g
+    (∂ⱼ^k g).coeff n = (n_j + 1)(n_j + 2)⋯(n_j + k) · g.coeff (n + k·eⱼ)
 
 The product is `k!·binom(n_j + k, k)`.  **The `k!` is exactly what separates `∂^k` from the
 divided derivative**, and `binom(n_j+k, k) ≤ 2^{n_j+k}` is §7's `2^r`. -/
 theorem coeff_pderiv_iterate {R : Type*} [CommRing R] [DecidableEq σ] (j : σ) (k : ℕ)
     (g : MvPolynomial σ R) (n : σ →₀ ℕ) :
-    coeff n ((pderiv j)^[k] g)
+    ((pderiv j)^[k] g).coeff n
       = (∏ i ∈ Finset.range k, ((n j + 1 + i : ℕ) : R))
-          * coeff (n + Finsupp.single j k) g := by
+          * g.coeff (n + Finsupp.single j k) := by
   classical
   induction k generalizing n g with
   | zero => simp
   | succ k ih =>
-      rw [Function.iterate_succ_apply', coeff_pderiv, ih]
+      rw [Function.iterate_succ_apply', coeff_pderiv', ih]
       have hnj : (n + Finsupp.single j 1 : σ →₀ ℕ) j = n j + 1 := by simp
       have hadd : n + Finsupp.single j 1 + Finsupp.single j k = n + Finsupp.single j (k + 1) := by
         rw [add_assoc, ← Finsupp.single_add, Nat.add_comm 1 k]
@@ -287,7 +287,7 @@ noncomputable def listIdx : List σ → (σ →₀ ℕ)
 
 /-- The integer `∂^l` multiplies the coefficient at `n` by.
 
-Defined by the recursion `∂ⱼ` itself performs — `coeff n (∂ⱼ f) = (nⱼ+1)·coeff (n+eⱼ) f` — so
+Defined by the recursion `∂ⱼ` itself performs — `(∂ⱼ f).coeff n = (nⱼ+1)·f.coeff (n+eⱼ)` — so
 `coeff_pderivList` below is an immediate induction.  In closed form it is
 `∏_h (n_h + t_h)!/(n_h)!` with `t = listIdx l`, hence `Fac(l)·∏_h binom(n_h+t_h, t_h)` where
 `Fac(l) = ∏_h (t_h)!`; that factorisation is what correction twenty-one needs and is **not yet
@@ -303,7 +303,7 @@ noncomputable def listFactor : List σ → (σ →₀ ℕ) → ℕ
 
 /-- **The coefficient of an iterated partial derivative along a list, exactly.**
 
-    coeff n (∂^l g) = listFactor l n · coeff (n + listIdx l) g
+    (∂^l g).coeff n = listFactor l n · g.coeff (n + listIdx l)
 
 The generalisation of `coeff_pderiv_iterate` from one variable to a list, and the handle the
 rest of correction twenty-one hangs on: both the divisibility `Fac(l) ∣ listFactor l n` and the
@@ -311,12 +311,12 @@ bound `listFactor l n ≤ Fac(l)·2^{Σ d_h}` are statements about `listFactor` 
 polynomial gone. -/
 theorem coeff_pderivList [DecidableEq σ] {R : Type*} [CommRing R] (l : List σ)
     (g : MvPolynomial σ R) (n : σ →₀ ℕ) :
-    coeff n (pderivList l g) = ((listFactor l n : ℕ) : R) * coeff (n + listIdx l) g := by
+    (pderivList l g).coeff n = ((listFactor l n : ℕ) : R) * g.coeff (n + listIdx l) := by
   induction l generalizing n with
   | nil => simp
   | cons j l ih =>
       have hcons : pderivList (j :: l) g = pderiv j (pderivList l g) := rfl
-      rw [hcons, coeff_pderiv, ih, listFactor_cons, listIdx_cons, ← add_assoc, ← mul_assoc]
+      rw [hcons, coeff_pderiv', ih, listFactor_cons, listIdx_cons, ← add_assoc, ← mul_assoc]
       push_cast
       ring
 
@@ -423,27 +423,27 @@ So `∂^l = Fac(l)·(divided derivative)` at the level of coefficients, which is
 statement that Mahler's `Δ` is integral and this arc's `∂^l` is `Fac(l)` times it. -/
 theorem listFac_dvd_coeff_pderivList [DecidableEq σ] (s : Finset σ) (g : MvPolynomial σ ℤ)
     (l : List σ) (hs : ∀ h ∈ l, h ∈ s) (n : σ →₀ ℕ) :
-    ((∏ h ∈ s, ((listIdx l) h).factorial : ℕ) : ℤ) ∣ coeff n (pderivList l g) := by
+    ((∏ h ∈ s, ((listIdx l) h).factorial : ℕ) : ℤ) ∣ (pderivList l g).coeff n := by
   rw [coeff_pderivList]
   exact Dvd.dvd.mul_right (Int.natCast_dvd_natCast.mpr (listFac_dvd_listFactor s l hs n)) _
 
 /-- **§7's coefficient bound for `∂^l`** — the replacement for `abs_coeff_pderivList_le`.
 
-    |coeff n (∂^l g)| ≤ (∏_h t_h!) · 2^{Σ_h d_h} · B
+    |(∂^l g).coeff n| ≤ (∏_h t_h!) · 2^{Σ_h d_h} · B
 
 Against the old `d^{|l|}·B`, this separates the factorial and leaves §7's `2^{Σ r_h}`.  Dividing
 through by `∏_h t_h!` — legitimate by `listFac_dvd_coeff_pderivList` — gives the divided
 derivative's bound, which is the one §12's budget is calibrated for. -/
 theorem abs_coeff_pderivList_le' [DecidableEq σ] (s : Finset σ) {g : MvPolynomial σ ℤ}
     {d : σ → ℕ} {B : ℤ} (hB0 : 0 ≤ B) (l : List σ) (hs : ∀ h ∈ l, h ∈ s)
-    (hd : ∀ h, degreeOf h g ≤ d h) (hB : ∀ n, |coeff n g| ≤ B) (n : σ →₀ ℕ) :
-    |coeff n (pderivList l g)|
+    (hd : ∀ h, degreeOf h g ≤ d h) (hB : ∀ n, |g.coeff n| ≤ B) (n : σ →₀ ℕ) :
+    |(pderivList l g).coeff n|
       ≤ ((∏ h ∈ s, ((listIdx l) h).factorial : ℕ) : ℤ) * 2 ^ (∑ h ∈ s, d h) * B := by
   classical
   rw [coeff_pderivList, abs_mul]
   have hfac : (0 : ℤ) ≤ ((∏ h ∈ s, ((listIdx l) h).factorial : ℕ) : ℤ) * 2 ^ (∑ h ∈ s, d h) := by
     positivity
-  by_cases hz : coeff (n + listIdx l) g = 0
+  by_cases hz : g.coeff (n + listIdx l) = 0
   · rw [hz, abs_zero, mul_zero]
     exact mul_nonneg hfac hB0
   · have hmem : (n + listIdx l) ∈ g.support := mem_support_iff.mpr hz
@@ -533,7 +533,7 @@ theorem C_listFac_dvd_det_sepFamily {τ : Type*} [DecidableEq σ] [DecidableEq �
 
 /-- **`abs_coeff_prod_le` with per-factor bounds.**
 
-`|coeff n (∏ Fᵢ)| ≤ S^{#s} · ∏ βᵢ` when `|coeff · Fᵢ| ≤ βᵢ`.  The uniform version is the case
+`|(∏ Fᵢ).coeff n| ≤ S^{#s} · ∏ βᵢ` when `|coeff · Fᵢ| ≤ βᵢ`.  The uniform version is the case
 `βᵢ ≡ B`; the point of the general one is that a *factorised* per-entry bound survives the
 determinant expansion, which a uniform one cannot express.
 
@@ -544,8 +544,8 @@ this arc has acquired by transcribing a proof *route* rather than the proof. -/
 theorem abs_coeff_prod_le' {ι : Type*} [DecidableEq ι] {S : ℤ}
     (F : ι → MvPolynomial σ ℤ) (β : ι → ℤ) :
     ∀ s : Finset ι, (∀ i ∈ s, ((F i).support.card : ℤ) ≤ S) →
-      (∀ i ∈ s, ∀ n, |coeff n (F i)| ≤ β i) → ∀ n : σ →₀ ℕ,
-      |coeff n (∏ i ∈ s, F i)| ≤ S ^ s.card * ∏ i ∈ s, β i := by
+      (∀ i ∈ s, ∀ n, |(F i).coeff n| ≤ β i) → ∀ n : σ →₀ ℕ,
+      |(∏ i ∈ s, F i).coeff n| ≤ S ^ s.card * ∏ i ∈ s, β i := by
   classical
   intro s
   induction s using Finset.induction_on with
@@ -554,10 +554,10 @@ theorem abs_coeff_prod_le' {ι : Type*} [DecidableEq ι] {S : ℤ}
       intro hS hB n
       rw [Finset.prod_insert ha, Finset.prod_insert ha, Finset.card_insert_of_notMem ha]
       have hSa : ((F a).support.card : ℤ) ≤ S := hS a (Finset.mem_insert_self a t)
-      have hBa : ∀ m, |coeff m (F a)| ≤ β a := hB a (Finset.mem_insert_self a t)
+      have hBa : ∀ m, |(F a).coeff m| ≤ β a := hB a (Finset.mem_insert_self a t)
       have hSt : ∀ i ∈ t, ((F i).support.card : ℤ) ≤ S :=
         fun i hi => hS i (Finset.mem_insert_of_mem hi)
-      have hBt : ∀ i ∈ t, ∀ m, |coeff m (F i)| ≤ β i :=
+      have hBt : ∀ i ∈ t, ∀ m, |(F i).coeff m| ≤ β i :=
         fun i hi => hB i (Finset.mem_insert_of_mem hi)
       refine le_trans (abs_coeff_mul_le hBa (fun m => ih hSt hBt m) n) ?_
       have hβa : (0 : ℤ) ≤ β a := le_trans (abs_nonneg _) (hBa 0)
@@ -570,7 +570,7 @@ theorem abs_coeff_prod_le' {ι : Type*} [DecidableEq ι] {S : ℤ}
 
 /-- **`abs_coeff_det_le` with a row-times-column per-entry bound.**
 
-    |coeff n (det M)| ≤ (#ι)! · S^{#ι} · (∏ aᵢ)(∏ bⱼ)      when  |coeff · (M i j)| ≤ aᵢ·bⱼ
+    |(det M).coeff n| ≤ (#ι)! · S^{#ι} · (∏ aᵢ)(∏ bⱼ)      when  |coeff · (M i j)| ≤ aᵢ·bⱼ
 
 The mirror of `C_dvd_det_of_dvd_entries` on the size side, and for the same reason: every
 permutation term picks one entry per row and one per column, so `∏_i a_{p i}·b_i` is
@@ -582,18 +582,18 @@ between this arc's `mvGenWronskian` and Mahler's `W`. -/
 theorem abs_coeff_det_le' {ι : Type*} [Fintype ι] [DecidableEq ι] {S : ℤ}
     (M : Matrix ι ι (MvPolynomial σ ℤ)) (a b : ι → ℤ)
     (hS : ∀ i j, ((M i j).support.card : ℤ) ≤ S)
-    (hB : ∀ i j, ∀ n, |coeff n (M i j)| ≤ a i * b j)
+    (hB : ∀ i j, ∀ n, |(M i j).coeff n| ≤ a i * b j)
     (n : σ →₀ ℕ) :
-    |coeff n M.det|
+    |M.det.coeff n|
       ≤ ((Fintype.card ι).factorial : ℤ) * S ^ (Fintype.card ι) * ((∏ i, a i) * ∏ j, b j) := by
   classical
   have hsm : ∀ (p : Equiv.Perm ι) (q : MvPolynomial σ ℤ),
-      |coeff n (Equiv.Perm.sign p • q)| = |coeff n q| := by
+      |(Equiv.Perm.sign p • q).coeff n| = |q.coeff n| := by
     intro p q
     rw [Units.smul_def, coeff_smul, smul_eq_mul, abs_mul]
     rcases Int.units_eq_one_or (Equiv.Perm.sign p) with h | h <;> rw [h] <;> simp
   have hterm : ∀ p : Equiv.Perm ι,
-      |coeff n (Equiv.Perm.sign p • ∏ i, M (p i) i)|
+      |(Equiv.Perm.sign p • ∏ i, M (p i) i).coeff n|
         ≤ S ^ (Fintype.card ι) * ((∏ i, a i) * ∏ j, b j) := by
     intro p
     rw [hsm]
@@ -645,7 +645,7 @@ theorem listFac_append_map {τ : Type*} [DecidableEq σ] [DecidableEq τ] [Decid
 
 The determinant of `∂^{Dx i ⊞ Dy j} P` is `C·W` with `W` **integral** and
 
-    |coeff n W| ≤ r! · S^r · (2^{Σ_h d_h} · B)^r
+    |W.coeff n| ≤ r! · S^r · (2^{Σ_h d_h} · B)^r
 
 With `S ≤ ∏_h (d_h + 1) ≤ 2^{Σ_h d_h}` that reads `r!·2^{2r·Σ_h d_h}·B^r` — **§12's
 `b = 2^{2n(r₁+…+r_m)}·n!·a^n`, exactly.**
@@ -661,12 +661,12 @@ theorem exists_divided_wronskian {τ : Type*} [DecidableEq σ] [DecidableEq τ]
     (hx : ∀ i, ∀ h ∈ (Dx i).map Sum.inl, h ∈ s)
     (hy : ∀ j, ∀ h ∈ (Dy j).map Sum.inr, h ∈ s)
     (hS : ((P.support.card : ℕ) : ℤ) ≤ S)
-    (hd : ∀ h, degreeOf h P ≤ d h) (hB : ∀ n, |coeff n P| ≤ B) :
+    (hd : ∀ h, degreeOf h P ≤ d h) (hB : ∀ n, |P.coeff n| ≤ B) :
     ∃ W : MvPolynomial (σ ⊕ τ) ℤ,
       (Matrix.of fun i j => pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det
         = C ((∏ i, ((∏ h ∈ s, ((listIdx ((Dx i).map Sum.inl)) h).factorial : ℕ) : ℤ)) *
              (∏ j, ((∏ h ∈ s, ((listIdx ((Dy j).map Sum.inr)) h).factorial : ℕ) : ℤ))) * W ∧
-      ∀ n, |coeff n W| ≤ (r.factorial : ℤ) * S ^ r * (2 ^ (∑ h ∈ s, d h) * B) ^ r := by
+      ∀ n, |W.coeff n| ≤ (r.factorial : ℤ) * S ^ r * (2 ^ (∑ h ∈ s, d h) * B) ^ r := by
   classical
   set ax : Fin r → ℤ :=
     fun i => ((∏ h ∈ s, ((listIdx ((Dx i).map Sum.inl)) h).factorial : ℕ) : ℤ) with hax
@@ -682,7 +682,7 @@ theorem exists_divided_wronskian {τ : Type*} [DecidableEq σ] [DecidableEq τ]
     · exact hx i h h1
     · exact hy j h h1
   have hent : ∀ i j, ∀ m,
-      |coeff m (pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P)| ≤ ax i * (ay j * K) := by
+      |(pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).coeff m| ≤ ax i * (ay j * K) := by
     intro i j m
     have h := abs_coeff_pderivList_le' s hB0 _ (hmem i j) hd hB m
     rw [listFac_append_map s (Dx i) (Dy j)] at h
@@ -717,7 +717,7 @@ theorem exists_divided_wronskian {τ : Type*} [DecidableEq σ] [DecidableEq τ]
     mul_pos (Finset.prod_pos fun i _ => haxpos i) (Finset.prod_pos fun j _ => haypos j)
   rw [hW, coeff_C_mul, abs_mul, abs_of_pos hcpos] at hdet
   refine le_of_mul_le_mul_left ?_ hcpos
-  calc ((∏ i, ax i) * ∏ j, ay j) * |coeff n W|
+  calc ((∏ i, ax i) * ∏ j, ay j) * |W.coeff n|
       ≤ (r.factorial : ℤ) * S ^ r * ((∏ i, ax i) * ((∏ j, ay j) * K ^ r)) := hdet
     _ = ((∏ i, ax i) * ∏ j, ay j) * ((r.factorial : ℤ) * S ^ r * K ^ r) := by ring
 
@@ -847,12 +847,12 @@ theorem exists_divided_wronskian_budget {τ : Type*} [Fintype σ] [Fintype τ]
     {r₀ n dfirst dlast : ℕ} {a : ℤ} {d : (σ ⊕ τ) → ℕ}
     (ha : 1 ≤ a) (Dx : Fin r₀ → List σ) (Dy : Fin r₀ → List τ)
     (P : MvPolynomial (σ ⊕ τ) ℤ)
-    (hdeg : ∀ h, degreeOf h P ≤ d h) (hB : ∀ m, |coeff m P| ≤ a)
+    (hdeg : ∀ h, degreeOf h P ≤ d h) (hB : ∀ m, |P.coeff m| ≤ a)
     (hr₀ : r₀ ≤ dlast + 1) (hsum : ∑ h, d h ≤ (n + 1) * dfirst) (hdf : dlast ≤ dfirst) :
     ∃ (W : MvPolynomial (σ ⊕ τ) ℤ) (c : ℤ), 0 < c ∧
       (Matrix.of fun i j =>
           pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det = C c * W ∧
-      ∀ m, |coeff m W| ≤ 2 ^ ((2 * n + 3) * (r₀ * dfirst)) * a ^ r₀ := by
+      ∀ m, |W.coeff m| ≤ 2 ^ ((2 * n + 3) * (r₀ * dfirst)) * a ^ r₀ := by
   classical
   have ha0 : (0 : ℤ) ≤ a := le_trans zero_le_one ha
   obtain ⟨W, hW, hWB⟩ := exists_divided_wronskian (Finset.univ : Finset (σ ⊕ τ))
@@ -869,7 +869,7 @@ theorem exists_divided_wronskian_budget {τ : Type*} [Fintype σ] [Fintype τ]
 
 /-- **§7's coefficient bound in one variable, sharp.**
 
-    |coeff n (∂ⱼ^k g)| ≤ k! · 2^d · B      whenever  degreeOf j g ≤ d  and  |coeff · g| ≤ B
+    |(∂ⱼ^k g).coeff n| ≤ k! · 2^d · B      whenever  degreeOf j g ≤ d  and  |coeff · g| ≤ B
 
 Compare `abs_coeff_pderivList_le`, which gives `d^k·B`.  The two agree in shape only when `k` is
 small: the sharp form separates `k!` — the **whole** discrepancy with Mahler's divided
@@ -880,13 +880,13 @@ derivative — and leaves a binomial, which `Nat.choose_le_two_pow` sends to `2^
 `k!·2^d ≈ (d/e)^d·2^d`. Neither dominates for all `k`, but only this one has the factorial
 *visible*, so only this one lets the divided derivative be recovered by dividing it out. -/
 theorem abs_coeff_pderiv_iterate_le [DecidableEq σ] {g : MvPolynomial σ ℤ} {d : ℕ} {B : ℤ}
-    (hB0 : 0 ≤ B) (j : σ) (hd : degreeOf j g ≤ d) (hB : ∀ n, |coeff n g| ≤ B) (k : ℕ)
+    (hB0 : 0 ≤ B) (j : σ) (hd : degreeOf j g ≤ d) (hB : ∀ n, |g.coeff n| ≤ B) (k : ℕ)
     (n : σ →₀ ℕ) :
-    |coeff n ((pderiv j)^[k] g)| ≤ (k.factorial : ℤ) * 2 ^ d * B := by
+    |((pderiv j)^[k] g).coeff n| ≤ (k.factorial : ℤ) * 2 ^ d * B := by
   classical
   rw [coeff_pderiv_iterate, abs_mul]
   have hfac : (0 : ℤ) ≤ (k.factorial : ℤ) * 2 ^ d := by positivity
-  by_cases hz : coeff (n + Finsupp.single j k) g = 0
+  by_cases hz : g.coeff (n + Finsupp.single j k) = 0
   · rw [hz, abs_zero, mul_zero]
     exact mul_nonneg hfac hB0
   · have hmem : (n + Finsupp.single j k) ∈ g.support := mem_support_iff.mpr hz
