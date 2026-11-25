@@ -736,7 +736,7 @@ theorem mk_truncSection (qinv : R) (hq : IsUnit qinv) (n : ℕ)
     rw [truncSection_mk, Ideal.Quotient.eq,
       braneIdeal_eq_span_braneMonic qinv hq n, Ideal.mem_span_singleton]
     refine ⟨-(p /ₘ braneMonic qinv n), ?_⟩
-    have h := modByMonic_add_div p (braneMonic_monic qinv n)
+    have h := modByMonic_add_div p (braneMonic qinv n)
     rw [mul_neg, eq_neg_iff_add_eq_zero]
     linear_combination h
 
