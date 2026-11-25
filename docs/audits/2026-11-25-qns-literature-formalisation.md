@@ -212,3 +212,19 @@ identities change.** Lean: `QOU/FluidDynamics/TwistedHarmonicBound.lean`
 - Neither bears on 3D regularity. The vorticity on Bring is already gapped
   (λ₁(Δ₂) = 5 − √5). The only ungapped modes are harmonic velocities, and those
   are what χ protects.
+
+## Cross-check against the sibling's exact DEC probe (PR #9428)
+
+`computations/probes/bring54_dec_qns_probe.py` (witness `bring54-dec-qns`,
+12/12, exact, sibling session) independently measures, on the Bring map:
+- dE/dt = −ν·enstrophy exactly. This matches `energy_equality`.
+- The divergence-free space is 31 = 8 harmonic + 23 coexact.
+- Harmonic fields are exact steady states. This matches `lap1_harmonic`.
+- Coexact data moves energy into the harmonic modes only through the nonlinear
+  term. This matches `harmonic_circulation`, by which harmonic circulation
+  changes only by advection.
+
+The Lean identities are generic; the probe is the Bring instance. Neither
+derives ν. The sibling's non-abelian file `QOU/BringsSurface/NonabelianStokesTrace.lean`
+(#9428) is the other half of the Yekutieli question. This branch proves the abelian
+specialisation (`DECYekutieliStokes.lean`) and does not duplicate it.
