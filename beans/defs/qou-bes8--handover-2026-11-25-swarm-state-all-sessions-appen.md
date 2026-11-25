@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:30:06Z
+updated_at: 2026-11-25T16:31:00Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -58,4 +58,11 @@ OPEN: owner decision on the 4 other order-zero log-law probes (framed on qou-of4
 - **Blockers:** .jsonld nodes for 8 photon blocks were never generated (the light platform emits the wrong @context); details in qou-amon. No Lean model of H_n(q) for n>=4.
 - **Resume cold:** read qou-80x0, qou-wt0l, qou-amon and audit docs/audits/2026-11-25-photon-jet-and-hearing-the-shape.md §12–§15.
 
-
+## q-NS literature child (session_01EucfRp1HyniH3qQb1YGVWb) — 2026-11-25T16:32Z
+- Role: research child (coordinator session_01EucfRmMzrEARLFNgZfhwsQ).
+- Task: qou-0nqs + formalise fluid/holography literature in q-NS. Epic qou-i6e2.
+- Done: PR #9434 (draft): QOU/FluidDynamics/DECNavierStokes.lean sorry-free, lean-direct exit 0 (energy equality, vorticity eq, harmonic circulation, mass/circulation conservation, enstrophy decay conditional on gap, nelson_consistency, nu_q=O(q-1)); audit docs/audits/2026-11-25-qns-literature-formalisation.md (15-row table). qou-0nqs verdict: modelling choice; owner decision 1/2/3 framed in the audit.
+- In flight: none.
+- Next: qou-gd5s (regularity route for nu_q), qou-lke8, qou-hr80, qou-dvfy, qou-9lxj, qou-tgq7, qou-jv2n (Lean paper statement + content blocks).
+- Blockers: owner ruling on qou-0nqs wording; qou-hr80 waits on #9430 (BringRegularMap).
+- Route: olean cache restore per AGENTS.md Step 0, then lean -DautoImplicit=false -s 65536.
