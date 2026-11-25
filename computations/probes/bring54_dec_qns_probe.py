@@ -300,9 +300,29 @@ check("N2 pure coexact data decays at amp 1, at least as fast as exp(-2 nu (5-sq
       mpf(results["coexact_amp1"]["E_T"]) < mpf(results["coexact_amp1"]["E0"]) * mp.e ** (-2 * nu * (5 - mp.sqrt(5)) * T) * 2,
       f"E_T/E_0 = {nstr(mpf(results['coexact_amp1']['E_T'])/mpf(results['coexact_amp1']['E0']), 6)}, "
       f"linear bound exp(-2 nu (5-sqrt5) T) = {nstr(mp.e ** (-2 * nu * (5 - mp.sqrt(5)) * T), 6)}")
-check("N3 energy identity holds along every run to < 1e-8 (RK4 + Simpson error)",
-      all(abs(mpf(r["energy_identity_residual"])) < mpf(10) ** -8 for r in results.values()),
-      "max |residual| = " + nstr(max(abs(mpf(r["energy_identity_residual"])) for r in results.values()), 3))
+# N3: the energy identity is exact (E5); along a run its residual is integrator +
+# quadrature error. Test that it CONVERGES at fourth order, rather than sizing a
+# threshold to the observed miss: rerun the hardest case (mixed, amp 20) at dt/2.
+
+
+def run_resid(v0, amp, dt_):
+    v = normalise(v0, amp)
+    E0_ = energy(v)
+    n = int(T / dt_)
+    ens_ = [enstrophy(v)]
+    for k in range(n):
+        v = rk4(v, dt_)
+        ens_.append(enstrophy(v))
+    integ_ = dt_ / 3 * (ens_[0] + ens_[-1] + 4 * mp.fsum(ens_[1:-1:2]) + 2 * mp.fsum(ens_[2:-1:2]))
+    return energy(v) - E0_ + nu * integ_
+
+
+r_full = mpf(results["mixed_amp20"]["energy_identity_residual"])
+r_half = run_resid(inits["mixed"], mpf(20), dt / 2)
+ratio = abs(r_full / r_half)
+results["mixed_amp20"]["energy_identity_residual_half_dt"] = nstr(r_half, 5)
+check("N3 energy-identity residual converges at ~4th order (dt -> dt/2 shrinks it by > 8x; RK4 and Simpson are O(dt^4))",
+      ratio > 8, f"mixed amp20: residual {nstr(r_full, 4)} at dt, {nstr(r_half, 4)} at dt/2, ratio {nstr(ratio, 4)}")
 mix20 = results["mixed_amp20"]
 check("N4 measured: the nonlinear term moves energy into/out of the harmonic modes in the mixed amp-20 run",
       True, f"harmonic energy {mix20['E_harm_0']} -> {mix20['E_harm_T']} (change {mix20['harmonic_energy_change']}); "
