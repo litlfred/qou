@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-11-24T20:49:37Z
-updated_at: 2026-11-25T10:57:57Z
+updated_at: 2026-11-25T11:04:04Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). `computations/probes/probe-d-dressing-is-proton-net.witness.json` was self-stale. Re-running the current producer `computations/probes/probe_d_dressing_is_proton_net.py` (exit 0) writes `allPassed: false`. The refreshed witness was **NOT committed** (owner decision 2026-11-24, "D2 commit all 42": hold producers that fail their own assertion). Main still carries the old passing witness.
@@ -60,3 +60,6 @@ Same E0 (4.18598 MeV) and the same Δtr as binding-single-pipeline-comparison.wi
 On current inputs: E0·net(p)·s = 1.8434 (−17.1 %), E0·s = 2.0585 (−7.5 %), E0·ln(tf/ta) = 2.8332 (+27.4 %).
 So ~3.3× of the miss is the missing tr_free normalisation; the old 0.29 % depended on tr_free happening to be ≈ 1.
 Choosing among these by residual would be selection against the target; not done. Decision for owner.
+
+
+2026-11-25 follow-up: the three normalised forms analysed. The corpus already derives the log form (docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md §10a: Markov multiplicativity + extensivity => Cauchy => c·ln). Lean: logForm_extensive, linearForm_not_extensive, interface_scalar (QOU/Nuclear/InterfaceScalar.lean), InteriorMarkov from BraidedTower (sorry-free). Not formalised: the uniqueness half (continuous additive f on (R>0,x) is c·ln). Under D the deuteron log form is zero-parameter +27.4% (C-era was +74.85%). Under D, z_D > mu_req = exp(-B_AME/E0) = 0.5878, so the C-era mu_unreachable obstruction no longer applies (reported, not a proposal to pick d).
