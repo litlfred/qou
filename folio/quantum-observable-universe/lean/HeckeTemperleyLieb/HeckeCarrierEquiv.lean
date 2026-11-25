@@ -134,8 +134,7 @@ theorem iwahori_hom_ext (Q : K) (n : ℕ) {φ ψ : IwahoriHecke K Q n →ₐ[K] 
       = ψ.comp (QOU.Hecke.IwahoriHecke.mk K Q n) := by
     apply FreeAlgebra.hom_ext
     funext i
-    simpa only [AlgHom.comp_apply, QOU.Hecke.IwahoriHecke.mk,
-      QOU.Hecke.IwahoriHecke.σ] using h i
+    exact h i
   ext z
   obtain ⟨x, rfl⟩ := RingQuot.mkAlgHom_surjective K (QOU.Hecke.HeckeRel K Q n) z
   exact AlgHom.congr_fun key x
