@@ -61,3 +61,27 @@ then for the statement shape.
 - `simp only at h` that makes no progress is now an error: delete it.
 - `add_le_add_right h c` now gives `c + a ≤ c + b`; `(mul_lt_mul_left h).mpr` -> `mul_lt_mul_of_pos_left`.
 - `Rep.ofDistribMulAction` carriers are no longer reducibly the underlying type: prove by defeq.
+
+## Added from batch B (HeckeTemperleyLieb + BraidKnotOctonion, 51 files)
+
+- `Nat.succ_mul_choose_eq` -> `Nat.add_one_mul_choose_eq`; `tsum_le_tsum` -> `Summable.tsum_le_tsum`;
+  `Real.log_prod _ _ hf` -> `Real.log_prod hf`; `finRotate_succ_apply` -> `finRotate_apply`;
+  `InnerProductSpace.toDual_apply` -> `toDual_apply_apply`; `pow_eq_zero h` -> `eq_zero_of_pow_eq_zero h`.
+- `Multiset.sort_sorted` -> `Multiset.pairwise_sort` (argument order `sort s r`);
+  `List.eq_of_perm_of_sorted hp h1 h2` -> `hp.eq_of_pairwise' h1 h2`;
+  `YoungDiagram.ofRowLens` takes `w.SortedGE`.
+- `Equiv.Perm.apply_inv_self`/`inv_apply_self` removed: `Perm.coe_inv` + `Equiv.apply_symm_apply`.
+- `CoxeterMatrix.Aₙ` -> `CoxeterMatrix.A`; `CoxeterSystem.exists_reduced_word` -> `cs.exists_isReduced`;
+  write `CoxeterSystem.IsReduced` (bare `IsReduced` is ambiguous).
+- `Finset.range_eq_Ico` rewrites only the first occurrence now: pass the argument.
+- `add_le_add_left h c` now gives `a + c ≤ b + c`.
+- MonoidAlgebra: `mul_apply` -> `coeff_mul`; `Finsupp.supported` -> `MonoidAlgebra.supported`;
+  `Finsupp.lmapDomain` -> `MonoidAlgebra.mapDomainLinearMap R R f`;
+  `Finsupp.induction_linear` -> `MonoidAlgebra.induction_linear`;
+  finrank via `(MonoidAlgebra.coeffLinearEquiv K).finrank_eq`.
+- RingQuot type synonyms: `simpa using h` no longer bridges `X := RingQuot rel`; use
+  `simp only [...] at h; exact h`.
+- An instance whose argument cannot be found by instance search (e.g. `hq : 1 < q`) is rejected:
+  make it a `@[reducible] noncomputable def` and pass it explicitly.
+- Last resort used in two files (PLPolygonalLink, YoungDiagramTransposeBridge):
+  `set_option backward.isDefEq.respectTransparency false` (Mathlib uses it too).
