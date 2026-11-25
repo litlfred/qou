@@ -473,3 +473,11 @@ Still measured, not Lean: the uniqueness of the Borromean factorisation over all
 weights (generic-q Gröbner basis attempted, §11.1); the dimension 7 of the two-photon
 relation space and degree-3 vanishing; the continuous (ℓ, G) symmetry and its signature;
 the Gassmann counts.
+
+### §11.1 Six-weight uniqueness: not closed
+
+A lex Gröbner basis of the six factorisation equations over ℚ(h), symbolic in h, did not
+finish in about 15 minutes and was stopped. The 4×4 consistency minors in p alone are
+dense polynomials of degree up to 8 in h. Uniqueness over all six colour weights therefore
+stays measured at q = 3/2 and q = 7/5, not proved for generic q. The collinear case is
+proved (`borromean_weights_forced_model`).

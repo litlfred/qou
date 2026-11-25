@@ -3,8 +3,6 @@
  "q0AnchorReason": "rational q; never reads q0",
  "runs": [
   {
-   "q0Anchor": "independent",
-   "q0AnchorReason": "rational q; never reads q0",
    "q": "3/2",
    "groebner_size": 21,
    "finite_solution_set": true,
@@ -36,8 +34,6 @@
    ]
   },
   {
-   "q0Anchor": "independent",
-   "q0AnchorReason": "rational q; never reads q0",
    "q": "7/5",
    "groebner_size": 21,
    "finite_solution_set": true,
