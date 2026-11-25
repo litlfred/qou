@@ -65,6 +65,7 @@ theorem hasDerivAt_cosFactor (A x : ℝ) :
     simpa using ((hasDerivAt_id x).div_const 2).const_sub A
   have := (Real.hasDerivAt_cos (A - x / 2)).comp x hin
   convert this using 1
+  · rfl
   ring
 
 /-- `d/dx sin(A − x/2)/2 = −cos(A − x/2)/4`. The two halvings compose to the
@@ -76,6 +77,7 @@ theorem hasDerivAt_cosFactor' (A x : ℝ) :
     simpa using ((hasDerivAt_id x).div_const 2).const_sub A
   have h := ((Real.hasDerivAt_sin (A - x / 2)).comp x hin).div_const 2
   convert h using 1
+  · rfl
   ring
 
 /-- Product rule for the model. -/

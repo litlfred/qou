@@ -98,7 +98,7 @@ theorem degree_le_of_bounded_div_pow (P : ℝ[X]) (m : ℕ) (M : ℝ)
   have hQ : (X ^ m : ℝ[X]) ≠ 0 := pow_ne_zero _ X_ne_zero
   have hdegX : (X ^ m : ℝ[X]).degree = (m : ℕ) := degree_X_pow m
   have hdeg : (X ^ m : ℝ[X]).degree < P.degree := by rw [hdegX]; exact hcon
-  have ht := Polynomial.abs_div_tendsto_atTop_of_degree_gt P (X ^ m) hdeg hQ
+  have ht := Polynomial.abs_div_tendsto_atTop_atTop_of_degree_gt P (X ^ m) hdeg hQ
   simp only [eval_pow, eval_X] at ht
   exact not_isBoundedUnder_of_tendsto_atTop ht ⟨M, h⟩
 
@@ -156,6 +156,6 @@ theorem laurent_const_of_bounded (P : ℝ[X]) (m : ℕ) (M : ℝ)
 theorem laurent_const_coeff (P : ℝ[X]) (m : ℕ) :
     (reflect m P).coeff 0 = P.coeff m := by
   rw [coeff_reflect]
-  simp [revAt]
+  rw [revAt_zero]
 
 end QOU.QBeta.LaurentBoundedness

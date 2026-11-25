@@ -90,7 +90,9 @@ proportionality at both anchors (this is the "good news" of the reframe, and exa
 why a single `Im(q₀)` cannot explain a *swing*: the proportionality does not change
 between the anchors). -/
 theorem phaseResponse_hasDerivAt (k ε : ℝ) : HasDerivAt (phaseResponse k) k ε := by
-  simpa [phaseResponse] using (hasDerivAt_id ε).const_mul k
+  have h := (hasDerivAt_id ε).const_mul k
+  simp only [mul_one] at h
+  exact h
 
 /-- **FALSIFIABLE TEST — a single global `Im(q₀)` cannot realize the swing.** Both
 anchors are two pins of the same `q₀`; in a *global* model they share the same

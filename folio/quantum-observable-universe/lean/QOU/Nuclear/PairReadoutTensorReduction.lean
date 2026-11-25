@@ -72,13 +72,12 @@ theorem trace_mulKi (S : Sector e f K Ki W P k) :
   rw [Matrix.trace_mul_comm, ← Matrix.mul_assoc, ← Matrix.mul_assoc, ← S.commKi, hPK,
     Matrix.smul_mul, Matrix.smul_mul, Matrix.trace_smul, smul_eq_mul]
 
-omit [Field R] in
-theorem shift_mul_left {P Y Z : Matrix α α R} [CommRing R] (hY : P * Y * P = 0) (hZ : P * Z = Z * P) :
+theorem shift_mul_left {S : Type*} [CommRing S] {P Y Z : Matrix α α S}
+    (hY : P * Y * P = 0) (hZ : P * Z = Z * P) :
     P * (Z * Y) * P = 0 := by
   rw [← Matrix.mul_assoc, hZ, Matrix.mul_assoc Z, Matrix.mul_assoc Z, hY, Matrix.mul_zero]
 
-omit [Field R] in
-theorem shift_mul_right {P Y Z : Matrix α α R} [CommRing R] (hY : P * Y * P = 0)
+theorem shift_mul_right {S : Type*} [CommRing S] {P Y Z : Matrix α α S} (hY : P * Y * P = 0)
     (hZ : P * Z = Z * P) : P * (Y * Z) * P = 0 := by
   rw [Matrix.mul_assoc, Matrix.mul_assoc, ← hZ, ← Matrix.mul_assoc Y, ← Matrix.mul_assoc P,
     ← Matrix.mul_assoc P, hY, Matrix.zero_mul]

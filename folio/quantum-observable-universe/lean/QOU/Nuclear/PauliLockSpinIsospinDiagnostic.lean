@@ -300,7 +300,7 @@ theorem classicalSpin_eq_twoRowIso_iff_q_sq_eq_one {R : Type*} [Field R] [CharZe
       mul_ne_zero (by norm_num) (pow_ne_zero 2 hq2)
     have hsq : (q ^ 2 - 1) ^ 2 = 0 :=
       (div_eq_zero_iff.mp hdiff.symm).resolve_right h4
-    exact sub_eq_zero.mp (pow_eq_zero hsq)
+    exact sub_eq_zero.mp (eq_zero_of_pow_eq_zero hsq)
   · intro hq1
     have hzero : (q ^ 2 - 1) ^ 2 / (4 * (q ^ 2 + 1) ^ 2) = 0 := by
       rw [hq1]; norm_num

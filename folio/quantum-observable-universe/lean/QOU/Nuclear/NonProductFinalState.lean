@@ -43,9 +43,9 @@ theorem decreasing_window {q : ℝ} (g : ℝ → ℝ) (hg : StrictAnti g) (x : �
       (epsN q (borromeanV3B q) < x ∧ x < epsP q (borromeanV3A q)) := by
   constructor
   · rintro ⟨a, b⟩
-    exact ⟨hg.lt_iff_lt.mp b, hg.lt_iff_lt.mp a⟩
+    exact ⟨hg.lt_iff_gt.mp b, hg.lt_iff_gt.mp a⟩
   · rintro ⟨a, b⟩
-    exact ⟨hg.lt_iff_lt.mpr b, hg.lt_iff_lt.mpr a⟩
+    exact ⟨hg.lt_iff_gt.mpr b, hg.lt_iff_gt.mpr a⟩
 
 /-- **The plain product lies below the window.** -/
 theorem product_outside_window {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20) :
