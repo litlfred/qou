@@ -1,4 +1,5 @@
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Braid covariance of the pairwise electromagnetic insertions on the nucleon weight spaces
