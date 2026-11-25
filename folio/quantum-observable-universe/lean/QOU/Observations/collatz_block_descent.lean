@@ -356,12 +356,12 @@ theorem cubeRoot_pow_three {R : Type*} [CommRing R] (w : R)
 /-- `-w` is a unit, with inverse `-w²`. -/
 theorem isUnit_neg_cubeRoot {R : Type*} [CommRing R] (w : R)
     (hw : w ^ 2 + w + 1 = 0) : IsUnit (-w) :=
-  isUnit_of_mul_eq_one (-w) (-w ^ 2) (by linear_combination (w - 1) * hw)
+  IsUnit.of_mul_eq_one (a := -w) (-w ^ 2) (by linear_combination (w - 1) * hw)
 
 /-- `w + 1` is a unit, with inverse `-w`. -/
 theorem isUnit_one_add_cubeRoot {R : Type*} [CommRing R] (w : R)
     (hw : w ^ 2 + w + 1 = 0) : IsUnit (w + 1) :=
-  isUnit_of_mul_eq_one (w + 1) (-w) (cubeRoot_one_add_mul_neg w hw)
+  IsUnit.of_mul_eq_one (a := w + 1) (-w) (cubeRoot_one_add_mul_neg w hw)
 
 /-- **Only a unit evaluation can admit an odd-preimage.** Combining
     `oddPreimage_forces_eval_cubeRoot` (`P(w) = -w`) with the unit-ness of `-w`. -/

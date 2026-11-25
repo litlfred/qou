@@ -72,7 +72,7 @@ theorem qcollatz_no_one_odd_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ)
   simp only [map_mul, map_sub, map_pow, map_add, map_one, hq] at hcong
   norm_num at hcong
   -- hcong : (2 ^ k - 3) * φ P = 1
-  have hu : IsUnit ((2 : ℤ) ^ k - 3) := isUnit_of_mul_eq_one _ _ hcong
+  have hu : IsUnit ((2 : ℤ) ^ k - 3) := IsUnit.of_mul_eq_one _ hcong
   rw [Int.isUnit_iff] at hu
   have h8 : (8 : ℤ) ≤ 2 ^ k := by
     calc (8 : ℤ) = 2 ^ 3 := by norm_num
