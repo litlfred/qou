@@ -96,6 +96,8 @@ def corner : Matrix (Fin 2) (Fin 2) ℚ →ₗ[ℚ] ℚ :=
     map_add' := fun _ _ => rfl
     map_smul' := fun _ _ => rfl }
 
+theorem corner_apply (y : Matrix (Fin 2) (Fin 2) ℚ) : corner y = y 1 1 := rfl
+
 theorem ιQ_apply (x : ℚ) : ιQ x = x • (1 : Matrix (Fin 2) (Fin 2) ℚ) := by
   simp [ιQ, Algebra.algebraMap_eq_smul_one]
 
@@ -112,10 +114,10 @@ instance condExp_corner (rank : ℕ) :
     HeckeConditionalExpectation ℚ 2 rank ℚ (Matrix (Fin 2) (Fin 2) ℚ)
       (fun _ => σ2) ιQ corner where
   retract x := by
-    rw [ιQ_apply]; simp [corner]
+    rw [ιQ_apply]; simp [corner_apply]
   bimodule x z y := by
     rw [ιQ_apply, ιQ_apply]
-    simp [corner]; ring
+    simp [corner_apply]; ring
 
 theorem jones_σ2 : jonesIdempotent (2 : ℚ) σ2 = Matrix.of ![![0, 0], ![0, (1 : ℚ)]] :=
   jonesIdempotent_h2 (2 : ℚ) (by norm_num)
@@ -140,7 +142,7 @@ theorem sameLevel_corner (n : ℕ) :
   rw [jones_σ2, ιQ_apply]
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [corner, Matrix.mul_apply, Fin.sum_univ_two, Matrix.vecMul, dotProduct]
+    simp [corner_apply, Matrix.mul_apply, Fin.sum_univ_two, Matrix.vecMul, dotProduct]
 
 /-! ## The restated three-level class at the bottom of the tower -/
 
