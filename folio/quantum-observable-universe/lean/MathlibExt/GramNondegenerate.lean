@@ -1,4 +1,5 @@
 import Mathlib.LinearAlgebra.SesquilinearForm.Basic
+import Mathlib.LinearAlgebra.SesquilinearForm.Orthogonal
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 
