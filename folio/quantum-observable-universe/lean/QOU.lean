@@ -1899,6 +1899,7 @@ import QOU.Core.ReebHamiltonianChartBridge
 import QOU.Core.ReebHamiltonianChartBridgeReal
 import QOU.Core.AffineCausalityCone
 import QOU.Core.ReebWorldlineSignature
+import QOU.Core.BoostCovarianceRigidity
 import QOU.MassTheory.GPMTThreeRowCumulantBridge
 import QOU.MassTheory.ThreeRowSpringerSYTDerivation
 import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
