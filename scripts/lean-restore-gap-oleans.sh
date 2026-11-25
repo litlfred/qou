@@ -117,7 +117,16 @@ N=$(tar tzf "$TGZ" | wc -l)
 # FreeGroup.Reduce cones, all built lean-direct exit 0; a fresh restore was
 # checked byte-identical against the built oleans.  The tarball is now 75 MB,
 # past GitHub's 50 MB warning and three quarters of its 100 MB hard limit: the
-# next additions should go in a second tarball, not this one.
+# next additions should go in a second tarball, not this one.  Head
+# 91643168ca5 (2026-11-25, 324 -> 335 entries) adds 11 more for the full
+# lean-direct cone: the FundamentalGroupoid.SimplyConnected cone (9, for
+# MathlibExt.PathLebesgue), Topology.Homotopy.Lifting (for
+# MathlibExt.LocalCocycleTransport) and Analysis.Convex.Join (for
+# BraidKnotOctonion.PLCone); 80.6 MB.  Round-trip of a fresh restore: 327 of
+# 335 byte-identical to the live tree; the 8 that differ are older entries the
+# base seed also supplies (trace-paired, Lake-built), which --skip-old-files
+# correctly leaves in place.  A diff against a restored tree therefore is NOT
+# a corruption signal for files with a .trace beside them.
 for d in "${DESTS[@]}"; do
   tar xzf "$TGZ" -C "$d" --skip-old-files
   echo "restored up to $N olean(s) into $d from $BRANCH ($C), existing files kept"

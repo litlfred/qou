@@ -503,3 +503,11 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
   16 UGB modules (incl. HeckeGS) rebuilt, all exit 0.
 - **TRAP** a background Bash running the whole cone is killed at the 2 h tool limit (it was, at
   2577/3908). Run it detached (`setsid nohup ... &`) and wait with a separate until-loop.
+
+- **TRAP (2026-11-25): -j2 OOM on HeckeTemperleyLieb.HeckeH4Semisimple.** The full
+  cone's only "error" was a cgroup OOM kill (lean RSS 8.3 GB, 15 GB container,
+  dmesg `Memory cgroup out of memory`) after 1115 s, logged with NO diagnostic,
+  only the elan toolchain note. An empty error log means check `dmesg`, not the
+  source. Re-run that module `-j1`.
+- **STABLE (2026-11-25): gap 91643168ca5 round-trip.** 327/335 byte-identical;
+  the 8 differing are base-supplied trace-paired oleans kept by --skip-old-files.
