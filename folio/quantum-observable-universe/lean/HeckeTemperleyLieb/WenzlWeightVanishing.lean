@@ -516,7 +516,7 @@ theorem inv_two_bracket_not_wenzl_level_two {Q z : R}
   rcases mul_eq_zero.mp hfac with h12 | h3
   · rcases mul_eq_zero.mp h12 with h1 | h2
     · exact hQ0 h1
-    · exact hQ1 (sub_eq_zero.mp (pow_eq_zero h2))
+    · exact hQ1 (sub_eq_zero.mp (eq_zero_of_pow_eq_zero h2))
   · exact hQm1 h3
 
 /-- **All-`r` exclusion of `1/[2]_q` from the Wenzl level family (`qou-niah`).**
