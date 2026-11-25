@@ -124,7 +124,7 @@ theorem conj_trivial_iff (A : Matrix (Fin 2) (Fin 2) ℂ) (hA : A.det = 1) :
   · intro h
     have hU : A * Aᴴ = 1 := by
       simpa [conj] using h 1 (by simp [Matrix.IsHermitian])
-    have hU' : Aᴴ * A = 1 := Matrix.mul_eq_one_comm.mp hU
+    have hU' : Aᴴ * A = 1 := mul_eq_one_comm.mp hU
     have hcomm : ∀ X : Matrix (Fin 2) (Fin 2) ℂ, X.IsHermitian → A * X = X * A := by
       intro X hX
       have := congrArg (· * A) (h X hX)
