@@ -83,17 +83,74 @@ for d in "${DESTS[@]}"; do
   [ -d "$d" ] || { echo "no such destination: $d" >&2; exit 1; }
 done
 
+# Idempotent when restoring into the default trees (2026-11-24): the commit
+# last applied is recorded in .lake/lean-gap-addon.sha, so the call that
+# scripts/lean-cache-restore.sh now makes on every run costs one ls-remote.
+MARK="$ROOT/.lake/lean-gap-addon.sha"
+URL="$(git -C "$ROOT" remote get-url origin)"
+HEAD_SHA=$(git ls-remote "$URL" "refs/heads/$BRANCH" 2>/dev/null | cut -f1)
+if [ $# -eq 0 ] && [ -n "$HEAD_SHA" ] && [ -f "$MARK" ] && [ "$(cat "$MARK")" = "$HEAD_SHA" ]; then
+  echo "lean-restore-gap: $BRANCH ($HEAD_SHA) already applied."
+  exit 0
+fi
+
 TGZ=$(mktemp)
-trap 'rm -f "$TGZ"' EXIT INT TERM     # 2.3 MB, but leaking temp files is how
+trap 'rm -f "$TGZ"' EXIT INT TERM     # ~60 MB; leaking temp files is how
                                       # this container has run out of disk before
 
 git -C "$ROOT" fetch --depth=1 origin "$BRANCH"
 C=$(git -C "$ROOT" rev-parse FETCH_HEAD)
-git -C "$ROOT" show "$C:mathlib-gap-oleans.tgz" > "$TGZ"
-N=$(tar tzf "$TGZ" | wc -l)
-for d in "${DESTS[@]}"; do
-  tar xzf "$TGZ" -C "$d"
-  echo "restored $N olean(s) into $d from $BRANCH ($C)"
+# One or more tarballs.  `mathlib-gap-oleans.tgz` is the original (80.6 MB at
+# 91643168ca5, past GitHub's 50 MB warning and near its 100 MB refusal), and it
+# is never rewritten, so a restore script from before this change still gets
+# everything it got before.  Later additions go in NEW files
+# `mathlib-gap-oleans-02.tgz`, `-03`, ... each a complete gzip tar, so each
+# stays far below the limit.  ORDER MATTERS: with --skip-old-files the FIRST
+# tarball to supply a path wins, so the original goes first and the numbered
+# parts follow in numeric order.  A plain `sort` gets this backwards, because
+# '-' (0x2d) sorts before '.' (0x2e): measured, it applied -02 first and its
+# copy of an overlapping path won.
+TREE=$(git -C "$ROOT" ls-tree --name-only "$C")
+PARTS=$( { echo "$TREE" | grep -xF 'mathlib-gap-oleans.tgz';
+           echo "$TREE" | grep -E '^mathlib-gap-oleans-[0-9]+\.tgz$' | sort -t- -k4,4n; } || true)
+[ -n "$PARTS" ] || { echo "lean-restore-gap: no mathlib-gap-oleans*.tgz on $BRANCH ($C)" >&2; exit 1; }
+N=0
+for p in $PARTS; do
+  git -C "$ROOT" show "$C:$p" > "$TGZ"
+  N=$((N + $(tar tzf "$TGZ" | wc -l)))
 done
+# --skip-old-files: the addon FILLS gaps and never replaces an olean already
+# present.  Measured 2026-11-24 against the base seed
+# (cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ 7c61a1ba876): all 224
+# oleans of the previous head fe9ce693bed are ALSO in the base, Lake-built and
+# trace-paired (its other 64 entries are .ilean files), so overwriting them
+# with these untraced lean-direct copies gains nothing.  Head fe45a7c5b63
+# adds 17 Mathlib oleans the base lacks (the MvPowerSeries.Substitution,
+# Coalgebra.TensorProduct, FreeProduct and SymmetricAlgebra cones that main
+# fed339bd1f6 imports).  Head fd6c1e47a21 (2026-11-24, 305 -> 324 entries,
+# parent fe45a7c5b63) adds 19 more: the Convex.SimplicialComplex.Basic,
+# Groupoid.Subgroupoid (+Basic, VertexGroup), Topology.Covering,
+# Matrix.FixedDetMatrices, EllipticCurve.Projective.Point (12-module cone) and
+# FreeGroup.Reduce cones, all built lean-direct exit 0; a fresh restore was
+# checked byte-identical against the built oleans.  The tarball is now 75 MB,
+# past GitHub's 50 MB warning and three quarters of its 100 MB hard limit: the
+# next additions should go in a second tarball, not this one.  Head
+# 91643168ca5 (2026-11-25, 324 -> 335 entries) adds 11 more for the full
+# lean-direct cone: the FundamentalGroupoid.SimplyConnected cone (9, for
+# MathlibExt.PathLebesgue), Topology.Homotopy.Lifting (for
+# MathlibExt.LocalCocycleTransport) and Analysis.Convex.Join (for
+# BraidKnotOctonion.PLCone); 80.6 MB.  Round-trip of a fresh restore: 327 of
+# 335 byte-identical to the live tree; the 8 that differ are older entries the
+# base seed also supplies (trace-paired, Lake-built), which --skip-old-files
+# correctly leaves in place.  A diff against a restored tree therefore is NOT
+# a corruption signal for files with a .trace beside them.
+for d in "${DESTS[@]}"; do
+  for p in $PARTS; do
+    git -C "$ROOT" show "$C:$p" > "$TGZ"
+    tar xzf "$TGZ" -C "$d" --skip-old-files
+  done
+  echo "restored up to $N file(s) from $(echo $PARTS | wc -w) tarball(s) into $d from $BRANCH ($C), existing files kept"
+done
+if [ $# -eq 0 ]; then mkdir -p "$ROOT/.lake"; echo "$C" > "$MARK"; fi
 echo "verify with:  source scripts/lean-direct-env.sh && \\"
 echo "  lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/mass-theory/reeb-bundle.lean"
