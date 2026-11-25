@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-23T21:14:59Z
+updated_at: 2026-11-25T01:16:31Z
 parent: qou-wxhi
 ---
 
@@ -64,3 +64,9 @@ DEFAULT: (B) until the owner decides. OWNER DECISION needed. No code or content 
 Claimed by claude/w6-joint-lepton-resolvent-20261123 (2026-11-23)
 
 PR #9213 opened on claude/w6-joint-lepton-resolvent-20261123 (01ca9a6e9a9; Murakami real-q deformation excluded on sign, 29 theorems in InhomogeneousLeptonLoopResolvent.lean)
+
+
+## 2026-11-25T01:16:31Z — OWNER RULING (relayed by the coordinator)
+Verbatim: 'make it conjecture/contingent on BraidBoostInertialEquivalence and work BraidBoostInertialEquivalence'.
+Done in PR #9402: new block conj:braid-boost-inertial-equivalence (information-theory/braid-boost-inertial-equivalence.{ts,md}, lean.ref to the class); conditional banner on prop:mass-energy, with the conjecture added to its uses[]; mass-energy-equivalence-interpretation no longer says 'not an independent postulate'.
+NARROWED: this bean now waits on qou-2k68 (a definition of inertial mass independent of m, then the class) and on the E_e / 70x unit split, which are the same missing input seen from two sides. Route 1 is excluded (probe braid_boost_inertial_clock). Kept OPEN (Rule 13a).
