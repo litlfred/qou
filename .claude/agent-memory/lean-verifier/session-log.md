@@ -451,3 +451,8 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
   Basic down in place (`rm -f` then `lean -DautoImplicit=false -o … -i …`, cwd = UGB package root):
   1.5–4.2 s each; HeckeCompletion **1m29s wall / 4m20s user**, exit 0, zero output.
 - **BASELINE** autoImplicit control reproduced (bare exit 0, `-DautoImplicit=false` exit 1).
+
+## 2026-11-24 — main 46a05d04e22, cache already in place, Q3 restructure makes it layout-stale
+- Restore already present on arrival (root mathlib 3697, QOU pkg 3466, UGB 35, traced, gap modules incl. PicardLindelof/GroupCohomology.LowDegree present) — no fetch.
+- **TRAP (measured)**: `559a7210bf5` (2026-11-24, "Q3 Option 1 7+1 Reservoir lean_libs & 83->12 QOU chapter consolidation") moved modules to new paths/libs (`QOU/Core/*`, `CompactQuantumMetrics/*`, `HeckeTemperleyLieb/*`, `QOU/BringsSurface/PlanckStepAtomicity` ...). The cache (seed 2026-11-21) predates it: `lean-library-sweep.py --report --package QOU` says 3591 of 3908 never built. Namespaces were KEPT; only module paths moved. Pre-restructure branches fail on `import` (object file does not exist), not on content.
+- **STABLE recipe that worked**: own cone walker (scratchpad cone.py) over source roots `folio/quantum-observable-universe/lean:folio/unital-groebner-bases/lean`; shadow = `cp -al` of QOU pkg lib -> `$SH/QOUPKG`, UGB lib -> `$SH/UGB`; rebuild cone topologically with `rm -f` then `lean -DautoImplicit=false -s 65536 <rel>.lean -o -i` from cwd = pkg dir; LEAN_PATH = `$SH/QOUPKG:$SH/UGB:<root .lake/packages/*/.lake/build/lib/lean>`. 30 modules in 1m58s (NucleonWeightSpaceTwoTerm 43 s). Real tree untouched (3466 before/after).
