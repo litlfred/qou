@@ -51,7 +51,7 @@ reps = [next(iter(c)) for c in classes]
 by_prof = {}
 for H in reps: by_prof.setdefault((len(H), profile(H)), []).append(H)
 gassmann = [k for k, v in by_prof.items() if len(v) > 1]
-out = {'S5_subgroups': len(subs), 'S5_conj_classes_of_subgroups': len(reps),
+out = {'q0Anchor': 'independent', 'q0AnchorReason': 'symbolic in q over Q(q) or at rational q; never reads the substrate q0', 'S5_subgroups': len(subs), 'S5_conj_classes_of_subgroups': len(reps),
        'S5_gassmann_pairs': len(gassmann), 'S5_gassmann_profiles': [str(k) for k in gassmann]}
 print(out)
 

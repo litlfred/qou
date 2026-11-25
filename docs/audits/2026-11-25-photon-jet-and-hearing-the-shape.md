@@ -230,3 +230,31 @@ it saw these results. Checked exactly in
   `Classical.choice` for the two field lemmas. No `sorryAx`.
 - No content block is added: §2.1, §2.4 and §3.1 are theorems, but they are small and
   should go into a block only if the owner wants them in the paper.
+
+## §7 The photons as a tangent space (owner question, same day)
+
+Owner: *"The photons span an R module (3 dim), can we interpret that as a tangent space?"*
+Yes, in a precise sense, and it reconciles the "first-order dual of the jet" idea with the
+negative of §2.1. Measured in the same exact setting (H₃ over ℚ(q)).
+
+- **The ambient group.** The units of H₃ form an algebraic group G = GL₁(H₃); over ℚ(q),
+  G ≅ G_m × G_m × GL₂. Its tangent space at 1 is Lie(G) = H₃ with the commutator bracket.
+  The tangent vectors are the dual-number points 1 + εx, x ∈ H₃, ε² = 0.
+- **Photons sit in G near 1.** det ρ_reg(γ(φ)) factors as q⁻⁷ times ε₊(γ)·q, ε₋(γ)·q, and
+  the square of the reflection-block determinant. It equals 1 at φ = 0, so γ(φ) is a unit on
+  a Zariski-open neighbourhood of the bare photon. It fails to be a unit exactly where one of
+  the three block images vanishes.
+- **Tangent space.** The photon family is a 3-dimensional smooth subvariety of G through 1,
+  and its tangent space there is W = span{σ₀, σ₁, V} ⊂ Lie(G). The γγ product is the group
+  multiplication restricted to the family; to first order it is addition in W.
+- **The first-order dual.** The cotangent space of the photon family at 1 is m/m², where m
+  is the ideal of the bare photon in the family's coordinate ring R[φ₀, φ₁, φ₀₁]. It has
+  rank 3, and the colour weights φ₀, φ₁, φ₀₁ are its basis. This is where the I/I² idea
+  lives non-trivially: in the coordinate ring of the photon variety, not in H₃ itself.
+- **Not a subgroup.** W is not closed under the bracket. The Lie algebra W generates has
+  dimension 5: everything except the identity direction. So infinitesimal photons generate
+  every direction of Lie(G) except the overall scale. The family is a 3-dimensional slice,
+  not a Lie subgroup, and "the photon group" does not exist as a subgroup of G.
+
+What is NOT established: a reason why the slice is this W, rather than some other
+3-dimensional subspace. The choice is the owner's ruling (def:photon), not derived here.

@@ -143,5 +143,5 @@ res['P7_h_preimages'] = [str(s) for s in sol]
 res['P7_zD_at_minus_qinv_minus_zD'] = str(sp.factor(zD.subs(q, -1/q) - zD))
 
 out = Path(__file__).with_name('photon-jet-probe.witness.json')
-out.write_text(json.dumps({'description': 'photon jet / hearing-the-shape exact probe, H_3(q), convention D', 'q0Value': None, 'exact': True, 'results': res}, indent=1, ensure_ascii=False))
+out.write_text(json.dumps({'description': 'photon jet / hearing-the-shape exact probe, H_3(q), convention D', 'q0Anchor': 'independent', 'q0AnchorReason': 'symbolic in q over Q(q) or at rational q; never reads the substrate q0', 'exact': True, 'results': res}, indent=1, ensure_ascii=False))
 for k, val in res.items(): print(k, ':', val)

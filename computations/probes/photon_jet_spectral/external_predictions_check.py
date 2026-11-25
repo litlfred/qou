@@ -11,7 +11,7 @@ spec = importlib.util.spec_from_file_location('p', Path(__file__).with_name('pho
 src = Path(__file__).with_name('photon_jet_probe.py').read_text().split('res = {}')[0]
 ns = {}; exec(src, ns)
 S0, S1, V, I6, h, q, trM, vec, z = ns['S0'], ns['S1'], ns['V'], ns['I6'], ns['h'], ns['q'], ns['trM'], ns['vec'], ns['z']
-out = {}
+out = {'q0Anchor': 'independent', 'q0AnchorReason': 'symbolic in q over Q(q) or at rational q; never reads the substrate q0'}
 Wl = [S0, S1, V]
 sym = [Wl[i]*Wl[j] + Wl[j]*Wl[i] for i in range(3) for j in range(i, 3)]
 Msym = sp.Matrix.hstack(*[vec(m) for m in sym])

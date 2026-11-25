@@ -1,6 +1,7 @@
 {
  "description": "photon jet / hearing-the-shape exact probe, H_3(q), convention D",
- "q0Value": null,
+ "q0Anchor": "independent",
+ "q0AnchorReason": "symbolic in q over Q(q) or at rational q; never reads the substrate q0",
  "exact": true,
  "results": {
   "P2_eps_trivial_gamma": "phi0*q + phi01 + phi1*q + 1",
