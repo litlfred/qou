@@ -129,10 +129,18 @@ noncomputable def ell_0 : A0 →ₗ[ℝ] A1 where
   toFun x := fun i => if h : i.val < 6 then x ⟨i.val, h⟩ else 0
   map_add' x y := by
     funext i
-    by_cases h : i.val < 6 <;> simp [Pi.add_apply, h, A0, A1]
+    show (if h : i.val < 6 then (x + y) ⟨i.val, h⟩ else 0) =
+      (if h : i.val < 6 then x ⟨i.val, h⟩ else 0) + (if h : i.val < 6 then y ⟨i.val, h⟩ else 0)
+    by_cases h : i.val < 6
+    · simp only [h, dif_pos]; rfl
+    · simp [h]
   map_smul' c x := by
     funext i
-    by_cases h : i.val < 6 <;> simp [Pi.smul_apply, h, A0, A1, smul_eq_mul]
+    show (if h : i.val < 6 then (c • x) ⟨i.val, h⟩ else 0) =
+      c * (if h : i.val < 6 then x ⟨i.val, h⟩ else 0)
+    by_cases h : i.val < 6
+    · simp only [h, dif_pos]; rfl
+    · simp [h]
 
 /-- The descent retraction `𝔡_1 : A_1 → A_0`, the splitting of `ℓ_0`
     in the universal connection.  Concrete 6×180 matrix in the Python
@@ -160,10 +168,8 @@ noncomputable def descent_1 : A1 →ₗ[ℝ] A0 where
 theorem descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id := by
   refine LinearMap.ext fun x => ?_
   funext i
-  simp only [LinearMap.comp_apply, LinearMap.id_apply, descent_1, ell_0,
-             LinearMap.coe_mk, AddHom.coe_mk]
-  have h : i.val < 6 := i.isLt
-  simp [h]
+  show (if h : i.val < 6 then x ⟨i.val, h⟩ else 0) = x i
+  rw [dif_pos i.isLt]
 
 /-- The descent involution `τ̂_0 = ℓ_0 ∘ 𝔡_1 : A_1 → A_1`.
 
@@ -201,16 +207,16 @@ theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
     unfolding `A_0` (`simp` computes the `finrank` of the finite Pi type). -/
 -- Ref: [leitner2026] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_A0_eq_6 : Module.finrank ℝ A0 = 6 := by
-  simp [A0]
+  exact Module.finrank_fin_fun ℝ
 
 /-- `dim Ω¹(A_0) = 30` per the Python realisation in PR #533. -/
 -- Ref: [leitner2026] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_Omega1_eq_30 : Module.finrank ℝ Omega1 = 30 := by
-  simp [Omega1]
+  exact Module.finrank_fin_fun ℝ
 
 /-- `dim A_1 = 180` per the Python realisation in PR #533. -/
 -- Ref: [leitner2026] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_A1_eq_180 : Module.finrank ℝ A1 = 180 := by
-  simp [A1]
+  exact Module.finrank_fin_fun ℝ
 
 end QOU.LiftingDescent.H3BraneTowerScaffold
