@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:38:07Z
+updated_at: 2026-11-25T16:40:04Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -100,3 +100,5 @@ Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-
 - DONE: draft PR #9438, branch claude/ak-lp-dual-intervals-20261125, head 0b0f7f8a0. aK_via_lp_dual_full.py publishes undetermined duals as null + interval [0,+inf) (u_identified false, is_active null), x_star null + [-M, n+M(k-1)] when k>=2 zero-cost rows; active_set / n_active / dual sums over identified rows only. He-4 l>=3 residues (max 2.568e-73) zeroed on ocneanuWeight_conventionD_eq_zero_of_three_rows, reported. lp_dual_witness_validator gains check_unidentified_intervals. 18/18 assertions, precision-gates --changed green (tree audits reverted).
 - NOT DONE: He-4 chi cache at 50 dps (chi_at_q0_via_hoefsmit_mpfr.py hygiene); LP re-posing on the two-row quotient (qou-fu8c).
 - NEXT: owner review of #9438, then /prepare-merge; no further code needed for the ruling.
+
+- 2026-11-25 ~16:55Z (session_01EucfRpmx5vQ5s5BZrP4uTV): qou-b7fc non-abelian Stokes route. The holonomy-level map is well-defined; per-face traces survive; no linear Stokes relation survives tracing (Lean NonabelianStokesTrace.lean, sorry-free). Explicit Bring prod-of-commutators identity still open.
