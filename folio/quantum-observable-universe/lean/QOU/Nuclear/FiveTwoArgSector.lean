@@ -268,11 +268,11 @@ theorem sa_lt_cb {a b c s R : ℝ} (hb : 0 < b) (hs : 0 < s)
       have h₁ : 0 < 4 * a * R := by positivity
       have h₂ : 0 < 4 * a ^ 2 * R * (R - 1) := by positivity
       linarith
-    have hstep : 4 * a ^ 2 * R < 4 * c ^ 2 * R ^ 2 := by linarith
+    have hstep : 4 * a ^ 2 * R < 4 * c ^ 2 * R ^ 2 := by
+      rw [hsqE]; exact lt_add_of_pos_right _ hE
     have hc2R : a ^ 2 < c ^ 2 * R := by
-      by_contra hcon
-      push_neg at hcon
-      nlinarith [mul_le_mul_of_nonneg_left hcon (by linarith : (0:ℝ) ≤ 4 * R)]
+      have h' : a ^ 2 * R < (c ^ 2 * R) * R := by linarith
+      exact lt_of_mul_lt_mul_right h' hRpos.le
     exact lt_of_sq_lt_of_pos (mul_pos hs ha) (mul_pos hc0 hb) (by linarith)
 
 /-! ### 4. The complex-level wrappers -/
