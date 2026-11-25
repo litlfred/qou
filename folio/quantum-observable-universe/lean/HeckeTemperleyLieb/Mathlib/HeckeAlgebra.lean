@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Factorial.Basic
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import Mathlib.Data.Fintype.Card
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Tactic.Ring

@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Ring.Defs
-import Mathlib.Logic.Basic
+import Mathlib.Basic.Logic.Basic
 
 /-!
 # QOU.FluidDynamics.BlowupYekutieli — blowup as Yekutieli lifting obstruction

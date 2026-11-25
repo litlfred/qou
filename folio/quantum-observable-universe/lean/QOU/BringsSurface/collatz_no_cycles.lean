@@ -3,7 +3,7 @@ import Mathlib.Tactic
 import Mathlib.Algebra.Ring.GeomSum
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.Polynomial.Eval.Defs
-import Mathlib.Algebra.Polynomial.Degree.Definitions
+import Mathlib.Algebra.Polynomial.Degree.Defs
 import Mathlib.Algebra.Polynomial.Monic
 
 /-!

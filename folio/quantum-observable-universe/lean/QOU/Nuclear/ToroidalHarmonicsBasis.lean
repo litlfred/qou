@@ -5,7 +5,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 import Mathlib.Analysis.Calculus.FDeriv.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Chebyshev
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Chebyshev.Basic
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 import Mathlib.RingTheory.Derivation.Basic
 import HeckeTemperleyLieb.MarkovParameterRecursion

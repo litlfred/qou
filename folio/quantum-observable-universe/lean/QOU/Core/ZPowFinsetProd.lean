@@ -1,6 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.GroupWithZero.Units.Basic
-import Mathlib.Algebra.Order.Field.Defs
+import Mathlib.Algebra.Order.Field.Basic
 
 /-!
 # QOU.Shared.ZPowFinsetProd — a fixed base with varying **integer** exponents

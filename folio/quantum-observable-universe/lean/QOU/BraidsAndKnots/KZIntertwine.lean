@@ -1,7 +1,7 @@
 import QOU.BraidsAndKnots.KZFunctorial
 import QOU.BraidsAndKnots.KZHexagonCentral
 import QOU.BraidsAndKnots.KZShiftPhi
-import Mathlib.Analysis.Matrix
+import Mathlib.Analysis.Matrix.Normed
 
 /-!
 # The KZ associator intertwines

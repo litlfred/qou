@@ -1,4 +1,4 @@
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.SetTheory.Cardinal.Finite
 import HeckeTemperleyLieb.Mathlib.StandardYoungTableau

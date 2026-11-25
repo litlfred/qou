@@ -51,7 +51,7 @@
   its height.
 -/
 import Mathlib.Analysis.Polynomial.MahlerMeasure
-import Mathlib.Analysis.SpecialFunctions.Integrals.PosLogEqCircleAverage
+import Mathlib.Analysis.SpecialFunctions.Integrals.PosLog
 import Mathlib.Analysis.Complex.Polynomial.Basic
 import Mathlib.RingTheory.Polynomial.Vieta
 import Mathlib.Data.Nat.Choose.Bounds

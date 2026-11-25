@@ -1,5 +1,5 @@
 import HeckeTemperleyLieb.TemperleyLiebSpanning
-import Mathlib.Combinatorics.Enumerative.Catalan
+import Mathlib.Combinatorics.Enumerative.Catalan.Basic
 
 /-!
 # Jones normal forms for `TL_n(δ)` — the general index type

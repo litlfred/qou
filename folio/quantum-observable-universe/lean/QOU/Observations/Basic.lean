@@ -2,7 +2,7 @@ import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.SetTheory.Ordinal.Arithmetic
 import Mathlib.SetTheory.Ordinal.Family
-import Mathlib.SetTheory.Ordinal.NaturalOps
+import MathlibExt.OrdinalNaturalOps
 import Mathlib.Tactic.Abel
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic

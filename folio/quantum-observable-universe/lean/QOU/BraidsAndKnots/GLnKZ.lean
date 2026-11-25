@@ -2,7 +2,7 @@ import QOU.BraidsAndKnots.GLnResidues
 import QOU.BraidsAndKnots.KZPentagon
 import QOU.BraidsAndKnots.KZHexagon
 import QOU.BraidsAndKnots.KZShiftPhi
-import Mathlib.Analysis.Matrix
+import Mathlib.Analysis.Matrix.Normed
 
 /-!
 # The KZ pentagon and hexagon for `𝔤𝔩_n` on `V^{⊗3}`, `V^{⊗4}`, `V = ℂⁿ`

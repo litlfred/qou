@@ -4,7 +4,7 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
-import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
+import Mathlib.Analysis.SpecialFunctions.Integrability.Log
 import Mathlib.Tactic
 
 /-!

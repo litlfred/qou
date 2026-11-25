@@ -1,6 +1,6 @@
 import MathlibExt.GermStabiliserCyclic
 import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Topology.OpenPartialHomeomorph
+import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Algebra.ConstMulAction
 
 /-!

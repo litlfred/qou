@@ -1,6 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.Algebra.Polynomial.Degree.Definitions
+import Mathlib.Algebra.Polynomial.Degree.Defs
 import Mathlib.FieldTheory.IsAlgClosed.Basic
 import Mathlib.Algebra.Polynomial.Splits
 import Mathlib.Analysis.Complex.Polynomial.Basic

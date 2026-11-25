@@ -1,5 +1,5 @@
 import Mathlib.Topology.FiberBundle.Basic
-import Mathlib.Topology.Covering
+import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Tactic.Group
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup

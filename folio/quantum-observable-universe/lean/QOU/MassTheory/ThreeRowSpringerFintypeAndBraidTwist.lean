@@ -1,5 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import Mathlib.Tactic.IntervalCases
 import Mathlib.Tactic.Ring
 import QOU.BraidsAndKnots.DeltaLambdaGeneralNUnconditional

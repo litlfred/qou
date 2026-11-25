@@ -1,6 +1,6 @@
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Data.Nat.Choose.Vandermonde
-import Mathlib.Combinatorics.Enumerative.Catalan
+import Mathlib.Combinatorics.Enumerative.Catalan.Basic
 import Mathlib.Algebra.BigOperators.NatAntidiagonal
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith

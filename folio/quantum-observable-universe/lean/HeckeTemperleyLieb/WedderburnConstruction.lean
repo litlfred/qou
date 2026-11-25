@@ -53,7 +53,7 @@ Bean `qou-usol`.
 -/
 
 import Mathlib.Data.Matrix.Basic
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import Mathlib.Tactic
 import HeckeTemperleyLieb.Common
 import HeckeTemperleyLieb.HeckeAlgebra.Hoefsmit

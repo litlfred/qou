@@ -1,4 +1,4 @@
-import Mathlib.Logic.Unique
+import Mathlib.Basic.Unique
 
 /-!
 # QOU.Archimedean.descartes — Bring's surface is terminal in `𝐂_{−6}`

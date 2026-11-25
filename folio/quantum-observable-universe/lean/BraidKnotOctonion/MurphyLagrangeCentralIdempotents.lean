@@ -6,7 +6,7 @@ import Mathlib.Data.Matrix.Basis
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Algebra.Polynomial.Div
-import Mathlib.Algebra.Polynomial.Degree.Definitions
+import Mathlib.Algebra.Polynomial.Degree.Defs
 import Mathlib.Algebra.Polynomial.Monic
 import Mathlib.RingTheory.Ideal.Quotient.Operations
 import Mathlib.Tactic

@@ -63,7 +63,7 @@ about the fibre dimension `N`, and the `q`-deformation moves the *weights*
 -/
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Data.Fintype.Card
-import Mathlib.Logic.IsEmpty
+import Mathlib.Basic.IsEmpty.Defs
 import Mathlib.Order.Fin.Basic
 import Mathlib.Tactic
 

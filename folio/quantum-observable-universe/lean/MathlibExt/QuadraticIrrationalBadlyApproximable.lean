@@ -1,4 +1,4 @@
-import Mathlib.RingTheory.Real.Irrational
+import Mathlib.NumberTheory.Real.Irrational
 import Mathlib.Algebra.Order.Round
 import Mathlib.Algebra.Order.Group.Abs
 

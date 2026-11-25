@@ -113,7 +113,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Log.Summable
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Algebra.Polynomial.Eval.Defs
-import Mathlib.Algebra.Polynomial.Degree.Definitions
+import Mathlib.Algebra.Polynomial.Degree.Defs
 import MathlibExt.WeierstrassFactorEstimate
 
 namespace QOU.Mathlib.HadamardFactorization

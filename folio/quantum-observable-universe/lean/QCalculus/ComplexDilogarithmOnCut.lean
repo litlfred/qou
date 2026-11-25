@@ -1,6 +1,6 @@
 import QCalculus.ComplexDilogarithmDeriv
 import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
-import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
+import Mathlib.Analysis.SpecialFunctions.Integrability.Log
 import QCalculus.ComplexDilogarithmBoundary
 import MathlibExt.ConstantOffOnePoint
 

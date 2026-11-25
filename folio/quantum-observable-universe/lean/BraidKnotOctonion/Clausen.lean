@@ -37,12 +37,12 @@
   -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
 
-import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
+import Mathlib.Analysis.SpecialFunctions.Integrability.Log
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Normed.Group.FunctionSeries
 import Mathlib.Analysis.PSeries
 import Mathlib.Analysis.Calculus.SmoothSeries
-import Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric
+import Mathlib.Analysis.SpecialFunctions.Integrals.Log
 import Mathlib.Analysis.Complex.AbelLimit
 import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
 import Mathlib.Analysis.SumIntegralComparisons

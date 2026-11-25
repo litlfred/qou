@@ -1,4 +1,6 @@
-import Mathlib.Algebra.GeomSum
+import Mathlib.Algebra.Field.GeomSum
+import Mathlib.Algebra.Order.Field.GeomSum
+import Mathlib.Algebra.Order.Ring.GeomSum
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic
 

@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import QOU.FluidDynamics.GaugeFieldFluidDynamics
 import BraidKnotOctonion.RSKBridge
 

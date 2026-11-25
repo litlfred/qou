@@ -1,5 +1,5 @@
 import Mathlib.Combinatorics.Young.YoungDiagram
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import Mathlib.GroupTheory.Perm.Sign
 import Mathlib.Algebra.Group.End
 import Mathlib.Algebra.MonoidAlgebra.Basic

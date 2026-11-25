@@ -1,6 +1,6 @@
 import QOU.BraidsAndKnots.Drinfeld.Reindex
 import QOU.BraidsAndKnots.DrinfeldAssociator
-import Mathlib.Analysis.Matrix
+import Mathlib.Analysis.Matrix.Normed
 
 /-!
 # Whiskering: `X ↦ X ⊗ 1` and `X ↦ 1 ⊗ X` carry the KZ associator to the KZ associator

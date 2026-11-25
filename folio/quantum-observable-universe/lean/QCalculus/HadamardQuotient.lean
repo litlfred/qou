@@ -1,7 +1,7 @@
 import MathlibExt.ExponentOfConvergence
 import QCalculus.CanonicalProductGrowth
 import MathlibExt.HadamardZeroFree
-import Mathlib.Analysis.NormedSpace.MultipliableUniformlyOn
+import Mathlib.Analysis.Normed.Module.MultipliableUniformlyOn
 import Mathlib.Analysis.Complex.LocallyUniformLimit
 import Mathlib.Analysis.Meromorphic.NormalForm
 

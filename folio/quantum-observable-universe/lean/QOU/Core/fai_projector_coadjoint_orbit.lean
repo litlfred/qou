@@ -2,7 +2,7 @@ import Mathlib.Tactic
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.UnitaryGroup
 import Mathlib.LinearAlgebra.Matrix.Trace
-import Mathlib.LinearAlgebra.Matrix.Spectrum
+import Mathlib.Analysis.Matrix.Spectrum
 
 /-!
 # QOU.QuantumObservableUniverse.fai_projector_coadjoint_orbit

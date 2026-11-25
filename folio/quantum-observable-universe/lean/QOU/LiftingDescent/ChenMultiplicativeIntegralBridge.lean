@@ -2,7 +2,7 @@ import QOU.LiftingDescent.MassTraceIdentity
 import MathlibExt.YekutieliIntegration
 import QOU.Core.CategoricalLagrangianTwoTermBridge
 import Mathlib.Analysis.ODE.Gronwall
-import Mathlib.Analysis.Matrix
+import Mathlib.Analysis.Matrix.Normed
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Normed.Operator.Mul
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus

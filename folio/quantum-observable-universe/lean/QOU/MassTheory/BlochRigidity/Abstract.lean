@@ -1,7 +1,7 @@
 import QOU.MassTheory.BlochRigidity.Derivative
 import Mathlib.Analysis.Analytic.Constructions
 import Mathlib.Analysis.Calculus.FDeriv.Analytic
-import Mathlib.Analysis.NormedSpace.Connected
+import Mathlib.Analysis.Normed.Module.Connected
 import QOU.MassTheory.BlochRigidity.Growth
 import QOU.MassTheory.BlochRigidity.Vanishing
 import QOU.MassTheory.BlochSuslinComplex

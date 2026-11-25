@@ -1,4 +1,4 @@
-import Mathlib.Logic.Basic
+import Mathlib.Basic.Logic.Basic
 
 /-!
 # QOU.FluidDynamics.qou_ns_surreal_bridge — factoring Bridge B2 through the

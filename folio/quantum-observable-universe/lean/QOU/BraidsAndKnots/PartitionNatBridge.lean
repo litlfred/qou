@@ -1,5 +1,5 @@
 import QOU.BraidsAndKnots.DeltaLambdaSignRule
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 
 /-!
 # QOU.BraidKnot.PartitionNatBridge — custom `Partition n` ≃ `Nat.Partition n`

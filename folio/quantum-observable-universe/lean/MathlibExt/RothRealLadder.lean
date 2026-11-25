@@ -25,7 +25,7 @@ rational, so the excursion is invisible in the statement.
 `Mathlib/RingTheory/Real/Irrational.lean`.
 -/
 import MathlibExt.RothVariableSplit
-import Mathlib.RingTheory.Real.Irrational
+import Mathlib.NumberTheory.Real.Irrational
 
 namespace MvPolynomial
 

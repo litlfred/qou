@@ -1,5 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Defs
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
 /-!

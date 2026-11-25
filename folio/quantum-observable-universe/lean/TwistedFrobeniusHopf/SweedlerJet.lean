@@ -6,7 +6,7 @@ import Mathlib.RingTheory.HopfAlgebra.Basic
 import Mathlib.RingTheory.TensorProduct.Basic
 import Mathlib.Algebra.RingQuot
 import Mathlib.Algebra.FreeAlgebra
-import Mathlib.Algebra.TrivSqZeroExt
+import Mathlib.Algebra.TrivSqZeroExt.Basic
 
 /-!
 # Sweedler's four-dimensional Hopf algebra as a noncommutative jet

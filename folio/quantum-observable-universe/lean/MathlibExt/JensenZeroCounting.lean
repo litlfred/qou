@@ -1,6 +1,6 @@
 import Mathlib.Analysis.Complex.JensenFormula
-import Mathlib.Analysis.Complex.ValueDistribution.CountingFunction
-import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
+import Mathlib.Analysis.Complex.ValueDistribution.LogCounting.Basic
+import Mathlib.Analysis.SpecialFunctions.Integrability.Log
 
 /-!
 # Jensen's formula and the zero-counting bound for entire functions (PI-5 bridge)

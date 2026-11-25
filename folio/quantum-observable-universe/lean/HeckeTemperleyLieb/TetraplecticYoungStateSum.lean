@@ -41,7 +41,7 @@ consequences (`occupied_card`, `plancherel_eq_perm`); the hypotheses themselves 
 the open tetraplectic → Young correspondence and stay unproved (no instance is
 fabricated).  This is the honest state of L5 — the fuzziest of the five results.
 -/
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import Mathlib.GroupTheory.Perm.Fin
 import Mathlib.Tactic
 
