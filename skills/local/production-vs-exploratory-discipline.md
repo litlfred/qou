@@ -439,6 +439,9 @@ on disjoint blocks plus extensive energy gives the Cauchy equation, and
 solution is `−c·log r`. The linear `E₀·(1 − r)` is its first-order truncation,
 not extensive (`linearForm_not_extensive`) and capped below `E₀`. Never choose
 among normalisations by residual (owner ruling 2026-11-25, bean `qou-xj4p`).
+Also check the INPUT: the single-crossing interface letters `σ_g + d_e·1` of
+`atom_braid_word_3A` are superseded by the 2026-11-15 γγ bond ruling, so a log-law
+number computed on them is a record on a superseded word, not a prediction.
 
 ## Pre-promotion checklist (run before adopting any candidate in production)
 

@@ -133,7 +133,9 @@ def main() -> int:
         "C. C0-C2 all use the raw difference tr_free*(1-r), which carries "
         "the per-nucleon self-trace tr_free. The corpus's live law "
         "E_0*log(tr_free/tr_atom) gives D "
-        f"{mp.nstr(mp.mpf(d_row['C_log_law_err_rel']) * 100, 4)}%. "
+        f"{mp.nstr(mp.mpf(d_row['C_log_law_err_rel']) * 100, 4)}%, "
+        "on the single-crossing interface letters that the 2026-11-15 "
+        "gamma-gamma bond ruling supersedes (a record, not a prediction). "
         "Scope (a): constrains these candidates on this route only."
     )
     print(f"\n  VERDICT: {verdict}")

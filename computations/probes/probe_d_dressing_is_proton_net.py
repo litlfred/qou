@@ -190,7 +190,8 @@ def main() -> int:
               "because it is not normalised by tr_free. The binding magnitude "
               "is now reported on the corpus's live law, exactly "
               "binding_log_free_energy.py: B = E_0*log(|tr_free|/|tr_atom|) "
-              "(about +27% for the deuteron). NOT wired.")
+              "(about +27% for the deuteron, on the superseded single-crossing p-n "
+              "interface letter: a record, not a current prediction). NOT wired.")
           .set_audit_only(
               "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md")
           .add_parameter("q0", Q_50_DIGIT_STR)
@@ -206,6 +207,7 @@ def main() -> int:
                                        "computations/binding_log_free_energy.py:95",
               "B_canonical_log_law_err_vs_AME_pct":
                   nc["B_canonical_log_law_err_vs_AME_pct"],
+              "B_canonical_log_law_scope": "evaluated on the single-crossing interface letter of atom_braid_word_3A, superseded by the 2026-11-15 owner ruling that the gamma-gamma rule covers bond letters: a record on a superseded word, not a current prediction",
               "ruling": "owner 2026-11-25 (qou-xj4p): keep the exact identities; "
                         "record the binding match as a negative; the sub-percent "
                         "assertion is removed",

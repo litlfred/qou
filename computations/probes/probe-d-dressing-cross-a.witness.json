@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-25T11:14:01.178775+00:00",
-  "commitSha": "2558907066270423a641641d02ae15c88f509051",
+  "computedAt": "2026-11-25T11:27:03.736150+00:00",
+  "commitSha": "ec3d0642447888cfcad5acb47a3ae91f5ddaaaeb",
   "assertions": [
     {
       "name": "c1_over_c0_eq_dressing",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 14,
   "computation": "probe-d-dressing-cross-a",
   "scriptFile": "probe_d_dressing_cross_a.py",
-  "scriptHash": "bc06f9dbd76e",
-  "scriptCommitSha": "884e4ab20d628ae6f6261536cbbfb7bd043e5083",
+  "scriptHash": "9805137e2160",
+  "scriptCommitSha": "d470f854014b095a36eca381dbc28b9761a16dbe",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -116,7 +116,7 @@
         "C_log_law_err_rel": "-0.69318070463237111618"
       }
     ],
-    "verdict": "NEGATIVE (owner ruling 2026-11-25, bean qou-xj4p). On the ruled inputs (convention D, alternating confinement word) the dressed raw-difference candidate C1 misses D by -75.22%; the 2026-07-04 +0.29% held only for the superseded grouped word under convention C. C0-C2 all use the raw difference tr_free*(1-r), which carries the per-nucleon self-trace tr_free. The corpus's live law E_0*log(tr_free/tr_atom) gives D 27.36%. Scope (a): constrains these candidates on this route only."
+    "verdict": "NEGATIVE (owner ruling 2026-11-25, bean qou-xj4p). On the ruled inputs (convention D, alternating confinement word) the dressed raw-difference candidate C1 misses D by -75.22%; the 2026-07-04 +0.29% held only for the superseded grouped word under convention C. C0-C2 all use the raw difference tr_free*(1-r), which carries the per-nucleon self-trace tr_free. The corpus's live law E_0*log(tr_free/tr_atom) gives D 27.36%, on the single-crossing interface letters that the 2026-11-15 gamma-gamma bond ruling supersedes (a record, not a prediction). Scope (a): constrains these candidates on this route only."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
