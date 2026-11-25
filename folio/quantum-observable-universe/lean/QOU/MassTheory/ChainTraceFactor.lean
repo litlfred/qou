@@ -166,7 +166,7 @@ theorem pn_factor_pos {q : ℝ} (hq : 1 ≤ q) : 0 < markovZ q + dPN q := by
 factorisation of the trace over the chain, the canonical `L` is a sum over interfaces. -/
 theorem neg_log_prod {ι : Type*} (s : Finset ι) (f : ι → ℝ) (hf : ∀ i ∈ s, 0 < f i) :
     -Real.log (∏ i ∈ s, f i) = ∑ i ∈ s, -Real.log (f i) := by
-  rw [Real.log_prod s f (fun i hi => (hf i hi).ne'), Finset.sum_neg_distrib]
+  rw [Real.log_prod (fun i hi => (hf i hi).ne'), Finset.sum_neg_distrib]
 
 /-- The three bond constants as `-log` of their two-strand factors. -/
 noncomputable def L_pp (q : ℝ) : ℝ := -Real.log (markovZ q)

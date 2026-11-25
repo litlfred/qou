@@ -75,8 +75,8 @@ theorem rank_const_of_isPreconnected {n : Type*} [Fintype n] [DecidableEq n]
     simp
   have hmaps : Set.MapsTo (fun z => (Matrix.trace (P z)).re) S
       (Set.range ((↑) : ℤ → ℝ)) := fun z hz => ⟨_, (hval z hz).symm⟩
-  have h := hS.constant_of_mapsTo hre hmaps hx hy
-  simp only at h
+  have h := hS.constant_of_mapsTo (isDiscrete_iff_discreteTopology.mpr this) hre hmaps hx hy
+  try simp only at h
   rw [hval x hx, hval y hy] at h
   exact_mod_cast h
 
